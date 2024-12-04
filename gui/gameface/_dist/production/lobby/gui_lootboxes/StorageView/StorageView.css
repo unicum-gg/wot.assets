@@ -225,23 +225,15 @@ body {
 }
 
 .BoxDescription_base_17 {
-    width: 256rem;
+    width: 286rem;
 }
 
 .mediaSmall .BoxDescription_base_17 {
-    width: 318rem;
-}
-
-.mediaMedium .BoxDescription_base_17 {
     width: 364rem;
 }
 
 .mediaLarge .BoxDescription_base_17 {
     width: 572rem;
-}
-
-.BoxDescription_headerWrapper_65 {
-    margin-bottom: 6rem;
 }
 
 .BoxDescription_headerHolder_27 {
@@ -372,15 +364,20 @@ body {
 .BoxDescription_autoOpenContainer_97 {
     display: flex;
     align-items: center;
-    margin: 0 0 8rem -8rem;
+    width: 226rem;
+    margin: 0 0 5rem -5rem;
+}
+
+.mediaSmall .BoxDescription_autoOpenContainer_97 {
+    width: auto;
+}
+
+.mediaMedium .BoxDescription_autoOpenContainer_97 {
+    margin: 0 0 4rem -8rem;
 }
 
 .mediaLarge .BoxDescription_autoOpenContainer_97 {
-    margin: 4rem 0 14rem -8rem;
-}
-
-.mediaExtraLarge .BoxDescription_autoOpenContainer_97 {
-    margin: 20rem 0 26rem -8rem;
+    margin: 5rem 0 8rem -8rem;
 }
 
 .BoxDescription_autoOpenText_a8 {
@@ -415,25 +412,35 @@ body {
 }
 
 .BoxDescription_description_32 {
-    color: #8c8c7e;
+    color: #e9e2bf;
     font-size: 12rem;
     font-weight: 400;
     line-height: 1.3;
+    width: 226rem;
 }
 
 .mediaSmall .BoxDescription_description_32 {
-    color: #8c8c7e;
+    color: #e9e2bf;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
+    width: 318rem;
 }
 
-.mediaLarge .BoxDescription_description_32 {
-    color: #8c8c7e;
+.mediaMedium .BoxDescription_description_32 {
+    color: #e9e2bf;
     font-size: 16rem;
     font-weight: 400;
     line-height: 1.25;
-    width: 473rem;
+    width: 364rem;
+}
+
+.mediaLarge .BoxDescription_description_32 {
+    color: #e9e2bf;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+    width: 492rem;
 }
 
 .mediaExtraLarge .BoxDescription_description_32 {
@@ -508,7 +515,7 @@ body {
 .CButton_base__disabled_d9 {
     cursor: default;
 }
-/* Element .back and background-image in element .base need for fix bug in GF https://jira.wargaming.net/browse/WOTD-158525
+/* Element .back and background-image in element .base need for fix bug in GF https://jira-archive.lesta.group/browse/WOTD-158525
 The bug is that under certain conditions, when using border-image, stripes appear. Strip is a single-pixel gap
 between 'border-image-width' and 'fill'.
 This bug is reproduced in Google Chrome 81.0.4044.113
@@ -658,6 +665,10 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 .BoxRadioButtons_button_27 {
     margin: 0 10rem;
+}
+.BoxRadioButtons_buyButton_a7 {
+    width: 160rem;
+    height: 32rem;
 }
 .BoxRadioButtons_warningText_71 {
     color: #8c8c7e;
@@ -1144,7 +1155,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     height: 80rem;
     margin-right: 4rem;
     margin-bottom: 8rem;
-    cursor: pointer;
 }
 
 .mediaSmall .BoxRewards_reward_a7 {
@@ -1172,10 +1182,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     background: no-repeat center / cover;
     position: relative;
     z-index: 0;
-}
-
-.BoxRewards_rewardIcon_18:hover {
-    mix-blend-mode: hard-light;
 }
 
 .mediaSmall .BoxRewards_rewardIcon_18 {
@@ -1261,11 +1267,11 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .BoxRewards_rewardIcon__lootboxStageRotation_db {
-    background-image: url('R.images.gui_lootboxes.gui.maps.storage.rewards.vehProgression');
+    background-image: url('R.images.gui_lootboxes.gui.maps.storage.rewards.NYlootboxStageRotation');
 }
 
 .mediaLarge .BoxRewards_rewardIcon__lootboxStageRotation_db {
-    background-image: url('R.images.gui_lootboxes.gui.maps.storage.rewards.vehProgression_1920');
+    background-image: url('R.images.gui_lootboxes.gui.maps.storage.rewards.NYlootboxStageRotation_1920');
 }
 
 .BoxRewards_rewardName_19 {
@@ -1574,15 +1580,14 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .Carousel_base_51 {
     display: flex;
     flex-direction: row;
+    align-items: center;
     width: 100%;
 }
 
 .Carousel_prev_37,
 .Carousel_next_a6 {
-    width: 50rem;
-    height: 96rem;
-    margin-top: 9rem;
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    width: 24rem;
+    height: 48rem;
     background: url('R.images.gui_lootboxes.gui.maps.storage.carousel.arrow') no-repeat center / contain;
     transition: all 0.3s;
     cursor: pointer;
@@ -1590,32 +1595,36 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 
 .Carousel_prev_37:hover,
 .Carousel_next_a6:hover {
-    border: 1rem solid #ee7000;
-    box-shadow:
-        0 0 4rem rgba(255, 127, 0, 0.25),
-        0 0 8rem rgba(255, 42, 0, 0.5),
-        0 0 15rem rgba(238, 85, 34, 0.5),
-        inset 0 0 16rem rgba(255, 127, 0, 0.25),
-        inset 0 0 32rem rgba(255, 42, 0, 0.25),
-        inset 0 0 60rem rgba(238, 85, 34, 0.25);
+    background-image: url('R.images.gui_lootboxes.gui.maps.storage.carousel.arrowHover');
 }
 
 .Carousel_prev__disabled_3e,
 .Carousel_next__disabled_c0 {
+    opacity: 0.2;
     mix-blend-mode: luminosity;
     cursor: default;
 }
 
 .Carousel_prev__disabled_3e:hover,
 .Carousel_next__disabled_c0:hover {
-    border: 1px solid rgba(255, 255, 255, 0.15);
     box-shadow: none;
+    background-image: url('R.images.gui_lootboxes.gui.maps.storage.carousel.arrow');
 }
 
 .mediaMedium .Carousel_prev_37,
 .mediaMedium .Carousel_next_a6 {
     width: 76rem;
-    height: 146rem;
+    height: 142rem;
+    background-image: url('R.images.gui_lootboxes.gui.maps.storage.carousel.arrowBig');
+}
+
+.mediaMedium .Carousel_prev_37:hover,
+.mediaMedium .Carousel_next_a6:hover {
+    background-image: url('R.images.gui_lootboxes.gui.maps.storage.carousel.arrowBigHover');
+}
+
+.mediaMedium .Carousel_prev__disabled_3e:hover,
+.mediaMedium .Carousel_next__disabled_c0:hover {
     background-image: url('R.images.gui_lootboxes.gui.maps.storage.carousel.arrowBig');
 }
 
@@ -1649,17 +1658,36 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     width: 154rem;
     height: 98rem;
     margin: 8rem 4rem;
-    border: 1rem rgba(0, 0, 0, 0.5) solid;
+    border: 1rem solid rgba(255, 255, 255, 0.1);
     border-radius: 2rem;
+    box-shadow: inset 0 0 25rem rgba(255, 255, 255, 0.1);
     background: rgba(0, 0, 0, 0.5);
     position: relative;
+    top: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+    left: 1rem;
+    transition: all 0.3s;
     cursor: pointer;
 }
 
 .LootboxCard_base__disabled_9a {
     border: 1rem solid rgba(255, 255, 255, 0.1);
     border-radius: 3rem;
+    box-shadow: 0 0 25rem 0 rgba(255, 255, 255, 0.1) inset;
+    background: rgba(0, 0, 0, 0.6);
     cursor: default;
+}
+
+.LootboxCard_base__selected_1b {
+    border: 1rem solid #ee7000;
+    box-shadow:
+        0 0 4rem rgba(255, 127, 0, 0.25),
+        0 0 8rem rgba(255, 42, 0, 0.5),
+        0 0 15rem rgba(238, 85, 34, 0.5),
+        inset 0 0 4rem rgba(255, 127, 0, 0.25),
+        inset 0 0 8rem rgba(255, 42, 0, 0.5),
+        inset 0 0 15rem rgba(238, 85, 34, 0.5);
 }
 
 .mediaMedium .LootboxCard_base_54 {
@@ -1677,30 +1705,12 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .LootboxCard_disabledOverlay__layout_d9 {
     background: rgba(0, 0, 0, 0.3);
 }
+.LootboxCard_base__selected_1b .LootboxCard_disabledOverlay_e8 .LootboxCard_disabledOverlay__layout_d9 {
+    background: none;
+}
 .LootboxCard_disabledOverlay__img_12 {
-    background: url('R.images.gui_lootboxes.gui.maps.storage.carousel.disabledBg') no-repeat center / contain;
+    background: url('R.images.gui_lootboxes.gui.maps.storage.carousel.disabledBg') no-repeat center / cover;
     opacity: 0.6;
-}
-.LootboxCard_border_a8 {
-    border: 1rem solid rgba(255, 255, 255, 0.1);
-    border-radius: 2rem;
-    box-shadow: inset 0 0 25rem rgba(255, 255, 255, 0.1);
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    bottom: 1rem;
-    left: 1rem;
-    transition: all 0.3s;
-}
-.LootboxCard_base__selected_1b .LootboxCard_border_a8 {
-    border: 1rem solid #ee7000;
-    box-shadow:
-        0 0 4rem rgba(255, 127, 0, 0.25),
-        0 0 8rem rgba(255, 42, 0, 0.5),
-        0 0 15rem rgba(238, 85, 34, 0.5),
-        inset 0 0 4rem rgba(255, 127, 0, 0.25),
-        inset 0 0 8rem rgba(255, 42, 0, 0.5),
-        inset 0 0 15rem rgba(238, 85, 34, 0.5);
 }
 .LootboxCard_icon_a4 {
     width: 96rem;
@@ -1714,6 +1724,10 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 .LootboxCard_base__disabled_9a .LootboxCard_icon_a4 {
     mix-blend-mode: difference;
+}
+.LootboxCard_icon__zero_e1 {
+    opacity: 0.35;
+    z-index: 3;
 }
 .mediaMedium .LootboxCard_icon_a4 {
     width: 160rem;
@@ -1745,6 +1759,9 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .LootboxCard_base__disabled_9a .LootboxCard_count_f7 {
     color: #37362e;
 }
+.LootboxCard_count__zero_90 {
+    color: #37362e;
+}
 .mediaMedium .LootboxCard_count_f7 {
     font-size: 16rem;
 }
@@ -1764,6 +1781,11 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .LootboxCard_base__disabled_9a .LootboxCard_text_fc {
     color: #595950;
 }
+.LootboxCard_text__zero_48 {
+    color: #e9e2bf;
+    text-shadow: none;
+    opacity: 0.6;
+}
 .mediaMedium .LootboxCard_text_fc {
     width: 188rem;
     font-size: 18rem;
@@ -1779,7 +1801,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     background: url('R.images.gui_lootboxes.gui.maps.storage.carousel.hover') no-repeat center bottom / 100%;
     mix-blend-mode: difference;
     position: absolute;
-    bottom: -1rem;
+    bottom: 0;
     left: 50%;
     z-index: 4;
     transform: translateX(-50%);
@@ -1799,163 +1821,280 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     height: 32rem;
     background: url('R.images.gui_lootboxes.gui.maps.storage.carousel.check') no-repeat center / contain;
     position: absolute;
-    bottom: -14rem;
+    bottom: -16rem;
     left: 50%;
-    z-index: 4;
+    z-index: 5;
     transform: translateX(-50%);
 }
 
-.CurrencyKey_base_53 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: 22rem;
+.Box_mt__XS_0c {
+    margin-top: 4rem;
+}
+.Box_mt__SM_eb {
+    margin-top: 8rem;
+}
+.Box_mt__SMp_cf {
+    margin-top: 10rem;
+}
+.Box_mt__MD_25 {
+    margin-top: 16rem;
+}
+.Box_mt__MDp_49 {
+    margin-top: 20rem;
+}
+.Box_mt__LG_e8 {
+    margin-top: 32rem;
+}
+.Box_mt__XL_83 {
+    margin-top: 64rem;
 }
 
-.CurrencyKey_icon_85 {
-    width: 16rem;
-    height: 16rem;
-    margin-right: 6rem;
-    background: no-repeat center / contain;
+.Box_mr__XS_7c {
+    margin-right: 4rem;
 }
 
-.CurrencyKey_value_29 {
-    color: #ffdd99;
-    font-size: 12rem;
-    font-weight: 400;
-    line-height: 1.3;
+.Box_mr__SM_08 {
+    margin-right: 8rem;
 }
 
-.CurrencyKeyList_base_2d {
-    position: relative;
+.Box_mr__SMp_06 {
+    margin-right: 10rem;
 }
 
-.CurrencyKeyList_base_2d::before {
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(270deg, #21232d 0%, rgba(54, 59, 78, 0) 100%);
-    opacity: 0.3;
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-}
-
-.CurrencyKeyList_base_2d::after {
-    width: 100%;
-    height: 1rem;
-    background: linear-gradient(270deg, #fff 0%, rgba(255, 255, 255, 0) 100%);
-    opacity: 0.1;
-    content: '';
-    position: absolute;
-    bottom: -1rem;
-    left: 0;
-}
-
-.CurrencyKeyList_wrapper_1e {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    min-width: 260rem;
-    height: 33rem;
+.Box_mr__MD_4a {
     margin-right: 16rem;
 }
 
-.mediaMedium .CurrencyKeyList_wrapper_1e {
-    height: 36rem;
-    margin-top: 9rem;
+.Box_mr__MDp_b6 {
+    margin-right: 20rem;
 }
 
-.TriggerHint_base_e5 {
-    position: absolute;
-    top: 0;
-    right: 1rem;
-    transition:
-        opacity 0.25s ease-in-out,
-        visibility 0.25s ease-in-out;
+.Box_mr__LG_d0 {
+    margin-right: 32rem;
 }
 
-.TriggerHint_base__hidden_4e {
-    opacity: 0;
-    visibility: hidden;
+.Box_mr__XL_db {
+    margin-right: 64rem;
 }
 
-.TriggerHint_selection_13 {
-    width: 100%;
-    height: 33rem;
-    border: 1rem #fd9 solid;
-    filter: drop-shadow(0 0 4rem rgba(255, 127, 0, 0.25)) drop-shadow(0 0 8rem #ff2a00) drop-shadow(0 0 15rem #e52);
+.Box_mb__XS_bb {
+    margin-bottom: 4rem;
 }
 
-.mediaMedium .TriggerHint_selection_13 {
-    height: 45rem;
+.Box_mb__SM_83 {
+    margin-bottom: 8rem;
 }
 
-.TriggerHint_info_36 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 105rem;
-    background: linear-gradient(
-        0deg,
-        rgba(52, 1, 1, 0) 0%,
-        rgba(52, 1, 1, 0.6) 30.59%,
-        rgba(52, 1, 1, 0.65) 49.25%,
-        rgba(52, 1, 1, 0.6) 67.49%,
-        rgba(52, 1, 1, 0) 99.55%
-    );
-    text-align: center;
-    position: relative;
-    pointer-events: none;
+.Box_mb__SMp_04 {
+    margin-bottom: 10rem;
 }
 
-.TriggerHint_text_59 {
-    color: #fd9;
+.Box_mb__MD_ed {
+    margin-bottom: 16rem;
+}
+
+.Box_mb__MDp_65 {
+    margin-bottom: 20rem;
+}
+
+.Box_mb__LG_c8 {
+    margin-bottom: 32rem;
+}
+
+.Box_mb__XL_f8 {
+    margin-bottom: 64rem;
+}
+
+.Box_ml__XS_8a {
+    margin-left: 4rem;
+}
+
+.Box_ml__SM_e6 {
+    margin-left: 8rem;
+}
+
+.Box_ml__SMp_fb {
+    margin-left: 10rem;
+}
+
+.Box_ml__MD_2b {
+    margin-left: 16rem;
+}
+
+.Box_ml__MDp_c7 {
+    margin-left: 20rem;
+}
+
+.Box_ml__LG_39 {
+    margin-left: 32rem;
+}
+
+.Box_ml__XL_4a {
+    margin-left: 64rem;
+}
+
+/* eslint-disable-next-line expectedscss*/
+.Text_paragraph-P10_2c {
+    font-size: 10rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.Text_paragraph-P12_22 {
     font-size: 12rem;
     font-weight: 400;
     line-height: 1.3;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0 20rem;
-    filter: drop-shadow(0 0 4rem rgba(255, 127, 0, 0.25)) drop-shadow(0 0 8rem #ff2a00) drop-shadow(0 0 15rem #e52);
-    overflow-wrap: break-word;
 }
-
-.TriggerHint_arrowHolder_c0 {
-    width: 129rem;
-    height: 124rem;
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translate(-50%, 0);
+.Text_paragraph-P14_a7 {
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
 }
-
-.TriggerHint_arrow_6c {
-    width: 100%;
-    height: 100%;
-    background: url('R.images.gui_lootboxes.gui.maps.storage.currencyKey.trigger_hint') no-repeat center / contain;
-    animation: TriggerHint_fadeUp_f3 infinite ease-in-out 1.4s;
+.Text_paragraph-P16_90 {
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
 }
-
-@keyframes TriggerHint_fadeUp_f3 {
-    0% {
-        opacity: 0;
-        transform: translateY(0);
-    }
-
-    70%,
-    90% {
-        opacity: 1;
-        transform: translateY(-35rem);
-    }
-
-    100% {
-        opacity: 0;
-        transform: translateY(-35rem);
-    }
+.Text_paragraph-P18_50 {
+    font-size: 18rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+.Text_paragraph-P24_33 {
+    font-size: 24rem;
+    font-weight: 400;
+    line-height: 32rem;
+}
+.Text_heading-H14_8b {
+    font-size: 14rem;
+    font-weight: 700;
+    line-height: 1.15;
+}
+.Text_heading-H15_9e {
+    font-size: 15rem;
+    font-weight: 700;
+    line-height: 1.15;
+}
+.Text_heading-H18_b7 {
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H20R_f6 {
+    font-size: 20rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.Text_heading-H22_27 {
+    font-size: 22rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.Text_heading-H24R_be {
+    font-size: 24rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.Text_heading-H24_0c {
+    font-size: 24rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.Text_heading-H28_78 {
+    font-size: 28rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H36_32 {
+    font-size: 36rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H56_c3 {
+    font-size: 56rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H73_8f {
+    font-size: 73rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H144_a9 {
+    font-size: 144rem;
+    font-weight: 700;
+    line-height: 1;
+}
+.Text_BLACK_REAL_30 {
+    color: #000000;
+}
+.Text_WHITE_REAL_bc {
+    color: #ffffff;
+}
+.Text_WHITE_62 {
+    color: #f2f2f7;
+}
+.Text_WHITE_ORANGE_54 {
+    color: #fefeec;
+}
+.Text_WHITE_SPANISH_df {
+    color: #e9e2bf;
+}
+.Text_PAR_15 {
+    color: #8c8c7e;
+}
+.Text_PAR_SECONDARY_5d {
+    color: #595950;
+}
+.Text_PAR_TERTIARY_c9 {
+    color: #37362e;
+}
+.Text_INFO_RED_30 {
+    color: #ff0000;
+}
+.Text_RED_66 {
+    color: #ff2717;
+}
+.Text_RED_DARK_d8 {
+    color: #b70000;
+}
+.Text_YELLOW_ed {
+    color: #feab34;
+}
+.Text_ORANGE_be {
+    color: #ee7000;
+}
+.Text_CREAM_57 {
+    color: #ffdd99;
+}
+.Text_BROWN_18 {
+    color: #cbac77;
+}
+.Text_GREEN_BRIGHT_3f {
+    color: #80d43a;
+}
+.Text_GREEN_e3 {
+    color: #7ab300;
+}
+.Text_GREEN_DARK_f1 {
+    color: #497212;
+}
+.Text_BLUE_BOOSTER_21 {
+    color: #ccffff;
+}
+.Text_BLUE_TEAMKILLER_ab {
+    color: #09e2ff;
+}
+.Text_CRED_f7 {
+    color: #ced9d9;
+}
+.Text_GOLD_28 {
+    color: #ffc363;
+}
+.Text_BOND_be {
+    color: #c9c9b6;
+}
+.Text_PROM_65 {
+    color: #a29b70;
 }
 
 .Counter_base_82 {
@@ -2004,7 +2143,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 
 .GuaranteedRewardCount_icon_e8 {
     position: relative;
-    top: 4rem;
+    top: 3rem;
 }
 
 .GuaranteedRewardNext_base_da {
@@ -2021,7 +2160,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     line-height: 1.2;
     display: flex;
     align-items: flex-end;
-    text-shadow: 0rem 0rem 16rem #ff7a00;
+    text-shadow: 0 0 16rem #ff7a00;
 }
 
 .GuaranteedRewardNext_icon_23 {
@@ -2033,14 +2172,12 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     width: 800rem;
     height: 170rem;
     margin-top: 5rem;
-    background-image: radial-gradient(ellipse at center, rgba(53, 53, 53, 0.5), rgba(53, 53, 53, 0.5) 70%);
     position: absolute;
     top: 50%;
     left: 50%;
     z-index: -2;
     transform: translate(-50%, -50%);
     pointer-events: none;
-    mask-image: radial-gradient(ellipse at center, rgb(0, 0, 0) 0%, transparent 50%);
 }
 
 .GuaranteedRewardNext_shine_02 {
@@ -2117,7 +2254,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     width: 100%;
     height: 100%;
     position: relative;
-    z-index: 1;
+    z-index: 4;
 }
 .NoBoxes_noBoxVignette_e2 {
     width: 100%;
@@ -2127,7 +2264,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 3;
+    z-index: 4;
 }
 .NoBoxes_noBox_22 {
     display: flex;
@@ -2138,13 +2275,28 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     z-index: 10;
 }
 .mediaMedium .NoBoxes_noBox_22 {
-    width: 500rem;
+    width: 630rem;
+}
+.mediaExtraLarge .NoBoxes_noBox_22 {
+    width: 850rem;
+}
+.NoBoxes_noBox__withCurrentLootbox_bf {
+    margin-bottom: 155rem;
+}
+.mediaSmall .NoBoxes_noBox__withCurrentLootbox_bf {
+    margin-bottom: 70rem;
+}
+.mediaMedium .NoBoxes_noBox__withCurrentLootbox_bf {
+    margin-bottom: 105rem;
+}
+.mediaLarge .NoBoxes_noBox__withCurrentLootbox_bf {
+    margin-bottom: 135rem;
 }
 .NoBoxes_noBoxHeader_e2 {
     color: #e9e2bf;
-    font-size: 28rem;
+    font-size: 24rem;
     font-weight: 700;
-    line-height: 1.1;
+    line-height: 1.2;
     width: 400rem;
 }
 .mediaMedium .NoBoxes_noBoxHeader_e2 {
@@ -2152,32 +2304,40 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     font-size: 36rem;
     font-weight: 700;
     line-height: 1.1;
-    width: 500rem;
+    width: 630rem;
 }
-.mediaLarge .NoBoxes_noBoxHeader_e2 {
+.mediaExtraLarge .NoBoxes_noBoxHeader_e2 {
     color: #e9e2bf;
     font-size: 56rem;
     font-weight: 700;
     line-height: 1.1;
-    width: 650rem;
+    width: 850rem;
 }
 .NoBoxes_noBoxSubText_2d {
-    color: #8c8c7e;
+    color: #e9e2bf;
     font-size: 12rem;
     font-weight: 400;
     line-height: 1.3;
     width: 400rem;
-    margin: 16rem 0 0;
+    margin: 8rem 0 0;
+    opacity: 0.8;
 }
-.mediaMedium .NoBoxes_noBoxSubText_2d {
-    color: #8c8c7e;
+.mediaSmall .NoBoxes_noBoxSubText_2d {
+    color: #e9e2bf;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
+    width: 500rem;
+}
+.mediaMedium .NoBoxes_noBoxSubText_2d {
+    color: #e9e2bf;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+    width: 600rem;
 }
 .mediaLarge .NoBoxes_noBoxSubText_2d {
-    width: 600rem;
-    font-size: 20rem;
+    width: 630rem;
 }
 .NoBoxes_noBoxButton_cc {
     width: 160rem;
@@ -2234,14 +2394,18 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 .App_close_4b {
     position: absolute;
-    top: 93rem;
-    left: 28rem;
+    top: 50rem;
+    left: 16rem;
     z-index: 10;
+}
+.mediaMedium .App_close_4b {
+    top: 60rem;
+    left: 32rem;
 }
 .App_info_5d {
     position: absolute;
     top: 50rem;
-    right: 24rem;
+    right: 16rem;
     z-index: 10;
 }
 .mediaMedium .App_info_5d {
@@ -2256,24 +2420,69 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     left: 0;
     z-index: 1;
 }
+.App_bg__event_01 {
+    background-image: url('R.images.gui_lootboxes.gui.maps.storage.bg_ny');
+}
 .App_vignette_b8 {
     width: 100%;
     height: 100%;
-    background: url('R.images.gui_lootboxes.gui.maps.storage.venetka_1024') no-repeat center / cover;
+    background: radial-gradient(
+            34.5% 46.5% at 4% 48%,
+            rgba(28, 29, 31, 0.48) 0%,
+            rgba(28, 29, 31, 0.56) 68.55%,
+            transparent 100%
+        ),
+        radial-gradient(
+            52.38% 28.89% at 50% 100%,
+            rgba(28, 29, 31, 0.36) 0%,
+            rgba(28, 29, 31, 0.3) 72.55%,
+            transparent 100%
+        ),
+        radial-gradient(
+            33.38% 43.38% at 100% 50%,
+            rgba(28, 29, 31, 0.72) 0%,
+            rgba(28, 29, 31, 0.54) 66.29%,
+            rgba(28, 29, 31, 0.31) 86.52%,
+            transparent 100%
+        ),
+        radial-gradient(
+            58.01% 51.88% at 50% 45.46%,
+            rgba(35, 36, 38, 0) 47.08%,
+            rgba(35, 36, 38, 0.4) 72.93%,
+            rgba(16, 17, 18, 0.64) 100%
+        );
     opacity: 1;
     position: absolute;
     top: 0;
     left: 0;
     z-index: 3;
 }
-.mediaSmall .App_vignette_b8 {
-    background: url('R.images.gui_lootboxes.gui.maps.storage.venetka_1366') no-repeat center / cover;
-}
 .mediaMedium .App_vignette_b8 {
-    background: url('R.images.gui_lootboxes.gui.maps.storage.venetka_1600') no-repeat center / cover;
-}
-.mediaLarge .App_vignette_b8 {
-    background: url('R.images.gui_lootboxes.gui.maps.storage.venetka_1920') no-repeat center / cover;
+    background: radial-gradient(
+            ellipse 29.5% 45.5% at 4% 51%,
+            rgba(28, 29, 31, 0.48) 0%,
+            rgba(28, 29, 31, 0.56) 68.55%,
+            transparent 100%
+        ),
+        radial-gradient(
+            ellipse 52.38% 28.88% at 50% 100%,
+            rgba(28, 29, 31, 0.36) 0%,
+            rgba(28, 29, 31, 0.3) 72.55%,
+            transparent 100%
+        ),
+        radial-gradient(
+            ellipse 33.38% 43.4% at 100% 50%,
+            rgba(28, 29, 31, 0.72) 0%,
+            rgba(28, 29, 31, 0.54) 66.3%,
+            rgba(28, 29, 31, 0.31) 86.5%,
+            transparent 100%
+        ),
+        radial-gradient(
+            ellipse 58% 51.88% at 50% 45.46%,
+            rgba(35, 36, 38, 0) 47%,
+            rgba(35, 36, 38, 0.4) 72.93%,
+            rgba(16, 17, 18, 0.64) 100%
+        );
 }
 .App_buttons_f4 {
     position: absolute;
@@ -2287,50 +2496,47 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     background-position: center;
     background-size: cover;
     position: absolute;
-    top: 109rem;
+    top: 40rem;
     left: 0;
     z-index: 2;
-}
-.mediaSmall .App_eventImage_77 {
-    top: 103rem;
 }
 .mediaMedium .App_eventImage_77 {
     width: 480rem;
     height: 285rem;
-    top: 93rem;
+    top: 55rem;
 }
 .mediaLarge .App_eventImage_77 {
     width: 612rem;
     height: 360rem;
 }
 .mediaExtraLarge .App_eventImage_77 {
-    top: 300rem;
+    top: 120rem;
 }
 .App_descriptionWrapper_c6 {
     position: absolute;
-    top: 205rem;
+    top: 200rem;
     left: 40rem;
     z-index: 10;
 }
 .mediaSmall .App_descriptionWrapper_c6 {
-    top: 199rem;
+    top: 203rem;
 }
 .mediaMedium .App_descriptionWrapper_c6 {
-    top: 239rem;
+    top: 243rem;
 }
 .mediaLarge .App_descriptionWrapper_c6 {
-    top: 285rem;
+    top: 290rem;
 }
 .mediaExtraLarge .App_descriptionWrapper_c6 {
-    top: 500rem;
+    top: 370rem;
 }
 .App_possibleRewardsWrapper_6e {
     position: absolute;
-    top: 140rem;
+    top: 150rem;
     right: 16rem;
     z-index: 10;
 }
-.mediaSmall .App_possibleRewardsWrapper_6e {
+.mediaMedium .App_possibleRewardsWrapper_6e {
     top: 200rem;
 }
 .mediaExtraLarge .App_possibleRewardsWrapper_6e {
@@ -2340,7 +2546,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     position: absolute;
     bottom: 213rem;
     left: 50%;
-    z-index: 3;
+    z-index: 5;
     transform: translateX(-50%);
 }
 .mediaMedium .App_guaranteedReward_b0 {
@@ -2373,7 +2579,12 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .App_videoWrapper_22 {
     position: absolute;
     z-index: 1;
-    transition: opacity 0.38s ease-in-out;
+}
+.App_noBoxesWrapper_b2 {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 4;
 }
 .App_animationControl_ba {
     position: absolute;
@@ -2419,10 +2630,4 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .mediaMedium .App_buyButtonWrapper_6b {
     height: 150rem;
     bottom: 20rem;
-}
-.App_currencyWrapper_bb {
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 100;
 }

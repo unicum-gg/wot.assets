@@ -462,7 +462,7 @@
                 /**
                  * Use useMedia hook from 'lib/hooks/useMedia' directly in your react components
                  *
-                 * Usage and tech doc: https://confluence.wargaming.net/pages/viewpage.action?pageId=1583255544
+                 * Usage and tech doc: https://confluence.lesta.group/pages/viewpage.action?pageId=1923252276
                  *
                  * @deprecated
                  */

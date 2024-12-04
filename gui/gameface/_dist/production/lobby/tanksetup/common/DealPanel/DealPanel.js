@@ -24,9 +24,9 @@
                     onMouseDown: b,
                     onMouseUp: v,
                     onMouseLeave: w,
-                    onClick: E,
+                    onClick: p,
                 }) => {
-                    const p = (0, o.useRef)(null),
+                    const E = (0, o.useRef)(null),
                         f = (0, o.useState)(n),
                         C = f[0],
                         y = f[1],
@@ -36,20 +36,20 @@
                         L = (0, o.useState)(!1),
                         M = L[0],
                         T = L[1],
-                        S = (0, o.useCallback)(() => {
-                            c || (p.current && (p.current.focus(), y(!0)));
+                        P = (0, o.useCallback)(() => {
+                            c || (E.current && (E.current.focus(), y(!0)));
                         }, [c]),
-                        P = (0, o.useCallback)(
+                        S = (0, o.useCallback)(
                             (e) => {
-                                C && null !== p.current && !p.current.contains(e.target) && y(!1);
+                                C && null !== E.current && !E.current.contains(e.target) && y(!1);
                             },
                             [C],
                         ),
                         A = (0, o.useCallback)(
                             (e) => {
-                                c || (E && E(e));
+                                c || (p && p(e));
                             },
-                            [c, E],
+                            [c, p],
                         ),
                         N = (0, o.useCallback)(
                             (e) => {
@@ -71,9 +71,9 @@
                         ),
                         F = (0, o.useCallback)(
                             (e) => {
-                                c || (null !== m && (0, i.G)(m), b && b(e), n && S(), O(!0));
+                                c || (null !== m && (0, i.G)(m), b && b(e), n && P(), O(!0));
                             },
-                            [c, m, b, S, n],
+                            [c, m, b, P, n],
                         ),
                         B = (0, o.useCallback)(
                             (e) => {
@@ -97,12 +97,12 @@
                     return (
                         (0, o.useEffect)(
                             () => (
-                                document.addEventListener('mousedown', P),
+                                document.addEventListener('mousedown', S),
                                 () => {
-                                    document.removeEventListener('mousedown', P);
+                                    document.removeEventListener('mousedown', S);
                                 }
                             ),
-                            [P],
+                            [S],
                         ),
                         (0, o.useEffect)(() => {
                             y(n);
@@ -110,7 +110,7 @@
                         s().createElement(
                             'div',
                             {
-                                ref: p,
+                                ref: E,
                                 className: I,
                                 onMouseEnter: N,
                                 onMouseMove: D,
@@ -215,8 +215,8 @@
                         b = void 0 !== g && g,
                         v = e.size,
                         w = void 0 === v ? _.yB.medium : v,
-                        E = e.type,
-                        p = void 0 === E ? _.Rh.primary : E,
+                        p = e.type,
+                        E = void 0 === p ? _.Rh.primary : p,
                         f = e.soundHover,
                         C = void 0 === f ? 'highlight' : f,
                         y = e.soundClick,
@@ -226,8 +226,8 @@
                         L = e.onMouseUp,
                         M = e.onMouseDown,
                         T = e.onClick,
-                        S = e.onChange,
-                        P = e.onFocus,
+                        P = e.onChange,
+                        S = e.onFocus,
                         R = e.onBlur,
                         A = e.text,
                         N = e.contentStyles,
@@ -249,9 +249,9 @@
                         Z = (U[0], U[1]),
                         V = (0, r.useCallback)(
                             (e) => {
-                                h || (S && S(), T && T(e));
+                                h || (P && P(), T && T(e));
                             },
-                            [h, S, T],
+                            [h, P, T],
                         ),
                         q = (0, r.useCallback)(
                             (e) => {
@@ -280,9 +280,9 @@
                         ),
                         K = (0, r.useCallback)(
                             (e) => {
-                                h || (Z(!0), P && P(e));
+                                h || (Z(!0), S && S(e));
                             },
-                            [h, P],
+                            [h, S],
                         ),
                         Y = (0, r.useCallback)(
                             (e) => {
@@ -304,7 +304,7 @@
                         d(
                             {
                                 id: t,
-                                className: o()(c.Z.base, c.Z[`base__${w}`], c.Z[`base__${p}`], {
+                                className: o()(c.Z.base, c.Z[`base__${w}`], c.Z[`base__${E}`], {
                                     [c.Z.base__checked]: i,
                                     [c.Z.base__disabled]: h,
                                     [c.Z.base__mouseDown]: I,
@@ -419,14 +419,16 @@
                 var r = n(6179),
                     a = n.n(r),
                     i = n(4179);
-                const o = ({ format: e, value: t }) => {
-                    const n = ((e, t = 'integral') => {
-                        let n;
-                        n = 'gold' === t ? i.B3.GOLD : i.B3.INTEGRAL;
-                        return void 0 === e ? '' : i.Z5.getNumberFormat(e, n);
-                    })(t, e);
-                    return n ? a().createElement('span', null, n) : null;
-                };
+                class o extends a().PureComponent {
+                    render() {
+                        let e;
+                        if ('gold' === this.props.format) e = i.B3.GOLD;
+                        else e = i.B3.INTEGRAL;
+                        const t = i.Z5.getNumberFormat(this.props.value, e);
+                        return void 0 !== this.props.value && void 0 !== t ? t : null;
+                    }
+                }
+                o.defaultProps = { format: 'integral' };
             },
             3495: (e, t, n) => {
                 n.d(t, { Y: () => u });
@@ -494,11 +496,11 @@
                         b = s.smallWidth,
                         v = s.extraSmallWidth,
                         w = s.extraLargeHeight,
-                        E = s.largeHeight,
-                        p = s.mediumHeight,
+                        p = s.largeHeight,
+                        E = s.mediumHeight,
                         f = s.smallHeight,
                         C = s.extraSmallHeight,
-                        y = { extraLarge: w, large: E, medium: p, small: f, extraSmall: C };
+                        y = { extraLarge: w, large: p, medium: E, small: f, extraSmall: C };
                     if (n.extraLarge || n.large || n.medium || n.small || n.extraSmall) {
                         if (n.extraLarge && l) return t;
                         if (n.large && _) return t;
@@ -515,8 +517,8 @@
                             !(n.extraLargeWidth || n.largeWidth || n.mediumWidth || n.smallWidth || n.extraSmallWidth)
                         ) {
                             if (n.extraLargeHeight && w) return t;
-                            if (n.largeHeight && E) return t;
-                            if (n.mediumHeight && p) return t;
+                            if (n.largeHeight && p) return t;
+                            if (n.mediumHeight && E) return t;
                             if (n.smallHeight && f) return t;
                             if (n.extraSmallHeight && C) return t;
                         }
@@ -763,8 +765,8 @@
                             b = void 0 !== g && g,
                             v = e.decoratorId,
                             w = void 0 === v ? 0 : v,
-                            E = e.isEnabled,
-                            p = void 0 === E || E,
+                            p = e.isEnabled,
+                            E = void 0 === p || p,
                             f = e.targetId,
                             C = void 0 === f ? 0 : f,
                             y = e.onShow,
@@ -795,7 +797,7 @@
                                         (O.current.isVisible = !1);
                                 }
                             }, [n, w, L, k]),
-                            S = (0, i.useCallback)((e) => {
+                            P = (0, i.useCallback)((e) => {
                                 O.current.isVisible &&
                                     ((O.current.prevTarget = document.elementFromPoint(e.clientX, e.clientY)),
                                     (O.current.hideTimerId = window.setTimeout(() => {
@@ -806,16 +808,16 @@
                         (0, i.useEffect)(() => {
                             const e = O.current.hideTimerId;
                             return (
-                                document.addEventListener('wheel', S, { capture: !0 }),
+                                document.addEventListener('wheel', P, { capture: !0 }),
                                 () => {
-                                    document.removeEventListener('wheel', S, { capture: !0 }),
+                                    document.removeEventListener('wheel', P, { capture: !0 }),
                                         e && window.clearTimeout(e);
                                 }
                             );
                         }, []),
                             (0, i.useEffect)(() => {
-                                !1 === p && T();
-                            }, [p, T]),
+                                !1 === E && T();
+                            }, [E, T]),
                             (0, i.useEffect)(
                                 () => (
                                     window.addEventListener('mouseleave', T),
@@ -825,19 +827,19 @@
                                 ),
                                 [T],
                             );
-                        return p
+                        return E
                             ? (0, i.cloneElement)(
                                   t,
                                   Object.assign(
                                       {
                                           onMouseEnter:
-                                              ((P = t.props.onMouseEnter),
+                                              ((S = t.props.onMouseEnter),
                                               (e) => {
                                                   (e.clientX === window.innerWidth &&
                                                       e.clientY === window.innerHeight) ||
                                                       ((O.current.timeoutId = window.setTimeout(M, h ? 100 : 400)),
                                                       _ && _(e),
-                                                      P && P(e));
+                                                      S && S(e));
                                               }),
                                           onMouseLeave: ((e) => (t) => {
                                               T(), null == c || c(t), null == e || e(t);
@@ -853,7 +855,7 @@
                                   ),
                               )
                             : t;
-                        var P;
+                        var S;
                     };
             },
             527: (e, t, n) => {
@@ -1021,12 +1023,12 @@
                         getSize: () => d,
                         getViewGlobalPosition: () => h,
                         isEventHandled: () => C,
-                        isFocused: () => p,
+                        isFocused: () => E,
                         pxToRem: () => v,
                         remToPx: () => w,
                         resize: () => m,
                         sendEvent: () => o.qP,
-                        setAnimateWindow: () => E,
+                        setAnimateWindow: () => p,
                         setEventHandled: () => f,
                         setInputPaddingsRem: () => l,
                         setSidePaddingsRem: () => u,
@@ -1073,10 +1075,10 @@
                 function w(e) {
                     return viewEnv.remToPx(e);
                 }
-                function E(e, t) {
+                function p(e, t) {
                     viewEnv.setAnimateWindow(e, t);
                 }
-                function p() {
+                function E() {
                     return viewEnv.isFocused();
                 }
                 function f() {
@@ -1545,7 +1547,7 @@
                             return t.apply(this, arguments);
                         };
                     })(),
-                    E = (e, t) => {
+                    p = (e, t) => {
                         const n = 'GFViewEventProxy';
                         if (void 0 !== t) {
                             const a = t.args,
@@ -1583,7 +1585,7 @@
                         } else viewEnv.handleViewEvent({ __Type: n, type: e });
                         var r;
                     },
-                    p = () => E(l.CLOSE),
+                    E = () => p(l.CLOSE),
                     f = (e, t) => {
                         e.keyCode === m.n.ESCAPE && t();
                     };
@@ -1598,11 +1600,11 @@
                         TimeFormatType: u,
                         DateFormatType: d,
                         makeGlobalBoundingBox: v,
-                        sendMoveEvent: (e) => E(l.MOVE, { isMouseEvent: !0, on: e }),
-                        sendCloseEvent: p,
-                        sendClosePopOverEvent: () => E(l.POP_OVER, { on: !1 }),
+                        sendMoveEvent: (e) => p(l.MOVE, { isMouseEvent: !0, on: e }),
+                        sendCloseEvent: E,
+                        sendClosePopOverEvent: () => p(l.POP_OVER, { on: !1 }),
                         sendShowContextMenuEvent: (e, t, n = 0) => {
-                            E(l.CONTEXT_MENU, { isMouseEvent: !0, contentID: e, on: !0, decoratorID: n, args: t });
+                            p(l.CONTEXT_MENU, { isMouseEvent: !0, contentID: e, on: !0, decoratorID: n, args: t });
                         },
                         sendShowPopOverEvent: (e, t, n, r, a = R.invalid('resId'), i) => {
                             const o = h.O.view.getViewGlobalPosition(),
@@ -1617,7 +1619,7 @@
                                     width: h.O.view.pxToRem(u),
                                     height: h.O.view.pxToRem(d),
                                 };
-                            E(l.POP_OVER, {
+                            p(l.POP_OVER, {
                                 isMouseEvent: !0,
                                 contentID: e,
                                 decoratorID: r || R.invalid('resId'),
@@ -1635,9 +1637,9 @@
                             );
                         },
                         closeOnEsc: (e) => {
-                            f(e, p);
+                            f(e, E);
                         },
-                        handleViewEvent: E,
+                        handleViewEvent: p,
                         onBindingsReady: w,
                         onLayoutReady: () =>
                             new Promise((e) => {

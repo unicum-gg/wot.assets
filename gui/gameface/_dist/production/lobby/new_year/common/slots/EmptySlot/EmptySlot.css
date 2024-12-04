@@ -1,0 +1,85 @@
+.EmptySlot_base_66 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80rem;
+    height: 80rem;
+    position: relative;
+}
+
+.EmptySlot_base__large_05 {
+    width: 112rem;
+    height: 112rem;
+}
+
+.EmptySlot_base__huge_02 {
+    width: 144rem;
+    height: 144rem;
+}
+
+.EmptySlot_base__plus_2b {
+    cursor: pointer;
+}
+.EmptySlot_border_8f {
+    width: 80rem;
+    height: 80rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.EmptySlot_border__large_cb {
+    width: 112rem;
+    height: 112rem;
+}
+.EmptySlot_border__huge_b0 {
+    width: 144rem;
+    height: 144rem;
+}
+.EmptySlot_border__plus_c9 {
+    background-image: url('R.images.new_year.gui.maps.icons.newYear.slots.big.plus');
+}
+.EmptySlot_caption_33 {
+    width: 100%;
+    color: #d6f8ff;
+    font-size: 13rem;
+    line-height: 1.3;
+    text-align: center;
+    text-shadow:
+        0 0 8rem rgba(224, 255, 168, 0.66),
+        0 0 8rem #00a2ff;
+    position: absolute;
+    bottom: 10rem;
+    left: 0;
+}
+.EmptySlot_overlay_16 {
+    width: 80rem;
+    height: 80rem;
+    border: 1rem solid transparent;
+    border-radius: 4rem;
+    background: linear-gradient(
+        180deg,
+        rgba(6, 173, 236, 0.1) 0%,
+        rgba(6, 173, 236, 0.3) 40%,
+        rgba(10, 142, 221, 0.5) 50%,
+        rgba(6, 173, 236, 0.3) 60%,
+        rgba(6, 173, 236, 0.1) 100%
+    );
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 0.2s ease-in-out;
+}
+.EmptySlot_overlay__large_b7 {
+    width: 112rem;
+    height: 112rem;
+}
+.EmptySlot_overlay__huge_83 {
+    width: 144rem;
+    height: 144rem;
+}
+.EmptySlot_overlay_16 {
+    opacity: 0;
+}
+.EmptySlot_base_66:hover .EmptySlot_overlay_16 {
+    opacity: 0.9;
+}

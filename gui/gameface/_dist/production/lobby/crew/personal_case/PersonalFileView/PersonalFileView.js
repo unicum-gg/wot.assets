@@ -632,11 +632,11 @@
                     c = u(4682),
                     d = u(8579),
                     m = u(6358);
-                const E = ({ api: e, className: t, classNames: u, children: n }) => (
+                const E = ({ api: e, className: t, classNames: u, children: n, style: l }) => (
                     (0, i.useEffect)(() => (0, a.v)(e.recalculateContent)),
                     s().createElement(
                         'div',
-                        { className: r()(c.Z.base, t) },
+                        { className: r()(c.Z.base, t), style: l },
                         s().createElement(
                             'div',
                             {

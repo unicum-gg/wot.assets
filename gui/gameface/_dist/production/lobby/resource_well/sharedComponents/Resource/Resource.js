@@ -167,8 +167,8 @@
                         getViewGlobalPosition: () => E,
                         isEventHandled: () => f,
                         isFocused: () => O,
-                        pxToRem: () => b,
-                        remToPx: () => p,
+                        pxToRem: () => p,
+                        remToPx: () => b,
                         resize: () => v,
                         sendEvent: () => a.qP,
                         setAnimateWindow: () => m,
@@ -204,7 +204,7 @@
                 }
                 function E(e = 'rem') {
                     const t = viewEnv.getViewGlobalPositionRem();
-                    return 'rem' === e ? t : { x: p(t.x), y: p(t.y) };
+                    return 'rem' === e ? t : { x: b(t.x), y: b(t.y) };
                 }
                 function w() {
                     viewEnv.freezeTextureBeforeResize();
@@ -212,10 +212,10 @@
                 function h() {
                     return viewEnv.getScale();
                 }
-                function b(e) {
+                function p(e) {
                     return viewEnv.pxToRem(e);
                 }
-                function p(e) {
+                function b(e) {
                     return viewEnv.remToPx(e);
                 }
                 function m(e, t) {
@@ -493,7 +493,7 @@
                 const __WEBPACK_DEFAULT_EXPORT__ = ViewModel;
             },
             4179: (e, t, n) => {
-                n.d(t, { ry: () => p });
+                n.d(t, { B3: () => d, Z5: () => a, ry: () => b });
                 class i {
                     constructor() {
                         (this.entries = []),
@@ -574,8 +574,8 @@
                     }
                     s.done ? t(_) : Promise.resolve(_).then(i, r);
                 }
-                const b = (e) => ({ __Type: 'GFBoundingBox', x: e.x, y: e.y, width: e.width, height: e.height }),
-                    p = (function () {
+                const p = (e) => ({ __Type: 'GFBoundingBox', x: e.x, y: e.y, width: e.width, height: e.height }),
+                    b = (function () {
                         var e,
                             t =
                                 ((e = function* () {
@@ -656,7 +656,7 @@
                         RealFormatType: c,
                         TimeFormatType: l,
                         DateFormatType: u,
-                        makeGlobalBoundingBox: b,
+                        makeGlobalBoundingBox: p,
                         sendMoveEvent: (e) => m(_.MOVE, { isMouseEvent: !0, on: e }),
                         sendCloseEvent: O,
                         sendClosePopOverEvent: () => m(_.POP_OVER, { on: !1 }),
@@ -682,7 +682,7 @@
                                 decoratorID: i || R.invalid('resId'),
                                 targetID: r,
                                 direction: t,
-                                bbox: b(v),
+                                bbox: p(v),
                                 on: !0,
                                 args: o,
                             });
@@ -697,7 +697,7 @@
                             g(e, O);
                         },
                         handleViewEvent: m,
-                        onBindingsReady: p,
+                        onBindingsReady: b,
                         onLayoutReady: () =>
                             new Promise((e) => {
                                 requestAnimationFrame(() => {
@@ -733,7 +733,19 @@
                 window.ViewEnvHelper = T;
             },
             1693: (e, t, n) => {
-                n(6179), n(6483), n(4179);
+                var i = n(6179),
+                    r = n.n(i),
+                    o = (n(6483), n(4179));
+                class a extends r().PureComponent {
+                    render() {
+                        let e;
+                        if ('gold' === this.props.format) e = o.B3.GOLD;
+                        else e = o.B3.INTEGRAL;
+                        const t = o.Z5.getNumberFormat(this.props.value, e);
+                        return void 0 !== this.props.value && void 0 !== t ? t : null;
+                    }
+                }
+                a.defaultProps = { format: 'integral' };
             },
         },
         __webpack_module_cache__ = {},

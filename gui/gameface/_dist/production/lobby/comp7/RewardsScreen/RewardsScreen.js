@@ -2982,6 +2982,7 @@
                         (e.TankmenXpFactor = 'tankmenXPFactor'),
                         (e.FreeXpFactor = 'freeXPFactor'),
                         (e.BattleToken = 'battleToken'),
+                        (e.Entitlements = 'entitlements'),
                         (e.PremiumUniversal = 'premium_universal'),
                         (e.Gold = 'gold'),
                         (e.Credits = 'credits'),
@@ -3001,7 +3002,7 @@
                         (e.NewYearAlbumsAccess = 'newYearAlbumsAccess'),
                         (e.NewYearFillers = 'ny22Fillers'),
                         (e.NewYearInvoice = 'newYearInvoice'),
-                        (e.NewYearToyFragments = 'ny22ToyFragments'),
+                        (e.NewYearToyFragments = 'nyToyFragments'),
                         (e.NewYearSlot = 'newYearSlot'),
                         (e.BonusX5 = 'battle_bonus_x5'),
                         (e.CrewBonusX3 = 'crew_bonus_x3'),
@@ -3013,11 +3014,7 @@
                         (e.BattleBoosterGift = 'battleBooster_gift'),
                         (e.CosmicLootboxSilver = 'lootBoxToken'),
                         (e.CosmicLootboxCommon = 'cosmic_2024_2'),
-                        (e.WtStamp = 'stamp'),
-                        (e.WtHunter = 'wt_hunter'),
-                        (e.WtHunterCollection = 'hunter_collection'),
-                        (e.WtTicket = 'wtevent_ticket'),
-                        (e.WtMainPrizeDiscount = 'main_prize_discount');
+                        (e.LootBoxToken = 'lootBoxToken');
                 })(bt || (bt = {})),
                     (function (e) {
                         (e.Gold = 'gold'),
@@ -3111,15 +3108,17 @@
                             (e.PROGRESSION_STYLE_UPGRADED_3 = 'progressionStyleUpgraded_3'),
                             (e.PROGRESSION_STYLE_UPGRADED_4 = 'progressionStyleUpgraded_4');
                     })(kt || (kt = {}));
-                const Lt = ({ format: e, value: u }) => {
-                        const t = ((e, u = 'integral') => {
-                            let t;
-                            t = 'gold' === u ? ee.B3.GOLD : ee.B3.INTEGRAL;
-                            return void 0 === e ? '' : ee.Z5.getNumberFormat(e, t);
-                        })(u, e);
-                        return t ? n().createElement('span', null, t) : null;
-                    },
-                    Ot = [
+                class Lt extends n().PureComponent {
+                    render() {
+                        let e;
+                        if ('gold' === this.props.format) e = ee.B3.GOLD;
+                        else e = ee.B3.INTEGRAL;
+                        const u = ee.Z5.getNumberFormat(this.props.value, e);
+                        return void 0 !== this.props.value && void 0 !== u ? u : null;
+                    }
+                }
+                Lt.defaultProps = { format: 'integral' };
+                const Ot = [
                         bt.Items,
                         bt.Equipment,
                         bt.Xp,
@@ -3138,6 +3137,7 @@
                         bt.TankmenXpFactor,
                         bt.FreeXpFactor,
                         bt.BattleToken,
+                        bt.Entitlements,
                         bt.PremiumUniversal,
                         bt.NaturalCover,
                         bt.BpCoin,
@@ -3152,16 +3152,12 @@
                         bt.Comp7TokenWeeklyReward,
                         bt.Comp7TokenCouponReward,
                         bt.BattleBoosterGift,
-                        bt.CosmicLootboxCommon,
-                        bt.CosmicLootboxSilver,
+                        bt.NewYearFillers,
+                        bt.NewYearInvoice,
+                        bt.LootBoxToken,
                         bt.SelectableBonus,
-                        bt.WtStamp,
-                        bt.WtTicket,
-                        bt.WtMainPrizeDiscount,
-                        bt.WtHunter,
-                        bt.WtHunterCollection,
                     ],
-                    Pt = [bt.Gold, bt.Credits, bt.Crystal, bt.FreeXp],
+                    Pt = [bt.Gold, bt.Credits, bt.Crystal, bt.FreeXp, bt.NewYearToyFragments],
                     It = [bt.BattlePassPoints],
                     Mt = [bt.PremiumPlus, bt.Premium],
                     Nt = (e) =>
@@ -3227,7 +3223,10 @@
                                             return `R.images.gui.maps.icons.quests.bonuses.${u}.${e.icon}`;
                                     }
                                 })(e, u);
-                            case 'lootBoxToken':
+                            case 'entitlements':
+                                return 'big' === u
+                                    ? e.iconBig.replace('..', 'img://gui')
+                                    : e.iconSmall.replace('..', 'img://gui');
                             case 'customizations':
                             case 'styleProgress':
                             case 'crewSkins':
@@ -3236,6 +3235,7 @@
                             case 'tmanToken':
                             case 'battlePassSelectToken':
                             case 'selectableBonus':
+                            case 'lootBoxToken':
                                 return `R.images.gui.maps.icons.quests.bonuses.${u}.${r}`;
                             case 'crewBooks':
                                 return `R.images.gui.maps.icons.crewBooks.books.${u}.${r}`;
@@ -3274,6 +3274,14 @@
                                 return `R.images.gui.maps.icons.quests.bonuses.${u}.style_3d`;
                             case 'collectionItem':
                                 return `R.images.gui.maps.icons.collectionItems.${o}.${r}`;
+                            case 'newYearAlbumsAccess':
+                                return `R.images.new_year.gui.maps.icons.newYear.rewards.${u}.albumsAccess`;
+                            case 'nyFillers':
+                                return `R.images.new_year.gui.maps.icons.newYear.rewards.${u}.fillers`;
+                            case 'nyToyFragments':
+                                return `R.images.new_year.gui.maps.icons.newYear.rewards.${u}.shards`;
+                            case 'newYearSlot':
+                                return `R.images.new_year.gui.maps.icons.newYear.rewards.${u}.slot`;
                             default:
                                 return `R.images.gui.maps.icons.quests.bonuses.${u}.${t}`;
                         }

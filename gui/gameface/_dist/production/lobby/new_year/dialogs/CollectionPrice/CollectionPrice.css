@@ -1,0 +1,69 @@
+.Shards_base_47 {
+    display: flex;
+    align-items: center;
+}
+
+.Shards_base__reverse_85 {
+    flex-direction: row-reverse;
+}
+
+.Shards_value_c9 {
+    color: #f2f2f7;
+    font-size: 14rem;
+    font-weight: 700;
+}
+
+.Shards_value__notEnough_73 {
+    color: #942929;
+}
+
+.Shards_icon_23 {
+    background: no-repeat center / contain;
+}
+
+.Shards_icon__small_cd {
+    width: 24rem;
+    height: 24rem;
+    background-image: url('R.images.new_year.gui.maps.icons.newYear.shards.c_24x24');
+}
+
+.Shards_icon__big_07 {
+    width: 32rem;
+    height: 32rem;
+    background-image: url('R.images.new_year.gui.maps.icons.newYear.shards.c_32x32');
+}
+
+.Shards_icon__large_f1 {
+    width: 64rem;
+    height: 64rem;
+    background-image: url('R.images.new_year.gui.maps.icons.newYear.shards.c_64x64');
+}
+
+.Shards_icon__notEnough_fb {
+    opacity: 0.5;
+}
+
+.App_base_55 {
+    color: #c9c9b6;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* needed for specificity in subview*/
+
+.App_base_55 .App_shardsValue_4e {
+    color: #ffffff;
+    font-size: 22rem;
+    font-weight: 700;
+    line-height: 1.2;
+    position: relative;
+    top: -3rem;
+}
+
+.App_shards_bc {
+    margin-left: 5rem;
+}

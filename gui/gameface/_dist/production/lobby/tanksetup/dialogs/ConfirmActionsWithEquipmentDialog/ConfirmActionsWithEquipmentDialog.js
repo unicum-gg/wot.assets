@@ -1327,19 +1327,19 @@
                         },
                     ),
                     q = 'Alert_alert_66',
-                    z = 'Alert_icon_ea',
-                    X = 'Alert_alertText_14',
-                    j = ({ alertText: u, className: e }) =>
+                    X = 'Alert_icon_ea',
+                    z = 'Alert_alertText_14',
+                    Y = ({ alertText: u, className: e }) =>
                         r().createElement(
                             'div',
                             { className: F()(q, e) },
-                            r().createElement('i', { className: z }),
-                            r().createElement('span', { className: X }, u),
+                            r().createElement('i', { className: X }),
+                            r().createElement('span', { className: z }, u),
                         );
-                let Y, $, K;
+                let j, $, K;
                 !(function (u) {
                     (u.small = 'small'), (u.big = 'big'), (u.large = 'large'), (u.extraLarge = 'extraLarge');
-                })(Y || (Y = {})),
+                })(j || (j = {})),
                     (function (u) {
                         (u.credits = 'credits'),
                             (u.gold = 'gold'),
@@ -1351,14 +1351,16 @@
                     (function (u) {
                         (u.Red = 'RedActionBG'), (u.Blue = 'BlueActionBG');
                     })(K || (K = {}));
-                const Q = ({ format: u, value: e }) => {
-                    const t = ((u, e = 'integral') => {
-                        let t;
-                        t = 'gold' === e ? l.B3.GOLD : l.B3.INTEGRAL;
-                        return void 0 === u ? '' : l.Z5.getNumberFormat(u, t);
-                    })(e, u);
-                    return t ? r().createElement('span', null, t) : null;
-                };
+                class Q extends r().PureComponent {
+                    render() {
+                        let u;
+                        if ('gold' === this.props.format) u = l.B3.GOLD;
+                        else u = l.B3.INTEGRAL;
+                        const e = l.Z5.getNumberFormat(this.props.value, u);
+                        return void 0 !== this.props.value && void 0 !== e ? e : null;
+                    }
+                }
+                Q.defaultProps = { format: 'integral' };
                 function Z(u, e) {
                     return Array.isArray(u) ? u.map(e) : u.map((u, t, n) => e(null == u ? void 0 : u.value, t, n));
                 }
@@ -1441,6 +1443,7 @@
                         (u.TankmenXpFactor = 'tankmenXPFactor'),
                         (u.FreeXpFactor = 'freeXPFactor'),
                         (u.BattleToken = 'battleToken'),
+                        (u.Entitlements = 'entitlements'),
                         (u.PremiumUniversal = 'premium_universal'),
                         (u.Gold = 'gold'),
                         (u.Credits = 'credits'),
@@ -1460,7 +1463,7 @@
                         (u.NewYearAlbumsAccess = 'newYearAlbumsAccess'),
                         (u.NewYearFillers = 'ny22Fillers'),
                         (u.NewYearInvoice = 'newYearInvoice'),
-                        (u.NewYearToyFragments = 'ny22ToyFragments'),
+                        (u.NewYearToyFragments = 'nyToyFragments'),
                         (u.NewYearSlot = 'newYearSlot'),
                         (u.BonusX5 = 'battle_bonus_x5'),
                         (u.CrewBonusX3 = 'crew_bonus_x3'),
@@ -1472,11 +1475,7 @@
                         (u.BattleBoosterGift = 'battleBooster_gift'),
                         (u.CosmicLootboxSilver = 'lootBoxToken'),
                         (u.CosmicLootboxCommon = 'cosmic_2024_2'),
-                        (u.WtStamp = 'stamp'),
-                        (u.WtHunter = 'wt_hunter'),
-                        (u.WtHunterCollection = 'hunter_collection'),
-                        (u.WtTicket = 'wtevent_ticket'),
-                        (u.WtMainPrizeDiscount = 'main_prize_discount');
+                        (u.LootBoxToken = 'lootBoxToken');
                 })(eu || (eu = {})),
                     (function (u) {
                         (u.Gold = 'gold'),
@@ -1986,7 +1985,7 @@
                                         classMix: null == l ? void 0 : l.additionalText,
                                     }),
                             ),
-                            _ && r().createElement(j, { className: null == l ? void 0 : l.alert, alertText: o }),
+                            _ && r().createElement(Y, { className: null == l ? void 0 : l.alert, alertText: o }),
                         ),
                     Pu = 'Content_base_a7',
                     Tu = 'Content_currency_4f',
@@ -2007,7 +2006,7 @@
                             r().createElement(Nu, {
                                 price: e,
                                 type: t,
-                                size: Y.small,
+                                size: j.small,
                                 priceBlockText: a,
                                 alertText: s,
                                 showAlertMessage: !0,
@@ -2244,8 +2243,8 @@
                         qu.apply(this, arguments)
                     );
                 }
-                const zu = R.views.common.tooltip_window.simple_tooltip_content,
-                    Xu = (u) => {
+                const Xu = R.views.common.tooltip_window.simple_tooltip_content,
+                    zu = (u) => {
                         let e = u.children,
                             t = u.body,
                             i = u.header,
@@ -2272,7 +2271,7 @@
                                 {
                                     contentId:
                                         ((_ = null == o ? void 0 : o.hasHtmlContent),
-                                        _ ? zu.SimpleTooltipHtmlContent('resId') : zu.SimpleTooltipContent('resId')),
+                                        _ ? Xu.SimpleTooltipHtmlContent('resId') : Xu.SimpleTooltipContent('resId')),
                                     decoratorId: R.views.common.tooltip_window.tooltip_window.TooltipWindow('resId'),
                                     args: l,
                                 },
@@ -2282,9 +2281,9 @@
                         );
                         var _;
                     };
-                function ju() {
+                function Yu() {
                     return (
-                        (ju =
+                        (Yu =
                             Object.assign ||
                             function (u) {
                                 for (var e = 1; e < arguments.length; e++) {
@@ -2293,18 +2292,18 @@
                                 }
                                 return u;
                             }),
-                        ju.apply(this, arguments)
+                        Yu.apply(this, arguments)
                     );
                 }
-                const Yu = ({ children: u, tooltipArgs: e, className: t }) => {
+                const ju = ({ children: u, tooltipArgs: e, className: t }) => {
                         if (!e) return u;
                         const n = r().createElement('div', { className: t }, u);
-                        if (e.header || e.body) return r().createElement(Xu, e, n);
+                        if (e.header || e.body) return r().createElement(zu, e, n);
                         const i = e.contentId,
                             s = e.args,
                             a = null == s ? void 0 : s.contentId;
                         return i || a
-                            ? r().createElement(Uu, ju({}, e, { contentId: i || a }), n)
+                            ? r().createElement(Uu, Yu({}, e, { contentId: i || a }), n)
                             : r().createElement(Wu, e, n);
                     },
                     $u =
@@ -2326,6 +2325,7 @@
                         eu.TankmenXpFactor,
                         eu.FreeXpFactor,
                         eu.BattleToken,
+                        eu.Entitlements,
                         eu.PremiumUniversal,
                         eu.NaturalCover,
                         eu.BpCoin,
@@ -2340,18 +2340,15 @@
                         eu.Comp7TokenWeeklyReward,
                         eu.Comp7TokenCouponReward,
                         eu.BattleBoosterGift,
-                        eu.CosmicLootboxCommon,
-                        eu.CosmicLootboxSilver,
+                        eu.NewYearFillers,
+                        eu.NewYearInvoice,
+                        eu.LootBoxToken,
                         eu.SelectableBonus,
-                        eu.WtStamp,
-                        eu.WtTicket,
-                        eu.WtMainPrizeDiscount,
-                        eu.WtHunter,
-                        eu.WtHunterCollection,
                         eu.Gold,
                         eu.Credits,
                         eu.Crystal,
                         eu.FreeXp,
+                        eu.NewYearToyFragments,
                         eu.BattlePassPoints,
                         eu.PremiumPlus,
                         eu.Premium,
@@ -2455,7 +2452,7 @@
                             'div',
                             { className: F()($u.base, $u[`base__${n}`], c), style: o },
                             r().createElement(
-                                Yu,
+                                ju,
                                 { tooltipArgs: _, className: $u.tooltipWrapper },
                                 r().createElement(
                                     r().Fragment,
@@ -2500,7 +2497,7 @@
                             ),
                             t &&
                                 r().createElement(
-                                    Yu,
+                                    ju,
                                     { tooltipArgs: E },
                                     r().createElement('div', {
                                         className: F()($u.timer, null == l ? void 0 : l.periodicIcon),
@@ -2708,7 +2705,7 @@
                                 }),
                             ),
                             r().createElement(
-                                Xu,
+                                zu,
                                 { isEnabled: s, body: u },
                                 r().createElement('div', { ref: t, className: F()(re, e) }, u),
                             )
@@ -2773,7 +2770,7 @@
                                 r().createElement(Nu, {
                                     price: u,
                                     type: o,
-                                    size: Y.big,
+                                    size: j.big,
                                     priceBlockText: c,
                                     className: le.column,
                                     classNames: { currency: le.currency },
@@ -3326,7 +3323,7 @@
                                     r().createElement(Nu, {
                                         price: me(u, o),
                                         type: l,
-                                        size: Y.big,
+                                        size: j.big,
                                         classNames: { currency: de.currency, alert: de.alert },
                                     }),
                                 ),
@@ -3420,7 +3417,7 @@
                             content:
                                 a.DeconstructFromSlots !== o
                                     ? r().createElement(ku, null)
-                                    : r().createElement(j, { alertText: l }),
+                                    : r().createElement(Y, { alertText: l }),
                             buttons: r().createElement(he, null),
                             displayFlags: n,
                             classMix: Ne,

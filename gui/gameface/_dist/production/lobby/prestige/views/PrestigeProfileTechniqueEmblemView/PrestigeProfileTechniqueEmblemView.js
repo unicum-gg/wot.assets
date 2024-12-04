@@ -978,15 +978,13 @@
                         return l().createElement(
                             'div',
                             { className: o()(v.base, v[`base__${n}`]) },
-                            e
-                                .split('')
-                                .map((e, t) =>
-                                    l().createElement('div', {
-                                        key: t,
-                                        className: o()(v.letter, v[`letter__s${e}`]),
-                                        style: { backgroundImage: `url(${s}.c_${e})` },
-                                    }),
-                                ),
+                            e.split('').map((e, t) =>
+                                l().createElement('div', {
+                                    key: t,
+                                    className: o()(v.letter, v[`letter__s${e}`]),
+                                    style: { backgroundImage: `url(${s}.c_${e})` },
+                                }),
+                            ),
                         );
                     },
                     b = {

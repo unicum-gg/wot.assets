@@ -163,13 +163,13 @@
                         getBrowserTexturePath: () => o,
                         getDisplayStatus: () => h,
                         getScale: () => _,
-                        getSize: () => a,
+                        getSize: () => s,
                         getViewGlobalPosition: () => C,
                         isEventHandled: () => w,
                         isFocused: () => m,
                         pxToRem: () => l,
                         remToPx: () => d,
-                        resize: () => s,
+                        resize: () => a,
                         sendEvent: () => D.qP,
                         setAnimateWindow: () => p,
                         setEventHandled: () => v,
@@ -196,10 +196,10 @@
                 function i(u) {
                     viewEnv.setHitAreaPaddingsRem(u.top, u.right, u.bottom, u.left, 15);
                 }
-                function a(u = 'px') {
+                function s(u = 'px') {
                     return 'rem' === u ? viewEnv.getViewSizeRem() : viewEnv.getViewSizePx();
                 }
-                function s(u, e, E = 'px') {
+                function a(u, e, E = 'px') {
                     return 'rem' === E ? viewEnv.resizeViewRem(u, e) : viewEnv.resizeViewPx(u, e);
                 }
                 function C(u = 'rem') {
@@ -561,8 +561,8 @@
                 const o = Object.freeze({ INTEGRAL: 0, GOLD: 1 }),
                     B = Object.freeze({ FRACTIONAL: 0, WO_ZERO_DIGITS: 1 }),
                     i = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1 }),
-                    a = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1, YEAR_MONTH: 2 });
-                var s = E(5521),
+                    s = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1, YEAR_MONTH: 2 });
+                var a = E(5521),
                     C = E(3138);
                 const c = ['args'];
                 function _(u, e, E, A, F, t, D) {
@@ -644,7 +644,7 @@
                     },
                     m = () => p(r.CLOSE),
                     v = (u, e) => {
-                        u.keyCode === s.n.ESCAPE && e();
+                        u.keyCode === a.n.ESCAPE && e();
                     };
                 var w = E(7572);
                 const g = F.instance,
@@ -655,7 +655,7 @@
                         NumberFormatType: o,
                         RealFormatType: B,
                         TimeFormatType: i,
-                        DateFormatType: a,
+                        DateFormatType: s,
                         makeGlobalBoundingBox: l,
                         sendMoveEvent: (u) => p(r.MOVE, { isMouseEvent: !0, on: u }),
                         sendCloseEvent: m,
@@ -669,12 +669,12 @@
                                 o = n.x,
                                 B = n.y,
                                 i = n.width,
-                                a = n.height,
-                                s = {
+                                s = n.height,
+                                a = {
                                     x: C.O.view.pxToRem(o) + D.x,
                                     y: C.O.view.pxToRem(B) + D.y,
                                     width: C.O.view.pxToRem(i),
-                                    height: C.O.view.pxToRem(a),
+                                    height: C.O.view.pxToRem(s),
                                 };
                             p(r.POP_OVER, {
                                 isMouseEvent: !0,
@@ -682,7 +682,7 @@
                                 decoratorID: A || R.invalid('resId'),
                                 targetID: F,
                                 direction: e,
-                                bbox: l(s),
+                                bbox: l(a),
                                 on: !0,
                                 args: t,
                             });
@@ -774,10 +774,10 @@
                         'base__theme-default': 'TooltipDecorator_base__theme-default_6d',
                         decorator: 'TooltipDecorator_decorator_3d',
                     },
-                    a = ['children', 'className', 'theme'];
-                function s() {
+                    s = ['children', 'className', 'theme'];
+                function a() {
                     return (
-                        (s =
+                        (a =
                             Object.assign ||
                             function (u) {
                                 for (var e = 1; e < arguments.length; e++) {
@@ -786,7 +786,7 @@
                                 }
                                 return u;
                             }),
-                        s.apply(this, arguments)
+                        a.apply(this, arguments)
                     );
                 }
                 const C = F().forwardRef(function (u, e) {
@@ -802,7 +802,7 @@
                                 t = Object.keys(u);
                             for (A = 0; A < t.length; A++) (E = t[A]), e.indexOf(E) >= 0 || (F[E] = u[E]);
                             return F;
-                        })(u, a);
+                        })(u, s);
                     const c = B(),
                         _ = F().useRef(null);
                     var l;
@@ -826,7 +826,7 @@
                         (0, A.useEffect)(l, []),
                         F().createElement(
                             'div',
-                            s({}, C, {
+                            a({}, C, {
                                 className: r()(i.base, i[`base__theme-${n}`], t),
                                 ref: function (u) {
                                     (_.current = u), 'function' == typeof e ? e(u) : e && (e.current = u);
@@ -837,18 +837,20 @@
                     );
                 });
                 var c = E(4179);
-                const _ = ({ format: u, value: e }) => {
-                    const E = ((u, e = 'integral') => {
-                        let E;
-                        E = 'gold' === e ? c.B3.GOLD : c.B3.INTEGRAL;
-                        return void 0 === u ? '' : c.Z5.getNumberFormat(u, E);
-                    })(e, u);
-                    return E ? F().createElement('span', null, E) : null;
-                };
+                class _ extends F().PureComponent {
+                    render() {
+                        let u;
+                        if ('gold' === this.props.format) u = c.B3.GOLD;
+                        else u = c.B3.INTEGRAL;
+                        const e = c.Z5.getNumberFormat(this.props.value, u);
+                        return void 0 !== this.props.value && void 0 !== e ? e : null;
+                    }
+                }
                 let l;
-                !(function (u) {
-                    (u[(u.left = 0)] = 'left'), (u[(u.right = 1)] = 'right');
-                })(l || (l = {}));
+                (_.defaultProps = { format: 'integral' }),
+                    (function (u) {
+                        (u[(u.left = 0)] = 'left'), (u[(u.right = 1)] = 'right');
+                    })(l || (l = {}));
                 const d = (u, e, E) => {
                         if (E % 2) {
                             const E = u.pop();
@@ -939,20 +941,20 @@
                         e.current || (u(), (e.current = !0));
                     },
                     O = (u) => u && 'ArrayItem' === u.__proto__.constructor.name,
-                    S = (u, e) => (u.length > 0 ? `${u}.${e}` : e),
-                    y = (u) =>
+                    y = (u, e) => (u.length > 0 ? `${u}.${e}` : e),
+                    S = (u) =>
                         ((u, e) =>
                             u.split('.').reduce((u, E) => {
                                 const A = P(`${u}.${E}`, window);
                                 return O(A) ? e(u, E, A) : `${u}.${E}`;
                             }))(u, (u, e) => `${u}.${e}.value`),
-                    k = (u) => {
+                    x = (u) => {
                         const e = ((u) => {
                                 const e = f(),
                                     E = e.caller,
                                     A = e.resId,
                                     F = window.__feature && window.__feature !== E && E ? `subViews.${E}` : '';
-                                return { modelPrefix: F, modelPath: S(F, u || ''), resId: A };
+                                return { modelPrefix: F, modelPath: y(F, u || ''), resId: A };
                             })(),
                             E = e.modelPrefix,
                             A = u.split('.');
@@ -960,7 +962,7 @@
                             const u = [A[0]];
                             return (
                                 A.reduce((e, A) => {
-                                    const F = P(S(E, `${e}.${A}`), window);
+                                    const F = P(y(E, `${e}.${A}`), window);
                                     return O(F) ? (u.push(F.id), `${e}.${A}.value`) : (u.push(A), `${e}.${A}`);
                                 }),
                                 u.reduce((u, e) => u + '.' + e)
@@ -968,7 +970,7 @@
                         }
                         return '';
                     },
-                    x = c.Sw.instance;
+                    k = c.Sw.instance;
                 let M;
                 !(function (u) {
                     (u.None = 'None'), (u.Shallow = 'Shallow'), (u.Deep = 'Deep');
@@ -988,11 +990,11 @@
                                 const e = P(u, window);
                                 for (const u in e) 'function' == typeof e[u] && (e[u] = e[u].bind(e));
                                 return O(e) ? e.value : e;
-                            })(y(r)),
+                            })(S(r)),
                         ),
                         B = o[0],
                         i = o[1],
-                        a = (0, A.useRef)(-1);
+                        s = (0, A.useRef)(-1);
                     return (
                         T(() => {
                             if (
@@ -1009,20 +1011,20 @@
                                             ? (u === B && F((u) => u + 1), i(u))
                                             : i(Object.assign([], u));
                                     },
-                                    A = k(u);
-                                a.current = x.addCallback(A, E, n, e === M.Deep);
+                                    A = x(u);
+                                s.current = k.addCallback(A, E, n, e === M.Deep);
                             }
                         }),
                         (0, A.useEffect)(() => {
                             if (e !== M.None)
                                 return () => {
-                                    x.removeCallback(a.current, n);
+                                    k.removeCallback(s.current, n);
                                 };
                         }, [n, e]),
                         B
                     );
                 };
-                let L, U, I, G, V, W, q;
+                let L, U, I, G, V, q, W;
                 !(function (u) {
                     (u.Items = 'items'),
                         (u.Equipment = 'equipment'),
@@ -1043,6 +1045,7 @@
                         (u.TankmenXpFactor = 'tankmenXPFactor'),
                         (u.FreeXpFactor = 'freeXPFactor'),
                         (u.BattleToken = 'battleToken'),
+                        (u.Entitlements = 'entitlements'),
                         (u.PremiumUniversal = 'premium_universal'),
                         (u.Gold = 'gold'),
                         (u.Credits = 'credits'),
@@ -1062,7 +1065,7 @@
                         (u.NewYearAlbumsAccess = 'newYearAlbumsAccess'),
                         (u.NewYearFillers = 'ny22Fillers'),
                         (u.NewYearInvoice = 'newYearInvoice'),
-                        (u.NewYearToyFragments = 'ny22ToyFragments'),
+                        (u.NewYearToyFragments = 'nyToyFragments'),
                         (u.NewYearSlot = 'newYearSlot'),
                         (u.BonusX5 = 'battle_bonus_x5'),
                         (u.CrewBonusX3 = 'crew_bonus_x3'),
@@ -1074,11 +1077,7 @@
                         (u.BattleBoosterGift = 'battleBooster_gift'),
                         (u.CosmicLootboxSilver = 'lootBoxToken'),
                         (u.CosmicLootboxCommon = 'cosmic_2024_2'),
-                        (u.WtStamp = 'stamp'),
-                        (u.WtHunter = 'wt_hunter'),
-                        (u.WtHunterCollection = 'hunter_collection'),
-                        (u.WtTicket = 'wtevent_ticket'),
-                        (u.WtMainPrizeDiscount = 'main_prize_discount');
+                        (u.LootBoxToken = 'lootBoxToken');
                 })(L || (L = {})),
                     (function (u) {
                         (u.Gold = 'gold'),
@@ -1156,7 +1155,7 @@
                     })(V || (V = {})),
                     (function (u) {
                         u.BATTLE_BOOSTER = 'battleBooster';
-                    })(W || (W = {})),
+                    })(q || (q = {})),
                     (function (u) {
                         (u.BATTLE_BOOSTER = 'battleBooster'),
                             (u.BATTLE_BOOSTER_REPLACE = 'battleBoosterReplace'),
@@ -1171,7 +1170,7 @@
                             (u.PROGRESSION_STYLE_UPGRADED_2 = 'progressionStyleUpgraded_2'),
                             (u.PROGRESSION_STYLE_UPGRADED_3 = 'progressionStyleUpgraded_3'),
                             (u.PROGRESSION_STYLE_UPGRADED_4 = 'progressionStyleUpgraded_4');
-                    })(q || (q = {}));
+                    })(W || (W = {}));
                 const z = {
                         base: 'Content_base_4a',
                         content: 'Content_content_3e',

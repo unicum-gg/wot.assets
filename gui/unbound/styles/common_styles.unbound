@@ -1,3 +1,8 @@
+(def macro FullSize()
+    (width = 100%)
+    (height = 100%)
+)
+
 (def macro AbsPositionFullSize()
     (position = "absolute")
     (width = 100%)
@@ -6,6 +11,10 @@
 
 (def css AbsPositionFullSizeStyle() 
     (macro AbsPositionFullSize)
+)
+
+(def css FullSizeStyle() 
+    (macro FullSize)
 )
 
 (def css AbsPositionCenterStyle()
@@ -28,4 +37,13 @@
 
 (def css OffFilterStyle()
     (filters)
+)
+
+(def macro ViewResizeBindedSize(dX:expression=0, dY:expression=0)
+    (bind width "viewSize.width + dX" 
+        (event "viewResized")
+    )
+    (bind height "viewSize.height + dY" 
+        (event "viewResized")
+    )
 )

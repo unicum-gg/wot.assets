@@ -701,7 +701,7 @@
                     };
                 window.ViewEnvHelper = b;
             },
-            8528: (u, e, t) => {
+            8465: (u, e, t) => {
                 var n = t(6179),
                     r = t.n(n);
                 const a = (u, e, t) =>
@@ -1530,7 +1530,7 @@
                 Date.now();
                 w.Sw.instance;
                 var eu = t(5521);
-                let tu, nu, ru;
+                let tu, nu, ru, au;
                 !(function (u) {
                     (u.small = 'small'), (u.big = 'big'), (u.large = 'large'), (u.extraLarge = 'extraLarge');
                 })(tu || (tu = {})),
@@ -1545,18 +1545,19 @@
                     (function (u) {
                         (u.Red = 'RedActionBG'), (u.Blue = 'BlueActionBG');
                     })(ru || (ru = {}));
-                const au = ({ format: u, value: e }) => {
-                    const t = ((u, e = 'integral') => {
-                        let t;
-                        t = 'gold' === e ? w.B3.GOLD : w.B3.INTEGRAL;
-                        return void 0 === u ? '' : w.Z5.getNumberFormat(u, t);
-                    })(e, u);
-                    return t ? r().createElement('span', null, t) : null;
-                };
-                let iu;
-                !(function (u) {
-                    (u.backport = 'backport'), (u.normal = 'normal'), (u.absent = 'absent');
-                })(iu || (iu = {}));
+                class iu extends r().PureComponent {
+                    render() {
+                        let u;
+                        if ('gold' === this.props.format) u = w.B3.GOLD;
+                        else u = w.B3.INTEGRAL;
+                        const e = w.Z5.getNumberFormat(this.props.value, u);
+                        return void 0 !== this.props.value && void 0 !== e ? e : null;
+                    }
+                }
+                (iu.defaultProps = { format: 'integral' }),
+                    (function (u) {
+                        (u.backport = 'backport'), (u.normal = 'normal'), (u.absent = 'absent');
+                    })(au || (au = {}));
                 const ou = {
                         currency: 'CurrencyItem_currency_b6',
                         currency__credits: 'CurrencyItem_currency__credits_eb',
@@ -1568,17 +1569,17 @@
                         const a = e === nu.gold ? 'gold' : 'integral',
                             i = (0, n.useMemo)(() => {
                                 return (
-                                    (u = iu.backport),
+                                    (u = au.backport),
                                     (t = { currency: e }),
                                     {
-                                        isEnabled: u !== iu.absent,
+                                        isEnabled: u !== au.absent,
                                         args: t,
                                         contentId: R.views.dialogs.common.DialogTemplateGenericTooltip('resId'),
                                         decoratorId:
-                                            u === iu.normal
+                                            u === au.normal
                                                 ? R.views.common.tooltip_window.tooltip_window.TooltipWindow('resId')
                                                 : void 0,
-                                        ignoreShowDelay: u === iu.backport,
+                                        ignoreShowDelay: u === au.backport,
                                         ignoreMouseClick: !0,
                                     }
                                 );
@@ -1590,7 +1591,7 @@
                             r().createElement(
                                 'span',
                                 { className: P()(ou.currency, ou[`currency__${e}`]) },
-                                t ? r().createElement(au, { value: u, format: a }) : R.strings.common.common.dashes(),
+                                t ? r().createElement(iu, { value: u, format: a }) : R.strings.common.common.dashes(),
                             ),
                         );
                     },
@@ -1937,7 +1938,7 @@
                                 'span',
                                 { className: c },
                                 A,
-                                r().createElement(au, { value: i, format: n === nu.gold ? 'gold' : 'integral' }),
+                                r().createElement(iu, { value: i, format: n === nu.gold ? 'gold' : 'integral' }),
                             ),
                             r().createElement('span', { className: _ }),
                             u &&
@@ -2093,6 +2094,6 @@
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             t.forEach(e.bind(null, 0)), (t.push = e.bind(null, t.push.bind(t)));
         })();
-    var __webpack_exports__ = __webpack_require__.O(void 0, [428], () => __webpack_require__(8528));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [428], () => __webpack_require__(8465));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

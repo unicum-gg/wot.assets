@@ -76,14 +76,16 @@
                 var n = t(6179),
                     r = t.n(n),
                     a = t(4179);
-                const o = ({ format: e, value: u }) => {
-                    const t = ((e, u = 'integral') => {
-                        let t;
-                        t = 'gold' === u ? a.B3.GOLD : a.B3.INTEGRAL;
-                        return void 0 === e ? '' : a.Z5.getNumberFormat(e, t);
-                    })(u, e);
-                    return t ? r().createElement('span', null, t) : null;
-                };
+                class o extends r().PureComponent {
+                    render() {
+                        let e;
+                        if ('gold' === this.props.format) e = a.B3.GOLD;
+                        else e = a.B3.INTEGRAL;
+                        const u = a.Z5.getNumberFormat(this.props.value, e);
+                        return void 0 !== this.props.value && void 0 !== u ? u : null;
+                    }
+                }
+                o.defaultProps = { format: 'integral' };
             },
             926: (e) => {
                 e.exports = {
@@ -2157,11 +2159,11 @@
                             o().createElement(He, { getStepByRailClick: l, api: u, onDrag: c, classNames: E }),
                         );
                     },
-                    ze = ({ api: e, className: u, classNames: t, children: n }) => (
+                    ze = ({ api: e, className: u, classNames: t, children: n, style: r }) => (
                         (0, a.useEffect)(() => (0, de.v)(e.recalculateContent)),
                         o().createElement(
                             'div',
-                            { className: f()(We.base, u) },
+                            { className: f()(We.base, u), style: r },
                             o().createElement(
                                 'div',
                                 {

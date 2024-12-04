@@ -1002,15 +1002,13 @@
                         return s().createElement(
                             'div',
                             { className: a()(D.base, D[`base__${t}`]) },
-                            u
-                                .split('')
-                                .map((u, e) =>
-                                    s().createElement('div', {
-                                        key: e,
-                                        className: a()(D.letter, D[`letter__s${u}`]),
-                                        style: { backgroundImage: `url(${o}.c_${u})` },
-                                    }),
-                                ),
+                            u.split('').map((u, e) =>
+                                s().createElement('div', {
+                                    key: e,
+                                    className: a()(D.letter, D[`letter__s${u}`]),
+                                    style: { backgroundImage: `url(${o}.c_${u})` },
+                                }),
+                            ),
                         );
                     },
                     c = {

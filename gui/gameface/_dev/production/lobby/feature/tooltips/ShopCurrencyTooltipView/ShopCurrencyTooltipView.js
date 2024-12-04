@@ -462,7 +462,7 @@
                 /**
                  * Use useMedia hook from 'lib/hooks/useMedia' directly in your react components
                  *
-                 * Usage and tech doc: https://confluence.wargaming.net/pages/viewpage.action?pageId=1583255544
+                 * Usage and tech doc: https://confluence.lesta.group/pages/viewpage.action?pageId=1923252276
                  *
                  * @deprecated
                  */
@@ -2774,7 +2774,7 @@
                  * - %(XXXStart)sTEXT%(XXXEnd)s
                  * - {XXX_Open}TEXT{XXX_Close}
                  *
-                 * Reference (look for point 4.1): https://confluence.wargaming.net/pages/viewpage.action?pageId=1072723320
+                 * Reference (look for poinhttps://confluence.lesta.group/pages/viewpage.action?pageId=204006960172723320
                  **/
 
                 const TAGGED_PHRASE_REGEXP =

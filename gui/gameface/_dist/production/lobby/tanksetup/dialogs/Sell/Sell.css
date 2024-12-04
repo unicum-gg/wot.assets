@@ -986,7 +986,7 @@
 .CButton_base__disabled_d9 {
     cursor: default;
 }
-/* Element .back and background-image in element .base need for fix bug in GF https://jira.wargaming.net/browse/WOTD-158525
+/* Element .back and background-image in element .base need for fix bug in GF https://jira-archive.lesta.group/browse/WOTD-158525
 The bug is that under certain conditions, when using border-image, stripes appear. Strip is a single-pixel gap
 between 'border-image-width' and 'fill'.
 This bug is reproduced in Google Chrome 81.0.4044.113

@@ -65,7 +65,7 @@
 .CButton_base__disabled_d9 {
     cursor: default;
 }
-/* Element .back and background-image in element .base need for fix bug in GF https://jira.wargaming.net/browse/WOTD-158525
+/* Element .back and background-image in element .base need for fix bug in GF https://jira-archive.lesta.group/browse/WOTD-158525
 The bug is that under certain conditions, when using border-image, stripes appear. Strip is a single-pixel gap
 between 'border-image-width' and 'fill'.
 This bug is reproduced in Google Chrome 81.0.4044.113
@@ -402,13 +402,13 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .Counter_base__big_19 {
-    min-width: 21rem;
-    height: 21rem;
+    min-width: 20rem;
+    height: 20rem;
 }
 
 .Counter_base__small_3b {
-    min-width: 13rem;
-    height: 13rem;
+    min-width: 9rem;
+    height: 9rem;
 }
 
 .Counter_base__empty_98 {
@@ -425,11 +425,11 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 .Counter_bg_74 {
     border: 1rem solid #fe4e0f;
-    border-radius: 7rem;
+    border-radius: 10rem;
     box-shadow:
         0 0 0 1rem rgba(0, 0, 0, 0.3),
-        0 0 6rem rgba(254, 103, 0, 0.2),
-        0 0 12rem 4rem rgba(249, 0, 0, 0.3);
+        0 0 9rem rgba(254, 103, 0, 0.2),
+        0 0 12rem 7rem rgba(249, 0, 0, 0.3);
     background-image: url('R.images.gui.maps.icons.components.counter.pattern');
     position: absolute;
     top: 0;
@@ -446,26 +446,26 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 .Counter_value_3e {
     display: flex;
-    padding: 0 4rem;
-    color: #fefeec;
+    padding: 0 5rem;
+    color: #f2f2f7;
     font-size: 11rem;
     line-height: 13rem;
     white-space: nowrap;
 }
 .Counter_base__big_19 .Counter_value_3e {
     padding: 0 7rem;
-    font-size: 14rem;
-    line-height: 20rem;
+    font-size: 16rem;
+    line-height: 17rem;
 }
 .Counter_base__small_3b .Counter_value_3e {
     font-size: 9rem;
-    line-height: 12rem;
+    line-height: 8rem;
 }
 .Counter_value__text_d6 {
-    padding: 0 7rem;
+    padding: 0 5rem;
 }
 .Counter_base__big_19 .Counter_value__text_d6 {
-    padding: 0 10rem;
+    padding: 0 7rem;
 }
 .Counter_base__small_3b .Counter_value__text_d6 {
     padding: 0 5rem;
@@ -522,7 +522,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     cursor: pointer;
 }
 
-/* These values were calculated by a script: https://jira.wargaming.net/browse/WOTPRG-3306 */
+/* These values were calculated by a script: https://jira-archive.lesta.group/browse/WOTPRG-3306 */
 
 @media (min-width: 1366px) and (min-height: 744px) and (max-width: 2046px) and (max-height: 1429px),
     (min-width: 2732px) and (min-height: 1488px) and (max-width: 4094px) and (max-height: 2965px),
@@ -597,7 +597,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     /* max-width in px is needed here to work well with interface scaling. This is way simpler and faster than using MediaQuery component everywhere. */
 }
 
-/* These values were calculated by a script: https://jira.wargaming.net/browse/WOTPRG-3306 */
+/* These values were calculated by a script: https://jira-archive.lesta.group/browse/WOTPRG-3306 */
 
 @media (min-width: 1366px) and (min-height: 744px) and (max-width: 2046px) and (max-height: 1429px),
     (min-width: 2732px) and (min-height: 1488px) and (max-width: 4094px) and (max-height: 2965px),
@@ -674,7 +674,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     /* max-width in px is needed here to work well with interface scaling. This is way simpler and faster than using MediaQuery component everywhere. */
 }
 
-/* These values were calculated by a script: https://jira.wargaming.net/browse/WOTPRG-3306 */
+/* These values were calculated by a script: https://jira-archive.lesta.group/browse/WOTPRG-3306 */
 
 @media (min-width: 1366px) and (min-height: 744px) and (max-width: 2046px) and (max-height: 1429px),
     (min-width: 2732px) and (min-height: 1488px) and (max-width: 4094px) and (max-height: 2965px),
@@ -702,7 +702,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     /* max-width in px is needed here to work well with interface scaling. This is way simpler and faster than using MediaQuery component everywhere. */
 }
 
-/* These values were calculated by a script: https://jira.wargaming.net/browse/WOTPRG-3306 */
+/* These values were calculated by a script: https://jira-archive.lesta.group/browse/WOTPRG-3306 */
 
 @media (min-width: 1366px) and (min-height: 744px) and (max-width: 2046px) and (max-height: 1429px),
     (min-width: 2732px) and (min-height: 1488px) and (max-width: 4094px) and (max-height: 2965px),
@@ -731,7 +731,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     /* max-width in px is needed here to work well with interface scaling. This is way simpler and faster than using MediaQuery component everywhere. */
 }
 
-/* These values were calculated by a script: https://jira.wargaming.net/browse/WOTPRG-3306 */
+/* These values were calculated by a script: https://jira-archive.lesta.group/browse/WOTPRG-3306 */
 
 @media (min-width: 1366px) and (min-height: 744px) and (max-width: 2046px) and (max-height: 1429px),
     (min-width: 2732px) and (min-height: 1488px) and (max-width: 4094px) and (max-height: 2965px),
@@ -805,7 +805,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     /* max-width in px is needed here to work well with interface scaling. This is way simpler and faster than using MediaQuery component everywhere. */
 }
 
-/* These values were calculated by a script: https://jira.wargaming.net/browse/WOTPRG-3306 */
+/* These values were calculated by a script: https://jira-archive.lesta.group/browse/WOTPRG-3306 */
 
 @media (min-width: 1366px) and (min-height: 744px) and (max-width: 2046px) and (max-height: 1429px),
     (min-width: 2732px) and (min-height: 1488px) and (max-width: 4094px) and (max-height: 2965px),
@@ -1016,7 +1016,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     /* max-width in px is needed here to work well with interface scaling. This is way simpler and faster than using MediaQuery component everywhere. */
 }
 
-/* These values were calculated by a script: https://jira.wargaming.net/browse/WOTPRG-3306 */
+/* These values were calculated by a script: https://jira-archive.lesta.group/browse/WOTPRG-3306 */
 
 @media (min-width: 1920px) and (min-height: 924px) and (max-width: 2046px) and (max-height: 1429px),
     (min-width: 3840px) and (min-height: 1848px) and (max-width: 4094px) and (max-height: 2965px),
@@ -1244,7 +1244,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     /* max-width in px is needed here to work well with interface scaling. This is way simpler and faster than using MediaQuery component everywhere. */
 }
 
-/* These values were calculated by a script: https://jira.wargaming.net/browse/WOTPRG-3306 */
+/* These values were calculated by a script: https://jira-archive.lesta.group/browse/WOTPRG-3306 */
 
 @media (min-width: 1366px) and (min-height: 744px) and (max-width: 2046px) and (max-height: 1429px),
     (min-width: 2732px) and (min-height: 1488px) and (max-width: 4094px) and (max-height: 2965px),
@@ -1255,7 +1255,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     }
 }
 
-/* These values were calculated by a script: https://jira.wargaming.net/browse/WOTPRG-3306 */
+/* These values were calculated by a script: https://jira-archive.lesta.group/browse/WOTPRG-3306 */
 
 @media (min-width: 1920px) and (min-height: 924px) and (max-width: 2046px) and (max-height: 1429px),
     (min-width: 3840px) and (min-height: 1848px) and (max-width: 4094px) and (max-height: 2965px),
@@ -1291,7 +1291,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     /* max-width in px is needed here to work well with interface scaling. This is way simpler and faster than using MediaQuery component everywhere. */
 }
 
-/* These values were calculated by a script: https://jira.wargaming.net/browse/WOTPRG-3306 */
+/* These values were calculated by a script: https://jira-archive.lesta.group/browse/WOTPRG-3306 */
 
 @media (min-width: 1366px) and (min-height: 744px) and (max-width: 2046px) and (max-height: 1429px),
     (min-width: 2732px) and (min-height: 1488px) and (max-width: 4094px) and (max-height: 2965px),
@@ -1317,7 +1317,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     /* max-width in px is needed here to work well with interface scaling. This is way simpler and faster than using MediaQuery component everywhere. */
 }
 
-/* These values were calculated by a script: https://jira.wargaming.net/browse/WOTPRG-3306 */
+/* These values were calculated by a script: https://jira-archive.lesta.group/browse/WOTPRG-3306 */
 
 @media (min-width: 1366px) and (min-height: 744px) and (max-width: 2046px) and (max-height: 1429px),
     (min-width: 2732px) and (min-height: 1488px) and (max-width: 4094px) and (max-height: 2965px),
@@ -1328,7 +1328,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     }
 }
 
-/* These values were calculated by a script: https://jira.wargaming.net/browse/WOTPRG-3306 */
+/* These values were calculated by a script: https://jira-archive.lesta.group/browse/WOTPRG-3306 */
 
 @media (min-width: 1920px) and (min-height: 924px) and (max-width: 2046px) and (max-height: 1429px),
     (min-width: 3840px) and (min-height: 1848px) and (max-width: 4094px) and (max-height: 2965px),
@@ -1348,7 +1348,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     /* max-width in px is needed here to work well with interface scaling. This is way simpler and faster than using MediaQuery component everywhere. */
 }
 
-/* These values were calculated by a script: https://jira.wargaming.net/browse/WOTPRG-3306 */
+/* These values were calculated by a script: https://jira-archive.lesta.group/browse/WOTPRG-3306 */
 
 @media (min-width: 1920px) and (min-height: 924px) and (max-width: 2046px) and (max-height: 1429px),
     (min-width: 3840px) and (min-height: 1848px) and (max-width: 4094px) and (max-height: 2965px),
@@ -1370,7 +1370,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     /* max-width in px is needed here to work well with interface scaling. This is way simpler and faster than using MediaQuery component everywhere. */
 }
 
-/* These values were calculated by a script: https://jira.wargaming.net/browse/WOTPRG-3306 */
+/* These values were calculated by a script: https://jira-archive.lesta.group/browse/WOTPRG-3306 */
 
 @media (min-width: 1366px) and (min-height: 744px) and (max-width: 2046px) and (max-height: 1429px),
     (min-width: 2732px) and (min-height: 1488px) and (max-width: 4094px) and (max-height: 2965px),
@@ -1406,7 +1406,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     /* max-width in px is needed here to work well with interface scaling. This is way simpler and faster than using MediaQuery component everywhere. */
 }
 
-/* These values were calculated by a script: https://jira.wargaming.net/browse/WOTPRG-3306 */
+/* These values were calculated by a script: https://jira-archive.lesta.group/browse/WOTPRG-3306 */
 
 @media (min-width: 1366px) and (min-height: 744px) and (max-width: 2046px) and (max-height: 1429px),
     (min-width: 2732px) and (min-height: 1488px) and (max-width: 4094px) and (max-height: 2965px),
@@ -1444,7 +1444,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     /* max-width in px is needed here to work well with interface scaling. This is way simpler and faster than using MediaQuery component everywhere. */
 }
 
-/* These values were calculated by a script: https://jira.wargaming.net/browse/WOTPRG-3306 */
+/* These values were calculated by a script: https://jira-archive.lesta.group/browse/WOTPRG-3306 */
 
 @media (min-width: 1366px) and (min-height: 744px) and (max-width: 2046px) and (max-height: 1429px),
     (min-width: 2732px) and (min-height: 1488px) and (max-width: 4094px) and (max-height: 2965px),
@@ -1464,7 +1464,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     /* max-width in px is needed here to work well with interface scaling. This is way simpler and faster than using MediaQuery component everywhere. */
 }
 
-/* These values were calculated by a script: https://jira.wargaming.net/browse/WOTPRG-3306 */
+/* These values were calculated by a script: https://jira-archive.lesta.group/browse/WOTPRG-3306 */
 
 @media (min-width: 1366px) and (min-height: 744px) and (max-width: 2046px) and (max-height: 1429px),
     (min-width: 2732px) and (min-height: 1488px) and (max-width: 4094px) and (max-height: 2965px),
@@ -1517,7 +1517,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     /* max-width in px is needed here to work well with interface scaling. This is way simpler and faster than using MediaQuery component everywhere. */
 }
 
-/* These values were calculated by a script: https://jira.wargaming.net/browse/WOTPRG-3306 */
+/* These values were calculated by a script: https://jira-archive.lesta.group/browse/WOTPRG-3306 */
 
 @media (min-width: 1366px) and (min-height: 744px) and (max-width: 2046px) and (max-height: 1429px),
     (min-width: 2732px) and (min-height: 1488px) and (max-width: 4094px) and (max-height: 2965px),
@@ -1559,7 +1559,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     font-size: 24rem;
 }
 
-/* These values were calculated by a script: https://jira.wargaming.net/browse/WOTPRG-3306 */
+/* These values were calculated by a script: https://jira-archive.lesta.group/browse/WOTPRG-3306 */
 
 @media (min-width: 1366px) and (min-height: 744px) and (max-width: 2046px) and (max-height: 1429px),
     (min-width: 2732px) and (min-height: 1488px) and (max-width: 4094px) and (max-height: 2965px),
@@ -1958,30 +1958,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     in JS 8000 reserved like anchor for start optimization
 */
 /* stylelint-disable-line */
-.ProgressBarDeltaSimple_base_6c {
-    width: 0;
-    height: 100%;
-    position: absolute;
-    top: 0;
-}
-.ProgressBarDeltaSimple_delta_99 {
-    width: 0;
-    max-width: 8001px;
-    height: 100%;
-    box-shadow: var(--progress-delta-shadow);
-    background-color: var(--progress-delta-color);
-    position: absolute;
-    bottom: 0;
-    transform-origin: right center;
-    transition-timing-function: cubic-bezier(1, 0, 0.92, 1), cubic-bezier(0.21, 0.61, 0.35, 1);
-    transition-property: width, transform;
-}
-
-/*
-    Gameface can't calculate gradient biggest than 8128px
-    in JS 8000 reserved like anchor for start optimization
-*/
-/* stylelint-disable-line */
 .ProgressBarDeltaGrow_base_7e {
     width: 0;
     height: 100%;
@@ -2007,6 +1983,30 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 .ProgressBarDeltaGrow_base__withoutBounce_b5 .ProgressBarDeltaGrow_glow_68 {
     transition-timing-function: cubic-bezier(1, 0, 0.75, 0.75);
+}
+
+/*
+    Gameface can't calculate gradient biggest than 8128px
+    in JS 8000 reserved like anchor for start optimization
+*/
+/* stylelint-disable-line */
+.ProgressBarDeltaSimple_base_6c {
+    width: 0;
+    height: 100%;
+    position: absolute;
+    top: 0;
+}
+.ProgressBarDeltaSimple_delta_99 {
+    width: 0;
+    max-width: 8001px;
+    height: 100%;
+    box-shadow: var(--progress-delta-shadow);
+    background-color: var(--progress-delta-color);
+    position: absolute;
+    bottom: 0;
+    transform-origin: right center;
+    transition-timing-function: cubic-bezier(1, 0, 0.92, 1), cubic-bezier(0.21, 0.61, 0.35, 1);
+    transition-property: width, transform;
 }
 
 /* 240rem / 400rem * 110 in % (add 10% more, since the height of the dog tags container is 10% less than the width) */
@@ -2068,7 +2068,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     /* max-width in px is needed here to work well with interface scaling. This is way simpler and faster than using MediaQuery component everywhere. */
 }
 
-/* These values were calculated by a script: https://jira.wargaming.net/browse/WOTPRG-3306 */
+/* These values were calculated by a script: https://jira-archive.lesta.group/browse/WOTPRG-3306 */
 
 @media (min-width: 1920px) and (min-height: 924px) and (max-width: 2046px) and (max-height: 1429px),
     (min-width: 3840px) and (min-height: 1848px) and (max-width: 4094px) and (max-height: 2965px),
@@ -2100,7 +2100,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     /* max-width in px is needed here to work well with interface scaling. This is way simpler and faster than using MediaQuery component everywhere. */
 }
 
-/* These values were calculated by a script: https://jira.wargaming.net/browse/WOTPRG-3306 */
+/* These values were calculated by a script: https://jira-archive.lesta.group/browse/WOTPRG-3306 */
 
 @media (min-width: 1920px) and (min-height: 924px) and (max-width: 2046px) and (max-height: 1429px),
     (min-width: 3840px) and (min-height: 1848px) and (max-width: 4094px) and (max-height: 2965px),
@@ -2121,7 +2121,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     /* max-width in px is needed here to work well with interface scaling. This is way simpler and faster than using MediaQuery component everywhere. */
 }
 
-/* These values were calculated by a script: https://jira.wargaming.net/browse/WOTPRG-3306 */
+/* These values were calculated by a script: https://jira-archive.lesta.group/browse/WOTPRG-3306 */
 
 @media (min-width: 1920px) and (min-height: 924px) and (max-width: 2046px) and (max-height: 1429px),
     (min-width: 3840px) and (min-height: 1848px) and (max-width: 4094px) and (max-height: 2965px),
@@ -2169,7 +2169,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     /* max-width in px is needed here to work well with interface scaling. This is way simpler and faster than using MediaQuery component everywhere. */
 }
 
-/* These values were calculated by a script: https://jira.wargaming.net/browse/WOTPRG-3306 */
+/* These values were calculated by a script: https://jira-archive.lesta.group/browse/WOTPRG-3306 */
 
 @media (min-width: 1920px) and (min-height: 924px) and (max-width: 2046px) and (max-height: 1429px),
     (min-width: 3840px) and (min-height: 1848px) and (max-width: 4094px) and (max-height: 2965px),
@@ -2202,7 +2202,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     /* max-width in px is needed here to work well with interface scaling. This is way simpler and faster than using MediaQuery component everywhere. */
 }
 
-/* These values were calculated by a script: https://jira.wargaming.net/browse/WOTPRG-3306 */
+/* These values were calculated by a script: https://jira-archive.lesta.group/browse/WOTPRG-3306 */
 
 @media (min-width: 1920px) and (min-height: 924px) and (max-width: 2046px) and (max-height: 1429px),
     (min-width: 3840px) and (min-height: 1848px) and (max-width: 4094px) and (max-height: 2965px),
@@ -2233,7 +2233,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     /* max-width in px is needed here to work well with interface scaling. This is way simpler and faster than using MediaQuery component everywhere. */
 }
 
-/* These values were calculated by a script: https://jira.wargaming.net/browse/WOTPRG-3306 */
+/* These values were calculated by a script: https://jira-archive.lesta.group/browse/WOTPRG-3306 */
 
 @media (min-width: 1920px) and (min-height: 924px) and (max-width: 2046px) and (max-height: 1429px),
     (min-width: 3840px) and (min-height: 1848px) and (max-width: 4094px) and (max-height: 2965px),
@@ -2358,7 +2358,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     /* max-width in px is needed here to work well with interface scaling. This is way simpler and faster than using MediaQuery component everywhere. */
 }
 
-/* These values were calculated by a script: https://jira.wargaming.net/browse/WOTPRG-3306 */
+/* These values were calculated by a script: https://jira-archive.lesta.group/browse/WOTPRG-3306 */
 
 @media (min-width: 1366px) and (min-height: 744px) and (max-width: 2046px) and (max-height: 1429px),
     (min-width: 2732px) and (min-height: 1488px) and (max-width: 4094px) and (max-height: 2965px),
@@ -2854,7 +2854,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     /* max-width in px is needed here to work well with interface scaling. This is way simpler and faster than using MediaQuery component everywhere. */
 }
 
-/* These values were calculated by a script: https://jira.wargaming.net/browse/WOTPRG-3306 */
+/* These values were calculated by a script: https://jira-archive.lesta.group/browse/WOTPRG-3306 */
 
 @media (min-width: 1366px) and (min-height: 744px) and (max-width: 2046px) and (max-height: 1429px),
     (min-width: 2732px) and (min-height: 1488px) and (max-width: 4094px) and (max-height: 2965px),
@@ -2874,7 +2874,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     position: relative;
 }
 
-/* These values were calculated by a script: https://jira.wargaming.net/browse/WOTPRG-3306 */
+/* These values were calculated by a script: https://jira-archive.lesta.group/browse/WOTPRG-3306 */
 
 @media (min-width: 1366px) and (min-height: 744px) and (max-width: 2046px) and (max-height: 1429px),
     (min-width: 2732px) and (min-height: 1488px) and (max-width: 4094px) and (max-height: 2965px),
@@ -2956,7 +2956,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     /* max-width in px is needed here to work well with interface scaling. This is way simpler and faster than using MediaQuery component everywhere. */
 }
 
-/* These values were calculated by a script: https://jira.wargaming.net/browse/WOTPRG-3306 */
+/* These values were calculated by a script: https://jira-archive.lesta.group/browse/WOTPRG-3306 */
 
 @media (min-width: 1366px) and (min-height: 744px) and (max-width: 2046px) and (max-height: 1429px),
     (min-width: 2732px) and (min-height: 1488px) and (max-width: 4094px) and (max-height: 2965px),
@@ -3033,7 +3033,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     /* max-width in px is needed here to work well with interface scaling. This is way simpler and faster than using MediaQuery component everywhere. */
 }
 
-/* These values were calculated by a script: https://jira.wargaming.net/browse/WOTPRG-3306 */
+/* These values were calculated by a script: https://jira-archive.lesta.group/browse/WOTPRG-3306 */
 
 @media (min-width: 1366px) and (min-height: 744px) and (max-width: 2046px) and (max-height: 1429px),
     (min-width: 2732px) and (min-height: 1488px) and (max-width: 4094px) and (max-height: 2965px),

@@ -8195,26 +8195,24 @@
                         return i().createElement(
                             'div',
                             { id: 'crew_widget_slots_list', className: h()(Qt, e.isCurrentLayoutHangar && Xt, n) },
-                            s.computes
-                                .getSlots()
-                                .map((t, n) =>
-                                    i().createElement(
-                                        Kt,
-                                        Jt({}, t, {
-                                            layoutInfo: e,
-                                            key: `slot_${n}_${t.tankman.tankmanID}`,
-                                            isSelected:
-                                                !e.isCurrentLayoutHangar &&
-                                                (s.computes.isSlotSelected(t.slotIdx) || s.computes.isTankmanMode()),
-                                            isAnySlotSelected: s.computes.isAnySlotSelected(),
-                                            isDisabled: E(t.tankman.tankmanID),
-                                            blinkSlotStyle: _,
-                                            blinkTankmanStyle: o,
-                                            qtTankmanIconStyle: g,
-                                            size: a,
-                                        }),
-                                    ),
+                            s.computes.getSlots().map((t, n) =>
+                                i().createElement(
+                                    Kt,
+                                    Jt({}, t, {
+                                        layoutInfo: e,
+                                        key: `slot_${n}_${t.tankman.tankmanID}`,
+                                        isSelected:
+                                            !e.isCurrentLayoutHangar &&
+                                            (s.computes.isSlotSelected(t.slotIdx) || s.computes.isTankmanMode()),
+                                        isAnySlotSelected: s.computes.isAnySlotSelected(),
+                                        isDisabled: E(t.tankman.tankmanID),
+                                        blinkSlotStyle: _,
+                                        blinkTankmanStyle: o,
+                                        qtTankmanIconStyle: g,
+                                        size: a,
+                                    }),
                                 ),
+                            ),
                         );
                     }),
                     an = (0, u.Pi)(() => {

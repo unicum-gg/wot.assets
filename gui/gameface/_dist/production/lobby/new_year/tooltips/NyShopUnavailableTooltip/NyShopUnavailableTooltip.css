@@ -1,0 +1,46 @@
+.TooltipDecorator_base_c9 {
+    display: flex;
+    position: absolute;
+}
+
+.TooltipDecorator_base__theme-default_6d .TooltipDecorator_decorator_3d {
+    padding: 4rem 6rem 8rem;
+    border-image-source: url('R.images.gui.maps.icons.tooltip.tooltip_background');
+    border-image-slice: 24 fill;
+    border-image-width: 24rem;
+    position: relative;
+}
+
+.App_base_bc {
+    color: #8c8c7e;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    display: flex;
+    align-items: flex-start;
+    padding: 14rem;
+}
+
+.App_icon_f9 {
+    width: 24rem;
+    height: 24rem;
+    margin-right: 8rem;
+    background: url('R.images.new_year.gui.maps.icons.newYear.popovers.alert') no-repeat center / contain;
+}
+
+.App_title_82 {
+    color: #e9e2bf;
+    font-size: 15rem;
+    font-weight: 700;
+    line-height: 1.15;
+    display: flex;
+    margin: 2rem 0 8rem;
+}
+
+.App_description_b4 {
+    color: #8c8c7e;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    max-width: 300rem;
+}

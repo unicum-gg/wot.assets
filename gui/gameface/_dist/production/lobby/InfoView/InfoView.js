@@ -3030,11 +3030,11 @@
                             o().createElement(T, { getStepByRailClick: l, api: u, onDrag: c, classNames: E }),
                         );
                     },
-                    P = ({ api: e, className: u, classNames: t, children: n }) => (
+                    P = ({ api: e, className: u, classNames: t, children: n, style: r }) => (
                         (0, s.useEffect)(() => (0, A.v)(e.recalculateContent)),
                         o().createElement(
                             'div',
-                            { className: d()(N.base, u) },
+                            { className: d()(N.base, u), style: r },
                             o().createElement(
                                 'div',
                                 {

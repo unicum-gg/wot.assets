@@ -30,7 +30,7 @@
                 t.r(F),
                     t.d(F, {
                         addModelObserver: () => T,
-                        addPreloadTexture: () => f,
+                        addPreloadTexture: () => b,
                         children: () => A,
                         displayStatus: () => l,
                         displayStatusIs: () => W,
@@ -48,7 +48,7 @@
                         pxToRem: () => N,
                         remToPx: () => S,
                         resize: () => M,
-                        sendEvent: () => b,
+                        sendEvent: () => f,
                         setAnimateWindow: () => U,
                         setEventHandled: () => V,
                         setInputPaddingsRem: () => y,
@@ -158,8 +158,8 @@
                     v = ['args'];
                 const m = 2,
                     w = 16,
-                    g = 32,
-                    p = 64,
+                    p = 32,
+                    g = 64,
                     h = (u, e) => {
                         const t = 'GFViewEventProxy';
                         if (void 0 !== e) {
@@ -196,18 +196,18 @@
                         return viewEnv.handleViewEvent({ __Type: t, type: u });
                         var n;
                     },
-                    b = {
+                    f = {
                         close(u) {
-                            h('popover' === u ? m : g);
+                            h('popover' === u ? m : p);
                         },
                         minimize() {
-                            h(p);
+                            h(g);
                         },
                         move(u) {
                             h(w, { isMouseEvent: !0, on: u });
                         },
                     };
-                function f(u) {
+                function b(u) {
                     viewEnv.addPreloadTexture(u);
                 }
                 function y(u) {
@@ -615,11 +615,11 @@
                     w = (u, e) => {
                         u.keyCode === D.n.ESCAPE && e();
                     };
-                var g = t(572);
-                const p = r.instance,
+                var p = t(572);
+                const g = r.instance,
                     h = {
                         DataTracker: A.Z,
-                        ViewModel: g.Z,
+                        ViewModel: p.Z,
                         ViewEventType: i,
                         NumberFormatType: o,
                         RealFormatType: a,
@@ -695,13 +695,13 @@
                                 }
                             return t;
                         },
-                        ClickOutsideManager: p,
+                        ClickOutsideManager: g,
                         SystemLocale: F,
                         UserLocale: E,
                     };
                 window.ViewEnvHelper = h;
             },
-            270: (u, e, t) => {
+            947: (u, e, t) => {
                 var n = t(179),
                     r = t.n(n),
                     A = t(493),
@@ -724,15 +724,17 @@
                         (u.Red = 'RedActionBG'), (u.Blue = 'BlueActionBG');
                     })(_ || (_ = {}));
                 var s = t(364);
-                const D = ({ format: u, value: e }) => {
-                        const t = ((u, e = 'integral') => {
-                            let t;
-                            t = 'gold' === e ? s.B3.GOLD : s.B3.INTEGRAL;
-                            return void 0 === u ? '' : s.Z5.getNumberFormat(u, t);
-                        })(e, u);
-                        return t ? r().createElement('span', null, t) : null;
-                    },
-                    c = {
+                class D extends r().PureComponent {
+                    render() {
+                        let u;
+                        if ('gold' === this.props.format) u = s.B3.GOLD;
+                        else u = s.B3.INTEGRAL;
+                        const e = s.Z5.getNumberFormat(this.props.value, u);
+                        return void 0 !== this.props.value && void 0 !== e ? e : null;
+                    }
+                }
+                D.defaultProps = { format: 'integral' };
+                const c = {
                         base: 'Currency_base_57',
                         icon: 'Currency_icon_c5',
                         base__small: 'Currency_base__small_af',
@@ -866,7 +868,7 @@
                         w.apply(this, arguments)
                     );
                 }
-                const g = r().forwardRef(function (u, e) {
+                const p = r().forwardRef(function (u, e) {
                         let t = u.children,
                             A = u.className,
                             F = u.theme,
@@ -913,10 +915,10 @@
                             )
                         );
                     }),
-                    p = 'App_base_e2',
+                    g = 'App_base_e2',
                     h = 'App_title_63',
-                    b = 'App_body_d8',
-                    f = 'App_missingContainer_ff',
+                    f = 'App_body_d8',
+                    b = 'App_missingContainer_ff',
                     y = 'App_missingLabel_a7';
                 let O;
                 !(function (u) {
@@ -1063,11 +1065,11 @@
                         () => {
                             const u = V().missingAmount;
                             return r().createElement(
-                                g,
+                                p,
                                 null,
                                 r().createElement(
                                     'div',
-                                    { className: p },
+                                    { className: g },
                                     r().createElement(
                                         'div',
                                         { className: h },
@@ -1075,12 +1077,12 @@
                                     ),
                                     r().createElement(
                                         'div',
-                                        { className: b },
+                                        { className: f },
                                         R.strings.dialogs.confirmBuyAndInstall.insufficientFundsTooltip.body(),
                                     ),
                                     r().createElement(
                                         'div',
-                                        { className: f },
+                                        { className: b },
                                         r().createElement(
                                             'div',
                                             { className: y },
@@ -1171,6 +1173,6 @@
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             t.forEach(e.bind(null, 0)), (t.push = e.bind(null, t.push.bind(t)));
         })();
-    var __webpack_exports__ = __webpack_require__.O(void 0, [845], () => __webpack_require__(270));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [845], () => __webpack_require__(947));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

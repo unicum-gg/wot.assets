@@ -9,7 +9,7 @@
 .Vehicle_base__inBattle_35 .Vehicle_image_49 {
     --mix-blend-mode: color-dodge;
 
-    /* This is here because during route fadeIn the mix-blend-mode for unknown reasons does not work; https://jira.wargaming.net/browse/WOTPRG-8859 */
+    /* This is here because during route fadeIn the mix-blend-mode for unknown reasons does not work; https://jira-archive.lesta.group/browse/WOTPRG-8859 */
     animation: Vehicle_delayedFadeIn_89 1.4s linear;
 }
 .Vehicle_label_6a {

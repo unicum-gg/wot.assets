@@ -1,0 +1,130 @@
+.TooltipDecorator_base_c9 {
+    display: flex;
+    position: absolute;
+}
+
+.TooltipDecorator_base__theme-default_6d .TooltipDecorator_decorator_3d {
+    padding: 4rem 6rem 8rem;
+    border-image-source: url('R.images.gui.maps.icons.tooltip.tooltip_background');
+    border-image-slice: 24 fill;
+    border-image-width: 24rem;
+    position: relative;
+}
+
+.Shards_base_47 {
+    display: flex;
+    align-items: center;
+}
+
+.Shards_base__reverse_85 {
+    flex-direction: row-reverse;
+}
+
+.Shards_value_c9 {
+    color: #f2f2f7;
+    font-size: 14rem;
+    font-weight: 700;
+}
+
+.Shards_value__notEnough_73 {
+    color: #942929;
+}
+
+.Shards_icon_23 {
+    background: no-repeat center / contain;
+}
+
+.Shards_icon__small_cd {
+    width: 24rem;
+    height: 24rem;
+    background-image: url('R.images.new_year.gui.maps.icons.newYear.shards.c_24x24');
+}
+
+.Shards_icon__big_07 {
+    width: 32rem;
+    height: 32rem;
+    background-image: url('R.images.new_year.gui.maps.icons.newYear.shards.c_32x32');
+}
+
+.Shards_icon__large_f1 {
+    width: 64rem;
+    height: 64rem;
+    background-image: url('R.images.new_year.gui.maps.icons.newYear.shards.c_64x64');
+}
+
+.Shards_icon__notEnough_fb {
+    opacity: 0.5;
+}
+
+.MenuInfo_base_57 {
+    padding: 5rem 0;
+}
+
+.MenuInfo_background_1c {
+    display: flex;
+    height: 60rem;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(201, 201, 182, 0.07) 37%,
+        rgba(201, 201, 182, 0.07) 63%,
+        transparent
+    );
+}
+
+.MenuInfo_separator_eb {
+    display: flex;
+    align-self: center;
+    width: 283rem;
+    height: 1rem;
+    background: url('R.images.gui.maps.icons.tooltip.tool_tip_separator') no-repeat center / contain;
+}
+
+.App_base_d2 {
+    width: 330rem;
+    padding: 20rem;
+}
+
+.App_title_9f {
+    color: #e9e2bf;
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 12rem;
+}
+
+.App_description_34 {
+    color: #8c8c7e;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    opacity: 0.8;
+}
+
+.App_info_61 {
+    margin: 18rem 0;
+    margin: 0;
+}
+
+.App_availability_13 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.App_count_4b {
+    color: #f2f2f7;
+    font-weight: 700;
+}
+
+.App_icon_db {
+    margin: 0 3rem;
+}
+
+.App_text_e0 {
+    color: #8c8c7e;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}

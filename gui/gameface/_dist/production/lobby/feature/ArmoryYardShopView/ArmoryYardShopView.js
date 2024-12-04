@@ -3102,11 +3102,11 @@
                             o().createElement(Cu, { getStepByRailClick: l, api: u, onDrag: c, classNames: _ }),
                         );
                     },
-                    hu = ({ api: e, className: u, classNames: t, children: r }) => (
+                    hu = ({ api: e, className: u, classNames: t, children: r, style: n }) => (
                         (0, a.useEffect)(() => uu(e.recalculateContent)),
                         o().createElement(
                             'div',
-                            { className: h()(Bu.base, u) },
+                            { className: h()(Bu.base, u), style: n },
                             o().createElement(
                                 'div',
                                 {
@@ -3404,17 +3404,16 @@
                     (function (e) {
                         (e.Red = 'RedActionBG'), (e.Blue = 'BlueActionBG');
                     })(Ou || (Ou = {}));
-                const Iu = ({ format: e, value: u }) => {
-                        const t = ((e, u = 'integral') => {
-                            let t;
-                            return (
-                                (t = 'gold' === u ? W.B3.GOLD : W.B3.INTEGRAL),
-                                void 0 === e ? '' : W.Z5.getNumberFormat(e, t)
-                            );
-                        })(u, e);
-                        return t ? o().createElement('span', null, t) : null;
-                    },
-                    Hu = {
+                class Iu extends o().PureComponent {
+                    render() {
+                        let e;
+                        e = 'gold' === this.props.format ? W.B3.GOLD : W.B3.INTEGRAL;
+                        const u = W.Z5.getNumberFormat(this.props.value, e);
+                        return void 0 !== this.props.value && void 0 !== u ? u : null;
+                    }
+                }
+                Iu.defaultProps = { format: 'integral' };
+                const Hu = {
                         base: 'Currency_base_57',
                         icon: 'Currency_icon_c5',
                         base__small: 'Currency_base__small_af',
@@ -3519,6 +3518,7 @@
                         (e.TankmenXpFactor = 'tankmenXPFactor'),
                         (e.FreeXpFactor = 'freeXPFactor'),
                         (e.BattleToken = 'battleToken'),
+                        (e.Entitlements = 'entitlements'),
                         (e.PremiumUniversal = 'premium_universal'),
                         (e.Gold = 'gold'),
                         (e.Credits = 'credits'),
@@ -3538,7 +3538,7 @@
                         (e.NewYearAlbumsAccess = 'newYearAlbumsAccess'),
                         (e.NewYearFillers = 'ny22Fillers'),
                         (e.NewYearInvoice = 'newYearInvoice'),
-                        (e.NewYearToyFragments = 'ny22ToyFragments'),
+                        (e.NewYearToyFragments = 'nyToyFragments'),
                         (e.NewYearSlot = 'newYearSlot'),
                         (e.BonusX5 = 'battle_bonus_x5'),
                         (e.CrewBonusX3 = 'crew_bonus_x3'),
@@ -3550,11 +3550,7 @@
                         (e.BattleBoosterGift = 'battleBooster_gift'),
                         (e.CosmicLootboxSilver = 'lootBoxToken'),
                         (e.CosmicLootboxCommon = 'cosmic_2024_2'),
-                        (e.WtStamp = 'stamp'),
-                        (e.WtHunter = 'wt_hunter'),
-                        (e.WtHunterCollection = 'hunter_collection'),
-                        (e.WtTicket = 'wtevent_ticket'),
-                        (e.WtMainPrizeDiscount = 'main_prize_discount');
+                        (e.LootBoxToken = 'lootBoxToken');
                 })(Gu || (Gu = {})),
                     (function (e) {
                         (e.Gold = 'gold'),

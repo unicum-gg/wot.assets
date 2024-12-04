@@ -1,0 +1,16 @@
+# This file was generated using wgpygen
+#   template: configs/templates/view_model.unbound.jinja2
+#   source: configs/definitions/views/loot_box_view/loot_renderer_model.yaml
+# Please, don't edit this file manually.
+(def macro LootNewYearToyRendererModel()
+    (macro LootDefRendererModel)
+    (scope
+        (var toyID:number = 0)
+        (var decorationImage:str = '')
+        (var rankImage:str = '')
+        (var isMega:bool = false)
+        (var rank:number = 0)
+        (var isNew:bool = false)
+        (var atmosphereBonus:number = 0)
+    )
+)

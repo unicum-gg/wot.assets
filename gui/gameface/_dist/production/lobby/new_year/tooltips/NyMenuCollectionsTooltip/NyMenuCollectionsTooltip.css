@@ -1,0 +1,84 @@
+.FormatText_base_d0 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.TooltipDecorator_base_c9 {
+    display: flex;
+    position: absolute;
+}
+
+.TooltipDecorator_base__theme-default_6d .TooltipDecorator_decorator_3d {
+    padding: 4rem 6rem 8rem;
+    border-image-source: url('R.images.gui.maps.icons.tooltip.tooltip_background');
+    border-image-slice: 24 fill;
+    border-image-width: 24rem;
+    position: relative;
+}
+
+.MenuInfo_base_57 {
+    padding: 5rem 0;
+}
+
+.MenuInfo_background_1c {
+    display: flex;
+    height: 60rem;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(201, 201, 182, 0.07) 37%,
+        rgba(201, 201, 182, 0.07) 63%,
+        transparent
+    );
+}
+
+.MenuInfo_separator_eb {
+    display: flex;
+    align-self: center;
+    width: 283rem;
+    height: 1rem;
+    background: url('R.images.gui.maps.icons.tooltip.tool_tip_separator') no-repeat center / contain;
+}
+
+.App_base_e6 {
+    width: 330rem;
+    padding: 20rem;
+}
+
+.App_title_66 {
+    color: #e9e2bf;
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 12rem;
+}
+
+.App_description_7d {
+    color: #8c8c7e;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+.App_info_09 {
+    margin: 18rem 0;
+}
+
+.App_availability_90 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.App_count_d1 {
+    color: #f2f2f7;
+    font-weight: 700;
+}
+
+.App_galleryIcon_72 {
+    width: 18rem;
+    height: 16rem;
+    margin-right: 3rem;
+    background: url('R.images.new_year.gui.maps.icons.newYear.main_menu.galleryItem') no-repeat center / cover;
+}

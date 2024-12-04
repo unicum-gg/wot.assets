@@ -2867,11 +2867,11 @@
                             o().createElement(Gu, { getStepByRailClick: l, api: u, onDrag: c, classNames: d }),
                         );
                     },
-                    Ku = ({ api: e, className: u, classNames: t, children: n }) => (
+                    Ku = ({ api: e, className: u, classNames: t, children: n, style: r }) => (
                         (0, a.useEffect)(() => q(e.recalculateContent)),
                         o().createElement(
                             'div',
-                            { className: v()(ju.base, u) },
+                            { className: v()(ju.base, u), style: r },
                             o().createElement(
                                 'div',
                                 {
