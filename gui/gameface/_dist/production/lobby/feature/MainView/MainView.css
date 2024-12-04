@@ -1,0 +1,1943 @@
+@keyframes App_fadeIn_8d {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.App_base_12 {
+    opacity: 0;
+    animation-name: App_fadeIn_8d;
+    animation-duration: 0.8s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    width: 100%;
+    height: 100%;
+    background-color: #111;
+    overflow: hidden;
+}
+
+.App_background_d4 {
+    width: 100%;
+    height: 100%;
+    background: url('R.images.advent_calendar.gui.maps.icons.mainView.background.small') no-repeat center / cover;
+    position: absolute;
+}
+
+.mediaMedium .App_background_d4 {
+    background-image: url('R.images.advent_calendar.gui.maps.icons.mainView.background.medium');
+}
+
+.mediaLarge .App_background_d4 {
+    background-image: url('R.images.advent_calendar.gui.maps.icons.mainView.background.large');
+}
+
+.mediaUltraLarge .App_background_d4 {
+    background-image: url('R.images.advent_calendar.gui.maps.icons.mainView.background.extraLarge');
+}
+
+.App_vignette_0c {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+            90deg,
+            rgba(24, 9, 55, 0.8) 0%,
+            rgba(0, 0, 0, 0) 27%,
+            rgba(0, 0, 0, 0) 73%,
+            rgba(24, 9, 55, 0.8) 100%
+        ),
+        linear-gradient(
+            0deg,
+            rgba(24, 9, 55, 0.8) 0%,
+            rgba(0, 0, 0, 0) 27%,
+            rgba(0, 0, 0, 0) 73%,
+            rgba(24, 9, 55, 0.8) 100%
+        );
+    position: absolute;
+}
+
+.App_content_ad {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    opacity: 0;
+    transition: filter 0.8s;
+}
+
+.App_content__ready_be {
+    opacity: 0;
+    animation-name: App_fadeIn_8d;
+    animation-duration: 0.8s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+    animation-delay: 0.8s;
+    animation-iteration-count: 1;
+}
+
+.App_content__slowReady_51 {
+    opacity: 0;
+    animation-name: App_fadeIn_8d;
+    animation-duration: 0.8s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+    animation-delay: 1.2s;
+    animation-iteration-count: 1;
+}
+
+.App_content__blurred_8c {
+    filter: blur(10rem);
+}
+
+.CButton_base_40 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2rem;
+    box-shadow: 0 0 0 1rem rgba(0, 0, 0, 0.6);
+    position: relative;
+    cursor: pointer;
+}
+
+.CButton_base__main_42,
+.CButton_base__primary_7f,
+.CButton_base__primaryGreen_6f,
+.CButton_base__primaryRed_ec,
+.CButton_base__secondary_50 {
+    background-size: 100% 100%;
+}
+
+.CButton_base__main_42 {
+    background-image: url('R.images.gui.maps.icons.components.button.back_main');
+}
+
+.CButton_base__primary_7f {
+    background-image: url('R.images.gui.maps.icons.components.button.back_primary');
+}
+
+.CButton_base__primaryGreen_6f {
+    background-image: url('R.images.gui.maps.icons.components.button.back_primary_green');
+}
+
+.CButton_base__primaryRed_ec {
+    background-image: url('R.images.gui.maps.icons.components.button.back_primary_red');
+}
+
+.CButton_base__secondary_50 {
+    background-image: url('R.images.gui.maps.icons.components.button.back_secondary');
+}
+
+.CButton_base__ghost_ed {
+    border-radius: 3rem;
+    box-shadow:
+        0 0 0 1rem rgba(0, 0, 0, 0.3),
+        0 0 0 1rem rgba(255, 255, 255, 0.15) inset;
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+.CButton_base__extraSmall_27 {
+    min-height: 17rem;
+    padding: 0 16rem;
+}
+
+.CButton_base__small_df,
+.CButton_base__medium_74 {
+    padding: 0 20rem;
+}
+
+.CButton_base__small_df {
+    min-height: 18rem;
+}
+
+.CButton_base__medium_74 {
+    min-height: 32rem;
+}
+
+.CButton_base__large_5c {
+    min-height: 48rem;
+}
+
+.CButton_base__disabled_d9 {
+    cursor: default;
+}
+/* Element .back and background-image in element .base need for fix bug in GF https://jira.wargaming.net/browse/WOTD-158525
+The bug is that under certain conditions, when using border-image, stripes appear. Strip is a single-pixel gap
+between 'border-image-width' and 'fill'.
+This bug is reproduced in Google Chrome 81.0.4044.113
+*/
+.CButton_back_e5 {
+    border-image-slice: 4 fill;
+    border-image-width: 4rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.CButton_base__main_42 .CButton_back_e5 {
+    border-image-source: url('R.images.gui.maps.icons.components.button.back_main');
+}
+.CButton_base__primary_7f .CButton_back_e5 {
+    border-image-source: url('R.images.gui.maps.icons.components.button.back_primary');
+}
+.CButton_base__primaryGreen_6f .CButton_back_e5 {
+    border-image-source: url('R.images.gui.maps.icons.components.button.back_primary_green');
+}
+.CButton_base__primaryRed_ec .CButton_back_e5 {
+    border-image-source: url('R.images.gui.maps.icons.components.button.back_primary_red');
+}
+.CButton_base__secondary_50 .CButton_back_e5 {
+    border-image-source: url('R.images.gui.maps.icons.components.button.back_secondary');
+}
+.CButton_texture_fe {
+    background: url('R.images.gui.maps.icons.components.button.standard_texture_file');
+    background-size: 155rem 31rem;
+    mix-blend-mode: soft-light;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.CButton_state_11 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition: box-shadow 0.16s ease-in-out;
+}
+.CButton_base__focus_83 .CButton_state_11 {
+    border-radius: 2rem;
+    box-shadow: inset 0 0 2rem 1rem rgba(255, 85, 0, 0.2);
+}
+.CButton_stateHighlightHover_ff,
+.CButton_stateHighlightActive_35,
+.CButton_stateDisabled_54 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.CButton_stateHighlightHover_ff {
+    background-image: linear-gradient(
+        180deg,
+        rgba(252, 248, 235, 0.25) 0%,
+        rgba(252, 248, 235, 0.1) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    opacity: 0;
+}
+.CButton_base_40:hover .CButton_stateHighlightHover_ff {
+    opacity: 1;
+}
+.CButton_base_40:active .CButton_stateHighlightHover_ff {
+    opacity: 0;
+}
+.CButton_base__disabled_d9:hover .CButton_stateHighlightHover_ff {
+    opacity: 0;
+}
+.CButton_base__ghost_ed .CButton_stateHighlightHover_ff {
+    box-shadow: 0 15rem 12rem 0 rgba(242, 242, 230, 0.11) inset;
+    background-color: rgba(8, 6, 0, 0.18);
+    background-image: none;
+}
+.CButton_stateHighlightActive_35 {
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.15) 100%);
+    opacity: 0;
+}
+.CButton_base__highlightActive_b2 .CButton_stateHighlightActive_35 {
+    opacity: 1;
+}
+.CButton_stateDisabled_54 {
+    background-color: rgba(0, 0, 0, 0.25);
+    background-image: url('R.images.gui.maps.icons.components.button.texture_disable');
+    background-size: 15rem 15rem;
+    visibility: hidden;
+}
+.CButton_base__disabled_d9 .CButton_stateDisabled_54 {
+    visibility: inherit;
+}
+.CButton_content_cc {
+    display: flex;
+    align-items: center;
+    color: #f2f2e6;
+    font-weight: 700;
+    line-height: 1.2;
+    text-shadow: 0 -1rem 1rem #000;
+    letter-spacing: 0.03em;
+    transform: translateY(-1rem);
+}
+.CButton_content_cc[lang='ja'],
+.CButton_content_cc[lang='ko'],
+.CButton_content_cc[lang='zh_tw'],
+.CButton_content_cc[lang='zh_sg'],
+.CButton_content_cc[lang='zh_cn'],
+.CButton_content_cc[lang='th'] {
+    font-weight: 400;
+}
+.CButton_base__main_42 .CButton_content_cc,
+.CButton_base__primaryRed_ec .CButton_content_cc {
+    text-shadow: 0 -1rem 1rem #600;
+}
+.CButton_base__secondary_50 .CButton_content_cc {
+    color: rgba(254, 254, 236, 0.75);
+}
+.CButton_base__primaryGreen_6f .CButton_content_cc {
+    text-shadow: 0 -1rem 1rem #1c2502;
+}
+.CButton_base__extraSmall_27 .CButton_content_cc {
+    font-size: 12rem;
+}
+.CButton_base__small_df .CButton_content_cc {
+    font-size: 14rem;
+}
+.CButton_base__medium_74 .CButton_content_cc {
+    font-size: 15rem;
+}
+.CButton_base__large_5c .CButton_content_cc {
+    font-size: 18rem;
+}
+.CButton_base__disabled_d9 .CButton_content_cc {
+    opacity: 0.6;
+}
+
+.Calendar_base_e0 {
+    width: 946rem;
+    height: 460rem;
+    margin-top: 25rem;
+    position: absolute;
+    top: 50%;
+    z-index: 100;
+    transform: translateY(-50%);
+
+    --width-ratio: 105rem;
+    --height-ratio: 92rem;
+}
+
+.Calendar_base_e0 .Calendar_content_bd {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.Calendar_base_e0 .Calendar_content__hidden_f4 {
+    animation-name: Calendar_fadeOut_3e;
+    animation-duration: 0.4s;
+    animation-fill-mode: forwards;
+    animation-delay: 0.1s;
+}
+
+.Calendar_base__blocked_57 {
+    pointer-events: none;
+}
+
+.Calendar_base__layer_52 {
+    width: 100%;
+    height: 100%;
+    background-size: 100% 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.Calendar_base__art_bd {
+    width: 949rem;
+    height: 464rem;
+    box-shadow: 1rem 1rem 20rem rgb(1, 0, 64);
+    background-image: url('R.images.advent_calendar.gui.maps.icons.mainView.art.small');
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.mediaMedium .Calendar_base__art_bd {
+    width: 1238rem;
+    height: 610rem;
+    background-image: url('R.images.advent_calendar.gui.maps.icons.mainView.art.medium');
+}
+
+.mediaLarge .Calendar_base__art_bd {
+    width: 1454rem;
+    height: 714rem;
+    background-image: url('R.images.advent_calendar.gui.maps.icons.mainView.art.large');
+}
+
+.mediaUltraLarge .Calendar_base__art_bd {
+    width: 1814rem;
+    height: 890rem;
+    background-image: url('R.images.advent_calendar.gui.maps.icons.mainView.art.extraLarge');
+}
+
+.Calendar_base__artBorders_72 {
+    width: 950rem;
+    height: 464rem;
+    margin-left: -1rem;
+    background-image: url('R.images.advent_calendar.gui.maps.icons.mainView.artBorders.small');
+    opacity: 0.8;
+    mix-blend-mode: overlay;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.mediaMedium .Calendar_base__artBorders_72 {
+    width: 1230rem;
+    height: 602rem;
+    margin-left: 0;
+    background-image: url('R.images.advent_calendar.gui.maps.icons.mainView.artBorders.medium');
+}
+
+.mediaLarge .Calendar_base__artBorders_72 {
+    width: 1446rem;
+    height: 706rem;
+    background-image: url('R.images.advent_calendar.gui.maps.icons.mainView.artBorders.large');
+}
+
+.mediaUltraLarge .Calendar_base__artBorders_72 {
+    width: 1808rem;
+    height: 884rem;
+    background-image: url('R.images.advent_calendar.gui.maps.icons.mainView.artBorders.extraLarge');
+}
+
+.Calendar_base__calendarBorder_de {
+    width: 960rem;
+    height: 472rem;
+    margin-left: -1rem;
+    box-shadow: 1rem 1rem 20rem rgb(1, 0, 64);
+    background-image: url('R.images.advent_calendar.gui.maps.icons.mainView.calendarBorder.small');
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.mediaMedium .Calendar_base__calendarBorder_de {
+    width: 1240rem;
+    height: 610rem;
+    margin-left: 1rem;
+    background-image: url('R.images.advent_calendar.gui.maps.icons.mainView.calendarBorder.medium');
+}
+
+.mediaLarge .Calendar_base__calendarBorder_de {
+    width: 1460rem;
+    height: 720rem;
+    margin-top: 1rem;
+    background-image: url('R.images.advent_calendar.gui.maps.icons.mainView.calendarBorder.large');
+}
+
+.mediaUltraLarge .Calendar_base__calendarBorder_de {
+    width: 1824rem;
+    height: 898rem;
+    margin-top: 0;
+    background-image: url('R.images.advent_calendar.gui.maps.icons.mainView.calendarBorder.extraLarge');
+}
+
+.mediaUltraSmall .Calendar_base_e0 {
+    margin-top: 40rem;
+}
+
+.mediaMedium .Calendar_base_e0 {
+    width: 1224rem;
+    height: 596rem;
+    margin-top: 35rem;
+    --width-ratio: 136rem;
+    --height-ratio: 119rem;
+}
+
+.mediaLarge .Calendar_base_e0 {
+    width: 1440rem;
+    height: 700rem;
+    margin-top: 4rem;
+    --width-ratio: 160rem;
+    --height-ratio: 140rem;
+}
+
+.mediaUltraLarge .Calendar_base_e0 {
+    width: 1800rem;
+    height: 876rem;
+    margin-top: 0;
+    --width-ratio: 200rem;
+    --height-ratio: 175rem;
+}
+
+.Calendar_linkButtonContainer_0e {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    right: 0;
+    bottom: -72rem;
+    left: 0;
+    transition:
+        opacity 0.8s,
+        transform 0.8s;
+}
+
+.mediaLarge .Calendar_linkButtonContainer_0e {
+    bottom: -102rem;
+}
+
+.Calendar_base__linkButtonHidden_b7 .Calendar_linkButtonContainer_0e {
+    opacity: 0;
+    transform: translateY(20rem);
+    pointer-events: none;
+}
+
+.Calendar_linkButton_36 {
+    min-width: 220rem;
+}
+
+.Calendar_linkButtonTextWrapper_65 {
+    color: #ffdd99;
+    font-size: 12rem;
+    font-weight: 400;
+    line-height: 1.3;
+    text-shadow:
+        0 0 15px #e52,
+        0 0 8px #ff2a00,
+        0 0 4px rgba(255, 127, 0, 0.25);
+}
+
+.Calendar_linkButtonIconWrapper_0b {
+    width: 1em;
+    height: 1em;
+    margin-left: 0.25em;
+    position: relative;
+}
+
+.Calendar_linkButtonIcon_93 {
+    width: 40rem;
+    height: 40rem;
+    background: url('R.images.advent_calendar.gui.maps.icons.link') center / contain no-repeat;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes Calendar_fadeOut_3e {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+.DoorCurrency_base_e2 {
+    display: flex;
+    align-items: center;
+    color: rgb(110, 96, 133);
+    font-size: 16rem;
+    font-weight: 700;
+    line-height: 20rem;
+    position: absolute;
+    bottom: 8rem;
+    left: 8rem;
+}
+
+.mediaMedium .DoorCurrency_base_e2 {
+    font-size: 17rem;
+    bottom: 10rem;
+    left: 10rem;
+}
+
+.mediaLarge .DoorCurrency_base_e2 {
+    font-size: 20rem;
+    bottom: 11rem;
+    left: 11rem;
+}
+
+.mediaUltraLarge .DoorCurrency_base_e2 {
+    font-size: 24rem;
+    bottom: 15rem;
+    left: 15rem;
+}
+
+.DoorCurrency_base__notEnough_61 {
+    color: #cf4949;
+}
+
+.DoorCurrency_base_e2 img {
+    width: 16rem;
+    height: 16rem;
+    margin-left: 2rem;
+}
+
+.mediaLarge .DoorCurrency_base_e2 img {
+    width: 24rem;
+    height: 24rem;
+}
+
+@keyframes DoorDay_slideInFadeIn_c5 {
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+@keyframes DoorDay_fadeOut_19 {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes DoorDay_fadeIn_3a {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+@keyframes DoorDay_fadeInWithScale_e8 {
+    0% {
+        opacity: 0;
+        transform: scale(1.2);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@keyframes DoorDay_slideUp_c4 {
+    0% {
+        opacity: 0;
+        transform: translateY(20rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes DoorDay_scale_c6 {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+@keyframes DoorDay_spin_35 {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+@keyframes DoorDay_blink_f6 {
+    0% {
+        transform: translateY(0rem);
+    }
+
+    15% {
+        transform: translateY(15rem);
+    }
+
+    30% {
+        transform: translateY(0rem);
+    }
+
+    45% {
+        transform: translateY(15rem);
+    }
+
+    60%,
+    100% {
+        transform: translateY(0rem);
+    }
+}
+@keyframes DoorDay_slideInNotification_aa {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.DoorDay_doorNumber_4f {
+    font-family: DINRoundPro;
+}
+[lang='th'] .DoorDay_doorNumber_4f,
+[lang='el'] .DoorDay_doorNumber_4f,
+[lang='vi'] .DoorDay_doorNumber_4f {
+    font-family: Warhelios;
+}
+[lang='ja'] .DoorDay_doorNumber_4f {
+    font-family: WarheliosJA;
+}
+[lang='ko'] .DoorDay_doorNumber_4f {
+    font-family: WarheliosKO;
+}
+[lang='zh_tw'] .DoorDay_doorNumber_4f {
+    font-family: WarheliosZHTW;
+}
+[lang='zh_sg'] .DoorDay_doorNumber_4f,
+[lang='zh_cn'] .DoorDay_doorNumber_4f {
+    font-family: WarheliosZHCN;
+}
+.DoorDay_doorNumber_4f {
+    margin-bottom: 4rem;
+    color: rgb(115, 125, 178);
+    font-size: 40rem;
+    font-weight: 700;
+    line-height: 1.1;
+    position: relative;
+}
+.DoorDay_doorNumber__highlighted_b4 {
+    color: rgb(190, 72, 115);
+}
+.DoorDay_doorNumber__closed_c0,
+.DoorDay_doorNumber__expired_35 {
+    opacity: 0.5;
+}
+.mediaMedium .DoorDay_doorNumber_4f {
+    font-size: 51rem;
+}
+.mediaLarge .DoorDay_doorNumber_4f {
+    font-size: 60rem;
+}
+.mediaUltraLarge .DoorDay_doorNumber_4f {
+    font-size: 70rem;
+}
+
+.DoorFrontSide_base_bd {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-image: var(--door-img);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: relative;
+    z-index: 2;
+}
+
+.DoorFrontSide_base_bd .DoorFrontSide_art_52 {
+    width: 100%;
+    height: 100%;
+    background-image: url('R.images.advent_calendar.gui.maps.icons.mainView.artPrint.small');
+    background-repeat: no-repeat;
+    background-position-x: calc(-1 * var(--x-pos) * var(--width-ratio));
+    background-position-y: calc(-1 * var(--y-pos) * var(--height-ratio));
+    background-size: calc(9 * var(--width-ratio)) calc(5 * var(--height-ratio));
+    opacity: 0.8;
+    mix-blend-mode: hard-light;
+    position: absolute;
+    top: 0;
+    left: 0;
+    mask-image: var(--door-img);
+    mask-size: 100%;
+}
+
+.mediaMedium .DoorFrontSide_base_bd .DoorFrontSide_art_52 {
+    background-image: url('R.images.advent_calendar.gui.maps.icons.mainView.artPrint.medium');
+}
+
+.mediaLarge .DoorFrontSide_base_bd .DoorFrontSide_art_52 {
+    background-image: url('R.images.advent_calendar.gui.maps.icons.mainView.artPrint.large');
+}
+
+.mediaUltraLarge .DoorFrontSide_base_bd .DoorFrontSide_art_52 {
+    background-image: url('R.images.advent_calendar.gui.maps.icons.mainView.artPrint.extraLarge');
+}
+
+.DoorMark_base_41 {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.DoorMark_overlay_79 {
+    width: calc(9 * var(--width-ratio));
+    height: calc(5 * var(--height-ratio));
+    position: absolute;
+    top: calc(-1 * var(--y-pos) * var(--height-ratio));
+    left: calc(-1 * var(--x-pos) * var(--width-ratio));
+}
+
+.DoorMark_mark_95 {
+    width: 105rem;
+    height: 105rem;
+    background: no-repeat center / cover;
+    position: absolute;
+    top: calc(var(--mark-y-pos) * var(--height-ratio));
+    left: calc(var(--mark-x-pos) * var(--width-ratio));
+    transform: translate(-75%, -25%);
+}
+
+.mediaMedium .DoorMark_mark_95 {
+    width: 136rem;
+    height: 136rem;
+}
+
+.mediaLarge .DoorMark_mark_95 {
+    width: 160rem;
+    height: 160rem;
+}
+
+.mediaUltraLarge .DoorMark_mark_95 {
+    width: 200rem;
+    height: 200rem;
+}
+
+.DoorWrapper_base_a7 {
+    position: absolute;
+}
+
+.ReadyToOpenDoor_glow_23 {
+    width: 262rem;
+    height: 262rem;
+    background-image: url('R.images.advent_calendar.gui.maps.icons.mainView.shine');
+    background-size: 100%;
+    mix-blend-mode: screen;
+    position: absolute;
+    top: calc(var(--height-ratio) / 2);
+    left: calc(var(--width-ratio) / 2);
+    z-index: 1;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+.mediaMedium .ReadyToOpenDoor_glow_23 {
+    width: 340rem;
+    height: 340rem;
+}
+
+.mediaLarge .ReadyToOpenDoor_glow_23 {
+    width: 400rem;
+    height: 400rem;
+}
+
+.mediaUltraLarge .ReadyToOpenDoor_glow_23 {
+    width: 500rem;
+    height: 500rem;
+}
+
+.ReadyToOpenDoor_glowBorder_f4 {
+    width: 100%;
+    height: 100%;
+    background: no-repeat center / cover;
+    opacity: 0.8;
+    mix-blend-mode: overlay;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.door-1x1 .ReadyToOpenDoor_glowBorder_f4 {
+    background-image: url('R.images.advent_calendar.gui.maps.icons.mainView.readyToOpen.glow_1x1');
+    transform: scale(1.05);
+}
+
+.door-2x1 .ReadyToOpenDoor_glowBorder_f4 {
+    background-image: url('R.images.advent_calendar.gui.maps.icons.mainView.readyToOpen.glow_2x1');
+    transform: scale(1.02);
+}
+
+.door-3x1 .ReadyToOpenDoor_glowBorder_f4 {
+    background-image: url('R.images.advent_calendar.gui.maps.icons.mainView.readyToOpen.glow_3x1');
+    /* stylelint-disable */
+    transform: scale(1.015);
+}
+
+.door-1x2 .ReadyToOpenDoor_glowBorder_f4 {
+    background-image: url('R.images.advent_calendar.gui.maps.icons.mainView.readyToOpen.glow_1x2');
+    transform: scale(1.02);
+}
+
+.door-2x2 .ReadyToOpenDoor_glowBorder_f4 {
+    background-image: url('R.images.advent_calendar.gui.maps.icons.mainView.readyToOpen.glow_2x2');
+    transform: scale(1.02);
+}
+
+.ReadyToOpenDoor_shineWrapper_3e {
+    mix-blend-mode: screen;
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 3;
+    pointer-events: none;
+    mask-size: 100%;
+}
+
+.door-1x1 .ReadyToOpenDoor_shineWrapper_3e {
+    mask-image: url('R.images.advent_calendar.gui.maps.icons.mainView.shineMask.c_1x1');
+    width: 217rem;
+    height: 201rem;
+    transform: translate(-50%, -50%) scale(0.75);
+}
+
+.mediaMedium .door-1x1 .ReadyToOpenDoor_shineWrapper_3e {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.mediaLarge .door-1x1 .ReadyToOpenDoor_shineWrapper_3e {
+    transform: translate(-50%, -50%) scale(1.2);
+}
+
+.mediaUltraLarge .door-1x1 .ReadyToOpenDoor_shineWrapper_3e {
+    transform: translate(-50%, -50%) scale(1.5);
+}
+
+.door-2x1 .ReadyToOpenDoor_shineWrapper_3e {
+    mask-image: url('R.images.advent_calendar.gui.maps.icons.mainView.shineMask.c_2x1');
+    width: 420rem;
+    height: 201rem;
+    transform: translate(-50%, -50%) scale(0.6, 0.75);
+}
+
+.mediaMedium .door-2x1 .ReadyToOpenDoor_shineWrapper_3e {
+    transform: translate(-50%, -50%) scale(0.8, 1);
+}
+
+.mediaLarge .door-2x1 .ReadyToOpenDoor_shineWrapper_3e {
+    transform: translate(-50%, -50%) scale(1, 1.2);
+}
+
+.mediaUltraLarge .door-2x1 .ReadyToOpenDoor_shineWrapper_3e {
+    transform: translate(-50%, -50%) scale(1.2, 1.5);
+}
+
+.door-3x1 .ReadyToOpenDoor_shineWrapper_3e {
+    mask-image: url('R.images.advent_calendar.gui.maps.icons.mainView.shineMask.c_2x1');
+    width: 420rem;
+    height: 201rem;
+    transform: translate(-65%, -50%) scale(0.6, 0.75);
+}
+
+.mediaMedium .door-3x1 .ReadyToOpenDoor_shineWrapper_3e {
+    transform: translate(-70%, -50%) scale(0.8, 1);
+}
+
+.mediaLarge .door-3x1 .ReadyToOpenDoor_shineWrapper_3e {
+    transform: translate(-70%, -50%) scale(1, 1.2);
+}
+
+.mediaUltraLarge .door-3x1 .ReadyToOpenDoor_shineWrapper_3e {
+    transform: translate(-75%, -50%) scale(1.2, 1.5);
+}
+
+.door-1x2 .ReadyToOpenDoor_shineWrapper_3e {
+    mask-image: url('R.images.advent_calendar.gui.maps.icons.mainView.shineMask.c_1x2');
+    width: 201rem;
+    height: 420rem;
+    transform: translate(-50%, -50%) scale(0.75, 0.6);
+}
+
+.mediaMedium .door-1x2 .ReadyToOpenDoor_shineWrapper_3e {
+    transform: translate(-50%, -50%) scale(1, 0.8);
+}
+
+.mediaLarge .door-1x2 .ReadyToOpenDoor_shineWrapper_3e {
+    transform: translate(-50%, -50%) scale(1.2, 0.95);
+}
+
+.mediaUltraLarge .door-1x2 .ReadyToOpenDoor_shineWrapper_3e {
+    transform: translate(-50%, -50%) scale(1.5, 1.15);
+}
+
+.door-2x2 .ReadyToOpenDoor_shineWrapper_3e {
+    mask-image: url('R.images.advent_calendar.gui.maps.icons.mainView.shineMask.c_2x2');
+    width: 434rem;
+    height: 402rem;
+    transform: translate(-50%, -50%) scale(0.75);
+}
+
+.mediaMedium .door-2x2 .ReadyToOpenDoor_shineWrapper_3e {
+    transform: translate(-50%, -50%) scale(0.95);
+}
+
+.mediaLarge .door-2x2 .ReadyToOpenDoor_shineWrapper_3e {
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+.mediaUltraLarge .door-2x2 .ReadyToOpenDoor_shineWrapper_3e {
+    transform: translate(-50%, -50%) scale(1.4);
+}
+
+.ReadyToOpenDoor_shine_a1 {
+    width: 500rem;
+    height: 500rem;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.ReadyToOpenDoor_frontSide_e5 {
+    z-index: 3;
+    cursor: pointer;
+}
+
+.ReadyToOpenDoor_backSide_fa {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 4;
+    transform: scale(0.53);
+    transform-origin: left top;
+    pointer-events: none;
+}
+
+.mediaMedium .ReadyToOpenDoor_backSide_fa {
+    transform: scale(0.68);
+}
+
+.mediaLarge .ReadyToOpenDoor_backSide_fa {
+    transform: scale(0.8);
+}
+
+.mediaUltraLarge .ReadyToOpenDoor_backSide_fa {
+    transform: scale(1);
+}
+
+.DoorResolver_enter_9c {
+    animation-name: DoorResolver_enterFrames_ed;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    pointer-events: none;
+}
+
+@keyframes DoorResolver_enterFrames_ed {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes ProgressStatus_slideInFadeIn_86 {
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+@keyframes ProgressStatus_fadeOut_c3 {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes ProgressStatus_fadeIn_4b {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+@keyframes ProgressStatus_fadeInWithScale_33 {
+    0% {
+        opacity: 0;
+        transform: scale(1.2);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@keyframes ProgressStatus_slideUp_e8 {
+    0% {
+        opacity: 0;
+        transform: translateY(20rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes ProgressStatus_scale_a0 {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+@keyframes ProgressStatus_spin_0d {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+@keyframes ProgressStatus_blink_cf {
+    0% {
+        transform: translateY(0rem);
+    }
+
+    15% {
+        transform: translateY(15rem);
+    }
+
+    30% {
+        transform: translateY(0rem);
+    }
+
+    45% {
+        transform: translateY(15rem);
+    }
+
+    60%,
+    100% {
+        transform: translateY(0rem);
+    }
+}
+@keyframes ProgressStatus_slideInNotification_d5 {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.ProgressStatus_base_ae {
+    width: 71rem;
+    height: 18rem;
+    position: relative;
+}
+.ProgressStatus_glow_ef {
+    width: 100%;
+    height: 100%;
+    background: url('R.images.advent_calendar.gui.maps.icons.mainView.progression.glow') no-repeat center / contain;
+}
+.mediaLarge .ProgressStatus_glow_ef {
+    margin-top: 4rem;
+}
+.ProgressStatus_amount_ef {
+    font-family: DINRoundPro;
+}
+[lang='th'] .ProgressStatus_amount_ef,
+[lang='el'] .ProgressStatus_amount_ef,
+[lang='vi'] .ProgressStatus_amount_ef {
+    font-family: Warhelios;
+}
+[lang='ja'] .ProgressStatus_amount_ef {
+    font-family: WarheliosJA;
+}
+[lang='ko'] .ProgressStatus_amount_ef {
+    font-family: WarheliosKO;
+}
+[lang='zh_tw'] .ProgressStatus_amount_ef {
+    font-family: WarheliosZHTW;
+}
+[lang='zh_sg'] .ProgressStatus_amount_ef,
+[lang='zh_cn'] .ProgressStatus_amount_ef {
+    font-family: WarheliosZHCN;
+}
+.ProgressStatus_amount_ef {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    color: #d7e2ff;
+    font-weight: 700;
+    position: absolute;
+}
+.ProgressStatus_doorsClosed_90 {
+    display: flex;
+    margin-left: 3rem;
+    margin-right: 3rem;
+}
+.ProgressStatus_check_d7 {
+    width: 16rem;
+    height: 16rem;
+    background: url('R.images.advent_calendar.gui.maps.icons.common.check_small') no-repeat center / contain;
+    position: absolute;
+    left: 50%;
+    z-index: 2;
+    transform: translateX(-50%);
+}
+.mediaLarge .ProgressStatus_check_d7 {
+    width: 24rem;
+    height: 24rem;
+    margin-top: -3rem;
+    background-image: url('R.images.advent_calendar.gui.maps.icons.common.check');
+}
+.ProgressStatus_stage_55 {
+    width: 16rem;
+    height: 16rem;
+    margin: 1rem 0 0 1rem;
+    background: url('R.images.advent_calendar.gui.maps.icons.mainView.progression.stage') no-repeat center / contain;
+}
+
+.AnimationReward_base_96 {
+    display: flex;
+    align-items: center;
+}
+
+.AnimationReward_base__lootbox_2a {
+    margin-left: 15rem;
+}
+
+.mediaLarge .AnimationReward_base__lootbox_2a {
+    margin-left: 10rem;
+}
+
+.AnimationReward_reward_c4 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.AnimationReward_spacer_76 {
+    width: 55rem;
+    height: 1rem;
+    margin: -10rem 15rem 0;
+    border-radius: 3px;
+    background: rgba(189, 212, 255, 0.3);
+    position: relative;
+}
+
+.mediaLarge .AnimationReward_spacer_76 {
+    width: 89rem;
+}
+
+.AnimationReward_base__received_58 .AnimationReward_spacer_76 {
+    pointer-events: none;
+}
+
+.AnimationReward_lock_8b {
+    width: 16rem;
+    height: 16rem;
+    background: url('R.images.advent_calendar.gui.maps.icons.common.lock_small') no-repeat center / contain;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+.mediaLarge .AnimationReward_lock_8b {
+    width: 24rem;
+    height: 24rem;
+    background: url('R.images.advent_calendar.gui.maps.icons.common.lock') no-repeat center / contain;
+}
+
+.AnimationReward_image_2c {
+    width: 48rem;
+    height: 48rem;
+    background-size: 100%;
+    position: relative;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.mediaLarge .AnimationReward_image_2c {
+    width: 80rem;
+    height: 80rem;
+}
+
+.AnimationReward_base__lootbox_2a .AnimationReward_image_2c {
+    width: 81rem;
+    height: 48rem;
+}
+
+.mediaLarge .AnimationReward_base__lootbox_2a .AnimationReward_image_2c {
+    width: 135rem;
+    height: 80rem;
+}
+
+.AnimationReward_imageWrapper_be {
+    position: relative;
+}
+
+.AnimationReward_lootBoxGlow_26 {
+    width: 114rem;
+    height: 114rem;
+    background: url('R.images.advent_calendar.gui.maps.icons.mainView.progression.lootBoxGlow_small') no-repeat center /
+        contain;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.mediaLarge .AnimationReward_lootBoxGlow_26 {
+    width: 190rem;
+    height: 190rem;
+    background-image: url('R.images.advent_calendar.gui.maps.icons.mainView.progression.lootBoxGlow_big');
+}
+
+.AnimationReward_blur_e4 {
+    opacity: 0.5;
+}
+
+.FormatText_base_d0 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.Title_base_3a {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    color: rgba(215, 226, 255, 0.6);
+    font-size: 14rem;
+    line-height: 1.2;
+}
+
+.mediaMedium .Title_base_3a {
+    font-size: 16rem;
+}
+
+.mediaLarge .Title_base_3a {
+    font-size: 18rem;
+}
+
+.mediaUltraLarge .Title_base_3a {
+    font-size: 20rem;
+}
+
+.Title_text_90 {
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.Title_check_de {
+    width: 16rem;
+    height: 16rem;
+    margin-right: 5rem;
+    background: url('R.images.advent_calendar.gui.maps.icons.common.check_small') no-repeat center / contain;
+}
+
+.mediaMedium .Title_check_de {
+    margin-top: 3rem;
+}
+
+.mediaLarge .Title_check_de {
+    width: 24rem;
+    height: 24rem;
+    margin-top: 0;
+    background-image: url('R.images.advent_calendar.gui.maps.icons.common.check_small');
+}
+
+.Title_title_71 {
+    display: flex;
+    margin-top: -3rem;
+    position: absolute;
+    top: 50%;
+}
+
+.mediaLarge .Title_title_71 {
+    margin-top: -5rem;
+}
+
+.Title_lock_35 {
+    width: 16rem;
+    height: 16rem;
+    margin: 1rem 2rem 0 0;
+    background: url('R.images.advent_calendar.gui.maps.icons.common.lock_small') no-repeat center / contain;
+}
+
+.mediaLarge .Title_lock_35 {
+    width: 24rem;
+    height: 24rem;
+    margin: 0 3rem 0 0;
+    background-image: url('R.images.advent_calendar.gui.maps.icons.common.lock');
+}
+
+.Footer_base_0d {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30rem;
+    position: relative;
+    transition:
+        opacity 0.8s,
+        transform 0.8s;
+}
+
+.Footer_base__hidden_14 {
+    opacity: 0;
+    transform: translateY(20rem);
+    pointer-events: none;
+}
+
+.mediaUltraSmall .Footer_base_0d {
+    margin-bottom: 0;
+}
+
+.mediaMedium .Footer_base_0d {
+    margin-bottom: 25rem;
+}
+
+.mediaLarge .Footer_base_0d {
+    margin-bottom: 30rem;
+}
+
+.mediaUltraLarge .Footer_base_0d {
+    margin-bottom: 40rem;
+}
+
+.Footer_title_23 {
+    display: flex;
+    margin-top: -13rem;
+    margin-right: 25rem;
+    position: relative;
+    z-index: 1;
+}
+
+.mediaLarge .Footer_title_23 {
+    margin-right: 30rem;
+}
+
+.FormatTextWithColorTags_blackReal_3c {
+    color: #000000;
+}
+
+.FormatTextWithColorTags_whiteReal_8a {
+    color: #ffffff;
+}
+
+.FormatTextWithColorTags_white_16 {
+    color: #f2f2f7;
+}
+
+.FormatTextWithColorTags_whiteOrange_18 {
+    color: #fefeec;
+}
+
+.FormatTextWithColorTags_whiteSpanish_10 {
+    color: #e9e2bf;
+}
+
+.FormatTextWithColorTags_par_ca {
+    color: #8c8c7e;
+}
+
+.FormatTextWithColorTags_parSecondary_8d {
+    color: #595950;
+}
+
+.FormatTextWithColorTags_parTertiary_a3 {
+    color: #37362e;
+}
+
+.FormatTextWithColorTags_red_60 {
+    color: #ff2717;
+}
+
+.FormatTextWithColorTags_redDark_03 {
+    color: #b70000;
+}
+
+.FormatTextWithColorTags_yellow_ad {
+    color: #feab34;
+}
+
+.FormatTextWithColorTags_orange_e4 {
+    color: #ee7000;
+}
+
+.FormatTextWithColorTags_cream_cd {
+    color: #ffdd99;
+}
+
+.FormatTextWithColorTags_brown_c8 {
+    color: #cbac77;
+}
+
+.FormatTextWithColorTags_greenBright_f0 {
+    color: #80d43a;
+}
+
+.FormatTextWithColorTags_green_c5 {
+    color: #7ab300;
+}
+
+.FormatTextWithColorTags_greenDark_af {
+    color: #497212;
+}
+
+.FormatTextWithColorTags_blueBooster_ac {
+    color: #ccffff;
+}
+
+.FormatTextWithColorTags_blueTeamkiller_6f {
+    color: #09e2ff;
+}
+
+.FormatTextWithColorTags_cred_4e {
+    color: #ced9d9;
+}
+
+.FormatTextWithColorTags_gold_90 {
+    color: #ffc363;
+}
+
+.FormatTextWithColorTags_bond_71 {
+    color: #c9c9b6;
+}
+
+.FormatTextWithColorTags_prom_dd {
+    color: #a29b70;
+}
+
+/* This specific rule is used to fix https://jira.wargaming.net/browse/WOTPRG-9871 */
+
+.FormatTextWithColorTags_parNoWidth_5a {
+    width: 0;
+    color: #8c8c7e;
+}
+
+.GradientText_base_ce {
+    position: relative;
+}
+
+.GradientText_text_75 {
+    position: relative;
+    z-index: 1;
+    /* it fixes torn edges*/
+    transform: scale(0.99);
+}
+
+.GradientText_text__hidden_01 {
+    color: transparent;
+}
+
+.GradientText_text__basis_50 {
+    color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.GradientText_text__gradientColorize_e2 {
+    color: #aecbfa;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    mask-image: linear-gradient(336deg, #fff 0, #fff 13%, transparent 100%);
+}
+
+.GradientText_text__secondary_0e {
+    color: #e6eefc;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    mask-image: linear-gradient(336deg, #fff 0, #fff 72%, transparent 100%);
+}
+
+@keyframes Header_slideInFadeIn_76 {
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+@keyframes Header_fadeOut_7f {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes Header_fadeIn_9b {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+@keyframes Header_fadeInWithScale_6d {
+    0% {
+        opacity: 0;
+        transform: scale(1.2);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@keyframes Header_slideUp_43 {
+    0% {
+        opacity: 0;
+        transform: translateY(20rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes Header_scale_75 {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+@keyframes Header_spin_4f {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+@keyframes Header_blink_f9 {
+    0% {
+        transform: translateY(0rem);
+    }
+
+    15% {
+        transform: translateY(15rem);
+    }
+
+    30% {
+        transform: translateY(0rem);
+    }
+
+    45% {
+        transform: translateY(15rem);
+    }
+
+    60%,
+    100% {
+        transform: translateY(0rem);
+    }
+}
+@keyframes Header_slideInNotification_4a {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.Header_base_4f {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50rem;
+    transition:
+        opacity 0.8s,
+        transform 0.8s;
+}
+.Header_base__hidden_40 {
+    opacity: 0;
+    transform: translateY(-20rem);
+    pointer-events: none;
+}
+.mediaMedium .Header_base_4f {
+    margin-top: 57rem;
+}
+.mediaLarge .Header_base_4f {
+    margin-top: 50rem;
+}
+.mediaUltraLarge .Header_base_4f {
+    margin-top: 60rem;
+}
+.Header_shadow_29 {
+    width: 1200rem;
+    height: 420rem;
+    background-image: url('R.images.advent_calendar.gui.maps.icons.mainView.headerBg');
+    background-size: 100%;
+    mix-blend-mode: overlay;
+    position: absolute;
+    top: 115%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+.Header_titleWrapper_d4 {
+    font-family: DINRoundPro;
+}
+[lang='th'] .Header_titleWrapper_d4,
+[lang='el'] .Header_titleWrapper_d4,
+[lang='vi'] .Header_titleWrapper_d4 {
+    font-family: Warhelios;
+}
+[lang='ja'] .Header_titleWrapper_d4 {
+    font-family: WarheliosJA;
+}
+[lang='ko'] .Header_titleWrapper_d4 {
+    font-family: WarheliosKO;
+}
+[lang='zh_tw'] .Header_titleWrapper_d4 {
+    font-family: WarheliosZHTW;
+}
+[lang='zh_sg'] .Header_titleWrapper_d4,
+[lang='zh_cn'] .Header_titleWrapper_d4 {
+    font-family: WarheliosZHCN;
+}
+.Header_titleWrapper_d4 {
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 8rem;
+    position: relative;
+}
+.Header_title_eb {
+    color: rgba(215, 226, 255, 0.6);
+    font-size: 40rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.mediaMedium .Header_title_eb {
+    font-size: 45rem;
+}
+.mediaUltraLarge .Header_title_eb {
+    font-size: 60rem;
+}
+.Header_infoButton_5e {
+    width: 32rem;
+    height: 32rem;
+    margin-left: 2rem;
+    margin-bottom: 3rem;
+    background: url('R.images.advent_calendar.gui.maps.icons.mainView.info') no-repeat center / contain;
+}
+.mediaMedium .Header_infoButton_5e {
+    margin-bottom: 5rem;
+}
+.mediaUltraLarge .Header_infoButton_5e {
+    margin-bottom: 10rem;
+}
+.Header_subTitle_15 {
+    color: rgba(215, 226, 255, 0.6);
+    font-size: 14rem;
+    line-height: 1.2;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+.mediaMedium .Header_subTitle_15 {
+    font-size: 16rem;
+}
+.mediaLarge .Header_subTitle_15 {
+    font-size: 18rem;
+}
+.mediaUltraLarge .Header_subTitle_15 {
+    font-size: 20rem;
+}
+
+.TextButton_base_b6 {
+    display: flex;
+    align-items: center;
+    padding: 0 3rem;
+    font-size: 12rem;
+    position: relative;
+    cursor: pointer;
+}
+
+.TextButton_base__right_39 {
+    flex-direction: row-reverse;
+}
+.TextButton_icon_17 {
+    width: 32rem;
+    height: 32rem;
+    background: no-repeat center / contain;
+    position: relative;
+}
+.TextButton_icon__back_43,
+.TextButton_icon__forward_59 {
+    margin: -1rem -5rem;
+    background-image: url('R.images.gui.maps.icons.components.text_button.back');
+    transform: translateY(1rem);
+}
+.TextButton_icon__forward_59 {
+    transform: rotate(180deg) translateY(1rem);
+}
+.TextButton_icon__close_53 {
+    margin: -1rem 0;
+    background-image: url('R.images.gui.maps.icons.components.text_button.close');
+}
+.TextButton_icon__info_33 {
+    margin: -1rem -5rem;
+    background-image: url('R.images.gui.maps.icons.components.text_button.info');
+}
+.TextButton_glow_a4 {
+    width: 100%;
+    height: 100%;
+    background: no-repeat center / contain;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    transition: opacity 0.16s;
+}
+.TextButton_icon__back_43 .TextButton_glow_a4,
+.TextButton_icon__forward_59 .TextButton_glow_a4 {
+    background-image: url('R.images.gui.maps.icons.components.text_button.back_hover');
+}
+.TextButton_icon__close_53 .TextButton_glow_a4 {
+    background-image: url('R.images.gui.maps.icons.components.text_button.close_hover');
+}
+.TextButton_icon__info_33 .TextButton_glow_a4 {
+    background-image: url('R.images.gui.maps.icons.components.text_button.info_hover');
+}
+.TextButton_base_b6:hover .TextButton_glow_a4 {
+    opacity: 1;
+}
+.TextButton_base_b6:active .TextButton_glow_a4 {
+    opacity: 0;
+}
+.TextButton_caption_82 {
+    position: relative;
+    transition:
+        color 0.16s,
+        text-shadow 0.16s;
+}
+.TextButton_caption__back_b9,
+.TextButton_caption__forward_4e,
+.TextButton_caption__close_36 {
+    color: #ffdd99;
+    text-shadow:
+        0 0 10rem rgba(255, 42, 0, 1),
+        0 0 10rem rgba(255, 42, 0, 0.4),
+        0 0 10rem rgba(255, 42, 0, 0.4),
+        0 0 2rem rgba(255, 42, 0, 0.4),
+        0 0 1rem rgba(255, 42, 0, 0.4),
+        0 0 2rem rgba(255, 42, 0, 0.4),
+        0 0 1rem rgba(255, 42, 0, 0.4);
+}
+.TextButton_base_b6:hover .TextButton_caption__back_b9,
+.TextButton_base_b6:hover .TextButton_caption__forward_4e,
+.TextButton_base_b6:hover .TextButton_caption__close_36 {
+    color: #fffa9f;
+}
+.TextButton_base_b6:active .TextButton_caption__back_b9,
+.TextButton_base_b6:active .TextButton_caption__forward_4e,
+.TextButton_base_b6:active .TextButton_caption__close_36 {
+    color: #ffdd99;
+}
+.TextButton_caption__info_23 {
+    padding: 0 5rem;
+    color: #ccffff;
+    text-shadow:
+        0 0 12rem rgba(31, 68, 255, 0.8),
+        0 0 8rem #00eaff;
+}
+.TextButton_base_b6:hover .TextButton_caption__info_23 {
+    color: #e3ffff;
+    text-shadow:
+        0 0 12rem rgba(31, 68, 255, 0.8),
+        0 0 12rem rgba(0, 234, 255, 1),
+        0 0 8rem #00eaff;
+}
+.TextButton_base_b6:active .TextButton_caption__info_23 {
+    color: #ccffff;
+    text-shadow:
+        0 0 12rem rgba(31, 68, 255, 0.6),
+        0 0 8rem #00eaff;
+}
+.TextButton_goto_e7 {
+    color: #7c7c6c;
+}
+.TextButton_base__left_ff .TextButton_goto_e7 {
+    margin-left: 8rem;
+}
+.TextButton_base__right_39 .TextButton_goto_e7 {
+    margin-right: 8rem;
+}
+.TextButton_shine_e2 {
+    width: 90rem;
+    height: 40rem;
+    background: url('R.images.gui.maps.icons.components.text_button.shine') no-repeat center / contain;
+    opacity: 0;
+    position: absolute;
+    top: -4rem;
+    transition: opacity 0.16s;
+    pointer-events: none;
+}
+.TextButton_base__left_ff .TextButton_shine_e2 {
+    left: -4rem;
+}
+.TextButton_base__right_39 .TextButton_shine_e2 {
+    right: -4rem;
+    transform: rotate(180deg);
+}
+.TextButton_base_b6:hover .TextButton_shine_e2 {
+    opacity: 1;
+}
+.TextButton_base_b6:active .TextButton_shine_e2 {
+    opacity: 0;
+}
+
+.Navigation_base_3f {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 17rem;
+    right: 17rem;
+    left: 17rem;
+}
+
+.mediaMedium .Navigation_base_3f {
+    top: 29rem;
+}
+
+.mediaLarge .Navigation_base_3f {
+    right: 25rem;
+    left: 25rem;
+}
+
+.Navigation_close_69,
+.Navigation_info_60 {
+    transition:
+        opacity 0.8s,
+        transform 0.8s;
+}
+
+.Navigation_base__hidden_0a .Navigation_close_69,
+.Navigation_base__hidden_0a .Navigation_info_60 {
+    opacity: 0;
+    transform: translateY(-20rem);
+    pointer-events: none;
+}

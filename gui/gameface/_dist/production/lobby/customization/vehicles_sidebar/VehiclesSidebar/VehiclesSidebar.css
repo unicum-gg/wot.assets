@@ -1,0 +1,809 @@
+.CButton_base_40 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2rem;
+    box-shadow: 0 0 0 1rem rgba(0, 0, 0, 0.6);
+    position: relative;
+    cursor: pointer;
+}
+
+.CButton_base__main_42,
+.CButton_base__primary_7f,
+.CButton_base__primaryGreen_6f,
+.CButton_base__primaryRed_ec,
+.CButton_base__secondary_50 {
+    background-size: 100% 100%;
+}
+
+.CButton_base__main_42 {
+    background-image: url('R.images.gui.maps.icons.components.button.back_main');
+}
+
+.CButton_base__primary_7f {
+    background-image: url('R.images.gui.maps.icons.components.button.back_primary');
+}
+
+.CButton_base__primaryGreen_6f {
+    background-image: url('R.images.gui.maps.icons.components.button.back_primary_green');
+}
+
+.CButton_base__primaryRed_ec {
+    background-image: url('R.images.gui.maps.icons.components.button.back_primary_red');
+}
+
+.CButton_base__secondary_50 {
+    background-image: url('R.images.gui.maps.icons.components.button.back_secondary');
+}
+
+.CButton_base__ghost_ed {
+    border-radius: 3rem;
+    box-shadow:
+        0 0 0 1rem rgba(0, 0, 0, 0.3),
+        0 0 0 1rem rgba(255, 255, 255, 0.15) inset;
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+.CButton_base__extraSmall_27 {
+    min-height: 17rem;
+    padding: 0 16rem;
+}
+
+.CButton_base__small_df,
+.CButton_base__medium_74 {
+    padding: 0 20rem;
+}
+
+.CButton_base__small_df {
+    min-height: 18rem;
+}
+
+.CButton_base__medium_74 {
+    min-height: 32rem;
+}
+
+.CButton_base__large_5c {
+    min-height: 48rem;
+}
+
+.CButton_base__disabled_d9 {
+    cursor: default;
+}
+/* Element .back and background-image in element .base need for fix bug in GF https://jira.wargaming.net/browse/WOTD-158525
+The bug is that under certain conditions, when using border-image, stripes appear. Strip is a single-pixel gap
+between 'border-image-width' and 'fill'.
+This bug is reproduced in Google Chrome 81.0.4044.113
+*/
+.CButton_back_e5 {
+    border-image-slice: 4 fill;
+    border-image-width: 4rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.CButton_base__main_42 .CButton_back_e5 {
+    border-image-source: url('R.images.gui.maps.icons.components.button.back_main');
+}
+.CButton_base__primary_7f .CButton_back_e5 {
+    border-image-source: url('R.images.gui.maps.icons.components.button.back_primary');
+}
+.CButton_base__primaryGreen_6f .CButton_back_e5 {
+    border-image-source: url('R.images.gui.maps.icons.components.button.back_primary_green');
+}
+.CButton_base__primaryRed_ec .CButton_back_e5 {
+    border-image-source: url('R.images.gui.maps.icons.components.button.back_primary_red');
+}
+.CButton_base__secondary_50 .CButton_back_e5 {
+    border-image-source: url('R.images.gui.maps.icons.components.button.back_secondary');
+}
+.CButton_texture_fe {
+    background: url('R.images.gui.maps.icons.components.button.standard_texture_file');
+    background-size: 155rem 31rem;
+    mix-blend-mode: soft-light;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.CButton_state_11 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition: box-shadow 0.16s ease-in-out;
+}
+.CButton_base__focus_83 .CButton_state_11 {
+    border-radius: 2rem;
+    box-shadow: inset 0 0 2rem 1rem rgba(255, 85, 0, 0.2);
+}
+.CButton_stateHighlightHover_ff,
+.CButton_stateHighlightActive_35,
+.CButton_stateDisabled_54 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.CButton_stateHighlightHover_ff {
+    background-image: linear-gradient(
+        180deg,
+        rgba(252, 248, 235, 0.25) 0%,
+        rgba(252, 248, 235, 0.1) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    opacity: 0;
+}
+.CButton_base_40:hover .CButton_stateHighlightHover_ff {
+    opacity: 1;
+}
+.CButton_base_40:active .CButton_stateHighlightHover_ff {
+    opacity: 0;
+}
+.CButton_base__disabled_d9:hover .CButton_stateHighlightHover_ff {
+    opacity: 0;
+}
+.CButton_base__ghost_ed .CButton_stateHighlightHover_ff {
+    box-shadow: 0 15rem 12rem 0 rgba(242, 242, 230, 0.11) inset;
+    background-color: rgba(8, 6, 0, 0.18);
+    background-image: none;
+}
+.CButton_stateHighlightActive_35 {
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.15) 100%);
+    opacity: 0;
+}
+.CButton_base__highlightActive_b2 .CButton_stateHighlightActive_35 {
+    opacity: 1;
+}
+.CButton_stateDisabled_54 {
+    background-color: rgba(0, 0, 0, 0.25);
+    background-image: url('R.images.gui.maps.icons.components.button.texture_disable');
+    background-size: 15rem 15rem;
+    visibility: hidden;
+}
+.CButton_base__disabled_d9 .CButton_stateDisabled_54 {
+    visibility: inherit;
+}
+.CButton_content_cc {
+    display: flex;
+    align-items: center;
+    color: #f2f2e6;
+    font-weight: 700;
+    line-height: 1.2;
+    text-shadow: 0 -1rem 1rem #000;
+    letter-spacing: 0.03em;
+    transform: translateY(-1rem);
+}
+.CButton_content_cc[lang='ja'],
+.CButton_content_cc[lang='ko'],
+.CButton_content_cc[lang='zh_tw'],
+.CButton_content_cc[lang='zh_sg'],
+.CButton_content_cc[lang='zh_cn'],
+.CButton_content_cc[lang='th'] {
+    font-weight: 400;
+}
+.CButton_base__main_42 .CButton_content_cc,
+.CButton_base__primaryRed_ec .CButton_content_cc {
+    text-shadow: 0 -1rem 1rem #600;
+}
+.CButton_base__secondary_50 .CButton_content_cc {
+    color: rgba(254, 254, 236, 0.75);
+}
+.CButton_base__primaryGreen_6f .CButton_content_cc {
+    text-shadow: 0 -1rem 1rem #1c2502;
+}
+.CButton_base__extraSmall_27 .CButton_content_cc {
+    font-size: 12rem;
+}
+.CButton_base__small_df .CButton_content_cc {
+    font-size: 14rem;
+}
+.CButton_base__medium_74 .CButton_content_cc {
+    font-size: 15rem;
+}
+.CButton_base__large_5c .CButton_content_cc {
+    font-size: 18rem;
+}
+.CButton_base__disabled_d9 .CButton_content_cc {
+    opacity: 0.6;
+}
+
+body {
+    overflow: hidden;
+}
+
+.Layout_base_ee {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background: #0000 no-repeat center center / cover;
+}
+
+.Layout_leftBlock_c0 {
+    flex-grow: 2;
+    width: 100rem;
+    position: relative;
+}
+
+.Layout_rightBlock_87 {
+    width: 440rem;
+    height: 100%;
+    background: url('R.images.gui.maps.icons.customization.vehicles_sidebar.bg') center center / cover;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.Layout_pin_ce {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 100;
+}
+
+.Layout_closeBtn_26 {
+    width: 13rem;
+    height: 13rem;
+    background: url('R.images.gui.maps.icons.customization.vehicles_sidebar.closeX') center / contain no-repeat;
+    cursor: pointer;
+}
+
+.Layout_close_c5 {
+    margin: 14rem 14rem 0 0;
+}
+
+.App_base_ca {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.App_header_b8 {
+    margin: 30rem 0 0;
+}
+
+.App_headerText_49 {
+    color: #fefeec;
+    font-size: 14rem;
+    font-weight: 700;
+    line-height: 1.15;
+    color: #e9e2bf;
+    font-size: 16rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.App_vehiclesList_cf {
+    flex-grow: 2;
+    margin: -9rem 0 0;
+}
+
+.App_footer_32 {
+    margin: 0;
+}
+
+.App_submitBtnContainer_ac {
+    margin-bottom: 38rem;
+    text-align: center;
+}
+
+.App_submitBtn_ec {
+    width: 160rem;
+    height: 32rem;
+}
+
+.HorizontalBar_base_49 {
+    display: flex;
+    width: 100%;
+    height: 13rem;
+    position: relative;
+}
+
+.HorizontalBar_base__nonActive_82 {
+    visibility: hidden;
+}
+
+.HorizontalBar_base_49 .disable,
+.HorizontalBar_base_49 .disable:hover {
+    opacity: 0.3;
+    cursor: default;
+}
+
+.HorizontalBar_leftButton_5f,
+.HorizontalBar_rightButton_03 {
+    width: 13rem;
+    height: 13rem;
+    border: 1rem solid #7e7b68;
+    box-shadow: inset 0 0 1rem rgba(255, 255, 190, 0.3);
+    background: no-repeat center / 7rem 5rem;
+    opacity: 0.5;
+    z-index: 1;
+    transform: rotate(-90deg);
+    transition: opacity 130ms linear;
+    cursor: pointer;
+}
+
+.HorizontalBar_leftButton_5f:hover,
+.HorizontalBar_rightButton_03:hover {
+    opacity: 1;
+}
+
+.HorizontalBar_leftButton_5f {
+    background-image: url('R.images.gui.maps.icons.components.scroll_area.arrow_top');
+}
+
+.HorizontalBar_rightButton_03 {
+    background-image: url('R.images.gui.maps.icons.components.scroll_area.arrow_down');
+}
+
+.HorizontalBar_track_0d {
+    flex: 1;
+    margin: 0 1rem;
+    position: relative;
+    cursor: pointer;
+}
+
+.HorizontalBar_thumb_fd {
+    display: none;
+    flex: 0 0 100%;
+    width: 100%;
+    min-width: 20rem;
+    height: 13rem;
+    border: 1rem solid #7e7b68;
+    box-shadow: inset 0 0 1rem rgba(255, 255, 190, 0.3);
+    background: #26241b url('R.images.gui.maps.icons.components.scroll_area.thumb_horizontal') no-repeat center / 8rem
+        7rem;
+    opacity: 0.5;
+    position: absolute;
+    z-index: 1;
+    transition: opacity 130ms linear;
+    cursor: pointer;
+}
+
+.HorizontalBar_thumb_fd:hover {
+    opacity: 1;
+}
+
+.HorizontalBar_rail_32 {
+    height: 0;
+    border-top: 1rem solid #2f2e24;
+    position: absolute;
+    top: 6rem;
+    right: 5rem;
+    left: 5rem;
+}
+
+.HorizontalBar_rail_32:hover {
+    opacity: 0.7;
+}
+
+.HorizontalScroll_base_29 {
+    width: 100%;
+}
+
+.HorizontalScroll_wrapper_1e {
+    display: flex;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.HorizontalScroll_defaultScrollArea_8d {
+    width: 100%;
+    margin-bottom: 7rem;
+}
+
+.VerticalBar_base_f3 {
+    display: flex;
+    flex-direction: column;
+    width: 13rem;
+    height: 100%;
+    position: relative;
+}
+
+.VerticalBar_base__nonActive_42 {
+    visibility: hidden;
+}
+
+.VerticalBar_base_f3 .disable,
+.VerticalBar_base_f3 .disable:hover {
+    opacity: 0.3;
+    cursor: default;
+}
+
+.VerticalBar_topButton_d7,
+.VerticalBar_bottomButton_06 {
+    width: 13rem;
+    height: 13rem;
+    border: 1rem solid #7e7b68;
+    box-shadow: inset 0 0 1rem rgba(255, 255, 190, 0.3);
+    background: no-repeat center / 7rem 5rem;
+    opacity: 0.5;
+    z-index: 1;
+    transition: opacity 130ms linear;
+    cursor: pointer;
+}
+
+.VerticalBar_topButton_d7:hover,
+.VerticalBar_bottomButton_06:hover {
+    opacity: 1;
+}
+
+.VerticalBar_topButton_d7 {
+    background-image: url('R.images.gui.maps.icons.components.scroll_area.arrow_top');
+}
+
+.VerticalBar_bottomButton_06 {
+    background-image: url('R.images.gui.maps.icons.components.scroll_area.arrow_down');
+}
+
+.VerticalBar_track_df {
+    flex: 1;
+    margin: 1rem 0;
+    position: relative;
+    cursor: pointer;
+}
+
+.VerticalBar_thumb_32 {
+    display: none;
+    flex: 0 0 13rem;
+    width: 13rem;
+    height: 100%;
+    min-height: 20rem;
+    border: 1rem solid #7e7b68;
+    box-shadow: inset 0 0 1rem rgba(255, 255, 190, 0.3);
+    background: #26241b url('R.images.gui.maps.icons.components.scroll_area.thumb') no-repeat center / 7rem 8rem;
+    opacity: 0.5;
+    position: absolute;
+    z-index: 1;
+    transition: opacity 130ms linear;
+    cursor: pointer;
+}
+
+.VerticalBar_thumb_32:hover {
+    opacity: 1;
+}
+
+.VerticalBar_rail_43 {
+    width: 0;
+    height: 100%;
+    border-left: 1rem solid #2f2e24;
+    border-top: 5rem solid transparent;
+    border-bottom: 5rem solid transparent;
+    position: absolute;
+    top: 0;
+    left: 6rem;
+    z-index: 0;
+}
+
+.VerticalBar_rail_43:hover {
+    opacity: 0.7;
+}
+
+.VerticalScroll_content_cb {
+    height: 100%;
+    overflow-y: hidden;
+}
+
+.VerticalScroll_defaultScroll_f8 {
+    display: flex;
+}
+
+.VerticalScroll_bar_1e {
+    flex: 1;
+    margin-left: 7rem;
+}
+
+.VerticalScroll_area_af {
+    flex: 1;
+}
+
+.SortToggleButton_base_46 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 48rem;
+    position: relative;
+    cursor: pointer;
+}
+
+.SortToggleButton_base__disabled_56 {
+    cursor: default;
+}
+
+.SortToggleButton_icon_d8 {
+    width: 37rem;
+    height: 48rem;
+    background: center / contain no-repeat;
+    position: relative;
+}
+
+.SortToggleButton_icon__nation_ae {
+    background-image: url('R.images.gui.maps.icons.customization.vehicles_sidebar.nationIcon');
+}
+
+.SortToggleButton_icon__type_51 {
+    background-image: url('R.images.gui.maps.icons.customization.vehicles_sidebar.tierIcon');
+}
+
+.SortToggleButton_icon__tier_d3 {
+    background-image: url('R.images.gui.maps.icons.customization.vehicles_sidebar.levelIcon');
+}
+
+.SortToggleButton_icon__amountOf3DAttachments_89 {
+    width: 44rem;
+    background-image: url('R.images.gui.maps.icons.customization.vehicles_sidebar.attachmentsIcon');
+}
+
+.SortToggleButton_icon__inDepot_db {
+    width: 54rem;
+    height: 50rem;
+    background-image: url('R.images.gui.maps.icons.customization.vehicles_sidebar.onwarehouseIcon');
+    transform: translateX(-7rem);
+}
+
+.SortToggleButton_select_04 {
+    position: absolute;
+    bottom: 0;
+}
+
+.SortToggleButton_indicator_de {
+    width: 16rem;
+    height: 8rem;
+    background: url('R.images.gui.maps.icons.customization.vehicles_sidebar.selectIndicator') center / contain no-repeat;
+    transform: translateY(7rem);
+}
+
+.SortToggleTextButton_base_4f {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 48rem;
+    position: relative;
+    cursor: pointer;
+}
+
+.SortToggleTextButton_base__disabled_d4 {
+    cursor: default;
+}
+
+.SortToggleTextButton_container_2b {
+    color: #fefeec;
+    font-size: 14rem;
+    font-weight: 700;
+    line-height: 1.15;
+    display: flex;
+    align-items: center;
+    width: 39rem;
+    height: 48rem;
+    margin: 10rem;
+    background: center / contain no-repeat;
+    font-size: 16rem;
+    font-weight: 400;
+    text-align: left;
+}
+
+.SortToggleTextButton_container__name_55 {
+    width: 178rem;
+    color: #d1cfc0;
+}
+
+.SortToggleTextButton_base__selected_96 .SortToggleTextButton_container__name_55 {
+    color: #e9e2bf;
+}
+
+.SortToggleTextButton_select_9e {
+    position: absolute;
+    bottom: 0;
+}
+
+.SortToggleTextButton_indicator_64 {
+    width: 16rem;
+    height: 8rem;
+    background: url('R.images.gui.maps.icons.customization.vehicles_sidebar.selectIndicator') center / contain no-repeat;
+    transform: translateY(7rem);
+}
+
+.ControlsPanel_base_4c {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 412rem;
+    height: 48rem;
+    text-align: center;
+}
+
+.ControlsPanel_separator_de {
+    width: 2rem;
+    height: 32rem;
+    background: url('R.images.gui.maps.icons.customization.vehicles_sidebar.separator') center / contain no-repeat;
+    pointer-events: none;
+}
+
+.ControlsPanel_separator__last_d1 {
+    margin-left: -10rem;
+}
+
+.ControlsPanel_base_4c:hover .ControlsPanel_toggleButtonContainer_31 {
+    opacity: 0.7;
+}
+
+.ControlsPanel_base_4c:hover .ControlsPanel_toggleButtonContainer_31:hover {
+    opacity: 1;
+}
+
+.ControlsPanel_fill_60 {
+    width: 10rem;
+}
+
+.VehicleItemWrapper_base_fd {
+    width: 407rem;
+    height: 57rem;
+    position: relative;
+}
+
+.VehicleItemWrapper_light_8c {
+    background: linear-gradient(90deg, #f2e3d500 0, #f2e3d51a 51%, #f2e3d500 0),
+        linear-gradient(270deg, #f2e3d500 0, #f2e3d51a 50%, #f2e3d500 0);
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition: opacity 0.1s ease-in-out;
+    pointer-events: none;
+}
+
+.VehicleItemWrapper_base__withContent_63:hover .VehicleItemWrapper_light_8c {
+    opacity: 1;
+}
+
+.VehicleItemWrapper_content_59 {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.VehicleItem_base_92 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+    position: relative;
+}
+
+.VehicleItem_nationContainer_c5 {
+    width: 26rem;
+    margin-left: 25rem;
+    text-align: center;
+}
+
+.VehicleItem_nation_44 {
+    width: 26rem;
+    height: 16rem;
+    background: center / contain no-repeat;
+}
+
+.VehicleItem_typeContainer_e2 {
+    width: 40rem;
+    text-align: center;
+}
+
+.VehicleItem_type_63 {
+    width: 44rem;
+    height: 44rem;
+    background: center / contain no-repeat;
+}
+
+.VehicleItem_tierContainer_57 {
+    width: 30rem;
+    height: 20rem;
+    text-align: center;
+}
+
+.VehicleItem_tier_69 {
+    width: 29rem;
+    height: 20rem;
+    background: center / contain no-repeat;
+}
+
+.VehicleItem_vehicleInfoContainer_ff {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+}
+
+.VehicleItem_vehicleIcon_3e {
+    width: 124rem;
+    height: 31rem;
+    background: center / contain no-repeat;
+    mask-image: linear-gradient(to bottom, #000 60%, transparent);
+}
+
+.VehicleItem_vehicleName_fa {
+    color: #fefeec;
+    font-size: 14rem;
+    font-weight: 700;
+    line-height: 1.15;
+    width: 124rem;
+    margin-left: -39rem;
+    color: #d1cfc0;
+    font-size: 16rem;
+    font-weight: 400;
+    text-align: left;
+}
+
+.VehicleItem_amountOf3DAttachments_c6 {
+    color: #fefeec;
+    font-size: 14rem;
+    font-weight: 700;
+    line-height: 1.15;
+    width: 40rem;
+    color: #d1cfc0;
+    font-size: 16rem;
+    font-weight: 400;
+}
+
+.VehicleItem_warehouseIcon_1d {
+    width: 54rem;
+    height: 50rem;
+    background: url('R.images.gui.maps.icons.customization.vehicles_sidebar.onwarehouseIcon') center / contain no-repeat;
+    transform: translateX(-5rem);
+}
+
+.VehicleItem_separator_77 {
+    align-self: center;
+    width: 358rem;
+    height: 3rem;
+    background: url('R.images.gui.maps.icons.customization.vehicles_sidebar.item.separator') center / contain no-repeat;
+    transform: translateY(-3rem);
+}
+
+.VehiclesList_base_d7 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.VehiclesList_controlsPanel_ab {
+    margin-top: 24rem;
+}
+
+.VehiclesList_lipTop_f4 {
+    width: 439rem;
+    height: 55rem;
+    background: url('R.images.gui.maps.icons.customization.vehicles_sidebar.lipTop') center / contain no-repeat;
+    position: absolute;
+    top: 113rem;
+    left: 0;
+    pointer-events: none;
+}
+
+.VehiclesList_lipBottom_42 {
+    width: 439rem;
+    height: 55rem;
+    background: url('R.images.gui.maps.icons.customization.vehicles_sidebar.lipBottom') center / contain no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.VehiclesList_itemsContainer_9b {
+    width: 435rem;
+    position: absolute;
+    top: 113rem;
+}
+
+.VehiclesList_scroll_57 {
+    transform: scale(1, 0.96);
+}

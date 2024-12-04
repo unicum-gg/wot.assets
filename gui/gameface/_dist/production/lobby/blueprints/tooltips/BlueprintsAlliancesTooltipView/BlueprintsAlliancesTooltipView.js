@@ -2,10 +2,10 @@
     'use strict';
     var __webpack_modules__ = {
             768: (u, e, t) => {
-                t.d(e, { O: () => eu });
+                t.d(e, { O: () => Eu });
                 var E = {};
                 t.r(E),
-                    t.d(E, { mouse: () => s, off: () => a, on: () => B, onResize: () => r, onScaleUpdated: () => o });
+                    t.d(E, { mouse: () => s, off: () => B, on: () => a, onResize: () => r, onScaleUpdated: () => o });
                 var A = {};
                 t.r(A),
                     t.d(A, {
@@ -32,36 +32,37 @@
                 }
                 t.r(n),
                     t.d(n, {
-                        addModelObserver: () => L,
-                        addPreloadTexture: () => P,
+                        addModelObserver: () => V,
+                        addPreloadTexture: () => M,
                         children: () => F,
-                        displayStatus: () => b,
-                        displayStatusIs: () => Q,
-                        events: () => f,
-                        extraSize: () => J,
-                        forceTriggerMouseMove: () => Z,
-                        freezeTextureBeforeResize: () => j,
-                        getBrowserTexturePath: () => S,
-                        getDisplayStatus: () => X,
-                        getScale: () => W,
-                        getSize: () => I,
-                        getViewGlobalPosition: () => z,
-                        isEventHandled: () => Y,
-                        isFocused: () => G,
-                        pxToRem: () => $,
-                        remToPx: () => q,
-                        resize: () => U,
-                        sendEvent: () => N,
-                        setAnimateWindow: () => K,
-                        setEventHandled: () => H,
-                        setInputPaddingsRem: () => M,
-                        setSidePaddingsRem: () => V,
-                        whenTutorialReady: () => uu,
+                        displayStatus: () => f,
+                        displayStatusIs: () => uu,
+                        events: () => b,
+                        extraSize: () => eu,
+                        forceTriggerMouseMove: () => X,
+                        freezeTextureBeforeResize: () => $,
+                        getBrowserTexturePath: () => L,
+                        getDisplayStatus: () => Q,
+                        getFontNames: () => J,
+                        getScale: () => j,
+                        getSize: () => U,
+                        getViewGlobalPosition: () => W,
+                        isEventHandled: () => Z,
+                        isFocused: () => H,
+                        pxToRem: () => q,
+                        remToPx: () => K,
+                        resize: () => z,
+                        sendEvent: () => P,
+                        setAnimateWindow: () => G,
+                        setEventHandled: () => Y,
+                        setInputPaddingsRem: () => S,
+                        setSidePaddingsRem: () => I,
+                        whenTutorialReady: () => tu,
                     });
                 const r = D('clientResized'),
                     o = D('self.onScaleUpdated'),
-                    B = (u, e) => engine.on(u, e),
-                    a = (u, e) => engine.off(u, e),
+                    a = (u, e) => engine.on(u, e),
+                    B = (u, e) => engine.off(u, e),
                     C = { down: D('mousedown'), up: D('mouseup'), move: D('mousemove') };
                 const s = (function () {
                     const u = { listeners: 0, enabled: !0, initialized: !1 };
@@ -157,8 +158,8 @@
                 function g(u, e, t) {
                     return `url(${h(u, e, t)})`;
                 }
-                const b = { showing: 0, shown: 1, hiding: 2, hidden: 3 },
-                    f = {
+                const f = { showing: 0, shown: 1, hiding: 2, hidden: 3 },
+                    b = {
                         onTextureFrozen: D('self.onTextureFrozen'),
                         onTextureReady: D('self.onTextureReady'),
                         onDomBuilt: D('self.onDomBuilt'),
@@ -185,12 +186,13 @@
                             const A = e.args,
                                 F = (function (u, e) {
                                     if (null == u) return {};
-                                    var t,
-                                        E,
-                                        A = {},
-                                        F = Object.keys(u);
-                                    for (E = 0; E < F.length; E++) (t = F[E]), e.indexOf(t) >= 0 || (A[t] = u[t]);
-                                    return A;
+                                    var t = {};
+                                    for (var E in u)
+                                        if ({}.hasOwnProperty.call(u, E)) {
+                                            if (e.indexOf(E) >= 0) continue;
+                                            t[E] = u[E];
+                                        }
+                                    return t;
                                 })(e, T);
                             return void 0 !== A
                                 ? viewEnv.handleViewEvent(
@@ -215,7 +217,7 @@
                         return viewEnv.handleViewEvent({ __Type: t, type: u });
                         var E;
                     },
-                    N = {
+                    P = {
                         close(u) {
                             k('popover' === u ? y : x);
                         },
@@ -225,64 +227,69 @@
                         move(u) {
                             k(O, { isMouseEvent: !0, on: u });
                         },
-                    };
-                function P(u) {
+                    },
+                    N = 15;
+                function M(u) {
                     viewEnv.addPreloadTexture(u);
                 }
-                function M(u) {
-                    viewEnv.setHitAreaPaddingsRem(u, u, u, u, 15);
+                function S(u) {
+                    viewEnv.setHitAreaPaddingsRem(u, u, u, u, N);
                 }
-                function S(u, e, t, E = 1) {
+                function L(u, e, t, E = 1) {
                     return viewEnv.getWebBrowserTexturePath(u, e, t, E);
                 }
-                function L(u, e, t) {
+                function V(u, e, t) {
                     return viewEnv.addDataChangedCallback(u, e, t);
                 }
-                function V(u) {
-                    viewEnv.setHitAreaPaddingsRem(u.top, u.right, u.bottom, u.left, 15);
+                function I(u) {
+                    viewEnv.setHitAreaPaddingsRem(u.top, u.right, u.bottom, u.left, N);
                 }
-                function I(u = 'px') {
+                function U(u = 'px') {
                     return 'rem' === u ? viewEnv.getViewSizeRem() : viewEnv.getViewSizePx();
                 }
-                function U(u, e, t = 'px') {
+                function z(u, e, t = 'px') {
                     return 'rem' === t ? viewEnv.resizeViewRem(u, e) : viewEnv.resizeViewPx(u, e);
                 }
-                function z(u = 'rem') {
+                function W(u = 'rem') {
                     const e = viewEnv.getViewGlobalPositionRem();
-                    return 'rem' === u ? e : { x: q(e.x), y: q(e.y) };
+                    return 'rem' === u ? e : { x: K(e.x), y: K(e.y) };
                 }
-                function j() {
+                function $() {
                     viewEnv.freezeTextureBeforeResize();
                 }
-                function W() {
+                function j() {
                     return viewEnv.getScale();
                 }
-                function $(u) {
+                function q(u) {
                     return viewEnv.pxToRem(u);
                 }
-                function q(u) {
+                function K(u) {
                     return viewEnv.remToPx(u);
                 }
-                function K(u, e) {
+                function G(u, e) {
                     viewEnv.setAnimateWindow(u, e);
                 }
-                function G() {
+                function H() {
                     return viewEnv.isFocused();
                 }
-                function H() {
+                function Y() {
                     return viewEnv.setEventHandled();
                 }
-                function Y() {
+                function Z() {
                     return viewEnv.isEventHandled();
                 }
-                function Z() {
+                function X() {
                     viewEnv.forceTriggerMouseMove();
                 }
-                function X() {
+                function Q() {
                     return viewEnv.getShowingStatus();
                 }
-                const Q = Object.keys(b).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === b[e]), u), {}),
-                    J = {
+                const J = (() => {
+                        let u = [];
+                        return () => (0 === u.length && (u = Object.keys(viewEnv.getFontsConfig())), u);
+                    })(),
+                    uu = Object.keys(f).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === f[e]), u), {}),
+                    eu = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -290,13 +297,13 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    uu = Promise.all([
+                    tu = Promise.all([
                         new Promise((u) => {
-                            window.isDomBuilt ? u() : f.onDomBuilt(u);
+                            window.isDomBuilt ? u() : b.onDomBuilt(u);
                         }),
                         engine.whenReady,
                     ]),
-                    eu = { view: n, client: A, sound: w };
+                    Eu = { view: n, client: A, sound: w };
             },
             521: (u, e, t) => {
                 let E, A;
@@ -505,8 +512,8 @@
                 const i = Object.freeze({ INTEGRAL: 0, GOLD: 1 }),
                     r = Object.freeze({ FRACTIONAL: 0, WO_ZERO_DIGITS: 1 }),
                     o = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1 }),
-                    B = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1, YEAR_MONTH: 2 });
-                var a = t(521),
+                    a = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1, YEAR_MONTH: 2 });
+                var B = t(521),
                     C = t(768);
                 const s = ['args'];
                 function c(u, e, t, E, A, F, n) {
@@ -554,12 +561,13 @@
                             const A = e.args,
                                 F = (function (u, e) {
                                     if (null == u) return {};
-                                    var t,
-                                        E,
-                                        A = {},
-                                        F = Object.keys(u);
-                                    for (E = 0; E < F.length; E++) (t = F[E]), e.indexOf(t) >= 0 || (A[t] = u[t]);
-                                    return A;
+                                    var t = {};
+                                    for (var E in u)
+                                        if ({}.hasOwnProperty.call(u, E)) {
+                                            if (e.indexOf(E) >= 0) continue;
+                                            t[E] = u[E];
+                                        }
+                                    return t;
                                 })(e, s);
                             void 0 !== A
                                 ? viewEnv.handleViewEvent(
@@ -588,7 +596,7 @@
                     },
                     m = () => _(D.CLOSE),
                     v = (u, e) => {
-                        u.keyCode === a.n.ESCAPE && e();
+                        u.keyCode === B.n.ESCAPE && e();
                     };
                 var p = t(572);
                 const w = A.instance,
@@ -599,7 +607,7 @@
                         NumberFormatType: i,
                         RealFormatType: r,
                         TimeFormatType: o,
-                        DateFormatType: B,
+                        DateFormatType: a,
                         makeGlobalBoundingBox: l,
                         sendMoveEvent: (u) => _(D.MOVE, { isMouseEvent: !0, on: u }),
                         sendCloseEvent: m,
@@ -612,13 +620,13 @@
                                 i = t.getBoundingClientRect(),
                                 r = i.x,
                                 o = i.y,
-                                B = i.width,
-                                a = i.height,
+                                a = i.width,
+                                B = i.height,
                                 s = {
                                     x: C.O.view.pxToRem(r) + n.x,
                                     y: C.O.view.pxToRem(o) + n.y,
-                                    width: C.O.view.pxToRem(B),
-                                    height: C.O.view.pxToRem(a),
+                                    width: C.O.view.pxToRem(a),
+                                    height: C.O.view.pxToRem(B),
                                 };
                             _(D.POP_OVER, {
                                 isMouseEvent: !0,
@@ -733,24 +741,24 @@
                         )
                     );
                 }
-                const B = {
+                const a = {
                         base: 'TooltipDecorator_base_c9',
                         'base__theme-default': 'TooltipDecorator_base__theme-default_6d',
                         decorator: 'TooltipDecorator_decorator_3d',
                     },
-                    a = ['children', 'className', 'theme'];
+                    B = ['children', 'className', 'theme'];
                 function C() {
                     return (
-                        (C =
-                            Object.assign ||
-                            function (u) {
-                                for (var e = 1; e < arguments.length; e++) {
-                                    var t = arguments[e];
-                                    for (var E in t) Object.prototype.hasOwnProperty.call(t, E) && (u[E] = t[E]);
-                                }
-                                return u;
-                            }),
-                        C.apply(this, arguments)
+                        (C = Object.assign
+                            ? Object.assign.bind()
+                            : function (u) {
+                                  for (var e = 1; e < arguments.length; e++) {
+                                      var t = arguments[e];
+                                      for (var E in t) ({}).hasOwnProperty.call(t, E) && (u[E] = t[E]);
+                                  }
+                                  return u;
+                              }),
+                        C.apply(null, arguments)
                     );
                 }
                 const s = A().forwardRef(function (u, e) {
@@ -760,13 +768,14 @@
                         D = void 0 === n ? 'default' : n,
                         s = (function (u, e) {
                             if (null == u) return {};
-                            var t,
-                                E,
-                                A = {},
-                                F = Object.keys(u);
-                            for (E = 0; E < F.length; E++) (t = F[E]), e.indexOf(t) >= 0 || (A[t] = u[t]);
-                            return A;
-                        })(u, a);
+                            var t = {};
+                            for (var E in u)
+                                if ({}.hasOwnProperty.call(u, E)) {
+                                    if (e.indexOf(E) >= 0) continue;
+                                    t[E] = u[E];
+                                }
+                            return t;
+                        })(u, B);
                     const c = o(),
                         l = A().useRef(null);
                     var d;
@@ -791,12 +800,12 @@
                         A().createElement(
                             'div',
                             C({}, s, {
-                                className: i()(B.base, B[`base__theme-${D}`], F),
+                                className: i()(a.base, a[`base__theme-${D}`], F),
                                 ref: function (u) {
                                     (l.current = u), 'function' == typeof e ? e(u) : e && (e.current = u);
                                 },
                             }),
-                            A().createElement('div', { className: B.decorator }, t),
+                            A().createElement('div', { className: a.decorator }, t),
                         )
                     );
                 });
@@ -863,9 +872,9 @@
                             return p(A, /( )/, e).forEach((u) => (t = t.concat(p(u, E, l.left)))), t;
                         })(u, e);
                     };
-                var b = t(916),
-                    f = t(613);
-                Date.now(), f.Ew.getRegionalDateTime, f.Ew.getFormattedDateTime;
+                var f = t(916),
+                    b = t(613);
+                Date.now(), b.Ew.getRegionalDateTime, b.Ew.getFormattedDateTime;
                 const T = (u = 1) => {
                         const e = new Error().stack;
                         let t,
@@ -887,13 +896,13 @@
                     },
                     x = (u) => u && 'ArrayItem' === u.__proto__.constructor.name,
                     k = (u, e) => (u.length > 0 ? `${u}.${e}` : e),
-                    N = (u) =>
+                    P = (u) =>
                         ((u, e) =>
                             u.split('.').reduce((u, t) => {
                                 const E = y(`${u}.${t}`, window);
                                 return x(E) ? e(u, t, E) : `${u}.${t}`;
                             }))(u, (u, e) => `${u}.${e}.value`),
-                    P = (u) => {
+                    N = (u) => {
                         const e = ((u) => {
                                 const e = T(),
                                     t = e.caller,
@@ -915,7 +924,7 @@
                         }
                         return '';
                     },
-                    M = b.Sw.instance;
+                    M = f.Sw.instance;
                 let S;
                 !(function (u) {
                     (u.None = 'None'), (u.Shallow = 'Shallow'), (u.Deep = 'Deep');
@@ -935,11 +944,11 @@
                                     const e = y(u, window);
                                     for (const u in e) 'function' == typeof e[u] && (e[u] = e[u].bind(e));
                                     return x(e) ? e.value : e;
-                                })(N(i)),
+                                })(P(i)),
                             ),
                             o = r[0],
-                            B = r[1],
-                            a = (0, E.useRef)(-1);
+                            a = r[1],
+                            B = (0, E.useRef)(-1);
                         return (
                             O(() => {
                                 if (
@@ -953,23 +962,23 @@
                                     const t = (u) => {
                                             ((u) => u && 'CoherentArrayProxy' === u.__proto__.constructor.name)(u) &&
                                             e === S.Deep
-                                                ? (u === o && A((u) => u + 1), B(u))
-                                                : B(Object.assign([], u));
+                                                ? (u === o && A((u) => u + 1), a(u))
+                                                : a(Object.assign([], u));
                                         },
-                                        E = P(u);
-                                    a.current = M.addCallback(E, t, D, e === S.Deep);
+                                        E = N(u);
+                                    B.current = M.addCallback(E, t, D, e === S.Deep);
                                 }
                             }),
                             (0, E.useEffect)(() => {
                                 if (e !== S.None)
                                     return () => {
-                                        M.removeCallback(a.current, D);
+                                        M.removeCallback(B.current, D);
                                     };
                             }, [D, e]),
                             o
                         );
                     },
-                    V = (b.Sw.instance, 'FormatText_base_d0'),
+                    V = (f.Sw.instance, 'FormatText_base_d0'),
                     I = ({ binding: u, text: e = '', classMix: t, alignment: F = l.left, formatWithBrackets: n }) => {
                         if (null === e) return console.error("FormatText was supplied with 'null'"), null;
                         const D = n && u ? d(e, u) : e;
@@ -992,8 +1001,8 @@
                     },
                     U = 'NationName_base_a2',
                     z = 'NationName_highlight_61',
-                    j = 'NationName_highlightBold_3b',
-                    W = ({ strResId: u, nationNameStr: e, value: t }) => {
+                    W = 'NationName_highlightBold_3b',
+                    $ = ({ strResId: u, nationNameStr: e, value: t }) => {
                         const F = (0, E.useMemo)(
                             () => ({
                                 nation: A().createElement(
@@ -1001,13 +1010,13 @@
                                     { className: z },
                                     R.strings.blueprints.nations.$dyn(e),
                                 ),
-                                count: A().createElement('span', { className: j }, t),
+                                count: A().createElement('span', { className: W }, t),
                             }),
                             [e, t],
                         );
                         return A().createElement(I, { classMix: U, text: u, binding: F });
                     },
-                    $ = {
+                    j = {
                         base: 'Content_base_d3',
                         box: 'Content_box_bf',
                         icon: 'Content_icon_2a',
@@ -1038,32 +1047,32 @@
                         const D = Array.from(F),
                             r = D.findIndex((u) => u.value.nationName === t),
                             o = D.splice(r, 1)[0].value,
-                            B = (0, E.useMemo)(
+                            a = (0, E.useMemo)(
                                 () => ({
                                     backgroundImage: `url(${R.images.gui.maps.icons.blueprints.fragment.conversion.$dyn(n)})`,
                                 }),
                                 [n],
                             ),
-                            a = (0, E.useMemo)(
+                            B = (0, E.useMemo)(
                                 () => ({
                                     allianceIcon: A().createElement(
                                         'div',
-                                        { className: $.icon },
-                                        A().createElement('span', { className: $.iconUrl, style: B }),
+                                        { className: j.icon },
+                                        A().createElement('span', { className: j.iconUrl, style: a }),
                                     ),
                                     allianceName: A().createElement(
                                         'span',
-                                        { className: $.text },
+                                        { className: j.text },
                                         R.strings.tooltips.blueprints.conversionView.alliance.title.name.$dyn(n),
                                     ),
                                 }),
-                                [n, B],
+                                [n, a],
                             ),
                             C = (0, E.useMemo)(
                                 () => ({
                                     allianceNations: A().createElement(
                                         'span',
-                                        { className: $.highlightText },
+                                        { className: j.highlightText },
                                         R.strings.tooltips.blueprints.conversionView.alliance.nations.$dyn(n),
                                     ),
                                 }),
@@ -1073,7 +1082,7 @@
                                 () => ({
                                     allianceName: A().createElement(
                                         'span',
-                                        { className: $.highlightText },
+                                        { className: j.highlightText },
                                         R.strings.tooltips.blueprints.conversionView.alliance.desc.name.$dyn(n),
                                     ),
                                 }),
@@ -1083,71 +1092,71 @@
                                 () => ({
                                     allianceName: A().createElement(
                                         'span',
-                                        { className: $.highlightText },
+                                        { className: j.highlightText },
                                         R.strings.tooltips.blueprints.conversionView.alliance.content.name.$dyn(n),
                                     ),
                                 }),
                                 [n],
                             ),
-                            l = i()($.separator, $.separator__bottom);
+                            l = i()(j.separator, j.separator__bottom);
                         return A().createElement(
                             'div',
-                            { className: $.base },
+                            { className: j.base },
                             A().createElement(
                                 'div',
-                                { className: $.title },
+                                { className: j.title },
                                 A().createElement(I, {
-                                    classMix: $.highTitle,
+                                    classMix: j.highTitle,
                                     text: R.strings.tooltips.blueprints.conversionView.title(),
-                                    binding: a,
+                                    binding: B,
                                 }),
                             ),
                             A().createElement(
                                 'div',
-                                { className: $.subTitle },
+                                { className: j.subTitle },
                                 A().createElement(I, {
-                                    classMix: $.mainText,
+                                    classMix: j.mainText,
                                     text: R.strings.tooltips.blueprints.conversionView.subTitle(),
                                     binding: C,
                                 }),
                             ),
                             A().createElement(
                                 'div',
-                                { className: $.desc },
+                                { className: j.desc },
                                 A().createElement(I, {
-                                    classMix: $.mainText,
+                                    classMix: j.mainText,
                                     text: R.strings.tooltips.blueprints.conversionView.desc(),
                                     binding: s,
                                 }),
                             ),
                             A().createElement(
                                 'div',
-                                { className: $.contentTitle },
+                                { className: j.contentTitle },
                                 A().createElement(
                                     'span',
-                                    { className: $.highTitleCustom },
+                                    { className: j.highTitleCustom },
                                     R.strings.tooltips.blueprints.conversionView.content.title(),
                                 ),
                             ),
                             A().createElement(
                                 'div',
-                                { className: $.content },
-                                A().createElement('div', { className: $.separator }),
+                                { className: j.content },
+                                A().createElement('div', { className: j.separator }),
                                 A().createElement(
                                     'div',
-                                    { className: $.contentFirst },
+                                    { className: j.contentFirst },
                                     A().createElement(
                                         'div',
                                         null,
                                         A().createElement(
                                             'span',
-                                            { className: $.mainText },
+                                            { className: j.mainText },
                                             R.strings.tooltips.blueprints.conversionView.content.first.body(),
                                         ),
                                         A().createElement(
                                             'div',
-                                            { className: $.nationsBlock },
-                                            A().createElement(W, {
+                                            { className: j.nationsBlock },
+                                            A().createElement($, {
                                                 strResId:
                                                     R.strings.tooltips.blueprints.conversionView.content.first.title(),
                                                 nationNameStr: o.nationName,
@@ -1158,20 +1167,20 @@
                                 ),
                                 A().createElement(
                                     'div',
-                                    { className: $.contentSecond },
+                                    { className: j.contentSecond },
                                     A().createElement(
                                         'div',
                                         null,
                                         A().createElement(I, {
-                                            classMix: $.mainText,
+                                            classMix: j.mainText,
                                             text: R.strings.tooltips.blueprints.conversionView.content.second(),
                                             binding: c,
                                         }),
                                         A().createElement(
                                             'div',
-                                            { className: $.nationsBlock },
+                                            { className: j.nationsBlock },
                                             D.map((u, e) =>
-                                                A().createElement(W, {
+                                                A().createElement($, {
                                                     key: e,
                                                     strResId:
                                                         R.strings.tooltips.blueprints.conversionView.content.fragmentAmount(),
@@ -1186,11 +1195,11 @@
                             A().createElement('div', { className: l }),
                             A().createElement(
                                 'div',
-                                { className: $.footer },
-                                A().createElement('span', { className: $.infoIcon }),
+                                { className: j.footer },
+                                A().createElement('span', { className: j.infoIcon }),
                                 A().createElement(
                                     'span',
-                                    { className: $.mainText },
+                                    { className: j.mainText },
                                     R.strings.tooltips.blueprints.conversionView.info(),
                                 ),
                             ),

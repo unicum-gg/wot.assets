@@ -198,96 +198,102 @@
             641: (e, n, t) => {
                 t.r(n),
                     t.d(n, {
-                        addModelObserver: () => l,
-                        addPreloadTexture: () => _,
+                        addModelObserver: () => u,
+                        addPreloadTexture: () => s,
                         children: () => r,
                         displayStatus: () => i.W,
-                        displayStatusIs: () => P,
+                        displayStatusIs: () => R,
                         events: () => a.U,
-                        extraSize: () => O,
-                        forceTriggerMouseMove: () => C,
-                        freezeTextureBeforeResize: () => E,
-                        getBrowserTexturePath: () => c,
-                        getDisplayStatus: () => k,
-                        getScale: () => m,
-                        getSize: () => d,
-                        getViewGlobalPosition: () => g,
-                        isEventHandled: () => f,
-                        isFocused: () => w,
-                        pxToRem: () => p,
-                        remToPx: () => b,
-                        resize: () => v,
+                        extraSize: () => T,
+                        forceTriggerMouseMove: () => k,
+                        freezeTextureBeforeResize: () => m,
+                        getBrowserTexturePath: () => l,
+                        getDisplayStatus: () => P,
+                        getFontNames: () => O,
+                        getScale: () => p,
+                        getSize: () => v,
+                        getViewGlobalPosition: () => E,
+                        isEventHandled: () => C,
+                        isFocused: () => y,
+                        pxToRem: () => b,
+                        remToPx: () => h,
+                        resize: () => g,
                         sendEvent: () => o.qP,
-                        setAnimateWindow: () => h,
-                        setEventHandled: () => y,
-                        setInputPaddingsRem: () => s,
-                        setSidePaddingsRem: () => u,
-                        whenTutorialReady: () => R,
+                        setAnimateWindow: () => w,
+                        setEventHandled: () => f,
+                        setInputPaddingsRem: () => c,
+                        setSidePaddingsRem: () => d,
+                        whenTutorialReady: () => L,
                     });
                 var r = t(722),
                     i = t(112),
                     a = t(538),
                     o = t(566);
-                function _(e) {
+                const _ = 15;
+                function s(e) {
                     viewEnv.addPreloadTexture(e);
                 }
-                function s(e) {
-                    viewEnv.setHitAreaPaddingsRem(e, e, e, e, 15);
+                function c(e) {
+                    viewEnv.setHitAreaPaddingsRem(e, e, e, e, _);
                 }
-                function c(e, n, t, r = 1) {
+                function l(e, n, t, r = 1) {
                     return viewEnv.getWebBrowserTexturePath(e, n, t, r);
                 }
-                function l(e, n, t) {
+                function u(e, n, t) {
                     return viewEnv.addDataChangedCallback(e, n, t);
                 }
-                function u(e) {
-                    viewEnv.setHitAreaPaddingsRem(e.top, e.right, e.bottom, e.left, 15);
+                function d(e) {
+                    viewEnv.setHitAreaPaddingsRem(e.top, e.right, e.bottom, e.left, _);
                 }
-                function d(e = 'px') {
+                function v(e = 'px') {
                     return 'rem' === e ? viewEnv.getViewSizeRem() : viewEnv.getViewSizePx();
                 }
-                function v(e, n, t = 'px') {
+                function g(e, n, t = 'px') {
                     return 'rem' === t ? viewEnv.resizeViewRem(e, n) : viewEnv.resizeViewPx(e, n);
                 }
-                function g(e = 'rem') {
+                function E(e = 'rem') {
                     const n = viewEnv.getViewGlobalPositionRem();
-                    return 'rem' === e ? n : { x: b(n.x), y: b(n.y) };
-                }
-                function E() {
-                    viewEnv.freezeTextureBeforeResize();
+                    return 'rem' === e ? n : { x: h(n.x), y: h(n.y) };
                 }
                 function m() {
+                    viewEnv.freezeTextureBeforeResize();
+                }
+                function p() {
                     return viewEnv.getScale();
                 }
-                function p(e) {
+                function b(e) {
                     return viewEnv.pxToRem(e);
                 }
-                function b(e) {
+                function h(e) {
                     return viewEnv.remToPx(e);
                 }
-                function h(e, n) {
+                function w(e, n) {
                     viewEnv.setAnimateWindow(e, n);
                 }
-                function w() {
+                function y() {
                     return viewEnv.isFocused();
                 }
-                function y() {
+                function f() {
                     return viewEnv.setEventHandled();
                 }
-                function f() {
+                function C() {
                     return viewEnv.isEventHandled();
                 }
-                function C() {
+                function k() {
                     viewEnv.forceTriggerMouseMove();
                 }
-                function k() {
+                function P() {
                     return viewEnv.getShowingStatus();
                 }
-                const P = Object.keys(i.W).reduce(
+                const O = (() => {
+                        let e = [];
+                        return () => (0 === e.length && (e = Object.keys(viewEnv.getFontsConfig())), e);
+                    })(),
+                    R = Object.keys(i.W).reduce(
                         (e, n) => ((e[n] = () => viewEnv.getShowingStatus() === i.W[n]), e),
                         {},
                     ),
-                    O = {
+                    T = {
                         set: (e, n) => {
                             viewEnv.setExtraSizeRem(e, n);
                         },
@@ -295,7 +301,7 @@
                             viewEnv.getExtraSizeRem(e, n);
                         },
                     },
-                    R = Promise.all([
+                    L = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : a.U.onDomBuilt(e);
                         }),
@@ -315,12 +321,13 @@
                             const a = n.args,
                                 o = (function (e, n) {
                                     if (null == e) return {};
-                                    var t,
-                                        r,
-                                        i = {},
-                                        a = Object.keys(e);
-                                    for (r = 0; r < a.length; r++) (t = a[r]), n.indexOf(t) >= 0 || (i[t] = e[t]);
-                                    return i;
+                                    var t = {};
+                                    for (var r in e)
+                                        if ({}.hasOwnProperty.call(e, r)) {
+                                            if (n.indexOf(r) >= 0) continue;
+                                            t[r] = e[r];
+                                        }
+                                    return t;
                                 })(n, r);
                             return void 0 !== a
                                 ? viewEnv.handleViewEvent(
@@ -621,12 +628,13 @@
                             const i = n.args,
                                 a = (function (e, n) {
                                     if (null == e) return {};
-                                    var t,
-                                        r,
-                                        i = {},
-                                        a = Object.keys(e);
-                                    for (r = 0; r < a.length; r++) (t = a[r]), n.indexOf(t) >= 0 || (i[t] = e[t]);
-                                    return i;
+                                    var t = {};
+                                    for (var r in e)
+                                        if ({}.hasOwnProperty.call(e, r)) {
+                                            if (n.indexOf(r) >= 0) continue;
+                                            t[r] = e[r];
+                                        }
+                                    return t;
                                 })(n, m);
                             void 0 !== i
                                 ? viewEnv.handleViewEvent(

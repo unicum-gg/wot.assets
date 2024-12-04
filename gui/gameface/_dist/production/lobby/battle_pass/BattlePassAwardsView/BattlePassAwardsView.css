@@ -1396,6 +1396,10 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     flex-wrap: wrap;
 }
 
+.text_textCenter_78 {
+    justify-content: center;
+}
+
 .Title_base_24 {
     display: flex;
     flex-direction: column;

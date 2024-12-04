@@ -3216,6 +3216,15 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .mediaSmall .SkillsTrainingViewApp_base_f2 {
     justify-content: center;
 }
+.SkillsTrainingViewApp_background_c4 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: url('R.images.gui.maps.icons.windows.background') no-repeat center / cover;
+    opacity: 0.8;
+}
 .SkillsTrainingViewApp_closeBtn_b8 {
     position: absolute;
     top: 11rem;
@@ -3235,15 +3244,11 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     top: 99rem;
 }
 .SkillsTrainingViewApp_ttcWidget_f0 {
-    display: none;
     width: 415rem;
     max-height: calc(100vh - 265rem);
     position: absolute;
     top: 111rem;
     right: -4rem;
-}
-.mediaSmallWidth .SkillsTrainingViewApp_ttcWidget_f0 {
-    display: flex;
 }
 .mediaLarge .SkillsTrainingViewApp_ttcWidget_f0 {
     right: 6rem;
