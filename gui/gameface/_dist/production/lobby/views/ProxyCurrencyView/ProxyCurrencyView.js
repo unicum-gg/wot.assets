@@ -183,13 +183,14 @@
                         addPreloadTexture: () => c,
                         children: () => r,
                         displayStatus: () => o.W,
-                        displayStatusIs: () => P,
+                        displayStatusIs: () => R,
                         events: () => i.U,
-                        extraSize: () => R,
+                        extraSize: () => M,
                         forceTriggerMouseMove: () => T,
                         freezeTextureBeforeResize: () => h,
                         getBrowserTexturePath: () => d,
                         getDisplayStatus: () => k,
+                        getFontNames: () => P,
                         getScale: () => p,
                         getSize: () => v,
                         getViewGlobalPosition: () => E,
@@ -203,7 +204,7 @@
                         setEventHandled: () => y,
                         setInputPaddingsRem: () => l,
                         setSidePaddingsRem: () => _,
-                        whenTutorialReady: () => M,
+                        whenTutorialReady: () => C,
                     });
                 var r = n(3722),
                     o = n(6112),
@@ -265,11 +266,15 @@
                 function k() {
                     return viewEnv.getShowingStatus();
                 }
-                const P = Object.keys(o.W).reduce(
+                const P = (() => {
+                        let e = [];
+                        return () => (0 === e.length && (e = Object.keys(viewEnv.getFontsConfig())), e);
+                    })(),
+                    R = Object.keys(o.W).reduce(
                         (e, t) => ((e[t] = () => viewEnv.getShowingStatus() === o.W[t]), e),
                         {},
                     ),
-                    R = {
+                    M = {
                         set: (e, t) => {
                             viewEnv.setExtraSizeRem(e, t);
                         },
@@ -277,7 +282,7 @@
                             viewEnv.getExtraSizeRem(e, t);
                         },
                     },
-                    M = Promise.all([
+                    C = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : i.U.onDomBuilt(e);
                         }),

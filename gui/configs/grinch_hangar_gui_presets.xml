@@ -1,0 +1,8 @@
+<grinch_hangar_gui_presets.xml>
+  <queueTypePresets>
+    <item>
+      <queueType>	106	</queueType>
+      <presetName>	empty	</presetName>
+    </item>
+  </queueTypePresets>
+</grinch_hangar_gui_presets.xml>

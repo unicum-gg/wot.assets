@@ -1,0 +1,147 @@
+.GrinchHelpViewApp_base_b1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(13, 14, 6, 0.74);
+}
+
+.GrinchHelpViewApp_header_c4 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 200rem;
+    margin-bottom: 78rem;
+    position: relative;
+}
+
+.mediaMedium .GrinchHelpViewApp_header_c4 {
+    min-width: 250rem;
+    margin-bottom: 95rem;
+}
+
+.GrinchHelpViewApp_header_title_2a {
+    margin-top: -5rem;
+    color: #f9efc7;
+    font-size: 24rem;
+    font-weight: 400;
+    text-align: center;
+    z-index: 2;
+}
+
+.mediaMedium .GrinchHelpViewApp_header_title_2a {
+    margin-top: -10rem;
+    font-size: 42rem;
+}
+
+.GrinchHelpViewApp_header_left_1b {
+    width: 170rem;
+    height: 130rem;
+    background: url('R.images.grinch.gui.maps.icons.announcements.banner.small.banner_left') center center / contain
+        no-repeat;
+    position: absolute;
+    top: -25rem;
+    left: -101rem;
+    z-index: 1;
+}
+
+.mediaMedium .GrinchHelpViewApp_header_left_1b {
+    width: 236rem;
+    height: 234rem;
+    background: url('R.images.grinch.gui.maps.icons.announcements.banner.large.banner_left') center center / contain
+        no-repeat;
+    top: -42rem;
+    left: -140rem;
+}
+
+.GrinchHelpViewApp_header_center_9e {
+    height: 130rem;
+    background: url('R.images.grinch.gui.maps.icons.announcements.banner.small.banner_center') center center / 90rem
+        130rem repeat-x;
+    position: absolute;
+    top: -25rem;
+    right: 69rem;
+    left: 69rem;
+    z-index: 1;
+}
+
+.mediaMedium .GrinchHelpViewApp_header_center_9e {
+    height: 234rem;
+    background: url('R.images.grinch.gui.maps.icons.announcements.banner.large.banner_center') center center / 140rem
+        234rem repeat-x;
+    top: -42rem;
+    right: 96rem;
+    left: 96rem;
+}
+
+.GrinchHelpViewApp_header_right_de {
+    width: 170rem;
+    height: 130rem;
+    background: url('R.images.grinch.gui.maps.icons.announcements.banner.small.banner_right') center center / contain
+        no-repeat;
+    position: absolute;
+    top: -25rem;
+    right: -101rem;
+    z-index: 1;
+}
+
+.mediaMedium .GrinchHelpViewApp_header_right_de {
+    width: 236rem;
+    height: 234rem;
+    background: url('R.images.grinch.gui.maps.icons.announcements.banner.large.banner_right') center center / contain
+        no-repeat;
+    top: -42rem;
+    right: -140rem;
+}
+
+.GrinchHelpViewApp_content_ff {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 920rem;
+}
+
+.mediaMedium .GrinchHelpViewApp_content_ff {
+    width: 1135rem;
+}
+
+.GrinchHelpViewApp_contentBlock_0f {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 212rem;
+    text-align: center;
+    position: relative;
+}
+
+.mediaMedium .GrinchHelpViewApp_contentBlock_0f {
+    width: 260rem;
+}
+
+.GrinchHelpViewApp_contentBlock_image_65 {
+    width: 212rem;
+    height: 308rem;
+    margin-bottom: 24rem;
+}
+
+.mediaMedium .GrinchHelpViewApp_contentBlock_image_65 {
+    width: 260rem;
+    height: 400rem;
+    margin-bottom: 32rem;
+}
+
+.GrinchHelpViewApp_contentBlock_description_0d {
+    color: #f9efc7;
+    font-size: 16rem;
+    font-weight: 400;
+    text-align: center;
+}
+
+.mediaMedium .GrinchHelpViewApp_contentBlock_description_0d {
+    font-size: 22rem;
+}

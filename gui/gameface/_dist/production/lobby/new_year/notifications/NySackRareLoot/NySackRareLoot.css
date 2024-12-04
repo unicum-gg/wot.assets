@@ -1,0 +1,549 @@
+.CButton_base_40 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2rem;
+    box-shadow: 0 0 0 1rem rgba(0, 0, 0, 0.6);
+    position: relative;
+    cursor: pointer;
+}
+
+.CButton_base__main_42,
+.CButton_base__primary_7f,
+.CButton_base__primaryGreen_6f,
+.CButton_base__primaryRed_ec,
+.CButton_base__secondary_50 {
+    background-size: 100% 100%;
+}
+
+.CButton_base__main_42 {
+    background-image: url('R.images.gui.maps.icons.components.button.back_main');
+}
+
+.CButton_base__primary_7f {
+    background-image: url('R.images.gui.maps.icons.components.button.back_primary');
+}
+
+.CButton_base__primaryGreen_6f {
+    background-image: url('R.images.gui.maps.icons.components.button.back_primary_green');
+}
+
+.CButton_base__primaryRed_ec {
+    background-image: url('R.images.gui.maps.icons.components.button.back_primary_red');
+}
+
+.CButton_base__secondary_50 {
+    background-image: url('R.images.gui.maps.icons.components.button.back_secondary');
+}
+
+.CButton_base__ghost_ed {
+    border-radius: 3rem;
+    box-shadow:
+        0 0 0 1rem rgba(0, 0, 0, 0.3),
+        0 0 0 1rem rgba(255, 255, 255, 0.15) inset;
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+.CButton_base__extraSmall_27 {
+    min-height: 17rem;
+    padding: 0 16rem;
+}
+
+.CButton_base__small_df,
+.CButton_base__medium_74 {
+    padding: 0 20rem;
+}
+
+.CButton_base__small_df {
+    min-height: 18rem;
+}
+
+.CButton_base__medium_74 {
+    min-height: 32rem;
+}
+
+.CButton_base__large_5c {
+    min-height: 48rem;
+}
+
+.CButton_base__disabled_d9 {
+    cursor: default;
+}
+/* Element .back and background-image in element .base need for fix bug in GF https://jira.wargaming.net/browse/WOTD-158525
+The bug is that under certain conditions, when using border-image, stripes appear. Strip is a single-pixel gap
+between 'border-image-width' and 'fill'.
+This bug is reproduced in Google Chrome 81.0.4044.113
+*/
+.CButton_back_e5 {
+    border-image-slice: 4 fill;
+    border-image-width: 4rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.CButton_base__main_42 .CButton_back_e5 {
+    border-image-source: url('R.images.gui.maps.icons.components.button.back_main');
+}
+.CButton_base__primary_7f .CButton_back_e5 {
+    border-image-source: url('R.images.gui.maps.icons.components.button.back_primary');
+}
+.CButton_base__primaryGreen_6f .CButton_back_e5 {
+    border-image-source: url('R.images.gui.maps.icons.components.button.back_primary_green');
+}
+.CButton_base__primaryRed_ec .CButton_back_e5 {
+    border-image-source: url('R.images.gui.maps.icons.components.button.back_primary_red');
+}
+.CButton_base__secondary_50 .CButton_back_e5 {
+    border-image-source: url('R.images.gui.maps.icons.components.button.back_secondary');
+}
+.CButton_texture_fe {
+    background: url('R.images.gui.maps.icons.components.button.standard_texture_file');
+    background-size: 155rem 31rem;
+    mix-blend-mode: soft-light;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.CButton_state_11 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition: box-shadow 0.16s ease-in-out;
+}
+.CButton_base__focus_83 .CButton_state_11 {
+    border-radius: 2rem;
+    box-shadow: inset 0 0 2rem 1rem rgba(255, 85, 0, 0.2);
+}
+.CButton_stateHighlightHover_ff,
+.CButton_stateHighlightActive_35,
+.CButton_stateDisabled_54 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.CButton_stateHighlightHover_ff {
+    background-image: linear-gradient(
+        180deg,
+        rgba(252, 248, 235, 0.25) 0%,
+        rgba(252, 248, 235, 0.1) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    opacity: 0;
+}
+.CButton_base_40:hover .CButton_stateHighlightHover_ff {
+    opacity: 1;
+}
+.CButton_base_40:active .CButton_stateHighlightHover_ff {
+    opacity: 0;
+}
+.CButton_base__disabled_d9:hover .CButton_stateHighlightHover_ff {
+    opacity: 0;
+}
+.CButton_base__ghost_ed .CButton_stateHighlightHover_ff {
+    box-shadow: 0 15rem 12rem 0 rgba(242, 242, 230, 0.11) inset;
+    background-color: rgba(8, 6, 0, 0.18);
+    background-image: none;
+}
+.CButton_stateHighlightActive_35 {
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.15) 100%);
+    opacity: 0;
+}
+.CButton_base__highlightActive_b2 .CButton_stateHighlightActive_35 {
+    opacity: 1;
+}
+.CButton_stateDisabled_54 {
+    background-color: rgba(0, 0, 0, 0.25);
+    background-image: url('R.images.gui.maps.icons.components.button.texture_disable');
+    background-size: 15rem 15rem;
+    visibility: hidden;
+}
+.CButton_base__disabled_d9 .CButton_stateDisabled_54 {
+    visibility: inherit;
+}
+.CButton_content_cc {
+    display: flex;
+    align-items: center;
+    color: #f2f2e6;
+    font-weight: 700;
+    line-height: 1.2;
+    text-shadow: 0 -1rem 1rem #000;
+    letter-spacing: 0.03em;
+    transform: translateY(-1rem);
+}
+.CButton_content_cc[lang='ja'],
+.CButton_content_cc[lang='ko'],
+.CButton_content_cc[lang='zh_tw'],
+.CButton_content_cc[lang='zh_sg'],
+.CButton_content_cc[lang='zh_cn'],
+.CButton_content_cc[lang='th'] {
+    font-weight: 400;
+}
+.CButton_base__main_42 .CButton_content_cc,
+.CButton_base__primaryRed_ec .CButton_content_cc {
+    text-shadow: 0 -1rem 1rem #600;
+}
+.CButton_base__secondary_50 .CButton_content_cc {
+    color: rgba(254, 254, 236, 0.75);
+}
+.CButton_base__primaryGreen_6f .CButton_content_cc {
+    text-shadow: 0 -1rem 1rem #1c2502;
+}
+.CButton_base__extraSmall_27 .CButton_content_cc {
+    font-size: 12rem;
+}
+.CButton_base__small_df .CButton_content_cc {
+    font-size: 14rem;
+}
+.CButton_base__medium_74 .CButton_content_cc {
+    font-size: 15rem;
+}
+.CButton_base__large_5c .CButton_content_cc {
+    font-size: 18rem;
+}
+.CButton_base__disabled_d9 .CButton_content_cc {
+    opacity: 0.6;
+}
+
+.Background_base_40 {
+    width: 100%;
+    height: 100%;
+    border-radius: 8rem;
+    background-image: linear-gradient(180deg, #173992 0%, #051339 100%);
+    mask-image: linear-gradient(180deg, transparent 0%, #000 27%, #000 64%, transparent 100%);
+    opacity: 0.7;
+    overflow: hidden;
+    position: relative;
+    pointer-events: none;
+}
+
+.Background_base_40::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border: 1rem solid #4161b7;
+    border-radius: 8rem;
+    content: '';
+}
+
+.Background_base_40::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border: 1rem solid #163470;
+    border-radius: 8rem;
+    content: '';
+    mask-image: linear-gradient(to bottom, transparent 50%, #000 75%);
+}
+
+.Background_base__popUp_48 {
+    opacity: 1;
+    mask: none;
+}
+
+.Background_base__withoutBorder_11::after,
+.Background_base__withoutBorder_11::before {
+    content: none;
+}
+
+.Background_image_33 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: no-repeat center / 100% 100%;
+    mask-image: linear-gradient(to top, transparent, #000 35%);
+    z-index: -2;
+}
+
+.CloseButton_base_9f {
+    width: 30rem;
+    height: 30rem;
+    background: url('R.images.gui.maps.icons.newYear.notifications.common.close_white') no-repeat center/ 12rem 14rem;
+    opacity: 0.6;
+    position: absolute;
+    cursor: pointer;
+}
+
+.CloseButton_base_9f:hover {
+    opacity: 0.8;
+}
+
+@keyframes RewardNotificationDecorator_slideInFadeIn_68 {
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+@keyframes RewardNotificationDecorator_fadeOut_5f {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes RewardNotificationDecorator_fadeIn_d7 {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+@keyframes RewardNotificationDecorator_fadeInWithScale_c3 {
+    0% {
+        opacity: 0;
+        transform: scale(1.2);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@keyframes RewardNotificationDecorator_slideUp_ac {
+    0% {
+        opacity: 0;
+        transform: translateY(20rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes RewardNotificationDecorator_scale_97 {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+@keyframes RewardNotificationDecorator_spin_81 {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+@keyframes RewardNotificationDecorator_blink_e7 {
+    0% {
+        transform: translateY(0rem);
+    }
+
+    100% {
+        transform: translateY(15rem);
+    }
+}
+@keyframes RewardNotificationDecorator_slideInNotification_3e {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.RewardNotificationDecorator_base_c8 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.RewardNotificationDecorator_base__popUp_c4 {
+    animation: RewardNotificationDecorator_slideInNotification_3e ease-in-out 0.6s;
+    padding: 10rem;
+    filter: drop-shadow(0 0 5rem rgba(1, 1, 19, 0.8));
+}
+.RewardNotificationDecorator_base_c8 {
+    position: relative;
+}
+.RewardNotificationDecorator_closeButton_e2 {
+    top: 13rem;
+    right: 13rem;
+    z-index: 1;
+    cursor: pointer;
+}
+.RewardNotificationDecorator_content_7a {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 20rem 20rem 30rem;
+    position: relative;
+}
+.RewardNotificationDecorator_header_56 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #f2f2f7;
+    font-size: 15rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.RewardNotificationDecorator_title_ec {
+    font-family: DINRoundPro;
+}
+[lang='th'] .RewardNotificationDecorator_title_ec,
+[lang='el'] .RewardNotificationDecorator_title_ec,
+[lang='vi'] .RewardNotificationDecorator_title_ec {
+    font-family: Warhelios;
+}
+[lang='ja'] .RewardNotificationDecorator_title_ec {
+    font-family: WarheliosJA;
+}
+[lang='ko'] .RewardNotificationDecorator_title_ec {
+    font-family: WarheliosKO;
+}
+[lang='zh_tw'] .RewardNotificationDecorator_title_ec {
+    font-family: WarheliosZHTW;
+}
+[lang='zh_sg'] .RewardNotificationDecorator_title_ec,
+[lang='zh_cn'] .RewardNotificationDecorator_title_ec {
+    font-family: WarheliosZHCN;
+}
+.RewardNotificationDecorator_title_ec {
+    max-width: 220rem;
+    text-align: center;
+    white-space: pre-wrap;
+}
+.RewardNotificationDecorator_subtitle_fd {
+    font-family: DINRoundPro;
+}
+[lang='th'] .RewardNotificationDecorator_subtitle_fd,
+[lang='el'] .RewardNotificationDecorator_subtitle_fd,
+[lang='vi'] .RewardNotificationDecorator_subtitle_fd {
+    font-family: Warhelios;
+}
+[lang='ja'] .RewardNotificationDecorator_subtitle_fd {
+    font-family: WarheliosJA;
+}
+[lang='ko'] .RewardNotificationDecorator_subtitle_fd {
+    font-family: WarheliosKO;
+}
+[lang='zh_tw'] .RewardNotificationDecorator_subtitle_fd {
+    font-family: WarheliosZHTW;
+}
+[lang='zh_sg'] .RewardNotificationDecorator_subtitle_fd,
+[lang='zh_cn'] .RewardNotificationDecorator_subtitle_fd {
+    font-family: WarheliosZHCN;
+}
+.RewardNotificationDecorator_subtitle_fd {
+    margin-top: 7rem;
+}
+.RewardNotificationDecorator_rewards_96 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 0 1;
+}
+.RewardNotificationDecorator_rareReward_85 {
+    flex: 0;
+    position: relative;
+}
+.RewardNotificationDecorator_rareReward__tman_fb {
+    width: 232rem;
+    height: 247rem;
+    margin-bottom: -80rem;
+}
+.RewardNotificationDecorator_shadow_2c {
+    width: 290rem;
+    height: 160rem;
+    border-radius: 280rem;
+    background-image: radial-gradient(50% 50% at 50% 50%, #3c5196 43%, transparent 100%);
+    filter: blur(10px);
+    opacity: 0.8;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    z-index: 0;
+    transform: translate(-50%, 25%);
+}
+.RewardNotificationDecorator_additionalRewards_50 {
+    display: flex;
+    justify-content: center;
+    max-width: 244rem;
+    margin-top: 17rem;
+    margin-bottom: 13rem;
+    position: relative;
+}
+.RewardNotificationDecorator_buttonWrapper_c2 {
+    max-width: 200rem;
+}
+.RewardNotificationDecorator_backgroundWrapper_8b {
+    width: 100%;
+    height: 100%;
+    mask-image: linear-gradient(90deg, transparent 2%, #d9d9d9 50%, transparent 100%);
+    position: absolute;
+    z-index: -1;
+}
+.RewardNotificationDecorator_base__popUp_c4 .RewardNotificationDecorator_backgroundWrapper_8b {
+    mask: none;
+}
+.RewardNotificationDecorator_description_58 {
+    display: flex;
+    margin-top: 16rem;
+    color: #bdd4ff;
+    font-size: 15rem;
+    text-align: center;
+    white-space: pre-wrap;
+}
+.RewardNotificationDecorator_lipTop_f3 {
+    height: 40rem;
+    background: url('R.images.gui.maps.icons.newYear.notifications.common.lip_bottom') no-repeat center / contain;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 15rem;
+    pointer-events: none;
+}
+.RewardNotificationDecorator_lipBottom_0b {
+    height: 40rem;
+    background: url('R.images.gui.maps.icons.newYear.notifications.common.lip_top') no-repeat center / contain;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 15rem;
+    pointer-events: none;
+}
+
+.App_reward_b1 {
+    width: 180rem;
+    height: 120rem;
+    margin-top: 5rem;
+    background: no-repeat center / contain;
+    position: relative;
+}
+
+.App_reward__big_4f {
+    width: 240rem;
+    height: 158rem;
+    margin-top: 10rem;
+}

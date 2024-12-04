@@ -209,13 +209,14 @@
                         addPreloadTexture: () => s,
                         children: () => n,
                         displayStatus: () => r.W,
-                        displayStatusIs: () => w,
+                        displayStatusIs: () => S,
                         events: () => a.U,
-                        extraSize: () => S,
+                        extraSize: () => y,
                         forceTriggerMouseMove: () => v,
                         freezeTextureBeforeResize: () => F,
                         getBrowserTexturePath: () => c,
                         getDisplayStatus: () => b,
+                        getFontNames: () => w,
                         getScale: () => g,
                         getSize: () => _,
                         getViewGlobalPosition: () => A,
@@ -229,7 +230,7 @@
                         setEventHandled: () => p,
                         setInputPaddingsRem: () => l,
                         setSidePaddingsRem: () => E,
-                        whenTutorialReady: () => y,
+                        whenTutorialReady: () => x,
                     });
                 var n = t(3722),
                     r = t(6112),
@@ -291,11 +292,15 @@
                 function b() {
                     return viewEnv.getShowingStatus();
                 }
-                const w = Object.keys(r.W).reduce(
+                const w = (() => {
+                        let e = [];
+                        return () => (0 === e.length && (e = Object.keys(viewEnv.getFontsConfig())), e);
+                    })(),
+                    S = Object.keys(r.W).reduce(
                         (e, u) => ((e[u] = () => viewEnv.getShowingStatus() === r.W[u]), e),
                         {},
                     ),
-                    S = {
+                    y = {
                         set: (e, u) => {
                             viewEnv.setExtraSizeRem(e, u);
                         },
@@ -303,7 +308,7 @@
                             viewEnv.getExtraSizeRem(e, u);
                         },
                     },
-                    y = Promise.all([
+                    x = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : a.U.onDomBuilt(e);
                         }),
@@ -1270,8 +1275,8 @@
                         small: { weight: 1, width: 1366, height: 768 },
                         extraSmall: { weight: 0, width: 1024, height: 768 },
                     };
-                var q;
-                function j(e, u, t) {
+                var j;
+                function q(e, u, t) {
                     const n = (function (e, u) {
                             switch (!0) {
                                 case e >= u.extraLarge.width:
@@ -1335,11 +1340,11 @@
                         (e.mediumHeight = 'mediumHeight'),
                         (e.smallHeight = 'smallHeight'),
                         (e.extraSmallHeight = 'extraSmallHeight');
-                })(q || (q = {}));
+                })(j || (j = {}));
                 const Y = g.O.client.getSize('rem'),
                     X = Y.width,
                     K = Y.height,
-                    Z = Object.assign({ width: X, height: K }, j(X, K, V)),
+                    Z = Object.assign({ width: X, height: K }, q(X, K, V)),
                     Q = (0, a.createContext)(Z),
                     J = ['children'];
                 const ee = (e) => {
@@ -1425,7 +1430,7 @@
                             i = (0, a.useCallback)((e, u) => {
                                 const t = g.O.view.pxToRem(e),
                                     n = g.O.view.pxToRem(u);
-                                r(Object.assign({ width: t, height: n }, j(t, n, V)));
+                                r(Object.assign({ width: t, height: n }, q(t, n, V)));
                             }, []),
                             s = (0, a.useCallback)(() => {
                                 const e = g.O.client.getSize('px');
@@ -1619,6 +1624,7 @@
                         (e.TankmenXpFactor = 'tankmenXPFactor'),
                         (e.FreeXpFactor = 'freeXPFactor'),
                         (e.BattleToken = 'battleToken'),
+                        (e.Entitlements = 'entitlements'),
                         (e.PremiumUniversal = 'premium_universal'),
                         (e.Gold = 'gold'),
                         (e.Credits = 'credits'),
@@ -1636,6 +1642,8 @@
                         (e.BattleBadge = 'dossier_badge'),
                         (e.NewYearInvoice = 'newYearInvoice'),
                         (e.NewYearSlot = 'newYearSlot'),
+                        (e.NewYearGuestD = 'ny_dog'),
+                        (e.EquipCoin = 'equipCoin'),
                         (e.BonusX5 = 'battle_bonus_x5'),
                         (e.CrewBonusX3 = 'crew_bonus_x3'),
                         (e.Vehicles = 'vehicles'),
@@ -1644,7 +1652,6 @@
                         (e.DeluxeGift = 'deluxe_gift'),
                         (e.BattleBoosterGift = 'battleBooster_gift'),
                         (e.OptionalDevice = 'optionalDevice'),
-                        (e.EquipCoin = 'equipCoin'),
                         (e.LootBox = 'lootBox'),
                         (e.BrCoin = 'brcoin');
                 })(De || (De = {})),
@@ -2092,14 +2099,14 @@
                         Array.isArray(e) ||
                         (t = (function (e, u) {
                             if (e) {
-                                if ('string' == typeof e) return qe(e, u);
+                                if ('string' == typeof e) return je(e, u);
                                 var t = {}.toString.call(e).slice(8, -1);
                                 return (
                                     'Object' === t && e.constructor && (t = e.constructor.name),
                                     'Map' === t || 'Set' === t
                                         ? Array.from(e)
                                         : 'Arguments' === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t)
-                                          ? qe(e, u)
+                                          ? je(e, u)
                                           : void 0
                                 );
                             }
@@ -2116,12 +2123,12 @@
                         'Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.',
                     );
                 }
-                function qe(e, u) {
+                function je(e, u) {
                     (null == u || u > e.length) && (u = e.length);
                     for (var t = 0, n = Array(u); t < u; t++) n[t] = e[t];
                     return n;
                 }
-                function je(e, u, t) {
+                function qe(e, u, t) {
                     const n = (0, a.useMemo)(
                         () =>
                             (function (e, u, t, n) {
@@ -2206,7 +2213,7 @@
                                         };
                                     return (0, a.useMemo)(() => ({ on: t, off: n, trigger: r }), []);
                                 })(),
-                                m = je(
+                                m = qe(
                                     () => {
                                         g.O.view.forceTriggerMouseMove();
                                     },
@@ -2954,7 +2961,7 @@
                         (e.BattleBooster = 'battleBooster');
                 })($u || ($u = {}));
                 const Vu = R.strings.selectable_reward.reward;
-                const qu = (0, f.Pi)(({ index: e }) => {
+                const ju = (0, f.Pi)(({ index: e }) => {
                         const u = z(),
                             t = u.model,
                             n = u.controls,
@@ -3087,7 +3094,7 @@
                         );
                         var B;
                     }),
-                    ju = 'ContentGrid_base_59',
+                    qu = 'ContentGrid_base_59',
                     Yu = 'ContentGrid_scrollArea_e0',
                     Xu = 'ContentGrid_scrollAreaInner_ba',
                     Ku = 'ContentGrid_reward_68',
@@ -3155,7 +3162,7 @@
                             ),
                             o().createElement(
                                 'div',
-                                { className: c()(ju, e) },
+                                { className: c()(qu, e) },
                                 o().createElement(
                                     Pu.Vertical.Area.Default,
                                     { api: r, key: 'area', className: Yu },
@@ -3166,7 +3173,7 @@
                                             o().createElement(
                                                 'div',
                                                 { key: e, className: Ku },
-                                                o().createElement(qu, { index: e }),
+                                                o().createElement(ju, { index: e }),
                                             ),
                                         ),
                                     ),

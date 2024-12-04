@@ -183,13 +183,14 @@
                         addPreloadTexture: () => o,
                         children: () => n,
                         displayStatus: () => i.W,
-                        displayStatusIs: () => b,
+                        displayStatusIs: () => y,
                         events: () => r.U,
-                        extraSize: () => y,
+                        extraSize: () => x,
                         forceTriggerMouseMove: () => p,
                         freezeTextureBeforeResize: () => B,
                         getBrowserTexturePath: () => A,
                         getDisplayStatus: () => f,
+                        getFontNames: () => b,
                         getScale: () => C,
                         getSize: () => D,
                         getViewGlobalPosition: () => d,
@@ -203,7 +204,7 @@
                         setEventHandled: () => w,
                         setInputPaddingsRem: () => F,
                         setSidePaddingsRem: () => l,
-                        whenTutorialReady: () => x,
+                        whenTutorialReady: () => T,
                     });
                 var n = t(3722),
                     i = t(6112),
@@ -265,11 +266,15 @@
                 function f() {
                     return viewEnv.getShowingStatus();
                 }
-                const b = Object.keys(i.W).reduce(
+                const b = (() => {
+                        let u = [];
+                        return () => (0 === u.length && (u = Object.keys(viewEnv.getFontsConfig())), u);
+                    })(),
+                    y = Object.keys(i.W).reduce(
                         (u, e) => ((u[e] = () => viewEnv.getShowingStatus() === i.W[e]), u),
                         {},
                     ),
-                    y = {
+                    x = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -277,7 +282,7 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    x = Promise.all([
+                    T = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : r.U.onDomBuilt(u);
                         }),
@@ -739,7 +744,7 @@
                         getFormattedDateTime: (u, e, t = !0) => regionalDateTime.getFormattedDateTime(u, e, t),
                     };
             },
-            4028: (u, e, t) => {
+            2830: (u, e, t) => {
                 var n = t(6179),
                     i = t.n(n),
                     r = t(493),
@@ -1060,19 +1065,18 @@
                     );
                 };
                 w.Sw.instance;
-                let P, L, M;
+                let L, P, M;
                 !(function (u) {
                     (u.small = 'small'), (u.big = 'big'), (u.large = 'large'), (u.extraLarge = 'extraLarge');
-                })(P || (P = {})),
+                })(L || (L = {})),
                     (function (u) {
                         (u.credits = 'credits'),
                             (u.gold = 'gold'),
                             (u.crystal = 'crystal'),
                             (u.xp = 'xp'),
                             (u.freeXP = 'freeXP'),
-                            (u.eliteXP = 'eliteXP'),
                             (u.equipCoin = 'equipCoin');
-                    })(L || (L = {})),
+                    })(P || (P = {})),
                     (function (u) {
                         (u.Red = 'RedActionBG'), (u.Blue = 'BlueActionBG');
                     })(M || (M = {}));
@@ -1276,7 +1280,7 @@
                         base__equipCoin: 'CurrencyItem_base__equipCoin_fd',
                     },
                     Q = ({ value: u, currencyType: e, isWGMAvailable: t, tooltip: n }) => {
-                        const r = e === L.gold ? 'gold' : 'integral',
+                        const r = e === P.gold ? 'gold' : 'integral',
                             a =
                                 ((E = n.type),
                                 (o = { currency: e }),
@@ -1322,41 +1326,41 @@
                             { className: J },
                             -1 !== n &&
                                 i().createElement(Q, {
-                                    key: L.crystal,
+                                    key: P.crystal,
                                     value: n,
-                                    currencyType: L.crystal,
+                                    currencyType: P.crystal,
                                     isWGMAvailable: E,
                                     tooltip: o,
                                 }),
                             -1 !== e &&
                                 i().createElement(Q, {
-                                    key: L.gold,
+                                    key: P.gold,
                                     value: e,
-                                    currencyType: L.gold,
+                                    currencyType: P.gold,
                                     isWGMAvailable: E,
                                     tooltip: F,
                                 }),
                             -1 !== t &&
                                 i().createElement(Q, {
-                                    key: L.credits,
+                                    key: P.credits,
                                     value: t,
-                                    currencyType: L.credits,
+                                    currencyType: P.credits,
                                     isWGMAvailable: E,
                                     tooltip: A,
                                 }),
                             -1 !== r &&
                                 i().createElement(Q, {
-                                    key: L.freeXP,
+                                    key: P.freeXP,
                                     value: r,
-                                    currencyType: L.freeXP,
+                                    currencyType: P.freeXP,
                                     isWGMAvailable: E,
                                     tooltip: s,
                                 }),
                             -1 !== a &&
                                 i().createElement(Q, {
-                                    key: L.equipCoin,
+                                    key: P.equipCoin,
                                     value: a,
-                                    currencyType: L.equipCoin,
+                                    currencyType: P.equipCoin,
                                     isWGMAvailable: E,
                                     tooltip: l,
                                 }),
@@ -1446,6 +1450,6 @@
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             t.forEach(e.bind(null, 0)), (t.push = e.bind(null, t.push.bind(t)));
         })();
-    var __webpack_exports__ = __webpack_require__.O(void 0, [573], () => __webpack_require__(4028));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [573], () => __webpack_require__(2830));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

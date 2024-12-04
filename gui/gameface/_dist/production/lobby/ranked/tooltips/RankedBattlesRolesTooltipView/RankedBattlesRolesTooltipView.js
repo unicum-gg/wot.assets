@@ -2,7 +2,7 @@
     'use strict';
     var __webpack_modules__ = {
             768: (u, e, A) => {
-                A.d(e, { O: () => Au });
+                A.d(e, { O: () => Eu });
                 var E = {};
                 A.r(E),
                     A.d(E, { mouse: () => s, off: () => i, on: () => C, onResize: () => B, onScaleUpdated: () => o });
@@ -36,19 +36,20 @@
                         addPreloadTexture: () => M,
                         children: () => t,
                         displayStatus: () => g,
-                        displayStatusIs: () => J,
+                        displayStatusIs: () => uu,
                         events: () => b,
-                        extraSize: () => uu,
+                        extraSize: () => eu,
                         forceTriggerMouseMove: () => X,
-                        freezeTextureBeforeResize: () => W,
+                        freezeTextureBeforeResize: () => q,
                         getBrowserTexturePath: () => L,
                         getDisplayStatus: () => Q,
-                        getScale: () => $,
+                        getFontNames: () => J,
+                        getScale: () => W,
                         getSize: () => U,
-                        getViewGlobalPosition: () => q,
+                        getViewGlobalPosition: () => j,
                         isEventHandled: () => Z,
                         isFocused: () => H,
-                        pxToRem: () => j,
+                        pxToRem: () => $,
                         remToPx: () => G,
                         resize: () => z,
                         sendEvent: () => P,
@@ -56,7 +57,7 @@
                         setEventHandled: () => Y,
                         setInputPaddingsRem: () => S,
                         setSidePaddingsRem: () => V,
-                        whenTutorialReady: () => eu,
+                        whenTutorialReady: () => Au,
                     });
                 const B = n('clientResized'),
                     o = n('self.onScaleUpdated'),
@@ -249,17 +250,17 @@
                 function z(u, e, A = 'px') {
                     return 'rem' === A ? viewEnv.resizeViewRem(u, e) : viewEnv.resizeViewPx(u, e);
                 }
-                function q(u = 'rem') {
+                function j(u = 'rem') {
                     const e = viewEnv.getViewGlobalPositionRem();
                     return 'rem' === u ? e : { x: G(e.x), y: G(e.y) };
                 }
-                function W() {
+                function q() {
                     viewEnv.freezeTextureBeforeResize();
                 }
-                function $() {
+                function W() {
                     return viewEnv.getScale();
                 }
-                function j(u) {
+                function $(u) {
                     return viewEnv.pxToRem(u);
                 }
                 function G(u) {
@@ -283,8 +284,12 @@
                 function Q() {
                     return viewEnv.getShowingStatus();
                 }
-                const J = Object.keys(g).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === g[e]), u), {}),
-                    uu = {
+                const J = (() => {
+                        let u = [];
+                        return () => (0 === u.length && (u = Object.keys(viewEnv.getFontsConfig())), u);
+                    })(),
+                    uu = Object.keys(g).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === g[e]), u), {}),
+                    eu = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -292,13 +297,13 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    eu = Promise.all([
+                    Au = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : b.onDomBuilt(u);
                         }),
                         engine.whenReady,
                     ]),
-                    Au = { view: D, client: F, sound: p };
+                    Eu = { view: D, client: F, sound: p };
             },
             521: (u, e, A) => {
                 let E, F;
@@ -907,10 +912,10 @@
                     V = 'Content_titleRoleIcon_19',
                     U = 'Content_titleRoleName_4d',
                     z = 'Content_titleRoleGroupName_aa',
-                    q = 'Content_separator_e5',
-                    W = 'Content_roleActions_d8',
-                    $ = 'Content_roleActionsTitle_b6',
-                    j = 'Content_roleActionsContent_f1',
+                    j = 'Content_separator_e5',
+                    q = 'Content_roleActions_d8',
+                    W = 'Content_roleActionsTitle_b6',
+                    $ = 'Content_roleActionsContent_f1',
                     G = 'Content_roleActionsItem_a2',
                     K = 'Content_roleActionsDisabled_14',
                     H = 'Content_roleDescription_5f',
@@ -959,7 +964,7 @@
                                     classMix: U,
                                 }),
                             ),
-                            F().createElement('div', { className: q }),
+                            F().createElement('div', { className: j }),
                             F().createElement(
                                 'div',
                                 { className: H },
@@ -975,18 +980,18 @@
                                 F().createElement(
                                     F().Fragment,
                                     null,
-                                    F().createElement('div', { className: q }),
+                                    F().createElement('div', { className: j }),
                                     F().createElement(
                                         'div',
-                                        { className: W },
+                                        { className: q },
                                         F().createElement(
                                             'div',
-                                            { className: $ },
+                                            { className: W },
                                             R.strings.tooltips.roleExp.status.roleActions.title(),
                                         ),
                                         F().createElement(
                                             'div',
-                                            { className: j },
+                                            { className: $ },
                                             t.items.map(({ value: u }, e) =>
                                                 F().createElement(
                                                     'div',
@@ -996,7 +1001,7 @@
                                             ),
                                         ),
                                     ),
-                                    F().createElement('div', { className: q }),
+                                    F().createElement('div', { className: j }),
                                     F().createElement(
                                         'div',
                                         { className: X },
@@ -1012,7 +1017,7 @@
                                 F().createElement(
                                     F().Fragment,
                                     null,
-                                    F().createElement('div', { className: q }),
+                                    F().createElement('div', { className: j }),
                                     F().createElement(
                                         'div',
                                         { className: K },

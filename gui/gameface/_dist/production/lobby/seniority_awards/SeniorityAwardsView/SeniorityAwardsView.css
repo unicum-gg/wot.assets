@@ -1519,26 +1519,29 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #19191b;
+    background: #11161b no-repeat center / cover;
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
 }
+.App_bgWrapper__imageLoaded_45 {
+    background-image: linear-gradient(to bottom, #304e6a, #304e6a 50%, #11161b 50%, #11161b);
+}
 .App_background_1f {
     width: 3052rem;
-    height: 946rem;
+    height: 1211rem;
     margin-top: -117rem;
     background: url('R.images.gui.maps.icons.seniorityAwards.award_bg__gp4') no-repeat center / contain;
 }
 .mediaSmall .App_background_1f {
     width: 3601rem;
-    height: 1116rem;
+    height: 1428rem;
 }
 .mediaMedium .App_background_1f {
     width: 4488rem;
-    height: 1391rem;
+    height: 1780rem;
     margin-top: -248rem;
 }
 .mediaLarge .App_background_1f {
@@ -1546,7 +1549,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 .mediaExtraLarge .App_background_1f {
     width: 7009rem;
-    height: 2376rem;
+    height: 3041rem;
 }
 .App_shadow_03 {
     height: 300rem;

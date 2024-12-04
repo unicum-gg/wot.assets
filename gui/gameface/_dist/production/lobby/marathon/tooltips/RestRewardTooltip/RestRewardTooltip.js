@@ -2,7 +2,7 @@
     'use strict';
     var __webpack_modules__ = {
             768: (u, e, t) => {
-                t.d(e, { O: () => tu });
+                t.d(e, { O: () => nu });
                 var n = {};
                 t.r(n),
                     t.d(n, { mouse: () => c, off: () => l, on: () => F, onResize: () => s, onScaleUpdated: () => A });
@@ -36,13 +36,14 @@
                         addPreloadTexture: () => N,
                         children: () => o,
                         displayStatus: () => h,
-                        displayStatusIs: () => J,
+                        displayStatusIs: () => uu,
                         events: () => R,
-                        extraSize: () => uu,
+                        extraSize: () => eu,
                         forceTriggerMouseMove: () => $,
                         freezeTextureBeforeResize: () => V,
                         getBrowserTexturePath: () => U,
                         getDisplayStatus: () => Z,
+                        getFontNames: () => J,
                         getScale: () => z,
                         getSize: () => G,
                         getViewGlobalPosition: () => q,
@@ -56,7 +57,7 @@
                         setEventHandled: () => K,
                         setInputPaddingsRem: () => M,
                         setSidePaddingsRem: () => x,
-                        whenTutorialReady: () => eu,
+                        whenTutorialReady: () => tu,
                     });
                 const s = a('clientResized'),
                     A = a('self.onScaleUpdated'),
@@ -175,8 +176,8 @@
                         },
                     },
                     f = ['args'];
-                const P = 2,
-                    b = 16,
+                const b = 2,
+                    P = 16,
                     O = 32,
                     S = 64,
                     y = (u, e) => {
@@ -218,13 +219,13 @@
                     },
                     k = {
                         close(u) {
-                            y('popover' === u ? P : O);
+                            y('popover' === u ? b : O);
                         },
                         minimize() {
                             y(S);
                         },
                         move(u) {
-                            y(b, { isMouseEvent: !0, on: u });
+                            y(P, { isMouseEvent: !0, on: u });
                         },
                     },
                     I = 15;
@@ -283,8 +284,12 @@
                 function Z() {
                     return viewEnv.getShowingStatus();
                 }
-                const J = Object.keys(h).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === h[e]), u), {}),
-                    uu = {
+                const J = (() => {
+                        let u = [];
+                        return () => (0 === u.length && (u = Object.keys(viewEnv.getFontsConfig())), u);
+                    })(),
+                    uu = Object.keys(h).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === h[e]), u), {}),
+                    eu = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -292,13 +297,13 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    eu = Promise.all([
+                    tu = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : R.onDomBuilt(u);
                         }),
                         engine.whenReady,
                     ]),
-                    tu = { view: i, client: r, sound: w };
+                    nu = { view: i, client: r, sound: w };
             },
             521: (u, e, t) => {
                 let n, r;
@@ -699,7 +704,7 @@
                         getFormattedDateTime: (u, e, t = !0) => regionalDateTime.getFormattedDateTime(u, e, t),
                     };
             },
-            187: (u, e, t) => {
+            356: (u, e, t) => {
                 var n = t(179),
                     r = t.n(n),
                     o = t(493),
@@ -728,6 +733,7 @@
                         (u.TankmenXpFactor = 'tankmenXPFactor'),
                         (u.FreeXpFactor = 'freeXPFactor'),
                         (u.BattleToken = 'battleToken'),
+                        (u.Entitlements = 'entitlements'),
                         (u.PremiumUniversal = 'premium_universal'),
                         (u.Gold = 'gold'),
                         (u.Credits = 'credits'),
@@ -745,6 +751,8 @@
                         (u.BattleBadge = 'dossier_badge'),
                         (u.NewYearInvoice = 'newYearInvoice'),
                         (u.NewYearSlot = 'newYearSlot'),
+                        (u.NewYearGuestD = 'ny_dog'),
+                        (u.EquipCoin = 'equipCoin'),
                         (u.BonusX5 = 'battle_bonus_x5'),
                         (u.CrewBonusX3 = 'crew_bonus_x3'),
                         (u.Vehicles = 'vehicles'),
@@ -753,7 +761,6 @@
                         (u.DeluxeGift = 'deluxe_gift'),
                         (u.BattleBoosterGift = 'battleBooster_gift'),
                         (u.OptionalDevice = 'optionalDevice'),
-                        (u.EquipCoin = 'equipCoin'),
                         (u.LootBox = 'lootBox'),
                         (u.BrCoin = 'brcoin');
                 })(s || (s = {})),
@@ -888,6 +895,7 @@
                         s.TankmenXpFactor,
                         s.FreeXpFactor,
                         s.BattleToken,
+                        s.Entitlements,
                         s.PremiumUniversal,
                         s.NaturalCover,
                         s.BpCoin,
@@ -955,7 +963,7 @@
                         return t;
                     });
                 }
-                const P = (u, e, t = {}, n = 0) => {
+                const b = (u, e, t = {}, n = 0) => {
                         viewEnv.handleViewEvent(
                             Object.assign(
                                 {
@@ -969,7 +977,7 @@
                             ),
                         );
                     },
-                    b = (u) => {
+                    P = (u) => {
                         let e = u.children,
                             t = u.contentId,
                             r = u.args,
@@ -1003,15 +1011,15 @@
                             g = (0, n.useMemo)(() => C || T().resId, [C]),
                             R = (0, n.useCallback)(() => {
                                 (w.current.isVisible && w.current.timeoutId) ||
-                                    (P(t, c, { isMouseEvent: !0, on: !0, arguments: f(r) }, g),
+                                    (b(t, c, { isMouseEvent: !0, on: !0, arguments: f(r) }, g),
                                     m && m(),
                                     (w.current.isVisible = !0));
                             }, [t, c, r, g, m]),
-                            b = (0, n.useCallback)(() => {
+                            P = (0, n.useCallback)(() => {
                                 if (w.current.isVisible || w.current.timeoutId) {
                                     const u = w.current.timeoutId;
                                     u > 0 && (clearTimeout(u), (w.current.timeoutId = 0)),
-                                        P(t, c, { on: !1 }, g),
+                                        b(t, c, { on: !1 }, g),
                                         w.current.isVisible && p && p(),
                                         (w.current.isVisible = !1);
                                 }
@@ -1021,7 +1029,7 @@
                                     ((w.current.prevTarget = document.elementFromPoint(u.clientX, u.clientY)),
                                     (w.current.hideTimerId = window.setTimeout(() => {
                                         const e = document.elementFromPoint(u.clientX, u.clientY);
-                                        e && !e.isSameNode(w.current.prevTarget) && b();
+                                        e && !e.isSameNode(w.current.prevTarget) && P();
                                     }, 200)));
                             }, []);
                         (0, n.useEffect)(() => {
@@ -1035,16 +1043,16 @@
                             );
                         }, []),
                             (0, n.useEffect)(() => {
-                                !1 === B && b();
-                            }, [B, b]),
+                                !1 === B && P();
+                            }, [B, P]),
                             (0, n.useEffect)(
                                 () => (
-                                    window.addEventListener('mouseleave', b),
+                                    window.addEventListener('mouseleave', P),
                                     () => {
-                                        window.removeEventListener('mouseleave', b), b();
+                                        window.removeEventListener('mouseleave', P), P();
                                     }
                                 ),
-                                [b],
+                                [P],
                             );
                         return B
                             ? (0, n.cloneElement)(
@@ -1061,13 +1069,13 @@
                                                       S && S(u));
                                               }),
                                           onMouseLeave: ((u) => (e) => {
-                                              b(), null == i || i(e), null == u || u(e);
+                                              P(), null == i || i(e), null == u || u(e);
                                           })(e.props.onMouseLeave),
                                           onClick: ((u) => (e) => {
-                                              !1 === l && b(), null == E || E(e), null == u || u(e);
+                                              !1 === l && P(), null == E || E(e), null == u || u(e);
                                           })(e.props.onClick),
                                           onMouseDown: ((u) => (e) => {
-                                              !1 === l && b(), null == a || a(e), null == u || u(e);
+                                              !1 === l && P(), null == a || a(e), null == u || u(e);
                                           })(e.props.onMouseDown),
                                       },
                                       v,
@@ -1104,7 +1112,7 @@
                                 return t;
                             })(u, O);
                         return r().createElement(
-                            b,
+                            P,
                             S(
                                 {
                                     contentId:
@@ -1157,7 +1165,7 @@
                             return u;
                         }, [a, t, o, i, E]);
                         return r().createElement(
-                            b,
+                            P,
                             I(
                                 {
                                     contentId:
@@ -1191,7 +1199,7 @@
                         const n = r().createElement('div', { className: t }, u);
                         if (e.header || e.body) return r().createElement(M, e, n);
                         const o = e.contentId;
-                        return o ? r().createElement(b, U({}, e, { contentId: o }), n) : r().createElement(y, e, n);
+                        return o ? r().createElement(P, U({}, e, { contentId: o }), n) : r().createElement(y, e, n);
                     },
                     x = {
                         base: 'Reward_base_ea',
@@ -1696,6 +1704,6 @@
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             t.forEach(e.bind(null, 0)), (t.push = e.bind(null, t.push.bind(t)));
         })();
-    var __webpack_exports__ = __webpack_require__.O(void 0, [639], () => __webpack_require__(187));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [639], () => __webpack_require__(356));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

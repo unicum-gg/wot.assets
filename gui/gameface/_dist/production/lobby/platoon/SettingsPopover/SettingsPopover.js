@@ -2,10 +2,10 @@
     'use strict';
     var __webpack_modules__ = {
             768: (e, t, n) => {
-                n.d(t, { O: () => ne });
+                n.d(t, { O: () => oe });
                 var o = {};
                 n.r(o),
-                    n.d(o, { mouse: () => v, off: () => _, on: () => u, onResize: () => d, onScaleUpdated: () => l });
+                    n.d(o, { mouse: () => v, off: () => _, on: () => u, onResize: () => l, onScaleUpdated: () => d });
                 var r = {};
                 n.r(r),
                     n.d(r, {
@@ -36,30 +36,31 @@
                         addPreloadTexture: () => I,
                         children: () => i,
                         displayStatus: () => k,
-                        displayStatusIs: () => J,
+                        displayStatusIs: () => ee,
                         events: () => P,
-                        extraSize: () => ee,
+                        extraSize: () => te,
                         forceTriggerMouseMove: () => Z,
                         freezeTextureBeforeResize: () => q,
                         getBrowserTexturePath: () => V,
                         getDisplayStatus: () => Q,
+                        getFontNames: () => J,
                         getScale: () => W,
-                        getSize: () => U,
+                        getSize: () => j,
                         getViewGlobalPosition: () => H,
                         isEventHandled: () => X,
                         isFocused: () => Y,
                         pxToRem: () => z,
                         remToPx: () => K,
-                        resize: () => j,
+                        resize: () => U,
                         sendEvent: () => A,
                         setAnimateWindow: () => G,
                         setEventHandled: () => $,
                         setInputPaddingsRem: () => N,
                         setSidePaddingsRem: () => B,
-                        whenTutorialReady: () => te,
+                        whenTutorialReady: () => ne,
                     });
-                const d = s('clientResized'),
-                    l = s('self.onScaleUpdated'),
+                const l = s('clientResized'),
+                    d = s('self.onScaleUpdated'),
                     u = (e, t) => engine.on(e, t),
                     _ = (e, t) => engine.off(e, t),
                     w = { down: s('mousedown'), up: s('mouseup'), move: s('mousemove') };
@@ -243,10 +244,10 @@
                 function B(e) {
                     viewEnv.setHitAreaPaddingsRem(e.top, e.right, e.bottom, e.left, D);
                 }
-                function U(e = 'px') {
+                function j(e = 'px') {
                     return 'rem' === e ? viewEnv.getViewSizeRem() : viewEnv.getViewSizePx();
                 }
-                function j(e, t, n = 'px') {
+                function U(e, t, n = 'px') {
                     return 'rem' === n ? viewEnv.resizeViewRem(e, t) : viewEnv.resizeViewPx(e, t);
                 }
                 function H(e = 'rem') {
@@ -283,8 +284,12 @@
                 function Q() {
                     return viewEnv.getShowingStatus();
                 }
-                const J = Object.keys(k).reduce((e, t) => ((e[t] = () => viewEnv.getShowingStatus() === k[t]), e), {}),
-                    ee = {
+                const J = (() => {
+                        let e = [];
+                        return () => (0 === e.length && (e = Object.keys(viewEnv.getFontsConfig())), e);
+                    })(),
+                    ee = Object.keys(k).reduce((e, t) => ((e[t] = () => viewEnv.getShowingStatus() === k[t]), e), {}),
+                    te = {
                         set: (e, t) => {
                             viewEnv.setExtraSizeRem(e, t);
                         },
@@ -292,13 +297,13 @@
                             viewEnv.getExtraSizeRem(e, t);
                         },
                     },
-                    te = Promise.all([
+                    ne = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : P.onDomBuilt(e);
                         }),
                         engine.whenReady,
                     ]),
-                    ne = { view: a, client: r, sound: y };
+                    oe = { view: a, client: r, sound: y };
             },
             521: (e, t, n) => {
                 let o, r;
@@ -505,8 +510,8 @@
                         (e[(e.MINIMIZE = 64)] = 'MINIMIZE');
                 })(s || (s = {}));
                 const c = Object.freeze({ INTEGRAL: 0, GOLD: 1 }),
-                    d = Object.freeze({ FRACTIONAL: 0, WO_ZERO_DIGITS: 1 }),
-                    l = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1 }),
+                    l = Object.freeze({ FRACTIONAL: 0, WO_ZERO_DIGITS: 1 }),
+                    d = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1 }),
                     u = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1, YEAR_MONTH: 2 });
                 var _ = n(521),
                     w = n(768);
@@ -608,8 +613,8 @@
                         ViewModel: y.Z,
                         ViewEventType: s,
                         NumberFormatType: c,
-                        RealFormatType: d,
-                        TimeFormatType: l,
+                        RealFormatType: l,
+                        TimeFormatType: d,
                         DateFormatType: u,
                         makeGlobalBoundingBox: h,
                         sendMoveEvent: (e) => E(s.MOVE, { isMouseEvent: !0, on: e }),
@@ -621,13 +626,13 @@
                         sendShowPopOverEvent: (e, t, n, o, r = R.invalid('resId'), i) => {
                             const a = w.O.view.getViewGlobalPosition(),
                                 c = n.getBoundingClientRect(),
-                                d = c.x,
-                                l = c.y,
+                                l = c.x,
+                                d = c.y,
                                 u = c.width,
                                 _ = c.height,
                                 v = {
-                                    x: w.O.view.pxToRem(d) + a.x,
-                                    y: w.O.view.pxToRem(l) + a.y,
+                                    x: w.O.view.pxToRem(l) + a.x,
+                                    y: w.O.view.pxToRem(d) + a.y,
                                     width: w.O.view.pxToRem(u),
                                     height: w.O.view.pxToRem(_),
                                 };
@@ -718,7 +723,7 @@
                     'onShow',
                     'onHide',
                 ];
-                function d(e) {
+                function l(e) {
                     return Object.entries(e || {}).map(([e, t]) => {
                         const n = { __Type: 'GFValueProxy', name: e };
                         switch (typeof t) {
@@ -736,7 +741,7 @@
                         return n;
                     });
                 }
-                const l = (e, t, n = {}, o = 0) => {
+                const d = (e, t, n = {}, o = 0) => {
                         viewEnv.handleViewEvent(
                             Object.assign(
                                 {
@@ -802,7 +807,7 @@
                             ),
                             C = (0, a.useCallback)(() => {
                                 (k.current.isVisible && k.current.timeoutId) ||
-                                    (l(n, p, { isMouseEvent: !0, on: !0, arguments: d(o) }, P),
+                                    (d(n, p, { isMouseEvent: !0, on: !0, arguments: l(o) }, P),
                                     y && y(),
                                     (k.current.isVisible = !0));
                             }, [n, p, o, P, y]),
@@ -810,7 +815,7 @@
                                 if (k.current.isVisible || k.current.timeoutId) {
                                     const e = k.current.timeoutId;
                                     e > 0 && (clearTimeout(e), (k.current.timeoutId = 0)),
-                                        l(n, p, { on: !1 }, P),
+                                        d(n, p, { on: !1 }, P),
                                         k.current.isVisible && O && O(),
                                         (k.current.isVisible = !1);
                                 }
@@ -898,7 +903,7 @@
                             r = e.note,
                             i = e.alert,
                             c = e.args,
-                            d = (function (e, t) {
+                            l = (function (e, t) {
                                 if (null == e) return {};
                                 var n = {};
                                 for (var o in e)
@@ -908,7 +913,7 @@
                                     }
                                 return n;
                             })(e, _);
-                        const l = (0, a.useMemo)(() => {
+                        const d = (0, a.useMemo)(() => {
                             const e = Object.assign({}, c, { body: n, header: o, note: r, alert: i });
                             for (const t in e) void 0 === e[t] && delete e[t];
                             return e;
@@ -921,9 +926,9 @@
                                         ((m = null == c ? void 0 : c.hasHtmlContent),
                                         m ? v.SimpleTooltipHtmlContent('resId') : v.SimpleTooltipContent('resId')),
                                     decoratorId: R.views.common.tooltip_window.tooltip_window.TooltipWindow('resId'),
-                                    args: l,
+                                    args: d,
                                 },
-                                d,
+                                l,
                             ),
                             t,
                         );
@@ -999,8 +1004,8 @@
                 const O = ['__left', '__right', '__top', '__bottom'],
                     T = (0, a.forwardRef)(
                         ({ children: e, disableAutoSizeUpdate: t, onOutsideClick: n, customStyles: o = {} }, c) => {
-                            const d = (0, a.useRef)(null),
-                                l = (0, a.useRef)(null),
+                            const l = (0, a.useRef)(null),
+                                d = (0, a.useRef)(null),
                                 u = (0, a.useRef)(null),
                                 _ = (0, a.useState)(window.decorator && window.decorator.directionType),
                                 w = _[0],
@@ -1024,7 +1029,7 @@
                                     (e) => {
                                         let t = e.target;
                                         do {
-                                            if (t === d.current || t === u.current) return;
+                                            if (t === l.current || t === u.current) return;
                                             t = t.parentNode;
                                         } while (t);
                                         const o = window.decorator;
@@ -1040,11 +1045,11 @@
                                         }
                                         n ? n() : h.O.view.sendEvent.close('popover');
                                     },
-                                    [d, u, n],
+                                    [l, u, n],
                                 ),
                                 P = g(),
                                 C = (0, a.useCallback)(() => {
-                                    const e = l.current;
+                                    const e = d.current;
                                     if (e)
                                         return (
                                             h.O.view.freezeTextureBeforeResize(),
@@ -1082,13 +1087,13 @@
                                 }, [C, k, t]),
                                 s().createElement(
                                     'div',
-                                    { className: f.base, ref: l },
+                                    { className: f.base, ref: d },
                                     s().createElement(
                                         'div',
                                         { className: f.decorator },
                                         s().createElement(
                                             'div',
-                                            { className: f.content, ref: d },
+                                            { className: f.content, ref: l },
                                             e,
                                             window.decorator &&
                                                 window.decorator.isCloseBtnVisible &&
@@ -1171,7 +1176,7 @@
                     V = 'SubView_base_df',
                     F = 'subViews.onChanged',
                     B = 'subView:inject->',
-                    U = (() => {
+                    j = (() => {
                         const e = [];
                         let t = !1;
                         const n = () => {
@@ -1185,11 +1190,11 @@
                             },
                         };
                     })(),
-                    j = (0, a.memo)(({ id: e, fallback: t, onLoadCallback: n, mixClass: o }) => {
+                    U = (0, a.memo)(({ id: e, fallback: t, onLoadCallback: n, mixClass: o }) => {
                         const c = (0, a.useState)(''),
-                            d = c[0],
-                            l = c[1],
-                            u = (0, a.useMemo)(() => ({ __html: N(d) }), [d]),
+                            l = c[0],
+                            d = c[1],
+                            u = (0, a.useMemo)(() => ({ __html: N(l) }), [l]),
                             _ = (0, a.useMemo)(() => window.subViews.addChildChangedCallback(e), [e]),
                             w = (0, a.useState)(!1),
                             v = w[0],
@@ -1202,10 +1207,10 @@
                                 [_],
                             ),
                             p = (0, a.useCallback)((e) => {
-                                U.add(
+                                j.add(
                                     () =>
                                         new Promise((t) => {
-                                            l(e);
+                                            d(e);
                                             const n = new MutationObserver(() => {
                                                     n.disconnect(), t();
                                                 }),
@@ -1258,7 +1263,7 @@
                         }, [h, p, e, v]),
                             (0, a.useEffect)(
                                 () => () => {
-                                    d &&
+                                    l &&
                                         ((e) => {
                                             const t = D(I());
                                             let n;
@@ -1270,12 +1275,12 @@
                                                     o && document.head.removeChild(o);
                                                 }
                                             }
-                                        })(d);
+                                        })(l);
                                 },
-                                [d],
+                                [l],
                             );
                         const b = r()(V, o);
-                        if (d) {
+                        if (l) {
                             let t;
                             return (
                                 (t = document.getElementById('root')) && t.setAttribute('id', 'bugSubView'),
@@ -1291,7 +1296,7 @@
                                             (n.href = t), (n.rel = 'stylesheet'), document.head.appendChild(n);
                                         }
                                     }
-                                })(d),
+                                })(l),
                                 n && n(e),
                                 s().createElement('div', { className: b, dangerouslySetInnerHTML: u })
                             );
@@ -1319,7 +1324,7 @@
                                 s().createElement(
                                     'div',
                                     { className: W },
-                                    s().createElement(j, {
+                                    s().createElement(U, {
                                         id: R.views.lobby.platoon.subViews.SettingsContent('resId'),
                                         onLoadCallback: t,
                                     }),
@@ -1399,11 +1404,11 @@
                         c = 0;
                     if (i.some((t) => 0 !== e[t])) {
                         for (o in a) __webpack_require__.o(a, o) && (__webpack_require__.m[o] = a[o]);
-                        if (s) var d = s(__webpack_require__);
+                        if (s) var l = s(__webpack_require__);
                     }
                     for (t && t(n); c < i.length; c++)
                         (r = i[c]), __webpack_require__.o(e, r) && e[r] && e[r][0](), (e[r] = 0);
-                    return __webpack_require__.O(d);
+                    return __webpack_require__.O(l);
                 },
                 n = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             n.forEach(t.bind(null, 0)), (n.push = t.bind(null, n.push.bind(n)));

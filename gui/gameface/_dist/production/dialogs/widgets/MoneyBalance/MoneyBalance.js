@@ -183,13 +183,14 @@
                         addPreloadTexture: () => c,
                         children: () => r,
                         displayStatus: () => o.W,
-                        displayStatusIs: () => k,
+                        displayStatusIs: () => R,
                         events: () => i.U,
-                        extraSize: () => R,
+                        extraSize: () => C,
                         forceTriggerMouseMove: () => T,
                         freezeTextureBeforeResize: () => m,
                         getBrowserTexturePath: () => d,
-                        getDisplayStatus: () => P,
+                        getDisplayStatus: () => k,
+                        getFontNames: () => P,
                         getScale: () => b,
                         getSize: () => v,
                         getViewGlobalPosition: () => w,
@@ -203,7 +204,7 @@
                         setEventHandled: () => y,
                         setInputPaddingsRem: () => l,
                         setSidePaddingsRem: () => _,
-                        whenTutorialReady: () => C,
+                        whenTutorialReady: () => M,
                     });
                 var r = n(3722),
                     o = n(6112),
@@ -262,14 +263,18 @@
                 function T() {
                     viewEnv.forceTriggerMouseMove();
                 }
-                function P() {
+                function k() {
                     return viewEnv.getShowingStatus();
                 }
-                const k = Object.keys(o.W).reduce(
+                const P = (() => {
+                        let e = [];
+                        return () => (0 === e.length && (e = Object.keys(viewEnv.getFontsConfig())), e);
+                    })(),
+                    R = Object.keys(o.W).reduce(
                         (e, t) => ((e[t] = () => viewEnv.getShowingStatus() === o.W[t]), e),
                         {},
                     ),
-                    R = {
+                    C = {
                         set: (e, t) => {
                             viewEnv.setExtraSizeRem(e, t);
                         },
@@ -277,7 +282,7 @@
                             viewEnv.getExtraSizeRem(e, t);
                         },
                     },
-                    C = Promise.all([
+                    M = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : i.U.onDomBuilt(e);
                         }),
@@ -750,7 +755,6 @@
                             (e.crystal = 'crystal'),
                             (e.xp = 'xp'),
                             (e.freeXP = 'freeXP'),
-                            (e.eliteXP = 'eliteXP'),
                             (e.equipCoin = 'equipCoin');
                     })(c || (c = {})),
                     (function (e) {
@@ -1043,7 +1047,7 @@
                         return n;
                     });
                 }
-                const P = (e, t, n = {}, r = 0) => {
+                const k = (e, t, n = {}, r = 0) => {
                         viewEnv.handleViewEvent(
                             Object.assign(
                                 {
@@ -1057,7 +1061,7 @@
                             ),
                         );
                     },
-                    k = (e) => {
+                    P = (e) => {
                         let t = e.children,
                             n = e.contentId,
                             o = e.args,
@@ -1088,7 +1092,7 @@
                                 return n;
                             })(e, O);
                         const y = (0, r.useRef)({ timeoutId: 0, isVisible: !1, prevTarget: null, hideTimerId: null }),
-                            k = (0, r.useMemo)(
+                            P = (0, r.useMemo)(
                                 () =>
                                     E ||
                                     ((e = 1) => {
@@ -1109,19 +1113,19 @@
                             ),
                             C = (0, r.useCallback)(() => {
                                 (y.current.isVisible && y.current.timeoutId) ||
-                                    (P(n, p, { isMouseEvent: !0, on: !0, arguments: T(o) }, k),
+                                    (k(n, p, { isMouseEvent: !0, on: !0, arguments: T(o) }, P),
                                     h && h(),
                                     (y.current.isVisible = !0));
-                            }, [n, p, o, k, h]),
+                            }, [n, p, o, P, h]),
                             M = (0, r.useCallback)(() => {
                                 if (y.current.isVisible || y.current.timeoutId) {
                                     const e = y.current.timeoutId;
                                     e > 0 && (clearTimeout(e), (y.current.timeoutId = 0)),
-                                        P(n, p, { on: !1 }, k),
+                                        k(n, p, { on: !1 }, P),
                                         y.current.isVisible && g && g(),
                                         (y.current.isVisible = !1);
                                 }
-                            }, [n, p, k, g]),
+                            }, [n, p, P, g]),
                             L = (0, r.useCallback)((e) => {
                                 y.current.isVisible &&
                                     ((y.current.prevTarget = document.elementFromPoint(e.clientX, e.clientY)),
@@ -1246,7 +1250,7 @@
                                 });
                         var d, u;
                         return o().createElement(
-                            k,
+                            P,
                             N({}, l, { targetId: i }),
                             o().createElement(
                                 'span',

@@ -2,7 +2,7 @@
     'use strict';
     var __webpack_modules__ = {
             768: (u, e, t) => {
-                t.d(e, { O: () => tu });
+                t.d(e, { O: () => nu });
                 var n = {};
                 t.r(n),
                     t.d(n, { mouse: () => C, off: () => s, on: () => D, onResize: () => r, onScaleUpdated: () => a });
@@ -36,27 +36,28 @@
                         addPreloadTexture: () => S,
                         children: () => A,
                         displayStatus: () => g,
-                        displayStatusIs: () => J,
+                        displayStatusIs: () => uu,
                         events: () => f,
-                        extraSize: () => uu,
+                        extraSize: () => eu,
                         forceTriggerMouseMove: () => X,
                         freezeTextureBeforeResize: () => K,
                         getBrowserTexturePath: () => I,
                         getDisplayStatus: () => Q,
+                        getFontNames: () => J,
                         getScale: () => q,
                         getSize: () => U,
-                        getViewGlobalPosition: () => j,
+                        getViewGlobalPosition: () => W,
                         isEventHandled: () => Z,
                         isFocused: () => Y,
                         pxToRem: () => G,
                         remToPx: () => z,
-                        resize: () => W,
+                        resize: () => j,
                         sendEvent: () => M,
                         setAnimateWindow: () => H,
                         setEventHandled: () => $,
                         setInputPaddingsRem: () => L,
                         setSidePaddingsRem: () => V,
-                        whenTutorialReady: () => eu,
+                        whenTutorialReady: () => tu,
                     });
                 const r = o('clientResized'),
                     a = o('self.onScaleUpdated'),
@@ -246,10 +247,10 @@
                 function U(u = 'px') {
                     return 'rem' === u ? viewEnv.getViewSizeRem() : viewEnv.getViewSizePx();
                 }
-                function W(u, e, t = 'px') {
+                function j(u, e, t = 'px') {
                     return 'rem' === t ? viewEnv.resizeViewRem(u, e) : viewEnv.resizeViewPx(u, e);
                 }
-                function j(u = 'rem') {
+                function W(u = 'rem') {
                     const e = viewEnv.getViewGlobalPositionRem();
                     return 'rem' === u ? e : { x: z(e.x), y: z(e.y) };
                 }
@@ -283,8 +284,12 @@
                 function Q() {
                     return viewEnv.getShowingStatus();
                 }
-                const J = Object.keys(g).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === g[e]), u), {}),
-                    uu = {
+                const J = (() => {
+                        let u = [];
+                        return () => (0 === u.length && (u = Object.keys(viewEnv.getFontsConfig())), u);
+                    })(),
+                    uu = Object.keys(g).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === g[e]), u), {}),
+                    eu = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -292,13 +297,13 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    eu = Promise.all([
+                    tu = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : f.onDomBuilt(u);
                         }),
                         engine.whenReady,
                     ]),
-                    tu = { view: E, client: F, sound: h };
+                    nu = { view: E, client: F, sound: h };
             },
             521: (u, e, t) => {
                 let n, F;
@@ -699,7 +704,7 @@
                         getFormattedDateTime: (u, e, t = !0) => regionalDateTime.getFormattedDateTime(u, e, t),
                     };
             },
-            583: (u, e, t) => {
+            236: (u, e, t) => {
                 var n = t(179),
                     F = t.n(n),
                     A = t(493),
@@ -1112,6 +1117,6 @@
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             t.forEach(e.bind(null, 0)), (t.push = e.bind(null, t.push.bind(t)));
         })();
-    var __webpack_exports__ = __webpack_require__.O(void 0, [678], () => __webpack_require__(583));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [678], () => __webpack_require__(236));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

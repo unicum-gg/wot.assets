@@ -18,7 +18,7 @@
             },
             768: (u, e, t) => {
                 'use strict';
-                t.d(e, { O: () => Z });
+                t.d(e, { O: () => J });
                 var n = {};
                 t.r(n),
                     t.d(n, { mouse: () => D, off: () => c, on: () => A, onResize: () => E, onScaleUpdated: () => l });
@@ -48,17 +48,18 @@
                 }
                 t.r(i),
                     t.d(i, {
-                        addModelObserver: () => y,
+                        addModelObserver: () => L,
                         addPreloadTexture: () => P,
                         children: () => a,
                         displayStatus: () => w,
-                        displayStatusIs: () => X,
+                        displayStatusIs: () => K,
                         events: () => f,
-                        extraSize: () => K,
+                        extraSize: () => Q,
                         forceTriggerMouseMove: () => z,
                         freezeTextureBeforeResize: () => U,
-                        getBrowserTexturePath: () => L,
+                        getBrowserTexturePath: () => y,
                         getDisplayStatus: () => V,
+                        getFontNames: () => X,
                         getScale: () => G,
                         getSize: () => k,
                         getViewGlobalPosition: () => N,
@@ -72,7 +73,7 @@
                         setEventHandled: () => Y,
                         setInputPaddingsRem: () => O,
                         setSidePaddingsRem: () => M,
-                        whenTutorialReady: () => Q,
+                        whenTutorialReady: () => Z,
                     });
                 const E = s('clientResized'),
                     l = s('self.onScaleUpdated'),
@@ -246,10 +247,10 @@
                 function O(u) {
                     viewEnv.setHitAreaPaddingsRem(u, u, u, u, R);
                 }
-                function L(u, e, t, n = 1) {
+                function y(u, e, t, n = 1) {
                     return viewEnv.getWebBrowserTexturePath(u, e, t, n);
                 }
-                function y(u, e, t) {
+                function L(u, e, t) {
                     return viewEnv.addDataChangedCallback(u, e, t);
                 }
                 function M(u) {
@@ -295,8 +296,12 @@
                 function V() {
                     return viewEnv.getShowingStatus();
                 }
-                const X = Object.keys(w).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === w[e]), u), {}),
-                    K = {
+                const X = (() => {
+                        let u = [];
+                        return () => (0 === u.length && (u = Object.keys(viewEnv.getFontsConfig())), u);
+                    })(),
+                    K = Object.keys(w).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === w[e]), u), {}),
+                    Q = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -304,13 +309,13 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    Q = Promise.all([
+                    Z = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : f.onDomBuilt(u);
                         }),
                         engine.whenReady,
                     ]),
-                    Z = { view: i, client: r, sound: p };
+                    J = { view: i, client: r, sound: p };
             },
             521: (u, e, t) => {
                 'use strict';
@@ -1047,8 +1052,8 @@
                             o = a.mediaSize;
                         return r().createElement('div', S({ className: m()(t, T[i], x[s], P[o]) }, n), e);
                     },
-                    L = ['children'],
-                    y = (u) => {
+                    y = ['children'],
+                    L = (u) => {
                         let e = u.children,
                             t = (function (u, e) {
                                 if (null == u) return {};
@@ -1059,7 +1064,7 @@
                                         t[n] = u[n];
                                     }
                                 return t;
-                            })(u, L);
+                            })(u, y);
                         return r().createElement(B, null, r().createElement(O, t, e));
                     };
                 var M = t(493),
@@ -1910,6 +1915,7 @@
                         (u.TankmenXpFactor = 'tankmenXPFactor'),
                         (u.FreeXpFactor = 'freeXPFactor'),
                         (u.BattleToken = 'battleToken'),
+                        (u.Entitlements = 'entitlements'),
                         (u.PremiumUniversal = 'premium_universal'),
                         (u.Gold = 'gold'),
                         (u.Credits = 'credits'),
@@ -1927,6 +1933,8 @@
                         (u.BattleBadge = 'dossier_badge'),
                         (u.NewYearInvoice = 'newYearInvoice'),
                         (u.NewYearSlot = 'newYearSlot'),
+                        (u.NewYearGuestD = 'ny_dog'),
+                        (u.EquipCoin = 'equipCoin'),
                         (u.BonusX5 = 'battle_bonus_x5'),
                         (u.CrewBonusX3 = 'crew_bonus_x3'),
                         (u.Vehicles = 'vehicles'),
@@ -1935,7 +1943,6 @@
                         (u.DeluxeGift = 'deluxe_gift'),
                         (u.BattleBoosterGift = 'battleBooster_gift'),
                         (u.OptionalDevice = 'optionalDevice'),
-                        (u.EquipCoin = 'equipCoin'),
                         (u.LootBox = 'lootBox'),
                         (u.BrCoin = 'brcoin');
                 })(Cu || (Cu = {})),
@@ -2068,6 +2075,7 @@
                         Cu.TankmenXpFactor,
                         Cu.FreeXpFactor,
                         Cu.BattleToken,
+                        Cu.Entitlements,
                         Cu.PremiumUniversal,
                         Cu.NaturalCover,
                         Cu.BpCoin,
@@ -2088,7 +2096,7 @@
                     Ru = [Cu.PremiumPlus, Cu.Premium],
                     Pu = ['engravings', 'backgrounds'],
                     Ou = ['engraving', 'background'],
-                    Lu = (u, e = gu.Small) => {
+                    yu = (u, e = gu.Small) => {
                         const t = u.name,
                             n = u.type,
                             r = u.value,
@@ -2129,9 +2137,6 @@
                             case 'tokens':
                             case 'lootBox':
                             case 'battleToken':
-                                return 'big' === e
-                                    ? u.iconBig.replace('..', 'img://gui')
-                                    : u.iconSmall.replace('..', 'img://gui');
                             case 'customizations':
                             case 'styleProgress':
                             case 'crewSkins':
@@ -2140,6 +2145,10 @@
                             case 'tmanToken':
                             case 'battlePassSelectToken':
                                 return `R.images.gui.maps.icons.quests.bonuses.${e}.${a}`;
+                            case 'entitlements':
+                                return 'big' === e
+                                    ? u.iconBig.replace('..', 'img://gui')
+                                    : u.iconSmall.replace('..', 'img://gui');
                             case 'crewBooks':
                                 return `R.images.gui.maps.icons.crewBooks.books.${e}.${a}`;
                             case 'dogTagComponents':
@@ -2173,15 +2182,19 @@
                                 return `R.images.gui.maps.icons.quests.bonuses.${e}.freeXP`;
                             case 'premiumTank':
                                 return `R.images.gui.maps.icons.quests.bonuses.${e}.vehicles`;
+                            case 'premiumTank_rent':
+                                return `R.images.gui.maps.icons.quests.bonuses.${e}.vehicles_rent`;
                             case 'styleProgressToken':
                                 return `R.images.gui.maps.icons.quests.bonuses.${e}.style_3d`;
                             case 'collectionItem':
                                 return `R.images.gui.maps.icons.collectionItems.${o}.${a}`;
+                            case 'newYearSlot':
+                                return `R.images.gui.maps.icons.newYear.rewards.${e}.slot`;
                             default:
                                 return `R.images.gui.maps.icons.quests.bonuses.${e}.${t}`;
                         }
                     },
-                    yu = (u, e, t) => {
+                    Lu = (u, e, t) => {
                         const n = e && { contentId: e };
                         return Object.assign(
                             {
@@ -2402,7 +2415,7 @@
                                         );
                                         return Object.assign({}, e, {
                                             special: Gu(e),
-                                            image: Lu(e, t),
+                                            image: yu(e, t),
                                             size: t,
                                             valueType:
                                                 ((n = e.name),
@@ -2415,7 +2428,7 @@
                                                         : Ru.includes(n)
                                                           ? hu.PREMIUM_PLUS
                                                           : hu.STRING),
-                                            tooltipArgs: yu(
+                                            tooltipArgs: Lu(
                                                 { tooltipId: e.tooltipId, tooltipContentId: e.tooltipContentId },
                                                 Number(e.tooltipContentId),
                                             ),
@@ -2678,7 +2691,7 @@
                     });
                 engine.whenReady.then(() => {
                     k().render(
-                        r().createElement(y, null, r().createElement(nu, null, r().createElement(re, null))),
+                        r().createElement(L, null, r().createElement(nu, null, r().createElement(re, null))),
                         document.getElementById('root'),
                     );
                 });

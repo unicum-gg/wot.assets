@@ -183,13 +183,14 @@
                         addPreloadTexture: () => s,
                         children: () => n,
                         displayStatus: () => r.W,
-                        displayStatusIs: () => b,
+                        displayStatusIs: () => y,
                         events: () => o.U,
-                        extraSize: () => y,
+                        extraSize: () => T,
                         forceTriggerMouseMove: () => w,
                         freezeTextureBeforeResize: () => B,
                         getBrowserTexturePath: () => c,
                         getDisplayStatus: () => g,
+                        getFontNames: () => b,
                         getScale: () => _,
                         getSize: () => A,
                         getViewGlobalPosition: () => D,
@@ -203,7 +204,7 @@
                         setEventHandled: () => f,
                         setInputPaddingsRem: () => E,
                         setSidePaddingsRem: () => F,
-                        whenTutorialReady: () => T,
+                        whenTutorialReady: () => k,
                     });
                 var n = t(3722),
                     r = t(6112),
@@ -265,11 +266,15 @@
                 function g() {
                     return viewEnv.getShowingStatus();
                 }
-                const b = Object.keys(r.W).reduce(
+                const b = (() => {
+                        let u = [];
+                        return () => (0 === u.length && (u = Object.keys(viewEnv.getFontsConfig())), u);
+                    })(),
+                    y = Object.keys(r.W).reduce(
                         (u, e) => ((u[e] = () => viewEnv.getShowingStatus() === r.W[e]), u),
                         {},
                     ),
-                    y = {
+                    T = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -277,7 +282,7 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    T = Promise.all([
+                    k = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : o.U.onDomBuilt(u);
                         }),
@@ -1379,9 +1384,9 @@
                         );
                         var l;
                     };
-                function S() {
+                function N() {
                     return (
-                        (S = Object.assign
+                        (N = Object.assign
                             ? Object.assign.bind()
                             : function (u) {
                                   for (var e = 1; e < arguments.length; e++) {
@@ -1390,15 +1395,15 @@
                                   }
                                   return u;
                               }),
-                        S.apply(null, arguments)
+                        N.apply(null, arguments)
                     );
                 }
-                const N = ({ children: u, tooltipArgs: e, className: t }) => {
+                const S = ({ children: u, tooltipArgs: e, className: t }) => {
                     if (!e) return u;
                     const n = a().createElement('div', { className: t }, u);
                     if (e.header || e.body) return a().createElement(L, e, n);
                     const r = e.contentId;
-                    return r ? a().createElement(b, S({}, e, { contentId: r }), n) : a().createElement(k, e, n);
+                    return r ? a().createElement(b, N({}, e, { contentId: r }), n) : a().createElement(k, e, n);
                 };
                 var M = t(8045);
                 const I = {
@@ -1562,7 +1567,7 @@
                         for (; r; ) o !== r.index && t(u.slice(o, r.index)), n(r), (o = e.lastIndex), (r = e.exec(u));
                         o !== u.length && t(u.slice(o));
                     },
-                    nu = new RegExp('[฀-๿][ัำ-ฺ็-๎]*', 'gu'),
+                    nu = new RegExp('[฀-๿][ัำ-ฺ็-๎]*|[^฀-๿]', 'gu'),
                     ru = (u) => {
                         const e = [];
                         return (
@@ -1870,7 +1875,7 @@
                                     },
                                     a().createElement('div', { className: I.unTruncated, ref: d }, p),
                                     a().createElement(
-                                        N,
+                                        S,
                                         {
                                             tooltipArgs: m,
                                             className: r()(

@@ -211,11 +211,12 @@
                         displayStatus: () => i.W,
                         displayStatusIs: () => M,
                         events: () => a.U,
-                        extraSize: () => O,
+                        extraSize: () => T,
                         forceTriggerMouseMove: () => S,
                         freezeTextureBeforeResize: () => v,
                         getBrowserTexturePath: () => d,
                         getDisplayStatus: () => y,
+                        getFontNames: () => O,
                         getScale: () => w,
                         getSize: () => m,
                         getViewGlobalPosition: () => g,
@@ -229,7 +230,7 @@
                         setEventHandled: () => x,
                         setInputPaddingsRem: () => c,
                         setSidePaddingsRem: () => _,
-                        whenTutorialReady: () => T,
+                        whenTutorialReady: () => k,
                     });
                 var r = n(3722),
                     i = n(6112),
@@ -291,11 +292,15 @@
                 function y() {
                     return viewEnv.getShowingStatus();
                 }
-                const M = Object.keys(i.W).reduce(
+                const O = (() => {
+                        let e = [];
+                        return () => (0 === e.length && (e = Object.keys(viewEnv.getFontsConfig())), e);
+                    })(),
+                    M = Object.keys(i.W).reduce(
                         (e, t) => ((e[t] = () => viewEnv.getShowingStatus() === i.W[t]), e),
                         {},
                     ),
-                    O = {
+                    T = {
                         set: (e, t) => {
                             viewEnv.setExtraSizeRem(e, t);
                         },
@@ -303,7 +308,7 @@
                             viewEnv.getExtraSizeRem(e, t);
                         },
                     },
-                    T = Promise.all([
+                    k = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : a.U.onDomBuilt(e);
                         }),
@@ -989,7 +994,7 @@
                             (e[(e.Large = s.large.height)] = 'Large'),
                             (e[(e.ExtraLarge = s.extraLarge.height)] = 'ExtraLarge');
                     })(y || (y = {}));
-                const M = () => {
+                const O = () => {
                         const e = (0, r.useContext)(h),
                             t = e.width,
                             n = e.height,
@@ -1043,7 +1048,7 @@
                             })(e);
                         return { mediaSize: i, mediaWidth: a, mediaHeight: o, remScreenWidth: t, remScreenHeight: n };
                     },
-                    O = ['children', 'className'];
+                    M = ['children', 'className'];
                 function T() {
                     return (
                         (T = Object.assign
@@ -1091,8 +1096,8 @@
                                         n[r] = e[r];
                                     }
                                 return n;
-                            })(e, O);
-                        const a = M(),
+                            })(e, M);
+                        const a = O(),
                             o = a.mediaWidth,
                             s = a.mediaHeight,
                             l = a.mediaSize;
@@ -1155,7 +1160,7 @@
                         return n;
                     });
                 }
-                const V = (e, t, n = {}, r = 0) => {
+                const F = (e, t, n = {}, r = 0) => {
                         viewEnv.handleViewEvent(
                             Object.assign(
                                 {
@@ -1169,7 +1174,7 @@
                             ),
                         );
                     },
-                    F = (e) => {
+                    V = (e) => {
                         let t = e.children,
                             n = e.contentId,
                             i = e.args,
@@ -1221,7 +1226,7 @@
                             ),
                             S = (0, r.useCallback)(() => {
                                 (x.current.isVisible && x.current.timeoutId) ||
-                                    (V(n, h, { isMouseEvent: !0, on: !0, arguments: G(i) }, L),
+                                    (F(n, h, { isMouseEvent: !0, on: !0, arguments: G(i) }, L),
                                     p && p(),
                                     (x.current.isVisible = !0));
                             }, [n, h, i, L, p]),
@@ -1229,12 +1234,12 @@
                                 if (x.current.isVisible || x.current.timeoutId) {
                                     const e = x.current.timeoutId;
                                     e > 0 && (clearTimeout(e), (x.current.timeoutId = 0)),
-                                        V(n, h, { on: !1 }, L),
+                                        F(n, h, { on: !1 }, L),
                                         x.current.isVisible && f && f(),
                                         (x.current.isVisible = !1);
                                 }
                             }, [n, h, L, f]),
-                            M = (0, r.useCallback)((e) => {
+                            O = (0, r.useCallback)((e) => {
                                 x.current.isVisible &&
                                     ((x.current.prevTarget = document.elementFromPoint(e.clientX, e.clientY)),
                                     (x.current.hideTimerId = window.setTimeout(() => {
@@ -1245,9 +1250,9 @@
                         (0, r.useEffect)(() => {
                             const e = x.current.hideTimerId;
                             return (
-                                document.addEventListener('wheel', M, { capture: !0 }),
+                                document.addEventListener('wheel', O, { capture: !0 }),
                                 () => {
-                                    document.removeEventListener('wheel', M, { capture: !0 }),
+                                    document.removeEventListener('wheel', O, { capture: !0 }),
                                         e && window.clearTimeout(e);
                                 }
                             );
@@ -1270,13 +1275,13 @@
                                   Object.assign(
                                       {
                                           onMouseEnter:
-                                              ((O = t.props.onMouseEnter),
+                                              ((M = t.props.onMouseEnter),
                                               (e) => {
                                                   (e.clientX === window.innerWidth &&
                                                       e.clientY === window.innerHeight) ||
                                                       ((x.current.timeoutId = window.setTimeout(S, d ? 100 : 400)),
                                                       a && a(e),
-                                                      O && O(e));
+                                                      M && M(e));
                                               }),
                                           onMouseLeave: ((e) => (t) => {
                                               y(), null == o || o(t), null == e || e(t);
@@ -1292,9 +1297,9 @@
                                   ),
                               )
                             : t;
-                        var O;
+                        var M;
                     },
-                    j = ({ tooltipArgs: e, children: t }) => (e ? i().createElement(F, e, t) : t),
+                    j = ({ tooltipArgs: e, children: t }) => (e ? i().createElement(V, e, t) : t),
                     $ = 'PaginationRender_base_75',
                     z = 'PaginationRender_base__completed_69',
                     q = 'PaginationRender_base__inaccessible_55',
@@ -1851,8 +1856,8 @@
                         },
                         ({ externalModel: e }) => ({ close: e.createCallbackNoArgs('onClose') }),
                     ),
-                    Me = ye[0],
-                    Oe = ye[1],
+                    Oe = ye[0],
+                    Me = ye[1],
                     Te = {
                         base: 'HelpViewSlide_base_d5',
                         title: 'HelpViewSlide_title_39',
@@ -1888,8 +1893,8 @@
                     Pe = 'HelpViewApp_base_41',
                     He = 'HelpViewApp_closeButton_38',
                     Re = (0, ve.Pi)(() => {
-                        const e = M().mediaSize,
-                            t = Oe(),
+                        const e = O().mediaSize,
+                            t = Me(),
                             n = t.model,
                             r = t.controls;
                         var a, o;
@@ -1926,7 +1931,7 @@
                     });
                 engine.whenReady.then(() => {
                     W().render(
-                        i().createElement(Me, null, i().createElement(I, null, i().createElement(Re, null))),
+                        i().createElement(Oe, null, i().createElement(I, null, i().createElement(Re, null))),
                         document.getElementById('root'),
                     );
                 });

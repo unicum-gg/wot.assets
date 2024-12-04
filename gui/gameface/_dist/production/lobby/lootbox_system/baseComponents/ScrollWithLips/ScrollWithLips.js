@@ -375,13 +375,14 @@
                         addPreloadTexture: () => l,
                         children: () => r,
                         displayStatus: () => o.W,
-                        displayStatusIs: () => C,
+                        displayStatusIs: () => N,
                         events: () => s.U,
-                        extraSize: () => N,
+                        extraSize: () => M,
                         forceTriggerMouseMove: () => R,
                         freezeTextureBeforeResize: () => p,
                         getBrowserTexturePath: () => u,
                         getDisplayStatus: () => z,
+                        getFontNames: () => C,
                         getScale: () => h,
                         getSize: () => m,
                         getViewGlobalPosition: () => g,
@@ -395,7 +396,7 @@
                         setEventHandled: () => S,
                         setInputPaddingsRem: () => c,
                         setSidePaddingsRem: () => f,
-                        whenTutorialReady: () => M,
+                        whenTutorialReady: () => _,
                     });
                 var r = n(3722),
                     o = n(6112),
@@ -457,11 +458,15 @@
                 function z() {
                     return viewEnv.getShowingStatus();
                 }
-                const C = Object.keys(o.W).reduce(
+                const C = (() => {
+                        let e = [];
+                        return () => (0 === e.length && (e = Object.keys(viewEnv.getFontsConfig())), e);
+                    })(),
+                    N = Object.keys(o.W).reduce(
                         (e, t) => ((e[t] = () => viewEnv.getShowingStatus() === o.W[t]), e),
                         {},
                     ),
-                    N = {
+                    M = {
                         set: (e, t) => {
                             viewEnv.setExtraSizeRem(e, t);
                         },
@@ -469,7 +474,7 @@
                             viewEnv.getExtraSizeRem(e, t);
                         },
                     },
-                    M = Promise.all([
+                    _ = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : s.U.onDomBuilt(e);
                         }),
@@ -985,8 +990,8 @@
                     j = 'VerticalBar_rail_43',
                     V = 'disable',
                     G = () => {},
-                    U = { pending: !1, offset: 0 },
-                    F = (e) => {
+                    F = { pending: !1, offset: 0 },
+                    U = (e) => {
                         var t;
                         return 0.9 * (null != (t = e.getWrapperSize()) ? t : 0);
                     },
@@ -994,14 +999,14 @@
                         e.contentRef.current && t(e.contentRef.current);
                     },
                     I = (e, t) => Math.max(20, e.offsetHeight * t),
-                    q = (0, l.memo)(({ api: e, classNames: t = {}, getStepByRailClick: n = F, onDrag: r = G }) => {
+                    q = (0, l.memo)(({ api: e, classNames: t = {}, getStepByRailClick: n = U, onDrag: r = G }) => {
                         const o = (0, l.useRef)(null),
                             s = (0, l.useRef)(null),
                             g = (0, l.useRef)(null),
                             p = (0, l.useRef)(null),
                             h = (0, l.useRef)(null),
                             E = e.stepTimeout || 100,
-                            b = (0, l.useState)(U),
+                            b = (0, l.useState)(F),
                             w = b[0],
                             y = b[1],
                             S = (0, l.useCallback)(
@@ -1084,7 +1089,7 @@
                             (0, l.useEffect)(() => {
                                 if (!w.pending) return;
                                 const t = d.O.client.events.mouse.up(() => {
-                                        S(U);
+                                        S(F);
                                     }),
                                     n = d.O.client.events.mouse.move(([t]) => {
                                         $(e, (n) => {

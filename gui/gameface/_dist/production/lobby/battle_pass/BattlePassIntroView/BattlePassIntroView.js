@@ -209,13 +209,14 @@
                         addPreloadTexture: () => o,
                         children: () => r,
                         displayStatus: () => a.W,
-                        displayStatusIs: () => p,
+                        displayStatusIs: () => x,
                         events: () => i.U,
-                        extraSize: () => x,
+                        extraSize: () => L,
                         forceTriggerMouseMove: () => w,
                         freezeTextureBeforeResize: () => D,
                         getBrowserTexturePath: () => E,
                         getDisplayStatus: () => b,
+                        getFontNames: () => p,
                         getScale: () => B,
                         getSize: () => c,
                         getViewGlobalPosition: () => _,
@@ -229,7 +230,7 @@
                         setEventHandled: () => v,
                         setInputPaddingsRem: () => l,
                         setSidePaddingsRem: () => F,
-                        whenTutorialReady: () => L,
+                        whenTutorialReady: () => S,
                     });
                 var r = t(3722),
                     a = t(6112),
@@ -291,11 +292,15 @@
                 function b() {
                     return viewEnv.getShowingStatus();
                 }
-                const p = Object.keys(a.W).reduce(
+                const p = (() => {
+                        let u = [];
+                        return () => (0 === u.length && (u = Object.keys(viewEnv.getFontsConfig())), u);
+                    })(),
+                    x = Object.keys(a.W).reduce(
                         (u, e) => ((u[e] = () => viewEnv.getShowingStatus() === a.W[e]), u),
                         {},
                     ),
-                    x = {
+                    L = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -303,7 +308,7 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    L = Promise.all([
+                    S = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : i.U.onDomBuilt(u);
                         }),
@@ -1117,20 +1122,20 @@
                 var H = t(493),
                     P = t.n(H),
                     W = t(3403);
-                function I(u) {
+                function N(u) {
                     engine.call('PlaySound', u).catch((e) => {
                         console.error('[lib/sounds.js] playSound(', u, '): ', e);
                     });
                 }
-                const N = {
+                const I = {
                         playHighlight() {
-                            I('highlight');
+                            N('highlight');
                         },
                         playClick() {
-                            I('play');
+                            N('play');
                         },
                         playYes() {
-                            I('yes1');
+                            N('yes1');
                         },
                     },
                     G = {
@@ -1220,7 +1225,7 @@
                                     s,
                                 ),
                                 onMouseEnter: function (u) {
-                                    n || (null !== o && I(o), E && E(u));
+                                    n || (null !== o && N(o), E && E(u));
                                 },
                                 onMouseMove: function (u) {
                                     A && A(u);
@@ -1230,7 +1235,7 @@
                                 },
                                 onMouseDown: function (u) {
                                     n ||
-                                        (null !== l && I(l),
+                                        (null !== l && N(l),
                                         F && F(u),
                                         t && (n || (D.current && (D.current.focus(), C(!0)))),
                                         f(!0));
@@ -1265,15 +1270,15 @@
                     );
                 };
                 $.defaultProps = { type: U.primary, isFocused: !1, soundHover: 'highlight', soundClick: 'play' };
-                const z = $;
-                var j = t(5521),
+                const j = $;
+                var z = t(5521),
                     q = t(9916);
                 const K = (u) => {
                     console.error(u.type + ': useKeydownListener hook :: Callback is not defined');
                 };
-                function Y(u = j.n.NONE, e = K, t = !1, a = !1) {
+                function Y(u = z.n.NONE, e = K, t = !1, a = !1) {
                     (0, r.useEffect)(() => {
-                        if (u !== j.n.NONE)
+                        if (u !== z.n.NONE)
                             return (
                                 window.addEventListener('keydown', r, t),
                                 () => {
@@ -1474,12 +1479,12 @@
                                                     }),
                                                     600,
                                                 ),
-                                            I('play'),
-                                            I('bp_glide_01'));
+                                            N('play'),
+                                            N('bp_glide_01'));
                                     }),
                                     [w, b, T, t, s, c, y, i],
                                 ),
-                                N = (0, r.useCallback)(
+                                I = (0, r.useCallback)(
                                     iu(function* () {
                                         k ||
                                             y ||
@@ -1497,13 +1502,13 @@
                                                     }),
                                                     600,
                                                 ),
-                                            I('play'),
-                                            I('bp_glide_01'));
+                                            N('play'),
+                                            N('bp_glide_01'));
                                     }),
                                     [w, b, k, t, o, c, y, i],
                                 ),
-                                G = () => I('highlight');
-                            Y(j.n.ARROW_LEFT, W), Y(j.n.ARROW_RIGHT, N);
+                                G = () => N('highlight');
+                            Y(z.n.ARROW_LEFT, W), Y(z.n.ARROW_RIGHT, I);
                             const U = (0, r.useMemo)(() => (t ? { width: 'auto' } : { width: `${B}rem` }), [B, t]),
                                 V = (0, r.useMemo)(
                                     () =>
@@ -1513,7 +1518,7 @@
                                     [B, g, w, t],
                                 ),
                                 $ = (0, r.useMemo)(() => (e ? { top: e } : {}), [e]),
-                                z = h()(
+                                j = h()(
                                     ru.base,
                                     A && ru.base__large,
                                     t && ru.base__carousel,
@@ -1526,9 +1531,9 @@
                                 X = h()(ru.counter, !R && ru.counter__disabled);
                             return a().createElement(
                                 'div',
-                                { className: z },
+                                { className: j },
                                 R && a().createElement('div', { className: K, onClick: W, onMouseEnter: G, style: $ }),
-                                R && a().createElement('div', { className: Z, onClick: N, onMouseEnter: G, style: $ }),
+                                R && a().createElement('div', { className: Z, onClick: I, onMouseEnter: G, style: $ }),
                                 n &&
                                     a().createElement(
                                         'div',
@@ -1547,7 +1552,7 @@
                                             const r = e + 2 === w,
                                                 i = e === w;
                                             let n;
-                                            i ? (n = N) : r && (n = W);
+                                            i ? (n = I) : r && (n = W);
                                             let s = h()(
                                                 ru.slide,
                                                 A && ru.slide__large,
@@ -1663,7 +1668,7 @@
                         var O;
                         return (
                             (O = y),
-                            Y(j.n.ESCAPE, O),
+                            Y(z.n.ESCAPE, O),
                             a().createElement(
                                 'div',
                                 { className: S, style: { backgroundImage: `url(${l})` } },
@@ -1683,9 +1688,9 @@
                                     {
                                         className: cu,
                                         onClick: () => {
-                                            I('play'), d(!0);
+                                            N('play'), d(!0);
                                         },
-                                        onMouseEnter: N.playHighlight,
+                                        onMouseEnter: I.playHighlight,
                                     },
                                     a().createElement('div', { className: du }),
                                     a().createElement('div', { className: _u }, e),
@@ -1714,7 +1719,7 @@
                                     a().createElement(
                                         'div',
                                         { className: Cu },
-                                        a().createElement(z, { type: U.primary, size: L, mixClass: hu, onClick: y }, t),
+                                        a().createElement(j, { type: U.primary, size: L, mixClass: hu, onClick: y }, t),
                                     ),
                                 ),
                             )

@@ -18,7 +18,7 @@
             },
             768: (e, u, t) => {
                 'use strict';
-                t.d(u, { O: () => te });
+                t.d(u, { O: () => ne });
                 var n = {};
                 t.r(n),
                     t.d(n, { mouse: () => m, off: () => E, on: () => d, onResize: () => l, onScaleUpdated: () => c });
@@ -52,13 +52,14 @@
                         addPreloadTexture: () => P,
                         children: () => a,
                         displayStatus: () => w,
-                        displayStatusIs: () => J,
+                        displayStatusIs: () => ee,
                         events: () => b,
-                        extraSize: () => ee,
+                        extraSize: () => ue,
                         forceTriggerMouseMove: () => Z,
                         freezeTextureBeforeResize: () => z,
                         getBrowserTexturePath: () => N,
                         getDisplayStatus: () => Q,
+                        getFontNames: () => J,
                         getScale: () => V,
                         getSize: () => W,
                         getViewGlobalPosition: () => G,
@@ -72,7 +73,7 @@
                         setEventHandled: () => X,
                         setInputPaddingsRem: () => O,
                         setSidePaddingsRem: () => H,
-                        whenTutorialReady: () => ue,
+                        whenTutorialReady: () => te,
                     });
                 const l = o('clientResized'),
                     c = o('self.onScaleUpdated'),
@@ -299,8 +300,12 @@
                 function Q() {
                     return viewEnv.getShowingStatus();
                 }
-                const J = Object.keys(w).reduce((e, u) => ((e[u] = () => viewEnv.getShowingStatus() === w[u]), e), {}),
-                    ee = {
+                const J = (() => {
+                        let e = [];
+                        return () => (0 === e.length && (e = Object.keys(viewEnv.getFontsConfig())), e);
+                    })(),
+                    ee = Object.keys(w).reduce((e, u) => ((e[u] = () => viewEnv.getShowingStatus() === w[u]), e), {}),
+                    ue = {
                         set: (e, u) => {
                             viewEnv.setExtraSizeRem(e, u);
                         },
@@ -308,13 +313,13 @@
                             viewEnv.getExtraSizeRem(e, u);
                         },
                     },
-                    ue = Promise.all([
+                    te = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : b.onDomBuilt(e);
                         }),
                         engine.whenReady,
                     ]),
-                    te = { view: i, client: r, sound: p };
+                    ne = { view: i, client: r, sound: p };
             },
             521: (e, u, t) => {
                 'use strict';
@@ -720,7 +725,7 @@
                         getFormattedDateTime: (e, u, t = !0) => regionalDateTime.getFormattedDateTime(e, u, t),
                     };
             },
-            360: (e, u, t) => {
+            263: (e, u, t) => {
                 'use strict';
                 var n = {};
                 t.r(n),
@@ -1473,6 +1478,7 @@
                         (e.TankmenXpFactor = 'tankmenXPFactor'),
                         (e.FreeXpFactor = 'freeXPFactor'),
                         (e.BattleToken = 'battleToken'),
+                        (e.Entitlements = 'entitlements'),
                         (e.PremiumUniversal = 'premium_universal'),
                         (e.Gold = 'gold'),
                         (e.Credits = 'credits'),
@@ -1490,6 +1496,8 @@
                         (e.BattleBadge = 'dossier_badge'),
                         (e.NewYearInvoice = 'newYearInvoice'),
                         (e.NewYearSlot = 'newYearSlot'),
+                        (e.NewYearGuestD = 'ny_dog'),
+                        (e.EquipCoin = 'equipCoin'),
                         (e.BonusX5 = 'battle_bonus_x5'),
                         (e.CrewBonusX3 = 'crew_bonus_x3'),
                         (e.Vehicles = 'vehicles'),
@@ -1498,7 +1506,6 @@
                         (e.DeluxeGift = 'deluxe_gift'),
                         (e.BattleBoosterGift = 'battleBooster_gift'),
                         (e.OptionalDevice = 'optionalDevice'),
-                        (e.EquipCoin = 'equipCoin'),
                         (e.LootBox = 'lootBox'),
                         (e.BrCoin = 'brcoin');
                 })(he || (he = {})),
@@ -3470,6 +3477,6 @@
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             t.forEach(u.bind(null, 0)), (t.push = u.bind(null, t.push.bind(t)));
         })();
-    var __webpack_exports__ = __webpack_require__.O(void 0, [678], () => __webpack_require__(360));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [678], () => __webpack_require__(263));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

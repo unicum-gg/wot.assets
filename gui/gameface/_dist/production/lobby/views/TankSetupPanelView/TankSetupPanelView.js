@@ -185,11 +185,12 @@
                         displayStatus: () => o.W,
                         displayStatusIs: () => P,
                         events: () => i.U,
-                        extraSize: () => C,
+                        extraSize: () => R,
                         forceTriggerMouseMove: () => T,
                         freezeTextureBeforeResize: () => h,
                         getBrowserTexturePath: () => u,
                         getDisplayStatus: () => k,
+                        getFontNames: () => C,
                         getScale: () => p,
                         getSize: () => v,
                         getViewGlobalPosition: () => b,
@@ -203,7 +204,7 @@
                         setEventHandled: () => y,
                         setInputPaddingsRem: () => c,
                         setSidePaddingsRem: () => _,
-                        whenTutorialReady: () => R,
+                        whenTutorialReady: () => M,
                     });
                 var r = n(3722),
                     o = n(6112),
@@ -265,11 +266,15 @@
                 function k() {
                     return viewEnv.getShowingStatus();
                 }
-                const P = Object.keys(o.W).reduce(
+                const C = (() => {
+                        let e = [];
+                        return () => (0 === e.length && (e = Object.keys(viewEnv.getFontsConfig())), e);
+                    })(),
+                    P = Object.keys(o.W).reduce(
                         (e, t) => ((e[t] = () => viewEnv.getShowingStatus() === o.W[t]), e),
                         {},
                     ),
-                    C = {
+                    R = {
                         set: (e, t) => {
                             viewEnv.setExtraSizeRem(e, t);
                         },
@@ -277,7 +282,7 @@
                             viewEnv.getExtraSizeRem(e, t);
                         },
                     },
-                    R = Promise.all([
+                    M = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : i.U.onDomBuilt(e);
                         }),
@@ -799,7 +804,7 @@
                         O = f[1],
                         T = (0, r.useState)(!1),
                         k = T[0],
-                        P = T[1];
+                        C = T[1];
                     return (
                         (0, r.useEffect)(() => {
                             function e(e) {
@@ -835,17 +840,17 @@
                                     b && b(e);
                                 },
                                 onMouseUp: function (e) {
-                                    a || (p && p(e), P(!1));
+                                    a || (p && p(e), C(!1));
                                 },
                                 onMouseDown: function (e) {
                                     a ||
                                         (null !== v && c(v),
                                         h && h(e),
                                         n && (a || (g.current && (g.current.focus(), O(!0)))),
-                                        P(!0));
+                                        C(!0));
                                 },
                                 onMouseLeave: function (e) {
-                                    a || (w && w(e), P(!1));
+                                    a || (w && w(e), C(!1));
                                 },
                                 onClick: function (e) {
                                     a || (E && E(e));
@@ -955,7 +960,7 @@
                                 return n;
                             })(e, h);
                         const k = (0, r.useRef)({ timeoutId: 0, isVisible: !1, prevTarget: null, hideTimerId: null }),
-                            P = (0, r.useMemo)(
+                            C = (0, r.useMemo)(
                                 () =>
                                     f ||
                                     ((e = 1) => {
@@ -974,21 +979,21 @@
                                     })().resId,
                                 [f],
                             ),
-                            C = (0, r.useCallback)(() => {
+                            P = (0, r.useCallback)(() => {
                                 (k.current.isVisible && k.current.timeoutId) ||
-                                    (w(n, m, { isMouseEvent: !0, on: !0, arguments: p(o) }, P),
+                                    (w(n, m, { isMouseEvent: !0, on: !0, arguments: p(o) }, C),
                                     y && y(),
                                     (k.current.isVisible = !0));
-                            }, [n, m, o, P, y]),
+                            }, [n, m, o, C, y]),
                             M = (0, r.useCallback)(() => {
                                 if (k.current.isVisible || k.current.timeoutId) {
                                     const e = k.current.timeoutId;
                                     e > 0 && (clearTimeout(e), (k.current.timeoutId = 0)),
-                                        w(n, m, { on: !1 }, P),
+                                        w(n, m, { on: !1 }, C),
                                         k.current.isVisible && O && O(),
                                         (k.current.isVisible = !1);
                                 }
-                            }, [n, m, P, O]),
+                            }, [n, m, C, O]),
                             S = (0, r.useCallback)((e) => {
                                 k.current.isVisible &&
                                     ((k.current.prevTarget = document.elementFromPoint(e.clientX, e.clientY)),
@@ -1030,7 +1035,7 @@
                                                   (e) => {
                                                       (e.clientX === window.innerWidth &&
                                                           e.clientY === window.innerHeight) ||
-                                                          ((k.current.timeoutId = window.setTimeout(C, u ? 100 : 400)),
+                                                          ((k.current.timeoutId = window.setTimeout(P, u ? 100 : 400)),
                                                           i && i(e),
                                                           L && L(e));
                                                   }),
@@ -1107,11 +1112,11 @@
                     };
                 var T = n(3138),
                     k = n(3403);
-                function P() {
+                function C() {
                     return !1;
                 }
                 console.log;
-                var C = n(9174);
+                var P = n(9174);
                 function M(e, t) {
                     (null == t || t > e.length) && (t = e.length);
                     for (var n = 0, r = Array(t); n < t; n++) r[n] = e[n];
@@ -1253,11 +1258,11 @@
                                                 observableModel: {
                                                     array: (t, n) => {
                                                         const r = null != n ? n : s(t),
-                                                            o = C.LO.box(r, { equals: P });
+                                                            o = P.LO.box(r, { equals: C });
                                                         return (
                                                             'real' === e &&
                                                                 a.subscribe(
-                                                                    (0, C.aD)((e) => o.set(e)),
+                                                                    (0, P.aD)((e) => o.set(e)),
                                                                     t,
                                                                 ),
                                                             o
@@ -1265,11 +1270,11 @@
                                                     },
                                                     object: (t, n) => {
                                                         const r = null != n ? n : s(t),
-                                                            o = C.LO.box(r, { equals: P });
+                                                            o = P.LO.box(r, { equals: C });
                                                         return (
                                                             'real' === e &&
                                                                 a.subscribe(
-                                                                    (0, C.aD)((e) => o.set(e)),
+                                                                    (0, P.aD)((e) => o.set(e)),
                                                                     t,
                                                                 ),
                                                             o
@@ -1279,13 +1284,13 @@
                                                         const r = s(n);
                                                         if (Array.isArray(t)) {
                                                             const o = t.reduce(
-                                                                (e, t) => ((e[t] = C.LO.box(r[t], {})), e),
+                                                                (e, t) => ((e[t] = P.LO.box(r[t], {})), e),
                                                                 {},
                                                             );
                                                             return (
                                                                 'real' === e &&
                                                                     a.subscribe(
-                                                                        (0, C.aD)((e) => {
+                                                                        (0, P.aD)((e) => {
                                                                             t.forEach((t) => {
                                                                                 o[t].set(e[t]);
                                                                             });
@@ -1299,13 +1304,13 @@
                                                             const o = t,
                                                                 i = Object.entries(o),
                                                                 s = i.reduce(
-                                                                    (e, [t, n]) => ((e[n] = C.LO.box(r[t], {})), e),
+                                                                    (e, [t, n]) => ((e[n] = P.LO.box(r[t], {})), e),
                                                                     {},
                                                                 );
                                                             return (
                                                                 'real' === e &&
                                                                     a.subscribe(
-                                                                        (0, C.aD)((e) => {
+                                                                        (0, P.aD)((e) => {
                                                                             i.forEach(([t, n]) => {
                                                                                 s[n].set(e[t]);
                                                                             });

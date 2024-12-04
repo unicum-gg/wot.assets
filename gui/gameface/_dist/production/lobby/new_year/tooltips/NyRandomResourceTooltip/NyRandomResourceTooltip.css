@@ -1,0 +1,211 @@
+.TooltipDecorator_base_c9 {
+    display: flex;
+    position: absolute;
+}
+
+.TooltipDecorator_base__theme-default_6d .TooltipDecorator_decorator_3d {
+    padding: 4rem 6rem 8rem;
+    border-image-source: url('R.atlases.components.tooltip_background');
+    border-image-slice: 24 fill;
+    border-image-width: 24rem;
+    position: relative;
+}
+
+.FormatText_base_d0 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.FormatTextWithColorTags_creamColor_8f {
+    color: #ffdd99;
+}
+
+.FormatTextWithColorTags_brownColor_90 {
+    color: #cbac77;
+}
+
+.FormatTextWithColorTags_credColor_a7 {
+    color: #ced9d9;
+}
+
+.FormatTextWithColorTags_blueColor_73 {
+    color: rgb(205, 237, 255);
+}
+
+.FormatTextWithColorTags_lightBlueColor_fa {
+    color: #aec5f2;
+}
+
+.FormatTextWithColorTags_goldColor_d6 {
+    color: #ffc363;
+}
+
+.FormatTextWithColorTags_grayColor_8b {
+    color: #8c8c7e;
+}
+
+.FormatTextWithColorTags_whiteSpanish_4b {
+    color: #e9e2bf;
+}
+
+.FormatTextWithColorTags_bondColor_53 {
+    color: #c9c9b6;
+}
+
+.FormatTextWithColorTags_yellowColor_84 {
+    color: #feab34;
+}
+
+.ResourceName_base_75 {
+    display: flex;
+    align-items: center;
+}
+
+.ResourceName_base__reverse_1b {
+    flex-direction: row-reverse;
+}
+.ResourceName_name_de {
+    color: #8c8c7e;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    flex: 1;
+    margin-left: 4rem;
+}
+.ResourceName_icon_dc {
+    background: no-repeat center / contain;
+}
+.ResourceName_base__24_72 .ResourceName_icon_dc {
+    width: 24rem;
+    height: 24rem;
+}
+.ResourceName_base__ny_crystal_a6.ResourceName_base__24_72 .ResourceName_icon_dc {
+    background-image: url('R.images.gui.maps.icons.newYear.resources.size_48.ny_crystal');
+}
+.ResourceName_base__ny_emerald_ff.ResourceName_base__24_72 .ResourceName_icon_dc {
+    background-image: url('R.images.gui.maps.icons.newYear.resources.size_48.ny_emerald');
+}
+.ResourceName_base__ny_amber_d4.ResourceName_base__24_72 .ResourceName_icon_dc {
+    background-image: url('R.images.gui.maps.icons.newYear.resources.size_48.ny_amber');
+}
+.ResourceName_base__ny_iron_d4.ResourceName_base__24_72 .ResourceName_icon_dc {
+    background-image: url('R.images.gui.maps.icons.newYear.resources.size_48.ny_iron');
+}
+.ResourceName_base__48_61 .ResourceName_icon_dc {
+    width: 48rem;
+    height: 48rem;
+}
+.ResourceName_base__ny_crystal_a6.ResourceName_base__48_61 .ResourceName_icon_dc {
+    background-image: url('R.images.gui.maps.icons.newYear.resources.size_48.ny_crystal');
+}
+.ResourceName_base__ny_emerald_ff.ResourceName_base__48_61 .ResourceName_icon_dc {
+    background-image: url('R.images.gui.maps.icons.newYear.resources.size_48.ny_emerald');
+}
+.ResourceName_base__ny_amber_d4.ResourceName_base__48_61 .ResourceName_icon_dc {
+    background-image: url('R.images.gui.maps.icons.newYear.resources.size_48.ny_amber');
+}
+.ResourceName_base__ny_iron_d4.ResourceName_base__48_61 .ResourceName_icon_dc {
+    background-image: url('R.images.gui.maps.icons.newYear.resources.size_48.ny_iron');
+}
+
+.MenuInfo_base_30 {
+    padding: 5rem 0;
+}
+
+.MenuInfo_background_e4 {
+    display: flex;
+    min-height: 45rem;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(201, 201, 182, 0.07) 37%,
+        rgba(201, 201, 182, 0.07) 63%,
+        transparent
+    );
+}
+
+.MenuInfo_separator_6e {
+    width: 100%;
+    height: 1rem;
+    background-image: repeating-linear-gradient(
+        90deg,
+        transparent 0rem,
+        transparent 2rem,
+        #5a5a52 2rem,
+        #5a5a52 3rem,
+        transparent 3rem,
+        transparent 4rem
+    );
+    background-size: 3rem 1rem;
+    opacity: 0.5;
+    mask-image: linear-gradient(90deg, transparent 0%, #fff 37%, #fff 63%, transparent 100%);
+}
+
+.App_base_83 {
+    width: 400rem;
+    padding: 20rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.App_base__withoutFooter_ac {
+    padding-bottom: 0;
+}
+
+.App_title_6d {
+    color: #e9e2bf;
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
+    display: flex;
+    align-items: center;
+    height: 48rem;
+    margin-bottom: 8rem;
+    padding-left: 67rem;
+    background: url('R.images.gui.maps.icons.newYear.tooltips.decorations.icon_random_resource') no-repeat left center /
+        contain;
+}
+
+.App_description_05 {
+    color: #8c8c7e;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    margin-bottom: 11rem;
+}
+
+.App_subtitle_9b {
+    color: #e9e2bf;
+    font-size: 14rem;
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 10rem;
+}
+
+.App_content_61 {
+    display: flex;
+    flex-direction: column;
+    padding: 16rem 0;
+}
+
+.App_resourceListWrapper_be {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.App_resourceName_99 {
+    flex: 0 1 50%;
+    margin-bottom: 8rem;
+}
+
+.App_footer_a3 {
+    color: #ffdd99;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    display: flex;
+    align-items: flex-end;
+    height: 28rem;
+    padding-left: 29rem;
+    background: url('R.images.gui.maps.icons.newYear.tooltips.decorations.icon_gift') no-repeat left 2rem / contain;
+}

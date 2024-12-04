@@ -2,7 +2,7 @@
     'use strict';
     var __webpack_modules__ = {
             768: (e, t, n) => {
-                n.d(t, { O: () => ne });
+                n.d(t, { O: () => re });
                 var r = {};
                 n.r(r),
                     n.d(r, { mouse: () => v, off: () => _, on: () => d, onResize: () => l, onScaleUpdated: () => u });
@@ -36,13 +36,14 @@
                         addPreloadTexture: () => B,
                         children: () => a,
                         displayStatus: () => k,
-                        displayStatusIs: () => J,
+                        displayStatusIs: () => ee,
                         events: () => T,
-                        extraSize: () => ee,
+                        extraSize: () => te,
                         forceTriggerMouseMove: () => Z,
                         freezeTextureBeforeResize: () => z,
                         getBrowserTexturePath: () => D,
                         getDisplayStatus: () => Q,
+                        getFontNames: () => J,
                         getScale: () => q,
                         getSize: () => H,
                         getViewGlobalPosition: () => U,
@@ -56,7 +57,7 @@
                         setEventHandled: () => $,
                         setInputPaddingsRem: () => I,
                         setSidePaddingsRem: () => F,
-                        whenTutorialReady: () => te,
+                        whenTutorialReady: () => ne,
                     });
                 const l = s('clientResized'),
                     u = s('self.onScaleUpdated'),
@@ -178,8 +179,8 @@
                 const P = 2,
                     M = 16,
                     R = 32,
-                    L = 64,
-                    N = (e, t) => {
+                    N = 64,
+                    L = (e, t) => {
                         const n = 'GFViewEventProxy';
                         if (void 0 !== t) {
                             const o = t.args,
@@ -218,13 +219,13 @@
                     },
                     x = {
                         close(e) {
-                            N('popover' === e ? P : R);
+                            L('popover' === e ? P : R);
                         },
                         minimize() {
-                            N(L);
+                            L(N);
                         },
                         move(e) {
-                            N(M, { isMouseEvent: !0, on: e });
+                            L(M, { isMouseEvent: !0, on: e });
                         },
                     },
                     A = 15;
@@ -283,8 +284,12 @@
                 function Q() {
                     return viewEnv.getShowingStatus();
                 }
-                const J = Object.keys(k).reduce((e, t) => ((e[t] = () => viewEnv.getShowingStatus() === k[t]), e), {}),
-                    ee = {
+                const J = (() => {
+                        let e = [];
+                        return () => (0 === e.length && (e = Object.keys(viewEnv.getFontsConfig())), e);
+                    })(),
+                    ee = Object.keys(k).reduce((e, t) => ((e[t] = () => viewEnv.getShowingStatus() === k[t]), e), {}),
+                    te = {
                         set: (e, t) => {
                             viewEnv.setExtraSizeRem(e, t);
                         },
@@ -292,13 +297,13 @@
                             viewEnv.getExtraSizeRem(e, t);
                         },
                     },
-                    te = Promise.all([
+                    ne = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : T.onDomBuilt(e);
                         }),
                         engine.whenReady,
                     ]),
-                    ne = { view: i, client: o, sound: y };
+                    re = { view: i, client: o, sound: y };
             },
             521: (e, t, n) => {
                 let r, o;
@@ -853,13 +858,13 @@
                                   Object.assign(
                                       {
                                           onMouseEnter:
-                                              ((L = t.props.onMouseEnter),
+                                              ((N = t.props.onMouseEnter),
                                               (e) => {
                                                   (e.clientX === window.innerWidth &&
                                                       e.clientY === window.innerHeight) ||
                                                       ((k.current.timeoutId = window.setTimeout(S, m ? 100 : 400)),
                                                       a && a(e),
-                                                      L && L(e));
+                                                      N && N(e));
                                               }),
                                           onMouseLeave: ((e) => (t) => {
                                               P(), null == i || i(t), null == e || e(t);
@@ -875,7 +880,7 @@
                                   ),
                               )
                             : t;
-                        var L;
+                        var N;
                     },
                     v = ['children', 'body', 'header', 'note', 'alert', 'args'];
                 function w() {
@@ -1132,14 +1137,14 @@
                         }
                     }, [t, e, n, o]);
                 }
-                const L = (e) => ({ backgroundImage: `url('${e}')` }),
-                    N = 'BonusInfoIcon_bonusInfoIcon_3d',
+                const N = (e) => ({ backgroundImage: `url('${e}')` }),
+                    L = 'BonusInfoIcon_bonusInfoIcon_3d',
                     x = () => {
-                        const e = (0, r.useMemo)(() => L(R.images.gui.maps.icons.platoon.common.info()), []);
+                        const e = (0, r.useMemo)(() => N(R.images.gui.maps.icons.platoon.common.info()), []);
                         return o().createElement(
                             m,
                             { isEnabled: !0, contentId: R.views.lobby.premacc.tooltips.SquadBonusTooltip('resId') },
-                            o().createElement('div', { className: N, style: e }),
+                            o().createElement('div', { className: L, style: e }),
                         );
                     },
                     A = {
@@ -1490,7 +1495,7 @@
                     ce = ({ description: e, backgroundImage: t, hasXpBonus: n, hasCreditBonus: r }) =>
                         o().createElement(
                             'div',
-                            { className: c()(J, n && r && se), style: L(t) },
+                            { className: c()(J, n && r && se), style: N(t) },
                             o().createElement(
                                 'div',
                                 { className: ee },
@@ -1529,7 +1534,7 @@
                         return o().createElement(
                             'div',
                             { className: c()(le, ve.includes(e) ? de : ue) },
-                            o().createElement('div', { className: _e, style: L(t) }),
+                            o().createElement('div', { className: _e, style: N(t) }),
                         );
                     },
                     be = 'ToggleButton_base_b9',
@@ -1589,8 +1594,8 @@
                     Pe = 'SearchingContent_icon_08',
                     Me = 'SearchingContent_dots_3a',
                     Re = 'SearchingContent_tableValue_84',
-                    Le = 'SearchingContent_buttonContainer_a0';
-                var Ne = n(403);
+                    Ne = 'SearchingContent_buttonContainer_a0';
+                var Le = n(403);
                 function xe() {
                     return !1;
                 }
@@ -1848,7 +1853,7 @@
                         je.apply(null, arguments)
                     );
                 }
-                const Ue = (0, Ne.Pi)(() => {
+                const Ue = (0, Le.Pi)(() => {
                         const e = He(),
                             t = e.model,
                             n = e.controls,
@@ -1881,7 +1886,7 @@
                             o().createElement(we, { position: me.bottom }),
                             o().createElement(
                                 'div',
-                                { className: Le },
+                                { className: Ne },
                                 o().createElement(H, je({}, a, { onClick: i, cButtonProps: s })),
                             ),
                         );
@@ -1898,7 +1903,7 @@
                         })(t);
                     };
                 window.decorator = { directionType: C.Bottom, isCloseBtnVisible: !1 };
-                const We = (0, Ne.Pi)(() => {
+                const We = (0, Le.Pi)(() => {
                     const e = He(),
                         t = e.model,
                         n = e.controls,

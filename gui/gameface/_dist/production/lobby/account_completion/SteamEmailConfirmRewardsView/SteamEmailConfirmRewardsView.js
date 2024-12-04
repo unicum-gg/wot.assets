@@ -18,7 +18,7 @@
             },
             768: (e, t, n) => {
                 'use strict';
-                n.d(t, { O: () => ne });
+                n.d(t, { O: () => re });
                 var r = {};
                 n.r(r),
                     n.d(r, { mouse: () => g, off: () => _, on: () => d, onResize: () => c, onScaleUpdated: () => u });
@@ -52,13 +52,14 @@
                         addPreloadTexture: () => C,
                         children: () => i,
                         displayStatus: () => P,
-                        displayStatusIs: () => J,
+                        displayStatusIs: () => ee,
                         events: () => x,
-                        extraSize: () => ee,
+                        extraSize: () => te,
                         forceTriggerMouseMove: () => Q,
                         freezeTextureBeforeResize: () => $,
                         getBrowserTexturePath: () => B,
                         getDisplayStatus: () => Z,
+                        getFontNames: () => J,
                         getScale: () => q,
                         getSize: () => G,
                         getViewGlobalPosition: () => F,
@@ -72,7 +73,7 @@
                         setEventHandled: () => X,
                         setInputPaddingsRem: () => N,
                         setSidePaddingsRem: () => H,
-                        whenTutorialReady: () => te,
+                        whenTutorialReady: () => ne,
                     });
                 const c = o('clientResized'),
                     u = o('self.onScaleUpdated'),
@@ -299,8 +300,12 @@
                 function Z() {
                     return viewEnv.getShowingStatus();
                 }
-                const J = Object.keys(P).reduce((e, t) => ((e[t] = () => viewEnv.getShowingStatus() === P[t]), e), {}),
-                    ee = {
+                const J = (() => {
+                        let e = [];
+                        return () => (0 === e.length && (e = Object.keys(viewEnv.getFontsConfig())), e);
+                    })(),
+                    ee = Object.keys(P).reduce((e, t) => ((e[t] = () => viewEnv.getShowingStatus() === P[t]), e), {}),
+                    te = {
                         set: (e, t) => {
                             viewEnv.setExtraSizeRem(e, t);
                         },
@@ -308,13 +313,13 @@
                             viewEnv.getExtraSizeRem(e, t);
                         },
                     },
-                    te = Promise.all([
+                    ne = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : x.onDomBuilt(e);
                         }),
                         engine.whenReady,
                     ]),
-                    ne = { view: s, client: a, sound: S };
+                    re = { view: s, client: a, sound: S };
             },
             521: (e, t, n) => {
                 'use strict';
@@ -1380,6 +1385,7 @@
                             (e.TankmenXpFactor = 'tankmenXPFactor'),
                             (e.FreeXpFactor = 'freeXPFactor'),
                             (e.BattleToken = 'battleToken'),
+                            (e.Entitlements = 'entitlements'),
                             (e.PremiumUniversal = 'premium_universal'),
                             (e.Gold = 'gold'),
                             (e.Credits = 'credits'),
@@ -1397,6 +1403,8 @@
                             (e.BattleBadge = 'dossier_badge'),
                             (e.NewYearInvoice = 'newYearInvoice'),
                             (e.NewYearSlot = 'newYearSlot'),
+                            (e.NewYearGuestD = 'ny_dog'),
+                            (e.EquipCoin = 'equipCoin'),
                             (e.BonusX5 = 'battle_bonus_x5'),
                             (e.CrewBonusX3 = 'crew_bonus_x3'),
                             (e.Vehicles = 'vehicles'),
@@ -1405,7 +1413,6 @@
                             (e.DeluxeGift = 'deluxe_gift'),
                             (e.BattleBoosterGift = 'battleBooster_gift'),
                             (e.OptionalDevice = 'optionalDevice'),
-                            (e.EquipCoin = 'equipCoin'),
                             (e.LootBox = 'lootBox'),
                             (e.BrCoin = 'brcoin');
                     })(te || (te = {})),
@@ -1529,6 +1536,7 @@
                         te.TankmenXpFactor,
                         te.FreeXpFactor,
                         te.BattleToken,
+                        te.Entitlements,
                         te.PremiumUniversal,
                         te.NaturalCover,
                         te.BpCoin,
@@ -1590,9 +1598,6 @@
                             case 'tokens':
                             case 'lootBox':
                             case 'battleToken':
-                                return 'big' === t
-                                    ? e.iconBig.replace('..', 'img://gui')
-                                    : e.iconSmall.replace('..', 'img://gui');
                             case 'customizations':
                             case 'styleProgress':
                             case 'crewSkins':
@@ -1601,6 +1606,10 @@
                             case 'tmanToken':
                             case 'battlePassSelectToken':
                                 return `R.images.gui.maps.icons.quests.bonuses.${t}.${i}`;
+                            case 'entitlements':
+                                return 'big' === t
+                                    ? e.iconBig.replace('..', 'img://gui')
+                                    : e.iconSmall.replace('..', 'img://gui');
                             case 'crewBooks':
                                 return `R.images.gui.maps.icons.crewBooks.books.${t}.${i}`;
                             case 'dogTagComponents':
@@ -1634,10 +1643,14 @@
                                 return `R.images.gui.maps.icons.quests.bonuses.${t}.freeXP`;
                             case 'premiumTank':
                                 return `R.images.gui.maps.icons.quests.bonuses.${t}.vehicles`;
+                            case 'premiumTank_rent':
+                                return `R.images.gui.maps.icons.quests.bonuses.${t}.vehicles_rent`;
                             case 'styleProgressToken':
                                 return `R.images.gui.maps.icons.quests.bonuses.${t}.style_3d`;
                             case 'collectionItem':
                                 return `R.images.gui.maps.icons.collectionItems.${l}.${i}`;
+                            case 'newYearSlot':
+                                return `R.images.gui.maps.icons.newYear.rewards.${t}.slot`;
                             default:
                                 return `R.images.gui.maps.icons.quests.bonuses.${t}.${n}`;
                         }

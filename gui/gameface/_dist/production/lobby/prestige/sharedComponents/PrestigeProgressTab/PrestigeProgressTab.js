@@ -2,7 +2,7 @@
     'use strict';
     var __webpack_modules__ = {
             768: (e, t, n) => {
-                n.d(t, { O: () => ne });
+                n.d(t, { O: () => ie });
                 var i = {};
                 n.r(i),
                     n.d(i, { mouse: () => w, off: () => u, on: () => l, onResize: () => c, onScaleUpdated: () => d });
@@ -35,14 +35,15 @@
                         addModelObserver: () => I,
                         addPreloadTexture: () => D,
                         children: () => o,
-                        displayStatus: () => P,
-                        displayStatusIs: () => J,
-                        events: () => k,
-                        extraSize: () => ee,
+                        displayStatus: () => k,
+                        displayStatusIs: () => ee,
+                        events: () => P,
+                        extraSize: () => te,
                         forceTriggerMouseMove: () => $,
                         freezeTextureBeforeResize: () => W,
                         getBrowserTexturePath: () => U,
                         getDisplayStatus: () => Q,
+                        getFontNames: () => J,
                         getScale: () => z,
                         getSize: () => B,
                         getViewGlobalPosition: () => q,
@@ -56,7 +57,7 @@
                         setEventHandled: () => Z,
                         setInputPaddingsRem: () => F,
                         setSidePaddingsRem: () => V,
-                        whenTutorialReady: () => te,
+                        whenTutorialReady: () => ne,
                     });
                 const c = s('clientResized'),
                     d = s('self.onScaleUpdated'),
@@ -157,8 +158,8 @@
                 function y(e, t, n) {
                     return `url(${T(e, t, n)})`;
                 }
-                const P = { showing: 0, shown: 1, hiding: 2, hidden: 3 },
-                    k = {
+                const k = { showing: 0, shown: 1, hiding: 2, hidden: 3 },
+                    P = {
                         onTextureFrozen: s('self.onTextureFrozen'),
                         onTextureReady: s('self.onTextureReady'),
                         onDomBuilt: s('self.onDomBuilt'),
@@ -283,8 +284,12 @@
                 function Q() {
                     return viewEnv.getShowingStatus();
                 }
-                const J = Object.keys(P).reduce((e, t) => ((e[t] = () => viewEnv.getShowingStatus() === P[t]), e), {}),
-                    ee = {
+                const J = (() => {
+                        let e = [];
+                        return () => (0 === e.length && (e = Object.keys(viewEnv.getFontsConfig())), e);
+                    })(),
+                    ee = Object.keys(k).reduce((e, t) => ((e[t] = () => viewEnv.getShowingStatus() === k[t]), e), {}),
+                    te = {
                         set: (e, t) => {
                             viewEnv.setExtraSizeRem(e, t);
                         },
@@ -292,13 +297,13 @@
                             viewEnv.getExtraSizeRem(e, t);
                         },
                     },
-                    te = Promise.all([
+                    ne = Promise.all([
                         new Promise((e) => {
-                            window.isDomBuilt ? e() : k.onDomBuilt(e);
+                            window.isDomBuilt ? e() : P.onDomBuilt(e);
                         }),
                         engine.whenReady,
                     ]),
-                    ne = { view: a, client: r, sound: O };
+                    ie = { view: a, client: r, sound: O };
             },
             521: (e, t, n) => {
                 let i, r;

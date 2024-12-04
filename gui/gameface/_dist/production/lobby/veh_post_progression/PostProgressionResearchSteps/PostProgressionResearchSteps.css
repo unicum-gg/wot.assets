@@ -493,6 +493,29 @@ body {
     }
 }
 
+.Level_base_48 {
+    display: flex;
+    position: relative;
+    z-index: 0;
+}
+
+.Level_icon_f2 {
+    width: 180rem;
+    height: 135rem;
+    background: no-repeat center / contain;
+}
+
+.Level_highlight_a7 {
+    width: 492rem;
+    height: 310rem;
+    background: url('R.images.gui.maps.icons.demountKit.simple_highlight') no-repeat center / contain;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+}
+
 .DialogContent_base_10 {
     display: flex;
     flex-direction: column;
@@ -524,47 +547,6 @@ body {
     max-width: 620rem;
     margin-top: 20rem;
     text-align: center;
-}
-
-.Level_base_48 {
-    display: flex;
-    position: relative;
-    z-index: 0;
-}
-
-.Level_icon_f2 {
-    width: 180rem;
-    height: 135rem;
-    background: no-repeat center / contain;
-}
-
-.Level_highlight_a7 {
-    width: 492rem;
-    height: 310rem;
-    background: url('R.images.gui.maps.icons.demountKit.simple_highlight') no-repeat center / contain;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    z-index: -1;
-    transform: translate(-50%, -50%);
-}
-
-.DialogFooter_base_3a {
-    display: flex;
-    align-items: flex-end;
-    padding-bottom: 8rem;
-}
-
-.DialogFooter_label_92 {
-    color: #8c8c7e;
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
-    margin-right: 8rem;
-}
-
-.DialogFooter_totalPrice_55 {
-    margin-bottom: 1rem;
 }
 
 .Currency_base_57 {
@@ -706,30 +688,6 @@ body {
 .Currency_base__extraLarge_4d .Currency_icon__freeXP-extraLarge_58 {
     transform: translateY(4rem);
 }
-.Currency_icon__eliteXP-small_45 {
-    background-image: url('R.images.gui.maps.icons.library.EliteXpIcon_2');
-}
-.Currency_base__small_af .Currency_icon__eliteXP-small_45 {
-    transform: translateY(1rem);
-}
-.Currency_icon__eliteXP-big_c0 {
-    --icon-height: 24rem;
-    margin-left: -5rem;
-    background-image: url('R.images.gui.maps.icons.library.EliteXpIconBig');
-}
-.Currency_icon__eliteXP-large_1b {
-    --icon-height: 48rem;
-    margin: 0 -5rem 0 -6rem;
-    background-image: url('R.images.gui.maps.icons.library.elite_exp_48x48');
-}
-.Currency_icon__eliteXP-extraLarge_9b {
-    --icon-height: 80rem;
-    margin: 0 -5rem;
-    background-image: url('R.images.gui.maps.icons.library.elite_exp_80x80');
-}
-.Currency_base__extraLarge_4d .Currency_icon__eliteXP-extraLarge_9b {
-    transform: translateY(4rem);
-}
 .Currency_icon__equipCoin-small_32 {
     --icon-height: 16rem;
     margin-right: -2rem;
@@ -799,8 +757,7 @@ body {
 }
 .Currency_value__xp_b0,
 .Currency_value__crystal_19,
-.Currency_value__equipCoin_d0,
-.Currency_value__eliteXP_62 {
+.Currency_value__equipCoin_d0 {
     color: #c9c9b6;
 }
 .Currency_base__small_af .Currency_value__notEnough_56 {
@@ -864,4 +821,22 @@ body {
     height: 24rem;
     margin: 0 3rem -3rem;
     background: url('R.images.gui.maps.icons.tanksetup.hangar.plus') no-repeat center / contain;
+}
+
+.DialogFooter_base_3a {
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 8rem;
+}
+
+.DialogFooter_label_92 {
+    color: #8c8c7e;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    margin-right: 8rem;
+}
+
+.DialogFooter_totalPrice_55 {
+    margin-bottom: 1rem;
 }

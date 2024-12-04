@@ -2,7 +2,7 @@
     'use strict';
     var __webpack_modules__ = {
             768: (u, e, t) => {
-                t.d(e, { O: () => tu });
+                t.d(e, { O: () => Eu });
                 var E = {};
                 t.r(E),
                     t.d(E, { mouse: () => C, off: () => B, on: () => r, onResize: () => a, onScaleUpdated: () => i });
@@ -17,7 +17,7 @@
                         setRTPC: () => l,
                     });
                 var F = {};
-                t.r(F), t.d(F, { getBgUrl: () => b, getTextureUrl: () => w });
+                t.r(F), t.d(F, { getBgUrl: () => g, getTextureUrl: () => w });
                 var n = {};
                 function D(u) {
                     return (e) => (
@@ -35,28 +35,29 @@
                         addModelObserver: () => U,
                         addPreloadTexture: () => N,
                         children: () => F,
-                        displayStatus: () => g,
-                        displayStatusIs: () => J,
+                        displayStatus: () => b,
+                        displayStatusIs: () => uu,
                         events: () => f,
-                        extraSize: () => uu,
+                        extraSize: () => eu,
                         forceTriggerMouseMove: () => X,
                         freezeTextureBeforeResize: () => G,
                         getBrowserTexturePath: () => L,
                         getDisplayStatus: () => Q,
-                        getScale: () => K,
+                        getFontNames: () => J,
+                        getScale: () => j,
                         getSize: () => H,
                         getViewGlobalPosition: () => z,
                         isEventHandled: () => Z,
                         isFocused: () => q,
-                        pxToRem: () => W,
-                        remToPx: () => $,
+                        pxToRem: () => K,
+                        remToPx: () => W,
                         resize: () => V,
                         sendEvent: () => P,
-                        setAnimateWindow: () => j,
+                        setAnimateWindow: () => $,
                         setEventHandled: () => Y,
                         setInputPaddingsRem: () => S,
                         setSidePaddingsRem: () => I,
-                        whenTutorialReady: () => eu,
+                        whenTutorialReady: () => tu,
                     });
                 const a = D('clientResized'),
                     i = D('self.onScaleUpdated'),
@@ -154,10 +155,10 @@
                 function w(u, e, t = 1) {
                     return viewEnv.getChildTexturePath(u, e.width, e.height, t);
                 }
-                function b(u, e, t) {
+                function g(u, e, t) {
                     return `url(${w(u, e, t)})`;
                 }
-                const g = { showing: 0, shown: 1, hiding: 2, hidden: 3 },
+                const b = { showing: 0, shown: 1, hiding: 2, hidden: 3 },
                     f = {
                         onTextureFrozen: D('self.onTextureFrozen'),
                         onTextureReady: D('self.onTextureReady'),
@@ -251,21 +252,21 @@
                 }
                 function z(u = 'rem') {
                     const e = viewEnv.getViewGlobalPositionRem();
-                    return 'rem' === u ? e : { x: $(e.x), y: $(e.y) };
+                    return 'rem' === u ? e : { x: W(e.x), y: W(e.y) };
                 }
                 function G() {
                     viewEnv.freezeTextureBeforeResize();
                 }
-                function K() {
+                function j() {
                     return viewEnv.getScale();
                 }
-                function W(u) {
+                function K(u) {
                     return viewEnv.pxToRem(u);
                 }
-                function $(u) {
+                function W(u) {
                     return viewEnv.remToPx(u);
                 }
-                function j(u, e) {
+                function $(u, e) {
                     viewEnv.setAnimateWindow(u, e);
                 }
                 function q() {
@@ -283,8 +284,12 @@
                 function Q() {
                     return viewEnv.getShowingStatus();
                 }
-                const J = Object.keys(g).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === g[e]), u), {}),
-                    uu = {
+                const J = (() => {
+                        let u = [];
+                        return () => (0 === u.length && (u = Object.keys(viewEnv.getFontsConfig())), u);
+                    })(),
+                    uu = Object.keys(b).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === b[e]), u), {}),
+                    eu = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -292,13 +297,13 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    eu = Promise.all([
+                    tu = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : f.onDomBuilt(u);
                         }),
                         engine.whenReady,
                     ]),
-                    tu = { view: n, client: A, sound: p };
+                    Eu = { view: n, client: A, sound: p };
             },
             521: (u, e, t) => {
                 let E, A;
@@ -861,7 +866,7 @@
                         w.apply(null, arguments)
                     );
                 }
-                class b extends A().PureComponent {
+                class g extends A().PureComponent {
                     constructor(...u) {
                         super(...u),
                             (this.state = { hover: !1, click: !1 }),
@@ -936,8 +941,8 @@
                         );
                     }
                 }
-                b.defaultProps = { side: 'left', type: 'back', soundHover: 'highlight', soundClick: 'play' };
-                var g = t(797);
+                g.defaultProps = { side: 'left', type: 'back', soundHover: 'highlight', soundClick: 'play' };
+                var b = t(797);
                 let f;
                 function y(u, e) {
                     return u.replace(/\{\w+\}/g, (u) => String(e[u.slice(1, -1)]));
@@ -988,7 +993,7 @@
                         const t = R.strings.settings.LANGUAGE_CODE().toLowerCase();
                         if (P.includes(t)) return M(u);
                         if ('ja' === t) {
-                            return (0, g.D4)()
+                            return (0, b.D4)()
                                 .parse(u)
                                 .map((u) => k(u));
                         }
@@ -1047,7 +1052,7 @@
                     },
                     z = R.strings.matchmaker.testConfirmation,
                     G = (u) => ({ clusterName: A().createElement('div', { className: V.highlighted }, u) }),
-                    K = (u, e) => ({
+                    j = (u, e) => ({
                         timerange: A().createElement(
                             'div',
                             { className: V.highlighted },
@@ -1057,8 +1062,8 @@
                             }),
                         ),
                     }),
-                    W = R.strings.matchmaker.testConfirmation,
-                    $ = () => {
+                    K = R.strings.matchmaker.testConfirmation,
+                    W = () => {
                         const u = _('model'),
                             e = u.clusterName,
                             t = u.timeRangeStart,
@@ -1072,7 +1077,7 @@
                                 'div',
                                 { className: V.paragraph },
                                 A().createElement(L, {
-                                    text: W.levelRestrictions(),
+                                    text: K.levelRestrictions(),
                                     binding: {
                                         playersNumber: A().createElement(
                                             'div',
@@ -1090,14 +1095,14 @@
                             A().createElement(
                                 'div',
                                 { className: V.paragraph },
-                                A().createElement(L, { text: W.cluster(), binding: G(e) }),
-                                A().createElement(L, { text: W.testPeriod(), binding: K(t, F) }),
+                                A().createElement(L, { text: K.cluster(), binding: G(e) }),
+                                A().createElement(L, { text: K.testPeriod(), binding: j(t, F) }),
                             ),
                             A().createElement(
                                 'div',
                                 { className: V.paragraph },
                                 A().createElement(L, {
-                                    text: W.moreInfoLink(),
+                                    text: K.moreInfoLink(),
                                     binding:
                                         ((o = D),
                                         {
@@ -1113,7 +1118,7 @@
                         );
                         var o;
                     };
-                var j = t(768),
+                var $ = t(768),
                     q = t(521);
                 const Y = (u) => {
                     console.error(u.type + ': useKeydownListener hook :: Callback is not defined');
@@ -1129,8 +1134,8 @@
                             );
                         function E(E) {
                             if (E.keyCode === u) {
-                                if (!A && j.O.view.isEventHandled()) return;
-                                j.O.view.setEventHandled(), e(E), t && E.stopPropagation();
+                                if (!A && $.O.view.isEventHandled()) return;
+                                $.O.view.setEventHandled(), e(E), t && E.stopPropagation();
                             }
                         }
                     }, [e, u, t, A]);
@@ -1192,7 +1197,7 @@
                         h = _[1],
                         p = (0, E.useState)(!1),
                         w = p[0],
-                        b = p[1];
+                        g = p[1];
                     return (
                         (0, E.useEffect)(() => {
                             function u(u) {
@@ -1228,17 +1233,17 @@
                                     r && r(u);
                                 },
                                 onMouseUp: function (u) {
-                                    n || (s && s(u), b(!1));
+                                    n || (s && s(u), g(!1));
                                 },
                                 onMouseDown: function (u) {
                                     n ||
                                         (null !== a && v(a),
                                         B && B(u),
                                         t && (n || (l.current && (l.current.focus(), h(!0)))),
-                                        b(!0));
+                                        g(!0));
                                 },
                                 onMouseLeave: function (u) {
-                                    n || (C && C(u), b(!1));
+                                    n || (C && C(u), g(!1));
                                 },
                                 onClick: function (u) {
                                     n || (c && c(u));
@@ -1322,7 +1327,7 @@
                             A().createElement(
                                 'div',
                                 { className: ru },
-                                A().createElement(b, {
+                                A().createElement(g, {
                                     caption: R.strings.menu.viewHeader.closeBtn.label(),
                                     type: 'close',
                                     side: 'right',
@@ -1336,7 +1341,7 @@
                                 A().createElement('div', { className: Cu }),
                                 A().createElement('div', { className: cu }, du.title()),
                             ),
-                            A().createElement('div', { className: lu }, A().createElement($, null)),
+                            A().createElement('div', { className: lu }, A().createElement(W, null)),
                             A().createElement('div', { className: _u }, A().createElement(au, null)),
                         );
                     };

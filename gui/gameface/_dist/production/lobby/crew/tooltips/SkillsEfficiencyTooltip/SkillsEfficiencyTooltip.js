@@ -183,13 +183,14 @@
                         addPreloadTexture: () => i,
                         children: () => n,
                         displayStatus: () => r.W,
-                        displayStatusIs: () => w,
+                        displayStatusIs: () => y,
                         events: () => a.U,
-                        extraSize: () => y,
+                        extraSize: () => T,
                         forceTriggerMouseMove: () => h,
                         freezeTextureBeforeResize: () => c,
                         getBrowserTexturePath: () => F,
                         getDisplayStatus: () => v,
+                        getFontNames: () => w,
                         getScale: () => d,
                         getSize: () => l,
                         getViewGlobalPosition: () => C,
@@ -203,7 +204,7 @@
                         setEventHandled: () => f,
                         setInputPaddingsRem: () => A,
                         setSidePaddingsRem: () => D,
-                        whenTutorialReady: () => T,
+                        whenTutorialReady: () => O,
                     });
                 var n = t(3722),
                     r = t(6112),
@@ -265,11 +266,15 @@
                 function v() {
                     return viewEnv.getShowingStatus();
                 }
-                const w = Object.keys(r.W).reduce(
+                const w = (() => {
+                        let u = [];
+                        return () => (0 === u.length && (u = Object.keys(viewEnv.getFontsConfig())), u);
+                    })(),
+                    y = Object.keys(r.W).reduce(
                         (u, e) => ((u[e] = () => viewEnv.getShowingStatus() === r.W[e]), u),
                         {},
                     ),
-                    y = {
+                    T = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -277,7 +282,7 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    T = Promise.all([
+                    O = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : a.U.onDomBuilt(u);
                         }),
@@ -1156,7 +1161,7 @@
                         const e = i()(G.base, G[`base__${u}`]);
                         return r().createElement('div', { className: e });
                     },
-                    $ = {
+                    j = {
                         base: 'ProgressLineImpose_base_80',
                         base__disabled: 'ProgressLineImpose_base__disabled_cc',
                         base__finished: 'ProgressLineImpose_base__finished_d4',
@@ -1167,21 +1172,21 @@
                         glow: 'ProgressLineImpose_glow_a5',
                         glow__left: 'ProgressLineImpose_glow__left_d8',
                     },
-                    j = (0, n.memo)(
+                    $ = (0, n.memo)(
                         ({ size: u, lineRef: e, disabled: t, baseStyles: n, isComplete: a, withoutBounce: E }) => {
                             const o = i()(
-                                    $.base,
-                                    $[`base__${u}`],
-                                    t && $.base__disabled,
-                                    a && $.base__finished,
-                                    E && $.base__withoutBounce,
+                                    j.base,
+                                    j[`base__${u}`],
+                                    t && j.base__disabled,
+                                    a && j.base__finished,
+                                    E && j.base__withoutBounce,
                                 ),
                                 A = !t && !a;
                             return r().createElement(
                                 'div',
                                 { className: o, style: n, ref: e },
-                                r().createElement('div', { className: $.pattern }),
-                                r().createElement('div', { className: $.gradient }),
+                                r().createElement('div', { className: j.pattern }),
+                                r().createElement('div', { className: j.gradient }),
                                 A && r().createElement(V, { size: u }),
                             );
                         },
@@ -1193,7 +1198,7 @@
                             (0, n.useEffect)(() => {
                                 i && E && E();
                             }, [i, E]),
-                            r().createElement(j, { size: u, disabled: a, baseStyles: o, isComplete: i, lineRef: t })
+                            r().createElement($, { size: u, disabled: a, baseStyles: o, isComplete: i, lineRef: t })
                         );
                     },
                     q = (u, e) => {
@@ -1310,7 +1315,7 @@
                             return r().createElement(
                                 r().Fragment,
                                 null,
-                                r().createElement(j, {
+                                r().createElement($, {
                                     size: e,
                                     lineRef: a,
                                     disabled: E,
@@ -1430,7 +1435,7 @@
                             return r().createElement(
                                 r().Fragment,
                                 null,
-                                r().createElement(j, {
+                                r().createElement($, {
                                     size: e,
                                     lineRef: a,
                                     disabled: E,
@@ -1814,8 +1819,8 @@
                     zu = 'SkillsEfficiencyProgress_container_41',
                     Gu = 'SkillsEfficiencyProgress_percent_87',
                     Vu = 'SkillsEfficiencyProgress_percent__red_65',
-                    $u = 'SkillsEfficiencyProgress_xpIcon_22',
-                    ju = ({ percent: u, currentXP: e, maxXP: t, className: n }) =>
+                    ju = 'SkillsEfficiencyProgress_xpIcon_22',
+                    $u = ({ percent: u, currentXP: e, maxXP: t, className: n }) =>
                         r().createElement(
                             'div',
                             { className: i()(Wu, n) },
@@ -1834,7 +1839,7 @@
                                     binding: {
                                         currentValue: xu.Z5.getNumberFormat(e, xu.B3.INTEGRAL),
                                         maxValue: xu.Z5.getNumberFormat(t, xu.B3.INTEGRAL),
-                                        icon: r().createElement('div', { className: $u }),
+                                        icon: r().createElement('div', { className: ju }),
                                     },
                                 }),
                             ),
@@ -1870,7 +1875,7 @@
                                     { className: Zu },
                                     R.strings.tooltips.skillsEfficiency.subHeader(),
                                 ),
-                                r().createElement(ju, {
+                                r().createElement($u, {
                                     percent: e,
                                     currentXP: u.currentXP.get(),
                                     maxXP: u.maxXP.get(),

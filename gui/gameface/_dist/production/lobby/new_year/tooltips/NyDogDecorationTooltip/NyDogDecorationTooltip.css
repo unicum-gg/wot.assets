@@ -1,0 +1,204 @@
+.TooltipDecorator_base_c9 {
+    display: flex;
+    position: absolute;
+}
+
+.TooltipDecorator_base__theme-default_6d .TooltipDecorator_decorator_3d {
+    padding: 4rem 6rem 8rem;
+    border-image-source: url('R.atlases.components.tooltip_background');
+    border-image-slice: 24 fill;
+    border-image-width: 24rem;
+    position: relative;
+}
+
+.DecorationHeader_base_fe {
+    position: relative;
+}
+
+.DecorationHeader_icon_21 {
+    width: 48rem;
+    height: 48rem;
+    background: no-repeat center / contain;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+.DecorationHeader_base__small_21 .DecorationHeader_icon_21 {
+    width: 32rem;
+    height: 32rem;
+}
+
+.DecorationHeader_title_0c {
+    display: flex;
+    flex-direction: column;
+    margin-left: 54rem;
+}
+
+.DecorationHeader_base__small_21 .DecorationHeader_title_0c {
+    margin-left: 48rem;
+}
+
+.DecorationHeader_name_92 {
+    margin-bottom: -1rem;
+    color: #ffffff;
+    font-size: 16rem;
+    font-weight: 700;
+    line-height: 20rem;
+}
+
+.DecorationHeader_type_38 {
+    color: #9a9ea2;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+.Locked_base_b5 {
+    width: 348rem;
+    padding: 20rem 20rem 24rem 20rem;
+    background: linear-gradient(148deg, #11345d 1%, transparent 58%), #000;
+}
+
+.Locked_description_a2 {
+    color: #8c8c7e;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+
+.Locked_separator_ee {
+    display: flex;
+    align-self: center;
+    width: 100%;
+    height: 1rem;
+    margin-top: 16rem;
+    background: linear-gradient(90deg, rgba(138, 202, 238, 0.5) 0%, transparent 33%) repeat-x left / 3rem 1rem;
+}
+
+.Locked_imageWrapper_12 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 16rem 0;
+    position: relative;
+}
+
+.Locked_image_7d {
+    width: 300rem;
+    height: 190rem;
+    background: no-repeat center / contain;
+    position: relative;
+}
+
+.FormatText_base_d0 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.FormatTextWithColorTags_creamColor_8f {
+    color: #ffdd99;
+}
+
+.FormatTextWithColorTags_brownColor_90 {
+    color: #cbac77;
+}
+
+.FormatTextWithColorTags_credColor_a7 {
+    color: #ced9d9;
+}
+
+.FormatTextWithColorTags_blueColor_73 {
+    color: rgb(205, 237, 255);
+}
+
+.FormatTextWithColorTags_lightBlueColor_fa {
+    color: #aec5f2;
+}
+
+.FormatTextWithColorTags_goldColor_d6 {
+    color: #ffc363;
+}
+
+.FormatTextWithColorTags_grayColor_8b {
+    color: #8c8c7e;
+}
+
+.FormatTextWithColorTags_whiteSpanish_4b {
+    color: #e9e2bf;
+}
+
+.FormatTextWithColorTags_bondColor_53 {
+    color: #c9c9b6;
+}
+
+.FormatTextWithColorTags_yellowColor_84 {
+    color: #feab34;
+}
+
+.DecorationContent_base_c1 {
+    display: flex;
+    flex-direction: column;
+}
+
+.DecorationContent_image_3c {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 17.5rem;
+    margin-bottom: 28rem;
+    position: relative;
+}
+
+.DecorationContent_background_00 {
+    width: 387rem;
+    height: 239rem;
+    background: url('R.images.gui.maps.icons.newYear.tooltips.decorations.background') no-repeat center / contain;
+    position: absolute;
+}
+
+.DecorationContent_toy_b2 {
+    width: 200rem;
+    height: 200rem;
+    background: no-repeat center / contain;
+    position: relative;
+}
+
+.DecorationContent_description_bc {
+    color: #8c8c7e;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    margin: 10rem 0 10rem 10rem;
+    white-space: pre-wrap;
+}
+
+.Rented_base_65 {
+    color: #8c8c7e;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    width: 352rem;
+    padding: 20rem;
+    background: linear-gradient(144deg, #1c4889 0%, transparent 42%), #000;
+}
+
+.Rented_description_6e {
+    margin: 0;
+}
+
+.Rented_rentDescription_d7 {
+    margin-bottom: 3rem;
+    color: #8c8c7e;
+    white-space: pre-wrap;
+}
+
+.Rented_separator_4f {
+    display: flex;
+    align-self: center;
+    width: 100%;
+    height: 1rem;
+    margin: 10rem 0;
+    background: linear-gradient(90deg, rgba(138, 202, 238, 0.5) 0%, transparent 33%) repeat-x left / 3rem 1rem;
+}

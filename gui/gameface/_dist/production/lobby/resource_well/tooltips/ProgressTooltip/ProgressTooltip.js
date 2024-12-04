@@ -183,13 +183,14 @@
                         addPreloadTexture: () => c,
                         children: () => r,
                         displayStatus: () => o.W,
-                        displayStatusIs: () => k,
+                        displayStatusIs: () => R,
                         events: () => i.U,
-                        extraSize: () => R,
+                        extraSize: () => C,
                         forceTriggerMouseMove: () => T,
                         freezeTextureBeforeResize: () => m,
                         getBrowserTexturePath: () => d,
                         getDisplayStatus: () => P,
+                        getFontNames: () => k,
                         getScale: () => p,
                         getSize: () => v,
                         getViewGlobalPosition: () => E,
@@ -203,7 +204,7 @@
                         setEventHandled: () => O,
                         setInputPaddingsRem: () => _,
                         setSidePaddingsRem: () => u,
-                        whenTutorialReady: () => C,
+                        whenTutorialReady: () => S,
                     });
                 var r = n(3722),
                     o = n(6112),
@@ -265,11 +266,15 @@
                 function P() {
                     return viewEnv.getShowingStatus();
                 }
-                const k = Object.keys(o.W).reduce(
+                const k = (() => {
+                        let e = [];
+                        return () => (0 === e.length && (e = Object.keys(viewEnv.getFontsConfig())), e);
+                    })(),
+                    R = Object.keys(o.W).reduce(
                         (e, t) => ((e[t] = () => viewEnv.getShowingStatus() === o.W[t]), e),
                         {},
                     ),
-                    R = {
+                    C = {
                         set: (e, t) => {
                             viewEnv.setExtraSizeRem(e, t);
                         },
@@ -277,7 +282,7 @@
                             viewEnv.getExtraSizeRem(e, t);
                         },
                     },
-                    C = Promise.all([
+                    S = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : i.U.onDomBuilt(e);
                         }),
@@ -934,12 +939,12 @@
                         )
                     );
                 }
-                const K = {
+                const j = {
                         base: 'TooltipDecorator_base_c9',
                         'base__theme-default': 'TooltipDecorator_base__theme-default_6d',
                         decorator: 'TooltipDecorator_decorator_3d',
                     },
-                    j = ['children', 'className', 'theme'];
+                    K = ['children', 'className', 'theme'];
                 function G() {
                     return (
                         (G = Object.assign
@@ -968,7 +973,7 @@
                                         n[r] = e[r];
                                     }
                                 return n;
-                            })(e, j);
+                            })(e, K);
                         const d = B(),
                             l = o().useRef(null);
                         var u;
@@ -993,12 +998,12 @@
                             o().createElement(
                                 'div',
                                 G({}, _, {
-                                    className: c()(K.base, K[`base__theme-${s}`], i),
+                                    className: c()(j.base, j[`base__theme-${s}`], i),
                                     ref: function (e) {
                                         (l.current = e), 'function' == typeof t ? t(e) : t && (t.current = e);
                                     },
                                 }),
-                                o().createElement('div', { className: K.decorator }, n),
+                                o().createElement('div', { className: j.decorator }, n),
                             )
                         );
                     }),

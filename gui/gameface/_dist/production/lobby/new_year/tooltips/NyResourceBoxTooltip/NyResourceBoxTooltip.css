@@ -1,0 +1,88 @@
+.TooltipDecorator_base_c9 {
+    display: flex;
+    position: absolute;
+}
+
+.TooltipDecorator_base__theme-default_6d .TooltipDecorator_decorator_3d {
+    padding: 4rem 6rem 8rem;
+    border-image-source: url('R.atlases.components.tooltip_background');
+    border-image-slice: 24 fill;
+    border-image-width: 24rem;
+    position: relative;
+}
+
+.Content_title_fa {
+    color: #cbdee9;
+    font-size: 15rem;
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 8rem;
+}
+
+.Content_description_a2 {
+    color: #99bcd0;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+    opacity: 0.7;
+}
+
+.Footer_base_49 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 60rem;
+    background-image: radial-gradient(60% 150% at 50% 10%, rgba(14, 72, 159, 0.4), transparent);
+    position: relative;
+}
+
+.Footer_separator_5a {
+    width: 100%;
+    height: 1rem;
+    background: url('R.images.gui.maps.icons.newYear.tooltips.ny_tooltip_separator') no-repeat center / contain;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.Footer_label_e7 {
+    color: #ffffff;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+    padding-bottom: 8rem;
+    opacity: 0.7;
+}
+
+.Header_title_0b {
+    color: #cbdee9;
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 8rem;
+}
+
+.Header_description_fb {
+    color: #99bcd0;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+    opacity: 0.7;
+}
+
+.App_base_a8 {
+    width: 316rem;
+    padding: 15rem 22rem;
+    background-image: linear-gradient(165deg, #09346a, transparent 50%, rgba(8, 21, 44, 0.2) 80%);
+    position: relative;
+}
+
+.App_separator_30 {
+    width: 100%;
+    height: 1rem;
+    margin-top: 16rem;
+    margin-bottom: 10rem;
+    background: url('R.images.gui.maps.icons.newYear.tooltips.ny_tooltip_separator') no-repeat center / contain;
+}

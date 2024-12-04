@@ -75,7 +75,6 @@
                             (u.crystal = 'crystal'),
                             (u.xp = 'xp'),
                             (u.freeXP = 'freeXP'),
-                            (u.eliteXP = 'eliteXP'),
                             (u.equipCoin = 'equipCoin');
                     })(n || (n = {})),
                     (function (u) {
@@ -1030,13 +1029,14 @@
                         addPreloadTexture: () => s,
                         children: () => r,
                         displayStatus: () => n.W,
-                        displayStatusIs: () => b,
+                        displayStatusIs: () => y,
                         events: () => i.U,
-                        extraSize: () => y,
+                        extraSize: () => x,
                         forceTriggerMouseMove: () => v,
                         freezeTextureBeforeResize: () => _,
                         getBrowserTexturePath: () => c,
                         getDisplayStatus: () => w,
+                        getFontNames: () => b,
                         getScale: () => C,
                         getSize: () => F,
                         getViewGlobalPosition: () => D,
@@ -1050,7 +1050,7 @@
                         setEventHandled: () => p,
                         setInputPaddingsRem: () => l,
                         setSidePaddingsRem: () => A,
-                        whenTutorialReady: () => x,
+                        whenTutorialReady: () => k,
                     });
                 var r = t(3722),
                     n = t(6112),
@@ -1112,11 +1112,15 @@
                 function w() {
                     return viewEnv.getShowingStatus();
                 }
-                const b = Object.keys(n.W).reduce(
+                const b = (() => {
+                        let u = [];
+                        return () => (0 === u.length && (u = Object.keys(viewEnv.getFontsConfig())), u);
+                    })(),
+                    y = Object.keys(n.W).reduce(
                         (u, e) => ((u[e] = () => viewEnv.getShowingStatus() === n.W[e]), u),
                         {},
                     ),
-                    y = {
+                    x = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -1124,7 +1128,7 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    x = Promise.all([
+                    k = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : i.U.onDomBuilt(u);
                         }),
@@ -1215,7 +1219,7 @@
                 t.d(e, { D9: () => n });
                 t(3469), t(2133);
                 var r = t(2790);
-                t(579), t(5360), t(9056);
+                t(3779), t(579), t(5360), t(9056);
                 const n = r.Z;
             },
             6536: (u, e, t) => {
@@ -1336,6 +1340,9 @@
                         t.current
                     );
                 };
+            },
+            3779: (u, e, t) => {
+                t(6179);
             },
             4419: (u, e, t) => {
                 t.d(e, { y: () => i });
@@ -1938,7 +1945,7 @@
                     n = t(6799),
                     i = t(6960),
                     a = t(9053);
-                const o = new RegExp('[฀-๿][ัำ-ฺ็-๎]*', 'gu'),
+                const o = new RegExp('[฀-๿][ัำ-ฺ็-๎]*|[^฀-๿]', 'gu'),
                     s = (u) => {
                         const e = [];
                         return (
@@ -2449,11 +2456,11 @@
                     resetPerksDescription__withXpLoose: 'Description_resetPerksDescription__withXpLoose_86',
                 };
                 var L = t(2372),
-                    P = t(280),
-                    S = t(3649),
-                    O = t(771);
+                    S = t(280),
+                    O = t(3649),
+                    P = t(771);
                 const N = n().memo(({ description: u, cardState: e, kwargs: t, className: r }) => {
-                    const i = Number(t.value) < O.I;
+                    const i = Number(t.value) < P.I;
                     return n().createElement(
                         'div',
                         { className: F()(T.base, T[`base__${e}`], r) },
@@ -2465,7 +2472,7 @@
                                     percentAmount: n().createElement(
                                         'div',
                                         { className: F()(T.resetPercentsText) },
-                                        (0, S.dL)(((a = t.value), -(O.I - Number(a)))),
+                                        (0, O.dL)(((a = t.value), -(P.I - Number(a)))),
                                     ),
                                     xpAmount: n().createElement(
                                         'div',
@@ -2475,7 +2482,7 @@
                                     ),
                                 },
                             }),
-                        n().createElement(P.z, {
+                        n().createElement(S.z, {
                             text: u,
                             classMix: F()(T.resetPerksDescription, i && T.resetPerksDescription__withXpLoose),
                         }),
@@ -2528,7 +2535,7 @@
                                             n().createElement(
                                                 'div',
                                                 { className: T.efficiencyAfterRetrainValuePercents },
-                                                (0, S.dL)(Number(t.value)),
+                                                (0, O.dL)(Number(t.value)),
                                             ),
                                         ),
                                     ),
@@ -2557,9 +2564,9 @@
                     q = 'Price_base__withTooltip_a2',
                     K = 'Price_resetCardPriceIcon_89',
                     Y = 'Price_recertificationPrice_b6';
-                function X() {
+                function $() {
                     return (
-                        (X = Object.assign
+                        ($ = Object.assign
                             ? Object.assign.bind()
                             : function (u) {
                                   for (var e = 1; e < arguments.length; e++) {
@@ -2568,10 +2575,10 @@
                                   }
                                   return u;
                               }),
-                        X.apply(null, arguments)
+                        $.apply(null, arguments)
                     );
                 }
-                const $ = ({
+                const X = ({
                         cost: u,
                         tooltip: e,
                         index: t,
@@ -2598,11 +2605,11 @@
                             { className: F()(V, z, o.isEnabled && q, i) },
                             n().createElement(
                                 U.u,
-                                X({}, o, { targetId: r }),
+                                $({}, o, { targetId: r }),
                                 n().createElement(
                                     'div',
                                     null,
-                                    n().createElement(G.F, X({}, u, { isInteractiveDiscount: !0 })),
+                                    n().createElement(G.F, $({}, u, { isInteractiveDiscount: !0 })),
                                 ),
                             ),
                         );
@@ -2658,8 +2665,8 @@
                             k = I(x, b.value),
                             T = E === C.Reset && b.withSpecialDiscount,
                             L = E === C.Retrain && k !== M.None,
-                            P = D === B.Default && !T,
-                            R = (0, h.useSpring)(() => {
+                            R = D === B.Default && !T,
+                            S = (0, h.useSpring)(() => {
                                 const u = k === M.Increase ? -1 : 1;
                                 return {
                                     from: { opacity: 1, y: 0 },
@@ -2675,12 +2682,12 @@
                             k !== M.None &&
                                 m.O.sound.play.sound(k === M.Increase ? f.gO.CREW_RETRAIN_UP : f.gO.CREW_RETRAIN_DOWN);
                         }, [k]);
-                        const S = F()(J.base, J[`base__${s}`], J[`base__${D}`], P && J.base__hoverEnabled, v);
+                        const O = F()(J.base, J[`base__${s}`], J[`base__${D}`], R && J.base__hoverEnabled, v);
                         return n().createElement(
                             h.animated.div,
                             {
-                                style: L ? R : void 0,
-                                className: S,
+                                style: L ? S : void 0,
+                                className: O,
                                 onClick: () => {
                                     w && (m.O.sound.play.sound('play'), u(a));
                                 },
@@ -2704,7 +2711,7 @@
                                 n().createElement('div', { className: J.tooltipBox }),
                             ),
                             n().createElement(y, { cardType: E, kwargs: b }),
-                            n().createElement($, {
+                            n().createElement(X, {
                                 cost: d,
                                 tooltip: t,
                                 index: a,
@@ -2825,10 +2832,6 @@
                     'icon__freeXP-big': 'Currency_icon__freeXP-big_21',
                     'icon__freeXP-large': 'Currency_icon__freeXP-large_c8',
                     'icon__freeXP-extraLarge': 'Currency_icon__freeXP-extraLarge_58',
-                    'icon__eliteXP-small': 'Currency_icon__eliteXP-small_45',
-                    'icon__eliteXP-big': 'Currency_icon__eliteXP-big_c0',
-                    'icon__eliteXP-large': 'Currency_icon__eliteXP-large_1b',
-                    'icon__eliteXP-extraLarge': 'Currency_icon__eliteXP-extraLarge_9b',
                     'icon__equipCoin-small': 'Currency_icon__equipCoin-small_32',
                     'icon__equipCoin-big': 'Currency_icon__equipCoin-big_79',
                     'icon__equipCoin-large': 'Currency_icon__equipCoin-large_2c',
@@ -2840,7 +2843,6 @@
                     value__xp: 'Currency_value__xp_b0',
                     value__crystal: 'Currency_value__crystal_19',
                     value__equipCoin: 'Currency_value__equipCoin_d0',
-                    value__eliteXP: 'Currency_value__eliteXP_62',
                     value__notEnough: 'Currency_value__notEnough_56',
                     stock: 'Currency_stock_87',
                     stock__indent: 'Currency_stock__indent_a1',

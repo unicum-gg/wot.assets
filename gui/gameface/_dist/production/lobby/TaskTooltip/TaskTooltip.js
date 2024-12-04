@@ -183,13 +183,14 @@
                         addPreloadTexture: () => a,
                         children: () => n,
                         displayStatus: () => r.W,
-                        displayStatusIs: () => w,
+                        displayStatusIs: () => T,
                         events: () => o.U,
-                        extraSize: () => T,
+                        extraSize: () => R,
                         forceTriggerMouseMove: () => v,
                         freezeTextureBeforeResize: () => D,
                         getBrowserTexturePath: () => c,
-                        getDisplayStatus: () => f,
+                        getDisplayStatus: () => w,
+                        getFontNames: () => f,
                         getScale: () => B,
                         getSize: () => d,
                         getViewGlobalPosition: () => _,
@@ -203,7 +204,7 @@
                         setEventHandled: () => b,
                         setInputPaddingsRem: () => l,
                         setSidePaddingsRem: () => A,
-                        whenTutorialReady: () => R,
+                        whenTutorialReady: () => y,
                     });
                 var n = t(3722),
                     r = t(6112),
@@ -262,14 +263,18 @@
                 function v() {
                     viewEnv.forceTriggerMouseMove();
                 }
-                function f() {
+                function w() {
                     return viewEnv.getShowingStatus();
                 }
-                const w = Object.keys(r.W).reduce(
+                const f = (() => {
+                        let u = [];
+                        return () => (0 === u.length && (u = Object.keys(viewEnv.getFontsConfig())), u);
+                    })(),
+                    T = Object.keys(r.W).reduce(
                         (u, e) => ((u[e] = () => viewEnv.getShowingStatus() === r.W[e]), u),
                         {},
                     ),
-                    T = {
+                    R = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -277,7 +282,7 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    R = Promise.all([
+                    y = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : o.U.onDomBuilt(u);
                         }),
@@ -734,7 +739,7 @@
                         getFormattedDateTime: (u, e, t = !0) => regionalDateTime.getFormattedDateTime(u, e, t),
                     };
             },
-            3760: (u, e, t) => {
+            2513: (u, e, t) => {
                 var n = t(6483),
                     r = t.n(n),
                     o = t(3138),
@@ -863,6 +868,7 @@
                         (u.TankmenXpFactor = 'tankmenXPFactor'),
                         (u.FreeXpFactor = 'freeXPFactor'),
                         (u.BattleToken = 'battleToken'),
+                        (u.Entitlements = 'entitlements'),
                         (u.PremiumUniversal = 'premium_universal'),
                         (u.Gold = 'gold'),
                         (u.Credits = 'credits'),
@@ -880,6 +886,8 @@
                         (u.BattleBadge = 'dossier_badge'),
                         (u.NewYearInvoice = 'newYearInvoice'),
                         (u.NewYearSlot = 'newYearSlot'),
+                        (u.NewYearGuestD = 'ny_dog'),
+                        (u.EquipCoin = 'equipCoin'),
                         (u.BonusX5 = 'battle_bonus_x5'),
                         (u.CrewBonusX3 = 'crew_bonus_x3'),
                         (u.Vehicles = 'vehicles'),
@@ -888,7 +896,6 @@
                         (u.DeluxeGift = 'deluxe_gift'),
                         (u.BattleBoosterGift = 'battleBooster_gift'),
                         (u.OptionalDevice = 'optionalDevice'),
-                        (u.EquipCoin = 'equipCoin'),
                         (u.LootBox = 'lootBox'),
                         (u.BrCoin = 'brcoin');
                 })(F || (F = {})),
@@ -1012,7 +1019,7 @@
                     'gum',
                 );
                 var v = t(9916);
-                const f = [
+                const w = [
                     'children',
                     'contentId',
                     'args',
@@ -1028,7 +1035,7 @@
                     'onShow',
                     'onHide',
                 ];
-                function w(u) {
+                function f(u) {
                     return Object.entries(u || {}).map(([u, e]) => {
                         const t = { __Type: 'GFValueProxy', name: u };
                         switch (typeof e) {
@@ -1089,7 +1096,7 @@
                                         t[n] = u[n];
                                     }
                                 return t;
-                            })(u, f);
+                            })(u, w);
                         const b = (0, s.useRef)({ timeoutId: 0, isVisible: !1, prevTarget: null, hideTimerId: null }),
                             h = (0, s.useMemo)(
                                 () =>
@@ -1112,7 +1119,7 @@
                             ),
                             v = (0, s.useCallback)(() => {
                                 (b.current.isVisible && b.current.timeoutId) ||
-                                    (T(t, F, { isMouseEvent: !0, on: !0, arguments: w(n) }, h),
+                                    (T(t, F, { isMouseEvent: !0, on: !0, arguments: f(n) }, h),
                                     p && p(),
                                     (b.current.isVisible = !0));
                             }, [t, F, n, h, p]),
@@ -1332,6 +1339,7 @@
                         F.TankmenXpFactor,
                         F.FreeXpFactor,
                         F.BattleToken,
+                        F.Entitlements,
                         F.PremiumUniversal,
                         F.NaturalCover,
                         F.BpCoin,
@@ -1351,8 +1359,8 @@
                     Y = [F.BattlePassPoints, F.EquipCoin],
                     j = [F.PremiumPlus, F.Premium],
                     W = ['engravings', 'backgrounds'],
-                    z = ['engraving', 'background'],
-                    V = (u, e = D.Small) => {
+                    $ = ['engraving', 'background'],
+                    z = (u, e = D.Small) => {
                         const t = u.name,
                             n = u.type,
                             r = u.value,
@@ -1393,9 +1401,6 @@
                             case 'tokens':
                             case 'lootBox':
                             case 'battleToken':
-                                return 'big' === e
-                                    ? u.iconBig.replace('..', 'img://gui')
-                                    : u.iconSmall.replace('..', 'img://gui');
                             case 'customizations':
                             case 'styleProgress':
                             case 'crewSkins':
@@ -1404,6 +1409,10 @@
                             case 'tmanToken':
                             case 'battlePassSelectToken':
                                 return `R.images.gui.maps.icons.quests.bonuses.${e}.${o}`;
+                            case 'entitlements':
+                                return 'big' === e
+                                    ? u.iconBig.replace('..', 'img://gui')
+                                    : u.iconSmall.replace('..', 'img://gui');
                             case 'crewBooks':
                                 return `R.images.gui.maps.icons.crewBooks.books.${e}.${o}`;
                             case 'dogTagComponents':
@@ -1412,7 +1421,7 @@
                                     if (n) {
                                         const r = R.images.gui.maps.icons.dogtags.$dyn(e).$dyn(n),
                                             o = r.$dyn(t);
-                                        return o ? `${o}` : `${r.$dyn(z[u])}`;
+                                        return o ? `${o}` : `${r.$dyn($[u])}`;
                                     }
                                     return (
                                         console.error(
@@ -1437,15 +1446,19 @@
                                 return `R.images.gui.maps.icons.quests.bonuses.${e}.freeXP`;
                             case 'premiumTank':
                                 return `R.images.gui.maps.icons.quests.bonuses.${e}.vehicles`;
+                            case 'premiumTank_rent':
+                                return `R.images.gui.maps.icons.quests.bonuses.${e}.vehicles_rent`;
                             case 'styleProgressToken':
                                 return `R.images.gui.maps.icons.quests.bonuses.${e}.style_3d`;
                             case 'collectionItem':
                                 return `R.images.gui.maps.icons.collectionItems.${a}.${o}`;
+                            case 'newYearSlot':
+                                return `R.images.gui.maps.icons.newYear.rewards.${e}.slot`;
                             default:
                                 return `R.images.gui.maps.icons.quests.bonuses.${e}.${t}`;
                         }
                     },
-                    $ = [D.Small, D.Big],
+                    V = [D.Small, D.Big],
                     X = {
                         base: 'Reward_base_ea',
                         base__s48x48: 'Reward_base__s48x48_46',
@@ -1488,7 +1501,7 @@
                         periodicIconTooltipArgs: F,
                     }) => {
                         const _ = ((u, e) => {
-                                if (void 0 === e || !$.includes(u)) return null;
+                                if (void 0 === e || !V.includes(u)) return null;
                                 switch (e) {
                                     case m.BATTLE_BOOSTER:
                                     case m.BATTLE_BOOSTER_REPLACE:
@@ -1837,7 +1850,7 @@
                                                         (t = (u) => {
                                                             return {
                                                                 name: u.name,
-                                                                image: V(u, D.Big),
+                                                                image: z(u, D.Big),
                                                                 value: u.value,
                                                                 valueType:
                                                                     ((e = u.name),
@@ -2107,7 +2120,7 @@
                         for (; r; ) o !== r.index && t(u.slice(o, r.index)), n(r), (o = e.lastIndex), (r = e.exec(u));
                         o !== u.length && t(u.slice(o));
                     },
-                    bu = new RegExp('[฀-๿][ัำ-ฺ็-๎]*', 'gu'),
+                    bu = new RegExp('[฀-๿][ัำ-ฺ็-๎]*|[^฀-๿]', 'gu'),
                     hu = Fu
                         ? (u) => {
                               const e = [];
@@ -2194,7 +2207,7 @@
                             n
                         );
                     },
-                    fu = (u, e, t = '', n) => {
+                    wu = (u, e, t = '', n) => {
                         const r = [];
                         return (
                             gu(
@@ -2214,7 +2227,7 @@
                             r
                         );
                     },
-                    wu = (u, e) => {
+                    fu = (u, e) => {
                         if (!u) return [e];
                         const t = [],
                             n = Object.assign({}, e, { childList: e.childList.splice(0, 1) });
@@ -2234,8 +2247,8 @@
                             return (
                                 u.forEach((u) => {
                                     u.blockType === cu.NoBreakSymbol
-                                        ? ((t = !0), e.push(...wu(e.pop(), u)))
-                                        : (t ? e.push(...wu(e.pop(), u)) : e.push(u), (t = !1));
+                                        ? ((t = !0), e.push(...fu(e.pop(), u)))
+                                        : (t ? e.push(...fu(e.pop(), u)) : e.push(u), (t = !1));
                                 }),
                                 e
                             );
@@ -2247,10 +2260,10 @@
                                         u,
                                         /(?:%\(|{)(\w*)(?:_[Oo]pen|_Start)(?:\)s|})([\s\S]*?)(?:%\(|{)\w*(?:_[Cc]lose|_End)(?:\)s|})(\s*)/g,
                                         (u) => {
-                                            n.push(...fu(u, e, '', t));
+                                            n.push(...wu(u, e, '', t));
                                         },
                                         (u) => {
-                                            n.push(...fu(u[2] + u[3], e, u[1], t));
+                                            n.push(...wu(u[2] + u[3], e, u[1], t));
                                         },
                                     ),
                                     n
@@ -2669,6 +2682,6 @@
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             t.forEach(e.bind(null, 0)), (t.push = e.bind(null, t.push.bind(t)));
         })();
-    var __webpack_exports__ = __webpack_require__.O(void 0, [503], () => __webpack_require__(3760));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [503], () => __webpack_require__(2513));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

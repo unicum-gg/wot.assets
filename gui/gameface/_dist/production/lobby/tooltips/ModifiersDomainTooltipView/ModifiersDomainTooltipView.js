@@ -2,7 +2,7 @@
     'use strict';
     var __webpack_modules__ = {
             768: (u, e, t) => {
-                t.d(e, { O: () => Q });
+                t.d(e, { O: () => J });
                 var r = {};
                 t.r(r),
                     t.d(r, { mouse: () => D, off: () => l, on: () => F, onResize: () => E, onScaleUpdated: () => A });
@@ -36,27 +36,28 @@
                         addPreloadTexture: () => y,
                         children: () => a,
                         displayStatus: () => w,
-                        displayStatusIs: () => Y,
+                        displayStatusIs: () => Z,
                         events: () => O,
-                        extraSize: () => Z,
-                        forceTriggerMouseMove: () => z,
+                        extraSize: () => X,
+                        forceTriggerMouseMove: () => q,
                         freezeTextureBeforeResize: () => H,
                         getBrowserTexturePath: () => N,
-                        getDisplayStatus: () => j,
+                        getDisplayStatus: () => z,
+                        getFontNames: () => Y,
                         getScale: () => V,
                         getSize: () => L,
                         getViewGlobalPosition: () => k,
-                        isEventHandled: () => q,
+                        isEventHandled: () => j,
                         isFocused: () => K,
                         pxToRem: () => U,
                         remToPx: () => W,
                         resize: () => M,
-                        sendEvent: () => b,
+                        sendEvent: () => R,
                         setAnimateWindow: () => G,
                         setEventHandled: () => $,
                         setInputPaddingsRem: () => P,
                         setSidePaddingsRem: () => x,
-                        whenTutorialReady: () => X,
+                        whenTutorialReady: () => Q,
                     });
                 const E = o('clientResized'),
                     A = o('self.onScaleUpdated'),
@@ -149,8 +150,8 @@
                         get: () => viewEnv.getGraphicsQuality(),
                     },
                     f = { highlight: 'highlight', click: 'play', yes1: 'yes1' },
-                    h = Object.keys(f).reduce((u, e) => ((u[e] = () => c(f[e])), u), {}),
-                    g = { play: Object.assign({}, h, { sound: c }), setRTPC: m };
+                    g = Object.keys(f).reduce((u, e) => ((u[e] = () => c(f[e])), u), {}),
+                    h = { play: Object.assign({}, g, { sound: c }), setRTPC: m };
                 function v(u, e, t = 1) {
                     return viewEnv.getChildTexturePath(u, e.width, e.height, t);
                 }
@@ -175,7 +176,7 @@
                         },
                     },
                     T = ['args'],
-                    R = (u, e) => {
+                    b = (u, e) => {
                         const t = 'GFViewEventProxy';
                         if (void 0 !== e) {
                             const i = e.args,
@@ -212,15 +213,15 @@
                         return viewEnv.handleViewEvent({ __Type: t, type: u });
                         var r;
                     },
-                    b = {
+                    R = {
                         close(u) {
-                            R('popover' === u ? 2 : 32);
+                            b('popover' === u ? 2 : 32);
                         },
                         minimize() {
-                            R(64);
+                            b(64);
                         },
                         move(u) {
-                            R(16, { isMouseEvent: !0, on: u });
+                            b(16, { isMouseEvent: !0, on: u });
                         },
                     },
                     S = 15;
@@ -270,17 +271,21 @@
                 function $() {
                     return viewEnv.setEventHandled();
                 }
-                function q() {
+                function j() {
                     return viewEnv.isEventHandled();
                 }
-                function z() {
+                function q() {
                     viewEnv.forceTriggerMouseMove();
                 }
-                function j() {
+                function z() {
                     return viewEnv.getShowingStatus();
                 }
-                const Y = Object.keys(w).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === w[e]), u), {}),
-                    Z = {
+                const Y = (() => {
+                        let u = [];
+                        return () => (0 === u.length && (u = Object.keys(viewEnv.getFontsConfig())), u);
+                    })(),
+                    Z = Object.keys(w).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === w[e]), u), {}),
+                    X = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -288,13 +293,13 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    X = Promise.all([
+                    Q = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : O.onDomBuilt(u);
                         }),
                         engine.whenReady,
                     ]),
-                    Q = { view: n, client: i, sound: g };
+                    J = { view: n, client: i, sound: h };
             },
             358: (u, e, t) => {
                 t.d(e, { Z: () => a });
@@ -580,8 +585,8 @@
                         } else viewEnv.handleViewEvent({ __Type: t, type: u });
                         var r;
                     },
-                    h = () => f(o.CLOSE),
-                    g = (u, e) => {
+                    g = () => f(o.CLOSE),
+                    h = (u, e) => {
                         u.keyCode === d.ESCAPE && e();
                     };
                 var v = t(572);
@@ -596,7 +601,7 @@
                         DateFormatType: l,
                         makeGlobalBoundingBox: B,
                         sendMoveEvent: (u) => f(o.MOVE, { isMouseEvent: !0, on: u }),
-                        sendCloseEvent: h,
+                        sendCloseEvent: g,
                         sendClosePopOverEvent: () => f(o.POP_OVER, { on: !1 }),
                         sendShowContextMenuEvent: (u, e, t = 0) => {
                             f(o.CONTEXT_MENU, { isMouseEvent: !0, contentID: u, on: !0, decoratorID: t, args: e });
@@ -626,13 +631,13 @@
                             });
                         },
                         addEscapeListener: (u) => {
-                            const e = (e) => g(e, u);
+                            const e = (e) => h(e, u);
                             return (
                                 window.addEventListener('keydown', e), () => window.removeEventListener('keydown', e)
                             );
                         },
                         closeOnEsc: (u) => {
-                            g(u, h);
+                            h(u, g);
                         },
                         handleViewEvent: f,
                         onBindingsReady: C,
@@ -690,7 +695,7 @@
                         getFormattedDateTime: (u, e, t = !0) => regionalDateTime.getFormattedDateTime(u, e, t),
                     };
             },
-            519: (u, e, t) => {
+            252: (u, e, t) => {
                 var r = t(942);
                 const i = (u, e, t) =>
                     e.extraLargeHeight || e.largeHeight || e.mediumHeight || e.smallHeight || e.extraSmallHeight
@@ -808,9 +813,9 @@
                             B = a.extraLargeHeight,
                             C = a.largeHeight,
                             f = a.mediumHeight,
-                            h = a.smallHeight,
-                            g = a.extraSmallHeight,
-                            v = { extraLarge: B, large: C, medium: f, small: h, extraSmall: g };
+                            g = a.smallHeight,
+                            h = a.extraSmallHeight,
+                            v = { extraLarge: B, large: C, medium: f, small: g, extraSmall: h };
                         if (t.extraLarge || t.large || t.medium || t.small || t.extraSmall) {
                             if (t.extraLarge && n) return e;
                             if (t.large && o) return e;
@@ -835,8 +840,8 @@
                                 if (t.extraLargeHeight && B) return e;
                                 if (t.largeHeight && C) return e;
                                 if (t.mediumHeight && f) return e;
-                                if (t.smallHeight && h) return e;
-                                if (t.extraSmallHeight && g) return e;
+                                if (t.smallHeight && g) return e;
+                                if (t.extraSmallHeight && h) return e;
                             }
                         }
                         return null;
@@ -893,8 +898,8 @@
                 var B = t(601),
                     C = t.n(B),
                     f = t(483),
-                    h = t.n(f);
-                const g = {
+                    g = t.n(f);
+                const h = {
                         base: 'TooltipDecorator_base_c9',
                         'base__theme-default': 'TooltipDecorator_base__theme-default_6d',
                         decorator: 'TooltipDecorator_decorator_3d',
@@ -981,12 +986,12 @@
                         r.createElement(
                             'div',
                             p({}, s, {
-                                className: h()(g.base, g[`base__theme-${o}`], i),
+                                className: g()(h.base, h[`base__theme-${o}`], i),
                                 ref: function (u) {
                                     (A.current = u), 'function' == typeof e ? e(u) : e && (e.current = u);
                                 },
                             }),
-                            r.createElement('div', { className: g.decorator }, t),
+                            r.createElement('div', { className: h.decorator }, t),
                         )
                     );
                 });
@@ -1218,79 +1223,79 @@
                     (...u) =>
                     (e) =>
                         0 !== u.length && u.every((u) => u(e));
-                class q {}
-                var z;
-                (q.multiplierToPercent = (u) => 100 * u - 100),
-                    (q.radiansToDegrees = (u) => u * (180 / Math.PI)),
-                    (q.metPerSecondToKmPerHour = (u) => 3.6 * u),
-                    (q.radiansPerSecondToDegreesPerSecond = (u) => u * (180 / Math.PI)),
-                    (q.probabilityToPercent = (u) => 100 * u),
-                    (q.default = (u) => u);
                 class j {}
-                (z = j),
-                    (j.percent = (u, e, t) => {
-                        const r = z.default(u, e, t);
+                var q;
+                (j.multiplierToPercent = (u) => 100 * u - 100),
+                    (j.radiansToDegrees = (u) => u * (180 / Math.PI)),
+                    (j.metPerSecondToKmPerHour = (u) => 3.6 * u),
+                    (j.radiansPerSecondToDegreesPerSecond = (u) => u * (180 / Math.PI)),
+                    (j.probabilityToPercent = (u) => 100 * u),
+                    (j.default = (u) => u);
+                class z {}
+                (q = z),
+                    (z.percent = (u, e, t) => {
+                        const r = q.default(u, e, t);
                         return b(T(R.strings.modifier_formatter.modifier.format.percentage(), { value: r }));
                     }),
-                    (j.multiplier = (u, e, t) => {
-                        const r = z.default(u, e, t);
+                    (z.multiplier = (u, e, t) => {
+                        const r = q.default(u, e, t);
                         return b(T(R.strings.modifier_formatter.modifier.format.multiplier(), { value: r }));
                     }),
-                    (j.hitpoints = (u, e, t) => {
-                        const r = z.default(u, e, t);
+                    (z.hitpoints = (u, e, t) => {
+                        const r = q.default(u, e, t);
                         return b(T(R.strings.modifier_formatter.modifier.format.hitpoints(), { value: r }));
                     }),
-                    (j.seconds = (u, e, t) => {
-                        const r = z.default(u, e, t);
+                    (z.seconds = (u, e, t) => {
+                        const r = q.default(u, e, t);
                         return b(T(R.strings.modifier_formatter.modifier.format.seconds(), { value: r }));
                     }),
-                    (j.minutes = (u, e, t) => {
-                        const r = z.default(u, e, t);
+                    (z.minutes = (u, e, t) => {
+                        const r = q.default(u, e, t);
                         return b(T(R.strings.modifier_formatter.modifier.format.minutes(), { value: r }));
                     }),
-                    (j.deviation = (u, e, t) => {
-                        const r = z.default(u, e, t);
+                    (z.deviation = (u, e, t) => {
+                        const r = q.default(u, e, t);
                         return b(T(R.strings.modifier_formatter.modifier.format.deviation(), { value: r }));
                     }),
-                    (j.millimeters = (u, e, t) => {
-                        const r = z.default(u, e, t);
+                    (z.millimeters = (u, e, t) => {
+                        const r = q.default(u, e, t);
                         return b(T(R.strings.modifier_formatter.modifier.format.millimeters(), { value: r }));
                     }),
-                    (j.degree = (u, e, t) => {
-                        const r = z.default(u, e, t);
+                    (z.degree = (u, e, t) => {
+                        const r = q.default(u, e, t);
                         return b(T(R.strings.modifier_formatter.modifier.format.degrees(), { value: r }));
                     }),
-                    (j.meters = (u, e, t) => {
-                        const r = z.default(u, e, t);
+                    (z.meters = (u, e, t) => {
+                        const r = q.default(u, e, t);
                         return b(T(R.strings.modifier_formatter.modifier.format.meters(), { value: r }));
                     }),
-                    (j.kmPerHour = (u, e, t) => {
-                        const r = z.default(u, e, t);
+                    (z.kmPerHour = (u, e, t) => {
+                        const r = q.default(u, e, t);
                         return b(T(R.strings.modifier_formatter.modifier.format.km_per_hour(), { value: r }));
                     }),
-                    (j.metersPerSecond = (u, e, t) => {
-                        const r = z.default(u, e, t);
+                    (z.metersPerSecond = (u, e, t) => {
+                        const r = q.default(u, e, t);
                         return b(T(R.strings.modifier_formatter.modifier.format.meters_per_second(), { value: r }));
                     }),
-                    (j.degreesPerSecond = (u, e, t) => {
-                        const r = z.default(u, e, t);
+                    (z.degreesPerSecond = (u, e, t) => {
+                        const r = q.default(u, e, t);
                         return b(T(R.strings.modifier_formatter.modifier.format.degrees_per_second(), { value: r }));
                     }),
-                    (j.meterPerSecondSquared = (u, e, t) => {
-                        const r = z.default(u, e, t);
+                    (z.meterPerSecondSquared = (u, e, t) => {
+                        const r = q.default(u, e, t);
                         return b(
                             T(R.strings.modifier_formatter.modifier.format.meter_per_second_squared(), { value: r }),
                         );
                     }),
-                    (j.horsepower = (u, e, t) => {
-                        const r = z.default(u, e, t);
+                    (z.horsepower = (u, e, t) => {
+                        const r = q.default(u, e, t);
                         return b(T(R.strings.modifier_formatter.modifier.format.horsepower(), { value: r }));
                     }),
-                    (j.logic = (u) =>
+                    (z.logic = (u) =>
                         u
                             ? R.strings.modifier_formatter.modifier.format.logic.on()
                             : b(R.strings.modifier_formatter.modifier.format.logic.off())),
-                    (j.time = (u, e, t) => {
+                    (z.time = (u, e, t) => {
                         const r = u >= 0 ? t : '-',
                             i = ((u, e = !0) =>
                                 u.days > 7 && e
@@ -1317,7 +1322,7 @@
                             );
                         return b(`${r}${i}`);
                     }),
-                    (j.default = (u, e, t) => {
+                    (z.default = (u, e, t) => {
                         const r = u >= 0 ? t : '',
                             i = ((u, e) => {
                                 const t = Math.pow(10, e);
@@ -1329,31 +1334,31 @@
                     generalOverrides: [
                         {
                             condition: K.useType.oneOf(W.MUL),
-                            valueConverter: q.multiplierToPercent,
+                            valueConverter: j.multiplierToPercent,
                             numberOfDecimals: 0,
-                            formatter: j.percent,
+                            formatter: z.percent,
                         },
                         {
                             condition: $(K.useType.oneOf(W.MUL), K.value.isPositiveInteger),
-                            valueConverter: q.default,
+                            valueConverter: j.default,
                             numberOfDecimals: 0,
                             prefixForPositiveValue: '',
-                            formatter: j.multiplier,
+                            formatter: z.multiplier,
                         },
                         { condition: K.useType.oneOf(W.VAL), prefixForPositiveValue: '' },
                     ],
                     defaultPrefixForPositiveValue: '+',
                     physTypes: {
-                        [U.UNDEFINED]: { overrides: [], defaultNumberOfDecimals: 2, defaultFormatter: j.default },
+                        [U.UNDEFINED]: { overrides: [], defaultNumberOfDecimals: 2, defaultFormatter: z.default },
                         [U.RADIANS]: {
                             overrides: [
-                                { condition: K.useType.oneOf(W.ADD, W.VAL), valueConverter: q.radiansToDegrees },
+                                { condition: K.useType.oneOf(W.ADD, W.VAL), valueConverter: j.radiansToDegrees },
                             ],
                             defaultNumberOfDecimals: 0,
-                            defaultFormatter: j.degree,
+                            defaultFormatter: z.degree,
                         },
-                        [U.DEGREES]: { overrides: [], defaultNumberOfDecimals: 0, defaultFormatter: j.degree },
-                        [U.HIT_POINTS]: { overrides: [], defaultNumberOfDecimals: 0, defaultFormatter: j.hitpoints },
+                        [U.DEGREES]: { overrides: [], defaultNumberOfDecimals: 0, defaultFormatter: z.degree },
+                        [U.HIT_POINTS]: { overrides: [], defaultNumberOfDecimals: 0, defaultFormatter: z.hitpoints },
                         [U.METERS_PER_SECOND]: {
                             overrides: [
                                 {
@@ -1361,19 +1366,19 @@
                                         K.modificationType.oneOf(V.FW_MAX_SPEED, V.BK_MAX_SPEED),
                                         K.useType.oneOf(W.VAL, W.ADD),
                                     ),
-                                    valueConverter: q.metPerSecondToKmPerHour,
-                                    formatter: j.kmPerHour,
+                                    valueConverter: j.metPerSecondToKmPerHour,
+                                    formatter: z.kmPerHour,
                                 },
                             ],
                             defaultNumberOfDecimals: 0,
-                            defaultFormatter: j.metersPerSecond,
+                            defaultFormatter: z.metersPerSecond,
                         },
                         [U.KILOMETERS_PER_HOUR]: {
                             overrides: [],
                             defaultNumberOfDecimals: 0,
-                            defaultFormatter: j.kmPerHour,
+                            defaultFormatter: z.kmPerHour,
                         },
-                        [U.MILLIMETERS]: { overrides: [], defaultNumberOfDecimals: 0, defaultFormatter: j.millimeters },
+                        [U.MILLIMETERS]: { overrides: [], defaultNumberOfDecimals: 0, defaultFormatter: z.millimeters },
                         [U.SECONDS]: {
                             overrides: [
                                 {
@@ -1381,13 +1386,13 @@
                                         K.modificationType.oneOf(V.BATTLE_LENGTH),
                                         K.useType.oneOf(W.VAL, W.ADD),
                                     ),
-                                    formatter: j.time,
+                                    formatter: z.time,
                                 },
                             ],
                             defaultNumberOfDecimals: 2,
-                            defaultFormatter: j.seconds,
+                            defaultFormatter: z.seconds,
                         },
-                        [U.MINUTES]: { overrides: [], defaultNumberOfDecimals: 0, defaultFormatter: j.minutes },
+                        [U.MINUTES]: { overrides: [], defaultNumberOfDecimals: 0, defaultFormatter: z.minutes },
                         [U.METERS]: {
                             overrides: [
                                 {
@@ -1399,61 +1404,61 @@
                                 },
                             ],
                             defaultNumberOfDecimals: 2,
-                            defaultFormatter: j.meters,
+                            defaultFormatter: z.meters,
                         },
                         [U.RADIANS_PER_SECOND]: {
                             overrides: [
                                 {
                                     condition: K.useType.oneOf(W.VAL, W.ADD),
-                                    valueConverter: q.radiansPerSecondToDegreesPerSecond,
-                                    formatter: j.degreesPerSecond,
+                                    valueConverter: j.radiansPerSecondToDegreesPerSecond,
+                                    formatter: z.degreesPerSecond,
                                 },
                             ],
                             defaultNumberOfDecimals: 0,
-                            defaultFormatter: j.degreesPerSecond,
+                            defaultFormatter: z.degreesPerSecond,
                         },
                         [U.DEGREES_PER_SECOND]: {
                             overrides: [],
                             defaultNumberOfDecimals: 0,
-                            defaultFormatter: j.degreesPerSecond,
+                            defaultFormatter: z.degreesPerSecond,
                         },
                         [U.METER_PER_SECOND_SQUARED]: {
                             overrides: [],
                             defaultNumberOfDecimals: 2,
-                            defaultFormatter: j.meterPerSecondSquared,
+                            defaultFormatter: z.meterPerSecondSquared,
                         },
                         [U.PROBABILITY]: {
                             overrides: [
                                 {
                                     condition: K.useType.oneOf(W.VAL, W.ADD),
-                                    valueConverter: q.probabilityToPercent,
-                                    formatter: j.percent,
+                                    valueConverter: j.probabilityToPercent,
+                                    formatter: z.percent,
                                 },
                             ],
                             defaultNumberOfDecimals: 0,
-                            defaultFormatter: j.percent,
+                            defaultFormatter: z.percent,
                         },
                         [U.DEVIATION]: {
                             overrides: [
                                 {
                                     condition: K.useType.oneOf(W.VAL),
-                                    valueConverter: q.probabilityToPercent,
+                                    valueConverter: j.probabilityToPercent,
                                     numberOfDecimals: 0,
                                     prefixForPositiveValue: '',
-                                    formatter: j.deviation,
+                                    formatter: z.deviation,
                                 },
                                 {
                                     condition: K.useType.oneOf(W.ADD),
-                                    valueConverter: q.probabilityToPercent,
+                                    valueConverter: j.probabilityToPercent,
                                     numberOfDecimals: 0,
-                                    formatter: j.percent,
+                                    formatter: z.percent,
                                 },
                             ],
                             defaultNumberOfDecimals: 2,
-                            defaultFormatter: j.default,
+                            defaultFormatter: z.default,
                         },
-                        [U.HORSEPOWER]: { overrides: [], defaultNumberOfDecimals: 0, defaultFormatter: j.horsepower },
-                        [U.LOGIC]: { overrides: [], defaultNumberOfDecimals: 0, defaultFormatter: j.logic },
+                        [U.HORSEPOWER]: { overrides: [], defaultNumberOfDecimals: 0, defaultFormatter: z.horsepower },
+                        [U.LOGIC]: { overrides: [], defaultNumberOfDecimals: 0, defaultFormatter: z.logic },
                     },
                 };
                 function Z(u, e) {
@@ -1508,7 +1513,7 @@
                                 )
                                     throw Error(`Not found formatter for physicalType=${u.physicalType.toString()}`);
                                 let t = e.defaultFormatter,
-                                    r = q.default,
+                                    r = j.default,
                                     i = e.defaultNumberOfDecimals,
                                     a = Y.defaultPrefixForPositiveValue;
                                 for (var n = 0, o = [Y.generalOverrides, e.overrides]; n < o.length; n++)
@@ -1536,7 +1541,7 @@
                                 r.createElement('div', { className: 'ModifierParameter_paramIcon_ff' }),
                                 r.createElement('div', { className: uu }, eu(u.resName)),
                             );
-                        const e = h()(
+                        const e = g()(
                                 'ModifierParameter_paramValue_7d',
                                 u.gameplayImpact === G.UNDEFINED && 'ModifierParameter_paramValue__undefined_f6',
                                 u.gameplayImpact === G.POSITIVE && 'ModifierParameter_paramValue__positive_e4',
@@ -1738,6 +1743,6 @@
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             t.forEach(e.bind(null, 0)), (t.push = e.bind(null, t.push.bind(t)));
         })();
-    var __webpack_exports__ = __webpack_require__.O(void 0, [503], () => __webpack_require__(519));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [503], () => __webpack_require__(252));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

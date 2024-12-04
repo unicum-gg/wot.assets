@@ -1,8 +1,8 @@
 (() => {
     'use strict';
     var __webpack_modules__ = {
-            768: (e, t, n) => {
-                n.d(t, { O: () => ne });
+            326: (e, t, n) => {
+                n.d(t, { O: () => re });
                 var r = {};
                 n.r(r),
                     n.d(r, { mouse: () => h, off: () => u, on: () => d, onResize: () => l, onScaleUpdated: () => _ });
@@ -35,28 +35,29 @@
                         addModelObserver: () => F,
                         addPreloadTexture: () => A,
                         children: () => a,
-                        displayStatus: () => T,
-                        displayStatusIs: () => J,
+                        displayStatus: () => T.W,
+                        displayStatusIs: () => ee,
                         events: () => k,
-                        extraSize: () => ee,
+                        extraSize: () => te,
                         forceTriggerMouseMove: () => X,
-                        freezeTextureBeforeResize: () => q,
+                        freezeTextureBeforeResize: () => K,
                         getBrowserTexturePath: () => I,
                         getDisplayStatus: () => Q,
-                        getScale: () => z,
+                        getFontNames: () => J,
+                        getScale: () => q,
                         getSize: () => U,
                         getViewGlobalPosition: () => j,
                         isEventHandled: () => Z,
                         isFocused: () => H,
-                        pxToRem: () => W,
+                        pxToRem: () => z,
                         remToPx: () => $,
-                        resize: () => K,
+                        resize: () => W,
                         sendEvent: () => N,
                         setAnimateWindow: () => G,
                         setEventHandled: () => Y,
                         setInputPaddingsRem: () => B,
                         setSidePaddingsRem: () => V,
-                        whenTutorialReady: () => te,
+                        whenTutorialReady: () => ne,
                     });
                 const l = o('clientResized'),
                     _ = o('self.onScaleUpdated'),
@@ -157,8 +158,8 @@
                 function O(e, t, n) {
                     return `url(${S(e, t, n)})`;
                 }
-                const T = { showing: 0, shown: 1, hiding: 2, hidden: 3 },
-                    k = {
+                var T = n(112);
+                const k = {
                         onTextureFrozen: o('self.onTextureFrozen'),
                         onTextureReady: o('self.onTextureReady'),
                         onDomBuilt: o('self.onDomBuilt'),
@@ -246,20 +247,20 @@
                 function U(e = 'px') {
                     return 'rem' === e ? viewEnv.getViewSizeRem() : viewEnv.getViewSizePx();
                 }
-                function K(e, t, n = 'px') {
+                function W(e, t, n = 'px') {
                     return 'rem' === n ? viewEnv.resizeViewRem(e, t) : viewEnv.resizeViewPx(e, t);
                 }
                 function j(e = 'rem') {
                     const t = viewEnv.getViewGlobalPositionRem();
                     return 'rem' === e ? t : { x: $(t.x), y: $(t.y) };
                 }
-                function q() {
+                function K() {
                     viewEnv.freezeTextureBeforeResize();
                 }
-                function z() {
+                function q() {
                     return viewEnv.getScale();
                 }
-                function W(e) {
+                function z(e) {
                     return viewEnv.pxToRem(e);
                 }
                 function $(e) {
@@ -283,8 +284,15 @@
                 function Q() {
                     return viewEnv.getShowingStatus();
                 }
-                const J = Object.keys(T).reduce((e, t) => ((e[t] = () => viewEnv.getShowingStatus() === T[t]), e), {}),
-                    ee = {
+                const J = (() => {
+                        let e = [];
+                        return () => (0 === e.length && (e = Object.keys(viewEnv.getFontsConfig())), e);
+                    })(),
+                    ee = Object.keys(T.W).reduce(
+                        (e, t) => ((e[t] = () => viewEnv.getShowingStatus() === T.W[t]), e),
+                        {},
+                    ),
+                    te = {
                         set: (e, t) => {
                             viewEnv.setExtraSizeRem(e, t);
                         },
@@ -292,13 +300,17 @@
                             viewEnv.getExtraSizeRem(e, t);
                         },
                     },
-                    te = Promise.all([
+                    ne = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : k.onDomBuilt(e);
                         }),
                         engine.whenReady,
                     ]),
-                    ne = { view: s, client: i, sound: y };
+                    re = { view: s, client: i, sound: y };
+            },
+            112: (e, t, n) => {
+                n.d(t, { W: () => r });
+                const r = { showing: 0, shown: 1, hiding: 2, hidden: 3 };
             },
             521: (e, t, n) => {
                 let r, i;
@@ -352,7 +364,7 @@
             },
             358: (e, t, n) => {
                 n.d(t, { Z: () => a });
-                var r = n(768);
+                var r = n(326);
                 class i {
                     constructor() {
                         (this._callbacks = void 0),
@@ -509,7 +521,7 @@
                     _ = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1 }),
                     d = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1, YEAR_MONTH: 2 });
                 var u = n(521),
-                    v = n(768);
+                    v = n(326);
                 const h = ['args'];
                 function w(e, t, n, r, i, a, s) {
                     try {
@@ -775,7 +787,7 @@
                                                 : void 0)(t, a, n),
                                 [t, a, n],
                             ),
-                            K = (0, r.useCallback)(
+                            W = (0, r.useCallback)(
                                 () => ((t === n && t === F) || t === n ? 'big' : 'small'),
                                 [t, n, F],
                             ),
@@ -783,9 +795,9 @@
                                 const e = R.images.gui.maps.icons.components.switcher.numbers,
                                     n = t > F ? 'light' : 'dark';
                                 return Object.assign({}, U, {
-                                    backgroundImage: `url(${e.$dyn(`number_${t}_${K()}_${n}`)})`,
+                                    backgroundImage: `url(${e.$dyn(`number_${t}_${W()}_${n}`)})`,
                                 });
-                            }, [t, F, U, K]);
+                            }, [t, F, U, W]);
                         return i().createElement(
                             'div',
                             { className: V },
@@ -875,7 +887,7 @@
                     F = 'SwitcherSeparator_base__rightTransformOrigin_16',
                     V = 'SwitcherSeparator_base__leftTransformOrigin_7f',
                     U = 'SwitcherSeparator_base__transitionTransformOrigin_b2',
-                    K = ({ index: e, selectedIndex: t, previousSelectedIndex: n, isAnimated: r = !0 }) => {
+                    W = ({ index: e, selectedIndex: t, previousSelectedIndex: n, isAnimated: r = !0 }) => {
                         const a = ((e, t, n) =>
                                 e === t + 1 || e === t - 1
                                     ? _(0)
@@ -903,17 +915,17 @@
                         return i().createElement('div', { className: d, style: a });
                     },
                     j = (e, t, n) => Math.min(Math.max(e, t), n),
-                    q = {
+                    K = {
                         base: 'Switcher_base_7a',
                         base__hasCurrentText: 'Switcher_base__hasCurrentText_6f',
                         base__small: 'Switcher_base__small_6a',
                         base__isVisible: 'Switcher_base__isVisible_43',
                     };
-                let z;
+                let q;
                 !(function (e) {
                     (e[(e.digital = 0)] = 'digital'), (e[(e.text = 1)] = 'text');
-                })(z || (z = {}));
-                const W = (e, t) => ('number' == typeof e ? 2 * (e - t) : void 0);
+                })(q || (q = {}));
+                const z = (e, t) => ('number' == typeof e ? 2 * (e - t) : void 0);
                 let $;
                 !(function (e) {
                     e.small = 'small';
@@ -932,7 +944,7 @@
                         isArabic: v = !1,
                         hasLightShadows: h = !1,
                         styleID: w = 0,
-                        switcherType: m = z.digital,
+                        switcherType: m = q.digital,
                     }) => {
                         const b = (0, r.useState)(!1),
                             E = b[0],
@@ -953,18 +965,18 @@
                         const f = o + e - 1,
                             g = j(t, l && s ? s : o, f),
                             y = 'number' == typeof s ? j(s, o, f) : void 0,
-                            S = W(g, o),
-                            O = W(y, o),
+                            S = z(g, o),
+                            O = z(y, o),
                             T = (0, r.useRef)(S);
                         (0, r.useEffect)(() => {
                             T.current = S;
                         });
                         const k = T.current,
                             x = c()(
-                                q.base,
-                                a && void 0 !== O && q.base__hasCurrentText,
-                                _ && q[`base__${_}`],
-                                E && q.base__isVisible,
+                                K.base,
+                                a && void 0 !== O && K.base__hasCurrentText,
+                                _ && K[`base__${_}`],
+                                E && K.base__isVisible,
                             ),
                             P = (0, r.useMemo)(
                                 () =>
@@ -975,7 +987,7 @@
                                     })(o, f),
                                 [f, o],
                             ),
-                            C = m === z.digital;
+                            C = m === q.digital;
                         return i().createElement(
                             'div',
                             { className: x },
@@ -986,7 +998,7 @@
                                     i().Fragment,
                                     { key: t },
                                     t > 0 &&
-                                        i().createElement(K, {
+                                        i().createElement(W, {
                                             index: r - 1,
                                             selectedIndex: S,
                                             previousSelectedIndex: k,
@@ -1142,7 +1154,7 @@
                             _ = e.styleID,
                             d = e.onChange,
                             u = (0, r.useCallback)((e) => d({ selectedLevel: e }), [d]),
-                            v = l === z.text,
+                            v = l === q.text,
                             h = v ? void 0 : 'small',
                             w = c()(se, v && oe);
                         return i().createElement(

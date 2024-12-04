@@ -183,13 +183,14 @@
                         addPreloadTexture: () => s,
                         children: () => n,
                         displayStatus: () => r.W,
-                        displayStatusIs: () => w,
+                        displayStatusIs: () => y,
                         events: () => o.U,
-                        extraSize: () => y,
+                        extraSize: () => T,
                         forceTriggerMouseMove: () => f,
                         freezeTextureBeforeResize: () => D,
                         getBrowserTexturePath: () => l,
                         getDisplayStatus: () => b,
+                        getFontNames: () => w,
                         getScale: () => B,
                         getSize: () => F,
                         getViewGlobalPosition: () => d,
@@ -203,7 +204,7 @@
                         setEventHandled: () => v,
                         setInputPaddingsRem: () => c,
                         setSidePaddingsRem: () => A,
-                        whenTutorialReady: () => T,
+                        whenTutorialReady: () => k,
                     });
                 var n = t(3722),
                     r = t(6112),
@@ -265,11 +266,15 @@
                 function b() {
                     return viewEnv.getShowingStatus();
                 }
-                const w = Object.keys(r.W).reduce(
+                const w = (() => {
+                        let u = [];
+                        return () => (0 === u.length && (u = Object.keys(viewEnv.getFontsConfig())), u);
+                    })(),
+                    y = Object.keys(r.W).reduce(
                         (u, e) => ((u[e] = () => viewEnv.getShowingStatus() === r.W[e]), u),
                         {},
                     ),
-                    y = {
+                    T = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -277,7 +282,7 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    T = Promise.all([
+                    k = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : o.U.onDomBuilt(u);
                         }),
@@ -878,10 +883,6 @@
                     'icon__freeXP-big': 'Currency_icon__freeXP-big_21',
                     'icon__freeXP-large': 'Currency_icon__freeXP-large_c8',
                     'icon__freeXP-extraLarge': 'Currency_icon__freeXP-extraLarge_58',
-                    'icon__eliteXP-small': 'Currency_icon__eliteXP-small_45',
-                    'icon__eliteXP-big': 'Currency_icon__eliteXP-big_c0',
-                    'icon__eliteXP-large': 'Currency_icon__eliteXP-large_1b',
-                    'icon__eliteXP-extraLarge': 'Currency_icon__eliteXP-extraLarge_9b',
                     'icon__equipCoin-small': 'Currency_icon__equipCoin-small_32',
                     'icon__equipCoin-big': 'Currency_icon__equipCoin-big_79',
                     'icon__equipCoin-large': 'Currency_icon__equipCoin-large_2c',
@@ -893,7 +894,6 @@
                     value__xp: 'Currency_value__xp_b0',
                     value__crystal: 'Currency_value__crystal_19',
                     value__equipCoin: 'Currency_value__equipCoin_d0',
-                    value__eliteXP: 'Currency_value__eliteXP_62',
                     value__notEnough: 'Currency_value__notEnough_56',
                     stock: 'Currency_stock_87',
                     stock__indent: 'Currency_stock__indent_a1',
@@ -910,7 +910,6 @@
                             (u.crystal = 'crystal'),
                             (u.xp = 'xp'),
                             (u.freeXP = 'freeXP'),
-                            (u.eliteXP = 'eliteXP'),
                             (u.equipCoin = 'equipCoin');
                     })(p || (p = {})),
                     (function (u) {
@@ -1341,10 +1340,10 @@
                         bond: 'colors_bond_ce',
                         prom: 'colors_prom_83',
                     },
-                    X = 'renderers_noBreakWrapper_10',
-                    H = 'renderers_lineBreak_b5',
-                    Y = 'renderers_newLine_bd',
-                    Z = 'renderers_word_f3',
+                    H = 'renderers_noBreakWrapper_10',
+                    Y = 'renderers_lineBreak_b5',
+                    Z = 'renderers_newLine_bd',
+                    X = 'renderers_word_f3',
                     $ = (u) => ({ color: `#${u}` }),
                     Q = ({ elementList: u, textBlock: e, key: t }) => {
                         const n = e.colorTag;
@@ -1352,15 +1351,15 @@
                             ? K[n]
                                 ? a().createElement(
                                       'span',
-                                      { key: t, 'data-block-type': e.blockType, className: r()(Z, K[n]) },
+                                      { key: t, 'data-block-type': e.blockType, className: r()(X, K[n]) },
                                       u,
                                   )
                                 : a().createElement(
                                       'span',
-                                      { key: t, 'data-block-type': e.blockType, className: Z, style: $(n) },
+                                      { key: t, 'data-block-type': e.blockType, className: X, style: $(n) },
                                       u,
                                   )
-                            : a().createElement('span', { key: t, 'data-block-type': e.blockType, className: Z }, u);
+                            : a().createElement('span', { key: t, 'data-block-type': e.blockType, className: X }, u);
                     },
                     J = {
                         [V.Word]: Q,
@@ -1372,11 +1371,11 @@
                                 u.map((u) => a().createElement(a().Fragment, { key: t }, u)),
                             ),
                         [V.LineBreak]: ({ key: u }) =>
-                            a().createElement('span', { key: u, 'data-block-type': V.LineBreak, className: H }),
+                            a().createElement('span', { key: u, 'data-block-type': V.LineBreak, className: Y }),
                         [V.NewLine]: ({ elementList: u, key: e }) =>
-                            a().createElement('span', { key: e, 'data-block-type': V.NewLine, className: Y }, u),
+                            a().createElement('span', { key: e, 'data-block-type': V.NewLine, className: Z }, u),
                         [V.NoBreakWrapper]: ({ elementList: u, key: e }) =>
-                            a().createElement('span', { key: e, 'data-block-type': V.NoBreakWrapper, className: X }, u),
+                            a().createElement('span', { key: e, 'data-block-type': V.NoBreakWrapper, className: H }, u),
                     },
                     uu = (u, e, t) => {
                         const n = [];
@@ -1421,7 +1420,7 @@
                         for (; r; ) o !== r.index && t(u.slice(o, r.index)), n(r), (o = e.lastIndex), (r = e.exec(u));
                         o !== u.length && t(u.slice(o));
                     },
-                    nu = new RegExp('[฀-๿][ัำ-ฺ็-๎]*', 'gu'),
+                    nu = new RegExp('[฀-๿][ัำ-ฺ็-๎]*|[^฀-๿]', 'gu'),
                     ru = (u) => {
                         const e = [];
                         return (

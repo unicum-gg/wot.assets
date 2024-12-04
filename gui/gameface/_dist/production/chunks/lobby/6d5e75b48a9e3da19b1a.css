@@ -1,0 +1,1143 @@
+.ChallengeCard_base_d0 {
+    width: var(--card-width);
+    height: 190rem;
+    position: relative;
+}
+.mediaLarge .ChallengeCard_base_d0 {
+    height: 230rem;
+}
+.ChallengeCard_base__animated_13 {
+    animation: ChallengeCard_pulse_74 0.8s 0.3s infinite ease-in;
+    pointer-events: none;
+}
+.ChallengeCard_marker_e8 {
+    width: 8rem;
+    height: 8rem;
+    border-radius: 50%;
+    box-shadow:
+        0 0 1rem rgba(0, 0, 0, 0.6),
+        0 0 10rem rgba(254, 103, 0, 0.5),
+        0 0 15rem rgba(249, 0, 0, 0.8);
+    background-color: #dd3b03;
+    opacity: 1;
+    position: absolute;
+    top: -2rem;
+    right: -2rem;
+    z-index: 1;
+    pointer-events: none;
+}
+.ChallengeCard_backgroundBox_de {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    pointer-events: none;
+}
+.ChallengeCard_background_af {
+    width: 220rem;
+    height: 220rem;
+    background: url('R.images.gui.maps.icons.newYear.celebrity_challenge.wreath.wreath_small') no-repeat center /
+        contain;
+    opacity: 0.12;
+}
+.mediaLarge .ChallengeCard_background_af {
+    width: 280rem;
+    height: 280rem;
+}
+.ChallengeCard_info__locked_9b {
+    opacity: 0.6;
+}
+@keyframes ChallengeCard_pulse_74 {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.8;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes RewardList_slideInFadeIn_30 {
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+@keyframes RewardList_fadeOut_35 {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes RewardList_fadeIn_d5 {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+@keyframes RewardList_fadeInWithScale_64 {
+    0% {
+        opacity: 0;
+        transform: scale(1.2);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@keyframes RewardList_slideUp_24 {
+    0% {
+        opacity: 0;
+        transform: translateY(20rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes RewardList_scale_2e {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+@keyframes RewardList_spin_cc {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+@keyframes RewardList_blink_7d {
+    0% {
+        transform: translateY(0rem);
+    }
+
+    100% {
+        transform: translateY(15rem);
+    }
+}
+@keyframes RewardList_slideInNotification_93 {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.RewardList_base_33 {
+    display: flex;
+}
+.RewardList_item_c5 + .RewardList_item_c5 {
+    margin-left: 14rem;
+}
+.mediaLarge .RewardList_item_c5 + .RewardList_item_c5 {
+    margin-left: 18rem;
+}
+.RewardList_rewardInfo_69 {
+    font-family: DINRoundPro;
+}
+[lang='th'] .RewardList_rewardInfo_69,
+[lang='el'] .RewardList_rewardInfo_69,
+[lang='vi'] .RewardList_rewardInfo_69 {
+    font-family: Warhelios;
+}
+[lang='ja'] .RewardList_rewardInfo_69 {
+    font-family: WarheliosJA;
+}
+[lang='ko'] .RewardList_rewardInfo_69 {
+    font-family: WarheliosKO;
+}
+[lang='zh_tw'] .RewardList_rewardInfo_69 {
+    font-family: WarheliosZHTW;
+}
+[lang='zh_sg'] .RewardList_rewardInfo_69,
+[lang='zh_cn'] .RewardList_rewardInfo_69 {
+    font-family: WarheliosZHCN;
+}
+.RewardList_rewardInfo_69 {
+    color: #88a0f4;
+    font-size: 12rem;
+}
+.mediaLarge .RewardList_rewardInfo_69 {
+    font-size: 14rem;
+}
+
+.Info_base_8f {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    padding: 15rem 0 20rem;
+    overflow: hidden;
+}
+.Info_inner_b1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    opacity: 1;
+    transform: translateY(0);
+    transition:
+        transform 0.3s ease-out,
+        opacity 0.3s ease-out;
+}
+.Info_base__animated_8f .Info_inner_b1 {
+    opacity: 0;
+    transform: translateY(20rem);
+    transition:
+        transform 0.3s ease-in,
+        opacity 0.3s ease-in;
+}
+.Info_progress_fb {
+    margin-bottom: 14rem;
+}
+.Info_descriptionBox_27 {
+    width: 100%;
+    padding: 0 20rem;
+}
+.Info_description_d0 {
+    justify-content: center;
+    color: #f0fcff;
+    font-size: 14rem;
+    line-height: 1;
+    opacity: 0.9;
+}
+.mediaLarge .Info_description_d0 {
+    font-size: 16rem;
+}
+.Info_accentText_af {
+    font-weight: 700;
+}
+.Info_rewardWrapper_6c {
+    transition: opacity 0.3s ease-in;
+}
+.Info_base__animated_8f .Info_rewardWrapper_6c {
+    opacity: 0;
+}
+.Info_rewardWrapper__completed_23 {
+    opacity: 0.4;
+}
+
+/*
+    Gameface can't calculate gradient biggest than 8128px
+    in JS 8000 reserved like anchor for start optimization
+*/
+/* stylelint-disable-line */
+.ProgressBar_base_45 {
+    width: 100%;
+    height: 12rem;
+    position: relative;
+}
+.ProgressBar_base__small_df {
+    height: 2rem;
+}
+.ProgressBar_background_51 {
+    width: 100%;
+    max-width: 8001px;
+    height: 100%;
+    background-image: var(--progress-base);
+    background-repeat: repeat;
+    background-position: 0 50%;
+    background-size: 3rem 10rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.ProgressBar_background__small_46 {
+    height: 2rem;
+}
+.ProgressBar_lineWrapper_6a {
+    display: flex;
+    flex: 1;
+}
+
+.ProgressBarBlink_base_24 {
+    width: 60rem;
+    height: 100rem;
+    background-image: var(--progress-glow);
+    background-size: contain;
+    mix-blend-mode: lighten;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(50%, -50%);
+    pointer-events: none;
+}
+
+.ProgressBarBlink_base__small_0f {
+    width: 44rem;
+    height: 43rem;
+    background-image: var(--progress-glow-small);
+}
+
+/*
+    Gameface can't calculate gradient biggest than 8128px
+    in JS 8000 reserved like anchor for start optimization
+*/
+/* stylelint-disable-line */
+.ProgressLineImpose_base_80 {
+    max-width: 8001px;
+    height: 100%;
+    background-color: var(--progress-line-base);
+    position: relative;
+    transition-timing-function: cubic-bezier(1, 0, 0.92, 1);
+    transition-property: width;
+}
+.ProgressLineImpose_base__disabled_cc {
+    background-color: var(--progress-line-disabled);
+}
+.ProgressLineImpose_base__finished_d4 {
+    background-color: var(--progress-line-finished);
+}
+.ProgressLineImpose_base__withoutBounce_56 {
+    transition-timing-function: cubic-bezier(1, 0, 0.75, 0.75);
+}
+.ProgressLineImpose_pattern_1c {
+    max-width: 8001px;
+    background-image: var(--progress-pattern-base);
+    background-repeat: repeat;
+    background-position: 0 50%;
+    background-size: 3rem 10rem;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+    left: 1rem;
+}
+.ProgressLineImpose_base__small_55 .ProgressLineImpose_pattern_1c {
+    top: 0;
+    bottom: 0;
+}
+.ProgressLineImpose_base__disabled_cc .ProgressLineImpose_pattern_1c {
+    background-image: var(--progress-pattern-disabled);
+    left: 0;
+}
+.ProgressLineImpose_base__finished_d4 .ProgressLineImpose_pattern_1c {
+    background-image: var(--progress-pattern-finished);
+}
+.ProgressLineImpose_gradient_35 {
+    max-width: 8001px;
+    background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.75));
+    mix-blend-mode: overlay;
+    position: absolute;
+    top: 1rem;
+    right: 0;
+    bottom: 1rem;
+    left: 0;
+}
+.ProgressLineImpose_base__small_55 .ProgressLineImpose_gradient_35 {
+    top: 0;
+    bottom: 0;
+}
+.ProgressLineImpose_base__disabled_cc .ProgressLineImpose_gradient_35 {
+    display: none;
+}
+.ProgressLineImpose_base__finished_d4 .ProgressLineImpose_gradient_35 {
+    background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.75), rgba(0, 0, 0, 0.5));
+}
+.ProgressLineImpose_glow_a5 {
+    width: 60rem;
+    max-width: 8001px;
+    height: 100rem;
+    background-image: var(--progress-glow);
+    background-size: contain;
+    mix-blend-mode: lighten;
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+.ProgressLineImpose_glow__left_d8 {
+    left: 1rem;
+}
+.ProgressLineImpose_base__disabled_cc .ProgressLineImpose_glow_a5,
+.ProgressLineImpose_base__finished_d4 .ProgressLineImpose_glow_a5 {
+    display: none;
+}
+.ProgressLineImpose_base__small_55 .ProgressLineImpose_glow_a5 {
+    width: 44rem;
+    height: 43rem;
+    background-image: var(--progress-glow-small);
+}
+
+/*
+    Gameface can't calculate gradient biggest than 8128px
+    in JS 8000 reserved like anchor for start optimization
+*/
+/* stylelint-disable-line */
+.ProgressBarDeltaSimple_base_6c {
+    width: 0;
+    height: 100%;
+    position: absolute;
+    top: 0;
+}
+.ProgressBarDeltaSimple_delta_99 {
+    width: 0;
+    max-width: 8001px;
+    height: 100%;
+    box-shadow: var(--progress-delta-shadow);
+    background-color: var(--progress-delta-color);
+    position: absolute;
+    bottom: 0;
+    transform-origin: right center;
+    transition-timing-function: cubic-bezier(1, 0, 0.92, 1), cubic-bezier(0.21, 0.61, 0.35, 1);
+    transition-property: width, transform;
+}
+
+/*
+    Gameface can't calculate gradient biggest than 8128px
+    in JS 8000 reserved like anchor for start optimization
+*/
+/* stylelint-disable-line */
+.ProgressBarDeltaGrow_base_7e {
+    width: 0;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    transition-timing-function: cubic-bezier(1, 0, 0.92, 1);
+    transition-property: width;
+}
+.ProgressBarDeltaGrow_base__withoutBounce_b5 {
+    transition-timing-function: cubic-bezier(1, 0, 0.75, 0.75);
+}
+.ProgressBarDeltaGrow_glow_68 {
+    width: 0;
+    max-width: 8001px;
+    height: 100%;
+    box-shadow: var(--progress-delta-shadow);
+    background-color: var(--progress-delta-color);
+    position: absolute;
+    bottom: 0;
+    transform-origin: right center;
+    transition-timing-function: cubic-bezier(1, 0, 0.92, 1);
+    transition-property: width;
+}
+.ProgressBarDeltaGrow_base__withoutBounce_b5 .ProgressBarDeltaGrow_glow_68 {
+    transition-timing-function: cubic-bezier(1, 0, 0.75, 0.75);
+}
+
+.Progress_base_9b {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Progress_progressInfo_4e {
+    display: flex;
+    align-items: center;
+    padding-left: 36rem;
+    position: relative;
+}
+
+.Progress_icon_2d {
+    width: 90rem;
+    height: 90rem;
+    background: no-repeat center / contain;
+    position: absolute;
+    top: 56%;
+    left: -34rem;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.Progress_progress_8c {
+    color: #e7e7e7;
+    font-size: 20rem;
+    font-weight: 700;
+}
+
+.mediaLarge .Progress_progress_8c {
+    font-size: 24rem;
+}
+
+.Progress_currentProgress_45 {
+    color: #ffdd99;
+}
+
+.Progress_progressBar_0e {
+    width: 280rem;
+    margin: 10rem 0 -3rem;
+}
+
+.mediaLarge .Progress_progressBar_0e {
+    width: 320rem;
+    margin: 10rem 0 0;
+}
+
+.Replacement_base_0d {
+    display: flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+}
+
+.Replacement_base__disabled_e4 {
+    opacity: 0.3;
+    cursor: default;
+}
+
+.Replacement_disabledPattern_da {
+    width: 177rem;
+    height: 188rem;
+    background: url('R.images.gui.maps.icons.newYear.common.card.disabled') no-repeat left top / contain;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.Replacement_base__disabled_e4 .Replacement_disabledPattern_da {
+    opacity: 1;
+}
+
+.Replacement_text_8f {
+    color: #ffffff;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    text-shadow: 0 0 14rem #00a2ff;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    right: 86%;
+    transform: translateY(-50%);
+    transition: opacity 0.25s ease-in-out;
+    pointer-events: none;
+}
+
+.mediaLarge .Replacement_text_8f {
+    font-size: 16rem;
+}
+
+.Replacement_base_0d:hover .Replacement_text_8f {
+    opacity: 1;
+}
+
+.Replacement_base__disabled_e4 .Replacement_text_8f {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.Replacement_icon_c3 {
+    width: 48rem;
+    height: 48rem;
+    background: url('R.images.gui.maps.icons.newYear.celebrity_challenge.replacement') no-repeat center / contain;
+}
+
+.Status_base_1c {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    pointer-events: none;
+}
+.Status_replacement_5c {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    transition: opacity 0.3s ease-in;
+    pointer-events: auto;
+}
+.Status_replacement__animated_63 {
+    opacity: 0;
+}
+
+.FormatTextWithColorTags_creamColor_8f {
+    color: #ffdd99;
+}
+
+.FormatTextWithColorTags_brownColor_90 {
+    color: #cbac77;
+}
+
+.FormatTextWithColorTags_credColor_a7 {
+    color: #ced9d9;
+}
+
+.FormatTextWithColorTags_blueColor_73 {
+    color: rgb(205, 237, 255);
+}
+
+.FormatTextWithColorTags_lightBlueColor_fa {
+    color: #aec5f2;
+}
+
+.FormatTextWithColorTags_goldColor_d6 {
+    color: #ffc363;
+}
+
+.FormatTextWithColorTags_grayColor_8b {
+    color: #8c8c7e;
+}
+
+.FormatTextWithColorTags_whiteSpanish_4b {
+    color: #e9e2bf;
+}
+
+.FormatTextWithColorTags_bondColor_53 {
+    color: #c9c9b6;
+}
+
+.FormatTextWithColorTags_yellowColor_84 {
+    color: #feab34;
+}
+
+.PromoCard_base_2b {
+    width: var(--card-width);
+    height: 190rem;
+    position: relative;
+}
+.mediaLarge .PromoCard_base_2b {
+    height: 230rem;
+}
+.PromoCard_base_2b {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15rem 20rem 20rem;
+    text-align: center;
+    position: relative;
+}
+.PromoCard_title_61 {
+    margin-bottom: 12rem;
+    color: #f2f2f7;
+    font-size: 20rem;
+    font-weight: 700;
+}
+.mediaLarge .PromoCard_title_61 {
+    font-size: 24rem;
+}
+.PromoCard_descriptionBox_d2 {
+    flex: 1;
+}
+.PromoCard_description_0a {
+    justify-content: center;
+    color: #f2f2f7;
+    font-size: 14rem;
+    line-height: 1;
+    opacity: 0.9;
+}
+.mediaLarge .PromoCard_description_0a {
+    font-size: 16rem;
+}
+.PromoCard_backgroundBox_74 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    pointer-events: none;
+}
+.PromoCard_background_e5 {
+    width: 220rem;
+    height: 220rem;
+    background: url('R.images.gui.maps.icons.newYear.celebrity_challenge.wreath.wreath_small') no-repeat center /
+        contain;
+    opacity: 0.12;
+}
+.mediaLarge .PromoCard_background_e5 {
+    width: 280rem;
+    height: 280rem;
+}
+
+.Timer_base_01 {
+    display: flex;
+    align-items: center;
+    color: #f2f2f7;
+    font-size: 20rem;
+    font-weight: 700;
+    position: relative;
+}
+.mediaLarge .Timer_base_01 {
+    font-size: 24rem;
+}
+
+.Timer_icon_e2 {
+    width: 32rem;
+    height: 32rem;
+    margin: 0 -4rem -2rem 0;
+    background: url('R.images.gui.maps.icons.newYear.common.timer') no-repeat center / contain;
+}
+
+.TemporaryCard_base_d6 {
+    width: var(--card-width);
+    height: 190rem;
+    position: relative;
+}
+.mediaLarge .TemporaryCard_base_d6 {
+    height: 230rem;
+}
+.TemporaryCard_base_d6 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 13rem 35rem 20rem;
+    color: rgba(242, 242, 247, 0.6);
+    text-align: center;
+}
+.mediaLarge .TemporaryCard_base_d6 {
+    font-size: 16rem;
+}
+.TemporaryCard_inner_ce {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+}
+.TemporaryCard_timer_e3 {
+    margin-bottom: 8rem;
+}
+.TemporaryCard_text_a8 {
+    font-size: 14rem;
+    line-height: 1;
+    white-space: pre-wrap;
+}
+.mediaLarge .TemporaryCard_text_a8 {
+    font-size: 16rem;
+}
+
+.ChallengeList_base_31 {
+    color: #f0fcff;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    display: flex;
+    position: relative;
+}
+
+.ChallengeList_item_98 + .ChallengeList_item_98 {
+    margin-left: var(--card-offset);
+}
+
+.Progression_base_4a {
+    display: flex;
+    flex: 1;
+}
+
+.Progression_item_54 {
+    display: flex;
+    align-items: center;
+}
+
+.Progression_item_54 + .Progression_item_54 {
+    flex: 1;
+}
+
+.Progression_gap_20 {
+    flex: 1;
+    position: relative;
+}
+
+.Progression_circle_e4 {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background-color: rgba(209, 219, 255, 0.5);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 3;
+}
+
+.mediaExtraLarge .Progression_circle_e4 {
+    width: 4rem;
+    height: 4rem;
+}
+
+.Progression_circle__completed_ea {
+    background-color: rgba(209, 219, 255, 0.15);
+}
+
+@keyframes ProgressionRewards_slideInFadeIn_46 {
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+@keyframes ProgressionRewards_fadeOut_ec {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes ProgressionRewards_fadeIn_9e {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+@keyframes ProgressionRewards_fadeInWithScale_0e {
+    0% {
+        opacity: 0;
+        transform: scale(1.2);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@keyframes ProgressionRewards_slideUp_08 {
+    0% {
+        opacity: 0;
+        transform: translateY(20rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes ProgressionRewards_scale_14 {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+@keyframes ProgressionRewards_spin_07 {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+@keyframes ProgressionRewards_blink_a8 {
+    0% {
+        transform: translateY(0rem);
+    }
+
+    100% {
+        transform: translateY(15rem);
+    }
+}
+@keyframes ProgressionRewards_slideInNotification_b4 {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.ProgressionRewards_base_53 {
+    display: flex;
+    align-items: center;
+}
+.ProgressionRewards_rewardWrapper_c7 {
+    position: relative;
+}
+.ProgressionRewards_reward_32 {
+    position: relative;
+}
+.ProgressionRewards_reward_32 + .ProgressionRewards_reward_32 {
+    margin-left: 6rem;
+}
+.mediaLarge .ProgressionRewards_reward_32 + .ProgressionRewards_reward_32 {
+    margin-left: 8rem;
+}
+.mediaExtraLarge .ProgressionRewards_reward_32 + .ProgressionRewards_reward_32 {
+    margin-left: 9rem;
+}
+.ProgressionRewards_reward__discount_12 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 55rem;
+    height: 44rem;
+    border-radius: 4rem;
+    background-image: linear-gradient(180deg, rgba(101, 128, 226, 0.15) 23%, rgba(64, 88, 171, 0.12) 100%);
+    overflow: hidden;
+}
+.mediaLarge .ProgressionRewards_reward__discount_12 {
+    width: 70rem;
+    height: 56rem;
+    border-radius: 6rem;
+}
+.ProgressionRewards_base__completed_01 .ProgressionRewards_reward__discount_12 {
+    box-shadow: 0 0 0 1rem rgba(255, 255, 255, 0.05) inset;
+    background: rgba(101, 128, 226, 0.15)
+        url('R.images.gui.maps.icons.newYear.celebrity_challenge.progression.background') center / contain no-repeat;
+    transition: 0.2s ease-out background-color;
+    cursor: pointer;
+}
+.ProgressionRewards_base__completed_01
+    .ProgressionRewards_reward__discount_12.ProgressionRewards_reward__withPopover_79,
+.ProgressionRewards_base__completed_01 .ProgressionRewards_reward__discount_12:hover {
+    background-color: rgba(101, 128, 226, 0.25);
+}
+.ProgressionRewards_base__discountApplied_2b .ProgressionRewards_reward__discount_12 {
+    box-shadow: none;
+    background: linear-gradient(180deg, rgba(101, 128, 226, 0.15) 23%, rgba(64, 88, 171, 0.12) 100%);
+}
+.ProgressionRewards_base__discountApplied_2b .ProgressionRewards_reward__discount_12:hover {
+    background: linear-gradient(180deg, rgba(101, 128, 226, 0.15) 23%, rgba(64, 88, 171, 0.12) 100%);
+}
+.ProgressionRewards_reward__withPopover_79 {
+    pointer-events: none;
+}
+.ProgressionRewards_reward__common_c2 {
+    width: 38rem;
+    height: 38rem;
+}
+.mediaSmall .ProgressionRewards_reward__common_c2 {
+    width: 40rem;
+    height: 40rem;
+}
+.mediaLarge .ProgressionRewards_reward__common_c2 {
+    width: 48rem;
+    height: 48rem;
+}
+.ProgressionRewards_base__completed_01 .ProgressionRewards_reward__common_c2 {
+    opacity: 0.4;
+}
+.ProgressionRewards_reward__style_66 {
+    cursor: pointer;
+}
+.ProgressionRewards_blink_a8 {
+    width: 104rem;
+    height: 84rem;
+    background-image: linear-gradient(0deg, transparent, rgba(217, 217, 217, 0.6));
+    filter: blur(2rem);
+    mix-blend-mode: overlay;
+    position: absolute;
+    z-index: 3;
+    pointer-events: none;
+}
+.ProgressionRewards_loupe_8e {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80rem;
+    height: 80rem;
+    background: url('R.images.gui.maps.icons.newYear.celebrity_challenge.loupe_hover') center / contain no-repeat;
+    opacity: 0;
+    z-index: 2;
+    transition: opacity 0.2s ease-in-out;
+    pointer-events: none;
+}
+.mediaLarge .ProgressionRewards_loupe_8e {
+    width: 100rem;
+    height: 100rem;
+}
+.ProgressionRewards_reward__common_c2:hover .ProgressionRewards_loupe_8e {
+    opacity: 1;
+}
+.ProgressionRewards_reward__common_c2:active .ProgressionRewards_loupe_8e {
+    opacity: 0.5;
+}
+.ProgressionRewards_rewardInfo_05 {
+    font-family: DINRoundPro;
+}
+[lang='th'] .ProgressionRewards_rewardInfo_05,
+[lang='el'] .ProgressionRewards_rewardInfo_05,
+[lang='vi'] .ProgressionRewards_rewardInfo_05 {
+    font-family: Warhelios;
+}
+[lang='ja'] .ProgressionRewards_rewardInfo_05 {
+    font-family: WarheliosJA;
+}
+[lang='ko'] .ProgressionRewards_rewardInfo_05 {
+    font-family: WarheliosKO;
+}
+[lang='zh_tw'] .ProgressionRewards_rewardInfo_05 {
+    font-family: WarheliosZHTW;
+}
+[lang='zh_sg'] .ProgressionRewards_rewardInfo_05,
+[lang='zh_cn'] .ProgressionRewards_rewardInfo_05 {
+    font-family: WarheliosZHCN;
+}
+.ProgressionRewards_rewardInfo_05 {
+    margin: 0;
+    color: rgba(209, 219, 255, 0.8);
+    font-size: 9rem;
+    line-height: 1.2;
+    position: absolute;
+    right: 0;
+    bottom: -5rem;
+}
+.mediaLarge .ProgressionRewards_rewardInfo_05 {
+    font-size: 12rem;
+}
+.ProgressionRewards_check_ee {
+    width: 15rem;
+    height: 15rem;
+    background: url('R.images.gui.maps.icons.newYear.common.check') no-repeat center / contain;
+    opacity: 0.5;
+    position: absolute;
+    right: 1rem;
+    bottom: 1rem;
+}
+.mediaLarge .ProgressionRewards_check_ee {
+    width: 18rem;
+    height: 18rem;
+    right: 2rem;
+    bottom: 2rem;
+}
+
+.ProgressionItem_base_b2 {
+    display: flex;
+    align-items: center;
+    font-family: DINRoundPro; /* without fallback, this font-family is needed only for numbers for all localizations;*/
+}
+
+.ProgressionItem_levelBox_a3 {
+    margin-right: 4rem;
+    position: relative;
+    z-index: 2;
+}
+
+.mediaLarge .ProgressionItem_levelBox_a3 {
+    margin-right: 5rem;
+}
+
+.mediaExtraLarge .ProgressionItem_levelBox_a3 {
+    margin-right: 14rem;
+}
+
+.ProgressionItem_level_f3 {
+    color: #d1dbff;
+    font-size: 15rem;
+    font-weight: 700;
+    line-height: 1.15;
+    font-size: 19rem;
+    font-weight: 700;
+    opacity: 0.6;
+}
+
+.mediaSmall .ProgressionItem_level_f3 {
+    font-size: 20rem;
+}
+
+.mediaLarge .ProgressionItem_level_f3 {
+    font-size: 24rem;
+}
+
+.ProgressionItem_base__completed_d5 .ProgressionItem_level_f3 {
+    opacity: 0.2;
+}
+
+.ProgressionItem_rewards_c1 {
+    z-index: 1;
+}
+
+.App_base_b6 {
+    margin-left: 84rem;
+    position: relative;
+}
+.mediaSmall .App_base_b6 {
+    margin-left: 110rem;
+}
+.mediaMedium .App_base_b6 {
+    margin-left: 87rem;
+}
+.mediaLarge .App_base_b6 {
+    margin-left: 178rem;
+}
+.mediaExtraLarge .App_base_b6 {
+    margin-left: 86rem;
+}
+.App_base_b6 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
+}
+.App_progressBar_7d {
+    min-height: 93rem;
+}
+.mediaLarge .App_progressBar_7d {
+    min-height: 114rem;
+}
+.mediaExtraLarge .App_progressBar_7d {
+    min-height: 140rem;
+}
+.App_progressBar_7d {
+    padding: 0 25rem 8rem 24rem;
+}
+.mediaLarge .App_progressBar_7d {
+    padding: 0 40rem 20rem;
+}
+.App_logo_15 {
+    position: absolute;
+    top: 33%;
+    left: 24rem;
+    transform: translateY(-50%);
+    pointer-events: auto;
+}
+.mediaMedium .App_logo_15 {
+    top: 32%;
+}
+.mediaLarge .App_logo_15 {
+    left: 40rem;
+}
+.mediaExtraLarge .App_logo_15 {
+    top: 41%;
+}
+.App_logo__advanced_23 {
+    left: 54rem;
+}
+.mediaMedium .App_logo__advanced_23 {
+    left: 64rem;
+}
+.mediaLarge .App_logo__advanced_23 {
+    left: 74rem;
+}
+.mediaExtraLarge .App_logo__advanced_23 {
+    left: 84rem;
+}
+.App_content_85 {
+    pointer-events: auto;
+}

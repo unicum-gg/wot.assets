@@ -198,7 +198,6 @@
                             (e.crystal = 'crystal'),
                             (e.xp = 'xp'),
                             (e.freeXP = 'freeXP'),
-                            (e.eliteXP = 'eliteXP'),
                             (e.equipCoin = 'equipCoin');
                     })(r || (r = {})),
                     (function (e) {
@@ -715,7 +714,7 @@
                 Date.now(), a.Ew.getRegionalDateTime, a.Ew.getFormattedDateTime;
             },
             9768: (e, u, t) => {
-                t.d(u, { O: () => te });
+                t.d(u, { O: () => ae });
                 var a = {};
                 t.r(a),
                     t.d(a, { mouse: () => F, off: () => d, on: () => _, onResize: () => l, onScaleUpdated: () => c });
@@ -749,27 +748,28 @@
                         addPreloadTexture: () => T,
                         children: () => i,
                         displayStatus: () => f,
-                        displayStatusIs: () => J,
+                        displayStatusIs: () => ee,
                         events: () => y,
-                        extraSize: () => ee,
-                        forceTriggerMouseMove: () => Y,
+                        extraSize: () => ue,
+                        forceTriggerMouseMove: () => X,
                         freezeTextureBeforeResize: () => G,
                         getBrowserTexturePath: () => O,
                         getDisplayStatus: () => Q,
+                        getFontNames: () => J,
                         getScale: () => V,
                         getSize: () => $,
                         getViewGlobalPosition: () => U,
-                        isEventHandled: () => K,
+                        isEventHandled: () => Y,
                         isFocused: () => z,
                         pxToRem: () => Z,
                         remToPx: () => j,
                         resize: () => H,
-                        sendEvent: () => N,
+                        sendEvent: () => P,
                         setAnimateWindow: () => q,
-                        setEventHandled: () => X,
+                        setEventHandled: () => K,
                         setInputPaddingsRem: () => M,
                         setSidePaddingsRem: () => W,
-                        whenTutorialReady: () => ue,
+                        whenTutorialReady: () => te,
                     });
                 const l = o('clientResized'),
                     c = o('self.onScaleUpdated'),
@@ -892,7 +892,7 @@
                     k = 16,
                     L = 32,
                     x = 64,
-                    P = (e, u) => {
+                    N = (e, u) => {
                         const t = 'GFViewEventProxy';
                         if (void 0 !== u) {
                             const r = u.args,
@@ -929,15 +929,15 @@
                         return viewEnv.handleViewEvent({ __Type: t, type: e });
                         var a;
                     },
-                    N = {
+                    P = {
                         close(e) {
-                            P('popover' === e ? w : L);
+                            N('popover' === e ? w : L);
                         },
                         minimize() {
-                            P(x);
+                            N(x);
                         },
                         move(e) {
-                            P(k, { isMouseEvent: !0, on: e });
+                            N(k, { isMouseEvent: !0, on: e });
                         },
                     },
                     R = 15;
@@ -984,20 +984,24 @@
                 function z() {
                     return viewEnv.isFocused();
                 }
-                function X() {
+                function K() {
                     return viewEnv.setEventHandled();
                 }
-                function K() {
+                function Y() {
                     return viewEnv.isEventHandled();
                 }
-                function Y() {
+                function X() {
                     viewEnv.forceTriggerMouseMove();
                 }
                 function Q() {
                     return viewEnv.getShowingStatus();
                 }
-                const J = Object.keys(f).reduce((e, u) => ((e[u] = () => viewEnv.getShowingStatus() === f[u]), e), {}),
-                    ee = {
+                const J = (() => {
+                        let e = [];
+                        return () => (0 === e.length && (e = Object.keys(viewEnv.getFontsConfig())), e);
+                    })(),
+                    ee = Object.keys(f).reduce((e, u) => ((e[u] = () => viewEnv.getShowingStatus() === f[u]), e), {}),
+                    ue = {
                         set: (e, u) => {
                             viewEnv.setExtraSizeRem(e, u);
                         },
@@ -1005,13 +1009,13 @@
                             viewEnv.getExtraSizeRem(e, u);
                         },
                     },
-                    ue = Promise.all([
+                    te = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : y.onDomBuilt(e);
                         }),
                         engine.whenReady,
                     ]),
-                    te = { view: n, client: r, sound: B };
+                    ae = { view: n, client: r, sound: B };
             },
             7902: (e, u, t) => {
                 t.d(u, { F: () => a });
@@ -1038,7 +1042,7 @@
                 t.d(u, { D9: () => i, DA: () => r.D, tT: () => r.t });
                 t(3469), t(2133);
                 var a = t(2790),
-                    r = (t(579), t(5360));
+                    r = (t(3779), t(579), t(5360));
                 t(9056);
                 const i = a.Z;
             },
@@ -1157,6 +1161,9 @@
                         t.current
                     );
                 };
+            },
+            3779: (e, u, t) => {
+                t(6179);
             },
             579: (e, u, t) => {
                 t(9768), t(6179);
@@ -2027,8 +2034,8 @@
                     k = R.strings.veh_post_progression.vehPostProgressionView.grid.featureButton.tooltip,
                     L = E()(S.buttonWrapper, S.buttonWrapper__select),
                     x = E()(S.buttonWrapper, S.buttonWrapper__change),
-                    P = E()(S.buttonWrapper, S.buttonWrapper__persistent),
-                    N = (0, i.memo)(
+                    N = E()(S.buttonWrapper, S.buttonWrapper__persistent),
+                    P = (0, i.memo)(
                         ({
                             id: e,
                             stepState: u,
@@ -2052,8 +2059,8 @@
                                     S[`base__stepState${(0, F.e)(u)}`],
                                     S[`base__actionState${(0, F.e)(t)}`],
                                 ),
-                                N = (0, i.useContext)(s.m).progressionAvailability,
-                                R = a || N !== y.G.Available,
+                                P = (0, i.useContext)(s.m).progressionAvailability,
+                                R = a || P !== y.G.Available,
                                 T = C ? k.prebattleSwitch.header() : '',
                                 M = (function (e, u, t) {
                                     return e
@@ -2061,7 +2068,7 @@
                                               tip: k.prebattleSwitch.bodyTip(),
                                           })
                                         : k.$dyn(t);
-                                })(C, d, N),
+                                })(C, d, P),
                                 O = C || (Boolean(M) && R);
                             return n().createElement(
                                 f.i,
@@ -2101,7 +2108,7 @@
                                     ),
                                     n().createElement(
                                         'div',
-                                        { className: P },
+                                        { className: N },
                                         n().createElement(
                                             h,
                                             { active: o && !R, onClick: p, className: S.buttonMix, disabled: R || _ },
@@ -2284,19 +2291,19 @@
                             isTooltipEnabled: e !== _.Received,
                         });
                     });
-                var X = t(9953),
-                    K = t(8475);
-                let Y;
+                var K = t(9953),
+                    Y = t(8475);
+                let X;
                 !(function (e) {
                     (e.Firepower = 'firepower'),
                         (e.Survivability = 'survivability'),
                         (e.Mobility = 'mobility'),
                         (e.Stealth = 'stealth'),
                         (e.None = 'none');
-                })(Y || (Y = {}));
+                })(X || (X = {}));
                 const Q = 'RoleCategoryIcon_base_1c',
                     J = (0, i.memo)(({ roleCategory: e }) => {
-                        const u = e !== Y.None,
+                        const u = e !== X.None,
                             t = (0, i.useMemo)(
                                 () => ({
                                     backgroundImage: u
@@ -2320,7 +2327,7 @@
                         animation__exitActive: 'FeatureRoleCategoryIcon_animation__exitActive_43',
                     },
                     ue = { enterActive: ee.animation__enterActive, exitActive: ee.animation__exitActive },
-                    te = (0, i.memo)(({ stepState: e, actionState: u, roleCategory: t = Y.None, isDisabled: a }) => {
+                    te = (0, i.memo)(({ stepState: e, actionState: u, roleCategory: t = X.None, isDisabled: a }) => {
                         const r = (0, i.useContext)(s.m).progressionAvailability,
                             o = E()(
                                 ee.base,
@@ -2340,10 +2347,10 @@
                                 'div',
                                 { className: `${ee.wrapper} ${ee.wrapper__selected}` },
                                 n().createElement(
-                                    X.Z,
+                                    K.Z,
                                     { mode: 'out-in' },
                                     n().createElement(
-                                        K.Z,
+                                        Y.Z,
                                         { key: t, timeout: 200, classNames: ue, onEnter: l },
                                         n().createElement(J, { roleCategory: t }),
                                     ),
@@ -2470,7 +2477,7 @@
                                         n().createElement(
                                             'div',
                                             { className: ce.featureButton },
-                                            n().createElement(N, {
+                                            n().createElement(P, {
                                                 id: e,
                                                 stepState: t,
                                                 actionState: a,
@@ -2793,21 +2800,21 @@
                     ke = 'Checkmark_base_38',
                     Le = (0, i.memo)(() => n().createElement('div', { className: ke })),
                     xe = 'DiscardButton_base_d3',
-                    Pe = 'DiscardButton_icon_43',
-                    Ne = R.strings.veh_post_progression.vehPostProgressionView.grid.pairModification.discardButton,
+                    Ne = 'DiscardButton_icon_43',
+                    Pe = R.strings.veh_post_progression.vehPostProgressionView.grid.pairModification.discardButton,
                     Re = R.strings.veh_post_progression.vehPostProgressionView.grid.pairModification.buyButton.tooltip,
                     Te = (0, i.memo)(({ onClick: e, isDisabled: u = !1 }) => {
                         const t = (0, i.useContext)(s.m).progressionAvailability;
                         return n().createElement(
                             f.i,
-                            { header: u ? void 0 : Ne.tooltip.header(), body: u ? Re.$dyn(t) : Ne.tooltip.body() },
+                            { header: u ? void 0 : Pe.tooltip.header(), body: u ? Re.$dyn(t) : Pe.tooltip.body() },
                             n().createElement(
                                 'div',
                                 null,
                                 n().createElement(
                                     D.u5,
                                     { onClick: e, type: D.L$.secondary, mixClass: xe, disabled: u },
-                                    n().createElement('div', { className: Pe }),
+                                    n().createElement('div', { className: Ne }),
                                 ),
                             ),
                         );
@@ -2825,7 +2832,7 @@
                     je = 'BuyButton_stateHighlightActive_ff',
                     qe = 'BuyButton_stateDisabled_8b',
                     ze = 'BuyButton_content_a8',
-                    Xe = (0, i.memo)(({ children: e, isDisabled: u = !1, onClick: t }) => {
+                    Ke = (0, i.memo)(({ children: e, isDisabled: u = !1, onClick: t }) => {
                         const a = (0, i.useContext)(s.m).progressionAvailability,
                             r =
                                 R.strings.veh_post_progression.vehPostProgressionView.grid.pairModification.buyButton.tooltip.$dyn(
@@ -2863,7 +2870,7 @@
                             ),
                         );
                     }),
-                    Ke = {
+                    Ye = {
                         base: 'Price_base_24',
                         itemWrapper: 'Price_itemWrapper_22',
                         itemWrapper__label: 'Price_itemWrapper__label_50',
@@ -2881,7 +2888,7 @@
                         icon__typeXp: 'Price_icon__typeXp_88',
                         icon__typeFreeXp: 'Price_icon__typeFreeXp_ac',
                     },
-                    Ye = ({
+                    Xe = ({
                         id: e,
                         stepState: u,
                         isReceived: t,
@@ -2893,19 +2900,19 @@
                         const d = (0, r.tT)('model.grid', r.DA.None).onMultiStepActionClick,
                             A = (0, i.useContext)(s.m).progressionAvailability,
                             m = E()(
-                                Ke.base,
-                                Ke[`base__stepState${(0, F.e)(u)}`],
-                                t && Ke.base__received,
-                                a && Ke.base__otherReceived,
-                                o && Ke.base__selected,
-                                l && Ke.base__otherSelected,
+                                Ye.base,
+                                Ye[`base__stepState${(0, F.e)(u)}`],
+                                t && Ye.base__received,
+                                a && Ye.base__otherReceived,
+                                o && Ye.base__selected,
+                                l && Ye.base__otherSelected,
                             ),
                             b = (0, We.b)(_),
                             D = b.value,
                             C = b.name,
                             p = b.isEnough,
                             g = C,
-                            B = E()(Ke.icon, [Ke[`icon__type${(0, F.e)(g)}`]]),
+                            B = E()(Ye.icon, [Ye[`icon__type${(0, F.e)(g)}`]]),
                             v = !p || A !== y.G.Available,
                             h = (0, i.useCallback)(
                                 (u) => {
@@ -2918,18 +2925,18 @@
                             { className: m },
                             n().createElement(
                                 'div',
-                                { className: `${Ke.itemWrapper} ${Ke.itemWrapper__label}` },
+                                { className: `${Ye.itemWrapper} ${Ye.itemWrapper__label}` },
                                 n().createElement(Me.F, { type: g, size: Oe.et.small, value: D }),
                             ),
                             n().createElement(
                                 'div',
-                                { className: `${Ke.itemWrapper} ${Ke.itemWrapper__button}` },
+                                { className: `${Ye.itemWrapper} ${Ye.itemWrapper__button}` },
                                 n().createElement(
-                                    Xe,
+                                    Ke,
                                     { isDisabled: v, onClick: h },
                                     n().createElement(
                                         'span',
-                                        { className: Ke.buttonContentWrapper },
+                                        { className: Ye.buttonContentWrapper },
                                         n().createElement(Ie.A, { value: D, format: 'integral' }),
                                         n().createElement('span', { className: B }),
                                     ),
@@ -2993,8 +3000,8 @@
                             L = c.imageResName,
                             x = ((e) =>
                                 e.extraLarge ? Je.c_120x120 : e.large || e.medium ? Je.c_100x100 : Je.c_80x80)(v),
-                            P = (0, i.useMemo)(() => ({ backgroundImage: `url(${x.$dyn(L)})` }), [L, x]),
-                            N = (0, i.useMemo)(() => ({ backgroundImage: `url(${x.$dyn(`${L}_disabled`)})` }), [L, x]),
+                            N = (0, i.useMemo)(() => ({ backgroundImage: `url(${x.$dyn(L)})` }), [L, x]),
+                            P = (0, i.useMemo)(() => ({ backgroundImage: `url(${x.$dyn(`${L}_disabled`)})` }), [L, x]),
                             T = (0, l.Z)(['base'], Qe),
                             M = E()(
                                 T.base,
@@ -3030,12 +3037,12 @@
                             n().createElement(
                                 'div',
                                 { className: `${Qe.imageWrapper} ${Qe.imageWrapper__enabled}` },
-                                n().createElement('div', { className: Qe.image, style: P }),
+                                n().createElement('div', { className: Qe.image, style: N }),
                             ),
                             n().createElement(
                                 'div',
                                 { className: `${Qe.imageWrapper} ${Qe.imageWrapper__disabled}` },
-                                n().createElement('div', { className: Qe.image, style: N }),
+                                n().createElement('div', { className: Qe.image, style: P }),
                             ),
                             n().createElement('div', { className: Qe.disabledPattern }),
                             n().createElement(
@@ -3049,7 +3056,7 @@
                                     'div',
                                     { className: Qe.content },
                                     U &&
-                                        n().createElement(Ye, {
+                                        n().createElement(Xe, {
                                             id: e,
                                             stepState: d,
                                             isReceived: u,
@@ -3403,15 +3410,15 @@
                         base__positionLeft: 'GridSideGroup_base__positionLeft_9a',
                         base__positionRight: 'GridSideGroup_base__positionRight_b4',
                     };
-                let Pu;
+                let Nu;
                 !(function (e) {
                     (e.Left = 'left'), (e.Right = 'right');
-                })(Pu || (Pu = {}));
-                const Nu = ({ position: e, steps: u }) => {
+                })(Nu || (Nu = {}));
+                const Pu = ({ position: e, steps: u }) => {
                         const t = (0, l.Z)(['base'], xu),
-                            a = e === Pu.Right ? 0 : 1,
+                            a = e === Nu.Right ? 0 : 1,
                             r = Math.max(3 - u.length, 0),
-                            i = e === Pu.Right ? Su.Left : Su.Right,
+                            i = e === Nu.Right ? Su.Left : Su.Right,
                             o = E()(t.base, xu[`base__position${(0, F.e)(e)}`]);
                         return n().createElement(
                             'div',
@@ -3571,9 +3578,9 @@
                         return n().createElement(
                             'div',
                             { className: Ru },
-                            n().createElement(Nu, { position: Pu.Left, steps: E }),
+                            n().createElement(Pu, { position: Nu.Left, steps: E }),
                             n().createElement(we, { steps: _ }),
-                            n().createElement(Nu, { position: Pu.Right, steps: F }),
+                            n().createElement(Pu, { position: Nu.Right, steps: F }),
                         );
                     };
             },
@@ -3797,10 +3804,6 @@
                     'icon__freeXP-big': 'Currency_icon__freeXP-big_21',
                     'icon__freeXP-large': 'Currency_icon__freeXP-large_c8',
                     'icon__freeXP-extraLarge': 'Currency_icon__freeXP-extraLarge_58',
-                    'icon__eliteXP-small': 'Currency_icon__eliteXP-small_45',
-                    'icon__eliteXP-big': 'Currency_icon__eliteXP-big_c0',
-                    'icon__eliteXP-large': 'Currency_icon__eliteXP-large_1b',
-                    'icon__eliteXP-extraLarge': 'Currency_icon__eliteXP-extraLarge_9b',
                     'icon__equipCoin-small': 'Currency_icon__equipCoin-small_32',
                     'icon__equipCoin-big': 'Currency_icon__equipCoin-big_79',
                     'icon__equipCoin-large': 'Currency_icon__equipCoin-large_2c',
@@ -3812,7 +3815,6 @@
                     value__xp: 'Currency_value__xp_b0',
                     value__crystal: 'Currency_value__crystal_19',
                     value__equipCoin: 'Currency_value__equipCoin_d0',
-                    value__eliteXP: 'Currency_value__eliteXP_62',
                     value__notEnough: 'Currency_value__notEnough_56',
                     stock: 'Currency_stock_87',
                     stock__indent: 'Currency_stock__indent_a1',

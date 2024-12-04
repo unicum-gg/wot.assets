@@ -2,7 +2,7 @@
     'use strict';
     var __webpack_modules__ = {
             768: (u, e, t) => {
-                t.d(e, { O: () => tu });
+                t.d(e, { O: () => nu });
                 var n = {};
                 t.r(n),
                     t.d(n, { mouse: () => l, off: () => D, on: () => F, onResize: () => s, onScaleUpdated: () => A });
@@ -36,27 +36,28 @@
                         addPreloadTexture: () => I,
                         children: () => E,
                         displayStatus: () => b,
-                        displayStatusIs: () => J,
+                        displayStatusIs: () => uu,
                         events: () => T,
-                        extraSize: () => uu,
+                        extraSize: () => eu,
                         forceTriggerMouseMove: () => Q,
                         freezeTextureBeforeResize: () => Y,
                         getBrowserTexturePath: () => M,
                         getDisplayStatus: () => Z,
+                        getFontNames: () => J,
                         getScale: () => V,
                         getSize: () => G,
                         getViewGlobalPosition: () => q,
                         isEventHandled: () => K,
                         isFocused: () => W,
                         pxToRem: () => z,
-                        remToPx: () => X,
+                        remToPx: () => j,
                         resize: () => $,
                         sendEvent: () => k,
-                        setAnimateWindow: () => j,
+                        setAnimateWindow: () => X,
                         setEventHandled: () => H,
                         setInputPaddingsRem: () => x,
                         setSidePaddingsRem: () => L,
-                        whenTutorialReady: () => eu,
+                        whenTutorialReady: () => tu,
                     });
                 const s = a('clientResized'),
                     A = a('self.onScaleUpdated'),
@@ -251,7 +252,7 @@
                 }
                 function q(u = 'rem') {
                     const e = viewEnv.getViewGlobalPositionRem();
-                    return 'rem' === u ? e : { x: X(e.x), y: X(e.y) };
+                    return 'rem' === u ? e : { x: j(e.x), y: j(e.y) };
                 }
                 function Y() {
                     viewEnv.freezeTextureBeforeResize();
@@ -262,10 +263,10 @@
                 function z(u) {
                     return viewEnv.pxToRem(u);
                 }
-                function X(u) {
+                function j(u) {
                     return viewEnv.remToPx(u);
                 }
-                function j(u, e) {
+                function X(u, e) {
                     viewEnv.setAnimateWindow(u, e);
                 }
                 function W() {
@@ -283,8 +284,12 @@
                 function Z() {
                     return viewEnv.getShowingStatus();
                 }
-                const J = Object.keys(b).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === b[e]), u), {}),
-                    uu = {
+                const J = (() => {
+                        let u = [];
+                        return () => (0 === u.length && (u = Object.keys(viewEnv.getFontsConfig())), u);
+                    })(),
+                    uu = Object.keys(b).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === b[e]), u), {}),
+                    eu = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -292,13 +297,13 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    eu = Promise.all([
+                    tu = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : T.onDomBuilt(u);
                         }),
                         engine.whenReady,
                     ]),
-                    tu = { view: i, client: r, sound: v };
+                    nu = { view: i, client: r, sound: v };
             },
             521: (u, e, t) => {
                 let n, r;
@@ -699,7 +704,7 @@
                         getFormattedDateTime: (u, e, t = !0) => regionalDateTime.getFormattedDateTime(u, e, t),
                     };
             },
-            375: (u, e, t) => {
+            990: (u, e, t) => {
                 var n = t(179),
                     r = t.n(n),
                     E = t(493),
@@ -1003,7 +1008,7 @@
                         return void 0 !== this.props.value && void 0 !== e ? e : null;
                     }
                 }
-                let $, q, Y, V, z, X, j, W;
+                let $, q, Y, V, z, j, X, W;
                 (G.defaultProps = { format: 'integral' }),
                     (function (u) {
                         (u.Items = 'items'),
@@ -1026,6 +1031,7 @@
                             (u.TankmenXpFactor = 'tankmenXPFactor'),
                             (u.FreeXpFactor = 'freeXPFactor'),
                             (u.BattleToken = 'battleToken'),
+                            (u.Entitlements = 'entitlements'),
                             (u.PremiumUniversal = 'premium_universal'),
                             (u.Gold = 'gold'),
                             (u.Credits = 'credits'),
@@ -1043,6 +1049,8 @@
                             (u.BattleBadge = 'dossier_badge'),
                             (u.NewYearInvoice = 'newYearInvoice'),
                             (u.NewYearSlot = 'newYearSlot'),
+                            (u.NewYearGuestD = 'ny_dog'),
+                            (u.EquipCoin = 'equipCoin'),
                             (u.BonusX5 = 'battle_bonus_x5'),
                             (u.CrewBonusX3 = 'crew_bonus_x3'),
                             (u.Vehicles = 'vehicles'),
@@ -1051,7 +1059,6 @@
                             (u.DeluxeGift = 'deluxe_gift'),
                             (u.BattleBoosterGift = 'battleBooster_gift'),
                             (u.OptionalDevice = 'optionalDevice'),
-                            (u.EquipCoin = 'equipCoin'),
                             (u.LootBox = 'lootBox'),
                             (u.BrCoin = 'brcoin');
                     })($ || ($ = {})),
@@ -1135,7 +1142,7 @@
                     })(z || (z = {})),
                     (function (u) {
                         u.BATTLE_BOOSTER = 'battleBooster';
-                    })(X || (X = {})),
+                    })(j || (j = {})),
                     (function (u) {
                         (u.BATTLE_BOOSTER = 'battleBooster'),
                             (u.BATTLE_BOOSTER_REPLACE = 'battleBoosterReplace'),
@@ -1152,7 +1159,7 @@
                             (u.PROGRESSION_STYLE_UPGRADED_4 = 'progressionStyleUpgraded_4'),
                             (u.PROGRESSION_STYLE_UPGRADED_5 = 'progressionStyleUpgraded_5'),
                             (u.PROGRESSION_STYLE_UPGRADED_6 = 'progressionStyleUpgraded_6');
-                    })(j || (j = {})),
+                    })(X || (X = {})),
                     (function (u) {
                         (u[(u.Engraving = 0)] = 'Engraving'), (u[(u.Background = 1)] = 'Background');
                     })(W || (W = {}));
@@ -1175,6 +1182,7 @@
                         $.TankmenXpFactor,
                         $.FreeXpFactor,
                         $.BattleToken,
+                        $.Entitlements,
                         $.PremiumUniversal,
                         $.NaturalCover,
                         $.BpCoin,
@@ -1236,9 +1244,6 @@
                             case 'tokens':
                             case 'lootBox':
                             case 'battleToken':
-                                return 'big' === e
-                                    ? u.iconBig.replace('..', 'img://gui')
-                                    : u.iconSmall.replace('..', 'img://gui');
                             case 'customizations':
                             case 'styleProgress':
                             case 'crewSkins':
@@ -1247,6 +1252,10 @@
                             case 'tmanToken':
                             case 'battlePassSelectToken':
                                 return `R.images.gui.maps.icons.quests.bonuses.${e}.${E}`;
+                            case 'entitlements':
+                                return 'big' === e
+                                    ? u.iconBig.replace('..', 'img://gui')
+                                    : u.iconSmall.replace('..', 'img://gui');
                             case 'crewBooks':
                                 return `R.images.gui.maps.icons.crewBooks.books.${e}.${E}`;
                             case 'dogTagComponents':
@@ -1280,10 +1289,14 @@
                                 return `R.images.gui.maps.icons.quests.bonuses.${e}.freeXP`;
                             case 'premiumTank':
                                 return `R.images.gui.maps.icons.quests.bonuses.${e}.vehicles`;
+                            case 'premiumTank_rent':
+                                return `R.images.gui.maps.icons.quests.bonuses.${e}.vehicles_rent`;
                             case 'styleProgressToken':
                                 return `R.images.gui.maps.icons.quests.bonuses.${e}.style_3d`;
                             case 'collectionItem':
                                 return `R.images.gui.maps.icons.collectionItems.${o}.${E}`;
+                            case 'newYearSlot':
+                                return `R.images.gui.maps.icons.newYear.rewards.${e}.slot`;
                             default:
                                 return `R.images.gui.maps.icons.quests.bonuses.${e}.${t}`;
                         }
@@ -1607,42 +1620,42 @@
                                 switch (e) {
                                     case z.BATTLE_BOOSTER:
                                     case z.BATTLE_BOOSTER_REPLACE:
-                                        return X.BATTLE_BOOSTER;
+                                        return j.BATTLE_BOOSTER;
                                 }
                             })(n, E),
                             C = ((u) => {
                                 if (void 0 === u) return null;
                                 switch (u) {
                                     case z.BATTLE_BOOSTER:
-                                        return j.BATTLE_BOOSTER;
+                                        return X.BATTLE_BOOSTER;
                                     case z.BATTLE_BOOSTER_REPLACE:
-                                        return j.BATTLE_BOOSTER_REPLACE;
+                                        return X.BATTLE_BOOSTER_REPLACE;
                                     case z.BUILT_IN_EQUIPMENT:
-                                        return j.BUILT_IN_EQUIPMENT;
+                                        return X.BUILT_IN_EQUIPMENT;
                                     case z.EQUIPMENT_PLUS:
-                                        return j.EQUIPMENT_PLUS;
+                                        return X.EQUIPMENT_PLUS;
                                     case z.EQUIPMENT_TROPHY_BASIC:
-                                        return j.EQUIPMENT_TROPHY_BASIC;
+                                        return X.EQUIPMENT_TROPHY_BASIC;
                                     case z.EQUIPMENT_TROPHY_UPGRADED:
-                                        return j.EQUIPMENT_TROPHY_UPGRADED;
+                                        return X.EQUIPMENT_TROPHY_UPGRADED;
                                     case z.EQUIPMENT_MODERNIZED_UPGRADED_1:
-                                        return j.EQUIPMENT_MODERNIZED_UPGRADED_1;
+                                        return X.EQUIPMENT_MODERNIZED_UPGRADED_1;
                                     case z.EQUIPMENT_MODERNIZED_UPGRADED_2:
-                                        return j.EQUIPMENT_MODERNIZED_UPGRADED_2;
+                                        return X.EQUIPMENT_MODERNIZED_UPGRADED_2;
                                     case z.EQUIPMENT_MODERNIZED_UPGRADED_3:
-                                        return j.EQUIPMENT_MODERNIZED_UPGRADED_3;
+                                        return X.EQUIPMENT_MODERNIZED_UPGRADED_3;
                                     case z.PROGRESSION_STYLE_UPGRADED_1:
-                                        return j.PROGRESSION_STYLE_UPGRADED_1;
+                                        return X.PROGRESSION_STYLE_UPGRADED_1;
                                     case z.PROGRESSION_STYLE_UPGRADED_2:
-                                        return j.PROGRESSION_STYLE_UPGRADED_2;
+                                        return X.PROGRESSION_STYLE_UPGRADED_2;
                                     case z.PROGRESSION_STYLE_UPGRADED_3:
-                                        return j.PROGRESSION_STYLE_UPGRADED_3;
+                                        return X.PROGRESSION_STYLE_UPGRADED_3;
                                     case z.PROGRESSION_STYLE_UPGRADED_4:
-                                        return j.PROGRESSION_STYLE_UPGRADED_4;
+                                        return X.PROGRESSION_STYLE_UPGRADED_4;
                                     case z.PROGRESSION_STYLE_UPGRADED_5:
-                                        return j.PROGRESSION_STYLE_UPGRADED_5;
+                                        return X.PROGRESSION_STYLE_UPGRADED_5;
                                     case z.PROGRESSION_STYLE_UPGRADED_6:
-                                        return j.PROGRESSION_STYLE_UPGRADED_6;
+                                        return X.PROGRESSION_STYLE_UPGRADED_6;
                                 }
                             })(E),
                             _ = ((u, e) => {
@@ -2009,6 +2022,6 @@
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             t.forEach(e.bind(null, 0)), (t.push = e.bind(null, t.push.bind(t)));
         })();
-    var __webpack_exports__ = __webpack_require__.O(void 0, [453], () => __webpack_require__(375));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [453], () => __webpack_require__(990));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

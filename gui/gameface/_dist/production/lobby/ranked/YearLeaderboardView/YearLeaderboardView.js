@@ -2,7 +2,7 @@
     'use strict';
     var __webpack_modules__ = {
             768: (u, e, t) => {
-                t.d(e, { O: () => tu });
+                t.d(e, { O: () => nu });
                 var n = {};
                 t.r(n),
                     t.d(n, { mouse: () => C, off: () => D, on: () => s, onResize: () => r, onScaleUpdated: () => i });
@@ -36,27 +36,28 @@
                         addPreloadTexture: () => R,
                         children: () => A,
                         displayStatus: () => g,
-                        displayStatusIs: () => J,
+                        displayStatusIs: () => uu,
                         events: () => f,
-                        extraSize: () => uu,
+                        extraSize: () => eu,
                         forceTriggerMouseMove: () => X,
                         freezeTextureBeforeResize: () => $,
                         getBrowserTexturePath: () => S,
                         getDisplayStatus: () => Q,
+                        getFontNames: () => J,
                         getScale: () => G,
                         getSize: () => Y,
                         getViewGlobalPosition: () => H,
                         isEventHandled: () => Z,
                         isFocused: () => K,
-                        pxToRem: () => W,
-                        remToPx: () => j,
+                        pxToRem: () => j,
+                        remToPx: () => W,
                         resize: () => U,
                         sendEvent: () => M,
                         setAnimateWindow: () => z,
                         setEventHandled: () => q,
                         setInputPaddingsRem: () => N,
                         setSidePaddingsRem: () => V,
-                        whenTutorialReady: () => eu,
+                        whenTutorialReady: () => tu,
                     });
                 const r = o('clientResized'),
                     i = o('self.onScaleUpdated'),
@@ -251,7 +252,7 @@
                 }
                 function H(u = 'rem') {
                     const e = viewEnv.getViewGlobalPositionRem();
-                    return 'rem' === u ? e : { x: j(e.x), y: j(e.y) };
+                    return 'rem' === u ? e : { x: W(e.x), y: W(e.y) };
                 }
                 function $() {
                     viewEnv.freezeTextureBeforeResize();
@@ -259,10 +260,10 @@
                 function G() {
                     return viewEnv.getScale();
                 }
-                function W(u) {
+                function j(u) {
                     return viewEnv.pxToRem(u);
                 }
-                function j(u) {
+                function W(u) {
                     return viewEnv.remToPx(u);
                 }
                 function z(u, e) {
@@ -283,8 +284,12 @@
                 function Q() {
                     return viewEnv.getShowingStatus();
                 }
-                const J = Object.keys(g).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === g[e]), u), {}),
-                    uu = {
+                const J = (() => {
+                        let u = [];
+                        return () => (0 === u.length && (u = Object.keys(viewEnv.getFontsConfig())), u);
+                    })(),
+                    uu = Object.keys(g).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === g[e]), u), {}),
+                    eu = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -292,13 +297,13 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    eu = Promise.all([
+                    tu = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : f.onDomBuilt(u);
                         }),
                         engine.whenReady,
                     ]),
-                    tu = { view: F, client: E, sound: b };
+                    nu = { view: F, client: E, sound: b };
             },
             521: (u, e, t) => {
                 let n, E;
@@ -1063,7 +1068,7 @@
                         base__left: 'TextButton_base__left_ff',
                         shine: 'TextButton_shine_e2',
                     },
-                    W = [
+                    j = [
                         'caption',
                         'onClick',
                         'goto',
@@ -1077,9 +1082,9 @@
                         'soundClick',
                         'soundHover',
                     ];
-                function j() {
+                function W() {
                     return (
-                        (j = Object.assign
+                        (W = Object.assign
                             ? Object.assign.bind()
                             : function (u) {
                                   for (var e = 1; e < arguments.length; e++) {
@@ -1088,7 +1093,7 @@
                                   }
                                   return u;
                               }),
-                        j.apply(null, arguments)
+                        W.apply(null, arguments)
                     );
                 }
                 class z extends E().PureComponent {
@@ -1138,7 +1143,7 @@
                                             t[n] = u[n];
                                         }
                                     return t;
-                                })(u, W)),
+                                })(u, j)),
                             B = I()(G.base, G[`base__${F}`], G[`base__${A}`], null == o ? void 0 : o.base),
                             C = I()(G.icon, G[`icon__${F}`], G[`icon__${A}`], null == o ? void 0 : o.icon),
                             c = I()(G.glow, null == o ? void 0 : o.glow),
@@ -1146,7 +1151,7 @@
                             d = I()(G.goto, null == o ? void 0 : o.goto);
                         return E().createElement(
                             'div',
-                            j(
+                            W(
                                 {
                                     className: B,
                                     onMouseEnter: this._onMouseEnter(a),

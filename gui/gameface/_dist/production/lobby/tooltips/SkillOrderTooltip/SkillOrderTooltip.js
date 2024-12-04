@@ -2,7 +2,7 @@
     'use strict';
     var __webpack_modules__ = {
             9768: (u, e, t) => {
-                t.d(e, { O: () => Q });
+                t.d(e, { O: () => J });
                 var n = {};
                 t.r(n),
                     t.d(n, { mouse: () => d, off: () => c, on: () => A, onResize: () => E, onScaleUpdated: () => F });
@@ -36,13 +36,14 @@
                         addPreloadTexture: () => x,
                         children: () => o,
                         displayStatus: () => g,
-                        displayStatusIs: () => Z,
+                        displayStatusIs: () => $,
                         events: () => b,
-                        extraSize: () => $,
+                        extraSize: () => X,
                         forceTriggerMouseMove: () => H,
                         freezeTextureBeforeResize: () => j,
                         getBrowserTexturePath: () => P,
                         getDisplayStatus: () => Y,
+                        getFontNames: () => Z,
                         getScale: () => V,
                         getSize: () => N,
                         getViewGlobalPosition: () => I,
@@ -56,7 +57,7 @@
                         setEventHandled: () => q,
                         setInputPaddingsRem: () => L,
                         setSidePaddingsRem: () => S,
-                        whenTutorialReady: () => X,
+                        whenTutorialReady: () => Q,
                     });
                 const E = a('clientResized'),
                     F = a('self.onScaleUpdated'),
@@ -279,8 +280,12 @@
                 function Y() {
                     return viewEnv.getShowingStatus();
                 }
-                const Z = Object.keys(g).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === g[e]), u), {}),
-                    $ = {
+                const Z = (() => {
+                        let u = [];
+                        return () => (0 === u.length && (u = Object.keys(viewEnv.getFontsConfig())), u);
+                    })(),
+                    $ = Object.keys(g).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === g[e]), u), {}),
+                    X = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -288,13 +293,13 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    X = Promise.all([
+                    Q = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : b.onDomBuilt(u);
                         }),
                         engine.whenReady,
                     ]),
-                    Q = { view: i, client: r, sound: v };
+                    J = { view: i, client: r, sound: v };
             },
             5521: (u, e, t) => {
                 let n, r;
@@ -1237,7 +1242,7 @@
                         for (; r; ) o !== r.index && t(u.slice(o, r.index)), n(r), (o = e.lastIndex), (r = e.exec(u));
                         o !== u.length && t(u.slice(o));
                     },
-                    G = new RegExp('[฀-๿][ัำ-ฺ็-๎]*', 'gu'),
+                    G = new RegExp('[฀-๿][ัำ-ฺ็-๎]*|[^฀-๿]', 'gu'),
                     q = N
                         ? (u) => {
                               const e = [];

@@ -1,0 +1,315 @@
+.TooltipDecorator_base_c9 {
+    display: flex;
+    position: absolute;
+}
+
+.TooltipDecorator_base__theme-default_6d .TooltipDecorator_decorator_3d {
+    padding: 4rem 6rem 8rem;
+    border-image-source: url('R.atlases.components.tooltip_background');
+    border-image-slice: 24 fill;
+    border-image-width: 24rem;
+    position: relative;
+}
+
+.Countdown_base_fe {
+    display: flex;
+    align-items: center;
+}
+
+.Countdown_icon_8b {
+    width: 32rem;
+    height: 32rem;
+    background: no-repeat center / contain;
+}
+
+.Countdown_description_8d {
+    color: #ffdd99;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+.FormatText_base_d0 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.CollectResUnavailable_base_82 {
+    color: #8c8c7e;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+    max-width: 325rem;
+    padding: 18rem 20rem;
+    line-height: 1.4;
+}
+
+.CollectResUnavailable_timerInText_38 {
+    display: flex;
+    align-items: center;
+    height: 24rem;
+    margin-left: -4rem;
+}
+
+.Favorites_base_5f {
+    color: #8c8c7e;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+    max-width: 360rem;
+}
+
+.Favorites_simpleText_9d {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 16rem 20rem;
+}
+
+.Favorites_timerInText_af {
+    display: flex;
+    align-items: center;
+    height: 24rem;
+    margin-left: -8rem;
+}
+
+.Favorites_timerIconInText_b7 {
+    margin-right: -4rem;
+}
+
+.Favorites_textRow_1c + .Favorites_textRow_1c {
+    margin-top: 1em;
+}
+
+.FormatTextWithColorTags_creamColor_8f {
+    color: #ffdd99;
+}
+
+.FormatTextWithColorTags_brownColor_90 {
+    color: #cbac77;
+}
+
+.FormatTextWithColorTags_credColor_a7 {
+    color: #ced9d9;
+}
+
+.FormatTextWithColorTags_blueColor_73 {
+    color: rgb(205, 237, 255);
+}
+
+.FormatTextWithColorTags_lightBlueColor_fa {
+    color: #aec5f2;
+}
+
+.FormatTextWithColorTags_goldColor_d6 {
+    color: #ffc363;
+}
+
+.FormatTextWithColorTags_grayColor_8b {
+    color: #8c8c7e;
+}
+
+.FormatTextWithColorTags_whiteSpanish_4b {
+    color: #e9e2bf;
+}
+
+.FormatTextWithColorTags_bondColor_53 {
+    color: #c9c9b6;
+}
+
+.FormatTextWithColorTags_yellowColor_84 {
+    color: #feab34;
+}
+
+.TextOverflow_base_3b {
+    max-width: 100%;
+    line-height: 1.3;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.OnlineStatus_base_ce {
+    width: 30rem;
+    height: 39rem;
+    background: url('R.images.gui.maps.icons.newYear.common.online_statuses') no-repeat -100% 0% / 300% 100%;
+}
+
+.OnlineStatus_base__online_1f {
+    background-position: 0% 0%;
+}
+
+.OnlineStatus_base__offline_66 {
+    background-position: 50% 0%;
+}
+
+.OnlineStatus_base__busy_27 {
+    background-position: 100% 0%;
+}
+
+@keyframes PlayerWithStatus_slideInFadeIn_81 {
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+@keyframes PlayerWithStatus_fadeOut_da {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes PlayerWithStatus_fadeIn_db {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+@keyframes PlayerWithStatus_fadeInWithScale_bb {
+    0% {
+        opacity: 0;
+        transform: scale(1.2);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@keyframes PlayerWithStatus_slideUp_ac {
+    0% {
+        opacity: 0;
+        transform: translateY(20rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes PlayerWithStatus_scale_9e {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+@keyframes PlayerWithStatus_spin_3c {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+@keyframes PlayerWithStatus_blink_d3 {
+    0% {
+        transform: translateY(0rem);
+    }
+
+    100% {
+        transform: translateY(15rem);
+    }
+}
+@keyframes PlayerWithStatus_slideInNotification_ad {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.PlayerWithStatus_base_a9 {
+    font-family: DINRoundPro;
+}
+[lang='th'] .PlayerWithStatus_base_a9,
+[lang='el'] .PlayerWithStatus_base_a9,
+[lang='vi'] .PlayerWithStatus_base_a9 {
+    font-family: Warhelios;
+}
+[lang='ja'] .PlayerWithStatus_base_a9 {
+    font-family: WarheliosJA;
+}
+[lang='ko'] .PlayerWithStatus_base_a9 {
+    font-family: WarheliosKO;
+}
+[lang='zh_tw'] .PlayerWithStatus_base_a9 {
+    font-family: WarheliosZHTW;
+}
+[lang='zh_sg'] .PlayerWithStatus_base_a9,
+[lang='zh_cn'] .PlayerWithStatus_base_a9 {
+    font-family: WarheliosZHCN;
+}
+.PlayerWithStatus_base_a9 {
+    display: flex;
+    align-items: center;
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 20rem;
+}
+.PlayerWithStatus_base__absoluteStatus_8b {
+    position: relative;
+}
+.PlayerWithStatus_status_25 {
+    position: relative;
+    left: 2rem;
+}
+.PlayerWithStatus_base__absoluteStatus_8b .PlayerWithStatus_status_25 {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(-100%, -50%);
+}
+.PlayerWithStatus_name_8a {
+    margin-bottom: 4rem;
+}
+.PlayerWithStatus_base__simple_ad .PlayerWithStatus_name_8a {
+    margin-left: 2rem;
+    margin-top: -0.3em;
+    color: #e9e2bf;
+    font-size: 15rem;
+    font-weight: 700;
+    line-height: 17rem;
+    position: relative;
+    top: 4rem;
+}
+.PlayerWithStatus_base__primary_34 .PlayerWithStatus_name_8a {
+    color: #c1d9ff;
+}
+
+.PlayerInfo_base_18 {
+    color: #8c8c7e;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+    max-width: 320rem;
+    padding: 4rem 0;
+}
+
+.PlayerInfo_status_85 {
+    padding-right: 20rem;
+}
+
+.PlayerInfo_description_c6 {
+    color: #8c8c7e;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    margin-top: -0.5em;
+    padding-left: 30rem;
+    padding-right: 20rem;
+    padding-bottom: 12rem;
+}

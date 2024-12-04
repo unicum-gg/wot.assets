@@ -1,0 +1,206 @@
+.TooltipDecorator_base_c9 {
+    display: flex;
+    position: absolute;
+}
+
+.TooltipDecorator_base__theme-default_6d .TooltipDecorator_decorator_3d {
+    padding: 4rem 6rem 8rem;
+    border-image-source: url('R.atlases.components.tooltip_background');
+    border-image-slice: 24 fill;
+    border-image-width: 24rem;
+    position: relative;
+}
+
+.ResourceName_base_75 {
+    display: flex;
+    align-items: center;
+}
+
+.ResourceName_base__reverse_1b {
+    flex-direction: row-reverse;
+}
+.ResourceName_name_de {
+    color: #8c8c7e;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    flex: 1;
+    margin-left: 4rem;
+}
+.ResourceName_icon_dc {
+    background: no-repeat center / contain;
+}
+.ResourceName_base__24_72 .ResourceName_icon_dc {
+    width: 24rem;
+    height: 24rem;
+}
+.ResourceName_base__ny_crystal_a6.ResourceName_base__24_72 .ResourceName_icon_dc {
+    background-image: url('R.images.gui.maps.icons.newYear.resources.size_48.ny_crystal');
+}
+.ResourceName_base__ny_emerald_ff.ResourceName_base__24_72 .ResourceName_icon_dc {
+    background-image: url('R.images.gui.maps.icons.newYear.resources.size_48.ny_emerald');
+}
+.ResourceName_base__ny_amber_d4.ResourceName_base__24_72 .ResourceName_icon_dc {
+    background-image: url('R.images.gui.maps.icons.newYear.resources.size_48.ny_amber');
+}
+.ResourceName_base__ny_iron_d4.ResourceName_base__24_72 .ResourceName_icon_dc {
+    background-image: url('R.images.gui.maps.icons.newYear.resources.size_48.ny_iron');
+}
+.ResourceName_base__48_61 .ResourceName_icon_dc {
+    width: 48rem;
+    height: 48rem;
+}
+.ResourceName_base__ny_crystal_a6.ResourceName_base__48_61 .ResourceName_icon_dc {
+    background-image: url('R.images.gui.maps.icons.newYear.resources.size_48.ny_crystal');
+}
+.ResourceName_base__ny_emerald_ff.ResourceName_base__48_61 .ResourceName_icon_dc {
+    background-image: url('R.images.gui.maps.icons.newYear.resources.size_48.ny_emerald');
+}
+.ResourceName_base__ny_amber_d4.ResourceName_base__48_61 .ResourceName_icon_dc {
+    background-image: url('R.images.gui.maps.icons.newYear.resources.size_48.ny_amber');
+}
+.ResourceName_base__ny_iron_d4.ResourceName_base__48_61 .ResourceName_icon_dc {
+    background-image: url('R.images.gui.maps.icons.newYear.resources.size_48.ny_iron');
+}
+
+.MenuInfo_base_30 {
+    padding: 5rem 0;
+}
+
+.MenuInfo_background_e4 {
+    display: flex;
+    min-height: 45rem;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(201, 201, 182, 0.07) 37%,
+        rgba(201, 201, 182, 0.07) 63%,
+        transparent
+    );
+}
+
+.MenuInfo_separator_6e {
+    width: 100%;
+    height: 1rem;
+    background-image: repeating-linear-gradient(
+        90deg,
+        transparent 0rem,
+        transparent 2rem,
+        #5a5a52 2rem,
+        #5a5a52 3rem,
+        transparent 3rem,
+        transparent 4rem
+    );
+    background-size: 3rem 1rem;
+    opacity: 0.5;
+    mask-image: linear-gradient(90deg, transparent 0%, #fff 37%, #fff 63%, transparent 100%);
+}
+
+.RewardKitName_base_1e {
+    display: flex;
+    align-items: center;
+}
+
+.RewardKitName_name_30 {
+    color: #8c8c7e;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    margin-right: 4rem;
+    text-align: right;
+}
+
+.RewardKitName_icon_9c {
+    width: 48rem;
+    height: 48rem;
+    background: no-repeat center / contain;
+}
+
+.RewardKitName_base__NewYear_7a .RewardKitName_icon_9c {
+    background-image: url('R.images.gui.maps.icons.newYear.tooltips.rewardKit.NewYear');
+}
+
+.RewardKitName_base__Christmas_c5 .RewardKitName_icon_9c {
+    background-image: url('R.images.gui.maps.icons.newYear.tooltips.rewardKit.Christmas');
+}
+
+.RewardKitName_base__Fairytale_47 .RewardKitName_icon_9c {
+    background-image: url('R.images.gui.maps.icons.newYear.tooltips.rewardKit.Fairytale');
+}
+
+.RewardKitName_base__Oriental_7e .RewardKitName_icon_9c {
+    background-image: url('R.images.gui.maps.icons.newYear.tooltips.rewardKit.Oriental');
+}
+
+.App_base_57 {
+    width: 420rem;
+    padding: 20rem;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 0;
+}
+
+.App_title_24 {
+    color: #e9e2bf;
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
+    display: flex;
+    align-items: center;
+    margin-bottom: 5rem;
+}
+
+.App_resourceListWrapper_71 {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 3rem;
+}
+
+.App_row_76 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.App_rowItem_10 {
+    flex: 1;
+    width: 100%;
+}
+
+.App_rowItem__right_47 {
+    justify-content: flex-end;
+}
+
+.App_icon_af {
+    margin-right: 16rem;
+}
+
+.App_name_75 {
+    margin-left: 0;
+}
+
+.App_separator_04 {
+    width: 11rem;
+    height: 1rem;
+    background-color: rgba(233, 226, 191, 0.6);
+}
+
+.App_menuInfo_86 {
+    padding-bottom: 0;
+}
+
+.App_bottomSeparator_bc {
+    display: none;
+}
+
+.App_footer_71 {
+    color: #ffdd99;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    display: flex;
+    align-items: flex-end;
+    height: 28rem;
+    padding-left: 29rem;
+    background: url('R.images.gui.maps.icons.newYear.tooltips.decorations.icon_gift') no-repeat left 2rem / contain;
+}

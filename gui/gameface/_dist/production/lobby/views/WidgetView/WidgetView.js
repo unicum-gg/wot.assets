@@ -209,13 +209,14 @@
                         addPreloadTexture: () => s,
                         children: () => i,
                         displayStatus: () => n.W,
-                        displayStatusIs: () => T,
+                        displayStatusIs: () => y,
                         events: () => a.U,
                         extraSize: () => M,
                         forceTriggerMouseMove: () => S,
                         freezeTextureBeforeResize: () => v,
                         getBrowserTexturePath: () => c,
                         getDisplayStatus: () => O,
+                        getFontNames: () => T,
                         getScale: () => E,
                         getSize: () => _,
                         getViewGlobalPosition: () => g,
@@ -229,7 +230,7 @@
                         setEventHandled: () => L,
                         setInputPaddingsRem: () => d,
                         setSidePaddingsRem: () => m,
-                        whenTutorialReady: () => y,
+                        whenTutorialReady: () => P,
                     });
                 var i = r(3722),
                     n = r(6112),
@@ -291,7 +292,11 @@
                 function O() {
                     return viewEnv.getShowingStatus();
                 }
-                const T = Object.keys(n.W).reduce(
+                const T = (() => {
+                        let e = [];
+                        return () => (0 === e.length && (e = Object.keys(viewEnv.getFontsConfig())), e);
+                    })(),
+                    y = Object.keys(n.W).reduce(
                         (e, t) => ((e[t] = () => viewEnv.getShowingStatus() === n.W[t]), e),
                         {},
                     ),
@@ -303,7 +308,7 @@
                             viewEnv.getExtraSizeRem(e, t);
                         },
                     },
-                    y = Promise.all([
+                    P = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : a.U.onDomBuilt(e);
                         }),
@@ -1044,9 +1049,9 @@
                         return { mediaSize: n, mediaWidth: a, mediaHeight: o, remScreenWidth: t, remScreenHeight: r };
                     },
                     T = ['children', 'className'];
-                function M() {
+                function y() {
                     return (
-                        (M = Object.assign
+                        (y = Object.assign
                             ? Object.assign.bind()
                             : function (e) {
                                   for (var t = 1; t < arguments.length; t++) {
@@ -1055,10 +1060,10 @@
                                   }
                                   return e;
                               }),
-                        M.apply(null, arguments)
+                        y.apply(null, arguments)
                     );
                 }
-                const y = {
+                const M = {
                         [x.ExtraSmall]: '',
                         [x.Small]: p().SMALL_WIDTH,
                         [x.Medium]: `${p().SMALL_WIDTH} ${p().MEDIUM_WIDTH}`,
@@ -1096,7 +1101,7 @@
                             o = a.mediaWidth,
                             l = a.mediaHeight,
                             s = a.mediaSize;
-                        return n().createElement('div', M({ className: f()(r, y[o], P[l], k[s]) }, i), t);
+                        return n().createElement('div', y({ className: f()(r, M[o], P[l], k[s]) }, i), t);
                     },
                     W = ['children'],
                     I = (e) => {
@@ -1266,13 +1271,13 @@
                                       Object.assign(
                                           {
                                               onMouseEnter:
-                                                  ((M = t.props.onMouseEnter),
+                                                  ((y = t.props.onMouseEnter),
                                                   (e) => {
                                                       (e.clientX === window.innerWidth &&
                                                           e.clientY === window.innerHeight) ||
                                                           ((L.current.timeoutId = window.setTimeout(S, c ? 100 : 400)),
                                                           a && a(e),
-                                                          M && M(e));
+                                                          y && y(e));
                                                   }),
                                               onMouseLeave: ((e) => (t) => {
                                                   O(), null == o || o(t), null == e || e(t);
@@ -1289,7 +1294,7 @@
                                   )
                                 : t
                         );
-                        var M;
+                        var y;
                     };
                 let V, j;
                 !(function (e) {

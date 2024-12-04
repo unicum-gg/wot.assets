@@ -5,7 +5,7 @@
             1083: (e, n, t) => {
                 var i = {};
                 t.r(i),
-                    t.d(i, { mouse: () => E, off: () => h, on: () => w, onResize: () => p, onScaleUpdated: () => g });
+                    t.d(i, { mouse: () => E, off: () => h, on: () => w, onResize: () => g, onScaleUpdated: () => p });
                 var r = {};
                 t.r(r),
                     t.d(r, {
@@ -25,13 +25,14 @@
                         addPreloadTexture: () => H,
                         children: () => o,
                         displayStatus: () => C,
-                        displayStatusIs: () => ae,
-                        events: () => V,
-                        extraSize: () => se,
+                        displayStatusIs: () => se,
+                        events: () => F,
+                        extraSize: () => le,
                         forceTriggerMouseMove: () => re,
                         freezeTextureBeforeResize: () => K,
                         getBrowserTexturePath: () => $,
                         getDisplayStatus: () => oe,
+                        getFontNames: () => ae,
                         getScale: () => X,
                         getSize: () => q,
                         getViewGlobalPosition: () => J,
@@ -45,7 +46,7 @@
                         setEventHandled: () => te,
                         setInputPaddingsRem: () => I,
                         setSidePaddingsRem: () => W,
-                        whenTutorialReady: () => le,
+                        whenTutorialReady: () => ue,
                     });
                 var s = t(6179),
                     l = t.n(s),
@@ -64,8 +65,8 @@
                 function f(e) {
                     viewEnv.setTrackMouseOnStage(e);
                 }
-                const p = m('clientResized'),
-                    g = m('self.onScaleUpdated'),
+                const g = m('clientResized'),
+                    p = m('self.onScaleUpdated'),
                     w = (e, n) => engine.on(e, n),
                     h = (e, n) => engine.off(e, n),
                     b = { down: m('mousedown'), up: m('mouseup'), move: m('mousemove') };
@@ -164,7 +165,7 @@
                     return `url(${A(e, n, t)})`;
                 }
                 const C = { showing: 0, shown: 1, hiding: 2, hidden: 3 },
-                    V = {
+                    F = {
                         onTextureFrozen: m('self.onTextureFrozen'),
                         onTextureReady: m('self.onTextureReady'),
                         onDomBuilt: m('self.onDomBuilt'),
@@ -180,9 +181,9 @@
                             onRequestPosition: m('children.requestPosition'),
                         },
                     },
-                    F = ['args'];
-                const M = 2,
-                    k = 16,
+                    V = ['args'];
+                const k = 2,
+                    M = 16,
                     N = 32,
                     B = 64,
                     G = (e, n) => {
@@ -198,7 +199,7 @@
                                             t[i] = e[i];
                                         }
                                     return t;
-                                })(n, F);
+                                })(n, V);
                             return void 0 !== r
                                 ? viewEnv.handleViewEvent(
                                       Object.assign({ __Type: t, type: e }, o, {
@@ -224,13 +225,13 @@
                     },
                     L = {
                         close(e) {
-                            G('popover' === e ? M : N);
+                            G('popover' === e ? k : N);
                         },
                         minimize() {
                             G(B);
                         },
                         move(e) {
-                            G(k, { isMouseEvent: !0, on: e });
+                            G(M, { isMouseEvent: !0, on: e });
                         },
                     },
                     D = 15;
@@ -289,8 +290,12 @@
                 function oe() {
                     return viewEnv.getShowingStatus();
                 }
-                const ae = Object.keys(C).reduce((e, n) => ((e[n] = () => viewEnv.getShowingStatus() === C[n]), e), {}),
-                    se = {
+                const ae = (() => {
+                        let e = [];
+                        return () => (0 === e.length && (e = Object.keys(viewEnv.getFontsConfig())), e);
+                    })(),
+                    se = Object.keys(C).reduce((e, n) => ((e[n] = () => viewEnv.getShowingStatus() === C[n]), e), {}),
+                    le = {
                         set: (e, n) => {
                             viewEnv.setExtraSizeRem(e, n);
                         },
@@ -298,14 +303,14 @@
                             viewEnv.getExtraSizeRem(e, n);
                         },
                     },
-                    le = Promise.all([
+                    ue = Promise.all([
                         new Promise((e) => {
-                            window.isDomBuilt ? e() : V.onDomBuilt(e);
+                            window.isDomBuilt ? e() : F.onDomBuilt(e);
                         }),
                         engine.whenReady,
                     ]),
-                    ue = { view: a, client: r, sound: z };
-                function de() {
+                    de = { view: a, client: r, sound: z };
+                function ce() {
                     const e = (0, s.useRef)(0);
                     var n;
                     return (
@@ -334,15 +339,15 @@
                         )
                     );
                 }
-                const ce = {
+                const ve = {
                         base: 'TooltipDecorator_base_c9',
                         'base__theme-default': 'TooltipDecorator_base__theme-default_6d',
                         decorator: 'TooltipDecorator_decorator_3d',
                     },
-                    ve = ['children', 'className', 'theme'];
-                function me() {
+                    me = ['children', 'className', 'theme'];
+                function fe() {
                     return (
-                        (me = Object.assign
+                        (fe = Object.assign
                             ? Object.assign.bind()
                             : function (e) {
                                   for (var n = 1; n < arguments.length; n++) {
@@ -351,10 +356,10 @@
                                   }
                                   return e;
                               }),
-                        me.apply(null, arguments)
+                        fe.apply(null, arguments)
                     );
                 }
-                const fe = l().forwardRef(function (e, n) {
+                const ge = l().forwardRef(function (e, n) {
                         let t = e.children,
                             i = e.className,
                             r = e.theme,
@@ -368,8 +373,8 @@
                                         t[i] = e[i];
                                     }
                                 return t;
-                            })(e, ve);
-                        const u = de(),
+                            })(e, me);
+                        const u = ce(),
                             d = l().useRef(null);
                         var c;
                         return (
@@ -379,9 +384,9 @@
                                     if (!e) return;
                                     const n = e.scrollWidth,
                                         t = e.scrollHeight;
-                                    ue.view.resize(n, t);
+                                    de.view.resize(n, t);
                                     const i = window.getComputedStyle(e);
-                                    ue.view.setSidePaddingsRem({
+                                    de.view.setSidePaddingsRem({
                                         left: parseInt(i.getPropertyValue('padding-left'), 10),
                                         top: parseInt(i.getPropertyValue('padding-top'), 10),
                                         right: parseInt(i.getPropertyValue('padding-right'), 10),
@@ -392,57 +397,57 @@
                             (0, s.useEffect)(c, []),
                             l().createElement(
                                 'div',
-                                me({}, a, {
-                                    className: v()(ce.base, ce[`base__theme-${o}`], i),
+                                fe({}, a, {
+                                    className: v()(ve.base, ve[`base__theme-${o}`], i),
                                     ref: function (e) {
                                         (d.current = e), 'function' == typeof n ? n(e) : n && (n.current = e);
                                     },
                                 }),
-                                l().createElement('div', { className: ce.decorator }, t),
+                                l().createElement('div', { className: ve.decorator }, t),
                             )
                         );
                     }),
                     pe = 'App_base_e7',
-                    ge = 'App_topBlock_f3',
-                    we = 'App_bottomBlock_ce',
-                    he = 'App_title_38',
-                    be = 'App_subTitle_5d',
-                    Ee = 'App_description_f5',
-                    ye = 'App_list_89',
-                    _e = 'App_item_3b',
-                    xe = 'App_divider_f7',
-                    Pe = R.strings.achievements_page.tooltips.WTR.info,
-                    Te = [Pe.list.text1(), Pe.list.text2(), Pe.list.text3(), Pe.list.text4()],
-                    Re = () =>
+                    we = 'App_topBlock_f3',
+                    he = 'App_bottomBlock_ce',
+                    be = 'App_title_38',
+                    Ee = 'App_subTitle_5d',
+                    ye = 'App_description_f5',
+                    _e = 'App_list_89',
+                    xe = 'App_item_3b',
+                    Pe = 'App_divider_f7',
+                    Te = R.strings.achievements_page.tooltips.WTR.info,
+                    Re = [Te.list.text1(), Te.list.text2(), Te.list.text3(), Te.list.text4()],
+                    Se = () =>
                         l().createElement(
-                            fe,
+                            ge,
                             null,
                             l().createElement(
                                 'div',
                                 { className: pe },
                                 l().createElement(
                                     'div',
-                                    { className: ge },
-                                    l().createElement('div', { className: he }, Pe.title.main()),
-                                    l().createElement('div', { className: Ee }, Pe.description.main()),
+                                    { className: we },
+                                    l().createElement('div', { className: be }, Te.title.main()),
+                                    l().createElement('div', { className: ye }, Te.description.main()),
                                 ),
                                 l().createElement(
                                     'div',
-                                    { className: we },
-                                    l().createElement('div', { className: xe }),
-                                    l().createElement('div', { className: be }, Pe.title.about()),
-                                    l().createElement('div', null, Pe.description.about()),
+                                    { className: he },
+                                    l().createElement('div', { className: Pe }),
+                                    l().createElement('div', { className: Ee }, Te.title.about()),
+                                    l().createElement('div', null, Te.description.about()),
                                     l().createElement(
                                         'div',
-                                        { className: ye },
-                                        Te.map((e, n) => l().createElement('div', { className: _e, key: n }, e)),
+                                        { className: _e },
+                                        Re.map((e, n) => l().createElement('div', { className: xe, key: n }, e)),
                                     ),
-                                    l().createElement('div', null, Pe.caption()),
+                                    l().createElement('div', null, Te.caption()),
                                 ),
                             ),
                         );
                 engine.whenReady.then(() => {
-                    d().render(l().createElement(Re, null), document.getElementById('root'));
+                    d().render(l().createElement(Se, null), document.getElementById('root'));
                 });
             },
         },

@@ -18,7 +18,7 @@
             },
             768: (u, e, t) => {
                 'use strict';
-                t.d(e, { O: () => tu });
+                t.d(e, { O: () => nu });
                 var n = {};
                 t.r(n),
                     t.d(n, { mouse: () => d, off: () => A, on: () => c, onResize: () => l, onScaleUpdated: () => E });
@@ -52,13 +52,14 @@
                         addPreloadTexture: () => M,
                         children: () => r,
                         displayStatus: () => f,
-                        displayStatusIs: () => J,
+                        displayStatusIs: () => uu,
                         events: () => w,
-                        extraSize: () => uu,
+                        extraSize: () => eu,
                         forceTriggerMouseMove: () => Z,
                         freezeTextureBeforeResize: () => $,
                         getBrowserTexturePath: () => R,
                         getDisplayStatus: () => Q,
+                        getFontNames: () => J,
                         getScale: () => j,
                         getSize: () => W,
                         getViewGlobalPosition: () => U,
@@ -72,7 +73,7 @@
                         setEventHandled: () => Y,
                         setInputPaddingsRem: () => H,
                         setSidePaddingsRem: () => I,
-                        whenTutorialReady: () => eu,
+                        whenTutorialReady: () => tu,
                     });
                 const l = s('clientResized'),
                     E = s('self.onScaleUpdated'),
@@ -299,8 +300,12 @@
                 function Q() {
                     return viewEnv.getShowingStatus();
                 }
-                const J = Object.keys(f).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === f[e]), u), {}),
-                    uu = {
+                const J = (() => {
+                        let u = [];
+                        return () => (0 === u.length && (u = Object.keys(viewEnv.getFontsConfig())), u);
+                    })(),
+                    uu = Object.keys(f).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === f[e]), u), {}),
+                    eu = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -308,13 +313,13 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    eu = Promise.all([
+                    tu = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : w.onDomBuilt(u);
                         }),
                         engine.whenReady,
                     ]),
-                    tu = { view: i, client: a, sound: p };
+                    nu = { view: i, client: a, sound: p };
             },
             521: (u, e, t) => {
                 'use strict';

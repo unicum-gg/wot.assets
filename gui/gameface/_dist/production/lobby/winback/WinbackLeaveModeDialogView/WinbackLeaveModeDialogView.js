@@ -209,13 +209,14 @@
                         addPreloadTexture: () => l,
                         children: () => a,
                         displayStatus: () => r.W,
-                        displayStatusIs: () => M,
+                        displayStatusIs: () => O,
                         events: () => i.U,
-                        extraSize: () => O,
+                        extraSize: () => T,
                         forceTriggerMouseMove: () => S,
                         freezeTextureBeforeResize: () => v,
                         getBrowserTexturePath: () => u,
                         getDisplayStatus: () => y,
+                        getFontNames: () => M,
                         getScale: () => E,
                         getSize: () => m,
                         getViewGlobalPosition: () => g,
@@ -229,7 +230,7 @@
                         setEventHandled: () => x,
                         setInputPaddingsRem: () => c,
                         setSidePaddingsRem: () => _,
-                        whenTutorialReady: () => T,
+                        whenTutorialReady: () => k,
                     });
                 var a = n(722),
                     r = n(112),
@@ -291,11 +292,15 @@
                 function y() {
                     return viewEnv.getShowingStatus();
                 }
-                const M = Object.keys(r.W).reduce(
+                const M = (() => {
+                        let e = [];
+                        return () => (0 === e.length && (e = Object.keys(viewEnv.getFontsConfig())), e);
+                    })(),
+                    O = Object.keys(r.W).reduce(
                         (e, t) => ((e[t] = () => viewEnv.getShowingStatus() === r.W[t]), e),
                         {},
                     ),
-                    O = {
+                    T = {
                         set: (e, t) => {
                             viewEnv.setExtraSizeRem(e, t);
                         },
@@ -303,7 +308,7 @@
                             viewEnv.getExtraSizeRem(e, t);
                         },
                     },
-                    T = Promise.all([
+                    k = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : i.U.onDomBuilt(e);
                         }),
@@ -1247,8 +1252,8 @@
                     );
                 };
                 F.defaultProps = { type: U.primary, isFocused: !1, soundHover: 'highlight', soundClick: 'play' };
-                const $ = F,
-                    j = {
+                const j = F,
+                    $ = {
                         base: 'TextButton_base_b6',
                         base__right: 'TextButton_base__right_39',
                         icon: 'TextButton_icon_17',
@@ -1342,11 +1347,11 @@
                                         }
                                     return n;
                                 })(e, z)),
-                            m = p()(j.base, j[`base__${o}`], j[`base__${i}`], null == s ? void 0 : s.base),
-                            h = p()(j.icon, j[`icon__${o}`], j[`icon__${i}`], null == s ? void 0 : s.icon),
-                            g = p()(j.glow, null == s ? void 0 : s.glow),
-                            v = p()(j.caption, j[`caption__${o}`], null == s ? void 0 : s.caption),
-                            E = p()(j.goto, null == s ? void 0 : s.goto);
+                            m = p()($.base, $[`base__${o}`], $[`base__${i}`], null == s ? void 0 : s.base),
+                            h = p()($.icon, $[`icon__${o}`], $[`icon__${i}`], null == s ? void 0 : s.icon),
+                            g = p()($.glow, null == s ? void 0 : s.glow),
+                            v = p()($.caption, $[`caption__${o}`], null == s ? void 0 : s.caption),
+                            E = p()($.goto, null == s ? void 0 : s.goto);
                         return r().createElement(
                             'div',
                             V(
@@ -1362,7 +1367,7 @@
                                 },
                                 _,
                             ),
-                            'info' !== o && r().createElement('div', { className: j.shine }),
+                            'info' !== o && r().createElement('div', { className: $.shine }),
                             r().createElement('div', { className: h }, r().createElement('div', { className: g })),
                             r().createElement('div', { className: v }, t),
                             a && r().createElement('div', { className: E }, a),
@@ -1668,12 +1673,12 @@
                                         'div',
                                         { className: ge },
                                         r().createElement(
-                                            $,
+                                            j,
                                             { size: G.medium, mixClass: ve, type: U.primary, onClick: e.confirm },
                                             Ee.buttons.confirm(),
                                         ),
                                         r().createElement(
-                                            $,
+                                            j,
                                             { size: G.medium, mixClass: ve, type: U.secondary, onClick: e.close },
                                             Ee.buttons.cancel(),
                                         ),

@@ -18,7 +18,7 @@
             },
             768: (u, e, t) => {
                 'use strict';
-                t.d(e, { O: () => tu });
+                t.d(e, { O: () => ru });
                 var r = {};
                 t.r(r),
                     t.d(r, { mouse: () => c, off: () => l, on: () => s, onResize: () => A, onScaleUpdated: () => F });
@@ -52,19 +52,20 @@
                         addPreloadTexture: () => R,
                         children: () => n,
                         displayStatus: () => b,
-                        displayStatusIs: () => J,
+                        displayStatusIs: () => uu,
                         events: () => f,
-                        extraSize: () => uu,
+                        extraSize: () => eu,
                         forceTriggerMouseMove: () => Z,
                         freezeTextureBeforeResize: () => $,
                         getBrowserTexturePath: () => P,
                         getDisplayStatus: () => Q,
-                        getScale: () => V,
+                        getFontNames: () => J,
+                        getScale: () => j,
                         getSize: () => I,
                         getViewGlobalPosition: () => G,
                         isEventHandled: () => X,
                         isFocused: () => K,
-                        pxToRem: () => j,
+                        pxToRem: () => V,
                         remToPx: () => z,
                         resize: () => U,
                         sendEvent: () => M,
@@ -72,7 +73,7 @@
                         setEventHandled: () => Y,
                         setInputPaddingsRem: () => H,
                         setSidePaddingsRem: () => N,
-                        whenTutorialReady: () => eu,
+                        whenTutorialReady: () => tu,
                     });
                 const A = E('clientResized'),
                     F = E('self.onScaleUpdated'),
@@ -272,10 +273,10 @@
                 function $() {
                     viewEnv.freezeTextureBeforeResize();
                 }
-                function V() {
+                function j() {
                     return viewEnv.getScale();
                 }
-                function j(u) {
+                function V(u) {
                     return viewEnv.pxToRem(u);
                 }
                 function z(u) {
@@ -299,8 +300,12 @@
                 function Q() {
                     return viewEnv.getShowingStatus();
                 }
-                const J = Object.keys(b).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === b[e]), u), {}),
-                    uu = {
+                const J = (() => {
+                        let u = [];
+                        return () => (0 === u.length && (u = Object.keys(viewEnv.getFontsConfig())), u);
+                    })(),
+                    uu = Object.keys(b).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === b[e]), u), {}),
+                    eu = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -308,13 +313,13 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    eu = Promise.all([
+                    tu = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : f.onDomBuilt(u);
                         }),
                         engine.whenReady,
                     ]),
-                    tu = { view: i, client: a, sound: v };
+                    ru = { view: i, client: a, sound: v };
             },
             521: (u, e, t) => {
                 'use strict';
@@ -1202,14 +1207,14 @@
                     }
                 }
                 $.defaultProps = { side: 'left', type: 'back', soundHover: 'highlight', soundClick: 'play' };
-                var V = t(521);
+                var j = t(521);
                 t(916);
-                const j = (u) => {
+                const V = (u) => {
                     console.error(u.type + ': useKeydownListener hook :: Callback is not defined');
                 };
-                function z(u = V.n.NONE, e = j, t = !1, a = !1) {
+                function z(u = j.n.NONE, e = V, t = !1, a = !1) {
                     (0, r.useEffect)(() => {
-                        if (u !== V.n.NONE)
+                        if (u !== j.n.NONE)
                             return (
                                 window.addEventListener('keydown', r, t),
                                 () => {
@@ -1878,7 +1883,7 @@
                     Uu = R.strings.battle_matters.mainRewardsScreen,
                     Gu = R.images.gui.maps.icons.battleMatters.mainReward,
                     $u = { 0: 'left', 1: 'center', 2: 'right' },
-                    Vu = ({
+                    ju = ({
                         isInHangar: u,
                         vehCD: e,
                         rentLength: t,
@@ -1948,9 +1953,9 @@
                             )
                         );
                     };
-                function ju() {
+                function Vu() {
                     return (
-                        (ju = Object.assign
+                        (Vu = Object.assign
                             ? Object.assign.bind()
                             : function (u) {
                                   for (var e = 1; e < arguments.length; e++) {
@@ -1959,7 +1964,7 @@
                                   }
                                   return u;
                               }),
-                        ju.apply(null, arguments)
+                        Vu.apply(null, arguments)
                     );
                 }
                 const zu = R.strings.battle_matters.mainRewardsScreen,
@@ -1975,7 +1980,7 @@
                                 i && n.showView();
                             }, [i, n]),
                             (E = n.close),
-                            z(V.n.ESCAPE, E),
+                            z(j.n.ESCAPE, E),
                             a().createElement(
                                 'div',
                                 { className: h()(bu.base, i && bu.base__visible) },
@@ -1989,8 +1994,8 @@
                                                 'div',
                                                 { key: u.vehCD, className: h()(bu.reward, bu[`reward__${e + 1}`]) },
                                                 a().createElement(
-                                                    Vu,
-                                                    ju({}, u, {
+                                                    ju,
+                                                    Vu({}, u, {
                                                         index: e,
                                                         onPreview: n.preview,
                                                         onLoaded: n.increaseLoadedAssetsCount,

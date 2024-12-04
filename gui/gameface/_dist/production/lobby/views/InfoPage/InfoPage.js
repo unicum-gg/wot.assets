@@ -183,13 +183,14 @@
                         addPreloadTexture: () => o,
                         children: () => a,
                         displayStatus: () => i.W,
-                        displayStatusIs: () => y,
+                        displayStatusIs: () => w,
                         events: () => n.U,
-                        extraSize: () => w,
+                        extraSize: () => T,
                         forceTriggerMouseMove: () => h,
                         freezeTextureBeforeResize: () => d,
                         getBrowserTexturePath: () => c,
                         getDisplayStatus: () => f,
+                        getFontNames: () => y,
                         getScale: () => B,
                         getSize: () => F,
                         getViewGlobalPosition: () => m,
@@ -203,7 +204,7 @@
                         setEventHandled: () => b,
                         setInputPaddingsRem: () => l,
                         setSidePaddingsRem: () => A,
-                        whenTutorialReady: () => T,
+                        whenTutorialReady: () => P,
                     });
                 var a = t(3722),
                     i = t(6112),
@@ -265,11 +266,15 @@
                 function f() {
                     return viewEnv.getShowingStatus();
                 }
-                const y = Object.keys(i.W).reduce(
+                const y = (() => {
+                        let e = [];
+                        return () => (0 === e.length && (e = Object.keys(viewEnv.getFontsConfig())), e);
+                    })(),
+                    w = Object.keys(i.W).reduce(
                         (e, u) => ((e[u] = () => viewEnv.getShowingStatus() === i.W[u]), e),
                         {},
                     ),
-                    w = {
+                    T = {
                         set: (e, u) => {
                             viewEnv.setExtraSizeRem(e, u);
                         },
@@ -277,7 +282,7 @@
                             viewEnv.getExtraSizeRem(e, u);
                         },
                     },
-                    T = Promise.all([
+                    P = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : n.U.onDomBuilt(e);
                         }),
@@ -2188,7 +2193,7 @@
                         textBlock: [{ text: ve.radarDetails.text1() }, { text: ve.radarDetails.text2() }],
                         imagePath: 'R.images.battle_royale.gui.maps.infopage.radar',
                     },
-                    Re = {
+                    ke = {
                         title: ve.progressionDetails.title(),
                         textBlock: [
                             { text: ve.progressionDetails.subtitle() },
@@ -2196,7 +2201,7 @@
                         ],
                         imagePath: 'R.images.battle_royale.gui.maps.infopage.progression',
                     },
-                    ke = {
+                    Re = {
                         title: ve.battleTasksDetails.title(),
                         textBlock: [{ text: ve.battleTasksDetails.subtitle() }],
                         imagePath: 'R.images.battle_royale.gui.maps.infopage.battleTasks',
@@ -2661,6 +2666,7 @@
                         (e.TankmenXpFactor = 'tankmenXPFactor'),
                         (e.FreeXpFactor = 'freeXPFactor'),
                         (e.BattleToken = 'battleToken'),
+                        (e.Entitlements = 'entitlements'),
                         (e.PremiumUniversal = 'premium_universal'),
                         (e.Gold = 'gold'),
                         (e.Credits = 'credits'),
@@ -2678,6 +2684,8 @@
                         (e.BattleBadge = 'dossier_badge'),
                         (e.NewYearInvoice = 'newYearInvoice'),
                         (e.NewYearSlot = 'newYearSlot'),
+                        (e.NewYearGuestD = 'ny_dog'),
+                        (e.EquipCoin = 'equipCoin'),
                         (e.BonusX5 = 'battle_bonus_x5'),
                         (e.CrewBonusX3 = 'crew_bonus_x3'),
                         (e.Vehicles = 'vehicles'),
@@ -2686,7 +2694,6 @@
                         (e.DeluxeGift = 'deluxe_gift'),
                         (e.BattleBoosterGift = 'battleBooster_gift'),
                         (e.OptionalDevice = 'optionalDevice'),
-                        (e.EquipCoin = 'equipCoin'),
                         (e.LootBox = 'lootBox'),
                         (e.BrCoin = 'brcoin');
                 })(cu || (cu = {})),
@@ -2790,7 +2797,7 @@
                     }
                 }
                 let vu, hu, fu, yu, wu, Tu, Pu;
-                var Su, Ru, ku;
+                var Su, ku, Ru;
                 (bu.defaultProps = { format: 'integral' }),
                     cu.Items,
                     cu.Equipment,
@@ -2810,6 +2817,7 @@
                     cu.TankmenXpFactor,
                     cu.FreeXpFactor,
                     cu.BattleToken,
+                    cu.Entitlements,
                     cu.PremiumUniversal,
                     cu.NaturalCover,
                     cu.BpCoin,
@@ -2834,10 +2842,10 @@
                     cu.Premium,
                     Au.Small,
                     Au.Big,
-                    ((ku = vu || (vu = {})).Active = 'active'),
-                    (ku.Paused = 'paused'),
-                    (ku.Completed = 'completed'),
-                    (ku.NotStarted = 'notStarted'),
+                    ((Ru = vu || (vu = {})).Active = 'active'),
+                    (Ru.Paused = 'paused'),
+                    (Ru.Completed = 'completed'),
+                    (Ru.NotStarted = 'notStarted'),
                     (function (e) {
                         (e.Vehicle = 'vehicle'), (e.Style = 'style'), (e.Tankman = 'tankman');
                     })(hu || (hu = {})),
@@ -2847,14 +2855,14 @@
                     (function (e) {
                         (e.ACTIVE = 'active'), (e.COMPLETED = 'completed'), (e.NOT_CHOSEN = 'notChosen');
                     })(yu || (yu = {})),
-                    ((Ru = wu || (wu = {})).AwaitSeason = 'awaitSeason'),
-                    (Ru.Bought = 'bought'),
-                    (Ru.Free = 'free'),
-                    (Ru.Completed = 'completed'),
-                    (Ru.CompletedRightNow = 'completedRightNow'),
-                    (Ru.SwitchedChapterRightNow = 'switchedChapterRightNow'),
-                    (Ru.NoVehiclesBase = 'noVehiclesBase'),
-                    (Ru.ChapterNotChosen = 'chapterNotChosen'),
+                    ((ku = wu || (wu = {})).AwaitSeason = 'awaitSeason'),
+                    (ku.Bought = 'bought'),
+                    (ku.Free = 'free'),
+                    (ku.Completed = 'completed'),
+                    (ku.CompletedRightNow = 'completedRightNow'),
+                    (ku.SwitchedChapterRightNow = 'switchedChapterRightNow'),
+                    (ku.NoVehiclesBase = 'noVehiclesBase'),
+                    (ku.ChapterNotChosen = 'chapterNotChosen'),
                     (function (e) {
                         (e.None = ''),
                             (e.ShowLevel = 'show'),
@@ -3254,11 +3262,11 @@
                                                 null,
                                                 r().createElement('div', { className: We.divider }),
                                                 r().createElement(Xe, {
-                                                    description: Re,
+                                                    description: ke,
                                                     classNames: { image: We.progression },
                                                 }),
                                                 r().createElement(Xe, {
-                                                    description: ke,
+                                                    description: Re,
                                                     smallImage: !0,
                                                     classNames: { titleStyling: We.titleStyling, image: We.battleTask },
                                                     reverse: !0,

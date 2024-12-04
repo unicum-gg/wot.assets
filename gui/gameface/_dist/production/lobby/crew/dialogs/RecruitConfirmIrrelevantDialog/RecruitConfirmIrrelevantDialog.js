@@ -209,13 +209,14 @@
                         addPreloadTexture: () => s,
                         children: () => n,
                         displayStatus: () => a.W,
-                        displayStatusIs: () => C,
+                        displayStatusIs: () => k,
                         events: () => i.U,
-                        extraSize: () => k,
+                        extraSize: () => y,
                         forceTriggerMouseMove: () => B,
                         freezeTextureBeforeResize: () => g,
                         getBrowserTexturePath: () => c,
                         getDisplayStatus: () => w,
+                        getFontNames: () => C,
                         getScale: () => f,
                         getSize: () => m,
                         getViewGlobalPosition: () => A,
@@ -229,7 +230,7 @@
                         setEventHandled: () => v,
                         setInputPaddingsRem: () => o,
                         setSidePaddingsRem: () => _,
-                        whenTutorialReady: () => y,
+                        whenTutorialReady: () => x,
                     });
                 var n = u(3722),
                     a = u(6112),
@@ -291,11 +292,15 @@
                 function w() {
                     return viewEnv.getShowingStatus();
                 }
-                const C = Object.keys(a.W).reduce(
+                const C = (() => {
+                        let e = [];
+                        return () => (0 === e.length && (e = Object.keys(viewEnv.getFontsConfig())), e);
+                    })(),
+                    k = Object.keys(a.W).reduce(
                         (e, t) => ((e[t] = () => viewEnv.getShowingStatus() === a.W[t]), e),
                         {},
                     ),
-                    k = {
+                    y = {
                         set: (e, t) => {
                             viewEnv.setExtraSizeRem(e, t);
                         },
@@ -303,7 +308,7 @@
                             viewEnv.getExtraSizeRem(e, t);
                         },
                     },
-                    y = Promise.all([
+                    x = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : i.U.onDomBuilt(e);
                         }),
@@ -772,7 +777,7 @@
                         getFormattedDateTime: (e, t, u = !0) => regionalDateTime.getFormattedDateTime(e, t, u),
                     };
             },
-            3909: (e, t, u) => {
+            8216: (e, t, u) => {
                 'use strict';
                 var n = u(6179),
                     a = u.n(n);
@@ -2247,7 +2252,7 @@
                         for (; a; ) i !== a.index && u(e.slice(i, a.index)), n(a), (i = t.lastIndex), (a = t.exec(e));
                         i !== e.length && u(e.slice(i));
                     },
-                    ft = new RegExp('[฀-๿][ัำ-ฺ็-๎]*', 'gu'),
+                    ft = new RegExp('[฀-๿][ัำ-ฺ็-๎]*|[^฀-๿]', 'gu'),
                     ht = (e) => {
                         const t = [];
                         return (
@@ -5025,6 +5030,6 @@
                 u = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             u.forEach(t.bind(null, 0)), (u.push = t.bind(null, u.push.bind(u)));
         })();
-    var __webpack_exports__ = __webpack_require__.O(void 0, [9056], () => __webpack_require__(3909));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [9056], () => __webpack_require__(8216));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

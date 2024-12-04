@@ -209,13 +209,14 @@
                         addPreloadTexture: () => s,
                         children: () => n,
                         displayStatus: () => r.W,
-                        displayStatusIs: () => b,
+                        displayStatusIs: () => x,
                         events: () => a.U,
-                        extraSize: () => x,
+                        extraSize: () => T,
                         forceTriggerMouseMove: () => p,
                         freezeTextureBeforeResize: () => B,
                         getBrowserTexturePath: () => l,
                         getDisplayStatus: () => f,
+                        getFontNames: () => b,
                         getScale: () => C,
                         getSize: () => c,
                         getViewGlobalPosition: () => d,
@@ -229,7 +230,7 @@
                         setEventHandled: () => v,
                         setInputPaddingsRem: () => E,
                         setSidePaddingsRem: () => F,
-                        whenTutorialReady: () => T,
+                        whenTutorialReady: () => S,
                     });
                 var n = t(3722),
                     r = t(6112),
@@ -291,11 +292,15 @@
                 function f() {
                     return viewEnv.getShowingStatus();
                 }
-                const b = Object.keys(r.W).reduce(
+                const b = (() => {
+                        let u = [];
+                        return () => (0 === u.length && (u = Object.keys(viewEnv.getFontsConfig())), u);
+                    })(),
+                    x = Object.keys(r.W).reduce(
                         (u, e) => ((u[e] = () => viewEnv.getShowingStatus() === r.W[e]), u),
                         {},
                     ),
-                    x = {
+                    T = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -303,7 +308,7 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    T = Promise.all([
+                    S = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : a.U.onDomBuilt(u);
                         }),
@@ -771,7 +776,7 @@
                         getFormattedDateTime: (u, e, t = !0) => regionalDateTime.getFormattedDateTime(u, e, t),
                     };
             },
-            7053: (u, e, t) => {
+            5260: (u, e, t) => {
                 'use strict';
                 var n = t(3138),
                     r = t(6179),
@@ -1117,8 +1122,8 @@
                         })(u, O);
                     return a().createElement(m, null, a().createElement(M, t, e));
                 };
-                var H = t(493),
-                    N = t.n(H);
+                var N = t(493),
+                    H = t.n(N);
                 function P() {
                     return !1;
                 }
@@ -1856,9 +1861,9 @@
                         }
                         return a().createElement(yu, { text: s, classMix: t, binding: i });
                     }),
-                    Hu = R.strings.comp7,
-                    Nu = (u, e) => String(u.$dyn(e)),
-                    Pu = (u) => Nu(Hu.seasonName, u);
+                    Nu = R.strings.comp7,
+                    Hu = (u, e) => String(u.$dyn(e)),
+                    Pu = (u) => Hu(Nu.seasonName, u);
                 function Wu(u, e, t) {
                     ((u, e) => {
                         const t = (0, r.useRef)(u);
@@ -2390,8 +2395,8 @@
                             )
                         );
                     }),
-                    He = 'Slide_base_d6',
-                    Ne = 'Slide_title_85',
+                    Ne = 'Slide_base_d6',
+                    He = 'Slide_title_85',
                     Pe = 'Slide_icon_70',
                     We = 'Slide_description_89',
                     Ie = R.strings.comp7.intro,
@@ -2403,8 +2408,8 @@
                             r = `url(${'ranks' === u ? Ge.$dyn(`ranks_${t.season.name.get()}`) : Ge.$dyn(u)})`;
                         return a().createElement(
                             'div',
-                            { className: He },
-                            a().createElement(yu, { text: String(Ie.title.$dyn(u)), classMix: Ne }),
+                            { className: Ne },
+                            a().createElement(yu, { text: String(Ie.title.$dyn(u)), classMix: He }),
                             a().createElement('div', { className: Pe, style: { backgroundImage: r } }),
                             a().createElement(yu, {
                                 text: `${Ie.description.$plural(u, n)}`,
@@ -2559,7 +2564,7 @@
                 n.O.view.addPreloadTexture('gui/maps/icons/comp7/backgrounds/comp7_bg.png');
                 const lt = { context: 'model.scheduleInfo' };
                 engine.whenReady.then(() => {
-                    N().render(
+                    H().render(
                         a().createElement(
                             k,
                             null,
@@ -2650,6 +2655,6 @@
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             t.forEach(e.bind(null, 0)), (t.push = e.bind(null, t.push.bind(t)));
         })();
-    var __webpack_exports__ = __webpack_require__.O(void 0, [926], () => __webpack_require__(7053));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [926], () => __webpack_require__(5260));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

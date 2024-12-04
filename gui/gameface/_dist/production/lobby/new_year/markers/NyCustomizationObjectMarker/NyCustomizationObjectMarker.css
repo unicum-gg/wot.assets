@@ -1,0 +1,409 @@
+@keyframes MarkerContent_slideInFadeIn_3c {
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+@keyframes MarkerContent_fadeOut_3e {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes MarkerContent_fadeIn_04 {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+@keyframes MarkerContent_fadeInWithScale_09 {
+    0% {
+        opacity: 0;
+        transform: scale(1.2);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@keyframes MarkerContent_slideUp_9f {
+    0% {
+        opacity: 0;
+        transform: translateY(20rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes MarkerContent_scale_99 {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+@keyframes MarkerContent_spin_aa {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+@keyframes MarkerContent_blink_2e {
+    0% {
+        transform: translateY(0rem);
+    }
+
+    100% {
+        transform: translateY(15rem);
+    }
+}
+@keyframes MarkerContent_slideInNotification_32 {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.MarkerContent_base_56 {
+    font-family: DINRoundPro;
+}
+[lang='th'] .MarkerContent_base_56,
+[lang='el'] .MarkerContent_base_56,
+[lang='vi'] .MarkerContent_base_56 {
+    font-family: Warhelios;
+}
+[lang='ja'] .MarkerContent_base_56 {
+    font-family: WarheliosJA;
+}
+[lang='ko'] .MarkerContent_base_56 {
+    font-family: WarheliosKO;
+}
+[lang='zh_tw'] .MarkerContent_base_56 {
+    font-family: WarheliosZHTW;
+}
+[lang='zh_sg'] .MarkerContent_base_56,
+[lang='zh_cn'] .MarkerContent_base_56 {
+    font-family: WarheliosZHCN;
+}
+.MarkerContent_base_56 {
+    font-size: 16rem;
+    position: relative;
+}
+.mediaLarge .MarkerContent_base_56 {
+    font-size: 19rem;
+    transform: translate(0rem, -1rem);
+}
+.MarkerContent_content_fa {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+.MarkerContent_content__default_10 {
+    color: #fff;
+}
+.MarkerContent_content__friend_03 {
+    color: #efebd7;
+}
+.MarkerContent_content__zero_d0 {
+    width: 8rem;
+    height: 8rem;
+    border-radius: 100%;
+    background: linear-gradient(180deg, #fff 30%, #7e7f99 100%);
+    color: transparent;
+    font-size: 0;
+    line-height: 0;
+}
+.mediaLarge .MarkerContent_content__zero_d0 {
+    width: 9rem;
+    height: 9rem;
+}
+.MarkerContent_content__number_ca {
+    font-size: 17rem;
+    transform: translate(0rem, -1rem);
+}
+.mediaLarge .MarkerContent_content__number_ca {
+    font-size: 20rem;
+}
+.MarkerContent_gradient_ca {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.MarkerContent_content__default_10 .MarkerContent_gradient_ca {
+    color: #7e7f99;
+    mask-image: linear-gradient(to bottom, transparent 50%, #000 85%);
+}
+.MarkerContent_content__friend_03 .MarkerContent_gradient_ca {
+    color: #b3ac86;
+    mask-image: linear-gradient(to bottom, transparent 50%, #000 70%);
+}
+
+@keyframes App_slideInFadeIn_9f {
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+@keyframes App_fadeOut_b2 {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes App_fadeIn_cc {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+@keyframes App_fadeInWithScale_b3 {
+    0% {
+        opacity: 0;
+        transform: scale(1.2);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@keyframes App_slideUp_8c {
+    0% {
+        opacity: 0;
+        transform: translateY(20rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes App_scale_20 {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+@keyframes App_spin_5d {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+@keyframes App_blink_5b {
+    0% {
+        transform: translateY(0rem);
+    }
+
+    100% {
+        transform: translateY(15rem);
+    }
+}
+@keyframes App_slideInNotification_5f {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.App_base_0a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.5s ease-in;
+    pointer-events: none;
+}
+.App_base__hidden_ed {
+    display: none;
+}
+.App_base__maxLevel_f7 {
+    opacity: 0.6;
+}
+.App_inner_ac {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 130rem;
+    height: 130rem;
+    position: relative;
+}
+.mediaLarge .App_inner_ac {
+    width: 100%;
+    height: 100%;
+}
+.App_icon_fc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80rem;
+    height: 80rem;
+    background: no-repeat center / contain;
+    position: relative;
+    z-index: 1;
+}
+.mediaLarge .App_icon_fc {
+    width: 114rem;
+    height: 114rem;
+}
+.App_bricksLevel_d3 {
+    position: absolute;
+    bottom: 0;
+    transition: opacity 0.5s ease-in;
+}
+.App_base__maxLevel_f7 .App_bricksLevel_d3 {
+    opacity: 0;
+}
+.App_effects_6d {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200rem;
+    height: 200rem;
+}
+.mediaLarge .App_effects_6d {
+    width: 285rem;
+    height: 285rem;
+}
+.App_rhombs_fe {
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 200ms linear;
+    pointer-events: none;
+}
+.App_base__animation-idle_65 .App_rhombs_fe {
+    opacity: 0;
+}
+
+.BricksLevel_base_2c {
+    display: flex;
+}
+
+.BricksLevel_base__opening_90 {
+    animation: BricksLevel_show_3c 700ms ease-in-out forwards;
+}
+
+.BricksLevel_base__hiding_1d {
+    animation: BricksLevel_hiding_c1 700ms ease-in-out forwards;
+}
+
+.BricksLevel_base__hidden_ac {
+    opacity: 0;
+}
+
+.BricksLevel_level_03 {
+    width: 8rem;
+    height: 4rem;
+    border-radius: 2rem;
+    box-shadow: 0 0 25rem #322cb9;
+    background-color: rgba(225, 228, 238, 0.3);
+}
+
+.mediaSmall .BricksLevel_level_03 {
+    height: 5rem;
+}
+
+.mediaLarge .BricksLevel_level_03 {
+    width: 12rem;
+    height: 6rem;
+}
+
+.BricksLevel_level__friend_70 {
+    background-color: rgba(207, 198, 151, 0.3);
+}
+
+.BricksLevel_level_03 + .BricksLevel_level_03 {
+    margin-left: 3rem;
+}
+
+.BricksLevel_filledBrick_63 {
+    width: 100%;
+    height: 100%;
+    border-radius: 2rem;
+    background-color: #e1e4ee;
+}
+
+.BricksLevel_level__friend_70 .BricksLevel_filledBrick_63 {
+    background-color: #cfc697;
+}
+
+.BricksLevel_filledBrick__hidden_18 {
+    display: none;
+}
+
+.BricksLevel_filledBrick__opening_7f {
+    animation: BricksLevel_show_3c 700ms ease-in-out forwards;
+}
+
+.BricksLevel_filledBrick__hiding_d9 {
+    animation: BricksLevel_hiding_c1 700ms ease-in-out forwards;
+}
+
+@keyframes BricksLevel_show_3c {
+    0% {
+        clip-path: inset(0% 100% 0% 0%);
+    }
+
+    100% {
+        clip-path: inset(0% 0% 0% 0%);
+    }
+}
+
+@keyframes BricksLevel_hiding_c1 {
+    0% {
+        clip-path: inset(0% 0% 0% 0%);
+    }
+
+    100% {
+        clip-path: inset(0% 100% 0% 0%);
+    }
+}

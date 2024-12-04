@@ -209,13 +209,14 @@
                         addPreloadTexture: () => o,
                         children: () => n,
                         displayStatus: () => r.W,
-                        displayStatusIs: () => b,
+                        displayStatusIs: () => x,
                         events: () => a.U,
-                        extraSize: () => x,
+                        extraSize: () => L,
                         forceTriggerMouseMove: () => f,
                         freezeTextureBeforeResize: () => C,
                         getBrowserTexturePath: () => s,
                         getDisplayStatus: () => p,
+                        getFontNames: () => b,
                         getScale: () => d,
                         getSize: () => D,
                         getViewGlobalPosition: () => B,
@@ -229,7 +230,7 @@
                         setEventHandled: () => v,
                         setInputPaddingsRem: () => A,
                         setSidePaddingsRem: () => l,
-                        whenTutorialReady: () => L,
+                        whenTutorialReady: () => T,
                     });
                 var n = t(722),
                     r = t(112),
@@ -291,11 +292,15 @@
                 function p() {
                     return viewEnv.getShowingStatus();
                 }
-                const b = Object.keys(r.W).reduce(
+                const b = (() => {
+                        let u = [];
+                        return () => (0 === u.length && (u = Object.keys(viewEnv.getFontsConfig())), u);
+                    })(),
+                    x = Object.keys(r.W).reduce(
                         (u, e) => ((u[e] = () => viewEnv.getShowingStatus() === r.W[e]), u),
                         {},
                     ),
-                    x = {
+                    L = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -303,7 +308,7 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    L = Promise.all([
+                    T = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : a.U.onDomBuilt(u);
                         }),
@@ -1264,10 +1269,10 @@
                         );
                     },
                     I = (u, e) => u.split('.').reduce((u, e) => u && u[e], e);
-                var W = t(491);
-                const N = (u) => u && 'ArrayItem' === u.__proto__.constructor.name,
+                var N = t(491);
+                const W = (u) => u && 'ArrayItem' === u.__proto__.constructor.name,
                     G = (u, e) => (u.length > 0 ? `${u}.${e}` : e),
-                    U = W.Sw.instance;
+                    U = N.Sw.instance;
                 let $;
                 !(function (u) {
                     (u.None = 'None'), (u.Shallow = 'Shallow'), (u.Deep = 'Deep');
@@ -1286,13 +1291,13 @@
                             ((u) => {
                                 const e = I(u, window);
                                 for (const u in e) 'function' == typeof e[u] && (e[u] = e[u].bind(e));
-                                return N(e) ? e.value : e;
+                                return W(e) ? e.value : e;
                             })(
                                 ((u) =>
                                     ((u, e) =>
                                         u.split('.').reduce((u, e) => {
                                             const t = I(`${u}.${e}`, window);
-                                            return N(t) ? ((u, e) => `${u}.${e}.value`)(u, e) : `${u}.${e}`;
+                                            return W(t) ? ((u, e) => `${u}.${e}.value`)(u, e) : `${u}.${e}`;
                                         }))(u))(o),
                             ),
                         ),
@@ -1333,7 +1338,7 @@
                                             return (
                                                 n.reduce((e, n) => {
                                                     const r = I(G(t, `${e}.${n}`), window);
-                                                    return N(r)
+                                                    return W(r)
                                                         ? (u.push(r.id), `${e}.${n}.value`)
                                                         : (u.push(n), `${e}.${n}`);
                                                 }),
@@ -1534,7 +1539,7 @@
                             Object.assign(
                                 {
                                     __Type: 'GFViewEventProxy',
-                                    type: W.B0.TOOLTIP,
+                                    type: N.B0.TOOLTIP,
                                     contentID: u,
                                     decoratorID: e,
                                     targetID: n,

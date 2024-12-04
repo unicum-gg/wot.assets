@@ -5,7 +5,7 @@
             4623: (u, F, A) => {
                 var E = {};
                 A.r(E),
-                    A.d(E, { mouse: () => k, off: () => O, on: () => z, onResize: () => P, onScaleUpdated: () => S });
+                    A.d(E, { mouse: () => k, off: () => z, on: () => O, onResize: () => P, onScaleUpdated: () => S });
                 var D = {};
                 A.r(D),
                     A.d(D, {
@@ -25,13 +25,14 @@
                         addPreloadTexture: () => Eu,
                         children: () => B,
                         displayStatus: () => q,
-                        displayStatusIs: () => gu,
+                        displayStatusIs: () => pu,
                         events: () => Q,
-                        extraSize: () => pu,
+                        extraSize: () => wu,
                         forceTriggerMouseMove: () => fu,
                         freezeTextureBeforeResize: () => iu,
                         getBrowserTexturePath: () => Bu,
                         getDisplayStatus: () => mu,
+                        getFontNames: () => gu,
                         getScale: () => ou,
                         getSize: () => nu,
                         getViewGlobalPosition: () => ru,
@@ -45,7 +46,7 @@
                         setEventHandled: () => du,
                         setInputPaddingsRem: () => Du,
                         setSidePaddingsRem: () => Cu,
-                        whenTutorialReady: () => wu,
+                        whenTutorialReady: () => hu,
                     });
                 var C = A(6179),
                     n = A.n(C),
@@ -182,8 +183,8 @@
                 }
                 const P = _('clientResized'),
                     S = _('self.onScaleUpdated'),
-                    z = (u, F) => engine.on(u, F),
-                    O = (u, F) => engine.off(u, F),
+                    O = (u, F) => engine.on(u, F),
+                    z = (u, F) => engine.off(u, F),
                     j = { down: _('mousedown'), up: _('mouseup'), move: _('mousemove') };
                 const k = (function () {
                     const u = { listeners: 0, enabled: !0, initialized: !1 };
@@ -405,8 +406,12 @@
                 function mu() {
                     return viewEnv.getShowingStatus();
                 }
-                const gu = Object.keys(q).reduce((u, F) => ((u[F] = () => viewEnv.getShowingStatus() === q[F]), u), {}),
-                    pu = {
+                const gu = (() => {
+                        let u = [];
+                        return () => (0 === u.length && (u = Object.keys(viewEnv.getFontsConfig())), u);
+                    })(),
+                    pu = Object.keys(q).reduce((u, F) => ((u[F] = () => viewEnv.getShowingStatus() === q[F]), u), {}),
+                    wu = {
                         set: (u, F) => {
                             viewEnv.setExtraSizeRem(u, F);
                         },
@@ -414,14 +419,14 @@
                             viewEnv.getExtraSizeRem(u, F);
                         },
                     },
-                    wu = Promise.all([
+                    hu = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : Q.onDomBuilt(u);
                         }),
                         engine.whenReady,
                     ]),
-                    hu = { view: e, client: D, sound: I };
-                function xu() {
+                    xu = { view: e, client: D, sound: I };
+                function bu() {
                     const u = (0, C.useRef)(0);
                     var F;
                     return (
@@ -450,15 +455,15 @@
                         )
                     );
                 }
-                const bu = {
+                const yu = {
                         base: 'TooltipDecorator_base_c9',
                         'base__theme-default': 'TooltipDecorator_base__theme-default_6d',
                         decorator: 'TooltipDecorator_decorator_3d',
                     },
-                    yu = ['children', 'className', 'theme'];
-                function _u() {
+                    _u = ['children', 'className', 'theme'];
+                function Tu() {
                     return (
-                        (_u = Object.assign
+                        (Tu = Object.assign
                             ? Object.assign.bind()
                             : function (u) {
                                   for (var F = 1; F < arguments.length; F++) {
@@ -467,10 +472,10 @@
                                   }
                                   return u;
                               }),
-                        _u.apply(null, arguments)
+                        Tu.apply(null, arguments)
                     );
                 }
-                const Tu = n().forwardRef(function (u, F) {
+                const Pu = n().forwardRef(function (u, F) {
                         let A = u.children,
                             E = u.className,
                             D = u.theme,
@@ -484,8 +489,8 @@
                                         A[E] = u[E];
                                     }
                                 return A;
-                            })(u, yu);
-                        const t = xu(),
+                            })(u, _u);
+                        const t = bu(),
                             r = n().useRef(null);
                         var i;
                         return (
@@ -495,9 +500,9 @@
                                     if (!u) return;
                                     const F = u.scrollWidth,
                                         A = u.scrollHeight;
-                                    hu.view.resize(F, A);
+                                    xu.view.resize(F, A);
                                     const E = window.getComputedStyle(u);
-                                    hu.view.setSidePaddingsRem({
+                                    xu.view.setSidePaddingsRem({
                                         left: parseInt(E.getPropertyValue('padding-left'), 10),
                                         top: parseInt(E.getPropertyValue('padding-top'), 10),
                                         right: parseInt(E.getPropertyValue('padding-right'), 10),
@@ -508,19 +513,19 @@
                             (0, C.useEffect)(i, []),
                             n().createElement(
                                 'div',
-                                _u({}, e, {
-                                    className: o()(bu.base, bu[`base__theme-${B}`], E),
+                                Tu({}, e, {
+                                    className: o()(yu.base, yu[`base__theme-${B}`], E),
                                     ref: function (u) {
                                         (r.current = u), 'function' == typeof F ? F(u) : F && (F.current = u);
                                     },
                                 }),
-                                n().createElement('div', { className: bu.decorator }, A),
+                                n().createElement('div', { className: yu.decorator }, A),
                             )
                         );
                     }),
-                    Pu = () => n().createElement(Tu, null, n().createElement(y, null));
+                    Ru = () => n().createElement(Pu, null, n().createElement(y, null));
                 engine.whenReady.then(() => {
-                    r().render(n().createElement(Pu, null), document.getElementById('root'));
+                    r().render(n().createElement(Ru, null), document.getElementById('root'));
                 });
             },
         },

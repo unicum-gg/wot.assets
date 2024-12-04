@@ -209,13 +209,14 @@
                         addPreloadTexture: () => s,
                         children: () => n,
                         displayStatus: () => r.W,
-                        displayStatusIs: () => w,
+                        displayStatusIs: () => x,
                         events: () => a.U,
-                        extraSize: () => x,
+                        extraSize: () => y,
                         forceTriggerMouseMove: () => b,
                         freezeTextureBeforeResize: () => m,
                         getBrowserTexturePath: () => c,
                         getDisplayStatus: () => v,
+                        getFontNames: () => w,
                         getScale: () => D,
                         getSize: () => A,
                         getViewGlobalPosition: () => F,
@@ -229,7 +230,7 @@
                         setEventHandled: () => p,
                         setInputPaddingsRem: () => l,
                         setSidePaddingsRem: () => E,
-                        whenTutorialReady: () => y,
+                        whenTutorialReady: () => T,
                     });
                 var n = t(3722),
                     r = t(6112),
@@ -291,11 +292,15 @@
                 function v() {
                     return viewEnv.getShowingStatus();
                 }
-                const w = Object.keys(r.W).reduce(
+                const w = (() => {
+                        let e = [];
+                        return () => (0 === e.length && (e = Object.keys(viewEnv.getFontsConfig())), e);
+                    })(),
+                    x = Object.keys(r.W).reduce(
                         (e, u) => ((e[u] = () => viewEnv.getShowingStatus() === r.W[u]), e),
                         {},
                     ),
-                    x = {
+                    y = {
                         set: (e, u) => {
                             viewEnv.setExtraSizeRem(e, u);
                         },
@@ -303,7 +308,7 @@
                             viewEnv.getExtraSizeRem(e, u);
                         },
                     },
-                    y = Promise.all([
+                    T = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : a.U.onDomBuilt(e);
                         }),
@@ -772,7 +777,7 @@
                         getFormattedDateTime: (e, u, t = !0) => regionalDateTime.getFormattedDateTime(e, u, t),
                     };
             },
-            8160: (e, u, t) => {
+            856: (e, u, t) => {
                 'use strict';
                 var n = t(6179),
                     r = t.n(n);
@@ -1070,14 +1075,14 @@
                         [b.Large]: `${p().SMALL_WIDTH} ${p().MEDIUM_WIDTH} ${p().LARGE_WIDTH}`,
                         [b.ExtraLarge]: `${p().SMALL_WIDTH} ${p().MEDIUM_WIDTH} ${p().LARGE_WIDTH} ${p().EXTRA_LARGE_WIDTH}`,
                     },
-                    L = {
+                    k = {
                         [v.ExtraSmall]: '',
                         [v.Small]: p().SMALL_HEIGHT,
                         [v.Medium]: `${p().SMALL_HEIGHT} ${p().MEDIUM_HEIGHT}`,
                         [v.Large]: `${p().SMALL_HEIGHT} ${p().MEDIUM_HEIGHT} ${p().LARGE_HEIGHT}`,
                         [v.ExtraLarge]: `${p().SMALL_HEIGHT} ${p().MEDIUM_HEIGHT} ${p().LARGE_HEIGHT} ${p().EXTRA_LARGE_HEIGHT}`,
                     },
-                    k = {
+                    L = {
                         [f.ExtraSmall]: '',
                         [f.Small]: p().SMALL,
                         [f.Medium]: `${p().SMALL} ${p().MEDIUM}`,
@@ -1101,7 +1106,7 @@
                             i = a.mediaWidth,
                             o = a.mediaHeight,
                             s = a.mediaSize;
-                        return r().createElement('div', y({ className: g()(t, T[i], L[o], k[s]) }, n), u);
+                        return r().createElement('div', y({ className: g()(t, T[i], k[o], L[s]) }, n), u);
                     },
                     O = ['children'];
                 const M = (e) => {
@@ -1837,11 +1842,11 @@
                         )
                     );
                 };
-                let Le;
+                let ke;
                 !(function (e) {
                     (e.backport = 'backport'), (e.normal = 'normal'), (e.absent = 'absent');
-                })(Le || (Le = {}));
-                const ke = 'DialogTemplateButton_base_0b',
+                })(ke || (ke = {}));
+                const Le = 'DialogTemplateButton_base_0b',
                     Se = 'DialogTemplateButton_label_83',
                     Oe = 'DialogTemplateButton_label__noTooltip_14',
                     Me = (0, n.memo)(
@@ -1854,28 +1859,28 @@
                                         (e = o.type),
                                         (u = { buttonID: t }),
                                         {
-                                            isEnabled: e !== Le.absent,
+                                            isEnabled: e !== ke.absent,
                                             args: u,
                                             contentId: R.views.dialogs.common.DialogTemplateGenericTooltip('resId'),
                                             decoratorId:
-                                                e === Le.normal
+                                                e === ke.normal
                                                     ? R.views.common.tooltip_window.tooltip_window.TooltipWindow(
                                                           'resId',
                                                       )
                                                     : void 0,
-                                            ignoreShowDelay: e === Le.backport,
+                                            ignoreShowDelay: e === ke.backport,
                                             ignoreMouseClick: !0,
                                         }
                                     );
                                     var e, u;
                                 }, [o.type, t]),
-                                d = g()(Se, o.type !== Le.absent && Oe);
+                                d = g()(Se, o.type !== ke.absent && Oe);
                             return r().createElement(
                                 Ce,
                                 c,
                                 r().createElement(
                                     'div',
-                                    { className: ke },
+                                    { className: Le },
                                     r().createElement(
                                         De,
                                         { size: Fe.medium, type: s, disabled: a, onClick: l, isFocused: u },
@@ -2226,7 +2231,7 @@
                         for (; r; ) a !== r.index && t(e.slice(a, r.index)), n(r), (a = u.lastIndex), (r = u.exec(e));
                         a !== e.length && t(e.slice(a));
                     },
-                    Au = new RegExp('[฀-๿][ัำ-ฺ็-๎]*', 'gu'),
+                    Au = new RegExp('[฀-๿][ัำ-ฺ็-๎]*|[^฀-๿]', 'gu'),
                     _u = (e) => {
                         const u = [];
                         return (
@@ -2680,14 +2685,14 @@
                         );
                     }
                 }
-                let Lu;
+                let ku;
                 (Tu.defaultProps = { side: 'left', type: 'back', soundHover: 'highlight', soundClick: 'play' }),
                     (function (e) {
                         (e.responsiveHeader = 'responsiveHeader'),
                             (e.responsiveClosePosition = 'responsiveClosePosition'),
                             (e.disableResponsiveContentPosition = 'disableResponsiveContentPosition');
-                    })(Lu || (Lu = {}));
-                const ku = {
+                    })(ku || (ku = {}));
+                const Lu = {
                         base: 'DefaultDialogTemplate_base_d2',
                         topRight: 'DefaultDialogTemplate_topRight_eb',
                         center: 'DefaultDialogTemplate_center_b4',
@@ -2726,7 +2731,7 @@
                         }) => {
                             const F = ((e, u) => Object.keys(u).reduce((u, t) => ((u[t] = e.includes(t)), u), {}))(
                                     E,
-                                    Lu,
+                                    ku,
                                 ),
                                 m = F.responsiveHeader,
                                 D = F.responsiveClosePosition,
@@ -2751,25 +2756,25 @@
                                             return (e[t] = g()(u[t], ...n)), e;
                                         }, {})
                                     );
-                                })(['base'], ku),
+                                })(['base'], Lu),
                                 C = (0, n.useCallback)(() => {
                                     t && t();
                                 }, [t]),
                                 p = g()(B.base, u),
                                 f = g()(
-                                    ku.center,
-                                    a && ku.center__withIcon,
-                                    e && ku.center__shown,
-                                    !h && ku.center__responsive,
+                                    Lu.center,
+                                    a && Lu.center__withIcon,
+                                    e && Lu.center__shown,
+                                    !h && Lu.center__responsive,
                                     null == A ? void 0 : A.center,
                                 ),
-                                b = g()(ku.icon, m && ku.icon__responsive, null == A ? void 0 : A.icon),
-                                v = g()(ku.title, m && ku.title__responsive),
-                                w = g()(ku.closeBtn, D && ku.closeBtn__responsive),
+                                b = g()(Lu.icon, m && Lu.icon__responsive, null == A ? void 0 : A.icon),
+                                v = g()(Lu.title, m && Lu.title__responsive),
+                                w = g()(Lu.closeBtn, D && Lu.closeBtn__responsive),
                                 x = g()(
-                                    ku.divider,
-                                    !l && ku.divider__noContent,
-                                    !d && ku.divider__noFooter,
+                                    Lu.divider,
+                                    !l && Lu.divider__noContent,
+                                    !d && Lu.divider__noFooter,
                                     null == A ? void 0 : A.divider,
                                 );
                             return r().createElement(
@@ -2777,7 +2782,7 @@
                                 { className: p },
                                 r().createElement(
                                     'div',
-                                    { className: ku.topRight },
+                                    { className: Lu.topRight },
                                     i,
                                     r().createElement(
                                         'div',
@@ -2795,10 +2800,10 @@
                                     { className: f },
                                     a && r().createElement('div', { className: b }, a),
                                     o && r().createElement('div', { className: v }, o),
-                                    l && r().createElement('div', { className: ku.content }, l),
+                                    l && r().createElement('div', { className: Lu.content }, l),
                                     r().createElement('div', { className: x }),
-                                    d && r().createElement('div', { className: ku.footer }, d),
-                                    c && r().createElement('div', { className: ku.buttons }, c),
+                                    d && r().createElement('div', { className: Lu.footer }, d),
+                                    c && r().createElement('div', { className: Lu.buttons }, c),
                                 ),
                             );
                         },
@@ -3155,6 +3160,6 @@
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             t.forEach(u.bind(null, 0)), (t.push = u.bind(null, t.push.bind(t)));
         })();
-    var __webpack_exports__ = __webpack_require__.O(void 0, [9056], () => __webpack_require__(8160));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [9056], () => __webpack_require__(856));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

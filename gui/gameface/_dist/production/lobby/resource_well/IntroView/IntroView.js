@@ -209,13 +209,14 @@
                         addPreloadTexture: () => i,
                         children: () => E,
                         displayStatus: () => a.W,
-                        displayStatusIs: () => b,
+                        displayStatusIs: () => x,
                         events: () => r.U,
-                        extraSize: () => x,
+                        extraSize: () => L,
                         forceTriggerMouseMove: () => p,
                         freezeTextureBeforeResize: () => c,
                         getBrowserTexturePath: () => D,
                         getDisplayStatus: () => f,
+                        getFontNames: () => b,
                         getScale: () => d,
                         getSize: () => l,
                         getViewGlobalPosition: () => C,
@@ -229,7 +230,7 @@
                         setEventHandled: () => v,
                         setInputPaddingsRem: () => F,
                         setSidePaddingsRem: () => o,
-                        whenTutorialReady: () => L,
+                        whenTutorialReady: () => S,
                     });
                 var E = t(3722),
                     a = t(6112),
@@ -291,11 +292,15 @@
                 function f() {
                     return viewEnv.getShowingStatus();
                 }
-                const b = Object.keys(a.W).reduce(
+                const b = (() => {
+                        let u = [];
+                        return () => (0 === u.length && (u = Object.keys(viewEnv.getFontsConfig())), u);
+                    })(),
+                    x = Object.keys(a.W).reduce(
                         (u, e) => ((u[e] = () => viewEnv.getShowingStatus() === a.W[e]), u),
                         {},
                     ),
-                    x = {
+                    L = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -303,7 +308,7 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    L = Promise.all([
+                    S = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : r.U.onDomBuilt(u);
                         }),
@@ -842,7 +847,7 @@
                         getFormattedDateTime: (u, e, t = !0) => regionalDateTime.getFormattedDateTime(u, e, t),
                     };
             },
-            718: (u, e, t) => {
+            1139: (u, e, t) => {
                 'use strict';
                 var E = t(6179),
                     a = t.n(E);
@@ -1174,7 +1179,7 @@
                         return a().createElement('div', L({ className: h()(t, S[A], y[n], T[i]) }, E), e);
                     },
                     M = ['children'];
-                const H = (u) => {
+                const k = (u) => {
                     let e = u.children,
                         t = (function (u, e) {
                             if (null == u) return {};
@@ -1188,8 +1193,8 @@
                         })(u, M);
                     return a().createElement(_, null, a().createElement(O, t, e));
                 };
-                var k = t(493),
-                    P = t.n(k);
+                var H = t(493),
+                    P = t.n(H);
                 function N(u) {
                     engine.call('PlaySound', u).catch((e) => {
                         console.error('[lib/sounds.js] playSound(', u, '): ', e);
@@ -1627,7 +1632,7 @@
                     };
                 engine.whenReady.then(() => {
                     P().render(
-                        a().createElement(H, null, a().createElement(Su, null)),
+                        a().createElement(k, null, a().createElement(Su, null)),
                         document.getElementById('root'),
                     );
                 });
@@ -1763,6 +1768,6 @@
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             t.forEach(e.bind(null, 0)), (t.push = e.bind(null, t.push.bind(t)));
         })();
-    var __webpack_exports__ = __webpack_require__.O(void 0, [52], () => __webpack_require__(718));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [52], () => __webpack_require__(1139));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

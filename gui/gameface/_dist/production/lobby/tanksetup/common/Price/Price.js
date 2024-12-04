@@ -74,7 +74,6 @@
                             (e.crystal = 'crystal'),
                             (e.xp = 'xp'),
                             (e.freeXP = 'freeXP'),
-                            (e.eliteXP = 'eliteXP'),
                             (e.equipCoin = 'equipCoin');
                     })(i || (i = {})),
                     (function (e) {
@@ -281,15 +280,16 @@
                         displayStatus: () => i.W,
                         displayStatusIs: () => T,
                         events: () => o.U,
-                        extraSize: () => k,
-                        forceTriggerMouseMove: () => O,
+                        extraSize: () => R,
+                        forceTriggerMouseMove: () => C,
                         freezeTextureBeforeResize: () => w,
                         getBrowserTexturePath: () => l,
                         getDisplayStatus: () => P,
+                        getFontNames: () => k,
                         getScale: () => p,
                         getSize: () => v,
                         getViewGlobalPosition: () => E,
-                        isEventHandled: () => C,
+                        isEventHandled: () => O,
                         isFocused: () => y,
                         pxToRem: () => h,
                         remToPx: () => b,
@@ -299,7 +299,7 @@
                         setEventHandled: () => f,
                         setInputPaddingsRem: () => c,
                         setSidePaddingsRem: () => u,
-                        whenTutorialReady: () => R,
+                        whenTutorialReady: () => L,
                     });
                 var r = t(3722),
                     i = t(6112),
@@ -352,20 +352,24 @@
                 function f() {
                     return viewEnv.setEventHandled();
                 }
-                function C() {
+                function O() {
                     return viewEnv.isEventHandled();
                 }
-                function O() {
+                function C() {
                     viewEnv.forceTriggerMouseMove();
                 }
                 function P() {
                     return viewEnv.getShowingStatus();
                 }
-                const T = Object.keys(i.W).reduce(
+                const k = (() => {
+                        let e = [];
+                        return () => (0 === e.length && (e = Object.keys(viewEnv.getFontsConfig())), e);
+                    })(),
+                    T = Object.keys(i.W).reduce(
                         (e, n) => ((e[n] = () => viewEnv.getShowingStatus() === i.W[n]), e),
                         {},
                     ),
-                    k = {
+                    R = {
                         set: (e, n) => {
                             viewEnv.setExtraSizeRem(e, n);
                         },
@@ -373,7 +377,7 @@
                             viewEnv.getExtraSizeRem(e, n);
                         },
                     },
-                    R = Promise.all([
+                    L = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : o.U.onDomBuilt(e);
                         }),
@@ -731,7 +735,7 @@
                     };
                 var y = t(7572);
                 const f = i.instance,
-                    C = {
+                    O = {
                         DataTracker: o.Z,
                         ViewModel: y.Z,
                         ViewEventType: _,
@@ -813,7 +817,7 @@
                         SystemLocale: a.Z5,
                         UserLocale: a.cy,
                     };
-                window.ViewEnvHelper = C;
+                window.ViewEnvHelper = O;
             },
             8613: (e, n, t) => {
                 t.d(n, { Z5: () => r, cy: () => i });
@@ -863,10 +867,6 @@
                     'icon__freeXP-big': 'Currency_icon__freeXP-big_21',
                     'icon__freeXP-large': 'Currency_icon__freeXP-large_c8',
                     'icon__freeXP-extraLarge': 'Currency_icon__freeXP-extraLarge_58',
-                    'icon__eliteXP-small': 'Currency_icon__eliteXP-small_45',
-                    'icon__eliteXP-big': 'Currency_icon__eliteXP-big_c0',
-                    'icon__eliteXP-large': 'Currency_icon__eliteXP-large_1b',
-                    'icon__eliteXP-extraLarge': 'Currency_icon__eliteXP-extraLarge_9b',
                     'icon__equipCoin-small': 'Currency_icon__equipCoin-small_32',
                     'icon__equipCoin-big': 'Currency_icon__equipCoin-big_79',
                     'icon__equipCoin-large': 'Currency_icon__equipCoin-large_2c',
@@ -878,7 +878,6 @@
                     value__xp: 'Currency_value__xp_b0',
                     value__crystal: 'Currency_value__crystal_19',
                     value__equipCoin: 'Currency_value__equipCoin_d0',
-                    value__eliteXP: 'Currency_value__eliteXP_62',
                     value__notEnough: 'Currency_value__notEnough_56',
                     stock: 'Currency_stock_87',
                     stock__indent: 'Currency_stock__indent_a1',

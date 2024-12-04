@@ -209,13 +209,14 @@
                         addPreloadTexture: () => s,
                         children: () => n,
                         displayStatus: () => a.W,
-                        displayStatusIs: () => y,
+                        displayStatusIs: () => w,
                         events: () => r.U,
-                        extraSize: () => w,
+                        extraSize: () => R,
                         forceTriggerMouseMove: () => b,
                         freezeTextureBeforeResize: () => F,
                         getBrowserTexturePath: () => c,
                         getDisplayStatus: () => v,
+                        getFontNames: () => y,
                         getScale: () => g,
                         getSize: () => _,
                         getViewGlobalPosition: () => A,
@@ -229,7 +230,7 @@
                         setEventHandled: () => C,
                         setInputPaddingsRem: () => l,
                         setSidePaddingsRem: () => d,
-                        whenTutorialReady: () => R,
+                        whenTutorialReady: () => T,
                     });
                 var n = t(3722),
                     a = t(6112),
@@ -291,11 +292,15 @@
                 function v() {
                     return viewEnv.getShowingStatus();
                 }
-                const y = Object.keys(a.W).reduce(
+                const y = (() => {
+                        let e = [];
+                        return () => (0 === e.length && (e = Object.keys(viewEnv.getFontsConfig())), e);
+                    })(),
+                    w = Object.keys(a.W).reduce(
                         (e, u) => ((e[u] = () => viewEnv.getShowingStatus() === a.W[u]), e),
                         {},
                     ),
-                    w = {
+                    R = {
                         set: (e, u) => {
                             viewEnv.setExtraSizeRem(e, u);
                         },
@@ -303,7 +308,7 @@
                             viewEnv.getExtraSizeRem(e, u);
                         },
                     },
-                    R = Promise.all([
+                    T = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : r.U.onDomBuilt(e);
                         }),
@@ -1937,7 +1942,7 @@
                         for (; a; ) r !== a.index && t(e.slice(r, a.index)), n(a), (r = u.lastIndex), (a = u.exec(e));
                         r !== e.length && t(e.slice(r));
                     },
-                    xe = new RegExp('[฀-๿][ัำ-ฺ็-๎]*', 'gu'),
+                    xe = new RegExp('[฀-๿][ัำ-ฺ็-๎]*|[^฀-๿]', 'gu'),
                     Le = be
                         ? (e) => {
                               const u = [];
@@ -3300,6 +3305,7 @@
                         (e.TankmenXpFactor = 'tankmenXPFactor'),
                         (e.FreeXpFactor = 'freeXPFactor'),
                         (e.BattleToken = 'battleToken'),
+                        (e.Entitlements = 'entitlements'),
                         (e.PremiumUniversal = 'premium_universal'),
                         (e.Gold = 'gold'),
                         (e.Credits = 'credits'),
@@ -3317,6 +3323,8 @@
                         (e.BattleBadge = 'dossier_badge'),
                         (e.NewYearInvoice = 'newYearInvoice'),
                         (e.NewYearSlot = 'newYearSlot'),
+                        (e.NewYearGuestD = 'ny_dog'),
+                        (e.EquipCoin = 'equipCoin'),
                         (e.BonusX5 = 'battle_bonus_x5'),
                         (e.CrewBonusX3 = 'crew_bonus_x3'),
                         (e.Vehicles = 'vehicles'),
@@ -3325,7 +3333,6 @@
                         (e.DeluxeGift = 'deluxe_gift'),
                         (e.BattleBoosterGift = 'battleBooster_gift'),
                         (e.OptionalDevice = 'optionalDevice'),
-                        (e.EquipCoin = 'equipCoin'),
                         (e.LootBox = 'lootBox'),
                         (e.BrCoin = 'brcoin');
                 })(Mu || (Mu = {})),
@@ -3456,6 +3463,7 @@
                         Mu.TankmenXpFactor,
                         Mu.FreeXpFactor,
                         Mu.BattleToken,
+                        Mu.Entitlements,
                         Mu.PremiumUniversal,
                         Mu.NaturalCover,
                         Mu.BpCoin,
@@ -3741,8 +3749,11 @@
                         st.apply(null, arguments)
                     );
                 }
-                const lt = (e, u) => `R.images.gui.maps.icons.quests.bonuses.${u}.${e}`,
-                    ct = (0, je.Pi)(({ isAnimCanceled: e }) => {
+                let lt;
+                !(function (e) {
+                    (e.freeXP = 'freeXP'), (e.credits = 'credits');
+                })(lt || (lt = {}));
+                const ct = (0, je.Pi)(({ isAnimCanceled: e }) => {
                         const u = uu().model,
                             t = u.root.isVictory.get(),
                             r = u.computes.getHasRewards(),
@@ -3776,8 +3787,8 @@
                                                 Object.assign({}, _u(au.REWARD_MAIN, t, r), { delay: l }),
                                             ),
                                             a().createElement(ot, {
-                                                icon: lt(o.icon, i),
-                                                name: o.icon,
+                                                icon: o.icon[i],
+                                                name: lt.freeXP,
                                                 index: 0,
                                                 iconSize: i,
                                                 value: parseInt(tt(o.value)),
@@ -3793,8 +3804,8 @@
                                                 Object.assign({}, _u(au.REWARD_MAIN, t, r), { delay: l + iu }),
                                             ),
                                             a().createElement(ot, {
-                                                icon: lt(s.icon, i),
-                                                name: s.icon,
+                                                icon: s.icon[i],
+                                                name: lt.credits,
                                                 index: 1,
                                                 iconSize: i,
                                                 value: parseInt(tt(s.value)),
@@ -3848,7 +3859,7 @@
                                                         ut,
                                                         st({}, u, {
                                                             value: nt(u.value, o),
-                                                            image: lt(u.icon, i),
+                                                            image: u.icon[i],
                                                             valueType: o,
                                                             size: i,
                                                             tooltipArgs: Zu(

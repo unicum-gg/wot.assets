@@ -205,17 +205,18 @@
                         addPreloadTexture: () => _,
                         children: () => i,
                         displayStatus: () => o.W,
-                        displayStatusIs: () => k,
+                        displayStatusIs: () => R,
                         events: () => r.U,
-                        extraSize: () => R,
-                        forceTriggerMouseMove: () => y,
+                        extraSize: () => L,
+                        forceTriggerMouseMove: () => T,
                         freezeTextureBeforeResize: () => h,
                         getBrowserTexturePath: () => c,
                         getDisplayStatus: () => P,
+                        getFontNames: () => k,
                         getScale: () => p,
                         getSize: () => v,
                         getViewGlobalPosition: () => E,
-                        isEventHandled: () => T,
+                        isEventHandled: () => y,
                         isFocused: () => g,
                         pxToRem: () => b,
                         remToPx: () => m,
@@ -225,7 +226,7 @@
                         setEventHandled: () => O,
                         setInputPaddingsRem: () => d,
                         setSidePaddingsRem: () => u,
-                        whenTutorialReady: () => L,
+                        whenTutorialReady: () => S,
                     });
                 var i = n(3722),
                     o = n(6112),
@@ -278,20 +279,24 @@
                 function O() {
                     return viewEnv.setEventHandled();
                 }
-                function T() {
+                function y() {
                     return viewEnv.isEventHandled();
                 }
-                function y() {
+                function T() {
                     viewEnv.forceTriggerMouseMove();
                 }
                 function P() {
                     return viewEnv.getShowingStatus();
                 }
-                const k = Object.keys(o.W).reduce(
+                const k = (() => {
+                        let e = [];
+                        return () => (0 === e.length && (e = Object.keys(viewEnv.getFontsConfig())), e);
+                    })(),
+                    R = Object.keys(o.W).reduce(
                         (e, t) => ((e[t] = () => viewEnv.getShowingStatus() === o.W[t]), e),
                         {},
                     ),
-                    R = {
+                    L = {
                         set: (e, t) => {
                             viewEnv.setExtraSizeRem(e, t);
                         },
@@ -299,7 +304,7 @@
                             viewEnv.getExtraSizeRem(e, t);
                         },
                     },
-                    L = Promise.all([
+                    S = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : r.U.onDomBuilt(e);
                         }),
@@ -657,7 +662,7 @@
                     };
                 var g = n(7572);
                 const O = o.instance,
-                    T = {
+                    y = {
                         DataTracker: r.Z,
                         ViewModel: g.Z,
                         ViewEventType: s,
@@ -739,7 +744,7 @@
                         SystemLocale: a.Z5,
                         UserLocale: a.cy,
                     };
-                window.ViewEnvHelper = T;
+                window.ViewEnvHelper = y;
             },
             8613: (e, t, n) => {
                 n.d(t, { Z5: () => i, cy: () => o });

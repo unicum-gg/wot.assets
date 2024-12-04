@@ -1,0 +1,292 @@
+(def layout LootBoxEntryVideoView() entrance=true  hideBeforeResolve=true
+    (macro LootBoxEntryVideoViewModel)
+    (scope
+        (event evOnVideoLoaded)
+        (event evOnVideoScaleChanged)
+        (event evOnContentFadedOut)
+        (event evOnBoxTransitionStart)
+        (event evOnDeliveryBounced)
+        (event evOnBoxOver)
+        (event evOnBoxOut)
+        (event evOnSelectedBoxChange)
+
+        (const BOX_VIDEO_CHANGE_TIMESTAMP:dict = {
+                'NewYear': {
+                    'Fairytale': 3.000,
+                    'Christmas': 7.000,
+                    'Oriental': 10.000,
+                    'premium_empty': 28.000
+                },
+                'Oriental': {
+                    'NewYear': 2.000,
+                    'Fairytale': 4.000,
+                    'Christmas': 6.000,
+                    'premium_empty': 30.000
+                },
+                'Fairytale': {
+                    'NewYear': 0.000,
+                    'Christmas': 8.000,
+                    'Oriental': 9.000,
+                    'premium_empty': 31.000
+                },
+                'Christmas': {
+                    'NewYear': 1.000,
+                    'Fairytale': 5.000,
+                    'Oriental': 11.000,
+                    'premium_empty': 29.000
+                },
+                'premium_empty': {
+                    'NewYear': 24.000,
+                    'Christmas': 25.000,
+                    'Oriental': 26.000,
+                    'Fairytale': 27.000
+                }
+            }
+        )
+        (const BOX_VIDEO_DELIVERY_BOUNCE_TIMESTAMP:dict = {
+                'NewYear': 12.050,
+                'Oriental': 15.050,
+                'Fairytale': 18.050,
+                'Christmas': 21.050
+            }
+        )
+        (const PREMIUM_EMPTY_LABEL:str = 'premium_empty')
+
+        (var bgScale:number = 1.1)
+        (bind bgScale "$event.value" init=false
+            (event "evOnVideoScaleChanged")
+        )
+
+        (event evValueChanged)
+        (var localIsBoxHovered:bool = false
+            (dispatch evValueChanged on='evChanged')
+        )
+        (bind localIsBoxHovered "isBoxHovered"
+            init=false
+        )
+        (dispatch evOnBoxOver
+            (enabled = "isBoxHovered")
+            (event "evValueChanged")
+        )
+        (dispatch evOnBoxOut
+            (enabled = "!isBoxHovered")
+            (event "evValueChanged")
+        )
+        (var lootBoxHoverAnimAlpha:number = 0)
+        (controller $Animation
+            (bindcall stop
+                (event "evOnBoxOver")
+                (event "evOnBoxOut")
+            )
+            (bindcall play
+                to={lootBoxHoverAnimAlpha:1}
+                duration=0.25
+                easing="Easing.sine_in"
+                (event "evOnBoxOver")
+            )
+            (bindcall play
+                to={lootBoxHoverAnimAlpha:0}
+                duration=0.25
+                easing="Easing.sine_out"
+                (event "evOnBoxOut")
+            )
+        )
+        (const HOVER_POSITIONS:dict = {
+                'NewYear': [1, 52],
+                'Oriental': [0, 60],
+                'Fairytale': [1, 53],
+                'Christmas': [1, 54],
+                'premium_empty': [0, 0],
+            }
+        )
+
+        (var isDeliveryBouncing:bool = false)
+        (bind isDeliveryBouncing true init=false
+            (event "onDeliveryVideoStopped")
+        )
+        (bind isDeliveryBouncing false init=false
+            (event "onDeliveryVideoStarted")
+            (event "evOnDeliveryBounced")
+        )
+
+        (var changedSelectedBoxName:str = "selectedBoxName"
+            (dispatch evOnSelectedBoxChange on='evChanged')
+        )
+        (var currentBoxName:str = '')
+        (var isHoverVisible:bool = "changedSelectedBoxName && changedSelectedBoxName != PREMIUM_EMPTY_LABEL")
+        (var isMissingState:bool = false)
+        (bind isMissingState "isEmptySwitch" init=false watch=false
+           (event "evOnSelectedBoxChange")
+        )
+        (bind isMissingState false init=false
+            (event "onBoxTransitionEnd")
+        )
+
+        (var isBoxTransition:bool = false)
+        (bind isBoxTransition true init=false
+            (bind enabled "currentBoxName != changedSelectedBoxName" init=false)
+        )
+
+        (bind isBoxTransition false init=false
+            (event "onBoxTransitionEnd")
+        )
+
+        (var isInitialized:bool = false)
+        (bind isInitialized true init=false
+            (event "evOnVideoLoaded")
+            (event "onDeliveryVideoStarted")
+        )
+
+        (bind currentBoxName "changedSelectedBoxName" init=false watch=false
+            (bind enabled "isInitialized && !isMissingState")
+            (event "evOnBoxTransitionStart")
+        )
+        (bind currentBoxName "changedSelectedBoxName" init=false watch=false
+            (bind enabled "isInitialized && isMissingState")
+            (event "evOnSelectedBoxChange")
+        )
+
+        (var viewAlpha:number = 0)
+        (var videoAlpha:number = 0)
+        (var videoViewAlpha:number = 0)
+        (controller $Animation
+            (bindcall play
+                to={viewAlpha:1}
+                duration=0.4
+                (bind enabled "isInitialized")
+            )
+            (bindcall play
+                init=false
+                to={videoAlpha:1}
+                delay=0.4
+                duration=0.8
+                (bind enabled "isInitialized")
+            )
+            (bindcall play
+                init=false
+                to={videoViewAlpha:1}
+                delay=0.3
+                duration=0.5
+                (bind enabled "isInitialized")
+            )
+        )
+    )
+
+    (style
+        (macro ViewResizeBindedSize)
+        (bind alpha "viewAlpha")
+        (align = "center|middle")
+        (backgroundColor = 0xFF120A0D)
+    )
+
+    (exec "playSound(R.sounds.gui_lootbox_logistic_center_boxes_highlight_on())"
+        (event "evOnBoxOver")
+    )
+    (exec "playSound(R.sounds.gui_lootbox_logistic_center_boxes_highlight_off())"
+        (event "evOnBoxOut")
+    )
+    (exec "playSound(R.sounds.gui_lootbox_logistic_center_switch_paid_appear())"
+        (event "onDeliveryVideoStopped")
+    )
+
+    (element BackgroundVideoAnimation
+        (name = 'lootBoxAnimation')
+        (style
+            (bind alpha "videoViewAlpha")
+        )
+        (scope
+            (fitVideo = true)
+            (bind videoAlpha "videoAlpha")
+            (bind bufferLength "streamBufferLength")
+            (bind idleSource "R.videos.new_year.usm.lootboxes.idles[currentBoxName]()" init=false)
+            (mainSource = "R.videos.new_year.usm.lootboxes.lootbox_entry()")
+            (bind viewWidth "viewSize.width"
+                (event "viewResized")
+            )
+            (bind viewHeight "viewSize.height"
+                (event "viewResized")
+            )
+            (bind transitionStart "BOX_VIDEO_CHANGE_TIMESTAMP[currentBoxName][changedSelectedBoxName]" init=false watch=false
+                (bind enabled "isBoxTransition && !isMissingState")
+            )
+            (bind transitionStart 0 init=false watch=false
+                (bind enabled "isBoxTransition && isMissingState")
+            )
+            (bind transitionStart "BOX_VIDEO_DELIVERY_BOUNCE_TIMESTAMP[currentBoxName]" init=false watch=false
+                (bind enabled "isDeliveryBouncing")
+            )
+            (bind showTransition true init=false
+                (bind enabled "(isBoxTransition && !isMissingState) || isDeliveryBouncing")
+            )
+            (dispatch evOnVideoLoaded on='evMetaDataChanged'
+                (enabled = "!isInitialized && !isDeliveryVideoPlaying")
+            )
+            (dispatch onBoxTransitionEnd on='evOnTransitionEnd'
+                (enabled = "isBoxTransition")
+            )
+            (dispatch evOnBoxTransitionStart on='evSeekCompleted'
+                (enabled = "isBoxTransition")
+            )
+            (dispatch evOnDeliveryBounced on='evOnTransitionEnd'
+                (enabled = "isDeliveryBouncing")
+            )
+            (dispatch onDeliveryShowControls on='evOnKeyPointReached'
+                (enabled = "isDeliveryBouncing")
+            )
+            (dispatch pauseVideoPlayback dir=2
+                (bind enabled "!isClientFocused")
+            )
+            (dispatch resumeVideoPlayback dir=2
+                (bind enabled "isClientFocused")
+            )
+            (dispatch onVideoLoadError on='evLoadError')
+
+            (dispatch resumeVideoPlayback dir=2
+                on='evIdlePlaybackStarted'
+                (enabled = "isMissingState")
+            )
+            (dispatch onBoxTransitionEnd on='evIdlePlaybackStarted'
+                (enabled = "isMissingState")
+            )
+        )
+    )
+
+    (swf
+        (name = 'lootBoxHoverAnim')
+        (style
+            (position = absolute)
+            (pivotX = 50%)
+            (pivotY = 50%)
+            (bind scaleX "bgScale")
+            (bind scaleY "bgScale")
+            (bind hcenter "HOVER_POSITIONS[changedSelectedBoxName][0] * bgScale" init=false)
+            (bind vcenter "HOVER_POSITIONS[changedSelectedBoxName][1] * bgScale" init=false)
+            (bind alpha "min(videoAlpha, lootBoxHoverAnimAlpha)")
+            (blendMode = 'add')
+        )
+        (bind source "R.animations.ny['particles_' + changedSelectedBoxName]()" init=false
+            (bind enabled "isHoverVisible")
+        )
+
+        (bind visible "isHoverVisible" init=false)
+    )
+
+    (element RewardVideo
+        (name = 'lootboxDeliveryVideo')
+        (scope
+            (canEscape = true)
+            (sourceName = "R.videos.new_year.usm.lootboxes.lootbox_delivery()")
+            (bind playVideo true init=false
+                (bind enabled "isDeliveryVideoPlaying")
+            )
+            (bind stopVideo "!isDeliveryVideoPlaying" init=false)
+            (canClick = false)
+            (bind isVideoPaused "!isClientFocused")
+            (dispatch onDeliveryVideoStarted on='evOnPlaybackStarted')
+            (dispatch onDeliveryVideoStopped on='evOnPlaybackStopped')
+            (dispatch onDeliveryVideoInterrupted on='evNeedStop')
+        )
+    )
+    (macro NoTabAndMouse)
+    (macro EmptyHitAreaMacro)
+)

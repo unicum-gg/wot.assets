@@ -1,0 +1,198 @@
+.TooltipDecorator_base_c9 {
+    display: flex;
+    position: absolute;
+}
+
+.TooltipDecorator_base__theme-default_6d .TooltipDecorator_decorator_3d {
+    padding: 4rem 6rem 8rem;
+    border-image-source: url('R.atlases.components.tooltip_background');
+    border-image-slice: 24 fill;
+    border-image-width: 24rem;
+    position: relative;
+}
+
+.FormatText_base_d0 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.FormatTextWithColorTags_creamColor_8f {
+    color: #ffdd99;
+}
+
+.FormatTextWithColorTags_brownColor_90 {
+    color: #cbac77;
+}
+
+.FormatTextWithColorTags_credColor_a7 {
+    color: #ced9d9;
+}
+
+.FormatTextWithColorTags_blueColor_73 {
+    color: rgb(205, 237, 255);
+}
+
+.FormatTextWithColorTags_lightBlueColor_fa {
+    color: #aec5f2;
+}
+
+.FormatTextWithColorTags_goldColor_d6 {
+    color: #ffc363;
+}
+
+.FormatTextWithColorTags_grayColor_8b {
+    color: #8c8c7e;
+}
+
+.FormatTextWithColorTags_whiteSpanish_4b {
+    color: #e9e2bf;
+}
+
+.FormatTextWithColorTags_bondColor_53 {
+    color: #c9c9b6;
+}
+
+.FormatTextWithColorTags_yellowColor_84 {
+    color: #feab34;
+}
+
+.Resource_base_4b {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Resource_value_97 {
+    color: #8c8c7e;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+
+.Resource_base__ny_crystal_9e .Resource_value_97 {
+    color: #ccdaf3;
+}
+
+.Resource_base__ny_emerald_18 .Resource_value_97 {
+    color: #8ada80;
+}
+
+.Resource_base__ny_amber_fe.Resource_value_97 {
+    color: #eeaf6e;
+}
+
+.Resource_base__ny_iron_5c .Resource_value_97 {
+    color: #e2e2cc;
+}
+
+.Resource_icon_94 {
+    width: 20rem;
+    height: 20rem;
+    background: no-repeat center / contain;
+}
+
+.Resource_base__ny_crystal_9e .Resource_icon_94 {
+    background-image: url('R.images.gui.maps.icons.newYear.resources.size_24.ny_crystal');
+}
+
+.Resource_base__ny_emerald_18 .Resource_icon_94 {
+    background-image: url('R.images.gui.maps.icons.newYear.resources.size_24.ny_emerald');
+}
+
+.Resource_base__ny_amber_fe .Resource_icon_94 {
+    background-image: url('R.images.gui.maps.icons.newYear.resources.size_24.ny_amber');
+}
+
+.Resource_base__ny_iron_5c .Resource_icon_94 {
+    background-image: url('R.images.gui.maps.icons.newYear.resources.size_24.ny_iron');
+}
+
+.Resources_base_06 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Resources_conjunction_09 {
+    margin: 0 5rem 0 2rem;
+}
+
+.Resources_resource_9a {
+    display: flex;
+}
+
+.App_base_f0 {
+    color: rgba(242, 242, 247, 0.6);
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    padding: 0 20rem 16rem;
+    background-image: linear-gradient(140deg, #1c4889 0%, rgba(0, 0, 0, 0) 50%);
+}
+
+.App_header_98 {
+    display: flex;
+    align-items: center;
+    transform: translateX(-8rem);
+}
+
+.App_base__Resources_62 .App_header_98 {
+    transform: translateX(-16rem);
+}
+
+.App_objectName_9a {
+    color: #f2f2f7;
+    font-size: 15rem;
+    font-weight: 700;
+    line-height: 1.15;
+    display: flex;
+    flex-direction: column;
+}
+
+.App_objectIcon_5b {
+    width: 64rem;
+    height: 64rem;
+    background: no-repeat center / contain;
+}
+
+.App_base__Fir_07 .App_objectIcon_5b {
+    background-image: url('R.images.gui.maps.icons.newYear.sidebar.Fir');
+}
+
+.App_base__Fair_c3 .App_objectIcon_5b {
+    background-image: url('R.images.gui.maps.icons.newYear.sidebar.Fair');
+}
+
+.App_base__Installation_28 .App_objectIcon_5b {
+    background-image: url('R.images.gui.maps.icons.newYear.sidebar.Installation');
+}
+
+.App_base__headquartersChallenge_04 .App_objectIcon_5b {
+    background-image: url('R.images.gui.maps.icons.newYear.sidebar.headquartersChallenge');
+}
+
+.App_base__Resources_62 .App_objectIcon_5b {
+    background-image: url('R.images.gui.maps.icons.newYear.sidebar.Resources');
+}
+
+.App_separator_74 {
+    flex: 1;
+    height: 1rem;
+    margin: 11rem 0 8rem;
+    background: #8c8c7e;
+    opacity: 0.3;
+}
+
+.App_description_ef {
+    width: 300rem;
+    white-space: pre-wrap;
+}
+
+.App_descriptionInner_d9 + .App_descriptionInner_d9 {
+    margin-top: 8rem;
+}
+
+.App_cost_1a {
+    display: flex;
+    line-height: 1.7;
+}

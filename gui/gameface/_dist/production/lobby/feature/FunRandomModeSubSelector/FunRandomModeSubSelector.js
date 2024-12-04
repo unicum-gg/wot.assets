@@ -151,13 +151,14 @@
                         addPreloadTexture: () => m,
                         children: () => a,
                         displayStatus: () => i,
-                        displayStatusIs: () => y,
+                        displayStatusIs: () => R,
                         events: () => o,
-                        extraSize: () => R,
+                        extraSize: () => k,
                         forceTriggerMouseMove: () => x,
                         freezeTextureBeforeResize: () => p,
                         getBrowserTexturePath: () => _,
                         getDisplayStatus: () => P,
+                        getFontNames: () => y,
                         getScale: () => h,
                         getSize: () => g,
                         getViewGlobalPosition: () => C,
@@ -171,7 +172,7 @@
                         setEventHandled: () => S,
                         setInputPaddingsRem: () => A,
                         setSidePaddingsRem: () => D,
-                        whenTutorialReady: () => k,
+                        whenTutorialReady: () => O,
                     });
                 var a = {};
                 function n(e, u, t = 1) {
@@ -304,8 +305,12 @@
                 function P() {
                     return viewEnv.getShowingStatus();
                 }
-                const y = Object.keys(i).reduce((e, u) => ((e[u] = () => viewEnv.getShowingStatus() === i[u]), e), {}),
-                    R = {
+                const y = (() => {
+                        let e = [];
+                        return () => (0 === e.length && (e = Object.keys(viewEnv.getFontsConfig())), e);
+                    })(),
+                    R = Object.keys(i).reduce((e, u) => ((e[u] = () => viewEnv.getShowingStatus() === i[u]), e), {}),
+                    k = {
                         set: (e, u) => {
                             viewEnv.setExtraSizeRem(e, u);
                         },
@@ -313,7 +318,7 @@
                             viewEnv.getExtraSizeRem(e, u);
                         },
                     },
-                    k = Promise.all([
+                    O = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : o.onDomBuilt(e);
                         }),
@@ -723,7 +728,7 @@
                         getFormattedDateTime: (e, u, t = !0) => regionalDateTime.getFormattedDateTime(e, u, t),
                     };
             },
-            8156: (e, u, t) => {
+            9918: (e, u, t) => {
                 'use strict';
                 var a = t(6179),
                     n = t.n(a);
@@ -1228,7 +1233,7 @@
                 const q = (e) => {
                     console.error(e.type + ': useKeydownListener hook :: Callback is not defined');
                 };
-                function V(e = z.n.NONE, u = q, t = !1, n = !1) {
+                function Y(e = z.n.NONE, u = q, t = !1, n = !1) {
                     (0, a.useEffect)(() => {
                         if (e !== z.n.NONE)
                             return (
@@ -1245,7 +1250,7 @@
                         }
                     }, [u, e, t, n]);
                 }
-                var Y = t(3403);
+                var V = t(3403);
                 const X = R.images.fun_random.gui.maps.icons.feature.asset_packs,
                     K = 'undefined',
                     Q = (e, u) => ('string' == typeof u ? e.$dyn(u) : u.reduce((e, u) => e.$dyn(u), e)),
@@ -1289,6 +1294,7 @@
                             (e.TankmenXpFactor = 'tankmenXPFactor'),
                             (e.FreeXpFactor = 'freeXPFactor'),
                             (e.BattleToken = 'battleToken'),
+                            (e.Entitlements = 'entitlements'),
                             (e.PremiumUniversal = 'premium_universal'),
                             (e.Gold = 'gold'),
                             (e.Credits = 'credits'),
@@ -1306,6 +1312,8 @@
                             (e.BattleBadge = 'dossier_badge'),
                             (e.NewYearInvoice = 'newYearInvoice'),
                             (e.NewYearSlot = 'newYearSlot'),
+                            (e.NewYearGuestD = 'ny_dog'),
+                            (e.EquipCoin = 'equipCoin'),
                             (e.BonusX5 = 'battle_bonus_x5'),
                             (e.CrewBonusX3 = 'crew_bonus_x3'),
                             (e.Vehicles = 'vehicles'),
@@ -1314,7 +1322,6 @@
                             (e.DeluxeGift = 'deluxe_gift'),
                             (e.BattleBoosterGift = 'battleBooster_gift'),
                             (e.OptionalDevice = 'optionalDevice'),
-                            (e.EquipCoin = 'equipCoin'),
                             (e.LootBox = 'lootBox'),
                             (e.BrCoin = 'brcoin');
                     })(ee || (ee = {})),
@@ -1438,6 +1445,7 @@
                         ee.TankmenXpFactor,
                         ee.FreeXpFactor,
                         ee.BattleToken,
+                        ee.Entitlements,
                         ee.PremiumUniversal,
                         ee.NaturalCover,
                         ee.BpCoin,
@@ -1499,9 +1507,6 @@
                             case 'tokens':
                             case 'lootBox':
                             case 'battleToken':
-                                return 'big' === u
-                                    ? e.iconBig.replace('..', 'img://gui')
-                                    : e.iconSmall.replace('..', 'img://gui');
                             case 'customizations':
                             case 'styleProgress':
                             case 'crewSkins':
@@ -1510,6 +1515,10 @@
                             case 'tmanToken':
                             case 'battlePassSelectToken':
                                 return `R.images.gui.maps.icons.quests.bonuses.${u}.${r}`;
+                            case 'entitlements':
+                                return 'big' === u
+                                    ? e.iconBig.replace('..', 'img://gui')
+                                    : e.iconSmall.replace('..', 'img://gui');
                             case 'crewBooks':
                                 return `R.images.gui.maps.icons.crewBooks.books.${u}.${r}`;
                             case 'dogTagComponents':
@@ -1543,10 +1552,14 @@
                                 return `R.images.gui.maps.icons.quests.bonuses.${u}.freeXP`;
                             case 'premiumTank':
                                 return `R.images.gui.maps.icons.quests.bonuses.${u}.vehicles`;
+                            case 'premiumTank_rent':
+                                return `R.images.gui.maps.icons.quests.bonuses.${u}.vehicles_rent`;
                             case 'styleProgressToken':
                                 return `R.images.gui.maps.icons.quests.bonuses.${u}.style_3d`;
                             case 'collectionItem':
                                 return `R.images.gui.maps.icons.collectionItems.${o}.${r}`;
+                            case 'newYearSlot':
+                                return `R.images.gui.maps.icons.newYear.rewards.${u}.slot`;
                             default:
                                 return `R.images.gui.maps.icons.quests.bonuses.${u}.${t}`;
                         }
@@ -2178,10 +2191,10 @@
                             );
                         },
                     ),
-                    Ve = ['onComplete', 'onEndAnimation'];
-                function Ye() {
+                    Ye = ['onComplete', 'onEndAnimation'];
+                function Ve() {
                     return (
-                        (Ye = Object.assign
+                        (Ve = Object.assign
                             ? Object.assign.bind()
                             : function (e) {
                                   for (var u = 1; u < arguments.length; u++) {
@@ -2190,7 +2203,7 @@
                                   }
                                   return e;
                               }),
-                        Ye.apply(null, arguments)
+                        Ve.apply(null, arguments)
                     );
                 }
                 const Xe = (0, a.memo)((e) => {
@@ -2205,7 +2218,7 @@
                                         t[a] = e[a];
                                     }
                                 return t;
-                            })(e, Ve);
+                            })(e, Ye);
                         const i = (0, a.useState)(!1),
                             s = i[0],
                             o = i[1],
@@ -2215,9 +2228,9 @@
                             }, [s, u, t, r.to]);
                         switch (r.animationSettings.type) {
                             case ye.Simple:
-                                return n().createElement($e, Ye({}, r, { onEndAnimation: l, isComplete: s }));
+                                return n().createElement($e, Ve({}, r, { onEndAnimation: l, isComplete: s }));
                             case ye.Growing:
-                                return n().createElement(qe, Ye({}, r, { onEndAnimation: l, isComplete: s }));
+                                return n().createElement(qe, Ve({}, r, { onEndAnimation: l, isComplete: s }));
                             default:
                                 return null;
                         }
@@ -3012,8 +3025,8 @@
                     zu = (e) => Gu.includes(e) || Hu.includes(e),
                     ju = (e) => zu(e.status),
                     qu = (e) => !zu(e.status),
-                    Vu = (e, u) => e.status !== u.status && Ku(e, u),
-                    Yu = (e, u) => Gu.includes(e.status) && Hu.includes(u.status),
+                    Yu = (e, u) => e.status !== u.status && Ku(e, u),
+                    Vu = (e, u) => Gu.includes(e.status) && Hu.includes(u.status),
                     Xu = (e) => !e.crossProgressionEnabled || Hu.includes(e.status),
                     Ku = (e, u) =>
                         u.stage === e.stage &&
@@ -3024,7 +3037,7 @@
                         zu(u.status) &&
                         ((1 === u.stage && 0 === u.currentPoints) ||
                             (u.stage === e.stage && e.maximumPoints !== u.maximumPoints) ||
-                            (Yu(e, u) && u.stage !== e.stage && e.currentPoints === e.maximumPoints)),
+                            (Vu(e, u) && u.stage !== e.stage && e.currentPoints === e.maximumPoints)),
                     Zu = (e, u) =>
                         u.stage === e.stage &&
                         u.currentPoints === e.currentPoints &&
@@ -3034,7 +3047,7 @@
                         (u.stage === e.stage || e.crossProgressionEnabled) &&
                         u.currentPoints !== e.currentPoints &&
                         u.maximumPoints === e.maximumPoints,
-                    et = (e, u) => Yu(e, u) || (Xu(e) && u.stage > e.stage && e.currentPoints < e.maximumPoints),
+                    et = (e, u) => Vu(e, u) || (Xu(e) && u.stage > e.stage && e.currentPoints < e.maximumPoints),
                     ut = (e, u) => Xu(e) && u.stage > e.stage && e.currentPoints === e.maximumPoints,
                     tt = (e, u) => u.stage < e.stage && e.currentPoints > 0,
                     at = (e, u) => u.stage < e.stage && 0 === e.currentPoints,
@@ -3060,7 +3073,7 @@
                         st.apply(null, arguments)
                     );
                 }
-                const ot = (0, Y.Pi)(({ onStatusUpdate: e }) => {
+                const ot = (0, V.Pi)(({ onStatusUpdate: e }) => {
                         const u = we().model,
                             t = u.currentStage.get(),
                             r = t.currentPoints,
@@ -3115,7 +3128,7 @@
                                                                         status: u.status,
                                                                     })),
                                                                 ],
-                                                                cond: Vu,
+                                                                cond: Yu,
                                                             },
                                                             { target: Wu.Active, cond: Ku },
                                                             {
@@ -3276,8 +3289,8 @@
                                             guards: {
                                                 hasActiveStatus: ju,
                                                 hasNonActiveStatus: qu,
-                                                isSwitchToInfinite: Yu,
-                                                isStatusUpdate: Vu,
+                                                isSwitchToInfinite: Vu,
+                                                isStatusUpdate: Yu,
                                                 isTaskSwitchingUpdate: Qu,
                                                 isNoUpdate: Ku,
                                                 isUpdateCurrentStageWithZeroEarnPoints: Zu,
@@ -3546,7 +3559,7 @@
                             );
                         },
                     ),
-                    ft = (0, Y.Pi)(() => {
+                    ft = (0, V.Pi)(() => {
                         const e = we().model,
                             u = e.progressionState.get().statusTimer,
                             t = e.assetsPointer.get(),
@@ -3586,7 +3599,7 @@
                         base__disabled: 'Progression_base__disabled_25',
                         completeWrapper: 'Progression_completeWrapper_82',
                     },
-                    wt = (0, Y.Pi)(({ className: e }) => {
+                    wt = (0, V.Pi)(({ className: e }) => {
                         const u = we().model.progressionState.get().status,
                             t = (0, a.useState)(u),
                             r = t[0],
@@ -4002,9 +4015,9 @@
                         notStarted: 'SubModeCard_notStarted_f2',
                     },
                     qt = ['assetsPointer', 'state', 'modifiersDomains'];
-                function Vt() {
+                function Yt() {
                     return (
-                        (Vt = Object.assign
+                        (Yt = Object.assign
                             ? Object.assign.bind()
                             : function (e) {
                                   for (var u = 1; u < arguments.length; u++) {
@@ -4013,10 +4026,10 @@
                                   }
                                   return e;
                               }),
-                        Vt.apply(null, arguments)
+                        Yt.apply(null, arguments)
                     );
                 }
-                const Yt = (e) => {
+                const Vt = (e) => {
                         let u = e;
                         const t = R.images.fun_random.gui.maps.icons.feature.asset_packs.sub_modes;
                         return null === t.$dyn(e) && (u = 'undefined'), t.$dyn(u).$dyn('sub_modes_selector');
@@ -4061,9 +4074,9 @@
                             { className: jt.base },
                             n().createElement(
                                 Lt,
-                                Vt({}, r, {
+                                Yt({}, r, {
                                     resourcesFolderName: u,
-                                    resourceFolderGetter: Yt,
+                                    resourceFolderGetter: Vt,
                                     onItemClicked: F,
                                     onInfoClicked: D,
                                     isInfoIconVisible: _,
@@ -4126,7 +4139,7 @@
                         ea.apply(null, arguments)
                     );
                 }
-                const ua = (0, Y.Pi)(() => {
+                const ua = (0, V.Pi)(() => {
                     const e = we(),
                         u = e.model,
                         t = e.controls,
@@ -4139,7 +4152,7 @@
                             return null != (t = a.$dyn(e)) ? t : a.$dyn(K);
                         })(u.assetsPointer.get()).battle_type;
                     var l;
-                    (l = t.close), V(z.n.ESCAPE, l);
+                    (l = t.close), Y(z.n.ESCAPE, l);
                     const c = v(),
                         E = (0, a.useMemo)(
                             () =>
@@ -4318,6 +4331,6 @@
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             t.forEach(u.bind(null, 0)), (t.push = u.bind(null, t.push.bind(t)));
         })();
-    var __webpack_exports__ = __webpack_require__.O(void 0, [503], () => __webpack_require__(8156));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [503], () => __webpack_require__(9918));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

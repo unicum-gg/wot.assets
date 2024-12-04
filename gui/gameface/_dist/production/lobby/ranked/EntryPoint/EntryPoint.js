@@ -2,7 +2,7 @@
     'use strict';
     var __webpack_modules__ = {
             768: (u, e, t) => {
-                t.d(e, { O: () => tu });
+                t.d(e, { O: () => nu });
                 var n = {};
                 t.r(n),
                     t.d(n, { mouse: () => C, off: () => D, on: () => s, onResize: () => o, onScaleUpdated: () => a });
@@ -36,19 +36,20 @@
                         addPreloadTexture: () => M,
                         children: () => F,
                         displayStatus: () => p,
-                        displayStatusIs: () => J,
+                        displayStatusIs: () => uu,
                         events: () => g,
-                        extraSize: () => uu,
+                        extraSize: () => eu,
                         forceTriggerMouseMove: () => X,
                         freezeTextureBeforeResize: () => K,
                         getBrowserTexturePath: () => N,
                         getDisplayStatus: () => Q,
-                        getScale: () => q,
+                        getFontNames: () => J,
+                        getScale: () => j,
                         getSize: () => z,
                         getViewGlobalPosition: () => W,
                         isEventHandled: () => Z,
                         isFocused: () => $,
-                        pxToRem: () => j,
+                        pxToRem: () => q,
                         remToPx: () => G,
                         resize: () => U,
                         sendEvent: () => R,
@@ -56,7 +57,7 @@
                         setEventHandled: () => Y,
                         setInputPaddingsRem: () => L,
                         setSidePaddingsRem: () => V,
-                        whenTutorialReady: () => eu,
+                        whenTutorialReady: () => tu,
                     });
                 const o = i('clientResized'),
                     a = i('self.onScaleUpdated'),
@@ -256,10 +257,10 @@
                 function K() {
                     viewEnv.freezeTextureBeforeResize();
                 }
-                function q() {
+                function j() {
                     return viewEnv.getScale();
                 }
-                function j(u) {
+                function q(u) {
                     return viewEnv.pxToRem(u);
                 }
                 function G(u) {
@@ -283,8 +284,12 @@
                 function Q() {
                     return viewEnv.getShowingStatus();
                 }
-                const J = Object.keys(p).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === p[e]), u), {}),
-                    uu = {
+                const J = (() => {
+                        let u = [];
+                        return () => (0 === u.length && (u = Object.keys(viewEnv.getFontsConfig())), u);
+                    })(),
+                    uu = Object.keys(p).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === p[e]), u), {}),
+                    eu = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -292,13 +297,13 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    eu = Promise.all([
+                    tu = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : g.onDomBuilt(u);
                         }),
                         engine.whenReady,
                     ]),
-                    tu = { view: A, client: E, sound: m };
+                    nu = { view: A, client: E, sound: m };
             },
             521: (u, e, t) => {
                 let n, E;

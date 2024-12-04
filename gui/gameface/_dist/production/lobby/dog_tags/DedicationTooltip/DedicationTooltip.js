@@ -183,13 +183,14 @@
                         addPreloadTexture: () => c,
                         children: () => i,
                         displayStatus: () => r.W,
-                        displayStatusIs: () => k,
+                        displayStatusIs: () => P,
                         events: () => o.U,
-                        extraSize: () => P,
+                        extraSize: () => S,
                         forceTriggerMouseMove: () => T,
                         freezeTextureBeforeResize: () => w,
                         getBrowserTexturePath: () => d,
-                        getDisplayStatus: () => R,
+                        getDisplayStatus: () => k,
+                        getFontNames: () => R,
                         getScale: () => p,
                         getSize: () => v,
                         getViewGlobalPosition: () => m,
@@ -203,7 +204,7 @@
                         setEventHandled: () => O,
                         setInputPaddingsRem: () => l,
                         setSidePaddingsRem: () => u,
-                        whenTutorialReady: () => S,
+                        whenTutorialReady: () => L,
                     });
                 var i = n(3722),
                     r = n(6112),
@@ -262,14 +263,18 @@
                 function T() {
                     viewEnv.forceTriggerMouseMove();
                 }
-                function R() {
+                function k() {
                     return viewEnv.getShowingStatus();
                 }
-                const k = Object.keys(r.W).reduce(
+                const R = (() => {
+                        let e = [];
+                        return () => (0 === e.length && (e = Object.keys(viewEnv.getFontsConfig())), e);
+                    })(),
+                    P = Object.keys(r.W).reduce(
                         (e, t) => ((e[t] = () => viewEnv.getShowingStatus() === r.W[t]), e),
                         {},
                     ),
-                    P = {
+                    S = {
                         set: (e, t) => {
                             viewEnv.setExtraSizeRem(e, t);
                         },
@@ -277,7 +282,7 @@
                             viewEnv.getExtraSizeRem(e, t);
                         },
                     },
-                    S = Promise.all([
+                    L = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : o.U.onDomBuilt(e);
                         }),
@@ -887,8 +892,8 @@
                     A = 'commonTooltipStyles_level_20',
                     x = 'commonTooltipStyles_value_4b',
                     D = 'commonTooltipStyles_next_21',
-                    I = R.strings.dogtags.customization.tooltip.level(),
-                    F = R.strings.dogtags.customization.tooltip.value(),
+                    F = R.strings.dogtags.customization.tooltip.level(),
+                    I = R.strings.dogtags.customization.tooltip.value(),
                     V = () => {
                         const e = window.model,
                             t = e.currentGrade,
@@ -902,8 +907,8 @@
                             r().createElement(
                                 'div',
                                 { className: k },
-                                r().createElement('div', { className: P }, I),
-                                r().createElement('div', { className: S }, F),
+                                r().createElement('div', { className: P }, F),
+                                r().createElement('div', { className: S }, I),
                             ),
                             r().createElement('div', { className: L }),
                             r().createElement(

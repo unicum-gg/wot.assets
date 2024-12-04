@@ -1,0 +1,61 @@
+.Currency_base_5e {
+    display: flex;
+    align-items: center;
+    font-size: 16rem;
+    position: relative;
+}
+
+.Currency_base__reverse_f9 {
+    flex-direction: row-reverse;
+}
+
+.Currency_icon_0c {
+    margin-left: 3rem;
+    background: no-repeat center / contain;
+    position: relative;
+}
+
+.Currency_base__reverse_f9 .Currency_icon_0c {
+    margin-left: 0;
+    margin-right: 3rem;
+}
+
+.Currency_base__s16x16_bb .Currency_icon_0c {
+    width: 16rem;
+    height: 16rem;
+    top: 3rem;
+}
+
+.Currency_base__gold_34.Currency_base__s16x16_bb .Currency_icon_0c {
+    background-image: url('R.images.gui.maps.icons.library.GoldIcon_2');
+}
+
+.Currency_base__credits_91.Currency_base__s16x16_bb .Currency_icon_0c {
+    background-image: url('R.images.gui.maps.icons.library.CreditsIcon_2');
+}
+
+.Currency_base__s24x24_4c .Currency_icon_0c {
+    width: 24rem;
+    height: 24rem;
+    top: 2rem;
+}
+
+.Currency_base__gold_34.Currency_base__s24x24_4c .Currency_icon_0c {
+    background-image: url('R.images.gui.maps.icons.library.GoldIcon_24');
+}
+
+.Currency_base__credits_91.Currency_base__s24x24_4c .Currency_icon_0c {
+    background-image: url('R.images.gui.maps.icons.library.CreditsIcon_3');
+}
+
+.Currency_value__credits_64 {
+    color: #ced9d9;
+}
+
+.Currency_value__gold_b2 {
+    color: #ffc363;
+}
+
+.Currency_value__notEnough_31 {
+    color: #ff2717;
+}

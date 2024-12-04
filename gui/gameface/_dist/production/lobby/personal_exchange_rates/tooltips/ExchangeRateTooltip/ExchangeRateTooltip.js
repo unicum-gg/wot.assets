@@ -18,7 +18,7 @@
             },
             768: (e, t, r) => {
                 'use strict';
-                r.d(t, { O: () => re });
+                r.d(t, { O: () => ae });
                 var a = {};
                 r.r(a),
                     r.d(a, { mouse: () => g, off: () => d, on: () => _, onResize: () => c, onScaleUpdated: () => u });
@@ -52,27 +52,28 @@
                         addPreloadTexture: () => W,
                         children: () => i,
                         displayStatus: () => S,
-                        displayStatusIs: () => J,
+                        displayStatusIs: () => ee,
                         events: () => O,
-                        extraSize: () => ee,
+                        extraSize: () => te,
                         forceTriggerMouseMove: () => Z,
                         freezeTextureBeforeResize: () => q,
                         getBrowserTexturePath: () => I,
                         getDisplayStatus: () => Q,
+                        getFontNames: () => J,
                         getScale: () => B,
-                        getSize: () => U,
+                        getSize: () => F,
                         getViewGlobalPosition: () => V,
                         isEventHandled: () => Y,
-                        isFocused: () => X,
+                        isFocused: () => K,
                         pxToRem: () => j,
                         remToPx: () => $,
-                        resize: () => F,
+                        resize: () => U,
                         sendEvent: () => H,
                         setAnimateWindow: () => z,
-                        setEventHandled: () => K,
+                        setEventHandled: () => X,
                         setInputPaddingsRem: () => D,
                         setSidePaddingsRem: () => G,
-                        whenTutorialReady: () => te,
+                        whenTutorialReady: () => re,
                     });
                 const c = l('clientResized'),
                     u = l('self.onScaleUpdated'),
@@ -193,8 +194,8 @@
                     R = ['args'];
                 const T = 2,
                     C = 16,
-                    P = 32,
-                    M = 64,
+                    M = 32,
+                    P = 64,
                     k = (e, t) => {
                         const r = 'GFViewEventProxy';
                         if (void 0 !== t) {
@@ -234,10 +235,10 @@
                     },
                     H = {
                         close(e) {
-                            k('popover' === e ? T : P);
+                            k('popover' === e ? T : M);
                         },
                         minimize() {
-                            k(M);
+                            k(P);
                         },
                         move(e) {
                             k(C, { isMouseEvent: !0, on: e });
@@ -259,10 +260,10 @@
                 function G(e) {
                     viewEnv.setHitAreaPaddingsRem(e.top, e.right, e.bottom, e.left, A);
                 }
-                function U(e = 'px') {
+                function F(e = 'px') {
                     return 'rem' === e ? viewEnv.getViewSizeRem() : viewEnv.getViewSizePx();
                 }
-                function F(e, t, r = 'px') {
+                function U(e, t, r = 'px') {
                     return 'rem' === r ? viewEnv.resizeViewRem(e, t) : viewEnv.resizeViewPx(e, t);
                 }
                 function V(e = 'rem') {
@@ -284,10 +285,10 @@
                 function z(e, t) {
                     viewEnv.setAnimateWindow(e, t);
                 }
-                function X() {
+                function K() {
                     return viewEnv.isFocused();
                 }
-                function K() {
+                function X() {
                     return viewEnv.setEventHandled();
                 }
                 function Y() {
@@ -299,8 +300,12 @@
                 function Q() {
                     return viewEnv.getShowingStatus();
                 }
-                const J = Object.keys(S).reduce((e, t) => ((e[t] = () => viewEnv.getShowingStatus() === S[t]), e), {}),
-                    ee = {
+                const J = (() => {
+                        let e = [];
+                        return () => (0 === e.length && (e = Object.keys(viewEnv.getFontsConfig())), e);
+                    })(),
+                    ee = Object.keys(S).reduce((e, t) => ((e[t] = () => viewEnv.getShowingStatus() === S[t]), e), {}),
+                    te = {
                         set: (e, t) => {
                             viewEnv.setExtraSizeRem(e, t);
                         },
@@ -308,13 +313,13 @@
                             viewEnv.getExtraSizeRem(e, t);
                         },
                     },
-                    te = Promise.all([
+                    re = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : O.onDomBuilt(e);
                         }),
                         engine.whenReady,
                     ]),
-                    re = { view: o, client: n, sound: x };
+                    ae = { view: o, client: n, sound: x };
             },
             521: (e, t, r) => {
                 'use strict';
@@ -1007,14 +1012,14 @@
                         C.apply(null, arguments)
                     );
                 }
-                const P = {
+                const M = {
                         [L.ExtraSmall]: '',
                         [L.Small]: x().SMALL_WIDTH,
                         [L.Medium]: `${x().SMALL_WIDTH} ${x().MEDIUM_WIDTH}`,
                         [L.Large]: `${x().SMALL_WIDTH} ${x().MEDIUM_WIDTH} ${x().LARGE_WIDTH}`,
                         [L.ExtraLarge]: `${x().SMALL_WIDTH} ${x().MEDIUM_WIDTH} ${x().LARGE_WIDTH} ${x().EXTRA_LARGE_WIDTH}`,
                     },
-                    M = {
+                    P = {
                         [S.ExtraSmall]: '',
                         [S.Small]: x().SMALL_HEIGHT,
                         [S.Medium]: `${x().SMALL_HEIGHT} ${x().MEDIUM_HEIGHT}`,
@@ -1045,7 +1050,7 @@
                             o = i.mediaWidth,
                             l = i.mediaHeight,
                             s = i.mediaSize;
-                        return n().createElement('div', C({ className: p()(r, P[o], M[l], k[s]) }, a), t);
+                        return n().createElement('div', C({ className: p()(r, M[o], P[l], k[s]) }, a), t);
                     },
                     A = ['children'];
                 const W = (e) => {
@@ -1098,10 +1103,10 @@
                         'base__theme-default': 'TooltipDecorator_base__theme-default_6d',
                         decorator: 'TooltipDecorator_decorator_3d',
                     },
-                    U = ['children', 'className', 'theme'];
-                function F() {
+                    F = ['children', 'className', 'theme'];
+                function U() {
                     return (
-                        (F = Object.assign
+                        (U = Object.assign
                             ? Object.assign.bind()
                             : function (e) {
                                   for (var t = 1; t < arguments.length; t++) {
@@ -1110,7 +1115,7 @@
                                   }
                                   return e;
                               }),
-                        F.apply(null, arguments)
+                        U.apply(null, arguments)
                     );
                 }
                 const V = n().forwardRef(function (e, t) {
@@ -1127,7 +1132,7 @@
                                     r[a] = e[a];
                                 }
                             return r;
-                        })(e, U);
+                        })(e, F);
                     const u = N(),
                         _ = n().useRef(null);
                     var d;
@@ -1151,7 +1156,7 @@
                         (0, a.useEffect)(d, []),
                         n().createElement(
                             'div',
-                            F({}, c, {
+                            U({}, c, {
                                 className: p()(G.base, G[`base__theme-${s}`], i),
                                 ref: function (e) {
                                     (_.current = e), 'function' == typeof t ? t(e) : t && (t.current = e);
@@ -1200,10 +1205,6 @@
                     'icon__freeXP-big': 'Currency_icon__freeXP-big_21',
                     'icon__freeXP-large': 'Currency_icon__freeXP-large_c8',
                     'icon__freeXP-extraLarge': 'Currency_icon__freeXP-extraLarge_58',
-                    'icon__eliteXP-small': 'Currency_icon__eliteXP-small_45',
-                    'icon__eliteXP-big': 'Currency_icon__eliteXP-big_c0',
-                    'icon__eliteXP-large': 'Currency_icon__eliteXP-large_1b',
-                    'icon__eliteXP-extraLarge': 'Currency_icon__eliteXP-extraLarge_9b',
                     'icon__equipCoin-small': 'Currency_icon__equipCoin-small_32',
                     'icon__equipCoin-big': 'Currency_icon__equipCoin-big_79',
                     'icon__equipCoin-large': 'Currency_icon__equipCoin-large_2c',
@@ -1215,14 +1216,13 @@
                     value__xp: 'Currency_value__xp_b0',
                     value__crystal: 'Currency_value__crystal_19',
                     value__equipCoin: 'Currency_value__equipCoin_d0',
-                    value__eliteXP: 'Currency_value__eliteXP_62',
                     value__notEnough: 'Currency_value__notEnough_56',
                     stock: 'Currency_stock_87',
                     stock__indent: 'Currency_stock__indent_a1',
                     stock__interactive: 'Currency_stock__interactive_93',
                     stockBackground: 'Currency_stockBackground_82',
                 };
-                let z, X, K;
+                let z, K, X;
                 !(function (e) {
                     (e.small = 'small'), (e.big = 'big'), (e.large = 'large'), (e.extraLarge = 'extraLarge');
                 })(z || (z = {})),
@@ -1232,12 +1232,11 @@
                             (e.crystal = 'crystal'),
                             (e.xp = 'xp'),
                             (e.freeXP = 'freeXP'),
-                            (e.eliteXP = 'eliteXP'),
                             (e.equipCoin = 'equipCoin');
-                    })(X || (X = {})),
+                    })(K || (K = {})),
                     (function (e) {
                         (e.Red = 'RedActionBG'), (e.Blue = 'BlueActionBG');
-                    })(K || (K = {}));
+                    })(X || (X = {}));
                 const Y = (0, a.memo)(
                         ({
                             isDiscount: e,
@@ -1248,7 +1247,7 @@
                             discountValue: o,
                             showPlus: l,
                             isEnough: s = !0,
-                            stockBackgroundName: c = K.Red,
+                            stockBackgroundName: c = X.Red,
                             className: u,
                             classNames: _,
                         }) =>
@@ -1266,7 +1265,7 @@
                                         ),
                                     },
                                     l && i > 0 && '+',
-                                    n().createElement(j, { value: i, format: a === X.gold ? 'gold' : 'integral' }),
+                                    n().createElement(j, { value: i, format: a === K.gold ? 'gold' : 'integral' }),
                                 ),
                                 n().createElement('span', {
                                     className: p()($.icon, $[`icon__${a}-${r}`], null == _ ? void 0 : _.icon),
@@ -1325,7 +1324,7 @@
                                 { className: p()(Z, e) },
                                 o.map((e, t) => {
                                     const r =
-                                            i.from === X.gold
+                                            i.from === K.gold
                                                 ? { from: e.rate.goldRateValue, to: e.rate.resourceRateValue }
                                                 : { from: e.rate.resourceRateValue, to: e.rate.goldRateValue },
                                         a = r.from,

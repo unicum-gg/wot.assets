@@ -1132,13 +1132,14 @@
                         addPreloadTexture: () => o,
                         children: () => n,
                         displayStatus: () => r.W,
-                        displayStatusIs: () => w,
+                        displayStatusIs: () => y,
                         events: () => a.U,
-                        extraSize: () => y,
+                        extraSize: () => x,
                         forceTriggerMouseMove: () => v,
                         freezeTextureBeforeResize: () => F,
                         getBrowserTexturePath: () => l,
                         getDisplayStatus: () => b,
+                        getFontNames: () => w,
                         getScale: () => g,
                         getSize: () => _,
                         getViewGlobalPosition: () => A,
@@ -1152,7 +1153,7 @@
                         setEventHandled: () => C,
                         setInputPaddingsRem: () => c,
                         setSidePaddingsRem: () => E,
-                        whenTutorialReady: () => x,
+                        whenTutorialReady: () => k,
                     });
                 var n = t(3722),
                     r = t(6112),
@@ -1214,11 +1215,15 @@
                 function b() {
                     return viewEnv.getShowingStatus();
                 }
-                const w = Object.keys(r.W).reduce(
+                const w = (() => {
+                        let e = [];
+                        return () => (0 === e.length && (e = Object.keys(viewEnv.getFontsConfig())), e);
+                    })(),
+                    y = Object.keys(r.W).reduce(
                         (e, u) => ((e[u] = () => viewEnv.getShowingStatus() === r.W[u]), e),
                         {},
                     ),
-                    y = {
+                    x = {
                         set: (e, u) => {
                             viewEnv.setExtraSizeRem(e, u);
                         },
@@ -1226,7 +1231,7 @@
                             viewEnv.getExtraSizeRem(e, u);
                         },
                     },
-                    x = Promise.all([
+                    k = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : a.U.onDomBuilt(e);
                         }),
@@ -2103,7 +2108,7 @@
                     r = t(6799),
                     a = t(6960),
                     i = t(9053);
-                const s = new RegExp('[฀-๿][ัำ-ฺ็-๎]*', 'gu'),
+                const s = new RegExp('[฀-๿][ัำ-ฺ็-๎]*|[^฀-๿]', 'gu'),
                     o = (e) => {
                         const u = [];
                         return (
@@ -3183,11 +3188,11 @@
                         );
                     });
                 var V = t(5716),
-                    G = t(771),
-                    j = t(3215),
+                    j = t(771),
+                    G = t(3215),
                     U = t(3946),
                     z = t(8032);
-                const Z = (0, j.q)()(
+                const Z = (0, G.q)()(
                         ({ observableModel: e }) => {
                             const u = Object.assign(
                                     {},
@@ -3212,8 +3217,8 @@
                                         nativeVehicle: e.object('nativeVehicle'),
                                     },
                                 ),
-                                t = (0, U.Om)(() => u.skillsEfficiency.get() === G.sU, !0),
-                                n = (0, U.Om)(() => u.skillsEfficiency.get() < G.yb),
+                                t = (0, U.Om)(() => u.skillsEfficiency.get() === j.sU, !0),
+                                n = (0, U.Om)(() => u.skillsEfficiency.get() < j.yb),
                                 r = (0, U.Om)(() => {
                                     const e = u.currentVehicle.get(),
                                         t = u.nativeVehicle.get();
@@ -3324,7 +3329,7 @@
                                               a().createElement(
                                                   'div',
                                                   { className: s()(se, r && oe) },
-                                                  (0, f.dL)(ee.Z5.getNumberFormat(u * G.I, ee.B3.INTEGRAL)),
+                                                  (0, f.dL)(ee.Z5.getNumberFormat(u * j.I, ee.B3.INTEGRAL)),
                                               ),
                                               !r && a().createElement('div', { className: ce }),
                                           ),
@@ -3544,8 +3549,8 @@
                 var He = t(2056),
                     We = t(9690),
                     Ve = t(9053),
-                    Ge = t(4828),
-                    je = t(1943),
+                    je = t(4828),
+                    Ge = t(1943),
                     Ue = t(5640);
                 const ze = {
                     base: 'VehicleTypeIcon_base_80',
@@ -3668,10 +3673,10 @@
                                         contentId: R.views.lobby.crew.tooltips.PremiumVehicleTooltip('resId'),
                                         args: { componentKey: e },
                                     },
-                                    (0, je.Sr)(Ge.D9, {
-                                        item: Ge.sk.PremiumTooltip,
-                                        action: Ge.eX.Viewed,
-                                        parentScreen: Ge.sC.PersonalFile,
+                                    (0, Ge.Sr)(je.D9, {
+                                        item: je.sk.PremiumTooltip,
+                                        action: je.eX.Viewed,
+                                        parentScreen: je.sC.PersonalFile,
                                     }),
                                 ),
                                 a().createElement(

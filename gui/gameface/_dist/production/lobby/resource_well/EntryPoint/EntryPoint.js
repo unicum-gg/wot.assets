@@ -183,13 +183,14 @@
                         addPreloadTexture: () => s,
                         children: () => n,
                         displayStatus: () => a.W,
-                        displayStatusIs: () => h,
+                        displayStatusIs: () => y,
                         events: () => r.U,
-                        extraSize: () => y,
+                        extraSize: () => O,
                         forceTriggerMouseMove: () => w,
                         freezeTextureBeforeResize: () => B,
                         getBrowserTexturePath: () => F,
                         getDisplayStatus: () => f,
+                        getFontNames: () => h,
                         getScale: () => _,
                         getSize: () => d,
                         getViewGlobalPosition: () => D,
@@ -265,11 +266,15 @@
                 function f() {
                     return viewEnv.getShowingStatus();
                 }
-                const h = Object.keys(a.W).reduce(
+                const h = (() => {
+                        let u = [];
+                        return () => (0 === u.length && (u = Object.keys(viewEnv.getFontsConfig())), u);
+                    })(),
+                    y = Object.keys(a.W).reduce(
                         (u, e) => ((u[e] = () => viewEnv.getShowingStatus() === a.W[e]), u),
                         {},
                     ),
-                    y = {
+                    O = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -739,7 +744,7 @@
                         getFormattedDateTime: (u, e, t = !0) => regionalDateTime.getFormattedDateTime(u, e, t),
                     };
             },
-            2657: (u, e, t) => {
+            2467: (u, e, t) => {
                 var n = t(6179),
                     a = t.n(n),
                     r = t(493),
@@ -841,13 +846,13 @@
                             })(u, A);
                         const h = (0, n.useRef)({ timeoutId: 0, isVisible: !1, prevTarget: null, hideTimerId: null }),
                             y = (0, n.useMemo)(() => v || E().resId, [v]),
-                            P = (0, n.useCallback)(() => {
+                            O = (0, n.useCallback)(() => {
                                 (h.current.isVisible && h.current.timeoutId) ||
                                     (d(t, C, { isMouseEvent: !0, on: !0, arguments: l(a) }, y),
                                     b && b(),
                                     (h.current.isVisible = !0));
                             }, [t, C, a, y, b]),
-                            O = (0, n.useCallback)(() => {
+                            P = (0, n.useCallback)(() => {
                                 if (h.current.isVisible || h.current.timeoutId) {
                                     const u = h.current.timeoutId;
                                     u > 0 && (clearTimeout(u), (h.current.timeoutId = 0)),
@@ -861,7 +866,7 @@
                                     ((h.current.prevTarget = document.elementFromPoint(u.clientX, u.clientY)),
                                     (h.current.hideTimerId = window.setTimeout(() => {
                                         const e = document.elementFromPoint(u.clientX, u.clientY);
-                                        e && !e.isSameNode(h.current.prevTarget) && O();
+                                        e && !e.isSameNode(h.current.prevTarget) && P();
                                     }, 200)));
                             }, []);
                         (0, n.useEffect)(() => {
@@ -875,16 +880,16 @@
                             );
                         }, []),
                             (0, n.useEffect)(() => {
-                                !1 === g && O();
-                            }, [g, O]),
+                                !1 === g && P();
+                            }, [g, P]),
                             (0, n.useEffect)(
                                 () => (
-                                    window.addEventListener('mouseleave', O),
+                                    window.addEventListener('mouseleave', P),
                                     () => {
-                                        window.removeEventListener('mouseleave', O), O();
+                                        window.removeEventListener('mouseleave', P), P();
                                     }
                                 ),
-                                [O],
+                                [P],
                             );
                         return g
                             ? (0, n.cloneElement)(
@@ -896,18 +901,18 @@
                                               (u) => {
                                                   (u.clientX === window.innerWidth &&
                                                       u.clientY === window.innerHeight) ||
-                                                      ((h.current.timeoutId = window.setTimeout(P, c ? 100 : 400)),
+                                                      ((h.current.timeoutId = window.setTimeout(O, c ? 100 : 400)),
                                                       r && r(u),
                                                       k && k(u));
                                               }),
                                           onMouseLeave: ((u) => (e) => {
-                                              O(), null == o || o(e), null == u || u(e);
+                                              P(), null == o || o(e), null == u || u(e);
                                           })(e.props.onMouseLeave),
                                           onClick: ((u) => (e) => {
-                                              !1 === B && O(), null == s || s(e), null == u || u(e);
+                                              !1 === B && P(), null == s || s(e), null == u || u(e);
                                           })(e.props.onClick),
                                           onMouseDown: ((u) => (e) => {
-                                              !1 === B && O(), null == i || i(e), null == u || u(e);
+                                              !1 === B && P(), null == i || i(e), null == u || u(e);
                                           })(e.props.onMouseDown),
                                       },
                                       f,
@@ -1035,7 +1040,7 @@
                         console.error('[lib/sounds.js] playSound(', u, '): ', e);
                     });
                 }
-                let y, P;
+                let y, O;
                 !(function (u) {
                     (u[(u.Active = 0)] = 'Active'),
                         (u[(u.Forbidden = 1)] = 'Forbidden'),
@@ -1049,13 +1054,13 @@
                             (u.Paused = 'paused'),
                             (u.Completed = 'completed'),
                             (u.NotStarted = 'notStarted');
-                    })(P || (P = {}));
-                const O = {
-                        [y.Active]: P.Active,
-                        [y.Forbidden]: P.Forbidden,
-                        [y.Paused]: P.Paused,
-                        [y.Completed]: P.Completed,
-                        [y.NotStarted]: P.NotStarted,
+                    })(O || (O = {}));
+                const P = {
+                        [y.Active]: O.Active,
+                        [y.Forbidden]: O.Forbidden,
+                        [y.Paused]: O.Paused,
+                        [y.Completed]: O.Completed,
+                        [y.NotStarted]: O.NotStarted,
                     },
                     S = {
                         base: 'ProgressBar_base_45',
@@ -1639,7 +1644,7 @@
                             { className: s()(pu.base, pu[`base__${u}`], o) },
                             a().createElement('div', { className: pu.hover }),
                             a().createElement('div', { className: pu.emblem }),
-                            u === P.Active
+                            u === O.Active
                                 ? a().createElement(gu, {
                                       value: e,
                                       deltaFrom: t,
@@ -1667,13 +1672,13 @@
                             r = u.progress,
                             o = u.prevEventState,
                             i = u.eventState,
-                            E = (u) => O[u],
+                            E = (u) => P[u],
                             F = r !== t,
                             A = i !== o,
                             l = E(i),
                             d = E(o),
-                            D = F && d === P.Active,
-                            B = D && l === P.Completed,
+                            D = F && d === O.Active,
+                            B = D && l === O.Completed,
                             _ = D ? 'hideDelay' : 'hide',
                             C = (0, n.useCallback)(() => {
                                 h('highlight');
@@ -1686,7 +1691,7 @@
                                 {
                                     className: bu.base,
                                     onClick: () => {
-                                        l !== P.Paused && l !== P.NotStarted && (h('play'), e());
+                                        l !== O.Paused && l !== O.NotStarted && (h('play'), e());
                                     },
                                     onMouseEnter: C,
                                 },
@@ -1790,6 +1795,6 @@
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             t.forEach(e.bind(null, 0)), (t.push = e.bind(null, t.push.bind(t)));
         })();
-    var __webpack_exports__ = __webpack_require__.O(void 0, [52], () => __webpack_require__(2657));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [52], () => __webpack_require__(2467));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

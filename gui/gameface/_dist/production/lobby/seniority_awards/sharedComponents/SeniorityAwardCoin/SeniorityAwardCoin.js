@@ -190,13 +190,14 @@
                         addPreloadTexture: () => i,
                         children: () => A,
                         displayStatus: () => E.W,
-                        displayStatusIs: () => f,
+                        displayStatusIs: () => O,
                         events: () => t.U,
-                        extraSize: () => O,
+                        extraSize: () => y,
                         forceTriggerMouseMove: () => b,
                         freezeTextureBeforeResize: () => c,
                         getBrowserTexturePath: () => r,
                         getDisplayStatus: () => g,
+                        getFontNames: () => f,
                         getScale: () => d,
                         getSize: () => C,
                         getViewGlobalPosition: () => _,
@@ -272,11 +273,15 @@
                 function g() {
                     return viewEnv.getShowingStatus();
                 }
-                const f = Object.keys(E.W).reduce(
+                const f = (() => {
+                        let u = [];
+                        return () => (0 === u.length && (u = Object.keys(viewEnv.getFontsConfig())), u);
+                    })(),
+                    O = Object.keys(E.W).reduce(
                         (u, e) => ((u[e] = () => viewEnv.getShowingStatus() === E.W[e]), u),
                         {},
                     ),
-                    O = {
+                    y = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },

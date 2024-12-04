@@ -1541,13 +1541,14 @@
                         addPreloadTexture: () => s,
                         children: () => n,
                         displayStatus: () => a.W,
-                        displayStatusIs: () => w,
+                        displayStatusIs: () => k,
                         events: () => r.U,
-                        extraSize: () => k,
+                        extraSize: () => y,
                         forceTriggerMouseMove: () => D,
                         freezeTextureBeforeResize: () => p,
                         getBrowserTexturePath: () => c,
                         getDisplayStatus: () => B,
+                        getFontNames: () => w,
                         getScale: () => A,
                         getSize: () => m,
                         getViewGlobalPosition: () => g,
@@ -1561,7 +1562,7 @@
                         setEventHandled: () => F,
                         setInputPaddingsRem: () => l,
                         setSidePaddingsRem: () => _,
-                        whenTutorialReady: () => y,
+                        whenTutorialReady: () => S,
                     });
                 var n = u(3722),
                     a = u(6112),
@@ -1623,11 +1624,15 @@
                 function B() {
                     return viewEnv.getShowingStatus();
                 }
-                const w = Object.keys(a.W).reduce(
+                const w = (() => {
+                        let e = [];
+                        return () => (0 === e.length && (e = Object.keys(viewEnv.getFontsConfig())), e);
+                    })(),
+                    k = Object.keys(a.W).reduce(
                         (e, t) => ((e[t] = () => viewEnv.getShowingStatus() === a.W[t]), e),
                         {},
                     ),
-                    k = {
+                    y = {
                         set: (e, t) => {
                             viewEnv.setExtraSizeRem(e, t);
                         },
@@ -1635,7 +1640,7 @@
                             viewEnv.getExtraSizeRem(e, t);
                         },
                     },
-                    y = Promise.all([
+                    S = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : r.U.onDomBuilt(e);
                         }),
@@ -1733,7 +1738,7 @@
                 u.d(t, { D9: () => a });
                 u(3469), u(2133);
                 var n = u(2790);
-                u(579), u(5360), u(9056);
+                u(3779), u(579), u(5360), u(9056);
                 const a = n.Z;
             },
             6536: (e, t, u) => {
@@ -1877,6 +1882,10 @@
                         u.current
                     );
                 };
+            },
+            3779: (e, t, u) => {
+                'use strict';
+                u(6179);
             },
             3112: (e, t, u) => {
                 'use strict';
@@ -3077,7 +3086,7 @@
                         useHorizontalScrollApi: () => fe,
                     });
                 var a = {};
-                u.r(a), u.d(a, { Area: () => et, Bar: () => Qe, Default: () => Je, useVerticalScrollApi: () => Pe });
+                u.r(a), u.d(a, { Area: () => et, Bar: () => Qe, Default: () => Je, useVerticalScrollApi: () => Me });
                 var r = u(4029),
                     i = u(6179),
                     o = u.n(i),
@@ -3242,23 +3251,23 @@
                             t
                         );
                     },
-                    P = (e, t, u, n) => {
+                    M = (e, t, u, n) => {
                         let a = t.exec(e),
                             r = 0;
                         for (; a; ) r !== a.index && u(e.slice(r, a.index)), n(a), (r = t.lastIndex), (a = t.exec(e));
                         r !== e.length && u(e.slice(r));
                     },
-                    M = new RegExp('[฀-๿][ัำ-ฺ็-๎]*', 'gu'),
+                    P = new RegExp('[฀-๿][ัำ-ฺ็-๎]*|[^฀-๿]', 'gu'),
                     H = (e) => {
                         const t = [];
                         return (
-                            P(
+                            M(
                                 e,
                                 /\S\s+/g,
                                 (e) => {
                                     var u;
                                     'th' === R.strings.settings.LANGUAGE_CODE().toLowerCase()
-                                        ? t.push(...((u = e), u.match(M) || []))
+                                        ? t.push(...((u = e), u.match(P) || []))
                                         : t.push(...e.split(''));
                                 },
                                 (e) => {
@@ -3272,7 +3281,7 @@
                         ? (e) => {
                               const t = [];
                               return (
-                                  P(
+                                  M(
                                       e,
                                       /[^a-zA-Z0-9]+/g,
                                       (e) => {
@@ -3300,7 +3309,7 @@
                     j = (e, t = '', u) => {
                         const n = [];
                         return (
-                            P(
+                            M(
                                 e,
                                 /(\n+|[\xa0\ufeff]+)/g,
                                 (e) => {
@@ -3337,7 +3346,7 @@
                     z = (e, t, u = '', n) => {
                         const a = [];
                         return (
-                            P(
+                            M(
                                 e,
                                 /(?:%\(|{)(.*?)[)}][sd]?/g,
                                 (e) => {
@@ -3383,7 +3392,7 @@
                             ((e, t, u) => {
                                 const n = [];
                                 return (
-                                    P(
+                                    M(
                                         e,
                                         /(?:%\(|{)(\w*)(?:_[Oo]pen|_Start)(?:\)s|})([\s\S]*?)(?:%\(|{)\w*(?:_[Cc]lose|_End)(?:\)s|})(\s*)/g,
                                         (e) => {
@@ -4165,7 +4174,7 @@
                         )
                     );
                 (Re.Bar = Ne), (Re.Default = Oe);
-                const Pe = be({
+                const Me = be({
                         getBounds: (e) => [0, e.scrollHeight - e.offsetHeight],
                         getContainerSize: (e) => e.scrollHeight,
                         getWrapperSize: (e) => e.offsetHeight,
@@ -4174,7 +4183,7 @@
                         },
                         getDirection: (e) => (e.deltaY > 1 ? Ae.Next : Ae.Prev),
                     }),
-                    Me = 'VerticalBar_base_f3',
+                    Pe = 'VerticalBar_base_f3',
                     He = 'VerticalBar_base__nonActive_42',
                     We = 'VerticalBar_topButton_d7',
                     je = 'VerticalBar_bottomButton_06',
@@ -4321,7 +4330,7 @@
                         };
                         return o().createElement(
                             'div',
-                            { className: d()(Me, t.base), ref: a, onWheel: e.handleMouseWheel },
+                            { className: d()(Pe, t.base), ref: a, onWheel: e.handleMouseWheel },
                             o().createElement('div', {
                                 className: d()(We, t.topButton),
                                 onMouseDown: (e) => {
@@ -4646,10 +4655,6 @@
                     'icon__freeXP-big': 'Currency_icon__freeXP-big_21',
                     'icon__freeXP-large': 'Currency_icon__freeXP-large_c8',
                     'icon__freeXP-extraLarge': 'Currency_icon__freeXP-extraLarge_58',
-                    'icon__eliteXP-small': 'Currency_icon__eliteXP-small_45',
-                    'icon__eliteXP-big': 'Currency_icon__eliteXP-big_c0',
-                    'icon__eliteXP-large': 'Currency_icon__eliteXP-large_1b',
-                    'icon__eliteXP-extraLarge': 'Currency_icon__eliteXP-extraLarge_9b',
                     'icon__equipCoin-small': 'Currency_icon__equipCoin-small_32',
                     'icon__equipCoin-big': 'Currency_icon__equipCoin-big_79',
                     'icon__equipCoin-large': 'Currency_icon__equipCoin-large_2c',
@@ -4661,7 +4666,6 @@
                     value__xp: 'Currency_value__xp_b0',
                     value__crystal: 'Currency_value__crystal_19',
                     value__equipCoin: 'Currency_value__equipCoin_d0',
-                    value__eliteXP: 'Currency_value__eliteXP_62',
                     value__notEnough: 'Currency_value__notEnough_56',
                     stock: 'Currency_stock_87',
                     stock__indent: 'Currency_stock__indent_a1',
@@ -4678,7 +4682,6 @@
                             (e.crystal = 'crystal'),
                             (e.xp = 'xp'),
                             (e.freeXP = 'freeXP'),
-                            (e.eliteXP = 'eliteXP'),
                             (e.equipCoin = 'equipCoin');
                     })(ht || (ht = {})),
                     (function (e) {
@@ -4850,8 +4853,8 @@
                 const It = 'CardBottomContent_base_eb',
                     Ot = 'CardBottomContent_optionCounterBtn_48',
                     Rt = 'CardBottomContent_optionCounterValue_41',
-                    Pt = 'CardBottomContent_optionCounterBtn__plus_47',
-                    Mt = 'CardBottomContent_optionCounterBtn__plusDisabled_ad',
+                    Mt = 'CardBottomContent_optionCounterBtn__plus_47',
+                    Pt = 'CardBottomContent_optionCounterBtn__plusDisabled_ad',
                     Ht = 'CardBottomContent_optionCounterBtn__minus_0f',
                     Wt = ({
                         canAddBook: e,
@@ -4868,7 +4871,7 @@
                             o().createElement(
                                 Nt.i,
                                 { isEnabled: !t, body: R.strings.tooltips.quickTraining.xpEnoughforPostProgression() },
-                                o().createElement('div', { className: d()(Ot, e ? Pt : Mt), onClick: a }),
+                                o().createElement('div', { className: d()(Ot, e ? Mt : Pt), onClick: a }),
                             ),
                         );
                 var jt = u(3457),
@@ -5352,8 +5355,8 @@
                     Iu = 'SectionFooter_labelContainer_68',
                     Ou = 'SectionFooter_confirmLabel_53',
                     Ru = 'SectionFooter_confirmLabelMemberName_23',
-                    Pu = 'SectionFooter_confirmBtn_5d',
-                    Mu = (0, i.memo)(
+                    Mu = 'SectionFooter_confirmBtn_5d',
+                    Pu = (0, i.memo)(
                         ({
                             tankmanName: e,
                             crewXpAmount: t,
@@ -5412,12 +5415,12 @@
                                 ),
                                 o().createElement(
                                     jt.u5,
-                                    { size: jt.qE.medium, mixClass: Pu, onClick: i },
+                                    { size: jt.qE.medium, mixClass: Mu, onClick: i },
                                     R.strings.crew_books.buttons.learn(),
                                 ),
                                 o().createElement(
                                     jt.u5,
-                                    { type: jt.L$.secondary, size: jt.qE.medium, mixClass: Pu, onClick: s },
+                                    { type: jt.L$.secondary, size: jt.qE.medium, mixClass: Mu, onClick: s },
                                     R.strings.crew_books.buttons.cancel(),
                                 ),
                             );
@@ -5437,7 +5440,7 @@
                     qu = 'CrewBooksSection_cardsScrollBar_c4',
                     Yu = (0, m.Pi)(() => {
                         const e = (0, it.GS)().remScreenWidth,
-                            t = Pe(),
+                            t = Me(),
                             u = oe(),
                             n = u.model,
                             a = u.controls,
@@ -5519,7 +5522,7 @@
                                             ),
                                         ),
                                         o().createElement('div', { className: d()(Zu, $u) }),
-                                        o().createElement(Mu, {
+                                        o().createElement(Pu, {
                                             hasSelectedBooks: m,
                                             hasFreeXpSelected: E,
                                             hasPostProgression: _,
@@ -5808,13 +5811,13 @@
                         N = void 0 !== t && t.skillsEfficiency !== x,
                         I = T !== c.H$.Normal || F || N,
                         O = null == t ? void 0 : t.majorSkills,
-                        P = null == t ? void 0 : t.bonusSkills,
-                        M = P || S,
-                        H = i.lN(M),
-                        W = v && M.length > 0,
+                        M = null == t ? void 0 : t.bonusSkills,
+                        P = M || S,
+                        H = i.lN(P),
+                        W = v && P.length > 0,
                         j = h || void 0 !== t,
                         z = (null == O ? void 0 : O.length) === r.GT,
-                        U = (0, p.Ld)(C, M.length, I, T !== c.H$.Low && void 0 !== H && H.level < r.I),
+                        U = (0, p.Ld)(C, P.length, I, T !== c.H$.Low && void 0 !== H && H.level < r.I),
                         G = {
                             size: o,
                             efficiencyState: T,
@@ -5864,7 +5867,7 @@
                                                   {
                                                       skills: S,
                                                       skillType: g.W.Bonus,
-                                                      possibleSkills: P,
+                                                      possibleSkills: M,
                                                       className: E.Z.bonusRow,
                                                       collapseLayout: U,
                                                       blinkStyle: w,
@@ -7195,8 +7198,8 @@
                             ),
                         );
                     });
-                var P = u(3616);
-                const M = ['children'];
+                var M = u(3616);
+                const P = ['children'];
                 function H() {
                     return (
                         (H = Object.assign
@@ -7222,9 +7225,9 @@
                                     u[n] = e[n];
                                 }
                             return u;
-                        })(e, M);
+                        })(e, P);
                     return r().createElement(
-                        P.Z,
+                        M.Z,
                         H(
                             {
                                 decoratorId:
@@ -7628,7 +7631,7 @@
                         );
                     });
                 var Re = u(9916);
-                const Pe = ({
+                const Me = ({
                         children: e,
                         contentID: t,
                         decoratorID: u = 0,
@@ -7670,7 +7673,7 @@
                             i ? (0, a.cloneElement)(e, { onMouseDown: c }) : e
                         );
                     },
-                    Me = ['children'];
+                    Pe = ['children'];
                 function He() {
                     return (
                         (He = Object.assign
@@ -7696,9 +7699,9 @@
                                         u[n] = e[n];
                                     }
                                 return u;
-                            })(e, Me);
+                            })(e, Pe);
                         return r().createElement(
-                            Pe,
+                            Me,
                             He({}, u, { contentID: R.views.common.BackportContextMenu('resId') }),
                             t,
                         );
@@ -7936,8 +7939,8 @@
                     It = 'QuickTrainingTankmanSlotContent_icon_7c',
                     Ot = 'QuickTrainingTankmanSlotContent_layer_10',
                     Rt = { transform: 'translateY(50rem)', opacity: 0, scale: 1 },
-                    Pt = { transform: 'translateY(0rem)', opacity: 1, scale: 1 },
-                    Mt = [
+                    Mt = { transform: 'translateY(0rem)', opacity: 1, scale: 1 },
+                    Pt = [
                         { transform: 'translateY(-10rem)', scale: 1.3 },
                         { opacity: 0, scale: 1 },
                     ],
@@ -7968,7 +7971,7 @@
                                         ? A.current ||
                                           (m.start({
                                               from: Rt,
-                                              to: Pt,
+                                              to: Mt,
                                               reverse: false,
                                               config: { duration: 300, easing: ce.BH },
                                           }),
@@ -7976,8 +7979,8 @@
                                         : A.current
                                           ? (t.skills.majorSkills.length > c.current || t.lastSkillLevelFull > l.current
                                                 ? (m.start({
-                                                      from: Pt,
-                                                      to: Mt,
+                                                      from: Mt,
+                                                      to: Pt,
                                                       delay: 200,
                                                       config: { duration: 500, easing: ce.BH },
                                                   }),

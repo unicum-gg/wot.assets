@@ -862,13 +862,14 @@
                         addPreloadTexture: () => a,
                         children: () => n,
                         displayStatus: () => o.W,
-                        displayStatusIs: () => w,
+                        displayStatusIs: () => y,
                         events: () => r.U,
-                        extraSize: () => y,
+                        extraSize: () => k,
                         forceTriggerMouseMove: () => f,
                         freezeTextureBeforeResize: () => _,
                         getBrowserTexturePath: () => l,
                         getDisplayStatus: () => g,
+                        getFontNames: () => w,
                         getScale: () => B,
                         getSize: () => F,
                         getViewGlobalPosition: () => D,
@@ -882,7 +883,7 @@
                         setEventHandled: () => b,
                         setInputPaddingsRem: () => c,
                         setSidePaddingsRem: () => A,
-                        whenTutorialReady: () => k,
+                        whenTutorialReady: () => T,
                     });
                 var n = t(3722),
                     o = t(6112),
@@ -944,11 +945,15 @@
                 function g() {
                     return viewEnv.getShowingStatus();
                 }
-                const w = Object.keys(o.W).reduce(
+                const w = (() => {
+                        let u = [];
+                        return () => (0 === u.length && (u = Object.keys(viewEnv.getFontsConfig())), u);
+                    })(),
+                    y = Object.keys(o.W).reduce(
                         (u, e) => ((u[e] = () => viewEnv.getShowingStatus() === o.W[e]), u),
                         {},
                     ),
-                    y = {
+                    k = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -956,7 +961,7 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    k = Promise.all([
+                    T = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : r.U.onDomBuilt(u);
                         }),
@@ -1046,7 +1051,7 @@
             2344: (u, e, t) => {
                 t.d(e, { au: () => o });
                 var n = t(3469);
-                t(2133), t(2790), t(579), t(5360), t(9056);
+                t(2133), t(2790), t(3779), t(579), t(5360), t(9056);
                 const o = n.Z;
             },
             6536: (u, e, t) => {
@@ -1108,6 +1113,9 @@
                 n.Sw.instance;
             },
             2790: (u, e, t) => {
+                t(6179);
+            },
+            3779: (u, e, t) => {
                 t(6179);
             },
             3112: (u, e, t) => {
@@ -1835,7 +1843,7 @@
                         for (; o; ) r !== o.index && t(u.slice(r, o.index)), n(o), (r = e.lastIndex), (o = e.exec(u));
                         r !== u.length && t(u.slice(r));
                     },
-                    G = new RegExp('[฀-๿][ัำ-ฺ็-๎]*', 'gu'),
+                    G = new RegExp('[฀-๿][ัำ-ฺ็-๎]*|[^฀-๿]', 'gu'),
                     z = (u) => {
                         const e = [];
                         return (

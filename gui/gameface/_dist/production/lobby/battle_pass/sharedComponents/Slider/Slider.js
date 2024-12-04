@@ -183,13 +183,14 @@
                         addPreloadTexture: () => l,
                         children: () => r,
                         displayStatus: () => a.W,
-                        displayStatusIs: () => L,
+                        displayStatusIs: () => T,
                         events: () => n.U,
-                        extraSize: () => T,
+                        extraSize: () => k,
                         forceTriggerMouseMove: () => y,
                         freezeTextureBeforeResize: () => v,
                         getBrowserTexturePath: () => _,
                         getDisplayStatus: () => x,
+                        getFontNames: () => L,
                         getScale: () => w,
                         getSize: () => h,
                         getViewGlobalPosition: () => m,
@@ -203,7 +204,7 @@
                         setEventHandled: () => S,
                         setInputPaddingsRem: () => d,
                         setSidePaddingsRem: () => u,
-                        whenTutorialReady: () => k,
+                        whenTutorialReady: () => P,
                     });
                 var r = i(3722),
                     a = i(6112),
@@ -265,11 +266,15 @@
                 function x() {
                     return viewEnv.getShowingStatus();
                 }
-                const L = Object.keys(a.W).reduce(
+                const L = (() => {
+                        let e = [];
+                        return () => (0 === e.length && (e = Object.keys(viewEnv.getFontsConfig())), e);
+                    })(),
+                    T = Object.keys(a.W).reduce(
                         (e, t) => ((e[t] = () => viewEnv.getShowingStatus() === a.W[t]), e),
                         {},
                     ),
-                    T = {
+                    k = {
                         set: (e, t) => {
                             viewEnv.setExtraSizeRem(e, t);
                         },
@@ -277,7 +282,7 @@
                             viewEnv.getExtraSizeRem(e, t);
                         },
                     },
-                    k = Promise.all([
+                    P = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : n.U.onDomBuilt(e);
                         }),
@@ -1015,10 +1020,10 @@
                             M = R[1],
                             W = (0, r.useState)(!1),
                             A = W[0],
-                            H = W[1],
-                            N = (0, r.useState)(!1),
-                            D = N[0],
-                            F = N[1],
+                            N = W[1],
+                            H = (0, r.useState)(!1),
+                            D = H[0],
+                            F = H[1],
                             U = E.length,
                             I = 1 === C && !i,
                             V = C === U && !i,
@@ -1026,12 +1031,12 @@
                             K = (function () {
                                 var e = y(function* () {
                                     if (g && g.current) {
-                                        H(!0), yield (0, l.Eu)();
+                                        N(!0), yield (0, l.Eu)();
                                         const e = viewEnv.getScale();
                                         L(g.current.offsetWidth / e),
                                             P(g.current.querySelector(`.${S.slide__active}`).offsetWidth / e),
                                             setTimeout(() => {
-                                                H(!1);
+                                                N(!1);
                                             }, 100);
                                     }
                                 });
@@ -1075,9 +1080,9 @@
                                         i &&
                                             setTimeout(
                                                 y(function* () {
-                                                    H(!0);
+                                                    N(!0);
                                                     const e = E.concat();
-                                                    e.unshift(e.pop()), p(e), M(C), yield (0, l.Eu)(), H(!1), F(!1);
+                                                    e.unshift(e.pop()), p(e), M(C), yield (0, l.Eu)(), N(!1), F(!1);
                                                 }),
                                                 600,
                                             ),
@@ -1098,9 +1103,9 @@
                                         i &&
                                             setTimeout(
                                                 y(function* () {
-                                                    H(!0);
+                                                    N(!0);
                                                     const e = E.concat();
-                                                    e.push(e.shift()), p(e), M(C), yield (0, l.Eu)(), H(!1), F(!1);
+                                                    e.push(e.shift()), p(e), M(C), yield (0, l.Eu)(), N(!1), F(!1);
                                                 }),
                                                 600,
                                             ),

@@ -1,0 +1,1290 @@
+/* stylelint-disable scss/dollar-variable-pattern */
+
+.PostBattleViewApp_mt_4_29 {
+    margin-top: 4rem;
+}
+
+.PostBattleViewApp_base_c6 {
+    width: 100vw;
+    height: 100vh;
+    background: url('R.images.grinch.gui.maps.icons.postBattle.background') center center / cover no-repeat;
+    overflow: hidden;
+    position: relative;
+}
+
+.PostBattleViewApp_background_1b {
+    width: 100%;
+    height: 100%;
+    background: url('R.images.grinch.gui.maps.icons.postBattle.background') center center / cover no-repeat;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -5;
+}
+
+.PostBattleViewApp_background_lightTank_cyan_63 {
+    background-image: url('R.images.grinch.gui.maps.icons.postBattle.results.background_lightTank_cyan');
+}
+
+.PostBattleViewApp_background_lightTank_yellow_f0 {
+    background-image: url('R.images.grinch.gui.maps.icons.postBattle.results.background_lightTank_yellow');
+}
+
+.PostBattleViewApp_background_lightTank_magenta_15 {
+    background-image: url('R.images.grinch.gui.maps.icons.postBattle.results.background_lightTank_magenta');
+}
+
+.PostBattleViewApp_background_mediumTank_cyan_fc {
+    background-image: url('R.images.grinch.gui.maps.icons.postBattle.results.background_mediumTank_cyan');
+}
+
+.PostBattleViewApp_background_mediumTank_yellow_e1 {
+    background-image: url('R.images.grinch.gui.maps.icons.postBattle.results.background_mediumTank_yellow');
+}
+
+.PostBattleViewApp_background_mediumTank_magenta_61 {
+    background-image: url('R.images.grinch.gui.maps.icons.postBattle.results.background_mediumTank_magenta');
+}
+
+.PostBattleViewApp_background_heavyTank_cyan_c9 {
+    background-image: url('R.images.grinch.gui.maps.icons.postBattle.results.background_heavyTank_cyan');
+}
+
+.PostBattleViewApp_background_heavyTank_yellow_37 {
+    background-image: url('R.images.grinch.gui.maps.icons.postBattle.results.background_heavyTank_yellow');
+}
+
+.PostBattleViewApp_background_heavyTank_magenta_e4 {
+    background-image: url('R.images.grinch.gui.maps.icons.postBattle.results.background_heavyTank_magenta');
+}
+
+.PostBattleViewApp_button_db {
+    min-width: 180rem;
+}
+
+.PostBattleViewApp_button_container_52 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    position: absolute;
+    bottom: 90rem;
+    left: 0;
+    transform: translateY(-100%);
+}
+
+.mediaMedium .PostBattleViewApp_button_container_52 {
+    bottom: 100rem;
+}
+
+.mediaLarge .PostBattleViewApp_button_container_52 {
+    bottom: 110rem;
+}
+
+.PostBattleViewApp_caption_20 {
+    position: absolute;
+    bottom: 60rem;
+    left: 20rem;
+}
+
+.mediaMedium .PostBattleViewApp_caption_20 {
+    left: 30rem;
+}
+
+.PostBattleViewApp_caption_title_62,
+.PostBattleViewApp_caption_subtitle_dd {
+    color: #f9efc7;
+    font-size: 15rem;
+}
+
+.mediaMedium .PostBattleViewApp_caption_title_62,
+.mediaMedium .PostBattleViewApp_caption_subtitle_dd {
+    font-size: 20rem;
+}
+
+.PostBattleViewApp_buttonWrapper_49 {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    position: absolute;
+    bottom: 60rem;
+}
+
+.PostBattleViewApp_buttonWrapper_button_2d {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 104rem;
+    height: 35rem;
+    background: url('R.images.grinch.gui.maps.icons.postBattle.button') center center / contain no-repeat;
+    color: #f9efc7;
+    font-size: 15rem;
+    text-shadow: 0rem 2rem 0rem rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+
+.mediaMedium .PostBattleViewApp_buttonWrapper_button_2d {
+    width: 150rem;
+    height: 50rem;
+    font-size: 20rem;
+}
+
+/* stylelint-disable scss/dollar-variable-pattern */
+
+.Header_mt_4_29 {
+    margin-top: 4rem;
+}
+
+.Header_header_cf {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 40rem;
+    position: relative;
+}
+
+.Header_header_tab_6c {
+    justify-content: center;
+    align-items: center;
+    width: 115rem;
+    height: 65rem;
+    margin-left: 3rem;
+    position: relative;
+    z-index: 1;
+}
+
+.mediaMedium .Header_header_tab_6c {
+    width: 171rem;
+    height: 97rem;
+    margin-left: 13rem;
+}
+
+.Header_header_tab_text_f5 {
+    margin-top: -4rem;
+    color: #f9efc7;
+    font-size: 14rem;
+    font-weight: 400;
+    text-align: center;
+    text-shadow: 0rem 2rem 0rem rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+
+.mediaMedium .Header_header_tab_text_f5 {
+    margin-top: 0;
+    font-size: 20rem;
+    font-weight: 700;
+}
+
+.Header_header_tab_text__active_28 {
+    font-weight: 400;
+    cursor: default;
+}
+
+.mediaMedium .Header_header_tab_text__active_28 {
+    font-weight: 400;
+}
+
+.Header_header_tab_backgroundLeft_18,
+.Header_header_tab_backgroundRight_3e {
+    width: 115rem;
+    height: 65rem;
+    background: url('R.images.grinch.gui.maps.icons.postBattle.route') center center / cover no-repeat;
+    position: absolute;
+    top: -15rem;
+    left: 50%;
+    z-index: -1;
+    transform: translateX(-50%);
+}
+
+.mediaMedium .Header_header_tab_backgroundLeft_18,
+.mediaMedium .Header_header_tab_backgroundRight_3e {
+    width: 171rem;
+    height: 97rem;
+}
+
+.Header_header_tab_backgroundRight_3e {
+    transform: translateX(-50%) scaleX(-1);
+}
+
+.Header_buttonWrapper_5a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 30rem;
+    right: 30rem;
+    z-index: 2;
+}
+
+.Header_button_e7 {
+    text-transform: uppercase;
+}
+
+.TextButton_base_b6 {
+    display: flex;
+    align-items: center;
+    padding: 0 3rem;
+    font-size: 12rem;
+    position: relative;
+    cursor: pointer;
+}
+
+.TextButton_base__right_39 {
+    flex-direction: row-reverse;
+}
+.TextButton_icon_17 {
+    width: 32rem;
+    height: 32rem;
+    background: no-repeat center / contain;
+    position: relative;
+}
+.TextButton_icon__back_43,
+.TextButton_icon__forward_59 {
+    margin: -1rem -5rem;
+    background-image: url('R.images.gui.maps.icons.components.text_button.back');
+    transform: translateY(1rem);
+}
+.TextButton_icon__forward_59 {
+    transform: rotate(180deg) translateY(1rem);
+}
+.TextButton_icon__close_53 {
+    margin: -1rem 0;
+    background-image: url('R.images.gui.maps.icons.components.text_button.close');
+}
+.TextButton_icon__info_33 {
+    margin: -1rem -5rem;
+    background-image: url('R.images.gui.maps.icons.components.text_button.info');
+}
+.TextButton_glow_a4 {
+    width: 100%;
+    height: 100%;
+    background: no-repeat center / contain;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    transition: opacity 0.16s;
+}
+.TextButton_icon__back_43 .TextButton_glow_a4,
+.TextButton_icon__forward_59 .TextButton_glow_a4 {
+    background-image: url('R.images.gui.maps.icons.components.text_button.back_hover');
+}
+.TextButton_icon__close_53 .TextButton_glow_a4 {
+    background-image: url('R.images.gui.maps.icons.components.text_button.close_hover');
+}
+.TextButton_icon__info_33 .TextButton_glow_a4 {
+    background-image: url('R.images.gui.maps.icons.components.text_button.info_hover');
+}
+.TextButton_base_b6:hover .TextButton_glow_a4 {
+    opacity: 1;
+}
+.TextButton_base_b6:active .TextButton_glow_a4 {
+    opacity: 0;
+}
+.TextButton_caption_82 {
+    position: relative;
+    transition:
+        color 0.16s,
+        text-shadow 0.16s;
+}
+.TextButton_caption__back_b9,
+.TextButton_caption__forward_4e,
+.TextButton_caption__close_36 {
+    color: #ffdd99;
+    text-shadow:
+        0 0 10rem rgba(255, 42, 0, 1),
+        0 0 10rem rgba(255, 42, 0, 0.4),
+        0 0 10rem rgba(255, 42, 0, 0.4),
+        0 0 2rem rgba(255, 42, 0, 0.4),
+        0 0 1rem rgba(255, 42, 0, 0.4),
+        0 0 2rem rgba(255, 42, 0, 0.4),
+        0 0 1rem rgba(255, 42, 0, 0.4);
+}
+.TextButton_base_b6:hover .TextButton_caption__back_b9,
+.TextButton_base_b6:hover .TextButton_caption__forward_4e,
+.TextButton_base_b6:hover .TextButton_caption__close_36 {
+    color: #fffa9f;
+}
+.TextButton_base_b6:active .TextButton_caption__back_b9,
+.TextButton_base_b6:active .TextButton_caption__forward_4e,
+.TextButton_base_b6:active .TextButton_caption__close_36 {
+    color: #ffdd99;
+}
+.TextButton_caption__info_23 {
+    padding: 0 5rem;
+    color: #ccffff;
+    text-shadow:
+        0 0 12rem rgba(31, 68, 255, 0.8),
+        0 0 8rem #00eaff;
+}
+.TextButton_base_b6:hover .TextButton_caption__info_23 {
+    color: #e3ffff;
+    text-shadow:
+        0 0 12rem rgba(31, 68, 255, 0.8),
+        0 0 12rem rgba(0, 234, 255, 1),
+        0 0 8rem #00eaff;
+}
+.TextButton_base_b6:active .TextButton_caption__info_23 {
+    color: #ccffff;
+    text-shadow:
+        0 0 12rem rgba(31, 68, 255, 0.6),
+        0 0 8rem #00eaff;
+}
+.TextButton_goto_e7 {
+    color: #7c7c6c;
+}
+.TextButton_base__left_ff .TextButton_goto_e7 {
+    margin-left: 8rem;
+}
+.TextButton_base__right_39 .TextButton_goto_e7 {
+    margin-right: 8rem;
+}
+.TextButton_shine_e2 {
+    width: 90rem;
+    height: 40rem;
+    background: url('R.images.gui.maps.icons.components.text_button.shine') no-repeat center / contain;
+    opacity: 0;
+    position: absolute;
+    top: -4rem;
+    transition: opacity 0.16s;
+    pointer-events: none;
+}
+.TextButton_base__left_ff .TextButton_shine_e2 {
+    left: -4rem;
+}
+.TextButton_base__right_39 .TextButton_shine_e2 {
+    right: -4rem;
+    transform: rotate(180deg);
+}
+.TextButton_base_b6:hover .TextButton_shine_e2 {
+    opacity: 1;
+}
+.TextButton_base_b6:active .TextButton_shine_e2 {
+    opacity: 0;
+}
+
+/* stylelint-disable scss/dollar-variable-pattern */
+
+.BattleScore_mt_4_ac {
+    margin-top: 4rem;
+}
+
+.BattleScore_base_ca {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    align-self: stretch;
+    margin-bottom: 120rem;
+}
+
+.mediaMedium .BattleScore_base_ca {
+    margin-bottom: 140rem;
+}
+
+.BattleScore_columns_53 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: stretch;
+    min-height: 380rem;
+}
+
+.mediaMedium .BattleScore_columns_53 {
+    min-height: 550rem;
+}
+
+.BattleScore_column_f4 {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: stretch;
+    width: 344rem;
+}
+
+.BattleScore_column_f4 + .BattleScore_column_f4 {
+    margin-left: 12rem;
+}
+
+.mediaMedium .BattleScore_column_f4 + .BattleScore_column_f4 {
+    margin-left: 17rem;
+}
+
+.mediaMedium .BattleScore_column_f4 {
+    width: 500rem;
+}
+
+.BattleScore_column_f4 .BattleScore_block_7b + .BattleScore_block_7b {
+    margin-top: 12rem;
+}
+
+.mediaMedium .BattleScore_column_f4 .BattleScore_block_7b + .BattleScore_block_7b {
+    margin-top: 20rem;
+}
+
+.BattleScore_block_7b {
+    flex: 1 0 auto;
+    background: url('R.images.grinch.gui.maps.icons.postBattle.battle_score.pattern') 0 0 / 100rem 100rem repeat;
+    filter: drop-shadow(10rem 10rem 10rem rgba(0, 0, 0, 0.5));
+    position: relative;
+}
+
+.BattleScore_teamHeader_7e {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    width: 98rem;
+    position: absolute;
+    top: -7rem;
+    right: 100%;
+}
+
+.mediaMedium .BattleScore_teamHeader_7e {
+    width: 142rem;
+    top: -10rem;
+}
+
+.BattleScore_teamHeader_tag_56 {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    height: 48rem;
+    padding-bottom: 10rem;
+    background: none top right / contain no-repeat;
+}
+
+.mediaMedium .BattleScore_teamHeader_tag_56 {
+    height: 70rem;
+    padding-bottom: 15rem;
+}
+
+.BattleScore_teamHeader_tag__yellow_ac {
+    background-image: url('R.images.grinch.gui.maps.icons.postBattle.battle_score.tabs.small.yellow');
+}
+
+.mediaMedium .BattleScore_teamHeader_tag__yellow_ac {
+    background-image: url('R.images.grinch.gui.maps.icons.postBattle.battle_score.tabs.large.yellow');
+}
+
+.BattleScore_teamHeader_tag__magenta_34 {
+    background-image: url('R.images.grinch.gui.maps.icons.postBattle.battle_score.tabs.small.magenta');
+}
+
+.mediaMedium .BattleScore_teamHeader_tag__magenta_34 {
+    background-image: url('R.images.grinch.gui.maps.icons.postBattle.battle_score.tabs.large.magenta');
+}
+
+.BattleScore_teamHeader_tag__cyan_d5 {
+    background-image: url('R.images.grinch.gui.maps.icons.postBattle.battle_score.tabs.small.cyan');
+}
+
+.mediaMedium .BattleScore_teamHeader_tag__cyan_d5 {
+    background-image: url('R.images.grinch.gui.maps.icons.postBattle.battle_score.tabs.large.cyan');
+}
+
+.BattleScore_teamHeader_tag_label_44 {
+    color: #f9efc7;
+    font-size: 15rem;
+    font-weight: 700;
+    text-align: center;
+    text-shadow: 0rem 2rem 0rem rgba(0, 0, 0, 0.5);
+}
+
+.mediaMedium .BattleScore_teamHeader_tag_label_44 {
+    font-size: 20rem;
+}
+
+.BattleScore_teamHeader_position_d2 {
+    margin-top: 8rem;
+    color: #f9efc7;
+    font-size: 26rem;
+    text-align: center;
+    text-shadow: 0rem 1rem 0rem rgba(0, 0, 0, 0.5);
+}
+
+.mediaMedium .BattleScore_teamHeader_position_d2 {
+    margin-top: 12rem;
+    font-size: 36rem;
+}
+
+.BattleScore_teamHeader_position__first_c1 {
+    font-size: 36rem;
+}
+
+.mediaMedium .BattleScore_teamHeader_position__first_c1 {
+    font-size: 56rem;
+}
+
+.BattleScore_scoreRow_d7 {
+    border-top: 1rem solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1rem solid rgba(0, 0, 0, 0.1);
+}
+
+.BattleScore_scoreRow_d7:last-child {
+    border-bottom: none;
+}
+
+.BattleScore_scoreRow_d7:first-child {
+    border-top: none;
+}
+
+.BattleScore_scoreList_20 {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    padding-top: 12rem;
+    padding-bottom: 12rem;
+}
+
+.mediaMedium .BattleScore_scoreList_20 {
+    padding-top: 16rem;
+    padding-bottom: 16rem;
+}
+
+.BattleScore_selectedPlayer_ef {
+    flex: 1 0 auto;
+    padding-top: 14rem;
+}
+
+.mediaMedium .BattleScore_selectedPlayer_ef {
+    padding-top: 20rem;
+}
+
+.BattleScore_selectedPlayer_ribbon_6a {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    height: 82rem;
+    margin-left: -10rem;
+    margin-right: -10rem;
+    padding-left: 33rem;
+    padding-right: 28rem;
+    background: url('R.images.grinch.gui.maps.icons.postBattle.battle_score.ribbon_body') center top / cover no-repeat;
+    position: relative;
+}
+
+.mediaMedium .BattleScore_selectedPlayer_ribbon_6a {
+    padding-left: 49rem;
+    padding-right: 52rem;
+}
+
+.BattleScore_selectedPlayer_ribbon_name_37 {
+    color: #f9efc7;
+    font-size: 26rem;
+    text-shadow: 0rem 2rem 0rem rgba(0, 0, 0, 0.5);
+}
+
+.mediaMedium .BattleScore_selectedPlayer_ribbon_name_37 {
+    font-size: 36rem;
+}
+
+.BattleScore_selectedPlayer_ribbon_score_2d {
+    min-height: 24rem;
+    padding-right: 32rem;
+    background: url('R.images.grinch.gui.maps.icons.postBattle.battle_score.score.c_24x24') right 70% / 24rem 24rem
+        no-repeat;
+    color: #c7ddf9;
+    font-size: 26rem;
+    text-shadow: 0rem 2rem 0rem rgba(0, 0, 0, 0.5);
+}
+
+.mediaMedium .BattleScore_selectedPlayer_ribbon_score_2d {
+    padding-right: 40rem;
+    background: url('R.images.grinch.gui.maps.icons.postBattle.battle_score.score.c_32x32') right 70% / 32rem 32rem
+        no-repeat;
+    font-size: 36rem;
+}
+
+.BattleScore_selectedPlayer_ribbon_footer_8a {
+    height: 20rem;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+}
+
+.BattleScore_selectedPlayer_ribbon_footer_left_f2,
+.BattleScore_selectedPlayer_ribbon_footer_right_b0 {
+    width: 10rem;
+    background: url('R.images.grinch.gui.maps.icons.postBattle.battle_score.ribbon_left') left top / 10rem 20rem
+        no-repeat;
+}
+
+.BattleScore_selectedPlayer_ribbon_footer_center_84 {
+    flex: 1 1 auto;
+    background: url('R.images.grinch.gui.maps.icons.postBattle.battle_score.ribbon_shadow') left top / 10rem 20rem
+        repeat-x;
+}
+
+.BattleScore_selectedPlayer_ribbon_footer_right_b0 {
+    transform: scaleX(-1);
+}
+
+.BattleScore_selectedPlayer_scoreItems_1b {
+    padding-top: 16rem;
+}
+
+.mediaMedium .BattleScore_selectedPlayer_scoreItems_1b {
+    padding-top: 24rem;
+}
+
+.BattleScore_selectedPlayer_scoreItem_7e {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 24rem;
+    padding-left: 20rem;
+    padding-right: 20rem;
+}
+
+.mediaMedium .BattleScore_selectedPlayer_scoreItem_7e {
+    padding-left: 38rem;
+    padding-right: 38rem;
+}
+
+.BattleScore_selectedPlayer_scoreItem_type_1e {
+    flex: 1 0 auto;
+    color: #f9efc7;
+    font-size: 15rem;
+    text-shadow: 0rem 1rem 0rem rgba(0, 0, 0, 0.5);
+}
+
+.mediaMedium .BattleScore_selectedPlayer_scoreItem_type_1e {
+    font-size: 20rem;
+}
+
+.BattleScore_selectedPlayer_scoreItem_score_a1 {
+    min-height: 12rem;
+    padding-right: 20rem;
+    background: url('R.images.grinch.gui.maps.icons.postBattle.battle_score.score.c_11x12') right 70% / 11rem 12rem
+        no-repeat;
+    color: #c7ddf9;
+    font-size: 15rem;
+    text-shadow: 0rem 1rem 0rem rgba(0, 0, 0, 0.5);
+}
+
+.mediaMedium .BattleScore_selectedPlayer_scoreItem_score_a1 {
+    min-height: 12rem;
+    padding-right: 24rem;
+    background: url('R.images.grinch.gui.maps.icons.postBattle.battle_score.score.c_15x16') right 70% / 15rem 16rem
+        no-repeat;
+    font-size: 20rem;
+}
+
+.BattleScore_selectedPlayer_scoreItem__zero_97 .BattleScore_selectedPlayer_scoreItem_score_a1 {
+    opacity: 0.5;
+}
+
+/* stylelint-disable scss/dollar-variable-pattern */
+
+.PlayerScore_mt_4_45 {
+    margin-top: 4rem;
+}
+
+.PlayerScore_base_f4 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 16rem;
+    padding-left: 20rem;
+    padding-right: 20rem;
+    transition: background-color 400ms ease-out;
+    cursor: pointer;
+}
+
+.mediaMedium .PlayerScore_base_f4 {
+    min-height: 24rem;
+    padding-left: 38rem;
+    padding-right: 38rem;
+}
+
+.PlayerScore_base__currentPlayer_72 {
+    background-color: rgba(242, 185, 87, 0.25);
+}
+
+.PlayerScore_base__currentPlayer_72 .PlayerScore_name_cc {
+    color: #f2b957;
+}
+
+.PlayerScore_base__selectedPlayer_34,
+.PlayerScore_base_f4:hover {
+    background-color: rgba(249, 239, 199, 0.25);
+}
+
+.PlayerScore_platoon_25 {
+    width: 24rem;
+}
+
+.PlayerScore_platoon_image_db {
+    width: 18rem;
+    height: 20rem;
+}
+
+.PlayerScore_vehicle_3d {
+    width: 32rem;
+}
+
+.PlayerScore_vehicle_image_d4 {
+    width: 24rem;
+    height: 24rem;
+}
+
+.PlayerScore_name_cc {
+    flex: 1 0 auto;
+    color: #f9efc7;
+    font-size: 15rem;
+    text-shadow: 0rem 1rem 0rem rgba(0, 0, 0, 0.5);
+}
+
+.mediaMedium .PlayerScore_name_cc {
+    font-size: 20rem;
+}
+
+.PlayerScore_score_e2 {
+    min-height: 12rem;
+    padding-right: 20rem;
+    background: url('R.images.grinch.gui.maps.icons.postBattle.battle_score.score.c_11x12') right 70% / 11rem 12rem
+        no-repeat;
+    color: #c7ddf9;
+    font-size: 15rem;
+    text-shadow: 0rem 1rem 0rem rgba(0, 0, 0, 0.5);
+}
+
+.mediaMedium .PlayerScore_score_e2 {
+    min-height: 12rem;
+    padding-right: 24rem;
+    background: url('R.images.grinch.gui.maps.icons.postBattle.battle_score.score.c_15x16') right 70% / 15rem 16rem
+        no-repeat;
+    font-size: 20rem;
+}
+
+/* stylelint-disable scss/dollar-variable-pattern */
+
+.BattleResults_mt_4_80 {
+    margin-top: 4rem;
+}
+
+.BattleResults_base_5e {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.BattleResults_team_83 {
+    width: 982rem;
+    height: 771rem;
+    background: url('R.images.grinch.gui.maps.icons.postBattle.results.block_yellow') center center / contain no-repeat;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.BattleResults_team_yellow_65 {
+    background-image: url('R.images.grinch.gui.maps.icons.postBattle.results.block_yellow');
+}
+
+.BattleResults_team_magenta_aa {
+    background-image: url('R.images.grinch.gui.maps.icons.postBattle.results.block_magenta');
+}
+
+.BattleResults_team_cyan_a1 {
+    background-image: url('R.images.grinch.gui.maps.icons.postBattle.results.block_cyan');
+}
+
+.mediaMedium .BattleResults_team_83 {
+    width: 1400rem;
+    height: 1000rem;
+}
+
+.BattleResults_place_0d {
+    display: flex;
+    flex-direction: row;
+    margin-top: -260rem;
+    position: relative;
+    z-index: 1;
+}
+
+.mediaMedium .BattleResults_place_0d {
+    margin-top: -357rem;
+}
+
+.BattleResults_place_decorationLeft_04,
+.BattleResults_place_decorationRight_95 {
+    width: 88rem;
+    height: 114rem;
+    background: url('R.images.grinch.gui.maps.icons.announcements.numbers.decoration_small') center center / contain
+        no-repeat;
+    position: absolute;
+    top: -10rem;
+}
+
+.mediaMedium .BattleResults_place_decorationLeft_04,
+.mediaMedium .BattleResults_place_decorationRight_95 {
+    width: 100rem;
+    height: 150rem;
+    background: url('R.images.grinch.gui.maps.icons.announcements.numbers.decoration') center center / contain no-repeat;
+}
+
+.BattleResults_place_decorationLeft_04 {
+    left: -68rem;
+    transform: scaleX(-1);
+}
+
+.mediaMedium .BattleResults_place_decorationLeft_04 {
+    left: -89rem;
+}
+
+.BattleResults_place_decorationRight_95 {
+    right: -68rem;
+}
+
+.mediaMedium .BattleResults_place_decorationRight_95 {
+    right: -89rem;
+}
+
+.BattleResults_number_2a {
+    width: 64rem;
+    height: 96rem;
+    background: url('R.images.grinch.gui.maps.icons.announcements.numbers.small.c_0') center center / contain no-repeat;
+}
+
+.mediaMedium .BattleResults_number_2a {
+    width: 90rem;
+    height: 134rem;
+    background: url('R.images.grinch.gui.maps.icons.announcements.numbers.large.c_0') center center / contain no-repeat;
+}
+
+.BattleResults_number_first_f7 {
+    background-image: url('R.images.grinch.gui.maps.icons.announcements.numbers.small.c_1');
+}
+
+.mediaMedium .BattleResults_number_first_f7 {
+    background-image: url('R.images.grinch.gui.maps.icons.announcements.numbers.large.c_1');
+}
+
+.BattleResults_number_second_15 {
+    background-image: url('R.images.grinch.gui.maps.icons.announcements.numbers.small.c_2');
+}
+
+.mediaMedium .BattleResults_number_second_15 {
+    background-image: url('R.images.grinch.gui.maps.icons.announcements.numbers.large.c_2');
+}
+
+.BattleResults_number_third_77 {
+    background-image: url('R.images.grinch.gui.maps.icons.announcements.numbers.small.c_3');
+}
+
+.mediaMedium .BattleResults_number_third_77 {
+    background-image: url('R.images.grinch.gui.maps.icons.announcements.numbers.large.c_3');
+}
+
+.BattleResults_results_27 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.BattleResults_playerPlace_9e {
+    display: flex;
+    flex-direction: row;
+    margin-top: 35rem;
+}
+
+.mediaMedium .BattleResults_playerPlace_9e {
+    margin-top: 55rem;
+}
+
+.BattleResults_playerPlace_text_16 {
+    margin-top: 4rem;
+    color: #f9efc7;
+    font-size: 15rem;
+    text-align: center;
+    text-shadow: 0rem 2rem 0rem rgba(0, 0, 0, 0.5);
+}
+
+.mediaMedium .BattleResults_playerPlace_text_16 {
+    margin-top: 9rem;
+    font-size: 20rem;
+}
+
+.BattleResults_playerPlace_number_66 {
+    margin-left: 10rem;
+    color: #f9efc7;
+    font-size: 20rem;
+    font-weight: 700;
+    text-align: center;
+    text-shadow: 0rem 2rem 0rem rgba(0, 0, 0, 0.5);
+}
+
+.mediaMedium .BattleResults_playerPlace_number_66 {
+    margin-left: 15rem;
+    font-size: 28rem;
+}
+
+.BattleResults_placeDecor_cd {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15rem;
+    position: relative;
+}
+
+.mediaMedium .BattleResults_placeDecor_cd {
+    margin-top: 35rem;
+}
+
+.BattleResults_placeDecor_title_56 {
+    margin-top: -3rem;
+    color: #f9efc7;
+    font-size: 26rem;
+    font-weight: 700;
+    text-align: center;
+    text-shadow: 0rem 2rem 0rem rgba(0, 0, 0, 0.5);
+    text-transform: uppercase;
+    z-index: 2;
+}
+
+.mediaMedium .BattleResults_placeDecor_title_56 {
+    margin-top: -5rem;
+    font-size: 36rem;
+}
+
+.BattleResults_placeDecor_ribbon_fe {
+    width: 340rem;
+    height: 130rem;
+    background: url('R.images.grinch.gui.maps.icons.postBattle.results.ribbon') center center / contain no-repeat;
+    position: absolute;
+    top: -20rem;
+    z-index: 1;
+}
+
+.mediaMedium .BattleResults_placeDecor_ribbon_fe {
+    width: 472rem;
+    height: 234rem;
+    top: -45rem;
+}
+
+.BattleResults_score_3f {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30rem;
+    position: relative;
+}
+
+.mediaMedium .BattleResults_score_3f {
+    margin-top: 35rem;
+}
+
+.BattleResults_score_number_d5 {
+    color: #c7ddf9;
+    font-size: 36rem;
+    text-shadow: 0rem 2rem 0rem rgba(0, 0, 0, 0.5);
+}
+
+.mediaMedium .BattleResults_score_number_d5 {
+    font-size: 56rem;
+}
+
+.BattleResults_score_img_65 {
+    width: 24rem;
+    height: 24rem;
+    margin-left: 14rem;
+    margin-top: 7rem;
+}
+
+.mediaMedium .BattleResults_score_img_65 {
+    width: 32rem;
+    height: 32rem;
+    margin-left: 20rem;
+    margin-top: 10rem;
+}
+
+.BattleResults_score_coins_aa {
+    margin-left: 40rem;
+    color: #ffc490;
+    font-size: 36rem;
+    text-shadow: 0rem 2rem 0rem rgba(0, 0, 0, 0.5);
+}
+
+.mediaMedium .BattleResults_score_coins_aa {
+    margin-left: 77rem;
+    font-size: 56rem;
+}
+
+.BattleResults_missions_32 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    min-height: 350rem;
+    text-align: left;
+    position: absolute;
+    top: 50%;
+    right: 10rem;
+    z-index: 1;
+    transform: translateY(-50%);
+}
+
+.mediaMedium .BattleResults_missions_32 {
+    min-height: 500rem;
+    right: 20rem;
+}
+
+.mediaLarge .BattleResults_missions_32 {
+    min-height: 500rem;
+    right: 41rem;
+}
+
+.BattleResults_missions_item_a1 {
+    margin-bottom: 7rem;
+    pointer-events: none;
+}
+
+.mediaMedium .BattleResults_missions_item_a1 {
+    margin-bottom: 10rem;
+}
+
+.BattleResults_pagination_97 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10rem;
+}
+
+.BattleResults_pageButton_e2 {
+    width: 25rem;
+    height: 25rem;
+    margin-left: 10rem;
+    border: none;
+    box-shadow: inset 0 1rem 0 rgba(249, 239, 199, 0.1);
+    background: url('R.images.grinch.gui.maps.icons.postBattle.results.paper') center center / contain no-repeat;
+    filter: drop-shadow(0rem 2rem 4rem rgba(0, 0, 0, 0.5));
+    position: relative;
+    cursor: pointer;
+}
+
+.BattleResults_pageButton_active_ed {
+    background: url('R.images.grinch.gui.maps.icons.postBattle.results.paper_orange') center center / contain no-repeat;
+}
+
+.BattleResults_pageButton_number_fd {
+    color: #f9efc7;
+    font-size: 16rem;
+}
+
+.BattleResults_pageButton_hoverEffect_f7 {
+    width: 25rem;
+    height: 25rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.BattleResults_pageButton_hoverEffect_f7:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+/* stylelint-disable scss/dollar-variable-pattern */
+
+.Mission_mt_4_ca {
+    margin-top: 4rem;
+}
+
+.Mission_base_d6 {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: stretch;
+    width: 278rem;
+    box-shadow: inset 0 1rem 0 rgba(249, 239, 199, 0.1);
+    background: url('R.images.grinch.gui.maps.icons.postBattle.results.paper') center center / contain repeat;
+    position: relative;
+}
+
+.mediaSmall .Mission_base_d6 {
+    width: 357rem;
+}
+
+.mediaMedium .Mission_base_d6 {
+    width: 450rem;
+}
+
+.mediaLarge .Mission_base_d6 {
+    width: 500rem;
+}
+
+.Mission_base__done_f5 {
+    background: url('R.images.grinch.gui.maps.icons.postBattle.results.paper_orange') center center / contain repeat;
+}
+
+.Mission_content_d9 {
+    width: 185rem;
+    min-height: 80rem;
+    padding: 8rem 0rem 8rem 14rem;
+}
+
+.mediaSmall .Mission_content_d9 {
+    width: 240rem;
+    padding: 11rem 0rem 11rem 15rem;
+}
+
+.mediaMedium .Mission_content_d9 {
+    width: 320rem;
+    padding: 11rem 20rem;
+}
+
+.mediaLarge .Mission_content_d9 {
+    width: 370rem;
+    padding: 11rem 20rem;
+}
+
+.Mission_description_94 {
+    flex: 1 0 auto;
+    color: #f9efc7;
+    font-size: 12rem;
+    text-shadow: 0rem 2rem 0rem rgba(0, 0, 0, 0.5);
+}
+
+.mediaSmall .Mission_description_94 {
+    font-size: 14rem;
+}
+
+.mediaMedium .Mission_description_94 {
+    font-size: 18rem;
+}
+
+.Mission_progress_cf {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.Mission_progress_bar_20 {
+    flex: 1 1 auto;
+    margin-top: 5rem;
+}
+
+.Mission_progress_values_3b {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    min-width: 60rem;
+    margin-left: 8rem;
+    margin-right: -20rem;
+    color: #f9efc7;
+    font-size: 14rem;
+    font-weight: 400;
+    text-shadow: 0rem 2rem 0rem rgba(0, 0, 0, 0.5);
+}
+
+.mediaMedium .Mission_progress_values_3b {
+    font-size: 20rem;
+}
+
+.Mission_progress_values__current_90 {
+    font-weight: 700;
+}
+
+.Mission_rewards_e9 {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    width: 90rem;
+    padding-right: 15rem;
+}
+
+.mediaSmall .Mission_rewards_e9 {
+    width: 130rem;
+    padding-right: 30rem;
+}
+
+.Mission_reward_39 {
+    color: #ffc490;
+    font-size: 20rem;
+    text-shadow: 0rem 2rem 0rem rgba(0, 0, 0, 0.5);
+}
+
+.mediaMedium .Mission_reward_39 {
+    font-size: 28rem;
+}
+
+.Mission_icon_1d {
+    width: 17rem;
+    height: 16rem;
+    margin-left: 7rem;
+    margin-top: 3rem;
+}
+
+.mediaMedium .Mission_icon_1d {
+    width: 30rem;
+    height: 29rem;
+    margin-left: 10rem;
+    margin-top: 4rem;
+}
+
+/* stylelint-disable scss/dollar-variable-pattern */
+
+.ProgressBar_mt_4_c9 {
+    margin-top: 4rem;
+}
+
+.ProgressBar_base_c7 {
+    height: 4rem;
+    background-color: #38375e;
+    position: relative;
+}
+
+.ProgressBar_current_c2 {
+    height: 4rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: width 0.5s ease-in-out;
+}
+
+.ProgressBar_current_overlay_ae {
+    width: 100%;
+    height: 100%;
+    box-shadow: 0rem 2rem 0rem rgba(0, 0, 0, 0.5);
+    background-color: #f9efc7;
+}
+
+.FormatText_base_d0 {
+    display: flex;
+    flex-wrap: wrap;
+}

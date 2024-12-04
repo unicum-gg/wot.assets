@@ -1,0 +1,2884 @@
+@keyframes App_fadeIn_8d {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.App_base_12 {
+    opacity: 0;
+    animation-name: App_fadeIn_8d;
+    animation-duration: 0.8s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    width: 100%;
+    height: 100%;
+    background-color: #111;
+    overflow: hidden;
+}
+
+.App_background_d4 {
+    width: 100%;
+    height: 100%;
+    background: url('R.images.advent_calendar.gui.maps.icons.mainView.background.small') no-repeat center / cover;
+    position: absolute;
+}
+
+.mediaMedium .App_background_d4 {
+    background-image: url('R.images.advent_calendar.gui.maps.icons.mainView.background.medium');
+}
+
+.mediaLarge .App_background_d4 {
+    background-image: url('R.images.advent_calendar.gui.maps.icons.mainView.background.large');
+}
+
+.mediaUltraLarge .App_background_d4 {
+    background-image: url('R.images.advent_calendar.gui.maps.icons.mainView.background.extraLarge');
+}
+
+.App_vignette_0c {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+            90deg,
+            rgba(24, 9, 55, 0.8) 0%,
+            rgba(0, 0, 0, 0) 27%,
+            rgba(0, 0, 0, 0) 73%,
+            rgba(24, 9, 55, 0.8) 100%
+        ),
+        linear-gradient(
+            0deg,
+            rgba(24, 9, 55, 0.8) 0%,
+            rgba(0, 0, 0, 0) 27%,
+            rgba(0, 0, 0, 0) 73%,
+            rgba(24, 9, 55, 0.8) 100%
+        );
+    position: absolute;
+}
+
+.App_content_ad {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    opacity: 0;
+    transition: filter 0.8s;
+}
+
+.App_content__ready_be {
+    opacity: 0;
+    animation-name: App_fadeIn_8d;
+    animation-duration: 0.8s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+    animation-delay: 0.8s;
+    animation-iteration-count: 1;
+}
+
+.App_content__slowReady_51 {
+    opacity: 0;
+    animation-name: App_fadeIn_8d;
+    animation-duration: 0.8s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+    animation-delay: 1.2s;
+    animation-iteration-count: 1;
+}
+
+.App_content__blurred_8c {
+    filter: blur(10rem);
+}
+
+.CButton_base_40 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2rem;
+    box-shadow: 0 0 0 1rem rgba(0, 0, 0, 0.6);
+    position: relative;
+    cursor: pointer;
+}
+
+.CButton_base__main_42,
+.CButton_base__primary_7f,
+.CButton_base__primaryGreen_6f,
+.CButton_base__primaryRed_ec,
+.CButton_base__secondary_50 {
+    background-size: 100% 100%;
+}
+
+.CButton_base__main_42 {
+    background-image: url('R.images.gui.maps.icons.components.button.back_main');
+}
+
+.CButton_base__primary_7f {
+    background-image: url('R.images.gui.maps.icons.components.button.back_primary');
+}
+
+.CButton_base__primaryGreen_6f {
+    background-image: url('R.images.gui.maps.icons.components.button.back_primary_green');
+}
+
+.CButton_base__primaryRed_ec {
+    background-image: url('R.images.gui.maps.icons.components.button.back_primary_red');
+}
+
+.CButton_base__secondary_50 {
+    background-image: url('R.images.gui.maps.icons.components.button.back_secondary');
+}
+
+.CButton_base__ghost_ed {
+    border-radius: 3rem;
+    box-shadow:
+        0 0 0 1rem rgba(0, 0, 0, 0.3),
+        0 0 0 1rem rgba(255, 255, 255, 0.15) inset;
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+.CButton_base__extraSmall_27 {
+    min-height: 17rem;
+    padding: 0 16rem;
+}
+
+.CButton_base__small_df,
+.CButton_base__medium_74 {
+    padding: 0 20rem;
+}
+
+.CButton_base__small_df {
+    min-height: 18rem;
+}
+
+.CButton_base__medium_74 {
+    min-height: 32rem;
+}
+
+.CButton_base__large_5c {
+    min-height: 48rem;
+}
+
+.CButton_base__disabled_d9 {
+    cursor: default;
+}
+/* Element .back and background-image in element .base need for fix bug in GF https://jira.wargaming.net/browse/WOTD-158525
+The bug is that under certain conditions, when using border-image, stripes appear. Strip is a single-pixel gap
+between 'border-image-width' and 'fill'.
+This bug is reproduced in Google Chrome 81.0.4044.113
+*/
+.CButton_back_e5 {
+    border-image-slice: 4 fill;
+    border-image-width: 4rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.CButton_base__main_42 .CButton_back_e5 {
+    border-image-source: url('R.images.gui.maps.icons.components.button.back_main');
+}
+.CButton_base__primary_7f .CButton_back_e5 {
+    border-image-source: url('R.images.gui.maps.icons.components.button.back_primary');
+}
+.CButton_base__primaryGreen_6f .CButton_back_e5 {
+    border-image-source: url('R.images.gui.maps.icons.components.button.back_primary_green');
+}
+.CButton_base__primaryRed_ec .CButton_back_e5 {
+    border-image-source: url('R.images.gui.maps.icons.components.button.back_primary_red');
+}
+.CButton_base__secondary_50 .CButton_back_e5 {
+    border-image-source: url('R.images.gui.maps.icons.components.button.back_secondary');
+}
+.CButton_texture_fe {
+    background: url('R.images.gui.maps.icons.components.button.standard_texture_file');
+    background-size: 155rem 31rem;
+    mix-blend-mode: soft-light;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.CButton_state_11 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition: box-shadow 0.16s ease-in-out;
+}
+.CButton_base__focus_83 .CButton_state_11 {
+    border-radius: 2rem;
+    box-shadow: inset 0 0 2rem 1rem rgba(255, 85, 0, 0.2);
+}
+.CButton_stateHighlightHover_ff,
+.CButton_stateHighlightActive_35,
+.CButton_stateDisabled_54 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.CButton_stateHighlightHover_ff {
+    background-image: linear-gradient(
+        180deg,
+        rgba(252, 248, 235, 0.25) 0%,
+        rgba(252, 248, 235, 0.1) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    opacity: 0;
+}
+.CButton_base_40:hover .CButton_stateHighlightHover_ff {
+    opacity: 1;
+}
+.CButton_base_40:active .CButton_stateHighlightHover_ff {
+    opacity: 0;
+}
+.CButton_base__disabled_d9:hover .CButton_stateHighlightHover_ff {
+    opacity: 0;
+}
+.CButton_base__ghost_ed .CButton_stateHighlightHover_ff {
+    box-shadow: 0 15rem 12rem 0 rgba(242, 242, 230, 0.11) inset;
+    background-color: rgba(8, 6, 0, 0.18);
+    background-image: none;
+}
+.CButton_stateHighlightActive_35 {
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.15) 100%);
+    opacity: 0;
+}
+.CButton_base__highlightActive_b2 .CButton_stateHighlightActive_35 {
+    opacity: 1;
+}
+.CButton_stateDisabled_54 {
+    background-color: rgba(0, 0, 0, 0.25);
+    background-image: url('R.images.gui.maps.icons.components.button.texture_disable');
+    background-size: 15rem 15rem;
+    visibility: hidden;
+}
+.CButton_base__disabled_d9 .CButton_stateDisabled_54 {
+    visibility: inherit;
+}
+.CButton_content_cc {
+    display: flex;
+    align-items: center;
+    color: #f2f2e6;
+    font-weight: 700;
+    line-height: 1.2;
+    text-shadow: 0 -1rem 1rem #000;
+    letter-spacing: 0.03em;
+    transform: translateY(-1rem);
+}
+.CButton_content_cc[lang='ja'],
+.CButton_content_cc[lang='ko'],
+.CButton_content_cc[lang='zh_tw'],
+.CButton_content_cc[lang='zh_sg'],
+.CButton_content_cc[lang='zh_cn'],
+.CButton_content_cc[lang='th'] {
+    font-weight: 400;
+}
+.CButton_base__main_42 .CButton_content_cc,
+.CButton_base__primaryRed_ec .CButton_content_cc {
+    text-shadow: 0 -1rem 1rem #600;
+}
+.CButton_base__secondary_50 .CButton_content_cc {
+    color: rgba(254, 254, 236, 0.75);
+}
+.CButton_base__primaryGreen_6f .CButton_content_cc {
+    text-shadow: 0 -1rem 1rem #1c2502;
+}
+.CButton_base__extraSmall_27 .CButton_content_cc {
+    font-size: 12rem;
+}
+.CButton_base__small_df .CButton_content_cc {
+    font-size: 14rem;
+}
+.CButton_base__medium_74 .CButton_content_cc {
+    font-size: 15rem;
+}
+.CButton_base__large_5c .CButton_content_cc {
+    font-size: 18rem;
+}
+.CButton_base__disabled_d9 .CButton_content_cc {
+    opacity: 0.6;
+}
+
+.Calendar_base_e0 {
+    width: 946rem;
+    height: 460rem;
+    margin-top: 25rem;
+    position: absolute;
+    top: 50%;
+    z-index: 100;
+    transform: translateY(-50%);
+
+    --width-ratio: 105rem;
+    --height-ratio: 92rem;
+}
+
+.Calendar_base_e0 .Calendar_content_bd {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.Calendar_base_e0 .Calendar_content__hidden_f4 {
+    animation-name: Calendar_fadeOut_3e;
+    animation-duration: 0.4s;
+    animation-fill-mode: forwards;
+    animation-delay: 0.1s;
+}
+
+.Calendar_base__blocked_57 {
+    pointer-events: none;
+}
+
+.Calendar_base__layer_52 {
+    width: 100%;
+    height: 100%;
+    background-size: 100% 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.Calendar_base__art_bd {
+    width: 949rem;
+    height: 464rem;
+    box-shadow: 1rem 1rem 20rem rgb(1, 0, 64);
+    background-image: url('R.images.advent_calendar.gui.maps.icons.mainView.art.small');
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.mediaMedium .Calendar_base__art_bd {
+    width: 1238rem;
+    height: 610rem;
+    background-image: url('R.images.advent_calendar.gui.maps.icons.mainView.art.medium');
+}
+
+.mediaLarge .Calendar_base__art_bd {
+    width: 1454rem;
+    height: 714rem;
+    background-image: url('R.images.advent_calendar.gui.maps.icons.mainView.art.large');
+}
+
+.mediaUltraLarge .Calendar_base__art_bd {
+    width: 1814rem;
+    height: 890rem;
+    background-image: url('R.images.advent_calendar.gui.maps.icons.mainView.art.extraLarge');
+}
+
+.Calendar_base__artBorders_72 {
+    width: 950rem;
+    height: 464rem;
+    margin-left: -1rem;
+    background-image: url('R.images.advent_calendar.gui.maps.icons.mainView.artBorders.small');
+    opacity: 0.8;
+    mix-blend-mode: overlay;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.mediaMedium .Calendar_base__artBorders_72 {
+    width: 1230rem;
+    height: 602rem;
+    margin-left: 0;
+    background-image: url('R.images.advent_calendar.gui.maps.icons.mainView.artBorders.medium');
+}
+
+.mediaLarge .Calendar_base__artBorders_72 {
+    width: 1446rem;
+    height: 706rem;
+    background-image: url('R.images.advent_calendar.gui.maps.icons.mainView.artBorders.large');
+}
+
+.mediaUltraLarge .Calendar_base__artBorders_72 {
+    width: 1808rem;
+    height: 884rem;
+    background-image: url('R.images.advent_calendar.gui.maps.icons.mainView.artBorders.extraLarge');
+}
+
+.Calendar_base__calendarBorder_de {
+    width: 960rem;
+    height: 472rem;
+    margin-left: -1rem;
+    box-shadow: 1rem 1rem 20rem rgb(1, 0, 64);
+    background-image: url('R.images.advent_calendar.gui.maps.icons.mainView.calendarBorder.small');
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.mediaMedium .Calendar_base__calendarBorder_de {
+    width: 1240rem;
+    height: 610rem;
+    margin-left: 1rem;
+    background-image: url('R.images.advent_calendar.gui.maps.icons.mainView.calendarBorder.medium');
+}
+
+.mediaLarge .Calendar_base__calendarBorder_de {
+    width: 1460rem;
+    height: 720rem;
+    margin-top: 1rem;
+    background-image: url('R.images.advent_calendar.gui.maps.icons.mainView.calendarBorder.large');
+}
+
+.mediaUltraLarge .Calendar_base__calendarBorder_de {
+    width: 1824rem;
+    height: 898rem;
+    margin-top: 0;
+    background-image: url('R.images.advent_calendar.gui.maps.icons.mainView.calendarBorder.extraLarge');
+}
+
+.mediaUltraSmall .Calendar_base_e0 {
+    margin-top: 40rem;
+}
+
+.mediaMedium .Calendar_base_e0 {
+    width: 1224rem;
+    height: 596rem;
+    margin-top: 35rem;
+    --width-ratio: 136rem;
+    --height-ratio: 119rem;
+}
+
+.mediaLarge .Calendar_base_e0 {
+    width: 1440rem;
+    height: 700rem;
+    margin-top: 4rem;
+    --width-ratio: 160rem;
+    --height-ratio: 140rem;
+}
+
+.mediaUltraLarge .Calendar_base_e0 {
+    width: 1800rem;
+    height: 876rem;
+    margin-top: 0;
+    --width-ratio: 200rem;
+    --height-ratio: 175rem;
+}
+
+.Calendar_linkButtonContainer_0e {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    right: 0;
+    bottom: -72rem;
+    left: 0;
+    transition:
+        opacity 0.8s,
+        transform 0.8s;
+}
+
+.mediaLarge .Calendar_linkButtonContainer_0e {
+    bottom: -102rem;
+}
+
+.Calendar_base__linkButtonHidden_b7 .Calendar_linkButtonContainer_0e {
+    opacity: 0;
+    transform: translateY(20rem);
+    pointer-events: none;
+}
+
+.Calendar_linkButton_36 {
+    min-width: 220rem;
+}
+
+.Calendar_linkButtonTextWrapper_65 {
+    color: #ffdd99;
+    font-size: 12rem;
+    font-weight: 400;
+    line-height: 1.3;
+    text-shadow:
+        0 0 15px #e52,
+        0 0 8px #ff2a00,
+        0 0 4px rgba(255, 127, 0, 0.25);
+}
+
+.Calendar_linkButtonIconWrapper_0b {
+    width: 1em;
+    height: 1em;
+    margin-left: 0.25em;
+    position: relative;
+}
+
+.Calendar_linkButtonIcon_93 {
+    width: 40rem;
+    height: 40rem;
+    background: url('R.images.advent_calendar.gui.maps.icons.link') center / contain no-repeat;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes Calendar_fadeOut_3e {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+.DoorCurrency_base_e2 {
+    display: flex;
+    align-items: center;
+    color: rgb(110, 96, 133);
+    font-size: 16rem;
+    font-weight: 700;
+    line-height: 20rem;
+    position: absolute;
+    bottom: 8rem;
+    left: 8rem;
+}
+
+.mediaMedium .DoorCurrency_base_e2 {
+    font-size: 17rem;
+    bottom: 10rem;
+    left: 10rem;
+}
+
+.mediaLarge .DoorCurrency_base_e2 {
+    font-size: 20rem;
+    bottom: 11rem;
+    left: 11rem;
+}
+
+.mediaUltraLarge .DoorCurrency_base_e2 {
+    font-size: 24rem;
+    bottom: 15rem;
+    left: 15rem;
+}
+
+.DoorCurrency_base__notEnough_61 {
+    color: #cf4949;
+}
+
+.DoorCurrency_base_e2 img {
+    width: 16rem;
+    height: 16rem;
+    margin-left: 2rem;
+}
+
+.mediaLarge .DoorCurrency_base_e2 img {
+    width: 24rem;
+    height: 24rem;
+}
+
+@keyframes DoorDay_slideInFadeIn_c5 {
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+@keyframes DoorDay_fadeOut_19 {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes DoorDay_fadeIn_3a {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+@keyframes DoorDay_fadeInWithScale_e8 {
+    0% {
+        opacity: 0;
+        transform: scale(1.2);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@keyframes DoorDay_slideUp_c4 {
+    0% {
+        opacity: 0;
+        transform: translateY(20rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes DoorDay_scale_c6 {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+@keyframes DoorDay_spin_35 {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+@keyframes DoorDay_blink_f6 {
+    0% {
+        transform: translateY(0rem);
+    }
+
+    15% {
+        transform: translateY(15rem);
+    }
+
+    30% {
+        transform: translateY(0rem);
+    }
+
+    45% {
+        transform: translateY(15rem);
+    }
+
+    60%,
+    100% {
+        transform: translateY(0rem);
+    }
+}
+@keyframes DoorDay_slideInNotification_aa {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.DoorDay_doorNumber_4f {
+    font-family: DINRoundPro;
+}
+[lang='th'] .DoorDay_doorNumber_4f,
+[lang='el'] .DoorDay_doorNumber_4f,
+[lang='vi'] .DoorDay_doorNumber_4f {
+    font-family: Warhelios;
+}
+[lang='ja'] .DoorDay_doorNumber_4f {
+    font-family: WarheliosJA;
+}
+[lang='ko'] .DoorDay_doorNumber_4f {
+    font-family: WarheliosKO;
+}
+[lang='zh_tw'] .DoorDay_doorNumber_4f {
+    font-family: WarheliosZHTW;
+}
+[lang='zh_sg'] .DoorDay_doorNumber_4f,
+[lang='zh_cn'] .DoorDay_doorNumber_4f {
+    font-family: WarheliosZHCN;
+}
+.DoorDay_doorNumber_4f {
+    margin-bottom: 4rem;
+    color: rgb(115, 125, 178);
+    font-size: 40rem;
+    font-weight: 700;
+    line-height: 1.1;
+    position: relative;
+}
+.DoorDay_doorNumber__highlighted_b4 {
+    color: rgb(190, 72, 115);
+}
+.DoorDay_doorNumber__closed_c0,
+.DoorDay_doorNumber__expired_35 {
+    opacity: 0.5;
+}
+.mediaMedium .DoorDay_doorNumber_4f {
+    font-size: 51rem;
+}
+.mediaLarge .DoorDay_doorNumber_4f {
+    font-size: 60rem;
+}
+.mediaUltraLarge .DoorDay_doorNumber_4f {
+    font-size: 70rem;
+}
+
+.DoorFrontSide_base_bd {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-image: var(--door-img);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: relative;
+    z-index: 2;
+}
+
+.DoorFrontSide_base_bd .DoorFrontSide_art_52 {
+    width: 100%;
+    height: 100%;
+    background-image: url('R.images.advent_calendar.gui.maps.icons.mainView.artPrint.small');
+    background-repeat: no-repeat;
+    background-position-x: calc(-1 * var(--x-pos) * var(--width-ratio));
+    background-position-y: calc(-1 * var(--y-pos) * var(--height-ratio));
+    background-size: calc(9 * var(--width-ratio)) calc(5 * var(--height-ratio));
+    opacity: 0.8;
+    mix-blend-mode: hard-light;
+    position: absolute;
+    top: 0;
+    left: 0;
+    mask-image: var(--door-img);
+    mask-size: 100%;
+}
+
+.mediaMedium .DoorFrontSide_base_bd .DoorFrontSide_art_52 {
+    background-image: url('R.images.advent_calendar.gui.maps.icons.mainView.artPrint.medium');
+}
+
+.mediaLarge .DoorFrontSide_base_bd .DoorFrontSide_art_52 {
+    background-image: url('R.images.advent_calendar.gui.maps.icons.mainView.artPrint.large');
+}
+
+.mediaUltraLarge .DoorFrontSide_base_bd .DoorFrontSide_art_52 {
+    background-image: url('R.images.advent_calendar.gui.maps.icons.mainView.artPrint.extraLarge');
+}
+
+.DoorMark_base_41 {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.DoorMark_overlay_79 {
+    width: calc(9 * var(--width-ratio));
+    height: calc(5 * var(--height-ratio));
+    position: absolute;
+    top: calc(-1 * var(--y-pos) * var(--height-ratio));
+    left: calc(-1 * var(--x-pos) * var(--width-ratio));
+}
+
+.DoorMark_mark_95 {
+    width: 105rem;
+    height: 105rem;
+    background: no-repeat center / cover;
+    position: absolute;
+    top: calc(var(--mark-y-pos) * var(--height-ratio));
+    left: calc(var(--mark-x-pos) * var(--width-ratio));
+    transform: translate(-75%, -25%);
+}
+
+.mediaMedium .DoorMark_mark_95 {
+    width: 136rem;
+    height: 136rem;
+}
+
+.mediaLarge .DoorMark_mark_95 {
+    width: 160rem;
+    height: 160rem;
+}
+
+.mediaUltraLarge .DoorMark_mark_95 {
+    width: 200rem;
+    height: 200rem;
+}
+
+.DoorWrapper_base_a7 {
+    position: absolute;
+}
+
+.ReadyToOpenDoor_glow_23 {
+    width: 262rem;
+    height: 262rem;
+    background-image: url('R.images.advent_calendar.gui.maps.icons.mainView.shine');
+    background-size: 100%;
+    mix-blend-mode: screen;
+    position: absolute;
+    top: calc(var(--height-ratio) / 2);
+    left: calc(var(--width-ratio) / 2);
+    z-index: 1;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+.mediaMedium .ReadyToOpenDoor_glow_23 {
+    width: 340rem;
+    height: 340rem;
+}
+
+.mediaLarge .ReadyToOpenDoor_glow_23 {
+    width: 400rem;
+    height: 400rem;
+}
+
+.mediaUltraLarge .ReadyToOpenDoor_glow_23 {
+    width: 500rem;
+    height: 500rem;
+}
+
+.ReadyToOpenDoor_glowBorder_f4 {
+    width: 100%;
+    height: 100%;
+    background: no-repeat center / cover;
+    opacity: 0.8;
+    mix-blend-mode: overlay;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.door-1x1 .ReadyToOpenDoor_glowBorder_f4 {
+    background-image: url('R.images.advent_calendar.gui.maps.icons.mainView.readyToOpen.glow_1x1');
+    transform: scale(1.05);
+}
+
+.door-2x1 .ReadyToOpenDoor_glowBorder_f4 {
+    background-image: url('R.images.advent_calendar.gui.maps.icons.mainView.readyToOpen.glow_2x1');
+    transform: scale(1.02);
+}
+
+.door-3x1 .ReadyToOpenDoor_glowBorder_f4 {
+    background-image: url('R.images.advent_calendar.gui.maps.icons.mainView.readyToOpen.glow_3x1');
+    /* stylelint-disable */
+    transform: scale(1.015);
+}
+
+.door-1x2 .ReadyToOpenDoor_glowBorder_f4 {
+    background-image: url('R.images.advent_calendar.gui.maps.icons.mainView.readyToOpen.glow_1x2');
+    transform: scale(1.02);
+}
+
+.door-2x2 .ReadyToOpenDoor_glowBorder_f4 {
+    background-image: url('R.images.advent_calendar.gui.maps.icons.mainView.readyToOpen.glow_2x2');
+    transform: scale(1.02);
+}
+
+.ReadyToOpenDoor_shineWrapper_3e {
+    mix-blend-mode: screen;
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 3;
+    pointer-events: none;
+    mask-size: 100%;
+}
+
+.door-1x1 .ReadyToOpenDoor_shineWrapper_3e {
+    mask-image: url('R.images.advent_calendar.gui.maps.icons.mainView.shineMask.c_1x1');
+    width: 217rem;
+    height: 201rem;
+    transform: translate(-50%, -50%) scale(0.75);
+}
+
+.mediaMedium .door-1x1 .ReadyToOpenDoor_shineWrapper_3e {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.mediaLarge .door-1x1 .ReadyToOpenDoor_shineWrapper_3e {
+    transform: translate(-50%, -50%) scale(1.2);
+}
+
+.mediaUltraLarge .door-1x1 .ReadyToOpenDoor_shineWrapper_3e {
+    transform: translate(-50%, -50%) scale(1.5);
+}
+
+.door-2x1 .ReadyToOpenDoor_shineWrapper_3e {
+    mask-image: url('R.images.advent_calendar.gui.maps.icons.mainView.shineMask.c_2x1');
+    width: 420rem;
+    height: 201rem;
+    transform: translate(-50%, -50%) scale(0.6, 0.75);
+}
+
+.mediaMedium .door-2x1 .ReadyToOpenDoor_shineWrapper_3e {
+    transform: translate(-50%, -50%) scale(0.8, 1);
+}
+
+.mediaLarge .door-2x1 .ReadyToOpenDoor_shineWrapper_3e {
+    transform: translate(-50%, -50%) scale(1, 1.2);
+}
+
+.mediaUltraLarge .door-2x1 .ReadyToOpenDoor_shineWrapper_3e {
+    transform: translate(-50%, -50%) scale(1.2, 1.5);
+}
+
+.door-3x1 .ReadyToOpenDoor_shineWrapper_3e {
+    mask-image: url('R.images.advent_calendar.gui.maps.icons.mainView.shineMask.c_2x1');
+    width: 420rem;
+    height: 201rem;
+    transform: translate(-65%, -50%) scale(0.6, 0.75);
+}
+
+.mediaMedium .door-3x1 .ReadyToOpenDoor_shineWrapper_3e {
+    transform: translate(-70%, -50%) scale(0.8, 1);
+}
+
+.mediaLarge .door-3x1 .ReadyToOpenDoor_shineWrapper_3e {
+    transform: translate(-70%, -50%) scale(1, 1.2);
+}
+
+.mediaUltraLarge .door-3x1 .ReadyToOpenDoor_shineWrapper_3e {
+    transform: translate(-75%, -50%) scale(1.2, 1.5);
+}
+
+.door-1x2 .ReadyToOpenDoor_shineWrapper_3e {
+    mask-image: url('R.images.advent_calendar.gui.maps.icons.mainView.shineMask.c_1x2');
+    width: 201rem;
+    height: 420rem;
+    transform: translate(-50%, -50%) scale(0.75, 0.6);
+}
+
+.mediaMedium .door-1x2 .ReadyToOpenDoor_shineWrapper_3e {
+    transform: translate(-50%, -50%) scale(1, 0.8);
+}
+
+.mediaLarge .door-1x2 .ReadyToOpenDoor_shineWrapper_3e {
+    transform: translate(-50%, -50%) scale(1.2, 0.95);
+}
+
+.mediaUltraLarge .door-1x2 .ReadyToOpenDoor_shineWrapper_3e {
+    transform: translate(-50%, -50%) scale(1.5, 1.15);
+}
+
+.door-2x2 .ReadyToOpenDoor_shineWrapper_3e {
+    mask-image: url('R.images.advent_calendar.gui.maps.icons.mainView.shineMask.c_2x2');
+    width: 434rem;
+    height: 402rem;
+    transform: translate(-50%, -50%) scale(0.75);
+}
+
+.mediaMedium .door-2x2 .ReadyToOpenDoor_shineWrapper_3e {
+    transform: translate(-50%, -50%) scale(0.95);
+}
+
+.mediaLarge .door-2x2 .ReadyToOpenDoor_shineWrapper_3e {
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+.mediaUltraLarge .door-2x2 .ReadyToOpenDoor_shineWrapper_3e {
+    transform: translate(-50%, -50%) scale(1.4);
+}
+
+.ReadyToOpenDoor_shine_a1 {
+    width: 500rem;
+    height: 500rem;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.ReadyToOpenDoor_frontSide_e5 {
+    z-index: 3;
+    cursor: pointer;
+}
+
+.ReadyToOpenDoor_backSide_fa {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 4;
+    transform: scale(0.53);
+    transform-origin: left top;
+    pointer-events: none;
+}
+
+.mediaMedium .ReadyToOpenDoor_backSide_fa {
+    transform: scale(0.68);
+}
+
+.mediaLarge .ReadyToOpenDoor_backSide_fa {
+    transform: scale(0.8);
+}
+
+.mediaUltraLarge .ReadyToOpenDoor_backSide_fa {
+    transform: scale(1);
+}
+
+.DoorResolver_enter_9c {
+    animation-name: DoorResolver_enterFrames_ed;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    pointer-events: none;
+}
+
+@keyframes DoorResolver_enterFrames_ed {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes ProgressStatus_slideInFadeIn_86 {
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+@keyframes ProgressStatus_fadeOut_c3 {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes ProgressStatus_fadeIn_4b {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+@keyframes ProgressStatus_fadeInWithScale_33 {
+    0% {
+        opacity: 0;
+        transform: scale(1.2);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@keyframes ProgressStatus_slideUp_e8 {
+    0% {
+        opacity: 0;
+        transform: translateY(20rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes ProgressStatus_scale_a0 {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+@keyframes ProgressStatus_spin_0d {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+@keyframes ProgressStatus_blink_cf {
+    0% {
+        transform: translateY(0rem);
+    }
+
+    15% {
+        transform: translateY(15rem);
+    }
+
+    30% {
+        transform: translateY(0rem);
+    }
+
+    45% {
+        transform: translateY(15rem);
+    }
+
+    60%,
+    100% {
+        transform: translateY(0rem);
+    }
+}
+@keyframes ProgressStatus_slideInNotification_d5 {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.ProgressStatus_base_ae {
+    width: 71rem;
+    height: 18rem;
+    position: relative;
+}
+.ProgressStatus_glow_ef {
+    width: 100%;
+    height: 100%;
+    background: url('R.images.advent_calendar.gui.maps.icons.mainView.progression.glow') no-repeat center / contain;
+}
+.mediaLarge .ProgressStatus_glow_ef {
+    margin-top: 4rem;
+}
+.ProgressStatus_amount_ef {
+    font-family: DINRoundPro;
+}
+[lang='th'] .ProgressStatus_amount_ef,
+[lang='el'] .ProgressStatus_amount_ef,
+[lang='vi'] .ProgressStatus_amount_ef {
+    font-family: Warhelios;
+}
+[lang='ja'] .ProgressStatus_amount_ef {
+    font-family: WarheliosJA;
+}
+[lang='ko'] .ProgressStatus_amount_ef {
+    font-family: WarheliosKO;
+}
+[lang='zh_tw'] .ProgressStatus_amount_ef {
+    font-family: WarheliosZHTW;
+}
+[lang='zh_sg'] .ProgressStatus_amount_ef,
+[lang='zh_cn'] .ProgressStatus_amount_ef {
+    font-family: WarheliosZHCN;
+}
+.ProgressStatus_amount_ef {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    color: #d7e2ff;
+    font-weight: 700;
+    position: absolute;
+}
+.ProgressStatus_doorsClosed_90 {
+    display: flex;
+    margin-left: 3rem;
+    margin-right: 3rem;
+}
+.ProgressStatus_check_d7 {
+    width: 16rem;
+    height: 16rem;
+    background: url('R.images.advent_calendar.gui.maps.icons.common.check_small') no-repeat center / contain;
+    position: absolute;
+    left: 50%;
+    z-index: 2;
+    transform: translateX(-50%);
+}
+.mediaLarge .ProgressStatus_check_d7 {
+    width: 24rem;
+    height: 24rem;
+    margin-top: -3rem;
+    background-image: url('R.images.advent_calendar.gui.maps.icons.common.check');
+}
+.ProgressStatus_stage_55 {
+    width: 16rem;
+    height: 16rem;
+    margin: 1rem 0 0 1rem;
+    background: url('R.images.advent_calendar.gui.maps.icons.mainView.progression.stage') no-repeat center / contain;
+}
+
+.AnimationReward_base_96 {
+    display: flex;
+    align-items: center;
+}
+
+.AnimationReward_base__lootbox_2a {
+    margin-left: 15rem;
+}
+
+.mediaLarge .AnimationReward_base__lootbox_2a {
+    margin-left: 10rem;
+}
+
+.AnimationReward_reward_c4 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.AnimationReward_spacer_76 {
+    width: 55rem;
+    height: 1rem;
+    margin: -10rem 15rem 0;
+    border-radius: 3px;
+    background: rgba(189, 212, 255, 0.3);
+    position: relative;
+}
+
+.mediaLarge .AnimationReward_spacer_76 {
+    width: 89rem;
+}
+
+.AnimationReward_base__received_58 .AnimationReward_spacer_76 {
+    pointer-events: none;
+}
+
+.AnimationReward_lock_8b {
+    width: 16rem;
+    height: 16rem;
+    background: url('R.images.advent_calendar.gui.maps.icons.common.lock_small') no-repeat center / contain;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+.mediaLarge .AnimationReward_lock_8b {
+    width: 24rem;
+    height: 24rem;
+    background: url('R.images.advent_calendar.gui.maps.icons.common.lock') no-repeat center / contain;
+}
+
+.AnimationReward_image_2c {
+    width: 48rem;
+    height: 48rem;
+    background-size: 100%;
+    position: relative;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.mediaLarge .AnimationReward_image_2c {
+    width: 80rem;
+    height: 80rem;
+}
+
+.AnimationReward_base__lootbox_2a .AnimationReward_image_2c {
+    width: 81rem;
+    height: 48rem;
+}
+
+.mediaLarge .AnimationReward_base__lootbox_2a .AnimationReward_image_2c {
+    width: 135rem;
+    height: 80rem;
+}
+
+.AnimationReward_imageWrapper_be {
+    position: relative;
+}
+
+.AnimationReward_lootBoxGlow_26 {
+    width: 114rem;
+    height: 114rem;
+    background: url('R.images.advent_calendar.gui.maps.icons.mainView.progression.lootBoxGlow_small') no-repeat center /
+        contain;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.mediaLarge .AnimationReward_lootBoxGlow_26 {
+    width: 190rem;
+    height: 190rem;
+    background-image: url('R.images.advent_calendar.gui.maps.icons.mainView.progression.lootBoxGlow_big');
+}
+
+.AnimationReward_blur_e4 {
+    opacity: 0.5;
+}
+
+.FormatText_base_d0 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.Title_base_3a {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    color: rgba(215, 226, 255, 0.6);
+    font-size: 14rem;
+    line-height: 1.2;
+}
+
+.mediaMedium .Title_base_3a {
+    font-size: 16rem;
+}
+
+.mediaLarge .Title_base_3a {
+    font-size: 18rem;
+}
+
+.mediaUltraLarge .Title_base_3a {
+    font-size: 20rem;
+}
+
+.Title_text_90 {
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.Title_check_de {
+    width: 16rem;
+    height: 16rem;
+    margin-right: 5rem;
+    background: url('R.images.advent_calendar.gui.maps.icons.common.check_small') no-repeat center / contain;
+}
+
+.mediaMedium .Title_check_de {
+    margin-top: 3rem;
+}
+
+.mediaLarge .Title_check_de {
+    width: 24rem;
+    height: 24rem;
+    margin-top: 0;
+    background-image: url('R.images.advent_calendar.gui.maps.icons.common.check_small');
+}
+
+.Title_title_71 {
+    display: flex;
+    margin-top: -3rem;
+    position: absolute;
+    top: 50%;
+}
+
+.mediaLarge .Title_title_71 {
+    margin-top: -5rem;
+}
+
+.Title_lock_35 {
+    width: 16rem;
+    height: 16rem;
+    margin: 1rem 2rem 0 0;
+    background: url('R.images.advent_calendar.gui.maps.icons.common.lock_small') no-repeat center / contain;
+}
+
+.mediaLarge .Title_lock_35 {
+    width: 24rem;
+    height: 24rem;
+    margin: 0 3rem 0 0;
+    background-image: url('R.images.advent_calendar.gui.maps.icons.common.lock');
+}
+
+.Footer_base_0d {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30rem;
+    position: relative;
+    transition:
+        opacity 0.8s,
+        transform 0.8s;
+}
+
+.Footer_base__hidden_14 {
+    opacity: 0;
+    transform: translateY(20rem);
+    pointer-events: none;
+}
+
+.mediaUltraSmall .Footer_base_0d {
+    margin-bottom: 0;
+}
+
+.mediaMedium .Footer_base_0d {
+    margin-bottom: 25rem;
+}
+
+.mediaLarge .Footer_base_0d {
+    margin-bottom: 30rem;
+}
+
+.mediaUltraLarge .Footer_base_0d {
+    margin-bottom: 40rem;
+}
+
+.Footer_title_23 {
+    display: flex;
+    margin-top: -13rem;
+    margin-right: 25rem;
+    position: relative;
+    z-index: 1;
+}
+
+.mediaLarge .Footer_title_23 {
+    margin-right: 30rem;
+}
+
+.FormatTextWithColorTags_blackReal_3c {
+    color: #000000;
+}
+
+.FormatTextWithColorTags_whiteReal_8a {
+    color: #ffffff;
+}
+
+.FormatTextWithColorTags_white_16 {
+    color: #f2f2f7;
+}
+
+.FormatTextWithColorTags_whiteOrange_18 {
+    color: #fefeec;
+}
+
+.FormatTextWithColorTags_whiteSpanish_10 {
+    color: #e9e2bf;
+}
+
+.FormatTextWithColorTags_par_ca {
+    color: #8c8c7e;
+}
+
+.FormatTextWithColorTags_parSecondary_8d {
+    color: #595950;
+}
+
+.FormatTextWithColorTags_parTertiary_a3 {
+    color: #37362e;
+}
+
+.FormatTextWithColorTags_red_60 {
+    color: #ff2717;
+}
+
+.FormatTextWithColorTags_redDark_03 {
+    color: #b70000;
+}
+
+.FormatTextWithColorTags_yellow_ad {
+    color: #feab34;
+}
+
+.FormatTextWithColorTags_orange_e4 {
+    color: #ee7000;
+}
+
+.FormatTextWithColorTags_cream_cd {
+    color: #ffdd99;
+}
+
+.FormatTextWithColorTags_brown_c8 {
+    color: #cbac77;
+}
+
+.FormatTextWithColorTags_greenBright_f0 {
+    color: #80d43a;
+}
+
+.FormatTextWithColorTags_green_c5 {
+    color: #7ab300;
+}
+
+.FormatTextWithColorTags_greenDark_af {
+    color: #497212;
+}
+
+.FormatTextWithColorTags_blueBooster_ac {
+    color: #ccffff;
+}
+
+.FormatTextWithColorTags_blueTeamkiller_6f {
+    color: #09e2ff;
+}
+
+.FormatTextWithColorTags_cred_4e {
+    color: #ced9d9;
+}
+
+.FormatTextWithColorTags_gold_90 {
+    color: #ffc363;
+}
+
+.FormatTextWithColorTags_bond_71 {
+    color: #c9c9b6;
+}
+
+.FormatTextWithColorTags_prom_dd {
+    color: #a29b70;
+}
+
+/* This specific rule is used to fix https://jira.wargaming.net/browse/WOTPRG-9871 */
+
+.FormatTextWithColorTags_parNoWidth_5a {
+    width: 0;
+    color: #8c8c7e;
+}
+
+.GradientText_base_ce {
+    position: relative;
+}
+
+.GradientText_text_75 {
+    position: relative;
+    z-index: 1;
+    /* it fixes torn edges*/
+    transform: scale(0.99);
+}
+
+.GradientText_text__hidden_01 {
+    color: transparent;
+}
+
+.GradientText_text__basis_50 {
+    color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.GradientText_text__gradientColorize_e2 {
+    color: #aecbfa;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    mask-image: linear-gradient(336deg, #fff 0, #fff 13%, transparent 100%);
+}
+
+.GradientText_text__secondary_0e {
+    color: #e6eefc;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    mask-image: linear-gradient(336deg, #fff 0, #fff 72%, transparent 100%);
+}
+
+@keyframes Header_slideInFadeIn_76 {
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+@keyframes Header_fadeOut_7f {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes Header_fadeIn_9b {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+@keyframes Header_fadeInWithScale_6d {
+    0% {
+        opacity: 0;
+        transform: scale(1.2);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@keyframes Header_slideUp_43 {
+    0% {
+        opacity: 0;
+        transform: translateY(20rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes Header_scale_75 {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+@keyframes Header_spin_4f {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+@keyframes Header_blink_f9 {
+    0% {
+        transform: translateY(0rem);
+    }
+
+    15% {
+        transform: translateY(15rem);
+    }
+
+    30% {
+        transform: translateY(0rem);
+    }
+
+    45% {
+        transform: translateY(15rem);
+    }
+
+    60%,
+    100% {
+        transform: translateY(0rem);
+    }
+}
+@keyframes Header_slideInNotification_4a {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.Header_base_4f {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50rem;
+    transition:
+        opacity 0.8s,
+        transform 0.8s;
+}
+.Header_base__hidden_40 {
+    opacity: 0;
+    transform: translateY(-20rem);
+    pointer-events: none;
+}
+.mediaMedium .Header_base_4f {
+    margin-top: 57rem;
+}
+.mediaLarge .Header_base_4f {
+    margin-top: 50rem;
+}
+.mediaUltraLarge .Header_base_4f {
+    margin-top: 60rem;
+}
+.Header_shadow_29 {
+    width: 1200rem;
+    height: 420rem;
+    background-image: url('R.images.advent_calendar.gui.maps.icons.mainView.headerBg');
+    background-size: 100%;
+    mix-blend-mode: overlay;
+    position: absolute;
+    top: 115%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+.Header_titleWrapper_d4 {
+    font-family: DINRoundPro;
+}
+[lang='th'] .Header_titleWrapper_d4,
+[lang='el'] .Header_titleWrapper_d4,
+[lang='vi'] .Header_titleWrapper_d4 {
+    font-family: Warhelios;
+}
+[lang='ja'] .Header_titleWrapper_d4 {
+    font-family: WarheliosJA;
+}
+[lang='ko'] .Header_titleWrapper_d4 {
+    font-family: WarheliosKO;
+}
+[lang='zh_tw'] .Header_titleWrapper_d4 {
+    font-family: WarheliosZHTW;
+}
+[lang='zh_sg'] .Header_titleWrapper_d4,
+[lang='zh_cn'] .Header_titleWrapper_d4 {
+    font-family: WarheliosZHCN;
+}
+.Header_titleWrapper_d4 {
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 8rem;
+    position: relative;
+}
+.Header_title_eb {
+    color: rgba(215, 226, 255, 0.6);
+    font-size: 40rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.mediaMedium .Header_title_eb {
+    font-size: 45rem;
+}
+.mediaUltraLarge .Header_title_eb {
+    font-size: 60rem;
+}
+.Header_infoButton_5e {
+    width: 32rem;
+    height: 32rem;
+    margin-left: 2rem;
+    margin-bottom: 3rem;
+    background: url('R.images.advent_calendar.gui.maps.icons.mainView.info') no-repeat center / contain;
+}
+.mediaMedium .Header_infoButton_5e {
+    margin-bottom: 5rem;
+}
+.mediaUltraLarge .Header_infoButton_5e {
+    margin-bottom: 10rem;
+}
+.Header_subTitle_15 {
+    color: rgba(215, 226, 255, 0.6);
+    font-size: 14rem;
+    line-height: 1.2;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+.mediaMedium .Header_subTitle_15 {
+    font-size: 16rem;
+}
+.mediaLarge .Header_subTitle_15 {
+    font-size: 18rem;
+}
+.mediaUltraLarge .Header_subTitle_15 {
+    font-size: 20rem;
+}
+
+.TextButton_base_b6 {
+    display: flex;
+    align-items: center;
+    padding: 0 3rem;
+    font-size: 12rem;
+    position: relative;
+    cursor: pointer;
+}
+
+.TextButton_base__right_39 {
+    flex-direction: row-reverse;
+}
+.TextButton_icon_17 {
+    width: 32rem;
+    height: 32rem;
+    background: no-repeat center / contain;
+    position: relative;
+}
+.TextButton_icon__back_43,
+.TextButton_icon__forward_59 {
+    margin: -1rem -5rem;
+    background-image: url('R.images.gui.maps.icons.components.text_button.back');
+    transform: translateY(1rem);
+}
+.TextButton_icon__forward_59 {
+    transform: rotate(180deg) translateY(1rem);
+}
+.TextButton_icon__close_53 {
+    margin: -1rem 0;
+    background-image: url('R.images.gui.maps.icons.components.text_button.close');
+}
+.TextButton_icon__info_33 {
+    margin: -1rem -5rem;
+    background-image: url('R.images.gui.maps.icons.components.text_button.info');
+}
+.TextButton_glow_a4 {
+    width: 100%;
+    height: 100%;
+    background: no-repeat center / contain;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    transition: opacity 0.16s;
+}
+.TextButton_icon__back_43 .TextButton_glow_a4,
+.TextButton_icon__forward_59 .TextButton_glow_a4 {
+    background-image: url('R.images.gui.maps.icons.components.text_button.back_hover');
+}
+.TextButton_icon__close_53 .TextButton_glow_a4 {
+    background-image: url('R.images.gui.maps.icons.components.text_button.close_hover');
+}
+.TextButton_icon__info_33 .TextButton_glow_a4 {
+    background-image: url('R.images.gui.maps.icons.components.text_button.info_hover');
+}
+.TextButton_base_b6:hover .TextButton_glow_a4 {
+    opacity: 1;
+}
+.TextButton_base_b6:active .TextButton_glow_a4 {
+    opacity: 0;
+}
+.TextButton_caption_82 {
+    position: relative;
+    transition:
+        color 0.16s,
+        text-shadow 0.16s;
+}
+.TextButton_caption__back_b9,
+.TextButton_caption__forward_4e,
+.TextButton_caption__close_36 {
+    color: #ffdd99;
+    text-shadow:
+        0 0 10rem rgba(255, 42, 0, 1),
+        0 0 10rem rgba(255, 42, 0, 0.4),
+        0 0 10rem rgba(255, 42, 0, 0.4),
+        0 0 2rem rgba(255, 42, 0, 0.4),
+        0 0 1rem rgba(255, 42, 0, 0.4),
+        0 0 2rem rgba(255, 42, 0, 0.4),
+        0 0 1rem rgba(255, 42, 0, 0.4);
+}
+.TextButton_base_b6:hover .TextButton_caption__back_b9,
+.TextButton_base_b6:hover .TextButton_caption__forward_4e,
+.TextButton_base_b6:hover .TextButton_caption__close_36 {
+    color: #fffa9f;
+}
+.TextButton_base_b6:active .TextButton_caption__back_b9,
+.TextButton_base_b6:active .TextButton_caption__forward_4e,
+.TextButton_base_b6:active .TextButton_caption__close_36 {
+    color: #ffdd99;
+}
+.TextButton_caption__info_23 {
+    padding: 0 5rem;
+    color: #ccffff;
+    text-shadow:
+        0 0 12rem rgba(31, 68, 255, 0.8),
+        0 0 8rem #00eaff;
+}
+.TextButton_base_b6:hover .TextButton_caption__info_23 {
+    color: #e3ffff;
+    text-shadow:
+        0 0 12rem rgba(31, 68, 255, 0.8),
+        0 0 12rem rgba(0, 234, 255, 1),
+        0 0 8rem #00eaff;
+}
+.TextButton_base_b6:active .TextButton_caption__info_23 {
+    color: #ccffff;
+    text-shadow:
+        0 0 12rem rgba(31, 68, 255, 0.6),
+        0 0 8rem #00eaff;
+}
+.TextButton_goto_e7 {
+    color: #7c7c6c;
+}
+.TextButton_base__left_ff .TextButton_goto_e7 {
+    margin-left: 8rem;
+}
+.TextButton_base__right_39 .TextButton_goto_e7 {
+    margin-right: 8rem;
+}
+.TextButton_shine_e2 {
+    width: 90rem;
+    height: 40rem;
+    background: url('R.images.gui.maps.icons.components.text_button.shine') no-repeat center / contain;
+    opacity: 0;
+    position: absolute;
+    top: -4rem;
+    transition: opacity 0.16s;
+    pointer-events: none;
+}
+.TextButton_base__left_ff .TextButton_shine_e2 {
+    left: -4rem;
+}
+.TextButton_base__right_39 .TextButton_shine_e2 {
+    right: -4rem;
+    transform: rotate(180deg);
+}
+.TextButton_base_b6:hover .TextButton_shine_e2 {
+    opacity: 1;
+}
+.TextButton_base_b6:active .TextButton_shine_e2 {
+    opacity: 0;
+}
+
+.Countdown_base_fe {
+    display: flex;
+    align-items: center;
+}
+
+.Countdown_icon_8b {
+    width: 32rem;
+    height: 32rem;
+    background: no-repeat center / contain;
+}
+
+.Countdown_description_8d {
+    color: #ffdd99;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+.PopoverDecorator_base_ed {
+    display: flex;
+    position: absolute;
+}
+
+.PopoverDecorator_decorator_d3 {
+    padding: 58rem;
+    border-image-source: url('R.images.gui.maps.icons.popovers.popover_bg');
+    border-image-slice: 90 fill;
+    border-image-width: 90rem;
+    overflow: hidden;
+    position: relative;
+    z-index: 0;
+}
+
+.PopoverDecorator_arrow_8a {
+    background: no-repeat 0 0 / contain;
+    position: absolute;
+}
+
+.PopoverDecorator_arrow__bottom_c3,
+.PopoverDecorator_arrow__top_6e {
+    width: 301rem;
+    height: 90rem;
+    margin: 0 58rem;
+    background-image: url('R.images.gui.maps.icons.popovers.popover_arrow_top');
+    left: 50%;
+}
+
+.PopoverDecorator_arrow__left_7a,
+.PopoverDecorator_arrow__right_b6 {
+    width: 84rem;
+    height: 181rem;
+    margin: 58rem 0;
+    background-image: url('R.images.gui.maps.icons.popovers.popover_arrow_left');
+    top: 50%;
+}
+
+.PopoverDecorator_arrow__left_7a {
+    right: 10rem;
+    transform: scaleX(-1) translateY(-90rem);
+}
+
+.PopoverDecorator_arrow__right_b6 {
+    left: 10rem;
+    transform: translateY(-90rem);
+}
+
+.PopoverDecorator_arrow__top_6e {
+    bottom: 8rem;
+    transform: scaleY(-1) translateX(-150rem);
+}
+
+.PopoverDecorator_arrow__bottom_c3 {
+    top: 8rem;
+    transform: translateX(-150rem);
+}
+
+.PopoverDecorator_closeBtn_32 {
+    width: 18rem;
+    height: 18rem;
+    background: url('R.images.gui.maps.icons.popovers.close_button_slim_up') no-repeat 0 0 / contain;
+    position: absolute;
+    top: 6rem;
+    right: 6rem;
+    z-index: 3;
+    cursor: pointer;
+}
+
+.PopoverDecorator_closeBtn_32:hover {
+    filter: brightness(160%);
+}
+
+.PopoverDecorator_closeBtn_32:active {
+    background-image: url('R.images.gui.maps.icons.popovers.close_button_slim_press');
+    filter: brightness(100%);
+}
+
+.PopoverDecorator_content_f0 {
+    position: relative;
+    z-index: 2;
+}
+
+.Resource_base_f1 {
+    display: flex;
+    align-items: center;
+}
+
+.Resource_base__reverse_e4 {
+    flex-direction: row-reverse;
+}
+
+.Resource_base__ny_crystal_28 {
+    color: #ccdaf3;
+}
+
+.Resource_base__ny_emerald_55 {
+    color: #8ada80;
+}
+
+.Resource_base__ny_amber_da {
+    color: #eeaf6e;
+}
+
+.Resource_base__ny_iron_99 {
+    color: #e2e2cc;
+}
+
+.Resource_base__anyResource_08 {
+    color: #f2f2f7;
+}
+.Resource_valueWrapper_64 {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.Resource_value_ac {
+    display: flex;
+    font-size: 14rem;
+    font-weight: 700;
+    position: relative;
+}
+.mediaMedium .Resource_value_ac {
+    font-size: 16rem;
+}
+.Resource_value__ghost_ba {
+    opacity: 0;
+}
+.Resource_value__notEnough_a5 {
+    color: #ff7171;
+}
+.Resource_char__reduce_28 {
+    color: #bb0b41;
+}
+.Resource_icon_76 {
+    background: no-repeat center / contain;
+    position: relative;
+}
+.Resource_base__16_83 .Resource_icon_76 {
+    width: 16rem;
+    height: 16rem;
+}
+.Resource_base__ny_crystal_28.Resource_base__16_83 .Resource_icon_76 {
+    background-image: url('R.images.gui.maps.icons.newYear.resources.size_48.ny_crystal');
+}
+.Resource_base__ny_emerald_55.Resource_base__16_83 .Resource_icon_76 {
+    background-image: url('R.images.gui.maps.icons.newYear.resources.size_48.ny_emerald');
+}
+.Resource_base__ny_amber_da.Resource_base__16_83 .Resource_icon_76 {
+    background-image: url('R.images.gui.maps.icons.newYear.resources.size_48.ny_amber');
+}
+.Resource_base__ny_iron_99.Resource_base__16_83 .Resource_icon_76 {
+    background-image: url('R.images.gui.maps.icons.newYear.resources.size_48.ny_iron');
+}
+.Resource_base__anyResource_08.Resource_base__16_83 .Resource_icon_76 {
+    background-image: url('R.images.gui.maps.icons.newYear.resources.size_48.anyResource');
+}
+.Resource_base__20_d8 .Resource_icon_76 {
+    width: 20rem;
+    height: 20rem;
+}
+.Resource_base__ny_crystal_28.Resource_base__20_d8 .Resource_icon_76 {
+    background-image: url('R.images.gui.maps.icons.newYear.resources.size_48.ny_crystal');
+}
+.Resource_base__ny_emerald_55.Resource_base__20_d8 .Resource_icon_76 {
+    background-image: url('R.images.gui.maps.icons.newYear.resources.size_48.ny_emerald');
+}
+.Resource_base__ny_amber_da.Resource_base__20_d8 .Resource_icon_76 {
+    background-image: url('R.images.gui.maps.icons.newYear.resources.size_48.ny_amber');
+}
+.Resource_base__ny_iron_99.Resource_base__20_d8 .Resource_icon_76 {
+    background-image: url('R.images.gui.maps.icons.newYear.resources.size_48.ny_iron');
+}
+.Resource_base__anyResource_08.Resource_base__20_d8 .Resource_icon_76 {
+    background-image: url('R.images.gui.maps.icons.newYear.resources.size_48.anyResource');
+}
+.Resource_base__24_a2 .Resource_icon_76 {
+    width: 24rem;
+    height: 24rem;
+}
+.Resource_base__ny_crystal_28.Resource_base__24_a2 .Resource_icon_76 {
+    background-image: url('R.images.gui.maps.icons.newYear.resources.size_48.ny_crystal');
+}
+.Resource_base__ny_emerald_55.Resource_base__24_a2 .Resource_icon_76 {
+    background-image: url('R.images.gui.maps.icons.newYear.resources.size_48.ny_emerald');
+}
+.Resource_base__ny_amber_da.Resource_base__24_a2 .Resource_icon_76 {
+    background-image: url('R.images.gui.maps.icons.newYear.resources.size_48.ny_amber');
+}
+.Resource_base__ny_iron_99.Resource_base__24_a2 .Resource_icon_76 {
+    background-image: url('R.images.gui.maps.icons.newYear.resources.size_48.ny_iron');
+}
+.Resource_base__anyResource_08.Resource_base__24_a2 .Resource_icon_76 {
+    background-image: url('R.images.gui.maps.icons.newYear.resources.size_48.anyResource');
+}
+.Resource_base__28_7c .Resource_icon_76 {
+    width: 28rem;
+    height: 28rem;
+}
+.Resource_base__ny_crystal_28.Resource_base__28_7c .Resource_icon_76 {
+    background-image: url('R.images.gui.maps.icons.newYear.resources.size_48.ny_crystal');
+}
+.Resource_base__ny_emerald_55.Resource_base__28_7c .Resource_icon_76 {
+    background-image: url('R.images.gui.maps.icons.newYear.resources.size_48.ny_emerald');
+}
+.Resource_base__ny_amber_da.Resource_base__28_7c .Resource_icon_76 {
+    background-image: url('R.images.gui.maps.icons.newYear.resources.size_48.ny_amber');
+}
+.Resource_base__ny_iron_99.Resource_base__28_7c .Resource_icon_76 {
+    background-image: url('R.images.gui.maps.icons.newYear.resources.size_48.ny_iron');
+}
+.Resource_base__anyResource_08.Resource_base__28_7c .Resource_icon_76 {
+    background-image: url('R.images.gui.maps.icons.newYear.resources.size_48.anyResource');
+}
+.Resource_base__32_a6 .Resource_icon_76 {
+    width: 32rem;
+    height: 32rem;
+}
+.Resource_base__ny_crystal_28.Resource_base__32_a6 .Resource_icon_76 {
+    background-image: url('R.images.gui.maps.icons.newYear.resources.size_48.ny_crystal');
+}
+.Resource_base__ny_emerald_55.Resource_base__32_a6 .Resource_icon_76 {
+    background-image: url('R.images.gui.maps.icons.newYear.resources.size_48.ny_emerald');
+}
+.Resource_base__ny_amber_da.Resource_base__32_a6 .Resource_icon_76 {
+    background-image: url('R.images.gui.maps.icons.newYear.resources.size_48.ny_amber');
+}
+.Resource_base__ny_iron_99.Resource_base__32_a6 .Resource_icon_76 {
+    background-image: url('R.images.gui.maps.icons.newYear.resources.size_48.ny_iron');
+}
+.Resource_base__anyResource_08.Resource_base__32_a6 .Resource_icon_76 {
+    background-image: url('R.images.gui.maps.icons.newYear.resources.size_48.anyResource');
+}
+.Resource_base__40_1d .Resource_icon_76 {
+    width: 40rem;
+    height: 40rem;
+}
+.Resource_base__ny_crystal_28.Resource_base__40_1d .Resource_icon_76 {
+    background-image: url('R.images.gui.maps.icons.newYear.resources.size_48.ny_crystal');
+}
+.Resource_base__ny_emerald_55.Resource_base__40_1d .Resource_icon_76 {
+    background-image: url('R.images.gui.maps.icons.newYear.resources.size_48.ny_emerald');
+}
+.Resource_base__ny_amber_da.Resource_base__40_1d .Resource_icon_76 {
+    background-image: url('R.images.gui.maps.icons.newYear.resources.size_48.ny_amber');
+}
+.Resource_base__ny_iron_99.Resource_base__40_1d .Resource_icon_76 {
+    background-image: url('R.images.gui.maps.icons.newYear.resources.size_48.ny_iron');
+}
+.Resource_base__anyResource_08.Resource_base__40_1d .Resource_icon_76 {
+    background-image: url('R.images.gui.maps.icons.newYear.resources.size_48.anyResource');
+}
+.Resource_base__48_9b .Resource_icon_76 {
+    width: 48rem;
+    height: 48rem;
+}
+.Resource_base__ny_crystal_28.Resource_base__48_9b .Resource_icon_76 {
+    background-image: url('R.images.gui.maps.icons.newYear.resources.size_48.ny_crystal');
+}
+.Resource_base__ny_emerald_55.Resource_base__48_9b .Resource_icon_76 {
+    background-image: url('R.images.gui.maps.icons.newYear.resources.size_48.ny_emerald');
+}
+.Resource_base__ny_amber_da.Resource_base__48_9b .Resource_icon_76 {
+    background-image: url('R.images.gui.maps.icons.newYear.resources.size_48.ny_amber');
+}
+.Resource_base__ny_iron_99.Resource_base__48_9b .Resource_icon_76 {
+    background-image: url('R.images.gui.maps.icons.newYear.resources.size_48.ny_iron');
+}
+.Resource_base__anyResource_08.Resource_base__48_9b .Resource_icon_76 {
+    background-image: url('R.images.gui.maps.icons.newYear.resources.size_48.anyResource');
+}
+.Resource_iconEffect_a7 {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    mask-size: contain;
+    transition: opacity 300ms cubic-bezier(0.19, 1.01, 0.44, 0.55);
+}
+.Resource_iconEffect__reduce_9e {
+    background-color: #ed0505;
+    mix-blend-mode: color;
+}
+.Resource_base__ny_crystal_28 .Resource_iconEffect__reduce_9e {
+    mask-image: url('R.images.gui.maps.icons.newYear.resources.size_48.ny_crystal');
+}
+.Resource_base__ny_emerald_55 .Resource_iconEffect__reduce_9e {
+    mask-image: url('R.images.gui.maps.icons.newYear.resources.size_48.ny_emerald');
+}
+.Resource_base__ny_amber_da .Resource_iconEffect__reduce_9e {
+    mask-image: url('R.images.gui.maps.icons.newYear.resources.size_48.ny_amber');
+}
+.Resource_base__ny_iron_99 .Resource_iconEffect__reduce_9e {
+    mask-image: url('R.images.gui.maps.icons.newYear.resources.size_48.ny_iron');
+}
+.Resource_base__anyResource_08 .Resource_iconEffect__reduce_9e {
+    mask-image: url('R.images.gui.maps.icons.newYear.resources.size_48.anyResource');
+}
+.Resource_base__reduce_be .Resource_iconEffect__reduce_9e {
+    animation: Resource_redResource_c9 500ms ease-in-out forwards;
+}
+.Resource_iconEffect__increase_99 {
+    background: no-repeat center / contain;
+    mix-blend-mode: screen;
+}
+.Resource_base__ny_crystal_28 .Resource_iconEffect__increase_99 {
+    background-image: url('R.images.gui.maps.icons.newYear.resources.size_48.ny_crystal');
+}
+.Resource_base__ny_emerald_55 .Resource_iconEffect__increase_99 {
+    background-image: url('R.images.gui.maps.icons.newYear.resources.size_48.ny_emerald');
+}
+.Resource_base__ny_amber_da .Resource_iconEffect__increase_99 {
+    background-image: url('R.images.gui.maps.icons.newYear.resources.size_48.ny_amber');
+}
+.Resource_base__ny_iron_99 .Resource_iconEffect__increase_99 {
+    background-image: url('R.images.gui.maps.icons.newYear.resources.size_48.ny_iron');
+}
+.Resource_base__anyResource_08 .Resource_iconEffect__increase_99 {
+    background-image: url('R.images.gui.maps.icons.newYear.resources.size_48.anyResource');
+}
+.Resource_base__increase_18 .Resource_iconEffect__increase_99 {
+    animation: Resource_gainResource_14 800ms cubic-bezier(0, 0, 0.31, 1) forwards;
+}
+.Resource_increaseParticles_05 {
+    background: url('R.images.gui.maps.icons.newYear.resources.particles') no-repeat center / contain;
+    opacity: 0;
+    position: absolute;
+    pointer-events: none;
+}
+.Resource_base__16_83 .Resource_increaseParticles_05 {
+    width: 48rem;
+    height: 48rem;
+    top: -16rem;
+    left: -16rem;
+}
+.Resource_base__20_d8 .Resource_increaseParticles_05 {
+    width: 60rem;
+    height: 60rem;
+    top: -20rem;
+    left: -20rem;
+}
+.Resource_base__24_a2 .Resource_increaseParticles_05 {
+    width: 72rem;
+    height: 72rem;
+    top: -24rem;
+    left: -24rem;
+}
+.Resource_base__28_7c .Resource_increaseParticles_05 {
+    width: 84rem;
+    height: 84rem;
+    top: -28rem;
+    left: -28rem;
+}
+.Resource_base__32_a6 .Resource_increaseParticles_05 {
+    width: 96rem;
+    height: 96rem;
+    top: -32rem;
+    left: -32rem;
+}
+.Resource_base__40_1d .Resource_increaseParticles_05 {
+    width: 120rem;
+    height: 120rem;
+    top: -40rem;
+    left: -40rem;
+}
+.Resource_base__48_9b .Resource_increaseParticles_05 {
+    width: 144rem;
+    height: 144rem;
+    top: -48rem;
+    left: -48rem;
+}
+.Resource_base__increase_18 .Resource_increaseParticles_05 {
+    mix-blend-mode: additive;
+    animation: Resource_showParticles_9d 900ms linear forwards;
+}
+@keyframes Resource_redResource_c9 {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes Resource_gainResource_14 {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(2);
+    }
+}
+@keyframes Resource_showParticles_9d {
+    0% {
+        opacity: 1;
+        transform: scale(0.3) translateY(0%);
+    }
+
+    50% {
+        opacity: 0.7;
+        transform: scale(0.8) translateY(4%);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(1) translateY(12%);
+    }
+}
+
+.ResourcePanel_base_1e {
+    display: flex;
+    align-items: center;
+    height: 26rem;
+    padding-left: 9rem;
+    padding-right: 14rem;
+    border-radius: 6rem;
+    background-color: rgba(94, 65, 191, 0.2);
+}
+.mediaMedium .ResourcePanel_base_1e {
+    height: 38rem;
+    padding-left: 14rem;
+    padding-right: 20rem;
+}
+
+.ResourcePanel_item_83 {
+    min-width: 77rem;
+}
+
+.mediaMedium .ResourcePanel_item_83 {
+    min-width: 80rem;
+}
+
+.ResourcePanel_item_83 + .ResourcePanel_item_83 {
+    margin-left: 15rem;
+}
+
+.mediaMedium .ResourcePanel_item_83 + .ResourcePanel_item_83 {
+    margin-left: 20rem;
+}
+
+.ResourcePanel_count_8d {
+    margin: 0 0 2rem 5rem;
+    padding-right: 2rem;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 16rem;
+}
+
+.mediaMedium .ResourcePanel_count_8d {
+    margin-bottom: 4rem;
+}
+
+.TriggerHint_base_11 {
+    display: flex;
+    position: relative;
+}
+.TriggerHint_bg_16 {
+    width: 100%;
+    min-width: 180rem;
+    min-height: 56rem;
+    background-image: linear-gradient(
+        270deg,
+        transparent,
+        rgba(1, 18, 52, 0.6) 30%,
+        rgba(1, 18, 52, 0.65) 49%,
+        rgba(1, 18, 52, 0.6) 67%,
+        transparent
+    );
+    position: absolute;
+    top: 0;
+    left: -60rem;
+    transform: translateY(-40%);
+}
+.mediaMedium .TriggerHint_bg_16 {
+    min-width: 240rem;
+    min-height: 68rem;
+}
+.TriggerHint_base__blue_29 .TriggerHint_bg_16 {
+    min-width: 127rem;
+    min-height: 78rem;
+    background-color: rgba(0, 19, 54, 0.6);
+    background-image: none;
+    filter: blur(25px);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.TriggerHint_content_f8 {
+    position: relative;
+    z-index: 2;
+}
+.TriggerHint_border_87 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border: 1rem solid #99e7ff;
+    border-radius: 2rem;
+    filter: drop-shadow(0 0 4rem rgba(0, 209, 255, 0.25)) drop-shadow(0 0 8rem #0085ff) drop-shadow(0 0 15rem #2274ee);
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1;
+    transition:
+        opacity 0.3s,
+        visibility 0.3s;
+    pointer-events: none;
+}
+.TriggerHint_base__visible_ba .TriggerHint_border_87 {
+    opacity: 1;
+    visibility: visible;
+}
+.TriggerHint_triggerHolder_46 {
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    transition:
+        opacity 0.3s,
+        visibility 0.3s;
+}
+.TriggerHint_base__right_3e .TriggerHint_triggerHolder_46 {
+    top: 50%;
+    right: 0;
+    transform: translate(100%, -50%);
+}
+.TriggerHint_base__left_dd .TriggerHint_triggerHolder_46 {
+    top: 50%;
+    left: 0;
+    transform: translate(-100%, -50%);
+}
+.TriggerHint_base__up_bb .TriggerHint_triggerHolder_46 {
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 100%);
+}
+.TriggerHint_base__right_3e.TriggerHint_base__blue_29 .TriggerHint_triggerHolder_46 {
+    right: -10rem;
+}
+.TriggerHint_base__left_dd.TriggerHint_base__blue_29 .TriggerHint_triggerHolder_46 {
+    left: -10rem;
+}
+.TriggerHint_base__up_bb.TriggerHint_base__blue_29 .TriggerHint_triggerHolder_46 {
+    bottom: -45rem;
+}
+.TriggerHint_base__visible_ba .TriggerHint_triggerHolder_46 {
+    opacity: 1;
+    visibility: visible;
+}
+.TriggerHint_text_f7 {
+    color: #b7eeff;
+    font-size: 12rem;
+    font-weight: 400;
+    line-height: 1.3;
+    max-width: 300rem;
+    margin-top: -2rem;
+    text-shadow: 0 0 5rem #2c7fcf;
+    white-space: pre-wrap;
+    position: relative;
+    z-index: 2;
+}
+.TriggerHint_base__right_3e .TriggerHint_text_f7 {
+    margin-left: 20rem;
+}
+.TriggerHint_base__left_dd .TriggerHint_text_f7 {
+    margin-right: 20rem;
+}
+.TriggerHint_base__up_bb .TriggerHint_text_f7 {
+    margin-bottom: 20rem;
+}
+.TriggerHint_base__blue_29 .TriggerHint_text_f7 {
+    color: #b7eeff;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+    line-height: 1;
+}
+.TriggerHint_base__right_3e.TriggerHint_base__blue_29 .TriggerHint_text_f7 {
+    margin-left: 25rem;
+}
+.TriggerHint_base__left_dd.TriggerHint_base__blue_29 .TriggerHint_text_f7 {
+    margin-right: 25rem;
+}
+.TriggerHint_base__up_bb.TriggerHint_base__blue_29 .TriggerHint_text_f7 {
+    margin-bottom: 25rem;
+}
+.TriggerHint_animationArrow_2c {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 109rem;
+    height: 109rem;
+    position: absolute;
+    top: 53%;
+    pointer-events: none;
+}
+.mediaMedium .TriggerHint_animationArrow_2c {
+    width: 129rem;
+    height: 129rem;
+}
+.TriggerHint_base__right_3e .TriggerHint_animationArrow_2c {
+    left: -8rem;
+    transform: translateY(-50%);
+}
+.mediaMedium .TriggerHint_base__right_3e .TriggerHint_animationArrow_2c {
+    left: -15rem;
+}
+.TriggerHint_base__left_dd .TriggerHint_animationArrow_2c {
+    right: -8rem;
+    transform: rotate(180deg) translateY(50%);
+}
+.mediaMedium .TriggerHint_base__left_dd .TriggerHint_animationArrow_2c {
+    right: -15rem;
+}
+.TriggerHint_base__up_bb .TriggerHint_animationArrow_2c {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(90deg);
+}
+.TriggerHint_arrow_fd {
+    width: 100%;
+    height: 100%;
+    background: no-repeat center / contain;
+    animation: TriggerHint_blink_26 2.1s ease-in-out infinite paused;
+}
+.TriggerHint_base__blue_29 .TriggerHint_arrow_fd {
+    background-image: url('R.images.gui.maps.icons.newYear.common.hints.blue_arrow');
+    background-size: 129rem 173rem;
+}
+.TriggerHint_base__cyan_5d .TriggerHint_arrow_fd {
+    background-image: url('R.images.gui.maps.icons.newYear.common.hints.cyan_arrow');
+}
+.TriggerHint_base__visible_ba .TriggerHint_arrow_fd {
+    animation-play-state: running;
+}
+.TriggerHint_base__withoutAnimation_19 .TriggerHint_arrow_fd {
+    opacity: 1;
+    transform: translateX(-25rem);
+    animation-iteration-count: 0;
+}
+@keyframes TriggerHint_blink_26 {
+    0% {
+        opacity: 0;
+        transform: translateX(30rem);
+    }
+
+    30%,
+    70% {
+        opacity: 1;
+        transform: translateX(-25rem);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(-50rem);
+    }
+}
+
+.Balance_base_93 {
+    display: flex;
+    align-items: center;
+}
+.Balance_collectButton_d4 {
+    margin-left: 14rem;
+}
+.mediaMedium .Balance_collectButton_d4 {
+    margin-left: 18rem;
+}
+.Balance_resources_6d {
+    margin: 0 14rem;
+}
+.mediaMedium .Balance_resources_6d {
+    margin: 0 18rem;
+}
+.Balance_resources__clickable_2e {
+    cursor: pointer;
+}
+.Balance_collectWrapper_25 {
+    display: flex;
+    align-items: center;
+}
+.mediaMedium .Balance_countdownText_3d {
+    font-size: 16rem;
+}
+.Balance_triggerHintBorder_68 {
+    border-radius: 4rem;
+}
+.mediaMedium .Balance_triggerHintBorder_68 {
+    border-radius: 6rem;
+}
+
+.Counter_base_9e {
+    display: flex;
+    min-width: 14rem;
+    height: 14rem;
+    position: relative;
+    z-index: 0;
+    animation: Counter_show_be ease-in-out forwards;
+}
+
+.Counter_base__big_19 {
+    min-width: 21rem;
+    height: 21rem;
+}
+
+.Counter_base__small_3b {
+    min-width: 13rem;
+    height: 13rem;
+}
+
+.Counter_base__empty_98 {
+    min-width: 6rem;
+    height: 6rem;
+}
+
+.Counter_base__animated_40 {
+    animation-duration: 0.2s;
+}
+
+.Counter_base__hidden_56 {
+    animation-name: Counter_hide_b6;
+}
+.Counter_bg_74 {
+    border: 1rem solid #fe4e0f;
+    border-radius: 7rem;
+    box-shadow:
+        0 0 0 1rem rgba(0, 0, 0, 0.3),
+        0 0 6rem rgba(254, 103, 0, 0.2),
+        0 0 12rem 4rem rgba(249, 0, 0, 0.3);
+    background-image: url('R.images.gui.maps.icons.components.counter.pattern');
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+.Counter_base__big_19 .Counter_bg_74 {
+    border-radius: 11rem;
+}
+.Counter_base__small_3b .Counter_bg_74 {
+    border-radius: 7rem;
+}
+.Counter_value_3e {
+    display: flex;
+    padding: 0 4rem;
+    color: #fefeec;
+    font-size: 11rem;
+    line-height: 13rem;
+    white-space: nowrap;
+}
+.Counter_base__big_19 .Counter_value_3e {
+    padding: 0 7rem;
+    font-size: 14rem;
+    line-height: 20rem;
+}
+.Counter_base__small_3b .Counter_value_3e {
+    font-size: 9rem;
+    line-height: 12rem;
+}
+.Counter_value__text_d6 {
+    padding: 0 7rem;
+}
+.Counter_base__big_19 .Counter_value__text_d6 {
+    padding: 0 10rem;
+}
+.Counter_base__small_3b .Counter_value__text_d6 {
+    padding: 0 5rem;
+    font-size: 10rem;
+}
+.Counter_base__pattern_71 .Counter_value_3e {
+    display: none;
+}
+.Counter_plus_15 {
+    position: relative;
+    top: -1rem;
+}
+.Counter_pattern_83 {
+    display: none;
+}
+.Counter_base__pattern_71 .Counter_pattern_83 {
+    display: block;
+    border-radius: 50%;
+    background-image: url('R.images.gui.maps.icons.components.counter.pattern');
+    opacity: 0.8;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+@keyframes Counter_show_be {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+@keyframes Counter_hide_b6 {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(0);
+    }
+}
+
+.BalanceButton_base_de {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 26rem;
+    height: 26rem;
+    position: relative;
+    cursor: pointer;
+}
+.mediaMedium .BalanceButton_base_de {
+    width: 38rem;
+    height: 38rem;
+}
+.BalanceButton_base__disabled_57 {
+    pointer-events: none;
+}
+.BalanceButton_background_60 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.BalanceButton_border_b2 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border: 1rem solid rgba(182, 198, 238, 0.1);
+    border-radius: 4rem;
+    box-shadow: 0 2rem 20rem rgba(110, 107, 255, 0.2);
+}
+.mediaMedium .BalanceButton_border_b2 {
+    border-radius: 6rem;
+}
+.BalanceButton_base_de:hover .BalanceButton_border_b2 {
+    border-color: rgba(255, 255, 255, 0.1);
+}
+.BalanceButton_base__disabled_57 .BalanceButton_border_b2 {
+    box-shadow: inset 0 7rem 14rem rgba(19, 12, 66, 0.4);
+}
+.BalanceButton_lightWrapper_16 {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.BalanceButton_light_f9 {
+    width: 34rem;
+    height: 26rem;
+    background-image: radial-gradient(50% 50% at 50% 50%, #f9f6ed, transparent);
+    opacity: 0.7;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    mask-image: radial-gradient(50% 50% at 50% 50%, #000, transparent);
+}
+.mediaMedium .BalanceButton_light_f9 {
+    width: 44rem;
+    height: 56rem;
+}
+.BalanceButton_base__disabled_57 .BalanceButton_light_f9 {
+    opacity: 0;
+}
+.BalanceButton_icon_aa {
+    width: 24rem;
+    height: 24rem;
+    background: url('R.images.gui.maps.icons.newYear.main_menu.balance.button.collect') no-repeat center / contain;
+    z-index: 1;
+}
+.mediaMedium .BalanceButton_icon_aa {
+    width: 36rem;
+    height: 36rem;
+}
+.BalanceButton_base__convert_cc .BalanceButton_icon_aa {
+    background-image: url('R.images.gui.maps.icons.newYear.main_menu.balance.button.convert');
+}
+.BalanceButton_base__extra_ef .BalanceButton_icon_aa {
+    background-image: url('R.images.gui.maps.icons.newYear.main_menu.balance.button.extra');
+}
+.BalanceButton_bubble_f3 {
+    position: absolute;
+    top: -2rem;
+    right: -2rem;
+    z-index: 1;
+}
+
+.Navigation_base_3f {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 17rem;
+    right: 17rem;
+    left: 17rem;
+}
+
+.mediaMedium .Navigation_base_3f {
+    top: 29rem;
+}
+
+.mediaLarge .Navigation_base_3f {
+    right: 25rem;
+    left: 25rem;
+}
+
+.Navigation_right_f4 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.Navigation_balance_ae {
+    margin-bottom: 10rem;
+}
+
+.Navigation_close_69,
+.Navigation_info_60,
+.Navigation_balance_ae {
+    transition:
+        opacity 0.8s,
+        transform 0.8s;
+}
+
+.Navigation_close_69.Navigation_hidden_09,
+.Navigation_info_60.Navigation_hidden_09,
+.Navigation_balance_ae.Navigation_hidden_09 {
+    opacity: 0;
+    transform: translateY(-20rem);
+    pointer-events: none;
+}

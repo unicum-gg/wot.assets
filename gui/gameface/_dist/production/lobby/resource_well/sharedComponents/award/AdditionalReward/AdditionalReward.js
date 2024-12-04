@@ -183,27 +183,28 @@
                         addPreloadTexture: () => _,
                         children: () => i,
                         displayStatus: () => r.W,
-                        displayStatusIs: () => k,
+                        displayStatusIs: () => R,
                         events: () => o.U,
-                        extraSize: () => R,
+                        extraSize: () => S,
                         forceTriggerMouseMove: () => T,
                         freezeTextureBeforeResize: () => h,
                         getBrowserTexturePath: () => d,
                         getDisplayStatus: () => P,
+                        getFontNames: () => k,
                         getScale: () => p,
                         getSize: () => v,
                         getViewGlobalPosition: () => E,
                         isEventHandled: () => y,
-                        isFocused: () => g,
+                        isFocused: () => f,
                         pxToRem: () => b,
                         remToPx: () => m,
                         resize: () => w,
                         sendEvent: () => a.qP,
-                        setAnimateWindow: () => f,
+                        setAnimateWindow: () => g,
                         setEventHandled: () => O,
                         setInputPaddingsRem: () => c,
                         setSidePaddingsRem: () => u,
-                        whenTutorialReady: () => S,
+                        whenTutorialReady: () => L,
                     });
                 var i = n(3722),
                     r = n(6112),
@@ -247,10 +248,10 @@
                 function m(e) {
                     return viewEnv.remToPx(e);
                 }
-                function f(e, t) {
+                function g(e, t) {
                     viewEnv.setAnimateWindow(e, t);
                 }
-                function g() {
+                function f() {
                     return viewEnv.isFocused();
                 }
                 function O() {
@@ -265,11 +266,15 @@
                 function P() {
                     return viewEnv.getShowingStatus();
                 }
-                const k = Object.keys(r.W).reduce(
+                const k = (() => {
+                        let e = [];
+                        return () => (0 === e.length && (e = Object.keys(viewEnv.getFontsConfig())), e);
+                    })(),
+                    R = Object.keys(r.W).reduce(
                         (e, t) => ((e[t] = () => viewEnv.getShowingStatus() === r.W[t]), e),
                         {},
                     ),
-                    R = {
+                    S = {
                         set: (e, t) => {
                             viewEnv.setExtraSizeRem(e, t);
                         },
@@ -277,7 +282,7 @@
                             viewEnv.getExtraSizeRem(e, t);
                         },
                     },
-                    S = Promise.all([
+                    L = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : o.U.onDomBuilt(e);
                         }),
@@ -630,14 +635,14 @@
                         var i;
                     },
                     m = () => b(s.CLOSE),
-                    f = (e, t) => {
+                    g = (e, t) => {
                         e.keyCode === u.n.ESCAPE && t();
                     };
-                var g = n(7572);
+                var f = n(7572);
                 const O = r.instance,
                     y = {
                         DataTracker: o.Z,
-                        ViewModel: g.Z,
+                        ViewModel: f.Z,
                         ViewEventType: s,
                         NumberFormatType: _,
                         RealFormatType: c,
@@ -675,13 +680,13 @@
                             });
                         },
                         addEscapeListener: (e) => {
-                            const t = (t) => f(t, e);
+                            const t = (t) => g(t, e);
                             return (
                                 window.addEventListener('keydown', t), () => window.removeEventListener('keydown', t)
                             );
                         },
                         closeOnEsc: (e) => {
-                            f(e, m);
+                            g(e, m);
                         },
                         handleViewEvent: b,
                         onBindingsReady: p,

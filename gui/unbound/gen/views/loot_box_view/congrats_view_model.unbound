@@ -14,6 +14,11 @@
         (var congratsSourceId:str = '')
         (var shineSwfAlias:str = 'ShineAnimUI')
         (var advancedShineName:str = 'advancedShine')
+        (var groupAttachName:str = '')
+        (var attachName:str = '')
+        (var attachUserName:str = '')
+        (var rarity:str = '')
+        (var intCD:number = 0)
 
         (const SHINE_ORANGE_ALIAS:str = 'ShineAnimUI')
         (const SHINE_BLUE_ALIAS:str = 'BlueShineAnimUI')

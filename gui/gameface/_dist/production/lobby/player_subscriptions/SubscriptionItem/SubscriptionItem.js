@@ -35,7 +35,7 @@
                             : (0, n.WU)(R.strings.common.duration.minutes(), { minutes: u.minutes || 1 });
             },
             768: (u, e, t) => {
-                t.d(e, { O: () => tu });
+                t.d(e, { O: () => nu });
                 var n = {};
                 t.r(n),
                     t.d(n, { mouse: () => B, off: () => D, on: () => o, onResize: () => A, onScaleUpdated: () => F });
@@ -69,13 +69,14 @@
                         addPreloadTexture: () => M,
                         children: () => s,
                         displayStatus: () => g,
-                        displayStatusIs: () => J,
+                        displayStatusIs: () => uu,
                         events: () => f,
-                        extraSize: () => uu,
+                        extraSize: () => eu,
                         forceTriggerMouseMove: () => X,
                         freezeTextureBeforeResize: () => $,
                         getBrowserTexturePath: () => N,
                         getDisplayStatus: () => Q,
+                        getFontNames: () => J,
                         getScale: () => z,
                         getSize: () => W,
                         getViewGlobalPosition: () => H,
@@ -89,7 +90,7 @@
                         setEventHandled: () => Y,
                         setInputPaddingsRem: () => P,
                         setSidePaddingsRem: () => U,
-                        whenTutorialReady: () => eu,
+                        whenTutorialReady: () => tu,
                     });
                 const A = E('clientResized'),
                     F = E('self.onScaleUpdated'),
@@ -316,8 +317,12 @@
                 function Q() {
                     return viewEnv.getShowingStatus();
                 }
-                const J = Object.keys(g).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === g[e]), u), {}),
-                    uu = {
+                const J = (() => {
+                        let u = [];
+                        return () => (0 === u.length && (u = Object.keys(viewEnv.getFontsConfig())), u);
+                    })(),
+                    uu = Object.keys(g).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === g[e]), u), {}),
+                    eu = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -325,13 +330,13 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    eu = Promise.all([
+                    tu = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : f.onDomBuilt(u);
                         }),
                         engine.whenReady,
                     ]),
-                    tu = { view: r, client: i, sound: v };
+                    nu = { view: r, client: i, sound: v };
             },
             902: (u, e, t) => {
                 t.d(e, { F: () => n });
@@ -357,7 +362,7 @@
             344: (u, e, t) => {
                 t.d(e, { DA: () => i.D, au: () => s, tT: () => i.t });
                 var n = t(469),
-                    i = (t(133), t(790), t(579), t(360));
+                    i = (t(133), t(790), t(779), t(579), t(360));
                 t(56);
                 const s = n.Z;
             },
@@ -468,6 +473,9 @@
                 n.Sw.instance;
             },
             790: (u, e, t) => {
+                t(179);
+            },
+            779: (u, e, t) => {
                 t(179);
             },
             579: (u, e, t) => {

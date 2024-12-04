@@ -1,0 +1,266 @@
+.TooltipDecorator_base_c9 {
+    display: flex;
+    position: absolute;
+}
+
+.TooltipDecorator_base__theme-default_6d .TooltipDecorator_decorator_3d {
+    padding: 4rem 6rem 8rem;
+    border-image-source: url('R.atlases.components.tooltip_background');
+    border-image-slice: 24 fill;
+    border-image-width: 24rem;
+    position: relative;
+}
+
+.FormatText_base_d0 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.FormatTextWithColorTags_creamColor_8f {
+    color: #ffdd99;
+}
+
+.FormatTextWithColorTags_brownColor_90 {
+    color: #cbac77;
+}
+
+.FormatTextWithColorTags_credColor_a7 {
+    color: #ced9d9;
+}
+
+.FormatTextWithColorTags_blueColor_73 {
+    color: rgb(205, 237, 255);
+}
+
+.FormatTextWithColorTags_lightBlueColor_fa {
+    color: #aec5f2;
+}
+
+.FormatTextWithColorTags_goldColor_d6 {
+    color: #ffc363;
+}
+
+.FormatTextWithColorTags_grayColor_8b {
+    color: #8c8c7e;
+}
+
+.FormatTextWithColorTags_whiteSpanish_4b {
+    color: #e9e2bf;
+}
+
+.FormatTextWithColorTags_bondColor_53 {
+    color: #c9c9b6;
+}
+
+.FormatTextWithColorTags_yellowColor_84 {
+    color: #feab34;
+}
+
+@keyframes App_slideInFadeIn_b2 {
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes App_fadeOut_ab {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes App_fadeIn_ee {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+@keyframes App_fadeInWithScale_11 {
+    0% {
+        opacity: 0;
+        transform: scale(1.2);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes App_slideUp_c8 {
+    0% {
+        opacity: 0;
+        transform: translateY(20rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes App_scale_53 {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes App_spin_fd {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes App_blink_ce {
+    0% {
+        transform: translateY(0rem);
+    }
+
+    100% {
+        transform: translateY(15rem);
+    }
+}
+
+@keyframes App_slideInNotification_54 {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.App_base_e0 {
+    color: rgba(153, 188, 208, 0.65);
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+    width: 400rem;
+    padding: 20rem;
+    background-image: linear-gradient(148deg, #11345d 1%, transparent 58%);
+}
+
+.App_separator_13 {
+    display: flex;
+    align-self: center;
+    width: 283rem;
+    height: 1rem;
+    background: url('R.images.gui.maps.icons.tooltip.tool_tip_separator') no-repeat center / contain;
+    margin: 12rem 0;
+}
+
+.App_title_73 {
+    color: #cbdee9;
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 10rem;
+}
+
+.App_subtitle_bc {
+    color: #cbdee9;
+    font-size: 15rem;
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 6rem;
+}
+
+.App_list_99 {
+    padding: 16rem 0 12rem 60rem;
+}
+
+.App_item_1b {
+    display: flex;
+    align-items: center;
+}
+
+.App_item_1b + .App_item_1b {
+    margin-top: 7rem;
+}
+
+.App_bonusValue_3b {
+    font-family: DINRoundPro;
+}
+
+[lang='th'] .App_bonusValue_3b,
+[lang='el'] .App_bonusValue_3b,
+[lang='vi'] .App_bonusValue_3b {
+    font-family: Warhelios;
+}
+
+[lang='ja'] .App_bonusValue_3b {
+    font-family: WarheliosJA;
+}
+
+[lang='ko'] .App_bonusValue_3b {
+    font-family: WarheliosKO;
+}
+
+[lang='zh_tw'] .App_bonusValue_3b {
+    font-family: WarheliosZHTW;
+}
+
+[lang='zh_sg'] .App_bonusValue_3b,
+[lang='zh_cn'] .App_bonusValue_3b {
+    font-family: WarheliosZHCN;
+}
+
+.App_bonusValue_3b {
+    color: #b8caf9;
+    font-size: 24rem;
+    font-weight: 700;
+    line-height: 1.2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 20rem;
+}
+
+.App_icon_e7 {
+    width: 40rem;
+    height: 40rem;
+    margin: 0 6rem -4rem 0;
+    background: no-repeat center / contain;
+}
+
+.App_label_7c {
+    flex: 1;
+}
+
+.App_info_b8 {
+    padding: 12rem 0;
+    position: relative;
+}
+
+.App_info_b8 .App_divider_18 {
+    width: 100%;
+    height: 1rem;
+    background: url('R.images.gui.maps.icons.tooltip.separator_dashed_short') no-repeat center / contain;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.App_text_5d + .App_text_5d {
+    margin-top: 15rem;
+}

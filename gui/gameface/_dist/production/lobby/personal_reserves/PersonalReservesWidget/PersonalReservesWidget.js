@@ -18,7 +18,7 @@
             },
             9768: (u, e, t) => {
                 'use strict';
-                t.d(e, { O: () => tu });
+                t.d(e, { O: () => Eu });
                 var E = {};
                 t.r(E),
                     t.d(E, { mouse: () => B, off: () => s, on: () => l, onResize: () => i, onScaleUpdated: () => D });
@@ -33,7 +33,7 @@
                         setRTPC: () => c,
                     });
                 var r = {};
-                t.r(r), t.d(r, { getBgUrl: () => p, getTextureUrl: () => w });
+                t.r(r), t.d(r, { getBgUrl: () => f, getTextureUrl: () => w });
                 var a = {};
                 function F(u) {
                     return (e) => (
@@ -51,14 +51,15 @@
                         addModelObserver: () => k,
                         addPreloadTexture: () => P,
                         children: () => r,
-                        displayStatus: () => f,
-                        displayStatusIs: () => J,
+                        displayStatus: () => p,
+                        displayStatusIs: () => uu,
                         events: () => x,
-                        extraSize: () => uu,
+                        extraSize: () => eu,
                         forceTriggerMouseMove: () => Z,
                         freezeTextureBeforeResize: () => $,
                         getBrowserTexturePath: () => H,
                         getDisplayStatus: () => Q,
+                        getFontNames: () => J,
                         getScale: () => z,
                         getSize: () => N,
                         getViewGlobalPosition: () => G,
@@ -72,7 +73,7 @@
                         setEventHandled: () => Y,
                         setInputPaddingsRem: () => I,
                         setSidePaddingsRem: () => W,
-                        whenTutorialReady: () => eu,
+                        whenTutorialReady: () => tu,
                     });
                 const i = F('clientResized'),
                     D = F('self.onScaleUpdated'),
@@ -170,10 +171,10 @@
                 function w(u, e, t = 1) {
                     return viewEnv.getChildTexturePath(u, e.width, e.height, t);
                 }
-                function p(u, e, t) {
+                function f(u, e, t) {
                     return `url(${w(u, e, t)})`;
                 }
-                const f = { showing: 0, shown: 1, hiding: 2, hidden: 3 },
+                const p = { showing: 0, shown: 1, hiding: 2, hidden: 3 },
                     x = {
                         onTextureFrozen: F('self.onTextureFrozen'),
                         onTextureReady: F('self.onTextureReady'),
@@ -299,8 +300,12 @@
                 function Q() {
                     return viewEnv.getShowingStatus();
                 }
-                const J = Object.keys(f).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === f[e]), u), {}),
-                    uu = {
+                const J = (() => {
+                        let u = [];
+                        return () => (0 === u.length && (u = Object.keys(viewEnv.getFontsConfig())), u);
+                    })(),
+                    uu = Object.keys(p).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === p[e]), u), {}),
+                    eu = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -308,13 +313,13 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    eu = Promise.all([
+                    tu = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : x.onDomBuilt(u);
                         }),
                         engine.whenReady,
                     ]),
-                    tu = { view: a, client: A, sound: v };
+                    Eu = { view: a, client: A, sound: v };
             },
             5521: (u, e, t) => {
                 'use strict';
@@ -720,7 +725,7 @@
                         getFormattedDateTime: (u, e, t = !0) => regionalDateTime.getFormattedDateTime(u, e, t),
                     };
             },
-            4633: (u, e, t) => {
+            9580: (u, e, t) => {
                 'use strict';
                 var E = t(6179),
                     A = t.n(E);
@@ -920,7 +925,7 @@
                     h = t.n(m),
                     g = t(926),
                     v = t.n(g);
-                let w, p, f;
+                let w, f, p;
                 !(function (u) {
                     (u[(u.ExtraSmall = F.extraSmall.width)] = 'ExtraSmall'),
                         (u[(u.Small = F.small.width)] = 'Small'),
@@ -934,14 +939,14 @@
                             (u[(u.Medium = F.medium.width)] = 'Medium'),
                             (u[(u.Large = F.large.width)] = 'Large'),
                             (u[(u.ExtraLarge = F.extraLarge.width)] = 'ExtraLarge');
-                    })(p || (p = {})),
+                    })(f || (f = {})),
                     (function (u) {
                         (u[(u.ExtraSmall = F.extraSmall.height)] = 'ExtraSmall'),
                             (u[(u.Small = F.small.height)] = 'Small'),
                             (u[(u.Medium = F.medium.height)] = 'Medium'),
                             (u[(u.Large = F.large.height)] = 'Large'),
                             (u[(u.ExtraLarge = F.extraLarge.height)] = 'ExtraLarge');
-                    })(f || (f = {}));
+                    })(p || (p = {}));
                 const x = () => {
                         const u = (0, E.useContext)(B),
                             e = u.width,
@@ -965,33 +970,33 @@
                             r = ((u) => {
                                 switch (!0) {
                                     case u.extraLargeWidth:
-                                        return p.ExtraLarge;
+                                        return f.ExtraLarge;
                                     case u.largeWidth:
-                                        return p.Large;
+                                        return f.Large;
                                     case u.mediumWidth:
-                                        return p.Medium;
+                                        return f.Medium;
                                     case u.smallWidth:
-                                        return p.Small;
+                                        return f.Small;
                                     case u.extraSmallWidth:
-                                        return p.ExtraSmall;
+                                        return f.ExtraSmall;
                                     default:
-                                        return console.error('Unreachable media context resolution'), p.ExtraSmall;
+                                        return console.error('Unreachable media context resolution'), f.ExtraSmall;
                                 }
                             })(u),
                             a = ((u) => {
                                 switch (!0) {
                                     case u.extraLargeHeight:
-                                        return f.ExtraLarge;
+                                        return p.ExtraLarge;
                                     case u.largeHeight:
-                                        return f.Large;
+                                        return p.Large;
                                     case u.mediumHeight:
-                                        return f.Medium;
+                                        return p.Medium;
                                     case u.smallHeight:
-                                        return f.Small;
+                                        return p.Small;
                                     case u.extraSmallHeight:
-                                        return f.ExtraSmall;
+                                        return p.ExtraSmall;
                                     default:
-                                        return console.error('Unreachable media context resolution'), f.ExtraSmall;
+                                        return console.error('Unreachable media context resolution'), p.ExtraSmall;
                                 }
                             })(u);
                         return { mediaSize: A, mediaWidth: r, mediaHeight: a, remScreenWidth: e, remScreenHeight: t };
@@ -1012,18 +1017,18 @@
                     );
                 }
                 const S = {
-                        [p.ExtraSmall]: '',
-                        [p.Small]: v().SMALL_WIDTH,
-                        [p.Medium]: `${v().SMALL_WIDTH} ${v().MEDIUM_WIDTH}`,
-                        [p.Large]: `${v().SMALL_WIDTH} ${v().MEDIUM_WIDTH} ${v().LARGE_WIDTH}`,
-                        [p.ExtraLarge]: `${v().SMALL_WIDTH} ${v().MEDIUM_WIDTH} ${v().LARGE_WIDTH} ${v().EXTRA_LARGE_WIDTH}`,
+                        [f.ExtraSmall]: '',
+                        [f.Small]: v().SMALL_WIDTH,
+                        [f.Medium]: `${v().SMALL_WIDTH} ${v().MEDIUM_WIDTH}`,
+                        [f.Large]: `${v().SMALL_WIDTH} ${v().MEDIUM_WIDTH} ${v().LARGE_WIDTH}`,
+                        [f.ExtraLarge]: `${v().SMALL_WIDTH} ${v().MEDIUM_WIDTH} ${v().LARGE_WIDTH} ${v().EXTRA_LARGE_WIDTH}`,
                     },
                     T = {
-                        [f.ExtraSmall]: '',
-                        [f.Small]: v().SMALL_HEIGHT,
-                        [f.Medium]: `${v().SMALL_HEIGHT} ${v().MEDIUM_HEIGHT}`,
-                        [f.Large]: `${v().SMALL_HEIGHT} ${v().MEDIUM_HEIGHT} ${v().LARGE_HEIGHT}`,
-                        [f.ExtraLarge]: `${v().SMALL_HEIGHT} ${v().MEDIUM_HEIGHT} ${v().LARGE_HEIGHT} ${v().EXTRA_LARGE_HEIGHT}`,
+                        [p.ExtraSmall]: '',
+                        [p.Small]: v().SMALL_HEIGHT,
+                        [p.Medium]: `${v().SMALL_HEIGHT} ${v().MEDIUM_HEIGHT}`,
+                        [p.Large]: `${v().SMALL_HEIGHT} ${v().MEDIUM_HEIGHT} ${v().LARGE_HEIGHT}`,
+                        [p.ExtraLarge]: `${v().SMALL_HEIGHT} ${v().MEDIUM_HEIGHT} ${v().LARGE_HEIGHT} ${v().EXTRA_LARGE_HEIGHT}`,
                     },
                     y = {
                         [w.ExtraSmall]: '',
@@ -1317,8 +1322,8 @@
                 }
                 const vu = 'App_base_82',
                     wu = 'App_entryIcon_d6',
-                    pu = 'App_counter_3a',
-                    fu = 'App_counter_content_32',
+                    fu = 'App_counter_3a',
+                    pu = 'App_counter_content_32',
                     xu = 'App_entryIcon__hasNonExpiringBoosters_76',
                     bu = 'App_entryIcon__hasExpiringBoostersAfterToday_fa',
                     Lu = 'App_entryIcon__hasExpiringBoostersToday_82',
@@ -1508,8 +1513,8 @@
                                     e > 0 &&
                                         A().createElement(
                                             'div',
-                                            { className: pu },
-                                            A().createElement('span', { className: fu }, e),
+                                            { className: fu },
+                                            A().createElement('span', { className: pu }, e),
                                         ),
                                 ),
                             A().createElement(
@@ -1620,6 +1625,6 @@
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             t.forEach(e.bind(null, 0)), (t.push = e.bind(null, t.push.bind(t)));
         })();
-    var __webpack_exports__ = __webpack_require__.O(void 0, [242], () => __webpack_require__(4633));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [242], () => __webpack_require__(9580));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

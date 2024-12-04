@@ -18,7 +18,7 @@
             },
             9768: (e, u, t) => {
                 'use strict';
-                t.d(u, { O: () => Q });
+                t.d(u, { O: () => J });
                 var n = {};
                 t.r(n),
                     t.d(n, { mouse: () => F, off: () => d, on: () => E, onResize: () => l, onScaleUpdated: () => c });
@@ -52,13 +52,14 @@
                         addPreloadTexture: () => S,
                         children: () => i,
                         displayStatus: () => v,
-                        displayStatusIs: () => Y,
+                        displayStatusIs: () => Z,
                         events: () => b,
-                        extraSize: () => Z,
+                        extraSize: () => X,
                         forceTriggerMouseMove: () => K,
                         freezeTextureBeforeResize: () => W,
                         getBrowserTexturePath: () => O,
                         getDisplayStatus: () => q,
+                        getFontNames: () => Y,
                         getScale: () => I,
                         getSize: () => N,
                         getViewGlobalPosition: () => H,
@@ -72,7 +73,7 @@
                         setEventHandled: () => V,
                         setInputPaddingsRem: () => k,
                         setSidePaddingsRem: () => R,
-                        whenTutorialReady: () => X,
+                        whenTutorialReady: () => Q,
                     });
                 const l = o('clientResized'),
                     c = o('self.onScaleUpdated'),
@@ -295,8 +296,12 @@
                 function q() {
                     return viewEnv.getShowingStatus();
                 }
-                const Y = Object.keys(v).reduce((e, u) => ((e[u] = () => viewEnv.getShowingStatus() === v[u]), e), {}),
-                    Z = {
+                const Y = (() => {
+                        let e = [];
+                        return () => (0 === e.length && (e = Object.keys(viewEnv.getFontsConfig())), e);
+                    })(),
+                    Z = Object.keys(v).reduce((e, u) => ((e[u] = () => viewEnv.getShowingStatus() === v[u]), e), {}),
+                    X = {
                         set: (e, u) => {
                             viewEnv.setExtraSizeRem(e, u);
                         },
@@ -304,13 +309,13 @@
                             viewEnv.getExtraSizeRem(e, u);
                         },
                     },
-                    X = Promise.all([
+                    Q = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : b.onDomBuilt(e);
                         }),
                         engine.whenReady,
                     ]),
-                    Q = { view: a, client: r, sound: p };
+                    J = { view: a, client: r, sound: p };
             },
             5521: (e, u, t) => {
                 'use strict';
@@ -715,7 +720,7 @@
                         getFormattedDateTime: (e, u, t = !0) => regionalDateTime.getFormattedDateTime(e, u, t),
                     };
             },
-            3473: (e, u, t) => {
+            1107: (e, u, t) => {
                 'use strict';
                 var n = t(9916),
                     r = t(6179),
@@ -1970,7 +1975,7 @@
                         for (; r; ) i !== r.index && t(e.slice(i, r.index)), n(r), (i = u.lastIndex), (r = u.exec(e));
                         i !== e.length && t(e.slice(i));
                     },
-                    We = new RegExp('[฀-๿][ัำ-ฺ็-๎]*', 'gu'),
+                    We = new RegExp('[฀-๿][ัำ-ฺ็-๎]*|[^฀-๿]', 'gu'),
                     Ie = Se
                         ? (e) => {
                               const u = [];
@@ -2554,6 +2559,6 @@
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             t.forEach(u.bind(null, 0)), (t.push = u.bind(null, t.push.bind(t)));
         })();
-    var __webpack_exports__ = __webpack_require__.O(void 0, [503], () => __webpack_require__(3473));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [503], () => __webpack_require__(1107));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

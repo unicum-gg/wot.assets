@@ -2,7 +2,7 @@
     var __webpack_modules__ = {
             768: (e, t, u) => {
                 'use strict';
-                u.d(t, { O: () => ue });
+                u.d(t, { O: () => ne });
                 var n = {};
                 u.r(n),
                     u.d(n, { mouse: () => E, off: () => m, on: () => d, onResize: () => l, onScaleUpdated: () => c });
@@ -33,17 +33,18 @@
                 u.r(a),
                     u.d(a, {
                         addModelObserver: () => I,
-                        addPreloadTexture: () => x,
+                        addPreloadTexture: () => N,
                         children: () => o,
                         displayStatus: () => w,
-                        displayStatusIs: () => J,
+                        displayStatusIs: () => ee,
                         events: () => D,
-                        extraSize: () => ee,
+                        extraSize: () => te,
                         forceTriggerMouseMove: () => Z,
-                        freezeTextureBeforeResize: () => U,
+                        freezeTextureBeforeResize: () => j,
                         getBrowserTexturePath: () => L,
                         getDisplayStatus: () => Q,
-                        getScale: () => j,
+                        getFontNames: () => J,
+                        getScale: () => U,
                         getSize: () => W,
                         getViewGlobalPosition: () => V,
                         isEventHandled: () => X,
@@ -54,9 +55,9 @@
                         sendEvent: () => R,
                         setAnimateWindow: () => q,
                         setEventHandled: () => Y,
-                        setInputPaddingsRem: () => N,
+                        setInputPaddingsRem: () => x,
                         setSidePaddingsRem: () => z,
-                        whenTutorialReady: () => te,
+                        whenTutorialReady: () => ue,
                     });
                 const l = s('clientResized'),
                     c = s('self.onScaleUpdated'),
@@ -228,10 +229,10 @@
                         },
                     },
                     T = 15;
-                function x(e) {
+                function N(e) {
                     viewEnv.addPreloadTexture(e);
                 }
-                function N(e) {
+                function x(e) {
                     viewEnv.setHitAreaPaddingsRem(e, e, e, e, T);
                 }
                 function L(e, t, u, n = 1) {
@@ -253,10 +254,10 @@
                     const t = viewEnv.getViewGlobalPositionRem();
                     return 'rem' === e ? t : { x: $(t.x), y: $(t.y) };
                 }
-                function U() {
+                function j() {
                     viewEnv.freezeTextureBeforeResize();
                 }
-                function j() {
+                function U() {
                     return viewEnv.getScale();
                 }
                 function G(e) {
@@ -283,8 +284,12 @@
                 function Q() {
                     return viewEnv.getShowingStatus();
                 }
-                const J = Object.keys(w).reduce((e, t) => ((e[t] = () => viewEnv.getShowingStatus() === w[t]), e), {}),
-                    ee = {
+                const J = (() => {
+                        let e = [];
+                        return () => (0 === e.length && (e = Object.keys(viewEnv.getFontsConfig())), e);
+                    })(),
+                    ee = Object.keys(w).reduce((e, t) => ((e[t] = () => viewEnv.getShowingStatus() === w[t]), e), {}),
+                    te = {
                         set: (e, t) => {
                             viewEnv.setExtraSizeRem(e, t);
                         },
@@ -292,13 +297,13 @@
                             viewEnv.getExtraSizeRem(e, t);
                         },
                     },
-                    te = Promise.all([
+                    ue = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : D.onDomBuilt(e);
                         }),
                         engine.whenReady,
                     ]),
-                    ue = { view: a, client: r, sound: C };
+                    ne = { view: a, client: r, sound: C };
             },
             521: (e, t, u) => {
                 'use strict';
@@ -771,7 +776,7 @@
                     u.d(n, {
                         Area: () => G,
                         Bar: () => V,
-                        DefaultScroll: () => j,
+                        DefaultScroll: () => U,
                         Direction: () => w,
                         defaultSettings: () => D,
                         useHorizontalScrollApi: () => S,
@@ -1233,8 +1238,8 @@
                     P = 'HorizontalBar_leftButton_5f',
                     k = 'HorizontalBar_rightButton_03',
                     T = 'HorizontalBar_track_0d',
-                    x = 'HorizontalBar_thumb_fd',
-                    N = 'HorizontalBar_rail_32',
+                    N = 'HorizontalBar_thumb_fd',
+                    x = 'HorizontalBar_rail_32',
                     L = 'disable',
                     I = { pending: !1, offset: 0 },
                     z = (e) => {
@@ -1403,8 +1408,8 @@
                                     ref: d,
                                     onMouseEnter: R,
                                 },
-                                l().createElement('div', { ref: m, className: a()(x, t.thumb) }),
-                                l().createElement('div', { className: a()(N, t.rail) }),
+                                l().createElement('div', { ref: m, className: a()(N, t.thumb) }),
+                                l().createElement('div', { className: a()(x, t.rail) }),
                             ),
                             l().createElement('div', {
                                 className: a()(k, t.rightButton),
@@ -1417,12 +1422,12 @@
                             }),
                         );
                     }),
-                    U = {
+                    j = {
                         base: 'HorizontalScroll_base_29',
                         wrapper: 'HorizontalScroll_wrapper_1e',
                         defaultScrollArea: 'HorizontalScroll_defaultScrollArea_8d',
                     },
-                    j = ({
+                    U = ({
                         children: e,
                         api: t,
                         className: u,
@@ -1435,15 +1440,15 @@
                     }) => {
                         const m = (0, i.useMemo)(() => {
                                 const e = n || {};
-                                return Object.assign({}, e, { base: a()(U.base, e.base) });
+                                return Object.assign({}, e, { base: a()(j.base, e.base) });
                             }, [n]),
                             _ = (0, i.useMemo)(() => Object.assign({}, t, { handleMouseWheel: () => {} }), [t]);
                         return l().createElement(
                             'div',
-                            { className: a()(U.defaultScroll, u), onWheel: t.handleMouseWheel },
+                            { className: a()(j.defaultScroll, u), onWheel: t.handleMouseWheel },
                             l().createElement(
                                 'div',
-                                { className: a()(U.defaultScrollArea, r) },
+                                { className: a()(j.defaultScrollArea, r) },
                                 l().createElement(G, { className: s, api: _, classNames: o }, e),
                             ),
                             l().createElement(V, { getStepByRailClick: c, api: t, onDrag: d, classNames: m }),
@@ -1453,23 +1458,23 @@
                         (0, i.useEffect)(() => F(e.recalculateContent)),
                         l().createElement(
                             'div',
-                            { className: a()(U.base, t) },
+                            { className: a()(j.base, t) },
                             l().createElement(
                                 'div',
                                 {
-                                    className: a()(U.wrapper, null == u ? void 0 : u.wrapper),
+                                    className: a()(j.wrapper, null == u ? void 0 : u.wrapper),
                                     onWheel: e.handleMouseWheel,
                                     ref: e.wrapperRef,
                                 },
                                 l().createElement(
                                     'div',
-                                    { className: a()(U.content, null == u ? void 0 : u.content), ref: e.contentRef },
+                                    { className: a()(j.content, null == u ? void 0 : u.content), ref: e.contentRef },
                                     n,
                                 ),
                             ),
                         )
                     );
-                (G.Bar = V), (G.Default = j);
+                (G.Bar = V), (G.Default = U);
                 const $ = y({
                         getBounds: (e) => [0, e.scrollHeight - e.offsetHeight],
                         getContainerSize: (e) => e.scrollHeight,
@@ -2037,16 +2042,16 @@
                 const ke = (e) => `#${e}`,
                     Re = 'Chat_base_61',
                     Te = 'Chat_content_5c',
-                    xe = 'Chat_channelNotification_3b',
-                    Ne = 'Chat_scrollContainer_db',
+                    Ne = 'Chat_channelNotification_3b',
+                    xe = 'Chat_scrollContainer_db',
                     Le = 'Chat_messages_fa',
                     Ie = 'Chat_messages__selectable_a7',
                     ze = 'Chat_footer_5c',
                     We = 'Chat_input_b4',
                     He = 'Chat_sendButtonContainer_32',
                     Ve = 'Chat_enterButtonContainer_99',
-                    Ue = 'Chat_enterImage_97',
-                    je = 'MessageText_emoji_6b';
+                    je = 'Chat_enterImage_97',
+                    Ue = 'MessageText_emoji_6b';
                 function Ge(e, t) {
                     var u = ('undefined' != typeof Symbol && e[Symbol.iterator]) || e['@@iterator'];
                     if (u) return (u = u.call(e)).next.bind(u);
@@ -2142,7 +2147,7 @@
                                         type: qe.element,
                                         content: l().createElement('div', {
                                             style: ((o = Ye(u)), { backgroundImage: `url('${o}')` }),
-                                            className: je,
+                                            className: Ue,
                                         }),
                                     }),
                                 e
@@ -2268,7 +2273,7 @@
                         D = s.length
                             ? l().createElement(
                                   'div',
-                                  { className: Ne, ref: _ },
+                                  { className: xe, ref: _ },
                                   l().createElement(
                                       ce.Vertical.Area.Default,
                                       {
@@ -2298,12 +2303,12 @@
                                   null,
                                   l().createElement(
                                       'span',
-                                      { className: xe },
+                                      { className: Ne },
                                       R.strings.platoon.members.chat.chatName(),
                                   ),
                                   l().createElement(
                                       'div',
-                                      { className: xe },
+                                      { className: Ne },
                                       l().createElement(Je, { text: o, color: ke(a) }),
                                   ),
                               );
@@ -2339,7 +2344,7 @@
                                     l().createElement(
                                         E,
                                         { size: m.small, type: d.secondary, onClick: B, mixClass: Ve },
-                                        l().createElement('div', { className: Ue }),
+                                        l().createElement('div', { className: je }),
                                     ),
                                 ),
                             ),

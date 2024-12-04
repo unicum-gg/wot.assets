@@ -2,7 +2,7 @@
     'use strict';
     var __webpack_modules__ = {
             768: (u, e, t) => {
-                t.d(e, { O: () => tu });
+                t.d(e, { O: () => nu });
                 var n = {};
                 t.r(n),
                     t.d(n, { mouse: () => F, off: () => c, on: () => _, onResize: () => E, onScaleUpdated: () => l });
@@ -33,16 +33,17 @@
                 t.r(i),
                     t.d(i, {
                         addModelObserver: () => L,
-                        addPreloadTexture: () => N,
+                        addPreloadTexture: () => M,
                         children: () => r,
                         displayStatus: () => f,
-                        displayStatusIs: () => J,
+                        displayStatusIs: () => uu,
                         events: () => b,
-                        extraSize: () => uu,
+                        extraSize: () => eu,
                         forceTriggerMouseMove: () => Q,
                         freezeTextureBeforeResize: () => H,
                         getBrowserTexturePath: () => I,
                         getDisplayStatus: () => Z,
+                        getFontNames: () => J,
                         getScale: () => V,
                         getSize: () => G,
                         getViewGlobalPosition: () => q,
@@ -56,7 +57,7 @@
                         setEventHandled: () => X,
                         setInputPaddingsRem: () => x,
                         setSidePaddingsRem: () => U,
-                        whenTutorialReady: () => eu,
+                        whenTutorialReady: () => tu,
                     });
                 const E = a('clientResized'),
                     l = a('self.onScaleUpdated'),
@@ -227,12 +228,12 @@
                             S(R, { isMouseEvent: !0, on: u });
                         },
                     },
-                    M = 15;
-                function N(u) {
+                    N = 15;
+                function M(u) {
                     viewEnv.addPreloadTexture(u);
                 }
                 function x(u) {
-                    viewEnv.setHitAreaPaddingsRem(u, u, u, u, M);
+                    viewEnv.setHitAreaPaddingsRem(u, u, u, u, N);
                 }
                 function I(u, e, t, n = 1) {
                     return viewEnv.getWebBrowserTexturePath(u, e, t, n);
@@ -241,7 +242,7 @@
                     return viewEnv.addDataChangedCallback(u, e, t);
                 }
                 function U(u) {
-                    viewEnv.setHitAreaPaddingsRem(u.top, u.right, u.bottom, u.left, M);
+                    viewEnv.setHitAreaPaddingsRem(u.top, u.right, u.bottom, u.left, N);
                 }
                 function G(u = 'px') {
                     return 'rem' === u ? viewEnv.getViewSizeRem() : viewEnv.getViewSizePx();
@@ -283,8 +284,12 @@
                 function Z() {
                     return viewEnv.getShowingStatus();
                 }
-                const J = Object.keys(f).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === f[e]), u), {}),
-                    uu = {
+                const J = (() => {
+                        let u = [];
+                        return () => (0 === u.length && (u = Object.keys(viewEnv.getFontsConfig())), u);
+                    })(),
+                    uu = Object.keys(f).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === f[e]), u), {}),
+                    eu = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -292,13 +297,13 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    eu = Promise.all([
+                    tu = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : b.onDomBuilt(u);
                         }),
                         engine.whenReady,
                     ]),
-                    tu = { view: i, client: o, sound: g };
+                    nu = { view: i, client: o, sound: g };
             },
             521: (u, e, t) => {
                 let n, o;
@@ -1042,7 +1047,7 @@
                         console.error('[lib/sounds.js] playSound(', u, '): ', e);
                     });
                 }
-                const M = {
+                const N = {
                         base: 'TextButton_base_b6',
                         base__right: 'TextButton_base__right_39',
                         icon: 'TextButton_icon_17',
@@ -1060,7 +1065,7 @@
                         base__left: 'TextButton_base__left_ff',
                         shine: 'TextButton_shine_e2',
                     },
-                    N = [
+                    M = [
                         'caption',
                         'onClick',
                         'goto',
@@ -1135,12 +1140,12 @@
                                             t[n] = u[n];
                                         }
                                     return t;
-                                })(u, N)),
-                            A = S()(M.base, M[`base__${i}`], M[`base__${r}`], null == a ? void 0 : a.base),
-                            F = S()(M.icon, M[`icon__${i}`], M[`icon__${r}`], null == a ? void 0 : a.icon),
-                            d = S()(M.glow, null == a ? void 0 : a.glow),
-                            D = S()(M.caption, M[`caption__${i}`], null == a ? void 0 : a.caption),
-                            B = S()(M.goto, null == a ? void 0 : a.goto);
+                                })(u, M)),
+                            A = S()(N.base, N[`base__${i}`], N[`base__${r}`], null == a ? void 0 : a.base),
+                            F = S()(N.icon, N[`icon__${i}`], N[`icon__${r}`], null == a ? void 0 : a.icon),
+                            d = S()(N.glow, null == a ? void 0 : a.glow),
+                            D = S()(N.caption, N[`caption__${i}`], null == a ? void 0 : a.caption),
+                            B = S()(N.goto, null == a ? void 0 : a.goto);
                         return o().createElement(
                             'div',
                             x(
@@ -1156,7 +1161,7 @@
                                 },
                                 c,
                             ),
-                            'info' !== i && o().createElement('div', { className: M.shine }),
+                            'info' !== i && o().createElement('div', { className: N.shine }),
                             o().createElement('div', { className: F }, o().createElement('div', { className: d })),
                             o().createElement('div', { className: D }, e),
                             n && o().createElement('div', { className: B }, n),
@@ -1382,6 +1387,7 @@
                         (u.TankmenXpFactor = 'tankmenXPFactor'),
                         (u.FreeXpFactor = 'freeXPFactor'),
                         (u.BattleToken = 'battleToken'),
+                        (u.Entitlements = 'entitlements'),
                         (u.PremiumUniversal = 'premium_universal'),
                         (u.Gold = 'gold'),
                         (u.Credits = 'credits'),
@@ -1399,6 +1405,8 @@
                         (u.BattleBadge = 'dossier_badge'),
                         (u.NewYearInvoice = 'newYearInvoice'),
                         (u.NewYearSlot = 'newYearSlot'),
+                        (u.NewYearGuestD = 'ny_dog'),
+                        (u.EquipCoin = 'equipCoin'),
                         (u.BonusX5 = 'battle_bonus_x5'),
                         (u.CrewBonusX3 = 'crew_bonus_x3'),
                         (u.Vehicles = 'vehicles'),
@@ -1407,7 +1415,6 @@
                         (u.DeluxeGift = 'deluxe_gift'),
                         (u.BattleBoosterGift = 'battleBooster_gift'),
                         (u.OptionalDevice = 'optionalDevice'),
-                        (u.EquipCoin = 'equipCoin'),
                         (u.LootBox = 'lootBox'),
                         (u.BrCoin = 'brcoin');
                 })($ || ($ = {})),
@@ -1541,6 +1548,7 @@
                         $.TankmenXpFactor,
                         $.FreeXpFactor,
                         $.BattleToken,
+                        $.Entitlements,
                         $.PremiumUniversal,
                         $.NaturalCover,
                         $.BpCoin,

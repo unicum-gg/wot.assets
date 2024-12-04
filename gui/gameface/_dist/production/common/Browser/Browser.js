@@ -183,13 +183,14 @@
                         addPreloadTexture: () => c,
                         children: () => r,
                         displayStatus: () => a.W,
-                        displayStatusIs: () => C,
+                        displayStatusIs: () => k,
                         events: () => o.U,
-                        extraSize: () => k,
+                        extraSize: () => T,
                         forceTriggerMouseMove: () => L,
                         freezeTextureBeforeResize: () => f,
                         getBrowserTexturePath: () => u,
-                        getDisplayStatus: () => M,
+                        getDisplayStatus: () => C,
+                        getFontNames: () => M,
                         getScale: () => w,
                         getSize: () => v,
                         getViewGlobalPosition: () => g,
@@ -203,7 +204,7 @@
                         setEventHandled: () => y,
                         setInputPaddingsRem: () => l,
                         setSidePaddingsRem: () => _,
-                        whenTutorialReady: () => T,
+                        whenTutorialReady: () => S,
                     });
                 var r = n(722),
                     a = n(112),
@@ -262,14 +263,18 @@
                 function L() {
                     viewEnv.forceTriggerMouseMove();
                 }
-                function M() {
+                function C() {
                     return viewEnv.getShowingStatus();
                 }
-                const C = Object.keys(a.W).reduce(
+                const M = (() => {
+                        let e = [];
+                        return () => (0 === e.length && (e = Object.keys(viewEnv.getFontsConfig())), e);
+                    })(),
+                    k = Object.keys(a.W).reduce(
                         (e, t) => ((e[t] = () => viewEnv.getShowingStatus() === a.W[t]), e),
                         {},
                     ),
-                    k = {
+                    T = {
                         set: (e, t) => {
                             viewEnv.setExtraSizeRem(e, t);
                         },
@@ -277,7 +282,7 @@
                             viewEnv.getExtraSizeRem(e, t);
                         },
                     },
-                    T = Promise.all([
+                    S = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : o.U.onDomBuilt(e);
                         }),
@@ -821,8 +826,8 @@
                     for (var n = 0, r = Array(t); n < t; n++) r[n] = e[n];
                     return r;
                 }
-                const M = (e) => (0 === e ? window : window.subViews.get(e));
-                var C = n(946);
+                const C = (e) => (0 === e ? window : window.subViews.get(e));
+                var M = n(946);
                 const k = ((e, t) => {
                         const n = (0, r.createContext)({});
                         return [
@@ -833,7 +838,7 @@
                                         const i = (function ({
                                                 initializer: e = !0,
                                                 rootId: t = 0,
-                                                getRoot: n = M,
+                                                getRoot: n = C,
                                                 context: r = 'model',
                                             } = {}) {
                                                 const a = new Map();
@@ -1006,7 +1011,7 @@
                     })(
                         ({ observableModel: e }) => {
                             const t = e.object(),
-                                n = (0, C.Om)(() =>
+                                n = (0, M.Om)(() =>
                                     (function ({ pageState: e, browserState: t, texState: n }) {
                                         return t === s.Initialization
                                             ? d.Initialization
@@ -1036,9 +1041,9 @@
                     P = (e) => {
                         (0, r.useEffect)(() => e, []);
                     };
-                var x = n(403),
-                    N = n(483),
-                    A = n.n(N);
+                var N = n(403),
+                    x = n(483),
+                    A = n.n(x);
                 const F = 0;
                 const B = 'BrowserView_base_6b',
                     D = 'BrowserView_texture_17',
@@ -1526,7 +1531,7 @@
                         Oe.apply(null, arguments)
                     );
                 }
-                const Le = (0, x.Pi)(function (e) {
+                const Le = (0, N.Pi)(function (e) {
                         const t = e.defaultWaitingText,
                             n = e.className,
                             o = e.waitingClassName,
@@ -1546,8 +1551,8 @@
                             y = h.controls,
                             O = p.root.get(),
                             L = O.id,
-                            M = O.httpStatusCode,
-                            C = O.waitingMessage,
+                            C = O.httpStatusCode,
+                            M = O.waitingMessage,
                             k = p.getState(),
                             T = l || k === d.Loaded;
                         var P;
@@ -1579,7 +1584,7 @@
                                 : e;
                         }, [T, y, E, m, g, f, b, w]);
                         if (v(L)) return null;
-                        const x = ve(e)
+                        const N = ve(e)
                                 ? (function (e, t) {
                                       const n = {};
                                       return (
@@ -1590,7 +1595,7 @@
                                       );
                                   })(e, ['width', 'height'])
                                 : {},
-                            N = C.length > 0 ? C : t;
+                            x = M.length > 0 ? M : t;
                         return e.isFullSize
                             ? a().createElement(
                                   ye,
@@ -1598,9 +1603,9 @@
                                       id: L,
                                       className: n,
                                       waitingClassName: o,
-                                      statusCode: M,
+                                      statusCode: C,
                                       viewState: k,
-                                      waitingText: N,
+                                      waitingText: x,
                                       renderStateDisplay: u,
                                       onMouseEnter: y.focus,
                                       onMouseLeave: y.blur,
@@ -1608,21 +1613,21 @@
                               )
                             : a().createElement(
                                   fe,
-                                  Oe({}, R, x, {
+                                  Oe({}, R, N, {
                                       id: L,
                                       className: n,
                                       waitingClassName: o,
-                                      statusCode: M,
+                                      statusCode: C,
                                       viewState: k,
-                                      waitingText: N,
+                                      waitingText: x,
                                       renderStateDisplay: u,
                                       onMouseEnter: y.focus,
                                       onMouseLeave: y.blur,
                                   }),
                               );
                     }),
-                    Me = ['options', 'mocks', 'mode'];
-                const Ce = (0, r.memo)(function (e) {
+                    Ce = ['options', 'mocks', 'mode'];
+                const Me = (0, r.memo)(function (e) {
                     let t = e.options,
                         n = e.mocks,
                         r = e.mode,
@@ -1635,7 +1640,7 @@
                                     n[r] = e[r];
                                 }
                             return n;
-                        })(e, Me);
+                        })(e, Ce);
                     return a().createElement(T, { options: t, mocks: n, mode: r }, a().createElement(Le, o));
                 });
                 var ke = n(521),
@@ -1665,8 +1670,8 @@
                         Pe(e, Te.Sy, !0);
                     })(ke.n.ESCAPE);
                 }
-                const xe = 'BrowserApp_base_de',
-                    Ne = {
+                const Ne = 'BrowserApp_base_de',
+                    xe = {
                         getter: (e) => ({
                             id: 1,
                             httpStatusCode: 200,
@@ -1699,8 +1704,8 @@
                         Re(),
                         a().createElement(
                             'div',
-                            { className: xe, ref: t },
-                            a().createElement(Ce, Ae({}, b(n), { displayContentWhenLoading: !1, mocks: Ne })),
+                            { className: Ne, ref: t },
+                            a().createElement(Me, Ae({}, b(n), { displayContentWhenLoading: !1, mocks: xe })),
                         )
                     );
                 };

@@ -1,0 +1,529 @@
+@keyframes MarkerContent_slideInFadeIn_3c {
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+@keyframes MarkerContent_fadeOut_3e {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes MarkerContent_fadeIn_04 {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+@keyframes MarkerContent_fadeInWithScale_09 {
+    0% {
+        opacity: 0;
+        transform: scale(1.2);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@keyframes MarkerContent_slideUp_9f {
+    0% {
+        opacity: 0;
+        transform: translateY(20rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes MarkerContent_scale_99 {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+@keyframes MarkerContent_spin_aa {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+@keyframes MarkerContent_blink_2e {
+    0% {
+        transform: translateY(0rem);
+    }
+
+    100% {
+        transform: translateY(15rem);
+    }
+}
+@keyframes MarkerContent_slideInNotification_32 {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.MarkerContent_base_56 {
+    font-family: DINRoundPro;
+}
+[lang='th'] .MarkerContent_base_56,
+[lang='el'] .MarkerContent_base_56,
+[lang='vi'] .MarkerContent_base_56 {
+    font-family: Warhelios;
+}
+[lang='ja'] .MarkerContent_base_56 {
+    font-family: WarheliosJA;
+}
+[lang='ko'] .MarkerContent_base_56 {
+    font-family: WarheliosKO;
+}
+[lang='zh_tw'] .MarkerContent_base_56 {
+    font-family: WarheliosZHTW;
+}
+[lang='zh_sg'] .MarkerContent_base_56,
+[lang='zh_cn'] .MarkerContent_base_56 {
+    font-family: WarheliosZHCN;
+}
+.MarkerContent_base_56 {
+    font-size: 16rem;
+    position: relative;
+}
+.mediaLarge .MarkerContent_base_56 {
+    font-size: 19rem;
+    transform: translate(0rem, -1rem);
+}
+.MarkerContent_content_fa {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+.MarkerContent_content__default_10 {
+    color: #fff;
+}
+.MarkerContent_content__friend_03 {
+    color: #efebd7;
+}
+.MarkerContent_content__zero_d0 {
+    width: 8rem;
+    height: 8rem;
+    border-radius: 100%;
+    background: linear-gradient(180deg, #fff 30%, #7e7f99 100%);
+    color: transparent;
+    font-size: 0;
+    line-height: 0;
+}
+.mediaLarge .MarkerContent_content__zero_d0 {
+    width: 9rem;
+    height: 9rem;
+}
+.MarkerContent_content__number_ca {
+    font-size: 17rem;
+    transform: translate(0rem, -1rem);
+}
+.mediaLarge .MarkerContent_content__number_ca {
+    font-size: 20rem;
+}
+.MarkerContent_gradient_ca {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.MarkerContent_content__default_10 .MarkerContent_gradient_ca {
+    color: #7e7f99;
+    mask-image: linear-gradient(to bottom, transparent 50%, #000 85%);
+}
+.MarkerContent_content__friend_03 .MarkerContent_gradient_ca {
+    color: #b3ac86;
+    mask-image: linear-gradient(to bottom, transparent 50%, #000 70%);
+}
+
+.InfoDecorator_base_e3 {
+    display: flex;
+    filter: drop-shadow(0 3rem 7rem rgba(11, 4, 30, 0.7));
+    position: relative;
+    z-index: 0;
+}
+.mediaMedium .InfoDecorator_base_e3 {
+    filter: drop-shadow(0 8rem 14rem rgba(11, 4, 30, 0.7));
+}
+
+.InfoDecorator_background_a1 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.InfoDecorator_arrow_36 {
+    width: 18rem;
+    height: 5rem;
+    background: url('R.images.gui.maps.icons.newYear.markers.info_decorator.arrow_small') no-repeat center / contain;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 100%);
+}
+
+.mediaMedium .InfoDecorator_arrow_36 {
+    width: 20rem;
+    height: 8rem;
+    background-image: url('R.images.gui.maps.icons.newYear.markers.info_decorator.arrow');
+}
+
+@keyframes MarkerItemCounter_slideInFadeIn_0e {
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+@keyframes MarkerItemCounter_fadeOut_83 {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes MarkerItemCounter_fadeIn_37 {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+@keyframes MarkerItemCounter_fadeInWithScale_24 {
+    0% {
+        opacity: 0;
+        transform: scale(1.2);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@keyframes MarkerItemCounter_slideUp_93 {
+    0% {
+        opacity: 0;
+        transform: translateY(20rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes MarkerItemCounter_scale_a0 {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+@keyframes MarkerItemCounter_spin_46 {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+@keyframes MarkerItemCounter_blink_05 {
+    0% {
+        transform: translateY(0rem);
+    }
+
+    100% {
+        transform: translateY(15rem);
+    }
+}
+@keyframes MarkerItemCounter_slideInNotification_e4 {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.MarkerItemCounter_base_e7 {
+    display: flex;
+    align-items: center;
+    padding: 0 16rem;
+}
+.mediaMedium .MarkerItemCounter_base_e7 {
+    padding: 5rem 21rem;
+}
+.mediaExtraLarge .MarkerItemCounter_base_e7 {
+    padding: 9rem 23rem;
+}
+.MarkerItemCounter_icon_91 {
+    width: 16rem;
+    height: 16rem;
+    background: no-repeat center / contain;
+}
+.mediaMedium .MarkerItemCounter_icon_91 {
+    width: 24rem;
+    height: 24rem;
+}
+.mediaExtraLarge .MarkerItemCounter_icon_91 {
+    width: 32rem;
+    height: 32rem;
+}
+.MarkerItemCounter_base__sack_f5 .MarkerItemCounter_icon_91 {
+    background-image: url('R.images.gui.maps.icons.newYear.common.sack_flat.s16x16');
+}
+.mediaMedium .MarkerItemCounter_base__sack_f5 .MarkerItemCounter_icon_91 {
+    background-image: url('R.images.gui.maps.icons.newYear.common.sack_flat.s24x24');
+}
+.mediaExtraLarge .MarkerItemCounter_base__sack_f5 .MarkerItemCounter_icon_91 {
+    background-image: url('R.images.gui.maps.icons.newYear.common.sack_flat.s32x32');
+}
+.MarkerItemCounter_count_a9 {
+    font-family: DINRoundPro;
+}
+[lang='th'] .MarkerItemCounter_count_a9,
+[lang='el'] .MarkerItemCounter_count_a9,
+[lang='vi'] .MarkerItemCounter_count_a9 {
+    font-family: Warhelios;
+}
+[lang='ja'] .MarkerItemCounter_count_a9 {
+    font-family: WarheliosJA;
+}
+[lang='ko'] .MarkerItemCounter_count_a9 {
+    font-family: WarheliosKO;
+}
+[lang='zh_tw'] .MarkerItemCounter_count_a9 {
+    font-family: WarheliosZHTW;
+}
+[lang='zh_sg'] .MarkerItemCounter_count_a9,
+[lang='zh_cn'] .MarkerItemCounter_count_a9 {
+    font-family: WarheliosZHCN;
+}
+.MarkerItemCounter_count_a9 {
+    margin-left: 4rem;
+    color: #e6f1f3;
+    font-size: 16rem;
+    font-weight: 700;
+    line-height: 32rem;
+}
+.mediaMedium .MarkerItemCounter_count_a9 {
+    font-size: 18rem;
+}
+.mediaExtraLarge .MarkerItemCounter_count_a9 {
+    font-size: 24rem;
+}
+
+.AnimationContent_base_cf {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.AnimationContent_boxes_b8 {
+    width: 110%;
+    height: 110%;
+    position: absolute;
+}
+
+.AnimationContent_box_6e {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border: 2rem solid #caddff;
+    border-radius: 6rem;
+    opacity: 0;
+    animation: AnimationContent_splash_81 1s 5s cubic-bezier(0, 0.55, 0.45, 1) forwards;
+}
+
+.AnimationContent_box__fill_0e {
+    background-color: rgba(202, 221, 255, 0.75);
+}
+
+.AnimationContent_box__1_a7 {
+    animation-delay: 0.2s;
+}
+
+.AnimationContent_box__2_07 {
+    animation-delay: 0.4s;
+}
+
+.AnimationContent_box__3_f3 {
+    animation-delay: 0.6s;
+}
+
+.AnimationContent_box__4_80 {
+    animation-delay: 0.8s;
+}
+
+.AnimationContent_box__5_0b {
+    animation-delay: 1s;
+}
+
+.AnimationContent_box__6_bd {
+    animation-delay: 1.2s;
+}
+
+.AnimationContent_box__7_f8 {
+    animation-delay: 1.4s;
+}
+
+.AnimationContent_item_a7 {
+    position: relative;
+}
+
+.AnimationContent_item_a7 + .AnimationContent_item_a7::before {
+    width: 1rem;
+    height: 100%;
+    background-image: linear-gradient(0deg, transparent 10%, rgba(255, 255, 255, 0.2) 50%, transparent 90%);
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.AnimationContent_animationItem_cc {
+    transform: rotate(0deg);
+}
+
+.AnimationContent_base__shake_25 .AnimationContent_animationItem_cc {
+    animation: AnimationContent_shake_97 0.1s 14;
+}
+
+.AnimationContent_marker_e1 {
+    transform: scale(1);
+}
+
+.AnimationContent_base__shake_25 .AnimationContent_marker_e1 {
+    animation: AnimationContent_scale_b6 3s cubic-bezier(0, 0.55, 0.45, 1);
+}
+
+@keyframes AnimationContent_splash_81 {
+    0% {
+        border-radius: 6rem;
+        opacity: 1;
+        /* rem is necessary for correct animation*/
+        top: 0rem;
+        right: 0rem;
+        bottom: 0rem;
+        left: 0rem;
+    }
+
+    30% {
+        opacity: 1;
+    }
+
+    100% {
+        border-radius: 20rem;
+        opacity: 0;
+        top: -30rem;
+        right: -30rem;
+        bottom: -30rem;
+        left: -30rem;
+    }
+}
+
+@keyframes AnimationContent_shake_97 {
+    0% {
+        transform: rotate(0);
+    }
+
+    50% {
+        transform: rotate(-5deg);
+    }
+
+    100% {
+        transform: rotate(5deg);
+    }
+}
+
+@keyframes AnimationContent_scale_b6 {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.App_base_38 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+.App_inner_d0 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.App_icon_68 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80rem;
+    height: 80rem;
+    background: no-repeat center / contain;
+    position: relative;
+    z-index: 1;
+}
+.mediaLarge .App_icon_68 {
+    width: 114rem;
+    height: 114rem;
+}
+/*fix for unique chinese symbol "!" (there is an extra indent on the right)*/
+[lang='zh_cn'] .App_content_8f {
+    left: 5rem;
+}
+.mediaLarge [lang='zh_cn'] .App_content_8f {
+    left: 6rem;
+}

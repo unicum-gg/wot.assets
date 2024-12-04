@@ -805,30 +805,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .Currency_base__extraLarge_4d .Currency_icon__freeXP-extraLarge_58 {
     transform: translateY(4rem);
 }
-.Currency_icon__eliteXP-small_45 {
-    background-image: url('R.images.gui.maps.icons.library.EliteXpIcon_2');
-}
-.Currency_base__small_af .Currency_icon__eliteXP-small_45 {
-    transform: translateY(1rem);
-}
-.Currency_icon__eliteXP-big_c0 {
-    --icon-height: 24rem;
-    margin-left: -5rem;
-    background-image: url('R.images.gui.maps.icons.library.EliteXpIconBig');
-}
-.Currency_icon__eliteXP-large_1b {
-    --icon-height: 48rem;
-    margin: 0 -5rem 0 -6rem;
-    background-image: url('R.images.gui.maps.icons.library.elite_exp_48x48');
-}
-.Currency_icon__eliteXP-extraLarge_9b {
-    --icon-height: 80rem;
-    margin: 0 -5rem;
-    background-image: url('R.images.gui.maps.icons.library.elite_exp_80x80');
-}
-.Currency_base__extraLarge_4d .Currency_icon__eliteXP-extraLarge_9b {
-    transform: translateY(4rem);
-}
 .Currency_icon__equipCoin-small_32 {
     --icon-height: 16rem;
     margin-right: -2rem;
@@ -898,8 +874,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 .Currency_value__xp_b0,
 .Currency_value__crystal_19,
-.Currency_value__equipCoin_d0,
-.Currency_value__eliteXP_62 {
+.Currency_value__equipCoin_d0 {
     color: #c9c9b6;
 }
 .Currency_base__small_af .Currency_value__notEnough_56 {
@@ -1094,14 +1069,22 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .Footer_price__stock_fd {
     margin-right: 40rem;
 }
+.Footer_notes_d4 {
+    display: flex;
+    flex-direction: column;
+}
+.Footer_notes__wide_9f {
+    flex-direction: row;
+    flex: 1;
+}
 .Footer_fights_5e {
     flex: 1;
     padding: 0 0 1rem;
     text-align: right;
 }
 .Footer_extension_2b {
+    margin-top: 8rem;
     position: relative;
-    top: -2rem;
     z-index: 1;
 }
 .Footer_cButton_b6 {
@@ -1129,11 +1112,12 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 /* MIN_SCREEN_HEIGHT * 2 - PANEL_HEIGHT_AFTER_SCALE? - 1px*/
 /* media*/
 .Header_base_fa {
-    display: flex;
-    padding-bottom: 18rem;
     color: #d0d0c7;
     font-size: 24rem;
     font-weight: 700;
+    line-height: 1.2;
+    display: flex;
+    padding-bottom: 18rem;
     position: relative;
 }
 @media (min-width: 1280px) and (max-width: 2047px) and (min-height: 900px),
@@ -1520,6 +1504,22 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .Slot_base__own_45 {
     cursor: pointer;
 }
+.Slot_rarity_28 {
+    background: 50% / cover;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.Slot_rarityIcon_75 {
+    width: 32rem;
+    height: 32rem;
+    background: 50% / contain no-repeat;
+    position: absolute;
+    top: 0;
+    left: -2rem;
+}
 .Slot_border_d9 {
     width: 100%;
     height: 100%;
@@ -1564,6 +1564,10 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     position: absolute;
     top: 4rem;
     left: 4rem;
+}
+.Slot_topLeftCorner__rarity_85 {
+    top: 30rem;
+    left: 6rem;
 }
 .Slot_icon_b3 {
     margin: 0 1rem 0 0;
@@ -1737,6 +1741,9 @@ This bug is reproduced in Google Chrome 81.0.4044.113
         top: -2rem;
     }
 }
+.Title_ico__all_41 {
+    background-image: url('R.images.gui.maps.icons.customization.items_popover.all16x16');
+}
 .Title_ico__summer_ce {
     background-image: url('R.images.gui.maps.icons.customization.items_popover.summer16x16');
 }
@@ -1898,8 +1905,8 @@ body {
     flex-direction: column;
     align-items: center;
     height: 100%;
+    margin-top: -20rem;
     position: relative;
-    top: -20rem;
 }
 
 .CustomizationCartApp_overlay_f0 {
@@ -1920,7 +1927,8 @@ body {
     align-items: flex-end;
     flex: 1;
     width: 800rem;
-    min-height: 117rem;
+    min-height: 140rem;
+    margin-top: 20rem;
 }
 
 @media (min-width: 1280px) and (max-width: 2047px), (min-width: 2047px) and (max-height: 1429px), (min-width: 2560px) {
@@ -1936,6 +1944,7 @@ body {
         justify-content: flex-end;
         align-items: flex-start;
         width: 1005rem;
+        margin-top: 120rem;
     }
 }
 
@@ -1990,7 +1999,7 @@ body {
     align-items: flex-start;
     flex: 1;
     width: 800rem;
-    min-height: 83rem;
+    min-height: 110rem;
 }
 
 @media (min-width: 1280px) and (max-width: 2047px), (min-width: 2047px) and (max-height: 1429px), (min-width: 2560px) {

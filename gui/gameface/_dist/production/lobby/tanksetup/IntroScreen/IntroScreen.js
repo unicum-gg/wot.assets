@@ -183,13 +183,14 @@
                         addPreloadTexture: () => s,
                         children: () => n,
                         displayStatus: () => i.W,
-                        displayStatusIs: () => w,
+                        displayStatusIs: () => x,
                         events: () => a.U,
-                        extraSize: () => x,
+                        extraSize: () => y,
                         forceTriggerMouseMove: () => b,
                         freezeTextureBeforeResize: () => C,
                         getBrowserTexturePath: () => o,
                         getDisplayStatus: () => f,
+                        getFontNames: () => w,
                         getScale: () => _,
                         getSize: () => D,
                         getViewGlobalPosition: () => B,
@@ -203,7 +204,7 @@
                         setEventHandled: () => v,
                         setInputPaddingsRem: () => A,
                         setSidePaddingsRem: () => l,
-                        whenTutorialReady: () => y,
+                        whenTutorialReady: () => k,
                     });
                 var n = t(3722),
                     i = t(6112),
@@ -265,11 +266,15 @@
                 function f() {
                     return viewEnv.getShowingStatus();
                 }
-                const w = Object.keys(i.W).reduce(
+                const w = (() => {
+                        let u = [];
+                        return () => (0 === u.length && (u = Object.keys(viewEnv.getFontsConfig())), u);
+                    })(),
+                    x = Object.keys(i.W).reduce(
                         (u, e) => ((u[e] = () => viewEnv.getShowingStatus() === i.W[e]), u),
                         {},
                     ),
-                    x = {
+                    y = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -277,7 +282,7 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    y = Promise.all([
+                    k = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : a.U.onDomBuilt(u);
                         }),
@@ -1312,9 +1317,9 @@
                     ),
                     W = H[0],
                     U = H[1];
-                var z = t(2558),
-                    I = t(8934);
-                let j;
+                var j = t(2558),
+                    z = t(8934);
+                let I;
                 !(function (u) {
                     (u.None = ''),
                         (u.Tiny = 'tiny'),
@@ -1322,20 +1327,20 @@
                         (u.Medium = 'medium'),
                         (u.Large = 'large'),
                         (u.Huge = 'huge');
-                })(j || (j = {}));
+                })(I || (I = {}));
                 const G = () => {
                         const u = (0, n.useContext)(C);
                         return u.extraSmall
-                            ? j.Tiny
+                            ? I.Tiny
                             : u.small
-                              ? j.Small
+                              ? I.Small
                               : u.medium || 1080 === u.height
-                                ? j.Medium
+                                ? I.Medium
                                 : u.large
-                                  ? j.Large
+                                  ? I.Large
                                   : u.extraLarge
-                                    ? j.Huge
-                                    : j.None;
+                                    ? I.Huge
+                                    : I.None;
                     },
                     V = {
                         base: 'Slider_base_b2',
@@ -1394,10 +1399,10 @@
                                 { className: V.slider },
                                 i().createElement('div', { className: V.pageCounter }, `${a + 1} / ${u.length}`),
                                 i().createElement(
-                                    z.Z,
+                                    j.Z,
                                     null,
                                     i().createElement(
-                                        I.Z,
+                                        z.Z,
                                         { timeout: 400, className: V.slide, classNames: A, key: `slide-${a}` },
                                         u[a],
                                     ),
@@ -1834,9 +1839,9 @@
                             ),
                         );
                     },
-                    zu = 'NewDevices_deviceName_d6',
-                    Iu = 'NewDevices_highlighted_1a',
-                    ju = 'NewDevices_description_b2',
+                    ju = 'NewDevices_deviceName_d6',
+                    zu = 'NewDevices_highlighted_1a',
+                    Iu = 'NewDevices_description_b2',
                     Gu = 'NewDevices_image_28',
                     Vu = () => {
                         const u = R.strings.tank_setup.introduction.slide.c_1.title(),
@@ -1845,64 +1850,64 @@
                                 () => ({
                                     repairBox: i().createElement(
                                         'span',
-                                        { className: zu },
+                                        { className: ju },
                                         i().createElement(
                                             'span',
-                                            { className: Iu, key: 'repairBox' },
+                                            { className: zu, key: 'repairBox' },
                                             R.strings.tank_setup.introduction.slide.repairBox(),
                                         ),
                                     ),
                                     wetAmmo: i().createElement(
                                         'span',
-                                        { className: zu },
+                                        { className: ju },
                                         i().createElement(
                                             'span',
-                                            { className: Iu, key: 'wetAmmo' },
+                                            { className: zu, key: 'wetAmmo' },
                                             R.strings.tank_setup.introduction.slide.wetAmmo(),
                                         ),
                                     ),
                                     CO2Cistern: i().createElement(
                                         'span',
-                                        { className: zu },
+                                        { className: ju },
                                         i().createElement(
                                             'span',
-                                            { className: Iu, key: 'CO2Cistern' },
+                                            { className: zu, key: 'CO2Cistern' },
                                             R.strings.tank_setup.introduction.slide.CO2Cistern(),
                                         ),
                                     ),
                                     cycloneFilter: i().createElement(
                                         'span',
-                                        { className: zu },
+                                        { className: ju },
                                         i().createElement(
                                             'span',
-                                            { className: Iu, key: 'cycloneFilter' },
+                                            { className: zu, key: 'cycloneFilter' },
                                             R.strings.tank_setup.introduction.slide.cycloneFilter(),
                                         ),
                                     ),
                                     changedConfiguration: i().createElement(
                                         'span',
-                                        { className: zu },
+                                        { className: ju },
                                         i().createElement(
                                             'span',
-                                            { className: Iu, key: 'changedConfiguration' },
+                                            { className: zu, key: 'changedConfiguration' },
                                             R.strings.tank_setup.introduction.slide.changedConfiguration(),
                                         ),
                                     ),
                                     forcedChassis: i().createElement(
                                         'span',
-                                        { className: zu },
+                                        { className: ju },
                                         i().createElement(
                                             'span',
-                                            { className: Iu, key: 'forcedChassis' },
+                                            { className: zu, key: 'forcedChassis' },
                                             R.strings.tank_setup.introduction.slide.forcedChassis(),
                                         ),
                                     ),
                                     forcedMetal: i().createElement(
                                         'span',
-                                        { className: zu },
+                                        { className: ju },
                                         i().createElement(
                                             'span',
-                                            { className: Iu, key: 'forcedMetal' },
+                                            { className: zu, key: 'forcedMetal' },
                                             R.strings.tank_setup.introduction.slide.forcedMetal(),
                                         ),
                                     ),
@@ -1914,7 +1919,7 @@
                             { title: u },
                             i().createElement(Z, {
                                 image: i().createElement('div', { className: Gu }),
-                                description: i().createElement(Uu, { classMix: ju, text: e, binding: t }),
+                                description: i().createElement(Uu, { classMix: Iu, text: e, binding: t }),
                             }),
                         );
                     },

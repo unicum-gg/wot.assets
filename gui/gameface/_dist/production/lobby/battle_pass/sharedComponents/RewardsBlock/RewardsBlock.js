@@ -233,6 +233,7 @@
                             (u.TankmenXpFactor = 'tankmenXPFactor'),
                             (u.FreeXpFactor = 'freeXPFactor'),
                             (u.BattleToken = 'battleToken'),
+                            (u.Entitlements = 'entitlements'),
                             (u.PremiumUniversal = 'premium_universal'),
                             (u.Gold = 'gold'),
                             (u.Credits = 'credits'),
@@ -250,6 +251,8 @@
                             (u.BattleBadge = 'dossier_badge'),
                             (u.NewYearInvoice = 'newYearInvoice'),
                             (u.NewYearSlot = 'newYearSlot'),
+                            (u.NewYearGuestD = 'ny_dog'),
+                            (u.EquipCoin = 'equipCoin'),
                             (u.BonusX5 = 'battle_bonus_x5'),
                             (u.CrewBonusX3 = 'crew_bonus_x3'),
                             (u.Vehicles = 'vehicles'),
@@ -258,7 +261,6 @@
                             (u.DeluxeGift = 'deluxe_gift'),
                             (u.BattleBoosterGift = 'battleBooster_gift'),
                             (u.OptionalDevice = 'optionalDevice'),
-                            (u.EquipCoin = 'equipCoin'),
                             (u.LootBox = 'lootBox'),
                             (u.BrCoin = 'brcoin');
                     })(i || (i = {})),
@@ -385,6 +387,7 @@
                     i.E4.TankmenXpFactor,
                     i.E4.FreeXpFactor,
                     i.E4.BattleToken,
+                    i.E4.Entitlements,
                     i.E4.PremiumUniversal,
                     i.E4.NaturalCover,
                     i.E4.BpCoin,
@@ -610,13 +613,14 @@
                         addPreloadTexture: () => F,
                         children: () => i,
                         displayStatus: () => r.W,
-                        displayStatusIs: () => f,
+                        displayStatusIs: () => T,
                         events: () => E.U,
-                        extraSize: () => T,
+                        extraSize: () => P,
                         forceTriggerMouseMove: () => v,
                         freezeTextureBeforeResize: () => C,
                         getBrowserTexturePath: () => o,
                         getDisplayStatus: () => S,
+                        getFontNames: () => f,
                         getScale: () => c,
                         getSize: () => D,
                         getViewGlobalPosition: () => d,
@@ -630,7 +634,7 @@
                         setEventHandled: () => w,
                         setInputPaddingsRem: () => A,
                         setSidePaddingsRem: () => l,
-                        whenTutorialReady: () => P,
+                        whenTutorialReady: () => x,
                     });
                 var i = t(3722),
                     r = t(6112),
@@ -692,11 +696,15 @@
                 function S() {
                     return viewEnv.getShowingStatus();
                 }
-                const f = Object.keys(r.W).reduce(
+                const f = (() => {
+                        let u = [];
+                        return () => (0 === u.length && (u = Object.keys(viewEnv.getFontsConfig())), u);
+                    })(),
+                    T = Object.keys(r.W).reduce(
                         (u, e) => ((u[e] = () => viewEnv.getShowingStatus() === r.W[e]), u),
                         {},
                     ),
-                    T = {
+                    P = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -704,7 +712,7 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    P = Promise.all([
+                    x = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : E.U.onDomBuilt(u);
                         }),

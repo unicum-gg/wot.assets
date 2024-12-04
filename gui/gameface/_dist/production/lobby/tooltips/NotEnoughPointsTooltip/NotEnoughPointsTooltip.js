@@ -2,7 +2,7 @@
     'use strict';
     var __webpack_modules__ = {
             9768: (u, e, t) => {
-                t.d(e, { O: () => Q });
+                t.d(e, { O: () => J });
                 var n = {};
                 t.r(n),
                     t.d(n, { mouse: () => d, off: () => c, on: () => F, onResize: () => E, onScaleUpdated: () => A });
@@ -36,27 +36,28 @@
                         addPreloadTexture: () => x,
                         children: () => o,
                         displayStatus: () => w,
-                        displayStatusIs: () => Z,
+                        displayStatusIs: () => $,
                         events: () => g,
-                        extraSize: () => $,
+                        extraSize: () => X,
                         forceTriggerMouseMove: () => H,
                         freezeTextureBeforeResize: () => j,
                         getBrowserTexturePath: () => P,
                         getDisplayStatus: () => Y,
+                        getFontNames: () => Z,
                         getScale: () => V,
-                        getSize: () => M,
+                        getSize: () => N,
                         getViewGlobalPosition: () => I,
                         isEventHandled: () => K,
                         isFocused: () => q,
                         pxToRem: () => W,
                         remToPx: () => U,
-                        resize: () => N,
+                        resize: () => M,
                         sendEvent: () => T,
                         setAnimateWindow: () => z,
                         setEventHandled: () => G,
                         setInputPaddingsRem: () => L,
                         setSidePaddingsRem: () => S,
-                        whenTutorialReady: () => X,
+                        whenTutorialReady: () => Q,
                     });
                 const E = a('clientResized'),
                     A = a('self.onScaleUpdated'),
@@ -239,10 +240,10 @@
                 function S(u) {
                     viewEnv.setHitAreaPaddingsRem(u.top, u.right, u.bottom, u.left, O);
                 }
-                function M(u = 'px') {
+                function N(u = 'px') {
                     return 'rem' === u ? viewEnv.getViewSizeRem() : viewEnv.getViewSizePx();
                 }
-                function N(u, e, t = 'px') {
+                function M(u, e, t = 'px') {
                     return 'rem' === t ? viewEnv.resizeViewRem(u, e) : viewEnv.resizeViewPx(u, e);
                 }
                 function I(u = 'rem') {
@@ -279,8 +280,12 @@
                 function Y() {
                     return viewEnv.getShowingStatus();
                 }
-                const Z = Object.keys(w).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === w[e]), u), {}),
-                    $ = {
+                const Z = (() => {
+                        let u = [];
+                        return () => (0 === u.length && (u = Object.keys(viewEnv.getFontsConfig())), u);
+                    })(),
+                    $ = Object.keys(w).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === w[e]), u), {}),
+                    X = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -288,13 +293,13 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    X = Promise.all([
+                    Q = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : g.onDomBuilt(u);
                         }),
                         engine.whenReady,
                     ]),
-                    Q = { view: i, client: r, sound: v };
+                    J = { view: i, client: r, sound: v };
             },
             5521: (u, e, t) => {
                 let n, r;
@@ -1138,10 +1143,10 @@
                         (u.NBSP = ' '), (u.ZWNBSP = '\ufeff'), (u.NEW_LINE = '\n');
                     })(P || (P = {}));
                 const S = { [P.NBSP]: x.NoBreakSymbol, [P.ZWNBSP]: x.NoBreakSymbol, [P.NEW_LINE]: x.LineBreak },
-                    M = ['zh_cn', 'zh_sg', 'zh_tw', 'ja', 'th'].includes(
+                    N = ['zh_cn', 'zh_sg', 'zh_tw', 'ja', 'th'].includes(
                         R.strings.settings.LANGUAGE_CODE().toLowerCase(),
                     ),
-                    N = {
+                    M = {
                         blackReal: 'colors_blackReal_fc',
                         whiteReal: 'colors_whiteReal_31',
                         white: 'colors_white_45',
@@ -1171,10 +1176,10 @@
                     V = ({ elementList: u, textBlock: e, key: t }) => {
                         const n = e.colorTag;
                         return n
-                            ? N[n]
+                            ? M[n]
                                 ? r().createElement(
                                       'span',
-                                      { key: t, 'data-block-type': e.blockType, className: s()(I, N[n]) },
+                                      { key: t, 'data-block-type': e.blockType, className: s()(I, M[n]) },
                                       u,
                                   )
                                 : r().createElement(
@@ -1237,8 +1242,8 @@
                         for (; r; ) o !== r.index && t(u.slice(o, r.index)), n(r), (o = e.lastIndex), (r = e.exec(u));
                         o !== u.length && t(u.slice(o));
                     },
-                    q = new RegExp('[฀-๿][ัำ-ฺ็-๎]*', 'gu'),
-                    G = M
+                    q = new RegExp('[฀-๿][ัำ-ฺ็-๎]*|[^฀-๿]', 'gu'),
+                    G = N
                         ? (u) => {
                               const e = [];
                               return (

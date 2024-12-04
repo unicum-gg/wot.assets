@@ -1,0 +1,385 @@
+.InfoDecorator_base_e3 {
+    display: flex;
+    filter: drop-shadow(0 3rem 7rem rgba(11, 4, 30, 0.7));
+    position: relative;
+    z-index: 0;
+}
+.mediaMedium .InfoDecorator_base_e3 {
+    filter: drop-shadow(0 8rem 14rem rgba(11, 4, 30, 0.7));
+}
+
+.InfoDecorator_background_a1 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.InfoDecorator_arrow_36 {
+    width: 18rem;
+    height: 5rem;
+    background: url('R.images.gui.maps.icons.newYear.markers.info_decorator.arrow_small') no-repeat center / contain;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 100%);
+}
+
+.mediaMedium .InfoDecorator_arrow_36 {
+    width: 20rem;
+    height: 8rem;
+    background-image: url('R.images.gui.maps.icons.newYear.markers.info_decorator.arrow');
+}
+
+.Counter_base_89 {
+    display: flex;
+    align-items: center;
+    padding: 1rem 10rem;
+}
+.mediaMedium .Counter_base_89 {
+    padding: 7rem 14rem;
+}
+.mediaExtraLarge .Counter_base_89 {
+    padding: 11rem 16rem;
+}
+.Counter_base__single_fa {
+    padding: 1rem 16rem;
+}
+.mediaMedium .Counter_base__single_fa {
+    padding: 7rem 21rem;
+}
+.mediaExtraLarge .Counter_base__single_fa {
+    padding: 11rem 23rem;
+}
+.Counter_base__shake_f3 {
+    animation: Counter_scale_45 3s cubic-bezier(0, 0.55, 0.45, 1);
+}
+.Counter_icon_05 {
+    width: 16rem;
+    height: 16rem;
+    margin-top: 2rem;
+    background: url('R.images.grinch_progression.gui.maps.icons.game_board.markers.point') no-repeat center / contain;
+}
+.Counter_base__shake_f3 .Counter_icon_05 {
+    animation: Counter_shake_b6 0.1s 14;
+}
+.mediaMedium .Counter_base__single_fa .Counter_icon_05 {
+    width: 24rem;
+    height: 24rem;
+}
+.mediaExtraLarge .Counter_base__single_fa .Counter_icon_05 {
+    width: 32rem;
+    height: 32rem;
+}
+.Counter_count_0d {
+    font-family: DINRoundPro;
+}
+[lang='th'] .Counter_count_0d,
+[lang='el'] .Counter_count_0d,
+[lang='vi'] .Counter_count_0d {
+    font-family: Warhelios;
+}
+[lang='ja'] .Counter_count_0d {
+    font-family: WarheliosJA;
+}
+[lang='ko'] .Counter_count_0d {
+    font-family: WarheliosKO;
+}
+[lang='zh_tw'] .Counter_count_0d {
+    font-family: WarheliosZHTW;
+}
+[lang='zh_sg'] .Counter_count_0d,
+[lang='zh_cn'] .Counter_count_0d {
+    font-family: WarheliosZHCN;
+}
+.Counter_count_0d {
+    margin-left: 2rem;
+    color: #e6f1f3;
+    font-size: 14rem;
+    font-weight: 700;
+    line-height: 32rem;
+}
+.mediaMedium .Counter_count_0d {
+    font-size: 16rem;
+}
+.mediaExtraLarge .Counter_count_0d {
+    margin-left: 3rem;
+}
+.Counter_base__shake_f3 .Counter_count_0d {
+    animation: Counter_shake_b6 0.1s 14;
+}
+.mediaMedium .Counter_base__single_fa .Counter_count_0d {
+    font-size: 18rem;
+}
+.mediaExtraLarge .Counter_base__single_fa .Counter_count_0d {
+    font-size: 24rem;
+}
+@keyframes Counter_shake_b6 {
+    0% {
+        transform: rotate(0);
+    }
+
+    50% {
+        transform: rotate(-5deg);
+    }
+
+    100% {
+        transform: rotate(5deg);
+    }
+}
+@keyframes Counter_scale_45 {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.Timer_base_63 {
+    display: flex;
+    align-items: center;
+    padding: 1rem 10rem;
+}
+.mediaMedium .Timer_base_63 {
+    padding: 7rem 14rem;
+}
+.mediaExtraLarge .Timer_base_63 {
+    padding: 11rem 16rem;
+}
+.Timer_base__single_11 {
+    padding: 1rem 21rem 1rem 16rem;
+}
+.mediaMedium .Timer_base__single_11 {
+    padding: 7rem 21rem 7rem 16rem;
+}
+.mediaExtraLarge .Timer_base__single_11 {
+    padding: 11rem 23rem;
+}
+
+.Timer_icon_98 {
+    width: 16rem;
+    height: 16rem;
+    margin-top: 1rem;
+    background: url('R.images.grinch_progression.gui.maps.icons.game_board.markers.hourglass') no-repeat center /
+        contain;
+}
+
+.Timer_icon__lock_18 {
+    width: 24rem;
+    height: 24rem;
+    background-image: url('R.images.grinch_progression.gui.maps.icons.game_board.markers.lock');
+}
+
+.Timer_sequence_b7 {
+    width: 16rem;
+    height: 16rem;
+    margin-top: 1rem;
+}
+
+.Timer_count_8f {
+    margin-left: 4rem;
+    color: #e6f1f3;
+    font-size: 14rem;
+    font-weight: 700;
+    line-height: 32rem;
+}
+
+.mediaMedium .Timer_count_8f {
+    font-size: 16rem;
+}
+
+.mediaMedium .Timer_base__single_11 .Timer_count_8f {
+    font-size: 16rem;
+}
+
+.Content_base_d0 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Content_separator_01 {
+    width: 1rem;
+    height: 75%;
+    background-image: linear-gradient(to top, transparent, rgba(255, 255, 255, 0.2), transparent);
+}
+
+.Content_done_f7 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40rem;
+    height: 32rem;
+    background: url('R.images.grinch_progression.gui.maps.icons.game_board.markers.done') no-repeat center / 16rem 16rem;
+    opacity: 0.6;
+}
+
+.mediaMedium .Content_done_f7 {
+    width: 60rem;
+    height: 42rem;
+    background-size: 24rem 24rem;
+}
+
+.mediaExtraLarge .Content_done_f7 {
+    width: 80rem;
+    height: 50rem;
+    background-size: 32rem 32rem;
+}
+
+.AnimationContent_base_c0 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.AnimationContent_boxes_5d {
+    width: 110%;
+    height: 110%;
+    position: absolute;
+}
+
+.AnimationContent_box_7e {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border: 2rem solid #caddff;
+    border-radius: 6rem;
+    opacity: 0;
+    animation: AnimationContent_splash_80 1s 5s cubic-bezier(0, 0.55, 0.45, 1) forwards;
+}
+
+.AnimationContent_box__fill_1f {
+    background-color: rgba(202, 221, 255, 0.75);
+}
+
+.AnimationContent_box__1_43 {
+    animation-delay: 0.2s;
+}
+
+.AnimationContent_box__2_29 {
+    animation-delay: 0.4s;
+}
+
+.AnimationContent_box__3_ea {
+    animation-delay: 0.6s;
+}
+
+.AnimationContent_box__4_3f {
+    animation-delay: 0.8s;
+}
+
+.AnimationContent_box__5_db {
+    animation-delay: 1s;
+}
+
+.AnimationContent_box__6_1d {
+    animation-delay: 1.2s;
+}
+
+.AnimationContent_box__7_cf {
+    animation-delay: 1.4s;
+}
+
+.AnimationContent_item_18 {
+    position: relative;
+}
+
+.AnimationContent_item_18 + .AnimationContent_item_18::before {
+    width: 1rem;
+    height: 100%;
+    background-image: linear-gradient(0deg, transparent 10%, rgba(255, 255, 255, 0.2) 50%, transparent 90%);
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.AnimationContent_marker_ed {
+    transform: scale(1);
+}
+
+.AnimationContent_base__idle_63 .AnimationContent_marker_ed {
+    animation: AnimationContent_blink_e3 1.5s cubic-bezier(0.85, 0, 0.15, 1) alternate infinite;
+}
+
+.AnimationContent_base__shake_a4 .AnimationContent_marker_ed {
+    animation: AnimationContent_scale_e4 3s cubic-bezier(0, 0.55, 0.45, 1);
+}
+
+@keyframes AnimationContent_splash_80 {
+    0% {
+        border-radius: 6rem;
+        opacity: 1;
+        /* rem is necessary for correct animation*/
+        top: 0rem;
+        right: 0rem;
+        bottom: 0rem;
+        left: 0rem;
+    }
+
+    30% {
+        opacity: 1;
+    }
+
+    100% {
+        border-radius: 20rem;
+        opacity: 0;
+        top: -30rem;
+        right: -30rem;
+        bottom: -30rem;
+        left: -30rem;
+    }
+}
+
+@keyframes AnimationContent_scale_e4 {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes AnimationContent_blink_e3 {
+    0% {
+        transform: translateY(0rem);
+    }
+
+    100% {
+        transform: translateY(15rem);
+    }
+}
+
+.App_base_b3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.App_inner_7a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}

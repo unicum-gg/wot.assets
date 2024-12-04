@@ -183,14 +183,15 @@
                         addPreloadTexture: () => i,
                         children: () => n,
                         displayStatus: () => E.W,
-                        displayStatusIs: () => g,
+                        displayStatusIs: () => y,
                         events: () => F.U,
-                        extraSize: () => y,
+                        extraSize: () => O,
                         forceTriggerMouseMove: () => h,
-                        freezeTextureBeforeResize: () => _,
+                        freezeTextureBeforeResize: () => l,
                         getBrowserTexturePath: () => a,
                         getDisplayStatus: () => f,
-                        getScale: () => l,
+                        getFontNames: () => g,
+                        getScale: () => _,
                         getSize: () => B,
                         getViewGlobalPosition: () => C,
                         isEventHandled: () => b,
@@ -203,7 +204,7 @@
                         setEventHandled: () => p,
                         setInputPaddingsRem: () => o,
                         setSidePaddingsRem: () => D,
-                        whenTutorialReady: () => O,
+                        whenTutorialReady: () => T,
                     });
                 var n = t(722),
                     E = t(112),
@@ -235,10 +236,10 @@
                     const e = viewEnv.getViewGlobalPositionRem();
                     return 'rem' === u ? e : { x: v(e.x), y: v(e.y) };
                 }
-                function _() {
+                function l() {
                     viewEnv.freezeTextureBeforeResize();
                 }
-                function l() {
+                function _() {
                     return viewEnv.getScale();
                 }
                 function d(u) {
@@ -265,11 +266,15 @@
                 function f() {
                     return viewEnv.getShowingStatus();
                 }
-                const g = Object.keys(E.W).reduce(
+                const g = (() => {
+                        let u = [];
+                        return () => (0 === u.length && (u = Object.keys(viewEnv.getFontsConfig())), u);
+                    })(),
+                    y = Object.keys(E.W).reduce(
                         (u, e) => ((u[e] = () => viewEnv.getShowingStatus() === E.W[e]), u),
                         {},
                     ),
-                    y = {
+                    O = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -277,7 +282,7 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    O = Promise.all([
+                    T = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : F.U.onDomBuilt(u);
                         }),
@@ -615,9 +620,9 @@
             72: (u, e, t) => {
                 t.d(e, {
                     Eu: () => a,
-                    KE: () => l,
+                    KE: () => _,
                     Kv: () => i,
-                    P3: () => _,
+                    P3: () => l,
                     SU: () => w,
                     SW: () => c,
                     Sy: () => B,
@@ -725,14 +730,14 @@
                     C = (u, e, t = 0) => {
                         s(F.B0.CONTEXT_MENU, { isMouseEvent: !0, contentID: u, on: !0, decoratorID: t, args: e });
                     },
-                    _ = (u, e, t, n, A = R.invalid('resId'), r) => {
+                    l = (u, e, t, n, A = R.invalid('resId'), r) => {
                         const o = E.O.view.getViewGlobalPosition(),
                             a = t.getBoundingClientRect(),
                             D = a.x,
                             B = a.y,
                             c = a.width,
                             C = a.height,
-                            _ = {
+                            l = {
                                 x: E.O.view.pxToRem(D) + o.x,
                                 y: E.O.view.pxToRem(B) + o.y,
                                 width: E.O.view.pxToRem(c),
@@ -744,12 +749,12 @@
                             decoratorID: n || R.invalid('resId'),
                             targetID: A,
                             direction: e,
-                            bbox: i(_),
+                            bbox: i(l),
                             on: !0,
                             args: r,
                         });
                     },
-                    l = () => viewEnv.isWindowShownByViewEvent(F.B0.TOOLTIP),
+                    _ = () => viewEnv.isWindowShownByViewEvent(F.B0.TOOLTIP),
                     d = () => viewEnv.isWindowShownByViewEvent(F.B0.CONTEXT_MENU),
                     v = () => viewEnv.isWindowShownByViewEvent(F.B0.POP_OVER),
                     m = (u, e) => {
@@ -836,9 +841,9 @@
                                 );
                             })(),
                             C = E().useRef(null);
-                        var _;
+                        var l;
                         return (
-                            (_ = () => {
+                            (l = () => {
                                 c.run(() => {
                                     const u = C.current;
                                     if (!u) return;
@@ -854,7 +859,7 @@
                                     });
                                 });
                             }),
-                            (0, n.useEffect)(_, []),
+                            (0, n.useEffect)(l, []),
                             E().createElement(
                                 'div',
                                 D({}, B, {
@@ -882,10 +887,10 @@
                         );
                     },
                     C = (u, e) => u.split('.').reduce((u, e) => u && u[e], e);
-                var _ = t(491);
-                const l = (u) => u && 'ArrayItem' === u.__proto__.constructor.name,
+                var l = t(491);
+                const _ = (u) => u && 'ArrayItem' === u.__proto__.constructor.name,
                     d = (u, e) => (u.length > 0 ? `${u}.${e}` : e),
-                    v = _.Sw.instance;
+                    v = l.Sw.instance;
                 let m;
                 !(function (u) {
                     (u.None = 'None'), (u.Shallow = 'Shallow'), (u.Deep = 'Deep');
@@ -904,13 +909,13 @@
                             ((u) => {
                                 const e = C(u, window);
                                 for (const u in e) 'function' == typeof e[u] && (e[u] = e[u].bind(e));
-                                return l(e) ? e.value : e;
+                                return _(e) ? e.value : e;
                             })(
                                 ((u) =>
                                     ((u, e) =>
                                         u.split('.').reduce((u, e) => {
                                             const t = C(`${u}.${e}`, window);
-                                            return l(t) ? ((u, e) => `${u}.${e}.value`)(u, e) : `${u}.${e}`;
+                                            return _(t) ? ((u, e) => `${u}.${e}.value`)(u, e) : `${u}.${e}`;
                                         }))(u))(i),
                             ),
                         ),
@@ -954,7 +959,7 @@
                                             return (
                                                 n.reduce((e, n) => {
                                                     const E = C(d(t, `${e}.${n}`), window);
-                                                    return l(E)
+                                                    return _(E)
                                                         ? (u.push(E.id), `${e}.${n}.value`)
                                                         : (u.push(n), `${e}.${n}`);
                                                 }),

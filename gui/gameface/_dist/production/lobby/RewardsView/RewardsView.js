@@ -302,6 +302,7 @@
                             (e.TankmenXpFactor = 'tankmenXPFactor'),
                             (e.FreeXpFactor = 'freeXPFactor'),
                             (e.BattleToken = 'battleToken'),
+                            (e.Entitlements = 'entitlements'),
                             (e.PremiumUniversal = 'premium_universal'),
                             (e.Gold = 'gold'),
                             (e.Credits = 'credits'),
@@ -319,6 +320,8 @@
                             (e.BattleBadge = 'dossier_badge'),
                             (e.NewYearInvoice = 'newYearInvoice'),
                             (e.NewYearSlot = 'newYearSlot'),
+                            (e.NewYearGuestD = 'ny_dog'),
+                            (e.EquipCoin = 'equipCoin'),
                             (e.BonusX5 = 'battle_bonus_x5'),
                             (e.CrewBonusX3 = 'crew_bonus_x3'),
                             (e.Vehicles = 'vehicles'),
@@ -327,7 +330,6 @@
                             (e.DeluxeGift = 'deluxe_gift'),
                             (e.BattleBoosterGift = 'battleBooster_gift'),
                             (e.OptionalDevice = 'optionalDevice'),
-                            (e.EquipCoin = 'equipCoin'),
                             (e.LootBox = 'lootBox'),
                             (e.BrCoin = 'brcoin');
                     })(n || (n = {})),
@@ -467,6 +469,7 @@
                         o.E4.TankmenXpFactor,
                         o.E4.FreeXpFactor,
                         o.E4.BattleToken,
+                        o.E4.Entitlements,
                         o.E4.PremiumUniversal,
                         o.E4.NaturalCover,
                         o.E4.BpCoin,
@@ -538,9 +541,6 @@
                             case 'tokens':
                             case 'lootBox':
                             case 'battleToken':
-                                return 'big' === t
-                                    ? e.iconBig.replace('..', 'img://gui')
-                                    : e.iconSmall.replace('..', 'img://gui');
                             case 'customizations':
                             case 'styleProgress':
                             case 'crewSkins':
@@ -549,6 +549,10 @@
                             case 'tmanToken':
                             case 'battlePassSelectToken':
                                 return `R.images.gui.maps.icons.quests.bonuses.${t}.${i}`;
+                            case 'entitlements':
+                                return 'big' === t
+                                    ? e.iconBig.replace('..', 'img://gui')
+                                    : e.iconSmall.replace('..', 'img://gui');
                             case 'crewBooks':
                                 return `R.images.gui.maps.icons.crewBooks.books.${t}.${i}`;
                             case 'dogTagComponents':
@@ -582,10 +586,14 @@
                                 return `R.images.gui.maps.icons.quests.bonuses.${t}.freeXP`;
                             case 'premiumTank':
                                 return `R.images.gui.maps.icons.quests.bonuses.${t}.vehicles`;
+                            case 'premiumTank_rent':
+                                return `R.images.gui.maps.icons.quests.bonuses.${t}.vehicles_rent`;
                             case 'styleProgressToken':
                                 return `R.images.gui.maps.icons.quests.bonuses.${t}.style_3d`;
                             case 'collectionItem':
                                 return `R.images.gui.maps.icons.collectionItems.${c}.${i}`;
+                            case 'newYearSlot':
+                                return `R.images.gui.maps.icons.newYear.rewards.${t}.slot`;
                             default:
                                 return `R.images.gui.maps.icons.quests.bonuses.${t}.${r}`;
                         }
@@ -1197,7 +1205,7 @@
                 };
             },
             9768: (e, t, r) => {
-                r.d(t, { O: () => Z });
+                r.d(t, { O: () => J });
                 var n = {};
                 r.r(n),
                     r.d(n, { mouse: () => g, off: () => _, on: () => d, onResize: () => c, onScaleUpdated: () => u });
@@ -1227,31 +1235,32 @@
                 }
                 r.r(s),
                     r.d(s, {
-                        addModelObserver: () => D,
+                        addModelObserver: () => I,
                         addPreloadTexture: () => N,
                         children: () => i,
                         displayStatus: () => T,
-                        displayStatusIs: () => K,
+                        displayStatusIs: () => X,
                         events: () => O,
-                        extraSize: () => X,
+                        extraSize: () => Q,
                         forceTriggerMouseMove: () => q,
                         freezeTextureBeforeResize: () => F,
-                        getBrowserTexturePath: () => I,
+                        getBrowserTexturePath: () => D,
                         getDisplayStatus: () => z,
+                        getFontNames: () => K,
                         getScale: () => G,
                         getSize: () => B,
                         getViewGlobalPosition: () => U,
-                        isEventHandled: () => $,
+                        isEventHandled: () => V,
                         isFocused: () => Y,
                         pxToRem: () => H,
                         remToPx: () => W,
                         resize: () => A,
                         sendEvent: () => k,
                         setAnimateWindow: () => j,
-                        setEventHandled: () => V,
+                        setEventHandled: () => $,
                         setInputPaddingsRem: () => C,
                         setSidePaddingsRem: () => M,
-                        whenTutorialReady: () => Q,
+                        whenTutorialReady: () => Z,
                     });
                 const c = o('clientResized'),
                     u = o('self.onScaleUpdated'),
@@ -1425,10 +1434,10 @@
                 function C(e) {
                     viewEnv.setHitAreaPaddingsRem(e, e, e, e, L);
                 }
-                function I(e, t, r, n = 1) {
+                function D(e, t, r, n = 1) {
                     return viewEnv.getWebBrowserTexturePath(e, t, r, n);
                 }
-                function D(e, t, r) {
+                function I(e, t, r) {
                     return viewEnv.addDataChangedCallback(e, t, r);
                 }
                 function M(e) {
@@ -1462,10 +1471,10 @@
                 function Y() {
                     return viewEnv.isFocused();
                 }
-                function V() {
+                function $() {
                     return viewEnv.setEventHandled();
                 }
-                function $() {
+                function V() {
                     return viewEnv.isEventHandled();
                 }
                 function q() {
@@ -1474,8 +1483,12 @@
                 function z() {
                     return viewEnv.getShowingStatus();
                 }
-                const K = Object.keys(T).reduce((e, t) => ((e[t] = () => viewEnv.getShowingStatus() === T[t]), e), {}),
-                    X = {
+                const K = (() => {
+                        let e = [];
+                        return () => (0 === e.length && (e = Object.keys(viewEnv.getFontsConfig())), e);
+                    })(),
+                    X = Object.keys(T).reduce((e, t) => ((e[t] = () => viewEnv.getShowingStatus() === T[t]), e), {}),
+                    Q = {
                         set: (e, t) => {
                             viewEnv.setExtraSizeRem(e, t);
                         },
@@ -1483,13 +1496,13 @@
                             viewEnv.getExtraSizeRem(e, t);
                         },
                     },
-                    Q = Promise.all([
+                    Z = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : O.onDomBuilt(e);
                         }),
                         engine.whenReady,
                     ]),
-                    Z = { view: s, client: a, sound: S };
+                    J = { view: s, client: a, sound: S };
             },
             4598: (e, t, r) => {
                 function n() {
@@ -2417,23 +2430,23 @@
                     });
                 var N = r(4959);
                 const C = 'SubTitle_base_8d',
-                    I = R.strings.fl_rewards.subtitle,
-                    D = (0, n.memo)(({ level: e, rewardsCount: t, frontlineState: r }) =>
+                    D = R.strings.fl_rewards.subtitle,
+                    I = (0, n.memo)(({ level: e, rewardsCount: t, frontlineState: r }) =>
                         r !== N.c.Finished
-                            ? a().createElement('div', { className: C }, I.active())
+                            ? a().createElement('div', { className: C }, D.active())
                             : a().createElement(
                                   'div',
                                   { className: C },
-                                  I.finished.title(),
+                                  D.finished.title(),
                                   e > 1 &&
                                       (t > 0
-                                          ? I.finished.rewards()
+                                          ? D.finished.rewards()
                                           : a().createElement(
                                                 'div',
                                                 { className: 'SubTitle_noRewards_f1' },
                                                 a().createElement('div', { className: 'SubTitle_icon_0f' }),
                                                 ' ',
-                                                I.finished.noRewards(),
+                                                D.finished.noRewards(),
                                             )),
                               ),
                     );
@@ -2454,7 +2467,7 @@
                         a().createElement(
                             l.V,
                             { text: R.strings.fl_rewards.title(), classMix: 'RewardsViewApp_pageTitle_61' },
-                            a().createElement(D, { level: d, rewardsCount: c, frontlineState: _ }),
+                            a().createElement(I, { level: d, rewardsCount: c, frontlineState: _ }),
                         ),
                         a().createElement('div', { className: 'RewardsViewApp_table_32' }, a().createElement(L, null)),
                         c > 0 &&

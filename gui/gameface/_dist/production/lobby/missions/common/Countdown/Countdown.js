@@ -7,7 +7,7 @@
                 Date.now(), A.Ew.getRegionalDateTime, A.Ew.getFormattedDateTime;
             },
             9768: (u, e, F) => {
-                F.d(e, { O: () => Fu });
+                F.d(e, { O: () => Au });
                 var A = {};
                 F.r(A),
                     F.d(A, { mouse: () => s, off: () => a, on: () => o, onResize: () => B, onScaleUpdated: () => r });
@@ -22,7 +22,7 @@
                         setRTPC: () => c,
                     });
                 var t = {};
-                F.r(t), F.d(t, { getBgUrl: () => b, getTextureUrl: () => p });
+                F.r(t), F.d(t, { getBgUrl: () => g, getTextureUrl: () => p });
                 var n = {};
                 function D(u) {
                     return (e) => (
@@ -40,28 +40,29 @@
                         addModelObserver: () => U,
                         addPreloadTexture: () => L,
                         children: () => t,
-                        displayStatus: () => g,
-                        displayStatusIs: () => J,
+                        displayStatus: () => b,
+                        displayStatusIs: () => uu,
                         events: () => f,
-                        extraSize: () => uu,
+                        extraSize: () => eu,
                         forceTriggerMouseMove: () => $,
                         freezeTextureBeforeResize: () => W,
                         getBrowserTexturePath: () => N,
                         getDisplayStatus: () => Q,
+                        getFontNames: () => J,
                         getScale: () => z,
                         getSize: () => I,
                         getViewGlobalPosition: () => q,
                         isEventHandled: () => X,
                         isFocused: () => Y,
-                        pxToRem: () => G,
-                        remToPx: () => j,
+                        pxToRem: () => j,
+                        remToPx: () => G,
                         resize: () => K,
                         sendEvent: () => x,
                         setAnimateWindow: () => H,
                         setEventHandled: () => Z,
                         setInputPaddingsRem: () => M,
                         setSidePaddingsRem: () => V,
-                        whenTutorialReady: () => eu,
+                        whenTutorialReady: () => Fu,
                     });
                 const B = D('clientResized'),
                     r = D('self.onScaleUpdated'),
@@ -159,10 +160,10 @@
                 function p(u, e, F = 1) {
                     return viewEnv.getChildTexturePath(u, e.width, e.height, F);
                 }
-                function b(u, e, F) {
+                function g(u, e, F) {
                     return `url(${p(u, e, F)})`;
                 }
-                const g = { showing: 0, shown: 1, hiding: 2, hidden: 3 },
+                const b = { showing: 0, shown: 1, hiding: 2, hidden: 3 },
                     f = {
                         onTextureFrozen: D('self.onTextureFrozen'),
                         onTextureReady: D('self.onTextureReady'),
@@ -182,8 +183,8 @@
                     O = ['args'];
                 const T = 2,
                     y = 16,
-                    P = 32,
-                    k = 64,
+                    k = 32,
+                    P = 64,
                     R = (u, e) => {
                         const F = 'GFViewEventProxy';
                         if (void 0 !== e) {
@@ -223,10 +224,10 @@
                     },
                     x = {
                         close(u) {
-                            R('popover' === u ? T : P);
+                            R('popover' === u ? T : k);
                         },
                         minimize() {
-                            R(k);
+                            R(P);
                         },
                         move(u) {
                             R(y, { isMouseEvent: !0, on: u });
@@ -256,7 +257,7 @@
                 }
                 function q(u = 'rem') {
                     const e = viewEnv.getViewGlobalPositionRem();
-                    return 'rem' === u ? e : { x: j(e.x), y: j(e.y) };
+                    return 'rem' === u ? e : { x: G(e.x), y: G(e.y) };
                 }
                 function W() {
                     viewEnv.freezeTextureBeforeResize();
@@ -264,10 +265,10 @@
                 function z() {
                     return viewEnv.getScale();
                 }
-                function G(u) {
+                function j(u) {
                     return viewEnv.pxToRem(u);
                 }
-                function j(u) {
+                function G(u) {
                     return viewEnv.remToPx(u);
                 }
                 function H(u, e) {
@@ -288,8 +289,12 @@
                 function Q() {
                     return viewEnv.getShowingStatus();
                 }
-                const J = Object.keys(g).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === g[e]), u), {}),
-                    uu = {
+                const J = (() => {
+                        let u = [];
+                        return () => (0 === u.length && (u = Object.keys(viewEnv.getFontsConfig())), u);
+                    })(),
+                    uu = Object.keys(b).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === b[e]), u), {}),
+                    eu = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -297,15 +302,15 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    eu = Promise.all([
+                    Fu = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : f.onDomBuilt(u);
                         }),
                         engine.whenReady,
                     ]),
-                    Fu = { view: n, client: E, sound: m };
+                    Au = { view: n, client: E, sound: m };
             },
-            4649: (u, e, F) => {
+            2298: (u, e, F) => {
                 F(7044), F(6179);
                 F(9768);
                 F(6536);
@@ -743,7 +748,7 @@
                     };
             },
             2993: (u, e, F) => {
-                F(7044), F(4649), F(6179), F(1272);
+                F(7044), F(2298), F(6179), F(1272);
             },
             1272: (u, e, F) => {
                 F(6179);

@@ -52,7 +52,7 @@
             },
             768: (u, e, t) => {
                 'use strict';
-                t.d(e, { O: () => tu });
+                t.d(e, { O: () => nu });
                 var n = {};
                 t.r(n),
                     t.d(n, { mouse: () => D, off: () => A, on: () => E, onResize: () => c, onScaleUpdated: () => l });
@@ -82,17 +82,18 @@
                 }
                 t.r(a),
                     t.d(a, {
-                        addModelObserver: () => N,
+                        addModelObserver: () => I,
                         addPreloadTexture: () => O,
                         children: () => i,
                         displayStatus: () => f,
-                        displayStatusIs: () => J,
+                        displayStatusIs: () => uu,
                         events: () => w,
-                        extraSize: () => uu,
+                        extraSize: () => eu,
                         forceTriggerMouseMove: () => X,
                         freezeTextureBeforeResize: () => $,
-                        getBrowserTexturePath: () => I,
+                        getBrowserTexturePath: () => N,
                         getDisplayStatus: () => Q,
+                        getFontNames: () => J,
                         getScale: () => z,
                         getSize: () => W,
                         getViewGlobalPosition: () => G,
@@ -106,7 +107,7 @@
                         setEventHandled: () => Y,
                         setInputPaddingsRem: () => P,
                         setSidePaddingsRem: () => H,
-                        whenTutorialReady: () => eu,
+                        whenTutorialReady: () => tu,
                     });
                 const c = s('clientResized'),
                     l = s('self.onScaleUpdated'),
@@ -284,10 +285,10 @@
                 function P(u) {
                     viewEnv.setHitAreaPaddingsRem(u, u, u, u, k);
                 }
-                function I(u, e, t, n = 1) {
+                function N(u, e, t, n = 1) {
                     return viewEnv.getWebBrowserTexturePath(u, e, t, n);
                 }
-                function N(u, e, t) {
+                function I(u, e, t) {
                     return viewEnv.addDataChangedCallback(u, e, t);
                 }
                 function H(u) {
@@ -333,8 +334,12 @@
                 function Q() {
                     return viewEnv.getShowingStatus();
                 }
-                const J = Object.keys(f).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === f[e]), u), {}),
-                    uu = {
+                const J = (() => {
+                        let u = [];
+                        return () => (0 === u.length && (u = Object.keys(viewEnv.getFontsConfig())), u);
+                    })(),
+                    uu = Object.keys(f).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === f[e]), u), {}),
+                    eu = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -342,13 +347,13 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    eu = Promise.all([
+                    tu = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : w.onDomBuilt(u);
                         }),
                         engine.whenReady,
                     ]),
-                    tu = { view: a, client: r, sound: p };
+                    nu = { view: a, client: r, sound: p };
             },
             902: (u, e, t) => {
                 'use strict';
@@ -377,7 +382,7 @@
                 'use strict';
                 t.d(e, { DA: () => r.D, au: () => i, tT: () => r.t });
                 var n = t(469),
-                    r = (t(133), t(790), t(579), t(360));
+                    r = (t(133), t(790), t(779), t(579), t(360));
                 t(56);
                 const i = n.Z;
             },
@@ -493,6 +498,10 @@
                 n.Sw.instance;
             },
             790: (u, e, t) => {
+                'use strict';
+                t(179);
+            },
+            779: (u, e, t) => {
                 'use strict';
                 t(179);
             },
@@ -1362,8 +1371,8 @@
                     return r().createElement(C, null, r().createElement(M, t, e));
                 };
                 var P = t(493),
-                    I = t.n(P);
-                const N = (u, e, t) => (t < u ? u : t > e ? e : t),
+                    N = t.n(P);
+                const I = (u, e, t) => (t < u ? u : t > e ? e : t),
                     H = (u) => {
                         let e,
                             t = null;
@@ -1488,7 +1497,7 @@
                             const n = e(u),
                                 r = n[0],
                                 i = n[1];
-                            return i <= r ? 0 : N(r, i, t);
+                            return i <= r ? 0 : I(r, i, t);
                         };
                         return (c = {}) => {
                             const l = c.settings,
@@ -1706,7 +1715,7 @@
                                 if (!(n && e && t && r)) return;
                                 const i = u.animationScroll.scrollPosition.get(),
                                     a = Math.min(1, n / r),
-                                    s = N(0, 1, i / (r - n)),
+                                    s = I(0, 1, i / (r - n)),
                                     A = (e.offsetHeight - ou(e, a)) * s;
                                 (t.style.transform = `translateY(${0 | A}px)`),
                                     ((u) => {
@@ -2060,9 +2069,9 @@
                     ku = 'PlayerSubscriptionsApp_alertIcon_55',
                     Ou = 'PlayerSubscriptionsApp_errorCaption_14';
                 var Pu = t(344);
-                function Iu() {
+                function Nu() {
                     return (
-                        (Iu = Object.assign
+                        (Nu = Object.assign
                             ? Object.assign.bind()
                             : function (u) {
                                   for (var e = 1; e < arguments.length; e++) {
@@ -2071,10 +2080,10 @@
                                   }
                                   return u;
                               }),
-                        Iu.apply(null, arguments)
+                        Nu.apply(null, arguments)
                     );
                 }
-                const Nu = {
+                const Iu = {
                         back: R.strings.player_subscriptions.back(),
                         backTo: R.strings.player_subscriptions.backTo(),
                         title: R.strings.player_subscriptions.title(),
@@ -2104,11 +2113,11 @@
                                         'div',
                                         { className: fu },
                                         r().createElement(Bu, {
-                                            caption: Nu.back,
+                                            caption: Iu.back,
                                             type: 'back',
                                             side: 'left',
                                             onClick: hu(t),
-                                            goto: Nu.backTo,
+                                            goto: Iu.backTo,
                                         }),
                                     ),
                                     r().createElement(
@@ -2117,8 +2126,8 @@
                                         r().createElement(
                                             'div',
                                             { className: Su },
-                                            r().createElement('h1', { className: yu }, Nu.title),
-                                            r().createElement('div', { className: xu }, Nu.subtitle),
+                                            r().createElement('h1', { className: yu }, Iu.title),
+                                            r().createElement('div', { className: xu }, Iu.subtitle),
                                         ),
                                         r().createElement(
                                             Eu,
@@ -2134,7 +2143,7 @@
                                                         r().createElement(
                                                             'div',
                                                             { className: Ou },
-                                                            e || Nu.noSubscriptions,
+                                                            e || Iu.noSubscriptions,
                                                         ),
                                                     ),
                                                 !e &&
@@ -2147,7 +2156,7 @@
                                                         var s, o;
                                                         return r().createElement(
                                                             gu.ZP,
-                                                            Iu(
+                                                            Nu(
                                                                 { onButtonClick: n, onCardClick: i, key: e, size: a },
                                                                 u.value,
                                                             ),
@@ -2161,7 +2170,7 @@
                         );
                     };
                 engine.whenReady.then(() => {
-                    I().render(
+                    N().render(
                         r().createElement(O, null, r().createElement(Wu, null)),
                         document.getElementById('root'),
                     );
@@ -2552,9 +2561,9 @@
                               )
                             : null;
                     };
-                function I() {
+                function N() {
                     return (
-                        (I = Object.assign
+                        (N = Object.assign
                             ? Object.assign.bind()
                             : function (u) {
                                   for (var e = 1; e < arguments.length; e++) {
@@ -2563,10 +2572,10 @@
                                   }
                                   return u;
                               }),
-                        I.apply(null, arguments)
+                        N.apply(null, arguments)
                     );
                 }
-                const N = ({
+                const I = ({
                         size: u,
                         redirectButtonClickHandler: e,
                         isPendingRedirect: t,
@@ -2585,7 +2594,7 @@
                             { className: b.ctaContainer_row },
                             s().createElement(
                                 p,
-                                I({}, a, { onClick: i === D.Active ? e : n, type: i === D.Active ? 'ghost' : 'main' }),
+                                N({}, a, { onClick: i === D.Active ? e : n, type: i === D.Active ? 'ghost' : 'main' }),
                                 i === D.Active &&
                                     s().createElement('span', { className: r()(b.spinner, t && b.spinner__visible) }),
                                 i === D.Inactive ? W.subscribe : W.manage,
@@ -2752,7 +2761,7 @@
                                         'div',
                                         { className: b.ctaContainer },
                                         h === F.WotSubscription
-                                            ? s().createElement(N, {
+                                            ? s().createElement(I, {
                                                   subscriptionState: g,
                                                   buttonClickHandler: M,
                                                   isPendingRedirect: S,

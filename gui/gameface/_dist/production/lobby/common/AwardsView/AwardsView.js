@@ -210,13 +210,14 @@
                         addPreloadTexture: () => o,
                         children: () => n,
                         displayStatus: () => r.W,
-                        displayStatusIs: () => f,
+                        displayStatusIs: () => S,
                         events: () => a.U,
-                        extraSize: () => S,
+                        extraSize: () => R,
                         forceTriggerMouseMove: () => w,
                         freezeTextureBeforeResize: () => m,
                         getBrowserTexturePath: () => E,
                         getDisplayStatus: () => b,
+                        getFontNames: () => f,
                         getScale: () => D,
                         getSize: () => A,
                         getViewGlobalPosition: () => F,
@@ -230,7 +231,7 @@
                         setEventHandled: () => p,
                         setInputPaddingsRem: () => l,
                         setSidePaddingsRem: () => d,
-                        whenTutorialReady: () => R,
+                        whenTutorialReady: () => T,
                     });
                 var n = t(3722),
                     r = t(6112),
@@ -292,11 +293,15 @@
                 function b() {
                     return viewEnv.getShowingStatus();
                 }
-                const f = Object.keys(r.W).reduce(
+                const f = (() => {
+                        let e = [];
+                        return () => (0 === e.length && (e = Object.keys(viewEnv.getFontsConfig())), e);
+                    })(),
+                    S = Object.keys(r.W).reduce(
                         (e, u) => ((e[u] = () => viewEnv.getShowingStatus() === r.W[u]), e),
                         {},
                     ),
-                    S = {
+                    R = {
                         set: (e, u) => {
                             viewEnv.setExtraSizeRem(e, u);
                         },
@@ -304,7 +309,7 @@
                             viewEnv.getExtraSizeRem(e, u);
                         },
                     },
-                    R = Promise.all([
+                    T = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : a.U.onDomBuilt(e);
                         }),
@@ -1144,7 +1149,7 @@
                     base__highlightActive: 'CButton_base__highlightActive_b2',
                     content: 'CButton_content_cc',
                 };
-                let H, G;
+                let G, H;
                 !(function (e) {
                     (e.main = 'main'),
                         (e.primary = 'primary'),
@@ -1152,10 +1157,10 @@
                         (e.primaryRed = 'primaryRed'),
                         (e.secondary = 'secondary'),
                         (e.ghost = 'ghost');
-                })(H || (H = {})),
+                })(G || (G = {})),
                     (function (e) {
                         (e.extraSmall = 'extraSmall'), (e.small = 'small'), (e.medium = 'medium'), (e.large = 'large');
-                    })(G || (G = {}));
+                    })(H || (H = {}));
                 const W = ({
                     children: e,
                     size: u,
@@ -1230,7 +1235,7 @@
                                     i || (F && F(e));
                                 },
                             },
-                            a !== H.ghost &&
+                            a !== G.ghost &&
                                 r().createElement(
                                     r().Fragment,
                                     null,
@@ -1252,7 +1257,7 @@
                         )
                     );
                 };
-                W.defaultProps = { type: H.primary, isFocused: !1, soundHover: 'highlight', soundClick: 'play' };
+                W.defaultProps = { type: G.primary, isFocused: !1, soundHover: 'highlight', soundClick: 'play' };
                 const $ = W,
                     q = {
                         base: 'TextButton_base_b6',
@@ -1719,6 +1724,7 @@
                         (e.TankmenXpFactor = 'tankmenXPFactor'),
                         (e.FreeXpFactor = 'freeXPFactor'),
                         (e.BattleToken = 'battleToken'),
+                        (e.Entitlements = 'entitlements'),
                         (e.PremiumUniversal = 'premium_universal'),
                         (e.Gold = 'gold'),
                         (e.Credits = 'credits'),
@@ -1736,6 +1742,8 @@
                         (e.BattleBadge = 'dossier_badge'),
                         (e.NewYearInvoice = 'newYearInvoice'),
                         (e.NewYearSlot = 'newYearSlot'),
+                        (e.NewYearGuestD = 'ny_dog'),
+                        (e.EquipCoin = 'equipCoin'),
                         (e.BonusX5 = 'battle_bonus_x5'),
                         (e.CrewBonusX3 = 'crew_bonus_x3'),
                         (e.Vehicles = 'vehicles'),
@@ -1744,7 +1752,6 @@
                         (e.DeluxeGift = 'deluxe_gift'),
                         (e.BattleBoosterGift = 'battleBooster_gift'),
                         (e.OptionalDevice = 'optionalDevice'),
-                        (e.EquipCoin = 'equipCoin'),
                         (e.LootBox = 'lootBox'),
                         (e.BrCoin = 'brcoin');
                 })(Ee || (Ee = {})),
@@ -1878,6 +1885,7 @@
                         Ee.TankmenXpFactor,
                         Ee.FreeXpFactor,
                         Ee.BattleToken,
+                        Ee.Entitlements,
                         Ee.PremiumUniversal,
                         Ee.NaturalCover,
                         Ee.BpCoin,
@@ -1949,9 +1957,6 @@
                             case 'tokens':
                             case 'lootBox':
                             case 'battleToken':
-                                return 'big' === u
-                                    ? e.iconBig.replace('..', 'img://gui')
-                                    : e.iconSmall.replace('..', 'img://gui');
                             case 'customizations':
                             case 'styleProgress':
                             case 'crewSkins':
@@ -1960,6 +1965,10 @@
                             case 'tmanToken':
                             case 'battlePassSelectToken':
                                 return `R.images.gui.maps.icons.quests.bonuses.${u}.${a}`;
+                            case 'entitlements':
+                                return 'big' === u
+                                    ? e.iconBig.replace('..', 'img://gui')
+                                    : e.iconSmall.replace('..', 'img://gui');
                             case 'crewBooks':
                                 return `R.images.gui.maps.icons.crewBooks.books.${u}.${a}`;
                             case 'dogTagComponents':
@@ -1993,10 +2002,14 @@
                                 return `R.images.gui.maps.icons.quests.bonuses.${u}.freeXP`;
                             case 'premiumTank':
                                 return `R.images.gui.maps.icons.quests.bonuses.${u}.vehicles`;
+                            case 'premiumTank_rent':
+                                return `R.images.gui.maps.icons.quests.bonuses.${u}.vehicles_rent`;
                             case 'styleProgressToken':
                                 return `R.images.gui.maps.icons.quests.bonuses.${u}.style_3d`;
                             case 'collectionItem':
                                 return `R.images.gui.maps.icons.collectionItems.${o}.${a}`;
+                            case 'newYearSlot':
+                                return `R.images.gui.maps.icons.newYear.rewards.${u}.slot`;
                             default:
                                 return `R.images.gui.maps.icons.quests.bonuses.${u}.${t}`;
                         }
@@ -2284,9 +2297,9 @@
                         );
                         var c;
                     };
-                function He() {
+                function Ge() {
                     return (
-                        (He = Object.assign
+                        (Ge = Object.assign
                             ? Object.assign.bind()
                             : function (e) {
                                   for (var u = 1; u < arguments.length; u++) {
@@ -2295,15 +2308,15 @@
                                   }
                                   return e;
                               }),
-                        He.apply(null, arguments)
+                        Ge.apply(null, arguments)
                     );
                 }
-                const Ge = ({ children: e, tooltipArgs: u, className: t }) => {
+                const He = ({ children: e, tooltipArgs: u, className: t }) => {
                         if (!u) return e;
                         const n = r().createElement('div', { className: t }, e);
                         if (u.header || u.body) return r().createElement(Ue, u, n);
                         const a = u.contentId;
-                        return a ? r().createElement(ye, He({}, u, { contentId: a }), n) : r().createElement(Me, u, n);
+                        return a ? r().createElement(ye, Ge({}, u, { contentId: a }), n) : r().createElement(Me, u, n);
                     },
                     We = {
                         base: 'Reward_base_ea',
@@ -2411,7 +2424,7 @@
                             'div',
                             { className: C()(We.base, We[`base__${n}`], E), style: l },
                             r().createElement(
-                                Ge,
+                                He,
                                 { tooltipArgs: d, className: We.tooltipWrapper },
                                 r().createElement(
                                     r().Fragment,
@@ -2457,7 +2470,7 @@
                             ),
                             t &&
                                 r().createElement(
-                                    Ge,
+                                    He,
                                     { tooltipArgs: A },
                                     r().createElement('div', {
                                         className: C()(We.timer, null == c ? void 0 : c.periodicIcon),
@@ -2704,7 +2717,7 @@
                                 r().createElement(
                                     'div',
                                     { className: fu },
-                                    r().createElement($, { size: d ? G.medium : G.small, onClick: c }, m),
+                                    r().createElement($, { size: d ? H.medium : H.small, onClick: c }, m),
                                 ),
                             ),
                         );

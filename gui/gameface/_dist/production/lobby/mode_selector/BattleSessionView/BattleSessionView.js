@@ -183,13 +183,14 @@
                         addPreloadTexture: () => s,
                         children: () => n,
                         displayStatus: () => a.W,
-                        displayStatusIs: () => f,
+                        displayStatusIs: () => x,
                         events: () => i.U,
-                        extraSize: () => x,
+                        extraSize: () => y,
                         forceTriggerMouseMove: () => p,
                         freezeTextureBeforeResize: () => D,
                         getBrowserTexturePath: () => l,
                         getDisplayStatus: () => b,
+                        getFontNames: () => f,
                         getScale: () => d,
                         getSize: () => _,
                         getViewGlobalPosition: () => B,
@@ -265,11 +266,15 @@
                 function b() {
                     return viewEnv.getShowingStatus();
                 }
-                const f = Object.keys(a.W).reduce(
+                const f = (() => {
+                        let u = [];
+                        return () => (0 === u.length && (u = Object.keys(viewEnv.getFontsConfig())), u);
+                    })(),
+                    x = Object.keys(a.W).reduce(
                         (u, e) => ((u[e] = () => viewEnv.getShowingStatus() === a.W[e]), u),
                         {},
                     ),
-                    x = {
+                    y = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -739,7 +744,7 @@
                         getFormattedDateTime: (u, e, t = !0) => regionalDateTime.getFormattedDateTime(u, e, t),
                     };
             },
-            9127: (u, e, t) => {
+            4442: (u, e, t) => {
                 var n = t(6179),
                     a = t.n(n);
                 const i = (u, e, t) =>
@@ -1075,8 +1080,8 @@
                     );
                 };
                 x.defaultProps = { type: b.primary, isFocused: !1, soundHover: 'highlight', soundClick: 'play' };
-                const T = x,
-                    y = {
+                const y = x,
+                    T = {
                         base: 'TextButton_base_b6',
                         base__right: 'TextButton_base__right_39',
                         icon: 'TextButton_icon_17',
@@ -1170,11 +1175,11 @@
                                         }
                                     return t;
                                 })(u, S)),
-                            _ = w()(y.base, y[`base__${r}`], y[`base__${i}`], null == o ? void 0 : o.base),
-                            c = w()(y.icon, y[`icon__${r}`], y[`icon__${i}`], null == o ? void 0 : o.icon),
-                            B = w()(y.glow, null == o ? void 0 : o.glow),
-                            D = w()(y.caption, y[`caption__${r}`], null == o ? void 0 : o.caption),
-                            d = w()(y.goto, null == o ? void 0 : o.goto);
+                            _ = w()(T.base, T[`base__${r}`], T[`base__${i}`], null == o ? void 0 : o.base),
+                            c = w()(T.icon, T[`icon__${r}`], T[`icon__${i}`], null == o ? void 0 : o.icon),
+                            B = w()(T.glow, null == o ? void 0 : o.glow),
+                            D = w()(T.caption, T[`caption__${r}`], null == o ? void 0 : o.caption),
+                            d = w()(T.goto, null == o ? void 0 : o.goto);
                         return a().createElement(
                             'div',
                             O(
@@ -1190,7 +1195,7 @@
                                 },
                                 F,
                             ),
-                            'info' !== r && a().createElement('div', { className: y.shine }),
+                            'info' !== r && a().createElement('div', { className: T.shine }),
                             a().createElement('div', { className: c }, a().createElement('div', { className: B })),
                             a().createElement('div', { className: D }, e),
                             n && a().createElement('div', { className: d }, n),
@@ -1268,11 +1273,11 @@
                         return '';
                     },
                     G = M.Sw.instance;
-                let z;
+                let j;
                 !(function (u) {
                     (u.None = 'None'), (u.Shallow = 'Shallow'), (u.Deep = 'Deep');
-                })(z || (z = {}));
-                const j = (u = 'model', e = z.Deep) => {
+                })(j || (j = {}));
+                const z = (u = 'model', e = j.Deep) => {
                     const t = (0, n.useState)(0),
                         a = (t[0], t[1]),
                         i = (0, n.useMemo)(() => N(), []),
@@ -1296,24 +1301,24 @@
                         d(() => {
                             if (
                                 ('boolean' == typeof e &&
-                                    ((e = e ? z.Deep : z.None),
+                                    ((e = e ? j.Deep : j.None),
                                     console.warn(
                                         'Boolean key for useModel "tracking" param is deprecated. Use ModelTracking enum values instead!',
                                     )),
-                                e !== z.None)
+                                e !== j.None)
                             ) {
                                 const t = (u) => {
                                         ((u) => u && 'CoherentArrayProxy' === u.__proto__.constructor.name)(u) &&
-                                        e === z.Deep
+                                        e === j.Deep
                                             ? (u === l && a((u) => u + 1), A(u))
                                             : A(Object.assign([], u));
                                     },
                                     n = U(u);
-                                F.current = G.addCallback(n, t, o, e === z.Deep);
+                                F.current = G.addCallback(n, t, o, e === j.Deep);
                             }
                         }),
                         (0, n.useEffect)(() => {
-                            if (e !== z.None)
+                            if (e !== j.None)
                                 return () => {
                                     G.removeCallback(F.current, o);
                                 };
@@ -1421,7 +1426,7 @@
                     J = R.strings.mode_selector.window.battleSession,
                     uu = R.images.gui.maps.icons.battleTypes,
                     eu = () => {
-                        const u = j(),
+                        const u = z(),
                             e = u.onCloseClicked,
                             t = u.onClanClicked,
                             i = u.onGlobalMapClicked,
@@ -1470,7 +1475,7 @@
                                         description: J.tournaments.description(),
                                     },
                                     a().createElement(
-                                        T,
+                                        y,
                                         { size: f.medium, mixClass: Q.button, onClick: c },
                                         a().createElement(
                                             'div',
@@ -1491,7 +1496,7 @@
                                         'div',
                                         { className: Q.buttons },
                                         a().createElement(
-                                            T,
+                                            y,
                                             { size: f.medium, mixClass: Q.button, onClick: F },
                                             o
                                                 ? a().createElement(
@@ -1510,7 +1515,7 @@
                                                   ),
                                         ),
                                         a().createElement(
-                                            T,
+                                            y,
                                             { size: f.medium, mixClass: Q.button, onClick: _ },
                                             a().createElement(
                                                 'div',
@@ -1608,6 +1613,6 @@
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             t.forEach(e.bind(null, 0)), (t.push = e.bind(null, t.push.bind(t)));
         })();
-    var __webpack_exports__ = __webpack_require__.O(void 0, [705], () => __webpack_require__(9127));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [705], () => __webpack_require__(4442));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

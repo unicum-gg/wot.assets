@@ -2,7 +2,7 @@
     'use strict';
     var __webpack_modules__ = {
             768: (e, u, t) => {
-                t.d(u, { O: () => te });
+                t.d(u, { O: () => ne });
                 var n = {};
                 t.r(n),
                     t.d(n, { mouse: () => _, off: () => d, on: () => E, onResize: () => l, onScaleUpdated: () => c });
@@ -36,13 +36,14 @@
                         addPreloadTexture: () => O,
                         children: () => a,
                         displayStatus: () => h,
-                        displayStatusIs: () => J,
+                        displayStatusIs: () => ee,
                         events: () => w,
-                        extraSize: () => ee,
+                        extraSize: () => ue,
                         forceTriggerMouseMove: () => Z,
                         freezeTextureBeforeResize: () => V,
                         getBrowserTexturePath: () => I,
                         getDisplayStatus: () => Q,
+                        getFontNames: () => J,
                         getScale: () => j,
                         getSize: () => H,
                         getViewGlobalPosition: () => W,
@@ -56,7 +57,7 @@
                         setEventHandled: () => Y,
                         setInputPaddingsRem: () => R,
                         setSidePaddingsRem: () => z,
-                        whenTutorialReady: () => ue,
+                        whenTutorialReady: () => te,
                     });
                 const l = s('clientResized'),
                     c = s('self.onScaleUpdated'),
@@ -283,8 +284,12 @@
                 function Q() {
                     return viewEnv.getShowingStatus();
                 }
-                const J = Object.keys(h).reduce((e, u) => ((e[u] = () => viewEnv.getShowingStatus() === h[u]), e), {}),
-                    ee = {
+                const J = (() => {
+                        let e = [];
+                        return () => (0 === e.length && (e = Object.keys(viewEnv.getFontsConfig())), e);
+                    })(),
+                    ee = Object.keys(h).reduce((e, u) => ((e[u] = () => viewEnv.getShowingStatus() === h[u]), e), {}),
+                    ue = {
                         set: (e, u) => {
                             viewEnv.setExtraSizeRem(e, u);
                         },
@@ -292,13 +297,13 @@
                             viewEnv.getExtraSizeRem(e, u);
                         },
                     },
-                    ue = Promise.all([
+                    te = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : w.onDomBuilt(e);
                         }),
                         engine.whenReady,
                     ]),
-                    te = { view: o, client: r, sound: f };
+                    ne = { view: o, client: r, sound: f };
             },
             521: (e, u, t) => {
                 let n, r;
@@ -709,7 +714,7 @@
                         getFormattedDateTime: (e, u, t = !0) => regionalDateTime.getFormattedDateTime(e, u, t),
                     };
             },
-            605: (e, u, t) => {
+            597: (e, u, t) => {
                 var n = {};
                 t.r(n),
                     t.d(n, {
@@ -4697,6 +4702,6 @@
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             t.forEach(u.bind(null, 0)), (t.push = u.bind(null, t.push.bind(t)));
         })();
-    var __webpack_exports__ = __webpack_require__.O(void 0, [720], () => __webpack_require__(605));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [720], () => __webpack_require__(597));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

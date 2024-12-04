@@ -183,13 +183,14 @@
                         addPreloadTexture: () => c,
                         children: () => o,
                         displayStatus: () => r.W,
-                        displayStatusIs: () => k,
+                        displayStatusIs: () => T,
                         events: () => a.U,
-                        extraSize: () => T,
+                        extraSize: () => L,
                         forceTriggerMouseMove: () => M,
                         freezeTextureBeforeResize: () => g,
                         getBrowserTexturePath: () => u,
                         getDisplayStatus: () => C,
+                        getFontNames: () => k,
                         getScale: () => h,
                         getSize: () => v,
                         getViewGlobalPosition: () => f,
@@ -203,7 +204,7 @@
                         setEventHandled: () => y,
                         setInputPaddingsRem: () => l,
                         setSidePaddingsRem: () => _,
-                        whenTutorialReady: () => L,
+                        whenTutorialReady: () => P,
                     });
                 var o = n(3722),
                     r = n(6112),
@@ -265,11 +266,15 @@
                 function C() {
                     return viewEnv.getShowingStatus();
                 }
-                const k = Object.keys(r.W).reduce(
+                const k = (() => {
+                        let e = [];
+                        return () => (0 === e.length && (e = Object.keys(viewEnv.getFontsConfig())), e);
+                    })(),
+                    T = Object.keys(r.W).reduce(
                         (e, t) => ((e[t] = () => viewEnv.getShowingStatus() === r.W[t]), e),
                         {},
                     ),
-                    T = {
+                    L = {
                         set: (e, t) => {
                             viewEnv.setExtraSizeRem(e, t);
                         },
@@ -277,7 +282,7 @@
                             viewEnv.getExtraSizeRem(e, t);
                         },
                     },
-                    L = Promise.all([
+                    P = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : a.U.onDomBuilt(e);
                         }),
@@ -1035,9 +1040,9 @@
                     S = (e) => {
                         (0, o.useEffect)(() => e, []);
                     };
-                var x = n(3403),
-                    N = n(6483),
-                    B = n.n(N);
+                var N = n(3403),
+                    x = n(6483),
+                    B = n.n(x);
                 const A = 0;
                 const F = 'BrowserView_base_6b',
                     D = 'BrowserView_texture_17',
@@ -1538,7 +1543,7 @@
                         Oe.apply(null, arguments)
                     );
                 }
-                const Me = (0, x.Pi)(function (e) {
+                const Me = (0, N.Pi)(function (e) {
                         const t = e.defaultWaitingText,
                             n = e.className,
                             a = e.waitingClassName,
@@ -1570,7 +1575,7 @@
                             (0, o.useEffect)(() => {
                                 b(M) && y.focus();
                             }, [M, y]);
-                        const x = (0, o.useMemo)(() => {
+                        const N = (0, o.useMemo)(() => {
                             const e = {
                                 onMouseEnter: d,
                                 onMouseLeave: _,
@@ -1591,7 +1596,7 @@
                                 : e;
                         }, [L, y, f, d, _, v, g, m]);
                         if (p(M)) return null;
-                        const N = ve(e)
+                        const x = ve(e)
                                 ? (function (e, t) {
                                       const n = {};
                                       return (
@@ -1606,7 +1611,7 @@
                         return e.isFullSize
                             ? r().createElement(
                                   ye,
-                                  Oe({}, x, {
+                                  Oe({}, N, {
                                       id: M,
                                       className: n,
                                       waitingClassName: a,
@@ -1620,7 +1625,7 @@
                               )
                             : r().createElement(
                                   ge,
-                                  Oe({}, x, N, {
+                                  Oe({}, N, x, {
                                       id: M,
                                       className: n,
                                       waitingClassName: a,
@@ -1677,7 +1682,7 @@
                         base__left: 'TextButton_base__left_ff',
                         shine: 'TextButton_shine_e2',
                     },
-                    xe = [
+                    Ne = [
                         'caption',
                         'onClick',
                         'goto',
@@ -1691,9 +1696,9 @@
                         'soundClick',
                         'soundHover',
                     ];
-                function Ne() {
+                function xe() {
                     return (
-                        (Ne = Object.assign
+                        (xe = Object.assign
                             ? Object.assign.bind()
                             : function (e) {
                                   for (var t = 1; t < arguments.length; t++) {
@@ -1702,7 +1707,7 @@
                                   }
                                   return e;
                               }),
-                        Ne.apply(null, arguments)
+                        xe.apply(null, arguments)
                     );
                 }
                 class Re extends r().PureComponent {
@@ -1752,7 +1757,7 @@
                                             n[o] = e[o];
                                         }
                                     return n;
-                                })(e, xe)),
+                                })(e, Ne)),
                             v = B()(Se.base, Se[`base__${i}`], Se[`base__${a}`], null == s ? void 0 : s.base),
                             m = B()(Se.icon, Se[`icon__${i}`], Se[`icon__${a}`], null == s ? void 0 : s.icon),
                             f = B()(Se.glow, null == s ? void 0 : s.glow),
@@ -1760,7 +1765,7 @@
                             h = B()(Se.goto, null == s ? void 0 : s.goto);
                         return r().createElement(
                             'div',
-                            Ne(
+                            xe(
                                 {
                                     className: v,
                                     onMouseEnter: this._onMouseEnter(c),
@@ -1783,7 +1788,7 @@
                 Re.defaultProps = { side: 'left', type: 'back', soundHover: 'highlight', soundClick: 'play' };
                 const Be = 'Closable_base_e2',
                     Ae = 'Closable_button_01',
-                    Fe = (0, x.Pi)(function ({ className: e, classNameButton: t, children: n }) {
+                    Fe = (0, N.Pi)(function ({ className: e, classNameButton: t, children: n }) {
                         const o = Pe(),
                             a = o.controls,
                             i = o.model;

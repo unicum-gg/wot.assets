@@ -1,0 +1,46 @@
+.TooltipDecorator_base_c9 {
+    display: flex;
+    position: absolute;
+}
+
+.TooltipDecorator_base__theme-default_6d .TooltipDecorator_decorator_3d {
+    padding: 4rem 6rem 8rem;
+    border-image-source: url('R.atlases.components.tooltip_background');
+    border-image-slice: 24 fill;
+    border-image-width: 24rem;
+    position: relative;
+}
+
+.App_base_27 {
+    width: 305rem;
+    padding: 20rem;
+    background: url('R.images.gui.maps.icons.newYear.loot_box.tooltips.glow_red') no-repeat center center / cover;
+}
+
+.App_header_c8 {
+    display: flex;
+    align-items: center;
+}
+
+.App_icon_fb {
+    width: 24rem;
+    height: 24rem;
+    margin-right: 10rem;
+    background: url('R.images.gui.maps.icons.newYear.loot_box.alert_box') no-repeat center / contain;
+}
+
+.App_body_ec {
+    color: #8c8c7e;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    margin-top: 10rem;
+}
+
+.App_headerText_29 {
+    color: #e9e2bf;
+    font-size: 15rem;
+    font-weight: 700;
+    line-height: 1.15;
+    flex: 1 1 0;
+}

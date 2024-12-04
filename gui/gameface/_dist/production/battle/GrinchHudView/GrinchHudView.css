@@ -1,0 +1,2464 @@
+.GrinchHudViewApp_base_24 {
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    font-size: 12rem;
+    position: relative;
+}
+
+.GrinchHudViewApp_allies_f2 {
+    position: absolute;
+    top: 63rem;
+    left: 0;
+}
+
+.GrinchHudViewApp_mt_4_e0 {
+    margin-top: 4rem;
+}
+
+.GrinchHudViewApp_enemies_a8 {
+    position: absolute;
+    top: 63rem;
+    right: 0;
+}
+
+.GrinchHudViewApp_enemies_decoration_3f {
+    width: 97rem;
+    height: 50rem;
+    margin-left: 77rem;
+    margin-top: -12rem;
+    background: url('R.images.grinch.gui.maps.icons.playerList.small.decoration.bottom_small') center center / contain
+        no-repeat;
+}
+
+.mediaMedium .GrinchHudViewApp_enemies_decoration_3f {
+    width: 127rem;
+    height: 70rem;
+    margin-left: 41rem;
+    margin-top: -18rem;
+    background-image: url('R.images.grinch.gui.maps.icons.playerList.big.decoration.bottom_small');
+}
+
+.GrinchHudViewApp_score_8e {
+    position: absolute;
+    top: 0rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.GrinchHudViewApp_gifts_31 {
+    position: absolute;
+    top: 20%;
+    right: 110%;
+}
+
+.GrinchHudViewApp_announcement_63 {
+    max-width: 50vw;
+    position: absolute;
+    top: 115rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.mediaMedium .GrinchHudViewApp_announcement_63 {
+    max-width: 70vw;
+    top: 145rem;
+}
+
+.GrinchHudViewApp_abilityPanel_37 {
+    position: absolute;
+    bottom: 20rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.GrinchHudViewApp_damageIndicator_d2 {
+    position: absolute;
+    top: 43%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.GrinchHudViewApp_baseMarkers_ee {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.GrinchHudViewApp_tankPanel_c3 {
+    position: absolute;
+    bottom: 15rem;
+    left: 10%;
+    transform: translateX(-50%);
+}
+
+.mediaMedium .GrinchHudViewApp_tankPanel_c3 {
+    bottom: 20rem;
+}
+
+/* stylelint-disable scss/dollar-variable-pattern */
+
+.TeamScores_mt_4_a5 {
+    margin-top: 4rem;
+}
+
+.TeamScores_base_e3 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 444rem;
+    height: 114rem;
+    background: url('R.images.grinch.gui.maps.icons.score.bg') right top / contain no-repeat;
+}
+
+.TeamScores_scoreLimit_fc {
+    margin-left: 10rem;
+    margin-top: 38rem;
+    padding-left: 18rem;
+    padding-right: 38rem;
+    padding-bottom: 2rem;
+    background: url('R.images.grinch.gui.maps.icons.score.giftIcon') left bottom / 16rem 16rem no-repeat;
+    color: #ffc490;
+    font-size: 16rem;
+    line-height: 16rem;
+    text-shadow: -1px 1px 0px rgba(0, 0, 0, 0.5);
+}
+
+.TeamScores_teamScores_00 {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    flex: 1 1 auto;
+    padding-top: 8rem;
+}
+
+.TeamScores_teamScore_66 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    height: 22rem;
+    margin-bottom: -2rem;
+}
+
+.TeamScores_teamScore__current_ea {
+    height: 36rem;
+}
+
+.TeamScores_teamScore_numberDelta_d7 {
+    width: 52rem;
+}
+
+.TeamScores_teamScore_numberDelta_delta_38 {
+    width: 40rem;
+    height: 40rem;
+    padding-top: 4rem;
+    color: #f9efc7;
+    font-size: 20rem;
+    text-align: center;
+    text-shadow: -1px 1px 0px rgba(0, 0, 0, 0.5);
+    opacity: 1;
+    position: relative;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.TeamScores_teamScore_numberDelta_delta__hidden_6d {
+    opacity: 0;
+}
+
+.TeamScores_teamScore__even_43 .TeamScores_teamScore_numberDelta_d7 {
+    position: relative;
+    left: -8rem;
+    z-index: -1;
+}
+
+.TeamScores_teamScore__yellow_9e .TeamScores_teamScore_numberDelta_delta_38 {
+    background: url('R.images.grinch.gui.maps.icons.score.deltaBg.yellow') 0 0 / contain no-repeat;
+}
+
+.TeamScores_teamScore__blue_0f .TeamScores_teamScore_numberDelta_delta_38 {
+    background: url('R.images.grinch.gui.maps.icons.score.deltaBg.cyan') 0 0 / contain no-repeat;
+}
+
+.TeamScores_teamScore__magenta_66 .TeamScores_teamScore_numberDelta_delta_38 {
+    background: url('R.images.grinch.gui.maps.icons.score.deltaBg.magenta') 0 0 / contain no-repeat;
+}
+
+/* stylelint-disable-next-line no-duplicate-selectors */
+
+/* This increased specificity is important here to override the previous color specific rules*/
+
+.TeamScores_teamScore_numberDelta__negative_16 {
+    background: url('R.images.grinch.gui.maps.icons.score.deltaBg.negative') 0 0 / contain no-repeat;
+}
+
+.TeamScores_teamScore_number_b3 {
+    width: 52rem;
+    height: 22rem;
+    margin-right: 5rem;
+    padding: 4rem 0rem 6rem 14rem;
+    background: url('R.images.grinch.gui.maps.icons.score.tab.cyan') left center / contain no-repeat;
+    color: #ffc490;
+    font-size: 16rem;
+    line-height: 16rem;
+    text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5);
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.TeamScores_teamScore_number_icon_48 {
+    width: 16rem;
+    height: 16rem;
+    margin-top: 4rem;
+    margin-right: 2rem;
+    background: url('R.images.grinch.gui.maps.icons.score.giftIcon') center center / contain no-repeat;
+}
+
+.TeamScores_teamScore_number_shadow_61 {
+    width: 48rem;
+    height: 8rem;
+    background: url('R.images.grinch.gui.maps.icons.score.tabShadow') center center / contain no-repeat;
+    position: absolute;
+    bottom: -8rem;
+    left: 0;
+}
+
+.TeamScores_teamScore__yellow_9e .TeamScores_teamScore_number_b3 {
+    background-image: url('R.images.grinch.gui.maps.icons.score.tab.yellow');
+}
+
+.TeamScores_teamScore__blue_0f .TeamScores_teamScore_number_b3 {
+    background-image: url('R.images.grinch.gui.maps.icons.score.tab.cyan');
+}
+
+.TeamScores_teamScore__magenta_66 .TeamScores_teamScore_number_b3 {
+    background-image: url('R.images.grinch.gui.maps.icons.score.tab.magenta');
+}
+
+.TeamScores_teamScore_railBorder_66 {
+    align-self: stretch;
+    height: 14rem;
+    margin-top: 4rem;
+    border-left: 1rem solid #38375e;
+    border-bottom: 1rem solid #38375e;
+    background-color: #38375e;
+    position: relative;
+}
+
+.TeamScores_teamScore_rail_3d {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    height: 100%;
+    background: url('R.images.grinch.gui.maps.icons.score.point.empty') left top / 5rem auto repeat-x;
+    filter: drop-shadow(0 2rem 1rem rgba(0, 0, 0, 0.35));
+}
+
+.TeamScores_teamScore_currentBar_85 {
+    height: 100%;
+    background: url('R.images.grinch.gui.maps.icons.score.point.team.cyan') left top / 5rem auto repeat-x;
+}
+
+.TeamScores_teamScore__yellow_9e .TeamScores_teamScore_currentBar_85 {
+    background-image: url('R.images.grinch.gui.maps.icons.score.point.team.yellow');
+}
+
+.TeamScores_teamScore__blue_0f .TeamScores_teamScore_currentBar_85 {
+    background-image: url('R.images.grinch.gui.maps.icons.score.point.team.cyan');
+}
+
+.TeamScores_teamScore__magenta_66 .TeamScores_teamScore_currentBar_85 {
+    background-image: url('R.images.grinch.gui.maps.icons.score.point.team.magenta');
+}
+
+.TeamScores_teamScore_deltaBar_0c {
+    height: 100%;
+    margin-left: 1rem;
+    background: url('R.images.grinch.gui.maps.icons.score.point.delivered') right top / 5rem auto repeat-x;
+    position: absolute;
+    top: 0;
+}
+
+.TeamScores_teamScore_deltaBar__positive_71 {
+    background-position: left top;
+}
+
+.TeamScores_teamScore_deltaBar__negative_51 {
+    background-position: right top;
+}
+
+.TeamScores_teamScore_deltaBar__evenChange_91 {
+    animation: TeamScores_deltaChange1_d9 1s ease-in both;
+}
+
+.TeamScores_teamScore_deltaBar__oddChange_f9 {
+    animation: TeamScores_deltaChange2_c5 1s ease-in both;
+}
+
+.TeamScores_teamScore__yellow_9e .TeamScores_teamScore_deltaBar__negative_51 {
+    background-image: url('R.images.grinch.gui.maps.icons.score.point.stolenTeam.yellow');
+}
+
+.TeamScores_teamScore__blue_0f .TeamScores_teamScore_deltaBar__negative_51 {
+    background-image: url('R.images.grinch.gui.maps.icons.score.point.stolenTeam.cyan');
+}
+
+.TeamScores_teamScore__magenta_66 .TeamScores_teamScore_deltaBar__negative_51 {
+    background-image: url('R.images.grinch.gui.maps.icons.score.point.stolenTeam.magenta');
+}
+
+.TeamScores_teamScore__current_ea .TeamScores_teamScore_rail_3d {
+    height: 26rem;
+}
+
+@keyframes TeamScores_delta_85 {
+    0% {
+        margin-right: -49rem;
+        opacity: 0;
+    }
+
+    10% {
+        margin-right: 0rem;
+        opacity: 1;
+    }
+
+    90% {
+        margin-right: 0rem;
+        opacity: 1;
+    }
+
+    100% {
+        margin-right: -49rem;
+        opacity: 0;
+    }
+}
+
+@keyframes TeamScores_deltaChange1_d9 {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes TeamScores_deltaChange2_c5 {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.TeamScores_score_b5 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+/* stylelint-disable scss/dollar-variable-pattern */
+
+.PlayerList_mt_4_79 {
+    margin-top: 4rem;
+}
+
+.PlayerList_base_cf {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+}
+
+.PlayerList_header_9d {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    align-self: flex-start;
+    width: 160rem;
+    height: 24rem;
+    position: relative;
+}
+
+.mediaMedium .PlayerList_header_9d {
+    width: 208rem;
+    height: 33rem;
+}
+
+.PlayerList_header_backgroundShadow_24 {
+    width: 180rem;
+    height: 50rem;
+    background: url('R.images.grinch.gui.maps.icons.playerList.big.decoration.shadow_block_top') center center / cover
+        no-repeat;
+    position: absolute;
+    top: 0;
+    left: 10rem;
+    z-index: -5;
+}
+
+.mediaMedium .PlayerList_header_backgroundShadow_24 {
+    width: 250rem;
+    height: 70rem;
+    left: 0;
+}
+
+.PlayerList_header_background_92 {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.PlayerList_base__yellow_76 .PlayerList_header_background_92 {
+    background: url('R.images.grinch.gui.maps.icons.teams.header_yellow_small') right top / cover no-repeat;
+}
+
+.mediaMedium .PlayerList_base__yellow_76 .PlayerList_header_background_92 {
+    background-image: url('R.images.grinch.gui.maps.icons.teams.header_yellow');
+}
+
+.PlayerList_base__magenta_02 .PlayerList_header_background_92 {
+    background: url('R.images.grinch.gui.maps.icons.teams.header_magenta_small') right top / cover no-repeat;
+}
+
+.mediaMedium .PlayerList_base__magenta_02 .PlayerList_header_background_92 {
+    background-image: url('R.images.grinch.gui.maps.icons.teams.header_magenta');
+}
+
+.PlayerList_base__blue_02 .PlayerList_header_background_92 {
+    background: url('R.images.grinch.gui.maps.icons.teams.header_cyan_small') right top / cover no-repeat;
+}
+
+.mediaMedium .PlayerList_base__blue_02 .PlayerList_header_background_92 {
+    background-image: url('R.images.grinch.gui.maps.icons.teams.header_cyan');
+}
+
+.PlayerList_header_text_50 {
+    color: #38375e;
+    font-size: 15rem;
+    font-weight: 700;
+    line-height: 1.15;
+    min-width: 120rem;
+    margin-left: 5rem;
+    filter: drop-shadow(0rem 1rem 0rem #f9efc7);
+}
+
+.mediaMedium .PlayerList_header_text_50 {
+    color: #38375e;
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
+    min-width: 150rem;
+    margin-left: 20rem;
+}
+
+.PlayerList_header_shadow_96 {
+    width: 119rem;
+    height: 7rem;
+    background: url('R.images.grinch.gui.maps.icons.playerList.small.decoration.slot_shadow_top') center center / cover
+        no-repeat;
+    position: absolute;
+    top: 24rem;
+    left: 14rem;
+    z-index: 1;
+}
+
+.mediaMedium .PlayerList_header_shadow_96 {
+    width: 167rem;
+    height: 10rem;
+    background-image: url('R.images.grinch.gui.maps.icons.playerList.big.decoration.slot_shadow_top');
+    top: 33rem;
+    left: 0;
+}
+
+.PlayerList_header_decoration_ac {
+    width: 27rem;
+    height: 5rem;
+    position: absolute;
+    top: 24rem;
+    left: 130rem;
+    z-index: -4;
+}
+
+.mediaMedium .PlayerList_header_decoration_ac {
+    width: 40rem;
+    height: 7rem;
+    top: 33rem;
+    left: 165rem;
+}
+
+.PlayerList_base__yellow_76 .PlayerList_header_decoration_ac {
+    background: url('R.images.grinch.gui.maps.icons.playerList.big.decoration.yellow_add') center center / cover
+        no-repeat;
+}
+
+.PlayerList_base__magenta_02 .PlayerList_header_decoration_ac {
+    background: url('R.images.grinch.gui.maps.icons.playerList.big.decoration.magenta_add') center center / cover
+        no-repeat;
+}
+
+.PlayerList_base__blue_02 .PlayerList_header_decoration_ac {
+    background: url('R.images.grinch.gui.maps.icons.playerList.big.decoration.cyan_add') center center / cover no-repeat;
+}
+
+.PlayerList_enemies_8b .PlayerList_header_9d,
+.PlayerList_enemies_8b .PlayerList_header_background_92 {
+    width: 121rem;
+    height: 24rem;
+}
+
+.mediaMedium .PlayerList_enemies_8b .PlayerList_header_9d,
+.mediaMedium .PlayerList_enemies_8b .PlayerList_header_background_92 {
+    width: 168rem;
+    height: 33rem;
+}
+
+.PlayerList_enemies_8b .PlayerList_header_9d {
+    left: 55rem;
+}
+
+.mediaMedium .PlayerList_enemies_8b .PlayerList_header_9d {
+    left: 0rem;
+}
+
+.PlayerList_enemies_8b .PlayerList_header_text_50 {
+    margin-left: 25rem;
+}
+
+.PlayerList_enemies_8b .PlayerList_header_decoration_ac {
+    left: 1rem;
+}
+
+.PlayerList_enemies_8b .PlayerList_header_shadow_96 {
+    top: 24rem;
+    left: 25rem;
+}
+
+.mediaMedium .PlayerList_enemies_8b .PlayerList_header_shadow_96 {
+    top: 33rem;
+    left: 40rem;
+}
+
+.PlayerList_playerList_e9 {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    margin-top: -1rem;
+    position: relative;
+}
+
+.PlayerList_playerList_background_40 {
+    width: 131rem;
+    background: #38375e center center no-repeat;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.mediaMedium .PlayerList_playerList_background_40 {
+    width: 165rem;
+}
+
+.PlayerList_playerList_bottomShadow_31 {
+    width: 136rem;
+    height: 36rem;
+    background: url('R.images.grinch.gui.maps.icons.playerList.big.decoration.shadow_block_bottom') center bottom /
+        contain no-repeat;
+    position: absolute;
+    bottom: -19rem;
+    left: 12rem;
+    z-index: -5;
+}
+
+.mediaMedium .PlayerList_playerList_bottomShadow_31 {
+    width: 190rem;
+    height: 50rem;
+    background-image: url('R.images.grinch.gui.maps.icons.playerList.big.decoration.shadow_block_bottom');
+    bottom: -27rem;
+    left: 0;
+}
+
+.PlayerList_enemies_8b .PlayerList_playerList_background_40 {
+    width: 92rem;
+    bottom: 0;
+    left: 82rem;
+}
+
+.mediaMedium .PlayerList_enemies_8b .PlayerList_playerList_background_40 {
+    width: 126rem;
+    left: 42rem;
+}
+
+.PlayerList_enemies_8b .PlayerList_header_backgroundShadow_24 {
+    margin-left: -30rem;
+}
+
+.mediaMedium .PlayerList_enemies_8b .PlayerList_header_backgroundShadow_24 {
+    margin-left: -45rem;
+}
+
+.PlayerList_enemies_8b .PlayerList_playerList_bottomShadow_31 {
+    margin-left: 55rem;
+}
+
+.mediaMedium .PlayerList_enemies_8b .PlayerList_playerList_bottomShadow_31 {
+    margin-left: 20rem;
+}
+
+.PlayerList_player_79 {
+    margin-top: 1rem;
+    position: relative;
+}
+
+.PlayerList_player__current_e3 .PlayerList_player_slot_background_44 {
+    background: url('R.images.grinch.gui.maps.icons.playerList.small.slot.hero') center center / cover no-repeat;
+}
+
+.mediaMedium .PlayerList_player__current_e3 .PlayerList_player_slot_background_44 {
+    background-image: url('R.images.grinch.gui.maps.icons.playerList.big.slot.hero');
+}
+
+.PlayerList_player__current_e3 .PlayerList_player_slot_userName_47,
+.PlayerList_player__current_e3 .PlayerList_player_slot_score_54 {
+    color: #f2b957;
+}
+
+.PlayerList_player__dead_f3 .PlayerList_player_slot_background_44 {
+    background: url('R.images.grinch.gui.maps.icons.playerList.small.slot.dead') center center / cover no-repeat;
+}
+
+.mediaMedium .PlayerList_player__dead_f3 .PlayerList_player_slot_background_44 {
+    background-image: url('R.images.grinch.gui.maps.icons.playerList.big.slot.dead');
+}
+
+.PlayerList_player__dead_f3 .PlayerList_player_slot_userName_47,
+.PlayerList_player__dead_f3 .PlayerList_player_slot_score_54,
+.PlayerList_player__dead_f3 .PlayerList_player_slot_platoon_4b,
+.PlayerList_player__dead_f3 .PlayerList_player_slot_vehicle_5c {
+    opacity: 0.5;
+}
+
+.PlayerList_player_slot_12 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    width: 133rem;
+    height: 17rem;
+    padding-right: 26rem;
+}
+
+.mediaMedium .PlayerList_player_slot_12 {
+    width: 167rem;
+    height: 24rem;
+}
+
+.PlayerList_player_slot_background_44 {
+    width: 133rem;
+    height: 17rem;
+    background: url('R.images.grinch.gui.maps.icons.playerList.small.slot.normal') center center / cover no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.mediaMedium .PlayerList_player_slot_background_44 {
+    width: 167rem;
+    height: 24rem;
+    background-image: url('R.images.grinch.gui.maps.icons.playerList.big.slot.normal');
+}
+
+.PlayerList_player_slot_platoon_4b {
+    width: 17rem;
+    height: 19rem;
+    margin-left: 4rem;
+    z-index: 5;
+}
+
+.PlayerList_player_slot_platoon__1_60 {
+    background: url('R.images.grinch.gui.maps.icons.playerList.platoon.other.platoon1') center center / cover no-repeat;
+}
+
+.PlayerList_player_slot_platoon__2_09 {
+    background: url('R.images.grinch.gui.maps.icons.playerList.platoon.other.platoon2') center center / cover no-repeat;
+}
+
+.PlayerList_player_slot_platoon__3_52 {
+    background: url('R.images.grinch.gui.maps.icons.playerList.platoon.other.platoon3') center center / cover no-repeat;
+}
+
+.PlayerList_player_slot_platoon__4_da {
+    background: url('R.images.grinch.gui.maps.icons.playerList.platoon.other.platoon4') center center / cover no-repeat;
+}
+
+.PlayerList_player_slot_platoon__5_5d {
+    background: url('R.images.grinch.gui.maps.icons.playerList.platoon.other.platoon5') center center / cover no-repeat;
+}
+
+.PlayerList_player_slot_platoon__6_72 {
+    background: url('R.images.grinch.gui.maps.icons.playerList.platoon.other.platoon6') center center / cover no-repeat;
+}
+
+.PlayerList_player_slot_platoon__7_db {
+    background: url('R.images.grinch.gui.maps.icons.playerList.platoon.other.platoon7') center center / cover no-repeat;
+}
+
+.PlayerList_player_slot_vehicle_5c {
+    width: 17rem;
+    height: 17rem;
+    margin-left: 1rem;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 17rem 17rem;
+    z-index: 5;
+}
+
+.mediaMedium .PlayerList_player_slot_vehicle_5c {
+    width: 24rem;
+    height: 24rem;
+    background-size: 24rem 24rem;
+}
+
+.PlayerList_player_slot_userName_47 {
+    color: #f9efc7;
+    font-size: 12rem;
+    font-weight: 400;
+    line-height: 1.3;
+    flex: 1 1 auto;
+    max-width: 65rem;
+    margin-top: -2rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    filter: drop-shadow(0rem 1rem 0rem #000);
+    overflow: hidden;
+}
+
+.mediaMedium .PlayerList_player_slot_userName_47 {
+    color: #f9efc7;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    max-width: 90rem;
+}
+
+.PlayerList_player_slot_score_54 {
+    color: #f9efc7;
+    font-size: 12rem;
+    font-weight: 400;
+    line-height: 1.3;
+    margin-left: 4rem;
+    margin-top: -2rem;
+    filter: drop-shadow(0rem 1rem 0rem #000);
+}
+
+.mediaMedium .PlayerList_player_slot_score_54 {
+    color: #f9efc7;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+.PlayerList_player_gift_9b {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 36rem;
+    height: 24rem;
+    position: absolute;
+    top: 0;
+    left: 127rem;
+    z-index: -3;
+    transform: translateX(0%) scaleX(1);
+    transition: transform 0.6s ease-in-out;
+}
+
+.mediaMedium .PlayerList_player_gift_9b {
+    width: 50rem;
+    height: 33rem;
+    top: 2rem;
+    left: 156rem;
+}
+
+.PlayerList_player_gift__disappearing_3d {
+    transform: translateX(-55%) scaleX(0.4);
+}
+
+.PlayerList_player_gift__background_1f {
+    width: 36rem;
+    height: 24rem;
+    background: url('R.images.grinch.gui.maps.icons.playerList.small.slot.gift_bg') center center / cover no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.mediaMedium .PlayerList_player_gift__background_1f {
+    width: 50rem;
+    height: 33rem;
+    background-image: url('R.images.grinch.gui.maps.icons.playerList.big.slot.gift_bg');
+}
+
+.PlayerList_player_gift__icon_a3 {
+    width: 12rem;
+    height: 12rem;
+    margin-left: 6rem;
+    margin-top: -5rem;
+    background: url('R.images.grinch.gui.maps.icons.playerList.gift_icon') 0 0 / contain no-repeat;
+}
+
+.mediaMedium .PlayerList_player_gift__icon_a3 {
+    width: 16rem;
+    height: 16rem;
+    margin-left: 5rem;
+    margin-top: -8rem;
+}
+
+.PlayerList_player_gift__count_bc {
+    color: #ffc490;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    margin-left: 2rem;
+    margin-top: -8rem;
+    filter: drop-shadow(-1rem 1rem 0rem #000);
+}
+
+.mediaMedium .PlayerList_player_gift__count_bc {
+    color: #ffc490;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+    margin-left: 2rem;
+    margin-top: -12rem;
+}
+
+.PlayerList_enemies_8b .PlayerList_player_slot_12 {
+    width: 94rem;
+    height: 17rem;
+    margin-left: 80rem;
+    position: relative;
+}
+
+.mediaMedium .PlayerList_enemies_8b .PlayerList_player_slot_12 {
+    width: 127rem;
+    height: 24rem;
+    margin-left: 40rem;
+}
+
+.PlayerList_enemies_8b .PlayerList_player_slot_userName_47 {
+    max-width: 52rem;
+}
+
+.mediaMedium .PlayerList_enemies_8b .PlayerList_player_slot_userName_47 {
+    max-width: 65rem;
+}
+
+.PlayerList_enemies_8b .PlayerList_player_slot_vehicle_5c {
+    margin-left: 0rem;
+}
+
+.mediaMedium .PlayerList_enemies_8b .PlayerList_player_slot_vehicle_5c {
+    margin-left: 10rem;
+}
+
+.PlayerList_enemies_8b .PlayerList_player_gift_9b {
+    top: 0;
+    bottom: 0;
+    left: 52rem;
+    transform: translateX(0%) scaleX(1);
+}
+
+.mediaMedium .PlayerList_enemies_8b .PlayerList_player_gift_9b {
+    top: 2rem;
+    bottom: 0;
+    left: 0;
+}
+
+.PlayerList_enemies_8b .PlayerList_player_gift__disappearing_3d {
+    transform: translateX(55%) scaleX(0.4);
+}
+
+.PlayerList_enemies_8b .PlayerList_player_gift__icon_a3 {
+    margin-left: -10rem;
+}
+
+.mediaMedium .PlayerList_enemies_8b .PlayerList_player_gift__icon_a3 {
+    margin-left: -6rem;
+}
+
+.PlayerList_enemies_8b .PlayerList_header_background_92,
+.PlayerList_enemies_8b .PlayerList_header_backgroundShadow_24,
+.PlayerList_enemies_8b .PlayerList_header_decoration_ac,
+.PlayerList_enemies_8b .PlayerList_header_shadow_96,
+.PlayerList_enemies_8b .PlayerList_decorationCorner_7e,
+.PlayerList_enemies_8b .PlayerList_playerList_bottomShadow_31,
+.PlayerList_enemies_8b .PlayerList_player_slot_background_44,
+.PlayerList_enemies_8b .PlayerList_player_gift__background_1f {
+    transform: scaleX(-1);
+}
+
+.PlayerList_decorationBottom_de {
+    width: 34rem;
+    height: 149rem;
+    margin-top: -12rem;
+    background: url('R.images.grinch.gui.maps.icons.playerList.small.decoration.bottom') center center / cover no-repeat;
+}
+
+.mediaMedium .PlayerList_decorationBottom_de {
+    width: 47rem;
+    height: 192rem;
+    margin-top: -17rem;
+    background-image: url('R.images.grinch.gui.maps.icons.playerList.big.decoration.bottom');
+}
+
+.PlayerList_decorationCorner_7e {
+    width: 19rem;
+    height: 12rem;
+    margin-left: 115rem;
+    background: url('R.images.grinch.gui.maps.icons.playerList.small.decoration.corner') center center / cover no-repeat;
+}
+
+.mediaMedium .PlayerList_decorationCorner_7e {
+    width: 26rem;
+    height: 17rem;
+    margin-left: 141rem;
+    background-image: url('R.images.grinch.gui.maps.icons.playerList.big.decoration.corner');
+}
+
+.PlayerList_enemies_8b .PlayerList_decorationCorner_7e {
+    margin-left: 80rem;
+}
+
+.mediaMedium .PlayerList_enemies_8b .PlayerList_decorationCorner_7e {
+    margin-left: 40rem;
+}
+
+.PlayerList_enemies_8b .PlayerList_decorationBottom_de {
+    display: none;
+}
+
+.PlayerList_base__yellow_76 .PlayerList_player_slot_vehicle__lightTank_83 {
+    background-image: url('R.images.grinch.gui.maps.icons.vehicles.yellow.lightTank');
+}
+
+.PlayerList_base__yellow_76 .PlayerList_player_slot_vehicle__mediumTank_e4 {
+    background-image: url('R.images.grinch.gui.maps.icons.vehicles.yellow.mediumTank');
+}
+
+.PlayerList_base__yellow_76 .PlayerList_player_slot_vehicle__heavyTank_2d {
+    background-image: url('R.images.grinch.gui.maps.icons.vehicles.yellow.heavyTank');
+}
+
+.PlayerList_base__magenta_02 .PlayerList_player_slot_vehicle__lightTank_83 {
+    background-image: url('R.images.grinch.gui.maps.icons.vehicles.magenta.lightTank');
+}
+
+.PlayerList_base__magenta_02 .PlayerList_player_slot_vehicle__mediumTank_e4 {
+    background-image: url('R.images.grinch.gui.maps.icons.vehicles.magenta.mediumTank');
+}
+
+.PlayerList_base__magenta_02 .PlayerList_player_slot_vehicle__heavyTank_2d {
+    background-image: url('R.images.grinch.gui.maps.icons.vehicles.magenta.heavyTank');
+}
+
+.PlayerList_base__blue_02 .PlayerList_player_slot_vehicle__lightTank_83 {
+    background-image: url('R.images.grinch.gui.maps.icons.vehicles.blue.lightTank');
+}
+
+.PlayerList_base__blue_02 .PlayerList_player_slot_vehicle__mediumTank_e4 {
+    background-image: url('R.images.grinch.gui.maps.icons.vehicles.blue.mediumTank');
+}
+
+.PlayerList_base__blue_02 .PlayerList_player_slot_vehicle__heavyTank_2d {
+    background-image: url('R.images.grinch.gui.maps.icons.vehicles.blue.heavyTank');
+}
+
+/* stylelint-disable scss/dollar-variable-pattern */
+
+.Announcement_mt_4_0b {
+    margin-top: 4rem;
+}
+
+.Announcement_base_5e {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    color: #f9efc7;
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+}
+
+.Announcement_base__show_ad {
+    opacity: 1;
+
+    /* a hack to fix Gameface paint problem */
+    animation: Announcement_redrawElement_fc 0.4s infinite;
+    animation-delay: 0.6s;
+}
+
+.Announcement_headingAbove_db {
+    min-height: 1em;
+    margin-bottom: 10rem;
+    font-size: 17rem;
+    text-shadow: 0px 2px 0px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+}
+
+.Announcement_headingAbove__show_4e {
+    opacity: 1;
+}
+
+.Announcement_headingAbove__only_b7 {
+    margin-top: 60rem;
+    font-weight: 700;
+    opacity: 1;
+}
+
+.mediaMedium .Announcement_headingAbove_db {
+    font-size: 20rem;
+}
+
+.Announcement_heading_a3 {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    min-width: 200rem;
+    margin-bottom: 20rem;
+    font-size: 20rem;
+    font-weight: 700;
+    line-height: 20rem;
+    text-align: center;
+    text-shadow: 0px 2px 0px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    position: relative;
+}
+
+.Announcement_heading__show_7d {
+    opacity: 1;
+}
+
+.mediaMedium .Announcement_heading_a3 {
+    min-width: 250rem;
+    margin-bottom: 30rem;
+    font-size: 37rem;
+    line-height: 32rem;
+}
+
+.Announcement_heading_left_d0 {
+    width: 170rem;
+    height: 130rem;
+    background: url('R.images.grinch.gui.maps.icons.announcements.banner.small.banner_left') center center / contain
+        no-repeat;
+    position: absolute;
+    top: -25rem;
+    left: -101rem;
+    z-index: -1;
+}
+
+.mediaMedium .Announcement_heading_left_d0 {
+    width: 236rem;
+    height: 234rem;
+    background: url('R.images.grinch.gui.maps.icons.announcements.banner.large.banner_left') center center / contain
+        no-repeat;
+    font-size: 37rem;
+    top: -42rem;
+    left: -140rem;
+}
+
+.Announcement_heading_center_a7 {
+    height: 130rem;
+    background: url('R.images.grinch.gui.maps.icons.announcements.banner.small.banner_center') center center / 90rem
+        130rem repeat-x;
+    position: absolute;
+    top: -25rem;
+    right: 69rem;
+    left: 69rem;
+    z-index: -1;
+}
+
+.mediaMedium .Announcement_heading_center_a7 {
+    height: 234rem;
+    background: url('R.images.grinch.gui.maps.icons.announcements.banner.large.banner_center') center center / 140rem
+        234rem repeat-x;
+    font-size: 37rem;
+    top: -42rem;
+    right: 96rem;
+    left: 96rem;
+}
+
+.Announcement_heading_right_73 {
+    width: 170rem;
+    height: 130rem;
+    background: url('R.images.grinch.gui.maps.icons.announcements.banner.small.banner_right') center center / contain
+        no-repeat;
+    position: absolute;
+    top: -25rem;
+    right: -101rem;
+    z-index: -1;
+}
+
+.mediaMedium .Announcement_heading_right_73 {
+    width: 236rem;
+    height: 234rem;
+    background: url('R.images.grinch.gui.maps.icons.announcements.banner.large.banner_right') center center / contain
+        no-repeat;
+    font-size: 37rem;
+    top: -42rem;
+    right: -140rem;
+}
+
+.Announcement_gift_23 {
+    width: 60rem;
+    height: 60rem;
+    background: url('R.images.grinch.gui.maps.icons.announcements.gift') center center / contain no-repeat;
+}
+
+.Announcement_place_0d {
+    position: relative;
+}
+
+.Announcement_place_decorationLeft_8d,
+.Announcement_place_decorationRight_a5 {
+    width: 88rem;
+    height: 114rem;
+    background: url('R.images.grinch.gui.maps.icons.announcements.numbers.decoration_small') center center / contain
+        no-repeat;
+    position: absolute;
+    top: -10rem;
+}
+
+.mediaMedium .Announcement_place_decorationLeft_8d,
+.mediaMedium .Announcement_place_decorationRight_a5 {
+    width: 100rem;
+    height: 150rem;
+    background: url('R.images.grinch.gui.maps.icons.announcements.numbers.decoration') center center / contain no-repeat;
+}
+
+.Announcement_place_decorationLeft_8d {
+    left: -68rem;
+    transform: scaleX(-1);
+}
+
+.mediaMedium .Announcement_place_decorationLeft_8d {
+    left: -89rem;
+}
+
+.Announcement_place_decorationRight_a5 {
+    right: -68rem;
+}
+
+.mediaMedium .Announcement_place_decorationRight_a5 {
+    right: -89rem;
+}
+
+.Announcement_countdown_eb {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out 1s;
+}
+
+.Announcement_countdown__running_d0 {
+    opacity: 1;
+    transition-delay: 0s;
+}
+
+.Announcement_countdown__enabled_45 {
+    display: flex;
+}
+
+@keyframes Announcement_redrawElement_fc {
+    from {
+        opacity: 0.98;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.Announcement_number_89 {
+    width: 64rem;
+    height: 96rem;
+    background: url('R.images.grinch.gui.maps.icons.announcements.numbers.small.c_0') center center / contain;
+}
+
+.mediaMedium .Announcement_number_89 {
+    width: 90rem;
+    height: 134rem;
+    background: url('R.images.grinch.gui.maps.icons.announcements.numbers.large.c_0') center center / contain;
+}
+
+.Announcement_number_0_ff {
+    background-image: url('R.images.grinch.gui.maps.icons.announcements.numbers.small.c_0');
+}
+
+.mediaMedium .Announcement_number_0_ff {
+    background-image: url('R.images.grinch.gui.maps.icons.announcements.numbers.large.c_0');
+}
+
+.Announcement_number_1_76 {
+    background-image: url('R.images.grinch.gui.maps.icons.announcements.numbers.small.c_1');
+}
+
+.mediaMedium .Announcement_number_1_76 {
+    background-image: url('R.images.grinch.gui.maps.icons.announcements.numbers.large.c_1');
+}
+
+.Announcement_number_2_be {
+    background-image: url('R.images.grinch.gui.maps.icons.announcements.numbers.small.c_2');
+}
+
+.mediaMedium .Announcement_number_2_be {
+    background-image: url('R.images.grinch.gui.maps.icons.announcements.numbers.large.c_2');
+}
+
+.Announcement_number_3_4c {
+    background-image: url('R.images.grinch.gui.maps.icons.announcements.numbers.small.c_3');
+}
+
+.mediaMedium .Announcement_number_3_4c {
+    background-image: url('R.images.grinch.gui.maps.icons.announcements.numbers.large.c_3');
+}
+
+.Announcement_number_4_e3 {
+    background-image: url('R.images.grinch.gui.maps.icons.announcements.numbers.small.c_4');
+}
+
+.mediaMedium .Announcement_number_4_e3 {
+    background-image: url('R.images.grinch.gui.maps.icons.announcements.numbers.large.c_4');
+}
+
+.Announcement_number_5_e9 {
+    background-image: url('R.images.grinch.gui.maps.icons.announcements.numbers.small.c_5');
+}
+
+.mediaMedium .Announcement_number_5_e9 {
+    background-image: url('R.images.grinch.gui.maps.icons.announcements.numbers.large.c_5');
+}
+
+.Announcement_number_6_66 {
+    background-image: url('R.images.grinch.gui.maps.icons.announcements.numbers.small.c_6');
+}
+
+.mediaMedium .Announcement_number_6_66 {
+    background-image: url('R.images.grinch.gui.maps.icons.announcements.numbers.large.c_6');
+}
+
+.Announcement_number_7_4b {
+    background-image: url('R.images.grinch.gui.maps.icons.announcements.numbers.small.c_7');
+}
+
+.mediaMedium .Announcement_number_7_4b {
+    background-image: url('R.images.grinch.gui.maps.icons.announcements.numbers.large.c_7');
+}
+
+.Announcement_number_8_60 {
+    background-image: url('R.images.grinch.gui.maps.icons.announcements.numbers.small.c_8');
+}
+
+.mediaMedium .Announcement_number_8_60 {
+    background-image: url('R.images.grinch.gui.maps.icons.announcements.numbers.large.c_8');
+}
+
+.Announcement_number_9_ba {
+    background-image: url('R.images.grinch.gui.maps.icons.announcements.numbers.small.c_9');
+}
+
+.mediaMedium .Announcement_number_9_ba {
+    background-image: url('R.images.grinch.gui.maps.icons.announcements.numbers.large.c_9');
+}
+
+.GiftsWidget_base_f3 {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-start;
+    width: 250rem;
+}
+
+.GiftsWidget_base__respawning_0c {
+    opacity: 0.5;
+}
+
+.GiftsWidget_slot_19 {
+    width: 42rem;
+    height: 42rem;
+    margin-right: -15rem;
+    margin-bottom: -15rem;
+    background: url('R.images.grinch.gui.maps.icons.gifts.empty_1024') center center / 30rem 30rem no-repeat;
+    opacity: 0.5;
+    animation: GiftsWidget_bounceOut_d5 0.5s ease both;
+}
+
+.mediaMedium .GiftsWidget_slot_19 {
+    width: 60rem;
+    height: 60rem;
+    background: url('R.images.grinch.gui.maps.icons.gifts.empty') center center / 42rem 42rem no-repeat;
+}
+
+.GiftsWidget_slot__active_d9 {
+    width: 42rem;
+    height: 42rem;
+    margin-right: -5rem;
+    background: url('R.images.grinch.gui.maps.icons.gifts.gift_1024') center center / cover no-repeat;
+    opacity: 1;
+    animation: GiftsWidget_bounceIn_a4 0.5s linear both;
+}
+
+.mediaMedium .GiftsWidget_slot__active_d9 {
+    width: 60rem;
+    height: 60rem;
+    background: url('R.images.grinch.gui.maps.icons.gifts.gift') center center / cover no-repeat;
+}
+
+@keyframes GiftsWidget_bounceIn_a4 {
+    0% {
+        transform: scale(0);
+        animation-timing-function: ease-in;
+    }
+
+    25% {
+        transform: scale(1);
+        animation-timing-function: ease-out;
+    }
+
+    50% {
+        transform: scale(0.7);
+        animation-timing-function: ease-in;
+    }
+
+    75% {
+        transform: scale(1);
+        animation-timing-function: ease-out;
+    }
+
+    100% {
+        transform: scale(1);
+        animation-timing-function: ease-in;
+    }
+}
+
+@keyframes GiftsWidget_bounceOut_d5 {
+    0% {
+        transform: scale(0);
+    }
+
+    50% {
+        transform: scale(0.7);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* stylelint-disable scss/dollar-variable-pattern */
+
+.AbilityPanel_mt_4_ae {
+    margin-top: 4rem;
+}
+
+.AbilityPanel_base_47 {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.AbilityPanel_base__respawning_dd,
+.AbilityPanel_base__gameStarting_91 {
+    opacity: 0.5;
+}
+
+.AbilityPanel_abilityWrapper_7e {
+    display: flex;
+    flex-direction: row;
+}
+
+.AbilityPanel_deployedTurrets_66 {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    margin-left: 5rem;
+    position: absolute;
+    bottom: 2rem;
+    left: 100%;
+}
+
+.mediaMedium .AbilityPanel_deployedTurrets_66 {
+    margin-left: 15rem;
+    bottom: 5rem;
+}
+
+.AbilityPanel_deployedTurrets_turret_f8 {
+    width: 30rem;
+    height: 30rem;
+    margin-left: 2rem;
+    background: url('R.images.grinch.gui.maps.icons.abilityPanel.slot.small.cell_empty') center center / contain
+        no-repeat;
+    opacity: 0.5;
+    animation: AbilityPanel_bounceOut_e7 0.5s ease both;
+}
+
+.mediaMedium .AbilityPanel_deployedTurrets_turret_f8 {
+    width: 43rem;
+    height: 42rem;
+    background-image: url('R.images.grinch.gui.maps.icons.abilityPanel.slot.large.cell_empty');
+}
+
+.AbilityPanel_deployedTurrets_turret__deployed_01 {
+    width: 28rem;
+    height: 38rem;
+    margin-bottom: -4rem;
+    background-image: url('R.images.grinch.gui.maps.icons.abilityPanel.slot.small.cell_turret');
+    opacity: 1;
+    animation: AbilityPanel_bounceIn_8b 0.5s linear both;
+}
+
+.mediaMedium .AbilityPanel_deployedTurrets_turret__deployed_01 {
+    width: 38rem;
+    height: 54rem;
+    background-image: url('R.images.grinch.gui.maps.icons.abilityPanel.slot.large.cell_turret');
+}
+
+@keyframes AbilityPanel_bounceIn_8b {
+    0% {
+        transform: scale(0);
+        animation-timing-function: ease-in;
+    }
+
+    25% {
+        transform: scale(1);
+        animation-timing-function: ease-out;
+    }
+
+    50% {
+        transform: scale(0.7);
+        animation-timing-function: ease-in;
+    }
+
+    75% {
+        transform: scale(1);
+        animation-timing-function: ease-out;
+    }
+
+    100% {
+        transform: scale(1);
+        animation-timing-function: ease-in;
+    }
+}
+
+@keyframes AbilityPanel_bounceOut_e7 {
+    0% {
+        transform: scale(0);
+    }
+
+    50% {
+        transform: scale(0.7);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* stylelint-disable scss/dollar-variable-pattern */
+
+.AbilitySlot_mt_4_5c {
+    margin-top: 4rem;
+}
+
+.AbilitySlot_abilitySlot_ef {
+    width: var(--slotSize);
+    height: var(--slotSize);
+    margin: 0 5rem;
+    position: relative;
+    --slotSize: 50rem;
+}
+
+.mediaMedium .AbilitySlot_abilitySlot_ef {
+    --slotSize: 70rem;
+}
+
+.AbilitySlot_abilitySlot__ready_99 {
+    opacity: 1;
+}
+
+.AbilitySlot_abilitySlot_keyBind_c0 {
+    display: flex;
+    justify-content: center;
+    height: 17rem;
+    padding: 0 4rem;
+    background: url('R.images.grinch.gui.maps.icons.abilityPanel.slot.paper') 100rem 100rem / contain repeat;
+    position: absolute;
+    top: -50%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.mediaMedium .AbilitySlot_abilitySlot_keyBind_c0 {
+    height: 27rem;
+}
+
+.AbilitySlot_abilitySlot_keyBind__text_a0 {
+    margin-left: 2rem;
+    color: #f9efc7;
+    font-size: 13rem;
+    font-weight: 700;
+}
+
+.mediaMedium .AbilitySlot_abilitySlot_keyBind__text_a0 {
+    margin-top: 1rem;
+    font-size: 18rem;
+}
+
+.AbilitySlot_abilitySlot__reloading_bf .AbilitySlot_abilitySlot_keyBind_c0,
+.AbilitySlot_abilitySlot__active_48 .AbilitySlot_abilitySlot_keyBind_c0,
+.AbilitySlot_abilitySlot__noTurretsAvailable_10 .AbilitySlot_abilitySlot_keyBind_c0,
+.AbilitySlot_abilitySlot__disabled_91 {
+    opacity: 0.5;
+}
+
+.AbilitySlot_abilitySlot_background_ac {
+    background: url('R.images.grinch.gui.maps.icons.abilityPanel.slot.small.ability_slot') center center / contain
+        no-repeat;
+    position: absolute;
+    top: -1rem;
+    right: -4rem;
+    bottom: -8rem;
+    left: -5rem;
+    z-index: -2;
+}
+
+.mediaMedium .AbilitySlot_abilitySlot_background_ac {
+    background-image: url('R.images.grinch.gui.maps.icons.abilityPanel.slot.large.ability_slot');
+    top: -1rem;
+    right: -5rem;
+    bottom: -10rem;
+    left: -6rem;
+}
+
+.AbilitySlot_abilitySlot__reloading_bf .AbilitySlot_abilitySlot_background_ac,
+.AbilitySlot_abilitySlot__active_48 .AbilitySlot_abilitySlot_background_ac,
+.AbilitySlot_abilitySlot__noTurretsAvailable_10 .AbilitySlot_abilitySlot_background_ac {
+    opacity: 0.5;
+}
+
+.AbilitySlot_abilitySlot_bar_0d {
+    width: 100%;
+    height: 0;
+    opacity: 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    transition: height 100ms linear;
+    mask-image: linear-gradient(-45deg, rgba(0, 0, 0, 0) 14%, #000 14%);
+    mask-size: 50rem 50rem;
+    mask-position: bottom right;
+}
+
+.mediaMedium .AbilitySlot_abilitySlot_bar_0d {
+    mask-size: 70rem 70rem;
+}
+
+.AbilitySlot_abilitySlot__active_48.AbilitySlot_abilitySlot__reloading_bf .AbilitySlot_abilitySlot_bar_0d {
+    background-color: #30c364;
+    opacity: 1;
+}
+
+.AbilitySlot_abilitySlot__reloading_bf .AbilitySlot_abilitySlot_bar_0d,
+.AbilitySlot_abilitySlot__turretReloading_87 .AbilitySlot_abilitySlot_bar_0d,
+.AbilitySlot_abilitySlot__reloading_bf.AbilitySlot_abilitySlot__turret_ff .AbilitySlot_abilitySlot_bar_0d {
+    background-color: #c37c30;
+    opacity: 1;
+}
+
+.AbilitySlot_abilitySlot_icon_7d {
+    width: var(--slotSize);
+    height: var(--slotSize);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.AbilitySlot_abilitySlot__blizzard_3f .AbilitySlot_abilitySlot_icon_7d {
+    background-image: url('R.images.grinch.gui.maps.icons.abilityPanel.abilities.large.blizzard');
+}
+
+.AbilitySlot_abilitySlot__flare_6b .AbilitySlot_abilitySlot_icon_7d {
+    background-image: url('R.images.grinch.gui.maps.icons.abilityPanel.abilities.large.flare');
+}
+
+.AbilitySlot_abilitySlot__heal_82 .AbilitySlot_abilitySlot_icon_7d {
+    background-image: url('R.images.grinch.gui.maps.icons.abilityPanel.abilities.large.heal');
+}
+
+.AbilitySlot_abilitySlot__rage_22 .AbilitySlot_abilitySlot_icon_7d {
+    background-image: url('R.images.grinch.gui.maps.icons.abilityPanel.abilities.large.rage');
+}
+
+.AbilitySlot_abilitySlot__repairKit_30 .AbilitySlot_abilitySlot_icon_7d {
+    background-image: url('R.images.grinch.gui.maps.icons.abilityPanel.abilities.large.repair_kit');
+}
+
+.AbilitySlot_abilitySlot__shellAssault_d6 .AbilitySlot_abilitySlot_icon_7d {
+    background-image: url('R.images.grinch.gui.maps.icons.abilityPanel.abilities.large.shell_assault');
+}
+
+.AbilitySlot_abilitySlot__shellCarrier_ad .AbilitySlot_abilitySlot_icon_7d {
+    background-image: url('R.images.grinch.gui.maps.icons.abilityPanel.abilities.large.shell_carrier');
+}
+
+.AbilitySlot_abilitySlot__shellSupport_34 .AbilitySlot_abilitySlot_icon_7d {
+    background-image: url('R.images.grinch.gui.maps.icons.abilityPanel.abilities.large.shell_support');
+}
+
+.AbilitySlot_abilitySlot__stealth_13 .AbilitySlot_abilitySlot_icon_7d {
+    background-image: url('R.images.grinch.gui.maps.icons.abilityPanel.abilities.large.stealth');
+}
+
+.AbilitySlot_abilitySlot__turret_ff .AbilitySlot_abilitySlot_icon_7d {
+    background-image: url('R.images.grinch.gui.maps.icons.abilityPanel.abilities.large.turret');
+}
+
+.AbilitySlot_abilitySlot__reloading_bf .AbilitySlot_abilitySlot_icon_7d,
+.AbilitySlot_abilitySlot__active_48 .AbilitySlot_abilitySlot_icon_7d,
+.AbilitySlot_abilitySlot__turretReloading_87 .AbilitySlot_abilitySlot_icon_7d {
+    opacity: 0.25;
+}
+
+.AbilitySlot_abilitySlot_time_ca {
+    display: flex;
+    justify-content: center;
+    margin-top: 10rem;
+    color: #f9efc7;
+    font-size: 26rem;
+    font-weight: 400;
+    z-index: 1;
+}
+
+.mediaMedium .AbilitySlot_abilitySlot_time_ca {
+    font-size: 36rem;
+}
+
+.AbilitySlot_abilitySlot_turretsAvailable_47 {
+    display: flex;
+    justify-content: center;
+    width: 17rem;
+    height: 17rem;
+    background-color: #38375e;
+    position: absolute;
+    top: 66%;
+    left: 65%;
+    z-index: 1;
+    color: #f9efc7;
+    font-size: 14rem;
+    font-weight: 700;
+    line-height: 1.15;
+}
+
+.mediaMedium .AbilitySlot_abilitySlot_turretsAvailable_47 {
+    width: 24rem;
+    height: 24rem;
+    font-size: 20rem;
+    font-weight: 700;
+    top: 66%;
+    left: 65%;
+}
+
+.AbilitySlot_abilitySlot_effect_ee {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    opacity: 0;
+    position: absolute;
+    bottom: 0rem;
+    left: 0rem;
+    mask-image: linear-gradient(-45deg, rgba(0, 0, 0, 0) 14%, #000 14%);
+    mask-size: 50rem 50rem;
+    mask-position: bottom right;
+}
+
+.mediaMedium .AbilitySlot_abilitySlot_effect_ee {
+    mask-size: 70rem 70rem;
+}
+
+.AbilitySlot_abilitySlot__active_48 .AbilitySlot_abilitySlot_effect_ee {
+    animation: AbilitySlot_flash_95 0.7s ease-in-out;
+}
+
+.AbilitySlot_abilitySlot__active_48.AbilitySlot_abilitySlot__repairKit_30 .AbilitySlot_abilitySlot_effect_ee,
+.AbilitySlot_abilitySlot__reloading_bf.AbilitySlot_abilitySlot__repairKit_30 .AbilitySlot_abilitySlot_effect_ee {
+    animation: AbilitySlot_flash_95 0.7s ease-in-out;
+}
+
+.AbilitySlot_abilitySlot__targeting_c1 .AbilitySlot_abilitySlot_effect_ee {
+    animation: AbilitySlot_flash_95 1.5s ease-in-out infinite;
+}
+
+.AbilitySlot_abilitySlot_confetti_ac {
+    width: 125%;
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    z-index: -3;
+    transform: translateX(-50%);
+}
+
+.AbilitySlot_abilitySlot__noTurretsAvailable_10 .AbilitySlot_abilitySlot_confetti_ac {
+    opacity: 0;
+}
+
+@keyframes AbilitySlot_chargeUp_b9 {
+    from {
+        height: 0%;
+    }
+
+    to {
+        height: 100%;
+    }
+}
+
+@keyframes AbilitySlot_deplete_65 {
+    from {
+        height: 100%;
+    }
+
+    to {
+        height: 0%;
+    }
+}
+
+@keyframes AbilitySlot_flash_95 {
+    from {
+        opacity: 0;
+    }
+
+    30% {
+        opacity: 0.3;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+.Confetti_base_39 {
+    height: 200rem;
+    mask-image: linear-gradient(0deg, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0) 100%);
+    overflow: hidden;
+}
+
+.mediaMedium .Confetti_base_39 {
+    height: 250rem;
+}
+
+.Confetti_confetti_1_63,
+.Confetti_confetti_2_8f,
+.Confetti_confetti_3_94 {
+    width: 170rem;
+    height: 170rem;
+    margin-left: -85rem;
+    background: url('R.images.grinch.gui.maps.icons.abilityPanel.slot.large.confetti') center center / contain no-repeat;
+    position: absolute;
+    bottom: -300rem;
+    left: 50%;
+}
+
+.mediaMedium .Confetti_confetti_1_63,
+.mediaMedium .Confetti_confetti_2_8f,
+.mediaMedium .Confetti_confetti_3_94 {
+    width: 256rem;
+    height: 256rem;
+    margin-left: -128rem;
+}
+
+.Confetti_confetti_1_63 {
+    background-image: url('R.images.grinch.gui.maps.icons.abilityPanel.slot.large.confetti');
+    animation: Confetti_pop1_77 3.5s cubic-bezier(0, 0.44, 0.49, 1.01) both;
+    animation-delay: 0.05s;
+}
+
+.Confetti_confetti_2_8f {
+    background-image: url('R.images.grinch.gui.maps.icons.abilityPanel.slot.large.confetti_2');
+    animation: Confetti_pop2_04 3.5s cubic-bezier(0, 0.44, 0.49, 1.01) both;
+    animation-delay: 0.1s;
+}
+
+.Confetti_confetti_3_94 {
+    background-image: url('R.images.grinch.gui.maps.icons.abilityPanel.slot.large.confetti_3');
+    animation: Confetti_pop3_90 3.5s cubic-bezier(0, 0.44, 0.49, 1.01) both;
+    animation-delay: 0.2s;
+}
+
+@keyframes Confetti_pop1_77 {
+    from {
+        opacity: 1;
+        bottom: -300rem;
+        transform: scale(0.75) rotate3d(1, -1, 0.6, 0deg);
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 0;
+    }
+
+    to {
+        bottom: 256rem;
+        transform: scale(0.25) rotate3d(1, -1, 0.6, 360deg);
+    }
+}
+
+@keyframes Confetti_pop2_04 {
+    from {
+        opacity: 1;
+        bottom: -300rem;
+        transform: scale(0.6) rotate3d(2, 0.9, -0.7, 90deg);
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 0;
+    }
+
+    to {
+        bottom: 256rem;
+        transform: scale(0.2) rotate3d(2, 0.9, -0.7, 400deg);
+    }
+}
+
+@keyframes Confetti_pop3_90 {
+    from {
+        opacity: 1;
+        bottom: -300rem;
+        transform: scale(0.75) rotate3d(-1.2, 0.5, 0.9, -90deg);
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 0;
+    }
+
+    to {
+        bottom: 256rem;
+        transform: scale(0.25) rotate3d(-1.2, 0.5, 0.9, 300deg);
+    }
+}
+
+.DamageIndicator_base_85 {
+    width: 345rem;
+    height: 345rem;
+    position: relative;
+}
+
+.DamageIndicator_indicator_90 {
+    width: 36rem;
+    height: 339rem;
+    margin-left: -18rem;
+    opacity: 0;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform-origin: bottom center;
+    transition: opacity 0.6s ease-in-out;
+    animation-fill-mode: both;
+}
+
+.mediaMedium .DamageIndicator_indicator_90 {
+    width: 50rem;
+    height: 407rem;
+    margin-left: -25rem;
+}
+
+.DamageIndicator_indicator__penetration_21 {
+    background: url('R.images.grinch.gui.maps.icons.damageIndicator.small.penetration') center top / contain no-repeat;
+    opacity: 1;
+}
+
+.mediaMedium .DamageIndicator_indicator__penetration_21 {
+    background-image: url('R.images.grinch.gui.maps.icons.damageIndicator.large.penetration');
+}
+
+.DamageIndicator_indicator__ricochet_4f {
+    background: url('R.images.grinch.gui.maps.icons.damageIndicator.small.ricochet') center top / contain no-repeat;
+    opacity: 1;
+}
+
+.mediaMedium .DamageIndicator_indicator__ricochet_4f {
+    background-image: url('R.images.grinch.gui.maps.icons.damageIndicator.large.ricochet');
+}
+
+/* stylelint-disable scss/dollar-variable-pattern */
+
+.BaseMarkers_mt_4_f5 {
+    margin-top: 4rem;
+}
+
+base {
+    position: relative;
+}
+
+.BaseMarkers_marker_be {
+    width: 54rem;
+    height: 54rem;
+    background: url('R.images.grinch.gui.maps.icons.base.enemy.small.central') center center / contain no-repeat;
+    opacity: 1;
+    position: absolute;
+}
+
+.mediaMedium .BaseMarkers_marker_be {
+    width: 76rem;
+    height: 76rem;
+}
+
+.BaseMarkers_marker__central_26 {
+    background-image: url('R.images.grinch.gui.maps.icons.base.enemy.small.central');
+}
+
+.mediaMedium .BaseMarkers_marker__central_26 {
+    background-image: url('R.images.grinch.gui.maps.icons.base.enemy.large.central');
+}
+
+.BaseMarkers_marker__hidden_91 {
+    opacity: 0;
+}
+
+.BaseMarkers_marker__yellow_c5 {
+    background-image: url('R.images.grinch.gui.maps.icons.base.enemy.small.yellow');
+}
+
+.mediaMedium .BaseMarkers_marker__yellow_c5 {
+    background-image: url('R.images.grinch.gui.maps.icons.base.enemy.large.yellow');
+}
+
+.BaseMarkers_marker__blue_a0 {
+    background-image: url('R.images.grinch.gui.maps.icons.base.enemy.small.blue');
+}
+
+.mediaMedium .BaseMarkers_marker__blue_a0 {
+    background-image: url('R.images.grinch.gui.maps.icons.base.enemy.large.blue');
+}
+
+.BaseMarkers_marker__magenta_e0 {
+    background-image: url('R.images.grinch.gui.maps.icons.base.enemy.small.magenta');
+}
+
+.mediaMedium .BaseMarkers_marker__magenta_e0 {
+    background-image: url('R.images.grinch.gui.maps.icons.base.enemy.large.magenta');
+}
+
+.BaseMarkers_marker__offScreen_e0.BaseMarkers_marker__isEnemy_f2 {
+    opacity: 0;
+}
+
+.BaseMarkers_marker__offScreen_e0.BaseMarkers_marker__carryingHome_91 {
+    opacity: 1;
+}
+
+.BaseMarkers_marker__offScreen_e0 {
+    opacity: 0;
+}
+
+.BaseMarkers_marker__carryingHome_91 {
+    width: 34rem;
+    height: 38rem;
+    background: url('R.images.grinch.gui.maps.icons.base.home.small.yellow') center center / contain no-repeat;
+}
+
+.mediaMedium .BaseMarkers_marker__carryingHome_91 {
+    width: 48rem;
+    height: 54rem;
+}
+
+.BaseMarkers_marker__carryingHome_91.BaseMarkers_marker__yellow_c5 {
+    background-image: url('R.images.grinch.gui.maps.icons.base.home.small.yellow');
+}
+
+.mediaMedium .BaseMarkers_marker__carryingHome_91.BaseMarkers_marker__yellow_c5 {
+    background-image: url('R.images.grinch.gui.maps.icons.base.home.large.yellow');
+}
+
+.BaseMarkers_marker__carryingHome_91.BaseMarkers_marker__blue_a0 {
+    background-image: url('R.images.grinch.gui.maps.icons.base.home.small.blue');
+}
+
+.mediaMedium .BaseMarkers_marker__carryingHome_91.BaseMarkers_marker__blue_a0 {
+    background-image: url('R.images.grinch.gui.maps.icons.base.home.large.blue');
+}
+
+.BaseMarkers_marker__carryingHome_91.BaseMarkers_marker__magenta_e0 {
+    background-image: url('R.images.grinch.gui.maps.icons.base.home.small.magenta');
+}
+
+.mediaMedium .BaseMarkers_marker__carryingHome_91.BaseMarkers_marker__magenta_e0 {
+    background-image: url('R.images.grinch.gui.maps.icons.base.home.large.magenta');
+}
+
+.BaseMarkers_marker_presentCount_4a {
+    color: #f9efc7;
+    font-size: 26rem;
+    line-height: 1;
+    text-align: center;
+    text-shadow: 0px 2px 0px rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-52%, -60%);
+}
+
+/* for font centering */
+
+.mediaMedium .BaseMarkers_marker_presentCount_4a {
+    font-size: 36rem;
+}
+
+.BaseMarkers_marker__carryingHome_91 .BaseMarkers_marker_presentCount_4a {
+    opacity: 0;
+}
+
+.BaseMarkers_marker__carryingHome_91 .BaseMarkers_marker_distance_1b {
+    width: 100%;
+    color: #f9efc7;
+    font-size: 15rem;
+    text-align: center;
+    text-shadow: 0px 2px 0px rgba(0, 0, 0, 0.5);
+    opacity: 1;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    transition: opacity 0.6s ease-in-out;
+}
+
+.BaseMarkers_marker__offScreen_e0 .BaseMarkers_marker_distance_1b {
+    opacity: 0;
+}
+
+.BaseMarkers_marker_angle_81 {
+    width: 28rem;
+    height: 42rem;
+    background: url('R.images.grinch.gui.maps.icons.base.angle.small.yellow') center top / contain no-repeat;
+    opacity: 0;
+    position: absolute;
+    top: -23rem;
+    left: -2rem;
+    transform-origin: center bottom;
+    transition: opacity 0.6s ease-in-out;
+}
+
+.mediaMedium .BaseMarkers_marker_angle_81 {
+    width: 54rem;
+    height: 56rem;
+    top: -29rem;
+    left: -3rem;
+}
+
+.BaseMarkers_marker__offScreen_e0.BaseMarkers_marker__carryingHome_91 .BaseMarkers_marker_angle_81 {
+    opacity: 1;
+}
+
+.BaseMarkers_marker__yellow_c5 .BaseMarkers_marker_angle_81 {
+    background-image: url('R.images.grinch.gui.maps.icons.base.angle.small.yellow');
+}
+
+.mediaMedium .BaseMarkers_marker__yellow_c5 .BaseMarkers_marker_angle_81 {
+    background-image: url('R.images.grinch.gui.maps.icons.base.angle.large.yellow');
+}
+
+.BaseMarkers_marker__blue_a0 .BaseMarkers_marker_angle_81 {
+    background-image: url('R.images.grinch.gui.maps.icons.base.angle.small.blue');
+}
+
+.mediaMedium .BaseMarkers_marker__blue_a0 .BaseMarkers_marker_angle_81 {
+    background-image: url('R.images.grinch.gui.maps.icons.base.angle.large.blue');
+}
+
+.BaseMarkers_marker__magenta_e0 .BaseMarkers_marker_angle_81 {
+    background-image: url('R.images.grinch.gui.maps.icons.base.angle.small.magenta');
+}
+
+.mediaMedium .BaseMarkers_marker__magenta_e0 .BaseMarkers_marker_angle_81 {
+    background-image: url('R.images.grinch.gui.maps.icons.base.angle.large.magenta');
+}
+
+/* stylelint-disable scss/dollar-variable-pattern */
+
+.TankPanel_mt_4_15 {
+    margin-top: 4rem;
+}
+
+.TankPanel_base_9f {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 250rem;
+}
+
+.TankPanel_base__respawning_e7 {
+    opacity: 0.5;
+}
+
+.TankPanel_tank_09 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 92rem;
+    height: 150rem;
+    position: relative;
+}
+
+.mediaMedium .TankPanel_tank_09 {
+    width: 92rem;
+    height: 200rem;
+}
+
+.TankPanel_tank_shadow_3d {
+    width: 100rem;
+    height: 140rem;
+    background: url('R.images.grinch.gui.maps.icons.tankPanel.small.tank_doll_shadow_1024') center center / contain
+        no-repeat;
+    position: absolute;
+}
+
+.mediaMedium .TankPanel_tank_shadow_3d {
+    width: 144rem;
+    height: 200rem;
+    background: url('R.images.grinch.gui.maps.icons.tankPanel.large.tank_doll_shadow') center center / contain no-repeat;
+}
+
+.TankPanel_tank_doll_98 {
+    width: 32rem;
+    height: 74rem;
+    background: url('R.images.grinch.gui.maps.icons.tankPanel.small.tank_doll_hull_1024') center center / contain
+        no-repeat;
+    position: absolute;
+}
+
+.mediaMedium .TankPanel_tank_doll_98 {
+    width: 44rem;
+    height: 106rem;
+    background: url('R.images.grinch.gui.maps.icons.tankPanel.large.tank_doll_hull') center center / contain no-repeat;
+}
+
+.TankPanel_tank_turret_cf {
+    width: 76rem;
+    height: 100rem;
+    background: url('R.images.grinch.gui.maps.icons.tankPanel.small.tank_doll_turret_1024') center center / contain
+        no-repeat;
+    position: absolute;
+    top: 10rem;
+}
+
+.mediaMedium .TankPanel_tank_turret_cf {
+    width: 110rem;
+    height: 145rem;
+    background: url('R.images.grinch.gui.maps.icons.tankPanel.large.tank_doll_turret') center center / contain no-repeat;
+}
+
+.TankPanel_tank_normal_2e {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: relative;
+}
+
+.TankPanel_tank_normal_doll_right_83 {
+    width: 15rem;
+    height: 83rem;
+    background: url('R.images.grinch.gui.maps.icons.tankPanel.small.tank_doll_track_right') center center / contain
+        no-repeat;
+    position: absolute;
+    right: 15rem;
+}
+
+.mediaMedium .TankPanel_tank_normal_doll_right_83 {
+    width: 23rem;
+    height: 120rem;
+    background: url('R.images.grinch.gui.maps.icons.tankPanel.large.tank_doll_track_right') center center / contain
+        no-repeat;
+    right: 0;
+}
+
+.TankPanel_tank_normal_doll_left_4a {
+    width: 15rem;
+    height: 83rem;
+    background: url('R.images.grinch.gui.maps.icons.tankPanel.small.tank_doll_track_right') center center / contain
+        no-repeat;
+    position: absolute;
+    left: 15rem;
+    transform: scale(-1, 1);
+}
+
+.mediaMedium .TankPanel_tank_normal_doll_left_4a {
+    width: 23rem;
+    height: 120rem;
+    background: url('R.images.grinch.gui.maps.icons.tankPanel.large.tank_doll_track_right') center center / contain
+        no-repeat;
+    left: 0;
+    transform: scale(-1, 1);
+}
+
+.TankPanel_tank_shock_57 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: relative;
+}
+
+.TankPanel_tank_shock_doll_right_8b {
+    width: 72rem;
+    height: 104rem;
+    background: url('R.images.grinch.gui.maps.icons.tankPanel.large.tank_doll_track_damaged') center center / contain
+        no-repeat;
+    position: absolute;
+    left: 61rem;
+}
+
+.mediaMedium .TankPanel_tank_shock_doll_right_8b {
+    width: 103rem;
+    height: 150rem;
+    background: url('R.images.grinch.gui.maps.icons.tankPanel.large.tank_doll_track_damaged') center center / contain
+        no-repeat;
+    left: 69rem;
+}
+
+.TankPanel_tank_shock_doll_left_2e {
+    width: 72rem;
+    height: 104rem;
+    background: url('R.images.grinch.gui.maps.icons.tankPanel.large.tank_doll_track_damaged') center center / contain
+        no-repeat;
+    position: absolute;
+    right: 61rem;
+    transform: scale(-1, 1);
+}
+
+.mediaMedium .TankPanel_tank_shock_doll_left_2e {
+    width: 103rem;
+    height: 150rem;
+    background: url('R.images.grinch.gui.maps.icons.tankPanel.large.tank_doll_track_damaged') center center / contain
+        no-repeat;
+    right: 69rem;
+}
+
+.TankPanel_speed_18 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 12%;
+}
+
+.mediaMedium .TankPanel_speed_18 {
+    bottom: 15%;
+}
+
+.TankPanel_speed_amount_c3 {
+    color: #f9efc7;
+    font-size: 12rem;
+}
+
+.mediaMedium .TankPanel_speed_amount_c3 {
+    font-size: 15rem;
+}
+
+.TankPanel_speed_hours_37 {
+    margin-left: 2rem;
+    margin-top: 2rem;
+    color: #f9efc7;
+    font-size: 10rem;
+    opacity: 0.5;
+}
+
+.mediaMedium .TankPanel_speed_hours_37 {
+    font-size: 12rem;
+}
+
+.TankPanel_bar_0b {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.TankPanel_bar_inner_c5 {
+    width: 150rem;
+    height: 18rem;
+    background: url('R.images.grinch.gui.maps.icons.tankPanel.small.healthbar_bg_1024') center center / contain
+        no-repeat;
+    position: relative;
+}
+
+.mediaMedium .TankPanel_bar_inner_c5 {
+    width: 210rem;
+    height: 26rem;
+    background: url('R.images.grinch.gui.maps.icons.tankPanel.large.healthbar_bg') center center / contain no-repeat;
+}
+
+.TankPanel_bar_inner_separator_e7 {
+    width: 12rem;
+    height: 100%;
+    background: url('R.images.grinch.gui.maps.icons.tankPanel.small.healthbar_separator_1024') center center / contain
+        no-repeat;
+    position: absolute;
+    top: 0;
+    left: 100%;
+}
+
+.mediaMedium .TankPanel_bar_inner_separator_e7 {
+    width: 15rem;
+    background: url('R.images.grinch.gui.maps.icons.tankPanel.large.healthbar_separator') center center / contain
+        no-repeat;
+}
+
+.TankPanel_bar_inner_separator_disabled_fd {
+    display: none;
+}
+
+.TankPanel_bar_inner_progress_4c {
+    width: 150rem;
+    height: 18rem;
+    background: url('R.images.grinch.gui.maps.icons.tankPanel.small.healthbar_health_1024') center center / cover
+        no-repeat;
+    position: absolute;
+    transition: width 0.6s cubic-bezier(0.47, 1.64, 0.41, 0.8);
+}
+
+.mediaMedium .TankPanel_bar_inner_progress_4c {
+    width: 210rem;
+    height: 26rem;
+    background: url('R.images.grinch.gui.maps.icons.tankPanel.large.healthbar_health') center center / cover no-repeat;
+}
+
+.TankPanel_bar_inner_progress__rage_ae {
+    width: 100%;
+    background: url('R.images.grinch.gui.maps.icons.tankPanel.small.healthbar_health_rage_1024') center center / cover
+        no-repeat;
+}
+
+.mediaMedium .TankPanel_bar_inner_progress__rage_ae {
+    background: url('R.images.grinch.gui.maps.icons.tankPanel.large.healthbar_health_rage') center center / cover
+        no-repeat;
+}
+
+.TankPanel_bar_inner_progress__dead_7d {
+    display: none;
+}
+
+.TankPanel_bar_inner_progress__undead_b6 {
+    animation: TankPanel_undead_47 1s ease-in-out infinite;
+}
+
+.TankPanel_bar_inner_amount_ca {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #f9efc7;
+    font-size: 12rem;
+    text-align: center;
+    text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 5rem;
+    right: 0;
+    bottom: 5rem;
+    left: 0;
+}
+
+.TankPanel_bar_inner_amount_dead_0d {
+    color: #c3303c;
+}
+
+.mediaMedium .TankPanel_bar_inner_amount_ca {
+    font-size: 15rem;
+}
+
+.TankPanel_bar_shadow_51 {
+    width: 178rem;
+    height: 34rem;
+    background: url('R.images.grinch.gui.maps.icons.tankPanel.small.healthbar_shadow_1024') center center / contain
+        no-repeat;
+    position: absolute;
+    top: -5rem;
+    right: -5rem;
+}
+
+.mediaMedium .TankPanel_bar_shadow_51 {
+    width: 250rem;
+    height: 50rem;
+    background: url('R.images.grinch.gui.maps.icons.tankPanel.large.healthbar_shadow') center center / contain no-repeat;
+    top: -5rem;
+    right: -5rem;
+}
+
+@keyframes TankPanel_undead_47 {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

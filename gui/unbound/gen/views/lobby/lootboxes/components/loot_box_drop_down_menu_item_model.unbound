@@ -1,0 +1,10 @@
+# This file was generated using wgpygen
+#   template: configs/templates/view_model.unbound.jinja2
+#   source: configs/definitions/views/lobby/lootboxes/components/loot_box_drop_down_menu_item_model.yaml
+# Please, don't edit this file manually.
+(def macro LootBoxDropDownMenuItemModel()
+    (macro DropDownMenuItemModel)
+    (scope
+        (var labelStr:str = '')
+    )
+)

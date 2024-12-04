@@ -730,13 +730,14 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     width: 34rem;
     height: 24rem;
     position: absolute;
-    top: -3rem;
+    top: 5rem;
     right: -48rem;
 }
 
 .Name_soundIcon_2a {
     width: 24rem;
     height: 24rem;
+    margin: 2rem 0 0 1rem;
     background: url('R.images.gui.maps.icons.tankmen.crew.sound') no-repeat center / contain;
 }
 

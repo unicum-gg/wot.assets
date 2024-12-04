@@ -1,0 +1,95 @@
+.FormatText_base_d0 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.TooltipDecorator_base_c9 {
+    display: flex;
+    position: absolute;
+}
+
+.TooltipDecorator_base__theme-default_6d .TooltipDecorator_decorator_3d {
+    padding: 4rem 6rem 8rem;
+    border-image-source: url('R.atlases.components.tooltip_background');
+    border-image-slice: 24 fill;
+    border-image-width: 24rem;
+    position: relative;
+}
+
+.TankName_base_c0 {
+    display: flex;
+    color: #f2f2f7;
+    font-size: 36rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.TankName_type_3c {
+    width: 83rem;
+    height: 74rem;
+    margin: 0 -20rem;
+    background: no-repeat center / contain;
+    position: relative;
+    top: -12rem;
+}
+
+.TankName_type__elite_c7 {
+    margin: 0 -16rem;
+    top: -15rem;
+}
+
+.TooltipTankName_base_4a {
+    color: #fefeec;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+.TooltipTankName_icon_07 {
+    width: 24rem;
+    height: 24rem;
+    margin: -3rem -1rem 0;
+    background: no-repeat center / cover;
+}
+
+.App_base_5e {
+    padding: 15rem 20rem 20rem;
+}
+
+.App_heading_91 {
+    color: #e9e2bf;
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 16rem;
+}
+
+.App_row_df {
+    display: flex;
+    align-items: center;
+    color: #8c8c7e;
+}
+
+.App_row_df + .App_row_df {
+    margin-top: 6rem;
+}
+
+.App_noWrap_2a {
+    flex-wrap: nowrap;
+}
+
+.App_vehicleName_9e {
+    margin: -1rem 0 0 4rem;
+}
+
+.App_message_f7 {
+    color: #595950;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    margin-top: 12rem;
+}
+
+.App_compensatedVehiclesCount_03 {
+    color: #e9e2bf;
+}

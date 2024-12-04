@@ -193,8 +193,8 @@
                         w = e.onMouseUp,
                         x = e.onMouseDown,
                         S = e.onClick,
-                        P = e.onChange,
-                        k = e.onFocus,
+                        k = e.onChange,
+                        P = e.onFocus,
                         T = e.onBlur,
                         I = e.text,
                         N = e.contentStyles,
@@ -217,9 +217,9 @@
                         V = ($[0], $[1]),
                         U = (0, n.useCallback)(
                             (e) => {
-                                E || (P && P(), S && S(e));
+                                E || (k && k(), S && S(e));
                             },
-                            [E, P, S],
+                            [E, k, S],
                         ),
                         Z = (0, n.useCallback)(
                             (e) => {
@@ -248,9 +248,9 @@
                         ),
                         G = (0, n.useCallback)(
                             (e) => {
-                                E || (V(!0), k && k(e));
+                                E || (V(!0), P && P(e));
                             },
-                            [E, k],
+                            [E, P],
                         ),
                         K = (0, n.useCallback)(
                             (e) => {
@@ -392,7 +392,6 @@
                             (e.crystal = 'crystal'),
                             (e.xp = 'xp'),
                             (e.freeXP = 'freeXP'),
-                            (e.eliteXP = 'eliteXP'),
                             (e.equipCoin = 'equipCoin');
                     })(a || (a = {})),
                     (function (e) {
@@ -772,7 +771,7 @@
                                         (y.current.isVisible = !1);
                                 }
                             }, [t, F, w, v]),
-                            P = (0, r.useCallback)((e) => {
+                            k = (0, r.useCallback)((e) => {
                                 y.current.isVisible &&
                                     ((y.current.prevTarget = document.elementFromPoint(e.clientX, e.clientY)),
                                     (y.current.hideTimerId = window.setTimeout(() => {
@@ -783,9 +782,9 @@
                         (0, r.useEffect)(() => {
                             const e = y.current.hideTimerId;
                             return (
-                                document.addEventListener('wheel', P, { capture: !0 }),
+                                document.addEventListener('wheel', k, { capture: !0 }),
                                 () => {
-                                    document.removeEventListener('wheel', P, { capture: !0 }),
+                                    document.removeEventListener('wheel', k, { capture: !0 }),
                                         e && window.clearTimeout(e);
                                 }
                             );
@@ -808,13 +807,13 @@
                                   Object.assign(
                                       {
                                           onMouseEnter:
-                                              ((k = u.props.onMouseEnter),
+                                              ((P = u.props.onMouseEnter),
                                               (e) => {
                                                   (e.clientX === window.innerWidth &&
                                                       e.clientY === window.innerHeight) ||
                                                       ((y.current.timeoutId = window.setTimeout(x, E ? 100 : 400)),
                                                       l && l(e),
-                                                      k && k(e));
+                                                      P && P(e));
                                               }),
                                           onMouseLeave: ((e) => (u) => {
                                               S(), null == c || c(u), null == e || e(u);
@@ -830,7 +829,7 @@
                                   ),
                               )
                             : u;
-                        var k;
+                        var P;
                     };
             },
             8246: (e, u, t) => {
@@ -1254,13 +1253,14 @@
                         addPreloadTexture: () => s,
                         children: () => n,
                         displayStatus: () => a.W,
-                        displayStatusIs: () => y,
+                        displayStatusIs: () => w,
                         events: () => r.U,
-                        extraSize: () => w,
+                        extraSize: () => x,
                         forceTriggerMouseMove: () => v,
                         freezeTextureBeforeResize: () => p,
                         getBrowserTexturePath: () => c,
                         getDisplayStatus: () => f,
+                        getFontNames: () => y,
                         getScale: () => g,
                         getSize: () => d,
                         getViewGlobalPosition: () => A,
@@ -1274,7 +1274,7 @@
                         setEventHandled: () => b,
                         setInputPaddingsRem: () => l,
                         setSidePaddingsRem: () => m,
-                        whenTutorialReady: () => x,
+                        whenTutorialReady: () => S,
                     });
                 var n = t(3722),
                     a = t(6112),
@@ -1336,11 +1336,15 @@
                 function f() {
                     return viewEnv.getShowingStatus();
                 }
-                const y = Object.keys(a.W).reduce(
+                const y = (() => {
+                        let e = [];
+                        return () => (0 === e.length && (e = Object.keys(viewEnv.getFontsConfig())), e);
+                    })(),
+                    w = Object.keys(a.W).reduce(
                         (e, u) => ((e[u] = () => viewEnv.getShowingStatus() === a.W[u]), e),
                         {},
                     ),
-                    w = {
+                    x = {
                         set: (e, u) => {
                             viewEnv.setExtraSizeRem(e, u);
                         },
@@ -1348,7 +1352,7 @@
                             viewEnv.getExtraSizeRem(e, u);
                         },
                     },
-                    x = Promise.all([
+                    S = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : r.U.onDomBuilt(e);
                         }),
@@ -2042,7 +2046,7 @@
                                 w = n === F.Row,
                                 x = Boolean(v.totalItemsInStorage.get()),
                                 S = Boolean(v.price.get().length),
-                                P = y && x && S;
+                                k = y && x && S;
                             return o().createElement(
                                 m.h.Provider,
                                 { value: B },
@@ -2083,11 +2087,11 @@
                                                         itemsInStorage: v.totalItemsInStorage.get(),
                                                     }),
                                                 ),
-                                            P && o().createElement('div', { className: p.Z.plus }),
+                                            k && o().createElement('div', { className: p.Z.plus }),
                                             S &&
                                                 o().createElement(
                                                     'div',
-                                                    { className: a()(p.Z.totalPrice, P && p.Z.totalPrice__mixed) },
+                                                    { className: a()(p.Z.totalPrice, k && p.Z.totalPrice__mixed) },
                                                     o().createElement(A.M, {
                                                         parentId: 'deal-panel',
                                                         priceLabel: r,
@@ -2390,7 +2394,7 @@
                         );
                     };
             },
-            4397: (e, u, t) => {
+            4037: (e, u, t) => {
                 'use strict';
                 var n = t(6179),
                     a = t.n(n),
@@ -2600,7 +2604,7 @@
                         }
                     },
                     S = (e, u, t = v.left) => e.split(u).reduce(t === v.left ? w : x, []),
-                    P = (() => {
+                    k = (() => {
                         const e = new RegExp(
                             /[\(\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]?[\u3002\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]?[ %\+\x2D-9A-Za-\{\}\xA0\xC0-\u0237\u2013\u2014\u2026]+[\)\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3002\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\uFF01\uFF0C\uFF1A\uFF1B\uFF1F\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]?[\u3002\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]?/gmu
                                 .source +
@@ -2621,10 +2625,10 @@
                                 .replace(/ /g, ' ')
                                 .match(e);
                     })(),
-                    k = ['zh_cn', 'zh_sg', 'zh_tw'],
+                    P = ['zh_cn', 'zh_sg', 'zh_tw'],
                     T = (e, u = v.left) => {
                         const t = R.strings.settings.LANGUAGE_CODE().toLowerCase();
-                        if (k.includes(t)) return P(e);
+                        if (P.includes(t)) return k(e);
                         if ('ja' === t) {
                             return (0, B.D4)()
                                 .parse(e)
@@ -2843,13 +2847,13 @@
                         S = (0, n.useCallback)(() => {
                             f();
                         }, [f]),
-                        P = (0, n.useCallback)(() => {
+                        k = (0, n.useCallback)(() => {
                             y();
                         }, [y]),
-                        k = (0, n.useCallback)(() => {
+                        P = (0, n.useCallback)(() => {
                             w();
                         }, [w]);
-                    _({ [m.n.ESCAPE]: k });
+                    _({ [m.n.ESCAPE]: P });
                     const T = (0, n.useCallback)(
                         (e) => {
                             e.keyCode in m.n &&
@@ -2902,7 +2906,7 @@
                             a().createElement(
                                 'div',
                                 { id: `${e}-cancel`, className: me },
-                                a().createElement(p.u5, Ee({ onClick: P, mixClass: de }, s), c),
+                                a().createElement(p.u5, Ee({ onClick: k, mixClass: de }, s), c),
                             );
                     return a().createElement(
                         'div',
@@ -2918,7 +2922,7 @@
                                     caption: R.strings.menu.viewHeader.closeBtn.label(),
                                     type: 'close',
                                     side: 'right',
-                                    onClick: k,
+                                    onClick: P,
                                 }),
                             ),
                         ),
@@ -3010,12 +3014,12 @@
                     }, ve.ZT),
                     xe = we[0],
                     Se = we[1],
-                    Pe = (e, u) => {
+                    ke = (e, u) => {
                         const t = [];
                         for (let n = 0; n < e; n++) t.push(u(n));
                         return t;
                     },
-                    ke = ['I', 'IV', 'V', 'IX', 'X', 'XL', 'L', 'XC', 'C', 'CD', 'D', 'CM', 'M'],
+                    Pe = ['I', 'IV', 'V', 'IX', 'X', 'XL', 'L', 'XC', 'C', 'CD', 'D', 'CM', 'M'],
                     Te = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 const Ie = ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE()),
                     Ne = (e) =>
@@ -3024,7 +3028,7 @@
                             : (function (e) {
                                   let u = '';
                                   for (let t = Te.length - 1; t >= 0; t--)
-                                      for (; e >= Te[t]; ) (u += ke[t]), (e -= Te[t]);
+                                      for (; e >= Te[t]; ) (u += Pe[t]), (e -= Te[t]);
                                   return u;
                               })(e),
                     Re = {
@@ -3091,7 +3095,7 @@
                             ? a().createElement(
                                   'div',
                                   { className: Oe },
-                                  Pe(u.computes.confirmedItemsLength(), (u) =>
+                                  ke(u.computes.confirmedItemsLength(), (u) =>
                                       a().createElement(Me, { key: u, index: u, itemsType: e }),
                                   ),
                               )
@@ -3189,7 +3193,7 @@
                             : a().createElement(
                                   'div',
                                   { className: qe },
-                                  Pe(u, (t) => {
+                                  ke(u, (t) => {
                                       const r = u - 2,
                                           i = e.computes.confirmedItem(t);
                                       if (!i) return null;
@@ -3475,8 +3479,8 @@
                             (e.Temporary = 'temporary'),
                             (e.Limited = 'limited');
                     })(Su || (Su = {}));
-                const Pu = 'ExchangeRate_base_76',
-                    ku = 'ExchangeRate_baseHidden_12',
+                const ku = 'ExchangeRate_base_76',
+                    Pu = 'ExchangeRate_baseHidden_12',
                     Tu = { contentId: R.views.lobby.personal_exchange_rates.tooltips.ExchangeRateTooltip('resId') },
                     Iu = { contentId: R.views.lobby.personal_exchange_rates.tooltips.ExchangeLimitTooltip('resId') },
                     Nu = ({
@@ -3510,7 +3514,7 @@
                         );
                         return a().createElement(
                             'div',
-                            { className: A()(Pu, s && ku) },
+                            { className: A()(ku, s && Pu) },
                             a().createElement(
                                 wu,
                                 { tooltipArgs: l },
@@ -4073,19 +4077,19 @@
                     wt = 'Durability_label_02',
                     xt = 'Durability_bar_73',
                     St = 'Durability_percentage_a7',
-                    Pt = R.strings.tank_setup.dialogs.needRepair,
-                    kt = ({ value: e }) =>
+                    kt = R.strings.tank_setup.dialogs.needRepair,
+                    Pt = ({ value: e }) =>
                         a().createElement(
                             'div',
                             { className: yt },
-                            a().createElement('div', { className: wt }, Pt.durability()),
+                            a().createElement('div', { className: wt }, kt.durability()),
                             a().createElement(
                                 'div',
                                 { className: xt },
                                 a().createElement(ft, { size: Uu.Medium, value: e }),
                             ),
                             a().createElement($e, {
-                                text: Pt.durabilityPercentage(),
+                                text: kt.durabilityPercentage(),
                                 binding: { value: e },
                                 classMix: St,
                             }),
@@ -4100,7 +4104,7 @@
                             'div',
                             { className: Tt },
                             a().createElement($u, { warning: t === s }),
-                            t === s && a().createElement('div', { className: It }, a().createElement(kt, { value: u })),
+                            t === s && a().createElement('div', { className: It }, a().createElement(Pt, { value: u })),
                         );
                     }),
                     Rt = () => a().createElement(Mu, null, a().createElement(Nt, null)),
@@ -4908,7 +4912,7 @@
                     wn = 'ExceededMessage_restrictionIconGlow_04',
                     xn = { contentId: R.views.lobby.personal_exchange_rates.tooltips.ExchangeLimitTooltip('resId') },
                     Sn = { enter: Bn, exit: vn },
-                    Pn = ({ className: e, exceeded: u, amountOfPersonalDiscounts: t, onClick: n }) =>
+                    kn = ({ className: e, exceeded: u, amountOfPersonalDiscounts: t, onClick: n }) =>
                         a().createElement(
                             Kt.Z,
                             { className: A()(e, Dn) },
@@ -4963,7 +4967,7 @@
                                 ),
                             ),
                         ),
-                    kn = 'ExchangePanel_base_bd',
+                    Pn = 'ExchangePanel_base_bd',
                     Tn = 'ExchangePanel_arrow_62',
                     In = 'ExchangePanel_arrow__small_30',
                     Nn = 'ExchangePanel_excluded_02',
@@ -5063,7 +5067,7 @@
                             }),
                             a().createElement(
                                 'div',
-                                { className: kn },
+                                { className: Pn },
                                 a().createElement(Fn, {
                                     value: l.fromItem.get().value,
                                     maximum: m,
@@ -5094,7 +5098,7 @@
                                 }),
                                 i &&
                                     (0, r.createPortal)(
-                                        a().createElement(Pn, {
+                                        a().createElement(kn, {
                                             className: Nn,
                                             exceeded: l.computes.exceeded(),
                                             amountOfPersonalDiscounts: l.exchangeRate.get().amountOfPersonalDiscounts,
@@ -5383,10 +5387,6 @@
                     'icon__freeXP-big': 'Currency_icon__freeXP-big_21',
                     'icon__freeXP-large': 'Currency_icon__freeXP-large_c8',
                     'icon__freeXP-extraLarge': 'Currency_icon__freeXP-extraLarge_58',
-                    'icon__eliteXP-small': 'Currency_icon__eliteXP-small_45',
-                    'icon__eliteXP-big': 'Currency_icon__eliteXP-big_c0',
-                    'icon__eliteXP-large': 'Currency_icon__eliteXP-large_1b',
-                    'icon__eliteXP-extraLarge': 'Currency_icon__eliteXP-extraLarge_9b',
                     'icon__equipCoin-small': 'Currency_icon__equipCoin-small_32',
                     'icon__equipCoin-big': 'Currency_icon__equipCoin-big_79',
                     'icon__equipCoin-large': 'Currency_icon__equipCoin-large_2c',
@@ -5398,7 +5398,6 @@
                     value__xp: 'Currency_value__xp_b0',
                     value__crystal: 'Currency_value__crystal_19',
                     value__equipCoin: 'Currency_value__equipCoin_d0',
-                    value__eliteXP: 'Currency_value__eliteXP_62',
                     value__notEnough: 'Currency_value__notEnough_56',
                     stock: 'Currency_stock_87',
                     stock__indent: 'Currency_stock__indent_a1',
@@ -5542,6 +5541,6 @@
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             t.forEach(u.bind(null, 0)), (t.push = u.bind(null, t.push.bind(t)));
         })();
-    var __webpack_exports__ = __webpack_require__.O(void 0, [727], () => __webpack_require__(4397));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [727], () => __webpack_require__(4037));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

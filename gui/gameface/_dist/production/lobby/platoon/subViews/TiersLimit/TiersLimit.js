@@ -2,7 +2,7 @@
     'use strict';
     var __webpack_modules__ = {
             768: (e, t, n) => {
-                n.d(t, { O: () => ne });
+                n.d(t, { O: () => re });
                 var r = {};
                 n.r(r),
                     n.d(r, { mouse: () => v, off: () => _, on: () => d, onResize: () => l, onScaleUpdated: () => u });
@@ -36,13 +36,14 @@
                         addPreloadTexture: () => I,
                         children: () => i,
                         displayStatus: () => k,
-                        displayStatusIs: () => J,
+                        displayStatusIs: () => ee,
                         events: () => C,
-                        extraSize: () => ee,
+                        extraSize: () => te,
                         forceTriggerMouseMove: () => Z,
                         freezeTextureBeforeResize: () => z,
                         getBrowserTexturePath: () => A,
                         getDisplayStatus: () => Q,
+                        getFontNames: () => J,
                         getScale: () => G,
                         getSize: () => j,
                         getViewGlobalPosition: () => U,
@@ -56,7 +57,7 @@
                         setEventHandled: () => Y,
                         setInputPaddingsRem: () => D,
                         setSidePaddingsRem: () => F,
-                        whenTutorialReady: () => te,
+                        whenTutorialReady: () => ne,
                     });
                 const l = s('clientResized'),
                     u = s('self.onScaleUpdated'),
@@ -283,8 +284,12 @@
                 function Q() {
                     return viewEnv.getShowingStatus();
                 }
-                const J = Object.keys(k).reduce((e, t) => ((e[t] = () => viewEnv.getShowingStatus() === k[t]), e), {}),
-                    ee = {
+                const J = (() => {
+                        let e = [];
+                        return () => (0 === e.length && (e = Object.keys(viewEnv.getFontsConfig())), e);
+                    })(),
+                    ee = Object.keys(k).reduce((e, t) => ((e[t] = () => viewEnv.getShowingStatus() === k[t]), e), {}),
+                    te = {
                         set: (e, t) => {
                             viewEnv.setExtraSizeRem(e, t);
                         },
@@ -292,13 +297,13 @@
                             viewEnv.getExtraSizeRem(e, t);
                         },
                     },
-                    te = Promise.all([
+                    ne = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : C.onDomBuilt(e);
                         }),
                         engine.whenReady,
                     ]),
-                    ne = { view: a, client: o, sound: y };
+                    re = { view: a, client: o, sound: y };
             },
             521: (e, t, n) => {
                 let r, o;

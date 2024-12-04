@@ -183,27 +183,28 @@
                         addPreloadTexture: () => o,
                         children: () => n,
                         displayStatus: () => r.W,
-                        displayStatusIs: () => h,
+                        displayStatusIs: () => R,
                         events: () => E.U,
-                        extraSize: () => R,
+                        extraSize: () => T,
                         forceTriggerMouseMove: () => f,
                         freezeTextureBeforeResize: () => C,
                         getBrowserTexturePath: () => A,
                         getDisplayStatus: () => b,
+                        getFontNames: () => h,
                         getScale: () => d,
                         getSize: () => l,
                         getViewGlobalPosition: () => B,
                         isEventHandled: () => w,
-                        isFocused: () => v,
+                        isFocused: () => g,
                         pxToRem: () => _,
                         remToPx: () => m,
                         resize: () => c,
                         sendEvent: () => a.qP,
                         setAnimateWindow: () => p,
-                        setEventHandled: () => g,
+                        setEventHandled: () => v,
                         setInputPaddingsRem: () => s,
                         setSidePaddingsRem: () => D,
-                        whenTutorialReady: () => T,
+                        whenTutorialReady: () => P,
                     });
                 var n = t(722),
                     r = t(112),
@@ -250,10 +251,10 @@
                 function p(u, e) {
                     viewEnv.setAnimateWindow(u, e);
                 }
-                function v() {
+                function g() {
                     return viewEnv.isFocused();
                 }
-                function g() {
+                function v() {
                     return viewEnv.setEventHandled();
                 }
                 function w() {
@@ -265,11 +266,15 @@
                 function b() {
                     return viewEnv.getShowingStatus();
                 }
-                const h = Object.keys(r.W).reduce(
+                const h = (() => {
+                        let u = [];
+                        return () => (0 === u.length && (u = Object.keys(viewEnv.getFontsConfig())), u);
+                    })(),
+                    R = Object.keys(r.W).reduce(
                         (u, e) => ((u[e] = () => viewEnv.getShowingStatus() === r.W[e]), u),
                         {},
                     ),
-                    R = {
+                    T = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -277,7 +282,7 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    T = Promise.all([
+                    P = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : E.U.onDomBuilt(u);
                         }),
@@ -626,14 +631,14 @@
                         var n;
                     },
                     p = () => m(i.CLOSE),
-                    v = (u, e) => {
+                    g = (u, e) => {
                         u.keyCode === D.ESCAPE && e();
                     };
-                var g = t(572);
+                var v = t(572);
                 const w = r.instance,
                     f = {
                         DataTracker: E.Z,
-                        ViewModel: g.Z,
+                        ViewModel: v.Z,
                         ViewEventType: i,
                         NumberFormatType: o,
                         RealFormatType: s,
@@ -671,13 +676,13 @@
                             });
                         },
                         addEscapeListener: (u) => {
-                            const e = (e) => v(e, u);
+                            const e = (e) => g(e, u);
                             return (
                                 window.addEventListener('keydown', e), () => window.removeEventListener('keydown', e)
                             );
                         },
                         closeOnEsc: (u) => {
-                            v(u, p);
+                            g(u, p);
                         },
                         handleViewEvent: m,
                         onBindingsReady: _,
@@ -735,7 +740,7 @@
                         getFormattedDateTime: (u, e, t = !0) => regionalDateTime.getFormattedDateTime(u, e, t),
                     };
             },
-            352: (u, e, t) => {
+            175: (u, e, t) => {
                 var n = t(179),
                     r = t.n(n),
                     E = t(493),
@@ -826,8 +831,8 @@
                             ),
                         );
                     };
-                var v = t(138);
-                function g() {
+                var g = t(138);
+                function v() {
                     const u = (0, n.useRef)(0);
                     var e;
                     return (
@@ -891,7 +896,7 @@
                                 }
                             return t;
                         })(u, f);
-                    const A = g(),
+                    const A = v(),
                         F = r().useRef(null);
                     var D;
                     return (
@@ -901,9 +906,9 @@
                                 if (!u) return;
                                 const e = u.scrollWidth,
                                     t = u.scrollHeight;
-                                v.O.view.resize(e, t);
+                                g.O.view.resize(e, t);
                                 const n = window.getComputedStyle(u);
-                                v.O.view.setSidePaddingsRem({
+                                g.O.view.setSidePaddingsRem({
                                     left: parseInt(n.getPropertyValue('padding-left'), 10),
                                     top: parseInt(n.getPropertyValue('padding-top'), 10),
                                     right: parseInt(n.getPropertyValue('padding-right'), 10),
@@ -1053,6 +1058,7 @@
                         (u.TankmenXpFactor = 'tankmenXPFactor'),
                         (u.FreeXpFactor = 'freeXPFactor'),
                         (u.BattleToken = 'battleToken'),
+                        (u.Entitlements = 'entitlements'),
                         (u.PremiumUniversal = 'premium_universal'),
                         (u.Gold = 'gold'),
                         (u.Credits = 'credits'),
@@ -1070,6 +1076,8 @@
                         (u.BattleBadge = 'dossier_badge'),
                         (u.NewYearInvoice = 'newYearInvoice'),
                         (u.NewYearSlot = 'newYearSlot'),
+                        (u.NewYearGuestD = 'ny_dog'),
+                        (u.EquipCoin = 'equipCoin'),
                         (u.BonusX5 = 'battle_bonus_x5'),
                         (u.CrewBonusX3 = 'crew_bonus_x3'),
                         (u.Vehicles = 'vehicles'),
@@ -1078,7 +1086,6 @@
                         (u.DeluxeGift = 'deluxe_gift'),
                         (u.BattleBoosterGift = 'battleBooster_gift'),
                         (u.OptionalDevice = 'optionalDevice'),
-                        (u.EquipCoin = 'equipCoin'),
                         (u.LootBox = 'lootBox'),
                         (u.BrCoin = 'brcoin');
                 })(G || (G = {})),
@@ -1212,6 +1219,7 @@
                         G.TankmenXpFactor,
                         G.FreeXpFactor,
                         G.BattleToken,
+                        G.Entitlements,
                         G.PremiumUniversal,
                         G.NaturalCover,
                         G.BpCoin,
@@ -1273,9 +1281,6 @@
                             case 'tokens':
                             case 'lootBox':
                             case 'battleToken':
-                                return 'big' === e
-                                    ? u.iconBig.replace('..', 'img://gui')
-                                    : u.iconSmall.replace('..', 'img://gui');
                             case 'customizations':
                             case 'styleProgress':
                             case 'crewSkins':
@@ -1284,6 +1289,10 @@
                             case 'tmanToken':
                             case 'battlePassSelectToken':
                                 return `R.images.gui.maps.icons.quests.bonuses.${e}.${E}`;
+                            case 'entitlements':
+                                return 'big' === e
+                                    ? u.iconBig.replace('..', 'img://gui')
+                                    : u.iconSmall.replace('..', 'img://gui');
                             case 'crewBooks':
                                 return `R.images.gui.maps.icons.crewBooks.books.${e}.${E}`;
                             case 'dogTagComponents':
@@ -1317,10 +1326,14 @@
                                 return `R.images.gui.maps.icons.quests.bonuses.${e}.freeXP`;
                             case 'premiumTank':
                                 return `R.images.gui.maps.icons.quests.bonuses.${e}.vehicles`;
+                            case 'premiumTank_rent':
+                                return `R.images.gui.maps.icons.quests.bonuses.${e}.vehicles_rent`;
                             case 'styleProgressToken':
                                 return `R.images.gui.maps.icons.quests.bonuses.${e}.style_3d`;
                             case 'collectionItem':
                                 return `R.images.gui.maps.icons.collectionItems.${o}.${E}`;
+                            case 'newYearSlot':
+                                return `R.images.gui.maps.icons.newYear.rewards.${e}.slot`;
                             default:
                                 return `R.images.gui.maps.icons.quests.bonuses.${e}.${t}`;
                         }
@@ -1394,7 +1407,7 @@
                             _ = void 0 === d ? 0 : d,
                             m = u.onShow,
                             p = u.onHide,
-                            v = (function (u, e) {
+                            g = (function (u, e) {
                                 if (null == u) return {};
                                 var t = {};
                                 for (var n in u)
@@ -1404,33 +1417,33 @@
                                     }
                                 return t;
                             })(u, nu);
-                        const g = (0, n.useRef)({ timeoutId: 0, isVisible: !1, prevTarget: null, hideTimerId: null }),
+                        const v = (0, n.useRef)({ timeoutId: 0, isVisible: !1, prevTarget: null, hideTimerId: null }),
                             w = (0, n.useMemo)(() => _ || O().resId, [_]),
                             f = (0, n.useCallback)(() => {
-                                (g.current.isVisible && g.current.timeoutId) ||
+                                (v.current.isVisible && v.current.timeoutId) ||
                                     (Eu(t, c, { isMouseEvent: !0, on: !0, arguments: ru(r) }, w),
                                     m && m(),
-                                    (g.current.isVisible = !0));
+                                    (v.current.isVisible = !0));
                             }, [t, c, r, w, m]),
                             b = (0, n.useCallback)(() => {
-                                if (g.current.isVisible || g.current.timeoutId) {
-                                    const u = g.current.timeoutId;
-                                    u > 0 && (clearTimeout(u), (g.current.timeoutId = 0)),
+                                if (v.current.isVisible || v.current.timeoutId) {
+                                    const u = v.current.timeoutId;
+                                    u > 0 && (clearTimeout(u), (v.current.timeoutId = 0)),
                                         Eu(t, c, { on: !1 }, w),
-                                        g.current.isVisible && p && p(),
-                                        (g.current.isVisible = !1);
+                                        v.current.isVisible && p && p(),
+                                        (v.current.isVisible = !1);
                                 }
                             }, [t, c, w, p]),
                             h = (0, n.useCallback)((u) => {
-                                g.current.isVisible &&
-                                    ((g.current.prevTarget = document.elementFromPoint(u.clientX, u.clientY)),
-                                    (g.current.hideTimerId = window.setTimeout(() => {
+                                v.current.isVisible &&
+                                    ((v.current.prevTarget = document.elementFromPoint(u.clientX, u.clientY)),
+                                    (v.current.hideTimerId = window.setTimeout(() => {
                                         const e = document.elementFromPoint(u.clientX, u.clientY);
-                                        e && !e.isSameNode(g.current.prevTarget) && b();
+                                        e && !e.isSameNode(v.current.prevTarget) && b();
                                     }, 200)));
                             }, []);
                         (0, n.useEffect)(() => {
-                            const u = g.current.hideTimerId;
+                            const u = v.current.hideTimerId;
                             return (
                                 document.addEventListener('wheel', h, { capture: !0 }),
                                 () => {
@@ -1461,7 +1474,7 @@
                                               (u) => {
                                                   (u.clientX === window.innerWidth &&
                                                       u.clientY === window.innerHeight) ||
-                                                      ((g.current.timeoutId = window.setTimeout(f, A ? 100 : 400)),
+                                                      ((v.current.timeoutId = window.setTimeout(f, A ? 100 : 400)),
                                                       E && E(u),
                                                       R && R(u));
                                               }),
@@ -1475,7 +1488,7 @@
                                               !1 === D && b(), null == i || i(e), null == u || u(e);
                                           })(e.props.onMouseDown),
                                       },
-                                      v,
+                                      g,
                                   ),
                               )
                             : e;
@@ -1761,8 +1774,8 @@
                     _u = 'AdditionalReward_base_a7',
                     mu = 'AdditionalReward_base__last_78',
                     pu = 'AdditionalReward_details_21',
-                    vu = 'AdditionalReward_rewardIconWrapper_78',
-                    gu = 'AdditionalReward_backplate_f6',
+                    gu = 'AdditionalReward_rewardIconWrapper_78',
+                    vu = 'AdditionalReward_backplate_f6',
                     wu = ({ label: u, value: e, valueStyle: t }) => {
                         const n = { count: t ? r().createElement('span', { className: t }, e) : e };
                         return r().createElement(p, { text: `${u} %(count)`, binding: n });
@@ -1872,10 +1885,10 @@
                         { className: o()(_u, e && mu) },
                         r().createElement(
                             'div',
-                            { className: vu },
+                            { className: gu },
                             'dogTagComponents' === t.name &&
                                 t.dogTagType === X.Engraving &&
-                                r().createElement('div', { className: gu }),
+                                r().createElement('div', { className: vu }),
                             r().createElement(du, Su({}, t, { size: q.Small })),
                         ),
                         r().createElement('div', { className: pu }, r().createElement(Pu, t)),
@@ -1990,7 +2003,7 @@
                                     );
                                 })(() => {
                                     if (!e.current || !t.current || !E.current) return;
-                                    const u = v.O.client.getSize().height,
+                                    const u = g.O.client.getSize().height,
                                         n = E.current.offsetHeight + (a.current ? a.current.offsetHeight : 0),
                                         r = e.current.scrollHeight - u;
                                     if (r > 0) {
@@ -2130,6 +2143,6 @@
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             t.forEach(e.bind(null, 0)), (t.push = e.bind(null, t.push.bind(t)));
         })();
-    var __webpack_exports__ = __webpack_require__.O(void 0, [807], () => __webpack_require__(352));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [807], () => __webpack_require__(175));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

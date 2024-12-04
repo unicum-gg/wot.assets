@@ -11,7 +11,7 @@
                 Date.now(), n.Ew.getRegionalDateTime, n.Ew.getFormattedDateTime;
             },
             9768: (u, e, t) => {
-                t.d(e, { O: () => tu });
+                t.d(e, { O: () => nu });
                 var n = {};
                 t.r(n),
                     t.d(n, { mouse: () => F, off: () => A, on: () => E, onResize: () => l, onScaleUpdated: () => c });
@@ -45,19 +45,20 @@
                         addPreloadTexture: () => R,
                         children: () => r,
                         displayStatus: () => w,
-                        displayStatusIs: () => J,
+                        displayStatusIs: () => uu,
                         events: () => f,
-                        extraSize: () => uu,
+                        extraSize: () => eu,
                         forceTriggerMouseMove: () => Z,
                         freezeTextureBeforeResize: () => V,
                         getBrowserTexturePath: () => x,
                         getDisplayStatus: () => X,
-                        getScale: () => q,
+                        getFontNames: () => J,
+                        getScale: () => j,
                         getSize: () => z,
                         getViewGlobalPosition: () => $,
                         isEventHandled: () => Y,
                         isFocused: () => H,
-                        pxToRem: () => j,
+                        pxToRem: () => q,
                         remToPx: () => G,
                         resize: () => U,
                         sendEvent: () => I,
@@ -65,7 +66,7 @@
                         setEventHandled: () => K,
                         setInputPaddingsRem: () => N,
                         setSidePaddingsRem: () => Q,
-                        whenTutorialReady: () => eu,
+                        whenTutorialReady: () => tu,
                     });
                 const l = o('clientResized'),
                     c = o('self.onScaleUpdated'),
@@ -186,8 +187,8 @@
                     y = ['args'];
                 const M = 2,
                     S = 16,
-                    T = 32,
-                    O = 64,
+                    O = 32,
+                    T = 64,
                     k = (u, e) => {
                         const t = 'GFViewEventProxy';
                         if (void 0 !== e) {
@@ -227,10 +228,10 @@
                     },
                     I = {
                         close(u) {
-                            k('popover' === u ? M : T);
+                            k('popover' === u ? M : O);
                         },
                         minimize() {
-                            k(O);
+                            k(T);
                         },
                         move(u) {
                             k(S, { isMouseEvent: !0, on: u });
@@ -265,10 +266,10 @@
                 function V() {
                     viewEnv.freezeTextureBeforeResize();
                 }
-                function q() {
+                function j() {
                     return viewEnv.getScale();
                 }
-                function j(u) {
+                function q(u) {
                     return viewEnv.pxToRem(u);
                 }
                 function G(u) {
@@ -292,8 +293,12 @@
                 function X() {
                     return viewEnv.getShowingStatus();
                 }
-                const J = Object.keys(w).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === w[e]), u), {}),
-                    uu = {
+                const J = (() => {
+                        let u = [];
+                        return () => (0 === u.length && (u = Object.keys(viewEnv.getFontsConfig())), u);
+                    })(),
+                    uu = Object.keys(w).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === w[e]), u), {}),
+                    eu = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -301,13 +306,13 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    eu = Promise.all([
+                    tu = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : f.onDomBuilt(u);
                         }),
                         engine.whenReady,
                     ]),
-                    tu = { view: i, client: a, sound: h };
+                    nu = { view: i, client: a, sound: h };
             },
             7902: (u, e, t) => {
                 t.d(e, { F: () => n });
@@ -330,7 +335,7 @@
                 t.d(e, { M: () => n });
                 const n = (u, e) => u.split('.').reduce((u, e) => u && u[e], e);
             },
-            4649: (u, e, t) => {
+            2298: (u, e, t) => {
                 t.d(e, { au: () => D, tT: () => m, eI: () => s });
                 var n = t(7044),
                     a = t(6179);
@@ -906,7 +911,7 @@
             },
             6267: (u, e, t) => {
                 var n = t(9768),
-                    a = t(4649),
+                    a = t(2298),
                     r = t(6179),
                     i = t.n(r),
                     o = t(493),
@@ -1036,7 +1041,7 @@
                         const e = c()(M.base, M[`base__${u}`]);
                         return i().createElement('div', { className: e });
                     },
-                    T = {
+                    O = {
                         base: 'ProgressLineImpose_base_80',
                         base__disabled: 'ProgressLineImpose_base__disabled_cc',
                         base__finished: 'ProgressLineImpose_base__finished_d4',
@@ -1047,21 +1052,21 @@
                         glow: 'ProgressLineImpose_glow_a5',
                         glow__left: 'ProgressLineImpose_glow__left_d8',
                     },
-                    O = (0, r.memo)(
+                    T = (0, r.memo)(
                         ({ size: u, lineRef: e, disabled: t, baseStyles: n, isComplete: a, withoutBounce: r }) => {
                             const o = c()(
-                                    T.base,
-                                    T[`base__${u}`],
-                                    t && T.base__disabled,
-                                    a && T.base__finished,
-                                    r && T.base__withoutBounce,
+                                    O.base,
+                                    O[`base__${u}`],
+                                    t && O.base__disabled,
+                                    a && O.base__finished,
+                                    r && O.base__withoutBounce,
                                 ),
                                 s = !t && !a;
                             return i().createElement(
                                 'div',
                                 { className: o, style: n, ref: e },
-                                i().createElement('div', { className: T.pattern }),
-                                i().createElement('div', { className: T.gradient }),
+                                i().createElement('div', { className: O.pattern }),
+                                i().createElement('div', { className: O.gradient }),
                                 s && i().createElement(S, { size: u }),
                             );
                         },
@@ -1073,7 +1078,7 @@
                             (0, r.useEffect)(() => {
                                 s && a && a();
                             }, [s, a]),
-                            i().createElement(O, { size: u, disabled: n, baseStyles: o, isComplete: s, lineRef: t })
+                            i().createElement(T, { size: u, disabled: n, baseStyles: o, isComplete: s, lineRef: t })
                         );
                     },
                     I = (u, e) => {
@@ -1190,7 +1195,7 @@
                             return i().createElement(
                                 i().Fragment,
                                 null,
-                                i().createElement(O, {
+                                i().createElement(T, {
                                     size: e,
                                     lineRef: n,
                                     disabled: a,
@@ -1214,8 +1219,8 @@
                     U = 'ProgressBarDeltaGrow_base_7e',
                     $ = 'ProgressBarDeltaGrow_base__withoutBounce_b5',
                     V = 'ProgressBarDeltaGrow_glow_68',
-                    q = (u) => (u ? { left: 0 } : { right: 0 }),
-                    j = (u, e) => (u ? { right: 100 - e + '%' } : { left: `${e}%` }),
+                    j = (u) => (u ? { left: 0 } : { right: 0 }),
+                    q = (u, e) => (u ? { right: 100 - e + '%' } : { left: `${e}%` }),
                     G = (u) => ({ transitionDuration: `${u}ms` }),
                     W = (0, r.memo)(
                         ({
@@ -1260,11 +1265,11 @@
                                             ? b(P.End, u)
                                             : void (m && s && s());
                             }, [b, t, m, C, D, p, s, e, u]);
-                            const h = (0, r.useMemo)(() => Object.assign({ width: '100%' }, G(u), q(A)), [A, u]),
-                                g = (0, r.useMemo)(() => Object.assign({ width: '0%' }, G(u), q(A)), [A, u]),
-                                v = (0, r.useMemo)(() => Object.assign({ width: '0%' }, j(A, n), G(u)), [n, A, u]),
+                            const h = (0, r.useMemo)(() => Object.assign({ width: '100%' }, G(u), j(A)), [A, u]),
+                                g = (0, r.useMemo)(() => Object.assign({ width: '0%' }, G(u), j(A)), [A, u]),
+                                v = (0, r.useMemo)(() => Object.assign({ width: '0%' }, q(A, n), G(u)), [n, A, u]),
                                 w = (0, r.useMemo)(
-                                    () => Object.assign({ width: `${Math.abs(o - n)}%` }, j(A, n), G(u)),
+                                    () => Object.assign({ width: `${Math.abs(o - n)}%` }, q(A, n), G(u)),
                                     [n, A, o, u],
                                 );
                             if (m) return null;
@@ -1310,7 +1315,7 @@
                             return i().createElement(
                                 i().Fragment,
                                 null,
-                                i().createElement(O, {
+                                i().createElement(T, {
                                     size: e,
                                     lineRef: n,
                                     disabled: a,
@@ -1822,8 +1827,8 @@
                     yu = 'QuestCard_complete__blink_78',
                     Mu = 'QuestCard_complete_bg__completeStart_68',
                     Su = 'QuestCard_complete_bg__completeEnd_dd',
-                    Tu = 'QuestCard_icon__completeStart_af',
-                    Ou = 'QuestCard_icon__completeEnd_e0',
+                    Ou = 'QuestCard_icon__completeStart_af',
+                    Tu = 'QuestCard_icon__completeEnd_e0',
                     ku = 'QuestCard_base_01',
                     Iu = 'QuestCard_hoverBg_62',
                     Pu = 'QuestCard_base__complete_b5',
@@ -1836,8 +1841,8 @@
                     Uu = 'QuestCard_icon_7e',
                     $u = 'QuestCard_icon_img_d7',
                     Vu = 'QuestCard_icon_img__check_2e',
-                    qu = 'QuestCard_description_6a',
-                    ju = 'QuestCard_description_pad_right_b6',
+                    ju = 'QuestCard_description_6a',
+                    qu = 'QuestCard_description_pad_right_b6',
                     Gu = 'QuestCard_progressCounter_3f',
                     Wu = 'QuestCard_progressCounter_current_af',
                     Hu = 'QuestCard_progressCounter_separator_6b',
@@ -1906,7 +1911,7 @@
                                     'div',
                                     { className: Uu },
                                     i().createElement('div', {
-                                        className: c()($u, { [Vu]: h }, { [Tu]: a && h, [Ou]: _ }),
+                                        className: c()($u, { [Vu]: h }, { [Ou]: a && h, [Tu]: _ }),
                                         style: h ? void 0 : m(b),
                                     }),
                                 ),
@@ -1915,7 +1920,7 @@
                                     { className: zu },
                                     i().createElement(
                                         'div',
-                                        { className: c()(qu, { [ju]: o }) },
+                                        { className: c()(ju, { [qu]: o }) },
                                         ((S = g ? 35 : 70),
                                         (M = v).length > S ? M.slice(0, S).split(' ').slice(0, -1).join(' ') + '…' : M),
                                     ),
@@ -2155,7 +2160,7 @@
                                 },
                                 [y, s, e],
                             ),
-                            T = (0, r.useCallback)(() => {
+                            O = (0, r.useCallback)(() => {
                                 oe(R.sounds.play()), t();
                             }, [t]);
                         (0, r.useEffect)(() => {
@@ -2169,22 +2174,22 @@
                             (0, r.useEffect)(() => {
                                 e && !B && w(_.List);
                             }, [e, B]);
-                        const O = ((u) =>
+                        const T = ((u) =>
                                 u <= d.Micro ? A.Micro : u <= d.Mini ? A.Mini : u <= d.Normal ? A.Normal : A.Micro)(
                                 (0, a.eI)().width,
                             ),
-                            k = C(O);
+                            k = C(T);
                         return i().createElement(
                             'div',
-                            { className: c()(se, { [le]: v === _.Bonus && O === A.Normal }) },
+                            { className: c()(se, { [le]: v === _.Bonus && T === A.Normal }) },
                             v === _.List &&
                                 i().createElement(g, {
                                     innerRef: f,
                                     quests: l,
                                     indicateCompleteQuests: F,
-                                    cardType: O,
+                                    cardType: T,
                                     animateDisappear: !e,
-                                    onClick: T,
+                                    onClick: O,
                                     onMouseEnter: ce,
                                     onAppear: y,
                                     onDisappear: M,
@@ -2198,7 +2203,7 @@
                                     countdown: o,
                                     animateComplete: m.completed,
                                     animateDisappear: m.completed || !e,
-                                    onClick: T,
+                                    onClick: O,
                                     onMouseEnter: ce,
                                     onAnimationEvent: S,
                                 }),
@@ -2216,7 +2221,7 @@
             2993: (u, e, t) => {
                 t.d(e, { Z: () => l });
                 var n = t(7044),
-                    a = t(4649),
+                    a = t(2298),
                     r = t(6179),
                     i = t.n(r),
                     o = t(5572),

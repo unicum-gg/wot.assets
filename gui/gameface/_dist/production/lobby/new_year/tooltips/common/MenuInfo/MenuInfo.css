@@ -1,0 +1,32 @@
+.MenuInfo_base_30 {
+    padding: 5rem 0;
+}
+
+.MenuInfo_background_e4 {
+    display: flex;
+    min-height: 45rem;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(201, 201, 182, 0.07) 37%,
+        rgba(201, 201, 182, 0.07) 63%,
+        transparent
+    );
+}
+
+.MenuInfo_separator_6e {
+    width: 100%;
+    height: 1rem;
+    background-image: repeating-linear-gradient(
+        90deg,
+        transparent 0rem,
+        transparent 2rem,
+        #5a5a52 2rem,
+        #5a5a52 3rem,
+        transparent 3rem,
+        transparent 4rem
+    );
+    background-size: 3rem 1rem;
+    opacity: 0.5;
+    mask-image: linear-gradient(90deg, transparent 0%, #fff 37%, #fff 63%, transparent 100%);
+}

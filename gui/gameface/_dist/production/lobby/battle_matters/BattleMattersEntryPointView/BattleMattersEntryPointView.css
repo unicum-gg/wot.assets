@@ -351,14 +351,14 @@
     justify-content: center;
     width: 100%;
     position: absolute;
-    top: 10rem;
+    top: 21rem;
     left: 0;
     animation: App_headerAppear_57 0.2s ease-in 0.2s backwards;
 }
 .App_progress_ad {
-    width: 48rem;
+    width: 70%;
     position: absolute;
-    top: 62rem;
+    top: 65rem;
     animation: App_footerAppear_9a 0.2s ease-out 0.4s backwards;
 }
 .App_blinkContainer_69 {
@@ -495,9 +495,10 @@
 
 .Level_base_5f {
     color: #fd9;
-    font-size: 24rem;
+    font-size: 18rem;
     font-weight: 700;
-    line-height: 1.2;
+    line-height: 1.1;
+    font-size: 16rem;
     text-shadow:
         0 0 1rem #001128,
         0 1rem 2rem #001128,

@@ -183,13 +183,14 @@
                         addPreloadTexture: () => A,
                         children: () => n,
                         displayStatus: () => o.W,
-                        displayStatusIs: () => g,
+                        displayStatusIs: () => y,
                         events: () => E.U,
-                        extraSize: () => y,
+                        extraSize: () => x,
                         forceTriggerMouseMove: () => h,
                         freezeTextureBeforeResize: () => C,
                         getBrowserTexturePath: () => F,
-                        getDisplayStatus: () => f,
+                        getDisplayStatus: () => g,
+                        getFontNames: () => f,
                         getScale: () => d,
                         getSize: () => l,
                         getViewGlobalPosition: () => c,
@@ -203,7 +204,7 @@
                         setEventHandled: () => w,
                         setInputPaddingsRem: () => i,
                         setSidePaddingsRem: () => D,
-                        whenTutorialReady: () => x,
+                        whenTutorialReady: () => O,
                     });
                 var n = t(722),
                     o = t(112),
@@ -262,14 +263,18 @@
                 function h() {
                     viewEnv.forceTriggerMouseMove();
                 }
-                function f() {
+                function g() {
                     return viewEnv.getShowingStatus();
                 }
-                const g = Object.keys(o.W).reduce(
+                const f = (() => {
+                        let u = [];
+                        return () => (0 === u.length && (u = Object.keys(viewEnv.getFontsConfig())), u);
+                    })(),
+                    y = Object.keys(o.W).reduce(
                         (u, e) => ((u[e] = () => viewEnv.getShowingStatus() === o.W[e]), u),
                         {},
                     ),
-                    y = {
+                    x = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -277,7 +282,7 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    x = Promise.all([
+                    O = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : E.U.onDomBuilt(u);
                         }),
@@ -767,7 +772,7 @@
                         return window.addEventListener('keydown', e), () => window.removeEventListener('keydown', e);
                     };
             },
-            500: (u, e, t) => {
+            698: (u, e, t) => {
                 var n = t(179),
                     o = t.n(n),
                     E = t(493),
@@ -937,7 +942,7 @@
                     'onShow',
                     'onHide',
                 ];
-                function f(u) {
+                function g(u) {
                     return Object.entries(u || {}).map(([u, e]) => {
                         const t = { __Type: 'GFValueProxy', name: u };
                         switch (typeof e) {
@@ -955,7 +960,7 @@
                         return t;
                     });
                 }
-                const g = (u, e, t = {}, n = 0) => {
+                const f = (u, e, t = {}, n = 0) => {
                         viewEnv.handleViewEvent(
                             Object.assign(
                                 {
@@ -1003,7 +1008,7 @@
                             y = (0, n.useMemo)(() => m || r().resId, [m]),
                             x = (0, n.useCallback)(() => {
                                 (p.current.isVisible && p.current.timeoutId) ||
-                                    (g(t, c, { isMouseEvent: !0, on: !0, arguments: f(o) }, y),
+                                    (f(t, c, { isMouseEvent: !0, on: !0, arguments: g(o) }, y),
                                     v && v(),
                                     (p.current.isVisible = !0));
                             }, [t, c, o, y, v]),
@@ -1011,7 +1016,7 @@
                                 if (p.current.isVisible || p.current.timeoutId) {
                                     const u = p.current.timeoutId;
                                     u > 0 && (clearTimeout(u), (p.current.timeoutId = 0)),
-                                        g(t, c, { on: !1 }, y),
+                                        f(t, c, { on: !1 }, y),
                                         p.current.isVisible && b && b(),
                                         (p.current.isVisible = !1);
                                 }
@@ -1912,10 +1917,10 @@
                         const h = (0, n.useCallback)(() => {
                                 (0, m.SW)();
                             }, []),
-                            f = (0, n.useCallback)(() => {
+                            g = (0, n.useCallback)(() => {
                                 d();
                             }, [d]),
-                            g = (0, n.useCallback)(() => {
+                            f = (0, n.useCallback)(() => {
                                 b();
                             }, [b]),
                             y = (0, n.useCallback)(() => {
@@ -1948,8 +1953,8 @@
                                         buyingEnableTime: s,
                                         isLastEventDay: D,
                                         hasErrors: l,
-                                        onOpenClick: f,
-                                        onBuyClick: g,
+                                        onOpenClick: g,
+                                        onBuyClick: f,
                                         useExternalShop: p,
                                     }),
                                 ),
@@ -2037,6 +2042,6 @@
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             t.forEach(e.bind(null, 0)), (t.push = e.bind(null, t.push.bind(t)));
         })();
-    var __webpack_exports__ = __webpack_require__.O(void 0, [503], () => __webpack_require__(500));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [503], () => __webpack_require__(698));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

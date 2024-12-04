@@ -2,7 +2,7 @@
     'use strict';
     var __webpack_modules__ = {
             768: (u, e, t) => {
-                t.d(e, { O: () => tu });
+                t.d(e, { O: () => nu });
                 var n = {};
                 t.r(n),
                     t.d(n, { mouse: () => F, off: () => _, on: () => c, onResize: () => l, onScaleUpdated: () => E });
@@ -36,27 +36,28 @@
                         addPreloadTexture: () => M,
                         children: () => r,
                         displayStatus: () => b,
-                        displayStatusIs: () => J,
+                        displayStatusIs: () => uu,
                         events: () => f,
-                        extraSize: () => uu,
+                        extraSize: () => eu,
                         forceTriggerMouseMove: () => Q,
                         freezeTextureBeforeResize: () => $,
-                        getBrowserTexturePath: () => N,
+                        getBrowserTexturePath: () => L,
                         getDisplayStatus: () => Z,
-                        getScale: () => q,
+                        getFontNames: () => J,
+                        getScale: () => Y,
                         getSize: () => G,
                         getViewGlobalPosition: () => W,
                         isEventHandled: () => K,
                         isFocused: () => X,
-                        pxToRem: () => Y,
+                        pxToRem: () => q,
                         remToPx: () => V,
                         resize: () => H,
                         sendEvent: () => x,
                         setAnimateWindow: () => z,
                         setEventHandled: () => j,
-                        setInputPaddingsRem: () => L,
+                        setInputPaddingsRem: () => N,
                         setSidePaddingsRem: () => U,
-                        whenTutorialReady: () => eu,
+                        whenTutorialReady: () => tu,
                     });
                 const l = s('clientResized'),
                     E = s('self.onScaleUpdated'),
@@ -231,10 +232,10 @@
                 function M(u) {
                     viewEnv.addPreloadTexture(u);
                 }
-                function L(u) {
+                function N(u) {
                     viewEnv.setHitAreaPaddingsRem(u, u, u, u, k);
                 }
-                function N(u, e, t, n = 1) {
+                function L(u, e, t, n = 1) {
                     return viewEnv.getWebBrowserTexturePath(u, e, t, n);
                 }
                 function I(u, e, t) {
@@ -256,10 +257,10 @@
                 function $() {
                     viewEnv.freezeTextureBeforeResize();
                 }
-                function q() {
+                function Y() {
                     return viewEnv.getScale();
                 }
-                function Y(u) {
+                function q(u) {
                     return viewEnv.pxToRem(u);
                 }
                 function V(u) {
@@ -283,8 +284,12 @@
                 function Z() {
                     return viewEnv.getShowingStatus();
                 }
-                const J = Object.keys(b).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === b[e]), u), {}),
-                    uu = {
+                const J = (() => {
+                        let u = [];
+                        return () => (0 === u.length && (u = Object.keys(viewEnv.getFontsConfig())), u);
+                    })(),
+                    uu = Object.keys(b).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === b[e]), u), {}),
+                    eu = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -292,13 +297,13 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    eu = Promise.all([
+                    tu = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : f.onDomBuilt(u);
                         }),
                         engine.whenReady,
                     ]),
-                    tu = { view: i, client: a, sound: h };
+                    nu = { view: i, client: a, sound: h };
             },
             521: (u, e, t) => {
                 let n, a;
@@ -699,7 +704,7 @@
                         getFormattedDateTime: (u, e, t = !0) => regionalDateTime.getFormattedDateTime(u, e, t),
                     };
             },
-            115: (u, e, t) => {
+            52: (u, e, t) => {
                 var n = t(179),
                     a = t.n(n);
                 const r = (u, e, t) =>
@@ -1182,9 +1187,9 @@
                         'gum',
                     );
                 })();
-                var L = t(916),
-                    N = t(613);
-                Date.now(), N.Ew.getRegionalDateTime, N.Ew.getFormattedDateTime;
+                var N = t(916),
+                    L = t(613);
+                Date.now(), L.Ew.getRegionalDateTime, L.Ew.getFormattedDateTime;
                 const I = (u = 1) => {
                         const e = new Error().stack;
                         let t,
@@ -1230,12 +1235,12 @@
                         }
                         return '';
                     },
-                    q = L.Sw.instance;
-                let Y;
+                    Y = N.Sw.instance;
+                let q;
                 !(function (u) {
                     (u.None = 'None'), (u.Shallow = 'Shallow'), (u.Deep = 'Deep');
-                })(Y || (Y = {}));
-                const V = (u = 'model', e = Y.Deep) => {
+                })(q || (q = {}));
+                const V = (u = 'model', e = q.Deep) => {
                     const t = (0, n.useState)(0),
                         a = (t[0], t[1]),
                         r = (0, n.useMemo)(() => I(), []),
@@ -1259,32 +1264,32 @@
                         B(() => {
                             if (
                                 ('boolean' == typeof e &&
-                                    ((e = e ? Y.Deep : Y.None),
+                                    ((e = e ? q.Deep : q.None),
                                     console.warn(
                                         'Boolean key for useModel "tracking" param is deprecated. Use ModelTracking enum values instead!',
                                     )),
-                                e !== Y.None)
+                                e !== q.None)
                             ) {
                                 const t = (u) => {
                                         ((u) => u && 'CoherentArrayProxy' === u.__proto__.constructor.name)(u) &&
-                                        e === Y.Deep
+                                        e === q.Deep
                                             ? (u === E && a((u) => u + 1), c(u))
                                             : c(Object.assign([], u));
                                     },
                                     n = $(u);
-                                _.current = q.addCallback(n, t, s, e === Y.Deep);
+                                _.current = Y.addCallback(n, t, s, e === q.Deep);
                             }
                         }),
                         (0, n.useEffect)(() => {
-                            if (e !== Y.None)
+                            if (e !== q.None)
                                 return () => {
-                                    q.removeCallback(_.current, s);
+                                    Y.removeCallback(_.current, s);
                                 };
                         }, [s, e]),
                         E
                     );
                 };
-                L.Sw.instance;
+                N.Sw.instance;
                 var z = t(521);
                 const X = (u) => {
                     console.error(u.type + ': useKeydownListener hook :: Callback is not defined');
@@ -1308,7 +1313,7 @@
                 }
                 function K() {
                     !(function (u = z.n.ESCAPE) {
-                        j(u, L.Sy, !0);
+                        j(u, N.Sy, !0);
                     })(z.n.ESCAPE);
                 }
                 function Q(u, e, t) {
@@ -1354,6 +1359,7 @@
                         (u.TankmenXpFactor = 'tankmenXPFactor'),
                         (u.FreeXpFactor = 'freeXPFactor'),
                         (u.BattleToken = 'battleToken'),
+                        (u.Entitlements = 'entitlements'),
                         (u.PremiumUniversal = 'premium_universal'),
                         (u.Gold = 'gold'),
                         (u.Credits = 'credits'),
@@ -1371,6 +1377,8 @@
                         (u.BattleBadge = 'dossier_badge'),
                         (u.NewYearInvoice = 'newYearInvoice'),
                         (u.NewYearSlot = 'newYearSlot'),
+                        (u.NewYearGuestD = 'ny_dog'),
+                        (u.EquipCoin = 'equipCoin'),
                         (u.BonusX5 = 'battle_bonus_x5'),
                         (u.CrewBonusX3 = 'crew_bonus_x3'),
                         (u.Vehicles = 'vehicles'),
@@ -1379,7 +1387,6 @@
                         (u.DeluxeGift = 'deluxe_gift'),
                         (u.BattleBoosterGift = 'battleBooster_gift'),
                         (u.OptionalDevice = 'optionalDevice'),
-                        (u.EquipCoin = 'equipCoin'),
                         (u.LootBox = 'lootBox'),
                         (u.BrCoin = 'brcoin');
                 })(Z || (Z = {})),
@@ -1487,9 +1494,9 @@
                 class iu extends a().PureComponent {
                     render() {
                         let u;
-                        if ('gold' === this.props.format) u = L.B3.GOLD;
-                        else u = L.B3.INTEGRAL;
-                        const e = L.Z5.getNumberFormat(this.props.value, u);
+                        if ('gold' === this.props.format) u = N.B3.GOLD;
+                        else u = N.B3.INTEGRAL;
+                        const e = N.Z5.getNumberFormat(this.props.value, u);
                         return void 0 !== this.props.value && void 0 !== e ? e : null;
                     }
                 }
@@ -1513,6 +1520,7 @@
                         Z.TankmenXpFactor,
                         Z.FreeXpFactor,
                         Z.BattleToken,
+                        Z.Entitlements,
                         Z.PremiumUniversal,
                         Z.NaturalCover,
                         Z.BpCoin,
@@ -1574,9 +1582,6 @@
                             case 'tokens':
                             case 'lootBox':
                             case 'battleToken':
-                                return 'big' === e
-                                    ? u.iconBig.replace('..', 'img://gui')
-                                    : u.iconSmall.replace('..', 'img://gui');
                             case 'customizations':
                             case 'styleProgress':
                             case 'crewSkins':
@@ -1585,6 +1590,10 @@
                             case 'tmanToken':
                             case 'battlePassSelectToken':
                                 return `R.images.gui.maps.icons.quests.bonuses.${e}.${r}`;
+                            case 'entitlements':
+                                return 'big' === e
+                                    ? u.iconBig.replace('..', 'img://gui')
+                                    : u.iconSmall.replace('..', 'img://gui');
                             case 'crewBooks':
                                 return `R.images.gui.maps.icons.crewBooks.books.${e}.${r}`;
                             case 'dogTagComponents':
@@ -1618,10 +1627,14 @@
                                 return `R.images.gui.maps.icons.quests.bonuses.${e}.freeXP`;
                             case 'premiumTank':
                                 return `R.images.gui.maps.icons.quests.bonuses.${e}.vehicles`;
+                            case 'premiumTank_rent':
+                                return `R.images.gui.maps.icons.quests.bonuses.${e}.vehicles_rent`;
                             case 'styleProgressToken':
                                 return `R.images.gui.maps.icons.quests.bonuses.${e}.style_3d`;
                             case 'collectionItem':
                                 return `R.images.gui.maps.icons.collectionItems.${o}.${r}`;
+                            case 'newYearSlot':
+                                return `R.images.gui.maps.icons.newYear.rewards.${e}.slot`;
                             default:
                                 return `R.images.gui.maps.icons.quests.bonuses.${e}.${t}`;
                         }
@@ -1668,7 +1681,7 @@
                             Object.assign(
                                 {
                                     __Type: 'GFViewEventProxy',
-                                    type: L.B0.TOOLTIP,
+                                    type: N.B0.TOOLTIP,
                                     contentID: u,
                                     decoratorID: e,
                                     targetID: n,
@@ -2046,7 +2059,7 @@
                                         caption: R.strings.menu.viewHeader.closeBtn.label(),
                                         type: 'close',
                                         side: 'right',
-                                        onClick: L.Sy,
+                                        onClick: N.Sy,
                                     }),
                                 ),
                                 a().createElement(bu, { rewards: t }),
@@ -2055,7 +2068,7 @@
                                     { className: fu.footer },
                                     a().createElement(
                                         S,
-                                        { onClick: L.Sy, size: f.medium, type: b.primary, mixClass: fu.button },
+                                        { onClick: N.Sy, size: f.medium, type: b.primary, mixClass: fu.button },
                                         Tu.button(),
                                     ),
                                 ),
@@ -2146,6 +2159,6 @@
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             t.forEach(e.bind(null, 0)), (t.push = e.bind(null, t.push.bind(t)));
         })();
-    var __webpack_exports__ = __webpack_require__.O(void 0, [320], () => __webpack_require__(115));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [320], () => __webpack_require__(52));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

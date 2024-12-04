@@ -183,13 +183,14 @@
                         addPreloadTexture: () => B,
                         children: () => E,
                         displayStatus: () => F.W,
-                        displayStatusIs: () => b,
+                        displayStatusIs: () => O,
                         events: () => D.U,
-                        extraSize: () => O,
+                        extraSize: () => y,
                         forceTriggerMouseMove: () => f,
                         freezeTextureBeforeResize: () => l,
                         getBrowserTexturePath: () => C,
                         getDisplayStatus: () => g,
+                        getFontNames: () => b,
                         getScale: () => d,
                         getSize: () => a,
                         getViewGlobalPosition: () => c,
@@ -203,7 +204,7 @@
                         setEventHandled: () => m,
                         setInputPaddingsRem: () => r,
                         setSidePaddingsRem: () => o,
-                        whenTutorialReady: () => y,
+                        whenTutorialReady: () => T,
                     });
                 var E = A(3722),
                     F = A(6112),
@@ -265,11 +266,15 @@
                 function g() {
                     return viewEnv.getShowingStatus();
                 }
-                const b = Object.keys(F.W).reduce(
+                const b = (() => {
+                        let u = [];
+                        return () => (0 === u.length && (u = Object.keys(viewEnv.getFontsConfig())), u);
+                    })(),
+                    O = Object.keys(F.W).reduce(
                         (u, e) => ((u[e] = () => viewEnv.getShowingStatus() === F.W[e]), u),
                         {},
                     ),
-                    O = {
+                    y = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -277,7 +282,7 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    y = Promise.all([
+                    T = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : D.U.onDomBuilt(u);
                         }),
@@ -739,7 +744,7 @@
                         getFormattedDateTime: (u, e, A = !0) => regionalDateTime.getFormattedDateTime(u, e, A),
                     };
             },
-            885: (u, e, A) => {
+            6437: (u, e, A) => {
                 var E = A(6179),
                     F = A.n(E),
                     D = A(493),
@@ -1143,6 +1148,6 @@
                 A = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             A.forEach(e.bind(null, 0)), (A.push = e.bind(null, A.push.bind(A)));
         })();
-    var __webpack_exports__ = __webpack_require__.O(void 0, [705], () => __webpack_require__(885));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [705], () => __webpack_require__(6437));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

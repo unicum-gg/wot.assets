@@ -183,13 +183,14 @@
                         addPreloadTexture: () => o,
                         children: () => i,
                         displayStatus: () => r.W,
-                        displayStatusIs: () => T,
+                        displayStatusIs: () => k,
                         events: () => a.U,
-                        extraSize: () => k,
+                        extraSize: () => L,
                         forceTriggerMouseMove: () => y,
                         freezeTextureBeforeResize: () => w,
                         getBrowserTexturePath: () => d,
                         getDisplayStatus: () => O,
+                        getFontNames: () => T,
                         getScale: () => v,
                         getSize: () => h,
                         getViewGlobalPosition: () => g,
@@ -203,7 +204,7 @@
                         setEventHandled: () => S,
                         setInputPaddingsRem: () => c,
                         setSidePaddingsRem: () => _,
-                        whenTutorialReady: () => L,
+                        whenTutorialReady: () => P,
                     });
                 var i = n(722),
                     r = n(112),
@@ -265,11 +266,15 @@
                 function O() {
                     return viewEnv.getShowingStatus();
                 }
-                const T = Object.keys(r.W).reduce(
+                const T = (() => {
+                        let e = [];
+                        return () => (0 === e.length && (e = Object.keys(viewEnv.getFontsConfig())), e);
+                    })(),
+                    k = Object.keys(r.W).reduce(
                         (e, t) => ((e[t] = () => viewEnv.getShowingStatus() === r.W[t]), e),
                         {},
                     ),
-                    k = {
+                    L = {
                         set: (e, t) => {
                             viewEnv.setExtraSizeRem(e, t);
                         },
@@ -277,7 +282,7 @@
                             viewEnv.getExtraSizeRem(e, t);
                         },
                     },
-                    L = Promise.all([
+                    P = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : a.U.onDomBuilt(e);
                         }),
@@ -953,8 +958,8 @@
                     F = 'SwitcherBullet_base__disabled_b9',
                     U = 'SwitcherBullet_disabled_b5',
                     V = 'SwitcherBullet_number_b4',
-                    q = 'SwitcherBullet_currentText_f9',
-                    j = 'SwitcherBullet_text_37',
+                    j = 'SwitcherBullet_currentText_f9',
+                    q = 'SwitcherBullet_text_37',
                     z = 'SwitcherBullet_texture_1e',
                     K = ({
                         numberToDisplay: e,
@@ -1033,7 +1038,7 @@
                                     onMouseLeave: b,
                                 }),
                             ),
-                            o && t === l && r().createElement('div', { className: q }, o),
+                            o && t === l && r().createElement('div', { className: j }, o),
                         );
                     },
                     G = ({
@@ -1085,7 +1090,7 @@
                                 _ && r().createElement('div', { className: z }),
                                 !_ && r().createElement('div', { className: I }),
                                 r().createElement('div', { className: H, style: p }),
-                                r().createElement('div', { className: j }, E),
+                                r().createElement('div', { className: q }, E),
                                 r().createElement('div', {
                                     className: B,
                                     style: p,

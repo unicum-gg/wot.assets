@@ -209,13 +209,14 @@
                         addPreloadTexture: () => l,
                         children: () => i,
                         displayStatus: () => n.W,
-                        displayStatusIs: () => x,
+                        displayStatusIs: () => f,
                         events: () => a.U,
-                        extraSize: () => f,
+                        extraSize: () => y,
                         forceTriggerMouseMove: () => v,
                         freezeTextureBeforeResize: () => h,
                         getBrowserTexturePath: () => c,
                         getDisplayStatus: () => p,
+                        getFontNames: () => x,
                         getScale: () => _,
                         getSize: () => d,
                         getViewGlobalPosition: () => F,
@@ -229,7 +230,7 @@
                         setEventHandled: () => C,
                         setInputPaddingsRem: () => E,
                         setSidePaddingsRem: () => A,
-                        whenTutorialReady: () => y,
+                        whenTutorialReady: () => N,
                     });
                 var i = t(3722),
                     n = t(6112),
@@ -291,11 +292,15 @@
                 function p() {
                     return viewEnv.getShowingStatus();
                 }
-                const x = Object.keys(n.W).reduce(
+                const x = (() => {
+                        let e = [];
+                        return () => (0 === e.length && (e = Object.keys(viewEnv.getFontsConfig())), e);
+                    })(),
+                    f = Object.keys(n.W).reduce(
                         (e, u) => ((e[u] = () => viewEnv.getShowingStatus() === n.W[u]), e),
                         {},
                     ),
-                    f = {
+                    y = {
                         set: (e, u) => {
                             viewEnv.setExtraSizeRem(e, u);
                         },
@@ -303,7 +308,7 @@
                             viewEnv.getExtraSizeRem(e, u);
                         },
                     },
-                    y = Promise.all([
+                    N = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : a.U.onDomBuilt(e);
                         }),
@@ -771,7 +776,7 @@
                         getFormattedDateTime: (e, u, t = !0) => regionalDateTime.getFormattedDateTime(e, u, t),
                     };
             },
-            3866: (e, u, t) => {
+            1283: (e, u, t) => {
                 'use strict';
                 var i = t(6179),
                     n = t.n(i);
@@ -1102,8 +1107,8 @@
                             l = a.mediaSize;
                         return n().createElement('div', y({ className: B()(t, N[r], L[s], H[l]) }, i), u);
                     },
-                    T = ['children'];
-                const O = (e) => {
+                    O = ['children'];
+                const T = (e) => {
                     let u = e.children,
                         t = (function (e, u) {
                             if (null == e) return {};
@@ -1114,7 +1119,7 @@
                                     t[i] = e[i];
                                 }
                             return t;
-                        })(e, T);
+                        })(e, O);
                     return n().createElement(D, null, n().createElement(S, t, u));
                 };
                 var M = t(493),
@@ -1512,8 +1517,8 @@
                         shift: 'NewbieHint03_shift_a4',
                         title: 'NewbieHint03_title_31',
                     },
-                    Te = { width: 2560, height: 1440 },
-                    Oe = {
+                    Oe = { width: 2560, height: 1440 },
+                    Te = {
                         [w.ExtraSmall]: { x: 1846, y: 975 },
                         [w.Small]: { x: 1940, y: 958 },
                         [w.Medium]: { x: 1937, y: 940 },
@@ -1614,8 +1619,8 @@
                     Ru = { width: 2560, height: 1440 },
                     Hu = { width: 1366, height: 768 },
                     Su = { x: 767, y: 587 },
-                    Tu = { x: 432, y: 289 },
-                    Ou = { x: 767, y: 908 },
+                    Ou = { x: 432, y: 289 },
+                    Tu = { x: 767, y: 908 },
                     Mu = { x: 428, y: 485 },
                     ku = { x: 1917, y: 906 },
                     Pu = { x: 953, y: 485 },
@@ -1756,8 +1761,8 @@
                         [Xu.NewbieHint3]: () => {
                             const e = z(),
                                 u = x().mediaSize,
-                                t = V(e, Te, Oe[u]),
-                                i = Te.height - e.height < 200;
+                                t = V(e, Oe, Te[u]),
+                                i = Oe.height - e.height < 200;
                             return n().createElement(
                                 Q,
                                 {
@@ -2096,9 +2101,9 @@
                                 u = z(),
                                 t = e <= w.ExtraSmall,
                                 i = t ? Hu : Ru,
-                                a = t ? Mu : Ou,
+                                a = t ? Mu : Tu,
                                 r = t ? Pu : ku,
-                                s = j(u, i, t ? Tu : Su),
+                                s = j(u, i, t ? Ou : Su),
                                 l = j(u, i, a),
                                 E = j(u, i, r);
                             return n().createElement(
@@ -2317,7 +2322,7 @@
                         n().createElement(
                             D,
                             null,
-                            n().createElement(O, null, n().createElement(re, null, n().createElement(st, null))),
+                            n().createElement(T, null, n().createElement(re, null, n().createElement(st, null))),
                         ),
                         document.getElementById('root'),
                     );
@@ -2400,6 +2405,6 @@
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             t.forEach(u.bind(null, 0)), (t.push = u.bind(null, t.push.bind(t)));
         })();
-    var __webpack_exports__ = __webpack_require__.O(void 0, [532], () => __webpack_require__(3866));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [532], () => __webpack_require__(1283));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

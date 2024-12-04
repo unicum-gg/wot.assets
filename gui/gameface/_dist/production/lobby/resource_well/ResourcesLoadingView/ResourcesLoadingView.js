@@ -373,13 +373,14 @@
                         addPreloadTexture: () => o,
                         children: () => n,
                         displayStatus: () => r.W,
-                        displayStatusIs: () => w,
+                        displayStatusIs: () => S,
                         events: () => a.U,
-                        extraSize: () => S,
+                        extraSize: () => y,
                         forceTriggerMouseMove: () => b,
                         freezeTextureBeforeResize: () => D,
                         getBrowserTexturePath: () => c,
                         getDisplayStatus: () => v,
+                        getFontNames: () => w,
                         getScale: () => F,
                         getSize: () => m,
                         getViewGlobalPosition: () => A,
@@ -393,7 +394,7 @@
                         setEventHandled: () => B,
                         setInputPaddingsRem: () => l,
                         setSidePaddingsRem: () => _,
-                        whenTutorialReady: () => y,
+                        whenTutorialReady: () => x,
                     });
                 var n = t(3722),
                     r = t(6112),
@@ -455,11 +456,15 @@
                 function v() {
                     return viewEnv.getShowingStatus();
                 }
-                const w = Object.keys(r.W).reduce(
+                const w = (() => {
+                        let e = [];
+                        return () => (0 === e.length && (e = Object.keys(viewEnv.getFontsConfig())), e);
+                    })(),
+                    S = Object.keys(r.W).reduce(
                         (e, u) => ((e[u] = () => viewEnv.getShowingStatus() === r.W[u]), e),
                         {},
                     ),
-                    S = {
+                    y = {
                         set: (e, u) => {
                             viewEnv.setExtraSizeRem(e, u);
                         },
@@ -467,7 +472,7 @@
                             viewEnv.getExtraSizeRem(e, u);
                         },
                     },
-                    y = Promise.all([
+                    x = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : a.U.onDomBuilt(e);
                         }),
@@ -557,7 +562,7 @@
             2344: (e, u, t) => {
                 'use strict';
                 t.d(u, { DA: () => n.D, tT: () => n.t });
-                t(3469), t(2133), t(2790), t(579);
+                t(3469), t(2133), t(2790), t(3779), t(579);
                 var n = t(5360);
                 t(9056);
             },
@@ -648,6 +653,10 @@
                 n.Sw.instance;
             },
             2790: (e, u, t) => {
+                'use strict';
+                t(6179);
+            },
+            3779: (e, u, t) => {
                 'use strict';
                 t(6179);
             },

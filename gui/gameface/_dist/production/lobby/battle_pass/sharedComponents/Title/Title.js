@@ -40,6 +40,7 @@
                             (u.TankmenXpFactor = 'tankmenXPFactor'),
                             (u.FreeXpFactor = 'freeXPFactor'),
                             (u.BattleToken = 'battleToken'),
+                            (u.Entitlements = 'entitlements'),
                             (u.PremiumUniversal = 'premium_universal'),
                             (u.Gold = 'gold'),
                             (u.Credits = 'credits'),
@@ -57,6 +58,8 @@
                             (u.BattleBadge = 'dossier_badge'),
                             (u.NewYearInvoice = 'newYearInvoice'),
                             (u.NewYearSlot = 'newYearSlot'),
+                            (u.NewYearGuestD = 'ny_dog'),
+                            (u.EquipCoin = 'equipCoin'),
                             (u.BonusX5 = 'battle_bonus_x5'),
                             (u.CrewBonusX3 = 'crew_bonus_x3'),
                             (u.Vehicles = 'vehicles'),
@@ -65,7 +68,6 @@
                             (u.DeluxeGift = 'deluxe_gift'),
                             (u.BattleBoosterGift = 'battleBooster_gift'),
                             (u.OptionalDevice = 'optionalDevice'),
-                            (u.EquipCoin = 'equipCoin'),
                             (u.LootBox = 'lootBox'),
                             (u.BrCoin = 'brcoin');
                     })(E || (E = {})),
@@ -192,6 +194,7 @@
                     E.E4.TankmenXpFactor,
                     E.E4.FreeXpFactor,
                     E.E4.BattleToken,
+                    E.E4.Entitlements,
                     E.E4.PremiumUniversal,
                     E.E4.NaturalCover,
                     E.E4.BpCoin,
@@ -404,16 +407,17 @@
                         addPreloadTexture: () => o,
                         children: () => E,
                         displayStatus: () => n.W,
-                        displayStatusIs: () => P,
+                        displayStatusIs: () => b,
                         events: () => F.U,
-                        extraSize: () => b,
+                        extraSize: () => O,
                         forceTriggerMouseMove: () => g,
-                        freezeTextureBeforeResize: () => l,
+                        freezeTextureBeforeResize: () => _,
                         getBrowserTexturePath: () => a,
                         getDisplayStatus: () => T,
+                        getFontNames: () => P,
                         getScale: () => d,
                         getSize: () => B,
-                        getViewGlobalPosition: () => _,
+                        getViewGlobalPosition: () => l,
                         isEventHandled: () => w,
                         isFocused: () => v,
                         pxToRem: () => c,
@@ -424,7 +428,7 @@
                         setEventHandled: () => h,
                         setInputPaddingsRem: () => r,
                         setSidePaddingsRem: () => s,
-                        whenTutorialReady: () => O,
+                        whenTutorialReady: () => f,
                     });
                 var E = t(3722),
                     n = t(6112),
@@ -452,11 +456,11 @@
                 function C(u, e, t = 'px') {
                     return 'rem' === t ? viewEnv.resizeViewRem(u, e) : viewEnv.resizeViewPx(u, e);
                 }
-                function _(u = 'rem') {
+                function l(u = 'rem') {
                     const e = viewEnv.getViewGlobalPositionRem();
                     return 'rem' === u ? e : { x: p(e.x), y: p(e.y) };
                 }
-                function l() {
+                function _() {
                     viewEnv.freezeTextureBeforeResize();
                 }
                 function d() {
@@ -486,11 +490,15 @@
                 function T() {
                     return viewEnv.getShowingStatus();
                 }
-                const P = Object.keys(n.W).reduce(
+                const P = (() => {
+                        let u = [];
+                        return () => (0 === u.length && (u = Object.keys(viewEnv.getFontsConfig())), u);
+                    })(),
+                    b = Object.keys(n.W).reduce(
                         (u, e) => ((u[e] = () => viewEnv.getShowingStatus() === n.W[e]), u),
                         {},
                     ),
-                    b = {
+                    O = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -498,7 +506,7 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    O = Promise.all([
+                    f = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : F.U.onDomBuilt(u);
                         }),
@@ -795,7 +803,7 @@
                 var s = t(5521),
                     B = t(3138);
                 const C = ['args'];
-                function _(u, e, t, E, n, F, A) {
+                function l(u, e, t, E, n, F, A) {
                     try {
                         var i = u[F](A),
                             o = i.value;
@@ -804,7 +812,7 @@
                     }
                     i.done ? e(o) : Promise.resolve(o).then(E, n);
                 }
-                const l = (u) => ({ __Type: 'GFBoundingBox', x: u.x, y: u.y, width: u.width, height: u.height }),
+                const _ = (u) => ({ __Type: 'GFBoundingBox', x: u.x, y: u.y, width: u.width, height: u.height }),
                     d = (function () {
                         var u,
                             e =
@@ -822,10 +830,10 @@
                                     return new Promise(function (E, n) {
                                         var F = u.apply(e, t);
                                         function A(u) {
-                                            _(F, E, n, A, i, 'next', u);
+                                            l(F, E, n, A, i, 'next', u);
                                         }
                                         function i(u) {
-                                            _(F, E, n, A, i, 'throw', u);
+                                            l(F, E, n, A, i, 'throw', u);
                                         }
                                         A(void 0);
                                     });
@@ -887,7 +895,7 @@
                         RealFormatType: r,
                         TimeFormatType: a,
                         DateFormatType: D,
-                        makeGlobalBoundingBox: l,
+                        makeGlobalBoundingBox: _,
                         sendMoveEvent: (u) => c(i.MOVE, { isMouseEvent: !0, on: u }),
                         sendCloseEvent: p,
                         sendClosePopOverEvent: () => c(i.POP_OVER, { on: !1 }),
@@ -913,7 +921,7 @@
                                 decoratorID: E || R.invalid('resId'),
                                 targetID: n,
                                 direction: e,
-                                bbox: l(C),
+                                bbox: _(C),
                                 on: !0,
                                 args: F,
                             });

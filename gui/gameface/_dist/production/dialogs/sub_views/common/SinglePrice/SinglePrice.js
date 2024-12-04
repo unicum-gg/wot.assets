@@ -183,13 +183,14 @@
                         addPreloadTexture: () => D,
                         children: () => F,
                         displayStatus: () => t.W,
-                        displayStatusIs: () => f,
+                        displayStatusIs: () => y,
                         events: () => A.U,
-                        extraSize: () => y,
+                        extraSize: () => T,
                         forceTriggerMouseMove: () => h,
                         freezeTextureBeforeResize: () => _,
                         getBrowserTexturePath: () => i,
                         getDisplayStatus: () => b,
+                        getFontNames: () => f,
                         getScale: () => l,
                         getSize: () => C,
                         getViewGlobalPosition: () => c,
@@ -203,7 +204,7 @@
                         setEventHandled: () => w,
                         setInputPaddingsRem: () => o,
                         setSidePaddingsRem: () => B,
-                        whenTutorialReady: () => T,
+                        whenTutorialReady: () => x,
                     });
                 var F = E(3722),
                     t = E(6112),
@@ -265,11 +266,15 @@
                 function b() {
                     return viewEnv.getShowingStatus();
                 }
-                const f = Object.keys(t.W).reduce(
+                const f = (() => {
+                        let u = [];
+                        return () => (0 === u.length && (u = Object.keys(viewEnv.getFontsConfig())), u);
+                    })(),
+                    y = Object.keys(t.W).reduce(
                         (u, e) => ((u[e] = () => viewEnv.getShowingStatus() === t.W[e]), u),
                         {},
                     ),
-                    y = {
+                    T = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -277,7 +282,7 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    T = Promise.all([
+                    x = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : A.U.onDomBuilt(u);
                         }),
@@ -739,7 +744,7 @@
                         getFormattedDateTime: (u, e, E = !0) => regionalDateTime.getFormattedDateTime(u, e, E),
                     };
             },
-            7151: (u, e, E) => {
+            4991: (u, e, E) => {
                 var F = E(6179),
                     t = E.n(F),
                     A = E(493),
@@ -784,10 +789,6 @@
                     'icon__freeXP-big': 'Currency_icon__freeXP-big_21',
                     'icon__freeXP-large': 'Currency_icon__freeXP-large_c8',
                     'icon__freeXP-extraLarge': 'Currency_icon__freeXP-extraLarge_58',
-                    'icon__eliteXP-small': 'Currency_icon__eliteXP-small_45',
-                    'icon__eliteXP-big': 'Currency_icon__eliteXP-big_c0',
-                    'icon__eliteXP-large': 'Currency_icon__eliteXP-large_1b',
-                    'icon__eliteXP-extraLarge': 'Currency_icon__eliteXP-extraLarge_9b',
                     'icon__equipCoin-small': 'Currency_icon__equipCoin-small_32',
                     'icon__equipCoin-big': 'Currency_icon__equipCoin-big_79',
                     'icon__equipCoin-large': 'Currency_icon__equipCoin-large_2c',
@@ -799,7 +800,6 @@
                     value__xp: 'Currency_value__xp_b0',
                     value__crystal: 'Currency_value__crystal_19',
                     value__equipCoin: 'Currency_value__equipCoin_d0',
-                    value__eliteXP: 'Currency_value__eliteXP_62',
                     value__notEnough: 'Currency_value__notEnough_56',
                     stock: 'Currency_stock_87',
                     stock__indent: 'Currency_stock__indent_a1',
@@ -816,7 +816,6 @@
                             (u.crystal = 'crystal'),
                             (u.xp = 'xp'),
                             (u.freeXP = 'freeXP'),
-                            (u.eliteXP = 'eliteXP'),
                             (u.equipCoin = 'equipCoin');
                     })(C || (C = {})),
                     (function (u) {
@@ -1248,7 +1247,7 @@
                     j = /(?:%\(|{)\w*(?:_[Oo]pen|Start)(?:\)s|})?(.*?)(?:%\(|{)\w*(?:_[Cc]lose|End)(?:\)s|})?/g,
                     $ = /(?<=(?:%\(|{))(.*?)(?=(?:_[Oo]pen|Start))/,
                     K = /(?<=(?:_[Oo]pen|Start)(?:\)s?|}))(.*?)(?=(?:%\(|{))/,
-                    X = (0, F.memo)(({ text: u, binding: e, classMix: E }) => {
+                    H = (0, F.memo)(({ text: u, binding: e, classMix: E }) => {
                         const A = (0, F.useCallback)((u) => ({ color: `#${u}` }), []),
                             n = (0, F.useMemo)(() => e || {}, [e]);
                         let r = j.exec(u),
@@ -1279,11 +1278,11 @@
                         }
                         return t().createElement(G, { text: D, classMix: E, binding: n });
                     });
-                let H;
+                let Y;
                 !(function (u) {
                     (u.backport = 'backport'), (u.normal = 'normal'), (u.absent = 'absent');
-                })(H || (H = {}));
-                const Y = {
+                })(Y || (Y = {}));
+                const X = {
                         base: 'SinglePriceApp_base_d6',
                         text: 'SinglePriceApp_text_ef',
                         currency: 'SinglePriceApp_currency_bb',
@@ -1297,22 +1296,22 @@
                                 ((A = E.type),
                                 (n = void 0),
                                 {
-                                    isEnabled: A !== H.absent,
+                                    isEnabled: A !== Y.absent,
                                     args: n,
                                     contentId: R.views.dialogs.common.DialogTemplateGenericTooltip('resId'),
                                     decoratorId:
-                                        A === H.normal
+                                        A === Y.normal
                                             ? R.views.common.tooltip_window.tooltip_window.TooltipWindow('resId')
                                             : void 0,
-                                    ignoreShowDelay: A === H.backport,
+                                    ignoreShowDelay: A === Y.backport,
                                     ignoreMouseClick: !0,
                                 });
                         var A, n;
-                        const r = D()(Y.currency, Y[`currency__${e.size}`]);
+                        const r = D()(X.currency, X[`currency__${e.size}`]);
                         return t().createElement(
                             'div',
-                            { className: Y.base },
-                            t().createElement('div', { className: Y.text }, t().createElement(X, { text: u })),
+                            { className: X.base },
+                            t().createElement('div', { className: X.text }, t().createElement(H, { text: u })),
                             t().createElement(
                                 m,
                                 F,
@@ -1401,6 +1400,6 @@
                 E = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             E.forEach(e.bind(null, 0)), (E.push = e.bind(null, E.push.bind(E)));
         })();
-    var __webpack_exports__ = __webpack_require__.O(void 0, [573], () => __webpack_require__(7151));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [573], () => __webpack_require__(4991));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

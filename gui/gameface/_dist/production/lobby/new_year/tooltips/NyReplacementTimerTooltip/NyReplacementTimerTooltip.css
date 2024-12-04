@@ -1,0 +1,65 @@
+.Countdown_base_fe {
+    display: flex;
+    align-items: center;
+}
+
+.Countdown_icon_8b {
+    width: 32rem;
+    height: 32rem;
+    background: no-repeat center / contain;
+}
+
+.Countdown_description_8d {
+    color: #ffdd99;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+.FormatText_base_d0 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.TooltipDecorator_base_c9 {
+    display: flex;
+    position: absolute;
+}
+
+.TooltipDecorator_base__theme-default_6d .TooltipDecorator_decorator_3d {
+    padding: 4rem 6rem 8rem;
+    border-image-source: url('R.atlases.components.tooltip_background');
+    border-image-slice: 24 fill;
+    border-image-width: 24rem;
+    position: relative;
+}
+
+.App_base_8f {
+    color: #8c8c7e;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    max-width: 326rem;
+    padding: 16rem 20rem 20rem;
+}
+
+.App_title_5f {
+    margin-bottom: 1rem;
+    color: #e9e2bf;
+    font-size: 15rem;
+    font-weight: 700;
+}
+
+.App_text_5a + .App_text_5a {
+    margin-top: 3rem;
+}
+
+.App_countdown_a0 {
+    padding-left: 32rem;
+    position: relative;
+}
+
+.App_countdownIcon_ad {
+    position: absolute;
+    top: -7rem;
+}

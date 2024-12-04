@@ -25,13 +25,14 @@
                         addPreloadTexture: () => G,
                         children: () => o,
                         displayStatus: () => N,
-                        displayStatusIs: () => te,
-                        events: () => V,
-                        extraSize: () => ie,
+                        displayStatusIs: () => ie,
+                        events: () => F,
+                        extraSize: () => re,
                         forceTriggerMouseMove: () => ee,
                         freezeTextureBeforeResize: () => q,
                         getBrowserTexturePath: () => B,
                         getDisplayStatus: () => ne,
+                        getFontNames: () => te,
                         getScale: () => Q,
                         getSize: () => I,
                         getViewGlobalPosition: () => U,
@@ -45,7 +46,7 @@
                         setEventHandled: () => Y,
                         setInputPaddingsRem: () => k,
                         setSidePaddingsRem: () => H,
-                        whenTutorialReady: () => re,
+                        whenTutorialReady: () => oe,
                     });
                 var s = t(6179),
                     l = t.n(s),
@@ -164,7 +165,7 @@
                     return `url(${z(e, n, t)})`;
                 }
                 const N = { showing: 0, shown: 1, hiding: 2, hidden: 3 },
-                    V = {
+                    F = {
                         onTextureFrozen: m('self.onTextureFrozen'),
                         onTextureReady: m('self.onTextureReady'),
                         onDomBuilt: m('self.onDomBuilt'),
@@ -180,7 +181,7 @@
                             onRequestPosition: m('children.requestPosition'),
                         },
                     },
-                    F = ['args'],
+                    V = ['args'],
                     M = (e, n) => {
                         const t = 'GFViewEventProxy';
                         if (void 0 !== n) {
@@ -194,7 +195,7 @@
                                             t[i] = e[i];
                                         }
                                     return t;
-                                })(n, F);
+                                })(n, V);
                             return void 0 !== r
                                 ? viewEnv.handleViewEvent(
                                       Object.assign({ __Type: t, type: e }, o, {
@@ -285,8 +286,12 @@
                 function ne() {
                     return viewEnv.getShowingStatus();
                 }
-                const te = Object.keys(N).reduce((e, n) => ((e[n] = () => viewEnv.getShowingStatus() === N[n]), e), {}),
-                    ie = {
+                const te = (() => {
+                        let e = [];
+                        return () => (0 === e.length && (e = Object.keys(viewEnv.getFontsConfig())), e);
+                    })(),
+                    ie = Object.keys(N).reduce((e, n) => ((e[n] = () => viewEnv.getShowingStatus() === N[n]), e), {}),
+                    re = {
                         set: (e, n) => {
                             viewEnv.setExtraSizeRem(e, n);
                         },
@@ -294,22 +299,22 @@
                             viewEnv.getExtraSizeRem(e, n);
                         },
                     },
-                    re = Promise.all([
+                    oe = Promise.all([
                         new Promise((e) => {
-                            window.isDomBuilt ? e() : V.onDomBuilt(e);
+                            window.isDomBuilt ? e() : F.onDomBuilt(e);
                         }),
                         engine.whenReady,
                     ]),
-                    oe = { view: a, client: r, sound: C };
-                const ae = {
+                    ae = { view: a, client: r, sound: C };
+                const se = {
                         base: 'TooltipDecorator_base_c9',
                         'base__theme-default': 'TooltipDecorator_base__theme-default_6d',
                         decorator: 'TooltipDecorator_decorator_3d',
                     },
-                    se = ['children', 'className', 'theme'];
-                function le() {
+                    le = ['children', 'className', 'theme'];
+                function de() {
                     return (
-                        (le = Object.assign
+                        (de = Object.assign
                             ? Object.assign.bind()
                             : function (e) {
                                   for (var n = 1; n < arguments.length; n++) {
@@ -318,10 +323,10 @@
                                   }
                                   return e;
                               }),
-                        le.apply(null, arguments)
+                        de.apply(null, arguments)
                     );
                 }
-                const de = l().forwardRef(function (e, n) {
+                const ue = l().forwardRef(function (e, n) {
                         let t = e.children,
                             i = e.className,
                             r = e.theme,
@@ -335,7 +340,7 @@
                                         t[i] = e[i];
                                     }
                                 return t;
-                            })(e, se);
+                            })(e, le);
                         const d = (function () {
                                 const e = (0, s.useRef)(0);
                                 var n;
@@ -374,9 +379,9 @@
                                     if (!e) return;
                                     const n = e.scrollWidth,
                                         t = e.scrollHeight;
-                                    oe.view.resize(n, t);
+                                    ae.view.resize(n, t);
                                     const i = window.getComputedStyle(e);
-                                    oe.view.setSidePaddingsRem({
+                                    ae.view.setSidePaddingsRem({
                                         left: parseInt(i.getPropertyValue('padding-left'), 10),
                                         top: parseInt(i.getPropertyValue('padding-top'), 10),
                                         right: parseInt(i.getPropertyValue('padding-right'), 10),
@@ -387,48 +392,48 @@
                             (0, s.useEffect)(c, []),
                             l().createElement(
                                 'div',
-                                le({}, a, {
-                                    className: v()(ae.base, ae[`base__theme-${o}`], i),
+                                de({}, a, {
+                                    className: v()(se.base, se[`base__theme-${o}`], i),
                                     ref: function (e) {
                                         (u.current = e), 'function' == typeof n ? n(e) : n && (n.current = e);
                                     },
                                 }),
-                                l().createElement('div', { className: ae.decorator }, t),
+                                l().createElement('div', { className: se.decorator }, t),
                             )
                         );
                     }),
-                    ue = 'Content_separator_70',
-                    ce = 'Content_descriptionTopLabel_f2',
-                    ve = 'Content_descriptionLabel_81',
-                    me = R.strings.battle_royale.tooltips.brCoin,
-                    fe = () =>
+                    ce = 'Content_separator_70',
+                    ve = 'Content_descriptionTopLabel_f2',
+                    me = 'Content_descriptionLabel_81',
+                    fe = R.strings.battle_royale.tooltips.brCoin,
+                    ge = () =>
                         l().createElement(
                             'div',
                             { className: 'Content_base_ab' },
-                            l().createElement('div', { className: 'Content_title_21' }, me.title()),
+                            l().createElement('div', { className: 'Content_title_21' }, fe.title()),
                             l().createElement(
                                 'div',
                                 { className: 'Content_description_86' },
-                                l().createElement('div', { className: ue }),
+                                l().createElement('div', { className: ce }),
                                 l().createElement(
                                     'div',
                                     { className: 'Content_descriptionContent_b7' },
                                     l().createElement('div', { className: 'Content_whiteGradient_f6' }),
-                                    l().createElement('div', { className: ce }, me.earn.title()),
-                                    l().createElement('div', { className: ve }, me.earn.description()),
+                                    l().createElement('div', { className: ve }, fe.earn.title()),
+                                    l().createElement('div', { className: me }, fe.earn.description()),
                                 ),
-                                l().createElement('div', { className: ue }),
+                                l().createElement('div', { className: ce }),
                             ),
                             l().createElement(
                                 'div',
                                 { className: 'Content_descriptionBottom_2d' },
-                                l().createElement('div', { className: ce }, me.spend.title()),
-                                l().createElement('div', { className: ve }, me.spend.description()),
+                                l().createElement('div', { className: ve }, fe.spend.title()),
+                                l().createElement('div', { className: me }, fe.spend.description()),
                             ),
                         ),
-                    ge = () => l().createElement(de, null, l().createElement(fe, null)),
-                    we = document.createElement('div');
-                (window.onload = () => document.body.appendChild(we)), u().render(l().createElement(ge, null), we);
+                    we = () => l().createElement(ue, null, l().createElement(ge, null)),
+                    pe = document.createElement('div');
+                (window.onload = () => document.body.appendChild(pe)), u().render(l().createElement(we, null), pe);
             },
         },
         t = {};

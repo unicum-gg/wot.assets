@@ -209,13 +209,14 @@
                         addPreloadTexture: () => s,
                         children: () => n,
                         displayStatus: () => r.W,
-                        displayStatusIs: () => b,
+                        displayStatusIs: () => x,
                         events: () => a.U,
-                        extraSize: () => x,
+                        extraSize: () => y,
                         forceTriggerMouseMove: () => v,
                         freezeTextureBeforeResize: () => C,
                         getBrowserTexturePath: () => l,
                         getDisplayStatus: () => w,
+                        getFontNames: () => b,
                         getScale: () => B,
                         getSize: () => D,
                         getViewGlobalPosition: () => d,
@@ -291,11 +292,15 @@
                 function w() {
                     return viewEnv.getShowingStatus();
                 }
-                const b = Object.keys(r.W).reduce(
+                const b = (() => {
+                        let u = [];
+                        return () => (0 === u.length && (u = Object.keys(viewEnv.getFontsConfig())), u);
+                    })(),
+                    x = Object.keys(r.W).reduce(
                         (u, e) => ((u[e] = () => viewEnv.getShowingStatus() === r.W[e]), u),
                         {},
                     ),
-                    x = {
+                    y = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -1044,9 +1049,9 @@
                         return { mediaSize: r, mediaWidth: a, mediaHeight: i, remScreenWidth: e, remScreenHeight: t };
                     },
                     x = ['children', 'className'];
-                function S() {
+                function y() {
                     return (
-                        (S = Object.assign
+                        (y = Object.assign
                             ? Object.assign.bind()
                             : function (u) {
                                   for (var e = 1; e < arguments.length; e++) {
@@ -1055,10 +1060,10 @@
                                   }
                                   return u;
                               }),
-                        S.apply(null, arguments)
+                        y.apply(null, arguments)
                     );
                 }
-                const y = {
+                const S = {
                         [v.ExtraSmall]: '',
                         [v.Small]: f().SMALL_WIDTH,
                         [v.Medium]: `${f().SMALL_WIDTH} ${f().MEDIUM_WIDTH}`,
@@ -1096,7 +1101,7 @@
                             i = a.mediaWidth,
                             o = a.mediaHeight,
                             s = a.mediaSize;
-                        return r().createElement('div', S({ className: _()(t, y[i], T[o], L[s]) }, n), e);
+                        return r().createElement('div', y({ className: _()(t, S[i], T[o], L[s]) }, n), e);
                     },
                     M = ['children'];
                 const k = (u) => {
@@ -1719,8 +1724,8 @@
                         ({ externalModel: u }) => ({ onOpenMeta: u.createCallbackNoArgs('onOpenMeta') }),
                     ),
                     xu = bu[0],
-                    Su = bu[1],
-                    yu = 'FormatText_base_d0',
+                    yu = bu[1],
+                    Su = 'FormatText_base_d0',
                     Tu = ({ binding: u, text: e = '', classMix: t, alignment: a = uu.left, formatWithBrackets: i }) => {
                         if (null === e) return console.error("FormatText was supplied with 'null'"), null;
                         const o = i && u ? eu(e, u) : e;
@@ -1730,7 +1735,7 @@
                             o.split('\n').map((e, i) =>
                                 r().createElement(
                                     'div',
-                                    { className: _()(yu, t), key: `${e}-${i}` },
+                                    { className: _()(Su, t), key: `${e}-${i}` },
                                     ((u, e, t) =>
                                         u.split(/%\((.*?)\)(?:[sd])?/g).map((u) => (t && u in t ? t[u] : su(u, e))))(
                                         e,
@@ -2344,7 +2349,7 @@
                     we = /(?:%\(|{)\w*(?:_[Oo]pen|Start)(?:\)s|})?(.*?)(?:%\(|{)\w*(?:_[Cc]lose|End)(?:\)s|})?/g,
                     be = /(?<=(?:%\(|{))(.*?)(?=(?:_[Oo]pen|Start))/,
                     xe = /(?<=(?:_[Oo]pen|Start)(?:\)s?|}))(.*?)(?=(?:%\(|{))/,
-                    Se = (0, n.memo)(({ text: u, binding: e, classMix: t }) => {
+                    ye = (0, n.memo)(({ text: u, binding: e, classMix: t }) => {
                         const a = (0, n.useCallback)((u) => ({ color: `#${u}` }), []),
                             i = (0, n.useMemo)(() => e || {}, [e]);
                         let o = we.exec(u),
@@ -2375,7 +2380,7 @@
                         }
                         return r().createElement(Tu, { text: s, classMix: t, binding: i });
                     }),
-                    ye = 'QualificationCounter_base_fb',
+                    Se = 'QualificationCounter_base_fb',
                     Te = 'QualificationCounter_dash_e2',
                     Le = 'QualificationCounter_dash__right_3e',
                     Oe = 'QualificationCounter_iconContainer_c3',
@@ -2384,9 +2389,9 @@
                     Re = ({ battlesCount: u, maxBattlesCount: e, className: t }) =>
                         r().createElement(
                             'div',
-                            { className: _()(ye, t) },
+                            { className: _()(Se, t) },
                             r().createElement('div', { className: Te }),
-                            r().createElement(Se, {
+                            r().createElement(ye, {
                                 text: R.strings.comp7.qualification.battlesCounter(),
                                 binding: {
                                     battleIcon: r().createElement(
@@ -2433,7 +2438,7 @@
                     ze = 'Qualification_timer_78',
                     Ge = R.strings.comp7.mainWidget,
                     Ue = (0, Y.Pi)(({ seasonName: u, classNames: e }) => {
-                        const t = Su(),
+                        const t = yu(),
                             n = t.model,
                             a = t.controls,
                             i = n.root.get().isEnabled,
@@ -2518,7 +2523,7 @@
                     rt = R.strings.comp7.scoreTooltip,
                     at = { content: Qe, emblemContainer: Je, emblem: et },
                     it = (0, Y.Pi)(() => {
-                        const u = Su(),
+                        const u = yu(),
                             e = u.model,
                             t = u.controls,
                             a = e.root.get(),

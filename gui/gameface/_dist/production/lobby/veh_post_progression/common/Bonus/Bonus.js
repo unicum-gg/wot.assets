@@ -2,7 +2,7 @@
     'use strict';
     var __webpack_modules__ = {
             9768: (e, t, n) => {
-                n.d(t, { O: () => ne });
+                n.d(t, { O: () => ie });
                 var i = {};
                 n.r(i),
                     n.d(i, { mouse: () => w, off: () => u, on: () => l, onResize: () => c, onScaleUpdated: () => d });
@@ -17,7 +17,7 @@
                         setRTPC: () => E,
                     });
                 var o = {};
-                n.r(o), n.d(o, { getBgUrl: () => y, getTextureUrl: () => T });
+                n.r(o), n.d(o, { getBgUrl: () => T, getTextureUrl: () => y });
                 var a = {};
                 function s(e) {
                     return (t) => (
@@ -35,28 +35,29 @@
                         addModelObserver: () => V,
                         addPreloadTexture: () => D,
                         children: () => o,
-                        displayStatus: () => P,
-                        displayStatusIs: () => J,
-                        events: () => k,
-                        extraSize: () => ee,
+                        displayStatus: () => k,
+                        displayStatusIs: () => ee,
+                        events: () => P,
+                        extraSize: () => te,
                         forceTriggerMouseMove: () => $,
                         freezeTextureBeforeResize: () => W,
                         getBrowserTexturePath: () => U,
                         getDisplayStatus: () => Q,
-                        getScale: () => z,
+                        getFontNames: () => J,
+                        getScale: () => j,
                         getSize: () => K,
                         getViewGlobalPosition: () => B,
                         isEventHandled: () => X,
                         isFocused: () => Y,
-                        pxToRem: () => G,
-                        remToPx: () => j,
+                        pxToRem: () => z,
+                        remToPx: () => G,
                         resize: () => q,
                         sendEvent: () => A,
                         setAnimateWindow: () => H,
                         setEventHandled: () => Z,
                         setInputPaddingsRem: () => F,
                         setSidePaddingsRem: () => I,
-                        whenTutorialReady: () => te,
+                        whenTutorialReady: () => ne,
                     });
                 const c = s('clientResized'),
                     d = s('self.onScaleUpdated'),
@@ -148,17 +149,17 @@
                         isHigh: () => 0 === viewEnv.getGraphicsQuality(),
                         get: () => viewEnv.getGraphicsQuality(),
                     },
-                    f = { highlight: 'highlight', click: 'play', yes1: 'yes1' },
-                    g = Object.keys(f).reduce((e, t) => ((e[t] = () => h(f[t])), e), {}),
-                    O = { play: Object.assign({}, g, { sound: h }), setRTPC: E };
-                function T(e, t, n = 1) {
+                    g = { highlight: 'highlight', click: 'play', yes1: 'yes1' },
+                    f = Object.keys(g).reduce((e, t) => ((e[t] = () => h(g[t])), e), {}),
+                    O = { play: Object.assign({}, f, { sound: h }), setRTPC: E };
+                function y(e, t, n = 1) {
                     return viewEnv.getChildTexturePath(e, t.width, t.height, n);
                 }
-                function y(e, t, n) {
-                    return `url(${T(e, t, n)})`;
+                function T(e, t, n) {
+                    return `url(${y(e, t, n)})`;
                 }
-                const P = { showing: 0, shown: 1, hiding: 2, hidden: 3 },
-                    k = {
+                const k = { showing: 0, shown: 1, hiding: 2, hidden: 3 },
+                    P = {
                         onTextureFrozen: s('self.onTextureFrozen'),
                         onTextureReady: s('self.onTextureReady'),
                         onDomBuilt: s('self.onDomBuilt'),
@@ -251,18 +252,18 @@
                 }
                 function B(e = 'rem') {
                     const t = viewEnv.getViewGlobalPositionRem();
-                    return 'rem' === e ? t : { x: j(t.x), y: j(t.y) };
+                    return 'rem' === e ? t : { x: G(t.x), y: G(t.y) };
                 }
                 function W() {
                     viewEnv.freezeTextureBeforeResize();
                 }
-                function z() {
+                function j() {
                     return viewEnv.getScale();
                 }
-                function G(e) {
+                function z(e) {
                     return viewEnv.pxToRem(e);
                 }
-                function j(e) {
+                function G(e) {
                     return viewEnv.remToPx(e);
                 }
                 function H(e, t) {
@@ -283,8 +284,12 @@
                 function Q() {
                     return viewEnv.getShowingStatus();
                 }
-                const J = Object.keys(P).reduce((e, t) => ((e[t] = () => viewEnv.getShowingStatus() === P[t]), e), {}),
-                    ee = {
+                const J = (() => {
+                        let e = [];
+                        return () => (0 === e.length && (e = Object.keys(viewEnv.getFontsConfig())), e);
+                    })(),
+                    ee = Object.keys(k).reduce((e, t) => ((e[t] = () => viewEnv.getShowingStatus() === k[t]), e), {}),
+                    te = {
                         set: (e, t) => {
                             viewEnv.setExtraSizeRem(e, t);
                         },
@@ -292,13 +297,13 @@
                             viewEnv.getExtraSizeRem(e, t);
                         },
                     },
-                    te = Promise.all([
+                    ne = Promise.all([
                         new Promise((e) => {
-                            window.isDomBuilt ? e() : k.onDomBuilt(e);
+                            window.isDomBuilt ? e() : P.onDomBuilt(e);
                         }),
                         engine.whenReady,
                     ]),
-                    ne = { view: a, client: r, sound: O };
+                    ie = { view: a, client: r, sound: O };
             },
             5521: (e, t, n) => {
                 let i, r;
@@ -590,14 +595,14 @@
                         var i;
                     },
                     m = () => b(s.CLOSE),
-                    f = (e, t) => {
+                    g = (e, t) => {
                         e.keyCode === u.n.ESCAPE && t();
                     };
-                var g = n(7572);
+                var f = n(7572);
                 const O = r.instance,
-                    T = {
+                    y = {
                         DataTracker: o.Z,
-                        ViewModel: g.Z,
+                        ViewModel: f.Z,
                         ViewEventType: s,
                         NumberFormatType: _,
                         RealFormatType: c,
@@ -635,13 +640,13 @@
                             });
                         },
                         addEscapeListener: (e) => {
-                            const t = (t) => f(t, e);
+                            const t = (t) => g(t, e);
                             return (
                                 window.addEventListener('keydown', t), () => window.removeEventListener('keydown', t)
                             );
                         },
                         closeOnEsc: (e) => {
-                            f(e, m);
+                            g(e, m);
                         },
                         handleViewEvent: b,
                         onBindingsReady: p,
@@ -677,7 +682,7 @@
                         SystemLocale: a.Z5,
                         UserLocale: a.cy,
                     };
-                window.ViewEnvHelper = T;
+                window.ViewEnvHelper = y;
             },
             8613: (e, t, n) => {
                 n.d(t, { Z5: () => i, cy: () => r });

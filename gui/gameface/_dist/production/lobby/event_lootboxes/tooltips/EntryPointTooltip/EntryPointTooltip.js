@@ -10,28 +10,29 @@
                 F.r(E),
                     F.d(E, {
                         events: () => A,
-                        getMouseGlobalPosition: () => O,
-                        getSize: () => S,
-                        graphicsQuality: () => z,
+                        getMouseGlobalPosition: () => S,
+                        getSize: () => O,
+                        graphicsQuality: () => j,
                         playSound: () => T,
                         setRTPC: () => P,
                     });
                 var t = {};
-                F.r(t), F.d(t, { getBgUrl: () => $, getTextureUrl: () => k });
+                F.r(t), F.d(t, { getBgUrl: () => $, getTextureUrl: () => V });
                 var n = {};
                 F.r(n),
                     F.d(n, {
                         addModelObserver: () => Z,
                         addPreloadTexture: () => q,
                         children: () => t,
-                        displayStatus: () => G,
-                        displayStatusIs: () => Cu,
-                        events: () => L,
-                        extraSize: () => ou,
+                        displayStatus: () => N,
+                        displayStatusIs: () => ou,
+                        events: () => G,
+                        extraSize: () => iu,
                         forceTriggerMouseMove: () => Bu,
                         freezeTextureBeforeResize: () => uu,
                         getBrowserTexturePath: () => Q,
                         getDisplayStatus: () => ru,
+                        getFontNames: () => Cu,
                         getScale: () => eu,
                         getSize: () => K,
                         getViewGlobalPosition: () => Y,
@@ -45,7 +46,7 @@
                         setEventHandled: () => nu,
                         setInputPaddingsRem: () => U,
                         setSidePaddingsRem: () => J,
-                        whenTutorialReady: () => iu,
+                        whenTutorialReady: () => au,
                     });
                 var D = F(179),
                     B = F.n(D),
@@ -311,28 +312,28 @@
                         console.error(`setRTPC('${u}', '${e}'): `, F);
                     });
                 }
-                function S(u = 'px') {
+                function O(u = 'px') {
                     return 'rem' === u ? viewEnv.getClientSizeRem() : viewEnv.getClientSizePx();
                 }
-                function O(u = 'px') {
+                function S(u = 'px') {
                     return 'rem' === u ? viewEnv.getMouseGlobalPositionRem() : viewEnv.getMouseGlobalPositionPx();
                 }
-                const z = {
+                const j = {
                         isLow: () => 1 === viewEnv.getGraphicsQuality(),
                         isHigh: () => 0 === viewEnv.getGraphicsQuality(),
                         get: () => viewEnv.getGraphicsQuality(),
                     },
-                    j = { highlight: 'highlight', click: 'play', yes1: 'yes1' },
-                    M = Object.keys(j).reduce((u, e) => ((u[e] = () => T(j[e])), u), {}),
-                    V = { play: Object.assign({}, M, { sound: T }), setRTPC: P };
-                function k(u, e, F = 1) {
+                    z = { highlight: 'highlight', click: 'play', yes1: 'yes1' },
+                    M = Object.keys(z).reduce((u, e) => ((u[e] = () => T(z[e])), u), {}),
+                    k = { play: Object.assign({}, M, { sound: T }), setRTPC: P };
+                function V(u, e, F = 1) {
                     return viewEnv.getChildTexturePath(u, e.width, e.height, F);
                 }
                 function $(u, e, F) {
-                    return `url(${k(u, e, F)})`;
+                    return `url(${V(u, e, F)})`;
                 }
-                const G = { showing: 0, shown: 1, hiding: 2, hidden: 3 },
-                    L = {
+                const N = { showing: 0, shown: 1, hiding: 2, hidden: 3 },
+                    G = {
                         onTextureFrozen: p('self.onTextureFrozen'),
                         onTextureReady: p('self.onTextureReady'),
                         onDomBuilt: p('self.onDomBuilt'),
@@ -348,7 +349,7 @@
                             onRequestPosition: p('children.requestPosition'),
                         },
                     },
-                    N = ['args'],
+                    L = ['args'],
                     H = (u, e) => {
                         const F = 'GFViewEventProxy';
                         if (void 0 !== e) {
@@ -362,7 +363,7 @@
                                             F[A] = u[A];
                                         }
                                     return F;
-                                })(e, N);
+                                })(e, L);
                             return void 0 !== E
                                 ? viewEnv.handleViewEvent(
                                       Object.assign({ __Type: F, type: u }, t, {
@@ -453,8 +454,12 @@
                 function ru() {
                     return viewEnv.getShowingStatus();
                 }
-                const Cu = Object.keys(G).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === G[e]), u), {}),
-                    ou = {
+                const Cu = (() => {
+                        let u = [];
+                        return () => (0 === u.length && (u = Object.keys(viewEnv.getFontsConfig())), u);
+                    })(),
+                    ou = Object.keys(N).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === N[e]), u), {}),
+                    iu = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -462,22 +467,22 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    iu = Promise.all([
+                    au = Promise.all([
                         new Promise((u) => {
-                            window.isDomBuilt ? u() : L.onDomBuilt(u);
+                            window.isDomBuilt ? u() : G.onDomBuilt(u);
                         }),
                         engine.whenReady,
                     ]),
-                    au = { view: n, client: E, sound: V };
-                const su = {
+                    su = { view: n, client: E, sound: k };
+                const lu = {
                         base: 'TooltipDecorator_base_c9',
                         'base__theme-default': 'TooltipDecorator_base__theme-default_6d',
                         decorator: 'TooltipDecorator_decorator_3d',
                     },
-                    lu = ['children', 'className', 'theme'];
-                function cu() {
+                    cu = ['children', 'className', 'theme'];
+                function du() {
                     return (
-                        (cu = Object.assign
+                        (du = Object.assign
                             ? Object.assign.bind()
                             : function (u) {
                                   for (var e = 1; e < arguments.length; e++) {
@@ -486,10 +491,10 @@
                                   }
                                   return u;
                               }),
-                        cu.apply(null, arguments)
+                        du.apply(null, arguments)
                     );
                 }
-                const du = B().forwardRef(function (u, e) {
+                const gu = B().forwardRef(function (u, e) {
                         let F = u.children,
                             A = u.className,
                             E = u.theme,
@@ -503,7 +508,7 @@
                                         F[A] = u[A];
                                     }
                                 return F;
-                            })(u, lu);
+                            })(u, cu);
                         const r = (function () {
                                 const u = (0, D.useRef)(0);
                                 var e;
@@ -542,9 +547,9 @@
                                     if (!u) return;
                                     const e = u.scrollWidth,
                                         F = u.scrollHeight;
-                                    au.view.resize(e, F);
+                                    su.view.resize(e, F);
                                     const A = window.getComputedStyle(u);
-                                    au.view.setSidePaddingsRem({
+                                    su.view.setSidePaddingsRem({
                                         left: parseInt(A.getPropertyValue('padding-left'), 10),
                                         top: parseInt(A.getPropertyValue('padding-top'), 10),
                                         right: parseInt(A.getPropertyValue('padding-right'), 10),
@@ -555,19 +560,19 @@
                             (0, D.useEffect)(o, []),
                             B().createElement(
                                 'div',
-                                cu({}, n, {
-                                    className: i()(su.base, su[`base__theme-${t}`], A),
+                                du({}, n, {
+                                    className: i()(lu.base, lu[`base__theme-${t}`], A),
                                     ref: function (u) {
                                         (C.current = u), 'function' == typeof e ? e(u) : e && (e.current = u);
                                     },
                                 }),
-                                B().createElement('div', { className: su.decorator }, F),
+                                B().createElement('div', { className: lu.decorator }, F),
                             )
                         );
                     }),
-                    gu = () => B().createElement(du, null, B().createElement(f, null));
+                    vu = () => B().createElement(gu, null, B().createElement(f, null));
                 engine.whenReady.then(() => {
-                    C().render(B().createElement(gu, null), document.getElementById('root'));
+                    C().render(B().createElement(vu, null), document.getElementById('root'));
                 });
             },
         },

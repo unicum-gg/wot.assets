@@ -1,0 +1,795 @@
+.CButton_base_40 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2rem;
+    box-shadow: 0 0 0 1rem rgba(0, 0, 0, 0.6);
+    position: relative;
+    cursor: pointer;
+}
+
+.CButton_base__main_42,
+.CButton_base__primary_7f,
+.CButton_base__primaryGreen_6f,
+.CButton_base__primaryRed_ec,
+.CButton_base__secondary_50 {
+    background-size: 100% 100%;
+}
+
+.CButton_base__main_42 {
+    background-image: url('R.images.gui.maps.icons.components.button.back_main');
+}
+
+.CButton_base__primary_7f {
+    background-image: url('R.images.gui.maps.icons.components.button.back_primary');
+}
+
+.CButton_base__primaryGreen_6f {
+    background-image: url('R.images.gui.maps.icons.components.button.back_primary_green');
+}
+
+.CButton_base__primaryRed_ec {
+    background-image: url('R.images.gui.maps.icons.components.button.back_primary_red');
+}
+
+.CButton_base__secondary_50 {
+    background-image: url('R.images.gui.maps.icons.components.button.back_secondary');
+}
+
+.CButton_base__ghost_ed {
+    border-radius: 3rem;
+    box-shadow:
+        0 0 0 1rem rgba(0, 0, 0, 0.3),
+        0 0 0 1rem rgba(255, 255, 255, 0.15) inset;
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+.CButton_base__extraSmall_27 {
+    min-height: 17rem;
+    padding: 0 16rem;
+}
+
+.CButton_base__small_df,
+.CButton_base__medium_74 {
+    padding: 0 20rem;
+}
+
+.CButton_base__small_df {
+    min-height: 18rem;
+}
+
+.CButton_base__medium_74 {
+    min-height: 32rem;
+}
+
+.CButton_base__large_5c {
+    min-height: 48rem;
+}
+
+.CButton_base__disabled_d9 {
+    cursor: default;
+}
+/* Element .back and background-image in element .base need for fix bug in GF https://jira.wargaming.net/browse/WOTD-158525
+The bug is that under certain conditions, when using border-image, stripes appear. Strip is a single-pixel gap
+between 'border-image-width' and 'fill'.
+This bug is reproduced in Google Chrome 81.0.4044.113
+*/
+.CButton_back_e5 {
+    border-image-slice: 4 fill;
+    border-image-width: 4rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.CButton_base__main_42 .CButton_back_e5 {
+    border-image-source: url('R.images.gui.maps.icons.components.button.back_main');
+}
+.CButton_base__primary_7f .CButton_back_e5 {
+    border-image-source: url('R.images.gui.maps.icons.components.button.back_primary');
+}
+.CButton_base__primaryGreen_6f .CButton_back_e5 {
+    border-image-source: url('R.images.gui.maps.icons.components.button.back_primary_green');
+}
+.CButton_base__primaryRed_ec .CButton_back_e5 {
+    border-image-source: url('R.images.gui.maps.icons.components.button.back_primary_red');
+}
+.CButton_base__secondary_50 .CButton_back_e5 {
+    border-image-source: url('R.images.gui.maps.icons.components.button.back_secondary');
+}
+.CButton_texture_fe {
+    background: url('R.images.gui.maps.icons.components.button.standard_texture_file');
+    background-size: 155rem 31rem;
+    mix-blend-mode: soft-light;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.CButton_state_11 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition: box-shadow 0.16s ease-in-out;
+}
+.CButton_base__focus_83 .CButton_state_11 {
+    border-radius: 2rem;
+    box-shadow: inset 0 0 2rem 1rem rgba(255, 85, 0, 0.2);
+}
+.CButton_stateHighlightHover_ff,
+.CButton_stateHighlightActive_35,
+.CButton_stateDisabled_54 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.CButton_stateHighlightHover_ff {
+    background-image: linear-gradient(
+        180deg,
+        rgba(252, 248, 235, 0.25) 0%,
+        rgba(252, 248, 235, 0.1) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    opacity: 0;
+}
+.CButton_base_40:hover .CButton_stateHighlightHover_ff {
+    opacity: 1;
+}
+.CButton_base_40:active .CButton_stateHighlightHover_ff {
+    opacity: 0;
+}
+.CButton_base__disabled_d9:hover .CButton_stateHighlightHover_ff {
+    opacity: 0;
+}
+.CButton_base__ghost_ed .CButton_stateHighlightHover_ff {
+    box-shadow: 0 15rem 12rem 0 rgba(242, 242, 230, 0.11) inset;
+    background-color: rgba(8, 6, 0, 0.18);
+    background-image: none;
+}
+.CButton_stateHighlightActive_35 {
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.15) 100%);
+    opacity: 0;
+}
+.CButton_base__highlightActive_b2 .CButton_stateHighlightActive_35 {
+    opacity: 1;
+}
+.CButton_stateDisabled_54 {
+    background-color: rgba(0, 0, 0, 0.25);
+    background-image: url('R.images.gui.maps.icons.components.button.texture_disable');
+    background-size: 15rem 15rem;
+    visibility: hidden;
+}
+.CButton_base__disabled_d9 .CButton_stateDisabled_54 {
+    visibility: inherit;
+}
+.CButton_content_cc {
+    display: flex;
+    align-items: center;
+    color: #f2f2e6;
+    font-weight: 700;
+    line-height: 1.2;
+    text-shadow: 0 -1rem 1rem #000;
+    letter-spacing: 0.03em;
+    transform: translateY(-1rem);
+}
+.CButton_content_cc[lang='ja'],
+.CButton_content_cc[lang='ko'],
+.CButton_content_cc[lang='zh_tw'],
+.CButton_content_cc[lang='zh_sg'],
+.CButton_content_cc[lang='zh_cn'],
+.CButton_content_cc[lang='th'] {
+    font-weight: 400;
+}
+.CButton_base__main_42 .CButton_content_cc,
+.CButton_base__primaryRed_ec .CButton_content_cc {
+    text-shadow: 0 -1rem 1rem #600;
+}
+.CButton_base__secondary_50 .CButton_content_cc {
+    color: rgba(254, 254, 236, 0.75);
+}
+.CButton_base__primaryGreen_6f .CButton_content_cc {
+    text-shadow: 0 -1rem 1rem #1c2502;
+}
+.CButton_base__extraSmall_27 .CButton_content_cc {
+    font-size: 12rem;
+}
+.CButton_base__small_df .CButton_content_cc {
+    font-size: 14rem;
+}
+.CButton_base__medium_74 .CButton_content_cc {
+    font-size: 15rem;
+}
+.CButton_base__large_5c .CButton_content_cc {
+    font-size: 18rem;
+}
+.CButton_base__disabled_d9 .CButton_content_cc {
+    opacity: 0.6;
+}
+
+.FormatText_base_d0 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+@keyframes EventNotification_slideInFadeIn_60 {
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+@keyframes EventNotification_fadeOut_33 {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes EventNotification_fadeIn_f8 {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+@keyframes EventNotification_fadeInWithScale_70 {
+    0% {
+        opacity: 0;
+        transform: scale(1.2);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@keyframes EventNotification_slideUp_96 {
+    0% {
+        opacity: 0;
+        transform: translateY(20rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes EventNotification_scale_9e {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+@keyframes EventNotification_spin_0b {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+@keyframes EventNotification_blink_a8 {
+    0% {
+        transform: translateY(0rem);
+    }
+
+    15% {
+        transform: translateY(15rem);
+    }
+
+    30% {
+        transform: translateY(0rem);
+    }
+
+    45% {
+        transform: translateY(15rem);
+    }
+
+    60%,
+    100% {
+        transform: translateY(0rem);
+    }
+}
+@keyframes EventNotification_slideInNotification_49 {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.EventNotification_base_76 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 15rem 0 30rem;
+    position: relative;
+}
+.EventNotification_base__popUp_13 {
+    padding: 20rem 0 25rem;
+}
+.EventNotification_titleWrapper_c0 {
+    flex: 1;
+}
+.EventNotification_title_d9 {
+    font-family: DINRoundPro;
+}
+[lang='th'] .EventNotification_title_d9,
+[lang='el'] .EventNotification_title_d9,
+[lang='vi'] .EventNotification_title_d9 {
+    font-family: Warhelios;
+}
+[lang='ja'] .EventNotification_title_d9 {
+    font-family: WarheliosJA;
+}
+[lang='ko'] .EventNotification_title_d9 {
+    font-family: WarheliosKO;
+}
+[lang='zh_tw'] .EventNotification_title_d9 {
+    font-family: WarheliosZHTW;
+}
+[lang='zh_sg'] .EventNotification_title_d9,
+[lang='zh_cn'] .EventNotification_title_d9 {
+    font-family: WarheliosZHCN;
+}
+.EventNotification_title_d9 {
+    color: #ffffff;
+    font-size: 15rem;
+    font-weight: 700;
+    line-height: 1.15;
+    justify-content: center;
+    max-width: 210rem;
+}
+.EventNotification_rewardImage_da {
+    width: 232rem;
+    height: 174rem;
+    background: url('R.images.advent_calendar.gui.maps.icons.doorsAvailableView.reward') no-repeat center / contain;
+    position: absolute;
+    top: 52rem;
+}
+.EventNotification_base__popUp_13 .EventNotification_rewardImage_da {
+    height: 256rem;
+    background-image: url('R.images.advent_calendar.gui.maps.icons.doorsAvailableView.rewardLarge');
+    top: 35rem;
+}
+.EventNotification_base__withDescription_a5 .EventNotification_rewardImage_da {
+    top: 65rem;
+}
+.EventNotification_description_e9 {
+    color: #bdd4ff;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    justify-content: center;
+    max-width: 220rem;
+    margin-bottom: 13rem;
+    position: relative;
+}
+.EventNotification_button_b4 {
+    min-width: 160rem;
+}
+
+.Background_base_40 {
+    width: 100%;
+    height: 100%;
+    border-radius: 8rem;
+    background-image: linear-gradient(180deg, #173992 0%, #051339 100%);
+    mask-image: linear-gradient(180deg, transparent 0%, #000 27%, #000 64%, transparent 100%);
+    opacity: 0.7;
+    overflow: hidden;
+    position: relative;
+    pointer-events: none;
+}
+
+.Background_base_40::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border: 1rem solid #4161b7;
+    border-radius: 8rem;
+    content: '';
+}
+
+.Background_base_40::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border: 1rem solid #163470;
+    border-radius: 8rem;
+    content: '';
+    mask-image: linear-gradient(to bottom, transparent 50%, #000 75%);
+}
+
+.Background_base__popUp_48 {
+    opacity: 1;
+    mask: none;
+}
+
+.Background_base__withoutBorder_11::after,
+.Background_base__withoutBorder_11::before {
+    content: none;
+}
+
+.Background_image_33 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: no-repeat center / 100% 100%;
+    mask-image: linear-gradient(to top, transparent, #000 35%);
+    z-index: -2;
+}
+
+.CloseButton_base_9f {
+    width: 30rem;
+    height: 30rem;
+    background: url('R.images.gui.maps.icons.newYear.notifications.common.close_white') no-repeat center/ 12rem 14rem;
+    opacity: 0.6;
+    position: absolute;
+    cursor: pointer;
+}
+
+.CloseButton_base_9f:hover {
+    opacity: 0.8;
+}
+
+@keyframes NotificationDecorator_slideInFadeIn_4c {
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+@keyframes NotificationDecorator_fadeOut_6d {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes NotificationDecorator_fadeIn_95 {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+@keyframes NotificationDecorator_fadeInWithScale_41 {
+    0% {
+        opacity: 0;
+        transform: scale(1.2);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@keyframes NotificationDecorator_slideUp_5d {
+    0% {
+        opacity: 0;
+        transform: translateY(20rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes NotificationDecorator_scale_b5 {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+@keyframes NotificationDecorator_spin_3b {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+@keyframes NotificationDecorator_blink_e5 {
+    0% {
+        transform: translateY(0rem);
+    }
+
+    100% {
+        transform: translateY(15rem);
+    }
+}
+@keyframes NotificationDecorator_slideInNotification_e7 {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.NotificationDecorator_base_e0 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.NotificationDecorator_base__popUp_9f {
+    animation: NotificationDecorator_slideInNotification_e7 ease-in-out 0.6s;
+    padding: 10rem;
+    filter: drop-shadow(0 0 5rem rgba(1, 1, 19, 0.8));
+}
+.NotificationDecorator_closeButton_21 {
+    top: 13rem;
+    right: 13rem;
+    z-index: 1;
+    cursor: pointer;
+}
+.NotificationDecorator_content_dc {
+    z-index: 0;
+}
+.NotificationDecorator_backgroundWrapper_0a {
+    width: 100%;
+    height: 100%;
+    mask-image: linear-gradient(90deg, transparent 4%, #d9d9d9 24%, #d9d9d9 78%, transparent 100%);
+    position: absolute;
+    z-index: -1;
+}
+.NotificationDecorator_base__popUp_9f .NotificationDecorator_backgroundWrapper_0a {
+    mask: none;
+}
+.NotificationDecorator_lipTop_9d {
+    height: 40rem;
+    background: url('R.images.gui.maps.icons.newYear.notifications.common.lip_bottom') no-repeat center / contain;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 15rem;
+    pointer-events: none;
+}
+.NotificationDecorator_lipBottom_0b {
+    height: 40rem;
+    background: url('R.images.gui.maps.icons.newYear.notifications.common.lip_top') no-repeat center / contain;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 15rem;
+    pointer-events: none;
+}
+
+.FormatTextWithColorTags_creamColor_8f {
+    color: #ffdd99;
+}
+
+.FormatTextWithColorTags_brownColor_90 {
+    color: #cbac77;
+}
+
+.FormatTextWithColorTags_credColor_a7 {
+    color: #ced9d9;
+}
+
+.FormatTextWithColorTags_blueColor_73 {
+    color: rgb(205, 237, 255);
+}
+
+.FormatTextWithColorTags_lightBlueColor_fa {
+    color: #aec5f2;
+}
+
+.FormatTextWithColorTags_goldColor_d6 {
+    color: #ffc363;
+}
+
+.FormatTextWithColorTags_grayColor_8b {
+    color: #8c8c7e;
+}
+
+.FormatTextWithColorTags_whiteSpanish_4b {
+    color: #e9e2bf;
+}
+
+.FormatTextWithColorTags_bondColor_53 {
+    color: #c9c9b6;
+}
+
+.FormatTextWithColorTags_yellowColor_84 {
+    color: #feab34;
+}
+
+@keyframes PostEventNotification_slideInFadeIn_b0 {
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+@keyframes PostEventNotification_fadeOut_e0 {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes PostEventNotification_fadeIn_47 {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+@keyframes PostEventNotification_fadeInWithScale_f8 {
+    0% {
+        opacity: 0;
+        transform: scale(1.2);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@keyframes PostEventNotification_slideUp_91 {
+    0% {
+        opacity: 0;
+        transform: translateY(20rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes PostEventNotification_scale_74 {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+@keyframes PostEventNotification_spin_73 {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+@keyframes PostEventNotification_blink_a7 {
+    0% {
+        transform: translateY(0rem);
+    }
+
+    15% {
+        transform: translateY(15rem);
+    }
+
+    30% {
+        transform: translateY(0rem);
+    }
+
+    45% {
+        transform: translateY(15rem);
+    }
+
+    60%,
+    100% {
+        transform: translateY(0rem);
+    }
+}
+@keyframes PostEventNotification_slideInNotification_f0 {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.PostEventNotification_base_1d {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+.PostEventNotification_base_1d .PostEventNotification_image_1d {
+    width: 232rem;
+    height: 200rem;
+    background: url('R.images.advent_calendar.gui.maps.icons.doorsAvailableView.reward') no-repeat center / contain;
+    position: absolute;
+    top: -8rem;
+}
+.PostEventNotification_base__popUp_c8 {
+    animation: PostEventNotification_slideInNotification_f0 ease-in-out 0.6s;
+}
+.PostEventNotification_base__popUp_c8 .PostEventNotification_image_1d {
+    height: 212rem;
+    top: 0;
+}
+.PostEventNotification_background_04 {
+    width: 100%;
+    height: 225rem;
+    border: 1rem solid #323029;
+    border-radius: 4rem;
+    box-shadow: 0 0 35rem 0 rgba(242, 242, 230, 0.05) inset;
+    background-color: #16130c;
+    position: absolute;
+    bottom: 0;
+}
+.PostEventNotification_content_9f {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding-bottom: 25rem;
+    position: relative;
+}
+.PostEventNotification_title_d1 {
+    color: #e9e2bf;
+    font-size: 15rem;
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 4rem;
+}
+.PostEventNotification_descriptionWrapper_c4 {
+    max-width: 230rem;
+    min-height: 55rem;
+    margin-bottom: 13rem;
+}
+.PostEventNotification_description_bc {
+    color: #8c8c7e;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    justify-content: center;
+}
+.PostEventNotification_button_df {
+    min-width: 120rem;
+}

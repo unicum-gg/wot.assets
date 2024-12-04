@@ -1,0 +1,47 @@
+.Video_video_e6 {
+    width: 100%;
+    height: auto;
+    background: no-repeat center / contain;
+    visibility: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.Video_video__visible_c9 {
+    visibility: visible;
+}
+
+.App_base_0c {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 1;
+    position: relative;
+    transition: opacity 0.5s linear;
+}
+
+.App_base__ended_cb {
+    opacity: 0;
+}
+
+.App_video_8f {
+    width: 100%;
+    height: 100%;
+}
+
+.App_cover_49 {
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 1;
+    position: absolute;
+    transition: opacity 0.5s linear;
+}
+
+.App_base__playing_73 .App_cover_49,
+.App_base__ended_cb .App_cover_49 {
+    opacity: 0;
+}

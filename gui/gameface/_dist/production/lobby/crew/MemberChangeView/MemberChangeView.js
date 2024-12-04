@@ -1555,13 +1555,14 @@
                         addPreloadTexture: () => l,
                         children: () => a,
                         displayStatus: () => r.W,
-                        displayStatusIs: () => F,
+                        displayStatusIs: () => D,
                         events: () => s.U,
-                        extraSize: () => D,
+                        extraSize: () => B,
                         forceTriggerMouseMove: () => k,
                         freezeTextureBeforeResize: () => E,
                         getBrowserTexturePath: () => c,
                         getDisplayStatus: () => y,
+                        getFontNames: () => F,
                         getScale: () => b,
                         getSize: () => _,
                         getViewGlobalPosition: () => p,
@@ -1575,7 +1576,7 @@
                         setEventHandled: () => A,
                         setInputPaddingsRem: () => u,
                         setSidePaddingsRem: () => m,
-                        whenTutorialReady: () => B,
+                        whenTutorialReady: () => S,
                     });
                 var a = n(3722),
                     r = n(6112),
@@ -1637,11 +1638,15 @@
                 function y() {
                     return viewEnv.getShowingStatus();
                 }
-                const F = Object.keys(r.W).reduce(
+                const F = (() => {
+                        let e = [];
+                        return () => (0 === e.length && (e = Object.keys(viewEnv.getFontsConfig())), e);
+                    })(),
+                    D = Object.keys(r.W).reduce(
                         (e, t) => ((e[t] = () => viewEnv.getShowingStatus() === r.W[t]), e),
                         {},
                     ),
-                    D = {
+                    B = {
                         set: (e, t) => {
                             viewEnv.setExtraSizeRem(e, t);
                         },
@@ -1649,7 +1654,7 @@
                             viewEnv.getExtraSizeRem(e, t);
                         },
                     },
-                    B = Promise.all([
+                    S = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : s.U.onDomBuilt(e);
                         }),
@@ -1747,7 +1752,7 @@
                 n.d(t, { D9: () => s, au: () => i });
                 var a = n(3469),
                     r = (n(2133), n(2790));
-                n(579), n(5360), n(9056);
+                n(3779), n(579), n(5360), n(9056);
                 const s = r.Z,
                     i = a.Z;
             },
@@ -1917,6 +1922,10 @@
                         n.current
                     );
                 };
+            },
+            3779: (e, t, n) => {
+                'use strict';
+                n(6179);
             },
             3112: (e, t, n) => {
                 'use strict';
@@ -3992,7 +4001,7 @@
                         for (; r; ) s !== r.index && n(e.slice(s, r.index)), a(r), (s = t.lastIndex), (r = t.exec(e));
                         s !== e.length && n(e.slice(s));
                     },
-                    Ue = new RegExp('[฀-๿][ัำ-ฺ็-๎]*', 'gu'),
+                    Ue = new RegExp('[฀-๿][ัำ-ฺ็-๎]*|[^฀-๿]', 'gu'),
                     Ze = (e) => {
                         const t = [];
                         return (

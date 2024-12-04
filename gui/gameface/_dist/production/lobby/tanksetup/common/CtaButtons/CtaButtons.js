@@ -30,8 +30,8 @@
                         y = f[0],
                         O = f[1],
                         T = (0, r.useState)(!1),
-                        P = T[0],
-                        k = T[1];
+                        k = T[0],
+                        P = T[1];
                     return (
                         (0, r.useEffect)(() => {
                             function e(e) {
@@ -57,7 +57,7 @@
                                     d && _.Z.base__disabled,
                                     t && _.Z[`base__${t}`],
                                     y && _.Z.base__focus,
-                                    P && _.Z.base__highlightActive,
+                                    k && _.Z.base__highlightActive,
                                     l,
                                 ),
                                 onMouseEnter: function (e) {
@@ -67,17 +67,17 @@
                                     h && h(e);
                                 },
                                 onMouseUp: function (e) {
-                                    d || (m && m(e), k(!1));
+                                    d || (m && m(e), P(!1));
                                 },
                                 onMouseDown: function (e) {
                                     d ||
                                         (null !== v && (0, a.G)(v),
                                         w && w(e),
                                         n && (d || (g.current && (g.current.focus(), O(!0)))),
-                                        k(!0));
+                                        P(!0));
                                 },
                                 onMouseLeave: function (e) {
-                                    d || (b && b(e), k(!1));
+                                    d || (b && b(e), P(!1));
                                 },
                                 onClick: function (e) {
                                     d || (p && p(e));
@@ -311,13 +311,14 @@
                         addPreloadTexture: () => _,
                         children: () => i,
                         displayStatus: () => o.W,
-                        displayStatusIs: () => k,
+                        displayStatusIs: () => R,
                         events: () => a.U,
-                        extraSize: () => R,
+                        extraSize: () => C,
                         forceTriggerMouseMove: () => T,
                         freezeTextureBeforeResize: () => w,
                         getBrowserTexturePath: () => d,
-                        getDisplayStatus: () => P,
+                        getDisplayStatus: () => k,
+                        getFontNames: () => P,
                         getScale: () => m,
                         getSize: () => v,
                         getViewGlobalPosition: () => h,
@@ -331,7 +332,7 @@
                         setEventHandled: () => y,
                         setInputPaddingsRem: () => c,
                         setSidePaddingsRem: () => u,
-                        whenTutorialReady: () => C,
+                        whenTutorialReady: () => M,
                     });
                 var i = n(3722),
                     o = n(6112),
@@ -390,14 +391,18 @@
                 function T() {
                     viewEnv.forceTriggerMouseMove();
                 }
-                function P() {
+                function k() {
                     return viewEnv.getShowingStatus();
                 }
-                const k = Object.keys(o.W).reduce(
+                const P = (() => {
+                        let e = [];
+                        return () => (0 === e.length && (e = Object.keys(viewEnv.getFontsConfig())), e);
+                    })(),
+                    R = Object.keys(o.W).reduce(
                         (e, t) => ((e[t] = () => viewEnv.getShowingStatus() === o.W[t]), e),
                         {},
                     ),
-                    R = {
+                    C = {
                         set: (e, t) => {
                             viewEnv.setExtraSizeRem(e, t);
                         },
@@ -405,7 +410,7 @@
                             viewEnv.getExtraSizeRem(e, t);
                         },
                     },
-                    C = Promise.all([
+                    M = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : a.U.onDomBuilt(e);
                         }),

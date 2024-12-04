@@ -2,7 +2,7 @@
     'use strict';
     var __webpack_modules__ = {
             768: (u, e, t) => {
-                t.d(e, { O: () => tu });
+                t.d(e, { O: () => Eu });
                 var E = {};
                 t.r(E),
                     t.d(E, { mouse: () => s, off: () => B, on: () => a, onResize: () => r, onScaleUpdated: () => o });
@@ -36,27 +36,28 @@
                         addPreloadTexture: () => M,
                         children: () => F,
                         displayStatus: () => f,
-                        displayStatusIs: () => J,
+                        displayStatusIs: () => uu,
                         events: () => b,
-                        extraSize: () => uu,
+                        extraSize: () => eu,
                         forceTriggerMouseMove: () => X,
                         freezeTextureBeforeResize: () => $,
                         getBrowserTexturePath: () => L,
                         getDisplayStatus: () => Q,
-                        getScale: () => q,
+                        getFontNames: () => J,
+                        getScale: () => j,
                         getSize: () => U,
                         getViewGlobalPosition: () => W,
                         isEventHandled: () => Z,
                         isFocused: () => H,
-                        pxToRem: () => K,
-                        remToPx: () => j,
+                        pxToRem: () => q,
+                        remToPx: () => K,
                         resize: () => z,
                         sendEvent: () => P,
                         setAnimateWindow: () => G,
                         setEventHandled: () => Y,
                         setInputPaddingsRem: () => S,
                         setSidePaddingsRem: () => I,
-                        whenTutorialReady: () => eu,
+                        whenTutorialReady: () => tu,
                     });
                 const r = D('clientResized'),
                     o = D('self.onScaleUpdated'),
@@ -251,18 +252,18 @@
                 }
                 function W(u = 'rem') {
                     const e = viewEnv.getViewGlobalPositionRem();
-                    return 'rem' === u ? e : { x: j(e.x), y: j(e.y) };
+                    return 'rem' === u ? e : { x: K(e.x), y: K(e.y) };
                 }
                 function $() {
                     viewEnv.freezeTextureBeforeResize();
                 }
-                function q() {
+                function j() {
                     return viewEnv.getScale();
                 }
-                function K(u) {
+                function q(u) {
                     return viewEnv.pxToRem(u);
                 }
-                function j(u) {
+                function K(u) {
                     return viewEnv.remToPx(u);
                 }
                 function G(u, e) {
@@ -283,8 +284,12 @@
                 function Q() {
                     return viewEnv.getShowingStatus();
                 }
-                const J = Object.keys(f).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === f[e]), u), {}),
-                    uu = {
+                const J = (() => {
+                        let u = [];
+                        return () => (0 === u.length && (u = Object.keys(viewEnv.getFontsConfig())), u);
+                    })(),
+                    uu = Object.keys(f).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === f[e]), u), {}),
+                    eu = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -292,13 +297,13 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    eu = Promise.all([
+                    tu = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : b.onDomBuilt(u);
                         }),
                         engine.whenReady,
                     ]),
-                    tu = { view: n, client: A, sound: w };
+                    Eu = { view: n, client: A, sound: w };
             },
             521: (u, e, t) => {
                 let E, A;
@@ -699,7 +704,7 @@
                         getFormattedDateTime: (u, e, t = !0) => regionalDateTime.getFormattedDateTime(u, e, t),
                     };
             },
-            374: (u, e, t) => {
+            656: (u, e, t) => {
                 var E = t(179),
                     A = t.n(E),
                     F = t(493),
@@ -1011,7 +1016,7 @@
                         );
                         return A().createElement(I, { classMix: U, text: u, binding: F });
                     },
-                    q = {
+                    j = {
                         base: 'Content_base_d3',
                         box: 'Content_box_bf',
                         icon: 'Content_icon_2a',
@@ -1033,7 +1038,7 @@
                         highlightText: 'Content_highlightText_a3',
                         infoIcon: 'Content_infoIcon_47',
                     },
-                    K = () => {
+                    q = () => {
                         const u = L('model'),
                             e = u.allianceName,
                             t = u.vehicleNationName,
@@ -1052,12 +1057,12 @@
                                 () => ({
                                     allianceIcon: A().createElement(
                                         'div',
-                                        { className: q.icon },
-                                        A().createElement('span', { className: q.iconUrl, style: a }),
+                                        { className: j.icon },
+                                        A().createElement('span', { className: j.iconUrl, style: a }),
                                     ),
                                     allianceName: A().createElement(
                                         'span',
-                                        { className: q.text },
+                                        { className: j.text },
                                         R.strings.tooltips.blueprints.conversionView.alliance.title.name.$dyn(n),
                                     ),
                                 }),
@@ -1067,7 +1072,7 @@
                                 () => ({
                                     allianceNations: A().createElement(
                                         'span',
-                                        { className: q.highlightText },
+                                        { className: j.highlightText },
                                         R.strings.tooltips.blueprints.conversionView.alliance.nations.$dyn(n),
                                     ),
                                 }),
@@ -1077,7 +1082,7 @@
                                 () => ({
                                     allianceName: A().createElement(
                                         'span',
-                                        { className: q.highlightText },
+                                        { className: j.highlightText },
                                         R.strings.tooltips.blueprints.conversionView.alliance.desc.name.$dyn(n),
                                     ),
                                 }),
@@ -1087,70 +1092,70 @@
                                 () => ({
                                     allianceName: A().createElement(
                                         'span',
-                                        { className: q.highlightText },
+                                        { className: j.highlightText },
                                         R.strings.tooltips.blueprints.conversionView.alliance.content.name.$dyn(n),
                                     ),
                                 }),
                                 [n],
                             ),
-                            l = i()(q.separator, q.separator__bottom);
+                            l = i()(j.separator, j.separator__bottom);
                         return A().createElement(
                             'div',
-                            { className: q.base },
+                            { className: j.base },
                             A().createElement(
                                 'div',
-                                { className: q.title },
+                                { className: j.title },
                                 A().createElement(I, {
-                                    classMix: q.highTitle,
+                                    classMix: j.highTitle,
                                     text: R.strings.tooltips.blueprints.conversionView.title(),
                                     binding: B,
                                 }),
                             ),
                             A().createElement(
                                 'div',
-                                { className: q.subTitle },
+                                { className: j.subTitle },
                                 A().createElement(I, {
-                                    classMix: q.mainText,
+                                    classMix: j.mainText,
                                     text: R.strings.tooltips.blueprints.conversionView.subTitle(),
                                     binding: C,
                                 }),
                             ),
                             A().createElement(
                                 'div',
-                                { className: q.desc },
+                                { className: j.desc },
                                 A().createElement(I, {
-                                    classMix: q.mainText,
+                                    classMix: j.mainText,
                                     text: R.strings.tooltips.blueprints.conversionView.desc(),
                                     binding: s,
                                 }),
                             ),
                             A().createElement(
                                 'div',
-                                { className: q.contentTitle },
+                                { className: j.contentTitle },
                                 A().createElement(
                                     'span',
-                                    { className: q.highTitleCustom },
+                                    { className: j.highTitleCustom },
                                     R.strings.tooltips.blueprints.conversionView.content.title(),
                                 ),
                             ),
                             A().createElement(
                                 'div',
-                                { className: q.content },
-                                A().createElement('div', { className: q.separator }),
+                                { className: j.content },
+                                A().createElement('div', { className: j.separator }),
                                 A().createElement(
                                     'div',
-                                    { className: q.contentFirst },
+                                    { className: j.contentFirst },
                                     A().createElement(
                                         'div',
                                         null,
                                         A().createElement(
                                             'span',
-                                            { className: q.mainText },
+                                            { className: j.mainText },
                                             R.strings.tooltips.blueprints.conversionView.content.first.body(),
                                         ),
                                         A().createElement(
                                             'div',
-                                            { className: q.nationsBlock },
+                                            { className: j.nationsBlock },
                                             A().createElement($, {
                                                 strResId:
                                                     R.strings.tooltips.blueprints.conversionView.content.first.title(),
@@ -1162,18 +1167,18 @@
                                 ),
                                 A().createElement(
                                     'div',
-                                    { className: q.contentSecond },
+                                    { className: j.contentSecond },
                                     A().createElement(
                                         'div',
                                         null,
                                         A().createElement(I, {
-                                            classMix: q.mainText,
+                                            classMix: j.mainText,
                                             text: R.strings.tooltips.blueprints.conversionView.content.second(),
                                             binding: c,
                                         }),
                                         A().createElement(
                                             'div',
-                                            { className: q.nationsBlock },
+                                            { className: j.nationsBlock },
                                             D.map((u, e) =>
                                                 A().createElement($, {
                                                     key: e,
@@ -1190,19 +1195,19 @@
                             A().createElement('div', { className: l }),
                             A().createElement(
                                 'div',
-                                { className: q.footer },
-                                A().createElement('span', { className: q.infoIcon }),
+                                { className: j.footer },
+                                A().createElement('span', { className: j.infoIcon }),
                                 A().createElement(
                                     'span',
-                                    { className: q.mainText },
+                                    { className: j.mainText },
                                     R.strings.tooltips.blueprints.conversionView.info(),
                                 ),
                             ),
                         );
                     },
-                    j = () => A().createElement(s, null, A().createElement(K, null)),
+                    K = () => A().createElement(s, null, A().createElement(q, null)),
                     G = document.createElement('div');
-                (window.onload = () => document.body.appendChild(G)), n().render(A().createElement(j, null), G);
+                (window.onload = () => document.body.appendChild(G)), n().render(A().createElement(K, null), G);
             },
         },
         __webpack_module_cache__ = {},
@@ -1280,6 +1285,6 @@
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             t.forEach(e.bind(null, 0)), (t.push = e.bind(null, t.push.bind(t)));
         })();
-    var __webpack_exports__ = __webpack_require__.O(void 0, [589], () => __webpack_require__(374));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [589], () => __webpack_require__(656));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

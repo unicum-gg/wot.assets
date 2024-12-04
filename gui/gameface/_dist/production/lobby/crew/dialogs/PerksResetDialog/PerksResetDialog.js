@@ -76,7 +76,6 @@
                             (e.crystal = 'crystal'),
                             (e.xp = 'xp'),
                             (e.freeXP = 'freeXP'),
-                            (e.eliteXP = 'eliteXP'),
                             (e.equipCoin = 'equipCoin');
                     })(a || (a = {})),
                     (function (e) {
@@ -1136,13 +1135,14 @@
                         addPreloadTexture: () => l,
                         children: () => n,
                         displayStatus: () => a.W,
-                        displayStatusIs: () => w,
+                        displayStatusIs: () => y,
                         events: () => r.U,
-                        extraSize: () => y,
+                        extraSize: () => k,
                         forceTriggerMouseMove: () => b,
                         freezeTextureBeforeResize: () => F,
                         getBrowserTexturePath: () => c,
                         getDisplayStatus: () => v,
+                        getFontNames: () => w,
                         getScale: () => D,
                         getSize: () => E,
                         getViewGlobalPosition: () => A,
@@ -1156,7 +1156,7 @@
                         setEventHandled: () => B,
                         setInputPaddingsRem: () => o,
                         setSidePaddingsRem: () => d,
-                        whenTutorialReady: () => k,
+                        whenTutorialReady: () => x,
                     });
                 var n = t(3722),
                     a = t(6112),
@@ -1218,11 +1218,15 @@
                 function v() {
                     return viewEnv.getShowingStatus();
                 }
-                const w = Object.keys(a.W).reduce(
+                const w = (() => {
+                        let e = [];
+                        return () => (0 === e.length && (e = Object.keys(viewEnv.getFontsConfig())), e);
+                    })(),
+                    y = Object.keys(a.W).reduce(
                         (e, u) => ((e[u] = () => viewEnv.getShowingStatus() === a.W[u]), e),
                         {},
                     ),
-                    y = {
+                    k = {
                         set: (e, u) => {
                             viewEnv.setExtraSizeRem(e, u);
                         },
@@ -1230,7 +1234,7 @@
                             viewEnv.getExtraSizeRem(e, u);
                         },
                     },
-                    k = Promise.all([
+                    x = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : r.U.onDomBuilt(e);
                         }),
@@ -1331,7 +1335,7 @@
                 t.d(u, { D9: () => i, DA: () => r.D, au: () => s, tT: () => r.t });
                 var n = t(3469),
                     a = (t(2133), t(2790)),
-                    r = (t(579), t(5360));
+                    r = (t(3779), t(579), t(5360));
                 t(9056);
                 const i = a.Z,
                     s = n.Z;
@@ -1543,6 +1547,10 @@
                         t.current
                     );
                 };
+            },
+            3779: (e, u, t) => {
+                'use strict';
+                t(6179);
             },
             4419: (e, u, t) => {
                 'use strict';
@@ -2230,7 +2238,7 @@
                     a = t(6799),
                     r = t(6960),
                     i = t(9053);
-                const s = new RegExp('[฀-๿][ัำ-ฺ็-๎]*', 'gu'),
+                const s = new RegExp('[฀-๿][ัำ-ฺ็-๎]*|[^฀-๿]', 'gu'),
                     l = (e) => {
                         const u = [];
                         return (
@@ -3094,7 +3102,7 @@
                         Y.apply(null, arguments)
                     );
                 }
-                const X = (e) => {
+                const K = (e) => {
                     let u = e.content,
                         t = e.classMix,
                         n = e.className,
@@ -3139,7 +3147,7 @@
                         )
                     );
                 };
-                var K = t(2056),
+                var X = t(2056),
                     J = t(776),
                     Q = t(5298);
                 const ee = 'DialogTemplateButton_base_0b',
@@ -3153,7 +3161,7 @@
                                 _ = (0, a.useMemo)(() => (0, Q.l)(l.type, { buttonID: t }), [l.type, t]),
                                 d = s()(ue, l.type !== J.f.absent && te);
                             return r().createElement(
-                                K.u,
+                                X.u,
                                 _,
                                 r().createElement(
                                     'div',
@@ -3161,7 +3169,7 @@
                                     r().createElement(
                                         z,
                                         { size: G.medium, type: o, disabled: n, onClick: c, isFocused: u },
-                                        r().createElement(X, { classMix: d, content: i || '' }),
+                                        r().createElement(K, { classMix: d, content: i || '' }),
                                     ),
                                 ),
                             );
@@ -3701,12 +3709,12 @@
                         );
                     }),
                     Ye = 'Divider_base_0a',
-                    Xe = 'Divider_line_c9',
-                    Ke = r().memo(function ({ className: e }) {
+                    Ke = 'Divider_line_c9',
+                    Xe = r().memo(function ({ className: e }) {
                         return r().createElement(
                             'div',
                             { className: s()(Ye, e) },
-                            r().createElement('div', { className: Xe }),
+                            r().createElement('div', { className: Ke }),
                         );
                     }),
                     Je = {
@@ -3797,7 +3805,7 @@
                             'div',
                             { className: s()(au, e) },
                             r().createElement(nu, { name: t, size: tu.c158x118, isSkin: n, classMix: ru }),
-                            r().createElement(Ke, { className: iu }),
+                            r().createElement(Xe, { className: iu }),
                             r().createElement(
                                 'div',
                                 { className: su },
@@ -4143,7 +4151,7 @@
                 !(function (e) {
                     (e.Play = 'play'), (e.Stop = 'stop');
                 })(Yu || (Yu = {}));
-                const Xu = (e, u, t) => {
+                const Ku = (e, u, t) => {
                     const n = new Image();
                     (n.src = t(u)), e.push(n);
                 };
@@ -4195,8 +4203,8 @@
                             }
                             const o = ((e, u, t) => {
                                     const n = [];
-                                    if (t) for (let t = e; t >= 0; t--) Xu(n, t, u);
-                                    else for (let t = 0; t < e; t++) Xu(n, t, u);
+                                    if (t) for (let t = e; t >= 0; t--) Ku(n, t, u);
+                                    else for (let t = 0; t < e; t++) Ku(n, t, u);
                                     return n;
                                 })(i, n, p),
                                 _ = ((e, u = 0) => {
@@ -4216,7 +4224,7 @@
                         r().createElement('canvas', Zu({}, C, { width: u, height: t, ref: B }))
                     );
                 });
-                var Ku = t(7160);
+                var Xu = t(7160);
                 const Ju = {
                         base: 'AnimatedLostSkill_base_55',
                         base__c_24x24: 'AnimatedLostSkill_base__c_24x24_d5',
@@ -4254,7 +4262,7 @@
                                 () => ({
                                     from: { x: 0 },
                                     to: { x: B.O.view.remToPx(m) },
-                                    config: { duration: 300, easing: Ku.qb },
+                                    config: { duration: 300, easing: Xu.qb },
                                     delay: 600 - 100 * u,
                                 }),
                                 [u, m, _],
@@ -4384,7 +4392,7 @@
                             i = (0, cu.useSpring)({
                                 from: { opacity: 0, marginRight: -a * n },
                                 to: [{ marginRight: 0 }, { opacity: 1 }],
-                                config: { duration: 400, easing: Ku.Fs },
+                                config: { duration: 400, easing: Xu.Fs },
                                 delay: 800,
                             });
                         return r().createElement(cu.animated.div, { style: i, className: t }, u);
@@ -4400,7 +4408,7 @@
                                         from: { scale: 1 },
                                         to: [{ scale: 1.2 }, { scale: 1 }],
                                         delay: 200,
-                                        config: { duration: 400, easing: Ku.Fs },
+                                        config: { duration: 400, easing: Xu.Fs },
                                     });
                             }, [e, s]),
                             r().createElement(cu.animated.div, { style: e ? i : void 0, className: u }, t)
@@ -4430,7 +4438,7 @@
                                 () => ({
                                     from: { opacity: 1, marginRight: 0 },
                                     to: [{ opacity: 0 }, { marginRight: -n * a }],
-                                    config: { duration: 400, easing: Ku.Fs },
+                                    config: { duration: 400, easing: Xu.Fs },
                                 }),
                                 [a, n],
                             )[0];
@@ -4655,14 +4663,14 @@
                             a = (0, cu.useSpring)(() => ({
                                 from: { x: B.O.view.remToPx(-5), opacity: 0 },
                                 to: { x: 0, opacity: 1 },
-                                config: { duration: 300, easing: Ku.qb },
+                                config: { duration: 300, easing: Xu.qb },
                                 delay: 700,
                             }))[0],
                             i = (0, cu.useSpring)(
                                 () => ({
                                     from: { opacity: 0 },
                                     to: [{ opacity: 1 }, { opacity: 0 }],
-                                    config: { duration: 150, easing: Ku.qb },
+                                    config: { duration: 150, easing: Xu.qb },
                                 }),
                                 [u],
                             )[0];
@@ -5163,7 +5171,7 @@
                     }) {
                         return r().createElement('div', { className: s()(Vt.base, Vt[`base__${Zt(t, n, e, u)}`], a) });
                     }),
-                    Xt = {
+                    Kt = {
                         base: 'TankmanSkill_base_51',
                         base__c_24x24: 'TankmanSkill_base__c_24x24_98',
                         base__c_44x44: 'TankmanSkill_base__c_44x44_62',
@@ -5175,14 +5183,14 @@
                         level__skillLost: 'TankmanSkill_level__skillLost_8c',
                         level__skillBlur: 'TankmanSkill_level__skillBlur_6d',
                     };
-                let Kt;
+                let Xt;
                 !(function (e) {
                     (e.c24x24 = 'c_24x24'), (e.c44x44 = 'c_44x44');
-                })(Kt || (Kt = {}));
+                })(Xt || (Xt = {}));
                 r().memo(function ({
                     iconName: e,
                     level: u,
-                    size: t = Kt.c44x44,
+                    size: t = Xt.c44x44,
                     isLevelVisible: n = u < _u.I,
                     isIrrelevant: i,
                     efficiencyState: l,
@@ -5221,13 +5229,13 @@
                         ),
                         r().createElement(
                             'div',
-                            { className: s()(Xt.base, Xt[`base__${t}`], o) },
+                            { className: s()(Kt.base, Kt[`base__${t}`], o) },
                             r().createElement(gt, {
                                 iconName: e,
                                 size: Dt.c52x52,
-                                className: s()(Xt.icon, d && Xt.icon__disable, _ && Xt.icon__new),
+                                className: s()(Kt.icon, d && Kt.icon__disable, _ && Kt.icon__new),
                             }),
-                            d && r().createElement('div', { className: Xt.disabledPattern }),
+                            d && r().createElement('div', { className: Kt.disabledPattern }),
                             !_ &&
                                 r().createElement(Yt, {
                                     isNewSkill: _,
@@ -5241,14 +5249,14 @@
                                     null,
                                     r().createElement(
                                         cu.animated.div,
-                                        { style: A, className: s()(Xt.level, c && Xt.level__skillLost) },
+                                        { style: A, className: s()(Kt.level, c && Kt.level__skillLost) },
                                         E.val.to((e) => (0, fe.dL)(Math.floor(e))),
                                     ),
                                     r().createElement(
                                         cu.animated.div,
                                         {
                                             style: Object.assign({}, A, { opacity: g.t.to((e) => e) }),
-                                            className: s()(Xt.level, Xt.level__skillBlur),
+                                            className: s()(Kt.level, Kt.level__skillBlur),
                                         },
                                         (0, fe.dL)(Math.floor(u)),
                                     ),
@@ -5270,7 +5278,7 @@
                             s = (0, cu.useSpring)(() => ({
                                 from: { opacity: 0 },
                                 to: { opacity: 1 },
-                                config: { duration: 500, easing: Ku.qb },
+                                config: { duration: 500, easing: Xu.qb },
                                 delay: 150,
                                 pause: !0,
                             })),
@@ -5322,14 +5330,14 @@
                                                 g.start({
                                                     from: { x: -s },
                                                     to: { x: -m },
-                                                    config: { duration: 500, easing: Ku.qb },
+                                                    config: { duration: 500, easing: Xu.qb },
                                                     delay: 0,
                                                     immediate: u,
                                                 }),
                                                 A.start({
                                                     from: { x: l, opacity: 0 },
                                                     to: { x: F, opacity: 1 },
-                                                    config: { duration: 500, easing: Ku.qb },
+                                                    config: { duration: 500, easing: Xu.qb },
                                                     delay: 0,
                                                     immediate: u,
                                                     onRest: () => {
@@ -5348,7 +5356,7 @@
                                 d.start({
                                     from: { opacity: 0 },
                                     to: { opacity: 1 },
-                                    config: { duration: 300, easing: Ku.qb },
+                                    config: { duration: 300, easing: Xu.qb },
                                     delay: 0,
                                 });
                             }, [d]),
@@ -5378,7 +5386,7 @@
                             i = u.computes.skillsDataBefore(),
                             l = u.computes.skillsDataAfter(),
                             o = i.bonusSkills.length > 0,
-                            _ = t < c.cJ.Medium ? Kt.c24x24 : Kt.c44x44,
+                            _ = t < c.cJ.Medium ? Xt.c24x24 : Xt.c44x44,
                             d = 0 !== a.invId,
                             E = Qt(d, [_, l.bonusSkills.length, l.majorSkills.length]),
                             m = E.arrowStyles,
@@ -5704,9 +5712,9 @@
                     q = 'Price_base__withTooltip_a2',
                     Z = 'Price_resetCardPriceIcon_89',
                     Y = 'Price_recertificationPrice_b6';
-                function X() {
+                function K() {
                     return (
-                        (X = Object.assign
+                        (K = Object.assign
                             ? Object.assign.bind()
                             : function (e) {
                                   for (var u = 1; u < arguments.length; u++) {
@@ -5715,10 +5723,10 @@
                                   }
                                   return e;
                               }),
-                        X.apply(null, arguments)
+                        K.apply(null, arguments)
                     );
                 }
-                const K = ({
+                const X = ({
                         cost: e,
                         tooltip: u,
                         index: t,
@@ -5745,11 +5753,11 @@
                             { className: E()(z, V, s.isEnabled && q, r) },
                             a().createElement(
                                 G.u,
-                                X({}, s, { targetId: n }),
+                                K({}, s, { targetId: n }),
                                 a().createElement(
                                     'div',
                                     null,
-                                    a().createElement($.F, X({}, e, { isInteractiveDiscount: !0 })),
+                                    a().createElement($.F, K({}, e, { isInteractiveDiscount: !0 })),
                                 ),
                             ),
                         );
@@ -5851,7 +5859,7 @@
                                 a().createElement('div', { className: J.tooltipBox }),
                             ),
                             a().createElement(y, { cardType: _, kwargs: w }),
-                            a().createElement(K, {
+                            a().createElement(X, {
                                 cost: m,
                                 tooltip: t,
                                 index: i,
@@ -5984,10 +5992,6 @@
                     'icon__freeXP-big': 'Currency_icon__freeXP-big_21',
                     'icon__freeXP-large': 'Currency_icon__freeXP-large_c8',
                     'icon__freeXP-extraLarge': 'Currency_icon__freeXP-extraLarge_58',
-                    'icon__eliteXP-small': 'Currency_icon__eliteXP-small_45',
-                    'icon__eliteXP-big': 'Currency_icon__eliteXP-big_c0',
-                    'icon__eliteXP-large': 'Currency_icon__eliteXP-large_1b',
-                    'icon__eliteXP-extraLarge': 'Currency_icon__eliteXP-extraLarge_9b',
                     'icon__equipCoin-small': 'Currency_icon__equipCoin-small_32',
                     'icon__equipCoin-big': 'Currency_icon__equipCoin-big_79',
                     'icon__equipCoin-large': 'Currency_icon__equipCoin-large_2c',
@@ -5999,7 +6003,6 @@
                     value__xp: 'Currency_value__xp_b0',
                     value__crystal: 'Currency_value__crystal_19',
                     value__equipCoin: 'Currency_value__equipCoin_d0',
-                    value__eliteXP: 'Currency_value__eliteXP_62',
                     value__notEnough: 'Currency_value__notEnough_56',
                     stock: 'Currency_stock_87',
                     stock__indent: 'Currency_stock__indent_a1',

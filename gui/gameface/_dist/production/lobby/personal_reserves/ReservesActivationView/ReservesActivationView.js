@@ -179,7 +179,7 @@
             },
             9768: (e, u, t) => {
                 'use strict';
-                t.d(u, { O: () => te });
+                t.d(u, { O: () => re });
                 var r = {};
                 t.r(r),
                     t.d(r, { mouse: () => _, off: () => d, on: () => E, onResize: () => l, onScaleUpdated: () => c });
@@ -213,13 +213,14 @@
                         addPreloadTexture: () => O,
                         children: () => a,
                         displayStatus: () => b,
-                        displayStatusIs: () => J,
+                        displayStatusIs: () => ee,
                         events: () => w,
-                        extraSize: () => ee,
+                        extraSize: () => ue,
                         forceTriggerMouseMove: () => K,
                         freezeTextureBeforeResize: () => U,
                         getBrowserTexturePath: () => k,
                         getDisplayStatus: () => Q,
+                        getFontNames: () => J,
                         getScale: () => $,
                         getSize: () => H,
                         getViewGlobalPosition: () => G,
@@ -228,12 +229,12 @@
                         pxToRem: () => V,
                         remToPx: () => j,
                         resize: () => z,
-                        sendEvent: () => P,
+                        sendEvent: () => M,
                         setAnimateWindow: () => X,
                         setEventHandled: () => Y,
                         setInputPaddingsRem: () => N,
                         setSidePaddingsRem: () => W,
-                        whenTutorialReady: () => ue,
+                        whenTutorialReady: () => te,
                     });
                 const l = o('clientResized'),
                     c = o('self.onScaleUpdated'),
@@ -393,7 +394,7 @@
                         return viewEnv.handleViewEvent({ __Type: t, type: e });
                         var r;
                     },
-                    P = {
+                    M = {
                         close(e) {
                             R('popover' === e ? y : S);
                         },
@@ -404,12 +405,12 @@
                             R(T, { isMouseEvent: !0, on: e });
                         },
                     },
-                    M = 15;
+                    P = 15;
                 function O(e) {
                     viewEnv.addPreloadTexture(e);
                 }
                 function N(e) {
-                    viewEnv.setHitAreaPaddingsRem(e, e, e, e, M);
+                    viewEnv.setHitAreaPaddingsRem(e, e, e, e, P);
                 }
                 function k(e, u, t, r = 1) {
                     return viewEnv.getWebBrowserTexturePath(e, u, t, r);
@@ -418,7 +419,7 @@
                     return viewEnv.addDataChangedCallback(e, u, t);
                 }
                 function W(e) {
-                    viewEnv.setHitAreaPaddingsRem(e.top, e.right, e.bottom, e.left, M);
+                    viewEnv.setHitAreaPaddingsRem(e.top, e.right, e.bottom, e.left, P);
                 }
                 function H(e = 'px') {
                     return 'rem' === e ? viewEnv.getViewSizeRem() : viewEnv.getViewSizePx();
@@ -460,8 +461,12 @@
                 function Q() {
                     return viewEnv.getShowingStatus();
                 }
-                const J = Object.keys(b).reduce((e, u) => ((e[u] = () => viewEnv.getShowingStatus() === b[u]), e), {}),
-                    ee = {
+                const J = (() => {
+                        let e = [];
+                        return () => (0 === e.length && (e = Object.keys(viewEnv.getFontsConfig())), e);
+                    })(),
+                    ee = Object.keys(b).reduce((e, u) => ((e[u] = () => viewEnv.getShowingStatus() === b[u]), e), {}),
+                    ue = {
                         set: (e, u) => {
                             viewEnv.setExtraSizeRem(e, u);
                         },
@@ -469,13 +474,13 @@
                             viewEnv.getExtraSizeRem(e, u);
                         },
                     },
-                    ue = Promise.all([
+                    te = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : w.onDomBuilt(e);
                         }),
                         engine.whenReady,
                     ]),
-                    te = { view: i, client: n, sound: p };
+                    re = { view: i, client: n, sound: p };
             },
             4598: (e, u, t) => {
                 'use strict';
@@ -511,7 +516,7 @@
                 'use strict';
                 t.d(u, { au: () => n });
                 var r = t(3469);
-                t(2133), t(2790), t(579), t(5360), t(9056);
+                t(2133), t(2790), t(3779), t(579), t(5360), t(9056);
                 const n = r.Z;
             },
             6536: (e, u, t) => {
@@ -574,6 +579,10 @@
                 r.Sw.instance;
             },
             2790: (e, u, t) => {
+                'use strict';
+                t(6179);
+            },
+            3779: (e, u, t) => {
                 'use strict';
                 t(6179);
             },
@@ -1541,10 +1550,6 @@
                     'icon__freeXP-big': 'Currency_icon__freeXP-big_21',
                     'icon__freeXP-large': 'Currency_icon__freeXP-large_c8',
                     'icon__freeXP-extraLarge': 'Currency_icon__freeXP-extraLarge_58',
-                    'icon__eliteXP-small': 'Currency_icon__eliteXP-small_45',
-                    'icon__eliteXP-big': 'Currency_icon__eliteXP-big_c0',
-                    'icon__eliteXP-large': 'Currency_icon__eliteXP-large_1b',
-                    'icon__eliteXP-extraLarge': 'Currency_icon__eliteXP-extraLarge_9b',
                     'icon__equipCoin-small': 'Currency_icon__equipCoin-small_32',
                     'icon__equipCoin-big': 'Currency_icon__equipCoin-big_79',
                     'icon__equipCoin-large': 'Currency_icon__equipCoin-large_2c',
@@ -1556,7 +1561,6 @@
                     value__xp: 'Currency_value__xp_b0',
                     value__crystal: 'Currency_value__crystal_19',
                     value__equipCoin: 'Currency_value__equipCoin_d0',
-                    value__eliteXP: 'Currency_value__eliteXP_62',
                     value__notEnough: 'Currency_value__notEnough_56',
                     stock: 'Currency_stock_87',
                     stock__indent: 'Currency_stock__indent_a1',
@@ -1573,7 +1577,6 @@
                             (e.crystal = 'crystal'),
                             (e.xp = 'xp'),
                             (e.freeXP = 'freeXP'),
-                            (e.eliteXP = 'eliteXP'),
                             (e.equipCoin = 'equipCoin');
                     })(f || (f = {})),
                     (function (e) {
@@ -1636,8 +1639,8 @@
                     T = 'Quantity_icon_e5',
                     S = 'Quantity_price_5f',
                     L = 'Quantity_price_icon_83',
-                    P = 'Quantity_price__discount_41',
-                    M = ({
+                    M = 'Quantity_price__discount_41',
+                    P = ({
                         isPurchasable: e,
                         goldPrice: u = 0,
                         isDiscount: t = !1,
@@ -1652,7 +1655,7 @@
                                   value: u,
                                   isEnough: r >= u,
                                   isDiscount: t,
-                                  className: n()(S, t && P),
+                                  className: n()(S, t && M),
                                   classNames: { icon: L },
                               })
                             : i().createElement(
@@ -1762,7 +1765,7 @@
                         T = u.isPremium,
                         S = u.iconId,
                         L = u.price,
-                        P = u.minBonus,
+                        M = u.minBonus,
                         W = u.maxBonus,
                         H = u.state,
                         z = u.nextExpirationAmount,
@@ -1804,7 +1807,7 @@
                         }, [f, g, q, o]),
                         te = (0, F.f8)(j),
                         re = (0, d.M)(te, te.hours ? E.o_.Long : E.o_.Short),
-                        ne = (0, B.Eh)(P, W, S),
+                        ne = (0, B.Eh)(M, W, S),
                         ae = ne[0],
                         ie = ne[1],
                         oe = new m.Zg(L),
@@ -1874,7 +1877,7 @@
                                         i().createElement(
                                             'div',
                                             { className: O.cardContent_quantity },
-                                            i().createElement(M, {
+                                            i().createElement(P, {
                                                 isPurchasable: s,
                                                 goldPrice: se,
                                                 isDiscount: le,
@@ -2057,7 +2060,7 @@
                         useHorizontalScrollApi: () => te,
                     });
                 var n = {};
-                t.r(n), t.d(n, { Area: () => Ne, Bar: () => Pe, Default: () => Oe, useVerticalScrollApi: () => Be });
+                t.r(n), t.d(n, { Area: () => Ne, Bar: () => Me, Default: () => Oe, useVerticalScrollApi: () => Be });
                 var a = t(6179),
                     i = t.n(a);
                 const o = (e, u, t) =>
@@ -2351,14 +2354,14 @@
                         [w.Large]: `${f().SMALL_WIDTH} ${f().MEDIUM_WIDTH} ${f().LARGE_WIDTH}`,
                         [w.ExtraLarge]: `${f().SMALL_WIDTH} ${f().MEDIUM_WIDTH} ${f().LARGE_WIDTH} ${f().EXTRA_LARGE_WIDTH}`,
                     },
-                    P = {
+                    M = {
                         [x.ExtraSmall]: '',
                         [x.Small]: f().SMALL_HEIGHT,
                         [x.Medium]: `${f().SMALL_HEIGHT} ${f().MEDIUM_HEIGHT}`,
                         [x.Large]: `${f().SMALL_HEIGHT} ${f().MEDIUM_HEIGHT} ${f().LARGE_HEIGHT}`,
                         [x.ExtraLarge]: `${f().SMALL_HEIGHT} ${f().MEDIUM_HEIGHT} ${f().LARGE_HEIGHT} ${f().EXTRA_LARGE_HEIGHT}`,
                     },
-                    M = {
+                    P = {
                         [b.ExtraSmall]: '',
                         [b.Small]: f().SMALL,
                         [b.Medium]: `${f().SMALL} ${f().MEDIUM}`,
@@ -2382,7 +2385,7 @@
                             a = n.mediaWidth,
                             o = n.mediaHeight,
                             s = n.mediaSize;
-                        return i().createElement('div', S({ className: p()(t, L[a], P[o], M[s]) }, r), u);
+                        return i().createElement('div', S({ className: p()(t, L[a], M[o], P[s]) }, r), u);
                     },
                     N = ['children'];
                 const k = (e) => {
@@ -2980,7 +2983,7 @@
                         e.contentRef.current && u(e.contentRef.current);
                     },
                     Re = (e, u) => Math.max(20, e.offsetHeight * u),
-                    Pe = (0, a.memo)(({ api: e, classNames: u = {}, getStepByRailClick: t = Se, onDrag: r = ye }) => {
+                    Me = (0, a.memo)(({ api: e, classNames: u = {}, getStepByRailClick: t = Se, onDrag: r = ye }) => {
                         const n = (0, a.useRef)(null),
                             o = (0, a.useRef)(null),
                             l = (0, a.useRef)(null),
@@ -3156,7 +3159,7 @@
                             }),
                         );
                     }),
-                    Me = {
+                    Pe = {
                         content: 'VerticalScroll_content_cb',
                         defaultScroll: 'VerticalScroll_defaultScroll_f8',
                         bar: 'VerticalScroll_bar_1e',
@@ -3175,28 +3178,28 @@
                     }) => {
                         const E = (0, a.useMemo)(() => {
                                 const e = r || {};
-                                return Object.assign({}, e, { base: p()(Me.base, e.base) });
+                                return Object.assign({}, e, { base: p()(Pe.base, e.base) });
                             }, [r]),
                             d = (0, a.useMemo)(() => Object.assign({}, u, { handleMouseWheel: () => {} }), [u]);
                         return i().createElement(
                             'div',
-                            { className: p()(Me.defaultScroll, t), onWheel: u.handleMouseWheel },
+                            { className: p()(Pe.defaultScroll, t), onWheel: u.handleMouseWheel },
                             i().createElement(
                                 'div',
-                                { className: p()(Me.area, n) },
+                                { className: p()(Pe.area, n) },
                                 i().createElement(Ne, { className: o, classNames: s, api: d }, e),
                             ),
-                            i().createElement(Pe, { getStepByRailClick: l, api: u, onDrag: c, classNames: E }),
+                            i().createElement(Me, { getStepByRailClick: l, api: u, onDrag: c, classNames: E }),
                         );
                     },
                     Ne = ({ className: e, classNames: u, children: t, api: r }) => (
                         (0, a.useEffect)(() => U(r.recalculateContent)),
                         i().createElement(
                             'div',
-                            { className: p()(Me.base, e), ref: r.wrapperRef, onWheel: r.handleMouseWheel },
+                            { className: p()(Pe.base, e), ref: r.wrapperRef, onWheel: r.handleMouseWheel },
                             i().createElement(
                                 'div',
-                                { className: p()(Me.content, null == u ? void 0 : u.content), ref: r.contentRef },
+                                { className: p()(Pe.content, null == u ? void 0 : u.content), ref: r.contentRef },
                                 t,
                             ),
                         )
@@ -3701,8 +3704,8 @@
                     Su = 'App_subFooter_74',
                     Lu = 'App_subFooter_infoIcon_72',
                     Ru = 'App_subFooter_text_2f',
-                    Pu = 'App_subFooter_depot_58',
-                    Mu = 'App_subFooter_depotIcon_da';
+                    Mu = 'App_subFooter_depot_58',
+                    Pu = 'App_subFooter_depotIcon_da';
                 var Ou = t(6493);
                 const Nu = (0, qe.Pi)(({ category: e, className: u }) => {
                         const t = cu(),
@@ -3846,10 +3849,10 @@
                                                 depot: i().createElement(
                                                     i().Fragment,
                                                     null,
-                                                    i().createElement('div', { className: Mu }),
+                                                    i().createElement('div', { className: Pu }),
                                                     i().createElement(
                                                         'span',
-                                                        { onClick: F, className: Pu },
+                                                        { onClick: F, className: Mu },
                                                         R.strings.personal_reserves.activation.subFooter.depot(),
                                                     ),
                                                 ),

@@ -183,13 +183,14 @@
                         addPreloadTexture: () => c,
                         children: () => r,
                         displayStatus: () => o.W,
-                        displayStatusIs: () => R,
+                        displayStatusIs: () => k,
                         events: () => a.U,
-                        extraSize: () => k,
+                        extraSize: () => C,
                         forceTriggerMouseMove: () => P,
                         freezeTextureBeforeResize: () => E,
                         getBrowserTexturePath: () => d,
                         getDisplayStatus: () => T,
+                        getFontNames: () => R,
                         getScale: () => h,
                         getSize: () => v,
                         getViewGlobalPosition: () => m,
@@ -203,7 +204,7 @@
                         setEventHandled: () => y,
                         setInputPaddingsRem: () => l,
                         setSidePaddingsRem: () => u,
-                        whenTutorialReady: () => C,
+                        whenTutorialReady: () => x,
                     });
                 var r = n(3722),
                     o = n(6112),
@@ -265,11 +266,15 @@
                 function T() {
                     return viewEnv.getShowingStatus();
                 }
-                const R = Object.keys(o.W).reduce(
+                const R = (() => {
+                        let e = [];
+                        return () => (0 === e.length && (e = Object.keys(viewEnv.getFontsConfig())), e);
+                    })(),
+                    k = Object.keys(o.W).reduce(
                         (e, t) => ((e[t] = () => viewEnv.getShowingStatus() === o.W[t]), e),
                         {},
                     ),
-                    k = {
+                    C = {
                         set: (e, t) => {
                             viewEnv.setExtraSizeRem(e, t);
                         },
@@ -277,7 +282,7 @@
                             viewEnv.getExtraSizeRem(e, t);
                         },
                     },
-                    C = Promise.all([
+                    x = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : a.U.onDomBuilt(e);
                         }),
@@ -751,7 +756,6 @@
                             (e.crystal = 'crystal'),
                             (e.xp = 'xp'),
                             (e.freeXP = 'freeXP'),
-                            (e.eliteXP = 'eliteXP'),
                             (e.equipCoin = 'equipCoin');
                     })(c || (c = {})),
                     (function (e) {

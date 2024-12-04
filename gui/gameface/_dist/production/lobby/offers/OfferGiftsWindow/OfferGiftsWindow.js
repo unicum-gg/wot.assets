@@ -18,7 +18,7 @@
             },
             768: (u, e, t) => {
                 'use strict';
-                t.d(e, { O: () => tu });
+                t.d(e, { O: () => nu });
                 var n = {};
                 t.r(n),
                     t.d(n, { mouse: () => D, off: () => A, on: () => E, onResize: () => l, onScaleUpdated: () => c });
@@ -49,16 +49,17 @@
                 t.r(i),
                     t.d(i, {
                         addModelObserver: () => P,
-                        addPreloadTexture: () => N,
+                        addPreloadTexture: () => R,
                         children: () => a,
                         displayStatus: () => w,
-                        displayStatusIs: () => J,
+                        displayStatusIs: () => uu,
                         events: () => b,
-                        extraSize: () => uu,
+                        extraSize: () => eu,
                         forceTriggerMouseMove: () => Z,
                         freezeTextureBeforeResize: () => z,
                         getBrowserTexturePath: () => H,
                         getDisplayStatus: () => Q,
+                        getFontNames: () => J,
                         getScale: () => U,
                         getSize: () => I,
                         getViewGlobalPosition: () => $,
@@ -72,7 +73,7 @@
                         setEventHandled: () => Y,
                         setInputPaddingsRem: () => O,
                         setSidePaddingsRem: () => W,
-                        whenTutorialReady: () => eu,
+                        whenTutorialReady: () => tu,
                     });
                 const l = o('clientResized'),
                     c = o('self.onScaleUpdated'),
@@ -243,12 +244,12 @@
                             L(S, { isMouseEvent: !0, on: u });
                         },
                     },
-                    R = 15;
-                function N(u) {
+                    N = 15;
+                function R(u) {
                     viewEnv.addPreloadTexture(u);
                 }
                 function O(u) {
-                    viewEnv.setHitAreaPaddingsRem(u, u, u, u, R);
+                    viewEnv.setHitAreaPaddingsRem(u, u, u, u, N);
                 }
                 function H(u, e, t, n = 1) {
                     return viewEnv.getWebBrowserTexturePath(u, e, t, n);
@@ -257,7 +258,7 @@
                     return viewEnv.addDataChangedCallback(u, e, t);
                 }
                 function W(u) {
-                    viewEnv.setHitAreaPaddingsRem(u.top, u.right, u.bottom, u.left, R);
+                    viewEnv.setHitAreaPaddingsRem(u.top, u.right, u.bottom, u.left, N);
                 }
                 function I(u = 'px') {
                     return 'rem' === u ? viewEnv.getViewSizeRem() : viewEnv.getViewSizePx();
@@ -299,8 +300,12 @@
                 function Q() {
                     return viewEnv.getShowingStatus();
                 }
-                const J = Object.keys(w).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === w[e]), u), {}),
-                    uu = {
+                const J = (() => {
+                        let u = [];
+                        return () => (0 === u.length && (u = Object.keys(viewEnv.getFontsConfig())), u);
+                    })(),
+                    uu = Object.keys(w).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === w[e]), u), {}),
+                    eu = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -308,13 +313,13 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    eu = Promise.all([
+                    tu = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : b.onDomBuilt(u);
                         }),
                         engine.whenReady,
                     ]),
-                    tu = { view: i, client: r, sound: f };
+                    nu = { view: i, client: r, sound: f };
             },
             521: (u, e, t) => {
                 'use strict';
@@ -721,7 +726,7 @@
                         getFormattedDateTime: (u, e, t = !0) => regionalDateTime.getFormattedDateTime(u, e, t),
                     };
             },
-            722: (u, e, t) => {
+            393: (u, e, t) => {
                 'use strict';
                 var n = {};
                 t.r(n),
@@ -1768,8 +1773,8 @@
                     Mu = 'VerticalBar_base__nonActive_42',
                     Lu = 'VerticalBar_topButton_d7',
                     ku = 'VerticalBar_bottomButton_06',
-                    Ru = 'VerticalBar_track_df',
-                    Nu = 'VerticalBar_thumb_32',
+                    Nu = 'VerticalBar_track_df',
+                    Ru = 'VerticalBar_thumb_32',
                     Ou = 'VerticalBar_rail_43',
                     Hu = 'disable',
                     Pu = () => {},
@@ -1923,7 +1928,7 @@
                             o().createElement(
                                 'div',
                                 {
-                                    className: f()(Ru, e.track),
+                                    className: f()(Nu, e.track),
                                     onMouseDown: (e) => {
                                         const n = E.current;
                                         if (n && 0 === e.button)
@@ -1944,7 +1949,7 @@
                                     ref: c,
                                     onMouseEnter: v,
                                 },
-                                o().createElement('div', { ref: E, className: f()(Nu, e.thumb) }),
+                                o().createElement('div', { ref: E, className: f()(Ru, e.thumb) }),
                                 o().createElement('div', { className: f()(Ou, e.rail) }),
                             ),
                             o().createElement('div', {
@@ -2515,14 +2520,14 @@
                             o().createElement('span', { className: Me }, u),
                         ),
                     ke = 'InventoryInfo_base_ee',
-                    Re = 'InventoryInfo_icon_5c',
-                    Ne = 'InventoryInfo_text_35',
+                    Ne = 'InventoryInfo_icon_5c',
+                    Re = 'InventoryInfo_text_35',
                     Oe = ({ text: u }) =>
                         o().createElement(
                             'div',
                             { className: ke },
-                            o().createElement('i', { className: Re }),
-                            o().createElement('span', { className: Ne }, u),
+                            o().createElement('i', { className: Ne }),
+                            o().createElement('span', { className: Re }, u),
                         ),
                     He = 'InfoBlock_price_ec',
                     Pe = 'InfoBlock_price__disabled_59',
@@ -2826,10 +2831,10 @@
                             (u.Extended = 'extended');
                     })(Lt || (Lt = {}));
                 var kt = t(613);
-                const Rt = 24,
-                    Nt = 60,
-                    Ot = 60 * Nt,
-                    Ht = Rt * Ot;
+                const Nt = 24,
+                    Rt = 60,
+                    Ot = 60 * Rt,
+                    Ht = Nt * Ot;
                 Date.now(), kt.Ew.getRegionalDateTime, kt.Ew.getFormattedDateTime;
                 const Pt = () => {},
                     Wt = (u = 0, e, t = 0, n = Pt) => {
@@ -2846,7 +2851,7 @@
                                                 const e = u - Math.floor((Date.now() - r) / 1e3);
                                                 null !== t && e <= t ? (o(t), n && n(), clearInterval(a)) : o(e);
                                             },
-                                            1e3 * (e || (u > 2 * Nt ? Nt : 1)),
+                                            1e3 * (e || (u > 2 * Rt ? Rt : 1)),
                                         );
                                     return () => {
                                         clearInterval(a);
@@ -2934,8 +2939,8 @@
                                     e -= t * Ht;
                                     const n = Math.trunc(e / Ot);
                                     e -= n * Ot;
-                                    const r = Math.trunc(e / Nt);
-                                    return (e -= r * Nt), { days: t, hours: n, minutes: r, seconds: e };
+                                    const r = Math.trunc(e / Rt);
+                                    return (e -= r * Rt), { days: t, hours: n, minutes: r, seconds: e };
                                 })(c),
                                 t,
                             );
@@ -3323,6 +3328,6 @@
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             t.forEach(e.bind(null, 0)), (t.push = e.bind(null, t.push.bind(t)));
         })();
-    var __webpack_exports__ = __webpack_require__.O(void 0, [809], () => __webpack_require__(722));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [809], () => __webpack_require__(393));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

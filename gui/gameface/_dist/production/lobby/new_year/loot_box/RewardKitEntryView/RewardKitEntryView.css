@@ -1,0 +1,320 @@
+@keyframes RewardKit_slideInFadeIn_95 {
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+@keyframes RewardKit_fadeOut_d1 {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes RewardKit_fadeIn_f3 {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+@keyframes RewardKit_fadeInWithScale_1d {
+    0% {
+        opacity: 0;
+        transform: scale(1.2);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@keyframes RewardKit_slideUp_35 {
+    0% {
+        opacity: 0;
+        transform: translateY(20rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes RewardKit_scale_fa {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+@keyframes RewardKit_spin_27 {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+@keyframes RewardKit_blink_b8 {
+    0% {
+        transform: translateY(0rem);
+    }
+
+    100% {
+        transform: translateY(15rem);
+    }
+}
+@keyframes RewardKit_slideInNotification_e5 {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.RewardKit_base_44 {
+    position: relative;
+}
+.RewardKit_content_0f {
+    width: 160rem;
+    height: 102rem;
+    margin-left: 5rem;
+    position: relative;
+}
+.RewardKit_base__mediumKit_2b .RewardKit_content_0f {
+    width: 244rem;
+    height: 128rem;
+}
+.RewardKit_base__premium_59 .RewardKit_content_0f {
+    margin-left: 0;
+    margin-top: 10rem;
+}
+.RewardKit_kit_60 {
+    width: 100%;
+    height: 100%;
+    background: no-repeat center / contain;
+}
+.RewardKit_kit__default_f4 {
+    background-image: url('R.images.gui.maps.icons.newYear.loot_box.boxes.boxes_default_nobg');
+    opacity: 0.8;
+}
+.RewardKit_kit__premium_ab {
+    background-image: url('R.images.gui.maps.icons.newYear.loot_box.boxes.boxes_premium');
+}
+.RewardKit_base__mediumKit_2b .RewardKit_kit__premium_ab {
+    background-image: url('R.images.gui.maps.icons.newYear.loot_box.boxes.boxes_premium_medium');
+}
+.RewardKit_kit__hoverState_ee,
+.RewardKit_kit__activeState_55 {
+    opacity: 0;
+    mix-blend-mode: additive;
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+}
+.RewardKit_kit__hoverState_ee {
+    z-index: 1;
+    transition: opacity 0.3s ease-in;
+}
+.RewardKit_base_44:hover .RewardKit_kit__hoverState_ee.RewardKit_kit__default_f4 {
+    opacity: 0.7;
+}
+.RewardKit_base_44:hover .RewardKit_kit__hoverState_ee {
+    opacity: 0.3;
+}
+.RewardKit_base_44:active .RewardKit_kit__hoverState_ee {
+    visibility: hidden;
+}
+.RewardKit_kit__activeState_55 {
+    z-index: 2;
+}
+.RewardKit_base_44:active .RewardKit_kit__activeState_55 {
+    opacity: 0.1;
+}
+.RewardKit_counter_c9 {
+    font-family: DINRoundPro;
+}
+[lang='th'] .RewardKit_counter_c9,
+[lang='el'] .RewardKit_counter_c9,
+[lang='vi'] .RewardKit_counter_c9 {
+    font-family: Warhelios;
+}
+[lang='ja'] .RewardKit_counter_c9 {
+    font-family: WarheliosJA;
+}
+[lang='ko'] .RewardKit_counter_c9 {
+    font-family: WarheliosKO;
+}
+[lang='zh_tw'] .RewardKit_counter_c9 {
+    font-family: WarheliosZHTW;
+}
+[lang='zh_sg'] .RewardKit_counter_c9,
+[lang='zh_cn'] .RewardKit_counter_c9 {
+    font-family: WarheliosZHCN;
+}
+.RewardKit_counter_c9 {
+    min-width: 35rem;
+    padding: 2rem 8rem;
+    border: 2rem solid #c6d3f4;
+    border-radius: 3rem;
+    box-shadow: 0 -3rem 20rem rgba(173, 187, 235, 0.9);
+    background-color: #b5c0f6;
+    color: #4e4e8d;
+    font-size: 16rem;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    position: absolute;
+    top: 74rem;
+    right: 0;
+    z-index: 2;
+}
+.RewardKit_base__mediumKit_2b .RewardKit_counter_c9 {
+    top: 90rem;
+}
+.RewardKit_base__mediumKit_2b .RewardKit_counter__premium_b1 {
+    right: 39rem;
+}
+.RewardKit_base__mediumKit_2b .RewardKit_counter__usual_b8 {
+    right: 58rem;
+}
+.RewardKit_value_72 {
+    display: flex;
+    align-items: center;
+}
+.RewardKit_plus_e0 {
+    transform: translateY(-1rem);
+}
+
+.RewardKitEntry_base_34 {
+    position: relative;
+}
+
+.RewardKitEntry_base__disabled_f4 {
+    pointer-events: none;
+}
+
+.RewardKitEntry_shine_28 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300rem;
+    height: 300rem;
+    mix-blend-mode: screen;
+    pointer-events: none;
+}
+
+.RewardKitEntry_kit_14 {
+    position: relative;
+    cursor: pointer;
+}
+
+.RewardKitEntry_premiumKitsCounter_1d {
+    right: 9rem;
+}
+
+.RewardKitEntry_label_f4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-left: 3rem;
+    margin-top: -12rem;
+}
+
+.RewardKitEntry_label_text_3c {
+    color: #ffdd99;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    font-size: 13rem;
+    text-shadow:
+        0 0 4rem rgba(255, 127, 0, 0.25),
+        0 0 8rem #ff2a00,
+        0 0 15rem #e52;
+    position: relative;
+    transition: color 0.3s;
+}
+
+.RewardKitEntry_base_34:hover .RewardKitEntry_label_text_3c {
+    color: #fffa9f;
+}
+
+.RewardKitEntry_base_34:active .RewardKitEntry_label_text_3c {
+    color: #ffdd99;
+}
+
+.RewardKitEntry_externalLinkIcon_5b {
+    width: 24rem;
+    height: 24rem;
+    margin-top: 1rem;
+    background: url('R.images.gui.maps.icons.newYear.loot_box.external_link') no-repeat center / contain;
+    filter: brightness(100%);
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(100%, -15%);
+    transition: filter 0.3s;
+}
+
+.RewardKitEntry_base_34:hover .RewardKitEntry_externalLinkIcon_5b {
+    filter: brightness(150%);
+}
+
+.RewardKitEntry_warning_f2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 18rem;
+    left: 35rem;
+}
+
+.RewardKitEntry_warning_mask_05 {
+    mask-image: linear-gradient(180deg, #000, transparent 150%);
+}
+
+.RewardKitEntry_warning_mask__empty_fa {
+    mask-image: linear-gradient(180deg, #000 30%, rgba(0, 0, 0, 0.1) 73%, transparent);
+}
+
+.RewardKitEntry_warning_back_17 {
+    width: 102rem;
+    height: 32rem;
+    background: radial-gradient(50% 50% at 50% 50%, rgb(255, 7, 7) 0%, rgba(91, 62, 35, 0) 100%);
+    opacity: 0.5;
+}
+
+.RewardKitEntry_warning_icon_ed {
+    width: 24rem;
+    height: 24rem;
+    margin-left: -65rem;
+    background: url('R.images.gui.maps.icons.newYear.loot_box.alert_box') no-repeat center / cover;
+    z-index: 1;
+}
+
+.RewardKitEntry_warning__hasKits_d0 {
+    bottom: -2rem;
+}
+
+body {
+    overflow: hidden;
+}
+
+.App_base_c1 {
+    display: flex;
+    margin: 119rem 29rem 64rem 106rem;
+}

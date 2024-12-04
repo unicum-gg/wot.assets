@@ -2,7 +2,7 @@
     'use strict';
     var __webpack_modules__ = {
             768: (e, t, n) => {
-                n.d(t, { O: () => ne });
+                n.d(t, { O: () => re });
                 var r = {};
                 n.r(r),
                     n.d(r, { mouse: () => p, off: () => d, on: () => u, onResize: () => l, onScaleUpdated: () => _ });
@@ -33,30 +33,31 @@
                 n.r(a),
                     n.d(a, {
                         addModelObserver: () => F,
-                        addPreloadTexture: () => N,
+                        addPreloadTexture: () => I,
                         children: () => o,
                         displayStatus: () => k,
-                        displayStatusIs: () => J,
+                        displayStatusIs: () => ee,
                         events: () => P,
-                        extraSize: () => ee,
+                        extraSize: () => te,
                         forceTriggerMouseMove: () => $,
                         freezeTextureBeforeResize: () => H,
                         getBrowserTexturePath: () => V,
                         getDisplayStatus: () => Q,
+                        getFontNames: () => J,
                         getScale: () => K,
-                        getSize: () => U,
+                        getSize: () => j,
                         getViewGlobalPosition: () => q,
                         isEventHandled: () => X,
                         isFocused: () => Y,
                         pxToRem: () => W,
                         remToPx: () => G,
-                        resize: () => j,
+                        resize: () => U,
                         sendEvent: () => x,
                         setAnimateWindow: () => z,
                         setEventHandled: () => Z,
                         setInputPaddingsRem: () => D,
                         setSidePaddingsRem: () => B,
-                        whenTutorialReady: () => te,
+                        whenTutorialReady: () => ne,
                     });
                 const l = s('clientResized'),
                     _ = s('self.onScaleUpdated'),
@@ -227,12 +228,12 @@
                             L(R, { isMouseEvent: !0, on: e });
                         },
                     },
-                    I = 15;
-                function N(e) {
+                    N = 15;
+                function I(e) {
                     viewEnv.addPreloadTexture(e);
                 }
                 function D(e) {
-                    viewEnv.setHitAreaPaddingsRem(e, e, e, e, I);
+                    viewEnv.setHitAreaPaddingsRem(e, e, e, e, N);
                 }
                 function V(e, t, n, r = 1) {
                     return viewEnv.getWebBrowserTexturePath(e, t, n, r);
@@ -241,12 +242,12 @@
                     return viewEnv.addDataChangedCallback(e, t, n);
                 }
                 function B(e) {
-                    viewEnv.setHitAreaPaddingsRem(e.top, e.right, e.bottom, e.left, I);
+                    viewEnv.setHitAreaPaddingsRem(e.top, e.right, e.bottom, e.left, N);
                 }
-                function U(e = 'px') {
+                function j(e = 'px') {
                     return 'rem' === e ? viewEnv.getViewSizeRem() : viewEnv.getViewSizePx();
                 }
-                function j(e, t, n = 'px') {
+                function U(e, t, n = 'px') {
                     return 'rem' === n ? viewEnv.resizeViewRem(e, t) : viewEnv.resizeViewPx(e, t);
                 }
                 function q(e = 'rem') {
@@ -283,8 +284,12 @@
                 function Q() {
                     return viewEnv.getShowingStatus();
                 }
-                const J = Object.keys(k).reduce((e, t) => ((e[t] = () => viewEnv.getShowingStatus() === k[t]), e), {}),
-                    ee = {
+                const J = (() => {
+                        let e = [];
+                        return () => (0 === e.length && (e = Object.keys(viewEnv.getFontsConfig())), e);
+                    })(),
+                    ee = Object.keys(k).reduce((e, t) => ((e[t] = () => viewEnv.getShowingStatus() === k[t]), e), {}),
+                    te = {
                         set: (e, t) => {
                             viewEnv.setExtraSizeRem(e, t);
                         },
@@ -292,13 +297,13 @@
                             viewEnv.getExtraSizeRem(e, t);
                         },
                     },
-                    te = Promise.all([
+                    ne = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : P.onDomBuilt(e);
                         }),
                         engine.whenReady,
                     ]),
-                    ne = { view: a, client: i, sound: y };
+                    re = { view: a, client: i, sound: y };
             },
             358: (e, t, n) => {
                 n.d(t, { Z: () => o });

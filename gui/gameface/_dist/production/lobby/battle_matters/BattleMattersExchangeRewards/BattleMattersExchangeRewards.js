@@ -18,7 +18,7 @@
             },
             768: (u, e, t) => {
                 'use strict';
-                t.d(e, { O: () => tu });
+                t.d(e, { O: () => ru });
                 var r = {};
                 t.r(r),
                     t.d(r, { mouse: () => B, off: () => D, on: () => s, onResize: () => F, onScaleUpdated: () => o });
@@ -33,7 +33,7 @@
                         setRTPC: () => c,
                     });
                 var n = {};
-                t.r(n), t.d(n, { getBgUrl: () => p, getTextureUrl: () => f });
+                t.r(n), t.d(n, { getBgUrl: () => w, getTextureUrl: () => f });
                 var E = {};
                 function i(u) {
                     return (e) => (
@@ -51,14 +51,15 @@
                         addModelObserver: () => W,
                         addPreloadTexture: () => H,
                         children: () => n,
-                        displayStatus: () => w,
-                        displayStatusIs: () => J,
+                        displayStatus: () => p,
+                        displayStatusIs: () => uu,
                         events: () => b,
-                        extraSize: () => uu,
+                        extraSize: () => eu,
                         forceTriggerMouseMove: () => X,
                         freezeTextureBeforeResize: () => $,
                         getBrowserTexturePath: () => P,
                         getDisplayStatus: () => Q,
+                        getFontNames: () => J,
                         getScale: () => z,
                         getSize: () => I,
                         getViewGlobalPosition: () => G,
@@ -72,7 +73,7 @@
                         setEventHandled: () => Y,
                         setInputPaddingsRem: () => R,
                         setSidePaddingsRem: () => N,
-                        whenTutorialReady: () => eu,
+                        whenTutorialReady: () => tu,
                     });
                 const F = i('clientResized'),
                     o = i('self.onScaleUpdated'),
@@ -170,10 +171,10 @@
                 function f(u, e, t = 1) {
                     return viewEnv.getChildTexturePath(u, e.width, e.height, t);
                 }
-                function p(u, e, t) {
+                function w(u, e, t) {
                     return `url(${f(u, e, t)})`;
                 }
-                const w = { showing: 0, shown: 1, hiding: 2, hidden: 3 },
+                const p = { showing: 0, shown: 1, hiding: 2, hidden: 3 },
                     b = {
                         onTextureFrozen: i('self.onTextureFrozen'),
                         onTextureReady: i('self.onTextureReady'),
@@ -299,8 +300,12 @@
                 function Q() {
                     return viewEnv.getShowingStatus();
                 }
-                const J = Object.keys(w).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === w[e]), u), {}),
-                    uu = {
+                const J = (() => {
+                        let u = [];
+                        return () => (0 === u.length && (u = Object.keys(viewEnv.getFontsConfig())), u);
+                    })(),
+                    uu = Object.keys(p).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === p[e]), u), {}),
+                    eu = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -308,13 +313,13 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    eu = Promise.all([
+                    tu = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : b.onDomBuilt(u);
                         }),
                         engine.whenReady,
                     ]),
-                    tu = { view: E, client: a, sound: v };
+                    ru = { view: E, client: a, sound: v };
             },
             521: (u, e, t) => {
                 'use strict';
@@ -916,7 +921,7 @@
                     h = t.n(m),
                     g = t(926),
                     v = t.n(g);
-                let f, p, w;
+                let f, w, p;
                 !(function (u) {
                     (u[(u.ExtraSmall = i.extraSmall.width)] = 'ExtraSmall'),
                         (u[(u.Small = i.small.width)] = 'Small'),
@@ -930,14 +935,14 @@
                             (u[(u.Medium = i.medium.width)] = 'Medium'),
                             (u[(u.Large = i.large.width)] = 'Large'),
                             (u[(u.ExtraLarge = i.extraLarge.width)] = 'ExtraLarge');
-                    })(p || (p = {})),
+                    })(w || (w = {})),
                     (function (u) {
                         (u[(u.ExtraSmall = i.extraSmall.height)] = 'ExtraSmall'),
                             (u[(u.Small = i.small.height)] = 'Small'),
                             (u[(u.Medium = i.medium.height)] = 'Medium'),
                             (u[(u.Large = i.large.height)] = 'Large'),
                             (u[(u.ExtraLarge = i.extraLarge.height)] = 'ExtraLarge');
-                    })(w || (w = {}));
+                    })(p || (p = {}));
                 const b = () => {
                         const u = (0, r.useContext)(B),
                             e = u.width,
@@ -961,33 +966,33 @@
                             n = ((u) => {
                                 switch (!0) {
                                     case u.extraLargeWidth:
-                                        return p.ExtraLarge;
+                                        return w.ExtraLarge;
                                     case u.largeWidth:
-                                        return p.Large;
+                                        return w.Large;
                                     case u.mediumWidth:
-                                        return p.Medium;
+                                        return w.Medium;
                                     case u.smallWidth:
-                                        return p.Small;
+                                        return w.Small;
                                     case u.extraSmallWidth:
-                                        return p.ExtraSmall;
+                                        return w.ExtraSmall;
                                     default:
-                                        return console.error('Unreachable media context resolution'), p.ExtraSmall;
+                                        return console.error('Unreachable media context resolution'), w.ExtraSmall;
                                 }
                             })(u),
                             E = ((u) => {
                                 switch (!0) {
                                     case u.extraLargeHeight:
-                                        return w.ExtraLarge;
+                                        return p.ExtraLarge;
                                     case u.largeHeight:
-                                        return w.Large;
+                                        return p.Large;
                                     case u.mediumHeight:
-                                        return w.Medium;
+                                        return p.Medium;
                                     case u.smallHeight:
-                                        return w.Small;
+                                        return p.Small;
                                     case u.extraSmallHeight:
-                                        return w.ExtraSmall;
+                                        return p.ExtraSmall;
                                     default:
-                                        return console.error('Unreachable media context resolution'), w.ExtraSmall;
+                                        return console.error('Unreachable media context resolution'), p.ExtraSmall;
                                 }
                             })(u);
                         return { mediaSize: a, mediaWidth: n, mediaHeight: E, remScreenWidth: e, remScreenHeight: t };
@@ -1008,18 +1013,18 @@
                     );
                 }
                 const L = {
-                        [p.ExtraSmall]: '',
-                        [p.Small]: v().SMALL_WIDTH,
-                        [p.Medium]: `${v().SMALL_WIDTH} ${v().MEDIUM_WIDTH}`,
-                        [p.Large]: `${v().SMALL_WIDTH} ${v().MEDIUM_WIDTH} ${v().LARGE_WIDTH}`,
-                        [p.ExtraLarge]: `${v().SMALL_WIDTH} ${v().MEDIUM_WIDTH} ${v().LARGE_WIDTH} ${v().EXTRA_LARGE_WIDTH}`,
+                        [w.ExtraSmall]: '',
+                        [w.Small]: v().SMALL_WIDTH,
+                        [w.Medium]: `${v().SMALL_WIDTH} ${v().MEDIUM_WIDTH}`,
+                        [w.Large]: `${v().SMALL_WIDTH} ${v().MEDIUM_WIDTH} ${v().LARGE_WIDTH}`,
+                        [w.ExtraLarge]: `${v().SMALL_WIDTH} ${v().MEDIUM_WIDTH} ${v().LARGE_WIDTH} ${v().EXTRA_LARGE_WIDTH}`,
                     },
                     y = {
-                        [w.ExtraSmall]: '',
-                        [w.Small]: v().SMALL_HEIGHT,
-                        [w.Medium]: `${v().SMALL_HEIGHT} ${v().MEDIUM_HEIGHT}`,
-                        [w.Large]: `${v().SMALL_HEIGHT} ${v().MEDIUM_HEIGHT} ${v().LARGE_HEIGHT}`,
-                        [w.ExtraLarge]: `${v().SMALL_HEIGHT} ${v().MEDIUM_HEIGHT} ${v().LARGE_HEIGHT} ${v().EXTRA_LARGE_HEIGHT}`,
+                        [p.ExtraSmall]: '',
+                        [p.Small]: v().SMALL_HEIGHT,
+                        [p.Medium]: `${v().SMALL_HEIGHT} ${v().MEDIUM_HEIGHT}`,
+                        [p.Large]: `${v().SMALL_HEIGHT} ${v().MEDIUM_HEIGHT} ${v().LARGE_HEIGHT}`,
+                        [p.ExtraLarge]: `${v().SMALL_HEIGHT} ${v().MEDIUM_HEIGHT} ${v().LARGE_HEIGHT} ${v().EXTRA_LARGE_HEIGHT}`,
                     },
                     S = {
                         [f.ExtraSmall]: '',
@@ -1723,8 +1728,8 @@
                     gu = hu[0],
                     vu = hu[1],
                     fu = 'App_base_5c',
-                    pu = 'App_closeButton_16',
-                    wu = 'App_dialog_f6',
+                    wu = 'App_closeButton_16',
+                    pu = 'App_dialog_f6',
                     bu = 'App_title_0f',
                     xu = 'App_content_54',
                     Tu = 'App_token_8b',
@@ -1768,7 +1773,7 @@
                             { className: fu },
                             a().createElement(
                                 'div',
-                                { className: pu },
+                                { className: wu },
                                 a().createElement(K, {
                                     caption: Hu.closeBtn(),
                                     type: 'close',
@@ -1778,7 +1783,7 @@
                             ),
                             a().createElement(
                                 'div',
-                                { className: wu },
+                                { className: pu },
                                 a().createElement(
                                     'div',
                                     { className: bu },

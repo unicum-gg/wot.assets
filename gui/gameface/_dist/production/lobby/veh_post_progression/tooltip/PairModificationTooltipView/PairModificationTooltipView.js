@@ -13,7 +13,6 @@
                             (u.crystal = 'crystal'),
                             (u.xp = 'xp'),
                             (u.freeXP = 'freeXP'),
-                            (u.eliteXP = 'eliteXP'),
                             (u.equipCoin = 'equipCoin');
                     })(E || (E = {})),
                     (function (u) {
@@ -58,7 +57,7 @@
                 t(3649);
             },
             9768: (u, e, t) => {
-                t.d(e, { O: () => tu });
+                t.d(e, { O: () => nu });
                 var n = {};
                 t.r(n),
                     t.d(n, { mouse: () => B, off: () => s, on: () => D, onResize: () => a, onScaleUpdated: () => o });
@@ -92,27 +91,28 @@
                         addPreloadTexture: () => M,
                         children: () => A,
                         displayStatus: () => w,
-                        displayStatusIs: () => J,
+                        displayStatusIs: () => uu,
                         events: () => h,
-                        extraSize: () => uu,
-                        forceTriggerMouseMove: () => Y,
+                        extraSize: () => eu,
+                        forceTriggerMouseMove: () => X,
                         freezeTextureBeforeResize: () => z,
-                        getBrowserTexturePath: () => S,
+                        getBrowserTexturePath: () => L,
                         getDisplayStatus: () => Q,
+                        getFontNames: () => J,
                         getScale: () => G,
                         getSize: () => U,
                         getViewGlobalPosition: () => q,
-                        isEventHandled: () => Z,
-                        isFocused: () => j,
+                        isEventHandled: () => Y,
+                        isFocused: () => H,
                         pxToRem: () => W,
                         remToPx: () => K,
                         resize: () => $,
                         sendEvent: () => R,
-                        setAnimateWindow: () => X,
-                        setEventHandled: () => H,
-                        setInputPaddingsRem: () => L,
+                        setAnimateWindow: () => j,
+                        setEventHandled: () => Z,
+                        setInputPaddingsRem: () => S,
                         setSidePaddingsRem: () => V,
-                        whenTutorialReady: () => eu,
+                        whenTutorialReady: () => tu,
                     });
                 const a = r('clientResized'),
                     o = r('self.onScaleUpdated'),
@@ -232,9 +232,9 @@
                     },
                     y = ['args'];
                 const k = 2,
-                    P = 16,
-                    x = 32,
-                    O = 64,
+                    x = 16,
+                    O = 32,
+                    P = 64,
                     T = (u, e) => {
                         const t = 'GFViewEventProxy';
                         if (void 0 !== e) {
@@ -274,23 +274,23 @@
                     },
                     R = {
                         close(u) {
-                            T('popover' === u ? k : x);
+                            T('popover' === u ? k : O);
                         },
                         minimize() {
-                            T(O);
+                            T(P);
                         },
                         move(u) {
-                            T(P, { isMouseEvent: !0, on: u });
+                            T(x, { isMouseEvent: !0, on: u });
                         },
                     },
                     N = 15;
                 function M(u) {
                     viewEnv.addPreloadTexture(u);
                 }
-                function L(u) {
+                function S(u) {
                     viewEnv.setHitAreaPaddingsRem(u, u, u, u, N);
                 }
-                function S(u, e, t, n = 1) {
+                function L(u, e, t, n = 1) {
                     return viewEnv.getWebBrowserTexturePath(u, e, t, n);
                 }
                 function I(u, e, t) {
@@ -321,26 +321,30 @@
                 function K(u) {
                     return viewEnv.remToPx(u);
                 }
-                function X(u, e) {
+                function j(u, e) {
                     viewEnv.setAnimateWindow(u, e);
                 }
-                function j() {
+                function H() {
                     return viewEnv.isFocused();
                 }
-                function H() {
+                function Z() {
                     return viewEnv.setEventHandled();
                 }
-                function Z() {
+                function Y() {
                     return viewEnv.isEventHandled();
                 }
-                function Y() {
+                function X() {
                     viewEnv.forceTriggerMouseMove();
                 }
                 function Q() {
                     return viewEnv.getShowingStatus();
                 }
-                const J = Object.keys(w).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === w[e]), u), {}),
-                    uu = {
+                const J = (() => {
+                        let u = [];
+                        return () => (0 === u.length && (u = Object.keys(viewEnv.getFontsConfig())), u);
+                    })(),
+                    uu = Object.keys(w).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === w[e]), u), {}),
+                    eu = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -348,13 +352,13 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    eu = Promise.all([
+                    tu = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : h.onDomBuilt(u);
                         }),
                         engine.whenReady,
                     ]),
-                    tu = { view: F, client: E, sound: g };
+                    nu = { view: F, client: E, sound: g };
             },
             5521: (u, e, t) => {
                 let n, E;
@@ -871,7 +875,7 @@
                 const n = { value: 0, name: t(329).V2.credits, isEnough: !1 },
                     E = (u) => (u && u.price && u.price[0] && u.price[0].value) || n;
             },
-            5987: (u, e, t) => {
+            7560: (u, e, t) => {
                 var n = t(6179),
                     E = t.n(n),
                     A = t(493),
@@ -1001,7 +1005,7 @@
                 const h = ['I', 'IV', 'V', 'IX', 'X', 'XL', 'L', 'XC', 'C', 'CD', 'D', 'CM', 'M'],
                     y = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 const k = ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE()),
-                    P = (u) =>
+                    x = (u) =>
                         k
                             ? `${u}`
                             : (function (u) {
@@ -1009,29 +1013,29 @@
                                   for (let t = y.length - 1; t >= 0; t--) for (; u >= y[t]; ) (e += h[t]), (u -= y[t]);
                                   return e;
                               })(u);
-                var x = t(5626);
-                const O = 'Header_base_22',
+                var O = t(5626);
+                const P = 'Header_base_22',
                     T = 'Header_title_19',
                     N = 'Header_level_e2',
                     M = 'Header_levelLabel_a9',
-                    L = ({ modificationName: u, level: e }) => {
+                    S = ({ modificationName: u, level: e }) => {
                         const t = (0, n.useMemo)(
-                            () => ({ level: E().createElement('div', { className: N }, P(e)) }),
+                            () => ({ level: E().createElement('div', { className: N }, x(e)) }),
                             [e],
                         );
                         return E().createElement(
                             'div',
-                            { className: O },
+                            { className: P },
                             E().createElement('div', { className: T }, u),
-                            E().createElement(x.z, {
+                            E().createElement(O.z, {
                                 classMix: M,
                                 text: R.strings.veh_post_progression.tooltips.pairModification.level(),
                                 binding: t,
                             }),
                         );
                     };
-                var S = t(6483),
-                    I = t.n(S);
+                var L = t(6483),
+                    I = t.n(L);
                 const V = 'Modification_base_8d',
                     U = 'Modification_iconContainer_e2',
                     $ = 'Modification_base__selected_09',
@@ -1040,7 +1044,7 @@
                     G = 'Modification_checkmark_ed',
                     W = 'Modification_bottomHighlight_6a',
                     K = R.images.gui.maps.icons.vehPostProgression.actionItems.pairModifications.c_120x120,
-                    X = ({ isReceived: u, isSelected: e, model: t }) => {
+                    j = ({ isReceived: u, isSelected: e, model: t }) => {
                         const A = I()(V, e && $),
                             F = (0, n.useMemo)(
                                 () => ({
@@ -1065,13 +1069,13 @@
                             ),
                         );
                     },
-                    j = 'ModificationsBlock_base_bd',
-                    H = ({ model: u }) =>
+                    H = 'ModificationsBlock_base_bd',
+                    Z = ({ model: u }) =>
                         E().createElement(
                             'div',
-                            { className: j },
+                            { className: H },
                             u.modifications.map(({ value: e }, t) =>
-                                E().createElement(X, {
+                                E().createElement(j, {
                                     key: t,
                                     isReceived: t === u.receivedIdx,
                                     isSelected: t === u.selectedIdx,
@@ -1079,8 +1083,8 @@
                                 }),
                             ),
                         );
-                var Z = t(8434);
-                const Y = 'ModifiersBlock_base_88',
+                var Y = t(8434);
+                const X = 'ModifiersBlock_base_88',
                     Q = 'ModifiersBlock_title_1a',
                     J = 'ModifiersBlock_container_d5',
                     uu = 'ModifiersBlock_modifiers_7f',
@@ -1091,7 +1095,7 @@
                         const e = (0, n.useCallback)((u) => ({ unit: I()(eu, u && tu), text: nu }), []);
                         return E().createElement(
                             'div',
-                            { className: Y },
+                            { className: X },
                             E().createElement(f.Z, null),
                             E().createElement(
                                 'div',
@@ -1105,7 +1109,7 @@
                                     'div',
                                     { className: uu },
                                     u.items.map(({ value: u }, t) =>
-                                        E().createElement(Z.r, {
+                                        E().createElement(Y.r, {
                                             key: t,
                                             bonus: u,
                                             isSpaceVisible: !1,
@@ -1132,7 +1136,7 @@
                                 u === p.Received && Au.base__bought,
                             ),
                             A = (0, n.useMemo)(
-                                () => ({ level: E().createElement('span', { className: Au.level }, P(e)) }),
+                                () => ({ level: E().createElement('span', { className: Au.level }, x(e)) }),
                                 [e],
                             ),
                             F = R.strings.veh_post_progression.tooltips.pairModification.status.$dyn(u);
@@ -1144,7 +1148,7 @@
                             E().createElement(
                                 'div',
                                 { className: Au.description },
-                                E().createElement(x.z, {
+                                E().createElement(O.z, {
                                     classMix: Au.levelLabel,
                                     text: F.$dyn('description'),
                                     binding: A,
@@ -1192,8 +1196,8 @@
                     return E().createElement(
                         'div',
                         { className: Du },
-                        E().createElement(L, { modificationName: e, level: t }),
-                        E().createElement(H, { model: a }),
+                        E().createElement(S, { modificationName: e, level: t }),
+                        E().createElement(Z, { model: a }),
                         E().createElement(Eu, { modifiers: n }),
                         r &&
                             E().createElement(
@@ -1374,10 +1378,6 @@
                     'icon__freeXP-big': 'Currency_icon__freeXP-big_21',
                     'icon__freeXP-large': 'Currency_icon__freeXP-large_c8',
                     'icon__freeXP-extraLarge': 'Currency_icon__freeXP-extraLarge_58',
-                    'icon__eliteXP-small': 'Currency_icon__eliteXP-small_45',
-                    'icon__eliteXP-big': 'Currency_icon__eliteXP-big_c0',
-                    'icon__eliteXP-large': 'Currency_icon__eliteXP-large_1b',
-                    'icon__eliteXP-extraLarge': 'Currency_icon__eliteXP-extraLarge_9b',
                     'icon__equipCoin-small': 'Currency_icon__equipCoin-small_32',
                     'icon__equipCoin-big': 'Currency_icon__equipCoin-big_79',
                     'icon__equipCoin-large': 'Currency_icon__equipCoin-large_2c',
@@ -1389,7 +1389,6 @@
                     value__xp: 'Currency_value__xp_b0',
                     value__crystal: 'Currency_value__crystal_19',
                     value__equipCoin: 'Currency_value__equipCoin_d0',
-                    value__eliteXP: 'Currency_value__eliteXP_62',
                     value__notEnough: 'Currency_value__notEnough_56',
                     stock: 'Currency_stock_87',
                     stock__indent: 'Currency_stock__indent_a1',
@@ -1616,6 +1615,6 @@
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             t.forEach(e.bind(null, 0)), (t.push = e.bind(null, t.push.bind(t)));
         })();
-    var __webpack_exports__ = __webpack_require__.O(void 0, [428], () => __webpack_require__(5987));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [428], () => __webpack_require__(7560));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

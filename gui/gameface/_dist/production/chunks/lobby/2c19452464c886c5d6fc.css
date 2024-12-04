@@ -1,0 +1,566 @@
+.CButton_base_40 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2rem;
+    box-shadow: 0 0 0 1rem rgba(0, 0, 0, 0.6);
+    position: relative;
+    cursor: pointer;
+}
+
+.CButton_base__main_42,
+.CButton_base__primary_7f,
+.CButton_base__primaryGreen_6f,
+.CButton_base__primaryRed_ec,
+.CButton_base__secondary_50 {
+    background-size: 100% 100%;
+}
+
+.CButton_base__main_42 {
+    background-image: url('R.images.gui.maps.icons.components.button.back_main');
+}
+
+.CButton_base__primary_7f {
+    background-image: url('R.images.gui.maps.icons.components.button.back_primary');
+}
+
+.CButton_base__primaryGreen_6f {
+    background-image: url('R.images.gui.maps.icons.components.button.back_primary_green');
+}
+
+.CButton_base__primaryRed_ec {
+    background-image: url('R.images.gui.maps.icons.components.button.back_primary_red');
+}
+
+.CButton_base__secondary_50 {
+    background-image: url('R.images.gui.maps.icons.components.button.back_secondary');
+}
+
+.CButton_base__ghost_ed {
+    border-radius: 3rem;
+    box-shadow:
+        0 0 0 1rem rgba(0, 0, 0, 0.3),
+        0 0 0 1rem rgba(255, 255, 255, 0.15) inset;
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+.CButton_base__extraSmall_27 {
+    min-height: 17rem;
+    padding: 0 16rem;
+}
+
+.CButton_base__small_df,
+.CButton_base__medium_74 {
+    padding: 0 20rem;
+}
+
+.CButton_base__small_df {
+    min-height: 18rem;
+}
+
+.CButton_base__medium_74 {
+    min-height: 32rem;
+}
+
+.CButton_base__large_5c {
+    min-height: 48rem;
+}
+
+.CButton_base__disabled_d9 {
+    cursor: default;
+}
+/* Element .back and background-image in element .base need for fix bug in GF https://jira.wargaming.net/browse/WOTD-158525
+The bug is that under certain conditions, when using border-image, stripes appear. Strip is a single-pixel gap
+between 'border-image-width' and 'fill'.
+This bug is reproduced in Google Chrome 81.0.4044.113
+*/
+.CButton_back_e5 {
+    border-image-slice: 4 fill;
+    border-image-width: 4rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.CButton_base__main_42 .CButton_back_e5 {
+    border-image-source: url('R.images.gui.maps.icons.components.button.back_main');
+}
+.CButton_base__primary_7f .CButton_back_e5 {
+    border-image-source: url('R.images.gui.maps.icons.components.button.back_primary');
+}
+.CButton_base__primaryGreen_6f .CButton_back_e5 {
+    border-image-source: url('R.images.gui.maps.icons.components.button.back_primary_green');
+}
+.CButton_base__primaryRed_ec .CButton_back_e5 {
+    border-image-source: url('R.images.gui.maps.icons.components.button.back_primary_red');
+}
+.CButton_base__secondary_50 .CButton_back_e5 {
+    border-image-source: url('R.images.gui.maps.icons.components.button.back_secondary');
+}
+.CButton_texture_fe {
+    background: url('R.images.gui.maps.icons.components.button.standard_texture_file');
+    background-size: 155rem 31rem;
+    mix-blend-mode: soft-light;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.CButton_state_11 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition: box-shadow 0.16s ease-in-out;
+}
+.CButton_base__focus_83 .CButton_state_11 {
+    border-radius: 2rem;
+    box-shadow: inset 0 0 2rem 1rem rgba(255, 85, 0, 0.2);
+}
+.CButton_stateHighlightHover_ff,
+.CButton_stateHighlightActive_35,
+.CButton_stateDisabled_54 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.CButton_stateHighlightHover_ff {
+    background-image: linear-gradient(
+        180deg,
+        rgba(252, 248, 235, 0.25) 0%,
+        rgba(252, 248, 235, 0.1) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    opacity: 0;
+}
+.CButton_base_40:hover .CButton_stateHighlightHover_ff {
+    opacity: 1;
+}
+.CButton_base_40:active .CButton_stateHighlightHover_ff {
+    opacity: 0;
+}
+.CButton_base__disabled_d9:hover .CButton_stateHighlightHover_ff {
+    opacity: 0;
+}
+.CButton_base__ghost_ed .CButton_stateHighlightHover_ff {
+    box-shadow: 0 15rem 12rem 0 rgba(242, 242, 230, 0.11) inset;
+    background-color: rgba(8, 6, 0, 0.18);
+    background-image: none;
+}
+.CButton_stateHighlightActive_35 {
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.15) 100%);
+    opacity: 0;
+}
+.CButton_base__highlightActive_b2 .CButton_stateHighlightActive_35 {
+    opacity: 1;
+}
+.CButton_stateDisabled_54 {
+    background-color: rgba(0, 0, 0, 0.25);
+    background-image: url('R.images.gui.maps.icons.components.button.texture_disable');
+    background-size: 15rem 15rem;
+    visibility: hidden;
+}
+.CButton_base__disabled_d9 .CButton_stateDisabled_54 {
+    visibility: inherit;
+}
+.CButton_content_cc {
+    display: flex;
+    align-items: center;
+    color: #f2f2e6;
+    font-weight: 700;
+    line-height: 1.2;
+    text-shadow: 0 -1rem 1rem #000;
+    letter-spacing: 0.03em;
+    transform: translateY(-1rem);
+}
+.CButton_content_cc[lang='ja'],
+.CButton_content_cc[lang='ko'],
+.CButton_content_cc[lang='zh_tw'],
+.CButton_content_cc[lang='zh_sg'],
+.CButton_content_cc[lang='zh_cn'],
+.CButton_content_cc[lang='th'] {
+    font-weight: 400;
+}
+.CButton_base__main_42 .CButton_content_cc,
+.CButton_base__primaryRed_ec .CButton_content_cc {
+    text-shadow: 0 -1rem 1rem #600;
+}
+.CButton_base__secondary_50 .CButton_content_cc {
+    color: rgba(254, 254, 236, 0.75);
+}
+.CButton_base__primaryGreen_6f .CButton_content_cc {
+    text-shadow: 0 -1rem 1rem #1c2502;
+}
+.CButton_base__extraSmall_27 .CButton_content_cc {
+    font-size: 12rem;
+}
+.CButton_base__small_df .CButton_content_cc {
+    font-size: 14rem;
+}
+.CButton_base__medium_74 .CButton_content_cc {
+    font-size: 15rem;
+}
+.CButton_base__large_5c .CButton_content_cc {
+    font-size: 18rem;
+}
+.CButton_base__disabled_d9 .CButton_content_cc {
+    opacity: 0.6;
+}
+
+.FormatText_base_d0 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.FormatTextWithColorTags_creamColor_8f {
+    color: #ffdd99;
+}
+
+.FormatTextWithColorTags_brownColor_90 {
+    color: #cbac77;
+}
+
+.FormatTextWithColorTags_credColor_a7 {
+    color: #ced9d9;
+}
+
+.FormatTextWithColorTags_blueColor_73 {
+    color: rgb(205, 237, 255);
+}
+
+.FormatTextWithColorTags_lightBlueColor_fa {
+    color: #aec5f2;
+}
+
+.FormatTextWithColorTags_goldColor_d6 {
+    color: #ffc363;
+}
+
+.FormatTextWithColorTags_grayColor_8b {
+    color: #8c8c7e;
+}
+
+.FormatTextWithColorTags_whiteSpanish_4b {
+    color: #e9e2bf;
+}
+
+.FormatTextWithColorTags_bondColor_53 {
+    color: #c9c9b6;
+}
+
+.FormatTextWithColorTags_yellowColor_84 {
+    color: #feab34;
+}
+
+.DescriptionBlock_base_ab {
+    display: flex;
+    align-items: center;
+}
+
+.DescriptionBlock_infoBlock_14 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 204rem;
+}
+
+.mediaSmall .DescriptionBlock_infoBlock_14 {
+    max-width: 242rem;
+}
+
+.mediaMedium .DescriptionBlock_infoBlock_14 {
+    max-width: 278rem;
+}
+
+.mediaLarge .DescriptionBlock_infoBlock_14 {
+    max-width: 320rem;
+}
+
+.mediaExtraLarge .DescriptionBlock_infoBlock_14 {
+    max-width: 360rem;
+}
+
+.DescriptionBlock_icon_cd {
+    width: 144rem;
+    height: 144rem;
+    margin-right: 18rem;
+    background: no-repeat center / cover;
+}
+
+.mediaMedium .DescriptionBlock_icon_cd {
+    width: 180rem;
+    height: 180rem;
+    margin-right: 20rem;
+}
+
+.mediaLarge .DescriptionBlock_icon_cd {
+    width: 200rem;
+    height: 200rem;
+    margin-right: 28rem;
+}
+
+.mediaExtraLarge .DescriptionBlock_icon_cd {
+    width: 240rem;
+    height: 240rem;
+    margin-right: 40rem;
+}
+
+.DescriptionBlock_title_68 {
+    color: #f2f2f7;
+    font-size: 14rem;
+    font-weight: 700;
+    line-height: 1.15;
+    opacity: 0.9;
+}
+
+.mediaMedium .DescriptionBlock_title_68 {
+    color: #f2f2f7;
+    font-size: 15rem;
+    font-weight: 700;
+    line-height: 1.15;
+}
+
+.mediaLarge .DescriptionBlock_title_68 {
+    color: #f2f2f7;
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.mediaExtraLarge .DescriptionBlock_title_68 {
+    color: #f2f2f7;
+    font-size: 20rem;
+    font-weight: 400;
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+.DescriptionBlock_description_f5 {
+    color: #98ace1;
+    font-size: 12rem;
+    font-weight: 400;
+    line-height: 1.3;
+    margin-top: 12rem;
+}
+
+.mediaMedium .DescriptionBlock_description_f5 {
+    color: #98ace1;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+.mediaLarge .DescriptionBlock_description_f5 {
+    color: #98ace1;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+
+.mediaExtraLarge .DescriptionBlock_description_f5 {
+    color: #98ace1;
+    font-size: 18rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+
+.VideoCover_base_34 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+}
+
+.VideoCover_cover_41 {
+    width: 580rem;
+    height: 355rem;
+    box-shadow:
+        inset 0 0 0 1rem rgba(255, 255, 255, 0.1),
+        0 0 25rem #00153e;
+    background: no-repeat center / cover;
+}
+
+.mediaMedium .VideoCover_cover_41 {
+    width: 720rem;
+    height: 408rem;
+}
+
+.mediaLarge .VideoCover_cover_41 {
+    width: 816rem;
+    height: 462rem;
+}
+
+.mediaExtraLarge .VideoCover_cover_41 {
+    width: 960rem;
+    height: 544rem;
+}
+
+.VideoCover_playButton_03 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: url('R.images.gui.maps.icons.newYear.buttons.btn_play') no-repeat center / auto;
+    filter: drop-shadow(0 0 15rem #000) brightness(100%);
+    transition: filter 0.3s;
+}
+
+.VideoCover_playButton_03:hover {
+    filter: drop-shadow(0 0 15rem #000) brightness(150%);
+}
+
+.VideoCover_playButton_03:active {
+    filter: drop-shadow(0 0 15rem transparent) brightness(150%);
+}
+
+.App_base_85 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('R.images.gui.maps.icons.newYear.common.main_background') no-repeat center / cover;
+}
+
+.App_content_2a {
+    display: flex;
+    margin-top: 115rem;
+}
+
+.mediaSmall .App_content_2a {
+    margin-top: 120rem;
+}
+
+.mediaLarge .App_content_2a {
+    margin-top: 80rem;
+}
+
+.App_videoContent_3d {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.App_description_44 {
+    color: #98ace1;
+    font-size: 12rem;
+    font-weight: 400;
+    line-height: 1.3;
+    width: 560rem;
+    margin-top: 20rem;
+    text-align: center;
+}
+
+.mediaMedium .App_description_44 {
+    color: #98ace1;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    width: 640rem;
+}
+
+.mediaLarge .App_description_44 {
+    color: #98ace1;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+    width: 740rem;
+}
+
+.mediaExtraLarge .App_description_44 {
+    color: #98ace1;
+    font-size: 18rem;
+    font-weight: 400;
+    line-height: 1.25;
+    width: 852rem;
+}
+
+.App_descriptionInner_18 {
+    justify-content: center;
+}
+
+.App_descriptionContent_56 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex: 1;
+    margin-left: 60rem;
+}
+
+.mediaSmall .App_descriptionContent_56 {
+    margin: -30rem 0 0 100rem;
+}
+
+.mediaMedium .App_descriptionContent_56 {
+    margin: -38rem 0 0 120rem;
+}
+
+.mediaLarge .App_descriptionContent_56 {
+    margin-top: -48rem;
+}
+
+.mediaExtraLarge .App_descriptionContent_56 {
+    margin: -35rem 0 0 140rem;
+}
+
+.App_descriptionBlockInner_55 + .App_descriptionBlockInner_55 {
+    margin-top: 14rem;
+}
+
+.mediaMedium .App_descriptionBlockInner_55 + .App_descriptionBlockInner_55 {
+    margin-top: -2rem;
+}
+
+.App_descriptionBlockInner__stretch_03 {
+    flex: 1;
+}
+
+.App_portalButton_a2 {
+    margin-top: 32rem;
+}
+
+.App_buyButton_a0 {
+    margin-top: 30rem;
+}
+
+.mediaSmall .App_buyButton_a0 {
+    margin-left: 162rem;
+    margin-top: 7rem;
+}
+
+.mediaMedium .App_buyButton_a0 {
+    margin-left: 200rem;
+    margin-top: 0;
+}
+
+.mediaLarge .App_buyButton_a0 {
+    margin-left: 228rem;
+}
+
+.mediaExtraLarge .App_buyButton_a0 {
+    margin-left: 280rem;
+}
+
+.App_button_af {
+    min-width: 200rem;
+}
+
+.App_linkIcon_0f {
+    width: 20rem;
+    height: 20rem;
+    margin-left: 1rem;
+    margin-top: 1rem;
+    background: url('R.images.gui.maps.icons.library.browser_link') center / contain no-repeat;
+}

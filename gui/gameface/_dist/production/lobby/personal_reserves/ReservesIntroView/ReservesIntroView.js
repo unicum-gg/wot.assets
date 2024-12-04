@@ -57,7 +57,7 @@
             },
             9768: (u, e, t) => {
                 'use strict';
-                t.d(e, { O: () => tu });
+                t.d(e, { O: () => au });
                 var a = {};
                 t.r(a),
                     t.d(a, { mouse: () => _, off: () => s, on: () => D, onResize: () => F, onScaleUpdated: () => o });
@@ -91,13 +91,14 @@
                         addPreloadTexture: () => H,
                         children: () => n,
                         displayStatus: () => w,
-                        displayStatusIs: () => J,
+                        displayStatusIs: () => uu,
                         events: () => b,
-                        extraSize: () => uu,
+                        extraSize: () => eu,
                         forceTriggerMouseMove: () => Z,
                         freezeTextureBeforeResize: () => $,
                         getBrowserTexturePath: () => k,
                         getDisplayStatus: () => Q,
+                        getFontNames: () => J,
                         getScale: () => X,
                         getSize: () => I,
                         getViewGlobalPosition: () => U,
@@ -111,7 +112,7 @@
                         setEventHandled: () => q,
                         setInputPaddingsRem: () => P,
                         setSidePaddingsRem: () => W,
-                        whenTutorialReady: () => eu,
+                        whenTutorialReady: () => tu,
                     });
                 const F = i('clientResized'),
                     o = i('self.onScaleUpdated'),
@@ -338,8 +339,12 @@
                 function Q() {
                     return viewEnv.getShowingStatus();
                 }
-                const J = Object.keys(w).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === w[e]), u), {}),
-                    uu = {
+                const J = (() => {
+                        let u = [];
+                        return () => (0 === u.length && (u = Object.keys(viewEnv.getFontsConfig())), u);
+                    })(),
+                    uu = Object.keys(w).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === w[e]), u), {}),
+                    eu = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -347,13 +352,13 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    eu = Promise.all([
+                    tu = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : b.onDomBuilt(u);
                         }),
                         engine.whenReady,
                     ]),
-                    tu = { view: E, client: r, sound: p };
+                    au = { view: E, client: r, sound: p };
             },
             5521: (u, e, t) => {
                 'use strict';
@@ -759,7 +764,7 @@
                         getFormattedDateTime: (u, e, t = !0) => regionalDateTime.getFormattedDateTime(u, e, t),
                     };
             },
-            2136: (u, e, t) => {
+            3096: (u, e, t) => {
                 'use strict';
                 var a = t(6179),
                     r = t.n(a),
@@ -2135,6 +2140,6 @@
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             t.forEach(e.bind(null, 0)), (t.push = e.bind(null, t.push.bind(t)));
         })();
-    var __webpack_exports__ = __webpack_require__.O(void 0, [242], () => __webpack_require__(2136));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [242], () => __webpack_require__(3096));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

@@ -151,13 +151,14 @@
                         addPreloadTexture: () => _,
                         children: () => n,
                         displayStatus: () => i,
-                        displayStatusIs: () => P,
+                        displayStatusIs: () => y,
                         events: () => o,
-                        extraSize: () => y,
+                        extraSize: () => O,
                         forceTriggerMouseMove: () => T,
                         freezeTextureBeforeResize: () => h,
                         getBrowserTexturePath: () => m,
                         getDisplayStatus: () => x,
+                        getFontNames: () => P,
                         getScale: () => p,
                         getSize: () => B,
                         getViewGlobalPosition: () => C,
@@ -171,7 +172,7 @@
                         setEventHandled: () => R,
                         setInputPaddingsRem: () => A,
                         setSidePaddingsRem: () => D,
-                        whenTutorialReady: () => O,
+                        whenTutorialReady: () => L,
                     });
                 var n = {};
                 function a(e, u, t = 1) {
@@ -304,8 +305,12 @@
                 function x() {
                     return viewEnv.getShowingStatus();
                 }
-                const P = Object.keys(i).reduce((e, u) => ((e[u] = () => viewEnv.getShowingStatus() === i[u]), e), {}),
-                    y = {
+                const P = (() => {
+                        let e = [];
+                        return () => (0 === e.length && (e = Object.keys(viewEnv.getFontsConfig())), e);
+                    })(),
+                    y = Object.keys(i).reduce((e, u) => ((e[u] = () => viewEnv.getShowingStatus() === i[u]), e), {}),
+                    O = {
                         set: (e, u) => {
                             viewEnv.setExtraSizeRem(e, u);
                         },
@@ -313,7 +318,7 @@
                             viewEnv.getExtraSizeRem(e, u);
                         },
                     },
-                    O = Promise.all([
+                    L = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : o.onDomBuilt(e);
                         }),
@@ -1556,6 +1561,7 @@
                         (e.TankmenXpFactor = 'tankmenXPFactor'),
                         (e.FreeXpFactor = 'freeXPFactor'),
                         (e.BattleToken = 'battleToken'),
+                        (e.Entitlements = 'entitlements'),
                         (e.PremiumUniversal = 'premium_universal'),
                         (e.Gold = 'gold'),
                         (e.Credits = 'credits'),
@@ -1573,6 +1579,8 @@
                         (e.BattleBadge = 'dossier_badge'),
                         (e.NewYearInvoice = 'newYearInvoice'),
                         (e.NewYearSlot = 'newYearSlot'),
+                        (e.NewYearGuestD = 'ny_dog'),
+                        (e.EquipCoin = 'equipCoin'),
                         (e.BonusX5 = 'battle_bonus_x5'),
                         (e.CrewBonusX3 = 'crew_bonus_x3'),
                         (e.Vehicles = 'vehicles'),
@@ -1581,7 +1589,6 @@
                         (e.DeluxeGift = 'deluxe_gift'),
                         (e.BattleBoosterGift = 'battleBooster_gift'),
                         (e.OptionalDevice = 'optionalDevice'),
-                        (e.EquipCoin = 'equipCoin'),
                         (e.LootBox = 'lootBox'),
                         (e.BrCoin = 'brcoin');
                 })(oe || (oe = {})),
@@ -1714,6 +1721,7 @@
                         oe.TankmenXpFactor,
                         oe.FreeXpFactor,
                         oe.BattleToken,
+                        oe.Entitlements,
                         oe.PremiumUniversal,
                         oe.NaturalCover,
                         oe.BpCoin,
@@ -1804,9 +1812,6 @@
                                       case 'tokens':
                                       case 'lootBox':
                                       case 'battleToken':
-                                          return 'big' === u
-                                              ? e.iconBig.replace('..', 'img://gui')
-                                              : e.iconSmall.replace('..', 'img://gui');
                                       case 'customizations':
                                       case 'styleProgress':
                                       case 'crewSkins':
@@ -1815,6 +1820,10 @@
                                       case 'tmanToken':
                                       case 'battlePassSelectToken':
                                           return `R.images.gui.maps.icons.quests.bonuses.${u}.${r}`;
+                                      case 'entitlements':
+                                          return 'big' === u
+                                              ? e.iconBig.replace('..', 'img://gui')
+                                              : e.iconSmall.replace('..', 'img://gui');
                                       case 'crewBooks':
                                           return `R.images.gui.maps.icons.crewBooks.books.${u}.${r}`;
                                       case 'dogTagComponents':
@@ -1848,10 +1857,14 @@
                                           return `R.images.gui.maps.icons.quests.bonuses.${u}.freeXP`;
                                       case 'premiumTank':
                                           return `R.images.gui.maps.icons.quests.bonuses.${u}.vehicles`;
+                                      case 'premiumTank_rent':
+                                          return `R.images.gui.maps.icons.quests.bonuses.${u}.vehicles_rent`;
                                       case 'styleProgressToken':
                                           return `R.images.gui.maps.icons.quests.bonuses.${u}.style_3d`;
                                       case 'collectionItem':
                                           return `R.images.gui.maps.icons.collectionItems.${o}.${r}`;
+                                      case 'newYearSlot':
+                                          return `R.images.gui.maps.icons.newYear.rewards.${u}.slot`;
                                       default:
                                           return `R.images.gui.maps.icons.quests.bonuses.${u}.${t}`;
                                   }

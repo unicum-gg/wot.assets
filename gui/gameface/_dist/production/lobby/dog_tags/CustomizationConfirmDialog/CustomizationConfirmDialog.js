@@ -209,13 +209,14 @@
                         addPreloadTexture: () => l,
                         children: () => n,
                         displayStatus: () => r.W,
-                        displayStatusIs: () => k,
+                        displayStatusIs: () => S,
                         events: () => i.U,
-                        extraSize: () => S,
+                        extraSize: () => M,
                         forceTriggerMouseMove: () => y,
                         freezeTextureBeforeResize: () => v,
                         getBrowserTexturePath: () => d,
                         getDisplayStatus: () => L,
+                        getFontNames: () => k,
                         getScale: () => p,
                         getSize: () => m,
                         getViewGlobalPosition: () => h,
@@ -229,7 +230,7 @@
                         setEventHandled: () => x,
                         setInputPaddingsRem: () => c,
                         setSidePaddingsRem: () => _,
-                        whenTutorialReady: () => M,
+                        whenTutorialReady: () => O,
                     });
                 var n = a(3722),
                     r = a(6112),
@@ -291,11 +292,15 @@
                 function L() {
                     return viewEnv.getShowingStatus();
                 }
-                const k = Object.keys(r.W).reduce(
+                const k = (() => {
+                        let e = [];
+                        return () => (0 === e.length && (e = Object.keys(viewEnv.getFontsConfig())), e);
+                    })(),
+                    S = Object.keys(r.W).reduce(
                         (e, t) => ((e[t] = () => viewEnv.getShowingStatus() === r.W[t]), e),
                         {},
                     ),
-                    S = {
+                    M = {
                         set: (e, t) => {
                             viewEnv.setExtraSizeRem(e, t);
                         },
@@ -303,7 +308,7 @@
                             viewEnv.getExtraSizeRem(e, t);
                         },
                     },
-                    M = Promise.all([
+                    O = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : i.U.onDomBuilt(e);
                         }),
@@ -1644,7 +1649,7 @@
                         exitActive: ye.flameAnimation__exitActive,
                         exitDone: ye.flameAnimation__exitDone,
                     },
-                    Re = ({
+                    Ce = ({
                         playerName: e,
                         clanTag: t,
                         background: a,
@@ -1732,7 +1737,7 @@
                             )
                         );
                     };
-                function Ce() {
+                function Re() {
                     return !1;
                 }
                 console.log;
@@ -1855,7 +1860,7 @@
                                                 observableModel: {
                                                     array: (e, t) => {
                                                         const n = null != t ? t : c(e),
-                                                            r = He.LO.box(n, { equals: Ce });
+                                                            r = He.LO.box(n, { equals: Re });
                                                         return (
                                                             'real' === a &&
                                                                 l.subscribe(
@@ -1867,7 +1872,7 @@
                                                     },
                                                     object: (e, t) => {
                                                         const n = null != t ? t : c(e),
-                                                            r = He.LO.box(n, { equals: Ce });
+                                                            r = He.LO.box(n, { equals: Re });
                                                         return (
                                                             'real' === a &&
                                                                 l.subscribe(
@@ -2016,7 +2021,7 @@
                                     r().createElement(
                                         'div',
                                         { className: qe },
-                                        r().createElement(Re, {
+                                        r().createElement(Ce, {
                                             playerName: i,
                                             clanTag: o,
                                             engraving: s,

@@ -1,0 +1,45 @@
+.SceneWrapper_base_85 {
+    width: 100%;
+    height: 100%;
+    cursor: grab;
+}
+
+.SceneWrapper_base__down_fc {
+    cursor: all-scroll;
+}
+
+.SceneWrapper_base__moveSpaceDisabled_67 {
+    cursor: auto;
+}
+
+.App_base_b5 {
+    display: flex;
+    align-items: flex-end;
+    width: 100%;
+    height: 100%;
+    padding-top: 105rem;
+    position: relative;
+    z-index: 0;
+}
+.mediaMedium .App_base_b5 {
+    padding-top: 135rem;
+}
+.App_sceneWrapper_a1 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+}
+.App_content_6e {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+    /* needed for clicking through the scene (in components inside this view should be set 'auto' for clickable elements)*/
+    pointer-events: none;
+}

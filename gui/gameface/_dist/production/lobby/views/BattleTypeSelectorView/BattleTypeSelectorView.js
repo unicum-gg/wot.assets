@@ -183,13 +183,14 @@
                         addPreloadTexture: () => l,
                         children: () => o,
                         displayStatus: () => r.W,
-                        displayStatusIs: () => k,
+                        displayStatusIs: () => S,
                         events: () => a.U,
-                        extraSize: () => S,
+                        extraSize: () => R,
                         forceTriggerMouseMove: () => P,
                         freezeTextureBeforeResize: () => w,
                         getBrowserTexturePath: () => d,
                         getDisplayStatus: () => O,
+                        getFontNames: () => k,
                         getScale: () => p,
                         getSize: () => v,
                         getViewGlobalPosition: () => b,
@@ -203,7 +204,7 @@
                         setEventHandled: () => y,
                         setInputPaddingsRem: () => c,
                         setSidePaddingsRem: () => _,
-                        whenTutorialReady: () => R,
+                        whenTutorialReady: () => C,
                     });
                 var o = n(3722),
                     r = n(6112),
@@ -265,11 +266,15 @@
                 function O() {
                     return viewEnv.getShowingStatus();
                 }
-                const k = Object.keys(r.W).reduce(
+                const k = (() => {
+                        let e = [];
+                        return () => (0 === e.length && (e = Object.keys(viewEnv.getFontsConfig())), e);
+                    })(),
+                    S = Object.keys(r.W).reduce(
                         (e, t) => ((e[t] = () => viewEnv.getShowingStatus() === r.W[t]), e),
                         {},
                     ),
-                    S = {
+                    R = {
                         set: (e, t) => {
                             viewEnv.setExtraSizeRem(e, t);
                         },
@@ -277,7 +282,7 @@
                             viewEnv.getExtraSizeRem(e, t);
                         },
                     },
-                    R = Promise.all([
+                    C = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : a.U.onDomBuilt(e);
                         }),
@@ -1124,9 +1129,9 @@
                         );
                     }),
                     S = k[0],
-                    M = k[1];
-                var C = n(6483),
-                    x = n.n(C);
+                    C = k[1];
+                var M = n(6483),
+                    x = n.n(M);
                 const L = [
                     'children',
                     'contentId',
@@ -1349,7 +1354,7 @@
                             o = n[0],
                             a = n[1],
                             i = B(),
-                            c = M(),
+                            c = C(),
                             d = c.model,
                             u = c.controls,
                             _ = ((e, t) => {
@@ -1507,7 +1512,7 @@
                         var a, i;
                     });
                 const ne = (0, p.Pi)(() => {
-                    const e = M(),
+                    const e = C(),
                         t = e.controls,
                         n = e.model,
                         o = r().useCallback(

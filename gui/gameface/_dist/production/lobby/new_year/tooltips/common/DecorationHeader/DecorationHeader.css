@@ -1,0 +1,43 @@
+.DecorationHeader_base_fe {
+    position: relative;
+}
+
+.DecorationHeader_icon_21 {
+    width: 48rem;
+    height: 48rem;
+    background: no-repeat center / contain;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+.DecorationHeader_base__small_21 .DecorationHeader_icon_21 {
+    width: 32rem;
+    height: 32rem;
+}
+
+.DecorationHeader_title_0c {
+    display: flex;
+    flex-direction: column;
+    margin-left: 54rem;
+}
+
+.DecorationHeader_base__small_21 .DecorationHeader_title_0c {
+    margin-left: 48rem;
+}
+
+.DecorationHeader_name_92 {
+    margin-bottom: -1rem;
+    color: #ffffff;
+    font-size: 16rem;
+    font-weight: 700;
+    line-height: 20rem;
+}
+
+.DecorationHeader_type_38 {
+    color: #9a9ea2;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}

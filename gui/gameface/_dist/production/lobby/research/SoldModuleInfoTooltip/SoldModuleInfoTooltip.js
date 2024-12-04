@@ -2,7 +2,7 @@
     'use strict';
     var __webpack_modules__ = {
             768: (u, e, t) => {
-                t.d(e, { O: () => tu });
+                t.d(e, { O: () => Fu });
                 var F = {};
                 t.r(F),
                     t.d(F, { mouse: () => C, off: () => B, on: () => D, onResize: () => o, onScaleUpdated: () => a });
@@ -36,27 +36,28 @@
                         addPreloadTexture: () => M,
                         children: () => n,
                         displayStatus: () => g,
-                        displayStatusIs: () => J,
+                        displayStatusIs: () => uu,
                         events: () => b,
-                        extraSize: () => uu,
+                        extraSize: () => eu,
                         forceTriggerMouseMove: () => X,
                         freezeTextureBeforeResize: () => K,
                         getBrowserTexturePath: () => N,
                         getDisplayStatus: () => Q,
+                        getFontNames: () => J,
                         getScale: () => W,
                         getSize: () => U,
-                        getViewGlobalPosition: () => j,
+                        getViewGlobalPosition: () => q,
                         isEventHandled: () => Z,
                         isFocused: () => Y,
                         pxToRem: () => z,
                         remToPx: () => G,
-                        resize: () => q,
+                        resize: () => j,
                         sendEvent: () => x,
                         setAnimateWindow: () => H,
                         setEventHandled: () => $,
                         setInputPaddingsRem: () => L,
                         setSidePaddingsRem: () => V,
-                        whenTutorialReady: () => eu,
+                        whenTutorialReady: () => tu,
                     });
                 const o = r('clientResized'),
                     a = r('self.onScaleUpdated'),
@@ -246,10 +247,10 @@
                 function U(u = 'px') {
                     return 'rem' === u ? viewEnv.getViewSizeRem() : viewEnv.getViewSizePx();
                 }
-                function q(u, e, t = 'px') {
+                function j(u, e, t = 'px') {
                     return 'rem' === t ? viewEnv.resizeViewRem(u, e) : viewEnv.resizeViewPx(u, e);
                 }
-                function j(u = 'rem') {
+                function q(u = 'rem') {
                     const e = viewEnv.getViewGlobalPositionRem();
                     return 'rem' === u ? e : { x: G(e.x), y: G(e.y) };
                 }
@@ -283,8 +284,12 @@
                 function Q() {
                     return viewEnv.getShowingStatus();
                 }
-                const J = Object.keys(g).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === g[e]), u), {}),
-                    uu = {
+                const J = (() => {
+                        let u = [];
+                        return () => (0 === u.length && (u = Object.keys(viewEnv.getFontsConfig())), u);
+                    })(),
+                    uu = Object.keys(g).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === g[e]), u), {}),
+                    eu = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -292,13 +297,13 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    eu = Promise.all([
+                    tu = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : b.onDomBuilt(u);
                         }),
                         engine.whenReady,
                     ]),
-                    tu = { view: E, client: A, sound: h };
+                    Fu = { view: E, client: A, sound: h };
             },
             521: (u, e, t) => {
                 let F, A;
@@ -350,7 +355,7 @@
                             (u.SYMBOL_LOCK = 'SymbolLock');
                     })(A || (A = {}));
             },
-            860: (u, e, t) => {
+            358: (u, e, t) => {
                 t.d(e, { Z: () => n });
                 var F = t(768);
                 class A {
@@ -410,7 +415,7 @@
             },
             572: (__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
                 __webpack_require__.d(__webpack_exports__, { Z: () => __WEBPACK_DEFAULT_EXPORT__ });
-                var _DataTracker__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(860),
+                var _DataTracker__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(358),
                     _index__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(916);
                 class ViewModel {
                     constructor(path, watchingFields = []) {
@@ -491,7 +496,7 @@
                 }
                 F.__instance = void 0;
                 const A = F;
-                var n = t(860);
+                var n = t(358);
                 var E = t(613);
                 let r;
                 !(function (u) {
@@ -699,7 +704,7 @@
                         getFormattedDateTime: (u, e, t = !0) => regionalDateTime.getFormattedDateTime(u, e, t),
                     };
             },
-            790: (u, e, t) => {
+            165: (u, e, t) => {
                 var F = t(179),
                     A = t.n(F),
                     n = t(493),
@@ -1038,6 +1043,6 @@
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             t.forEach(e.bind(null, 0)), (t.push = e.bind(null, t.push.bind(t)));
         })();
-    var __webpack_exports__ = __webpack_require__.O(void 0, [845], () => __webpack_require__(790));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [845], () => __webpack_require__(165));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

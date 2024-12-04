@@ -1,0 +1,828 @@
+.TextButton_base_b6 {
+    display: flex;
+    align-items: center;
+    padding: 0 3rem;
+    font-size: 12rem;
+    position: relative;
+    cursor: pointer;
+}
+
+.TextButton_base__right_39 {
+    flex-direction: row-reverse;
+}
+.TextButton_icon_17 {
+    width: 32rem;
+    height: 32rem;
+    background: no-repeat center / contain;
+    position: relative;
+}
+.TextButton_icon__back_43,
+.TextButton_icon__forward_59 {
+    margin: -1rem -5rem;
+    background-image: url('R.images.gui.maps.icons.components.text_button.back');
+    transform: translateY(1rem);
+}
+.TextButton_icon__forward_59 {
+    transform: rotate(180deg) translateY(1rem);
+}
+.TextButton_icon__close_53 {
+    margin: -1rem 0;
+    background-image: url('R.images.gui.maps.icons.components.text_button.close');
+}
+.TextButton_icon__info_33 {
+    margin: -1rem -5rem;
+    background-image: url('R.images.gui.maps.icons.components.text_button.info');
+}
+.TextButton_glow_a4 {
+    width: 100%;
+    height: 100%;
+    background: no-repeat center / contain;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    transition: opacity 0.16s;
+}
+.TextButton_icon__back_43 .TextButton_glow_a4,
+.TextButton_icon__forward_59 .TextButton_glow_a4 {
+    background-image: url('R.images.gui.maps.icons.components.text_button.back_hover');
+}
+.TextButton_icon__close_53 .TextButton_glow_a4 {
+    background-image: url('R.images.gui.maps.icons.components.text_button.close_hover');
+}
+.TextButton_icon__info_33 .TextButton_glow_a4 {
+    background-image: url('R.images.gui.maps.icons.components.text_button.info_hover');
+}
+.TextButton_base_b6:hover .TextButton_glow_a4 {
+    opacity: 1;
+}
+.TextButton_base_b6:active .TextButton_glow_a4 {
+    opacity: 0;
+}
+.TextButton_caption_82 {
+    position: relative;
+    transition:
+        color 0.16s,
+        text-shadow 0.16s;
+}
+.TextButton_caption__back_b9,
+.TextButton_caption__forward_4e,
+.TextButton_caption__close_36 {
+    color: #ffdd99;
+    text-shadow:
+        0 0 10rem rgba(255, 42, 0, 1),
+        0 0 10rem rgba(255, 42, 0, 0.4),
+        0 0 10rem rgba(255, 42, 0, 0.4),
+        0 0 2rem rgba(255, 42, 0, 0.4),
+        0 0 1rem rgba(255, 42, 0, 0.4),
+        0 0 2rem rgba(255, 42, 0, 0.4),
+        0 0 1rem rgba(255, 42, 0, 0.4);
+}
+.TextButton_base_b6:hover .TextButton_caption__back_b9,
+.TextButton_base_b6:hover .TextButton_caption__forward_4e,
+.TextButton_base_b6:hover .TextButton_caption__close_36 {
+    color: #fffa9f;
+}
+.TextButton_base_b6:active .TextButton_caption__back_b9,
+.TextButton_base_b6:active .TextButton_caption__forward_4e,
+.TextButton_base_b6:active .TextButton_caption__close_36 {
+    color: #ffdd99;
+}
+.TextButton_caption__info_23 {
+    padding: 0 5rem;
+    color: #ccffff;
+    text-shadow:
+        0 0 12rem rgba(31, 68, 255, 0.8),
+        0 0 8rem #00eaff;
+}
+.TextButton_base_b6:hover .TextButton_caption__info_23 {
+    color: #e3ffff;
+    text-shadow:
+        0 0 12rem rgba(31, 68, 255, 0.8),
+        0 0 12rem rgba(0, 234, 255, 1),
+        0 0 8rem #00eaff;
+}
+.TextButton_base_b6:active .TextButton_caption__info_23 {
+    color: #ccffff;
+    text-shadow:
+        0 0 12rem rgba(31, 68, 255, 0.6),
+        0 0 8rem #00eaff;
+}
+.TextButton_goto_e7 {
+    color: #7c7c6c;
+}
+.TextButton_base__left_ff .TextButton_goto_e7 {
+    margin-left: 8rem;
+}
+.TextButton_base__right_39 .TextButton_goto_e7 {
+    margin-right: 8rem;
+}
+.TextButton_shine_e2 {
+    width: 90rem;
+    height: 40rem;
+    background: url('R.images.gui.maps.icons.components.text_button.shine') no-repeat center / contain;
+    opacity: 0;
+    position: absolute;
+    top: -4rem;
+    transition: opacity 0.16s;
+    pointer-events: none;
+}
+.TextButton_base__left_ff .TextButton_shine_e2 {
+    left: -4rem;
+}
+.TextButton_base__right_39 .TextButton_shine_e2 {
+    right: -4rem;
+    transform: rotate(180deg);
+}
+.TextButton_base_b6:hover .TextButton_shine_e2 {
+    opacity: 1;
+}
+.TextButton_base_b6:active .TextButton_shine_e2 {
+    opacity: 0;
+}
+
+.Currency_base_5e {
+    display: flex;
+    align-items: center;
+    font-size: 16rem;
+    position: relative;
+}
+
+.Currency_base__reverse_f9 {
+    flex-direction: row-reverse;
+}
+
+.Currency_icon_0c {
+    margin-left: 3rem;
+    background: no-repeat center / contain;
+    position: relative;
+}
+
+.Currency_base__reverse_f9 .Currency_icon_0c {
+    margin-left: 0;
+    margin-right: 3rem;
+}
+
+.Currency_base__s16x16_bb .Currency_icon_0c {
+    width: 16rem;
+    height: 16rem;
+    top: 3rem;
+}
+
+.Currency_base__gold_34.Currency_base__s16x16_bb .Currency_icon_0c {
+    background-image: url('R.images.gui.maps.icons.library.GoldIcon_2');
+}
+
+.Currency_base__credits_91.Currency_base__s16x16_bb .Currency_icon_0c {
+    background-image: url('R.images.gui.maps.icons.library.CreditsIcon_2');
+}
+
+.Currency_base__s24x24_4c .Currency_icon_0c {
+    width: 24rem;
+    height: 24rem;
+    top: 2rem;
+}
+
+.Currency_base__gold_34.Currency_base__s24x24_4c .Currency_icon_0c {
+    background-image: url('R.images.gui.maps.icons.library.GoldIcon_24');
+}
+
+.Currency_base__credits_91.Currency_base__s24x24_4c .Currency_icon_0c {
+    background-image: url('R.images.gui.maps.icons.library.CreditsIcon_3');
+}
+
+.Currency_value__credits_64 {
+    color: #ced9d9;
+}
+
+.Currency_value__gold_b2 {
+    color: #ffc363;
+}
+
+.Currency_value__notEnough_31 {
+    color: #ff2717;
+}
+
+@keyframes BaseWithCurrency_slideInFadeIn_40 {
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+@keyframes BaseWithCurrency_fadeOut_cd {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes BaseWithCurrency_fadeIn_0d {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+@keyframes BaseWithCurrency_fadeInWithScale_d9 {
+    0% {
+        opacity: 0;
+        transform: scale(1.2);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@keyframes BaseWithCurrency_slideUp_9b {
+    0% {
+        opacity: 0;
+        transform: translateY(20rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes BaseWithCurrency_scale_ca {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+@keyframes BaseWithCurrency_spin_55 {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+@keyframes BaseWithCurrency_blink_49 {
+    0% {
+        transform: translateY(0rem);
+    }
+
+    100% {
+        transform: translateY(15rem);
+    }
+}
+@keyframes BaseWithCurrency_slideInNotification_a6 {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.BaseWithCurrency_base_56 {
+    opacity: 0;
+    visibility: hidden;
+    animation-name: BaseWithCurrency_fadeIn_0d;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.07, 0.82, 0.17, 1);
+    animation-delay: 0.3s;
+    animation-iteration-count: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background: rgba(13, 9, 55, 0.8) radial-gradient(50% 45% at 50% 50%, rgba(63, 102, 172, 0.6), transparent);
+    overflow: hidden;
+    position: relative;
+}
+.BaseWithCurrency_vignette_b1 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: url('R.images.gui.maps.icons.newYear.common.vignette.ice_extraLarge') no-repeat 100% 100% / 100% 100%;
+    pointer-events: none;
+}
+.BaseWithCurrency_closeButton_fd {
+    position: absolute;
+    top: 80rem;
+    right: 30rem;
+    z-index: 1;
+}
+.BaseWithCurrency_balance_bf {
+    position: absolute;
+    top: 16rem;
+    right: 24rem;
+    display: flex;
+    align-items: center;
+    height: 44rem;
+    padding: 0 22rem;
+    border-radius: 6rem;
+    background-color: rgba(94, 65, 191, 0.2);
+}
+.BaseWithCurrency_currency_e9 + .BaseWithCurrency_currency_e9 {
+    margin-left: 24rem;
+}
+
+@keyframes Logo_slideInFadeIn_68 {
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+@keyframes Logo_fadeOut_8a {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes Logo_fadeIn_65 {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+@keyframes Logo_fadeInWithScale_c4 {
+    0% {
+        opacity: 0;
+        transform: scale(1.2);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@keyframes Logo_slideUp_49 {
+    0% {
+        opacity: 0;
+        transform: translateY(20rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes Logo_scale_fe {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+@keyframes Logo_spin_40 {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+@keyframes Logo_blink_d6 {
+    0% {
+        transform: translateY(0rem);
+    }
+
+    100% {
+        transform: translateY(15rem);
+    }
+}
+@keyframes Logo_slideInNotification_9d {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.Logo_base_31 {
+    text-align: center;
+}
+.Logo_image_4f {
+    width: 130rem;
+    height: 64rem;
+    margin: 0 -8rem -26rem;
+    background: url('R.images.gui.maps.icons.newYear.dialogs.bundle_purchase.logo') no-repeat center / contain;
+    position: relative;
+    z-index: 1;
+}
+.mediaMedium .Logo_image_4f {
+    width: 228rem;
+    height: 119rem;
+    margin-bottom: -60rem;
+}
+.mediaLarge .Logo_image_4f {
+    width: 266rem;
+    height: 135rem;
+    margin-right: -20rem;
+}
+.mediaExtraLarge .Logo_image_4f {
+    width: 340rem;
+    height: 167rem;
+    margin-right: -25rem;
+    margin-bottom: -78rem;
+}
+.Logo_title_ad {
+    margin: -0.8em 0 -0.7em;
+    font-size: 60rem;
+    letter-spacing: -0.07em;
+    position: relative;
+}
+.mediaMedium .Logo_title_ad {
+    font-size: 80rem;
+}
+.mediaLarge .Logo_title_ad {
+    font-size: 100rem;
+}
+.mediaExtraLarge .Logo_title_ad {
+    font-size: 140rem;
+}
+.Logo_text_ae {
+    font-family: DINRoundPro;
+}
+[lang='th'] .Logo_text_ae,
+[lang='el'] .Logo_text_ae,
+[lang='vi'] .Logo_text_ae {
+    font-family: Warhelios;
+}
+[lang='ja'] .Logo_text_ae {
+    font-family: WarheliosJA;
+}
+[lang='ko'] .Logo_text_ae {
+    font-family: WarheliosKO;
+}
+[lang='zh_tw'] .Logo_text_ae {
+    font-family: WarheliosZHTW;
+}
+[lang='zh_sg'] .Logo_text_ae,
+[lang='zh_cn'] .Logo_text_ae {
+    font-family: WarheliosZHCN;
+}
+.Logo_text_ae {
+    padding: 0 0.5em;
+    color: transparent;
+    font-weight: 700;
+    line-height: 230%;
+}
+.Logo_text__gradient1_10 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    color: #fff;
+    mask-image: linear-gradient(180deg, #fff 40%, transparent 100%);
+}
+.Logo_text__gradient2_42 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    color: #7e9edc;
+    mask-image: linear-gradient(180deg, transparent 50%, #fff 60%);
+}
+
+.CButton_base_40 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2rem;
+    box-shadow: 0 0 0 1rem rgba(0, 0, 0, 0.6);
+    position: relative;
+    cursor: pointer;
+}
+
+.CButton_base__main_42,
+.CButton_base__primary_7f,
+.CButton_base__primaryGreen_6f,
+.CButton_base__primaryRed_ec,
+.CButton_base__secondary_50 {
+    background-size: 100% 100%;
+}
+
+.CButton_base__main_42 {
+    background-image: url('R.images.gui.maps.icons.components.button.back_main');
+}
+
+.CButton_base__primary_7f {
+    background-image: url('R.images.gui.maps.icons.components.button.back_primary');
+}
+
+.CButton_base__primaryGreen_6f {
+    background-image: url('R.images.gui.maps.icons.components.button.back_primary_green');
+}
+
+.CButton_base__primaryRed_ec {
+    background-image: url('R.images.gui.maps.icons.components.button.back_primary_red');
+}
+
+.CButton_base__secondary_50 {
+    background-image: url('R.images.gui.maps.icons.components.button.back_secondary');
+}
+
+.CButton_base__ghost_ed {
+    border-radius: 3rem;
+    box-shadow:
+        0 0 0 1rem rgba(0, 0, 0, 0.3),
+        0 0 0 1rem rgba(255, 255, 255, 0.15) inset;
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+.CButton_base__extraSmall_27 {
+    min-height: 17rem;
+    padding: 0 16rem;
+}
+
+.CButton_base__small_df,
+.CButton_base__medium_74 {
+    padding: 0 20rem;
+}
+
+.CButton_base__small_df {
+    min-height: 18rem;
+}
+
+.CButton_base__medium_74 {
+    min-height: 32rem;
+}
+
+.CButton_base__large_5c {
+    min-height: 48rem;
+}
+
+.CButton_base__disabled_d9 {
+    cursor: default;
+}
+/* Element .back and background-image in element .base need for fix bug in GF https://jira.wargaming.net/browse/WOTD-158525
+The bug is that under certain conditions, when using border-image, stripes appear. Strip is a single-pixel gap
+between 'border-image-width' and 'fill'.
+This bug is reproduced in Google Chrome 81.0.4044.113
+*/
+.CButton_back_e5 {
+    border-image-slice: 4 fill;
+    border-image-width: 4rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.CButton_base__main_42 .CButton_back_e5 {
+    border-image-source: url('R.images.gui.maps.icons.components.button.back_main');
+}
+.CButton_base__primary_7f .CButton_back_e5 {
+    border-image-source: url('R.images.gui.maps.icons.components.button.back_primary');
+}
+.CButton_base__primaryGreen_6f .CButton_back_e5 {
+    border-image-source: url('R.images.gui.maps.icons.components.button.back_primary_green');
+}
+.CButton_base__primaryRed_ec .CButton_back_e5 {
+    border-image-source: url('R.images.gui.maps.icons.components.button.back_primary_red');
+}
+.CButton_base__secondary_50 .CButton_back_e5 {
+    border-image-source: url('R.images.gui.maps.icons.components.button.back_secondary');
+}
+.CButton_texture_fe {
+    background: url('R.images.gui.maps.icons.components.button.standard_texture_file');
+    background-size: 155rem 31rem;
+    mix-blend-mode: soft-light;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.CButton_state_11 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition: box-shadow 0.16s ease-in-out;
+}
+.CButton_base__focus_83 .CButton_state_11 {
+    border-radius: 2rem;
+    box-shadow: inset 0 0 2rem 1rem rgba(255, 85, 0, 0.2);
+}
+.CButton_stateHighlightHover_ff,
+.CButton_stateHighlightActive_35,
+.CButton_stateDisabled_54 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.CButton_stateHighlightHover_ff {
+    background-image: linear-gradient(
+        180deg,
+        rgba(252, 248, 235, 0.25) 0%,
+        rgba(252, 248, 235, 0.1) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    opacity: 0;
+}
+.CButton_base_40:hover .CButton_stateHighlightHover_ff {
+    opacity: 1;
+}
+.CButton_base_40:active .CButton_stateHighlightHover_ff {
+    opacity: 0;
+}
+.CButton_base__disabled_d9:hover .CButton_stateHighlightHover_ff {
+    opacity: 0;
+}
+.CButton_base__ghost_ed .CButton_stateHighlightHover_ff {
+    box-shadow: 0 15rem 12rem 0 rgba(242, 242, 230, 0.11) inset;
+    background-color: rgba(8, 6, 0, 0.18);
+    background-image: none;
+}
+.CButton_stateHighlightActive_35 {
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.15) 100%);
+    opacity: 0;
+}
+.CButton_base__highlightActive_b2 .CButton_stateHighlightActive_35 {
+    opacity: 1;
+}
+.CButton_stateDisabled_54 {
+    background-color: rgba(0, 0, 0, 0.25);
+    background-image: url('R.images.gui.maps.icons.components.button.texture_disable');
+    background-size: 15rem 15rem;
+    visibility: hidden;
+}
+.CButton_base__disabled_d9 .CButton_stateDisabled_54 {
+    visibility: inherit;
+}
+.CButton_content_cc {
+    display: flex;
+    align-items: center;
+    color: #f2f2e6;
+    font-weight: 700;
+    line-height: 1.2;
+    text-shadow: 0 -1rem 1rem #000;
+    letter-spacing: 0.03em;
+    transform: translateY(-1rem);
+}
+.CButton_content_cc[lang='ja'],
+.CButton_content_cc[lang='ko'],
+.CButton_content_cc[lang='zh_tw'],
+.CButton_content_cc[lang='zh_sg'],
+.CButton_content_cc[lang='zh_cn'],
+.CButton_content_cc[lang='th'] {
+    font-weight: 400;
+}
+.CButton_base__main_42 .CButton_content_cc,
+.CButton_base__primaryRed_ec .CButton_content_cc {
+    text-shadow: 0 -1rem 1rem #600;
+}
+.CButton_base__secondary_50 .CButton_content_cc {
+    color: rgba(254, 254, 236, 0.75);
+}
+.CButton_base__primaryGreen_6f .CButton_content_cc {
+    text-shadow: 0 -1rem 1rem #1c2502;
+}
+.CButton_base__extraSmall_27 .CButton_content_cc {
+    font-size: 12rem;
+}
+.CButton_base__small_df .CButton_content_cc {
+    font-size: 14rem;
+}
+.CButton_base__medium_74 .CButton_content_cc {
+    font-size: 15rem;
+}
+.CButton_base__large_5c .CButton_content_cc {
+    font-size: 18rem;
+}
+.CButton_base__disabled_d9 .CButton_content_cc {
+    opacity: 0.6;
+}
+
+.PurchaseBlock_base_ec {
+    display: flex;
+    align-items: center;
+}
+
+.PurchaseBlock_price_d8 {
+    margin-right: 45rem;
+    font-size: 22rem;
+    font-weight: 700;
+    position: relative;
+}
+
+.PurchaseBlock_button_52 {
+    min-width: 160rem;
+}
+
+.App_base_50 {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100%;
+    padding: 45rem 0 90rem;
+    overflow: hidden;
+}
+
+.App_content_95 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+.App_image_0b {
+    width: 450rem;
+    height: 285rem;
+    background: url('R.images.gui.maps.icons.newYear.dialogs.breed_purchase.breed_small') no-repeat center / contain;
+}
+
+.mediaMedium .App_image_0b {
+    width: 600rem;
+    height: 382rem;
+    background-image: url('R.images.gui.maps.icons.newYear.dialogs.breed_purchase.breed_medium');
+}
+
+.mediaLarge .App_image_0b {
+    width: 900rem;
+    height: 575rem;
+    background-image: url('R.images.gui.maps.icons.newYear.dialogs.breed_purchase.breed_large');
+}
+
+.mediaExtraLarge .App_image_0b {
+    width: 1200rem;
+    height: 765rem;
+    background-image: url('R.images.gui.maps.icons.newYear.dialogs.breed_purchase.breed_extraLarge');
+}
+
+.App_purchase_a8 {
+    display: flex;
+    flex-direction: column;
+    width: 400rem;
+}
+
+.mediaMedium .App_purchase_a8 {
+    width: 470rem;
+}
+
+.mediaExtraLarge .App_purchase_a8 {
+    width: 540rem;
+}
+
+.App_title_75 {
+    margin-bottom: 24rem;
+    color: #fff;
+    font-size: 32rem;
+    font-weight: 700;
+}
+
+.mediaMedium .App_title_75 {
+    margin-bottom: 32rem;
+    font-size: 48rem;
+}
+
+.mediaExtraLarge .App_title_75 {
+    font-size: 64rem;
+}
+
+.App_description_c0 {
+    margin-bottom: 36rem;
+    color: #a2b4e2;
+    font-size: 16rem;
+    line-height: 1.45;
+}
+
+.mediaMedium .App_description_c0 {
+    margin-bottom: 42rem;
+}
+
+.mediaExtraLarge .App_description_c0 {
+    font-size: 20rem;
+}
+
+.App_price_9d {
+    top: -4rem;
+}

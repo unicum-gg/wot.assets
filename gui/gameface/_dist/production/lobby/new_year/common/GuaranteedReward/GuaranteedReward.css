@@ -1,0 +1,407 @@
+@keyframes EffectCounter_slideInFadeIn_6e {
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+@keyframes EffectCounter_fadeOut_e9 {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes EffectCounter_fadeIn_dc {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+@keyframes EffectCounter_fadeInWithScale_eb {
+    0% {
+        opacity: 0;
+        transform: scale(1.2);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@keyframes EffectCounter_slideUp_20 {
+    0% {
+        opacity: 0;
+        transform: translateY(20rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes EffectCounter_scale_56 {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+@keyframes EffectCounter_spin_ad {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+@keyframes EffectCounter_blink_8f {
+    0% {
+        transform: translateY(0rem);
+    }
+
+    100% {
+        transform: translateY(15rem);
+    }
+}
+@keyframes EffectCounter_slideInNotification_41 {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.EffectCounter_base_5a {
+    position: relative;
+}
+.EffectCounter_count_06 {
+    font-family: DINRoundPro;
+}
+[lang='th'] .EffectCounter_count_06,
+[lang='el'] .EffectCounter_count_06,
+[lang='vi'] .EffectCounter_count_06 {
+    font-family: Warhelios;
+}
+[lang='ja'] .EffectCounter_count_06 {
+    font-family: WarheliosJA;
+}
+[lang='ko'] .EffectCounter_count_06 {
+    font-family: WarheliosKO;
+}
+[lang='zh_tw'] .EffectCounter_count_06 {
+    font-family: WarheliosZHTW;
+}
+[lang='zh_sg'] .EffectCounter_count_06,
+[lang='zh_cn'] .EffectCounter_count_06 {
+    font-family: WarheliosZHCN;
+}
+.EffectCounter_count_06 {
+    color: #ffffff;
+    font-size: 28rem;
+    font-weight: 700;
+    line-height: 1.1;
+    position: relative;
+}
+.EffectCounter_base__strong_86 .EffectCounter_count_06 {
+    text-shadow: 0 0 14rem rgba(0, 162, 255, 0.5);
+}
+.EffectCounter_effect_12,
+.EffectCounter_strongEffect_3f {
+    width: 296rem;
+    height: 296rem;
+    background: url('R.images.gui.maps.icons.newYear.loot_box.shine_guaranteed') no-repeat center / contain;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.EffectCounter_effect_12 {
+    margin-top: -2rem;
+    z-index: -1;
+    pointer-events: none;
+}
+.EffectCounter_strongEffect_3f {
+    mix-blend-mode: color-dodge;
+}
+.EffectCounter_particles_04 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.FormatText_base_d0 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.GuaranteedRewardCount_base_d0 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.GuaranteedRewardCount_text_3b {
+    color: #e8f3f3;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+    display: flex;
+    align-items: center;
+}
+
+.GuaranteedRewardCount_countWrapper_52 {
+    padding: 4rem 5rem 3rem;
+}
+
+.GuaranteedRewardCount_icon_ea {
+    position: relative;
+    top: 2rem;
+}
+
+@keyframes GuaranteedRewardNext_slideInFadeIn_64 {
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+@keyframes GuaranteedRewardNext_fadeOut_b1 {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes GuaranteedRewardNext_fadeIn_23 {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+@keyframes GuaranteedRewardNext_fadeInWithScale_f6 {
+    0% {
+        opacity: 0;
+        transform: scale(1.2);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@keyframes GuaranteedRewardNext_slideUp_a6 {
+    0% {
+        opacity: 0;
+        transform: translateY(20rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes GuaranteedRewardNext_scale_34 {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+@keyframes GuaranteedRewardNext_spin_f7 {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+@keyframes GuaranteedRewardNext_blink_f4 {
+    0% {
+        transform: translateY(0rem);
+    }
+
+    100% {
+        transform: translateY(15rem);
+    }
+}
+@keyframes GuaranteedRewardNext_slideInNotification_18 {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.GuaranteedRewardNext_base_f7 {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: relative;
+}
+.GuaranteedRewardNext_text_9e {
+    font-family: DINRoundPro;
+}
+[lang='th'] .GuaranteedRewardNext_text_9e,
+[lang='el'] .GuaranteedRewardNext_text_9e,
+[lang='vi'] .GuaranteedRewardNext_text_9e {
+    font-family: Warhelios;
+}
+[lang='ja'] .GuaranteedRewardNext_text_9e {
+    font-family: WarheliosJA;
+}
+[lang='ko'] .GuaranteedRewardNext_text_9e {
+    font-family: WarheliosKO;
+}
+[lang='zh_tw'] .GuaranteedRewardNext_text_9e {
+    font-family: WarheliosZHTW;
+}
+[lang='zh_sg'] .GuaranteedRewardNext_text_9e,
+[lang='zh_cn'] .GuaranteedRewardNext_text_9e {
+    font-family: WarheliosZHCN;
+}
+.GuaranteedRewardNext_text_9e {
+    color: #ffffff;
+    font-size: 22rem;
+    font-weight: 700;
+    line-height: 1.2;
+    display: flex;
+    align-items: flex-end;
+    text-shadow: 0 0 14rem rgba(80, 80, 150, 0.75);
+}
+.GuaranteedRewardNext_icon_b9 {
+    position: relative;
+    top: 2rem;
+}
+.GuaranteedRewardNext_firstShine_88,
+.GuaranteedRewardNext_secondShine_9d {
+    width: 600rem;
+    height: 108rem;
+    background: url('R.images.gui.maps.icons.newYear.loot_box.shine_with_particles') no-repeat center / contain;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+.GuaranteedRewardNext_firstShine_88 {
+    filter: contrast(1.2) brightness(1.1);
+    z-index: -1;
+    animation: GuaranteedRewardNext_dragonBreath_c0 3s ease-in-out infinite;
+}
+.GuaranteedRewardNext_secondShine_9d {
+    mix-blend-mode: color-dodge;
+}
+.GuaranteedRewardNext_particles_97 {
+    position: absolute;
+    z-index: -1;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+.GuaranteedRewardNext_particles__left_f5 {
+    top: 50%;
+    left: -10%;
+}
+.GuaranteedRewardNext_particles__center_c7 {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.GuaranteedRewardNext_particles__right_a9 {
+    top: 55%;
+    right: -10%;
+}
+@keyframes GuaranteedRewardNext_dragonBreath_c0 {
+    0% {
+        opacity: 0.35;
+    }
+
+    50% {
+        opacity: 0.85;
+    }
+
+    100% {
+        opacity: 0.35;
+    }
+}
+
+.InfoIcon_base_5d {
+    width: 26rem;
+    height: 26rem;
+    background: url('R.images.gui.maps.icons.newYear.loot_box.info_guaranteed') no-repeat center / contain;
+    filter: drop-shadow(0 0 6rem rgba(255, 255, 255, 0.4));
+}
+
+.InfoIcon_base__clickable_fd {
+    opacity: 1;
+    transition: opacity 300ms;
+    cursor: pointer;
+}
+
+.InfoIcon_base__clickable_fd:hover {
+    opacity: 0.7;
+}
+
+.InfoText_base_16 {
+    display: flex;
+    margin-bottom: 4rem;
+    padding: 0 5rem;
+    color: #ffffff;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 20rem;
+    opacity: 0.7;
+    position: relative;
+    transition: opacity 300ms;
+    cursor: pointer;
+}
+
+.InfoText_base_16:hover {
+    opacity: 1;
+}
+
+.InfoText_text_83 {
+    position: relative;
+}
+
+.InfoText_icon_ef {
+    width: 16rem;
+    height: 16rem;
+    margin-left: 2rem;
+    margin-top: 4rem;
+    background: url('R.images.gui.maps.icons.newYear.common.external_link') no-repeat center / contain;
+}
+
+.InfoText_underline_f3 {
+    width: 100%;
+    height: 1rem;
+    background-color: #ffffff;
+    position: absolute;
+    right: 0;
+    bottom: -2rem;
+    left: 0;
+    pointer-events: none;
+}

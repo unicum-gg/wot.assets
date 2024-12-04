@@ -13,7 +13,6 @@
                             (u.crystal = 'crystal'),
                             (u.xp = 'xp'),
                             (u.freeXP = 'freeXP'),
-                            (u.eliteXP = 'eliteXP'),
                             (u.equipCoin = 'equipCoin');
                     })(E || (E = {})),
                     (function (u) {
@@ -27,10 +26,10 @@
                 F(280), F(3649);
             },
             9768: (u, e, F) => {
-                F.d(e, { O: () => Fu });
+                F.d(e, { O: () => Au });
                 var A = {};
                 F.r(A),
-                    F.d(A, { mouse: () => s, off: () => D, on: () => _, onResize: () => o, onScaleUpdated: () => a });
+                    F.d(A, { mouse: () => s, off: () => _, on: () => D, onResize: () => o, onScaleUpdated: () => a });
                 var E = {};
                 F.r(E),
                     F.d(E, {
@@ -61,32 +60,33 @@
                         addPreloadTexture: () => S,
                         children: () => n,
                         displayStatus: () => b,
-                        displayStatusIs: () => J,
+                        displayStatusIs: () => uu,
                         events: () => y,
-                        extraSize: () => uu,
+                        extraSize: () => eu,
                         forceTriggerMouseMove: () => $,
                         freezeTextureBeforeResize: () => K,
                         getBrowserTexturePath: () => N,
                         getDisplayStatus: () => Q,
+                        getFontNames: () => J,
                         getScale: () => W,
                         getSize: () => U,
                         getViewGlobalPosition: () => G,
                         isEventHandled: () => Z,
-                        isFocused: () => H,
+                        isFocused: () => Y,
                         pxToRem: () => z,
-                        remToPx: () => X,
+                        remToPx: () => j,
                         resize: () => I,
                         sendEvent: () => L,
-                        setAnimateWindow: () => j,
-                        setEventHandled: () => Y,
+                        setAnimateWindow: () => H,
+                        setEventHandled: () => X,
                         setInputPaddingsRem: () => M,
                         setSidePaddingsRem: () => V,
-                        whenTutorialReady: () => eu,
+                        whenTutorialReady: () => Fu,
                     });
                 const o = r('clientResized'),
                     a = r('self.onScaleUpdated'),
-                    _ = (u, e) => engine.on(u, e),
-                    D = (u, e) => engine.off(u, e),
+                    D = (u, e) => engine.on(u, e),
+                    _ = (u, e) => engine.off(u, e),
                     B = { down: r('mousedown'), up: r('mouseup'), move: r('mousemove') };
                 const s = (function () {
                     const u = { listeners: 0, enabled: !0, initialized: !1 };
@@ -201,10 +201,10 @@
                     },
                     f = ['args'];
                 const O = 2,
-                    P = 16,
-                    k = 32,
-                    T = 64,
-                    x = (u, e) => {
+                    k = 16,
+                    T = 32,
+                    x = 64,
+                    P = (u, e) => {
                         const F = 'GFViewEventProxy';
                         if (void 0 !== e) {
                             const E = e.args,
@@ -243,13 +243,13 @@
                     },
                     L = {
                         close(u) {
-                            x('popover' === u ? O : k);
+                            P('popover' === u ? O : T);
                         },
                         minimize() {
-                            x(T);
+                            P(x);
                         },
                         move(u) {
-                            x(P, { isMouseEvent: !0, on: u });
+                            P(k, { isMouseEvent: !0, on: u });
                         },
                     },
                     R = 15;
@@ -276,7 +276,7 @@
                 }
                 function G(u = 'rem') {
                     const e = viewEnv.getViewGlobalPositionRem();
-                    return 'rem' === u ? e : { x: X(e.x), y: X(e.y) };
+                    return 'rem' === u ? e : { x: j(e.x), y: j(e.y) };
                 }
                 function K() {
                     viewEnv.freezeTextureBeforeResize();
@@ -287,16 +287,16 @@
                 function z(u) {
                     return viewEnv.pxToRem(u);
                 }
-                function X(u) {
+                function j(u) {
                     return viewEnv.remToPx(u);
                 }
-                function j(u, e) {
+                function H(u, e) {
                     viewEnv.setAnimateWindow(u, e);
                 }
-                function H() {
+                function Y() {
                     return viewEnv.isFocused();
                 }
-                function Y() {
+                function X() {
                     return viewEnv.setEventHandled();
                 }
                 function Z() {
@@ -308,8 +308,12 @@
                 function Q() {
                     return viewEnv.getShowingStatus();
                 }
-                const J = Object.keys(b).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === b[e]), u), {}),
-                    uu = {
+                const J = (() => {
+                        let u = [];
+                        return () => (0 === u.length && (u = Object.keys(viewEnv.getFontsConfig())), u);
+                    })(),
+                    uu = Object.keys(b).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === b[e]), u), {}),
+                    eu = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -317,13 +321,13 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    eu = Promise.all([
+                    Fu = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : y.onDomBuilt(u);
                         }),
                         engine.whenReady,
                     ]),
-                    Fu = { view: t, client: E, sound: h };
+                    Au = { view: t, client: E, sound: h };
             },
             5521: (u, e, F) => {
                 let A, E;
@@ -555,8 +559,8 @@
                 const i = Object.freeze({ INTEGRAL: 0, GOLD: 1 }),
                     o = Object.freeze({ FRACTIONAL: 0, WO_ZERO_DIGITS: 1 }),
                     a = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1 }),
-                    _ = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1, YEAR_MONTH: 2 });
-                var D = F(5521),
+                    D = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1, YEAR_MONTH: 2 });
+                var _ = F(5521),
                     B = F(9768);
                 const s = ['args'];
                 function C(u, e, F, A, E, n, t) {
@@ -639,7 +643,7 @@
                     },
                     v = () => d(r.CLOSE),
                     g = (u, e) => {
-                        u.keyCode === D.n.ESCAPE && e();
+                        u.keyCode === _.n.ESCAPE && e();
                     };
                 var w = F(7572);
                 const h = E.instance,
@@ -650,7 +654,7 @@
                         NumberFormatType: i,
                         RealFormatType: o,
                         TimeFormatType: a,
-                        DateFormatType: _,
+                        DateFormatType: D,
                         makeGlobalBoundingBox: c,
                         sendMoveEvent: (u) => d(r.MOVE, { isMouseEvent: !0, on: u }),
                         sendCloseEvent: v,
@@ -663,13 +667,13 @@
                                 i = F.getBoundingClientRect(),
                                 o = i.x,
                                 a = i.y,
-                                _ = i.width,
-                                D = i.height,
+                                D = i.width,
+                                _ = i.height,
                                 s = {
                                     x: B.O.view.pxToRem(o) + t.x,
                                     y: B.O.view.pxToRem(a) + t.y,
-                                    width: B.O.view.pxToRem(_),
-                                    height: B.O.view.pxToRem(D),
+                                    width: B.O.view.pxToRem(D),
+                                    height: B.O.view.pxToRem(_),
                                 };
                             d(r.POP_OVER, {
                                 isMouseEvent: !0,
@@ -789,10 +793,6 @@
                     'icon__freeXP-big': 'Currency_icon__freeXP-big_21',
                     'icon__freeXP-large': 'Currency_icon__freeXP-large_c8',
                     'icon__freeXP-extraLarge': 'Currency_icon__freeXP-extraLarge_58',
-                    'icon__eliteXP-small': 'Currency_icon__eliteXP-small_45',
-                    'icon__eliteXP-big': 'Currency_icon__eliteXP-big_c0',
-                    'icon__eliteXP-large': 'Currency_icon__eliteXP-large_1b',
-                    'icon__eliteXP-extraLarge': 'Currency_icon__eliteXP-extraLarge_9b',
                     'icon__equipCoin-small': 'Currency_icon__equipCoin-small_32',
                     'icon__equipCoin-big': 'Currency_icon__equipCoin-big_79',
                     'icon__equipCoin-large': 'Currency_icon__equipCoin-large_2c',
@@ -804,7 +804,6 @@
                     value__xp: 'Currency_value__xp_b0',
                     value__crystal: 'Currency_value__crystal_19',
                     value__equipCoin: 'Currency_value__equipCoin_d0',
-                    value__eliteXP: 'Currency_value__eliteXP_62',
                     value__notEnough: 'Currency_value__notEnough_56',
                     stock: 'Currency_stock_87',
                     stock__indent: 'Currency_stock__indent_a1',
@@ -820,8 +819,8 @@
                         type: A,
                         value: n,
                         discountValue: r,
-                        showPlus: _,
-                        isEnough: D = !0,
+                        showPlus: D,
+                        isEnough: _ = !0,
                         stockBackgroundName: B = a.we.Red,
                         className: s,
                         classNames: C,
@@ -835,11 +834,11 @@
                                     className: t()(
                                         o.value,
                                         o[`value__${A}`],
-                                        !D && o.value__notEnough,
+                                        !_ && o.value__notEnough,
                                         null == C ? void 0 : C.value,
                                     ),
                                 },
-                                _ && n > 0 && '+',
+                                D && n > 0 && '+',
                                 E().createElement(i, { value: n, format: A === a.V2.gold ? 'gold' : 'integral' }),
                             ),
                             E().createElement('span', {

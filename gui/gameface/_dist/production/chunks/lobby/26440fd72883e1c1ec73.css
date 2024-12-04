@@ -1,0 +1,638 @@
+.SceneWrapper_base_85 {
+    width: 100%;
+    height: 100%;
+    cursor: grab;
+}
+
+.SceneWrapper_base__down_fc {
+    cursor: all-scroll;
+}
+
+.SceneWrapper_base__moveSpaceDisabled_67 {
+    cursor: auto;
+}
+
+.FormatText_base_d0 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.FormatTextWithColorTags_creamColor_8f {
+    color: #ffdd99;
+}
+
+.FormatTextWithColorTags_brownColor_90 {
+    color: #cbac77;
+}
+
+.FormatTextWithColorTags_credColor_a7 {
+    color: #ced9d9;
+}
+
+.FormatTextWithColorTags_blueColor_73 {
+    color: rgb(205, 237, 255);
+}
+
+.FormatTextWithColorTags_lightBlueColor_fa {
+    color: #aec5f2;
+}
+
+.FormatTextWithColorTags_goldColor_d6 {
+    color: #ffc363;
+}
+
+.FormatTextWithColorTags_grayColor_8b {
+    color: #8c8c7e;
+}
+
+.FormatTextWithColorTags_whiteSpanish_4b {
+    color: #e9e2bf;
+}
+
+.FormatTextWithColorTags_bondColor_53 {
+    color: #c9c9b6;
+}
+
+.FormatTextWithColorTags_yellowColor_84 {
+    color: #feab34;
+}
+
+/*
+    Gameface can't calculate gradient biggest than 8128px
+    in JS 8000 reserved like anchor for start optimization
+*/
+/* stylelint-disable-line */
+.ProgressBar_base_45 {
+    width: 100%;
+    height: 12rem;
+    position: relative;
+}
+.ProgressBar_base__small_df {
+    height: 2rem;
+}
+.ProgressBar_background_51 {
+    width: 100%;
+    max-width: 8001px;
+    height: 100%;
+    background-image: var(--progress-base);
+    background-repeat: repeat;
+    background-position: 0 50%;
+    background-size: 3rem 10rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.ProgressBar_background__small_46 {
+    height: 2rem;
+}
+.ProgressBar_lineWrapper_6a {
+    display: flex;
+    flex: 1;
+}
+
+.ProgressBarBlink_base_24 {
+    width: 60rem;
+    height: 100rem;
+    background-image: var(--progress-glow);
+    background-size: contain;
+    mix-blend-mode: lighten;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(50%, -50%);
+    pointer-events: none;
+}
+
+.ProgressBarBlink_base__small_0f {
+    width: 44rem;
+    height: 43rem;
+    background-image: var(--progress-glow-small);
+}
+
+/*
+    Gameface can't calculate gradient biggest than 8128px
+    in JS 8000 reserved like anchor for start optimization
+*/
+/* stylelint-disable-line */
+.ProgressLineImpose_base_80 {
+    max-width: 8001px;
+    height: 100%;
+    background-color: var(--progress-line-base);
+    position: relative;
+    transition-timing-function: cubic-bezier(1, 0, 0.92, 1);
+    transition-property: width;
+}
+.ProgressLineImpose_base__disabled_cc {
+    background-color: var(--progress-line-disabled);
+}
+.ProgressLineImpose_base__finished_d4 {
+    background-color: var(--progress-line-finished);
+}
+.ProgressLineImpose_base__withoutBounce_56 {
+    transition-timing-function: cubic-bezier(1, 0, 0.75, 0.75);
+}
+.ProgressLineImpose_pattern_1c {
+    max-width: 8001px;
+    background-image: var(--progress-pattern-base);
+    background-repeat: repeat;
+    background-position: 0 50%;
+    background-size: 3rem 10rem;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+    left: 1rem;
+}
+.ProgressLineImpose_base__small_55 .ProgressLineImpose_pattern_1c {
+    top: 0;
+    bottom: 0;
+}
+.ProgressLineImpose_base__disabled_cc .ProgressLineImpose_pattern_1c {
+    background-image: var(--progress-pattern-disabled);
+    left: 0;
+}
+.ProgressLineImpose_base__finished_d4 .ProgressLineImpose_pattern_1c {
+    background-image: var(--progress-pattern-finished);
+}
+.ProgressLineImpose_gradient_35 {
+    max-width: 8001px;
+    background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.75));
+    mix-blend-mode: overlay;
+    position: absolute;
+    top: 1rem;
+    right: 0;
+    bottom: 1rem;
+    left: 0;
+}
+.ProgressLineImpose_base__small_55 .ProgressLineImpose_gradient_35 {
+    top: 0;
+    bottom: 0;
+}
+.ProgressLineImpose_base__disabled_cc .ProgressLineImpose_gradient_35 {
+    display: none;
+}
+.ProgressLineImpose_base__finished_d4 .ProgressLineImpose_gradient_35 {
+    background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.75), rgba(0, 0, 0, 0.5));
+}
+.ProgressLineImpose_glow_a5 {
+    width: 60rem;
+    max-width: 8001px;
+    height: 100rem;
+    background-image: var(--progress-glow);
+    background-size: contain;
+    mix-blend-mode: lighten;
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+.ProgressLineImpose_glow__left_d8 {
+    left: 1rem;
+}
+.ProgressLineImpose_base__disabled_cc .ProgressLineImpose_glow_a5,
+.ProgressLineImpose_base__finished_d4 .ProgressLineImpose_glow_a5 {
+    display: none;
+}
+.ProgressLineImpose_base__small_55 .ProgressLineImpose_glow_a5 {
+    width: 44rem;
+    height: 43rem;
+    background-image: var(--progress-glow-small);
+}
+
+/*
+    Gameface can't calculate gradient biggest than 8128px
+    in JS 8000 reserved like anchor for start optimization
+*/
+/* stylelint-disable-line */
+.ProgressBarDeltaSimple_base_6c {
+    width: 0;
+    height: 100%;
+    position: absolute;
+    top: 0;
+}
+.ProgressBarDeltaSimple_delta_99 {
+    width: 0;
+    max-width: 8001px;
+    height: 100%;
+    box-shadow: var(--progress-delta-shadow);
+    background-color: var(--progress-delta-color);
+    position: absolute;
+    bottom: 0;
+    transform-origin: right center;
+    transition-timing-function: cubic-bezier(1, 0, 0.92, 1), cubic-bezier(0.21, 0.61, 0.35, 1);
+    transition-property: width, transform;
+}
+
+/*
+    Gameface can't calculate gradient biggest than 8128px
+    in JS 8000 reserved like anchor for start optimization
+*/
+/* stylelint-disable-line */
+.ProgressBarDeltaGrow_base_7e {
+    width: 0;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    transition-timing-function: cubic-bezier(1, 0, 0.92, 1);
+    transition-property: width;
+}
+.ProgressBarDeltaGrow_base__withoutBounce_b5 {
+    transition-timing-function: cubic-bezier(1, 0, 0.75, 0.75);
+}
+.ProgressBarDeltaGrow_glow_68 {
+    width: 0;
+    max-width: 8001px;
+    height: 100%;
+    box-shadow: var(--progress-delta-shadow);
+    background-color: var(--progress-delta-color);
+    position: absolute;
+    bottom: 0;
+    transform-origin: right center;
+    transition-timing-function: cubic-bezier(1, 0, 0.92, 1);
+    transition-property: width;
+}
+.ProgressBarDeltaGrow_base__withoutBounce_b5 .ProgressBarDeltaGrow_glow_68 {
+    transition-timing-function: cubic-bezier(1, 0, 0.75, 0.75);
+}
+
+.GradientText_base_46 {
+    position: relative;
+}
+
+.GradientText_text_37 {
+    color: transparent;
+}
+
+.GradientText_gradient_44 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.GradientText_gradient__titleTop_57 {
+    color: #fff;
+    mask-image: linear-gradient(180deg, #fff 60%, transparent 90%);
+}
+
+.GradientText_gradient__titleBottom_a7 {
+    color: #b9b9f1;
+    mask-image: linear-gradient(180deg, transparent 40%, #fff 90%);
+}
+
+@keyframes ChallengeCard_slideInFadeIn_b8 {
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+@keyframes ChallengeCard_fadeOut_84 {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes ChallengeCard_fadeIn_dd {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+@keyframes ChallengeCard_fadeInWithScale_15 {
+    0% {
+        opacity: 0;
+        transform: scale(1.2);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@keyframes ChallengeCard_slideUp_f6 {
+    0% {
+        opacity: 0;
+        transform: translateY(20rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes ChallengeCard_scale_36 {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+@keyframes ChallengeCard_spin_f2 {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+@keyframes ChallengeCard_blink_08 {
+    0% {
+        transform: translateY(0rem);
+    }
+
+    100% {
+        transform: translateY(15rem);
+    }
+}
+@keyframes ChallengeCard_slideInNotification_7c {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.ChallengeCard_base_e2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 230rem;
+    padding: 16rem 20rem 12rem;
+    position: relative;
+}
+.mediaSmall .ChallengeCard_base_e2 {
+    width: 268rem;
+    padding: 15rem 24rem 16rem;
+}
+.mediaMedium .ChallengeCard_base_e2 {
+    width: 320rem;
+    padding: 16rem 30rem;
+}
+.ChallengeCard_base_e2 + .ChallengeCard_base_e2::before {
+    width: 1rem;
+    height: 100%;
+    background-image: linear-gradient(to bottom, transparent 0%, rgba(255, 255, 255, 0.2) 50%, transparent 100%);
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-25%);
+}
+.mediaMedium .ChallengeCard_base_e2 + .ChallengeCard_base_e2::before {
+    transform: translateY(-20%);
+}
+.ChallengeCard_wrapper_95 {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 7rem;
+}
+.mediaSmall .ChallengeCard_wrapper_95 {
+    margin-bottom: 8rem;
+}
+.ChallengeCard_questName_0b {
+    color: #c8d7ee;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+    max-width: 90rem;
+    margin-bottom: 3rem;
+    white-space: pre-wrap;
+}
+.mediaSmall .ChallengeCard_questName_0b {
+    max-width: 115rem;
+    color: #c8d7ee;
+    font-size: 18rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+.mediaMedium .ChallengeCard_questName_0b {
+    max-width: 140rem;
+    font-size: 20rem;
+}
+.ChallengeCard_values_d7 {
+    font-family: DINRoundPro;
+}
+[lang='th'] .ChallengeCard_values_d7,
+[lang='el'] .ChallengeCard_values_d7,
+[lang='vi'] .ChallengeCard_values_d7 {
+    font-family: Warhelios;
+}
+[lang='ja'] .ChallengeCard_values_d7 {
+    font-family: WarheliosJA;
+}
+[lang='ko'] .ChallengeCard_values_d7 {
+    font-family: WarheliosKO;
+}
+[lang='zh_tw'] .ChallengeCard_values_d7 {
+    font-family: WarheliosZHTW;
+}
+[lang='zh_sg'] .ChallengeCard_values_d7,
+[lang='zh_cn'] .ChallengeCard_values_d7 {
+    font-family: WarheliosZHCN;
+}
+.ChallengeCard_values_d7 {
+    color: #f2f2f7;
+    font-size: 24rem;
+    font-weight: 700;
+    line-height: 1.2;
+    display: flex;
+    align-items: flex-end;
+}
+.mediaSmall .ChallengeCard_values_d7 {
+    color: #f2f2f7;
+    font-size: 28rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.mediaMedium .ChallengeCard_values_d7 {
+    color: #f2f2f7;
+    font-size: 36rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.ChallengeCard_separator_f3 {
+    margin-left: 8rem;
+    margin-right: 4rem;
+}
+.ChallengeCard_separator_f3,
+.ChallengeCard_totalQuantity_33 {
+    opacity: 0.6;
+    position: relative;
+}
+.ChallengeCard_progress_71 {
+    padding: 3rem 5rem;
+    border: 1rem solid rgba(255, 255, 255, 0.1);
+    border-radius: 6rem;
+}
+
+@keyframes ChallengeList_slideInFadeIn_71 {
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+@keyframes ChallengeList_fadeOut_b5 {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes ChallengeList_fadeIn_72 {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+@keyframes ChallengeList_fadeInWithScale_02 {
+    0% {
+        opacity: 0;
+        transform: scale(1.2);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@keyframes ChallengeList_slideUp_c0 {
+    0% {
+        opacity: 0;
+        transform: translateY(20rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes ChallengeList_scale_cd {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+@keyframes ChallengeList_spin_93 {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+@keyframes ChallengeList_blink_bd {
+    0% {
+        transform: translateY(0rem);
+    }
+
+    100% {
+        transform: translateY(15rem);
+    }
+}
+@keyframes ChallengeList_slideInNotification_ad {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.ChallengeList_base_3f {
+    position: relative;
+}
+.ChallengeList_title_73 {
+    font-family: DINRoundPro;
+}
+[lang='th'] .ChallengeList_title_73,
+[lang='el'] .ChallengeList_title_73,
+[lang='vi'] .ChallengeList_title_73 {
+    font-family: Warhelios;
+}
+[lang='ja'] .ChallengeList_title_73 {
+    font-family: WarheliosJA;
+}
+[lang='ko'] .ChallengeList_title_73 {
+    font-family: WarheliosKO;
+}
+[lang='zh_tw'] .ChallengeList_title_73 {
+    font-family: WarheliosZHTW;
+}
+[lang='zh_sg'] .ChallengeList_title_73,
+[lang='zh_cn'] .ChallengeList_title_73 {
+    font-family: WarheliosZHCN;
+}
+.ChallengeList_title_73 {
+    margin-bottom: 18rem;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 16rem;
+    font-weight: 700;
+    line-height: 26rem;
+    text-align: center;
+    letter-spacing: -0.4rem;
+    position: relative;
+}
+.mediaMedium .ChallengeList_title_73 {
+    margin-bottom: 25rem;
+    font-size: 20rem;
+}
+.mediaExtraLarge .ChallengeList_title_73 {
+    margin-bottom: 30rem;
+    font-size: 24rem;
+}
+.ChallengeList_content_49 {
+    display: flex;
+    border: 1rem solid rgba(255, 255, 255, 0.1);
+    border-radius: 8rem;
+    background-image: linear-gradient(180deg, #3e67b7 0%, #10357e 100%);
+    position: relative;
+}
+
+.App_base_b0 {
+    width: 100%;
+    height: 100%;
+}
+
+.App_challengeList_3e {
+    position: absolute;
+    bottom: 28rem;
+    left: 50%;
+    transform: translateX(-50%);
+    pointer-events: none;
+}
+
+.mediaMedium .App_challengeList_3e {
+    bottom: 36rem;
+}
+
+.mediaExtraLarge .App_challengeList_3e {
+    bottom: 52rem;
+}

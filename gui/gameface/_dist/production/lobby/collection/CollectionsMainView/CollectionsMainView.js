@@ -209,13 +209,14 @@
                         addPreloadTexture: () => l,
                         children: () => n,
                         displayStatus: () => r.W,
-                        displayStatusIs: () => b,
+                        displayStatusIs: () => S,
                         events: () => a.U,
-                        extraSize: () => S,
+                        extraSize: () => y,
                         forceTriggerMouseMove: () => v,
                         freezeTextureBeforeResize: () => D,
                         getBrowserTexturePath: () => c,
                         getDisplayStatus: () => w,
+                        getFontNames: () => b,
                         getScale: () => C,
                         getSize: () => A,
                         getViewGlobalPosition: () => m,
@@ -229,7 +230,7 @@
                         setEventHandled: () => f,
                         setInputPaddingsRem: () => s,
                         setSidePaddingsRem: () => d,
-                        whenTutorialReady: () => y,
+                        whenTutorialReady: () => x,
                     });
                 var n = t(722),
                     r = t(112),
@@ -291,11 +292,15 @@
                 function w() {
                     return viewEnv.getShowingStatus();
                 }
-                const b = Object.keys(r.W).reduce(
+                const b = (() => {
+                        let e = [];
+                        return () => (0 === e.length && (e = Object.keys(viewEnv.getFontsConfig())), e);
+                    })(),
+                    S = Object.keys(r.W).reduce(
                         (e, u) => ((e[u] = () => viewEnv.getShowingStatus() === r.W[u]), e),
                         {},
                     ),
-                    S = {
+                    y = {
                         set: (e, u) => {
                             viewEnv.setExtraSizeRem(e, u);
                         },
@@ -303,7 +308,7 @@
                             viewEnv.getExtraSizeRem(e, u);
                         },
                     },
-                    y = Promise.all([
+                    x = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : a.U.onDomBuilt(e);
                         }),
@@ -771,14 +776,14 @@
                         getFormattedDateTime: (e, u, t = !0) => regionalDateTime.getFormattedDateTime(e, u, t),
                     };
             },
-            894: (e, u, t) => {
+            665: (e, u, t) => {
                 'use strict';
                 var n = {};
                 t.r(n),
                     t.d(n, {
-                        Area: () => Ne,
+                        Area: () => He,
                         Bar: () => Pe,
-                        DefaultScroll: () => He,
+                        DefaultScroll: () => Ne,
                         Direction: () => ge,
                         defaultSettings: () => he,
                         useHorizontalScrollApi: () => fe,
@@ -1115,7 +1120,7 @@
                         return i().createElement('div', L({ className: f()(t, O[a], M[o], T[l]) }, n), u);
                     },
                     k = ['children'];
-                const H = (e) => {
+                const N = (e) => {
                     let u = e.children,
                         t = (function (e, u) {
                             if (null == e) return {};
@@ -1129,8 +1134,8 @@
                         })(e, k);
                     return i().createElement(h, null, i().createElement(P, t, u));
                 };
-                var N = t(986),
-                    W = t.n(N),
+                var H = t(986),
+                    W = t.n(H),
                     I = t(521),
                     U = t(916);
                 const z = (e) => {
@@ -1955,7 +1960,7 @@
                         wrapper: 'HorizontalScroll_wrapper_1e',
                         defaultScrollArea: 'HorizontalScroll_defaultScrollArea_8d',
                     },
-                    He = ({
+                    Ne = ({
                         children: e,
                         api: u,
                         className: t,
@@ -1977,12 +1982,12 @@
                             i().createElement(
                                 'div',
                                 { className: f()(ke.defaultScrollArea, r) },
-                                i().createElement(Ne, { className: l, api: d, classNames: o }, e),
+                                i().createElement(He, { className: l, api: d, classNames: o }, e),
                             ),
                             i().createElement(Pe, { getStepByRailClick: s, api: u, onDrag: c, classNames: E }),
                         );
                     },
-                    Ne = ({ api: e, className: u, classNames: t, children: n }) => (
+                    He = ({ api: e, className: u, classNames: t, children: n }) => (
                         (0, a.useEffect)(() => se(e.recalculateContent)),
                         i().createElement(
                             'div',
@@ -2002,7 +2007,7 @@
                             ),
                         )
                     );
-                (Ne.Bar = Pe), (Ne.Default = He);
+                (He.Bar = Pe), (He.Default = Ne);
                 const We = Be({
                         getBounds: (e) => [0, e.scrollHeight - e.offsetHeight],
                         getContainerSize: (e) => e.scrollHeight,
@@ -2789,8 +2794,8 @@
                     Ru = { width: 360, height: 500 },
                     Pu = { width: 460, height: 600 },
                     ku = 17,
-                    Hu = 48,
-                    Nu = (0, G.Pi)(({ collectionId: e, isLast: u = !1 }) => {
+                    Nu = 48,
+                    Hu = (0, G.Pi)(({ collectionId: e, isLast: u = !1 }) => {
                         const t = ae(),
                             n = t.controls,
                             r = t.model.computes,
@@ -2903,13 +2908,13 @@
                             v && l === Cu.Play && k();
                         }, [v, l]),
                             (0, a.useEffect)(() => _(O), [S, O]);
-                        const H = de((e) =>
+                        const N = de((e) =>
                                 ru(
                                     R.images,
                                     `gui.maps.icons.collections.sequence.c_${h}.s_${e.toString().padStart(5, '0')}`,
                                 ),
                             ),
-                            N = (0, a.useCallback)(() => {
+                            H = (0, a.useCallback)(() => {
                                 E && (F && Fe(R.sounds.collection_book_closed()), m(!0), s(Cu.Stop));
                             }, [E, F]);
                         return i().createElement(
@@ -2944,12 +2949,12 @@
                                         width: viewEnv.remToPx(C.width),
                                         height: viewEnv.remToPx(C.height),
                                         frameCount: ku,
-                                        getSrcByFrame: H,
-                                        frameTime: Hu,
+                                        getSrcByFrame: N,
+                                        frameTime: Nu,
                                         state: l,
                                         loop: !1,
                                         revers: E,
-                                        onAnimationComplete: N,
+                                        onAnimationComplete: H,
                                     }),
                                 ),
                                 i().createElement(
@@ -3017,7 +3022,7 @@
                                             { key: `collections-wrapper${t}`, className: f()(Yu, 0 !== u && Ku) },
                                             0 !== u && i().createElement(Gu, { text: t }),
                                             J(e.collectionIds, (t, n) =>
-                                                i().createElement(Nu, {
+                                                i().createElement(Hu, {
                                                     key: `collection-${t}`,
                                                     isLast: u === l.length - 1 && n === e.collectionIds.length - 1,
                                                     collectionId: t,
@@ -3071,7 +3076,7 @@
                     });
                 engine.whenReady.then(() => {
                     W().render(
-                        i().createElement(re, null, i().createElement(H, null, i().createElement(lt, null))),
+                        i().createElement(re, null, i().createElement(N, null, i().createElement(lt, null))),
                         document.getElementById('root'),
                     );
                 });
@@ -3153,6 +3158,6 @@
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             t.forEach(u.bind(null, 0)), (t.push = u.bind(null, t.push.bind(t)));
         })();
-    var __webpack_exports__ = __webpack_require__.O(void 0, [314], () => __webpack_require__(894));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [314], () => __webpack_require__(665));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

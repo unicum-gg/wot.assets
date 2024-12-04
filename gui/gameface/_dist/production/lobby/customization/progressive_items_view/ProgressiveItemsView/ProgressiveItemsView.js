@@ -1,8 +1,8 @@
 (() => {
     'use strict';
     var __webpack_modules__ = {
-            768: (u, e, t) => {
-                t.d(e, { O: () => tu });
+            326: (u, e, t) => {
+                t.d(e, { O: () => nu });
                 var n = {};
                 t.r(n),
                     t.d(n, { mouse: () => m, off: () => A, on: () => E, onResize: () => l, onScaleUpdated: () => c });
@@ -35,14 +35,15 @@
                         addModelObserver: () => I,
                         addPreloadTexture: () => M,
                         children: () => a,
-                        displayStatus: () => w,
-                        displayStatusIs: () => J,
+                        displayStatus: () => w.W,
+                        displayStatusIs: () => uu,
                         events: () => b,
-                        extraSize: () => uu,
+                        extraSize: () => eu,
                         forceTriggerMouseMove: () => Z,
                         freezeTextureBeforeResize: () => $,
                         getBrowserTexturePath: () => L,
                         getDisplayStatus: () => Q,
+                        getFontNames: () => J,
                         getScale: () => j,
                         getSize: () => H,
                         getViewGlobalPosition: () => V,
@@ -56,7 +57,7 @@
                         setEventHandled: () => K,
                         setInputPaddingsRem: () => R,
                         setSidePaddingsRem: () => z,
-                        whenTutorialReady: () => eu,
+                        whenTutorialReady: () => tu,
                     });
                 const l = i('clientResized'),
                     c = i('self.onScaleUpdated'),
@@ -157,8 +158,8 @@
                 function v(u, e, t) {
                     return `url(${h(u, e, t)})`;
                 }
-                const w = { showing: 0, shown: 1, hiding: 2, hidden: 3 },
-                    b = {
+                var w = t(112);
+                const b = {
                         onTextureFrozen: i('self.onTextureFrozen'),
                         onTextureReady: i('self.onTextureReady'),
                         onDomBuilt: i('self.onDomBuilt'),
@@ -283,8 +284,15 @@
                 function Q() {
                     return viewEnv.getShowingStatus();
                 }
-                const J = Object.keys(w).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === w[e]), u), {}),
-                    uu = {
+                const J = (() => {
+                        let u = [];
+                        return () => (0 === u.length && (u = Object.keys(viewEnv.getFontsConfig())), u);
+                    })(),
+                    uu = Object.keys(w.W).reduce(
+                        (u, e) => ((u[e] = () => viewEnv.getShowingStatus() === w.W[e]), u),
+                        {},
+                    ),
+                    eu = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -292,13 +300,17 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    eu = Promise.all([
+                    tu = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : b.onDomBuilt(u);
                         }),
                         engine.whenReady,
                     ]),
-                    tu = { view: o, client: r, sound: p };
+                    nu = { view: o, client: r, sound: p };
+            },
+            112: (u, e, t) => {
+                t.d(e, { W: () => n });
+                const n = { showing: 0, shown: 1, hiding: 2, hidden: 3 };
             },
             521: (u, e, t) => {
                 let n, r;
@@ -352,7 +364,7 @@
             },
             358: (u, e, t) => {
                 t.d(e, { Z: () => a });
-                var n = t(768);
+                var n = t(326);
                 class r {
                     constructor() {
                         (this._callbacks = void 0),
@@ -509,7 +521,7 @@
                     c = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1 }),
                     E = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1, YEAR_MONTH: 2 });
                 var A = t(521),
-                    F = t(768);
+                    F = t(326);
                 const m = ['args'];
                 function d(u, e, t, n, r, a, o) {
                     try {
@@ -699,7 +711,7 @@
                         getFormattedDateTime: (u, e, t = !0) => regionalDateTime.getFormattedDateTime(u, e, t),
                     };
             },
-            910: (u, e, t) => {
+            343: (u, e, t) => {
                 var n = {};
                 t.r(n),
                     t.d(n, {
@@ -712,7 +724,7 @@
                     });
                 var r = {};
                 t.r(r), t.d(r, { Area: () => hu, Bar: () => gu, Default: () => pu, useVerticalScrollApi: () => ou });
-                var a = t(768),
+                var a = t(326),
                     o = t(179),
                     i = t.n(o),
                     s = t(493),
@@ -3633,6 +3645,6 @@
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             t.forEach(e.bind(null, 0)), (t.push = e.bind(null, t.push.bind(t)));
         })();
-    var __webpack_exports__ = __webpack_require__.O(void 0, [858], () => __webpack_require__(910));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [858], () => __webpack_require__(343));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

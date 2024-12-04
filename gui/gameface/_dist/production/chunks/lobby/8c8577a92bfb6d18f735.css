@@ -1,0 +1,890 @@
+.CButton_base_40 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2rem;
+    box-shadow: 0 0 0 1rem rgba(0, 0, 0, 0.6);
+    position: relative;
+    cursor: pointer;
+}
+
+.CButton_base__main_42,
+.CButton_base__primary_7f,
+.CButton_base__primaryGreen_6f,
+.CButton_base__primaryRed_ec,
+.CButton_base__secondary_50 {
+    background-size: 100% 100%;
+}
+
+.CButton_base__main_42 {
+    background-image: url('R.images.gui.maps.icons.components.button.back_main');
+}
+
+.CButton_base__primary_7f {
+    background-image: url('R.images.gui.maps.icons.components.button.back_primary');
+}
+
+.CButton_base__primaryGreen_6f {
+    background-image: url('R.images.gui.maps.icons.components.button.back_primary_green');
+}
+
+.CButton_base__primaryRed_ec {
+    background-image: url('R.images.gui.maps.icons.components.button.back_primary_red');
+}
+
+.CButton_base__secondary_50 {
+    background-image: url('R.images.gui.maps.icons.components.button.back_secondary');
+}
+
+.CButton_base__ghost_ed {
+    border-radius: 3rem;
+    box-shadow:
+        0 0 0 1rem rgba(0, 0, 0, 0.3),
+        0 0 0 1rem rgba(255, 255, 255, 0.15) inset;
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+.CButton_base__extraSmall_27 {
+    min-height: 17rem;
+    padding: 0 16rem;
+}
+
+.CButton_base__small_df,
+.CButton_base__medium_74 {
+    padding: 0 20rem;
+}
+
+.CButton_base__small_df {
+    min-height: 18rem;
+}
+
+.CButton_base__medium_74 {
+    min-height: 32rem;
+}
+
+.CButton_base__large_5c {
+    min-height: 48rem;
+}
+
+.CButton_base__disabled_d9 {
+    cursor: default;
+}
+/* Element .back and background-image in element .base need for fix bug in GF https://jira.wargaming.net/browse/WOTD-158525
+The bug is that under certain conditions, when using border-image, stripes appear. Strip is a single-pixel gap
+between 'border-image-width' and 'fill'.
+This bug is reproduced in Google Chrome 81.0.4044.113
+*/
+.CButton_back_e5 {
+    border-image-slice: 4 fill;
+    border-image-width: 4rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.CButton_base__main_42 .CButton_back_e5 {
+    border-image-source: url('R.images.gui.maps.icons.components.button.back_main');
+}
+.CButton_base__primary_7f .CButton_back_e5 {
+    border-image-source: url('R.images.gui.maps.icons.components.button.back_primary');
+}
+.CButton_base__primaryGreen_6f .CButton_back_e5 {
+    border-image-source: url('R.images.gui.maps.icons.components.button.back_primary_green');
+}
+.CButton_base__primaryRed_ec .CButton_back_e5 {
+    border-image-source: url('R.images.gui.maps.icons.components.button.back_primary_red');
+}
+.CButton_base__secondary_50 .CButton_back_e5 {
+    border-image-source: url('R.images.gui.maps.icons.components.button.back_secondary');
+}
+.CButton_texture_fe {
+    background: url('R.images.gui.maps.icons.components.button.standard_texture_file');
+    background-size: 155rem 31rem;
+    mix-blend-mode: soft-light;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.CButton_state_11 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition: box-shadow 0.16s ease-in-out;
+}
+.CButton_base__focus_83 .CButton_state_11 {
+    border-radius: 2rem;
+    box-shadow: inset 0 0 2rem 1rem rgba(255, 85, 0, 0.2);
+}
+.CButton_stateHighlightHover_ff,
+.CButton_stateHighlightActive_35,
+.CButton_stateDisabled_54 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.CButton_stateHighlightHover_ff {
+    background-image: linear-gradient(
+        180deg,
+        rgba(252, 248, 235, 0.25) 0%,
+        rgba(252, 248, 235, 0.1) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    opacity: 0;
+}
+.CButton_base_40:hover .CButton_stateHighlightHover_ff {
+    opacity: 1;
+}
+.CButton_base_40:active .CButton_stateHighlightHover_ff {
+    opacity: 0;
+}
+.CButton_base__disabled_d9:hover .CButton_stateHighlightHover_ff {
+    opacity: 0;
+}
+.CButton_base__ghost_ed .CButton_stateHighlightHover_ff {
+    box-shadow: 0 15rem 12rem 0 rgba(242, 242, 230, 0.11) inset;
+    background-color: rgba(8, 6, 0, 0.18);
+    background-image: none;
+}
+.CButton_stateHighlightActive_35 {
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.15) 100%);
+    opacity: 0;
+}
+.CButton_base__highlightActive_b2 .CButton_stateHighlightActive_35 {
+    opacity: 1;
+}
+.CButton_stateDisabled_54 {
+    background-color: rgba(0, 0, 0, 0.25);
+    background-image: url('R.images.gui.maps.icons.components.button.texture_disable');
+    background-size: 15rem 15rem;
+    visibility: hidden;
+}
+.CButton_base__disabled_d9 .CButton_stateDisabled_54 {
+    visibility: inherit;
+}
+.CButton_content_cc {
+    display: flex;
+    align-items: center;
+    color: #f2f2e6;
+    font-weight: 700;
+    line-height: 1.2;
+    text-shadow: 0 -1rem 1rem #000;
+    letter-spacing: 0.03em;
+    transform: translateY(-1rem);
+}
+.CButton_content_cc[lang='ja'],
+.CButton_content_cc[lang='ko'],
+.CButton_content_cc[lang='zh_tw'],
+.CButton_content_cc[lang='zh_sg'],
+.CButton_content_cc[lang='zh_cn'],
+.CButton_content_cc[lang='th'] {
+    font-weight: 400;
+}
+.CButton_base__main_42 .CButton_content_cc,
+.CButton_base__primaryRed_ec .CButton_content_cc {
+    text-shadow: 0 -1rem 1rem #600;
+}
+.CButton_base__secondary_50 .CButton_content_cc {
+    color: rgba(254, 254, 236, 0.75);
+}
+.CButton_base__primaryGreen_6f .CButton_content_cc {
+    text-shadow: 0 -1rem 1rem #1c2502;
+}
+.CButton_base__extraSmall_27 .CButton_content_cc {
+    font-size: 12rem;
+}
+.CButton_base__small_df .CButton_content_cc {
+    font-size: 14rem;
+}
+.CButton_base__medium_74 .CButton_content_cc {
+    font-size: 15rem;
+}
+.CButton_base__large_5c .CButton_content_cc {
+    font-size: 18rem;
+}
+.CButton_base__disabled_d9 .CButton_content_cc {
+    opacity: 0.6;
+}
+
+@keyframes EmptyScreen_slideInFadeIn_d3 {
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+@keyframes EmptyScreen_fadeOut_01 {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes EmptyScreen_fadeIn_db {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+@keyframes EmptyScreen_fadeInWithScale_35 {
+    0% {
+        opacity: 0;
+        transform: scale(1.2);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@keyframes EmptyScreen_slideUp_d3 {
+    0% {
+        opacity: 0;
+        transform: translateY(20rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes EmptyScreen_scale_82 {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+@keyframes EmptyScreen_spin_db {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+@keyframes EmptyScreen_blink_83 {
+    0% {
+        transform: translateY(0rem);
+    }
+
+    100% {
+        transform: translateY(15rem);
+    }
+}
+@keyframes EmptyScreen_slideInNotification_9f {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.EmptyScreen_base_7d {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(13, 9, 55, 0.8);
+    z-index: 1;
+}
+.EmptyScreen_inner_4d {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 800rem;
+    margin-top: 60rem;
+    text-align: center;
+    position: relative;
+}
+.EmptyScreen_title_32 {
+    font-family: DINRoundPro;
+}
+[lang='th'] .EmptyScreen_title_32,
+[lang='el'] .EmptyScreen_title_32,
+[lang='vi'] .EmptyScreen_title_32 {
+    font-family: Warhelios;
+}
+[lang='ja'] .EmptyScreen_title_32 {
+    font-family: WarheliosJA;
+}
+[lang='ko'] .EmptyScreen_title_32 {
+    font-family: WarheliosKO;
+}
+[lang='zh_tw'] .EmptyScreen_title_32 {
+    font-family: WarheliosZHTW;
+}
+[lang='zh_sg'] .EmptyScreen_title_32,
+[lang='zh_cn'] .EmptyScreen_title_32 {
+    font-family: WarheliosZHCN;
+}
+.EmptyScreen_title_32 {
+    margin-bottom: 10rem;
+    color: #e2e6f1;
+    font-size: 36rem;
+}
+.mediaMedium .EmptyScreen_title_32 {
+    margin-bottom: 14rem;
+    font-size: 48rem;
+}
+.EmptyScreen_description_fb {
+    color: #d1dcfa;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    margin-bottom: 16rem;
+}
+.mediaMedium .EmptyScreen_description_fb {
+    color: #d1dcfa;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+    margin-bottom: 22rem;
+}
+.EmptyScreen_button_65 {
+    display: flex;
+    flex-direction: column;
+    min-width: 160rem;
+}
+
+.Bonus_base_e6 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+    z-index: 1;
+}
+
+.Bonus_bonusMissing_f0 {
+    color: #b8ccff;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+
+.Bonus_accentText_b5 {
+    color: #ffc363;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+
+@keyframes BonusItem_slideInFadeIn_b3 {
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+@keyframes BonusItem_fadeOut_cc {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes BonusItem_fadeIn_a2 {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+@keyframes BonusItem_fadeInWithScale_26 {
+    0% {
+        opacity: 0;
+        transform: scale(1.2);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@keyframes BonusItem_slideUp_36 {
+    0% {
+        opacity: 0;
+        transform: translateY(20rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes BonusItem_scale_31 {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+@keyframes BonusItem_spin_aa {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+@keyframes BonusItem_blink_d8 {
+    0% {
+        transform: translateY(0rem);
+    }
+
+    100% {
+        transform: translateY(15rem);
+    }
+}
+@keyframes BonusItem_slideInNotification_6a {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.BonusItem_base_98 {
+    display: flex;
+    align-items: center;
+}
+.BonusItem_icon_bd {
+    width: 40rem;
+    height: 40rem;
+    background: no-repeat center / contain;
+}
+.BonusItem_text_bb {
+    color: rgba(184, 202, 249, 0.5);
+    font-size: 15rem;
+    font-weight: 700;
+    line-height: 1.15;
+    align-items: center;
+}
+.BonusItem_accent_75 {
+    font-family: DINRoundPro;
+}
+[lang='th'] .BonusItem_accent_75,
+[lang='el'] .BonusItem_accent_75,
+[lang='vi'] .BonusItem_accent_75 {
+    font-family: Warhelios;
+}
+[lang='ja'] .BonusItem_accent_75 {
+    font-family: WarheliosJA;
+}
+[lang='ko'] .BonusItem_accent_75 {
+    font-family: WarheliosKO;
+}
+[lang='zh_tw'] .BonusItem_accent_75 {
+    font-family: WarheliosZHTW;
+}
+[lang='zh_sg'] .BonusItem_accent_75,
+[lang='zh_cn'] .BonusItem_accent_75 {
+    font-family: WarheliosZHCN;
+}
+.BonusItem_accent_75 {
+    color: #b8caf9;
+    font-size: 24rem;
+    font-weight: 700;
+    line-height: 1.2;
+    text-shadow: 0 3rem 3rem rgba(0, 0, 0, 0.25);
+}
+.mediaMedium .BonusItem_accent_75 {
+    font-size: 28rem;
+}
+.mediaLarge .BonusItem_accent_75 {
+    font-size: 36rem;
+}
+
+.BonusContent_base_fc {
+    color: #b7eeff;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    display: flex;
+    align-items: center;
+    flex: 1;
+    position: relative;
+}
+.mediaSmall .BonusContent_base_fc {
+    font-size: 16rem;
+}
+.BonusContent_shine_9f {
+    width: 1300rem;
+    height: 285rem;
+    background: url('R.images.gui.maps.icons.newYear.celebrity_challenge.bonus_shine') no-repeat center bottom / contain;
+    opacity: 0;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: opacity 2.5s linear;
+    pointer-events: none;
+}
+.BonusContent_base__show_55 .BonusContent_shine_9f {
+    opacity: 1;
+    transition-timing-function: cubic-bezier(0.07, 0.82, 0.16, 1);
+    transition-duration: var(--duration);
+}
+.BonusContent_inner_ae {
+    display: flex;
+    height: 40rem;
+    opacity: 1;
+    transform: translateY(0);
+    transition-timing-function: cubic-bezier(0.07, 0.82, 0.16, 1), cubic-bezier(0.07, 0.82, 0.16, 1);
+    transition-duration: var(--duration), var(--duration);
+    transition-property: transform, opacity;
+}
+.BonusContent_base__hide_19 .BonusContent_inner_ae {
+    opacity: 0;
+    transform: translateY(20rem);
+    transition-timing-function: cubic-bezier(0.6, 0.04, 0.98, 0.34), cubic-bezier(0.6, 0.04, 0.98, 0.34);
+}
+.BonusContent_holder_8d {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.BonusContent_holder_8d + .BonusContent_holder_8d {
+    margin-left: 20rem;
+    padding-left: 20rem;
+}
+.mediaMedium .BonusContent_holder_8d + .BonusContent_holder_8d {
+}
+.BonusContent_holder_8d + .BonusContent_holder_8d::before {
+    width: 1rem;
+    background-color: rgba(184, 204, 255, 0.2);
+    content: '';
+    position: absolute;
+    top: 4rem;
+    bottom: 4rem;
+    transform: translateX(-20rem);
+}
+.BonusContent_label_f5 {
+    margin-right: 12rem;
+    opacity: 0.5;
+}
+.BonusContent_bonusItem_88 + .BonusContent_bonusItem_88 {
+    margin-left: 20rem;
+}
+.BonusContent_infoIcon_15 {
+    width: 24rem;
+    height: 24rem;
+    margin-left: 12rem;
+    margin-top: 4rem;
+    background: url('R.images.gui.maps.icons.newYear.celebrity_challenge.info_icon') no-repeat center / contain;
+}
+
+.CardFooter_base_56 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 57rem;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.CardFooter_base_56::before {
+    height: 1rem;
+    background-image: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 24rem;
+    left: 24rem;
+    z-index: 1;
+}
+
+.CardFooter_base_56::after {
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(46% 140% at 50% 0, #3391ff, transparent) no-repeat center / 90% 100%;
+    opacity: 0.6;
+    content: '';
+    position: absolute;
+}
+
+.CardFooter_glow_61 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: radial-gradient(
+        50% 203% at 50% 40%,
+        rgba(51, 145, 255, 0.86) 0%,
+        rgba(48, 128, 231, 0.76) 24%,
+        transparent 100%
+    );
+    opacity: 0;
+    transition: opacity 0.2s ease-in;
+}
+
+.CardFooter_base_56:hover .CardFooter_glow_61 {
+    opacity: 0.3;
+}
+
+.CardFooter_content_52 {
+    position: relative;
+    z-index: 1;
+}
+
+.Info_base_cc {
+    color: #f0fcff;
+    font-size: 14rem;
+    line-height: 1;
+}
+.mediaLarge .Info_base_cc {
+    font-size: 16rem;
+}
+
+.Info_description_56 {
+    min-height: 45rem;
+    margin-bottom: 8rem;
+    padding: 0 20rem;
+    border: 1px solid transparent;
+}
+
+.mediaLarge .Info_description_56 {
+    min-height: 52rem;
+    margin-bottom: 12rem;
+}
+
+.Info_rewardWrapper_6d {
+    display: flex;
+}
+
+.Info_reward_97 {
+    width: 48rem;
+    height: 48rem;
+    position: relative;
+}
+
+.mediaLarge .Info_reward_97 {
+    width: 64rem;
+    height: 64rem;
+}
+
+.Info_reward_97 + .Info_reward_97 {
+    margin-left: 32rem;
+}
+
+.mediaLarge .Info_reward_97 + .Info_reward_97 {
+    margin-left: 44rem;
+}
+
+.Info_reward__clickable_0b {
+    cursor: pointer;
+}
+
+.Info_loupe_22 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80rem;
+    height: 80rem;
+    background: url('R.images.gui.maps.icons.newYear.celebrity_challenge.loupe_hover') no-repeat center / contain;
+    opacity: 0;
+    z-index: 1;
+    transition: opacity 0.2s ease-in-out;
+    pointer-events: none;
+}
+
+.mediaLarge .Info_loupe_22 {
+    width: 100rem;
+    height: 100rem;
+}
+
+.Info_reward_97:hover .Info_loupe_22 {
+    opacity: 1;
+}
+
+.Info_reward_97:active .Info_loupe_22 {
+    opacity: 0.5;
+}
+
+.QuestCard_base_51 {
+    width: var(--card-width);
+    height: 190rem;
+    position: relative;
+}
+.mediaLarge .QuestCard_base_51 {
+    height: 230rem;
+}
+.QuestCard_base_51 {
+    text-align: center;
+}
+.QuestCard_content_64 {
+    width: 100%;
+    height: 100%;
+    padding: 14rem 0 46rem;
+    position: relative;
+}
+.mediaLarge .QuestCard_content_64 {
+    padding: 19rem 0 57rem;
+}
+.QuestCard_base__locked_1d .QuestCard_content_64 {
+    opacity: 0.4;
+}
+.QuestCard_buttonWrapper_e2 {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+}
+.QuestCard_button_bd {
+    width: 100%;
+    height: 46rem;
+    cursor: pointer;
+}
+.mediaLarge .QuestCard_button_bd {
+    height: 57rem;
+    font-size: 16rem;
+}
+.QuestCard_base__notEnough_50 .QuestCard_button_bd {
+    cursor: default;
+}
+.QuestCard_base__walletDisabled_5c .QuestCard_button_bd {
+    opacity: 0.2;
+    cursor: default;
+}
+.QuestCard_footer_3d {
+    height: 100%;
+}
+.QuestCard_price_43 {
+    margin-right: 4rem;
+    font-size: 18rem;
+    text-shadow:
+        0 1rem 2rem rgba(0, 0, 0, 0.5),
+        0 0 12rem rgba(0, 0, 0, 0.25);
+    top: -2rem;
+}
+.mediaMedium .QuestCard_price_43 {
+    font-size: 18rem;
+}
+
+.QuestList_base_cc {
+    display: flex;
+    position: relative;
+}
+
+.QuestList_item_13 {
+    position: relative;
+}
+
+.QuestList_item_13 + .QuestList_item_13 {
+    margin-left: var(--card-offset);
+}
+
+.Content_base_14 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    position: relative;
+}
+
+.Content_base__guestUnavailable_87 {
+    flex-direction: row;
+    pointer-events: auto;
+}
+.Content_inner_2a {
+    margin-left: 84rem;
+    position: relative;
+}
+.mediaSmall .Content_inner_2a {
+    margin-left: 110rem;
+}
+.mediaMedium .Content_inner_2a {
+    margin-left: 87rem;
+}
+.mediaLarge .Content_inner_2a {
+    margin-left: 178rem;
+}
+.mediaExtraLarge .Content_inner_2a {
+    margin-left: 86rem;
+}
+.Content_inner_2a {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    flex: 1;
+}
+.Content_content_73 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    pointer-events: auto;
+}
+.Content_bonus_2a {
+    min-height: 93rem;
+}
+.mediaLarge .Content_bonus_2a {
+    min-height: 114rem;
+}
+.mediaExtraLarge .Content_bonus_2a {
+    min-height: 140rem;
+}
+.Content_bonus_2a {
+    display: flex;
+    margin-top: 10rem;
+}
+.mediaLarge .Content_bonus_2a {
+    margin-top: 0;
+}
+.Content_logo_ed {
+    position: absolute;
+    top: 33%;
+    left: 24rem;
+    transform: translateY(-50%);
+    pointer-events: auto;
+}
+.mediaMedium .Content_logo_ed {
+    top: 32%;
+}
+.mediaLarge .Content_logo_ed {
+    left: 40rem;
+}
+.mediaExtraLarge .Content_logo_ed {
+    top: 41%;
+}
+
+.QuestScreen_base_bd {
+    display: flex;
+    height: 100%;
+}

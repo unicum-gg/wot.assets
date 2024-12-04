@@ -156,7 +156,7 @@
                             : (0, n.WU)(R.strings.common.duration.minutes(), { minutes: u.minutes || 1 });
             },
             9768: (u, e, t) => {
-                t.d(e, { O: () => tu });
+                t.d(e, { O: () => nu });
                 var n = {};
                 t.r(n),
                     t.d(n, { mouse: () => _, off: () => D, on: () => F, onResize: () => s, onScaleUpdated: () => A });
@@ -190,27 +190,28 @@
                         addPreloadTexture: () => N,
                         children: () => a,
                         displayStatus: () => w,
-                        displayStatusIs: () => J,
+                        displayStatusIs: () => uu,
                         events: () => f,
-                        extraSize: () => uu,
+                        extraSize: () => eu,
                         forceTriggerMouseMove: () => Y,
                         freezeTextureBeforeResize: () => q,
                         getBrowserTexturePath: () => M,
                         getDisplayStatus: () => Q,
+                        getFontNames: () => J,
                         getScale: () => G,
                         getSize: () => U,
                         getViewGlobalPosition: () => $,
-                        isEventHandled: () => H,
-                        isFocused: () => K,
+                        isEventHandled: () => X,
+                        isFocused: () => Z,
                         pxToRem: () => W,
                         remToPx: () => j,
                         resize: () => V,
                         sendEvent: () => k,
-                        setAnimateWindow: () => X,
-                        setEventHandled: () => Z,
+                        setAnimateWindow: () => K,
+                        setEventHandled: () => H,
                         setInputPaddingsRem: () => S,
                         setSidePaddingsRem: () => z,
-                        whenTutorialReady: () => eu,
+                        whenTutorialReady: () => tu,
                     });
                 const s = o('clientResized'),
                     A = o('self.onScaleUpdated'),
@@ -330,8 +331,8 @@
                     },
                     y = ['args'];
                 const x = 2,
-                    P = 16,
-                    T = 32,
+                    T = 16,
+                    P = 32,
                     R = 64,
                     O = (u, e) => {
                         const t = 'GFViewEventProxy';
@@ -372,13 +373,13 @@
                     },
                     k = {
                         close(u) {
-                            O('popover' === u ? x : T);
+                            O('popover' === u ? x : P);
                         },
                         minimize() {
                             O(R);
                         },
                         move(u) {
-                            O(P, { isMouseEvent: !0, on: u });
+                            O(T, { isMouseEvent: !0, on: u });
                         },
                     },
                     L = 15;
@@ -419,16 +420,16 @@
                 function j(u) {
                     return viewEnv.remToPx(u);
                 }
-                function X(u, e) {
+                function K(u, e) {
                     viewEnv.setAnimateWindow(u, e);
                 }
-                function K() {
+                function Z() {
                     return viewEnv.isFocused();
                 }
-                function Z() {
+                function H() {
                     return viewEnv.setEventHandled();
                 }
-                function H() {
+                function X() {
                     return viewEnv.isEventHandled();
                 }
                 function Y() {
@@ -437,8 +438,12 @@
                 function Q() {
                     return viewEnv.getShowingStatus();
                 }
-                const J = Object.keys(w).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === w[e]), u), {}),
-                    uu = {
+                const J = (() => {
+                        let u = [];
+                        return () => (0 === u.length && (u = Object.keys(viewEnv.getFontsConfig())), u);
+                    })(),
+                    uu = Object.keys(w).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === w[e]), u), {}),
+                    eu = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -446,13 +451,13 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    eu = Promise.all([
+                    tu = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : f.onDomBuilt(u);
                         }),
                         engine.whenReady,
                     ]),
-                    tu = { view: i, client: r, sound: g };
+                    nu = { view: i, client: r, sound: g };
             },
             7902: (u, e, t) => {
                 t.d(e, { F: () => n });
@@ -478,7 +483,7 @@
             2344: (u, e, t) => {
                 t.d(e, { DA: () => r.D, au: () => a, tT: () => r.t });
                 var n = t(3469),
-                    r = (t(2133), t(2790), t(579), t(5360));
+                    r = (t(2133), t(2790), t(3779), t(579), t(5360));
                 t(9056);
                 const a = n.Z;
             },
@@ -589,6 +594,9 @@
                 n.Sw.instance;
             },
             2790: (u, e, t) => {
+                t(6179);
+            },
+            3779: (u, e, t) => {
                 t(6179);
             },
             3112: (u, e, t) => {
@@ -1461,10 +1469,6 @@
                     'icon__freeXP-big': 'Currency_icon__freeXP-big_21',
                     'icon__freeXP-large': 'Currency_icon__freeXP-large_c8',
                     'icon__freeXP-extraLarge': 'Currency_icon__freeXP-extraLarge_58',
-                    'icon__eliteXP-small': 'Currency_icon__eliteXP-small_45',
-                    'icon__eliteXP-big': 'Currency_icon__eliteXP-big_c0',
-                    'icon__eliteXP-large': 'Currency_icon__eliteXP-large_1b',
-                    'icon__eliteXP-extraLarge': 'Currency_icon__eliteXP-extraLarge_9b',
                     'icon__equipCoin-small': 'Currency_icon__equipCoin-small_32',
                     'icon__equipCoin-big': 'Currency_icon__equipCoin-big_79',
                     'icon__equipCoin-large': 'Currency_icon__equipCoin-large_2c',
@@ -1476,7 +1480,6 @@
                     value__xp: 'Currency_value__xp_b0',
                     value__crystal: 'Currency_value__crystal_19',
                     value__equipCoin: 'Currency_value__equipCoin_d0',
-                    value__eliteXP: 'Currency_value__eliteXP_62',
                     value__notEnough: 'Currency_value__notEnough_56',
                     stock: 'Currency_stock_87',
                     stock__indent: 'Currency_stock__indent_a1',
@@ -1493,7 +1496,6 @@
                             (u.crystal = 'crystal'),
                             (u.xp = 'xp'),
                             (u.freeXP = 'freeXP'),
-                            (u.eliteXP = 'eliteXP'),
                             (u.equipCoin = 'equipCoin');
                     })(h || (h = {})),
                     (function (u) {
@@ -1553,8 +1555,8 @@
                     ),
                     y = 'Quantity_base_e7',
                     x = 'Quantity_base__highlighted_3d',
-                    P = 'Quantity_icon_e5',
-                    T = 'Quantity_price_5f',
+                    T = 'Quantity_icon_e5',
+                    P = 'Quantity_price_5f',
                     O = 'Quantity_price_icon_83',
                     k = 'Quantity_price__discount_41',
                     L = ({
@@ -1572,13 +1574,13 @@
                                   value: e,
                                   isEnough: n >= e,
                                   isDiscount: t,
-                                  className: r()(T, t && k),
+                                  className: r()(P, t && k),
                                   classNames: { icon: O },
                               })
                             : i().createElement(
                                   'div',
                                   { className: r()(y, { [x]: o }) },
-                                  i().createElement('div', { className: P }),
+                                  i().createElement('div', { className: T }),
                                   a,
                               ),
                     N = {
@@ -1679,8 +1681,8 @@
                         f = e.inDepot,
                         y = e.totalDuration,
                         x = void 0 === y ? 60 : y,
-                        P = e.isPremium,
-                        T = e.iconId,
+                        T = e.isPremium,
+                        P = e.iconId,
                         O = e.price,
                         k = e.minBonus,
                         z = e.maxBonus,
@@ -1691,14 +1693,14 @@
                         G = e.isExpiringSoon,
                         W = q > 0,
                         j = (0, C.au)(n, 1),
-                        X = Math.ceil((j / x) * 100),
-                        K = U === _.mu.Active,
-                        Z = s === I.TOOLTIP;
+                        K = Math.ceil((j / x) * 100),
+                        Z = U === _.mu.Active,
+                        H = s === I.TOOLTIP;
                     (0, a.useEffect)(() => {
-                        K && j <= 0 && p && p();
-                    }, [p, j, K]);
-                    const H = (G || W) && !K,
-                        Y = K && x - n < 5;
+                        Z && j <= 0 && p && p();
+                    }, [p, j, Z]);
+                    const X = (G || W) && !Z,
+                        Y = Z && x - n < 5;
                     (0, a.useEffect)(() => {
                         Y && (0, d.G)('personal_reserves_activation');
                     }, [Y]);
@@ -1706,25 +1708,25 @@
                         J = r()(N.base, {
                             [N.base__clan]: Q,
                             [N.base__event]: w === _.z3.Event,
-                            [N.base__premium]: P,
+                            [N.base__premium]: T,
                             [N.base__doubleSize]: s === I.DOUBLE,
-                            [N.base__tooltipSize]: Z,
-                            [N.base__active]: K,
-                            [N.base__disabled]: !K && o,
-                            [N.base__inactive]: !K && !o,
+                            [N.base__tooltipSize]: H,
+                            [N.base__active]: Z,
+                            [N.base__disabled]: !Z && o,
+                            [N.base__inactive]: !Z && !o,
                             [N.base__activatedAnimation]: Y,
-                            [N.base__zeroTime]: K && j <= 0,
-                            [N.base__gradient]: K,
+                            [N.base__zeroTime]: Z && j <= 0,
+                            [N.base__gradient]: Z,
                         }),
                         uu = (0, a.useCallback)(() => {
-                            K || o || (0, d.G)('personal_reserves_hover'), K || o || !g || g({ boosterId: h });
-                        }, [h, K, o, g]),
+                            Z || o || (0, d.G)('personal_reserves_hover'), Z || o || !g || g({ boosterId: h });
+                        }, [h, Z, o, g]),
                         eu = (0, a.useCallback)(() => {
-                            K || o || !m || m({ boosterId: h });
-                        }, [h, m, K, o]),
+                            Z || o || !m || m({ boosterId: h });
+                        }, [h, m, Z, o]),
                         tu = (0, l.f8)(j),
                         nu = (0, D.M)(tu, tu.hours ? F.o_.Long : F.o_.Short),
-                        ru = (0, v.Eh)(k, z, T),
+                        ru = (0, v.Eh)(k, z, P),
                         au = ru[0],
                         iu = ru[1],
                         ou = new B.Zg(O),
@@ -1732,18 +1734,18 @@
                         su = ou.hasDiscount(0),
                         Au = (0, a.useRef)(null),
                         Fu = s === I.TOOLTIP ? 'big' : 's232x174',
-                        Du = `url(${!K && Q && Z ? R.images.gui.maps.icons.personal_reserves.clan_icon() : R.images.gui.maps.icons.quests.bonuses[Fu].$dyn(T)})`,
+                        Du = `url(${!Z && Q && H ? R.images.gui.maps.icons.personal_reserves.clan_icon() : R.images.gui.maps.icons.quests.bonuses[Fu].$dyn(P)})`,
                         cu = i().createElement(c.z, {
                             text: R.strings.personal_reserves.activation.bonus(),
                             binding: { bonus: iu },
                         });
                     return i().createElement(
                         'div',
-                        M({ className: J, style: { '--fillPercentage': `${X}%` } }, b),
+                        M({ className: J, style: { '--fillPercentage': `${K}%` } }, b),
                         i().createElement(
                             'div',
                             { className: N.contentWrapper, onMouseEnter: uu, onClick: eu },
-                            K &&
+                            Z &&
                                 i().createElement(
                                     i().Fragment,
                                     null,
@@ -1782,12 +1784,12 @@
                                       ),
                             ),
                             o && i().createElement('div', { className: N.disabledPattern }),
-                            !K && !Q && G && i().createElement('div', { className: N.expiringLight }),
+                            !Z && !Q && G && i().createElement('div', { className: N.expiringLight }),
                             i().createElement(
                                 'div',
                                 { className: N.cardContent },
                                 !Q &&
-                                    !K &&
+                                    !Z &&
                                     i().createElement(
                                         i().Fragment,
                                         null,
@@ -1800,11 +1802,11 @@
                                                 isDiscount: su,
                                                 playerGold: t,
                                                 inDepot: f,
-                                                isHighlighted: H,
+                                                isHighlighted: X,
                                             }),
                                         ),
                                         G &&
-                                            !K &&
+                                            !Z &&
                                             i().createElement('div', { className: N.cardContent_expiringQuantity }, V),
                                     ),
                                 i().createElement('div', {
@@ -1834,7 +1836,7 @@
                                         ),
                                 ),
                             ),
-                            Q && !K && i().createElement('div', { className: N.plusIcon }),
+                            Q && !Z && i().createElement('div', { className: N.plusIcon }),
                         ),
                         W &&
                             $ &&

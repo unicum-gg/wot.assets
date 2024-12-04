@@ -2,7 +2,7 @@
     'use strict';
     var __webpack_modules__ = {
             9768: (u, e, A) => {
-                A.d(e, { O: () => Au });
+                A.d(e, { O: () => Fu });
                 var F = {};
                 A.r(F),
                     A.d(F, { mouse: () => s, off: () => o, on: () => C, onResize: () => r, onScaleUpdated: () => i });
@@ -36,27 +36,28 @@
                         addPreloadTexture: () => S,
                         children: () => t,
                         displayStatus: () => g,
-                        displayStatusIs: () => J,
+                        displayStatusIs: () => uu,
                         events: () => b,
-                        extraSize: () => uu,
+                        extraSize: () => eu,
                         forceTriggerMouseMove: () => X,
                         freezeTextureBeforeResize: () => z,
                         getBrowserTexturePath: () => N,
                         getDisplayStatus: () => Q,
+                        getFontNames: () => J,
                         getScale: () => G,
                         getSize: () => U,
                         getViewGlobalPosition: () => W,
                         isEventHandled: () => Z,
                         isFocused: () => H,
                         pxToRem: () => $,
-                        remToPx: () => q,
+                        remToPx: () => j,
                         resize: () => K,
                         sendEvent: () => x,
-                        setAnimateWindow: () => j,
+                        setAnimateWindow: () => q,
                         setEventHandled: () => Y,
                         setInputPaddingsRem: () => L,
                         setSidePaddingsRem: () => I,
-                        whenTutorialReady: () => eu,
+                        whenTutorialReady: () => Au,
                     });
                 const r = n('clientResized'),
                     i = n('self.onScaleUpdated'),
@@ -251,7 +252,7 @@
                 }
                 function W(u = 'rem') {
                     const e = viewEnv.getViewGlobalPositionRem();
-                    return 'rem' === u ? e : { x: q(e.x), y: q(e.y) };
+                    return 'rem' === u ? e : { x: j(e.x), y: j(e.y) };
                 }
                 function z() {
                     viewEnv.freezeTextureBeforeResize();
@@ -262,10 +263,10 @@
                 function $(u) {
                     return viewEnv.pxToRem(u);
                 }
-                function q(u) {
+                function j(u) {
                     return viewEnv.remToPx(u);
                 }
-                function j(u, e) {
+                function q(u, e) {
                     viewEnv.setAnimateWindow(u, e);
                 }
                 function H() {
@@ -283,8 +284,12 @@
                 function Q() {
                     return viewEnv.getShowingStatus();
                 }
-                const J = Object.keys(g).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === g[e]), u), {}),
-                    uu = {
+                const J = (() => {
+                        let u = [];
+                        return () => (0 === u.length && (u = Object.keys(viewEnv.getFontsConfig())), u);
+                    })(),
+                    uu = Object.keys(g).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === g[e]), u), {}),
+                    eu = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -292,13 +297,13 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    eu = Promise.all([
+                    Au = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : b.onDomBuilt(u);
                         }),
                         engine.whenReady,
                     ]),
-                    Au = { view: D, client: E, sound: p };
+                    Fu = { view: D, client: E, sound: p };
             },
             5521: (u, e, A) => {
                 let F, E;
@@ -743,7 +748,7 @@
                         );
                     };
             },
-            5131: (u, e, A) => {
+            8238: (u, e, A) => {
                 var F = A(6179),
                     E = A.n(F),
                     t = A(493),
@@ -963,8 +968,8 @@
                     z = 'Content_title_d8',
                     G = 'Content_content_41',
                     $ = 'Content_separator_f2',
-                    q = 'Content_accent_9e',
-                    j = 'Content_unit_53',
+                    j = 'Content_accent_9e',
+                    q = 'Content_unit_53',
                     H = R.strings.veh_post_progression.postProgressionLevelTooltipView,
                     Y = { [S.PairModification]: H.pairModification(), [S.Feature]: H.feature() },
                     Z = () => {
@@ -976,10 +981,10 @@
                             n = u.modifier,
                             B = e === S.Feature,
                             r = (0, F.useMemo)(() => {
-                                const u = { level: E().createElement('div', { className: q }, i(A)) };
+                                const u = { level: E().createElement('div', { className: j }, i(A)) };
                                 return B && (u.featureName = t), u;
                             }, [B, A, t]),
-                            C = { unit: j };
+                            C = { unit: q };
                         return E().createElement(
                             'div',
                             { className: W },
@@ -1186,6 +1191,6 @@
                 A = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             A.forEach(e.bind(null, 0)), (A.push = e.bind(null, A.push.bind(A)));
         })();
-    var __webpack_exports__ = __webpack_require__.O(void 0, [428], () => __webpack_require__(5131));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [428], () => __webpack_require__(8238));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

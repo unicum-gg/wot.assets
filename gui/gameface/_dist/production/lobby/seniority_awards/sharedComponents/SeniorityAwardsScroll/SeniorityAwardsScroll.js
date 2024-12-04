@@ -281,7 +281,7 @@
             },
             6358: (e, t, n) => {
                 n.d(t, { Nm: () => r.Nm });
-                var r = n(9482);
+                var r = n(7341);
                 (0, r.EO)({
                     getBounds: (e) => {
                         var t, n;
@@ -300,7 +300,7 @@
                     triggerMouseMoveOnUpdate: !0,
                 });
             },
-            9482: (e, t, n) => {
+            7341: (e, t, n) => {
                 n.d(t, { Nm: () => f, EO: () => m });
                 var r = n(7515),
                     o = n(1856),
@@ -342,50 +342,8 @@
                     for (var n = 0, r = Array(t); n < t; n++) r[n] = e[n];
                     return r;
                 }
-                var c = n(3815);
-                function u(e, t, n) {
-                    const r = (0, s.useMemo)(
-                        () =>
-                            (function (e, t, n, r) {
-                                let o,
-                                    i = !1,
-                                    s = 0;
-                                function a() {
-                                    o && clearTimeout(o);
-                                }
-                                function l(...l) {
-                                    const c = this,
-                                        u = Date.now() - s;
-                                    function d() {
-                                        (s = Date.now()), n.apply(c, l);
-                                    }
-                                    i ||
-                                        (r && !o && d(),
-                                        a(),
-                                        void 0 === r && u > e
-                                            ? d()
-                                            : !0 !== t &&
-                                              (o = setTimeout(
-                                                  r
-                                                      ? function () {
-                                                            o = void 0;
-                                                        }
-                                                      : d,
-                                                  void 0 === r ? e - u : e,
-                                              )));
-                                }
-                                return (
-                                    'boolean' != typeof t && ((r = n), (n = t), (t = void 0)),
-                                    (l.cancel = function () {
-                                        a(), (i = !0);
-                                    }),
-                                    l
-                                );
-                            })(n, e),
-                        t,
-                    );
-                    return (0, s.useEffect)(() => r.cancel, [r]), r;
-                }
+                var c = n(3815),
+                    u = n(5139);
                 var d = n(7030);
                 let f;
                 !(function (e) {
@@ -428,7 +386,10 @@
                                         };
                                     return (0, s.useMemo)(() => ({ on: n, off: r, trigger: o }), []);
                                 })(),
-                                y = u(
+                                y = (function (e, t, n) {
+                                    const r = (0, s.useMemo)(() => (0, u.Z)(n, e), t);
+                                    return (0, s.useEffect)(() => r.cancel, [r]), r;
+                                })(
                                     () => {
                                         i.O.view.forceTriggerMouseMove();
                                     },
@@ -763,13 +724,14 @@
                         addPreloadTexture: () => l,
                         children: () => r,
                         displayStatus: () => o.W,
-                        displayStatusIs: () => x,
+                        displayStatusIs: () => C,
                         events: () => i.U,
-                        extraSize: () => C,
+                        extraSize: () => T,
                         forceTriggerMouseMove: () => R,
                         freezeTextureBeforeResize: () => p,
                         getBrowserTexturePath: () => u,
                         getDisplayStatus: () => z,
+                        getFontNames: () => x,
                         getScale: () => h,
                         getSize: () => v,
                         getViewGlobalPosition: () => g,
@@ -783,7 +745,7 @@
                         setEventHandled: () => S,
                         setInputPaddingsRem: () => c,
                         setSidePaddingsRem: () => f,
-                        whenTutorialReady: () => T,
+                        whenTutorialReady: () => M,
                     });
                 var r = n(3722),
                     o = n(6112),
@@ -845,11 +807,15 @@
                 function z() {
                     return viewEnv.getShowingStatus();
                 }
-                const x = Object.keys(o.W).reduce(
+                const x = (() => {
+                        let e = [];
+                        return () => (0 === e.length && (e = Object.keys(viewEnv.getFontsConfig())), e);
+                    })(),
+                    C = Object.keys(o.W).reduce(
                         (e, t) => ((e[t] = () => viewEnv.getShowingStatus() === o.W[t]), e),
                         {},
                     ),
-                    C = {
+                    T = {
                         set: (e, t) => {
                             viewEnv.setExtraSizeRem(e, t);
                         },
@@ -857,7 +823,7 @@
                             viewEnv.getExtraSizeRem(e, t);
                         },
                     },
-                    T = Promise.all([
+                    M = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : i.U.onDomBuilt(e);
                         }),
@@ -957,6 +923,45 @@
                     });
                 }
                 n.d(t, { G: () => r });
+            },
+            5139: (e, t, n) => {
+                function r(e, t, n, r) {
+                    let o,
+                        i = !1,
+                        s = 0;
+                    function a() {
+                        o && clearTimeout(o);
+                    }
+                    function l(...l) {
+                        const c = this,
+                            u = Date.now() - s;
+                        function d() {
+                            (s = Date.now()), n.apply(c, l);
+                        }
+                        i ||
+                            (r && !o && d(),
+                            a(),
+                            void 0 === r && u > e
+                                ? d()
+                                : !0 !== t &&
+                                  (o = setTimeout(
+                                      r
+                                          ? function () {
+                                                o = void 0;
+                                            }
+                                          : d,
+                                      void 0 === r ? e - u : e,
+                                  )));
+                    }
+                    return (
+                        'boolean' != typeof t && ((r = n), (n = t), (t = void 0)),
+                        (l.cancel = function () {
+                            a(), (i = !0);
+                        }),
+                        l
+                    );
+                }
+                n.d(t, { Z: () => r });
             },
             7712: (e, t, n) => {
                 n(6483), n(6179), n(9911), n(2840), n(4682), n(6358);

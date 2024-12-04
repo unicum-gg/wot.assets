@@ -209,13 +209,14 @@
                         addPreloadTexture: () => s,
                         children: () => i,
                         displayStatus: () => a.W,
-                        displayStatusIs: () => S,
+                        displayStatusIs: () => b,
                         events: () => r.U,
-                        extraSize: () => b,
+                        extraSize: () => x,
                         forceTriggerMouseMove: () => B,
                         freezeTextureBeforeResize: () => A,
                         getBrowserTexturePath: () => h,
                         getDisplayStatus: () => v,
+                        getFontNames: () => S,
                         getScale: () => p,
                         getSize: () => c,
                         getViewGlobalPosition: () => E,
@@ -229,7 +230,7 @@
                         setEventHandled: () => D,
                         setInputPaddingsRem: () => l,
                         setSidePaddingsRem: () => g,
-                        whenTutorialReady: () => x,
+                        whenTutorialReady: () => R,
                     });
                 var i = u(722),
                     a = u(112),
@@ -291,11 +292,15 @@
                 function v() {
                     return viewEnv.getShowingStatus();
                 }
-                const S = Object.keys(a.W).reduce(
+                const S = (() => {
+                        let e = [];
+                        return () => (0 === e.length && (e = Object.keys(viewEnv.getFontsConfig())), e);
+                    })(),
+                    b = Object.keys(a.W).reduce(
                         (e, t) => ((e[t] = () => viewEnv.getShowingStatus() === a.W[t]), e),
                         {},
                     ),
-                    b = {
+                    x = {
                         set: (e, t) => {
                             viewEnv.setExtraSizeRem(e, t);
                         },
@@ -303,7 +308,7 @@
                             viewEnv.getExtraSizeRem(e, t);
                         },
                     },
-                    x = Promise.all([
+                    R = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : r.U.onDomBuilt(e);
                         }),
@@ -1244,11 +1249,11 @@
                 }
                 $.defaultProps = { side: 'left', type: 'back', soundHover: 'highlight', soundClick: 'play' };
                 var q = u(521),
-                    j = u(916);
-                const Y = (e) => {
+                    Y = u(916);
+                const j = (e) => {
                     console.error(e.type + ': useKeydownListener hook :: Callback is not defined');
                 };
-                function z(e = q.n.NONE, t = Y, u = !1, a = !1) {
+                function z(e = q.n.NONE, t = j, u = !1, a = !1) {
                     (0, i.useEffect)(() => {
                         if (e !== q.n.NONE)
                             return (
@@ -1267,7 +1272,7 @@
                 }
                 function V() {
                     !(function (e = q.n.ESCAPE) {
-                        z(e, j.Sy, !0);
+                        z(e, Y.Sy, !0);
                     })(q.n.ESCAPE);
                 }
                 var X = u(515);
@@ -1279,9 +1284,9 @@
                 class Z extends a().PureComponent {
                     render() {
                         let e;
-                        if ('gold' === this.props.format) e = j.B3.GOLD;
-                        else e = j.B3.INTEGRAL;
-                        const t = j.Z5.getNumberFormat(this.props.value, e);
+                        if ('gold' === this.props.format) e = Y.B3.GOLD;
+                        else e = Y.B3.INTEGRAL;
+                        const t = Y.Z5.getNumberFormat(this.props.value, e);
                         return void 0 !== this.props.value && void 0 !== t ? t : null;
                     }
                 }
@@ -1308,6 +1313,7 @@
                             (e.TankmenXpFactor = 'tankmenXPFactor'),
                             (e.FreeXpFactor = 'freeXPFactor'),
                             (e.BattleToken = 'battleToken'),
+                            (e.Entitlements = 'entitlements'),
                             (e.PremiumUniversal = 'premium_universal'),
                             (e.Gold = 'gold'),
                             (e.Credits = 'credits'),
@@ -1325,6 +1331,8 @@
                             (e.BattleBadge = 'dossier_badge'),
                             (e.NewYearInvoice = 'newYearInvoice'),
                             (e.NewYearSlot = 'newYearSlot'),
+                            (e.NewYearGuestD = 'ny_dog'),
+                            (e.EquipCoin = 'equipCoin'),
                             (e.BonusX5 = 'battle_bonus_x5'),
                             (e.CrewBonusX3 = 'crew_bonus_x3'),
                             (e.Vehicles = 'vehicles'),
@@ -1333,7 +1341,6 @@
                             (e.DeluxeGift = 'deluxe_gift'),
                             (e.BattleBoosterGift = 'battleBooster_gift'),
                             (e.OptionalDevice = 'optionalDevice'),
-                            (e.EquipCoin = 'equipCoin'),
                             (e.LootBox = 'lootBox'),
                             (e.BrCoin = 'brcoin');
                     })(J || (J = {})),
@@ -1457,6 +1464,7 @@
                         J.TankmenXpFactor,
                         J.FreeXpFactor,
                         J.BattleToken,
+                        J.Entitlements,
                         J.PremiumUniversal,
                         J.NaturalCover,
                         J.BpCoin,
@@ -1528,9 +1536,6 @@
                             case 'tokens':
                             case 'lootBox':
                             case 'battleToken':
-                                return 'big' === t
-                                    ? e.iconBig.replace('..', 'img://gui')
-                                    : e.iconSmall.replace('..', 'img://gui');
                             case 'customizations':
                             case 'styleProgress':
                             case 'crewSkins':
@@ -1539,6 +1544,10 @@
                             case 'tmanToken':
                             case 'battlePassSelectToken':
                                 return `R.images.gui.maps.icons.quests.bonuses.${t}.${r}`;
+                            case 'entitlements':
+                                return 'big' === t
+                                    ? e.iconBig.replace('..', 'img://gui')
+                                    : e.iconSmall.replace('..', 'img://gui');
                             case 'crewBooks':
                                 return `R.images.gui.maps.icons.crewBooks.books.${t}.${r}`;
                             case 'dogTagComponents':
@@ -1572,10 +1581,14 @@
                                 return `R.images.gui.maps.icons.quests.bonuses.${t}.freeXP`;
                             case 'premiumTank':
                                 return `R.images.gui.maps.icons.quests.bonuses.${t}.vehicles`;
+                            case 'premiumTank_rent':
+                                return `R.images.gui.maps.icons.quests.bonuses.${t}.vehicles_rent`;
                             case 'styleProgressToken':
                                 return `R.images.gui.maps.icons.quests.bonuses.${t}.style_3d`;
                             case 'collectionItem':
                                 return `R.images.gui.maps.icons.collectionItems.${s}.${r}`;
+                            case 'newYearSlot':
+                                return `R.images.gui.maps.icons.newYear.rewards.${t}.slot`;
                             default:
                                 return `R.images.gui.maps.icons.quests.bonuses.${t}.${u}`;
                         }
@@ -3150,7 +3163,7 @@
                         base__highlightActive: 'CButton_base__highlightActive_b2',
                         content: 'CButton_content_cc',
                     };
-                let qe, je;
+                let qe, Ye;
                 !(function (e) {
                     (e.main = 'main'),
                         (e.primary = 'primary'),
@@ -3161,8 +3174,8 @@
                 })(qe || (qe = {})),
                     (function (e) {
                         (e.extraSmall = 'extraSmall'), (e.small = 'small'), (e.medium = 'medium'), (e.large = 'large');
-                    })(je || (je = {}));
-                const Ye = ({
+                    })(Ye || (Ye = {}));
+                const je = ({
                     children: e,
                     size: t,
                     isFocused: u,
@@ -3258,8 +3271,8 @@
                         )
                     );
                 };
-                Ye.defaultProps = { type: qe.primary, isFocused: !1, soundHover: 'highlight', soundClick: 'play' };
-                const ze = Ye,
+                je.defaultProps = { type: qe.primary, isFocused: !1, soundHover: 'highlight', soundClick: 'play' };
+                const ze = je,
                     Ve = 'Footer_base_2c',
                     Xe = 'Footer_buttonSize_04',
                     Ke = (0, X.Pi)(() => {
@@ -3275,7 +3288,7 @@
                                 ze,
                                 {
                                     type: qe.primary,
-                                    size: i >= C.Medium ? je.medium : je.small,
+                                    size: i >= C.Medium ? Ye.medium : Ye.small,
                                     mixClass: Xe,
                                     onClick: t.onOpenCollection,
                                     disabled: r,
@@ -3493,7 +3506,7 @@
                             Object.assign(
                                 {
                                     __Type: 'GFViewEventProxy',
-                                    type: j.B0.TOOLTIP,
+                                    type: Y.B0.TOOLTIP,
                                     contentID: e,
                                     decoratorID: t,
                                     targetID: i,
@@ -4033,7 +4046,7 @@
                                         caption: R.strings.menu.viewHeader.closeBtn.label(),
                                         type: 'close',
                                         side: 'right',
-                                        onClick: () => (0, j.Sy)(),
+                                        onClick: () => (0, Y.Sy)(),
                                     }),
                                 ),
                                 a().createElement(et, null),

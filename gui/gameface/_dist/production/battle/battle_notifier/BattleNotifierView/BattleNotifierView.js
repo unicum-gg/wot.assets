@@ -183,13 +183,14 @@
                         addPreloadTexture: () => i,
                         children: () => A,
                         displayStatus: () => F.W,
-                        displayStatusIs: () => b,
+                        displayStatusIs: () => y,
                         events: () => E.U,
-                        extraSize: () => y,
-                        forceTriggerMouseMove: () => f,
+                        extraSize: () => T,
+                        forceTriggerMouseMove: () => g,
                         freezeTextureBeforeResize: () => _,
                         getBrowserTexturePath: () => o,
-                        getDisplayStatus: () => g,
+                        getDisplayStatus: () => f,
+                        getFontNames: () => b,
                         getScale: () => l,
                         getSize: () => B,
                         getViewGlobalPosition: () => c,
@@ -203,7 +204,7 @@
                         setEventHandled: () => m,
                         setInputPaddingsRem: () => a,
                         setSidePaddingsRem: () => s,
-                        whenTutorialReady: () => T,
+                        whenTutorialReady: () => O,
                     });
                 var A = t(3722),
                     F = t(6112),
@@ -259,17 +260,21 @@
                 function h() {
                     return viewEnv.isEventHandled();
                 }
-                function f() {
+                function g() {
                     viewEnv.forceTriggerMouseMove();
                 }
-                function g() {
+                function f() {
                     return viewEnv.getShowingStatus();
                 }
-                const b = Object.keys(F.W).reduce(
+                const b = (() => {
+                        let u = [];
+                        return () => (0 === u.length && (u = Object.keys(viewEnv.getFontsConfig())), u);
+                    })(),
+                    y = Object.keys(F.W).reduce(
                         (u, e) => ((u[e] = () => viewEnv.getShowingStatus() === F.W[e]), u),
                         {},
                     ),
-                    y = {
+                    T = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -277,7 +282,7 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    T = Promise.all([
+                    O = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : E.U.onDomBuilt(u);
                         }),
@@ -739,7 +744,7 @@
                         getFormattedDateTime: (u, e, t = !0) => regionalDateTime.getFormattedDateTime(u, e, t),
                     };
             },
-            1952: (u, e, t) => {
+            5365: (u, e, t) => {
                 var A = t(6179),
                     F = t.n(A),
                     E = t(493),
@@ -832,11 +837,11 @@
                         return '';
                     },
                     h = o.Sw.instance;
-                let f;
+                let g;
                 !(function (u) {
                     (u.None = 'None'), (u.Shallow = 'Shallow'), (u.Deep = 'Deep');
-                })(f || (f = {}));
-                const g = (u = 'model', e = f.Deep) => {
+                })(g || (g = {}));
+                const f = (u = 'model', e = g.Deep) => {
                     const t = (0, A.useState)(0),
                         F = (t[0], t[1]),
                         E = (0, A.useMemo)(() => _(), []),
@@ -860,24 +865,24 @@
                         d(() => {
                             if (
                                 ('boolean' == typeof e &&
-                                    ((e = e ? f.Deep : f.None),
+                                    ((e = e ? g.Deep : g.None),
                                     console.warn(
                                         'Boolean key for useModel "tracking" param is deprecated. Use ModelTracking enum values instead!',
                                     )),
-                                e !== f.None)
+                                e !== g.None)
                             ) {
                                 const t = (u) => {
                                         ((u) => u && 'CoherentArrayProxy' === u.__proto__.constructor.name)(u) &&
-                                        e === f.Deep
+                                        e === g.Deep
                                             ? (u === o && F((u) => u + 1), D(u))
                                             : D(Object.assign([], u));
                                     },
                                     A = m(u);
-                                s.current = h.addCallback(A, t, r, e === f.Deep);
+                                s.current = h.addCallback(A, t, r, e === g.Deep);
                             }
                         }),
                         (0, A.useEffect)(() => {
-                            if (e !== f.None)
+                            if (e !== g.None)
                                 return () => {
                                     h.removeCallback(s.current, r);
                                 };
@@ -907,47 +912,47 @@
                     W = 'App_upperGlow_f9',
                     q = 'App_upperGlowFadeOut_81',
                     K = 'App_vehicleIcon_c5';
-                function $(u) {
+                function j(u) {
                     engine.call('PlaySound', u).catch((e) => {
                         console.error('[lib/sounds.js] playSound(', u, '): ', e);
                     });
                 }
-                const j = R.images.gui.maps.icons.battleNotifier,
+                const $ = R.images.gui.maps.icons.battleNotifier,
                     z = {
                         'AT-SPG': {
-                            [b.Victory]: j.AT_SPG_victory(),
-                            [b.Draw]: j.AT_SPG_draw(),
-                            [b.Defeat]: j.AT_SPG_defeat(),
+                            [b.Victory]: $.AT_SPG_victory(),
+                            [b.Draw]: $.AT_SPG_draw(),
+                            [b.Defeat]: $.AT_SPG_defeat(),
                         },
                         heavyTank: {
-                            [b.Victory]: j.heavyTank_victory(),
-                            [b.Draw]: j.heavyTank_draw(),
-                            [b.Defeat]: j.heavyTank_defeat(),
+                            [b.Victory]: $.heavyTank_victory(),
+                            [b.Draw]: $.heavyTank_draw(),
+                            [b.Defeat]: $.heavyTank_defeat(),
                         },
                         lightTank: {
-                            [b.Victory]: j.lightTank_victory(),
-                            [b.Draw]: j.lightTank_draw(),
-                            [b.Defeat]: j.lightTank_defeat(),
+                            [b.Victory]: $.lightTank_victory(),
+                            [b.Draw]: $.lightTank_draw(),
+                            [b.Defeat]: $.lightTank_defeat(),
                         },
                         mediumTank: {
-                            [b.Victory]: j.mediumTank_victory(),
-                            [b.Draw]: j.mediumTank_draw(),
-                            [b.Defeat]: j.mediumTank_defeat(),
+                            [b.Victory]: $.mediumTank_victory(),
+                            [b.Draw]: $.mediumTank_draw(),
+                            [b.Defeat]: $.mediumTank_defeat(),
                         },
-                        SPG: { [b.Victory]: j.SPG_victory(), [b.Draw]: j.SPG_draw(), [b.Defeat]: j.SPG_defeat() },
+                        SPG: { [b.Victory]: $.SPG_victory(), [b.Draw]: $.SPG_draw(), [b.Defeat]: $.SPG_defeat() },
                     },
                     H = {
-                        [b.Victory]: j.upper_glow_victory(),
-                        [b.Draw]: j.upper_glow_draw(),
-                        [b.Defeat]: j.upper_glow_defeat(),
+                        [b.Victory]: $.upper_glow_victory(),
+                        [b.Draw]: $.upper_glow_draw(),
+                        [b.Defeat]: $.upper_glow_defeat(),
                     },
                     Y = {
-                        [b.Victory]: j.line_glow_victory(),
-                        [b.Draw]: j.line_glow_draw(),
-                        [b.Defeat]: j.line_glow_defeat(),
+                        [b.Victory]: $.line_glow_victory(),
+                        [b.Draw]: $.line_glow_draw(),
+                        [b.Defeat]: $.line_glow_defeat(),
                     },
-                    Z = { credits: j.creditsIcon(), experience: j.experienceIcon(), crystals: j.crystalIcon() },
-                    X = j.back_shadow(),
+                    Z = { credits: $.creditsIcon(), experience: $.experienceIcon(), crystals: $.crystalIcon() },
+                    X = $.back_shadow(),
                     Q = {
                         [b.Victory]: R.sounds.battle_results_victory(),
                         [b.Draw]: R.sounds.battle_results_draw(),
@@ -964,7 +969,7 @@
                     Au = (u) => ({ backgroundImage: `url(${Z[u]})` }),
                     Fu = { backgroundImage: `url(${X})` },
                     Eu = () => {
-                        const u = g(),
+                        const u = f(),
                             e = u.battleResult,
                             t = u.battleStartTime,
                             E = u.mapName,
@@ -988,18 +993,18 @@
                             p = new Date(1e3 * t),
                             m = `${p.getHours()}:${s(p.getMinutes())}`,
                             h = `+ ${D}`,
-                            f = `${o >= 0 ? '+' : ''} ${o}`,
-                            j = `+ ${B}`,
+                            g = `${o >= 0 ? '+' : ''} ${o}`,
+                            $ = `+ ${B}`,
                             z = '' !== E && '' !== n;
                         return (
                             (0, A.useEffect)(() => {
                                 if (!z) return;
-                                $(Q[e]);
+                                j(Q[e]);
                                 const u = setTimeout(() => {
-                                        $(R.sounds.battle_results_stats());
+                                        j(R.sounds.battle_results_stats());
                                     }, 500),
                                     t = setTimeout(() => {
-                                        $(R.sounds.battle_results_rollout());
+                                        j(R.sounds.battle_results_rollout());
                                     }, 2e3);
                                 return () => {
                                     clearTimeout(u), clearTimeout(t);
@@ -1023,10 +1028,10 @@
                                         F().createElement('img', { className: K, src: uu(a, e) }),
                                         F().createElement('div', null, n),
                                     ),
-                                    F().createElement('div', { className: i()(L, I), style: Au('credits') }, f),
+                                    F().createElement('div', { className: i()(L, I), style: Au('credits') }, g),
                                     F().createElement('div', { className: i()(L, G), style: Au('experience') }, h),
                                     0 !== B &&
-                                        F().createElement('div', { className: i()(L, U), style: Au('crystals') }, j),
+                                        F().createElement('div', { className: i()(L, U), style: Au('crystals') }, $),
                                 )
                         );
                     };
@@ -1111,6 +1116,6 @@
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             t.forEach(e.bind(null, 0)), (t.push = e.bind(null, t.push.bind(t)));
         })();
-    var __webpack_exports__ = __webpack_require__.O(void 0, [532], () => __webpack_require__(1952));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [532], () => __webpack_require__(5365));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

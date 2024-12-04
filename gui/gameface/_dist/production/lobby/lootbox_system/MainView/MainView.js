@@ -675,13 +675,14 @@
                         addPreloadTexture: () => i,
                         children: () => r,
                         displayStatus: () => E.W,
-                        displayStatusIs: () => p,
+                        displayStatusIs: () => x,
                         events: () => A.U,
-                        extraSize: () => x,
+                        extraSize: () => S,
                         forceTriggerMouseMove: () => f,
                         freezeTextureBeforeResize: () => c,
                         getBrowserTexturePath: () => D,
                         getDisplayStatus: () => b,
+                        getFontNames: () => p,
                         getScale: () => d,
                         getSize: () => l,
                         getViewGlobalPosition: () => C,
@@ -695,7 +696,7 @@
                         setEventHandled: () => v,
                         setInputPaddingsRem: () => F,
                         setSidePaddingsRem: () => o,
-                        whenTutorialReady: () => S,
+                        whenTutorialReady: () => L,
                     });
                 var r = t(3722),
                     E = t(6112),
@@ -757,11 +758,15 @@
                 function b() {
                     return viewEnv.getShowingStatus();
                 }
-                const p = Object.keys(E.W).reduce(
+                const p = (() => {
+                        let u = [];
+                        return () => (0 === u.length && (u = Object.keys(viewEnv.getFontsConfig())), u);
+                    })(),
+                    x = Object.keys(E.W).reduce(
                         (u, e) => ((u[e] = () => viewEnv.getShowingStatus() === E.W[e]), u),
                         {},
                     ),
-                    x = {
+                    S = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -769,7 +774,7 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    S = Promise.all([
+                    L = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : A.U.onDomBuilt(u);
                         }),
@@ -847,7 +852,7 @@
                 t.d(e, { D9: () => A, eI: () => E.Z });
                 t(3469), t(2133);
                 var r = t(2790),
-                    E = t(579);
+                    E = (t(3779), t(579));
                 t(5360), t(9056);
                 const A = r.Z;
             },
@@ -981,6 +986,10 @@
                         t.current
                     );
                 };
+            },
+            3779: (u, e, t) => {
+                'use strict';
+                t(6179);
             },
             579: (u, e, t) => {
                 'use strict';
@@ -1773,13 +1782,13 @@
             Promise.all(Object.keys(__webpack_require__.f).reduce((e, t) => (__webpack_require__.f[t](u, e), e), []))),
         (__webpack_require__.u = (u) =>
             988 === u
-                ? 'chunks/lobby/44efc8e27399a436113f.js'
+                ? 'chunks/lobby/78d3e41e5f9c88f93310.js'
                 : 730 === u
                   ? 'chunks/lobby/8f77ebb89d5133d3dfd0.js'
                   : 554 === u
                     ? 'chunks/lobby/540233633ba21243568c.js'
                     : 231 === u
-                      ? 'chunks/lobby/fbfc94192222cbf2d37d.js'
+                      ? 'chunks/lobby/c90d4ebaeac9c0cdc707.js'
                       : 984 === u
                         ? 'chunks/lobby/8ed0e7f03c3c962f709c.js'
                         : 133 === u
@@ -1793,7 +1802,7 @@
             730 === u
                 ? 'chunks/lobby/8f77ebb89d5133d3dfd0.css'
                 : 231 === u
-                  ? 'chunks/lobby/fbfc94192222cbf2d37d.css'
+                  ? 'chunks/lobby/c90d4ebaeac9c0cdc707.css'
                   : 984 === u
                     ? 'chunks/lobby/8ed0e7f03c3c962f709c.css'
                     : 824 === u

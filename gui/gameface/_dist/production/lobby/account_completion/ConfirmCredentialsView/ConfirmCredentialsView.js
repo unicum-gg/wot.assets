@@ -18,7 +18,7 @@
             },
             768: (u, e, t) => {
                 'use strict';
-                t.d(e, { O: () => tu });
+                t.d(e, { O: () => nu });
                 var n = {};
                 t.r(n),
                     t.d(n, { mouse: () => D, off: () => F, on: () => A, onResize: () => l, onScaleUpdated: () => E });
@@ -48,19 +48,20 @@
                 }
                 t.r(o),
                     t.d(o, {
-                        addModelObserver: () => P,
+                        addModelObserver: () => N,
                         addPreloadTexture: () => R,
                         children: () => r,
                         displayStatus: () => w,
-                        displayStatusIs: () => J,
+                        displayStatusIs: () => uu,
                         events: () => f,
-                        extraSize: () => uu,
+                        extraSize: () => eu,
                         forceTriggerMouseMove: () => Z,
                         freezeTextureBeforeResize: () => $,
                         getBrowserTexturePath: () => H,
                         getDisplayStatus: () => Q,
+                        getFontNames: () => J,
                         getScale: () => V,
-                        getSize: () => N,
+                        getSize: () => W,
                         getViewGlobalPosition: () => G,
                         isEventHandled: () => X,
                         isFocused: () => q,
@@ -71,8 +72,8 @@
                         setAnimateWindow: () => K,
                         setEventHandled: () => Y,
                         setInputPaddingsRem: () => I,
-                        setSidePaddingsRem: () => W,
-                        whenTutorialReady: () => eu,
+                        setSidePaddingsRem: () => P,
+                        whenTutorialReady: () => tu,
                     });
                 const l = i('clientResized'),
                     E = i('self.onScaleUpdated'),
@@ -253,13 +254,13 @@
                 function H(u, e, t, n = 1) {
                     return viewEnv.getWebBrowserTexturePath(u, e, t, n);
                 }
-                function P(u, e, t) {
+                function N(u, e, t) {
                     return viewEnv.addDataChangedCallback(u, e, t);
                 }
-                function W(u) {
+                function P(u) {
                     viewEnv.setHitAreaPaddingsRem(u.top, u.right, u.bottom, u.left, O);
                 }
-                function N(u = 'px') {
+                function W(u = 'px') {
                     return 'rem' === u ? viewEnv.getViewSizeRem() : viewEnv.getViewSizePx();
                 }
                 function U(u, e, t = 'px') {
@@ -299,8 +300,12 @@
                 function Q() {
                     return viewEnv.getShowingStatus();
                 }
-                const J = Object.keys(w).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === w[e]), u), {}),
-                    uu = {
+                const J = (() => {
+                        let u = [];
+                        return () => (0 === u.length && (u = Object.keys(viewEnv.getFontsConfig())), u);
+                    })(),
+                    uu = Object.keys(w).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === w[e]), u), {}),
+                    eu = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -308,13 +313,13 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    eu = Promise.all([
+                    tu = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : f.onDomBuilt(u);
                         }),
                         engine.whenReady,
                     ]),
-                    tu = { view: o, client: a, sound: b };
+                    nu = { view: o, client: a, sound: b };
             },
             521: (u, e, t) => {
                 'use strict';
@@ -1132,7 +1137,7 @@
                         return a().createElement('div', L({ className: v()(t, M[o], k[i], O[s]) }, n), e);
                     },
                     H = ['children'];
-                const P = (u) => {
+                const N = (u) => {
                     let e = u.children,
                         t = (function (u, e) {
                             if (null == u) return {};
@@ -1146,8 +1151,8 @@
                         })(u, H);
                     return a().createElement(h, null, a().createElement(I, t, e));
                 };
-                var W = t(403);
-                let N, U;
+                var P = t(403);
+                let W, U;
                 !(function (u) {
                     (u.main = 'main'),
                         (u.primary = 'primary'),
@@ -1155,7 +1160,7 @@
                         (u.primaryRed = 'primaryRed'),
                         (u.secondary = 'secondary'),
                         (u.ghost = 'ghost');
-                })(N || (N = {})),
+                })(W || (W = {})),
                     (function (u) {
                         (u.extraSmall = 'extraSmall'), (u.small = 'small'), (u.medium = 'medium'), (u.large = 'large');
                     })(U || (U = {}));
@@ -1551,7 +1556,7 @@
                                     onMouseLeave: S,
                                     onClick: f,
                                 },
-                                r !== N.ghost &&
+                                r !== W.ghost &&
                                     a().createElement(
                                         a().Fragment,
                                         null,
@@ -1573,7 +1578,7 @@
                             )
                         );
                     };
-                Eu.defaultProps = { type: N.primary, isFocused: !1, soundHover: 'highlight', soundClick: 'play' };
+                Eu.defaultProps = { type: W.primary, isFocused: !1, soundHover: 'highlight', soundClick: 'play' };
                 const Au = (0, n.memo)(Eu),
                     Fu = 'FormatText_base_d0',
                     cu = ({ binding: u, text: e = '', classMix: t, alignment: r = K.left, formatWithBrackets: o }) => {
@@ -1913,12 +1918,12 @@
                         const n = (u + e) % t;
                         return n < 0 ? t + n : n;
                     };
-                function Pu() {
+                function Nu() {
                     return !1;
                 }
                 console.log;
-                var Wu = t(174);
-                function Nu(u, e) {
+                var Pu = t(174);
+                function Wu(u, e) {
                     var t = ('undefined' != typeof Symbol && u[Symbol.iterator]) || u['@@iterator'];
                     if (t) return (t = t.call(u)).next.bind(t);
                     if (
@@ -2013,7 +2018,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var u, t = Nu(a.keys()); !(u = t()).done; ) r(u.value, e);
+                                                        for (var u, t = Wu(a.keys()); !(u = t()).done; ) r(u.value, e);
                                                     },
                                                     unsubscribe: r,
                                                 };
@@ -2037,11 +2042,11 @@
                                                 observableModel: {
                                                     array: (u, e) => {
                                                         const n = null != e ? e : s(u),
-                                                            a = Wu.LO.box(n, { equals: Pu });
+                                                            a = Pu.LO.box(n, { equals: Nu });
                                                         return (
                                                             'real' === t &&
                                                                 i.subscribe(
-                                                                    (0, Wu.aD)((u) => a.set(u)),
+                                                                    (0, Pu.aD)((u) => a.set(u)),
                                                                     u,
                                                                 ),
                                                             a
@@ -2049,11 +2054,11 @@
                                                     },
                                                     object: (u, e) => {
                                                         const n = null != e ? e : s(u),
-                                                            a = Wu.LO.box(n, { equals: Pu });
+                                                            a = Pu.LO.box(n, { equals: Nu });
                                                         return (
                                                             'real' === t &&
                                                                 i.subscribe(
-                                                                    (0, Wu.aD)((u) => a.set(u)),
+                                                                    (0, Pu.aD)((u) => a.set(u)),
                                                                     u,
                                                                 ),
                                                             a
@@ -2063,13 +2068,13 @@
                                                         const n = s(e);
                                                         if (Array.isArray(u)) {
                                                             const a = u.reduce(
-                                                                (u, e) => ((u[e] = Wu.LO.box(n[e], {})), u),
+                                                                (u, e) => ((u[e] = Pu.LO.box(n[e], {})), u),
                                                                 {},
                                                             );
                                                             return (
                                                                 'real' === t &&
                                                                     i.subscribe(
-                                                                        (0, Wu.aD)((e) => {
+                                                                        (0, Pu.aD)((e) => {
                                                                             u.forEach((u) => {
                                                                                 a[u].set(e[u]);
                                                                             });
@@ -2083,13 +2088,13 @@
                                                             const a = u,
                                                                 r = Object.entries(a),
                                                                 o = r.reduce(
-                                                                    (u, [e, t]) => ((u[t] = Wu.LO.box(n[e], {})), u),
+                                                                    (u, [e, t]) => ((u[t] = Pu.LO.box(n[e], {})), u),
                                                                     {},
                                                                 );
                                                             return (
                                                                 'real' === t &&
                                                                     i.subscribe(
-                                                                        (0, Wu.aD)((u) => {
+                                                                        (0, Pu.aD)((u) => {
                                                                             r.forEach(([e, t]) => {
                                                                                 o[t].set(u[e]);
                                                                             });
@@ -2270,13 +2275,13 @@
                                     },
                                     [M, b],
                                 ),
-                                P = (0, n.useCallback)(
+                                N = (0, n.useCallback)(
                                     (u) => {
                                         M && ((L.current.mouseOver = !0), d && d(u));
                                     },
                                     [M, d],
                                 ),
-                                W = (0, n.useCallback)(
+                                P = (0, n.useCallback)(
                                     (u) => {
                                         M &&
                                             S.current &&
@@ -2286,7 +2291,7 @@
                                     },
                                     [M, C],
                                 ),
-                                N = (0, n.useCallback)(
+                                W = (0, n.useCallback)(
                                     (u) => {
                                         M && ((L.current.mouseDown = !0), B && B(u));
                                     },
@@ -2324,10 +2329,10 @@
                                 {
                                     id: u,
                                     className: V,
-                                    onMouseEnter: P,
-                                    onMouseDown: N,
+                                    onMouseEnter: N,
+                                    onMouseDown: W,
                                     onMouseUp: U,
-                                    onMouseLeave: W,
+                                    onMouseLeave: P,
                                     onClick: G,
                                 },
                                 !M && a().createElement('div', { className: ie.disabled }),
@@ -2398,7 +2403,7 @@
                     Ae = 'FieldSeparate_base_78',
                     Fe = 'FieldSeparate_content_6a',
                     ce = (u) => u.reduce((u, e) => ('' !== e ? u + 1 : u), 0),
-                    De = (0, W.Pi)(({ focusingItems: u, className: e, onAllDigitsFilled: t }) => {
+                    De = (0, P.Pi)(({ focusingItems: u, className: e, onAllDigitsFilled: t }) => {
                         const r = zu(),
                             o = r.model,
                             i = r.controls,
@@ -2541,7 +2546,7 @@
                     be = 'Text_line_7d',
                     ve = 'Text_line__bottom_86',
                     pe = R.strings.dialogs.accountCompletion.activate.text(),
-                    we = (0, W.Pi)(({ className: u }) => {
+                    we = (0, P.Pi)(({ className: u }) => {
                         const e = zu().model.root.get().email;
                         return a().createElement(
                             'div',
@@ -2555,7 +2560,7 @@
                     xe = 'Timer_text_b7',
                     Te = 'Timer_textInner_62',
                     ye = 'Timer_button_82',
-                    Se = (0, W.Pi)(({ isFocused: u, canFocusToken: e, onFocusChange: t, className: r }) => {
+                    Se = (0, P.Pi)(({ isFocused: u, canFocusToken: e, onFocusChange: t, className: r }) => {
                         const o = zu(),
                             i = o.model,
                             s = o.controls,
@@ -2583,7 +2588,7 @@
                                         Au,
                                         {
                                             mixClass: ye,
-                                            type: N.secondary,
+                                            type: W.secondary,
                                             size: U.medium,
                                             onClick: s.resend,
                                             isFocused: u,
@@ -2601,9 +2606,9 @@
                     Re = 'App_footer_39',
                     Ie = 'App_divider_e1',
                     He = 'App_warningBox_58',
-                    Pe = 'App_warning_81',
-                    We = 'App_timer_02',
-                    Ne = 'App_button_42';
+                    Ne = 'App_warning_81',
+                    Pe = 'App_timer_02',
+                    We = 'App_button_42';
                 function Ue() {
                     return (
                         (Ue = Object.assign
@@ -2618,7 +2623,7 @@
                         Ue.apply(null, arguments)
                     );
                 }
-                const Ge = (0, W.Pi)(() => {
+                const Ge = (0, P.Pi)(() => {
                     const u = zu(),
                         e = u.model,
                         t = u.controls,
@@ -2721,7 +2726,7 @@
                                             a().createElement(Iu, {
                                                 text: D,
                                                 countDown: d,
-                                                className: Pe,
+                                                className: Ne,
                                                 onCountDownComplete: t.onShowWarning,
                                             }),
                                     ),
@@ -2735,17 +2740,17 @@
                                             Au,
                                             Ue(
                                                 {
-                                                    mixClass: Ne,
+                                                    mixClass: We,
                                                     onClick: t.confirm,
                                                     size: U.medium,
-                                                    type: N.main,
+                                                    type: W.main,
                                                     disabled: !m,
                                                 },
                                                 h[4],
                                             ),
                                             R.strings.dialogs.accountCompletion.submit(),
                                         ),
-                                    a().createElement(Se, Ue({}, h[5], { className: We })),
+                                    a().createElement(Se, Ue({}, h[5], { className: Pe })),
                                 ),
                             ),
                         )
@@ -2759,7 +2764,7 @@
                     });
                 })(
                     a().createElement(
-                        P,
+                        N,
                         null,
                         a().createElement(
                             ju,

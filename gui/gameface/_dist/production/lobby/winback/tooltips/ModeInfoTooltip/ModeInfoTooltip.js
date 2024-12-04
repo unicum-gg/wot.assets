@@ -25,13 +25,14 @@
                         addPreloadTexture: () => H,
                         children: () => o,
                         displayStatus: () => C,
-                        displayStatusIs: () => ae,
-                        events: () => V,
-                        extraSize: () => se,
+                        displayStatusIs: () => se,
+                        events: () => F,
+                        extraSize: () => ue,
                         forceTriggerMouseMove: () => re,
                         freezeTextureBeforeResize: () => K,
                         getBrowserTexturePath: () => $,
                         getDisplayStatus: () => oe,
+                        getFontNames: () => ae,
                         getScale: () => X,
                         getSize: () => Q,
                         getViewGlobalPosition: () => J,
@@ -45,7 +46,7 @@
                         setEventHandled: () => te,
                         setInputPaddingsRem: () => I,
                         setSidePaddingsRem: () => q,
-                        whenTutorialReady: () => ue,
+                        whenTutorialReady: () => de,
                     });
                 var s = t(179),
                     u = t.n(s),
@@ -164,7 +165,7 @@
                     return `url(${j(e, n, t)})`;
                 }
                 const C = { showing: 0, shown: 1, hiding: 2, hidden: 3 },
-                    V = {
+                    F = {
                         onTextureFrozen: f('self.onTextureFrozen'),
                         onTextureReady: f('self.onTextureReady'),
                         onDomBuilt: f('self.onDomBuilt'),
@@ -180,7 +181,7 @@
                             onRequestPosition: f('children.requestPosition'),
                         },
                     },
-                    F = ['args'];
+                    V = ['args'];
                 const M = 2,
                     k = 16,
                     G = 32,
@@ -198,7 +199,7 @@
                                             t[i] = e[i];
                                         }
                                     return t;
-                                })(n, F);
+                                })(n, V);
                             return void 0 !== r
                                 ? viewEnv.handleViewEvent(
                                       Object.assign({ __Type: t, type: e }, o, {
@@ -289,8 +290,12 @@
                 function oe() {
                     return viewEnv.getShowingStatus();
                 }
-                const ae = Object.keys(C).reduce((e, n) => ((e[n] = () => viewEnv.getShowingStatus() === C[n]), e), {}),
-                    se = {
+                const ae = (() => {
+                        let e = [];
+                        return () => (0 === e.length && (e = Object.keys(viewEnv.getFontsConfig())), e);
+                    })(),
+                    se = Object.keys(C).reduce((e, n) => ((e[n] = () => viewEnv.getShowingStatus() === C[n]), e), {}),
+                    ue = {
                         set: (e, n) => {
                             viewEnv.setExtraSizeRem(e, n);
                         },
@@ -298,14 +303,14 @@
                             viewEnv.getExtraSizeRem(e, n);
                         },
                     },
-                    ue = Promise.all([
+                    de = Promise.all([
                         new Promise((e) => {
-                            window.isDomBuilt ? e() : V.onDomBuilt(e);
+                            window.isDomBuilt ? e() : F.onDomBuilt(e);
                         }),
                         engine.whenReady,
                     ]),
-                    de = { view: a, client: r, sound: z };
-                function le() {
+                    le = { view: a, client: r, sound: z };
+                function ce() {
                     const e = (0, s.useRef)(0);
                     var n;
                     return (
@@ -334,15 +339,15 @@
                         )
                     );
                 }
-                const ce = {
+                const ve = {
                         base: 'TooltipDecorator_base_c9',
                         'base__theme-default': 'TooltipDecorator_base__theme-default_6d',
                         decorator: 'TooltipDecorator_decorator_3d',
                     },
-                    ve = ['children', 'className', 'theme'];
-                function fe() {
+                    fe = ['children', 'className', 'theme'];
+                function me() {
                     return (
-                        (fe = Object.assign
+                        (me = Object.assign
                             ? Object.assign.bind()
                             : function (e) {
                                   for (var n = 1; n < arguments.length; n++) {
@@ -351,10 +356,10 @@
                                   }
                                   return e;
                               }),
-                        fe.apply(null, arguments)
+                        me.apply(null, arguments)
                     );
                 }
-                const me = u().forwardRef(function (e, n) {
+                const ge = u().forwardRef(function (e, n) {
                         let t = e.children,
                             i = e.className,
                             r = e.theme,
@@ -368,8 +373,8 @@
                                         t[i] = e[i];
                                     }
                                 return t;
-                            })(e, ve);
-                        const d = le(),
+                            })(e, fe);
+                        const d = ce(),
                             l = u().useRef(null);
                         var c;
                         return (
@@ -379,9 +384,9 @@
                                     if (!e) return;
                                     const n = e.scrollWidth,
                                         t = e.scrollHeight;
-                                    de.view.resize(n, t);
+                                    le.view.resize(n, t);
                                     const i = window.getComputedStyle(e);
-                                    de.view.setSidePaddingsRem({
+                                    le.view.setSidePaddingsRem({
                                         left: parseInt(i.getPropertyValue('padding-left'), 10),
                                         top: parseInt(i.getPropertyValue('padding-top'), 10),
                                         right: parseInt(i.getPropertyValue('padding-right'), 10),
@@ -392,37 +397,37 @@
                             (0, s.useEffect)(c, []),
                             u().createElement(
                                 'div',
-                                fe({}, a, {
-                                    className: v()(ce.base, ce[`base__theme-${o}`], i),
+                                me({}, a, {
+                                    className: v()(ve.base, ve[`base__theme-${o}`], i),
                                     ref: function (e) {
                                         (l.current = e), 'function' == typeof n ? n(e) : n && (n.current = e);
                                     },
                                 }),
-                                u().createElement('div', { className: ce.decorator }, t),
+                                u().createElement('div', { className: ve.decorator }, t),
                             )
                         );
                     }),
-                    ge = 'App_base_0b',
-                    we = 'App_title_00',
-                    pe = 'App_subtitle_f9',
-                    he = 'App_description_19',
-                    be = 'App_description__indent_02',
-                    ye = R.strings.winback.modeInfoTooltip,
-                    Ee = () =>
+                    we = 'App_base_0b',
+                    pe = 'App_title_00',
+                    he = 'App_subtitle_f9',
+                    be = 'App_description_19',
+                    ye = 'App_description__indent_02',
+                    Ee = R.strings.winback.modeInfoTooltip,
+                    Pe = () =>
                         u().createElement(
-                            me,
+                            ge,
                             null,
                             u().createElement(
                                 'div',
-                                { className: ge },
-                                u().createElement('div', { className: we }, ye.title()),
-                                u().createElement('div', { className: v()(he, be) }, ye.description()),
-                                u().createElement('div', { className: pe }, ye.subtitle()),
-                                u().createElement('div', { className: he }, ye.maps()),
+                                { className: we },
+                                u().createElement('div', { className: pe }, Ee.title()),
+                                u().createElement('div', { className: v()(be, ye) }, Ee.description()),
+                                u().createElement('div', { className: he }, Ee.subtitle()),
+                                u().createElement('div', { className: be }, Ee.maps()),
                             ),
                         );
                 engine.whenReady.then(() => {
-                    l().render(u().createElement(Ee, null), document.getElementById('root'));
+                    l().render(u().createElement(Pe, null), document.getElementById('root'));
                 });
             },
         },

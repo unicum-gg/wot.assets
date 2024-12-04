@@ -190,7 +190,7 @@
                     })(A || (A = {}));
             },
             9768: (u, e, F) => {
-                F.d(e, { O: () => Fu });
+                F.d(e, { O: () => Au });
                 var A = {};
                 F.r(A),
                     F.d(A, { mouse: () => o, off: () => a, on: () => n, onResize: () => C, onScaleUpdated: () => r });
@@ -224,27 +224,28 @@
                         addPreloadTexture: () => R,
                         children: () => D,
                         displayStatus: () => S,
-                        displayStatusIs: () => X,
+                        displayStatusIs: () => uu,
                         events: () => p,
-                        extraSize: () => uu,
-                        forceTriggerMouseMove: () => K,
+                        extraSize: () => eu,
+                        forceTriggerMouseMove: () => J,
                         freezeTextureBeforeResize: () => U,
                         getBrowserTexturePath: () => j,
-                        getDisplayStatus: () => N,
+                        getDisplayStatus: () => K,
+                        getFontNames: () => X,
                         getScale: () => $,
                         getSize: () => G,
-                        getViewGlobalPosition: () => k,
-                        isEventHandled: () => J,
+                        getViewGlobalPosition: () => V,
+                        isEventHandled: () => N,
                         isFocused: () => q,
                         pxToRem: () => I,
                         remToPx: () => Q,
-                        resize: () => V,
+                        resize: () => k,
                         sendEvent: () => W,
                         setAnimateWindow: () => Z,
                         setEventHandled: () => Y,
                         setInputPaddingsRem: () => z,
                         setSidePaddingsRem: () => M,
-                        whenTutorialReady: () => eu,
+                        whenTutorialReady: () => Fu,
                     });
                 const C = B('clientResized'),
                     r = B('self.onScaleUpdated'),
@@ -434,10 +435,10 @@
                 function G(u = 'px') {
                     return 'rem' === u ? viewEnv.getViewSizeRem() : viewEnv.getViewSizePx();
                 }
-                function V(u, e, F = 'px') {
+                function k(u, e, F = 'px') {
                     return 'rem' === F ? viewEnv.resizeViewRem(u, e) : viewEnv.resizeViewPx(u, e);
                 }
-                function k(u = 'rem') {
+                function V(u = 'rem') {
                     const e = viewEnv.getViewGlobalPositionRem();
                     return 'rem' === u ? e : { x: Q(e.x), y: Q(e.y) };
                 }
@@ -462,17 +463,21 @@
                 function Y() {
                     return viewEnv.setEventHandled();
                 }
-                function J() {
+                function N() {
                     return viewEnv.isEventHandled();
                 }
-                function K() {
+                function J() {
                     viewEnv.forceTriggerMouseMove();
                 }
-                function N() {
+                function K() {
                     return viewEnv.getShowingStatus();
                 }
-                const X = Object.keys(S).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === S[e]), u), {}),
-                    uu = {
+                const X = (() => {
+                        let u = [];
+                        return () => (0 === u.length && (u = Object.keys(viewEnv.getFontsConfig())), u);
+                    })(),
+                    uu = Object.keys(S).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === S[e]), u), {}),
+                    eu = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -480,13 +485,13 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    eu = Promise.all([
+                    Fu = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : p.onDomBuilt(u);
                         }),
                         engine.whenReady,
                     ]),
-                    Fu = { view: t, client: E, sound: w };
+                    Au = { view: t, client: E, sound: w };
             },
             6536: (u, e, F) => {
                 F(6179);

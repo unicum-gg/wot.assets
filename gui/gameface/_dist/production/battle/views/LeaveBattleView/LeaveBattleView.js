@@ -183,13 +183,14 @@
                         addPreloadTexture: () => s,
                         children: () => n,
                         displayStatus: () => r.W,
-                        displayStatusIs: () => b,
+                        displayStatusIs: () => y,
                         events: () => i.U,
-                        extraSize: () => y,
+                        extraSize: () => x,
                         forceTriggerMouseMove: () => w,
                         freezeTextureBeforeResize: () => D,
                         getBrowserTexturePath: () => E,
                         getDisplayStatus: () => f,
+                        getFontNames: () => b,
                         getScale: () => B,
                         getSize: () => A,
                         getViewGlobalPosition: () => _,
@@ -203,7 +204,7 @@
                         setEventHandled: () => v,
                         setInputPaddingsRem: () => l,
                         setSidePaddingsRem: () => F,
-                        whenTutorialReady: () => x,
+                        whenTutorialReady: () => T,
                     });
                 var n = t(3722),
                     r = t(6112),
@@ -265,11 +266,15 @@
                 function f() {
                     return viewEnv.getShowingStatus();
                 }
-                const b = Object.keys(r.W).reduce(
+                const b = (() => {
+                        let u = [];
+                        return () => (0 === u.length && (u = Object.keys(viewEnv.getFontsConfig())), u);
+                    })(),
+                    y = Object.keys(r.W).reduce(
                         (u, e) => ((u[e] = () => viewEnv.getShowingStatus() === r.W[e]), u),
                         {},
                     ),
-                    y = {
+                    x = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -277,7 +282,7 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    x = Promise.all([
+                    T = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : i.U.onDomBuilt(u);
                         }),
@@ -734,7 +739,7 @@
                         getFormattedDateTime: (u, e, t = !0) => regionalDateTime.getFormattedDateTime(u, e, t),
                     };
             },
-            4266: (u, e, t) => {
+            3994: (u, e, t) => {
                 var n = t(6179),
                     r = t.n(n),
                     i = t(493),
@@ -1308,11 +1313,11 @@
                         )
                     );
                 };
-                let U;
+                let j;
                 !(function (u) {
                     (u.backport = 'backport'), (u.normal = 'normal'), (u.absent = 'absent');
-                })(U || (U = {}));
-                const j = (0, n.memo)(
+                })(j || (j = {}));
+                const U = (0, n.memo)(
                     ({ onClick: u, isFocused: e, buttonID: t, isDisabled: i, label: o, tooltip: a, type: s }) => {
                         const l = (0, n.useCallback)(() => {
                                 u({ buttonID: t });
@@ -1322,14 +1327,14 @@
                                     (u = a.type),
                                     (e = { buttonID: t }),
                                     {
-                                        isEnabled: u !== U.absent,
+                                        isEnabled: u !== j.absent,
                                         args: e,
                                         contentId: R.views.dialogs.common.DialogTemplateGenericTooltip('resId'),
                                         decoratorId:
-                                            u === U.normal
+                                            u === j.normal
                                                 ? R.views.common.tooltip_window.tooltip_window.TooltipWindow('resId')
                                                 : void 0,
-                                        ignoreShowDelay: u === U.backport,
+                                        ignoreShowDelay: u === j.backport,
                                         ignoreMouseClick: !0,
                                     }
                                 );
@@ -1337,7 +1342,7 @@
                             }, [a.type, t]),
                             c = p()(
                                 'DialogTemplateButton_label_83',
-                                a.type !== U.absent && 'DialogTemplateButton_label__noTooltip_14',
+                                a.type !== j.absent && 'DialogTemplateButton_label__noTooltip_14',
                             );
                         return r().createElement(
                             M,
@@ -1395,7 +1400,7 @@
                                 'div',
                                 { className: 'DialogTemplateButtonList_base_8e' },
                                 o.map(({ value: e }, n) =>
-                                    r().createElement(j, G({ key: e.buttonID, isFocused: n === t, onClick: u }, e)),
+                                    r().createElement(U, G({ key: e.buttonID, isFocused: n === t, onClick: u }, e)),
                                 ),
                             )
                         );
@@ -2196,6 +2201,6 @@
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             t.forEach(e.bind(null, 0)), (t.push = e.bind(null, t.push.bind(t)));
         })();
-    var __webpack_exports__ = __webpack_require__.O(void 0, [503], () => __webpack_require__(4266));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [503], () => __webpack_require__(3994));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

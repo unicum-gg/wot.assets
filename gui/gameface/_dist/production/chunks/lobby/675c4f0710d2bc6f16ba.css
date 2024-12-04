@@ -1,0 +1,606 @@
+.LevelsRewards_base_64 {
+    display: flex;
+    justify-content: center;
+    flex: 1 0 auto;
+    align-self: center;
+    padding: 44rem 0 35rem;
+}
+.mediaMedium .LevelsRewards_base_64 {
+    padding-top: 55rem;
+}
+.mediaLarge .LevelsRewards_base_64 {
+    padding: 20rem 0 40rem;
+}
+
+.Reward_base_ea {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.Reward_base__s48x48_46,
+.Reward_base__small_c0 {
+    width: 48rem;
+    height: 48rem;
+}
+
+.Reward_base__s80x80_ce,
+.Reward_base__big_e5 {
+    width: 80rem;
+    height: 80rem;
+}
+
+.Reward_base__s128x100_c3 {
+    width: 128rem;
+    height: 100rem;
+}
+
+.Reward_base__s180x135_7c {
+    width: 180rem;
+    height: 135rem;
+}
+
+.Reward_base__s232x174_67 {
+    width: 232rem;
+    height: 174rem;
+}
+
+.Reward_base__s296x222_78 {
+    width: 296rem;
+    height: 222rem;
+}
+
+.Reward_base__s400x300_07 {
+    width: 400rem;
+    height: 300rem;
+}
+
+.Reward_base__s600x450_f8 {
+    width: 600rem;
+    height: 450rem;
+}
+
+.Reward_tooltipWrapper_b5 {
+    height: 100%;
+}
+
+.Reward_icon_df {
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    position: relative;
+    z-index: 1;
+}
+
+.Reward_overlay_68 {
+    background: no-repeat center / 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+.Reward_base__s48x48_46 .Reward_overlay_68,
+.Reward_base__small_c0 .Reward_overlay_68 {
+    width: 96rem;
+    height: 96rem;
+    background-size: 100%;
+    overflow: visible;
+}
+
+.Reward_base__s80x80_ce .Reward_overlay_68,
+.Reward_base__big_e5 .Reward_overlay_68 {
+    width: 128rem;
+    height: 128rem;
+}
+
+.Reward_base__s180x135_7c .Reward_overlay_68 {
+    width: 266rem;
+    height: 241rem;
+}
+
+.Reward_base__s232x174_67 .Reward_overlay_68 {
+    width: 344rem;
+    height: 312rem;
+}
+
+.Reward_base__s296x222_78 .Reward_overlay_68 {
+    width: 450rem;
+    height: 408rem;
+}
+
+.Reward_base__s400x300_07 .Reward_overlay_68 {
+    width: 618rem;
+    height: 590rem;
+}
+
+.Reward_base__s600x450_f8 .Reward_overlay_68 {
+    width: 670rem;
+    height: 575rem;
+}
+
+.Reward_highlight_36 {
+    width: 100%;
+    height: 100%;
+    background: no-repeat center / contain;
+    position: absolute;
+    z-index: 0;
+}
+
+.Reward_image_89 {
+    position: relative;
+}
+
+.Reward_info_72 {
+    color: #e9e2bf;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    margin-top: -13rem;
+    text-align: center;
+    z-index: 1;
+}
+
+.Reward_base__s48x48_46 .Reward_info_72,
+.Reward_base__small_c0 .Reward_info_72 {
+    margin: -10rem -10rem 0;
+}
+
+.Reward_info__multi_63 {
+    margin-right: 2rem;
+    text-align: right;
+}
+
+.Reward_base__s48x48_46 .Reward_info__multi_63,
+.Reward_base__small_c0 .Reward_info__multi_63 {
+    margin-right: 0;
+}
+
+.Reward_info__credits_ef {
+    color: #ced9d9;
+}
+
+.Reward_info__gold_36 {
+    color: #ffc363;
+}
+
+.Reward_info__crystal_36 {
+    color: #c9c9b6;
+}
+
+.Reward_info__premiumTank_d3 {
+    color: #ffdd99;
+}
+
+.Reward_title_36 {
+    color: #e9e2bf;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    max-width: 80rem;
+    margin: -13rem -16rem 0;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+
+.mediaMedium .Reward_title_36 {
+    max-width: 100rem;
+    margin-left: -10rem;
+    margin-right: -10rem;
+}
+
+.Reward_timer_d3 {
+    background: no-repeat center / contain;
+    position: absolute;
+    z-index: 1;
+}
+
+.Reward_base__s48x48_46 .Reward_timer_d3,
+.Reward_base__small_c0 .Reward_timer_d3 {
+    width: 23rem;
+    height: 23rem;
+    background-image: url('R.images.gui.maps.icons.quests.bonuses.small.timer');
+    top: -6rem;
+    right: -6rem;
+}
+
+.Reward_base__s80x80_ce .Reward_timer_d3,
+.Reward_base__big_e5 .Reward_timer_d3 {
+    width: 48rem;
+    height: 48rem;
+    background-image: url('R.images.gui.maps.icons.quests.bonuses.big.timer');
+    top: -14rem;
+    right: -14rem;
+}
+
+.Rewards_base_26 {
+    display: flex;
+}
+
+.Rewards_base__vertical_9f {
+    flex-direction: column;
+}
+
+.Rewards_reward_7b {
+    margin: 0 10rem;
+}
+
+.Rewards_reward__vertical_c6 {
+    margin: 15rem 0;
+}
+
+.RewardsColumn_base_dd {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1 1 auto;
+    width: 90rem;
+    margin-right: 2rem;
+    position: relative;
+}
+.mediaSmall .RewardsColumn_base_dd {
+    width: 100rem;
+}
+.mediaMedium .RewardsColumn_base_dd {
+    width: 110rem;
+}
+.mediaLarge .RewardsColumn_base_dd {
+    width: 158rem;
+}
+.mediaExtraLarge .RewardsColumn_base_dd {
+    width: 170rem;
+}
+
+.RewardsColumn_background_f8 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    mask-image: linear-gradient(180deg, transparent 3%, #000000 37%, #000000 58%, transparent 97%);
+    height: 480rem;
+    background-color: rgba(0, 87, 255, 0.1);
+}
+
+.mediaLarge .RewardsColumn_background_f8 {
+    height: 760rem;
+}
+
+.RewardsColumn_background__current_56 {
+    background-color: rgba(0, 163, 255, 0.25);
+}
+
+.RewardsColumn_background__disabled_77 {
+    background-color: rgba(0, 102, 255, 0.15);
+}
+
+.RewardsColumn_backgroundPattern_50 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border: 1rem solid rgba(151, 186, 255, 0.7);
+    background: url('R.images.gui.maps.icons.newYear.rewards_info.column.pattern'), rgba(0, 87, 255, 0.05);
+    opacity: 0.15;
+}
+
+.RewardsColumn_backgroundPattern__current_10 {
+    background: url('R.images.gui.maps.icons.newYear.rewards_info.column.pattern'), rgba(0, 87, 255, 0.3);
+    opacity: 0.35;
+}
+
+.RewardsColumn_backgroundPattern__disabled_b6 {
+    background: url('R.images.gui.maps.icons.newYear.rewards_info.column.pattern'), rgba(0, 87, 255, 0.15);
+    opacity: 0.25;
+}
+
+.RewardsColumn_rewards_2a {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20rem;
+    opacity: 0.5;
+}
+
+.mediaLarge .RewardsColumn_rewards_2a {
+    margin-top: 30rem;
+}
+
+.RewardsColumn_rewards__disabled_5b {
+    opacity: 1;
+}
+
+.RewardsColumn_rewardItem_47 {
+    margin: 8rem 0;
+}
+
+.mediaMedium .RewardsColumn_rewardItem_47 {
+    margin: 10rem 0;
+}
+
+.Bridge_base_aa {
+    width: 32rem;
+    height: 2rem;
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0.2) 6rem,
+        transparent 6rem,
+        transparent 26rem,
+        rgba(255, 255, 255, 0.2) 26rem
+    );
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(-50%, -50%);
+}
+.mediaSmall .Bridge_base_aa {
+    width: 41rem;
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0.2) 10rem,
+        transparent 10rem,
+        transparent 31rem,
+        rgba(255, 255, 255, 0.2) 31rem
+    );
+}
+.mediaMedium .Bridge_base_aa {
+    width: 51rem;
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0.2) 15rem,
+        transparent 15rem,
+        transparent 36rem,
+        rgba(255, 255, 255, 0.2) 36rem
+    );
+}
+.mediaLarge .Bridge_base_aa {
+    width: 67rem;
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0.2) 23rem,
+        transparent 23rem,
+        transparent 44rem,
+        rgba(255, 255, 255, 0.2) 44rem
+    );
+}
+.mediaExtraLarge .Bridge_base_aa {
+    width: 71rem;
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0.2) 25rem,
+        transparent 25rem,
+        transparent 46rem,
+        rgba(255, 255, 255, 0.2) 46rem
+    );
+}
+.Bridge_base__achieved_a3 {
+    background: none !important;
+    background-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.Bridge_lock_38 {
+    width: 18rem;
+    height: 18rem;
+    background: url('R.images.gui.maps.icons.newYear.rewards_info.header.lock') no-repeat center / contain;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes RewardsHeader_slideInFadeIn_61 {
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+@keyframes RewardsHeader_fadeOut_9f {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes RewardsHeader_fadeIn_fd {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+@keyframes RewardsHeader_fadeInWithScale_a4 {
+    0% {
+        opacity: 0;
+        transform: scale(1.2);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@keyframes RewardsHeader_slideUp_bb {
+    0% {
+        opacity: 0;
+        transform: translateY(20rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes RewardsHeader_scale_71 {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+@keyframes RewardsHeader_spin_9f {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+@keyframes RewardsHeader_blink_2c {
+    0% {
+        transform: translateY(0rem);
+    }
+
+    100% {
+        transform: translateY(15rem);
+    }
+}
+@keyframes RewardsHeader_slideInNotification_fc {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.RewardsHeader_base_2a {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+.RewardsHeader_level_3f {
+    width: 36rem;
+    height: 36rem;
+    position: relative;
+}
+.mediaLarge .RewardsHeader_level_3f {
+    width: 52rem;
+    height: 52rem;
+}
+.mediaExtraLarge .RewardsHeader_level_3f {
+    width: 62rem;
+    height: 62rem;
+}
+.RewardsHeader_border_65 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    border: 2rem solid rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    z-index: 1;
+}
+.RewardsHeader_border__current_91 {
+    border-color: rgba(255, 255, 255, 0.7);
+}
+.RewardsHeader_border__disabled_48 {
+    border-color: rgba(255, 255, 255, 0.4);
+}
+.RewardsHeader_backlight_57 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 64rem;
+    height: 64rem;
+    background: radial-gradient(50% 50% at 50% 50%, #006eff 0%, rgba(255, 255, 255, 0) 100%);
+    opacity: 0.5;
+    mix-blend-mode: normal;
+    top: 18rem;
+}
+.mediaLarge .RewardsHeader_backlight_57 {
+    width: 90rem;
+    height: 90rem;
+    top: 26rem;
+}
+.mediaExtraLarge .RewardsHeader_backlight_57 {
+    width: 110rem;
+    height: 110rem;
+    top: 32rem;
+}
+.RewardsHeader_backlight__small_ce {
+    width: 48rem;
+    height: 48rem;
+}
+.mediaLarge .RewardsHeader_backlight__small_ce {
+    width: 66rem;
+    height: 66rem;
+}
+.mediaExtraLarge .RewardsHeader_backlight__small_ce {
+    width: 80rem;
+    height: 80rem;
+}
+.RewardsHeader_textWrapper_b5 {
+    width: 100%;
+    height: 100%;
+}
+.RewardsHeader_levelText_35 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding-bottom: 2rem;
+    color: #ffffff;
+    font-family: DINRoundPro;
+    font-size: 17rem;
+    font-weight: 700;
+    font-style: normal;
+    text-align: center;
+    opacity: 0.6;
+    z-index: 2;
+}
+.mediaLarge .RewardsHeader_levelText_35 {
+    font-size: 24rem;
+}
+.mediaExtraLarge .RewardsHeader_levelText_35 {
+    font-size: 30rem;
+}
+.RewardsHeader_levelText__current_34,
+.RewardsHeader_levelText__disabled_eb {
+    opacity: 1;
+}
+.RewardsHeader_levelText__current_34 {
+    color: #e9fef9;
+    text-shadow:
+        0 0 3px #9eb4ee,
+        0 0 6px #9391ed,
+        0 0 10px #a99eec;
+}
+
+.NyRewardsInfoView_base_bb {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    padding-top: 90rem;
+    background: #000 url('R.images.gui.maps.icons.newYear.common.main_background') no-repeat center / cover;
+    position: relative;
+}
+.mediaMedium .NyRewardsInfoView_base_bb {
+    padding-top: 55rem;
+}
+.mediaLarge .NyRewardsInfoView_base_bb {
+    padding-top: 130rem;
+}
+.mediaExtraLarge .NyRewardsInfoView_base_bb {
+    padding-top: 20rem;
+}

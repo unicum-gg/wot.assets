@@ -2,7 +2,7 @@
     'use strict';
     var __webpack_modules__ = {
             768: (u, e, t) => {
-                t.d(e, { O: () => tu });
+                t.d(e, { O: () => nu });
                 var n = {};
                 t.r(n),
                     t.d(n, { mouse: () => C, off: () => s, on: () => D, onResize: () => o, onScaleUpdated: () => a });
@@ -35,20 +35,21 @@
                         addModelObserver: () => I,
                         addPreloadTexture: () => x,
                         children: () => E,
-                        displayStatus: () => p,
-                        displayStatusIs: () => J,
-                        events: () => g,
-                        extraSize: () => uu,
+                        displayStatus: () => g,
+                        displayStatusIs: () => uu,
+                        events: () => p,
+                        extraSize: () => eu,
                         forceTriggerMouseMove: () => X,
                         freezeTextureBeforeResize: () => K,
                         getBrowserTexturePath: () => N,
                         getDisplayStatus: () => Q,
-                        getScale: () => q,
+                        getFontNames: () => J,
+                        getScale: () => j,
                         getSize: () => U,
                         getViewGlobalPosition: () => W,
                         isEventHandled: () => Z,
                         isFocused: () => $,
-                        pxToRem: () => j,
+                        pxToRem: () => q,
                         remToPx: () => G,
                         resize: () => z,
                         sendEvent: () => S,
@@ -56,7 +57,7 @@
                         setEventHandled: () => Y,
                         setInputPaddingsRem: () => L,
                         setSidePaddingsRem: () => V,
-                        whenTutorialReady: () => eu,
+                        whenTutorialReady: () => tu,
                     });
                 const o = i('clientResized'),
                     a = i('self.onScaleUpdated'),
@@ -157,8 +158,8 @@
                 function b(u, e, t) {
                     return `url(${f(u, e, t)})`;
                 }
-                const p = { showing: 0, shown: 1, hiding: 2, hidden: 3 },
-                    g = {
+                const g = { showing: 0, shown: 1, hiding: 2, hidden: 3 },
+                    p = {
                         onTextureFrozen: i('self.onTextureFrozen'),
                         onTextureReady: i('self.onTextureReady'),
                         onDomBuilt: i('self.onDomBuilt'),
@@ -256,10 +257,10 @@
                 function K() {
                     viewEnv.freezeTextureBeforeResize();
                 }
-                function q() {
+                function j() {
                     return viewEnv.getScale();
                 }
-                function j(u) {
+                function q(u) {
                     return viewEnv.pxToRem(u);
                 }
                 function G(u) {
@@ -283,8 +284,12 @@
                 function Q() {
                     return viewEnv.getShowingStatus();
                 }
-                const J = Object.keys(p).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === p[e]), u), {}),
-                    uu = {
+                const J = (() => {
+                        let u = [];
+                        return () => (0 === u.length && (u = Object.keys(viewEnv.getFontsConfig())), u);
+                    })(),
+                    uu = Object.keys(g).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === g[e]), u), {}),
+                    eu = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -292,13 +297,13 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    eu = Promise.all([
+                    tu = Promise.all([
                         new Promise((u) => {
-                            window.isDomBuilt ? u() : g.onDomBuilt(u);
+                            window.isDomBuilt ? u() : p.onDomBuilt(u);
                         }),
                         engine.whenReady,
                     ]),
-                    tu = { view: A, client: F, sound: m };
+                    nu = { view: A, client: F, sound: m };
             },
             358: (u, e, t) => {
                 t.d(e, { Z: () => E });
@@ -603,7 +608,7 @@
                     };
                 var f = t(572);
                 const b = F.instance,
-                    p = {
+                    g = {
                         DataTracker: E.Z,
                         ViewModel: f.Z,
                         ViewEventType: r,
@@ -685,7 +690,7 @@
                         SystemLocale: A,
                         UserLocale: i,
                     };
-                window.ViewEnvHelper = p;
+                window.ViewEnvHelper = g;
             },
             874: (u, e, t) => {
                 var n = t(179),
@@ -862,13 +867,13 @@
                         (u.ThinSmall = 'thinSmall'),
                         (u.ThinExtraSmall = 'thinExtraSmall');
                 })(b || (b = {}));
-                const p = {
+                const g = {
                         '302*152': b.Big,
                         '302*114': b.WideSmall,
                         '222*114': b.ThinSmall,
                         '162*114': b.ThinExtraSmall,
                     },
-                    g = (u) => {
+                    p = (u) => {
                         const e = ((u) => {
                                 const e = new Date(1e3 * u);
                                 return { day: e.getDate(), month: e.getMonth() };
@@ -891,7 +896,7 @@
                         const u = h(),
                             e = u.endDate,
                             t = u.onActionClick,
-                            E = g(e),
+                            E = p(e),
                             A = (0, n.useState)(!1),
                             i = A[0],
                             o = A[1],
@@ -905,7 +910,7 @@
                         return (
                             (0, n.useEffect)(() => {
                                 const u = (u) => {
-                                    const e = p[`${u.width}*${u.height}`];
+                                    const e = g[`${u.width}*${u.height}`];
                                     e && B(e);
                                 };
                                 return (

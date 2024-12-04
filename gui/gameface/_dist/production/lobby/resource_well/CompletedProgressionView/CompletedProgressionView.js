@@ -209,13 +209,14 @@
                         addPreloadTexture: () => A,
                         children: () => n,
                         displayStatus: () => a.W,
-                        displayStatusIs: () => b,
+                        displayStatusIs: () => x,
                         events: () => r.U,
-                        extraSize: () => x,
+                        extraSize: () => L,
                         forceTriggerMouseMove: () => p,
                         freezeTextureBeforeResize: () => d,
                         getBrowserTexturePath: () => s,
                         getDisplayStatus: () => f,
+                        getFontNames: () => b,
                         getScale: () => C,
                         getSize: () => D,
                         getViewGlobalPosition: () => B,
@@ -229,7 +230,7 @@
                         setEventHandled: () => w,
                         setInputPaddingsRem: () => o,
                         setSidePaddingsRem: () => l,
-                        whenTutorialReady: () => L,
+                        whenTutorialReady: () => T,
                     });
                 var n = t(3722),
                     a = t(6112),
@@ -291,11 +292,15 @@
                 function f() {
                     return viewEnv.getShowingStatus();
                 }
-                const b = Object.keys(a.W).reduce(
+                const b = (() => {
+                        let u = [];
+                        return () => (0 === u.length && (u = Object.keys(viewEnv.getFontsConfig())), u);
+                    })(),
+                    x = Object.keys(a.W).reduce(
                         (u, e) => ((u[e] = () => viewEnv.getShowingStatus() === a.W[e]), u),
                         {},
                     ),
-                    x = {
+                    L = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -303,7 +308,7 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    L = Promise.all([
+                    T = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : r.U.onDomBuilt(u);
                         }),
@@ -869,7 +874,7 @@
                         getFormattedDateTime: (u, e, t = !0) => regionalDateTime.getFormattedDateTime(u, e, t),
                     };
             },
-            8860: (u, e, t) => {
+            9138: (u, e, t) => {
                 'use strict';
                 var n = t(6179),
                     a = t.n(n);
@@ -1344,19 +1349,19 @@
                 var $ = t(9916),
                     V = t(8613);
                 Date.now(), V.Ew.getRegionalDateTime, V.Ew.getFormattedDateTime;
-                var z = t(7902);
-                const j = (u, e) => u.split('.').reduce((u, e) => u && u[e], e),
+                var j = t(7902);
+                const z = (u, e) => u.split('.').reduce((u, e) => u && u[e], e),
                     q = (u) => u && 'ArrayItem' === u.__proto__.constructor.name,
                     K = (u, e) => (u.length > 0 ? `${u}.${e}` : e),
                     Y = (u) =>
                         ((u, e) =>
                             u.split('.').reduce((u, t) => {
-                                const n = j(`${u}.${t}`, window);
+                                const n = z(`${u}.${t}`, window);
                                 return q(n) ? e(u, t, n) : `${u}.${t}`;
                             }))(u, (u, e) => `${u}.${e}.value`),
                     X = (u) => {
                         const e = ((u) => {
-                                const e = (0, z.F)(),
+                                const e = (0, j.F)(),
                                     t = e.caller,
                                     n = e.resId,
                                     a = window.__feature && window.__feature !== t && t ? `subViews.${t}` : '';
@@ -1368,7 +1373,7 @@
                             const u = [n[0]];
                             return (
                                 n.reduce((e, n) => {
-                                    const a = j(K(t, `${e}.${n}`), window);
+                                    const a = z(K(t, `${e}.${n}`), window);
                                     return q(a) ? (u.push(a.id), `${e}.${n}.value`) : (u.push(n), `${e}.${n}`);
                                 }),
                                 u.reduce((u, e) => u + '.' + e)
@@ -1384,7 +1389,7 @@
                 const J = (u = 'model', e = Q.Deep) => {
                     const t = (0, n.useState)(0),
                         a = (t[0], t[1]),
-                        r = (0, n.useMemo)(() => (0, z.F)(), []),
+                        r = (0, n.useMemo)(() => (0, j.F)(), []),
                         i = r.caller,
                         E = r.resId,
                         A = (0, n.useMemo)(
@@ -1393,7 +1398,7 @@
                         ),
                         o = (0, n.useState)(() =>
                             ((u) => {
-                                const e = j(u, window);
+                                const e = z(u, window);
                                 for (const u in e) 'function' == typeof e[u] && (e[u] = e[u].bind(e));
                                 return q(e) ? e.value : e;
                             })(Y(A)),
@@ -2155,6 +2160,6 @@
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             t.forEach(e.bind(null, 0)), (t.push = e.bind(null, t.push.bind(t)));
         })();
-    var __webpack_exports__ = __webpack_require__.O(void 0, [52], () => __webpack_require__(8860));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [52], () => __webpack_require__(9138));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

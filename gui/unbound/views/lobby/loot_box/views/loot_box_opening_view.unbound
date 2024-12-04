@@ -1,0 +1,158 @@
+(def layout LootBoxOpeningView() entrance=true hideBeforeResolve=true
+    (name = 'LootBoxOpeningView')
+    (macro LootBoxOpeningModel)
+    (scope
+        (const TIMESTAMPS:dict = {
+                'opening': 0.000,
+                'opening_special': 4.000,
+                'reload': 8.000,
+                'reload_guest_c': 9.000
+            }
+        )
+        (const BLUR_MAX:number = 8)
+
+        (event evOnVideoLoaded)
+        (var isVideoLoaded:bool = false)
+        (bind isVideoLoaded true init=false
+            (event "evOnVideoLoaded")
+        )
+
+        (var timestamps:dict = "TIMESTAMPS")
+        (var boxName:str = "boxCategory")
+        (var withSpecialReward:bool = "specialRewardType != '' && specialRewardType != 'GuestCRewardKitCongrats' && specialRewardType != 'ModernizedEquipmentRewardKitCongrats'")
+        (var blurValue:number = 0)
+        (var marginTopValue:number = 0)
+        (bind blurValue "BLUR_MAX" init=false
+            (bind enabled "(isVideoOff || isForcedToEnd) && !isIdleGuestCVisible")
+        )
+        (controller $Animation
+            (bindcall play delay=0.5 duration=1 from="{blurValue:0}" to="{blurValue:BLUR_MAX}"
+                init=false watch=false
+                (event "onNeedShowRewards")
+            )
+            (bindcall play duration=0.3 from="{blurValue:BLUR_MAX}" to="{blurValue:0}"
+                init=false watch=false
+                (bind enabled "isReloading")
+            )
+            (bindcall play duration=0.3 from="{marginTopValue:100px}" to="{marginTopValue:0px}"
+                init=false watch=false
+                (bind enabled "specialRewardType != 'GuestCRewardKitCongrats' && isIdleGuestCVisible")
+            )
+            (bind enabled "!isVideoOff")
+        )
+    )
+    (style
+        (macro ViewResizeBindedSize)
+        (alpha = 0)
+        (bind alpha 1
+            (bind enabled "isVideoLoaded")
+        )
+        (filters
+            (blur
+                (bind blurX "blurValue")
+                (bind blurY "blurValue")
+                (bind blurX 0 init=false
+                    (event "onReloadEnd")
+                )
+                (bind blurY 0 init=false
+                    (event "onReloadEnd")
+                )
+            )
+        )
+    )
+
+    (dispatch onOpeningStart
+        (bind enabled "isVideoLoaded && isOpening && !isVideoOff")
+    )
+
+    (block
+        (name = 'bgBlock')
+        (class AbsPositionFullSizeStyle)
+        (style
+            (backgroundColor = 0xFF120A0D)
+        )
+    )
+
+    (element BackgroundVideoAnimation
+        (name = 'video')
+        (style
+            (bind marginTop "marginTopValue"
+                (bind enabled "marginTopValue")
+             )
+        )
+        (scope
+            (fitVideo = true)
+            (bind bufferLength "streamBufferLength")
+            (bind mainSource "R.videos.new_year.usm.lootboxes.opening[boxName]()" init=false)
+            (bind idleSource "isIdleGuestCVisible ? R.videos.new_year.usm.lootboxes.opening.idles.guestC[boxName]() : R.videos.new_year.usm.lootboxes.opening.idles[boxName]()" init=false)
+            (bind marginTopValue "isIdleGuestCVisible ? 100px : 0px" init=false)
+            (bind viewWidth "viewSize.width"
+                (event "viewResized")
+            )
+            (bind blurValue "0"
+                (bind enabled "isIdleGuestCVisible")
+            )
+            (bind viewHeight "viewSize.height"
+                (event "viewResized")
+            )
+            (bind transitionStart "withSpecialReward ? timestamps.opening_special : timestamps.opening"
+                (bind enabled "isOpening")
+            )
+            (bind transitionStart "isIdleGuestCVisible ? timestamps.reload_guest_c : timestamps.reload"
+                (bind enabled "isReloading")
+            )
+            (bind showTransition true
+                (bind enabled "isOpening")
+            )
+            (bind transitionStartIdle "10.000")
+            (bind showTransition true init=false
+                (bind enabled "isReloading")
+            )
+            (bind showTransition false init=false
+                (bind enabled "isVideoOff || isForcedToEnd")
+            )
+            (bind showIdle false
+                (bind enabled "isReloading")
+            )
+            (bind showIdle true init=false
+                (enabled = "!isForcedToEnd")
+                (event "onNeedShowRewards")
+            )
+            (dispatch evOnVideoLoaded on='evSeekCompleted'
+                (enabled = "!isVideoLoaded")
+            )
+            (dispatch onOpeningEnd on='evOnTransitionEnd'
+                (enabled = "isOpening")
+            )
+            (dispatch onReloadEnd on='evOnTransitionEnd'
+                (enabled = "isReloading")
+            )
+            (dispatch onVideoOffViewReady
+                init=false
+                (enabled = "isVideoOff")
+                (event "evOnVideoLoaded")
+            )
+            (dispatch pauseVideoPlayback dir=2
+                (event "evOnVideoLoaded")
+                (bind enabled "isVideoOff || !isWindowAccessible")
+            )
+            (dispatch resumeVideoPlayback dir=2
+                (bind enabled "!isVideoOff && isWindowAccessible")
+            )
+            (dispatch onNeedShowRewards on='evOnKeyPointReached'
+                (enabled = "isOpening")
+            )
+            (dispatch onNeedShowRewards
+                init=false
+                (bind enabled "isForcedToEnd && isVideoLoaded")
+            )
+            (bind showIdle true
+                init=false
+                (bind enabled "isForcedToEnd && isVideoLoaded")
+            )
+            (dispatch onLoadError on='evLoadError')
+        )
+    )
+    (macro NoTabAndMouse)
+    (macro EmptyHitAreaMacro)
+)

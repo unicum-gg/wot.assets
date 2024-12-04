@@ -17,21 +17,22 @@
                         setRTPC: () => T,
                     });
                 var o = {};
-                t.r(o), t.d(o, { getBgUrl: () => M, getTextureUrl: () => F });
+                t.r(o), t.d(o, { getBgUrl: () => V, getTextureUrl: () => N });
                 var a = {};
                 t.r(a),
                     t.d(a, {
                         addModelObserver: () => Q,
                         addPreloadTexture: () => $,
                         children: () => o,
-                        displayStatus: () => N,
-                        displayStatusIs: () => ce,
-                        events: () => k,
-                        extraSize: () => ue,
+                        displayStatus: () => k,
+                        displayStatusIs: () => ue,
+                        events: () => M,
+                        extraSize: () => de,
                         forceTriggerMouseMove: () => se,
                         freezeTextureBeforeResize: () => Z,
                         getBrowserTexturePath: () => U,
                         getDisplayStatus: () => le,
+                        getFontNames: () => ce,
                         getScale: () => ee,
                         getSize: () => K,
                         getViewGlobalPosition: () => Y,
@@ -45,7 +46,7 @@
                         setEventHandled: () => oe,
                         setInputPaddingsRem: () => q,
                         setSidePaddingsRem: () => J,
-                        whenTutorialReady: () => de,
+                        whenTutorialReady: () => ve,
                     });
                 var s = t(6179),
                     l = t.n(s),
@@ -191,15 +192,15 @@
                     },
                     C = { highlight: 'highlight', click: 'play', yes1: 'yes1' },
                     j = Object.keys(C).reduce((e, n) => ((e[n] = () => x(C[n])), e), {}),
-                    V = { play: Object.assign({}, j, { sound: x }), setRTPC: T };
-                function F(e, n, t = 1) {
+                    F = { play: Object.assign({}, j, { sound: x }), setRTPC: T };
+                function N(e, n, t = 1) {
                     return viewEnv.getChildTexturePath(e, n.width, n.height, t);
                 }
-                function M(e, n, t) {
-                    return `url(${F(e, n, t)})`;
+                function V(e, n, t) {
+                    return `url(${N(e, n, t)})`;
                 }
-                const N = { showing: 0, shown: 1, hiding: 2, hidden: 3 },
-                    k = {
+                const k = { showing: 0, shown: 1, hiding: 2, hidden: 3 },
+                    M = {
                         onTextureFrozen: p('self.onTextureFrozen'),
                         onTextureReady: p('self.onTextureReady'),
                         onDomBuilt: p('self.onDomBuilt'),
@@ -324,8 +325,12 @@
                 function le() {
                     return viewEnv.getShowingStatus();
                 }
-                const ce = Object.keys(N).reduce((e, n) => ((e[n] = () => viewEnv.getShowingStatus() === N[n]), e), {}),
-                    ue = {
+                const ce = (() => {
+                        let e = [];
+                        return () => (0 === e.length && (e = Object.keys(viewEnv.getFontsConfig())), e);
+                    })(),
+                    ue = Object.keys(k).reduce((e, n) => ((e[n] = () => viewEnv.getShowingStatus() === k[n]), e), {}),
+                    de = {
                         set: (e, n) => {
                             viewEnv.setExtraSizeRem(e, n);
                         },
@@ -333,14 +338,14 @@
                             viewEnv.getExtraSizeRem(e, n);
                         },
                     },
-                    de = Promise.all([
+                    ve = Promise.all([
                         new Promise((e) => {
-                            window.isDomBuilt ? e() : k.onDomBuilt(e);
+                            window.isDomBuilt ? e() : M.onDomBuilt(e);
                         }),
                         engine.whenReady,
                     ]),
-                    ve = { view: a, client: i, sound: V };
-                function fe() {
+                    fe = { view: a, client: i, sound: F };
+                function me() {
                     const e = (0, s.useRef)(0);
                     var n;
                     return (
@@ -369,15 +374,15 @@
                         )
                     );
                 }
-                const me = {
+                const ge = {
                         base: 'TooltipDecorator_base_c9',
                         'base__theme-default': 'TooltipDecorator_base__theme-default_6d',
                         decorator: 'TooltipDecorator_decorator_3d',
                     },
-                    ge = ['children', 'className', 'theme'];
-                function pe() {
+                    pe = ['children', 'className', 'theme'];
+                function we() {
                     return (
-                        (pe = Object.assign
+                        (we = Object.assign
                             ? Object.assign.bind()
                             : function (e) {
                                   for (var n = 1; n < arguments.length; n++) {
@@ -386,10 +391,10 @@
                                   }
                                   return e;
                               }),
-                        pe.apply(null, arguments)
+                        we.apply(null, arguments)
                     );
                 }
-                const we = l().forwardRef(function (e, n) {
+                const he = l().forwardRef(function (e, n) {
                         let t = e.children,
                             r = e.className,
                             i = e.theme,
@@ -403,8 +408,8 @@
                                         t[r] = e[r];
                                     }
                                 return t;
-                            })(e, ge);
-                        const c = fe(),
+                            })(e, pe);
+                        const c = me(),
                             u = l().useRef(null);
                         var d;
                         return (
@@ -414,9 +419,9 @@
                                     if (!e) return;
                                     const n = e.scrollWidth,
                                         t = e.scrollHeight;
-                                    ve.view.resize(n, t);
+                                    fe.view.resize(n, t);
                                     const r = window.getComputedStyle(e);
-                                    ve.view.setSidePaddingsRem({
+                                    fe.view.setSidePaddingsRem({
                                         left: parseInt(r.getPropertyValue('padding-left'), 10),
                                         top: parseInt(r.getPropertyValue('padding-top'), 10),
                                         right: parseInt(r.getPropertyValue('padding-right'), 10),
@@ -427,19 +432,19 @@
                             (0, s.useEffect)(d, []),
                             l().createElement(
                                 'div',
-                                pe({}, a, {
-                                    className: g()(me.base, me[`base__theme-${o}`], r),
+                                we({}, a, {
+                                    className: g()(ge.base, ge[`base__theme-${o}`], r),
                                     ref: function (e) {
                                         (u.current = e), 'function' == typeof n ? n(e) : n && (n.current = e);
                                     },
                                 }),
-                                l().createElement('div', { className: me.decorator }, t),
+                                l().createElement('div', { className: ge.decorator }, t),
                             )
                         );
                     }),
-                    he = () => l().createElement(we, null, l().createElement(f, null));
+                    Ee = () => l().createElement(he, null, l().createElement(f, null));
                 engine.whenReady.then(() => {
-                    u().render(l().createElement(he, null), document.getElementById('root'));
+                    u().render(l().createElement(Ee, null), document.getElementById('root'));
                 });
             },
         },

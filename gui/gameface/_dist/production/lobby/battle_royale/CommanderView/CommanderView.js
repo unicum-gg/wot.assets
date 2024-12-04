@@ -183,13 +183,14 @@
                         addPreloadTexture: () => c,
                         children: () => r,
                         displayStatus: () => o.W,
-                        displayStatusIs: () => P,
+                        displayStatusIs: () => R,
                         events: () => i.U,
-                        extraSize: () => R,
+                        extraSize: () => M,
                         forceTriggerMouseMove: () => T,
                         freezeTextureBeforeResize: () => p,
                         getBrowserTexturePath: () => d,
                         getDisplayStatus: () => k,
+                        getFontNames: () => P,
                         getScale: () => E,
                         getSize: () => v,
                         getViewGlobalPosition: () => m,
@@ -203,7 +204,7 @@
                         setEventHandled: () => y,
                         setInputPaddingsRem: () => l,
                         setSidePaddingsRem: () => _,
-                        whenTutorialReady: () => M,
+                        whenTutorialReady: () => S,
                     });
                 var r = n(722),
                     o = n(112),
@@ -265,11 +266,15 @@
                 function k() {
                     return viewEnv.getShowingStatus();
                 }
-                const P = Object.keys(o.W).reduce(
+                const P = (() => {
+                        let e = [];
+                        return () => (0 === e.length && (e = Object.keys(viewEnv.getFontsConfig())), e);
+                    })(),
+                    R = Object.keys(o.W).reduce(
                         (e, t) => ((e[t] = () => viewEnv.getShowingStatus() === o.W[t]), e),
                         {},
                     ),
-                    R = {
+                    M = {
                         set: (e, t) => {
                             viewEnv.setExtraSizeRem(e, t);
                         },
@@ -277,7 +282,7 @@
                             viewEnv.getExtraSizeRem(e, t);
                         },
                     },
-                    M = Promise.all([
+                    S = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : i.U.onDomBuilt(e);
                         }),
@@ -1049,8 +1054,8 @@
                     C = 'App_member_77',
                     I = 'App_type_40',
                     D = 'App_name_63',
-                    x = 'App_description_66',
-                    N = 'App_flag_d5',
+                    N = 'App_description_66',
+                    x = 'App_flag_d5',
                     A = 'App_perks_ff',
                     F = () => {
                         const e = T(),
@@ -1082,7 +1087,7 @@
                                 o().createElement(
                                     'div',
                                     { className: S },
-                                    o().createElement('div', { className: N, style: a }),
+                                    o().createElement('div', { className: x, style: a }),
                                     o().createElement('div', { className: C, style: s }),
                                     o().createElement(
                                         'div',
@@ -1103,7 +1108,7 @@
                                                 ),
                                                 o().createElement(
                                                     'div',
-                                                    { className: x },
+                                                    { className: N },
                                                     R.strings.battle_royale.commanderInfo.description.$dyn(t),
                                                 ),
                                             ),

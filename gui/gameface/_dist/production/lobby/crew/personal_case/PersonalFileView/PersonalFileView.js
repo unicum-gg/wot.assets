@@ -2092,13 +2092,14 @@
                         addPreloadTexture: () => o,
                         children: () => n,
                         displayStatus: () => r.W,
-                        displayStatusIs: () => w,
+                        displayStatusIs: () => y,
                         events: () => a.U,
-                        extraSize: () => y,
+                        extraSize: () => k,
                         forceTriggerMouseMove: () => b,
                         freezeTextureBeforeResize: () => A,
                         getBrowserTexturePath: () => c,
                         getDisplayStatus: () => v,
+                        getFontNames: () => w,
                         getScale: () => F,
                         getSize: () => E,
                         getViewGlobalPosition: () => g,
@@ -2112,7 +2113,7 @@
                         setEventHandled: () => C,
                         setInputPaddingsRem: () => l,
                         setSidePaddingsRem: () => m,
-                        whenTutorialReady: () => k,
+                        whenTutorialReady: () => S,
                     });
                 var n = t(3722),
                     r = t(6112),
@@ -2174,11 +2175,15 @@
                 function v() {
                     return viewEnv.getShowingStatus();
                 }
-                const w = Object.keys(r.W).reduce(
+                const w = (() => {
+                        let e = [];
+                        return () => (0 === e.length && (e = Object.keys(viewEnv.getFontsConfig())), e);
+                    })(),
+                    y = Object.keys(r.W).reduce(
                         (e, u) => ((e[u] = () => viewEnv.getShowingStatus() === r.W[u]), e),
                         {},
                     ),
-                    y = {
+                    k = {
                         set: (e, u) => {
                             viewEnv.setExtraSizeRem(e, u);
                         },
@@ -2186,7 +2191,7 @@
                             viewEnv.getExtraSizeRem(e, u);
                         },
                     },
-                    k = Promise.all([
+                    S = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : a.U.onDomBuilt(e);
                         }),
@@ -2281,7 +2286,7 @@
                 'use strict';
                 t.d(u, { au: () => r });
                 var n = t(3469);
-                t(2133), t(2790), t(579), t(5360), t(9056);
+                t(2133), t(2790), t(3779), t(579), t(5360), t(9056);
                 const r = n.Z;
             },
             6536: (e, u, t) => {
@@ -2527,6 +2532,10 @@
                 };
             },
             2790: (e, u, t) => {
+                'use strict';
+                t(6179);
+            },
+            3779: (e, u, t) => {
                 'use strict';
                 t(6179);
             },
@@ -3371,7 +3380,7 @@
                     r = t(6799),
                     a = t(6960),
                     i = t(9053);
-                const s = new RegExp('[฀-๿][ัำ-ฺ็-๎]*', 'gu'),
+                const s = new RegExp('[฀-๿][ัำ-ฺ็-๎]*|[^฀-๿]', 'gu'),
                     o = (e) => {
                         const u = [];
                         return (
@@ -4631,10 +4640,10 @@
                             );
                         },
                     ),
-                    U = ['onComplete', 'onEndAnimation'];
-                function j() {
+                    j = ['onComplete', 'onEndAnimation'];
+                function U() {
                     return (
-                        (j = Object.assign
+                        (U = Object.assign
                             ? Object.assign.bind()
                             : function (e) {
                                   for (var u = 1; u < arguments.length; u++) {
@@ -4643,7 +4652,7 @@
                                   }
                                   return e;
                               }),
-                        j.apply(null, arguments)
+                        U.apply(null, arguments)
                     );
                 }
                 const Z = (0, n.memo)((e) => {
@@ -4658,7 +4667,7 @@
                                         t[n] = e[n];
                                     }
                                 return t;
-                            })(e, U);
+                            })(e, j);
                         const i = (0, n.useState)(!1),
                             s = i[0],
                             o = i[1],
@@ -4668,9 +4677,9 @@
                             }, [s, u, t, a.to]);
                         switch (a.animationSettings.type) {
                             case C.Simple:
-                                return r().createElement(P, j({}, a, { onEndAnimation: l, isComplete: s }));
+                                return r().createElement(P, U({}, a, { onEndAnimation: l, isComplete: s }));
                             case C.Growing:
-                                return r().createElement(G, j({}, a, { onEndAnimation: l, isComplete: s }));
+                                return r().createElement(G, U({}, a, { onEndAnimation: l, isComplete: s }));
                             default:
                                 return null;
                         }
@@ -5086,9 +5095,9 @@
                             (e.Extended = 'extended');
                     })($e || ($e = {}));
                 const Ge = (e) => e.toString().padStart(2, '0'),
-                    Ue = R.images.gui.maps.icons.components.countdown,
-                    je = (e, u) => {
-                        const t = 2 === u ? Ue.big : Ue;
+                    je = R.images.gui.maps.icons.components.countdown,
+                    Ue = (e, u) => {
+                        const t = 2 === u ? je.big : je;
                         switch (e) {
                             case Ve.Timer:
                                 return t.clock();
@@ -5129,7 +5138,7 @@
                                 u !== Ve.None &&
                                     r().createElement('div', {
                                         className: p()(He, i.icon),
-                                        style: { backgroundImage: `url('${je(u, l)}')` },
+                                        style: { backgroundImage: `url('${Ue(u, l)}')` },
                                     }),
                                 r().createElement('div', { className: p()(ze, i.text) }, c),
                             );
@@ -5446,9 +5455,9 @@
                         );
                     };
                 var Gu = t(2686),
-                    Uu = t(126);
-                const ju = 'EmptySkill_base_38',
-                    Zu = () => r().createElement('div', { className: ju });
+                    ju = t(126);
+                const Uu = 'EmptySkill_base_38',
+                    Zu = () => r().createElement('div', { className: Uu });
                 var Ku;
                 !(function (e) {
                     (e.Play = 'play'), (e.Stop = 'stop');
@@ -5466,13 +5475,13 @@
                                         height: 72,
                                         frameCount: 39,
                                         chunk: { count: 1, columns: 28, rows: 2 },
-                                        getChunkPath: (0, Uu.V)(
+                                        getChunkPath: (0, ju.V)(
                                             `R.images.gui.maps.icons.sequence.unlock.${e ? 'big' : 'small'}_`,
                                         ),
                                     }))(c),
                                 [c],
                             ),
-                            m = (0, n.useMemo)(() => (0, Uu.q)(d), [d]),
+                            m = (0, n.useMemo)(() => (0, ju.q)(d), [d]),
                             E = (0, n.useCallback)(() => o(Ku.Stop), []),
                             _ = (0, oe.useSpring)(
                                 () => ({
@@ -5860,14 +5869,14 @@
                     ),
                     $t = 'SkillsGroupTitle_base_e4',
                     Gt = 'SkillsGroupTitle_base__withBonus_b1',
-                    Ut = 'SkillsGroupTitle_titleText_06',
-                    jt = 'SkillsGroupTitle_titleText__untrained_a7',
+                    jt = 'SkillsGroupTitle_titleText_06',
+                    Ut = 'SkillsGroupTitle_titleText__untrained_a7',
                     Zt = 'SkillsGroupTitle_infoIcon_b4',
                     Kt = (0, n.memo)(({ title: e, componentKey: u, isUntrained: t, isBonusQualifications: n = !1 }) =>
                         r().createElement(
                             'div',
                             { className: p()($t, n && Gt) },
-                            r().createElement('div', { className: p()(Ut, t && jt) }, e),
+                            r().createElement('div', { className: p()(jt, t && Ut) }, e),
                             n &&
                                 r().createElement(
                                     ae.u,
@@ -6383,8 +6392,8 @@
                     V = t(771),
                     $ = t(3215),
                     G = t(3946),
-                    U = t(8032);
-                const j = (0, $.q)()(
+                    j = t(8032);
+                const U = (0, $.q)()(
                         ({ observableModel: e }) => {
                             const u = Object.assign(
                                     {},
@@ -6418,7 +6427,7 @@
                                         return { isWrongVehicleType: !0, isWrongVehicle: !0 };
                                     const n = Boolean(e.name);
                                     return {
-                                        isWrongVehicleType: n && e.type !== t.type && !(0, U.f)(e.tags, z.Yl),
+                                        isWrongVehicleType: n && e.type !== t.type && !(0, j.f)(e.tags, z.Yl),
                                         isWrongVehicle: n && e.name !== t.name && !e.isPremium,
                                     };
                                 }),
@@ -6457,8 +6466,8 @@
                             retrain: e.createCallbackNoArgs('onRetrain'),
                         }),
                     ),
-                    Z = j[0],
-                    K = j[1];
+                    Z = U[0],
+                    K = U[1];
                 var q = t(3457),
                     Y = t(3415),
                     X = t(5415),
@@ -6744,25 +6753,25 @@
                     Ve = t(4828),
                     $e = t(1943),
                     Ge = t(5640);
-                const Ue = {
+                const je = {
                     base: 'VehicleTypeIcon_base_80',
                     base__big: 'VehicleTypeIcon_base__big_01',
                     base__c_44x44: 'VehicleTypeIcon_base__c_44x44_80',
                     base__c_48x48_specSlot: 'VehicleTypeIcon_base__c_48x48_specSlot_c4',
                     base__c_60x54: 'VehicleTypeIcon_base__c_60x54_08',
                 };
-                let je;
+                let Ue;
                 !(function (e) {
                     (e.c83x74 = 'big'),
                         (e.c60x54 = 'c_60x54'),
                         (e.c44x44 = 'c_44x44'),
                         (e.c48x48_specSlot = 'c_48x48_specSlot');
-                })(je || (je = {}));
-                const Ze = a().memo(function ({ vehicleType: e, isElite: u, className: t, iconSize: n = je.c44x44 }) {
+                })(Ue || (Ue = {}));
+                const Ze = a().memo(function ({ vehicleType: e, isElite: u, className: t, iconSize: n = Ue.c44x44 }) {
                         const r = `${(0, B.BN)(e)}${u ? '_elite' : ''}`,
                             i = R.images.gui.maps.icons.vehicleTypes.$dyn(n);
                         return a().createElement('div', {
-                            className: s()(Ue.base, Ue[`base__${n}`], t),
+                            className: s()(je.base, je[`base__${n}`], t),
                             style: { backgroundImage: `url(${null == i ? void 0 : i.$dyn(r)})` },
                         });
                     }),
@@ -6840,7 +6849,7 @@
                                             isElite: i.isPremium,
                                             vehicleType: i.type,
                                             className: au,
-                                            iconSize: i.isPremium ? je.c44x44 : je.c48x48_specSlot,
+                                            iconSize: i.isPremium ? Ue.c44x44 : Ue.c48x48_specSlot,
                                         }),
                                         a().createElement('div', { className: ru }, i.name),
                                     ),

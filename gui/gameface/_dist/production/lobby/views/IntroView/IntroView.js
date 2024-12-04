@@ -209,13 +209,14 @@
                         addPreloadTexture: () => l,
                         children: () => r,
                         displayStatus: () => a.W,
-                        displayStatusIs: () => p,
+                        displayStatusIs: () => x,
                         events: () => i.U,
-                        extraSize: () => x,
+                        extraSize: () => L,
                         forceTriggerMouseMove: () => f,
                         freezeTextureBeforeResize: () => D,
                         getBrowserTexturePath: () => E,
                         getDisplayStatus: () => b,
+                        getFontNames: () => p,
                         getScale: () => B,
                         getSize: () => d,
                         getViewGlobalPosition: () => _,
@@ -229,7 +230,7 @@
                         setEventHandled: () => v,
                         setInputPaddingsRem: () => o,
                         setSidePaddingsRem: () => F,
-                        whenTutorialReady: () => L,
+                        whenTutorialReady: () => S,
                     });
                 var r = t(3722),
                     a = t(6112),
@@ -291,11 +292,15 @@
                 function b() {
                     return viewEnv.getShowingStatus();
                 }
-                const p = Object.keys(a.W).reduce(
+                const p = (() => {
+                        let u = [];
+                        return () => (0 === u.length && (u = Object.keys(viewEnv.getFontsConfig())), u);
+                    })(),
+                    x = Object.keys(a.W).reduce(
                         (u, e) => ((u[e] = () => viewEnv.getShowingStatus() === a.W[e]), u),
                         {},
                     ),
-                    x = {
+                    L = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -303,7 +308,7 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    L = Promise.all([
+                    S = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : i.U.onDomBuilt(u);
                         }),
@@ -1320,12 +1325,12 @@
                         })(u);
                     return { mediaSize: a, mediaWidth: i, mediaHeight: n, remScreenWidth: e, remScreenHeight: t };
                 };
-                let q;
+                let j;
                 t(1281),
                     (function (u) {
                         (u[(u.left = 0)] = 'left'), (u[(u.right = 1)] = 'right');
-                    })(q || (q = {}));
-                const j =
+                    })(j || (j = {}));
+                const q =
                         (new RegExp(
                             /[\(\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]?[\u3002\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]?[ %\+\x2D-9A-Za-\{\}\xA0\xC0-\u0237\u2013\u2014\u2026]+[\)\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3002\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\uFF01\uFF0C\uFF1A\uFF1B\uFF1F\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]?[\u3002\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]?/gmu
                                 .source +
@@ -1347,7 +1352,7 @@
                         }, []);
                         return a().createElement(
                             'div',
-                            { className: j, onClick: i },
+                            { className: q, onClick: i },
                             a().createElement('div', { className: 'DescriptionBlock_title_41' }, e),
                             a().createElement('div', {
                                 className: 'DescriptionBlock_icon_bc',
@@ -1538,14 +1543,14 @@
                                 $ = () => m('highlight');
                             L(p.n.ARROW_LEFT, U), L(p.n.ARROW_RIGHT, V);
                             const z = (0, r.useMemo)(() => (t ? { width: 'auto' } : { width: `${C}rem` }), [C, t]),
-                                q = (0, r.useMemo)(
+                                j = (0, r.useMemo)(
                                     () =>
                                         t
                                             ? { transform: `translateX(${-v * b + C / 2 + v / 2}rem)` }
                                             : { transform: `translateX(-${C * (b - 1)}rem)` },
                                     [C, v, b, t],
                                 ),
-                                j = (0, r.useMemo)(() => (e ? { top: e } : {}), [e]),
+                                q = (0, r.useMemo)(() => (e ? { top: e } : {}), [e]),
                                 K = B()(
                                     Y.base,
                                     F && Y.base__large,
@@ -1560,8 +1565,8 @@
                             return a().createElement(
                                 'div',
                                 { className: K },
-                                N && a().createElement('div', { className: Z, onClick: U, onMouseEnter: $, style: j }),
-                                N && a().createElement('div', { className: J, onClick: V, onMouseEnter: $, style: j }),
+                                N && a().createElement('div', { className: Z, onClick: U, onMouseEnter: $, style: q }),
+                                N && a().createElement('div', { className: J, onClick: V, onMouseEnter: $, style: q }),
                                 n &&
                                     a().createElement(
                                         'div',
@@ -1575,7 +1580,7 @@
                                     { className: Y.trackWrapper, ref: o },
                                     a().createElement(
                                         'div',
-                                        { className: Y.track, style: q },
+                                        { className: Y.track, style: j },
                                         c.map((u, e) => {
                                             const r = e + 2 === b,
                                                 i = e === b;

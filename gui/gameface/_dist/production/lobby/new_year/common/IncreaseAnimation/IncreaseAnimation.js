@@ -1,0 +1,77 @@
+(() => {
+    'use strict';
+    var e,
+        r = {
+            97: (e, r, o) => {
+                o(6483);
+                o(6179);
+                R.views.common.tooltip_window.tooltip_window.TooltipWindow('resId');
+            },
+        },
+        o = {};
+    function t(e) {
+        var n = o[e];
+        if (void 0 !== n) return n.exports;
+        var i = (o[e] = { exports: {} });
+        return r[e](i, i.exports, t), i.exports;
+    }
+    (t.m = r),
+        (e = []),
+        (t.O = (r, o, n, i) => {
+            if (!o) {
+                var a = 1 / 0;
+                for (u = 0; u < e.length; u++) {
+                    for (var [o, n, i] = e[u], f = !0, l = 0; l < o.length; l++)
+                        (!1 & i || a >= i) && Object.keys(t.O).every((e) => t.O[e](o[l]))
+                            ? o.splice(l--, 1)
+                            : ((f = !1), i < a && (a = i));
+                    if (f) {
+                        e.splice(u--, 1);
+                        var s = n();
+                        void 0 !== s && (r = s);
+                    }
+                }
+                return r;
+            }
+            i = i || 0;
+            for (var u = e.length; u > 0 && e[u - 1][2] > i; u--) e[u] = e[u - 1];
+            e[u] = [o, n, i];
+        }),
+        (t.n = (e) => {
+            var r = e && e.__esModule ? () => e.default : () => e;
+            return t.d(r, { a: r }), r;
+        }),
+        (t.d = (e, r) => {
+            for (var o in r) t.o(r, o) && !t.o(e, o) && Object.defineProperty(e, o, { enumerable: !0, get: r[o] });
+        }),
+        (t.g = (function () {
+            if ('object' == typeof globalThis) return globalThis;
+            try {
+                return this || new Function('return this')();
+            } catch (e) {
+                if ('object' == typeof window) return window;
+            }
+        })()),
+        (t.o = (e, r) => Object.prototype.hasOwnProperty.call(e, r)),
+        (t.j = 7044),
+        (() => {
+            var e = { 7044: 0 };
+            t.O.j = (r) => 0 === e[r];
+            var r = (r, o) => {
+                    var n,
+                        i,
+                        [a, f, l] = o,
+                        s = 0;
+                    if (a.some((r) => 0 !== e[r])) {
+                        for (n in f) t.o(f, n) && (t.m[n] = f[n]);
+                        if (l) var u = l(t);
+                    }
+                    for (r && r(o); s < a.length; s++) (i = a[s]), t.o(e, i) && e[i] && e[i][0](), (e[i] = 0);
+                    return t.O(u);
+                },
+                o = (self.webpackChunkgameface = self.webpackChunkgameface || []);
+            o.forEach(r.bind(null, 0)), (o.push = r.bind(null, o.push.bind(o)));
+        })();
+    var n = t.O(void 0, [8360], () => t(97));
+    n = t.O(n);
+})();

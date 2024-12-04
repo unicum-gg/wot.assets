@@ -1,0 +1,82 @@
+.FormatText_base_d0 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.TooltipDecorator_base_c9 {
+    display: flex;
+    position: absolute;
+}
+
+.TooltipDecorator_base__theme-default_6d .TooltipDecorator_decorator_3d {
+    padding: 4rem 6rem 8rem;
+    border-image-source: url('R.atlases.components.tooltip_background');
+    border-image-slice: 24 fill;
+    border-image-width: 24rem;
+    position: relative;
+}
+
+.App_base_74 {
+    padding: 15rem 20rem 20rem;
+}
+
+.App_heading_4d {
+    color: #e9e2bf;
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 16rem;
+}
+
+.App_item_9d {
+    display: flex;
+    align-items: center;
+    color: #8c8c7e;
+}
+
+.App_item_9d + .App_item_9d {
+    margin-top: 6rem;
+}
+
+.App_text_6a {
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+.App_rarity_dd {
+    display: flex;
+    align-items: center;
+}
+
+.App_rarity__rare_16 {
+    color: #60bcd0;
+}
+
+.App_rarity__epic_5b {
+    color: #9160d0;
+}
+
+.App_rarity__legendary_9d {
+    color: #d0aa60;
+}
+
+.App_rarityIcon_8e {
+    width: 20rem;
+    height: 20rem;
+    margin-right: 2rem;
+    background: no-repeat center / contain;
+    position: relative;
+    bottom: -1rem;
+}
+
+.App_rarity__rare_16 .App_rarityIcon_8e {
+    background-image: url('R.images.gui.maps.icons.customization.rarity.sign.s20x20.rare');
+}
+
+.App_rarity__epic_5b .App_rarityIcon_8e {
+    background-image: url('R.images.gui.maps.icons.customization.rarity.sign.s20x20.epic');
+}
+
+.App_rarity__legendary_9d .App_rarityIcon_8e {
+    background-image: url('R.images.gui.maps.icons.customization.rarity.sign.s20x20.legendary');
+}

@@ -49,10 +49,10 @@
                         B = E.extraSmallWidth,
                         C = E.extraLargeHeight,
                         m = E.largeHeight,
-                        h = E.mediumHeight,
-                        g = E.smallHeight,
+                        g = E.mediumHeight,
+                        h = E.smallHeight,
                         v = E.extraSmallHeight,
-                        w = { extraLarge: C, large: m, medium: h, small: g, extraSmall: v };
+                        w = { extraLarge: C, large: m, medium: g, small: h, extraSmall: v };
                     if (t.extraLarge || t.large || t.medium || t.small || t.extraSmall) {
                         if (t.extraLarge && F) return e;
                         if (t.large && A) return e;
@@ -70,8 +70,8 @@
                         ) {
                             if (t.extraLargeHeight && C) return e;
                             if (t.largeHeight && m) return e;
-                            if (t.mediumHeight && h) return e;
-                            if (t.smallHeight && g) return e;
+                            if (t.mediumHeight && g) return e;
+                            if (t.smallHeight && h) return e;
                             if (t.extraSmallHeight && v) return e;
                         }
                     }
@@ -311,9 +311,9 @@
                             B = u.decoratorId,
                             C = void 0 === B ? 0 : B,
                             m = u.isEnabled,
-                            h = void 0 === m || m,
-                            g = u.targetId,
-                            v = void 0 === g ? 0 : g,
+                            g = void 0 === m || m,
+                            h = u.targetId,
+                            v = void 0 === h ? 0 : h,
                             w = u.onShow,
                             b = u.onHide,
                             f = (function (u, e) {
@@ -362,8 +362,8 @@
                             );
                         }, []),
                             (0, i.useEffect)(() => {
-                                !1 === h && y();
-                            }, [h, y]),
+                                !1 === g && y();
+                            }, [g, y]),
                             (0, i.useEffect)(
                                 () => (
                                     window.addEventListener('mouseleave', y),
@@ -373,7 +373,7 @@
                                 ),
                                 [y],
                             );
-                        return h
+                        return g
                             ? (0, i.cloneElement)(
                                   e,
                                   Object.assign(
@@ -586,27 +586,28 @@
                         addPreloadTexture: () => F,
                         children: () => a,
                         displayStatus: () => n.W,
-                        displayStatusIs: () => p,
+                        displayStatusIs: () => x,
                         events: () => i.U,
-                        extraSize: () => x,
+                        extraSize: () => k,
                         forceTriggerMouseMove: () => b,
                         freezeTextureBeforeResize: () => c,
                         getBrowserTexturePath: () => o,
                         getDisplayStatus: () => f,
+                        getFontNames: () => p,
                         getScale: () => B,
                         getSize: () => _,
                         getViewGlobalPosition: () => d,
                         isEventHandled: () => w,
-                        isFocused: () => g,
+                        isFocused: () => h,
                         pxToRem: () => C,
                         remToPx: () => m,
                         resize: () => D,
                         sendEvent: () => r.qP,
-                        setAnimateWindow: () => h,
+                        setAnimateWindow: () => g,
                         setEventHandled: () => v,
                         setInputPaddingsRem: () => A,
                         setSidePaddingsRem: () => s,
-                        whenTutorialReady: () => k,
+                        whenTutorialReady: () => y,
                     });
                 var a = t(3722),
                     n = t(6112),
@@ -650,10 +651,10 @@
                 function m(u) {
                     return viewEnv.remToPx(u);
                 }
-                function h(u, e) {
+                function g(u, e) {
                     viewEnv.setAnimateWindow(u, e);
                 }
-                function g() {
+                function h() {
                     return viewEnv.isFocused();
                 }
                 function v() {
@@ -668,11 +669,15 @@
                 function f() {
                     return viewEnv.getShowingStatus();
                 }
-                const p = Object.keys(n.W).reduce(
+                const p = (() => {
+                        let u = [];
+                        return () => (0 === u.length && (u = Object.keys(viewEnv.getFontsConfig())), u);
+                    })(),
+                    x = Object.keys(n.W).reduce(
                         (u, e) => ((u[e] = () => viewEnv.getShowingStatus() === n.W[e]), u),
                         {},
                     ),
-                    x = {
+                    k = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -680,7 +685,7 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    k = Promise.all([
+                    y = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : i.U.onDomBuilt(u);
                         }),
@@ -1079,14 +1084,14 @@
                         var a;
                     },
                     m = () => C(E.CLOSE),
-                    h = (u, e) => {
+                    g = (u, e) => {
                         u.keyCode === s.n.ESCAPE && e();
                     };
-                var g = t(7572);
+                var h = t(7572);
                 const v = n.instance,
                     w = {
                         DataTracker: i.Z,
-                        ViewModel: g.Z,
+                        ViewModel: h.Z,
                         ViewEventType: E,
                         NumberFormatType: F,
                         RealFormatType: A,
@@ -1124,13 +1129,13 @@
                             });
                         },
                         addEscapeListener: (u) => {
-                            const e = (e) => h(e, u);
+                            const e = (e) => g(e, u);
                             return (
                                 window.addEventListener('keydown', e), () => window.removeEventListener('keydown', e)
                             );
                         },
                         closeOnEsc: (u) => {
-                            h(u, m);
+                            g(u, m);
                         },
                         handleViewEvent: C,
                         onBindingsReady: B,
@@ -1269,7 +1274,7 @@
                         hp__large: 'Rank_hp__large_7e',
                         hpValue: 'Rank_hpValue_9f',
                     },
-                    h = { [C.Large]: '80x110', [C.Medium]: '58x80', [C.Small]: '42x56' };
+                    g = { [C.Large]: '80x110', [C.Medium]: '58x80', [C.Small]: '42x56' };
                 (0, i.memo)((u) => {
                     const e = u.isInactive,
                         t = void 0 !== e && e,
@@ -1284,7 +1289,7 @@
                         c = !a && l > 0,
                         B = (0, i.useMemo)(() => {
                             const u = R.images.gui.maps.icons.rankedBattles,
-                                e = h[d];
+                                e = g[d];
                             let t;
                             return (
                                 (t = a
@@ -1293,11 +1298,11 @@
                                 { backgroundImage: `url(${t})` }
                             );
                         }, [A, o, a, d]),
-                        g = (u) => [m[u], m[`${u}__${d}`]],
-                        v = n()(m.icon, t && m.icon__next, ...g('icon')),
-                        w = n()(...g('frame'), ...g('unburnable')),
-                        b = n()(...g('frame'), ...g('shield')),
-                        f = n()(...g('hp'));
+                        h = (u) => [m[u], m[`${u}__${d}`]],
+                        v = n()(m.icon, t && m.icon__next, ...h('icon')),
+                        w = n()(...h('frame'), ...h('unburnable')),
+                        b = n()(...h('frame'), ...h('shield')),
+                        f = n()(...h('hp'));
                     return r().createElement(
                         E.t,
                         { isEnabled: c, args: { rankID: l, tooltipId: F.MS } },
@@ -1321,7 +1326,7 @@
                     );
                 });
                 F.u6;
-                const g = {
+                const h = {
                     base: 'RankedStat_base_29',
                     base__large: 'RankedStat_base__large_6b',
                     icon: 'RankedStat_icon_83',
@@ -1369,18 +1374,18 @@
                                 { args: { tooltipId: b[u] } },
                                 r().createElement(
                                     'div',
-                                    { className: n()(g.base, g[`base__${F}`]) },
+                                    { className: n()(h.base, h[`base__${F}`]) },
                                     r().createElement('div', {
-                                        className: n()(g.icon, g[`icon__${u}`], g[`icon__${u}__${F}`]),
+                                        className: n()(h.icon, h[`icon__${u}`], h[`icon__${u}__${F}`]),
                                     }),
-                                    r().createElement('div', { className: n()(g.value, g[`value__${F}`]) }, l),
+                                    r().createElement('div', { className: n()(h.value, h[`value__${F}`]) }, l),
                                     0 !== t &&
                                         !a &&
                                         r().createElement(
                                             'div',
-                                            { className: n()(g.delta, g[`delta__${F}`], t < 0 && g.delta__minus) },
+                                            { className: n()(h.delta, h[`delta__${F}`], t < 0 && h.delta__minus) },
                                             r().createElement('div', {
-                                                className: n()(g.arrow, t < 0 && g.arrow__minus),
+                                                className: n()(h.arrow, t < 0 && h.arrow__minus),
                                             }),
                                             s,
                                         ),

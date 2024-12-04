@@ -10,7 +10,7 @@
                 Date.now(), n.Ew.getRegionalDateTime, n.Ew.getFormattedDateTime;
             },
             9768: (u, e, t) => {
-                t.d(e, { O: () => tu });
+                t.d(e, { O: () => nu });
                 var n = {};
                 t.r(n),
                     t.d(n, { mouse: () => C, off: () => s, on: () => D, onResize: () => o, onScaleUpdated: () => a });
@@ -44,19 +44,20 @@
                         addPreloadTexture: () => x,
                         children: () => A,
                         displayStatus: () => f,
-                        displayStatusIs: () => J,
+                        displayStatusIs: () => uu,
                         events: () => b,
-                        extraSize: () => uu,
+                        extraSize: () => eu,
                         forceTriggerMouseMove: () => $,
                         freezeTextureBeforeResize: () => K,
                         getBrowserTexturePath: () => N,
                         getDisplayStatus: () => X,
-                        getScale: () => z,
+                        getFontNames: () => J,
+                        getScale: () => j,
                         getSize: () => V,
                         getViewGlobalPosition: () => W,
                         isEventHandled: () => Q,
                         isFocused: () => Y,
-                        pxToRem: () => j,
+                        pxToRem: () => z,
                         remToPx: () => G,
                         resize: () => q,
                         sendEvent: () => S,
@@ -64,7 +65,7 @@
                         setEventHandled: () => Z,
                         setInputPaddingsRem: () => L,
                         setSidePaddingsRem: () => U,
-                        whenTutorialReady: () => eu,
+                        whenTutorialReady: () => tu,
                     });
                 const o = r('clientResized'),
                     a = r('self.onScaleUpdated'),
@@ -264,10 +265,10 @@
                 function K() {
                     viewEnv.freezeTextureBeforeResize();
                 }
-                function z() {
+                function j() {
                     return viewEnv.getScale();
                 }
-                function j(u) {
+                function z(u) {
                     return viewEnv.pxToRem(u);
                 }
                 function G(u) {
@@ -291,8 +292,12 @@
                 function X() {
                     return viewEnv.getShowingStatus();
                 }
-                const J = Object.keys(f).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === f[e]), u), {}),
-                    uu = {
+                const J = (() => {
+                        let u = [];
+                        return () => (0 === u.length && (u = Object.keys(viewEnv.getFontsConfig())), u);
+                    })(),
+                    uu = Object.keys(f).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === f[e]), u), {}),
+                    eu = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -300,15 +305,15 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    eu = Promise.all([
+                    tu = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : b.onDomBuilt(u);
                         }),
                         engine.whenReady,
                     ]),
-                    tu = { view: E, client: F, sound: h };
+                    nu = { view: E, client: F, sound: h };
             },
-            4649: (u, e, t) => {
+            2298: (u, e, t) => {
                 t.d(e, { au: () => o });
                 var n = t(7044),
                     F = t(6179);
@@ -898,7 +903,7 @@
                     m = 'RerollTooltipContent_available_63',
                     h = 'RerollTooltipContent_available_icon_cf',
                     p = 'RerollTooltipContent_available_timeLeft_13';
-                var g = t(4649);
+                var g = t(2298);
                 const f = ({ model: u, showTimer: e }) => {
                     const t = u.rerollInterval,
                         A = u.timeLeft,
@@ -986,7 +991,7 @@
                 (window.onload = () => document.body.appendChild(y)), E().render(F().createElement(b, null), y);
             },
             2993: (u, e, t) => {
-                t(7044), t(4649), t(6179), t(1272);
+                t(7044), t(2298), t(6179), t(1272);
             },
             1272: (u, e, t) => {
                 t(6179);

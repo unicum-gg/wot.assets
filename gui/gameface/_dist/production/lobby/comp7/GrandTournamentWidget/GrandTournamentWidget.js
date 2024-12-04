@@ -209,27 +209,28 @@
                         addPreloadTexture: () => n,
                         children: () => E,
                         displayStatus: () => A.W,
-                        displayStatusIs: () => x,
+                        displayStatusIs: () => b,
                         events: () => r.U,
-                        extraSize: () => b,
+                        extraSize: () => L,
                         forceTriggerMouseMove: () => f,
                         freezeTextureBeforeResize: () => c,
                         getBrowserTexturePath: () => D,
                         getDisplayStatus: () => p,
+                        getFontNames: () => x,
                         getScale: () => d,
                         getSize: () => l,
                         getViewGlobalPosition: () => s,
                         isEventHandled: () => w,
                         isFocused: () => g,
                         pxToRem: () => m,
-                        remToPx: () => _,
+                        remToPx: () => h,
                         resize: () => C,
                         sendEvent: () => F.qP,
-                        setAnimateWindow: () => h,
+                        setAnimateWindow: () => _,
                         setEventHandled: () => v,
                         setInputPaddingsRem: () => i,
                         setSidePaddingsRem: () => B,
-                        whenTutorialReady: () => L,
+                        whenTutorialReady: () => y,
                     });
                 var E = t(3722),
                     A = t(6112),
@@ -259,7 +260,7 @@
                 }
                 function s(u = 'rem') {
                     const e = viewEnv.getViewGlobalPositionRem();
-                    return 'rem' === u ? e : { x: _(e.x), y: _(e.y) };
+                    return 'rem' === u ? e : { x: h(e.x), y: h(e.y) };
                 }
                 function c() {
                     viewEnv.freezeTextureBeforeResize();
@@ -270,10 +271,10 @@
                 function m(u) {
                     return viewEnv.pxToRem(u);
                 }
-                function _(u) {
+                function h(u) {
                     return viewEnv.remToPx(u);
                 }
-                function h(u, e) {
+                function _(u, e) {
                     viewEnv.setAnimateWindow(u, e);
                 }
                 function g() {
@@ -291,11 +292,15 @@
                 function p() {
                     return viewEnv.getShowingStatus();
                 }
-                const x = Object.keys(A.W).reduce(
+                const x = (() => {
+                        let u = [];
+                        return () => (0 === u.length && (u = Object.keys(viewEnv.getFontsConfig())), u);
+                    })(),
+                    b = Object.keys(A.W).reduce(
                         (u, e) => ((u[e] = () => viewEnv.getShowingStatus() === A.W[e]), u),
                         {},
                     ),
-                    b = {
+                    L = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -303,7 +308,7 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    L = Promise.all([
+                    y = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : r.U.onDomBuilt(u);
                         }),
@@ -660,8 +665,8 @@
                         } else viewEnv.handleViewEvent({ __Type: t, type: u });
                         var E;
                     },
-                    _ = () => m(a.CLOSE),
-                    h = (u, e) => {
+                    h = () => m(a.CLOSE),
+                    _ = (u, e) => {
                         u.keyCode === B.n.ESCAPE && e();
                     };
                 var g = t(7572);
@@ -676,7 +681,7 @@
                         DateFormatType: o,
                         makeGlobalBoundingBox: c,
                         sendMoveEvent: (u) => m(a.MOVE, { isMouseEvent: !0, on: u }),
-                        sendCloseEvent: _,
+                        sendCloseEvent: h,
                         sendClosePopOverEvent: () => m(a.POP_OVER, { on: !1 }),
                         sendShowContextMenuEvent: (u, e, t = 0) => {
                             m(a.CONTEXT_MENU, { isMouseEvent: !0, contentID: u, on: !0, decoratorID: t, args: e });
@@ -706,13 +711,13 @@
                             });
                         },
                         addEscapeListener: (u) => {
-                            const e = (e) => h(e, u);
+                            const e = (e) => _(e, u);
                             return (
                                 window.addEventListener('keydown', e), () => window.removeEventListener('keydown', e)
                             );
                         },
                         closeOnEsc: (u) => {
-                            h(u, _);
+                            _(u, h);
                         },
                         handleViewEvent: m,
                         onBindingsReady: d,
@@ -889,11 +894,11 @@
                         c = A.smallWidth,
                         d = A.extraSmallWidth,
                         m = A.extraLargeHeight,
-                        _ = A.largeHeight,
-                        h = A.mediumHeight,
+                        h = A.largeHeight,
+                        _ = A.mediumHeight,
                         g = A.smallHeight,
                         v = A.extraSmallHeight,
-                        w = { extraLarge: m, large: _, medium: h, small: g, extraSmall: v };
+                        w = { extraLarge: m, large: h, medium: _, small: g, extraSmall: v };
                     if (t.extraLarge || t.large || t.medium || t.small || t.extraSmall) {
                         if (t.extraLarge && F) return e;
                         if (t.large && a) return e;
@@ -910,8 +915,8 @@
                             !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
                         ) {
                             if (t.extraLargeHeight && m) return e;
-                            if (t.largeHeight && _) return e;
-                            if (t.mediumHeight && h) return e;
+                            if (t.largeHeight && h) return e;
+                            if (t.mediumHeight && _) return e;
                             if (t.smallHeight && g) return e;
                             if (t.extraSmallHeight && v) return e;
                         }
@@ -967,8 +972,8 @@
                         const B = (0, E.useMemo)(() => Object.assign({}, r), [r]);
                         return A().createElement(C.Provider, { value: B }, u);
                     };
-                var _ = t(6483),
-                    h = t.n(_),
+                var h = t(6483),
+                    _ = t.n(h),
                     g = t(926),
                     v = t.n(g);
                 let w, f, p;
@@ -1100,7 +1105,7 @@
                             F = r.mediaWidth,
                             a = r.mediaHeight,
                             n = r.mediaSize;
-                        return A().createElement('div', L({ className: h()(t, y[F], S[a], T[n]) }, E), e);
+                        return A().createElement('div', L({ className: _()(t, y[F], S[a], T[n]) }, E), e);
                     },
                     M = ['children'];
                 const k = (u) => {
@@ -1194,7 +1199,7 @@
                             a.split('\n').map((e, F) =>
                                 A().createElement(
                                     'div',
-                                    { className: h()(Z, t), key: `${e}-${F}` },
+                                    { className: _()(Z, t), key: `${e}-${F}` },
                                     ((u, e, t) =>
                                         u.split(/%\((.*?)\)(?:[sd])?/g).map((u) => (t && u in t ? t[u] : Y(u, e))))(
                                         e,
@@ -1476,8 +1481,8 @@
                     },
                     du = R.strings.comp7.grandTournamentWidget,
                     mu = R.images.gui.maps.icons.comp7.grandTournament,
-                    _u = [Q.Countdown, Q.DayIsOver],
-                    hu = (u) => {
+                    hu = [Q.Countdown, Q.DayIsOver],
+                    _u = (u) => {
                         const e = au(u);
                         return u >= Eu
                             ? A().createElement(X, {
@@ -1525,7 +1530,7 @@
                             A().createElement(
                                 'div',
                                 { className: cu.textWrapper },
-                                _u.includes(r)
+                                hu.includes(r)
                                     ? A().createElement(X, {
                                           text: gu(r, i),
                                           binding: {
@@ -1534,7 +1539,7 @@
                                                   { className: cu.timerContainer },
                                                   A().createElement('div', { className: cu.timer }),
                                               ),
-                                              countdown: hu(n),
+                                              countdown: _u(n),
                                           },
                                           classMix: cu.timerText,
                                       })

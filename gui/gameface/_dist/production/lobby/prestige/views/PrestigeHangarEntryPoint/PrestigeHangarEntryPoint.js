@@ -241,7 +241,7 @@
             },
             768: (u, e, t) => {
                 'use strict';
-                t.d(e, { O: () => tu });
+                t.d(e, { O: () => ru });
                 var r = {};
                 t.r(r),
                     t.d(r, { mouse: () => d, off: () => F, on: () => A, onResize: () => E, onScaleUpdated: () => l });
@@ -275,13 +275,14 @@
                         addPreloadTexture: () => k,
                         children: () => n,
                         displayStatus: () => w,
-                        displayStatusIs: () => J,
+                        displayStatusIs: () => uu,
                         events: () => v,
-                        extraSize: () => uu,
+                        extraSize: () => eu,
                         forceTriggerMouseMove: () => Z,
                         freezeTextureBeforeResize: () => z,
                         getBrowserTexturePath: () => I,
                         getDisplayStatus: () => Q,
+                        getFontNames: () => J,
                         getScale: () => G,
                         getSize: () => N,
                         getViewGlobalPosition: () => $,
@@ -290,12 +291,12 @@
                         pxToRem: () => j,
                         remToPx: () => V,
                         resize: () => U,
-                        sendEvent: () => O,
+                        sendEvent: () => M,
                         setAnimateWindow: () => q,
                         setEventHandled: () => Y,
                         setInputPaddingsRem: () => R,
                         setSidePaddingsRem: () => H,
-                        whenTutorialReady: () => eu,
+                        whenTutorialReady: () => tu,
                     });
                 const E = o('clientResized'),
                     l = o('self.onScaleUpdated'),
@@ -418,7 +419,7 @@
                     L = 16,
                     y = 32,
                     T = 64,
-                    M = (u, e) => {
+                    O = (u, e) => {
                         const t = 'GFViewEventProxy';
                         if (void 0 !== e) {
                             const a = e.args,
@@ -455,15 +456,15 @@
                         return viewEnv.handleViewEvent({ __Type: t, type: u });
                         var r;
                     },
-                    O = {
+                    M = {
                         close(u) {
-                            M('popover' === u ? S : y);
+                            O('popover' === u ? S : y);
                         },
                         minimize() {
-                            M(T);
+                            O(T);
                         },
                         move(u) {
-                            M(L, { isMouseEvent: !0, on: u });
+                            O(L, { isMouseEvent: !0, on: u });
                         },
                     },
                     P = 15;
@@ -522,8 +523,12 @@
                 function Q() {
                     return viewEnv.getShowingStatus();
                 }
-                const J = Object.keys(w).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === w[e]), u), {}),
-                    uu = {
+                const J = (() => {
+                        let u = [];
+                        return () => (0 === u.length && (u = Object.keys(viewEnv.getFontsConfig())), u);
+                    })(),
+                    uu = Object.keys(w).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === w[e]), u), {}),
+                    eu = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -531,13 +536,13 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    eu = Promise.all([
+                    tu = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : v.onDomBuilt(u);
                         }),
                         engine.whenReady,
                     ]),
-                    tu = { view: i, client: a, sound: b };
+                    ru = { view: i, client: a, sound: b };
             },
             902: (u, e, t) => {
                 'use strict';
@@ -1375,7 +1380,7 @@
                         [p.Large]: `${b().SMALL} ${b().MEDIUM} ${b().LARGE}`,
                         [p.ExtraLarge]: `${b().SMALL} ${b().MEDIUM} ${b().LARGE} ${b().EXTRA_LARGE}`,
                     },
-                    M = (u) => {
+                    O = (u) => {
                         let e = u.children,
                             t = u.className,
                             r = (function (u, e) {
@@ -1394,7 +1399,7 @@
                             s = n.mediaSize;
                         return a().createElement('div', S({ className: g()(t, L[i], y[o], T[s]) }, r), e);
                     },
-                    O = ['children'];
+                    M = ['children'];
                 const P = (u) => {
                     let e = u.children,
                         t = (function (u, e) {
@@ -1406,8 +1411,8 @@
                                     t[r] = u[r];
                                 }
                             return t;
-                        })(u, O);
-                    return a().createElement(m, null, a().createElement(M, t, e));
+                        })(u, M);
+                    return a().createElement(m, null, a().createElement(O, t, e));
                 };
                 var k = t(493),
                     I = t.n(k);
@@ -1972,14 +1977,14 @@
                     (u[(u.left = 0)] = 'left'), (u[(u.right = 1)] = 'right');
                 })(Lu || (Lu = {}));
                 const Tu = (u) => u.replace(/&nbsp;/g, ' '),
-                    Mu = (u, e, t) => {
+                    Ou = (u, e, t) => {
                         if (t % 2) {
                             const t = u.pop();
                             return [...u, t + e];
                         }
                         return [...u, e];
                     },
-                    Ou = (u, e, t) => {
+                    Mu = (u, e, t) => {
                         if (0 === t) return [e];
                         if (t % 2) return [...u, ' ' === e ? ' ' : e];
                         {
@@ -1987,7 +1992,7 @@
                             return [...u, t + e];
                         }
                     },
-                    Pu = (u, e, t = Lu.left) => u.split(e).reduce(t === Lu.left ? Mu : Ou, []),
+                    Pu = (u, e, t = Lu.left) => u.split(e).reduce(t === Lu.left ? Ou : Mu, []),
                     ku = (() => {
                         const u = new RegExp(
                             /[\(\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]?[\u3002\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]?[ %\+\x2D-9A-Za-\{\}\xA0\xC0-\u0237\u2013\u2014\u2026]+[\)\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3002\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\uFF01\uFF0C\uFF1A\uFF1B\uFF1F\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]?[\u3002\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]?/gmu
