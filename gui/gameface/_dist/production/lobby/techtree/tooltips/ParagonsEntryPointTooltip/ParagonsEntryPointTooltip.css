@@ -346,8 +346,8 @@
 .Announcement_divider_72 {
     width: 100%;
     height: 1rem;
-    background: url('R.images.gui.maps.icons.techtree.researchTree.paragons.entryPoint.divider_points') no-repeat center /
-        cover;
+    background: url('R.images.gui.maps.icons.techtree.researchTree.paragons.entryPoint.divider_points') no-repeat
+        center / cover;
 }
 .Announcement_footer_72 {
     color: #ffdd99;

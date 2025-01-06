@@ -1055,14 +1055,14 @@
                         [v.Large]: `${C().SMALL_HEIGHT} ${C().MEDIUM_HEIGHT} ${C().LARGE_HEIGHT}`,
                         [v.ExtraLarge]: `${C().SMALL_HEIGHT} ${C().MEDIUM_HEIGHT} ${C().LARGE_HEIGHT} ${C().EXTRA_LARGE_HEIGHT}`,
                     },
-                    y = {
+                    P = {
                         [D.ExtraSmall]: '',
                         [D.Small]: C().SMALL,
                         [D.Medium]: `${C().SMALL} ${C().MEDIUM}`,
                         [D.Large]: `${C().SMALL} ${C().MEDIUM} ${C().LARGE}`,
                         [D.ExtraLarge]: `${C().SMALL} ${C().MEDIUM} ${C().LARGE} ${C().EXTRA_LARGE}`,
                     },
-                    P = (e) => {
+                    y = (e) => {
                         let t = e.children,
                             u = e.className,
                             i = (function (e, t) {
@@ -1078,7 +1078,7 @@
                             o = r.mediaWidth,
                             s = r.mediaHeight,
                             l = r.mediaSize;
-                        return a().createElement('div', x({ className: F()(u, L[o], T[s], y[l]) }, i), t);
+                        return a().createElement('div', x({ className: F()(u, L[o], T[s], P[l]) }, i), t);
                     },
                     O = ['children'];
                 const M = (e) => {
@@ -1092,7 +1092,7 @@
                             for (i = 0; i < r.length; i++) (u = r[i]), t.indexOf(u) >= 0 || (a[u] = e[u]);
                             return a;
                         })(e, O);
-                    return a().createElement(_, null, a().createElement(P, u, t));
+                    return a().createElement(_, null, a().createElement(y, u, t));
                 };
                 var U = u(493),
                     k = u.n(U);
@@ -1270,7 +1270,6 @@
                         (e.TankmenXpFactor = 'tankmenXPFactor'),
                         (e.FreeXpFactor = 'freeXPFactor'),
                         (e.BattleToken = 'battleToken'),
-                        (e.Entitlements = 'entitlements'),
                         (e.PremiumUniversal = 'premium_universal'),
                         (e.Gold = 'gold'),
                         (e.Credits = 'credits'),
@@ -1290,7 +1289,7 @@
                         (e.NewYearAlbumsAccess = 'newYearAlbumsAccess'),
                         (e.NewYearFillers = 'ny22Fillers'),
                         (e.NewYearInvoice = 'newYearInvoice'),
-                        (e.NewYearToyFragments = 'nyToyFragments'),
+                        (e.NewYearToyFragments = 'ny22ToyFragments'),
                         (e.NewYearSlot = 'newYearSlot'),
                         (e.BonusX5 = 'battle_bonus_x5'),
                         (e.CrewBonusX3 = 'crew_bonus_x3'),
@@ -1302,7 +1301,10 @@
                         (e.BattleBoosterGift = 'battleBooster_gift'),
                         (e.CosmicLootboxSilver = 'lootBoxToken'),
                         (e.CosmicLootboxCommon = 'cosmic_2024_2'),
-                        (e.LootBoxToken = 'lootBoxToken');
+                        (e.Branch = 'branch'),
+                        (e.VehicleSelect = 'vehicleSelect'),
+                        (e.StyleProgress = 'styleProgress'),
+                        (e.ParagonsUnlocks = 'paragonsUnlocks');
                 })(K || (K = {})),
                     (function (e) {
                         (e.Gold = 'gold'),
@@ -1439,7 +1441,6 @@
                         K.TankmenXpFactor,
                         K.FreeXpFactor,
                         K.BattleToken,
-                        K.Entitlements,
                         K.PremiumUniversal,
                         K.NaturalCover,
                         K.BpCoin,
@@ -1454,12 +1455,11 @@
                         K.Comp7TokenWeeklyReward,
                         K.Comp7TokenCouponReward,
                         K.BattleBoosterGift,
-                        K.NewYearFillers,
-                        K.NewYearInvoice,
-                        K.LootBoxToken,
+                        K.CosmicLootboxCommon,
+                        K.CosmicLootboxSilver,
                         K.SelectableBonus,
                     ],
-                    le = [K.Gold, K.Credits, K.Crystal, K.FreeXp, K.NewYearToyFragments],
+                    le = [K.Gold, K.Credits, K.Crystal, K.FreeXp],
                     ne = [K.BattlePassPoints],
                     he = [K.PremiumPlus, K.Premium],
                     de = (e) =>
@@ -1525,20 +1525,6 @@
                                             return `R.images.gui.maps.icons.quests.bonuses.${t}.${e.icon}`;
                                     }
                                 })(e, t);
-                            case 'entitlements':
-                                return 'big' === t
-                                    ? e.iconBig.replace('..', 'img://gui')
-                                    : e.iconSmall.replace('..', 'img://gui');
-                            case 'customizations':
-                            case 'styleProgress':
-                            case 'crewSkins':
-                            case 'goodies':
-                            case 'groups':
-                            case 'tmanToken':
-                            case 'battlePassSelectToken':
-                            case 'selectableBonus':
-                            case 'lootBoxToken':
-                                return `R.images.gui.maps.icons.quests.bonuses.${t}.${r}`;
                             case 'crewBooks':
                                 return `R.images.gui.maps.icons.crewBooks.books.${t}.${r}`;
                             case 'dogTagComponents':
@@ -1570,20 +1556,22 @@
                             case 'dailyXPFactor':
                             case 'freeXPFactor':
                                 return `R.images.gui.maps.icons.quests.bonuses.${t}.freeXP`;
+                            case 'tmanToken':
+                            case 'battlePassSelectToken':
+                            case 'selectableBonus':
+                            case 'groups':
+                            case 'lootBoxToken':
+                            case 'customizations':
+                            case 'styleProgress':
+                            case 'crewSkins':
+                            case 'goodies':
+                                return `R.images.gui.maps.icons.quests.bonuses.${t}.${r}`;
                             case 'premiumTank':
                                 return `R.images.gui.maps.icons.quests.bonuses.${t}.vehicles`;
                             case 'styleProgressToken':
                                 return `R.images.gui.maps.icons.quests.bonuses.${t}.style_3d`;
                             case 'collectionItem':
                                 return `R.images.gui.maps.icons.collectionItems.${l}.${r}`;
-                            case 'newYearAlbumsAccess':
-                                return `R.images.new_year.gui.maps.icons.newYear.rewards.${t}.albumsAccess`;
-                            case 'nyFillers':
-                                return `R.images.new_year.gui.maps.icons.newYear.rewards.${t}.fillers`;
-                            case 'nyToyFragments':
-                                return `R.images.new_year.gui.maps.icons.newYear.rewards.${t}.shards`;
-                            case 'newYearSlot':
-                                return `R.images.new_year.gui.maps.icons.newYear.rewards.${t}.slot`;
                             default:
                                 return `R.images.gui.maps.icons.quests.bonuses.${t}.${u}`;
                         }
@@ -1881,13 +1869,13 @@
                         'gum',
                     );
                 })();
-                let ye, Pe;
+                let Pe, ye;
                 !(function (e) {
                     (e.New = 'new'), (e.Received = 'received'), (e.Unreceived = 'unreceived');
-                })(ye || (ye = {})),
+                })(Pe || (Pe = {})),
                     (function (e) {
                         (e.JustReceived = 'justReceived'), (e.Received = 'received'), (e.Unreceived = 'unreceived');
-                    })(Pe || (Pe = {}));
+                    })(ye || (ye = {}));
                 const Oe = {
                         defaultConfig: {
                             generalBackgroundColor: '#0D1525',
@@ -2968,7 +2956,7 @@
                                                     if (!s) continue;
                                                     (i[o] = Object.assign(t[e], s)),
                                                         u.push(i[o]),
-                                                        i[o].state === ye.New && r++;
+                                                        i[o].state === Pe.New && r++;
                                                 }
                                             e.pages.push({ pageItems: u }),
                                                 Object.assign(e.items, i),
@@ -3012,10 +3000,10 @@
                                     () => {
                                         let e = !1;
                                         const u = (u) =>
-                                            u === Pe.JustReceived
+                                            u === ye.JustReceived
                                                 ? e || !t.isReadyForProgressAnimation.get()
-                                                    ? Pe.Unreceived
-                                                    : ((e = !0), Pe.JustReceived)
+                                                    ? ye.Unreceived
+                                                    : ((e = !0), ye.JustReceived)
                                                 : u;
                                         return Se(t.rewardsInfo.get(), ({ state: e, requiredItemsCount: t }) => ({
                                             state: u(e),
@@ -3289,13 +3277,13 @@
                             },
                             [o, l, h],
                         ),
-                        y = (0, i.useCallback)(
+                        P = (0, i.useCallback)(
                             (e) => {
                                 d && d(e);
                             },
                             [d],
                         ),
-                        P = (0, i.useCallback)(
+                        y = (0, i.useCallback)(
                             (e) => {
                                 o || (c && c(e), D(!1));
                             },
@@ -3345,8 +3333,8 @@
                                 ref: A,
                                 className: U,
                                 onMouseEnter: T,
-                                onMouseMove: y,
-                                onMouseUp: P,
+                                onMouseMove: P,
+                                onMouseUp: y,
                                 onMouseDown: O,
                                 onMouseLeave: M,
                                 onClick: L,
@@ -4109,8 +4097,8 @@
                             ),
                         );
                     }),
-                    yt = 'MainRewards_base_06',
-                    Pt = 'MainRewards_ribbonWrapper_50',
+                    Pt = 'MainRewards_base_06',
+                    yt = 'MainRewards_ribbonWrapper_50',
                     Ot = 'MainRewards_ribbon_19',
                     Mt = 'MainRewards_raysWrapper_f7',
                     Ut = 'MainRewards_rays_ea',
@@ -4129,7 +4117,7 @@
                         const e = He().model.root.get().state === gt.Completed;
                         return a().createElement(
                             'div',
-                            { className: yt },
+                            { className: Pt },
                             a().createElement('div', { className: Mt }, a().createElement('div', { className: Ut })),
                             e &&
                                 a().createElement(lt, {
@@ -4140,7 +4128,7 @@
                                     frameTime: 50,
                                     className: kt,
                                 }),
-                            a().createElement('div', { className: Pt }, a().createElement('div', { className: Ot })),
+                            a().createElement('div', { className: yt }, a().createElement('div', { className: Ot })),
                             a().createElement(Tt, null),
                         );
                     }),

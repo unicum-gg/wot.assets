@@ -151,17 +151,17 @@
             7641: (e, t, n) => {
                 n.r(t),
                     n.d(t, {
-                        addModelObserver: () => d,
+                        addModelObserver: () => c,
                         addPreloadTexture: () => s,
                         children: () => o,
                         displayStatus: () => r.W,
-                        displayStatusIs: () => S,
+                        displayStatusIs: () => R,
                         events: () => i.U,
                         extraSize: () => f,
                         forceTriggerMouseMove: () => O,
                         freezeTextureBeforeResize: () => p,
                         getBrowserTexturePath: () => l,
-                        getDisplayStatus: () => R,
+                        getDisplayStatus: () => S,
                         getScale: () => v,
                         getSize: () => u,
                         getViewGlobalPosition: () => m,
@@ -174,7 +174,7 @@
                         setAnimateWindow: () => P,
                         setEventHandled: () => b,
                         setInputPaddingsRem: () => _,
-                        setSidePaddingsRem: () => c,
+                        setSidePaddingsRem: () => d,
                         whenTutorialReady: () => k,
                     });
                 var o = n(3722),
@@ -190,10 +190,10 @@
                 function l(e, t, n, o = 1) {
                     return viewEnv.getWebBrowserTexturePath(e, t, n, o);
                 }
-                function d(e, t, n) {
+                function c(e, t, n) {
                     return viewEnv.addDataChangedCallback(e, t, n);
                 }
-                function c(e) {
+                function d(e) {
                     viewEnv.setHitAreaPaddingsRem(e.top, e.right, e.bottom, e.left, 15);
                 }
                 function u(e = 'px') {
@@ -233,10 +233,10 @@
                 function O() {
                     viewEnv.forceTriggerMouseMove();
                 }
-                function R() {
+                function S() {
                     return viewEnv.getShowingStatus();
                 }
-                const S = Object.keys(r.W).reduce(
+                const R = Object.keys(r.W).reduce(
                         (e, t) => ((e[t] = () => viewEnv.getShowingStatus() === r.W[t]), e),
                         {},
                     ),
@@ -489,7 +489,7 @@
                 const __WEBPACK_DEFAULT_EXPORT__ = ViewModel;
             },
             4179: (e, t, n) => {
-                n.d(t, { B3: () => d, Z5: () => a, ry: () => P });
+                n.d(t, { B3: () => c, Z5: () => a, ry: () => P });
                 class o {
                     constructor() {
                         (this.entries = []),
@@ -553,8 +553,8 @@
                     (l[(l.MOVE = 16)] = 'MOVE'),
                     (l[(l.CLOSE = 32)] = 'CLOSE'),
                     (l[(l.MINIMIZE = 64)] = 'MINIMIZE');
-                const d = Object.freeze({ INTEGRAL: 0, GOLD: 1 }),
-                    c = Object.freeze({ FRACTIONAL: 0, WO_ZERO_DIGITS: 1 }),
+                const c = Object.freeze({ INTEGRAL: 0, GOLD: 1 }),
+                    d = Object.freeze({ FRACTIONAL: 0, WO_ZERO_DIGITS: 1 }),
                     u = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1 }),
                     E = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1, YEAR_MONTH: 2 });
                 var m = n(5521),
@@ -647,8 +647,8 @@
                         DataTracker: i.Z,
                         ViewModel: O.Z,
                         ViewEventType: _,
-                        NumberFormatType: d,
-                        RealFormatType: c,
+                        NumberFormatType: c,
+                        RealFormatType: d,
                         TimeFormatType: u,
                         DateFormatType: E,
                         makeGlobalBoundingBox: h,
@@ -662,13 +662,13 @@
                             const a = p.O.view.getViewGlobalPosition(),
                                 s = n.getBoundingClientRect(),
                                 l = s.x,
-                                d = s.y,
-                                c = s.width,
+                                c = s.y,
+                                d = s.width,
                                 u = s.height,
                                 E = {
                                     x: p.O.view.pxToRem(l) + a.x,
-                                    y: p.O.view.pxToRem(d) + a.y,
-                                    width: p.O.view.pxToRem(c),
+                                    y: p.O.view.pxToRem(c) + a.y,
+                                    width: p.O.view.pxToRem(d),
                                     height: p.O.view.pxToRem(u),
                                 };
                             T(_.POP_OVER, {
@@ -730,7 +730,7 @@
             6620: (e, t, n) => {
                 var o = n(6179),
                     r = n.n(o);
-                let i, a, s, _, l, d, c;
+                let i, a, s, _, l, c, d;
                 var u, E, m, p;
                 !(function (e) {
                     (e.Items = 'items'),
@@ -752,7 +752,6 @@
                         (e.TankmenXpFactor = 'tankmenXPFactor'),
                         (e.FreeXpFactor = 'freeXPFactor'),
                         (e.BattleToken = 'battleToken'),
-                        (e.Entitlements = 'entitlements'),
                         (e.PremiumUniversal = 'premium_universal'),
                         (e.Gold = 'gold'),
                         (e.Credits = 'credits'),
@@ -772,7 +771,7 @@
                         (e.NewYearAlbumsAccess = 'newYearAlbumsAccess'),
                         (e.NewYearFillers = 'ny22Fillers'),
                         (e.NewYearInvoice = 'newYearInvoice'),
-                        (e.NewYearToyFragments = 'nyToyFragments'),
+                        (e.NewYearToyFragments = 'ny22ToyFragments'),
                         (e.NewYearSlot = 'newYearSlot'),
                         (e.BonusX5 = 'battle_bonus_x5'),
                         (e.CrewBonusX3 = 'crew_bonus_x3'),
@@ -784,7 +783,10 @@
                         (e.BattleBoosterGift = 'battleBooster_gift'),
                         (e.CosmicLootboxSilver = 'lootBoxToken'),
                         (e.CosmicLootboxCommon = 'cosmic_2024_2'),
-                        (e.LootBoxToken = 'lootBoxToken');
+                        (e.Branch = 'branch'),
+                        (e.VehicleSelect = 'vehicleSelect'),
+                        (e.StyleProgress = 'styleProgress'),
+                        (e.ParagonsUnlocks = 'paragonsUnlocks');
                 })(i || (i = {})),
                     (function (e) {
                         (e.Gold = 'gold'),
@@ -854,8 +856,8 @@
                     (E.PROGRESSION_STYLE_UPGRADED_2 = 'progressionStyleUpgraded_2'),
                     (E.PROGRESSION_STYLE_UPGRADED_3 = 'progressionStyleUpgraded_3'),
                     (E.PROGRESSION_STYLE_UPGRADED_4 = 'progressionStyleUpgraded_4'),
-                    ((d || (d = {})).BATTLE_BOOSTER = 'battleBooster'),
-                    ((u = c || (c = {})).BATTLE_BOOSTER = 'battleBooster'),
+                    ((c || (c = {})).BATTLE_BOOSTER = 'battleBooster'),
+                    ((u = d || (d = {})).BATTLE_BOOSTER = 'battleBooster'),
                     (u.BATTLE_BOOSTER_REPLACE = 'battleBoosterReplace'),
                     (u.BUILT_IN_EQUIPMENT = 'builtInEquipment'),
                     (u.EQUIPMENT_PLUS = 'equipmentPlus'),
@@ -877,7 +879,7 @@
                         return void 0 !== this.props.value && void 0 !== t ? t : null;
                     }
                 }
-                let h, P, T, b, g, O, R, S;
+                let h, P, T, b, g, O, S, R;
                 var f, k, y;
                 (w.defaultProps = { format: 'integral' }),
                     i.Items,
@@ -898,7 +900,6 @@
                     i.TankmenXpFactor,
                     i.FreeXpFactor,
                     i.BattleToken,
-                    i.Entitlements,
                     i.PremiumUniversal,
                     i.NaturalCover,
                     i.BpCoin,
@@ -913,15 +914,13 @@
                     i.Comp7TokenWeeklyReward,
                     i.Comp7TokenCouponReward,
                     i.BattleBoosterGift,
-                    i.NewYearFillers,
-                    i.NewYearInvoice,
-                    i.LootBoxToken,
+                    i.CosmicLootboxCommon,
+                    i.CosmicLootboxSilver,
                     i.SelectableBonus,
                     i.Gold,
                     i.Credits,
                     i.Crystal,
                     i.FreeXp,
-                    i.NewYearToyFragments,
                     i.BattlePassPoints,
                     i.PremiumPlus,
                     i.Premium,
@@ -953,13 +952,13 @@
                             (e.HideLevel = 'hide'),
                             (e.HideLevelWithDelay = 'hideWithDelay');
                     })(O || (O = {})),
-                    ((f = R || (R = {})).style = 'style'),
+                    ((f = S || (S = {})).style = 'style'),
                     (f.tankman = 'tankman'),
                     (function (e) {
                         (e.Default = 'default'), (e.Marathon = 'marathon'), (e.Resource = 'resource');
-                    })(S || (S = {})),
-                    R.style,
-                    R.tankman;
+                    })(R || (R = {})),
+                    S.style,
+                    S.tankman;
             },
         },
         __webpack_module_cache__ = {},

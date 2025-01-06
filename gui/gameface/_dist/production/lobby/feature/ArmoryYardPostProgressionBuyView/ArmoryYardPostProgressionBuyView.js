@@ -1223,7 +1223,6 @@
                         (u.TankmenXpFactor = 'tankmenXPFactor'),
                         (u.FreeXpFactor = 'freeXPFactor'),
                         (u.BattleToken = 'battleToken'),
-                        (u.Entitlements = 'entitlements'),
                         (u.PremiumUniversal = 'premium_universal'),
                         (u.Gold = 'gold'),
                         (u.Credits = 'credits'),
@@ -1243,7 +1242,7 @@
                         (u.NewYearAlbumsAccess = 'newYearAlbumsAccess'),
                         (u.NewYearFillers = 'ny22Fillers'),
                         (u.NewYearInvoice = 'newYearInvoice'),
-                        (u.NewYearToyFragments = 'nyToyFragments'),
+                        (u.NewYearToyFragments = 'ny22ToyFragments'),
                         (u.NewYearSlot = 'newYearSlot'),
                         (u.BonusX5 = 'battle_bonus_x5'),
                         (u.CrewBonusX3 = 'crew_bonus_x3'),
@@ -1255,7 +1254,10 @@
                         (u.BattleBoosterGift = 'battleBooster_gift'),
                         (u.CosmicLootboxSilver = 'lootBoxToken'),
                         (u.CosmicLootboxCommon = 'cosmic_2024_2'),
-                        (u.LootBoxToken = 'lootBoxToken');
+                        (u.Branch = 'branch'),
+                        (u.VehicleSelect = 'vehicleSelect'),
+                        (u.StyleProgress = 'styleProgress'),
+                        (u.ParagonsUnlocks = 'paragonsUnlocks');
                 })(N || (N = {})),
                     (function (u) {
                         (u.Gold = 'gold'),
@@ -3127,69 +3129,70 @@
                             ),
                         ),
                     ),
-                    we = R.strings.armory_yard,
-                    Se = (0, J.Pi)(() => {
-                        var u, e;
-                        const t = lu(),
-                            r = t.controls,
-                            a = t.model,
-                            o = a.root.get(),
-                            i = o.tokensCount,
-                            s = o.payedTokensLimit,
-                            l = o.isWalletAvailable,
-                            E = o.userCrystal,
-                            _ = a.computes.getTokenPrice(),
-                            c = a.computes.getTokenCrystalPrice(),
-                            A = (null == (u = _.price.find((u) => u.name === N.Gold)) ? void 0 : u.value) || 0,
-                            F = (null == (e = c.price.find((u) => u.name === N.Crystal)) ? void 0 : e.value) || 0;
-                        var D;
-                        return (
-                            (D = r.back),
-                            Q($.n.ESCAPE, D),
+                    we = R.strings.armory_yard;
+                viewEnv.clearInternalCacheAfterFinalize();
+                const Se = (0, J.Pi)(() => {
+                    var u, e;
+                    const t = lu(),
+                        r = t.controls,
+                        a = t.model,
+                        o = a.root.get(),
+                        i = o.tokensCount,
+                        s = o.payedTokensLimit,
+                        l = o.isWalletAvailable,
+                        E = o.userCrystal,
+                        _ = a.computes.getTokenPrice(),
+                        c = a.computes.getTokenCrystalPrice(),
+                        A = (null == (u = _.price.find((u) => u.name === N.Gold)) ? void 0 : u.value) || 0,
+                        F = (null == (e = c.price.find((u) => u.name === N.Crystal)) ? void 0 : e.value) || 0;
+                    var D;
+                    return (
+                        (D = r.back),
+                        Q($.n.ESCAPE, D),
+                        n().createElement(
+                            'div',
+                            { className: 'App_base_4f' },
+                            n().createElement(z, {
+                                caption: we.closeBtn.label(),
+                                type: 'close',
+                                side: 'right',
+                                classNames: { base: 'App_close_ab' },
+                                onClick: r.cancel,
+                            }),
                             n().createElement(
                                 'div',
-                                { className: 'App_base_4f' },
-                                n().createElement(z, {
-                                    caption: we.closeBtn.label(),
-                                    type: 'close',
-                                    side: 'right',
-                                    classNames: { base: 'App_close_ab' },
-                                    onClick: r.cancel,
-                                }),
+                                { className: 'App_content_97' },
                                 n().createElement(
                                     'div',
-                                    { className: 'App_content_97' },
-                                    n().createElement(
-                                        'div',
-                                        { className: 'App_header_1e' },
-                                        n().createElement(xe, { tokensCount: i }),
-                                    ),
-                                    n().createElement(
-                                        'div',
-                                        { className: 'App_productInfo_74' },
-                                        n().createElement(
-                                            'div',
-                                            { className: 'App_description_f6' },
-                                            n().createElement(ju, null),
-                                        ),
-                                        n().createElement('div', { className: 'App_tokenImage_87' }),
-                                    ),
-                                    n().createElement(
-                                        'div',
-                                        { className: 'App_footer_e7' },
-                                        n().createElement(be, {
-                                            tokenRate: A,
-                                            tokenCrystalRate: F,
-                                            isWalletAvailable: l,
-                                            buy: r.buy,
-                                            payedTokensLimit: s,
-                                            userCrystal: E,
-                                        }),
-                                    ),
+                                    { className: 'App_header_1e' },
+                                    n().createElement(xe, { tokensCount: i }),
                                 ),
-                            )
-                        );
-                    });
+                                n().createElement(
+                                    'div',
+                                    { className: 'App_productInfo_74' },
+                                    n().createElement(
+                                        'div',
+                                        { className: 'App_description_f6' },
+                                        n().createElement(ju, null),
+                                    ),
+                                    n().createElement('div', { className: 'App_tokenImage_87' }),
+                                ),
+                                n().createElement(
+                                    'div',
+                                    { className: 'App_footer_e7' },
+                                    n().createElement(be, {
+                                        tokenRate: A,
+                                        tokenCrystalRate: F,
+                                        isWalletAvailable: l,
+                                        buy: r.buy,
+                                        payedTokensLimit: s,
+                                        userCrystal: E,
+                                    }),
+                                ),
+                            ),
+                        )
+                    );
+                });
                 engine.whenReady.then(() => {
                     O().render(
                         n().createElement(su, null, n().createElement(k, null, n().createElement(Se, null))),

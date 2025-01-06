@@ -334,7 +334,7 @@
                         },
                     };
             },
-            2298: (u, e, t) => {
+            4649: (u, e, t) => {
                 t.d(e, { au: () => i });
                 var A = t(6179);
                 var F = t(8374);
@@ -945,7 +945,7 @@
                     w = 'RerollTooltipContent_available_63',
                     h = 'RerollTooltipContent_available_icon_cf',
                     p = 'RerollTooltipContent_available_timeLeft_13';
-                var b = t(2298);
+                var b = t(4649);
                 const f = ({ model: u, showTimer: e }) => {
                     const t = u.rerollInterval,
                         E = u.timeLeft,
@@ -1037,7 +1037,7 @@
                 (window.onload = () => document.body.appendChild(O)), n().render(F().createElement(g, null), O);
             },
             2993: (u, e, t) => {
-                t(8374), t(2298), t(6179), t(1272);
+                t(8374), t(4649), t(6179), t(1272);
             },
             1272: (u, e, t) => {
                 t(6179);

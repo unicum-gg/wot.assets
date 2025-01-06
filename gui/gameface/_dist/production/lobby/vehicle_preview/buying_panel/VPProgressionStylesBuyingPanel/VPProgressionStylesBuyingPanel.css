@@ -296,6 +296,11 @@
     text-align: center;
 }
 
+.Content_notification__aligned_dc {
+    text-align: center;
+    white-space: pre-wrap;
+}
+
 .Content_notificationIcon_f8 {
     margin-left: 9rem;
     margin-top: 2rem;

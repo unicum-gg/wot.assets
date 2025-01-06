@@ -101,13 +101,13 @@
 }
 .AbilityPanel_ability__acceleration_62 .AbilityPanel_ability_border_40,
 .AbilityPanel_ability__shield_39 .AbilityPanel_ability_border_40 {
-    background: url('R.images.cosmic_event.gui.maps.icons.battle.ability_panel.size_60x58.ability_border') center center /
-        57rem 56rem no-repeat;
+    background: url('R.images.cosmic_event.gui.maps.icons.battle.ability_panel.size_60x58.ability_border') center
+        center / 57rem 56rem no-repeat;
 }
 .mediaMedium .AbilityPanel_ability__acceleration_62 .AbilityPanel_ability_border_40,
 .mediaMedium .AbilityPanel_ability__shield_39 .AbilityPanel_ability_border_40 {
-    background: url('R.images.cosmic_event.gui.maps.icons.battle.ability_panel.size_74x72.ability_border') center center /
-        72rem 68rem no-repeat;
+    background: url('R.images.cosmic_event.gui.maps.icons.battle.ability_panel.size_74x72.ability_border') center
+        center / 72rem 68rem no-repeat;
 }
 .AbilityPanel_ability__black_hole_2f .AbilityPanel_ability_border_40 {
     background: url('R.images.cosmic_event.gui.maps.icons.battle.ability_panel.size_60x58.ability_border_black_hole')
@@ -252,8 +252,8 @@
 }
 .AbilityPanel_ability__acceleration_62 .AbilityPanel_ability_icon_f2,
 .AbilityPanel_ability__acceleration_62 .AbilityPanel_ability_reloadMask_icon_31 {
-    background: url('R.images.cosmic_event.gui.maps.icons.battle.ability_panel.icons.acceleration_small') center center /
-        40rem 40rem no-repeat;
+    background: url('R.images.cosmic_event.gui.maps.icons.battle.ability_panel.icons.acceleration_small') center
+        center / 40rem 40rem no-repeat;
 }
 .mediaMedium .AbilityPanel_ability__acceleration_62 .AbilityPanel_ability_icon_f2,
 .mediaMedium .AbilityPanel_ability__acceleration_62 .AbilityPanel_ability_reloadMask_icon_31 {

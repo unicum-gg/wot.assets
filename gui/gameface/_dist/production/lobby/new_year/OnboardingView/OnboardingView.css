@@ -3235,8 +3235,8 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     width: 120rem;
     height: 120rem;
     margin-left: 40rem;
-    background: url('R.images.new_year.gui.maps.icons.newYear.common.currency.c_120x120.ny25_mandarin') no-repeat center /
-        contain;
+    background: url('R.images.new_year.gui.maps.icons.newYear.common.currency.c_120x120.ny25_mandarin') no-repeat
+        center / contain;
     opacity: 1;
     position: relative;
     z-index: 3;

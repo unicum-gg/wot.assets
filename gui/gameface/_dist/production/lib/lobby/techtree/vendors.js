@@ -7431,7 +7431,7 @@
                                                 c === nr
                                                     ? 'script' === p
                                                         ? (((o = f.createElement('div')).innerHTML =
-                                                              '<script></script>'),
+                                                              '<script><\/script>'),
                                                           (f = o.removeChild(o.firstChild)))
                                                         : 'string' == typeof o.is
                                                           ? (f = f.createElement(p, { is: o.is }))
@@ -9069,7 +9069,7 @@
         },
         13: (e, t, n) => {
             'use strict';
-            if ((n.d(t, { e: () => i }), 210 == n.j)) var r = n(174);
+            if ((n.d(t, { e: () => i }), 445 != n.j)) var r = n(174);
             function i(e) {
                 return (0, r.Gf)(e);
             }

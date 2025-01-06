@@ -1963,8 +1963,8 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .Convertation_bumpParticles_5f {
-    background: url('R.images.white_tiger.gui.maps.icons.sequence.convert_particles.items_idle_00021') no-repeat center /
-        contain;
+    background: url('R.images.white_tiger.gui.maps.icons.sequence.convert_particles.items_idle_00021') no-repeat
+        center / contain;
     opacity: 0;
     transform: scale(2) rotate(10deg);
     transition: transform 400ms ease;

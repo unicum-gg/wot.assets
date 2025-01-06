@@ -583,7 +583,7 @@
                                 });
                         };
                     };
-                function R(e, u, t) {
+                function P(e, u, t) {
                     var n = t[0],
                         r = t[1],
                         i = t[2],
@@ -615,7 +615,7 @@
                             u.preventDefault());
                     });
                 }
-                var P = 1e3,
+                var R = 1e3,
                     x = {
                         'click-rail': function (e, u) {
                             e.event.bind(e.scrollbarY, 'mousedown', function (e) {
@@ -628,7 +628,7 @@
                                 e.event.bind(e.scrollbarXRail, 'mousedown', y(e, 'x', u));
                         },
                         'drag-thumb': function (e, u) {
-                            R(e, u, [
+                            P(e, u, [
                                 'containerWidth',
                                 'contentWidth',
                                 'screenX',
@@ -639,7 +639,7 @@
                                 'x',
                                 'scrollbarXRail',
                             ]),
-                                R(e, u, [
+                                P(e, u, [
                                     'containerHeight',
                                     'contentHeight',
                                     'screenY',
@@ -996,10 +996,10 @@
                             }
                             function D(n) {
                                 var r = e.contentWidth - e.containerWidth + u;
-                                if (t.scrollLeft < u) s(u - t.scrollLeft, P, d);
-                                else if (t.scrollLeft > r) s(r - t.scrollLeft, P, d);
+                                if (t.scrollLeft < u) s(u - t.scrollLeft, R, d);
+                                else if (t.scrollLeft > r) s(r - t.scrollLeft, R, d);
                                 else {
-                                    new Date().getTime() - o < 100 && s(i / 4, P, d, !0);
+                                    new Date().getTime() - o < 100 && s(i / 4, R, d, !0);
                                 }
                                 h(e, 'x'),
                                     h(e, 'dragging', { immediately: !0 }),
@@ -1371,13 +1371,13 @@
                         getBrowserTexturePath: () => S,
                         getDisplayStatus: () => U,
                         getScale: () => H,
-                        getSize: () => R,
+                        getSize: () => P,
                         getViewGlobalPosition: () => x,
                         isEventHandled: () => X,
                         isFocused: () => Y,
                         pxToRem: () => k,
                         remToPx: () => O,
-                        resize: () => P,
+                        resize: () => R,
                         sendEvent: () => p,
                         setAnimateWindow: () => W,
                         setEventHandled: () => N,
@@ -1552,10 +1552,10 @@
                 function y(e) {
                     viewEnv.setHitAreaPaddingsRem(e.top, e.right, e.bottom, e.left, 15);
                 }
-                function R(e = 'px') {
+                function P(e = 'px') {
                     return 'rem' === e ? viewEnv.getViewSizeRem() : viewEnv.getViewSizePx();
                 }
-                function P(e, u, t = 'px') {
+                function R(e, u, t = 'px') {
                     return 'rem' === t ? viewEnv.resizeViewRem(e, u) : viewEnv.resizeViewPx(e, u);
                 }
                 function x(e = 'rem') {
@@ -2035,7 +2035,7 @@
                     };
                 window.ViewEnvHelper = f;
             },
-            88: (e, u, t) => {
+            84: (e, u, t) => {
                 'use strict';
                 var n = t(483),
                     r = t.n(n);
@@ -2585,8 +2585,8 @@
                         S = (0, a.useState)(),
                         T = S[0],
                         y = S[1],
-                        R = (0, a.useRef)(null),
-                        P = (0, a.useCallback)(() => {
+                        P = (0, a.useRef)(null),
+                        R = (0, a.useCallback)(() => {
                             w &&
                                 c &&
                                 c({ x: w.scrollbarXActive, y: w.scrollbarYActive }, { x: w.reach.x, y: w.reach.y });
@@ -2646,10 +2646,10 @@
                         $ = (0, a.useCallback)(() => {
                             w &&
                                 (w.update(),
-                                (R.current = H(() => {
-                                    P();
+                                (P.current = H(() => {
+                                    R();
                                 })));
-                        }, [w, P]),
+                        }, [w, R]),
                         J = (0, a.useCallback)((e) => {
                             0 === e.screenX && 0 === e.screenY && (e.stopImmediatePropagation(), e.preventDefault());
                         }, []);
@@ -2688,16 +2688,16 @@
                     ),
                         (0, a.useEffect)(
                             () => () => {
-                                null == R.current || R.current();
+                                null == P.current || P.current();
                             },
                             [],
                         ),
                         (0, a.useEffect)(
                             () =>
                                 H(() => {
-                                    w && P();
+                                    w && R();
                                 }),
-                            [P, w],
+                            [R, w],
                         ),
                         (0, a.useEffect)(() => {
                             n > 0 && W(n);
@@ -2739,7 +2739,6 @@
                         (e.TankmenXpFactor = 'tankmenXPFactor'),
                         (e.FreeXpFactor = 'freeXPFactor'),
                         (e.BattleToken = 'battleToken'),
-                        (e.Entitlements = 'entitlements'),
                         (e.PremiumUniversal = 'premium_universal'),
                         (e.Gold = 'gold'),
                         (e.Credits = 'credits'),
@@ -2759,7 +2758,7 @@
                         (e.NewYearAlbumsAccess = 'newYearAlbumsAccess'),
                         (e.NewYearFillers = 'ny22Fillers'),
                         (e.NewYearInvoice = 'newYearInvoice'),
-                        (e.NewYearToyFragments = 'nyToyFragments'),
+                        (e.NewYearToyFragments = 'ny22ToyFragments'),
                         (e.NewYearSlot = 'newYearSlot'),
                         (e.BonusX5 = 'battle_bonus_x5'),
                         (e.CrewBonusX3 = 'crew_bonus_x3'),
@@ -2771,7 +2770,10 @@
                         (e.BattleBoosterGift = 'battleBooster_gift'),
                         (e.CosmicLootboxSilver = 'lootBoxToken'),
                         (e.CosmicLootboxCommon = 'cosmic_2024_2'),
-                        (e.LootBoxToken = 'lootBoxToken');
+                        (e.Branch = 'branch'),
+                        (e.VehicleSelect = 'vehicleSelect'),
+                        (e.StyleProgress = 'styleProgress'),
+                        (e.ParagonsUnlocks = 'paragonsUnlocks');
                 })(z || (z = {})),
                     (function (e) {
                         (e.Gold = 'gold'),
@@ -2962,6 +2964,6 @@
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             t.forEach(u.bind(null, 0)), (t.push = u.bind(null, t.push.bind(t)));
         })();
-    var __webpack_exports__ = __webpack_require__.O(void 0, [127], () => __webpack_require__(88));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [127], () => __webpack_require__(84));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

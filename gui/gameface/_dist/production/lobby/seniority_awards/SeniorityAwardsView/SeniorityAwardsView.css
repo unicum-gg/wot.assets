@@ -1806,8 +1806,8 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 .App_foreground_dd {
     width: 1000%;
-    background: url('R.images.gui.maps.icons.seniorityAwards.seniority_awards_foreground') repeat no-repeat left bottom /
-        contain;
+    background: url('R.images.gui.maps.icons.seniorityAwards.seniority_awards_foreground') repeat no-repeat left
+        bottom / contain;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -1821,8 +1821,8 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     bottom: 0;
 }
 .App_vignette__mid_69 {
-    background: url('R.images.gui.maps.icons.seniorityAwards.seniority_awards_vignette_bg_mid') repeat no-repeat center /
-        contain;
+    background: url('R.images.gui.maps.icons.seniorityAwards.seniority_awards_vignette_bg_mid') repeat no-repeat
+        center / contain;
     left: 0;
 }
 .App_vignette__left_28 {
@@ -1831,8 +1831,8 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     left: 0;
 }
 .App_vignette__right_fe {
-    background: url('R.images.gui.maps.icons.seniorityAwards.seniority_awards_vignette_bg_right') no-repeat right center /
-        contain;
+    background: url('R.images.gui.maps.icons.seniorityAwards.seniority_awards_vignette_bg_right') no-repeat right
+        center / contain;
     right: 0;
 }
 .App_shadow_03 {

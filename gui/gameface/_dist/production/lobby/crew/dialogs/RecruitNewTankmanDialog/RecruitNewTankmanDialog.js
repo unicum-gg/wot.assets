@@ -2256,7 +2256,7 @@
                     return (t ? n.$dyn(`${t}Case`) : n).$dyn(e);
                 };
             },
-            2850: (e, u, t) => {
+            3906: (e, u, t) => {
                 'use strict';
                 var n = t(7739),
                     r = t(6179),
@@ -3825,6 +3825,6 @@
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             t.forEach(u.bind(null, 0)), (t.push = u.bind(null, t.push.bind(t)));
         })();
-    var __webpack_exports__ = __webpack_require__.O(void 0, [56], () => __webpack_require__(2850));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [56], () => __webpack_require__(3906));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

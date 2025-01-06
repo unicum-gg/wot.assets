@@ -1007,8 +1007,8 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .ReserveCard_base__clan_64 .ReserveCard_activeLight_be {
-    background: url('R.images.gui.maps.icons.personal_reserves.activated_light_clan_activation') no-repeat center -25rem /
-        cover;
+    background: url('R.images.gui.maps.icons.personal_reserves.activated_light_clan_activation') no-repeat
+        center -25rem / cover;
 }
 
 .ReserveCard_base__clan_64 .ReserveCard_checkmark_db {
@@ -1029,8 +1029,8 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .ReserveCard_base__event_1e .ReserveCard_activeLight_be {
-    background: url('R.images.gui.maps.icons.personal_reserves.activated_light_event_activation') no-repeat center -25rem /
-        cover;
+    background: url('R.images.gui.maps.icons.personal_reserves.activated_light_event_activation') no-repeat
+        center -25rem / cover;
 }
 
 .ReserveCard_base__event_1e .ReserveCard_checkmark_db {
@@ -1392,8 +1392,8 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .ReserveCard_activeLight_be {
     width: var(--card-width);
     height: 135rem;
-    background: url('R.images.gui.maps.icons.personal_reserves.activated_light_personal_activation') no-repeat center -25rem /
-        cover;
+    background: url('R.images.gui.maps.icons.personal_reserves.activated_light_personal_activation') no-repeat
+        center -25rem / cover;
     position: absolute;
     top: -1rem;
     left: 0;

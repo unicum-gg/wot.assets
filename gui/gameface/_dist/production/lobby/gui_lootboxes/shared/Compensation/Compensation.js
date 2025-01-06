@@ -38,7 +38,6 @@
                             (e.TankmenXpFactor = 'tankmenXPFactor'),
                             (e.FreeXpFactor = 'freeXPFactor'),
                             (e.BattleToken = 'battleToken'),
-                            (e.Entitlements = 'entitlements'),
                             (e.PremiumUniversal = 'premium_universal'),
                             (e.Gold = 'gold'),
                             (e.Credits = 'credits'),
@@ -58,7 +57,7 @@
                             (e.NewYearAlbumsAccess = 'newYearAlbumsAccess'),
                             (e.NewYearFillers = 'ny22Fillers'),
                             (e.NewYearInvoice = 'newYearInvoice'),
-                            (e.NewYearToyFragments = 'nyToyFragments'),
+                            (e.NewYearToyFragments = 'ny22ToyFragments'),
                             (e.NewYearSlot = 'newYearSlot'),
                             (e.BonusX5 = 'battle_bonus_x5'),
                             (e.CrewBonusX3 = 'crew_bonus_x3'),
@@ -70,7 +69,10 @@
                             (e.BattleBoosterGift = 'battleBooster_gift'),
                             (e.CosmicLootboxSilver = 'lootBoxToken'),
                             (e.CosmicLootboxCommon = 'cosmic_2024_2'),
-                            (e.LootBoxToken = 'lootBoxToken');
+                            (e.Branch = 'branch'),
+                            (e.VehicleSelect = 'vehicleSelect'),
+                            (e.StyleProgress = 'styleProgress'),
+                            (e.ParagonsUnlocks = 'paragonsUnlocks');
                     })(o || (o = {})),
                     (function (e) {
                         (e.Gold = 'gold'),
@@ -186,7 +188,6 @@
                     o.E4.TankmenXpFactor,
                     o.E4.FreeXpFactor,
                     o.E4.BattleToken,
-                    o.E4.Entitlements,
                     o.E4.PremiumUniversal,
                     o.E4.NaturalCover,
                     o.E4.BpCoin,
@@ -201,15 +202,13 @@
                     o.E4.Comp7TokenWeeklyReward,
                     o.E4.Comp7TokenCouponReward,
                     o.E4.BattleBoosterGift,
-                    o.E4.NewYearFillers,
-                    o.E4.NewYearInvoice,
-                    o.E4.LootBoxToken,
+                    o.E4.CosmicLootboxCommon,
+                    o.E4.CosmicLootboxSilver,
                     o.E4.SelectableBonus,
                     o.E4.Gold,
                     o.E4.Credits,
                     o.E4.Crystal,
                     o.E4.FreeXp,
-                    o.E4.NewYearToyFragments,
                     o.E4.BattlePassPoints,
                     o.E4.PremiumPlus,
                     o.E4.Premium;
@@ -376,21 +375,21 @@
             7641: (e, t, n) => {
                 n.r(t),
                     n.d(t, {
-                        addModelObserver: () => d,
+                        addModelObserver: () => c,
                         addPreloadTexture: () => a,
                         children: () => o,
                         displayStatus: () => r.W,
                         displayStatusIs: () => S,
                         events: () => i.U,
                         extraSize: () => k,
-                        forceTriggerMouseMove: () => g,
+                        forceTriggerMouseMove: () => O,
                         freezeTextureBeforeResize: () => p,
                         getBrowserTexturePath: () => l,
                         getDisplayStatus: () => R,
                         getScale: () => m,
                         getSize: () => u,
                         getViewGlobalPosition: () => v,
-                        isEventHandled: () => O,
+                        isEventHandled: () => g,
                         isFocused: () => T,
                         pxToRem: () => w,
                         remToPx: () => P,
@@ -399,7 +398,7 @@
                         setAnimateWindow: () => h,
                         setEventHandled: () => b,
                         setInputPaddingsRem: () => _,
-                        setSidePaddingsRem: () => c,
+                        setSidePaddingsRem: () => d,
                         whenTutorialReady: () => f,
                     });
                 var o = n(3722),
@@ -415,10 +414,10 @@
                 function l(e, t, n, o = 1) {
                     return viewEnv.getWebBrowserTexturePath(e, t, n, o);
                 }
-                function d(e, t, n) {
+                function c(e, t, n) {
                     return viewEnv.addDataChangedCallback(e, t, n);
                 }
-                function c(e) {
+                function d(e) {
                     viewEnv.setHitAreaPaddingsRem(e.top, e.right, e.bottom, e.left, 15);
                 }
                 function u(e = 'px') {
@@ -452,10 +451,10 @@
                 function b() {
                     return viewEnv.setEventHandled();
                 }
-                function O() {
+                function g() {
                     return viewEnv.isEventHandled();
                 }
-                function g() {
+                function O() {
                     viewEnv.forceTriggerMouseMove();
                 }
                 function R() {
@@ -714,7 +713,7 @@
                 const __WEBPACK_DEFAULT_EXPORT__ = ViewModel;
             },
             4179: (e, t, n) => {
-                n.d(t, { B3: () => d, Z5: () => s, ry: () => h });
+                n.d(t, { B3: () => c, Z5: () => s, ry: () => h });
                 class o {
                     constructor() {
                         (this.entries = []),
@@ -778,8 +777,8 @@
                     (l[(l.MOVE = 16)] = 'MOVE'),
                     (l[(l.CLOSE = 32)] = 'CLOSE'),
                     (l[(l.MINIMIZE = 64)] = 'MINIMIZE');
-                const d = Object.freeze({ INTEGRAL: 0, GOLD: 1 }),
-                    c = Object.freeze({ FRACTIONAL: 0, WO_ZERO_DIGITS: 1 }),
+                const c = Object.freeze({ INTEGRAL: 0, GOLD: 1 }),
+                    d = Object.freeze({ FRACTIONAL: 0, WO_ZERO_DIGITS: 1 }),
                     u = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1 }),
                     E = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1, YEAR_MONTH: 2 });
                 var v = n(5521),
@@ -863,17 +862,17 @@
                         var o;
                     },
                     b = () => T(_.CLOSE),
-                    O = (e, t) => {
+                    g = (e, t) => {
                         e.keyCode === v.n.ESCAPE && t();
                     };
-                var g = n(7572);
+                var O = n(7572);
                 const S = r.instance,
                     k = {
                         DataTracker: i.Z,
-                        ViewModel: g.Z,
+                        ViewModel: O.Z,
                         ViewEventType: _,
-                        NumberFormatType: d,
-                        RealFormatType: c,
+                        NumberFormatType: c,
+                        RealFormatType: d,
                         TimeFormatType: u,
                         DateFormatType: E,
                         makeGlobalBoundingBox: P,
@@ -887,13 +886,13 @@
                             const s = p.O.view.getViewGlobalPosition(),
                                 a = n.getBoundingClientRect(),
                                 l = a.x,
-                                d = a.y,
-                                c = a.width,
+                                c = a.y,
+                                d = a.width,
                                 u = a.height,
                                 E = {
                                     x: p.O.view.pxToRem(l) + s.x,
-                                    y: p.O.view.pxToRem(d) + s.y,
-                                    width: p.O.view.pxToRem(c),
+                                    y: p.O.view.pxToRem(c) + s.y,
+                                    width: p.O.view.pxToRem(d),
                                     height: p.O.view.pxToRem(u),
                                 };
                             T(_.POP_OVER, {
@@ -908,13 +907,13 @@
                             });
                         },
                         addEscapeListener: (e) => {
-                            const t = (t) => O(t, e);
+                            const t = (t) => g(t, e);
                             return (
                                 window.addEventListener('keydown', t), () => window.removeEventListener('keydown', t)
                             );
                         },
                         closeOnEsc: (e) => {
-                            O(e, b);
+                            g(e, b);
                         },
                         handleViewEvent: T,
                         onBindingsReady: h,

@@ -701,7 +701,7 @@
                     };
                 window.ViewEnvHelper = h;
             },
-            963: (u, e, E) => {
+            348: (u, e, E) => {
                 var t = E(179),
                     A = E.n(t),
                     F = E(493),
@@ -1082,7 +1082,6 @@
                         (u.TankmenXpFactor = 'tankmenXPFactor'),
                         (u.FreeXpFactor = 'freeXPFactor'),
                         (u.BattleToken = 'battleToken'),
-                        (u.Entitlements = 'entitlements'),
                         (u.PremiumUniversal = 'premium_universal'),
                         (u.Gold = 'gold'),
                         (u.Credits = 'credits'),
@@ -1102,7 +1101,7 @@
                         (u.NewYearAlbumsAccess = 'newYearAlbumsAccess'),
                         (u.NewYearFillers = 'ny22Fillers'),
                         (u.NewYearInvoice = 'newYearInvoice'),
-                        (u.NewYearToyFragments = 'nyToyFragments'),
+                        (u.NewYearToyFragments = 'ny22ToyFragments'),
                         (u.NewYearSlot = 'newYearSlot'),
                         (u.BonusX5 = 'battle_bonus_x5'),
                         (u.CrewBonusX3 = 'crew_bonus_x3'),
@@ -1114,7 +1113,10 @@
                         (u.BattleBoosterGift = 'battleBooster_gift'),
                         (u.CosmicLootboxSilver = 'lootBoxToken'),
                         (u.CosmicLootboxCommon = 'cosmic_2024_2'),
-                        (u.LootBoxToken = 'lootBoxToken');
+                        (u.Branch = 'branch'),
+                        (u.VehicleSelect = 'vehicleSelect'),
+                        (u.StyleProgress = 'styleProgress'),
+                        (u.ParagonsUnlocks = 'paragonsUnlocks');
                 })(Y || (Y = {})),
                     (function (u) {
                         (u.Gold = 'gold'),
@@ -1379,6 +1381,6 @@
                 E = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             E.forEach(e.bind(null, 0)), (E.push = e.bind(null, E.push.bind(E)));
         })();
-    var __webpack_exports__ = __webpack_require__.O(void 0, [127], () => __webpack_require__(963));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [127], () => __webpack_require__(348));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

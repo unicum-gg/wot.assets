@@ -812,8 +812,8 @@ body {
     height: 20rem;
     margin-left: 5rem;
     margin-top: 4rem;
-    background: url('R.images.gui.maps.icons.battleRoyale.battleResult.leaderboard.anon_br_postbattle') no-repeat center /
-        contain;
+    background: url('R.images.gui.maps.icons.battleRoyale.battleResult.leaderboard.anon_br_postbattle') no-repeat
+        center / contain;
     opacity: 0;
     transition: opacity 0.1s;
 }

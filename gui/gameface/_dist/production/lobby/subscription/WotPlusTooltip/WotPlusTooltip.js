@@ -19,17 +19,17 @@
                 A.r(t),
                     A.d(t, {
                         addModelObserver: () => S,
-                        addPreloadTexture: () => T,
+                        addPreloadTexture: () => P,
                         children: () => D,
                         displayStatus: () => p,
-                        displayStatusIs: () => V,
+                        displayStatusIs: () => Q,
                         events: () => v,
                         extraSize: () => $,
                         forceTriggerMouseMove: () => Y,
-                        freezeTextureBeforeResize: () => M,
+                        freezeTextureBeforeResize: () => U,
                         getBrowserTexturePath: () => x,
-                        getDisplayStatus: () => Q,
-                        getScale: () => U,
+                        getDisplayStatus: () => V,
+                        getScale: () => M,
                         getSize: () => k,
                         getViewGlobalPosition: () => N,
                         isEventHandled: () => q,
@@ -37,10 +37,10 @@
                         pxToRem: () => G,
                         remToPx: () => z,
                         resize: () => I,
-                        sendEvent: () => y,
+                        sendEvent: () => w,
                         setAnimateWindow: () => L,
                         setEventHandled: () => X,
-                        setInputPaddingsRem: () => P,
+                        setInputPaddingsRem: () => T,
                         setSidePaddingsRem: () => O,
                         whenTutorialReady: () => H,
                     });
@@ -162,7 +162,7 @@
                     f = 16,
                     b = 32,
                     h = 64,
-                    w = (u, e) => {
+                    y = (u, e) => {
                         const A = 'GFViewEventProxy';
                         if (void 0 !== e) {
                             const E = e.args,
@@ -198,21 +198,21 @@
                         return viewEnv.handleViewEvent({ __Type: A, type: u });
                         var F;
                     },
-                    y = {
+                    w = {
                         close(u) {
-                            w('popover' === u ? _ : b);
+                            y('popover' === u ? _ : b);
                         },
                         minimize() {
-                            w(h);
+                            y(h);
                         },
                         move(u) {
-                            w(f, { isMouseEvent: !0, on: u });
+                            y(f, { isMouseEvent: !0, on: u });
                         },
                     };
-                function T(u) {
+                function P(u) {
                     viewEnv.addPreloadTexture(u);
                 }
-                function P(u) {
+                function T(u) {
                     viewEnv.setHitAreaPaddingsRem(u, u, u, u, 15);
                 }
                 function x(u, e, A, F = 1) {
@@ -234,10 +234,10 @@
                     const e = viewEnv.getViewGlobalPositionRem();
                     return 'rem' === u ? e : { x: z(e.x), y: z(e.y) };
                 }
-                function M() {
+                function U() {
                     viewEnv.freezeTextureBeforeResize();
                 }
-                function U() {
+                function M() {
                     return viewEnv.getScale();
                 }
                 function G(u) {
@@ -261,10 +261,10 @@
                 function Y() {
                     viewEnv.forceTriggerMouseMove();
                 }
-                function Q() {
+                function V() {
                     return viewEnv.getShowingStatus();
                 }
-                const V = Object.keys(p).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === p[e]), u), {}),
+                const Q = Object.keys(p).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === p[e]), u), {}),
                     $ = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
@@ -475,7 +475,6 @@
                         (u.TankmenXpFactor = 'tankmenXPFactor'),
                         (u.FreeXpFactor = 'freeXPFactor'),
                         (u.BattleToken = 'battleToken'),
-                        (u.Entitlements = 'entitlements'),
                         (u.PremiumUniversal = 'premium_universal'),
                         (u.Gold = 'gold'),
                         (u.Credits = 'credits'),
@@ -495,7 +494,7 @@
                         (u.NewYearAlbumsAccess = 'newYearAlbumsAccess'),
                         (u.NewYearFillers = 'ny22Fillers'),
                         (u.NewYearInvoice = 'newYearInvoice'),
-                        (u.NewYearToyFragments = 'nyToyFragments'),
+                        (u.NewYearToyFragments = 'ny22ToyFragments'),
                         (u.NewYearSlot = 'newYearSlot'),
                         (u.BonusX5 = 'battle_bonus_x5'),
                         (u.CrewBonusX3 = 'crew_bonus_x3'),
@@ -507,7 +506,10 @@
                         (u.BattleBoosterGift = 'battleBooster_gift'),
                         (u.CosmicLootboxSilver = 'lootBoxToken'),
                         (u.CosmicLootboxCommon = 'cosmic_2024_2'),
-                        (u.LootBoxToken = 'lootBoxToken');
+                        (u.Branch = 'branch'),
+                        (u.VehicleSelect = 'vehicleSelect'),
+                        (u.StyleProgress = 'styleProgress'),
+                        (u.ParagonsUnlocks = 'paragonsUnlocks');
                 })(lu || (lu = {})),
                     (function (u) {
                         (u.Gold = 'gold'),
@@ -616,20 +618,20 @@
                     return !1;
                 }
                 console.log;
-                var wu = A(174);
-                function yu(u, e) {
+                var yu = A(174);
+                function wu(u, e) {
                     var A = ('undefined' != typeof Symbol && u[Symbol.iterator]) || u['@@iterator'];
                     if (A) return (A = A.call(u)).next.bind(A);
                     if (
                         Array.isArray(u) ||
                         (A = (function (u, e) {
                             if (!u) return;
-                            if ('string' == typeof u) return Tu(u, e);
+                            if ('string' == typeof u) return Pu(u, e);
                             var A = Object.prototype.toString.call(u).slice(8, -1);
                             'Object' === A && u.constructor && (A = u.constructor.name);
                             if ('Map' === A || 'Set' === A) return Array.from(u);
                             if ('Arguments' === A || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(A))
-                                return Tu(u, e);
+                                return Pu(u, e);
                         })(u)) ||
                         (e && u && 'number' == typeof u.length)
                     ) {
@@ -643,12 +645,12 @@
                         'Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.',
                     );
                 }
-                function Tu(u, e) {
+                function Pu(u, e) {
                     (null == e || e > u.length) && (e = u.length);
                     for (var A = 0, F = new Array(e); A < e; A++) F[A] = u[A];
                     return F;
                 }
-                const Pu = (u) => (0 === u ? window : window.subViews.get(u));
+                const Tu = (u) => (0 === u ? window : window.subViews.get(u));
                 var xu = A(946);
                 const Su = ((u, e) => {
                         const A = (0, W.createContext)({});
@@ -660,7 +662,7 @@
                                         const t = (function ({
                                                 initializer: u = !0,
                                                 rootId: e = 0,
-                                                getRoot: A = Pu,
+                                                getRoot: A = Tu,
                                                 context: F = 'model',
                                             } = {}) {
                                                 const E = new Map();
@@ -707,7 +709,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var u, A = yu(E.keys()); !(u = A()).done; ) D(u.value, e);
+                                                        for (var u, A = wu(E.keys()); !(u = A()).done; ) D(u.value, e);
                                                     },
                                                     unsubscribe: D,
                                                 };
@@ -731,11 +733,11 @@
                                                 observableModel: {
                                                     array: (u, e) => {
                                                         const F = null != e ? e : r(u),
-                                                            E = wu.LO.box(F, { equals: hu });
+                                                            E = yu.LO.box(F, { equals: hu });
                                                         return (
                                                             'real' === A &&
                                                                 n.subscribe(
-                                                                    (0, wu.aD)((u) => E.set(u)),
+                                                                    (0, yu.aD)((u) => E.set(u)),
                                                                     u,
                                                                 ),
                                                             E
@@ -743,11 +745,11 @@
                                                     },
                                                     object: (u, e) => {
                                                         const F = null != e ? e : r(u),
-                                                            E = wu.LO.box(F, { equals: hu });
+                                                            E = yu.LO.box(F, { equals: hu });
                                                         return (
                                                             'real' === A &&
                                                                 n.subscribe(
-                                                                    (0, wu.aD)((u) => E.set(u)),
+                                                                    (0, yu.aD)((u) => E.set(u)),
                                                                     u,
                                                                 ),
                                                             E
@@ -757,13 +759,13 @@
                                                         const F = r(e);
                                                         if (Array.isArray(u)) {
                                                             const E = u.reduce(
-                                                                (u, e) => ((u[e] = wu.LO.box(F[e], {})), u),
+                                                                (u, e) => ((u[e] = yu.LO.box(F[e], {})), u),
                                                                 {},
                                                             );
                                                             return (
                                                                 'real' === A &&
                                                                     n.subscribe(
-                                                                        (0, wu.aD)((e) => {
+                                                                        (0, yu.aD)((e) => {
                                                                             u.forEach((u) => {
                                                                                 E[u].set(e[u]);
                                                                             });
@@ -777,13 +779,13 @@
                                                             const E = u,
                                                                 D = Object.entries(E),
                                                                 t = D.reduce(
-                                                                    (u, [e, A]) => ((u[A] = wu.LO.box(F[e], {})), u),
+                                                                    (u, [e, A]) => ((u[A] = yu.LO.box(F[e], {})), u),
                                                                     {},
                                                                 );
                                                             return (
                                                                 'real' === A &&
                                                                     n.subscribe(
-                                                                        (0, wu.aD)((u) => {
+                                                                        (0, yu.aD)((u) => {
                                                                             D.forEach(([e, A]) => {
                                                                                 t[A].set(u[e]);
                                                                             });
@@ -880,7 +882,7 @@
                     },
                     Iu = R.strings.subscription.subscriptionCardTooltip,
                     Nu = R.images.gui.maps.icons.subscription.tooltip,
-                    Mu = (0, fu.Pi)(() => {
+                    Uu = (0, fu.Pi)(() => {
                         const u = Ou().model,
                             e = u.root.get(),
                             A = e.state,
@@ -947,7 +949,7 @@
                     });
                 engine.whenReady.then(() => {
                     Du().render(
-                        J().createElement(Fu, null, J().createElement(Ru, null, J().createElement(Mu, null))),
+                        J().createElement(Fu, null, J().createElement(Ru, null, J().createElement(Uu, null))),
                         document.getElementById('root'),
                     );
                 });

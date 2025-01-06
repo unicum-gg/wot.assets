@@ -37,12 +37,12 @@
                         events: () => B,
                         extraSize: () => V,
                         forceTriggerMouseMove: () => $,
-                        freezeTextureBeforeResize: () => O,
+                        freezeTextureBeforeResize: () => k,
                         getBrowserTexturePath: () => R,
                         getDisplayStatus: () => z,
                         getScale: () => M,
-                        getSize: () => P,
-                        getViewGlobalPosition: () => k,
+                        getSize: () => y,
+                        getViewGlobalPosition: () => O,
                         isEventHandled: () => G,
                         isFocused: () => U,
                         pxToRem: () => I,
@@ -52,7 +52,7 @@
                         setAnimateWindow: () => L,
                         setEventHandled: () => H,
                         setInputPaddingsRem: () => T,
-                        setSidePaddingsRem: () => y,
+                        setSidePaddingsRem: () => P,
                         whenTutorialReady: () => Y,
                     });
                 const l = s('clientResized'),
@@ -219,20 +219,20 @@
                 function S(e, u, t) {
                     return viewEnv.addDataChangedCallback(e, u, t);
                 }
-                function y(e) {
+                function P(e) {
                     viewEnv.setHitAreaPaddingsRem(e.top, e.right, e.bottom, e.left, 15);
                 }
-                function P(e = 'px') {
+                function y(e = 'px') {
                     return 'rem' === e ? viewEnv.getViewSizeRem() : viewEnv.getViewSizePx();
                 }
                 function x(e, u, t = 'px') {
                     return 'rem' === t ? viewEnv.resizeViewRem(e, u) : viewEnv.resizeViewPx(e, u);
                 }
-                function k(e = 'rem') {
+                function O(e = 'rem') {
                     const u = viewEnv.getViewGlobalPositionRem();
                     return 'rem' === e ? u : { x: N(u.x), y: N(u.y) };
                 }
-                function O() {
+                function k() {
                     viewEnv.freezeTextureBeforeResize();
                 }
                 function M() {
@@ -701,7 +701,7 @@
                     };
                 window.ViewEnvHelper = w;
             },
-            494: (e, u, t) => {
+            532: (e, u, t) => {
                 var a = t(179),
                     n = t.n(a);
                 const r = (e, u, t) =>
@@ -1014,11 +1014,11 @@
                 }
                 T.defaultProps = { side: 'left', type: 'back', soundHover: 'highlight', soundClick: 'play' };
                 var S = t(521),
-                    y = t(364);
-                const P = (e) => {
+                    P = t(364);
+                const y = (e) => {
                     console.error(e.type + ': useKeydownListener hook :: Callback is not defined');
                 };
-                function x(e = S.n.NONE, u = P, t = !1) {
+                function x(e = S.n.NONE, u = y, t = !1) {
                     (0, a.useEffect)(() => {
                         if (e !== S.n.NONE)
                             return (
@@ -1035,13 +1035,13 @@
                         }
                     }, [u, e, t]);
                 }
-                let k;
-                function O(e, u) {
+                let O;
+                function k(e, u) {
                     return e.replace(/\{\w+\}/g, (e) => String(u[e.slice(1, -1)]));
                 }
                 !(function (e) {
                     (e[(e.left = 0)] = 'left'), (e[(e.right = 1)] = 'right');
-                })(k || (k = {}));
+                })(O || (O = {}));
                 (() => {
                     const e = new RegExp(
                         /[\(\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]?[\u3002\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]?[ %\+\x2D-9A-Za-\{\}\xA0\xC0-\u0237\u2013\u2014\u2026]+[\)\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3002\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\uFF01\uFF0C\uFF1A\uFF1B\uFF1F\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]?[\u3002\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]?/gmu
@@ -1124,7 +1124,7 @@
                         }
                         return '';
                     },
-                    $ = y.Sw.instance;
+                    $ = P.Sw.instance;
                 let z;
                 !(function (e) {
                     (e.None = 'None'), (e.Shallow = 'Shallow'), (e.Deep = 'Deep');
@@ -1195,7 +1195,7 @@
                         (e.DATE_YEAR = 'date-year');
                 })(V || (V = {}));
                 Date.now();
-                y.Sw.instance;
+                P.Sw.instance;
                 const Y = {
                         base: 'Background_base_c0',
                         light: 'Background_light_b9',
@@ -1301,13 +1301,13 @@
                         S = (0, a.useCallback)(() => {
                             i || (F.current && (F.current.focus(), C(!0)));
                         }, [i]),
-                        y = (0, a.useCallback)(
+                        P = (0, a.useCallback)(
                             (e) => {
                                 B && null !== F.current && !F.current.contains(e.target) && C(!1);
                             },
                             [B],
                         ),
-                        P = (0, a.useCallback)(
+                        y = (0, a.useCallback)(
                             (e) => {
                                 i || (m && m(e));
                             },
@@ -1319,13 +1319,13 @@
                             },
                             [i, o, _],
                         ),
-                        k = (0, a.useCallback)(
+                        O = (0, a.useCallback)(
                             (e) => {
                                 c && c(e);
                             },
                             [c],
                         ),
-                        O = (0, a.useCallback)(
+                        k = (0, a.useCallback)(
                             (e) => {
                                 i || (E && E(e), w(!1));
                             },
@@ -1359,12 +1359,12 @@
                     return (
                         (0, a.useEffect)(
                             () => (
-                                document.addEventListener('mousedown', y),
+                                document.addEventListener('mousedown', P),
                                 () => {
-                                    document.removeEventListener('mousedown', y);
+                                    document.removeEventListener('mousedown', P);
                                 }
                             ),
-                            [y],
+                            [P],
                         ),
                         (0, a.useEffect)(() => {
                             C(t);
@@ -1375,11 +1375,11 @@
                                 ref: F,
                                 className: N,
                                 onMouseEnter: x,
-                                onMouseMove: k,
-                                onMouseUp: O,
+                                onMouseMove: O,
+                                onMouseUp: k,
                                 onMouseDown: M,
                                 onMouseLeave: I,
-                                onClick: P,
+                                onClick: y,
                             },
                             r !== X.ghost &&
                                 n().createElement(
@@ -1528,7 +1528,6 @@
                         (e.TankmenXpFactor = 'tankmenXPFactor'),
                         (e.FreeXpFactor = 'freeXPFactor'),
                         (e.BattleToken = 'battleToken'),
-                        (e.Entitlements = 'entitlements'),
                         (e.PremiumUniversal = 'premium_universal'),
                         (e.Gold = 'gold'),
                         (e.Credits = 'credits'),
@@ -1548,7 +1547,7 @@
                         (e.NewYearAlbumsAccess = 'newYearAlbumsAccess'),
                         (e.NewYearFillers = 'ny22Fillers'),
                         (e.NewYearInvoice = 'newYearInvoice'),
-                        (e.NewYearToyFragments = 'nyToyFragments'),
+                        (e.NewYearToyFragments = 'ny22ToyFragments'),
                         (e.NewYearSlot = 'newYearSlot'),
                         (e.BonusX5 = 'battle_bonus_x5'),
                         (e.CrewBonusX3 = 'crew_bonus_x3'),
@@ -1560,7 +1559,10 @@
                         (e.BattleBoosterGift = 'battleBooster_gift'),
                         (e.CosmicLootboxSilver = 'lootBoxToken'),
                         (e.CosmicLootboxCommon = 'cosmic_2024_2'),
-                        (e.LootBoxToken = 'lootBoxToken');
+                        (e.Branch = 'branch'),
+                        (e.VehicleSelect = 'vehicleSelect'),
+                        (e.StyleProgress = 'styleProgress'),
+                        (e.ParagonsUnlocks = 'paragonsUnlocks');
                 })(ce || (ce = {})),
                     (function (e) {
                         (e.Gold = 'gold'),
@@ -1657,9 +1659,9 @@
                 class Be extends n().PureComponent {
                     render() {
                         let e;
-                        if ('gold' === this.props.format) e = y.B3.GOLD;
-                        else e = y.B3.INTEGRAL;
-                        const u = y.Z5.getNumberFormat(this.props.value, e);
+                        if ('gold' === this.props.format) e = P.B3.GOLD;
+                        else e = P.B3.INTEGRAL;
+                        const u = P.Z5.getNumberFormat(this.props.value, e);
                         return void 0 !== this.props.value && void 0 !== u ? u : null;
                     }
                 }
@@ -1683,7 +1685,6 @@
                         ce.TankmenXpFactor,
                         ce.FreeXpFactor,
                         ce.BattleToken,
-                        ce.Entitlements,
                         ce.PremiumUniversal,
                         ce.NaturalCover,
                         ce.BpCoin,
@@ -1698,12 +1699,11 @@
                         ce.Comp7TokenWeeklyReward,
                         ce.Comp7TokenCouponReward,
                         ce.BattleBoosterGift,
-                        ce.NewYearFillers,
-                        ce.NewYearInvoice,
-                        ce.LootBoxToken,
+                        ce.CosmicLootboxCommon,
+                        ce.CosmicLootboxSilver,
                         ce.SelectableBonus,
                     ],
-                    ge = [ce.Gold, ce.Credits, ce.Crystal, ce.FreeXp, ce.NewYearToyFragments],
+                    ge = [ce.Gold, ce.Credits, ce.Crystal, ce.FreeXp],
                     pe = [ce.BattlePassPoints],
                     he = [ce.PremiumPlus, ce.Premium],
                     be = ['engravings', 'backgrounds'],
@@ -1759,20 +1759,6 @@
                                             return `R.images.gui.maps.icons.quests.bonuses.${u}.${e.icon}`;
                                     }
                                 })(e, u);
-                            case 'entitlements':
-                                return 'big' === u
-                                    ? e.iconBig.replace('..', 'img://gui')
-                                    : e.iconSmall.replace('..', 'img://gui');
-                            case 'customizations':
-                            case 'styleProgress':
-                            case 'crewSkins':
-                            case 'goodies':
-                            case 'groups':
-                            case 'tmanToken':
-                            case 'battlePassSelectToken':
-                            case 'selectableBonus':
-                            case 'lootBoxToken':
-                                return `R.images.gui.maps.icons.quests.bonuses.${u}.${r}`;
                             case 'crewBooks':
                                 return `R.images.gui.maps.icons.crewBooks.books.${u}.${r}`;
                             case 'dogTagComponents':
@@ -1804,20 +1790,22 @@
                             case 'dailyXPFactor':
                             case 'freeXPFactor':
                                 return `R.images.gui.maps.icons.quests.bonuses.${u}.freeXP`;
+                            case 'tmanToken':
+                            case 'battlePassSelectToken':
+                            case 'selectableBonus':
+                            case 'groups':
+                            case 'lootBoxToken':
+                            case 'customizations':
+                            case 'styleProgress':
+                            case 'crewSkins':
+                            case 'goodies':
+                                return `R.images.gui.maps.icons.quests.bonuses.${u}.${r}`;
                             case 'premiumTank':
                                 return `R.images.gui.maps.icons.quests.bonuses.${u}.vehicles`;
                             case 'styleProgressToken':
                                 return `R.images.gui.maps.icons.quests.bonuses.${u}.style_3d`;
                             case 'collectionItem':
                                 return `R.images.gui.maps.icons.collectionItems.${o}.${r}`;
-                            case 'newYearAlbumsAccess':
-                                return `R.images.new_year.gui.maps.icons.newYear.rewards.${u}.albumsAccess`;
-                            case 'nyFillers':
-                                return `R.images.new_year.gui.maps.icons.newYear.rewards.${u}.fillers`;
-                            case 'nyToyFragments':
-                                return `R.images.new_year.gui.maps.icons.newYear.rewards.${u}.shards`;
-                            case 'newYearSlot':
-                                return `R.images.new_year.gui.maps.icons.newYear.rewards.${u}.slot`;
                             default:
                                 return `R.images.gui.maps.icons.quests.bonuses.${u}.${t}`;
                         }
@@ -1879,7 +1867,7 @@
                             Object.assign(
                                 {
                                     __Type: 'GFViewEventProxy',
-                                    type: y.B0.TOOLTIP,
+                                    type: P.B0.TOOLTIP,
                                     contentID: e,
                                     decoratorID: u,
                                     targetID: a,
@@ -1888,7 +1876,7 @@
                             ),
                         );
                     },
-                    ye = (e) => {
+                    Pe = (e) => {
                         let u = e.children,
                             t = e.contentId,
                             n = e.args,
@@ -1994,7 +1982,7 @@
                             : u;
                         var T;
                     },
-                    Pe = ['children'];
+                    ye = ['children'];
                 function xe() {
                     return (
                         (xe =
@@ -2009,7 +1997,7 @@
                         xe.apply(this, arguments)
                     );
                 }
-                const ke = (e) => {
+                const Oe = (e) => {
                         let u = e.children,
                             t = (function (e, u) {
                                 if (null == e) return {};
@@ -2019,9 +2007,9 @@
                                     r = Object.keys(e);
                                 for (a = 0; a < r.length; a++) (t = r[a]), u.indexOf(t) >= 0 || (n[t] = e[t]);
                                 return n;
-                            })(e, Pe);
+                            })(e, ye);
                         return n().createElement(
-                            ye,
+                            Pe,
                             xe(
                                 {
                                     contentId:
@@ -2035,7 +2023,7 @@
                             u,
                         );
                     },
-                    Oe = ['children', 'body', 'header', 'note', 'alert', 'args'];
+                    ke = ['children', 'body', 'header', 'note', 'alert', 'args'];
                 function Me() {
                     return (
                         (Me =
@@ -2066,14 +2054,14 @@
                                     r = Object.keys(e);
                                 for (a = 0; a < r.length; a++) (t = r[a]), u.indexOf(t) >= 0 || (n[t] = e[t]);
                                 return n;
-                            })(e, Oe);
+                            })(e, ke);
                         const _ = (0, a.useMemo)(() => {
                             const e = Object.assign({}, o, { body: t, header: r, note: i, alert: s });
                             for (const u in e) void 0 === e[u] && delete e[u];
                             return e;
                         }, [s, t, r, i, o]);
                         return n().createElement(
-                            ye,
+                            Pe,
                             Me(
                                 {
                                     contentId:
@@ -2110,8 +2098,8 @@
                             i = u.args,
                             s = null == i ? void 0 : i.contentId;
                         return r || s
-                            ? n().createElement(ye, Le({}, u, { contentId: r || s }), a)
-                            : n().createElement(ke, u, a);
+                            ? n().createElement(Pe, Le({}, u, { contentId: r || s }), a)
+                            : n().createElement(Oe, u, a);
                     },
                     He = {
                         base: 'Reward_base_ea',
@@ -2351,11 +2339,11 @@
                                 if (e === oe.FromStorage) return a.fromStorage();
                                 switch (u) {
                                     case ie.Battles:
-                                        return O(a.rent.battles(), { value: t });
+                                        return k(a.rent.battles(), { value: t });
                                     case ie.Days:
-                                        return O(a.rent.days(), { value: t });
+                                        return k(a.rent.days(), { value: t });
                                     case ie.Wins:
-                                        return O(a.rent.wins(), { value: t });
+                                        return k(a.rent.wins(), { value: t });
                                 }
                             })(c, a, r),
                             E = M(['base'], Qe),
@@ -2795,6 +2783,6 @@
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             t.forEach(u.bind(null, 0)), (t.push = u.bind(null, t.push.bind(t)));
         })();
-    var __webpack_exports__ = __webpack_require__.O(void 0, [379], () => __webpack_require__(494));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [379], () => __webpack_require__(532));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

@@ -761,7 +761,7 @@
                     };
                 window.ViewEnvHelper = v;
             },
-            436: (e, u, t) => {
+            944: (e, u, t) => {
                 'use strict';
                 var n = {};
                 t.r(n),
@@ -1060,14 +1060,14 @@
                         [b.Large]: `${v().SMALL_WIDTH} ${v().MEDIUM_WIDTH} ${v().LARGE_WIDTH}`,
                         [b.ExtraLarge]: `${v().SMALL_WIDTH} ${v().MEDIUM_WIDTH} ${v().LARGE_WIDTH} ${v().EXTRA_LARGE_WIDTH}`,
                     },
-                    M = {
+                    P = {
                         [S.ExtraSmall]: '',
                         [S.Small]: v().SMALL_HEIGHT,
                         [S.Medium]: `${v().SMALL_HEIGHT} ${v().MEDIUM_HEIGHT}`,
                         [S.Large]: `${v().SMALL_HEIGHT} ${v().MEDIUM_HEIGHT} ${v().LARGE_HEIGHT}`,
                         [S.ExtraLarge]: `${v().SMALL_HEIGHT} ${v().MEDIUM_HEIGHT} ${v().LARGE_HEIGHT} ${v().EXTRA_LARGE_HEIGHT}`,
                     },
-                    P = {
+                    M = {
                         [w.ExtraSmall]: '',
                         [w.Small]: v().SMALL,
                         [w.Medium]: `${v().SMALL} ${v().MEDIUM}`,
@@ -1090,7 +1090,7 @@
                             o = r.mediaWidth,
                             a = r.mediaHeight,
                             s = r.mediaSize;
-                        return i().createElement('div', x({ className: h()(t, T[o], M[a], P[s]) }, n), u);
+                        return i().createElement('div', x({ className: h()(t, T[o], P[a], M[s]) }, n), u);
                     },
                     N = ['children'];
                 const k = (e) => {
@@ -1736,9 +1736,9 @@
                         var u;
                         return 0.9 * (null != (u = e.getWrapperSize()) ? u : 0);
                     },
-                    Me = () => {},
-                    Pe = (e, u) => Math.max(20, e.offsetWidth * u),
-                    Re = (0, o.memo)(({ api: e, classNames: u = {}, getStepByRailClick: t = Te, onDrag: n = Me }) => {
+                    Pe = () => {},
+                    Me = (e, u) => Math.max(20, e.offsetWidth * u),
+                    Re = (0, o.memo)(({ api: e, classNames: u = {}, getStepByRailClick: t = Te, onDrag: n = Pe }) => {
                         const r = (0, o.useRef)(null),
                             a = (0, o.useRef)(null),
                             s = (0, o.useRef)(null),
@@ -1764,7 +1764,7 @@
                                 const o = e.animationScroll.scrollPosition.get(),
                                     i = Math.min(1, n / r),
                                     E = le(0, 1, o / (r - n)),
-                                    d = (u.offsetWidth - Pe(u, i)) * E;
+                                    d = (u.offsetWidth - Me(u, i)) * E;
                                 (t.style.transform = `translateX(${0 | d}px)`),
                                     ((e) => {
                                         if (a.current && s.current && l.current && c.current) {
@@ -1789,7 +1789,7 @@
                                         o = e.getContainerSize();
                                     if (!(o && u && n && t)) return;
                                     const i = Math.min(1, n / o);
-                                    (u.style.width = `${Pe(t, i)}px`),
+                                    (u.style.width = `${Me(t, i)}px`),
                                         (u.style.display = 'flex'),
                                         r.current &&
                                             (1 === i ? r.current.classList.add(fe) : r.current.classList.remove(fe));
@@ -1803,7 +1803,7 @@
                                         const u = () => {
                                             D();
                                         };
-                                        let t = Me;
+                                        let t = Pe;
                                         const n = () => {
                                             t(), (t = se(_));
                                         };
@@ -2261,7 +2261,6 @@
                         (e.TankmenXpFactor = 'tankmenXPFactor'),
                         (e.FreeXpFactor = 'freeXPFactor'),
                         (e.BattleToken = 'battleToken'),
-                        (e.Entitlements = 'entitlements'),
                         (e.PremiumUniversal = 'premium_universal'),
                         (e.Gold = 'gold'),
                         (e.Credits = 'credits'),
@@ -2281,7 +2280,7 @@
                         (e.NewYearAlbumsAccess = 'newYearAlbumsAccess'),
                         (e.NewYearFillers = 'ny22Fillers'),
                         (e.NewYearInvoice = 'newYearInvoice'),
-                        (e.NewYearToyFragments = 'nyToyFragments'),
+                        (e.NewYearToyFragments = 'ny22ToyFragments'),
                         (e.NewYearSlot = 'newYearSlot'),
                         (e.BonusX5 = 'battle_bonus_x5'),
                         (e.CrewBonusX3 = 'crew_bonus_x3'),
@@ -2293,7 +2292,10 @@
                         (e.BattleBoosterGift = 'battleBooster_gift'),
                         (e.CosmicLootboxSilver = 'lootBoxToken'),
                         (e.CosmicLootboxCommon = 'cosmic_2024_2'),
-                        (e.LootBoxToken = 'lootBoxToken');
+                        (e.Branch = 'branch'),
+                        (e.VehicleSelect = 'vehicleSelect'),
+                        (e.StyleProgress = 'styleProgress'),
+                        (e.ParagonsUnlocks = 'paragonsUnlocks');
                 })(nu || (nu = {})),
                     (function (e) {
                         (e.Gold = 'gold'),
@@ -2772,8 +2774,8 @@
                         Tu.apply(this, arguments)
                     );
                 }
-                const Mu = R.views.common.tooltip_window.simple_tooltip_content,
-                    Pu = (e) => {
+                const Pu = R.views.common.tooltip_window.simple_tooltip_content,
+                    Mu = (e) => {
                         let u = e.children,
                             t = e.body,
                             n = e.header,
@@ -2800,7 +2802,7 @@
                                 {
                                     contentId:
                                         ((E = null == s ? void 0 : s.hasHtmlContent),
-                                        E ? Mu.SimpleTooltipHtmlContent('resId') : Mu.SimpleTooltipContent('resId')),
+                                        E ? Pu.SimpleTooltipHtmlContent('resId') : Pu.SimpleTooltipContent('resId')),
                                     decoratorId: R.views.common.tooltip_window.tooltip_window.TooltipWindow('resId'),
                                     args: c,
                                 },
@@ -2881,7 +2883,7 @@
                                 'div',
                                 { className: Ru.progress },
                                 i().createElement(
-                                    Pu,
+                                    Mu,
                                     { body: F },
                                     i().createElement(
                                         'div',
@@ -2894,7 +2896,7 @@
                                 ),
                                 m &&
                                     i().createElement(
-                                        Pu,
+                                        Mu,
                                         { body: F },
                                         i().createElement(
                                             'div',
@@ -3033,9 +3035,9 @@
                                         return Uu;
                                 }
                             })(S),
-                            M = L / 2 + T.width + 30,
-                            P = (0, _e.useSpring)({
-                                from: { transform: `translateX(-${M}rem)`, marginLeft: `-${T.width + 30}rem` },
+                            P = L / 2 + T.width + 30,
+                            M = (0, _e.useSpring)({
+                                from: { transform: `translateX(-${P}rem)`, marginLeft: `-${T.width + 30}rem` },
                                 to: { transform: 'translateX(0)', marginLeft: '0' },
                                 config: { duration: 1e3, easing: du },
                                 delay: 700,
@@ -3059,7 +3061,7 @@
                             }, [E, m]);
                         return i().createElement(
                             _e.animated.div,
-                            { style: f ? P : Iu },
+                            { style: f ? M : Iu },
                             i().createElement(
                                 'div',
                                 {
@@ -3184,7 +3186,7 @@
                             'div',
                             { className: st },
                             i().createElement(
-                                Pu,
+                                Mu,
                                 { header: dt.header(), body: dt.body() },
                                 i().createElement(
                                     'div',
@@ -3298,6 +3300,6 @@
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             t.forEach(u.bind(null, 0)), (t.push = u.bind(null, t.push.bind(t)));
         })();
-    var __webpack_exports__ = __webpack_require__.O(void 0, [314], () => __webpack_require__(436));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [314], () => __webpack_require__(944));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

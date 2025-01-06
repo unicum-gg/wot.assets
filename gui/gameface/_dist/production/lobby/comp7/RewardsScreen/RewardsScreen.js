@@ -1315,7 +1315,7 @@
                         Y.apply(this, arguments)
                     );
                 }
-                class X extends n().PureComponent {
+                class V extends n().PureComponent {
                     constructor(...e) {
                         super(...e),
                             (this.state = { hover: !1, click: !1 }),
@@ -1389,8 +1389,8 @@
                         );
                     }
                 }
-                let V, K, Z;
-                (X.defaultProps = { side: 'left', type: 'back', soundHover: 'highlight', soundClick: 'play' }),
+                let X, K, Z;
+                (V.defaultProps = { side: 'left', type: 'back', soundHover: 'highlight', soundClick: 'play' }),
                     (function (e) {
                         (e[(e.Rank = 0)] = 'Rank'),
                             (e[(e.Division = 1)] = 'Division'),
@@ -1398,7 +1398,7 @@
                             (e[(e.TokensRewards = 3)] = 'TokensRewards'),
                             (e[(e.QualificationRewards = 4)] = 'QualificationRewards'),
                             (e[(e.QualificationRank = 5)] = 'QualificationRank');
-                    })(V || (V = {})),
+                    })(X || (X = {})),
                     (function (e) {
                         (e[(e.First = 6)] = 'First'),
                             (e[(e.Second = 5)] = 'Second'),
@@ -1777,7 +1777,7 @@
                                     hasAdditionalRewards: (0, Ee.Om)(() => Boolean(r.get().length)),
                                     isSingleMainReward: (0, Ee.Om)(() => 1 === n.get().length),
                                     qualificationBattlesLength: (0, Ee.Om)(() => i.get().length),
-                                    hasAnimation: (0, Ee.Om)(() => u.root.get().type === V.QualificationRank),
+                                    hasAnimation: (0, Ee.Om)(() => u.root.get().type === X.QualificationRank),
                                     qualificationBattlesStatus: s,
                                 },
                             });
@@ -1810,7 +1810,7 @@
                                 });
                             })(u.animation.model, t);
                             return (
-                                u.root.get().type === V.QualificationRank && a.start(),
+                                u.root.get().type === X.QualificationRank && a.start(),
                                 { animation: a, close: e.createCallbackNoArgs('onClose') }
                             );
                         },
@@ -1940,8 +1940,8 @@
                     },
                     ze = 33,
                     Ye = 0,
-                    Xe = !0,
-                    Ve = 'play';
+                    Ve = !0,
+                    Xe = 'play';
                 const Ke = [
                     'width',
                     'height',
@@ -1984,9 +1984,9 @@
                             d = e.lastFrameIndex,
                             A = void 0 === d ? i - 1 : d,
                             _ = e.loop,
-                            F = void 0 === _ ? Xe : _,
+                            F = void 0 === _ ? Ve : _,
                             m = e.state,
-                            D = void 0 === m ? Ve : m,
+                            D = void 0 === m ? Xe : m,
                             B = e.onAnimationDone,
                             C = e.onAnimationComplete,
                             g = e.poster,
@@ -2528,9 +2528,9 @@
                                 { className: g()(Ou, t && Pu), style: r },
                                 (() => {
                                     switch (u) {
-                                        case V.Rank:
+                                        case X.Rank:
                                             return n().createElement(ku, { className: Iu });
-                                        case V.Division:
+                                        case X.Division:
                                             return n().createElement(Au, { rankClassname: Iu });
                                         default:
                                             return (
@@ -2572,12 +2572,12 @@
                         );
                     }),
                     zu = R.images.comp7.gui.maps.icons.comp7.rewards.backgrounds,
-                    Yu = [V.Rank, V.Division, V.QualificationRank],
-                    Xu = (0, ae.Pi)(() => {
+                    Yu = [X.Rank, X.Division, X.QualificationRank],
+                    Vu = (0, ae.Pi)(() => {
                         const e = fe().model.root.get(),
                             u = e.type,
                             t = e.rank,
-                            a = u === V.TokensRewards ? zu.tokens() : `${zu.$dyn(We(t))}`,
+                            a = u === X.TokensRewards ? zu.tokens() : `${zu.$dyn(We(t))}`,
                             r = (0, ve.useTransition)(u, {
                                 from: { opacity: 0 },
                                 enter: { opacity: 1 },
@@ -2588,7 +2588,7 @@
                             'div',
                             { className: Uu },
                             r((e, t) =>
-                                t === V.QualificationRank
+                                t === X.QualificationRank
                                     ? n().createElement(
                                           U.animated.div,
                                           { style: e, className: Hu },
@@ -2601,7 +2601,7 @@
                             ),
                         );
                     }),
-                    Vu = 'FormatText_base_d0',
+                    Xu = 'FormatText_base_d0',
                     Ku = ({ binding: e, text: u = '', classMix: t, alignment: r = Te.left }) =>
                         null === u
                             ? (console.error("FormatText was supplied with 'null'"), null)
@@ -2611,7 +2611,7 @@
                                   u.split('\n').map((u, i) =>
                                       n().createElement(
                                           'div',
-                                          { className: g()(Vu, t), key: `${u}-${i}` },
+                                          { className: g()(Xu, t), key: `${u}-${i}` },
                                           ((e, u, t) =>
                                               e
                                                   .split(/%\((.*?)\)(?:[sd])?/g)
@@ -2696,28 +2696,28 @@
                     lt = 'Header_subTitle_97',
                     ct = R.strings.comp7,
                     Et = {
-                        [V.Rank]: 'rank',
-                        [V.Division]: 'division',
-                        [V.RankRewards]: 'rankRewards',
-                        [V.TokensRewards]: 'tokensRewards',
-                        [V.QualificationRewards]: 'qualificationRewards',
-                        [V.QualificationRank]: 'qualificationRank',
+                        [X.Rank]: 'rank',
+                        [X.Division]: 'division',
+                        [X.RankRewards]: 'rankRewards',
+                        [X.TokensRewards]: 'tokensRewards',
+                        [X.QualificationRewards]: 'qualificationRewards',
+                        [X.QualificationRank]: 'qualificationRank',
                     },
                     dt = (e, u, t, a, r) => {
                         const i = String(ct.rewardsScreen.subtitle.$dyn(Et[e]));
                         switch (e) {
-                            case V.QualificationRank:
-                            case V.Rank:
+                            case X.QualificationRank:
+                            case X.Rank:
                                 return $e(u) ? ((e) => Se(Ie.text(), { division: Ne(e) }))(t) : '';
-                            case V.Division:
-                            case V.RankRewards:
+                            case X.Division:
+                            case X.RankRewards:
                                 return n().createElement(tt, { text: i, binding: { rank: rt(u) } });
-                            case V.TokensRewards:
+                            case X.TokensRewards:
                                 return n().createElement(tt, {
                                     text: String(ct.rewardsScreen.subtitle.tokensRewards(a)),
                                     binding: { tokensCount: a },
                                 });
-                            case V.QualificationRewards:
+                            case X.QualificationRewards:
                                 return n().createElement(tt, {
                                     text: String(ct.rewardsScreen.subtitle.qualificationRewards()),
                                     binding: {
@@ -2750,13 +2750,13 @@
                                 { className: st },
                                 ((e) => {
                                     switch (e) {
-                                        case V.QualificationRank:
-                                        case V.QualificationRewards:
+                                        case X.QualificationRank:
+                                        case X.QualificationRewards:
                                             return ct.rewardsScreen.description.qualificationEnded();
-                                        case V.Rank:
-                                        case V.Division:
-                                        case V.RankRewards:
-                                        case V.TokensRewards:
+                                        case X.Rank:
+                                        case X.Division:
+                                        case X.RankRewards:
+                                        case X.TokensRewards:
                                             return ct.rewardsScreen.description.season();
                                         default:
                                             return (
@@ -2774,17 +2774,17 @@
                                 ((e, u, t) => {
                                     const a = String(ct.rewardsScreen.title.$dyn(Et[e]));
                                     switch (e) {
-                                        case V.QualificationRank:
-                                        case V.Rank:
+                                        case X.QualificationRank:
+                                        case X.Rank:
                                             return n().createElement(tt, {
                                                 text: a,
                                                 binding: { rankUpperName: nt(ct.rankUpper, u) },
                                             });
-                                        case V.Division:
+                                        case X.Division:
                                             return n().createElement(Ku, { text: a, binding: { division: Ne(t) } });
-                                        case V.RankRewards:
-                                        case V.TokensRewards:
-                                        case V.QualificationRewards:
+                                        case X.RankRewards:
+                                        case X.TokensRewards:
+                                        case X.QualificationRewards:
                                             return a;
                                         default:
                                             return (
@@ -2982,7 +2982,6 @@
                         (e.TankmenXpFactor = 'tankmenXPFactor'),
                         (e.FreeXpFactor = 'freeXPFactor'),
                         (e.BattleToken = 'battleToken'),
-                        (e.Entitlements = 'entitlements'),
                         (e.PremiumUniversal = 'premium_universal'),
                         (e.Gold = 'gold'),
                         (e.Credits = 'credits'),
@@ -3002,7 +3001,7 @@
                         (e.NewYearAlbumsAccess = 'newYearAlbumsAccess'),
                         (e.NewYearFillers = 'ny22Fillers'),
                         (e.NewYearInvoice = 'newYearInvoice'),
-                        (e.NewYearToyFragments = 'nyToyFragments'),
+                        (e.NewYearToyFragments = 'ny22ToyFragments'),
                         (e.NewYearSlot = 'newYearSlot'),
                         (e.BonusX5 = 'battle_bonus_x5'),
                         (e.CrewBonusX3 = 'crew_bonus_x3'),
@@ -3014,7 +3013,10 @@
                         (e.BattleBoosterGift = 'battleBooster_gift'),
                         (e.CosmicLootboxSilver = 'lootBoxToken'),
                         (e.CosmicLootboxCommon = 'cosmic_2024_2'),
-                        (e.LootBoxToken = 'lootBoxToken');
+                        (e.Branch = 'branch'),
+                        (e.VehicleSelect = 'vehicleSelect'),
+                        (e.StyleProgress = 'styleProgress'),
+                        (e.ParagonsUnlocks = 'paragonsUnlocks');
                 })(bt || (bt = {})),
                     (function (e) {
                         (e.Gold = 'gold'),
@@ -3137,7 +3139,6 @@
                         bt.TankmenXpFactor,
                         bt.FreeXpFactor,
                         bt.BattleToken,
-                        bt.Entitlements,
                         bt.PremiumUniversal,
                         bt.NaturalCover,
                         bt.BpCoin,
@@ -3152,12 +3153,11 @@
                         bt.Comp7TokenWeeklyReward,
                         bt.Comp7TokenCouponReward,
                         bt.BattleBoosterGift,
-                        bt.NewYearFillers,
-                        bt.NewYearInvoice,
-                        bt.LootBoxToken,
+                        bt.CosmicLootboxCommon,
+                        bt.CosmicLootboxSilver,
                         bt.SelectableBonus,
                     ],
-                    Pt = [bt.Gold, bt.Credits, bt.Crystal, bt.FreeXp, bt.NewYearToyFragments],
+                    Pt = [bt.Gold, bt.Credits, bt.Crystal, bt.FreeXp],
                     It = [bt.BattlePassPoints],
                     Mt = [bt.PremiumPlus, bt.Premium],
                     Nt = (e) =>
@@ -3223,20 +3223,6 @@
                                             return `R.images.gui.maps.icons.quests.bonuses.${u}.${e.icon}`;
                                     }
                                 })(e, u);
-                            case 'entitlements':
-                                return 'big' === u
-                                    ? e.iconBig.replace('..', 'img://gui')
-                                    : e.iconSmall.replace('..', 'img://gui');
-                            case 'customizations':
-                            case 'styleProgress':
-                            case 'crewSkins':
-                            case 'goodies':
-                            case 'groups':
-                            case 'tmanToken':
-                            case 'battlePassSelectToken':
-                            case 'selectableBonus':
-                            case 'lootBoxToken':
-                                return `R.images.gui.maps.icons.quests.bonuses.${u}.${r}`;
                             case 'crewBooks':
                                 return `R.images.gui.maps.icons.crewBooks.books.${u}.${r}`;
                             case 'dogTagComponents':
@@ -3268,20 +3254,22 @@
                             case 'dailyXPFactor':
                             case 'freeXPFactor':
                                 return `R.images.gui.maps.icons.quests.bonuses.${u}.freeXP`;
+                            case 'tmanToken':
+                            case 'battlePassSelectToken':
+                            case 'selectableBonus':
+                            case 'groups':
+                            case 'lootBoxToken':
+                            case 'customizations':
+                            case 'styleProgress':
+                            case 'crewSkins':
+                            case 'goodies':
+                                return `R.images.gui.maps.icons.quests.bonuses.${u}.${r}`;
                             case 'premiumTank':
                                 return `R.images.gui.maps.icons.quests.bonuses.${u}.vehicles`;
                             case 'styleProgressToken':
                                 return `R.images.gui.maps.icons.quests.bonuses.${u}.style_3d`;
                             case 'collectionItem':
                                 return `R.images.gui.maps.icons.collectionItems.${o}.${r}`;
-                            case 'newYearAlbumsAccess':
-                                return `R.images.new_year.gui.maps.icons.newYear.rewards.${u}.albumsAccess`;
-                            case 'nyFillers':
-                                return `R.images.new_year.gui.maps.icons.newYear.rewards.${u}.fillers`;
-                            case 'nyToyFragments':
-                                return `R.images.new_year.gui.maps.icons.newYear.rewards.${u}.shards`;
-                            case 'newYearSlot':
-                                return `R.images.new_year.gui.maps.icons.newYear.rewards.${u}.slot`;
                             default:
                                 return `R.images.gui.maps.icons.quests.bonuses.${u}.${t}`;
                         }
@@ -3499,10 +3487,10 @@
                             u,
                         );
                     },
-                    Xt = ['children', 'body', 'header', 'note', 'alert', 'args'];
-                function Vt() {
+                    Vt = ['children', 'body', 'header', 'note', 'alert', 'args'];
+                function Xt() {
                     return (
-                        (Vt =
+                        (Xt =
                             Object.assign ||
                             function (e) {
                                 for (var u = 1; u < arguments.length; u++) {
@@ -3511,7 +3499,7 @@
                                 }
                                 return e;
                             }),
-                        Vt.apply(this, arguments)
+                        Xt.apply(this, arguments)
                     );
                 }
                 const Kt = R.views.common.tooltip_window.simple_tooltip_content,
@@ -3530,7 +3518,7 @@
                                     r = Object.keys(e);
                                 for (a = 0; a < r.length; a++) (t = r[a]), u.indexOf(t) >= 0 || (n[t] = e[t]);
                                 return n;
-                            })(e, Xt);
+                            })(e, Vt);
                         const c = (0, a.useMemo)(() => {
                             const e = Object.assign({}, o, { body: t, header: r, note: i, alert: s });
                             for (const u in e) void 0 === e[u] && delete e[u];
@@ -3538,7 +3526,7 @@
                         }, [s, t, r, i, o]);
                         return n().createElement(
                             Qt,
-                            Vt(
+                            Xt(
                                 {
                                     contentId:
                                         ((E = null == o ? void 0 : o.hasHtmlContent),
@@ -4047,7 +4035,7 @@
                                         u.computes.hasAnimation() && _e(Ca, r.model.animationState.get()),
                                     ),
                                 },
-                                n().createElement(Xu, null),
+                                n().createElement(Vu, null),
                                 n().createElement(
                                     'div',
                                     { className: Ca.contentWrapper },
@@ -4058,16 +4046,16 @@
                                             n().createElement(At, { className: Ca.header }),
                                             (() => {
                                                 switch (a) {
-                                                    case V.Rank:
-                                                    case V.Division:
+                                                    case X.Rank:
+                                                    case X.Division:
                                                         return n().createElement(
                                                             'div',
                                                             { className: Ca.achievement },
                                                             n().createElement(Nu, null),
                                                         );
-                                                    case V.RankRewards:
-                                                    case V.TokensRewards:
-                                                    case V.QualificationRewards:
+                                                    case X.RankRewards:
+                                                    case X.TokensRewards:
+                                                    case X.QualificationRewards:
                                                         return n().createElement(
                                                             'div',
                                                             {
@@ -4079,7 +4067,7 @@
                                                             },
                                                             n().createElement(Ba, null),
                                                         );
-                                                    case V.QualificationRank:
+                                                    case X.QualificationRank:
                                                         return n().createElement(
                                                             'div',
                                                             { className: Ca.qualificationRank },
@@ -4100,7 +4088,7 @@
                                 n().createElement(
                                     'div',
                                     { className: Ca.close },
-                                    n().createElement(X, {
+                                    n().createElement(V, {
                                         caption: R.strings.menu.viewHeader.closeBtn.label(),
                                         type: 'close',
                                         side: 'right',
@@ -4113,7 +4101,7 @@
                                     n().createElement(
                                         Q,
                                         { type: G.primary, size: 'medium', onClick: t.close, mixClass: Ca.button },
-                                        a === V.Rank
+                                        a === X.Rank
                                             ? R.strings.comp7.rewardsScreen.buttonToRewards()
                                             : R.strings.comp7.rewardsScreen.button(),
                                     ),

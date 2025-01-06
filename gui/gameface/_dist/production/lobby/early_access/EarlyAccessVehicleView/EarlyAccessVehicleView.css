@@ -1576,8 +1576,8 @@
 
 .ProgressLine_defaultShadow_79 {
     height: 13rem;
-    background: url('R.images.gui.maps.icons.early_access.carousel.progress_bar.shadow_progress_gray') no-repeat center /
-        cover;
+    background: url('R.images.gui.maps.icons.early_access.carousel.progress_bar.shadow_progress_gray') no-repeat
+        center / cover;
     position: absolute;
     top: -13rem;
     right: 0;

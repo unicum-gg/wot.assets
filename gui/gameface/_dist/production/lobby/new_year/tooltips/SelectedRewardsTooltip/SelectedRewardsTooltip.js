@@ -3177,23 +3177,21 @@
                             'div',
                             { className: w.base },
                             o().createElement(pu, { rewardsAmount: e, className: w.header }),
-                            u.computes
-                                .getSelectedRewards()
-                                .map((u, t) =>
+                            u.computes.getSelectedRewards().map((u, t) =>
+                                o().createElement(
+                                    o().Fragment,
+                                    null,
+                                    o().createElement('div', { className: w.divider }),
                                     o().createElement(
-                                        o().Fragment,
-                                        null,
-                                        o().createElement('div', { className: w.divider }),
-                                        o().createElement(
-                                            Me,
-                                            Pe({}, u, {
-                                                discount: Le(u),
-                                                key: t,
-                                                classNames: n()(w.reward, t === e - 1 && w.reward__lastInColumn),
-                                            }),
-                                        ),
+                                        Me,
+                                        Pe({}, u, {
+                                            discount: Le(u),
+                                            key: t,
+                                            classNames: n()(w.reward, t === e - 1 && w.reward__lastInColumn),
+                                        }),
                                     ),
                                 ),
+                            ),
                         );
                     });
                 engine.whenReady.then(() => {
