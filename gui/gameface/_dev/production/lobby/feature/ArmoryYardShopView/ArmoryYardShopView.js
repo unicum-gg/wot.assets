@@ -1298,7 +1298,7 @@
                 /**
                  * Use useMedia hook from 'lib/hooks/useMedia' directly in your react components
                  *
-                 * Usage and tech doc: https://confluence.wargaming.net/pages/viewpage.action?pageId=1583255544
+                 * Usage and tech doc: https://confluence.lesta.group/pages/viewpage.action?pageId=1923252276
                  *
                  * @deprecated
                  */
@@ -4203,7 +4203,7 @@
                 // waiting for focus implement
 
                 /**
-                 * @link https://confluence.wargaming.net/pages/viewpage.action?pageId=712582882
+                 * @link https://confluence.lesta.group/pages/viewpage.action?pageId=2040066804
                  * what back_shine is used when button doesn't have any text?
                  * text shadow not enough
                  */
@@ -4901,9 +4901,9 @@
                     const handleMouseEnter = (childEvent) => (event) => {
                         // window used here for correct ReturnType: number
                         if (event.clientX === window.innerWidth && event.clientY === window.innerHeight) {
-                            // TODO: we need this hack to fix https://jira.wargaming.net/browse/WOTD-158427 issue.
+                            // TODO: we need this hack to fix https://jira-archive.lesta.group/browse/WOTD-158427 issue.
                             //  This check can be removed when mouseEnter event that fired on resize will be fixed at GF integration side.
-                            //  Probably we can check it after https://jira.wargaming.net/browse/WOTD-154564 bug fix,
+                            //  Probably we can check it after https://jira-archive.lesta.group/browse/WOTD-154564 bug fix,
                             //  when view border events resolving will work properly.
                             return;
                         }
@@ -9226,7 +9226,7 @@
                  * - %(XXXStart)sTEXT%(XXXEnd)s
                  * - {XXX_Open}TEXT{XXX_Close}
                  *
-                 * Reference (look for point 4.1): https://confluence.wargaming.net/pages/viewpage.action?pageId=1072723320
+                 * Reference (look for poinhttps://confluence.lesta.group/pages/viewpage.action?pageId=204006960172723320
                  **/
 
                 const TAGGED_PHRASE_REGEXP =

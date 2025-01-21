@@ -7435,7 +7435,7 @@
                                                 c === nr
                                                     ? 'script' === p
                                                         ? (((o = f.createElement('div')).innerHTML =
-                                                              '<script></script>'),
+                                                              '<script><\/script>'),
                                                           (f = o.removeChild(o.firstChild)))
                                                         : 'string' == typeof o.is
                                                           ? (f = f.createElement(p, { is: o.is }))

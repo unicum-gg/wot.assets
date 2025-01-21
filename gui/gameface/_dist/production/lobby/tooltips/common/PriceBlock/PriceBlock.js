@@ -24,15 +24,15 @@
                     const g = i()(c.Z.value, c.Z[`value__${r}`], !_ && c.Z.value__notEnough),
                         E = i()(c.Z.icon, c.Z[`icon__${r}-${t}`]),
                         m = i()(c.Z.stock, u && c.Z.stock__indent, n && c.Z.stock__interactive),
-                        b = d && l > 0 && '+',
-                        w = i()(c.Z.base, c.Z[`base__${t}`]);
+                        p = d && l > 0 && '+',
+                        b = i()(c.Z.base, c.Z[`base__${t}`]);
                     return a().createElement(
                         'span',
-                        { className: w },
+                        { className: b },
                         a().createElement(
                             'span',
                             { className: g },
-                            b,
+                            p,
                             a().createElement(s.A, { value: l, format: r === o.V2.gold ? 'gold' : 'integral' }),
                         ),
                         a().createElement('span', { className: E }),
@@ -74,16 +74,15 @@
                 var r = t(6179),
                     i = t.n(r),
                     _ = t(4179);
-                const a = ({ format: e, value: n }) => {
-                    const t = ((e, n = 'integral') => {
-                        let t;
-                        return (
-                            (t = 'gold' === n ? _.B3.GOLD : _.B3.INTEGRAL),
-                            void 0 === e ? '' : _.Z5.getNumberFormat(e, t)
-                        );
-                    })(n, e);
-                    return t ? i().createElement('span', null, t) : null;
-                };
+                class a extends i().PureComponent {
+                    render() {
+                        let e;
+                        e = 'gold' === this.props.format ? _.B3.GOLD : _.B3.INTEGRAL;
+                        const n = _.Z5.getNumberFormat(this.props.value, e);
+                        return void 0 !== this.props.value && void 0 !== n ? n : null;
+                    }
+                }
+                a.defaultProps = { format: 'integral' };
             },
             527: (e, n, t) => {
                 t.r(n), t.d(n, { mouse: () => o, onResize: () => _ });
@@ -239,23 +238,23 @@
                         addPreloadTexture: () => o,
                         children: () => r,
                         displayStatus: () => i.W,
-                        displayStatusIs: () => O,
+                        displayStatusIs: () => k,
                         events: () => _.U,
-                        extraSize: () => P,
+                        extraSize: () => O,
                         forceTriggerMouseMove: () => C,
                         freezeTextureBeforeResize: () => E,
                         getBrowserTexturePath: () => c,
-                        getDisplayStatus: () => k,
+                        getDisplayStatus: () => P,
                         getScale: () => m,
                         getSize: () => d,
                         getViewGlobalPosition: () => g,
                         isEventHandled: () => f,
                         isFocused: () => h,
-                        pxToRem: () => b,
-                        remToPx: () => w,
+                        pxToRem: () => p,
+                        remToPx: () => b,
                         resize: () => v,
                         sendEvent: () => a.qP,
-                        setAnimateWindow: () => p,
+                        setAnimateWindow: () => w,
                         setEventHandled: () => y,
                         setInputPaddingsRem: () => s,
                         setSidePaddingsRem: () => u,
@@ -288,7 +287,7 @@
                 }
                 function g(e = 'rem') {
                     const n = viewEnv.getViewGlobalPositionRem();
-                    return 'rem' === e ? n : { x: w(n.x), y: w(n.y) };
+                    return 'rem' === e ? n : { x: b(n.x), y: b(n.y) };
                 }
                 function E() {
                     viewEnv.freezeTextureBeforeResize();
@@ -296,13 +295,13 @@
                 function m() {
                     return viewEnv.getScale();
                 }
-                function b(e) {
+                function p(e) {
                     return viewEnv.pxToRem(e);
                 }
-                function w(e) {
+                function b(e) {
                     return viewEnv.remToPx(e);
                 }
-                function p(e, n) {
+                function w(e, n) {
                     viewEnv.setAnimateWindow(e, n);
                 }
                 function h() {
@@ -317,14 +316,14 @@
                 function C() {
                     viewEnv.forceTriggerMouseMove();
                 }
-                function k() {
+                function P() {
                     return viewEnv.getShowingStatus();
                 }
-                const O = Object.keys(i.W).reduce(
+                const k = Object.keys(i.W).reduce(
                         (e, n) => ((e[n] = () => viewEnv.getShowingStatus() === i.W[n]), e),
                         {},
                     ),
-                    P = {
+                    O = {
                         set: (e, n) => {
                             viewEnv.setExtraSizeRem(e, n);
                         },
@@ -573,7 +572,7 @@
                 const __WEBPACK_DEFAULT_EXPORT__ = ViewModel;
             },
             4179: (e, n, t) => {
-                t.d(n, { B3: () => l, Z5: () => a, ry: () => p });
+                t.d(n, { B3: () => l, Z5: () => a, ry: () => w });
                 class r {
                     constructor() {
                         (this.entries = []),
@@ -644,7 +643,7 @@
                 var g = t(5521),
                     E = t(3138);
                 const m = ['args'];
-                function b(e, n, t, r, i, _, a) {
+                function p(e, n, t, r, i, _, a) {
                     try {
                         var o = e[_](a),
                             s = o.value;
@@ -653,8 +652,8 @@
                     }
                     o.done ? n(s) : Promise.resolve(s).then(r, i);
                 }
-                const w = (e) => ({ __Type: 'GFBoundingBox', x: e.x, y: e.y, width: e.width, height: e.height }),
-                    p = (function () {
+                const b = (e) => ({ __Type: 'GFBoundingBox', x: e.x, y: e.y, width: e.width, height: e.height }),
+                    w = (function () {
                         var e,
                             n =
                                 ((e = function* () {
@@ -671,10 +670,10 @@
                                     return new Promise(function (r, i) {
                                         var _ = e.apply(n, t);
                                         function a(e) {
-                                            b(_, r, i, a, o, 'next', e);
+                                            p(_, r, i, a, o, 'next', e);
                                         }
                                         function o(e) {
-                                            b(_, r, i, a, o, 'throw', e);
+                                            p(_, r, i, a, o, 'throw', e);
                                         }
                                         a(void 0);
                                     });
@@ -726,8 +725,8 @@
                         e.keyCode === g.n.ESCAPE && n();
                     };
                 var C = t(7572);
-                const k = i.instance,
-                    O = {
+                const P = i.instance,
+                    k = {
                         DataTracker: _.Z,
                         ViewModel: C.Z,
                         ViewEventType: s,
@@ -735,7 +734,7 @@
                         RealFormatType: u,
                         TimeFormatType: d,
                         DateFormatType: v,
-                        makeGlobalBoundingBox: w,
+                        makeGlobalBoundingBox: b,
                         sendMoveEvent: (e) => h(s.MOVE, { isMouseEvent: !0, on: e }),
                         sendCloseEvent: y,
                         sendClosePopOverEvent: () => h(s.POP_OVER, { on: !1 }),
@@ -761,7 +760,7 @@
                                 decoratorID: r || R.invalid('resId'),
                                 targetID: i,
                                 direction: n,
-                                bbox: w(v),
+                                bbox: b(v),
                                 on: !0,
                                 args: _,
                             });
@@ -776,7 +775,7 @@
                             f(e, y);
                         },
                         handleViewEvent: h,
-                        onBindingsReady: p,
+                        onBindingsReady: w,
                         onLayoutReady: () =>
                             new Promise((e) => {
                                 requestAnimationFrame(() => {
@@ -805,11 +804,11 @@
                                 }
                             return t;
                         },
-                        ClickOutsideManager: k,
+                        ClickOutsideManager: P,
                         SystemLocale: a,
                         UserLocale: o,
                     };
-                window.ViewEnvHelper = O;
+                window.ViewEnvHelper = k;
             },
             1596: (e, n, t) => {
                 t.d(n, { a: () => d });
@@ -840,7 +839,7 @@
                             t === c.et.large && l.Z.stock__sizeLarge,
                             n && l.Z.stock__interactive,
                         ),
-                        b = v && u > 0 && '+';
+                        p = v && u > 0 && '+';
                     return r in c.V2
                         ? i().createElement(s.F, {
                               size: t,
@@ -858,7 +857,7 @@
                               i().createElement(
                                   'span',
                                   { className: g },
-                                  b,
+                                  p,
                                   i().createElement(o.A, { value: u, format: 'integral' }),
                               ),
                               i().createElement('span', { className: E }),

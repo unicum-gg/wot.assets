@@ -1260,11 +1260,11 @@
                 }
                 G.defaultProps = { side: 'left', type: 'back', soundHover: 'highlight', soundClick: 'play' };
                 var W = t(5521),
-                    X = t(4179);
-                const $ = (u) => {
+                    $ = t(4179);
+                const X = (u) => {
                     console.error(u.type + ': useKeydownListener hook :: Callback is not defined');
                 };
-                function j(u = W.n.NONE, e = $, t = !1) {
+                function j(u = W.n.NONE, e = X, t = !1) {
                     (0, r.useEffect)(() => {
                         if (u !== W.n.NONE)
                             return (
@@ -1281,9 +1281,9 @@
                         }
                     }, [e, u, t]);
                 }
-                var V = t(3403),
-                    q = t(7030);
-                const Y = (u) => Math.sqrt(1 - Math.pow(u - 1, 2)),
+                var Y = t(3403),
+                    V = t(7030);
+                const q = (u) => Math.sqrt(1 - Math.pow(u - 1, 2)),
                     z = 400;
                 var K = t(3946);
                 function Q(u) {
@@ -1303,74 +1303,70 @@
                 function tu(u, e) {
                     return Array.isArray(u) ? u.map(e) : u.map((u, t, r) => e(null == u ? void 0 : u.value, t, r));
                 }
-                const ru = ({ format: u, value: e }) => {
-                    const t = ((u, e = 'integral') => {
-                        let t;
-                        return (
-                            (t = 'gold' === e ? X.B3.GOLD : X.B3.INTEGRAL),
-                            void 0 === u ? '' : X.Z5.getNumberFormat(u, t)
-                        );
-                    })(e, u);
-                    return t ? a().createElement('span', null, t) : null;
-                };
+                class ru extends a().PureComponent {
+                    render() {
+                        let u;
+                        u = 'gold' === this.props.format ? $.B3.GOLD : $.B3.INTEGRAL;
+                        const e = $.Z5.getNumberFormat(this.props.value, u);
+                        return void 0 !== this.props.value && void 0 !== e ? e : null;
+                    }
+                }
                 let au, nu, iu, su, ou, lu, Eu;
-                !(function (u) {
-                    (u.Items = 'items'),
-                        (u.Equipment = 'equipment'),
-                        (u.Xp = 'xp'),
-                        (u.XpFactor = 'xpFactor'),
-                        (u.Blueprints = 'blueprints'),
-                        (u.BlueprintsAny = 'blueprintsAny'),
-                        (u.Goodies = 'goodies'),
-                        (u.Berths = 'berths'),
-                        (u.Slots = 'slots'),
-                        (u.Tokens = 'tokens'),
-                        (u.CrewSkins = 'crewSkins'),
-                        (u.CrewBooks = 'crewBooks'),
-                        (u.Customizations = 'customizations'),
-                        (u.CreditsFactor = 'creditsFactor'),
-                        (u.Currency = 'currency'),
-                        (u.TankmenXp = 'tankmenXP'),
-                        (u.TankmenXpFactor = 'tankmenXPFactor'),
-                        (u.FreeXpFactor = 'freeXPFactor'),
-                        (u.BattleToken = 'battleToken'),
-                        (u.PremiumUniversal = 'premium_universal'),
-                        (u.Gold = 'gold'),
-                        (u.Credits = 'credits'),
-                        (u.Crystal = 'crystal'),
-                        (u.FreeXp = 'freeXP'),
-                        (u.Premium = 'premium'),
-                        (u.PremiumPlus = 'premium_plus'),
-                        (u.BattlePassPoints = 'battlePassPoints'),
-                        (u.BattlePassSelectToken = 'battlePassSelectToken'),
-                        (u.SelectableBonus = 'selectableBonus'),
-                        (u.StyleProgressToken = 'styleProgressToken'),
-                        (u.TmanToken = 'tmanToken'),
-                        (u.NaturalCover = 'naturalCover'),
-                        (u.BpCoin = 'bpcoin'),
-                        (u.BattlaPassFinalAchievement = 'dossier_achievement'),
-                        (u.BattleBadge = 'dossier_badge'),
-                        (u.NewYearAlbumsAccess = 'newYearAlbumsAccess'),
-                        (u.NewYearFillers = 'ny22Fillers'),
-                        (u.NewYearInvoice = 'newYearInvoice'),
-                        (u.NewYearToyFragments = 'ny22ToyFragments'),
-                        (u.NewYearSlot = 'newYearSlot'),
-                        (u.BonusX5 = 'battle_bonus_x5'),
-                        (u.CrewBonusX3 = 'crew_bonus_x3'),
-                        (u.Vehicles = 'vehicles'),
-                        (u.EpicSelectToken = 'epicSelectToken'),
-                        (u.CollectionItem = 'collectionItem'),
-                        (u.Comp7TokenWeeklyReward = 'comp7TokenWeeklyReward'),
-                        (u.Comp7TokenCouponReward = 'comp7TokenCouponReward'),
-                        (u.BattleBoosterGift = 'battleBooster_gift'),
-                        (u.CosmicLootboxSilver = 'lootBoxToken'),
-                        (u.CosmicLootboxCommon = 'cosmic_2024_2'),
-                        (u.WtStamp = 'stamp'),
-                        (u.WtHunter = 'wt_hunter'),
-                        (u.WtHunterCollection = 'hunter_collection'),
-                        (u.WtTicket = 'wtevent_ticket'),
-                        (u.WtMainPrizeDiscount = 'main_prize_discount');
-                })(au || (au = {})),
+                (ru.defaultProps = { format: 'integral' }),
+                    (function (u) {
+                        (u.Items = 'items'),
+                            (u.Equipment = 'equipment'),
+                            (u.Xp = 'xp'),
+                            (u.XpFactor = 'xpFactor'),
+                            (u.Blueprints = 'blueprints'),
+                            (u.BlueprintsAny = 'blueprintsAny'),
+                            (u.Goodies = 'goodies'),
+                            (u.Berths = 'berths'),
+                            (u.Slots = 'slots'),
+                            (u.Tokens = 'tokens'),
+                            (u.CrewSkins = 'crewSkins'),
+                            (u.CrewBooks = 'crewBooks'),
+                            (u.Customizations = 'customizations'),
+                            (u.CreditsFactor = 'creditsFactor'),
+                            (u.Currency = 'currency'),
+                            (u.TankmenXp = 'tankmenXP'),
+                            (u.TankmenXpFactor = 'tankmenXPFactor'),
+                            (u.FreeXpFactor = 'freeXPFactor'),
+                            (u.BattleToken = 'battleToken'),
+                            (u.Entitlements = 'entitlements'),
+                            (u.PremiumUniversal = 'premium_universal'),
+                            (u.Gold = 'gold'),
+                            (u.Credits = 'credits'),
+                            (u.Crystal = 'crystal'),
+                            (u.FreeXp = 'freeXP'),
+                            (u.Premium = 'premium'),
+                            (u.PremiumPlus = 'premium_plus'),
+                            (u.BattlePassPoints = 'battlePassPoints'),
+                            (u.BattlePassSelectToken = 'battlePassSelectToken'),
+                            (u.SelectableBonus = 'selectableBonus'),
+                            (u.StyleProgressToken = 'styleProgressToken'),
+                            (u.TmanToken = 'tmanToken'),
+                            (u.NaturalCover = 'naturalCover'),
+                            (u.BpCoin = 'bpcoin'),
+                            (u.BattlaPassFinalAchievement = 'dossier_achievement'),
+                            (u.BattleBadge = 'dossier_badge'),
+                            (u.NewYearAlbumsAccess = 'newYearAlbumsAccess'),
+                            (u.NewYearFillers = 'ny22Fillers'),
+                            (u.NewYearInvoice = 'newYearInvoice'),
+                            (u.NewYearToyFragments = 'nyToyFragments'),
+                            (u.NewYearSlot = 'newYearSlot'),
+                            (u.BonusX5 = 'battle_bonus_x5'),
+                            (u.CrewBonusX3 = 'crew_bonus_x3'),
+                            (u.Vehicles = 'vehicles'),
+                            (u.EpicSelectToken = 'epicSelectToken'),
+                            (u.CollectionItem = 'collectionItem'),
+                            (u.Comp7TokenWeeklyReward = 'comp7TokenWeeklyReward'),
+                            (u.Comp7TokenCouponReward = 'comp7TokenCouponReward'),
+                            (u.BattleBoosterGift = 'battleBooster_gift'),
+                            (u.CosmicLootboxSilver = 'lootBoxToken'),
+                            (u.CosmicLootboxCommon = 'cosmic_2024_2'),
+                            (u.LootBoxToken = 'lootBoxToken');
+                    })(au || (au = {})),
                     (function (u) {
                         (u.Gold = 'gold'),
                             (u.Credits = 'credits'),
@@ -1482,6 +1478,7 @@
                         au.TankmenXpFactor,
                         au.FreeXpFactor,
                         au.BattleToken,
+                        au.Entitlements,
                         au.PremiumUniversal,
                         au.NaturalCover,
                         au.BpCoin,
@@ -1496,16 +1493,12 @@
                         au.Comp7TokenWeeklyReward,
                         au.Comp7TokenCouponReward,
                         au.BattleBoosterGift,
-                        au.CosmicLootboxCommon,
-                        au.CosmicLootboxSilver,
+                        au.NewYearFillers,
+                        au.NewYearInvoice,
+                        au.LootBoxToken,
                         au.SelectableBonus,
-                        au.WtStamp,
-                        au.WtTicket,
-                        au.WtMainPrizeDiscount,
-                        au.WtHunter,
-                        au.WtHunterCollection,
                     ],
-                    Au = [au.Gold, au.Credits, au.Crystal, au.FreeXp],
+                    Au = [au.Gold, au.Credits, au.Crystal, au.FreeXp, au.NewYearToyFragments],
                     _u = [au.BattlePassPoints],
                     Fu = [au.PremiumPlus, au.Premium],
                     mu = ['engravings', 'backgrounds'],
@@ -1582,7 +1575,10 @@
                                                         return `R.images.gui.maps.icons.quests.bonuses.${e}.${u.icon}`;
                                                 }
                                             })(u, e);
-                                        case 'lootBoxToken':
+                                        case 'entitlements':
+                                            return 'big' === e
+                                                ? u.iconBig.replace('..', 'img://gui')
+                                                : u.iconSmall.replace('..', 'img://gui');
                                         case 'customizations':
                                         case 'styleProgress':
                                         case 'crewSkins':
@@ -1591,6 +1587,7 @@
                                         case 'tmanToken':
                                         case 'battlePassSelectToken':
                                         case 'selectableBonus':
+                                        case 'lootBoxToken':
                                             return `R.images.gui.maps.icons.quests.bonuses.${e}.${n}`;
                                         case 'crewBooks':
                                             return `R.images.gui.maps.icons.crewBooks.books.${e}.${n}`;
@@ -1629,6 +1626,14 @@
                                             return `R.images.gui.maps.icons.quests.bonuses.${e}.style_3d`;
                                         case 'collectionItem':
                                             return `R.images.gui.maps.icons.collectionItems.${o}.${n}`;
+                                        case 'newYearAlbumsAccess':
+                                            return `R.images.new_year.gui.maps.icons.newYear.rewards.${e}.albumsAccess`;
+                                        case 'nyFillers':
+                                            return `R.images.new_year.gui.maps.icons.newYear.rewards.${e}.fillers`;
+                                        case 'nyToyFragments':
+                                            return `R.images.new_year.gui.maps.icons.newYear.rewards.${e}.shards`;
+                                        case 'newYearSlot':
+                                            return `R.images.new_year.gui.maps.icons.newYear.rewards.${e}.slot`;
                                         default:
                                             return `R.images.gui.maps.icons.quests.bonuses.${e}.${t}`;
                                     }
@@ -1978,7 +1983,7 @@
                             Object.assign(
                                 {
                                     __Type: 'GFViewEventProxy',
-                                    type: X.B0.TOOLTIP,
+                                    type: $.B0.TOOLTIP,
                                     contentID: u,
                                     decoratorID: e,
                                     targetID: r,
@@ -2386,16 +2391,16 @@
                         );
                     },
                     Iu = ({ index: u = 0, delay: e = 0, children: t }) => {
-                        const r = (0, q.useSpring)({
+                        const r = (0, V.useSpring)({
                             from: { scale: 1.2, opacity: 0, transform: 'translateY(20rem)' },
                             to: { scale: 1, opacity: 1, transform: 'translateY(0)' },
                             delay: e + 900 + 200 * u,
-                            config: { duration: z, easing: Y },
+                            config: { duration: z, easing: q },
                             onStart: () => {
                                 k(R.sounds.gui_random_reward_appear());
                             },
                         });
-                        return a().createElement(q.animated.div, { className: 'AnimatedReward_base_51', style: r }, t);
+                        return a().createElement(V.animated.div, { className: 'AnimatedReward_base_51', style: r }, t);
                     };
                 function Hu() {
                     return (
@@ -2439,14 +2444,14 @@
                 !(function (u) {
                     (u[(u.left = 0)] = 'left'), (u[(u.right = 1)] = 'right');
                 })(Gu || (Gu = {}));
-                const Xu = (u, e, t) => {
+                const $u = (u, e, t) => {
                         if (t % 2) {
                             const t = u.pop();
                             return [...u, t + e];
                         }
                         return [...u, e];
                     },
-                    $u = (u, e, t) => {
+                    Xu = (u, e, t) => {
                         if (0 === t) return [e];
                         if (t % 2) return [...u, ' ' === e ? ' ' : e];
                         {
@@ -2454,8 +2459,8 @@
                             return [...u, t + e];
                         }
                     },
-                    ju = (u, e, t = Gu.left) => u.split(e).reduce(t === Gu.left ? Xu : $u, []),
-                    Vu = (() => {
+                    ju = (u, e, t = Gu.left) => u.split(e).reduce(t === Gu.left ? $u : Xu, []),
+                    Yu = (() => {
                         const u = new RegExp(
                             /[\(\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]?[\u3002\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]?[ %\+\x2D-9A-Za-\{\}\xA0\xC0-\u0237\u2013\u2014\u2026]+[\)\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3002\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\uFF01\uFF0C\uFF1A\uFF1B\uFF1F\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]?[\u3002\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]?/gmu
                                 .source +
@@ -2476,8 +2481,8 @@
                                 .replace(/ /g, ' ')
                                 .match(u);
                     })(),
-                    qu = ['zh_cn', 'zh_sg', 'zh_tw'],
-                    Yu = 'RewardList_reward_85',
+                    Vu = ['zh_cn', 'zh_sg', 'zh_tw'],
+                    qu = 'RewardList_reward_85',
                     zu = 'RewardList_reward__info_2b';
                 function Ku() {
                     return (
@@ -2532,7 +2537,7 @@
                                         Ku({ classNames: { info: zu } }, u, {
                                             image: u.image(n),
                                             size: n,
-                                            className: Yu,
+                                            className: qu,
                                         }),
                                     ),
                                 ),
@@ -2548,7 +2553,7 @@
                                         size: n,
                                         value: l,
                                         tooltipArgs: A,
-                                        className: Yu,
+                                        className: qu,
                                     }),
                                 ),
                         );
@@ -2587,7 +2592,7 @@
                         Ju.apply(this, arguments)
                     );
                 }
-                const ue = (0, V.Pi)(() => {
+                const ue = (0, Y.Pi)(() => {
                         const u = pu().model,
                             e = u.computes.getIsShopWithVehicle(),
                             t = u.computes.getVehicleRewards(),
@@ -3038,8 +3043,8 @@
                                                       ? t[u]
                                                       : ((u, e = Gu.left) => {
                                                             const t = R.strings.settings.LANGUAGE_CODE().toLowerCase();
-                                                            return qu.includes(t)
-                                                                ? Vu(u)
+                                                            return Vu.includes(t)
+                                                                ? Yu(u)
                                                                 : ((u, e = Gu.left) => {
                                                                       let t = [];
                                                                       const r =
@@ -3214,7 +3219,7 @@
                         );
                     }),
                     Oe = R.strings.armory_yard.rewardsView,
-                    Pe = (0, V.Pi)(() => {
+                    Pe = (0, Y.Pi)(() => {
                         const u = pu(),
                             e = u.model,
                             t = u.controls,
@@ -3243,7 +3248,7 @@
                         );
                     }),
                     Ne = R.strings.armory_yard.rewardsView,
-                    ke = (0, V.Pi)(() => {
+                    ke = (0, Y.Pi)(() => {
                         const u = pu().model,
                             e = u.state.get(),
                             t = u.stages.get();
@@ -3291,7 +3296,7 @@
                     He = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3],
                     Ue = ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE()),
                     Ge = R.strings.armory_yard.rewardsView.vehicle,
-                    We = (0, V.Pi)(() => {
+                    We = (0, Y.Pi)(() => {
                         const u = pu().model,
                             e = w().mediaSize < p.Medium,
                             t = u.stages.get(),
@@ -3348,7 +3353,7 @@
                         );
                         var s;
                     }),
-                    Xe = (0, V.Pi)(() => {
+                    $e = (0, Y.Pi)(() => {
                         const u = pu(),
                             e = u.model,
                             t = u.controls,
@@ -3359,11 +3364,11 @@
                             l = e.computes.getIsShopWithVehicle();
                         var E;
                         (E = t.close), j(W.n.ESCAPE, E);
-                        const c = (0, q.useSpring)({
+                        const c = (0, V.useSpring)({
                             from: { opacity: 0, transform: 'translateY(20rem)' },
                             to: { opacity: 1, transform: 'translateY(0)' },
                             delay: o + 900,
-                            config: { duration: z, easing: Y },
+                            config: { duration: z, easing: q },
                             onRest: () => s(!1),
                         });
                         return (
@@ -3392,7 +3397,7 @@
                                     onClick: t.close,
                                 }),
                                 a().createElement(
-                                    q.animated.div,
+                                    V.animated.div,
                                     {
                                         className: C()(
                                             'App_footer_95',
@@ -3406,16 +3411,16 @@
                             )
                         );
                     });
-                let $e;
+                let Xe;
                 !(function (u) {
                     (u.BeforeProgression = 'beforeProgression'),
                         (u.Active = 'active'),
                         (u.PostProgression = 'postProgression'),
                         (u.Completed = 'completed'),
                         (u.Disabled = 'disabled');
-                })($e || ($e = {}));
+                })(Xe || (Xe = {}));
                 const je = {
-                        state: $e.PostProgression,
+                        state: Xe.PostProgression,
                         vehicles: [
                             {
                                 tooltipContentId: '25',
@@ -3544,8 +3549,8 @@
                             },
                         ],
                     },
-                    Ve = {
-                        getter: ((qe = je), (u) => (u ? u.split('.').reduce((u, e) => u[e], qe) : qe)),
+                    Ye = {
+                        getter: ((Ve = je), (u) => (u ? u.split('.').reduce((u, e) => u[e], Ve) : Ve)),
                         computes: {
                             getVehicleRewards: () => je.vehicles,
                             getMainRewards: () => je.mainRewards,
@@ -3570,13 +3575,13 @@
                                 },
                             }),
                     };
-                var qe;
+                var Ve;
                 engine.whenReady.then(() => {
                     N().render(
                         a().createElement(
                             hu,
-                            { mode: 'real', mocks: Ve },
-                            a().createElement(O, null, a().createElement(Xe, null)),
+                            { mode: 'real', mocks: Ye },
+                            a().createElement(O, null, a().createElement($e, null)),
                         ),
                         document.getElementById('root'),
                     );

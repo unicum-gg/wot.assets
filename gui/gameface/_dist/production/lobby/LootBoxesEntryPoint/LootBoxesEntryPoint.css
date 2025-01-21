@@ -124,7 +124,8 @@
     display: flex;
     margin-left: 125rem;
     margin-top: 105rem;
-    background: url('R.images.white_tiger.gui.maps.icons.entryBoxPoint.background_portal') no-repeat -5rem center / contain;
+    background: url('R.images.white_tiger.gui.maps.icons.entryBoxPoint.background_portal') no-repeat -5rem center /
+        contain;
     position: relative;
 }
 .App_keys__hasNew_f7 {

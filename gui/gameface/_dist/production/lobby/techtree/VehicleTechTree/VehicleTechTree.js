@@ -3282,15 +3282,17 @@
                     (function (e) {
                         (e.Red = 'RedActionBG'), (e.Blue = 'BlueActionBG');
                     })(dr || (dr = {}));
-                const Er = ({ format: e, value: u }) => {
-                        const t = ((e, u = 'integral') => {
-                            let t;
-                            t = 'gold' === u ? V.B3.GOLD : V.B3.INTEGRAL;
-                            return void 0 === e ? '' : V.Z5.getNumberFormat(e, t);
-                        })(u, e);
-                        return t ? o().createElement('span', null, t) : null;
-                    },
-                    mr = {
+                class Er extends o().PureComponent {
+                    render() {
+                        let e;
+                        if ('gold' === this.props.format) e = V.B3.GOLD;
+                        else e = V.B3.INTEGRAL;
+                        const u = V.Z5.getNumberFormat(this.props.value, e);
+                        return void 0 !== this.props.value && void 0 !== u ? u : null;
+                    }
+                }
+                Er.defaultProps = { format: 'integral' };
+                const mr = {
                         base: 'Currency_base_57',
                         icon: 'Currency_icon_c5',
                         base__small: 'Currency_base__small_af',
@@ -3896,6 +3898,7 @@
                                                             className: p()(
                                                                 qr.xpCost,
                                                                 qr.xpCost__earned,
+                                                                re && qr.xpCost__discount,
                                                                 W && qr.xpCost__earned__elite,
                                                             ),
                                                         },

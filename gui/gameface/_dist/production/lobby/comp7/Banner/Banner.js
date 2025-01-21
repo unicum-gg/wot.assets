@@ -1102,7 +1102,7 @@
                     );
                 }
                 const ae = [Pu.NotStarted, Pu.JustStarted, Pu.Active, Pu.EndSoon],
-                    ne = [Pu.JustStarted, Pu.EndSoon, Pu.End, Pu.Disabled],
+                    ne = [Pu.JustStarted, Pu.EndSoon, Pu.End, Pu.Disabled, Pu.Active],
                     Ae = {
                         [Pu.Disabled]: 'disabled',
                         [Pu.NotStarted]: 'notStarted',
@@ -1239,6 +1239,8 @@
                                         { className: Qu.info },
                                         ((u, e) => {
                                             switch (u) {
+                                                case Pu.Active:
+                                                    return ee.season();
                                                 case Pu.JustStarted:
                                                     return ee.info.seasonJustStarted();
                                                 case Pu.EndSoon:

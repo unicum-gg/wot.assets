@@ -1887,7 +1887,8 @@
     transition-delay: 1100ms;
 }
 .mediaMedium .RewardCard_bgCompleted_eb {
-    background: url('R.images.races.gui.maps.icons.progression.progression.bg_texture_large') no-repeat center -60rem / cover;
+    background: url('R.images.races.gui.maps.icons.progression.progression.bg_texture_large') no-repeat center -60rem /
+        cover;
 }
 .RewardCard_bgShadow_74 {
     width: 100%;

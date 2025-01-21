@@ -166,14 +166,16 @@
                 var r = t(6179),
                     n = t.n(r),
                     a = t(4179);
-                const s = ({ format: e, value: u }) => {
-                    const t = ((e, u = 'integral') => {
-                        let t;
-                        t = 'gold' === u ? a.B3.GOLD : a.B3.INTEGRAL;
-                        return void 0 === e ? '' : a.Z5.getNumberFormat(e, t);
-                    })(u, e);
-                    return t ? n().createElement('span', null, t) : null;
-                };
+                class s extends n().PureComponent {
+                    render() {
+                        let e;
+                        if ('gold' === this.props.format) e = a.B3.GOLD;
+                        else e = a.B3.INTEGRAL;
+                        const u = a.Z5.getNumberFormat(this.props.value, e);
+                        return void 0 !== this.props.value && void 0 !== u ? u : null;
+                    }
+                }
+                s.defaultProps = { format: 'integral' };
             },
             280: (e, u, t) => {
                 'use strict';
@@ -531,6 +533,7 @@
                             (e.TankmenXpFactor = 'tankmenXPFactor'),
                             (e.FreeXpFactor = 'freeXPFactor'),
                             (e.BattleToken = 'battleToken'),
+                            (e.Entitlements = 'entitlements'),
                             (e.PremiumUniversal = 'premium_universal'),
                             (e.Gold = 'gold'),
                             (e.Credits = 'credits'),
@@ -550,7 +553,7 @@
                             (e.NewYearAlbumsAccess = 'newYearAlbumsAccess'),
                             (e.NewYearFillers = 'ny22Fillers'),
                             (e.NewYearInvoice = 'newYearInvoice'),
-                            (e.NewYearToyFragments = 'ny22ToyFragments'),
+                            (e.NewYearToyFragments = 'nyToyFragments'),
                             (e.NewYearSlot = 'newYearSlot'),
                             (e.BonusX5 = 'battle_bonus_x5'),
                             (e.CrewBonusX3 = 'crew_bonus_x3'),
@@ -562,11 +565,7 @@
                             (e.BattleBoosterGift = 'battleBooster_gift'),
                             (e.CosmicLootboxSilver = 'lootBoxToken'),
                             (e.CosmicLootboxCommon = 'cosmic_2024_2'),
-                            (e.WtStamp = 'stamp'),
-                            (e.WtHunter = 'wt_hunter'),
-                            (e.WtHunterCollection = 'hunter_collection'),
-                            (e.WtTicket = 'wtevent_ticket'),
-                            (e.WtMainPrizeDiscount = 'main_prize_discount');
+                            (e.LootBoxToken = 'lootBoxToken');
                     })(r || (r = {})),
                     (function (e) {
                         (e.Gold = 'gold'),
@@ -687,6 +686,7 @@
                         s.E4.TankmenXpFactor,
                         s.E4.FreeXpFactor,
                         s.E4.BattleToken,
+                        s.E4.Entitlements,
                         s.E4.PremiumUniversal,
                         s.E4.NaturalCover,
                         s.E4.BpCoin,
@@ -701,16 +701,12 @@
                         s.E4.Comp7TokenWeeklyReward,
                         s.E4.Comp7TokenCouponReward,
                         s.E4.BattleBoosterGift,
-                        s.E4.CosmicLootboxCommon,
-                        s.E4.CosmicLootboxSilver,
+                        s.E4.NewYearFillers,
+                        s.E4.NewYearInvoice,
+                        s.E4.LootBoxToken,
                         s.E4.SelectableBonus,
-                        s.E4.WtStamp,
-                        s.E4.WtTicket,
-                        s.E4.WtMainPrizeDiscount,
-                        s.E4.WtHunter,
-                        s.E4.WtHunterCollection,
                     ],
-                    o = [s.E4.Gold, s.E4.Credits, s.E4.Crystal, s.E4.FreeXp],
+                    o = [s.E4.Gold, s.E4.Credits, s.E4.Crystal, s.E4.FreeXp, s.E4.NewYearToyFragments],
                     l = [s.E4.BattlePassPoints],
                     c = [s.E4.PremiumPlus, s.E4.Premium],
                     E = (e) =>
@@ -776,7 +772,10 @@
                                             return `R.images.gui.maps.icons.quests.bonuses.${u}.${e.icon}`;
                                     }
                                 })(e, u);
-                            case 'lootBoxToken':
+                            case 'entitlements':
+                                return 'big' === u
+                                    ? e.iconBig.replace('..', 'img://gui')
+                                    : e.iconSmall.replace('..', 'img://gui');
                             case 'customizations':
                             case 'styleProgress':
                             case 'crewSkins':
@@ -785,6 +784,7 @@
                             case 'tmanToken':
                             case 'battlePassSelectToken':
                             case 'selectableBonus':
+                            case 'lootBoxToken':
                                 return `R.images.gui.maps.icons.quests.bonuses.${u}.${a}`;
                             case 'crewBooks':
                                 return `R.images.gui.maps.icons.crewBooks.books.${u}.${a}`;
@@ -823,6 +823,14 @@
                                 return `R.images.gui.maps.icons.quests.bonuses.${u}.style_3d`;
                             case 'collectionItem':
                                 return `R.images.gui.maps.icons.collectionItems.${l}.${a}`;
+                            case 'newYearAlbumsAccess':
+                                return `R.images.new_year.gui.maps.icons.newYear.rewards.${u}.albumsAccess`;
+                            case 'nyFillers':
+                                return `R.images.new_year.gui.maps.icons.newYear.rewards.${u}.fillers`;
+                            case 'nyToyFragments':
+                                return `R.images.new_year.gui.maps.icons.newYear.rewards.${u}.shards`;
+                            case 'newYearSlot':
+                                return `R.images.new_year.gui.maps.icons.newYear.rewards.${u}.slot`;
                             default:
                                 return `R.images.gui.maps.icons.quests.bonuses.${u}.${t}`;
                         }
@@ -2264,7 +2272,7 @@
                     };
                 window.ViewEnvHelper = b;
             },
-            1852: (e, u, t) => {
+            2235: (e, u, t) => {
                 'use strict';
                 var r = t(7739),
                     n = t(6179),
@@ -4905,11 +4913,11 @@
                             l().createElement(L, { getStepByRailClick: c, api: u, onDrag: E, classNames: d }),
                         );
                     },
-                    I = ({ api: e, className: u, classNames: t, children: r }) => (
+                    I = ({ api: e, className: u, classNames: t, children: r, style: n }) => (
                         (0, o.useEffect)(() => (0, i.v)(e.recalculateContent)),
                         l().createElement(
                             'div',
-                            { className: s()(M.base, u) },
+                            { className: s()(M.base, u), style: n },
                             l().createElement(
                                 'div',
                                 {
@@ -5586,6 +5594,6 @@
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             t.forEach(u.bind(null, 0)), (t.push = u.bind(null, t.push.bind(t)));
         })();
-    var __webpack_exports__ = __webpack_require__.O(void 0, [519], () => __webpack_require__(1852));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [519], () => __webpack_require__(2235));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

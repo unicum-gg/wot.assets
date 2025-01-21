@@ -4706,7 +4706,7 @@
                                                 c === nr
                                                     ? 'script' === p
                                                         ? (((o = f.createElement('div')).innerHTML =
-                                                              '<script></script>'),
+                                                              '<script><\/script>'),
                                                           (f = o.removeChild(o.firstChild)))
                                                         : 'string' == typeof o.is
                                                           ? (f = f.createElement(p, { is: o.is }))
@@ -6119,7 +6119,7 @@
             }
             var u = n(13),
                 s = 'undefined' == typeof FinalizationRegistry ? void 0 : FinalizationRegistry,
-                c = n(282);
+                c = n(373);
             var f = function (e) {
                 var t = 'function' == typeof Symbol && Symbol.iterator,
                     n = t && e[t],
@@ -6349,7 +6349,7 @@
                 return (0, r.Gf)(e);
             }
         },
-        282: (e, t, n) => {
+        373: (e, t, n) => {
             'use strict';
             function r(e) {
                 return { reaction: e, mounted: !1, changedBeforeMount: !1, cleanAt: Date.now() + i };

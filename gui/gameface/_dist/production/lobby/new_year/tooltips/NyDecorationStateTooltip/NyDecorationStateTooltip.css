@@ -1,0 +1,64 @@
+.TooltipDecorator_base_c9 {
+    display: flex;
+    position: absolute;
+}
+
+.TooltipDecorator_base__theme-default_6d .TooltipDecorator_decorator_3d {
+    padding: 4rem 6rem 8rem;
+    border-image-source: url('R.images.gui.maps.icons.tooltip.tooltip_background');
+    border-image-slice: 24 fill;
+    border-image-width: 24rem;
+    position: relative;
+}
+
+.App_base_64 {
+    width: 330rem;
+    padding: 20rem;
+    min-height: 130rem;
+    overflow: hidden;
+    position: relative;
+}
+.App_title_40 {
+    color: #e9e2bf;
+    font-size: 15rem;
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 3rem;
+}
+.App_bonus_fa {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80rem;
+    height: 80rem;
+    position: absolute;
+    top: 40rem;
+    left: 20rem;
+    z-index: -1;
+}
+.App_shine_6f {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120rem;
+    height: 120rem;
+    background: url('R.images.new_year.gui.maps.icons.newYear.tooltips.decorations.shine') no-repeat center / contain;
+}
+.App_value_4c {
+    display: flex;
+    color: #ffffff;
+    font-size: 28rem;
+    font-weight: 700;
+    position: relative;
+}
+.App_plus_b6 {
+    margin: -2rem 2rem 0;
+}
+.App_description_d3 {
+    color: #8c8c7e;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    margin: 15rem 0 8rem 80rem;
+}

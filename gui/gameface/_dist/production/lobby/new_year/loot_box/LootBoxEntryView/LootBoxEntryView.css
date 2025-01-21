@@ -1,0 +1,121 @@
+.FormatCount_base_01 {
+    display: flex;
+}
+
+.LootBox_base_6b {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.LootBox_shine_73 {
+    align-self: center;
+    width: 150rem;
+    height: 150rem;
+    background: url('swf://gui/flash/animations/newYear/blue_shine_lite.swf') no-repeat center / contain;
+    mix-blend-mode: additive;
+    position: absolute;
+    z-index: 1;
+    transform: rotate(-90deg);
+    pointer-events: none;
+}
+.LootBox_base__large_ed .LootBox_shine_73 {
+    width: 275rem;
+    height: 275rem;
+}
+.LootBox_shine__big_b8 {
+    background-image: url('swf://gui/flash/animations/newYear/blue_shine.swf');
+}
+.LootBox_wrapper_0c {
+    width: 114rem;
+    height: 114rem;
+    position: relative;
+    z-index: 2;
+    cursor: pointer;
+    pointer-events: auto;
+}
+.LootBox_base__large_ed .LootBox_wrapper_0c {
+    width: 222rem;
+    height: 214rem;
+}
+.LootBox_wrapper_0c .LootBox_base__disabled_1a {
+    opacity: 0.4;
+    cursor: default;
+}
+.LootBox_icon_08 {
+    width: 80rem;
+    height: 80rem;
+    background: url('R.images.new_year.gui.maps.icons.newYear.entryPoint.entry') no-repeat center / cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.LootBox_base__large_ed .LootBox_icon_08 {
+    width: 160rem;
+    height: 160rem;
+    background-image: url('R.images.new_year.gui.maps.icons.newYear.entryPoint.entryMedium');
+}
+.LootBox_base__disabled_1a .LootBox_icon_08 {
+    opacity: 0.4;
+}
+.LootBox_icon__hovered_21 {
+    background-image: url('R.images.new_year.gui.maps.icons.newYear.entryPoint.entry_hover');
+}
+.LootBox_base__large_ed .LootBox_icon__hovered_21 {
+    background-image: url('R.images.new_year.gui.maps.icons.newYear.entryPoint.entryMedium_hover');
+}
+.LootBox_count_c4 {
+    display: flex;
+    color: #edf0ff;
+    font-size: 20rem;
+    text-shadow: 0 0 14rem #5b9dff;
+    position: absolute;
+    right: 4rem;
+    bottom: 24rem;
+}
+.LootBox_base__large_ed .LootBox_count_c4 {
+    font-size: 24rem;
+    right: 16rem;
+    bottom: 54rem;
+}
+.LootBox_base__disabled_1a .LootBox_count_c4 {
+    color: #595950;
+}
+.LootBox_disabledAlert_35 {
+    width: 100rem;
+    height: 30rem;
+    background: url('R.images.new_year.gui.maps.icons.newYear.entryPoint.alert') no-repeat center / cover;
+    position: absolute;
+    bottom: 20rem;
+    left: 50%;
+    z-index: 99;
+    transform: translateX(-50%);
+}
+.LootBox_base__large_ed .LootBox_disabledAlert_35 {
+    bottom: 50rem;
+}
+
+.App_base_7a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+body {
+    margin: 1rem;
+    overflow: hidden;
+}

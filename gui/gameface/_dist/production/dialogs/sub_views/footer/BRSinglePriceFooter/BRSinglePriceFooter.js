@@ -701,7 +701,7 @@
                     };
                 window.ViewEnvHelper = b;
             },
-            960: (u, e, n) => {
+            699: (u, e, n) => {
                 var t = n(179),
                     r = n.n(t),
                     o = n(493),
@@ -1009,18 +1009,20 @@
                 !(function (u) {
                     (u.backport = 'backport'), (u.normal = 'normal'), (u.absent = 'absent');
                 })(y || (y = {}));
-                const f = ({ format: u, value: e }) => {
-                    const n = ((u, e = 'integral') => {
-                        let n;
-                        n = 'gold' === e ? a.B3.GOLD : a.B3.INTEGRAL;
-                        return void 0 === u ? '' : a.Z5.getNumberFormat(u, n);
-                    })(e, u);
-                    return n ? r().createElement('span', null, n) : null;
-                };
+                class f extends r().PureComponent {
+                    render() {
+                        let u;
+                        if ('gold' === this.props.format) u = a.B3.GOLD;
+                        else u = a.B3.INTEGRAL;
+                        const e = a.Z5.getNumberFormat(this.props.value, u);
+                        return void 0 !== this.props.value && void 0 !== e ? e : null;
+                    }
+                }
                 let k, O, T;
-                !(function (u) {
-                    (u.small = 'small'), (u.big = 'big'), (u.large = 'large'), (u.extraLarge = 'extraLarge');
-                })(k || (k = {})),
+                (f.defaultProps = { format: 'integral' }),
+                    (function (u) {
+                        (u.small = 'small'), (u.big = 'big'), (u.large = 'large'), (u.extraLarge = 'extraLarge');
+                    })(k || (k = {})),
                     (function (u) {
                         (u.credits = 'credits'),
                             (u.gold = 'gold'),
@@ -1328,6 +1330,6 @@
                 n = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             n.forEach(e.bind(null, 0)), (n.push = e.bind(null, n.push.bind(n)));
         })();
-    var __webpack_exports__ = __webpack_require__.O(void 0, [573], () => __webpack_require__(960));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [573], () => __webpack_require__(699));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

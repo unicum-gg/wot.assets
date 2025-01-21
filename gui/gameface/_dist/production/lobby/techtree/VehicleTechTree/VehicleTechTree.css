@@ -595,8 +595,8 @@
 .BlueprintSwitcher_glow_f8 {
     width: 80rem;
     height: 80rem;
-    background: url('R.images.gui.maps.icons.techtree.researchTree.blueprintsHeader.switcher.bp_glow') no-repeat center /
-        cover;
+    background: url('R.images.gui.maps.icons.techtree.researchTree.blueprintsHeader.switcher.bp_glow') no-repeat
+        center / cover;
     transform-origin: center;
     transition: transform 0.15s ease-in-out;
 }
@@ -1879,8 +1879,8 @@
     width: 67rem;
     height: 17rem;
     margin-top: 1rem;
-    background: url('R.images.gui.maps.icons.techtree.researchTree.node.actionButtonBackgrounds.hover') no-repeat center /
-        cover;
+    background: url('R.images.gui.maps.icons.techtree.researchTree.node.actionButtonBackgrounds.hover') no-repeat
+        center / cover;
     opacity: 0;
     position: absolute;
     transition: opacity 0.15s ease-in;
@@ -1899,8 +1899,8 @@
 .AddBluePrintButton_base_2b {
     width: 24rem;
     height: 24rem;
-    background: url('R.images.gui.maps.icons.techtree.researchTree.node.additionalIcons.addBlueprint') no-repeat center /
-        contain;
+    background: url('R.images.gui.maps.icons.techtree.researchTree.node.additionalIcons.addBlueprint') no-repeat
+        center / contain;
     position: relative;
     cursor: pointer;
 }
@@ -1924,8 +1924,8 @@
 .CompareButton_base_9e {
     width: 29rem;
     height: 22rem;
-    background: url('R.images.gui.maps.icons.techtree.researchTree.node.additionalIcons.addToCompare') no-repeat center /
-        cover;
+    background: url('R.images.gui.maps.icons.techtree.researchTree.node.additionalIcons.addToCompare') no-repeat
+        center / cover;
     opacity: 0.7;
     transition: opacity 0.15s;
 }
@@ -2326,8 +2326,8 @@
 .TreeNode_earlyAccessGlow_a8 {
     width: 100%;
     height: 100%;
-    background: url('R.images.gui.maps.icons.techtree.researchTree.node.backgrounds.earlyAccess.glow') no-repeat center /
-        cover;
+    background: url('R.images.gui.maps.icons.techtree.researchTree.node.backgrounds.earlyAccess.glow') no-repeat
+        center / cover;
     position: relative;
     left: 128rem;
     animation: TreeNode_earlyAccessGlow_a8 600ms;

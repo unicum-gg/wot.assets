@@ -119,23 +119,5 @@
       <description>	_(#manual:chapter-4/lesson-6/description)	</description>
       <hints></hints>
     </lesson>
-    <lesson>
-      <id>	89	</id>
-      <template>	video_page	</template>
-      <background>	../maps/icons/manual/backgrounds/video.png	</background>
-      <title>	_(#manual:chapter-4/video-lesson-1/title)	</title>
-      <video>	https://webbrg.tanki.su/ru/promocontent/6ManualVideo/	</video>
-      <preview>	../maps/icons/manual/preview/HowToPlay.png	</preview>
-      <description></description>
-    </lesson>
-    <lesson>
-      <id>	90	</id>
-      <template>	video_page	</template>
-      <background>	../maps/icons/manual/backgrounds/video.png	</background>
-      <title>	_(#manual:chapter-4/video-lesson-2/title)	</title>
-      <video>	https://webbrg.tanki.su/ru/promocontent/7ManualVideo/	</video>
-      <preview>	../maps/icons/manual/preview/NoteBookDeveloper.png	</preview>
-      <description></description>
-    </lesson>
   </lessons>
 </chapter-4.xml>

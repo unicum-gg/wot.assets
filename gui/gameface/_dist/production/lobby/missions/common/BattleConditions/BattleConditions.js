@@ -71,22 +71,22 @@
             },
             8150: (e, n, t) => {
                 t.d(n, { $: () => l });
-                var a = t(6179),
+                var a = t(6483),
                     r = t.n(a),
-                    s = t(6483),
+                    s = t(6179),
                     o = t.n(s),
                     i = t(8804);
                 const l = ({ size: e }) => {
-                    const n = o()(i.Z.base, i.Z[`base__${e}`]);
-                    return r().createElement('div', { className: n });
+                    const n = r()(i.Z.base, i.Z[`base__${e}`]);
+                    return o().createElement('div', { className: n });
                 };
             },
             2407: (e, n, t) => {
                 t.d(n, { r: () => m });
                 var a = t(6179),
                     r = t.n(a),
-                    s = t(5680),
-                    o = t(6736),
+                    s = t(6736),
+                    o = t(5680),
                     i = t(2386);
                 function l() {
                     return (
@@ -115,7 +115,7 @@
                         onComplete: g,
                     }) => {
                         if (m === n)
-                            return r().createElement(s.M, {
+                            return r().createElement(o.M, {
                                 key: `${m}-${n}`,
                                 size: e,
                                 value: n,
@@ -136,21 +136,21 @@
                         };
                         return d.withStack
                             ? r().createElement(i.F, b)
-                            : r().createElement(o.H, l({ key: `${m}-${n}` }, b));
+                            : r().createElement(s.H, l({ key: `${m}-${n}` }, b));
                     },
                 );
             },
             1848: (e, n, t) => {
                 t.d(n, { t: () => m });
-                var a = t(6179),
+                var a = t(6483),
                     r = t.n(a),
-                    s = t(6483),
+                    s = t(6179),
                     o = t.n(s),
                     i = t(8150),
                     l = t(6664);
-                const m = (0, a.memo)(
+                const m = (0, s.memo)(
                     ({ size: e, lineRef: n, disabled: t, baseStyles: a, isComplete: s, withoutBounce: m }) => {
-                        const d = o()(
+                        const d = r()(
                                 l.Z.base,
                                 l.Z[`base__${e}`],
                                 t && l.Z.base__disabled,
@@ -158,12 +158,12 @@
                                 m && l.Z.base__withoutBounce,
                             ),
                             u = !t && !s;
-                        return r().createElement(
+                        return o().createElement(
                             'div',
                             { className: d, style: a, ref: n },
-                            r().createElement('div', { className: l.Z.pattern }),
-                            r().createElement('div', { className: l.Z.gradient }),
-                            u && r().createElement(i.$, { size: e }),
+                            o().createElement('div', { className: l.Z.pattern }),
+                            o().createElement('div', { className: l.Z.gradient }),
+                            u && o().createElement(i.$, { size: e }),
                         );
                     },
                 );
@@ -247,13 +247,13 @@
             },
             5913: (e, n, t) => {
                 t.d(n, { x: () => m });
-                var a = t(6179),
-                    r = t.n(a),
-                    s = t(122),
-                    o = t(6823),
-                    i = t(8150),
+                var a = t(122),
+                    r = t(6179),
+                    s = t.n(r),
+                    o = t(8150),
+                    i = t(6823),
                     l = t(9919);
-                const m = (0, a.memo)(
+                const m = (0, r.memo)(
                     ({
                         transitionDuration: e,
                         transitionDelay: n,
@@ -265,35 +265,35 @@
                         onChangeAnimationState: g,
                     }) => {
                         const b = u < m,
-                            f = (0, a.useState)(o.V.Idle),
+                            f = (0, r.useState)(i.V.Idle),
                             p = f[0],
                             _ = f[1],
-                            h = p === o.V.In,
-                            E = p === o.V.End,
-                            w = p === o.V.Idle,
-                            v = (0, a.useCallback)(
+                            h = p === i.V.In,
+                            E = p === i.V.End,
+                            w = p === i.V.Idle,
+                            v = (0, r.useCallback)(
                                 (e) => {
                                     _(e), g && g(e);
                                 },
                                 [g],
                             );
-                        (0, a.useEffect)(() => {
+                        (0, r.useEffect)(() => {
                             if (w && !t) {
                                 const e = n;
-                                return (0, s.F)(() => {
-                                    v(o.V.In);
+                                return (0, a.F)(() => {
+                                    v(i.V.In);
                                 }, e);
                             }
                         }, [v, t, w, n]),
-                            (0, a.useEffect)(() => {
+                            (0, r.useEffect)(() => {
                                 if (h) {
                                     const t = e + n;
-                                    return (0, s.F)(() => {
-                                        c && c(), v(o.V.End);
+                                    return (0, a.F)(() => {
+                                        c && c(), v(i.V.End);
                                     }, t);
                                 }
                             }, [v, h, c, n, e]);
-                        const y = (0, a.useMemo)(
+                        const y = (0, r.useMemo)(
                                 () => ({
                                     width: '100%',
                                     transitionDuration: `${e}ms`,
@@ -302,7 +302,7 @@
                                 }),
                                 [b, n, e],
                             ),
-                            S = (0, a.useMemo)(
+                            S = (0, r.useMemo)(
                                 () => ({
                                     width: '0%',
                                     transitionDuration: `${e}ms`,
@@ -311,19 +311,19 @@
                                 }),
                                 [b, n, e],
                             ),
-                            C = (0, a.useMemo)(
+                            C = (0, r.useMemo)(
                                 () => ({ width: `${Math.abs(m - u)}%`, left: `${b ? u : m}%` }),
                                 [m, b, u],
                             );
                         return E
                             ? null
-                            : r().createElement(
+                            : s().createElement(
                                   'div',
                                   { className: l.Z.base, style: C },
-                                  r().createElement(
+                                  s().createElement(
                                       'div',
                                       { style: w ? y : S, className: l.Z.delta },
-                                      r().createElement(i.$, { size: d }),
+                                      s().createElement(o.$, { size: d }),
                                   ),
                               );
                     },
@@ -333,8 +333,8 @@
                 t.d(n, { F: () => l });
                 var a = t(6179),
                     r = t.n(a),
-                    s = t(2434),
-                    o = t(1848),
+                    s = t(1848),
+                    o = t(2434),
                     i = t(6823);
                 const l = (0, a.memo)(
                     ({
@@ -366,7 +366,7 @@
                         return r().createElement(
                             r().Fragment,
                             null,
-                            r().createElement(o.t, {
+                            r().createElement(s.t, {
                                 size: n,
                                 lineRef: l,
                                 disabled: m,
@@ -375,7 +375,7 @@
                                 baseStyles: p ? w : E,
                             }),
                             t >= 0 &&
-                                r().createElement(s.O, {
+                                r().createElement(o.O, {
                                     transitionDuration: u.delta.duration,
                                     transitionDelay: u.delta.delay,
                                     onChangeAnimationState: h,
@@ -394,8 +394,8 @@
                 t.d(n, { D: () => i });
                 var a = t(6179),
                     r = t.n(a),
-                    s = t(5913),
-                    o = t(1848);
+                    s = t(1848),
+                    o = t(5913);
                 const i = (0, a.memo)(
                     ({
                         to: e,
@@ -419,9 +419,9 @@
                         return r().createElement(
                             r().Fragment,
                             null,
-                            r().createElement(o.t, { size: n, lineRef: i, disabled: l, isComplete: m, baseStyles: g }),
+                            r().createElement(s.t, { size: n, lineRef: i, disabled: l, isComplete: m, baseStyles: g }),
                             t >= 0 &&
-                                r().createElement(s.x, {
+                                r().createElement(o.x, {
                                     transitionDuration: d.delta.duration,
                                     transitionDelay: d.delta.delay,
                                     freezed: d.freezed,
@@ -440,8 +440,8 @@
                 var a = t(6179),
                     r = t.n(a),
                     s = t(7736),
-                    o = t(828),
-                    i = t(538);
+                    o = t(538),
+                    i = t(828);
                 const l = ['onComplete', 'onEndAnimation'];
                 function m() {
                     return (
@@ -478,9 +478,9 @@
                         }, [c, n, t, d.to]);
                     switch (d.animationSettings.type) {
                         case s.r.Simple:
-                            return r().createElement(o.D, m({}, d, { onEndAnimation: b, isComplete: c }));
+                            return r().createElement(i.D, m({}, d, { onEndAnimation: b, isComplete: c }));
                         case s.r.Growing:
-                            return r().createElement(i.F, m({}, d, { onEndAnimation: b, isComplete: c }));
+                            return r().createElement(o.F, m({}, d, { onEndAnimation: b, isComplete: c }));
                         default:
                             return null;
                     }

@@ -65,7 +65,7 @@
 .CButton_base__disabled_d9 {
     cursor: default;
 }
-/* Element .back and background-image in element .base need for fix bug in GF https://jira.wargaming.net/browse/WOTD-158525
+/* Element .back and background-image in element .base need for fix bug in GF https://jira-archive.lesta.group/browse/WOTD-158525
 The bug is that under certain conditions, when using border-image, stripes appear. Strip is a single-pixel gap
 between 'border-image-width' and 'fill'.
 This bug is reproduced in Google Chrome 81.0.4044.113
@@ -362,7 +362,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 
 /*////////////*/
 
-/* Colors: https://confluence.wargaming.net/pages/viewpage.action?pageId=1111407054*/
+/* Colors: https://confluence.lesta.group/pages/viewpage.action?pageId=2040068438*/
 
 .Header_base_a7 {
     height: 120rem;
@@ -418,7 +418,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 
 /*////////////*/
 
-/* Colors: https://confluence.wargaming.net/pages/viewpage.action?pageId=1111407054*/
+/* Colors: https://confluence.lesta.group/pages/viewpage.action?pageId=2040068438*/
 
 .Separator_base_98 {
     pointer-events: none;
@@ -514,7 +514,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 
 /*////////////*/
 
-/* Colors: https://confluence.wargaming.net/pages/viewpage.action?pageId=1111407054*/
+/* Colors: https://confluence.lesta.group/pages/viewpage.action?pageId=2040068438*/
 
 .Footer_base_d0 {
     display: flex;
@@ -536,7 +536,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 
 /*////////////*/
 
-/* Colors: https://confluence.wargaming.net/pages/viewpage.action?pageId=1111407054*/
+/* Colors: https://confluence.lesta.group/pages/viewpage.action?pageId=2040068438*/
 
 .Bonus_base_96 {
     display: flex;
@@ -569,7 +569,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 
 /*////////////*/
 
-/* Colors: https://confluence.wargaming.net/pages/viewpage.action?pageId=1111407054*/
+/* Colors: https://confluence.lesta.group/pages/viewpage.action?pageId=2040068438*/
 
 .Bonuses_base_6f {
     display: flex;
@@ -586,7 +586,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 
 /*////////////*/
 
-/* Colors: https://confluence.wargaming.net/pages/viewpage.action?pageId=1111407054*/
+/* Colors: https://confluence.lesta.group/pages/viewpage.action?pageId=2040068438*/
 
 .NoBonus_textContainer_ef {
     display: flex;
@@ -658,7 +658,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 
 /*////////////*/
 
-/* Colors: https://confluence.wargaming.net/pages/viewpage.action?pageId=1111407054*/
+/* Colors: https://confluence.lesta.group/pages/viewpage.action?pageId=2040068438*/
 
 .NoPlayer_base_42 {
     width: 160rem;
@@ -718,7 +718,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 
 /*////////////*/
 
-/* Colors: https://confluence.wargaming.net/pages/viewpage.action?pageId=1111407054*/
+/* Colors: https://confluence.lesta.group/pages/viewpage.action?pageId=2040068438*/
 
 .WTRInfo_wtr_5e {
     display: flex;
@@ -863,7 +863,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 
 /*////////////*/
 
-/* Colors: https://confluence.wargaming.net/pages/viewpage.action?pageId=1111407054*/
+/* Colors: https://confluence.lesta.group/pages/viewpage.action?pageId=2040068438*/
 
 .PlayerName_userName_c9 {
     margin-left: 5rem;
@@ -871,7 +871,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 
 /*////////////*/
 
-/* Colors: https://confluence.wargaming.net/pages/viewpage.action?pageId=1111407054*/
+/* Colors: https://confluence.lesta.group/pages/viewpage.action?pageId=2040068438*/
 
 .VehicleDescription_base_1b {
     display: flex;
@@ -940,7 +940,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 
 /*////////////*/
 
-/* Colors: https://confluence.wargaming.net/pages/viewpage.action?pageId=1111407054*/
+/* Colors: https://confluence.lesta.group/pages/viewpage.action?pageId=2040068438*/
 
 .Player_base_7d {
     display: flex;
@@ -960,7 +960,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     width: 100%;
     position: relative;
     top: 1rem;
-    z-index: 1;
 }
 
 .Player_topping_6c > * {
@@ -983,12 +982,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .Player_topping__isCommander_b9 .Player_toppingBack_cd {
     background: url('R.images.gui.maps.icons.platoon.members_window.tall_slot.commander_line') center / contain
         no-repeat;
-}
-
-.Player_topping__isCommander_b9.Player_topping__isEvent_06 .Player_toppingBack_cd {
-    background: url('R.images.gui.maps.icons.platoon.members_window.tall_slot.commander_line_event') center / contain
-        no-repeat;
-    mix-blend-mode: additive;
 }
 
 .Player_toppingPremiumIcon_20 {
@@ -1070,7 +1063,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 
 /*////////////*/
 
-/* Colors: https://confluence.wargaming.net/pages/viewpage.action?pageId=1111407054*/
+/* Colors: https://confluence.lesta.group/pages/viewpage.action?pageId=2040068438*/
 
 .Vehicle_base_9f {
     display: flex;
@@ -1109,7 +1102,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 
 /*////////////*/
 
-/* Colors: https://confluence.wargaming.net/pages/viewpage.action?pageId=1111407054*/
+/* Colors: https://confluence.lesta.group/pages/viewpage.action?pageId=2040068438*/
 
 .WideSlot_base_9b {
     display: flex;
@@ -1223,7 +1216,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 
 /*////////////*/
 
-/* Colors: https://confluence.wargaming.net/pages/viewpage.action?pageId=1111407054*/
+/* Colors: https://confluence.lesta.group/pages/viewpage.action?pageId=2040068438*/
 
 .MembersWindow_base_9b {
     display: flex;

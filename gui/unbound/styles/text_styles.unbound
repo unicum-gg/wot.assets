@@ -1,4 +1,4 @@
-#original documentation with text styles in confluence  https://confluence.wargaming.net/pages/viewpage.action?pageId=60888183
+#original documentation with text styles in confluence  https://confluence.lesta.group/pages/viewpage.action?pageId=2040049533
 
 (def css EpicTitleTextStyle() #0.1 - number of text style in documentation
     (fontFamily = $TitleFont)
@@ -327,6 +327,12 @@
     (textColor = 0xC9C9B6)
 )
 
+(def css NYShardsTextStyle()  #12.5
+    (fontFamily = $FieldFont)
+    (fontSize = 14)
+    (textColor = 0xB7EEFF)
+)
+
 (def css CrystalTextBigStyle()  #12.5
     (fontFamily = $TitleFont)
     (fontSize = 18)
@@ -337,6 +343,11 @@
     (fontFamily = $FieldFont)
     (fontSize = 14)
     (textColor = 0xE9E2BF)
+)
+
+(def css StatsTextStyleResetFilter()  #13 with resetting filter
+    (extends StatsTextStyle)
+    (filters)
 )
 
 # 14 There is no name for this style in the doc. There is no underline in a style
@@ -559,4 +570,22 @@
     (fontFamily = $TitleFont)
     (fontSize = 144)
     (textColor = 0xffffff)
+)
+
+(def css LootboxesDownMenuStyle()
+    (fontFamily = $FieldFont)
+    (fontSize = 14)
+    (textColor = 0x8c8c7e)
+)
+
+(def css LootboxesDownSelectedMenuStyle()
+    (fontFamily = $FieldFont)
+    (fontSize = 14)
+    (textColor = 0xCBAC77)
+)
+
+(def css LootboxesDownDisabledMenuStyle()
+    (fontFamily = $FieldFont)
+    (fontSize = 14)
+    (textColor = 0x37362e)
 )

@@ -3654,11 +3654,11 @@
                             i().createElement(Ze, { getStepByRailClick: c, api: t, onDrag: d, classNames: m }),
                         );
                     },
-                    Qe = ({ api: e, className: t, classNames: u, children: n }) => (
+                    Qe = ({ api: e, className: t, classNames: u, children: n, style: r }) => (
                         (0, o.useEffect)(() => (0, v.v)(e.recalculateContent)),
                         i().createElement(
                             'div',
-                            { className: l()(Ke.base, t) },
+                            { className: l()(Ke.base, t), style: r },
                             i().createElement(
                                 'div',
                                 {
@@ -4152,15 +4152,17 @@
                     (function (e) {
                         (e.Red = 'RedActionBG'), (e.Blue = 'BlueActionBG');
                     })(Rt || (Rt = {}));
-                const It = ({ format: e, value: t }) => {
-                        const u = ((e, t = 'integral') => {
-                            let u;
-                            u = 'gold' === t ? Ft.B3.GOLD : Ft.B3.INTEGRAL;
-                            return void 0 === e ? '' : Ft.Z5.getNumberFormat(e, u);
-                        })(t, e);
-                        return u ? i().createElement('span', null, u) : null;
-                    },
-                    Ot = {
+                class It extends i().PureComponent {
+                    render() {
+                        let e;
+                        if ('gold' === this.props.format) e = Ft.B3.GOLD;
+                        else e = Ft.B3.INTEGRAL;
+                        const t = Ft.Z5.getNumberFormat(this.props.value, e);
+                        return void 0 !== this.props.value && void 0 !== t ? t : null;
+                    }
+                }
+                It.defaultProps = { format: 'integral' };
+                const Ot = {
                         base: 'Currency_base_57',
                         icon: 'Currency_icon_c5',
                         base__small: 'Currency_base__small_af',

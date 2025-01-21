@@ -381,7 +381,7 @@
                 t.d(e, { DA: () => n.D, au: () => a, tT: () => n.t });
                 t(790);
                 var r = t(469),
-                    n = (t(133), t(579), t(360));
+                    n = (t(133), t(779), t(579), t(360));
                 t(56);
                 const a = r.Z;
             },
@@ -497,6 +497,10 @@
                 r.Sw.instance;
             },
             790: (u, e, t) => {
+                'use strict';
+                t(179);
+            },
+            779: (u, e, t) => {
                 'use strict';
                 t(179);
             },
@@ -1702,15 +1706,17 @@
                         (u.Red = 'RedActionBG'), (u.Blue = 'BlueActionBG');
                     })(k || (k = {}));
                 var P = t(364);
-                const N = ({ format: u, value: e }) => {
-                        const t = ((u, e = 'integral') => {
-                            let t;
-                            t = 'gold' === e ? P.B3.GOLD : P.B3.INTEGRAL;
-                            return void 0 === u ? '' : P.Z5.getNumberFormat(u, t);
-                        })(e, u);
-                        return t ? o().createElement('span', null, t) : null;
-                    },
-                    O = {
+                class N extends o().PureComponent {
+                    render() {
+                        let u;
+                        if ('gold' === this.props.format) u = P.B3.GOLD;
+                        else u = P.B3.INTEGRAL;
+                        const e = P.Z5.getNumberFormat(this.props.value, u);
+                        return void 0 !== this.props.value && void 0 !== e ? e : null;
+                    }
+                }
+                N.defaultProps = { format: 'integral' };
+                const O = {
                         base: 'Currency_base_57',
                         icon: 'Currency_icon_c5',
                         base__small: 'Currency_base__small_af',
@@ -3032,11 +3038,11 @@
                             i().createElement(Au, { getStepByRailClick: l, api: e, onDrag: c, classNames: E }),
                         );
                     },
-                    _u = ({ api: u, className: e, classNames: t, children: r }) => (
+                    _u = ({ api: u, className: e, classNames: t, children: r, style: n }) => (
                         (0, a.useEffect)(() => W(u.recalculateContent)),
                         i().createElement(
                             'div',
-                            { className: h()(du.base, e) },
+                            { className: h()(du.base, e), style: n },
                             i().createElement(
                                 'div',
                                 {

@@ -347,7 +347,7 @@
 .CButton_base__disabled_d9 {
     cursor: default;
 }
-/* Element .back and background-image in element .base need for fix bug in GF https://jira.wargaming.net/browse/WOTD-158525
+/* Element .back and background-image in element .base need for fix bug in GF https://jira-archive.lesta.group/browse/WOTD-158525
 The bug is that under certain conditions, when using border-image, stripes appear. Strip is a single-pixel gap
 between 'border-image-width' and 'fill'.
 This bug is reproduced in Google Chrome 81.0.4044.113
@@ -498,7 +498,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 
 /*////////////*/
 
-/* Colors: https://confluence.wargaming.net/pages/viewpage.action?pageId=1111407054*/
+/* Colors: https://confluence.lesta.group/pages/viewpage.action?pageId=2040068438*/
 
 .Header_base_a7 {
     height: 120rem;
@@ -554,7 +554,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 
 /*////////////*/
 
-/* Colors: https://confluence.wargaming.net/pages/viewpage.action?pageId=1111407054*/
+/* Colors: https://confluence.lesta.group/pages/viewpage.action?pageId=2040068438*/
 
 .Separator_base_98 {
     pointer-events: none;
@@ -637,7 +637,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 
 /*////////////*/
 
-/* Colors: https://confluence.wargaming.net/pages/viewpage.action?pageId=1111407054*/
+/* Colors: https://confluence.lesta.group/pages/viewpage.action?pageId=2040068438*/
 
 base {
     margin: 0 2rem;
@@ -655,7 +655,7 @@ base {
 
 /*////////////*/
 
-/* Colors: https://confluence.wargaming.net/pages/viewpage.action?pageId=1111407054*/
+/* Colors: https://confluence.lesta.group/pages/viewpage.action?pageId=2040068438*/
 
 .TiersSettings_filterText_db {
     margin-left: 1rem;
@@ -967,7 +967,7 @@ base {
 
 /*////////////*/
 
-/* Colors: https://confluence.wargaming.net/pages/viewpage.action?pageId=1111407054*/
+/* Colors: https://confluence.lesta.group/pages/viewpage.action?pageId=2040068438*/
 
 .SettingsContent_base_4d {
     width: 292rem;

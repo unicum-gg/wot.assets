@@ -76,14 +76,16 @@
                 var n = t(6179),
                     r = t.n(n),
                     a = t(4179);
-                const i = ({ format: e, value: u }) => {
-                    const t = ((e, u = 'integral') => {
-                        let t;
-                        t = 'gold' === u ? a.B3.GOLD : a.B3.INTEGRAL;
-                        return void 0 === e ? '' : a.Z5.getNumberFormat(e, t);
-                    })(u, e);
-                    return t ? r().createElement('span', null, t) : null;
-                };
+                class i extends r().PureComponent {
+                    render() {
+                        let e;
+                        if ('gold' === this.props.format) e = a.B3.GOLD;
+                        else e = a.B3.INTEGRAL;
+                        const u = a.Z5.getNumberFormat(this.props.value, e);
+                        return void 0 !== this.props.value && void 0 !== u ? u : null;
+                    }
+                }
+                i.defaultProps = { format: 'integral' };
             },
             3495: (e, u, t) => {
                 'use strict';
@@ -2254,7 +2256,7 @@
                     return (t ? n.$dyn(`${t}Case`) : n).$dyn(e);
                 };
             },
-            3906: (e, u, t) => {
+            2850: (e, u, t) => {
                 'use strict';
                 var n = t(7739),
                     r = t(6179),
@@ -3823,6 +3825,6 @@
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             t.forEach(u.bind(null, 0)), (t.push = u.bind(null, t.push.bind(t)));
         })();
-    var __webpack_exports__ = __webpack_require__.O(void 0, [56], () => __webpack_require__(3906));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [56], () => __webpack_require__(2850));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

@@ -1,0 +1,23 @@
+.MenuInfo_base_57 {
+    padding: 5rem 0;
+}
+
+.MenuInfo_background_1c {
+    display: flex;
+    height: 60rem;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(201, 201, 182, 0.07) 37%,
+        rgba(201, 201, 182, 0.07) 63%,
+        transparent
+    );
+}
+
+.MenuInfo_separator_eb {
+    display: flex;
+    align-self: center;
+    width: 283rem;
+    height: 1rem;
+    background: url('R.images.gui.maps.icons.tooltip.tool_tip_separator') no-repeat center / contain;
+}

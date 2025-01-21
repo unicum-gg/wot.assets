@@ -1,0 +1,635 @@
+.PopoverDecorator_base_ed {
+    display: flex;
+    position: absolute;
+}
+
+.PopoverDecorator_decorator_d3 {
+    padding: 58rem;
+    border-image-source: url('R.images.gui.maps.icons.popovers.popover_bg');
+    border-image-slice: 90 fill;
+    border-image-width: 90rem;
+    overflow: hidden;
+    position: relative;
+    z-index: 0;
+}
+
+.PopoverDecorator_arrow_8a {
+    background: no-repeat 0 0 / contain;
+    position: absolute;
+}
+
+.PopoverDecorator_arrow__bottom_c3,
+.PopoverDecorator_arrow__top_6e {
+    width: 301rem;
+    height: 90rem;
+    margin: 0 58rem;
+    background-image: url('R.images.gui.maps.icons.popovers.popover_arrow_top');
+    left: 50%;
+}
+
+.PopoverDecorator_arrow__left_7a,
+.PopoverDecorator_arrow__right_b6 {
+    width: 84rem;
+    height: 181rem;
+    margin: 58rem 0;
+    background-image: url('R.images.gui.maps.icons.popovers.popover_arrow_left');
+    top: 50%;
+}
+
+.PopoverDecorator_arrow__left_7a {
+    right: 10rem;
+    transform: scaleX(-1) translateY(-90rem);
+}
+
+.PopoverDecorator_arrow__right_b6 {
+    left: 10rem;
+    transform: translateY(-90rem);
+}
+
+.PopoverDecorator_arrow__top_6e {
+    bottom: 8rem;
+    transform: scaleY(-1) translateX(-150rem);
+}
+
+.PopoverDecorator_arrow__bottom_c3 {
+    top: 8rem;
+    transform: translateX(-150rem);
+}
+
+.PopoverDecorator_closeBtn_32 {
+    width: 18rem;
+    height: 18rem;
+    background: url('R.images.gui.maps.icons.popovers.close_button_slim_up') no-repeat 0 0 / contain;
+    position: absolute;
+    top: 6rem;
+    right: 6rem;
+    z-index: 3;
+    cursor: pointer;
+}
+
+.PopoverDecorator_closeBtn_32:hover {
+    filter: brightness(160%);
+}
+
+.PopoverDecorator_closeBtn_32:active {
+    background-image: url('R.images.gui.maps.icons.popovers.close_button_slim_press');
+    filter: brightness(100%);
+}
+
+.PopoverDecorator_content_f0 {
+    position: relative;
+    z-index: 2;
+}
+
+.Box_mt__XS_0c {
+    margin-top: 4rem;
+}
+.Box_mt__SM_eb {
+    margin-top: 8rem;
+}
+.Box_mt__SMp_cf {
+    margin-top: 10rem;
+}
+.Box_mt__MD_25 {
+    margin-top: 16rem;
+}
+.Box_mt__MDp_49 {
+    margin-top: 20rem;
+}
+.Box_mt__LG_e8 {
+    margin-top: 32rem;
+}
+.Box_mt__XL_83 {
+    margin-top: 64rem;
+}
+
+.Box_mr__XS_7c {
+    margin-right: 4rem;
+}
+
+.Box_mr__SM_08 {
+    margin-right: 8rem;
+}
+
+.Box_mr__SMp_06 {
+    margin-right: 10rem;
+}
+
+.Box_mr__MD_4a {
+    margin-right: 16rem;
+}
+
+.Box_mr__MDp_b6 {
+    margin-right: 20rem;
+}
+
+.Box_mr__LG_d0 {
+    margin-right: 32rem;
+}
+
+.Box_mr__XL_db {
+    margin-right: 64rem;
+}
+
+.Box_mb__XS_bb {
+    margin-bottom: 4rem;
+}
+
+.Box_mb__SM_83 {
+    margin-bottom: 8rem;
+}
+
+.Box_mb__SMp_04 {
+    margin-bottom: 10rem;
+}
+
+.Box_mb__MD_ed {
+    margin-bottom: 16rem;
+}
+
+.Box_mb__MDp_65 {
+    margin-bottom: 20rem;
+}
+
+.Box_mb__LG_c8 {
+    margin-bottom: 32rem;
+}
+
+.Box_mb__XL_f8 {
+    margin-bottom: 64rem;
+}
+
+.Box_ml__XS_8a {
+    margin-left: 4rem;
+}
+
+.Box_ml__SM_e6 {
+    margin-left: 8rem;
+}
+
+.Box_ml__SMp_fb {
+    margin-left: 10rem;
+}
+
+.Box_ml__MD_2b {
+    margin-left: 16rem;
+}
+
+.Box_ml__MDp_c7 {
+    margin-left: 20rem;
+}
+
+.Box_ml__LG_39 {
+    margin-left: 32rem;
+}
+
+.Box_ml__XL_4a {
+    margin-left: 64rem;
+}
+
+.FormatText_base_d0 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* eslint-disable-next-line expectedscss*/
+.Text_paragraph-P10_2c {
+    font-size: 10rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.Text_paragraph-P12_22 {
+    font-size: 12rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+.Text_paragraph-P14_a7 {
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+.Text_paragraph-P16_90 {
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+.Text_paragraph-P18_50 {
+    font-size: 18rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+.Text_paragraph-P24_33 {
+    font-size: 24rem;
+    font-weight: 400;
+    line-height: 32rem;
+}
+.Text_heading-H14_8b {
+    font-size: 14rem;
+    font-weight: 700;
+    line-height: 1.15;
+}
+.Text_heading-H15_9e {
+    font-size: 15rem;
+    font-weight: 700;
+    line-height: 1.15;
+}
+.Text_heading-H18_b7 {
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H20R_f6 {
+    font-size: 20rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.Text_heading-H22_27 {
+    font-size: 22rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.Text_heading-H24R_be {
+    font-size: 24rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.Text_heading-H24_0c {
+    font-size: 24rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.Text_heading-H28_78 {
+    font-size: 28rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H36_32 {
+    font-size: 36rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H56_c3 {
+    font-size: 56rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H73_8f {
+    font-size: 73rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H144_a9 {
+    font-size: 144rem;
+    font-weight: 700;
+    line-height: 1;
+}
+.Text_BLACK_REAL_30 {
+    color: #000000;
+}
+.Text_WHITE_REAL_bc {
+    color: #ffffff;
+}
+.Text_WHITE_62 {
+    color: #f2f2f7;
+}
+.Text_WHITE_ORANGE_54 {
+    color: #fefeec;
+}
+.Text_WHITE_SPANISH_df {
+    color: #e9e2bf;
+}
+.Text_PAR_15 {
+    color: #8c8c7e;
+}
+.Text_PAR_SECONDARY_5d {
+    color: #595950;
+}
+.Text_PAR_TERTIARY_c9 {
+    color: #37362e;
+}
+.Text_INFO_RED_30 {
+    color: #ff0000;
+}
+.Text_RED_66 {
+    color: #ff2717;
+}
+.Text_RED_DARK_d8 {
+    color: #b70000;
+}
+.Text_YELLOW_ed {
+    color: #feab34;
+}
+.Text_ORANGE_be {
+    color: #ee7000;
+}
+.Text_CREAM_57 {
+    color: #ffdd99;
+}
+.Text_BROWN_18 {
+    color: #cbac77;
+}
+.Text_GREEN_BRIGHT_3f {
+    color: #80d43a;
+}
+.Text_GREEN_e3 {
+    color: #7ab300;
+}
+.Text_GREEN_DARK_f1 {
+    color: #497212;
+}
+.Text_BLUE_BOOSTER_21 {
+    color: #ccffff;
+}
+.Text_BLUE_TEAMKILLER_ab {
+    color: #09e2ff;
+}
+.Text_CRED_f7 {
+    color: #ced9d9;
+}
+.Text_GOLD_28 {
+    color: #ffc363;
+}
+.Text_BOND_be {
+    color: #c9c9b6;
+}
+.Text_PROM_65 {
+    color: #a29b70;
+}
+
+.App_base_b8 {
+    display: flex;
+    flex-direction: column;
+    width: 266rem;
+    position: relative;
+}
+
+.App_header_da {
+    display: flex;
+    align-items: center;
+    height: 65rem;
+    padding: 16rem 28rem;
+    position: relative;
+}
+
+.App_title_9d {
+    color: #e9e2bf;
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.App_divider_86 {
+    width: 266rem;
+    height: 80rem;
+    background: url('R.images.new_year.gui.maps.icons.newYear.popovers.divider') no-repeat center / contain;
+    position: absolute;
+    top: 25rem;
+    left: 0;
+    z-index: -1;
+}
+
+.App_body_68 {
+    padding: 17rem 13rem 17rem 28rem;
+}
+
+.App_section_7e {
+    margin-bottom: 10rem;
+}
+
+.FilterSection_base_3f {
+    display: flex;
+    flex-direction: column;
+}
+
+.FilterSection_title_a8 {
+    color: #595950;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    margin-bottom: 7rem;
+}
+
+.FilterSection_controls_60 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.FilterSection_toggle_57 {
+    margin-right: 15rem;
+    margin-bottom: 14rem;
+}
+
+.ToggleButton_base_2c {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 30rem;
+    min-height: 20rem;
+    border-radius: 2rem;
+    position: relative;
+    cursor: pointer;
+}
+
+.ToggleButton_base__button_cb.ToggleButton_base__active_a6 {
+    border-image: linear-gradient(90deg, #ac802c 0%, #eece63 48.95%, #efd065 48.96%, #ae842e 100%) 1 1 1 stretch;
+    border-image-width: 1rem;
+    box-shadow:
+        0 0 0 1rem rgba(0, 0, 0, 0.6),
+        0 0 7rem rgba(250, 112, 0, 0.6);
+    background: linear-gradient(
+        180deg,
+        rgba(255, 42, 0, 0.1) 0%,
+        rgba(255, 42, 0, 0) 0.01%,
+        rgba(255, 128, 0, 0.1) 100%
+    );
+}
+
+.ToggleButton_base__button_cb.ToggleButton_base__active_a6:hover {
+    box-shadow:
+        0 0 0 1rem rgba(0, 0, 0, 0.6),
+        0 0 7rem rgba(250, 112, 0, 0.6),
+        inset 0 0 40rem rgba(255, 255, 255, 0.1);
+}
+
+.ToggleButton_base__slot_98 {
+    min-width: 80rem;
+    min-height: 80rem;
+    border: 1rem solid rgba(255, 255, 255, 0.15);
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.ToggleButton_base__slot_98:hover {
+    background: radial-gradient(rgba(0, 0, 0, 0) 10%, rgba(150, 150, 150, 0.1));
+}
+
+.ToggleButton_base__slot_98:active,
+.ToggleButton_base__slot_98 {
+    box-shadow: none;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.ToggleButton_base__slot_98.ToggleButton_base__active_a6 {
+    border-image: linear-gradient(90deg, #ac802c 0%, #eece63 48.95%, #efd065 48.96%, #ae842e 100%) 1 1 1 stretch;
+    border-image-width: 1rem;
+    box-shadow:
+        0 0 0 1rem rgba(0, 0, 0, 0.6),
+        0 0 7rem rgba(250, 112, 0, 0.6);
+    background: linear-gradient(
+        180deg,
+        rgba(255, 42, 0, 0.1) 0%,
+        rgba(255, 42, 0, 0) 0.01%,
+        rgba(255, 128, 0, 0.1) 100%
+    );
+}
+
+.ToggleButton_base__slot_98.ToggleButton_base__active_a6:active {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.ToggleButton_base__disabled_19 {
+    cursor: initial;
+    pointer-events: none;
+}
+
+.ToggleButton_texture_f1 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: url('R.images.gui.maps.icons.components.button.standard_texture_file');
+    background-size: 155rem 31rem;
+    mix-blend-mode: soft-light;
+    z-index: 1;
+}
+
+.ToggleButton_background_ef {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-image-slice: 4 fill;
+    border-image-width: 4rem;
+    z-index: -1;
+}
+
+.ToggleButton_background__main_68 {
+    border-image-source: url('R.images.gui.maps.icons.components.button.back_main');
+}
+
+.ToggleButton_background__primary_a9 {
+    border-image-source: url('R.images.gui.maps.icons.components.button.back_primary');
+}
+
+.ToggleButton_background__primaryGreen_4f {
+    border-image-source: url('R.images.gui.maps.icons.components.button.back_primary_green');
+}
+
+.ToggleButton_background__primaryRed_ca {
+    border-image-source: url('R.images.gui.maps.icons.components.button.back_primary_red');
+}
+
+.ToggleButton_background__secondary_b2 {
+    border-image-source: url('R.images.gui.maps.icons.components.button.back_secondary');
+}
+
+.ToggleButton_background__ghost_d6 {
+    border-radius: 3rem;
+    box-shadow:
+        0 0 0 1rem rgba(0, 0, 0, 0.3),
+        0 0 0 1rem rgba(255, 255, 255, 0.15) inset;
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+.ToggleButton_content_63 {
+    color: #f1f0e0;
+    font-size: 13rem;
+    font-weight: 300;
+    text-align: center;
+    text-shadow: 0 -1rem 2rem rgba(0, 0, 0, 0.7);
+}
+
+.ToggleButton_base__slot_98 .ToggleButton_content_63 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1 auto;
+    position: relative;
+    z-index: -1;
+}
+
+.ToggleButton_overlay_23 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: 2rem;
+    z-index: 3;
+    pointer-events: none;
+}
+
+.ToggleButton_base__disabled_19 .ToggleButton_overlay_23 {
+    margin: -1rem;
+    background: url('R.images.gui.maps.icons.buttons.toggle_disable') repeat;
+}
+
+.ToggleButton_base__button_cb .ToggleButton_overlay_23 {
+    background-color: rgba(255, 255, 255, 0.04);
+}
+
+.ToggleButton_base__button_cb:hover .ToggleButton_overlay_23 {
+    box-shadow: inset 0 0 40rem rgba(255, 255, 255, 0.1);
+}
+
+.ToggleButton_base__button_cb:active .ToggleButton_overlay_23 {
+    box-shadow: none;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.ToggleButton_base__button_cb.ToggleButton_base__active_a6:active .ToggleButton_overlay_23 {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.ToggleButton_indicator_a7 {
+    /* This Needs to be an even number otherwise translate(-50%) makes it at half a pixel position and causes sub pixel blurring */
+    width: 16rem;
+    height: 5rem;
+    background: url('R.images.gui.maps.icons.buttons.toggle_switcher_off');
+    background-size: 16rem 5rem;
+    position: absolute;
+    bottom: -2rem;
+    left: 50%;
+    z-index: 3;
+    transform: translate(-50%, 0);
+    pointer-events: none;
+}
+
+.ToggleButton_base__slot_98 .ToggleButton_indicator_a7 {
+    width: 64rem;
+    height: 32rem;
+    background-image: none;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: absolute;
+    bottom: -17rem;
+}
+
+.ToggleButton_base__slot_98.ToggleButton_base__active_a6 .ToggleButton_indicator_a7 {
+    background-image: url('R.images.gui.maps.icons.buttons.toggle_check');
+}
+
+.ToggleButton_base__button_cb.ToggleButton_base__active_a6 .ToggleButton_indicator_a7 {
+    background-image: url('R.images.gui.maps.icons.buttons.toggle_switcher_on');
+}
+
+.Toggle_base_ca {
+    box-shadow: 0 0 0 1rem #000;
+}
+
+.Toggle_icon_12 {
+    width: 26rem;
+    height: 16rem;
+    background: no-repeat center / contain;
+}

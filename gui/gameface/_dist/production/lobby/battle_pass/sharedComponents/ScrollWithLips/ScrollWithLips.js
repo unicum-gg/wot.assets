@@ -1294,11 +1294,11 @@
                             l().createElement(x, { getStepByRailClick: u, api: t, onDrag: d, classNames: _ }),
                         );
                     },
-                    z = ({ api: e, className: t, classNames: n, children: r }) => (
+                    z = ({ api: e, className: t, classNames: n, children: r, style: o }) => (
                         (0, c.useEffect)(() => (0, s.v)(e.recalculateContent)),
                         l().createElement(
                             'div',
-                            { className: a()(F.base, t) },
+                            { className: a()(F.base, t), style: o },
                             l().createElement(
                                 'div',
                                 {
