@@ -21,13 +21,13 @@
         )  
         (event evDelayComplete)
         (event evMetaDataChanged)
-        (var showGuiDelay:number = -1)
-        (bind showGuiDelay "(uiShowDelay >= 0) ? uiShowDelay : ($event.duration-0.001-0.5)" init=false (event "evMetaDataChanged"))
+        (var showGuiDelay:number = 0)
+        (bind showGuiDelay "$event.duration-0.001-0.5" init=false (event "evMetaDataChanged"))
         
         (var guiVisible:number = 0)
         (controller $Animation
             (bindcall play delay="videoFinished? 0: showGuiDelay" duration="0.3" to={guiVisible:1} init=false
-                (enabled = "videoFinished? videoFinished:showGuiDelay >= 0")
+                (enabled = "videoFinished? videoFinished:showGuiDelay > 0")
                 (event "onVideoStarted")
             )
         )
@@ -54,10 +54,10 @@
         (element VideoComponent
             (name = 'specialVideo')
             (scope
+                (canEscape = true)
                 (canClick = false)
                 (isVideoPlaying = false)
                 (seekToEnd = true)
-                (bind canEscape "canEscape")
                 (bind isVideoPlaying "true" init=false
                     (event "evDelayComplete")
                 )

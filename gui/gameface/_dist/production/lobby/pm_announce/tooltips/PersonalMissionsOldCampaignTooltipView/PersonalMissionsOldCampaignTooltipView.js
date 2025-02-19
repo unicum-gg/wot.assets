@@ -1119,7 +1119,7 @@
                     (function (u) {
                         (u.Active = 'active'), (u.Completed = 'completed'), (u.CompletedPerfect = 'completedPerfect');
                     })(Ee || (Ee = {}));
-                var Fe = t(403);
+                var Fe = t(515);
                 const ae = 'completed',
                     De = 'active',
                     ne = 'empty';
@@ -1346,11 +1346,7 @@
                             () => (0, Q.useContext)(t),
                         ];
                     })(({ observableModel: u }) => {
-                        const e = {
-                                root: u.object(),
-                                operations: u.array('operations', []),
-                                rewards: u.array('rewards', []),
-                            },
+                        const e = { root: u.object(), operations: u.array('operations'), rewards: u.array('rewards') },
                             t = (0, de.Om)(() => se(e.operations.get(), (u) => Object.assign({}, u)), { equals: Be }),
                             r = (0, de.Om)(() => se(e.rewards.get(), (u) => Object.assign({}, u)), { equals: Be });
                         return Object.assign({}, e, { computes: { getOperations: t, getRewards: r } });
@@ -1371,8 +1367,8 @@
                         operation__last: 'App_operation__last_74',
                         operationText: 'App_operationText_b9',
                         operationText__done: 'App_operationText__done_fd',
-                        operationText__name: 'App_operationText__name_d5',
                         operationText__divider: 'App_operationText__divider_76',
+                        operationText__name: 'App_operationText__name_d5',
                         operationText__completed: 'App_operationText__completed_68',
                         operationText__active: 'App_operationText__active_8b',
                         operationText__empty: 'App_operationText__empty_3c',
@@ -1381,10 +1377,10 @@
                         rewardsWrapper: 'App_rewardsWrapper_81',
                         reward: 'App_reward_39',
                         reward__lastInRow: 'App_reward__lastInRow_6e',
+                        reward__completed: 'App_reward__completed_98',
                         rewardIcon: 'App_rewardIcon_7c',
                         rewardName: 'App_rewardName_ff',
                         rewardText: 'App_rewardText_29',
-                        rewardText__completed: 'App_rewardText__completed_b2',
                         ribbon: 'App_ribbon_af',
                         labelIcon: 'App_labelIcon_e2',
                         labelIcon__completed: 'App_labelIcon__completed_0a',
@@ -1500,12 +1496,16 @@
                                                       'div',
                                                       { className: pe.rewardsWrapper },
                                                       r.map((u, e) => {
-                                                          const t = (e + 1) % 4 == 0;
+                                                          const t = (e + 1) % 4 == 0 || e + 1 === r.length;
                                                           return Z().createElement(
                                                               'div',
                                                               {
                                                                   key: u.name,
-                                                                  className: D()(pe.reward, t && pe.reward__lastInRow),
+                                                                  className: D()(
+                                                                      pe.reward,
+                                                                      pe[`reward__${u.status}`],
+                                                                      t && pe.reward__lastInRow,
+                                                                  ),
                                                               },
                                                               Z().createElement('div', {
                                                                   className: pe.rewardIcon,
@@ -1523,10 +1523,7 @@
                                                                       }),
                                                                   Z().createElement(re, {
                                                                       text: u.name,
-                                                                      className: D()(
-                                                                          pe.rewardText,
-                                                                          pe[`rewardText__${u.status}`],
-                                                                      ),
+                                                                      className: D()(pe.rewardText),
                                                                   }),
                                                               ),
                                                           );
@@ -1632,7 +1629,6 @@
                 Object.defineProperty(u, Symbol.toStringTag, { value: 'Module' }),
                 Object.defineProperty(u, '__esModule', { value: !0 });
         }),
-        (r.j = 455),
         (() => {
             var u = { 455: 0 };
             r.O.j = (e) => 0 === u[e];

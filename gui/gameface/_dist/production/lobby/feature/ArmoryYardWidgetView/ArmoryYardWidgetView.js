@@ -795,7 +795,7 @@
                     };
                 window.ViewEnvHelper = w;
             },
-            9700: (u, e, t) => {
+            8578: (u, e, t) => {
                 'use strict';
                 var r = t(6179),
                     _ = t.n(r);
@@ -1120,7 +1120,7 @@
                         return _().createElement('div', f({ className: C()(t, x[a], T[n], L[o]) }, r), e);
                     },
                     y = ['children'],
-                    O = (u) => {
+                    k = (u) => {
                         let e = u.children,
                             t = (function (u, e) {
                                 if (null == u) return {};
@@ -1133,8 +1133,8 @@
                             })(u, y);
                         return _().createElement(m, null, _().createElement(M, t, e));
                     };
-                var P = t(493),
-                    k = t.n(P);
+                var O = t(493),
+                    P = t.n(O);
                 let H;
                 !(function (u) {
                     (u.BeforeProgression = 'beforeProgression'),
@@ -1305,10 +1305,10 @@
                             L = u.wrap,
                             M = u.flexWrap,
                             y = void 0 === M ? (L ? 'wrap' : void 0) : M,
-                            O = u.grow,
-                            P = u.shrink,
-                            k = u.flex,
-                            R = void 0 === k ? (O || P ? `${O ? 1 : 0} ${P ? 1 : 0} auto` : void 0) : k,
+                            k = u.grow,
+                            O = u.shrink,
+                            P = u.flex,
+                            R = void 0 === P ? (k || O ? `${k ? 1 : 0} ${O ? 1 : 0} auto` : void 0) : P,
                             H = u.style,
                             W = u.children,
                             N = (function (u, e) {
@@ -1801,20 +1801,20 @@
                     Lu = 'thinExtraSmall',
                     Mu = { '302*152': 'big', '302*114': Tu, '222*114': 'thinSmall', '162*114': Lu },
                     yu = (u) => (u < 0.5 ? 4 * u * u * u : (u - 1) * (2 * u - 2) * (2 * u - 2) + 1),
-                    Ou = {
+                    ku = {
                         from: { x: 0, opacity: 0 },
                         to: { x: 0, opacity: 1 },
                         delay: 0,
                         config: { duration: 800, easing: yu },
                     },
-                    Pu = {
+                    Ou = {
                         from: { opacity: 0 },
                         enter: { opacity: 1 },
                         leave: { opacity: 0 },
                         delay: 0,
                         config: { duration: 450, easing: yu },
                     },
-                    ku = { config: { duration: 450, easing: yu } };
+                    Pu = { config: { duration: 450, easing: yu } };
                 function Ru() {
                     return !1;
                 }
@@ -2065,6 +2065,8 @@
                         base: 'StateBlock_base_28',
                         base__active: 'StateBlock_base__active_f1',
                         base__completed: 'StateBlock_base__completed_8c',
+                        base__active__thinExtraSmall: 'StateBlock_base__active__thinExtraSmall_d8',
+                        base__completed__thinExtraSmall: 'StateBlock_base__completed__thinExtraSmall_f0',
                         base__active__thinSmall: 'StateBlock_base__active__thinSmall_4c',
                         base__completed__thinSmall: 'StateBlock_base__completed__thinSmall_cd',
                         base__active__wideSmall: 'StateBlock_base__active__wideSmall_ef',
@@ -2080,10 +2082,17 @@
                         base__beforeProgression__big: 'StateBlock_base__beforeProgression__big_e8',
                         icon: 'StateBlock_icon_2c',
                         icon__clock: 'StateBlock_icon__clock_b5',
-                        icon__clock__active: 'StateBlock_icon__clock__active_d0',
+                        icon__clock__active__thinExtraSmall: 'StateBlock_icon__clock__active__thinExtraSmall_04',
                         icon__clock__active__thinSmall: 'StateBlock_icon__clock__active__thinSmall_e6',
+                        icon__clock__completed__thinExtraSmall: 'StateBlock_icon__clock__completed__thinExtraSmall_83',
+                        icon__clock__completed__thinSmall: 'StateBlock_icon__clock__completed__thinSmall_e4',
                         icon__clock__active__wideSmall: 'StateBlock_icon__clock__active__wideSmall_da',
                         icon__clock__active__big: 'StateBlock_icon__clock__active__big_94',
+                        icon__clock__completed__wideSmall: 'StateBlock_icon__clock__completed__wideSmall_b5',
+                        icon__clock__completed__big: 'StateBlock_icon__clock__completed__big_f9',
+                        icon__clock__postProgression__wideSmall:
+                            'StateBlock_icon__clock__postProgression__wideSmall_77',
+                        icon__clock__postProgression__big: 'StateBlock_icon__clock__postProgression__big_74',
                         icon__lock: 'StateBlock_icon__lock_c8',
                     },
                     Xu = R.strings.armory_yard.widget,
@@ -2380,8 +2389,8 @@
                     },
                     ae = ({ isHover: u, currentSize: e, isLowPreset: t }) => {
                         const r = Yu(),
-                            i = (0, xu.useTransition)(u, Object.assign({ key: u }, Pu)),
-                            a = (0, xu.useSpring)({ scale: u ? 1.03 : 1, INCREASE_CONFIG: ku });
+                            i = (0, xu.useTransition)(u, Object.assign({ key: u }, Ou)),
+                            a = (0, xu.useSpring)({ scale: u ? 1.03 : 1, INCREASE_CONFIG: Pu });
                         return _().createElement(
                             'div',
                             { className: ie.base },
@@ -2426,7 +2435,7 @@
                         hover_intro: 'WidgetBeforeProgression_hover_intro_7a',
                     },
                     oe = ({ isHover: u, currentSize: e }) => {
-                        const t = (0, xu.useTransition)(u, Object.assign({ key: u }, Pu));
+                        const t = (0, xu.useTransition)(u, Object.assign({ key: u }, Ou));
                         return _().createElement(
                             'div',
                             { className: ne.base },
@@ -2470,8 +2479,8 @@
                     },
                     se = ({ isHover: u, currentSize: e, isLowPreset: t }) => {
                         const r = Yu(),
-                            i = (0, xu.useTransition)(u, Object.assign({ key: u }, Pu)),
-                            a = (0, xu.useSpring)({ scale: u ? 1.03 : 1, INCREASE_CONFIG: ku }),
+                            i = (0, xu.useTransition)(u, Object.assign({ key: u }, Ou)),
+                            a = (0, xu.useSpring)({ scale: u ? 1.03 : 1, INCREASE_CONFIG: Pu }),
                             n = C()(
                                 le.sparks,
                                 le[`sparks__scaledX${r}`],
@@ -2628,7 +2637,7 @@
                             f = (0, r.useCallback)(() => {
                                 p(!1);
                             }, []),
-                            x = (0, xu.useSpring)(Ou),
+                            x = (0, xu.useSpring)(ku),
                             T = C()(Ee.base, h && Ee.base__hover),
                             L = C()(
                                 Ee.title,
@@ -2762,11 +2771,11 @@
                     };
                 var De;
                 engine.whenReady.then(() => {
-                    k().render(
+                    P().render(
                         _().createElement(
                             Gu,
                             { mode: 'real', mocks: de },
-                            _().createElement(O, null, _().createElement(Fe, null)),
+                            _().createElement(k, null, _().createElement(Fe, null)),
                         ),
                         document.getElementById('root'),
                     );
@@ -2849,6 +2858,6 @@
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             t.forEach(e.bind(null, 0)), (t.push = e.bind(null, t.push.bind(t)));
         })();
-    var __webpack_exports__ = __webpack_require__.O(void 0, [503], () => __webpack_require__(9700));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [503], () => __webpack_require__(8578));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

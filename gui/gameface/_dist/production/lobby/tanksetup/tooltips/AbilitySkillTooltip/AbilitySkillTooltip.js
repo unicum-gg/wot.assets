@@ -1529,116 +1529,121 @@
                             ((tt = 'R.images.gui.maps.icons.sequence.altBtn_shine.sprite_'), (u) => `${tt}${u}`),
                     };
                 var tt;
-                const rt = (0, ce.Pi)(() => {
-                    const u = fe().model.root.get(),
-                        e = (function (u) {
-                            const e = u.chunk,
-                                t = e.rows * e.columns;
-                            return (r) => {
-                                const A = r % t,
-                                    E = (A % e.columns) * u.width,
-                                    F = Math.trunc(A / e.columns) * u.height;
-                                return { path: u.getChunkPath(Math.trunc(r / t)), x: E, y: F };
-                            };
-                        })(et);
-                    return Z().createElement(
-                        'div',
-                        { className: Me },
-                        Z().createElement(
+                const rt = ['limitsForGunBoost'],
+                    At = (0, ce.Pi)(() => {
+                        const u = fe().model.root.get(),
+                            e = (function (u) {
+                                const e = u.chunk,
+                                    t = e.rows * e.columns;
+                                return (r) => {
+                                    const A = r % t,
+                                        E = (A % e.columns) * u.width,
+                                        F = Math.trunc(A / e.columns) * u.height;
+                                    return { path: u.getChunkPath(Math.trunc(r / t)), x: E, y: F };
+                                };
+                            })(et);
+                        return Z().createElement(
                             'div',
-                            { className: Re },
-                            Z().createElement(oe, { className: Te, text: u.userString }),
-                            Z().createElement(oe, { className: He, text: Qe.subtitle() }),
-                        ),
-                        Z().createElement(
-                            'div',
-                            { className: Oe },
-                            Z().createElement('div', {
-                                className: Pe,
-                                style: {
-                                    backgroundImage: `url(${R.images.gui.maps.icons.roleSkills.c_180x180.$dyn(u.iconName)})`,
-                                },
-                            }),
-                        ),
-                        Z().createElement(
-                            'div',
-                            { className: Ne },
-                            Z().createElement('div', { className: n()(We, Ie) }),
-                            Z().createElement(oe, { className: je, text: Qe.statsTitle() }),
+                            { className: Me },
                             Z().createElement(
                                 'div',
-                                { className: ke },
+                                { className: Re },
+                                Z().createElement(oe, { className: Te, text: u.userString }),
+                                Z().createElement(oe, { className: He, text: Qe.subtitle() }),
+                            ),
+                            Z().createElement(
+                                'div',
+                                { className: Oe },
+                                Z().createElement('div', {
+                                    className: Pe,
+                                    style: {
+                                        backgroundImage: `url(${R.images.gui.maps.icons.roleSkills.c_180x180.$dyn(u.iconName)})`,
+                                    },
+                                }),
+                            ),
+                            Z().createElement(
+                                'div',
+                                { className: Ne },
+                                Z().createElement('div', { className: n()(We, Ie) }),
+                                Z().createElement(oe, { className: je, text: Qe.statsTitle() }),
                                 Z().createElement(
                                     'div',
-                                    null,
-                                    Z().createElement(Le, {
-                                        data: Z().createElement(oe, { text: String(u.reuseCount) }),
-                                        image: ut.reuseCount(),
-                                        description: Qe.abilityDescription.reuseCount(),
-                                    }),
-                                    Z().createElement(Le, {
-                                        data: Z().createElement(oe, { text: String(u.duration) }),
-                                        image: ut.duration(),
-                                        description: Qe.abilityDescription.duration(),
-                                    }),
-                                    Z().createElement(Le, {
-                                        data: Z().createElement(oe, { text: String(u.cooldown) }),
-                                        image: ut.cooldown(),
-                                        description: Qe.abilityDescription.cooldown(),
-                                    }),
-                                    Z().createElement('div', { className: Xe }),
-                                    u.bonuses.items.map(({ value: u }) =>
-                                        ((u) => {
-                                            const e = u.values[0].value,
-                                                t = e.value < 0 ? Ye.Negative : Ye.Positive,
-                                                r = e.value > 0 ? Je.plus() : '',
-                                                A = Ze.valueTypes.$dyn(e.valueKey) || Je.percent(),
-                                                E = `${r}${e.value}${A}`,
-                                                F = e.specValue > 0 ? Je.plus() : '',
-                                                a = Ze.specValueTypes.$dyn(e.valueKey) || Je.percent(),
-                                                n = 0 !== e.specValue ? `${F}${e.specValue}${a}` : '',
-                                                D = `${E}${n && Je.slash() + n}`,
-                                                i = Ze.$dyn(t),
-                                                B = i ? i.$dyn(e.valueKey) : '';
-                                            return Z().createElement(Le, {
-                                                key: `abilityStatLLine_${e.valueKey}`,
-                                                data: Z().createElement(oe, { text: D }),
-                                                image: String(ut.$dyn(e.valueKey)),
-                                                description: String(B),
-                                            });
-                                        })(u),
+                                    { className: ke },
+                                    Z().createElement(
+                                        'div',
+                                        null,
+                                        Z().createElement(Le, {
+                                            data: Z().createElement(oe, { text: String(u.reuseCount) }),
+                                            image: ut.reuseCount(),
+                                            description: Qe.abilityDescription.reuseCount(),
+                                        }),
+                                        Z().createElement(Le, {
+                                            data: Z().createElement(oe, { text: String(u.duration) }),
+                                            image: ut.duration(),
+                                            description: Qe.abilityDescription.duration(),
+                                        }),
+                                        Z().createElement(Le, {
+                                            data: Z().createElement(oe, { text: String(u.cooldown) }),
+                                            image: ut.cooldown(),
+                                            description: Qe.abilityDescription.cooldown(),
+                                        }),
+                                        Z().createElement('div', { className: Xe }),
+                                        u.bonuses.items.map(({ value: u }) =>
+                                            ((u) => {
+                                                const e = u.values[0].value,
+                                                    t = e.value < 0 ? Ye.Negative : Ye.Positive,
+                                                    r = -1 === rt.indexOf(e.valueKey),
+                                                    A = e.value > 0 && r ? Je.plus() : '',
+                                                    E = Ze.valueTypes.$dyn(e.valueKey),
+                                                    F = E ? ` ${E}` : Je.percent(),
+                                                    a = '  ' === F ? '' : F,
+                                                    n = `${A}${e.value}${a}`,
+                                                    D = Ze.specValueTypes.$dyn(e.valueKey),
+                                                    i = D ? ` ${D}` : Je.percent(),
+                                                    B = '  ' === i ? '' : i,
+                                                    l = 0 !== e.specValue ? `${e.specValue}${B}` : '',
+                                                    o = `${n}${l && Je.slash() + l}`,
+                                                    C = Ze.$dyn(t),
+                                                    m = C ? C.$dyn(e.valueKey) : '';
+                                                return Z().createElement(Le, {
+                                                    key: `abilityStatLLine_${e.valueKey}`,
+                                                    data: Z().createElement(oe, { text: o }),
+                                                    image: String(ut.$dyn(e.valueKey)),
+                                                    description: String(m),
+                                                });
+                                            })(u),
+                                        ),
                                     ),
                                 ),
+                                Z().createElement('div', { className: n()(We, Ge) }),
                             ),
-                            Z().createElement('div', { className: n()(We, Ge) }),
-                        ),
-                        Z().createElement(
-                            'div',
-                            { className: ze },
-                            Z().createElement(oe, { className: He, text: u.description }),
-                        ),
-                        Z().createElement('div', { className: $e }, Z().createElement('div', { className: Ve })),
-                        Z().createElement(
-                            'div',
-                            { className: Ke },
-                            u.lightAdditional &&
-                                Z().createElement(lu, {
-                                    onAnimationDone: me,
-                                    width: et.width,
-                                    height: et.height,
-                                    frameCount: et.frameCount,
-                                    getImageSource: e,
-                                    frameTime: 20,
-                                    className: Ue,
-                                }),
-                            Z().createElement('div', { className: qe }),
-                            Z().createElement(oe, { className: He, text: Qe.footer() }),
-                        ),
-                    );
-                });
+                            Z().createElement(
+                                'div',
+                                { className: ze },
+                                Z().createElement(oe, { className: He, text: u.description }),
+                            ),
+                            Z().createElement('div', { className: $e }, Z().createElement('div', { className: Ve })),
+                            Z().createElement(
+                                'div',
+                                { className: Ke },
+                                u.lightAdditional &&
+                                    Z().createElement(lu, {
+                                        onAnimationDone: me,
+                                        width: et.width,
+                                        height: et.height,
+                                        frameCount: et.frameCount,
+                                        getImageSource: e,
+                                        frameTime: 20,
+                                        className: Ue,
+                                    }),
+                                Z().createElement('div', { className: qe }),
+                                Z().createElement(oe, { className: He, text: Qe.footer() }),
+                            ),
+                        );
+                    });
                 engine.whenReady.then(() => {
                     Eu().render(
-                        Z().createElement(xe, null, Z().createElement(ru, null, Z().createElement(rt, null))),
+                        Z().createElement(xe, null, Z().createElement(ru, null, Z().createElement(At, null))),
                         document.getElementById('root'),
                     );
                 });

@@ -30,19 +30,19 @@
                 t.r(i),
                     t.d(i, {
                         addModelObserver: () => f,
-                        addPreloadTexture: () => R,
+                        addPreloadTexture: () => P,
                         children: () => o,
                         displayStatus: () => d,
                         displayStatusIs: () => H,
                         events: () => C,
                         extraSize: () => j,
                         forceTriggerMouseMove: () => V,
-                        freezeTextureBeforeResize: () => M,
-                        getBrowserTexturePath: () => g,
+                        freezeTextureBeforeResize: () => N,
+                        getBrowserTexturePath: () => R,
                         getDisplayStatus: () => q,
                         getScale: () => k,
                         getSize: () => S,
-                        getViewGlobalPosition: () => N,
+                        getViewGlobalPosition: () => M,
                         isEventHandled: () => Y,
                         isFocused: () => x,
                         pxToRem: () => I,
@@ -51,7 +51,7 @@
                         sendEvent: () => b,
                         setAnimateWindow: () => L,
                         setEventHandled: () => G,
-                        setInputPaddingsRem: () => P,
+                        setInputPaddingsRem: () => g,
                         setSidePaddingsRem: () => O,
                         whenTutorialReady: () => W,
                     });
@@ -207,13 +207,13 @@
                             h(w, { isMouseEvent: !0, on: u });
                         },
                     };
-                function R(u) {
+                function P(u) {
                     viewEnv.addPreloadTexture(u);
                 }
-                function P(u) {
+                function g(u) {
                     viewEnv.setHitAreaPaddingsRem(u, u, u, u, 15);
                 }
-                function g(u, e, t, n = 1) {
+                function R(u, e, t, n = 1) {
                     return viewEnv.getWebBrowserTexturePath(u, e, t, n);
                 }
                 function f(u, e, t) {
@@ -228,11 +228,11 @@
                 function y(u, e, t = 'px') {
                     return 'rem' === t ? viewEnv.resizeViewRem(u, e) : viewEnv.resizeViewPx(u, e);
                 }
-                function N(u = 'rem') {
+                function M(u = 'rem') {
                     const e = viewEnv.getViewGlobalPositionRem();
                     return 'rem' === u ? e : { x: U(e.x), y: U(e.y) };
                 }
-                function M() {
+                function N() {
                     viewEnv.freezeTextureBeforeResize();
                 }
                 function k() {
@@ -701,7 +701,7 @@
                     };
                 window.ViewEnvHelper = h;
             },
-            857: (u, e, t) => {
+            187: (u, e, t) => {
                 var n = t(179),
                     r = t.n(n),
                     o = t(493),
@@ -729,7 +729,6 @@
                         (u.TankmenXpFactor = 'tankmenXPFactor'),
                         (u.FreeXpFactor = 'freeXPFactor'),
                         (u.BattleToken = 'battleToken'),
-                        (u.Entitlements = 'entitlements'),
                         (u.PremiumUniversal = 'premium_universal'),
                         (u.Gold = 'gold'),
                         (u.Credits = 'credits'),
@@ -749,7 +748,7 @@
                         (u.NewYearAlbumsAccess = 'newYearAlbumsAccess'),
                         (u.NewYearFillers = 'ny22Fillers'),
                         (u.NewYearInvoice = 'newYearInvoice'),
-                        (u.NewYearToyFragments = 'nyToyFragments'),
+                        (u.NewYearToyFragments = 'ny22ToyFragments'),
                         (u.NewYearSlot = 'newYearSlot'),
                         (u.BonusX5 = 'battle_bonus_x5'),
                         (u.CrewBonusX3 = 'crew_bonus_x3'),
@@ -761,7 +760,10 @@
                         (u.BattleBoosterGift = 'battleBooster_gift'),
                         (u.CosmicLootboxSilver = 'lootBoxToken'),
                         (u.CosmicLootboxCommon = 'cosmic_2024_2'),
-                        (u.LootBoxToken = 'lootBoxToken');
+                        (u.Branch = 'branch'),
+                        (u.VehicleSelect = 'vehicleSelect'),
+                        (u.StyleProgress = 'styleProgress'),
+                        (u.ParagonsUnlocks = 'paragonsUnlocks');
                 })(s || (s = {})),
                     (function (u) {
                         (u.Gold = 'gold'),
@@ -885,7 +887,6 @@
                         s.TankmenXpFactor,
                         s.FreeXpFactor,
                         s.BattleToken,
-                        s.Entitlements,
                         s.PremiumUniversal,
                         s.NaturalCover,
                         s.BpCoin,
@@ -900,12 +901,11 @@
                         s.Comp7TokenWeeklyReward,
                         s.Comp7TokenCouponReward,
                         s.BattleBoosterGift,
-                        s.NewYearFillers,
-                        s.NewYearInvoice,
-                        s.LootBoxToken,
+                        s.CosmicLootboxCommon,
+                        s.CosmicLootboxSilver,
                         s.SelectableBonus,
                     ],
-                    m = [s.Gold, s.Credits, s.Crystal, s.FreeXp, s.NewYearToyFragments],
+                    m = [s.Gold, s.Credits, s.Crystal, s.FreeXp],
                     p = [s.BattlePassPoints],
                     w = [s.PremiumPlus, s.Premium],
                     v = (u = 1) => {
@@ -999,33 +999,33 @@
                                 for (n = 0; n < o.length; n++) (t = o[n]), e.indexOf(t) >= 0 || (r[t] = u[t]);
                                 return r;
                             })(u, T);
-                        const R = (0, n.useRef)({ timeoutId: 0, isVisible: !1, prevTarget: null, hideTimerId: null }),
-                            P = (0, n.useMemo)(() => C || v().resId, [C]),
-                            g = (0, n.useCallback)(() => {
-                                (R.current.isVisible && R.current.timeoutId) ||
-                                    (b(t, _, { isMouseEvent: !0, on: !0, arguments: h(r) }, P),
+                        const P = (0, n.useRef)({ timeoutId: 0, isVisible: !1, prevTarget: null, hideTimerId: null }),
+                            g = (0, n.useMemo)(() => C || v().resId, [C]),
+                            R = (0, n.useCallback)(() => {
+                                (P.current.isVisible && P.current.timeoutId) ||
+                                    (b(t, _, { isMouseEvent: !0, on: !0, arguments: h(r) }, g),
                                     m && m(),
-                                    (R.current.isVisible = !0));
-                            }, [t, _, r, P, m]),
+                                    (P.current.isVisible = !0));
+                            }, [t, _, r, g, m]),
                             f = (0, n.useCallback)(() => {
-                                if (R.current.isVisible || R.current.timeoutId) {
-                                    const u = R.current.timeoutId;
-                                    u > 0 && (clearTimeout(u), (R.current.timeoutId = 0)),
-                                        b(t, _, { on: !1 }, P),
-                                        R.current.isVisible && p && p(),
-                                        (R.current.isVisible = !1);
+                                if (P.current.isVisible || P.current.timeoutId) {
+                                    const u = P.current.timeoutId;
+                                    u > 0 && (clearTimeout(u), (P.current.timeoutId = 0)),
+                                        b(t, _, { on: !1 }, g),
+                                        P.current.isVisible && p && p(),
+                                        (P.current.isVisible = !1);
                                 }
-                            }, [t, _, P, p]),
+                            }, [t, _, g, p]),
                             O = (0, n.useCallback)((u) => {
-                                R.current.isVisible &&
-                                    ((R.current.prevTarget = document.elementFromPoint(u.clientX, u.clientY)),
-                                    (R.current.hideTimerId = window.setTimeout(() => {
+                                P.current.isVisible &&
+                                    ((P.current.prevTarget = document.elementFromPoint(u.clientX, u.clientY)),
+                                    (P.current.hideTimerId = window.setTimeout(() => {
                                         const e = document.elementFromPoint(u.clientX, u.clientY);
-                                        e && !e.isSameNode(R.current.prevTarget) && f();
+                                        e && !e.isSameNode(P.current.prevTarget) && f();
                                     }, 200)));
                             }, []);
                         (0, n.useEffect)(() => {
-                            const u = R.current.hideTimerId;
+                            const u = P.current.hideTimerId;
                             return (
                                 document.addEventListener('wheel', O, { capture: !0 }),
                                 () => {
@@ -1056,7 +1056,7 @@
                                               (u) => {
                                                   (u.clientX === window.innerWidth &&
                                                       u.clientY === window.innerHeight) ||
-                                                      ((R.current.timeoutId = window.setTimeout(g, A ? 100 : 400)),
+                                                      ((P.current.timeoutId = window.setTimeout(R, A ? 100 : 400)),
                                                       o && o(u),
                                                       S && S(u));
                                               }),
@@ -1132,8 +1132,8 @@
                         y.apply(this, arguments)
                     );
                 }
-                const N = R.views.common.tooltip_window.simple_tooltip_content,
-                    M = (u) => {
+                const M = R.views.common.tooltip_window.simple_tooltip_content,
+                    N = (u) => {
                         let e = u.children,
                             t = u.body,
                             o = u.header,
@@ -1160,7 +1160,7 @@
                                 {
                                     contentId:
                                         ((F = null == a ? void 0 : a.hasHtmlContent),
-                                        F ? N.SimpleTooltipHtmlContent('resId') : N.SimpleTooltipContent('resId')),
+                                        F ? M.SimpleTooltipHtmlContent('resId') : M.SimpleTooltipContent('resId')),
                                     decoratorId: R.views.common.tooltip_window.tooltip_window.TooltipWindow('resId'),
                                     args: A,
                                 },
@@ -1187,7 +1187,7 @@
                 const I = ({ children: u, tooltipArgs: e, className: t }) => {
                         if (!e) return u;
                         const n = r().createElement('div', { className: t }, u);
-                        if (e.header || e.body) return r().createElement(M, e, n);
+                        if (e.header || e.body) return r().createElement(N, e, n);
                         const o = e.contentId,
                             i = e.args,
                             E = null == i ? void 0 : i.contentId;
@@ -1703,6 +1703,6 @@
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             t.forEach(e.bind(null, 0)), (t.push = e.bind(null, t.push.bind(t)));
         })();
-    var __webpack_exports__ = __webpack_require__.O(void 0, [639], () => __webpack_require__(857));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [639], () => __webpack_require__(187));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

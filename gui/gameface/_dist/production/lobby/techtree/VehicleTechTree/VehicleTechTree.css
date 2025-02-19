@@ -1,3 +1,4 @@
+/* tree node indexes */
 .App_base_3e {
     width: 100%;
     height: 100%;
@@ -37,6 +38,9 @@
     align-items: flex-start;
     padding: 0 25rem 0 110rem;
     position: relative;
+}
+.App_treeHolder__withRightPadding_f0 {
+    padding-right: 92rem;
 }
 .App_blueprintIcon_41 {
     position: absolute;
@@ -117,6 +121,22 @@
     transform: translate(-50%, -50%);
     pointer-events: none;
 }
+.App_rowButtons_18 {
+    display: flex;
+    flex-direction: column;
+    width: 37rem;
+    margin-left: 30rem;
+    padding-top: 8rem;
+}
+.App_rowButtonsContainer_85 {
+    display: flex;
+    width: 100%;
+    height: 37rem;
+    margin-bottom: 16rem;
+}
+.App_rowButtonsContainer_85:last-child {
+    margin-bottom: 0;
+}
 .App_blueprintBalance_4d {
     position: absolute;
     top: 32rem;
@@ -140,7 +160,7 @@
 }
 .App_paragonsEntryPoint_ce {
     position: absolute;
-    top: 20rem;
+    top: 37rem;
     right: 22rem;
 }
 .mediaMedium .App_paragonsEntryPoint_ce {
@@ -158,6 +178,9 @@
 }
 .mediaMedium .App_levels_01 {
     padding-top: 91rem;
+}
+.App_levels__witButtons_78 {
+    padding-right: 73rem;
 }
 .App_base__blueprints_fd .App_levels_01 {
     background: #161f26f2;
@@ -605,6 +628,7 @@
     transform: scale(3.1);
 }
 
+/* tree node indexes */
 .Levels_base_e6 {
     display: flex;
     flex-direction: row;
@@ -616,7 +640,7 @@
 }
 .Levels_levelNumberWrapper_d0 {
     display: flex;
-    width: 183rem;
+    width: 174rem;
     height: 32rem;
     position: relative;
 }
@@ -641,7 +665,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 183rem;
+    width: 174rem;
     padding: 0 35rem;
     position: absolute;
     top: 50%;
@@ -655,6 +679,7 @@
     opacity: 0.1;
 }
 
+/* tree node indexes */
 .TreeCell_base_e4 {
     display: flex;
     justify-content: center;
@@ -662,19 +687,18 @@
     height: 53rem;
     position: relative;
 }
-
 .TreeCell_base__premium_87 {
     justify-content: flex-start;
 }
 .TreeCell_premiumBackground_50 {
     display: flex;
-    width: 184rem;
-    height: 52rem;
+    width: 187rem;
+    height: 50rem;
     background: url('R.images.gui.maps.icons.techtree.researchTree.premiumPanel.dotty_pattern') no-repeat top left /
         cover;
     opacity: 0.16;
     position: absolute;
-    top: 50%;
+    top: 51%;
     left: 65rem;
     z-index: -1;
     transform: translate(-2rem, -3rem);
@@ -686,24 +710,23 @@
     height: 4rem;
 }
 
+/* tree node indexes */
 .TreeColumn_base_c8 {
-    width: 183rem;
+    width: 174rem;
     min-height: 53rem;
     position: relative;
 }
-
 .TreeColumn_base__withVerticalScrollBar_06 {
     margin-bottom: 110rem;
 }
-
 .TreeColumn_base__lastColumn_75 {
     width: 130rem;
 }
-
 .TreeColumn_base__dragging_1e {
     pointer-events: none;
 }
 
+/* tree node indexes */
 /* требуется описывать 4 состояния для каждого типа стрелок: тонкая, толстая, пунктирная, толстая пунктирная */
 /* требуется описывать 4 состояния для кадого типа стрелок: тонкая, толстая, пунктирная, толстая пунктирная */
 /* требуется описывать 2 состояния для каждого типа стрелок: тонка и толстая */
@@ -735,7 +758,7 @@
 .HorizontalConnector_base__dashed_37 .HorizontalConnector_part__line_2d {
     background: linear-gradient(90deg, transparent 50%, #727272 50%);
     background-position: right;
-    background-size: 10rem 100%;
+    background-size: 8rem 100%;
 }
 .HorizontalConnector_base__thick_38 .HorizontalConnector_part__line_2d {
     background: #989ea0;
@@ -743,7 +766,7 @@
 .HorizontalConnector_base__thick_38.HorizontalConnector_base__dashed_37 .HorizontalConnector_part__line_2d {
     background: linear-gradient(90deg, transparent 50%, #989ea0 50%);
     background-position: right;
-    background-size: 10rem 100%;
+    background-size: 8rem 100%;
 }
 /* inBattle */
 .HorizontalConnector_base__inBattle_f0 .HorizontalConnector_part__line_2d {
@@ -755,13 +778,13 @@
 .HorizontalConnector_base__inBattle_f0.HorizontalConnector_base__dashed_37 .HorizontalConnector_part__line_2d {
     background: linear-gradient(0deg, #deb368 50%, transparent 50%);
     background-position: bottom;
-    background-size: 100% 10rem;
+    background-size: 100% 8rem;
 }
 .HorizontalConnector_base__inBattle_f0.HorizontalConnector_base__dashed_37.HorizontalConnector_base__thick_38
     .HorizontalConnector_part__line_2d {
     background: linear-gradient(90deg, transparent 50%, #deb368 50%);
     background-position: right;
-    background-size: 10rem 100%;
+    background-size: 8rem 100%;
 }
 /* blueprint */
 .HorizontalConnector_base__blueprint_ca .HorizontalConnector_part__line_2d {
@@ -773,13 +796,13 @@
 .HorizontalConnector_base__blueprint_ca.HorizontalConnector_base__dashed_37 .HorizontalConnector_part__line_2d {
     background: linear-gradient(90deg, transparent 50%, #989898 50%);
     background-position: right;
-    background-size: 10rem 100%;
+    background-size: 8rem 100%;
 }
 .HorizontalConnector_base__blueprint_ca.HorizontalConnector_base__dashed_37.HorizontalConnector_base__thick_38
     .HorizontalConnector_part__line_2d {
     background: linear-gradient(90deg, transparent 50%, #989898 50%);
     background-position: right;
-    background-size: 10rem 100%;
+    background-size: 8rem 100%;
 }
 /* earlyAccess */
 .HorizontalConnector_base__earlyAccess_2f .HorizontalConnector_part__line_2d {
@@ -791,13 +814,33 @@
 .HorizontalConnector_base__earlyAccess_2f.HorizontalConnector_base__dashed_37 .HorizontalConnector_part__line_2d {
     background: linear-gradient(90deg, transparent 50%, #4c6963 50%);
     background-position: right;
-    background-size: 10rem 100%;
+    background-size: 8rem 100%;
 }
 .HorizontalConnector_base__earlyAccess_2f.HorizontalConnector_base__dashed_37.HorizontalConnector_base__thick_38
     .HorizontalConnector_part__line_2d {
     background: linear-gradient(90deg, transparent 50%, #6b958d 50%);
     background-position: right;
-    background-size: 10rem 100%;
+    background-size: 8rem 100%;
+}
+/* paragons ready to reset */
+.HorizontalConnector_base__paragonsReadyToReset_48 .HorizontalConnector_part__line_2d {
+    background: #883611;
+}
+.HorizontalConnector_base__paragonsReadyToReset_48.HorizontalConnector_base__thick_38
+    .HorizontalConnector_part__line_2d {
+    background: #883611;
+}
+.HorizontalConnector_base__paragonsReadyToReset_48.HorizontalConnector_base__dashed_37
+    .HorizontalConnector_part__line_2d {
+    background: linear-gradient(90deg, transparent 50%, #883611 50%);
+    background-position: right;
+    background-size: 8rem 100%;
+}
+.HorizontalConnector_base__paragonsReadyToReset_48.HorizontalConnector_base__dashed_37.HorizontalConnector_base__thick_38
+    .HorizontalConnector_part__line_2d {
+    background: linear-gradient(90deg, transparent 50%, #883611 50%);
+    background-position: right;
+    background-size: 8rem 100%;
 }
 .HorizontalConnector_part__vertical_55 {
     /* normal */
@@ -806,7 +849,7 @@
 .HorizontalConnector_base__dashed_37 .HorizontalConnector_part__vertical_55 {
     background: linear-gradient(0deg, #727272 50%, transparent 50%);
     background-position: bottom;
-    background-size: 100% 10rem;
+    background-size: 100% 8rem;
 }
 .HorizontalConnector_base__thick_38 .HorizontalConnector_part__vertical_55 {
     background: #989ea0;
@@ -814,7 +857,7 @@
 .HorizontalConnector_base__thick_38.HorizontalConnector_base__dashed_37 .HorizontalConnector_part__vertical_55 {
     background: linear-gradient(0deg, #989ea0 50%, transparent 50%);
     background-position: bottom;
-    background-size: 100% 10rem;
+    background-size: 100% 8rem;
 }
 /* inBattle */
 .HorizontalConnector_base__inBattle_f0 .HorizontalConnector_part__vertical_55 {
@@ -823,7 +866,7 @@
 .HorizontalConnector_base__inBattle_f0.HorizontalConnector_base__dashed_37 .HorizontalConnector_part__vertical_55 {
     background: linear-gradient(0deg, #deb368 50%, transparent 50%);
     background-position: bottom;
-    background-size: 100% 10rem;
+    background-size: 100% 8rem;
 }
 /* blueprint */
 .HorizontalConnector_base__blueprint_ca .HorizontalConnector_part__vertical_55 {
@@ -832,7 +875,7 @@
 .HorizontalConnector_base__blueprint_ca.HorizontalConnector_base__dashed_37 .HorizontalConnector_part__vertical_55 {
     background: linear-gradient(0deg, #989898 50%, transparent 50%);
     background-position: bottom;
-    background-size: 100% 10rem;
+    background-size: 100% 8rem;
 }
 /* earlyAccess */
 .HorizontalConnector_base__earlyAccess_2f .HorizontalConnector_part__vertical_55 {
@@ -844,13 +887,33 @@
 .HorizontalConnector_base__earlyAccess_2f.HorizontalConnector_base__dashed_37 .HorizontalConnector_part__vertical_55 {
     background: linear-gradient(0deg, #4c6963 50%, transparent 50%);
     background-position: bottom;
-    background-size: 100% 10rem;
+    background-size: 100% 8rem;
 }
 .HorizontalConnector_base__earlyAccess_2f.HorizontalConnector_base__dashed_37.HorizontalConnector_base__thick_38
     .HorizontalConnector_part__vertical_55 {
     background: linear-gradient(0deg, #6b958d 50%, transparent 50%);
     background-position: bottom;
-    background-size: 100% 10rem;
+    background-size: 100% 8rem;
+}
+/* paragons ready to reset */
+.HorizontalConnector_base__paragonsReadyToReset_48 .HorizontalConnector_part__vertical_55 {
+    background: #883611;
+}
+.HorizontalConnector_base__paragonsReadyToReset_48.HorizontalConnector_base__thick_38
+    .HorizontalConnector_part__vertical_55 {
+    background: #883611;
+}
+.HorizontalConnector_base__paragonsReadyToReset_48.HorizontalConnector_base__dashed_37
+    .HorizontalConnector_part__vertical_55 {
+    background: linear-gradient(0deg, #883611 50%, transparent 50%);
+    background-position: bottom;
+    background-size: 100% 8rem;
+}
+.HorizontalConnector_base__paragonsReadyToReset_48.HorizontalConnector_base__dashed_37.HorizontalConnector_base__thick_38
+    .HorizontalConnector_part__vertical_55 {
+    background: linear-gradient(0deg, #883611 50%, transparent 50%);
+    background-position: bottom;
+    background-size: 100% 8rem;
 }
 .HorizontalConnector_part__start_ed {
     width: 50%;
@@ -871,7 +934,7 @@
     width: 3rem;
     height: calc(53rem * var(--size) + 3rem);
     top: 3rem;
-    left: 25.5rem;
+    left: 21rem;
 }
 .HorizontalConnector_part__end_c7 {
     width: 45%;
@@ -921,12 +984,22 @@
 .HorizontalConnector_base__thick_38.HorizontalConnector_base__earlyAccess_2f .HorizontalConnector_part__arrow_97 {
     background: url('R.images.gui.maps.icons.techtree.researchTree.arrows.thickHeadEA') no-repeat center / contain;
 }
+.HorizontalConnector_base__paragonsReadyToReset_48 .HorizontalConnector_part__arrow_97 {
+    background: url('R.images.gui.maps.icons.techtree.researchTree.arrows.commonHeadParagonsReadyReset') no-repeat
+        center / contain;
+}
+.HorizontalConnector_base__thick_38.HorizontalConnector_base__paragonsReadyToReset_48
+    .HorizontalConnector_part__arrow_97 {
+    background: url('R.images.gui.maps.icons.techtree.researchTree.arrows.thickHeadParagonsReadyReset') no-repeat
+        center / contain;
+}
 
+/* tree node indexes */
 /* требуется описывать 4 состояния для каждого типа стрелок: тонкая, толстая, пунктирная, толстая пунктирная */
 /* требуется описывать 4 состояния для кадого типа стрелок: тонкая, толстая, пунктирная, толстая пунктирная */
 /* требуется описывать 2 состояния для каждого типа стрелок: тонка и толстая */
 .HorizontalVerticalConnector_base_01 {
-    width: 118rem;
+    width: 109rem;
     height: 100%;
     position: relative;
 }
@@ -950,7 +1023,7 @@
 .HorizontalVerticalConnector_base__dashed_02 .HorizontalVerticalConnector_part__line_9e {
     background: linear-gradient(90deg, transparent 50%, #727272 50%);
     background-position: right;
-    background-size: 10rem 100%;
+    background-size: 8rem 100%;
 }
 .HorizontalVerticalConnector_base__thick_90 .HorizontalVerticalConnector_part__line_9e {
     background: #989ea0;
@@ -959,7 +1032,7 @@
     .HorizontalVerticalConnector_part__line_9e {
     background: linear-gradient(90deg, transparent 50%, #989ea0 50%);
     background-position: right;
-    background-size: 10rem 100%;
+    background-size: 8rem 100%;
 }
 /* inBattle */
 .HorizontalVerticalConnector_base__inBattle_9e .HorizontalVerticalConnector_part__line_9e {
@@ -973,13 +1046,13 @@
     .HorizontalVerticalConnector_part__line_9e {
     background: linear-gradient(0deg, #deb368 50%, transparent 50%);
     background-position: bottom;
-    background-size: 100% 10rem;
+    background-size: 100% 8rem;
 }
 .HorizontalVerticalConnector_base__inBattle_9e.HorizontalVerticalConnector_base__dashed_02.HorizontalVerticalConnector_base__thick_90
     .HorizontalVerticalConnector_part__line_9e {
     background: linear-gradient(90deg, transparent 50%, #deb368 50%);
     background-position: right;
-    background-size: 10rem 100%;
+    background-size: 8rem 100%;
 }
 /* blueprint */
 .HorizontalVerticalConnector_base__blueprint_b8 .HorizontalVerticalConnector_part__line_9e {
@@ -993,13 +1066,13 @@
     .HorizontalVerticalConnector_part__line_9e {
     background: linear-gradient(90deg, transparent 50%, #989898 50%);
     background-position: right;
-    background-size: 10rem 100%;
+    background-size: 8rem 100%;
 }
 .HorizontalVerticalConnector_base__blueprint_b8.HorizontalVerticalConnector_base__dashed_02.HorizontalVerticalConnector_base__thick_90
     .HorizontalVerticalConnector_part__line_9e {
     background: linear-gradient(90deg, transparent 50%, #989898 50%);
     background-position: right;
-    background-size: 10rem 100%;
+    background-size: 8rem 100%;
 }
 /* earlyAccess */
 .HorizontalVerticalConnector_base__earlyAccess_cd .HorizontalVerticalConnector_part__line_9e {
@@ -1013,13 +1086,33 @@
     .HorizontalVerticalConnector_part__line_9e {
     background: linear-gradient(90deg, transparent 50%, #4c6963 50%);
     background-position: right;
-    background-size: 10rem 100%;
+    background-size: 8rem 100%;
 }
 .HorizontalVerticalConnector_base__earlyAccess_cd.HorizontalVerticalConnector_base__dashed_02.HorizontalVerticalConnector_base__thick_90
     .HorizontalVerticalConnector_part__line_9e {
     background: linear-gradient(90deg, transparent 50%, #6b958d 50%);
     background-position: right;
-    background-size: 10rem 100%;
+    background-size: 8rem 100%;
+}
+/* paragons ready to reset */
+.HorizontalVerticalConnector_base__paragonsReadyToReset_64 .HorizontalVerticalConnector_part__line_9e {
+    background: #883611;
+}
+.HorizontalVerticalConnector_base__paragonsReadyToReset_64.HorizontalVerticalConnector_base__thick_90
+    .HorizontalVerticalConnector_part__line_9e {
+    background: #883611;
+}
+.HorizontalVerticalConnector_base__paragonsReadyToReset_64.HorizontalVerticalConnector_base__dashed_02
+    .HorizontalVerticalConnector_part__line_9e {
+    background: linear-gradient(90deg, transparent 50%, #883611 50%);
+    background-position: right;
+    background-size: 8rem 100%;
+}
+.HorizontalVerticalConnector_base__paragonsReadyToReset_64.HorizontalVerticalConnector_base__dashed_02.HorizontalVerticalConnector_base__thick_90
+    .HorizontalVerticalConnector_part__line_9e {
+    background: linear-gradient(90deg, transparent 50%, #883611 50%);
+    background-position: right;
+    background-size: 8rem 100%;
 }
 .HorizontalVerticalConnector_part__vertical_fa {
     /* normal */
@@ -1028,7 +1121,7 @@
 .HorizontalVerticalConnector_base__dashed_02 .HorizontalVerticalConnector_part__vertical_fa {
     background: linear-gradient(0deg, #727272 50%, transparent 50%);
     background-position: bottom;
-    background-size: 100% 10rem;
+    background-size: 100% 8rem;
 }
 .HorizontalVerticalConnector_base__thick_90 .HorizontalVerticalConnector_part__vertical_fa {
     background: #989ea0;
@@ -1037,7 +1130,7 @@
     .HorizontalVerticalConnector_part__vertical_fa {
     background: linear-gradient(0deg, #989ea0 50%, transparent 50%);
     background-position: bottom;
-    background-size: 100% 10rem;
+    background-size: 100% 8rem;
 }
 /* inBattle */
 .HorizontalVerticalConnector_base__inBattle_9e .HorizontalVerticalConnector_part__vertical_fa {
@@ -1047,7 +1140,7 @@
     .HorizontalVerticalConnector_part__vertical_fa {
     background: linear-gradient(0deg, #deb368 50%, transparent 50%);
     background-position: bottom;
-    background-size: 100% 10rem;
+    background-size: 100% 8rem;
 }
 /* blueprint */
 .HorizontalVerticalConnector_base__blueprint_b8 .HorizontalVerticalConnector_part__vertical_fa {
@@ -1057,7 +1150,7 @@
     .HorizontalVerticalConnector_part__vertical_fa {
     background: linear-gradient(0deg, #989898 50%, transparent 50%);
     background-position: bottom;
-    background-size: 100% 10rem;
+    background-size: 100% 8rem;
 }
 /* earlyAccess */
 .HorizontalVerticalConnector_base__earlyAccess_cd .HorizontalVerticalConnector_part__vertical_fa {
@@ -1071,13 +1164,33 @@
     .HorizontalVerticalConnector_part__vertical_fa {
     background: linear-gradient(0deg, #4c6963 50%, transparent 50%);
     background-position: bottom;
-    background-size: 100% 10rem;
+    background-size: 100% 8rem;
 }
 .HorizontalVerticalConnector_base__earlyAccess_cd.HorizontalVerticalConnector_base__dashed_02.HorizontalVerticalConnector_base__thick_90
     .HorizontalVerticalConnector_part__vertical_fa {
     background: linear-gradient(0deg, #6b958d 50%, transparent 50%);
     background-position: bottom;
-    background-size: 100% 10rem;
+    background-size: 100% 8rem;
+}
+/* paragons ready to reset */
+.HorizontalVerticalConnector_base__paragonsReadyToReset_64 .HorizontalVerticalConnector_part__vertical_fa {
+    background: #883611;
+}
+.HorizontalVerticalConnector_base__paragonsReadyToReset_64.HorizontalVerticalConnector_base__thick_90
+    .HorizontalVerticalConnector_part__vertical_fa {
+    background: #883611;
+}
+.HorizontalVerticalConnector_base__paragonsReadyToReset_64.HorizontalVerticalConnector_base__dashed_02
+    .HorizontalVerticalConnector_part__vertical_fa {
+    background: linear-gradient(0deg, #883611 50%, transparent 50%);
+    background-position: bottom;
+    background-size: 100% 8rem;
+}
+.HorizontalVerticalConnector_base__paragonsReadyToReset_64.HorizontalVerticalConnector_base__dashed_02.HorizontalVerticalConnector_base__thick_90
+    .HorizontalVerticalConnector_part__vertical_fa {
+    background: linear-gradient(0deg, #883611 50%, transparent 50%);
+    background-position: bottom;
+    background-size: 100% 8rem;
 }
 .HorizontalVerticalConnector_part__start_94 {
     width: 100%;
@@ -1139,7 +1252,17 @@
     .HorizontalVerticalConnector_part__arrow_06 {
     background: url('R.images.gui.maps.icons.techtree.researchTree.arrows.thickHeadEA') no-repeat center / contain;
 }
+.HorizontalVerticalConnector_base__paragonsReadyToReset_64 .HorizontalVerticalConnector_part__arrow_06 {
+    background: url('R.images.gui.maps.icons.techtree.researchTree.arrows.commonHeadParagonsReadyReset') no-repeat
+        center / contain;
+}
+.HorizontalVerticalConnector_base__thick_90.HorizontalVerticalConnector_base__paragonsReadyToReset_64
+    .HorizontalVerticalConnector_part__arrow_06 {
+    background: url('R.images.gui.maps.icons.techtree.researchTree.arrows.thickHeadParagonsReadyReset') no-repeat
+        center / contain;
+}
 
+/* tree node indexes */
 /* требуется описывать 4 состояния для каждого типа стрелок: тонкая, толстая, пунктирная, толстая пунктирная */
 /* требуется описывать 4 состояния для кадого типа стрелок: тонкая, толстая, пунктирная, толстая пунктирная */
 /* требуется описывать 2 состояния для каждого типа стрелок: тонка и толстая */
@@ -1168,7 +1291,7 @@
 .VerticalConnector_base__dashed_12 .VerticalConnector_part__line_2c {
     background: linear-gradient(0deg, #727272 50%, transparent 50%);
     background-position: bottom;
-    background-size: 100% 10rem;
+    background-size: 100% 8rem;
 }
 .VerticalConnector_base__thick_1a .VerticalConnector_part__line_2c {
     background: #989ea0;
@@ -1176,7 +1299,7 @@
 .VerticalConnector_base__thick_1a.VerticalConnector_base__dashed_12 .VerticalConnector_part__line_2c {
     background: linear-gradient(0deg, #989ea0 50%, transparent 50%);
     background-position: bottom;
-    background-size: 100% 10rem;
+    background-size: 100% 8rem;
 }
 /* inBattle */
 .VerticalConnector_base__inBattle_b8 .VerticalConnector_part__line_2c {
@@ -1185,7 +1308,7 @@
 .VerticalConnector_base__inBattle_b8.VerticalConnector_base__dashed_12 .VerticalConnector_part__line_2c {
     background: linear-gradient(0deg, #deb368 50%, transparent 50%);
     background-position: bottom;
-    background-size: 100% 10rem;
+    background-size: 100% 8rem;
 }
 /* blueprint */
 .VerticalConnector_base__blueprint_38 .VerticalConnector_part__line_2c {
@@ -1194,7 +1317,7 @@
 .VerticalConnector_base__blueprint_38.VerticalConnector_base__dashed_12 .VerticalConnector_part__line_2c {
     background: linear-gradient(0deg, #989898 50%, transparent 50%);
     background-position: bottom;
-    background-size: 100% 10rem;
+    background-size: 100% 8rem;
 }
 /* earlyAccess */
 .VerticalConnector_base__earlyAccess_79 .VerticalConnector_part__line_2c {
@@ -1206,13 +1329,31 @@
 .VerticalConnector_base__earlyAccess_79.VerticalConnector_base__dashed_12 .VerticalConnector_part__line_2c {
     background: linear-gradient(0deg, #4c6963 50%, transparent 50%);
     background-position: bottom;
-    background-size: 100% 10rem;
+    background-size: 100% 8rem;
 }
 .VerticalConnector_base__earlyAccess_79.VerticalConnector_base__dashed_12.VerticalConnector_base__thick_1a
     .VerticalConnector_part__line_2c {
     background: linear-gradient(0deg, #6b958d 50%, transparent 50%);
     background-position: bottom;
-    background-size: 100% 10rem;
+    background-size: 100% 8rem;
+}
+/* paragons ready to reset */
+.VerticalConnector_base__paragonsReadyToReset_f2 .VerticalConnector_part__line_2c {
+    background: #883611;
+}
+.VerticalConnector_base__paragonsReadyToReset_f2.VerticalConnector_base__thick_1a .VerticalConnector_part__line_2c {
+    background: #883611;
+}
+.VerticalConnector_base__paragonsReadyToReset_f2.VerticalConnector_base__dashed_12 .VerticalConnector_part__line_2c {
+    background: linear-gradient(0deg, #883611 50%, transparent 50%);
+    background-position: bottom;
+    background-size: 100% 8rem;
+}
+.VerticalConnector_base__paragonsReadyToReset_f2.VerticalConnector_base__dashed_12.VerticalConnector_base__thick_1a
+    .VerticalConnector_part__line_2c {
+    background: linear-gradient(0deg, #883611 50%, transparent 50%);
+    background-position: bottom;
+    background-size: 100% 8rem;
 }
 .VerticalConnector_part__straight_59 {
     width: 1rem;
@@ -1255,6 +1396,14 @@
 }
 .VerticalConnector_base__thick_1a.VerticalConnector_base__earlyAccess_79 .VerticalConnector_part__arrow_e5 {
     background: url('R.images.gui.maps.icons.techtree.researchTree.arrows.thickHeadEA') no-repeat center / contain;
+}
+.VerticalConnector_base__paragonsReadyToReset_f2 .VerticalConnector_part__arrow_e5 {
+    background: url('R.images.gui.maps.icons.techtree.researchTree.arrows.commonHeadParagonsReadyReset') no-repeat
+        center / contain;
+}
+.VerticalConnector_base__thick_1a.VerticalConnector_base__paragonsReadyToReset_f2 .VerticalConnector_part__arrow_e5 {
+    background: url('R.images.gui.maps.icons.techtree.researchTree.arrows.thickHeadParagonsReadyReset') no-repeat
+        center / contain;
 }
 .VerticalConnector_base__thick_1a .VerticalConnector_part__arrow_e5 {
     top: 24.5rem;
@@ -1424,6 +1573,7 @@
     }
 }
 
+/* tree node indexes */
 .HintManager_base__blueprintConvert_4c {
     width: 24rem;
     height: 24rem;
@@ -1703,92 +1853,7 @@
     transform: translateY(17rem);
 }
 
-.EarlyAccessButton_base_52 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-}
-
-.EarlyAccessButton_background_0e {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 158rem;
-    height: 61rem;
-    background: url('R.images.gui.maps.icons.techtree.researchTree.node.backgrounds.earlyAccess.entryPointButton')
-        no-repeat center / contain;
-    position: absolute;
-    top: -4rem;
-}
-
-.EarlyAccessButton_background__paused_7b {
-    width: 194rem;
-    height: 87rem;
-    background: url('R.images.gui.maps.icons.techtree.researchTree.node.backgrounds.earlyAccess.entryPointButton_paused')
-        no-repeat center / contain;
-    top: -20rem;
-}
-
-.EarlyAccessButton_hoverBackground_88 {
-    width: 194rem;
-    height: 87rem;
-    background: url('R.images.gui.maps.icons.techtree.researchTree.node.backgrounds.earlyAccess.entryPointButton_Hovered')
-        no-repeat center / contain;
-    opacity: 0;
-    position: absolute;
-    top: -20rem;
-}
-
-.EarlyAccessButton_hoverBackground__visible_8e {
-    opacity: 1;
-}
-
-.EarlyAccessButton_hoverBackground_88 {
-    transition: opacity 0.2s;
-}
-
-.EarlyAccessButton_content_fc {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 128rem;
-    height: 32rem;
-    position: absolute;
-    top: 8rem;
-    z-index: 1;
-    cursor: pointer;
-}
-
-.EarlyAccessButton_content__paused_f7 {
-    cursor: default;
-}
-
-.EarlyAccessButton_text_fb {
-    color: rgba(231, 255, 251, 0.8);
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
-    margin-top: -3rem;
-    text-shadow:
-        0 0 15rem rgba(90, 112, 168, 0.6),
-        0 0 12rem rgba(80, 200, 157, 0.25);
-}
-
-.EarlyAccessButton_text__hovered_96 {
-    color: #e7fffb;
-}
-
-.EarlyAccessButton_text__paused_29 {
-    color: rgba(218, 225, 224, 0.8);
-    text-align: center;
-}
-
-.EarlyAccessButton_text_fb {
-    transition: color 0.2s;
-}
-
+/* tree node indexes */
 .ActionButton_base_8b > span {
     display: flex;
     justify-content: center;
@@ -1921,6 +1986,7 @@
     opacity: 1;
 }
 
+/* tree node indexes */
 .CompareButton_base_9e {
     width: 29rem;
     height: 22rem;
@@ -1929,7 +1995,6 @@
     opacity: 0.7;
     transition: opacity 0.15s;
 }
-
 .CompareButton_base__hovered_6a {
     opacity: 1;
 }
@@ -1938,12 +2003,86 @@
     height: 100%;
 }
 
+/* tree node indexes */
+.ParagonsLocked_base_4b {
+    display: flex;
+    position: relative;
+}
+.ParagonsLocked_paragonsLocked_76 {
+    width: 126rem;
+    height: 34rem;
+    background: url('R.images.gui.maps.icons.techtree.researchTree.node.paragons.lockedBackground') no-repeat center /
+        contain;
+    position: absolute;
+    top: 1rem;
+    left: 2rem;
+    z-index: 2;
+    pointer-events: none;
+}
+.ParagonsLocked_paragonsLocked__locked_95 {
+    filter: saturate(0);
+}
+.ParagonsLocked_paragonsLocked__animation_c8 {
+    animation: ParagonsLocked_paragonsLockedBackgroundAnimation_09 700ms forwards;
+}
+.ParagonsLocked_paragonsLockedIcon_3c {
+    width: 18rem;
+    height: 18rem;
+    background: url('R.images.gui.maps.icons.techtree.researchTree.node.paragons.lockedIcon') no-repeat center / contain;
+    position: absolute;
+    top: 26rem;
+    left: 54rem;
+    z-index: 2;
+    cursor: pointer;
+}
+.ParagonsLocked_paragonsLockedIcon__locked_62 {
+    filter: saturate(0) brightness(0.65);
+}
+.ParagonsLocked_paragonsLockedIcon__animation_3d {
+    animation: ParagonsLocked_paragonsLockedIconAnimation_dd 700ms forwards;
+}
+@keyframes ParagonsLocked_paragonsLockedIconAnimation_dd {
+    0% {
+        filter: brightness(1);
+        transform: scale(1);
+    }
+
+    50% {
+        filter: brightness(1.8);
+        transform: scale(1.5) rotateZ(120deg);
+    }
+
+    100% {
+        transform: scale(0) rotateZ(120deg);
+    }
+}
+@keyframes ParagonsLocked_paragonsLockedBackgroundAnimation_09 {
+    0% {
+        filter: brightness(1);
+        transform: scale(1) translateY(0rem);
+    }
+
+    50% {
+        filter: brightness(1.2);
+        transform: scaleX(1.2) translateY(0rem);
+    }
+
+    100% {
+        transform: scale(0) translateY(20rem);
+    }
+}
+
+/* tree node indexes */
+/* z-indexes you can find in variables.css */
 .TreeNode_base_e4 {
     display: flex;
     align-items: center;
     width: 100%;
     height: 37rem;
     cursor: pointer;
+}
+.TreeNode_base__brightness_02 {
+    animation: TreeNode_paragonsResetAnimation_35 700ms forwards;
 }
 .TreeNode_background_3a {
     width: 100%;
@@ -1962,6 +2101,14 @@
 }
 .TreeNode_background__premium_04 {
     background-image: url('R.images.gui.maps.icons.techtree.researchTree.node.backgrounds.premSlot');
+}
+.TreeNode_background__paragonsReset_9d {
+    background-image: url('R.images.gui.maps.icons.techtree.researchTree.node.backgrounds.paragons.reset.default');
+    z-index: -1;
+}
+.TreeNode_background__paragonsResetLocked_0e {
+    background-image: url('R.images.gui.maps.icons.techtree.researchTree.node.backgrounds.paragons.reset.disabled');
+    z-index: -1;
 }
 .TreeNode_blueprints_80 {
     width: 0%;
@@ -2020,6 +2167,24 @@
     background-image: url('R.images.gui.maps.icons.techtree.researchTree.node.backgrounds.inBattle.inBattleBorder_firstEntry');
     left: -13rem;
 }
+.TreeNode_border__lockedParagonsReset_c2 {
+    width: 130rem;
+    height: 37rem;
+    background-image: url('R.images.gui.maps.icons.techtree.researchTree.node.backgrounds.paragons.reset.disabledBorder');
+}
+.TreeNode_paragonsReadyToResetBorder_1c {
+    width: 162rem;
+    height: 70rem;
+    background: url('R.images.gui.maps.icons.techtree.researchTree.node.backgrounds.paragons.readyToReset.border')
+        no-repeat center / cover;
+    opacity: 0;
+    position: absolute;
+    top: -16rem;
+    left: -16rem;
+    z-index: 1;
+    animation: TreeNode_paragonsReadyToResetAnimation_69 1.2s infinite;
+    pointer-events: none;
+}
 .TreeNode_hover_41 {
     width: 128rem;
     height: 35rem;
@@ -2072,7 +2237,11 @@
     left: 50%;
     z-index: 2;
     transform: translateX(-50%);
+    transition: opacity 0.3s ease-in-out;
     cursor: pointer;
+}
+.TreeNode_actionButton__hidden_c4 {
+    opacity: 0;
 }
 .TreeNode_addBlueprintButtonContainer_db {
     position: absolute;
@@ -2263,6 +2432,12 @@
     background-image: url('R.images.gui.maps.icons.techtree.researchTree.node.currencyIcon.eliteXpIcon.png');
     top: 1rem;
 }
+.TreeNode_xpCost_e5 {
+    transition: opacity 0.3s ease-in-out;
+}
+.TreeNode_xpCost__hidden_c6 {
+    opacity: 0;
+}
 .TreeNode_discount_61 {
     width: 34rem;
     height: 31rem;
@@ -2312,11 +2487,6 @@
     z-index: 2;
     cursor: pointer;
 }
-.TreeNode_earlyAccessButton_1f {
-    position: absolute;
-    top: -5rem;
-    left: -118rem;
-}
 .TreeNode_earlyAccessGlowContainer_17 {
     width: 100%;
     height: 100%;
@@ -2341,20 +2511,50 @@
         left: 128rem;
     }
 }
+@keyframes TreeNode_paragonsResetAnimation_35 {
+    0% {
+        filter: brightness(1);
+    }
 
+    50% {
+        filter: brightness(2);
+    }
+
+    100% {
+        filter: brightness(1);
+    }
+}
+@keyframes TreeNode_paragonsReadyToResetAnimation_69 {
+    0% {
+        filter: brightness(1);
+        opacity: 0;
+    }
+
+    50% {
+        filter: brightness(1.7);
+        opacity: 1;
+    }
+
+    100% {
+        filter: brightness(1);
+        opacity: 0;
+    }
+}
+
+/* tree node indexes */
 .TreeNodeHolder_base_5a {
     width: 130rem;
     position: relative;
 }
-
 .TreeNodeHolder_base__premiumEmpty_07 {
     height: 100%;
     background: url('R.images.gui.maps.icons.techtree.researchTree.premiumPanel.spacer_dot_golden') no-repeat center /
         contain;
 }
 
+/* tree node indexes */
 .MainNodesWithConnectors_connectors_06 {
-    width: 53rem;
+    width: 44rem;
     height: 53rem;
     position: relative;
 }
@@ -2715,27 +2915,7 @@
     opacity: 1;
 }
 
-.ParagonsEntryPoint_base_ab {
-    display: flex;
-    width: 43rem;
-    height: 43rem;
-}
-
-.mediaMedium .ParagonsEntryPoint_base_ab {
-    width: 60rem;
-    height: 60rem;
-}
-
-.ParagonsEntryPoint_entryPointIcon_ac {
-    width: 100%;
-    height: 100%;
-    background: url('R.images.gui.maps.icons.techtree.researchTree.paragons.entryPoint.logo') no-repeat top / contain;
-}
-
-.ParagonsEntryPoint_base_ab:hover .ParagonsEntryPoint_entryPointIcon_ac {
-    filter: brightness(130%);
-}
-
+/* tree node indexes */
 .PremiumPanel_base_90 {
     width: 100%;
     height: 100%;
@@ -2782,15 +2962,19 @@
     flex-direction: row;
     justify-content: center;
     align-items: flex-start;
-    padding: 0 20rem 0 110rem;
+    padding: 0 25rem 0 110rem;
     position: relative;
     transform: translateY(7rem);
     transition: transform 0.2s ease-in-out;
+}
+.PremiumPanel_content__withRowButtons_18 {
+    padding-right: 92rem;
 }
 .PremiumPanel_base__active_05 .PremiumPanel_content_63 {
     transform: translateY(32rem);
 }
 
+/* tree node indexes */
 .PremiumPanelEffects_base_41 {
     width: 100%;
     height: 100%;
@@ -3105,4 +3289,764 @@
 
 .ScrollDrag_base__noDrag_02 {
     cursor: default;
+}
+
+.EarlyAccessButton_base_f8 {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.EarlyAccessButton_touchableZone_30 {
+    width: 37rem;
+    height: 37rem;
+    position: absolute;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.EarlyAccessButton_base__disabled_b8 .EarlyAccessButton_touchableZone_30 {
+    cursor: default;
+}
+
+.EarlyAccessButton_background_4a {
+    width: 65rem;
+    height: 65rem;
+    background: url('R.images.gui.maps.icons.techtree.researchTree.rowButtons.earlyAccess.backgrounds.default')
+        no-repeat center / contain;
+    position: absolute;
+    top: -14rem;
+    left: -14rem;
+}
+
+.EarlyAccessButton_base__scaled_47 .EarlyAccessButton_background_4a {
+    background-image: url('R.images.gui.maps.icons.techtree.researchTree.rowButtons.earlyAccess.backgrounds.default_scaled');
+}
+
+.EarlyAccessButton_base__disabled_b8 .EarlyAccessButton_background_4a {
+    background-image: url('R.images.gui.maps.icons.techtree.researchTree.rowButtons.earlyAccess.backgrounds.locked');
+}
+
+.EarlyAccessButton_base__disabled_b8.EarlyAccessButton_base__scaled_47 .EarlyAccessButton_background_4a {
+    background-image: url('R.images.gui.maps.icons.techtree.researchTree.rowButtons.earlyAccess.backgrounds.locked_scaled');
+}
+
+.EarlyAccessButton_backgroundHovered_e1 {
+    width: 35rem;
+    height: 35rem;
+    background: url('R.images.gui.maps.icons.techtree.researchTree.rowButtons.earlyAccess.backgrounds.hovered')
+        no-repeat center / contain;
+    opacity: 0;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    transition: opacity 0.15s ease-in-out;
+}
+
+.EarlyAccessButton_base__scaled_47 .EarlyAccessButton_backgroundHovered_e1 {
+    background-image: url('R.images.gui.maps.icons.techtree.researchTree.rowButtons.earlyAccess.backgrounds.hovered_scaled');
+}
+
+.EarlyAccessButton_base__hovered_92 .EarlyAccessButton_backgroundHovered_e1 {
+    opacity: 1;
+}
+
+.EarlyAccessButton_icon_c2 {
+    width: 31rem;
+    height: 31rem;
+    background: url('R.images.gui.maps.icons.techtree.researchTree.rowButtons.earlyAccess.icons.default') no-repeat
+        center / contain;
+}
+
+.EarlyAccessButton_base__scaled_47 .EarlyAccessButton_icon_c2 {
+    background-image: url('R.images.gui.maps.icons.techtree.researchTree.rowButtons.earlyAccess.icons.default_sacaled');
+}
+
+.EarlyAccessButton_icon_c2 {
+    position: absolute;
+    top: 3rem;
+    left: 5rem;
+}
+
+.EarlyAccessButton_base__disabled_b8 .EarlyAccessButton_icon_c2 {
+    opacity: 0.5;
+}
+
+.ParagonsRowButton_base_b3 {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    cursor: pointer;
+}
+
+.ParagonsRowButton_base__disabled_c8 {
+    cursor: default;
+}
+
+.ParagonsRowButton_background_1d {
+    width: 100%;
+    height: 100%;
+    background: url('R.images.gui.maps.icons.techtree.researchTree.rowButtons.paragons.backgrounds.default') no-repeat
+        center / contain;
+    position: absolute;
+}
+
+.ParagonsRowButton_base__scaled_a1 .ParagonsRowButton_background_1d {
+    background-image: url('R.images.gui.maps.icons.techtree.researchTree.rowButtons.paragons.backgrounds.default_scaled');
+}
+
+.ParagonsRowButton_base__disabled_c8 .ParagonsRowButton_background_1d {
+    background-image: url('R.images.gui.maps.icons.techtree.researchTree.rowButtons.paragons.backgrounds.locked');
+}
+
+.ParagonsRowButton_base__disabled_c8.ParagonsRowButton_base__scaled_a1 .ParagonsRowButton_background_1d {
+    background-image: url('R.images.gui.maps.icons.techtree.researchTree.rowButtons.paragons.backgrounds.locked_scaled');
+}
+
+.ParagonsRowButton_backgroundHovered_4f {
+    width: 100%;
+    height: 100%;
+    background: url('R.images.gui.maps.icons.techtree.researchTree.rowButtons.paragons.backgrounds.hovered') no-repeat
+        center / contain;
+    opacity: 0;
+    position: absolute;
+    transition: opacity 0.3s;
+}
+
+.ParagonsRowButton_base__scaled_a1 .ParagonsRowButton_backgroundHovered_4f {
+    background-image: url('R.images.gui.maps.icons.techtree.researchTree.rowButtons.paragons.backgrounds.hovered_scaled');
+}
+
+.ParagonsRowButton_base__hovered_e6 .ParagonsRowButton_backgroundHovered_4f {
+    opacity: 1;
+}
+
+.ParagonsRowButton_icon_a4 {
+    width: 16rem;
+    height: 16rem;
+    background: url('R.images.gui.maps.icons.techtree.researchTree.rowButtons.paragons.icons.default') no-repeat
+        center / contain;
+    position: absolute;
+    top: 10rem;
+    left: 12rem;
+}
+
+.ParagonsRowButton_base__disabled_c8 .ParagonsRowButton_icon_a4 {
+    opacity: 0.5;
+}
+
+.ParagonsRowButton_iconHovered_42 {
+    width: 16rem;
+    height: 16rem;
+    background: url('R.images.gui.maps.icons.techtree.researchTree.rowButtons.paragons.icons.hover') no-repeat center /
+        contain;
+    opacity: 0;
+    position: absolute;
+    top: 10rem;
+    left: 12rem;
+    transition: opacity 0.15s ease-in-out;
+}
+
+.ParagonsRowButton_base__hovered_e6 .ParagonsRowButton_iconHovered_42 {
+    opacity: 1;
+}
+
+.ParagonsRowButton_hintArrow_1b {
+    width: 66rem;
+    height: 90rem;
+    background: url('R.images.gui.maps.icons.components.tutorial.arrow') no-repeat left / cover;
+    opacity: 0;
+    position: absolute;
+    top: -27rem;
+    left: -50rem;
+    animation-name: ParagonsRowButton_blink_b3;
+    animation-duration: 1.2s;
+    animation-delay: 200ms;
+    animation-iteration-count: infinite;
+    pointer-events: none;
+}
+
+.ParagonsRowButton_base__hovered_e6 .ParagonsRowButton_hintArrow_1b {
+    animation-name: ParagonsRowButton_blink_b3;
+}
+
+@keyframes ParagonsRowButton_blink_b3 {
+    0% {
+        opacity: 0;
+        transform: translateX(30rem);
+    }
+
+    30% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(-10rem);
+    }
+}
+
+.RowButtons_base_2d {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+/*
+    Gameface can't calculate gradient biggest than 8128px
+    in JS 8000 reserved like anchor for start optimization
+*/
+/* stylelint-disable-line */
+.ProgressBar_base_45 {
+    width: 100%;
+    height: 12rem;
+    position: relative;
+}
+.ProgressBar_base__medium_62 {
+    height: 6rem;
+}
+.ProgressBar_base__small_df {
+    height: 2rem;
+}
+.ProgressBar_background_51 {
+    width: 100%;
+    max-width: 8001px;
+    height: 100%;
+    background-image: var(--progress-base);
+    background-repeat: repeat;
+    background-position: 0 50%;
+    background-size: 3rem 10rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.ProgressBar_background__medium_6e {
+    height: 6rem;
+}
+.ProgressBar_background__small_46 {
+    height: 2rem;
+}
+.ProgressBar_lineWrapper_6a {
+    display: flex;
+    flex: 1;
+}
+
+.ProgressBarBlink_base_24 {
+    width: 60rem;
+    height: 100rem;
+    background-image: var(--progress-glow);
+    background-size: contain;
+    mix-blend-mode: lighten;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(50%, -50%);
+    pointer-events: none;
+}
+
+.ProgressBarBlink_base__medium_ec {
+    width: 42rem;
+    height: 70rem;
+}
+
+.ProgressBarBlink_base__small_0f {
+    width: 44rem;
+    height: 43rem;
+    background-image: var(--progress-glow-small);
+}
+
+/*
+    Gameface can't calculate gradient biggest than 8128px
+    in JS 8000 reserved like anchor for start optimization
+*/
+/* stylelint-disable-line */
+.ProgressLineImpose_base_80 {
+    max-width: 8001px;
+    height: 100%;
+    background-color: var(--progress-line-base);
+    position: relative;
+    transition-timing-function: cubic-bezier(1, 0, 0.92, 1);
+    transition-property: width;
+}
+.ProgressLineImpose_base__disabled_cc {
+    background-color: var(--progress-line-disabled);
+}
+.ProgressLineImpose_base__finished_d4 {
+    background-color: var(--progress-line-finished);
+}
+.ProgressLineImpose_base__withoutBounce_56 {
+    transition-timing-function: cubic-bezier(1, 0, 0.75, 0.75);
+}
+.ProgressLineImpose_pattern_1c {
+    max-width: 8001px;
+    background-image: var(--progress-pattern-base);
+    background-repeat: repeat;
+    background-position: 0 50%;
+    background-size: 3rem 10rem;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+    left: 1rem;
+}
+.ProgressLineImpose_base__small_55 .ProgressLineImpose_pattern_1c {
+    top: 0;
+    bottom: 0;
+}
+.ProgressLineImpose_base__disabled_cc .ProgressLineImpose_pattern_1c {
+    background-image: var(--progress-pattern-disabled);
+    left: 0;
+}
+.ProgressLineImpose_base__finished_d4 .ProgressLineImpose_pattern_1c {
+    background-image: var(--progress-pattern-finished);
+}
+.ProgressLineImpose_gradient_35 {
+    max-width: 8001px;
+    background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.75));
+    mix-blend-mode: overlay;
+    position: absolute;
+    top: 1rem;
+    right: 0;
+    bottom: 1rem;
+    left: 0;
+}
+.ProgressLineImpose_base__small_55 .ProgressLineImpose_gradient_35 {
+    top: 0;
+    bottom: 0;
+}
+.ProgressLineImpose_base__disabled_cc .ProgressLineImpose_gradient_35 {
+    display: none;
+}
+.ProgressLineImpose_base__finished_d4 .ProgressLineImpose_gradient_35 {
+    background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.75), rgba(0, 0, 0, 0.5));
+}
+.ProgressLineImpose_glow_a5 {
+    width: 60rem;
+    max-width: 8001px;
+    height: 100rem;
+    background-image: var(--progress-glow);
+    background-size: contain;
+    mix-blend-mode: lighten;
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+.ProgressLineImpose_glow__left_d8 {
+    left: 1rem;
+}
+.ProgressLineImpose_base__disabled_cc .ProgressLineImpose_glow_a5,
+.ProgressLineImpose_base__finished_d4 .ProgressLineImpose_glow_a5 {
+    display: none;
+}
+.ProgressLineImpose_base__small_55 .ProgressLineImpose_glow_a5 {
+    width: 44rem;
+    height: 43rem;
+    background-image: var(--progress-glow-small);
+}
+
+/*
+    Gameface can't calculate gradient biggest than 8128px
+    in JS 8000 reserved like anchor for start optimization
+*/
+/* stylelint-disable-line */
+.ProgressBarDeltaSimple_base_6c {
+    width: 0;
+    height: 100%;
+    position: absolute;
+    top: 0;
+}
+.ProgressBarDeltaSimple_delta_99 {
+    width: 0;
+    max-width: 8001px;
+    height: 100%;
+    box-shadow: var(--progress-delta-shadow);
+    background-color: var(--progress-delta-color);
+    position: absolute;
+    bottom: 0;
+    transform-origin: right center;
+    transition-timing-function: cubic-bezier(1, 0, 0.92, 1), cubic-bezier(0.21, 0.61, 0.35, 1);
+    transition-property: width, transform;
+}
+
+/*
+    Gameface can't calculate gradient biggest than 8128px
+    in JS 8000 reserved like anchor for start optimization
+*/
+/* stylelint-disable-line */
+.ProgressBarDeltaGrow_base_7e {
+    width: 0;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    transition-timing-function: cubic-bezier(1, 0, 0.92, 1);
+    transition-property: width;
+}
+.ProgressBarDeltaGrow_base__withoutBounce_b5 {
+    transition-timing-function: cubic-bezier(1, 0, 0.75, 0.75);
+}
+.ProgressBarDeltaGrow_glow_68 {
+    width: 0;
+    max-width: 8001px;
+    height: 100%;
+    box-shadow: var(--progress-delta-shadow);
+    background-color: var(--progress-delta-color);
+    position: absolute;
+    bottom: 0;
+    transform-origin: right center;
+    transition-timing-function: cubic-bezier(1, 0, 0.92, 1);
+    transition-property: width;
+}
+.ProgressBarDeltaGrow_base__withoutBounce_b5 .ProgressBarDeltaGrow_glow_68 {
+    transition-timing-function: cubic-bezier(1, 0, 0.75, 0.75);
+}
+
+/*
+    Gameface can't calculate gradient biggest than 8128px
+    in JS 8000 reserved like anchor for start optimization
+*/
+/* stylelint-disable-line */
+.OptimizedProgressBar_base_1f {
+    width: 100%;
+    padding: 30rem 0;
+    overflow: hidden;
+}
+.OptimizedProgressBar_wrapper_ab {
+    position: relative;
+}
+.OptimizedProgressBar_line_ef {
+    position: relative;
+    top: 0;
+    left: 0;
+}
+.OptimizedProgressBar_background_ce {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 8001px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.Progression_base_85 {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    position: relative;
+    mask-image: linear-gradient(
+        270deg,
+        rgba(217, 217, 217, 0) 0%,
+        #d9d9d9 13%,
+        #d9d9d9 87%,
+        rgba(217, 217, 217, 0) 100%
+    );
+}
+.Progression_progressLineContainer_e9 {
+    width: 100%;
+    height: 100%;
+    margin-top: -12rem;
+    transition: transform 0.5s cubic-bezier(0.34, -0.02, 0.33, 1.01);
+}
+.mediaMedium .Progression_progressLineContainer_e9 {
+    margin-top: 0;
+}
+.Progression_point_f9 {
+    color: #f2f2f7;
+    font-size: 22rem;
+    font-weight: 700;
+    line-height: 1.2;
+    width: 2rem;
+    margin-top: 8rem;
+    position: absolute;
+}
+.mediaMedium .Progression_point_f9 {
+    margin-top: 20rem;
+}
+.Progression_line_7f {
+    width: 1rem;
+    height: 7rem;
+}
+.Progression_line__top_60 {
+    margin-bottom: 4rem;
+    background: linear-gradient(0deg, #d9d9d9 0%, rgba(217, 217, 217, 0) 100%);
+}
+.Progression_line__bottom_45 {
+    height: 3rem;
+    margin-top: 4rem;
+    background: linear-gradient(180deg, #d9d9d9 0%, rgba(217, 217, 217, 0) 100%);
+}
+
+.MainParagonsEntryPoint_base_90 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+.MainParagonsEntryPoint_entryPoint_04 {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100rem;
+    height: 43rem;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+}
+.mediaMedium .MainParagonsEntryPoint_entryPoint_04 {
+    width: 140rem;
+    height: 60rem;
+}
+.MainParagonsEntryPoint_entryPoint__small_de {
+    width: 44rem;
+    height: 44rem;
+}
+.mediaMedium .MainParagonsEntryPoint_entryPoint__small_de {
+    width: 60rem;
+    height: 60rem;
+}
+.MainParagonsEntryPoint_bubble_0e {
+    display: flex;
+    width: 32rem;
+    height: 32rem;
+    background: url('R.images.gui.maps.icons.techtree.researchTree.paragonsEntryPoint.counter') no-repeat center / cover;
+    position: absolute;
+    top: -17rem;
+    right: -15rem;
+    z-index: 4;
+}
+.mediaMedium .MainParagonsEntryPoint_bubble_0e {
+    width: 38rem;
+    height: 38rem;
+    background-image: url('R.images.gui.maps.icons.techtree.researchTree.paragonsEntryPoint.counter_large');
+    top: -19rem;
+    right: -18rem;
+}
+.MainParagonsEntryPoint_icon_71 {
+    display: flex;
+    width: 44rem;
+    height: 44rem;
+    margin-left: -23rem;
+    background: url('R.images.gui.maps.icons.techtree.researchTree.paragonsEntryPoint.entry_point') no-repeat center /
+        cover;
+    filter: brightness(1);
+    position: relative;
+    z-index: 2;
+    transition: filter 0.3s ease-in-out;
+}
+.mediaMedium .MainParagonsEntryPoint_icon_71 {
+    width: 60rem;
+    height: 60rem;
+    margin-left: -30rem;
+    background-image: url('R.images.gui.maps.icons.techtree.researchTree.paragonsEntryPoint.entry_point_large');
+}
+.MainParagonsEntryPoint_icon__disabled_58 {
+    background-image: url('R.images.gui.maps.icons.techtree.researchTree.paragonsEntryPoint.entry_point_disabled');
+    cursor: default;
+}
+.mediaMedium .MainParagonsEntryPoint_icon__disabled_58 {
+    background-image: url('R.images.gui.maps.icons.techtree.researchTree.paragonsEntryPoint.entry_point_disabled_large');
+}
+.MainParagonsEntryPoint_entryPoint__small_de .MainParagonsEntryPoint_icon_71 {
+    margin-left: 0;
+}
+.MainParagonsEntryPoint_entryPoint_04:hover .MainParagonsEntryPoint_icon_71 {
+    filter: brightness(1.2);
+}
+.MainParagonsEntryPoint_icon__flipping_70 {
+    animation:
+        MainParagonsEntryPoint_scaleDown_2c 0.8s forwards,
+        MainParagonsEntryPoint_scaleUp_14 0.8s forwards;
+}
+.MainParagonsEntryPoint_icon__flippedTo11_b5 {
+    background-image: url('R.images.gui.maps.icons.techtree.researchTree.paragonsEntryPoint.t11_logo');
+}
+.mediaMedium .MainParagonsEntryPoint_icon__flippedTo11_b5 {
+    background-image: url('R.images.gui.maps.icons.techtree.researchTree.paragonsEntryPoint.t11_logo_large');
+}
+.MainParagonsEntryPoint_glowContainer_cd {
+    width: 39rem;
+    height: 39rem;
+    border-radius: 50%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    right: 2rem;
+    z-index: 2;
+}
+.mediaMedium .MainParagonsEntryPoint_glowContainer_cd {
+    width: 53rem;
+    height: 53rem;
+    top: 1rem;
+}
+.MainParagonsEntryPoint_glow_a4 {
+    width: 25rem;
+    height: 44rem;
+    background: url('R.images.gui.maps.icons.techtree.researchTree.paragonsEntryPoint.t11_animation_glow') no-repeat
+        center / contain;
+    position: absolute;
+    left: -58rem;
+    animation: MainParagonsEntryPoint_glow_a4 2s;
+    animation-delay: 0.5s;
+}
+.mediaMedium .MainParagonsEntryPoint_glow_a4 {
+    width: 34rem;
+    height: 60rem;
+    background-image: url('R.images.gui.maps.icons.techtree.researchTree.paragonsEntryPoint.t11_animation_glow_large');
+}
+.MainParagonsEntryPoint_completedIcon_9d {
+    width: 56rem;
+    height: 24rem;
+    background: url('R.images.gui.maps.icons.techtree.researchTree.paragonsEntryPoint.check') no-repeat center / cover;
+    position: absolute;
+    bottom: -5rem;
+    left: -6rem;
+    z-index: 3;
+}
+.mediaMedium .MainParagonsEntryPoint_completedIcon_9d {
+    width: 64rem;
+    height: 28rem;
+    background-image: url('R.images.gui.maps.icons.techtree.researchTree.paragonsEntryPoint.check_large');
+    bottom: -5rem;
+    left: -2rem;
+}
+.MainParagonsEntryPoint_plusIcon_d5 {
+    width: 22rem;
+    height: 22rem;
+    background: url('R.images.gui.maps.icons.techtree.researchTree.paragonsEntryPoint.plus') no-repeat center / cover;
+    position: absolute;
+    bottom: -5rem;
+    left: 11rem;
+    z-index: 3;
+}
+.mediaMedium .MainParagonsEntryPoint_plusIcon_d5 {
+    width: 30rem;
+    height: 30rem;
+    background-image: url('R.images.gui.maps.icons.techtree.researchTree.paragonsEntryPoint.plus_large');
+    bottom: 0rem;
+    left: 15rem;
+}
+.MainParagonsEntryPoint_progress_9f {
+    display: flex;
+    width: 80rem;
+    height: 34rem;
+    position: relative;
+    top: 1rem;
+    z-index: 1;
+}
+.mediaMedium .MainParagonsEntryPoint_progress_9f {
+    width: 110rem;
+    height: 48rem;
+}
+.MainParagonsEntryPoint_progressBg_2e,
+.MainParagonsEntryPoint_progressHoverBg_c9 {
+    width: 114rem;
+    height: 34rem;
+    position: absolute;
+    top: -2rem;
+    left: -32rem;
+    transition: opacity 0.3s ease-in-out;
+}
+.mediaMedium .MainParagonsEntryPoint_progressBg_2e,
+.mediaMedium .MainParagonsEntryPoint_progressHoverBg_c9 {
+    width: 148rem;
+    height: 48rem;
+}
+.MainParagonsEntryPoint_progressBg_2e {
+    background: url('R.images.gui.maps.icons.techtree.researchTree.paragonsEntryPoint.entry_point_flag') no-repeat top /
+        cover;
+    opacity: 1;
+}
+.mediaMedium .MainParagonsEntryPoint_progressBg_2e {
+    background-image: url('R.images.gui.maps.icons.techtree.researchTree.paragonsEntryPoint.entry_point_flag_large');
+}
+.MainParagonsEntryPoint_entryPoint_04:hover .MainParagonsEntryPoint_progressBg_2e {
+    opacity: 0;
+}
+.MainParagonsEntryPoint_progressHoverBg_c9 {
+    background: url('R.images.gui.maps.icons.techtree.researchTree.paragonsEntryPoint.entry_point_flag_hover') no-repeat
+        top / cover;
+    opacity: 0;
+}
+.mediaMedium .MainParagonsEntryPoint_progressHoverBg_c9 {
+    background-image: url('R.images.gui.maps.icons.techtree.researchTree.paragonsEntryPoint.entry_point_flag_large_hover');
+}
+.MainParagonsEntryPoint_entryPoint_04:hover .MainParagonsEntryPoint_progressHoverBg_c9 {
+    opacity: 1;
+}
+.MainParagonsEntryPoint_level_50 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    position: absolute;
+    z-index: 3;
+}
+.mediaMedium .MainParagonsEntryPoint_level_50 {
+    width: 80%;
+}
+.MainParagonsEntryPoint_levelIcon_15 {
+    width: 10rem;
+    height: 18rem;
+    background: no-repeat center / cover;
+    top: 2rem;
+    left: 28rem;
+    z-index: 3;
+}
+.mediaMedium .MainParagonsEntryPoint_levelIcon_15 {
+    width: 18rem;
+    height: 32rem;
+    top: 1rem;
+    left: 34rem;
+}
+.MainParagonsEntryPoint_levelIcon_15:last-child {
+    margin-left: -2rem;
+}
+.MainParagonsEntryPoint_progressLine_38 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 45rem;
+    margin-top: 5rem;
+}
+@keyframes MainParagonsEntryPoint_scaleDown_2c {
+    from {
+        transform: scaleX(1);
+    }
+
+    to {
+        transform: scaleX(0.05);
+    }
+}
+@keyframes MainParagonsEntryPoint_scaleUp_14 {
+    0% {
+        transform: scaleX(0.05);
+    }
+
+    60% {
+        transform: scaleX(1);
+    }
+
+    80% {
+        transform: scaleX(0.9);
+    }
+
+    100% {
+        transform: scaleX(1);
+    }
+}
+@keyframes MainParagonsEntryPoint_glow_a4 {
+    0% {
+        left: -78rem;
+    }
+
+    100% {
+        left: 108rem;
+    }
 }

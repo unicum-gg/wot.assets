@@ -1283,7 +1283,7 @@
                 }
                 var z = t(515);
                 const j = 'tooltipId';
-                let Y, q;
+                let q, Y;
                 function K() {}
                 function Q() {
                     return !1;
@@ -1293,14 +1293,14 @@
                         (u.PROGRESSION_STEP = 'progressionStep'),
                         (u.SELECTED_REWARDS = 'selectedRewards'),
                         (u.PROGRESSION_COMPLETED = 'progressionCompleted');
-                })(Y || (Y = {})),
+                })(q || (q = {})),
                     (function (u) {
                         (u.VEHICLE_FOR_GIFT = 'vehicleForGift'),
                             (u.VEHICLE_DISCOUNT = 'vehicleDiscount'),
                             (u.VEHICLE_FOR_RENT = 'vehicleForRent'),
                             (u.SELECTABLE_VEHICLE_FOR_GIFT = 'selectableVehicleForGift'),
                             (u.SELECTABLE_VEHICLE_DISCOUNT = 'selectableVehicleDiscount');
-                    })(q || (q = {})),
+                    })(Y || (Y = {})),
                     console.log;
                 var Z = t(174);
                 function J(u, e) {
@@ -1334,7 +1334,7 @@
                     var t, r;
                 }
                 var ru = t(946);
-                const au = [q.SELECTABLE_VEHICLE_FOR_GIFT, q.SELECTABLE_VEHICLE_DISCOUNT],
+                const au = [Y.SELECTABLE_VEHICLE_FOR_GIFT, Y.SELECTABLE_VEHICLE_DISCOUNT],
                     nu = ((u, e) => {
                         const t = (0, r.createContext)({});
                         return [
@@ -1502,14 +1502,14 @@
                                                                           : t.value;
                                                             })(t, 0))
                                                                 ? void 0
-                                                                : u.name) === q.VEHICLE_FOR_GIFT
+                                                                : u.name) === Y.VEHICLE_FOR_GIFT
                                                         );
                                                     }),
                                                     i = (0, ru.Om)(() => {
                                                         const u = [
-                                                            q.VEHICLE_FOR_GIFT,
-                                                            q.VEHICLE_FOR_RENT,
-                                                            q.VEHICLE_DISCOUNT,
+                                                            Y.VEHICLE_FOR_GIFT,
+                                                            Y.VEHICLE_FOR_RENT,
+                                                            Y.VEHICLE_DISCOUNT,
                                                         ];
                                                         return Boolean(
                                                             eu(e.rewards.get(), (e) => u.includes(e.name)).length,
@@ -1524,14 +1524,14 @@
                                                         hasVehicleRewards: i,
                                                         hasOnlyVehicleForGiftReward: s,
                                                         isRibbonGold: (0, ru.Om)(() =>
-                                                            [Y.SELECTED_REWARDS].includes(e.primitives.state.get()),
+                                                            [q.SELECTED_REWARDS].includes(e.primitives.state.get()),
                                                         ),
                                                         isGlowVisible: (0, ru.Om)(() =>
-                                                            [Y.SELECTED_REWARDS].includes(e.primitives.state.get()),
+                                                            [q.SELECTED_REWARDS].includes(e.primitives.state.get()),
                                                         ),
                                                         isLinesVisible: (0, ru.Om)(
                                                             () =>
-                                                                ![Y.PROGRESSION_STEP].includes(
+                                                                ![q.PROGRESSION_STEP].includes(
                                                                     e.primitives.state.get(),
                                                                 ),
                                                         ),
@@ -2250,7 +2250,7 @@
                             'paragraph-P12': zu,
                             'paragraph-P10': zu,
                         }),
-                    Yu =
+                    qu =
                         (Object.keys(ju),
                         (u) =>
                             u
@@ -2258,7 +2258,7 @@
                                     ? { colorClassName: Uu[u] }
                                     : { colorStyle: { color: u } }
                                 : {}),
-                    qu = pu((u) => {
+                    Yu = pu((u) => {
                         let e = u.text,
                             t = u.variant,
                             n = u.className,
@@ -2284,7 +2284,7 @@
                                 return a;
                             })(u, Gu);
                         const g = (0, r.useMemo)(() => {
-                                const u = Yu(s),
+                                const u = qu(s),
                                     e = u.colorClassName,
                                     t = u.colorStyle,
                                     r = void 0 === t ? {} : t;
@@ -2329,7 +2329,6 @@
                         (u.TankmenXpFactor = 'tankmenXPFactor'),
                         (u.FreeXpFactor = 'freeXPFactor'),
                         (u.BattleToken = 'battleToken'),
-                        (u.Entitlements = 'entitlements'),
                         (u.PremiumUniversal = 'premium_universal'),
                         (u.Gold = 'gold'),
                         (u.Credits = 'credits'),
@@ -2349,7 +2348,7 @@
                         (u.NewYearAlbumsAccess = 'newYearAlbumsAccess'),
                         (u.NewYearFillers = 'ny22Fillers'),
                         (u.NewYearInvoice = 'newYearInvoice'),
-                        (u.NewYearToyFragments = 'nyToyFragments'),
+                        (u.NewYearToyFragments = 'ny22ToyFragments'),
                         (u.NewYearSlot = 'newYearSlot'),
                         (u.BonusX5 = 'battle_bonus_x5'),
                         (u.CrewBonusX3 = 'crew_bonus_x3'),
@@ -2361,7 +2360,10 @@
                         (u.BattleBoosterGift = 'battleBooster_gift'),
                         (u.CosmicLootboxSilver = 'lootBoxToken'),
                         (u.CosmicLootboxCommon = 'cosmic_2024_2'),
-                        (u.LootBoxToken = 'lootBoxToken');
+                        (u.Branch = 'branch'),
+                        (u.VehicleSelect = 'vehicleSelect'),
+                        (u.StyleProgress = 'styleProgress'),
+                        (u.ParagonsUnlocks = 'paragonsUnlocks');
                 })(Ku || (Ku = {})),
                     (function (u) {
                         (u.Gold = 'gold'),
@@ -2483,7 +2485,6 @@
                         Ku.TankmenXpFactor,
                         Ku.FreeXpFactor,
                         Ku.BattleToken,
-                        Ku.Entitlements,
                         Ku.PremiumUniversal,
                         Ku.NaturalCover,
                         Ku.BpCoin,
@@ -2498,12 +2499,11 @@
                         Ku.Comp7TokenWeeklyReward,
                         Ku.Comp7TokenCouponReward,
                         Ku.BattleBoosterGift,
-                        Ku.NewYearFillers,
-                        Ku.NewYearInvoice,
-                        Ku.LootBoxToken,
+                        Ku.CosmicLootboxCommon,
+                        Ku.CosmicLootboxSilver,
                         Ku.SelectableBonus,
                     ],
-                    ne = [Ku.Gold, Ku.Credits, Ku.Crystal, Ku.FreeXp, Ku.NewYearToyFragments],
+                    ne = [Ku.Gold, Ku.Credits, Ku.Crystal, Ku.FreeXp],
                     se = [Ku.BattlePassPoints],
                     ie = [Ku.PremiumPlus, Ku.Premium],
                     oe = ['engravings', 'backgrounds'],
@@ -2641,20 +2641,6 @@
                                                     return `R.images.gui.maps.icons.quests.bonuses.${e}.${u.icon}`;
                                             }
                                         })(u, e);
-                                    case 'entitlements':
-                                        return 'big' === e
-                                            ? u.iconBig.replace('..', 'img://gui')
-                                            : u.iconSmall.replace('..', 'img://gui');
-                                    case 'customizations':
-                                    case 'styleProgress':
-                                    case 'crewSkins':
-                                    case 'goodies':
-                                    case 'groups':
-                                    case 'tmanToken':
-                                    case 'battlePassSelectToken':
-                                    case 'selectableBonus':
-                                    case 'lootBoxToken':
-                                        return `R.images.gui.maps.icons.quests.bonuses.${e}.${n}`;
                                     case 'crewBooks':
                                         return `R.images.gui.maps.icons.crewBooks.books.${e}.${n}`;
                                     case 'dogTagComponents':
@@ -2686,20 +2672,22 @@
                                     case 'dailyXPFactor':
                                     case 'freeXPFactor':
                                         return `R.images.gui.maps.icons.quests.bonuses.${e}.freeXP`;
+                                    case 'tmanToken':
+                                    case 'battlePassSelectToken':
+                                    case 'selectableBonus':
+                                    case 'groups':
+                                    case 'lootBoxToken':
+                                    case 'customizations':
+                                    case 'styleProgress':
+                                    case 'crewSkins':
+                                    case 'goodies':
+                                        return `R.images.gui.maps.icons.quests.bonuses.${e}.${n}`;
                                     case 'premiumTank':
                                         return `R.images.gui.maps.icons.quests.bonuses.${e}.vehicles`;
                                     case 'styleProgressToken':
                                         return `R.images.gui.maps.icons.quests.bonuses.${e}.style_3d`;
                                     case 'collectionItem':
                                         return `R.images.gui.maps.icons.collectionItems.${o}.${n}`;
-                                    case 'newYearAlbumsAccess':
-                                        return `R.images.new_year.gui.maps.icons.newYear.rewards.${e}.albumsAccess`;
-                                    case 'nyFillers':
-                                        return `R.images.new_year.gui.maps.icons.newYear.rewards.${e}.fillers`;
-                                    case 'nyToyFragments':
-                                        return `R.images.new_year.gui.maps.icons.newYear.rewards.${e}.shards`;
-                                    case 'newYearSlot':
-                                        return `R.images.new_year.gui.maps.icons.newYear.rewards.${e}.slot`;
                                     default:
                                         return `R.images.gui.maps.icons.quests.bonuses.${e}.${t}`;
                                 }
@@ -2777,8 +2765,8 @@
                                 : a().createElement(
                                       'div',
                                       { className: Au, ref: s },
-                                      l !== Y.PROGRESSION_STEP &&
-                                          a().createElement(qu, {
+                                      l !== q.PROGRESSION_STEP &&
+                                          a().createElement(Yu, {
                                               className: 'Actions_text_5c',
                                               text: Ae(Be.finalStage, i, 'complete'),
                                           }),
@@ -2798,7 +2786,7 @@
                         title__welcome: 'Header_title__welcome_b2',
                     },
                     he = R.strings.winback.winbackRewardView,
-                    pe = [Y.SELECTED_REWARDS, Y.PROGRESSION_STEP],
+                    pe = [q.SELECTED_REWARDS, q.PROGRESSION_STEP],
                     be = (0, z.Pi)(() => {
                         const u = iu().model,
                             e = u.state.get(),
@@ -2808,30 +2796,30 @@
                             'div',
                             { className: ge.base },
                             pe.includes(e) &&
-                                a().createElement(qu, {
+                                a().createElement(Yu, {
                                     className: C()(ge.subTitle, ge.subTitle__top),
                                     text: Ae(he.title, r, 'inProgress'),
                                 }),
-                            e === Y.PROGRESSION_STEP &&
+                            e === q.PROGRESSION_STEP &&
                                 a().createElement(Iu, {
                                     text: Ae(he.subtitle, r, 'inProgress'),
                                     classMix: C()(ge.title, ge[`title__${e}`]),
                                     binding: { level: t },
                                 }),
-                            e === Y.SELECTED_REWARDS &&
-                                a().createElement(qu, {
+                            e === q.SELECTED_REWARDS &&
+                                a().createElement(Yu, {
                                     className: C()(ge.title, ge[`title__${e}`]),
                                     text: he.title.$dyn(e),
                                 }),
-                            e === Y.PROGRESSION_COMPLETED &&
+                            e === q.PROGRESSION_COMPLETED &&
                                 a().createElement(
                                     a().Fragment,
                                     null,
-                                    a().createElement(qu, {
+                                    a().createElement(Yu, {
                                         className: C()(ge.subTitle, ge.subTitle__top),
                                         text: Ae(he.subtitle, r, 'complete'),
                                     }),
-                                    a().createElement(qu, {
+                                    a().createElement(Yu, {
                                         className: C()(ge.title, ge[`title__${e}`]),
                                         text: he.title.winback.complete(),
                                     }),
@@ -3241,7 +3229,7 @@
                     Xe = ['I', 'IV', 'V', 'IX', 'X', 'XL', 'L', 'XC', 'C', 'CD', 'D', 'CM', 'M'],
                     ze = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3],
                     je = ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE()),
-                    Ye = (u) =>
+                    qe = (u) =>
                         je
                             ? `${u}`
                             : (function (u) {
@@ -3250,7 +3238,7 @@
                                       for (; u >= ze[t]; ) (e += Xe[t]), (u -= ze[t]);
                                   return e;
                               })(u),
-                    qe = {
+                    Ye = {
                         blackReal: 'FormatTextWithColorTags_blackReal_3c',
                         whiteReal: 'FormatTextWithColorTags_whiteReal_8a',
                         white: 'FormatTextWithColorTags_white_16',
@@ -3293,10 +3281,10 @@
                                 const u = r[0],
                                     i = u + l++ + u;
                                 (o = o.replace(t, `%(${i})`)),
-                                    (s[i] = qe[u]
+                                    (s[i] = Ye[u]
                                         ? a().createElement(
                                               'span',
-                                              { className: qe[u] },
+                                              { className: Ye[u] },
                                               a().createElement(Iu, { text: c, binding: e }),
                                           )
                                         : a().createElement(
@@ -3331,8 +3319,8 @@
                         priceDiscount: i,
                         expDiscount: o,
                     }) => {
-                        const l = r === q.SELECTABLE_VEHICLE_DISCOUNT,
-                            E = Ye(t);
+                        const l = r === Y.SELECTABLE_VEHICLE_DISCOUNT,
+                            E = qe(t);
                         return a().createElement(
                             Ge,
                             { tooltipArgs: Ee({ [j]: u }, Number(e), { ignoreShowDelay: !0 }) },
@@ -3409,8 +3397,8 @@
                         priceDiscount: A,
                         expDiscount: d,
                     }) => {
-                        const m = u === q.VEHICLE_FOR_RENT,
-                            F = u === q.VEHICLE_DISCOUNT,
+                        const m = u === Y.VEHICLE_FOR_RENT,
+                            F = u === Y.VEHICLE_DISCOUNT,
                             D = `R.images.gui.maps.shop.vehicles.c_${at[E]}.${Lu(n)}`,
                             B = `R.images.gui.maps.icons.filters.nations.${l}`,
                             g = Lu(i),
@@ -3449,7 +3437,7 @@
                                         className: rt.nation,
                                         style: { backgroundImage: `url('${B}')` },
                                     }),
-                                    Ye(s),
+                                    qe(s),
                                     a().createElement(
                                         'div',
                                         { className: rt.typeContainer },
@@ -3556,12 +3544,12 @@
                             s = lt[t][r],
                             i = n ? s : ot[t][r];
                         switch (u.name) {
-                            case q.VEHICLE_FOR_GIFT:
-                            case q.VEHICLE_DISCOUNT:
-                            case q.VEHICLE_FOR_RENT:
+                            case Y.VEHICLE_FOR_GIFT:
+                            case Y.VEHICLE_DISCOUNT:
+                            case Y.VEHICLE_FOR_RENT:
                                 return a().createElement(st, it({}, u, { size: s }));
-                            case q.SELECTABLE_VEHICLE_FOR_GIFT:
-                            case q.SELECTABLE_VEHICLE_DISCOUNT:
+                            case Y.SELECTABLE_VEHICLE_FOR_GIFT:
+                            case Y.SELECTABLE_VEHICLE_DISCOUNT:
                                 return a().createElement(tt, it({}, u, { size: s }));
                             default:
                                 return a().createElement(Ve, {
@@ -3697,7 +3685,7 @@
                         size: i,
                         className: o,
                     }) => {
-                        const l = u === q.VEHICLE_DISCOUNT,
+                        const l = u === Y.VEHICLE_DISCOUNT,
                             E = Lu(e).toLowerCase();
                         return a().createElement(
                             Ge,
@@ -3715,7 +3703,7 @@
                                         },
                                     }),
                                     l && a().createElement('div', { className: dt.discountIcon }),
-                                    a().createElement('div', { className: dt.levelMark }, Ye(n)),
+                                    a().createElement('div', { className: dt.levelMark }, qe(n)),
                                 ),
                                 a().createElement('div', { className: dt.name }, s),
                             ),
@@ -3738,12 +3726,12 @@
                 const Dt = ({ reward: u }) => {
                         const e = v().mediaSize >= p.Medium ? Zu.Big : Zu.Small;
                         switch (u.name) {
-                            case q.SELECTABLE_VEHICLE_DISCOUNT:
-                            case q.SELECTABLE_VEHICLE_FOR_GIFT:
+                            case Y.SELECTABLE_VEHICLE_DISCOUNT:
+                            case Y.SELECTABLE_VEHICLE_FOR_GIFT:
                                 return null;
-                            case q.VEHICLE_FOR_RENT:
-                            case q.VEHICLE_FOR_GIFT:
-                            case q.VEHICLE_DISCOUNT:
+                            case Y.VEHICLE_FOR_RENT:
+                            case Y.VEHICLE_FOR_GIFT:
+                            case Y.VEHICLE_DISCOUNT:
                                 return a().createElement(mt, Ft({}, u, { size: e, className: At }));
                             default:
                                 return a().createElement(_t, Ft({}, Re(u, e), { size: e, className: At }));

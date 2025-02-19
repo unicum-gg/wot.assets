@@ -107,5 +107,5 @@
 
 .SimpleTextApp_formatText_fa {
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
 }

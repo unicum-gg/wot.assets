@@ -287,12 +287,20 @@
 }
 
 .App_base_1a {
-    width: 413rem;
-    height: 510rem;
+    width: 410rem;
+    height: 451rem;
     position: relative;
 }
+
+.App_base__completed_52 {
+    height: 477rem;
+}
+
+.App_base__completedPerfect_27 {
+    height: 212rem;
+}
 .App_bg_e3 {
-    width: 413rem;
+    width: 410rem;
     height: 160rem;
     background: url('R.images.gui.maps.icons.pm_announce.tooltips.new.bg') no-repeat center / cover;
     position: absolute;
@@ -301,7 +309,7 @@
 .App_content_7d {
     width: 100%;
     height: 100%;
-    padding: 30rem 20rem 28rem;
+    padding: 30rem 12rem 26rem 20rem;
     position: absolute;
     z-index: 2;
 }
@@ -310,8 +318,10 @@
     font-size: 18rem;
     font-weight: 700;
     line-height: 1.1;
-    width: 227rem;
     margin-bottom: 46rem;
+}
+.App_header__completedPerfect_4c {
+    margin-bottom: 41rem;
 }
 .App_subTitle_5d {
     color: #e9e2bf;
@@ -344,9 +354,31 @@
     font-weight: 400;
     line-height: 1.3;
 }
+.App_operationText__done_73,
+.App_operationText__divider_0d {
+    margin-right: 2rem;
+}
 .App_operationText__name_ea {
-    width: 165rem;
+    width: 168rem;
     margin-right: 4rem;
+}
+.App_operationText__completed_a8 {
+    color: #7ab300;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+.App_operationText__active_99 {
+    color: #feab34;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+.App_operationText__empty_0b {
+    color: #8c8c7e;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
 }
 .App_dot_29 {
     width: 18rem;
@@ -356,14 +388,12 @@
 }
 .App_rewardsSection_1e {
     width: 100%;
-    height: 180rem;
-    margin-bottom: 8rem;
+    height: 150rem;
     padding-top: 16rem;
     position: relative;
 }
 .App_rewardsWrapper_de {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     position: absolute;
@@ -378,6 +408,9 @@
 }
 .App_reward__lastInRow_e2 {
     margin-right: 0;
+}
+.App_reward__completed_5b {
+    opacity: 0.7;
 }
 .App_rewardIcon_54 {
     width: 80rem;
@@ -397,19 +430,8 @@
     font-weight: 400;
     line-height: 1.3;
 }
-.App_anotherRewards_6c {
-    color: #8c8c7e;
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
-    width: 100%;
-    text-align: center;
-    position: absolute;
-    bottom: 12rem;
-    z-index: 2;
-}
 .App_ribbon_5b {
-    width: 413rem;
+    width: 410rem;
     height: 180rem;
     background: url('R.images.gui.maps.icons.pm_announce.tooltips.old.ribbon') no-repeat center / cover;
     position: absolute;
@@ -418,37 +440,86 @@
     z-index: 1;
 }
 .App_labelIcon_bf {
-    width: 18rem;
+    width: 16rem;
     height: 18rem;
     background: url('R.images.gui.maps.icons.pm_announce.tooltips.old.locked') no-repeat center / cover;
+}
+.App_labelIcon__completed_6b {
+    background-image: url('R.images.gui.maps.icons.pm_announce.tooltips.old.check');
+    transform: translateY(2rem);
+}
+.App_labelIcon__locked_41 {
+    width: 18rem;
+    height: 18rem;
+    background-image: url('R.images.gui.maps.icons.pm_announce.tooltips.old.locked');
 }
 .App_divider_60 {
     width: 363rem;
     height: 9rem;
     margin-left: 3rem;
-    margin-bottom: 6rem;
+    margin-bottom: 13rem;
     background: url('R.images.gui.maps.icons.pm_announce.tooltips.old.divider') no-repeat center / cover;
+}
+.App_base__completed_52 .App_divider_60 {
+    margin-bottom: 6rem;
+}
+.App_base__completedPerfect_27 .App_divider_60 {
+    margin-bottom: 16rem;
 }
 .App_footer_65 {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
     width: 100%;
+    margin-left: -8rem;
 }
-.App_footerIcon_40 {
-    width: 38rem;
-    height: 38rem;
-    margin-left: -6rem;
-    background: url('R.images.gui.maps.icons.pm_announce.tooltips.new.timer') no-repeat center / cover;
+.App_footerLabel_e8 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
-.App_footerText_d9 {
+.App_base__completed_52 .App_footerLabel_e8 {
+    margin-bottom: 2rem;
+}
+.App_base__completedPerfect_27 .App_footerLabel_e8 {
+    margin-bottom: 4rem;
+}
+.App_footerLabelIcon_20 {
+    width: 24rem;
+    height: 24rem;
+    margin-right: 4rem;
+    background: url('R.images.gui.maps.icons.pm_announce.tooltips.old.flag') no-repeat center / cover;
+}
+.App_base__completedPerfect_27 .App_footerLabelIcon_20 {
+    background-image: url('R.images.gui.maps.icons.battlePass.chapter_choice.double_check');
+}
+.App_footerLabelText_90 {
     color: #ffdd99;
     font-size: 16rem;
     font-weight: 400;
     line-height: 1.25;
-    margin-left: -3rem;
-    text-shadow:
-        0rem 0rem 4rem rgba(255, 127, 0, 0.25),
-        0rem 0rem 8rem #ff2a00,
-        0rem 0rem 15rem #e52;
+}
+.App_base__completedPerfect_27 .App_footerLabelText_90 {
+    color: #7ab300;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+.App_footerBottomWrapper_bb {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.App_footerBottomText_d1 {
+    color: #8c8c7e;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 280rem;
+    text-align: center;
+    opacity: 0.7;
 }
