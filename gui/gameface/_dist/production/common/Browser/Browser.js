@@ -87,7 +87,7 @@
                         setRTPC: () => a.E,
                     });
                 var r = n(527),
-                    a = n(993);
+                    a = n(493);
                 function o(e = 'px') {
                     return 'rem' === e ? viewEnv.getClientSizeRem() : viewEnv.getClientSizePx();
                 }
@@ -106,7 +106,7 @@
                 }
                 n.d(t, { R: () => r });
             },
-            993: (e, t, n) => {
+            493: (e, t, n) => {
                 function r(e) {
                     engine.call('PlaySound', e).catch((t) => {
                         console.error(`playSound('${e}'): `, t);
@@ -189,8 +189,8 @@
                         forceTriggerMouseMove: () => L,
                         freezeTextureBeforeResize: () => f,
                         getBrowserTexturePath: () => u,
-                        getDisplayStatus: () => C,
-                        getFontNames: () => M,
+                        getDisplayStatus: () => M,
+                        getFontNames: () => C,
                         getScale: () => w,
                         getSize: () => v,
                         getViewGlobalPosition: () => g,
@@ -263,10 +263,10 @@
                 function L() {
                     viewEnv.forceTriggerMouseMove();
                 }
-                function C() {
+                function M() {
                     return viewEnv.getShowingStatus();
                 }
-                const M = (() => {
+                const C = (() => {
                         let e = [];
                         return () => (0 === e.length && (e = Object.keys(viewEnv.getFontsConfig())), e);
                     })(),
@@ -456,7 +456,7 @@
             572: (__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
                 __webpack_require__.d(__webpack_exports__, { Z: () => __WEBPACK_DEFAULT_EXPORT__ });
                 var _DataTracker__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(358),
-                    _index__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(364);
+                    _index__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(179);
                 class ViewModel {
                     constructor(path, watchingFields = []) {
                         (this.dataTracker = void 0),
@@ -495,7 +495,7 @@
                 }
                 const __WEBPACK_DEFAULT_EXPORT__ = ViewModel;
             },
-            364: (e, t, n) => {
+            179: (e, t, n) => {
                 n.d(t, { ry: () => E, Sy: () => h });
                 class r {
                     constructor() {
@@ -737,9 +737,9 @@
                 window.ViewEnvHelper = L;
             },
             73: (e, t, n) => {
-                var r = n(179),
+                var r = n(363),
                     a = n.n(r),
-                    o = n(493),
+                    o = n(533),
                     i = n.n(o);
                 let s, c, l;
                 !(function (e) {
@@ -826,8 +826,8 @@
                     for (var n = 0, r = Array(t); n < t; n++) r[n] = e[n];
                     return r;
                 }
-                const C = (e) => (0 === e ? window : window.subViews.get(e));
-                var M = n(946);
+                const M = (e) => (0 === e ? window : window.subViews.get(e));
+                var C = n(946);
                 const k = ((e, t) => {
                         const n = (0, r.createContext)({});
                         return [
@@ -838,7 +838,7 @@
                                         const i = (function ({
                                                 initializer: e = !0,
                                                 rootId: t = 0,
-                                                getRoot: n = C,
+                                                getRoot: n = M,
                                                 context: r = 'model',
                                             } = {}) {
                                                 const a = new Map();
@@ -1011,7 +1011,7 @@
                     })(
                         ({ observableModel: e }) => {
                             const t = e.object(),
-                                n = (0, M.Om)(() =>
+                                n = (0, C.Om)(() =>
                                     (function ({ pageState: e, browserState: t, texState: n }) {
                                         return t === s.Initialization
                                             ? d.Initialization
@@ -1041,9 +1041,9 @@
                     P = (e) => {
                         (0, r.useEffect)(() => e, []);
                     };
-                var N = n(403),
-                    x = n(483),
-                    A = n.n(x);
+                var x = n(403),
+                    N = n(483),
+                    A = n.n(N);
                 const F = 0;
                 const B = 'BrowserView_base_6b',
                     D = 'BrowserView_texture_17',
@@ -1531,7 +1531,7 @@
                         Oe.apply(null, arguments)
                     );
                 }
-                const Le = (0, N.Pi)(function (e) {
+                const Le = (0, x.Pi)(function (e) {
                         const t = e.defaultWaitingText,
                             n = e.className,
                             o = e.waitingClassName,
@@ -1551,8 +1551,8 @@
                             y = h.controls,
                             O = p.root.get(),
                             L = O.id,
-                            C = O.httpStatusCode,
-                            M = O.waitingMessage,
+                            M = O.httpStatusCode,
+                            C = O.waitingMessage,
                             k = p.getState(),
                             T = l || k === d.Loaded;
                         var P;
@@ -1584,7 +1584,7 @@
                                 : e;
                         }, [T, y, E, m, g, f, b, w]);
                         if (v(L)) return null;
-                        const N = ve(e)
+                        const x = ve(e)
                                 ? (function (e, t) {
                                       const n = {};
                                       return (
@@ -1595,7 +1595,7 @@
                                       );
                                   })(e, ['width', 'height'])
                                 : {},
-                            x = M.length > 0 ? M : t;
+                            N = C.length > 0 ? C : t;
                         return e.isFullSize
                             ? a().createElement(
                                   ye,
@@ -1603,9 +1603,9 @@
                                       id: L,
                                       className: n,
                                       waitingClassName: o,
-                                      statusCode: C,
+                                      statusCode: M,
                                       viewState: k,
-                                      waitingText: x,
+                                      waitingText: N,
                                       renderStateDisplay: u,
                                       onMouseEnter: y.focus,
                                       onMouseLeave: y.blur,
@@ -1613,21 +1613,21 @@
                               )
                             : a().createElement(
                                   fe,
-                                  Oe({}, R, N, {
+                                  Oe({}, R, x, {
                                       id: L,
                                       className: n,
                                       waitingClassName: o,
-                                      statusCode: C,
+                                      statusCode: M,
                                       viewState: k,
-                                      waitingText: x,
+                                      waitingText: N,
                                       renderStateDisplay: u,
                                       onMouseEnter: y.focus,
                                       onMouseLeave: y.blur,
                                   }),
                               );
                     }),
-                    Ce = ['options', 'mocks', 'mode'];
-                const Me = (0, r.memo)(function (e) {
+                    Me = ['options', 'mocks', 'mode'];
+                const Ce = (0, r.memo)(function (e) {
                     let t = e.options,
                         n = e.mocks,
                         r = e.mode,
@@ -1640,11 +1640,11 @@
                                     n[r] = e[r];
                                 }
                             return n;
-                        })(e, Ce);
+                        })(e, Me);
                     return a().createElement(T, { options: t, mocks: n, mode: r }, a().createElement(Le, o));
                 });
                 var ke = n(521),
-                    Te = n(364);
+                    Te = n(179);
                 const Se = (e) => {
                     console.error(e.type + ': useKeydownListener hook :: Callback is not defined');
                 };
@@ -1670,8 +1670,8 @@
                         Pe(e, Te.Sy, !0);
                     })(ke.n.ESCAPE);
                 }
-                const Ne = 'BrowserApp_base_de',
-                    xe = {
+                const xe = 'BrowserApp_base_de',
+                    Ne = {
                         getter: (e) => ({
                             id: 1,
                             httpStatusCode: 200,
@@ -1704,14 +1704,20 @@
                         Re(),
                         a().createElement(
                             'div',
-                            { className: Ne, ref: t },
-                            a().createElement(Me, Ae({}, b(n), { displayContentWhenLoading: !1, mocks: xe })),
+                            { className: xe, ref: t },
+                            a().createElement(Ce, Ae({}, b(n), { displayContentWhenLoading: !1, mocks: Ne })),
                         )
                     );
                 };
                 engine.whenReady.then(() => {
                     i().render(a().createElement(Fe, null), document.getElementById('root'));
                 });
+            },
+            363: (e) => {
+                e.exports = React;
+            },
+            533: (e) => {
+                e.exports = ReactDOM;
             },
         },
         __webpack_module_cache__ = {},

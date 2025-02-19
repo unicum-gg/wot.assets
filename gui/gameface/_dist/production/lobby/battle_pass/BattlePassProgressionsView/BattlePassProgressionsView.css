@@ -163,7 +163,7 @@ body {
 }
 .BattlePassProgressionsViewContent_base__extra_e2 {
     --widget-size: 418rem;
-    background-color: #151d2c;
+    background-color: #151a22;
     background-position: 100% 50%;
     background-size: 1640rem 820rem;
 }
@@ -182,6 +182,9 @@ body {
 .mediaExtraLarge .BattlePassProgressionsViewContent_base__extra_e2 {
     --widget-size: 931rem;
     background-size: 3800rem 1900rem;
+}
+.BattlePassProgressionsViewContent_base__extraChapter_17 {
+    background-color: #0a1316;
 }
 .BattlePassProgressionsViewContent_header_76 {
     margin-top: 32rem;
@@ -2261,6 +2264,30 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     in JS 8000 reserved like anchor for start optimization
 */
 /* stylelint-disable-line */
+.ProgressBarDeltaSimple_base_6c {
+    width: 0;
+    height: 100%;
+    position: absolute;
+    top: 0;
+}
+.ProgressBarDeltaSimple_delta_99 {
+    width: 0;
+    max-width: 8001px;
+    height: 100%;
+    box-shadow: var(--progress-delta-shadow);
+    background-color: var(--progress-delta-color);
+    position: absolute;
+    bottom: 0;
+    transform-origin: right center;
+    transition-timing-function: cubic-bezier(1, 0, 0.92, 1), cubic-bezier(0.21, 0.61, 0.35, 1);
+    transition-property: width, transform;
+}
+
+/*
+    Gameface can't calculate gradient biggest than 8128px
+    in JS 8000 reserved like anchor for start optimization
+*/
+/* stylelint-disable-line */
 .ProgressLineImpose_base_80 {
     max-width: 8001px;
     height: 100%;
@@ -2345,30 +2372,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     width: 44rem;
     height: 43rem;
     background-image: var(--progress-glow-small);
-}
-
-/*
-    Gameface can't calculate gradient biggest than 8128px
-    in JS 8000 reserved like anchor for start optimization
-*/
-/* stylelint-disable-line */
-.ProgressBarDeltaSimple_base_6c {
-    width: 0;
-    height: 100%;
-    position: absolute;
-    top: 0;
-}
-.ProgressBarDeltaSimple_delta_99 {
-    width: 0;
-    max-width: 8001px;
-    height: 100%;
-    box-shadow: var(--progress-delta-shadow);
-    background-color: var(--progress-delta-color);
-    position: absolute;
-    bottom: 0;
-    transform-origin: right center;
-    transition-timing-function: cubic-bezier(1, 0, 0.92, 1), cubic-bezier(0.21, 0.61, 0.35, 1);
-    transition-property: width, transform;
 }
 
 /*
@@ -3376,7 +3379,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     filter: grayscale(0%);
 }
 
-.PointAward_base_6f {
+.TalerAward_base_ef {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -3387,50 +3390,274 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     position: relative;
     cursor: pointer;
 }
-.mediaMedium .PointAward_base_6f {
+.mediaMedium .TalerAward_base_ef {
     height: 140rem;
 }
-.PointAward_base__big_dc {
+.TalerAward_base__big_6b {
     width: 100rem;
     height: 175rem;
 }
-.mediaMedium .PointAward_base__big_dc {
+.mediaMedium .TalerAward_base__big_6b {
     width: 160rem;
     height: 280rem;
 }
 
-.PointAward_locked_7c {
-    width: 24rem;
-    height: 24rem;
-    background: url('R.images.gui.maps.icons.battlePass.awards_widget.lockHover_small_s') no-repeat center / contain;
-    opacity: 0.7;
-    position: absolute;
-    bottom: 3rem;
-    z-index: 3;
-    transition: opacity 0.3s linear;
+.TicketAward_base_76 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80rem;
+    height: 95rem;
+    isolation: isolate;
+    position: relative;
+    cursor: pointer;
 }
 
-.mediaMedium .PointAward_locked_7c {
-    background-image: url('R.images.gui.maps.icons.battlePass.awards_widget.lockHover_small_m');
-    bottom: 4rem;
+.mediaMedium .TicketAward_base_76 {
+    height: 140rem;
 }
 
-.PointAward_base__big_dc .PointAward_locked_7c {
-    width: 32rem;
-    height: 32rem;
-    background-image: url('R.images.gui.maps.icons.battlePass.awards_widget.lockHover_big_s');
-    bottom: 8rem;
+.TicketAward_base__big_91 {
+    width: 100rem;
+    height: 175rem;
 }
 
-.mediaMedium .PointAward_base__big_dc .PointAward_locked_7c {
-    width: 48rem;
+.mediaMedium .TicketAward_base__big_91 {
+    width: 160rem;
+    height: 280rem;
+}
+
+.TicketAward_base__hasAppearAnimation_09 {
+    opacity: 0;
+    visibility: hidden;
+    animation: TicketAward_baseAppear_ef 0.3s ease-in-out 1.2s forwards;
+}
+.TicketAward_shine_46 {
+    width: 27rem;
     height: 48rem;
-    background-image: url('R.images.gui.maps.icons.battlePass.awards_widget.lockHover_big_m');
-    bottom: 13rem;
+    background: url('R.images.gui.maps.icons.battlePass.awards_widget.ticket_borderShine_small_s') no-repeat center /
+        contain;
+    position: absolute;
+    top: 0;
+    animation: TicketAward_shine_small_s_22 2s linear infinite alternate;
+    pointer-events: none;
 }
-
-.PointAward_base__hover_50 .PointAward_locked_7c {
+.mediaMedium .TicketAward_shine_46 {
+    width: 31rem;
+    height: 72rem;
+    background-image: url('R.images.gui.maps.icons.battlePass.awards_widget.ticket_borderShine_small_m');
+    animation: TicketAward_shine_small_m_5b 2s linear infinite alternate;
+}
+.TicketAward_base__big_91 .TicketAward_shine_46 {
+    width: 45rem;
+    height: 85rem;
+    background-image: url('R.images.gui.maps.icons.battlePass.awards_widget.ticket_borderShine_big_s');
+    animation: TicketAward_shine_big_s_43 2s linear infinite alternate;
+}
+.mediaMedium .TicketAward_base__big_91 .TicketAward_shine_46 {
+    width: 46rem;
+    height: 116rem;
+    background-image: url('R.images.gui.maps.icons.battlePass.awards_widget.ticket_borderShine_big_m');
+    animation: TicketAward_shine_big_m_80 2s linear infinite alternate;
+}
+.TicketAward_shine__left_15 {
+    left: -13rem;
+}
+.mediaMedium .TicketAward_shine__left_15 {
+    left: -14rem;
+}
+.TicketAward_base__big_91 .TicketAward_shine__left_15 {
+    left: -21rem;
+}
+.mediaMedium .TicketAward_base__big_91 .TicketAward_shine__left_15 {
+    left: -22rem;
+}
+.TicketAward_shine__right_4b {
+    right: -13rem;
+}
+.mediaMedium .TicketAward_shine__right_4b {
+    right: -14rem;
+    animation-direction: alternate-reverse;
+}
+.TicketAward_base__big_91 .TicketAward_shine__right_4b {
+    right: -21rem;
+}
+.mediaMedium .TicketAward_base__big_91 .TicketAward_shine__right_4b {
+    right: -22rem;
+    animation-direction: alternate-reverse;
+}
+.TicketAward_arrow_d4 {
+    width: 68rem;
+    height: 90rem;
+    background: url('R.images.gui.maps.icons.battlePass.awards_widget.ticket_arrow_small_s') no-repeat center / contain;
+    opacity: 0;
+    position: absolute;
+    bottom: 0;
+    z-index: 3;
+    transition: all 0.3s;
+}
+.mediaMedium .TicketAward_arrow_d4 {
+    width: 68rem;
+    height: 90rem;
+    background-image: url('R.images.gui.maps.icons.battlePass.awards_widget.ticket_arrow_small_m');
+}
+.TicketAward_base_76:hover .TicketAward_arrow_d4 {
     opacity: 1;
+    transform: translateY(5rem);
+}
+.TicketAward_base__big_91 .TicketAward_arrow_d4 {
+    width: 86rem;
+    height: 113rem;
+    background-image: url('R.images.gui.maps.icons.battlePass.awards_widget.ticket_arrow_big_s');
+    opacity: 0;
+    transition: all 0.3s;
+}
+.mediaMedium .TicketAward_base__big_91 .TicketAward_arrow_d4 {
+    width: 136rem;
+    height: 180rem;
+    background-image: url('R.images.gui.maps.icons.battlePass.awards_widget.ticket_arrow_big_m');
+}
+.TicketAward_blinkShape_17 {
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 100%, 0 80%, 0 0);
+    position: absolute;
+    top: 0;
+    left: 0;
+    mask-image: linear-gradient(180deg, transparent 0%, #000000 50%);
+    pointer-events: none;
+}
+.mediaMedium .TicketAward_blinkShape_17 {
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%, 0 0);
+}
+.TicketAward_base_76:hover .TicketAward_blinkShape_17 {
+    mask-image: none;
+}
+.TicketAward_base__big_91 .TicketAward_blinkShape_17 {
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%, 0 0);
+}
+.mediaMedium .TicketAward_base__big_91 .TicketAward_blinkShape_17 {
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%, 0 0);
+}
+.TicketAward_blink_1b {
+    width: 14rem;
+    height: 300rem;
+    background: #fff;
+    filter: blur(8px);
+    mix-blend-mode: overlay;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    z-index: 99;
+    transform: rotate(45deg) translate(-200rem, 0rem);
+    transform-origin: center;
+    animation: TicketAward_blinker_1e 5s linear infinite;
+}
+.TicketAward_base__big_91 .TicketAward_blink_1b {
+    width: 28rem;
+}
+@keyframes TicketAward_baseAppear_ef {
+    0% {
+        opacity: 0;
+        visibility: visible;
+        transform: translateY(-30rem);
+    }
+
+    100% {
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+    }
+}
+@keyframes TicketAward_blinker_1e {
+    0% {
+        transform: rotate(45deg) translate(-200rem, 0rem);
+    }
+
+    30% {
+        transform: rotate(45deg) translate(200rem, 0rem);
+    }
+
+    100% {
+        transform: rotate(45deg) translate(200rem, 0rem);
+    }
+}
+@keyframes TicketAward_shine_small_s_22 {
+    0% {
+        opacity: 0;
+        transform: translateY(0);
+    }
+
+    30% {
+        opacity: 1;
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(30%);
+    }
+}
+@keyframes TicketAward_shine_small_m_5b {
+    0% {
+        opacity: 0;
+        transform: translateY(0);
+    }
+
+    30% {
+        opacity: 1;
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(60%);
+    }
+}
+@keyframes TicketAward_shine_big_s_43 {
+    0% {
+        opacity: 0;
+        transform: translateY(0);
+    }
+
+    30% {
+        opacity: 1;
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(90%);
+    }
+}
+@keyframes TicketAward_shine_big_m_80 {
+    0% {
+        opacity: 0;
+        transform: translateY(0);
+    }
+
+    30% {
+        opacity: 1;
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(150%);
+    }
 }
 
 /* colors*/
@@ -3453,18 +3680,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     margin-right: 20rem;
 }
 
-.AwardsWrapper_award__last_b0 {
-    margin-right: 0;
-}
-
-.mediaSmallWidth .AwardsWrapper_award__last_b0 {
-    margin-right: 5rem;
-}
-
-.mediaMediumWidth .AwardsWrapper_award__last_b0 {
-    margin-right: 0;
-}
-
 .AwardsWrapper_base__big_6b .AwardsWrapper_award_49 {
     margin-right: 20rem;
 }
@@ -3473,7 +3688,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     margin-right: 30rem;
 }
 
-.AwardsWrapper_base__big_6b .AwardsWrapper_award__last_b0 {
+.AwardsWrapper_base_e5 .AwardsWrapper_award_49:last-child {
     margin-right: 0;
 }
 
@@ -4976,7 +5191,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 /* vertical offset for positioning progression's progressbar at the center of screen */
 .ClosedStatus_base_8a {
     display: flex;
-    flex-direction: column;
     align-items: center;
     position: relative;
     z-index: 1;
@@ -4988,20 +5202,14 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     opacity: 0.6;
 }
 .ClosedStatus_icon__current_44 {
-    width: 36rem;
-    height: 36rem;
-    margin-top: -22rem;
-    background-image: url('R.images.gui.maps.icons.battlePass.progression.icon_lock_current_small');
+    width: 28rem;
+    height: 28rem;
+    background-image: url('R.images.gui.maps.icons.battlePass.progression.icon_lock_current');
     opacity: 1;
 }
 .mediaMedium .ClosedStatus_icon__current_44 {
-    width: 56rem;
-    height: 56rem;
-    margin-top: -42rem;
-    background-image: url('R.images.gui.maps.icons.battlePass.progression.icon_lock_current');
-}
-.mediaLarge .ClosedStatus_icon__current_44 {
-    margin-top: -20rem;
+    width: 40rem;
+    height: 40rem;
 }
 .ClosedStatus_icon__exit_fd {
     opacity: 0.6;
@@ -5025,18 +5233,17 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 .ClosedStatus_title_a3 {
     color: #fd9;
-    font-size: 14rem;
+    font-size: 12rem;
     font-weight: 400;
     line-height: 1.3;
-    margin-top: -4rem;
     line-height: 1;
     text-shadow: 1rem 0 16px #f00;
 }
 .mediaMedium .ClosedStatus_title_a3 {
-    margin-top: -12rem;
-}
-.mediaLarge .ClosedStatus_title_a3 {
-    margin-top: -1rem;
+    color: #fd9;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
 }
 .ClosedStatus_title__exit_16 {
     opacity: 1;
@@ -5241,12 +5448,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 .Status_base__inProgress_b8 {
     height: 40rem;
-}
-.Status_base__premiumInProgress_5e {
-    padding-bottom: 8rem;
-}
-.mediaLarge .Status_base__premiumInProgress_5e {
-    padding-bottom: 16rem;
 }
 .Status_iconContainer_2f {
     display: flex;
@@ -5557,6 +5758,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     line-height: 1.3;
     margin-top: -13rem;
     text-align: center;
+    position: relative;
     z-index: 1;
 }
 
@@ -5583,6 +5785,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     color: #ffc363;
 }
 
+.Reward_info__bptaler_82,
 .Reward_info__crystal_36 {
     color: #c9c9b6;
 }
@@ -5733,6 +5936,16 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 
 .mediaMedium .Rewards_base__column_5d .Rewards_reward_1f {
     margin: 3rem 5rem;
+}
+
+.Rewards_base__single_f9 .Rewards_reward_1f {
+    width: 80rem;
+    height: 80rem;
+}
+
+.mediaMedium .Rewards_base__single_f9 .Rewards_reward_1f {
+    width: 180rem;
+    height: 135rem;
 }
 
 .Rewards_shine_3f {

@@ -486,8 +486,8 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .ProgressiveItemUpgradeAnimation_arrow_2e {
-    background: url('R.images.gui.maps.icons.customization.gf_progressive_items_reward_view.arrow') no-repeat center top /
-        138rem 183rem;
+    background: url('R.images.gui.maps.icons.customization.gf_progressive_items_reward_view.arrow') no-repeat center
+        top / 138rem 183rem;
     opacity: 0;
     mix-blend-mode: color-dodge;
     position: absolute;

@@ -24,12 +24,15 @@
                         'gum',
                     );
                 })();
-                A(6179);
+                A(7363);
                 A(6583);
             },
             6583: (u, F, A) => {
-                A(6179), A(6483);
+                A(7363), A(6483);
                 R.images.gui.maps.icons.vehicleTypes;
+            },
+            7363: (u) => {
+                u.exports = React;
             },
         },
         A = {};

@@ -186,7 +186,7 @@
                         displayStatusIs: () => R,
                         events: () => o.U,
                         extraSize: () => L,
-                        forceTriggerMouseMove: () => T,
+                        forceTriggerMouseMove: () => y,
                         freezeTextureBeforeResize: () => h,
                         getBrowserTexturePath: () => c,
                         getDisplayStatus: () => P,
@@ -194,13 +194,13 @@
                         getScale: () => p,
                         getSize: () => v,
                         getViewGlobalPosition: () => w,
-                        isEventHandled: () => y,
-                        isFocused: () => g,
-                        pxToRem: () => b,
-                        remToPx: () => m,
+                        isEventHandled: () => T,
+                        isFocused: () => f,
+                        pxToRem: () => m,
+                        remToPx: () => b,
                         resize: () => E,
                         sendEvent: () => a.qP,
-                        setAnimateWindow: () => f,
+                        setAnimateWindow: () => g,
                         setEventHandled: () => O,
                         setInputPaddingsRem: () => d,
                         setSidePaddingsRem: () => u,
@@ -234,7 +234,7 @@
                 }
                 function w(e = 'rem') {
                     const t = viewEnv.getViewGlobalPositionRem();
-                    return 'rem' === e ? t : { x: m(t.x), y: m(t.y) };
+                    return 'rem' === e ? t : { x: b(t.x), y: b(t.y) };
                 }
                 function h() {
                     viewEnv.freezeTextureBeforeResize();
@@ -242,25 +242,25 @@
                 function p() {
                     return viewEnv.getScale();
                 }
-                function b(e) {
+                function m(e) {
                     return viewEnv.pxToRem(e);
                 }
-                function m(e) {
+                function b(e) {
                     return viewEnv.remToPx(e);
                 }
-                function f(e, t) {
+                function g(e, t) {
                     viewEnv.setAnimateWindow(e, t);
                 }
-                function g() {
+                function f() {
                     return viewEnv.isFocused();
                 }
                 function O() {
                     return viewEnv.setEventHandled();
                 }
-                function y() {
+                function T() {
                     return viewEnv.isEventHandled();
                 }
-                function T() {
+                function y() {
                     viewEnv.forceTriggerMouseMove();
                 }
                 function P() {
@@ -595,7 +595,7 @@
                             return t.apply(this, arguments);
                         };
                     })(),
-                    b = (e, t) => {
+                    m = (e, t) => {
                         const n = 'GFViewEventProxy';
                         if (void 0 !== t) {
                             const r = t.args,
@@ -634,26 +634,26 @@
                         } else viewEnv.handleViewEvent({ __Type: n, type: e });
                         var i;
                     },
-                    m = () => b(s.CLOSE),
-                    f = (e, t) => {
+                    b = () => m(s.CLOSE),
+                    g = (e, t) => {
                         e.keyCode === u.n.ESCAPE && t();
                     };
-                var g = n(7572);
+                var f = n(7572);
                 const O = r.instance,
-                    y = {
+                    T = {
                         DataTracker: o.Z,
-                        ViewModel: g.Z,
+                        ViewModel: f.Z,
                         ViewEventType: s,
                         NumberFormatType: _,
                         RealFormatType: d,
                         TimeFormatType: c,
                         DateFormatType: l,
                         makeGlobalBoundingBox: h,
-                        sendMoveEvent: (e) => b(s.MOVE, { isMouseEvent: !0, on: e }),
-                        sendCloseEvent: m,
-                        sendClosePopOverEvent: () => b(s.POP_OVER, { on: !1 }),
+                        sendMoveEvent: (e) => m(s.MOVE, { isMouseEvent: !0, on: e }),
+                        sendCloseEvent: b,
+                        sendClosePopOverEvent: () => m(s.POP_OVER, { on: !1 }),
                         sendShowContextMenuEvent: (e, t, n = 0) => {
-                            b(s.CONTEXT_MENU, { isMouseEvent: !0, contentID: e, on: !0, decoratorID: n, args: t });
+                            m(s.CONTEXT_MENU, { isMouseEvent: !0, contentID: e, on: !0, decoratorID: n, args: t });
                         },
                         sendShowPopOverEvent: (e, t, n, i, r = R.invalid('resId'), o) => {
                             const a = v.O.view.getViewGlobalPosition(),
@@ -668,7 +668,7 @@
                                     width: v.O.view.pxToRem(l),
                                     height: v.O.view.pxToRem(u),
                                 };
-                            b(s.POP_OVER, {
+                            m(s.POP_OVER, {
                                 isMouseEvent: !0,
                                 contentID: e,
                                 decoratorID: i || R.invalid('resId'),
@@ -680,15 +680,15 @@
                             });
                         },
                         addEscapeListener: (e) => {
-                            const t = (t) => f(t, e);
+                            const t = (t) => g(t, e);
                             return (
                                 window.addEventListener('keydown', t), () => window.removeEventListener('keydown', t)
                             );
                         },
                         closeOnEsc: (e) => {
-                            f(e, m);
+                            g(e, b);
                         },
-                        handleViewEvent: b,
+                        handleViewEvent: m,
                         onBindingsReady: p,
                         onLayoutReady: () =>
                             new Promise((e) => {
@@ -722,7 +722,7 @@
                         SystemLocale: a.Z5,
                         UserLocale: a.cy,
                     };
-                window.ViewEnvHelper = y;
+                window.ViewEnvHelper = T;
             },
             8613: (e, t, n) => {
                 n.d(t, { Z5: () => i, cy: () => r });
@@ -741,7 +741,7 @@
                     };
             },
             1693: (e, t, n) => {
-                var i = n(6179),
+                var i = n(7363),
                     r = n.n(i),
                     o = (n(6483), n(9916));
                 class a extends r().PureComponent {
@@ -754,6 +754,9 @@
                     }
                 }
                 a.defaultProps = { format: 'integral' };
+            },
+            7363: (e) => {
+                e.exports = React;
             },
         },
         __webpack_module_cache__ = {},
@@ -797,14 +800,6 @@
                     !__webpack_require__.o(e, n) &&
                     Object.defineProperty(e, n, { enumerable: !0, get: t[n] });
         }),
-        (__webpack_require__.g = (function () {
-            if ('object' == typeof globalThis) return globalThis;
-            try {
-                return this || new Function('return this')();
-            } catch (e) {
-                if ('object' == typeof window) return window;
-            }
-        })()),
         (__webpack_require__.o = (e, t) => Object.prototype.hasOwnProperty.call(e, t)),
         (__webpack_require__.r = (e) => {
             'undefined' != typeof Symbol &&

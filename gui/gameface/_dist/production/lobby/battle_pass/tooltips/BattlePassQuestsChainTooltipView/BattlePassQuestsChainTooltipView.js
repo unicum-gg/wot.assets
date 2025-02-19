@@ -189,8 +189,8 @@
                         forceTriggerMouseMove: () => P,
                         freezeTextureBeforeResize: () => E,
                         getBrowserTexturePath: () => d,
-                        getDisplayStatus: () => T,
-                        getFontNames: () => R,
+                        getDisplayStatus: () => R,
+                        getFontNames: () => T,
                         getScale: () => h,
                         getSize: () => v,
                         getViewGlobalPosition: () => m,
@@ -263,10 +263,10 @@
                 function P() {
                     viewEnv.forceTriggerMouseMove();
                 }
-                function T() {
+                function R() {
                     return viewEnv.getShowingStatus();
                 }
-                const R = (() => {
+                const T = (() => {
                         let e = [];
                         return () => (0 === e.length && (e = Object.keys(viewEnv.getFontsConfig())), e);
                     })(),
@@ -742,7 +742,7 @@
             },
             3679: (e, t, n) => {
                 n.d(t, { L: () => v });
-                var r = n(6179),
+                var r = n(7363),
                     o = n.n(r),
                     a = n(6483),
                     i = n.n(a);
@@ -757,7 +757,8 @@
                             (e.xp = 'xp'),
                             (e.freeXP = 'freeXP'),
                             (e.eliteXP = 'eliteXP'),
-                            (e.equipCoin = 'equipCoin');
+                            (e.equipCoin = 'equipCoin'),
+                            (e.stpCoin = 'stpcoin');
                     })(c || (c = {})),
                     (function (e) {
                         (e.Red = 'RedActionBG'), (e.Blue = 'BlueActionBG');
@@ -804,9 +805,9 @@
                     };
             },
             9864: (e, t, n) => {
-                var r = n(6179),
+                var r = n(7363),
                     o = n.n(r),
-                    a = n(493),
+                    a = n(1533),
                     i = n.n(a),
                     s = n(6483),
                     c = n.n(s),
@@ -1182,6 +1183,12 @@
                 engine.whenReady.then(() => {
                     i().render(o().createElement(P, null, o().createElement(V, null)), document.getElementById('root'));
                 });
+            },
+            7363: (e) => {
+                e.exports = React;
+            },
+            1533: (e) => {
+                e.exports = ReactDOM;
             },
         },
         __webpack_module_cache__ = {},

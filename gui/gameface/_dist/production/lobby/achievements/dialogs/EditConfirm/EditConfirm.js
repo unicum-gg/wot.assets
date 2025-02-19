@@ -221,12 +221,12 @@
                         getSize: () => m,
                         getViewGlobalPosition: () => g,
                         isEventHandled: () => L,
-                        isFocused: () => p,
+                        isFocused: () => b,
                         pxToRem: () => f,
                         remToPx: () => w,
                         resize: () => h,
                         sendEvent: () => o.qP,
-                        setAnimateWindow: () => b,
+                        setAnimateWindow: () => p,
                         setEventHandled: () => x,
                         setInputPaddingsRem: () => c,
                         setSidePaddingsRem: () => _,
@@ -274,10 +274,10 @@
                 function w(e) {
                     return viewEnv.remToPx(e);
                 }
-                function b(e, t) {
+                function p(e, t) {
                     viewEnv.setAnimateWindow(e, t);
                 }
-                function p() {
+                function b() {
                     return viewEnv.isFocused();
                 }
                 function x() {
@@ -666,14 +666,14 @@
                         var r;
                     },
                     w = () => f(s.CLOSE),
-                    b = (e, t) => {
+                    p = (e, t) => {
                         e.keyCode === _.n.ESCAPE && t();
                     };
-                var p = n(7572);
+                var b = n(7572);
                 const x = a.instance,
                     L = {
                         DataTracker: i.Z,
-                        ViewModel: p.Z,
+                        ViewModel: b.Z,
                         ViewEventType: s,
                         NumberFormatType: l,
                         RealFormatType: c,
@@ -711,13 +711,13 @@
                             });
                         },
                         addEscapeListener: (e) => {
-                            const t = (t) => b(t, e);
+                            const t = (t) => p(t, e);
                             return (
                                 window.addEventListener('keydown', t), () => window.removeEventListener('keydown', t)
                             );
                         },
                         closeOnEsc: (e) => {
-                            b(e, w);
+                            p(e, w);
                         },
                         handleViewEvent: f,
                         onBindingsReady: v,
@@ -774,7 +774,7 @@
             },
             8223: (e, t, n) => {
                 'use strict';
-                var r = n(6179),
+                var r = n(7363),
                     a = n.n(r);
                 const i = (e, t, n) =>
                     t.extraLargeHeight || t.largeHeight || t.mediumHeight || t.smallHeight || t.extraSmallHeight
@@ -891,10 +891,10 @@
                         v = a.extraSmallWidth,
                         f = a.extraLargeHeight,
                         w = a.largeHeight,
-                        b = a.mediumHeight,
-                        p = a.smallHeight,
+                        p = a.mediumHeight,
+                        b = a.smallHeight,
                         x = a.extraSmallHeight,
-                        L = { extraLarge: f, large: w, medium: b, small: p, extraSmall: x };
+                        L = { extraLarge: f, large: w, medium: p, small: b, extraSmall: x };
                     if (n.extraLarge || n.large || n.medium || n.small || n.extraSmall) {
                         if (n.extraLarge && o) return t;
                         if (n.large && s) return t;
@@ -912,8 +912,8 @@
                         ) {
                             if (n.extraLargeHeight && f) return t;
                             if (n.largeHeight && w) return t;
-                            if (n.mediumHeight && b) return t;
-                            if (n.smallHeight && p) return t;
+                            if (n.mediumHeight && p) return t;
+                            if (n.smallHeight && b) return t;
                             if (n.extraSmallHeight && x) return t;
                         }
                     }
@@ -969,9 +969,9 @@
                         return a().createElement(h.Provider, { value: _ }, e);
                     };
                 var w = n(6483),
-                    b = n.n(w),
-                    p = n(926),
-                    x = n.n(p);
+                    p = n.n(w),
+                    b = n(926),
+                    x = n.n(b);
                 let L, y, S;
                 !(function (e) {
                     (e[(e.ExtraSmall = s.extraSmall.width)] = 'ExtraSmall'),
@@ -1101,7 +1101,7 @@
                             o = i.mediaWidth,
                             s = i.mediaHeight,
                             l = i.mediaSize;
-                        return a().createElement('div', M({ className: b()(n, C[o], k[s], H[l]) }, r), t);
+                        return a().createElement('div', M({ className: p()(n, C[o], k[s], H[l]) }, r), t);
                     },
                     A = ['children'];
                 const D = (e) => {
@@ -1118,7 +1118,7 @@
                         })(e, A);
                     return a().createElement(f, null, a().createElement(P, n, t));
                 };
-                var N = n(493),
+                var N = n(1533),
                     W = n.n(N);
                 function I(e) {
                     engine.call('PlaySound', e).catch((t) => {
@@ -1219,11 +1219,11 @@
                                         }
                                     return n;
                                 })(e, U)),
-                            m = b()(B.base, B[`base__${o}`], B[`base__${i}`], null == s ? void 0 : s.base),
-                            h = b()(B.icon, B[`icon__${o}`], B[`icon__${i}`], null == s ? void 0 : s.icon),
-                            g = b()(B.glow, null == s ? void 0 : s.glow),
-                            E = b()(B.caption, B[`caption__${o}`], null == s ? void 0 : s.caption),
-                            v = b()(B.goto, null == s ? void 0 : s.goto);
+                            m = p()(B.base, B[`base__${o}`], B[`base__${i}`], null == s ? void 0 : s.base),
+                            h = p()(B.icon, B[`icon__${o}`], B[`icon__${i}`], null == s ? void 0 : s.icon),
+                            g = p()(B.glow, null == s ? void 0 : s.glow),
+                            E = p()(B.caption, B[`caption__${o}`], null == s ? void 0 : s.caption),
+                            v = p()(B.goto, null == s ? void 0 : s.goto);
                         return a().createElement(
                             'div',
                             G(
@@ -1610,9 +1610,9 @@
                         v = (0, r.useState)(n),
                         f = v[0],
                         w = v[1],
-                        p = (0, r.useState)(!1),
-                        x = p[0],
-                        L = p[1];
+                        b = (0, r.useState)(!1),
+                        x = b[0],
+                        L = b[1];
                     return (
                         (0, r.useEffect)(() => {
                             function e(e) {
@@ -1632,7 +1632,7 @@
                             'div',
                             {
                                 ref: E,
-                                className: b()(
+                                className: p()(
                                     ae.base,
                                     ae[`base__${i}`],
                                     o && ae.base__disabled,
@@ -1673,7 +1673,7 @@
                                 ),
                             a().createElement(
                                 'span',
-                                { className: b()(ae.state, ae.state__default) },
+                                { className: p()(ae.state, ae.state__default) },
                                 a().createElement('span', { className: ae.stateDisabled }),
                                 a().createElement('span', { className: ae.stateHighlightHover }),
                                 a().createElement('span', { className: ae.stateHighlightActive }),
@@ -1738,7 +1738,7 @@
                         const e = ne().model.root.get().dialogType;
                         return a().createElement(
                             'div',
-                            { className: b()(me.base, me[`base__${e}`]) },
+                            { className: p()(me.base, me[`base__${e}`]) },
                             a().createElement(
                                 'div',
                                 { className: me.icon },
@@ -1794,6 +1794,14 @@
                         document.getElementById('root'),
                     );
                 });
+            },
+            7363: (e) => {
+                'use strict';
+                e.exports = React;
+            },
+            1533: (e) => {
+                'use strict';
+                e.exports = ReactDOM;
             },
         },
         __webpack_module_cache__ = {},

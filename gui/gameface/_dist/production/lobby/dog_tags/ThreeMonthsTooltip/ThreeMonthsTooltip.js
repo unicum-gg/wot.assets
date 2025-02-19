@@ -4,8 +4,8 @@
             527: (e, t, n) => {
                 n.r(t),
                     n.d(t, { mouse: () => d, off: () => c, on: () => s, onResize: () => r, onScaleUpdated: () => a });
-                var o = n(2472),
-                    i = n(1176);
+                var o = n(472),
+                    i = n(176);
                 const r = (0, o.E)('clientResized'),
                     a = (0, o.E)('self.onScaleUpdated'),
                     s = (e, t) => engine.on(e, t),
@@ -76,7 +76,7 @@
                     });
                 })();
             },
-            5959: (e, t, n) => {
+            959: (e, t, n) => {
                 n.r(t),
                     n.d(t, {
                         events: () => o,
@@ -87,7 +87,7 @@
                         setRTPC: () => i.E,
                     });
                 var o = n(527),
-                    i = n(2493);
+                    i = n(493);
                 function r(e = 'px') {
                     return 'rem' === e ? viewEnv.getClientSizeRem() : viewEnv.getClientSizePx();
                 }
@@ -100,13 +100,13 @@
                     get: () => viewEnv.getGraphicsQuality(),
                 };
             },
-            1176: (e, t, n) => {
+            176: (e, t, n) => {
                 function o(e) {
                     viewEnv.setTrackMouseOnStage(e);
                 }
                 n.d(t, { R: () => o });
             },
-            2493: (e, t, n) => {
+            493: (e, t, n) => {
                 function o(e) {
                     engine.call('PlaySound', e).catch((t) => {
                         console.error(`playSound('${e}'): `, t);
@@ -119,7 +119,7 @@
                 }
                 n.d(t, { E: () => i, G: () => o });
             },
-            2472: (e, t, n) => {
+            472: (e, t, n) => {
                 function o(e) {
                     return (t) => (
                         engine.on(e, t),
@@ -130,20 +130,20 @@
                 }
                 n.d(t, { E: () => o });
             },
-            3138: (e, t, n) => {
+            138: (e, t, n) => {
                 n.d(t, { O: () => r });
-                var o = n(5959),
+                var o = n(959),
                     i = n(514);
-                const r = { view: n(7641), client: o, sound: i.ZP };
+                const r = { view: n(641), client: o, sound: i.ZP };
             },
             514: (e, t, n) => {
                 n.d(t, { ZP: () => a });
-                var o = n(5959);
+                var o = n(959);
                 const i = { highlight: 'highlight', click: 'play', yes1: 'yes1' },
                     r = Object.keys(i).reduce((e, t) => ((e[t] = () => (0, o.playSound)(i[t])), e), {}),
                     a = { play: Object.assign({}, r, { sound: o.playSound }), setRTPC: o.setRTPC };
             },
-            3722: (e, t, n) => {
+            722: (e, t, n) => {
                 function o(e, t, n = 1) {
                     return viewEnv.getChildTexturePath(e, t.width, t.height, n);
                 }
@@ -152,13 +152,13 @@
                 }
                 n.r(t), n.d(t, { getBgUrl: () => i, getTextureUrl: () => o });
             },
-            6112: (e, t, n) => {
+            112: (e, t, n) => {
                 n.d(t, { W: () => o });
                 const o = { showing: 0, shown: 1, hiding: 2, hidden: 3 };
             },
-            6538: (e, t, n) => {
+            538: (e, t, n) => {
                 n.d(t, { U: () => i });
-                var o = n(2472);
+                var o = n(472);
                 const i = {
                     onTextureFrozen: (0, o.E)('self.onTextureFrozen'),
                     onTextureReady: (0, o.E)('self.onTextureReady'),
@@ -176,7 +176,7 @@
                     },
                 };
             },
-            7641: (e, t, n) => {
+            641: (e, t, n) => {
                 n.r(t),
                     n.d(t, {
                         addModelObserver: () => _,
@@ -206,10 +206,10 @@
                         setSidePaddingsRem: () => u,
                         whenTutorialReady: () => M,
                     });
-                var o = n(3722),
-                    i = n(6112),
-                    r = n(6538),
-                    a = n(8566);
+                var o = n(722),
+                    i = n(112),
+                    r = n(538),
+                    a = n(566);
                 const s = 15;
                 function c(e) {
                     viewEnv.addPreloadTexture(e);
@@ -289,7 +289,7 @@
                         engine.whenReady,
                     ]);
             },
-            8566: (e, t, n) => {
+            566: (e, t, n) => {
                 n.d(t, { qP: () => l });
                 const o = ['args'];
                 const i = 2,
@@ -345,7 +345,7 @@
                         },
                     };
             },
-            5521: (e, t, n) => {
+            521: (e, t, n) => {
                 let o, i;
                 n.d(t, { n: () => o }),
                     (function (e) {
@@ -395,9 +395,9 @@
                             (e.SYMBOL_LOCK = 'SymbolLock');
                     })(i || (i = {}));
             },
-            1358: (e, t, n) => {
+            358: (e, t, n) => {
                 n.d(t, { Z: () => r });
-                var o = n(3138);
+                var o = n(138);
                 class i {
                     constructor() {
                         (this._callbacks = void 0),
@@ -453,10 +453,10 @@
                 i.__instance = void 0;
                 const r = i;
             },
-            7572: (__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+            572: (__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
                 __webpack_require__.d(__webpack_exports__, { Z: () => __WEBPACK_DEFAULT_EXPORT__ });
-                var _DataTracker__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1358),
-                    _index__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(9916);
+                var _DataTracker__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(358),
+                    _index__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(916);
                 class ViewModel {
                     constructor(path, watchingFields = []) {
                         (this.dataTracker = void 0),
@@ -495,7 +495,7 @@
                 }
                 const __WEBPACK_DEFAULT_EXPORT__ = ViewModel;
             },
-            9916: (e, t, n) => {
+            916: (e, t, n) => {
                 n.d(t, { Gr: () => l, Z5: () => a.Z5, ry: () => p });
                 class o {
                     constructor() {
@@ -536,8 +536,8 @@
                 }
                 o.__instance = void 0;
                 const i = o;
-                var r = n(1358);
-                var a = n(8613);
+                var r = n(358);
+                var a = n(613);
                 let s;
                 !(function (e) {
                     (e[(e.UNDEFINED = 0)] = 'UNDEFINED'),
@@ -553,8 +553,8 @@
                     l = Object.freeze({ FRACTIONAL: 0, WO_ZERO_DIGITS: 1 }),
                     d = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1 }),
                     _ = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1, YEAR_MONTH: 2 });
-                var u = n(5521),
-                    v = n(3138);
+                var u = n(521),
+                    v = n(138);
                 const m = ['args'];
                 function E(e, t, n, o, i, r, a) {
                     try {
@@ -638,7 +638,7 @@
                     b = (e, t) => {
                         e.keyCode === u.n.ESCAPE && t();
                     };
-                var f = n(7572);
+                var f = n(572);
                 const y = i.instance,
                     O = {
                         DataTracker: r.Z,
@@ -724,7 +724,7 @@
                     };
                 window.ViewEnvHelper = O;
             },
-            8613: (e, t, n) => {
+            613: (e, t, n) => {
                 n.d(t, { Z5: () => o, cy: () => i });
                 const o = {
                         getNumberFormat: (e, t) => systemLocale.getNumberFormat(e, t),
@@ -740,14 +740,14 @@
                         getTimeString: (e, t, n) => userLocale.getTimeString(e, t, void 0 === n || n),
                     };
             },
-            4540: (e, t, n) => {
-                var o = n(6179),
+            540: (e, t, n) => {
+                var o = n(363),
                     i = n.n(o),
-                    r = n(493),
+                    r = n(533),
                     a = n.n(r),
-                    s = n(6483),
+                    s = n(483),
                     c = n.n(s),
-                    l = n(3138);
+                    l = n(138);
                 function d() {
                     const e = (0, o.useRef)(0);
                     var t;
@@ -845,7 +845,7 @@
                         )
                     );
                 });
-                var E = n(9916);
+                var E = n(916);
                 let h, p, w, g, b;
                 !(function (e) {
                     (e[(e.Engraving = 0)] = 'Engraving'), (e[(e.Background = 1)] = 'Background');
@@ -983,6 +983,12 @@
                     a().render(i().createElement(L, null), document.getElementById('root'));
                 });
             },
+            363: (e) => {
+                e.exports = React;
+            },
+            533: (e) => {
+                e.exports = ReactDOM;
+            },
         },
         __webpack_module_cache__ = {},
         deferred;
@@ -1060,6 +1066,6 @@
                 n = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             n.forEach(t.bind(null, 0)), (n.push = t.bind(null, n.push.bind(n)));
         })();
-    var __webpack_exports__ = __webpack_require__.O(void 0, [994], () => __webpack_require__(4540));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [994], () => __webpack_require__(540));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

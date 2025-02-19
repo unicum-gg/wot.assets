@@ -4,7 +4,7 @@
             373: (e, t, n) => {
                 n.d(t, { i: () => c });
                 var r = n(56),
-                    o = n(202),
+                    o = n(363),
                     i = n.n(o);
                 const a = ['children', 'body', 'header', 'note', 'alert', 'args'];
                 function s() {
@@ -65,7 +65,7 @@
                 n.d(t, { u: () => c });
                 var r = n(902),
                     o = n(179),
-                    i = n(202);
+                    i = n(363);
                 const a = [
                     'children',
                     'contentId',
@@ -144,33 +144,33 @@
                                     }
                                 return n;
                             })(e, a);
-                        const k = (0, i.useRef)({ timeoutId: 0, isVisible: !1, prevTarget: null, hideTimerId: null }),
-                            x = (0, i.useMemo)(() => y || (0, r.F)().resId, [y]),
-                            L = (0, i.useCallback)(() => {
-                                (k.current.isVisible && k.current.timeoutId) ||
-                                    (l(n, E, { isMouseEvent: !0, on: !0, arguments: s(o) }, x),
-                                    O && O(),
-                                    (k.current.isVisible = !0));
-                            }, [n, E, o, x, O]),
+                        const x = (0, i.useRef)({ timeoutId: 0, isVisible: !1, prevTarget: null, hideTimerId: null }),
+                            k = (0, i.useMemo)(() => y || (0, r.F)().resId, [y]),
                             M = (0, i.useCallback)(() => {
-                                if (k.current.isVisible || k.current.timeoutId) {
-                                    const e = k.current.timeoutId;
-                                    e > 0 && (clearTimeout(e), (k.current.timeoutId = 0)),
-                                        l(n, E, { on: !1 }, x),
-                                        k.current.isVisible && P && P(),
-                                        (k.current.isVisible = !1);
+                                (x.current.isVisible && x.current.timeoutId) ||
+                                    (l(n, E, { isMouseEvent: !0, on: !0, arguments: s(o) }, k),
+                                    O && O(),
+                                    (x.current.isVisible = !0));
+                            }, [n, E, o, k, O]),
+                            L = (0, i.useCallback)(() => {
+                                if (x.current.isVisible || x.current.timeoutId) {
+                                    const e = x.current.timeoutId;
+                                    e > 0 && (clearTimeout(e), (x.current.timeoutId = 0)),
+                                        l(n, E, { on: !1 }, k),
+                                        x.current.isVisible && P && P(),
+                                        (x.current.isVisible = !1);
                                 }
-                            }, [n, E, x, P]),
+                            }, [n, E, k, P]),
                             S = (0, i.useCallback)((e) => {
-                                k.current.isVisible &&
-                                    ((k.current.prevTarget = document.elementFromPoint(e.clientX, e.clientY)),
-                                    (k.current.hideTimerId = window.setTimeout(() => {
+                                x.current.isVisible &&
+                                    ((x.current.prevTarget = document.elementFromPoint(e.clientX, e.clientY)),
+                                    (x.current.hideTimerId = window.setTimeout(() => {
                                         const t = document.elementFromPoint(e.clientX, e.clientY);
-                                        t && !t.isSameNode(k.current.prevTarget) && M();
+                                        t && !t.isSameNode(x.current.prevTarget) && L();
                                     }, 200)));
                             }, []);
                         (0, i.useEffect)(() => {
-                            const e = k.current.hideTimerId;
+                            const e = x.current.hideTimerId;
                             return (
                                 document.addEventListener('wheel', S, { capture: !0 }),
                                 () => {
@@ -180,16 +180,16 @@
                             );
                         }, []),
                             (0, i.useEffect)(() => {
-                                !1 === p && M();
-                            }, [p, M]),
+                                !1 === p && L();
+                            }, [p, L]),
                             (0, i.useEffect)(
                                 () => (
-                                    window.addEventListener('mouseleave', M),
+                                    window.addEventListener('mouseleave', L),
                                     () => {
-                                        window.removeEventListener('mouseleave', M), M();
+                                        window.removeEventListener('mouseleave', L), L();
                                     }
                                 ),
-                                [M],
+                                [L],
                             );
                         return p
                             ? (0, i.cloneElement)(
@@ -201,18 +201,18 @@
                                               (e) => {
                                                   (e.clientX === window.innerWidth &&
                                                       e.clientY === window.innerHeight) ||
-                                                      ((k.current.timeoutId = window.setTimeout(L, m ? 100 : 400)),
+                                                      ((x.current.timeoutId = window.setTimeout(M, m ? 100 : 400)),
                                                       c && c(e),
                                                       R && R(e));
                                               }),
                                           onMouseLeave: ((e) => (t) => {
-                                              M(), null == d || d(t), null == e || e(t);
+                                              L(), null == d || d(t), null == e || e(t);
                                           })(t.props.onMouseLeave),
                                           onClick: ((e) => (t) => {
-                                              !1 === w && M(), null == u || u(t), null == e || e(t);
+                                              !1 === w && L(), null == u || u(t), null == e || e(t);
                                           })(t.props.onClick),
                                           onMouseDown: ((e) => (t) => {
-                                              !1 === w && M(), null == _ || _(t), null == e || e(t);
+                                              !1 === w && L(), null == _ || _(t), null == e || e(t);
                                           })(t.props.onMouseDown),
                                       },
                                       T,
@@ -258,7 +258,7 @@
                         children: () => i,
                         displayStatus: () => T,
                         displayStatusIs: () => ee,
-                        events: () => k,
+                        events: () => x,
                         extraSize: () => te,
                         forceTriggerMouseMove: () => Z,
                         freezeTextureBeforeResize: () => q,
@@ -380,7 +380,7 @@
                     return `url(${O(e, t, n)})`;
                 }
                 const T = { showing: 0, shown: 1, hiding: 2, hidden: 3 },
-                    k = {
+                    x = {
                         onTextureFrozen: s('self.onTextureFrozen'),
                         onTextureReady: s('self.onTextureReady'),
                         onDomBuilt: s('self.onDomBuilt'),
@@ -396,9 +396,9 @@
                             onRequestPosition: s('children.requestPosition'),
                         },
                     },
-                    x = ['args'];
-                const L = 2,
-                    M = 16,
+                    k = ['args'];
+                const M = 2,
+                    L = 16,
                     S = 32,
                     R = 64,
                     C = (e, t) => {
@@ -414,7 +414,7 @@
                                             n[r] = e[r];
                                         }
                                     return n;
-                                })(t, x);
+                                })(t, k);
                             return void 0 !== o
                                 ? viewEnv.handleViewEvent(
                                       Object.assign({ __Type: n, type: e }, i, {
@@ -440,13 +440,13 @@
                     },
                     I = {
                         close(e) {
-                            C('popover' === e ? L : S);
+                            C('popover' === e ? M : S);
                         },
                         minimize() {
                             C(R);
                         },
                         move(e) {
-                            C(M, { isMouseEvent: !0, on: e });
+                            C(L, { isMouseEvent: !0, on: e });
                         },
                     },
                     A = 15;
@@ -520,7 +520,7 @@
                     },
                     ne = Promise.all([
                         new Promise((e) => {
-                            window.isDomBuilt ? e() : k.onDomBuilt(e);
+                            window.isDomBuilt ? e() : x.onDomBuilt(e);
                         }),
                         engine.whenReady,
                     ]),
@@ -531,16 +531,17 @@
                 const r = (e = 1) => {
                     const t = new Error().stack;
                     let n,
-                        r = R.invalid('resId');
-                    return (
-                        t &&
-                            ((n = t.split('\n')[e].split('.js')[0].split('/').pop() || ''),
-                            window.__feature &&
-                                window.__feature !== n &&
-                                window.subViews[n] &&
-                                (r = window.subViews[n].id)),
-                        { caller: n, stack: t, resId: r }
-                    );
+                        r = R.invalid('resId'),
+                        o = '';
+                    var i;
+                    t &&
+                        ((o = (null == (i = t.match(/(coui:\/\/[^\s]+\.js)/)) ? void 0 : i[0]) || ''),
+                        (n = t.split('\n')[e].split('.js')[0].split('/').pop() || ''),
+                        window.__feature &&
+                            window.__feature !== n &&
+                            window.subViews[n] &&
+                            (r = window.subViews[n].id));
+                    return { callerUrl: o, caller: n, stack: t, resId: r };
                 };
             },
             521: (e, t, n) => {
@@ -940,7 +941,7 @@
                     o = n.n(r),
                     i = n(373),
                     a = n(896),
-                    s = n(202),
+                    s = n(363),
                     l = n.n(s),
                     c = n(375);
                 const d = {
@@ -1044,9 +1045,9 @@
                     })(r || (r = {}));
             },
             238: (e, t, n) => {
-                var r = n(202),
+                var r = n(363),
                     o = n.n(r),
-                    i = n(493),
+                    i = n(533),
                     a = n.n(i);
                 function s() {}
                 function l() {
@@ -1303,6 +1304,12 @@
                             (e.MAXIMUM = 'prestige'),
                             (e.UNDEFINED = 'undefined');
                     })(r || (r = {}));
+            },
+            363: (e) => {
+                e.exports = React;
+            },
+            533: (e) => {
+                e.exports = ReactDOM;
             },
         },
         __webpack_module_cache__ = {},

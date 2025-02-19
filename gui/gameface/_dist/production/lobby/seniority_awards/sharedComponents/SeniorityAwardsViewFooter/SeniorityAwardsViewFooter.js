@@ -6,7 +6,7 @@
                 var n = a(6483),
                     s = a.n(n),
                     r = a(7727),
-                    o = a(6179),
+                    o = a(7363),
                     i = a.n(o);
                 const _ = {
                     base: 'CButton_base_40',
@@ -53,8 +53,8 @@
                         B = C[0],
                         E = C[1],
                         w = (0, o.useState)(!1),
-                        M = w[0],
-                        k = w[1];
+                        x = w[0],
+                        M = w[1];
                     return (
                         (0, o.useEffect)(() => {
                             function e(e) {
@@ -80,7 +80,7 @@
                                     l && _.base__disabled,
                                     t && _[`base__${t}`],
                                     B && _.base__focus,
-                                    M && _.base__highlightActive,
+                                    x && _.base__highlightActive,
                                     c,
                                 ),
                                 onMouseEnter: function (e) {
@@ -90,17 +90,17 @@
                                     f && f(e);
                                 },
                                 onMouseUp: function (e) {
-                                    l || (h && h(e), k(!1));
+                                    l || (h && h(e), M(!1));
                                 },
                                 onMouseDown: function (e) {
                                     l ||
                                         (null !== m && (0, r.G)(m),
                                         g && g(e),
                                         a && (l || (y.current && (y.current.focus(), E(!0)))),
-                                        k(!0));
+                                        M(!0));
                                 },
                                 onMouseLeave: function (e) {
-                                    l || (p && p(e), k(!1));
+                                    l || (p && p(e), M(!1));
                                 },
                                 onClick: function (e) {
                                     l || (v && v(e));
@@ -154,8 +154,11 @@
                 a.d(t, { G: () => n });
             },
             5611: (e, t, a) => {
-                a(3638), a(2106), a(6179);
+                a(3638), a(2106), a(7363);
                 R.strings.seniority_awards.rewardsView;
+            },
+            7363: (e) => {
+                e.exports = React;
             },
         },
         a = {};

@@ -697,7 +697,7 @@
                 window.ViewEnvHelper = y;
             },
             287: (e, t, n) => {
-                n(483), n(179), n(202);
+                n(483), n(179), n(363);
                 R.views.common.tooltip_window.simple_tooltip_content;
                 let i;
                 !(function (e) {
@@ -710,6 +710,9 @@
                         (e.UNDEFINED = 'undefined');
                 })(i || (i = {}));
                 R.strings.prestige.tooltip.tab, R.images.gui.maps.icons.prestige.tab;
+            },
+            363: (e) => {
+                e.exports = React;
             },
         },
         __webpack_module_cache__ = {},

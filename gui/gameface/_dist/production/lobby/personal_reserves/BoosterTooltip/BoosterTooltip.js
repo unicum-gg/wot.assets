@@ -178,9 +178,9 @@
                     y = ['args'];
                 const x = 2,
                     k = 16,
-                    T = 32,
-                    O = 64,
-                    R = (u, e) => {
+                    R = 32,
+                    T = 64,
+                    O = (u, e) => {
                         const t = 'GFViewEventProxy';
                         if (void 0 !== e) {
                             const r = e.args,
@@ -219,13 +219,13 @@
                     },
                     P = {
                         close(u) {
-                            R('popover' === u ? x : T);
+                            O('popover' === u ? x : R);
                         },
                         minimize() {
-                            R(O);
+                            O(T);
                         },
                         move(u) {
-                            R(k, { isMouseEvent: !0, on: u });
+                            O(k, { isMouseEvent: !0, on: u });
                         },
                     },
                     N = 15;
@@ -705,9 +705,9 @@
                     };
             },
             4223: (u, e, t) => {
-                var n = t(6179),
+                var n = t(7363),
                     r = t.n(n),
-                    o = t(493),
+                    o = t(1533),
                     i = t.n(o),
                     a = t(6483),
                     E = t.n(a),
@@ -757,6 +757,10 @@
                     'icon__equipCoin-big': 'Currency_icon__equipCoin-big_79',
                     'icon__equipCoin-large': 'Currency_icon__equipCoin-large_2c',
                     'icon__equipCoin-extraLarge': 'Currency_icon__equipCoin-extraLarge_8a',
+                    'icon__stpCoin-small': 'Currency_icon__stpCoin-small_6b',
+                    'icon__stpCoin-big': 'Currency_icon__stpCoin-big_da',
+                    'icon__stpCoin-large': 'Currency_icon__stpCoin-large_ee',
+                    'icon__stpCoin-extraLarge': 'Currency_icon__stpCoin-extraLarge_fa',
                     value: 'Currency_value_e1',
                     value__freeXP: 'Currency_value__freeXP_cb',
                     value__credits: 'Currency_value__credits_76',
@@ -765,6 +769,7 @@
                     value__crystal: 'Currency_value__crystal_19',
                     value__equipCoin: 'Currency_value__equipCoin_d0',
                     value__eliteXP: 'Currency_value__eliteXP_62',
+                    value__stpCoin: 'Currency_value__stpCoin_38',
                     value__notEnough: 'Currency_value__notEnough_56',
                     stock: 'Currency_stock_87',
                     stock__indent: 'Currency_stock__indent_a1',
@@ -782,7 +787,8 @@
                             (u.xp = 'xp'),
                             (u.freeXP = 'freeXP'),
                             (u.eliteXP = 'eliteXP'),
-                            (u.equipCoin = 'equipCoin');
+                            (u.equipCoin = 'equipCoin'),
+                            (u.stpCoin = 'stpcoin');
                     })(D || (D = {})),
                     (function (u) {
                         (u.Red = 'RedActionBG'), (u.Blue = 'BlueActionBG');
@@ -1019,12 +1025,13 @@
                                 icon: e = B.Timer,
                                 style: t = C.Description,
                                 onTimeReached: o,
-                                className: i = '',
-                                classNames: a = {},
+                                refreshRate: i,
+                                className: a = '',
+                                classNames: A = {},
                             }) => {
-                                const A = t !== C.Description ? 1 : void 0,
-                                    s = $(u, A),
-                                    F = (() => {
+                                const s = null != i ? i : t !== C.Description ? 1 : void 0,
+                                    F = $(u, s),
+                                    c = (() => {
                                         const u = (0, n.useState)(V.O.view.getScale()),
                                             e = u[0],
                                             t = u[1];
@@ -1043,17 +1050,17 @@
                                             e
                                         );
                                     })();
-                                o && o[s] && o[s]();
-                                const c = K(M(s), t);
+                                o && o[F] && o[F]();
+                                const D = K(M(F), t);
                                 return r().createElement(
                                     'div',
-                                    { className: E()(X, i) },
+                                    { className: E()(X, a) },
                                     e !== B.None &&
                                         r().createElement('div', {
-                                            className: E()(z, a.icon),
-                                            style: { backgroundImage: `url('${Y(e, F)}')` },
+                                            className: E()(z, A.icon),
+                                            style: { backgroundImage: `url('${Y(e, c)}')` },
                                         }),
-                                    r().createElement('div', { className: E()(j, a.text) }, c),
+                                    r().createElement('div', { className: E()(j, A.text) }, D),
                                 );
                             },
                         ),
@@ -1757,6 +1764,12 @@
                         document.getElementById('root'),
                     );
                 });
+            },
+            7363: (u) => {
+                u.exports = React;
+            },
+            1533: (u) => {
+                u.exports = ReactDOM;
             },
         },
         __webpack_module_cache__ = {},

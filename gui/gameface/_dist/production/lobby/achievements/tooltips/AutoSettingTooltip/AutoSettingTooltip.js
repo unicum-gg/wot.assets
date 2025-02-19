@@ -48,9 +48,9 @@
                         setSidePaddingsRem: () => U,
                         whenTutorialReady: () => nu,
                     });
-                var t = A(6179),
+                var t = A(7363),
                     C = A.n(t),
-                    n = A(493),
+                    n = A(1533),
                     r = A.n(n),
                     o = A(6483),
                     i = A.n(o);
@@ -519,7 +519,7 @@
                     Tu = /(?:%\(|{)\w*(?:_[Oo]pen|Start)(?:\)s|})?(.*?)(?:%\(|{)\w*(?:_[Cc]lose|End)(?:\)s|})?/g,
                     Su = /(?<=(?:%\(|{))(.*?)(?=(?:_[Oo]pen|Start))/,
                     Ou = /(?<=(?:_[Oo]pen|Start)(?:\)s?|}))(.*?)(?=(?:%\(|{))/,
-                    Pu = (0, t.memo)(({ text: u, binding: F, classMix: A }) => {
+                    Ru = (0, t.memo)(({ text: u, binding: F, classMix: A }) => {
                         const e = (0, t.useCallback)((u) => ({ color: `#${u}` }), []),
                             E = (0, t.useMemo)(() => F || {}, [F]);
                         let D = Tu.exec(u),
@@ -550,7 +550,7 @@
                         }
                         return C().createElement(yu, { text: B, classMix: A, binding: E });
                     });
-                const Ru = function () {};
+                const Pu = function () {};
                 function zu() {
                     return !1;
                 }
@@ -773,7 +773,7 @@
                             },
                             () => (0, t.useContext)(A),
                         ];
-                    })(({ observableModel: u }) => ({ root: u.object() }), Ru),
+                    })(({ observableModel: u }) => ({ root: u.object() }), Pu),
                     Nu = Lu[0],
                     Vu = Lu[1],
                     $u = 'App_base_29',
@@ -794,15 +794,15 @@
                                     'div',
                                     { className: Gu },
                                     C().createElement('div', { className: Iu }, qu.title()),
-                                    C().createElement(Pu, { text: qu.description() }),
+                                    C().createElement(Ru, { text: qu.description() }),
                                 ),
                                 C().createElement('div', { className: Hu }),
                                 C().createElement(
                                     'div',
                                     { className: Uu },
                                     u
-                                        ? C().createElement(Pu, { text: qu.caption.isSwitchedOn() })
-                                        : C().createElement(Pu, { text: qu.caption.isSwitchedOff() }),
+                                        ? C().createElement(Ru, { text: qu.caption.isSwitchedOn() })
+                                        : C().createElement(Ru, { text: qu.caption.isSwitchedOff() }),
                                 ),
                             ),
                         );
@@ -813,6 +813,12 @@
                         document.getElementById('root'),
                     );
                 });
+            },
+            7363: (u) => {
+                u.exports = React;
+            },
+            1533: (u) => {
+                u.exports = ReactDOM;
             },
         },
         A = {};

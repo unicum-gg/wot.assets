@@ -3,22 +3,22 @@
     var u,
         e = {
             3495: (u, e, F) => {
-                F.d(e, { Y: () => r });
+                F.d(e, { Y: () => n });
                 var A = F(3138),
-                    E = F(6179),
+                    E = F(7363),
                     B = F(1043),
                     t = F(5262);
                 const D = A.O.client.getSize('rem'),
                     i = D.width,
                     C = D.height,
-                    n = Object.assign({ width: i, height: C }, (0, t.T)(i, C, B.j)),
-                    r = (0, E.createContext)(n);
+                    r = Object.assign({ width: i, height: C }, (0, t.T)(i, C, B.j)),
+                    n = (0, E.createContext)(r);
             },
             1039: (u, e, F) => {
-                F(3138), F(6536), F(6179), F(3495), F(1043), F(5262);
+                F(3138), F(6536), F(7363), F(3495), F(1043), F(5262);
             },
             6010: (u, e, F) => {
-                var A = F(6179),
+                var A = F(7363),
                     E = F(7382),
                     B = F(3495);
                 const t = ['children'];
@@ -37,8 +37,8 @@
                     const D = (0, A.useContext)(B.Y),
                         i = D.extraLarge,
                         C = D.large,
-                        n = D.medium,
-                        r = D.small,
+                        r = D.medium,
+                        n = D.small,
                         a = D.extraSmall,
                         l = D.extraLargeWidth,
                         g = D.largeWidth,
@@ -54,8 +54,8 @@
                     if (F.extraLarge || F.large || F.medium || F.small || F.extraSmall) {
                         if (F.extraLarge && i) return e;
                         if (F.large && C) return e;
-                        if (F.medium && n) return e;
-                        if (F.small && r) return e;
+                        if (F.medium && r) return e;
+                        if (F.small && n) return e;
                         if (F.extraSmall && a) return e;
                     } else {
                         if (F.extraLargeWidth && l) return (0, E.H)(e, F, x);
@@ -191,7 +191,7 @@
             },
             527: (u, e, F) => {
                 F.r(e),
-                    F.d(e, { mouse: () => n, off: () => i, on: () => D, onResize: () => B, onScaleUpdated: () => t });
+                    F.d(e, { mouse: () => r, off: () => i, on: () => D, onResize: () => B, onScaleUpdated: () => t });
                 var A = F(2472),
                     E = F(1176);
                 const B = (0, A.E)('clientResized'),
@@ -199,7 +199,7 @@
                     D = (u, e) => engine.on(u, e),
                     i = (u, e) => engine.off(u, e),
                     C = { down: (0, A.E)('mousedown'), up: (0, A.E)('mouseup'), move: (0, A.E)('mousemove') };
-                const n = (function () {
+                const r = (function () {
                     const u = { listeners: 0, enabled: !0, initialized: !1 };
                     function e() {
                         u.enabled && (0, E.R)(!1);
@@ -367,7 +367,7 @@
             7641: (u, e, F) => {
                 F.r(e),
                     F.d(e, {
-                        addModelObserver: () => r,
+                        addModelObserver: () => n,
                         addPreloadTexture: () => i,
                         children: () => A,
                         displayStatus: () => E.W,
@@ -376,7 +376,7 @@
                         extraSize: () => H,
                         forceTriggerMouseMove: () => f,
                         freezeTextureBeforeResize: () => d,
-                        getBrowserTexturePath: () => n,
+                        getBrowserTexturePath: () => r,
                         getDisplayStatus: () => S,
                         getFontNames: () => b,
                         getScale: () => s,
@@ -405,10 +405,10 @@
                 function C(u) {
                     viewEnv.setHitAreaPaddingsRem(u, u, u, u, D);
                 }
-                function n(u, e, F, A = 1) {
+                function r(u, e, F, A = 1) {
                     return viewEnv.getWebBrowserTexturePath(u, e, F, A);
                 }
-                function r(u, e, F) {
+                function n(u, e, F) {
                     return viewEnv.addDataChangedCallback(u, e, F);
                 }
                 function a(u) {
@@ -534,10 +534,10 @@
                     };
             },
             6536: (u, e, F) => {
-                F(6179);
+                F(7363);
             },
             9924: (u, e, F) => {
-                F(6483), F(7739), F(5262), F(6179), F(3649);
+                F(6483), F(7739), F(5262), F(7363), F(3649);
             },
             3649: (u, e, F) => {
                 F(1281);
@@ -626,7 +626,7 @@
                     E.Small;
             },
             9930: (u, e, F) => {
-                F(7739), F(6179), F(3486);
+                F(7739), F(7363), F(3486);
             },
             3486: (u, e, F) => {
                 F.d(e, { Cg: () => E, Id: () => A });
@@ -645,10 +645,13 @@
                     })(E || (E = {}));
             },
             4194: (u, e, F) => {
-                F(6483), F(9924), F(6179);
+                F(6483), F(9924), F(7363);
                 var A = F(8668);
                 F(9930), F(3486);
                 A.Jh.Huge, A.Jh.Big, A.Jh.Medium, A.Jh.Small, R.images.gui.maps.icons.battleRoyale.widget;
+            },
+            7363: (u) => {
+                u.exports = React;
             },
         },
         F = {};
@@ -663,13 +666,13 @@
         (A.O = (e, F, E, B) => {
             if (!F) {
                 var t = 1 / 0;
-                for (n = 0; n < u.length; n++) {
-                    for (var [F, E, B] = u[n], D = !0, i = 0; i < F.length; i++)
+                for (r = 0; r < u.length; r++) {
+                    for (var [F, E, B] = u[r], D = !0, i = 0; i < F.length; i++)
                         (!1 & B || t >= B) && Object.keys(A.O).every((u) => A.O[u](F[i]))
                             ? F.splice(i--, 1)
                             : ((D = !1), B < t && (t = B));
                     if (D) {
-                        u.splice(n--, 1);
+                        u.splice(r--, 1);
                         var C = E();
                         void 0 !== C && (e = C);
                     }
@@ -677,8 +680,8 @@
                 return e;
             }
             B = B || 0;
-            for (var n = u.length; n > 0 && u[n - 1][2] > B; n--) u[n] = u[n - 1];
-            u[n] = [F, E, B];
+            for (var r = u.length; r > 0 && u[r - 1][2] > B; r--) u[r] = u[r - 1];
+            u[r] = [F, E, B];
         }),
         (A.n = (u) => {
             var e = u && u.__esModule ? () => u.default : () => u;
@@ -713,10 +716,10 @@
                         C = 0;
                     if (t.some((e) => 0 !== u[e])) {
                         for (E in D) A.o(D, E) && (A.m[E] = D[E]);
-                        if (i) var n = i(A);
+                        if (i) var r = i(A);
                     }
                     for (e && e(F); C < t.length; C++) (B = t[C]), A.o(u, B) && u[B] && u[B][0](), (u[B] = 0);
-                    return A.O(n);
+                    return A.O(r);
                 },
                 F = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             F.forEach(e.bind(null, 0)), (F.push = e.bind(null, F.push.bind(F)));

@@ -4,7 +4,7 @@
                 'use strict';
                 r.d(t, { Y: () => u });
                 var a = r(3138),
-                    n = r(6179),
+                    n = r(7363),
                     i = r(1043),
                     s = r(5262);
                 const o = a.O.client.getSize('rem'),
@@ -18,7 +18,7 @@
                 r.d(t, { Z: () => d });
                 var a = r(3138),
                     n = r(6536),
-                    i = r(6179),
+                    i = r(7363),
                     s = r.n(i),
                     o = r(3495),
                     l = r(1043),
@@ -53,7 +53,7 @@
             },
             6010: (e, t, r) => {
                 'use strict';
-                var a = r(6179),
+                var a = r(7363),
                     n = r(7382),
                     i = r(3495);
                 const s = ['children'];
@@ -343,10 +343,10 @@
             },
             3215: (e, t, r) => {
                 'use strict';
-                r.d(t, { q: () => l });
+                r.d(t, { q3: () => l });
                 var a = r(4598),
                     n = r(9174),
-                    i = r(6179),
+                    i = r(7363),
                     s = r.n(i),
                     o = r(8246);
                 const l = () => (e, t) => {
@@ -878,7 +878,7 @@
             6536: (e, t, r) => {
                 'use strict';
                 r.d(t, { Z: () => n });
-                var a = r(6179);
+                var a = r(7363);
                 const n = (e) => {
                     const t = (0, a.useRef)(!1);
                     t.current || (e(), (t.current = !0));
@@ -887,7 +887,7 @@
             5415: (e, t, r) => {
                 'use strict';
                 r.d(t, { Aq: () => l, GS: () => c, cJ: () => s, fd: () => o });
-                var a = r(6179),
+                var a = r(7363),
                     n = r(7739),
                     i = r(1043);
                 let s, o, l;
@@ -1369,9 +1369,9 @@
             },
             1988: (e, t, r) => {
                 'use strict';
-                var a = r(6179),
+                var a = r(7363),
                     n = r.n(a),
-                    i = r(493),
+                    i = r(1533),
                     s = r.n(i),
                     o = r(3138),
                     l = r(5521);
@@ -1483,9 +1483,9 @@
                     k = r(7030);
                 const M = (0, a.lazy)(() => Promise.all([r.e(549), r.e(36), r.e(154)]).then(r.bind(r, 7910))),
                     P = (0, a.lazy)(() => Promise.all([r.e(549), r.e(36), r.e(805)]).then(r.bind(r, 9390))),
-                    A = { [O.SUMMARY]: M, [O.ACHIEVEMENTS]: P },
-                    C = n().memo(({ viewType: e }) => {
-                        const t = A[e],
+                    R = { [O.SUMMARY]: M, [O.ACHIEVEMENTS]: P },
+                    A = n().memo(({ viewType: e }) => {
+                        const t = R[e],
                             r = (0, k.useTransition)(e, {
                                 from: { opacity: 0 },
                                 enter: { opacity: 1 },
@@ -1499,8 +1499,8 @@
                               )
                             : (console.error('Unknown view type for render', e), null);
                     }),
-                    R = 'App_base_eb';
-                const H = (0, r(3215).q)()(
+                    C = 'App_base_eb';
+                const H = (0, r(3215).q3)()(
                         ({ observableModel: e }) => {
                             const t = {
                                 root: e.object(),
@@ -1525,17 +1525,25 @@
                             (o = r.close),
                             d(l.n.ESCAPE, o),
                             s
-                                ? n().createElement('div', { className: R }, n().createElement(C, { viewType: i }))
+                                ? n().createElement('div', { className: C }, n().createElement(A, { viewType: i }))
                                 : n().createElement(
                                       S,
                                       null,
-                                      n().createElement('div', { className: R }, n().createElement(C, { viewType: i })),
+                                      n().createElement('div', { className: C }, n().createElement(A, { viewType: i })),
                                   )
                         );
                     });
                 engine.whenReady.then(() => {
                     s().render(n().createElement(W, null, n().createElement(D, null)), document.getElementById('root'));
                 });
+            },
+            7363: (e) => {
+                'use strict';
+                e.exports = React;
+            },
+            1533: (e) => {
+                'use strict';
+                e.exports = ReactDOM;
             },
         },
         __webpack_module_cache__ = {},
@@ -1588,17 +1596,17 @@
             Promise.all(Object.keys(__webpack_require__.f).reduce((t, r) => (__webpack_require__.f[r](e, t), t), []))),
         (__webpack_require__.u = (e) =>
             36 === e
-                ? 'chunks/lobby/53e17685a523667086e1.js'
+                ? 'chunks/lobby/61388926eb99777ad39a.js'
                 : 154 === e
-                  ? 'chunks/lobby/b32df91cab295b949e71.js'
+                  ? 'chunks/lobby/794a992c77b4d57faf39.js'
                   : 805 === e
-                    ? 'chunks/lobby/191af3737001c5487ff4.js'
+                    ? 'chunks/lobby/02af825190d9cdbc306a.js'
                     : void 0),
         (__webpack_require__.miniCssF = (e) =>
             154 === e
-                ? 'chunks/lobby/b32df91cab295b949e71.css'
+                ? 'chunks/lobby/794a992c77b4d57faf39.css'
                 : 805 === e
-                  ? 'chunks/lobby/191af3737001c5487ff4.css'
+                  ? 'chunks/lobby/02af825190d9cdbc306a.css'
                   : 'lobby/achievements/AchievementsMainView/AchievementsMainView.css'),
         (__webpack_require__.g = (function () {
             if ('object' == typeof globalThis) return globalThis;

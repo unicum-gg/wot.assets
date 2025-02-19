@@ -64,7 +64,7 @@
                         setSidePaddingsRem: () => z,
                         whenTutorialReady: () => ne,
                     });
-                var o = n(6179),
+                var o = n(7363),
                     s = n.n(o);
                 const u = (e, t, n) =>
                     t.extraLargeHeight || t.largeHeight || t.mediumHeight || t.smallHeight || t.extraSmallHeight
@@ -203,8 +203,8 @@
                             onRequestPosition: c('children.requestPosition'),
                         },
                     },
-                    P = ['args'],
-                    C = (e, t) => {
+                    C = ['args'],
+                    P = (e, t) => {
                         const n = 'GFViewEventProxy';
                         if (void 0 !== t) {
                             const a = t.args,
@@ -217,7 +217,7 @@
                                             n[r] = e[r];
                                         }
                                     return n;
-                                })(t, P);
+                                })(t, C);
                             return void 0 !== a
                                 ? viewEnv.handleViewEvent(
                                       Object.assign({ __Type: n, type: e }, i, {
@@ -243,13 +243,13 @@
                     },
                     I = {
                         close(e) {
-                            C('popover' === e ? 2 : 32);
+                            P('popover' === e ? 2 : 32);
                         },
                         minimize() {
-                            C(64);
+                            P(64);
                         },
                         move(e) {
-                            C(16, { isMouseEvent: !0, on: e });
+                            P(16, { isMouseEvent: !0, on: e });
                         },
                     },
                     W = 15;
@@ -675,9 +675,9 @@
                             })(e, Me);
                         return s().createElement(he, null, s().createElement(Te, n, t));
                     };
-                var Pe = n(493),
-                    Ce = n.n(Pe);
-                const Re = !0,
+                var Re = n(1533),
+                    Ce = n.n(Re);
+                const Pe = !0,
                     Ie = 'play',
                     We = [
                         'width',
@@ -721,7 +721,7 @@
                             d = e.lastFrameIndex,
                             g = void 0 === d ? a - 1 : d,
                             h = e.loop,
-                            f = void 0 === h ? Re : h,
+                            f = void 0 === h ? Pe : h,
                             v = e.state,
                             w = void 0 === v ? Ie : v,
                             b = e.onAnimationDone,
@@ -938,7 +938,7 @@
                         height: 170,
                         frameCount: 136,
                         chunk: { count: 1, rows: 20, columns: 7 },
-                        getChunkPath: () => 'R.images.story_mode.gui.maps.icons.entryPoint.particles_sequence',
+                        getChunkPath: () => 'R.images.gui.maps.icons.sequence.smoke.particles_sequence',
                     },
                     Ze = (function (e) {
                         const t = e.chunk,
@@ -1006,7 +1006,7 @@
                                     g = (0, o.useState)(null != (a = e.frameTime) ? a : 33),
                                     h = g[0],
                                     f = g[1],
-                                    v = (0, o.useState)(null != (i = e.loop) ? i : Re),
+                                    v = (0, o.useState)(null != (i = e.loop) ? i : Pe),
                                     w = v[0],
                                     b = v[1],
                                     E = (0, o.useRef)(m),
@@ -1396,6 +1396,14 @@
                         document.getElementById('root'),
                     );
                 });
+            },
+            7363: (e) => {
+                'use strict';
+                e.exports = React;
+            },
+            1533: (e) => {
+                'use strict';
+                e.exports = ReactDOM;
             },
         },
         n = {};

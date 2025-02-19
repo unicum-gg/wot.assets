@@ -17,14 +17,14 @@
                         setRTPC: () => h,
                     });
                 var D = {};
-                F.r(D), F.d(D, { getBgUrl: () => T, getTextureUrl: () => _ });
+                F.r(D), F.d(D, { getBgUrl: () => O, getTextureUrl: () => _ });
                 var B = {};
                 F.r(B),
                     F.d(B, {
                         addModelObserver: () => q,
                         addPreloadTexture: () => N,
                         children: () => D,
-                        displayStatus: () => O,
+                        displayStatus: () => T,
                         displayStatusIs: () => nu,
                         events: () => z,
                         extraSize: () => tu,
@@ -48,9 +48,9 @@
                         setSidePaddingsRem: () => W,
                         whenTutorialReady: () => ru,
                     });
-                var C = F(6179),
+                var C = F(7363),
                     n = F.n(C),
-                    t = F(493),
+                    t = F(1533),
                     r = F.n(t),
                     o = F(3403),
                     i = F(6483),
@@ -162,10 +162,10 @@
                 function _(u, A, F = 1) {
                     return viewEnv.getChildTexturePath(u, A.width, A.height, F);
                 }
-                function T(u, A, F) {
+                function O(u, A, F) {
                     return `url(${_(u, A, F)})`;
                 }
-                const O = { showing: 0, shown: 1, hiding: 2, hidden: 3 },
+                const T = { showing: 0, shown: 1, hiding: 2, hidden: 3 },
                     z = {
                         onTextureFrozen: s('self.onTextureFrozen'),
                         onTextureReady: s('self.onTextureReady'),
@@ -182,8 +182,8 @@
                             onRequestPosition: s('children.requestPosition'),
                         },
                     },
-                    j = ['args'];
-                const M = 2,
+                    M = ['args'];
+                const j = 2,
                     k = 16,
                     L = 32,
                     V = 64,
@@ -200,7 +200,7 @@
                                             F[E] = u[E];
                                         }
                                     return F;
-                                })(A, j);
+                                })(A, M);
                             return void 0 !== e
                                 ? viewEnv.handleViewEvent(
                                       Object.assign({ __Type: F, type: u }, D, {
@@ -226,7 +226,7 @@
                     },
                     G = {
                         close(u) {
-                            $('popover' === u ? M : L);
+                            $('popover' === u ? j : L);
                         },
                         minimize() {
                             $(V);
@@ -295,7 +295,7 @@
                         let u = [];
                         return () => (0 === u.length && (u = Object.keys(viewEnv.getFontsConfig())), u);
                     })(),
-                    nu = Object.keys(O).reduce((u, A) => ((u[A] = () => viewEnv.getShowingStatus() === O[A]), u), {}),
+                    nu = Object.keys(T).reduce((u, A) => ((u[A] = () => viewEnv.getShowingStatus() === T[A]), u), {}),
                     tu = {
                         set: (u, A) => {
                             viewEnv.setExtraSizeRem(u, A);
@@ -491,26 +491,26 @@
                             ),
                         );
                     },
-                    Su = 'Content_base_7d',
-                    _u = 'Content_header_8e',
-                    Ru = 'Content_header__critical_93',
-                    Tu = 'Content_description_66',
-                    Ou = R.strings.tooltips.moduleFits,
+                    Ru = 'Content_base_7d',
+                    Su = 'Content_header_8e',
+                    _u = 'Content_header__critical_93',
+                    Ou = 'Content_description_66',
+                    Tu = R.strings.tooltips.moduleFits,
                     zu = n().memo(({ reason: u, isCritical: A }) => {
                         const F = (0, C.useMemo)(() => {
-                            const A = Ou.$dyn(u);
+                            const A = Tu.$dyn(u);
                             return { header: A.$dyn('header'), body: A.$dyn('text') };
                         }, [u]);
                         return n().createElement(
                             'div',
-                            { className: Su },
-                            F.header && n().createElement('div', { className: a()(_u, A && Ru) }, F.header),
+                            { className: Ru },
+                            F.header && n().createElement('div', { className: a()(Su, A && _u) }, F.header),
                             F.body &&
-                                n().createElement('div', { className: Tu }, n().createElement(Pu, { text: F.body })),
+                                n().createElement('div', { className: Ou }, n().createElement(Pu, { text: F.body })),
                         );
                     });
-                function ju() {}
-                function Mu() {
+                function Mu() {}
+                function ju() {
                     return !1;
                 }
                 console.log;
@@ -633,7 +633,7 @@
                                                 observableModel: {
                                                     array: (u, A) => {
                                                         const E = null != A ? A : n(u),
-                                                            e = ku.LO.box(E, { equals: Mu });
+                                                            e = ku.LO.box(E, { equals: ju });
                                                         return (
                                                             'real' === F &&
                                                                 C.subscribe(
@@ -645,7 +645,7 @@
                                                     },
                                                     object: (u, A) => {
                                                         const E = null != A ? A : n(u),
-                                                            e = ku.LO.box(E, { equals: Mu });
+                                                            e = ku.LO.box(E, { equals: ju });
                                                         return (
                                                             'real' === F &&
                                                                 C.subscribe(
@@ -732,7 +732,7 @@
                             },
                             () => (0, C.useContext)(F),
                         ];
-                    })(({ observableModel: u }) => u.primitives({ reason: 'reason', isCritical: 'isCritical' }), ju),
+                    })(({ observableModel: u }) => u.primitives({ reason: 'reason', isCritical: 'isCritical' }), Mu),
                     Iu = Gu[0],
                     Nu = Gu[1],
                     Hu = (0, o.Pi)(() => {
@@ -749,6 +749,12 @@
                         document.getElementById('root'),
                     );
                 });
+            },
+            7363: (u) => {
+                u.exports = React;
+            },
+            1533: (u) => {
+                u.exports = ReactDOM;
             },
         },
         F = {};

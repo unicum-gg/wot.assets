@@ -209,9 +209,9 @@
                         addPreloadTexture: () => s,
                         children: () => i,
                         displayStatus: () => n.W,
-                        displayStatusIs: () => y,
+                        displayStatusIs: () => M,
                         events: () => a.U,
-                        extraSize: () => M,
+                        extraSize: () => y,
                         forceTriggerMouseMove: () => S,
                         freezeTextureBeforeResize: () => v,
                         getBrowserTexturePath: () => c,
@@ -296,11 +296,11 @@
                         let e = [];
                         return () => (0 === e.length && (e = Object.keys(viewEnv.getFontsConfig())), e);
                     })(),
-                    y = Object.keys(n.W).reduce(
+                    M = Object.keys(n.W).reduce(
                         (e, t) => ((e[t] = () => viewEnv.getShowingStatus() === n.W[t]), e),
                         {},
                     ),
-                    M = {
+                    y = {
                         set: (e, t) => {
                             viewEnv.setExtraSizeRem(e, t);
                         },
@@ -769,7 +769,7 @@
             },
             2322: (e, t, r) => {
                 'use strict';
-                var i = r(6179),
+                var i = r(7363),
                     n = r.n(i);
                 const a = (e, t, r) =>
                     t.extraLargeHeight || t.largeHeight || t.mediumHeight || t.smallHeight || t.extraSmallHeight
@@ -1049,9 +1049,9 @@
                         return { mediaSize: n, mediaWidth: a, mediaHeight: o, remScreenWidth: t, remScreenHeight: r };
                     },
                     T = ['children', 'className'];
-                function y() {
+                function M() {
                     return (
-                        (y = Object.assign
+                        (M = Object.assign
                             ? Object.assign.bind()
                             : function (e) {
                                   for (var t = 1; t < arguments.length; t++) {
@@ -1060,10 +1060,10 @@
                                   }
                                   return e;
                               }),
-                        y.apply(null, arguments)
+                        M.apply(null, arguments)
                     );
                 }
-                const M = {
+                const y = {
                         [x.ExtraSmall]: '',
                         [x.Small]: p().SMALL_WIDTH,
                         [x.Medium]: `${p().SMALL_WIDTH} ${p().MEDIUM_WIDTH}`,
@@ -1101,7 +1101,7 @@
                             o = a.mediaWidth,
                             l = a.mediaHeight,
                             s = a.mediaSize;
-                        return n().createElement('div', y({ className: f()(r, M[o], P[l], k[s]) }, i), t);
+                        return n().createElement('div', M({ className: f()(r, y[o], P[l], k[s]) }, i), t);
                     },
                     W = ['children'],
                     I = (e) => {
@@ -1118,7 +1118,7 @@
                             })(e, W);
                         return n().createElement(E, null, n().createElement(H, r, t));
                     };
-                var A = r(493),
+                var A = r(1533),
                     C = r.n(A),
                     D = r(9916);
                 const N = [
@@ -1206,15 +1206,20 @@
                                     ((e = 1) => {
                                         const t = new Error().stack;
                                         let r,
-                                            i = R.invalid('resId');
+                                            i = R.invalid('resId'),
+                                            n = '';
+                                        var a;
                                         return (
                                             t &&
-                                                ((r = t.split('\n')[e].split('.js')[0].split('/').pop() || ''),
+                                                ((n =
+                                                    (null == (a = t.match(/(coui:\/\/[^\s]+\.js)/)) ? void 0 : a[0]) ||
+                                                    ''),
+                                                (r = t.split('\n')[e].split('.js')[0].split('/').pop() || ''),
                                                 window.__feature &&
                                                     window.__feature !== r &&
                                                     window.subViews[r] &&
                                                     (i = window.subViews[r].id)),
-                                            { caller: r, stack: t, resId: i }
+                                            { callerUrl: n, caller: r, stack: t, resId: i }
                                         );
                                     })().resId,
                                 [w],
@@ -1271,13 +1276,13 @@
                                       Object.assign(
                                           {
                                               onMouseEnter:
-                                                  ((y = t.props.onMouseEnter),
+                                                  ((M = t.props.onMouseEnter),
                                                   (e) => {
                                                       (e.clientX === window.innerWidth &&
                                                           e.clientY === window.innerHeight) ||
                                                           ((L.current.timeoutId = window.setTimeout(S, c ? 100 : 400)),
                                                           a && a(e),
-                                                          y && y(e));
+                                                          M && M(e));
                                                   }),
                                               onMouseLeave: ((e) => (t) => {
                                                   O(), null == o || o(t), null == e || e(t);
@@ -1294,7 +1299,7 @@
                                   )
                                 : t
                         );
-                        var y;
+                        var M;
                     };
                 let V, j;
                 !(function (e) {
@@ -1548,13 +1553,11 @@
                     X = Y[0],
                     Z = Y[1],
                     Q = 'Label_text_52',
-                    J = 'Label_textGlow_4e',
-                    ee = ({ level: e, inProgress: t }) =>
+                    J = ({ level: e, isAlertMode: t }) =>
                         n().createElement(
                             'div',
-                            { className: f()('Label_base_b1', t && 'Label_base__inProgress_ba') },
-                            n().createElement('div', { className: f()(Q, J) }, e),
-                            n().createElement('div', { className: f()(Q, J, 'Label_textGlow__inner_7b') }, e),
+                            { className: f()('Label_base_b1', t && 'Label_base__isAlertMode_be') },
+                            n().createElement('div', { className: f()(Q, 'Label_textGlow_4e') }, e),
                             n().createElement(
                                 'div',
                                 { className: 'Label_textWithBlend_07' },
@@ -1562,7 +1565,7 @@
                                 n().createElement('div', { className: 'Label_textMask_f7' }),
                             ),
                         ),
-                    te = {
+                    ee = {
                         base: 'Widget_base_55',
                         icon: 'Widget_icon_de',
                         icon__inProgress: 'Widget_icon__inProgress_e5',
@@ -1576,8 +1579,8 @@
                         label: 'Widget_label_be',
                         backgroundImage: 'Widget_backgroundImage_04',
                     },
-                    re = (e, t) => (t === j.Blink && e === V.InProgress ? 'animationWidget' : e),
-                    ie = (0, B.Pi)(() => {
+                    te = (e, t) => (t === j.Blink && e === V.InProgress ? 'animationWidget' : e),
+                    re = (0, B.Pi)(() => {
                         const e = Z().model.root.get(),
                             t = e.battleStatus,
                             r = e.currentProgression,
@@ -1594,38 +1597,46 @@
                             }, [l]),
                             n().createElement(
                                 'div',
-                                { className: te.base },
+                                { className: ee.base },
                                 n().createElement(
                                     'div',
-                                    { className: f()(te.icon, te[`icon__${re(t, a)}`], i && te.icon__alertMode) },
+                                    { className: f()(ee.icon, ee[`icon__${te(t, a)}`], i && ee.icon__alertMode) },
                                     t === V.InProgress &&
                                         n().createElement(
                                             n().Fragment,
                                             null,
-                                            n().createElement('div', { className: te.inProgressWidget }),
-                                            n().createElement('div', { className: te.flash }),
+                                            n().createElement('div', { className: ee.inProgressWidget }),
+                                            n().createElement('div', { className: ee.flash }),
                                             n().createElement(
                                                 'div',
-                                                { className: te.label },
-                                                n().createElement(ee, { level: r, inProgress: !i }),
+                                                { className: ee.label },
+                                                n().createElement(J, { level: r, inProgress: !i }),
                                             ),
                                         ),
                                 ),
                             )
                         );
                     }),
-                    ne = () =>
+                    ie = () =>
                         n().createElement(
                             F,
                             { contentId: R.views.battle_royale.lobby.tooltips.WidgetTooltipView('resId') },
-                            n().createElement('div', { className: 'App_base_06' }, n().createElement(ie, null)),
+                            n().createElement('div', { className: 'App_base_06' }, n().createElement(re, null)),
                         );
                 engine.whenReady.then(() => {
                     C().render(
-                        n().createElement(I, null, n().createElement(X, null, n().createElement(ne, null))),
+                        n().createElement(I, null, n().createElement(X, null, n().createElement(ie, null))),
                         document.getElementById('root'),
                     );
                 });
+            },
+            7363: (e) => {
+                'use strict';
+                e.exports = React;
+            },
+            1533: (e) => {
+                'use strict';
+                e.exports = ReactDOM;
             },
         },
         __webpack_module_cache__ = {},

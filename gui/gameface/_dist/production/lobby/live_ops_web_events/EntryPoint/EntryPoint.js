@@ -5,7 +5,7 @@
                 n.d(t, { O: () => re });
                 var r = {};
                 n.r(r),
-                    n.d(r, { mouse: () => p, off: () => d, on: () => u, onResize: () => l, onScaleUpdated: () => _ });
+                    n.d(r, { mouse: () => p, off: () => d, on: () => _, onResize: () => l, onScaleUpdated: () => u });
                 var i = {};
                 n.r(i),
                     n.d(i, {
@@ -60,8 +60,8 @@
                         whenTutorialReady: () => ne,
                     });
                 const l = s('clientResized'),
-                    _ = s('self.onScaleUpdated'),
-                    u = (e, t) => engine.on(e, t),
+                    u = s('self.onScaleUpdated'),
+                    _ = (e, t) => engine.on(e, t),
                     d = (e, t) => engine.off(e, t),
                     v = { down: s('mousedown'), up: s('mouseup'), move: s('mousemove') };
                 const p = (function () {
@@ -461,8 +461,8 @@
                 })(s || (s = {}));
                 const c = Object.freeze({ INTEGRAL: 0, GOLD: 1 }),
                     l = Object.freeze({ FRACTIONAL: 0, WO_ZERO_DIGITS: 1 }),
-                    _ = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1 }),
-                    u = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1, YEAR_MONTH: 2 });
+                    u = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1 }),
+                    _ = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1, YEAR_MONTH: 2 });
                 let d, v;
                 !(function (e) {
                     (e[(e.NONE = -1)] = 'NONE'),
@@ -602,8 +602,8 @@
                         ViewEventType: s,
                         NumberFormatType: c,
                         RealFormatType: l,
-                        TimeFormatType: _,
-                        DateFormatType: u,
+                        TimeFormatType: u,
+                        DateFormatType: _,
                         makeGlobalBoundingBox: b,
                         sendMoveEvent: (e) => m(s.MOVE, { isMouseEvent: !0, on: e }),
                         sendCloseEvent: f,
@@ -615,13 +615,13 @@
                             const a = p.O.view.getViewGlobalPosition(),
                                 c = n.getBoundingClientRect(),
                                 l = c.x,
-                                _ = c.y,
-                                u = c.width,
+                                u = c.y,
+                                _ = c.width,
                                 d = c.height,
                                 v = {
                                     x: p.O.view.pxToRem(l) + a.x,
-                                    y: p.O.view.pxToRem(_) + a.y,
-                                    width: p.O.view.pxToRem(u),
+                                    y: p.O.view.pxToRem(u) + a.y,
+                                    width: p.O.view.pxToRem(_),
                                     height: p.O.view.pxToRem(d),
                                 };
                             m(s.POP_OVER, {
@@ -697,14 +697,14 @@
                     };
             },
             997: (e, t, n) => {
-                var r = n(179),
+                var r = n(363),
                     i = n.n(r),
-                    o = n(493),
+                    o = n(533),
                     a = n.n(o),
                     s = n(483),
                     c = n.n(s);
                 var l = n(976);
-                const _ = [
+                const u = [
                     'children',
                     'contentId',
                     'args',
@@ -720,7 +720,7 @@
                     'onShow',
                     'onHide',
                 ];
-                function u(e) {
+                function _(e) {
                     return Object.entries(e || {}).map(([e, t]) => {
                         const n = { __Type: 'GFValueProxy', name: e };
                         switch (typeof t) {
@@ -781,7 +781,7 @@
                                         n[r] = e[r];
                                     }
                                 return n;
-                            })(e, _);
+                            })(e, u);
                         const k = (0, r.useRef)({ timeoutId: 0, isVisible: !1, prevTarget: null, hideTimerId: null }),
                             P = (0, r.useMemo)(
                                 () =>
@@ -789,22 +789,27 @@
                                     ((e = 1) => {
                                         const t = new Error().stack;
                                         let n,
-                                            r = R.invalid('resId');
+                                            r = R.invalid('resId'),
+                                            i = '';
+                                        var o;
                                         return (
                                             t &&
-                                                ((n = t.split('\n')[e].split('.js')[0].split('/').pop() || ''),
+                                                ((i =
+                                                    (null == (o = t.match(/(coui:\/\/[^\s]+\.js)/)) ? void 0 : o[0]) ||
+                                                    ''),
+                                                (n = t.split('\n')[e].split('.js')[0].split('/').pop() || ''),
                                                 window.__feature &&
                                                     window.__feature !== n &&
                                                     window.subViews[n] &&
                                                     (r = window.subViews[n].id)),
-                                            { caller: n, stack: t, resId: r }
+                                            { callerUrl: i, caller: n, stack: t, resId: r }
                                         );
                                     })().resId,
                                 [g],
                             ),
                             S = (0, r.useCallback)(() => {
                                 (k.current.isVisible && k.current.timeoutId) ||
-                                    (d(n, b, { isMouseEvent: !0, on: !0, arguments: u(i) }, P),
+                                    (d(n, b, { isMouseEvent: !0, on: !0, arguments: _(i) }, P),
                                     y && y(),
                                     (k.current.isVisible = !0));
                             }, [n, b, i, P, y]),
@@ -968,7 +973,7 @@
                         return [
                             function ({ mode: o = 'real', options: a, children: s, mocks: c }) {
                                 const l = (0, r.useRef)([]),
-                                    _ = (n, r, i) => {
+                                    u = (n, r, i) => {
                                         var o;
                                         const a = (function ({
                                                 initializer: e = !0,
@@ -1036,8 +1041,8 @@
                                                       }),
                                             c = (e) =>
                                                 'mocks' === n ? (null == i ? void 0 : i.getter(e)) : s.readByPath(e),
-                                            _ = (e) => l.current.push(e),
-                                            u = e({
+                                            u = (e) => l.current.push(e),
+                                            _ = e({
                                                 mode: n,
                                                 readByPath: c,
                                                 externalModel: s,
@@ -1108,26 +1113,26 @@
                                                         }
                                                     },
                                                 },
-                                                cleanup: _,
+                                                cleanup: u,
                                             }),
-                                            d = { mode: n, model: u, externalModel: s, cleanup: _ };
+                                            d = { mode: n, model: _, externalModel: s, cleanup: u };
                                         return {
-                                            model: u,
+                                            model: _,
                                             controls: 'mocks' === n && i ? i.controls(d) : t(d),
                                             externalModel: s,
                                             mode: n,
                                         };
                                     },
-                                    u = (0, r.useRef)(!1),
+                                    _ = (0, r.useRef)(!1),
                                     d = (0, r.useState)(o),
                                     v = d[0],
                                     p = d[1],
-                                    w = (0, r.useState)(() => _(o, a, c)),
+                                    w = (0, r.useState)(() => u(o, a, c)),
                                     h = w[0],
                                     b = w[1];
                                 return (
                                     (0, r.useEffect)(() => {
-                                        u.current ? b(_(v, a, c)) : (u.current = !0);
+                                        _.current ? b(u(v, a, c)) : (_.current = !0);
                                     }, [c, v, a]),
                                     (0, r.useEffect)(() => {
                                         p(o);
@@ -1198,8 +1203,8 @@
                             a = o.state,
                             s = o.isFirstEntry,
                             l = o.previousState,
-                            _ = o.isVisited,
-                            u = o.isSmall,
+                            u = o.isVisited,
+                            _ = o.isSmall,
                             d = o.isHighQualityPreset,
                             b = s && l === p.PRE_EVENT && a === p.EVENT_ACTIVE,
                             E = (0, r.useState)(b ? l : a),
@@ -1227,9 +1232,9 @@
                                         className: c()(
                                             S.base,
                                             S[`base__${m}`],
-                                            !u && S.base__big,
-                                            u && g && S.base__firstShow,
-                                            !u && g && S.base__firstShowBig,
+                                            !_ && S.base__big,
+                                            _ && g && S.base__firstShow,
+                                            !_ && g && S.base__firstShowBig,
                                         ),
                                         onClick: () => {
                                             n.onClick(), A.playClick();
@@ -1246,7 +1251,7 @@
                                         i().createElement('div', { className: S.calendarIcon }),
                                         i().createElement('div', { className: S.statusIcon }),
                                         d &&
-                                            !_ &&
+                                            !u &&
                                             m === p.EVENT_ACTIVE &&
                                             i().createElement(
                                                 'div',
@@ -1267,6 +1272,12 @@
                 engine.whenReady.then(() => {
                     a().render(i().createElement(k, null, i().createElement(C, null)), document.getElementById('root'));
                 });
+            },
+            363: (e) => {
+                e.exports = React;
+            },
+            533: (e) => {
+                e.exports = ReactDOM;
             },
         },
         __webpack_module_cache__ = {},

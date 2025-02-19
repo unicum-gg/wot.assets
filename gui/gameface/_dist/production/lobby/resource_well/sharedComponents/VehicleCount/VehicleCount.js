@@ -2,7 +2,7 @@
     'use strict';
     var __webpack_modules__ = {
             280: (u, e, F) => {
-                F(6483), F(3649), F(6179), F(5287);
+                F(6483), F(3649), F(7363), F(5287);
             },
             7044: (u, e, F) => {
                 F(3649), F(9916);
@@ -357,18 +357,18 @@
                 F(3469), F(2133), F(2790), F(579), F(5360), F(9056);
             },
             6536: (u, e, F) => {
-                F(6179);
+                F(7363);
             },
             3469: (u, e, F) => {
-                F(7044), F(6179);
+                F(7044), F(7363);
             },
             2133: (u, e, F) => {
-                F(6179);
+                F(7363);
             },
             5360: (u, e, F) => {
                 F(6536);
                 var A = F(9916);
-                F(6179);
+                F(7363);
                 A.Sw.instance;
                 let E;
                 !(function (u) {
@@ -377,14 +377,14 @@
             },
             9056: (u, e, F) => {
                 var A = F(9916);
-                F(6179);
+                F(7363);
                 A.Sw.instance;
             },
             2790: (u, e, F) => {
-                F(6179);
+                F(7363);
             },
             579: (u, e, F) => {
-                F(3138), F(6179);
+                F(3138), F(7363);
             },
             5521: (u, e, F) => {
                 let A, E;
@@ -809,9 +809,12 @@
                     };
             },
             8288: (u, e, F) => {
-                F(6483), F(280), F(2344), F(6179);
+                F(6483), F(280), F(2344), F(7363);
             },
             5287: () => {},
+            7363: (u) => {
+                u.exports = React;
+            },
         },
         __webpack_module_cache__ = {},
         deferred;
@@ -854,14 +857,6 @@
                     !__webpack_require__.o(u, F) &&
                     Object.defineProperty(u, F, { enumerable: !0, get: e[F] });
         }),
-        (__webpack_require__.g = (function () {
-            if ('object' == typeof globalThis) return globalThis;
-            try {
-                return this || new Function('return this')();
-            } catch (u) {
-                if ('object' == typeof window) return window;
-            }
-        })()),
         (__webpack_require__.o = (u, e) => Object.prototype.hasOwnProperty.call(u, e)),
         (__webpack_require__.r = (u) => {
             'undefined' != typeof Symbol &&

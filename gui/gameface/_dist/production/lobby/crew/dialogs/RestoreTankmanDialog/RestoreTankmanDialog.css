@@ -1257,6 +1257,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     flex-direction: column;
     align-items: flex-start;
     padding: 15rem 20rem 14rem;
+    pointer-events: none;
 }
 
 .Content_base__disabled_e3 {
@@ -1272,6 +1273,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     font-size: 15rem;
     font-weight: 700;
     line-height: 1.15;
+    width: 100%;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
@@ -1418,12 +1420,22 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 
 .TankmanCard_base__disabled_1f {
     background-color: rgba(0, 0, 0, 0.1);
-    background-image: url('R.images.gui.maps.icons.components.button.texture_disable');
     cursor: default;
 }
 
 .TankmanCard_base__disabled_1f .TankmanCard_icon_a5 {
     z-index: -1;
+}
+.TankmanCard_cardContent_79 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: 6rem;
+}
+.TankmanCard_base__disabled_1f .TankmanCard_cardContent_79 {
+    background-image: url('R.images.gui.maps.icons.components.button.texture_disable');
 }
 .TankmanCard_disabledLayer_25 {
     z-index: 1;
@@ -1455,6 +1467,11 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     position: absolute;
     right: 10rem;
     bottom: 10rem;
+}
+.TankmanCard_newMark_9b {
+    position: absolute;
+    top: -6rem;
+    right: 20rem;
 }
 
 .RestoreTankmanApp_tankmanWrapper_39 {

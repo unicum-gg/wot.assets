@@ -3,11 +3,14 @@
     var e,
         r = {
             845: (e, r, t) => {
-                t(6179), t(6483);
+                t(7363), t(6483);
                 let n;
                 !(function (e) {
                     (e.Center = 'center'), (e.Left = 'left'), (e.Right = 'right');
                 })(n || (n = {}));
+            },
+            7363: (e) => {
+                e.exports = React;
             },
         },
         t = {};

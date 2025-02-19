@@ -6,7 +6,7 @@
                 o(8546);
             },
             4420: (e, t, o) => {
-                o(6483), o(6179), o(9485);
+                o(6483), o(7363), o(9485);
             },
             8546: (e, t, o) => {
                 let r, i, n, a;
@@ -32,6 +32,9 @@
                             (e.HideLevel = 'hide'),
                             (e.HideLevelWithDelay = 'hideWithDelay');
                     })(a || (a = {}));
+            },
+            7363: (e) => {
+                e.exports = React;
             },
         },
         o = {};

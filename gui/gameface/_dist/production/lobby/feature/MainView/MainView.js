@@ -20,8 +20,8 @@
                 'use strict';
                 t.r(u),
                     t.d(u, { mouse: () => c, off: () => i, on: () => s, onResize: () => r, onScaleUpdated: () => o });
-                var n = t(2472),
-                    a = t(1176);
+                var n = t(472),
+                    a = t(176);
                 const r = (0, n.E)('clientResized'),
                     o = (0, n.E)('self.onScaleUpdated'),
                     s = (e, u) => engine.on(e, u),
@@ -92,7 +92,7 @@
                         });
                     })();
             },
-            5959: (e, u, t) => {
+            959: (e, u, t) => {
                 'use strict';
                 t.r(u),
                     t.d(u, {
@@ -104,7 +104,7 @@
                         setRTPC: () => a.E,
                     });
                 var n = t(527),
-                    a = t(2493);
+                    a = t(493);
                 function r(e = 'px') {
                     return 'rem' === e ? viewEnv.getClientSizeRem() : viewEnv.getClientSizePx();
                 }
@@ -117,14 +117,14 @@
                     get: () => viewEnv.getGraphicsQuality(),
                 };
             },
-            1176: (e, u, t) => {
+            176: (e, u, t) => {
                 'use strict';
                 function n(e) {
                     viewEnv.setTrackMouseOnStage(e);
                 }
                 t.d(u, { R: () => n });
             },
-            2493: (e, u, t) => {
+            493: (e, u, t) => {
                 'use strict';
                 function n(e) {
                     engine.call('PlaySound', e).catch((u) => {
@@ -138,7 +138,7 @@
                 }
                 t.d(u, { E: () => a, G: () => n });
             },
-            2472: (e, u, t) => {
+            472: (e, u, t) => {
                 'use strict';
                 function n(e) {
                     return (u) => (
@@ -150,22 +150,22 @@
                 }
                 t.d(u, { E: () => n });
             },
-            3138: (e, u, t) => {
+            138: (e, u, t) => {
                 'use strict';
                 t.d(u, { O: () => r });
-                var n = t(5959),
+                var n = t(959),
                     a = t(514);
-                const r = { view: t(7641), client: n, sound: a.ZP };
+                const r = { view: t(641), client: n, sound: a.ZP };
             },
             514: (e, u, t) => {
                 'use strict';
                 t.d(u, { ZP: () => o });
-                var n = t(5959);
+                var n = t(959);
                 const a = { highlight: 'highlight', click: 'play', yes1: 'yes1' },
                     r = Object.keys(a).reduce((e, u) => ((e[u] = () => (0, n.playSound)(a[u])), e), {}),
                     o = { play: Object.assign({}, r, { sound: n.playSound }), setRTPC: n.setRTPC };
             },
-            3722: (e, u, t) => {
+            722: (e, u, t) => {
                 'use strict';
                 function n(e, u, t = 1) {
                     return viewEnv.getChildTexturePath(e, u.width, u.height, t);
@@ -175,15 +175,15 @@
                 }
                 t.r(u), t.d(u, { getBgUrl: () => a, getTextureUrl: () => n });
             },
-            6112: (e, u, t) => {
+            112: (e, u, t) => {
                 'use strict';
                 t.d(u, { W: () => n });
                 const n = { showing: 0, shown: 1, hiding: 2, hidden: 3 };
             },
-            6538: (e, u, t) => {
+            538: (e, u, t) => {
                 'use strict';
                 t.d(u, { U: () => a });
-                var n = t(2472);
+                var n = t(472);
                 const a = {
                     onTextureFrozen: (0, n.E)('self.onTextureFrozen'),
                     onTextureReady: (0, n.E)('self.onTextureReady'),
@@ -201,7 +201,7 @@
                     },
                 };
             },
-            7641: (e, u, t) => {
+            641: (e, u, t) => {
                 'use strict';
                 t.r(u),
                     t.d(u, {
@@ -232,10 +232,10 @@
                         setSidePaddingsRem: () => E,
                         whenTutorialReady: () => S,
                     });
-                var n = t(3722),
-                    a = t(6112),
-                    r = t(6538),
-                    o = t(8566);
+                var n = t(722),
+                    a = t(112),
+                    r = t(538),
+                    o = t(566);
                 const s = 15;
                 function i(e) {
                     viewEnv.addPreloadTexture(e);
@@ -315,7 +315,7 @@
                         engine.whenReady,
                     ]);
             },
-            8566: (e, u, t) => {
+            566: (e, u, t) => {
                 'use strict';
                 t.d(u, { qP: () => r });
                 const n = ['args'],
@@ -368,7 +368,7 @@
                         },
                     };
             },
-            5521: (e, u, t) => {
+            521: (e, u, t) => {
                 'use strict';
                 let n, a;
                 t.d(u, { n: () => n }),
@@ -419,10 +419,10 @@
                             (e.SYMBOL_LOCK = 'SymbolLock');
                     })(a || (a = {}));
             },
-            1358: (e, u, t) => {
+            358: (e, u, t) => {
                 'use strict';
                 t.d(u, { Z: () => r });
-                var n = t(3138);
+                var n = t(138);
                 class a {
                     constructor() {
                         (this._callbacks = void 0),
@@ -478,11 +478,11 @@
                 a.__instance = void 0;
                 const r = a;
             },
-            7572: (__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+            572: (__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
                 'use strict';
                 __webpack_require__.d(__webpack_exports__, { Z: () => __WEBPACK_DEFAULT_EXPORT__ });
-                var _DataTracker__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1358),
-                    _index__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(9916);
+                var _DataTracker__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(358),
+                    _index__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(916);
                 class ViewModel {
                     constructor(path, watchingFields = []) {
                         (this.dataTracker = void 0),
@@ -521,7 +521,7 @@
                 }
                 const __WEBPACK_DEFAULT_EXPORT__ = ViewModel;
             },
-            9916: (e, u, t) => {
+            916: (e, u, t) => {
                 'use strict';
                 t.d(u, { Sw: () => r.Z, B0: () => s, ry: () => f });
                 class n {
@@ -563,8 +563,8 @@
                 }
                 n.__instance = void 0;
                 const a = n;
-                var r = t(1358),
-                    o = t(8613);
+                var r = t(358),
+                    o = t(613);
                 let s;
                 var i;
                 ((i = s || (s = {}))[(i.UNDEFINED = 0)] = 'UNDEFINED'),
@@ -579,8 +579,8 @@
                     c = Object.freeze({ FRACTIONAL: 0, WO_ZERO_DIGITS: 1 }),
                     d = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1 }),
                     E = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1, YEAR_MONTH: 2 });
-                var A = t(5521),
-                    m = t(3138);
+                var A = t(521),
+                    m = t(138);
                 const F = ['args'];
                 function D(e, u, t, n, a, r, o) {
                     try {
@@ -664,7 +664,7 @@
                     h = (e, u) => {
                         e.keyCode === A.n.ESCAPE && u();
                     };
-                var B = t(7572);
+                var B = t(572);
                 const p = a.instance,
                     v = {
                         DataTracker: r.Z,
@@ -750,7 +750,7 @@
                     };
                 window.ViewEnvHelper = v;
             },
-            8613: (e, u, t) => {
+            613: (e, u, t) => {
                 'use strict';
                 t.d(u, { Ew: () => r, Z5: () => n, cy: () => a });
                 const n = {
@@ -771,9 +771,9 @@
                         getFormattedDateTime: (e, u, t = !0) => regionalDateTime.getFormattedDateTime(e, u, t),
                     };
             },
-            1761: (e, u, t) => {
+            761: (e, u, t) => {
                 'use strict';
-                var n = t(6179),
+                var n = t(363),
                     a = t.n(n);
                 const r = (e, u, t) =>
                     u.extraLargeHeight || u.largeHeight || u.mediumHeight || u.smallHeight || u.extraSmallHeight
@@ -785,7 +785,7 @@
                             ? e
                             : null
                         : e;
-                var o = t(3138);
+                var o = t(138);
                 const s = {
                     extraLarge: { weight: 4, width: 2560, height: 1440 },
                     large: { weight: 3, width: 1920, height: 1080 },
@@ -972,7 +972,7 @@
                     const E = (0, n.useMemo)(() => Object.assign({}, r), [r]);
                     return a().createElement(m.Provider, { value: E }, e);
                 };
-                var f = t(6483),
+                var f = t(483),
                     C = t.n(f),
                     _ = t(926),
                     h = t.n(_);
@@ -1122,7 +1122,7 @@
                             })(e, k);
                         return a().createElement(g, null, a().createElement(O, t, u));
                     };
-                var P = t(493),
+                var P = t(533),
                     L = t.n(P);
                 let M, N;
                 !(function (e) {
@@ -1134,8 +1134,8 @@
                     (function (e) {
                         (e.NONE = 'none'), (e.NY = 'ny'), (e.NY_EVENT = 'nyEvent'), (e.WDR = 'wdr');
                     })(N || (N = {}));
-                var H = t(5521),
-                    W = t(9916);
+                var H = t(521),
+                    W = t(916);
                 const V = (e) => {
                     console.error(e.type + ': useKeydownListener hook :: Callback is not defined');
                 };
@@ -1192,8 +1192,8 @@
                         console.error('[lib/sounds.js] playSound(', e, '): ', u);
                     });
                 }
-                var z = t(9174),
-                    Y = t(3403);
+                var z = t(174),
+                    Y = t(403);
                 const K = (e) => {
                     let u,
                         t = null;
@@ -1288,7 +1288,7 @@
                 const ie = (e, u) =>
                     Object.keys(e).length === Object.keys(u).length &&
                     Object.keys(e).every((t) => Object.prototype.hasOwnProperty.call(u, t) && e[t] === u[t]);
-                var le = t(3946);
+                var le = t(946);
                 const ce = ((e, u) => {
                         const t = (0, n.createContext)({});
                         return [
@@ -1833,7 +1833,7 @@
                 };
                 _e.defaultProps = { type: fe.primary, isFocused: !1, soundHover: 'highlight', soundClick: 'play' };
                 const he = _e;
-                var Be = t(7030);
+                var Be = t(30);
                 const pe = [
                         ['1', '9', '7', '7', '4', '22', '15', '15', '8'],
                         ['1', '16', '11', '29', '2', '22', '10', '30', '8'],
@@ -1877,8 +1877,8 @@
                         Z.UltraLarge,
                         'Calendar_base_e0'),
                     be = 'Calendar_base__layer_52';
-                var xe = t(2558),
-                    Se = t(8934);
+                var xe = t(558),
+                    Se = t(934);
                 const Te = (e, u) => e.toDateString() === u.toDateString();
                 let Oe;
                 !(function (e) {
@@ -1894,7 +1894,7 @@
                         (e.FullTime = 'fullTime'),
                         (e.FullDateTime = 'fullDateTime');
                 })(Oe || (Oe = {}));
-                var Re = t(1281);
+                var Re = t(797);
                 let ke;
                 !(function (e) {
                     (e[(e.left = 0)] = 'left'), (e[(e.right = 1)] = 'right');
@@ -1938,7 +1938,7 @@
                                 .match(e);
                     })(),
                     He = ['zh_cn', 'zh_sg', 'zh_tw'];
-                var We = t(8613);
+                var We = t(613);
                 Date.now();
                 const Ve = We.Ew.getRegionalDateTime;
                 We.Ew.getFormattedDateTime;
@@ -2153,15 +2153,20 @@
                                     ((e = 1) => {
                                         const u = new Error().stack;
                                         let t,
-                                            n = R.invalid('resId');
+                                            n = R.invalid('resId'),
+                                            a = '';
+                                        var r;
                                         return (
                                             u &&
-                                                ((t = u.split('\n')[e].split('.js')[0].split('/').pop() || ''),
+                                                ((a =
+                                                    (null == (r = u.match(/(coui:\/\/[^\s]+\.js)/)) ? void 0 : r[0]) ||
+                                                    ''),
+                                                (t = u.split('\n')[e].split('.js')[0].split('/').pop() || ''),
                                                 window.__feature &&
                                                     window.__feature !== t &&
                                                     window.subViews[t] &&
                                                     (n = window.subViews[t].id)),
-                                            { caller: t, stack: u, resId: n }
+                                            { callerUrl: a, caller: t, stack: u, resId: n }
                                         );
                                     })().resId,
                                 [f],
@@ -2394,7 +2399,7 @@
                             ),
                         );
                     });
-                var Eu = t(6112);
+                var Eu = t(112);
                 const Au = [
                     'src',
                     'className',
@@ -4677,6 +4682,14 @@
                     );
                 });
             },
+            363: (e) => {
+                'use strict';
+                e.exports = React;
+            },
+            533: (e) => {
+                'use strict';
+                e.exports = ReactDOM;
+            },
         },
         __webpack_module_cache__ = {},
         deferred;
@@ -4754,6 +4767,6 @@
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             t.forEach(u.bind(null, 0)), (t.push = u.bind(null, t.push.bind(t)));
         })();
-    var __webpack_exports__ = __webpack_require__.O(void 0, [503], () => __webpack_require__(1761));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [503], () => __webpack_require__(761));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

@@ -6,7 +6,7 @@
                 var a = t(6483),
                     i = t.n(a),
                     r = t(7727),
-                    n = t(6179),
+                    n = t(7363),
                     s = t.n(n),
                     o = t(6880),
                     l = t(2106);
@@ -129,7 +129,7 @@
                 var a = t(6483),
                     i = t.n(a),
                     r = t(2372),
-                    n = t(6179),
+                    n = t(7363),
                     s = t.n(n),
                     o = t(8460),
                     l = t(329);
@@ -199,7 +199,8 @@
                             (e.xp = 'xp'),
                             (e.freeXP = 'freeXP'),
                             (e.eliteXP = 'eliteXP'),
-                            (e.equipCoin = 'equipCoin');
+                            (e.equipCoin = 'equipCoin'),
+                            (e.stpCoin = 'stpcoin');
                     })(i || (i = {})),
                     (function (e) {
                         (e.Red = 'RedActionBG'), (e.Blue = 'BlueActionBG');
@@ -207,7 +208,7 @@
             },
             2372: (e, u, t) => {
                 t.d(u, { A: () => n });
-                var a = t(6179),
+                var a = t(7363),
                     i = t.n(a),
                     r = t(9916);
                 class n extends i().PureComponent {
@@ -226,7 +227,7 @@
                 var a = t(6483),
                     i = t.n(a),
                     r = t(3649),
-                    n = t(6179),
+                    n = t(7363),
                     s = t.n(n),
                     o = t(5287);
                 const l = ({
@@ -261,7 +262,7 @@
             3495: (e, u, t) => {
                 t.d(u, { Y: () => _ });
                 var a = t(9768),
-                    i = t(6179),
+                    i = t(7363),
                     r = t(1043),
                     n = t(5262);
                 const s = a.O.client.getSize('rem'),
@@ -274,7 +275,7 @@
                 t.d(u, { Z: () => c });
                 var a = t(9768),
                     i = t(6536),
-                    r = t(6179),
+                    r = t(7363),
                     n = t.n(r),
                     s = t(3495),
                     o = t(1043),
@@ -308,7 +309,7 @@
                 };
             },
             6010: (e, u, t) => {
-                var a = t(6179),
+                var a = t(7363),
                     i = t(7382),
                     r = t(3495);
                 const n = ['children'];
@@ -485,7 +486,7 @@
             6373: (e, u, t) => {
                 t.d(u, { i: () => l });
                 var a = t(2056),
-                    i = t(6179),
+                    i = t(7363),
                     r = t.n(i);
                 const n = ['children', 'body', 'header', 'note', 'alert', 'args'];
                 function s() {
@@ -546,7 +547,7 @@
                 t.d(u, { u: () => l });
                 var a = t(7902),
                     i = t(9916),
-                    r = t(6179);
+                    r = t(7363);
                 const n = [
                     'children',
                     'contentId',
@@ -1023,16 +1024,17 @@
                 const a = (e = 1) => {
                     const u = new Error().stack;
                     let t,
-                        a = R.invalid('resId');
-                    return (
-                        u &&
-                            ((t = u.split('\n')[e].split('.js')[0].split('/').pop() || ''),
-                            window.__feature &&
-                                window.__feature !== t &&
-                                window.subViews[t] &&
-                                (a = window.subViews[t].id)),
-                        { caller: t, stack: u, resId: a }
-                    );
+                        a = R.invalid('resId'),
+                        i = '';
+                    var r;
+                    u &&
+                        ((i = (null == (r = u.match(/(coui:\/\/[^\s]+\.js)/)) ? void 0 : r[0]) || ''),
+                        (t = u.split('\n')[e].split('.js')[0].split('/').pop() || ''),
+                        window.__feature &&
+                            window.__feature !== t &&
+                            window.subViews[t] &&
+                            (a = window.subViews[t].id));
+                    return { callerUrl: i, caller: t, stack: u, resId: a };
                 };
             },
             8071: (e, u, t) => {
@@ -1049,17 +1051,17 @@
             },
             6536: (e, u, t) => {
                 t.d(u, { Z: () => i });
-                var a = t(6179);
+                var a = t(7363);
                 const i = (e) => {
                     const u = (0, a.useRef)(!1);
                     u.current || (e(), (u.current = !0));
                 };
             },
             3469: (e, u, t) => {
-                t(7044), t(6179);
+                t(7044), t(7363);
             },
             2133: (e, u, t) => {
-                t(6179);
+                t(7363);
             },
             9924: (e, u, t) => {
                 t.d(u, { Z: () => _ });
@@ -1067,7 +1069,7 @@
                     i = t.n(a),
                     r = t(7739),
                     n = t(5262),
-                    s = t(6179),
+                    s = t(7363),
                     o = t(3649);
                 const l = (e, u) => e + '__' + u,
                     c = (e, u) => e + (0, o.e)(u);
@@ -1084,75 +1086,77 @@
                 }
             },
             5360: (e, u, t) => {
-                t.d(u, { D: () => c, t: () => _ });
+                t.d(u, { D: () => _, t: () => d });
                 var a = t(7902),
                     i = t(8071),
                     r = t(6536),
                     n = t(9916),
                     s = t(7332),
-                    o = t(6179);
-                const l = n.Sw.instance;
-                let c;
+                    o = t(7363),
+                    l = t(538);
+                const c = n.Sw.instance;
+                let _;
                 !(function (e) {
                     (e.None = 'None'), (e.Shallow = 'Shallow'), (e.Deep = 'Deep');
-                })(c || (c = {}));
-                const _ = (e = 'model', u = c.Deep) => {
+                })(_ || (_ = {}));
+                const d = (e = 'model', u = _.Deep) => {
                     const t = (0, o.useState)(0),
                         n = (t[0], t[1]),
-                        _ = (0, o.useMemo)(() => (0, a.F)(), []),
-                        d = _.caller,
-                        E = _.resId,
-                        m = (0, o.useMemo)(
-                            () => (window.__feature && window.__feature !== d ? `subViews.${d}.${e}` : e),
-                            [d, e],
-                        ),
-                        F = (0, o.useState)(() =>
+                        d = (0, o.useMemo)(() => (0, a.F)(), []),
+                        E = d.callerUrl,
+                        m = d.caller,
+                        F = d.resId,
+                        A = (0, o.useMemo)(() => {
+                            const u = (0, l.sI)(E.replace('.js', '.html'));
+                            return window.__feature && window.__feature !== m && !u ? `subViews.${m}.${e}` : e;
+                        }, [E, m, e]),
+                        b = (0, o.useState)(() =>
                             ((e) => {
                                 const u = (0, i.M)(e, window);
                                 for (const e in u) 'function' == typeof u[e] && (u[e] = u[e].bind(u));
                                 return (0, s.os)(u) ? u.value : u;
-                            })((0, s.Gd)(m)),
+                            })((0, s.Gd)(A)),
                         ),
-                        A = F[0],
-                        b = F[1],
-                        p = (0, o.useRef)(-1);
+                        p = b[0],
+                        g = b[1],
+                        D = (0, o.useRef)(-1);
                     return (
                         (0, r.Z)(() => {
                             if (
                                 ('boolean' == typeof u &&
-                                    ((u = u ? c.Deep : c.None),
+                                    ((u = u ? _.Deep : _.None),
                                     console.warn(
                                         'Boolean key for useModel "tracking" param is deprecated. Use ModelTracking enum values instead!',
                                     )),
-                                u !== c.None)
+                                u !== _.None)
                             ) {
                                 const t = (e) => {
-                                        (0, s.kJ)(e) && u === c.Deep
-                                            ? (e === A && n((e) => e + 1), b(e))
-                                            : b(Object.assign([], e));
+                                        (0, s.kJ)(e) && u === _.Deep
+                                            ? (e === p && n((e) => e + 1), g(e))
+                                            : g(Object.assign([], e));
                                     },
                                     a = (0, s.U0)(e);
-                                p.current = l.addCallback(a, t, E, u === c.Deep);
+                                D.current = c.addCallback(a, t, F, u === _.Deep);
                             }
                         }),
                         (0, o.useEffect)(() => {
-                            if (u !== c.None)
+                            if (u !== _.None)
                                 return () => {
-                                    l.removeCallback(p.current, E);
+                                    c.removeCallback(D.current, F);
                                 };
-                        }, [E, u]),
-                        A
+                        }, [F, u]),
+                        p
                     );
                 };
             },
             9056: (e, u, t) => {
                 var a = t(9916);
-                t(6179);
+                t(7363);
                 a.Sw.instance;
             },
             2790: (e, u, t) => {
                 t.d(u, { Z: () => i });
-                var a = t(6179);
+                var a = t(7363);
                 const i = (e, u) => {
                     const t = (0, a.useRef)();
                     return (
@@ -1164,7 +1168,14 @@
                 };
             },
             579: (e, u, t) => {
-                t(9768), t(6179);
+                t(9768), t(7363);
+            },
+            538: (e, u, t) => {
+                function a(e) {
+                    return i().has(e);
+                }
+                t.d(u, { sI: () => a });
+                const i = () => (window.injected || (window.injected = new Map()), window.injected);
             },
             5521: (e, u, t) => {
                 let a, i;
@@ -1215,6 +1226,19 @@
                             (e.SYMBOL = 'Symbol'),
                             (e.SYMBOL_LOCK = 'SymbolLock');
                     })(i || (i = {}));
+            },
+            9480: (e, u, t) => {
+                t.d(u, { hX: () => a });
+                function a(e, u) {
+                    if (Array.isArray(e)) return e.filter(u);
+                    const t = [];
+                    for (let i = 0; i < e.length; i++) {
+                        var a;
+                        const r = null == (a = e[i]) ? void 0 : a.value;
+                        u(r, i, e) && t.push(r);
+                    }
+                    return t;
+                }
             },
             9690: (e, u, t) => {
                 t.d(u, { HG: () => s, cg: () => r, qP: () => n });
@@ -1699,9 +1723,9 @@
             },
             619: (e, u, t) => {
                 var a = t(7739),
-                    i = t(6179),
+                    i = t(7363),
                     r = t.n(i),
-                    n = t(493),
+                    n = t(1533),
                     s = t.n(n),
                     o = t(5634),
                     l = t(9338);
@@ -2080,46 +2104,46 @@
                 });
             },
             8434: (e, u, t) => {
-                t.d(u, { r: () => l });
-                var a = t(6179),
+                t.d(u, { r: () => c });
+                var a = t(7363),
                     i = t.n(a),
-                    r = t(9916),
-                    n = t(1532);
-                const s = { calcValue: 0, isPositive: !0, valueKey: 'default' },
-                    o = ({ values: e, localeName: u }) => {
-                        const t = e.filter(({ value: { valueKey: e } = {} }) => e === u).pop();
-                        if (!t) return s;
+                    r = t(1532),
+                    n = t(9480),
+                    s = t(9916);
+                const o = { calcValue: 0, isPositive: !0, valueKey: 'default' },
+                    l = ({ values: e, localeName: u }) => {
+                        const t = n.hX(e, ({ valueKey: e }) => e === u).pop();
+                        if (!t) return o;
                         const a = t.value,
-                            i = a.value,
-                            r = a.valueType,
-                            o = a.valueKey,
-                            l = r === n.W ? 100 * (i - 1) : i;
-                        return { calcValue: l, isPositive: l > 0, valueKey: o };
+                            i = t.valueType,
+                            s = t.valueKey,
+                            l = i === r.W ? 100 * (a - 1) : a;
+                        return { calcValue: l, isPositive: l > 0, valueKey: s };
                     },
-                    l = ({
+                    c = ({
                         isUnitVisible: e = !0,
                         bonus: u,
                         classes: t = {},
                         isSpaceVisible: a = !0,
-                        keepPositive: n = !1,
+                        keepPositive: r = !1,
                     }) => {
-                        const s = ((e) => {
-                                const u = o(e),
+                        const n = ((e) => {
+                                const u = l(e),
                                     t = u.calcValue,
                                     a = u.isPositive,
                                     i = u.valueKey;
-                                return `${a ? '+' : ''}${r.Z5.getRealFormat(t, r.Gr.WO_ZERO_DIGITS)}${R.strings.tank_setup.kpi.bonus.valueTypes.$dyn(i) || '%'}`;
+                                return `${a ? '+' : ''}${s.Z5.getRealFormat(t, s.Gr.WO_ZERO_DIGITS)}${R.strings.tank_setup.kpi.bonus.valueTypes.$dyn(i) || '%'}`;
                             })(u),
-                            l = ((e, u = !1) =>
-                                u || o(e).isPositive
+                            o = ((e, u = !1) =>
+                                u || l(e).isPositive
                                     ? R.strings.tank_setup.kpi.bonus.positive.$dyn(e.localeName)
-                                    : R.strings.tank_setup.kpi.bonus.negative.$dyn(e.localeName))(u, n);
+                                    : R.strings.tank_setup.kpi.bonus.negative.$dyn(e.localeName))(u, r);
                         return i().createElement(
                             'span',
                             { className: t.base },
-                            e && i().createElement('span', { className: t.unit }, s),
+                            e && i().createElement('span', { className: t.unit }, n),
                             e && a && ' ',
-                            i().createElement('span', { className: t.text }, l),
+                            i().createElement('span', { className: t.text }, o),
                         );
                     };
             },
@@ -2127,7 +2151,7 @@
                 t.d(u, { r: () => zu });
                 var a = t(9338),
                     i = t(2344),
-                    r = t(6179),
+                    r = t(7363),
                     n = t.n(r);
                 let s;
                 !(function (e) {
@@ -3820,7 +3844,7 @@
                     o = t(2344),
                     l = t(9924),
                     c = t(3649),
-                    _ = t(6179),
+                    _ = t(7363),
                     d = t.n(_),
                     E = t(8434);
                 const m = {
@@ -3916,7 +3940,7 @@
             },
             2569: (e, u, t) => {
                 t.d(u, { m: () => s });
-                var a = t(6179),
+                var a = t(7363),
                     i = t.n(a),
                     r = t(5634),
                     n = t(8247);
@@ -4046,6 +4070,10 @@
                     'icon__equipCoin-big': 'Currency_icon__equipCoin-big_79',
                     'icon__equipCoin-large': 'Currency_icon__equipCoin-large_2c',
                     'icon__equipCoin-extraLarge': 'Currency_icon__equipCoin-extraLarge_8a',
+                    'icon__stpCoin-small': 'Currency_icon__stpCoin-small_6b',
+                    'icon__stpCoin-big': 'Currency_icon__stpCoin-big_da',
+                    'icon__stpCoin-large': 'Currency_icon__stpCoin-large_ee',
+                    'icon__stpCoin-extraLarge': 'Currency_icon__stpCoin-extraLarge_fa',
                     value: 'Currency_value_e1',
                     value__freeXP: 'Currency_value__freeXP_cb',
                     value__credits: 'Currency_value__credits_76',
@@ -4054,6 +4082,7 @@
                     value__crystal: 'Currency_value__crystal_19',
                     value__equipCoin: 'Currency_value__equipCoin_d0',
                     value__eliteXP: 'Currency_value__eliteXP_62',
+                    value__stpCoin: 'Currency_value__stpCoin_38',
                     value__notEnough: 'Currency_value__notEnough_56',
                     stock: 'Currency_stock_87',
                     stock__indent: 'Currency_stock__indent_a1',
@@ -4064,6 +4093,12 @@
             5287: (e, u, t) => {
                 t.d(u, { Z: () => a });
                 const a = { base: 'FormatText_base_d0' };
+            },
+            7363: (e) => {
+                e.exports = React;
+            },
+            1533: (e) => {
+                e.exports = ReactDOM;
             },
         },
         __webpack_module_cache__ = {},

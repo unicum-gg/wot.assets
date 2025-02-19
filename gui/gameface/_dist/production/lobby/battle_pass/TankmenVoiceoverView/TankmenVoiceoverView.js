@@ -774,7 +774,7 @@
             },
             4717: (u, e, t) => {
                 'use strict';
-                var a = t(6179),
+                var a = t(7363),
                     n = t.n(a);
                 const r = (u, e, t) =>
                     e.extraLargeHeight || e.largeHeight || e.mediumHeight || e.smallHeight || e.extraSmallHeight
@@ -1118,7 +1118,7 @@
                         })(u, O);
                     return n().createElement(d, null, n().createElement(y, t, e));
                 };
-                var H = t(493),
+                var H = t(1533),
                     N = t.n(H);
                 function P(u) {
                     engine.call('PlaySound', u).catch((e) => {
@@ -2023,7 +2023,7 @@
                     ae = 'Header_description_00',
                     ne = 'Header_descriptionText_1e',
                     re = 'Header_skills_dc',
-                    ie = [Qu.Brotherhood, Qu.NewSkill, Qu.NewSkill],
+                    ie = [Qu.NewSkill, Qu.NewSkill, Qu.NewSkill],
                     Ee = R.strings.battle_pass.tankmenVoiceover,
                     Ae = () =>
                         n().createElement(
@@ -2091,6 +2091,14 @@
                         document.getElementById('root'),
                     );
                 });
+            },
+            7363: (u) => {
+                'use strict';
+                u.exports = React;
+            },
+            1533: (u) => {
+                'use strict';
+                u.exports = ReactDOM;
             },
         },
         __webpack_module_cache__ = {},

@@ -270,6 +270,7 @@
     line-height: 1.3;
     margin-top: -13rem;
     text-align: center;
+    position: relative;
     z-index: 1;
 }
 
@@ -296,6 +297,7 @@
     color: #ffc363;
 }
 
+.Reward_info__bptaler_82,
 .Reward_info__crystal_36 {
     color: #c9c9b6;
 }
@@ -815,6 +817,30 @@
     in JS 8000 reserved like anchor for start optimization
 */
 /* stylelint-disable-line */
+.ProgressBarDeltaSimple_base_6c {
+    width: 0;
+    height: 100%;
+    position: absolute;
+    top: 0;
+}
+.ProgressBarDeltaSimple_delta_99 {
+    width: 0;
+    max-width: 8001px;
+    height: 100%;
+    box-shadow: var(--progress-delta-shadow);
+    background-color: var(--progress-delta-color);
+    position: absolute;
+    bottom: 0;
+    transform-origin: right center;
+    transition-timing-function: cubic-bezier(1, 0, 0.92, 1), cubic-bezier(0.21, 0.61, 0.35, 1);
+    transition-property: width, transform;
+}
+
+/*
+    Gameface can't calculate gradient biggest than 8128px
+    in JS 8000 reserved like anchor for start optimization
+*/
+/* stylelint-disable-line */
 .ProgressLineImpose_base_80 {
     max-width: 8001px;
     height: 100%;
@@ -899,30 +925,6 @@
     width: 44rem;
     height: 43rem;
     background-image: var(--progress-glow-small);
-}
-
-/*
-    Gameface can't calculate gradient biggest than 8128px
-    in JS 8000 reserved like anchor for start optimization
-*/
-/* stylelint-disable-line */
-.ProgressBarDeltaSimple_base_6c {
-    width: 0;
-    height: 100%;
-    position: absolute;
-    top: 0;
-}
-.ProgressBarDeltaSimple_delta_99 {
-    width: 0;
-    max-width: 8001px;
-    height: 100%;
-    box-shadow: var(--progress-delta-shadow);
-    background-color: var(--progress-delta-color);
-    position: absolute;
-    bottom: 0;
-    transform-origin: right center;
-    transition-timing-function: cubic-bezier(1, 0, 0.92, 1), cubic-bezier(0.21, 0.61, 0.35, 1);
-    transition-property: width, transform;
 }
 
 /*
@@ -1444,6 +1446,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 .Timer_base__small_d3 .Timer_block_d4 {
@@ -1452,6 +1455,17 @@
 
 .Timer_base__big_68 .Timer_block_d4 {
     margin: 0;
+}
+
+.Timer_redGlow_89 {
+    width: 296rem;
+    height: 74rem;
+    background: url('R.images.battle_royale_progression.gui.maps.progression.redGlow') no-repeat center / contain;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+    transform: translate(-50%, -50%);
 }
 
 .Timer_base__small_d3 .Timer_text_29 {
@@ -1464,6 +1478,11 @@
 
 .Timer_base__big_68 .Timer_text_29 {
     display: none;
+}
+
+.Timer_base__primeTime_76 .Timer_text_29 {
+    color: #ffdd99;
+    text-shadow: 0 0 14rem #ff2717;
 }
 
 .Timer_base__small_d3 .Timer_bgCountdown_72 {
@@ -1498,147 +1517,6 @@
 .Timer_base__big_68 .Timer_countdown_b2 {
     margin-right: 5rem;
     position: relative;
-}
-
-@keyframes InformText_add-blur_ef {
-    from {
-        opacity: 1;
-    }
-
-    to {
-        opacity: 0.5;
-    }
-}
-
-@keyframes InformText_hide_2e {
-    from {
-        opacity: 1;
-    }
-
-    to {
-        opacity: 0;
-    }
-}
-
-@keyframes InformText_show_54 {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
-
-.InformText_base_60 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-.InformText_title_43 {
-    color: #fefeec;
-    font-size: 24rem;
-    font-weight: 700;
-    line-height: 1.2;
-    margin-bottom: 20rem;
-    text-align: center;
-}
-
-.mediaLarge .InformText_title_43 {
-    color: #fefeec;
-    font-size: 36rem;
-    font-weight: 700;
-    line-height: 1.1;
-    margin-bottom: 28rem;
-}
-
-.InformText_text_73 {
-    color: #fefeec;
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
-}
-
-.mediaSmall .InformText_text_73 {
-    color: #fefeec;
-    font-size: 16rem;
-    font-weight: 400;
-    line-height: 1.25;
-}
-
-@keyframes InformBlock_add-blur_9c {
-    from {
-        opacity: 1;
-    }
-
-    to {
-        opacity: 0.5;
-    }
-}
-
-@keyframes InformBlock_hide_45 {
-    from {
-        opacity: 1;
-    }
-
-    to {
-        opacity: 0;
-    }
-}
-
-@keyframes InformBlock_show_aa {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
-
-.InformBlock_base_07 {
-    width: 455rem;
-    margin-bottom: 3.5rem;
-}
-
-.InformBlock_base__completed_b7,
-.InformBlock_base__allCompletedTasksVisited_5b {
-    margin: 0;
-}
-
-.mediaLarge .InformBlock_base__completed_b7,
-.mediaLarge .InformBlock_base__allCompletedTasksVisited_5b {
-    width: 585rem;
-}
-
-.mediaLarge .InformBlock_base_07 {
-    margin-bottom: 7rem;
-}
-
-.InformBlock_body_5e {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 0;
-    opacity: 0;
-}
-
-.InformBlock_base__completed_b7 .InformBlock_body_5e {
-    animation-name: InformBlock_show_aa;
-    animation-duration: 1s;
-    animation-fill-mode: forwards;
-    animation-delay: 2.2s;
-    flex-direction: column;
-}
-
-.InformBlock_base__allCompletedTasksVisited_5b .InformBlock_body_5e {
-    animation-name: InformBlock_show_aa;
-    animation-duration: 0s;
-    animation-fill-mode: forwards;
-    animation-delay: 0s;
-    flex-direction: column;
 }
 
 @keyframes TimerWithQuestsTotal_add-blur_72 {
@@ -1692,6 +1570,18 @@
     justify-content: center;
     align-items: center;
     margin-right: 15rem;
+    position: relative;
+}
+
+.TimerWithQuestsTotal_redGlow_a0 {
+    width: 296rem;
+    height: 74rem;
+    background: url('R.images.battle_royale_progression.gui.maps.progression.redGlow') no-repeat center / contain;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+    transform: translate(-50%, -50%);
 }
 
 .TimerWithQuestsTotal_text_c3 {
@@ -1699,6 +1589,11 @@
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
+}
+
+.TimerWithQuestsTotal_base__primeTime_bb .TimerWithQuestsTotal_text_c3 {
+    color: #ffdd99;
+    text-shadow: 0 0 14rem #ff2717;
 }
 
 .TimerWithQuestsTotal_description_60 {
@@ -1914,24 +1809,6 @@
     height: 100%;
 }
 
-.TaskBattleList_base__completed_27 {
-    animation-name: TaskBattleList_hidden-tasks-list_82;
-    animation-duration: 1.5s;
-    animation-fill-mode: forwards;
-    animation-delay: 1.5s;
-}
-
-.TaskBattleList_base__allCompletedTasksVisited_ab {
-    animation-name: TaskBattleList_hidden-tasks-list_82;
-    animation-duration: 0s;
-    animation-fill-mode: forwards;
-    animation-delay: 0s;
-}
-
-.mediaLarge .TaskBattleList_base_72 {
-    margin: 0;
-}
-
 .TaskBattleList_timerWithQuestsTotal_60 {
     margin: -10rem 0 8rem;
 }
@@ -1941,7 +1818,11 @@
 }
 
 .mediaLarge .TaskBattleList_timerWithQuestsTotal_60 {
-    margin: 0 0 11rem;
+    margin: 0 0 8rem;
+}
+
+.TaskBattleList_base__endEvent_4b .TaskBattleList_timerWithQuestsTotal_60 {
+    display: none;
 }
 
 .TaskBattleList_timer_bc {
@@ -1956,29 +1837,25 @@
     margin: 0 0 -11rem;
 }
 
+.TaskBattleList_base__endEvent_4b .TaskBattleList_timer_bc {
+    display: none;
+}
+
 .TaskBattleList_taskList_16 {
-    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.2s;
 }
 
-@keyframes TaskBattleList_hidden-tasks-list_82 {
-    0% {
-        height: 100%;
-        opacity: 1;
-    }
+.TaskBattleList_base__endEvent_4b .TaskBattleList_taskList_16 {
+    opacity: 0.5;
+}
 
-    40% {
-        height: 70%;
-        opacity: 0;
-    }
-
-    50%,
-    100% {
-        height: 0%;
-        opacity: 0;
-    }
+.mediaMedium .TaskBattleList_base__endEvent_4b .TaskBattleList_taskList_16 {
+    margin-top: 20rem;
 }
 
 .Header_base_6c {
@@ -2027,6 +1904,7 @@
     font-size: 56rem;
     font-weight: 700;
     line-height: 1.1;
+    line-height: 1;
 }
 .Header_subtitleContainer_73 {
     display: flex;
@@ -2058,8 +1936,8 @@
 }
 
 .Infotip_infotip_af {
-    width: 40rem;
-    height: 40rem;
+    width: 45rem;
+    height: 44rem;
     margin-left: -13rem;
     margin-top: 2rem;
     background: url('R.images.battle_royale_progression.gui.maps.tooltip.info_warning') no-repeat center / cover;
@@ -2433,45 +2311,6 @@
     padding-right: 160rem;
 }
 
-.Rewards_base_10 {
-    opacity: 1;
-    transition: opacity 500ms;
-}
-
-.Rewards_base__completed_4f {
-    opacity: 0.5;
-}
-
-.Rewards_base__fast_d9 {
-    opacity: 0.5;
-    transition: none;
-}
-
-.Rewards_base_10 {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    width: 50%;
-    padding-top: 20rem;
-    transition-delay: 1100ms;
-}
-
-.Rewards_base__wide_52 {
-    width: 100%;
-}
-.Rewards_reward_dc {
-    margin: 10rem;
-}
-.mediaMedium .Rewards_reward_dc {
-    margin: 5rem;
-}
-.Rewards_info_a6 {
-    margin-top: -9rem;
-}
-
 .FormatTextWithColorTags_blackReal_3c {
     color: #000000;
 }
@@ -2571,6 +2410,73 @@
     color: #8c8c7e;
 }
 
+.Rewards_base_10 {
+    opacity: 1;
+    transition: opacity 500ms;
+}
+
+.Rewards_base__completed_4f {
+    opacity: 0.5;
+}
+
+.Rewards_base__fast_d9 {
+    opacity: 0.5;
+    transition: none;
+}
+
+.Rewards_base_10 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    width: 50%;
+    padding-top: 20rem;
+    transition-delay: 1100ms;
+}
+
+.Rewards_base__wide_52 {
+    width: 100%;
+}
+.Rewards_reward_dc {
+    margin: 10rem;
+}
+.mediaMedium .Rewards_reward_dc {
+    margin: 5rem;
+}
+.Rewards_info_a6 {
+    margin-top: -9rem;
+}
+.Rewards_lootboxImage_ed {
+    display: flex;
+    flex: 1;
+}
+.Rewards_lootboxIcon_03 {
+    width: 120rem;
+    height: 80rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.Rewards_lootboxIcon__small_76 {
+    width: 80rem;
+    height: 48rem;
+}
+.Rewards_lootboxHighlight_22 {
+    width: 160rem;
+    height: 110rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.Rewards_lootboxHighlight__small_f7 {
+    width: 120rem;
+    height: 80rem;
+}
+
 .RewardCard_base_90 {
     display: flex;
     flex-direction: column;
@@ -2607,13 +2513,13 @@
     right: 0;
     bottom: 0;
     left: 0;
-    background: url('R.images.battle_royale_progression.gui.maps.progression.bg_current_small') no-repeat center -60rem /
-        cover;
+    background: url('R.images.battle_royale_progression.gui.maps.progression.bg_current_small') no-repeat
+        center -60rem / cover;
     transition-delay: 1100ms;
 }
 .mediaMedium .RewardCard_activeBlock_f0 {
-    background: url('R.images.battle_royale_progression.gui.maps.progression.bg_current_large') no-repeat center -60rem /
-        cover;
+    background: url('R.images.battle_royale_progression.gui.maps.progression.bg_current_large') no-repeat
+        center -60rem / cover;
 }
 .RewardCard_bgCompleted_0c {
     opacity: 0;

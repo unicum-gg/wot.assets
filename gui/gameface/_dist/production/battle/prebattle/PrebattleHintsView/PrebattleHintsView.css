@@ -854,8 +854,8 @@
 .NewbieHint07_progress_46 {
     width: 408rem;
     height: 68rem;
-    background: url('R.images.gui.maps.icons.battleLoading.hints.newbie_hints.hint_07.progress_small') no-repeat center /
-        contain;
+    background: url('R.images.gui.maps.icons.battleLoading.hints.newbie_hints.hint_07.progress_small') no-repeat
+        center / contain;
 }
 
 .mediaLarge .NewbieHint07_progress_46 {

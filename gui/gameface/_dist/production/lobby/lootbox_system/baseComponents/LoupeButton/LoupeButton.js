@@ -114,7 +114,10 @@
                 Object.assign({}, r, { sound: o.playSound }), o.setRTPC;
             },
             3633: (e, n, t) => {
-                t(6483), t(514), t(6179);
+                t(6483), t(514), t(7363);
+            },
+            7363: (e) => {
+                e.exports = React;
             },
         },
         t = {};

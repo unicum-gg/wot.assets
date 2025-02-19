@@ -61,13 +61,13 @@
                         getDisplayStatus: () => Q,
                         getFontNames: () => J,
                         getScale: () => j,
-                        getSize: () => z,
-                        getViewGlobalPosition: () => U,
+                        getSize: () => U,
+                        getViewGlobalPosition: () => G,
                         isEventHandled: () => X,
                         isFocused: () => K,
                         pxToRem: () => B,
                         remToPx: () => $,
-                        resize: () => G,
+                        resize: () => z,
                         sendEvent: () => A,
                         setAnimateWindow: () => q,
                         setEventHandled: () => Y,
@@ -260,13 +260,13 @@
                 function F(e) {
                     viewEnv.setHitAreaPaddingsRem(e.top, e.right, e.bottom, e.left, C);
                 }
-                function z(e = 'px') {
+                function U(e = 'px') {
                     return 'rem' === e ? viewEnv.getViewSizeRem() : viewEnv.getViewSizePx();
                 }
-                function G(e, t, r = 'px') {
+                function z(e, t, r = 'px') {
                     return 'rem' === r ? viewEnv.resizeViewRem(e, t) : viewEnv.resizeViewPx(e, t);
                 }
-                function U(e = 'rem') {
+                function G(e = 'rem') {
                     const t = viewEnv.getViewGlobalPositionRem();
                     return 'rem' === e ? t : { x: $(t.x), y: $(t.y) };
                 }
@@ -724,7 +724,7 @@
             440: (e, t, r) => {
                 'use strict';
                 var n = r(768),
-                    i = r(179),
+                    i = r(363),
                     a = r.n(i);
                 const o = [];
                 const l = (e) => {
@@ -1168,7 +1168,7 @@
                         return a().createElement('div', C({ className: y()(r, I[o], W[l], D[s]) }, n), t);
                     },
                     F = ['children'];
-                const z = (e) => {
+                const U = (e) => {
                     let t = e.children,
                         r = (function (e, t) {
                             if (null == e) return {};
@@ -1182,8 +1182,8 @@
                         })(e, F);
                     return a().createElement(S, null, a().createElement(N, r, t));
                 };
-                var G = r(493),
-                    U = r.n(G);
+                var z = r(533),
+                    G = r.n(z);
                 var V = r(916);
                 const j = [
                     'children',
@@ -1270,15 +1270,20 @@
                                     ((e = 1) => {
                                         const t = new Error().stack;
                                         let r,
-                                            n = R.invalid('resId');
+                                            n = R.invalid('resId'),
+                                            i = '';
+                                        var a;
                                         return (
                                             t &&
-                                                ((r = t.split('\n')[e].split('.js')[0].split('/').pop() || ''),
+                                                ((i =
+                                                    (null == (a = t.match(/(coui:\/\/[^\s]+\.js)/)) ? void 0 : a[0]) ||
+                                                    ''),
+                                                (r = t.split('\n')[e].split('.js')[0].split('/').pop() || ''),
                                                 window.__feature &&
                                                     window.__feature !== r &&
                                                     window.subViews[r] &&
                                                     (n = window.subViews[r].id)),
-                                            { caller: r, stack: t, resId: n }
+                                            { callerUrl: i, caller: r, stack: t, resId: n }
                                         );
                                     })().resId,
                                 [f],
@@ -1483,12 +1488,13 @@
                                         const r = ee(e, t);
                                         if (!r) return;
                                         const i = r.iconName,
-                                            o = r.level;
+                                            o = r.level,
+                                            l = r.roleName;
                                         return a().createElement(
                                             J,
                                             {
                                                 key: `${t}_${i}`,
-                                                args: { skillName: i, level: o, tooltipId: 'crewPerkGf' },
+                                                args: { skillName: i, level: o, roleName: l, tooltipId: 'crewPerkGf' },
                                             },
                                             a().createElement(
                                                 'div',
@@ -1905,12 +1911,12 @@
                         );
                     });
                 engine.whenReady.then(() => {
-                    U().render(
+                    G().render(
                         a().createElement(
                             ge,
                             null,
                             a().createElement(
-                                z,
+                                U,
                                 null,
                                 a().createElement(u, { autoUpdate: !0 }, (e) => a().createElement(He, { sizerRef: e })),
                             ),
@@ -1918,6 +1924,14 @@
                         document.getElementById('root'),
                     );
                 });
+            },
+            363: (e) => {
+                'use strict';
+                e.exports = React;
+            },
+            533: (e) => {
+                'use strict';
+                e.exports = ReactDOM;
             },
         },
         __webpack_module_cache__ = {},

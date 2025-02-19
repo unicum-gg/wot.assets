@@ -48,9 +48,9 @@
                         setSidePaddingsRem: () => K,
                         whenTutorialReady: () => su,
                     });
-                var C = F(6179),
+                var C = F(7363),
                     t = F.n(C),
-                    n = F(493),
+                    n = F(1533),
                     r = F.n(n),
                     o = F(6483),
                     i = F.n(o),
@@ -739,8 +739,8 @@
                     xu = yu[0],
                     _u = yu[1],
                     Pu = R.strings.battle_royale.tooltip.battleTypeSelector.tab,
-                    Su = R.strings.battle_royale.tooltip.battleTypeSelector,
-                    Ru = (0, gu.Pi)(() => {
+                    Ru = R.strings.battle_royale.tooltip.battleTypeSelector,
+                    Su = (0, gu.Pi)(() => {
                         const u = _u().model.tabId.get();
                         return t().createElement(
                             fu,
@@ -773,8 +773,8 @@
                                                     t().createElement(g, {
                                                         text: Pu.bonusDescription(),
                                                         binding: {
-                                                            experience: t().createElement('span', null, Su.bonus()),
-                                                            credits: t().createElement('span', null, Su.bonus()),
+                                                            experience: t().createElement('span', null, Ru.bonus()),
+                                                            credits: t().createElement('span', null, Ru.bonus()),
                                                         },
                                                     }),
                                                 ),
@@ -786,10 +786,16 @@
                     });
                 engine.whenReady.then(() => {
                     r().render(
-                        t().createElement(xu, null, t().createElement(Ru, null)),
+                        t().createElement(xu, null, t().createElement(Su, null)),
                         document.getElementById('root'),
                     );
                 });
+            },
+            7363: (u) => {
+                u.exports = React;
+            },
+            1533: (u) => {
+                u.exports = ReactDOM;
             },
         },
         F = {};

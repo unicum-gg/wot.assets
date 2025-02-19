@@ -1665,279 +1665,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     }
 }
 
-@keyframes App_fadeOut_64 {
-    0% {
-        opacity: 1;
-    }
-
-    100% {
-        opacity: 0;
-    }
-}
-@keyframes App_raysAppearance_2e {
-    0% {
-        opacity: 0;
-        transform: translateY(20rem);
-    }
-
-    100% {
-        opacity: 0.5;
-        transform: translateY(0);
-    }
-}
-@keyframes App_rotate_0e {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    100% {
-        transform: rotate(360deg);
-    }
-}
-@keyframes App_fadeInWithScale_85 {
-    0% {
-        opacity: 0;
-        transform: scale(2);
-    }
-
-    100% {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-@keyframes App_slideUp_0e {
-    0% {
-        opacity: 0;
-        transform: translateY(20rem);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-@keyframes App_fadeIn_10 {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
-@keyframes App_scale_7b {
-    0% {
-        transform: scale(0);
-    }
-
-    100% {
-        transform: scale(1);
-    }
-}
-@keyframes App_blinkAndFadeOut_b4 {
-    0% {
-        filter: brightness(1);
-        opacity: 1;
-    }
-
-    16% {
-        filter: brightness(1.5);
-        opacity: 1;
-    }
-
-    100% {
-        filter: brightness(1);
-        opacity: 0;
-    }
-}
-.App_base_11 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    overflow: hidden;
-    position: relative;
-}
-.App_bgWrapper_9f {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #19191b;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-}
-.App_background_f9 {
-    width: 3052rem;
-    height: 946rem;
-    margin-top: -117rem;
-    background: url('R.images.gui.maps.icons.seniorityAwards.award_bg__gp4') no-repeat center / contain;
-}
-.mediaSmall .App_background_f9 {
-    width: 3601rem;
-    height: 1116rem;
-}
-.mediaMedium .App_background_f9 {
-    width: 4488rem;
-    height: 1391rem;
-    margin-top: -248rem;
-}
-.mediaLarge .App_background_f9 {
-    margin-top: -120rem;
-}
-.mediaExtraLarge .App_background_f9 {
-    width: 7009rem;
-    height: 2376rem;
-}
-.App_background__indent_30 {
-    margin-right: -970rem;
-}
-.mediaExtraLarge .App_background__indent_30 {
-    width: 7009rem;
-    height: 2376rem;
-    margin: -310rem 0 0;
-}
-.App_shadow_71 {
-    height: 300rem;
-    background-image: linear-gradient(180deg, rgba(40, 40, 67, 0.7), transparent);
-    mix-blend-mode: multiply;
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    transition: opacity 0.3s;
-    pointer-events: none;
-}
-.mediaLarge .App_shadow_71 {
-    display: none;
-}
-.App_blackout_54 {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: radial-gradient(50% 50% at 50% 50%, transparent, #191924);
-    opacity: 0;
-    transition: opacity 0.3s;
-    pointer-events: none;
-}
-.mediaExtraLarge .App_gradient_50 {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: linear-gradient(to bottom, #191924, transparent 30%);
-    opacity: 0;
-    transition: opacity 0.3s;
-    pointer-events: none;
-}
-.App_textButton_23 {
-    opacity: 0;
-    animation-name: App_fadeIn_10;
-    animation-duration: 1s;
-    animation-fill-mode: forwards;
-    animation-timing-function: cubic-bezier(0.07, 0.82, 0.17, 1);
-    animation-delay: 0s;
-    animation-iteration-count: 1;
-    position: absolute;
-    top: 22rem;
-    z-index: 2;
-}
-.App_textButton__close_f1 {
-    right: 20rem;
-}
-.mediaSmall .App_textButton__close_f1 {
-    top: 40rem;
-    right: 30rem;
-}
-.mediaMedium .App_textButton__close_f1 {
-    top: 50rem;
-}
-.mediaLarge .App_textButton__close_f1 {
-    top: 55rem;
-}
-.mediaExtraLarge .App_textButton__close_f1 {
-    right: 68rem;
-}
-.App_header_da {
-    opacity: 0;
-    animation-name: App_slideUp_0e;
-    animation-duration: 0.5s;
-    animation-fill-mode: forwards;
-    animation-timing-function: ease-out;
-    animation-delay: 0.5s;
-    animation-iteration-count: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: absolute;
-    top: 40rem;
-    z-index: 1;
-}
-.mediaLarge .App_header_da {
-    top: 46rem;
-}
-.mediaExtraLarge .App_header_da {
-    top: 70rem;
-}
-.App_footer_1e {
-    opacity: 0;
-    animation-name: App_slideUp_0e;
-    animation-duration: 0.5s;
-    animation-fill-mode: forwards;
-    animation-timing-function: ease-out;
-    animation-delay: 0;
-    animation-iteration-count: 1;
-    width: 100%;
-    position: absolute;
-    bottom: 50rem;
-    z-index: 3;
-}
-.mediaMediumHeight .App_footer_1e {
-    bottom: 81rem;
-}
-.mediaExtraLargeHeight .App_footer_1e {
-    bottom: 6vh;
-}
-.App_vehiclesSelection_78 {
-    opacity: 0;
-    animation-name: App_slideUp_0e;
-    animation-duration: 0.5s;
-    animation-fill-mode: forwards;
-    animation-timing-function: ease-out;
-    animation-delay: 0.5s;
-    animation-iteration-count: 1;
-    align-self: center;
-    width: 100%;
-    position: absolute;
-    bottom: 10rem;
-    left: -5rem;
-    z-index: 3;
-}
-.mediaMediumHeight .App_vehiclesSelection_78 {
-    bottom: 63rem;
-    left: -10rem;
-}
-.mediaExtraLargeHeight .App_vehiclesSelection_78 {
-    bottom: 95rem;
-    left: -15rem;
-}
-.App_vehiclesSelection__hidden_1e {
-    opacity: 1;
-    animation-name: App_fadeOut_64;
-    animation-duration: 0.8s;
-    animation-fill-mode: forwards;
-    animation-timing-function: cubic-bezier(0.07, 0.82, 0.17, 1);
-    animation-delay: 0s;
-    animation-iteration-count: 1;
-    pointer-events: none;
-}
-
 .VehicleSlot_base_65 {
     display: flex;
     flex-direction: column;
@@ -2149,4 +1876,280 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 
 .mediaMedium .VehiclesSelection_item_63 {
     margin-left: 30rem;
+}
+
+@keyframes App_fadeOut_64 {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes App_raysAppearance_2e {
+    0% {
+        opacity: 0;
+        transform: translateY(20rem);
+    }
+
+    100% {
+        opacity: 0.5;
+        transform: translateY(0);
+    }
+}
+@keyframes App_rotate_0e {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+@keyframes App_fadeInWithScale_85 {
+    0% {
+        opacity: 0;
+        transform: scale(2);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@keyframes App_slideUp_0e {
+    0% {
+        opacity: 0;
+        transform: translateY(20rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes App_fadeIn_10 {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes App_scale_7b {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+@keyframes App_blinkAndFadeOut_b4 {
+    0% {
+        filter: brightness(1);
+        opacity: 1;
+    }
+
+    16% {
+        filter: brightness(1.5);
+        opacity: 1;
+    }
+
+    100% {
+        filter: brightness(1);
+        opacity: 0;
+    }
+}
+.App_base_11 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+.App_bgWrapper_9f {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #11161b no-repeat center / cover;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.App_bgWrapper__imageLoaded_c5 {
+    background-image: linear-gradient(to bottom, #304e6a, #304e6a 50%, #11161b 50%, #11161b);
+}
+.App_background_f9 {
+    width: 3510rem;
+    height: 1211rem;
+    margin-top: -117rem;
+    background: url('R.images.gui.maps.icons.seniorityAwards.award_bg__gp4') no-repeat center / contain;
+}
+.mediaSmall .App_background_f9 {
+    width: 4141rem;
+    height: 1428rem;
+}
+.mediaMedium .App_background_f9 {
+    width: 5161rem;
+    height: 1780rem;
+    margin-top: -248rem;
+}
+.mediaLarge .App_background_f9 {
+    margin-top: -120rem;
+}
+.mediaExtraLarge .App_background_f9 {
+    width: 8060rem;
+    height: 3041rem;
+}
+.App_background__indent_30 {
+    margin-right: -970rem;
+}
+.mediaExtraLarge .App_background__indent_30 {
+    width: 8060rem;
+    height: 3041rem;
+    margin: -310rem 0 0;
+}
+.App_shadow_71 {
+    height: 300rem;
+    background-image: linear-gradient(180deg, rgba(40, 40, 67, 0.7), transparent);
+    mix-blend-mode: multiply;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+}
+.mediaLarge .App_shadow_71 {
+    display: none;
+}
+.App_blackout_54 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: radial-gradient(50% 50% at 50% 50%, transparent, #191924);
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+}
+.mediaExtraLarge .App_gradient_50 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(to bottom, #191924, transparent 30%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+}
+.App_textButton_23 {
+    opacity: 0;
+    animation-name: App_fadeIn_10;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.07, 0.82, 0.17, 1);
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    position: absolute;
+    top: 22rem;
+    z-index: 2;
+}
+.App_textButton__close_f1 {
+    right: 20rem;
+}
+.mediaSmall .App_textButton__close_f1 {
+    top: 40rem;
+    right: 30rem;
+}
+.mediaMedium .App_textButton__close_f1 {
+    top: 50rem;
+}
+.mediaLarge .App_textButton__close_f1 {
+    top: 55rem;
+}
+.mediaExtraLarge .App_textButton__close_f1 {
+    right: 68rem;
+}
+.App_header_da {
+    opacity: 0;
+    animation-name: App_slideUp_0e;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+    animation-delay: 0.5s;
+    animation-iteration-count: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 40rem;
+    z-index: 1;
+}
+.mediaLarge .App_header_da {
+    top: 46rem;
+}
+.mediaExtraLarge .App_header_da {
+    top: 70rem;
+}
+.App_footer_1e {
+    opacity: 0;
+    animation-name: App_slideUp_0e;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+    animation-delay: 0;
+    animation-iteration-count: 1;
+    width: 100%;
+    position: absolute;
+    bottom: 50rem;
+    z-index: 3;
+}
+.mediaMediumHeight .App_footer_1e {
+    bottom: 81rem;
+}
+.mediaExtraLargeHeight .App_footer_1e {
+    bottom: 6vh;
+}
+.App_vehiclesSelection_78 {
+    opacity: 0;
+    animation-name: App_slideUp_0e;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+    animation-delay: 0.5s;
+    animation-iteration-count: 1;
+    align-self: center;
+    width: 100%;
+    position: absolute;
+    bottom: 10rem;
+    left: -5rem;
+    z-index: 3;
+}
+.mediaMediumHeight .App_vehiclesSelection_78 {
+    bottom: 63rem;
+    left: -10rem;
+}
+.mediaExtraLargeHeight .App_vehiclesSelection_78 {
+    bottom: 95rem;
+    left: -15rem;
+}
+.App_vehiclesSelection__hidden_1e {
+    opacity: 1;
+    animation-name: App_fadeOut_64;
+    animation-duration: 0.8s;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.07, 0.82, 0.17, 1);
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    pointer-events: none;
 }

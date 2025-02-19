@@ -1,0 +1,229 @@
+.TooltipDecorator_base_c9 {
+    display: flex;
+    position: absolute;
+}
+
+.TooltipDecorator_base__theme-default_6d .TooltipDecorator_decorator_3d {
+    padding: 4rem 6rem 8rem;
+    border-image-source: url('R.atlases.components.tooltip_background');
+    border-image-slice: 24 fill;
+    border-image-width: 24rem;
+    position: relative;
+}
+
+.FormatText_base_d0 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.FormatTextWithColorTags_blackReal_3c {
+    color: #000000;
+}
+
+.FormatTextWithColorTags_whiteReal_8a {
+    color: #ffffff;
+}
+
+.FormatTextWithColorTags_white_16 {
+    color: #f2f2f7;
+}
+
+.FormatTextWithColorTags_whiteOrange_18 {
+    color: #fefeec;
+}
+
+.FormatTextWithColorTags_whiteSpanish_10 {
+    color: #e9e2bf;
+}
+
+.FormatTextWithColorTags_par_ca {
+    color: #8c8c7e;
+}
+
+.FormatTextWithColorTags_parSecondary_8d {
+    color: #595950;
+}
+
+.FormatTextWithColorTags_parTertiary_a3 {
+    color: #37362e;
+}
+
+.FormatTextWithColorTags_red_60 {
+    color: #ff2717;
+}
+
+.FormatTextWithColorTags_redDark_03 {
+    color: #b70000;
+}
+
+.FormatTextWithColorTags_yellow_ad {
+    color: #feab34;
+}
+
+.FormatTextWithColorTags_orange_e4 {
+    color: #ee7000;
+}
+
+.FormatTextWithColorTags_cream_cd {
+    color: #ffdd99;
+}
+
+.FormatTextWithColorTags_brown_c8 {
+    color: #cbac77;
+}
+
+.FormatTextWithColorTags_greenBright_f0 {
+    color: #80d43a;
+}
+
+.FormatTextWithColorTags_green_c5 {
+    color: #7ab300;
+}
+
+.FormatTextWithColorTags_greenDark_af {
+    color: #497212;
+}
+
+.FormatTextWithColorTags_blueBooster_ac {
+    color: #ccffff;
+}
+
+.FormatTextWithColorTags_blueTeamkiller_6f {
+    color: #09e2ff;
+}
+
+.FormatTextWithColorTags_cred_4e {
+    color: #ced9d9;
+}
+
+.FormatTextWithColorTags_gold_90 {
+    color: #ffc363;
+}
+
+.FormatTextWithColorTags_bond_71 {
+    color: #c9c9b6;
+}
+
+.FormatTextWithColorTags_prom_dd {
+    color: #a29b70;
+}
+
+/* This specific rule is used to fix https://jira.wargaming.net/browse/WOTPRG-9871 */
+
+.FormatTextWithColorTags_parNoWidth_5a {
+    width: 0;
+    color: #8c8c7e;
+}
+
+.Divided_base_06 {
+    position: relative;
+}
+
+.Divided_divider_64 {
+    width: 360rem;
+    height: 1rem;
+    background: url('R.images.gui.maps.icons.tooltip.tooltip_perks_divider') no-repeat center / cover;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.WarningBlock_base_f7 {
+    display: flex;
+    justify-content: flex-start;
+    padding: 20rem;
+    background: url('R.images.gui.maps.icons.tooltip.tooltip_accent_bg') no-repeat center / cover;
+}
+
+.WarningBlock_text_60 {
+    color: #8c8c7e;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    padding-left: 7rem;
+    color: #faac3c;
+}
+
+.WarningBlock_icon_71 {
+    width: 17rem;
+    height: 17rem;
+    margin-top: 2rem;
+    background: url('R.images.gui.maps.icons.library.attentionIconFilled') no-repeat center / cover;
+}
+
+.MentoringLicenseApp_base_46 {
+    color: #8c8c7e;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    width: 420rem;
+    position: relative;
+}
+
+.MentoringLicenseApp_header_fd {
+    display: flex;
+    align-items: center;
+    margin: 11rem 0 0 10rem;
+}
+
+.MentoringLicenseApp_icon_3a {
+    width: 52rem;
+    height: 52rem;
+    background: url('R.images.gui.maps.icons.tooltip.mentoringLicense') no-repeat center / cover;
+}
+
+.MentoringLicenseApp_text_ba {
+    color: #e9e2bf;
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin: -3rem 0 0 10rem;
+}
+
+.MentoringLicenseApp_glow_bd {
+    width: 295rem;
+    height: 200rem;
+    background: url('R.images.gui.maps.icons.tooltip.flash_top_orange') no-repeat 50% / contain;
+    position: absolute;
+    top: 4rem;
+    left: 0;
+}
+
+.MentoringLicenseApp_movie_60 {
+    width: 416rem;
+    height: 240rem;
+    margin: 13rem 2rem;
+}
+
+.MentoringLicenseApp_info_2e {
+    margin: 7rem 20rem 0;
+}
+
+.MentoringLicenseApp_description_e9 {
+    color: #8c8c7e;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    margin-bottom: 20rem;
+}
+
+.MentoringLicenseApp_subTitle_1a {
+    color: #e9e2bf;
+    font-size: 15rem;
+    font-weight: 700;
+    line-height: 1.15;
+    margin-top: 10rem;
+}
+
+.MentoringLicenseApp_storage_f1 {
+    display: flex;
+    justify-content: center;
+    margin: 17rem 0 14rem;
+}
+
+.MentoringLicenseApp_storageIcon_9a {
+    width: 30rem;
+    height: 24rem;
+    margin: -3rem 4rem 0 0;
+    background: url('R.images.gui.maps.icons.crew.storage') no-repeat center / cover;
+}

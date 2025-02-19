@@ -22,7 +22,7 @@
                 t.r(a),
                     t.d(a, {
                         addModelObserver: () => H,
-                        addPreloadTexture: () => G,
+                        addPreloadTexture: () => D,
                         children: () => o,
                         displayStatus: () => O,
                         displayStatusIs: () => ie,
@@ -30,7 +30,7 @@
                         extraSize: () => re,
                         forceTriggerMouseMove: () => ee,
                         freezeTextureBeforeResize: () => $,
-                        getBrowserTexturePath: () => D,
+                        getBrowserTexturePath: () => B,
                         getDisplayStatus: () => ne,
                         getFontNames: () => te,
                         getScale: () => U,
@@ -41,10 +41,10 @@
                         pxToRem: () => X,
                         remToPx: () => W,
                         resize: () => Q,
-                        sendEvent: () => L,
+                        sendEvent: () => V,
                         setAnimateWindow: () => J,
                         setEventHandled: () => Y,
-                        setInputPaddingsRem: () => B,
+                        setInputPaddingsRem: () => G,
                         setSidePaddingsRem: () => N,
                         whenTutorialReady: () => oe,
                     });
@@ -182,7 +182,7 @@
                     A = 16,
                     C = 32,
                     F = 64,
-                    V = (e, n) => {
+                    M = (e, n) => {
                         const t = 'GFViewEventProxy';
                         if (void 0 !== n) {
                             const r = n.args,
@@ -219,32 +219,32 @@
                         return viewEnv.handleViewEvent({ __Type: t, type: e });
                         var i;
                     },
-                    L = {
+                    V = {
                         close(e) {
-                            V('popover' === e ? k : C);
+                            M('popover' === e ? k : C);
                         },
                         minimize() {
-                            V(F);
+                            M(F);
                         },
                         move(e) {
-                            V(A, { isMouseEvent: !0, on: e });
+                            M(A, { isMouseEvent: !0, on: e });
                         },
                     },
-                    M = 15;
-                function G(e) {
+                    L = 15;
+                function D(e) {
                     viewEnv.addPreloadTexture(e);
                 }
-                function B(e) {
-                    viewEnv.setHitAreaPaddingsRem(e, e, e, e, M);
+                function G(e) {
+                    viewEnv.setHitAreaPaddingsRem(e, e, e, e, L);
                 }
-                function D(e, n, t, i = 1) {
+                function B(e, n, t, i = 1) {
                     return viewEnv.getWebBrowserTexturePath(e, n, t, i);
                 }
                 function H(e, n, t) {
                     return viewEnv.addDataChangedCallback(e, n, t);
                 }
                 function N(e) {
-                    viewEnv.setHitAreaPaddingsRem(e.top, e.right, e.bottom, e.left, M);
+                    viewEnv.setHitAreaPaddingsRem(e.top, e.right, e.bottom, e.left, L);
                 }
                 function I(e = 'px') {
                     return 'rem' === e ? viewEnv.getViewSizeRem() : viewEnv.getViewSizePx();
@@ -306,7 +306,7 @@
                         engine.whenReady,
                     ]),
                     ae = { view: a, client: r, sound: x };
-                var se = t(6179),
+                var se = t(7363),
                     ue = t.n(se);
                 function le() {
                     const e = (0, se.useRef)(0);
@@ -405,7 +405,7 @@
                         )
                     );
                 });
-                var ge = t(493),
+                var ge = t(1533),
                     me = t.n(ge);
                 const pe = 'QuickTrainingLostXpTooltipApp_base_51',
                     we = 'QuickTrainingLostXpTooltipApp_title_c2',
@@ -431,6 +431,12 @@
                         document.getElementById('root'),
                     );
                 });
+            },
+            7363: (e) => {
+                e.exports = React;
+            },
+            1533: (e) => {
+                e.exports = ReactDOM;
             },
         },
         t = {};

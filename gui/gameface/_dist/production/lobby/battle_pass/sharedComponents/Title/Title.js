@@ -2,7 +2,7 @@
     'use strict';
     var __webpack_modules__ = {
             2372: (u, e, t) => {
-                var E = t(6179),
+                var E = t(7363),
                     n = t.n(E),
                     F = t(9916);
                 class A extends n().PureComponent {
@@ -49,14 +49,14 @@
                             (u.PremiumPlus = 'premium_plus'),
                             (u.BattlePassPoints = 'battlePassPoints'),
                             (u.BattlePassSelectToken = 'battlePassSelectToken'),
+                            (u.BattlePassTicket = 'lootBox_commonTicket'),
+                            (u.BattlePassTaler = 'bptaler'),
                             (u.StyleProgressToken = 'styleProgressToken'),
                             (u.TmanToken = 'tmanToken'),
                             (u.NaturalCover = 'naturalCover'),
                             (u.BpCoin = 'bpcoin'),
                             (u.BattlaPassFinalAchievement = 'dossier_achievement'),
                             (u.BattleBadge = 'dossier_badge'),
-                            (u.NewYearInvoice = 'newYearInvoice'),
-                            (u.NewYearSlot = 'newYearSlot'),
                             (u.BonusX5 = 'battle_bonus_x5'),
                             (u.CrewBonusX3 = 'crew_bonus_x3'),
                             (u.Vehicles = 'vehicles'),
@@ -67,7 +67,8 @@
                             (u.OptionalDevice = 'optionalDevice'),
                             (u.EquipCoin = 'equipCoin'),
                             (u.LootBox = 'lootBox'),
-                            (u.BrCoin = 'brcoin');
+                            (u.BrCoin = 'brcoin'),
+                            (u.StpCoin = 'stpcoin');
                     })(E || (E = {})),
                     (function (u) {
                         (u.Gold = 'gold'),
@@ -145,10 +146,11 @@
                             (u.PROGRESSION_STYLE_UPGRADED_3 = 'progressionStyleUpgraded_3'),
                             (u.PROGRESSION_STYLE_UPGRADED_4 = 'progressionStyleUpgraded_4'),
                             (u.PROGRESSION_STYLE_UPGRADED_5 = 'progressionStyleUpgraded_5'),
-                            (u.PROGRESSION_STYLE_UPGRADED_6 = 'progressionStyleUpgraded_6');
+                            (u.PROGRESSION_STYLE_UPGRADED_6 = 'progressionStyleUpgraded_6'),
+                            (u.LOOT_BOX = 'eventLootBoxes');
                     })(i || (i = {})),
                     (function (u) {
-                        u.BATTLE_BOOSTER = 'battleBooster';
+                        (u.BATTLE_BOOSTER = 'battleBooster'), (u.LOOT_BOX = 'lootBox');
                     })(o || (o = {})),
                     (function (u) {
                         (u.BATTLE_BOOSTER = 'battleBooster'),
@@ -172,7 +174,7 @@
                     })(a || (a = {}));
             },
             729: (u, e, t) => {
-                t(2372), t(6179);
+                t(2372), t(7363);
                 var E = t(2862);
                 E.E4.Items,
                     E.E4.Equipment,
@@ -192,24 +194,27 @@
                     E.E4.TankmenXpFactor,
                     E.E4.FreeXpFactor,
                     E.E4.BattleToken,
+                    E.E4.LootBox,
                     E.E4.PremiumUniversal,
                     E.E4.NaturalCover,
                     E.E4.BpCoin,
                     E.E4.BattlePassSelectToken,
                     E.E4.BattlaPassFinalAchievement,
                     E.E4.BattleBadge,
+                    E.E4.BattlePassTicket,
                     E.E4.BonusX5,
                     E.E4.CrewBonusX3,
-                    E.E4.NewYearInvoice,
                     E.E4.EpicSelectToken,
                     E.E4.Comp7TokenWeeklyReward,
                     E.E4.DeluxeGift,
                     E.E4.BattleBoosterGift,
                     E.E4.OptionalDevice,
+                    E.E4.Lootbox,
                     E.E4.Gold,
                     E.E4.Credits,
                     E.E4.Crystal,
                     E.E4.FreeXp,
+                    E.E4.StpCoin,
                     E.E4.BattlePassPoints,
                     E.E4.EquipCoin,
                     E.E4.PremiumPlus,
@@ -400,7 +405,7 @@
             7641: (u, e, t) => {
                 t.r(e),
                     t.d(e, {
-                        addModelObserver: () => D,
+                        addModelObserver: () => s,
                         addPreloadTexture: () => o,
                         children: () => E,
                         displayStatus: () => n.W,
@@ -412,19 +417,19 @@
                         getBrowserTexturePath: () => a,
                         getDisplayStatus: () => T,
                         getFontNames: () => P,
-                        getScale: () => d,
+                        getScale: () => c,
                         getSize: () => B,
                         getViewGlobalPosition: () => l,
                         isEventHandled: () => w,
                         isFocused: () => v,
-                        pxToRem: () => c,
+                        pxToRem: () => d,
                         remToPx: () => p,
                         resize: () => C,
                         sendEvent: () => A.qP,
                         setAnimateWindow: () => m,
                         setEventHandled: () => h,
                         setInputPaddingsRem: () => r,
-                        setSidePaddingsRem: () => s,
+                        setSidePaddingsRem: () => D,
                         whenTutorialReady: () => f,
                     });
                 var E = t(3722),
@@ -441,10 +446,10 @@
                 function a(u, e, t, E = 1) {
                     return viewEnv.getWebBrowserTexturePath(u, e, t, E);
                 }
-                function D(u, e, t) {
+                function s(u, e, t) {
                     return viewEnv.addDataChangedCallback(u, e, t);
                 }
-                function s(u) {
+                function D(u) {
                     viewEnv.setHitAreaPaddingsRem(u.top, u.right, u.bottom, u.left, i);
                 }
                 function B(u = 'px') {
@@ -460,10 +465,10 @@
                 function _() {
                     viewEnv.freezeTextureBeforeResize();
                 }
-                function d() {
+                function c() {
                     return viewEnv.getScale();
                 }
-                function c(u) {
+                function d(u) {
                     return viewEnv.pxToRem(u);
                 }
                 function p(u) {
@@ -740,7 +745,7 @@
                 const __WEBPACK_DEFAULT_EXPORT__ = ViewModel;
             },
             9916: (u, e, t) => {
-                t.d(e, { B3: () => o, Z5: () => A.Z5, ry: () => d });
+                t.d(e, { B3: () => o, Z5: () => A.Z5, ry: () => c });
                 class E {
                     constructor() {
                         (this.entries = []),
@@ -796,8 +801,8 @@
                 const o = Object.freeze({ INTEGRAL: 0, GOLD: 1 }),
                     r = Object.freeze({ FRACTIONAL: 0, WO_ZERO_DIGITS: 1 }),
                     a = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1 }),
-                    D = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1, YEAR_MONTH: 2 });
-                var s = t(5521),
+                    s = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1, YEAR_MONTH: 2 });
+                var D = t(5521),
                     B = t(3138);
                 const C = ['args'];
                 function l(u, e, t, E, n, F, A) {
@@ -810,7 +815,7 @@
                     i.done ? e(o) : Promise.resolve(o).then(E, n);
                 }
                 const _ = (u) => ({ __Type: 'GFBoundingBox', x: u.x, y: u.y, width: u.width, height: u.height }),
-                    d = (function () {
+                    c = (function () {
                         var u,
                             e =
                                 ((u = function* () {
@@ -839,7 +844,7 @@
                             return e.apply(this, arguments);
                         };
                     })(),
-                    c = (u, e) => {
+                    d = (u, e) => {
                         const t = 'GFViewEventProxy';
                         if (void 0 !== e) {
                             const n = e.args,
@@ -878,9 +883,9 @@
                         } else viewEnv.handleViewEvent({ __Type: t, type: u });
                         var E;
                     },
-                    p = () => c(i.CLOSE),
+                    p = () => d(i.CLOSE),
                     m = (u, e) => {
-                        u.keyCode === s.n.ESCAPE && e();
+                        u.keyCode === D.n.ESCAPE && e();
                     };
                 var v = t(7572);
                 const h = n.instance,
@@ -891,28 +896,28 @@
                         NumberFormatType: o,
                         RealFormatType: r,
                         TimeFormatType: a,
-                        DateFormatType: D,
+                        DateFormatType: s,
                         makeGlobalBoundingBox: _,
-                        sendMoveEvent: (u) => c(i.MOVE, { isMouseEvent: !0, on: u }),
+                        sendMoveEvent: (u) => d(i.MOVE, { isMouseEvent: !0, on: u }),
                         sendCloseEvent: p,
-                        sendClosePopOverEvent: () => c(i.POP_OVER, { on: !1 }),
+                        sendClosePopOverEvent: () => d(i.POP_OVER, { on: !1 }),
                         sendShowContextMenuEvent: (u, e, t = 0) => {
-                            c(i.CONTEXT_MENU, { isMouseEvent: !0, contentID: u, on: !0, decoratorID: t, args: e });
+                            d(i.CONTEXT_MENU, { isMouseEvent: !0, contentID: u, on: !0, decoratorID: t, args: e });
                         },
                         sendShowPopOverEvent: (u, e, t, E, n = R.invalid('resId'), F) => {
                             const A = B.O.view.getViewGlobalPosition(),
                                 o = t.getBoundingClientRect(),
                                 r = o.x,
                                 a = o.y,
-                                D = o.width,
-                                s = o.height,
+                                s = o.width,
+                                D = o.height,
                                 C = {
                                     x: B.O.view.pxToRem(r) + A.x,
                                     y: B.O.view.pxToRem(a) + A.y,
-                                    width: B.O.view.pxToRem(D),
-                                    height: B.O.view.pxToRem(s),
+                                    width: B.O.view.pxToRem(s),
+                                    height: B.O.view.pxToRem(D),
                                 };
-                            c(i.POP_OVER, {
+                            d(i.POP_OVER, {
                                 isMouseEvent: !0,
                                 contentID: u,
                                 decoratorID: E || R.invalid('resId'),
@@ -932,8 +937,8 @@
                         closeOnEsc: (u) => {
                             m(u, p);
                         },
-                        handleViewEvent: c,
-                        onBindingsReady: d,
+                        handleViewEvent: d,
+                        onBindingsReady: c,
                         onLayoutReady: () =>
                             new Promise((u) => {
                                 requestAnimationFrame(() => {
@@ -1024,7 +1029,7 @@
                     })(A || (A = {}));
             },
             3942: (u, e, t) => {
-                t(6483), t(3649), t(6179), t(2893);
+                t(6483), t(3649), t(7363), t(2893);
                 let E;
                 !(function (u) {
                     (u.Default = 'default'), (u.TransparentChapterName = 'transparentChapterName');
@@ -1042,6 +1047,9 @@
                     (function (u) {
                         (u.Vehicle = 'vehicle'), (u.Style = 'style'), (u.Tankman = 'tankman');
                     })(n || (n = {}));
+            },
+            7363: (u) => {
+                u.exports = React;
             },
         },
         __webpack_module_cache__ = {},

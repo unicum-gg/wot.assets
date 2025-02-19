@@ -48,9 +48,9 @@
                         setSidePaddingsRem: () => Q,
                         whenTutorialReady: () => ue,
                     });
-                var s = t(6179),
+                var s = t(7363),
                     u = t.n(s),
-                    c = t(493),
+                    c = t(1533),
                     l = t.n(c);
                 const d = {
                     linear: (e) => e,
@@ -211,9 +211,9 @@
                         },
                     },
                     z = ['args'];
-                const L = 2,
-                    j = 16,
-                    D = 32,
+                const D = 2,
+                    L = 16,
+                    j = 32,
                     B = 64,
                     N = (e, n) => {
                         const t = 'GFViewEventProxy';
@@ -254,13 +254,13 @@
                     },
                     $ = {
                         close(e) {
-                            N('popover' === e ? L : D);
+                            N('popover' === e ? D : j);
                         },
                         minimize() {
                             N(B);
                         },
                         move(e) {
-                            N(j, { isMouseEvent: !0, on: e });
+                            N(L, { isMouseEvent: !0, on: e });
                         },
                     },
                     H = 15;
@@ -681,7 +681,7 @@
                 !(function (e) {
                     (e.ExtraSmall = 'extraSmall'), (e.Small = 'small'), (e.Medium = 'medium'), (e.Large = 'large');
                 })(ze || (ze = {}));
-                const Le = ({ engraving: e, count: n, size: t }) => {
+                const De = ({ engraving: e, count: n, size: t }) => {
                     const r = R.strings.dogtags.component.engraving.coupled.$num(e).counter();
                     return u().createElement(
                         'div',
@@ -690,7 +690,7 @@
                         u().createElement('div', { className: Me.count }, n),
                     );
                 };
-                let je, De;
+                let Le, je;
                 !(function (e) {
                     (e.Static = 'static'),
                         (e.Intro = 'intro'),
@@ -698,18 +698,18 @@
                         (e.Showing = 'showing'),
                         (e.Loop = 'loop'),
                         (e.Hiding = 'hiding');
-                })(je || (je = {})),
+                })(Le || (Le = {})),
                     (function (e) {
                         (e.ExtraSmall = 'extraSmall'), (e.Small = 'small'), (e.Medium = 'medium'), (e.Large = 'large');
-                    })(De || (De = {}));
+                    })(je || (je = {}));
                 const Be = { duration: 500, easing: d.easeOutBack },
                     Ne = {
-                        [De.ExtraSmall]: ze.ExtraSmall,
-                        [De.Small]: ze.Small,
-                        [De.Medium]: ze.Medium,
-                        [De.Large]: ze.Large,
+                        [je.ExtraSmall]: ze.ExtraSmall,
+                        [je.Small]: ze.Small,
+                        [je.Medium]: ze.Medium,
+                        [je.Large]: ze.Large,
                     },
-                    $e = { [De.ExtraSmall]: 'small', [De.Small]: 'big', [De.Medium]: 'big', [De.Large]: 's500x300' },
+                    $e = { [je.ExtraSmall]: 'small', [je.Small]: 'big', [je.Medium]: 'big', [je.Large]: 's500x300' },
                     He = {
                         vehicle_sparks_1: 'ach_dog_tag_animation_01',
                         vehicle_sparks_2: 'ach_dog_tag_animation_02',
@@ -719,12 +719,12 @@
                         background: e,
                         engraving: n,
                         progress: t = 0,
-                        animationState: r = je.Static,
+                        animationState: r = Le.Static,
                         animationName: a = '',
                         onAnimationEnd: o,
                         grade: i = 0,
                         showBackplate: c = !0,
-                        size: l = De.Medium,
+                        size: l = je.Medium,
                         className: d,
                         isSoundOff: m,
                     }) => {
@@ -747,7 +747,7 @@
                                 from: { opacity: 0, transform: 'translateY(-50%)' },
                                 config: Be,
                                 onRest: () => {
-                                    r === je.Hiding && (null == o || o());
+                                    r === Le.Hiding && (null == o || o());
                                 },
                             })),
                             E = w[0],
@@ -762,13 +762,13 @@
                             () =>
                                 be(() => {
                                     switch (r) {
-                                        case je.Intro:
+                                        case Le.Intro:
                                             return void _.start({ to: { opacity: 1 }, immediate: !1 });
-                                        case je.AutoShowing:
+                                        case Le.AutoShowing:
                                             return _.start({ to: { opacity: 1 }, immediate: !1 }), void x();
-                                        case je.Showing:
+                                        case Le.Showing:
                                             return void x();
-                                        case je.Loop:
+                                        case Le.Loop:
                                             return (
                                                 O(),
                                                 _.start({ to: { opacity: 1 }, immediate: !0 }),
@@ -777,7 +777,7 @@
                                                     immediate: !0,
                                                 })
                                             );
-                                        case je.Hiding:
+                                        case Le.Hiding:
                                             return (
                                                 _.start({ to: { opacity: 0 } }),
                                                 void S.start({
@@ -785,7 +785,7 @@
                                                     immediate: !1,
                                                 })
                                             );
-                                        case je.Static:
+                                        case Le.Static:
                                             _.start({ to: { opacity: 1 }, immediate: !0 }),
                                                 S.start({
                                                     to: { opacity: 1, transform: 'translateY(0%)' },
@@ -813,11 +813,11 @@
                                                 backgroundImage: `url(R.images.gui.maps.icons.dogtags.${$e[l]}.bottom_plates.bottom_plate_${e})`,
                                             },
                                         },
-                                        u().createElement(Le, { engraving: n, count: t, size: Ne[l] }),
+                                        u().createElement(De, { engraving: n, count: t, size: Ne[l] }),
                                     ),
                                 ),
                             u().createElement('div', { className: Ae.shadow }),
-                            r !== je.Static &&
+                            r !== Le.Static &&
                                 T.isHigh() &&
                                 Boolean(p) &&
                                 u().createElement(
@@ -1110,8 +1110,8 @@
                                     background: t.id,
                                     engraving: r.id,
                                     progress: r.currentProgress,
-                                    size: De.ExtraSmall,
-                                    animationState: je.AutoShowing,
+                                    size: je.ExtraSmall,
+                                    animationState: Le.AutoShowing,
                                     animationName: n,
                                     isSoundOff: !0,
                                 }),
@@ -1124,6 +1124,12 @@
                         document.getElementById('root'),
                     );
                 });
+            },
+            7363: (e) => {
+                e.exports = React;
+            },
+            1533: (e) => {
+                e.exports = ReactDOM;
             },
         },
         t = {};

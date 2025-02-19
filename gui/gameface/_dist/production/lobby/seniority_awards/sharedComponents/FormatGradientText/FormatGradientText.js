@@ -7,7 +7,7 @@
                 var E = A(6483),
                     D = A.n(E),
                     B = A(3649),
-                    C = A(6179),
+                    C = A(7363),
                     e = A.n(C);
                 const t = 'FormatText_base_d0',
                     r = ({
@@ -104,7 +104,7 @@
                 var E = A(6483),
                     D = A.n(E),
                     B = A(6963),
-                    C = A(6179),
+                    C = A(7363),
                     e = A.n(C);
                 const t = 'FormatGradientText_gradientBox_c3',
                     r = 'FormatGradientText_gradientText_39',
@@ -137,6 +137,9 @@
                     }
                     return e().createElement(B.z, { classMix: A, text: s, binding: C });
                 });
+            },
+            7363: (u) => {
+                u.exports = React;
             },
         },
         A = {};

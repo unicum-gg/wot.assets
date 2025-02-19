@@ -41,7 +41,7 @@
                 t.r(E),
                     t.d(E, {
                         addModelObserver: () => I,
-                        addPreloadTexture: () => x,
+                        addPreloadTexture: () => M,
                         children: () => A,
                         displayStatus: () => f,
                         displayStatusIs: () => uu,
@@ -236,12 +236,12 @@
                             P(T, { isMouseEvent: !0, on: u });
                         },
                     },
-                    M = 15;
-                function x(u) {
+                    x = 15;
+                function M(u) {
                     viewEnv.addPreloadTexture(u);
                 }
                 function L(u) {
-                    viewEnv.setHitAreaPaddingsRem(u, u, u, u, M);
+                    viewEnv.setHitAreaPaddingsRem(u, u, u, u, x);
                 }
                 function N(u, e, t, n = 1) {
                     return viewEnv.getWebBrowserTexturePath(u, e, t, n);
@@ -250,7 +250,7 @@
                     return viewEnv.addDataChangedCallback(u, e, t);
                 }
                 function U(u) {
-                    viewEnv.setHitAreaPaddingsRem(u.top, u.right, u.bottom, u.left, M);
+                    viewEnv.setHitAreaPaddingsRem(u.top, u.right, u.bottom, u.left, x);
                 }
                 function V(u = 'px') {
                     return 'rem' === u ? viewEnv.getViewSizeRem() : viewEnv.getViewSizePx();
@@ -316,7 +316,7 @@
             4649: (u, e, t) => {
                 t.d(e, { au: () => o });
                 var n = t(7044),
-                    F = t(6179);
+                    F = t(7363);
                 const A = () => {},
                     E = (u = 0, e, t = 0, E = A) => {
                         const r = (0, F.useState)(u),
@@ -352,7 +352,7 @@
                 const o = E;
             },
             6536: (u, e, t) => {
-                t(6179);
+                t(7363);
             },
             5521: (u, e, t) => {
                 let n, F;
@@ -778,9 +778,9 @@
                     };
             },
             5017: (u, e, t) => {
-                var n = t(6179),
+                var n = t(7363),
                     F = t.n(n),
-                    A = t(493),
+                    A = t(1533),
                     E = t.n(A),
                     r = t(9916),
                     i = t(6483),
@@ -995,10 +995,16 @@
                 (window.onload = () => document.body.appendChild(y)), E().render(F().createElement(b, null), y);
             },
             2993: (u, e, t) => {
-                t(7044), t(4649), t(6179), t(1272);
+                t(7044), t(4649), t(7363), t(1272);
             },
             1272: (u, e, t) => {
-                t(6179);
+                t(7363);
+            },
+            7363: (u) => {
+                u.exports = React;
+            },
+            1533: (u) => {
+                u.exports = ReactDOM;
             },
         },
         __webpack_module_cache__ = {},

@@ -104,7 +104,7 @@
                         setRTPC: () => r.E,
                     });
                 var n = t(527),
-                    r = t(993);
+                    r = t(493);
                 function a(u = 'px') {
                     return 'rem' === u ? viewEnv.getClientSizeRem() : viewEnv.getClientSizePx();
                 }
@@ -124,7 +124,7 @@
                 }
                 t.d(e, { R: () => n });
             },
-            993: (u, e, t) => {
+            493: (u, e, t) => {
                 'use strict';
                 function n(u) {
                     engine.call('PlaySound', u).catch((e) => {
@@ -486,7 +486,7 @@
                 'use strict';
                 __webpack_require__.d(__webpack_exports__, { Z: () => __WEBPACK_DEFAULT_EXPORT__ });
                 var _DataTracker__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(358),
-                    _index__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(364);
+                    _index__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(179);
                 class ViewModel {
                     constructor(path, watchingFields = []) {
                         (this.dataTracker = void 0),
@@ -525,7 +525,7 @@
                 }
                 const __WEBPACK_DEFAULT_EXPORT__ = ViewModel;
             },
-            364: (u, e, t) => {
+            179: (u, e, t) => {
                 'use strict';
                 t.d(e, { ry: () => _ });
                 class n {
@@ -769,7 +769,7 @@
             },
             379: (u, e, t) => {
                 'use strict';
-                var n = t(179),
+                var n = t(363),
                     r = t.n(n);
                 const a = (u, e, t) =>
                     e.extraLargeHeight || e.largeHeight || e.mediumHeight || e.smallHeight || e.extraSmallHeight
@@ -1113,7 +1113,7 @@
                         })(u, T);
                     return r().createElement(_, null, r().createElement(O, t, e));
                 };
-                var H = t(493),
+                var H = t(533),
                     P = t.n(H);
                 function W(u) {
                     engine.call('PlaySound', u).catch((e) => {
@@ -1460,7 +1460,7 @@
                 }
                 au.defaultProps = { side: 'left', type: 'back', soundHover: 'highlight', soundClick: 'play' };
                 var Eu = t(521);
-                t(364);
+                t(179);
                 const iu = (u) => {
                     console.error(u.type + ': useKeydownListener hook :: Callback is not defined');
                 };
@@ -1887,6 +1887,14 @@
                         document.getElementById('root'),
                     );
                 });
+            },
+            363: (u) => {
+                'use strict';
+                u.exports = React;
+            },
+            533: (u) => {
+                'use strict';
+                u.exports = ReactDOM;
             },
         },
         __webpack_module_cache__ = {},

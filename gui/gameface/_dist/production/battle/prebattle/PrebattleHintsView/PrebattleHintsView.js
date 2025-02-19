@@ -778,7 +778,7 @@
             },
             3866: (e, u, t) => {
                 'use strict';
-                var i = t(6179),
+                var i = t(7363),
                     n = t.n(i);
                 const a = (e, u, t) =>
                     u.extraLargeHeight || u.largeHeight || u.mediumHeight || u.smallHeight || u.extraSmallHeight
@@ -1122,7 +1122,7 @@
                         })(e, O);
                     return n().createElement(D, null, n().createElement(S, t, u));
                 };
-                var M = t(493),
+                var M = t(1533),
                     k = t.n(M),
                     P = t(3403),
                     W = t(7030);
@@ -2327,6 +2327,14 @@
                         document.getElementById('root'),
                     );
                 });
+            },
+            7363: (e) => {
+                'use strict';
+                e.exports = React;
+            },
+            1533: (e) => {
+                'use strict';
+                e.exports = ReactDOM;
             },
         },
         __webpack_module_cache__ = {},

@@ -741,9 +741,9 @@
                     };
             },
             455: (u, e, t) => {
-                var n = t(6179),
+                var n = t(7363),
                     r = t.n(n),
-                    i = t(493),
+                    i = t(1533),
                     o = t.n(i),
                     a = t(6483),
                     s = t.n(a),
@@ -1035,15 +1035,20 @@
                                     ((u = 1) => {
                                         const e = new Error().stack;
                                         let t,
-                                            n = R.invalid('resId');
+                                            n = R.invalid('resId'),
+                                            r = '';
+                                        var i;
                                         return (
                                             e &&
-                                                ((t = e.split('\n')[u].split('.js')[0].split('/').pop() || ''),
+                                                ((r =
+                                                    (null == (i = e.match(/(coui:\/\/[^\s]+\.js)/)) ? void 0 : i[0]) ||
+                                                    ''),
+                                                (t = e.split('\n')[u].split('.js')[0].split('/').pop() || ''),
                                                 window.__feature &&
                                                     window.__feature !== t &&
                                                     window.subViews[t] &&
                                                     (n = window.subViews[t].id)),
-                                            { caller: t, stack: e, resId: n }
+                                            { callerUrl: r, caller: t, stack: e, resId: n }
                                         );
                                     })().resId,
                                 [C],
@@ -1123,10 +1128,10 @@
                             : e;
                         var y;
                     },
-                    W = ['children'];
-                function j() {
+                    j = ['children'];
+                function W() {
                     return (
-                        (j = Object.assign
+                        (W = Object.assign
                             ? Object.assign.bind()
                             : function (u) {
                                   for (var e = 1; e < arguments.length; e++) {
@@ -1135,7 +1140,7 @@
                                   }
                                   return u;
                               }),
-                        j.apply(null, arguments)
+                        W.apply(null, arguments)
                     );
                 }
                 const V = (u) => {
@@ -1149,10 +1154,10 @@
                                         t[n] = u[n];
                                     }
                                 return t;
-                            })(u, W);
+                            })(u, j);
                         return r().createElement(
                             I,
-                            j(
+                            W(
                                 {
                                     contentId:
                                         R.views.common.tooltip_window.backport_tooltip_content.BackportTooltipContent(
@@ -1767,21 +1772,21 @@
                 }
                 console.log;
                 var Nu = t(9174);
-                function Pu(u, e) {
+                function Ru(u, e) {
                     var t = ('undefined' != typeof Symbol && u[Symbol.iterator]) || u['@@iterator'];
                     if (t) return (t = t.call(u)).next.bind(t);
                     if (
                         Array.isArray(u) ||
                         (t = (function (u, e) {
                             if (u) {
-                                if ('string' == typeof u) return Ru(u, e);
+                                if ('string' == typeof u) return Pu(u, e);
                                 var t = {}.toString.call(u).slice(8, -1);
                                 return (
                                     'Object' === t && u.constructor && (t = u.constructor.name),
                                     'Map' === t || 'Set' === t
                                         ? Array.from(u)
                                         : 'Arguments' === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t)
-                                          ? Ru(u, e)
+                                          ? Pu(u, e)
                                           : void 0
                                 );
                             }
@@ -1798,7 +1803,7 @@
                         'Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.',
                     );
                 }
-                function Ru(u, e) {
+                function Pu(u, e) {
                     (null == e || e > u.length) && (e = u.length);
                     for (var t = 0, n = Array(e); t < e; t++) n[t] = u[t];
                     return n;
@@ -1807,8 +1812,8 @@
                 function Iu(u, e) {
                     return Array.isArray(u) ? u.map(e) : u.map((u, t, n) => e(null == u ? void 0 : u.value, t, n));
                 }
-                var Wu = t(3946);
-                const ju = ((u, e) => {
+                var ju = t(3946);
+                const Wu = ((u, e) => {
                         const t = (0, n.createContext)({});
                         return [
                             function ({ mode: i = 'real', options: o, children: a, mocks: s }) {
@@ -1865,7 +1870,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var u, t = Pu(r.keys()); !(u = t()).done; ) i(u.value, e);
+                                                        for (var u, t = Ru(r.keys()); !(u = t()).done; ) i(u.value, e);
                                                     },
                                                     unsubscribe: i,
                                                 };
@@ -2009,18 +2014,18 @@
                                 ]),
                                 { boosters: u.array('boosters', []) },
                             ),
-                            t = (0, Wu.Om)(() => Iu(e.boosters.get(), Su), { equals: Lu }),
-                            n = (0, Wu.Om)(() => -1 === e.efficiency.get() && e.boosterType.get() === B.None, {
+                            t = (0, ju.Om)(() => Iu(e.boosters.get(), Su), { equals: Lu }),
+                            n = (0, ju.Om)(() => -1 === e.efficiency.get() && e.boosterType.get() === B.None, {
                                 equals: Lu,
                             }),
-                            r = (0, Wu.Om)(() => -1 === e.efficiency.get(), { equals: Lu }),
-                            i = (0, Wu.Om)(() => e.efficiency.get() < 1, { equals: Lu });
+                            r = (0, ju.Om)(() => -1 === e.efficiency.get(), { equals: Lu }),
+                            i = (0, ju.Om)(() => e.efficiency.get() < 1, { equals: Lu });
                         return Object.assign({}, e, {
                             computes: { boosters: t, isDisabled: n, isUntrained: r, isLowEfficiency: i },
                         });
                     }, Ou),
-                    Vu = ju[0],
-                    Uu = ju[1],
+                    Vu = Wu[0],
+                    Uu = Wu[1],
                     zu = 'EfficiencyInfo_base_94',
                     Gu = 'EfficiencyInfo_container_d7',
                     qu = 'EfficiencyInfo_icon_dc',
@@ -2254,6 +2259,12 @@
                         document.getElementById('root'),
                     );
                 });
+            },
+            7363: (u) => {
+                u.exports = React;
+            },
+            1533: (u) => {
+                u.exports = ReactDOM;
             },
         },
         __webpack_module_cache__ = {},

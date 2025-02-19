@@ -48,13 +48,13 @@
                         getSize: () => V,
                         getViewGlobalPosition: () => X,
                         isEventHandled: () => Y,
-                        isFocused: () => j,
+                        isFocused: () => $,
                         pxToRem: () => K,
                         remToPx: () => z,
                         resize: () => H,
                         sendEvent: () => M,
                         setAnimateWindow: () => q,
-                        setEventHandled: () => $,
+                        setEventHandled: () => j,
                         setInputPaddingsRem: () => I,
                         setSidePaddingsRem: () => U,
                         whenTutorialReady: () => te,
@@ -269,10 +269,10 @@
                 function q(e, u) {
                     viewEnv.setAnimateWindow(e, u);
                 }
-                function j() {
+                function $() {
                     return viewEnv.isFocused();
                 }
-                function $() {
+                function j() {
                     return viewEnv.setEventHandled();
                 }
                 function Y() {
@@ -483,7 +483,7 @@
                 'use strict';
                 __webpack_require__.d(__webpack_exports__, { Z: () => __WEBPACK_DEFAULT_EXPORT__ });
                 var _DataTracker__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(358),
-                    _index__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(364);
+                    _index__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(179);
                 class ViewModel {
                     constructor(path, watchingFields = []) {
                         (this.dataTracker = void 0),
@@ -522,7 +522,7 @@
                 }
                 const __WEBPACK_DEFAULT_EXPORT__ = ViewModel;
             },
-            364: (e, u, t) => {
+            179: (e, u, t) => {
                 'use strict';
                 t.d(u, { Sw: () => r.Z, B3: () => c, Z5: () => s, B0: () => o, SU: () => b, ry: () => D });
                 class n {
@@ -765,13 +765,13 @@
                     };
                 window.ViewEnvHelper = y;
             },
-            270: (e, u, t) => {
+            639: (e, u, t) => {
                 'use strict';
-                var n = t(179),
-                    i = t.n(n),
-                    r = t(493),
-                    s = t.n(r);
-                var a = t(364);
+                const n = React;
+                var i = t.n(n);
+                const r = ReactDOM;
+                var s = t.n(r);
+                var a = t(179);
                 const o = [
                     'children',
                     'contentId',
@@ -857,15 +857,20 @@
                                     ((e = 1) => {
                                         const u = new Error().stack;
                                         let t,
-                                            n = R.invalid('resId');
+                                            n = R.invalid('resId'),
+                                            i = '';
+                                        var r;
                                         return (
                                             u &&
-                                                ((t = u.split('\n')[e].split('.js')[0].split('/').pop() || ''),
+                                                ((i =
+                                                    (null == (r = u.match(/(coui:\/\/[^\s]+\.js)/)) ? void 0 : r[0]) ||
+                                                    ''),
+                                                (t = u.split('\n')[e].split('.js')[0].split('/').pop() || ''),
                                                 window.__feature &&
                                                     window.__feature !== t &&
                                                     window.subViews[t] &&
                                                     (n = window.subViews[t].id)),
-                                            { caller: t, stack: u, resId: n }
+                                            { callerUrl: i, caller: t, stack: u, resId: n }
                                         );
                                     })().resId,
                                 [B],
@@ -1128,7 +1133,8 @@
                             (e.xp = 'xp'),
                             (e.freeXP = 'freeXP'),
                             (e.eliteXP = 'eliteXP'),
-                            (e.equipCoin = 'equipCoin');
+                            (e.equipCoin = 'equipCoin'),
+                            (e.stpCoin = 'stpcoin');
                     })(g || (g = {})),
                     (function (e) {
                         (e.Red = 'RedActionBG'), (e.Blue = 'BlueActionBG');
@@ -1336,8 +1342,8 @@
                     K = 'DialogTemplate_iconOverlay_7b',
                     z = 'DialogTemplate_iconShadow_4b',
                     q = 'DialogTemplate_title_0c',
-                    j = 'DialogTemplate_content_8f',
-                    $ = 'DialogTemplate_divider_cf',
+                    $ = 'DialogTemplate_content_8f',
+                    j = 'DialogTemplate_divider_cf',
                     Y = 'DialogTemplate_footer_c8',
                     Z = 'DialogTemplate_buttons_77',
                     Q = 'DialogTemplate_buttons__indent_ba',
@@ -1383,7 +1389,7 @@
                                         crystals: e.crystals,
                                         freexp: e.freexp,
                                     }),
-                                    i().createElement('div', { className: $ }),
+                                    i().createElement('div', { className: j }),
                                 ),
                             t =
                                 this.props.buttonAcceptText &&
@@ -1464,8 +1470,8 @@
                                         }),
                                 ),
                                 i().createElement('h1', { className: q }, this.props.title),
-                                i().createElement('div', { className: j }, s || this.props.contentText),
-                                i().createElement('div', { className: $ }),
+                                i().createElement('div', { className: $ }, s || this.props.contentText),
+                                i().createElement('div', { className: j }),
                                 r && i().createElement('footer', { className: Y }, r),
                                 i().createElement('div', { className: p()(Z, !r && Q) }, t, n),
                             ),
@@ -1508,6 +1514,10 @@
                         'icon__equipCoin-big': 'Currency_icon__equipCoin-big_79',
                         'icon__equipCoin-large': 'Currency_icon__equipCoin-large_2c',
                         'icon__equipCoin-extraLarge': 'Currency_icon__equipCoin-extraLarge_8a',
+                        'icon__stpCoin-small': 'Currency_icon__stpCoin-small_6b',
+                        'icon__stpCoin-big': 'Currency_icon__stpCoin-big_da',
+                        'icon__stpCoin-large': 'Currency_icon__stpCoin-large_ee',
+                        'icon__stpCoin-extraLarge': 'Currency_icon__stpCoin-extraLarge_fa',
                         value: 'Currency_value_e1',
                         value__freeXP: 'Currency_value__freeXP_cb',
                         value__credits: 'Currency_value__credits_76',
@@ -1516,6 +1526,7 @@
                         value__crystal: 'Currency_value__crystal_19',
                         value__equipCoin: 'Currency_value__equipCoin_d0',
                         value__eliteXP: 'Currency_value__eliteXP_62',
+                        value__stpCoin: 'Currency_value__stpCoin_38',
                         value__notEnough: 'Currency_value__notEnough_56',
                         stock: 'Currency_stock_87',
                         stock__indent: 'Currency_stock__indent_a1',
@@ -2570,14 +2581,6 @@
                     !__webpack_require__.o(e, t) &&
                     Object.defineProperty(e, t, { enumerable: !0, get: u[t] });
         }),
-        (__webpack_require__.g = (function () {
-            if ('object' == typeof globalThis) return globalThis;
-            try {
-                return this || new Function('return this')();
-            } catch (e) {
-                if ('object' == typeof window) return window;
-            }
-        })()),
         (__webpack_require__.o = (e, u) => Object.prototype.hasOwnProperty.call(e, u)),
         (__webpack_require__.r = (e) => {
             'undefined' != typeof Symbol &&
@@ -2604,6 +2607,6 @@
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             t.forEach(u.bind(null, 0)), (t.push = u.bind(null, t.push.bind(t)));
         })();
-    var __webpack_exports__ = __webpack_require__.O(void 0, [928], () => __webpack_require__(270));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [928], () => __webpack_require__(639));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

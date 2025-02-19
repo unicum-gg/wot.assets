@@ -5,7 +5,7 @@
             5394: (e, r, t) => {
                 var a = t(6483),
                     o = t.n(a),
-                    s = t(6179),
+                    s = t(7363),
                     n = t.n(s);
                 const i = {
                     base: 'Divider_base_0f',
@@ -21,6 +21,9 @@
                     n().createElement('div', { className: o()(i.base, i[`base__${e}`], r) }),
                 );
             },
+            7363: (e) => {
+                e.exports = React;
+            },
         },
         t = {};
     function a(e) {
@@ -34,13 +37,13 @@
         (a.O = (r, t, o, s) => {
             if (!t) {
                 var n = 1 / 0;
-                for (v = 0; v < e.length; v++) {
-                    for (var [t, o, s] = e[v], i = !0, d = 0; d < t.length; d++)
+                for (c = 0; c < e.length; c++) {
+                    for (var [t, o, s] = e[c], i = !0, d = 0; d < t.length; d++)
                         (!1 & s || n >= s) && Object.keys(a.O).every((e) => a.O[e](t[d]))
                             ? t.splice(d--, 1)
                             : ((i = !1), s < n && (n = s));
                     if (i) {
-                        e.splice(v--, 1);
+                        e.splice(c--, 1);
                         var f = o();
                         void 0 !== f && (r = f);
                     }
@@ -48,8 +51,8 @@
                 return r;
             }
             s = s || 0;
-            for (var v = e.length; v > 0 && e[v - 1][2] > s; v--) e[v] = e[v - 1];
-            e[v] = [t, o, s];
+            for (var c = e.length; c > 0 && e[c - 1][2] > s; c--) e[c] = e[c - 1];
+            e[c] = [t, o, s];
         }),
         (a.n = (e) => {
             var r = e && e.__esModule ? () => e.default : () => e;
@@ -78,10 +81,10 @@
                         f = 0;
                     if (n.some((r) => 0 !== e[r])) {
                         for (o in i) a.o(i, o) && (a.m[o] = i[o]);
-                        if (d) var v = d(a);
+                        if (d) var c = d(a);
                     }
                     for (r && r(t); f < n.length; f++) (s = n[f]), a.o(e, s) && e[s] && e[s][0](), (e[s] = 0);
-                    return a.O(v);
+                    return a.O(c);
                 },
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             t.forEach(r.bind(null, 0)), (t.push = r.bind(null, t.push.bind(t)));

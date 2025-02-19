@@ -52,6 +52,44 @@
     background: center / contain no-repeat;
 }
 
+.AttachmentRarity_base_c6 {
+    display: flex;
+    align-items: center;
+}
+
+.AttachmentRarity_icoWrapper_7a {
+    width: 12rem;
+    height: 12rem;
+    position: relative;
+    transform: translateY(1rem);
+}
+
+.AttachmentRarity_ico_82 {
+    width: 20rem;
+    height: 20rem;
+    background: no-repeat 0 0 / contain;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.AttachmentRarity_text_79 {
+    margin-left: 5rem;
+}
+
+.AttachmentRarity_base__rare_ce .AttachmentRarity_text_79 {
+    color: #60bcd0;
+}
+
+.AttachmentRarity_base__epic_dc .AttachmentRarity_text_79 {
+    color: #9160d0;
+}
+
+.AttachmentRarity_base__legendary_3e .AttachmentRarity_text_79 {
+    color: #d0aa60;
+}
+
 .List_base_2b {
     display: flex;
     flex-direction: column;

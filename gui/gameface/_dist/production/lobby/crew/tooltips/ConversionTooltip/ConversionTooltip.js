@@ -5,7 +5,7 @@
             1590: (e, n, t) => {
                 var o = {};
                 t.r(o),
-                    t.d(o, { mouse: () => p, off: () => f, on: () => m, onResize: () => d, onScaleUpdated: () => v });
+                    t.d(o, { mouse: () => g, off: () => f, on: () => m, onResize: () => d, onScaleUpdated: () => v });
                 var r = {};
                 t.r(r),
                     t.d(r, {
@@ -65,8 +65,8 @@
                     v = c('self.onScaleUpdated'),
                     m = (e, n) => engine.on(e, n),
                     f = (e, n) => engine.off(e, n),
-                    g = { down: c('mousedown'), up: c('mouseup'), move: c('mousemove') };
-                const p = (function () {
+                    p = { down: c('mousedown'), up: c('mouseup'), move: c('mousemove') };
+                const g = (function () {
                     const e = { listeners: 0, enabled: !0, initialized: !1 };
                     function n() {
                         e.enabled && u(!1);
@@ -93,7 +93,7 @@
                                     e.listeners += 1;
                                     let r = !0;
                                     const i = `mouse${n}`,
-                                        a = g[n]((e) => t([e, 'outside']));
+                                        a = p[n]((e) => t([e, 'outside']));
                                     function s(e) {
                                         t([e, 'inside']);
                                     }
@@ -306,7 +306,7 @@
                         engine.whenReady,
                     ]),
                     ae = { view: a, client: r, sound: x };
-                var se = t(6179),
+                var se = t(7363),
                     le = t.n(se);
                 function ce() {
                     const e = (0, se.useRef)(0);
@@ -405,9 +405,9 @@
                         )
                     );
                 });
-                var fe = t(493),
-                    ge = t.n(fe);
-                var pe = t(3403);
+                var fe = t(1533),
+                    pe = t.n(fe);
+                var ge = t(3403);
                 function be() {}
                 function we() {
                     return !1;
@@ -612,10 +612,10 @@
                                     v = u[1],
                                     m = (0, se.useState)(() => l(o, r, a)),
                                     f = m[0],
-                                    g = m[1];
+                                    p = m[1];
                                 return (
                                     (0, se.useEffect)(() => {
-                                        c.current ? g(l(d, r, a)) : (c.current = !0);
+                                        c.current ? p(l(d, r, a)) : (c.current = !0);
                                     }, [a, d, r]),
                                     (0, se.useEffect)(() => {
                                         v(o);
@@ -641,8 +641,8 @@
                     xe = Te[0],
                     Pe = Te[1],
                     Oe = 'ConversionTooltipBook_base_cb',
-                    Se = 'ConversionTooltipBook_icon_a6',
-                    Re = 'ConversionTooltipBook_labelsBlock_a9',
+                    Re = 'ConversionTooltipBook_icon_a6',
+                    Se = 'ConversionTooltipBook_labelsBlock_a9',
                     Ce = 'ConversionTooltipBook_titleLabel_64',
                     ke = 'ConversionTooltipBook_bottomLabels_b0',
                     Ae = 'ConversionTooltipBook_nationLabel_e2',
@@ -652,14 +652,14 @@
                             'div',
                             { className: l()(Oe, r) },
                             le().createElement('div', {
-                                className: Se,
+                                className: Re,
                                 style: {
                                     backgroundImage: `url(${R.images.gui.maps.icons.crewBooks.books.small.$dyn(e)})`,
                                 },
                             }),
                             le().createElement(
                                 'div',
-                                { className: Re },
+                                { className: Se },
                                 le().createElement('div', { className: Ce }, n),
                                 le().createElement(
                                     'div',
@@ -692,7 +692,7 @@
                         Ge.apply(null, arguments)
                     );
                 }
-                const $e = (0, pe.Pi)(() => {
+                const $e = (0, ge.Pi)(() => {
                     const e = Pe().model,
                         n = e.booksList.get(),
                         t = n.length > 6,
@@ -722,11 +722,17 @@
                     var r, i;
                 });
                 engine.whenReady.then(() => {
-                    ge().render(
+                    pe().render(
                         le().createElement(me, null, le().createElement(xe, null, le().createElement($e, null))),
                         document.getElementById('root'),
                     );
                 });
+            },
+            7363: (e) => {
+                e.exports = React;
+            },
+            1533: (e) => {
+                e.exports = ReactDOM;
             },
         },
         t = {};

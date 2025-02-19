@@ -267,9 +267,15 @@
 }
 
 .App_base_c7 {
-    background: url('R.images.gui.maps.icons.customization.progression_styles.stage_switcher.bg') center / contain
-        no-repeat;
+    min-width: 10rem;
+    min-height: 10rem;
+    padding: 20rem 30rem;
     overflow: hidden;
+    position: absolute;
+}
+
+.App_base__text_1f {
+    padding: 30rem 50rem;
 }
 
 .App_content_8f {
@@ -277,7 +283,8 @@
     align-items: center;
     width: 100%;
     height: 100%;
-    padding-left: 22rem;
+    background: url('R.images.gui.maps.icons.customization.progression_styles.stage_switcher.bg') center / contain
+        no-repeat;
 }
 
 .App_content__text_41 {

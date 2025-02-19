@@ -6,7 +6,7 @@
                 var E = t(6483),
                     F = t.n(E),
                     A = t(3649),
-                    n = t(6179),
+                    n = t(7363),
                     r = t.n(n),
                     i = t(5287);
                 const D = ({
@@ -41,7 +41,7 @@
             3495: (u, e, t) => {
                 t.d(e, { Y: () => o });
                 var E = t(9768),
-                    F = t(6179),
+                    F = t(7363),
                     A = t(1043),
                     n = t(5262);
                 const r = E.O.client.getSize('rem'),
@@ -51,10 +51,10 @@
                     o = (0, F.createContext)(a);
             },
             1039: (u, e, t) => {
-                t(9768), t(6536), t(6179), t(3495), t(1043), t(5262);
+                t(9768), t(6536), t(7363), t(3495), t(1043), t(5262);
             },
             6010: (u, e, t) => {
-                var E = t(6179),
+                var E = t(7363),
                     F = t(7382),
                     A = t(3495);
                 const n = ['children'];
@@ -230,7 +230,7 @@
             6373: (u, e, t) => {
                 t.d(e, { i: () => D });
                 var E = t(2056),
-                    F = t(6179),
+                    F = t(7363),
                     A = t.n(F);
                 const n = ['children', 'body', 'header', 'note', 'alert', 'args'];
                 function r() {
@@ -291,7 +291,7 @@
                 t.d(e, { u: () => D });
                 var E = t(7902),
                     F = t(9916),
-                    A = t(6179);
+                    A = t(7363);
                 const n = [
                     'children',
                     'contentId',
@@ -768,16 +768,17 @@
                 const E = (u = 1) => {
                     const e = new Error().stack;
                     let t,
-                        E = R.invalid('resId');
-                    return (
-                        e &&
-                            ((t = e.split('\n')[u].split('.js')[0].split('/').pop() || ''),
-                            window.__feature &&
-                                window.__feature !== t &&
-                                window.subViews[t] &&
-                                (E = window.subViews[t].id)),
-                        { caller: t, stack: e, resId: E }
-                    );
+                        E = R.invalid('resId'),
+                        F = '';
+                    var A;
+                    e &&
+                        ((F = (null == (A = e.match(/(coui:\/\/[^\s]+\.js)/)) ? void 0 : A[0]) || ''),
+                        (t = e.split('\n')[u].split('.js')[0].split('/').pop() || ''),
+                        window.__feature &&
+                            window.__feature !== t &&
+                            window.subViews[t] &&
+                            (E = window.subViews[t].id));
+                    return { callerUrl: F, caller: t, stack: e, resId: E };
                 };
             },
             8071: (u, e, t) => {
@@ -792,17 +793,17 @@
             },
             6536: (u, e, t) => {
                 t.d(e, { Z: () => F });
-                var E = t(6179);
+                var E = t(7363);
                 const F = (u) => {
                     const e = (0, E.useRef)(!1);
                     e.current || (u(), (e.current = !0));
                 };
             },
             3469: (u, e, t) => {
-                t(7044), t(6179);
+                t(7044), t(7363);
             },
             2133: (u, e, t) => {
-                t(6179);
+                t(7363);
             },
             9924: (u, e, t) => {
                 t.d(e, { Z: () => o });
@@ -810,7 +811,7 @@
                     F = t.n(E),
                     A = t(7739),
                     n = t(5262),
-                    r = t(6179),
+                    r = t(7363),
                     i = t(3649);
                 const D = (u, e) => u + '__' + e,
                     a = (u, e) => u + (0, i.e)(e);
@@ -827,77 +828,86 @@
                 }
             },
             5360: (u, e, t) => {
-                t.d(e, { t: () => o });
+                t.d(e, { t: () => s });
                 var E = t(7902),
                     F = t(8071),
                     A = t(6536),
                     n = t(9916),
                     r = t(7332),
-                    i = t(6179);
-                const D = n.Sw.instance;
-                let a;
+                    i = t(7363),
+                    D = t(538);
+                const a = n.Sw.instance;
+                let o;
                 !(function (u) {
                     (u.None = 'None'), (u.Shallow = 'Shallow'), (u.Deep = 'Deep');
-                })(a || (a = {}));
-                const o = (u = 'model', e = a.Deep) => {
+                })(o || (o = {}));
+                const s = (u = 'model', e = o.Deep) => {
                     const t = (0, i.useState)(0),
                         n = (t[0], t[1]),
-                        o = (0, i.useMemo)(() => (0, E.F)(), []),
-                        s = o.caller,
-                        B = o.resId,
-                        C = (0, i.useMemo)(
-                            () => (window.__feature && window.__feature !== s ? `subViews.${s}.${u}` : u),
-                            [s, u],
-                        ),
-                        l = (0, i.useState)(() =>
+                        s = (0, i.useMemo)(() => (0, E.F)(), []),
+                        B = s.callerUrl,
+                        C = s.caller,
+                        l = s.resId,
+                        c = (0, i.useMemo)(() => {
+                            const e = (0, D.sI)(B.replace('.js', '.html'));
+                            return window.__feature && window.__feature !== C && !e ? `subViews.${C}.${u}` : u;
+                        }, [B, C, u]),
+                        d = (0, i.useState)(() =>
                             ((u) => {
                                 const e = (0, F.M)(u, window);
                                 for (const u in e) 'function' == typeof e[u] && (e[u] = e[u].bind(e));
                                 return (0, r.os)(e) ? e.value : e;
-                            })((0, r.Gd)(C)),
+                            })((0, r.Gd)(c)),
                         ),
-                        c = l[0],
-                        d = l[1],
-                        _ = (0, i.useRef)(-1);
+                        _ = d[0],
+                        m = d[1],
+                        h = (0, i.useRef)(-1);
                     return (
                         (0, A.Z)(() => {
                             if (
                                 ('boolean' == typeof e &&
-                                    ((e = e ? a.Deep : a.None),
+                                    ((e = e ? o.Deep : o.None),
                                     console.warn(
                                         'Boolean key for useModel "tracking" param is deprecated. Use ModelTracking enum values instead!',
                                     )),
-                                e !== a.None)
+                                e !== o.None)
                             ) {
                                 const t = (u) => {
-                                        (0, r.kJ)(u) && e === a.Deep
-                                            ? (u === c && n((u) => u + 1), d(u))
-                                            : d(Object.assign([], u));
+                                        (0, r.kJ)(u) && e === o.Deep
+                                            ? (u === _ && n((u) => u + 1), m(u))
+                                            : m(Object.assign([], u));
                                     },
                                     E = (0, r.U0)(u);
-                                _.current = D.addCallback(E, t, B, e === a.Deep);
+                                h.current = a.addCallback(E, t, l, e === o.Deep);
                             }
                         }),
                         (0, i.useEffect)(() => {
-                            if (e !== a.None)
+                            if (e !== o.None)
                                 return () => {
-                                    D.removeCallback(_.current, B);
+                                    a.removeCallback(h.current, l);
                                 };
-                        }, [B, e]),
-                        c
+                        }, [l, e]),
+                        _
                     );
                 };
             },
             9056: (u, e, t) => {
                 var E = t(9916);
-                t(6179);
+                t(7363);
                 E.Sw.instance;
             },
             2790: (u, e, t) => {
-                t(6179);
+                t(7363);
             },
             579: (u, e, t) => {
-                t(9768), t(6179);
+                t(9768), t(7363);
+            },
+            538: (u, e, t) => {
+                function E(u) {
+                    return F().has(u);
+                }
+                t.d(e, { sI: () => E });
+                const F = () => (window.injected || (window.injected = new Map()), window.injected);
             },
             5521: (u, e, t) => {
                 let E, F;
@@ -948,6 +958,19 @@
                             (u.SYMBOL = 'Symbol'),
                             (u.SYMBOL_LOCK = 'SymbolLock');
                     })(F || (F = {}));
+            },
+            9480: (u, e, t) => {
+                t.d(e, { hX: () => E });
+                function E(u, e) {
+                    if (Array.isArray(u)) return u.filter(e);
+                    const t = [];
+                    for (let F = 0; F < u.length; F++) {
+                        var E;
+                        const A = null == (E = u[F]) ? void 0 : E.value;
+                        e(A, F, u) && t.push(A);
+                    }
+                    return t;
+                }
             },
             3649: (u, e, t) => {
                 t.d(e, { Uw: () => l, WU: () => A, e: () => r, uF: () => n, v2: () => F });
@@ -1411,46 +1434,46 @@
                     };
             },
             8434: (u, e, t) => {
-                t.d(e, { r: () => D });
-                var E = t(6179),
+                t.d(e, { r: () => a });
+                var E = t(7363),
                     F = t.n(E),
-                    A = t(9916),
-                    n = t(1532);
-                const r = { calcValue: 0, isPositive: !0, valueKey: 'default' },
-                    i = ({ values: u, localeName: e }) => {
-                        const t = u.filter(({ value: { valueKey: u } = {} }) => u === e).pop();
-                        if (!t) return r;
+                    A = t(1532),
+                    n = t(9480),
+                    r = t(9916);
+                const i = { calcValue: 0, isPositive: !0, valueKey: 'default' },
+                    D = ({ values: u, localeName: e }) => {
+                        const t = n.hX(u, ({ valueKey: u }) => u === e).pop();
+                        if (!t) return i;
                         const E = t.value,
-                            F = E.value,
-                            A = E.valueType,
-                            i = E.valueKey,
-                            D = A === n.W ? 100 * (F - 1) : F;
-                        return { calcValue: D, isPositive: D > 0, valueKey: i };
+                            F = t.valueType,
+                            r = t.valueKey,
+                            D = F === A.W ? 100 * (E - 1) : E;
+                        return { calcValue: D, isPositive: D > 0, valueKey: r };
                     },
-                    D = ({
+                    a = ({
                         isUnitVisible: u = !0,
                         bonus: e,
                         classes: t = {},
                         isSpaceVisible: E = !0,
-                        keepPositive: n = !1,
+                        keepPositive: A = !1,
                     }) => {
-                        const r = ((u) => {
-                                const e = i(u),
+                        const n = ((u) => {
+                                const e = D(u),
                                     t = e.calcValue,
                                     E = e.isPositive,
                                     F = e.valueKey;
-                                return `${E ? '+' : ''}${A.Z5.getRealFormat(t, A.Gr.WO_ZERO_DIGITS)}${R.strings.tank_setup.kpi.bonus.valueTypes.$dyn(F) || '%'}`;
+                                return `${E ? '+' : ''}${r.Z5.getRealFormat(t, r.Gr.WO_ZERO_DIGITS)}${R.strings.tank_setup.kpi.bonus.valueTypes.$dyn(F) || '%'}`;
                             })(e),
-                            D = ((u, e = !1) =>
-                                e || i(u).isPositive
+                            i = ((u, e = !1) =>
+                                e || D(u).isPositive
                                     ? R.strings.tank_setup.kpi.bonus.positive.$dyn(u.localeName)
-                                    : R.strings.tank_setup.kpi.bonus.negative.$dyn(u.localeName))(e, n);
+                                    : R.strings.tank_setup.kpi.bonus.negative.$dyn(u.localeName))(e, A);
                         return F().createElement(
                             'span',
                             { className: t.base },
-                            u && F().createElement('span', { className: t.unit }, r),
+                            u && F().createElement('span', { className: t.unit }, n),
                             u && E && ' ',
-                            F().createElement('span', { className: t.text }, D),
+                            F().createElement('span', { className: t.text }, i),
                         );
                     };
             },
@@ -1463,7 +1486,7 @@
                     i = t(2344),
                     D = t(9924),
                     a = t(3649),
-                    o = t(6179),
+                    o = t(7363),
                     s = t.n(o),
                     B = t(8434);
                 const C = {
@@ -1558,6 +1581,9 @@
             5287: (u, e, t) => {
                 t.d(e, { Z: () => E });
                 const E = { base: 'FormatText_base_d0' };
+            },
+            7363: (u) => {
+                u.exports = React;
             },
         },
         __webpack_module_cache__ = {},

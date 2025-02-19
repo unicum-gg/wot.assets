@@ -6,7 +6,7 @@
                 var r = t(6483),
                     n = t.n(r),
                     i = t(2372),
-                    a = t(6179),
+                    a = t(7363),
                     o = t.n(a),
                     s = t(8460),
                     l = t(329);
@@ -76,7 +76,8 @@
                             (u.xp = 'xp'),
                             (u.freeXP = 'freeXP'),
                             (u.eliteXP = 'eliteXP'),
-                            (u.equipCoin = 'equipCoin');
+                            (u.equipCoin = 'equipCoin'),
+                            (u.stpCoin = 'stpcoin');
                     })(n || (n = {})),
                     (function (u) {
                         (u.Red = 'RedActionBG'), (u.Blue = 'BlueActionBG');
@@ -84,7 +85,7 @@
             },
             2372: (u, e, t) => {
                 t.d(e, { A: () => a });
-                var r = t(6179),
+                var r = t(7363),
                     n = t.n(r),
                     i = t(9916);
                 class a extends n().PureComponent {
@@ -103,7 +104,7 @@
                 var r = t(6483),
                     n = t.n(r),
                     i = t(3649),
-                    a = t(6179),
+                    a = t(7363),
                     o = t.n(a),
                     s = t(5287);
                 const l = ({
@@ -133,7 +134,7 @@
             3495: (u, e, t) => {
                 t.d(e, { Y: () => E });
                 var r = t(3138),
-                    n = t(6179),
+                    n = t(7363),
                     i = t(1043),
                     a = t(5262);
                 const o = r.O.client.getSize('rem'),
@@ -143,10 +144,10 @@
                     E = (0, n.createContext)(c);
             },
             1039: (u, e, t) => {
-                t(3138), t(6536), t(6179), t(3495), t(1043), t(5262);
+                t(3138), t(6536), t(7363), t(3495), t(1043), t(5262);
             },
             6010: (u, e, t) => {
-                var r = t(6179),
+                var r = t(7363),
                     n = t(7382),
                     i = t(3495);
                 const a = ['children'];
@@ -321,7 +322,7 @@
             },
             7078: (u, e, t) => {
                 t.d(e, { t: () => s });
-                var r = t(6179),
+                var r = t(7363),
                     n = t.n(r),
                     i = t(2056);
                 const a = ['children'];
@@ -369,7 +370,7 @@
             },
             3415: (u, e, t) => {
                 t.d(e, { l: () => l });
-                var r = t(6179),
+                var r = t(7363),
                     n = t.n(r),
                     i = t(7078),
                     a = t(6373),
@@ -399,7 +400,7 @@
             6373: (u, e, t) => {
                 t.d(e, { i: () => l });
                 var r = t(2056),
-                    n = t(6179),
+                    n = t(7363),
                     i = t.n(n);
                 const a = ['children', 'body', 'header', 'note', 'alert', 'args'];
                 function o() {
@@ -460,7 +461,7 @@
                 t.d(e, { u: () => l });
                 var r = t(7902),
                     n = t(9916),
-                    i = t(6179);
+                    i = t(7363);
                 const a = [
                     'children',
                     'contentId',
@@ -711,10 +712,10 @@
                 }
             },
             3215: (u, e, t) => {
-                t.d(e, { q: () => s });
+                t.d(e, { q3: () => s });
                 var r = t(4598),
                     n = t(9174),
-                    i = t(6179),
+                    i = t(7363),
                     a = t.n(i),
                     o = t(8246);
                 const s = () => (u, e) => {
@@ -1204,16 +1205,17 @@
                 const r = (u = 1) => {
                     const e = new Error().stack;
                     let t,
-                        r = R.invalid('resId');
-                    return (
-                        e &&
-                            ((t = e.split('\n')[u].split('.js')[0].split('/').pop() || ''),
-                            window.__feature &&
-                                window.__feature !== t &&
-                                window.subViews[t] &&
-                                (r = window.subViews[t].id)),
-                        { caller: t, stack: e, resId: r }
-                    );
+                        r = R.invalid('resId'),
+                        n = '';
+                    var i;
+                    e &&
+                        ((n = (null == (i = e.match(/(coui:\/\/[^\s]+\.js)/)) ? void 0 : i[0]) || ''),
+                        (t = e.split('\n')[u].split('.js')[0].split('/').pop() || ''),
+                        window.__feature &&
+                            window.__feature !== t &&
+                            window.subViews[t] &&
+                            (r = window.subViews[t].id));
+                    return { callerUrl: n, caller: t, stack: e, resId: r };
                 };
             },
             2344: (u, e, t) => {
@@ -1224,17 +1226,17 @@
                 const n = r.Z;
             },
             6536: (u, e, t) => {
-                t(6179);
+                t(7363);
             },
             3469: (u, e, t) => {
-                t(7044), t(6179);
+                t(7044), t(7363);
             },
             2133: (u, e, t) => {
-                t(6179);
+                t(7363);
             },
             5415: (u, e, t) => {
                 t.d(e, { GS: () => l, cJ: () => a });
-                var r = t(6179),
+                var r = t(7363),
                     n = t(7739),
                     i = t(1043);
                 let a, o, s;
@@ -1317,7 +1319,7 @@
             5360: (u, e, t) => {
                 t(6536);
                 var r = t(9916);
-                t(6179);
+                t(7363);
                 r.Sw.instance;
                 let n;
                 !(function (u) {
@@ -1326,12 +1328,12 @@
             },
             9056: (u, e, t) => {
                 var r = t(9916);
-                t(6179);
+                t(7363);
                 r.Sw.instance;
             },
             2790: (u, e, t) => {
                 t.d(e, { Z: () => n });
-                var r = t(6179);
+                var r = t(7363);
                 const n = (u, e) => {
                     const t = (0, r.useRef)();
                     return (
@@ -1345,7 +1347,7 @@
             4419: (u, e, t) => {
                 t.d(e, { y: () => i });
                 var r = t(8045),
-                    n = t(6179);
+                    n = t(7363);
                 const i = (u, e, t = !0) => {
                     const i = (0, n.useCallback)(
                         (u) => {
@@ -1367,7 +1369,7 @@
                 };
             },
             579: (u, e, t) => {
-                t(3138), t(6179);
+                t(3138), t(7363);
             },
             5521: (u, e, t) => {
                 let r, n;
@@ -1849,7 +1851,7 @@
                     n = t.n(r),
                     i = t(3415),
                     a = t(4419),
-                    o = t(6179),
+                    o = t(7363),
                     s = t.n(o),
                     l = t(6143),
                     c = t(3310),
@@ -2149,7 +2151,7 @@
             },
             131: (u, e, t) => {
                 t.d(e, { T: () => c });
-                var r = t(6179),
+                var r = t(7363),
                     n = t.n(r),
                     i = t(9053);
                 const a = (u, e) => !u || u.offsetTop + u.offsetHeight > e,
@@ -2268,7 +2270,7 @@
                 t.d(e, { IY: () => A });
                 var r = t(6483),
                     n = t.n(r),
-                    i = t(6179),
+                    i = t(7363),
                     a = t.n(i),
                     o = t(9053),
                     s = t(9627),
@@ -2371,13 +2373,13 @@
                 })(i || (i = {}));
             },
             883: (u, e, t) => {
-                var r = t(6179),
+                var r = t(7363),
                     n = t.n(r),
                     i = t(3215),
                     a = t(4598),
                     o = t(9480),
                     s = t(3946);
-                const l = (0, i.q)()(
+                const l = (0, i.q3)()(
                         ({ observableModel: u }) => {
                             const e = { cardsList: u.array('cardsList', []) },
                                 t = (0, s.Om)(
@@ -2455,10 +2457,10 @@
                 };
                 var L = t(2372),
                     P = t(280),
-                    S = t(3649),
-                    O = t(771);
+                    O = t(3649),
+                    S = t(771);
                 const N = n().memo(({ description: u, cardState: e, kwargs: t, className: r }) => {
-                    const i = Number(t.value) < O.I;
+                    const i = Number(t.value) < S.I;
                     return n().createElement(
                         'div',
                         { className: F()(T.base, T[`base__${e}`], r) },
@@ -2470,7 +2472,7 @@
                                     percentAmount: n().createElement(
                                         'div',
                                         { className: F()(T.resetPercentsText) },
-                                        (0, S.dL)(((a = t.value), -(O.I - Number(a)))),
+                                        (0, O.dL)(((a = t.value), -(S.I - Number(a)))),
                                     ),
                                     xpAmount: n().createElement(
                                         'div',
@@ -2533,7 +2535,7 @@
                                             n().createElement(
                                                 'div',
                                                 { className: T.efficiencyAfterRetrainValuePercents },
-                                                (0, S.dL)(Number(t.value)),
+                                                (0, O.dL)(Number(t.value)),
                                             ),
                                         ),
                                     ),
@@ -2680,12 +2682,12 @@
                             k !== M.None &&
                                 m.O.sound.play.sound(k === M.Increase ? f.gO.CREW_RETRAIN_UP : f.gO.CREW_RETRAIN_DOWN);
                         }, [k]);
-                        const S = F()(J.base, J[`base__${s}`], J[`base__${D}`], P && J.base__hoverEnabled, v);
+                        const O = F()(J.base, J[`base__${s}`], J[`base__${D}`], P && J.base__hoverEnabled, v);
                         return n().createElement(
                             h.animated.div,
                             {
                                 style: L ? R : void 0,
-                                className: S,
+                                className: O,
                                 onClick: () => {
                                     w && (m.O.sound.play.sound('play'), u(a));
                                 },
@@ -2838,6 +2840,10 @@
                     'icon__equipCoin-big': 'Currency_icon__equipCoin-big_79',
                     'icon__equipCoin-large': 'Currency_icon__equipCoin-large_2c',
                     'icon__equipCoin-extraLarge': 'Currency_icon__equipCoin-extraLarge_8a',
+                    'icon__stpCoin-small': 'Currency_icon__stpCoin-small_6b',
+                    'icon__stpCoin-big': 'Currency_icon__stpCoin-big_da',
+                    'icon__stpCoin-large': 'Currency_icon__stpCoin-large_ee',
+                    'icon__stpCoin-extraLarge': 'Currency_icon__stpCoin-extraLarge_fa',
                     value: 'Currency_value_e1',
                     value__freeXP: 'Currency_value__freeXP_cb',
                     value__credits: 'Currency_value__credits_76',
@@ -2846,6 +2852,7 @@
                     value__crystal: 'Currency_value__crystal_19',
                     value__equipCoin: 'Currency_value__equipCoin_d0',
                     value__eliteXP: 'Currency_value__eliteXP_62',
+                    value__stpCoin: 'Currency_value__stpCoin_38',
                     value__notEnough: 'Currency_value__notEnough_56',
                     stock: 'Currency_stock_87',
                     stock__indent: 'Currency_stock__indent_a1',
@@ -2911,6 +2918,12 @@
                     newLine: 'renderers_newLine_bd',
                     word: 'renderers_word_f3',
                 };
+            },
+            7363: (u) => {
+                u.exports = React;
+            },
+            1533: (u) => {
+                u.exports = ReactDOM;
             },
         },
         __webpack_module_cache__ = {},

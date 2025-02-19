@@ -3,7 +3,7 @@
             2372: (u, e, t) => {
                 'use strict';
                 t.d(e, { A: () => i });
-                var r = t(6179),
+                var r = t(7363),
                     n = t.n(r),
                     a = t(9916);
                 class i extends n().PureComponent {
@@ -21,7 +21,7 @@
                 'use strict';
                 t.d(e, { i: () => A });
                 var r = t(2056),
-                    n = t(6179),
+                    n = t(7363),
                     a = t.n(n);
                 const i = ['children', 'body', 'header', 'note', 'alert', 'args'];
                 function E() {
@@ -83,7 +83,7 @@
                 t.d(e, { u: () => A });
                 var r = t(7902),
                     n = t(9916),
-                    a = t(6179);
+                    a = t(7363);
                 const i = [
                     'children',
                     'contentId',
@@ -618,16 +618,17 @@
                 const r = (u = 1) => {
                     const e = new Error().stack;
                     let t,
-                        r = R.invalid('resId');
-                    return (
-                        e &&
-                            ((t = e.split('\n')[u].split('.js')[0].split('/').pop() || ''),
-                            window.__feature &&
-                                window.__feature !== t &&
-                                window.subViews[t] &&
-                                (r = window.subViews[t].id)),
-                        { caller: t, stack: e, resId: r }
-                    );
+                        r = R.invalid('resId'),
+                        n = '';
+                    var a;
+                    e &&
+                        ((n = (null == (a = e.match(/(coui:\/\/[^\s]+\.js)/)) ? void 0 : a[0]) || ''),
+                        (t = e.split('\n')[u].split('.js')[0].split('/').pop() || ''),
+                        window.__feature &&
+                            window.__feature !== t &&
+                            window.subViews[t] &&
+                            (r = window.subViews[t].id));
+                    return { callerUrl: n, caller: t, stack: e, resId: r };
                 };
             },
             5521: (u, e, t) => {
@@ -1041,7 +1042,7 @@
                     n = t.n(r),
                     a = t(2372),
                     i = t(6373),
-                    E = t(6179),
+                    E = t(7363),
                     o = t.n(E);
                 const A = {
                         base: 'Counter_base_8c',
@@ -1107,9 +1108,9 @@
                         );
                     };
             },
-            1010: (u, e, t) => {
+            4761: (u, e, t) => {
                 'use strict';
-                var r = t(6179),
+                var r = t(7363),
                     n = t.n(r);
                 const a = (u, e, t) =>
                     e.extraLargeHeight || e.largeHeight || e.mediumHeight || e.smallHeight || e.extraSmallHeight
@@ -1453,7 +1454,7 @@
                         })(u, O);
                     return n().createElement(m, null, n().createElement(M, t, e));
                 };
-                var I = t(493),
+                var I = t(1533),
                     N = t.n(I);
                 let k;
                 !(function (u) {
@@ -1498,62 +1499,66 @@
                             );
                         }
                         return '';
-                    },
-                    z = G.Sw.instance;
-                let q;
+                    };
+                const z = () => (window.injected || (window.injected = new Map()), window.injected);
+                const q = G.Sw.instance;
+                let K;
                 !(function (u) {
                     (u.None = 'None'), (u.Shallow = 'Shallow'), (u.Deep = 'Deep');
-                })(q || (q = {}));
-                const K = (u = 'model', e = q.Deep) => {
+                })(K || (K = {}));
+                const Y = (u = 'model', e = K.Deep) => {
                         const t = (0, r.useState)(0),
                             n = (t[0], t[1]),
                             a = (0, r.useMemo)(() => (0, H.F)(), []),
-                            i = a.caller,
-                            E = a.resId,
-                            o = (0, r.useMemo)(
-                                () => (window.__feature && window.__feature !== i ? `subViews.${i}.${u}` : u),
-                                [i, u],
-                            ),
-                            A = (0, r.useState)(() =>
+                            i = a.callerUrl,
+                            E = a.caller,
+                            o = a.resId,
+                            A = (0, r.useMemo)(() => {
+                                const e = (function (u) {
+                                    return z().has(u);
+                                })(i.replace('.js', '.html'));
+                                return window.__feature && window.__feature !== E && !e ? `subViews.${E}.${u}` : u;
+                            }, [i, E, u]),
+                            F = (0, r.useState)(() =>
                                 ((u) => {
                                     const e = W(u, window);
                                     for (const u in e) 'function' == typeof e[u] && (e[u] = e[u].bind(e));
                                     return U(e) ? e.value : e;
-                                })($(o)),
+                                })($(A)),
                             ),
-                            F = A[0],
-                            l = A[1],
-                            s = (0, r.useRef)(-1);
+                            l = F[0],
+                            s = F[1],
+                            D = (0, r.useRef)(-1);
                         return (
                             C(() => {
                                 if (
                                     ('boolean' == typeof e &&
-                                        ((e = e ? q.Deep : q.None),
+                                        ((e = e ? K.Deep : K.None),
                                         console.warn(
                                             'Boolean key for useModel "tracking" param is deprecated. Use ModelTracking enum values instead!',
                                         )),
-                                    e !== q.None)
+                                    e !== K.None)
                                 ) {
                                     const t = (u) => {
                                             ((u) => u && 'CoherentArrayProxy' === u.__proto__.constructor.name)(u) &&
-                                            e === q.Deep
-                                                ? (u === F && n((u) => u + 1), l(u))
-                                                : l(Object.assign([], u));
+                                            e === K.Deep
+                                                ? (u === l && n((u) => u + 1), s(u))
+                                                : s(Object.assign([], u));
                                         },
                                         r = j(u);
-                                    s.current = z.addCallback(r, t, E, e === q.Deep);
+                                    D.current = q.addCallback(r, t, o, e === K.Deep);
                                 }
                             }),
                             (0, r.useEffect)(() => {
-                                if (e !== q.None)
+                                if (e !== K.None)
                                     return () => {
-                                        z.removeCallback(s.current, E);
+                                        q.removeCallback(D.current, o);
                                     };
-                            }, [E, e]),
-                            F
+                            }, [o, e]),
+                            l
                         );
                     },
-                    Y = {
+                    Z = {
                         base: 'Content_base_a5',
                         base__regularRewardReceived: 'Content_base__regularRewardReceived_be',
                         base__topRewardReceived: 'Content_base__topRewardReceived_12',
@@ -1570,23 +1575,23 @@
                         topImage__topRewardReceived: 'Content_topImage__topRewardReceived_fb',
                         title: 'Content_title_fb',
                     };
-                var Z = t(1281);
-                let X;
-                function Q(u, e) {
+                var X = t(1281);
+                let Q;
+                function J(u, e) {
                     return u.replace(/\{\w+\}/g, (u) => String(e[u.slice(1, -1)]));
                 }
                 !(function (u) {
                     (u[(u.left = 0)] = 'left'), (u[(u.right = 1)] = 'right');
-                })(X || (X = {}));
-                const J = (u) => u.replace(/&nbsp;/g, ' '),
-                    uu = (u, e, t) => {
+                })(Q || (Q = {}));
+                const uu = (u) => u.replace(/&nbsp;/g, ' '),
+                    eu = (u, e, t) => {
                         if (t % 2) {
                             const t = u.pop();
                             return [...u, t + e];
                         }
                         return [...u, e];
                     },
-                    eu = (u, e, t) => {
+                    tu = (u, e, t) => {
                         if (0 === t) return [e];
                         if (t % 2) return [...u, ' ' === e ? ' ' : e];
                         {
@@ -1594,8 +1599,8 @@
                             return [...u, t + e];
                         }
                     },
-                    tu = (u, e, t = X.left) => u.split(e).reduce(t === X.left ? uu : eu, []),
-                    ru = (() => {
+                    ru = (u, e, t = Q.left) => u.split(e).reduce(t === Q.left ? eu : tu, []),
+                    nu = (() => {
                         const u = new RegExp(
                             /[\(\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]?[\u3002\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]?[ %\+\x2D-9A-Za-\{\}\xA0\xC0-\u0237\u2013\u2014\u2026]+[\)\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3002\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\uFF01\uFF0C\uFF1A\uFF1B\uFF1F\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]?[\u3002\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]?/gmu
                                 .source +
@@ -1616,36 +1621,36 @@
                                 .replace(/ /g, ' ')
                                 .match(u);
                     })(),
-                    nu = ['zh_cn', 'zh_sg', 'zh_tw'],
-                    au = (u, e = X.left) => {
+                    au = ['zh_cn', 'zh_sg', 'zh_tw'],
+                    iu = (u, e = Q.left) => {
                         const t = R.strings.settings.LANGUAGE_CODE().toLowerCase();
-                        if (nu.includes(t)) return ru(u);
+                        if (au.includes(t)) return nu(u);
                         if ('ja' === t) {
-                            return (0, Z.D4)()
+                            return (0, X.D4)()
                                 .parse(u)
-                                .map((u) => J(u));
+                                .map((u) => uu(u));
                         }
-                        return ((u, e = X.left) => {
+                        return ((u, e = Q.left) => {
                             let t = [];
                             const r =
                                     /(?<=[a-z\xB5\xDF-\xF6\xF8-\xFF\u0101\u0103\u0105\u0107\u0109\u010B\u010D\u010F\u0111\u0113\u0115\u0117\u0119\u011B\u011D\u011F\u0121\u0123\u0125\u0127\u0129\u012B\u012D\u012F\u0131\u0133\u0135\u0137\u0138\u013A\u013C\u013E\u0140\u0142\u0144\u0146\u0148\u0149\u014B\u014D\u014F\u0151\u0153\u0155\u0157\u0159\u015B\u015D\u015F\u0161\u0163\u0165\u0167\u0169\u016B\u016D\u016F\u0171\u0173\u0175\u0177\u017A\u017C\u017E-\u0180\u0183\u0185\u0188\u018C\u018D\u0192\u0195\u0199-\u019B\u019E\u01A1\u01A3\u01A5\u01A8\u01AA\u01AB\u01AD\u01B0\u01B4\u01B6\u01B9\u01BA\u01BD-\u01BF\u01C6\u01C9\u01CC\u01CE\u01D0\u01D2\u01D4\u01D6\u01D8\u01DA\u01DC\u01DD\u01DF\u01E1\u01E3\u01E5\u01E7\u01E9\u01EB\u01ED\u01EF\u01F0\u01F3\u01F5\u01F9\u01FB\u01FD\u01FF\u0201\u0203\u0205\u0207\u0209\u020B\u020D\u020F\u0211\u0213\u0215\u0217\u0219\u021B\u021D\u021F\u0221\u0223\u0225\u0227\u0229\u022B\u022D\u022F\u0231\u0233-\u0239\u023C\u023F\u0240\u0242\u0247\u0249\u024B\u024D\u024F-\u0293\u0295-\u02AF\u0371\u0373\u0377\u037B-\u037D\u0390\u03AC-\u03CE\u03D0\u03D1\u03D5-\u03D7\u03D9\u03DB\u03DD\u03DF\u03E1\u03E3\u03E5\u03E7\u03E9\u03EB\u03ED\u03EF-\u03F3\u03F5\u03F8\u03FB\u03FC\u0430-\u045F\u0461\u0463\u0465\u0467\u0469\u046B\u046D\u046F\u0471\u0473\u0475\u0477\u0479\u047B\u047D\u047F\u0481\u048B\u048D\u048F\u0491\u0493\u0495\u0497\u0499\u049B\u049D\u049F\u04A1\u04A3\u04A5\u04A7\u04A9\u04AB\u04AD\u04AF\u04B1\u04B3\u04B5\u04B7\u04B9\u04BB\u04BD\u04BF\u04C2\u04C4\u04C6\u04C8\u04CA\u04CC\u04CE\u04CF\u04D1\u04D3\u04D5\u04D7\u04D9\u04DB\u04DD\u04DF\u04E1\u04E3\u04E5\u04E7\u04E9\u04EB\u04ED\u04EF\u04F1\u04F3\u04F5\u04F7\u04F9\u04FB\u04FD\u04FF\u0501\u0503\u0505\u0507\u0509\u050B\u050D\u050F\u0511\u0513\u0515\u0517\u0519\u051B\u051D\u051F\u0521\u0523\u0525\u0527\u0529\u052B\u052D\u052F\u0560-\u0588\u10D0-\u10FA\u10FD-\u10FF\u13F8-\u13FD\u1C80-\u1C88\u1D00-\u1D2B\u1D6B-\u1D77\u1D79-\u1D9A\u1E01\u1E03\u1E05\u1E07\u1E09\u1E0B\u1E0D\u1E0F\u1E11\u1E13\u1E15\u1E17\u1E19\u1E1B\u1E1D\u1E1F\u1E21\u1E23\u1E25\u1E27\u1E29\u1E2B\u1E2D\u1E2F\u1E31\u1E33\u1E35\u1E37\u1E39\u1E3B\u1E3D\u1E3F\u1E41\u1E43\u1E45\u1E47\u1E49\u1E4B\u1E4D\u1E4F\u1E51\u1E53\u1E55\u1E57\u1E59\u1E5B\u1E5D\u1E5F\u1E61\u1E63\u1E65\u1E67\u1E69\u1E6B\u1E6D\u1E6F\u1E71\u1E73\u1E75\u1E77\u1E79\u1E7B\u1E7D\u1E7F\u1E81\u1E83\u1E85\u1E87\u1E89\u1E8B\u1E8D\u1E8F\u1E91\u1E93\u1E95-\u1E9D\u1E9F\u1EA1\u1EA3\u1EA5\u1EA7\u1EA9\u1EAB\u1EAD\u1EAF\u1EB1\u1EB3\u1EB5\u1EB7\u1EB9\u1EBB\u1EBD\u1EBF\u1EC1\u1EC3\u1EC5\u1EC7\u1EC9\u1ECB\u1ECD\u1ECF\u1ED1\u1ED3\u1ED5\u1ED7\u1ED9\u1EDB\u1EDD\u1EDF\u1EE1\u1EE3\u1EE5\u1EE7\u1EE9\u1EEB\u1EED\u1EEF\u1EF1\u1EF3\u1EF5\u1EF7\u1EF9\u1EFB\u1EFD\u1EFF-\u1F07\u1F10-\u1F15\u1F20-\u1F27\u1F30-\u1F37\u1F40-\u1F45\u1F50-\u1F57\u1F60-\u1F67\u1F70-\u1F7D\u1F80-\u1F87\u1F90-\u1F97\u1FA0-\u1FA7\u1FB0-\u1FB4\u1FB6\u1FB7\u1FBE\u1FC2-\u1FC4\u1FC6\u1FC7\u1FD0-\u1FD3\u1FD6\u1FD7\u1FE0-\u1FE7\u1FF2-\u1FF4\u1FF6\u1FF7\u210A\u210E\u210F\u2113\u212F\u2134\u2139\u213C\u213D\u2146-\u2149\u214E\u2184\u2C30-\u2C5F\u2C61\u2C65\u2C66\u2C68\u2C6A\u2C6C\u2C71\u2C73\u2C74\u2C76-\u2C7B\u2C81\u2C83\u2C85\u2C87\u2C89\u2C8B\u2C8D\u2C8F\u2C91\u2C93\u2C95\u2C97\u2C99\u2C9B\u2C9D\u2C9F\u2CA1\u2CA3\u2CA5\u2CA7\u2CA9\u2CAB\u2CAD\u2CAF\u2CB1\u2CB3\u2CB5\u2CB7\u2CB9\u2CBB\u2CBD\u2CBF\u2CC1\u2CC3\u2CC5\u2CC7\u2CC9\u2CCB\u2CCD\u2CCF\u2CD1\u2CD3\u2CD5\u2CD7\u2CD9\u2CDB\u2CDD\u2CDF\u2CE1\u2CE3\u2CE4\u2CEC\u2CEE\u2CF3\u2D00-\u2D25\u2D27\u2D2D\uA641\uA643\uA645\uA647\uA649\uA64B\uA64D\uA64F\uA651\uA653\uA655\uA657\uA659\uA65B\uA65D\uA65F\uA661\uA663\uA665\uA667\uA669\uA66B\uA66D\uA681\uA683\uA685\uA687\uA689\uA68B\uA68D\uA68F\uA691\uA693\uA695\uA697\uA699\uA69B\uA723\uA725\uA727\uA729\uA72B\uA72D\uA72F-\uA731\uA733\uA735\uA737\uA739\uA73B\uA73D\uA73F\uA741\uA743\uA745\uA747\uA749\uA74B\uA74D\uA74F\uA751\uA753\uA755\uA757\uA759\uA75B\uA75D\uA75F\uA761\uA763\uA765\uA767\uA769\uA76B\uA76D\uA76F\uA771-\uA778\uA77A\uA77C\uA77F\uA781\uA783\uA785\uA787\uA78C\uA78E\uA791\uA793-\uA795\uA797\uA799\uA79B\uA79D\uA79F\uA7A1\uA7A3\uA7A5\uA7A7\uA7A9\uA7AF\uA7B5\uA7B7\uA7B9\uA7BB\uA7BD\uA7BF\uA7C1\uA7C3\uA7C8\uA7CA\uA7D1\uA7D3\uA7D5\uA7D7\uA7D9\uA7F6\uA7FA\uAB30-\uAB5A\uAB60-\uAB68\uAB70-\uABBF\uFB00-\uFB06\uFB13-\uFB17\uFF41-\uFF5A\u{10428}-\u{1044F}\u{104D8}-\u{104FB}\u{10597}-\u{105A1}\u{105A3}-\u{105B1}\u{105B3}-\u{105B9}\u{105BB}\u{105BC}\u{10CC0}-\u{10CF2}\u{118C0}-\u{118DF}\u{16E60}-\u{16E7F}\u{1D41A}-\u{1D433}\u{1D44E}-\u{1D454}\u{1D456}-\u{1D467}\u{1D482}-\u{1D49B}\u{1D4B6}-\u{1D4B9}\u{1D4BB}\u{1D4BD}-\u{1D4C3}\u{1D4C5}-\u{1D4CF}\u{1D4EA}-\u{1D503}\u{1D51E}-\u{1D537}\u{1D552}-\u{1D56B}\u{1D586}-\u{1D59F}\u{1D5BA}-\u{1D5D3}\u{1D5EE}-\u{1D607}\u{1D622}-\u{1D63B}\u{1D656}-\u{1D66F}\u{1D68A}-\u{1D6A5}\u{1D6C2}-\u{1D6DA}\u{1D6DC}-\u{1D6E1}\u{1D6FC}-\u{1D714}\u{1D716}-\u{1D71B}\u{1D736}-\u{1D74E}\u{1D750}-\u{1D755}\u{1D770}-\u{1D788}\u{1D78A}-\u{1D78F}\u{1D7AA}-\u{1D7C2}\u{1D7C4}-\u{1D7C9}\u{1D7CB}\u{1DF00}-\u{1DF09}\u{1DF0B}-\u{1DF1E}\u{1E922}-\u{1E943}])(\x2D)(?=[a-z\xB5\xDF-\xF6\xF8-\xFF\u0101\u0103\u0105\u0107\u0109\u010B\u010D\u010F\u0111\u0113\u0115\u0117\u0119\u011B\u011D\u011F\u0121\u0123\u0125\u0127\u0129\u012B\u012D\u012F\u0131\u0133\u0135\u0137\u0138\u013A\u013C\u013E\u0140\u0142\u0144\u0146\u0148\u0149\u014B\u014D\u014F\u0151\u0153\u0155\u0157\u0159\u015B\u015D\u015F\u0161\u0163\u0165\u0167\u0169\u016B\u016D\u016F\u0171\u0173\u0175\u0177\u017A\u017C\u017E-\u0180\u0183\u0185\u0188\u018C\u018D\u0192\u0195\u0199-\u019B\u019E\u01A1\u01A3\u01A5\u01A8\u01AA\u01AB\u01AD\u01B0\u01B4\u01B6\u01B9\u01BA\u01BD-\u01BF\u01C6\u01C9\u01CC\u01CE\u01D0\u01D2\u01D4\u01D6\u01D8\u01DA\u01DC\u01DD\u01DF\u01E1\u01E3\u01E5\u01E7\u01E9\u01EB\u01ED\u01EF\u01F0\u01F3\u01F5\u01F9\u01FB\u01FD\u01FF\u0201\u0203\u0205\u0207\u0209\u020B\u020D\u020F\u0211\u0213\u0215\u0217\u0219\u021B\u021D\u021F\u0221\u0223\u0225\u0227\u0229\u022B\u022D\u022F\u0231\u0233-\u0239\u023C\u023F\u0240\u0242\u0247\u0249\u024B\u024D\u024F-\u0293\u0295-\u02AF\u0371\u0373\u0377\u037B-\u037D\u0390\u03AC-\u03CE\u03D0\u03D1\u03D5-\u03D7\u03D9\u03DB\u03DD\u03DF\u03E1\u03E3\u03E5\u03E7\u03E9\u03EB\u03ED\u03EF-\u03F3\u03F5\u03F8\u03FB\u03FC\u0430-\u045F\u0461\u0463\u0465\u0467\u0469\u046B\u046D\u046F\u0471\u0473\u0475\u0477\u0479\u047B\u047D\u047F\u0481\u048B\u048D\u048F\u0491\u0493\u0495\u0497\u0499\u049B\u049D\u049F\u04A1\u04A3\u04A5\u04A7\u04A9\u04AB\u04AD\u04AF\u04B1\u04B3\u04B5\u04B7\u04B9\u04BB\u04BD\u04BF\u04C2\u04C4\u04C6\u04C8\u04CA\u04CC\u04CE\u04CF\u04D1\u04D3\u04D5\u04D7\u04D9\u04DB\u04DD\u04DF\u04E1\u04E3\u04E5\u04E7\u04E9\u04EB\u04ED\u04EF\u04F1\u04F3\u04F5\u04F7\u04F9\u04FB\u04FD\u04FF\u0501\u0503\u0505\u0507\u0509\u050B\u050D\u050F\u0511\u0513\u0515\u0517\u0519\u051B\u051D\u051F\u0521\u0523\u0525\u0527\u0529\u052B\u052D\u052F\u0560-\u0588\u10D0-\u10FA\u10FD-\u10FF\u13F8-\u13FD\u1C80-\u1C88\u1D00-\u1D2B\u1D6B-\u1D77\u1D79-\u1D9A\u1E01\u1E03\u1E05\u1E07\u1E09\u1E0B\u1E0D\u1E0F\u1E11\u1E13\u1E15\u1E17\u1E19\u1E1B\u1E1D\u1E1F\u1E21\u1E23\u1E25\u1E27\u1E29\u1E2B\u1E2D\u1E2F\u1E31\u1E33\u1E35\u1E37\u1E39\u1E3B\u1E3D\u1E3F\u1E41\u1E43\u1E45\u1E47\u1E49\u1E4B\u1E4D\u1E4F\u1E51\u1E53\u1E55\u1E57\u1E59\u1E5B\u1E5D\u1E5F\u1E61\u1E63\u1E65\u1E67\u1E69\u1E6B\u1E6D\u1E6F\u1E71\u1E73\u1E75\u1E77\u1E79\u1E7B\u1E7D\u1E7F\u1E81\u1E83\u1E85\u1E87\u1E89\u1E8B\u1E8D\u1E8F\u1E91\u1E93\u1E95-\u1E9D\u1E9F\u1EA1\u1EA3\u1EA5\u1EA7\u1EA9\u1EAB\u1EAD\u1EAF\u1EB1\u1EB3\u1EB5\u1EB7\u1EB9\u1EBB\u1EBD\u1EBF\u1EC1\u1EC3\u1EC5\u1EC7\u1EC9\u1ECB\u1ECD\u1ECF\u1ED1\u1ED3\u1ED5\u1ED7\u1ED9\u1EDB\u1EDD\u1EDF\u1EE1\u1EE3\u1EE5\u1EE7\u1EE9\u1EEB\u1EED\u1EEF\u1EF1\u1EF3\u1EF5\u1EF7\u1EF9\u1EFB\u1EFD\u1EFF-\u1F07\u1F10-\u1F15\u1F20-\u1F27\u1F30-\u1F37\u1F40-\u1F45\u1F50-\u1F57\u1F60-\u1F67\u1F70-\u1F7D\u1F80-\u1F87\u1F90-\u1F97\u1FA0-\u1FA7\u1FB0-\u1FB4\u1FB6\u1FB7\u1FBE\u1FC2-\u1FC4\u1FC6\u1FC7\u1FD0-\u1FD3\u1FD6\u1FD7\u1FE0-\u1FE7\u1FF2-\u1FF4\u1FF6\u1FF7\u210A\u210E\u210F\u2113\u212F\u2134\u2139\u213C\u213D\u2146-\u2149\u214E\u2184\u2C30-\u2C5F\u2C61\u2C65\u2C66\u2C68\u2C6A\u2C6C\u2C71\u2C73\u2C74\u2C76-\u2C7B\u2C81\u2C83\u2C85\u2C87\u2C89\u2C8B\u2C8D\u2C8F\u2C91\u2C93\u2C95\u2C97\u2C99\u2C9B\u2C9D\u2C9F\u2CA1\u2CA3\u2CA5\u2CA7\u2CA9\u2CAB\u2CAD\u2CAF\u2CB1\u2CB3\u2CB5\u2CB7\u2CB9\u2CBB\u2CBD\u2CBF\u2CC1\u2CC3\u2CC5\u2CC7\u2CC9\u2CCB\u2CCD\u2CCF\u2CD1\u2CD3\u2CD5\u2CD7\u2CD9\u2CDB\u2CDD\u2CDF\u2CE1\u2CE3\u2CE4\u2CEC\u2CEE\u2CF3\u2D00-\u2D25\u2D27\u2D2D\uA641\uA643\uA645\uA647\uA649\uA64B\uA64D\uA64F\uA651\uA653\uA655\uA657\uA659\uA65B\uA65D\uA65F\uA661\uA663\uA665\uA667\uA669\uA66B\uA66D\uA681\uA683\uA685\uA687\uA689\uA68B\uA68D\uA68F\uA691\uA693\uA695\uA697\uA699\uA69B\uA723\uA725\uA727\uA729\uA72B\uA72D\uA72F-\uA731\uA733\uA735\uA737\uA739\uA73B\uA73D\uA73F\uA741\uA743\uA745\uA747\uA749\uA74B\uA74D\uA74F\uA751\uA753\uA755\uA757\uA759\uA75B\uA75D\uA75F\uA761\uA763\uA765\uA767\uA769\uA76B\uA76D\uA76F\uA771-\uA778\uA77A\uA77C\uA77F\uA781\uA783\uA785\uA787\uA78C\uA78E\uA791\uA793-\uA795\uA797\uA799\uA79B\uA79D\uA79F\uA7A1\uA7A3\uA7A5\uA7A7\uA7A9\uA7AF\uA7B5\uA7B7\uA7B9\uA7BB\uA7BD\uA7BF\uA7C1\uA7C3\uA7C8\uA7CA\uA7D1\uA7D3\uA7D5\uA7D7\uA7D9\uA7F6\uA7FA\uAB30-\uAB5A\uAB60-\uAB68\uAB70-\uABBF\uFB00-\uFB06\uFB13-\uFB17\uFF41-\uFF5A\u{10428}-\u{1044F}\u{104D8}-\u{104FB}\u{10597}-\u{105A1}\u{105A3}-\u{105B1}\u{105B3}-\u{105B9}\u{105BB}\u{105BC}\u{10CC0}-\u{10CF2}\u{118C0}-\u{118DF}\u{16E60}-\u{16E7F}\u{1D41A}-\u{1D433}\u{1D44E}-\u{1D454}\u{1D456}-\u{1D467}\u{1D482}-\u{1D49B}\u{1D4B6}-\u{1D4B9}\u{1D4BB}\u{1D4BD}-\u{1D4C3}\u{1D4C5}-\u{1D4CF}\u{1D4EA}-\u{1D503}\u{1D51E}-\u{1D537}\u{1D552}-\u{1D56B}\u{1D586}-\u{1D59F}\u{1D5BA}-\u{1D5D3}\u{1D5EE}-\u{1D607}\u{1D622}-\u{1D63B}\u{1D656}-\u{1D66F}\u{1D68A}-\u{1D6A5}\u{1D6C2}-\u{1D6DA}\u{1D6DC}-\u{1D6E1}\u{1D6FC}-\u{1D714}\u{1D716}-\u{1D71B}\u{1D736}-\u{1D74E}\u{1D750}-\u{1D755}\u{1D770}-\u{1D788}\u{1D78A}-\u{1D78F}\u{1D7AA}-\u{1D7C2}\u{1D7C4}-\u{1D7C9}\u{1D7CB}\u{1DF00}-\u{1DF09}\u{1DF0B}-\u{1DF1E}\u{1E922}-\u{1E943}])/gu,
-                                n = J(u);
-                            return tu(n, /( )/, e).forEach((u) => (t = t.concat(tu(u, r, X.left)))), t;
+                                n = uu(u);
+                            return ru(n, /( )/, e).forEach((u) => (t = t.concat(ru(u, r, Q.left)))), t;
                         })(u, e);
                     },
-                    iu = 'FormatText_base_d0',
-                    Eu = ({ binding: u, text: e = '', classMix: t, alignment: a = X.left, formatWithBrackets: i }) => {
+                    Eu = 'FormatText_base_d0',
+                    ou = ({ binding: u, text: e = '', classMix: t, alignment: a = Q.left, formatWithBrackets: i }) => {
                         if (null === e) return console.error("FormatText was supplied with 'null'"), null;
-                        const E = i && u ? Q(e, u) : e;
+                        const E = i && u ? J(e, u) : e;
                         return n().createElement(
                             r.Fragment,
                             null,
                             E.split('\n').map((e, i) =>
                                 n().createElement(
                                     'div',
-                                    { className: g()(iu, t), key: `${e}-${i}` },
+                                    { className: g()(Eu, t), key: `${e}-${i}` },
                                     ((u, e, t) =>
-                                        u.split(/%\((.*?)\)(?:[sd])?/g).map((u) => (t && u in t ? t[u] : au(u, e))))(
+                                        u.split(/%\((.*?)\)(?:[sd])?/g).map((u) => (t && u in t ? t[u] : iu(u, e))))(
                                         e,
                                         a,
                                         u,
@@ -1654,8 +1659,8 @@
                             ),
                         );
                     };
-                var ou = t(6373);
-                let Au;
+                var Au = t(6373);
+                let Fu;
                 !(function (u) {
                     (u.DayMonthNumeric = 'dayMonthNumeric'),
                         (u.DayMonthFull = 'dayMonthFull'),
@@ -1668,16 +1673,16 @@
                         (u.FullDate = 'fullDate'),
                         (u.FullTime = 'fullTime'),
                         (u.FullDateTime = 'fullDateTime');
-                })(Au || (Au = {}));
-                var Fu = t(8613);
-                const lu = 24,
-                    su = 60,
-                    Du = 60 * su,
-                    cu = lu * Du,
-                    du = (Date.now(), Fu.Ew.getRegionalDateTime);
-                Fu.Ew.getFormattedDateTime;
-                const Bu = () => {},
-                    Cu = (u = 0, e, t = 0, n = Bu) => {
+                })(Fu || (Fu = {}));
+                var lu = t(8613);
+                const su = 24,
+                    Du = 60,
+                    cu = 60 * Du,
+                    du = su * cu,
+                    Bu = (Date.now(), lu.Ew.getRegionalDateTime);
+                lu.Ew.getFormattedDateTime;
+                const Cu = () => {},
+                    mu = (u = 0, e, t = 0, n = Cu) => {
                         const a = (0, r.useState)(u),
                             i = a[0],
                             E = a[1];
@@ -1691,7 +1696,7 @@
                                                 const e = u - Math.floor((Date.now() - r) / 1e3);
                                                 null !== t && e <= t ? (E(t), n && n(), clearInterval(a)) : E(e);
                                             },
-                                            1e3 * (e || (u > 2 * su ? su : 1)),
+                                            1e3 * (e || (u > 2 * Du ? Du : 1)),
                                         );
                                     return () => {
                                         clearInterval(a);
@@ -1701,102 +1706,102 @@
                             i
                         );
                     },
-                    mu = (G.Sw.instance, Cu);
-                let _u;
+                    _u = (G.Sw.instance, mu);
+                let gu;
                 !(function (u) {
                     (u.mainScreen = 'mainScreen'), (u.entryPointTooltip = 'entryPointTooltip');
-                })(_u || (_u = {}));
-                const gu = 'TimerEntryPointTooltip_base_5a',
-                    hu = 'TimerEntryPointTooltip_text_17',
-                    vu = 'TimerEntryPointTooltip_lastUntil_25',
-                    wu = 'TimerEntryPointTooltip_leftTime_d7',
-                    pu = R.strings.resource_well,
-                    fu = ({ isEventEndingSoon: u, leftTime: e, untilTime: t, beforeEventTime: r, startDate: a }) =>
+                })(gu || (gu = {}));
+                const hu = 'TimerEntryPointTooltip_base_5a',
+                    vu = 'TimerEntryPointTooltip_text_17',
+                    wu = 'TimerEntryPointTooltip_lastUntil_25',
+                    pu = 'TimerEntryPointTooltip_leftTime_d7',
+                    fu = R.strings.resource_well,
+                    bu = ({ isEventEndingSoon: u, leftTime: e, untilTime: t, beforeEventTime: r, startDate: a }) =>
                         n().createElement(
                             'div',
-                            { className: gu },
+                            { className: hu },
                             u
                                 ? n().createElement(
                                       n().Fragment,
                                       null,
                                       n().createElement(
                                           'div',
-                                          { className: hu },
-                                          pu.tooltips.entryPoint.timer.leftTime(),
+                                          { className: vu },
+                                          fu.tooltips.entryPoint.timer.leftTime(),
                                       ),
-                                      n().createElement('div', { className: wu }, e),
+                                      n().createElement('div', { className: pu }, e),
                                   )
                                 : n().createElement(
                                       n().Fragment,
                                       null,
                                       n().createElement(
                                           'div',
-                                          { className: hu },
+                                          { className: vu },
                                           a
-                                              ? pu.tooltips.entryPoint.timer.timeToStart()
-                                              : pu.tooltips.entryPoint.timer.lastUntil(),
+                                              ? fu.tooltips.entryPoint.timer.timeToStart()
+                                              : fu.tooltips.entryPoint.timer.lastUntil(),
                                       ),
-                                      n().createElement('div', { className: vu }, a ? r : t),
+                                      n().createElement('div', { className: wu }, a ? r : t),
                                   ),
                         ),
-                    bu = 'TimerMainScreen_shineWrapper_3c',
-                    Su = 'TimerMainScreen_shineBg_77',
-                    xu = 'TimerMainScreen_content_24',
-                    Tu = 'TimerMainScreen_text_9c',
-                    Ru = 'TimerMainScreen_time_98',
-                    Lu = 'TimerMainScreen_content__daysLeft_35',
-                    yu = 'TimerMainScreen_content__endingSoon_f0',
-                    Mu = R.strings.resource_well,
-                    Ou = ({ isEventEndingSoon: u, leftTime: e, untilTime: t, showShine: r = !0 }) => {
-                        const a = g()(xu, u ? yu : Lu);
+                    Su = 'TimerMainScreen_shineWrapper_3c',
+                    xu = 'TimerMainScreen_shineBg_77',
+                    Tu = 'TimerMainScreen_content_24',
+                    Ru = 'TimerMainScreen_text_9c',
+                    Lu = 'TimerMainScreen_time_98',
+                    yu = 'TimerMainScreen_content__daysLeft_35',
+                    Mu = 'TimerMainScreen_content__endingSoon_f0',
+                    Ou = R.strings.resource_well,
+                    Pu = ({ isEventEndingSoon: u, leftTime: e, untilTime: t, showShine: r = !0 }) => {
+                        const a = g()(Tu, u ? Mu : yu);
                         return n().createElement(
                             n().Fragment,
                             null,
                             r &&
                                 n().createElement(
                                     'div',
-                                    { className: bu },
-                                    n().createElement('div', { className: Su }),
+                                    { className: Su },
+                                    n().createElement('div', { className: xu }),
                                 ),
                             n().createElement(
                                 'div',
                                 { className: a },
                                 n().createElement(
                                     'div',
-                                    { className: Tu },
-                                    u ? Mu.mainView.timer.leftTime() : Mu.mainView.timer.lastUntil(),
+                                    { className: Ru },
+                                    u ? Ou.mainView.timer.leftTime() : Ou.mainView.timer.lastUntil(),
                                 ),
-                                n().createElement('div', { className: Ru }, u ? e : t),
+                                n().createElement('div', { className: Lu }, u ? e : t),
                             ),
                         );
                     },
-                    Pu = { base: 'Timer_base_ca', base__entryPointTooltip: 'Timer_base__entryPointTooltip_1d' },
-                    Iu = R.strings.resource_well,
-                    Nu = (u) =>
+                    Iu = { base: 'Timer_base_ca', base__entryPointTooltip: 'Timer_base__entryPointTooltip_1d' },
+                    Nu = R.strings.resource_well,
+                    ku = (u) =>
                         ((u, e = !0) =>
                             u.days > 7 && e
-                                ? Q(R.strings.common.duration.days(), { days: u.days })
+                                ? J(R.strings.common.duration.days(), { days: u.days })
                                 : u.days >= 1
                                   ? 0 === u.hours
-                                      ? Q(R.strings.common.duration.days(), { days: u.days })
-                                      : Q(R.strings.common.duration.days(), { days: u.days + 1 })
+                                      ? J(R.strings.common.duration.days(), { days: u.days })
+                                      : J(R.strings.common.duration.days(), { days: u.days + 1 })
                                   : u.hours >= 1
                                     ? 0 === u.minutes
-                                        ? Q(R.strings.common.duration.hours(), { hours: u.hours })
-                                        : Q(R.strings.common.duration.hours(), { hours: u.hours + 1 })
-                                    : Q(R.strings.common.duration.minutes(), { minutes: u.minutes || 1 }))(
+                                        ? J(R.strings.common.duration.hours(), { hours: u.hours })
+                                        : J(R.strings.common.duration.hours(), { hours: u.hours + 1 })
+                                    : J(R.strings.common.duration.minutes(), { minutes: u.minutes || 1 }))(
                             (function (u = 0) {
                                 let e = u;
-                                const t = Math.trunc(e / cu);
-                                e -= t * cu;
-                                const r = Math.trunc(e / Du);
-                                e -= r * Du;
-                                const n = Math.trunc(e / su);
-                                return (e -= n * su), { days: t, hours: r, minutes: n, seconds: e };
+                                const t = Math.trunc(e / du);
+                                e -= t * du;
+                                const r = Math.trunc(e / cu);
+                                e -= r * cu;
+                                const n = Math.trunc(e / Du);
+                                return (e -= n * Du), { days: t, hours: r, minutes: n, seconds: e };
                             })(u),
                             !1,
                         ),
-                    ku = ({
+                    Hu = ({
                         usagePlace: u,
                         endDate: e = 0,
                         isEventEndingSoon: t = !1,
@@ -1804,176 +1809,176 @@
                         showShine: a = !1,
                         startDate: i = 0,
                     }) => {
-                        const E = mu(r),
+                        const E = _u(r),
                             o = e,
                             A = i,
                             F =
-                                ((l = Iu.tooltips.mainView.timer.leftTime()),
-                                (s = { leftTime: Nu(E) }),
+                                ((l = Nu.tooltips.mainView.timer.leftTime()),
+                                (s = { leftTime: ku(E) }),
                                 l.replace(/(\{|%\()\w+(\}|\)s)/g, (u) => {
                                     const e = 0 === u.indexOf('%') ? 2 : 1;
                                     return String(s[u.slice(e, -e)]);
                                 }));
                         var l, s;
                         return n().createElement(
-                            ou.i,
+                            Au.i,
                             { body: F },
                             n().createElement(
                                 'div',
-                                { className: g()(Pu.base, Pu[`base__${u}`]) },
-                                u === _u.entryPointTooltip
-                                    ? n().createElement(fu, {
+                                { className: g()(Iu.base, Iu[`base__${u}`]) },
+                                u === gu.entryPointTooltip
+                                    ? n().createElement(bu, {
                                           isEventEndingSoon: t,
-                                          leftTime: Nu(E),
-                                          untilTime: du(o, Au.DayMonthFullTime),
-                                          beforeEventTime: du(A, Au.DayMonthFullTime),
+                                          leftTime: ku(E),
+                                          untilTime: Bu(o, Fu.DayMonthFullTime),
+                                          beforeEventTime: Bu(A, Fu.DayMonthFullTime),
                                           startDate: i,
                                       })
-                                    : n().createElement(Ou, {
+                                    : n().createElement(Pu, {
                                           isEventEndingSoon: t,
                                           showShine: a && t,
-                                          leftTime: Nu(E),
-                                          untilTime: du(o, Au.DayMonthFullTime),
+                                          leftTime: ku(E),
+                                          untilTime: Bu(o, Fu.DayMonthFullTime),
                                       }),
                             ),
                         );
                     },
-                    Hu = {
+                    Wu = {
                         timerWrapper: 'NotStartedState_timerWrapper_8f',
                         timerIcon: 'NotStartedState_timerIcon_f6',
                         text: 'NotStartedState_text_ab',
                         vehicleString: 'NotStartedState_vehicleString_01',
                     },
-                    Wu = R.strings.resource_well.tooltips.entryPoint,
-                    Gu = ({ startDate: u, vehicleName: e }) =>
+                    Gu = R.strings.resource_well.tooltips.entryPoint,
+                    Uu = ({ startDate: u, vehicleName: e }) =>
                         n().createElement(
                             n().Fragment,
                             null,
                             n().createElement(
                                 'div',
-                                { className: Hu.timerWrapper },
-                                n().createElement('div', { className: Hu.timerIcon }),
-                                n().createElement(ku, { startDate: u, usagePlace: _u.entryPointTooltip }),
+                                { className: Wu.timerWrapper },
+                                n().createElement('div', { className: Wu.timerIcon }),
+                                n().createElement(Hu, { startDate: u, usagePlace: gu.entryPointTooltip }),
                             ),
                             n().createElement(
                                 'div',
-                                { className: Hu.text },
-                                n().createElement(Eu, {
-                                    text: Wu.notStartedEvent.text(),
-                                    classMix: Hu.textWrapper,
+                                { className: Wu.text },
+                                n().createElement(ou, {
+                                    text: Gu.notStartedEvent.text(),
+                                    classMix: Wu.textWrapper,
                                     binding: {
-                                        vehicleName: n().createElement('span', { className: Hu.vehicleString }, e),
+                                        vehicleName: n().createElement('span', { className: Wu.vehicleString }, e),
                                         uniqVehicleText: n().createElement(
                                             'span',
-                                            { className: Hu.vehicleString },
-                                            Wu.notStartedEvent.vehicleString.text(),
+                                            { className: Wu.vehicleString },
+                                            Gu.notStartedEvent.vehicleString.text(),
                                         ),
                                     },
                                 }),
                             ),
                         );
-                var Uu = t(3371);
-                const Vu = 'RewardAvaiableState_timerWrapper_6e',
-                    $u = 'RewardAvaiableState_timerIcon_7d',
-                    ju = 'RewardAvaiableState_wrapper_2d',
-                    zu = 'RewardAvaiableState_text_fb',
-                    qu = R.strings.resource_well.tooltips.entryPoint,
-                    Ku = ({ endDate: u, isEventEndingSoon: e, timeLeft: t, rewardCount: r, eventState: a }) => {
+                var Vu = t(3371);
+                const $u = 'RewardAvaiableState_timerWrapper_6e',
+                    ju = 'RewardAvaiableState_timerIcon_7d',
+                    zu = 'RewardAvaiableState_wrapper_2d',
+                    qu = 'RewardAvaiableState_text_fb',
+                    Ku = R.strings.resource_well.tooltips.entryPoint,
+                    Yu = ({ endDate: u, isEventEndingSoon: e, timeLeft: t, rewardCount: r, eventState: a }) => {
                         const i = r < 1e4;
                         return n().createElement(
                             n().Fragment,
                             null,
                             n().createElement(
                                 'div',
-                                { className: Vu },
-                                n().createElement('div', { className: $u }),
-                                n().createElement(ku, {
+                                { className: $u },
+                                n().createElement('div', { className: ju }),
+                                n().createElement(Hu, {
                                     endDate: u,
                                     isEventEndingSoon: e,
                                     timeLeft: t,
                                     showShine: !1,
-                                    usagePlace: _u.entryPointTooltip,
+                                    usagePlace: gu.entryPointTooltip,
                                 }),
                             ),
                             n().createElement(
                                 'div',
-                                { className: ju },
+                                { className: zu },
                                 n().createElement(
                                     'div',
-                                    { className: zu },
+                                    { className: qu },
                                     (() => {
                                         switch (a) {
                                             case k.NoRewards:
-                                                return qu.noRewards.text();
+                                                return Ku.noRewards.text();
                                             case k.RegularRewardAvailable:
-                                                return qu.regularAvailable.text();
+                                                return Ku.regularAvailable.text();
                                             case k.TopRewardAvailable:
-                                                return qu.topAvailable.text();
+                                                return Ku.topAvailable.text();
                                         }
                                     })(),
                                 ),
-                                n().createElement(Uu.A, {
+                                n().createElement(Vu.A, {
                                     vehiclesLeftCount: r,
                                     showCounterGlow: i,
-                                    usagePlace: _u.entryPointTooltip,
+                                    usagePlace: gu.entryPointTooltip,
                                 }),
                             ),
                         );
                     },
-                    Yu = 'RewardReceivedState_base_bb',
-                    Zu = 'RewardReceivedState_checkIcon_ee',
-                    Xu = 'RewardReceivedState_checkText_38',
-                    Qu = 'RewardReceivedState_greenLight_96',
-                    Ju = 'RewardReceivedState_wrapper_22',
-                    ue = 'RewardReceivedState_timerWrapper_e7',
-                    ee = 'RewardReceivedState_timerIcon_60',
-                    te = R.strings.resource_well.tooltips.entryPoint,
-                    re = ({ eventState: u, endDate: e, isEventEndingSoon: t, timeLeft: r }) =>
+                    Zu = 'RewardReceivedState_base_bb',
+                    Xu = 'RewardReceivedState_checkIcon_ee',
+                    Qu = 'RewardReceivedState_checkText_38',
+                    Ju = 'RewardReceivedState_greenLight_96',
+                    ue = 'RewardReceivedState_wrapper_22',
+                    ee = 'RewardReceivedState_timerWrapper_e7',
+                    te = 'RewardReceivedState_timerIcon_60',
+                    re = R.strings.resource_well.tooltips.entryPoint,
+                    ne = ({ eventState: u, endDate: e, isEventEndingSoon: t, timeLeft: r }) =>
                         n().createElement(
                             'div',
-                            { className: Yu },
+                            { className: Zu },
                             n().createElement(
                                 'div',
-                                { className: ue },
-                                n().createElement('div', { className: ee }),
-                                n().createElement(ku, {
+                                { className: ee },
+                                n().createElement('div', { className: te }),
+                                n().createElement(Hu, {
                                     endDate: e,
                                     isEventEndingSoon: t,
                                     timeLeft: r,
                                     showShine: !1,
-                                    usagePlace: _u.entryPointTooltip,
+                                    usagePlace: gu.entryPointTooltip,
                                 }),
                             ),
                             n().createElement(
                                 'div',
-                                { className: Ju },
-                                n().createElement('div', { className: Zu }),
+                                { className: ue },
+                                n().createElement('div', { className: Xu }),
                                 n().createElement(
                                     'div',
-                                    { className: Xu },
-                                    u === k.RegularRewardReceived ? te.regularReceived.text() : te.topReceived.text(),
+                                    { className: Qu },
+                                    u === k.RegularRewardReceived ? re.regularReceived.text() : re.topReceived.text(),
                                 ),
                             ),
-                            n().createElement('div', { className: Qu }),
+                            n().createElement('div', { className: Ju }),
                         ),
-                    ne = 'WarningState_base_a9',
-                    ae = 'WarningState_alertIcon_41',
-                    ie = 'WarningState_alertText_3a',
-                    Ee = R.strings.resource_well.tooltips.entryPoint,
-                    oe = ({ eventState: u }) =>
+                    ae = 'WarningState_base_a9',
+                    ie = 'WarningState_alertIcon_41',
+                    Ee = 'WarningState_alertText_3a',
+                    oe = R.strings.resource_well.tooltips.entryPoint,
+                    Ae = ({ eventState: u }) =>
                         n().createElement(
                             'div',
-                            { className: ne },
-                            n().createElement('div', { className: ae }),
+                            { className: ae },
+                            n().createElement('div', { className: ie }),
                             n().createElement(
                                 'div',
-                                { className: ie },
-                                u === k.Forbidden ? Ee.forbidden.text() : Ee.paused.text(),
+                                { className: Ee },
+                                u === k.Forbidden ? oe.forbidden.text() : oe.paused.text(),
                             ),
                         ),
-                    Ae = R.strings.resource_well.tooltips.entryPoint,
-                    Fe = () => {
-                        const u = K('model', q.Shallow),
+                    Fe = R.strings.resource_well.tooltips.entryPoint,
+                    le = () => {
+                        const u = Y('model', K.Shallow),
                             e = u.startDate,
                             t = u.vehicleName,
                             r = u.endDate,
@@ -1981,27 +1986,27 @@
                             i = u.isEventEndingSoon,
                             E = u.eventState,
                             o = u.rewardCount,
-                            A = g()(Y.topImage, Y[`topImage__${E}`]),
-                            F = g()(Y.base, Y[`base__${E}`]);
+                            A = g()(Z.topImage, Z[`topImage__${E}`]),
+                            F = g()(Z.base, Z[`base__${E}`]);
                         return n().createElement(
                             'div',
                             { className: F },
                             n().createElement('div', { className: A }),
                             n().createElement(
                                 'div',
-                                { className: Y.content },
-                                n().createElement('div', { className: Y.title }, Ae.mainTitle.text()),
+                                { className: Z.content },
+                                n().createElement('div', { className: Z.title }, Fe.mainTitle.text()),
                                 (() => {
                                     switch (E) {
                                         case k.NotStarted:
-                                            return n().createElement(Gu, { startDate: e, vehicleName: t });
+                                            return n().createElement(Uu, { startDate: e, vehicleName: t });
                                         case k.Forbidden:
                                         case k.Paused:
-                                            return n().createElement(oe, { eventState: E });
+                                            return n().createElement(Ae, { eventState: E });
                                         case k.NoRewards:
                                         case k.RegularRewardAvailable:
                                         case k.TopRewardAvailable:
-                                            return n().createElement(Ku, {
+                                            return n().createElement(Yu, {
                                                 eventState: E,
                                                 endDate: r,
                                                 isEventEndingSoon: i,
@@ -2010,7 +2015,7 @@
                                             });
                                         case k.RegularRewardReceived:
                                         case k.TopRewardReceived:
-                                            return n().createElement(re, {
+                                            return n().createElement(ne, {
                                                 eventState: E,
                                                 endDate: r,
                                                 isEventEndingSoon: i,
@@ -2021,7 +2026,7 @@
                             ),
                         );
                     };
-                function le() {
+                function se() {
                     const u = (0, r.useRef)(0);
                     var e;
                     return (
@@ -2050,15 +2055,15 @@
                         )
                     );
                 }
-                const se = {
+                const De = {
                         base: 'TooltipDecorator_base_c9',
                         'base__theme-default': 'TooltipDecorator_base__theme-default_6d',
                         decorator: 'TooltipDecorator_decorator_3d',
                     },
-                    De = ['children', 'className', 'theme'];
-                function ce() {
+                    ce = ['children', 'className', 'theme'];
+                function de() {
                     return (
-                        (ce = Object.assign
+                        (de = Object.assign
                             ? Object.assign.bind()
                             : function (u) {
                                   for (var e = 1; e < arguments.length; e++) {
@@ -2067,10 +2072,10 @@
                                   }
                                   return u;
                               }),
-                        ce.apply(null, arguments)
+                        de.apply(null, arguments)
                     );
                 }
-                const de = n().forwardRef(function (u, e) {
+                const Be = n().forwardRef(function (u, e) {
                         let t = u.children,
                             a = u.className,
                             E = u.theme,
@@ -2084,8 +2089,8 @@
                                         t[r] = u[r];
                                     }
                                 return t;
-                            })(u, De);
-                        const F = le(),
+                            })(u, ce);
+                        const F = se(),
                             l = n().useRef(null);
                         var s;
                         return (
@@ -2108,23 +2113,31 @@
                             (0, r.useEffect)(s, []),
                             n().createElement(
                                 'div',
-                                ce({}, A, {
-                                    className: g()(se.base, se[`base__theme-${o}`], a),
+                                de({}, A, {
+                                    className: g()(De.base, De[`base__theme-${o}`], a),
                                     ref: function (u) {
                                         (l.current = u), 'function' == typeof e ? e(u) : e && (e.current = u);
                                     },
                                 }),
-                                n().createElement('div', { className: se.decorator }, t),
+                                n().createElement('div', { className: De.decorator }, t),
                             )
                         );
                     }),
-                    Be = () => n().createElement(de, null, n().createElement(Fe, null));
+                    Ce = () => n().createElement(Be, null, n().createElement(le, null));
                 engine.whenReady.then(() => {
                     N().render(
-                        n().createElement(P, null, n().createElement(Be, null)),
+                        n().createElement(P, null, n().createElement(Ce, null)),
                         document.getElementById('root'),
                     );
                 });
+            },
+            7363: (u) => {
+                'use strict';
+                u.exports = React;
+            },
+            1533: (u) => {
+                'use strict';
+                u.exports = ReactDOM;
             },
         },
         __webpack_module_cache__ = {},
@@ -2168,14 +2181,6 @@
                     !__webpack_require__.o(u, t) &&
                     Object.defineProperty(u, t, { enumerable: !0, get: e[t] });
         }),
-        (__webpack_require__.g = (function () {
-            if ('object' == typeof globalThis) return globalThis;
-            try {
-                return this || new Function('return this')();
-            } catch (u) {
-                if ('object' == typeof window) return window;
-            }
-        })()),
         (__webpack_require__.o = (u, e) => Object.prototype.hasOwnProperty.call(u, e)),
         (__webpack_require__.r = (u) => {
             'undefined' != typeof Symbol &&
@@ -2203,6 +2208,6 @@
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             t.forEach(e.bind(null, 0)), (t.push = e.bind(null, t.push.bind(t)));
         })();
-    var __webpack_exports__ = __webpack_require__.O(void 0, [52], () => __webpack_require__(1010));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [52], () => __webpack_require__(4761));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

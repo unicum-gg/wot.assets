@@ -6,7 +6,7 @@
                 var n = t(6483),
                     o = t.n(n),
                     r = t(7727),
-                    i = t(6179),
+                    i = t(7363),
                     s = t.n(i),
                     a = t(6880),
                     c = t(2106);
@@ -126,7 +126,7 @@
             },
             7078: (u, e, t) => {
                 t.d(e, { t: () => a });
-                var n = t(6179),
+                var n = t(7363),
                     o = t.n(n),
                     r = t(2056);
                 const i = ['children'];
@@ -174,7 +174,7 @@
             },
             3415: (u, e, t) => {
                 t.d(e, { l: () => c });
-                var n = t(6179),
+                var n = t(7363),
                     o = t.n(n),
                     r = t(7078),
                     i = t(6373),
@@ -204,7 +204,7 @@
             6373: (u, e, t) => {
                 t.d(e, { i: () => c });
                 var n = t(2056),
-                    o = t(6179),
+                    o = t(7363),
                     r = t.n(o);
                 const i = ['children', 'body', 'header', 'note', 'alert', 'args'];
                 function s() {
@@ -265,7 +265,7 @@
                 t.d(e, { u: () => c });
                 var n = t(7902),
                     o = t(9916),
-                    r = t(6179);
+                    r = t(7363);
                 const i = [
                     'children',
                     'contentId',
@@ -516,10 +516,10 @@
                 }
             },
             3215: (u, e, t) => {
-                t.d(e, { q: () => a });
+                t.d(e, { q3: () => a });
                 var n = t(4598),
                     o = t(9174),
-                    r = t(6179),
+                    r = t(7363),
                     i = t.n(r),
                     s = t(8246);
                 const a = () => (u, e) => {
@@ -1036,16 +1036,17 @@
                 const n = (u = 1) => {
                     const e = new Error().stack;
                     let t,
-                        n = R.invalid('resId');
-                    return (
-                        e &&
-                            ((t = e.split('\n')[u].split('.js')[0].split('/').pop() || ''),
-                            window.__feature &&
-                                window.__feature !== t &&
-                                window.subViews[t] &&
-                                (n = window.subViews[t].id)),
-                        { caller: t, stack: e, resId: n }
-                    );
+                        n = R.invalid('resId'),
+                        o = '';
+                    var r;
+                    e &&
+                        ((o = (null == (r = e.match(/(coui:\/\/[^\s]+\.js)/)) ? void 0 : r[0]) || ''),
+                        (t = e.split('\n')[u].split('.js')[0].split('/').pop() || ''),
+                        window.__feature &&
+                            window.__feature !== t &&
+                            window.subViews[t] &&
+                            (n = window.subViews[t].id));
+                    return { callerUrl: o, caller: t, stack: e, resId: n };
                 };
             },
             2344: (u, e, t) => {
@@ -1055,12 +1056,12 @@
                 const o = n.Z;
             },
             6536: (u, e, t) => {
-                t(6179);
+                t(7363);
             },
             3469: (u, e, t) => {
                 t.d(e, { Z: () => i });
                 var n = t(7044),
-                    o = t(6179);
+                    o = t(7363);
                 const r = () => {},
                     i = (u = 0, e, t = 0, i = r) => {
                         const s = (0, o.useState)(u),
@@ -1088,19 +1089,19 @@
             5332: (u, e, t) => {
                 t.d(e, { N: () => r });
                 var n = t(4483),
-                    o = t(6179);
+                    o = t(7363);
                 function r(u, e, t, r = !1) {
                     const i = (0, o.useMemo)(() => (0, n.Z)(t, r, u), e);
                     return (0, o.useEffect)(() => i.cancel, [i]), i;
                 }
             },
             2133: (u, e, t) => {
-                t(6179);
+                t(7363);
             },
             5360: (u, e, t) => {
                 t(6536);
                 var n = t(9916);
-                t(6179);
+                t(7363);
                 n.Sw.instance;
                 let o;
                 !(function (u) {
@@ -1109,15 +1110,15 @@
             },
             9056: (u, e, t) => {
                 var n = t(9916);
-                t(6179);
+                t(7363);
                 n.Sw.instance;
             },
             2790: (u, e, t) => {
-                t(6179);
+                t(7363);
             },
             3112: (u, e, t) => {
                 t.d(e, { V: () => r });
-                var n = t(6179),
+                var n = t(7363),
                     o = t(3138);
                 const r = () => {
                     const u = (0, n.useState)(o.O.view.getScale()),
@@ -1140,7 +1141,7 @@
                 };
             },
             579: (u, e, t) => {
-                t(3138), t(6179);
+                t(3138), t(7363);
             },
             5521: (u, e, t) => {
                 let n, o;
@@ -1625,7 +1626,7 @@
                     };
             },
             3880: (u, e, t) => {
-                var n = t(6179),
+                var n = t(7363),
                     o = t.n(n),
                     r = t(6483),
                     i = t.n(r),
@@ -1666,14 +1667,15 @@
                             icon: e = a.Timer,
                             style: t = c.Description,
                             onTimeReached: n,
-                            className: r = '',
-                            classNames: s = {},
+                            refreshRate: r,
+                            className: s = '',
+                            classNames: C = {},
                         }) => {
-                            const C = t !== c.Description ? 1 : void 0,
-                                p = (0, E.au)(u, C),
-                                h = (0, A.V)();
-                            n && n[p] && n[p]();
-                            const b = ((u, e) => {
+                            const p = null != r ? r : t !== c.Description ? 1 : void 0,
+                                h = (0, E.au)(u, p),
+                                b = (0, A.V)();
+                            n && n[h] && n[h]();
+                            const v = ((u, e) => {
                                 switch (e) {
                                     case c.Description:
                                         return (0, l.wB)(u);
@@ -1684,16 +1686,16 @@
                                     case c.Extended:
                                         return `${(0, F.WU)(R.strings.common.duration.days(), { days: u.days })} | ${B(u.hours)}:${B(u.minutes)}:${B(u.seconds)}`;
                                 }
-                            })((0, l.f8)(p), t);
+                            })((0, l.f8)(h), t);
                             return o().createElement(
                                 'div',
-                                { className: i()(d, r) },
+                                { className: i()(d, s) },
                                 e !== a.None &&
                                     o().createElement('div', {
-                                        className: i()(D, s.icon),
-                                        style: { backgroundImage: `url('${m(e, h)}')` },
+                                        className: i()(D, C.icon),
+                                        style: { backgroundImage: `url('${m(e, b)}')` },
                                     }),
-                                o().createElement('div', { className: i()(_, s.text) }, b),
+                                o().createElement('div', { className: i()(_, C.text) }, v),
                             );
                         },
                     );
@@ -2174,7 +2176,7 @@
                         },
                     );
                 var tu = t(5332);
-                const nu = (0, t(3215).q)()(
+                const nu = (0, t(3215).q3)()(
                         ({ observableModel: u }) =>
                             Object.assign({}, u.primitives(['secondsLeft', 'isFillDisabled', 'isResetDisabled'])),
                         ({ externalModel: u }) => ({
@@ -2296,6 +2298,12 @@
                     base__highlightActive: 'CButton_base__highlightActive_b2',
                     content: 'CButton_content_cc',
                 };
+            },
+            7363: (u) => {
+                u.exports = React;
+            },
+            1533: (u) => {
+                u.exports = ReactDOM;
             },
         },
         __webpack_module_cache__ = {},

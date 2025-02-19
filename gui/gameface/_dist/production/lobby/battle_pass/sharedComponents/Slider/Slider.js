@@ -742,7 +742,7 @@
                     };
             },
             4894: (e, t, i) => {
-                var r = i(6179),
+                var r = i(7363),
                     a = i.n(r),
                     n = i(6483),
                     o = i.n(n);
@@ -1188,6 +1188,9 @@
                         );
                     },
                 );
+            },
+            7363: (e) => {
+                e.exports = React;
             },
         },
         __webpack_module_cache__ = {},

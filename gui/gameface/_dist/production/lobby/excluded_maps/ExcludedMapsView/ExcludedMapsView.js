@@ -49,7 +49,7 @@
                 t.r(o),
                     t.d(o, {
                         addModelObserver: () => P,
-                        addPreloadTexture: () => R,
+                        addPreloadTexture: () => O,
                         children: () => r,
                         displayStatus: () => b,
                         displayStatusIs: () => uu,
@@ -244,12 +244,12 @@
                             L(M, { isMouseEvent: !0, on: u });
                         },
                     },
-                    O = 15;
-                function R(u) {
+                    R = 15;
+                function O(u) {
                     viewEnv.addPreloadTexture(u);
                 }
                 function N(u) {
-                    viewEnv.setHitAreaPaddingsRem(u, u, u, u, O);
+                    viewEnv.setHitAreaPaddingsRem(u, u, u, u, R);
                 }
                 function I(u, e, t, n = 1) {
                     return viewEnv.getWebBrowserTexturePath(u, e, t, n);
@@ -258,7 +258,7 @@
                     return viewEnv.addDataChangedCallback(u, e, t);
                 }
                 function H(u) {
-                    viewEnv.setHitAreaPaddingsRem(u.top, u.right, u.bottom, u.left, O);
+                    viewEnv.setHitAreaPaddingsRem(u.top, u.right, u.bottom, u.left, R);
                 }
                 function W(u = 'px') {
                     return 'rem' === u ? viewEnv.getViewSizeRem() : viewEnv.getViewSizePx();
@@ -725,9 +725,9 @@
                         getFormattedDateTime: (u, e, t = !0) => regionalDateTime.getFormattedDateTime(u, e, t),
                     };
             },
-            581: (u, e, t) => {
+            853: (u, e, t) => {
                 'use strict';
-                var n = t(179),
+                var n = t(363),
                     a = t.n(n);
                 const r = (u, e, t) =>
                     e.extraLargeHeight || e.largeHeight || e.mediumHeight || e.smallHeight || e.extraSmallHeight
@@ -1071,7 +1071,7 @@
                         })(u, k);
                     return a().createElement(_, null, a().createElement(L, t, e));
                 };
-                var N = t(493),
+                var N = t(533),
                     I = t.n(N);
                 const P = (u, e, t) => (t < u ? u : t > e ? e : t),
                     H = (u) => {
@@ -1192,19 +1192,20 @@
                         setScrollPosition: t,
                         getDirection: a,
                         getWrapperSize: r,
-                        triggerMouseMoveOnUpdate: s = !1,
+                        forceTriggerMouseMove: o,
                     }) => {
-                        const i = (u, t) => {
+                        const s = (u, t) => {
                             const n = e(u),
                                 a = n[0],
                                 r = n[1];
                             return r <= a ? 0 : P(a, r, t);
                         };
-                        return (l = {}) => {
-                            const c = l.settings,
-                                E = void 0 === c ? K : c,
+                        return (i = {}) => {
+                            const l = i.settings,
+                                c = void 0 === l ? K : l,
+                                E = (0, n.useRef)(null),
                                 d = (0, n.useRef)(null),
-                                A = (0, n.useRef)(null),
+                                A = (0, n.useRef)(!1),
                                 F = (() => {
                                     const u = (0, n.useMemo)(() => ({}), []),
                                         e = (e) => (u[e] || (u[e] = new Map()), u[e]),
@@ -1221,7 +1222,7 @@
                                 })(),
                                 m = U(
                                     () => {
-                                        o.O.view.forceTriggerMouseMove();
+                                        o && o();
                                     },
                                     [],
                                     150,
@@ -1229,8 +1230,8 @@
                                 D = (0, j.useSpring)(() => ({
                                     scrollPosition: 0,
                                     onChange: (u) => {
-                                        const e = d.current;
-                                        e && (t(e, u), F.trigger('change', u), s && m());
+                                        const e = E.current;
+                                        e && (t(e, u), F.trigger('change', u), o && A.current && m());
                                     },
                                     onRest: (u) => F.trigger('rest', u),
                                     onStart: (u) => F.trigger('start', u),
@@ -1243,28 +1244,28 @@
                                         var n;
                                         const a = B.scrollPosition.get(),
                                             r = (null != (n = B.scrollPosition.goal) ? n : 0) - a;
-                                        return i(u, e * t + r + a);
+                                        return s(u, e * t + r + a);
                                     },
                                     [B.scrollPosition],
                                 ),
                                 p = (0, n.useCallback)(
                                     (u, { immediate: e = !1, reset: t = !0 } = {}) => {
-                                        const n = d.current;
+                                        const n = E.current;
                                         n &&
                                             _.start({
-                                                scrollPosition: i(n, u),
+                                                scrollPosition: s(n, u),
                                                 immediate: e,
                                                 reset: t,
-                                                config: E.animationConfig,
-                                                from: { scrollPosition: i(n, B.scrollPosition.get()) },
+                                                config: c.animationConfig,
+                                                from: { scrollPosition: s(n, B.scrollPosition.get()) },
                                             });
                                     },
-                                    [_, E.animationConfig, B.scrollPosition],
+                                    [_, c.animationConfig, B.scrollPosition],
                                 ),
                                 g = (0, n.useCallback)(
                                     (u) => {
-                                        const e = d.current,
-                                            t = A.current;
+                                        const e = E.current,
+                                            t = d.current;
                                         if (!e || !t) return;
                                         const n = ((u, e) => {
                                                 switch (e.type) {
@@ -1273,16 +1274,16 @@
                                                     case 'fixed':
                                                         return e.value;
                                                 }
-                                            })(t, E.step),
+                                            })(t, c.step),
                                             a = C(e, u, n);
                                         p(a);
                                     },
-                                    [p, C, E.step],
+                                    [p, C, c.step],
                                 ),
                                 h = (0, n.useCallback)(
                                     (u) => {
                                         0 !== u.deltaY && g(a(u)),
-                                            d.current && F.trigger('mouseWheel', u, B.scrollPosition, e(d.current));
+                                            E.current && F.trigger('mouseWheel', u, B.scrollPosition, e(E.current));
                                     },
                                     [B.scrollPosition, g, F],
                                 ),
@@ -1303,17 +1304,17 @@
                                 })(
                                     () =>
                                         H(() => {
-                                            const u = d.current;
+                                            const u = E.current;
                                             u &&
-                                                (p(i(u, B.scrollPosition.goal), { immediate: !0 }),
+                                                (p(s(u, B.scrollPosition.goal), { immediate: !0 }),
                                                 F.trigger('resizeHandled'));
                                         }),
                                     [p, B.scrollPosition.goal],
                                 ),
                                 f = G(() => {
-                                    const u = d.current;
+                                    const u = E.current;
                                     if (!u) return;
-                                    const e = i(u, B.scrollPosition.goal);
+                                    const e = s(u, B.scrollPosition.goal);
                                     e !== B.scrollPosition.goal && p(e, { immediate: !0 }),
                                         F.trigger('recalculateContent');
                                 });
@@ -1325,28 +1326,46 @@
                                     }
                                 ),
                                 [v],
-                            );
+                            ),
+                                (0, n.useEffect)(() => {
+                                    const u = E.current;
+                                    if (!u || !o) return;
+                                    const e = () => {
+                                            A.current = !0;
+                                        },
+                                        t = () => {
+                                            A.current = !1;
+                                        };
+                                    return (
+                                        u.addEventListener('mouseenter', e),
+                                        u.addEventListener('mouseleave', t),
+                                        () => {
+                                            u.removeEventListener('mouseenter', e),
+                                                u.removeEventListener('mouseleave', t);
+                                        }
+                                    );
+                                }, [E]);
                             return (0, n.useMemo)(
                                 () => ({
-                                    getWrapperSize: () => (A.current ? r(A.current) : void 0),
-                                    getContainerSize: () => (d.current ? u(d.current) : void 0),
+                                    getWrapperSize: () => (d.current ? r(d.current) : void 0),
+                                    getContainerSize: () => (E.current ? u(E.current) : void 0),
                                     getBounds: () =>
-                                        d.current
-                                            ? e(d.current)
+                                        E.current
+                                            ? e(E.current)
                                             : (console.warn('getBounds: contentRef.current is null'), [0, 0]),
-                                    stepTimeout: E.step.clampedArrowStepTimeout,
-                                    clampPosition: i,
+                                    stepTimeout: c.step.clampedArrowStepTimeout,
+                                    clampPosition: s,
                                     handleMouseWheel: h,
                                     applyScroll: p,
                                     applyStepTo: g,
-                                    contentRef: d,
-                                    wrapperRef: A,
+                                    contentRef: E,
+                                    wrapperRef: d,
                                     scrollPosition: _,
                                     animationScroll: B,
                                     recalculateContent: f,
                                     events: { on: F.on, off: F.off },
                                 }),
-                                [B.scrollPosition, p, g, F.off, F.on, f, h, _, E.step.clampedArrowStepTimeout],
+                                [B.scrollPosition, p, g, F.off, F.on, f, h, _, c.step.clampedArrowStepTimeout],
                             );
                         };
                     })({
@@ -1738,16 +1757,17 @@
                 const Bu = (u = 1) => {
                     const e = new Error().stack;
                     let t,
-                        n = R.invalid('resId');
-                    return (
-                        e &&
-                            ((t = e.split('\n')[u].split('.js')[0].split('/').pop() || ''),
-                            window.__feature &&
-                                window.__feature !== t &&
-                                window.subViews[t] &&
-                                (n = window.subViews[t].id)),
-                        { caller: t, stack: e, resId: n }
-                    );
+                        n = R.invalid('resId'),
+                        a = '';
+                    var r;
+                    e &&
+                        ((a = (null == (r = e.match(/(coui:\/\/[^\s]+\.js)/)) ? void 0 : r[0]) || ''),
+                        (t = e.split('\n')[u].split('.js')[0].split('/').pop() || ''),
+                        window.__feature &&
+                            window.__feature !== t &&
+                            window.subViews[t] &&
+                            (n = window.subViews[t].id));
+                    return { callerUrl: a, caller: t, stack: e, resId: n };
                 };
                 var _u = t(916);
                 const Cu = [
@@ -1973,7 +1993,7 @@
                     return n;
                 }
                 const ku = (u) => (0 === u ? window : window.subViews.get(u));
-                const Ou = () => (u, e) => {
+                const Ru = () => (u, e) => {
                     const t = (0, n.createContext)({});
                     return [
                         function ({ mode: r = 'real', options: s, children: i, mocks: l }) {
@@ -2152,14 +2172,14 @@
                         () => (0, n.useContext)(t),
                     ];
                 };
-                var Ru = t(946);
-                const Nu = Ou()(
+                var Ou = t(946);
+                const Nu = Ru()(
                         ({ observableModel: u }) => {
                             const e = {
                                     filterInfo: u.primitives(['mapsSelected', 'mapsTotal', 'isFilterApplied']),
                                     cooldownTime: u.primitives(['cooldownTime']),
                                 },
-                                t = (0, Ru.Om)(() => e.cooldownTime.cooldownTime.get() - Date.now() / 1e3 >= 0, {
+                                t = (0, Ou.Om)(() => e.cooldownTime.cooldownTime.get() - Date.now() / 1e3 >= 0, {
                                     equals: Mu,
                                 });
                             return Object.assign({ computes: { getIsInCooldown: t } }, e);
@@ -2449,8 +2469,8 @@
                 !(function (u) {
                     (u.Button = 'button'), (u.Slot = 'slot');
                 })(ke || (ke = {}));
-                const Oe = () => {},
-                    Re = a().memo(
+                const Re = () => {},
+                    Oe = a().memo(
                         ({
                             active: u = !1,
                             className: e,
@@ -2461,10 +2481,10 @@
                             disabled: i,
                             soundClick: l = 'play',
                             soundHover: c = 'highlight',
-                            onMouseEnter: E = Oe,
-                            onMouseDown: d = Oe,
-                            onMouseUp: A = Oe,
-                            onMouseLeave: F = Oe,
+                            onMouseEnter: E = Re,
+                            onMouseDown: d = Re,
+                            onMouseUp: A = Re,
+                            onMouseLeave: F = Re,
                         }) => {
                             const m = (0, n.useCallback)(
                                     (e) => {
@@ -2491,9 +2511,9 @@
                                     className: _,
                                     onClick: m,
                                     onMouseEnter: D,
-                                    onMouseUp: i ? Oe : A,
+                                    onMouseUp: i ? Re : A,
                                     onMouseDown: B,
-                                    onMouseLeave: i ? Oe : F,
+                                    onMouseLeave: i ? Re : F,
                                 },
                                 a().createElement('div', { className: Le.content }, t),
                                 r === ke.Button &&
@@ -2570,9 +2590,9 @@
                 function Ge(u, e) {
                     return Array.isArray(u) ? u.map(e) : u.map((u, t, n) => e(null == u ? void 0 : u.value, t, n));
                 }
-                const Ue = Ou()(({ observableModel: u }) => {
+                const Ue = Ru()(({ observableModel: u }) => {
                         const e = { mapFilters: u.array('items', []) },
-                            t = (0, Ru.Om)(() => Ge(e.mapFilters.get(), xu), { equals: Mu });
+                            t = (0, Ou.Om)(() => Ge(e.mapFilters.get(), xu), { equals: Mu });
                         return Object.assign({ computes: { getMapFilters: t } }, e);
                     }, Tu),
                     je = Ue[0],
@@ -2597,7 +2617,7 @@
                                     He,
                                     { key: e.filterID, header: qe(e.filterName), body: Hu.filterTooltipDesc },
                                     a().createElement(
-                                        Re,
+                                        Oe,
                                         { active: e.selected, onClick: () => u(e.filterID) },
                                         a().createElement('img', { src: Ke(e.filterName) }),
                                     ),
@@ -2945,9 +2965,9 @@
                                       ),
                                   );
                     },
-                    ht = Ou()(({ observableModel: u }) => {
+                    ht = Ru()(({ observableModel: u }) => {
                         const e = { maps: u.array('items', []) },
-                            t = (0, Ru.Om)(() => Ge(e.maps.get(), xu).filter((u) => u.filtered), { equals: Mu });
+                            t = (0, Ou.Om)(() => Ge(e.maps.get(), xu).filter((u) => u.filtered), { equals: Mu });
                         return Object.assign({ computes: { getMaps: t } }, e);
                     }, Tu),
                     vt = ht[0],
@@ -3012,32 +3032,36 @@
                             );
                         }
                         return '';
-                    },
-                    kt = _u.Sw.instance;
+                    };
+                const kt = () => (window.injected || (window.injected = new Map()), window.injected);
+                const Rt = _u.Sw.instance;
                 let Ot;
                 !(function (u) {
                     (u.None = 'None'), (u.Shallow = 'Shallow'), (u.Deep = 'Deep');
                 })(Ot || (Ot = {}));
-                const Rt = (u = 'model', e = Ot.Deep) => {
+                const Nt = (u = 'model', e = Ot.Deep) => {
                         const t = (0, n.useState)(0),
                             a = (t[0], t[1]),
                             r = (0, n.useMemo)(() => Bu(), []),
-                            o = r.caller,
-                            s = r.resId,
-                            i = (0, n.useMemo)(
-                                () => (window.__feature && window.__feature !== o ? `subViews.${o}.${u}` : u),
-                                [o, u],
-                            ),
-                            l = (0, n.useState)(() =>
+                            o = r.callerUrl,
+                            s = r.caller,
+                            i = r.resId,
+                            l = (0, n.useMemo)(() => {
+                                const e = (function (u) {
+                                    return kt().has(u);
+                                })(o.replace('.js', '.html'));
+                                return window.__feature && window.__feature !== s && !e ? `subViews.${s}.${u}` : u;
+                            }, [o, s, u]),
+                            c = (0, n.useState)(() =>
                                 ((u) => {
                                     const e = xt(u, window);
                                     for (const u in e) 'function' == typeof e[u] && (e[u] = e[u].bind(e));
                                     return Mt(e) ? e.value : e;
-                                })(yt(i)),
+                                })(yt(l)),
                             ),
-                            c = l[0],
-                            E = l[1],
-                            d = (0, n.useRef)(-1);
+                            E = c[0],
+                            d = c[1],
+                            A = (0, n.useRef)(-1);
                         return (
                             B(() => {
                                 if (
@@ -3051,85 +3075,85 @@
                                     const t = (u) => {
                                             ((u) => u && 'CoherentArrayProxy' === u.__proto__.constructor.name)(u) &&
                                             e === Ot.Deep
-                                                ? (u === c && a((u) => u + 1), E(u))
-                                                : E(Object.assign([], u));
+                                                ? (u === E && a((u) => u + 1), d(u))
+                                                : d(Object.assign([], u));
                                         },
                                         n = Lt(u);
-                                    d.current = kt.addCallback(n, t, s, e === Ot.Deep);
+                                    A.current = Rt.addCallback(n, t, i, e === Ot.Deep);
                                 }
                             }),
                             (0, n.useEffect)(() => {
                                 if (e !== Ot.None)
                                     return () => {
-                                        kt.removeCallback(d.current, s);
+                                        Rt.removeCallback(A.current, i);
                                     };
-                            }, [s, e]),
-                            c
+                            }, [i, e]),
+                            E
                         );
                     },
-                    Nt = (_u.Sw.instance, {});
-                function It(u, e, t, n = Ot.Deep) {
+                    It = (_u.Sw.instance, {});
+                function Pt(u, e, t, n = Ot.Deep) {
                     const r = (r) => {
                         const o = r.path || e || void 0,
-                            s = Rt(o, (o && Nt[o]) || !1 ? Ot.None : n),
+                            s = Nt(o, (o && It[o]) || !1 ? Ot.None : n),
                             i = Object.assign({}, t(s, r), r);
                         return a().createElement(u, i);
                     };
                     var o;
                     return (r.displayName = `WithModel(${((o = u), o.displayName || o.name || 'Component')})`), r;
                 }
-                const Pt = 'ExcludedMapsBlock_base_6b',
-                    Ht = 'ExcludedMapsBlock_base__disabled_68',
-                    Wt = 'ExcludedMapsBlock_header_d4',
-                    Vt = 'ExcludedMapsBlock_base_background_03',
-                    $t = 'ExcludedMapsBlock_disabledPattern_09',
-                    Gt = 'ExcludedMapsBlock_lock_e8',
-                    Ut = 'ExcludedMapsBlock_hover_b0',
-                    jt = 'ExcludedMapsBlock_disabledContent_b4',
-                    zt = 'ExcludedMapsBlock_unavailableText_d6',
-                    Kt = 'ExcludedMapsBlock_slotContainer_b6';
-                let qt;
+                const Ht = 'ExcludedMapsBlock_base_6b',
+                    Wt = 'ExcludedMapsBlock_base__disabled_68',
+                    Vt = 'ExcludedMapsBlock_header_d4',
+                    $t = 'ExcludedMapsBlock_base_background_03',
+                    Gt = 'ExcludedMapsBlock_disabledPattern_09',
+                    Ut = 'ExcludedMapsBlock_lock_e8',
+                    jt = 'ExcludedMapsBlock_hover_b0',
+                    zt = 'ExcludedMapsBlock_disabledContent_b4',
+                    Kt = 'ExcludedMapsBlock_unavailableText_d6',
+                    qt = 'ExcludedMapsBlock_slotContainer_b6';
+                let Yt;
                 !(function (u) {
                     (u.empty = 'empty'), (u.selected = 'selected'), (u.disabled = 'disabled');
-                })(qt || (qt = {}));
-                const Yt = 'SlotItem_base_5b',
-                    Xt = 'SlotItem_base__responsive_39',
-                    Zt = 'SlotItem_mapImage_6b',
-                    Qt = 'SlotItem_timerContainer_91',
-                    Jt = 'SlotItem_base__select_15',
-                    un = 'SlotItem_base__disabled_88',
-                    en = 'SlotItem_base__replace_c5',
-                    tn = 'SlotItem_base__cooldown_6a',
-                    nn = 'SlotItem_mapTitle_a4',
-                    an = 'SlotItem_removeButton_25',
-                    rn = 'SlotItem_removeButton_icon_7e',
-                    on = 'SlotItem_timerText_11',
-                    sn = R.strings.excluded_maps.notSelected(),
-                    ln = ({ isEnabled: u = !0, isResponsive: e, isMapNameDisplayed: t, tooltipStrings: n }) =>
+                })(Yt || (Yt = {}));
+                const Xt = 'SlotItem_base_5b',
+                    Zt = 'SlotItem_base__responsive_39',
+                    Qt = 'SlotItem_mapImage_6b',
+                    Jt = 'SlotItem_timerContainer_91',
+                    un = 'SlotItem_base__select_15',
+                    en = 'SlotItem_base__disabled_88',
+                    tn = 'SlotItem_base__replace_c5',
+                    nn = 'SlotItem_base__cooldown_6a',
+                    an = 'SlotItem_mapTitle_a4',
+                    rn = 'SlotItem_removeButton_25',
+                    on = 'SlotItem_removeButton_icon_7e',
+                    sn = 'SlotItem_timerText_11',
+                    ln = R.strings.excluded_maps.notSelected(),
+                    cn = ({ isEnabled: u = !0, isResponsive: e, isMapNameDisplayed: t, tooltipStrings: n }) =>
                         u
                             ? a().createElement(
                                   He,
                                   {
-                                      header: (null == n ? void 0 : n.disabledTooltipHeader) || mn.selectTooltipHeader,
-                                      body: (null == n ? void 0 : n.selectTooltipBody) || mn.selectTooltipBody,
+                                      header: (null == n ? void 0 : n.disabledTooltipHeader) || Dn.selectTooltipHeader,
+                                      body: (null == n ? void 0 : n.selectTooltipBody) || Dn.selectTooltipBody,
                                   },
                                   a().createElement(
                                       'div',
-                                      { className: p()(Yt, Jt, e && Xt), 'data-testid': 'slot' },
-                                      t && a().createElement('div', { className: nn }, sn),
+                                      { className: p()(Xt, un, e && Zt), 'data-testid': 'slot' },
+                                      t && a().createElement('div', { className: an }, ln),
                                   ),
                               )
                             : a().createElement(
                                   He,
                                   {
                                       header:
-                                          (null == n ? void 0 : n.disabledTooltipHeader) || mn.disabledTooltipHeader,
-                                      body: (null == n ? void 0 : n.disabledTooltipBody) || mn.disabledTooltipBody,
+                                          (null == n ? void 0 : n.disabledTooltipHeader) || Dn.disabledTooltipHeader,
+                                      body: (null == n ? void 0 : n.disabledTooltipBody) || Dn.disabledTooltipBody,
                                   },
-                                  a().createElement('div', { className: p()(Yt, un, e && Xt), 'data-testid': 'slot' }),
+                                  a().createElement('div', { className: p()(Xt, en, e && Zt), 'data-testid': 'slot' }),
                               ),
-                    cn = ['map'];
-                const En = (u) => {
+                    En = ['map'];
+                const dn = (u) => {
                         let e = u.map,
                             t = (function (u, e) {
                                 if (null == u) return {};
@@ -3140,11 +3164,11 @@
                                         t[n] = u[n];
                                     }
                                 return t;
-                            })(u, cn);
+                            })(u, En);
                         const n = Math.floor(e.cooldownEndTimeInSecs - Date.now() / ue);
-                        return oe(n), a().createElement(Dn, Object.assign({ map: e }, t));
+                        return oe(n), a().createElement(Bn, Object.assign({ map: e }, t));
                     },
-                    dn = ({
+                    An = ({
                         slotState: u,
                         cooldownEndTimeInSecs: e,
                         mapId: t,
@@ -3152,9 +3176,9 @@
                         onRemoveButtonClick: r,
                         isResponsive: o,
                         tooltipStrings: s,
-                        MapSlotComponent: i = En,
+                        MapSlotComponent: i = dn,
                     }) => {
-                        if (u === qt.selected)
+                        if (u === Yt.selected)
                             return a().createElement(i, {
                                 map: { slotState: u, cooldownEndTimeInSecs: e, mapId: t },
                                 isMapNameDisplayed: n,
@@ -3162,15 +3186,15 @@
                                 isResponsive: o,
                                 tooltipStrings: s,
                             });
-                        const l = u !== qt.disabled;
-                        return a().createElement(ln, {
+                        const l = u !== Yt.disabled;
+                        return a().createElement(cn, {
                             isEnabled: l,
                             isMapNameDisplayed: n,
                             isResponsive: o,
                             tooltipStrings: s,
                         });
                     },
-                    An = It(
+                    Fn = Pt(
                         ({ className: u, path: e, excludedMaps: t, isResponsive: n }) =>
                             a().createElement(
                                 'div',
@@ -3178,7 +3202,7 @@
                                 t
                                     .slice(0, 3)
                                     .map(({ value: { cooldownEndTimeInSecs: u, mapId: t, slotState: r } }, o) =>
-                                        a().createElement(dn, {
+                                        a().createElement(An, {
                                             cooldownEndTimeInSecs: u,
                                             mapId: t,
                                             slotState: r,
@@ -3190,9 +3214,9 @@
                         null,
                         (u, e) => Object.assign({}, e, { excludedMaps: u }),
                     );
-                function Fn() {
+                function mn() {
                     return (
-                        (Fn = Object.assign
+                        (mn = Object.assign
                             ? Object.assign.bind()
                             : function (u) {
                                   for (var e = 1; e < arguments.length; e++) {
@@ -3201,10 +3225,10 @@
                                   }
                                   return u;
                               }),
-                        Fn.apply(null, arguments)
+                        mn.apply(null, arguments)
                     );
                 }
-                const mn = {
+                const Dn = {
                         get header() {
                             return R.strings.account_dashboard.excludedMaps.header();
                         },
@@ -3236,8 +3260,8 @@
                             return R.strings.account_dashboard.temporarilyUnavailable();
                         },
                     },
-                    Dn =
-                        (It(
+                    Bn =
+                        (Pt(
                             ({ className: u, isEnabled: e, onClick: t }) => {
                                 const r = (0, n.useCallback)(() => {
                                         t(), Y('play');
@@ -3248,37 +3272,37 @@
                                 return e
                                     ? a().createElement(
                                           'div',
-                                          { className: p()(Pt, u), onClick: r, onMouseEnter: o },
-                                          a().createElement('div', { className: Vt }),
-                                          a().createElement('div', { className: Ut }),
-                                          a().createElement('div', { className: Wt }, mn.header),
-                                          a().createElement(An, {
+                                          { className: p()(Ht, u), onClick: r, onMouseEnter: o },
+                                          a().createElement('div', { className: $t }),
+                                          a().createElement('div', { className: jt }),
+                                          a().createElement('div', { className: Vt }, Dn.header),
+                                          a().createElement(Fn, {
                                               path: 'model.excludedMaps.excludedMaps',
-                                              className: Kt,
+                                              className: qt,
                                               isResponsive: !0,
                                           }),
                                       )
                                     : a().createElement(
                                           'div',
-                                          { className: p()(Pt, Ht) },
-                                          a().createElement('div', { className: Vt }),
+                                          { className: p()(Ht, Wt) },
                                           a().createElement('div', { className: $t }),
+                                          a().createElement('div', { className: Gt }),
                                           a().createElement(
                                               'div',
-                                              { className: jt },
+                                              { className: zt },
                                               a().createElement('img', {
                                                   src: R.images.gui.maps.icons.account_dashboard.premium_missions.lock(),
                                                   alt: '',
-                                                  className: Gt,
+                                                  className: Ut,
                                               }),
-                                              a().createElement('div', { className: Wt }, mn.header),
-                                              a().createElement('div', { className: zt }, mn.temporarilyUnavailable),
+                                              a().createElement('div', { className: Vt }, Dn.header),
+                                              a().createElement('div', { className: Kt }, Dn.temporarilyUnavailable),
                                           ),
                                       );
                             },
                             'model.excludedMaps',
                             (u, e) => {
-                                let t = Fn(
+                                let t = mn(
                                     {},
                                     ((function (u) {
                                         if (null == u) throw new TypeError('Cannot destructure ' + u);
@@ -3300,33 +3324,33 @@
                             const o = Math.floor(u.cooldownEndTimeInSecs - Date.now() / ue),
                                 s = o <= 0 && '' !== u.mapId,
                                 i = o > 0,
-                                l = p()(Yt, s && en, i && tn, t && Xt),
+                                l = p()(Xt, s && tn, i && nn, t && Zt),
                                 c = ie(u);
                             if (i) {
                                 const t = ae(o),
                                     n = ce(t),
-                                    r = $u(mn.cooldownTooltipBody, { cooldownStr: Ee(t) });
+                                    r = $u(Dn.cooldownTooltipBody, { cooldownStr: Ee(t) });
                                 return a().createElement(
                                     He,
-                                    { header: mn.cooldownTooltipHeader, body: r },
+                                    { header: Dn.cooldownTooltipHeader, body: r },
                                     a().createElement(
                                         'div',
                                         { className: l, 'data-testid': 'slot' },
-                                        a().createElement('img', { src: le(u), className: Zt }),
+                                        a().createElement('img', { src: le(u), className: Qt }),
                                         a().createElement(
                                             'div',
-                                            { className: Qt, 'data-testid': 'timer' },
-                                            a().createElement('div', { className: on }, n),
+                                            { className: Jt, 'data-testid': 'timer' },
+                                            a().createElement('div', { className: sn }, n),
                                         ),
-                                        e && a().createElement('div', { className: nn }, c),
+                                        e && a().createElement('div', { className: an }, c),
                                     ),
                                 );
                             }
                             return a().createElement(
                                 He,
                                 {
-                                    header: (null == r ? void 0 : r.replaceTooltipHeader) || mn.replaceTooltipHeader,
-                                    body: (null == r ? void 0 : r.replaceTooltipBody) || mn.replaceTooltipBody,
+                                    header: (null == r ? void 0 : r.replaceTooltipHeader) || Dn.replaceTooltipHeader,
+                                    body: (null == r ? void 0 : r.replaceTooltipBody) || Dn.replaceTooltipBody,
                                 },
                                 a().createElement(
                                     'div',
@@ -3334,36 +3358,36 @@
                                     n &&
                                         a().createElement(
                                             ut,
-                                            { type: 'ghost', mixClass: an, onClick: () => n(u.mapId) },
+                                            { type: 'ghost', mixClass: rn, onClick: () => n(u.mapId) },
                                             a().createElement('img', {
                                                 src: R.images.gui.maps.icons.library.cross(),
-                                                className: rn,
+                                                className: on,
                                             }),
                                         ),
-                                    a().createElement('img', { src: le(u), className: Zt }),
-                                    e && a().createElement('div', { className: nn }, c),
+                                    a().createElement('img', { src: le(u), className: Qt }),
+                                    e && a().createElement('div', { className: an }, c),
                                 ),
                             );
                         }),
-                    Bn = {
-                        [nt.MAPS_BLACKLIST_SLOT_STATE_ACTIVE]: qt.empty,
-                        [nt.MAPS_BLACKLIST_SLOT_STATE_ACTIVE_NO_HOVER]: qt.selected,
-                        [nt.MAPS_BLACKLIST_SLOT_STATE_CHANGE]: qt.selected,
-                        [nt.MAPS_BLACKLIST_SLOT_STATE_COOLDOWN]: qt.selected,
-                        [nt.MAPS_BLACKLIST_SLOT_STATE_DISABLED]: qt.disabled,
-                        [nt.MAPS_BLACKLIST_SLOT_STATE_SELECTED]: qt.selected,
+                    _n = {
+                        [nt.MAPS_BLACKLIST_SLOT_STATE_ACTIVE]: Yt.empty,
+                        [nt.MAPS_BLACKLIST_SLOT_STATE_ACTIVE_NO_HOVER]: Yt.selected,
+                        [nt.MAPS_BLACKLIST_SLOT_STATE_CHANGE]: Yt.selected,
+                        [nt.MAPS_BLACKLIST_SLOT_STATE_COOLDOWN]: Yt.selected,
+                        [nt.MAPS_BLACKLIST_SLOT_STATE_DISABLED]: Yt.disabled,
+                        [nt.MAPS_BLACKLIST_SLOT_STATE_SELECTED]: Yt.selected,
                     },
-                    _n = Ou()(({ observableModel: u }) => {
+                    Cn = Ru()(({ observableModel: u }) => {
                         const e = { excludedMaps: u.array('items', []) },
-                            t = (0, Ru.Om)(
-                                () => Ge(e.excludedMaps.get(), (u) => Object.assign({}, u, { state: Bn[u.state] })),
+                            t = (0, Ou.Om)(
+                                () => Ge(e.excludedMaps.get(), (u) => Object.assign({}, u, { state: _n[u.state] })),
                                 { equals: Mu },
                             );
                         return Object.assign({ computes: { getExcludedMapSlots: t } }, e);
                     }, Tu),
-                    Cn = _n[0],
-                    pn = _n[1],
-                    gn = {
+                    pn = Cn[0],
+                    gn = Cn[1],
+                    hn = {
                         get disabledTooltipBody() {
                             return R.strings.excluded_maps.slot.disabledTooltipBody();
                         },
@@ -3377,36 +3401,36 @@
                             return R.strings.excluded_maps.slot.replaceTooltipBody();
                         },
                     },
-                    hn = (0, wu.Pi)(({ className: u, onMapRemoveFromBlacklist: e }) => {
-                        const t = pn().model.computes.getExcludedMapSlots();
+                    vn = (0, wu.Pi)(({ className: u, onMapRemoveFromBlacklist: e }) => {
+                        const t = gn().model.computes.getExcludedMapSlots();
                         return a().createElement(
                             'div',
                             { className: u },
                             t.map((u, t) =>
-                                a().createElement(dn, {
+                                a().createElement(An, {
                                     isMapNameDisplayed: !0,
                                     onRemoveButtonClick: e,
                                     slotState: u.state,
                                     mapId: u.mapId,
                                     cooldownEndTimeInSecs: u.cooldownTime,
                                     key: t,
-                                    tooltipStrings: gn,
-                                    MapSlotComponent: Dn,
+                                    tooltipStrings: hn,
+                                    MapSlotComponent: Bn,
                                 }),
                             ),
                         );
                     }),
-                    vn = { context: 'model.disabledMaps' },
-                    fn = (0, n.memo)(({ className: u, onMapRemoveFromBlacklist: e }) =>
+                    fn = { context: 'model.disabledMaps' },
+                    bn = (0, n.memo)(({ className: u, onMapRemoveFromBlacklist: e }) =>
                         a().createElement(
-                            Cn,
-                            { options: vn },
-                            a().createElement(hn, { className: u, onMapRemoveFromBlacklist: e }),
+                            pn,
+                            { options: fn },
+                            a().createElement(vn, { className: u, onMapRemoveFromBlacklist: e }),
                         ),
                     ),
-                    bn = { base: Be },
-                    wn = { base: Te },
-                    Tn = (0, wu.Pi)(() => {
+                    wn = { base: Be },
+                    Tn = { base: Te },
+                    xn = (0, wu.Pi)(() => {
                         const u = Pu(),
                             e = u.model,
                             t = u.controls;
@@ -3448,10 +3472,10 @@
                                 a().createElement(Du, {
                                     caption: Hu.backButtonLabel,
                                     goto: Hu.backButtonTo,
-                                    classNames: bn,
+                                    classNames: wn,
                                     onClick: t.onBackAction,
                                 }),
-                                a().createElement(fn, {
+                                a().createElement(bn, {
                                     className: he,
                                     onMapRemoveFromBlacklist: t.onMapRemoveFromBlacklist,
                                 }),
@@ -3467,7 +3491,7 @@
                                     a().createElement('div', { className: Me }),
                                     a().createElement(
                                         Eu,
-                                        { api: q(), className: we, barClassNames: wn },
+                                        { api: q(), className: we, barClassNames: Tn },
                                         a().createElement(Tt, {
                                             className: be,
                                             onMapAddToBlacklist: t.onMapAddToBlacklist,
@@ -3483,11 +3507,19 @@
                         a().createElement(
                             Iu,
                             { mode: 'real' },
-                            a().createElement(O, null, a().createElement(Tn, null)),
+                            a().createElement(O, null, a().createElement(xn, null)),
                         ),
                         document.getElementById('root'),
                     );
                 });
+            },
+            363: (u) => {
+                'use strict';
+                u.exports = React;
+            },
+            533: (u) => {
+                'use strict';
+                u.exports = ReactDOM;
             },
         },
         __webpack_module_cache__ = {},
@@ -3565,6 +3597,6 @@
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             t.forEach(e.bind(null, 0)), (t.push = e.bind(null, t.push.bind(t)));
         })();
-    var __webpack_exports__ = __webpack_require__.O(void 0, [182], () => __webpack_require__(581));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [182], () => __webpack_require__(853));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

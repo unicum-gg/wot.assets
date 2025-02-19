@@ -2,7 +2,7 @@
     'use strict';
     var u,
         A = {
-            9602: (u, A, F) => {
+            602: (u, A, F) => {
                 var e = {};
                 F.r(e),
                     F.d(e, { mouse: () => S, off: () => x, on: () => h, onResize: () => w, onScaleUpdated: () => y });
@@ -48,13 +48,13 @@
                         setSidePaddingsRem: () => J,
                         whenTutorialReady: () => su,
                     });
-                var t = F(6179),
+                var t = F(363),
                     C = F.n(t),
-                    n = F(493),
+                    n = F(533),
                     r = F.n(n),
-                    o = F(6483),
+                    o = F(483),
                     i = F.n(o),
-                    a = F(1281);
+                    a = F(797);
                 let s;
                 !(function (u) {
                     (u[(u.left = 0)] = 'left'), (u[(u.right = 1)] = 'right');
@@ -497,7 +497,7 @@
                     return !1;
                 }
                 console.log;
-                var wu = F(9174);
+                var wu = F(174);
                 function yu(u, A) {
                     (null == A || A > u.length) && (A = u.length);
                     for (var F = 0, e = Array(A); F < A; F++) e[F] = u[F];
@@ -735,12 +735,12 @@
                         ];
                     })(0, pu),
                     _u = xu[0],
-                    Su = xu[1],
-                    Pu = R.strings.advent_calendar.mainView.tooltip.allRewards.bonus,
-                    Ru = 'lootBox',
+                    Ru = xu[1],
+                    Su = R.strings.advent_calendar.mainView.tooltip.allRewards.bonus,
+                    Pu = 'lootBox',
                     Tu = R.images.gui.maps.icons.quests.bonuses.small;
                 function Ou(u) {
-                    return u === Ru ? R.images.advent_calendar.gui.maps.icons.tooltips.lootBox() : Tu.$dyn(u);
+                    return u === Pu ? R.images.advent_calendar.gui.maps.icons.tooltips.lootBox() : Tu.$dyn(u);
                 }
                 const zu = ({ section: u }) =>
                         C().createElement(
@@ -751,14 +751,14 @@
                                     'progressionRewards' === u.type && 'Section_base__progression_bb',
                                 ),
                             },
-                            C().createElement('div', { className: 'Section_title_3d' }, Pu.$dyn(u.type), ' '),
+                            C().createElement('div', { className: 'Section_title_3d' }, Su.$dyn(u.type), ' '),
                             C().createElement(
                                 'div',
                                 { className: 'Section_imagesWrapper_2a' },
                                 fu(u.value, (u, A) =>
                                     C().createElement('div', {
                                         key: A,
-                                        className: i()('Section_image_82', u === Ru && 'Section_image__lootbox_6e'),
+                                        className: i()('Section_image_82', u === Pu && 'Section_image__lootbox_6e'),
                                         style: { backgroundImage: `url(${Ou(u)})` },
                                     }),
                                 ),
@@ -766,7 +766,7 @@
                         ),
                     ku = R.strings.advent_calendar.mainView.tooltip.allRewards,
                     Mu = () => {
-                        const u = Su().model;
+                        const u = Ru().model;
                         return C().createElement(
                             mu,
                             null,
@@ -802,6 +802,12 @@
                         document.getElementById('root'),
                     );
                 });
+            },
+            363: (u) => {
+                u.exports = React;
+            },
+            533: (u) => {
+                u.exports = ReactDOM;
             },
         },
         F = {};
@@ -874,6 +880,6 @@
                 F = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             F.forEach(A.bind(null, 0)), (F.push = A.bind(null, F.push.bind(F)));
         })();
-    var E = e.O(void 0, [503], () => e(9602));
+    var E = e.O(void 0, [503], () => e(602));
     E = e.O(E);
 })();

@@ -48,9 +48,9 @@
                         setSidePaddingsRem: () => $,
                         whenTutorialReady: () => Du,
                     });
-                var B = F(6179),
+                var B = F(7363),
                     n = F.n(B),
-                    C = F(493),
+                    C = F(1533),
                     r = F.n(C),
                     o = F(6483),
                     a = F.n(o);
@@ -890,6 +890,12 @@
                         document.getElementById('root'),
                     );
                 });
+            },
+            7363: (u) => {
+                u.exports = React;
+            },
+            1533: (u) => {
+                u.exports = ReactDOM;
             },
         },
         F = {};

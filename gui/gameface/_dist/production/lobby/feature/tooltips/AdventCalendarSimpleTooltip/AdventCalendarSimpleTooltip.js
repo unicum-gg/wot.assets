@@ -2,7 +2,7 @@
     'use strict';
     var u,
         F = {
-            3910: (u, F, A) => {
+            910: (u, F, A) => {
                 var e = {};
                 A.r(e),
                     A.d(e, { mouse: () => v, off: () => g, on: () => d, onResize: () => l, onScaleUpdated: () => c });
@@ -48,11 +48,11 @@
                         setSidePaddingsRem: () => G,
                         whenTutorialReady: () => Du,
                     });
-                var t = A(6179),
+                var t = A(363),
                     C = A.n(t),
-                    n = A(493),
+                    n = A(533),
                     r = A.n(n),
-                    o = A(6483),
+                    o = A(483),
                     i = A.n(o);
                 function a(u) {
                     return (F) => (
@@ -402,7 +402,7 @@
                         )
                     );
                 });
-                var ou = A(1281);
+                var ou = A(797);
                 let iu;
                 !(function (u) {
                     (u[(u.left = 0)] = 'left'), (u[(u.right = 1)] = 'right');
@@ -552,7 +552,7 @@
                     return !1;
                 }
                 console.log;
-                var xu = A(9174);
+                var xu = A(174);
                 function yu(u, F) {
                     (null == F || F > u.length) && (F = u.length);
                     for (var A = 0, e = Array(F); A < F; A++) e[A] = u[A];
@@ -831,6 +831,12 @@
                     );
                 });
             },
+            363: (u) => {
+                u.exports = React;
+            },
+            533: (u) => {
+                u.exports = ReactDOM;
+            },
         },
         A = {};
     function e(u) {
@@ -902,6 +908,6 @@
                 A = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             A.forEach(F.bind(null, 0)), (A.push = F.bind(null, A.push.bind(A)));
         })();
-    var E = e.O(void 0, [503], () => e(3910));
+    var E = e.O(void 0, [503], () => e(910));
     E = e.O(E);
 })();

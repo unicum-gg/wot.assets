@@ -6,7 +6,7 @@
                 var n = a(6483),
                     s = a.n(n),
                     r = a(7727),
-                    o = a(6179),
+                    o = a(7363),
                     i = a.n(o),
                     _ = a(6880),
                     u = a(2106);
@@ -32,7 +32,7 @@
                         E = C[1],
                         Z = (0, o.useState)(!1),
                         w = Z[0],
-                        M = Z[1];
+                        x = Z[1];
                     return (
                         (0, o.useEffect)(() => {
                             function e(e) {
@@ -68,17 +68,17 @@
                                     f && f(e);
                                 },
                                 onMouseUp: function (e) {
-                                    l || (h && h(e), M(!1));
+                                    l || (h && h(e), x(!1));
                                 },
                                 onMouseDown: function (e) {
                                     l ||
                                         (null !== d && (0, r.G)(d),
                                         g && g(e),
                                         a && (l || (y.current && (y.current.focus(), E(!0)))),
-                                        M(!0));
+                                        x(!0));
                                 },
                                 onMouseLeave: function (e) {
-                                    l || (p && p(e), M(!1));
+                                    l || (p && p(e), x(!1));
                                 },
                                 onClick: function (e) {
                                     l || (v && v(e));
@@ -132,7 +132,7 @@
                 a.d(t, { G: () => n });
             },
             9525: (e, t, a) => {
-                a(6483), a(3457), a(6179);
+                a(6483), a(3457), a(7363);
                 R.strings.battle_pass.battlePassBuyView;
             },
             6880: (e, t, a) => {
@@ -160,6 +160,9 @@
                     base__highlightActive: 'CButton_base__highlightActive_b2',
                     content: 'CButton_content_cc',
                 };
+            },
+            7363: (e) => {
+                e.exports = React;
             },
         },
         a = {};

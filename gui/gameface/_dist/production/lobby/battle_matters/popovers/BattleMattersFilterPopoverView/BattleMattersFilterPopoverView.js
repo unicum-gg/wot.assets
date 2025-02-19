@@ -702,9 +702,9 @@
                     };
             },
             989: (u, e, t) => {
-                var n = t(179),
+                var n = t(363),
                     o = t.n(n),
-                    r = t(493),
+                    r = t(533),
                     i = t.n(r),
                     a = t(483),
                     s = t.n(a);
@@ -794,15 +794,20 @@
                                     ((u = 1) => {
                                         const e = new Error().stack;
                                         let t,
-                                            n = R.invalid('resId');
+                                            n = R.invalid('resId'),
+                                            o = '';
+                                        var r;
                                         return (
                                             e &&
-                                                ((t = e.split('\n')[u].split('.js')[0].split('/').pop() || ''),
+                                                ((o =
+                                                    (null == (r = e.match(/(coui:\/\/[^\s]+\.js)/)) ? void 0 : r[0]) ||
+                                                    ''),
+                                                (t = e.split('\n')[u].split('.js')[0].split('/').pop() || ''),
                                                 window.__feature &&
                                                     window.__feature !== t &&
                                                     window.subViews[t] &&
                                                     (n = window.subViews[t].id)),
-                                            { caller: t, stack: e, resId: n }
+                                            { callerUrl: o, caller: t, stack: e, resId: n }
                                         );
                                     })().resId,
                                 [w],
@@ -1688,6 +1693,12 @@
                         document.getElementById('root'),
                     );
                 });
+            },
+            363: (u) => {
+                u.exports = React;
+            },
+            533: (u) => {
+                u.exports = ReactDOM;
             },
         },
         __webpack_module_cache__ = {},

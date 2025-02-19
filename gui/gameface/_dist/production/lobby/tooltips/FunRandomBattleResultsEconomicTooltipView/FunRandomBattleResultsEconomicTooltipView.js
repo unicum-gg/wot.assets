@@ -705,7 +705,7 @@
                 var E = t(6483),
                     A = t.n(E),
                     F = t(5840),
-                    n = t(6179),
+                    n = t(7363),
                     r = t.n(n);
                 const D = {
                         base: 'TooltipDecorator_base_c9',
@@ -803,7 +803,7 @@
                         )
                     );
                 });
-                var B = t(493),
+                var B = t(1533),
                     s = t.n(B),
                     C = t(3403);
                 function l() {
@@ -1406,6 +1406,12 @@
                         document.getElementById('root'),
                     );
                 });
+            },
+            7363: (u) => {
+                u.exports = React;
+            },
+            1533: (u) => {
+                u.exports = ReactDOM;
             },
         },
         __webpack_module_cache__ = {},

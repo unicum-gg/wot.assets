@@ -662,6 +662,7 @@
     line-height: 1.3;
     margin-top: -13rem;
     text-align: center;
+    position: relative;
     z-index: 1;
 }
 
@@ -688,6 +689,7 @@
     color: #ffc363;
 }
 
+.Reward_info__bptaler_82,
 .Reward_info__crystal_36 {
     color: #c9c9b6;
 }
@@ -3311,7 +3313,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -40%);
+    transform: translate(-50%, -57%);
     animation: InfiniteCard_card-show_fe 0.4s ease-in 0.6s forwards;
 }
 
@@ -3414,594 +3416,12 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .InfiniteCards_base_39 {
-    width: 220rem;
+    width: 320rem;
     position: relative;
-    bottom: 26rem;
 }
 
 .InfiniteCards_base__big_1a {
-    width: 320rem;
-    bottom: 0;
-}
-
-.Quest_base_24 {
-    display: flex;
-    padding: 18rem;
-    border: 1rem solid rgba(255, 255, 255, 0.1);
-    border-radius: 5rem;
-}
-
-.mediaLargeHeight .Quest_base_24 {
-    padding: 20rem 24rem 12rem;
-}
-
-.Quest_base__completed_19 {
-    box-shadow: 0 0 39rem 0 rgba(128, 212, 58, 0.5) inset;
-}
-
-.Quest_base__single_quest_2b {
-    padding: 20rem;
-    border: none;
-    box-shadow: none;
-}
-
-.Quest_base__infinite_3e {
-    width: 478rem;
-    height: 136rem;
-    border: none;
-}
-
-.Quest_base__cursor_grab_c0 {
-    cursor: default;
-}
-
-.Quest_conditionIcon_13 {
-    display: flex;
-}
-
-.Quest_questIcon_2e {
-    width: 24rem;
-    height: 24rem;
-    background: center / contain no-repeat;
-    opacity: 0.5;
-}
-
-.mediaSmall .Quest_questIcon_2e {
-    width: 32rem;
-    height: 32rem;
-}
-
-.Quest_base__single_quest_2b .Quest_questIcon_2e {
-    width: 32rem;
-    height: 32rem;
-}
-
-.mediaLargeWidth .Quest_questIcon_2e {
-    width: 64rem;
-    height: 64rem;
-}
-
-.Quest_questContent_01 {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    width: 100%;
-    height: 100%;
-    margin-left: 16rem;
-}
-
-.Quest_base__big_f0 .Quest_questContent_01 {
-    margin-left: 20rem;
-}
-
-.Quest_base__infinite_3e .Quest_base__big_f0 .Quest_questContent_01 {
-    margin-left: 4rem;
-}
-
-.Quest_questProgress_40 {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    flex: 0;
-    color: #8c8c7e;
-    font-size: 12rem;
-    font-weight: 400;
-    line-height: 15.6rem;
-}
-
-.Quest_base__big_f0 .Quest_questProgress_40 {
-    font-size: 14rem;
-    line-height: 18.2rem;
-}
-
-.mediaLargeWidth .Quest_base__big_f0 .Quest_questProgress_40 {
-    font-size: 16rem;
-}
-
-.Quest_base__single_quest_2b .Quest_questProgress_40 {
-    font-size: 12rem;
-    line-height: 15.6rem;
-}
-
-.Quest_questProgressCurrent_93 {
-    color: #e9e2bf;
-}
-
-.Quest_base__completed_19 .Quest_questProgressCurrent_93 {
-    color: #8c8c7e;
-}
-
-.Quest_questTitle_07 {
-    flex: 1;
-    padding: 2rem 0;
-
-    color: #f2f2f7;
-
-    font-size: 14rem;
-
-    font-weight: 700;
-
-    line-height: 1.15;
-}
-
-.Quest_base__big_f0 .Quest_questTitle_07 {
-    color: #f2f2f7;
-    font-size: 15rem;
-    font-weight: 700;
-    line-height: 1.15;
-}
-
-.mediaLargeWidth .Quest_base__big_f0 .Quest_questTitle_07 {
-    color: #f2f2f7;
-    font-size: 22rem;
-    font-weight: 700;
-    line-height: 1.2;
-}
-
-.Quest_base__completed_19 .Quest_questTitle_07 {
-    color: #80d43a;
-}
-
-.Quest_base__single_quest_2b .Quest_questTitle_07 {
-    color: #f2f2f7;
-    font-size: 15rem;
-    font-weight: 700;
-    line-height: 1.15;
-}
-
-.Quest_questPoints_88 {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: flex-start;
-    flex: 0;
-    height: 36rem;
-}
-
-.Quest_base__big_f0 .Quest_questPoints_88 {
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-.Quest_base__single_quest_2b .Quest_questPoints_88 {
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-.Quest_questPoint_ef {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    padding: 0 5rem 0 0;
-}
-
-.Quest_questPointTitle_e9 {
-    display: flex;
-    align-items: flex-end;
-    white-space: nowrap;
-
-    color: #8c8c7e;
-
-    font-size: 12rem;
-
-    font-weight: 400;
-
-    line-height: 1.3;
-}
-
-.Quest_base__big_f0 .Quest_questPointTitle_e9 {
-    color: #8c8c7e;
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
-}
-
-.mediaLargeWidth .Quest_base__big_f0 .Quest_questPointTitle_e9 {
-    color: #8c8c7e;
-    font-size: 16rem;
-    font-weight: 400;
-    line-height: 1.25;
-}
-
-.Quest_base__single_quest_2b .Quest_questPointTitle_e9 {
-    color: #8c8c7e;
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
-}
-
-.Quest_questPointScore_dc {
-    padding-left: 2rem;
-    white-space: nowrap;
-    position: relative;
-
-    color: #ffdd99;
-
-    font-size: 15rem;
-
-    font-weight: 700;
-
-    line-height: 1.15;
-}
-
-.mediaLargeWidth .Quest_questPointScore_dc {
-    color: #ffdd99;
-    font-size: 18rem;
-    font-weight: 700;
-    line-height: 1.1;
-    top: -1rem;
-}
-
-.Quest_base__single_quest_2b .Quest_questPointScore_dc {
-    color: #ffdd99;
-    font-size: 15rem;
-    font-weight: 700;
-    line-height: 1.15;
-}
-
-.Quest_base__completed_19 .Quest_questPointScore_dc {
-    color: #80d43a;
-    font-size: 15rem;
-    font-weight: 700;
-    line-height: 1.15;
-}
-
-.mediaLargeWidth .Quest_base__completed_19 .Quest_questPointScore_dc {
-    color: #80d43a;
-    font-size: 18rem;
-    font-weight: 700;
-    line-height: 1.1;
-    top: -1rem;
-}
-
-.Quest_questPointBreak_ae {
-    display: none;
-    width: 10rem;
-    height: 24rem;
-    margin: 0 5rem;
-    background: url('R.images.fun_random.gui.maps.icons.feature.quest.vector_190') no-repeat center;
-}
-
-.Quest_base__big_f0 .Quest_questPointBreak_ae {
-    display: block;
-}
-
-.Quest_base__single_quest_2b .Quest_questPointBreak_ae {
-    display: block;
-}
-
-/* card transitions/animations*/
-
-/* card activation animations*/
-
-/* card edge transitions/animations*/
-
-/* infinite title transitions/animations*/
-
-/* infinite quest animations*/
-
-/* infinite cards transitions*/
-
-/* completed screen transitions/animation*/
-
-@keyframes InfiniteQuestCondition_completed-congrats_8a {
-    0% {
-        opacity: 0;
-        transform: translateY(5rem);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes InfiniteQuestCondition_completed-glow_ce {
-    0% {
-        opacity: 0;
-        transform: translate(-50%, 10rem);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translate(-50%, 0);
-    }
-}
-
-@keyframes InfiniteQuestCondition_card-show_07 {
-    0% {
-        opacity: 0;
-        top: 65%;
-        left: 50%;
-    }
-
-    100% {
-        opacity: 1;
-        top: 50%;
-        left: 50%;
-    }
-}
-
-@keyframes InfiniteQuestCondition_card-show-presentment_3f {
-    0% {
-        opacity: 0;
-        top: 200%;
-        left: 10%;
-    }
-
-    100% {
-        opacity: 1;
-        top: 50%;
-        left: 50%;
-    }
-}
-
-@keyframes InfiniteQuestCondition_edge_6a {
-    50% {
-        transform: translate(-1%, -5%) rotate(-2deg);
-    }
-
-    100% {
-        transform: translate(-1%, -10%) rotate(-4deg);
-    }
-}
-
-@keyframes InfiniteQuestCondition_dissolve_69 {
-    0% {
-        opacity: 1;
-        transform: scale(1);
-    }
-
-    100% {
-        opacity: 0;
-        transform: scale(1.5);
-    }
-}
-
-@keyframes InfiniteQuestCondition_blink-edge_f8 {
-    0% {
-        opacity: 1;
-        transform: translate(-50%, -100%) scaleY(1);
-    }
-
-    12.5% {
-        opacity: 1;
-        transform: translate(-50%, -100%) scale(0.25, 2);
-    }
-
-    100% {
-        opacity: 0;
-        transform: translate(-50%, -100%) scale(0.01, 3);
-    }
-}
-
-@keyframes InfiniteQuestCondition_blink_8d {
-    0% {
-        opacity: 1;
-        transform: translateX(-50%) scale(1);
-    }
-
-    12.5% {
-        opacity: 1;
-        transform: translateX(-50%) scale(0.25, 2);
-    }
-
-    100% {
-        opacity: 0;
-        transform: translateX(-50%) scale(0.01, 3);
-    }
-}
-
-@keyframes InfiniteQuestCondition_show-down_23 {
-    0% {
-        opacity: 0;
-        transform: translateY(-20rem);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes InfiniteQuestCondition_show-up_37 {
-    0% {
-        opacity: 0;
-        transform: translateY(30rem);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes InfiniteQuestCondition_show_36 {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
-
-@keyframes InfiniteQuestCondition_hide_cd {
-    0% {
-        opacity: 1;
-    }
-
-    100% {
-        opacity: 0;
-    }
-}
-
-@keyframes InfiniteQuestCondition_showGlow_c6 {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 0.7;
-    }
-}
-
-@keyframes InfiniteQuestCondition_hideGlow_78 {
-    0% {
-        opacity: 0.7;
-    }
-
-    100% {
-        opacity: 0;
-    }
-}
-
-@keyframes InfiniteQuestCondition_pointFadeOut_c1 {
-    0% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    100% {
-        opacity: 0;
-        transform: translateY(10%);
-    }
-}
-
-@keyframes InfiniteQuestCondition_pointFadeIn_42 {
-    0% {
-        opacity: 0;
-        transform: translateY(30%);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes InfiniteQuestCondition_first2void_1f {
-    0% {
-        opacity: 1;
-        transform: translate(0%, 0%) rotate(0);
-    }
-
-    50% {
-        opacity: 1;
-    }
-
-    100% {
-        opacity: 0;
-        transform: translateY(200%);
-    }
-}
-
-@keyframes InfiniteQuestCondition_second2firstTranslate_b6 {
-    0% {
-        transform: translate(6%, 1%) rotate(3deg);
-    }
-
-    100% {
-        transform: translate(6%, 0%) rotate(3deg);
-    }
-}
-
-@keyframes InfiniteQuestCondition_second2firstRotate_0a {
-    0% {
-        transform: translate(6%, 0%) rotate(3deg);
-    }
-
-    100% {
-        transform: translate(0%, 0%) rotate(0);
-    }
-}
-
-@keyframes InfiniteQuestCondition_third2second_a5 {
-    0% {
-        transform: translate(0%, 3%) rotate(-5deg);
-    }
-
-    100% {
-        transform: translate(6%, 1%) rotate(3deg);
-    }
-}
-
-/* asset paths*/
-
-.InfiniteQuestCondition_base_a3 {
-    padding: 20rem 20rem 0 16rem;
-    border-top: 1rem solid rgba(242, 242, 247, 0.1);
-}
-
-.InfiniteQuestCondition_conditionsDescription_c8 {
-    color: #8c8c7e;
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
-    margin-right: 5rem;
-    line-height: 18rem;
-}
-
-.InfiniteQuestCondition_conditionsPoints_1c {
-    display: flex;
-    align-items: center;
-}
-
-.InfiniteQuestCondition_conditionsPointsItem_64 {
-    color: #8c8c7e;
-    font-size: 22rem;
-    font-weight: 700;
-    line-height: 1.2;
-    line-height: 100%;
-}
-
-.InfiniteQuestCondition_currentPoint_2a {
-    width: 20rem;
-    height: 22rem;
-    position: relative;
-}
-
-.InfiniteQuestCondition_currentPointItem_27 {
-    color: #ffdd99;
-    font-size: 22rem;
-    font-weight: 700;
-    line-height: 1.2;
-    line-height: 100%;
-    text-shadow: 0 0 14rem rgba(242, 242, 247, 0.5);
-    position: absolute;
-    right: 0;
-}
-
-.InfiniteQuestCondition_currentPointItem__enter_d5 {
-    opacity: 0;
-    animation: InfiniteQuestCondition_pointFadeIn_42 0.4s ease-in 4s forwards;
-}
-
-.InfiniteQuestCondition_currentPointItem__exit_3a {
-    opacity: 1;
-    animation: InfiniteQuestCondition_pointFadeOut_c1 0.4s ease-out 4s forwards;
+    bottom: 26rem;
 }
 
 /* card transitions/animations*/
@@ -4374,6 +3794,318 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     background-repeat: no-repeat;
     background-position: 50% 50%;
     background-size: 44rem 37rem;
+}
+
+/* card transitions/animations*/
+
+/* card activation animations*/
+
+/* card edge transitions/animations*/
+
+/* infinite title transitions/animations*/
+
+/* infinite quest animations*/
+
+/* infinite cards transitions*/
+
+/* completed screen transitions/animation*/
+
+@keyframes InfiniteQuestCondition_completed-congrats_8a {
+    0% {
+        opacity: 0;
+        transform: translateY(5rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes InfiniteQuestCondition_completed-glow_ce {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, 10rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+}
+
+@keyframes InfiniteQuestCondition_card-show_07 {
+    0% {
+        opacity: 0;
+        top: 65%;
+        left: 50%;
+    }
+
+    100% {
+        opacity: 1;
+        top: 50%;
+        left: 50%;
+    }
+}
+
+@keyframes InfiniteQuestCondition_card-show-presentment_3f {
+    0% {
+        opacity: 0;
+        top: 200%;
+        left: 10%;
+    }
+
+    100% {
+        opacity: 1;
+        top: 50%;
+        left: 50%;
+    }
+}
+
+@keyframes InfiniteQuestCondition_edge_6a {
+    50% {
+        transform: translate(-1%, -5%) rotate(-2deg);
+    }
+
+    100% {
+        transform: translate(-1%, -10%) rotate(-4deg);
+    }
+}
+
+@keyframes InfiniteQuestCondition_dissolve_69 {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(1.5);
+    }
+}
+
+@keyframes InfiniteQuestCondition_blink-edge_f8 {
+    0% {
+        opacity: 1;
+        transform: translate(-50%, -100%) scaleY(1);
+    }
+
+    12.5% {
+        opacity: 1;
+        transform: translate(-50%, -100%) scale(0.25, 2);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -100%) scale(0.01, 3);
+    }
+}
+
+@keyframes InfiniteQuestCondition_blink_8d {
+    0% {
+        opacity: 1;
+        transform: translateX(-50%) scale(1);
+    }
+
+    12.5% {
+        opacity: 1;
+        transform: translateX(-50%) scale(0.25, 2);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(-50%) scale(0.01, 3);
+    }
+}
+
+@keyframes InfiniteQuestCondition_show-down_23 {
+    0% {
+        opacity: 0;
+        transform: translateY(-20rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes InfiniteQuestCondition_show-up_37 {
+    0% {
+        opacity: 0;
+        transform: translateY(30rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes InfiniteQuestCondition_show_36 {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes InfiniteQuestCondition_hide_cd {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes InfiniteQuestCondition_showGlow_c6 {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0.7;
+    }
+}
+
+@keyframes InfiniteQuestCondition_hideGlow_78 {
+    0% {
+        opacity: 0.7;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes InfiniteQuestCondition_pointFadeOut_c1 {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(10%);
+    }
+}
+
+@keyframes InfiniteQuestCondition_pointFadeIn_42 {
+    0% {
+        opacity: 0;
+        transform: translateY(30%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes InfiniteQuestCondition_first2void_1f {
+    0% {
+        opacity: 1;
+        transform: translate(0%, 0%) rotate(0);
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(200%);
+    }
+}
+
+@keyframes InfiniteQuestCondition_second2firstTranslate_b6 {
+    0% {
+        transform: translate(6%, 1%) rotate(3deg);
+    }
+
+    100% {
+        transform: translate(6%, 0%) rotate(3deg);
+    }
+}
+
+@keyframes InfiniteQuestCondition_second2firstRotate_0a {
+    0% {
+        transform: translate(6%, 0%) rotate(3deg);
+    }
+
+    100% {
+        transform: translate(0%, 0%) rotate(0);
+    }
+}
+
+@keyframes InfiniteQuestCondition_third2second_a5 {
+    0% {
+        transform: translate(0%, 3%) rotate(-5deg);
+    }
+
+    100% {
+        transform: translate(6%, 1%) rotate(3deg);
+    }
+}
+
+/* asset paths*/
+
+.InfiniteQuestCondition_base_a3 {
+    padding: 20rem 20rem 0 16rem;
+    border-top: 1rem solid rgba(242, 242, 247, 0.1);
+}
+
+.InfiniteQuestCondition_conditionsDescription_c8 {
+    color: #8c8c7e;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    margin-right: 5rem;
+    line-height: 18rem;
+}
+
+.InfiniteQuestCondition_conditionsPoints_1c {
+    display: flex;
+    align-items: center;
+}
+
+.InfiniteQuestCondition_conditionsPointsItem_64 {
+    color: #8c8c7e;
+    font-size: 22rem;
+    font-weight: 700;
+    line-height: 1.2;
+    line-height: 100%;
+}
+
+.InfiniteQuestCondition_currentPoint_2a {
+    width: 20rem;
+    height: 22rem;
+    position: relative;
+}
+
+.InfiniteQuestCondition_currentPointItem_27 {
+    color: #ffdd99;
+    font-size: 22rem;
+    font-weight: 700;
+    line-height: 1.2;
+    line-height: 100%;
+    text-shadow: 0 0 14rem rgba(242, 242, 247, 0.5);
+    position: absolute;
+    right: 0;
+}
+
+.InfiniteQuestCondition_currentPointItem__enter_d5 {
+    opacity: 0;
+    animation: InfiniteQuestCondition_pointFadeIn_42 0.4s ease-in 4s forwards;
+}
+
+.InfiniteQuestCondition_currentPointItem__exit_3a {
+    opacity: 1;
+    animation: InfiniteQuestCondition_pointFadeOut_c1 0.4s ease-out 4s forwards;
 }
 
 /* card transitions/animations*/
@@ -5033,6 +4765,10 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     position: absolute;
     top: 50%;
     left: 50%;
+    transform: translate(-50%, -35%);
+}
+
+.mediaMedium .InfiniteProgression_content_68 {
     transform: translate(-50%, -50%);
 }
 
@@ -5336,6 +5072,245 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     opacity: 0;
 }
 
+.Point_title_f1 {
+    color: #8c8c7e;
+    font-size: 12rem;
+    font-weight: 400;
+    line-height: 1.3;
+    display: flex;
+    align-items: flex-end;
+    white-space: nowrap;
+}
+
+.mediaLarge .Point_title_f1 {
+    font-size: 14rem;
+}
+
+.mediaExtraLargeWidth .Point_title_f1 {
+    font-size: 16rem;
+}
+
+.Point_base__single_quest_37 .Point_title_f1 {
+    color: #8c8c7e;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+.Point_score_82 {
+    color: #ffdd99;
+    font-size: 15rem;
+    font-weight: 700;
+    line-height: 1.15;
+    padding-left: 2rem;
+    white-space: nowrap;
+    position: relative;
+}
+
+.mediaExtraLargeWidth .Point_score_82 {
+    font-size: 18rem;
+    top: -1rem;
+}
+
+.Point_base__single_quest_37 .Point_score_82 {
+    color: #ffdd99;
+    font-size: 15rem;
+    font-weight: 700;
+    line-height: 1.15;
+}
+
+.Point_base__completed_99 .Point_score_82 {
+    color: #80d43a;
+    font-size: 15rem;
+    font-weight: 700;
+    line-height: 1.15;
+}
+
+.mediaExtraLargeWidth .Point_base__completed_99 .Point_score_82 {
+    font-size: 18rem;
+    top: -1rem;
+}
+
+.Quest_base_24 {
+    display: flex;
+    padding: 18rem;
+    border: 1rem solid rgba(255, 255, 255, 0.1);
+    border-radius: 5rem;
+}
+
+.mediaLargeHeight .Quest_base_24 {
+    padding: 20rem 24rem 12rem;
+}
+
+.Quest_base__completed_19 {
+    box-shadow: 0 0 39rem 0 rgba(128, 212, 58, 0.5) inset;
+}
+
+.Quest_base__single_quest_2b {
+    padding: 20rem;
+    border: none;
+    box-shadow: none;
+}
+
+.Quest_base__infinite_3e {
+    width: 478rem;
+    height: 136rem;
+    border: none;
+}
+
+.Quest_base__cursor_grab_c0 {
+    cursor: default;
+}
+
+.Quest_conditionIcon_13 {
+    display: flex;
+}
+
+.Quest_questIcon_2e {
+    width: 24rem;
+    height: 24rem;
+    background: center / contain no-repeat;
+    opacity: 0.5;
+}
+
+.mediaSmall .Quest_questIcon_2e {
+    width: 32rem;
+    height: 32rem;
+}
+
+.Quest_base__single_quest_2b .Quest_questIcon_2e {
+    width: 32rem;
+    height: 32rem;
+}
+
+.mediaExtraLargeWidth .Quest_questIcon_2e {
+    width: 64rem;
+    height: 64rem;
+}
+
+.Quest_questContent_01 {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    margin-left: 16rem;
+}
+
+.mediaLarge .Quest_questContent_01 {
+    margin-left: 20rem;
+}
+
+.Quest_base__infinite_3e .mediaLarge .Quest_questContent_01 {
+    margin-left: 4rem;
+}
+
+.Quest_questProgress_40 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    flex: 0;
+    color: #8c8c7e;
+    font-size: 12rem;
+    font-weight: 400;
+    line-height: 15.6rem;
+}
+
+.mediaLarge .Quest_questProgress_40 {
+    font-size: 14rem;
+    line-height: 18.2rem;
+}
+
+.mediaExtraLargeWidth .Quest_questProgress_40 {
+    font-size: 16rem;
+}
+
+.Quest_base__single_quest_2b .Quest_questProgress_40 {
+    font-size: 12rem;
+    line-height: 15.6rem;
+}
+
+.Quest_questProgressCurrent_93 {
+    color: #e9e2bf;
+}
+
+.Quest_base__completed_19 .Quest_questProgressCurrent_93 {
+    color: #8c8c7e;
+}
+
+.Quest_questTitle_07 {
+    flex: 1;
+    padding: 2rem 0;
+
+    color: #f2f2f7;
+
+    font-size: 14rem;
+
+    font-weight: 700;
+
+    line-height: 1.15;
+}
+
+.mediaLarge .Quest_questTitle_07 {
+    font-size: 15rem;
+}
+
+.mediaExtraLargeWidth .Quest_questTitle_07 {
+    font-size: 22rem;
+}
+
+.Quest_base__completed_19 .Quest_questTitle_07 {
+    color: #80d43a;
+}
+
+.Quest_base__single_quest_2b .Quest_questTitle_07 {
+    color: #f2f2f7;
+    font-size: 15rem;
+    font-weight: 700;
+    line-height: 1.15;
+}
+
+.Quest_questPoints_88 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    flex: 0;
+    height: 36rem;
+}
+
+.mediaMedium .Quest_questPoints_88 {
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.mediaExtraLargeWidth .Quest_questPoints_88 {
+    margin-bottom: 5rem;
+}
+
+.Quest_base__single_quest_2b .Quest_questPoints_88 {
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.Quest_questPointBreak_ae {
+    display: none;
+    width: 10rem;
+    height: 24rem;
+    margin: 0 5rem;
+    background: url('R.images.fun_random.gui.maps.icons.feature.quest.vector_190') no-repeat center;
+}
+
+.mediaMedium .Quest_questPointBreak_ae {
+    display: block;
+}
+
+.Quest_base__single_quest_2b .Quest_questPointBreak_ae {
+    display: block;
+}
+
 /* card transitions/animations*/
 
 /* card activation animations*/
@@ -5621,10 +5596,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     margin-bottom: 4rem;
 }
 
-.mediaLargeHeight .QuestsList_toQuestsUpdate_5a {
-    margin-bottom: 8rem;
-}
-
 .QuestsList_oneQuest_a8 {
     display: flex;
     justify-content: center;
@@ -5661,14 +5632,14 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     height: 160rem;
 }
 
-.QuestsList_base__bigQuests_86 .QuestsList_quest_3a {
+.mediaLarge .QuestsList_quest_3a {
     width: 350rem;
     height: 138rem;
 }
 
-.mediaLargeWidth .QuestsList_base__bigQuests_86 .QuestsList_quest_3a {
-    width: 386rem;
-    height: 167rem;
+.mediaExtraLargeWidth .QuestsList_quest_3a {
+    width: 434rem;
+    height: 200rem;
 }
 
 .QuestsList_severalQuests_49 .QuestsList_quest_3a {
@@ -5702,7 +5673,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     border-left: 1rem solid rgba(255, 255, 255, 0.1);
 }
 
-.QuestsList_base__minScreen_22 .QuestsList_oneQuest_a8 .QuestsList_currentProgress_db {
+.QuestsList_base__small_a3 .QuestsList_oneQuest_a8 .QuestsList_currentProgress_db {
     margin-top: 0;
 }
 
@@ -6330,7 +6301,9 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     align-items: center;
     width: 100%;
     height: 100%;
+    opacity: 1;
     overflow: hidden;
+    animation: App_show_1d cubic-bezier(0.5, 0, 0.75, 0) 0.2s forwards;
 }
 
 .App_close_ec {
@@ -6420,9 +6393,9 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     max-height: 1100rem;
 }
 
-.App_base__big_8a .App_ordinaryProgression_be {
+.mediaExtraLargeHeight .App_ordinaryProgression_be {
     max-height: 70vh;
-    margin-top: 22vh;
+    margin-top: 11vh;
 }
 
 .App_questsList_7c {
@@ -6474,7 +6447,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .App_base__big_8a .App_cardProgression_0e {
     flex-grow: 0;
     max-height: 1100rem;
-    margin: 0;
+    margin-top: 80rem;
 }
 
 .App_base__completed_5b .App_cardProgression_0e {

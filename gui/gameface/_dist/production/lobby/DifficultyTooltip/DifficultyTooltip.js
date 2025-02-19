@@ -302,7 +302,7 @@
                         engine.whenReady,
                     ]),
                     ne = { view: a, client: o, sound: T };
-                var re = n(6179),
+                var re = n(7363),
                     oe = n.n(re);
                 const ie = {
                         base: 'TooltipDecorator_base_c9',
@@ -400,7 +400,7 @@
                         )
                     );
                 });
-                var ue = n(493),
+                var ue = n(1533),
                     ce = n.n(ue),
                     de = n(3403);
                 function ve() {
@@ -688,6 +688,12 @@
                         document.getElementById('root'),
                     );
                 });
+            },
+            7363: (e) => {
+                e.exports = React;
+            },
+            1533: (e) => {
+                e.exports = ReactDOM;
             },
         },
         n = {};

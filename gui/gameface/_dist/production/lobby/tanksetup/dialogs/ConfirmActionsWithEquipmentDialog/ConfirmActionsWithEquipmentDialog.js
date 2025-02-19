@@ -822,9 +822,9 @@
             },
             2449: (u, e, t) => {
                 'use strict';
-                var n = t(6179),
+                var n = t(7363),
                     r = t.n(n),
-                    i = t(493),
+                    i = t(1533),
                     a = t.n(i);
                 let s;
                 !(function (u) {
@@ -1291,7 +1291,7 @@
                                     null == E ? void 0 : E.center,
                                 ),
                                 f = D()(X.icon, d && X.icon__responsive, null == E ? void 0 : E.icon),
-                                y = D()(X.title, d && X.title__responsive),
+                                y = D()(X.title, d && X.title__responsive, null == E ? void 0 : E.title),
                                 w = D()(X.closeBtn, F && X.closeBtn__responsive),
                                 P = D()(
                                     X.divider,
@@ -1333,17 +1333,17 @@
                     V = 'Alert_alert_66',
                     q = 'Alert_icon_ea',
                     z = 'Alert_alertText_14',
-                    Y = ({ alertText: u, className: e }) =>
+                    j = ({ alertText: u, className: e }) =>
                         r().createElement(
                             'div',
                             { className: D()(V, e) },
                             r().createElement('i', { className: q }),
                             r().createElement('span', { className: z }, u),
                         );
-                let j, $, K;
+                let Y, $, K;
                 !(function (u) {
                     (u.small = 'small'), (u.big = 'big'), (u.large = 'large'), (u.extraLarge = 'extraLarge');
-                })(j || (j = {})),
+                })(Y || (Y = {})),
                     (function (u) {
                         (u.credits = 'credits'),
                             (u.gold = 'gold'),
@@ -1351,7 +1351,8 @@
                             (u.xp = 'xp'),
                             (u.freeXP = 'freeXP'),
                             (u.eliteXP = 'eliteXP'),
-                            (u.equipCoin = 'equipCoin');
+                            (u.equipCoin = 'equipCoin'),
+                            (u.stpCoin = 'stpcoin');
                     })($ || ($ = {})),
                     (function (u) {
                         (u.Red = 'RedActionBG'), (u.Blue = 'BlueActionBG');
@@ -1458,14 +1459,14 @@
                         (u.PremiumPlus = 'premium_plus'),
                         (u.BattlePassPoints = 'battlePassPoints'),
                         (u.BattlePassSelectToken = 'battlePassSelectToken'),
+                        (u.BattlePassTicket = 'lootBox_commonTicket'),
+                        (u.BattlePassTaler = 'bptaler'),
                         (u.StyleProgressToken = 'styleProgressToken'),
                         (u.TmanToken = 'tmanToken'),
                         (u.NaturalCover = 'naturalCover'),
                         (u.BpCoin = 'bpcoin'),
                         (u.BattlaPassFinalAchievement = 'dossier_achievement'),
                         (u.BattleBadge = 'dossier_badge'),
-                        (u.NewYearInvoice = 'newYearInvoice'),
-                        (u.NewYearSlot = 'newYearSlot'),
                         (u.BonusX5 = 'battle_bonus_x5'),
                         (u.CrewBonusX3 = 'crew_bonus_x3'),
                         (u.Vehicles = 'vehicles'),
@@ -1476,7 +1477,8 @@
                         (u.OptionalDevice = 'optionalDevice'),
                         (u.EquipCoin = 'equipCoin'),
                         (u.LootBox = 'lootBox'),
-                        (u.BrCoin = 'brcoin');
+                        (u.BrCoin = 'brcoin'),
+                        (u.StpCoin = 'stpcoin');
                 })(eu || (eu = {})),
                     (function (u) {
                         (u.Gold = 'gold'),
@@ -1554,10 +1556,11 @@
                             (u.PROGRESSION_STYLE_UPGRADED_3 = 'progressionStyleUpgraded_3'),
                             (u.PROGRESSION_STYLE_UPGRADED_4 = 'progressionStyleUpgraded_4'),
                             (u.PROGRESSION_STYLE_UPGRADED_5 = 'progressionStyleUpgraded_5'),
-                            (u.PROGRESSION_STYLE_UPGRADED_6 = 'progressionStyleUpgraded_6');
+                            (u.PROGRESSION_STYLE_UPGRADED_6 = 'progressionStyleUpgraded_6'),
+                            (u.LOOT_BOX = 'eventLootBoxes');
                     })(iu || (iu = {})),
                     (function (u) {
-                        u.BATTLE_BOOSTER = 'battleBooster';
+                        (u.BATTLE_BOOSTER = 'battleBooster'), (u.LOOT_BOX = 'lootBox');
                     })(au || (au = {})),
                     (function (u) {
                         (u.BATTLE_BOOSTER = 'battleBooster'),
@@ -1894,6 +1897,10 @@
                         'icon__equipCoin-big': 'Currency_icon__equipCoin-big_79',
                         'icon__equipCoin-large': 'Currency_icon__equipCoin-large_2c',
                         'icon__equipCoin-extraLarge': 'Currency_icon__equipCoin-extraLarge_8a',
+                        'icon__stpCoin-small': 'Currency_icon__stpCoin-small_6b',
+                        'icon__stpCoin-big': 'Currency_icon__stpCoin-big_da',
+                        'icon__stpCoin-large': 'Currency_icon__stpCoin-large_ee',
+                        'icon__stpCoin-extraLarge': 'Currency_icon__stpCoin-extraLarge_fa',
                         value: 'Currency_value_e1',
                         value__freeXP: 'Currency_value__freeXP_cb',
                         value__credits: 'Currency_value__credits_76',
@@ -1902,6 +1909,7 @@
                         value__crystal: 'Currency_value__crystal_19',
                         value__equipCoin: 'Currency_value__equipCoin_d0',
                         value__eliteXP: 'Currency_value__eliteXP_62',
+                        value__stpCoin: 'Currency_value__stpCoin_38',
                         value__notEnough: 'Currency_value__notEnough_56',
                         stock: 'Currency_stock_87',
                         stock__indent: 'Currency_stock__indent_a1',
@@ -2018,13 +2026,13 @@
                                         classMix: null == l ? void 0 : l.additionalText,
                                     }),
                             ),
-                            _ && r().createElement(Y, { className: null == l ? void 0 : l.alert, alertText: o }),
+                            _ && r().createElement(j, { className: null == l ? void 0 : l.alert, alertText: o }),
                         ),
                     Nu = 'Content_base_a7',
                     xu = 'Content_currency_4f',
                     Tu = 'Content_column_9d',
-                    Ru = 'Content_alert_0f',
-                    Ou = R.strings.tank_setup.dialogs.confirmActionsWithEquipmentDialog.content,
+                    Ou = 'Content_alert_0f',
+                    Ru = R.strings.tank_setup.dialogs.confirmActionsWithEquipmentDialog.content,
                     ku = (0, A.Pi)(() => {
                         const u = Cu().model,
                             e = u.computes.priceDevice(),
@@ -2032,19 +2040,19 @@
                             n = u.root.get(),
                             i = n.dialogType,
                             a = n.alertText,
-                            s = Ou.$dyn(i);
+                            s = Ru.$dyn(i);
                         return r().createElement(
                             'div',
                             { className: Nu },
                             r().createElement(Pu, {
                                 price: e,
                                 type: t,
-                                size: j.small,
+                                size: Y.small,
                                 priceBlockText: s,
                                 alertText: a,
                                 showAlertMessage: !0,
                                 className: Tu,
-                                classNames: { currency: xu, alert: Ru },
+                                classNames: { currency: xu, alert: Ou },
                             }),
                         );
                     }),
@@ -2133,15 +2141,20 @@
                                     ((u = 1) => {
                                         const e = new Error().stack;
                                         let t,
-                                            n = R.invalid('resId');
+                                            n = R.invalid('resId'),
+                                            r = '';
+                                        var i;
                                         return (
                                             e &&
-                                                ((t = e.split('\n')[u].split('.js')[0].split('/').pop() || ''),
+                                                ((r =
+                                                    (null == (i = e.match(/(coui:\/\/[^\s]+\.js)/)) ? void 0 : i[0]) ||
+                                                    ''),
+                                                (t = e.split('\n')[u].split('.js')[0].split('/').pop() || ''),
                                                 window.__feature &&
                                                     window.__feature !== t &&
                                                     window.subViews[t] &&
                                                     (n = window.subViews[t].id)),
-                                            { caller: t, stack: e, resId: n }
+                                            { callerUrl: r, caller: t, stack: e, resId: n }
                                         );
                                     })().resId,
                                 [p],
@@ -2317,9 +2330,9 @@
                         );
                         var _;
                     };
-                function Yu() {
+                function ju() {
                     return (
-                        (Yu = Object.assign
+                        (ju = Object.assign
                             ? Object.assign.bind()
                             : function (u) {
                                   for (var e = 1; e < arguments.length; e++) {
@@ -2328,15 +2341,15 @@
                                   }
                                   return u;
                               }),
-                        Yu.apply(null, arguments)
+                        ju.apply(null, arguments)
                     );
                 }
-                const ju = ({ children: u, tooltipArgs: e, className: t }) => {
+                const Yu = ({ children: u, tooltipArgs: e, className: t }) => {
                         if (!e) return u;
                         const n = r().createElement('div', { className: t }, u);
                         if (e.header || e.body) return r().createElement(zu, e, n);
                         const i = e.contentId;
-                        return i ? r().createElement(Uu, Yu({}, e, { contentId: i }), n) : r().createElement(Xu, e, n);
+                        return i ? r().createElement(Uu, ju({}, e, { contentId: i }), n) : r().createElement(Xu, e, n);
                     },
                     $u =
                         (eu.Items,
@@ -2357,24 +2370,27 @@
                         eu.TankmenXpFactor,
                         eu.FreeXpFactor,
                         eu.BattleToken,
+                        eu.LootBox,
                         eu.PremiumUniversal,
                         eu.NaturalCover,
                         eu.BpCoin,
                         eu.BattlePassSelectToken,
                         eu.BattlaPassFinalAchievement,
                         eu.BattleBadge,
+                        eu.BattlePassTicket,
                         eu.BonusX5,
                         eu.CrewBonusX3,
-                        eu.NewYearInvoice,
                         eu.EpicSelectToken,
                         eu.Comp7TokenWeeklyReward,
                         eu.DeluxeGift,
                         eu.BattleBoosterGift,
                         eu.OptionalDevice,
+                        eu.Lootbox,
                         eu.Gold,
                         eu.Credits,
                         eu.Crystal,
                         eu.FreeXp,
+                        eu.StpCoin,
                         eu.BattlePassPoints,
                         eu.EquipCoin,
                         eu.PremiumPlus,
@@ -2401,6 +2417,7 @@
                         info__multi: 'Reward_info__multi_63',
                         info__credits: 'Reward_info__credits_ef',
                         info__gold: 'Reward_info__gold_36',
+                        info__bptaler: 'Reward_info__bptaler_82',
                         info__crystal: 'Reward_info__crystal_36',
                         info__premiumTank: 'Reward_info__premiumTank_d3',
                         title: 'Reward_title_36',
@@ -2427,6 +2444,8 @@
                                     case iu.BATTLE_BOOSTER:
                                     case iu.BATTLE_BOOSTER_REPLACE:
                                         return au.BATTLE_BOOSTER;
+                                    case iu.LOOT_BOX:
+                                        return au.LOOT_BOX;
                                 }
                             })(n, i),
                             F = ((u) => {
@@ -2486,7 +2505,7 @@
                             'div',
                             { className: D()(Ku.base, Ku[`base__${n}`], l), style: c },
                             r().createElement(
-                                ju,
+                                Yu,
                                 { tooltipArgs: E, className: Ku.tooltipWrapper },
                                 r().createElement(
                                     r().Fragment,
@@ -2532,7 +2551,7 @@
                             ),
                             t &&
                                 r().createElement(
-                                    ju,
+                                    Yu,
                                     { tooltipArgs: A },
                                     r().createElement('div', {
                                         className: D()(Ku.timer, null == _ ? void 0 : _.periodicIcon),
@@ -2798,7 +2817,7 @@
                                 r().createElement(Pu, {
                                     price: u,
                                     type: o,
-                                    size: j.big,
+                                    size: Y.big,
                                     priceBlockText: c,
                                     className: Ae.column,
                                     classNames: { currency: Ae.currency },
@@ -3360,7 +3379,7 @@
                                     r().createElement(Pu, {
                                         price: Ce(u, o),
                                         type: l,
-                                        size: j.big,
+                                        size: Y.big,
                                         classNames: { currency: Be.currency, alert: Be.alert },
                                     }),
                                 ),
@@ -3433,8 +3452,8 @@
                         });
                     }),
                     Te = 'App_dialogBackground_3a',
-                    Re = 'App_dialogCenter_6a',
-                    Oe = (0, A.Pi)(() => {
+                    Oe = 'App_dialogCenter_6a',
+                    Re = (0, A.Pi)(() => {
                         const u = Cu(),
                             e = u.model,
                             t = u.controls,
@@ -3454,19 +3473,27 @@
                             content:
                                 s.DeconstructFromSlots !== o
                                     ? r().createElement(ku, null)
-                                    : r().createElement(Y, { alertText: l }),
+                                    : r().createElement(j, { alertText: l }),
                             buttons: r().createElement(be, null),
                             displayFlags: n,
                             classMix: Te,
-                            classNames: { center: Re },
+                            classNames: { center: Oe },
                         });
                     });
                 engine.whenReady.then(() => {
                     a().render(
-                        r().createElement(Bu, null, r().createElement(Oe, null)),
+                        r().createElement(Bu, null, r().createElement(Re, null)),
                         document.getElementById('root'),
                     );
                 });
+            },
+            7363: (u) => {
+                'use strict';
+                u.exports = React;
+            },
+            1533: (u) => {
+                'use strict';
+                u.exports = ReactDOM;
             },
         },
         __webpack_module_cache__ = {},

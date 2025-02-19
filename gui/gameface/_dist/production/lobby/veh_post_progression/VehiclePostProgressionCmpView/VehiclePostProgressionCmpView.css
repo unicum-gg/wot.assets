@@ -1571,6 +1571,34 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .Currency_base__extraLarge_4d .Currency_icon__equipCoin-extraLarge_8a {
     transform: translateX(2rem) translateY(4rem);
 }
+.Currency_icon__stpCoin-small_6b {
+    --icon-height: 16rem;
+    margin-right: -2rem;
+    background-image: url('R.images.gui.maps.icons.library.stpcoin.stpcoinSmall');
+}
+.Currency_base__small_af .Currency_icon__stpCoin-small_6b {
+    transform: translateX(-1rem) translateY(1rem);
+}
+.Currency_icon__stpCoin-big_da {
+    --icon-height: 24rem;
+    background-image: url('R.images.gui.maps.icons.library.stpcoin.stpcoinBig');
+}
+.Currency_base__big_bc .Currency_icon__stpCoin-big_da {
+    transform: translateX(-5rem) translateY(3rem);
+}
+.Currency_icon__stpCoin-large_ee {
+    --icon-height: 48rem;
+    margin-right: 2rem;
+    background-image: url('R.images.gui.maps.icons.library.stpcoin.stpcoinLarge');
+}
+.Currency_icon__stpCoin-extraLarge_fa {
+    --icon-height: 80rem;
+    margin-right: 8rem;
+    background-image: url('R.images.gui.maps.icons.library.stpcoin.stpcoinExtraLarge');
+}
+.Currency_base__extraLarge_4d .Currency_icon__stpCoin-extraLarge_fa {
+    transform: translateX(2rem) translateY(4rem);
+}
 .Currency_value_e1 {
     /* font-size inherit does not work here, so 1em means the size does not change */
     /* stylelint-disable-next-line */
@@ -1613,7 +1641,8 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .Currency_value__xp_b0,
 .Currency_value__crystal_19,
 .Currency_value__equipCoin_d0,
-.Currency_value__eliteXP_62 {
+.Currency_value__eliteXP_62,
+.Currency_value__stpCoin_38 {
     color: #c9c9b6;
 }
 .Currency_base__small_af .Currency_value__notEnough_56 {
@@ -2520,27 +2549,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     background: center / contain no-repeat;
 }
 
-.CompareControl_base_cd {
-    display: flex;
-    align-items: center;
-    height: 80rem;
-    margin: 0 2rem;
-    border-top: 1rem solid rgba(196, 196, 196, 0.1);
-}
-
-.CompareControl_buttonWrapper_a8 {
-    margin: 0 7rem;
-}
-
-.CompareControl_flexboxPlaceholder_a2 {
-    flex: 1;
-}
-
-.CompareControl_buttonMix_99 {
-    padding-left: 40rem;
-    padding-right: 40rem;
-}
-
 body {
     margin-top: 1rem;
 }
@@ -2589,4 +2597,25 @@ body {
 
 .App_base__extraLarge_f8 .App_gridWrapper_6a {
     max-height: 823rem;
+}
+
+.CompareControl_base_cd {
+    display: flex;
+    align-items: center;
+    height: 80rem;
+    margin: 0 2rem;
+    border-top: 1rem solid rgba(196, 196, 196, 0.1);
+}
+
+.CompareControl_buttonWrapper_a8 {
+    margin: 0 7rem;
+}
+
+.CompareControl_flexboxPlaceholder_a2 {
+    flex: 1;
+}
+
+.CompareControl_buttonMix_99 {
+    padding-left: 40rem;
+    padding-right: 40rem;
 }

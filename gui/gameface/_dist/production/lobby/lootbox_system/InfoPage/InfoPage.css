@@ -1012,6 +1012,35 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     margin-top: 52rem;
 }
 
+.ComplexNumber_base_8f {
+    display: flex;
+    align-items: flex-end;
+}
+
+.ComplexNumber_integer_6d {
+    font-size: 48rem;
+}
+
+.mediaMedium .ComplexNumber_integer_6d {
+    font-size: 60rem;
+}
+
+.ComplexNumber_fraction_3b {
+    align-items: flex-end;
+    font-size: 28rem;
+    line-height: 38rem;
+}
+
+.mediaSmall .ComplexNumber_fraction_3b {
+    font-size: 36rem;
+    line-height: 46rem;
+}
+
+.mediaMedium .ComplexNumber_fraction_3b {
+    font-size: 44rem;
+    line-height: 54rem;
+}
+
 .LoupeButton_base_bb {
     width: 100%;
     height: 100%;
@@ -1092,6 +1121,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 
 .Title_base__equipCoin_a4 .Title_name_7a,
 .Title_base__freeXP_1b .Title_name_7a,
+.Title_base__bptaler_4e .Title_name_7a,
 .Title_base__crystal_67 .Title_name_7a {
     color: #c9c9b6;
 }
@@ -1213,27 +1243,60 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     margin-top: 12rem;
 }
 
-.RewardBlock_dropProbability_44 {
-    color: #e9e2bf;
-    font-size: 56rem;
-    font-weight: 700;
-    line-height: 1.1;
+.RewardBlock_probabilityBlock_48 {
     width: 132rem;
     margin-top: 12rem;
     opacity: 0.7;
 }
 
-.mediaSmall .RewardBlock_dropProbability_44 {
+.mediaSmall .RewardBlock_probabilityBlock_48 {
     width: 148rem;
 }
 
-.mediaMedium .RewardBlock_dropProbability_44 {
+.mediaMedium .RewardBlock_probabilityBlock_48 {
     width: 196rem;
-    font-size: 73rem;
 }
 
-.mediaLarge .RewardBlock_dropProbability_44 {
+.mediaLarge .RewardBlock_probabilityBlock_48 {
     width: 192rem;
+}
+
+.RewardBlock_probability_66 {
+    color: #e9e2bf;
+    font-size: 56rem;
+    font-weight: 700;
+    line-height: 1.1;
+    display: flex;
+    align-items: flex-end;
+    font-size: 48rem;
+}
+
+.mediaMedium .RewardBlock_probability_66 {
+    font-size: 60rem;
+}
+
+.RewardBlock_probability__fraction_3b {
+    font-size: 28rem;
+}
+
+.mediaSmall .RewardBlock_probability__fraction_3b {
+    font-size: 36rem;
+}
+
+.mediaMedium .RewardBlock_probability__fraction_3b {
+    font-size: 44rem;
+}
+
+.RewardBlock_percent_03 {
+    line-height: 36rem;
+}
+
+.mediaSmall .RewardBlock_percent_03 {
+    line-height: 44rem;
+}
+
+.mediaMedium .RewardBlock_percent_03 {
+    line-height: 52rem;
 }
 
 .RewardBlock_rewards_5c {

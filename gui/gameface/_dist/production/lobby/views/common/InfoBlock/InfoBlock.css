@@ -1,0 +1,71 @@
+.FormatText_base_d0 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.InfoBlock_titleBlock_22 {
+    text-align: center;
+}
+
+.InfoBlock_title_af {
+    color: #f2f2f7;
+    font-size: 56rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.InfoBlock_subtitle_f4 {
+    color: rgb(2, 190, 100);
+    font-size: 22rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 24rem;
+}
+
+.InfoBlock_eventTime_b5 {
+    color: #e9e2bf;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+
+.InfoBlock_cardsContainer_2c {
+    display: flex;
+    margin-top: 47rem;
+}
+
+.InfoBlock_card_b7 {
+    width: 310rem;
+    text-align: center;
+}
+
+.InfoBlock_card_b7 + .InfoBlock_card_b7 {
+    margin-left: 18rem;
+}
+
+.InfoBlock_img_13 {
+    width: 100%;
+    height: 185rem;
+    margin-bottom: 30rem;
+    background: no-repeat center / contain;
+}
+
+.InfoBlock_cardTitle_dd {
+    color: #e9e2bf;
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 6rem;
+}
+
+.InfoBlock_cardSubtitle_65 {
+    color: #8c8c7e;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+    line-height: 20rem;
+}
+
+.mediaMedium .InfoBlock_cardSubtitle_65 {
+    line-height: 24rem;
+}

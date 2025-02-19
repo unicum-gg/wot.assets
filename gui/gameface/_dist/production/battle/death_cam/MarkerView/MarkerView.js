@@ -4,7 +4,7 @@
             3495: (e, u, t) => {
                 t.d(u, { Y: () => m });
                 var a = t(3138),
-                    n = t(6179),
+                    n = t(7363),
                     i = t(1043),
                     r = t(5262);
                 const o = a.O.client.getSize('rem'),
@@ -14,10 +14,10 @@
                     m = (0, n.createContext)(c);
             },
             1039: (e, u, t) => {
-                t(3138), t(6536), t(6179), t(3495), t(1043), t(5262);
+                t(3138), t(6536), t(7363), t(3495), t(1043), t(5262);
             },
             6010: (e, u, t) => {
-                var a = t(6179),
+                var a = t(7363),
                     n = t(7382),
                     i = t(3495);
                 const r = ['children'];
@@ -535,11 +535,11 @@
                     };
             },
             6536: (e, u, t) => {
-                t(6179);
+                t(7363);
             },
             5415: (e, u, t) => {
                 t.d(u, { GS: () => s, cJ: () => r });
-                var a = t(6179),
+                var a = t(7363),
                     n = t(7739),
                     i = t(1043);
                 let r, o, l;
@@ -1054,7 +1054,7 @@
                     return !1;
                 }
                 console.log;
-                var o = t(6179),
+                var o = t(7363),
                     l = t.n(o),
                     s = t(3138);
                 function c(e, u) {
@@ -1443,7 +1443,7 @@
                     h = (F[0], F[1]);
             },
             907: (e, u, t) => {
-                var a = t(6179),
+                var a = t(7363),
                     n = t.n(a),
                     i = t(3403),
                     r = t(5415),
@@ -2758,6 +2758,12 @@
                             (e.legacyHE = 'legacyHE'),
                             (e.modernHE = 'modernHE');
                     })(o || (o = {}));
+            },
+            7363: (e) => {
+                e.exports = React;
+            },
+            1533: (e) => {
+                e.exports = ReactDOM;
             },
         },
         __webpack_module_cache__ = {},

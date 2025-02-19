@@ -1,0 +1,317 @@
+.TooltipDecorator_base_c9 {
+    display: flex;
+    position: absolute;
+}
+
+.TooltipDecorator_base__theme-default_6d .TooltipDecorator_decorator_3d {
+    padding: 4rem 6rem 8rem;
+    border-image-source: url('R.atlases.components.tooltip_background');
+    border-image-slice: 24 fill;
+    border-image-width: 24rem;
+    position: relative;
+}
+
+.ExtendedText_base_71 {
+    display: flex;
+    line-height: 1.2;
+    position: relative;
+}
+
+.ExtendedText_base__zeroPadding_25 {
+    padding: 0;
+}
+
+.ExtendedText_base__isTruncationAvailable_5b {
+    width: 100%;
+}
+
+.ExtendedText_truncated_97 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.ExtendedText_truncated__hide_31 {
+    opacity: 0;
+}
+
+.ExtendedText_unTruncated_b8 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    justify-content: flex-start;
+    align-content: flex-start;
+    color: #ff2717;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    pointer-events: none;
+}
+
+.ExtendedText_tooltip_91 {
+    display: flex;
+}
+
+.ExtendedText_tooltip__justify-flex-start_00 {
+    justify-content: flex-start;
+}
+
+.ExtendedText_tooltip__justify-center_08 {
+    justify-content: center;
+}
+
+.ExtendedText_tooltip__justify-flex-end_90 {
+    justify-content: flex-end;
+}
+
+.ExtendedText_tooltip__align-flex-start_40 {
+    align-content: flex-start;
+}
+
+.ExtendedText_tooltip__align-center_54 {
+    align-content: center;
+}
+
+.ExtendedText_tooltip__align-flex-end_d2 {
+    align-content: flex-end;
+}
+
+.colors_blackReal_fc {
+    color: #000000;
+}
+
+.colors_whiteReal_31 {
+    color: #ffffff;
+}
+
+.colors_white_45 {
+    color: #f2f2f7;
+}
+
+.colors_whiteOrange_81 {
+    color: #fefeec;
+}
+
+.colors_whiteSpanish_c3 {
+    color: #e9e2bf;
+}
+
+.colors_par_5b {
+    color: #8c8c7e;
+}
+
+.colors_parSecondary_fd {
+    color: #595950;
+}
+
+.colors_parTertiary_97 {
+    color: #37362e;
+}
+
+.colors_red_79 {
+    color: #ff2717;
+}
+
+.colors_redDark_73 {
+    color: #b70000;
+}
+
+.colors_yellow_76 {
+    color: #feab34;
+}
+
+.colors_orange_cd {
+    color: #ee7000;
+}
+
+.colors_cream_0f {
+    color: #ffdd99;
+}
+
+.colors_brown_82 {
+    color: #cbac77;
+}
+
+.colors_greenBright_68 {
+    color: #80d43a;
+}
+
+.colors_green_fa {
+    color: #7ab300;
+}
+
+.colors_greenDark_a9 {
+    color: #497212;
+}
+
+.colors_blueBooster_26 {
+    color: #ccffff;
+}
+
+.colors_blueTeamkiller_86 {
+    color: #09e2ff;
+}
+
+.colors_cred_35 {
+    color: #ced9d9;
+}
+
+.colors_gold_c3 {
+    color: #ffc363;
+}
+
+.colors_bond_ce {
+    color: #c9c9b6;
+}
+
+.colors_prom_83 {
+    color: #a29b70;
+}
+
+.renderers_noBreakWrapper_10 {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.renderers_lineBreak_b5 {
+    width: 100%;
+    height: 0;
+}
+
+.renderers_newLine_bd {
+    flex: 1;
+    width: 100%;
+}
+
+.renderers_word_f3 {
+    white-space: pre;
+    overflow-wrap: normal;
+}
+
+.GradientDecorator_base_ee {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 12rem 0 18rem;
+    position: relative;
+}
+
+.GradientDecorator_bg_21 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background: url('R.images.gui.maps.icons.library.white_bg') no-repeat 50% / 100% 100%;
+}
+
+.GradientDecorator_divider_13 {
+    width: 360rem;
+    height: 1rem;
+    background: url('R.images.gui.maps.icons.tooltip.tooltip_perks_divider') no-repeat center / cover;
+}
+
+.ContentItem_base_c6 {
+    color: #8c8c7e;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    display: flex;
+    align-items: center;
+    margin: -3rem 25rem;
+}
+
+.ContentItem_text_f4 {
+    display: flex;
+    flex: 1;
+}
+
+.ContentItem_icon_14 {
+    width: 54rem;
+    height: 54rem;
+    background: no-repeat 50% / contain;
+}
+
+.ContentItem_icon__experience_3b {
+    background-image: url('R.images.gui.maps.icons.tooltip.premiumVehicle.experience');
+}
+
+.ContentItem_icon__credits_cc {
+    margin-top: -1rem;
+    background-image: url('R.images.gui.maps.icons.tooltip.premiumVehicle.credits');
+}
+
+.ContentItem_icon__transfer_bd {
+    margin-top: -1rem;
+    background-image: url('R.images.gui.maps.icons.tooltip.premiumVehicle.transfer');
+}
+
+.PremiumVehicleContent_base_5c {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.PremiumVehicleContent_header_56 {
+    color: #e9e2bf;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    margin-top: 10rem;
+}
+
+.PremiumVehicleContent_content_f6 {
+    margin: 5rem 0 22rem;
+}
+
+.SpecializationWotPlusTooltipApp_base_58 {
+    color: #e9e2bf;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    width: 370rem;
+    padding: 16rem 0 20rem;
+    background-color: #000000;
+    position: relative;
+}
+
+.SpecializationWotPlusTooltipApp_flash_5b {
+    width: 364rem;
+    height: 306rem;
+    background: url('R.images.gui.maps.icons.tooltip.flash_top_blue') no-repeat 50% / contain;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.SpecializationWotPlusTooltipApp_content_46 {
+    padding: 0 20rem;
+    position: relative;
+    z-index: 1;
+}
+
+.SpecializationWotPlusTooltipApp_header_24 {
+    color: #e9e2bf;
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 9rem;
+}
+
+.SpecializationWotPlusTooltipApp_vehicle_d8 {
+    margin-bottom: 7rem;
+}
+
+.SpecializationWotPlusTooltipApp_decorator_cf {
+    margin-top: 16rem;
+    padding: 0 20rem;
+}

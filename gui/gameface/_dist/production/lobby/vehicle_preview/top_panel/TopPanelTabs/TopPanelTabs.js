@@ -17,7 +17,7 @@
                         setRTPC: () => v,
                     });
                 var i = {};
-                t.r(i), t.d(i, { getBgUrl: () => S, getTextureUrl: () => x });
+                t.r(i), t.d(i, { getBgUrl: () => S, getTextureUrl: () => y });
                 var a = {};
                 t.r(a),
                     t.d(a, {
@@ -48,9 +48,9 @@
                         setSidePaddingsRem: () => U,
                         whenTutorialReady: () => Fu,
                     });
-                var A = t(179),
+                var A = t(363),
                     F = t.n(A),
-                    E = t(493),
+                    E = t(533),
                     s = t.n(E);
                 const o = (u, e, t) =>
                     e.extraLargeHeight || e.largeHeight || e.mediumHeight || e.smallHeight || e.extraSmallHeight
@@ -164,13 +164,13 @@
                         get: () => viewEnv.getGraphicsQuality(),
                     },
                     _ = { highlight: 'highlight', click: 'play', yes1: 'yes1' },
-                    w = Object.keys(_).reduce((u, e) => ((u[e] = () => g(_[e])), u), {}),
-                    y = { play: Object.assign({}, w, { sound: g }), setRTPC: v };
-                function x(u, e, t = 1) {
+                    x = Object.keys(_).reduce((u, e) => ((u[e] = () => g(_[e])), u), {}),
+                    w = { play: Object.assign({}, x, { sound: g }), setRTPC: v };
+                function y(u, e, t = 1) {
                     return viewEnv.getChildTexturePath(u, e.width, e.height, t);
                 }
                 function S(u, e, t) {
-                    return `url(${x(u, e, t)})`;
+                    return `url(${y(u, e, t)})`;
                 }
                 const T = { showing: 0, shown: 1, hiding: 2, hidden: 3 },
                     L = {
@@ -317,7 +317,7 @@
                         }),
                         engine.whenReady,
                     ]),
-                    Eu = { view: a, client: r, sound: y };
+                    Eu = { view: a, client: r, sound: w };
                 const su = {
                     extraLarge: { weight: 4, width: 2560, height: 1440 },
                     large: { weight: 3, width: 1920, height: 1080 },
@@ -540,8 +540,8 @@
                     for (var t = 0, n = Array(e); t < e; t++) n[t] = u[t];
                     return n;
                 }
-                const wu = (u) => (0 === u ? window : window.subViews.get(u));
-                const yu = ((u, e) => {
+                const xu = (u) => (0 === u ? window : window.subViews.get(u));
+                const wu = ((u, e) => {
                         const t = (0, A.createContext)({});
                         return [
                             function ({ mode: n = 'real', options: r, children: i, mocks: a }) {
@@ -551,7 +551,7 @@
                                         const a = (function ({
                                                 initializer: u = !0,
                                                 rootId: e = 0,
-                                                getRoot: t = wu,
+                                                getRoot: t = xu,
                                                 context: n = 'model',
                                             } = {}) {
                                                 const r = new Map();
@@ -730,8 +730,8 @@
                             changeTab: u.createCallback((u) => ({ selectedTab: u }), 'onTabChanged'),
                         }),
                     ),
-                    xu = yu[0],
-                    Su = yu[1];
+                    yu = wu[0],
+                    Su = wu[1];
                 var Tu = t(483),
                     Lu = t.n(Tu);
                 function Ou(u) {
@@ -1154,7 +1154,7 @@
                     },
                     pe = 'Content_base_b4',
                     _e = 'Content_tabs_0f',
-                    we = (0, me.Pi)(function () {
+                    xe = (0, me.Pi)(function () {
                         const u = Su(),
                             e = u.model,
                             t = u.controls,
@@ -1226,10 +1226,16 @@
                             ),
                         );
                     }),
-                    ye = () => F().createElement(vu, null, F().createElement(xu, null, F().createElement(we, null)));
+                    we = () => F().createElement(vu, null, F().createElement(yu, null, F().createElement(xe, null)));
                 engine.whenReady.then(() => {
-                    s().render(F().createElement(ye, null), document.getElementById('root'));
+                    s().render(F().createElement(we, null), document.getElementById('root'));
                 });
+            },
+            363: (u) => {
+                u.exports = React;
+            },
+            533: (u) => {
+                u.exports = ReactDOM;
             },
         },
         t = {};

@@ -69,9 +69,18 @@
 .Layout_footer_f4 {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    align-self: flex-start;
+    width: 596rem;
     height: 166rem;
     padding-top: 20rem;
+}
+.Layout_base__small_cb .Layout_footer_f4,
+.Layout_base__medium_df .Layout_footer_f4 {
+    width: 902rem;
+}
+.Layout_base__large_f6 .Layout_footer_f4,
+.Layout_base__huge_d2 .Layout_footer_f4 {
+    width: 1102rem;
 }
 
 .CButton_base_40 {

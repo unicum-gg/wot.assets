@@ -48,9 +48,9 @@
                         setSidePaddingsRem: () => V,
                         whenTutorialReady: () => Du,
                     });
-                var t = A(6179),
+                var t = A(7363),
                     C = A.n(t),
-                    n = A(493),
+                    n = A(1533),
                     r = A.n(n),
                     o = A(6483),
                     a = A.n(o);
@@ -799,12 +799,12 @@
                             () => (0, t.useContext)(A),
                         ];
                     })(0, function () {}),
-                    Pu = Su[0],
-                    Ru = Su[1],
+                    Ru = Su[0],
+                    Pu = Su[1],
                     Ou = R.images.gui.maps.icons.battleRoyale.artefact.c_80x80,
                     ku = R.strings.tooltips.battle_royale.hangar.tankSetupPanel,
                     zu = (0, ou.Pi)(() => {
-                        const u = Ru().model,
+                        const u = Pu().model,
                             F = u.iconName.get();
                         return C().createElement(
                             ru,
@@ -847,10 +847,16 @@
                     });
                 engine.whenReady.then(() => {
                     r().render(
-                        C().createElement(Pu, null, C().createElement(zu, null)),
+                        C().createElement(Ru, null, C().createElement(zu, null)),
                         document.getElementById('root'),
                     );
                 });
+            },
+            7363: (u) => {
+                u.exports = React;
+            },
+            1533: (u) => {
+                u.exports = ReactDOM;
             },
         },
         A = {};

@@ -7,7 +7,7 @@
                 var A = F(6483),
                     E = F.n(A),
                     D = F(3649),
-                    t = F(6179),
+                    t = F(7363),
                     B = F.n(t),
                     n = F(5287);
                 const C = ({
@@ -147,9 +147,9 @@
                         setSidePaddingsRem: () => U,
                         whenTutorialReady: () => Cu,
                     });
-                var B = F(6179),
+                var B = F(7363),
                     n = F.n(B),
-                    C = F(493),
+                    C = F(1533),
                     r = F.n(C),
                     o = F(6483),
                     a = F.n(o);
@@ -283,8 +283,8 @@
                     k = ['args'];
                 const N = 2,
                     z = 16,
-                    W = 32,
-                    M = 64,
+                    M = 32,
+                    W = 64,
                     j = (u, e) => {
                         const F = 'GFViewEventProxy';
                         if (void 0 !== e) {
@@ -324,10 +324,10 @@
                     },
                     L = {
                         close(u) {
-                            j('popover' === u ? N : W);
+                            j('popover' === u ? N : M);
                         },
                         minimize() {
-                            j(M);
+                            j(W);
                         },
                         move(u) {
                             j(z, { isMouseEvent: !0, on: u });
@@ -744,22 +744,22 @@
                     wu = xu[0],
                     yu = xu[1],
                     Tu = 'Message_base_12',
-                    Pu = 'Message_separator_9c',
-                    Ru = 'Message_content_6d',
+                    Ru = 'Message_separator_9c',
+                    Pu = 'Message_content_6d',
                     Ou = 'Message_text_03',
                     Su = ({ text: u }) =>
                         n().createElement(
                             'div',
                             { className: Tu },
-                            n().createElement('div', { className: Pu }),
-                            n().createElement('div', { className: Ru }, n().createElement('div', { className: Ou }, u)),
-                            n().createElement('div', { className: Pu }),
+                            n().createElement('div', { className: Ru }),
+                            n().createElement('div', { className: Pu }, n().createElement('div', { className: Ou }, u)),
+                            n().createElement('div', { className: Ru }),
                         ),
                     ku = 'Content_base_c5',
                     Nu = 'Content_base__noDescription_3f',
                     zu = 'Content_title_e5',
-                    Wu = 'Content_subTitle_bf',
-                    Mu = 'Content_tank_95',
+                    Mu = 'Content_subTitle_bf',
+                    Wu = 'Content_tank_95',
                     ju = 'Content_footer_1a',
                     Lu = 'Content_flare_50',
                     Iu = 'Content_messageWrapper_e3',
@@ -822,7 +822,7 @@
                             n().createElement('div', { className: zu }, Ku.completed.title()),
                             n().createElement(
                                 'div',
-                                { className: Wu },
+                                { className: Mu },
                                 t ? Ku.completed.oneChapterSubTitle() : Ku.completed.subTitle(),
                             ),
                             t
@@ -830,7 +830,7 @@
                                 : n().createElement(
                                       n().Fragment,
                                       null,
-                                      n().createElement('div', { className: Mu }),
+                                      n().createElement('div', { className: Wu }),
                                       n().createElement(
                                           'div',
                                           { className: ju },
@@ -878,7 +878,7 @@
                 F.d(e, { l: () => c });
                 var A = F(6483),
                     E = F.n(A),
-                    D = F(6179),
+                    D = F(7363),
                     t = F.n(D),
                     B = F(280);
                 const n = {
@@ -958,6 +958,12 @@
             5287: (u, e, F) => {
                 F.d(e, { Z: () => A });
                 const A = { base: 'FormatText_base_d0' };
+            },
+            7363: (u) => {
+                u.exports = React;
+            },
+            1533: (u) => {
+                u.exports = ReactDOM;
             },
         },
         F = {};

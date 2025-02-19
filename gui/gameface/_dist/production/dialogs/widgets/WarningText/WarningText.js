@@ -2,7 +2,7 @@
     'use strict';
     var e,
         n = {
-            6988: (e, n, t) => {
+            988: (e, n, t) => {
                 var r = {};
                 t.r(r),
                     t.d(r, { mouse: () => y, off: () => h, on: () => w, onResize: () => m, onScaleUpdated: () => b });
@@ -17,14 +17,14 @@
                         setRTPC: () => x,
                     });
                 var i = {};
-                t.r(i), t.d(i, { getBgUrl: () => j, getTextureUrl: () => C });
+                t.r(i), t.d(i, { getBgUrl: () => M, getTextureUrl: () => C });
                 var a = {};
                 t.r(a),
                     t.d(a, {
                         addModelObserver: () => U,
                         addPreloadTexture: () => I,
                         children: () => i,
-                        displayStatus: () => M,
+                        displayStatus: () => j,
                         displayStatusIs: () => ae,
                         events: () => _,
                         extraSize: () => se,
@@ -48,15 +48,15 @@
                         setSidePaddingsRem: () => W,
                         whenTutorialReady: () => ue,
                     });
-                var s = t(6179),
+                var s = t(363),
                     u = t.n(s),
-                    l = t(3403);
+                    l = t(403);
                 function c() {}
                 function d() {
                     return !1;
                 }
                 console.log;
-                var v = t(9174);
+                var v = t(174);
                 function f(e) {
                     return (n) => (
                         engine.on(e, n),
@@ -164,10 +164,10 @@
                 function C(e, n, t = 1) {
                     return viewEnv.getChildTexturePath(e, n.width, n.height, t);
                 }
-                function j(e, n, t) {
+                function M(e, n, t) {
                     return `url(${C(e, n, t)})`;
                 }
-                const M = { showing: 0, shown: 1, hiding: 2, hidden: 3 },
+                const j = { showing: 0, shown: 1, hiding: 2, hidden: 3 },
                     _ = {
                         onTextureFrozen: f('self.onTextureFrozen'),
                         onTextureReady: f('self.onTextureReady'),
@@ -187,8 +187,8 @@
                     k = ['args'];
                 const A = 2,
                     L = 16,
-                    B = 32,
-                    D = 64,
+                    D = 32,
+                    B = 64,
                     V = (e, n) => {
                         const t = 'GFViewEventProxy';
                         if (void 0 !== n) {
@@ -228,10 +228,10 @@
                     },
                     F = {
                         close(e) {
-                            V('popover' === e ? A : B);
+                            V('popover' === e ? A : D);
                         },
                         minimize() {
-                            V(D);
+                            V(B);
                         },
                         move(e) {
                             V(L, { isMouseEvent: !0, on: e });
@@ -297,7 +297,7 @@
                         let e = [];
                         return () => (0 === e.length && (e = Object.keys(viewEnv.getFontsConfig())), e);
                     })(),
-                    ae = Object.keys(M).reduce((e, n) => ((e[n] = () => viewEnv.getShowingStatus() === M[n]), e), {}),
+                    ae = Object.keys(j).reduce((e, n) => ((e[n] = () => viewEnv.getShowingStatus() === j[n]), e), {}),
                     se = {
                         set: (e, n) => {
                             viewEnv.setExtraSizeRem(e, n);
@@ -549,6 +549,12 @@
                     return u().createElement(ge, { options: n }, u().createElement(he, null));
                 });
             },
+            363: (e) => {
+                e.exports = React;
+            },
+            533: (e) => {
+                e.exports = ReactDOM;
+            },
         },
         t = {};
     function r(e) {
@@ -620,6 +626,6 @@
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             t.forEach(n.bind(null, 0)), (t.push = n.bind(null, t.push.bind(t)));
         })();
-    var o = r.O(void 0, [573], () => r(6988));
+    var o = r.O(void 0, [573], () => r(988));
     o = r.O(o);
 })();

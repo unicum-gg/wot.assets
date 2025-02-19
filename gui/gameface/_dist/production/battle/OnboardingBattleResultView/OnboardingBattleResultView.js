@@ -220,14 +220,14 @@
                         getScale: () => v,
                         getSize: () => m,
                         getViewGlobalPosition: () => g,
-                        isEventHandled: () => x,
+                        isEventHandled: () => L,
                         isFocused: () => p,
                         pxToRem: () => w,
                         remToPx: () => b,
                         resize: () => h,
                         sendEvent: () => o.qP,
                         setAnimateWindow: () => f,
-                        setEventHandled: () => L,
+                        setEventHandled: () => x,
                         setInputPaddingsRem: () => c,
                         setSidePaddingsRem: () => _,
                         whenTutorialReady: () => R,
@@ -280,10 +280,10 @@
                 function p() {
                     return viewEnv.isFocused();
                 }
-                function L() {
+                function x() {
                     return viewEnv.setEventHandled();
                 }
-                function x() {
+                function L() {
                     return viewEnv.isEventHandled();
                 }
                 function y() {
@@ -664,11 +664,11 @@
                     p = (e, t) => {
                         e.keyCode === m.n.ESCAPE && t();
                     };
-                var L = r(7572);
-                const x = n.instance,
+                var x = r(7572);
+                const L = n.instance,
                     y = {
                         DataTracker: i.Z,
-                        ViewModel: L.Z,
+                        ViewModel: x.Z,
                         ViewEventType: s,
                         NumberFormatType: c,
                         RealFormatType: d,
@@ -744,7 +744,7 @@
                                 }
                             return r;
                         },
-                        ClickOutsideManager: x,
+                        ClickOutsideManager: L,
                         SystemLocale: o.Z5,
                         UserLocale: o.cy,
                     };
@@ -769,7 +769,7 @@
             },
             8176: (e, t, r) => {
                 'use strict';
-                var a = r(6179),
+                var a = r(7363),
                     n = r.n(a);
                 const i = (e, t, r) =>
                     t.extraLargeHeight || t.largeHeight || t.mediumHeight || t.smallHeight || t.extraSmallHeight
@@ -888,8 +888,8 @@
                             b = n.largeHeight,
                             f = n.mediumHeight,
                             p = n.smallHeight,
-                            L = n.extraSmallHeight,
-                            x = { extraLarge: w, large: b, medium: f, small: p, extraSmall: L };
+                            x = n.extraSmallHeight,
+                            L = { extraLarge: w, large: b, medium: f, small: p, extraSmall: x };
                         if (r.extraLarge || r.large || r.medium || r.small || r.extraSmall) {
                             if (r.extraLarge && o) return t;
                             if (r.large && s) return t;
@@ -897,11 +897,11 @@
                             if (r.small && c) return t;
                             if (r.extraSmall && d) return t;
                         } else {
-                            if (r.extraLargeWidth && u) return i(t, r, x);
-                            if (r.largeWidth && _) return i(t, r, x);
-                            if (r.mediumWidth && m) return i(t, r, x);
-                            if (r.smallWidth && E) return i(t, r, x);
-                            if (r.extraSmallWidth && v) return i(t, r, x);
+                            if (r.extraLargeWidth && u) return i(t, r, L);
+                            if (r.largeWidth && _) return i(t, r, L);
+                            if (r.mediumWidth && m) return i(t, r, L);
+                            if (r.smallWidth && E) return i(t, r, L);
+                            if (r.extraSmallWidth && v) return i(t, r, L);
                             if (
                                 !(
                                     r.extraLargeWidth ||
@@ -915,7 +915,7 @@
                                 if (r.largeHeight && b) return t;
                                 if (r.mediumHeight && f) return t;
                                 if (r.smallHeight && p) return t;
-                                if (r.extraSmallHeight && L) return t;
+                                if (r.extraSmallHeight && x) return t;
                             }
                         }
                         return null;
@@ -972,21 +972,21 @@
                     b = r.n(w),
                     f = r(926),
                     p = r.n(f);
-                let L, x, y;
+                let x, L, y;
                 !(function (e) {
                     (e[(e.ExtraSmall = s.extraSmall.width)] = 'ExtraSmall'),
                         (e[(e.Small = s.small.width)] = 'Small'),
                         (e[(e.Medium = s.medium.width)] = 'Medium'),
                         (e[(e.Large = s.large.width)] = 'Large'),
                         (e[(e.ExtraLarge = s.extraLarge.width)] = 'ExtraLarge');
-                })(L || (L = {})),
+                })(x || (x = {})),
                     (function (e) {
                         (e[(e.ExtraSmall = s.extraSmall.width)] = 'ExtraSmall'),
                             (e[(e.Small = s.small.width)] = 'Small'),
                             (e[(e.Medium = s.medium.width)] = 'Medium'),
                             (e[(e.Large = s.large.width)] = 'Large'),
                             (e[(e.ExtraLarge = s.extraLarge.width)] = 'ExtraLarge');
-                    })(x || (x = {})),
+                    })(L || (L = {})),
                     (function (e) {
                         (e[(e.ExtraSmall = s.extraSmall.height)] = 'ExtraSmall'),
                             (e[(e.Small = s.small.height)] = 'Small'),
@@ -1010,11 +1010,11 @@
                     );
                 }
                 const T = {
-                        [x.ExtraSmall]: '',
-                        [x.Small]: p().SMALL_WIDTH,
-                        [x.Medium]: `${p().SMALL_WIDTH} ${p().MEDIUM_WIDTH}`,
-                        [x.Large]: `${p().SMALL_WIDTH} ${p().MEDIUM_WIDTH} ${p().LARGE_WIDTH}`,
-                        [x.ExtraLarge]: `${p().SMALL_WIDTH} ${p().MEDIUM_WIDTH} ${p().LARGE_WIDTH} ${p().EXTRA_LARGE_WIDTH}`,
+                        [L.ExtraSmall]: '',
+                        [L.Small]: p().SMALL_WIDTH,
+                        [L.Medium]: `${p().SMALL_WIDTH} ${p().MEDIUM_WIDTH}`,
+                        [L.Large]: `${p().SMALL_WIDTH} ${p().MEDIUM_WIDTH} ${p().LARGE_WIDTH}`,
+                        [L.ExtraLarge]: `${p().SMALL_WIDTH} ${p().MEDIUM_WIDTH} ${p().LARGE_WIDTH} ${p().EXTRA_LARGE_WIDTH}`,
                     },
                     M = {
                         [y.ExtraSmall]: '',
@@ -1024,11 +1024,11 @@
                         [y.ExtraLarge]: `${p().SMALL_HEIGHT} ${p().MEDIUM_HEIGHT} ${p().LARGE_HEIGHT} ${p().EXTRA_LARGE_HEIGHT}`,
                     },
                     k = {
-                        [L.ExtraSmall]: '',
-                        [L.Small]: p().SMALL,
-                        [L.Medium]: `${p().SMALL} ${p().MEDIUM}`,
-                        [L.Large]: `${p().SMALL} ${p().MEDIUM} ${p().LARGE}`,
-                        [L.ExtraLarge]: `${p().SMALL} ${p().MEDIUM} ${p().LARGE} ${p().EXTRA_LARGE}`,
+                        [x.ExtraSmall]: '',
+                        [x.Small]: p().SMALL,
+                        [x.Medium]: `${p().SMALL} ${p().MEDIUM}`,
+                        [x.Large]: `${p().SMALL} ${p().MEDIUM} ${p().LARGE}`,
+                        [x.ExtraLarge]: `${p().SMALL} ${p().MEDIUM} ${p().LARGE} ${p().EXTRA_LARGE}`,
                     },
                     H = (e) => {
                         let t = e.children,
@@ -1050,36 +1050,36 @@
                                     n = ((e) => {
                                         switch (!0) {
                                             case e.extraLarge:
-                                                return L.ExtraLarge;
+                                                return x.ExtraLarge;
                                             case e.large:
-                                                return L.Large;
+                                                return x.Large;
                                             case e.medium:
-                                                return L.Medium;
+                                                return x.Medium;
                                             case e.small:
-                                                return L.Small;
+                                                return x.Small;
                                             case e.extraSmall:
-                                                return L.ExtraSmall;
+                                                return x.ExtraSmall;
                                             default:
                                                 return (
-                                                    console.error('Unreachable media context resolution'), L.ExtraSmall
+                                                    console.error('Unreachable media context resolution'), x.ExtraSmall
                                                 );
                                         }
                                     })(e),
                                     i = ((e) => {
                                         switch (!0) {
                                             case e.extraLargeWidth:
-                                                return x.ExtraLarge;
+                                                return L.ExtraLarge;
                                             case e.largeWidth:
-                                                return x.Large;
+                                                return L.Large;
                                             case e.mediumWidth:
-                                                return x.Medium;
+                                                return L.Medium;
                                             case e.smallWidth:
-                                                return x.Small;
+                                                return L.Small;
                                             case e.extraSmallWidth:
-                                                return x.ExtraSmall;
+                                                return L.ExtraSmall;
                                             default:
                                                 return (
-                                                    console.error('Unreachable media context resolution'), x.ExtraSmall
+                                                    console.error('Unreachable media context resolution'), L.ExtraSmall
                                                 );
                                         }
                                     })(e),
@@ -1129,7 +1129,7 @@
                             })(e, C);
                         return n().createElement(v, null, n().createElement(H, r, t));
                     };
-                var A = r(493),
+                var A = r(1533),
                     W = r.n(A);
                 function D(e) {
                     engine.call('PlaySound', e).catch((t) => {
@@ -1192,8 +1192,8 @@
                         w = v[0],
                         f = v[1],
                         p = (0, a.useState)(!1),
-                        L = p[0],
-                        x = p[1];
+                        x = p[0],
+                        L = p[1];
                     return (
                         (0, a.useEffect)(() => {
                             function e(e) {
@@ -1219,7 +1219,7 @@
                                     o && I.base__disabled,
                                     t && I[`base__${t}`],
                                     w && I.base__focus,
-                                    L && I.base__highlightActive,
+                                    x && I.base__highlightActive,
                                     s,
                                 ),
                                 onMouseEnter: function (e) {
@@ -1229,17 +1229,17 @@
                                     u && u(e);
                                 },
                                 onMouseUp: function (e) {
-                                    o || (m && m(e), x(!1));
+                                    o || (m && m(e), L(!1));
                                 },
                                 onMouseDown: function (e) {
                                     o ||
                                         (null !== c && D(c),
                                         _ && _(e),
                                         r && (o || (E.current && (E.current.focus(), f(!0)))),
-                                        x(!0));
+                                        L(!0));
                                 },
                                 onMouseLeave: function (e) {
-                                    o || (h && h(e), x(!1));
+                                    o || (h && h(e), L(!1));
                                 },
                                 onClick: function (e) {
                                     o || (g && g(e));
@@ -1622,6 +1622,14 @@
                         document.getElementById('root'),
                     );
                 });
+            },
+            7363: (e) => {
+                'use strict';
+                e.exports = React;
+            },
+            1533: (e) => {
+                'use strict';
+                e.exports = ReactDOM;
             },
         },
         __webpack_module_cache__ = {},

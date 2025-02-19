@@ -3,7 +3,7 @@
     var u,
         F = {
             280: (u, F, A) => {
-                A(6483), A(3649), A(6179), A(5287);
+                A(6483), A(3649), A(7363), A(5287);
             },
             9690: (u, F, A) => {
                 ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());
@@ -32,10 +32,13 @@
                 })();
             },
             7846: (u, F, A) => {
-                A(6179), A(9690), A(280);
+                A(7363), A(9690), A(280);
                 R.strings.veh_post_progression.tooltips.pairModification.status.unavailableLocked;
             },
             5287: () => {},
+            7363: (u) => {
+                u.exports = React;
+            },
         },
         A = {};
     function E(u) {

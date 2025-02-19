@@ -1,0 +1,107 @@
+.SmokeParticles_base_1b {
+    width: 280rem;
+    height: 170rem;
+}
+
+.FormatText_base_d0 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* should be percentage of screen width */
+.App_base_56 {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+}
+.App_layer_8b {
+    width: 100%;
+    height: 100%;
+    background: no-repeat center / cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.App_layer__logo_dc {
+    background-image: url('R.images.comp7.gui.maps.icons.tournaments.logo');
+}
+.App_base__extended_cd .App_layer__logo_dc {
+    background-image: url('R.images.comp7.gui.maps.icons.tournaments.logo_extended');
+}
+.App_layer__scene_00 {
+    background-image: url('R.images.comp7.gui.maps.icons.tournaments.scene');
+}
+.App_base__extended_cd .App_layer__scene_00 {
+    background-image: url('R.images.comp7.gui.maps.icons.tournaments.scene_extended');
+}
+.App_layer__shadow_dc {
+    background-image: url('R.images.comp7.gui.maps.icons.tournaments.shadow');
+}
+.App_base__extended_cd .App_layer__shadow_dc {
+    background-image: url('R.images.comp7.gui.maps.icons.tournaments.shadow_extended');
+}
+.App_layer__logo_dc {
+    transition: transform 1s cubic-bezier(0.07, 0.82, 0.17, 1);
+}
+.App_base_56:hover .App_layer__logo_dc {
+    transform: translateY(-8rem);
+}
+.App_base__extended_cd:hover .App_layer__logo_dc {
+    transform: translateY(-16rem);
+}
+.App_layer__scene_00 {
+    transition: transform 2s cubic-bezier(0.07, 0.82, 0.17, 1);
+}
+.App_base_56:hover .App_layer__scene_00 {
+    transform: translateX(-2rem) translateY(-1rem);
+}
+.App_base__extended_cd .App_layer__scene_00 {
+    transition: transform 5s cubic-bezier(0.07, 0.82, 0.17, 1);
+    mask-image: linear-gradient(to bottom, #000 70%, transparent);
+}
+.App_base__extended_cd:hover .App_layer__scene_00 {
+    transform: translateX(-4rem) translateY(-3rem);
+}
+.App_particles_4f {
+    width: 170rem;
+    height: 103rem;
+    mix-blend-mode: additive;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.App_base__extended_cd .App_particles_4f {
+    width: 210rem;
+    height: 127rem;
+}
+.App_content_6d {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 100%;
+    height: 100%;
+    padding: 0 8rem 12rem;
+    position: relative;
+}
+.App_base__extended_cd .App_content_6d {
+    padding: 0 14rem 20rem;
+}
+.App_heading_4d,
+.App_text_92 {
+    justify-content: center;
+}
+.App_heading_4d {
+    color: #ffffff;
+    font-size: 15rem;
+    font-weight: 700;
+}
+.App_base__extended_cd .App_heading_4d {
+    margin-bottom: 4rem;
+}
+.App_text_92 {
+    color: #e9e2bf;
+    font-size: 14rem;
+}

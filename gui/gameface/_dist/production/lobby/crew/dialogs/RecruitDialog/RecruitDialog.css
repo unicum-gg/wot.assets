@@ -1581,8 +1581,13 @@ so we just add specificity to css classes here
     margin: 6rem 0 13rem;
 }
 
-.RecruitContent_warning_ac {
+.RecruitContent_warningsWrapper_03 {
     margin-bottom: 18rem;
+}
+
+.RecruitContent_warning_ac {
+    display: flex;
+    justify-content: center;
 }
 
 .RecruitContent_voiceoverText_07 {
