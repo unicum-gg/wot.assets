@@ -6740,7 +6740,7 @@
                                     o().createElement(
                                         'div',
                                         { className: fi, onClick: k },
-                                        s && o().createElement('div', { className: wi }),
+                                        l && o().createElement('div', { className: wi }),
                                         o().createElement(
                                             'div',
                                             { className: Mi },

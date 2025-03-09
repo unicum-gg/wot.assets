@@ -3634,7 +3634,6 @@
                             'div',
                             { className: C, onClick: A, onMouseEnter: g },
                             r().createElement('div', { className: S }, r().createElement('div', { className: _t }), o),
-                            h !== wt.None && r().createElement('div', { className: ot, style: b }),
                             r().createElement(
                                 'div',
                                 { className: it },
@@ -3647,6 +3646,7 @@
                                 i > 1 &&
                                     r().createElement('div', { className: Et }, B(St.packSizeCount(), { packSize: i })),
                             ),
+                            h !== wt.None && r().createElement('div', { className: ot, style: b }),
                             r().createElement(
                                 'div',
                                 { className: mt },

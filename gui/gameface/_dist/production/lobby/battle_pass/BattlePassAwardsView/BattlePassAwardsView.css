@@ -1454,6 +1454,10 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     color: #c9c9b6;
 }
 
+.Title_rewardText_e5 {
+    justify-content: center;
+}
+
 .Title_subtitle_47 {
     color: #e9e2bf;
     font-size: 14rem;
@@ -1669,6 +1673,38 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     animation-timing-function: cubic-bezier(0.07, 0.82, 0.17, 1);
     animation-delay: 0s;
     animation-iteration-count: 1;
+}
+
+.Reward_overlay_6a {
+    width: 344rem;
+    height: 312rem;
+    background: no-repeat center / 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+.mediaMedium .Reward_overlay_6a {
+    width: 618rem;
+    height: 590rem;
+}
+
+.Reward_base__wide_fa .Reward_overlay_6a {
+    width: 618rem;
+    height: 590rem;
+}
+
+.mediaMedium .Reward_base__wide_fa .Reward_overlay_6a {
+    width: 670rem;
+    height: 575rem;
+}
+
+.mediaMedium .Reward_base__small_e4 .Reward_overlay_6a {
+    width: 450rem;
+    height: 408rem;
 }
 
 .Rewards_base_05 {

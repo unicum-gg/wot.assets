@@ -177,7 +177,7 @@
                                         (b.current.isVisible = !1);
                                 }
                             }, [t, m, S, p]),
-                            R = (0, a.useCallback)((u) => {
+                            L = (0, a.useCallback)((u) => {
                                 b.current.isVisible &&
                                     ((b.current.prevTarget = document.elementFromPoint(u.clientX, u.clientY)),
                                     (b.current.hideTimerId = window.setTimeout(() => {
@@ -188,9 +188,9 @@
                         (0, a.useEffect)(() => {
                             const u = b.current.hideTimerId;
                             return (
-                                document.addEventListener('wheel', R, { capture: !0 }),
+                                document.addEventListener('wheel', L, { capture: !0 }),
                                 () => {
-                                    document.removeEventListener('wheel', R, { capture: !0 }),
+                                    document.removeEventListener('wheel', L, { capture: !0 }),
                                         u && window.clearTimeout(u);
                                 }
                             );
@@ -213,13 +213,13 @@
                                   Object.assign(
                                       {
                                           onMouseEnter:
-                                              ((L = e.props.onMouseEnter),
+                                              ((R = e.props.onMouseEnter),
                                               (u) => {
                                                   (u.clientX === window.innerWidth &&
                                                       u.clientY === window.innerHeight) ||
                                                       ((b.current.timeoutId = window.setTimeout(x, c ? 100 : 400)),
                                                       F && F(u),
-                                                      L && L(u));
+                                                      R && R(u));
                                               }),
                                           onMouseLeave: ((u) => (e) => {
                                               T(), null == o || o(e), null == u || u(e);
@@ -235,7 +235,7 @@
                                   ),
                               )
                             : e;
-                        var L;
+                        var R;
                     };
             },
             926: (u) => {
@@ -1670,96 +1670,93 @@
                             i
                         );
                     },
-                    du = (U.Sw.instance, cu);
-                let Bu;
+                    du = (U.Sw.instance, cu),
+                    Bu = R.strings.common.duration;
+                let Cu;
                 !(function (u) {
                     (u.mainScreen = 'mainScreen'), (u.entryPointTooltip = 'entryPointTooltip');
-                })(Bu || (Bu = {}));
-                const Cu = 'TimerEntryPointTooltip_base_5a',
-                    mu = 'TimerEntryPointTooltip_text_17',
-                    _u = 'TimerEntryPointTooltip_lastUntil_25',
-                    gu = 'TimerEntryPointTooltip_leftTime_d7',
-                    hu = R.strings.resource_well,
-                    wu = ({ isEventEndingSoon: u, leftTime: e, untilTime: t, beforeEventTime: r, startDate: a }) =>
+                })(Cu || (Cu = {}));
+                const mu = 'TimerEntryPointTooltip_base_5a',
+                    _u = 'TimerEntryPointTooltip_text_17',
+                    gu = 'TimerEntryPointTooltip_lastUntil_25',
+                    hu = 'TimerEntryPointTooltip_leftTime_d7',
+                    wu = R.strings.resource_well,
+                    vu = ({ isEventEndingSoon: u, leftTime: e, untilTime: t, beforeEventTime: r, startDate: a }) =>
                         n().createElement(
                             'div',
-                            { className: Cu },
+                            { className: mu },
                             u
                                 ? n().createElement(
                                       n().Fragment,
                                       null,
                                       n().createElement(
                                           'div',
-                                          { className: mu },
-                                          hu.tooltips.entryPoint.timer.leftTime(),
+                                          { className: _u },
+                                          wu.tooltips.entryPoint.timer.leftTime(),
                                       ),
-                                      n().createElement('div', { className: gu }, e),
+                                      n().createElement('div', { className: hu }, e),
                                   )
                                 : n().createElement(
                                       n().Fragment,
                                       null,
                                       n().createElement(
                                           'div',
-                                          { className: mu },
+                                          { className: _u },
                                           a
-                                              ? hu.tooltips.entryPoint.timer.timeToStart()
-                                              : hu.tooltips.entryPoint.timer.lastUntil(),
+                                              ? wu.tooltips.entryPoint.timer.timeToStart()
+                                              : wu.tooltips.entryPoint.timer.lastUntil(),
                                       ),
-                                      n().createElement('div', { className: _u }, a ? r : t),
+                                      n().createElement('div', { className: gu }, a ? r : t),
                                   ),
                         ),
-                    vu = 'TimerMainScreen_shineWrapper_3c',
-                    pu = 'TimerMainScreen_shineBg_77',
-                    fu = 'TimerMainScreen_content_24',
-                    bu = 'TimerMainScreen_text_9c',
-                    Su = 'TimerMainScreen_time_98',
-                    xu = 'TimerMainScreen_content__daysLeft_35',
-                    Tu = 'TimerMainScreen_content__endingSoon_f0',
+                    pu = 'TimerMainScreen_shineWrapper_3c',
+                    fu = 'TimerMainScreen_shineBg_77',
+                    bu = 'TimerMainScreen_content_24',
+                    Su = 'TimerMainScreen_text_9c',
+                    xu = 'TimerMainScreen_time_98',
+                    Tu = 'TimerMainScreen_content__daysLeft_35',
+                    Lu = 'TimerMainScreen_content__endingSoon_f0',
                     Ru = R.strings.resource_well,
-                    Lu = ({ isEventEndingSoon: u, leftTime: e, untilTime: t, showShine: r = !0 }) => {
-                        const a = g()(fu, u ? Tu : xu);
+                    Mu = ({ isEventEndingSoon: u, leftTime: e, untilTime: t, showShine: r = !0 }) => {
+                        const a = g()(bu, u ? Lu : Tu);
                         return n().createElement(
                             n().Fragment,
                             null,
                             r &&
                                 n().createElement(
                                     'div',
-                                    { className: vu },
-                                    n().createElement('div', { className: pu }),
+                                    { className: pu },
+                                    n().createElement('div', { className: fu }),
                                 ),
                             n().createElement(
                                 'div',
                                 { className: a },
                                 n().createElement(
                                     'div',
-                                    { className: bu },
+                                    { className: Su },
                                     u ? Ru.mainView.timer.leftTime() : Ru.mainView.timer.lastUntil(),
                                 ),
-                                n().createElement('div', { className: Su }, u ? e : t),
+                                n().createElement('div', { className: xu }, u ? e : t),
                             ),
                         );
                     },
-                    Mu = { base: 'Timer_base_ca', base__entryPointTooltip: 'Timer_base__entryPointTooltip_1d' },
-                    yu = R.strings.resource_well,
-                    Ou = (u) =>
-                        Q(yu.mainView.timer.dayEnd(), {
+                    yu = { base: 'Timer_base_ca', base__entryPointTooltip: 'Timer_base__entryPointTooltip_1d' },
+                    Ou = R.strings.resource_well,
+                    Pu = (u) =>
+                        Q(Ou.mainView.timer.dayEnd(), {
                             day: u.getDate(),
                             month: R.strings.menu.dateTime.months.$num(u.getMonth() + 1),
                             time: `${u.getHours()}:${u.getMinutes() < 10 ? `0${u.getMinutes()}` : u.getMinutes()}`,
                         }),
-                    Pu = (u) =>
+                    Nu = (u) =>
                         ((u, e = !0) =>
                             u.days > 7 && e
-                                ? Z(R.strings.common.duration.days(), { days: u.days })
+                                ? Z(Bu.days(), { days: u.days })
                                 : u.days >= 1
-                                  ? 0 === u.hours
-                                      ? Z(R.strings.common.duration.days(), { days: u.days })
-                                      : Z(R.strings.common.duration.days(), { days: u.days + 1 })
+                                  ? Z(Bu.days(), { days: 0 === u.hours ? u.days : u.days + 1 })
                                   : u.hours >= 1
-                                    ? 0 === u.minutes
-                                        ? Z(R.strings.common.duration.hours(), { hours: u.hours })
-                                        : Z(R.strings.common.duration.hours(), { hours: u.hours + 1 })
-                                    : Z(R.strings.common.duration.minutes(), { minutes: u.minutes || 1 }))(
+                                    ? Z(Bu.hours(), { hours: 0 === u.minutes ? u.hours : u.hours + 1 })
+                                    : Z(Bu.minutes(), { minutes: u.minutes || 1 }))(
                             (function (u = 0) {
                                 let e = u;
                                 const t = Math.trunc(e / Du);
@@ -1771,7 +1768,7 @@
                             })(u),
                             !1,
                         ),
-                    Nu = ({
+                    Iu = ({
                         usagePlace: u,
                         endDate: e = 0,
                         isEventEndingSoon: t = !1,
@@ -1782,165 +1779,165 @@
                         const E = du(r),
                             A = e * Fu,
                             F = i * Fu,
-                            o = Q(yu.tooltips.mainView.timer.leftTime(), { leftTime: Pu(E) });
+                            o = Q(Ou.tooltips.mainView.timer.leftTime(), { leftTime: Nu(E) });
                         return n().createElement(
                             Eu.i,
                             { body: o },
                             n().createElement(
                                 'div',
-                                { className: g()(Mu.base, Mu[`base__${u}`]) },
-                                u === Bu.entryPointTooltip
-                                    ? n().createElement(wu, {
+                                { className: g()(yu.base, yu[`base__${u}`]) },
+                                u === Cu.entryPointTooltip
+                                    ? n().createElement(vu, {
                                           isEventEndingSoon: t,
-                                          leftTime: Pu(E),
-                                          untilTime: Ou(new Date(A)),
-                                          beforeEventTime: Ou(new Date(F)),
+                                          leftTime: Nu(E),
+                                          untilTime: Pu(new Date(A)),
+                                          beforeEventTime: Pu(new Date(F)),
                                           startDate: i,
                                       })
-                                    : n().createElement(Lu, {
+                                    : n().createElement(Mu, {
                                           isEventEndingSoon: t,
                                           showShine: a && t,
-                                          leftTime: Pu(E),
-                                          untilTime: Ou(new Date(A)),
+                                          leftTime: Nu(E),
+                                          untilTime: Pu(new Date(A)),
                                       }),
                             ),
                         );
                     },
-                    Iu = {
+                    Hu = {
                         timerWrapper: 'NotStartedState_timerWrapper_8f',
                         timerIcon: 'NotStartedState_timerIcon_f6',
                         text: 'NotStartedState_text_ab',
                         vehicleString: 'NotStartedState_vehicleString_01',
                     },
-                    Hu = R.strings.resource_well.tooltips.entryPoint,
-                    ku = ({ startDate: u, vehicleName: e }) =>
+                    ku = R.strings.resource_well.tooltips.entryPoint,
+                    Wu = ({ startDate: u, vehicleName: e }) =>
                         n().createElement(
                             n().Fragment,
                             null,
                             n().createElement(
                                 'div',
-                                { className: Iu.timerWrapper },
-                                n().createElement('div', { className: Iu.timerIcon }),
-                                n().createElement(Nu, { startDate: u, usagePlace: Bu.entryPointTooltip }),
+                                { className: Hu.timerWrapper },
+                                n().createElement('div', { className: Hu.timerIcon }),
+                                n().createElement(Iu, { startDate: u, usagePlace: Cu.entryPointTooltip }),
                             ),
                             n().createElement(
                                 'div',
-                                { className: Iu.text },
+                                { className: Hu.text },
                                 n().createElement(iu, {
-                                    text: Hu.notStartedEvent.text(),
-                                    classMix: Iu.textWrapper,
+                                    text: ku.notStartedEvent.text(),
+                                    classMix: Hu.textWrapper,
                                     binding: {
-                                        vehicleName: n().createElement('span', { className: Iu.vehicleString }, e),
+                                        vehicleName: n().createElement('span', { className: Hu.vehicleString }, e),
                                         uniqVehicleText: n().createElement(
                                             'span',
-                                            { className: Iu.vehicleString },
-                                            Hu.notStartedEvent.vehicleString.text(),
+                                            { className: Hu.vehicleString },
+                                            ku.notStartedEvent.vehicleString.text(),
                                         ),
                                     },
                                 }),
                             ),
                         );
-                var Wu = t(3371);
-                const Uu = 'RewardAvaiableState_timerWrapper_6e',
-                    Gu = 'RewardAvaiableState_timerIcon_7d',
-                    Vu = 'RewardAvaiableState_wrapper_2d',
-                    $u = 'RewardAvaiableState_text_fb',
-                    ju = R.strings.resource_well.tooltips.entryPoint,
-                    zu = ({ endDate: u, isEventEndingSoon: e, timeLeft: t, rewardCount: r, eventState: a }) => {
+                var Uu = t(3371);
+                const Gu = 'RewardAvaiableState_timerWrapper_6e',
+                    Vu = 'RewardAvaiableState_timerIcon_7d',
+                    $u = 'RewardAvaiableState_wrapper_2d',
+                    ju = 'RewardAvaiableState_text_fb',
+                    zu = R.strings.resource_well.tooltips.entryPoint,
+                    qu = ({ endDate: u, isEventEndingSoon: e, timeLeft: t, rewardCount: r, eventState: a }) => {
                         const i = r < 1e4;
                         return n().createElement(
                             n().Fragment,
                             null,
                             n().createElement(
                                 'div',
-                                { className: Uu },
-                                n().createElement('div', { className: Gu }),
-                                n().createElement(Nu, {
+                                { className: Gu },
+                                n().createElement('div', { className: Vu }),
+                                n().createElement(Iu, {
                                     endDate: u,
                                     isEventEndingSoon: e,
                                     timeLeft: t,
                                     showShine: !1,
-                                    usagePlace: Bu.entryPointTooltip,
+                                    usagePlace: Cu.entryPointTooltip,
                                 }),
                             ),
                             n().createElement(
                                 'div',
-                                { className: Vu },
+                                { className: $u },
                                 n().createElement(
                                     'div',
-                                    { className: $u },
+                                    { className: ju },
                                     (() => {
                                         switch (a) {
                                             case H.NoRewards:
-                                                return ju.noRewards.text();
+                                                return zu.noRewards.text();
                                             case H.RegularRewardAvailable:
-                                                return ju.regularAvailable.text();
+                                                return zu.regularAvailable.text();
                                             case H.TopRewardAvailable:
-                                                return ju.topAvailable.text();
+                                                return zu.topAvailable.text();
                                         }
                                     })(),
                                 ),
-                                n().createElement(Wu.A, {
+                                n().createElement(Uu.A, {
                                     vehiclesLeftCount: r,
                                     showCounterGlow: i,
-                                    usagePlace: Bu.entryPointTooltip,
+                                    usagePlace: Cu.entryPointTooltip,
                                 }),
                             ),
                         );
                     },
-                    qu = 'RewardReceivedState_base_bb',
-                    Ku = 'RewardReceivedState_checkIcon_ee',
-                    Yu = 'RewardReceivedState_checkText_38',
-                    Xu = 'RewardReceivedState_greenLight_96',
-                    Zu = 'RewardReceivedState_wrapper_22',
-                    Qu = 'RewardReceivedState_timerWrapper_e7',
-                    Ju = 'RewardReceivedState_timerIcon_60',
-                    ue = R.strings.resource_well.tooltips.entryPoint,
-                    ee = ({ eventState: u, endDate: e, isEventEndingSoon: t, timeLeft: r }) =>
+                    Ku = 'RewardReceivedState_base_bb',
+                    Yu = 'RewardReceivedState_checkIcon_ee',
+                    Xu = 'RewardReceivedState_checkText_38',
+                    Zu = 'RewardReceivedState_greenLight_96',
+                    Qu = 'RewardReceivedState_wrapper_22',
+                    Ju = 'RewardReceivedState_timerWrapper_e7',
+                    ue = 'RewardReceivedState_timerIcon_60',
+                    ee = R.strings.resource_well.tooltips.entryPoint,
+                    te = ({ eventState: u, endDate: e, isEventEndingSoon: t, timeLeft: r }) =>
                         n().createElement(
                             'div',
-                            { className: qu },
+                            { className: Ku },
                             n().createElement(
                                 'div',
-                                { className: Qu },
-                                n().createElement('div', { className: Ju }),
-                                n().createElement(Nu, {
+                                { className: Ju },
+                                n().createElement('div', { className: ue }),
+                                n().createElement(Iu, {
                                     endDate: e,
                                     isEventEndingSoon: t,
                                     timeLeft: r,
                                     showShine: !1,
-                                    usagePlace: Bu.entryPointTooltip,
+                                    usagePlace: Cu.entryPointTooltip,
                                 }),
                             ),
                             n().createElement(
                                 'div',
-                                { className: Zu },
-                                n().createElement('div', { className: Ku }),
+                                { className: Qu },
+                                n().createElement('div', { className: Yu }),
                                 n().createElement(
                                     'div',
-                                    { className: Yu },
-                                    u === H.RegularRewardReceived ? ue.regularReceived.text() : ue.topReceived.text(),
+                                    { className: Xu },
+                                    u === H.RegularRewardReceived ? ee.regularReceived.text() : ee.topReceived.text(),
                                 ),
                             ),
-                            n().createElement('div', { className: Xu }),
+                            n().createElement('div', { className: Zu }),
                         ),
-                    te = 'WarningState_base_a9',
-                    re = 'WarningState_alertIcon_41',
-                    ne = 'WarningState_alertText_3a',
-                    ae = R.strings.resource_well.tooltips.entryPoint,
-                    ie = ({ eventState: u }) =>
+                    re = 'WarningState_base_a9',
+                    ne = 'WarningState_alertIcon_41',
+                    ae = 'WarningState_alertText_3a',
+                    ie = R.strings.resource_well.tooltips.entryPoint,
+                    Ee = ({ eventState: u }) =>
                         n().createElement(
                             'div',
-                            { className: te },
-                            n().createElement('div', { className: re }),
+                            { className: re },
+                            n().createElement('div', { className: ne }),
                             n().createElement(
                                 'div',
-                                { className: ne },
-                                u === H.Forbidden ? ae.forbidden.text() : ae.paused.text(),
+                                { className: ae },
+                                u === H.Forbidden ? ie.forbidden.text() : ie.paused.text(),
                             ),
                         ),
-                    Ee = R.strings.resource_well.tooltips.entryPoint,
-                    Ae = () => {
+                    Ae = R.strings.resource_well.tooltips.entryPoint,
+                    Fe = () => {
                         const u = K('model', q.Shallow),
                             e = u.startDate,
                             t = u.vehicleName,
@@ -1958,18 +1955,18 @@
                             n().createElement(
                                 'div',
                                 { className: Y.content },
-                                n().createElement('div', { className: Y.title }, Ee.mainTitle.text()),
+                                n().createElement('div', { className: Y.title }, Ae.mainTitle.text()),
                                 (() => {
                                     switch (E) {
                                         case H.NotStarted:
-                                            return n().createElement(ku, { startDate: e, vehicleName: t });
+                                            return n().createElement(Wu, { startDate: e, vehicleName: t });
                                         case H.Forbidden:
                                         case H.Paused:
-                                            return n().createElement(ie, { eventState: E });
+                                            return n().createElement(Ee, { eventState: E });
                                         case H.NoRewards:
                                         case H.RegularRewardAvailable:
                                         case H.TopRewardAvailable:
-                                            return n().createElement(zu, {
+                                            return n().createElement(qu, {
                                                 eventState: E,
                                                 endDate: r,
                                                 isEventEndingSoon: i,
@@ -1978,7 +1975,7 @@
                                             });
                                         case H.RegularRewardReceived:
                                         case H.TopRewardReceived:
-                                            return n().createElement(ee, {
+                                            return n().createElement(te, {
                                                 eventState: E,
                                                 endDate: r,
                                                 isEventEndingSoon: i,
@@ -1989,7 +1986,7 @@
                             ),
                         );
                     };
-                function Fe() {
+                function oe() {
                     const u = (0, r.useRef)(0);
                     var e;
                     return (
@@ -2018,15 +2015,15 @@
                         )
                     );
                 }
-                const oe = {
+                const se = {
                         base: 'TooltipDecorator_base_c9',
                         'base__theme-default': 'TooltipDecorator_base__theme-default_6d',
                         decorator: 'TooltipDecorator_decorator_3d',
                     },
-                    se = ['children', 'className', 'theme'];
-                function De() {
+                    De = ['children', 'className', 'theme'];
+                function le() {
                     return (
-                        (De =
+                        (le =
                             Object.assign ||
                             function (u) {
                                 for (var e = 1; e < arguments.length; e++) {
@@ -2035,10 +2032,10 @@
                                 }
                                 return u;
                             }),
-                        De.apply(this, arguments)
+                        le.apply(this, arguments)
                     );
                 }
-                const le = n().forwardRef(function (u, e) {
+                const ce = n().forwardRef(function (u, e) {
                         let t = u.children,
                             a = u.className,
                             E = u.theme,
@@ -2051,8 +2048,8 @@
                                     a = Object.keys(u);
                                 for (r = 0; r < a.length; r++) (t = a[r]), e.indexOf(t) >= 0 || (n[t] = u[t]);
                                 return n;
-                            })(u, se);
-                        const o = Fe(),
+                            })(u, De);
+                        const o = oe(),
                             s = n().useRef(null);
                         var D;
                         return (
@@ -2075,20 +2072,20 @@
                             (0, r.useEffect)(D, []),
                             n().createElement(
                                 'div',
-                                De({}, F, {
-                                    className: g()(oe.base, oe[`base__theme-${A}`], a),
+                                le({}, F, {
+                                    className: g()(se.base, se[`base__theme-${A}`], a),
                                     ref: function (u) {
                                         (s.current = u), 'function' == typeof e ? e(u) : e && (e.current = u);
                                     },
                                 }),
-                                n().createElement('div', { className: oe.decorator }, t),
+                                n().createElement('div', { className: se.decorator }, t),
                             )
                         );
                     }),
-                    ce = () => n().createElement(le, null, n().createElement(Ae, null));
+                    de = () => n().createElement(ce, null, n().createElement(Fe, null));
                 engine.whenReady.then(() => {
                     I().render(
-                        n().createElement(P, null, n().createElement(ce, null)),
+                        n().createElement(P, null, n().createElement(de, null)),
                         document.getElementById('root'),
                     );
                 });

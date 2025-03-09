@@ -1366,8 +1366,8 @@
                             A = oe.thirdText.$dyn(`type${u}`),
                             E = oe.firstBlock.title.$dyn(`type${u}`),
                             F = oe.firstBlock.content.$dyn(`type${u}`),
-                            r = oe.firstBlock.title.$dyn(`type${u}`),
-                            D = oe.firstBlock.content.$dyn(`type${u}`),
+                            r = oe.secondBlock.title.$dyn(`type${u}`),
+                            D = oe.secondBlock.content.$dyn(`type${u}`),
                             n = oe.firstCondition.$dyn(`type${u}`),
                             a = oe.secondCondition.$dyn(`type${u}`);
                         return Z().createElement(

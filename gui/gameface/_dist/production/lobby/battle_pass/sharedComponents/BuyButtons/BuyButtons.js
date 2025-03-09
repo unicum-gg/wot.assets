@@ -241,9 +241,9 @@
             }
         })()),
         (s.o = (e, t) => Object.prototype.hasOwnProperty.call(e, t)),
-        (s.j = 523),
+        (s.j = 1523),
         (() => {
-            var e = { 523: 0 };
+            var e = { 1523: 0 };
             s.O.j = (t) => 0 === e[t];
             var t = (t, a) => {
                     var n,
@@ -260,6 +260,6 @@
                 a = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             a.forEach(t.bind(null, 0)), (a.push = t.bind(null, a.push.bind(a)));
         })();
-    var n = s.O(void 0, [519], () => s(9525));
+    var n = s.O(void 0, [1519], () => s(9525));
     n = s.O(n);
 })();

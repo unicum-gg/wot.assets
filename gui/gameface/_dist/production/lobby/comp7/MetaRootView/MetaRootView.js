@@ -8545,7 +8545,7 @@
                 }
                 const Cd = (0, V.Pi)(({ isCompleted: e, isActive: t, rewards: a, fixedSize: r }) => {
                         const n = S(),
-                            s = null != r ? r : n.mediaSize < B.Medium ? rl.Small : rl.Big,
+                            s = null != r ? r : n.mediaSize <= B.Medium ? rl.Small : rl.Big,
                             i = (e) => xl({ rewards: e, size: s }),
                             o = C()(hd, s === rl.Small && i(a).length > 2 && fd, e && !t && bd);
                         return u().createElement(
@@ -8569,7 +8569,7 @@
                             { className: s },
                             u().createElement('div', { className: i }),
                             u().createElement('div', { className: o }),
-                            u().createElement(Cd, { rewards: r, isActive: t, isCompleted: e, fixedSize: rl.Small }),
+                            u().createElement(Cd, { rewards: r, isActive: t, isCompleted: e }),
                             u().createElement('div', { className: pd.border }),
                             a && u().createElement('div', { className: C()(pd.border, pd.border__right) }),
                         );
@@ -8822,7 +8822,13 @@
                             );
                         return u().createElement(
                             'div',
-                            { className: C()(Md, m && Od), onMouseDown: E, onMouseUp: g, onMouseMove: p },
+                            {
+                                className: C()(Md, m && Od),
+                                onMouseDown: E,
+                                onMouseUp: g,
+                                onMouseMove: p,
+                                onMouseLeave: g,
+                            },
                             t,
                         );
                     };

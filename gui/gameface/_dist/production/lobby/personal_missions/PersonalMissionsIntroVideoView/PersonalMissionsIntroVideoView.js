@@ -1872,19 +1872,18 @@
                         A = E[1],
                         l = t.root.get().isWindowAccessible,
                         F = parseFloat(`${hu}`),
-                        c = 1 === viewEnv.getGraphicsQuality(),
-                        d = (0, r.useCallback)(() => {
+                        c = (0, r.useCallback)(() => {
                             a || e.videoStarted();
                         }, [e, a]),
-                        D = (0, r.useCallback)(
+                        d = (0, r.useCallback)(
                             (u, t) => {
                                 !a && u >= F && o(!0), !s && u >= t && (A(!0), e.close());
                             },
                             [a, F, s, e],
                         );
-                    var B;
-                    (B = e.close), uu(Q.n.ESCAPE, B);
-                    const _ = (0, r.useCallback)(() => {
+                    var D;
+                    (D = e.close), uu(Q.n.ESCAPE, D);
+                    const B = (0, r.useCallback)(() => {
                         e.onError('R.videos.personal_missions.intro_video');
                     }, [e]);
                     return n().createElement(
@@ -1903,15 +1902,13 @@
                         ),
                         n().createElement('div', { className: vu }),
                         n().createElement(Au, {
-                            src: c
-                                ? R.videos.personal_mission.intro_video_min()
-                                : R.videos.personal_mission.intro_video(),
+                            src: R.videos.personal_mission.intro_video(),
                             className: wu,
                             isPaused: !l || s,
                             autoPlay: !0,
-                            onStarted: d,
-                            onUpdated: D,
-                            onError: _,
+                            onStarted: c,
+                            onUpdated: d,
+                            onError: B,
                             videoWidth: fu,
                             videoHeight: pu,
                         }),

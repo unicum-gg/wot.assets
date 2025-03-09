@@ -6002,7 +6002,8 @@
                         }
                         return s().createElement(at, { text: o, classMix: t, binding: a });
                     }),
-                    mr = {
+                    mr = R.strings.common.duration,
+                    Er = {
                         base: 'TakeRewards_base_0f',
                         base__disabled: 'TakeRewards_base__disabled_10',
                         button: 'TakeRewards_button_be',
@@ -6016,9 +6017,9 @@
                         countdown: 'TakeRewards_countdown_60',
                         countdownIcon: 'TakeRewards_countdownIcon_c8',
                     },
-                    Er = { [$.AVAILABLE]: 'active', [$.NO_OFFERS]: 'hidden', [$.DISABLED]: 'disabled' },
-                    _r = R.strings.quests.dailyQuests.takeRewardsButton,
-                    Ar = (0, q.Pi)(({ className: e }) => {
+                    _r = { [$.AVAILABLE]: 'active', [$.NO_OFFERS]: 'hidden', [$.DISABLED]: 'disabled' },
+                    Ar = R.strings.quests.dailyQuests.takeRewardsButton,
+                    gr = (0, q.Pi)(({ className: e }) => {
                         const u = ze(),
                             t = u.model,
                             n = u.controls,
@@ -6028,29 +6029,22 @@
                             o = i === $.DISABLED,
                             l = ((e, u = !0) =>
                                 e.days > 7 && u
-                                    ? (0, tt.WU)(R.strings.common.duration.days(), { days: e.days })
+                                    ? (0, tt.WU)(mr.days(), { days: e.days })
                                     : e.days >= 1
-                                      ? 0 === e.hours
-                                          ? (0, tt.WU)(R.strings.common.duration.days(), { days: e.days })
-                                          : (0, tt.WU)(R.strings.common.duration.days(), { days: e.days + 1 })
+                                      ? (0, tt.WU)(mr.days(), { days: 0 === e.hours ? e.days : e.days + 1 })
                                       : e.hours >= 1
-                                        ? 0 === e.minutes
-                                            ? (0, tt.WU)(R.strings.common.duration.hours(), { hours: e.hours })
-                                            : (0, tt.WU)(R.strings.common.duration.hours(), { hours: e.hours + 1 })
-                                        : (0, tt.WU)(R.strings.common.duration.minutes(), { minutes: e.minutes || 1 }))(
-                                (0, On.f8)(r),
-                                !1,
-                            );
+                                        ? (0, tt.WU)(mr.hours(), { hours: 0 === e.minutes ? e.hours : e.hours + 1 })
+                                        : (0, tt.WU)(mr.minutes(), { minutes: e.minutes || 1 }))((0, On.f8)(r), !1);
                         return s().createElement(
                             'div',
-                            { className: b()(mr.base, e, mr[`base__${Er[i]}`]) },
+                            { className: b()(Er.base, e, Er[`base__${_r[i]}`]) },
                             s().createElement(
                                 au,
-                                { body: o ? _r.tooltipDisable() : _r.tooltip() },
+                                { body: o ? Ar.tooltipDisable() : Ar.tooltip() },
                                 s().createElement(
                                     'div',
                                     {
-                                        className: mr.button,
+                                        className: Er.button,
                                         onClick: o
                                             ? void 0
                                             : () => {
@@ -6062,20 +6056,20 @@
                                         s().createElement(
                                             s().Fragment,
                                             null,
-                                            s().createElement('div', { className: mr.border }),
-                                            s().createElement('div', { className: mr.glow }),
+                                            s().createElement('div', { className: Er.border }),
+                                            s().createElement('div', { className: Er.glow }),
                                         ),
                                     s().createElement(
                                         'div',
-                                        { className: mr.content },
-                                        s().createElement('div', { className: mr.buttonIcon }),
-                                        _r.text(),
+                                        { className: Er.content },
+                                        s().createElement('div', { className: Er.buttonIcon }),
+                                        Ar.text(),
                                     ),
                                     !o &&
                                         s().createElement(
                                             'div',
-                                            { className: mr.hightlightWrapper },
-                                            s().createElement('div', { className: mr.hightlight }),
+                                            { className: Er.hightlightWrapper },
+                                            s().createElement('div', { className: Er.hightlight }),
                                         ),
                                 ),
                             ),
@@ -6083,13 +6077,13 @@
                                 r > 0 &&
                                 s().createElement(
                                     'div',
-                                    { className: mr.countdown },
-                                    s().createElement('div', { className: mr.countdownIcon }),
-                                    s().createElement(dr, { text: _r.countdown(), binding: { leftTime: l } }),
+                                    { className: Er.countdown },
+                                    s().createElement('div', { className: Er.countdownIcon }),
+                                    s().createElement(dr, { text: Ar.countdown(), binding: { leftTime: l } }),
                                 ),
                         );
                     }),
-                    gr = (0, q.Pi)(() => {
+                    Fr = (0, q.Pi)(() => {
                         var e;
                         const u = ze(),
                             t = u.model,
@@ -6125,14 +6119,14 @@
                                             s().createElement(sr, null),
                                             i &&
                                                 i !== $.NO_OFFERS &&
-                                                s().createElement(Ar, { className: Ge.rewardsButton }),
+                                                s().createElement(gr, { className: Ge.rewardsButton }),
                                         ),
                                   s().createElement(su, { className: b()(Ge.infoButton, !r && Ge.infoButton__info) }),
                               );
                     });
                 engine.whenReady.then(() => {
                     H().render(
-                        s().createElement(I, null, s().createElement(We, null, s().createElement(gr, null))),
+                        s().createElement(I, null, s().createElement(We, null, s().createElement(Fr, null))),
                         document.getElementById('root'),
                     );
                 });
@@ -6170,13 +6164,14 @@
                         swapProgress: t,
                         progressBarStyles: n,
                         progressInfoStyles: i,
-                        classNames: o,
+                        progressBarTheme: o,
+                        classNames: l,
                     }) => {
-                        const l = e.current,
-                            c = e.earned,
-                            d = e.total,
-                            m = a()(D, { [C]: l === d }),
-                            _ = (0, r.useMemo)(
+                        const c = e.current,
+                            d = e.earned,
+                            m = e.total,
+                            _ = a()(D, { [C]: c === m }),
+                            A = (0, r.useMemo)(
                                 () =>
                                     Object.assign({}, v.uu, {
                                         line: { delay: 1e3, duration: 1e3 },
@@ -6184,27 +6179,28 @@
                                     }),
                                 [],
                             ),
-                            A = t
+                            g = t
                                 ? s().createElement(
                                       s().Fragment,
                                       null,
                                       s().createElement(
                                           'div',
-                                          { className: a()(f, null == o ? void 0 : o.progressBar), style: n },
+                                          { className: a()(f, null == l ? void 0 : l.progressBar), style: n },
                                           s().createElement(v.ko, {
                                               size: w.$.Small,
-                                              value: l,
-                                              deltaFrom: l - c,
-                                              maxValue: d,
-                                              animationSettings: _,
+                                              value: c,
+                                              deltaFrom: c - d,
+                                              maxValue: m,
+                                              animationSettings: A,
+                                              theme: o,
                                           }),
                                       ),
                                       s().createElement(
                                           'div',
-                                          { className: a()(m, null == o ? void 0 : o.progressInfo), style: i },
-                                          s().createElement('div', { className: p }, l),
+                                          { className: a()(_, null == l ? void 0 : l.progressInfo), style: i },
+                                          s().createElement('div', { className: p }, c),
                                           s().createElement('div', { className: B }, '/'),
-                                          s().createElement('div', { className: b }, d),
+                                          s().createElement('div', { className: b }, m),
                                       ),
                                   )
                                 : s().createElement(
@@ -6212,24 +6208,25 @@
                                       null,
                                       s().createElement(
                                           'div',
-                                          { className: a()(m, null == o ? void 0 : o.progressInfo), style: i },
-                                          s().createElement('div', { className: p }, l),
+                                          { className: a()(_, null == l ? void 0 : l.progressInfo), style: i },
+                                          s().createElement('div', { className: p }, c),
                                           s().createElement('div', { className: B }, '/'),
-                                          s().createElement('div', { className: b }, d),
+                                          s().createElement('div', { className: b }, m),
                                       ),
                                       s().createElement(
                                           'div',
-                                          { className: a()(f, null == o ? void 0 : o.progressBar), style: n },
+                                          { className: a()(f, null == l ? void 0 : l.progressBar), style: n },
                                           s().createElement(v.ko, {
                                               size: w.$.Small,
-                                              value: l,
-                                              deltaFrom: l - c,
-                                              maxValue: d,
-                                              animationSettings: _,
+                                              value: c,
+                                              deltaFrom: c - d,
+                                              maxValue: m,
+                                              animationSettings: A,
+                                              theme: o,
                                           }),
                                       ),
                                   );
-                        return s().createElement('div', { className: E }, d > 0 && A, u);
+                        return s().createElement('div', { className: E }, m > 0 && g, u);
                     },
                     S = R.strings.quests.dailyQuests.postBattle.genericAmpersand(),
                     T = R.strings.quests.dailyQuests.postBattle.and(),
@@ -6244,17 +6241,18 @@
                         progressBarStyles: d,
                         textStyles: m,
                         progressInfoStyles: E,
-                        inlineOperatorStyles: _,
-                        useAmpersand: D,
-                        classNames: C,
+                        progressBarTheme: _,
+                        inlineOperatorStyles: D,
+                        useAmpersand: C,
+                        classNames: p,
                     }) => {
                         if (e.items.length <= 0 || (void 0 !== n && 0 === n)) return null;
-                        const p = Object.assign({}, m, { textAlign: `${i}` });
+                        const B = Object.assign({}, m, { textAlign: `${i}` });
                         return s().createElement(
                             'div',
                             { className: t ? A : g },
                             e.items.map(({ value: A }, g) => {
-                                const B = ((e, u, t, n) => {
+                                const b = ((e, u, t, n) => {
                                     const a = { processMore: !0, showOperator: !1, isFirstCondition: !1 };
                                     if (u.items) t < e.items.length - 1 && (a.showOperator = !0);
                                     else {
@@ -6269,14 +6267,14 @@
                                     }
                                     return a;
                                 })(e, A, g, n);
-                                let b = A.descrData;
-                                if (b && B.isFirstCondition) {
-                                    b = `${systemLocale.toUpperCase(b[0])}${b.slice(1)}`;
+                                let f = A.descrData;
+                                if (f && b.isFirstCondition) {
+                                    f = `${systemLocale.toUpperCase(f[0])}${f.slice(1)}`;
                                 }
                                 return s().createElement(
                                     s().Fragment,
                                     { key: `${u}_${g}` },
-                                    B.processMore
+                                    b.processMore
                                         ? s().createElement(x, {
                                               conditions: A,
                                               missionId: u,
@@ -6286,11 +6284,12 @@
                                               align: i,
                                               swapProgress: o,
                                               progressBarStyles: d,
+                                              progressBarTheme: _,
                                               textStyles: m,
                                               progressInfoStyles: E,
-                                              inlineOperatorStyles: _,
-                                              useAmpersand: D,
-                                              classNames: C,
+                                              inlineOperatorStyles: D,
+                                              useAmpersand: C,
+                                              classNames: p,
                                           })
                                         : s().createElement(
                                               y,
@@ -6299,34 +6298,35 @@
                                                   swapProgress: o,
                                                   progressBarStyles: d,
                                                   progressInfoStyles: E,
+                                                  progressBarTheme: _,
                                                   classNames: {
-                                                      progressBar: null == C ? void 0 : C.progressBar,
-                                                      progressInfo: null == C ? void 0 : C.progressInfo,
+                                                      progressBar: null == p ? void 0 : p.progressBar,
+                                                      progressInfo: null == p ? void 0 : p.progressInfo,
                                                   },
                                               },
-                                              B.showOperator && r
+                                              b.showOperator && r
                                                   ? s().createElement(
                                                         'div',
-                                                        { className: a()(l, null == C ? void 0 : C.text), style: m },
-                                                        b,
+                                                        { className: a()(l, null == p ? void 0 : p.text), style: m },
+                                                        f,
                                                         s().createElement(
                                                             'span',
-                                                            { className: F, style: _ },
-                                                            'and' === e.conditionType && D ? S : T,
+                                                            { className: F, style: D },
+                                                            'and' === e.conditionType && C ? S : T,
                                                         ),
                                                     )
                                                   : s().createElement(
                                                         'div',
-                                                        { className: a()(l, null == C ? void 0 : C.text), style: p },
-                                                        b,
+                                                        { className: a()(l, null == p ? void 0 : p.text), style: B },
+                                                        f,
                                                     ),
                                           ),
-                                    B.showOperator &&
+                                    b.showOperator &&
                                         !r &&
                                         s().createElement(
                                             'div',
                                             { className: c },
-                                            'and' === e.conditionType && D ? S : T,
+                                            'and' === e.conditionType && C ? S : T,
                                         ),
                                 );
                             }),
@@ -6346,18 +6346,19 @@
                     swapProgress: A,
                     missionId: g,
                     progressBarStyles: F,
-                    textStyles: D,
-                    progressInfoStyles: C,
-                    inlineOperatorStyles: p,
-                    useAmpersand: B,
-                    className: b,
-                    classNames: f,
+                    progressBarTheme: D,
+                    textStyles: C,
+                    progressInfoStyles: p,
+                    inlineOperatorStyles: B,
+                    useAmpersand: b,
+                    className: f,
+                    classNames: h,
                 }) => {
                     if (0 === e.items.length) return null;
-                    const h = a()(i, b, { [o]: n === P.$.BIG, [d]: n === P.$.HUGE, [m]: r, [_]: l });
+                    const v = a()(i, f, { [o]: n === P.$.BIG, [d]: n === P.$.HUGE, [m]: r, [_]: l });
                     return s().createElement(
                         'div',
-                        { className: h },
+                        { className: v },
                         s().createElement(N, {
                             conditions: e,
                             missionId: g,
@@ -6367,11 +6368,12 @@
                             align: E,
                             swapProgress: A,
                             progressBarStyles: F,
-                            inlineOperatorStyles: p,
-                            textStyles: D,
-                            progressInfoStyles: C,
-                            useAmpersand: B,
-                            classNames: f,
+                            progressBarTheme: D,
+                            inlineOperatorStyles: B,
+                            textStyles: C,
+                            progressInfoStyles: p,
+                            useAmpersand: b,
+                            classNames: h,
                         }),
                     );
                 };

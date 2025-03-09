@@ -674,13 +674,17 @@
     bottom: 221rem;
 }
 .mediaLarge .App_tankViewButtons_f2 {
-    right: 590rem;
-    bottom: 246rem;
+    right: 692rem;
+    bottom: 284rem;
 }
 .mediaExtraLarge .App_tankViewButtons_f2 {
     width: 180rem;
     right: 790rem;
     bottom: 360rem;
+}
+.mediaExtraLarge .App_tankViewButtons__scaledX1_48 {
+    right: 1466rem;
+    bottom: 576rem;
 }
 .App_tankViewButtons_f2 {
     animation-name: App_fadeIn_b0;
@@ -1697,7 +1701,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .VehicleInfo_descriptionText_24 {
-    max-height: 120rem;
+    max-height: 140rem;
     margin: 13rem 0 20rem 15rem;
     text-shadow: 1rem 1rem 1rem rgba(0, 0, 0, 0.3);
 

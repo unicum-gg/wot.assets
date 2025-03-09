@@ -38,13 +38,13 @@
                         addPreloadTexture: () => y,
                         children: () => n,
                         displayStatus: () => b,
-                        displayStatusIs: () => U,
+                        displayStatusIs: () => N,
                         events: () => p,
-                        extraSize: () => V,
+                        extraSize: () => U,
                         forceTriggerMouseMove: () => B,
                         freezeTextureBeforeResize: () => D,
                         getBrowserTexturePath: () => M,
-                        getDisplayStatus: () => N,
+                        getDisplayStatus: () => V,
                         getScale: () => G,
                         getSize: () => W,
                         getViewGlobalPosition: () => O,
@@ -72,7 +72,7 @@
                             ? e
                             : null
                         : e;
-                function u(e) {
+                function d(e) {
                     return (t) => (
                         engine.on(e, t),
                         () => {
@@ -80,18 +80,18 @@
                         }
                     );
                 }
-                function d(e) {
+                function u(e) {
                     viewEnv.setTrackMouseOnStage(e);
                 }
-                const c = u('clientResized'),
-                    g = { down: u('mousedown'), up: u('mouseup'), move: u('mousemove') },
+                const c = d('clientResized'),
+                    g = { down: d('mousedown'), up: d('mouseup'), move: d('mousemove') },
                     h = (function () {
                         const e = { listeners: 0, enabled: !0, initialized: !1 };
                         function t() {
-                            e.enabled && d(!1);
+                            e.enabled && u(!1);
                         }
                         function r() {
-                            e.enabled && d(!0);
+                            e.enabled && u(!0);
                         }
                         function i() {
                             e.enabled
@@ -103,7 +103,7 @@
                                       ((e.initialized = !0),
                                       document.body.addEventListener('mouseenter', t),
                                       document.body.addEventListener('mouseleave', r))
-                                : d(!1);
+                                : u(!1);
                         }
                         const a = ['down', 'up', 'move'].reduce(
                             (t, r) => (
@@ -142,10 +142,10 @@
                                 (e.enabled = !0), i();
                             },
                             enableOutside() {
-                                e.enabled && d(!0);
+                                e.enabled && u(!0);
                             },
                             disableOutside() {
-                                e.enabled && d(!1);
+                                e.enabled && u(!1);
                             },
                         });
                     })();
@@ -168,19 +168,19 @@
                 }
                 const b = { showing: 0, shown: 1, hiding: 2, hidden: 3 },
                     p = {
-                        onTextureFrozen: u('self.onTextureFrozen'),
-                        onTextureReady: u('self.onTextureReady'),
-                        onDomBuilt: u('self.onDomBuilt'),
-                        onLoaded: u('self.onLoaded'),
-                        onDisplayChanged: u('self.onShowingStatusChanged'),
-                        onFocusUpdated: u('self.onFocusChanged'),
+                        onTextureFrozen: d('self.onTextureFrozen'),
+                        onTextureReady: d('self.onTextureReady'),
+                        onDomBuilt: d('self.onDomBuilt'),
+                        onLoaded: d('self.onLoaded'),
+                        onDisplayChanged: d('self.onShowingStatusChanged'),
+                        onFocusUpdated: d('self.onFocusChanged'),
                         children: {
-                            onAdded: u('children.onAdded'),
-                            onLoaded: u('children.onLoaded'),
-                            onRemoved: u('children.onRemoved'),
-                            onAttached: u('children.onAttached'),
-                            onTextureReady: u('children.onTextureReady'),
-                            onRequestPosition: u('children.requestPosition'),
+                            onAdded: d('children.onAdded'),
+                            onLoaded: d('children.onLoaded'),
+                            onRemoved: d('children.onRemoved'),
+                            onAttached: d('children.onAttached'),
+                            onTextureReady: d('children.onTextureReady'),
+                            onRequestPosition: d('children.requestPosition'),
                         },
                     },
                     L = ['args'],
@@ -283,11 +283,11 @@
                 function B() {
                     viewEnv.forceTriggerMouseMove();
                 }
-                function N() {
+                function V() {
                     return viewEnv.getShowingStatus();
                 }
-                const U = Object.keys(b).reduce((e, t) => ((e[t] = () => viewEnv.getShowingStatus() === b[t]), e), {}),
-                    V = {
+                const N = Object.keys(b).reduce((e, t) => ((e[t] = () => viewEnv.getShowingStatus() === b[t]), e), {}),
+                    U = {
                         set: (e, t) => {
                             viewEnv.setExtraSizeRem(e, t);
                         },
@@ -310,7 +310,7 @@
                         extraSmall: { weight: 0, width: 1024, height: 768 },
                     };
                 var Q;
-                function J(e, t, r) {
+                function K(e, t, r) {
                     const i = (function (e, t) {
                             switch (!0) {
                                 case e >= t.extraLarge.width:
@@ -375,10 +375,10 @@
                         (e.smallHeight = 'smallHeight'),
                         (e.extraSmallHeight = 'extraSmallHeight');
                 })(Q || (Q = {}));
-                const K = X.client.getSize('rem'),
-                    Y = K.width,
-                    Z = K.height,
-                    ee = Object.assign({ width: Y, height: Z }, J(Y, Z, q)),
+                const J = X.client.getSize('rem'),
+                    Y = J.width,
+                    Z = J.height,
+                    ee = Object.assign({ width: Y, height: Z }, K(Y, Z, q)),
                     te = (0, o.createContext)(ee),
                     re = ['children'],
                     ie = (e) => {
@@ -397,8 +397,8 @@
                             n = i.large,
                             l = i.medium,
                             s = i.small,
-                            u = i.extraSmall,
-                            d = i.extraLargeWidth,
+                            d = i.extraSmall,
+                            u = i.extraLargeWidth,
                             c = i.largeWidth,
                             g = i.mediumWidth,
                             h = i.smallWidth,
@@ -414,9 +414,9 @@
                             if (r.large && n) return t;
                             if (r.medium && l) return t;
                             if (r.small && s) return t;
-                            if (r.extraSmall && u) return t;
+                            if (r.extraSmall && d) return t;
                         } else {
-                            if (r.extraLargeWidth && d) return m(t, r, p);
+                            if (r.extraLargeWidth && u) return m(t, r, p);
                             if (r.largeWidth && c) return m(t, r, p);
                             if (r.mediumWidth && g) return m(t, r, p);
                             if (r.smallWidth && h) return m(t, r, p);
@@ -465,7 +465,7 @@
                         n = (0, o.useCallback)((e, t) => {
                             const r = X.view.pxToRem(e),
                                 i = X.view.pxToRem(t);
-                            a(Object.assign({ width: r, height: i }, J(r, i, q)));
+                            a(Object.assign({ width: r, height: i }, K(r, i, q)));
                         }, []);
                     ((e) => {
                         const t = (0, o.useRef)(!1);
@@ -481,7 +481,7 @@
                     le = r.n(ne),
                     oe = r(926),
                     se = r.n(oe);
-                let me, ue, de;
+                let me, de, ue;
                 !(function (e) {
                     (e[(e.ExtraSmall = q.extraSmall.width)] = 'ExtraSmall'),
                         (e[(e.Small = q.small.width)] = 'Small'),
@@ -495,14 +495,14 @@
                             (e[(e.Medium = q.medium.width)] = 'Medium'),
                             (e[(e.Large = q.large.width)] = 'Large'),
                             (e[(e.ExtraLarge = q.extraLarge.width)] = 'ExtraLarge');
-                    })(ue || (ue = {})),
+                    })(de || (de = {})),
                     (function (e) {
                         (e[(e.ExtraSmall = q.extraSmall.height)] = 'ExtraSmall'),
                             (e[(e.Small = q.small.height)] = 'Small'),
                             (e[(e.Medium = q.medium.height)] = 'Medium'),
                             (e[(e.Large = q.large.height)] = 'Large'),
                             (e[(e.ExtraLarge = q.extraLarge.height)] = 'ExtraLarge');
-                    })(de || (de = {}));
+                    })(ue || (ue = {}));
                 const ce = ['children', 'className'];
                 function ge() {
                     return (
@@ -519,18 +519,18 @@
                     );
                 }
                 const he = {
-                        [ue.ExtraSmall]: '',
-                        [ue.Small]: se().SMALL_WIDTH,
-                        [ue.Medium]: `${se().SMALL_WIDTH} ${se().MEDIUM_WIDTH}`,
-                        [ue.Large]: `${se().SMALL_WIDTH} ${se().MEDIUM_WIDTH} ${se().LARGE_WIDTH}`,
-                        [ue.ExtraLarge]: `${se().SMALL_WIDTH} ${se().MEDIUM_WIDTH} ${se().LARGE_WIDTH} ${se().EXTRA_LARGE_WIDTH}`,
+                        [de.ExtraSmall]: '',
+                        [de.Small]: se().SMALL_WIDTH,
+                        [de.Medium]: `${se().SMALL_WIDTH} ${se().MEDIUM_WIDTH}`,
+                        [de.Large]: `${se().SMALL_WIDTH} ${se().MEDIUM_WIDTH} ${se().LARGE_WIDTH}`,
+                        [de.ExtraLarge]: `${se().SMALL_WIDTH} ${se().MEDIUM_WIDTH} ${se().LARGE_WIDTH} ${se().EXTRA_LARGE_WIDTH}`,
                     },
                     ve = {
-                        [de.ExtraSmall]: '',
-                        [de.Small]: se().SMALL_HEIGHT,
-                        [de.Medium]: `${se().SMALL_HEIGHT} ${se().MEDIUM_HEIGHT}`,
-                        [de.Large]: `${se().SMALL_HEIGHT} ${se().MEDIUM_HEIGHT} ${se().LARGE_HEIGHT}`,
-                        [de.ExtraLarge]: `${se().SMALL_HEIGHT} ${se().MEDIUM_HEIGHT} ${se().LARGE_HEIGHT} ${se().EXTRA_LARGE_HEIGHT}`,
+                        [ue.ExtraSmall]: '',
+                        [ue.Small]: se().SMALL_HEIGHT,
+                        [ue.Medium]: `${se().SMALL_HEIGHT} ${se().MEDIUM_HEIGHT}`,
+                        [ue.Large]: `${se().SMALL_HEIGHT} ${se().MEDIUM_HEIGHT} ${se().LARGE_HEIGHT}`,
+                        [ue.ExtraLarge]: `${se().SMALL_HEIGHT} ${se().MEDIUM_HEIGHT} ${se().LARGE_HEIGHT} ${se().EXTRA_LARGE_HEIGHT}`,
                     },
                     Ee = {
                         [me.ExtraSmall]: '',
@@ -576,36 +576,36 @@
                                     a = ((e) => {
                                         switch (!0) {
                                             case e.extraLargeWidth:
-                                                return ue.ExtraLarge;
+                                                return de.ExtraLarge;
                                             case e.largeWidth:
-                                                return ue.Large;
+                                                return de.Large;
                                             case e.mediumWidth:
-                                                return ue.Medium;
+                                                return de.Medium;
                                             case e.smallWidth:
-                                                return ue.Small;
+                                                return de.Small;
                                             case e.extraSmallWidth:
-                                                return ue.ExtraSmall;
+                                                return de.ExtraSmall;
                                             default:
                                                 return (
-                                                    console.error('Unreachable media context resolution'), ue.ExtraSmall
+                                                    console.error('Unreachable media context resolution'), de.ExtraSmall
                                                 );
                                         }
                                     })(e),
                                     n = ((e) => {
                                         switch (!0) {
                                             case e.extraLargeHeight:
-                                                return de.ExtraLarge;
+                                                return ue.ExtraLarge;
                                             case e.largeHeight:
-                                                return de.Large;
+                                                return ue.Large;
                                             case e.mediumHeight:
-                                                return de.Medium;
+                                                return ue.Medium;
                                             case e.smallHeight:
-                                                return de.Small;
+                                                return ue.Small;
                                             case e.extraSmallHeight:
-                                                return de.ExtraSmall;
+                                                return ue.ExtraSmall;
                                             default:
                                                 return (
-                                                    console.error('Unreachable media context resolution'), de.ExtraSmall
+                                                    console.error('Unreachable media context resolution'), ue.ExtraSmall
                                                 );
                                         }
                                     })(e);
@@ -780,12 +780,18 @@
                                                 'mocks' === e ? (null == r ? void 0 : r.getter(t)) : l.readByPath(t),
                                             s = (e) => n.current.push(e),
                                             m = (({ observableModel: e }) => {
-                                                const t = {
-                                                        root: e.object(),
-                                                        reloadTimes: e.primitives(['reloadTimeLeft', 'reloadTime']),
-                                                        abilities: e.array('abilities', []),
-                                                        messages: e.array('messages', []),
-                                                    },
+                                                const t = Object.assign(
+                                                        {
+                                                            root: e.object(),
+                                                            reloadTimes: e.primitives(['reloadTimeLeft', 'reloadTime']),
+                                                        },
+                                                        e.primitives(['selectedVehicleID']),
+                                                        {
+                                                            abilities: e.array('abilities', []),
+                                                            messages: e.array('messages', []),
+                                                            aim: e.object('aim'),
+                                                        },
+                                                    ),
                                                     r = (0, Te.computedFn)(() => Me(t.abilities.get(), Le)),
                                                     i = (0, Te.computedFn)(
                                                         (e) =>
@@ -800,9 +806,15 @@
                                                             })(r(), e),
                                                         { equals: Se },
                                                     ),
-                                                    a = (0, Te.computedFn)(() => Me(t.messages.get(), Le));
+                                                    a = (0, Te.computedFn)(() => Me(t.messages.get(), Le)),
+                                                    n = (0, Te.computedFn)(() => t.aim.get().killStreak);
                                                 return Object.assign({}, t, {
-                                                    computes: { getAbilities: r, getAbility: i, getMessages: a },
+                                                    computes: {
+                                                        getAbilities: r,
+                                                        getAbility: i,
+                                                        getMessages: a,
+                                                        getKillStreak: n,
+                                                    },
                                                 });
                                             })({
                                                 mode: e,
@@ -879,25 +891,25 @@
                                                 },
                                                 cleanup: s,
                                             }),
-                                            u = { mode: e, model: m, externalModel: l, cleanup: s };
+                                            d = { mode: e, model: m, externalModel: l, cleanup: s };
                                         return {
                                             model: m,
-                                            controls: 'mocks' === e && r ? r.controls(u) : {},
+                                            controls: 'mocks' === e && r ? r.controls(d) : {},
                                             externalModel: l,
                                             mode: e,
                                         };
                                     },
                                     m = (0, o.useRef)(!1),
-                                    u = (0, o.useState)(e),
-                                    d = u[0],
-                                    c = u[1],
+                                    d = (0, o.useState)(e),
+                                    u = d[0],
+                                    c = d[1],
                                     g = (0, o.useState)(() => l(e, t, a)),
                                     h = g[0],
                                     v = g[1];
                                 return (
                                     (0, o.useEffect)(() => {
-                                        m.current ? v(l(d, t, a)) : (m.current = !0);
-                                    }, [a, d, t]),
+                                        m.current ? v(l(u, t, a)) : (m.current = !0);
+                                    }, [a, u, t]),
                                     (0, o.useEffect)(() => {
                                         c(e);
                                     }, [e]),
@@ -1004,13 +1016,13 @@
         (i.O = (t, r, a, n) => {
             if (!r) {
                 var l = 1 / 0;
-                for (u = 0; u < e.length; u++) {
-                    for (var [r, a, n] = e[u], o = !0, s = 0; s < r.length; s++)
+                for (d = 0; d < e.length; d++) {
+                    for (var [r, a, n] = e[d], o = !0, s = 0; s < r.length; s++)
                         (!1 & n || l >= n) && Object.keys(i.O).every((e) => i.O[e](r[s]))
                             ? r.splice(s--, 1)
                             : ((o = !1), n < l && (l = n));
                     if (o) {
-                        e.splice(u--, 1);
+                        e.splice(d--, 1);
                         var m = a();
                         void 0 !== m && (t = m);
                     }
@@ -1018,8 +1030,8 @@
                 return t;
             }
             n = n || 0;
-            for (var u = e.length; u > 0 && e[u - 1][2] > n; u--) e[u] = e[u - 1];
-            e[u] = [r, a, n];
+            for (var d = e.length; d > 0 && e[d - 1][2] > n; d--) e[d] = e[d - 1];
+            e[d] = [r, a, n];
         }),
         (i.n = (e) => {
             var t = e && e.__esModule ? () => e.default : () => e;
@@ -1053,10 +1065,10 @@
                         m = 0;
                     if (l.some((t) => 0 !== e[t])) {
                         for (a in o) i.o(o, a) && (i.m[a] = o[a]);
-                        if (s) var u = s(i);
+                        if (s) var d = s(i);
                     }
                     for (t && t(r); m < l.length; m++) (n = l[m]), i.o(e, n) && e[n] && e[n][0](), (e[n] = 0);
-                    return i.O(u);
+                    return i.O(d);
                 },
                 r = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             r.forEach(t.bind(null, 0)), (r.push = t.bind(null, r.push.bind(r)));

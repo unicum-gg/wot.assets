@@ -1454,6 +1454,7 @@
                     })(0, ({ externalModel: u }) => ({
                         close: u.createCallbackNoArgs('onClose'),
                         videoStarted: u.createCallbackNoArgs('onVideoStarted'),
+                        introVideoStarted: u.createCallbackNoArgs('onIntroVideoStarted'),
                     })),
                     O = y[0],
                     H = y[1],
@@ -1692,7 +1693,7 @@
                     }),
                     $ = 'App_video_e7',
                     K = R.strings.gui_lootboxes.videoreward,
-                    Y = R.videos.VehicleLootBoxCongrats.intro(),
+                    Y = R.videos.event_loot_boxes.cosmic2025.intro(),
                     Z = (0, p.Pi)(() => {
                         const u = H(),
                             e = u.controls,
@@ -1715,16 +1716,19 @@
                             g = (0, a.useState)(!1),
                             w = g[0],
                             p = g[1],
-                            L = parseFloat('10s'),
-                            S = parseFloat('16.8s'),
+                            L = parseFloat('3s'),
+                            S = parseFloat('11s'),
                             M = L - 2.8,
                             T = (0, a.useCallback)(() => {
-                                e.videoStarted();
+                                e.introVideoStarted();
                             }, [e]),
                             y = (0, a.useCallback)(() => {
+                                e.videoStarted();
+                            }, [e]),
+                            O = (0, a.useCallback)(() => {
                                 p(!0);
                             }, [p]),
-                            O = (0, a.useCallback)(
+                            k = (0, a.useCallback)(
                                 (u) => {
                                     const e = Number(u.toFixed(1));
                                     !d &&
@@ -1737,14 +1741,14 @@
                                 },
                                 [S, d],
                             ),
-                            k = (0, a.useCallback)(
+                            P = (0, a.useCallback)(
                                 (u) => {
                                     const e = Number(u.toFixed(1));
                                     !A && e >= M && l(!0);
                                 },
                                 [M, A],
                             );
-                        var P;
+                        var N;
                         return (
                             (0, a.useEffect)(() => {
                                 i &&
@@ -1754,10 +1758,10 @@
                                     setTimeout(() => {
                                         c(!1);
                                     }, 350),
-                                    f(R.sounds.ny2024_video_lootbox_tank_default()));
+                                    f(R.sounds.ev_cosmic_lootbox_video_start()));
                             }, [i]),
-                            (P = e.close),
-                            b(v.n.ESCAPE, P),
+                            (N = e.close),
+                            b(v.n.ESCAPE, N),
                             n().createElement(
                                 'div',
                                 { className: 'App_base_e4' },
@@ -1773,7 +1777,7 @@
                                                 isCeilTime: !1,
                                                 auto: !0,
                                                 onStarted: T,
-                                                onUpdated: O,
+                                                onUpdated: k,
                                                 videoWidth: 1920,
                                                 videoHeight: 1080,
                                             }),
@@ -1784,9 +1788,9 @@
                                                 isPaused: !r || w,
                                                 isCeilTime: !1,
                                                 autoPlay: !0,
-                                                onStarted: T,
-                                                onUpdated: k,
-                                                onEnded: y,
+                                                onStarted: y,
+                                                onUpdated: P,
+                                                onEnded: O,
                                                 videoWidth: 1920,
                                                 videoHeight: 1080,
                                             }),

@@ -4407,7 +4407,7 @@
                             o().createElement('div', { className: 'CardBundle_bg_c1' }),
                             o().createElement('div', {
                                 className: 'CardBundle_flag_1b',
-                                style: { backgroundImage: `url(${i})` },
+                                style: { backgroundImage: `url(R.images.gui.maps.shop.nations.flag_${i})` },
                             }),
                             o().createElement(
                                 'div',

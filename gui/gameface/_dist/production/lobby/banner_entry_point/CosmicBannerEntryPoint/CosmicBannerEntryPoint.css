@@ -17,7 +17,7 @@ body {
     width: 100%;
     height: 100%;
     border-radius: 2rem;
-    background: url('R.images.cosmic_event.gui.maps.icons.banner_entry_point.c_160x112') no-repeat center / cover;
+    background: no-repeat center / cover;
     filter: brightness(1);
     position: absolute;
     top: 0;
@@ -27,11 +27,17 @@ body {
         filter 0.5s cubic-bezier(0.07, 0.82, 0.17, 1),
         transform 0.5s cubic-bezier(0.07, 0.82, 0.17, 1);
 }
-.mediaMedium .App_bg_c0 {
+.App_base__big_eb .App_bg_c0 {
+    background-image: url('R.images.cosmic_event.gui.maps.icons.banner_entry_point.c_300x150');
+}
+.App_base__wideSmall_f8 .App_bg_c0 {
+    background-image: url('R.images.cosmic_event.gui.maps.icons.banner_entry_point.c_300x112');
+}
+.App_base__thinSmall_a9 .App_bg_c0 {
     background-image: url('R.images.cosmic_event.gui.maps.icons.banner_entry_point.c_220x112');
 }
-.mediaLarge .App_bg_c0 {
-    background-image: url('R.images.cosmic_event.gui.maps.icons.banner_entry_point.c_300x150');
+.App_base__thinExtraSmall_61 .App_bg_c0 {
+    background-image: url('R.images.cosmic_event.gui.maps.icons.banner_entry_point.c_160x112');
 }
 .App_base_4e:hover .App_bg_c0 {
     filter: brightness(1.05);
@@ -110,19 +116,31 @@ body {
     position: relative;
 }
 .App_title_27 {
-    margin-top: -6rem;
-    color: #ffffff;
+    color: #e9e2bf;
     font-size: 15rem;
     font-weight: 700;
+    line-height: 1.15;
+    color: #ffffff;
+    font-weight: 700;
     text-align: center;
-    letter-spacing: 1rem;
+    text-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.5);
+    overflow-wrap: break-word;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
-.mediaMedium .App_title_27 {
+.App_base__big_eb .App_title_27 {
+    font-size: 24rem;
+}
+.App_base__wideSmall_f8 .App_title_27 {
+    font-size: 22rem;
+}
+.App_base__thinSmall_a9 .App_title_27 {
     font-size: 18rem;
 }
-.mediaLarge .App_title_27 {
-    margin-top: -8rem;
-    font-size: 24rem;
+.App_base__thinExtraSmall_61 .App_title_27 {
+    font-size: 15rem;
 }
 .App_info_31 {
     max-width: 150rem;

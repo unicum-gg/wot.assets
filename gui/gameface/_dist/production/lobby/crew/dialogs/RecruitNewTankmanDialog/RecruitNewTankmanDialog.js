@@ -3303,12 +3303,13 @@
                     qe = t(9053),
                     Ze = t(8018);
                 const ze = (0, Ge.Pi)(function () {
-                        const e = $e().model;
+                        const e = $e().model,
+                            u = e.vehicleName.get().split('').join('\ufeff');
                         return a().createElement(Ve.w, {
                             text: R.strings.dialogs.recruit.title(),
                             binding: {
                                 role: e.role.get() ? (0, Ze.Gc)(e.role.get(), !1, Ze.wP.Objective) : void 0,
-                                vehicleName: e.vehicleName.get(),
+                                vehicleName: u,
                             },
                             justifyContent: qe.v2.Center,
                         });

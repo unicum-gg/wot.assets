@@ -737,6 +737,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .Header_iconSubtitle_54 {
     width: 24rem;
     height: 24rem;
+    margin-left: -12rem;
     background: no-repeat center / cover;
 }
 
@@ -786,6 +787,13 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .Header_subtitle__lockedNoVehicle_a4 {
+    text-shadow:
+        0rem 0rem 15rem #e52,
+        0rem 0rem 8rem #ff2a00b2,
+        0rem 0rem 4rem #ff7f0040;
+}
+
+.Header_subtitle__complete_8c {
     text-shadow:
         0rem 0rem 15rem #e52,
         0rem 0rem 8rem #ff2a00b2,
@@ -842,21 +850,18 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .QuestCard_base__available_6b.QuestCard_base__hover_13,
-.QuestCard_base__notAvailable_d9.QuestCard_base__hover_13,
-.QuestCard_base__pause_7d.QuestCard_base__hover_13 {
+.QuestCard_base__notAvailable_d9.QuestCard_base__hover_13 {
     background: url('R.images.gui.maps.icons.personalMissions3.QuestsView.card.available_hover') no-repeat center /
         contain;
 }
 
 .mediaMedium .QuestCard_base__available_6b.QuestCard_base__hover_13,
-.mediaMedium .QuestCard_base__notAvailable_d9.QuestCard_base__hover_13,
-.mediaMedium .QuestCard_base__pause_7d.QuestCard_base__hover_13 {
+.mediaMedium .QuestCard_base__notAvailable_d9.QuestCard_base__hover_13 {
     background-image: url('R.images.gui.maps.icons.personalMissions3.QuestsView.card.available_hover_m');
 }
 
 .mediaLarge .QuestCard_base__available_6b.QuestCard_base__hover_13,
-.mediaLarge .QuestCard_base__notAvailable_d9.QuestCard_base__hover_13,
-.mediaLarge .QuestCard_base__pause_7d.QuestCard_base__hover_13 {
+.mediaLarge .QuestCard_base__notAvailable_d9.QuestCard_base__hover_13 {
     background-image: url('R.images.gui.maps.icons.personalMissions3.QuestsView.card.available_hover_l');
 }
 
@@ -901,40 +906,71 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     background-image: url('R.images.gui.maps.icons.personalMissions3.QuestsView.card.inProgress_hover_l');
 }
 
+.QuestCard_base__inProgressHonor_a9,
 .QuestCard_base__done_9d,
-.QuestCard_base__doneHonor_27,
-.QuestCard_base__donePause_e7 {
+.QuestCard_base__doneHonor_27 {
     background: url('R.images.gui.maps.icons.personalMissions3.QuestsView.card.done_bg') no-repeat center / contain;
 }
 
+.mediaMedium .QuestCard_base__inProgressHonor_a9,
 .mediaMedium .QuestCard_base__done_9d,
-.mediaMedium .QuestCard_base__doneHonor_27,
-.mediaMedium .QuestCard_base__donePause_e7 {
+.mediaMedium .QuestCard_base__doneHonor_27 {
     background-image: url('R.images.gui.maps.icons.personalMissions3.QuestsView.card.done_bg_medium');
 }
 
+.mediaLarge .QuestCard_base__inProgressHonor_a9,
 .mediaLarge .QuestCard_base__done_9d,
-.mediaLarge .QuestCard_base__doneHonor_27,
-.mediaLarge .QuestCard_base__donePause_e7 {
+.mediaLarge .QuestCard_base__doneHonor_27 {
     background-image: url('R.images.gui.maps.icons.personalMissions3.QuestsView.card.done_bg_large');
 }
 
+.QuestCard_base__pause_7d,
+.QuestCard_base__donePause_e7 {
+    background: url('R.images.gui.maps.icons.personalMissions3.QuestsView.card.pause_bg') no-repeat center / contain;
+}
+
+.mediaMedium .QuestCard_base__pause_7d,
+.mediaMedium .QuestCard_base__donePause_e7 {
+    background-image: url('R.images.gui.maps.icons.personalMissions3.QuestsView.card.pause_bg_medium');
+}
+
+.mediaLarge .QuestCard_base__pause_7d,
+.mediaLarge .QuestCard_base__donePause_e7 {
+    background-image: url('R.images.gui.maps.icons.personalMissions3.QuestsView.card.pause_bg_large');
+}
+
+.QuestCard_base__inProgressHonor_a9.QuestCard_base__hover_13,
 .QuestCard_base__done_9d.QuestCard_base__hover_13,
-.QuestCard_base__doneHonor_27.QuestCard_base__hover_13,
-.QuestCard_base__donePause_e7.QuestCard_base__hover_13 {
+.QuestCard_base__doneHonor_27.QuestCard_base__hover_13 {
     background: url('R.images.gui.maps.icons.personalMissions3.QuestsView.card.done_hover') no-repeat center / contain;
 }
 
+.mediaMedium .QuestCard_base__inProgressHonor_a9.QuestCard_base__hover_13,
 .mediaMedium .QuestCard_base__done_9d.QuestCard_base__hover_13,
-.mediaMedium .QuestCard_base__doneHonor_27.QuestCard_base__hover_13,
-.mediaMedium .QuestCard_base__donePause_e7.QuestCard_base__hover_13 {
+.mediaMedium .QuestCard_base__doneHonor_27.QuestCard_base__hover_13 {
     background-image: url('R.images.gui.maps.icons.personalMissions3.QuestsView.card.doner_hover_m');
 }
 
+.mediaLarge .QuestCard_base__inProgressHonor_a9.QuestCard_base__hover_13,
 .mediaLarge .QuestCard_base__done_9d.QuestCard_base__hover_13,
-.mediaLarge .QuestCard_base__doneHonor_27.QuestCard_base__hover_13,
-.mediaLarge .QuestCard_base__donePause_e7.QuestCard_base__hover_13 {
+.mediaLarge .QuestCard_base__doneHonor_27.QuestCard_base__hover_13 {
     background-image: url('R.images.gui.maps.icons.personalMissions3.QuestsView.card.doner_hover_l');
+}
+
+.QuestCard_base__pause_7d.QuestCard_base__hover_13,
+.QuestCard_base__donePause_e7.QuestCard_base__hover_13 {
+    background: url('R.images.gui.maps.icons.personalMissions3.QuestsView.card.pause_bg_hover') no-repeat center /
+        contain;
+}
+
+.mediaMedium .QuestCard_base__pause_7d.QuestCard_base__hover_13,
+.mediaMedium .QuestCard_base__donePause_e7.QuestCard_base__hover_13 {
+    background-image: url('R.images.gui.maps.icons.personalMissions3.QuestsView.card.pause_bg_hover_medium');
+}
+
+.mediaLarge .QuestCard_base__pause_7d.QuestCard_base__hover_13,
+.mediaLarge .QuestCard_base__donePause_e7.QuestCard_base__hover_13 {
+    background-image: url('R.images.gui.maps.icons.personalMissions3.QuestsView.card.pause_bg_hover_large');
 }
 .QuestCard_contentWrapper_d9 {
     display: flex;
@@ -977,8 +1013,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     opacity: 0.8;
 }
 .QuestCard_base__done_9d .QuestCard_questID_98,
-.QuestCard_base__doneHonor_27 .QuestCard_questID_98,
-.QuestCard_base__donePause_e7 .QuestCard_questID_98 {
+.QuestCard_base__doneHonor_27 .QuestCard_questID_98 {
     color: rgba(89, 89, 80, 1);
 }
 .QuestCard_conditionsImg_80 {
@@ -1020,9 +1055,21 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 .QuestCard_base__pause_7d .QuestCard_cardIcon_3f,
 .QuestCard_base__donePause_e7 .QuestCard_cardIcon_3f {
-    width: 25rem;
-    height: 25rem;
+    width: 16rem;
+    height: 16rem;
     background-image: url('R.images.gui.maps.icons.personalMissions3.QuestsView.card.pause');
+}
+.mediaMedium .QuestCard_base__pause_7d .QuestCard_cardIcon_3f,
+.mediaMedium .QuestCard_base__donePause_e7 .QuestCard_cardIcon_3f {
+    width: 20rem;
+    height: 20rem;
+    background-image: url('R.images.gui.maps.icons.personalMissions3.QuestsView.card.pause_medium');
+}
+.mediaLarge .QuestCard_base__pause_7d .QuestCard_cardIcon_3f,
+.mediaLarge .QuestCard_base__donePause_e7 .QuestCard_cardIcon_3f {
+    width: 24rem;
+    height: 24rem;
+    background-image: url('R.images.gui.maps.icons.personalMissions3.QuestsView.card.pause_large');
 }
 .QuestCard_base__inProgress_21 .QuestCard_cardIcon_3f {
     background-image: url('R.images.gui.maps.icons.personalMissions3.QuestsView.card.active');
@@ -1114,7 +1161,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     z-index: 2;
 }
 .QuestCard_disableIcon__isUnlock_3f {
-    /* animation-name: unlock; */
     animation-duration: 1s;
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
@@ -1163,6 +1209,22 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     background-image: url('R.images.gui.maps.icons.personalMissions3.QuestsView.card.done_large');
     right: 10rem;
     bottom: 11rem;
+}
+.QuestCard_complete__inProgressHonor_c8 {
+    background-image: url('R.images.gui.maps.icons.personalMissions3.QuestsView.card.active');
+    position: absolute;
+    right: 8rem;
+    bottom: 10rem;
+}
+.mediaMedium .QuestCard_complete__inProgressHonor_c8 {
+    width: 20rem;
+    height: 20rem;
+    background-image: url('R.images.gui.maps.icons.personalMissions3.QuestsView.card.active_medium');
+}
+.mediaLarge .QuestCard_complete__inProgressHonor_c8 {
+    width: 24rem;
+    height: 24rem;
+    background-image: url('R.images.gui.maps.icons.personalMissions3.QuestsView.card.active_large');
 }
 .QuestCard_inProgress_fc {
     width: 16rem;
@@ -1838,6 +1900,8 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     left: 50%;
     z-index: 2;
     transform: translateX(-50%);
+}
+.QuestsView_content__show_a0 {
     animation-name: QuestsView_fadeIn_1e;
     animation-duration: 1.5s;
     animation-fill-mode: forwards;
@@ -1862,6 +1926,15 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .mediaExtraLarge .QuestsView_content_a3 {
     width: 1700rem;
     padding-top: 30rem;
+}
+.QuestsView_content__switched_a3 {
+    animation-name: QuestsView_switchedQuests_78;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in-out;
+    animation-duration: 0.6s;
 }
 .mediaMedium .QuestsView_content__scaled_33 {
     width: 1162rem;
@@ -1914,7 +1987,9 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     bottom: -160rem;
     left: 50%;
     transform: translateX(-50%);
-    animation: QuestsView_lightBlink_16 1.5s infinite alternate;
+}
+.QuestsView_bottomLight__show_bb {
+    animation: QuestsView_lightBlink_16 1s ease-out;
 }
 .mediaMedium .QuestsView_bottomLight_e0 {
     width: 1020rem;
@@ -1931,7 +2006,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .QuestsView_grid_b2 {
     width: 818rem;
     height: 415rem;
-    background: url('R.images.gui.maps.icons.personalMissions3.QuestsView.grid_small') no-repeat center / contain;
+    background: no-repeat center / contain;
     position: absolute;
     top: -9rem;
     left: 80rem;
@@ -1951,21 +2026,18 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .mediaMedium .QuestsView_grid_b2 {
     width: 994rem;
     height: 458rem;
-    background-image: url('R.images.gui.maps.icons.personalMissions3.QuestsView.grid_medium');
     top: 68rem;
     left: 62rem;
 }
 .mediaLarge .QuestsView_grid_b2 {
     width: 1172rem;
     height: 533rem;
-    background-image: url('R.images.gui.maps.icons.personalMissions3.QuestsView.grid_large');
     top: 68rem;
     left: 102rem;
 }
 .mediaExtraLarge .QuestsView_grid_b2 {
     width: 1560rem;
     height: 780rem;
-    background-image: url('R.images.gui.maps.icons.personalMissions3.QuestsView.grid_large');
     top: 68rem;
     left: 80rem;
 }
@@ -2023,15 +2095,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .QuestsView_quests__blinked_80 {
     opacity: 0.7;
 }
-.QuestsView_quests__switched_24 {
-    animation-name: QuestsView_switchedQuests_78;
-    animation-duration: 1.5s;
-    animation-fill-mode: forwards;
-    animation-timing-function: ease-out;
-    animation-iteration-count: 1;
-    animation-timing-function: ease-in-out;
-    animation-duration: 0.8s;
-}
 .QuestsView_character_3a {
     opacity: 0;
     position: absolute;
@@ -2055,7 +2118,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 .QuestsView_character__customLarge_33 {
     top: 38rem;
-    right: -100rem;
 }
 .mediaMedium .QuestsView_character__scaled_9c {
     top: 52rem;
@@ -2859,6 +2921,10 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     height: 120rem;
 }
 
+.RewardList_base__withChooseReward_79 {
+    top: -10rem;
+}
+
 .RewardList_rewardWrapper_3e {
     display: flex;
     flex-direction: column;
@@ -2868,6 +2934,10 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 
 .RewardList_rewardWrapper__withMargin_b2 {
     margin-right: 30rem;
+}
+
+.RewardList_chooseButton_e0 {
+    margin-top: 8rem;
 }
 
 .Content_base_51 {
@@ -3034,6 +3104,10 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .Footer_button__doneBasic_cb {
+    width: 204rem;
+}
+
+.mediaMedium .Footer_button__doneBasic_cb {
     width: 196rem;
 }
 
@@ -3093,6 +3167,26 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     font-size: 18rem;
     font-weight: 700;
     line-height: 1.1;
+}
+
+.Footer_progressButtonWrapper_68 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Footer_pauseResetButtons_f5 {
+    width: 140rem;
+    height: 24rem;
+}
+
+.Footer_pauseResetButtons__pause_61 {
+    margin-right: 20rem;
+}
+
+.mediaMedium .Footer_pauseResetButtons_f5 {
+    width: 160rem;
+    height: 32rem;
 }
 
 .Header_base_70 {
@@ -3189,6 +3283,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .Header_subTitle_2f {
     display: flex;
     align-items: center;
+    min-height: 24rem;
 }
 
 .Header_subTitleIcon_ee {
@@ -3268,6 +3363,10 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     background-color: rgba(255, 255, 255, 0.1);
     background-size: 250%;
     cursor: auto;
+}
+
+.SmallQuestCard_base__notReady_14 {
+    pointer-events: none;
 }
 
 .SmallQuestCard_base__available_70.SmallQuestCard_base__selected_09,
@@ -3923,7 +4022,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     bottom: -50rem;
     left: 50%;
     transform: translateX(-50%);
-    animation: QuestView_lightBlink_52 1.5s infinite alternate;
 }
 
 .mediaMedium .QuestView_bottomLight_3e {
@@ -3939,6 +4037,10 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .mediaExtraLarge .QuestView_bottomLight_3e {
     width: 2170rem;
     bottom: 66rem;
+}
+
+.QuestView_bottomLight__blinked_31 {
+    animation: QuestView_lightBlink_52 1.5s infinite alternate;
 }
 
 .mediaMedium .QuestView_base__scaled_17 .QuestView_bottomLight_3e {
@@ -4292,7 +4394,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     transform: translate(-50%, -50%);
 }
 .App_content__customSmall_87 {
-    width: 1290rem;
+    width: 100%;
     height: 680rem;
 }
 .mediaSmall .App_content_ac {
@@ -4309,7 +4411,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     margin-top: 14rem;
 }
 .mediaLarge .App_content__customLarge_9d {
-    width: 2200rem;
+    width: 100%;
     height: 1120rem;
 }
 .mediaExtraLarge .App_content_ac {

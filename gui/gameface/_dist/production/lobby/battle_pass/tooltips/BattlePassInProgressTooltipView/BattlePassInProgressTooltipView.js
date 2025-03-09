@@ -2809,7 +2809,7 @@
                         (u.COMP7 = 'comp7');
                 })(lt || (lt = {}));
                 const At = R.strings.battle_pass.tooltips,
-                    ct = { randoms: 'c_1', ranked: 'ranked', mapbox: 'c_1', comp7: 'c_24' },
+                    ct = { randoms: 'c_1', ranked: 'ranked', mapbox: 'c_1', comp7: 'c_24', stronghold_units: 'c_20' },
                     Ft = R.strings.battle_pass.tooltips.pointsTable,
                     Dt = R.strings.battle_pass.tooltips.prestigePoints,
                     dt = (0, f.Pi)(() => {
@@ -3063,9 +3063,9 @@
                 Object.defineProperty(u, Symbol.toStringTag, { value: 'Module' }),
                 Object.defineProperty(u, '__esModule', { value: !0 });
         }),
-        (__webpack_require__.j = 251),
+        (__webpack_require__.j = 6251),
         (() => {
-            var u = { 251: 0, 109: 0, 773: 0, 235: 0 };
+            var u = { 6251: 0, 8109: 0, 1773: 0, 6235: 0 };
             __webpack_require__.O.j = (e) => 0 === u[e];
             var e = (e, t) => {
                     var n,
@@ -3083,6 +3083,6 @@
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             t.forEach(e.bind(null, 0)), (t.push = e.bind(null, t.push.bind(t)));
         })();
-    var __webpack_exports__ = __webpack_require__.O(void 0, [519], () => __webpack_require__(4444));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [1519], () => __webpack_require__(4444));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

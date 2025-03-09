@@ -291,21 +291,22 @@
     cursor: pointer;
 }
 
-.Flag_base__active_3e,
-.Flag_base__notStarted_5e {
+.Flag_base__Active_d9,
+.Flag_base__NotStarted_8f {
     background-image: url('R.images.gui.maps.icons.resourceWell.entryPoint.flag_active');
 }
 
-.Flag_base__forbidden_0d,
-.Flag_base__paused_00 {
+.Flag_base__Forbidden_61,
+.Flag_base__Paused_e9,
+.Flag_base__SoldOut_a0 {
     background-image: url('R.images.gui.maps.icons.resourceWell.entryPoint.flag_error');
 }
 
-.Flag_base__completed_d8 {
+.Flag_base__Completed_33 {
     background-image: url('R.images.gui.maps.icons.resourceWell.entryPoint.flag_done');
 }
 
-.Flag_base__paused_00 {
+.Flag_base__Paused_e9 {
     cursor: default;
 }
 
@@ -322,16 +323,17 @@
     transition: opacity 0.3s ease-in-out;
 }
 
-.Flag_base__active_3e .Flag_hover_63,
-.Flag_base__notStarted_5e .Flag_hover_63 {
+.Flag_base__Active_d9 .Flag_hover_63,
+.Flag_base__NotStarted_8f .Flag_hover_63 {
     background-image: url('R.images.gui.maps.icons.resourceWell.entryPoint.flag_active_hover');
 }
 
-.Flag_base__forbidden_0d .Flag_hover_63 {
+.Flag_base__Forbidden_61 .Flag_hover_63,
+.Flag_base__SoldOut_a0 .Flag_hover_63 {
     background-image: url('R.images.gui.maps.icons.resourceWell.entryPoint.flag_error_hover');
 }
 
-.Flag_base__completed_d8 .Flag_hover_63 {
+.Flag_base__Completed_33 .Flag_hover_63 {
     background-image: url('R.images.gui.maps.icons.resourceWell.entryPoint.flag_done_hover');
 }
 
@@ -345,8 +347,9 @@
     background: url('R.images.gui.maps.icons.resourceWell.entryPoint.event_ico') no-repeat 0 0 / contain;
 }
 
-.Flag_base__forbidden_0d .Flag_emblem_f8,
-.Flag_base__paused_00 .Flag_emblem_f8 {
+.Flag_base__Forbidden_61 .Flag_emblem_f8,
+.Flag_base__Paused_e9 .Flag_emblem_f8,
+.Flag_base__SoldOut_a0 .Flag_emblem_f8 {
     background-image: url('R.images.gui.maps.icons.resourceWell.entryPoint.event_gr_ico');
 }
 
@@ -362,16 +365,16 @@
     animation: Flag_fadeInScale_ab 0.3s ease-in 2.3s forwards;
 }
 
-.Flag_base__forbidden_0d .Flag_state_3a,
-.Flag_base__paused_00 .Flag_state_3a {
+.Flag_base__Forbidden_61 .Flag_state_3a,
+.Flag_base__Paused_e9 .Flag_state_3a {
     background-image: url('R.images.gui.maps.icons.resourceWell.icons.alert_ico');
 }
 
-.Flag_base__completed_d8 .Flag_state_3a {
+.Flag_base__Completed_33 .Flag_state_3a {
     background-image: url('R.images.gui.maps.icons.resourceWell.icons.done_ico');
 }
 
-.Flag_base__notStarted_5e .Flag_state_3a {
+.Flag_base__NotStarted_8f .Flag_state_3a {
     width: 38rem;
     height: 38rem;
     background-image: url('R.images.gui.maps.icons.resourceWell.icons.time_ico');

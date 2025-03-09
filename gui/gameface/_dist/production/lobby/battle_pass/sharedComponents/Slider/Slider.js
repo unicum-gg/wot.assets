@@ -1256,9 +1256,9 @@
                 Object.defineProperty(e, Symbol.toStringTag, { value: 'Module' }),
                 Object.defineProperty(e, '__esModule', { value: !0 });
         }),
-        (__webpack_require__.j = 146),
+        (__webpack_require__.j = 7146),
         (() => {
-            var e = { 146: 0 };
+            var e = { 7146: 0 };
             __webpack_require__.O.j = (t) => 0 === e[t];
             var t = (t, i) => {
                     var r,
@@ -1276,6 +1276,6 @@
                 i = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             i.forEach(t.bind(null, 0)), (i.push = t.bind(null, i.push.bind(i)));
         })();
-    var __webpack_exports__ = __webpack_require__.O(void 0, [519], () => __webpack_require__(4894));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [1519], () => __webpack_require__(4894));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

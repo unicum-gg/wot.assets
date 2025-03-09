@@ -853,6 +853,9 @@ body {
     margin: 0 10rem;
     padding: 0 10rem;
 }
+.Content_button__disabled_c2 {
+    pointer-events: none;
+}
 .Content_closeButton_92 {
     position: absolute;
     top: 40rem;

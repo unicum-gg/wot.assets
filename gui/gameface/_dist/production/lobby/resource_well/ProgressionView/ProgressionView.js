@@ -3064,91 +3064,88 @@
                         );
                     },
                     Gt = (V.Sw.instance, Ut),
-                    Vt = 'TimerEntryPointTooltip_base_5a',
-                    zt = 'TimerEntryPointTooltip_text_17',
-                    jt = 'TimerEntryPointTooltip_lastUntil_25',
-                    qt = 'TimerEntryPointTooltip_leftTime_d7',
-                    Kt = R.strings.resource_well,
-                    Yt = ({ isEventEndingSoon: u, leftTime: e, untilTime: t, beforeEventTime: n, startDate: r }) =>
+                    Vt = R.strings.common.duration,
+                    zt = 'TimerEntryPointTooltip_base_5a',
+                    jt = 'TimerEntryPointTooltip_text_17',
+                    qt = 'TimerEntryPointTooltip_lastUntil_25',
+                    Kt = 'TimerEntryPointTooltip_leftTime_d7',
+                    Yt = R.strings.resource_well,
+                    Zt = ({ isEventEndingSoon: u, leftTime: e, untilTime: t, beforeEventTime: n, startDate: r }) =>
                         a().createElement(
                             'div',
-                            { className: Vt },
+                            { className: zt },
                             u
                                 ? a().createElement(
                                       a().Fragment,
                                       null,
                                       a().createElement(
                                           'div',
-                                          { className: zt },
-                                          Kt.tooltips.entryPoint.timer.leftTime(),
+                                          { className: jt },
+                                          Yt.tooltips.entryPoint.timer.leftTime(),
                                       ),
-                                      a().createElement('div', { className: qt }, e),
+                                      a().createElement('div', { className: Kt }, e),
                                   )
                                 : a().createElement(
                                       a().Fragment,
                                       null,
                                       a().createElement(
                                           'div',
-                                          { className: zt },
+                                          { className: jt },
                                           r
-                                              ? Kt.tooltips.entryPoint.timer.timeToStart()
-                                              : Kt.tooltips.entryPoint.timer.lastUntil(),
+                                              ? Yt.tooltips.entryPoint.timer.timeToStart()
+                                              : Yt.tooltips.entryPoint.timer.lastUntil(),
                                       ),
-                                      a().createElement('div', { className: jt }, r ? n : t),
+                                      a().createElement('div', { className: qt }, r ? n : t),
                                   ),
                         ),
-                    Zt = 'TimerMainScreen_shineWrapper_3c',
-                    Xt = 'TimerMainScreen_shineBg_77',
-                    Qt = 'TimerMainScreen_content_24',
-                    Jt = 'TimerMainScreen_text_9c',
-                    un = 'TimerMainScreen_time_98',
-                    en = 'TimerMainScreen_content__daysLeft_35',
-                    tn = 'TimerMainScreen_content__endingSoon_f0',
-                    nn = R.strings.resource_well,
-                    an = ({ isEventEndingSoon: u, leftTime: e, untilTime: t, showShine: n = !0 }) => {
-                        const r = g()(Qt, u ? tn : en);
+                    Xt = 'TimerMainScreen_shineWrapper_3c',
+                    Qt = 'TimerMainScreen_shineBg_77',
+                    Jt = 'TimerMainScreen_content_24',
+                    un = 'TimerMainScreen_text_9c',
+                    en = 'TimerMainScreen_time_98',
+                    tn = 'TimerMainScreen_content__daysLeft_35',
+                    nn = 'TimerMainScreen_content__endingSoon_f0',
+                    an = R.strings.resource_well,
+                    rn = ({ isEventEndingSoon: u, leftTime: e, untilTime: t, showShine: n = !0 }) => {
+                        const r = g()(Jt, u ? nn : tn);
                         return a().createElement(
                             a().Fragment,
                             null,
                             n &&
                                 a().createElement(
                                     'div',
-                                    { className: Zt },
-                                    a().createElement('div', { className: Xt }),
+                                    { className: Xt },
+                                    a().createElement('div', { className: Qt }),
                                 ),
                             a().createElement(
                                 'div',
                                 { className: r },
                                 a().createElement(
                                     'div',
-                                    { className: Jt },
-                                    u ? nn.mainView.timer.leftTime() : nn.mainView.timer.lastUntil(),
+                                    { className: un },
+                                    u ? an.mainView.timer.leftTime() : an.mainView.timer.lastUntil(),
                                 ),
-                                a().createElement('div', { className: un }, u ? e : t),
+                                a().createElement('div', { className: en }, u ? e : t),
                             ),
                         );
                     },
-                    rn = { base: 'Timer_base_ca', base__entryPointTooltip: 'Timer_base__entryPointTooltip_1d' },
-                    sn = R.strings.resource_well,
-                    on = (u) =>
-                        (0, ou.uF)(sn.mainView.timer.dayEnd(), {
+                    sn = { base: 'Timer_base_ca', base__entryPointTooltip: 'Timer_base__entryPointTooltip_1d' },
+                    on = R.strings.resource_well,
+                    ln = (u) =>
+                        (0, ou.uF)(on.mainView.timer.dayEnd(), {
                             day: u.getDate(),
                             month: R.strings.menu.dateTime.months.$num(u.getMonth() + 1),
                             time: `${u.getHours()}:${u.getMinutes() < 10 ? `0${u.getMinutes()}` : u.getMinutes()}`,
                         }),
-                    ln = (u) =>
+                    En = (u) =>
                         ((u, e = !0) =>
                             u.days > 7 && e
-                                ? (0, ou.WU)(R.strings.common.duration.days(), { days: u.days })
+                                ? (0, ou.WU)(Vt.days(), { days: u.days })
                                 : u.days >= 1
-                                  ? 0 === u.hours
-                                      ? (0, ou.WU)(R.strings.common.duration.days(), { days: u.days })
-                                      : (0, ou.WU)(R.strings.common.duration.days(), { days: u.days + 1 })
+                                  ? (0, ou.WU)(Vt.days(), { days: 0 === u.hours ? u.days : u.days + 1 })
                                   : u.hours >= 1
-                                    ? 0 === u.minutes
-                                        ? (0, ou.WU)(R.strings.common.duration.hours(), { hours: u.hours })
-                                        : (0, ou.WU)(R.strings.common.duration.hours(), { hours: u.hours + 1 })
-                                    : (0, ou.WU)(R.strings.common.duration.minutes(), { minutes: u.minutes || 1 }))(
+                                    ? (0, ou.WU)(Vt.hours(), { hours: 0 === u.minutes ? u.hours : u.hours + 1 })
+                                    : (0, ou.WU)(Vt.minutes(), { minutes: u.minutes || 1 }))(
                             (function (u = 0) {
                                 let e = u;
                                 const t = Math.trunc(e / Wt);
@@ -3160,7 +3157,7 @@
                             })(u),
                             !1,
                         ),
-                    En = ({
+                    cn = ({
                         usagePlace: u,
                         endDate: e = 0,
                         isEventEndingSoon: t = !1,
@@ -3171,31 +3168,31 @@
                         const s = Gt(n),
                             o = e * Pt,
                             l = i * Pt,
-                            E = (0, ou.uF)(sn.tooltips.mainView.timer.leftTime(), { leftTime: ln(s) });
+                            E = (0, ou.uF)(on.tooltips.mainView.timer.leftTime(), { leftTime: En(s) });
                         return a().createElement(
                             Rt.i,
                             { body: E },
                             a().createElement(
                                 'div',
-                                { className: g()(rn.base, rn[`base__${u}`]) },
+                                { className: g()(sn.base, sn[`base__${u}`]) },
                                 u === tu.entryPointTooltip
-                                    ? a().createElement(Yt, {
+                                    ? a().createElement(Zt, {
                                           isEventEndingSoon: t,
-                                          leftTime: ln(s),
-                                          untilTime: on(new Date(o)),
-                                          beforeEventTime: on(new Date(l)),
+                                          leftTime: En(s),
+                                          untilTime: ln(new Date(o)),
+                                          beforeEventTime: ln(new Date(l)),
                                           startDate: i,
                                       })
-                                    : a().createElement(an, {
+                                    : a().createElement(rn, {
                                           isEventEndingSoon: t,
                                           showShine: r && t,
-                                          leftTime: ln(s),
-                                          untilTime: on(new Date(o)),
+                                          leftTime: En(s),
+                                          untilTime: ln(new Date(o)),
                                       }),
                             ),
                         );
                     },
-                    cn = () => {
+                    An = () => {
                         const u = eu('model', uu.Shallow),
                             e = u.onClose,
                             t = u.endDate,
@@ -3244,7 +3241,7 @@
                                             onClick: B,
                                         }),
                                     ),
-                                    a().createElement(En, {
+                                    a().createElement(cn, {
                                         endDate: t,
                                         isEventEndingSoon: m,
                                         timeLeft: A,
@@ -3268,7 +3265,7 @@
                     };
                 engine.whenReady.then(() => {
                     P().render(
-                        a().createElement(N, null, a().createElement(cn, null)),
+                        a().createElement(N, null, a().createElement(An, null)),
                         document.getElementById('root'),
                     );
                 });
