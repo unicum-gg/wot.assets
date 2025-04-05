@@ -2,11 +2,11 @@
     'use strict';
     var __webpack_modules__ = {
             373: (e, t, n) => {
-                n(56), n(202);
+                n(56), n(363);
                 R.views.common.tooltip_window.simple_tooltip_content;
             },
             56: (e, t, n) => {
-                n(179), n(202);
+                n(179), n(363);
             },
             768: (e, t, n) => {
                 n.d(t, { O: () => ie });
@@ -704,7 +704,7 @@
                 window.ViewEnvHelper = y;
             },
             370: (e, t, n) => {
-                n(483), n(373), n(896), n(202);
+                n(483), n(373), n(896), n(363);
                 var i = n(375);
                 i.U.ExtraLarge,
                     i.U.Large,
@@ -744,6 +744,9 @@
                         (e.MAXIMUM = 'prestige'),
                         (e.UNDEFINED = 'undefined');
                 })(i || (i = {}));
+            },
+            363: (e) => {
+                e.exports = React;
             },
         },
         __webpack_module_cache__ = {},

@@ -1,0 +1,168 @@
+.TooltipDecorator_base_c9 {
+    display: flex;
+    position: absolute;
+}
+
+.TooltipDecorator_base__theme-default_6d .TooltipDecorator_decorator_3d {
+    padding: 4rem 6rem 8rem;
+    border-image-source: url('R.images.gui.maps.icons.tooltip.tooltip_background');
+    border-image-slice: 24 fill;
+    border-image-width: 24rem;
+    position: relative;
+}
+
+.FormatText_base_d0 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.FormatTextWithColorTags_blackReal_3c {
+    color: #000000;
+}
+
+.FormatTextWithColorTags_whiteReal_8a {
+    color: #ffffff;
+}
+
+.FormatTextWithColorTags_white_16 {
+    color: #f2f2f7;
+}
+
+.FormatTextWithColorTags_whiteOrange_18 {
+    color: #fefeec;
+}
+
+.FormatTextWithColorTags_whiteSpanish_10 {
+    color: #e9e2bf;
+}
+
+.FormatTextWithColorTags_par_ca {
+    color: #8c8c7e;
+}
+
+.FormatTextWithColorTags_parSecondary_8d {
+    color: #595950;
+}
+
+.FormatTextWithColorTags_parTertiary_a3 {
+    color: #37362e;
+}
+
+.FormatTextWithColorTags_red_60 {
+    color: #ff2717;
+}
+
+.FormatTextWithColorTags_redDark_03 {
+    color: #b70000;
+}
+
+.FormatTextWithColorTags_yellow_ad {
+    color: #feab34;
+}
+
+.FormatTextWithColorTags_orange_e4 {
+    color: #ee7000;
+}
+
+.FormatTextWithColorTags_cream_cd {
+    color: #ffdd99;
+}
+
+.FormatTextWithColorTags_brown_c8 {
+    color: #cbac77;
+}
+
+.FormatTextWithColorTags_greenBright_f0 {
+    color: #80d43a;
+}
+
+.FormatTextWithColorTags_green_c5 {
+    color: #7ab300;
+}
+
+.FormatTextWithColorTags_greenDark_af {
+    color: #497212;
+}
+
+.FormatTextWithColorTags_blueBooster_ac {
+    color: #ccffff;
+}
+
+.FormatTextWithColorTags_blueTeamkiller_6f {
+    color: #09e2ff;
+}
+
+.FormatTextWithColorTags_cred_4e {
+    color: #ced9d9;
+}
+
+.FormatTextWithColorTags_gold_90 {
+    color: #ffc363;
+}
+
+.FormatTextWithColorTags_bond_71 {
+    color: #c9c9b6;
+}
+
+.FormatTextWithColorTags_prom_dd {
+    color: #a29b70;
+}
+
+.App_base_13 {
+    color: #8c8c7e;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    width: 400rem;
+    padding: 20rem;
+    background-color: #12110b;
+    position: relative;
+}
+
+.App_bg_50 {
+    background-image: linear-gradient(
+        180deg,
+        rgba(51, 51, 41, 0.5) 0%,
+        rgba(51, 51, 41, 0) 15.6%,
+        rgba(51, 51, 41, 0) 88%,
+        rgba(51, 51, 41, 0.3) 100%
+    );
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.App_metal_37 {
+    width: 320rem;
+    height: 88rem;
+    background: url('R.images.armory_yard.gui.maps.icons.tooltips.metal') no-repeat left / cover;
+    mix-blend-mode: screen;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.App_content_ea {
+    position: relative;
+}
+
+.App_header_7e {
+    color: #e9e2bf;
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.App_body_de {
+    padding-top: 9rem;
+}
+
+.App_separator_14 {
+    width: 100%;
+    height: 9rem;
+    margin: 8rem 0;
+    background: url('R.images.armory_yard.gui.maps.icons.tooltips.separator') no-repeat center / cover;
+    margin: 12rem 0 6rem;
+}

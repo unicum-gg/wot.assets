@@ -10,8 +10,8 @@
                 t.r(r),
                     t.d(r, {
                         events: () => i,
-                        getMouseGlobalPosition: () => x,
-                        getSize: () => T,
+                        getMouseGlobalPosition: () => T,
+                        getSize: () => x,
                         graphicsQuality: () => S,
                         playSound: () => E,
                         setRTPC: () => P,
@@ -48,9 +48,9 @@
                         setSidePaddingsRem: () => q,
                         whenTutorialReady: () => de,
                     });
-                var s = t(6179),
+                var s = t(7363),
                     u = t.n(s),
-                    d = t(493),
+                    d = t(1533),
                     l = t.n(d),
                     c = t(6483),
                     v = t.n(c);
@@ -144,10 +144,10 @@
                         console.error(`setRTPC('${e}', '${n}'): `, t);
                     });
                 }
-                function T(e = 'px') {
+                function x(e = 'px') {
                     return 'rem' === e ? viewEnv.getClientSizeRem() : viewEnv.getClientSizePx();
                 }
-                function x(e = 'px') {
+                function T(e = 'px') {
                     return 'rem' === e ? viewEnv.getMouseGlobalPositionRem() : viewEnv.getMouseGlobalPositionPx();
                 }
                 const S = {
@@ -427,6 +427,12 @@
                 engine.whenReady.then(() => {
                     l().render(u().createElement(ye, null), document.getElementById('root'));
                 });
+            },
+            7363: (e) => {
+                e.exports = React;
+            },
+            1533: (e) => {
+                e.exports = ReactDOM;
             },
         },
         t = {};

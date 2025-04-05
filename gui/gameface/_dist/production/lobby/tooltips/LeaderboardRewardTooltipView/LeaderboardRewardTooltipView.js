@@ -21,10 +21,10 @@
                     F.d(E, {
                         events: () => e,
                         getMouseGlobalPosition: () => z,
-                        getSize: () => O,
+                        getSize: () => S,
                         graphicsQuality: () => M,
                         playSound: () => P,
-                        setRTPC: () => S,
+                        setRTPC: () => O,
                     });
                 var D = {};
                 F.r(D), F.d(D, { getBgUrl: () => V, getTextureUrl: () => L });
@@ -58,9 +58,9 @@
                         setSidePaddingsRem: () => K,
                         whenTutorialReady: () => su,
                     });
-                var t = F(6179),
+                var t = F(7363),
                     C = F.n(t),
-                    n = F(493),
+                    n = F(1533),
                     r = F.n(n),
                     o = F(6483),
                     a = F.n(o),
@@ -235,12 +235,12 @@
                         console.error(`playSound('${u}'): `, A);
                     });
                 }
-                function S(u, A) {
+                function O(u, A) {
                     engine.call('SetRTPCGlobal', u, A).catch((F) => {
                         console.error(`setRTPC('${u}', '${A}'): `, F);
                     });
                 }
-                function O(u = 'px') {
+                function S(u = 'px') {
                     return 'rem' === u ? viewEnv.getClientSizeRem() : viewEnv.getClientSizePx();
                 }
                 function z(u = 'px') {
@@ -253,7 +253,7 @@
                     },
                     j = { highlight: 'highlight', click: 'play', yes1: 'yes1' },
                     N = Object.keys(j).reduce((u, A) => ((u[A] = () => P(j[A])), u), {}),
-                    k = { play: Object.assign({}, N, { sound: P }), setRTPC: S };
+                    k = { play: Object.assign({}, N, { sound: P }), setRTPC: O };
                 function L(u, A, F = 1) {
                     return viewEnv.getChildTexturePath(u, A.width, A.height, F);
                 }
@@ -760,8 +760,8 @@
                     })(),
                     Pu = Tu[0],
                     Ru = Tu[1],
-                    Su = R.strings.battle_royale.tooltip.progression.leaderboardReward,
-                    Ou = (0, fu.Pi)(() => {
+                    Ou = R.strings.battle_royale.tooltip.progression.leaderboardReward,
+                    Su = (0, fu.Pi)(() => {
                         const u = Ru().model;
                         return C().createElement(
                             vu,
@@ -772,7 +772,7 @@
                                 C().createElement(
                                     'div',
                                     { className: 'App_header_15' },
-                                    C().createElement(g, { text: Su.header(), classMix: 'App_text_82' }),
+                                    C().createElement(g, { text: Ou.header(), classMix: 'App_text_82' }),
                                 ),
                                 C().createElement(gu.i, {
                                     battleModes: u.battleModes.get(),
@@ -783,7 +783,7 @@
                     });
                 engine.whenReady.then(() => {
                     r().render(
-                        C().createElement(Pu, null, C().createElement(Ou, null)),
+                        C().createElement(Pu, null, C().createElement(Su, null)),
                         document.getElementById('root'),
                     );
                 });
@@ -793,7 +793,7 @@
                 var e = F(6483),
                     E = F.n(e),
                     D = F(9480),
-                    B = F(6179),
+                    B = F(7363),
                     t = F.n(B);
                 const C = 'Column_separator_99',
                     n = ({ battleType: u, mode: A, isNotFirstColumn: F }) =>
@@ -832,7 +832,7 @@
             5210: (u, A, F) => {
                 F.d(A, { i: () => t });
                 var e = F(9480),
-                    E = F(6179),
+                    E = F(7363),
                     D = F.n(E),
                     B = F(5801);
                 const t = ({ battleModes: u, battleType: A }) =>
@@ -854,6 +854,12 @@
                             }),
                         ),
                     );
+            },
+            7363: (u) => {
+                u.exports = React;
+            },
+            1533: (u) => {
+                u.exports = ReactDOM;
             },
         },
         F = {};

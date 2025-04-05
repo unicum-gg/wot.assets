@@ -176,8 +176,8 @@
                         },
                     },
                     y = ['args'];
-                const T = 2,
-                    O = 16,
+                const O = 2,
+                    T = 16,
                     P = 32,
                     x = 64,
                     k = (u, e) => {
@@ -219,13 +219,13 @@
                     },
                     R = {
                         close(u) {
-                            k('popover' === u ? T : P);
+                            k('popover' === u ? O : P);
                         },
                         minimize() {
                             k(x);
                         },
                         move(u) {
-                            k(O, { isMouseEvent: !0, on: u });
+                            k(T, { isMouseEvent: !0, on: u });
                         },
                     },
                     S = 15;
@@ -701,9 +701,9 @@
                     };
             },
             700: (u, e, A) => {
-                var E = A(179),
+                var E = A(363),
                     F = A.n(E),
-                    t = A(493),
+                    t = A(533),
                     D = A.n(t);
                 let n;
                 !(function (u) {
@@ -843,12 +843,12 @@
                         )
                     );
                 }
-                const T = {
+                const O = {
                         base: 'TooltipDecorator_base_c9',
                         'base__theme-default': 'TooltipDecorator_base__theme-default_6d',
                         decorator: 'TooltipDecorator_decorator_3d',
                     },
-                    O = ['children', 'className', 'theme'];
+                    T = ['children', 'className', 'theme'];
                 function P() {
                     return (
                         (P = Object.assign
@@ -877,7 +877,7 @@
                                     A[E] = u[E];
                                 }
                             return A;
-                        })(u, O);
+                        })(u, T);
                     const B = y(),
                         o = F().useRef(null);
                     var i;
@@ -902,12 +902,12 @@
                         F().createElement(
                             'div',
                             P({}, r, {
-                                className: w()(T.base, T[`base__theme-${n}`], t),
+                                className: w()(O.base, O[`base__theme-${n}`], t),
                                 ref: function (u) {
                                     (o.current = u), 'function' == typeof e ? e(u) : e && (e.current = u);
                                 },
                             }),
-                            F().createElement('div', { className: T.decorator }, A),
+                            F().createElement('div', { className: O.decorator }, A),
                         )
                     );
                 });
@@ -1201,6 +1201,12 @@
                         document.getElementById('root'),
                     );
                 });
+            },
+            363: (u) => {
+                u.exports = React;
+            },
+            533: (u) => {
+                u.exports = ReactDOM;
             },
         },
         __webpack_module_cache__ = {},

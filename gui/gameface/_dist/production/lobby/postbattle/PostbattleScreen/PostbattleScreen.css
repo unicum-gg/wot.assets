@@ -1560,8 +1560,8 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .RewardTape_base_33 {
     width: 100%;
     height: 220rem;
-    background: url('R.images.gui.maps.icons.postbattle.postbattle_screen.reward_tape.reward_tape_bg') no-repeat center /
-        cover;
+    background: url('R.images.gui.maps.icons.postbattle.postbattle_screen.reward_tape.reward_tape_bg') no-repeat
+        center / cover;
     position: relative;
 }
 

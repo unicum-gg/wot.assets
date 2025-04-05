@@ -150,6 +150,30 @@
 .Currency_base__extraLarge_4d .Currency_icon__freeXP-extraLarge_58 {
     transform: translateY(4rem);
 }
+.Currency_icon__eliteXP-small_45 {
+    background-image: url('R.images.gui.maps.icons.library.EliteXpIcon-2');
+}
+.Currency_base__small_af .Currency_icon__eliteXP-small_45 {
+    transform: translateY(1rem);
+}
+.Currency_icon__eliteXP-big_c0 {
+    --icon-height: 24rem;
+    margin-left: -5rem;
+    background-image: url('R.images.gui.maps.icons.library.EliteXpIconBig');
+}
+.Currency_icon__eliteXP-large_1b {
+    --icon-height: 48rem;
+    margin: 0 -5rem 0 -6rem;
+    background-image: url('R.images.gui.maps.icons.library.elite_exp_48x48');
+}
+.Currency_icon__eliteXP-extraLarge_9b {
+    --icon-height: 80rem;
+    margin: 0 -5rem;
+    background-image: url('R.images.gui.maps.icons.library.elite_exp_80x80');
+}
+.Currency_base__extraLarge_4d .Currency_icon__eliteXP-extraLarge_9b {
+    transform: translateY(4rem);
+}
 .Currency_icon__equipCoin-small_32 {
     --icon-height: 16rem;
     margin-right: -2rem;
@@ -176,6 +200,34 @@
     background-image: url('R.images.gui.maps.icons.library.equipCoin_icon_80x80');
 }
 .Currency_base__extraLarge_4d .Currency_icon__equipCoin-extraLarge_8a {
+    transform: translateX(2rem) translateY(4rem);
+}
+.Currency_icon__stpCoin-small_6b {
+    --icon-height: 16rem;
+    margin-right: -2rem;
+    background-image: url('R.images.gui.maps.icons.library.stpcoin.stpcoinSmall');
+}
+.Currency_base__small_af .Currency_icon__stpCoin-small_6b {
+    transform: translateX(-1rem) translateY(1rem);
+}
+.Currency_icon__stpCoin-big_da {
+    --icon-height: 24rem;
+    background-image: url('R.images.gui.maps.icons.library.stpcoin.stpcoinBig');
+}
+.Currency_base__big_bc .Currency_icon__stpCoin-big_da {
+    transform: translateX(-5rem) translateY(3rem);
+}
+.Currency_icon__stpCoin-large_ee {
+    --icon-height: 48rem;
+    margin-right: 2rem;
+    background-image: url('R.images.gui.maps.icons.library.stpcoin.stpcoinLarge');
+}
+.Currency_icon__stpCoin-extraLarge_fa {
+    --icon-height: 80rem;
+    margin-right: 8rem;
+    background-image: url('R.images.gui.maps.icons.library.stpcoin.stpcoinExtraLarge');
+}
+.Currency_base__extraLarge_4d .Currency_icon__stpCoin-extraLarge_fa {
     transform: translateX(2rem) translateY(4rem);
 }
 .Currency_value_e1 {
@@ -219,7 +271,9 @@
 }
 .Currency_value__xp_b0,
 .Currency_value__crystal_19,
-.Currency_value__equipCoin_d0 {
+.Currency_value__equipCoin_d0,
+.Currency_value__eliteXP_62,
+.Currency_value__stpCoin_38 {
     color: #c9c9b6;
 }
 .Currency_base__small_af .Currency_value__notEnough_56 {
@@ -330,6 +384,30 @@
     in JS 8000 reserved like anchor for start optimization
 */
 /* stylelint-disable-line */
+.ProgressBarDeltaSimple_base_6c {
+    width: 0;
+    height: 100%;
+    position: absolute;
+    top: 0;
+}
+.ProgressBarDeltaSimple_delta_99 {
+    width: 0;
+    max-width: 8001px;
+    height: 100%;
+    box-shadow: var(--progress-delta-shadow);
+    background-color: var(--progress-delta-color);
+    position: absolute;
+    bottom: 0;
+    transform-origin: right center;
+    transition-timing-function: cubic-bezier(1, 0, 0.92, 1), cubic-bezier(0.21, 0.61, 0.35, 1);
+    transition-property: width, transform;
+}
+
+/*
+    Gameface can't calculate gradient biggest than 8128px
+    in JS 8000 reserved like anchor for start optimization
+*/
+/* stylelint-disable-line */
 .ProgressLineImpose_base_80 {
     max-width: 8001px;
     height: 100%;
@@ -414,30 +492,6 @@
     width: 44rem;
     height: 43rem;
     background-image: var(--progress-glow-small);
-}
-
-/*
-    Gameface can't calculate gradient biggest than 8128px
-    in JS 8000 reserved like anchor for start optimization
-*/
-/* stylelint-disable-line */
-.ProgressBarDeltaSimple_base_6c {
-    width: 0;
-    height: 100%;
-    position: absolute;
-    top: 0;
-}
-.ProgressBarDeltaSimple_delta_99 {
-    width: 0;
-    max-width: 8001px;
-    height: 100%;
-    box-shadow: var(--progress-delta-shadow);
-    background-color: var(--progress-delta-color);
-    position: absolute;
-    bottom: 0;
-    transform-origin: right center;
-    transition-timing-function: cubic-bezier(1, 0, 0.92, 1), cubic-bezier(0.21, 0.61, 0.35, 1);
-    transition-property: width, transform;
 }
 
 /*
@@ -654,10 +708,95 @@
     overflow-wrap: normal;
 }
 
+.SkillProgression_progressSection_a7,
+.SkillProgression_discount_1a {
+    padding: 0 20rem;
+}
+
+.SkillProgression_progressSection_a7 {
+    color: #8c8c7e;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+    display: flex;
+    flex-direction: column;
+    margin-top: 12rem;
+}
+
+.SkillProgression_progressSection__available_93 {
+    margin-top: 24rem;
+}
+
+.SkillProgression_progressValues_ef {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10rem;
+}
+
+.SkillProgression_percents_1d {
+    color: #feab34;
+}
+
+.SkillProgression_percents__full_65 {
+    color: #ffdd99;
+}
+
+.SkillProgression_xpValues_42 {
+    position: relative;
+}
+
+.SkillProgression_currentValue_1a {
+    color: #c9c9b6;
+}
+
+.SkillProgression_discountValue_7f {
+    color: #595950;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    position: absolute;
+    top: -16rem;
+    right: 18rem;
+}
+
+.SkillProgression_discountCrossLine_7f {
+    width: 100%;
+    height: 1rem;
+    background-color: #595950;
+    position: absolute;
+    right: 0;
+    bottom: 7rem;
+}
+
+.SkillProgression_totalValue_6c {
+    color: #8c8c7e;
+}
+
+.SkillProgression_totalValue__withDiscount_27 {
+    color: #fefeec;
+    text-shadow:
+        0 0 4rem rgba(255, 127, 0, 0.25),
+        0 0 8rem #ff2a00,
+        0 0 15rem #e52;
+}
+
+.SkillProgression_discount_1a {
+    display: flex;
+    margin-top: 28rem;
+}
+
+.SkillProgression_discountLabel_e2 {
+    margin: -3rem 0 0 6rem;
+}
+
+.SkillProgression_infoIcon_2c {
+    width: 14rem;
+    height: 14rem;
+    background: url('R.images.gui.maps.icons.crew.profile.info') no-repeat center / contain;
+}
+
 .NormalSkill_header_e3,
-.NormalSkill_description_c5,
-.NormalSkill_progressSection_ab,
-.NormalSkill_discount_91 {
+.NormalSkill_description_c5 {
     padding: 0 20rem;
 }
 
@@ -670,88 +809,6 @@
 
 .NormalSkill_description_c5 {
     margin-top: 8rem;
-}
-
-.NormalSkill_progressSection_ab {
-    color: #8c8c7e;
-    font-size: 16rem;
-    font-weight: 400;
-    line-height: 1.25;
-    display: flex;
-    flex-direction: column;
-    margin-top: 12rem;
-}
-
-.NormalSkill_progressSection__available_3b {
-    margin-top: 24rem;
-}
-
-.NormalSkill_progressValues_57 {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 10rem;
-}
-
-.NormalSkill_percents_f6 {
-    color: #feab34;
-}
-
-.NormalSkill_percents__full_b5 {
-    color: #ffdd99;
-}
-
-.NormalSkill_xpValues_6c {
-    position: relative;
-}
-
-.NormalSkill_currentValue_a6 {
-    color: #c9c9b6;
-}
-
-.NormalSkill_discountValue_20 {
-    color: #595950;
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
-    position: absolute;
-    top: -16rem;
-    right: 18rem;
-}
-
-.NormalSkill_discountCrossLine_89 {
-    width: 100%;
-    height: 1rem;
-    background-color: #595950;
-    position: absolute;
-    right: 0;
-    bottom: 7rem;
-}
-
-.NormalSkill_totalValue_1c {
-    color: #8c8c7e;
-}
-
-.NormalSkill_totalValue__withDiscount_34 {
-    color: #fefeec;
-    text-shadow:
-        0 0 4rem rgba(255, 127, 0, 0.25),
-        0 0 8rem #ff2a00,
-        0 0 15rem #e52;
-}
-
-.NormalSkill_discount_91 {
-    display: flex;
-    margin-top: 28rem;
-}
-
-.NormalSkill_discountLabel_01 {
-    margin: -3rem 0 0 6rem;
-}
-
-.NormalSkill_infoIcon_4d {
-    width: 14rem;
-    height: 14rem;
-    background: url('R.images.gui.maps.icons.crew.profile.info') no-repeat center / contain;
 }
 
 .ZeroSkill_header_4a,

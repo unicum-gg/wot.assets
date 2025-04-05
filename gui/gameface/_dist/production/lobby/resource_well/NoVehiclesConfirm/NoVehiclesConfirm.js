@@ -6,7 +6,7 @@
                 var n = t(6483),
                     a = t.n(n),
                     r = t(3649),
-                    E = t(6179),
+                    E = t(7363),
                     i = t.n(E),
                     A = t(5287);
                 const F = ({
@@ -248,14 +248,14 @@
                         addPreloadTexture: () => A,
                         children: () => n,
                         displayStatus: () => a.W,
-                        displayStatusIs: () => x,
+                        displayStatusIs: () => b,
                         events: () => r.U,
                         extraSize: () => L,
                         forceTriggerMouseMove: () => p,
                         freezeTextureBeforeResize: () => C,
                         getBrowserTexturePath: () => s,
                         getDisplayStatus: () => f,
-                        getFontNames: () => b,
+                        getFontNames: () => x,
                         getScale: () => d,
                         getSize: () => l,
                         getViewGlobalPosition: () => c,
@@ -331,11 +331,11 @@
                 function f() {
                     return viewEnv.getShowingStatus();
                 }
-                const b = (() => {
+                const x = (() => {
                         let u = [];
                         return () => (0 === u.length && (u = Object.keys(viewEnv.getFontsConfig())), u);
                     })(),
-                    x = Object.keys(a.W).reduce(
+                    b = Object.keys(a.W).reduce(
                         (u, e) => ((u[e] = () => viewEnv.getShowingStatus() === a.W[e]), u),
                         {},
                     ),
@@ -417,16 +417,17 @@
                 const n = (u = 1) => {
                     const e = new Error().stack;
                     let t,
-                        n = R.invalid('resId');
-                    return (
-                        e &&
-                            ((t = e.split('\n')[u].split('.js')[0].split('/').pop() || ''),
-                            window.__feature &&
-                                window.__feature !== t &&
-                                window.subViews[t] &&
-                                (n = window.subViews[t].id)),
-                        { caller: t, stack: e, resId: n }
-                    );
+                        n = R.invalid('resId'),
+                        a = '';
+                    var r;
+                    e &&
+                        ((a = (null == (r = e.match(/(coui:\/\/[^\s]+\.js)/)) ? void 0 : r[0]) || ''),
+                        (t = e.split('\n')[u].split('.js')[0].split('/').pop() || ''),
+                        window.__feature &&
+                            window.__feature !== t &&
+                            window.subViews[t] &&
+                            (n = window.subViews[t].id));
+                    return { callerUrl: a, caller: t, stack: e, resId: n };
                 };
             },
             8071: (u, e, t) => {
@@ -437,14 +438,14 @@
             2344: (u, e, t) => {
                 'use strict';
                 t.d(e, { DA: () => n.D, tT: () => n.t });
-                t(3469), t(2133), t(2790), t(3779), t(579);
+                t(3469), t(2133), t(2790), t(579);
                 var n = t(5360);
                 t(9056);
             },
             6536: (u, e, t) => {
                 'use strict';
                 t.d(e, { Z: () => a });
-                var n = t(6179);
+                var n = t(7363);
                 const a = (u) => {
                     const e = (0, n.useRef)(!1);
                     e.current || (u(), (e.current = !0));
@@ -452,92 +453,98 @@
             },
             3469: (u, e, t) => {
                 'use strict';
-                t(7044), t(6179);
+                t(7044), t(7363);
             },
             2133: (u, e, t) => {
                 'use strict';
-                t(6179);
+                t(7363);
             },
             5360: (u, e, t) => {
                 'use strict';
-                t.d(e, { D: () => s, t: () => o });
+                t.d(e, { D: () => o, t: () => D });
                 var n = t(7902),
                     a = t(8071),
                     r = t(6536),
                     E = t(9916),
                     i = t(7332),
-                    A = t(6179);
-                const F = E.Sw.instance;
-                let s;
+                    A = t(7363),
+                    F = t(538);
+                const s = E.Sw.instance;
+                let o;
                 !(function (u) {
                     (u.None = 'None'), (u.Shallow = 'Shallow'), (u.Deep = 'Deep');
-                })(s || (s = {}));
-                const o = (u = 'model', e = s.Deep) => {
+                })(o || (o = {}));
+                const D = (u = 'model', e = o.Deep) => {
                     const t = (0, A.useState)(0),
                         E = (t[0], t[1]),
-                        o = (0, A.useMemo)(() => (0, n.F)(), []),
-                        D = o.caller,
-                        l = o.resId,
-                        B = (0, A.useMemo)(
-                            () => (window.__feature && window.__feature !== D ? `subViews.${D}.${u}` : u),
-                            [D, u],
-                        ),
-                        c = (0, A.useState)(() =>
+                        D = (0, A.useMemo)(() => (0, n.F)(), []),
+                        l = D.callerUrl,
+                        B = D.caller,
+                        c = D.resId,
+                        C = (0, A.useMemo)(() => {
+                            const e = (0, F.sI)(l.replace('.js', '.html'));
+                            return window.__feature && window.__feature !== B && !e ? `subViews.${B}.${u}` : u;
+                        }, [l, B, u]),
+                        d = (0, A.useState)(() =>
                             ((u) => {
                                 const e = (0, a.M)(u, window);
                                 for (const u in e) 'function' == typeof e[u] && (e[u] = e[u].bind(e));
                                 return (0, i.os)(e) ? e.value : e;
-                            })((0, i.Gd)(B)),
+                            })((0, i.Gd)(C)),
                         ),
-                        C = c[0],
-                        d = c[1],
-                        _ = (0, A.useRef)(-1);
+                        _ = d[0],
+                        m = d[1],
+                        h = (0, A.useRef)(-1);
                     return (
                         (0, r.Z)(() => {
                             if (
                                 ('boolean' == typeof e &&
-                                    ((e = e ? s.Deep : s.None),
+                                    ((e = e ? o.Deep : o.None),
                                     console.warn(
                                         'Boolean key for useModel "tracking" param is deprecated. Use ModelTracking enum values instead!',
                                     )),
-                                e !== s.None)
+                                e !== o.None)
                             ) {
                                 const t = (u) => {
-                                        (0, i.kJ)(u) && e === s.Deep
-                                            ? (u === C && E((u) => u + 1), d(u))
-                                            : d(Object.assign([], u));
+                                        (0, i.kJ)(u) && e === o.Deep
+                                            ? (u === _ && E((u) => u + 1), m(u))
+                                            : m(Object.assign([], u));
                                     },
                                     n = (0, i.U0)(u);
-                                _.current = F.addCallback(n, t, l, e === s.Deep);
+                                h.current = s.addCallback(n, t, c, e === o.Deep);
                             }
                         }),
                         (0, A.useEffect)(() => {
-                            if (e !== s.None)
+                            if (e !== o.None)
                                 return () => {
-                                    F.removeCallback(_.current, l);
+                                    s.removeCallback(h.current, c);
                                 };
-                        }, [l, e]),
-                        C
+                        }, [c, e]),
+                        _
                     );
                 };
             },
             9056: (u, e, t) => {
                 'use strict';
                 var n = t(9916);
-                t(6179);
+                t(7363);
                 n.Sw.instance;
             },
             2790: (u, e, t) => {
                 'use strict';
-                t(6179);
-            },
-            3779: (u, e, t) => {
-                'use strict';
-                t(6179);
+                t(7363);
             },
             579: (u, e, t) => {
                 'use strict';
-                t(3138), t(6179);
+                t(3138), t(7363);
+            },
+            538: (u, e, t) => {
+                'use strict';
+                function n(u) {
+                    return a().has(u);
+                }
+                t.d(e, { sI: () => n });
+                const a = () => (window.injected || (window.injected = new Map()), window.injected);
             },
             5521: (u, e, t) => {
                 'use strict';
@@ -1050,7 +1057,7 @@
             },
             3387: (u, e, t) => {
                 'use strict';
-                var n = t(6179),
+                var n = t(7363),
                     a = t.n(n);
                 const r = (u, e, t) =>
                     e.extraLargeHeight || e.largeHeight || e.mediumHeight || e.smallHeight || e.extraSmallHeight
@@ -1267,7 +1274,7 @@
                             (u[(u.Large = i.large.height)] = 'Large'),
                             (u[(u.ExtraLarge = i.extraLarge.height)] = 'ExtraLarge');
                     })(f || (f = {}));
-                const b = () => {
+                const x = () => {
                         const u = (0, n.useContext)(B),
                             e = u.width,
                             t = u.height,
@@ -1321,7 +1328,7 @@
                             })(u);
                         return { mediaSize: a, mediaWidth: r, mediaHeight: E, remScreenWidth: e, remScreenHeight: t };
                     },
-                    x = ['children', 'className'];
+                    b = ['children', 'className'];
                 function L() {
                     return (
                         (L = Object.assign
@@ -1369,8 +1376,8 @@
                                         t[n] = u[n];
                                     }
                                 return t;
-                            })(u, x);
-                        const r = b(),
+                            })(u, b);
+                        const r = x(),
                             E = r.mediaWidth,
                             i = r.mediaHeight,
                             A = r.mediaSize;
@@ -1391,7 +1398,7 @@
                         })(u, O);
                     return a().createElement(_, null, a().createElement(y, t, e));
                 };
-                var H = t(493),
+                var H = t(1533),
                     P = t.n(H);
                 function N(u) {
                     engine.call('PlaySound', u).catch((e) => {
@@ -1577,7 +1584,7 @@
                         j.apply(null, arguments)
                     );
                 }
-                class q extends a().PureComponent {
+                class K extends a().PureComponent {
                     constructor(...u) {
                         super(...u),
                             (this.state = { hover: !1, click: !1 }),
@@ -1652,8 +1659,8 @@
                         );
                     }
                 }
-                q.defaultProps = { side: 'left', type: 'back', soundHover: 'highlight', soundClick: 'play' };
-                var K = t(2344),
+                K.defaultProps = { side: 'left', type: 'back', soundHover: 'highlight', soundClick: 'play' };
+                var q = t(2344),
                     Y = t(5521);
                 t(9916);
                 const Z = (u) => {
@@ -1686,7 +1693,7 @@
                     ru = 'App_button_d8',
                     Eu = R.strings.resource_well.confirm.NoVehicles,
                     iu = () => {
-                        const u = (0, K.tT)('model', K.DA.None).showHangar,
+                        const u = (0, q.tT)('model', q.DA.None).showHangar,
                             e = (0, n.useCallback)(() => u(), [u]);
                         var t;
                         return (
@@ -1699,7 +1706,7 @@
                                 a().createElement(
                                     'div',
                                     { className: eu },
-                                    a().createElement(q, {
+                                    a().createElement(K, {
                                         caption: R.strings.resource_well.commonTexts.closeBtn(),
                                         type: 'close',
                                         side: 'right',
@@ -1731,7 +1738,7 @@
                     a = t.n(n),
                     r = t(280),
                     E = t(2344),
-                    i = t(6179),
+                    i = t(7363),
                     A = t.n(i),
                     F = t(9953),
                     s = t(4306);
@@ -1765,7 +1772,7 @@
                                           ? void 0
                                           : w.noData,
                             f = { enter: h, exit: g },
-                            b = {
+                            x = {
                                 counter: A().createElement(
                                     'div',
                                     { className: d },
@@ -1792,13 +1799,13 @@
                                                     return A().createElement(r.z, {
                                                         classMix: D,
                                                         text: R.strings.resource_well.resourcesLoadingView.remainTopVehicles(),
-                                                        binding: b,
+                                                        binding: x,
                                                     });
                                                 case w.remain:
                                                     return A().createElement(r.z, {
                                                         classMix: D,
                                                         text: R.strings.resource_well.resourcesLoadingView.remainVehicles(),
-                                                        binding: b,
+                                                        binding: x,
                                                     });
                                                 case w.noRemains:
                                                     return A().createElement(
@@ -1815,7 +1822,7 @@
                                                     return A().createElement(r.z, {
                                                         classMix: a()(D, l),
                                                         text: R.strings.resource_well.resourcesLoadingView.noVehicleData(),
-                                                        binding: b,
+                                                        binding: x,
                                                     });
                                             }
                                         })(),
@@ -1829,6 +1836,14 @@
                 'use strict';
                 t.d(e, { Z: () => n });
                 const n = { base: 'FormatText_base_d0' };
+            },
+            7363: (u) => {
+                'use strict';
+                u.exports = React;
+            },
+            1533: (u) => {
+                'use strict';
+                u.exports = ReactDOM;
             },
         },
         __webpack_module_cache__ = {},
@@ -1872,14 +1887,6 @@
                     !__webpack_require__.o(u, t) &&
                     Object.defineProperty(u, t, { enumerable: !0, get: e[t] });
         }),
-        (__webpack_require__.g = (function () {
-            if ('object' == typeof globalThis) return globalThis;
-            try {
-                return this || new Function('return this')();
-            } catch (u) {
-                if ('object' == typeof window) return window;
-            }
-        })()),
         (__webpack_require__.o = (u, e) => Object.prototype.hasOwnProperty.call(u, e)),
         (__webpack_require__.r = (u) => {
             'undefined' != typeof Symbol &&

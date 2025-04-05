@@ -48,9 +48,9 @@
                         setSidePaddingsRem: () => Eu,
                         whenTutorialReady: () => fu,
                     });
-                var t = F(6179),
+                var t = F(7363),
                     n = F.n(t),
-                    C = F(493),
+                    C = F(1533),
                     r = F.n(C),
                     o = F(6483),
                     i = F.n(o),
@@ -501,11 +501,11 @@
                 })(Tu || (Tu = {}));
                 var _u = F(3403);
                 function Pu() {}
-                function Su() {
+                function Ru() {
                     return !1;
                 }
                 console.log;
-                var Ru = F(9174);
+                var Su = F(9174);
                 function Ou(u, A) {
                     var F = ('undefined' != typeof Symbol && u[Symbol.iterator]) || u['@@iterator'];
                     if (F) return (F = F.call(u)).next.bind(F);
@@ -624,11 +624,11 @@
                                                 observableModel: {
                                                     array: (u, A) => {
                                                         const e = null != A ? A : n(u),
-                                                            E = Ru.LO.box(e, { equals: Su });
+                                                            E = Su.LO.box(e, { equals: Ru });
                                                         return (
                                                             'real' === F &&
                                                                 t.subscribe(
-                                                                    (0, Ru.aD)((u) => E.set(u)),
+                                                                    (0, Su.aD)((u) => E.set(u)),
                                                                     u,
                                                                 ),
                                                             E
@@ -636,11 +636,11 @@
                                                     },
                                                     object: (u, A) => {
                                                         const e = null != A ? A : n(u),
-                                                            E = Ru.LO.box(e, { equals: Su });
+                                                            E = Su.LO.box(e, { equals: Ru });
                                                         return (
                                                             'real' === F &&
                                                                 t.subscribe(
-                                                                    (0, Ru.aD)((u) => E.set(u)),
+                                                                    (0, Su.aD)((u) => E.set(u)),
                                                                     u,
                                                                 ),
                                                             E
@@ -650,13 +650,13 @@
                                                         const e = n(A);
                                                         if (Array.isArray(u)) {
                                                             const E = u.reduce(
-                                                                (u, A) => ((u[A] = Ru.LO.box(e[A], {})), u),
+                                                                (u, A) => ((u[A] = Su.LO.box(e[A], {})), u),
                                                                 {},
                                                             );
                                                             return (
                                                                 'real' === F &&
                                                                     t.subscribe(
-                                                                        (0, Ru.aD)((A) => {
+                                                                        (0, Su.aD)((A) => {
                                                                             u.forEach((u) => {
                                                                                 E[u].set(A[u]);
                                                                             });
@@ -670,13 +670,13 @@
                                                             const E = u,
                                                                 D = Object.entries(E),
                                                                 B = D.reduce(
-                                                                    (u, [A, F]) => ((u[F] = Ru.LO.box(e[A], {})), u),
+                                                                    (u, [A, F]) => ((u[F] = Su.LO.box(e[A], {})), u),
                                                                     {},
                                                                 );
                                                             return (
                                                                 'real' === F &&
                                                                     t.subscribe(
-                                                                        (0, Ru.aD)((u) => {
+                                                                        (0, Su.aD)((u) => {
                                                                             D.forEach(([A, F]) => {
                                                                                 B[F].set(u[A]);
                                                                             });
@@ -839,6 +839,12 @@
                         document.getElementById('root'),
                     );
                 });
+            },
+            7363: (u) => {
+                u.exports = React;
+            },
+            1533: (u) => {
+                u.exports = ReactDOM;
             },
         },
         F = {};

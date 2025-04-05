@@ -791,9 +791,9 @@
             },
             185: (u, e, t) => {
                 'use strict';
-                var n = t(179),
+                var n = t(363),
                     a = t.n(n),
-                    r = t(493),
+                    r = t(533),
                     o = t.n(r);
                 const i = ({ name: u, children: e }) => {
                         const t = (0, n.useState)(!0),
@@ -1686,15 +1686,20 @@
                                     ((u = 1) => {
                                         const e = new Error().stack;
                                         let t,
-                                            n = R.invalid('resId');
+                                            n = R.invalid('resId'),
+                                            a = '';
+                                        var r;
                                         return (
                                             e &&
-                                                ((t = e.split('\n')[u].split('.js')[0].split('/').pop() || ''),
+                                                ((a =
+                                                    (null == (r = e.match(/(coui:\/\/[^\s]+\.js)/)) ? void 0 : r[0]) ||
+                                                    ''),
+                                                (t = e.split('\n')[u].split('.js')[0].split('/').pop() || ''),
                                                 window.__feature &&
                                                     window.__feature !== t &&
                                                     window.subViews[t] &&
                                                     (n = window.subViews[t].id)),
-                                            { caller: t, stack: e, resId: n }
+                                            { callerUrl: a, caller: t, stack: e, resId: n }
                                         );
                                     })().resId,
                                 [_],
@@ -2774,6 +2779,14 @@
                     ),
                     document.getElementById('root'),
                 );
+            },
+            363: (u) => {
+                'use strict';
+                u.exports = React;
+            },
+            533: (u) => {
+                'use strict';
+                u.exports = ReactDOM;
             },
         },
         __webpack_module_cache__ = {},

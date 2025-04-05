@@ -126,6 +126,7 @@
     overflow: hidden;
     position: absolute;
     bottom: 14rem;
+    z-index: 1;
     transition: color ease-in-out 0.2s;
     pointer-events: none;
 }

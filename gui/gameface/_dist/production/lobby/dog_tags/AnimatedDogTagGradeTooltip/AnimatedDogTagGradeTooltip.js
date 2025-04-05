@@ -2,7 +2,7 @@
     'use strict';
     var u,
         A = {
-            9971: (u, A, F) => {
+            971: (u, A, F) => {
                 var E = {};
                 F.r(E),
                     F.d(E, { mouse: () => l, off: () => s, on: () => a, onResize: () => o, onScaleUpdated: () => i });
@@ -48,7 +48,7 @@
                         setSidePaddingsRem: () => G,
                         whenTutorialReady: () => Du,
                     });
-                var C = F(6483),
+                var C = F(483),
                     n = F.n(C);
                 function t(u) {
                     return (A) => (
@@ -306,7 +306,7 @@
                         engine.whenReady,
                     ]),
                     Bu = { view: B, client: e, sound: w };
-                var Cu = F(6179),
+                var Cu = F(363),
                     nu = F.n(Cu);
                 function tu() {
                     const u = (0, Cu.useRef)(0);
@@ -405,9 +405,9 @@
                         )
                     );
                 });
-                var su = F(493),
+                var su = F(533),
                     cu = F.n(su),
-                    lu = F(1281);
+                    lu = F(281);
                 let du;
                 function gu(u, A) {
                     return u.replace(/\{\w+\}/g, (u) => String(A[u.slice(1, -1)]));
@@ -490,10 +490,10 @@
                             ),
                         );
                     };
-                var _u = F(3403);
-                const Pu = 'DogTag_base_2b',
-                    Tu = 'DogTag_engraving_eb',
-                    Ru = 'DogTag_background_7f',
+                var _u = F(403);
+                const Ru = 'DogTag_base_2b',
+                    Pu = 'DogTag_engraving_eb',
+                    Tu = 'DogTag_background_7f',
                     Su = R.strings.settings.LANGUAGE_CODE(),
                     Ou = ['de', 'es', 'fr', 'hu', 'it', 'pl', 'pt_br', 'ru', 'tr', 'uk', 'zh_cn', 'cs'];
                 let zu;
@@ -504,15 +504,15 @@
                     const D = Ou.includes(Su) ? `_${Su}` : '';
                     return nu().createElement(
                         'div',
-                        { className: n()(Pu, e) },
+                        { className: n()(Ru, e) },
                         nu().createElement('div', {
-                            className: Ru,
+                            className: Tu,
                             style: {
                                 backgroundImage: `url(R.images.gui.maps.icons.dogtags.${F}.backgrounds.background_${u}_0)`,
                             },
                         }),
                         nu().createElement('div', {
-                            className: Tu,
+                            className: Pu,
                             style: {
                                 backgroundImage: `url(R.images.gui.maps.icons.dogtags.${F}.engravings.engraving_${A}_${E}${D})`,
                             },
@@ -524,7 +524,7 @@
                     return !1;
                 }
                 console.log;
-                var $u = F(9174);
+                var $u = F(174);
                 function Lu(u, A) {
                     var F = ('undefined' != typeof Symbol && u[Symbol.iterator]) || u['@@iterator'];
                     if (F) return (F = F.call(u)).next.bind(F);
@@ -781,6 +781,12 @@
                     );
                 });
             },
+            363: (u) => {
+                u.exports = React;
+            },
+            533: (u) => {
+                u.exports = ReactDOM;
+            },
         },
         F = {};
     function E(u) {
@@ -852,6 +858,6 @@
                 F = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             F.forEach(A.bind(null, 0)), (F.push = A.bind(null, F.push.bind(F)));
         })();
-    var e = E.O(void 0, [994], () => E(9971));
+    var e = E.O(void 0, [994], () => E(971));
     e = E.O(e);
 })();

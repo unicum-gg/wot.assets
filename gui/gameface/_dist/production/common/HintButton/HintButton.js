@@ -3,8 +3,13 @@
     var e,
         r = {
             727: (e, r, t) => {
-                t(179);
-                t(751), t(483);
+                t(483), t(363), t(751);
+            },
+            363: (e) => {
+                e.exports = React;
+            },
+            533: (e) => {
+                e.exports = ReactDOM;
             },
         },
         t = {};
@@ -19,22 +24,22 @@
         (o.O = (r, t, n, a) => {
             if (!t) {
                 var i = 1 / 0;
-                for (s = 0; s < e.length; s++) {
-                    for (var [t, n, a] = e[s], f = !0, u = 0; u < t.length; u++)
-                        (!1 & a || i >= a) && Object.keys(o.O).every((e) => o.O[e](t[u]))
-                            ? t.splice(u--, 1)
+                for (c = 0; c < e.length; c++) {
+                    for (var [t, n, a] = e[c], f = !0, s = 0; s < t.length; s++)
+                        (!1 & a || i >= a) && Object.keys(o.O).every((e) => o.O[e](t[s]))
+                            ? t.splice(s--, 1)
                             : ((f = !1), a < i && (i = a));
                     if (f) {
-                        e.splice(s--, 1);
-                        var l = n();
-                        void 0 !== l && (r = l);
+                        e.splice(c--, 1);
+                        var u = n();
+                        void 0 !== u && (r = u);
                     }
                 }
                 return r;
             }
             a = a || 0;
-            for (var s = e.length; s > 0 && e[s - 1][2] > a; s--) e[s] = e[s - 1];
-            e[s] = [t, n, a];
+            for (var c = e.length; c > 0 && e[c - 1][2] > a; c--) e[c] = e[c - 1];
+            e[c] = [t, n, a];
         }),
         (o.n = (e) => {
             var r = e && e.__esModule ? () => e.default : () => e;
@@ -59,14 +64,14 @@
             var r = (r, t) => {
                     var n,
                         a,
-                        [i, f, u] = t,
-                        l = 0;
+                        [i, f, s] = t,
+                        u = 0;
                     if (i.some((r) => 0 !== e[r])) {
                         for (n in f) o.o(f, n) && (o.m[n] = f[n]);
-                        if (u) var s = u(o);
+                        if (s) var c = s(o);
                     }
-                    for (r && r(t); l < i.length; l++) (a = i[l]), o.o(e, a) && e[a] && e[a][0](), (e[a] = 0);
-                    return o.O(s);
+                    for (r && r(t); u < i.length; u++) (a = i[u]), o.o(e, a) && e[a] && e[a][0](), (e[a] = 0);
+                    return o.O(c);
                 },
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             t.forEach(r.bind(null, 0)), (t.push = r.bind(null, t.push.bind(t)));

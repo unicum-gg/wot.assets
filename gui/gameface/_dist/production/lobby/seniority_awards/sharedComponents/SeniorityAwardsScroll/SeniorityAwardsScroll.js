@@ -3,7 +3,7 @@
     var e,
         t = {
             9911: (e, t, n) => {
-                n.d(t, { $Q: () => x });
+                n.d(t, { $Q: () => z });
                 var r = n(6483),
                     o = n.n(r),
                     i = n(7515),
@@ -12,15 +12,15 @@
                     l = n(3815),
                     c = n(560),
                     u = n(7727),
-                    d = n(6179),
+                    d = n(7363),
                     f = n.n(d),
                     v = n(6358);
                 const m = 'HorizontalBar_base_49',
                     g = 'HorizontalBar_base__nonActive_82',
                     p = 'HorizontalBar_leftButton_5f',
                     h = 'HorizontalBar_rightButton_03',
-                    w = 'HorizontalBar_track_0d',
-                    E = 'HorizontalBar_thumb_fd',
+                    E = 'HorizontalBar_track_0d',
+                    w = 'HorizontalBar_thumb_fd',
                     b = 'HorizontalBar_rail_32',
                     y = 'disable',
                     S = { pending: !1, offset: 0 },
@@ -29,9 +29,9 @@
                         return 0.9 * (null != (t = e.getWrapperSize()) ? t : 0);
                     },
                     R = () => {},
-                    z = (e, t) => Math.max(20, e.offsetWidth * t),
-                    x = (0, d.memo)(({ api: e, classNames: t = {}, getStepByRailClick: n = P, onDrag: r = R }) => {
-                        const x = (0, d.useRef)(null),
+                    x = (e, t) => Math.max(20, e.offsetWidth * t),
+                    z = (0, d.memo)(({ api: e, classNames: t = {}, getStepByRailClick: n = P, onDrag: r = R }) => {
+                        const z = (0, d.useRef)(null),
                             C = (0, d.useRef)(null),
                             T = (0, d.useRef)(null),
                             M = (0, d.useRef)(null),
@@ -39,10 +39,10 @@
                             _ = e.stepTimeout || 100,
                             N = (0, d.useState)(S),
                             B = N[0],
-                            W = N[1],
-                            L = (0, d.useCallback)(
+                            L = N[1],
+                            W = (0, d.useCallback)(
                                 (e) => {
-                                    W(e),
+                                    L(e),
                                         O.current && r({ type: e.pending ? 'dragStart' : 'dragEnd', thumb: O.current });
                                 },
                                 [r],
@@ -56,7 +56,7 @@
                                 const s = e.animationScroll.scrollPosition.get(),
                                     a = Math.min(1, r / o),
                                     l = (0, i.u)(0, 1, s / (o - r)),
-                                    c = (t.offsetWidth - z(t, a)) * l;
+                                    c = (t.offsetWidth - x(t, a)) * l;
                                 (n.style.transform = `translateX(${0 | c}px)`),
                                     ((e) => {
                                         if (C.current && T.current && M.current && O.current) {
@@ -81,10 +81,10 @@
                                         o = e.getContainerSize();
                                     if (!(o && t && r && n)) return;
                                     const i = Math.min(1, r / o);
-                                    (t.style.width = `${z(n, i)}px`),
+                                    (t.style.width = `${x(n, i)}px`),
                                         (t.style.display = 'flex'),
-                                        x.current &&
-                                            (1 === i ? x.current.classList.add(g) : x.current.classList.remove(g));
+                                        z.current &&
+                                            (1 === i ? z.current.classList.add(g) : z.current.classList.remove(g));
                                 })(),
                                     A();
                             });
@@ -137,12 +137,12 @@
                                             r({ type: 'dragging', thumb: l, thumbOffset: c, contentOffset: u });
                                     }),
                                     n = a.O.client.events.mouse.up(() => {
-                                        t(), L(S);
+                                        t(), W(S);
                                     });
                                 return () => {
                                     t(), n();
                                 };
-                            }, [e, B.offset, B.pending, r, L]);
+                            }, [e, B.offset, B.pending, r, W]);
                         const j = (0, c.B)((t) => e.applyStepTo(t), _, [e]),
                             H = j[0],
                             D = j[1];
@@ -158,7 +158,7 @@
                         };
                         return f().createElement(
                             'div',
-                            { className: o()(m, t.base), ref: x, onWheel: e.handleMouseWheel },
+                            { className: o()(m, t.base), ref: z, onWheel: e.handleMouseWheel },
                             f().createElement('div', {
                                 className: o()(p, t.leftButton),
                                 onMouseDown: (e) => {
@@ -173,12 +173,12 @@
                             f().createElement(
                                 'div',
                                 {
-                                    className: o()(w, t.track),
+                                    className: o()(E, t.track),
                                     onMouseDown: (t) => {
                                         const r = O.current;
                                         if (r && 0 === t.button)
                                             if (((0, u.G)('play'), t.target === r))
-                                                L({ pending: !0, offset: t.screenX - r.getBoundingClientRect().x });
+                                                W({ pending: !0, offset: t.screenX - r.getBoundingClientRect().x });
                                             else {
                                                 ((t) => {
                                                     const r = O.current,
@@ -192,7 +192,7 @@
                                     ref: M,
                                     onMouseEnter: G,
                                 },
-                                f().createElement('div', { ref: O, className: o()(E, t.thumb) }),
+                                f().createElement('div', { ref: O, className: o()(w, t.thumb) }),
                                 f().createElement('div', { className: o()(b, t.rail) }),
                             ),
                             f().createElement('div', {
@@ -213,7 +213,7 @@
                 n.d(t, { K: () => u });
                 var r = n(6483),
                     o = n.n(r),
-                    i = n(6179),
+                    i = n(7363),
                     s = n.n(i),
                     a = n(9911),
                     l = n(7950),
@@ -251,7 +251,7 @@
                 var r = n(6483),
                     o = n.n(r),
                     i = n(1856),
-                    s = n(6179),
+                    s = n(7363),
                     a = n.n(s),
                     l = n(9911),
                     c = n(2840),
@@ -280,9 +280,10 @@
                 (d.Bar = l.$Q), (d.Default = c.K);
             },
             6358: (e, t, n) => {
-                n.d(t, { Nm: () => r.Nm });
-                var r = n(7341);
-                (0, r.EO)({
+                n.d(t, { Nm: () => o.Nm });
+                var r = n(3138),
+                    o = n(7341);
+                const i = {
                     getBounds: (e) => {
                         var t, n;
                         return [
@@ -296,31 +297,31 @@
                     setScrollPosition: (e, t) => {
                         e.style.transform = `translateX(-${t.value.scrollPosition}px)`;
                     },
-                    getDirection: (e) => (e.deltaY > 1 ? r.Nm.Next : r.Nm.Prev),
-                    triggerMouseMoveOnUpdate: !0,
-                });
+                    getDirection: (e) => (e.deltaY > 1 ? o.Nm.Next : o.Nm.Prev),
+                    forceTriggerMouseMove: r.O.view.forceTriggerMouseMove,
+                };
+                (0, o.EO)(i);
             },
             7341: (e, t, n) => {
-                n.d(t, { Nm: () => f, EO: () => m });
+                n.d(t, { Nm: () => d, EO: () => v });
                 var r = n(7515),
                     o = n(1856),
-                    i = n(3138),
-                    s = n(6179);
-                function a(e, t) {
+                    i = n(7363);
+                function s(e, t) {
                     var n = ('undefined' != typeof Symbol && e[Symbol.iterator]) || e['@@iterator'];
                     if (n) return (n = n.call(e)).next.bind(n);
                     if (
                         Array.isArray(e) ||
                         (n = (function (e, t) {
                             if (e) {
-                                if ('string' == typeof e) return l(e, t);
+                                if ('string' == typeof e) return a(e, t);
                                 var n = {}.toString.call(e).slice(8, -1);
                                 return (
                                     'Object' === n && e.constructor && (n = e.constructor.name),
                                     'Map' === n || 'Set' === n
                                         ? Array.from(e)
                                         : 'Arguments' === n || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)
-                                          ? l(e, t)
+                                          ? a(e, t)
                                           : void 0
                                 );
                             }
@@ -337,43 +338,44 @@
                         'Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.',
                     );
                 }
-                function l(e, t) {
+                function a(e, t) {
                     (null == t || t > e.length) && (t = e.length);
                     for (var n = 0, r = Array(t); n < t; n++) r[n] = e[n];
                     return r;
                 }
-                var c = n(3815),
-                    u = n(5139);
-                var d = n(7030);
-                let f;
+                var l = n(3815),
+                    c = n(5139);
+                var u = n(7030);
+                let d;
                 !(function (e) {
                     (e[(e.Next = -1)] = 'Next'), (e[(e.Prev = 1)] = 'Prev');
-                })(f || (f = {}));
-                const v = {
+                })(d || (d = {}));
+                const f = {
                         step: { type: 'proportional', factor: 4, clampedArrowStepTimeout: 100 },
                         animationConfig: { tension: 170, friction: 26 },
                     },
-                    m = ({
+                    v = ({
                         getContainerSize: e,
                         getBounds: t,
                         setScrollPosition: n,
-                        getDirection: l,
-                        getWrapperSize: f,
-                        triggerMouseMoveOnUpdate: m = !1,
+                        getDirection: a,
+                        getWrapperSize: d,
+                        forceTriggerMouseMove: v,
                     }) => {
-                        const g = (e, n) => {
+                        const m = (e, n) => {
                             const o = t(e),
                                 i = o[0],
                                 s = o[1];
                             return s <= i ? 0 : (0, r.u)(i, s, n);
                         };
                         return (r = {}) => {
-                            const p = r.settings,
-                                h = void 0 === p ? v : p,
-                                w = (0, s.useRef)(null),
-                                E = (0, s.useRef)(null),
+                            const g = r.settings,
+                                p = void 0 === g ? f : g,
+                                h = (0, i.useRef)(null),
+                                E = (0, i.useRef)(null),
+                                w = (0, i.useRef)(!1),
                                 b = (() => {
-                                    const e = (0, s.useMemo)(() => ({}), []),
+                                    const e = (0, i.useMemo)(() => ({}), []),
                                         t = (t) => (e[t] || (e[t] = new Map()), e[t]),
                                         n = (e, n) => {
                                             t(e).set(n, n);
@@ -382,25 +384,25 @@
                                             t(e).delete(n);
                                         },
                                         o = (e, ...n) => {
-                                            for (var r, o = a(t(e).values()); !(r = o()).done; ) (0, r.value)(...n);
+                                            for (var r, o = s(t(e).values()); !(r = o()).done; ) (0, r.value)(...n);
                                         };
-                                    return (0, s.useMemo)(() => ({ on: n, off: r, trigger: o }), []);
+                                    return (0, i.useMemo)(() => ({ on: n, off: r, trigger: o }), []);
                                 })(),
                                 y = (function (e, t, n) {
-                                    const r = (0, s.useMemo)(() => (0, u.Z)(n, e), t);
-                                    return (0, s.useEffect)(() => r.cancel, [r]), r;
+                                    const r = (0, i.useMemo)(() => (0, c.Z)(n, e), t);
+                                    return (0, i.useEffect)(() => r.cancel, [r]), r;
                                 })(
                                     () => {
-                                        i.O.view.forceTriggerMouseMove();
+                                        v && v();
                                     },
                                     [],
                                     150,
                                 ),
-                                S = (0, d.useSpring)(() => ({
+                                S = (0, u.useSpring)(() => ({
                                     scrollPosition: 0,
                                     onChange: (e) => {
-                                        const t = w.current;
-                                        t && (n(t, e), b.trigger('change', e), m && y());
+                                        const t = h.current;
+                                        t && (n(t, e), b.trigger('change', e), v && w.current && y());
                                     },
                                     onRest: (e) => b.trigger('rest', e),
                                     onStart: (e) => b.trigger('start', e),
@@ -408,61 +410,61 @@
                                 })),
                                 P = S[0],
                                 R = S[1],
-                                z = (0, s.useCallback)(
+                                x = (0, i.useCallback)(
                                     (e, t, n) => {
                                         var r;
                                         const o = P.scrollPosition.get(),
                                             i = (null != (r = P.scrollPosition.goal) ? r : 0) - o;
-                                        return g(e, t * n + i + o);
+                                        return m(e, t * n + i + o);
                                     },
                                     [P.scrollPosition],
                                 ),
-                                x = (0, s.useCallback)(
+                                z = (0, i.useCallback)(
                                     (e, { immediate: t = !1, reset: n = !0 } = {}) => {
-                                        const r = w.current;
+                                        const r = h.current;
                                         r &&
                                             R.start({
-                                                scrollPosition: g(r, e),
+                                                scrollPosition: m(r, e),
                                                 immediate: t,
                                                 reset: n,
-                                                config: h.animationConfig,
-                                                from: { scrollPosition: g(r, P.scrollPosition.get()) },
+                                                config: p.animationConfig,
+                                                from: { scrollPosition: m(r, P.scrollPosition.get()) },
                                             });
                                     },
-                                    [R, h.animationConfig, P.scrollPosition],
+                                    [R, p.animationConfig, P.scrollPosition],
                                 ),
-                                C = (0, s.useCallback)(
+                                C = (0, i.useCallback)(
                                     (e) => {
-                                        const t = w.current,
+                                        const t = h.current,
                                             n = E.current;
                                         if (!t || !n) return;
                                         const r = ((e, t) => {
                                                 switch (t.type) {
                                                     case 'proportional':
-                                                        return f(e) / t.factor;
+                                                        return d(e) / t.factor;
                                                     case 'fixed':
                                                         return t.value;
                                                 }
-                                            })(n, h.step),
-                                            o = z(t, e, r);
-                                        x(o);
+                                            })(n, p.step),
+                                            o = x(t, e, r);
+                                        z(o);
                                     },
-                                    [x, z, h.step],
+                                    [z, x, p.step],
                                 ),
-                                T = (0, s.useCallback)(
+                                T = (0, i.useCallback)(
                                     (e) => {
-                                        0 !== e.deltaY && C(l(e)),
-                                            w.current && b.trigger('mouseWheel', e, P.scrollPosition, t(w.current));
+                                        0 !== e.deltaY && C(a(e)),
+                                            h.current && b.trigger('mouseWheel', e, P.scrollPosition, t(h.current));
                                     },
                                     [P.scrollPosition, C, b],
                                 ),
                                 M = ((e, t = []) => {
-                                    const n = (0, s.useRef)(),
-                                        r = (0, s.useCallback)((...t) => {
+                                    const n = (0, i.useRef)(),
+                                        r = (0, i.useCallback)((...t) => {
                                             n.current && n.current(), (n.current = e(...t));
                                         }, t);
                                     return (
-                                        (0, s.useEffect)(
+                                        (0, i.useEffect)(
                                             () => () => {
                                                 n.current && n.current();
                                             },
@@ -473,21 +475,21 @@
                                 })(
                                     () =>
                                         (0, o.v)(() => {
-                                            const e = w.current;
+                                            const e = h.current;
                                             e &&
-                                                (x(g(e, P.scrollPosition.goal), { immediate: !0 }),
+                                                (z(m(e, P.scrollPosition.goal), { immediate: !0 }),
                                                 b.trigger('resizeHandled'));
                                         }),
-                                    [x, P.scrollPosition.goal],
+                                    [z, P.scrollPosition.goal],
                                 ),
-                                O = (0, c.z)(() => {
-                                    const e = w.current;
+                                O = (0, l.z)(() => {
+                                    const e = h.current;
                                     if (!e) return;
-                                    const t = g(e, P.scrollPosition.goal);
-                                    t !== P.scrollPosition.goal && x(t, { immediate: !0 }),
+                                    const t = m(e, P.scrollPosition.goal);
+                                    t !== P.scrollPosition.goal && z(t, { immediate: !0 }),
                                         b.trigger('recalculateContent');
                                 });
-                            (0, s.useEffect)(
+                            (0, i.useEffect)(
                                 () => (
                                     window.addEventListener('resize', M),
                                     () => {
@@ -495,28 +497,46 @@
                                     }
                                 ),
                                 [M],
-                            );
-                            return (0, s.useMemo)(
+                            ),
+                                (0, i.useEffect)(() => {
+                                    const e = h.current;
+                                    if (!e || !v) return;
+                                    const t = () => {
+                                            w.current = !0;
+                                        },
+                                        n = () => {
+                                            w.current = !1;
+                                        };
+                                    return (
+                                        e.addEventListener('mouseenter', t),
+                                        e.addEventListener('mouseleave', n),
+                                        () => {
+                                            e.removeEventListener('mouseenter', t),
+                                                e.removeEventListener('mouseleave', n);
+                                        }
+                                    );
+                                }, [h]);
+                            return (0, i.useMemo)(
                                 () => ({
-                                    getWrapperSize: () => (E.current ? f(E.current) : void 0),
-                                    getContainerSize: () => (w.current ? e(w.current) : void 0),
+                                    getWrapperSize: () => (E.current ? d(E.current) : void 0),
+                                    getContainerSize: () => (h.current ? e(h.current) : void 0),
                                     getBounds: () =>
-                                        w.current
-                                            ? t(w.current)
+                                        h.current
+                                            ? t(h.current)
                                             : (console.warn('getBounds: contentRef.current is null'), [0, 0]),
-                                    stepTimeout: h.step.clampedArrowStepTimeout,
-                                    clampPosition: g,
+                                    stepTimeout: p.step.clampedArrowStepTimeout,
+                                    clampPosition: m,
                                     handleMouseWheel: T,
-                                    applyScroll: x,
+                                    applyScroll: z,
                                     applyStepTo: C,
-                                    contentRef: w,
+                                    contentRef: h,
                                     wrapperRef: E,
                                     scrollPosition: R,
                                     animationScroll: P,
                                     recalculateContent: O,
                                     events: { on: b.on, off: b.off },
                                 }),
-                                [P.scrollPosition, x, C, b.off, b.on, O, T, R, h.step.clampedArrowStepTimeout],
+                                [P.scrollPosition, z, C, b.off, b.on, O, T, R, p.step.clampedArrowStepTimeout],
                             );
                         };
                     };
@@ -730,15 +750,15 @@
                         forceTriggerMouseMove: () => R,
                         freezeTextureBeforeResize: () => p,
                         getBrowserTexturePath: () => u,
-                        getDisplayStatus: () => z,
-                        getFontNames: () => x,
+                        getDisplayStatus: () => x,
+                        getFontNames: () => z,
                         getScale: () => h,
                         getSize: () => v,
                         getViewGlobalPosition: () => g,
                         isEventHandled: () => P,
                         isFocused: () => y,
-                        pxToRem: () => w,
-                        remToPx: () => E,
+                        pxToRem: () => E,
+                        remToPx: () => w,
                         resize: () => m,
                         sendEvent: () => s.qP,
                         setAnimateWindow: () => b,
@@ -775,7 +795,7 @@
                 }
                 function g(e = 'rem') {
                     const t = viewEnv.getViewGlobalPositionRem();
-                    return 'rem' === e ? t : { x: E(t.x), y: E(t.y) };
+                    return 'rem' === e ? t : { x: w(t.x), y: w(t.y) };
                 }
                 function p() {
                     viewEnv.freezeTextureBeforeResize();
@@ -783,10 +803,10 @@
                 function h() {
                     return viewEnv.getScale();
                 }
-                function w(e) {
+                function E(e) {
                     return viewEnv.pxToRem(e);
                 }
-                function E(e) {
+                function w(e) {
                     return viewEnv.remToPx(e);
                 }
                 function b(e, t) {
@@ -804,10 +824,10 @@
                 function R() {
                     viewEnv.forceTriggerMouseMove();
                 }
-                function z() {
+                function x() {
                     return viewEnv.getShowingStatus();
                 }
-                const x = (() => {
+                const z = (() => {
                         let e = [];
                         return () => (0 === e.length && (e = Object.keys(viewEnv.getFontsConfig())), e);
                     })(),
@@ -888,7 +908,7 @@
             },
             3815: (e, t, n) => {
                 n.d(t, { z: () => i });
-                var r = n(6179);
+                var r = n(7363);
                 const o = [];
                 function i(e) {
                     const t = (0, r.useRef)(e);
@@ -902,7 +922,7 @@
             },
             560: (e, t, n) => {
                 n.d(t, { B: () => o });
-                var r = n(6179);
+                var r = n(7363);
                 function o(e, t, n = []) {
                     const o = (0, r.useRef)(0),
                         i = (0, r.useCallback)(() => window.clearInterval(o.current), n || []);
@@ -964,7 +984,7 @@
                 n.d(t, { Z: () => r });
             },
             7712: (e, t, n) => {
-                n(6483), n(6179), n(9911), n(2840), n(4682), n(6358);
+                n(6483), n(7363), n(9911), n(2840), n(4682), n(6358);
             },
             4682: (e, t, n) => {
                 n.d(t, { Z: () => r });
@@ -973,6 +993,12 @@
                     wrapper: 'HorizontalScroll_wrapper_1e',
                     defaultScrollArea: 'HorizontalScroll_defaultScrollArea_8d',
                 };
+            },
+            7363: (e) => {
+                e.exports = React;
+            },
+            1533: (e) => {
+                e.exports = ReactDOM;
             },
         },
         n = {};

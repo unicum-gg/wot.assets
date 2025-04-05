@@ -11,28 +11,140 @@
     position: relative;
 }
 
+.FormatText_base_d0 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.FormatTextWithColorTags_blackReal_3c {
+    color: #000000;
+}
+
+.FormatTextWithColorTags_whiteReal_8a {
+    color: #ffffff;
+}
+
+.FormatTextWithColorTags_white_16 {
+    color: #f2f2f7;
+}
+
+.FormatTextWithColorTags_whiteOrange_18 {
+    color: #fefeec;
+}
+
+.FormatTextWithColorTags_whiteSpanish_10 {
+    color: #e9e2bf;
+}
+
+.FormatTextWithColorTags_par_ca {
+    color: #8c8c7e;
+}
+
+.FormatTextWithColorTags_parSecondary_8d {
+    color: #595950;
+}
+
+.FormatTextWithColorTags_parTertiary_a3 {
+    color: #37362e;
+}
+
+.FormatTextWithColorTags_red_60 {
+    color: #ff2717;
+}
+
+.FormatTextWithColorTags_redDark_03 {
+    color: #b70000;
+}
+
+.FormatTextWithColorTags_yellow_ad {
+    color: #feab34;
+}
+
+.FormatTextWithColorTags_orange_e4 {
+    color: #ee7000;
+}
+
+.FormatTextWithColorTags_cream_cd {
+    color: #ffdd99;
+}
+
+.FormatTextWithColorTags_brown_c8 {
+    color: #cbac77;
+}
+
+.FormatTextWithColorTags_greenBright_f0 {
+    color: #80d43a;
+}
+
+.FormatTextWithColorTags_green_c5 {
+    color: #7ab300;
+}
+
+.FormatTextWithColorTags_greenDark_af {
+    color: #497212;
+}
+
+.FormatTextWithColorTags_blueBooster_ac {
+    color: #ccffff;
+}
+
+.FormatTextWithColorTags_blueTeamkiller_6f {
+    color: #09e2ff;
+}
+
+.FormatTextWithColorTags_cred_4e {
+    color: #ced9d9;
+}
+
+.FormatTextWithColorTags_gold_90 {
+    color: #ffc363;
+}
+
+.FormatTextWithColorTags_bond_71 {
+    color: #c9c9b6;
+}
+
+.FormatTextWithColorTags_prom_dd {
+    color: #a29b70;
+}
+
+/* This specific rule is used to fix https://jira.wargaming.net/browse/WOTPRG-9871 */
+
+.FormatTextWithColorTags_parNoWidth_5a {
+    width: 0;
+    color: #8c8c7e;
+}
+
 .PopularLoadoutsTooltipApp_base_b9 {
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    width: 370rem;
+    width: 328rem;
     position: relative;
+}
+
+.PopularLoadoutsTooltipApp_background_2b {
+    width: 328rem;
+    height: 130rem;
+    background: url('R.images.gui.maps.icons.tanksetup.popular_loadouts.tooltip.header_background') center center /
+        cover no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .PopularLoadoutsTooltipApp_header_a0 {
     display: flex;
     flex-direction: column;
-    padding: 19rem 21rem 14rem;
-    background: url('R.images.gui.maps.icons.tanksetup.popular_loadouts.tooltip.header_background') top right / 180rem
-        110rem no-repeat;
+    padding: 16rem 20rem 14rem;
 }
 
-.PopularLoadoutsTooltipApp_header_title_af {
+.PopularLoadoutsTooltipApp_header_mainTitle_83 {
     color: #e9e2bf;
     font-size: 18rem;
     font-weight: 700;
     line-height: 1.1;
-    margin-bottom: 4rem;
+    margin-bottom: 8rem;
 }
 
 .PopularLoadoutsTooltipApp_header_desc_51 {
@@ -42,73 +154,213 @@
     line-height: 1.3;
 }
 
-.PopularLoadoutsTooltipApp_separator_4b {
-    width: 100%;
-    height: 1rem;
-    background: linear-gradient(
-            90deg,
-            rgba(201, 201, 182, 0.2) 0%,
-            rgba(201, 201, 182, 0.2) 33%,
-            rgba(201, 201, 182, 0) 33%,
-            rgba(201, 201, 182, 0) 100%
-        )
-        0 0 / 3rem 1rem repeat-x;
-    mask-image: linear-gradient(
-        90deg,
-        rgba(201, 201, 182, 0) 0%,
-        rgba(201, 201, 182, 1) 50%,
-        rgba(201, 201, 182, 0) 100%
-    );
+.PopularLoadoutsTooltipApp_headerWrapper_b5 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 8rem;
+}
+
+.PopularLoadoutsTooltipApp_headerWrapper_icon_ee {
+    width: 16rem;
+    height: 16rem;
+    background: url('R.images.gui.maps.icons.tanksetup.popular_loadouts.tooltip.wotplus_icon') center center / cover
+        no-repeat;
+}
+
+.PopularLoadoutsTooltipApp_headerWrapper_title_f3 {
+    color: #8c8c7e;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    margin-left: 4rem;
 }
 
 .PopularLoadoutsTooltipApp_body_40 {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 14rem 21rem 19rem;
+    max-width: 288rem;
+    padding: 10rem 20rem 16rem;
 }
 
-.PopularLoadoutsTooltipApp_body_randomBattleCalculation_b1 {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-bottom: 1rem;
-}
-
-.PopularLoadoutsTooltipApp_body_randomBattleCalculation_icon_2e {
-    width: 48rem;
-    height: 48rem;
-    background: url('R.images.gui.maps.icons.tanksetup.popular_loadouts.tooltip.random_battle_calculation') center /
-        cover no-repeat;
-}
-
-.PopularLoadoutsTooltipApp_body_randomBattleCalculation_desc_89 {
+.PopularLoadoutsTooltipApp_body_title_c1 {
     color: #8c8c7e;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
-    max-width: 239rem;
-    margin-left: 8rem;
+    margin-bottom: 12rem;
 }
 
-.PopularLoadoutsTooltipApp_body_genericEquipment_52 {
+.PopularLoadoutsTooltipApp_body_commonlyUsed_87,
+.PopularLoadoutsTooltipApp_body_legendary_f8 {
     display: flex;
     flex-direction: row;
-    align-items: center;
 }
 
-.PopularLoadoutsTooltipApp_body_genericEquipment_icon_6c {
-    width: 48rem;
-    height: 48rem;
-    background: url('R.images.gui.maps.icons.tanksetup.popular_loadouts.tooltip.generic_equipment') center / cover
+.PopularLoadoutsTooltipApp_body_commonlyUsed_icon_84,
+.PopularLoadoutsTooltipApp_body_legendary_icon_c1 {
+    width: 32rem;
+    height: 32rem;
+}
+
+.PopularLoadoutsTooltipApp_body_commonlyUsed_desc_ee,
+.PopularLoadoutsTooltipApp_body_legendary_desc_fe {
+    color: #8c8c7e;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    margin-left: 4rem;
+}
+
+.PopularLoadoutsTooltipApp_body_commonlyUsed_87 {
+    margin-bottom: 16rem;
+}
+
+.PopularLoadoutsTooltipApp_body_commonlyUsed_icon_84 {
+    background: url('R.images.gui.maps.icons.tanksetup.popular_loadouts.common_icon') center center / cover no-repeat;
+}
+
+.PopularLoadoutsTooltipApp_body_legendary_icon_c1 {
+    background: url('R.images.gui.maps.icons.tanksetup.popular_loadouts.legendary_icon') center center / cover no-repeat;
+}
+
+.PopularLoadoutsTooltipApp_body_conditons_10 {
+    display: flex;
+    flex-direction: column;
+}
+
+.PopularLoadoutsTooltipApp_body_conditons_title_4d {
+    color: #8c8c7e;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    margin-top: 24rem;
+    margin-bottom: 12rem;
+}
+
+.PopularLoadoutsTooltipApp_body_conditons_desc_47 {
+    display: flex;
+    flex-direction: row;
+}
+
+.PopularLoadoutsTooltipApp_body_conditons_desc_dot_f2 {
+    width: 3rem;
+    height: 3rem;
+    margin-left: 11rem;
+    margin-top: 8rem;
+    margin-right: 11rem;
+    border-radius: 50%;
+    background-color: #595950;
+}
+
+.PopularLoadoutsTooltipApp_body_conditons_desc_dataTaken_80,
+.PopularLoadoutsTooltipApp_body_conditons_desc_genericItems_51,
+.PopularLoadoutsTooltipApp_body_conditons_desc_dataForOnslaught_9e {
+    color: #8c8c7e;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    margin-bottom: 8rem;
+}
+
+.PopularLoadoutsTooltipApp_noData_b0 {
+    display: flex;
+    flex-direction: column;
+    padding: 0 20rem 8rem;
+}
+
+.PopularLoadoutsTooltipApp_noData_separator_df {
+    width: 328rem;
+    height: 104rem;
+    margin-left: -20rem;
+    background: url('R.images.gui.maps.icons.tanksetup.popular_loadouts.tooltip.separator') center center / cover
         no-repeat;
 }
 
-.PopularLoadoutsTooltipApp_body_genericEquipment_desc_85 {
+.PopularLoadoutsTooltipApp_noData_icon_06 {
+    width: 16rem;
+    height: 16rem;
+    margin-left: 50%;
+    margin-top: -112rem;
+    background: url('R.images.gui.maps.icons.library.maps') center center / cover no-repeat;
+    z-index: 1;
+    transform: translateX(-50%);
+}
+
+.PopularLoadoutsTooltipApp_noData_header_47 {
+    margin-top: 5rem;
+    color: #feab34;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    margin-bottom: 4rem;
+    z-index: 2;
+}
+
+.PopularLoadoutsTooltipApp_noData_desc_45 {
     color: #8c8c7e;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
-    max-width: 239rem;
-    margin-left: 8rem;
+    text-shadow: 0 0 1rem #000;
+    z-index: 2;
+}
+
+.PopularLoadoutsTooltipApp_combined_22 {
+    display: flex;
+    flex-direction: column;
+    padding: 0 20rem 16rem;
+}
+
+.VehicleInfoForAlternativeLoadouts_base_32 {
+    display: flex;
+}
+
+.VehicleInfoForAlternativeLoadouts_info_36 {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    margin-left: -80%;
+    margin-top: -15rem;
+    z-index: 2;
+    transform: translateX(-80%);
+    pointer-events: none;
+}
+
+.VehicleInfoForAlternativeLoadouts_tier_e7 {
+    color: #fefeec;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    margin-left: -5rem;
+    margin-right: 4rem;
+}
+
+.VehicleInfoForAlternativeLoadouts_vehicle_17 {
+    color: #e9e2bf;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    position: relative;
+}
+
+.VehicleInfoForAlternativeLoadouts_vehicleTypeIcon_74 {
+    width: 42rem;
+    height: 38rem;
+    margin-bottom: -2rem;
+    background: center center / cover no-repeat;
+    position: relative;
+}
+
+.VehicleInfoForAlternativeLoadouts_vehicleIcon_f0 {
+    width: 160rem;
+    height: 100rem;
+    margin-left: 100%;
+    margin-top: -80rem;
+    background: center center / cover no-repeat;
+    opacity: 0.45;
+    z-index: 1;
+    transform: translateX(-88%);
 }

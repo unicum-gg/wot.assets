@@ -160,6 +160,12 @@
     position: relative;
 }
 
+.HintButton_base__small_63 .HintButton_btnInner_e4 {
+    height: 10rem;
+    font-size: 8rem;
+    line-height: 1.1;
+}
+
 .HintButton_btnOuter_f9 {
     display: flex;
     flex-direction: row;

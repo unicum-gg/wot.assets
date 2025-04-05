@@ -53,7 +53,7 @@
                         children: () => A,
                         displayStatus: () => p,
                         displayStatusIs: () => uu,
-                        events: () => b,
+                        events: () => x,
                         extraSize: () => eu,
                         forceTriggerMouseMove: () => X,
                         freezeTextureBeforeResize: () => z,
@@ -175,7 +175,7 @@
                     return `url(${v(u, e, t)})`;
                 }
                 const p = { showing: 0, shown: 1, hiding: 2, hidden: 3 },
-                    b = {
+                    x = {
                         onTextureFrozen: F('self.onTextureFrozen'),
                         onTextureReady: F('self.onTextureReady'),
                         onDomBuilt: F('self.onDomBuilt'),
@@ -191,7 +191,7 @@
                             onRequestPosition: F('children.requestPosition'),
                         },
                     },
-                    x = ['args'];
+                    b = ['args'];
                 const T = 2,
                     L = 16,
                     S = 32,
@@ -209,7 +209,7 @@
                                             t[E] = u[E];
                                         }
                                     return t;
-                                })(e, x);
+                                })(e, b);
                             return void 0 !== r
                                 ? viewEnv.handleViewEvent(
                                       Object.assign({ __Type: t, type: u }, A, {
@@ -315,7 +315,7 @@
                     },
                     tu = Promise.all([
                         new Promise((u) => {
-                            window.isDomBuilt ? u() : b.onDomBuilt(u);
+                            window.isDomBuilt ? u() : x.onDomBuilt(u);
                         }),
                         engine.whenReady,
                     ]),
@@ -722,7 +722,7 @@
             },
             338: (u, e, t) => {
                 'use strict';
-                var E = t(179),
+                var E = t(363),
                     r = t.n(E);
                 const A = (u, e, t) =>
                     e.extraLargeHeight || e.largeHeight || e.mediumHeight || e.smallHeight || e.extraSmallHeight
@@ -942,7 +942,7 @@
                             (u[(u.Large = F.large.height)] = 'Large'),
                             (u[(u.ExtraLarge = F.extraLarge.height)] = 'ExtraLarge');
                     })(p || (p = {}));
-                const b = () => {
+                const x = () => {
                         const u = (0, E.useContext)(s),
                             e = u.width,
                             t = u.height,
@@ -996,7 +996,7 @@
                             })(u);
                         return { mediaSize: r, mediaWidth: A, mediaHeight: a, remScreenWidth: e, remScreenHeight: t };
                     },
-                    x = ['children', 'className'];
+                    b = ['children', 'className'];
                 function T() {
                     return (
                         (T = Object.assign
@@ -1044,8 +1044,8 @@
                                         t[E] = u[E];
                                     }
                                 return t;
-                            })(u, x);
-                        const A = b(),
+                            })(u, b);
+                        const A = x(),
                             a = A.mediaWidth,
                             F = A.mediaHeight,
                             n = A.mediaSize;
@@ -1066,7 +1066,7 @@
                         })(u, M);
                     return r().createElement(m, null, r().createElement(O, t, e));
                 };
-                var H = t(493),
+                var H = t(533),
                     k = t.n(H);
                 let W;
                 function N(u) {
@@ -1456,7 +1456,7 @@
                 Date.now();
                 const pu = fu.Ew.getRegionalDateTime;
                 fu.Ew.getFormattedDateTime;
-                const bu = ({ text: u, timestamp: e }) => {
+                const xu = ({ text: u, timestamp: e }) => {
                         const t = ((u) => {
                                 const e = new Date(1e3 * u);
                                 return {
@@ -1473,20 +1473,20 @@
                             binding: { day: E, month: R.strings.menu.dateTime.months.$num(A + 1) },
                         });
                     },
-                    xu = R.strings.clans.banner,
+                    bu = R.strings.clans.banner,
                     Tu = ({ state: u, startTimestamp: e, endTimestamp: t }) => {
                         switch (u) {
                             case W.NotStarted:
-                                return r().createElement(bu, { text: xu.seasonDate.seasonNotStarted(), timestamp: e });
+                                return r().createElement(xu, { text: bu.seasonDate.seasonNotStarted(), timestamp: e });
                             case W.Started:
-                                return r().createElement(bu, { text: xu.seasonDate.seasonLasts(), timestamp: t });
+                                return r().createElement(xu, { text: bu.seasonDate.seasonLasts(), timestamp: t });
                             case W.PrimeTimeNotChosen:
-                                return r().createElement(gu, { text: xu.chooseTime() });
+                                return r().createElement(gu, { text: bu.chooseTime() });
                             case W.PrimeTimeNow:
                             case W.PrimeTimeToday:
                             case W.PrimeTimeTomorrow:
                                 return r().createElement(gu, {
-                                    text: xu.primeTime(),
+                                    text: bu.primeTime(),
                                     binding: { start: pu(e, vu.ShortTime), end: pu(t, vu.ShortTime) },
                                 });
                             default:
@@ -1552,6 +1552,14 @@
                         document.getElementById('root'),
                     );
                 });
+            },
+            363: (u) => {
+                'use strict';
+                u.exports = React;
+            },
+            533: (u) => {
+                'use strict';
+                u.exports = ReactDOM;
             },
         },
         __webpack_module_cache__ = {},

@@ -54,6 +54,37 @@
     height: 400rem;
 }
 
+.ExtraChapterDescription_base_fe {
+    width: 100%;
+    color: #ffdd99;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+.mediaMedium .ExtraChapterDescription_base_fe {
+    font-size: 16rem;
+}
+
+.ExtraChapterDescription_description_8f {
+    justify-content: center;
+    align-items: center;
+}
+
+.ExtraChapterDescription_warningIcon_9e {
+    width: 24rem;
+    height: 24rem;
+    background: url('R.images.gui.maps.icons.library.alertBigIcon') no-repeat center / contain;
+}
+
+.ExtraChapterDescription_highlightText_7e {
+    color: #feab34;
+}
+
+.FormatText_base_d0 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .App_base_92 {
     display: flex;
     flex-direction: column;

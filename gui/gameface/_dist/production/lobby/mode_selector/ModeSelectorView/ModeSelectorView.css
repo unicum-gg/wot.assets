@@ -3512,6 +3512,30 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     in JS 8000 reserved like anchor for start optimization
 */
 /* stylelint-disable-line */
+.ProgressBarDeltaSimple_base_6c {
+    width: 0;
+    height: 100%;
+    position: absolute;
+    top: 0;
+}
+.ProgressBarDeltaSimple_delta_99 {
+    width: 0;
+    max-width: 8001px;
+    height: 100%;
+    box-shadow: var(--progress-delta-shadow);
+    background-color: var(--progress-delta-color);
+    position: absolute;
+    bottom: 0;
+    transform-origin: right center;
+    transition-timing-function: cubic-bezier(1, 0, 0.92, 1), cubic-bezier(0.21, 0.61, 0.35, 1);
+    transition-property: width, transform;
+}
+
+/*
+    Gameface can't calculate gradient biggest than 8128px
+    in JS 8000 reserved like anchor for start optimization
+*/
+/* stylelint-disable-line */
 .ProgressLineImpose_base_80 {
     max-width: 8001px;
     height: 100%;
@@ -3596,30 +3620,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     width: 44rem;
     height: 43rem;
     background-image: var(--progress-glow-small);
-}
-
-/*
-    Gameface can't calculate gradient biggest than 8128px
-    in JS 8000 reserved like anchor for start optimization
-*/
-/* stylelint-disable-line */
-.ProgressBarDeltaSimple_base_6c {
-    width: 0;
-    height: 100%;
-    position: absolute;
-    top: 0;
-}
-.ProgressBarDeltaSimple_delta_99 {
-    width: 0;
-    max-width: 8001px;
-    height: 100%;
-    box-shadow: var(--progress-delta-shadow);
-    background-color: var(--progress-delta-color);
-    position: absolute;
-    bottom: 0;
-    transform-origin: right center;
-    transition-timing-function: cubic-bezier(1, 0, 0.92, 1), cubic-bezier(0.21, 0.61, 0.35, 1);
-    transition-property: width, transform;
 }
 
 /*
@@ -3854,274 +3854,132 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     margin-bottom: -1rem;
 }
 
-.Comp7BattleCard_widget_3b {
-    position: absolute;
-    top: 10rem;
-    left: 50%;
-    z-index: 1;
-    transform: translateX(-50%);
-}
-
-.Comp7BattleCard_base__b0_91 .Comp7BattleCard_widget_3b,
-.Comp7BattleCard_base__b1_30 .Comp7BattleCard_widget_3b {
-    top: 108rem;
-}
-
-.mediaMedium .Comp7BattleCard_base__b0_91 .Comp7BattleCard_widget_3b,
-.mediaMedium .Comp7BattleCard_base__b1_30 .Comp7BattleCard_widget_3b {
-    width: 150rem;
-    height: 150rem;
-    top: 80rem;
-}
-
-.mediaLarge .Comp7BattleCard_base__b0_91 .Comp7BattleCard_widget_3b,
-.mediaLarge .Comp7BattleCard_base__b1_30 .Comp7BattleCard_widget_3b {
-    top: 126rem;
-}
-
-.mediaMedium .Comp7BattleCard_base__b2_da .Comp7BattleCard_widget_3b {
-    width: 110rem;
-    height: 110rem;
-    top: 4rem;
-}
-
-.mediaLarge .Comp7BattleCard_base__b2_da .Comp7BattleCard_widget_3b {
-    top: 14rem;
-}
-
-.Comp7BattleCard_belowStatus_48 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    position: relative;
-}
-
-/* should be percentage of screen width */
-.QualificationCounter_base_fb {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-.QualificationCounter_dash_e2 {
-    width: 66rem;
-    height: 32rem;
-    background: url('R.images.gui.maps.icons.comp7.icons.light_dash') no-repeat center / cover;
-}
-.QualificationCounter_dash__right_3e {
-    transform: rotate(180deg);
-}
-.QualificationCounter_iconContainer_c3 {
-    display: flex;
-    width: 26rem;
-    position: relative;
-    transform: translateY(1rem);
-}
-.QualificationCounter_battleIcon_2e {
-    width: 42rem;
-    height: 42rem;
-    background: url('R.images.gui.maps.icons.comp7.icons.battles_42x42') no-repeat center / cover;
+.Spinner_base_87 {
+    width: 260rem;
+    height: 260rem;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-}
-.QualificationCounter_score_3b {
-    margin: 0 -6rem 0 -12rem;
-    color: #cbac77;
-    text-shadow:
-        0 0 4rem rgba(255, 127, 0, 0.25),
-        0 0 8rem #ff2a00,
-        0 0 15rem #e52;
-    transform: translateY(-1rem);
+    transform: translateX(-50%) translateY(-50%);
 }
 
-.RankEmblem_base_ec {
-    width: var(--imageSize);
-    height: var(--imageSize);
-    background: no-repeat center / cover;
-}
-
-/* should be percentage of screen width */
-.Progress_base_2e {
-    width: 86rem;
-}
-.Progress_progress_32 {
-    margin-bottom: 10rem;
-}
-.Progress_status_95 {
-    color: #cbac77;
+.Spinner_caption_cf {
+    color: #8c8c7e;
     font-size: 12rem;
     text-align: center;
-    text-shadow:
-        0 0 4rem rgba(255, 127, 0, 0.25),
-        0 0 8rem #ff2a00,
-        0 0 15rem #e52;
-}
-.Progress_statusPoints_73 {
-    color: #ffdd99;
-    text-shadow:
-        0 0 4rem rgba(255, 127, 0, 0.25),
-        0 0 8rem #ff2a00,
-        0 0 15rem #e52;
-}
-.Progress_points_a7 {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-.Progress_dash_32 {
-    width: 66rem;
-    height: 31rem;
-    background: url('R.images.gui.maps.icons.comp7.icons.light_dash') no-repeat center / cover;
-}
-.Progress_dash__right_fb {
-    transform: rotate(180deg);
-}
-.Progress_score_c0 {
-    margin: 0 -6rem;
-    color: #ffdd99;
-    text-shadow:
-        0 0 4rem rgba(255, 127, 0, 0.25),
-        0 0 8rem #ff2a00,
-        0 0 15rem #e52;
-}
-
-/* should be percentage of screen width */
-.Qualification_base_46 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.Qualification_ratingCalculation_8f {
-    display: flex;
-    justify-content: center;
-    color: #ffdd99;
-    text-align: center;
-    text-shadow:
-        0 0 4rem rgba(255, 127, 0, 0.25),
-        0 0 8rem #ff2a00,
-        0 0 15rem #e52;
-}
-.Qualification_timer_78 {
-    width: 33rem;
-    height: 33rem;
-    margin: -7rem -5rem 0 -10rem;
-    background: url('R.images.gui.maps.icons.comp7.icons.timer') no-repeat center / cover;
-    filter: drop-shadow(0rem 0rem 4rem rgba(255, 127, 0, 0.25)) drop-shadow(0rem 0rem 8rem #ff2a00);
-}
-
-/* should be percentage of screen width */
-.Warning_base_a5 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 12rem;
-    position: relative;
-}
-.Warning_lighting_e0 {
-    width: 111rem;
-    height: 58rem;
-    background: url('R.images.gui.maps.icons.comp7.icons.lighting') no-repeat center / cover;
-    opacity: 0.6;
+    white-space: pre;
     position: absolute;
-    top: -12rem;
-    right: 50%;
-    transform: translateX(55rem);
-    pointer-events: none;
-}
-.Warning_value_1e {
-    color: #ffdd99;
-    text-shadow:
-        0 0 4rem rgba(255, 127, 0, 0.25),
-        0 0 8rem #ff2a00,
-        0 0 15rem #e52;
-}
-.Warning_base__text_08 .Warning_value_1e {
-    color: #ff2717;
-    text-shadow: 0 0 14rem #f00;
-}
-.Warning_timer_fe {
-    width: 30rem;
-    height: 30rem;
-    margin: 0 -10rem -2rem -5rem;
-    background: url('R.images.gui.maps.icons.comp7.icons.timer') no-repeat center / cover;
-    position: relative;
+    top: 0;
+    right: 0;
+    left: 0;
+    transform: translateY(48rem);
 }
 
-.App_base_de {
+.Spinner_gear_c4 {
+    width: 260rem;
+    height: 260rem;
+    margin-top: 2rem;
+    background: url('R.images.gui.maps.icons.components.spinner.spinner') 0 0;
+    background-size: 260rem 520rem;
+    position: absolute;
+    top: -4rem;
+    left: 0;
+    animation: Spinner_spin_f5 0.28s linear infinite;
+}
+
+.Spinner_logo_bf {
+    width: 260rem;
+    height: 260rem;
+    background: url('R.images.gui.maps.icons.components.spinner.spinner') 0 -260rem no-repeat;
+    background-size: 260rem 520rem;
+    position: absolute;
+    top: -4rem;
+    left: 0;
+}
+
+@keyframes Spinner_spin_f5 {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(20deg);
+    }
+}
+
+.Error_base_46 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 1rem;
-    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-70%);
 }
-.App_content_da {
-    width: 130rem;
-    position: relative;
-    z-index: 1;
-}
-.mediaMediumHeight .App_content_da {
-    width: 150rem;
-}
-.App_emblemContainer_dc {
-    width: 100%;
-    filter: brightness(1);
-    transition: filter 0.2s linear;
-    cursor: pointer;
-}
-.App_emblemContainer_dc:hover {
-    filter: brightness(1.15);
-}
-.App_base__unavailable_e1 .App_emblemContainer_dc {
-    filter: brightness(0.53);
-    cursor: default;
-}
-.App_emblem_90 {
-    width: 130rem;
-    height: 130rem;
+
+.Error_alertIcon_04 {
+    width: 35rem;
+    height: 30rem;
     margin-bottom: 10rem;
-}
-.App_base__unavailable_e1 .App_emblem_90 {
-    filter: saturate(0%);
-}
-.mediaMediumHeight .App_emblem_90 {
-    width: 150rem;
-    height: 150rem;
-    margin-bottom: 0;
-}
-.App_progression_e6 {
-    margin: 0 0 8rem 22rem;
-}
-.mediaMediumHeight .App_progression_e6 {
-    margin-left: 32rem;
-}
-.App_warning_f8 {
-    margin-top: -5rem;
+    background: url('R.images.gui.maps.icons.library.icon_alert_32x32') no-repeat 50% 50% / contain;
 }
 
-.Progression_base_bb {
-    display: flex;
-    justify-content: center;
+.Error_errorCaption_f2 {
+    margin-bottom: 15rem;
+    color: #ee7000;
+    font-size: 14rem;
+    text-align: center;
 }
 
-.Progression_progress_2a {
-    margin-top: 18rem;
+.Error_button_cd {
+    width: 100rem;
 }
 
-.Progression_warning_1f {
-    margin-top: -5rem;
+.Waiting_base_c5 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
 }
 
-.Progression_battlesCounter__b0_31,
-.Progression_battlesCounter__b1_92 {
-    margin-top: 20rem;
+.Waiting_blackOverlay_55 {
+    width: 100%;
+    height: 100%;
+    background-color: #0f0d0d;
+    opacity: 0.8;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
-.Progression_battlesCounter__b2_0c .Progression_battlesCounter_df {
-    margin-top: 10rem;
+.ExtermalComponent_base_27 {
+    flex: 1 1;
+    position: relative;
+}
+
+.ExtermalComponent_waitingBg_74 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    pointer-events: none;
+    flex: 1 1;
+    margin: 5rem;
+    border: 1rem solid rgba(255, 255, 255, 0.15);
+    border-radius: 2rem;
+    box-shadow:
+        0 0 12rem 1rem rgba(0, 0, 0, 0.5),
+        inset 0 1rem 0 0 rgba(0, 0, 0, 0.15);
+}
+
+.mediaMedium .ExtermalComponent_waitingBg_74 {
+    margin: 7rem;
+}
+
+.mediaLarge .ExtermalComponent_waitingBg_74 {
+    margin: 10rem;
 }
 
 .Countdown_base_fe {

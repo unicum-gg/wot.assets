@@ -4,7 +4,7 @@
                 'use strict';
                 t.d(e, { i: () => s });
                 var r = t(56),
-                    n = t(202),
+                    n = t(363),
                     a = t.n(n);
                 const i = ['children', 'body', 'header', 'note', 'alert', 'args'];
                 function E() {
@@ -66,7 +66,7 @@
                 t.d(e, { u: () => s });
                 var r = t(902),
                     n = t(179),
-                    a = t(202);
+                    a = t(363);
                 const i = [
                     'children',
                     'contentId',
@@ -550,16 +550,17 @@
                 const r = (u = 1) => {
                     const e = new Error().stack;
                     let t,
-                        r = R.invalid('resId');
-                    return (
-                        e &&
-                            ((t = e.split('\n')[u].split('.js')[0].split('/').pop() || ''),
-                            window.__feature &&
-                                window.__feature !== t &&
-                                window.subViews[t] &&
-                                (r = window.subViews[t].id)),
-                        { caller: t, stack: e, resId: r }
-                    );
+                        r = R.invalid('resId'),
+                        n = '';
+                    var a;
+                    e &&
+                        ((n = (null == (a = e.match(/(coui:\/\/[^\s]+\.js)/)) ? void 0 : a[0]) || ''),
+                        (t = e.split('\n')[u].split('.js')[0].split('/').pop() || ''),
+                        window.__feature &&
+                            window.__feature !== t &&
+                            window.subViews[t] &&
+                            (r = window.subViews[t].id));
+                    return { callerUrl: n, caller: t, stack: e, resId: r };
                 };
             },
             521: (u, e, t) => {
@@ -964,7 +965,7 @@
                     n = t.n(r),
                     a = t(373),
                     i = t(896),
-                    E = t(202),
+                    E = t(363),
                     o = t.n(E),
                     s = t(375);
                 const A = {
@@ -1070,7 +1071,7 @@
             },
             341: (u, e, t) => {
                 'use strict';
-                var r = t(202),
+                var r = t(363),
                     n = t.n(r);
                 const a = (u, e, t) =>
                     e.extraLargeHeight || e.largeHeight || e.mediumHeight || e.smallHeight || e.extraSmallHeight
@@ -1414,7 +1415,7 @@
                         })(u, T);
                     return n().createElement(_, null, n().createElement(O, t, e));
                 };
-                var k = t(493),
+                var k = t(533),
                     H = t.n(k);
                 function I(u) {
                     engine.call('PlaySound', u).catch((e) => {
@@ -2142,6 +2143,14 @@
                             (u.MAXIMUM = 'prestige'),
                             (u.UNDEFINED = 'undefined');
                     })(r || (r = {}));
+            },
+            363: (u) => {
+                'use strict';
+                u.exports = React;
+            },
+            533: (u) => {
+                'use strict';
+                u.exports = ReactDOM;
             },
         },
         __webpack_module_cache__ = {},

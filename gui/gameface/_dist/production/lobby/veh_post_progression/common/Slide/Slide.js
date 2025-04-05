@@ -5,7 +5,7 @@
             3495: (u, F, A) => {
                 A.d(F, { Y: () => r });
                 var e = A(9768),
-                    E = A(6179),
+                    E = A(7363),
                     D = A(1043),
                     B = A(5262);
                 const t = e.O.client.getSize('rem'),
@@ -15,10 +15,10 @@
                     r = (0, E.createContext)(i);
             },
             1039: (u, F, A) => {
-                A(9768), A(6536), A(6179), A(3495), A(1043), A(5262);
+                A(9768), A(6536), A(7363), A(3495), A(1043), A(5262);
             },
             6010: (u, F, A) => {
-                var e = A(6179),
+                var e = A(7363),
                     E = A(7382),
                     D = A(3495);
                 const B = ['children'];
@@ -496,7 +496,7 @@
                     eu = { view: B, client: E, sound: v };
             },
             6536: (u, F, A) => {
-                A(6179);
+                A(7363);
             },
             9924: (u, F, A) => {
                 A.d(F, { Z: () => r });
@@ -504,7 +504,7 @@
                     E = A.n(e),
                     D = A(7739),
                     B = A(5262),
-                    t = A(6179),
+                    t = A(7363),
                     C = A(3649);
                 const n = (u, F) => u + '__' + F,
                     i = (u, F) => u + (0, C.e)(F);
@@ -591,7 +591,7 @@
             },
             6565: (u, F, A) => {
                 A.d(F, { d: () => s });
-                var e = A(6179),
+                var e = A(7363),
                     E = A.n(e),
                     D = A(6483),
                     B = A.n(D),
@@ -650,7 +650,7 @@
             },
             2861: (u, F, A) => {
                 A.d(F, { n: () => i, w: () => a });
-                var e = A(6179),
+                var e = A(7363),
                     E = A.n(e),
                     D = A(6483),
                     B = A.n(D),
@@ -700,7 +700,7 @@
                     };
             },
             2132: (u, F, A) => {
-                var e = A(6179),
+                var e = A(7363),
                     E = A.n(e),
                     D = A(9924),
                     B = A(2861);
@@ -736,7 +736,7 @@
             },
             2436: (u, F, A) => {
                 A.d(F, { B: () => D });
-                var e = A(6179),
+                var e = A(7363),
                     E = A.n(e);
                 const D = ({ text: u, className: F }) =>
                     E().createElement(
@@ -748,6 +748,9 @@
                                 E().createElement('div', { className: F, key: A }, e.length - 1 === A ? u : u + ' '),
                             ),
                     );
+            },
+            7363: (u) => {
+                u.exports = React;
             },
         },
         A = {};

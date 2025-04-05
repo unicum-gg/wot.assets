@@ -5,14 +5,14 @@
             124: (e, n, t) => {
                 var i = {};
                 t.r(i),
-                    t.d(i, { mouse: () => y, off: () => h, on: () => p, onResize: () => g, onScaleUpdated: () => w });
+                    t.d(i, { mouse: () => y, off: () => h, on: () => w, onResize: () => g, onScaleUpdated: () => p });
                 var r = {};
                 t.r(r),
                     t.d(r, {
                         events: () => i,
-                        getMouseGlobalPosition: () => _,
-                        getSize: () => T,
-                        graphicsQuality: () => x,
+                        getMouseGlobalPosition: () => T,
+                        getSize: () => x,
+                        graphicsQuality: () => _,
                         playSound: () => E,
                         setRTPC: () => P,
                     });
@@ -41,16 +41,16 @@
                         pxToRem: () => Y,
                         remToPx: () => Z,
                         resize: () => W,
-                        sendEvent: () => D,
+                        sendEvent: () => B,
                         setAnimateWindow: () => ee,
                         setEventHandled: () => te,
                         setInputPaddingsRem: () => I,
                         setSidePaddingsRem: () => q,
                         whenTutorialReady: () => de,
                     });
-                var s = t(179),
+                var s = t(363),
                     u = t.n(s),
-                    d = t(493),
+                    d = t(533),
                     l = t.n(d),
                     c = t(483),
                     v = t.n(c);
@@ -66,8 +66,8 @@
                     viewEnv.setTrackMouseOnStage(e);
                 }
                 const g = f('clientResized'),
-                    w = f('self.onScaleUpdated'),
-                    p = (e, n) => engine.on(e, n),
+                    p = f('self.onScaleUpdated'),
+                    w = (e, n) => engine.on(e, n),
                     h = (e, n) => engine.off(e, n),
                     b = { down: f('mousedown'), up: f('mouseup'), move: f('mousemove') };
                 const y = (function () {
@@ -144,13 +144,13 @@
                         console.error(`setRTPC('${e}', '${n}'): `, t);
                     });
                 }
-                function T(e = 'px') {
+                function x(e = 'px') {
                     return 'rem' === e ? viewEnv.getClientSizeRem() : viewEnv.getClientSizePx();
                 }
-                function _(e = 'px') {
+                function T(e = 'px') {
                     return 'rem' === e ? viewEnv.getMouseGlobalPositionRem() : viewEnv.getMouseGlobalPositionPx();
                 }
-                const x = {
+                const _ = {
                         isLow: () => 1 === viewEnv.getGraphicsQuality(),
                         isHigh: () => 0 === viewEnv.getGraphicsQuality(),
                         get: () => viewEnv.getGraphicsQuality(),
@@ -181,12 +181,12 @@
                             onRequestPosition: f('children.requestPosition'),
                         },
                     },
-                    V = ['args'];
-                const M = 2,
+                    M = ['args'];
+                const V = 2,
                     k = 16,
-                    G = 32,
-                    L = 64,
-                    B = (e, n) => {
+                    D = 32,
+                    G = 64,
+                    L = (e, n) => {
                         const t = 'GFViewEventProxy';
                         if (void 0 !== n) {
                             const r = n.args,
@@ -199,7 +199,7 @@
                                             t[i] = e[i];
                                         }
                                     return t;
-                                })(n, V);
+                                })(n, M);
                             return void 0 !== r
                                 ? viewEnv.handleViewEvent(
                                       Object.assign({ __Type: t, type: e }, o, {
@@ -223,15 +223,15 @@
                         return viewEnv.handleViewEvent({ __Type: t, type: e });
                         var i;
                     },
-                    D = {
+                    B = {
                         close(e) {
-                            B('popover' === e ? M : G);
+                            L('popover' === e ? V : D);
                         },
                         minimize() {
-                            B(L);
+                            L(G);
                         },
                         move(e) {
-                            B(k, { isMouseEvent: !0, on: e });
+                            L(k, { isMouseEvent: !0, on: e });
                         },
                     },
                     N = 15;
@@ -407,8 +407,8 @@
                             )
                         );
                     }),
-                    we = 'App_base_0b',
-                    pe = 'App_title_00',
+                    pe = 'App_base_0b',
+                    we = 'App_title_00',
                     he = 'App_subtitle_f9',
                     be = 'App_description_19',
                     ye = 'App_description__indent_02',
@@ -419,8 +419,8 @@
                             null,
                             u().createElement(
                                 'div',
-                                { className: we },
-                                u().createElement('div', { className: pe }, Ee.title()),
+                                { className: pe },
+                                u().createElement('div', { className: we }, Ee.title()),
                                 u().createElement('div', { className: v()(be, ye) }, Ee.description()),
                                 u().createElement('div', { className: he }, Ee.subtitle()),
                                 u().createElement('div', { className: be }, Ee.maps()),
@@ -429,6 +429,12 @@
                 engine.whenReady.then(() => {
                     l().render(u().createElement(Pe, null), document.getElementById('root'));
                 });
+            },
+            363: (e) => {
+                e.exports = React;
+            },
+            533: (e) => {
+                e.exports = ReactDOM;
             },
         },
         t = {};

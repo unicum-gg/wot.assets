@@ -7,7 +7,7 @@
                 var E = A(6483),
                     D = A.n(E),
                     B = A(3649),
-                    C = A(6179),
+                    C = A(7363),
                     e = A.n(C),
                     t = A(5287);
                 const r = ({
@@ -103,7 +103,7 @@
             4981: (u, F, A) => {
                 var E = A(6483),
                     D = A.n(E),
-                    B = A(6179),
+                    B = A(7363),
                     C = A.n(B),
                     e = A(280);
                 const t = {
@@ -183,6 +183,9 @@
             5287: (u, F, A) => {
                 A.d(F, { Z: () => E });
                 const E = { base: 'FormatText_base_d0' };
+            },
+            7363: (u) => {
+                u.exports = React;
             },
         },
         A = {};

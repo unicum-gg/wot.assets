@@ -1,0 +1,1583 @@
+.TextButton_base_b6 {
+    display: flex;
+    align-items: center;
+    padding: 0 3rem;
+    font-size: 12rem;
+    position: relative;
+    cursor: pointer;
+}
+
+.TextButton_base__right_39 {
+    flex-direction: row-reverse;
+}
+.TextButton_icon_17 {
+    width: 32rem;
+    height: 32rem;
+    background: no-repeat center / contain;
+    position: relative;
+}
+.TextButton_icon__back_43,
+.TextButton_icon__forward_59 {
+    margin: -1rem -5rem;
+    background-image: url('R.images.gui.maps.icons.components.text_button.back');
+    transform: translateY(1rem);
+}
+.TextButton_icon__forward_59 {
+    transform: rotate(180deg) translateY(1rem);
+}
+.TextButton_icon__close_53 {
+    margin: -1rem 0;
+    background-image: url('R.images.gui.maps.icons.components.text_button.close');
+}
+.TextButton_icon__info_33 {
+    margin: -1rem -5rem;
+    background-image: url('R.images.gui.maps.icons.components.text_button.info');
+}
+.TextButton_glow_a4 {
+    width: 100%;
+    height: 100%;
+    background: no-repeat center / contain;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    transition: opacity 0.16s;
+}
+.TextButton_icon__back_43 .TextButton_glow_a4,
+.TextButton_icon__forward_59 .TextButton_glow_a4 {
+    background-image: url('R.images.gui.maps.icons.components.text_button.back_hover');
+}
+.TextButton_icon__close_53 .TextButton_glow_a4 {
+    background-image: url('R.images.gui.maps.icons.components.text_button.close_hover');
+}
+.TextButton_icon__info_33 .TextButton_glow_a4 {
+    background-image: url('R.images.gui.maps.icons.components.text_button.info_hover');
+}
+.TextButton_base_b6:hover .TextButton_glow_a4 {
+    opacity: 1;
+}
+.TextButton_base_b6:active .TextButton_glow_a4 {
+    opacity: 0;
+}
+.TextButton_caption_82 {
+    position: relative;
+    transition:
+        color 0.16s,
+        text-shadow 0.16s;
+}
+.TextButton_caption__back_b9,
+.TextButton_caption__forward_4e,
+.TextButton_caption__close_36 {
+    color: #ffdd99;
+    text-shadow:
+        0 0 10rem rgba(255, 42, 0, 1),
+        0 0 10rem rgba(255, 42, 0, 0.4),
+        0 0 10rem rgba(255, 42, 0, 0.4),
+        0 0 2rem rgba(255, 42, 0, 0.4),
+        0 0 1rem rgba(255, 42, 0, 0.4),
+        0 0 2rem rgba(255, 42, 0, 0.4),
+        0 0 1rem rgba(255, 42, 0, 0.4);
+}
+.TextButton_base_b6:hover .TextButton_caption__back_b9,
+.TextButton_base_b6:hover .TextButton_caption__forward_4e,
+.TextButton_base_b6:hover .TextButton_caption__close_36 {
+    color: #fffa9f;
+}
+.TextButton_base_b6:active .TextButton_caption__back_b9,
+.TextButton_base_b6:active .TextButton_caption__forward_4e,
+.TextButton_base_b6:active .TextButton_caption__close_36 {
+    color: #ffdd99;
+}
+.TextButton_caption__info_23 {
+    padding: 0 5rem;
+    color: #ccffff;
+    text-shadow:
+        0 0 12rem rgba(31, 68, 255, 0.8),
+        0 0 8rem #00eaff;
+}
+.TextButton_base_b6:hover .TextButton_caption__info_23 {
+    color: #e3ffff;
+    text-shadow:
+        0 0 12rem rgba(31, 68, 255, 0.8),
+        0 0 12rem rgba(0, 234, 255, 1),
+        0 0 8rem #00eaff;
+}
+.TextButton_base_b6:active .TextButton_caption__info_23 {
+    color: #ccffff;
+    text-shadow:
+        0 0 12rem rgba(31, 68, 255, 0.6),
+        0 0 8rem #00eaff;
+}
+.TextButton_goto_e7 {
+    color: #7c7c6c;
+}
+.TextButton_base__left_ff .TextButton_goto_e7 {
+    margin-left: 8rem;
+}
+.TextButton_base__right_39 .TextButton_goto_e7 {
+    margin-right: 8rem;
+}
+.TextButton_shine_e2 {
+    width: 90rem;
+    height: 40rem;
+    background: url('R.images.gui.maps.icons.components.text_button.shine') no-repeat center / contain;
+    opacity: 0;
+    position: absolute;
+    top: -4rem;
+    transition: opacity 0.16s;
+    pointer-events: none;
+}
+.TextButton_base__left_ff .TextButton_shine_e2 {
+    left: -4rem;
+}
+.TextButton_base__right_39 .TextButton_shine_e2 {
+    right: -4rem;
+    transform: rotate(180deg);
+}
+.TextButton_base_b6:hover .TextButton_shine_e2 {
+    opacity: 1;
+}
+.TextButton_base_b6:active .TextButton_shine_e2 {
+    opacity: 0;
+}
+
+/* should be percentage of screen width */
+.page_heading_9c {
+    padding-top: 54rem;
+}
+.mediaMedium .page_heading_9c {
+    padding-top: 63rem;
+    padding-bottom: 9rem;
+}
+.page_close_4e {
+    position: absolute;
+    top: 54rem;
+    right: 29rem;
+}
+.mediaMedium .page_close_4e {
+    top: 63rem;
+}
+.mediaLarge .page_close_4e {
+    right: 40rem;
+}
+
+.CButton_base_40 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2rem;
+    box-shadow: 0 0 0 1rem rgba(0, 0, 0, 0.6);
+    position: relative;
+    cursor: pointer;
+}
+
+.CButton_base__main_42,
+.CButton_base__primary_7f,
+.CButton_base__primaryGreen_6f,
+.CButton_base__primaryRed_ec,
+.CButton_base__secondary_50 {
+    background-size: 100% 100%;
+}
+
+.CButton_base__main_42 {
+    background-image: url('R.images.gui.maps.icons.components.button.back_main');
+}
+
+.CButton_base__primary_7f {
+    background-image: url('R.images.gui.maps.icons.components.button.back_primary');
+}
+
+.CButton_base__primaryGreen_6f {
+    background-image: url('R.images.gui.maps.icons.components.button.back_primary_green');
+}
+
+.CButton_base__primaryRed_ec {
+    background-image: url('R.images.gui.maps.icons.components.button.back_primary_red');
+}
+
+.CButton_base__secondary_50 {
+    background-image: url('R.images.gui.maps.icons.components.button.back_secondary');
+}
+
+.CButton_base__ghost_ed {
+    border-radius: 3rem;
+    box-shadow:
+        0 0 0 1rem rgba(0, 0, 0, 0.3),
+        0 0 0 1rem rgba(255, 255, 255, 0.15) inset;
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+.CButton_base__extraSmall_27 {
+    min-height: 17rem;
+    padding: 0 16rem;
+}
+
+.CButton_base__small_df,
+.CButton_base__medium_74 {
+    padding: 0 20rem;
+}
+
+.CButton_base__small_df {
+    min-height: 18rem;
+}
+
+.CButton_base__medium_74 {
+    min-height: 32rem;
+}
+
+.CButton_base__large_5c {
+    min-height: 48rem;
+}
+
+.CButton_base__disabled_d9 {
+    cursor: default;
+}
+/* Element .back and background-image in element .base need for fix bug in GF https://jira.wargaming.net/browse/WOTD-158525
+The bug is that under certain conditions, when using border-image, stripes appear. Strip is a single-pixel gap
+between 'border-image-width' and 'fill'.
+This bug is reproduced in Google Chrome 81.0.4044.113
+*/
+.CButton_back_e5 {
+    border-image-slice: 4 fill;
+    border-image-width: 4rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.CButton_base__main_42 .CButton_back_e5 {
+    border-image-source: url('R.images.gui.maps.icons.components.button.back_main');
+}
+.CButton_base__primary_7f .CButton_back_e5 {
+    border-image-source: url('R.images.gui.maps.icons.components.button.back_primary');
+}
+.CButton_base__primaryGreen_6f .CButton_back_e5 {
+    border-image-source: url('R.images.gui.maps.icons.components.button.back_primary_green');
+}
+.CButton_base__primaryRed_ec .CButton_back_e5 {
+    border-image-source: url('R.images.gui.maps.icons.components.button.back_primary_red');
+}
+.CButton_base__secondary_50 .CButton_back_e5 {
+    border-image-source: url('R.images.gui.maps.icons.components.button.back_secondary');
+}
+.CButton_texture_fe {
+    background: url('R.images.gui.maps.icons.components.button.standard_texture_file');
+    background-size: 155rem 31rem;
+    mix-blend-mode: soft-light;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.CButton_state_11 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition: box-shadow 0.16s ease-in-out;
+}
+.CButton_base__focus_83 .CButton_state_11 {
+    border-radius: 2rem;
+    box-shadow: inset 0 0 2rem 1rem rgba(255, 85, 0, 0.2);
+}
+.CButton_stateHighlightHover_ff,
+.CButton_stateHighlightActive_35,
+.CButton_stateDisabled_54 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.CButton_stateHighlightHover_ff {
+    background-image: linear-gradient(
+        180deg,
+        rgba(252, 248, 235, 0.25) 0%,
+        rgba(252, 248, 235, 0.1) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    opacity: 0;
+}
+.CButton_base_40:hover .CButton_stateHighlightHover_ff {
+    opacity: 1;
+}
+.CButton_base_40:active .CButton_stateHighlightHover_ff {
+    opacity: 0;
+}
+.CButton_base__disabled_d9:hover .CButton_stateHighlightHover_ff {
+    opacity: 0;
+}
+.CButton_base__ghost_ed .CButton_stateHighlightHover_ff {
+    box-shadow: 0 15rem 12rem 0 rgba(242, 242, 230, 0.11) inset;
+    background-color: rgba(8, 6, 0, 0.18);
+    background-image: none;
+}
+.CButton_stateHighlightActive_35 {
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.15) 100%);
+    opacity: 0;
+}
+.CButton_base__highlightActive_b2 .CButton_stateHighlightActive_35 {
+    opacity: 1;
+}
+.CButton_stateDisabled_54 {
+    background-color: rgba(0, 0, 0, 0.25);
+    background-image: url('R.images.gui.maps.icons.components.button.texture_disable');
+    background-size: 15rem 15rem;
+    visibility: hidden;
+}
+.CButton_base__disabled_d9 .CButton_stateDisabled_54 {
+    visibility: inherit;
+}
+.CButton_content_cc {
+    display: flex;
+    align-items: center;
+    color: #f2f2e6;
+    font-weight: 700;
+    line-height: 1.2;
+    text-shadow: 0 -1rem 1rem #000;
+    letter-spacing: 0.03em;
+    transform: translateY(-1rem);
+}
+.CButton_content_cc[lang='ja'],
+.CButton_content_cc[lang='ko'],
+.CButton_content_cc[lang='zh_tw'],
+.CButton_content_cc[lang='zh_sg'],
+.CButton_content_cc[lang='zh_cn'],
+.CButton_content_cc[lang='th'] {
+    font-weight: 400;
+}
+.CButton_base__main_42 .CButton_content_cc,
+.CButton_base__primaryRed_ec .CButton_content_cc {
+    text-shadow: 0 -1rem 1rem #600;
+}
+.CButton_base__secondary_50 .CButton_content_cc {
+    color: rgba(254, 254, 236, 0.75);
+}
+.CButton_base__primaryGreen_6f .CButton_content_cc {
+    text-shadow: 0 -1rem 1rem #1c2502;
+}
+.CButton_base__extraSmall_27 .CButton_content_cc {
+    font-size: 12rem;
+}
+.CButton_base__small_df .CButton_content_cc {
+    font-size: 14rem;
+}
+.CButton_base__medium_74 .CButton_content_cc {
+    font-size: 15rem;
+}
+.CButton_base__large_5c .CButton_content_cc {
+    font-size: 18rem;
+}
+.CButton_base__disabled_d9 .CButton_content_cc {
+    opacity: 0.6;
+}
+
+/* should be percentage of screen width */
+.App_base_a5 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background: #0d0d0c url('R.images.comp7.gui.maps.icons.backgrounds.season_statistics') no-repeat center / cover;
+    overflow: hidden;
+}
+.App_header_df {
+    padding-top: 50rem;
+}
+.mediaExtraLarge .App_header_df {
+    padding-top: 100rem;
+}
+.App_content_fe {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    width: 1000rem;
+    margin: 7rem 0 25rem;
+}
+.mediaSmall .App_content_fe {
+    width: 1167rem;
+    margin: 10rem 0 25rem;
+}
+.mediaMedium .App_content_fe {
+    width: 1370rem;
+    margin: 5rem 0 20rem;
+}
+.mediaLarge .App_content_fe {
+    width: 1660rem;
+    margin: 5rem 0 12rem;
+}
+.mediaExtraLarge .App_content_fe {
+    width: 1860rem;
+    margin: 45rem 0 60rem;
+}
+.App_rating_6d {
+    margin-right: -30rem;
+}
+.mediaSmall .App_rating_6d {
+    margin-right: 40rem;
+}
+.mediaLarge .App_rating_6d {
+    margin-right: 110rem;
+}
+.mediaExtraLarge .App_rating_6d {
+    margin-right: 150rem;
+}
+.App_statistics_78 {
+    flex: 1 1 auto;
+}
+.App_summary_64 {
+    margin-bottom: 47rem;
+}
+.mediaMedium .App_summary_64 {
+    margin-bottom: 52rem;
+}
+.mediaLarge .App_summary_64 {
+    margin-bottom: 71rem;
+}
+.mediaExtraLarge .App_summary_64 {
+    margin-bottom: 134rem;
+}
+.App_buttonWrapper_9b {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding-bottom: 50rem;
+    transition: opacity 0.3s linear;
+}
+.mediaLarge .App_buttonWrapper_9b {
+    padding-bottom: 80rem;
+}
+.mediaExtraLarge .App_buttonWrapper_9b {
+    padding-bottom: 80rem;
+}
+.App_base__idle_65 .App_buttonWrapper_9b {
+    opacity: 0;
+}
+.App_base__showFooter_fd .App_buttonWrapper_9b {
+    opacity: 1;
+}
+.App_button_54 {
+    min-height: 24rem;
+    padding: 0 40rem;
+}
+.mediaMedium .App_button_54 {
+    min-height: 32rem;
+}
+.App_close_4d {
+    position: absolute;
+    top: 40rem;
+    right: 40rem;
+}
+.mediaExtraLarge .App_close_4d {
+    top: 80rem;
+    right: 80rem;
+}
+
+.TextOverflow_base_3b {
+    max-width: 100%;
+    line-height: 1.3;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.Badge_base_ac {
+    display: flex;
+    justify-content: center;
+    background: no-repeat center / contain;
+}
+
+.Badge_base__default_c9 {
+    width: 24rem;
+    height: 24rem;
+}
+
+.Badge_base__x48_e4 {
+    width: 48rem;
+    height: 48rem;
+}
+
+.PlayerNickname_base_32 {
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 0;
+}
+
+.PlayerNickname_userName_cc {
+    flex: 0 1 auto; /* the only value for correct work */
+}
+
+.PlayerNickname_igrIcon_34 {
+    background: url('R.images.gui.maps.icons.library.premium_igr_big.png') no-repeat center / contain;
+}
+
+.PlayerNickname_base__default_8d .PlayerNickname_igrIcon_34 {
+    width: 32rem;
+    height: 14rem;
+}
+
+.PlayerNickname_base__x48_84 .PlayerNickname_igrIcon_34 {
+    width: 64rem;
+    height: 28rem;
+}
+
+.PlayerNickname_suffixBadgeWrapper_cc {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.PlayerNickname_suffixBadgeStripe_8a {
+    background: no-repeat center / contain;
+    position: absolute;
+    z-index: -1;
+}
+
+.PlayerNickname_base__default_8d .PlayerNickname_suffixBadgeStripe_8a {
+    width: 64rem;
+    height: 24rem;
+    right: 12rem;
+}
+
+.PlayerNickname_base__default_8d.PlayerNickname_base__inverted_34 .PlayerNickname_suffixBadgeStripe_8a {
+    right: auto;
+    left: 12rem;
+    transform: rotateY(180deg);
+}
+
+.PlayerNickname_base__x48_84 .PlayerNickname_suffixBadgeStripe_8a {
+    width: 68rem;
+    height: 28rem;
+    right: 16rem;
+}
+
+.PlayerNickname_base__x48_84.PlayerNickname_base__inverted_34 .PlayerNickname_suffixBadgeStripe_8a {
+    right: auto;
+    left: 16rem;
+    transform: rotateY(180deg);
+}
+
+.PlayerNickname_suffixBadge_bd {
+    background: no-repeat center / contain;
+}
+
+.PlayerNickname_base__default_8d .PlayerNickname_suffixBadge_bd {
+    width: 24rem;
+    height: 24rem;
+}
+
+.PlayerNickname_base__x48_84 .PlayerNickname_suffixBadge_bd {
+    width: 32rem;
+    height: 32rem;
+}
+
+.PlayerNickname_anonymizedIcon_80 {
+    background: no-repeat center / contain;
+}
+
+.PlayerNickname_base__default_8d .PlayerNickname_anonymizedIcon_80 {
+    width: 24rem;
+    height: 24rem;
+    background-image: url('R.images.gui.maps.icons.library.eye.png');
+}
+
+.PlayerNickname_base__x48_84 .PlayerNickname_anonymizedIcon_80 {
+    width: 48rem;
+    height: 48rem;
+    background-image: url('R.images.gui.maps.icons.library.eye_48x48.png');
+}
+
+.FormatText_base_d0 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.FormatTextWithColorTags_blackReal_3c {
+    color: #000000;
+}
+
+.FormatTextWithColorTags_whiteReal_8a {
+    color: #ffffff;
+}
+
+.FormatTextWithColorTags_white_16 {
+    color: #f2f2f7;
+}
+
+.FormatTextWithColorTags_whiteOrange_18 {
+    color: #fefeec;
+}
+
+.FormatTextWithColorTags_whiteSpanish_10 {
+    color: #e9e2bf;
+}
+
+.FormatTextWithColorTags_par_ca {
+    color: #8c8c7e;
+}
+
+.FormatTextWithColorTags_parSecondary_8d {
+    color: #595950;
+}
+
+.FormatTextWithColorTags_parTertiary_a3 {
+    color: #37362e;
+}
+
+.FormatTextWithColorTags_red_60 {
+    color: #ff2717;
+}
+
+.FormatTextWithColorTags_redDark_03 {
+    color: #b70000;
+}
+
+.FormatTextWithColorTags_yellow_ad {
+    color: #feab34;
+}
+
+.FormatTextWithColorTags_orange_e4 {
+    color: #ee7000;
+}
+
+.FormatTextWithColorTags_cream_cd {
+    color: #ffdd99;
+}
+
+.FormatTextWithColorTags_brown_c8 {
+    color: #cbac77;
+}
+
+.FormatTextWithColorTags_greenBright_f0 {
+    color: #80d43a;
+}
+
+.FormatTextWithColorTags_green_c5 {
+    color: #7ab300;
+}
+
+.FormatTextWithColorTags_greenDark_af {
+    color: #497212;
+}
+
+.FormatTextWithColorTags_blueBooster_ac {
+    color: #ccffff;
+}
+
+.FormatTextWithColorTags_blueTeamkiller_6f {
+    color: #09e2ff;
+}
+
+.FormatTextWithColorTags_cred_4e {
+    color: #ced9d9;
+}
+
+.FormatTextWithColorTags_gold_90 {
+    color: #ffc363;
+}
+
+.FormatTextWithColorTags_bond_71 {
+    color: #c9c9b6;
+}
+
+.FormatTextWithColorTags_prom_dd {
+    color: #a29b70;
+}
+
+/* This specific rule is used to fix https://jira.wargaming.net/browse/WOTPRG-9871 */
+
+.FormatTextWithColorTags_parNoWidth_5a {
+    width: 0;
+    color: #8c8c7e;
+}
+
+.Header_base_23 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding-top: 50rem;
+    color: #f2f2f7;
+    position: relative;
+}
+
+.Header_season_cb {
+    color: #f2f2f7;
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.mediaMedium .Header_season_cb {
+    color: #f2f2f7;
+    font-size: 24rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.Header_title_cf {
+    color: #f2f2f7;
+    font-size: 36rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-top: 8rem;
+    margin-bottom: 9rem;
+    text-align: center;
+}
+
+.mediaMedium .Header_title_cf {
+    color: #f2f2f7;
+    font-size: 56rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-top: 4rem;
+    margin-bottom: 5rem;
+}
+
+.mediaExtraLarge .Header_title_cf {
+    color: #f2f2f7;
+    font-size: 73rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.Header_nickName_ee {
+    transform: translateY(-3.5rem);
+}
+
+.mediaMedium .Header_nickName_ee {
+    transform: translateY(-5rem);
+}
+
+.mediaLarge .Header_nickName_ee {
+    transform: translateY(-4.5rem);
+}
+
+.mediaExtraLarge .Header_nickName_ee {
+    transform: translateY(-7rem);
+}
+
+.Header_clanTag_cf {
+    color: var(--clanTagColor);
+}
+
+.Header_position_78 {
+    color: #ffffff;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    height: 19rem;
+    transition: opacity 0.2s linear;
+}
+
+.mediaMedium .Header_position_78 {
+    color: #ffffff;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+
+.mediaLarge .Header_position_78 {
+    color: #ffffff;
+    font-size: 20rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+.Header_base__idle_00 .Header_position_78 {
+    opacity: 0;
+}
+
+.Header_base__showPosition_e0 .Header_position_78 {
+    opacity: 1;
+}
+
+.Header_order_7c {
+    color: #ffdd99;
+}
+
+.Header_order__icon_c9 {
+    width: 44rem;
+    height: 51rem;
+    margin-left: -3rem;
+    margin-top: -14rem;
+    background: no-repeat center / contain;
+}
+
+.mediaMedium .Header_order__icon_c9 {
+    margin-top: -13rem;
+}
+
+.mediaLarge .Header_order__icon_c9 {
+    margin-top: -11rem;
+}
+
+.Header_order__first_60 {
+    background-image: url('R.images.comp7.gui.maps.icons.icons.first');
+}
+
+.Header_order__second_e5 {
+    background-image: url('R.images.comp7.gui.maps.icons.icons.second');
+}
+
+.Header_order__third_7c {
+    background-image: url('R.images.comp7.gui.maps.icons.icons.third');
+}
+
+.DivineGlow_base_ef {
+    position: relative;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.DivineGlow_glow_3e {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.DivineGlow_glow__bg_1e {
+    background: url('R.images.comp7.gui.maps.icons.icons.divine_glow_700x700') no-repeat center / contain;
+}
+
+.LaceDivider_base_55 {
+    display: flex;
+    align-items: center;
+    min-width: 180rem;
+}
+
+.LaceDivider_lace_f6 {
+    display: flex;
+    flex: 1 1;
+    opacity: 0.2;
+}
+
+.LaceDivider_peak_c0 {
+    flex: 0 0 auto;
+    width: 43rem;
+    height: 14rem;
+    background: url('R.images.comp7.gui.maps.icons.icons.venzel_white_43x14') no-repeat center / cover;
+}
+
+.LaceDivider_peak__right_a7 {
+    transform: rotateY(180deg);
+}
+
+.LaceDivider_line_20 {
+    flex: 1 1 auto;
+    background: linear-gradient(
+        180deg,
+        transparent 3rem,
+        #c0deef 3rem,
+        #c0deef 4rem,
+        transparent 4rem,
+        transparent 6rem,
+        #c0deef 6rem,
+        #c0deef 7rem,
+        transparent 7rem
+    );
+    background-size: 1rem 14rem;
+}
+
+.RankEmblem_base_2d {
+    width: var(--imageSize);
+    height: var(--imageSize);
+    background: no-repeat center / cover;
+}
+
+.SeasonPoint_base__x16_b8 {
+    width: 16rem;
+    height: 16rem;
+}
+.SeasonPoint_base__x24_0a {
+    width: 24rem;
+    height: 24rem;
+}
+.SeasonPoint_base__x32_a1 {
+    width: 32rem;
+    height: 32rem;
+}
+.SeasonPoint_base__x48_fb {
+    width: 48rem;
+    height: 48rem;
+}
+
+.SeasonPoint_icon_8e {
+    width: 100%;
+    height: 100%;
+    background: no-repeat center / cover;
+}
+
+.Point_base__notAchieved_90 {
+    transform: scale(0.92) translateY(-2rem);
+}
+
+.mediaSmall .Point_base__notAchieved_90 {
+    transform: scale(0.94) translateY(-2rem);
+}
+
+.mediaExtraLarge .Point_base__notAchieved_90 {
+    transform: scale(0.92) translateY(-2rem);
+}
+
+/* should be percentage of screen width */
+.Rating_base_2d {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 310rem;
+    height: 100%;
+    padding-bottom: 17rem;
+    position: relative;
+}
+.mediaMedium .Rating_base_2d {
+    width: 325rem;
+    padding-bottom: 30rem;
+}
+.mediaLarge .Rating_base_2d {
+    width: 460rem;
+    padding-bottom: 45rem;
+}
+.mediaExtraLarge .Rating_base_2d {
+    width: 615rem;
+    padding-bottom: 0;
+}
+.Rating_shine_40 {
+    width: 1184rem;
+    height: 1195rem;
+    background: url('R.images.comp7.gui.maps.icons.icons.vertical_highlight') no-repeat center / contain;
+    opacity: 0;
+    position: absolute;
+    top: 33%;
+    left: 60%;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.3s linear;
+}
+.mediaSmall .Rating_shine_40 {
+    left: 53%;
+}
+.mediaMedium .Rating_shine_40 {
+    width: 1566rem;
+    height: 1580rem;
+    top: 25%;
+    left: 65%;
+}
+.mediaLarge .Rating_shine_40 {
+    width: 1866rem;
+    height: 1884rem;
+}
+.mediaExtraLarge .Rating_shine_40 {
+    width: 2265rem;
+    height: 2287rem;
+    top: 32%;
+    left: 60%;
+}
+.Rating_base__showRank_ea .Rating_shine_40 {
+    opacity: 1;
+}
+.Rating_title_89 {
+    margin-bottom: 4rem;
+    color: #ffffff;
+    font-size: 22rem;
+    font-weight: 700;
+    opacity: 0;
+    transition: opacity 0.3s linear;
+}
+.mediaMedium .Rating_title_89 {
+    margin-bottom: 10rem;
+    font-size: 28rem;
+}
+.mediaExtraLarge .Rating_title_89 {
+    font-size: 36rem;
+}
+.Rating_base__showRank_ea .Rating_title_89 {
+    opacity: 1;
+}
+.Rating_subTitle_49 {
+    opacity: 0;
+    transition: opacity 0.3s linear;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+.mediaMedium .Rating_subTitle_49 {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+.mediaLarge .Rating_subTitle_49 {
+    margin-bottom: 35rem;
+}
+.mediaExtraLarge .Rating_subTitle_49 {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 20rem;
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 0;
+}
+.Rating_base__showRank_ea .Rating_subTitle_49 {
+    opacity: 1;
+}
+.Rating_subTitle__hide_64 {
+    visibility: hidden;
+}
+.Rating_rankEmblemContainer_a3 {
+    display: flex;
+    position: relative;
+}
+.Rating_rank_29 {
+    opacity: 0;
+    transition: opacity 0.3s linear;
+}
+.Rating_base__showRank_ea .Rating_rank_29 {
+    opacity: 1;
+}
+.Rating_glowContainer_c4 {
+    width: 450rem;
+    height: 450rem;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.3s linear;
+}
+.mediaMedium .Rating_glowContainer_c4 {
+    width: 600rem;
+    height: 600rem;
+}
+.mediaLarge .Rating_glowContainer_c4 {
+    width: 900rem;
+    height: 900rem;
+}
+.mediaExtraLarge .Rating_glowContainer_c4 {
+    width: 1300rem;
+    height: 1300rem;
+}
+.Rating_base__showRank_ea .Rating_glowContainer_c4 {
+    opacity: 1;
+}
+.Rating_glow_ec {
+    filter: saturate(0.8);
+}
+.Rating_content_e9 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s linear;
+}
+.Rating_base__showRating_fe .Rating_content_e9 {
+    opacity: 1;
+}
+.Rating_score_02 {
+    color: #ffffff;
+    font-size: 56rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-top: -2rem;
+}
+.mediaMedium .Rating_score_02 {
+    color: #ffffff;
+    font-size: 73rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-top: 7rem;
+}
+.mediaLarge .Rating_score_02 {
+    margin-top: -20rem;
+    font-size: 100rem;
+}
+.mediaExtraLarge .Rating_score_02 {
+    margin-top: -50rem;
+}
+.Rating_scoreDescription_92 {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    margin-bottom: 28rem;
+}
+.mediaMedium .Rating_scoreDescription_92 {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+    margin-bottom: 25rem;
+}
+.mediaLarge .Rating_scoreDescription_92 {
+    margin-bottom: 33rem;
+}
+.mediaExtraLarge .Rating_scoreDescription_92 {
+    margin-bottom: 43rem;
+}
+.Rating_laceDivider_80 {
+    width: 185rem;
+    margin-bottom: 28rem;
+}
+.mediaMedium .Rating_laceDivider_80 {
+    width: 290rem;
+    margin-bottom: 25rem;
+}
+.mediaExtraLarge .Rating_laceDivider_80 {
+    margin-bottom: 36rem;
+}
+.Rating_seasonPoints_d6 {
+    display: flex;
+    position: relative;
+    z-index: 1;
+}
+.Rating_point_25 + .Rating_point_25 {
+    margin-left: 4rem;
+}
+.mediaSmall .Rating_point_25 + .Rating_point_25 {
+    margin-left: 6rem;
+}
+.mediaLarge .Rating_point_25 + .Rating_point_25 {
+    margin-left: 10rem;
+}
+.Rating_pointDescription_35 {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    margin-top: 6rem;
+}
+.mediaMedium .Rating_pointDescription_35 {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+    margin-top: 10rem;
+}
+
+.HeaderSection_base_79 {
+    color: rgba(242, 242, 247, 0.4);
+    font-size: 12rem;
+    font-weight: 400;
+    line-height: 1.3;
+    display: flex;
+    align-items: center;
+}
+.mediaMedium .HeaderSection_base_79 {
+    color: rgba(242, 242, 247, 0.4);
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+
+.HeaderSection_line_02 {
+    width: 1rem;
+    height: 2rem;
+    background: no-repeat center / cover;
+}
+
+.HeaderSection_line__leftSide_d9 {
+    width: 8rem;
+    background-image: url('R.images.comp7.gui.maps.icons.icons.venzel_8x2');
+    opacity: 0.4;
+}
+
+.HeaderSection_line__left_8b {
+    width: 15rem;
+    height: 1rem;
+    margin-top: -1rem;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.HeaderSection_line__right_25 {
+    flex: 1 1 auto;
+    height: 1rem;
+    margin-top: -1rem;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.HeaderSection_line__rightSide_6a {
+    width: 8rem;
+    background-image: url('R.images.comp7.gui.maps.icons.icons.venzel_8x2');
+    opacity: 0.4;
+    transform: rotateY(180deg);
+}
+
+.HeaderSection_text_93 {
+    margin: 0 10rem;
+}
+
+.mediaMedium .HeaderSection_text_93 {
+    margin-top: -2rem;
+}
+
+.LineDivider_base_f4 {
+    display: flex;
+    width: 115rem;
+}
+
+.LineDivider_divider_6f {
+    width: 8rem;
+    height: 2rem;
+    background: url('R.images.comp7.gui.maps.icons.icons.venzel_8x2') no-repeat center / cover;
+}
+
+.LineDivider_divider__center_9c {
+    flex: 1 1 auto;
+    height: 1rem;
+    background-color: rgba(255, 255, 255, 0.2);
+    background-image: none;
+}
+
+.LineDivider_divider__right_ce {
+    transform: rotateY(180deg);
+}
+
+.Card_base_4a {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 12rem;
+    font-weight: 400;
+    line-height: 1.3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 135rem;
+}
+.mediaMedium .Card_base_4a {
+    max-width: 195rem;
+}
+
+.Card_icon_d3 {
+    width: 80rem;
+    height: 80rem;
+    margin-bottom: -6rem;
+    background: no-repeat center / contain;
+}
+
+.mediaMedium .Card_icon_d3 {
+    margin-bottom: 1rem;
+}
+
+.Card_mainValue_f7 {
+    color: #ffffff;
+    font-size: 22rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 7rem;
+}
+
+.mediaMedium .Card_mainValue_f7 {
+    color: #ffffff;
+    font-size: 28rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.Card_mainDescription_d9 {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 12rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+.mediaMedium .Card_mainDescription_d9 {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+
+.Card_divider_f1 {
+    width: 30rem;
+    margin: 10rem 0;
+}
+
+.mediaMedium .Card_divider_f1 {
+    margin-top: 15rem;
+}
+
+.Card_additional_f7 {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 12rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+.mediaMedium .Card_additional_f7 {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+
+.Summary_base_96 {
+    display: flex;
+    flex-direction: column;
+}
+
+.Summary_header_7a {
+    margin-bottom: 3rem;
+    transition: opacity 0.5s linear;
+}
+
+.mediaMedium .Summary_header_7a {
+    margin-bottom: 13rem;
+}
+
+.mediaExtraLarge .Summary_header_7a {
+    margin-bottom: 40rem;
+}
+
+.Summary_base__idle_92 .Summary_header_7a {
+    opacity: 0;
+}
+
+.Summary_base__showSummaryTitle_85 .Summary_header_7a {
+    opacity: 1;
+}
+
+.Summary_cards_95 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.Summary_card_de {
+    flex: 1 1 auto;
+}
+
+.Summary_separator_a5 {
+    width: 1rem;
+    height: 160rem;
+    background-image: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: opacity 0.5s linear;
+}
+
+.Summary_base__idle_92 .Summary_separator_a5 {
+    opacity: 0;
+}
+
+.Summary_base__showVehicles_6a .Summary_separator_a5 {
+    opacity: 1;
+}
+
+.VehicleCard_base_1e {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.VehicleCard_back_b8 {
+    color: #ffffff;
+    font-size: 220rem;
+    font-weight: 700;
+    position: absolute;
+    top: -70rem;
+    left: 23rem;
+    mask-image: linear-gradient(0deg, transparent 27%, #000000 200%);
+}
+
+.mediaMedium .VehicleCard_back_b8 {
+    font-size: 260rem;
+    top: -75rem;
+    left: 15rem;
+}
+
+.mediaLarge .VehicleCard_back_b8 {
+    font-size: 380rem;
+    top: -135rem;
+    left: 20rem;
+}
+
+.VehicleCard_params_00 {
+    width: 200rem;
+    padding-left: 82rem;
+}
+
+.mediaMedium .VehicleCard_params_00 {
+    width: 250rem;
+    padding-left: 120rem;
+}
+
+.mediaLarge .VehicleCard_params_00 {
+    width: 350rem;
+    padding-left: 175rem;
+}
+
+.VehicleCard_vehicleName_a6 {
+    color: #ffffff;
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
+    width: 180rem;
+    margin-bottom: 10rem;
+}
+
+.mediaMedium .VehicleCard_vehicleName_a6 {
+    color: #ffffff;
+    font-size: 24rem;
+    font-weight: 700;
+    line-height: 1.2;
+    width: 250rem;
+    margin-bottom: 5rem;
+}
+
+.mediaLarge .VehicleCard_vehicleName_a6 {
+    color: #ffffff;
+    font-size: 28rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 15rem;
+}
+
+.VehicleCard_propsWrapper_cb {
+    display: flex;
+    align-items: flex-end;
+    width: 100%;
+}
+
+.VehicleCard_propsWrapper_cb + .VehicleCard_propsWrapper_cb {
+    margin-top: 5rem;
+}
+
+.mediaMedium .VehicleCard_propsWrapper_cb + .VehicleCard_propsWrapper_cb {
+    margin-top: 10rem;
+}
+
+.VehicleCard_propsName_d0 {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+.mediaMedium .VehicleCard_propsName_d0 {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+
+.VehicleCard_separator_7a {
+    flex: 1 1 auto;
+    height: 1rem;
+    margin: 0 5rem 3rem;
+    background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.2) 2rem, transparent 2rem);
+    background-size: 4rem 1rem;
+}
+
+.VehicleCard_value_b8 {
+    color: #ffffff;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+.mediaMedium .VehicleCard_value_b8 {
+    color: #ffffff;
+    font-size: 20rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+.VehicleCard_icon_07 {
+    width: 180rem;
+    height: 135rem;
+    margin-top: 0;
+    background: no-repeat center / cover;
+}
+
+.mediaMedium .VehicleCard_icon_07 {
+    width: 240rem;
+    height: 180rem;
+    margin-top: -10rem;
+}
+
+.mediaLarge .VehicleCard_icon_07 {
+    width: 360rem;
+    height: 270rem;
+}
+
+.Vehicles_base_6b {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.Vehicles_header_af {
+    margin-bottom: 19rem;
+    transition: opacity 0.5s linear;
+}
+
+.mediaMedium .Vehicles_header_af {
+    margin-bottom: 25rem;
+}
+
+.mediaLarge .Vehicles_header_af {
+    margin-bottom: 38rem;
+}
+
+.mediaExtraLarge .Vehicles_header_af {
+    margin-bottom: 85rem;
+}
+
+.Vehicles_base__idle_30 .Vehicles_header_af {
+    opacity: 0;
+}
+
+.Vehicles_base__showVehiclesTitle_65 .Vehicles_header_af {
+    opacity: 1;
+}
+
+.Vehicles_cards_67 {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 18rem;
+    padding-right: 50rem;
+}
+
+.mediaMedium .Vehicles_cards_67 {
+    padding-left: 30rem;
+    padding-right: 35rem;
+}
+
+.mediaLarge .Vehicles_cards_67 {
+    margin-left: -43rem;
+    padding-left: 0rem;
+    padding-right: 5rem;
+}
+
+.Vehicles_vehiclePlace_52 {
+    width: 800rem;
+    height: 137rem;
+    background: url('R.images.comp7.gui.maps.icons.seasonStatistics.vehicle_place') no-repeat center / contain;
+    position: absolute;
+    bottom: -55rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.mediaSmall .Vehicles_vehiclePlace_52 {
+    width: 1000rem;
+    height: 171rem;
+    bottom: -80rem;
+}
+
+.mediaMedium .Vehicles_vehiclePlace_52 {
+    width: 1200rem;
+    height: 205rem;
+    bottom: -85rem;
+}
+
+.mediaLarge .Vehicles_vehiclePlace_52 {
+    width: 1400rem;
+    height: 240rem;
+    bottom: -85rem;
+}

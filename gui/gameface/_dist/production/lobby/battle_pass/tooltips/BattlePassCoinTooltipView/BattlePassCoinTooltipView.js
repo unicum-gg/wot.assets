@@ -11,10 +11,10 @@
                     t.d(i, {
                         events: () => r,
                         getMouseGlobalPosition: () => _,
-                        getSize: () => x,
+                        getSize: () => P,
                         graphicsQuality: () => T,
                         playSound: () => y,
-                        setRTPC: () => P,
+                        setRTPC: () => x,
                     });
                 var o = {};
                 t.r(o), t.d(o, { getBgUrl: () => j, getTextureUrl: () => C });
@@ -26,7 +26,7 @@
                         children: () => o,
                         displayStatus: () => F,
                         displayStatusIs: () => se,
-                        events: () => V,
+                        events: () => M,
                         extraSize: () => ue,
                         forceTriggerMouseMove: () => ie,
                         freezeTextureBeforeResize: () => K,
@@ -41,16 +41,16 @@
                         pxToRem: () => Y,
                         remToPx: () => Z,
                         resize: () => W,
-                        sendEvent: () => D,
+                        sendEvent: () => L,
                         setAnimateWindow: () => ee,
                         setEventHandled: () => te,
                         setInputPaddingsRem: () => I,
                         setSidePaddingsRem: () => q,
                         whenTutorialReady: () => le,
                     });
-                var s = t(6179),
+                var s = t(7363),
                     u = t.n(s),
-                    l = t(493),
+                    l = t(1533),
                     d = t.n(l),
                     c = t(6483),
                     v = t.n(c);
@@ -139,12 +139,12 @@
                         console.error(`playSound('${e}'): `, n);
                     });
                 }
-                function P(e, n) {
+                function x(e, n) {
                     engine.call('SetRTPCGlobal', e, n).catch((t) => {
                         console.error(`setRTPC('${e}', '${n}'): `, t);
                     });
                 }
-                function x(e = 'px') {
+                function P(e = 'px') {
                     return 'rem' === e ? viewEnv.getClientSizeRem() : viewEnv.getClientSizePx();
                 }
                 function _(e = 'px') {
@@ -157,7 +157,7 @@
                     },
                     S = { highlight: 'highlight', click: 'play', yes1: 'yes1' },
                     O = Object.keys(S).reduce((e, n) => ((e[n] = () => y(S[n])), e), {}),
-                    z = { play: Object.assign({}, O, { sound: y }), setRTPC: P };
+                    z = { play: Object.assign({}, O, { sound: y }), setRTPC: x };
                 function C(e, n, t = 1) {
                     return viewEnv.getChildTexturePath(e, n.width, n.height, t);
                 }
@@ -165,7 +165,7 @@
                     return `url(${C(e, n, t)})`;
                 }
                 const F = { showing: 0, shown: 1, hiding: 2, hidden: 3 },
-                    V = {
+                    M = {
                         onTextureFrozen: f('self.onTextureFrozen'),
                         onTextureReady: f('self.onTextureReady'),
                         onDomBuilt: f('self.onDomBuilt'),
@@ -181,12 +181,12 @@
                             onRequestPosition: f('children.requestPosition'),
                         },
                     },
-                    M = ['args'];
+                    V = ['args'];
                 const A = 2,
                     N = 16,
                     k = 32,
-                    G = 64,
-                    L = (e, n) => {
+                    D = 64,
+                    G = (e, n) => {
                         const t = 'GFViewEventProxy';
                         if (void 0 !== n) {
                             const i = n.args,
@@ -199,7 +199,7 @@
                                             t[r] = e[r];
                                         }
                                     return t;
-                                })(n, M);
+                                })(n, V);
                             return void 0 !== i
                                 ? viewEnv.handleViewEvent(
                                       Object.assign({ __Type: t, type: e }, o, {
@@ -223,15 +223,15 @@
                         return viewEnv.handleViewEvent({ __Type: t, type: e });
                         var r;
                     },
-                    D = {
+                    L = {
                         close(e) {
-                            L('popover' === e ? A : k);
+                            G('popover' === e ? A : k);
                         },
                         minimize() {
-                            L(G);
+                            G(D);
                         },
                         move(e) {
-                            L(N, { isMouseEvent: !0, on: e });
+                            G(N, { isMouseEvent: !0, on: e });
                         },
                     },
                     B = 15;
@@ -305,7 +305,7 @@
                     },
                     le = Promise.all([
                         new Promise((e) => {
-                            window.isDomBuilt ? e() : V.onDomBuilt(e);
+                            window.isDomBuilt ? e() : M.onDomBuilt(e);
                         }),
                         engine.whenReady,
                     ]),
@@ -413,11 +413,11 @@
                     be = 'Content_section_56',
                     Ee = 'Content_title_54',
                     ye = 'Content_text_30',
-                    Pe = 'Content_secondaryText_18',
-                    xe = R.strings.battle_pass.tooltips.battlePassCoins,
-                    _e = xe.title(),
-                    Te = xe.text(),
-                    Re = xe.secondaryText(),
+                    xe = 'Content_secondaryText_18',
+                    Pe = R.strings.battle_pass.tooltips.battlePassCoins,
+                    _e = Pe.title(),
+                    Te = Pe.text(),
+                    Re = Pe.secondaryText(),
                     Se = () =>
                         u().createElement(
                             'div',
@@ -431,11 +431,17 @@
                                 u().createElement('div', { className: ye }, Te),
                                 u().createElement('div', { className: pe }),
                             ),
-                            u().createElement('div', { className: Pe }, Re),
+                            u().createElement('div', { className: xe }, Re),
                         ),
                     Oe = () => u().createElement(ge, null, u().createElement(Se, null)),
                     ze = document.createElement('div');
                 (window.onload = () => document.body.appendChild(ze)), d().render(u().createElement(Oe, null), ze);
+            },
+            7363: (e) => {
+                e.exports = React;
+            },
+            1533: (e) => {
+                e.exports = ReactDOM;
             },
         },
         t = {};

@@ -5,7 +5,7 @@
                 var r = t(6483),
                     i = t.n(r),
                     o = t(2372),
-                    a = t(6179),
+                    a = t(7363),
                     _ = t.n(a),
                     s = t(8460),
                     c = t(329);
@@ -17,8 +17,8 @@
                         type: r,
                         value: a,
                         discountValue: l,
-                        showPlus: d,
-                        isEnough: u = !0,
+                        showPlus: u,
+                        isEnough: d = !0,
                         stockBackgroundName: v = c.we.Red,
                         className: g,
                         classNames: E,
@@ -32,11 +32,11 @@
                                     className: i()(
                                         s.Z.value,
                                         s.Z[`value__${r}`],
-                                        !u && s.Z.value__notEnough,
+                                        !d && s.Z.value__notEnough,
                                         null == E ? void 0 : E.value,
                                     ),
                                 },
-                                d && a > 0 && '+',
+                                u && a > 0 && '+',
                                 _().createElement(o.A, { value: a, format: r === c.V2.gold ? 'gold' : 'integral' }),
                             ),
                             _().createElement('span', {
@@ -74,7 +74,9 @@
                             (e.crystal = 'crystal'),
                             (e.xp = 'xp'),
                             (e.freeXP = 'freeXP'),
-                            (e.equipCoin = 'equipCoin');
+                            (e.eliteXP = 'eliteXP'),
+                            (e.equipCoin = 'equipCoin'),
+                            (e.stpCoin = 'stpcoin');
                     })(i || (i = {})),
                     (function (e) {
                         (e.Red = 'RedActionBG'), (e.Blue = 'BlueActionBG');
@@ -82,7 +84,7 @@
             },
             2372: (e, n, t) => {
                 t.d(n, { A: () => a });
-                var r = t(6179),
+                var r = t(7363),
                     i = t.n(r),
                     o = t(9916);
                 class a extends i().PureComponent {
@@ -95,6 +97,12 @@
                     }
                 }
                 a.defaultProps = { format: 'integral' };
+            },
+            7078: (e, n, t) => {
+                t(7363), t(2056);
+            },
+            2056: (e, n, t) => {
+                t(9916), t(7363);
             },
             527: (e, n, t) => {
                 t.r(n),
@@ -274,31 +282,31 @@
             7641: (e, n, t) => {
                 t.r(n),
                     t.d(n, {
-                        addModelObserver: () => d,
+                        addModelObserver: () => u,
                         addPreloadTexture: () => s,
                         children: () => r,
                         displayStatus: () => i.W,
                         displayStatusIs: () => T,
                         events: () => o.U,
                         extraSize: () => R,
-                        forceTriggerMouseMove: () => C,
-                        freezeTextureBeforeResize: () => w,
+                        forceTriggerMouseMove: () => O,
+                        freezeTextureBeforeResize: () => p,
                         getBrowserTexturePath: () => l,
                         getDisplayStatus: () => P,
                         getFontNames: () => k,
-                        getScale: () => p,
+                        getScale: () => w,
                         getSize: () => v,
                         getViewGlobalPosition: () => E,
-                        isEventHandled: () => O,
+                        isEventHandled: () => C,
                         isFocused: () => y,
-                        pxToRem: () => h,
-                        remToPx: () => b,
+                        pxToRem: () => b,
+                        remToPx: () => h,
                         resize: () => g,
                         sendEvent: () => a.qP,
                         setAnimateWindow: () => m,
                         setEventHandled: () => f,
                         setInputPaddingsRem: () => c,
-                        setSidePaddingsRem: () => u,
+                        setSidePaddingsRem: () => d,
                         whenTutorialReady: () => L,
                     });
                 var r = t(3722),
@@ -315,10 +323,10 @@
                 function l(e, n, t, r = 1) {
                     return viewEnv.getWebBrowserTexturePath(e, n, t, r);
                 }
-                function d(e, n, t) {
+                function u(e, n, t) {
                     return viewEnv.addDataChangedCallback(e, n, t);
                 }
-                function u(e) {
+                function d(e) {
                     viewEnv.setHitAreaPaddingsRem(e.top, e.right, e.bottom, e.left, _);
                 }
                 function v(e = 'px') {
@@ -329,18 +337,18 @@
                 }
                 function E(e = 'rem') {
                     const n = viewEnv.getViewGlobalPositionRem();
-                    return 'rem' === e ? n : { x: b(n.x), y: b(n.y) };
-                }
-                function w() {
-                    viewEnv.freezeTextureBeforeResize();
+                    return 'rem' === e ? n : { x: h(n.x), y: h(n.y) };
                 }
                 function p() {
+                    viewEnv.freezeTextureBeforeResize();
+                }
+                function w() {
                     return viewEnv.getScale();
                 }
-                function h(e) {
+                function b(e) {
                     return viewEnv.pxToRem(e);
                 }
-                function b(e) {
+                function h(e) {
                     return viewEnv.remToPx(e);
                 }
                 function m(e, n) {
@@ -352,10 +360,10 @@
                 function f() {
                     return viewEnv.setEventHandled();
                 }
-                function O() {
+                function C() {
                     return viewEnv.isEventHandled();
                 }
-                function C() {
+                function O() {
                     viewEnv.forceTriggerMouseMove();
                 }
                 function P() {
@@ -591,7 +599,7 @@
                 const __WEBPACK_DEFAULT_EXPORT__ = ViewModel;
             },
             9916: (e, n, t) => {
-                t.d(n, { B3: () => s, Z5: () => a.Z5, ry: () => p });
+                t.d(n, { B3: () => s, Z5: () => a.Z5, ry: () => w });
                 class r {
                     constructor() {
                         (this.entries = []),
@@ -647,8 +655,8 @@
                 const s = Object.freeze({ INTEGRAL: 0, GOLD: 1 }),
                     c = Object.freeze({ FRACTIONAL: 0, WO_ZERO_DIGITS: 1 }),
                     l = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1 }),
-                    d = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1, YEAR_MONTH: 2 });
-                var u = t(5521),
+                    u = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1, YEAR_MONTH: 2 });
+                var d = t(5521),
                     v = t(3138);
                 const g = ['args'];
                 function E(e, n, t, r, i, o, a) {
@@ -660,8 +668,8 @@
                     }
                     _.done ? n(s) : Promise.resolve(s).then(r, i);
                 }
-                const w = (e) => ({ __Type: 'GFBoundingBox', x: e.x, y: e.y, width: e.width, height: e.height }),
-                    p = (function () {
+                const p = (e) => ({ __Type: 'GFBoundingBox', x: e.x, y: e.y, width: e.width, height: e.height }),
+                    w = (function () {
                         var e,
                             n =
                                 ((e = function* () {
@@ -690,7 +698,7 @@
                             return n.apply(this, arguments);
                         };
                     })(),
-                    h = (e, n) => {
+                    b = (e, n) => {
                         const t = 'GFViewEventProxy';
                         if (void 0 !== n) {
                             const i = n.args,
@@ -729,47 +737,47 @@
                         } else viewEnv.handleViewEvent({ __Type: t, type: e });
                         var r;
                     },
-                    b = () => h(_.CLOSE),
+                    h = () => b(_.CLOSE),
                     m = (e, n) => {
-                        e.keyCode === u.n.ESCAPE && n();
+                        e.keyCode === d.n.ESCAPE && n();
                     };
                 var y = t(7572);
                 const f = i.instance,
-                    O = {
+                    C = {
                         DataTracker: o.Z,
                         ViewModel: y.Z,
                         ViewEventType: _,
                         NumberFormatType: s,
                         RealFormatType: c,
                         TimeFormatType: l,
-                        DateFormatType: d,
-                        makeGlobalBoundingBox: w,
-                        sendMoveEvent: (e) => h(_.MOVE, { isMouseEvent: !0, on: e }),
-                        sendCloseEvent: b,
-                        sendClosePopOverEvent: () => h(_.POP_OVER, { on: !1 }),
+                        DateFormatType: u,
+                        makeGlobalBoundingBox: p,
+                        sendMoveEvent: (e) => b(_.MOVE, { isMouseEvent: !0, on: e }),
+                        sendCloseEvent: h,
+                        sendClosePopOverEvent: () => b(_.POP_OVER, { on: !1 }),
                         sendShowContextMenuEvent: (e, n, t = 0) => {
-                            h(_.CONTEXT_MENU, { isMouseEvent: !0, contentID: e, on: !0, decoratorID: t, args: n });
+                            b(_.CONTEXT_MENU, { isMouseEvent: !0, contentID: e, on: !0, decoratorID: t, args: n });
                         },
                         sendShowPopOverEvent: (e, n, t, r, i = R.invalid('resId'), o) => {
                             const a = v.O.view.getViewGlobalPosition(),
                                 s = t.getBoundingClientRect(),
                                 c = s.x,
                                 l = s.y,
-                                d = s.width,
-                                u = s.height,
+                                u = s.width,
+                                d = s.height,
                                 g = {
                                     x: v.O.view.pxToRem(c) + a.x,
                                     y: v.O.view.pxToRem(l) + a.y,
-                                    width: v.O.view.pxToRem(d),
-                                    height: v.O.view.pxToRem(u),
+                                    width: v.O.view.pxToRem(u),
+                                    height: v.O.view.pxToRem(d),
                                 };
-                            h(_.POP_OVER, {
+                            b(_.POP_OVER, {
                                 isMouseEvent: !0,
                                 contentID: e,
                                 decoratorID: r || R.invalid('resId'),
                                 targetID: i,
                                 direction: n,
-                                bbox: w(g),
+                                bbox: p(g),
                                 on: !0,
                                 args: o,
                             });
@@ -781,10 +789,10 @@
                             );
                         },
                         closeOnEsc: (e) => {
-                            m(e, b);
+                            m(e, h);
                         },
-                        handleViewEvent: h,
-                        onBindingsReady: p,
+                        handleViewEvent: b,
+                        onBindingsReady: w,
                         onLayoutReady: () =>
                             new Promise((e) => {
                                 requestAnimationFrame(() => {
@@ -817,7 +825,7 @@
                         SystemLocale: a.Z5,
                         UserLocale: a.cy,
                     };
-                window.ViewEnvHelper = O;
+                window.ViewEnvHelper = C;
             },
             8613: (e, n, t) => {
                 t.d(n, { Z5: () => r, cy: () => i });
@@ -836,7 +844,7 @@
                     };
             },
             8401: (e, n, t) => {
-                t(6483), t(7405), t(329), t(6179);
+                t(6483), t(7405), t(329), t(7078), t(7363);
             },
             8460: (e, n, t) => {
                 t.d(n, { Z: () => r });
@@ -867,10 +875,18 @@
                     'icon__freeXP-big': 'Currency_icon__freeXP-big_21',
                     'icon__freeXP-large': 'Currency_icon__freeXP-large_c8',
                     'icon__freeXP-extraLarge': 'Currency_icon__freeXP-extraLarge_58',
+                    'icon__eliteXP-small': 'Currency_icon__eliteXP-small_45',
+                    'icon__eliteXP-big': 'Currency_icon__eliteXP-big_c0',
+                    'icon__eliteXP-large': 'Currency_icon__eliteXP-large_1b',
+                    'icon__eliteXP-extraLarge': 'Currency_icon__eliteXP-extraLarge_9b',
                     'icon__equipCoin-small': 'Currency_icon__equipCoin-small_32',
                     'icon__equipCoin-big': 'Currency_icon__equipCoin-big_79',
                     'icon__equipCoin-large': 'Currency_icon__equipCoin-large_2c',
                     'icon__equipCoin-extraLarge': 'Currency_icon__equipCoin-extraLarge_8a',
+                    'icon__stpCoin-small': 'Currency_icon__stpCoin-small_6b',
+                    'icon__stpCoin-big': 'Currency_icon__stpCoin-big_da',
+                    'icon__stpCoin-large': 'Currency_icon__stpCoin-large_ee',
+                    'icon__stpCoin-extraLarge': 'Currency_icon__stpCoin-extraLarge_fa',
                     value: 'Currency_value_e1',
                     value__freeXP: 'Currency_value__freeXP_cb',
                     value__credits: 'Currency_value__credits_76',
@@ -878,12 +894,17 @@
                     value__xp: 'Currency_value__xp_b0',
                     value__crystal: 'Currency_value__crystal_19',
                     value__equipCoin: 'Currency_value__equipCoin_d0',
+                    value__eliteXP: 'Currency_value__eliteXP_62',
+                    value__stpCoin: 'Currency_value__stpCoin_38',
                     value__notEnough: 'Currency_value__notEnough_56',
                     stock: 'Currency_stock_87',
                     stock__indent: 'Currency_stock__indent_a1',
                     stock__interactive: 'Currency_stock__interactive_93',
                     stockBackground: 'Currency_stockBackground_82',
                 };
+            },
+            7363: (e) => {
+                e.exports = React;
             },
         },
         __webpack_module_cache__ = {},

@@ -704,10 +704,10 @@
                         getFormattedDateTime: (u, e, t = !0) => regionalDateTime.getFormattedDateTime(u, e, t),
                     };
             },
-            3936: (u, e, t) => {
-                var A = t(6179),
+            9852: (u, e, t) => {
+                var A = t(7363),
                     E = t.n(A),
-                    n = t(493),
+                    n = t(1533),
                     F = t.n(n),
                     r = t(6483),
                     D = t.n(r);
@@ -880,12 +880,13 @@
                                 icon: e = o.Timer,
                                 style: t = i.Description,
                                 onTimeReached: n,
-                                className: F = '',
-                                classNames: r = {},
+                                refreshRate: F,
+                                className: r = '',
+                                classNames: a = {},
                             }) => {
-                                const a = t !== i.Description ? 1 : void 0,
-                                    s = S(u, a),
-                                    B = (() => {
+                                const s = null != F ? F : t !== i.Description ? 1 : void 0,
+                                    B = S(u, s),
+                                    C = (() => {
                                         const u = (0, A.useState)(k.O.view.getScale()),
                                             e = u[0],
                                             t = u[1];
@@ -904,17 +905,17 @@
                                             e
                                         );
                                     })();
-                                n && n[s] && n[s]();
-                                const C = V(y(s), t);
+                                n && n[B] && n[B]();
+                                const c = V(y(B), t);
                                 return E().createElement(
                                     'div',
-                                    { className: D()(N, F) },
+                                    { className: D()(N, r) },
                                     e !== o.None &&
                                         E().createElement('div', {
-                                            className: D()(M, r.icon),
-                                            style: { backgroundImage: `url('${U(e, B)}')` },
+                                            className: D()(M, a.icon),
+                                            style: { backgroundImage: `url('${U(e, C)}')` },
                                         }),
-                                    E().createElement('div', { className: D()(L, r.text) }, C),
+                                    E().createElement('div', { className: D()(L, a.text) }, c),
                                 );
                             },
                         ),
@@ -1453,6 +1454,12 @@
                     );
                 });
             },
+            7363: (u) => {
+                u.exports = React;
+            },
+            1533: (u) => {
+                u.exports = ReactDOM;
+            },
         },
         __webpack_module_cache__ = {},
         deferred;
@@ -1530,6 +1537,6 @@
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             t.forEach(e.bind(null, 0)), (t.push = e.bind(null, t.push.bind(t)));
         })();
-    var __webpack_exports__ = __webpack_require__.O(void 0, [242], () => __webpack_require__(3936));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [242], () => __webpack_require__(9852));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

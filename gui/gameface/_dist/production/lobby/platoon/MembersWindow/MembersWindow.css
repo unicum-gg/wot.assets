@@ -1177,7 +1177,7 @@ so we just add specificity to css classes here
     justify-content: space-between;
     height: 68rem;
     padding: 20rem 14rem;
-    background: center / contain no-repeat;
+    background: center / cover no-repeat;
 }
 
 .Header_base__wide_be {
@@ -1652,43 +1652,6 @@ so we just add specificity to css classes here
     top: 0;
 }
 
-.RankEmblem_base_ec {
-    width: var(--imageSize);
-    height: var(--imageSize);
-    background: no-repeat center / cover;
-}
-
-.Comp7Content_base_f9 {
-    display: flex;
-    flex-direction: column;
-}
-
-.Comp7Content_scoreContainer_f9 {
-    color: #ffdd99;
-    font-size: 12rem;
-    font-weight: 400;
-    line-height: 1.3;
-    display: flex;
-    text-shadow:
-        0 0 4rem rgba(255, 127, 0, 0.25),
-        0 0 8rem #ff2a00,
-        0 0 15rem #e52;
-}
-
-.Comp7Content_score_e7 {
-    display: flex;
-    align-items: center;
-    padding-right: 10rem;
-}
-
-.Comp7Content_icon_0f {
-    margin: 2rem 4rem 0;
-}
-
-.Comp7Content_base__general_aa .Comp7Content_icon_0f {
-    margin: 2rem 1rem 0 -2rem;
-}
-
 /*////////////*/
 
 /* Colors: https://confluence.wargaming.net/pages/viewpage.action?pageId=1111407054*/
@@ -1846,35 +1809,35 @@ so we just add specificity to css classes here
 
 /* Colors: https://confluence.wargaming.net/pages/viewpage.action?pageId=1111407054*/
 
-.MembersWindow_base_9b {
+.App_base_8b {
     display: flex;
     flex-direction: row;
 }
 
-.MembersWindow_base__isHorizontal_ce {
+.App_base__isHorizontal_81 {
     width: 784rem;
     height: 426rem;
 }
 
-.MembersWindow_base__isHorizontal__short_0c {
+.App_base__isHorizontal__short_0d {
     width: 680rem;
 }
 
-.MembersWindow_base__isVertical_44 {
+.App_base__isVertical_d1 {
     width: 680rem;
     height: 528rem;
 }
 
-.MembersWindow_base__isExtendedVertical_f6 {
+.App_base__isExtendedVertical_ce {
     width: 680rem;
     height: 668rem;
 }
 
-.MembersWindow_base_9b .MembersWindow_chatContainer_41 {
+.App_base_8b .App_chatContainer_f7 {
     width: initial;
 }
 
-.MembersWindow_commanderControls_cf {
+.App_commanderControls_b5 {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -1882,25 +1845,25 @@ so we just add specificity to css classes here
     padding: 0 14rem 15rem;
 }
 
-.MembersWindow_commanderControls__center_6d {
+.App_commanderControls__center_32 {
     justify-content: space-around;
 }
 
-.MembersWindow_platoon_60 {
+.App_platoon_ef {
     color: #8c8c7e;
     font-size: 14rem;
 }
 
-.MembersWindow_base__isHorizontal_ce .MembersWindow_platoon_60 {
+.App_base__isHorizontal_81 .App_platoon_ef {
     width: 532rem;
 }
 
-.MembersWindow_base__isHorizontal__short_0c .MembersWindow_platoon_60,
-.MembersWindow_base__isVertical_44 .MembersWindow_platoon_60,
-.MembersWindow_base__isExtendedVertical_f6 .MembersWindow_platoon_60 {
+.App_base__isHorizontal__short_0d .App_platoon_ef,
+.App_base__isVertical_d1 .App_platoon_ef,
+.App_base__isExtendedVertical_ce .App_platoon_ef {
     width: 430rem;
 }
 
-.MembersWindow_slots_21 {
+.App_slots_c4 {
     flex: 1;
 }

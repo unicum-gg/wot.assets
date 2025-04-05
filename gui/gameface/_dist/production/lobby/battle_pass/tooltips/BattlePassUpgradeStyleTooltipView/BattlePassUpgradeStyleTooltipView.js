@@ -24,9 +24,9 @@
                         addModelObserver: () => H,
                         addPreloadTexture: () => I,
                         children: () => D,
-                        displayStatus: () => S,
+                        displayStatus: () => O,
                         displayStatusIs: () => tu,
-                        events: () => O,
+                        events: () => S,
                         extraSize: () => Cu,
                         forceTriggerMouseMove: () => Eu,
                         freezeTextureBeforeResize: () => Z,
@@ -48,9 +48,9 @@
                         setSidePaddingsRem: () => W,
                         whenTutorialReady: () => nu,
                     });
-                var t = F(6179),
+                var t = F(7363),
                     C = F.n(t),
-                    n = F(493),
+                    n = F(1533),
                     r = F.n(n),
                     o = F(6483),
                     i = F.n(o);
@@ -164,8 +164,8 @@
                 function T(u, A, F) {
                     return `url(${P(u, A, F)})`;
                 }
-                const S = { showing: 0, shown: 1, hiding: 2, hidden: 3 },
-                    O = {
+                const O = { showing: 0, shown: 1, hiding: 2, hidden: 3 },
+                    S = {
                         onTextureFrozen: a('self.onTextureFrozen'),
                         onTextureReady: a('self.onTextureReady'),
                         onDomBuilt: a('self.onDomBuilt'),
@@ -183,8 +183,8 @@
                     },
                     z = ['args'];
                 const j = 2,
-                    N = 16,
-                    M = 32,
+                    M = 16,
+                    N = 32,
                     k = 64,
                     L = (u, A) => {
                         const F = 'GFViewEventProxy';
@@ -225,13 +225,13 @@
                     },
                     V = {
                         close(u) {
-                            L('popover' === u ? j : M);
+                            L('popover' === u ? j : N);
                         },
                         minimize() {
                             L(k);
                         },
                         move(u) {
-                            L(N, { isMouseEvent: !0, on: u });
+                            L(M, { isMouseEvent: !0, on: u });
                         },
                     },
                     $ = 15;
@@ -294,7 +294,7 @@
                         let u = [];
                         return () => (0 === u.length && (u = Object.keys(viewEnv.getFontsConfig())), u);
                     })(),
-                    tu = Object.keys(S).reduce((u, A) => ((u[A] = () => viewEnv.getShowingStatus() === S[A]), u), {}),
+                    tu = Object.keys(O).reduce((u, A) => ((u[A] = () => viewEnv.getShowingStatus() === O[A]), u), {}),
                     Cu = {
                         set: (u, A) => {
                             viewEnv.setExtraSizeRem(u, A);
@@ -305,7 +305,7 @@
                     },
                     nu = Promise.all([
                         new Promise((u) => {
-                            window.isDomBuilt ? u() : O.onDomBuilt(u);
+                            window.isDomBuilt ? u() : S.onDomBuilt(u);
                         }),
                         engine.whenReady,
                     ]),
@@ -499,8 +499,8 @@
                 }
                 ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());
                 var Tu = F(3403);
-                function Su() {}
-                function Ou() {
+                function Ou() {}
+                function Su() {
                     return !1;
                 }
                 console.log;
@@ -512,14 +512,14 @@
                         Array.isArray(u) ||
                         (F = (function (u, A) {
                             if (u) {
-                                if ('string' == typeof u) return Nu(u, A);
+                                if ('string' == typeof u) return Mu(u, A);
                                 var F = {}.toString.call(u).slice(8, -1);
                                 return (
                                     'Object' === F && u.constructor && (F = u.constructor.name),
                                     'Map' === F || 'Set' === F
                                         ? Array.from(u)
                                         : 'Arguments' === F || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(F)
-                                          ? Nu(u, A)
+                                          ? Mu(u, A)
                                           : void 0
                                 );
                             }
@@ -536,12 +536,12 @@
                         'Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.',
                     );
                 }
-                function Nu(u, A) {
+                function Mu(u, A) {
                     (null == A || A > u.length) && (A = u.length);
                     for (var F = 0, e = Array(A); F < A; F++) e[F] = u[F];
                     return e;
                 }
-                const Mu = (u) => (0 === u ? window : window.subViews.get(u));
+                const Nu = (u) => (0 === u ? window : window.subViews.get(u));
                 const ku = ((u, A) => {
                         const F = (0, t.createContext)({});
                         return [
@@ -552,7 +552,7 @@
                                         const B = (function ({
                                                 initializer: u = !0,
                                                 rootId: A = 0,
-                                                getRoot: F = Mu,
+                                                getRoot: F = Nu,
                                                 context: e = 'model',
                                             } = {}) {
                                                 const E = new Map();
@@ -623,7 +623,7 @@
                                                 observableModel: {
                                                     array: (u, A) => {
                                                         const e = null != A ? A : C(u),
-                                                            E = zu.LO.box(e, { equals: Ou });
+                                                            E = zu.LO.box(e, { equals: Su });
                                                         return (
                                                             'real' === F &&
                                                                 t.subscribe(
@@ -635,7 +635,7 @@
                                                     },
                                                     object: (u, A) => {
                                                         const e = null != A ? A : C(u),
-                                                            E = zu.LO.box(e, { equals: Ou });
+                                                            E = zu.LO.box(e, { equals: Su });
                                                         return (
                                                             'real' === F &&
                                                                 t.subscribe(
@@ -725,7 +725,7 @@
                     })(({ observableModel: u }) => {
                         const A = { root: u.object() };
                         return Object.assign({}, A);
-                    }, Su),
+                    }, Ou),
                     Lu = ku[0],
                     Vu = ku[1],
                     $u = 'Content_base_d2',
@@ -808,6 +808,12 @@
                         document.getElementById('root'),
                     );
                 });
+            },
+            7363: (u) => {
+                u.exports = React;
+            },
+            1533: (u) => {
+                u.exports = ReactDOM;
             },
         },
         F = {};

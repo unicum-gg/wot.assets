@@ -1,0 +1,14 @@
+.Separator_base_9c {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: relative;
+}
+
+.Separator_base_9c::after {
+    width: 283rem;
+    height: 1rem;
+    background: url('R.images.gui.maps.icons.battlePass.tooltips.Devider_points') 50% / contain no-repeat;
+    content: '';
+}

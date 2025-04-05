@@ -211,9 +211,18 @@
 .Layout_footer_f4 {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    align-self: flex-start;
+    width: 596rem;
     height: 166rem;
     padding-top: 20rem;
+}
+.Layout_base__small_cb .Layout_footer_f4,
+.Layout_base__medium_df .Layout_footer_f4 {
+    width: 902rem;
+}
+.Layout_base__large_f6 .Layout_footer_f4,
+.Layout_base__huge_d2 .Layout_footer_f4 {
+    width: 1102rem;
 }
 
 body {
@@ -279,7 +288,7 @@ body {
 }
 
 .SetupApp_content__invisible_9a {
-    display: none;
+    visibility: hidden;
 }
 
 .SetupApp_content__shown_dd {
@@ -302,7 +311,7 @@ body {
 .SetupApp_back_20 {
     width: 100%;
     height: 100%;
-    background: url('R.images.gui.maps.icons.lobby.settings_blured_bg') no-repeat top / cover;
+    background: no-repeat top / cover;
     position: absolute;
 }
 
@@ -2999,6 +3008,10 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .ConfirmButton_base_75 {
+    min-width: 100rem;
+}
+
+.mediaSmall .ConfirmButton_base_75 {
     min-width: 160rem;
 }
 
@@ -3007,8 +3020,12 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .Controls_button_f8 {
-    min-width: 160rem;
+    min-width: 100rem;
     margin-left: 10rem;
+}
+
+.mediaSmall .Controls_button_f8 {
+    min-width: 160rem;
 }
 
 .AbilitiesActionsPanel_base_c0 {
@@ -3020,16 +3037,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 
 .AbilitiesActionsPanel_base__tiny_b8 {
     justify-content: center;
-}
-
-.AbilitiesActionsPanel_base__small_9d,
-.AbilitiesActionsPanel_base__medium_31 {
-    width: 902rem;
-}
-
-.AbilitiesActionsPanel_base__large_15,
-.AbilitiesActionsPanel_base__huge_27 {
-    width: 1102rem;
 }
 .AbilitiesActionsPanel_toReservesBtn_6b {
     position: absolute;
@@ -4434,6 +4441,52 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     }
 }
 
+.Location_base_44 {
+    display: flex;
+    align-items: center;
+}
+
+.Location_base__countFirst_60 {
+    flex-direction: row-reverse;
+}
+
+.Location_icon_7f {
+    width: 30rem;
+    height: 30rem;
+    background: no-repeat center / contain;
+}
+
+.Location_base__countFirst_60 .Location_icon_7f {
+    transform: translateY(4rem);
+}
+
+.Location_base__storage_bf .Location_icon_7f {
+    background-image: url('R.images.gui.maps.icons.library.storage_icon');
+}
+
+.Location_base__vehicle_a9 .Location_icon_7f {
+    background-image: url('R.images.gui.maps.icons.tanksetup.proposals.location.tank.png');
+}
+
+.Location_count_45 {
+    color: #8c8c7e;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+.Location_base__countFirst_60 .Location_count_45 {
+    color: #c9c9b6;
+    font-size: 24rem;
+    font-weight: 700;
+    line-height: 1.2;
+    line-height: 1;
+}
+
+.Location_count__zero_f5 {
+    color: #b70000;
+}
+
 .Currency_base_57 {
     display: flex;
     align-items: center;
@@ -4573,6 +4626,30 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .Currency_base__extraLarge_4d .Currency_icon__freeXP-extraLarge_58 {
     transform: translateY(4rem);
 }
+.Currency_icon__eliteXP-small_45 {
+    background-image: url('R.images.gui.maps.icons.library.EliteXpIcon-2');
+}
+.Currency_base__small_af .Currency_icon__eliteXP-small_45 {
+    transform: translateY(1rem);
+}
+.Currency_icon__eliteXP-big_c0 {
+    --icon-height: 24rem;
+    margin-left: -5rem;
+    background-image: url('R.images.gui.maps.icons.library.EliteXpIconBig');
+}
+.Currency_icon__eliteXP-large_1b {
+    --icon-height: 48rem;
+    margin: 0 -5rem 0 -6rem;
+    background-image: url('R.images.gui.maps.icons.library.elite_exp_48x48');
+}
+.Currency_icon__eliteXP-extraLarge_9b {
+    --icon-height: 80rem;
+    margin: 0 -5rem;
+    background-image: url('R.images.gui.maps.icons.library.elite_exp_80x80');
+}
+.Currency_base__extraLarge_4d .Currency_icon__eliteXP-extraLarge_9b {
+    transform: translateY(4rem);
+}
 .Currency_icon__equipCoin-small_32 {
     --icon-height: 16rem;
     margin-right: -2rem;
@@ -4599,6 +4676,34 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     background-image: url('R.images.gui.maps.icons.library.equipCoin_icon_80x80');
 }
 .Currency_base__extraLarge_4d .Currency_icon__equipCoin-extraLarge_8a {
+    transform: translateX(2rem) translateY(4rem);
+}
+.Currency_icon__stpCoin-small_6b {
+    --icon-height: 16rem;
+    margin-right: -2rem;
+    background-image: url('R.images.gui.maps.icons.library.stpcoin.stpcoinSmall');
+}
+.Currency_base__small_af .Currency_icon__stpCoin-small_6b {
+    transform: translateX(-1rem) translateY(1rem);
+}
+.Currency_icon__stpCoin-big_da {
+    --icon-height: 24rem;
+    background-image: url('R.images.gui.maps.icons.library.stpcoin.stpcoinBig');
+}
+.Currency_base__big_bc .Currency_icon__stpCoin-big_da {
+    transform: translateX(-5rem) translateY(3rem);
+}
+.Currency_icon__stpCoin-large_ee {
+    --icon-height: 48rem;
+    margin-right: 2rem;
+    background-image: url('R.images.gui.maps.icons.library.stpcoin.stpcoinLarge');
+}
+.Currency_icon__stpCoin-extraLarge_fa {
+    --icon-height: 80rem;
+    margin-right: 8rem;
+    background-image: url('R.images.gui.maps.icons.library.stpcoin.stpcoinExtraLarge');
+}
+.Currency_base__extraLarge_4d .Currency_icon__stpCoin-extraLarge_fa {
     transform: translateX(2rem) translateY(4rem);
 }
 .Currency_value_e1 {
@@ -4642,7 +4747,9 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 .Currency_value__xp_b0,
 .Currency_value__crystal_19,
-.Currency_value__equipCoin_d0 {
+.Currency_value__equipCoin_d0,
+.Currency_value__eliteXP_62,
+.Currency_value__stpCoin_38 {
     color: #c9c9b6;
 }
 .Currency_base__small_af .Currency_value__notEnough_56 {
@@ -4701,46 +4808,12 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     position: relative;
 }
 
-.Price_price_1b {
+.Price_currency_ae {
     display: flex;
 }
 
-.Price_price__discount_29 {
+.Price_currency__discounted_a7 {
     padding-right: 20rem;
-}
-
-.Storage_base_53 {
-    display: flex;
-    align-items: center;
-}
-
-.Storage_base__reversed_8f {
-    flex-direction: row-reverse;
-}
-
-.Storage_icon_6a {
-    width: 30rem;
-    height: 30rem;
-    background: url('R.images.gui.maps.icons.library.storage_icon') no-repeat center / contain;
-}
-
-.Storage_count_7a {
-    color: #8c8c7e;
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
-}
-
-.Storage_base__reversed_8f .Storage_count_7a {
-    color: #c9c9b6;
-    font-size: 22rem;
-    font-weight: 700;
-    line-height: 1.2;
-    margin-top: -4rem;
-}
-
-.Storage_count__zero_54 {
-    color: #b70000;
 }
 
 .Availability_base_51 {
@@ -5169,6 +5242,38 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     margin-left: 11rem;
 }
 
+.DemountKit_base_b5 {
+    display: flex;
+    align-items: center;
+}
+
+.DemountKit_icon_27 {
+    width: 16rem;
+    height: 16rem;
+    background: url('R.images.gui.maps.icons.demountKit.common_16x16') no-repeat center / contain;
+}
+
+.DemountKit_base__large_e1 .DemountKit_icon_27 {
+    width: 24rem;
+    height: 24rem;
+    background-image: url('R.images.gui.maps.icons.demountKit.common_24x24');
+    transform: translateY(3rem);
+}
+
+.DemountKit_value_cd {
+    padding-right: 2rem;
+    color: #c9c9b6;
+    font-size: 14rem;
+    line-height: 1.2;
+}
+
+.DemountKit_base__large_e1 .DemountKit_value_cd {
+    padding-right: 0;
+    font-size: 24rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
 .TotalPrice_base_d9 {
     display: flex;
     align-items: center;
@@ -5179,7 +5284,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     font-size: 16rem;
     font-weight: 400;
     line-height: 1.25;
-    margin-top: 5rem;
+    margin-top: 2rem;
     margin-right: 7rem;
     position: relative;
     top: 2rem;
@@ -5206,38 +5311,21 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     z-index: 1;
 }
 
-.App_base__tiny_5e {
-    justify-content: center;
-}
-
-.App_base__small_1d,
-.App_base__medium_2a {
-    width: 902rem;
-}
-
-.App_base__large_8d,
-.App_base__huge_6d {
-    width: 1102rem;
-}
-
 .App_base__dialog_fa {
     flex-direction: column-reverse;
 }
 .App_storage_d5 {
     display: flex;
     align-items: center;
-}
-.App_storage__medium_51,
-.App_storage__large_8a,
-.App_storage__huge_b6 {
-    padding-top: 4rem;
+    margin-left: 20rem;
 }
 .App_from_a4 {
     color: #8c8c7e;
     font-size: 16rem;
     font-weight: 400;
     line-height: 1.25;
-    margin-right: 3rem;
+    margin-right: 7rem;
+    transform: translateY(3rem);
 }
 .App_base__dialog_fa .App_from_a4 {
     display: block;
@@ -5269,7 +5357,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     align-items: center;
     margin-left: 30rem;
     position: relative;
-    top: -2rem;
 }
 .App_totalPrice__mixed_cc {
     margin-left: 0;
@@ -5876,6 +5963,14 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     position: relative;
 }
 
+.OptDevicesSetup_footer_e6 {
+    margin-left: -275rem;
+}
+
+.mediaSmall .OptDevicesSetup_footer_e6 {
+    margin-left: 0;
+}
+
 .PopularLoadouts_base_f1 {
     display: flex;
     flex-direction: column;
@@ -5886,51 +5981,91 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     opacity: 0;
 }
 
-.PopularLoadouts_header_92 {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    height: 24rem;
-    margin-bottom: 5rem;
+.PopularLoadouts_base__legendary_c4 .PopularLoadouts_background_be {
+    background: url('R.images.gui.maps.icons.tanksetup.popular_loadouts.legendary_background_small') center center /
+        cover no-repeat;
 }
 
-.PopularLoadouts_header_container_03 {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+.mediaMediumHeight .PopularLoadouts_base__legendary_c4 .PopularLoadouts_background_be {
+    background: url('R.images.gui.maps.icons.tanksetup.popular_loadouts.legendary_background') center center / cover
+        no-repeat;
 }
 
-.PopularLoadouts_header_text_e9 {
+.PopularLoadouts_base__legendary_c4 .PopularLoadouts_lipsIcon_e0 {
+    background: url('R.images.gui.maps.icons.tanksetup.popular_loadouts.legendary_icon') center center / cover no-repeat;
+}
+
+.PopularLoadouts_base__linked_49 .PopularLoadouts_lipsIcon_e0 {
+    background: url('R.images.gui.maps.icons.tanksetup.popular_loadouts.noData') center center / cover no-repeat;
+    left: 122rem;
+}
+
+.PopularLoadouts_base__linked_49 .PopularLoadouts_lips_ab {
+    background: url('R.images.gui.maps.icons.tanksetup.popular_loadouts.lips_noData') center center / cover no-repeat;
+}
+
+.mediaMediumHeight .PopularLoadouts_base__linked_49 .PopularLoadouts_lips_ab {
+    background: url('R.images.gui.maps.icons.tanksetup.popular_loadouts.lips') center center / cover no-repeat;
+}
+
+.PopularLoadouts_base__noDataLegendary_fd .PopularLoadouts_row_empty_87 {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.PopularLoadouts_base__noDataLegendary_fd .PopularLoadouts_noDataLegendary_74 {
+    margin-top: -10rem;
+}
+
+.mediaMediumHeight .PopularLoadouts_base__noDataLegendary_fd .PopularLoadouts_noDataLegendary_74 {
+    margin-top: 0;
+}
+
+.PopularLoadouts_noData_44,
+.PopularLoadouts_vehicleNotAvailable_a1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 272rem;
+    height: 130rem;
+    margin-bottom: 18rem;
+    background: url('R.images.gui.maps.icons.tanksetup.popular_loadouts.noData_background') center center / contain
+        no-repeat;
+}
+
+.mediaMediumHeight .PopularLoadouts_noData_44,
+.mediaMediumHeight .PopularLoadouts_vehicleNotAvailable_a1 {
+    margin-bottom: 32rem;
+}
+
+.PopularLoadouts_noData_text_d0,
+.PopularLoadouts_vehicleNotAvailable_text_a8 {
+    max-width: 200rem;
+    margin-top: -10rem;
+    text-align: center;
     color: #8c8c7e;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
 }
 
-.mediaMediumHeight .PopularLoadouts_header_text_e9 {
-    color: #8c8c7e;
-    font-size: 16rem;
+.PopularLoadouts_noDataLegendary_74 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 45rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #e9e2bf;
+    font-size: 14rem;
     font-weight: 400;
-    line-height: 1.25;
+    line-height: 1.3;
 }
 
-.PopularLoadouts_header_icon_98 {
-    width: 20rem;
-    height: 20rem;
-    margin-bottom: -2rem;
-    background: url('R.images.gui.maps.icons.tanksetup.popular_loadouts.i_icon') no-repeat center / contain;
-}
-
-.mediaMediumHeight .PopularLoadouts_header_icon_98 {
-    width: 24rem;
-    height: 24rem;
-}
-
-.PopularLoadouts_header_notEnoughData_05 {
-    width: 30rem;
-    height: 24rem;
-    background: url('R.images.gui.maps.icons.tanksetup.popular_loadouts.notEnoughData') no-repeat center / contain;
+.mediaMediumHeight .PopularLoadouts_noDataLegendary_74 {
+    top: 75rem;
 }
 
 .PopularLoadouts_scrollWrapper_30 {
@@ -5943,11 +6078,46 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .mediaMediumHeight .PopularLoadouts_scroll_73 {
-    max-height: 130rem;
+    max-height: 180rem;
 }
 
-.mediaLargeHeight .PopularLoadouts_scroll_73 {
-    max-height: 172rem;
+.PopularLoadouts_background_be,
+.PopularLoadouts_onslaughtBackground_82 {
+    width: 286rem;
+    height: 130rem;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.mediaMediumHeight .PopularLoadouts_background_be,
+.mediaMediumHeight .PopularLoadouts_onslaughtBackground_82 {
+    width: 286rem;
+    height: 222rem;
+    top: -28rem;
+}
+
+.PopularLoadouts_background_be {
+    background: url('R.images.gui.maps.icons.tanksetup.popular_loadouts.common_background_small') center center / cover
+        no-repeat;
+}
+
+.mediaMediumHeight .PopularLoadouts_background_be {
+    background: url('R.images.gui.maps.icons.tanksetup.popular_loadouts.common_background') center center / cover
+        no-repeat;
+}
+
+.PopularLoadouts_onslaughtBackground_82 {
+    background: url('R.images.gui.maps.icons.tanksetup.popular_loadouts.onslaught_background_small') center center /
+        cover no-repeat;
+}
+
+.mediaMediumHeight .PopularLoadouts_onslaughtBackground_82 {
+    background: url('R.images.gui.maps.icons.tanksetup.popular_loadouts.onslaught_background') center center / cover
+        no-repeat;
 }
 
 .PopularLoadouts_backgroundWrapper_4d {
@@ -5955,9 +6125,24 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     height: 100%;
     overflow: hidden;
     position: absolute;
+    top: 0;
     right: 0;
-    bottom: 0;
     pointer-events: none;
+}
+
+.mediaMediumHeight .PopularLoadouts_backgroundWrapper_4d {
+    height: 110%;
+    top: -20rem;
+}
+
+.PopularLoadouts_backgroundWrapper__noData_44 {
+    height: 90rem;
+    top: 20rem;
+}
+
+.mediaMediumHeight .PopularLoadouts_backgroundWrapper__noData_44 {
+    height: 90rem;
+    top: 20rem;
 }
 
 .PopularLoadouts_animatedBackground_83 {
@@ -5970,8 +6155,8 @@ This bug is reproduced in Google Chrome 81.0.4044.113
         rgba(255, 255, 255, 0) 75%
     );
     position: absolute;
-    right: 100rem;
-    bottom: 100rem;
+    right: 120rem;
+    bottom: 120rem;
 }
 
 .PopularLoadouts_shine1_08 {
@@ -5983,113 +6168,210 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .PopularLoadouts_border_d5 {
-    width: 272rem;
-    margin-left: 1rem;
-    border-top: 1rem solid #fff0;
-    opacity: 0.1;
+    width: 286rem;
+    height: 40rem;
+    background: url('R.images.gui.maps.icons.tanksetup.popular_loadouts.lips_top') center center / contain no-repeat;
+    position: absolute;
+    top: -15rem;
+    left: -15rem;
+    pointer-events: none;
 }
 
-.PopularLoadouts_border_visible_28 {
-    border-top: 1rem solid #fff;
-}
-
-.mediaLargeHeight .PopularLoadouts_border_d5 {
-    border-top: none;
+.mediaMediumHeight .PopularLoadouts_border_d5 {
+    display: none;
 }
 
 .PopularLoadouts_container_33 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-right: 9rem;
+    width: 272rem;
+    margin-right: 15rem;
     position: relative;
 }
 
 .PopularLoadouts_row_8c {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
-    height: 56rem;
-    margin-bottom: 1rem;
+    height: 54rem;
+    margin-bottom: 2rem;
     border-radius: 2rem;
+    position: relative;
 }
 
 .PopularLoadouts_row_images_d8 {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    width: 168rem;
-    height: 56rem;
-    margin-right: 1rem;
+    width: 164rem;
+    height: 54rem;
     background-color: rgba(0, 0, 0, 0.1);
 }
 
-.PopularLoadouts_row_image_a4 {
+.PopularLoadouts_row_images__hovered_29 {
+    opacity: 0.5;
+}
+
+.PopularLoadouts_row_image_a4,
+.PopularLoadouts_row_emptySlot_77 {
     width: 48rem;
     height: 48rem;
-    margin-right: 5rem;
+    margin-right: 4rem;
 }
 
-.PopularLoadouts_row_info_c4 {
+.PopularLoadouts_row_emptySlot_77 {
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    width: 110rem;
-    height: 59rem;
-    margin-left: 5rem;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.05);
+    position: relative;
 }
 
-.PopularLoadouts_place_9c {
-    color: #8c8c7e;
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
+.PopularLoadouts_row_emptySlot_77::before {
+    width: 32rem;
+    height: 1rem;
+    background-color: #595950;
+    content: '';
+    transform: rotate(135deg);
+}
+
+.PopularLoadouts_row_empty_87 {
+    background: url('R.images.gui.maps.icons.tanksetup.popular_loadouts.empty_row') center center / cover no-repeat;
+    opacity: 0.4;
+}
+
+.PopularLoadouts_row_empty_87 .PopularLoadouts_row_emptySlot_77 {
+    display: none;
+}
+
+.PopularLoadouts_row_empty_87 .PopularLoadouts_popularity_4e {
+    display: none;
 }
 
 .PopularLoadouts_popularity_4e {
-    margin-bottom: -3rem;
-
+    justify-content: center;
+    text-align: center;
+    text-shadow: 0 0 3rem #000;
+    opacity: 0;
+    position: absolute;
+    top: 65%;
+    z-index: 1;
+    transform: translateY(-20%);
+    transition: opacity 0.5s ease-in-out;
     color: #e9e2bf;
-
     font-size: 14rem;
-
     font-weight: 700;
-
     line-height: 1.15;
 }
 
-.PopularLoadouts_notEnoughData_highlight_7a {
-    width: 119rem;
-    height: 60rem;
-    background: url('R.images.gui.maps.icons.tanksetup.popular_loadouts.highlight') no-repeat center / contain;
+.PopularLoadouts_popularity__visible_b7 {
+    opacity: 1;
+}
+
+.PopularLoadouts_lips_ab {
+    width: 286rem;
+    height: 40rem;
+    background: url('R.images.gui.maps.icons.tanksetup.popular_loadouts.lips') center center / contain no-repeat;
     position: absolute;
-    top: -1rem;
-    right: 0rem;
+    top: 65rem;
+    left: -8rem;
     pointer-events: none;
 }
 
-.PopularLoadouts_noData_44 {
+.mediaMediumHeight .PopularLoadouts_lips_ab {
+    top: 140rem;
+}
+
+.PopularLoadouts_lipsIcon_e0 {
+    width: 32rem;
+    height: 32rem;
+    background: url('R.images.gui.maps.icons.tanksetup.popular_loadouts.common_icon') center center / contain no-repeat;
+    opacity: 0;
+    position: absolute;
+    top: -19rem;
+    left: 119rem;
+}
+
+.mediaMediumHeight .PopularLoadouts_lipsIcon_e0 {
+    opacity: 1;
+}
+
+.PopularLoadouts_footer_7b {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    width: 280rem;
-    height: 90rem;
-    background-color: rgba(0, 0, 0, 0.05);
+    width: 272rem;
+    height: 40rem;
+    position: relative;
 }
 
-.PopularLoadouts_noData_image_59 {
-    width: 24rem;
-    height: 24rem;
-    margin-bottom: -3rem;
+.PopularLoadouts_footer_wrapper_8c {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.PopularLoadouts_noData_text_d0 {
-    color: #8c8c7e;
+.PopularLoadouts_footer_wrapper_title_32 {
+    max-width: 114rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    color: #e9e2bf;
     font-size: 16rem;
     font-weight: 400;
     line-height: 1.25;
+}
+
+.PopularLoadouts_footer_wrapper_pagination_71 {
+    display: flex;
+    margin-top: 3rem;
+}
+
+.PopularLoadouts_footer_wrapper_pagination_71 .PopularLoadouts_dot1_6e,
+.PopularLoadouts_footer_wrapper_pagination_71 .PopularLoadouts_dot2_fe {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    background-color: #595950;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.PopularLoadouts_footer_wrapper_pagination_71 .PopularLoadouts_dot1__active_25,
+.PopularLoadouts_footer_wrapper_pagination_71 .PopularLoadouts_dot2__active_3a {
+    background-color: #e9e2bf;
+}
+
+.PopularLoadouts_footer_wrapper_pagination_71 .PopularLoadouts_dot1_6e {
+    margin-right: 4rem;
+}
+
+.PopularLoadouts_footer_arrowWrapper_48 {
+    width: 24rem;
+    height: 40rem;
+    margin: 0 27rem;
+    border: 1rem solid transparent;
+    border-radius: 2rem;
+    transition: border 0.5s ease-in-out;
+    cursor: pointer;
+}
+
+.PopularLoadouts_footer_arrowWrapper_48:hover {
+    border-color: #8c8c7e80;
+}
+
+.PopularLoadouts_footer_arrowLeft_79,
+.PopularLoadouts_footer_arrowRight_37 {
+    width: 24rem;
+    height: 40rem;
+    background: url('R.images.gui.maps.icons.tanksetup.popular_loadouts.arrow') center center / contain no-repeat;
+}
+
+.PopularLoadouts_footer_arrowRight_37 {
+    margin-left: -2rem;
+    transform: scaleX(-1);
 }
 
 @keyframes PopularLoadouts_shine1_08 {
@@ -6137,7 +6419,11 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .RightSideTankParameters_popularLoadoutsPosition_04 {
     position: absolute;
     right: 30rem;
-    bottom: 166rem;
+    bottom: 128rem;
+}
+
+.mediaMedium .RightSideTankParameters_popularLoadoutsPosition_04 {
+    bottom: 113rem;
 }
 
 .WeaponOccupancy_base_19 {

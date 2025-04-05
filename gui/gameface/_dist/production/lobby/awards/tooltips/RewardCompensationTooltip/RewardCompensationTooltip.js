@@ -306,7 +306,7 @@
                         engine.whenReady,
                     ]),
                     Eu = { view: E, client: t, sound: h };
-                var ru = F(179),
+                var ru = F(363),
                     ou = F.n(ru);
                 function Du() {
                     const u = (0, ru.useRef)(0);
@@ -405,30 +405,31 @@
                         )
                     );
                 });
-                var su = F(493),
-                    lu = F.n(su),
-                    cu = F(403);
-                function du() {}
-                function vu() {
+                var su = F(533),
+                    lu = F.n(su);
+                const cu = 'vehicle';
+                var du = F(403);
+                function vu() {}
+                function mu() {
                     return !1;
                 }
                 console.log;
-                var mu = F(174);
-                function fu(u, e) {
+                var fu = F(174);
+                function bu(u, e) {
                     var F = ('undefined' != typeof Symbol && u[Symbol.iterator]) || u['@@iterator'];
                     if (F) return (F = F.call(u)).next.bind(F);
                     if (
                         Array.isArray(u) ||
                         (F = (function (u, e) {
                             if (u) {
-                                if ('string' == typeof u) return bu(u, e);
+                                if ('string' == typeof u) return gu(u, e);
                                 var F = {}.toString.call(u).slice(8, -1);
                                 return (
                                     'Object' === F && u.constructor && (F = u.constructor.name),
                                     'Map' === F || 'Set' === F
                                         ? Array.from(u)
                                         : 'Arguments' === F || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(F)
-                                          ? bu(u, e)
+                                          ? gu(u, e)
                                           : void 0
                                 );
                             }
@@ -445,13 +446,13 @@
                         'Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.',
                     );
                 }
-                function bu(u, e) {
+                function gu(u, e) {
                     (null == e || e > u.length) && (e = u.length);
                     for (var F = 0, A = Array(e); F < e; F++) A[F] = u[F];
                     return A;
                 }
-                const gu = (u) => (0 === u ? window : window.subViews.get(u));
-                const pu = ((u, e) => {
+                const pu = (u) => (0 === u ? window : window.subViews.get(u));
+                const hu = ((u, e) => {
                         const F = (0, ru.createContext)({});
                         return [
                             function ({ mode: A = 'real', options: t, children: n, mocks: E }) {
@@ -461,7 +462,7 @@
                                         const E = (function ({
                                                 initializer: u = !0,
                                                 rootId: e = 0,
-                                                getRoot: F = gu,
+                                                getRoot: F = pu,
                                                 context: A = 'model',
                                             } = {}) {
                                                 const t = new Map();
@@ -508,7 +509,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var u, F = fu(t.keys()); !(u = F()).done; ) n(u.value, e);
+                                                        for (var u, F = bu(t.keys()); !(u = F()).done; ) n(u.value, e);
                                                     },
                                                     unsubscribe: n,
                                                 };
@@ -532,11 +533,11 @@
                                                 observableModel: {
                                                     array: (u, e) => {
                                                         const A = null != e ? e : D(u),
-                                                            t = mu.LO.box(A, { equals: vu });
+                                                            t = fu.LO.box(A, { equals: mu });
                                                         return (
                                                             'real' === F &&
                                                                 o.subscribe(
-                                                                    (0, mu.aD)((u) => t.set(u)),
+                                                                    (0, fu.aD)((u) => t.set(u)),
                                                                     u,
                                                                 ),
                                                             t
@@ -544,11 +545,11 @@
                                                     },
                                                     object: (u, e) => {
                                                         const A = null != e ? e : D(u),
-                                                            t = mu.LO.box(A, { equals: vu });
+                                                            t = fu.LO.box(A, { equals: mu });
                                                         return (
                                                             'real' === F &&
                                                                 o.subscribe(
-                                                                    (0, mu.aD)((u) => t.set(u)),
+                                                                    (0, fu.aD)((u) => t.set(u)),
                                                                     u,
                                                                 ),
                                                             t
@@ -558,13 +559,13 @@
                                                         const A = D(e);
                                                         if (Array.isArray(u)) {
                                                             const t = u.reduce(
-                                                                (u, e) => ((u[e] = mu.LO.box(A[e], {})), u),
+                                                                (u, e) => ((u[e] = fu.LO.box(A[e], {})), u),
                                                                 {},
                                                             );
                                                             return (
                                                                 'real' === F &&
                                                                     o.subscribe(
-                                                                        (0, mu.aD)((e) => {
+                                                                        (0, fu.aD)((e) => {
                                                                             u.forEach((u) => {
                                                                                 t[u].set(e[u]);
                                                                             });
@@ -578,13 +579,13 @@
                                                             const t = u,
                                                                 n = Object.entries(t),
                                                                 E = n.reduce(
-                                                                    (u, [e, F]) => ((u[F] = mu.LO.box(A[e], {})), u),
+                                                                    (u, [e, F]) => ((u[F] = fu.LO.box(A[e], {})), u),
                                                                     {},
                                                                 );
                                                             return (
                                                                 'real' === F &&
                                                                     o.subscribe(
-                                                                        (0, mu.aD)((u) => {
+                                                                        (0, fu.aD)((u) => {
                                                                             n.forEach(([e, F]) => {
                                                                                 E[F].set(u[e]);
                                                                             });
@@ -631,57 +632,17 @@
                             },
                             () => (0, ru.useContext)(F),
                         ];
-                    })(({ observableModel: u }) => ({ root: u.object() }), du),
-                    hu = pu[0],
-                    wu = pu[1],
-                    yu = {
-                        base: 'App_base_b0',
-                        base__base: 'App_base__base_85',
-                        base__crewSkin: 'App_base__crewSkin_40',
-                        header: 'App_header_17',
-                        subheader: 'App_subheader_bf',
-                        content: 'App_content_ca',
-                    },
-                    _u = 'Footer_base_ba',
-                    xu = 'Footer_icon_e1',
-                    Tu = 'Footer_text_7a',
-                    Pu = () =>
-                        ou().createElement(
-                            'div',
-                            { className: _u },
-                            ou().createElement('div', { className: xu }),
-                            ou().createElement(
-                                'div',
-                                { className: Tu },
-                                R.strings.lootboxes.compensationTooltip.vehicle.bottomText(),
-                            ),
-                        ),
-                    Su = 'vehicle',
-                    Ru = {
-                        base: 'Content_base_e9',
-                        separator: 'Content_separator_b5',
-                        separator__top: 'Content_separator__top_72',
-                        separator__bottom: 'Content_separator__bottom_a1',
-                        arrow: 'Content_arrow_47',
-                        block: 'Content_block_4c',
-                        sectionTitleLong: 'Content_sectionTitleLong_11',
-                        iconLabelBlock: 'Content_iconLabelBlock_af',
-                        base__crewSkin: 'Content_base__crewSkin_c4',
-                        iconBeforeBlock: 'Content_iconBeforeBlock_27',
-                        iconBefore: 'Content_iconBefore_d9',
-                        leftLabel: 'Content_leftLabel_49',
-                        vehicleLabelBlock: 'Content_vehicleLabelBlock_16',
-                        vehicleTypeImg: 'Content_vehicleTypeImg_f8',
-                        iconAfter: 'Content_iconAfter_4e',
-                    };
+                    })(({ observableModel: u }) => ({ root: u.object() }), vu),
+                    wu = hu[0],
+                    yu = hu[1];
                 F(281);
-                let ku;
-                function Ou(u, e) {
+                let _u;
+                function xu(u, e) {
                     return u.replace(/\{\w+\}/g, (u) => String(e[u.slice(1, -1)]));
                 }
                 !(function (u) {
                     (u[(u.left = 0)] = 'left'), (u[(u.right = 1)] = 'right');
-                })(ku || (ku = {}));
+                })(_u || (_u = {}));
                 (() => {
                     const u = new RegExp(
                         /[\(\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]?[\u3002\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]?[ %\+\x2D-9A-Za-\{\}\xA0\xC0-\u0237\u2013\u2014\u2026]+[\)\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3002\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\uFF01\uFF0C\uFF1A\uFF1B\uFF1F\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]?[\u3002\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]?/gmu
@@ -698,9 +659,26 @@
                         'gum',
                     );
                 })();
-                const Nu = R.strings.lootboxes.compensationTooltip,
-                    Lu = (0, cu.Pi)(() => {
-                        const u = wu().model.root.get(),
+                const Tu = {
+                        base: 'Content_base_e9',
+                        separator: 'Content_separator_b5',
+                        separator__top: 'Content_separator__top_72',
+                        separator__bottom: 'Content_separator__bottom_a1',
+                        arrow: 'Content_arrow_47',
+                        block: 'Content_block_4c',
+                        sectionTitleLong: 'Content_sectionTitleLong_11',
+                        iconLabelBlock: 'Content_iconLabelBlock_af',
+                        base__crewSkin: 'Content_base__crewSkin_c4',
+                        iconBeforeBlock: 'Content_iconBeforeBlock_27',
+                        iconBefore: 'Content_iconBefore_d9',
+                        leftLabel: 'Content_leftLabel_49',
+                        vehicleLabelBlock: 'Content_vehicleLabelBlock_16',
+                        vehicleTypeImg: 'Content_vehicleTypeImg_f8',
+                        iconAfter: 'Content_iconAfter_4e',
+                    },
+                    Pu = R.strings.lootboxes.compensationTooltip,
+                    Ru = (0, du.Pi)(() => {
+                        const u = yu().model.root.get(),
                             e = u.tooltipType,
                             F = u.countBefore,
                             A = u.labelBefore,
@@ -714,95 +692,135 @@
                                     F = u.match(/color='(.+?)'/);
                                 return [e ? e[1] : u, F ? F[1] : '#8C8C7E'];
                             })(u.labelAfter),
-                            a = R.images.gui.maps.icons.filters.tanks.$dyn(E),
-                            i = Ou(Nu.before.header(), { count: F });
+                            a = ((u) => (u ? R.images.gui.maps.icons.filters.tanks.$dyn(u) : ''))(E),
+                            i = xu(Pu.before.header(), { count: F });
                         return ou().createElement(
                             'div',
-                            { className: o()(Ru.base, Ru[`base__${e}`]) },
-                            ou().createElement('div', { className: o()(Ru.separator, Ru.separator__top) }),
+                            { className: o()(Tu.base, Tu[`base__${e}`]) },
+                            ou().createElement('div', { className: o()(Tu.separator, Tu.separator__top) }),
                             ou().createElement(
                                 'div',
-                                { className: Ru.block },
-                                ou().createElement('div', { className: Ru.sectionTitleLong }, i),
+                                { className: Tu.block },
+                                ou().createElement('div', { className: Tu.sectionTitleLong }, i),
                                 ou().createElement(
                                     'div',
-                                    { className: Ru.iconLabelBlock },
+                                    { className: Tu.iconLabelBlock },
                                     ou().createElement(
                                         'div',
-                                        { className: Ru.iconBeforeBlock },
+                                        { className: Tu.iconBeforeBlock },
                                         t &&
                                             ou().createElement('div', {
-                                                className: Ru.iconBefore,
+                                                className: Tu.iconBefore,
                                                 style: { backgroundImage: `url(${t})` },
                                             }),
                                     ),
-                                    e === Su
+                                    e === cu
                                         ? ou().createElement(
                                               'div',
-                                              { className: Ru.vehicleLabelBlock },
-                                              ou().createElement('div', { className: Ru.leftLabel }, n),
+                                              { className: Tu.vehicleLabelBlock },
+                                              ou().createElement('div', { className: Tu.leftLabel }, n),
                                               a &&
                                                   ou().createElement('div', {
-                                                      className: Ru.vehicleTypeImg,
+                                                      className: Tu.vehicleTypeImg,
                                                       style: { backgroundImage: `url(${a})` },
                                                   }),
-                                              ou().createElement('div', { className: Ru.leftLabel }, r),
+                                              ou().createElement('div', { className: Tu.leftLabel }, r),
                                           )
-                                        : ou().createElement('div', { className: Ru.leftLabel }, A),
+                                        : ou().createElement('div', { className: Tu.leftLabel }, A),
                                 ),
                             ),
-                            ou().createElement('div', { className: Ru.arrow }),
+                            ou().createElement('div', { className: Tu.arrow }),
                             ou().createElement(
                                 'div',
-                                { className: Ru.block },
-                                ou().createElement('div', { className: Ru.sectionTitleLong }, Nu.after.header()),
+                                { className: Tu.block },
+                                ou().createElement('div', { className: Tu.sectionTitleLong }, Pu.after.header()),
                                 ou().createElement(
                                     'div',
-                                    { className: Ru.iconLabelBlock },
+                                    { className: Tu.iconLabelBlock },
                                     D &&
                                         ou().createElement('div', {
-                                            className: Ru.iconAfter,
+                                            className: Tu.iconAfter,
                                             style: { backgroundImage: `url(${D})` },
                                         }),
                                     ou().createElement(
                                         'div',
-                                        { className: Ru.labelAfter, style: { color: B[1] } },
+                                        { className: Tu.labelAfter, style: { color: B[1] } },
                                         B[0],
                                     ),
                                 ),
                             ),
-                            ou().createElement('div', { className: o()(Ru.separator, Ru.separator__bottom) }),
+                            ou().createElement('div', { className: o()(Tu.separator, Tu.separator__bottom) }),
                         );
                     }),
-                    zu = R.strings.lootboxes.compensationTooltip,
-                    ju = (0, cu.Pi)(() => {
-                        var u, e;
-                        const F = wu().model.root.get(),
-                            A = F.bonusName,
-                            t = F.tooltipType;
+                    Su = 'Footer_base_ba',
+                    ku = 'Footer_icon_e1',
+                    Ou = 'Footer_text_7a',
+                    Nu = () =>
+                        ou().createElement(
+                            'div',
+                            { className: Su },
+                            ou().createElement('div', { className: ku }),
+                            ou().createElement(
+                                'div',
+                                { className: Ou },
+                                R.strings.lootboxes.compensationTooltip.vehicle.bottomText(),
+                            ),
+                        ),
+                    Lu = {
+                        base: 'App_base_b0',
+                        base__base: 'App_base__base_85',
+                        base__crewSkin: 'App_base__crewSkin_40',
+                        header: 'App_header_17',
+                        subheader: 'App_subheader_bf',
+                        content: 'App_content_ca',
+                    },
+                    zu = (0, du.Pi)(() => {
+                        const u = yu().model.root.get(),
+                            e = u.bonusName,
+                            F = u.tooltipType;
                         return ou().createElement(
                             'div',
-                            { className: o()(yu.base, yu[`base__${t}`]) },
+                            { className: o()(Lu.base, Lu[`base__${F}`]) },
                             ou().createElement(
                                 'div',
-                                { className: yu.header },
-                                null == (u = R.strings.tooltips.awardItem.$dyn(A)) ? void 0 : u.header(),
+                                { className: Lu.header },
+                                ((u) => {
+                                    var e;
+                                    return u
+                                        ? null == (e = R.strings.tooltips.awardItem.$dyn(u))
+                                            ? void 0
+                                            : e.header()
+                                        : '';
+                                })(e),
                             ),
                             ou().createElement(
                                 'div',
-                                { className: yu.subheader },
-                                null == (e = zu.$dyn(t)) ? void 0 : e.header(),
+                                { className: Lu.subheader },
+                                ((u) => {
+                                    var e;
+                                    return u
+                                        ? null == (e = R.strings.lootboxes.compensationTooltip.$dyn(u))
+                                            ? void 0
+                                            : e.header()
+                                        : '';
+                                })(F),
                             ),
-                            ou().createElement('div', { className: yu.content }, ou().createElement(Lu, null)),
-                            t === Su && ou().createElement(Pu, null),
+                            ou().createElement('div', { className: Lu.content }, ou().createElement(Ru, null)),
+                            F === cu && ou().createElement(Nu, null),
                         );
                     });
                 engine.whenReady.then(() => {
                     lu().render(
-                        ou().createElement(Cu, null, ou().createElement(hu, null, ou().createElement(ju, null))),
+                        ou().createElement(Cu, null, ou().createElement(wu, null, ou().createElement(zu, null))),
                         document.getElementById('root'),
                     );
                 });
+            },
+            363: (u) => {
+                u.exports = React;
+            },
+            533: (u) => {
+                u.exports = ReactDOM;
             },
         },
         F = {};

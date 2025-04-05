@@ -501,7 +501,7 @@
                     return !1;
                 }
                 console.log;
-                var E = t(6179),
+                var E = t(7363),
                     i = t.n(E),
                     D = t(3138);
                 function r(u, e) {
@@ -890,7 +890,7 @@
                     c = (C[0], C[1]);
             },
             1235: (u, e, t) => {
-                var n = t(6179),
+                var n = t(7363),
                     a = t.n(n),
                     A = t(3403),
                     F = t(9155),
@@ -940,77 +940,78 @@
                     b = 'HintContainer_divider_12',
                     S = 'Hint_base_e2',
                     x = 'Hint_description_a5',
-                    y = 'Hint_counter_be',
-                    Q = {
+                    y = 'Hint_counter_be';
+                var Q = t(7030);
+                const P = {
                         base: 'HintButton_base_19',
+                        base__small: 'HintButton_base__small_63',
+                        btnInner: 'HintButton_btnInner_e4',
                         btnOuter: 'HintButton_btnOuter_f9',
                         btnOuter__blink: 'HintButton_btnOuter__blink_e7',
                         animationContainer: 'HintButton_animationContainer_c5',
                         buttonContainer: 'HintButton_buttonContainer_2a',
-                        btnInner: 'HintButton_btnInner_e4',
                         btnInner__blink: 'HintButton_btnInner__blink_75',
-                    };
-                var P = t(7030);
-                const I = ({ btnText: u, hasBlinkAnimation: e = !1, isBlinking: t = !1 }) => {
-                    const A = (0, n.useState)(!1),
-                        F = A[0],
-                        E = A[1],
-                        D = i()(Q.btnOuter, Q.btnOuter__blink),
-                        r = i()(Q.btnInner, Q.btnInner__blink),
-                        o = (0, P.useSpring)({
-                            loop: !0,
-                            reset: F,
-                            from: { opacity: 0, transform: 'scale(1)' },
-                            to: F
-                                ? [
-                                      { opacity: 0, transform: 'scale(1)', config: { duration: 150 } },
-                                      { opacity: 1, transform: 'scale(1)', config: { duration: 150 } },
-                                      { opacity: 0, transform: 'scale(1.4)', config: { duration: 250 } },
-                                  ]
-                                : { opacity: 0, transform: 'scale(1)' },
-                            delay: 700,
-                        });
-                    return (
-                        (0, n.useEffect)(() => {
-                            E(!!t);
-                        }, [t]),
-                        a().createElement(
-                            'div',
-                            { className: Q.base },
+                    },
+                    _ = ({ btnText: u, hasBlinkAnimation: e = !1, isBlinking: t = !1, isSmall: A = !1 }) => {
+                        const F = (0, n.useState)(!1),
+                            E = F[0],
+                            D = F[1],
+                            r = i()(P.btnOuter, P.btnOuter__blink),
+                            o = i()(P.btnInner, P.btnInner__blink),
+                            s = (0, Q.useSpring)({
+                                loop: !0,
+                                reset: E,
+                                from: { opacity: 0, transform: 'scale(1)' },
+                                to: E
+                                    ? [
+                                          { opacity: 0, transform: 'scale(1)', config: { duration: 150 } },
+                                          { opacity: 1, transform: 'scale(1)', config: { duration: 150 } },
+                                          { opacity: 0, transform: 'scale(1.4)', config: { duration: 250 } },
+                                      ]
+                                    : { opacity: 0, transform: 'scale(1)' },
+                                delay: 700,
+                            });
+                        return (
+                            (0, n.useEffect)(() => {
+                                D(!!t);
+                            }, [t]),
                             a().createElement(
                                 'div',
-                                { className: Q.btnContainer },
+                                { className: i()(P.base, A && P.__small) },
                                 a().createElement(
                                     'div',
-                                    { className: Q.btnOuter },
-                                    a().createElement('div', { className: Q.btnInner }, u),
-                                ),
-                            ),
-                            e &&
-                                t &&
-                                a().createElement(
-                                    P.animated.div,
-                                    { className: Q.animationContainer, style: o },
+                                    { className: P.btnContainer },
                                     a().createElement(
                                         'div',
-                                        { className: D },
-                                        a().createElement('div', { className: r }, u),
+                                        { className: P.btnOuter },
+                                        a().createElement('div', { className: P.btnInner }, u),
                                     ),
                                 ),
-                        )
-                    );
-                };
-                var _ = t(3649);
+                                e &&
+                                    t &&
+                                    a().createElement(
+                                        Q.animated.div,
+                                        { className: P.animationContainer, style: s },
+                                        a().createElement(
+                                            'div',
+                                            { className: r },
+                                            a().createElement('div', { className: o }, u),
+                                        ),
+                                    ),
+                            )
+                        );
+                    };
+                var I = t(3649);
                 const H = 'FormatText_base_d0',
                     O = ({
                         binding: u,
                         text: e = '',
                         classMix: t,
-                        alignment: A = _.v2.left,
+                        alignment: A = I.v2.left,
                         formatWithBrackets: F,
                     }) => {
                         if (null === e) return console.error("FormatText was supplied with 'null'"), null;
-                        const E = F && u ? (0, _.WU)(e, u) : e;
+                        const E = F && u ? (0, I.WU)(e, u) : e;
                         return a().createElement(
                             n.Fragment,
                             null,
@@ -1018,7 +1019,7 @@
                                 a().createElement(
                                     'div',
                                     { className: i()(H, t), key: `${e}-${F}` },
-                                    (0, _.Uw)(e, A, u).map((u, e) =>
+                                    (0, I.Uw)(e, A, u).map((u, e) =>
                                         a().createElement(n.Fragment, { key: `${e}-${u}` }, u),
                                     ),
                                 ),
@@ -1031,7 +1032,7 @@
                         return a().createElement(
                             'div',
                             { className: S },
-                            a().createElement(I, { btnText: u }),
+                            a().createElement(_, { btnText: u }),
                             a().createElement('div', { className: x }, a().createElement(O, { text: e, binding: A })),
                         );
                     },
@@ -1604,6 +1605,12 @@
                             (u.legacyHE = 'legacyHE'),
                             (u.modernHE = 'modernHE');
                     })(E || (E = {}));
+            },
+            7363: (u) => {
+                u.exports = React;
+            },
+            1533: (u) => {
+                u.exports = ReactDOM;
             },
         },
         t = {};

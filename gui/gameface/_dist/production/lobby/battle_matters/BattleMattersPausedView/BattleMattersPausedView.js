@@ -194,8 +194,8 @@
                     M = ['args'];
                 const T = 2,
                     H = 16,
-                    k = 32,
-                    R = 64,
+                    R = 32,
+                    k = 64,
                     A = (e, t) => {
                         const r = 'GFViewEventProxy';
                         if (void 0 !== t) {
@@ -235,10 +235,10 @@
                     },
                     C = {
                         close(e) {
-                            A('popover' === e ? T : k);
+                            A('popover' === e ? T : R);
                         },
                         minimize() {
-                            A(R);
+                            A(k);
                         },
                         move(e) {
                             A(H, { isMouseEvent: !0, on: e });
@@ -723,7 +723,7 @@
             },
             825: (e, t, r) => {
                 'use strict';
-                var a = r(179),
+                var a = r(363),
                     n = r.n(a);
                 const i = (e, t, r) =>
                     t.extraLargeHeight || t.largeHeight || t.mediumHeight || t.smallHeight || t.extraSmallHeight
@@ -1067,7 +1067,7 @@
                         })(e, P);
                     return n().createElement(w, null, n().createElement(C, r, t));
                 };
-                var D = r(493),
+                var D = r(533),
                     N = r.n(D);
                 function I(e) {
                     engine.call('PlaySound', e).catch((t) => {
@@ -1540,6 +1540,14 @@
                         document.getElementById('root'),
                     );
                 });
+            },
+            363: (e) => {
+                'use strict';
+                e.exports = React;
+            },
+            533: (e) => {
+                'use strict';
+                e.exports = ReactDOM;
             },
         },
         __webpack_module_cache__ = {},

@@ -2,7 +2,7 @@
     'use strict';
     var u,
         e = {
-            7420: (u, e, t) => {
+            420: (u, e, t) => {
                 var A = {};
                 t.r(A),
                     t.d(A, { mouse: () => c, off: () => s, on: () => C, onResize: () => B, onScaleUpdated: () => i });
@@ -41,14 +41,14 @@
                         pxToRem: () => Q,
                         remToPx: () => U,
                         resize: () => G,
-                        sendEvent: () => z,
+                        sendEvent: () => N,
                         setAnimateWindow: () => Y,
                         setEventHandled: () => J,
                         setInputPaddingsRem: () => $,
                         setSidePaddingsRem: () => I,
                         whenTutorialReady: () => nu,
                     });
-                var r = t(6483),
+                var r = t(483),
                     a = t.n(r);
                 function D(u) {
                     return (e) => (
@@ -182,7 +182,7 @@
                     k = 16,
                     O = 32,
                     P = 64,
-                    N = (u, e) => {
+                    M = (u, e) => {
                         const t = 'GFViewEventProxy';
                         if (void 0 !== e) {
                             const F = e.args,
@@ -219,23 +219,23 @@
                         return viewEnv.handleViewEvent({ __Type: t, type: u });
                         var A;
                     },
-                    z = {
+                    N = {
                         close(u) {
-                            N('popover' === u ? S : O);
+                            M('popover' === u ? S : O);
                         },
                         minimize() {
-                            N(P);
+                            M(P);
                         },
                         move(u) {
-                            N(k, { isMouseEvent: !0, on: u });
+                            M(k, { isMouseEvent: !0, on: u });
                         },
                     },
-                    M = 15;
+                    z = 15;
                 function L(u) {
                     viewEnv.addPreloadTexture(u);
                 }
                 function $(u) {
-                    viewEnv.setHitAreaPaddingsRem(u, u, u, u, M);
+                    viewEnv.setHitAreaPaddingsRem(u, u, u, u, z);
                 }
                 function j(u, e, t, A = 1) {
                     return viewEnv.getWebBrowserTexturePath(u, e, t, A);
@@ -244,7 +244,7 @@
                     return viewEnv.addDataChangedCallback(u, e, t);
                 }
                 function I(u) {
-                    viewEnv.setHitAreaPaddingsRem(u.top, u.right, u.bottom, u.left, M);
+                    viewEnv.setHitAreaPaddingsRem(u.top, u.right, u.bottom, u.left, z);
                 }
                 function H(u = 'px') {
                     return 'rem' === u ? viewEnv.getViewSizeRem() : viewEnv.getViewSizePx();
@@ -306,7 +306,7 @@
                         engine.whenReady,
                     ]),
                     Eu = { view: E, client: F, sound: _ };
-                var ru = t(6179),
+                var ru = t(363),
                     au = t.n(ru);
                 const Du = (u) => {
                     (0, ru.useEffect)(u, []);
@@ -406,9 +406,9 @@
                         )
                     );
                 });
-                var lu = t(493),
+                var lu = t(533),
                     cu = t.n(lu),
-                    du = t(1281);
+                    du = t(281);
                 let mu;
                 function gu(u, e) {
                     return u.replace(/\{\w+\}/g, (u) => String(e[u.slice(1, -1)]));
@@ -471,8 +471,8 @@
                             return hu(F, /( )/, e).forEach((u) => (t = t.concat(hu(u, A, mu.left)))), t;
                         })(u, e);
                     };
-                var wu = t(3403),
-                    xu = t(7030);
+                var wu = t(403),
+                    xu = t(30);
                 const Tu = (u) => {
                     let e,
                         t = null;
@@ -747,13 +747,13 @@
                             )
                         );
                     }),
-                    Nu = (0, ru.memo)(Pu);
-                function zu(u) {
+                    Mu = (0, ru.memo)(Pu);
+                function Nu(u) {
                     engine.call('PlaySound', u).catch((e) => {
                         console.error('[lib/sounds.js] playSound(', u, '): ', e);
                     });
                 }
-                const Mu = 'DogTag_base_2b',
+                const zu = 'DogTag_base_2b',
                     Lu = 'DogTag_engraving_eb',
                     $u = 'DogTag_background_7f',
                     ju = R.strings.settings.LANGUAGE_CODE(),
@@ -766,7 +766,7 @@
                         const n = Wu.includes(ju) ? `_${ju}` : '';
                         return au().createElement(
                             'div',
-                            { className: a()(Mu, F) },
+                            { className: a()(zu, F) },
                             au().createElement('div', {
                                 className: $u,
                                 style: {
@@ -913,7 +913,7 @@
                                 var u;
                                 null == (u = i.current) || u.play(),
                                     h.start({ to: { opacity: 1, transform: 'translateY(0%)' }, immediate: !1 }),
-                                    !B && zu(R.sounds.$dyn(ue[F]));
+                                    !B && Nu(R.sounds.$dyn(ue[F]));
                             }, [F, h, B]);
                         (0, ru.useEffect)(
                             () =>
@@ -953,7 +953,7 @@
                             [A, h, g, _],
                         );
                         const b = () => {
-                            i.current && (i.current.goToAndPlay(5), zu(R.sounds.ach_dog_tag_idle()));
+                            i.current && (i.current.goToAndPlay(5), Nu(R.sounds.ach_dog_tag_idle()));
                         };
                         return au().createElement(
                             xu.animated.div,
@@ -980,7 +980,7 @@
                                 au().createElement(
                                     'div',
                                     { className: Gu.videoBox },
-                                    au().createElement(Nu, {
+                                    au().createElement(Mu, {
                                         ref: i,
                                         className: Gu.video,
                                         onEnded: b,
@@ -1078,7 +1078,7 @@
                         }
                         return au().createElement(Ae, { text: E, classMix: t, binding: F });
                     });
-                var De = t(9174);
+                var De = t(174);
                 function oe(u, e) {
                     var t = ('undefined' != typeof Symbol && u[Symbol.iterator]) || u['@@iterator'];
                     if (t) return (t = t.call(u)).next.bind(t);
@@ -1389,6 +1389,12 @@
                     );
                 });
             },
+            363: (u) => {
+                u.exports = React;
+            },
+            533: (u) => {
+                u.exports = ReactDOM;
+            },
         },
         t = {};
     function A(u) {
@@ -1460,6 +1466,6 @@
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             t.forEach(e.bind(null, 0)), (t.push = e.bind(null, t.push.bind(t)));
         })();
-    var F = A.O(void 0, [994], () => A(7420));
+    var F = A.O(void 0, [994], () => A(420));
     F = A.O(F);
 })();

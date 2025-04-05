@@ -28,11 +28,14 @@
             9356: (u, F, A) => {
                 A(6483);
                 ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());
-                A(3649), A(6179);
+                A(3649), A(7363);
                 let E;
                 !(function (u) {
                     (u.Intro = 'intro'), (u.Award = 'award'), (u.Progression = 'progression');
                 })(E || (E = {}));
+            },
+            7363: (u) => {
+                u.exports = React;
             },
         },
         A = {};
@@ -47,22 +50,22 @@
         (E.O = (F, A, D, B) => {
             if (!A) {
                 var C = 1 / 0;
-                for (o = 0; o < u.length; o++) {
-                    for (var [A, D, B] = u[o], r = !0, e = 0; e < A.length; e++)
-                        (!1 & B || C >= B) && Object.keys(E.O).every((u) => E.O[u](A[e]))
-                            ? A.splice(e--, 1)
-                            : ((r = !1), B < C && (C = B));
-                    if (r) {
-                        u.splice(o--, 1);
-                        var t = D();
-                        void 0 !== t && (F = t);
+                for (t = 0; t < u.length; t++) {
+                    for (var [A, D, B] = u[t], e = !0, r = 0; r < A.length; r++)
+                        (!1 & B || C >= B) && Object.keys(E.O).every((u) => E.O[u](A[r]))
+                            ? A.splice(r--, 1)
+                            : ((e = !1), B < C && (C = B));
+                    if (e) {
+                        u.splice(t--, 1);
+                        var o = D();
+                        void 0 !== o && (F = o);
                     }
                 }
                 return F;
             }
             B = B || 0;
-            for (var o = u.length; o > 0 && u[o - 1][2] > B; o--) u[o] = u[o - 1];
-            u[o] = [A, D, B];
+            for (var t = u.length; t > 0 && u[t - 1][2] > B; t--) u[t] = u[t - 1];
+            u[t] = [A, D, B];
         }),
         (E.n = (u) => {
             var F = u && u.__esModule ? () => u.default : () => u;
@@ -71,14 +74,6 @@
         (E.d = (u, F) => {
             for (var A in F) E.o(F, A) && !E.o(u, A) && Object.defineProperty(u, A, { enumerable: !0, get: F[A] });
         }),
-        (E.g = (function () {
-            if ('object' == typeof globalThis) return globalThis;
-            try {
-                return this || new Function('return this')();
-            } catch (u) {
-                if ('object' == typeof window) return window;
-            }
-        })()),
         (E.o = (u, F) => Object.prototype.hasOwnProperty.call(u, F)),
         (E.j = 434),
         (() => {
@@ -87,14 +82,14 @@
             var F = (F, A) => {
                     var D,
                         B,
-                        [C, r, e] = A,
-                        t = 0;
+                        [C, e, r] = A,
+                        o = 0;
                     if (C.some((F) => 0 !== u[F])) {
-                        for (D in r) E.o(r, D) && (E.m[D] = r[D]);
-                        if (e) var o = e(E);
+                        for (D in e) E.o(e, D) && (E.m[D] = e[D]);
+                        if (r) var t = r(E);
                     }
-                    for (F && F(A); t < C.length; t++) (B = C[t]), E.o(u, B) && u[B] && u[B][0](), (u[B] = 0);
-                    return E.O(o);
+                    for (F && F(A); o < C.length; o++) (B = C[o]), E.o(u, B) && u[B] && u[B][0](), (u[B] = 0);
+                    return E.O(t);
                 },
                 A = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             A.forEach(F.bind(null, 0)), (A.push = F.bind(null, A.push.bind(A)));

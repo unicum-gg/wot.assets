@@ -847,9 +847,9 @@
                         getFormattedDateTime: (u, e, t = !0) => regionalDateTime.getFormattedDateTime(u, e, t),
                     };
             },
-            1139: (u, e, t) => {
+            1459: (u, e, t) => {
                 'use strict';
-                var E = t(6179),
+                var E = t(7363),
                     a = t.n(E);
                 const r = (u, e, t) =>
                     e.extraLargeHeight || e.largeHeight || e.mediumHeight || e.smallHeight || e.extraSmallHeight
@@ -1179,7 +1179,7 @@
                         return a().createElement('div', L({ className: h()(t, S[A], y[n], T[i]) }, E), e);
                     },
                     M = ['children'];
-                const k = (u) => {
+                const H = (u) => {
                     let e = u.children,
                         t = (function (u, e) {
                             if (null == u) return {};
@@ -1193,8 +1193,8 @@
                         })(u, M);
                     return a().createElement(_, null, a().createElement(O, t, e));
                 };
-                var H = t(493),
-                    P = t.n(H);
+                var k = t(1533),
+                    P = t.n(k);
                 function N(u) {
                     engine.call('PlaySound', u).catch((e) => {
                         console.error('[lib/sounds.js] playSound(', u, '): ', e);
@@ -1358,32 +1358,33 @@
                             ),
                         );
                     };
-                var q = t(9916);
-                class K extends a().PureComponent {
+                var K = t(9916);
+                class q extends a().PureComponent {
                     render() {
                         let u;
-                        if ('gold' === this.props.format) u = q.B3.GOLD;
-                        else u = q.B3.INTEGRAL;
-                        const e = q.Z5.getNumberFormat(this.props.value, u);
+                        if ('gold' === this.props.format) u = K.B3.GOLD;
+                        else u = K.B3.INTEGRAL;
+                        const e = K.Z5.getNumberFormat(this.props.value, u);
                         return void 0 !== this.props.value && void 0 !== e ? e : null;
                     }
                 }
-                K.defaultProps = { format: 'integral' };
+                q.defaultProps = { format: 'integral' };
                 var Y = t(8613);
                 Date.now(), Y.Ew.getRegionalDateTime, Y.Ew.getFormattedDateTime;
                 const Z = (u = 1) => {
                         const e = new Error().stack;
                         let t,
-                            E = R.invalid('resId');
-                        return (
-                            e &&
-                                ((t = e.split('\n')[u].split('.js')[0].split('/').pop() || ''),
-                                window.__feature &&
-                                    window.__feature !== t &&
-                                    window.subViews[t] &&
-                                    (E = window.subViews[t].id)),
-                            { caller: t, stack: e, resId: E }
-                        );
+                            E = R.invalid('resId'),
+                            a = '';
+                        var r;
+                        e &&
+                            ((a = (null == (r = e.match(/(coui:\/\/[^\s]+\.js)/)) ? void 0 : r[0]) || ''),
+                            (t = e.split('\n')[u].split('.js')[0].split('/').pop() || ''),
+                            window.__feature &&
+                                window.__feature !== t &&
+                                window.subViews[t] &&
+                                (E = window.subViews[t].id));
+                        return { callerUrl: a, caller: t, stack: e, resId: E };
                     },
                     X = (u, e) => u.split('.').reduce((u, e) => u && u[e], e),
                     Q = (u) => u && 'ArrayItem' === u.__proto__.constructor.name,
@@ -1415,69 +1416,73 @@
                             );
                         }
                         return '';
-                    },
-                    tu = q.Sw.instance;
-                let Eu;
+                    };
+                const tu = () => (window.injected || (window.injected = new Map()), window.injected);
+                const Eu = K.Sw.instance;
+                let au;
                 !(function (u) {
                     (u.None = 'None'), (u.Shallow = 'Shallow'), (u.Deep = 'Deep');
-                })(Eu || (Eu = {}));
-                const au = (u = 'model', e = Eu.Deep) => {
+                })(au || (au = {}));
+                const ru = (u = 'model', e = au.Deep) => {
                     const t = (0, E.useState)(0),
                         a = (t[0], t[1]),
                         r = (0, E.useMemo)(() => Z(), []),
-                        A = r.caller,
-                        n = r.resId,
-                        i = (0, E.useMemo)(
-                            () => (window.__feature && window.__feature !== A ? `subViews.${A}.${u}` : u),
-                            [A, u],
-                        ),
-                        F = (0, E.useState)(() =>
+                        A = r.callerUrl,
+                        n = r.caller,
+                        i = r.resId,
+                        F = (0, E.useMemo)(() => {
+                            const e = (function (u) {
+                                return tu().has(u);
+                            })(A.replace('.js', '.html'));
+                            return window.__feature && window.__feature !== n && !e ? `subViews.${n}.${u}` : u;
+                        }, [A, n, u]),
+                        D = (0, E.useState)(() =>
                             ((u) => {
                                 const e = X(u, window);
                                 for (const u in e) 'function' == typeof e[u] && (e[u] = e[u].bind(e));
                                 return Q(e) ? e.value : e;
-                            })(uu(i)),
+                            })(uu(F)),
                         ),
-                        D = F[0],
-                        s = F[1],
-                        o = (0, E.useRef)(-1);
+                        s = D[0],
+                        o = D[1],
+                        l = (0, E.useRef)(-1);
                     return (
                         d(() => {
                             if (
                                 ('boolean' == typeof e &&
-                                    ((e = e ? Eu.Deep : Eu.None),
+                                    ((e = e ? au.Deep : au.None),
                                     console.warn(
                                         'Boolean key for useModel "tracking" param is deprecated. Use ModelTracking enum values instead!',
                                     )),
-                                e !== Eu.None)
+                                e !== au.None)
                             ) {
                                 const t = (u) => {
                                         ((u) => u && 'CoherentArrayProxy' === u.__proto__.constructor.name)(u) &&
-                                        e === Eu.Deep
-                                            ? (u === D && a((u) => u + 1), s(u))
-                                            : s(Object.assign([], u));
+                                        e === au.Deep
+                                            ? (u === s && a((u) => u + 1), o(u))
+                                            : o(Object.assign([], u));
                                     },
                                     E = eu(u);
-                                o.current = tu.addCallback(E, t, n, e === Eu.Deep);
+                                l.current = Eu.addCallback(E, t, i, e === au.Deep);
                             }
                         }),
                         (0, E.useEffect)(() => {
-                            if (e !== Eu.None)
+                            if (e !== au.None)
                                 return () => {
-                                    tu.removeCallback(o.current, n);
+                                    Eu.removeCallback(l.current, i);
                                 };
-                        }, [n, e]),
-                        D
+                        }, [i, e]),
+                        s
                     );
                 };
-                q.Sw.instance;
-                var ru = t(5521);
-                const Au = (u) => {
+                K.Sw.instance;
+                var Au = t(5521);
+                const nu = (u) => {
                     console.error(u.type + ': useKeydownListener hook :: Callback is not defined');
                 };
-                function nu(u = ru.n.NONE, e = Au, t = !1, a = !1) {
+                function iu(u = Au.n.NONE, e = nu, t = !1, a = !1) {
                     (0, E.useEffect)(() => {
-                        if (u !== ru.n.NONE)
+                        if (u !== Au.n.NONE)
                             return (
                                 window.addEventListener('keydown', E, t),
                                 () => {
@@ -1492,44 +1497,44 @@
                         }
                     }, [e, u, t, a]);
                 }
-                var iu = t(9356);
-                const Fu = 'VideoButton_base_d9',
-                    Du = 'VideoButton_icon_a3',
-                    su = 'VideoButton_text_ef',
-                    ou = ({ onClick: u, className: e }) =>
+                var Fu = t(9356);
+                const Du = 'VideoButton_base_d9',
+                    su = 'VideoButton_icon_a3',
+                    ou = 'VideoButton_text_ef',
+                    lu = ({ onClick: u, className: e }) =>
                         a().createElement(
                             'div',
                             {
-                                className: h()(Fu, e),
+                                className: h()(Du, e),
                                 onClick: () => {
                                     N('play'), u();
                                 },
                             },
-                            a().createElement('div', { className: Du }),
+                            a().createElement('div', { className: su }),
                             a().createElement(
                                 'div',
-                                { className: su },
+                                { className: ou },
                                 R.strings.resource_well.introView.buttonVideo(),
                             ),
                         ),
-                    lu = 'App_base_ce',
-                    Bu = 'App_blackout_53',
-                    Cu = 'App_content_d5',
-                    cu = 'App_cell_05',
-                    du = 'App_cell__alignRight_3a',
-                    _u = 'App_img_d0',
-                    mu = 'App_description_af',
-                    hu = 'App_heading_d7',
-                    gu = 'App_separator_84',
-                    vu = 'App_details_96',
-                    wu = 'App_title_9c',
-                    pu = 'App_text_72',
-                    fu = 'App_button_68',
-                    bu = 'App_formatText_e2',
-                    xu = 'App_videoButton_68',
-                    Lu = R.strings.resource_well.introView,
-                    Su = () => {
-                        const u = au('model', Eu.None),
+                    Bu = 'App_base_ce',
+                    Cu = 'App_blackout_53',
+                    cu = 'App_content_d5',
+                    du = 'App_cell_05',
+                    _u = 'App_cell__alignRight_3a',
+                    mu = 'App_img_d0',
+                    hu = 'App_description_af',
+                    gu = 'App_heading_d7',
+                    vu = 'App_separator_84',
+                    wu = 'App_details_96',
+                    pu = 'App_title_9c',
+                    fu = 'App_text_72',
+                    bu = 'App_button_68',
+                    xu = 'App_formatText_e2',
+                    Lu = 'App_videoButton_68',
+                    Su = R.strings.resource_well.introView,
+                    yu = () => {
+                        const u = ru('model', au.None),
                             e = u.onClose,
                             t = u.showVideo,
                             E = u.vehicleInfo,
@@ -1539,70 +1544,70 @@
                         var i;
                         return (
                             (i = e),
-                            nu(ru.n.ESCAPE, i),
+                            iu(Au.n.ESCAPE, i),
                             a().createElement(
                                 'div',
-                                { className: lu },
-                                a().createElement('div', { className: Bu }),
+                                { className: Bu },
+                                a().createElement('div', { className: Cu }),
                                 a().createElement(
                                     'div',
-                                    { className: Cu },
+                                    { className: cu },
                                     a().createElement(
                                         'div',
-                                        { className: h()(cu, du) },
-                                        a().createElement('div', { className: _u }),
+                                        { className: h()(du, _u) },
+                                        a().createElement('div', { className: mu }),
                                     ),
                                     a().createElement(
                                         'div',
-                                        { className: cu },
+                                        { className: du },
                                         a().createElement(
                                             'div',
-                                            { className: mu },
+                                            { className: hu },
                                             a().createElement(
                                                 'div',
-                                                { className: hu },
+                                                { className: gu },
                                                 R.strings.resource_well.commonTexts.eventTitle(),
                                             ),
-                                            a().createElement('div', { className: gu }),
+                                            a().createElement('div', { className: vu }),
                                             a().createElement(
                                                 'div',
-                                                { className: vu },
-                                                a().createElement('div', { className: wu }, Lu.resTitle()),
-                                                a().createElement('div', { className: pu }, Lu.resDescription()),
+                                                { className: wu },
+                                                a().createElement('div', { className: pu }, Su.resTitle()),
+                                                a().createElement('div', { className: fu }, Su.resDescription()),
                                             ),
                                             a().createElement(
                                                 'div',
-                                                { className: vu },
+                                                { className: wu },
                                                 a().createElement(
                                                     'div',
-                                                    { className: wu },
+                                                    { className: pu },
                                                     a().createElement(j, {
-                                                        classMix: bu,
-                                                        text: Lu.vehTitle(),
+                                                        classMix: xu,
+                                                        text: Su.vehTitle(),
                                                         binding: {
-                                                            vehicleInfo: a().createElement(iu.e, {
+                                                            vehicleInfo: a().createElement(Fu.e, {
                                                                 vehicleInfo: E,
-                                                                theme: iu.b.Intro,
+                                                                theme: Fu.b.Intro,
                                                             }),
                                                         },
                                                     }),
                                                 ),
                                                 a().createElement(j, {
-                                                    classMix: pu,
-                                                    text: Lu.vehDescription(),
+                                                    classMix: fu,
+                                                    text: Su.vehDescription(),
                                                     binding: {
-                                                        topPlayers: a().createElement(K, {
+                                                        topPlayers: a().createElement(q, {
                                                             format: 'integral',
                                                             value: A,
                                                         }),
-                                                        basePlayers: a().createElement(K, {
+                                                        basePlayers: a().createElement(q, {
                                                             format: 'integral',
                                                             value: r,
                                                         }),
                                                     },
                                                 }),
                                             ),
-                                            a().createElement('div', { className: gu }),
+                                            a().createElement('div', { className: vu }),
                                             a().createElement(
                                                 $,
                                                 {
@@ -1616,23 +1621,23 @@
                                                                 return;
                                                         }
                                                     })(),
-                                                    mixClass: fu,
+                                                    mixClass: bu,
                                                     onClick: () => {
                                                         e();
                                                     },
                                                 },
-                                                Lu.button(),
+                                                Su.button(),
                                             ),
                                         ),
                                     ),
                                 ),
-                                a().createElement(ou, { onClick: t, className: xu }),
+                                a().createElement(lu, { onClick: t, className: Lu }),
                             )
                         );
                     };
                 engine.whenReady.then(() => {
                     P().render(
-                        a().createElement(k, null, a().createElement(Su, null)),
+                        a().createElement(H, null, a().createElement(yu, null)),
                         document.getElementById('root'),
                     );
                 });
@@ -1651,7 +1656,7 @@
                 }
                 ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());
                 var i = t(3649),
-                    F = t(6179),
+                    F = t(7363),
                     D = t.n(F);
                 const s = {
                     base: 'VehicleInfo_base_28',
@@ -1690,6 +1695,14 @@
                         r,
                     );
                 };
+            },
+            7363: (u) => {
+                'use strict';
+                u.exports = React;
+            },
+            1533: (u) => {
+                'use strict';
+                u.exports = ReactDOM;
             },
         },
         __webpack_module_cache__ = {},
@@ -1733,14 +1746,6 @@
                     !__webpack_require__.o(u, t) &&
                     Object.defineProperty(u, t, { enumerable: !0, get: e[t] });
         }),
-        (__webpack_require__.g = (function () {
-            if ('object' == typeof globalThis) return globalThis;
-            try {
-                return this || new Function('return this')();
-            } catch (u) {
-                if ('object' == typeof window) return window;
-            }
-        })()),
         (__webpack_require__.o = (u, e) => Object.prototype.hasOwnProperty.call(u, e)),
         (__webpack_require__.r = (u) => {
             'undefined' != typeof Symbol &&
@@ -1768,6 +1773,6 @@
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             t.forEach(e.bind(null, 0)), (t.push = e.bind(null, t.push.bind(t)));
         })();
-    var __webpack_exports__ = __webpack_require__.O(void 0, [52], () => __webpack_require__(1139));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [52], () => __webpack_require__(1459));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

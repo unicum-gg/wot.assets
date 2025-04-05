@@ -136,11 +136,15 @@
 .Message_base_12 {
     line-height: normal;
 }
+/* please use Separator component (gameface/src/views/lobby/battle_pass/tooltips/sharedComponents/Separator)*/
+/* instead of this one*/
 .Message_separator_9c {
     width: 283rem;
     height: 1rem;
     background: url('R.images.gui.maps.icons.battlePass.tooltips.Devider_points') 50% / contain no-repeat;
 }
+/* please use Rewards component (gameface/src/views/lobby/battle_pass/tooltips/sharedComponents/Rewards)*/
+/* instead of this one*/
 .Message_rewards_b8 {
     display: flex;
     flex-direction: column;
@@ -180,11 +184,15 @@
 .Content_base_c5 {
     line-height: normal;
 }
+/* please use Separator component (gameface/src/views/lobby/battle_pass/tooltips/sharedComponents/Separator)*/
+/* instead of this one*/
 .Content_separator_df {
     width: 283rem;
     height: 1rem;
     background: url('R.images.gui.maps.icons.battlePass.tooltips.Devider_points') 50% / contain no-repeat;
 }
+/* please use Rewards component (gameface/src/views/lobby/battle_pass/tooltips/sharedComponents/Rewards)*/
+/* instead of this one*/
 .Content_rewards_fc {
     display: flex;
     flex-direction: column;
@@ -270,11 +278,15 @@
 .CustomContent_base_08 {
     line-height: normal;
 }
+/* please use Separator component (gameface/src/views/lobby/battle_pass/tooltips/sharedComponents/Separator)*/
+/* instead of this one*/
 .CustomContent_separator_57 {
     width: 283rem;
     height: 1rem;
     background: url('R.images.gui.maps.icons.battlePass.tooltips.Devider_points') 50% / contain no-repeat;
 }
+/* please use Rewards component (gameface/src/views/lobby/battle_pass/tooltips/sharedComponents/Rewards)*/
+/* instead of this one*/
 .CustomContent_rewards_cd {
     display: flex;
     flex-direction: column;

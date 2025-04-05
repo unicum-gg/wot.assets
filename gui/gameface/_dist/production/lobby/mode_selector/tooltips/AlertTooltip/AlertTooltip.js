@@ -744,11 +744,11 @@
                         getFormattedDateTime: (u, e, A = !0) => regionalDateTime.getFormattedDateTime(u, e, A),
                     };
             },
-            6437: (u, e, A) => {
-                var E = A(6179),
-                    F = A.n(E),
-                    D = A(493),
-                    t = A.n(D),
+            1414: (u, e, A) => {
+                var E = A(7363),
+                    F = A.n(E);
+                const D = ReactDOM;
+                var t = A.n(D),
                     n = A(6483),
                     B = A.n(n),
                     r = A(1281);
@@ -939,16 +939,17 @@
                 const T = (u = 1) => {
                         const e = new Error().stack;
                         let A,
-                            E = R.invalid('resId');
-                        return (
-                            e &&
-                                ((A = e.split('\n')[u].split('.js')[0].split('/').pop() || ''),
-                                window.__feature &&
-                                    window.__feature !== A &&
-                                    window.subViews[A] &&
-                                    (E = window.subViews[A].id)),
-                            { caller: A, stack: e, resId: E }
-                        );
+                            E = R.invalid('resId'),
+                            F = '';
+                        var D;
+                        e &&
+                            ((F = (null == (D = e.match(/(coui:\/\/[^\s]+\.js)/)) ? void 0 : D[0]) || ''),
+                            (A = e.split('\n')[u].split('.js')[0].split('/').pop() || ''),
+                            window.__feature &&
+                                window.__feature !== A &&
+                                window.subViews[A] &&
+                                (E = window.subViews[A].id));
+                        return { callerUrl: F, caller: A, stack: e, resId: E };
                     },
                     P = (u, e) => u.split('.').reduce((u, e) => u && u[e], e),
                     k = (u) => {
@@ -984,67 +985,71 @@
                             );
                         }
                         return '';
-                    },
-                    N = O.Sw.instance;
-                let I;
+                    };
+                const N = () => (window.injected || (window.injected = new Map()), window.injected);
+                const I = O.Sw.instance;
+                let U;
                 !(function (u) {
                     (u.None = 'None'), (u.Shallow = 'Shallow'), (u.Deep = 'Deep');
-                })(I || (I = {}));
-                const V = (u = 'model', e = I.Deep) => {
+                })(U || (U = {}));
+                const V = (u = 'model', e = U.Deep) => {
                         const A = (0, E.useState)(0),
                             F = (A[0], A[1]),
                             D = (0, E.useMemo)(() => T(), []),
-                            t = D.caller,
-                            n = D.resId,
-                            B = (0, E.useMemo)(
-                                () => (window.__feature && window.__feature !== t ? `subViews.${t}.${u}` : u),
-                                [t, u],
-                            ),
-                            r = (0, E.useState)(() =>
+                            t = D.callerUrl,
+                            n = D.caller,
+                            B = D.resId,
+                            r = (0, E.useMemo)(() => {
+                                const e = (function (u) {
+                                    return N().has(u);
+                                })(t.replace('.js', '.html'));
+                                return window.__feature && window.__feature !== n && !e ? `subViews.${n}.${u}` : u;
+                            }, [t, n, u]),
+                            C = (0, E.useState)(() =>
                                 ((u) => {
                                     const e = P(u, window);
                                     for (const u in e) 'function' == typeof e[u] && (e[u] = e[u].bind(e));
                                     return x(e) ? e.value : e;
-                                })(M(B)),
+                                })(M(r)),
                             ),
-                            C = r[0],
-                            i = r[1],
-                            o = (0, E.useRef)(-1);
+                            i = C[0],
+                            o = C[1],
+                            a = (0, E.useRef)(-1);
                         return (
                             k(() => {
                                 if (
                                     ('boolean' == typeof e &&
-                                        ((e = e ? I.Deep : I.None),
+                                        ((e = e ? U.Deep : U.None),
                                         console.warn(
                                             'Boolean key for useModel "tracking" param is deprecated. Use ModelTracking enum values instead!',
                                         )),
-                                    e !== I.None)
+                                    e !== U.None)
                                 ) {
                                     const A = (u) => {
                                             ((u) => u && 'CoherentArrayProxy' === u.__proto__.constructor.name)(u) &&
-                                            e === I.Deep
-                                                ? (u === C && F((u) => u + 1), i(u))
-                                                : i(Object.assign([], u));
+                                            e === U.Deep
+                                                ? (u === i && F((u) => u + 1), o(u))
+                                                : o(Object.assign([], u));
                                         },
                                         E = L(u);
-                                    o.current = N.addCallback(E, A, n, e === I.Deep);
+                                    a.current = I.addCallback(E, A, B, e === U.Deep);
                                 }
                             }),
                             (0, E.useEffect)(() => {
-                                if (e !== I.None)
+                                if (e !== U.None)
                                     return () => {
-                                        N.removeCallback(o.current, n);
+                                        I.removeCallback(a.current, B);
                                     };
-                            }, [n, e]),
-                            C
+                            }, [B, e]),
+                            i
                         );
                     },
-                    U = (O.Sw.instance, 'AlertTooltipApp_base_a5'),
+                    j = (O.Sw.instance, 'AlertTooltipApp_base_a5'),
                     W = 'AlertTooltipApp_header_0e',
                     q = 'AlertTooltipApp_description_2e',
                     z = 'AlertTooltipApp_alertIcon_2c',
-                    j = 'AlertTooltipApp_alert_af',
-                    G = () => {
+                    G = 'AlertTooltipApp_alert_af',
+                    K = () => {
                         const u = V(),
                             e = u.header,
                             A = u.body,
@@ -1054,13 +1059,13 @@
                             null,
                             F().createElement(
                                 'div',
-                                { className: U },
+                                { className: j },
                                 F().createElement('div', { className: W }, e),
                                 F().createElement('div', { className: q }, F().createElement(w, { text: A })),
                                 E &&
                                     F().createElement(
                                         'div',
-                                        { className: j },
+                                        { className: G },
                                         F().createElement('span', { className: z }),
                                         F().createElement('div', null, F().createElement(w, { text: E })),
                                     ),
@@ -1068,8 +1073,11 @@
                         );
                     };
                 engine.whenReady.then(() => {
-                    t().render(F().createElement(G, null), document.getElementById('root'));
+                    t().render(F().createElement(K, null), document.getElementById('root'));
                 });
+            },
+            7363: (u) => {
+                u.exports = React;
             },
         },
         __webpack_module_cache__ = {},
@@ -1148,6 +1156,6 @@
                 A = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             A.forEach(e.bind(null, 0)), (A.push = e.bind(null, A.push.bind(A)));
         })();
-    var __webpack_exports__ = __webpack_require__.O(void 0, [705], () => __webpack_require__(6437));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [705], () => __webpack_require__(1414));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

@@ -547,19 +547,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     }
 }
 
-.WarningText_base_10 {
-    display: flex;
-    color: #ee7000;
-    text-align: center;
-}
-
-.WarningText_alertIcon_8f {
-    width: 16rem;
-    height: 16rem;
-    margin: 4rem 6rem 0 0;
-    background: url('R.images.gui.maps.icons.library.alertIcon') no-repeat 50% / contain;
-}
-
 .Currency_base_57 {
     display: flex;
     align-items: center;
@@ -699,6 +686,30 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .Currency_base__extraLarge_4d .Currency_icon__freeXP-extraLarge_58 {
     transform: translateY(4rem);
 }
+.Currency_icon__eliteXP-small_45 {
+    background-image: url('R.images.gui.maps.icons.library.EliteXpIcon-2');
+}
+.Currency_base__small_af .Currency_icon__eliteXP-small_45 {
+    transform: translateY(1rem);
+}
+.Currency_icon__eliteXP-big_c0 {
+    --icon-height: 24rem;
+    margin-left: -5rem;
+    background-image: url('R.images.gui.maps.icons.library.EliteXpIconBig');
+}
+.Currency_icon__eliteXP-large_1b {
+    --icon-height: 48rem;
+    margin: 0 -5rem 0 -6rem;
+    background-image: url('R.images.gui.maps.icons.library.elite_exp_48x48');
+}
+.Currency_icon__eliteXP-extraLarge_9b {
+    --icon-height: 80rem;
+    margin: 0 -5rem;
+    background-image: url('R.images.gui.maps.icons.library.elite_exp_80x80');
+}
+.Currency_base__extraLarge_4d .Currency_icon__eliteXP-extraLarge_9b {
+    transform: translateY(4rem);
+}
 .Currency_icon__equipCoin-small_32 {
     --icon-height: 16rem;
     margin-right: -2rem;
@@ -725,6 +736,34 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     background-image: url('R.images.gui.maps.icons.library.equipCoin_icon_80x80');
 }
 .Currency_base__extraLarge_4d .Currency_icon__equipCoin-extraLarge_8a {
+    transform: translateX(2rem) translateY(4rem);
+}
+.Currency_icon__stpCoin-small_6b {
+    --icon-height: 16rem;
+    margin-right: -2rem;
+    background-image: url('R.images.gui.maps.icons.library.stpcoin.stpcoinSmall');
+}
+.Currency_base__small_af .Currency_icon__stpCoin-small_6b {
+    transform: translateX(-1rem) translateY(1rem);
+}
+.Currency_icon__stpCoin-big_da {
+    --icon-height: 24rem;
+    background-image: url('R.images.gui.maps.icons.library.stpcoin.stpcoinBig');
+}
+.Currency_base__big_bc .Currency_icon__stpCoin-big_da {
+    transform: translateX(-5rem) translateY(3rem);
+}
+.Currency_icon__stpCoin-large_ee {
+    --icon-height: 48rem;
+    margin-right: 2rem;
+    background-image: url('R.images.gui.maps.icons.library.stpcoin.stpcoinLarge');
+}
+.Currency_icon__stpCoin-extraLarge_fa {
+    --icon-height: 80rem;
+    margin-right: 8rem;
+    background-image: url('R.images.gui.maps.icons.library.stpcoin.stpcoinExtraLarge');
+}
+.Currency_base__extraLarge_4d .Currency_icon__stpCoin-extraLarge_fa {
     transform: translateX(2rem) translateY(4rem);
 }
 .Currency_value_e1 {
@@ -768,7 +807,9 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 .Currency_value__xp_b0,
 .Currency_value__crystal_19,
-.Currency_value__equipCoin_d0 {
+.Currency_value__equipCoin_d0,
+.Currency_value__eliteXP_62,
+.Currency_value__stpCoin_38 {
     color: #c9c9b6;
 }
 .Currency_base__small_af .Currency_value__notEnough_56 {
@@ -1518,7 +1559,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     font-size: 16rem;
     font-weight: 400;
     line-height: 1.25;
-    margin-top: 21rem;
+    margin-top: 20rem;
 }
 
 .Divider_base_0a {
@@ -1617,11 +1658,11 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     width: 60rem;
 }
 
-.SkillEfficiency_arrow_11 {
+.SkillEfficiency_upgradeArrow_b1 {
     display: flex;
-    width: 57rem;
-    height: 96rem;
-    background: url('R.images.gui.maps.icons.windows.retrain_dialog.xp_arrow_small') no-repeat center / cover;
+    width: 50rem;
+    height: 84rem;
+    background: url('R.images.gui.maps.icons.windows.retrain_dialog.xp_arrow_up') no-repeat center / cover;
     opacity: 0;
     position: absolute;
     top: 0;
@@ -1633,9 +1674,30 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     pointer-events: none;
 }
 
-.SkillEfficiency_base__selected_8a .SkillEfficiency_arrow_11 {
+.SkillEfficiency_upgradeArrow__active_e9 {
     opacity: 1;
-    transform: translate(-50%, -63rem);
+    transform: translate(-50%, -52rem);
+}
+
+.SkillEfficiency_downgradeArrow_95 {
+    display: flex;
+    width: 50rem;
+    height: 62rem;
+    background: url('R.images.gui.maps.icons.windows.retrain_dialog.xp_arrow_down') no-repeat center / cover;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    transition:
+        opacity 0.1s ease-in-out,
+        transform 0.1s ease-in-out;
+    pointer-events: none;
+}
+
+.SkillEfficiency_downgradeArrow__active_9b {
+    opacity: 1;
+    transform: translate(-50%, -23rem);
 }
 
 .SkillEfficiency_glow_7b {
@@ -1675,7 +1737,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     text-shadow: 0 0 12rem #ff0000;
 }
 
-.SkillEfficiency_base__selected_8a .SkillEfficiency_efficiency_14,
+.SkillEfficiency_base__upgraded_bf .SkillEfficiency_efficiency_14,
 .SkillEfficiency_base__normal_2a .SkillEfficiency_efficiency_14 {
     color: #ffffff;
     text-shadow:
@@ -1883,20 +1945,13 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .mediaLarge .RetrainMassiveDialogApp_center_7c {
-    margin-bottom: -60rem;
+    margin-bottom: -127rem;
 }
 
-.RetrainMassiveDialogApp_content_34 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.RetrainMassiveDialogApp_warning_17 {
-    max-width: 720rem;
-    margin: -2rem 0 10rem;
+.RetrainMassiveDialogApp_title_29 {
+    margin-top: 2rem;
 }
 
 .RetrainMassiveDialogApp_priceList_cb {
-    margin-top: 5rem;
+    margin-top: 47rem;
 }

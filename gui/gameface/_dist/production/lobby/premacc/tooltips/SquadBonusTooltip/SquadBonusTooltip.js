@@ -696,7 +696,7 @@
                 var n = t(483),
                     r = t.n(n),
                     o = t(768),
-                    E = t(179),
+                    E = t(363),
                     i = t.n(E);
                 function F() {
                     const u = (0, E.useRef)(0);
@@ -795,7 +795,7 @@
                         )
                     );
                 });
-                var c = t(493),
+                var c = t(533),
                     l = t.n(c),
                     B = t(515);
                 const C = 'App_base_e0',
@@ -1215,15 +1215,20 @@
                                     ((u = 1) => {
                                         const e = new Error().stack;
                                         let t,
-                                            n = R.invalid('resId');
+                                            n = R.invalid('resId'),
+                                            r = '';
+                                        var o;
                                         return (
                                             e &&
-                                                ((t = e.split('\n')[u].split('.js')[0].split('/').pop() || ''),
+                                                ((r =
+                                                    (null == (o = e.match(/(coui:\/\/[^\s]+\.js)/)) ? void 0 : o[0]) ||
+                                                    ''),
+                                                (t = e.split('\n')[u].split('.js')[0].split('/').pop() || ''),
                                                 window.__feature &&
                                                     window.__feature !== t &&
                                                     window.subViews[t] &&
                                                     (n = window.subViews[t].id)),
-                                            { caller: t, stack: e, resId: n }
+                                            { callerUrl: r, caller: t, stack: e, resId: n }
                                         );
                                     })().resId,
                                 [_],
@@ -2051,6 +2056,12 @@
                         document.getElementById('root'),
                     );
                 });
+            },
+            363: (u) => {
+                u.exports = React;
+            },
+            533: (u) => {
+                u.exports = ReactDOM;
             },
         },
         __webpack_module_cache__ = {},

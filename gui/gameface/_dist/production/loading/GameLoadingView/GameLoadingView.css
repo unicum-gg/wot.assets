@@ -164,8 +164,8 @@
 }
 
 .LogoSlide_awards_62 {
-    width: 763rem;
-    height: 113rem;
+    width: 764rem;
+    height: 114rem;
     background: url('img://gui/maps/loading/awards.png') no-repeat center / cover;
     position: absolute;
     bottom: 20rem;
@@ -304,6 +304,31 @@
 
 .Content_info__china_7b {
     color: #fefeec;
+}
+
+.Content_logo_87 {
+    width: 186rem;
+    height: 50rem;
+    background: url('img://gui/maps/loading/wot_logo.png') no-repeat center / 100% 100%;
+    position: absolute;
+    top: 43rem;
+    left: 50rem;
+}
+
+@media (min-width: 1366px) and (min-height: 768px) {
+    .Content_logo_87 {
+        top: 61rem;
+        left: 100rem;
+    }
+}
+
+@media (min-width: 1600px) and (min-height: 900px) {
+    .Content_logo_87 {
+        width: 249rem;
+        height: 67rem;
+        background: url('img://gui/maps/loading/wot_logo_big.png') no-repeat center / 100% 100%;
+        left: 97rem;
+    }
 }
 
 @keyframes Content_fadeIn_e5 {

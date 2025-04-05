@@ -702,11 +702,15 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .VehicleList_base_b7 {
     line-height: normal;
 }
+/* please use Separator component (gameface/src/views/lobby/battle_pass/tooltips/sharedComponents/Separator)*/
+/* instead of this one*/
 .VehicleList_separator_f9 {
     width: 283rem;
     height: 1rem;
     background: url('R.images.gui.maps.icons.battlePass.tooltips.Devider_points') 50% / contain no-repeat;
 }
+/* please use Rewards component (gameface/src/views/lobby/battle_pass/tooltips/sharedComponents/Rewards)*/
+/* instead of this one*/
 .VehicleList_rewards_98 {
     display: flex;
     flex-direction: column;

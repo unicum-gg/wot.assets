@@ -744,7 +744,7 @@
                 var n = t(6483),
                     r = t.n(n),
                     o = t(3138),
-                    i = t(6179),
+                    i = t(7363),
                     a = t.n(i);
                 function s() {
                     const u = (0, i.useRef)(0);
@@ -843,7 +843,7 @@
                         )
                     );
                 });
-                var F = t(493),
+                var F = t(1533),
                     _ = t.n(F),
                     d = t(9916);
                 class D extends a().PureComponent {
@@ -883,10 +883,18 @@
                     'icon__freeXP-big': 'Currency_icon__freeXP-big_21',
                     'icon__freeXP-large': 'Currency_icon__freeXP-large_c8',
                     'icon__freeXP-extraLarge': 'Currency_icon__freeXP-extraLarge_58',
+                    'icon__eliteXP-small': 'Currency_icon__eliteXP-small_45',
+                    'icon__eliteXP-big': 'Currency_icon__eliteXP-big_c0',
+                    'icon__eliteXP-large': 'Currency_icon__eliteXP-large_1b',
+                    'icon__eliteXP-extraLarge': 'Currency_icon__eliteXP-extraLarge_9b',
                     'icon__equipCoin-small': 'Currency_icon__equipCoin-small_32',
                     'icon__equipCoin-big': 'Currency_icon__equipCoin-big_79',
                     'icon__equipCoin-large': 'Currency_icon__equipCoin-large_2c',
                     'icon__equipCoin-extraLarge': 'Currency_icon__equipCoin-extraLarge_8a',
+                    'icon__stpCoin-small': 'Currency_icon__stpCoin-small_6b',
+                    'icon__stpCoin-big': 'Currency_icon__stpCoin-big_da',
+                    'icon__stpCoin-large': 'Currency_icon__stpCoin-large_ee',
+                    'icon__stpCoin-extraLarge': 'Currency_icon__stpCoin-extraLarge_fa',
                     value: 'Currency_value_e1',
                     value__freeXP: 'Currency_value__freeXP_cb',
                     value__credits: 'Currency_value__credits_76',
@@ -894,6 +902,8 @@
                     value__xp: 'Currency_value__xp_b0',
                     value__crystal: 'Currency_value__crystal_19',
                     value__equipCoin: 'Currency_value__equipCoin_d0',
+                    value__eliteXP: 'Currency_value__eliteXP_62',
+                    value__stpCoin: 'Currency_value__stpCoin_38',
                     value__notEnough: 'Currency_value__notEnough_56',
                     stock: 'Currency_stock_87',
                     stock__indent: 'Currency_stock__indent_a1',
@@ -910,7 +920,9 @@
                             (u.crystal = 'crystal'),
                             (u.xp = 'xp'),
                             (u.freeXP = 'freeXP'),
-                            (u.equipCoin = 'equipCoin');
+                            (u.eliteXP = 'eliteXP'),
+                            (u.equipCoin = 'equipCoin'),
+                            (u.stpCoin = 'stpcoin');
                     })(p || (p = {})),
                     (function (u) {
                         (u.Red = 'RedActionBG'), (u.Blue = 'BlueActionBG');
@@ -1053,15 +1065,20 @@
                                     ((u = 1) => {
                                         const e = new Error().stack;
                                         let t,
-                                            n = R.invalid('resId');
+                                            n = R.invalid('resId'),
+                                            r = '';
+                                        var o;
                                         return (
                                             e &&
-                                                ((t = e.split('\n')[u].split('.js')[0].split('/').pop() || ''),
+                                                ((r =
+                                                    (null == (o = e.match(/(coui:\/\/[^\s]+\.js)/)) ? void 0 : o[0]) ||
+                                                    ''),
+                                                (t = e.split('\n')[u].split('.js')[0].split('/').pop() || ''),
                                                 window.__feature &&
                                                     window.__feature !== t &&
                                                     window.subViews[t] &&
                                                     (n = window.subViews[t].id)),
-                                            { caller: t, stack: e, resId: n }
+                                            { callerUrl: r, caller: t, stack: e, resId: n }
                                         );
                                     })().resId,
                                 [C],
@@ -1340,10 +1357,10 @@
                         bond: 'colors_bond_ce',
                         prom: 'colors_prom_83',
                     },
-                    H = 'renderers_noBreakWrapper_10',
-                    Y = 'renderers_lineBreak_b5',
-                    Z = 'renderers_newLine_bd',
-                    X = 'renderers_word_f3',
+                    X = 'renderers_noBreakWrapper_10',
+                    H = 'renderers_lineBreak_b5',
+                    Y = 'renderers_newLine_bd',
+                    Z = 'renderers_word_f3',
                     $ = (u) => ({ color: `#${u}` }),
                     Q = ({ elementList: u, textBlock: e, key: t }) => {
                         const n = e.colorTag;
@@ -1351,15 +1368,15 @@
                             ? K[n]
                                 ? a().createElement(
                                       'span',
-                                      { key: t, 'data-block-type': e.blockType, className: r()(X, K[n]) },
+                                      { key: t, 'data-block-type': e.blockType, className: r()(Z, K[n]) },
                                       u,
                                   )
                                 : a().createElement(
                                       'span',
-                                      { key: t, 'data-block-type': e.blockType, className: X, style: $(n) },
+                                      { key: t, 'data-block-type': e.blockType, className: Z, style: $(n) },
                                       u,
                                   )
-                            : a().createElement('span', { key: t, 'data-block-type': e.blockType, className: X }, u);
+                            : a().createElement('span', { key: t, 'data-block-type': e.blockType, className: Z }, u);
                     },
                     J = {
                         [V.Word]: Q,
@@ -1371,11 +1388,11 @@
                                 u.map((u) => a().createElement(a().Fragment, { key: t }, u)),
                             ),
                         [V.LineBreak]: ({ key: u }) =>
-                            a().createElement('span', { key: u, 'data-block-type': V.LineBreak, className: Y }),
+                            a().createElement('span', { key: u, 'data-block-type': V.LineBreak, className: H }),
                         [V.NewLine]: ({ elementList: u, key: e }) =>
-                            a().createElement('span', { key: e, 'data-block-type': V.NewLine, className: Z }, u),
+                            a().createElement('span', { key: e, 'data-block-type': V.NewLine, className: Y }, u),
                         [V.NoBreakWrapper]: ({ elementList: u, key: e }) =>
-                            a().createElement('span', { key: e, 'data-block-type': V.NoBreakWrapper, className: H }, u),
+                            a().createElement('span', { key: e, 'data-block-type': V.NoBreakWrapper, className: X }, u),
                     },
                     uu = (u, e, t) => {
                         const n = [];
@@ -2055,6 +2072,12 @@
                         document.getElementById('root'),
                     );
                 });
+            },
+            7363: (u) => {
+                u.exports = React;
+            },
+            1533: (u) => {
+                u.exports = ReactDOM;
             },
         },
         __webpack_module_cache__ = {},

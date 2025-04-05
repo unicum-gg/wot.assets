@@ -4,7 +4,7 @@
                 'use strict';
                 t.d(e, { Y: () => c });
                 var a = t(3138),
-                    n = t(6179),
+                    n = t(7363),
                     i = t(1043),
                     r = t(5262);
                 const s = a.O.client.getSize('rem'),
@@ -18,7 +18,7 @@
                 t.d(e, { Z: () => E });
                 var a = t(3138),
                     n = t(6536),
-                    i = t(6179),
+                    i = t(7363),
                     r = t.n(i),
                     s = t(3495),
                     l = t(1043),
@@ -53,7 +53,7 @@
             },
             6010: (u, e, t) => {
                 'use strict';
-                var a = t(6179),
+                var a = t(7363),
                     n = t(7382),
                     i = t(3495);
                 const r = ['children'];
@@ -606,7 +606,7 @@
             6536: (u, e, t) => {
                 'use strict';
                 t.d(e, { Z: () => n });
-                var a = t(6179);
+                var a = t(7363);
                 const n = (u) => {
                     const e = (0, a.useRef)(!1);
                     e.current || (u(), (e.current = !0));
@@ -615,7 +615,7 @@
             5415: (u, e, t) => {
                 'use strict';
                 t.d(e, { Aq: () => l, GS: () => o, cJ: () => r, fd: () => s });
-                var a = t(6179),
+                var a = t(7363),
                     n = t(7739),
                     i = t(1043);
                 let r, s, l;
@@ -1172,9 +1172,9 @@
             },
             6511: (u, e, t) => {
                 'use strict';
-                var a = t(6179),
+                var a = t(7363),
                     n = t.n(a),
-                    i = t(493),
+                    i = t(1533),
                     r = t.n(i),
                     s = t(7739),
                     l = t(6483),
@@ -1284,7 +1284,7 @@
                     return !1;
                 }
                 console.log;
-                var s = t(6179),
+                var s = t(7363),
                     l = t.n(s),
                     o = t(3138);
                 function E(u, e) {
@@ -1676,7 +1676,7 @@
             1235: (u, e, t) => {
                 'use strict';
                 t.d(e, { L: () => k });
-                var a = t(6179),
+                var a = t(7363),
                     n = t.n(a),
                     i = t(3403),
                     r = t(9155),
@@ -1726,66 +1726,67 @@
                     w = 'HintContainer_divider_12',
                     b = 'Hint_base_e2',
                     S = 'Hint_description_a5',
-                    x = 'Hint_counter_be',
-                    y = {
+                    x = 'Hint_counter_be';
+                var y = t(7030);
+                const L = {
                         base: 'HintButton_base_19',
+                        base__small: 'HintButton_base__small_63',
+                        btnInner: 'HintButton_btnInner_e4',
                         btnOuter: 'HintButton_btnOuter_f9',
                         btnOuter__blink: 'HintButton_btnOuter__blink_e7',
                         animationContainer: 'HintButton_animationContainer_c5',
                         buttonContainer: 'HintButton_buttonContainer_2a',
-                        btnInner: 'HintButton_btnInner_e4',
                         btnInner__blink: 'HintButton_btnInner__blink_75',
-                    };
-                var L = t(7030);
-                const I = ({ btnText: u, hasBlinkAnimation: e = !1, isBlinking: t = !1 }) => {
-                    const i = (0, a.useState)(!1),
-                        r = i[0],
-                        s = i[1],
-                        o = l()(y.btnOuter, y.btnOuter__blink),
-                        E = l()(y.btnInner, y.btnInner__blink),
-                        c = (0, L.useSpring)({
-                            loop: !0,
-                            reset: r,
-                            from: { opacity: 0, transform: 'scale(1)' },
-                            to: r
-                                ? [
-                                      { opacity: 0, transform: 'scale(1)', config: { duration: 150 } },
-                                      { opacity: 1, transform: 'scale(1)', config: { duration: 150 } },
-                                      { opacity: 0, transform: 'scale(1.4)', config: { duration: 250 } },
-                                  ]
-                                : { opacity: 0, transform: 'scale(1)' },
-                            delay: 700,
-                        });
-                    return (
-                        (0, a.useEffect)(() => {
-                            s(!!t);
-                        }, [t]),
-                        n().createElement(
-                            'div',
-                            { className: y.base },
+                    },
+                    I = ({ btnText: u, hasBlinkAnimation: e = !1, isBlinking: t = !1, isSmall: i = !1 }) => {
+                        const r = (0, a.useState)(!1),
+                            s = r[0],
+                            o = r[1],
+                            E = l()(L.btnOuter, L.btnOuter__blink),
+                            c = l()(L.btnInner, L.btnInner__blink),
+                            A = (0, y.useSpring)({
+                                loop: !0,
+                                reset: s,
+                                from: { opacity: 0, transform: 'scale(1)' },
+                                to: s
+                                    ? [
+                                          { opacity: 0, transform: 'scale(1)', config: { duration: 150 } },
+                                          { opacity: 1, transform: 'scale(1)', config: { duration: 150 } },
+                                          { opacity: 0, transform: 'scale(1.4)', config: { duration: 250 } },
+                                      ]
+                                    : { opacity: 0, transform: 'scale(1)' },
+                                delay: 700,
+                            });
+                        return (
+                            (0, a.useEffect)(() => {
+                                o(!!t);
+                            }, [t]),
                             n().createElement(
                                 'div',
-                                { className: y.btnContainer },
+                                { className: l()(L.base, i && L.__small) },
                                 n().createElement(
                                     'div',
-                                    { className: y.btnOuter },
-                                    n().createElement('div', { className: y.btnInner }, u),
-                                ),
-                            ),
-                            e &&
-                                t &&
-                                n().createElement(
-                                    L.animated.div,
-                                    { className: y.animationContainer, style: c },
+                                    { className: L.btnContainer },
                                     n().createElement(
                                         'div',
-                                        { className: o },
-                                        n().createElement('div', { className: E }, u),
+                                        { className: L.btnOuter },
+                                        n().createElement('div', { className: L.btnInner }, u),
                                     ),
                                 ),
-                        )
-                    );
-                };
+                                e &&
+                                    t &&
+                                    n().createElement(
+                                        y.animated.div,
+                                        { className: L.animationContainer, style: A },
+                                        n().createElement(
+                                            'div',
+                                            { className: E },
+                                            n().createElement('div', { className: c }, u),
+                                        ),
+                                    ),
+                            )
+                        );
+                    };
                 var P = t(3649);
                 const T = 'FormatText_base_d0',
                     O = ({
@@ -1865,7 +1866,7 @@
             907: (u, e, t) => {
                 'use strict';
                 t.d(e, { g: () => Eu });
-                var a = t(6179),
+                var a = t(7363),
                     n = t.n(a),
                     i = t(3403),
                     r = t(5415),
@@ -3183,6 +3184,14 @@
                             (u.legacyHE = 'legacyHE'),
                             (u.modernHE = 'modernHE');
                     })(s || (s = {}));
+            },
+            7363: (u) => {
+                'use strict';
+                u.exports = React;
+            },
+            1533: (u) => {
+                'use strict';
+                u.exports = ReactDOM;
             },
         },
         __webpack_module_cache__ = {},

@@ -743,7 +743,7 @@
             },
             6583: (u, e, t) => {
                 t.d(e, { e: () => F });
-                var n = t(6179),
+                var n = t(7363),
                     r = t.n(n),
                     a = t(6483),
                     i = t.n(a);
@@ -784,9 +784,9 @@
                     };
             },
             6482: (u, e, t) => {
-                var n = t(6179),
+                var n = t(7363),
                     r = t.n(n),
-                    a = t(493),
+                    a = t(1533),
                     i = t.n(a),
                     o = t(6483),
                     E = t.n(o),
@@ -1122,8 +1122,8 @@
                     T = 'Content_separator_af',
                     P = 'Content_base__big_a6',
                     k = 'Content_base__small_39',
-                    S = 'Content_title_07',
-                    x = 'Content_titleLabel_ba';
+                    x = 'Content_title_07',
+                    S = 'Content_titleLabel_ba';
                 t(1281);
                 let N;
                 function L(u, e) {
@@ -1267,10 +1267,10 @@
                             { className: E()(O, A ? k : P) },
                             r().createElement(
                                 'div',
-                                { className: S },
+                                { className: x },
                                 r().createElement(
                                     'div',
-                                    { className: x },
+                                    { className: S },
                                     R.strings.battle_pass.tooltips.vehiclePoints.title(),
                                 ),
                                 r().createElement(g.e, {
@@ -1305,7 +1305,7 @@
             },
             351: (u, e, t) => {
                 t.d(e, { E: () => A });
-                var n = t(6179),
+                var n = t(7363),
                     r = t.n(n);
                 const a = 'BlockCompleted_separator_c8',
                     i = 'BlockCompleted_whiteBg_52',
@@ -1340,7 +1340,7 @@
                 t.d(e, { c: () => E });
                 var n = t(6483),
                     r = t.n(n),
-                    a = t(6179),
+                    a = t(7363),
                     i = t.n(a),
                     o = t(401);
                 const E = ({
@@ -1372,7 +1372,7 @@
             },
             4890: (u, e, t) => {
                 t.d(e, { E: () => s });
-                var n = t(6179),
+                var n = t(7363),
                     r = t.n(n);
                 const a = 'Point_base_e9',
                     i = 'Point_points_2a',
@@ -1400,6 +1400,12 @@
                     label__table: 'styles_label__table_9e',
                     pointsColumn: 'styles_pointsColumn_20',
                 };
+            },
+            7363: (u) => {
+                u.exports = React;
+            },
+            1533: (u) => {
+                u.exports = ReactDOM;
             },
         },
         __webpack_module_cache__ = {},

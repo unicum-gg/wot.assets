@@ -1,11 +1,15 @@
 .Content_base_2e {
     line-height: normal;
 }
+/* please use Separator component (gameface/src/views/lobby/battle_pass/tooltips/sharedComponents/Separator)*/
+/* instead of this one*/
 .Content_separator_0e {
     width: 283rem;
     height: 1rem;
     background: url('R.images.gui.maps.icons.battlePass.tooltips.Devider_points') 50% / contain no-repeat;
 }
+/* please use Rewards component (gameface/src/views/lobby/battle_pass/tooltips/sharedComponents/Rewards)*/
+/* instead of this one*/
 .Content_rewards_c9 {
     display: flex;
     flex-direction: column;

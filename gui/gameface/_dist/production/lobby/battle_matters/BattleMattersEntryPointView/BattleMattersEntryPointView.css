@@ -55,6 +55,30 @@
     in JS 8000 reserved like anchor for start optimization
 */
 /* stylelint-disable-line */
+.ProgressBarDeltaSimple_base_6c {
+    width: 0;
+    height: 100%;
+    position: absolute;
+    top: 0;
+}
+.ProgressBarDeltaSimple_delta_99 {
+    width: 0;
+    max-width: 8001px;
+    height: 100%;
+    box-shadow: var(--progress-delta-shadow);
+    background-color: var(--progress-delta-color);
+    position: absolute;
+    bottom: 0;
+    transform-origin: right center;
+    transition-timing-function: cubic-bezier(1, 0, 0.92, 1), cubic-bezier(0.21, 0.61, 0.35, 1);
+    transition-property: width, transform;
+}
+
+/*
+    Gameface can't calculate gradient biggest than 8128px
+    in JS 8000 reserved like anchor for start optimization
+*/
+/* stylelint-disable-line */
 .ProgressLineImpose_base_80 {
     max-width: 8001px;
     height: 100%;
@@ -139,30 +163,6 @@
     width: 44rem;
     height: 43rem;
     background-image: var(--progress-glow-small);
-}
-
-/*
-    Gameface can't calculate gradient biggest than 8128px
-    in JS 8000 reserved like anchor for start optimization
-*/
-/* stylelint-disable-line */
-.ProgressBarDeltaSimple_base_6c {
-    width: 0;
-    height: 100%;
-    position: absolute;
-    top: 0;
-}
-.ProgressBarDeltaSimple_delta_99 {
-    width: 0;
-    max-width: 8001px;
-    height: 100%;
-    box-shadow: var(--progress-delta-shadow);
-    background-color: var(--progress-delta-color);
-    position: absolute;
-    bottom: 0;
-    transform-origin: right center;
-    transition-timing-function: cubic-bezier(1, 0, 0.92, 1), cubic-bezier(0.21, 0.61, 0.35, 1);
-    transition-property: width, transform;
 }
 
 /*
@@ -351,14 +351,14 @@
     justify-content: center;
     width: 100%;
     position: absolute;
-    top: 21rem;
+    top: 10rem;
     left: 0;
     animation: App_headerAppear_57 0.2s ease-in 0.2s backwards;
 }
 .App_progress_ad {
-    width: 70%;
+    width: 48rem;
     position: absolute;
-    top: 65rem;
+    top: 62rem;
     animation: App_footerAppear_9a 0.2s ease-out 0.4s backwards;
 }
 .App_blinkContainer_69 {
@@ -495,10 +495,9 @@
 
 .Level_base_5f {
     color: #fd9;
-    font-size: 18rem;
+    font-size: 24rem;
     font-weight: 700;
-    line-height: 1.1;
-    font-size: 16rem;
+    line-height: 1.2;
     text-shadow:
         0 0 1rem #001128,
         0 1rem 2rem #001128,

@@ -2,11 +2,11 @@
     'use strict';
     var __webpack_modules__ = {
             6373: (u, e, F) => {
-                F(2056), F(6179);
+                F(2056), F(7363);
                 R.views.common.tooltip_window.simple_tooltip_content;
             },
             2056: (u, e, F) => {
-                F(4179), F(6179);
+                F(4179), F(7363);
             },
             527: (u, e, F) => {
                 F.r(e),
@@ -767,12 +767,15 @@
                 window.ViewEnvHelper = b;
             },
             5668: (u, e, F) => {
-                F(6483), F(6373), F(3649), F(6179);
+                F(6483), F(6373), F(3649), F(7363);
                 R.strings.seniority_awards.specialItem;
                 let A;
                 !(function (u) {
                     (u.Large = 'large'), (u.Medium = 'medium'), (u.Small = 'small'), (u.ExtraSmall = 'extraSmall');
                 })(A || (A = {}));
+            },
+            7363: (u) => {
+                u.exports = React;
             },
         },
         __webpack_module_cache__ = {},

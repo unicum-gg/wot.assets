@@ -62,12 +62,12 @@
                         getFontNames: () => J,
                         getScale: () => V,
                         getSize: () => N,
-                        getViewGlobalPosition: () => U,
+                        getViewGlobalPosition: () => G,
                         isEventHandled: () => X,
                         isFocused: () => K,
                         pxToRem: () => $,
                         remToPx: () => z,
-                        resize: () => G,
+                        resize: () => U,
                         sendEvent: () => M,
                         setAnimateWindow: () => q,
                         setEventHandled: () => Y,
@@ -263,10 +263,10 @@
                 function N(u = 'px') {
                     return 'rem' === u ? viewEnv.getViewSizeRem() : viewEnv.getViewSizePx();
                 }
-                function G(u, e, t = 'px') {
+                function U(u, e, t = 'px') {
                     return 'rem' === t ? viewEnv.resizeViewRem(u, e) : viewEnv.resizeViewPx(u, e);
                 }
-                function U(u = 'rem') {
+                function G(u = 'rem') {
                     const e = viewEnv.getViewGlobalPositionRem();
                     return 'rem' === u ? e : { x: z(e.x), y: z(e.y) };
                 }
@@ -725,11 +725,11 @@
                         getFormattedDateTime: (u, e, t = !0) => regionalDateTime.getFormattedDateTime(u, e, t),
                     };
             },
-            271: (u, e, t) => {
+            13: (u, e, t) => {
                 'use strict';
-                var n = t(179),
+                var n = t(363),
                     r = t.n(n),
-                    a = t(493),
+                    a = t(533),
                     i = t.n(a);
                 const o = (u, e, t) =>
                     e.extraLargeHeight || e.largeHeight || e.mediumHeight || e.smallHeight || e.extraSmallHeight
@@ -1085,14 +1085,14 @@
                         Array.isArray(u) ||
                         (t = (function (u, e) {
                             if (u) {
-                                if ('string' == typeof u) return G(u, e);
+                                if ('string' == typeof u) return U(u, e);
                                 var t = {}.toString.call(u).slice(8, -1);
                                 return (
                                     'Object' === t && u.constructor && (t = u.constructor.name),
                                     'Map' === t || 'Set' === t
                                         ? Array.from(u)
                                         : 'Arguments' === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t)
-                                          ? G(u, e)
+                                          ? U(u, e)
                                           : void 0
                                 );
                             }
@@ -1109,12 +1109,12 @@
                         'Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.',
                     );
                 }
-                function G(u, e) {
+                function U(u, e) {
                     (null == e || e > u.length) && (e = u.length);
                     for (var t = 0, n = Array(e); t < e; t++) n[t] = u[t];
                     return n;
                 }
-                const U = (u) => (0 === u ? window : window.subViews.get(u));
+                const G = (u) => (0 === u ? window : window.subViews.get(u));
                 var j = t(946);
                 const V = (u, e) =>
                         Object.keys(u).length === Object.keys(e).length &&
@@ -1129,7 +1129,7 @@
                                         const i = (function ({
                                                 initializer: u = !0,
                                                 rootId: e = 0,
-                                                getRoot: t = U,
+                                                getRoot: t = G,
                                                 context: n = 'model',
                                             } = {}) {
                                                 const r = new Map();
@@ -1503,7 +1503,7 @@
                         height: 170,
                         frameCount: 136,
                         chunk: { count: 1, rows: 20, columns: 7 },
-                        getChunkPath: () => 'R.images.gui.maps.icons.comp7.banner.particles_sequence',
+                        getChunkPath: () => 'R.images.gui.maps.icons.sequence.smoke.particles_sequence',
                     },
                     Eu = (function (u) {
                         const e = u.chunk,
@@ -1761,15 +1761,20 @@
                                     ((u = 1) => {
                                         const e = new Error().stack;
                                         let t,
-                                            n = R.invalid('resId');
+                                            n = R.invalid('resId'),
+                                            r = '';
+                                        var a;
                                         return (
                                             e &&
-                                                ((t = e.split('\n')[u].split('.js')[0].split('/').pop() || ''),
+                                                ((r =
+                                                    (null == (a = e.match(/(coui:\/\/[^\s]+\.js)/)) ? void 0 : a[0]) ||
+                                                    ''),
+                                                (t = e.split('\n')[u].split('.js')[0].split('/').pop() || ''),
                                                 window.__feature &&
                                                     window.__feature !== t &&
                                                     window.subViews[t] &&
                                                     (n = window.subViews[t].id)),
-                                            { caller: t, stack: e, resId: n }
+                                            { callerUrl: r, caller: t, stack: e, resId: n }
                                         );
                                     })().resId,
                                 [B],
@@ -2022,6 +2027,14 @@
                     );
                 });
             },
+            363: (u) => {
+                'use strict';
+                u.exports = React;
+            },
+            533: (u) => {
+                'use strict';
+                u.exports = ReactDOM;
+            },
         },
         __webpack_module_cache__ = {},
         deferred;
@@ -2099,6 +2112,6 @@
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             t.forEach(e.bind(null, 0)), (t.push = e.bind(null, t.push.bind(t)));
         })();
-    var __webpack_exports__ = __webpack_require__.O(void 0, [320], () => __webpack_require__(271));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [320], () => __webpack_require__(13));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

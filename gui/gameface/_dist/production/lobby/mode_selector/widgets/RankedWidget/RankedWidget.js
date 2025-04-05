@@ -2,12 +2,12 @@
     'use strict';
     var __webpack_modules__ = {
             280: (u, e, t) => {
-                t(6483), t(3649), t(6179), t(5287);
+                t(6483), t(3649), t(7363), t(5287);
             },
             3495: (u, e, t) => {
                 t.d(e, { Y: () => l });
                 var a = t(3138),
-                    n = t(6179),
+                    n = t(7363),
                     i = t(1043),
                     r = t(5262);
                 const E = a.O.client.getSize('rem'),
@@ -17,10 +17,10 @@
                     l = (0, n.createContext)(o);
             },
             1039: (u, e, t) => {
-                t(3138), t(6536), t(6179), t(3495), t(1043), t(5262);
+                t(3138), t(6536), t(7363), t(3495), t(1043), t(5262);
             },
             6010: (u, e, t) => {
-                var a = t(6179),
+                var a = t(7363),
                     n = t(7382),
                     i = t(3495);
                 const r = ['children'];
@@ -193,7 +193,7 @@
             },
             7078: (u, e, t) => {
                 t.d(e, { t: () => F });
-                var a = t(6179),
+                var a = t(7363),
                     n = t.n(a),
                     i = t(2056);
                 const r = ['children'];
@@ -240,14 +240,14 @@
                 };
             },
             6373: (u, e, t) => {
-                t(2056), t(6179);
+                t(2056), t(7363);
                 R.views.common.tooltip_window.simple_tooltip_content;
             },
             2056: (u, e, t) => {
                 t.d(e, { u: () => A });
                 var a = t(7902),
                     n = t(9916),
-                    i = t(6179);
+                    i = t(7363);
                 const r = [
                     'children',
                     'contentId',
@@ -753,23 +753,24 @@
                 const a = (u = 1) => {
                     const e = new Error().stack;
                     let t,
-                        a = R.invalid('resId');
-                    return (
-                        e &&
-                            ((t = e.split('\n')[u].split('.js')[0].split('/').pop() || ''),
-                            window.__feature &&
-                                window.__feature !== t &&
-                                window.subViews[t] &&
-                                (a = window.subViews[t].id)),
-                        { caller: t, stack: e, resId: a }
-                    );
+                        a = R.invalid('resId'),
+                        n = '';
+                    var i;
+                    e &&
+                        ((n = (null == (i = e.match(/(coui:\/\/[^\s]+\.js)/)) ? void 0 : i[0]) || ''),
+                        (t = e.split('\n')[u].split('.js')[0].split('/').pop() || ''),
+                        window.__feature &&
+                            window.__feature !== t &&
+                            window.subViews[t] &&
+                            (a = window.subViews[t].id));
+                    return { callerUrl: n, caller: t, stack: e, resId: a };
                 };
             },
             6536: (u, e, t) => {
-                t(6179);
+                t(7363);
             },
             9924: (u, e, t) => {
-                t(6483), t(7739), t(5262), t(6179), t(3649);
+                t(6483), t(7739), t(5262), t(7363), t(3649);
             },
             5521: (u, e, t) => {
                 let a, n;
@@ -1190,7 +1191,7 @@
                     };
             },
             8188: (u, e, t) => {
-                t(280), t(6179), t(8487);
+                t(280), t(7363), t(8487);
             },
             3486: (u, e, t) => {
                 let a, n;
@@ -1210,7 +1211,7 @@
             5611: (u, e, t) => {
                 var a = t(6483),
                     n = t.n(a),
-                    i = (t(7739), t(9924), t(6179)),
+                    i = (t(7739), t(9924), t(7363)),
                     r = t.n(i),
                     E = (t(8188), t(3486), t(7078)),
                     F = t(2646),
@@ -1464,6 +1465,9 @@
             },
             5287: () => {},
             8487: () => {},
+            7363: (u) => {
+                u.exports = React;
+            },
         },
         __webpack_module_cache__ = {},
         deferred;

@@ -87,7 +87,7 @@
                         setRTPC: () => E.E,
                     });
                 var n = t(527),
-                    E = t(993);
+                    E = t(493);
                 function A(u = 'px') {
                     return 'rem' === u ? viewEnv.getClientSizeRem() : viewEnv.getClientSizePx();
                 }
@@ -106,7 +106,7 @@
                 }
                 t.d(e, { R: () => n });
             },
-            993: (u, e, t) => {
+            493: (u, e, t) => {
                 function n(u) {
                     engine.call('PlaySound', u).catch((e) => {
                         console.error(`playSound('${u}'): `, e);
@@ -456,7 +456,7 @@
             572: (__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
                 __webpack_require__.d(__webpack_exports__, { Z: () => __WEBPACK_DEFAULT_EXPORT__ });
                 var _DataTracker__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(358),
-                    _index__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(364);
+                    _index__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(179);
                 class ViewModel {
                     constructor(path, watchingFields = []) {
                         (this.dataTracker = void 0),
@@ -495,7 +495,7 @@
                 }
                 const __WEBPACK_DEFAULT_EXPORT__ = ViewModel;
             },
-            364: (u, e, t) => {
+            179: (u, e, t) => {
                 t.d(e, { B0: () => o, ry: () => _, Eu: () => v, Sy: () => w });
                 class n {
                     constructor() {
@@ -738,9 +738,9 @@
                 window.ViewEnvHelper = f;
             },
             875: (u, e, t) => {
-                var n = t(179),
+                var n = t(363),
                     E = t.n(n),
-                    A = t(493),
+                    A = t(533),
                     F = t.n(A),
                     r = t(483),
                     o = t.n(r);
@@ -977,7 +977,7 @@
                             ),
                         );
                     };
-                var O = t(364);
+                var O = t(179);
                 const k = [
                     'children',
                     'contentId',
@@ -1063,15 +1063,20 @@
                                     ((u = 1) => {
                                         const e = new Error().stack;
                                         let t,
-                                            n = R.invalid('resId');
+                                            n = R.invalid('resId'),
+                                            E = '';
+                                        var A;
                                         return (
                                             e &&
-                                                ((t = e.split('\n')[u].split('.js')[0].split('/').pop() || ''),
+                                                ((E =
+                                                    (null == (A = e.match(/(coui:\/\/[^\s]+\.js)/)) ? void 0 : A[0]) ||
+                                                    ''),
+                                                (t = e.split('\n')[u].split('.js')[0].split('/').pop() || ''),
                                                 window.__feature &&
                                                     window.__feature !== t &&
                                                     window.subViews[t] &&
                                                     (n = window.subViews[t].id)),
-                                            { caller: t, stack: e, resId: n }
+                                            { callerUrl: E, caller: t, stack: e, resId: n }
                                         );
                                     })().resId,
                                 [_],
@@ -1209,7 +1214,7 @@
                 const V = (u) => {
                         (0, n.useEffect)(u, []);
                     },
-                    H = {
+                    U = {
                         base: 'PopoverDecorator_base_ed',
                         decorator: 'PopoverDecorator_decorator_d3',
                         arrow: 'PopoverDecorator_arrow_8a',
@@ -1220,7 +1225,7 @@
                         closeBtn: 'PopoverDecorator_closeBtn_32',
                         content: 'PopoverDecorator_content_f0',
                     };
-                function U() {
+                function H() {
                     const u = (0, n.useRef)(0);
                     var e;
                     return (
@@ -1271,7 +1276,7 @@
                                 l = (0, n.useCallback)(() => {
                                     D.playHighlight();
                                 }, []),
-                                d = o()(H.arrow, H[`arrow${z[B]}`]);
+                                d = o()(U.arrow, U[`arrow${z[B]}`]);
                             V(
                                 () => (
                                     I.O.client.events.mouse.enableOutside(),
@@ -1302,7 +1307,7 @@
                                     },
                                     [r, a, t],
                                 ),
-                                v = U(),
+                                v = H(),
                                 m = (0, n.useCallback)(() => {
                                     const u = i.current;
                                     if (u)
@@ -1342,13 +1347,13 @@
                                 }, [m, _, e]),
                                 E().createElement(
                                     'div',
-                                    { className: H.base, ref: i },
+                                    { className: U.base, ref: i },
                                     E().createElement(
                                         'div',
-                                        { className: H.decorator },
+                                        { className: U.decorator },
                                         E().createElement(
                                             'div',
-                                            { className: H.content, ref: r },
+                                            { className: U.content, ref: r },
                                             u,
                                             window.decorator &&
                                                 window.decorator.isCloseBtnVisible &&
@@ -1356,7 +1361,7 @@
                                                     N,
                                                     { body: R.strings.dialogs.common.error.cancel() },
                                                     E().createElement('div', {
-                                                        className: H.closeBtn,
+                                                        className: U.closeBtn,
                                                         onClick: c,
                                                         onMouseEnter: l,
                                                         ref: a,
@@ -1682,6 +1687,12 @@
                         document.getElementById('root'),
                     );
                 });
+            },
+            363: (u) => {
+                u.exports = React;
+            },
+            533: (u) => {
+                u.exports = ReactDOM;
             },
         },
         __webpack_module_cache__ = {},

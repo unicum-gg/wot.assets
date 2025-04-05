@@ -11,6 +11,62 @@
     position: relative;
 }
 
+.App_base_8a {
+    display: flex;
+    flex-direction: column;
+    width: 404rem;
+    padding: 22rem 24rem;
+}
+
+.App_base__double_95 {
+    width: 538rem;
+}
+
+.App_header_3c {
+    padding: 0 0 28rem 56rem;
+    position: relative;
+}
+
+.App_icon_10 {
+    width: 48rem;
+    height: 48rem;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: 100% 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.App_title_a8 {
+    color: #e9e2bf;
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 4rem;
+}
+
+.App_description_69 {
+    color: #8c8c7e;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+.App_content_ef {
+    display: flex;
+    flex-direction: column;
+    padding-left: 56rem;
+}
+
+.App_base__double_95 .App_content_ef {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-left: 0;
+}
+
 .FormatText_base_d0 {
     display: flex;
     flex-wrap: wrap;
@@ -146,6 +202,7 @@
     line-height: 1.3;
     margin-top: -13rem;
     text-align: center;
+    position: relative;
     z-index: 1;
 }
 
@@ -172,6 +229,7 @@
     color: #ffc363;
 }
 
+.Reward_info__bptaler_82,
 .Reward_info__crystal_36 {
     color: #c9c9b6;
 }
@@ -225,74 +283,18 @@
     right: -14rem;
 }
 
-.App_base_8a {
-    display: flex;
-    flex-direction: column;
-    width: 404rem;
-    padding: 22rem 24rem;
-}
-
-.App_base__double_95 {
-    width: 538rem;
-}
-
-.App_header_3c {
-    padding: 0 0 28rem 56rem;
+.LootBoxReward_base_b1 {
+    width: 240rem;
     position: relative;
 }
 
-.App_icon_10 {
-    width: 48rem;
-    height: 48rem;
-    background-repeat: no-repeat;
-    background-position: 0 0;
-    background-size: 100% 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-.App_title_a8 {
-    color: #e9e2bf;
-    font-size: 18rem;
-    font-weight: 700;
-    line-height: 1.1;
-    margin-bottom: 4rem;
-}
-
-.App_description_69 {
-    color: #8c8c7e;
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
-}
-
-.App_content_ef {
-    display: flex;
-    flex-direction: column;
-    padding-left: 56rem;
-}
-
-.App_base__double_95 .App_content_ef {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding-left: 0;
-}
-
-.App_wrapper_9b {
-    max-width: 240rem;
-    position: relative;
-}
-
-.App_base__double_95 .App_wrapper_9b {
+.LootBoxReward_base__double_21 .LootBoxReward_base_b1 {
     display: flex;
     flex-direction: column;
     width: 50%;
 }
 
-.App_item_90 {
+.LootBoxReward_item_98 {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -302,18 +304,22 @@
     position: relative;
 }
 
-.App_item__separator_4a {
+.LootBoxReward_item__separator_75 {
     margin-top: 14rem;
 }
 
-.App_reward_64 {
+.LootBoxReward_rewardWrapper_31 {
     position: absolute;
     top: 50%;
     left: 0;
     transform: translateY(-50%);
 }
 
-.App_label_38 {
+.LootBoxReward_reward__withCurrency_72 {
+    margin-bottom: 14rem;
+}
+
+.LootBoxReward_label_4e {
     color: #8c8c7e;
     font-size: 14rem;
     font-weight: 400;
@@ -321,14 +327,14 @@
     margin-bottom: 2rem;
 }
 
-.App_percent_ed {
+.LootBoxReward_percent_52 {
     color: #595950;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
 }
 
-.App_separator_fc {
+.LootBoxReward_separator_4e {
     width: 283rem;
     height: 1rem;
     background: url('R.images.gui.maps.icons.battlePass.tooltips.Devider_points') 50% / contain no-repeat;

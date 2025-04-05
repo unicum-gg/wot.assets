@@ -3,50 +3,53 @@
     var e,
         r = {
             8750: (e, r, t) => {
-                t(6179), t(6483);
-                let n;
+                t(7363), t(6483);
+                let o;
                 !(function (e) {
                     (e.SMALL = 'small'), (e.MEDIUM = 'medium'), (e.BIG = 'big');
-                })(n || (n = {}));
+                })(o || (o = {}));
+            },
+            7363: (e) => {
+                e.exports = React;
             },
         },
         t = {};
-    function n(e) {
-        var o = t[e];
-        if (void 0 !== o) return o.exports;
-        var i = (t[e] = { exports: {} });
-        return r[e](i, i.exports, n), i.exports;
+    function o(e) {
+        var n = t[e];
+        if (void 0 !== n) return n.exports;
+        var a = (t[e] = { exports: {} });
+        return r[e](a, a.exports, o), a.exports;
     }
-    (n.m = r),
+    (o.m = r),
         (e = []),
-        (n.O = (r, t, o, i) => {
+        (o.O = (r, t, n, a) => {
             if (!t) {
-                var a = 1 / 0;
+                var i = 1 / 0;
                 for (s = 0; s < e.length; s++) {
-                    for (var [t, o, i] = e[s], f = !0, l = 0; l < t.length; l++)
-                        (!1 & i || a >= i) && Object.keys(n.O).every((e) => n.O[e](t[l]))
+                    for (var [t, n, a] = e[s], f = !0, l = 0; l < t.length; l++)
+                        (!1 & a || i >= a) && Object.keys(o.O).every((e) => o.O[e](t[l]))
                             ? t.splice(l--, 1)
-                            : ((f = !1), i < a && (a = i));
+                            : ((f = !1), a < i && (i = a));
                     if (f) {
                         e.splice(s--, 1);
-                        var u = o();
+                        var u = n();
                         void 0 !== u && (r = u);
                     }
                 }
                 return r;
             }
-            i = i || 0;
-            for (var s = e.length; s > 0 && e[s - 1][2] > i; s--) e[s] = e[s - 1];
-            e[s] = [t, o, i];
+            a = a || 0;
+            for (var s = e.length; s > 0 && e[s - 1][2] > a; s--) e[s] = e[s - 1];
+            e[s] = [t, n, a];
         }),
-        (n.n = (e) => {
+        (o.n = (e) => {
             var r = e && e.__esModule ? () => e.default : () => e;
-            return n.d(r, { a: r }), r;
+            return o.d(r, { a: r }), r;
         }),
-        (n.d = (e, r) => {
-            for (var t in r) n.o(r, t) && !n.o(e, t) && Object.defineProperty(e, t, { enumerable: !0, get: r[t] });
+        (o.d = (e, r) => {
+            for (var t in r) o.o(r, t) && !o.o(e, t) && Object.defineProperty(e, t, { enumerable: !0, get: r[t] });
         }),
-        (n.g = (function () {
+        (o.g = (function () {
             if ('object' == typeof globalThis) return globalThis;
             try {
                 return this || new Function('return this')();
@@ -54,26 +57,26 @@
                 if ('object' == typeof window) return window;
             }
         })()),
-        (n.o = (e, r) => Object.prototype.hasOwnProperty.call(e, r)),
-        (n.j = 130),
+        (o.o = (e, r) => Object.prototype.hasOwnProperty.call(e, r)),
+        (o.j = 130),
         (() => {
             var e = { 130: 0 };
-            n.O.j = (r) => 0 === e[r];
+            o.O.j = (r) => 0 === e[r];
             var r = (r, t) => {
-                    var o,
-                        i,
-                        [a, f, l] = t,
+                    var n,
+                        a,
+                        [i, f, l] = t,
                         u = 0;
-                    if (a.some((r) => 0 !== e[r])) {
-                        for (o in f) n.o(f, o) && (n.m[o] = f[o]);
-                        if (l) var s = l(n);
+                    if (i.some((r) => 0 !== e[r])) {
+                        for (n in f) o.o(f, n) && (o.m[n] = f[n]);
+                        if (l) var s = l(o);
                     }
-                    for (r && r(t); u < a.length; u++) (i = a[u]), n.o(e, i) && e[i] && e[i][0](), (e[i] = 0);
-                    return n.O(s);
+                    for (r && r(t); u < i.length; u++) (a = i[u]), o.o(e, a) && e[a] && e[a][0](), (e[a] = 0);
+                    return o.O(s);
                 },
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             t.forEach(r.bind(null, 0)), (t.push = r.bind(null, t.push.bind(t)));
         })();
-    var o = n.O(void 0, [727], () => n(8750));
-    o = n.O(o);
+    var n = o.O(void 0, [727], () => o(8750));
+    n = o.O(n);
 })();

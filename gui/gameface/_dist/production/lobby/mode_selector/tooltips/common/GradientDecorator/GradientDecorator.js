@@ -6,7 +6,7 @@
                 t.d(r, { i: () => c });
                 var a = t(6483),
                     o = t.n(a),
-                    i = t(6179),
+                    i = t(7363),
                     s = t.n(i);
                 const n = {
                     base: 'Divider_base_0f',
@@ -25,7 +25,7 @@
             7945: (e, r, t) => {
                 var a = t(6483),
                     o = t.n(a),
-                    i = t(6179),
+                    i = t(7363),
                     s = t.n(i),
                     n = t(5394);
                 const d = 'GradientDecorator_base_c4',
@@ -41,6 +41,9 @@
                         a && s().createElement(n.i, { classMix: o()(l, _) }),
                     ),
                 );
+            },
+            7363: (e) => {
+                e.exports = React;
             },
         },
         t = {};

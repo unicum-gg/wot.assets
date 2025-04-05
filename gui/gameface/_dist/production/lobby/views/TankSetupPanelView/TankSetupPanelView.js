@@ -736,9 +736,9 @@
                     };
             },
             7043: (e, t, n) => {
-                var r = n(6179),
+                var r = n(7363),
                     o = n.n(r),
-                    i = n(493),
+                    i = n(1533),
                     a = n.n(i),
                     s = n(6483),
                     l = n.n(s);
@@ -966,15 +966,20 @@
                                     ((e = 1) => {
                                         const t = new Error().stack;
                                         let n,
-                                            r = R.invalid('resId');
+                                            r = R.invalid('resId'),
+                                            o = '';
+                                        var i;
                                         return (
                                             t &&
-                                                ((n = t.split('\n')[e].split('.js')[0].split('/').pop() || ''),
+                                                ((o =
+                                                    (null == (i = t.match(/(coui:\/\/[^\s]+\.js)/)) ? void 0 : i[0]) ||
+                                                    ''),
+                                                (n = t.split('\n')[e].split('.js')[0].split('/').pop() || ''),
                                                 window.__feature &&
                                                     window.__feature !== n &&
                                                     window.subViews[n] &&
                                                     (r = window.subViews[n].id)),
-                                            { caller: n, stack: t, resId: r }
+                                            { callerUrl: o, caller: n, stack: t, resId: r }
                                         );
                                     })().resId,
                                 [f],
@@ -1358,8 +1363,8 @@
                             () => (0, r.useContext)(n),
                         ];
                     })(0, ({ externalModel: e }) => ({ repairVehicle: e.createCallbackNoArgs('onClick') })),
-                    A = L[0],
-                    x = L[1];
+                    x = L[0],
+                    A = L[1];
                 function N(e, t) {
                     return Array.isArray(e) ? e.map(t) : e.map((e, n, r) => t(null == e ? void 0 : e.value, n, r));
                 }
@@ -1374,7 +1379,7 @@
                         2: R.views.battle_royale.lobby.tooltips.RespawnTooltipView('resId'),
                     },
                     B = (0, k.Pi)(() => {
-                        const e = x().model;
+                        const e = A().model;
                         return o().createElement(
                             'div',
                             { className: 'AbilityPanel_base_74' },
@@ -1418,7 +1423,7 @@
                     }),
                     V = R.images.gui.maps.icons.vehicleTypes.big,
                     F = (0, k.Pi)(() => {
-                        const e = x().model;
+                        const e = A().model;
                         return o().createElement(
                             'div',
                             { className: 'VehicleInfo_base_2c' },
@@ -1443,7 +1448,7 @@
                     }),
                     U = R.strings.tooltips.hangar.maintenance,
                     j = (0, k.Pi)(() => {
-                        const e = x(),
+                        const e = A(),
                             t = e.controls,
                             n = e.model;
                         var i;
@@ -1478,8 +1483,14 @@
                         );
                     });
                 engine.whenReady.then(() => {
-                    a().render(o().createElement(A, null, o().createElement(j, null)), document.getElementById('root'));
+                    a().render(o().createElement(x, null, o().createElement(j, null)), document.getElementById('root'));
                 });
+            },
+            7363: (e) => {
+                e.exports = React;
+            },
+            1533: (e) => {
+                e.exports = ReactDOM;
             },
         },
         __webpack_module_cache__ = {},

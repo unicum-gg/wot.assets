@@ -810,7 +810,7 @@
     filter: grayscale(0%);
 }
 
-.PointAward_base_6f {
+.TalerAward_base_ef {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -821,50 +821,274 @@
     position: relative;
     cursor: pointer;
 }
-.mediaMedium .PointAward_base_6f {
+.mediaMedium .TalerAward_base_ef {
     height: 140rem;
 }
-.PointAward_base__big_dc {
+.TalerAward_base__big_6b {
     width: 100rem;
     height: 175rem;
 }
-.mediaMedium .PointAward_base__big_dc {
+.mediaMedium .TalerAward_base__big_6b {
     width: 160rem;
     height: 280rem;
 }
 
-.PointAward_locked_7c {
-    width: 24rem;
-    height: 24rem;
-    background: url('R.images.gui.maps.icons.battlePass.awards_widget.lockHover_small_s') no-repeat center / contain;
-    opacity: 0.7;
-    position: absolute;
-    bottom: 3rem;
-    z-index: 3;
-    transition: opacity 0.3s linear;
+.TicketAward_base_76 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80rem;
+    height: 95rem;
+    isolation: isolate;
+    position: relative;
+    cursor: pointer;
 }
 
-.mediaMedium .PointAward_locked_7c {
-    background-image: url('R.images.gui.maps.icons.battlePass.awards_widget.lockHover_small_m');
-    bottom: 4rem;
+.mediaMedium .TicketAward_base_76 {
+    height: 140rem;
 }
 
-.PointAward_base__big_dc .PointAward_locked_7c {
-    width: 32rem;
-    height: 32rem;
-    background-image: url('R.images.gui.maps.icons.battlePass.awards_widget.lockHover_big_s');
-    bottom: 8rem;
+.TicketAward_base__big_91 {
+    width: 100rem;
+    height: 175rem;
 }
 
-.mediaMedium .PointAward_base__big_dc .PointAward_locked_7c {
-    width: 48rem;
+.mediaMedium .TicketAward_base__big_91 {
+    width: 160rem;
+    height: 280rem;
+}
+
+.TicketAward_base__hasAppearAnimation_09 {
+    opacity: 0;
+    visibility: hidden;
+    animation: TicketAward_baseAppear_ef 0.3s ease-in-out 1.2s forwards;
+}
+.TicketAward_shine_46 {
+    width: 27rem;
     height: 48rem;
-    background-image: url('R.images.gui.maps.icons.battlePass.awards_widget.lockHover_big_m');
-    bottom: 13rem;
+    background: url('R.images.gui.maps.icons.battlePass.awards_widget.ticket_borderShine_small_s') no-repeat center /
+        contain;
+    position: absolute;
+    top: 0;
+    animation: TicketAward_shine_small_s_22 2s linear infinite alternate;
+    pointer-events: none;
 }
-
-.PointAward_base__hover_50 .PointAward_locked_7c {
+.mediaMedium .TicketAward_shine_46 {
+    width: 31rem;
+    height: 72rem;
+    background-image: url('R.images.gui.maps.icons.battlePass.awards_widget.ticket_borderShine_small_m');
+    animation: TicketAward_shine_small_m_5b 2s linear infinite alternate;
+}
+.TicketAward_base__big_91 .TicketAward_shine_46 {
+    width: 45rem;
+    height: 85rem;
+    background-image: url('R.images.gui.maps.icons.battlePass.awards_widget.ticket_borderShine_big_s');
+    animation: TicketAward_shine_big_s_43 2s linear infinite alternate;
+}
+.mediaMedium .TicketAward_base__big_91 .TicketAward_shine_46 {
+    width: 46rem;
+    height: 116rem;
+    background-image: url('R.images.gui.maps.icons.battlePass.awards_widget.ticket_borderShine_big_m');
+    animation: TicketAward_shine_big_m_80 2s linear infinite alternate;
+}
+.TicketAward_shine__left_15 {
+    left: -13rem;
+}
+.mediaMedium .TicketAward_shine__left_15 {
+    left: -14rem;
+}
+.TicketAward_base__big_91 .TicketAward_shine__left_15 {
+    left: -21rem;
+}
+.mediaMedium .TicketAward_base__big_91 .TicketAward_shine__left_15 {
+    left: -22rem;
+}
+.TicketAward_shine__right_4b {
+    right: -13rem;
+}
+.mediaMedium .TicketAward_shine__right_4b {
+    right: -14rem;
+    animation-direction: alternate-reverse;
+}
+.TicketAward_base__big_91 .TicketAward_shine__right_4b {
+    right: -21rem;
+}
+.mediaMedium .TicketAward_base__big_91 .TicketAward_shine__right_4b {
+    right: -22rem;
+    animation-direction: alternate-reverse;
+}
+.TicketAward_arrow_d4 {
+    width: 68rem;
+    height: 90rem;
+    background: url('R.images.gui.maps.icons.battlePass.awards_widget.ticket_arrow_small_s') no-repeat center / contain;
+    opacity: 0;
+    position: absolute;
+    bottom: 0;
+    z-index: 3;
+    transition: all 0.3s;
+}
+.mediaMedium .TicketAward_arrow_d4 {
+    width: 68rem;
+    height: 90rem;
+    background-image: url('R.images.gui.maps.icons.battlePass.awards_widget.ticket_arrow_small_m');
+}
+.TicketAward_base_76:hover .TicketAward_arrow_d4 {
     opacity: 1;
+    transform: translateY(5rem);
+}
+.TicketAward_base__big_91 .TicketAward_arrow_d4 {
+    width: 86rem;
+    height: 113rem;
+    background-image: url('R.images.gui.maps.icons.battlePass.awards_widget.ticket_arrow_big_s');
+    opacity: 0;
+    transition: all 0.3s;
+}
+.mediaMedium .TicketAward_base__big_91 .TicketAward_arrow_d4 {
+    width: 136rem;
+    height: 180rem;
+    background-image: url('R.images.gui.maps.icons.battlePass.awards_widget.ticket_arrow_big_m');
+}
+.TicketAward_blinkShape_17 {
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 100%, 0 80%, 0 0);
+    position: absolute;
+    top: 0;
+    left: 0;
+    mask-image: linear-gradient(180deg, transparent 0%, #000000 50%);
+    pointer-events: none;
+}
+.mediaMedium .TicketAward_blinkShape_17 {
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%, 0 0);
+}
+.TicketAward_base_76:hover .TicketAward_blinkShape_17 {
+    mask-image: none;
+}
+.TicketAward_base__big_91 .TicketAward_blinkShape_17 {
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%, 0 0);
+}
+.mediaMedium .TicketAward_base__big_91 .TicketAward_blinkShape_17 {
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%, 0 0);
+}
+.TicketAward_blink_1b {
+    width: 14rem;
+    height: 300rem;
+    background: #fff;
+    filter: blur(8px);
+    mix-blend-mode: overlay;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    z-index: 99;
+    transform: rotate(45deg) translate(-200rem, 0rem);
+    transform-origin: center;
+    animation: TicketAward_blinker_1e 5s linear infinite;
+}
+.TicketAward_base__big_91 .TicketAward_blink_1b {
+    width: 28rem;
+}
+@keyframes TicketAward_baseAppear_ef {
+    0% {
+        opacity: 0;
+        visibility: visible;
+        transform: translateY(-30rem);
+    }
+
+    100% {
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+    }
+}
+@keyframes TicketAward_blinker_1e {
+    0% {
+        transform: rotate(45deg) translate(-200rem, 0rem);
+    }
+
+    30% {
+        transform: rotate(45deg) translate(200rem, 0rem);
+    }
+
+    100% {
+        transform: rotate(45deg) translate(200rem, 0rem);
+    }
+}
+@keyframes TicketAward_shine_small_s_22 {
+    0% {
+        opacity: 0;
+        transform: translateY(0);
+    }
+
+    30% {
+        opacity: 1;
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(30%);
+    }
+}
+@keyframes TicketAward_shine_small_m_5b {
+    0% {
+        opacity: 0;
+        transform: translateY(0);
+    }
+
+    30% {
+        opacity: 1;
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(60%);
+    }
+}
+@keyframes TicketAward_shine_big_s_43 {
+    0% {
+        opacity: 0;
+        transform: translateY(0);
+    }
+
+    30% {
+        opacity: 1;
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(90%);
+    }
+}
+@keyframes TicketAward_shine_big_m_80 {
+    0% {
+        opacity: 0;
+        transform: translateY(0);
+    }
+
+    30% {
+        opacity: 1;
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(150%);
+    }
 }
 
 /* colors*/
@@ -887,18 +1111,6 @@
     margin-right: 20rem;
 }
 
-.AwardsWrapper_award__last_b0 {
-    margin-right: 0;
-}
-
-.mediaSmallWidth .AwardsWrapper_award__last_b0 {
-    margin-right: 5rem;
-}
-
-.mediaMediumWidth .AwardsWrapper_award__last_b0 {
-    margin-right: 0;
-}
-
 .AwardsWrapper_base__big_6b .AwardsWrapper_award_49 {
     margin-right: 20rem;
 }
@@ -907,6 +1119,6 @@
     margin-right: 30rem;
 }
 
-.AwardsWrapper_base__big_6b .AwardsWrapper_award__last_b0 {
+.AwardsWrapper_base_e5 .AwardsWrapper_award_49:last-child {
     margin-right: 0;
 }

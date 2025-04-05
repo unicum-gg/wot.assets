@@ -17,7 +17,7 @@
                         setRTPC: () => O,
                     });
                 var o = {};
-                t.r(o), t.d(o, { getBgUrl: () => M, getTextureUrl: () => L });
+                t.r(o), t.d(o, { getBgUrl: () => L, getTextureUrl: () => k });
                 var a = {};
                 t.r(a),
                     t.d(a, {
@@ -26,7 +26,7 @@
                         children: () => o,
                         displayStatus: () => A,
                         displayStatusIs: () => ve,
-                        events: () => G,
+                        events: () => D,
                         extraSize: () => fe,
                         forceTriggerMouseMove: () => le,
                         freezeTextureBeforeResize: () => ne,
@@ -48,9 +48,9 @@
                         setSidePaddingsRem: () => X,
                         whenTutorialReady: () => me,
                     });
-                var s = t(6179),
+                var s = t(7363),
                     u = t.n(s),
-                    l = t(493),
+                    l = t(1533),
                     d = t.n(l);
                 const c = 'Content_base_3a',
                     v = 'Content_title_3c',
@@ -176,16 +176,16 @@
                         get: () => viewEnv.getGraphicsQuality(),
                     },
                     F = { highlight: 'highlight', click: 'play', yes1: 'yes1' },
-                    V = Object.keys(F).reduce((e, n) => ((e[n] = () => S(F[n])), e), {}),
-                    k = { play: Object.assign({}, V, { sound: S }), setRTPC: O };
-                function L(e, n, t = 1) {
+                    M = Object.keys(F).reduce((e, n) => ((e[n] = () => S(F[n])), e), {}),
+                    V = { play: Object.assign({}, M, { sound: S }), setRTPC: O };
+                function k(e, n, t = 1) {
                     return viewEnv.getChildTexturePath(e, n.width, n.height, t);
                 }
-                function M(e, n, t) {
-                    return `url(${L(e, n, t)})`;
+                function L(e, n, t) {
+                    return `url(${k(e, n, t)})`;
                 }
                 const A = { showing: 0, shown: 1, hiding: 2, hidden: 3 },
-                    G = {
+                    D = {
                         onTextureFrozen: h('self.onTextureFrozen'),
                         onTextureReady: h('self.onTextureReady'),
                         onDomBuilt: h('self.onDomBuilt'),
@@ -201,7 +201,7 @@
                             onRequestPosition: h('children.requestPosition'),
                         },
                     },
-                    D = ['args'];
+                    G = ['args'];
                 const B = 2,
                     N = 16,
                     H = 32,
@@ -219,7 +219,7 @@
                                             t[i] = e[i];
                                         }
                                     return t;
-                                })(n, D);
+                                })(n, G);
                             return void 0 !== r
                                 ? viewEnv.handleViewEvent(
                                       Object.assign({ __Type: t, type: e }, o, {
@@ -325,11 +325,11 @@
                     },
                     me = Promise.all([
                         new Promise((e) => {
-                            window.isDomBuilt ? e() : G.onDomBuilt(e);
+                            window.isDomBuilt ? e() : D.onDomBuilt(e);
                         }),
                         engine.whenReady,
                     ]),
-                    ge = { view: a, client: r, sound: k };
+                    ge = { view: a, client: r, sound: V };
                 function we() {
                     const e = (0, s.useRef)(0);
                     var n;
@@ -430,6 +430,12 @@
                     Ee = () => u().createElement(ye, null, u().createElement(g, null)),
                     Pe = document.createElement('div');
                 (window.onload = () => document.body.appendChild(Pe)), d().render(u().createElement(Ee, null), Pe);
+            },
+            7363: (e) => {
+                e.exports = React;
+            },
+            1533: (e) => {
+                e.exports = ReactDOM;
             },
         },
         t = {};

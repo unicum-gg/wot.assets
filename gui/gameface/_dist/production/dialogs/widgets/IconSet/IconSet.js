@@ -2,7 +2,7 @@
     'use strict';
     var e,
         n = {
-            7337: (e, n, t) => {
+            337: (e, n, t) => {
                 var r = {};
                 t.r(r),
                     t.d(r, { mouse: () => w, off: () => b, on: () => h, onResize: () => g, onScaleUpdated: () => f });
@@ -41,14 +41,14 @@
                         pxToRem: () => K,
                         remToPx: () => X,
                         resize: () => q,
-                        sendEvent: () => $,
+                        sendEvent: () => D,
                         setAnimateWindow: () => Y,
                         setEventHandled: () => ee,
                         setInputPaddingsRem: () => F,
                         setSidePaddingsRem: () => H,
                         whenTutorialReady: () => se,
                     });
-                var s = t(6179),
+                var s = t(363),
                     c = t.n(s);
                 let u;
                 !(function (e) {
@@ -59,7 +59,7 @@
                 function l(e, n) {
                     return Array.isArray(e) ? e.map(n) : e.map((e, t, r) => n(null == e ? void 0 : e.value, t, r));
                 }
-                var d = t(3403);
+                var d = t(403);
                 function v(e) {
                     return (n) => (
                         engine.on(e, n),
@@ -229,7 +229,7 @@
                         return viewEnv.handleViewEvent({ __Type: t, type: e });
                         var r;
                     },
-                    $ = {
+                    D = {
                         close(e) {
                             I('popover' === e ? _ : L);
                         },
@@ -240,12 +240,12 @@
                             I(j, { isMouseEvent: !0, on: e });
                         },
                     },
-                    D = 15;
+                    $ = 15;
                 function V(e) {
                     viewEnv.addPreloadTexture(e);
                 }
                 function F(e) {
-                    viewEnv.setHitAreaPaddingsRem(e, e, e, e, D);
+                    viewEnv.setHitAreaPaddingsRem(e, e, e, e, $);
                 }
                 function G(e, n, t, r = 1) {
                     return viewEnv.getWebBrowserTexturePath(e, n, t, r);
@@ -254,7 +254,7 @@
                     return viewEnv.addDataChangedCallback(e, n, t);
                 }
                 function H(e) {
-                    viewEnv.setHitAreaPaddingsRem(e.top, e.right, e.bottom, e.left, D);
+                    viewEnv.setHitAreaPaddingsRem(e.top, e.right, e.bottom, e.left, $);
                 }
                 function U(e = 'px') {
                     return 'rem' === e ? viewEnv.getViewSizeRem() : viewEnv.getViewSizePx();
@@ -321,7 +321,7 @@
                     return !1;
                 }
                 console.log;
-                var de = t(9174);
+                var de = t(174);
                 function ve(e, n) {
                     var t = ('undefined' != typeof Symbol && e[Symbol.iterator]) || e['@@iterator'];
                     if (t) return (t = t.call(e)).next.bind(t);
@@ -649,6 +649,12 @@
                     return c().createElement(he, { options: n }, c().createElement(we, null));
                 });
             },
+            363: (e) => {
+                e.exports = React;
+            },
+            533: (e) => {
+                e.exports = ReactDOM;
+            },
         },
         t = {};
     function r(e) {
@@ -720,6 +726,6 @@
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             t.forEach(n.bind(null, 0)), (t.push = n.bind(null, t.push.bind(t)));
         })();
-    var o = r.O(void 0, [573], () => r(7337));
+    var o = r.O(void 0, [573], () => r(337));
     o = r.O(o);
 })();

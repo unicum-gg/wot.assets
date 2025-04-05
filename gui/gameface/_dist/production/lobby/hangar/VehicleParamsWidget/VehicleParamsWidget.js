@@ -702,9 +702,9 @@
             },
             359: (e, u, t) => {
                 t(916);
-                var n = t(179),
+                var n = t(363),
                     r = t.n(n),
-                    o = t(493),
+                    o = t(533),
                     a = t.n(o),
                     i = t(278),
                     s = t(322);
@@ -753,7 +753,7 @@
                         }
                     );
                 };
-                var s = t(179),
+                var s = t(363),
                     l = t.n(s);
                 const c = (e, u, t) => (t < e ? e : t > u ? u : t);
                 var E = t(768);
@@ -889,7 +889,7 @@
                         setScrollPosition: t,
                         getDirection: n,
                         getWrapperSize: r,
-                        triggerMouseMoveOnUpdate: o = !1,
+                        forceTriggerMouseMove: o,
                     }) => {
                         const a = (e, t) => {
                             const n = u(e),
@@ -899,9 +899,10 @@
                         };
                         return (l = {}) => {
                             const c = l.settings,
-                                d = void 0 === c ? g : c,
+                                E = void 0 === c ? g : c,
+                                d = (0, s.useRef)(null),
                                 F = (0, s.useRef)(null),
-                                _ = (0, s.useRef)(null),
+                                _ = (0, s.useRef)(!1),
                                 B = (() => {
                                     const e = (0, s.useMemo)(() => ({}), []),
                                         u = (u) => (e[u] || (e[u] = new Map()), e[u]),
@@ -918,7 +919,7 @@
                                 })(),
                                 m = f(
                                     () => {
-                                        E.O.view.forceTriggerMouseMove();
+                                        o && o();
                                     },
                                     [],
                                     150,
@@ -926,8 +927,8 @@
                                 p = (0, C.useSpring)(() => ({
                                     scrollPosition: 0,
                                     onChange: (e) => {
-                                        const u = F.current;
-                                        u && (t(u, e), B.trigger('change', e), o && m());
+                                        const u = d.current;
+                                        u && (t(u, e), B.trigger('change', e), o && _.current && m());
                                     },
                                     onRest: (e) => B.trigger('rest', e),
                                     onStart: (e) => B.trigger('start', e),
@@ -946,22 +947,22 @@
                                 ),
                                 w = (0, s.useCallback)(
                                     (e, { immediate: u = !1, reset: t = !0 } = {}) => {
-                                        const n = F.current;
+                                        const n = d.current;
                                         n &&
                                             v.start({
                                                 scrollPosition: a(n, e),
                                                 immediate: u,
                                                 reset: t,
-                                                config: d.animationConfig,
+                                                config: E.animationConfig,
                                                 from: { scrollPosition: a(n, h.scrollPosition.get()) },
                                             });
                                     },
-                                    [v, d.animationConfig, h.scrollPosition],
+                                    [v, E.animationConfig, h.scrollPosition],
                                 ),
                                 y = (0, s.useCallback)(
                                     (e) => {
-                                        const u = F.current,
-                                            t = _.current;
+                                        const u = d.current,
+                                            t = F.current;
                                         if (!u || !t) return;
                                         const n = ((e, u) => {
                                                 switch (u.type) {
@@ -970,16 +971,16 @@
                                                     case 'fixed':
                                                         return u.value;
                                                 }
-                                            })(t, d.step),
+                                            })(t, E.step),
                                             o = b(u, e, n);
                                         w(o);
                                     },
-                                    [w, b, d.step],
+                                    [w, b, E.step],
                                 ),
                                 k = (0, s.useCallback)(
                                     (e) => {
                                         0 !== e.deltaY && y(n(e)),
-                                            F.current && B.trigger('mouseWheel', e, h.scrollPosition, u(F.current));
+                                            d.current && B.trigger('mouseWheel', e, h.scrollPosition, u(d.current));
                                     },
                                     [h.scrollPosition, y, B],
                                 ),
@@ -1000,7 +1001,7 @@
                                 })(
                                     () =>
                                         i(() => {
-                                            const e = F.current;
+                                            const e = d.current;
                                             e &&
                                                 (w(a(e, h.scrollPosition.goal), { immediate: !0 }),
                                                 B.trigger('resizeHandled'));
@@ -1008,7 +1009,7 @@
                                     [w, h.scrollPosition.goal],
                                 ),
                                 x = A(() => {
-                                    const e = F.current;
+                                    const e = d.current;
                                     if (!e) return;
                                     const u = a(e, h.scrollPosition.goal);
                                     u !== h.scrollPosition.goal && w(u, { immediate: !0 }),
@@ -1022,28 +1023,46 @@
                                     }
                                 ),
                                 [T],
-                            );
+                            ),
+                                (0, s.useEffect)(() => {
+                                    const e = d.current;
+                                    if (!e || !o) return;
+                                    const u = () => {
+                                            _.current = !0;
+                                        },
+                                        t = () => {
+                                            _.current = !1;
+                                        };
+                                    return (
+                                        e.addEventListener('mouseenter', u),
+                                        e.addEventListener('mouseleave', t),
+                                        () => {
+                                            e.removeEventListener('mouseenter', u),
+                                                e.removeEventListener('mouseleave', t);
+                                        }
+                                    );
+                                }, [d]);
                             return (0, s.useMemo)(
                                 () => ({
-                                    getWrapperSize: () => (_.current ? r(_.current) : void 0),
-                                    getContainerSize: () => (F.current ? e(F.current) : void 0),
+                                    getWrapperSize: () => (F.current ? r(F.current) : void 0),
+                                    getContainerSize: () => (d.current ? e(d.current) : void 0),
                                     getBounds: () =>
-                                        F.current
-                                            ? u(F.current)
+                                        d.current
+                                            ? u(d.current)
                                             : (console.warn('getBounds: contentRef.current is null'), [0, 0]),
-                                    stepTimeout: d.step.clampedArrowStepTimeout,
+                                    stepTimeout: E.step.clampedArrowStepTimeout,
                                     clampPosition: a,
                                     handleMouseWheel: k,
                                     applyScroll: w,
                                     applyStepTo: y,
-                                    contentRef: F,
-                                    wrapperRef: _,
+                                    contentRef: d,
+                                    wrapperRef: F,
                                     scrollPosition: v,
                                     animationScroll: h,
                                     recalculateContent: x,
                                     events: { on: B.on, off: B.off },
                                 }),
-                                [h.scrollPosition, w, y, B.off, B.on, x, k, v, d.step.clampedArrowStepTimeout],
+                                [h.scrollPosition, w, y, B.off, B.on, x, k, v, E.step.clampedArrowStepTimeout],
                             );
                         };
                     },
@@ -1062,7 +1081,7 @@
                             e.style.transform = `translateX(-${u.value.scrollPosition}px)`;
                         },
                         getDirection: (e) => (e.deltaY > 1 ? p.Next : p.Prev),
-                        triggerMouseMoveOnUpdate: !0,
+                        forceTriggerMouseMove: E.O.view.forceTriggerMouseMove,
                     }),
                     b = 'HorizontalBar_base_49',
                     w = 'HorizontalBar_base__nonActive_82',
@@ -1645,15 +1664,20 @@
                                     ((e = 1) => {
                                         const u = new Error().stack;
                                         let t,
-                                            n = R.invalid('resId');
+                                            n = R.invalid('resId'),
+                                            r = '';
+                                        var o;
                                         return (
                                             u &&
-                                                ((t = u.split('\n')[e].split('.js')[0].split('/').pop() || ''),
+                                                ((r =
+                                                    (null == (o = u.match(/(coui:\/\/[^\s]+\.js)/)) ? void 0 : o[0]) ||
+                                                    ''),
+                                                (t = u.split('\n')[e].split('.js')[0].split('/').pop() || ''),
                                                 window.__feature &&
                                                     window.__feature !== t &&
                                                     window.subViews[t] &&
                                                     (n = window.subViews[t].id)),
-                                            { caller: t, stack: u, resId: n }
+                                            { callerUrl: r, caller: t, stack: u, resId: n }
                                         );
                                     })().resId,
                                 [m],
@@ -2697,7 +2721,7 @@
                 }
                 console.log;
                 var r = t(174),
-                    o = t(179),
+                    o = t(363),
                     a = t.n(o),
                     i = t(768);
                 function s(e, u) {
@@ -2954,6 +2978,12 @@
                     ),
                     B = _[0],
                     D = _[1];
+            },
+            363: (e) => {
+                e.exports = React;
+            },
+            533: (e) => {
+                e.exports = ReactDOM;
             },
         },
         __webpack_module_cache__ = {},

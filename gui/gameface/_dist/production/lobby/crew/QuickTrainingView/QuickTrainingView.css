@@ -219,9 +219,32 @@
     background-image: url('R.images.gui.maps.icons.crew.tips.infoBtnCloseHover');
 }
 
-.Tip_newLine_07 {
-    width: 100%;
-    height: 8rem;
+.TipList_base_4a {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 26rem 20rem 0;
+    overflow: hidden;
+}
+
+.TipList_base__smallerSpace_ee {
+    padding-top: 10rem;
+}
+
+.mediaMedium .TipList_base__smallerSpace_ee {
+    padding-top: 26rem;
+}
+
+.TipList_tip_f5 {
+    margin-bottom: 10rem;
+    padding: 8rem 20rem;
+    font-size: 12rem;
+}
+
+.mediaMedium .TipList_tip_f5 {
+    margin-bottom: 8rem;
+    padding: 20rem;
+    font-size: 14rem;
 }
 
 .ButtonsBar_base_9c {
@@ -718,17 +741,18 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .CrewOperationsButton_icon_0c {
     width: 32rem;
     height: 22rem;
+    margin-top: 1rem;
     background: url('R.images.gui.maps.icons.crewWidget.buttonsBar.icons.crewOperations') no-repeat center / contain;
     position: relative;
 }
 
 .CrewOperationsButton_autoReturnIcon_f0 {
-    width: 32rem;
-    height: 22rem;
+    width: 42rem;
+    height: 42rem;
     background: url('R.images.gui.maps.icons.crewWidget.buttonsBar.arrows') no-repeat center / contain;
     position: absolute;
-    top: -9rem;
-    right: -16rem;
+    top: -21rem;
+    right: -14rem;
     pointer-events: none;
 }
 
@@ -866,7 +890,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .Layer_base_ff {
-    background: no-repeat center / contain;
     opacity: 0;
     top: 0;
     left: 0;
@@ -874,114 +897,101 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     pointer-events: none;
 }
 
-.Layer_base__hoverGlow_11,
-.Layer_base__selectedGlow_b7 {
+.Layer_base__visible_fb {
+    opacity: 1;
+}
+.Layer_content_f3 {
+    background: no-repeat center / contain;
+    position: absolute;
+}
+.Layer_content__hoverGlow_9a,
+.Layer_content__selectedGlow_10 {
     width: 360rem;
     height: 88rem;
     top: -14rem;
     left: -14rem;
 }
-
-.Layer_base__hoverGlowHigh_0e,
-.Layer_base__selectedGlowHigh_2f {
+.Layer_content__hoverGlowHigh_8d,
+.Layer_content__selectedGlowHigh_9d {
     width: 360rem;
     height: 108rem;
     top: -14rem;
     left: -14rem;
 }
-
-.Layer_base__disabledLayer_75 {
+.Layer_content__disabledLayer_04 {
     width: 370rem;
     height: 60rem;
 }
-
-.Layer_base__disabledLayerHigh_51 {
+.Layer_content__disabledLayerHigh_cd {
     width: 370rem;
     height: 80rem;
 }
-
-.Layer_base__selectedTankmanHighlight_15,
-.Layer_base__selectedTankmanHighlight2_36,
-.Layer_base__untrainedTankmanHighlight_db {
+.Layer_content__selectedTankmanHighlight_58,
+.Layer_content__selectedTankmanHighlight2_9b,
+.Layer_content__untrainedTankmanHighlight_3a {
     width: 340rem;
     height: 60rem;
 }
-
-.Layer_base__selectedTankmanHighlightHigh_47,
-.Layer_base__selectedTankmanHighlightHigh2_4f,
-.Layer_base__untrainedTankmanHighlightHigh_20 {
+.Layer_content__selectedTankmanHighlightHigh_bb,
+.Layer_content__selectedTankmanHighlightHigh2_20,
+.Layer_content__untrainedTankmanHighlightHigh_1a {
     width: 340rem;
     height: 80rem;
 }
-
-.Layer_base__tankmanSlotHover_a9 {
+.Layer_content__tankmanSlotHover_a9 {
     width: 300rem;
     height: 60rem;
 }
-
-.Layer_base__tankmanSlotHoverHigh_4e {
+.Layer_content__tankmanSlotHoverHigh_85 {
     width: 300rem;
     height: 80rem;
 }
-
-.mediaLarge .Layer_base__hoverGlow_11,
-.mediaLarge .Layer_base__selectedGlow_b7 {
+.Layer_base__big_78 .Layer_content__hoverGlow_9a,
+.Layer_base__big_78 .Layer_content__selectedGlow_10 {
     width: 360rem;
     height: 98rem;
     top: -14rem;
     left: -14rem;
 }
-
-.mediaLarge .Layer_base__hoverGlowHigh_0e,
-.mediaLarge .Layer_base__selectedGlowHigh_2f {
+.Layer_base__big_78 .Layer_content__hoverGlowHigh_8d,
+.Layer_base__big_78 .Layer_content__selectedGlowHigh_9d {
     width: 360rem;
     height: 118rem;
     top: -14rem;
     left: -14rem;
 }
-
-.mediaLarge .Layer_base__disabledLayer_75 {
+.Layer_base__big_78 .Layer_content__disabledLayer_04 {
     width: 370rem;
     height: 70rem;
 }
-
-.mediaLarge .Layer_base__disabledLayerHigh_51 {
+.Layer_base__big_78 .Layer_content__disabledLayerHigh_cd {
     width: 370rem;
     height: 90rem;
 }
-
-.mediaLarge .Layer_base__selectedTankmanHighlight_15,
-.mediaLarge .Layer_base__selectedTankmanHighlight2_36,
-.mediaLarge .Layer_base__untrainedTankmanHighlight_db {
+.Layer_base__big_78 .Layer_content__selectedTankmanHighlight_58,
+.Layer_base__big_78 .Layer_content__selectedTankmanHighlight2_9b,
+.Layer_base__big_78 .Layer_content__untrainedTankmanHighlight_3a {
     width: 340rem;
     height: 70rem;
 }
-
-.mediaLarge .Layer_base__selectedTankmanHighlightHigh_47,
-.mediaLarge .Layer_base__selectedTankmanHighlightHigh2_4f,
-.mediaLarge .Layer_base__untrainedTankmanHighlightHigh_20 {
+.Layer_base__big_78 .Layer_content__selectedTankmanHighlightHigh_bb,
+.Layer_base__big_78 .Layer_content__selectedTankmanHighlightHigh2_20,
+.Layer_base__big_78 .Layer_content__untrainedTankmanHighlightHigh_1a {
     width: 340rem;
     height: 90rem;
 }
-
-.mediaLarge .Layer_base__tankmanSlotHover_a9 {
+.Layer_base__big_78 .Layer_content__tankmanSlotHover_a9 {
     width: 300rem;
     height: 70rem;
 }
-
-.mediaLarge .Layer_base__tankmanSlotHoverHigh_4e {
+.Layer_base__big_78 .Layer_content__tankmanSlotHoverHigh_85 {
     width: 300rem;
     height: 90rem;
-}
-
-.Layer_base__visible_fb {
-    opacity: 1;
 }
 
 .BaseSlot_base_97 {
     display: flex;
     width: 370rem;
-    height: 61rem;
     background: linear-gradient(90deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.4) 57.74%, rgba(0, 0, 0, 0) 100%);
     position: relative;
     cursor: pointer;
@@ -995,15 +1005,20 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     cursor: initial;
 }
 
-.BaseSlot_base__high_2c {
+.BaseSlot_content_93 {
+    display: flex;
+    height: 61rem;
+}
+
+.BaseSlot_content__high_81 {
     height: 81rem;
 }
 
-.mediaLarge .BaseSlot_base_97 {
+.BaseSlot_base__big_8d .BaseSlot_content_93 {
     height: 71rem;
 }
 
-.mediaLarge .BaseSlot_base__high_2c {
+.BaseSlot_base__big_8d .BaseSlot_content__high_81 {
     height: 91rem;
 }
 
@@ -1189,19 +1204,22 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 
 .EmptySlotContent_base_77 {
     width: 370rem;
-    height: 61rem;
     position: relative;
 }
 
-.EmptySlotContent_base__high_d7 {
+.EmptySlotContent_content_54 {
+    height: 61rem;
+}
+
+.EmptySlotContent_content__high_fa {
     height: 81rem;
 }
 
-.mediaLarge .EmptySlotContent_base_77 {
+.EmptySlotContent_base__big_96 .EmptySlotContent_content_54 {
     height: 71rem;
 }
 
-.mediaLarge .EmptySlotContent_base__high_d7 {
+.EmptySlotContent_base__big_96 .EmptySlotContent_content__high_fa {
     height: 91rem;
 }
 
@@ -1707,11 +1725,11 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     margin-top: 4rem;
 }
 
-.mediaLarge .TankmanInfo_specialization_77 {
+.TankmanInfo_base__big_e5 .TankmanInfo_specialization_77 {
     margin-top: 11rem;
 }
 
-.mediaLarge .TankmanInfo_specialization__withBonusSkills_b1 {
+.TankmanInfo_base__big_e5 .TankmanInfo_specialization__withBonusSkills_b1 {
     margin-top: 8rem;
 }
 
@@ -1725,11 +1743,11 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     top: 26rem;
 }
 
-.mediaLarge .TankmanInfo_skillsContainer_17 {
+.TankmanInfo_base__big_e5 .TankmanInfo_skillsContainer_17 {
     top: 35rem;
 }
 
-.mediaLarge .TankmanInfo_skillsContainer__withBonusSkills_83 {
+.TankmanInfo_base__big_e5 .TankmanInfo_skillsContainer__withBonusSkills_83 {
     top: 32rem;
 }
 
@@ -2168,6 +2186,86 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     right: 0;
 }
 
+.MentoringLicenseEntry_base_37 {
+    display: flex;
+    width: 200rem;
+    height: 100%;
+    border-radius: 4rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    cursor: pointer;
+}
+
+.MentoringLicenseEntry_base__default_ef:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.MentoringLicenseEntry_base__disabled_65 {
+    background: rgba(0, 0, 0, 0.1), url('R.images.gui.maps.icons.components.button.texture_disable');
+    cursor: default;
+}
+
+.mediaMedium .MentoringLicenseEntry_base_37 {
+    width: 250rem;
+}
+
+.mediaLarge .MentoringLicenseEntry_base_37 {
+    width: 300rem;
+}
+.MentoringLicenseEntry_content_3d {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    position: relative;
+}
+.MentoringLicenseEntry_base__disabled_65 .MentoringLicenseEntry_content_3d {
+    opacity: 0.5;
+}
+.MentoringLicenseEntry_icon_74 {
+    width: 32rem;
+    height: 32rem;
+    margin-left: 7rem;
+    background: url('R.images.gui.maps.icons.crew.mentoringLicense.c_32x32.quick_training_entry') no-repeat center /
+        contain;
+}
+.MentoringLicenseEntry_title_0b {
+    color: #e9e2bf;
+    font-size: 14rem;
+    font-weight: 700;
+    line-height: 1.15;
+    width: 106rem;
+    margin-left: 4rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.mediaMedium .MentoringLicenseEntry_title_0b {
+    width: 140rem;
+}
+.mediaLarge .MentoringLicenseEntry_title_0b {
+    width: 185rem;
+}
+.MentoringLicenseEntry_storage_8b {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 9rem;
+    right: 10rem;
+}
+.MentoringLicenseEntry_storageIcon_89 {
+    width: 30rem;
+    height: 24rem;
+    background: url('R.images.gui.maps.icons.crew.storage') no-repeat center / cover;
+}
+.MentoringLicenseEntry_storagerAmount_9a {
+    color: #f2f2f7;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    height: 20rem;
+    margin-left: 4rem;
+    opacity: 0.5;
+}
+
 .Currency_base_57 {
     display: flex;
     align-items: center;
@@ -2307,6 +2405,30 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .Currency_base__extraLarge_4d .Currency_icon__freeXP-extraLarge_58 {
     transform: translateY(4rem);
 }
+.Currency_icon__eliteXP-small_45 {
+    background-image: url('R.images.gui.maps.icons.library.EliteXpIcon-2');
+}
+.Currency_base__small_af .Currency_icon__eliteXP-small_45 {
+    transform: translateY(1rem);
+}
+.Currency_icon__eliteXP-big_c0 {
+    --icon-height: 24rem;
+    margin-left: -5rem;
+    background-image: url('R.images.gui.maps.icons.library.EliteXpIconBig');
+}
+.Currency_icon__eliteXP-large_1b {
+    --icon-height: 48rem;
+    margin: 0 -5rem 0 -6rem;
+    background-image: url('R.images.gui.maps.icons.library.elite_exp_48x48');
+}
+.Currency_icon__eliteXP-extraLarge_9b {
+    --icon-height: 80rem;
+    margin: 0 -5rem;
+    background-image: url('R.images.gui.maps.icons.library.elite_exp_80x80');
+}
+.Currency_base__extraLarge_4d .Currency_icon__eliteXP-extraLarge_9b {
+    transform: translateY(4rem);
+}
 .Currency_icon__equipCoin-small_32 {
     --icon-height: 16rem;
     margin-right: -2rem;
@@ -2333,6 +2455,34 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     background-image: url('R.images.gui.maps.icons.library.equipCoin_icon_80x80');
 }
 .Currency_base__extraLarge_4d .Currency_icon__equipCoin-extraLarge_8a {
+    transform: translateX(2rem) translateY(4rem);
+}
+.Currency_icon__stpCoin-small_6b {
+    --icon-height: 16rem;
+    margin-right: -2rem;
+    background-image: url('R.images.gui.maps.icons.library.stpcoin.stpcoinSmall');
+}
+.Currency_base__small_af .Currency_icon__stpCoin-small_6b {
+    transform: translateX(-1rem) translateY(1rem);
+}
+.Currency_icon__stpCoin-big_da {
+    --icon-height: 24rem;
+    background-image: url('R.images.gui.maps.icons.library.stpcoin.stpcoinBig');
+}
+.Currency_base__big_bc .Currency_icon__stpCoin-big_da {
+    transform: translateX(-5rem) translateY(3rem);
+}
+.Currency_icon__stpCoin-large_ee {
+    --icon-height: 48rem;
+    margin-right: 2rem;
+    background-image: url('R.images.gui.maps.icons.library.stpcoin.stpcoinLarge');
+}
+.Currency_icon__stpCoin-extraLarge_fa {
+    --icon-height: 80rem;
+    margin-right: 8rem;
+    background-image: url('R.images.gui.maps.icons.library.stpcoin.stpcoinExtraLarge');
+}
+.Currency_base__extraLarge_4d .Currency_icon__stpCoin-extraLarge_fa {
     transform: translateX(2rem) translateY(4rem);
 }
 .Currency_value_e1 {
@@ -2376,7 +2526,9 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 .Currency_value__xp_b0,
 .Currency_value__crystal_19,
-.Currency_value__equipCoin_d0 {
+.Currency_value__equipCoin_d0,
+.Currency_value__eliteXP_62,
+.Currency_value__stpCoin_38 {
     color: #c9c9b6;
 }
 .Currency_base__small_af .Currency_value__notEnough_56 {
@@ -2487,7 +2639,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .BaseCard_base__disabled_3c .BaseCard_description_79 {
     opacity: 0.5;
 }
-
 .BaseCard_activeLayer_2a {
     display: flex;
     justify-content: center;
@@ -2505,37 +2656,30 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     bottom: 0;
     left: 0;
 }
-
 .BaseCard_activeLayer__visible_50 {
     visibility: visible;
 }
-
 .BaseCard_iconContainer_76 {
     display: flex;
     justify-content: center;
     margin-top: 16rem;
 }
-
 .mediaMedium .BaseCard_iconContainer_76 {
     margin-top: 25rem;
 }
-
 .mediaLarge .BaseCard_iconContainer_76 {
     margin-top: 30rem;
 }
-
 .BaseCard_icon_0c {
     width: 80rem;
     height: 80rem;
     background: no-repeat center / contain;
 }
-
 .mediaLarge .BaseCard_icon_0c {
     width: 180rem;
     height: 135rem;
     background-size: cover;
 }
-
 .BaseCard_title_79 {
     color: #fefeec;
     font-size: 14rem;
@@ -2543,7 +2687,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     line-height: 1.15;
     margin-bottom: 4rem;
 }
-
 .mediaMedium .BaseCard_title_79 {
     color: #e9e2bf;
     font-size: 15rem;
@@ -2551,7 +2694,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     line-height: 1.15;
     margin-bottom: 8rem;
 }
-
 .BaseCard_description_79 {
     color: #8c8c7e;
     font-size: 12rem;
@@ -2563,7 +2705,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     padding: 12rem;
     transition: transform 0.15s ease-in-out;
 }
-
 .mediaMedium .BaseCard_description_79 {
     color: #8c8c7e;
     font-size: 14rem;
@@ -2571,17 +2712,14 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     line-height: 1.3;
     padding: 22rem;
 }
-
 .mediaLarge .BaseCard_description_79 {
     padding: 15rem 28rem;
 }
-
 .BaseCard_additionalDescription_2e {
     margin-top: 12rem;
     opacity: 0;
     transition: opacity 0.15s ease-in-out;
 }
-
 .BaseCard_bottomContainer_4f {
     display: flex;
     justify-content: center;
@@ -2591,22 +2729,18 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     bottom: 0;
     left: 0;
 }
-
 .BaseCard_bottomGlow_ed {
     width: 206rem;
     height: 90rem;
     background: url('R.images.gui.maps.icons.crew.cardGlow.card_bottom') no-repeat center / contain;
     mix-blend-mode: screen;
 }
-
 .BaseCard_bottomOption_61 {
     z-index: 1;
 }
-
 .BaseCard_bottomOption__fullWidth_20 {
     width: 100%;
 }
-
 .BaseCard_errorIcon_07 {
     width: 23rem;
     height: 20rem;
@@ -3030,12 +3164,19 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     width: 1254rem;
 }
 
+.CrewBooksSection_header_07 {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 42rem;
+    margin: 4rem 0 5rem;
+}
+
 .CrewBooksSection_title_fe {
     color: #fefeec;
     font-size: 28rem;
     font-weight: 700;
     line-height: 1.1;
-    padding-bottom: 20rem;
 }
 
 .CrewBooksSection_divider_f1 {
@@ -3130,30 +3271,4 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     top: 0;
     bottom: 0;
     left: 0;
-}
-
-.QuickTrainingViewApp_pageTips_41 {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    padding: 26rem 20rem 0;
-    overflow: hidden;
-}
-
-.QuickTrainingViewApp_pageTips__smallerSpace_0c {
-    padding-top: 20rem;
-}
-
-.mediaMedium .QuickTrainingViewApp_pageTips__smallerSpace_0c {
-    padding-top: 26rem;
-}
-
-.QuickTrainingViewApp_tip_7b {
-    padding: 8rem 20rem;
-    font-size: 12rem;
-}
-
-.mediaMedium .QuickTrainingViewApp_tip_7b {
-    padding: 20rem;
-    font-size: 14rem;
 }

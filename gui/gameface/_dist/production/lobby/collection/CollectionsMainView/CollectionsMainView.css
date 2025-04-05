@@ -489,8 +489,8 @@
 .CollectionDescription_complete_6e {
     width: 100rem;
     height: 100rem;
-    background: url('R.images.gui.maps.icons.collections.progress_bar.collectionCompletedIcon') no-repeat center center /
-        contain;
+    background: url('R.images.gui.maps.icons.collections.progress_bar.collectionCompletedIcon') no-repeat center
+        center / contain;
     opacity: 0;
     position: absolute;
     top: -35rem;

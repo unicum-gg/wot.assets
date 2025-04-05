@@ -4,7 +4,7 @@
                 'use strict';
                 t.d(e, { Y: () => s });
                 var r = t(3138),
-                    E = t(6179),
+                    E = t(7363),
                     A = t(1043),
                     a = t(5262);
                 const n = r.O.client.getSize('rem'),
@@ -18,7 +18,7 @@
                 t.d(e, { Z: () => D });
                 var r = t(3138),
                     E = t(6536),
-                    A = t(6179),
+                    A = t(7363),
                     a = t.n(A),
                     n = t(3495),
                     i = t(1043),
@@ -53,7 +53,7 @@
             },
             6010: (u, e, t) => {
                 'use strict';
-                var r = t(6179),
+                var r = t(7363),
                     E = t(7382),
                     A = t(3495);
                 const a = ['children'];
@@ -343,10 +343,10 @@
             },
             3215: (u, e, t) => {
                 'use strict';
-                t.d(e, { q: () => i });
+                t.d(e, { q3: () => i });
                 var r = t(4598),
                     E = t(9174),
-                    A = t(6179),
+                    A = t(7363),
                     a = t.n(A),
                     n = t(8246);
                 const i = () => (u, e) => {
@@ -852,14 +852,14 @@
                 t.d(e, { D9: () => A, eI: () => E.Z });
                 t(3469), t(2133);
                 var r = t(2790),
-                    E = (t(3779), t(579));
+                    E = t(579);
                 t(5360), t(9056);
                 const A = r.Z;
             },
             6536: (u, e, t) => {
                 'use strict';
                 t.d(e, { Z: () => E });
-                var r = t(6179);
+                var r = t(7363);
                 const E = (u) => {
                     const e = (0, r.useRef)(!1);
                     e.current || (u(), (e.current = !0));
@@ -867,16 +867,16 @@
             },
             3469: (u, e, t) => {
                 'use strict';
-                t(7044), t(6179);
+                t(7044), t(7363);
             },
             2133: (u, e, t) => {
                 'use strict';
-                t(6179);
+                t(7363);
             },
             5415: (u, e, t) => {
                 'use strict';
                 t.d(e, { Aq: () => i, GS: () => F, cJ: () => a, fd: () => n });
-                var r = t(6179),
+                var r = t(7363),
                     E = t(7739),
                     A = t(1043);
                 let a, n, i;
@@ -960,7 +960,7 @@
                 'use strict';
                 t(6536);
                 var r = t(9916);
-                t(6179);
+                t(7363);
                 r.Sw.instance;
                 let E;
                 !(function (u) {
@@ -970,13 +970,13 @@
             9056: (u, e, t) => {
                 'use strict';
                 var r = t(9916);
-                t(6179);
+                t(7363);
                 r.Sw.instance;
             },
             2790: (u, e, t) => {
                 'use strict';
                 t.d(e, { Z: () => E });
-                var r = t(6179);
+                var r = t(7363);
                 const E = (u, e) => {
                     const t = (0, r.useRef)();
                     return (
@@ -987,15 +987,11 @@
                     );
                 };
             },
-            3779: (u, e, t) => {
-                'use strict';
-                t(6179);
-            },
             579: (u, e, t) => {
                 'use strict';
                 t.d(e, { Z: () => A });
                 var r = t(3138),
-                    E = t(6179);
+                    E = t(7363);
                 const A = () => {
                     const u = r.O.view.getSize('rem'),
                         e = (0, E.useState)({ height: u.height, width: u.width }),
@@ -1074,19 +1070,33 @@
                     var t;
                     if (!(e >= u.length)) return Array.isArray(u) ? u[e] : null == (t = u[e]) ? void 0 : t.value;
                 }
-                t.d(e, { G: () => a, MH: () => E, U2: () => r, UI: () => A, u4: () => n });
+                t.d(e, { G: () => n, MH: () => E, U2: () => r, UI: () => a, sE: () => i, u4: () => F });
                 const E = r;
-                function A(u, e) {
-                    return Array.isArray(u) ? u.map(e) : u.map((u, t, r) => e(null == u ? void 0 : u.value, t, r));
+                function A(u) {
+                    var e;
+                    return u && 'value' in u && null != (e = u.constructor) && e.name.includes('ArrayItem')
+                        ? null == u
+                            ? void 0
+                            : u.value
+                        : u;
                 }
                 function a(u, e) {
+                    return Array.isArray(u) ? u.map(e) : u.map((u, t, r) => e(null == u ? void 0 : u.value, t, r));
+                }
+                function n(u, e) {
                     if (Array.isArray(u)) return u.some(e);
                     for (let t = 0; t < u.length; t++) {
                         if (e(E(u, t), t, u)) return !0;
                     }
                     return !1;
                 }
-                function n(u, e, t) {
+                function i(u, e) {
+                    for (let t = 0; t < u.length; t++) {
+                        const r = A(u[t]);
+                        if (e(r, t, u)) return r;
+                    }
+                }
+                function F(u, e, t) {
                     if (Array.isArray(u)) return u.reduce(e, t);
                     let r = t;
                     for (let t = 0; t < u.length; t++) {
@@ -1531,7 +1541,7 @@
             2015: (u, e, t) => {
                 'use strict';
                 var r = t(7739),
-                    E = t(6179),
+                    E = t(7363),
                     A = t.n(E),
                     a = t(6483),
                     n = t.n(a),
@@ -1610,7 +1620,7 @@
                         })(u, d);
                     return A().createElement(r.ZN, null, A().createElement(c, t, e));
                 };
-                var h = t(493),
+                var h = t(1533),
                     m = t.n(h),
                     g = t(9480),
                     v = t(3403),
@@ -1619,14 +1629,14 @@
                     b = t(5149),
                     p = t(1516);
                 const x = (0, E.lazy)(() =>
-                        Promise.all([t.e(866), t.e(988), t.e(730), t.e(554), t.e(231)]).then(t.bind(t, 5998)),
+                        Promise.all([t.e(866), t.e(596), t.e(730), t.e(554), t.e(231)]).then(t.bind(t, 5998)),
                     ),
-                    S = (0, E.lazy)(() => Promise.all([t.e(866), t.e(988), t.e(554), t.e(984)]).then(t.bind(t, 3503))),
+                    S = (0, E.lazy)(() => Promise.all([t.e(866), t.e(596), t.e(554), t.e(984)]).then(t.bind(t, 3503))),
                     L = (0, E.lazy)(() =>
-                        Promise.all([t.e(866), t.e(988), t.e(730), t.e(133), t.e(824)]).then(t.bind(t, 6482)),
+                        Promise.all([t.e(866), t.e(596), t.e(730), t.e(972), t.e(261)]).then(t.bind(t, 8314)),
                     ),
                     y = (0, E.lazy)(() =>
-                        Promise.all([t.e(866), t.e(988), t.e(730), t.e(133), t.e(248)]).then(t.bind(t, 1509)),
+                        Promise.all([t.e(866), t.e(596), t.e(730), t.e(972), t.e(86)]).then(t.bind(t, 2980)),
                     ),
                     O = {
                         [p.u.NO_BOXES]: S,
@@ -1703,7 +1713,7 @@
                 t.d(e, { k: () => a, t: () => n });
                 var r = t(3215),
                     E = t(9174);
-                const A = (0, r.q)()(
+                const A = (0, r.q3)()(
                         ({ observableModel: u }) => {
                             const e = {
                                 root: u.object(),
@@ -1730,6 +1740,14 @@
                             (u[(u.SINGLE_BOX_REWARDS = 2)] = 'SINGLE_BOX_REWARDS'),
                             (u[(u.MULTIPLE_BOXES_REWARDS = 3)] = 'MULTIPLE_BOXES_REWARDS');
                     })(r || (r = {}));
+            },
+            7363: (u) => {
+                'use strict';
+                u.exports = React;
+            },
+            1533: (u) => {
+                'use strict';
+                u.exports = ReactDOM;
             },
         },
         __webpack_module_cache__ = {},
@@ -1781,34 +1799,34 @@
         (__webpack_require__.e = (u) =>
             Promise.all(Object.keys(__webpack_require__.f).reduce((e, t) => (__webpack_require__.f[t](u, e), e), []))),
         (__webpack_require__.u = (u) =>
-            988 === u
-                ? 'chunks/lobby/78d3e41e5f9c88f93310.js'
+            596 === u
+                ? 'chunks/lobby/73867b16d82643916692.js'
                 : 730 === u
                   ? 'chunks/lobby/8f77ebb89d5133d3dfd0.js'
                   : 554 === u
-                    ? 'chunks/lobby/540233633ba21243568c.js'
+                    ? 'chunks/lobby/41ee10c2a4c61319db72.js'
                     : 231 === u
-                      ? 'chunks/lobby/c90d4ebaeac9c0cdc707.js'
+                      ? 'chunks/lobby/5e8d8ae4370199738e57.js'
                       : 984 === u
-                        ? 'chunks/lobby/8ed0e7f03c3c962f709c.js'
-                        : 133 === u
-                          ? 'chunks/lobby/352c520cb6a53d0fcee4.js'
-                          : 824 === u
-                            ? 'chunks/lobby/69b3a25a4c4c91e7c9dc.js'
-                            : 248 === u
-                              ? 'chunks/lobby/4fc77bf6bb9e79bb777c.js'
+                        ? 'chunks/lobby/68f428e9d6909114c03e.js'
+                        : 972 === u
+                          ? 'chunks/lobby/2d6f2e972b0e16f342b2.js'
+                          : 261 === u
+                            ? 'chunks/lobby/336e8aad89cf684ae1f3.js'
+                            : 86 === u
+                              ? 'chunks/lobby/245c9251b5a8202a7ab0.js'
                               : void 0),
         (__webpack_require__.miniCssF = (u) =>
             730 === u
                 ? 'chunks/lobby/8f77ebb89d5133d3dfd0.css'
                 : 231 === u
-                  ? 'chunks/lobby/c90d4ebaeac9c0cdc707.css'
+                  ? 'chunks/lobby/5e8d8ae4370199738e57.css'
                   : 984 === u
-                    ? 'chunks/lobby/8ed0e7f03c3c962f709c.css'
-                    : 824 === u
-                      ? 'chunks/lobby/69b3a25a4c4c91e7c9dc.css'
-                      : 248 === u
-                        ? 'chunks/lobby/4fc77bf6bb9e79bb777c.css'
+                    ? 'chunks/lobby/68f428e9d6909114c03e.css'
+                    : 261 === u
+                      ? 'chunks/lobby/336e8aad89cf684ae1f3.css'
+                      : 86 === u
+                        ? 'chunks/lobby/245c9251b5a8202a7ab0.css'
                         : 'lobby/lootbox_system/MainView/MainView.css'),
         (__webpack_require__.g = (function () {
             if ('object' == typeof globalThis) return globalThis;
@@ -1925,7 +1943,7 @@
             installedCssChunks[u]
                 ? e.push(installedCssChunks[u])
                 : 0 !== installedCssChunks[u] &&
-                  { 231: 1, 248: 1, 730: 1, 824: 1, 984: 1 }[u] &&
+                  { 86: 1, 231: 1, 261: 1, 730: 1, 984: 1 }[u] &&
                   e.push(
                       (installedCssChunks[u] = loadStylesheet(u).then(
                           () => {

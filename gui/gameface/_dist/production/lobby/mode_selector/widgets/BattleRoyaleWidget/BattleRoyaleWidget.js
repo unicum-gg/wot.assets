@@ -49,7 +49,7 @@
                         whenTutorialReady: () => Eu,
                     });
                 F(6483);
-                var t = F(6179);
+                var t = F(7363);
                 const i = (u, e, F) =>
                     e.extraLargeHeight || e.largeHeight || e.mediumHeight || e.smallHeight || e.extraSmallHeight
                         ? (e.extraLargeHeight && F.extraLarge) ||
@@ -564,6 +564,9 @@
                     mu.Big,
                     mu.Medium,
                     mu.Small;
+            },
+            7363: (u) => {
+                u.exports = React;
             },
         },
         F = {};

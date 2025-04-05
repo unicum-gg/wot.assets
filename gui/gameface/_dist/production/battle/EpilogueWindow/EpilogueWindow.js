@@ -769,7 +769,7 @@
             },
             5558: (u, e, t) => {
                 'use strict';
-                var E = t(6179),
+                var E = t(7363),
                     r = t.n(E);
                 const a = (u, e, t) =>
                     e.extraLargeHeight || e.largeHeight || e.mediumHeight || e.smallHeight || e.extraSmallHeight
@@ -1118,7 +1118,7 @@
                             })(u, M);
                         return r().createElement(d, null, r().createElement(O, t, e));
                     };
-                var k = t(493),
+                var k = t(1533),
                     H = t.n(k);
                 function P(u) {
                     engine.call('PlaySound', u).catch((e) => {
@@ -1721,6 +1721,14 @@
                         document.getElementById('root'),
                     );
                 });
+            },
+            7363: (u) => {
+                'use strict';
+                u.exports = React;
+            },
+            1533: (u) => {
+                'use strict';
+                u.exports = ReactDOM;
             },
         },
         __webpack_module_cache__ = {},

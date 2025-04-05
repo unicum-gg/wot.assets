@@ -4,7 +4,7 @@
             3495: (u, e, t) => {
                 t.d(e, { Y: () => s });
                 var F = t(9768),
-                    i = t(6179),
+                    i = t(7363),
                     A = t(1043),
                     a = t(5262);
                 const n = F.O.client.getSize('rem'),
@@ -14,10 +14,10 @@
                     s = (0, i.createContext)(o);
             },
             1039: (u, e, t) => {
-                t(9768), t(6536), t(6179), t(3495), t(1043), t(5262);
+                t(9768), t(6536), t(7363), t(3495), t(1043), t(5262);
             },
             6010: (u, e, t) => {
-                var F = t(6179),
+                var F = t(7363),
                     i = t(7382),
                     A = t(3495);
                 const a = ['children'];
@@ -493,10 +493,10 @@
                     Fu = { view: a, client: i, sound: v };
             },
             6536: (u, e, t) => {
-                t(6179);
+                t(7363);
             },
             9924: (u, e, t) => {
-                t(6483), t(7739), t(5262), t(6179), t(3649);
+                t(6483), t(7739), t(5262), t(7363), t(3649);
             },
             5521: (u, e, t) => {
                 let F, i;
@@ -925,7 +925,7 @@
                     };
             },
             9922: (u, e, t) => {
-                var F = t(6179),
+                var F = t(7363),
                     i = t.n(F),
                     A = t(6483),
                     a = t.n(A),
@@ -1063,6 +1063,9 @@
                 };
                 s.defaultProps = { type: r.primary, isFocused: !1, soundHover: 'highlight', soundClick: 'play' };
                 t(9916);
+            },
+            7363: (u) => {
+                u.exports = React;
             },
         },
         __webpack_module_cache__ = {},

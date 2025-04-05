@@ -671,6 +671,11 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     transform: translate(-50%, -50%);
 }
 
+.Reward_overlay__normalize_e6 {
+    width: 80rem;
+    height: 80rem;
+}
+
 .Reward_count_f0 {
     color: #e9e2bf;
     font-size: 14rem;
@@ -715,6 +720,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .Reward_label__crystal_a1,
+.Reward_label__bptaler_17,
 .Reward_label__freeXP_ae {
     color: #c9c9b6;
 }
@@ -813,15 +819,15 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     padding-top: 60rem;
 }
 
-.Content_header__topDiff_5c {
+.Content_base__top_1b .Content_header_a3 {
     padding-top: 20rem;
 }
 
-.mediaMedium .Content_header__topDiff_5c {
+.mediaMedium .Content_base__top_1b .Content_header_a3 {
     padding-top: 28rem;
 }
 
-.mediaExtraLarge .Content_header__topDiff_5c {
+.mediaExtraLarge .Content_base__top_1b .Content_header_a3 {
     padding-top: 22rem;
 }
 
@@ -872,15 +878,15 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     padding-bottom: 140rem;
 }
 
-.Content_scrollArea__finished_43 {
+.Content_base__top_1b .Content_scrollArea_af {
     padding-top: 120rem;
 }
 
-.mediaMedium .Content_scrollArea__finished_43 {
+.mediaMedium .Content_base__top_1b .Content_scrollArea_af {
     padding-top: 160rem;
 }
 
-.mediaExtraLarge .Content_scrollArea__finished_43 {
+.mediaExtraLarge .Content_base__top_1b .Content_scrollArea_af {
     padding-top: 210rem;
 }
 

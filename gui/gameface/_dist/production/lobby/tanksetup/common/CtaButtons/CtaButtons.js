@@ -5,7 +5,7 @@
                 var i = n(6483),
                     o = n.n(i),
                     a = n(7727),
-                    r = n(6179),
+                    r = n(7363),
                     s = n.n(r),
                     _ = n(6880),
                     c = n(2106);
@@ -123,11 +123,11 @@
                     })(o || (o = {}));
             },
             6373: (e, t, n) => {
-                n(2056), n(6179);
+                n(2056), n(7363);
                 R.views.common.tooltip_window.simple_tooltip_content;
             },
             2056: (e, t, n) => {
-                n(9916), n(6179);
+                n(9916), n(7363);
             },
             527: (e, t, n) => {
                 n.r(t),
@@ -877,7 +877,7 @@
                     };
             },
             8586: (e, t, n) => {
-                n(6179), n(6483), n(3457), n(6373);
+                n(7363), n(6483), n(3457), n(6373);
             },
             6880: (e, t, n) => {
                 n.d(t, { Z: () => i });
@@ -904,6 +904,9 @@
                     base__highlightActive: 'CButton_base__highlightActive_b2',
                     content: 'CButton_content_cc',
                 };
+            },
+            7363: (e) => {
+                e.exports = React;
             },
         },
         __webpack_module_cache__ = {},

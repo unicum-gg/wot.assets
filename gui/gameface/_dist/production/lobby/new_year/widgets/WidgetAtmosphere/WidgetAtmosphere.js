@@ -3159,16 +3159,14 @@
                             r().createElement(
                                 'div',
                                 { className: B()(St), ref: a },
-                                t
-                                    .selectableBonuses()
-                                    .map((u, t) =>
-                                        r().createElement(yt, {
-                                            key: t,
-                                            name: u.bonusName,
-                                            value: u.bonusValue,
-                                            onBonusClick: e,
-                                        }),
-                                    ),
+                                t.selectableBonuses().map((u, t) =>
+                                    r().createElement(yt, {
+                                        key: t,
+                                        name: u.bonusName,
+                                        value: u.bonusValue,
+                                        onBonusClick: e,
+                                    }),
+                                ),
                             )
                         );
                     });

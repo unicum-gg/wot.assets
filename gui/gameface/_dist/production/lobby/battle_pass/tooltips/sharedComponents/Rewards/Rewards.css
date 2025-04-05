@@ -1,0 +1,11 @@
+.Rewards_base_f3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 403rem;
+    height: 154rem;
+    background: url('R.images.gui.maps.icons.battlePass.tooltips.Ribbon_large') bottom / cover no-repeat;
+    color: #c9c9b6;
+    font-size: 14rem;
+}

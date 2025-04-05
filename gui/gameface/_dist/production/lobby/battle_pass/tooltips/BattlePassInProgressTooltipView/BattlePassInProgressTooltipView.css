@@ -133,14 +133,60 @@
     margin-left: 10rem;
 }
 
+.Rewards_base_f3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 403rem;
+    height: 154rem;
+    background: url('R.images.gui.maps.icons.battlePass.tooltips.Ribbon_large') bottom / cover no-repeat;
+    color: #c9c9b6;
+    font-size: 14rem;
+}
+
+.Separator_base_9c {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: relative;
+}
+
+.Separator_base_9c::after {
+    width: 283rem;
+    height: 1rem;
+    background: url('R.images.gui.maps.icons.battlePass.tooltips.Devider_points') 50% / contain no-repeat;
+    content: '';
+}
+
+.ClaimInfo_base_f5 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.ClaimInfo_unlock_0e {
+    color: #cbac77;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    width: 100%;
+}
+
 .styles_base_86 {
     line-height: normal;
 }
+/* please use Separator component (gameface/src/views/lobby/battle_pass/tooltips/sharedComponents/Separator)*/
+/* instead of this one*/
 .styles_separator_f8 {
     width: 283rem;
     height: 1rem;
     background: url('R.images.gui.maps.icons.battlePass.tooltips.Devider_points') 50% / contain no-repeat;
 }
+/* please use Rewards component (gameface/src/views/lobby/battle_pass/tooltips/sharedComponents/Rewards)*/
+/* instead of this one*/
 .styles_rewards_26 {
     display: flex;
     flex-direction: column;
@@ -244,53 +290,53 @@
     line-height: 1.25;
 }
 
-.Content_base_ee {
-    line-height: normal;
-}
-.Content_separator_8b {
-    width: 283rem;
-    height: 1rem;
-    background: url('R.images.gui.maps.icons.battlePass.tooltips.Devider_points') 50% / contain no-repeat;
-}
-.Content_rewards_26 {
+.HeaderWithPoints_base_1c {
+    color: #8c8c7e;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
     align-items: center;
-    width: 403rem;
-    height: 154rem;
-    background: url('R.images.gui.maps.icons.battlePass.tooltips.Ribbon_large') bottom / cover no-repeat;
+    width: 100%;
+}
+
+.HeaderWithPoints_modeIcon_b6 {
+    width: 32rem;
+    height: 32rem;
+    margin-right: 10rem;
+    background: no-repeat center / contain;
+}
+
+.HeaderWithPoints_modeIcon__battleRoyale_87,
+.HeaderWithPoints_modeIcon__epic_85 {
+    margin-left: 3rem;
+    margin-top: 2rem;
+}
+
+.HeaderWithPoints_modeIcon__battleRoyale_87 {
+    background-image: url('R.images.gui.maps.icons.battleTypes.c_40x40.battleRoyaleQueue');
+}
+
+.HeaderWithPoints_modeIcon__epic_85 {
+    background-image: url('R.images.gui.maps.icons.battleTypes.c_40x40.epicQueue');
+}
+
+.HeaderWithPoints_highlight_71 {
     color: #c9c9b6;
     font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
 }
-.Content_base_ee {
-    width: 440rem;
-}
-.Content_content_9d {
+
+.RulesTable_header_19 {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
     padding: 10rem 28rem 0;
 }
-/* override */
-.Content_rewards_26 {
-    display: flex;
-    flex-direction: row;
-    width: 440rem;
-    margin: 18rem 0 15rem;
-    padding-left: 28rem;
-    padding-right: 28rem;
-}
-.Content_unlockBattlePass_c5 {
-    color: #cbac77;
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
-    width: 100%;
-    margin-bottom: 20rem;
-}
-.Content_playGame_15 {
+.RulesTable_playGame_4a {
     color: #8c8c7e;
     font-size: 14rem;
     font-weight: 400;
@@ -299,85 +345,13 @@
     margin-top: 0;
     margin-bottom: 20rem;
 }
-.Content_getPoints_e2 {
-    color: #8c8c7e;
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+.RulesTable_perBattlePointsTable_f9 {
     width: 100%;
-    margin-bottom: 24rem;
-}
-.Content_modeIcon_f8 {
-    width: 32rem;
-    height: 32rem;
-    margin-right: 10rem;
-    background: no-repeat center / contain;
-}
-.Content_modeIcon__battleRoyale_70 {
-    margin-left: 3rem;
-    margin-top: 2rem;
-    background-image: url('R.images.gui.maps.icons.battleTypes.c_40x40.battleRoyaleQueue');
-}
-.Content_modeIcon__epic_4f {
-    margin-left: 3rem;
-    margin-top: 2rem;
-    background-image: url('R.images.gui.maps.icons.battleTypes.c_40x40.epicQueue');
-}
-.Content_gameMode_ec {
-    color: #c9c9b6;
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
-}
-.Content_claimReward_b3 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    padding: 10rem 28rem 15rem;
-}
-.Content_separatorWrapper_70 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    margin-top: -15rem;
-}
-.Content_unlock_8f {
-    color: #cbac77;
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
-    width: 100%;
-}
-.Content_perBattlePointsTable_3e {
-    width: 100%;
-    margin-bottom: 10rem;
+    padding-left: 28rem;
+    padding-right: 28rem;
 }
 
-.EndSoon_base_ad {
-    line-height: normal;
-}
-.EndSoon_separator_ca {
-    width: 283rem;
-    height: 1rem;
-    background: url('R.images.gui.maps.icons.battlePass.tooltips.Devider_points') 50% / contain no-repeat;
-}
-.EndSoon_rewards_c6 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 403rem;
-    height: 154rem;
-    background: url('R.images.gui.maps.icons.battlePass.tooltips.Ribbon_large') bottom / cover no-repeat;
-    color: #c9c9b6;
-    font-size: 14rem;
-}
-.EndSoon_base_ad {
+.EndSoon_base_c7 {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -385,7 +359,7 @@
     width: 100%;
     padding-bottom: 28rem;
 }
-.EndSoon_content_2e {
+.EndSoon_content_0e {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -394,7 +368,7 @@
     margin: 0 -28rem -28rem;
     padding: 4rem 28rem 26rem;
 }
-.EndSoon_timerLight_c2 {
+.EndSoon_timerLight_7f {
     width: 280rem;
     height: 280rem;
     background: url('R.images.gui.maps.icons.battlePass.tooltips.end_date_light') no-repeat center / contain;
@@ -405,7 +379,7 @@
     z-index: 0;
     transform: translate(-50%, -50%);
 }
-.EndSoon_timer_a8 {
+.EndSoon_timer_15 {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -416,25 +390,25 @@
         0 0 15rem #e52;
     position: relative;
 }
-.EndSoon_timerIcon_08 {
+.EndSoon_timerIcon_ba {
     width: 37rem;
     height: 37rem;
     background: url('R.images.gui.maps.icons.library.marathon.time_icon_glow') center / cover no-repeat;
 }
-.EndSoon_timerLabel_cb {
+.EndSoon_timerLabel_da {
     color: #e9e2bf;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
     margin-right: 8rem;
 }
-.EndSoon_timerValue_65 {
+.EndSoon_timerValue_98 {
     color: #e9e2bf;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
 }
-.EndSoon_hurryUp_2e {
+.EndSoon_hurryUp_12 {
     color: #cbac77;
     font-size: 14rem;
     font-weight: 400;
@@ -443,43 +417,7 @@
     text-align: center;
 }
 
-.ExpireTime_base_55 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 18rem;
-    text-shadow:
-        0 0 4rem rgba(255, 127, 0, 0.25),
-        0 0 8rem #ff2a00,
-        0 0 15rem #e52;
-    position: relative;
-}
-
-.ExpireTime_light_64 {
-    width: 250rem;
-    height: 173rem;
-    background: url('R.images.gui.maps.icons.battlePass.tooltips.expire_time_light') no-repeat center / contain;
-    mix-blend-mode: lighten;
-    position: absolute;
-    top: -10rem;
-    right: -30rem;
-    z-index: 0;
-}
-
-.ExpireTime_icon_56 {
-    width: 37rem;
-    height: 37rem;
-    background: url('R.images.gui.maps.icons.battlePass.tooltips.time_icon_glow') center / cover no-repeat;
-}
-
-.ExpireTime_value_1c {
-    color: #e9e2bf;
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
-}
-
-.Level_level_18 {
+.Level_level_a4 {
     color: #f2f2f7;
     font-size: 73rem;
     font-weight: 700;
@@ -488,7 +426,7 @@
     margin-bottom: -2rem;
 }
 
-.Level_levelLabel_f3 {
+.Level_label_be {
     color: #e9e2bf;
     font-size: 15rem;
     font-weight: 700;
@@ -546,6 +484,30 @@
     width: 44rem;
     height: 43rem;
     background-image: var(--progress-glow-small);
+}
+
+/*
+    Gameface can't calculate gradient biggest than 8128px
+    in JS 8000 reserved like anchor for start optimization
+*/
+/* stylelint-disable-line */
+.ProgressBarDeltaSimple_base_6c {
+    width: 0;
+    height: 100%;
+    position: absolute;
+    top: 0;
+}
+.ProgressBarDeltaSimple_delta_99 {
+    width: 0;
+    max-width: 8001px;
+    height: 100%;
+    box-shadow: var(--progress-delta-shadow);
+    background-color: var(--progress-delta-color);
+    position: absolute;
+    bottom: 0;
+    transform-origin: right center;
+    transition-timing-function: cubic-bezier(1, 0, 0.92, 1), cubic-bezier(0.21, 0.61, 0.35, 1);
+    transition-property: width, transform;
 }
 
 /*
@@ -644,30 +606,6 @@
     in JS 8000 reserved like anchor for start optimization
 */
 /* stylelint-disable-line */
-.ProgressBarDeltaSimple_base_6c {
-    width: 0;
-    height: 100%;
-    position: absolute;
-    top: 0;
-}
-.ProgressBarDeltaSimple_delta_99 {
-    width: 0;
-    max-width: 8001px;
-    height: 100%;
-    box-shadow: var(--progress-delta-shadow);
-    background-color: var(--progress-delta-color);
-    position: absolute;
-    bottom: 0;
-    transform-origin: right center;
-    transition-timing-function: cubic-bezier(1, 0, 0.92, 1), cubic-bezier(0.21, 0.61, 0.35, 1);
-    transition-property: width, transform;
-}
-
-/*
-    Gameface can't calculate gradient biggest than 8128px
-    in JS 8000 reserved like anchor for start optimization
-*/
-/* stylelint-disable-line */
 .ProgressBarDeltaGrow_base_7e {
     width: 0;
     height: 100%;
@@ -695,52 +633,91 @@
     transition-timing-function: cubic-bezier(1, 0, 0.75, 0.75);
 }
 
-.Progression_base_6c {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 330rem;
-}
-.Progression_progressionBar_1f {
-    width: 100%;
-    margin-bottom: 10rem;
-}
-.Progression_points_21 {
+.Points_base_d1 {
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-left: 34rem;
     color: #8c8c7e;
     font-size: 14rem;
 }
-.Progression_pointsCurrent_78 {
+.Points_pointsCurrent_5a {
     margin-right: 4rem;
     color: #e9e2bf;
 }
-.Progression_pointsMax_bd {
+.Points_pointsMax_82 {
     margin-left: 4rem;
 }
-.Progression_pointsIcon_40 {
+.Points_pointsIcon_19 {
     width: 24rem;
     height: 24rem;
     margin-left: 10rem;
     background: url('R.images.gui.maps.icons.battlePass.tooltips.points_24') center / contain no-repeat;
 }
 
-.Header_base_bd {
+.Progression_base_07 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 330rem;
+}
+.Progression_progressionBar_9d {
+    width: 100%;
+    margin-bottom: 10rem;
+}
+.Progression_points_3d {
+    margin-left: 34rem;
+}
+
+.ExpireTime_base_a6 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 18rem;
+    text-shadow:
+        0 0 4rem rgba(255, 127, 0, 0.25),
+        0 0 8rem #ff2a00,
+        0 0 15rem #e52;
+    position: relative;
+}
+
+.ExpireTime_light_d5 {
+    width: 250rem;
+    height: 173rem;
+    background: url('R.images.gui.maps.icons.battlePass.tooltips.expire_time_light') no-repeat center / contain;
+    mix-blend-mode: lighten;
+    position: absolute;
+    top: -10rem;
+    right: -30rem;
+    z-index: 0;
+}
+
+.ExpireTime_icon_9d {
+    width: 37rem;
+    height: 37rem;
+    background: url('R.images.gui.maps.icons.battlePass.tooltips.time_icon_glow') center / cover no-repeat;
+}
+
+.ExpireTime_value_41 {
+    color: #e9e2bf;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+.Header_base_eb {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
 }
 
-.Header_chapter_67 {
+.Header_chapter_1d {
     display: flex;
     justify-content: space-between;
     width: 100%;
 }
 
-.Header_name_9e {
+.Header_name_39 {
     color: #e9e2bf;
     font-size: 18rem;
     font-weight: 700;
@@ -880,6 +857,7 @@
     line-height: 1.3;
     margin-top: -13rem;
     text-align: center;
+    position: relative;
     z-index: 1;
 }
 
@@ -906,6 +884,7 @@
     color: #ffc363;
 }
 
+.Reward_info__bptaler_82,
 .Reward_info__crystal_36 {
     color: #c9c9b6;
 }
@@ -959,29 +938,13 @@
     right: -14rem;
 }
 
-.RewardWrapper_base__shiftUp_1e {
-    margin-top: -30rem;
-}
-.RewardWrapper_base__shiftDown_46 {
-    margin-top: 30rem;
-}
-.RewardWrapper_base__styleUpgrade_ca {
-    margin-right: 10rem;
-}
-.RewardWrapper_base__wide_5e {
-    margin-right: 10rem;
-}
-.RewardWrapper_base_dc + .RewardWrapper_base_dc {
-    margin-right: 5rem;
-}
-
-.RewardsBlock_base_58 {
+.RewardsBlock_base_f6 {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 190rem;
 }
-.RewardsBlock_nextRewards_3d {
+.RewardsBlock_nextRewards_01 {
     color: #c9c9b6;
     font-size: 14rem;
     font-weight: 400;
@@ -990,24 +953,147 @@
     align-items: center;
     margin-bottom: 6rem;
 }
-.RewardsBlock_rewardsList_30 {
+.RewardsBlock_rewardsList_59 {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     height: 90rem;
 }
-.RewardsBlock_rewardsList__locked_5d {
+.RewardsBlock_rewardsList__locked_85 {
     opacity: 0.5;
 }
-.RewardsBlock_lockIcon_31 {
+.RewardsBlock_reward_29 {
+    margin-top: 30rem;
+}
+.RewardsBlock_reward__shiftUp_3f {
+    margin-top: -30rem;
+}
+.RewardsBlock_reward__styleUpgrade_84,
+.RewardsBlock_reward__wide_1c {
+    margin-right: 10rem;
+}
+.RewardsBlock_reward__next_d4 {
+    margin-right: 5rem;
+}
+.RewardsBlock_lockIcon_2e {
     width: 36rem;
     height: 36rem;
     margin: -14rem -4rem -12rem -12rem;
     background: url('R.images.gui.maps.icons.battlePass.progression.icon_lock_current_small') center / contain no-repeat;
 }
-.RewardsBlock_rareTrophyDeviceIcon_80 {
+.RewardsBlock_rareTrophyDeviceIcon_98 {
     width: 140rem;
     height: 140rem;
     background: url('R.images.gui.maps.icons.battlePass.tooltips.rare_trophy_device') center / contain no-repeat;
+}
+
+.InProgressContent_base_2a {
+    width: 440rem;
+}
+.InProgressContent_content_8f {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 10rem 28rem 0;
+}
+.InProgressContent_rewards_a5 {
+    display: flex;
+    flex-direction: row;
+    width: 440rem;
+    margin: 18rem 0 15rem;
+    padding-left: 28rem;
+    padding-right: 28rem;
+}
+.InProgressContent_unlockBattlePass_e1 {
+    color: #cbac77;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    width: 100%;
+    margin-bottom: 20rem;
+}
+.InProgressContent_claim_b3 {
+    padding: 10rem 28rem 15rem;
+}
+.InProgressContent_separatorWrapper_ad {
+    margin-top: -15rem;
+}
+
+.Header_base_07 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.Header_name_59 {
+    color: #e9e2bf;
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
+    display: flex;
+    width: 100%;
+    margin-left: 10rem;
+    line-height: 125%;
+    opacity: 0.5;
+}
+
+.RewardsBlock_base_49 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 150rem;
+    position: relative;
+}
+
+.RewardsBlock_ribbon_86 {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background: url('R.images.gui.maps.icons.battlePass.tooltips.Ribbon_large') no-repeat center / cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.RewardsBlock_rewards_1d {
+    display: flex;
+    transform: translateY(-10rem);
+}
+
+.RewardsBlock_reward__big_2f {
+    margin: 0 17rem;
+}
+
+.PostProgressionContent_base_68 {
+    width: 440rem;
+}
+.PostProgressionContent_header_e2,
+.PostProgressionContent_content_30 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 5rem 28rem 0;
+}
+.PostProgressionContent_rewardsBlock_c7 {
+    margin: 18rem 0 15rem;
+}
+.PostProgressionContent_claim_1c {
+    margin-bottom: 20rem;
+}
+.PostProgressionContent_separatorWrapper_a8 {
+    margin: 10rem -28rem 5rem;
+}
+.PostProgressionContent_unlockBattlePass_fa {
+    color: #cbac77;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    width: 100%;
+    margin-bottom: 20rem;
+    padding-top: 10rem;
 }

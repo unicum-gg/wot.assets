@@ -776,9 +776,9 @@
                         getFormattedDateTime: (e, u, t = !0) => regionalDateTime.getFormattedDateTime(e, u, t),
                     };
             },
-            1283: (e, u, t) => {
+            3866: (e, u, t) => {
                 'use strict';
-                var i = t(6179),
+                var i = t(7363),
                     n = t.n(i);
                 const a = (e, u, t) =>
                     u.extraLargeHeight || u.largeHeight || u.mediumHeight || u.smallHeight || u.extraSmallHeight
@@ -1122,7 +1122,7 @@
                         })(e, O);
                     return n().createElement(D, null, n().createElement(S, t, u));
                 };
-                var M = t(493),
+                var M = t(1533),
                     k = t.n(M),
                     P = t(3403),
                     W = t(7030);
@@ -2328,6 +2328,14 @@
                     );
                 });
             },
+            7363: (e) => {
+                'use strict';
+                e.exports = React;
+            },
+            1533: (e) => {
+                'use strict';
+                e.exports = ReactDOM;
+            },
         },
         __webpack_module_cache__ = {},
         deferred;
@@ -2405,6 +2413,6 @@
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             t.forEach(u.bind(null, 0)), (t.push = u.bind(null, t.push.bind(t)));
         })();
-    var __webpack_exports__ = __webpack_require__.O(void 0, [532], () => __webpack_require__(1283));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [532], () => __webpack_require__(3866));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

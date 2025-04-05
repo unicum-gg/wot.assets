@@ -41,7 +41,7 @@
                         pxToRem: () => Q,
                         remToPx: () => W,
                         resize: () => $,
-                        sendEvent: () => M,
+                        sendEvent: () => L,
                         setAnimateWindow: () => J,
                         setEventHandled: () => Y,
                         setInputPaddingsRem: () => D,
@@ -152,8 +152,8 @@
                         get: () => viewEnv.getGraphicsQuality(),
                     },
                     T = { highlight: 'highlight', click: 'play', yes1: 'yes1' },
-                    P = Object.keys(T).reduce((e, n) => ((e[n] = () => h(T[n])), e), {}),
-                    x = { play: Object.assign({}, P, { sound: h }), setRTPC: y };
+                    x = Object.keys(T).reduce((e, n) => ((e[n] = () => h(T[n])), e), {}),
+                    P = { play: Object.assign({}, x, { sound: h }), setRTPC: y };
                 function O(e, n, t = 1) {
                     return viewEnv.getChildTexturePath(e, n.width, n.height, t);
                 }
@@ -182,7 +182,7 @@
                     j = 16,
                     z = 32,
                     F = 64,
-                    L = (e, n) => {
+                    M = (e, n) => {
                         const t = 'GFViewEventProxy';
                         if (void 0 !== n) {
                             const o = n.args,
@@ -219,15 +219,15 @@
                         return viewEnv.handleViewEvent({ __Type: t, type: e });
                         var r;
                     },
-                    M = {
+                    L = {
                         close(e) {
-                            L('popover' === e ? k : z);
+                            M('popover' === e ? k : z);
                         },
                         minimize() {
-                            L(F);
+                            M(F);
                         },
                         move(e) {
-                            L(j, { isMouseEvent: !0, on: e });
+                            M(j, { isMouseEvent: !0, on: e });
                         },
                     },
                     H = 15;
@@ -305,8 +305,8 @@
                         }),
                         engine.whenReady,
                     ]),
-                    ae = { view: a, client: o, sound: x };
-                var se = t(6179),
+                    ae = { view: a, client: o, sound: P };
+                var se = t(7363),
                     ue = t.n(se);
                 const ce = (e) => {
                     (0, se.useEffect)(e, []);
@@ -406,7 +406,7 @@
                         )
                     );
                 });
-                var ge = t(493),
+                var ge = t(1533),
                     pe = t.n(ge);
                 function he() {}
                 function ye() {
@@ -682,8 +682,8 @@
                         );
                     }),
                     Te = (0, se.memo)(Ee);
-                var Pe = t(3403),
-                    xe = t(9174);
+                var xe = t(3403),
+                    Pe = t(9174);
                 function Oe(e, n) {
                     var t = ('undefined' != typeof Symbol && e[Symbol.iterator]) || e['@@iterator'];
                     if (t) return (t = t.call(e)).next.bind(t);
@@ -802,11 +802,11 @@
                                                 observableModel: {
                                                     array: (e, n) => {
                                                         const r = null != n ? n : c(e),
-                                                            o = xe.LO.box(r, { equals: ye });
+                                                            o = Pe.LO.box(r, { equals: ye });
                                                         return (
                                                             'real' === t &&
                                                                 u.subscribe(
-                                                                    (0, xe.aD)((e) => o.set(e)),
+                                                                    (0, Pe.aD)((e) => o.set(e)),
                                                                     e,
                                                                 ),
                                                             o
@@ -814,11 +814,11 @@
                                                     },
                                                     object: (e, n) => {
                                                         const r = null != n ? n : c(e),
-                                                            o = xe.LO.box(r, { equals: ye });
+                                                            o = Pe.LO.box(r, { equals: ye });
                                                         return (
                                                             'real' === t &&
                                                                 u.subscribe(
-                                                                    (0, xe.aD)((e) => o.set(e)),
+                                                                    (0, Pe.aD)((e) => o.set(e)),
                                                                     e,
                                                                 ),
                                                             o
@@ -828,13 +828,13 @@
                                                         const r = c(n);
                                                         if (Array.isArray(e)) {
                                                             const o = e.reduce(
-                                                                (e, n) => ((e[n] = xe.LO.box(r[n], {})), e),
+                                                                (e, n) => ((e[n] = Pe.LO.box(r[n], {})), e),
                                                                 {},
                                                             );
                                                             return (
                                                                 'real' === t &&
                                                                     u.subscribe(
-                                                                        (0, xe.aD)((n) => {
+                                                                        (0, Pe.aD)((n) => {
                                                                             e.forEach((e) => {
                                                                                 o[e].set(n[e]);
                                                                             });
@@ -848,13 +848,13 @@
                                                             const o = e,
                                                                 i = Object.entries(o),
                                                                 a = i.reduce(
-                                                                    (e, [n, t]) => ((e[t] = xe.LO.box(r[n], {})), e),
+                                                                    (e, [n, t]) => ((e[t] = Pe.LO.box(r[n], {})), e),
                                                                     {},
                                                                 );
                                                             return (
                                                                 'real' === t &&
                                                                     u.subscribe(
-                                                                        (0, xe.aD)((e) => {
+                                                                        (0, Pe.aD)((e) => {
                                                                             i.forEach(([n, t]) => {
                                                                                 a[t].set(e[n]);
                                                                             });
@@ -908,7 +908,7 @@
                     je = 'AdvancedTooltipViewApp_header_72',
                     ze = 'AdvancedTooltipViewApp_movie_58',
                     Fe = 'AdvancedTooltipViewApp_description_17',
-                    Le = (0, Pe.Pi)(() => {
+                    Me = (0, xe.Pi)(() => {
                         const e = _e().model,
                             n = e.movie.get();
                         return ue().createElement(
@@ -927,10 +927,16 @@
                     });
                 engine.whenReady.then(() => {
                     pe().render(
-                        ue().createElement(Ae, null, ue().createElement(me, null, ue().createElement(Le, null))),
+                        ue().createElement(Ae, null, ue().createElement(me, null, ue().createElement(Me, null))),
                         document.getElementById('root'),
                     );
                 });
+            },
+            7363: (e) => {
+                e.exports = React;
+            },
+            1533: (e) => {
+                e.exports = ReactDOM;
             },
         },
         t = {};

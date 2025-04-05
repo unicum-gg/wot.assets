@@ -4,31 +4,23 @@
 }
 
 .Label_text_52 {
-    color: #fff;
-    font-size: 22rem;
+    color: rgb(238, 250, 246);
+    font-size: 24rem;
     font-weight: 700;
     line-height: 1.2;
     display: flex;
     background: rgba(0, 0, 0, 0.7);
 }
 
-.mediaMedium .Label_text_52 {
-    font-size: 28rem;
-    line-height: 1;
-}
-
 .Label_textGlow_4e {
     background: none;
-    color: #ffeab2;
-    text-shadow: 0 -1rem 0 #ccdce4;
+    text-shadow:
+        0rem 2rem 4rem rgba(0, 0, 0, 0.5),
+        0rem 0rem 12rem rgba(0, 210, 109, 0.5);
     position: absolute;
 }
 
-.Label_base__inProgress_ba .Label_textGlow_4e {
-    text-shadow: 0 -1rem 0 #ffeab2;
-}
-
-.Label_textGlow__inner_7b {
+.Label_base__isAlertMode_be .Label_textGlow_4e {
     color: #000;
     text-shadow: 0 2rem 1rem #000;
 }
@@ -43,14 +35,13 @@
 .Label_textMask_f7 {
     width: 100%;
     height: 100%;
-    background-image: url('R.images.battle_royale.gui.maps.widget.font_mask.completed.font_texture');
     background-position: 50% 50%;
     mix-blend-mode: multiply;
     position: absolute;
 }
 
-.Label_base__inProgress_ba .Label_textMask_f7 {
-    background-image: url('R.images.battle_royale.gui.maps.widget.font_mask.in_progress.font_texture');
+.Label_base__isAlertMode_be .Label_textMask_f7 {
+    background-image: url('R.images.battle_royale.gui.maps.widget.font_mask.completed.font_texture');
 }
 
 .Widget_base_55 {
@@ -163,12 +154,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 20rem;
+    margin-bottom: 19rem;
     position: relative;
 }
 
 .mediaMedium .Widget_label_be {
-    margin-bottom: 25rem;
+    margin-bottom: 24rem;
 }
 
 .mediaMedium .Widget_icon__inProgress_e5 .Widget_label_be {

@@ -162,17 +162,17 @@
 
 .App_close_99 {
     position: absolute;
-    top: 53rem;
+    top: 17rem;
     right: 17rem;
     z-index: 1;
 }
 
 .mediaMedium .App_close_99 {
-    top: 77rem;
+    top: 67rem;
 }
 
 .mediaLarge .App_close_99 {
-    top: 77rem;
+    top: 67rem;
     right: 25rem;
 }
 
@@ -875,6 +875,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     line-height: 1.3;
     margin-top: -13rem;
     text-align: center;
+    position: relative;
     z-index: 1;
 }
 
@@ -901,6 +902,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     color: #ffc363;
 }
 
+.Reward_info__bptaler_82,
 .Reward_info__crystal_36 {
     color: #c9c9b6;
 }

@@ -7,7 +7,7 @@
                 var A = t(6483),
                     E = t.n(A),
                     F = t(3649),
-                    r = t(6179),
+                    r = t(7363),
                     a = t.n(r),
                     n = t(5287);
                 const D = ({
@@ -134,7 +134,7 @@
             6583: (u, e, t) => {
                 'use strict';
                 t.d(e, { e: () => D });
-                var A = t(6179),
+                var A = t(7363),
                     E = t.n(A),
                     F = t(6483),
                     r = t.n(F);
@@ -180,7 +180,7 @@
                 var A = t(280),
                     E = t(9480),
                     F = t(3649),
-                    r = t(6179),
+                    r = t(7363),
                     a = t.n(r),
                     n = t(6583);
                 const D = 'VehicleList_base_b7',
@@ -271,7 +271,7 @@
                         setSidePaddingsRem: () => V,
                         whenTutorialReady: () => ru,
                     });
-                var a = t(6179),
+                var a = t(7363),
                     n = t.n(a);
                 const D = (u, e, t) =>
                     e.extraLargeHeight || e.largeHeight || e.mediumHeight || e.smallHeight || e.extraSmallHeight
@@ -385,8 +385,8 @@
                         get: () => viewEnv.getGraphicsQuality(),
                     },
                     p = { highlight: 'highlight', click: 'play', yes1: 'yes1' },
-                    _ = Object.keys(p).reduce((u, e) => ((u[e] = () => m(p[e])), u), {}),
-                    x = { play: Object.assign({}, _, { sound: m }), setRTPC: h };
+                    x = Object.keys(p).reduce((u, e) => ((u[e] = () => m(p[e])), u), {}),
+                    _ = { play: Object.assign({}, x, { sound: m }), setRTPC: h };
                 function w(u, e, t = 1) {
                     return viewEnv.getChildTexturePath(u, e.width, e.height, t);
                 }
@@ -538,7 +538,7 @@
                         }),
                         engine.whenReady,
                     ]),
-                    au = { view: r, client: E, sound: x };
+                    au = { view: r, client: E, sound: _ };
                 const nu = {
                     extraLarge: { weight: 4, width: 2560, height: 1440 },
                     large: { weight: 3, width: 1920, height: 1080 },
@@ -724,21 +724,21 @@
                     vu = t.n(gu),
                     fu = t(926),
                     pu = t.n(fu);
-                let _u, xu, wu;
+                let xu, _u, wu;
                 !(function (u) {
                     (u[(u.ExtraSmall = nu.extraSmall.width)] = 'ExtraSmall'),
                         (u[(u.Small = nu.small.width)] = 'Small'),
                         (u[(u.Medium = nu.medium.width)] = 'Medium'),
                         (u[(u.Large = nu.large.width)] = 'Large'),
                         (u[(u.ExtraLarge = nu.extraLarge.width)] = 'ExtraLarge');
-                })(_u || (_u = {})),
+                })(xu || (xu = {})),
                     (function (u) {
                         (u[(u.ExtraSmall = nu.extraSmall.width)] = 'ExtraSmall'),
                             (u[(u.Small = nu.small.width)] = 'Small'),
                             (u[(u.Medium = nu.medium.width)] = 'Medium'),
                             (u[(u.Large = nu.large.width)] = 'Large'),
                             (u[(u.ExtraLarge = nu.extraLarge.width)] = 'ExtraLarge');
-                    })(xu || (xu = {})),
+                    })(_u || (_u = {})),
                     (function (u) {
                         (u[(u.ExtraSmall = nu.extraSmall.height)] = 'ExtraSmall'),
                             (u[(u.Small = nu.small.height)] = 'Small'),
@@ -753,33 +753,33 @@
                             A = ((u) => {
                                 switch (!0) {
                                     case u.extraLarge:
-                                        return _u.ExtraLarge;
+                                        return xu.ExtraLarge;
                                     case u.large:
-                                        return _u.Large;
+                                        return xu.Large;
                                     case u.medium:
-                                        return _u.Medium;
+                                        return xu.Medium;
                                     case u.small:
-                                        return _u.Small;
+                                        return xu.Small;
                                     case u.extraSmall:
-                                        return _u.ExtraSmall;
+                                        return xu.ExtraSmall;
                                     default:
-                                        return console.error('Unreachable media context resolution'), _u.ExtraSmall;
+                                        return console.error('Unreachable media context resolution'), xu.ExtraSmall;
                                 }
                             })(u),
                             E = ((u) => {
                                 switch (!0) {
                                     case u.extraLargeWidth:
-                                        return xu.ExtraLarge;
+                                        return _u.ExtraLarge;
                                     case u.largeWidth:
-                                        return xu.Large;
+                                        return _u.Large;
                                     case u.mediumWidth:
-                                        return xu.Medium;
+                                        return _u.Medium;
                                     case u.smallWidth:
-                                        return xu.Small;
+                                        return _u.Small;
                                     case u.extraSmallWidth:
-                                        return xu.ExtraSmall;
+                                        return _u.ExtraSmall;
                                     default:
-                                        return console.error('Unreachable media context resolution'), xu.ExtraSmall;
+                                        return console.error('Unreachable media context resolution'), _u.ExtraSmall;
                                 }
                             })(u),
                             F = ((u) => {
@@ -816,11 +816,11 @@
                     );
                 }
                 const yu = {
-                        [xu.ExtraSmall]: '',
-                        [xu.Small]: pu().SMALL_WIDTH,
-                        [xu.Medium]: `${pu().SMALL_WIDTH} ${pu().MEDIUM_WIDTH}`,
-                        [xu.Large]: `${pu().SMALL_WIDTH} ${pu().MEDIUM_WIDTH} ${pu().LARGE_WIDTH}`,
-                        [xu.ExtraLarge]: `${pu().SMALL_WIDTH} ${pu().MEDIUM_WIDTH} ${pu().LARGE_WIDTH} ${pu().EXTRA_LARGE_WIDTH}`,
+                        [_u.ExtraSmall]: '',
+                        [_u.Small]: pu().SMALL_WIDTH,
+                        [_u.Medium]: `${pu().SMALL_WIDTH} ${pu().MEDIUM_WIDTH}`,
+                        [_u.Large]: `${pu().SMALL_WIDTH} ${pu().MEDIUM_WIDTH} ${pu().LARGE_WIDTH}`,
+                        [_u.ExtraLarge]: `${pu().SMALL_WIDTH} ${pu().MEDIUM_WIDTH} ${pu().LARGE_WIDTH} ${pu().EXTRA_LARGE_WIDTH}`,
                     },
                     Hu = {
                         [wu.ExtraSmall]: '',
@@ -830,11 +830,11 @@
                         [wu.ExtraLarge]: `${pu().SMALL_HEIGHT} ${pu().MEDIUM_HEIGHT} ${pu().LARGE_HEIGHT} ${pu().EXTRA_LARGE_HEIGHT}`,
                     },
                     Tu = {
-                        [_u.ExtraSmall]: '',
-                        [_u.Small]: pu().SMALL,
-                        [_u.Medium]: `${pu().SMALL} ${pu().MEDIUM}`,
-                        [_u.Large]: `${pu().SMALL} ${pu().MEDIUM} ${pu().LARGE}`,
-                        [_u.ExtraLarge]: `${pu().SMALL} ${pu().MEDIUM} ${pu().LARGE} ${pu().EXTRA_LARGE}`,
+                        [xu.ExtraSmall]: '',
+                        [xu.Small]: pu().SMALL,
+                        [xu.Medium]: `${pu().SMALL} ${pu().MEDIUM}`,
+                        [xu.Large]: `${pu().SMALL} ${pu().MEDIUM} ${pu().LARGE}`,
+                        [xu.ExtraLarge]: `${pu().SMALL} ${pu().MEDIUM} ${pu().LARGE} ${pu().EXTRA_LARGE}`,
                     },
                     Mu = (u) => {
                         let e = u.children,
@@ -870,7 +870,7 @@
                         })(u, Ru);
                     return n().createElement(hu, null, n().createElement(Mu, t, e));
                 };
-                var Pu = t(493),
+                var Pu = t(1533),
                     Iu = t.n(Pu);
                 function Ou() {
                     const u = (0, a.useRef)(0);
@@ -1286,8 +1286,8 @@
                 var ve = t(9351);
                 const fe = 'Points_base_fa',
                     pe = 'Points_separator_52',
-                    _e = 'Points_points_9b',
-                    xe = (0, ju.Pi)(() => {
+                    xe = 'Points_points_9b',
+                    _e = (0, ju.Pi)(() => {
                         const u = ee().model.rewardPoints.get(),
                             e = bu().mediaSize;
                         return n().createElement(
@@ -1296,12 +1296,12 @@
                             n().createElement('div', { className: pe }),
                             n().createElement(
                                 'div',
-                                { className: _e },
+                                { className: xe },
                                 n().createElement(
                                     ve.c,
                                     { showSeparator: !1, stretchBg: !0, separatorRows: u.items },
                                     n().createElement(ge, {
-                                        tableColumnWidth: e < _u.Small ? 210 : 230,
+                                        tableColumnWidth: e < xu.Small ? 210 : 230,
                                         rewardPoints: u,
                                     }),
                                 ),
@@ -1317,7 +1317,7 @@
                             { className: te },
                             n().createElement(Ce, null),
                             n().createElement('div', { className: Ee }, we.rules()),
-                            n().createElement(xe, null),
+                            n().createElement(_e, null),
                             u.length &&
                                 n().createElement(
                                     n().Fragment,
@@ -1346,7 +1346,7 @@
                 t.d(e, { c: () => n });
                 var A = t(6483),
                     E = t.n(A),
-                    F = t(6179),
+                    F = t(7363),
                     r = t.n(F),
                     a = t(401);
                 const n = ({
@@ -1379,7 +1379,7 @@
             4890: (u, e, t) => {
                 'use strict';
                 t.d(e, { E: () => l });
-                var A = t(6179),
+                var A = t(7363),
                     E = t.n(A);
                 const F = 'Point_base_e9',
                     r = 'Point_points_2a',
@@ -1413,6 +1413,14 @@
                     label__table: 'styles_label__table_9e',
                     pointsColumn: 'styles_pointsColumn_20',
                 };
+            },
+            7363: (u) => {
+                'use strict';
+                u.exports = React;
+            },
+            1533: (u) => {
+                'use strict';
+                u.exports = ReactDOM;
             },
         },
         t = {};

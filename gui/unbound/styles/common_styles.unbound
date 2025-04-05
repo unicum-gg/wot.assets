@@ -29,12 +29,3 @@
 (def css OffFilterStyle()
     (filters)
 )
-
-(def macro ViewResizeBindedSize(dX:expression=0, dY:expression=0)
-    (bind width "viewSize.width + dX" 
-        (event "viewResized")
-    )
-    (bind height "viewSize.height + dY" 
-        (event "viewResized")
-    )
-)

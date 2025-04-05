@@ -177,10 +177,10 @@
                     },
                     T = ['args'];
                 const R = 2,
-                    P = 16,
-                    x = 32,
-                    S = 64,
-                    O = (u, e) => {
+                    O = 16,
+                    P = 32,
+                    x = 64,
+                    S = (u, e) => {
                         const t = 'GFViewEventProxy';
                         if (void 0 !== e) {
                             const n = e.args,
@@ -219,13 +219,13 @@
                     },
                     y = {
                         close(u) {
-                            O('popover' === u ? R : x);
+                            S('popover' === u ? R : P);
                         },
                         minimize() {
-                            O(S);
+                            S(x);
                         },
                         move(u) {
-                            O(P, { isMouseEvent: !0, on: u });
+                            S(O, { isMouseEvent: !0, on: u });
                         },
                     },
                     k = 15;
@@ -704,7 +704,7 @@
                 var r = t(483),
                     n = t.n(r),
                     a = t(768),
-                    i = t(179),
+                    i = t(363),
                     o = t.n(i);
                 function E() {
                     const u = (0, i.useRef)(0);
@@ -803,7 +803,7 @@
                         )
                     );
                 });
-                var D = t(493),
+                var D = t(533),
                     c = t.n(D),
                     B = t(281);
                 let d;
@@ -915,19 +915,19 @@
                         prom: 'FormatTextWithColorTags_prom_dd',
                         parNoWidth: 'FormatTextWithColorTags_parNoWidth_5a',
                     },
-                    P = /(?:%\(|{)\w*(?:_[Oo]pen|Start)(?:\)s|})?(.*?)(?:%\(|{)\w*(?:_[Cc]lose|End)(?:\)s|})?/g,
-                    x = /(?<=(?:%\(|{))(.*?)(?=(?:_[Oo]pen|Start))/,
-                    S = /(?<=(?:_[Oo]pen|Start)(?:\)s?|}))(.*?)(?=(?:%\(|{))/,
-                    O = (0, i.memo)(({ text: u, binding: e, classMix: t }) => {
+                    O = /(?:%\(|{)\w*(?:_[Oo]pen|Start)(?:\)s|})?(.*?)(?:%\(|{)\w*(?:_[Cc]lose|End)(?:\)s|})?/g,
+                    P = /(?<=(?:%\(|{))(.*?)(?=(?:_[Oo]pen|Start))/,
+                    x = /(?<=(?:_[Oo]pen|Start)(?:\)s?|}))(.*?)(?=(?:%\(|{))/,
+                    S = (0, i.memo)(({ text: u, binding: e, classMix: t }) => {
                         const r = (0, i.useCallback)((u) => ({ color: `#${u}` }), []),
                             n = (0, i.useMemo)(() => e || {}, [e]);
-                        let a = P.exec(u),
+                        let a = O.exec(u),
                             E = u,
                             s = 0;
                         for (; a; ) {
                             const t = a[0],
-                                i = x.exec(t),
-                                A = S.exec(t),
+                                i = P.exec(t),
+                                A = x.exec(t),
                                 F = a[1];
                             if (i && A) {
                                 const u = i[0],
@@ -945,7 +945,7 @@
                                               o().createElement(f, { text: F, binding: e }),
                                           ));
                             }
-                            a = P.exec(u);
+                            a = O.exec(u);
                         }
                         return o().createElement(f, { text: E, classMix: t, binding: n });
                     });
@@ -971,7 +971,6 @@
                         (u.TankmenXpFactor = 'tankmenXPFactor'),
                         (u.FreeXpFactor = 'freeXPFactor'),
                         (u.BattleToken = 'battleToken'),
-                        (u.Entitlements = 'entitlements'),
                         (u.PremiumUniversal = 'premium_universal'),
                         (u.Gold = 'gold'),
                         (u.Credits = 'credits'),
@@ -981,16 +980,14 @@
                         (u.PremiumPlus = 'premium_plus'),
                         (u.BattlePassPoints = 'battlePassPoints'),
                         (u.BattlePassSelectToken = 'battlePassSelectToken'),
+                        (u.BattlePassTicket = 'lootBox_commonTicket'),
+                        (u.BattlePassTaler = 'bptaler'),
                         (u.StyleProgressToken = 'styleProgressToken'),
                         (u.TmanToken = 'tmanToken'),
                         (u.NaturalCover = 'naturalCover'),
                         (u.BpCoin = 'bpcoin'),
                         (u.BattlaPassFinalAchievement = 'dossier_achievement'),
                         (u.BattleBadge = 'dossier_badge'),
-                        (u.NewYearInvoice = 'newYearInvoice'),
-                        (u.NewYearSlot = 'newYearSlot'),
-                        (u.NewYearGuestD = 'ny_dog'),
-                        (u.EquipCoin = 'equipCoin'),
                         (u.BonusX5 = 'battle_bonus_x5'),
                         (u.CrewBonusX3 = 'crew_bonus_x3'),
                         (u.Vehicles = 'vehicles'),
@@ -999,8 +996,10 @@
                         (u.DeluxeGift = 'deluxe_gift'),
                         (u.BattleBoosterGift = 'battleBooster_gift'),
                         (u.OptionalDevice = 'optionalDevice'),
+                        (u.EquipCoin = 'equipCoin'),
                         (u.LootBox = 'lootBox'),
-                        (u.BrCoin = 'brcoin');
+                        (u.BrCoin = 'brcoin'),
+                        (u.StpCoin = 'stpcoin');
                 })(y || (y = {})),
                     (function (u) {
                         (u.Gold = 'gold'),
@@ -1078,10 +1077,11 @@
                             (u.PROGRESSION_STYLE_UPGRADED_3 = 'progressionStyleUpgraded_3'),
                             (u.PROGRESSION_STYLE_UPGRADED_4 = 'progressionStyleUpgraded_4'),
                             (u.PROGRESSION_STYLE_UPGRADED_5 = 'progressionStyleUpgraded_5'),
-                            (u.PROGRESSION_STYLE_UPGRADED_6 = 'progressionStyleUpgraded_6');
+                            (u.PROGRESSION_STYLE_UPGRADED_6 = 'progressionStyleUpgraded_6'),
+                            (u.LOOT_BOX = 'eventLootBoxes');
                     })(N || (N = {})),
                     (function (u) {
-                        u.BATTLE_BOOSTER = 'battleBooster';
+                        (u.BATTLE_BOOSTER = 'battleBooster'), (u.LOOT_BOX = 'lootBox');
                     })(M || (M = {})),
                     (function (u) {
                         (u.BATTLE_BOOSTER = 'battleBooster'),
@@ -1133,23 +1133,24 @@
                         y.TankmenXpFactor,
                         y.FreeXpFactor,
                         y.BattleToken,
-                        y.Entitlements,
+                        y.LootBox,
                         y.PremiumUniversal,
                         y.NaturalCover,
                         y.BpCoin,
                         y.BattlePassSelectToken,
                         y.BattlaPassFinalAchievement,
                         y.BattleBadge,
+                        y.BattlePassTicket,
                         y.BonusX5,
                         y.CrewBonusX3,
-                        y.NewYearInvoice,
                         y.EpicSelectToken,
                         y.Comp7TokenWeeklyReward,
                         y.DeluxeGift,
                         y.BattleBoosterGift,
                         y.OptionalDevice,
+                        y.Lootbox,
                     ],
-                    Y = [y.Gold, y.Credits, y.Crystal, y.FreeXp],
+                    Y = [y.Gold, y.Credits, y.Crystal, y.FreeXp, y.StpCoin],
                     $ = [y.BattlePassPoints, y.EquipCoin],
                     V = [y.PremiumPlus, y.Premium],
                     j = ['engravings', 'backgrounds'],
@@ -1195,6 +1196,9 @@
                             case 'tokens':
                             case 'lootBox':
                             case 'battleToken':
+                                return 'big' === e
+                                    ? u.iconBig.replace('..', 'img://gui')
+                                    : u.iconSmall.replace('..', 'img://gui');
                             case 'customizations':
                             case 'styleProgress':
                             case 'crewSkins':
@@ -1203,10 +1207,6 @@
                             case 'tmanToken':
                             case 'battlePassSelectToken':
                                 return `R.images.gui.maps.icons.quests.bonuses.${e}.${a}`;
-                            case 'entitlements':
-                                return 'big' === e
-                                    ? u.iconBig.replace('..', 'img://gui')
-                                    : u.iconSmall.replace('..', 'img://gui');
                             case 'crewBooks':
                                 return `R.images.gui.maps.icons.crewBooks.books.${e}.${a}`;
                             case 'dogTagComponents':
@@ -1240,14 +1240,10 @@
                                 return `R.images.gui.maps.icons.quests.bonuses.${e}.freeXP`;
                             case 'premiumTank':
                                 return `R.images.gui.maps.icons.quests.bonuses.${e}.vehicles`;
-                            case 'premiumTank_rent':
-                                return `R.images.gui.maps.icons.quests.bonuses.${e}.vehicles_rent`;
                             case 'styleProgressToken':
                                 return `R.images.gui.maps.icons.quests.bonuses.${e}.style_3d`;
                             case 'collectionItem':
                                 return `R.images.gui.maps.icons.collectionItems.${E}.${a}`;
-                            case 'newYearSlot':
-                                return `R.images.gui.maps.icons.newYear.rewards.${e}.slot`;
                             default:
                                 return `R.images.gui.maps.icons.quests.bonuses.${e}.${t}`;
                         }
@@ -1351,15 +1347,20 @@
                                     ((u = 1) => {
                                         const e = new Error().stack;
                                         let t,
-                                            r = R.invalid('resId');
+                                            r = R.invalid('resId'),
+                                            n = '';
+                                        var a;
                                         return (
                                             e &&
-                                                ((t = e.split('\n')[u].split('.js')[0].split('/').pop() || ''),
+                                                ((n =
+                                                    (null == (a = e.match(/(coui:\/\/[^\s]+\.js)/)) ? void 0 : a[0]) ||
+                                                    ''),
+                                                (t = e.split('\n')[u].split('.js')[0].split('/').pop() || ''),
                                                 window.__feature &&
                                                     window.__feature !== t &&
                                                     window.subViews[t] &&
                                                     (r = window.subViews[t].id)),
-                                            { caller: t, stack: e, resId: r }
+                                            { callerUrl: n, caller: t, stack: e, resId: r }
                                         );
                                     })().resId,
                                 [_],
@@ -1577,6 +1578,7 @@
                         info__multi: 'Reward_info__multi_63',
                         info__credits: 'Reward_info__credits_ef',
                         info__gold: 'Reward_info__gold_36',
+                        info__bptaler: 'Reward_info__bptaler_82',
                         info__crystal: 'Reward_info__crystal_36',
                         info__premiumTank: 'Reward_info__premiumTank_d3',
                         title: 'Reward_title_36',
@@ -1603,6 +1605,8 @@
                                     case N.BATTLE_BOOSTER:
                                     case N.BATTLE_BOOSTER_REPLACE:
                                         return M.BATTLE_BOOSTER;
+                                    case N.LOOT_BOX:
+                                        return M.LOOT_BOX;
                                 }
                             })(r, a),
                             d = ((u) => {
@@ -2019,8 +2023,8 @@
                     for (var t = 0, r = Array(e); t < e; t++) r[t] = u[t];
                     return r;
                 }
-                const Pu = (u) => (0 === u ? window : window.subViews.get(u));
-                const xu = ((u, e) => {
+                const Ou = (u) => (0 === u ? window : window.subViews.get(u));
+                const Pu = ((u, e) => {
                         const t = (0, i.createContext)({});
                         return [
                             function ({ mode: r = 'real', options: n, children: E, mocks: s }) {
@@ -2030,7 +2034,7 @@
                                         const o = (function ({
                                                 initializer: u = !0,
                                                 rootId: e = 0,
-                                                getRoot: t = Pu,
+                                                getRoot: t = Ou,
                                                 context: r = 'model',
                                             } = {}) {
                                                 const n = new Map();
@@ -2201,8 +2205,8 @@
                             () => (0, i.useContext)(t),
                         ];
                     })(({ observableModel: u }) => ({ root: u.object(), rewards: u.array('bonuses') }), vu),
-                    Su = xu[0],
-                    Ou = xu[1],
+                    xu = Pu[0],
+                    Su = Pu[1],
                     yu = 'App_base_0c',
                     ku = 'App_header_aa',
                     Lu = 'App_title_46',
@@ -2213,7 +2217,7 @@
                     Gu = 'App_reward_9c',
                     Wu = R.strings.tooltips.confirmEmailTooltip,
                     Hu = () => {
-                        const u = Ou().model,
+                        const u = Su().model,
                             e = u.root.get().email,
                             t = u.rewards.get(),
                             r = e ? 'confirmed' : 'notConfirmed';
@@ -2225,7 +2229,7 @@
                                 { className: ku },
                                 o().createElement('div', { className: Lu }, Wu.title.$dyn(r)),
                                 'confirmed' === r
-                                    ? o().createElement(O, {
+                                    ? o().createElement(S, {
                                           text: Wu.subtitle.confirmed(),
                                           binding: { email: e },
                                           classMix: Nu,
@@ -2242,10 +2246,16 @@
                     };
                 engine.whenReady.then(() => {
                     c().render(
-                        o().createElement(Su, null, o().createElement(l, null, o().createElement(Hu, null))),
+                        o().createElement(xu, null, o().createElement(l, null, o().createElement(Hu, null))),
                         document.getElementById('root'),
                     );
                 });
+            },
+            363: (u) => {
+                u.exports = React;
+            },
+            533: (u) => {
+                u.exports = ReactDOM;
             },
         },
         __webpack_module_cache__ = {},

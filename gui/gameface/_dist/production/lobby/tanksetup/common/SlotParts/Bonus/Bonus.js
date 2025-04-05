@@ -3,7 +3,7 @@
     var e,
         n = {
             906: (e, n, o) => {
-                var t = o(6179),
+                var t = o(7363),
                     r = o.n(t),
                     i = o(6483),
                     a = o.n(i);
@@ -29,6 +29,9 @@
                         r().createElement('div', { className: s, style: u }),
                     );
                 });
+            },
+            7363: (e) => {
+                e.exports = React;
             },
         },
         o = {};

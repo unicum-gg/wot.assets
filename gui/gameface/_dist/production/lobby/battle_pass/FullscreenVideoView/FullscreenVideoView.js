@@ -741,9 +741,9 @@
                     };
             },
             237: (e, n, t) => {
-                var r = t(6179),
+                var r = t(7363),
                     o = t.n(r),
-                    i = t(493),
+                    i = t(1533),
                     a = t.n(i);
                 var s = t(3138),
                     c = t(6112);
@@ -1400,6 +1400,12 @@
                 engine.whenReady.then(() => {
                     a().render(o().createElement(P, null, o().createElement(N, null)), document.getElementById('root'));
                 });
+            },
+            7363: (e) => {
+                e.exports = React;
+            },
+            1533: (e) => {
+                e.exports = ReactDOM;
             },
         },
         __webpack_module_cache__ = {},

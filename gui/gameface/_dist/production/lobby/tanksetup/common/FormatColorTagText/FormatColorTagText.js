@@ -6,7 +6,7 @@
                 var A = F(6483),
                     E = F.n(A),
                     D = F(3649),
-                    t = F(6179),
+                    t = F(7363),
                     B = F.n(t),
                     C = F(5287);
                 const n = ({
@@ -840,7 +840,7 @@
                     };
             },
             7260: (u, e, F) => {
-                var A = F(6179),
+                var A = F(7363),
                     E = F.n(A),
                     D = F(280),
                     t = F(8852);
@@ -880,10 +880,10 @@
                 });
             },
             1363: (u, e, F) => {
-                F(6483), F(3649), F(6179), F(5282);
+                F(6483), F(3649), F(7363), F(5282);
             },
             5282: (u, e, F) => {
-                F(6483), F(3138), F(9916), F(6179);
+                F(6483), F(3138), F(9916), F(7363);
                 F(7260);
             },
             5287: (u, e, F) => {
@@ -918,6 +918,9 @@
                     prom: 'FormatTextWithColorTags_prom_dd',
                     parNoWidth: 'FormatTextWithColorTags_parNoWidth_5a',
                 };
+            },
+            7363: (u) => {
+                u.exports = React;
             },
         },
         __webpack_module_cache__ = {},

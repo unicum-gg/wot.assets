@@ -13,11 +13,11 @@
                         getMouseGlobalPosition: () => z,
                         getSize: () => k,
                         graphicsQuality: () => j,
-                        playSound: () => A,
-                        setRTPC: () => M,
+                        playSound: () => M,
+                        setRTPC: () => A,
                     });
                 var i = {};
-                t.r(i), t.d(i, { getBgUrl: () => H, getTextureUrl: () => D });
+                t.r(i), t.d(i, { getBgUrl: () => H, getTextureUrl: () => N });
                 var a = {};
                 t.r(a),
                     t.d(a, {
@@ -48,9 +48,9 @@
                         setSidePaddingsRem: () => X,
                         whenTutorialReady: () => be,
                     });
-                var s = t(6179),
+                var s = t(7363),
                     u = t.n(s),
-                    l = t(493),
+                    l = t(1533),
                     c = t.n(l),
                     d = t(6483),
                     v = t.n(d);
@@ -278,12 +278,12 @@
                             },
                         });
                     })();
-                function A(e) {
+                function M(e) {
                     engine.call('PlaySound', e).catch((n) => {
                         console.error(`playSound('${e}'): `, n);
                     });
                 }
-                function M(e, n) {
+                function A(e, n) {
                     engine.call('SetRTPCGlobal', e, n).catch((t) => {
                         console.error(`setRTPC('${e}', '${n}'): `, t);
                     });
@@ -300,13 +300,13 @@
                         get: () => viewEnv.getGraphicsQuality(),
                     },
                     L = { highlight: 'highlight', click: 'play', yes1: 'yes1' },
-                    V = Object.keys(L).reduce((e, n) => ((e[n] = () => A(L[n])), e), {}),
-                    N = { play: Object.assign({}, V, { sound: A }), setRTPC: M };
-                function D(e, n, t = 1) {
+                    V = Object.keys(L).reduce((e, n) => ((e[n] = () => M(L[n])), e), {}),
+                    D = { play: Object.assign({}, V, { sound: M }), setRTPC: A };
+                function N(e, n, t = 1) {
                     return viewEnv.getChildTexturePath(e, n.width, n.height, t);
                 }
                 function H(e, n, t) {
-                    return `url(${D(e, n, t)})`;
+                    return `url(${N(e, n, t)})`;
                 }
                 const G = { showing: 0, shown: 1, hiding: 2, hidden: 3 },
                     Q = {
@@ -449,7 +449,7 @@
                         }),
                         engine.whenReady,
                     ]),
-                    ge = { view: a, client: r, sound: N };
+                    ge = { view: a, client: r, sound: D };
                 function fe(e, n) {
                     (null == n || n > e.length) && (n = e.length);
                     for (var t = 0, o = Array(n); t < n; t++) o[t] = e[t];
@@ -739,6 +739,12 @@
                         document.getElementById('root'),
                     );
                 });
+            },
+            7363: (e) => {
+                e.exports = React;
+            },
+            1533: (e) => {
+                e.exports = ReactDOM;
             },
         },
         t = {};

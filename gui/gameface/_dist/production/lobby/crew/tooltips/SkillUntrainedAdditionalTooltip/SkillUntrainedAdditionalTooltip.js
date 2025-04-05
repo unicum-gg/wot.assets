@@ -21,8 +21,8 @@
                 var a = {};
                 t.r(a),
                     t.d(a, {
-                        addModelObserver: () => M,
-                        addPreloadTexture: () => V,
+                        addModelObserver: () => K,
+                        addPreloadTexture: () => M,
                         children: () => o,
                         displayStatus: () => O,
                         displayStatusIs: () => re,
@@ -30,7 +30,7 @@
                         extraSize: () => ie,
                         forceTriggerMouseMove: () => ee,
                         freezeTextureBeforeResize: () => q,
-                        getBrowserTexturePath: () => K,
+                        getBrowserTexturePath: () => G,
                         getDisplayStatus: () => ne,
                         getFontNames: () => te,
                         getScale: () => I,
@@ -44,7 +44,7 @@
                         sendEvent: () => L,
                         setAnimateWindow: () => J,
                         setEventHandled: () => Y,
-                        setInputPaddingsRem: () => G,
+                        setInputPaddingsRem: () => V,
                         setSidePaddingsRem: () => U,
                         whenTutorialReady: () => oe,
                     });
@@ -231,16 +231,16 @@
                         },
                     },
                     N = 15;
-                function V(e) {
+                function M(e) {
                     viewEnv.addPreloadTexture(e);
                 }
-                function G(e) {
+                function V(e) {
                     viewEnv.setHitAreaPaddingsRem(e, e, e, e, N);
                 }
-                function K(e, n, t, r = 1) {
+                function G(e, n, t, r = 1) {
                     return viewEnv.getWebBrowserTexturePath(e, n, t, r);
                 }
-                function M(e, n, t) {
+                function K(e, n, t) {
                     return viewEnv.addDataChangedCallback(e, n, t);
                 }
                 function U(e) {
@@ -306,7 +306,7 @@
                         engine.whenReady,
                     ]),
                     ae = { view: a, client: i, sound: S };
-                var se = t(6179),
+                var se = t(7363),
                     ue = t.n(se);
                 const le = (e) => {
                     (0, se.useEffect)(e, []);
@@ -406,7 +406,7 @@
                         )
                     );
                 });
-                var ge = t(493),
+                var ge = t(1533),
                     pe = t.n(ge);
                 function he() {}
                 console.log;
@@ -721,6 +721,12 @@
                         document.getElementById('root'),
                     );
                 });
+            },
+            7363: (e) => {
+                e.exports = React;
+            },
+            1533: (e) => {
+                e.exports = ReactDOM;
             },
         },
         t = {};

@@ -6,7 +6,7 @@
                 var F = A(6483),
                     E = A.n(F),
                     D = A(3649),
-                    B = A(6179),
+                    B = A(7363),
                     t = A.n(B);
                 const C = 'FormatText_base_d0',
                     n = ({
@@ -34,7 +34,7 @@
                     };
             },
             2056: (u, e, A) => {
-                A(4179), A(6179);
+                A(4179), A(7363);
             },
             527: (u, e, A) => {
                 A.r(e),
@@ -842,7 +842,7 @@
                 var F = A(6483),
                     E = A.n(F),
                     D = A(6963),
-                    B = A(6179),
+                    B = A(7363),
                     t = A.n(B);
                 const C = 'FormatGradientText_gradientBox_c3',
                     n = 'FormatGradientText_gradientText_39',
@@ -877,8 +877,11 @@
                 });
             },
             476: (u, e, A) => {
-                A(6483), A(6179), A(1736), A(2056);
+                A(6483), A(7363), A(1736), A(2056);
                 R.strings.seniority_awards.rewardsView;
+            },
+            7363: (u) => {
+                u.exports = React;
             },
         },
         __webpack_module_cache__ = {},

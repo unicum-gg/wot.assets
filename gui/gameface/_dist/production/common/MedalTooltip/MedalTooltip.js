@@ -17,14 +17,14 @@
                         setRTPC: () => w,
                     });
                 var i = {};
-                t.r(i), t.d(i, { getBgUrl: () => O, getTextureUrl: () => S });
+                t.r(i), t.d(i, { getBgUrl: () => R, getTextureUrl: () => S });
                 var a = {};
                 t.r(a),
                     t.d(a, {
                         addModelObserver: () => F,
                         addPreloadTexture: () => j,
                         children: () => i,
-                        displayStatus: () => R,
+                        displayStatus: () => O,
                         displayStatusIs: () => Y,
                         events: () => _,
                         extraSize: () => Z,
@@ -157,10 +157,10 @@
                 function S(e, n, t = 1) {
                     return viewEnv.getChildTexturePath(e, n.width, n.height, t);
                 }
-                function O(e, n, t) {
+                function R(e, n, t) {
                     return `url(${S(e, n, t)})`;
                 }
-                const R = { showing: 0, shown: 1, hiding: 2, hidden: 3 },
+                const O = { showing: 0, shown: 1, hiding: 2, hidden: 3 },
                     _ = {
                         onTextureFrozen: u('self.onTextureFrozen'),
                         onTextureReady: u('self.onTextureReady'),
@@ -286,7 +286,7 @@
                         let e = [];
                         return () => (0 === e.length && (e = Object.keys(viewEnv.getFontsConfig())), e);
                     })(),
-                    Y = Object.keys(R).reduce((e, n) => ((e[n] = () => viewEnv.getShowingStatus() === R[n]), e), {}),
+                    Y = Object.keys(O).reduce((e, n) => ((e[n] = () => viewEnv.getShowingStatus() === O[n]), e), {}),
                     Z = {
                         set: (e, n) => {
                             viewEnv.setExtraSizeRem(e, n);
@@ -302,7 +302,7 @@
                         engine.whenReady,
                     ]),
                     ne = { view: a, client: o, sound: T };
-                var te = t(6179),
+                var te = t(7363),
                     re = t.n(te);
                 const oe = {
                         base: 'TooltipDecorator_base_c9',
@@ -400,7 +400,7 @@
                         )
                     );
                 });
-                var le = t(493),
+                var le = t(1533),
                     ue = t.n(le);
                 function ce() {
                     return !1;
@@ -677,6 +677,12 @@
                         document.getElementById('root'),
                     );
                 });
+            },
+            7363: (e) => {
+                e.exports = React;
+            },
+            1533: (e) => {
+                e.exports = ReactDOM;
             },
         },
         t = {};

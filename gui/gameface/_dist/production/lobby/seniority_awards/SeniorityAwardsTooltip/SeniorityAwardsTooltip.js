@@ -48,9 +48,9 @@
                         setSidePaddingsRem: () => U,
                         whenTutorialReady: () => Bu,
                     });
-                var r = F(6179),
+                var r = F(7363),
                     D = F.n(r),
-                    B = F(493),
+                    B = F(1533),
                     o = F.n(B),
                     i = F(6483),
                     a = F.n(i);
@@ -661,18 +661,18 @@
                     _u = 'App_separator_16',
                     xu = 'App_subtitle_dd',
                     Tu = 'Description_base_d9',
-                    Pu = 'Description_separator_64',
-                    Ru = 'Description_desc_6f',
+                    Ru = 'Description_separator_64',
+                    Pu = 'Description_desc_6f',
                     Su = 'Description_rank_c5',
                     Ou = 'Description_segment_b3',
                     Nu = ({ rank: u, segment: e }) =>
                         D().createElement(
                             'div',
                             { className: Tu },
-                            D().createElement('div', { className: Pu }),
+                            D().createElement('div', { className: Ru }),
                             D().createElement(
                                 'div',
-                                { className: Ru },
+                                { className: Pu },
                                 D().createElement('div', { className: Su }, u),
                                 D().createElement('div', { className: Ou }, e),
                             ),
@@ -808,6 +808,12 @@
                         document.getElementById('root'),
                     );
                 });
+            },
+            7363: (u) => {
+                u.exports = React;
+            },
+            1533: (u) => {
+                u.exports = ReactDOM;
             },
         },
         F = {};

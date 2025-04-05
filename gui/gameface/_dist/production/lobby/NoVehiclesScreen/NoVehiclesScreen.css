@@ -1,0 +1,570 @@
+.TextButton_base_b6 {
+    display: flex;
+    align-items: center;
+    padding: 0 3rem;
+    font-size: 12rem;
+    position: relative;
+    cursor: pointer;
+}
+
+.TextButton_base__right_39 {
+    flex-direction: row-reverse;
+}
+.TextButton_icon_17 {
+    width: 32rem;
+    height: 32rem;
+    background: no-repeat center / contain;
+    position: relative;
+}
+.TextButton_icon__back_43,
+.TextButton_icon__forward_59 {
+    margin: -1rem -5rem;
+    background-image: url('R.images.gui.maps.icons.components.text_button.back');
+    transform: translateY(1rem);
+}
+.TextButton_icon__forward_59 {
+    transform: rotate(180deg) translateY(1rem);
+}
+.TextButton_icon__close_53 {
+    margin: -1rem 0;
+    background-image: url('R.images.gui.maps.icons.components.text_button.close');
+}
+.TextButton_icon__info_33 {
+    margin: -1rem -5rem;
+    background-image: url('R.images.gui.maps.icons.components.text_button.info');
+}
+.TextButton_glow_a4 {
+    width: 100%;
+    height: 100%;
+    background: no-repeat center / contain;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    transition: opacity 0.16s;
+}
+.TextButton_icon__back_43 .TextButton_glow_a4,
+.TextButton_icon__forward_59 .TextButton_glow_a4 {
+    background-image: url('R.images.gui.maps.icons.components.text_button.back_hover');
+}
+.TextButton_icon__close_53 .TextButton_glow_a4 {
+    background-image: url('R.images.gui.maps.icons.components.text_button.close_hover');
+}
+.TextButton_icon__info_33 .TextButton_glow_a4 {
+    background-image: url('R.images.gui.maps.icons.components.text_button.info_hover');
+}
+.TextButton_base_b6:hover .TextButton_glow_a4 {
+    opacity: 1;
+}
+.TextButton_base_b6:active .TextButton_glow_a4 {
+    opacity: 0;
+}
+.TextButton_caption_82 {
+    position: relative;
+    transition:
+        color 0.16s,
+        text-shadow 0.16s;
+}
+.TextButton_caption__back_b9,
+.TextButton_caption__forward_4e,
+.TextButton_caption__close_36 {
+    color: #ffdd99;
+    text-shadow:
+        0 0 10rem rgba(255, 42, 0, 1),
+        0 0 10rem rgba(255, 42, 0, 0.4),
+        0 0 10rem rgba(255, 42, 0, 0.4),
+        0 0 2rem rgba(255, 42, 0, 0.4),
+        0 0 1rem rgba(255, 42, 0, 0.4),
+        0 0 2rem rgba(255, 42, 0, 0.4),
+        0 0 1rem rgba(255, 42, 0, 0.4);
+}
+.TextButton_base_b6:hover .TextButton_caption__back_b9,
+.TextButton_base_b6:hover .TextButton_caption__forward_4e,
+.TextButton_base_b6:hover .TextButton_caption__close_36 {
+    color: #fffa9f;
+}
+.TextButton_base_b6:active .TextButton_caption__back_b9,
+.TextButton_base_b6:active .TextButton_caption__forward_4e,
+.TextButton_base_b6:active .TextButton_caption__close_36 {
+    color: #ffdd99;
+}
+.TextButton_caption__info_23 {
+    padding: 0 5rem;
+    color: #ccffff;
+    text-shadow:
+        0 0 12rem rgba(31, 68, 255, 0.8),
+        0 0 8rem #00eaff;
+}
+.TextButton_base_b6:hover .TextButton_caption__info_23 {
+    color: #e3ffff;
+    text-shadow:
+        0 0 12rem rgba(31, 68, 255, 0.8),
+        0 0 12rem rgba(0, 234, 255, 1),
+        0 0 8rem #00eaff;
+}
+.TextButton_base_b6:active .TextButton_caption__info_23 {
+    color: #ccffff;
+    text-shadow:
+        0 0 12rem rgba(31, 68, 255, 0.6),
+        0 0 8rem #00eaff;
+}
+.TextButton_goto_e7 {
+    color: #7c7c6c;
+}
+.TextButton_base__left_ff .TextButton_goto_e7 {
+    margin-left: 8rem;
+}
+.TextButton_base__right_39 .TextButton_goto_e7 {
+    margin-right: 8rem;
+}
+.TextButton_shine_e2 {
+    width: 90rem;
+    height: 40rem;
+    background: url('R.images.gui.maps.icons.components.text_button.shine') no-repeat center / contain;
+    opacity: 0;
+    position: absolute;
+    top: -4rem;
+    transition: opacity 0.16s;
+    pointer-events: none;
+}
+.TextButton_base__left_ff .TextButton_shine_e2 {
+    left: -4rem;
+}
+.TextButton_base__right_39 .TextButton_shine_e2 {
+    right: -4rem;
+    transform: rotate(180deg);
+}
+.TextButton_base_b6:hover .TextButton_shine_e2 {
+    opacity: 1;
+}
+.TextButton_base_b6:active .TextButton_shine_e2 {
+    opacity: 0;
+}
+
+/* should be percentage of screen width */
+.page_heading_9c {
+    padding-top: 54rem;
+}
+.mediaMedium .page_heading_9c {
+    padding-top: 63rem;
+    padding-bottom: 9rem;
+}
+.page_close_4e {
+    position: absolute;
+    top: 54rem;
+    right: 29rem;
+}
+.mediaMedium .page_close_4e {
+    top: 63rem;
+}
+.mediaLarge .page_close_4e {
+    right: 40rem;
+}
+
+.Heading_base_4b {
+    color: #ffffff;
+    font-size: 36rem;
+    font-weight: 700;
+    line-height: 1.1;
+    text-align: center;
+}
+.mediaMedium .Heading_base_4b {
+    color: #ffffff;
+    font-size: 56rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.mediaExtraLarge .Heading_base_4b {
+    color: #ffffff;
+    font-size: 73rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.FormatText_base_d0 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.FormatTextWithColorTags_blackReal_3c {
+    color: #000000;
+}
+
+.FormatTextWithColorTags_whiteReal_8a {
+    color: #ffffff;
+}
+
+.FormatTextWithColorTags_white_16 {
+    color: #f2f2f7;
+}
+
+.FormatTextWithColorTags_whiteOrange_18 {
+    color: #fefeec;
+}
+
+.FormatTextWithColorTags_whiteSpanish_10 {
+    color: #e9e2bf;
+}
+
+.FormatTextWithColorTags_par_ca {
+    color: #8c8c7e;
+}
+
+.FormatTextWithColorTags_parSecondary_8d {
+    color: #595950;
+}
+
+.FormatTextWithColorTags_parTertiary_a3 {
+    color: #37362e;
+}
+
+.FormatTextWithColorTags_red_60 {
+    color: #ff2717;
+}
+
+.FormatTextWithColorTags_redDark_03 {
+    color: #b70000;
+}
+
+.FormatTextWithColorTags_yellow_ad {
+    color: #feab34;
+}
+
+.FormatTextWithColorTags_orange_e4 {
+    color: #ee7000;
+}
+
+.FormatTextWithColorTags_cream_cd {
+    color: #ffdd99;
+}
+
+.FormatTextWithColorTags_brown_c8 {
+    color: #cbac77;
+}
+
+.FormatTextWithColorTags_greenBright_f0 {
+    color: #80d43a;
+}
+
+.FormatTextWithColorTags_green_c5 {
+    color: #7ab300;
+}
+
+.FormatTextWithColorTags_greenDark_af {
+    color: #497212;
+}
+
+.FormatTextWithColorTags_blueBooster_ac {
+    color: #ccffff;
+}
+
+.FormatTextWithColorTags_blueTeamkiller_6f {
+    color: #09e2ff;
+}
+
+.FormatTextWithColorTags_cred_4e {
+    color: #ced9d9;
+}
+
+.FormatTextWithColorTags_gold_90 {
+    color: #ffc363;
+}
+
+.FormatTextWithColorTags_bond_71 {
+    color: #c9c9b6;
+}
+
+.FormatTextWithColorTags_prom_dd {
+    color: #a29b70;
+}
+
+/* This specific rule is used to fix https://jira.wargaming.net/browse/WOTPRG-9871 */
+
+.FormatTextWithColorTags_parNoWidth_5a {
+    width: 0;
+    color: #8c8c7e;
+}
+
+.ActiveSeasonState_base_07 {
+    display: flex;
+    align-items: center;
+}
+
+.ActiveSeasonState_calendarIcon_ba {
+    width: 21rem;
+    height: 21rem;
+    margin-right: 8rem;
+    background: url('R.images.comp7.gui.maps.icons.icons.calendar') no-repeat center / cover;
+    transform: translateY(2rem);
+}
+
+.mediaLarge .ActiveSeasonState_calendarIcon_ba {
+    width: 14rem;
+    height: 16rem;
+    background-image: url('R.images.comp7.gui.maps.icons.icons.calendar_14x16');
+}
+
+.ActiveSeasonState_divider_db {
+    width: 2rem;
+    height: 17rem;
+    margin: 2rem 12rem 0;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.ScheduleSubheading_base_a5 {
+    color: #ffffff;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+    text-align: center;
+}
+.mediaLarge .ScheduleSubheading_base_a5 {
+    color: #ffffff;
+    font-size: 20rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+/* should be percentage of screen width */
+@keyframes App_fadeIn_63 {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes App_fadeInThreeQuarters_53 {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0.75;
+    }
+}
+@keyframes App_fadeInHalf_ac {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0.5;
+    }
+}
+@keyframes App_fadeOut_f4 {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes App_fadeInWithScale_dd {
+    0% {
+        opacity: 0;
+        transform: scale(1.2);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@keyframes App_slideUp_1b {
+    0% {
+        opacity: 0;
+        transform: translateY(50%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes App_scale_44 {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+@keyframes App_raysAppearance_3a {
+    0% {
+        opacity: 0;
+        transform: translateY(20rem);
+    }
+
+    100% {
+        opacity: 0.2;
+        transform: translateY(0);
+    }
+}
+@keyframes App_rotate_df {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+@keyframes App_reverse-rotate_2e {
+    from {
+        transform: rotate(360deg);
+    }
+
+    to {
+        transform: rotate(0deg);
+    }
+}
+@keyframes App_glowAppearance_1d {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes App_highlightAppearance_53 {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0.8;
+    }
+}
+@keyframes App_blink_60 {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.2;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes App_slideUpIn_0b {
+    from {
+        opacity: 0;
+        transform: translateY(50rem);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.App_base_bb {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background: url('R.images.comp7.gui.maps.icons.backgrounds.noX_bg') no-repeat center / cover;
+    overflow: hidden;
+    position: relative;
+}
+.App_header_a4 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.App_content_93 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.App_iconContainer_7e {
+    width: 148rem;
+    height: 148rem;
+    position: relative;
+}
+.App_icon_14 {
+    width: 486rem;
+    height: 356rem;
+    background: url('R.images.comp7.gui.maps.icons.no_vehicles.lock') no-repeat center / cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+.App_text_bb {
+    max-width: 700rem;
+    margin-top: 20rem;
+    color: #e9e2bf;
+    font-size: 16rem;
+    line-height: 20rem;
+    text-align: center;
+    text-shadow:
+        0 0 4px rgba(255, 127, 0, 0.25),
+        0 0 8px #ff2a00,
+        0 0 15px #e52;
+    position: relative;
+}
+.mediaMedium .App_text_bb {
+    margin-top: 34rem;
+}
+.App_footer_8e {
+    width: 100%;
+    padding: 16rem 0 20rem;
+    background: rgba(0, 0, 0, 0.3) url('R.images.comp7.gui.maps.icons.no_vehicles.divider') no-repeat center top /
+        contain;
+}
+
+.HowToGetVehicles_base_84 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.HowToGetVehicles_heading_2d {
+    color: #e9e2bf;
+    font-size: 18rem;
+    font-weight: 400;
+    line-height: 1.25;
+    margin-bottom: 14rem;
+    font-weight: 700;
+}
+
+.HowToGetVehicles_items_53 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.HowToGetVehicles_item_a1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.HowToGetVehicles_item_a1 + .HowToGetVehicles_item_a1 {
+    margin-left: 50rem;
+}
+
+.HowToGetVehicles_title_89 {
+    color: #e9e2bf;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+
+.HowToGetVehicles_image_70 {
+    width: 200rem;
+    height: 100rem;
+    margin-bottom: 10rem;
+    background: no-repeat center / contain;
+}

@@ -54,8 +54,7 @@
                     (hcenter = 0px)
                 )
                 (class MainTextStyle)
-                (bind text "countBefore == 1 ? R.strings.lootboxes.compensationTooltip.before.header.single() :
-                    TextFormat(R.strings.lootboxes.compensationTooltip.before.header.multiple(), {count:countBefore})")
+                (bind text "TextFormat(R.strings.lootboxes.compensationTooltip.before.header(), {count:countBefore})")
             )
 
             (block
@@ -184,7 +183,7 @@
         (hblock
             (name = 'vehicleNameBlock')
             (style
-                (align = "middle")
+                (align="middle")
             )
             (tf
                 (name = 'tankLevelTF')

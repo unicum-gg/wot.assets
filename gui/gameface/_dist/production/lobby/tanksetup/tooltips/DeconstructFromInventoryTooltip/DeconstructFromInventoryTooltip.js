@@ -5,7 +5,7 @@
             6554: (u, A, F) => {
                 var E = {};
                 F.r(E),
-                    F.d(E, { mouse: () => O, off: () => _, on: () => S, onResize: () => x, onScaleUpdated: () => P });
+                    F.d(E, { mouse: () => T, off: () => _, on: () => S, onResize: () => x, onScaleUpdated: () => P });
                 var e = {};
                 F.r(e),
                     F.d(e, {
@@ -48,9 +48,9 @@
                         setSidePaddingsRem: () => eu,
                         whenTutorialReady: () => gu,
                     });
-                var C = F(6179),
+                var C = F(7363),
                     n = F.n(C),
-                    t = F(493),
+                    t = F(1533),
                     r = F.n(t),
                     o = F(6483),
                     i = F.n(o),
@@ -152,8 +152,8 @@
                     P = h('self.onScaleUpdated'),
                     S = (u, A) => engine.on(u, A),
                     _ = (u, A) => engine.off(u, A),
-                    T = { down: h('mousedown'), up: h('mouseup'), move: h('mousemove') };
-                const O = (function () {
+                    O = { down: h('mousedown'), up: h('mouseup'), move: h('mousemove') };
+                const T = (function () {
                     const u = { listeners: 0, enabled: !0, initialized: !1 };
                     function A() {
                         u.enabled && y(!1);
@@ -180,7 +180,7 @@
                                     u.listeners += 1;
                                     let e = !0;
                                     const D = `mouse${A}`,
-                                        B = T[A]((u) => F([u, 'outside']));
+                                        B = O[A]((u) => F([u, 'outside']));
                                     function C(u) {
                                         F([u, 'inside']);
                                     }
@@ -491,27 +491,27 @@
                     );
                 });
                 var Pu = F(3403);
-                function Su() {}
-                function Ru() {
+                function Ru() {}
+                function Su() {
                     return !1;
                 }
                 console.log;
                 var _u = F(9174);
-                function Tu(u, A) {
+                function Ou(u, A) {
                     var F = ('undefined' != typeof Symbol && u[Symbol.iterator]) || u['@@iterator'];
                     if (F) return (F = F.call(u)).next.bind(F);
                     if (
                         Array.isArray(u) ||
                         (F = (function (u, A) {
                             if (u) {
-                                if ('string' == typeof u) return Ou(u, A);
+                                if ('string' == typeof u) return Tu(u, A);
                                 var F = {}.toString.call(u).slice(8, -1);
                                 return (
                                     'Object' === F && u.constructor && (F = u.constructor.name),
                                     'Map' === F || 'Set' === F
                                         ? Array.from(u)
                                         : 'Arguments' === F || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(F)
-                                          ? Ou(u, A)
+                                          ? Tu(u, A)
                                           : void 0
                                 );
                             }
@@ -528,7 +528,7 @@
                         'Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.',
                     );
                 }
-                function Ou(u, A) {
+                function Tu(u, A) {
                     (null == A || A > u.length) && (A = u.length);
                     for (var F = 0, E = Array(A); F < A; F++) E[F] = u[F];
                     return E;
@@ -591,7 +591,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var u, F = Tu(e.keys()); !(u = F()).done; ) D(u.value, A);
+                                                        for (var u, F = Ou(e.keys()); !(u = F()).done; ) D(u.value, A);
                                                     },
                                                     unsubscribe: D,
                                                 };
@@ -615,7 +615,7 @@
                                                 observableModel: {
                                                     array: (u, A) => {
                                                         const E = null != A ? A : n(u),
-                                                            e = _u.LO.box(E, { equals: Ru });
+                                                            e = _u.LO.box(E, { equals: Su });
                                                         return (
                                                             'real' === F &&
                                                                 C.subscribe(
@@ -627,7 +627,7 @@
                                                     },
                                                     object: (u, A) => {
                                                         const E = null != A ? A : n(u),
-                                                            e = _u.LO.box(E, { equals: Ru });
+                                                            e = _u.LO.box(E, { equals: Su });
                                                         return (
                                                             'real' === F &&
                                                                 C.subscribe(
@@ -714,7 +714,7 @@
                             },
                             () => (0, C.useContext)(F),
                         ];
-                    })(({ observableModel: u }) => ({ root: u.object() }), Su),
+                    })(({ observableModel: u }) => ({ root: u.object() }), Ru),
                     Mu = ju[0],
                     ku = ju[1],
                     Lu = 'App_base_cc',
@@ -746,6 +746,12 @@
                         document.getElementById('root'),
                     );
                 });
+            },
+            7363: (u) => {
+                u.exports = React;
+            },
+            1533: (u) => {
+                u.exports = ReactDOM;
             },
         },
         F = {};

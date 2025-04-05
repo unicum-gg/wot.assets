@@ -775,7 +775,7 @@
             },
             3355: (u, e, t) => {
                 'use strict';
-                var r = t(6179),
+                var r = t(7363),
                     a = t.n(r);
                 const i = (u, e, t) =>
                     e.extraLargeHeight || e.largeHeight || e.mediumHeight || e.smallHeight || e.extraSmallHeight
@@ -1119,7 +1119,7 @@
                         })(u, T);
                     return a().createElement(m, null, a().createElement(M, t, e));
                 };
-                var H = t(493),
+                var H = t(1533),
                     P = t.n(H),
                     W = t(3403);
                 function N(u) {
@@ -2003,6 +2003,14 @@
                         document.getElementById('root'),
                     );
                 });
+            },
+            7363: (u) => {
+                'use strict';
+                u.exports = React;
+            },
+            1533: (u) => {
+                'use strict';
+                u.exports = ReactDOM;
             },
         },
         __webpack_module_cache__ = {},

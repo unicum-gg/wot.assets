@@ -5293,18 +5293,16 @@
                         return a().createElement(
                             'div',
                             { className: Pr, style: kr(r, i) },
-                            t.rewardRows
-                                .get()
-                                .map((r, i) =>
-                                    a().createElement(Ir, {
-                                        rowIndex: i,
-                                        onSpecialDropped: u,
-                                        key: i,
-                                        isNewRewardRow: i === n,
-                                        onRowAnimationEnd: e,
-                                        isPausedForSpecial: t.root.get().isPausedForSpecial,
-                                    }),
-                                ),
+                            t.rewardRows.get().map((r, i) =>
+                                a().createElement(Ir, {
+                                    rowIndex: i,
+                                    onSpecialDropped: u,
+                                    key: i,
+                                    isNewRewardRow: i === n,
+                                    onRowAnimationEnd: e,
+                                    isPausedForSpecial: t.root.get().isPausedForSpecial,
+                                }),
+                            ),
                         );
                     }),
                     Mr = 'MainLayout_base_ac',

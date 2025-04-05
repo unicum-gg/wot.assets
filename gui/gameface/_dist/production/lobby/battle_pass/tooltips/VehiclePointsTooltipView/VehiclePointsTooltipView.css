@@ -104,11 +104,15 @@
 .BlockCompleted_base_0a {
     line-height: normal;
 }
+/* please use Separator component (gameface/src/views/lobby/battle_pass/tooltips/sharedComponents/Separator)*/
+/* instead of this one*/
 .BlockCompleted_separator_c8 {
     width: 283rem;
     height: 1rem;
     background: url('R.images.gui.maps.icons.battlePass.tooltips.Devider_points') 50% / contain no-repeat;
 }
+/* please use Rewards component (gameface/src/views/lobby/battle_pass/tooltips/sharedComponents/Rewards)*/
+/* instead of this one*/
 .BlockCompleted_rewards_d5 {
     display: flex;
     flex-direction: column;
@@ -156,11 +160,15 @@
 .Content_base_06 {
     line-height: normal;
 }
+/* please use Separator component (gameface/src/views/lobby/battle_pass/tooltips/sharedComponents/Separator)*/
+/* instead of this one*/
 .Content_separator_af {
     width: 283rem;
     height: 1rem;
     background: url('R.images.gui.maps.icons.battlePass.tooltips.Devider_points') 50% / contain no-repeat;
 }
+/* please use Rewards component (gameface/src/views/lobby/battle_pass/tooltips/sharedComponents/Rewards)*/
+/* instead of this one*/
 .Content_rewards_22 {
     display: flex;
     flex-direction: column;
@@ -203,11 +211,15 @@
 .styles_base_86 {
     line-height: normal;
 }
+/* please use Separator component (gameface/src/views/lobby/battle_pass/tooltips/sharedComponents/Separator)*/
+/* instead of this one*/
 .styles_separator_f8 {
     width: 283rem;
     height: 1rem;
     background: url('R.images.gui.maps.icons.battlePass.tooltips.Devider_points') 50% / contain no-repeat;
 }
+/* please use Rewards component (gameface/src/views/lobby/battle_pass/tooltips/sharedComponents/Rewards)*/
+/* instead of this one*/
 .styles_rewards_26 {
     display: flex;
     flex-direction: column;
@@ -296,11 +308,15 @@
 .Footer_base_5c {
     line-height: normal;
 }
+/* please use Separator component (gameface/src/views/lobby/battle_pass/tooltips/sharedComponents/Separator)*/
+/* instead of this one*/
 .Footer_separator_87 {
     width: 283rem;
     height: 1rem;
     background: url('R.images.gui.maps.icons.battlePass.tooltips.Devider_points') 50% / contain no-repeat;
 }
+/* please use Rewards component (gameface/src/views/lobby/battle_pass/tooltips/sharedComponents/Rewards)*/
+/* instead of this one*/
 .Footer_rewards_98 {
     display: flex;
     flex-direction: column;

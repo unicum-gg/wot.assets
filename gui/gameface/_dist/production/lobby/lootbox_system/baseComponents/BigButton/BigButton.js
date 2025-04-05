@@ -6,7 +6,7 @@
                 var n = a(6483),
                     s = a.n(n),
                     o = a(7727),
-                    r = a(6179),
+                    r = a(7363),
                     i = a.n(r),
                     _ = a(6880),
                     u = a(2106);
@@ -31,8 +31,8 @@
                         B = C[0],
                         E = C[1],
                         Z = (0, r.useState)(!1),
-                        M = Z[0],
-                        k = Z[1];
+                        x = Z[0],
+                        M = Z[1];
                     return (
                         (0, r.useEffect)(() => {
                             function e(e) {
@@ -58,7 +58,7 @@
                                     l && _.Z.base__disabled,
                                     t && _.Z[`base__${t}`],
                                     B && _.Z.base__focus,
-                                    M && _.Z.base__highlightActive,
+                                    x && _.Z.base__highlightActive,
                                     c,
                                 ),
                                 onMouseEnter: function (e) {
@@ -68,17 +68,17 @@
                                     f && f(e);
                                 },
                                 onMouseUp: function (e) {
-                                    l || (g && g(e), k(!1));
+                                    l || (g && g(e), M(!1));
                                 },
                                 onMouseDown: function (e) {
                                     l ||
                                         (null !== d && (0, o.G)(d),
                                         h && h(e),
                                         a && (l || (y.current && (y.current.focus(), E(!0)))),
-                                        k(!0));
+                                        M(!0));
                                 },
                                 onMouseLeave: function (e) {
-                                    l || (p && p(e), k(!1));
+                                    l || (p && p(e), M(!1));
                                 },
                                 onClick: function (e) {
                                     l || (v && v(e));
@@ -132,7 +132,7 @@
                 a.d(t, { G: () => n });
             },
             1579: (e, t, a) => {
-                a(3457), a(2106), a(6179);
+                a(3457), a(2106), a(7363);
             },
             6880: (e, t, a) => {
                 a.d(t, { Z: () => n });
@@ -159,6 +159,9 @@
                     base__highlightActive: 'CButton_base__highlightActive_b2',
                     content: 'CButton_content_cc',
                 };
+            },
+            7363: (e) => {
+                e.exports = React;
             },
         },
         a = {};

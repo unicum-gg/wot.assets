@@ -1,90 +1,173 @@
-.App_base_af {
+.RateButton_base_b4 {
+    width: 36rem;
+    height: 36rem;
+    border: none;
+    background: url('R.images.gui.maps.icons.battle.commendations.battleWidget.default') no-repeat center / contain;
+    transition: opacity 0.5s ease-out;
+    cursor: pointer;
+}
+
+.RateButton_base_b4:hover {
+    background-image: url('R.images.gui.maps.icons.battle.commendations.battleWidget.hover');
+}
+
+.RateButton_base__hovered_92.RateButton_base__neutral_e1 {
+    background-image: url('R.images.gui.maps.icons.battle.commendations.battleWidget.default');
+    animation: RateButton_hovered_bc 0.5s ease-out;
+}
+
+.RateButton_base__negative_0a {
+    background-image: url('R.images.gui.maps.icons.battle.commendations.battleWidget.default');
+    transform: rotate(90deg) translateX(-1rem);
+}
+
+.RateButton_base__negative_0a.RateButton_base__selected_50 {
+    background-image: url('R.images.gui.maps.icons.battle.commendations.battleWidget.bad');
+    opacity: 1;
+    transform: rotate(0deg) translate3d(-1rem, -1rem, 0rem);
+    pointer-events: none;
+}
+
+.RateButton_base__negative_0a.RateButton_base__selected_50.RateButton_base__animate_f4 {
+    animation: RateButton_fadeIn_c1 0.5s ease-out;
+}
+
+.RateButton_base__neutral_e1 {
+    background-image: url('R.images.gui.maps.icons.battle.commendations.battleWidget.hover');
+}
+
+.RateButton_base__neutral_e1.RateButton_base__selected_50 {
+    background-image: url('R.images.gui.maps.icons.battle.commendations.battleWidget.normal');
+    opacity: 1;
+    pointer-events: none;
+}
+
+.RateButton_base__neutral_e1.RateButton_base__selected_50.RateButton_base__animate_f4 {
+    animation: RateButton_fadeIn_c1 0.5s ease-out;
+}
+
+.RateButton_base__neutral_e1:hover {
+    background-image: url('R.images.gui.maps.icons.battle.commendations.battleWidget.hover');
+}
+
+.RateButton_base__positive_ee {
+    background-image: url('R.images.gui.maps.icons.battle.commendations.battleWidget.default');
+    transform: scaleY(-1) rotate(90deg) translateX(-2rem);
+}
+
+.RateButton_base__positive_ee.RateButton_base__selected_50 {
+    background-image: url('R.images.gui.maps.icons.battle.commendations.battleWidget.good');
+    opacity: 1;
+    transform: rotate(0deg) translateX(-1rem);
+    pointer-events: none;
+}
+
+.RateButton_base__positive_ee.RateButton_base__selected_50.RateButton_base__animate_f4 {
+    animation: RateButton_fadeIn_c1 0.5s ease-out;
+}
+
+.RateButton_base__disabled_71 {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+@keyframes RateButton_fadeIn_c1 {
+    from {
+        opacity: 0.5;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes RateButton_hovered_bc {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.BattleRateWidget_base_d7 {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: flex-end;
-    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    height: 37rem;
+    padding: 0 23rem;
+    border-radius: 5rem 5rem 0 0;
+    background-color: rgba(0, 0, 0, 0.65);
+    color: #fd9;
+    opacity: 1;
+    position: relative;
+    transition: opacity 0.5s ease-in-out;
+    transition-delay: 10s;
+}
+
+.BattleRateWidget_base_wrapper_bb {
+    display: flex;
+    justify-content: space-between;
+}
+
+.BattleRateWidget_base_selected_be {
+    opacity: 0;
+}
+
+.BattleRateWidget_base__without_delay_62 {
+    animation-delay: 0s;
+}
+
+.BattleRateWidget_base_widget_68 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.BattleRateWidget_base_text_bd {
+    height: 100%;
+    padding: 8rem 0;
+    font-size: 16rem;
+    line-height: 1;
+}
+
+.BattleRateWidget_base_text__negative_d2,
+.BattleRateWidget_base_text__positive_58,
+.BattleRateWidget_base_text__neutral_84 {
+    opacity: 0.8;
+}
+
+.BattleRateWidget_base_buttons_dc {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 124rem;
     height: 100%;
 }
 
-.App_alignmentContainer_1a {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-}
+@keyframes BattleRateWidget_widgetDisappear_ca {
+    0% {
+        opacity: 1;
+    }
 
-.App_container_39 {
-    display: flex;
-    flex-direction: row;
-    margin-left: -50rem;
-    padding-left: 16rem;
-    padding-top: 16rem;
-    padding-right: 16rem;
-    border-radius: 4rem;
-    background-color: rgba(0, 0, 0, 0.5);
-}
-
-.mediaSmall .App_container_39 {
-    margin-left: 0;
-    padding-left: 32rem;
-    padding-right: 32rem;
-}
-
-.App_btnContainer_63 {
-    margin-left: 16rem;
-    margin-right: 8rem;
-}
-
-.mediaSmall .App_btnContainer_63 {
-    margin-left: 24rem;
-}
-
-.App_btnContainer__unavailable_33 {
-    margin-right: 0;
-}
-
-.App_icon_f9 {
-    width: 24rem;
-    height: 32rem;
-    margin-right: 8rem;
-    background-size: 24rem 32rem;
-}
-
-.App_seperator_93 {
-    margin-left: 16rem;
-}
-
-.mediaSmall .App_seperator_93 {
-    margin-left: 24rem;
-}
-
-.Hint_base_b3 {
-    display: flex;
-    flex-direction: column;
-    padding-bottom: 16rem;
-    font-size: 12rem;
-}
-
-.Hint_header_d5 {
-    color: #ff981f;
-    font-weight: 700;
-    line-height: 11rem;
-    white-space: pre-wrap;
-}
-
-.Hint_description_30 {
-    max-width: 110rem;
-    color: #ffeadb;
-    font-weight: 400;
-    line-height: 15rem;
-}
-
-.mediaSmall .Hint_description_30 {
-    max-width: 150rem;
+    100% {
+        opacity: 0;
+    }
 }
 
 .HintButton_base_19 {
     position: relative;
+}
+
+.HintButton_base__small_63 .HintButton_btnInner_e4 {
+    height: 10rem;
+    font-size: 8rem;
+    line-height: 1.1;
 }
 
 .HintButton_btnOuter_f9 {
@@ -127,4 +210,213 @@
 
 .HintButton_btnInner__blink_75 {
     background: #ffbd1f;
+}
+
+.Hint_base_b3 {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 16rem;
+    font-size: 12rem;
+}
+
+.Hint_base_b3.Hint___small_95 {
+    padding-bottom: 0;
+}
+
+.Hint_base_b3.Hint___small_95 .Hint_header_d5 {
+    width: 100%;
+    max-width: 186rem;
+    margin-top: -3rem; /* fixes vertical centering*/
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.2;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.Hint_base_b3 .Hint_hint_4e {
+    flex: 1;
+}
+
+.Hint_base_b3 .Hint_header_d5 {
+    color: #ff981f;
+    font-weight: 700;
+    line-height: 11rem;
+    white-space: pre-wrap;
+}
+
+.Hint_base_b3 .Hint_description_30 {
+    max-width: 110rem;
+    color: #ffeadb;
+    font-weight: 400;
+    line-height: 15rem;
+}
+
+.mediaSmall .Hint_base_b3 .Hint_description_30 {
+    max-width: 150rem;
+}
+
+.HintBar_base_63 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+    height: 100%;
+}
+
+.HintBar_column_74 {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    margin-left: -50rem;
+}
+
+.mediaSmall .HintBar_column_74 {
+    margin-left: 0;
+}
+
+.HintBar_rating_40 {
+    display: flex;
+    align-items: center;
+    height: 60rem;
+    margin-bottom: 8rem;
+    padding: 0 24rem;
+    border-radius: 3rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #e9e2bf;
+    font-size: 16rem;
+    line-height: 20rem;
+}
+
+.HintBar_alignmentContainer_4e {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.HintBar_container_6c {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding-left: 16rem;
+    padding-top: 16rem;
+    padding-right: 16rem;
+    border-radius: 4rem;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.mediaSmall .HintBar_container_6c {
+    padding-left: 32rem;
+    padding-right: 32rem;
+}
+
+.HintBar_container_6c.HintBar___small_00 {
+    justify-content: space-between;
+    align-items: center;
+    height: 37rem;
+    padding: 0 23rem;
+    border-radius: 0 0 5rem 5rem;
+    line-height: 1;
+    transition: all 1s;
+}
+
+.HintBar_container_6c.HintBar___small_00.HintBar___selected_7d {
+    animation: HintBar_roundOnRatingSelected_63 1s forwards;
+    animation-delay: 10s;
+}
+
+.HintBar_container_6c.HintBar___small_00.HintBar___withoutDelay_7a {
+    animation-delay: 0s;
+}
+
+.HintBar_container_6c.HintBar___small_00 .HintBar_icon_bb {
+    width: 16rem;
+    height: 22rem;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.HintBar_container__side_61 {
+    display: flex;
+    align-items: center;
+}
+
+.HintBar_btnContainer_21 {
+    margin-left: 16rem;
+    margin-right: 8rem;
+}
+
+.mediaSmall .HintBar_btnContainer_21 {
+    margin-left: 24rem;
+}
+
+.HintBar_btnContainer__unavailable_2b {
+    margin-right: 0;
+}
+
+.HintBar_btnContainer__small_23 {
+    margin-left: 0;
+}
+
+.HintBar_icon_bb {
+    width: 24rem;
+    height: 32rem;
+    margin-right: 8rem;
+    background-size: 24rem 32rem;
+}
+
+.HintBar_seperator_e1 {
+    margin-left: 16rem;
+}
+
+.mediaSmall .HintBar_seperator_e1 {
+    margin-left: 24rem;
+}
+
+@keyframes HintBar_roundOnRatingSelected_63 {
+    from {
+        border-radius: 3rem;
+    }
+
+    to {
+        border-radius: 5rem;
+    }
+}
+
+.PostmortemPanelViewApp_base_7e {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 100%;
+    height: 100%;
+}
+
+.PostmortemPanelViewApp_column_69 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+.mediaSmall .PostmortemPanelViewApp_column_69 {
+    margin-left: 0;
+}
+
+.PostmortemPanelViewApp_bottom_line_28 {
+    width: 96%;
+    height: 1rem;
+    background-color: rgba(254, 254, 236, 0.2);
+    opacity: 1;
+    position: absolute;
+    top: 36rem;
+    left: 50%;
+    z-index: 2;
+    transform: translateX(-50%);
+    transition: opacity 0.5s ease-in-out;
+    transition-delay: 10s;
+}
+
+.PostmortemPanelViewApp_bottom_line__selected_af {
+    opacity: 0;
 }
