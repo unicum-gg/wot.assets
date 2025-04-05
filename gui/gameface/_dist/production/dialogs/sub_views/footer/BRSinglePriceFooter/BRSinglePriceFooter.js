@@ -181,17 +181,18 @@
                     n.d(e, {
                         addModelObserver: () => s,
                         addPreloadTexture: () => E,
-                        children: () => t,
-                        displayStatus: () => r.W,
-                        displayStatusIs: () => f,
-                        events: () => o.U,
-                        extraSize: () => k,
+                        arabic2roman: () => f,
+                        children: () => r,
+                        displayStatus: () => o.W,
+                        displayStatusIs: () => k,
+                        events: () => i.U,
+                        extraSize: () => O,
                         forceTriggerMouseMove: () => b,
-                        freezeTextureBeforeResize: () => C,
+                        freezeTextureBeforeResize: () => B,
                         getBrowserTexturePath: () => A,
                         getDisplayStatus: () => h,
                         getFontNames: () => y,
-                        getScale: () => B,
+                        getScale: () => C,
                         getSize: () => c,
                         getViewGlobalPosition: () => D,
                         isEventHandled: () => p,
@@ -199,23 +200,23 @@
                         pxToRem: () => d,
                         remToPx: () => v,
                         resize: () => l,
-                        sendEvent: () => i.qP,
+                        sendEvent: () => a.qP,
                         setAnimateWindow: () => g,
                         setEventHandled: () => w,
                         setInputPaddingsRem: () => F,
                         setSidePaddingsRem: () => _,
-                        whenTutorialReady: () => O,
+                        whenTutorialReady: () => T,
                     });
-                var t = n(722),
-                    r = n(112),
-                    o = n(538),
-                    i = n(566);
-                const a = 15;
+                var t = n(690),
+                    r = n(722),
+                    o = n(112),
+                    i = n(538),
+                    a = n(566);
                 function E(u) {
                     viewEnv.addPreloadTexture(u);
                 }
                 function F(u) {
-                    viewEnv.setHitAreaPaddingsRem(u, u, u, u, a);
+                    viewEnv.setHitAreaPaddingsRem(u, u, u, u, 15);
                 }
                 function A(u, e, n, t = 1) {
                     return viewEnv.getWebBrowserTexturePath(u, e, n, t);
@@ -224,7 +225,7 @@
                     return viewEnv.addDataChangedCallback(u, e, n);
                 }
                 function _(u) {
-                    viewEnv.setHitAreaPaddingsRem(u.top, u.right, u.bottom, u.left, a);
+                    viewEnv.setHitAreaPaddingsRem(u.top, u.right, u.bottom, u.left, 15);
                 }
                 function c(u = 'px') {
                     return 'rem' === u ? viewEnv.getViewSizeRem() : viewEnv.getViewSizePx();
@@ -236,10 +237,10 @@
                     const e = viewEnv.getViewGlobalPositionRem();
                     return 'rem' === u ? e : { x: v(e.x), y: v(e.y) };
                 }
-                function C() {
+                function B() {
                     viewEnv.freezeTextureBeforeResize();
                 }
-                function B() {
+                function C() {
                     return viewEnv.getScale();
                 }
                 function d(u) {
@@ -270,11 +271,12 @@
                         let u = [];
                         return () => (0 === u.length && (u = Object.keys(viewEnv.getFontsConfig())), u);
                     })(),
-                    f = Object.keys(r.W).reduce(
-                        (u, e) => ((u[e] = () => viewEnv.getShowingStatus() === r.W[e]), u),
+                    f = t.cg,
+                    k = Object.keys(o.W).reduce(
+                        (u, e) => ((u[e] = () => viewEnv.getShowingStatus() === o.W[e]), u),
                         {},
                     ),
-                    k = {
+                    O = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -282,9 +284,9 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    O = Promise.all([
+                    T = Promise.all([
                         new Promise((u) => {
-                            window.isDomBuilt ? u() : o.U.onDomBuilt(u);
+                            window.isDomBuilt ? u() : i.U.onDomBuilt(u);
                         }),
                         engine.whenReady,
                     ]);
@@ -302,13 +304,12 @@
                             const o = e.args,
                                 i = (function (u, e) {
                                     if (null == u) return {};
-                                    var n = {};
-                                    for (var t in u)
-                                        if ({}.hasOwnProperty.call(u, t)) {
-                                            if (e.indexOf(t) >= 0) continue;
-                                            n[t] = u[t];
-                                        }
-                                    return n;
+                                    var n,
+                                        t,
+                                        r = {},
+                                        o = Object.keys(u);
+                                    for (t = 0; t < o.length; t++) (n = o[t]), e.indexOf(n) >= 0 || (r[n] = u[n]);
+                                    return r;
                                 })(e, t);
                             return void 0 !== o
                                 ? viewEnv.handleViewEvent(
@@ -394,6 +395,17 @@
                             (u.SYMBOL = 'Symbol'),
                             (u.SYMBOL_LOCK = 'SymbolLock');
                     })(r || (r = {}));
+            },
+            690: (u, e, n) => {
+                n.d(e, { cg: () => o });
+                const t = ['I', 'IV', 'V', 'IX', 'X', 'XL', 'L', 'XC', 'C', 'CD', 'D', 'CM', 'M'],
+                    r = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
+                function o(u) {
+                    let e = '';
+                    for (let n = r.length - 1; n >= 0; n--) for (; u >= r[n]; ) (e += t[n]), (u -= r[n]);
+                    return e;
+                }
+                ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());
             },
             358: (u, e, n) => {
                 n.d(e, { Z: () => o });
@@ -496,7 +508,7 @@
                 const __WEBPACK_DEFAULT_EXPORT__ = ViewModel;
             },
             916: (u, e, n) => {
-                n.d(e, { Sw: () => o.Z, B3: () => E, Z5: () => i.Z5, B0: () => a, ry: () => B });
+                n.d(e, { Sw: () => o.Z, B3: () => E, Z5: () => i.Z5, B0: () => a, ry: () => C });
                 class t {
                     constructor() {
                         (this.entries = []),
@@ -565,8 +577,8 @@
                     }
                     a.done ? e(E) : Promise.resolve(E).then(t, r);
                 }
-                const C = (u) => ({ __Type: 'GFBoundingBox', x: u.x, y: u.y, width: u.width, height: u.height }),
-                    B = (function () {
+                const B = (u) => ({ __Type: 'GFBoundingBox', x: u.x, y: u.y, width: u.width, height: u.height }),
+                    C = (function () {
                         var u,
                             e =
                                 ((u = function* () {
@@ -601,13 +613,12 @@
                             const r = e.args,
                                 o = (function (u, e) {
                                     if (null == u) return {};
-                                    var n = {};
-                                    for (var t in u)
-                                        if ({}.hasOwnProperty.call(u, t)) {
-                                            if (e.indexOf(t) >= 0) continue;
-                                            n[t] = u[t];
-                                        }
-                                    return n;
+                                    var n,
+                                        t,
+                                        r = {},
+                                        o = Object.keys(u);
+                                    for (t = 0; t < o.length; t++) (n = o[t]), e.indexOf(n) >= 0 || (r[n] = u[n]);
+                                    return r;
                                 })(e, l);
                             void 0 !== r
                                 ? viewEnv.handleViewEvent(
@@ -648,7 +659,7 @@
                         RealFormatType: F,
                         TimeFormatType: A,
                         DateFormatType: s,
-                        makeGlobalBoundingBox: C,
+                        makeGlobalBoundingBox: B,
                         sendMoveEvent: (u) => d(a.MOVE, { isMouseEvent: !0, on: u }),
                         sendCloseEvent: v,
                         sendClosePopOverEvent: () => d(a.POP_OVER, { on: !1 }),
@@ -674,7 +685,7 @@
                                 decoratorID: t || R.invalid('resId'),
                                 targetID: r,
                                 direction: e,
-                                bbox: C(l),
+                                bbox: B(l),
                                 on: !0,
                                 args: o,
                             });
@@ -689,7 +700,7 @@
                             g(u, v);
                         },
                         handleViewEvent: d,
-                        onBindingsReady: B,
+                        onBindingsReady: C,
                         onLayoutReady: () =>
                             new Promise((u) => {
                                 requestAnimationFrame(() => {
@@ -826,9 +837,9 @@
                             A = u.ignoreShowDelay,
                             l = void 0 !== A && A,
                             D = u.ignoreMouseClick,
-                            C = void 0 !== D && D,
-                            B = u.decoratorId,
-                            d = void 0 === B ? 0 : B,
+                            B = void 0 !== D && D,
+                            C = u.decoratorId,
+                            d = void 0 === C ? 0 : C,
                             v = u.isEnabled,
                             g = void 0 === v || v,
                             m = u.targetId,
@@ -837,13 +848,12 @@
                             b = u.onHide,
                             h = (function (u, e) {
                                 if (null == u) return {};
-                                var n = {};
-                                for (var t in u)
-                                    if ({}.hasOwnProperty.call(u, t)) {
-                                        if (e.indexOf(t) >= 0) continue;
-                                        n[t] = u[t];
-                                    }
-                                return n;
+                                var n,
+                                    t,
+                                    r = {},
+                                    o = Object.keys(u);
+                                for (t = 0; t < o.length; t++) (n = o[t]), e.indexOf(n) >= 0 || (r[n] = u[n]);
+                                return r;
                             })(u, s);
                         const y = (0, t.useRef)({ timeoutId: 0, isVisible: !1, prevTarget: null, hideTimerId: null }),
                             f = (0, t.useMemo)(() => w || F().resId, [w]),
@@ -862,7 +872,7 @@
                                         (y.current.isVisible = !1);
                                 }
                             }, [n, d, f, b]),
-                            P = (0, t.useCallback)((u) => {
+                            T = (0, t.useCallback)((u) => {
                                 y.current.isVisible &&
                                     ((y.current.prevTarget = document.elementFromPoint(u.clientX, u.clientY)),
                                     (y.current.hideTimerId = window.setTimeout(() => {
@@ -873,9 +883,9 @@
                         (0, t.useEffect)(() => {
                             const u = y.current.hideTimerId;
                             return (
-                                document.addEventListener('wheel', P, { capture: !0 }),
+                                document.addEventListener('wheel', T, { capture: !0 }),
                                 () => {
-                                    document.removeEventListener('wheel', P, { capture: !0 }),
+                                    document.removeEventListener('wheel', T, { capture: !0 }),
                                         u && window.clearTimeout(u);
                                 }
                             );
@@ -898,29 +908,29 @@
                                   Object.assign(
                                       {
                                           onMouseEnter:
-                                              ((T = e.props.onMouseEnter),
+                                              ((P = e.props.onMouseEnter),
                                               (u) => {
                                                   (u.clientX === window.innerWidth &&
                                                       u.clientY === window.innerHeight) ||
                                                       ((y.current.timeoutId = window.setTimeout(k, l ? 100 : 400)),
                                                       o && o(u),
-                                                      T && T(u));
+                                                      P && P(u));
                                               }),
                                           onMouseLeave: ((u) => (e) => {
                                               O(), null == i || i(e), null == u || u(e);
                                           })(e.props.onMouseLeave),
                                           onClick: ((u) => (e) => {
-                                              !1 === C && O(), null == E || E(e), null == u || u(e);
+                                              !1 === B && O(), null == E || E(e), null == u || u(e);
                                           })(e.props.onClick),
                                           onMouseDown: ((u) => (e) => {
-                                              !1 === C && O(), null == a || a(e), null == u || u(e);
+                                              !1 === B && O(), null == a || a(e), null == u || u(e);
                                           })(e.props.onMouseDown),
                                       },
                                       h,
                                   ),
                               )
                             : e;
-                        var T;
+                        var P;
                     };
                 n(281);
                 let D;
@@ -943,10 +953,10 @@
                         'gum',
                     );
                 })();
-                var C = n(613);
-                Date.now(), C.Ew.getRegionalDateTime, C.Ew.getFormattedDateTime;
+                var B = n(613);
+                Date.now(), B.Ew.getRegionalDateTime, B.Ew.getFormattedDateTime;
                 n(138);
-                const B = (u, e) => u.split('.').reduce((u, e) => u && u[e], e),
+                const C = (u, e) => u.split('.').reduce((u, e) => u && u[e], e),
                     d = (u) => {
                         const e = (0, t.useRef)(!1);
                         e.current || (u(), (e.current = !0));
@@ -956,7 +966,7 @@
                     m = (u) =>
                         ((u, e) =>
                             u.split('.').reduce((u, n) => {
-                                const t = B(`${u}.${n}`, window);
+                                const t = C(`${u}.${n}`, window);
                                 return v(t) ? e(u, n, t) : `${u}.${n}`;
                             }))(u, (u, e) => `${u}.${e}.value`),
                     w = (u) => {
@@ -973,7 +983,7 @@
                             const u = [t[0]];
                             return (
                                 t.reduce((e, t) => {
-                                    const r = B(g(n, `${e}.${t}`), window);
+                                    const r = C(g(n, `${e}.${t}`), window);
                                     return v(r) ? (u.push(r.id), `${e}.${t}.value`) : (u.push(t), `${e}.${t}`);
                                 }),
                                 u.reduce((u, e) => u + '.' + e)
@@ -1002,7 +1012,7 @@
                         }, [i, a, u]),
                         s = (0, t.useState)(() =>
                             ((u) => {
-                                const e = B(u, window);
+                                const e = C(u, window);
                                 for (const u in e) 'function' == typeof e[u] && (e[u] = e[u].bind(e));
                                 return v(e) ? e.value : e;
                             })(m(A)),
@@ -1089,10 +1099,6 @@
                     'icon__equipCoin-big': 'Currency_icon__equipCoin-big_79',
                     'icon__equipCoin-large': 'Currency_icon__equipCoin-large_2c',
                     'icon__equipCoin-extraLarge': 'Currency_icon__equipCoin-extraLarge_8a',
-                    'icon__stpCoin-small': 'Currency_icon__stpCoin-small_6b',
-                    'icon__stpCoin-big': 'Currency_icon__stpCoin-big_da',
-                    'icon__stpCoin-large': 'Currency_icon__stpCoin-large_ee',
-                    'icon__stpCoin-extraLarge': 'Currency_icon__stpCoin-extraLarge_fa',
                     value: 'Currency_value_e1',
                     value__freeXP: 'Currency_value__freeXP_cb',
                     value__credits: 'Currency_value__credits_76',
@@ -1101,17 +1107,16 @@
                     value__crystal: 'Currency_value__crystal_19',
                     value__equipCoin: 'Currency_value__equipCoin_d0',
                     value__eliteXP: 'Currency_value__eliteXP_62',
-                    value__stpCoin: 'Currency_value__stpCoin_38',
                     value__notEnough: 'Currency_value__notEnough_56',
                     stock: 'Currency_stock_87',
                     stock__indent: 'Currency_stock__indent_a1',
                     stock__interactive: 'Currency_stock__interactive_93',
                     stockBackground: 'Currency_stockBackground_82',
                 };
-                let P, T, x;
+                let T, P, x;
                 !(function (u) {
                     (u.small = 'small'), (u.big = 'big'), (u.large = 'large'), (u.extraLarge = 'extraLarge');
-                })(P || (P = {})),
+                })(T || (T = {})),
                     (function (u) {
                         (u.credits = 'credits'),
                             (u.gold = 'gold'),
@@ -1119,9 +1124,8 @@
                             (u.xp = 'xp'),
                             (u.freeXP = 'freeXP'),
                             (u.eliteXP = 'eliteXP'),
-                            (u.equipCoin = 'equipCoin'),
-                            (u.stpCoin = 'stpcoin');
-                    })(T || (T = {})),
+                            (u.equipCoin = 'equipCoin');
+                    })(P || (P = {})),
                     (function (u) {
                         (u.Red = 'RedActionBG'), (u.Blue = 'BlueActionBG');
                     })(x || (x = {}));
@@ -1153,7 +1157,7 @@
                                         ),
                                     },
                                     a && o > 0 && '+',
-                                    r().createElement(k, { value: o, format: t === T.gold ? 'gold' : 'integral' }),
+                                    r().createElement(k, { value: o, format: t === P.gold ? 'gold' : 'integral' }),
                                 ),
                                 r().createElement('span', {
                                     className: E()(O.icon, O[`icon__${t}-${n}`], null == _ ? void 0 : _.icon),
@@ -1213,12 +1217,12 @@
                             _ = E()(
                                 M.stock,
                                 a && M.stock__indent,
-                                n === P.big && M.stock__sizeBig,
-                                n === P.large && M.stock__sizeLarge,
+                                n === T.big && M.stock__sizeBig,
+                                n === T.large && M.stock__sizeLarge,
                                 e && M.stock__interactive,
                             ),
                             c = F && i > 0 && '+';
-                        return t in T
+                        return t in P
                             ? r().createElement(L, {
                                   size: n,
                                   type: t,
@@ -1258,16 +1262,16 @@
                     };
                 function V() {
                     return (
-                        (V = Object.assign
-                            ? Object.assign.bind()
-                            : function (u) {
-                                  for (var e = 1; e < arguments.length; e++) {
-                                      var n = arguments[e];
-                                      for (var t in n) ({}).hasOwnProperty.call(n, t) && (u[t] = n[t]);
-                                  }
-                                  return u;
-                              }),
-                        V.apply(null, arguments)
+                        (V =
+                            Object.assign ||
+                            function (u) {
+                                for (var e = 1; e < arguments.length; e++) {
+                                    var n = arguments[e];
+                                    for (var t in n) Object.prototype.hasOwnProperty.call(n, t) && (u[t] = n[t]);
+                                }
+                                return u;
+                            }),
+                        V.apply(this, arguments)
                     );
                 }
                 const q = () => {

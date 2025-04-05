@@ -1191,8 +1191,16 @@ so we just add specificity to css classes here
     align-items: flex-start;
 }
 
-.Header_leavePlatoonButton_e4 {
+.Header_topLeftButtonsWrapper_75 {
+    display: flex;
+}
+
+.Header_base__wide_be .Header_topLeftButtonsWrapper_75 {
     width: 100%;
+}
+
+.Header_base__wide_be .Header_leavePlatoonButton_e4 {
+    flex: 1;
 }
 
 .Header_dropdowns_f3 {

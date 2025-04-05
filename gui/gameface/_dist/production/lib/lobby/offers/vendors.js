@@ -290,18 +290,12 @@
                 if (
                     Array.isArray(t) ||
                     (n = (function (t, e) {
-                        if (t) {
-                            if ('string' == typeof t) return l(t, e);
-                            var n = {}.toString.call(t).slice(8, -1);
-                            return (
-                                'Object' === n && t.constructor && (n = t.constructor.name),
-                                'Map' === n || 'Set' === n
-                                    ? Array.from(t)
-                                    : 'Arguments' === n || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)
-                                      ? l(t, e)
-                                      : void 0
-                            );
-                        }
+                        if (!t) return;
+                        if ('string' == typeof t) return l(t, e);
+                        var n = Object.prototype.toString.call(t).slice(8, -1);
+                        'Object' === n && t.constructor && (n = t.constructor.name);
+                        if ('Map' === n || 'Set' === n) return Array.from(t);
+                        if ('Arguments' === n || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return l(t, e);
                     })(t)) ||
                     (e && t && 'number' == typeof t.length)
                 ) {
@@ -317,7 +311,7 @@
             }
             function l(t, e) {
                 (null == e || e > t.length) && (e = t.length);
-                for (var n = 0, s = Array(e); n < e; n++) s[n] = t[n];
+                for (var n = 0, s = new Array(e); n < e; n++) s[n] = t[n];
                 return s;
             }
             function c() {
@@ -502,18 +496,18 @@
                     }
                 });
             }
-            const I = (t, e) =>
+            const j = (t, e) =>
                     1 == e.length
                         ? e[0]
                         : e.some((t) => t.cancelled)
                           ? E(t.get())
                           : e.every((t) => t.noop)
-                            ? j(t.get())
+                            ? I(t.get())
                             : x(
                                   t.get(),
                                   e.every((t) => t.finished),
                               ),
-                j = (t) => ({ value: t, noop: !0, finished: !0, cancelled: !1 }),
+                I = (t) => ({ value: t, noop: !0, finished: !0, cancelled: !1 }),
                 x = (t, e, n = !1) => ({ value: t, finished: e, cancelled: n }),
                 E = (t) => ({ value: t, cancelled: !0, finished: !1 });
             function C(t, e, n, r) {
@@ -819,7 +813,7 @@
                         s.is.und(t)
                             ? ((n = this.queue || []), (this.queue = []))
                             : (n = [s.is.obj(t) ? t : c({}, e, { to: t })]),
-                        Promise.all(n.map((t) => this._update(t))).then((t) => I(this, t))
+                        Promise.all(n.map((t) => this._update(t))).then((t) => j(this, t))
                     );
                 }
                 stop(t) {
@@ -947,8 +941,8 @@
                             })(S, d(e.config, a), e.config !== u.config ? d(u.config, a) : void 0);
                     let A = (0, i.ys)(this);
                     if (!A || s.is.und(g)) return n(x(this, !0));
-                    const I = s.is.und(e.reset) ? o && !e.default : !s.is.und(U) && h(e.reset, a),
-                        Q = I ? U : this.get(),
+                    const j = s.is.und(e.reset) ? o && !e.default : !s.is.und(U) && h(e.reset, a),
+                        Q = j ? U : this.get(),
                         R = v(g),
                         N = s.is.num(R) || s.is.arr(R) || (0, s.Df)(R),
                         V = !_ && (!N || h(u.immediate || e.immediate, a));
@@ -966,18 +960,18 @@
                     let L = (0, s.j$)(g),
                         q = !1;
                     if (!L) {
-                        const t = I || (!$(this) && B);
+                        const t = j || (!$(this) && B);
                         (T || t) && ((q = (0, s.Xy)(v(Q), R)), (L = !q)),
                             (((0, s.Xy)(l.immediate, V) || V) && (0, s.Xy)(S.decay, k) && (0, s.Xy)(S.velocity, P)) ||
                                 (L = !0);
                     }
                     if (
-                        (q && F(this) && (l.changed && !I ? (L = !0) : L || this._stop(p)),
+                        (q && F(this) && (l.changed && !j ? (L = !0) : L || this._stop(p)),
                         !_ &&
                             ((L || (0, s.j$)(p)) &&
                                 ((l.values = A.getPayload()),
                                 (l.toValues = (0, s.j$)(g) ? null : M == i.eC ? [1] : (0, s.qo)(R))),
-                            l.immediate != V && ((l.immediate = V), V || I || this._set(p)),
+                            l.immediate != V && ((l.immediate = V), V || j || this._set(p)),
                             L))
                     ) {
                         const t = l.onRest;
@@ -987,19 +981,19 @@
                             this._pendingCalls.add(n),
                             l.changed &&
                                 s.Wn.batchedUpdates(() => {
-                                    (l.changed = !I),
+                                    (l.changed = !j),
                                         null == t || t(r, this),
-                                        I ? d(u.onRest, r) : null == l.onStart || l.onStart(r, this);
+                                        j ? d(u.onRest, r) : null == l.onStart || l.onStart(r, this);
                                 });
                     }
-                    I && this._set(Q),
+                    j && this._set(Q),
                         _
                             ? n(C(e.to, e, this._state, this))
                             : L
                               ? this._start()
                               : F(this) && !T
                                 ? this._pendingCalls.add(n)
-                                : n(j(Q));
+                                : n(I(Q));
                 }
                 _focus(t) {
                     const e = this.animation;
@@ -1228,7 +1222,7 @@
                 }
             }
             function ot(t, e) {
-                return Promise.all(e.map((e) => at(t, e))).then((e) => I(t, e));
+                return Promise.all(e.map((e) => at(t, e))).then((e) => j(t, e));
             }
             function at(t, e, n) {
                 return ut.apply(this, arguments);
@@ -1284,7 +1278,7 @@
                                 (yield new Promise((t) => {
                                     h.resumeQueue.add(t);
                                 }));
-                        const g = I(t, yield Promise.all(p));
+                        const g = j(t, yield Promise.all(p));
                         if (a && g.finished && (!n || !g.noop)) {
                             const n = Z(e, a, i);
                             if (n) return pt(t, [n]), at(t, n, !0);
@@ -1481,9 +1475,10 @@
             function bt(t, e) {
                 const n = s.is.fun(t),
                     r = Bt(1, n ? t : [t], n ? e || [] : e),
-                    i = r[0][0],
-                    o = r[1];
-                return n || 2 == arguments.length ? [i, o] : i;
+                    i = r[0],
+                    o = i[0],
+                    a = r[1];
+                return n || 2 == arguments.length ? [o, a] : o;
             }
             let Tt;
             !(function (t) {
@@ -1749,18 +1744,18 @@
                 }
             }
             const A = (t, ...e) => P(t, (t) => t(...e));
-            let I,
-                j,
+            let j,
+                I,
                 x = null,
                 E = !1,
                 C = b;
             var Q = Object.freeze({
                 __proto__: null,
                 get createStringInterpolator() {
-                    return I;
+                    return j;
                 },
                 get to() {
-                    return j;
+                    return I;
                 },
                 get colors() {
                     return x;
@@ -1772,11 +1767,11 @@
                     return C;
                 },
                 assign: (t) => {
-                    t.to && (j = t.to),
+                    t.to && (I = t.to),
                         t.now && (r.now = t.now),
                         void 0 !== t.colors && (x = t.colors),
                         null != t.skipAnimation && (E = t.skipAnimation),
-                        t.createStringInterpolator && (I = t.createStringInterpolator),
+                        t.createStringInterpolator && (j = t.createStringInterpolator),
                         t.requestAnimationFrame && r.use(t.requestAnimationFrame),
                         t.batchedUpdates && (r.batchedUpdates = t.batchedUpdates),
                         t.willAdvance && (C = t.willAdvance),
@@ -2060,7 +2055,7 @@
             const dt = (t, e, n) => {
                 if (_.fun(t)) return t;
                 if (_.arr(t)) return dt({ range: t, output: e, extrapolate: n });
-                if (_.str(t.output[0])) return I(t);
+                if (_.str(t.output[0])) return j(t);
                 const s = t,
                     r = s.output,
                     i = s.range || [0, 1],
@@ -2168,23 +2163,23 @@
                         return e[0].replace(_t, () => `${s[i++](t)}${r || ''}`).replace(kt, Pt);
                     };
                 },
-                It = 'react-spring: ',
-                jt = (t) => {
+                jt = 'react-spring: ',
+                It = (t) => {
                     const e = t;
                     let n = !1;
-                    if ('function' != typeof e) throw new TypeError(`${It}once requires a function parameter`);
+                    if ('function' != typeof e) throw new TypeError(`${jt}once requires a function parameter`);
                     return (...t) => {
                         n || (e(...t), (n = !0));
                     };
                 },
-                xt = jt(console.warn);
+                xt = It(console.warn);
             function Et() {
-                xt(`${It}The "interpolate" function is deprecated in v9 (use "to" instead)`);
+                xt(`${jt}The "interpolate" function is deprecated in v9 (use "to" instead)`);
             }
-            const Ct = jt(console.warn);
+            const Ct = It(console.warn);
             function Qt() {
                 Ct(
-                    `${It}Directly calling start instead of using the api object is deprecated in v9 (use ".start" instead), this will be removed in later 0.X.0 versions`,
+                    `${jt}Directly calling start instead of using the api object is deprecated in v9 (use ".start" instead), this will be removed in later 0.X.0 versions`,
                 );
             }
             function Rt(t) {
@@ -3101,18 +3096,12 @@
                 if (
                     Array.isArray(t) ||
                     (n = (function (t, e) {
-                        if (t) {
-                            if ('string' == typeof t) return a(t, e);
-                            var n = {}.toString.call(t).slice(8, -1);
-                            return (
-                                'Object' === n && t.constructor && (n = t.constructor.name),
-                                'Map' === n || 'Set' === n
-                                    ? Array.from(t)
-                                    : 'Arguments' === n || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)
-                                      ? a(t, e)
-                                      : void 0
-                            );
-                        }
+                        if (!t) return;
+                        if ('string' == typeof t) return a(t, e);
+                        var n = Object.prototype.toString.call(t).slice(8, -1);
+                        'Object' === n && t.constructor && (n = t.constructor.name);
+                        if ('Map' === n || 'Set' === n) return Array.from(t);
+                        if ('Arguments' === n || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return a(t, e);
                     })(t)) ||
                     (e && t && 'number' == typeof t.length)
                 ) {
@@ -3128,7 +3117,7 @@
             }
             function a(t, e) {
                 (null == e || e > t.length) && (e = t.length);
-                for (var n = 0, s = Array(e); n < e; n++) s[n] = t[n];
+                for (var n = 0, s = new Array(e); n < e; n++) s[n] = t[n];
                 return s;
             }
             const u = console.assert,
@@ -3359,18 +3348,12 @@
                 if (
                     Array.isArray(t) ||
                     (n = (function (t, e) {
-                        if (t) {
-                            if ('string' == typeof t) return B(t, e);
-                            var n = {}.toString.call(t).slice(8, -1);
-                            return (
-                                'Object' === n && t.constructor && (n = t.constructor.name),
-                                'Map' === n || 'Set' === n
-                                    ? Array.from(t)
-                                    : 'Arguments' === n || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)
-                                      ? B(t, e)
-                                      : void 0
-                            );
-                        }
+                        if (!t) return;
+                        if ('string' == typeof t) return B(t, e);
+                        var n = Object.prototype.toString.call(t).slice(8, -1);
+                        'Object' === n && t.constructor && (n = t.constructor.name);
+                        if ('Map' === n || 'Set' === n) return Array.from(t);
+                        if ('Arguments' === n || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return B(t, e);
                     })(t)) ||
                     (e && t && 'number' == typeof t.length)
                 ) {
@@ -3386,7 +3369,7 @@
             }
             function B(t, e) {
                 (null == e || e > t.length) && (e = t.length);
-                for (var n = 0, s = Array(e); n < e; n++) s[n] = t[n];
+                for (var n = 0, s = new Array(e); n < e; n++) s[n] = t[n];
                 return s;
             }
             const b = 1e3,

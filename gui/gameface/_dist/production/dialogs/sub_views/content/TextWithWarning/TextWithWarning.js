@@ -181,12 +181,13 @@
                     F.d(e, {
                         addModelObserver: () => o,
                         addPreloadTexture: () => B,
-                        children: () => A,
-                        displayStatus: () => E.W,
-                        displayStatusIs: () => T,
-                        events: () => D.U,
-                        extraSize: () => x,
-                        forceTriggerMouseMove: () => g,
+                        arabic2roman: () => T,
+                        children: () => E,
+                        displayStatus: () => D.W,
+                        displayStatusIs: () => x,
+                        events: () => t.U,
+                        extraSize: () => O,
+                        forceTriggerMouseMove: () => p,
                         freezeTextureBeforeResize: () => l,
                         getBrowserTexturePath: () => C,
                         getDisplayStatus: () => b,
@@ -194,28 +195,28 @@
                         getScale: () => _,
                         getSize: () => a,
                         getViewGlobalPosition: () => c,
-                        isEventHandled: () => p,
+                        isEventHandled: () => g,
                         isFocused: () => h,
                         pxToRem: () => d,
                         remToPx: () => w,
                         resize: () => s,
-                        sendEvent: () => t.qP,
+                        sendEvent: () => n.qP,
                         setAnimateWindow: () => v,
                         setEventHandled: () => m,
                         setInputPaddingsRem: () => r,
                         setSidePaddingsRem: () => i,
-                        whenTutorialReady: () => O,
+                        whenTutorialReady: () => y,
                     });
-                var A = F(722),
-                    E = F(112),
-                    D = F(538),
-                    t = F(566);
-                const n = 15;
+                var A = F(690),
+                    E = F(722),
+                    D = F(112),
+                    t = F(538),
+                    n = F(566);
                 function B(u) {
                     viewEnv.addPreloadTexture(u);
                 }
                 function r(u) {
-                    viewEnv.setHitAreaPaddingsRem(u, u, u, u, n);
+                    viewEnv.setHitAreaPaddingsRem(u, u, u, u, 15);
                 }
                 function C(u, e, F, A = 1) {
                     return viewEnv.getWebBrowserTexturePath(u, e, F, A);
@@ -224,7 +225,7 @@
                     return viewEnv.addDataChangedCallback(u, e, F);
                 }
                 function i(u) {
-                    viewEnv.setHitAreaPaddingsRem(u.top, u.right, u.bottom, u.left, n);
+                    viewEnv.setHitAreaPaddingsRem(u.top, u.right, u.bottom, u.left, 15);
                 }
                 function a(u = 'px') {
                     return 'rem' === u ? viewEnv.getViewSizeRem() : viewEnv.getViewSizePx();
@@ -257,10 +258,10 @@
                 function m() {
                     return viewEnv.setEventHandled();
                 }
-                function p() {
+                function g() {
                     return viewEnv.isEventHandled();
                 }
-                function g() {
+                function p() {
                     viewEnv.forceTriggerMouseMove();
                 }
                 function b() {
@@ -270,11 +271,12 @@
                         let u = [];
                         return () => (0 === u.length && (u = Object.keys(viewEnv.getFontsConfig())), u);
                     })(),
-                    T = Object.keys(E.W).reduce(
-                        (u, e) => ((u[e] = () => viewEnv.getShowingStatus() === E.W[e]), u),
+                    T = A.cg,
+                    x = Object.keys(D.W).reduce(
+                        (u, e) => ((u[e] = () => viewEnv.getShowingStatus() === D.W[e]), u),
                         {},
                     ),
-                    x = {
+                    O = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -282,9 +284,9 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    O = Promise.all([
+                    y = Promise.all([
                         new Promise((u) => {
-                            window.isDomBuilt ? u() : D.U.onDomBuilt(u);
+                            window.isDomBuilt ? u() : t.U.onDomBuilt(u);
                         }),
                         engine.whenReady,
                     ]);
@@ -302,13 +304,12 @@
                             const D = e.args,
                                 t = (function (u, e) {
                                     if (null == u) return {};
-                                    var F = {};
-                                    for (var A in u)
-                                        if ({}.hasOwnProperty.call(u, A)) {
-                                            if (e.indexOf(A) >= 0) continue;
-                                            F[A] = u[A];
-                                        }
-                                    return F;
+                                    var F,
+                                        A,
+                                        E = {},
+                                        D = Object.keys(u);
+                                    for (A = 0; A < D.length; A++) (F = D[A]), e.indexOf(F) >= 0 || (E[F] = u[F]);
+                                    return E;
                                 })(e, A);
                             return void 0 !== D
                                 ? viewEnv.handleViewEvent(
@@ -394,6 +395,17 @@
                             (u.SYMBOL = 'Symbol'),
                             (u.SYMBOL_LOCK = 'SymbolLock');
                     })(E || (E = {}));
+            },
+            690: (u, e, F) => {
+                F.d(e, { cg: () => D });
+                const A = ['I', 'IV', 'V', 'IX', 'X', 'XL', 'L', 'XC', 'C', 'CD', 'D', 'CM', 'M'],
+                    E = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
+                function D(u) {
+                    let e = '';
+                    for (let F = E.length - 1; F >= 0; F--) for (; u >= E[F]; ) (e += A[F]), (u -= E[F]);
+                    return e;
+                }
+                ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());
             },
             358: (u, e, F) => {
                 F.d(e, { Z: () => D });
@@ -601,13 +613,12 @@
                             const E = e.args,
                                 D = (function (u, e) {
                                     if (null == u) return {};
-                                    var F = {};
-                                    for (var A in u)
-                                        if ({}.hasOwnProperty.call(u, A)) {
-                                            if (e.indexOf(A) >= 0) continue;
-                                            F[A] = u[A];
-                                        }
-                                    return F;
+                                    var F,
+                                        A,
+                                        E = {},
+                                        D = Object.keys(u);
+                                    for (A = 0; A < D.length; A++) (F = D[A]), e.indexOf(F) >= 0 || (E[F] = u[F]);
+                                    return E;
                                 })(e, s);
                             void 0 !== E
                                 ? viewEnv.handleViewEvent(
@@ -640,7 +651,7 @@
                     };
                 var h = F(572);
                 const m = E.instance,
-                    p = {
+                    g = {
                         DataTracker: D.Z,
                         ViewModel: h.Z,
                         ViewEventType: n,
@@ -722,7 +733,7 @@
                         SystemLocale: t.Z5,
                         UserLocale: t.cy,
                     };
-                window.ViewEnvHelper = p;
+                window.ViewEnvHelper = g;
             },
             613: (u, e, F) => {
                 F.d(e, { Ew: () => D, Z5: () => A, cy: () => E });
@@ -837,8 +848,8 @@
                         e.current || (u(), (e.current = !0));
                     },
                     m = (u) => u && 'ArrayItem' === u.__proto__.constructor.name,
-                    p = (u, e) => (u.length > 0 ? `${u}.${e}` : e),
-                    g = (u) =>
+                    g = (u, e) => (u.length > 0 ? `${u}.${e}` : e),
+                    p = (u) =>
                         ((u, e) =>
                             u.split('.').reduce((u, F) => {
                                 const A = v(`${u}.${F}`, window);
@@ -850,7 +861,7 @@
                                     F = e.caller,
                                     A = e.resId,
                                     E = window.__feature && window.__feature !== F && F ? `subViews.${F}` : '';
-                                return { modelPrefix: E, modelPath: p(E, u || ''), resId: A };
+                                return { modelPrefix: E, modelPath: g(E, u || ''), resId: A };
                             })(),
                             F = e.modelPrefix,
                             A = u.split('.');
@@ -858,7 +869,7 @@
                             const u = [A[0]];
                             return (
                                 A.reduce((e, A) => {
-                                    const E = v(p(F, `${e}.${A}`), window);
+                                    const E = v(g(F, `${e}.${A}`), window);
                                     return m(E) ? (u.push(E.id), `${e}.${A}.value`) : (u.push(A), `${e}.${A}`);
                                 }),
                                 u.reduce((u, e) => u + '.' + e)
@@ -890,7 +901,7 @@
                                 const e = v(u, window);
                                 for (const u in e) 'function' == typeof e[u] && (e[u] = e[u].bind(e));
                                 return m(e) ? e.value : e;
-                            })(g(r)),
+                            })(p(r)),
                         ),
                         o = C[0],
                         i = C[1],
@@ -1010,8 +1021,8 @@
                     V = 'App_warning_d5',
                     j = 'App_alertImage_c8',
                     z = 'App_warningText_d7',
-                    q = 'App_mainText_8b',
-                    G = () => {
+                    G = 'App_mainText_8b',
+                    q = () => {
                         const u = O(),
                             e = u.mainText,
                             F = u.warningText;
@@ -1025,11 +1036,11 @@
                                     E().createElement('div', { className: j }),
                                     E().createElement(U, { classMix: z, text: F }),
                                 ),
-                            E().createElement(U, { classMix: q, text: e }),
+                            E().createElement(U, { classMix: G, text: e }),
                         );
                     };
                 engine.whenReady.then(() => {
-                    t().render(E().createElement(G, null), document.getElementById('root'));
+                    t().render(E().createElement(q, null), document.getElementById('root'));
                 });
             },
             363: (u) => {

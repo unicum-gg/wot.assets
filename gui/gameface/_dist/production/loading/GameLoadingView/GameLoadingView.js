@@ -213,7 +213,7 @@
                                                   D().Fragment,
                                                   null,
                                                   A[1] && D().createElement('div', null, A[1]),
-                                                  D().createElement('div', { style: { color: '#03953f' } }, A[2]),
+                                                  D().createElement('div', { style: { color: '#4369b1' } }, A[2]),
                                                   A[3] && D().createElement('div', null, A[3]),
                                               )
                                             : D().createElement('div', { key: F }, u);

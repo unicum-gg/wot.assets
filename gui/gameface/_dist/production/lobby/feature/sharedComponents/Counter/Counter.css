@@ -1,0 +1,149 @@
+.Counter_base_3c {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: -70rem;
+}
+.mediaMedium .Counter_base_3c {
+    margin-top: -80rem;
+}
+.mediaLarge .Counter_base_3c {
+    margin-top: -59rem;
+}
+
+.Counter_base_3c.Counter_base__entryPointTooltip_cc {
+    margin-top: -59rem;
+}
+
+.Counter_counterGlow_bd {
+    background: url('R.images.resource_well.gui.maps.icons.counter_glow') no-repeat center / contain;
+    position: absolute;
+    pointer-events: none;
+}
+
+.Counter_base__mainScreen_19 .Counter_counterGlow_bd {
+    width: 488rem;
+    height: 108rem;
+    top: -65rem;
+}
+
+.mediaMedium .Counter_base__mainScreen_19 .Counter_counterGlow_bd {
+    top: -75rem;
+}
+
+.mediaLarge .Counter_base__mainScreen_19 .Counter_counterGlow_bd {
+    top: -63rem;
+}
+
+.Counter_base__entryPointTooltip_cc .Counter_counterGlow_bd {
+    width: 300rem;
+    height: 168rem;
+    top: -10rem;
+}
+
+.Counter_counterBg_a4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('R.images.resource_well.gui.maps.icons.counter_bg') no-repeat center / contain;
+    position: relative;
+    pointer-events: none;
+}
+
+.Counter_base__mainScreen_19 .Counter_counterBg_a4 {
+    width: 310rem;
+    height: 200rem;
+    top: -40rem;
+}
+
+.mediaLarge .Counter_base__mainScreen_19 .Counter_counterBg_a4 {
+    top: -50rem;
+}
+
+.Counter_base__entryPointTooltip_cc .Counter_counterBg_a4 {
+    width: 100%;
+    height: 124rem;
+    padding-bottom: 5rem;
+    text-align: center;
+}
+
+.Counter_counterNumber_a3 {
+    pointer-events: auto;
+}
+
+.Counter_counterNumber__less_9f {
+    text-shadow:
+        0 0 4rem rgba(255, 127, 0, 0.25),
+        0 0 8rem #ff2a00,
+        0 0 15rem #e52;
+}
+
+.Counter_base__mainScreen_19 .Counter_counterNumber_a3 {
+    color: #ffdd99;
+    font-size: 36rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-top: -10rem;
+}
+
+.mediaLarge .Counter_base__mainScreen_19 .Counter_counterNumber_a3 {
+    font-size: 56rem;
+}
+
+.Counter_base__entryPointTooltip_cc .Counter_counterNumber_a3 {
+    color: #ffdd99;
+    font-size: 28rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.Counter_tanksOverText_19 {
+    opacity: 0.5;
+}
+
+.Counter_base__mainScreen_19 .Counter_tanksOverText_19 {
+    color: #e9e2bf;
+    font-size: 22rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-top: -10rem;
+}
+
+.mediaMedium .Counter_base__mainScreen_19 .Counter_tanksOverText_19 {
+    color: #e9e2bf;
+    font-size: 28rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.Counter_base__entryPointTooltip_cc .Counter_tanksOverText_19 {
+    color: #e9e2bf;
+    font-size: 28rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin: 0;
+}
+
+.Counter_errorWrapper_a8 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    pointer-events: auto;
+}
+
+.Counter_alertIcon_64 {
+    width: 24rem;
+    height: 24rem;
+    background: url('R.images.resource_well.gui.maps.icons.alertIcon') no-repeat center / contain;
+    z-index: 1;
+}
+
+.Counter_errorLines_55 {
+    color: #ffdd99;
+    font-size: 56rem;
+    font-weight: 700;
+    line-height: 1.1;
+    position: relative;
+    top: -23rem;
+}

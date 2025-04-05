@@ -1,0 +1,477 @@
+/*
+    Gameface can't calculate gradient biggest than 8128px
+    in JS 8000 reserved like anchor for start optimization
+*/
+/* stylelint-disable-line */
+.ProgressBar_base_45 {
+    width: 100%;
+    height: 12rem;
+    position: relative;
+}
+.ProgressBar_base__small_df {
+    height: 2rem;
+}
+.ProgressBar_background_51 {
+    width: 100%;
+    max-width: 8001px;
+    height: 100%;
+    background-image: var(--progress-base);
+    background-repeat: repeat;
+    background-position: 0 50%;
+    background-size: 3rem 10rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.ProgressBar_background__small_46 {
+    height: 2rem;
+}
+.ProgressBar_lineWrapper_6a {
+    display: flex;
+    flex: 1;
+}
+
+.ProgressBarBlink_base_24 {
+    width: 60rem;
+    height: 100rem;
+    background-image: var(--progress-glow);
+    background-size: contain;
+    mix-blend-mode: lighten;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(50%, -50%);
+    pointer-events: none;
+}
+
+.ProgressBarBlink_base__small_0f {
+    width: 44rem;
+    height: 43rem;
+    background-image: var(--progress-glow-small);
+}
+
+/*
+    Gameface can't calculate gradient biggest than 8128px
+    in JS 8000 reserved like anchor for start optimization
+*/
+/* stylelint-disable-line */
+.ProgressBarDeltaSimple_base_6c {
+    width: 0;
+    height: 100%;
+    position: absolute;
+    top: 0;
+}
+.ProgressBarDeltaSimple_delta_99 {
+    width: 0;
+    max-width: 8001px;
+    height: 100%;
+    box-shadow: var(--progress-delta-shadow);
+    background-color: var(--progress-delta-color);
+    position: absolute;
+    bottom: 0;
+    transform-origin: right center;
+    transition-timing-function: cubic-bezier(1, 0, 0.92, 1), cubic-bezier(0.21, 0.61, 0.35, 1);
+    transition-property: width, transform;
+}
+
+/*
+    Gameface can't calculate gradient biggest than 8128px
+    in JS 8000 reserved like anchor for start optimization
+*/
+/* stylelint-disable-line */
+.ProgressLineImpose_base_80 {
+    max-width: 8001px;
+    height: 100%;
+    background-color: var(--progress-line-base);
+    position: relative;
+    transition-timing-function: cubic-bezier(1, 0, 0.92, 1);
+    transition-property: width;
+}
+.ProgressLineImpose_base__disabled_cc {
+    background-color: var(--progress-line-disabled);
+}
+.ProgressLineImpose_base__finished_d4 {
+    background-color: var(--progress-line-finished);
+}
+.ProgressLineImpose_base__withoutBounce_56 {
+    transition-timing-function: cubic-bezier(1, 0, 0.75, 0.75);
+}
+.ProgressLineImpose_pattern_1c {
+    max-width: 8001px;
+    background-image: var(--progress-pattern-base);
+    background-repeat: repeat;
+    background-position: 0 50%;
+    background-size: 3rem 10rem;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+    left: 1rem;
+}
+.ProgressLineImpose_base__small_55 .ProgressLineImpose_pattern_1c {
+    top: 0;
+    bottom: 0;
+}
+.ProgressLineImpose_base__disabled_cc .ProgressLineImpose_pattern_1c {
+    background-image: var(--progress-pattern-disabled);
+    left: 0;
+}
+.ProgressLineImpose_base__finished_d4 .ProgressLineImpose_pattern_1c {
+    background-image: var(--progress-pattern-finished);
+}
+.ProgressLineImpose_gradient_35 {
+    max-width: 8001px;
+    background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.75));
+    mix-blend-mode: overlay;
+    position: absolute;
+    top: 1rem;
+    right: 0;
+    bottom: 1rem;
+    left: 0;
+}
+.ProgressLineImpose_base__small_55 .ProgressLineImpose_gradient_35 {
+    top: 0;
+    bottom: 0;
+}
+.ProgressLineImpose_base__disabled_cc .ProgressLineImpose_gradient_35 {
+    display: none;
+}
+.ProgressLineImpose_base__finished_d4 .ProgressLineImpose_gradient_35 {
+    background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.75), rgba(0, 0, 0, 0.5));
+}
+.ProgressLineImpose_glow_a5 {
+    width: 60rem;
+    max-width: 8001px;
+    height: 100rem;
+    background-image: var(--progress-glow);
+    background-size: contain;
+    mix-blend-mode: lighten;
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+.ProgressLineImpose_glow__left_d8 {
+    left: 1rem;
+}
+.ProgressLineImpose_base__disabled_cc .ProgressLineImpose_glow_a5,
+.ProgressLineImpose_base__finished_d4 .ProgressLineImpose_glow_a5 {
+    display: none;
+}
+.ProgressLineImpose_base__small_55 .ProgressLineImpose_glow_a5 {
+    width: 44rem;
+    height: 43rem;
+    background-image: var(--progress-glow-small);
+}
+
+/*
+    Gameface can't calculate gradient biggest than 8128px
+    in JS 8000 reserved like anchor for start optimization
+*/
+/* stylelint-disable-line */
+.ProgressBarDeltaGrow_base_7e {
+    width: 0;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    transition-timing-function: cubic-bezier(1, 0, 0.92, 1);
+    transition-property: width;
+}
+.ProgressBarDeltaGrow_base__withoutBounce_b5 {
+    transition-timing-function: cubic-bezier(1, 0, 0.75, 0.75);
+}
+.ProgressBarDeltaGrow_glow_68 {
+    width: 0;
+    max-width: 8001px;
+    height: 100%;
+    box-shadow: var(--progress-delta-shadow);
+    background-color: var(--progress-delta-color);
+    position: absolute;
+    bottom: 0;
+    transform-origin: right center;
+    transition-timing-function: cubic-bezier(1, 0, 0.92, 1);
+    transition-property: width;
+}
+.ProgressBarDeltaGrow_base__withoutBounce_b5 .ProgressBarDeltaGrow_glow_68 {
+    transition-timing-function: cubic-bezier(1, 0, 0.75, 0.75);
+}
+
+.Progress_base_d0 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 0 7rem;
+}
+.Progress_number_91 {
+    color: #ffdd99;
+    font-size: 14rem;
+    font-weight: 700;
+    line-height: 1.15;
+    display: flex;
+    align-items: center;
+    margin-top: 7rem;
+    text-shadow:
+        0 0 4rem rgba(255, 127, 0, 0.25),
+        0 0 8rem #ff2a00,
+        0 0 15rem #e52;
+}
+.Progress_percent_e0 {
+    width: 100%;
+    height: 18rem;
+    margin-top: 6rem;
+    position: relative;
+}
+.Progress_value_58 {
+    color: #ffdd99;
+    font-size: 14rem;
+    font-weight: 700;
+    line-height: 1.15;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-shadow:
+        0 0 4rem rgba(255, 127, 0, 0.25),
+        0 0 8rem #ff2a00,
+        0 0 15rem #e52;
+}
+.Progress_value__pre_81 {
+    animation: Progress_slideDownHide_4a 0.4s ease-out 0.8s forwards;
+}
+.Progress_value__crt_1b {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: Progress_slideDownShow_82 0.4s ease-in 0.8s forwards;
+}
+@keyframes Progress_slideDownShow_82 {
+    from {
+        opacity: 0;
+        transform: translateY(-9rem);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes Progress_slideDownHide_4a {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateY(9rem);
+    }
+}
+
+.Flag_base_a4 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 66rem;
+    height: 113rem;
+    background: no-repeat 0 0 / contain;
+    cursor: pointer;
+}
+
+.Flag_base__active_0f,
+.Flag_base__notStarted_1b,
+.Flag_base__soldOut_1d {
+    background-image: url('R.images.resource_well.gui.maps.icons.entryPoint.flag_active');
+}
+
+.Flag_base__forbidden_05,
+.Flag_base__paused_31 {
+    background-image: url('R.images.resource_well.gui.maps.icons.entryPoint.flag_error');
+}
+
+.Flag_base__completed_03 {
+    background-image: url('R.images.resource_well.gui.maps.icons.entryPoint.flag_done');
+}
+
+.Flag_base__paused_31 {
+    cursor: default;
+}
+
+.Flag_hover_5d {
+    width: 100%;
+    height: 100%;
+    background: no-repeat 0 0 / contain;
+    opacity: 0;
+    mix-blend-mode: overlay;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.Flag_base__active_0f .Flag_hover_5d,
+.Flag_base__notStarted_1b .Flag_hover_5d,
+.Flag_base__soldOut_1d .Flag_hover_5d {
+    background-image: url('R.images.resource_well.gui.maps.icons.entryPoint.flag_active_hover');
+}
+
+.Flag_base__forbidden_05 .Flag_hover_5d {
+    background-image: url('R.images.resource_well.gui.maps.icons.entryPoint.flag_error_hover');
+}
+
+.Flag_base__completed_03 .Flag_hover_5d {
+    background-image: url('R.images.resource_well.gui.maps.icons.entryPoint.flag_done_hover');
+}
+
+.Flag_base_a4:hover .Flag_hover_5d {
+    opacity: 1;
+}
+
+.Flag_emblem_98 {
+    width: 64rem;
+    height: 64rem;
+    background: url('R.images.resource_well.gui.maps.icons.entryPoint.event_ico') no-repeat 0 0 / contain;
+}
+
+.Flag_base__forbidden_05 .Flag_emblem_98,
+.Flag_base__paused_31 .Flag_emblem_98 {
+    background-image: url('R.images.resource_well.gui.maps.icons.entryPoint.event_gr_ico');
+}
+
+.Flag_state_f1 {
+    width: 16rem;
+    height: 16rem;
+    background: no-repeat 0 0 / cover;
+    position: relative;
+}
+
+.Flag_state__show_60 {
+    opacity: 0;
+    animation: Flag_fadeInScale_5f 0.3s ease-in 2.3s forwards;
+}
+
+.Flag_base__forbidden_05 .Flag_state_f1,
+.Flag_base__paused_31 .Flag_state_f1 {
+    background-image: url('R.images.resource_well.gui.maps.icons.icons.alert_ico');
+}
+
+.Flag_base__completed_03 .Flag_state_f1 {
+    background-image: url('R.images.resource_well.gui.maps.icons.icons.done_ico');
+}
+
+.Flag_base__soldOut_1d .Flag_state_f1,
+.Flag_base__notStarted_1b .Flag_state_f1 {
+    width: 38rem;
+    height: 38rem;
+    background-image: url('R.images.resource_well.gui.maps.icons.icons.time_ico');
+    top: -7rem;
+}
+
+.Flag_progress_4c {
+    margin-top: -2rem;
+}
+
+@keyframes Flag_fadeInScale_5f {
+    0% {
+        opacity: 0;
+        transform: scale(4);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes App_fadeOut_14 {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+@keyframes App_fadeIn_36 {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+@keyframes App_fadeInWithScale_d1 {
+    0% {
+        opacity: 0;
+        transform: scale(1.2);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@keyframes App_slideUp_e2 {
+    0% {
+        opacity: 0;
+        transform: translateY(20rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes App_slideUpCenter_74 {
+    0% {
+        opacity: 0;
+        transform: translateY(50%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes App_blink_78 {
+    0% {
+        filter: brightness(1);
+    }
+
+    16% {
+        filter: brightness(3);
+    }
+
+    100% {
+        filter: brightness(1);
+    }
+}
+body {
+    margin: 1rem;
+    overflow: hidden;
+}
+.App_base_85 {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.App_flag_f1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+.App_flag__hide_47 {
+    opacity: 1;
+    animation: App_fadeOut_14 0.6s 'ease-in-out' 0.3s forwards;
+    pointer-events: none;
+}
+.App_flag__hideDelay_71 {
+    opacity: 1;
+    animation: App_fadeOut_14 0.6s 'ease-in-out' 1.6s forwards;
+    pointer-events: none;
+}

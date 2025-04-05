@@ -290,18 +290,12 @@
                 if (
                     Array.isArray(t) ||
                     (n = (function (t, e) {
-                        if (t) {
-                            if ('string' == typeof t) return l(t, e);
-                            var n = {}.toString.call(t).slice(8, -1);
-                            return (
-                                'Object' === n && t.constructor && (n = t.constructor.name),
-                                'Map' === n || 'Set' === n
-                                    ? Array.from(t)
-                                    : 'Arguments' === n || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)
-                                      ? l(t, e)
-                                      : void 0
-                            );
-                        }
+                        if (!t) return;
+                        if ('string' == typeof t) return l(t, e);
+                        var n = Object.prototype.toString.call(t).slice(8, -1);
+                        'Object' === n && t.constructor && (n = t.constructor.name);
+                        if ('Map' === n || 'Set' === n) return Array.from(t);
+                        if ('Arguments' === n || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return l(t, e);
                     })(t)) ||
                     (e && t && 'number' == typeof t.length)
                 ) {
@@ -317,7 +311,7 @@
             }
             function l(t, e) {
                 (null == e || e > t.length) && (e = t.length);
-                for (var n = 0, s = Array(e); n < e; n++) s[n] = t[n];
+                for (var n = 0, s = new Array(e); n < e; n++) s[n] = t[n];
                 return s;
             }
             function c() {
@@ -431,7 +425,7 @@
                 e && t.ref !== e && (null == (n = t.ref) || n.delete(t), e.add(t), (t.ref = e));
             }
             const j = c({}, { tension: 170, friction: 26 }, { mass: 1, damping: 1, easing: (t) => t, clamp: !1 });
-            class A {
+            class O {
                 constructor() {
                     (this.tension = void 0),
                         (this.friction = void 0),
@@ -451,7 +445,7 @@
                         Object.assign(this, j);
                 }
             }
-            function O(t, e) {
+            function A(t, e) {
                 if (s.is.und(e.decay)) {
                     const n = !s.is.und(e.tension) || !s.is.und(e.friction);
                     (!n && s.is.und(e.frequency) && s.is.und(e.damping) && s.is.und(e.mass)) ||
@@ -468,7 +462,7 @@
                         (this.fromValues = x),
                         (this.to = void 0),
                         (this.from = void 0),
-                        (this.config = new A()),
+                        (this.config = new O()),
                         (this.immediate = !1);
                 }
             }
@@ -927,14 +921,14 @@
                     const k = !(0, s.Xy)(g, p);
                     k && this._focus(g);
                     const P = S(e.to),
-                        A = l.config,
-                        x = A.decay,
-                        I = A.velocity;
-                    (i || o) && (A.velocity = 0),
+                        O = l.config,
+                        x = O.decay,
+                        I = O.velocity;
+                    (i || o) && (O.velocity = 0),
                         e.config &&
                             !P &&
                             (function (t, e, n) {
-                                n && (O((n = c({}, n)), e), (e = c({}, n, e))), O(t, e), Object.assign(t, e);
+                                n && (A((n = c({}, n)), e), (e = c({}, n, e))), A(t, e), Object.assign(t, e);
                                 for (const e in j) null == t[e] && (t[e] = j[e]);
                                 let i = t.mass,
                                     r = t.frequency,
@@ -944,7 +938,7 @@
                                     o < 0 && (o = 0),
                                     (t.tension = Math.pow((2 * Math.PI) / r, 2) * i),
                                     (t.friction = (4 * Math.PI * o * i) / r));
-                            })(A, d(e.config, a), e.config !== u.config ? d(u.config, a) : void 0);
+                            })(O, d(e.config, a), e.config !== u.config ? d(u.config, a) : void 0);
                     let C = (0, r.ys)(this);
                     if (!C || s.is.und(g)) return n(T(this, !0));
                     const E = s.is.und(e.reset) ? o && !e.default : !s.is.und(v) && h(e.reset, a),
@@ -968,7 +962,7 @@
                     if (!F) {
                         const t = E || (!N(this) && w);
                         (k || t) && ((z = (0, s.Xy)(_(U), $)), (F = !z)),
-                            (((0, s.Xy)(l.immediate, M) || M) && (0, s.Xy)(A.decay, x) && (0, s.Xy)(A.velocity, I)) ||
+                            (((0, s.Xy)(l.immediate, M) || M) && (0, s.Xy)(O.decay, x) && (0, s.Xy)(O.velocity, I)) ||
                                 (F = !0);
                     }
                     if (
@@ -1481,9 +1475,10 @@
             function St(t, e) {
                 const n = s.is.fun(t),
                     i = wt(1, n ? t : [t], n ? e || [] : e),
-                    r = i[0][0],
-                    o = i[1];
-                return n || 2 == arguments.length ? [r, o] : r;
+                    r = i[0],
+                    o = r[0],
+                    a = i[1];
+                return n || 2 == arguments.length ? [o, a] : o;
             }
             let kt;
             !(function (t) {
@@ -1506,7 +1501,7 @@
                     const e = this._get(),
                         n = this.get();
                     (0, s.Xy)(e, n) || ((0, r.ys)(this).setValue(e), this._onChange(e, this.idle)),
-                        !this.idle && At(this._active) && Ot(this);
+                        !this.idle && Ot(this._active) && At(this);
                 }
                 _get() {
                     const t = s.is.arr(this.source) ? this.source.map(s.je) : (0, s.qo)((0, s.je)(this.source));
@@ -1514,12 +1509,12 @@
                 }
                 _start() {
                     this.idle &&
-                        !At(this._active) &&
+                        !Ot(this._active) &&
                         ((this.idle = !1),
                         (0, s.S6)((0, r.He)(this), (t) => {
                             t.done = !1;
                         }),
-                        s.OH.skipAnimation ? (s.Wn.batchedUpdates(() => this.advance()), Ot(this)) : s.fT.start(this));
+                        s.OH.skipAnimation ? (s.Wn.batchedUpdates(() => this.advance()), At(this)) : s.fT.start(this));
                 }
                 _attach() {
                     let t = 1;
@@ -1535,7 +1530,7 @@
                         (0, s.j$)(t) && (0, s.iL)(t, this);
                     }),
                         this._active.clear(),
-                        Ot(this);
+                        At(this);
                 }
                 eventObserved(t) {
                     'change' == t.type
@@ -1554,10 +1549,10 @@
             function jt(t) {
                 return !1 !== t.idle;
             }
-            function At(t) {
+            function Ot(t) {
                 return !t.size || Array.from(t).every(jt);
             }
-            function Ot(t) {
+            function At(t) {
                 t.idle ||
                     ((t.idle = !0),
                     (0, s.S6)((0, r.He)(t), (t) => {
@@ -1581,8 +1576,8 @@
                 dE: () => k,
                 ZR: () => Ut,
                 LW: () => qt,
-                S6: () => A,
-                rU: () => O,
+                S6: () => O,
+                rU: () => A,
                 yl: () => I,
                 bl: () => C,
                 fT: () => F,
@@ -1736,8 +1731,8 @@
                 }
                 return t === e;
             }
-            const A = (t, e) => t.forEach(e);
-            function O(t, e, n) {
+            const O = (t, e) => t.forEach(e);
+            function A(t, e, n) {
                 if (P.arr(t)) for (let s = 0; s < t.length; s++) e.call(n, t[s], `${s}`);
                 else for (const s in t) t.hasOwnProperty(s) && e.call(n, t[s], s);
             }
@@ -1745,7 +1740,7 @@
             function I(t, e) {
                 if (t.size) {
                     const n = Array.from(t);
-                    t.clear(), A(n, e);
+                    t.clear(), O(n, e);
                 }
             }
             const C = (t, ...e) => I(t, (t) => t(...e));
@@ -2144,13 +2139,13 @@
             const kt = (t, e, n) => Object.defineProperty(t, e, { value: n, writable: !0, configurable: !0 }),
                 Pt = /[+\-]?(?:0|[1-9]\d*)(?:\.\d*)?(?:[eE][+\-]?\d+)?/g,
                 jt = /(#(?:[0-9a-f]{2}){2,4}|(#[0-9a-f]{3})|(rgb|hsl)a?\((-?\d+%?[,\s]+){2,3}\s*[\d\.]+%?\))/gi,
-                At = new RegExp(`(${Pt.source})(%|[a-z]+)`, 'i');
-            let Ot;
+                Ot = new RegExp(`(${Pt.source})(%|[a-z]+)`, 'i');
+            let At;
             const xt = /rgba\(([0-9\.-]+), ([0-9\.-]+), ([0-9\.-]+), ([0-9\.-]+)\)/gi,
                 It = (t, e, n, s, i) => `rgba(${Math.round(e)}, ${Math.round(n)}, ${Math.round(s)}, ${i})`,
                 Ct = (t) => {
-                    Ot || (Ot = T ? new RegExp(`(${Object.keys(T).join('|')})(?!\\w)`, 'g') : /^\b$/);
-                    const e = t.output.map((t) => gt(t).replace(jt, ct).replace(Ot, ct)),
+                    At || (At = T ? new RegExp(`(${Object.keys(T).join('|')})(?!\\w)`, 'g') : /^\b$/);
+                    const e = t.output.map((t) => gt(t).replace(jt, ct).replace(At, ct)),
                         n = e.map((t) => t.match(Pt).map(Number)),
                         s = n[0]
                             .map((t, e) =>
@@ -2163,7 +2158,7 @@
                     return (t) => {
                         var n;
                         const i =
-                            !At.test(e[0]) && (null == (n = e.find((t) => At.test(t))) ? void 0 : n.replace(Pt, ''));
+                            !Ot.test(e[0]) && (null == (n = e.find((t) => Ot.test(t))) ? void 0 : n.replace(Pt, ''));
                         let r = 0;
                         return e[0].replace(Pt, () => `${s[r++](t)}${i || ''}`).replace(xt, It);
                     };

@@ -25,13 +25,12 @@
                     let t = e.children,
                         i = (function (e, t) {
                             if (null == e) return {};
-                            var i = {};
-                            for (var n in e)
-                                if ({}.hasOwnProperty.call(e, n)) {
-                                    if (t.indexOf(n) >= 0) continue;
-                                    i[n] = e[n];
-                                }
-                            return i;
+                            var i,
+                                n,
+                                r = {},
+                                a = Object.keys(e);
+                            for (n = 0; n < a.length; n++) (i = a[n]), t.indexOf(i) >= 0 || (r[i] = e[i]);
+                            return r;
                         })(e, o);
                     const s = (0, n.useContext)(a.Y),
                         l = s.extraLarge,
@@ -211,16 +210,16 @@
                 ];
                 function c() {
                     return (
-                        (c = Object.assign
-                            ? Object.assign.bind()
-                            : function (e) {
-                                  for (var t = 1; t < arguments.length; t++) {
-                                      var i = arguments[t];
-                                      for (var n in i) ({}).hasOwnProperty.call(i, n) && (e[n] = i[n]);
-                                  }
-                                  return e;
-                              }),
-                        c.apply(null, arguments)
+                        (c =
+                            Object.assign ||
+                            function (e) {
+                                for (var t = 1; t < arguments.length; t++) {
+                                    var i = arguments[t];
+                                    for (var n in i) Object.prototype.hasOwnProperty.call(i, n) && (e[n] = i[n]);
+                                }
+                                return e;
+                            }),
+                        c.apply(this, arguments)
                     );
                 }
                 class _ extends r().PureComponent {
@@ -263,13 +262,12 @@
                                 e.soundHover,
                                 (function (e, t) {
                                     if (null == e) return {};
-                                    var i = {};
-                                    for (var n in e)
-                                        if ({}.hasOwnProperty.call(e, n)) {
-                                            if (t.indexOf(n) >= 0) continue;
-                                            i[n] = e[n];
-                                        }
-                                    return i;
+                                    var i,
+                                        n,
+                                        r = {},
+                                        a = Object.keys(e);
+                                    for (n = 0; n < a.length; n++) (i = a[n]), t.indexOf(i) >= 0 || (r[i] = e[i]);
+                                    return r;
                                 })(e, d)),
                             w = o()(l.Z.base, l.Z[`base__${s}`], l.Z[`base__${a}`], null == _ ? void 0 : _.base),
                             E = o()(l.Z.icon, l.Z[`icon__${s}`], l.Z[`icon__${a}`], null == _ ? void 0 : _.icon),
@@ -480,16 +478,17 @@
                     i.d(t, {
                         addModelObserver: () => _,
                         addPreloadTexture: () => l,
-                        children: () => n,
-                        displayStatus: () => r.W,
-                        displayStatusIs: () => L,
-                        events: () => a.U,
-                        extraSize: () => k,
+                        arabic2roman: () => L,
+                        children: () => r,
+                        displayStatus: () => a.W,
+                        displayStatusIs: () => S,
+                        events: () => o.U,
+                        extraSize: () => P,
                         forceTriggerMouseMove: () => T,
                         freezeTextureBeforeResize: () => v,
                         getBrowserTexturePath: () => c,
                         getDisplayStatus: () => y,
-                        getFontNames: () => S,
+                        getFontNames: () => k,
                         getScale: () => w,
                         getSize: () => h,
                         getViewGlobalPosition: () => m,
@@ -498,23 +497,23 @@
                         pxToRem: () => E,
                         remToPx: () => p,
                         resize: () => g,
-                        sendEvent: () => o.qP,
+                        sendEvent: () => s.qP,
                         setAnimateWindow: () => f,
                         setEventHandled: () => x,
                         setInputPaddingsRem: () => d,
                         setSidePaddingsRem: () => u,
-                        whenTutorialReady: () => P,
+                        whenTutorialReady: () => M,
                     });
-                var n = i(3722),
-                    r = i(6112),
-                    a = i(6538),
-                    o = i(8566);
-                const s = 15;
+                var n = i(9690),
+                    r = i(3722),
+                    a = i(6112),
+                    o = i(6538),
+                    s = i(8566);
                 function l(e) {
                     viewEnv.addPreloadTexture(e);
                 }
                 function d(e) {
-                    viewEnv.setHitAreaPaddingsRem(e, e, e, e, s);
+                    viewEnv.setHitAreaPaddingsRem(e, e, e, e, 15);
                 }
                 function c(e, t, i, n = 1) {
                     return viewEnv.getWebBrowserTexturePath(e, t, i, n);
@@ -523,7 +522,7 @@
                     return viewEnv.addDataChangedCallback(e, t, i);
                 }
                 function u(e) {
-                    viewEnv.setHitAreaPaddingsRem(e.top, e.right, e.bottom, e.left, s);
+                    viewEnv.setHitAreaPaddingsRem(e.top, e.right, e.bottom, e.left, 15);
                 }
                 function h(e = 'px') {
                     return 'rem' === e ? viewEnv.getViewSizeRem() : viewEnv.getViewSizePx();
@@ -565,15 +564,16 @@
                 function y() {
                     return viewEnv.getShowingStatus();
                 }
-                const S = (() => {
+                const k = (() => {
                         let e = [];
                         return () => (0 === e.length && (e = Object.keys(viewEnv.getFontsConfig())), e);
                     })(),
-                    L = Object.keys(r.W).reduce(
-                        (e, t) => ((e[t] = () => viewEnv.getShowingStatus() === r.W[t]), e),
+                    L = n.cg,
+                    S = Object.keys(a.W).reduce(
+                        (e, t) => ((e[t] = () => viewEnv.getShowingStatus() === a.W[t]), e),
                         {},
                     ),
-                    k = {
+                    P = {
                         set: (e, t) => {
                             viewEnv.setExtraSizeRem(e, t);
                         },
@@ -581,9 +581,9 @@
                             viewEnv.getExtraSizeRem(e, t);
                         },
                     },
-                    P = Promise.all([
+                    M = Promise.all([
                         new Promise((e) => {
-                            window.isDomBuilt ? e() : a.U.onDomBuilt(e);
+                            window.isDomBuilt ? e() : o.U.onDomBuilt(e);
                         }),
                         engine.whenReady,
                     ]);
@@ -601,13 +601,12 @@
                             const a = t.args,
                                 o = (function (e, t) {
                                     if (null == e) return {};
-                                    var i = {};
-                                    for (var n in e)
-                                        if ({}.hasOwnProperty.call(e, n)) {
-                                            if (t.indexOf(n) >= 0) continue;
-                                            i[n] = e[n];
-                                        }
-                                    return i;
+                                    var i,
+                                        n,
+                                        r = {},
+                                        a = Object.keys(e);
+                                    for (n = 0; n < a.length; n++) (i = a[n]), t.indexOf(i) >= 0 || (r[i] = e[i]);
+                                    return r;
                                 })(t, n);
                             return void 0 !== a
                                 ? viewEnv.handleViewEvent(
@@ -705,6 +704,17 @@
                             (e.SYMBOL = 'Symbol'),
                             (e.SYMBOL_LOCK = 'SymbolLock');
                     })(r || (r = {}));
+            },
+            9690: (e, t, i) => {
+                i.d(t, { cg: () => a });
+                const n = ['I', 'IV', 'V', 'IX', 'X', 'XL', 'L', 'XC', 'C', 'CD', 'D', 'CM', 'M'],
+                    r = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
+                function a(e) {
+                    let t = '';
+                    for (let i = r.length - 1; i >= 0; i--) for (; e >= r[i]; ) (t += n[i]), (e -= r[i]);
+                    return t;
+                }
+                ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());
             },
             7727: (e, t, i) => {
                 function n(e) {
@@ -920,13 +930,12 @@
                             const r = t.args,
                                 a = (function (e, t) {
                                     if (null == e) return {};
-                                    var i = {};
-                                    for (var n in e)
-                                        if ({}.hasOwnProperty.call(e, n)) {
-                                            if (t.indexOf(n) >= 0) continue;
-                                            i[n] = e[n];
-                                        }
-                                    return i;
+                                    var i,
+                                        n,
+                                        r = {},
+                                        a = Object.keys(e);
+                                    for (n = 0; n < a.length; n++) (i = a[n]), t.indexOf(i) >= 0 || (r[i] = e[i]);
+                                    return r;
                                 })(t, g);
                             void 0 !== r
                                 ? viewEnv.handleViewEvent(

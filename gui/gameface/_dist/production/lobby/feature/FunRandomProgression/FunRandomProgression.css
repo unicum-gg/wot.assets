@@ -5167,25 +5167,29 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .Quest_questIcon_2e {
-    width: 24rem;
-    height: 24rem;
+    width: 90rem;
+    height: 90rem;
+    margin: -33rem;
     background: center / contain no-repeat;
     opacity: 0.5;
 }
 
+.Quest_base__completed_19 .Quest_questIcon_2e {
+    opacity: 1;
+}
+
 .mediaSmall .Quest_questIcon_2e {
-    width: 32rem;
-    height: 32rem;
+    margin: -29rem;
 }
 
 .Quest_base__single_quest_2b .Quest_questIcon_2e {
-    width: 32rem;
-    height: 32rem;
+    margin: -29rem;
 }
 
-.mediaExtraLargeWidth .Quest_questIcon_2e {
-    width: 64rem;
-    height: 64rem;
+.mediaLargeWidth .Quest_questIcon_2e {
+    width: 128rem;
+    height: 128rem;
+    margin: -39rem -32rem -32rem -34rem;
 }
 
 .Quest_questContent_01 {

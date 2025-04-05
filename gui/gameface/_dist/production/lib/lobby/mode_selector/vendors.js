@@ -1204,18 +1204,12 @@
                 if (
                     Array.isArray(t) ||
                     (n = (function (t, e) {
-                        if (t) {
-                            if ('string' == typeof t) return s(t, e);
-                            var n = {}.toString.call(t).slice(8, -1);
-                            return (
-                                'Object' === n && t.constructor && (n = t.constructor.name),
-                                'Map' === n || 'Set' === n
-                                    ? Array.from(t)
-                                    : 'Arguments' === n || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)
-                                      ? s(t, e)
-                                      : void 0
-                            );
-                        }
+                        if (!t) return;
+                        if ('string' == typeof t) return s(t, e);
+                        var n = Object.prototype.toString.call(t).slice(8, -1);
+                        'Object' === n && t.constructor && (n = t.constructor.name);
+                        if ('Map' === n || 'Set' === n) return Array.from(t);
+                        if ('Arguments' === n || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return s(t, e);
                     })(t)) ||
                     (e && t && 'number' == typeof t.length)
                 ) {
@@ -1231,7 +1225,7 @@
             }
             function s(t, e) {
                 (null == e || e > t.length) && (e = t.length);
-                for (var n = 0, r = Array(e); n < e; n++) r[n] = t[n];
+                for (var n = 0, r = new Array(e); n < e; n++) r[n] = t[n];
                 return r;
             }
             const c = console.assert,
@@ -1462,18 +1456,12 @@
                 if (
                     Array.isArray(t) ||
                     (n = (function (t, e) {
-                        if (t) {
-                            if ('string' == typeof t) return b(t, e);
-                            var n = {}.toString.call(t).slice(8, -1);
-                            return (
-                                'Object' === n && t.constructor && (n = t.constructor.name),
-                                'Map' === n || 'Set' === n
-                                    ? Array.from(t)
-                                    : 'Arguments' === n || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)
-                                      ? b(t, e)
-                                      : void 0
-                            );
-                        }
+                        if (!t) return;
+                        if ('string' == typeof t) return b(t, e);
+                        var n = Object.prototype.toString.call(t).slice(8, -1);
+                        'Object' === n && t.constructor && (n = t.constructor.name);
+                        if ('Map' === n || 'Set' === n) return Array.from(t);
+                        if ('Arguments' === n || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return b(t, e);
                     })(t)) ||
                     (e && t && 'number' == typeof t.length)
                 ) {
@@ -1489,7 +1477,7 @@
             }
             function b(t, e) {
                 (null == e || e > t.length) && (e = t.length);
-                for (var n = 0, r = Array(e); n < e; n++) r[n] = t[n];
+                for (var n = 0, r = new Array(e); n < e; n++) r[n] = t[n];
                 return r;
             }
             const B = 1e3,
@@ -2732,7 +2720,7 @@
                                       return e;
                                   }),
                                   (t.prototype.getStateNodeById = function (t) {
-                                      var e = g(t) ? t.slice(1) : t;
+                                      var e = g(t) ? t.slice('#'.length) : t;
                                       if (e === this.id) return this;
                                       var n = this.machine.idMap[e];
                                       if (!n)
@@ -2782,7 +2770,7 @@
                                   }),
                                   (t.prototype.getResolvedPath = function (t) {
                                       if (g(t)) {
-                                          var e = this.machine.idMap[t.slice(1)];
+                                          var e = this.machine.idMap[t.slice('#'.length)];
                                           if (!e) throw new Error("Unable to find state node '".concat(t, "'"));
                                           return e.path;
                                       }
@@ -3337,21 +3325,21 @@
             if (
                 (n.d(e, {
                     AE: () => h,
-                    BL: () => g,
+                    BL: () => y,
                     OU: () => d,
                     Q8: () => f,
-                    Sl: () => B,
+                    Sl: () => b,
                     XA: () => l,
-                    aT: () => b,
-                    al: () => y,
+                    aT: () => U,
+                    al: () => p,
                     bf: () => c,
-                    e4: () => U,
-                    f0: () => W,
+                    e4: () => W,
+                    f0: () => m,
                     lW: () => v,
                     o$: () => u,
-                    sT: () => m,
-                    vU: () => w,
-                    yC: () => x,
+                    sT: () => g,
+                    vU: () => B,
+                    yC: () => w,
                 }),
                 261 == n.j)
             )
@@ -3403,30 +3391,25 @@
                     id: e && void 0 !== e.id ? e.id : (0, o.mf)(t) ? t.name : (0, o.x6)(t),
                 };
             }
-            var p = function (t, e, n) {
-                    return (0, r.pi)((0, r.pi)({}, t), {
-                        value: (0, o.HD)(t.expr) ? t.expr : t.expr(e, n.data, { _event: n }),
-                    });
-                },
-                y = function (t) {
-                    return { type: s.al, sendId: t };
-                };
-            function g(t) {
+            var p = function (t) {
+                return { type: s.al, sendId: t };
+            };
+            function y(t) {
                 var e = l(t);
                 return { type: a.M.Start, activity: e, exec: void 0 };
             }
-            function m(t) {
+            function g(t) {
                 var e = (0, o.mf)(t) ? t : l(t);
                 return { type: a.M.Stop, activity: e, exec: void 0 };
             }
-            var W = function (t) {
+            var m = function (t) {
                 return { type: s.f0, assignment: t };
             };
-            function U(t, e) {
+            function W(t, e) {
                 var n = e ? '#'.concat(e) : '';
                 return ''.concat(a.M.After, '(').concat(t, ')').concat(n);
             }
-            function b(t, e) {
+            function U(t, e) {
                 var n = ''.concat(a.M.DoneState, '.').concat(t),
                     r = {
                         type: n,
@@ -3437,7 +3420,7 @@
                     };
                 return r;
             }
-            function B(t, e) {
+            function b(t, e) {
                 var n = ''.concat(a.M.DoneInvoke, '.').concat(t),
                     r = {
                         type: n,
@@ -3448,7 +3431,7 @@
                     };
                 return r;
             }
-            function w(t, e) {
+            function B(t, e) {
                 var n = ''.concat(a.M.ErrorPlatform, '.').concat(t),
                     r = {
                         type: n,
@@ -3459,7 +3442,7 @@
                     };
                 return r;
             }
-            function x(t, e, n, c, u, l) {
+            function w(t, e, n, c, u, l) {
                 void 0 === l && (l = !1);
                 var d = (0, r.CR)(
                         l
@@ -3470,11 +3453,11 @@
                         2,
                     ),
                     v = d[0],
-                    y = d[1],
-                    g = v.length ? (0, o.dt)(n, c, v, e) : n,
-                    m = l ? [n] : void 0,
-                    W = (0, o.xH)(
-                        y
+                    p = d[1],
+                    y = v.length ? (0, o.dt)(n, c, v, e) : n,
+                    g = l ? [n] : void 0,
+                    m = (0, o.xH)(
+                        p
                             .map(function (n) {
                                 var u, d;
                                 switch (n.type) {
@@ -3496,7 +3479,7 @@
                                                 event: c.data,
                                                 delay: a,
                                             });
-                                        })(n, g, c, t.options.delays);
+                                        })(n, y, c, t.options.delays);
                                         return (
                                             i.M ||
                                                 (0, o.ZK)(
@@ -3508,60 +3491,64 @@
                                             v
                                         );
                                     case s.cM:
-                                        return p(n, g, c);
+                                        return (function (t, e, n) {
+                                            return (0, r.pi)((0, r.pi)({}, t), {
+                                                value: (0, o.HD)(t.expr) ? t.expr : t.expr(e, n.data, { _event: n }),
+                                            });
+                                        })(n, y, c);
                                     case s.RN:
                                         if (
-                                            !(b =
+                                            !(U =
                                                 null ===
                                                     (u = n.conds.find(function (n) {
                                                         var r = (0, o.Qi)(n.cond, t.options.guards);
-                                                        return !r || (0, o.vx)(t, r, g, c, e);
+                                                        return !r || (0, o.vx)(t, r, y, c, e);
                                                     })) || void 0 === u
                                                     ? void 0
                                                     : u.actions)
                                         )
                                             return [];
-                                        var y = (0, r.CR)(x(t, e, g, c, h((0, o.qo)(b), t.options.actions), l), 2),
-                                            W = y[0],
-                                            U = y[1];
-                                        return (g = U), null == m || m.push(g), W;
+                                        var p = (0, r.CR)(w(t, e, y, c, h((0, o.qo)(U), t.options.actions), l), 2),
+                                            m = p[0],
+                                            W = p[1];
+                                        return (y = W), null == g || g.push(y), m;
                                     case s.Le:
-                                        var b;
-                                        if (!(b = n.get(g, c.data))) return [];
-                                        var B = (0, r.CR)(x(t, e, g, c, h((0, o.qo)(b), t.options.actions), l), 2),
-                                            w = B[0],
-                                            S = B[1];
-                                        return (g = S), null == m || m.push(g), w;
+                                        var U;
+                                        if (!(U = n.get(y, c.data))) return [];
+                                        var b = (0, r.CR)(w(t, e, y, c, h((0, o.qo)(U), t.options.actions), l), 2),
+                                            B = b[0],
+                                            x = b[1];
+                                        return (y = x), null == g || g.push(y), B;
                                     case s.sT:
                                         return (function (t, e, n) {
                                             var r = (0, o.mf)(t.activity) ? t.activity(e, n.data) : t.activity,
                                                 i = 'string' == typeof r ? { id: r } : r;
                                             return { type: a.M.Stop, activity: i };
-                                        })(n, g, c);
+                                        })(n, y, c);
                                     case s.f0:
-                                        (g = (0, o.dt)(g, c, [n], e)), null == m || m.push(g);
+                                        (y = (0, o.dt)(y, c, [n], e)), null == g || g.push(y);
                                         break;
                                     default:
-                                        var _ = f(n, t.options.actions),
-                                            T = _.exec;
-                                        if (T && m) {
-                                            var E = m.length - 1;
-                                            _ = (0, r.pi)((0, r.pi)({}, _), {
+                                        var S = f(n, t.options.actions),
+                                            _ = S.exec;
+                                        if (_ && g) {
+                                            var T = g.length - 1;
+                                            S = (0, r.pi)((0, r.pi)({}, S), {
                                                 exec: function (t) {
                                                     for (var e = [], n = 1; n < arguments.length; n++)
                                                         e[n - 1] = arguments[n];
-                                                    T.apply(void 0, (0, r.ev)([m[E]], (0, r.CR)(e), !1));
+                                                    _.apply(void 0, (0, r.ev)([g[T]], (0, r.CR)(e), !1));
                                                 },
                                             });
                                         }
-                                        return _;
+                                        return S;
                                 }
                             })
                             .filter(function (t) {
                                 return !!t;
                             }),
                     );
-                return [W, g];
+                return [m, y];
             }
         },
         4312: (t, e, n) => {

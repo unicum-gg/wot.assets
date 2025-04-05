@@ -2469,14 +2469,14 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .TeamTable_base_65 {
     display: flex;
     flex-direction: column;
-    width: 511rem;
+    width: calc(var(--tableWidthSmall) + 13rem);
     height: 100%;
     font-size: 13rem;
     position: relative;
 }
 
 .mediaLarge .TeamTable_base_65 {
-    width: 783rem;
+    width: calc(var(--tableWidthLarge) + 13rem);
     font-size: 16rem;
 }
 .TeamTable_hidden_1e {
@@ -2485,11 +2485,11 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     visibility: hidden;
 }
 .TeamTable_head_11 {
-    width: 498rem;
+    width: var(--tableWidthSmall);
     margin-bottom: 4rem;
 }
 .mediaLarge .TeamTable_head_11 {
-    width: 770rem;
+    width: var(--tableWidthLarge);
     margin-bottom: 7rem;
 }
 .TeamTable_body_ac {
@@ -2530,6 +2530,10 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .TeamTable_bodyRow__isActive_9d:hover {
     background-color: transparent;
 }
+.TeamTable_bodyRow__nonSelectable_43,
+.TeamTable_bodyRow__nonSelectable_43:hover {
+    cursor: auto;
+}
 .TeamTable_bodyRow__isKilled_ed {
     background: linear-gradient(
         270deg,
@@ -2546,63 +2550,21 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     height: 32rem;
     position: relative;
 }
-.TeamTable_cell__icon3_55,
-.TeamTable_headCell__icon3_3c {
-    justify-content: center;
-    width: 48rem;
-}
-.TeamTable_cell__icon2_38,
-.TeamTable_headCell__icon2_6b {
-    justify-content: center;
-    width: 72rem;
-}
-.TeamTable_cell__icon1_88,
-.TeamTable_headCell__icon1_4e {
-    justify-content: center;
-    width: 144rem;
-}
-.TeamTable_cell__squad_6e,
-.TeamTable_headCell__squad_a5 {
-    justify-content: center;
-    width: 34rem;
-}
 .mediaLarge .TeamTable_cell_65,
 .mediaLarge .TeamTable_headCell_b7 {
     height: 40rem;
 }
-.mediaLarge .TeamTable_cell__icon3_55,
-.mediaLarge .TeamTable_headCell__icon3_3c {
-    width: 60rem;
-}
-.mediaLarge .TeamTable_cell__icon2_38,
-.mediaLarge .TeamTable_headCell__icon2_6b {
-    width: 90rem;
-}
-.mediaLarge .TeamTable_cell__icon1_88,
-.mediaLarge .TeamTable_headCell__icon1_4e {
-    width: 180rem;
-}
 .TeamTable_cell_65 {
     z-index: 1;
 }
-.TeamTable_cell__kills_0d {
+.TeamTable_cell__icon_28 {
     justify-content: center;
-}
-.TeamTable_cell__xp_f2 {
-    justify-content: center;
-}
-.TeamTable_cell__name_59 {
-    width: 179rem;
 }
 .TeamTable_cell__vehicle_09 {
-    width: 143rem;
+    padding-left: 10rem;
     z-index: 0;
 }
-.mediaLarge .TeamTable_cell__name_59 {
-    width: 273rem;
-}
 .mediaLarge .TeamTable_cell__vehicle_09 {
-    width: 283rem;
     z-index: 0;
 }
 .TeamTable_headCell_b7 {
@@ -2611,41 +2573,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 .TeamTable_headCell__sortDisabled_bb {
     cursor: default;
-}
-.TeamTable_headCell__name_63 {
-    width: 179rem;
-}
-.TeamTable_headCell__name_63 .TeamTable_playerName_14 {
-    padding-left: 16rem;
-}
-.TeamTable_headCell__icon3_3c,
-.TeamTable_headCell__icon2_6b,
-.TeamTable_headCell__icon1_4e {
-    position: relative;
-}
-.TeamTable_headCell__vehicle_fc {
-    width: 143rem;
-}
-.mediaLarge .TeamTable_headCell__name_63 {
-    width: 273rem;
-}
-.mediaLarge .TeamTable_headCell__name_63 .TeamTable_playerName_14 {
-    padding-left: 16rem;
-}
-.mediaLarge .TeamTable_headCell__icon3_3c,
-.mediaLarge .TeamTable_headCell__icon2_6b,
-.mediaLarge .TeamTable_headCell__icon1_4e {
-    position: relative;
-}
-.mediaLarge .TeamTable_headCell__vehicle_fc {
-    width: 283rem;
-}
-.TeamTable_name_8b {
-    width: 163rem;
-    margin-left: 16rem;
-}
-.mediaLarge .TeamTable_name_8b {
-    width: 257rem;
 }
 .TeamTable_headHover_58 {
     height: 100%;
@@ -2672,21 +2599,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 .TeamTable_headCell__active_62 .TeamTable_headIcon_37 {
     opacity: 1;
-}
-.TeamTable_headIcon__damage_c7 {
-    background-image: url('R.images.fun_random.gui.maps.icons.feature.battle_results.team_table.header.damage');
-}
-.TeamTable_headIcon__frag_54 {
-    background-image: url('R.images.fun_random.gui.maps.icons.feature.battle_results.team_table.header.kills');
-}
-.TeamTable_headIcon__xp_a6 {
-    background-image: url('R.images.fun_random.gui.maps.icons.feature.battle_results.team_table.header.xp');
-}
-.TeamTable_headIcon__tank_6b {
-    background-image: url('R.images.fun_random.gui.maps.icons.feature.battle_results.team_table.header.vehicle');
-}
-.TeamTable_headIcon__squad_2c {
-    background-image: url('R.images.fun_random.gui.maps.icons.feature.battle_results.team_table.header.platoon');
 }
 .TeamTable_headDivider_43 {
     width: 1rem;
@@ -2719,6 +2631,58 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     padding-right: 0;
 }
 
+.ActiveArrow_base_5b {
+    display: flex;
+    width: 100%;
+    height: 5rem;
+}
+.ActiveArrow_line_22 {
+    flex: 1 1 100%;
+    height: 1rem;
+    background-color: #fff;
+}
+.ActiveArrow_arrow_80 {
+    flex: 0 0 auto;
+    width: 11rem;
+    height: 5rem;
+    background: url('R.images.fun_random.gui.maps.icons.feature.battle_results.team_table.header.arrow_active') center
+        bottom / cover;
+    position: relative;
+}
+.ActiveArrow_arrow__top_54 {
+    background-position: center top;
+    bottom: 4rem;
+}
+
+.TeamTab_base_d1 {
+    display: flex;
+    justify-content: center;
+    padding: 21rem 0 57rem;
+}
+
+.mediaMedium .TeamTab_base_d1 {
+    padding: 39rem 0 157rem;
+}
+.TeamTab_teams_3c {
+    display: flex;
+    justify-content: space-between;
+    width: calc((var(--tableWidthSmall) + 14rem) * 2);
+    height: 100%;
+    position: relative;
+}
+.mediaLarge .TeamTab_teams_3c {
+    width: calc((var(--tableWidthLarge) + 14rem) * 2);
+}
+.TeamTab_teams__single_49 {
+    justify-content: center;
+}
+.TeamTab_detailsWrapper_83 {
+    flex: 1;
+}
+.TeamTab_detailsWrapper__extra_4a {
+    margin-left: -13rem;
+}
+
 .TableRendererSquad_base_96 {
     display: flex;
     justify-content: center;
@@ -2740,6 +2704,10 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     justify-content: flex-start;
     align-items: center;
     flex: 1;
+}
+
+.mediaLarge .TableRendererVehicleInfo_base_1c {
+    margin-left: 0;
 }
 .TableRendererVehicleInfo_vehicleImage_d3 {
     display: none;
@@ -2790,53 +2758,4 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .ActiveGlow_activeGlow__right_38 {
     right: 0;
     transform: translate(50%, -50%);
-}
-
-.ActiveArrow_base_5b {
-    display: flex;
-    width: 100%;
-    height: 5rem;
-}
-.ActiveArrow_line_22 {
-    flex: 1 1 100%;
-    height: 1rem;
-    background-color: #fff;
-}
-.ActiveArrow_arrow_80 {
-    flex: 0 0 auto;
-    width: 11rem;
-    height: 5rem;
-    background: url('R.images.fun_random.gui.maps.icons.feature.battle_results.team_table.header.arrow_active') center
-        bottom / cover;
-    position: relative;
-}
-.ActiveArrow_arrow__top_54 {
-    background-position: center top;
-    bottom: 4rem;
-}
-
-.TeamTab_base_d1 {
-    display: flex;
-    justify-content: center;
-    padding: 21rem 0 57rem;
-}
-
-.mediaMedium .TeamTab_base_d1 {
-    padding: 39rem 0 157rem;
-}
-.TeamTab_teams_3c {
-    display: flex;
-    justify-content: space-between;
-    width: 1024rem;
-    height: 100%;
-    position: relative;
-}
-.mediaLarge .TeamTab_teams_3c {
-    width: 1568rem;
-}
-.TeamTab_detailsWrapper_83 {
-    flex: 1;
-}
-.TeamTab_detailsWrapper__extra_4a {
-    margin-left: -13rem;
 }

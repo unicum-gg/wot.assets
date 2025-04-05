@@ -1,0 +1,444 @@
+.TooltipDecorator_base_c9 {
+    display: flex;
+    position: absolute;
+}
+
+.TooltipDecorator_base__theme-default_6d .TooltipDecorator_decorator_3d {
+    padding: 4rem 6rem 8rem;
+    border-image-source: url('R.atlases.components.tooltip_background');
+    border-image-slice: 24 fill;
+    border-image-width: 24rem;
+    position: relative;
+}
+
+.FormatText_base_d0 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.RewardsCounter_base_af {
+    display: flex;
+}
+
+.RewardsCounter_name_aa {
+    color: #e9e2bf;
+    font-size: 15rem;
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 2rem;
+}
+
+.RewardsCounter_text_a1 {
+    color: #ffdd99;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.RewardsCounter_text__vertical_b1 {
+    color: #ffdd99;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+    justify-content: center;
+}
+
+.RewardsCounter_base__vertical_3e .RewardsCounter_label_56 {
+    text-align: center;
+}
+
+.RewardsCounter_accent_49 {
+    color: #ffdd99;
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
+    display: flex;
+    justify-content: center;
+    min-width: 14rem;
+    position: relative;
+    top: -2rem;
+}
+
+.RewardsCounter_base__vertical_3e .RewardsCounter_accent_49 {
+    color: #ffdd99;
+    font-size: 28rem;
+    font-weight: 700;
+    line-height: 1.1;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 100%;
+    margin-top: 12rem;
+    top: auto;
+}
+
+.RewardsCounter_base__soldOut_bf .RewardsCounter_accent_49 {
+    color: rgba(233, 226, 191, 0.5);
+    font-size: 28rem;
+    font-weight: 700;
+    line-height: 1.1;
+    text-shadow: 0 0 15rem #e52;
+}
+
+.RewardsCounter_count_9c {
+    color: #ffdd99;
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: -2rem;
+}
+
+.RewardsCounter_base__vertical_3e .RewardsCounter_count_9c {
+    display: flex;
+    justify-content: center;
+}
+
+.RewardsCounter_countBack_14 {
+    width: 153rem;
+    height: 99rem;
+    margin-top: 3rem;
+    background: url('R.images.resource_well.gui.maps.icons.counterStates.counter_bg') no-repeat center / contain;
+    opacity: 0.7;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+.RewardsCounter_base__vertical_3e .RewardsCounter_countBack_14 {
+    width: 279rem;
+    height: 180rem;
+}
+
+.RewardsCounter_countGlow_09 {
+    width: 240rem;
+    height: 72rem;
+    background: url('R.images.resource_well.gui.maps.icons.counterStates.counter_glow') no-repeat center / contain;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+.TimerEntryPointTooltip_base_43 {
+    display: flex;
+}
+
+.TimerEntryPointTooltip_text_50 {
+    color: #8c8c7e;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    margin-right: 5rem;
+    line-height: 1;
+}
+
+.TimerEntryPointTooltip_lastUntil_f4 {
+    color: #e9e2bf;
+    font-size: 14rem;
+    font-weight: 700;
+    line-height: 1.15;
+    line-height: 1;
+}
+
+.TimerEntryPointTooltip_leftTime_98 {
+    color: #ffdd99;
+    font-size: 14rem;
+    font-weight: 700;
+    line-height: 1.15;
+    text-shadow:
+        0 0 4rem rgba(255, 127, 0, 0.25),
+        0 0 8rem #ff2a00,
+        0 0 15rem #e52;
+}
+
+.TimerMainScreen_shineWrapper_61 {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.TimerMainScreen_shineBg_aa {
+    width: 462rem;
+    height: 260rem;
+    background: url('R.images.resource_well.gui.maps.icons.timer.shine_timer_small') no-repeat center / contain;
+    opacity: 1;
+    position: relative;
+    top: -129rem;
+}
+
+.mediaMedium .TimerMainScreen_shineBg_aa {
+    width: 700rem;
+    height: 394rem;
+    background-image: url('R.images.resource_well.gui.maps.icons.timer.shine_timer');
+    top: -182rem;
+}
+
+.TimerMainScreen_content_2d {
+    display: flex;
+    position: relative;
+    z-index: 1;
+}
+
+.TimerMainScreen_text_23,
+.TimerMainScreen_time_5b {
+    color: #e9e2bf;
+    font-size: 15rem;
+    font-weight: 700;
+    line-height: 1.15;
+    margin-right: 5rem;
+}
+
+.mediaMedium .TimerMainScreen_text_23,
+.mediaMedium .TimerMainScreen_time_5b {
+    font-size: 18rem;
+}
+
+.TimerMainScreen_content__daysLeft_7f .TimerMainScreen_text_23,
+.TimerMainScreen_content__daysLeft_7f .TimerMainScreen_time_5b {
+    color: #f2f2f7;
+    opacity: 0.5;
+}
+
+.TimerMainScreen_content__endingSoon_bb .TimerMainScreen_text_23,
+.TimerMainScreen_content__endingSoon_bb .TimerMainScreen_time_5b {
+    color: #ffdd99;
+    text-shadow:
+        0 0 4rem rgba(255, 127, 0, 0.25),
+        0 0 8rem #ff2a00,
+        0 0 15rem #e52;
+}
+
+.TimerMainScreen_time_5b {
+    margin: 0;
+}
+
+.Timer_base_45 {
+    position: relative;
+}
+
+.EventTimer_base_d5 {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.EventTimer_icon_2a {
+    width: 14rem;
+    height: 14rem;
+    margin-right: 6rem;
+    position: relative;
+}
+
+.EventTimer_image_d9 {
+    width: 38rem;
+    height: 38rem;
+    background: url('R.images.resource_well.gui.maps.icons.tooltips.entryPoint.time_icon') no-repeat center / contain;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.Message_base_b5 {
+    display: flex;
+    align-items: center;
+}
+
+.Message_base__centered_c4 {
+    justify-content: center;
+}
+
+.Message_base__warning_b1 {
+    align-items: flex-start;
+}
+
+.Message_icon_a4 {
+    width: 18rem;
+    height: 18rem;
+    background: no-repeat center / contain;
+    position: relative;
+}
+
+.Message_base__default_bb .Message_icon_a4 {
+    display: none;
+}
+
+.Message_base__warning_b1 .Message_icon_a4 {
+    background-image: url('R.images.resource_well.gui.maps.icons.tooltips.entryPoint.alertIcon');
+    top: 1rem;
+}
+
+.Message_base__completed_23 .Message_icon_a4 {
+    background-image: url('R.images.resource_well.gui.maps.icons.tooltips.entryPoint.check');
+}
+
+.Message_text_22 {
+    color: #8c8c7e;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+.Message_base__default_bb .Message_text_22 {
+    color: #8c8c7e;
+}
+
+.Message_base__warning_b1 .Message_text_22 {
+    flex: 1;
+    color: #ee7000;
+}
+
+.Message_base__completed_23 .Message_text_22 {
+    color: #80d43a;
+}
+
+.Content_base_1d {
+    width: 302rem;
+    border: 1rem solid #f2f2e61a;
+    border-radius: 2rem;
+    background: linear-gradient(
+            180deg,
+            rgba(51, 51, 41, 0.3) 0%,
+            rgba(51, 51, 41, 0) 16%,
+            rgba(51, 51, 41, 0) 88%,
+            rgba(51, 51, 41, 0.1) 100%
+        ),
+        linear-gradient(0deg, #030200, #030200);
+    position: relative;
+}
+
+.Content_productImage_f1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.Content_content_a6 {
+    padding: 117rem 21rem 21rem;
+    position: relative;
+    z-index: 1;
+}
+
+.Content_title_52 {
+    color: #e9e2bf;
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 9rem;
+    position: relative;
+}
+
+.Content_timer_f5 {
+    margin-bottom: 18rem;
+}
+
+.Content_highlight_8a {
+    height: 132rem;
+    background: url('R.images.resource_well.gui.maps.icons.tooltips.entryPoint.footerGreenLight') no-repeat center
+        bottom;
+    position: absolute;
+    right: 0;
+    bottom: -1rem;
+    left: 0;
+    z-index: -1;
+}
+
+.Content_textCompleted_55 {
+    display: flex;
+    justify-content: center;
+    padding: 10rem 0;
+}
+
+.Content_divider_df {
+    width: 100%;
+    height: 1rem;
+    background: linear-gradient(90deg, transparent, transparent 2rem, #c9c9b6 2rem, #c9c9b6 3rem) repeat 50% 50% / 3rem
+        100%;
+    mask-image: linear-gradient(90deg, transparent, #000, transparent);
+    opacity: 0.4;
+}
+
+.Rewards_base_cc {
+    display: flex;
+    flex-direction: column;
+    padding: 10rem 0 2rem;
+}
+
+.Rewards_name_ee {
+    color: #e9e2bf;
+    font-size: 15rem;
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 2rem;
+}
+
+.Rewards_item_9f + .Rewards_item_9f {
+    margin-top: 12rem;
+}
+
+.ProductImage_base_9a {
+    width: 100%;
+    height: 170rem;
+    background: url('R.images.resource_well.gui.maps.icons.tooltips.entryPoint.states.notStarted') no-repeat center /
+        contain;
+}
+.ProductImage_base__forbidden_00 {
+    background-image: url('R.images.resource_well.gui.maps.icons.tooltips.entryPoint.states.forbidden');
+}
+.ProductImage_base__paused_17 {
+    background-image: url('R.images.resource_well.gui.maps.icons.tooltips.entryPoint.states.paused');
+}
+.ProductImage_base__notStarted_6f {
+    background-image: url('R.images.resource_well.gui.maps.icons.tooltips.entryPoint.states.notStarted');
+}
+.ProductImage_base__availableFirst_35 {
+    background-image: url('R.images.resource_well.gui.maps.icons.tooltips.entryPoint.states.availableFirst');
+}
+.ProductImage_base__availableSecond_51 {
+    background-image: url('R.images.resource_well.gui.maps.icons.tooltips.entryPoint.states.availableSecond');
+}
+.ProductImage_base__availableBoth_d4 {
+    background-image: url('R.images.resource_well.gui.maps.icons.tooltips.entryPoint.states.availableBoth');
+}
+.ProductImage_base__receivedFirst_6c {
+    background-image: url('R.images.resource_well.gui.maps.icons.tooltips.entryPoint.states.receivedFirst');
+}
+.ProductImage_base__receivedSecond_47 {
+    background-image: url('R.images.resource_well.gui.maps.icons.tooltips.entryPoint.states.receivedSecond');
+}
+.ProductImage_base__receivedBoth_12 {
+    background-image: url('R.images.resource_well.gui.maps.icons.tooltips.entryPoint.states.receivedBoth');
+}
+.ProductImage_base__soldOut_21 {
+    background-image: url('R.images.resource_well.gui.maps.icons.tooltips.entryPoint.states.soldOut');
+}
+
+.NotStartedState_timer_60 {
+    margin-bottom: 32rem;
+}
+
+.NotStartedState_text_a0 {
+    color: #8c8c7e;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+.NotStartedState_textAccent_53 {
+    color: #e9e2bf;
+}

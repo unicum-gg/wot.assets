@@ -25,13 +25,12 @@
                     let u = e.children,
                         t = (function (e, u) {
                             if (null == e) return {};
-                            var t = {};
-                            for (var a in e)
-                                if ({}.hasOwnProperty.call(e, a)) {
-                                    if (u.indexOf(a) >= 0) continue;
-                                    t[a] = e[a];
-                                }
-                            return t;
+                            var t,
+                                a,
+                                n = {},
+                                i = Object.keys(e);
+                            for (a = 0; a < i.length; a++) (t = i[a]), u.indexOf(t) >= 0 || (n[t] = e[t]);
+                            return n;
                         })(e, r);
                     const o = (0, a.useContext)(i.Y),
                         l = o.extraLarge,
@@ -370,11 +369,12 @@
                     t.d(u, {
                         addModelObserver: () => m,
                         addPreloadTexture: () => l,
-                        children: () => a,
-                        displayStatus: () => n.W,
-                        displayStatusIs: () => S,
-                        events: () => i.U,
-                        extraSize: () => y,
+                        arabic2roman: () => S,
+                        children: () => n,
+                        displayStatus: () => i.W,
+                        displayStatusIs: () => y,
+                        events: () => r.U,
+                        extraSize: () => x,
                         forceTriggerMouseMove: () => p,
                         freezeTextureBeforeResize: () => h,
                         getBrowserTexturePath: () => c,
@@ -388,23 +388,23 @@
                         pxToRem: () => g,
                         remToPx: () => C,
                         resize: () => A,
-                        sendEvent: () => r.qP,
+                        sendEvent: () => o.qP,
                         setAnimateWindow: () => B,
                         setEventHandled: () => _,
                         setInputPaddingsRem: () => s,
                         setSidePaddingsRem: () => d,
                         whenTutorialReady: () => P,
                     });
-                var a = t(3722),
-                    n = t(6112),
-                    i = t(6538),
-                    r = t(8566);
-                const o = 15;
+                var a = t(9690),
+                    n = t(3722),
+                    i = t(6112),
+                    r = t(6538),
+                    o = t(8566);
                 function l(e) {
                     viewEnv.addPreloadTexture(e);
                 }
                 function s(e) {
-                    viewEnv.setHitAreaPaddingsRem(e, e, e, e, o);
+                    viewEnv.setHitAreaPaddingsRem(e, e, e, e, 15);
                 }
                 function c(e, u, t, a = 1) {
                     return viewEnv.getWebBrowserTexturePath(e, u, t, a);
@@ -413,7 +413,7 @@
                     return viewEnv.addDataChangedCallback(e, u, t);
                 }
                 function d(e) {
-                    viewEnv.setHitAreaPaddingsRem(e.top, e.right, e.bottom, e.left, o);
+                    viewEnv.setHitAreaPaddingsRem(e.top, e.right, e.bottom, e.left, 15);
                 }
                 function E(e = 'px') {
                     return 'rem' === e ? viewEnv.getViewSizeRem() : viewEnv.getViewSizePx();
@@ -459,11 +459,12 @@
                         let e = [];
                         return () => (0 === e.length && (e = Object.keys(viewEnv.getFontsConfig())), e);
                     })(),
-                    S = Object.keys(n.W).reduce(
-                        (e, u) => ((e[u] = () => viewEnv.getShowingStatus() === n.W[u]), e),
+                    S = a.cg,
+                    y = Object.keys(i.W).reduce(
+                        (e, u) => ((e[u] = () => viewEnv.getShowingStatus() === i.W[u]), e),
                         {},
                     ),
-                    y = {
+                    x = {
                         set: (e, u) => {
                             viewEnv.setExtraSizeRem(e, u);
                         },
@@ -473,7 +474,7 @@
                     },
                     P = Promise.all([
                         new Promise((e) => {
-                            window.isDomBuilt ? e() : i.U.onDomBuilt(e);
+                            window.isDomBuilt ? e() : r.U.onDomBuilt(e);
                         }),
                         engine.whenReady,
                     ]);
@@ -491,13 +492,12 @@
                             const i = u.args,
                                 r = (function (e, u) {
                                     if (null == e) return {};
-                                    var t = {};
-                                    for (var a in e)
-                                        if ({}.hasOwnProperty.call(e, a)) {
-                                            if (u.indexOf(a) >= 0) continue;
-                                            t[a] = e[a];
-                                        }
-                                    return t;
+                                    var t,
+                                        a,
+                                        n = {},
+                                        i = Object.keys(e);
+                                    for (a = 0; a < i.length; a++) (t = i[a]), u.indexOf(t) >= 0 || (n[t] = e[t]);
+                                    return n;
                                 })(u, a);
                             return void 0 !== i
                                 ? viewEnv.handleViewEvent(
@@ -668,6 +668,17 @@
                             (e.SYMBOL = 'Symbol'),
                             (e.SYMBOL_LOCK = 'SymbolLock');
                     })(n || (n = {}));
+            },
+            9690: (e, u, t) => {
+                t.d(u, { cg: () => i });
+                const a = ['I', 'IV', 'V', 'IX', 'X', 'XL', 'L', 'XC', 'C', 'CD', 'D', 'CM', 'M'],
+                    n = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
+                function i(e) {
+                    let u = '';
+                    for (let t = n.length - 1; t >= 0; t--) for (; e >= n[t]; ) (u += a[t]), (e -= n[t]);
+                    return u;
+                }
+                ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());
             },
             3649: (e, u, t) => {
                 t.d(u, { uF: () => n });
@@ -913,13 +924,12 @@
                             const n = u.args,
                                 i = (function (e, u) {
                                     if (null == e) return {};
-                                    var t = {};
-                                    for (var a in e)
-                                        if ({}.hasOwnProperty.call(e, a)) {
-                                            if (u.indexOf(a) >= 0) continue;
-                                            t[a] = e[a];
-                                        }
-                                    return t;
+                                    var t,
+                                        a,
+                                        n = {},
+                                        i = Object.keys(e);
+                                    for (a = 0; a < i.length; a++) (t = i[a]), u.indexOf(t) >= 0 || (n[t] = e[t]);
+                                    return n;
                                 })(u, A);
                             void 0 !== n
                                 ? viewEnv.handleViewEvent(
@@ -1063,18 +1073,12 @@
                     if (
                         Array.isArray(e) ||
                         (t = (function (e, u) {
-                            if (e) {
-                                if ('string' == typeof e) return m(e, u);
-                                var t = {}.toString.call(e).slice(8, -1);
-                                return (
-                                    'Object' === t && e.constructor && (t = e.constructor.name),
-                                    'Map' === t || 'Set' === t
-                                        ? Array.from(e)
-                                        : 'Arguments' === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t)
-                                          ? m(e, u)
-                                          : void 0
-                                );
-                            }
+                            if (!e) return;
+                            if ('string' == typeof e) return m(e, u);
+                            var t = Object.prototype.toString.call(e).slice(8, -1);
+                            'Object' === t && e.constructor && (t = e.constructor.name);
+                            if ('Map' === t || 'Set' === t) return Array.from(e);
+                            if ('Arguments' === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t)) return m(e, u);
                         })(e)) ||
                         (u && e && 'number' == typeof e.length)
                     ) {
@@ -1090,7 +1094,7 @@
                 }
                 function m(e, u) {
                     (null == u || u > e.length) && (u = e.length);
-                    for (var t = 0, a = Array(u); t < u; t++) a[t] = e[t];
+                    for (var t = 0, a = new Array(u); t < u; t++) a[t] = e[t];
                     return a;
                 }
                 const d = (e) => (0 === e ? window : window.subViews.get(e));
@@ -1326,13 +1330,12 @@
                                         e.isSimplified;
                                     return (function (e, u) {
                                         if (null == e) return {};
-                                        var t = {};
-                                        for (var a in e)
-                                            if ({}.hasOwnProperty.call(e, a)) {
-                                                if (u.indexOf(a) >= 0) continue;
-                                                t[a] = e[a];
-                                            }
-                                        return t;
+                                        var t,
+                                            a,
+                                            n = {},
+                                            i = Object.keys(e);
+                                        for (a = 0; a < i.length; a++) (t = i[a]), u.indexOf(t) >= 0 || (n[t] = e[t]);
+                                        return n;
                                     })(e, A);
                                 }),
                                 r = (0, i.Om)(() => {
@@ -1699,22 +1702,22 @@
                         );
                     }),
                     y = 'Icon_base_c6';
-                var P = t(3138);
-                let x;
+                var x = t(3138);
+                let P;
                 !(function (e) {
                     (e.Small = 'small'), (e.Medium = 'medium');
-                })(x || (x = {}));
+                })(P || (P = {}));
                 const O = R.atlases.deathCam,
                     I = ({ name: e, value: u, impactMode: t, isKillerUnspotted: i }) => {
                         const r =
                                 (() => {
-                                    const e = (0, a.useState)(P.O.view.getScale()),
+                                    const e = (0, a.useState)(x.O.view.getScale()),
                                         u = e[0],
                                         t = e[1];
                                     return (
                                         (0, a.useEffect)(() => {
                                             const e = () => {
-                                                t(P.O.view.getScale());
+                                                t(x.O.view.getScale());
                                             };
                                             return (
                                                 window.addEventListener('resize', e),
@@ -1726,8 +1729,8 @@
                                         u
                                     );
                                 })() > 1
-                                    ? x.Medium
-                                    : x.Small,
+                                    ? P.Medium
+                                    : P.Small,
                             o = R.images.gui.maps.icons.shell.$dyn(r);
                         if ('angleImpact' === e) return n().createElement(S, null);
                         {
@@ -1787,12 +1790,12 @@
                         [L.gC.hollowCharge]: N.HOLLOW_CHARGE,
                         [L.gC.hollowChargePremium]: N.HOLLOW_CHARGE,
                     },
-                    W = (e, u = !1) => {
+                    G = (e, u = !1) => {
                         const t = R.strings.item_types.shell[u ? 'kindsAbbreviation' : 'kinds'],
                             a = j[e];
                         return t[a] ? t[a]() : (console.error('No text for shell type', e), '');
                     },
-                    G = (e, u, t, a, n, i, r, o) => {
+                    W = (e, u, t, a, n, i, r, o) => {
                         let l = String(u);
                         'number' == typeof u &&
                             ((l = ((e, u) =>
@@ -1881,7 +1884,7 @@
                             b = B.is3CaliberRuleApplied,
                             S = B.angleRicochet,
                             y = g.has(c.Qm.HeadIconShell) || g.has(c.Qm.HeadIconTank),
-                            P = y ? C - c.h - c.YF : C,
+                            x = y ? C - c.h - c.YF : C,
                             O = D()(V.base, [[...g].map((e) => V[e])]),
                             T = D()(
                                 V.iconContainer,
@@ -1908,7 +1911,7 @@
                                         return e[t] ? e[t]() : (console.error('No text for death reason', u), '');
                                     }
                                     case 'shellType':
-                                        return W(u);
+                                        return G(u);
                                     case 'armorRelative':
                                         var o;
                                         return 0 === a ? (null != (o = M.paramName.nonArmored()) ? o : '') : r();
@@ -1924,7 +1927,7 @@
                                         return r();
                                 }
                             })({ name: F, value: h, impactMode: _, armorNominal: w, isKillerUnspotted: f }),
-                            Q = R.images.gui.maps.icons.shell.$dyn(x.Small);
+                            Q = R.images.gui.maps.icons.shell.$dyn(P.Small);
                         return n().createElement(
                             n().Fragment,
                             null,
@@ -1936,7 +1939,7 @@
                                 ),
                             n().createElement(
                                 'div',
-                                { className: O, style: { height: `${P}rem` } },
+                                { className: O, style: { height: `${x}rem` } },
                                 (0, K.f8)(g) &&
                                     !(g.has(c.Qm.Advanced) && !a) &&
                                     n().createElement('div', { className: V.glowElement }),
@@ -1955,7 +1958,7 @@
                                     n().createElement(
                                         'div',
                                         { className: H, style: { width: l.get() } },
-                                        G(F, h, f, _, v, w, b, S),
+                                        W(F, h, f, _, v, w, b, S),
                                     ),
                                 n().createElement(U, { text: k }),
                                 g.has(c.Qm.AdditionalShellInfo) &&
@@ -1965,7 +1968,7 @@
                                             className: V.additionalShellInfo,
                                             style: { backgroundImage: `url(${Q.$dyn(p)})` },
                                         },
-                                        W(v, !0),
+                                        G(v, !0),
                                     ),
                             ),
                         );
@@ -2014,8 +2017,8 @@
                         const b = t ? f : _,
                             S = t ? B : v,
                             y = (0, a.useState)(h && t),
-                            P = y[0],
-                            x = y[1],
+                            x = y[0],
+                            P = y[1],
                             R = h ? 0 : d.getFullHeight(e),
                             O = (0, a.useRef)(!0);
                         (0, a.useEffect)(
@@ -2030,8 +2033,8 @@
                                     : `polygon(0rem 0rem, 100% 0rem, 100% ${w - 0.1}rem, 0rem ${w - 0.1}rem)`,
                                 delay: b,
                                 config: { duration: p },
-                                onRest: () => O.current && x(D),
-                                onStart: () => D && t && x(!0),
+                                onRest: () => O.current && P(D),
+                                onStart: () => D && t && P(!0),
                             }).clipPath,
                             L = (0, E.useSpring)({
                                 height: `${w}rem`,
@@ -2050,7 +2053,7 @@
                                         key: `${e}:${u}`,
                                         cardId: e,
                                         sectionId: u,
-                                        isAdvancedLinesVisible: P,
+                                        isAdvancedLinesVisible: x,
                                     }),
                                 ),
                             ),

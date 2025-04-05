@@ -1936,8 +1936,8 @@
 }
 
 .Infotip_infotip_af {
-    width: 45rem;
-    height: 44rem;
+    width: 40rem;
+    height: 40rem;
     margin-left: -13rem;
     margin-top: 2rem;
     background: url('R.images.battle_royale_progression.gui.maps.tooltip.info_warning') no-repeat center / cover;
@@ -2311,6 +2311,45 @@
     padding-right: 160rem;
 }
 
+.Rewards_base_10 {
+    opacity: 1;
+    transition: opacity 500ms;
+}
+
+.Rewards_base__completed_4f {
+    opacity: 0.5;
+}
+
+.Rewards_base__fast_d9 {
+    opacity: 0.5;
+    transition: none;
+}
+
+.Rewards_base_10 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    width: 50%;
+    padding-top: 20rem;
+    transition-delay: 1100ms;
+}
+
+.Rewards_base__wide_52 {
+    width: 100%;
+}
+.Rewards_reward_dc {
+    margin: 10rem;
+}
+.mediaMedium .Rewards_reward_dc {
+    margin: 5rem;
+}
+.Rewards_info_a6 {
+    margin-top: -9rem;
+}
+
 .FormatTextWithColorTags_blackReal_3c {
     color: #000000;
 }
@@ -2408,73 +2447,6 @@
 .FormatTextWithColorTags_parNoWidth_5a {
     width: 0;
     color: #8c8c7e;
-}
-
-.Rewards_base_10 {
-    opacity: 1;
-    transition: opacity 500ms;
-}
-
-.Rewards_base__completed_4f {
-    opacity: 0.5;
-}
-
-.Rewards_base__fast_d9 {
-    opacity: 0.5;
-    transition: none;
-}
-
-.Rewards_base_10 {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    width: 50%;
-    padding-top: 20rem;
-    transition-delay: 1100ms;
-}
-
-.Rewards_base__wide_52 {
-    width: 100%;
-}
-.Rewards_reward_dc {
-    margin: 10rem;
-}
-.mediaMedium .Rewards_reward_dc {
-    margin: 5rem;
-}
-.Rewards_info_a6 {
-    margin-top: -9rem;
-}
-.Rewards_lootboxImage_ed {
-    display: flex;
-    flex: 1;
-}
-.Rewards_lootboxIcon_03 {
-    width: 120rem;
-    height: 80rem;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-.Rewards_lootboxIcon__small_76 {
-    width: 80rem;
-    height: 48rem;
-}
-.Rewards_lootboxHighlight_22 {
-    width: 160rem;
-    height: 110rem;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-.Rewards_lootboxHighlight__small_f7 {
-    width: 120rem;
-    height: 80rem;
 }
 
 .RewardCard_base_90 {

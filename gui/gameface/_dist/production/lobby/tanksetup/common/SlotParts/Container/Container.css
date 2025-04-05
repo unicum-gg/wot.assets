@@ -76,3 +76,10 @@
     background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
     cursor: default;
 }
+
+.Container_base__fixed_8a,
+.Container_base__fixed_8a:hover {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+    cursor: default;
+    box-shadow: none;
+}

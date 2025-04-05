@@ -1347,15 +1347,19 @@
 }
 
 .Card_stage_92 {
-    margin-bottom: 15rem;
+    margin-bottom: 13rem;
+}
+
+.mediaMedium .Card_stage_92 {
+    margin-bottom: 10rem;
 }
 
 .mediaLarge .Card_stage_92 {
-    margin-bottom: 40rem;
+    margin-bottom: 25rem;
 }
 
 .mediaExtraLarge .Card_stage_92 {
-    margin-bottom: 55rem;
+    margin-bottom: 35rem;
 }
 
 .Card_base__inProgress_e1 .Card_stage_92 {
@@ -1368,6 +1372,22 @@
 
 .mediaExtraLarge .Card_base__inProgress_e1 .Card_stage_92 {
     margin-bottom: 50rem;
+}
+
+.Card_rewards_f5 {
+    margin-bottom: 2rem;
+}
+
+.mediaMedium .Card_rewards_f5 {
+    margin-bottom: 5rem;
+}
+
+.mediaLarge .Card_rewards_f5 {
+    margin-bottom: 15rem;
+}
+
+.mediaExtraLarge .Card_rewards_f5 {
+    margin-bottom: 20rem;
 }
 
 .Card_status_65 {
@@ -1712,12 +1732,22 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 96rem;
+    min-height: 106rem;
     position: relative;
 }
 
 .mediaMedium .CardRewards_rewards_0a {
     min-height: 160rem;
+}
+
+.CardRewards_rewards__2_ee {
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.CardRewards_base__inProgress_7c .CardRewards_rewards__2_ee {
+    flex-direction: row;
+    justify-content: center;
 }
 
 .CardRewards_base__inProgress_7c .CardRewards_rewards__3_f9 {
@@ -1750,12 +1780,12 @@
     height: 135rem;
 }
 
-.CardRewards_rewards__2_ee .CardRewards_reward_0e {
-    margin: 5rem;
+.CardRewards_base__inProgress_7c .CardRewards_rewards__2_ee .CardRewards_reward_0e {
+    margin: 10rem;
 }
 
-.mediaMedium .CardRewards_rewards__2_ee .CardRewards_reward_0e {
-    margin: 3rem 5rem;
+.mediaLarge .CardRewards_base__inProgress_7c .CardRewards_rewards__2_ee .CardRewards_reward_0e {
+    margin: 15rem;
 }
 
 .CardRewards_rewards__3_f9 .CardRewards_reward_0e {
@@ -3231,6 +3261,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .Counter_cyclesNumber_5c {
     margin-left: 5rem;
     font-size: 16rem;
+    opacity: 1;
 }
 
 .Counter_cyclesNumber__animated_d8 {
@@ -3241,6 +3272,10 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     animation-timing-function: cubic-bezier(0.07, 0.82, 0.17, 1);
     animation-delay: 0.7s;
     animation-iteration-count: 1;
+}
+
+.Counter_cyclesNumber__hidden_c1 {
+    opacity: 0;
 }
 
 .Cycle_base_cb {

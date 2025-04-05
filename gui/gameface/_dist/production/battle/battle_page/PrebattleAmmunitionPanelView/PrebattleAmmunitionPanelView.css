@@ -925,6 +925,13 @@ body {
     cursor: default;
 }
 
+.Container_base__fixed_8a,
+.Container_base__fixed_8a:hover {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+    cursor: default;
+    box-shadow: none;
+}
+
 .Bonus_base_dd {
     width: 54rem;
     height: 54rem;
@@ -1167,6 +1174,15 @@ body {
     top: 0;
     left: 0;
     background: url('R.images.gui.maps.icons.library.disabled_pattern') center / 9rem;
+}
+
+.Slot_disabled__fixedhangar_d3 {
+    opacity: 0.6;
+    z-index: -1;
+}
+
+.Slot_disabled__fixedsetup_c4 {
+    z-index: -1;
 }
 
 .Slot_shadow_a7 {
@@ -2208,6 +2224,13 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     cursor: default;
 }
 
+.ToggleCamouflageSlot_base__fixed_9a,
+.ToggleCamouflageSlot_base__fixed_9a:hover {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+    cursor: default;
+    box-shadow: none;
+}
+
 .ToggleCamouflageSlot_base_17 {
     cursor: pointer;
 }
@@ -2452,6 +2475,13 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .ShellsSection_base__disabled_7e:hover {
     background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
     cursor: default;
+}
+
+.ShellsSection_base__fixed_d4,
+.ShellsSection_base__fixed_d4:hover {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+    cursor: default;
+    box-shadow: none;
 }
 
 .ShellsSection_base_08 {

@@ -1,0 +1,277 @@
+.TooltipDecorator_base_c9 {
+    display: flex;
+    position: absolute;
+}
+
+.TooltipDecorator_base__theme-default_6d .TooltipDecorator_decorator_3d {
+    padding: 4rem 6rem 8rem;
+    border-image-source: url('R.atlases.components.tooltip_background');
+    border-image-slice: 24 fill;
+    border-image-width: 24rem;
+    position: relative;
+}
+
+.FormatText_base_d0 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.FormatTextWithColorTags_blackReal_3c {
+    color: #000000;
+}
+
+.FormatTextWithColorTags_whiteReal_8a {
+    color: #ffffff;
+}
+
+.FormatTextWithColorTags_white_16 {
+    color: #f2f2f7;
+}
+
+.FormatTextWithColorTags_whiteOrange_18 {
+    color: #fefeec;
+}
+
+.FormatTextWithColorTags_whiteSpanish_10 {
+    color: #e9e2bf;
+}
+
+.FormatTextWithColorTags_par_ca {
+    color: #8c8c7e;
+}
+
+.FormatTextWithColorTags_parSecondary_8d {
+    color: #595950;
+}
+
+.FormatTextWithColorTags_parTertiary_a3 {
+    color: #37362e;
+}
+
+.FormatTextWithColorTags_red_60 {
+    color: #ff2717;
+}
+
+.FormatTextWithColorTags_redDark_03 {
+    color: #b70000;
+}
+
+.FormatTextWithColorTags_yellow_ad {
+    color: #feab34;
+}
+
+.FormatTextWithColorTags_orange_e4 {
+    color: #ee7000;
+}
+
+.FormatTextWithColorTags_cream_cd {
+    color: #ffdd99;
+}
+
+.FormatTextWithColorTags_brown_c8 {
+    color: #cbac77;
+}
+
+.FormatTextWithColorTags_greenBright_f0 {
+    color: #80d43a;
+}
+
+.FormatTextWithColorTags_green_c5 {
+    color: #7ab300;
+}
+
+.FormatTextWithColorTags_greenDark_af {
+    color: #497212;
+}
+
+.FormatTextWithColorTags_blueBooster_ac {
+    color: #ccffff;
+}
+
+.FormatTextWithColorTags_blueTeamkiller_6f {
+    color: #09e2ff;
+}
+
+.FormatTextWithColorTags_cred_4e {
+    color: #ced9d9;
+}
+
+.FormatTextWithColorTags_gold_90 {
+    color: #ffc363;
+}
+
+.FormatTextWithColorTags_bond_71 {
+    color: #c9c9b6;
+}
+
+.FormatTextWithColorTags_prom_dd {
+    color: #a29b70;
+}
+
+/* This specific rule is used to fix https://jira.wargaming.net/browse/WOTPRG-9871 */
+
+.FormatTextWithColorTags_parNoWidth_5a {
+    width: 0;
+    color: #8c8c7e;
+}
+
+.App_base_e3 {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 328rem;
+    position: relative;
+}
+
+.App_background_fa {
+    width: 328rem;
+    height: 130rem;
+    background: url('R.images.gui.maps.icons.tanksetup.popular_loadouts.tooltip.header_background') center center /
+        cover no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.App_header_87 {
+    display: flex;
+    flex-direction: column;
+    padding: 16rem 20rem 14rem;
+    z-index: 1;
+}
+
+.App_header_mainTitle_1d {
+    color: #e9e2bf;
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 8rem;
+}
+
+.App_header_desc_6e {
+    color: #8c8c7e;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+.App_headerWrapper_fa {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 8rem;
+}
+
+.App_headerWrapper_icon_3d {
+    width: 16rem;
+    height: 16rem;
+    background: url('R.images.gui.maps.icons.tanksetup.popular_loadouts.tooltip.wotplus_icon') center center / cover
+        no-repeat;
+}
+
+.App_headerWrapper_title_4d {
+    color: #8c8c7e;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    margin-left: 4rem;
+}
+
+.App_body_b7 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 288rem;
+    padding: 10rem 20rem 16rem;
+}
+
+.App_body_title_26 {
+    color: #8c8c7e;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    margin-bottom: 12rem;
+}
+
+.App_body_commonlyUsed_7b,
+.App_body_legendary_2c {
+    display: flex;
+    flex-direction: row;
+}
+
+.App_body_commonlyUsed_icon_0f,
+.App_body_legendary_icon_95 {
+    width: 32rem;
+    height: 32rem;
+}
+
+.App_body_commonlyUsed_desc_b5,
+.App_body_legendary_desc_4a {
+    color: #8c8c7e;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    margin-left: 4rem;
+}
+
+.App_body_commonlyUsed_7b {
+    margin-bottom: 16rem;
+}
+
+.App_body_commonlyUsed_icon_0f {
+    background: url('R.images.gui.maps.icons.tanksetup.popular_loadouts.common_icon') center center / cover no-repeat;
+}
+
+.App_body_legendary_2c {
+    margin-bottom: 8rem;
+}
+
+.App_body_legendary_icon_95 {
+    background: url('R.images.gui.maps.icons.tanksetup.popular_loadouts.legendary_icon') center center / cover no-repeat;
+}
+
+.App_noData_ce {
+    display: flex;
+    flex-direction: column;
+    max-width: 320rem;
+    padding: 0 20rem 16rem;
+}
+
+.App_noData_separator_70 {
+    width: 328rem;
+    height: 104rem;
+    margin-left: -20rem;
+    background: url('R.images.gui.maps.icons.tanksetup.popular_loadouts.tooltip.separator') center center / cover
+        no-repeat;
+}
+
+.App_noData_icon_8d {
+    width: 16rem;
+    height: 16rem;
+    margin-left: 50%;
+    margin-top: -112rem;
+    background: url('R.images.gui.maps.icons.library.maps') center center / cover no-repeat;
+    z-index: 1;
+    transform: translateX(-50%);
+}
+
+.App_noData_header_df {
+    width: 100%;
+    margin-top: 5rem;
+    margin-bottom: 4rem;
+    z-index: 2;
+    color: #feab34;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+.App_noData_desc_39 {
+    color: #8c8c7e;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    width: 100%;
+    text-shadow: 0 0 1rem #000;
+    z-index: 2;
+}

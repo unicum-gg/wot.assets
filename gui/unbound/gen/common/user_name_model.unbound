@@ -7,7 +7,7 @@
         (var userName:str = '')
         (var hiddenUserName:str = '')
         (var clanAbbrev:str = '')
-        (var isFakeNameVisible:bool = true)
+        (var isFakeNameVisible:bool = false)
         (var igrType:number = 0)
         (var isTeamKiller:bool = false)
         (var isKilled:bool = false)

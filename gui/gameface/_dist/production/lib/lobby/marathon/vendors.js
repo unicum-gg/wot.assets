@@ -535,18 +535,12 @@
                 if (
                     Array.isArray(e) ||
                     (W = (function (e, t) {
-                        if (e) {
-                            if ('string' == typeof e) return o(e, t);
-                            var W = {}.toString.call(e).slice(8, -1);
-                            return (
-                                'Object' === W && e.constructor && (W = e.constructor.name),
-                                'Map' === W || 'Set' === W
-                                    ? Array.from(e)
-                                    : 'Arguments' === W || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(W)
-                                      ? o(e, t)
-                                      : void 0
-                            );
-                        }
+                        if (!e) return;
+                        if ('string' == typeof e) return o(e, t);
+                        var W = Object.prototype.toString.call(e).slice(8, -1);
+                        'Object' === W && e.constructor && (W = e.constructor.name);
+                        if ('Map' === W || 'Set' === W) return Array.from(e);
+                        if ('Arguments' === W || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(W)) return o(e, t);
                     })(e)) ||
                     (t && e && 'number' == typeof e.length)
                 ) {
@@ -562,7 +556,7 @@
             }
             function o(e, t) {
                 (null == t || t > e.length) && (t = e.length);
-                for (var W = 0, U = Array(t); W < t; W++) U[W] = e[W];
+                for (var W = 0, U = new Array(t); W < t; W++) U[W] = e[W];
                 return U;
             }
             const s = console.assert,
@@ -664,7 +658,7 @@
             class f {
                 constructor(e, t) {
                     (this.separator = '​'),
-                        (this.threshold = y),
+                        (this.threshold = Q),
                         (this.parser_ = e),
                         void 0 !== t &&
                             (void 0 !== t.className && (this.className = t.className),
@@ -793,18 +787,12 @@
                 if (
                     Array.isArray(e) ||
                     (W = (function (e, t) {
-                        if (e) {
-                            if ('string' == typeof e) return Q(e, t);
-                            var W = {}.toString.call(e).slice(8, -1);
-                            return (
-                                'Object' === W && e.constructor && (W = e.constructor.name),
-                                'Map' === W || 'Set' === W
-                                    ? Array.from(e)
-                                    : 'Arguments' === W || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(W)
-                                      ? Q(e, t)
-                                      : void 0
-                            );
-                        }
+                        if (!e) return;
+                        if ('string' == typeof e) return y(e, t);
+                        var W = Object.prototype.toString.call(e).slice(8, -1);
+                        'Object' === W && e.constructor && (W = e.constructor.name);
+                        if ('Map' === W || 'Set' === W) return Array.from(e);
+                        if ('Arguments' === W || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(W)) return y(e, t);
                     })(e)) ||
                     (t && e && 'number' == typeof e.length)
                 ) {
@@ -818,12 +806,12 @@
                     'Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.',
                 );
             }
-            function Q(e, t) {
+            function y(e, t) {
                 (null == t || t > e.length) && (t = e.length);
-                for (var W = 0, U = Array(t); W < t; W++) U[W] = e[W];
+                for (var W = 0, U = new Array(t); W < t; W++) U[W] = e[W];
                 return U;
             }
-            const y = 1e3,
+            const Q = 1e3,
                 m = 3;
             class v {
                 constructor(e) {
@@ -896,7 +884,7 @@
                     }
                     return !1;
                 }
-                parse(e, t = y) {
+                parse(e, t = Q) {
                     if ('' === e) return [];
                     let W = 'U',
                         U = 'U',
@@ -922,10 +910,10 @@
                     }
                     return n;
                 }
-                applyElement(e, t = y) {
+                applyElement(e, t = Q) {
                     new f(this, { separator: e.ownerDocument.createElement('wbr'), threshold: t }).applyToElement(e);
                 }
-                translateHTMLString(e, t = y) {
+                translateHTMLString(e, t = Q) {
                     if ('' === e) return e;
                     const W = (0, n.X)(e);
                     if (v.hasChildTextNode(W.body)) {

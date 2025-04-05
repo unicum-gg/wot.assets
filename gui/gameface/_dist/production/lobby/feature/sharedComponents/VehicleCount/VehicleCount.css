@@ -1,0 +1,134 @@
+.FormatText_base_d0 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+@keyframes VehicleCount_fadeOut_f5 {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+@keyframes VehicleCount_fadeIn_f5 {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+@keyframes VehicleCount_fadeInWithScale_f6 {
+    0% {
+        opacity: 0;
+        transform: scale(1.2);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@keyframes VehicleCount_slideUp_0f {
+    0% {
+        opacity: 0;
+        transform: translateY(20rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes VehicleCount_slideUpCenter_34 {
+    0% {
+        opacity: 0;
+        transform: translateY(50%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes VehicleCount_blink_02 {
+    0% {
+        filter: brightness(1);
+    }
+
+    16% {
+        filter: brightness(3);
+    }
+
+    100% {
+        filter: brightness(1);
+    }
+}
+.VehicleCount_base_c4 {
+    display: flex;
+    position: relative;
+}
+.VehicleCount_text_6f {
+    color: #ffdd99;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    position: relative;
+}
+.VehicleCount_text__alert_d1 {
+    color: #ee7000;
+}
+.VehicleCount_text__finished_5a {
+    color: #f2f2f7;
+}
+.VehicleCount_textCounter_f6 {
+    margin: -4rem 0 0 5rem;
+    font-size: 18rem;
+    font-weight: 700;
+    position: relative;
+}
+.VehicleCount_alertIcon_63 {
+    display: flex;
+    width: 24rem;
+    height: 24rem;
+    margin-left: -3rem;
+    margin-top: -1rem;
+    background: url('R.images.gui.maps.icons.library.AlertIcon_1') no-repeat center / contain;
+}
+.VehicleCount_counterWrapper_fc {
+    position: relative;
+}
+.VehicleCount_counterBg_52 {
+    display: flex;
+    width: 310rem;
+    height: 170rem;
+    background: url('R.images.resource_well.gui.maps.icons.resourcesLoading.counter_bg') no-repeat center / contain;
+    position: absolute;
+    top: -88rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.VehicleCount_counterGlow_a9 {
+    display: flex;
+    width: 510rem;
+    height: 108rem;
+    background: url('R.images.resource_well.gui.maps.icons.resourcesLoading.glow') no-repeat center / contain;
+    position: absolute;
+    top: -42rem;
+    left: -184rem;
+    z-index: -1;
+}
+.VehicleCount_animations__enter_d9 {
+    opacity: 0;
+    animation: VehicleCount_fadeIn_f5 0.4s cubic-bezier(0.47, 0, 0.75, 0.72) 0s forwards;
+}
+.VehicleCount_animations__exit_89 {
+    opacity: 1;
+    animation: VehicleCount_fadeOut_f5 0.3s ease-out 0s forwards;
+}

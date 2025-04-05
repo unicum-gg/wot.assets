@@ -26,13 +26,12 @@
                     let t = e.children,
                         i = (function (e, t) {
                             if (null == e) return {};
-                            var i = {};
-                            for (var r in e)
-                                if ({}.hasOwnProperty.call(e, r)) {
-                                    if (t.indexOf(r) >= 0) continue;
-                                    i[r] = e[r];
-                                }
-                            return i;
+                            var i,
+                                r,
+                                n = {},
+                                a = Object.keys(e);
+                            for (r = 0; r < a.length; r++) (i = a[r]), t.indexOf(i) >= 0 || (n[i] = e[i]);
+                            return n;
                         })(e, o);
                     const l = (0, r.useContext)(a.Y),
                         s = l.extraLarge,
@@ -47,10 +46,10 @@
                         S = l.extraSmallWidth,
                         v = l.extraLargeHeight,
                         x = l.largeHeight,
-                        w = l.mediumHeight,
-                        P = l.smallHeight,
-                        f = l.extraSmallHeight,
-                        _ = { extraLarge: v, large: x, medium: w, small: P, extraSmall: f };
+                        f = l.mediumHeight,
+                        w = l.smallHeight,
+                        P = l.extraSmallHeight,
+                        _ = { extraLarge: v, large: x, medium: f, small: w, extraSmall: P };
                     if (i.extraLarge || i.large || i.medium || i.small || i.extraSmall) {
                         if (i.extraLarge && s) return t;
                         if (i.large && d) return t;
@@ -68,9 +67,9 @@
                         ) {
                             if (i.extraLargeHeight && v) return t;
                             if (i.largeHeight && x) return t;
-                            if (i.mediumHeight && w) return t;
-                            if (i.smallHeight && P) return t;
-                            if (i.extraSmallHeight && f) return t;
+                            if (i.mediumHeight && f) return t;
+                            if (i.smallHeight && w) return t;
+                            if (i.extraSmallHeight && P) return t;
                         }
                     }
                     return null;
@@ -236,11 +235,13 @@
                         (e.Comp7TokenWeeklyReward = 'comp7TokenWeeklyReward'),
                         (e.DeluxeGift = 'deluxe_gift'),
                         (e.BattleBoosterGift = 'battleBooster_gift'),
+                        (e.ModernizedDevicesT1Gift = 'modernized_devices_t1_gift'),
+                        (e.ModernizedDevicesT2Gift = 'modernized_devices_t2_gift'),
+                        (e.ModernizedDevicesT3Gift = 'modernized_devices_t3_gift'),
                         (e.OptionalDevice = 'optionalDevice'),
                         (e.EquipCoin = 'equipCoin'),
                         (e.LootBox = 'lootBox'),
-                        (e.BrCoin = 'brcoin'),
-                        (e.StpCoin = 'stpcoin');
+                        (e.BrCoin = 'brcoin');
                 })(r || (r = {})),
                     (function (e) {
                         (e.Gold = 'gold'),
@@ -318,11 +319,10 @@
                             (e.PROGRESSION_STYLE_UPGRADED_3 = 'progressionStyleUpgraded_3'),
                             (e.PROGRESSION_STYLE_UPGRADED_4 = 'progressionStyleUpgraded_4'),
                             (e.PROGRESSION_STYLE_UPGRADED_5 = 'progressionStyleUpgraded_5'),
-                            (e.PROGRESSION_STYLE_UPGRADED_6 = 'progressionStyleUpgraded_6'),
-                            (e.LOOT_BOX = 'eventLootBoxes');
+                            (e.PROGRESSION_STYLE_UPGRADED_6 = 'progressionStyleUpgraded_6');
                     })(l || (l = {})),
                     (function (e) {
-                        (e.BATTLE_BOOSTER = 'battleBooster'), (e.LOOT_BOX = 'lootBox');
+                        e.BATTLE_BOOSTER = 'battleBooster';
                     })(s || (s = {})),
                     (function (e) {
                         (e.BATTLE_BOOSTER = 'battleBooster'),
@@ -525,11 +525,12 @@
                     i.d(t, {
                         addModelObserver: () => m,
                         addPreloadTexture: () => s,
-                        children: () => r,
-                        displayStatus: () => n.W,
+                        arabic2roman: () => b,
+                        children: () => n,
+                        displayStatus: () => a.W,
                         displayStatusIs: () => B,
-                        events: () => a.U,
-                        extraSize: () => b,
+                        events: () => o.U,
+                        extraSize: () => L,
                         forceTriggerMouseMove: () => T,
                         freezeTextureBeforeResize: () => p,
                         getBrowserTexturePath: () => u,
@@ -539,27 +540,27 @@
                         getSize: () => c,
                         getViewGlobalPosition: () => E,
                         isEventHandled: () => _,
-                        isFocused: () => P,
+                        isFocused: () => w,
                         pxToRem: () => v,
                         remToPx: () => x,
                         resize: () => h,
-                        sendEvent: () => o.qP,
-                        setAnimateWindow: () => w,
-                        setEventHandled: () => f,
+                        sendEvent: () => l.qP,
+                        setAnimateWindow: () => f,
+                        setEventHandled: () => P,
                         setInputPaddingsRem: () => d,
                         setSidePaddingsRem: () => g,
-                        whenTutorialReady: () => L,
+                        whenTutorialReady: () => O,
                     });
-                var r = i(3722),
-                    n = i(6112),
-                    a = i(6538),
-                    o = i(8566);
-                const l = 15;
+                var r = i(9690),
+                    n = i(3722),
+                    a = i(6112),
+                    o = i(6538),
+                    l = i(8566);
                 function s(e) {
                     viewEnv.addPreloadTexture(e);
                 }
                 function d(e) {
-                    viewEnv.setHitAreaPaddingsRem(e, e, e, e, l);
+                    viewEnv.setHitAreaPaddingsRem(e, e, e, e, 15);
                 }
                 function u(e, t, i, r = 1) {
                     return viewEnv.getWebBrowserTexturePath(e, t, i, r);
@@ -568,7 +569,7 @@
                     return viewEnv.addDataChangedCallback(e, t, i);
                 }
                 function g(e) {
-                    viewEnv.setHitAreaPaddingsRem(e.top, e.right, e.bottom, e.left, l);
+                    viewEnv.setHitAreaPaddingsRem(e.top, e.right, e.bottom, e.left, 15);
                 }
                 function c(e = 'px') {
                     return 'rem' === e ? viewEnv.getViewSizeRem() : viewEnv.getViewSizePx();
@@ -592,13 +593,13 @@
                 function x(e) {
                     return viewEnv.remToPx(e);
                 }
-                function w(e, t) {
+                function f(e, t) {
                     viewEnv.setAnimateWindow(e, t);
                 }
-                function P() {
+                function w() {
                     return viewEnv.isFocused();
                 }
-                function f() {
+                function P() {
                     return viewEnv.setEventHandled();
                 }
                 function _() {
@@ -614,11 +615,12 @@
                         let e = [];
                         return () => (0 === e.length && (e = Object.keys(viewEnv.getFontsConfig())), e);
                     })(),
-                    B = Object.keys(n.W).reduce(
-                        (e, t) => ((e[t] = () => viewEnv.getShowingStatus() === n.W[t]), e),
+                    b = r.cg,
+                    B = Object.keys(a.W).reduce(
+                        (e, t) => ((e[t] = () => viewEnv.getShowingStatus() === a.W[t]), e),
                         {},
                     ),
-                    b = {
+                    L = {
                         set: (e, t) => {
                             viewEnv.setExtraSizeRem(e, t);
                         },
@@ -626,9 +628,9 @@
                             viewEnv.getExtraSizeRem(e, t);
                         },
                     },
-                    L = Promise.all([
+                    O = Promise.all([
                         new Promise((e) => {
-                            window.isDomBuilt ? e() : a.U.onDomBuilt(e);
+                            window.isDomBuilt ? e() : o.U.onDomBuilt(e);
                         }),
                         engine.whenReady,
                     ]);
@@ -646,13 +648,12 @@
                             const a = t.args,
                                 o = (function (e, t) {
                                     if (null == e) return {};
-                                    var i = {};
-                                    for (var r in e)
-                                        if ({}.hasOwnProperty.call(e, r)) {
-                                            if (t.indexOf(r) >= 0) continue;
-                                            i[r] = e[r];
-                                        }
-                                    return i;
+                                    var i,
+                                        r,
+                                        n = {},
+                                        a = Object.keys(e);
+                                    for (r = 0; r < a.length; r++) (i = a[r]), t.indexOf(i) >= 0 || (n[i] = e[i]);
+                                    return n;
                                 })(t, r);
                             return void 0 !== a
                                 ? viewEnv.handleViewEvent(
@@ -719,6 +720,14 @@
                     })(o || (o = {}));
             },
             9690: (e, t, i) => {
+                i.d(t, { cg: () => a });
+                const r = ['I', 'IV', 'V', 'IX', 'X', 'XL', 'L', 'XC', 'C', 'CD', 'D', 'CM', 'M'],
+                    n = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
+                function a(e) {
+                    let t = '';
+                    for (let i = n.length - 1; i >= 0; i--) for (; e >= n[i]; ) (t += r[i]), (e -= n[i]);
+                    return t;
+                }
                 ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());
             },
             6845: (e, t, i) => {

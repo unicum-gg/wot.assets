@@ -1,0 +1,99 @@
+.App_base_8d {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+    width: 100%;
+    height: 100%;
+}
+
+.App_container_29 {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 50rem;
+    padding: 16rem 36rem 0;
+    border-radius: 4rem;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.mediaSmall .App_container_29 {
+    padding: 16rem 52rem 0;
+}
+
+.App_btnContainer_e2 {
+    margin-top: 5rem;
+    margin-right: 16rem;
+}
+
+.Hint_base_b6 {
+    color: #8c8c7e;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 16rem;
+}
+
+.Hint_header_3b {
+    color: #f76300;
+    white-space: pre-wrap;
+}
+
+.Hint_description_58 {
+    max-width: 296rem;
+    color: #9f9a88;
+    font-weight: 400;
+}
+
+.HintButton_base_19 {
+    position: relative;
+}
+
+.HintButton_base__small_63 .HintButton_btnInner_e4 {
+    height: 10rem;
+    font-size: 8rem;
+    line-height: 1.1;
+}
+
+.HintButton_btnOuter_f9 {
+    display: flex;
+    flex-direction: row;
+    border: 2rem solid #ff981f;
+    border-radius: 6rem;
+}
+
+.HintButton_btnOuter__blink_e7 {
+    border: 2rem solid #ffbd1f;
+}
+
+.HintButton_animationContainer_c5 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: absolute;
+}
+
+.HintButton_buttonContainer_2a {
+    display: flex;
+    flex-direction: row;
+}
+
+.HintButton_btnInner_e4 {
+    display: flex;
+    flex-direction: row;
+    height: 14rem;
+    margin: 2rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    border-radius: 2rem;
+    background: #ff981f;
+    color: #000;
+    font-size: 14rem;
+    font-weight: 700;
+    line-height: 13rem;
+}
+
+.HintButton_btnInner__blink_75 {
+    background: #ffbd1f;
+}

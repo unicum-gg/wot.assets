@@ -329,9 +329,9 @@
 }
 
 .Quest_questIcon_f0 {
-    width: 80rem;
-    height: 80rem;
-    margin-bottom: 16rem;
+    width: 128rem;
+    height: 128rem;
+    margin: -12rem -12rem 4rem;
     background: center / contain no-repeat;
 }
 

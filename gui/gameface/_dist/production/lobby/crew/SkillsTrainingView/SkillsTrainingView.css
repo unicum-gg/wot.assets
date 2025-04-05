@@ -2581,6 +2581,339 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     margin-left: 12rem;
 }
 
+.TextOverflow_base_3b {
+    max-width: 100%;
+    line-height: 1.3;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.DropDownControl_base_46 {
+    display: flex;
+    height: 100%;
+    border: 1rem solid #464538;
+    border-radius: 2rem;
+    box-shadow:
+        inset 0 0 1rem #000,
+        inset 0 0 8rem #000;
+    position: relative;
+    cursor: pointer;
+}
+
+.DropDownControl_base__extraSmall_a3 {
+    height: 20rem;
+}
+
+.DropDownControl_base__small_22 {
+    height: 24rem;
+}
+
+.DropDownControl_base__medium_09 {
+    height: 32rem;
+}
+
+.DropDownControl_base__disabled_37 {
+    cursor: default;
+}
+
+.DropDownControl_base__focused_63 {
+    border-color: #75552c;
+}
+
+.DropDownControl_base__selected_46 {
+    border-color: #7ab300;
+}
+.DropDownControl_stateHighlight_16 {
+    width: 100%;
+    height: 100%;
+    border-radius: 2rem;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition: opacity 0.3s ease-in-out;
+    pointer-events: none;
+}
+.DropDownControl_base__over_e7 .DropDownControl_stateHighlight_16 {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
+    opacity: 1;
+}
+.DropDownControl_base__down_1c .DropDownControl_stateHighlight_16,
+.DropDownControl_base__open_e3 .DropDownControl_stateHighlight_16 {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.4) 100%);
+    opacity: 1;
+}
+.DropDownControl_label_12 {
+    display: flex;
+    align-items: flex-end;
+    flex: 1;
+    padding: 0 8rem;
+    color: #8c8c7e;
+}
+.DropDownControl_label__extraSmall_3d {
+    padding-bottom: 2rem;
+    font-size: 14rem;
+}
+.DropDownControl_label__small_e7 {
+    padding-bottom: 2rem;
+    font-size: 14rem;
+}
+.DropDownControl_label__medium_0b {
+    padding-bottom: 5rem;
+    font-size: 16rem;
+}
+.DropDownControl_label__placeholder_98 {
+    color: #595950;
+}
+.DropDownControl_base__down_1c .DropDownControl_label_12,
+.DropDownControl_base__open_e3 .DropDownControl_label_12 {
+    opacity: 0.8;
+}
+.DropDownControl_base__disabled_37 .DropDownControl_label_12 {
+    color: #37362e;
+}
+.DropDownControl_button_cb {
+    display: flex;
+    background: url('R.images.gui.maps.icons.components.dropdown.button') no-repeat center / 100%;
+    position: relative;
+    top: 1rem;
+    right: 1rem;
+    pointer-events: none;
+}
+.DropDownControl_button__extraSmall_d2 {
+    width: 22rem;
+    height: 16rem;
+}
+.DropDownControl_button__small_b5 {
+    width: 22rem;
+    height: 20rem;
+}
+.DropDownControl_button__medium_14 {
+    width: 28rem;
+    height: 28rem;
+}
+.DropDownControl_base__down_1c .DropDownControl_button_cb {
+    opacity: 0.6;
+}
+.DropDownControl_base__open_e3 .DropDownControl_button_cb {
+    opacity: 0.8;
+}
+.DropDownControl_base__disabled_37 .DropDownControl_button_cb {
+    opacity: 0.8;
+}
+.DropDownControl_gradient_b5 {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 0.25s ease-in-out;
+}
+.DropDownControl_base__over_e7 .DropDownControl_gradient_b5 {
+    opacity: 1;
+}
+.DropDownControl_disabled_4e {
+    width: 100%;
+    height: 100%;
+    background: url('R.images.gui.maps.icons.library.disabled_pattern') center / 9rem;
+    opacity: 0.8;
+    position: absolute;
+}
+.DropDownControl_arrow_de {
+    background: no-repeat center / contain;
+    position: absolute;
+}
+.DropDownControl_arrow__extraSmall_eb {
+    width: 9rem;
+    height: 6rem;
+    background-image: url('R.images.gui.maps.icons.components.dropdown.arrow_small');
+    top: 6rem;
+    left: 7rem;
+}
+.DropDownControl_arrow__small_77 {
+    width: 9rem;
+    height: 6rem;
+    background-image: url('R.images.gui.maps.icons.components.dropdown.arrow_small');
+    top: 7rem;
+    left: 7rem;
+}
+.DropDownControl_arrow__medium_3d {
+    width: 13rem;
+    height: 7rem;
+    background-image: url('R.images.gui.maps.icons.components.dropdown.arrow_medium');
+    top: 11rem;
+    left: 8rem;
+}
+.DropDownControl_base__open_e3 .DropDownControl_arrow_de {
+    transform: rotate(180deg);
+}
+.DropDownControl_alert_75 {
+    border: 1rem solid #ee7000;
+    border-radius: 2rem;
+    box-shadow: inset 0 0 6rem rgba(141, 13, 3, 0.1);
+    position: absolute;
+    top: -1rem;
+    right: -1rem;
+    bottom: -1rem;
+    left: -1rem;
+    z-index: 1;
+    animation: DropDownControl_blink_68 2s ease-in-out infinite;
+    pointer-events: none;
+}
+@keyframes DropDownControl_blink_68 {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+/* bugfix WOTD-242261: due to using Chat as Subview in MembersWindow in platoon feature
+2 bundles (Chat.css and MembersWindow.css) start to conflict with each other
+
+for example, provided selectors as css mixClasses for Scroll component can be overwritten by basic css classes of Scroll component
+because both in Chat.tsx and MembersWindow.tsx <Scroll> component is used
+
+so we just add specificity to css classes here
+*/
+
+.VerticalAutoScroll_base_db .VerticalAutoScroll_content_47 {
+    height: auto;
+    min-height: 1rem;
+    max-height: 100%;
+}
+
+.VerticalAutoScroll_base_db .VerticalAutoScroll_barBase_93 {
+    position: absolute;
+    right: 0;
+}
+
+.DropDownItem_base_5e {
+    padding-left: 8rem;
+    padding-right: 8rem;
+    color: #8c8c7e;
+    cursor: pointer;
+}
+
+.DropDownItem_base_5e:hover {
+    background-color: #1c1b12;
+}
+
+.DropDownItem_base__extraSmall_5a {
+    padding-top: 2rem;
+    padding-bottom: 4rem;
+}
+
+.DropDownItem_base__small_d6 {
+    padding-top: 3rem;
+    padding-bottom: 5rem;
+}
+
+.DropDownItem_base__medium_e4 {
+    padding-top: 6rem;
+    padding-bottom: 8rem;
+}
+
+.DropDownItem_base__selected_8e {
+    color: #cbac77;
+}
+
+.DropDownItem_base__disabled_21 {
+    color: #37362e;
+    pointer-events: none;
+}
+
+.DropDownItems_base__withScroll_19 {
+    padding-right: 15rem;
+}
+
+.DropDownList_base_62 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-height: 198rem;
+    position: relative;
+}
+
+.DropDownList_base__extraSmall_60 {
+    font-size: 14rem;
+    line-height: 16rem;
+}
+
+.DropDownList_base__small_0c {
+    font-size: 14rem;
+    line-height: 16rem;
+}
+
+.DropDownList_base__medium_99 {
+    font-size: 16rem;
+    line-height: 18rem;
+}
+
+.PureDropDown_base_fc {
+    display: flex;
+    flex-direction: column;
+    width: 200rem;
+    border-radius: 2rem;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.6);
+    background-color: rgba(23, 23, 15, 0.8);
+    position: relative;
+}
+
+.PureDropDown_base__extraSmall_31 {
+    height: 20rem;
+}
+
+.PureDropDown_base__small_a6 {
+    height: 24rem;
+}
+
+.PureDropDown_base__medium_05 {
+    height: 32rem;
+}
+.PureDropDown_control__down_18 {
+    z-index: 3;
+}
+.PureDropDown_list_28 {
+    display: flex;
+    width: 100%;
+    border: 1rem solid #464538;
+    border-radius: 2rem;
+    background-color: #090906;
+    position: absolute;
+    left: 0;
+    transition: opacity 0.25s;
+}
+.PureDropDown_list__up_a1 {
+    opacity: 0;
+    z-index: -1;
+    pointer-events: none;
+}
+.PureDropDown_list__down_c4 {
+    opacity: 1;
+    z-index: 2;
+}
+.PureDropDown_list__under_64 {
+    margin-top: -1rem;
+    top: 100%;
+}
+.PureDropDown_list__above_c8 {
+    top: 1rem;
+    transform: translateY(-100%);
+}
+
 .RoleIcon_base_51 {
     background: no-repeat center / contain;
 }
@@ -2632,6 +2965,47 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     height: 60rem;
 }
 
+.DropDownItemRender_base_c6 {
+    display: flex;
+    align-items: center;
+    margin-left: -7rem;
+    position: relative;
+}
+
+.DropDownItemRender_base__header_97 {
+    top: 0rem;
+}
+
+.DropDownItemRender_base__disabled_35 {
+    pointer-events: none;
+}
+
+.DropDownItemRender_icon_f0 {
+    width: 16rem;
+    height: 16rem;
+    margin-top: 2rem;
+    margin-right: 2rem;
+    background: no-repeat 100% / contain;
+    position: relative;
+}
+
+.DropDownItemRender_base__header_97 .DropDownItemRender_icon_f0 {
+    margin-top: 0;
+    opacity: 1;
+}
+
+.DropDownItemRender_base__disabled_35 .DropDownItemRender_icon_f0 {
+    opacity: 0.2;
+}
+
+.DropDownItemRender_base_c6:hover .DropDownItemRender_icon_f0 {
+    opacity: 1;
+}
+
+.DropDownItemRender_text_49 {
+    max-width: 125rem;
+}
+
 .Header_base_bd {
     color: #fefeec;
     font-size: 14rem;
@@ -2667,7 +3041,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 .Header_pointsContainer_13 {
     display: flex;
-    justify-content: space-between;
     width: 100%;
     margin-top: 25rem;
 }
@@ -2718,6 +3091,19 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     align-items: center;
     margin-top: -2rem;
 }
+.Header_allPerksTrained_b5 {
+    width: 24rem;
+    height: 24rem;
+    margin-top: 3rem;
+    background: url('R.images.gui.maps.icons.crew.check_white_s') center center / cover no-repeat;
+}
+.Header_untrained_c3 {
+    width: 48rem;
+    height: 38rem;
+    max-height: 24rem;
+    margin-top: 4rem;
+    background: url('R.images.gui.maps.icons.crew.perks_disabled') center center / cover no-repeat;
+}
 .Header_availablePointsTitle_fd {
     color: #feab34;
 }
@@ -2730,21 +3116,18 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 .Header_countContainer_a3 {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     width: 48rem;
-    margin-left: -10rem;
-    margin-top: -4rem;
 }
 .mediaMedium .Header_countContainer_a3 {
     width: 53rem;
-    margin-left: -2rem;
-    margin-top: -6rem;
 }
 .Header_count_81 {
     color: #fefeec;
     font-size: 18rem;
     font-weight: 700;
     line-height: 1.1;
+    margin-left: 8rem;
 }
 .mediaMedium .Header_count_81 {
     color: #fefeec;
@@ -2755,7 +3138,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .Header_skillIcon_0b {
     width: 16rem;
     height: 16rem;
-    margin-left: 6rem;
     margin-top: 3rem;
     background: url('R.images.gui.maps.icons.tankmen.skills.medium.new_skill') center / contain;
     position: relative;
@@ -2774,6 +3156,70 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     left: 50%;
     animation: Header_rotation_2e 20s linear infinite;
     pointer-events: none;
+}
+.Header_dropdown_a9 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 55rem;
+    right: 4rem;
+}
+.Header_dropdown_content_23 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.Header_dropdown_background_c0 {
+    width: 270rem;
+    height: 90rem;
+    background: url('R.images.gui.maps.icons.crew.sortingDropdown.dropdown_background') center / contain no-repeat;
+    position: absolute;
+    top: -32rem;
+    right: 0;
+    z-index: 0;
+}
+.Header_dropdown__warning_f2 .Header_dropdown_background_c0 {
+    background: url('R.images.gui.maps.icons.crew.sortingDropdown.dropdown_background_orange') center / contain
+        no-repeat;
+    top: -37rem;
+}
+.Header_dropdown_icon_80 {
+    width: 16rem;
+    height: 16rem;
+    margin-right: 3rem;
+    background: url('R.images.gui.maps.icons.crew.sortingDropdown.wotplus_icon') center center / contain no-repeat;
+    z-index: 1;
+}
+.Header_dropdown__warning_f2 .Header_dropdown_icon_80 {
+    background: url('R.images.gui.maps.icons.library.maps') center center / cover no-repeat;
+}
+.Header_dropdown_title_84 {
+    color: #8c8c7e;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    margin-right: 5rem;
+    z-index: 1;
+}
+.Header_dropdown_list_c8 {
+    width: 130rem;
+    margin-top: 1rem;
+    z-index: 1;
+    color: #8c8c7e;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+.mediaMedium .Header_dropdown_a9 {
+    top: 64rem;
+}
+.mediaLarge .Header_dropdown_a9 {
+    top: 68rem;
+    right: 9rem;
 }
 @keyframes Header_rotation_2e {
     from {
@@ -3007,6 +3453,12 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 
 .SkillCard_base_1a:hover .SkillCard_description_26 {
     height: 145rem;
+    max-height: 100rem;
+}
+
+.SkillCard_base_1a:hover .SkillCard_popularityList_38 {
+    opacity: 1;
+    transform: translateY(-15rem);
 }
 .SkillCard_content_76 {
     max-height: 187rem;
@@ -3020,6 +3472,39 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     padding: 10rem 20rem;
 }
 .SkillCard_base__disabled_af .SkillCard_content_76 {
+    opacity: 0.3;
+}
+.SkillCard_popularityList_38 {
+    color: #e9e2bf;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    display: flex;
+    flex-direction: row;
+    opacity: 0;
+    position: absolute;
+    bottom: 0rem;
+    left: 7rem;
+    transform: translateY(0);
+    transition:
+        opacity 0.15s ease-in-out,
+        transform 0.15s ease-in-out;
+}
+.mediaMedium .SkillCard_popularityList_38 {
+    left: 13rem;
+}
+.SkillCard_popularityItem_23 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: 4rem;
+}
+.SkillCard_popularityItem_image_0d {
+    width: 24rem;
+    height: 24rem;
+    margin-top: 2rem;
+}
+.SkillCard_base__disabled_af .SkillCard_popularityItem_23 {
     opacity: 0.3;
 }
 .SkillCard_icon_a1 {
@@ -3142,6 +3627,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     display: flex;
     flex-wrap: wrap;
     margin: 5rem 0;
+    overflow: hidden;
 }
 
 .mediaLarge .SkillsGroup_base_58 {
@@ -3150,6 +3636,22 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 
 .mediaExtraLarge .SkillsGroup_base_58 {
     margin: 10rem 0;
+}
+.SkillsGroup_skillCard_b6 {
+    opacity: 0;
+    transform: translateY(0);
+    animation: SkillsGroup_fadeInUp_45 0.2s ease-out forwards;
+}
+@keyframes SkillsGroup_fadeInUp_45 {
+    from {
+        opacity: 0;
+        transform: translateY(30rem);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .SkillsList_base_23 {
@@ -3177,7 +3679,8 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     height: 1rem;
     margin: 0 4rem;
     background-color: #ffffff;
-    opacity: 0.1;
+    opacity: 0;
+    animation: SkillsList_fadeIn_ee 0.2s ease-out forwards;
 }
 .mediaLarge .SkillsList_line_28 {
     margin: 0 9rem;
@@ -3200,6 +3703,15 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 .mediaExtraLarge .SkillsList_lips_a9 {
     padding: 0 10rem;
+}
+@keyframes SkillsList_fadeIn_ee {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 0.1;
+    }
 }
 
 .SkillsTrainingViewApp_base_f2 {

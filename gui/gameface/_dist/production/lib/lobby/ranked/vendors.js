@@ -290,18 +290,12 @@
                 if (
                     Array.isArray(t) ||
                     (n = (function (t, e) {
-                        if (t) {
-                            if ('string' == typeof t) return u(t, e);
-                            var n = {}.toString.call(t).slice(8, -1);
-                            return (
-                                'Object' === n && t.constructor && (n = t.constructor.name),
-                                'Map' === n || 'Set' === n
-                                    ? Array.from(t)
-                                    : 'Arguments' === n || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)
-                                      ? u(t, e)
-                                      : void 0
-                            );
-                        }
+                        if (!t) return;
+                        if ('string' == typeof t) return u(t, e);
+                        var n = Object.prototype.toString.call(t).slice(8, -1);
+                        'Object' === n && t.constructor && (n = t.constructor.name);
+                        if ('Map' === n || 'Set' === n) return Array.from(t);
+                        if ('Arguments' === n || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return u(t, e);
                     })(t)) ||
                     (e && t && 'number' == typeof t.length)
                 ) {
@@ -317,7 +311,7 @@
             }
             function u(t, e) {
                 (null == e || e > t.length) && (e = t.length);
-                for (var n = 0, s = Array(e); n < e; n++) s[n] = t[n];
+                for (var n = 0, s = new Array(e); n < e; n++) s[n] = t[n];
                 return s;
             }
             function c() {
@@ -1481,9 +1475,10 @@
             function bt(t, e) {
                 const n = s.is.fun(t),
                     r = Bt(1, n ? t : [t], n ? e || [] : e),
-                    i = r[0][0],
-                    o = r[1];
-                return n || 2 == arguments.length ? [i, o] : i;
+                    i = r[0],
+                    o = i[0],
+                    a = r[1];
+                return n || 2 == arguments.length ? [o, a] : o;
             }
             let Tt;
             !(function (t) {
@@ -3098,18 +3093,12 @@
                 if (
                     Array.isArray(t) ||
                     (n = (function (t, e) {
-                        if (t) {
-                            if ('string' == typeof t) return a(t, e);
-                            var n = {}.toString.call(t).slice(8, -1);
-                            return (
-                                'Object' === n && t.constructor && (n = t.constructor.name),
-                                'Map' === n || 'Set' === n
-                                    ? Array.from(t)
-                                    : 'Arguments' === n || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)
-                                      ? a(t, e)
-                                      : void 0
-                            );
-                        }
+                        if (!t) return;
+                        if ('string' == typeof t) return a(t, e);
+                        var n = Object.prototype.toString.call(t).slice(8, -1);
+                        'Object' === n && t.constructor && (n = t.constructor.name);
+                        if ('Map' === n || 'Set' === n) return Array.from(t);
+                        if ('Arguments' === n || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return a(t, e);
                     })(t)) ||
                     (e && t && 'number' == typeof t.length)
                 ) {
@@ -3125,7 +3114,7 @@
             }
             function a(t, e) {
                 (null == e || e > t.length) && (e = t.length);
-                for (var n = 0, s = Array(e); n < e; n++) s[n] = t[n];
+                for (var n = 0, s = new Array(e); n < e; n++) s[n] = t[n];
                 return s;
             }
             const l = console.assert,
@@ -3356,18 +3345,12 @@
                 if (
                     Array.isArray(t) ||
                     (n = (function (t, e) {
-                        if (t) {
-                            if ('string' == typeof t) return B(t, e);
-                            var n = {}.toString.call(t).slice(8, -1);
-                            return (
-                                'Object' === n && t.constructor && (n = t.constructor.name),
-                                'Map' === n || 'Set' === n
-                                    ? Array.from(t)
-                                    : 'Arguments' === n || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)
-                                      ? B(t, e)
-                                      : void 0
-                            );
-                        }
+                        if (!t) return;
+                        if ('string' == typeof t) return B(t, e);
+                        var n = Object.prototype.toString.call(t).slice(8, -1);
+                        'Object' === n && t.constructor && (n = t.constructor.name);
+                        if ('Map' === n || 'Set' === n) return Array.from(t);
+                        if ('Arguments' === n || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return B(t, e);
                     })(t)) ||
                     (e && t && 'number' == typeof t.length)
                 ) {
@@ -3383,7 +3366,7 @@
             }
             function B(t, e) {
                 (null == e || e > t.length) && (e = t.length);
-                for (var n = 0, s = Array(e); n < e; n++) s[n] = t[n];
+                for (var n = 0, s = new Array(e); n < e; n++) s[n] = t[n];
                 return s;
             }
             const b = 1e3,
@@ -3566,27 +3549,26 @@
             'use strict';
             function s() {
                 return (
-                    (s = Object.assign
-                        ? Object.assign.bind()
-                        : function (t) {
-                              for (var e = 1; e < arguments.length; e++) {
-                                  var n = arguments[e];
-                                  for (var s in n) ({}).hasOwnProperty.call(n, s) && (t[s] = n[s]);
-                              }
-                              return t;
-                          }),
-                    s.apply(null, arguments)
+                    (s =
+                        Object.assign ||
+                        function (t) {
+                            for (var e = 1; e < arguments.length; e++) {
+                                var n = arguments[e];
+                                for (var s in n) Object.prototype.hasOwnProperty.call(n, s) && (t[s] = n[s]);
+                            }
+                            return t;
+                        }),
+                    s.apply(this, arguments)
                 );
             }
             function r(t, e) {
                 if (null == t) return {};
-                var n = {};
-                for (var s in t)
-                    if ({}.hasOwnProperty.call(t, s)) {
-                        if (e.indexOf(s) >= 0) continue;
-                        n[s] = t[s];
-                    }
-                return n;
+                var n,
+                    s,
+                    r = {},
+                    i = Object.keys(t);
+                for (s = 0; s < i.length; s++) (n = i[s]), e.indexOf(n) >= 0 || (r[n] = t[n]);
+                return r;
             }
             n.d(e, { Z: () => E });
             var i = n(720);
@@ -3918,11 +3900,11 @@
             'use strict';
             function s(t, e) {
                 return (
-                    (s = Object.setPrototypeOf
-                        ? Object.setPrototypeOf.bind()
-                        : function (t, e) {
-                              return (t.__proto__ = e), t;
-                          }),
+                    (s =
+                        Object.setPrototypeOf ||
+                        function (t, e) {
+                            return (t.__proto__ = e), t;
+                        }),
                     s(t, e)
                 );
             }

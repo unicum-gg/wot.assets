@@ -10,7 +10,7 @@
             },
             527: (u, e, F) => {
                 F.r(e),
-                    F.d(e, { mouse: () => r, off: () => i, on: () => D, onResize: () => t, onScaleUpdated: () => n });
+                    F.d(e, { mouse: () => o, off: () => i, on: () => D, onResize: () => t, onScaleUpdated: () => n });
                 var A = F(2472),
                     E = F(1176);
                 const t = (0, A.E)('clientResized'),
@@ -18,7 +18,7 @@
                     D = (u, e) => engine.on(u, e),
                     i = (u, e) => engine.off(u, e),
                     B = { down: (0, A.E)('mousedown'), up: (0, A.E)('mouseup'), move: (0, A.E)('mousemove') };
-                const r = (function () {
+                const o = (function () {
                     const u = { listeners: 0, enabled: !0, initialized: !1 };
                     function e() {
                         u.enabled && (0, E.R)(!1);
@@ -186,52 +186,53 @@
             7641: (u, e, F) => {
                 F.r(e),
                     F.d(e, {
-                        addModelObserver: () => o,
+                        addModelObserver: () => r,
                         addPreloadTexture: () => i,
-                        children: () => A,
-                        displayStatus: () => E.W,
-                        displayStatusIs: () => O,
-                        events: () => t.U,
-                        extraSize: () => y,
+                        arabic2roman: () => O,
+                        children: () => E,
+                        displayStatus: () => t.W,
+                        displayStatusIs: () => y,
+                        events: () => n.U,
+                        extraSize: () => T,
                         forceTriggerMouseMove: () => b,
                         freezeTextureBeforeResize: () => c,
-                        getBrowserTexturePath: () => r,
+                        getBrowserTexturePath: () => o,
                         getDisplayStatus: () => g,
                         getFontNames: () => f,
                         getScale: () => d,
                         getSize: () => C,
                         getViewGlobalPosition: () => _,
-                        isEventHandled: () => m,
+                        isEventHandled: () => p,
                         isFocused: () => h,
                         pxToRem: () => l,
                         remToPx: () => v,
                         resize: () => s,
-                        sendEvent: () => n.qP,
+                        sendEvent: () => D.qP,
                         setAnimateWindow: () => w,
-                        setEventHandled: () => p,
+                        setEventHandled: () => m,
                         setInputPaddingsRem: () => B,
                         setSidePaddingsRem: () => a,
-                        whenTutorialReady: () => T,
+                        whenTutorialReady: () => k,
                     });
-                var A = F(3722),
-                    E = F(6112),
-                    t = F(6538),
-                    n = F(8566);
-                const D = 15;
+                var A = F(9690),
+                    E = F(3722),
+                    t = F(6112),
+                    n = F(6538),
+                    D = F(8566);
                 function i(u) {
                     viewEnv.addPreloadTexture(u);
                 }
                 function B(u) {
-                    viewEnv.setHitAreaPaddingsRem(u, u, u, u, D);
+                    viewEnv.setHitAreaPaddingsRem(u, u, u, u, 15);
                 }
-                function r(u, e, F, A = 1) {
+                function o(u, e, F, A = 1) {
                     return viewEnv.getWebBrowserTexturePath(u, e, F, A);
                 }
-                function o(u, e, F) {
+                function r(u, e, F) {
                     return viewEnv.addDataChangedCallback(u, e, F);
                 }
                 function a(u) {
-                    viewEnv.setHitAreaPaddingsRem(u.top, u.right, u.bottom, u.left, D);
+                    viewEnv.setHitAreaPaddingsRem(u.top, u.right, u.bottom, u.left, 15);
                 }
                 function C(u = 'px') {
                     return 'rem' === u ? viewEnv.getViewSizeRem() : viewEnv.getViewSizePx();
@@ -261,10 +262,10 @@
                 function h() {
                     return viewEnv.isFocused();
                 }
-                function p() {
+                function m() {
                     return viewEnv.setEventHandled();
                 }
-                function m() {
+                function p() {
                     return viewEnv.isEventHandled();
                 }
                 function b() {
@@ -277,11 +278,12 @@
                         let u = [];
                         return () => (0 === u.length && (u = Object.keys(viewEnv.getFontsConfig())), u);
                     })(),
-                    O = Object.keys(E.W).reduce(
-                        (u, e) => ((u[e] = () => viewEnv.getShowingStatus() === E.W[e]), u),
+                    O = A.cg,
+                    y = Object.keys(t.W).reduce(
+                        (u, e) => ((u[e] = () => viewEnv.getShowingStatus() === t.W[e]), u),
                         {},
                     ),
-                    y = {
+                    T = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -289,9 +291,9 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    T = Promise.all([
+                    k = Promise.all([
                         new Promise((u) => {
-                            window.isDomBuilt ? u() : t.U.onDomBuilt(u);
+                            window.isDomBuilt ? u() : n.U.onDomBuilt(u);
                         }),
                         engine.whenReady,
                     ]);
@@ -309,13 +311,12 @@
                             const t = e.args,
                                 n = (function (u, e) {
                                     if (null == u) return {};
-                                    var F = {};
-                                    for (var A in u)
-                                        if ({}.hasOwnProperty.call(u, A)) {
-                                            if (e.indexOf(A) >= 0) continue;
-                                            F[A] = u[A];
-                                        }
-                                    return F;
+                                    var F,
+                                        A,
+                                        E = {},
+                                        t = Object.keys(u);
+                                    for (A = 0; A < t.length; A++) (F = t[A]), e.indexOf(F) >= 0 || (E[F] = u[F]);
+                                    return E;
                                 })(e, A);
                             return void 0 !== t
                                 ? viewEnv.handleViewEvent(
@@ -401,6 +402,17 @@
                             (u.SYMBOL = 'Symbol'),
                             (u.SYMBOL_LOCK = 'SymbolLock');
                     })(E || (E = {}));
+            },
+            9690: (u, e, F) => {
+                F.d(e, { cg: () => t });
+                const A = ['I', 'IV', 'V', 'IX', 'X', 'XL', 'L', 'XC', 'C', 'CD', 'D', 'CM', 'M'],
+                    E = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
+                function t(u) {
+                    let e = '';
+                    for (let F = E.length - 1; F >= 0; F--) for (; u >= E[F]; ) (e += A[F]), (u -= E[F]);
+                    return e;
+                }
+                ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());
             },
             3649: (u, e, F) => {
                 F(1281);
@@ -592,8 +604,8 @@
                         (u[(u.MINIMIZE = 64)] = 'MINIMIZE');
                 })(i || (i = {}));
                 const B = Object.freeze({ INTEGRAL: 0, GOLD: 1 }),
-                    r = Object.freeze({ FRACTIONAL: 0, WO_ZERO_DIGITS: 1 }),
-                    o = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1 }),
+                    o = Object.freeze({ FRACTIONAL: 0, WO_ZERO_DIGITS: 1 }),
+                    r = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1 }),
                     a = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1, YEAR_MONTH: 2 });
                 var C = F(5521),
                     s = F(3138);
@@ -643,13 +655,12 @@
                             const E = e.args,
                                 t = (function (u, e) {
                                     if (null == u) return {};
-                                    var F = {};
-                                    for (var A in u)
-                                        if ({}.hasOwnProperty.call(u, A)) {
-                                            if (e.indexOf(A) >= 0) continue;
-                                            F[A] = u[A];
-                                        }
-                                    return F;
+                                    var F,
+                                        A,
+                                        E = {},
+                                        t = Object.keys(u);
+                                    for (A = 0; A < t.length; A++) (F = t[A]), e.indexOf(F) >= 0 || (E[F] = u[F]);
+                                    return E;
                                 })(e, _);
                             void 0 !== E
                                 ? viewEnv.handleViewEvent(
@@ -680,15 +691,15 @@
                     h = (u, e) => {
                         u.keyCode === C.n.ESCAPE && e();
                     };
-                var p = F(7572);
-                const m = E.instance,
+                var m = F(7572);
+                const p = E.instance,
                     b = {
                         DataTracker: t.Z,
-                        ViewModel: p.Z,
+                        ViewModel: m.Z,
                         ViewEventType: i,
                         NumberFormatType: B,
-                        RealFormatType: r,
-                        TimeFormatType: o,
+                        RealFormatType: o,
+                        TimeFormatType: r,
                         DateFormatType: a,
                         makeGlobalBoundingBox: d,
                         sendMoveEvent: (u) => v(i.MOVE, { isMouseEvent: !0, on: u }),
@@ -701,13 +712,13 @@
                             const n = s.O.view.getViewGlobalPosition(),
                                 D = F.getBoundingClientRect(),
                                 B = D.x,
-                                r = D.y,
-                                o = D.width,
+                                o = D.y,
+                                r = D.width,
                                 a = D.height,
                                 C = {
                                     x: s.O.view.pxToRem(B) + n.x,
-                                    y: s.O.view.pxToRem(r) + n.y,
-                                    width: s.O.view.pxToRem(o),
+                                    y: s.O.view.pxToRem(o) + n.y,
+                                    width: s.O.view.pxToRem(r),
                                     height: s.O.view.pxToRem(a),
                                 };
                             v(i.POP_OVER, {
@@ -760,7 +771,7 @@
                                 }
                             return F;
                         },
-                        ClickOutsideManager: m,
+                        ClickOutsideManager: p,
                         SystemLocale: n,
                         UserLocale: D,
                     };

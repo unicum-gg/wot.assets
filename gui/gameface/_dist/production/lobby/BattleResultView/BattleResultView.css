@@ -1147,6 +1147,48 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     right: -14rem;
 }
 
+.MainReward_base_1f {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 0 5rem;
+}
+
+.mediaMedium .MainReward_base_1f {
+    margin: 0 10rem;
+}
+
+.MainReward_value_1d {
+    color: #f2f2f7;
+    font-size: 36rem;
+    font-weight: 700;
+    line-height: 1.1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.mediaMedium .MainReward_value_1d {
+    font-size: 73rem;
+}
+
+.MainReward_value__freeXP_8c {
+    color: #c9c9b6;
+}
+
+.MainReward_value__credits_ff {
+    color: #ced9d9;
+}
+
+.MainReward_icon_6a {
+    margin-top: 7rem;
+    background: no-repeat 50% / contain;
+}
+
+.mediaMedium .MainReward_icon_6a {
+    margin-top: 10rem;
+}
+
 .BattleResultRewards_base_ae {
     width: 100vw;
     height: 285rem;
@@ -1248,48 +1290,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 
 .mediaExtraLarge .BattleResultRewards_ribbon_78 {
     top: -220rem;
-}
-
-.MainReward_base_1f {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    margin: 0 5rem;
-}
-
-.mediaMedium .MainReward_base_1f {
-    margin: 0 10rem;
-}
-
-.MainReward_value_1d {
-    color: #f2f2f7;
-    font-size: 36rem;
-    font-weight: 700;
-    line-height: 1.1;
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-}
-
-.mediaMedium .MainReward_value_1d {
-    font-size: 73rem;
-}
-
-.MainReward_value__freeXP_8c {
-    color: #c9c9b6;
-}
-
-.MainReward_value__credits_ff {
-    color: #ced9d9;
-}
-
-.MainReward_icon_6a {
-    margin-top: 7rem;
-    background: no-repeat 50% / contain;
-}
-
-.mediaMedium .MainReward_icon_6a {
-    margin-top: 10rem;
 }
 
 .BattleResultVehicle_base_03 {

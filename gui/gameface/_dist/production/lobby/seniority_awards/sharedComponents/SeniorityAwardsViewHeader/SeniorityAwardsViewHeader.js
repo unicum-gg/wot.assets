@@ -216,11 +216,12 @@
                     A.d(e, {
                         addModelObserver: () => r,
                         addPreloadTexture: () => C,
-                        children: () => F,
-                        displayStatus: () => E.W,
-                        displayStatusIs: () => O,
-                        events: () => D.U,
-                        extraSize: () => T,
+                        arabic2roman: () => O,
+                        children: () => E,
+                        displayStatus: () => D.W,
+                        displayStatusIs: () => T,
+                        events: () => B.U,
+                        extraSize: () => y,
                         forceTriggerMouseMove: () => g,
                         freezeTextureBeforeResize: () => _,
                         getBrowserTexturePath: () => i,
@@ -229,28 +230,28 @@
                         getScale: () => d,
                         getSize: () => a,
                         getViewGlobalPosition: () => c,
-                        isEventHandled: () => m,
+                        isEventHandled: () => p,
                         isFocused: () => h,
                         pxToRem: () => l,
                         remToPx: () => v,
                         resize: () => s,
-                        sendEvent: () => B.qP,
+                        sendEvent: () => t.qP,
                         setAnimateWindow: () => w,
-                        setEventHandled: () => p,
+                        setEventHandled: () => m,
                         setInputPaddingsRem: () => n,
                         setSidePaddingsRem: () => o,
-                        whenTutorialReady: () => y,
+                        whenTutorialReady: () => x,
                     });
-                var F = A(3722),
-                    E = A(6112),
-                    D = A(6538),
-                    B = A(8566);
-                const t = 15;
+                var F = A(9690),
+                    E = A(3722),
+                    D = A(6112),
+                    B = A(6538),
+                    t = A(8566);
                 function C(u) {
                     viewEnv.addPreloadTexture(u);
                 }
                 function n(u) {
-                    viewEnv.setHitAreaPaddingsRem(u, u, u, u, t);
+                    viewEnv.setHitAreaPaddingsRem(u, u, u, u, 15);
                 }
                 function i(u, e, A, F = 1) {
                     return viewEnv.getWebBrowserTexturePath(u, e, A, F);
@@ -259,7 +260,7 @@
                     return viewEnv.addDataChangedCallback(u, e, A);
                 }
                 function o(u) {
-                    viewEnv.setHitAreaPaddingsRem(u.top, u.right, u.bottom, u.left, t);
+                    viewEnv.setHitAreaPaddingsRem(u.top, u.right, u.bottom, u.left, 15);
                 }
                 function a(u = 'px') {
                     return 'rem' === u ? viewEnv.getViewSizeRem() : viewEnv.getViewSizePx();
@@ -289,10 +290,10 @@
                 function h() {
                     return viewEnv.isFocused();
                 }
-                function p() {
+                function m() {
                     return viewEnv.setEventHandled();
                 }
-                function m() {
+                function p() {
                     return viewEnv.isEventHandled();
                 }
                 function g() {
@@ -305,11 +306,12 @@
                         let u = [];
                         return () => (0 === u.length && (u = Object.keys(viewEnv.getFontsConfig())), u);
                     })(),
-                    O = Object.keys(E.W).reduce(
-                        (u, e) => ((u[e] = () => viewEnv.getShowingStatus() === E.W[e]), u),
+                    O = F.cg,
+                    T = Object.keys(D.W).reduce(
+                        (u, e) => ((u[e] = () => viewEnv.getShowingStatus() === D.W[e]), u),
                         {},
                     ),
-                    T = {
+                    y = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -317,9 +319,9 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    y = Promise.all([
+                    x = Promise.all([
                         new Promise((u) => {
-                            window.isDomBuilt ? u() : D.U.onDomBuilt(u);
+                            window.isDomBuilt ? u() : B.U.onDomBuilt(u);
                         }),
                         engine.whenReady,
                     ]);
@@ -337,13 +339,12 @@
                             const D = e.args,
                                 B = (function (u, e) {
                                     if (null == u) return {};
-                                    var A = {};
-                                    for (var F in u)
-                                        if ({}.hasOwnProperty.call(u, F)) {
-                                            if (e.indexOf(F) >= 0) continue;
-                                            A[F] = u[F];
-                                        }
-                                    return A;
+                                    var A,
+                                        F,
+                                        E = {},
+                                        D = Object.keys(u);
+                                    for (F = 0; F < D.length; F++) (A = D[F]), e.indexOf(A) >= 0 || (E[A] = u[A]);
+                                    return E;
                                 })(e, F);
                             return void 0 !== D
                                 ? viewEnv.handleViewEvent(
@@ -429,6 +430,17 @@
                             (u.SYMBOL = 'Symbol'),
                             (u.SYMBOL_LOCK = 'SymbolLock');
                     })(E || (E = {}));
+            },
+            9690: (u, e, A) => {
+                A.d(e, { cg: () => D });
+                const F = ['I', 'IV', 'V', 'IX', 'X', 'XL', 'L', 'XC', 'C', 'CD', 'D', 'CM', 'M'],
+                    E = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
+                function D(u) {
+                    let e = '';
+                    for (let A = E.length - 1; A >= 0; A--) for (; u >= E[A]; ) (e += F[A]), (u -= E[A]);
+                    return e;
+                }
+                ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());
             },
             3649: (u, e, A) => {
                 A.d(e, { Uw: () => a, WU: () => D, v2: () => E });
@@ -715,13 +727,12 @@
                             const E = e.args,
                                 D = (function (u, e) {
                                     if (null == u) return {};
-                                    var A = {};
-                                    for (var F in u)
-                                        if ({}.hasOwnProperty.call(u, F)) {
-                                            if (e.indexOf(F) >= 0) continue;
-                                            A[F] = u[F];
-                                        }
-                                    return A;
+                                    var A,
+                                        F,
+                                        E = {},
+                                        D = Object.keys(u);
+                                    for (F = 0; F < D.length; F++) (A = D[F]), e.indexOf(A) >= 0 || (E[A] = u[A]);
+                                    return E;
                                 })(e, c);
                             void 0 !== E
                                 ? viewEnv.handleViewEvent(
@@ -752,11 +763,11 @@
                     h = (u, e) => {
                         u.keyCode === a.n.ESCAPE && e();
                     };
-                var p = A(7572);
-                const m = E.instance,
+                var m = A(7572);
+                const p = E.instance,
                     g = {
                         DataTracker: D.Z,
-                        ViewModel: p.Z,
+                        ViewModel: m.Z,
                         ViewEventType: C,
                         NumberFormatType: n,
                         RealFormatType: i,
@@ -832,7 +843,7 @@
                                 }
                             return A;
                         },
-                        ClickOutsideManager: m,
+                        ClickOutsideManager: p,
                         SystemLocale: B,
                         UserLocale: t,
                     };
@@ -853,8 +864,8 @@
                     const B = e ? Object.assign({}, e) : {};
                     let a = u;
                     if (u) {
-                        const e = 16,
-                            A = 14,
+                        const e = r.length,
+                            A = o.length,
                             D = u.indexOf(r),
                             s = u.indexOf(o),
                             c = u.substring(D, s + A),
