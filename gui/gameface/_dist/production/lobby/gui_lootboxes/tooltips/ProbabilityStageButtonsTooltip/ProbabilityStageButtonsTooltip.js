@@ -1136,11 +1136,7 @@
                         $().createElement(
                             'div',
                             { className: 'App_base_c8' },
-                            $().createElement(
-                                'div',
-                                { className: 'App_title_84' },
-                                $().createElement(Ku, { text: Yu.title() }),
-                            ),
+                            $().createElement(Ku, { text: Yu.title(), className: 'App_title_84' }),
                             $().createElement(
                                 'div',
                                 { className: $u },

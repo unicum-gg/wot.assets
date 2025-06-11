@@ -761,7 +761,7 @@
                     };
                 window.ViewEnvHelper = v;
             },
-            944: (e, u, t) => {
+            59: (e, u, t) => {
                 'use strict';
                 var n = {};
                 t.r(n),
@@ -2261,6 +2261,7 @@
                         (e.TankmenXpFactor = 'tankmenXPFactor'),
                         (e.FreeXpFactor = 'freeXPFactor'),
                         (e.BattleToken = 'battleToken'),
+                        (e.HBVehicleUnlock = 'hbUnlockVehicles'),
                         (e.PremiumUniversal = 'premium_universal'),
                         (e.Gold = 'gold'),
                         (e.Credits = 'credits'),
@@ -2295,7 +2296,9 @@
                         (e.Branch = 'branch'),
                         (e.VehicleSelect = 'vehicleSelect'),
                         (e.StyleProgress = 'styleProgress'),
-                        (e.ParagonsUnlocks = 'paragonsUnlocks');
+                        (e.ParagonsUnlocks = 'paragonsUnlocks'),
+                        (e.HistoricalBattleDiscount25 = 'historical_battles_main_discount'),
+                        (e.LootBoxToken = 'lootBoxToken');
                 })(nu || (nu = {})),
                     (function (e) {
                         (e.Gold = 'gold'),
@@ -3300,6 +3303,6 @@
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             t.forEach(u.bind(null, 0)), (t.push = u.bind(null, t.push.bind(t)));
         })();
-    var __webpack_exports__ = __webpack_require__.O(void 0, [314], () => __webpack_require__(944));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [314], () => __webpack_require__(59));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

@@ -96,15 +96,28 @@
     top: 2rem;
 }
 
-.CoinItem_base__defence_1d {
-    color: #bdfbff;
+/* @mixin coinCountColor {
+    &__defence {
+        color: #bdfbff;
+    }
+
+    &__counterattack {
+        color: $CREAM;
+    }
+
+    &__offence {
+        color: $WHITE;
+    }
+} */
+
+.CoinItem_base__default_24 {
+    color: #ffffff;
 }
-.CoinItem_base__counterattack_de {
-    color: #ffdd99;
+
+.CoinItem_base__booster_07 {
+    color: #fd9;
 }
-.CoinItem_base__offence_f0 {
-    color: #f2f2f7;
-}
+
 .CoinItem_base_1a {
     height: 20rem;
     margin-top: 3rem;

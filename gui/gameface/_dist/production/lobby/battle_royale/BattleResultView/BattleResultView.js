@@ -5073,7 +5073,7 @@
                     Fa = pa[1];
                 let Da, Ba;
                 !(function (e) {
-                    (e.style = 'style'), (e.tankman = 'tankman');
+                    (e.style = 'style'), (e.tankman = 'tankman'), (e.vehicle = 'vehicle');
                 })(Da || (Da = {})),
                     (function (e) {
                         (e.Default = 'default'), (e.Marathon = 'marathon'), (e.Resource = 'resource');
@@ -5100,6 +5100,7 @@
                         (e.TankmenXpFactor = 'tankmenXPFactor'),
                         (e.FreeXpFactor = 'freeXPFactor'),
                         (e.BattleToken = 'battleToken'),
+                        (e.HBVehicleUnlock = 'hbUnlockVehicles'),
                         (e.PremiumUniversal = 'premium_universal'),
                         (e.Gold = 'gold'),
                         (e.Credits = 'credits'),
@@ -5134,7 +5135,9 @@
                         (e.Branch = 'branch'),
                         (e.VehicleSelect = 'vehicleSelect'),
                         (e.StyleProgress = 'styleProgress'),
-                        (e.ParagonsUnlocks = 'paragonsUnlocks');
+                        (e.ParagonsUnlocks = 'paragonsUnlocks'),
+                        (e.HistoricalBattleDiscount25 = 'historical_battles_main_discount'),
+                        (e.LootBoxToken = 'lootBoxToken');
                 })(va || (va = {})),
                     (function (e) {
                         (e.Gold = 'gold'),
@@ -5246,6 +5249,7 @@
                     va.TankmenXpFactor,
                     va.FreeXpFactor,
                     va.BattleToken,
+                    va.HBVehicleUnlock,
                     va.PremiumUniversal,
                     va.NaturalCover,
                     va.BpCoin,

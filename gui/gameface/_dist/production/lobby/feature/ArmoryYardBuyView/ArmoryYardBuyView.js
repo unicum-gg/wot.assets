@@ -1631,6 +1631,7 @@
                         'soundHover',
                         'soundClick',
                         'size',
+                        'classNames',
                         'onClick',
                         'onMouseEnter',
                         'onMouseLeave',
@@ -1669,14 +1670,15 @@
                         _ = void 0 === c ? 'play' : c,
                         E = e.size,
                         m = void 0 === E ? Ee.NORMAL : E,
-                        d = e.onClick,
-                        A = e.onMouseEnter,
-                        F = e.onMouseLeave,
-                        D = e.onMouseDown,
-                        g = e.onMouseUp,
-                        B = e.onFocus,
-                        p = e.onBlur,
-                        h = (function (e, u) {
+                        d = e.classNames,
+                        A = e.onClick,
+                        F = e.onMouseEnter,
+                        D = e.onMouseLeave,
+                        g = e.onMouseDown,
+                        B = e.onMouseUp,
+                        p = e.onFocus,
+                        h = e.onBlur,
+                        b = (function (e, u) {
                             if (null == e) return {};
                             var t,
                                 a,
@@ -1685,105 +1687,107 @@
                             for (a = 0; a < n.length; a++) (t = n[a]), u.indexOf(t) >= 0 || (r[t] = e[t]);
                             return r;
                         })(e, ce);
-                    const b = (0, a.useState)(!1),
-                        v = b[0],
-                        f = b[1],
-                        w = (0, a.useState)(!1),
-                        S = w[0],
-                        y = w[1],
-                        x = (0, a.useState)(o),
-                        T = x[0],
-                        R = x[1],
-                        M = (0, a.useRef)(null),
-                        L = (0, a.useCallback)(() => {
-                            M.current && (M.current.focus(), R(!0));
+                    const v = (0, a.useState)(!1),
+                        f = v[0],
+                        w = v[1],
+                        S = (0, a.useState)(!1),
+                        y = S[0],
+                        x = S[1],
+                        T = (0, a.useState)(o),
+                        R = T[0],
+                        M = T[1],
+                        L = (0, a.useRef)(null),
+                        P = (0, a.useCallback)(() => {
+                            L.current && (L.current.focus(), M(!0));
                         }, []),
-                        P = (0, a.useCallback)(
+                        k = (0, a.useCallback)(
                             (e) => {
-                                T && null !== M.current && !M.current.contains(e.target) && R(!1);
+                                R && null !== L.current && !L.current.contains(e.target) && M(!1);
                             },
-                            [T],
+                            [R],
                         );
                     (0, a.useEffect)(
                         () => (
-                            document.addEventListener('mousedown', P),
+                            document.addEventListener('mousedown', k),
                             () => {
-                                document.removeEventListener('mousedown', P);
+                                document.removeEventListener('mousedown', k);
                             }
                         ),
-                        [P],
+                        [k],
                     ),
                         (0, a.useEffect)(() => {
-                            R(o);
+                            M(o);
                         }, [o]);
-                    const k = (0, a.useCallback)(
+                    const O = (0, a.useCallback)(
                             (e) => {
-                                d && d(e);
+                                A && A(e);
                             },
-                            [d],
-                        ),
-                        O = (0, a.useCallback)(
-                            (e) => {
-                                f(!0), D && D(e), _ && N(_), o && L();
-                            },
-                            [o, D, L, _],
+                            [A],
                         ),
                         I = (0, a.useCallback)(
                             (e) => {
-                                f(!1), g && g(e);
+                                w(!0), g && g(e), _ && N(_), o && P();
                             },
-                            [g],
+                            [o, g, P, _],
                         ),
                         H = (0, a.useCallback)(
                             (e) => {
-                                A && A(e), l && N(l), y(!0);
-                            },
-                            [A, l],
-                        ),
-                        U = (0, a.useCallback)(
-                            (e) => {
-                                f(!1), y(!1), F && F(e);
-                            },
-                            [F],
-                        ),
-                        G = (0, a.useCallback)(
-                            (e) => {
-                                R(!0), B && B(e);
+                                w(!1), B && B(e);
                             },
                             [B],
                         ),
+                        U = (0, a.useCallback)(
+                            (e) => {
+                                F && F(e), l && N(l), x(!0);
+                            },
+                            [F, l],
+                        ),
+                        G = (0, a.useCallback)(
+                            (e) => {
+                                w(!1), x(!1), D && D(e);
+                            },
+                            [D],
+                        ),
                         W = (0, a.useCallback)(
                             (e) => {
-                                R(!1), p && p(e);
+                                M(!0), p && p(e);
                             },
                             [p],
                         ),
-                        $ = C()(
+                        $ = (0, a.useCallback)(
+                            (e) => {
+                                M(!1), h && h(e);
+                            },
+                            [h],
+                        ),
+                        X = C()(
                             le.base,
                             n && le.base__visibleLabel,
-                            v && le.base__mouseDown,
-                            S && le.base__hovered,
-                            T && le.base__focused,
+                            f && le.base__mouseDown,
+                            y && le.base__hovered,
+                            R && le.base__focused,
+                            null == d ? void 0 : d.base,
                         ),
-                        X = C()(le.icon, le[`icon__${m}`]);
+                        j = C()(le.icon, le[`icon__${m}`], null == d ? void 0 : d.icon),
+                        z = C()(le.label, null == d ? void 0 : d.label);
                     return r().createElement(
                         'div',
                         _e(
                             {
-                                ref: M,
-                                className: $,
-                                onClick: k,
-                                onMouseEnter: H,
-                                onMouseLeave: U,
-                                onMouseDown: O,
-                                onMouseUp: I,
-                                onFocus: G,
-                                onBlur: W,
+                                ref: L,
+                                className: X,
+                                onClick: O,
+                                onMouseEnter: U,
+                                onMouseLeave: G,
+                                onMouseDown: I,
+                                onMouseUp: H,
+                                onFocus: W,
+                                onBlur: $,
                             },
-                            h,
+                            b,
                         ),
-                        r().createElement('div', { className: X }),
-                        r().createElement('div', { className: le.label }, u),
+                        r().createElement('div', { className: j }),
+                        r().createElement('div', { className: z }, u),
                     );
                 });
                 class de extends r().PureComponent {
@@ -1816,6 +1820,7 @@
                             (e.TankmenXpFactor = 'tankmenXPFactor'),
                             (e.FreeXpFactor = 'freeXPFactor'),
                             (e.BattleToken = 'battleToken'),
+                            (e.HBVehicleUnlock = 'hbUnlockVehicles'),
                             (e.PremiumUniversal = 'premium_universal'),
                             (e.Gold = 'gold'),
                             (e.Credits = 'credits'),
@@ -1850,7 +1855,9 @@
                             (e.Branch = 'branch'),
                             (e.VehicleSelect = 'vehicleSelect'),
                             (e.StyleProgress = 'styleProgress'),
-                            (e.ParagonsUnlocks = 'paragonsUnlocks');
+                            (e.ParagonsUnlocks = 'paragonsUnlocks'),
+                            (e.HistoricalBattleDiscount25 = 'historical_battles_main_discount'),
+                            (e.LootBoxToken = 'lootBoxToken');
                     })(Ae || (Ae = {})),
                     (function (e) {
                         (e.Gold = 'gold'),
@@ -1963,6 +1970,7 @@
                         Ae.TankmenXpFactor,
                         Ae.FreeXpFactor,
                         Ae.BattleToken,
+                        Ae.HBVehicleUnlock,
                         Ae.PremiumUniversal,
                         Ae.NaturalCover,
                         Ae.BpCoin,
@@ -1993,7 +2001,8 @@
                             n = e.icon,
                             s = e.item,
                             o = e.dogTagType,
-                            i = ((e) => {
+                            i = e.iconSmall,
+                            l = ((e) => {
                                 switch (e) {
                                     case De.S600x450:
                                         return 'c_600x450';
@@ -2037,8 +2046,13 @@
                                             return `R.images.gui.maps.icons.quests.bonuses.${u}.${e.icon}`;
                                     }
                                 })(e, u);
+                            case 'hbUnlockVehicles':
+                            default:
+                                return `R.images.gui.maps.icons.quests.bonuses.${u}.${t}`;
                             case 'crewBooks':
                                 return `R.images.gui.maps.icons.crewBooks.books.${u}.${n}`;
+                            case 'entitlements':
+                                return `R.images.gui.maps.icons.quests.bonuses.${u}.${i}`;
                             case 'dogTagComponents':
                                 return ((e, u, t) => {
                                     const a = we[e];
@@ -2055,9 +2069,9 @@
                                     );
                                 })(o, u, n);
                             case 'dossier_badge':
-                                return `R.images.gui.maps.icons.quests.bonuses.badges.${i}.${n}`;
+                                return `R.images.gui.maps.icons.quests.bonuses.badges.${l}.${n}`;
                             case 'dossier_achievement':
-                                return `R.images.gui.maps.icons.achievement.${i}.${n}`;
+                                return `R.images.gui.maps.icons.achievement.${l}.${n}`;
                             case 'xp':
                             case 'xpFactor':
                                 return `R.images.gui.maps.icons.quests.bonuses.${u}.exp`;
@@ -2083,9 +2097,7 @@
                             case 'styleProgressToken':
                                 return `R.images.gui.maps.icons.quests.bonuses.${u}.style_3d`;
                             case 'collectionItem':
-                                return `R.images.gui.maps.icons.collectionItems.${i}.${n}`;
-                            default:
-                                return `R.images.gui.maps.icons.quests.bonuses.${u}.${t}`;
+                                return `R.images.gui.maps.icons.collectionItems.${l}.${n}`;
                         }
                     },
                     xe = (e, u, t) => {

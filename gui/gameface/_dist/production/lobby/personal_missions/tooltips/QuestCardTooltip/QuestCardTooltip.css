@@ -473,6 +473,248 @@
     position: relative;
 }
 
+.App_base_f8 {
+    width: 395rem;
+    height: 100%;
+    background: #0d0d0c;
+}
+
+.App_header_ba {
+    color: #fefeec;
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
+    display: flex;
+    align-items: center;
+    padding: 30rem 20rem;
+}
+
+.App_conditionTitle_72 {
+    color: #ffdd99;
+    font-size: 15rem;
+    font-weight: 700;
+    line-height: 1.15;
+    padding-left: 20rem;
+}
+
+.App_conditionTitle__honor_08 {
+    margin-top: 12rem;
+}
+
+.App_taskConditionWrapper_ff {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10rem 20rem 0;
+}
+
+.App_taskCondition_89 {
+    display: flex;
+}
+
+.App_taskIcon_05 {
+    width: 90rem;
+    height: 90rem;
+    margin-top: -20rem;
+    background: no-repeat center / contain;
+}
+
+.App_taskText_db {
+    color: #8c8c7e;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    width: 265rem;
+}
+
+.App_rewardRibbon_c3 {
+    width: 395rem;
+    height: 160rem;
+    background: url('R.images.gui.maps.icons.personalMissions3.tooltips.QuestCardTooltip.ribbon') no-repeat center /
+        cover;
+}
+
+.App_rewardRibbon__large_3b {
+    margin-bottom: 60rem;
+}
+
+.App_rewardRibbon__tight_13 {
+    padding: 0 60rem;
+}
+
+.App_rewardsTitle_96 {
+    color: #ffdd99;
+    font-size: 15rem;
+    font-weight: 700;
+    line-height: 1.15;
+    padding-left: 20rem;
+    padding-top: 16rem;
+}
+
+.App_rewards_7a {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: -12rem;
+    padding-top: 10rem;
+}
+
+.App_reward_f9 {
+    margin-left: 12rem;
+}
+
+.App_reward__secondRow_a0 {
+    margin-top: 8rem;
+}
+
+.App_content_dc {
+    display: flex;
+    justify-content: center;
+    padding-top: 20rem;
+}
+
+.App_footer_9a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding-top: 7rem;
+}
+
+.App_footer__pause_29 {
+    padding-top: 5rem;
+    padding-bottom: 20rem;
+}
+
+.App_questStatusWrapper_75 {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 10rem;
+}
+
+.App_questStatusWrapper__pause_07 {
+    padding-bottom: 0;
+}
+
+.App_statusIcon_fa {
+    width: 24rem;
+    height: 24rem;
+    background: no-repeat center / cover;
+}
+
+.App_statusIcon__done_e4,
+.App_statusIcon__doneBasic_46 {
+    width: 48rem;
+    height: 48rem;
+    margin: -14rem -12rem -12rem;
+}
+
+.App_statusIcon__previousProgressAll_65 {
+    width: 48rem;
+    height: 48rem;
+    margin: -15rem -12rem -12rem;
+}
+
+.App_statusIcon__previousProgress_16 {
+    width: 48rem;
+    height: 48rem;
+    margin: -15rem -12rem -12rem;
+}
+
+.App_statusIcon__noTech_51 {
+    width: 48rem;
+    height: 48rem;
+    margin: -15rem -12rem -12rem;
+}
+
+.App_statusIcon__doneHonor_f7 {
+    margin-top: -3rem;
+}
+
+.App_statusIcon__inProgress_73,
+.App_statusIcon__inProgressHonor_54 {
+    margin-top: -3rem;
+}
+
+.App_statusIcon__available_c8 {
+    display: none;
+}
+
+.App_questStatus_dc {
+    color: #ffdd99;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    margin-left: 8rem;
+}
+
+.App_questStatus__locked_c0 {
+    text-shadow:
+        0rem 0rem 15rem #e52,
+        0rem 0rem 8rem #ff2a00b2,
+        0rem 0rem 4rem #ff7f0040;
+}
+
+.App_questStatus__previousProgress_62 {
+    text-shadow:
+        0rem 0rem 15rem #e52,
+        0rem 0rem 8rem #ff2a00b2,
+        0rem 0rem 4rem #ff7f0040;
+}
+
+.App_questStatus__previousProgressAll_b4 {
+    text-shadow:
+        0rem 0rem 15rem #e52,
+        0rem 0rem 8rem #ff2a00b2,
+        0rem 0rem 4rem #ff7f0040;
+}
+
+.App_questStatus__inProgressHonor_10 {
+    margin-left: -24rem;
+}
+
+.App_questStatus__done_53,
+.App_questStatus__doneHonor_73,
+.App_questStatus__doneBasic_67 {
+    color: #7ab300;
+}
+
+.App_questStatus__pause_1e {
+    color: #c9c9b6;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+    margin-left: 0;
+}
+
+.App_questAdditionalCondition_36 {
+    color: #8c8c7e;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    margin-top: -10rem;
+    padding: 2rem 0 10rem;
+}
+
+.App_questAdditionalCondition__pause_a5 {
+    color: #8c8c7e;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+    margin-top: -5rem;
+    padding: 0;
+    opacity: 0.7;
+}
+
+.App_divider_e5 {
+    width: 365rem;
+    height: 9rem;
+    background: url('R.images.gui.maps.icons.personalMissions3.tooltips.QuestCardTooltip.devider') no-repeat center /
+        contain;
+}
+
 .QuestList_base_ec {
     display: flex;
     flex-direction: column;
@@ -546,201 +788,4 @@
     padding-bottom: 15rem;
     position: relative;
     left: 80rem;
-}
-
-.App_base_f8 {
-    width: 395rem;
-    height: 100%;
-    background: #0d0d0c;
-}
-
-.App_header_ba {
-    color: #fefeec;
-    font-size: 18rem;
-    font-weight: 700;
-    line-height: 1.1;
-    display: flex;
-    align-items: center;
-    padding: 30rem 20rem;
-}
-
-.App_conditionTitle_72 {
-    color: #ffdd99;
-    font-size: 15rem;
-    font-weight: 700;
-    line-height: 1.15;
-    padding-left: 20rem;
-}
-
-.App_conditionTitle__honor_08 {
-    margin-top: 12rem;
-}
-
-.App_taskConditionWrapper_ff {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 10rem 20rem 0;
-}
-
-.App_taskCondition_89 {
-    display: flex;
-}
-
-.App_taskIcon_05 {
-    width: 90rem;
-    height: 90rem;
-    margin-top: -20rem;
-    background: no-repeat center / contain;
-}
-
-.App_taskText_db {
-    color: #8c8c7e;
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
-    width: 265rem;
-}
-
-.App_rewardRibbon_c3 {
-    width: 395rem;
-    height: 160rem;
-    background: url('R.images.gui.maps.icons.personalMissions3.tooltips.QuestCardTooltip.ribbon') no-repeat center /
-        cover;
-}
-
-.App_rewardsTitle_96 {
-    color: #ffdd99;
-    font-size: 15rem;
-    font-weight: 700;
-    line-height: 1.15;
-    padding-left: 20rem;
-    padding-top: 16rem;
-}
-
-.App_rewards_7a {
-    display: flex;
-    justify-content: center;
-    margin-left: -12rem;
-    padding-top: 10rem;
-}
-
-.App_reward_f9 {
-    margin-left: 12rem;
-}
-
-.App_content_dc {
-    display: flex;
-    justify-content: center;
-    padding-top: 20rem;
-}
-
-.App_footer_9a {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    padding-top: 7rem;
-}
-
-.App_questStatusWrapper_75 {
-    display: flex;
-    justify-content: center;
-    padding-bottom: 10rem;
-}
-
-.App_statusIcon_fa {
-    width: 24rem;
-    height: 24rem;
-    background: no-repeat center / cover;
-}
-
-.App_statusIcon__done_e4,
-.App_statusIcon__doneBasic_46 {
-    width: 48rem;
-    height: 48rem;
-    margin: -14rem -12rem -12rem;
-}
-
-.App_statusIcon__previousProgressAll_65 {
-    width: 48rem;
-    height: 48rem;
-    margin: -15rem -12rem -12rem;
-}
-
-.App_statusIcon__previousProgress_16 {
-    width: 48rem;
-    height: 48rem;
-    margin: -15rem -12rem -12rem;
-}
-
-.App_statusIcon__noTech_51 {
-    width: 48rem;
-    height: 48rem;
-    margin: -15rem -12rem -12rem;
-}
-
-.App_statusIcon__doneHonor_f7 {
-    margin-top: -3rem;
-}
-
-.App_statusIcon__inProgress_73 {
-    margin-top: -3rem;
-}
-
-.App_statusIcon__available_c8 {
-    display: none;
-}
-
-.App_questStatus_dc {
-    color: #ffdd99;
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
-    margin-left: 8rem;
-}
-
-.App_questStatus__locked_c0 {
-    text-shadow:
-        0rem 0rem 15rem #e52,
-        0rem 0rem 8rem #ff2a00b2,
-        0rem 0rem 4rem #ff7f0040;
-}
-
-.App_questStatus__previousProgress_62 {
-    text-shadow:
-        0rem 0rem 15rem #e52,
-        0rem 0rem 8rem #ff2a00b2,
-        0rem 0rem 4rem #ff7f0040;
-}
-
-.App_questStatus__previousProgressAll_b4 {
-    text-shadow:
-        0rem 0rem 15rem #e52,
-        0rem 0rem 8rem #ff2a00b2,
-        0rem 0rem 4rem #ff7f0040;
-}
-
-.App_questStatus__done_53,
-.App_questStatus__doneHonor_73,
-.App_questStatus__doneBasic_67 {
-    color: #7ab300;
-}
-
-.App_questAdditionalCondition_36 {
-    color: #8c8c7e;
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
-    margin-top: -10rem;
-    padding: 2rem 0 10rem;
-}
-
-.App_divider_e5 {
-    width: 365rem;
-    height: 9rem;
-    background: url('R.images.gui.maps.icons.personalMissions3.tooltips.QuestCardTooltip.devider') no-repeat center /
-        contain;
 }

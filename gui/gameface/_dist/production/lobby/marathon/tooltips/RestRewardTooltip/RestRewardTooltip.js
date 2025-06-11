@@ -33,13 +33,13 @@
                         addPreloadTexture: () => P,
                         children: () => o,
                         displayStatus: () => d,
-                        displayStatusIs: () => H,
+                        displayStatusIs: () => q,
                         events: () => C,
                         extraSize: () => j,
                         forceTriggerMouseMove: () => V,
                         freezeTextureBeforeResize: () => N,
                         getBrowserTexturePath: () => R,
-                        getDisplayStatus: () => q,
+                        getDisplayStatus: () => H,
                         getScale: () => k,
                         getSize: () => S,
                         getViewGlobalPosition: () => M,
@@ -159,8 +159,8 @@
                 const p = 2,
                     w = 16,
                     v = 32,
-                    T = 64,
-                    h = (u, e) => {
+                    h = 64,
+                    T = (u, e) => {
                         const t = 'GFViewEventProxy';
                         if (void 0 !== e) {
                             const r = e.args,
@@ -198,13 +198,13 @@
                     },
                     b = {
                         close(u) {
-                            h('popover' === u ? p : v);
+                            T('popover' === u ? p : v);
                         },
                         minimize() {
-                            h(T);
+                            T(h);
                         },
                         move(u) {
-                            h(w, { isMouseEvent: !0, on: u });
+                            T(w, { isMouseEvent: !0, on: u });
                         },
                     };
                 function P(u) {
@@ -259,10 +259,10 @@
                 function V() {
                     viewEnv.forceTriggerMouseMove();
                 }
-                function q() {
+                function H() {
                     return viewEnv.getShowingStatus();
                 }
-                const H = Object.keys(d).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === d[e]), u), {}),
+                const q = Object.keys(d).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === d[e]), u), {}),
                     j = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
@@ -616,8 +616,8 @@
                         u.keyCode === D.n.ESCAPE && e();
                     };
                 var v = t(572);
-                const T = r.instance,
-                    h = {
+                const h = r.instance,
+                    T = {
                         DataTracker: o.Z,
                         ViewModel: v.Z,
                         ViewEventType: a,
@@ -695,13 +695,13 @@
                                 }
                             return t;
                         },
-                        ClickOutsideManager: T,
+                        ClickOutsideManager: h,
                         SystemLocale: i,
                         UserLocale: E,
                     };
-                window.ViewEnvHelper = h;
+                window.ViewEnvHelper = T;
             },
-            187: (u, e, t) => {
+            709: (u, e, t) => {
                 var n = t(179),
                     r = t.n(n),
                     o = t(493),
@@ -729,6 +729,7 @@
                         (u.TankmenXpFactor = 'tankmenXPFactor'),
                         (u.FreeXpFactor = 'freeXPFactor'),
                         (u.BattleToken = 'battleToken'),
+                        (u.HBVehicleUnlock = 'hbUnlockVehicles'),
                         (u.PremiumUniversal = 'premium_universal'),
                         (u.Gold = 'gold'),
                         (u.Credits = 'credits'),
@@ -763,7 +764,9 @@
                         (u.Branch = 'branch'),
                         (u.VehicleSelect = 'vehicleSelect'),
                         (u.StyleProgress = 'styleProgress'),
-                        (u.ParagonsUnlocks = 'paragonsUnlocks');
+                        (u.ParagonsUnlocks = 'paragonsUnlocks'),
+                        (u.HistoricalBattleDiscount25 = 'historical_battles_main_discount'),
+                        (u.LootBoxToken = 'lootBoxToken');
                 })(s || (s = {})),
                     (function (u) {
                         (u.Gold = 'gold'),
@@ -887,6 +890,7 @@
                         s.TankmenXpFactor,
                         s.FreeXpFactor,
                         s.BattleToken,
+                        s.HBVehicleUnlock,
                         s.PremiumUniversal,
                         s.NaturalCover,
                         s.BpCoin,
@@ -922,7 +926,7 @@
                             { caller: t, stack: e, resId: n }
                         );
                     },
-                    T = [
+                    h = [
                         'children',
                         'contentId',
                         'args',
@@ -938,7 +942,7 @@
                         'onShow',
                         'onHide',
                     ];
-                function h(u) {
+                function T(u) {
                     return Object.entries(u || {}).map(([u, e]) => {
                         const t = { __Type: 'GFValueProxy', name: u };
                         switch (typeof e) {
@@ -998,12 +1002,12 @@
                                     o = Object.keys(u);
                                 for (n = 0; n < o.length; n++) (t = o[n]), e.indexOf(t) >= 0 || (r[t] = u[t]);
                                 return r;
-                            })(u, T);
+                            })(u, h);
                         const P = (0, n.useRef)({ timeoutId: 0, isVisible: !1, prevTarget: null, hideTimerId: null }),
                             g = (0, n.useMemo)(() => C || v().resId, [C]),
                             R = (0, n.useCallback)(() => {
                                 (P.current.isVisible && P.current.timeoutId) ||
-                                    (b(t, _, { isMouseEvent: !0, on: !0, arguments: h(r) }, g),
+                                    (b(t, _, { isMouseEvent: !0, on: !0, arguments: T(r) }, g),
                                     m && m(),
                                     (P.current.isVisible = !0));
                             }, [t, _, r, g, m]),
@@ -1384,9 +1388,9 @@
                         decorator: 'TooltipDecorator_decorator_3d',
                     },
                     V = ['children', 'className', 'theme'];
-                function q() {
+                function H() {
                     return (
-                        (q =
+                        (H =
                             Object.assign ||
                             function (u) {
                                 for (var e = 1; e < arguments.length; e++) {
@@ -1395,10 +1399,10 @@
                                 }
                                 return u;
                             }),
-                        q.apply(this, arguments)
+                        H.apply(this, arguments)
                     );
                 }
-                const H = r().forwardRef(function (u, e) {
+                const q = r().forwardRef(function (u, e) {
                     let t = u.children,
                         o = u.className,
                         i = u.theme,
@@ -1435,7 +1439,7 @@
                         (0, n.useEffect)(l, []),
                         r().createElement(
                             'div',
-                            q({}, s, {
+                            H({}, s, {
                                 className: a()(Y.base, Y[`base__theme-${E}`], o),
                                 ref: function (u) {
                                     (F.current = u), 'function' == typeof e ? e(u) : e && (e.current = u);
@@ -1582,7 +1586,7 @@
                         const u = eu('model').rewards,
                             e = a()(Eu, au);
                         return r().createElement(
-                            H,
+                            q,
                             null,
                             r().createElement(
                                 'div',
@@ -1703,6 +1707,6 @@
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             t.forEach(e.bind(null, 0)), (t.push = e.bind(null, t.push.bind(t)));
         })();
-    var __webpack_exports__ = __webpack_require__.O(void 0, [639], () => __webpack_require__(187));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [639], () => __webpack_require__(709));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

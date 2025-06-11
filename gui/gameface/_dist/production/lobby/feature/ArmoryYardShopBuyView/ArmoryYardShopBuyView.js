@@ -1368,6 +1368,7 @@
                         (e.TankmenXpFactor = 'tankmenXPFactor'),
                         (e.FreeXpFactor = 'freeXPFactor'),
                         (e.BattleToken = 'battleToken'),
+                        (e.HBVehicleUnlock = 'hbUnlockVehicles'),
                         (e.PremiumUniversal = 'premium_universal'),
                         (e.Gold = 'gold'),
                         (e.Credits = 'credits'),
@@ -1402,7 +1403,9 @@
                         (e.Branch = 'branch'),
                         (e.VehicleSelect = 'vehicleSelect'),
                         (e.StyleProgress = 'styleProgress'),
-                        (e.ParagonsUnlocks = 'paragonsUnlocks');
+                        (e.ParagonsUnlocks = 'paragonsUnlocks'),
+                        (e.HistoricalBattleDiscount25 = 'historical_battles_main_discount'),
+                        (e.LootBoxToken = 'lootBoxToken');
                 })(q || (q = {})),
                     (function (e) {
                         (e.Gold = 'gold'),
@@ -1524,6 +1527,7 @@
                         q.TankmenXpFactor,
                         q.FreeXpFactor,
                         q.BattleToken,
+                        q.HBVehicleUnlock,
                         q.PremiumUniversal,
                         q.NaturalCover,
                         q.BpCoin,
@@ -1572,7 +1576,8 @@
                                       n = e.icon,
                                       o = e.item,
                                       i = e.dogTagType,
-                                      s = ((e) => {
+                                      s = e.iconSmall,
+                                      l = ((e) => {
                                           switch (e) {
                                               case z.S600x450:
                                                   return 'c_600x450';
@@ -1616,8 +1621,13 @@
                                                       return `R.images.gui.maps.icons.quests.bonuses.${u}.${e.icon}`;
                                               }
                                           })(e, u);
+                                      case 'hbUnlockVehicles':
+                                      default:
+                                          return `R.images.gui.maps.icons.quests.bonuses.${u}.${t}`;
                                       case 'crewBooks':
                                           return `R.images.gui.maps.icons.crewBooks.books.${u}.${n}`;
+                                      case 'entitlements':
+                                          return `R.images.gui.maps.icons.quests.bonuses.${u}.${s}`;
                                       case 'dogTagComponents':
                                           return ((e, u, t) => {
                                               const r = ne[e];
@@ -1634,9 +1644,9 @@
                                               );
                                           })(i, u, n);
                                       case 'dossier_badge':
-                                          return `R.images.gui.maps.icons.quests.bonuses.badges.${s}.${n}`;
+                                          return `R.images.gui.maps.icons.quests.bonuses.badges.${l}.${n}`;
                                       case 'dossier_achievement':
-                                          return `R.images.gui.maps.icons.achievement.${s}.${n}`;
+                                          return `R.images.gui.maps.icons.achievement.${l}.${n}`;
                                       case 'xp':
                                       case 'xpFactor':
                                           return `R.images.gui.maps.icons.quests.bonuses.${u}.exp`;
@@ -1662,9 +1672,7 @@
                                       case 'styleProgressToken':
                                           return `R.images.gui.maps.icons.quests.bonuses.${u}.style_3d`;
                                       case 'collectionItem':
-                                          return `R.images.gui.maps.icons.collectionItems.${s}.${n}`;
-                                      default:
-                                          return `R.images.gui.maps.icons.quests.bonuses.${u}.${t}`;
+                                          return `R.images.gui.maps.icons.collectionItems.${l}.${n}`;
                                   }
                               })(e),
                     ce = {
@@ -3952,6 +3960,7 @@
                         'soundHover',
                         'soundClick',
                         'size',
+                        'classNames',
                         'onClick',
                         'onMouseEnter',
                         'onMouseLeave',
@@ -3990,14 +3999,15 @@
                             E = void 0 === c ? 'play' : c,
                             _ = e.size,
                             m = void 0 === _ ? dt.NORMAL : _,
-                            A = e.onClick,
-                            d = e.onMouseEnter,
-                            F = e.onMouseLeave,
-                            D = e.onMouseDown,
-                            B = e.onMouseUp,
-                            g = e.onFocus,
-                            h = e.onBlur,
-                            p = (function (e, u) {
+                            A = e.classNames,
+                            d = e.onClick,
+                            F = e.onMouseEnter,
+                            D = e.onMouseLeave,
+                            B = e.onMouseDown,
+                            g = e.onMouseUp,
+                            h = e.onFocus,
+                            p = e.onBlur,
+                            v = (function (e, u) {
                                 if (null == e) return {};
                                 var t,
                                     r,
@@ -4006,105 +4016,107 @@
                                 for (r = 0; r < n.length; r++) (t = n[r]), u.indexOf(t) >= 0 || (a[t] = e[t]);
                                 return a;
                             })(e, mt);
-                        const v = (0, r.useState)(!1),
-                            b = v[0],
-                            f = v[1],
-                            w = (0, r.useState)(!1),
-                            S = w[0],
-                            R = w[1],
-                            T = (0, r.useState)(i),
-                            x = T[0],
-                            y = T[1],
-                            P = (0, r.useRef)(null),
-                            M = (0, r.useCallback)(() => {
-                                P.current && (P.current.focus(), y(!0));
+                        const b = (0, r.useState)(!1),
+                            f = b[0],
+                            w = b[1],
+                            S = (0, r.useState)(!1),
+                            R = S[0],
+                            T = S[1],
+                            x = (0, r.useState)(i),
+                            y = x[0],
+                            P = x[1],
+                            M = (0, r.useRef)(null),
+                            L = (0, r.useCallback)(() => {
+                                M.current && (M.current.focus(), P(!0));
                             }, []),
-                            L = (0, r.useCallback)(
+                            N = (0, r.useCallback)(
                                 (e) => {
-                                    x && null !== P.current && !P.current.contains(e.target) && y(!1);
+                                    y && null !== M.current && !M.current.contains(e.target) && P(!1);
                                 },
-                                [x],
+                                [y],
                             );
                         (0, r.useEffect)(
                             () => (
-                                document.addEventListener('mousedown', L),
+                                document.addEventListener('mousedown', N),
                                 () => {
-                                    document.removeEventListener('mousedown', L);
+                                    document.removeEventListener('mousedown', N);
                                 }
                             ),
-                            [L],
+                            [N],
                         ),
                             (0, r.useEffect)(() => {
-                                y(i);
+                                P(i);
                             }, [i]);
-                        const N = (0, r.useCallback)(
+                        const O = (0, r.useCallback)(
                                 (e) => {
-                                    A && A(e);
+                                    d && d(e);
                                 },
-                                [A],
-                            ),
-                            O = (0, r.useCallback)(
-                                (e) => {
-                                    f(!0), D && D(e), E && k(E), i && M();
-                                },
-                                [i, D, M, E],
+                                [d],
                             ),
                             I = (0, r.useCallback)(
                                 (e) => {
-                                    f(!1), B && B(e);
+                                    w(!0), B && B(e), E && k(E), i && L();
                                 },
-                                [B],
+                                [i, B, L, E],
                             ),
                             U = (0, r.useCallback)(
                                 (e) => {
-                                    d && d(e), l && k(l), R(!0);
-                                },
-                                [d, l],
-                            ),
-                            H = (0, r.useCallback)(
-                                (e) => {
-                                    f(!1), R(!1), F && F(e);
-                                },
-                                [F],
-                            ),
-                            G = (0, r.useCallback)(
-                                (e) => {
-                                    y(!0), g && g(e);
+                                    w(!1), g && g(e);
                                 },
                                 [g],
                             ),
+                            H = (0, r.useCallback)(
+                                (e) => {
+                                    F && F(e), l && k(l), T(!0);
+                                },
+                                [F, l],
+                            ),
+                            G = (0, r.useCallback)(
+                                (e) => {
+                                    w(!1), T(!1), D && D(e);
+                                },
+                                [D],
+                            ),
                             W = (0, r.useCallback)(
                                 (e) => {
-                                    y(!1), h && h(e);
+                                    P(!0), h && h(e);
                                 },
                                 [h],
                             ),
-                            $ = C()(
+                            $ = (0, r.useCallback)(
+                                (e) => {
+                                    P(!1), p && p(e);
+                                },
+                                [p],
+                            ),
+                            V = C()(
                                 _t.base,
                                 n && _t.base__visibleLabel,
-                                b && _t.base__mouseDown,
-                                S && _t.base__hovered,
-                                x && _t.base__focused,
+                                f && _t.base__mouseDown,
+                                R && _t.base__hovered,
+                                y && _t.base__focused,
+                                null == A ? void 0 : A.base,
                             ),
-                            V = C()(_t.icon, _t[`icon__${m}`]);
+                            X = C()(_t.icon, _t[`icon__${m}`], null == A ? void 0 : A.icon),
+                            j = C()(_t.label, null == A ? void 0 : A.label);
                         return a().createElement(
                             'div',
                             At(
                                 {
-                                    ref: P,
-                                    className: $,
-                                    onClick: N,
-                                    onMouseEnter: U,
-                                    onMouseLeave: H,
-                                    onMouseDown: O,
-                                    onMouseUp: I,
-                                    onFocus: G,
-                                    onBlur: W,
+                                    ref: M,
+                                    className: V,
+                                    onClick: O,
+                                    onMouseEnter: H,
+                                    onMouseLeave: G,
+                                    onMouseDown: I,
+                                    onMouseUp: U,
+                                    onFocus: W,
+                                    onBlur: $,
                                 },
-                                p,
+                                v,
                             ),
-                            a().createElement('div', { className: V }),
-                            a().createElement('div', { className: _t.label }, u),
+                            a().createElement('div', { className: X }),
+                            a().createElement('div', { className: j }, u),
                         );
                     }),
                     Dt = R.strings.armory_shop.shopBuyView.vehicleImage,

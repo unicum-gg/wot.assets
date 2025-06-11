@@ -46,7 +46,7 @@
                 t.r(F),
                     t.d(F, {
                         addModelObserver: () => L,
-                        addPreloadTexture: () => p,
+                        addPreloadTexture: () => f,
                         children: () => r,
                         displayStatus: () => c,
                         displayStatusIs: () => j,
@@ -64,7 +64,7 @@
                         pxToRem: () => P,
                         remToPx: () => k,
                         resize: () => O,
-                        sendEvent: () => f,
+                        sendEvent: () => p,
                         setAnimateWindow: () => N,
                         setEventHandled: () => W,
                         setInputPaddingsRem: () => x,
@@ -212,7 +212,7 @@
                         return viewEnv.handleViewEvent({ __Type: t, type: u });
                         var E;
                     },
-                    f = {
+                    p = {
                         close(u) {
                             T('popover' === u ? h : w);
                         },
@@ -223,7 +223,7 @@
                             T(g, { isMouseEvent: !0, on: u });
                         },
                     };
-                function p(u) {
+                function f(u) {
                     viewEnv.addPreloadTexture(u);
                 }
                 function x(u) {
@@ -632,7 +632,7 @@
                     };
                 var v = t(572);
                 const T = A.instance,
-                    f = {
+                    p = {
                         DataTracker: r.Z,
                         ViewModel: v.Z,
                         ViewEventType: i,
@@ -714,7 +714,7 @@
                         SystemLocale: F,
                         UserLocale: a,
                     };
-                window.ViewEnvHelper = f;
+                window.ViewEnvHelper = p;
             },
             912: (u, e, t) => {
                 'use strict';
@@ -905,7 +905,7 @@
                     h = t.n(_),
                     g = t(926),
                     w = t.n(g);
-                let v, T, f;
+                let v, T, p;
                 !(function (u) {
                     (u[(u.ExtraSmall = a.extraSmall.width)] = 'ExtraSmall'),
                         (u[(u.Small = a.small.width)] = 'Small'),
@@ -926,8 +926,8 @@
                             (u[(u.Medium = a.medium.height)] = 'Medium'),
                             (u[(u.Large = a.large.height)] = 'Large'),
                             (u[(u.ExtraLarge = a.extraLarge.height)] = 'ExtraLarge');
-                    })(f || (f = {}));
-                const p = () => {
+                    })(p || (p = {}));
+                const f = () => {
                         const u = (0, E.useContext)(l),
                             e = u.width,
                             t = u.height,
@@ -966,17 +966,17 @@
                             F = ((u) => {
                                 switch (!0) {
                                     case u.extraLargeHeight:
-                                        return f.ExtraLarge;
+                                        return p.ExtraLarge;
                                     case u.largeHeight:
-                                        return f.Large;
+                                        return p.Large;
                                     case u.mediumHeight:
-                                        return f.Medium;
+                                        return p.Medium;
                                     case u.smallHeight:
-                                        return f.Small;
+                                        return p.Small;
                                     case u.extraSmallHeight:
-                                        return f.ExtraSmall;
+                                        return p.ExtraSmall;
                                     default:
-                                        return console.error('Unreachable media context resolution'), f.ExtraSmall;
+                                        return console.error('Unreachable media context resolution'), p.ExtraSmall;
                                 }
                             })(u);
                         return { mediaSize: A, mediaWidth: r, mediaHeight: F, remScreenWidth: e, remScreenHeight: t };
@@ -1004,11 +1004,11 @@
                         [T.ExtraLarge]: `${w().SMALL_WIDTH} ${w().MEDIUM_WIDTH} ${w().LARGE_WIDTH} ${w().EXTRA_LARGE_WIDTH}`,
                     },
                     S = {
-                        [f.ExtraSmall]: '',
-                        [f.Small]: w().SMALL_HEIGHT,
-                        [f.Medium]: `${w().SMALL_HEIGHT} ${w().MEDIUM_HEIGHT}`,
-                        [f.Large]: `${w().SMALL_HEIGHT} ${w().MEDIUM_HEIGHT} ${w().LARGE_HEIGHT}`,
-                        [f.ExtraLarge]: `${w().SMALL_HEIGHT} ${w().MEDIUM_HEIGHT} ${w().LARGE_HEIGHT} ${w().EXTRA_LARGE_HEIGHT}`,
+                        [p.ExtraSmall]: '',
+                        [p.Small]: w().SMALL_HEIGHT,
+                        [p.Medium]: `${w().SMALL_HEIGHT} ${w().MEDIUM_HEIGHT}`,
+                        [p.Large]: `${w().SMALL_HEIGHT} ${w().MEDIUM_HEIGHT} ${w().LARGE_HEIGHT}`,
+                        [p.ExtraLarge]: `${w().SMALL_HEIGHT} ${w().MEDIUM_HEIGHT} ${w().LARGE_HEIGHT} ${w().EXTRA_LARGE_HEIGHT}`,
                     },
                     M = {
                         [v.ExtraSmall]: '',
@@ -1029,7 +1029,7 @@
                                 for (E = 0; E < r.length; E++) (t = r[E]), e.indexOf(t) >= 0 || (A[t] = u[t]);
                                 return A;
                             })(u, x);
-                        const r = p(),
+                        const r = f(),
                             F = r.mediaWidth,
                             a = r.mediaHeight,
                             i = r.mediaSize;
@@ -1484,12 +1484,13 @@
                         }
                     },
                     Tu = R.strings.clans.banner,
-                    fu = ({ state: u, startTimestamp: e, endTimestamp: t }) => {
+                    pu = ({ state: u, sprintType: e, startTimestamp: t, endTimestamp: E }) => {
+                        if (e === xu) return A().createElement(hu, { text: Tu.seasonDate.seasonLasts(), timestamp: E });
                         switch (u) {
                             case K.NotStarted:
-                                return A().createElement(hu, { text: Tu.seasonDate.seasonNotStarted(), timestamp: e });
+                                return A().createElement(hu, { text: Tu.seasonDate.seasonNotStarted(), timestamp: t });
                             case K.Started:
-                                return A().createElement(hu, { text: Tu.seasonDate.seasonLasts(), timestamp: t });
+                                return A().createElement(hu, { text: Tu.seasonDate.seasonLasts(), timestamp: E });
                             case K.PrimeTimeNotChosen:
                                 return A().createElement(V, { text: Tu.chooseTime() });
                             case K.PrimeTimeNow:
@@ -1497,7 +1498,7 @@
                             case K.PrimeTimeTomorrow:
                                 return A().createElement(V, {
                                     text: Tu.primeTime(),
-                                    binding: { start: vu(e, gu.SHORT_TIME, !0), end: vu(t, gu.SHORT_TIME, !0) },
+                                    binding: { start: vu(t, gu.SHORT_TIME, !0), end: vu(E, gu.SHORT_TIME, !0) },
                                 });
                             default:
                                 return (
@@ -1506,14 +1507,15 @@
                                 );
                         }
                     },
-                    pu = R.strings.clans.banner,
-                    xu = {
+                    fu = R.strings.clans.banner,
+                    xu = 'GM',
+                    bu = {
                         highlighted: [K.NotStarted, K.PrimeTimeNow, K.PrimeTimeNotChosen, K.Started],
                         withInfo: [K.Ended, K.PrimeTimeToday, K.PrimeTimeTomorrow],
                         withoutDate: [K.Ended, K.DataError],
                         disabled: [K.Ended, K.PrimeTimeToday, K.PrimeTimeTomorrow],
                     },
-                    bu = (0, Z.Pi)(() => {
+                    Lu = (0, Z.Pi)(() => {
                         const u = Au(),
                             e = u.controls,
                             t = u.model.root.get(),
@@ -1526,7 +1528,7 @@
                         return A().createElement(
                             'div',
                             {
-                                className: h()(ru, xu.disabled.includes(E) && au, r && iu),
+                                className: h()(ru, bu.disabled.includes(E) && au, r && iu),
                                 onClick: () => {
                                     Y(R.sounds.yes()), e.open();
                                 },
@@ -1535,13 +1537,13 @@
                                 },
                             },
                             A().createElement('div', { className: Fu }),
-                            xu.disabled.includes(E) && A().createElement('div', { className: ou }),
+                            bu.disabled.includes(E) && A().createElement('div', { className: ou }),
                             A().createElement('div', { className: nu }),
-                            xu.highlighted.includes(E) && A().createElement('div', { className: Du }),
+                            bu.highlighted.includes(E) && A().createElement('div', { className: Du }),
                             A().createElement(
                                 'div',
                                 { className: Bu },
-                                A().createElement('div', { className: su }, pu.title()),
+                                A().createElement('div', { className: su }, fu.title()),
                                 A().createElement(
                                     'div',
                                     { className: lu },
@@ -1549,14 +1551,15 @@
                                         text:
                                             'initial' === i
                                                 ? ''
-                                                : ((D = pu.type.$dyn(i.toLowerCase())),
+                                                : ((D = fu.type.$dyn(i.toLowerCase())),
                                                   (o = { stage: n }),
                                                   D.replace(/\{\w+\}/g, (u) => String(o[u.slice(1, -1)]))),
                                     }),
                                 ),
-                                xu.withInfo.includes(E) &&
+                                bu.withInfo.includes(E) &&
+                                    i !== xu &&
                                     A().createElement('div', { className: lu }, A().createElement(_u, { state: E })),
-                                !xu.withoutDate.includes(E) &&
+                                !bu.withoutDate.includes(E) &&
                                     A().createElement(
                                         'div',
                                         { className: Cu },
@@ -1564,7 +1567,12 @@
                                         A().createElement(
                                             'div',
                                             { className: cu },
-                                            A().createElement(fu, { state: E, startTimestamp: F, endTimestamp: a }),
+                                            A().createElement(pu, {
+                                                state: E,
+                                                sprintType: i,
+                                                startTimestamp: F,
+                                                endTimestamp: a,
+                                            }),
                                         ),
                                     ),
                             ),
@@ -1573,7 +1581,7 @@
                     });
                 engine.whenReady.then(() => {
                     k().render(
-                        A().createElement(Eu, null, A().createElement(H, null, A().createElement(bu, null))),
+                        A().createElement(Eu, null, A().createElement(H, null, A().createElement(Lu, null))),
                         document.getElementById('root'),
                     );
                 });

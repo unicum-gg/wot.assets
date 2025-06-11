@@ -3001,6 +3001,7 @@
                             (e.TankmenXpFactor = 'tankmenXPFactor'),
                             (e.FreeXpFactor = 'freeXPFactor'),
                             (e.BattleToken = 'battleToken'),
+                            (e.HBVehicleUnlock = 'hbUnlockVehicles'),
                             (e.PremiumUniversal = 'premium_universal'),
                             (e.Gold = 'gold'),
                             (e.Credits = 'credits'),
@@ -3035,7 +3036,9 @@
                             (e.Branch = 'branch'),
                             (e.VehicleSelect = 'vehicleSelect'),
                             (e.StyleProgress = 'styleProgress'),
-                            (e.ParagonsUnlocks = 'paragonsUnlocks');
+                            (e.ParagonsUnlocks = 'paragonsUnlocks'),
+                            (e.HistoricalBattleDiscount25 = 'historical_battles_main_discount'),
+                            (e.LootBoxToken = 'lootBoxToken');
                     })($u || ($u = {})),
                     (function (e) {
                         (e.Gold = 'gold'),
@@ -3147,6 +3150,7 @@
                     $u.TankmenXpFactor,
                     $u.FreeXpFactor,
                     $u.BattleToken,
+                    $u.HBVehicleUnlock,
                     $u.PremiumUniversal,
                     $u.NaturalCover,
                     $u.BpCoin,

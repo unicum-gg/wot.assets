@@ -915,15 +915,32 @@
     flex-wrap: wrap;
 }
 
+/* @mixin coinCountColor {
+    &__defence {
+        color: #bdfbff;
+    }
+
+    &__counterattack {
+        color: $CREAM;
+    }
+
+    &__offence {
+        color: $WHITE;
+    }
+} */
+
 .DropDownRenderer_base__defence_60 {
     color: #bdfbff;
 }
+
 .DropDownRenderer_base__counterattack_31 {
     color: #ff5959;
 }
+
 .DropDownRenderer_base__offence_62 {
     color: #ceb0ff;
 }
+
 .DropDownRenderer_base_8a {
     color: #8c8c7e;
     font-size: 14rem;
@@ -936,13 +953,16 @@
     position: relative;
     cursor: pointer;
 }
+
 .DropDownRenderer_base_8a:hover,
 .DropDownRenderer_base__selected_a8 {
     background-color: #2e2e22;
 }
+
 .DropDownRenderer_base__selected_a8:hover {
     background-color: #414132;
 }
+
 .DropDownRenderer_base__disabled_90 {
     background: url('R.images.historical_battles.gui.maps.icons.common.disabledDropdownBG') no-repeat center / 100%;
     pointer-events: none;
@@ -965,27 +985,40 @@
     background: no-repeat 0 0 / contain;
 }
 
-.DropDownRenderer_count__defence_8b {
-    color: #bdfbff;
+.DropDownRenderer_count__default_29 {
+    color: #ffffff;
 }
 
-.DropDownRenderer_count__counterattack_7c {
-    color: #ffdd99;
+.DropDownRenderer_count__booster_83 {
+    color: #fd9;
 }
 
-.DropDownRenderer_count__offence_26 {
-    color: #f2f2f7;
-}
+/* @mixin coinCountColor {
+    &__defence {
+        color: #bdfbff;
+    }
+
+    &__counterattack {
+        color: $CREAM;
+    }
+
+    &__offence {
+        color: $WHITE;
+    }
+} */
 
 .DropDownControlRenderer_base__defence_4b {
     color: #bdfbff;
 }
+
 .DropDownControlRenderer_base__counterattack_79 {
     color: #ff5959;
 }
+
 .DropDownControlRenderer_base__offence_8b {
     color: #ceb0ff;
 }
+
 .DropDownControlRenderer_base_b5 {
     color: #8c8c7e;
     font-size: 14rem;
@@ -995,6 +1028,7 @@
     width: 170rem;
     padding: 4rem 10rem 3rem 0;
 }
+
 .DropDownControlRenderer_base__selected_3c {
     background-color: #2e2e22;
 }
@@ -1020,6 +1054,20 @@
     flex-direction: row;
 }
 
+/* @mixin coinCountColor {
+    &__defence {
+        color: #bdfbff;
+    }
+
+    &__counterattack {
+        color: $CREAM;
+    }
+
+    &__offence {
+        color: $WHITE;
+    }
+} */
+
 .ExchangeSide_base_55 {
     display: flex;
     flex-direction: row;
@@ -1043,16 +1091,12 @@
     background: no-repeat 0 0 / contain;
 }
 
-.ExchangeSide_coinText__defence_39 {
-    color: #bdfbff;
+.ExchangeSide_coinText__default_93 {
+    color: #ffffff;
 }
 
-.ExchangeSide_coinText__counterattack_34 {
-    color: #ffdd99;
-}
-
-.ExchangeSide_coinText__offence_27 {
-    color: #f2f2f7;
+.ExchangeSide_coinText__booster_d3 {
+    color: #fd9;
 }
 
 .ExchangeSide_coinText__disabled_9e {

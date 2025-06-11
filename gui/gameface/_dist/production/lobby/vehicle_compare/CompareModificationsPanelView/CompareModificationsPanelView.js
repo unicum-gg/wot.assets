@@ -721,7 +721,7 @@
                     };
                 window.ViewEnvHelper = p;
             },
-            751: (u, e, t) => {
+            564: (u, e, t) => {
                 'use strict';
                 var r = t(179),
                     i = t.n(r);
@@ -1094,7 +1094,21 @@
                 })(N || (N = {}));
                 var W = t(364);
                 Date.now();
-                const U = (u = 1) => {
+                function U(u) {
+                    engine.call('PlaySound', u);
+                }
+                const G = {
+                        playHighlight() {
+                            U('highlight');
+                        },
+                        playClick() {
+                            U('play');
+                        },
+                        playYes() {
+                            U('yes1');
+                        },
+                    },
+                    V = (u = 1) => {
                         const e = new Error().stack;
                         let t,
                             r = R.invalid('resId');
@@ -1108,22 +1122,22 @@
                             { caller: t, stack: e, resId: r }
                         );
                     },
-                    G = (u, e) => u.split('.').reduce((u, e) => u && u[e], e),
-                    V = (u) => u && 'ArrayItem' === u.__proto__.constructor.name,
-                    $ = (u, e) => (u.length > 0 ? `${u}.${e}` : e),
-                    j = (u) =>
+                    $ = (u, e) => u.split('.').reduce((u, e) => u && u[e], e),
+                    j = (u) => u && 'ArrayItem' === u.__proto__.constructor.name,
+                    K = (u, e) => (u.length > 0 ? `${u}.${e}` : e),
+                    z = (u) =>
                         ((u, e) =>
                             u.split('.').reduce((u, t) => {
-                                const r = G(`${u}.${t}`, window);
-                                return V(r) ? e(u, t, r) : `${u}.${t}`;
+                                const r = $(`${u}.${t}`, window);
+                                return j(r) ? e(u, t, r) : `${u}.${t}`;
                             }))(u, (u, e) => `${u}.${e}.value`),
-                    K = (u) => {
+                    Y = (u) => {
                         const e = ((u) => {
-                                const e = U(),
+                                const e = V(),
                                     t = e.caller,
                                     r = e.resId,
                                     i = window.__feature && window.__feature !== t && t ? `subViews.${t}` : '';
-                                return { modelPrefix: i, modelPath: $(i, u || ''), resId: r };
+                                return { modelPrefix: i, modelPath: K(i, u || ''), resId: r };
                             })(),
                             t = e.modelPrefix,
                             r = u.split('.');
@@ -1131,23 +1145,23 @@
                             const u = [r[0]];
                             return (
                                 r.reduce((e, r) => {
-                                    const i = G($(t, `${e}.${r}`), window);
-                                    return V(i) ? (u.push(i.id), `${e}.${r}.value`) : (u.push(r), `${e}.${r}`);
+                                    const i = $(K(t, `${e}.${r}`), window);
+                                    return j(i) ? (u.push(i.id), `${e}.${r}.value`) : (u.push(r), `${e}.${r}`);
                                 }),
                                 u.reduce((u, e) => u + '.' + e)
                             );
                         }
                         return '';
                     },
-                    z = W.Sw.instance;
-                let Y;
+                    q = W.Sw.instance;
+                let X;
                 !(function (u) {
                     (u.None = 'None'), (u.Shallow = 'Shallow'), (u.Deep = 'Deep');
-                })(Y || (Y = {}));
-                const q = (u = 'model', e = Y.Deep) => {
+                })(X || (X = {}));
+                const Z = (u = 'model', e = X.Deep) => {
                     const t = (0, r.useState)(0),
                         i = (t[0], t[1]),
-                        n = (0, r.useMemo)(() => U(), []),
+                        n = (0, r.useMemo)(() => V(), []),
                         a = n.caller,
                         E = n.resId,
                         o = (0, r.useMemo)(
@@ -1156,10 +1170,10 @@
                         ),
                         A = (0, r.useState)(() =>
                             ((u) => {
-                                const e = G(u, window);
+                                const e = $(u, window);
                                 for (const u in e) 'function' == typeof e[u] && (e[u] = e[u].bind(e));
-                                return V(e) ? e.value : e;
-                            })(j(o)),
+                                return j(e) ? e.value : e;
+                            })(z(o)),
                         ),
                         F = A[0],
                         l = A[1],
@@ -1168,39 +1182,39 @@
                         C(() => {
                             if (
                                 ('boolean' == typeof e &&
-                                    ((e = e ? Y.Deep : Y.None),
+                                    ((e = e ? X.Deep : X.None),
                                     console.warn(
                                         'Boolean key for useModel "tracking" param is deprecated. Use ModelTracking enum values instead!',
                                     )),
-                                e !== Y.None)
+                                e !== X.None)
                             ) {
                                 const t = (u) => {
                                         ((u) => u && 'CoherentArrayProxy' === u.__proto__.constructor.name)(u) &&
-                                        e === Y.Deep
+                                        e === X.Deep
                                             ? (u === F && i((u) => u + 1), l(u))
                                             : l(Object.assign([], u));
                                     },
-                                    r = K(u);
-                                s.current = z.addCallback(r, t, E, e === Y.Deep);
+                                    r = Y(u);
+                                s.current = q.addCallback(r, t, E, e === X.Deep);
                             }
                         }),
                         (0, r.useEffect)(() => {
-                            if (e !== Y.None)
+                            if (e !== X.None)
                                 return () => {
-                                    z.removeCallback(s.current, E);
+                                    q.removeCallback(s.current, E);
                                 };
                         }, [E, e]),
                         F
                     );
                 };
                 W.Sw.instance;
-                var X = t(521);
-                const Z = (u) => {
+                var Q = t(521);
+                const J = (u) => {
                     console.error(u.type + ': useKeydownListener hook :: Callback is not defined');
                 };
-                function Q(u = X.n.NONE, e = Z, t = !1) {
+                function uu(u = Q.n.NONE, e = J, t = !1) {
                     (0, r.useEffect)(() => {
-                        if (u !== X.n.NONE)
+                        if (u !== Q.n.NONE)
                             return (
                                 window.addEventListener('keydown', r, t),
                                 () => {
@@ -1215,21 +1229,7 @@
                         }
                     }, [e, u, t]);
                 }
-                function J(u) {
-                    engine.call('PlaySound', u);
-                }
-                const uu = {
-                        playHighlight() {
-                            J('highlight');
-                        },
-                        playClick() {
-                            J('play');
-                        },
-                        playYes() {
-                            J('yes1');
-                        },
-                    },
-                    eu = {
+                const eu = {
                         base: 'App_base_4b',
                         title: 'App_title_ad',
                         panel: 'App_panel_92',
@@ -1313,7 +1313,7 @@
                                 return i;
                             })(u, tu);
                         const w = (0, r.useRef)({ timeoutId: 0, isVisible: !1, prevTarget: null, hideTimerId: null }),
-                            v = (0, r.useMemo)(() => m || U().resId, [m]),
+                            v = (0, r.useMemo)(() => m || V().resId, [m]),
                             p = (0, r.useCallback)(() => {
                                 (w.current.isVisible && w.current.timeoutId) ||
                                     (iu(t, d, { isMouseEvent: !0, on: !0, arguments: ru(i) }, v),
@@ -1577,23 +1577,23 @@
                                     }, {})
                                 );
                             })(['base'], eu),
-                            e = q('model'),
+                            e = Z('model'),
                             t = e.onConfigureModifications,
                             n = e.isEmpty,
                             a = e.onClearModifications,
                             E = e.onClose,
-                            A = q('model.steps');
+                            A = Z('model.steps');
                         var F;
-                        (F = () => E()), Q(X.n.ESCAPE, F);
+                        (F = () => E()), uu(Q.n.ESCAPE, F);
                         const l = (0, r.useCallback)(() => {
-                                uu.playClick(), t();
+                                G.playClick(), t();
                             }, [t]),
                             s = (0, r.useCallback)(() => {
-                                uu.playHighlight();
+                                G.playHighlight();
                             }, []),
                             D = (0, r.useCallback)(
                                 (u) => {
-                                    u.stopPropagation(), uu.playClick(), a();
+                                    u.stopPropagation(), G.playClick(), a();
                                 },
                                 [a],
                             );
@@ -1697,6 +1697,6 @@
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             t.forEach(e.bind(null, 0)), (t.push = e.bind(null, t.push.bind(t)));
         })();
-    var __webpack_exports__ = __webpack_require__.O(void 0, [331], () => __webpack_require__(751));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [331], () => __webpack_require__(564));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

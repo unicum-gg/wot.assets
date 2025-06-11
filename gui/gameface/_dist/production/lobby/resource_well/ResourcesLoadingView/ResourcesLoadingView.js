@@ -596,7 +596,7 @@
             2344: (e, u, t) => {
                 'use strict';
                 t.d(u, { DA: () => r.D, tT: () => r.t });
-                t(2790), t(3469), t(2133), t(579);
+                t(2790), t(3469), t(2133), t(4777), t(579);
                 var r = t(5360);
                 t(9056);
             },
@@ -616,6 +616,10 @@
             2133: (e, u, t) => {
                 'use strict';
                 t(6179);
+            },
+            4777: (e, u, t) => {
+                'use strict';
+                t(7727), t(6179);
             },
             5360: (e, u, t) => {
                 'use strict';
@@ -2709,6 +2713,7 @@
                         (e.TankmenXpFactor = 'tankmenXPFactor'),
                         (e.FreeXpFactor = 'freeXPFactor'),
                         (e.BattleToken = 'battleToken'),
+                        (e.HBVehicleUnlock = 'hbUnlockVehicles'),
                         (e.PremiumUniversal = 'premium_universal'),
                         (e.Gold = 'gold'),
                         (e.Credits = 'credits'),
@@ -2743,7 +2748,9 @@
                         (e.Branch = 'branch'),
                         (e.VehicleSelect = 'vehicleSelect'),
                         (e.StyleProgress = 'styleProgress'),
-                        (e.ParagonsUnlocks = 'paragonsUnlocks');
+                        (e.ParagonsUnlocks = 'paragonsUnlocks'),
+                        (e.HistoricalBattleDiscount25 = 'historical_battles_main_discount'),
+                        (e.LootBoxToken = 'lootBoxToken');
                 })(ru || (ru = {})),
                     (function (e) {
                         (e.Gold = 'gold'),

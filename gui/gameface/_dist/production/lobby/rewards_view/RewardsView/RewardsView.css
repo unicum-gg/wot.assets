@@ -1,6 +1,276 @@
+.Box_mt__XS_0c {
+    margin-top: 4rem;
+}
+.Box_mt__SM_eb {
+    margin-top: 8rem;
+}
+.Box_mt__SMp_cf {
+    margin-top: 10rem;
+}
+.Box_mt__MD_25 {
+    margin-top: 16rem;
+}
+.Box_mt__MDp_49 {
+    margin-top: 20rem;
+}
+.Box_mt__LG_e8 {
+    margin-top: 32rem;
+}
+.Box_mt__XL_83 {
+    margin-top: 64rem;
+}
+
+.Box_mr__XS_7c {
+    margin-right: 4rem;
+}
+
+.Box_mr__SM_08 {
+    margin-right: 8rem;
+}
+
+.Box_mr__SMp_06 {
+    margin-right: 10rem;
+}
+
+.Box_mr__MD_4a {
+    margin-right: 16rem;
+}
+
+.Box_mr__MDp_b6 {
+    margin-right: 20rem;
+}
+
+.Box_mr__LG_d0 {
+    margin-right: 32rem;
+}
+
+.Box_mr__XL_db {
+    margin-right: 64rem;
+}
+
+.Box_mb__XS_bb {
+    margin-bottom: 4rem;
+}
+
+.Box_mb__SM_83 {
+    margin-bottom: 8rem;
+}
+
+.Box_mb__SMp_04 {
+    margin-bottom: 10rem;
+}
+
+.Box_mb__MD_ed {
+    margin-bottom: 16rem;
+}
+
+.Box_mb__MDp_65 {
+    margin-bottom: 20rem;
+}
+
+.Box_mb__LG_c8 {
+    margin-bottom: 32rem;
+}
+
+.Box_mb__XL_f8 {
+    margin-bottom: 64rem;
+}
+
+.Box_ml__XS_8a {
+    margin-left: 4rem;
+}
+
+.Box_ml__SM_e6 {
+    margin-left: 8rem;
+}
+
+.Box_ml__SMp_fb {
+    margin-left: 10rem;
+}
+
+.Box_ml__MD_2b {
+    margin-left: 16rem;
+}
+
+.Box_ml__MDp_c7 {
+    margin-left: 20rem;
+}
+
+.Box_ml__LG_39 {
+    margin-left: 32rem;
+}
+
+.Box_ml__XL_4a {
+    margin-left: 64rem;
+}
+
 .FormatText_base_d0 {
     display: flex;
     flex-wrap: wrap;
+}
+
+/* eslint-disable-next-line expectedscss*/
+.Text_paragraph-P10_2c {
+    font-size: 10rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.Text_paragraph-P12_22 {
+    font-size: 12rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+.Text_paragraph-P14_a7 {
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+.Text_paragraph-P16_90 {
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+.Text_paragraph-P18_50 {
+    font-size: 18rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+.Text_paragraph-P24_33 {
+    font-size: 24rem;
+    font-weight: 400;
+    line-height: 32rem;
+}
+.Text_heading-H14_8b {
+    font-size: 14rem;
+    font-weight: 700;
+    line-height: 1.15;
+}
+.Text_heading-H15_9e {
+    font-size: 15rem;
+    font-weight: 700;
+    line-height: 1.15;
+}
+.Text_heading-H18_b7 {
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H20R_f6 {
+    font-size: 20rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.Text_heading-H22_27 {
+    font-size: 22rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.Text_heading-H24R_be {
+    font-size: 24rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.Text_heading-H24_0c {
+    font-size: 24rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.Text_heading-H28_78 {
+    font-size: 28rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H36_32 {
+    font-size: 36rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H56_c3 {
+    font-size: 56rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H73_8f {
+    font-size: 73rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H144_a9 {
+    font-size: 144rem;
+    font-weight: 700;
+    line-height: 1;
+}
+.Text_BLACK_REAL_30 {
+    color: #000000;
+}
+.Text_WHITE_REAL_bc {
+    color: #ffffff;
+}
+.Text_WHITE_62 {
+    color: #f2f2f7;
+}
+.Text_WHITE_ORANGE_54 {
+    color: #fefeec;
+}
+.Text_WHITE_SPANISH_df {
+    color: #e9e2bf;
+}
+.Text_PAR_15 {
+    color: #8c8c7e;
+}
+.Text_PAR_SECONDARY_5d {
+    color: #595950;
+}
+.Text_PAR_TERTIARY_c9 {
+    color: #37362e;
+}
+.Text_INFO_RED_30 {
+    color: #ff0000;
+}
+.Text_RED_66 {
+    color: #ff2717;
+}
+.Text_RED_DARK_d8 {
+    color: #b70000;
+}
+.Text_YELLOW_ed {
+    color: #feab34;
+}
+.Text_ORANGE_be {
+    color: #ee7000;
+}
+.Text_CREAM_57 {
+    color: #ffdd99;
+}
+.Text_BROWN_18 {
+    color: #cbac77;
+}
+.Text_GREEN_BRIGHT_3f {
+    color: #80d43a;
+}
+.Text_GREEN_e3 {
+    color: #7ab300;
+}
+.Text_GREEN_DARK_f1 {
+    color: #497212;
+}
+.Text_BLUE_BOOSTER_21 {
+    color: #ccffff;
+}
+.Text_BLUE_TEAMKILLER_ab {
+    color: #09e2ff;
+}
+.Text_CRED_f7 {
+    color: #ced9d9;
+}
+.Text_GOLD_28 {
+    color: #ffc363;
+}
+.Text_BOND_be {
+    color: #c9c9b6;
+}
+.Text_PROM_65 {
+    color: #a29b70;
 }
 
 .Reward_base_ea {
@@ -343,7 +613,7 @@
     align-items: center;
     width: 100%;
     height: 100%;
-    padding-top: 50rem;
+    padding-top: 40rem;
     padding-bottom: 60rem;
     background: url('R.images.cosmic_event.gui.maps.icons.rewardsView.background') center center / cover no-repeat;
     overflow: hidden;
@@ -351,16 +621,29 @@
     left: -0.5vw;
 }
 .mediaMedium .RewardsViewApp_base_ca {
+    padding-top: 48rem;
     padding-bottom: 80rem;
+}
+.mediaLarge .RewardsViewApp_base_ca {
+    padding-top: 60rem;
+}
+.mediaExtraLarge .RewardsViewApp_base_ca {
+    padding-bottom: 140rem;
 }
 .RewardsViewApp_close_55 {
     position: absolute;
-    top: 30rem;
-    right: 24rem;
+    top: 40rem;
+    right: 20rem;
 }
 .mediaMedium .RewardsViewApp_close_55 {
-    top: 30rem;
-    right: 55rem;
+    top: 48rem;
+    right: 40rem;
+}
+.mediaLarge .RewardsViewApp_close_55 {
+    top: 52rem;
+}
+.mediaExtraLarge .RewardsViewApp_close_55 {
+    top: 80rem;
 }
 .RewardsViewApp_ribbon_1c {
     width: 1366rem;
@@ -369,20 +652,17 @@
     position: absolute;
     top: 50%;
     z-index: -1;
-    transform: translateY(-60rem);
-}
-.mediaSmall .RewardsViewApp_ribbon_1c {
-    transform: translateY(-25rem);
+    transform: translateY(-50rem);
 }
 .mediaMedium .RewardsViewApp_ribbon_1c {
     width: 1600rem;
     height: 417rem;
-    transform: translateY(-88rem);
+    transform: translateY(-40rem);
 }
 .mediaLarge .RewardsViewApp_ribbon_1c {
     width: 1920rem;
     height: 500rem;
-    transform: translateY(-100rem);
+    transform: translateY(-70rem);
 }
 .RewardsViewApp_headerBlock_4b {
     display: flex;
@@ -391,7 +671,6 @@
     margin-bottom: 73rem;
     padding: 0 20rem;
     text-align: center;
-    z-index: 1;
 }
 .mediaSmall .RewardsViewApp_headerBlock_4b {
     margin-bottom: 24rem;
@@ -410,31 +689,57 @@
     /* stylelint-disable-next-line unit-blacklist */
     letter-spacing: 0.04em;
 }
-.mediaLarge .RewardsViewApp_viewTitle_22 {
+.mediaMedium .RewardsViewApp_viewTitle_22 {
     color: #f4e1b3;
-    font-size: 26rem;
+    font-size: 22rem;
     font-weight: 700;
-    line-height: 30rem;
-    /* stylelint-disable-next-line unit-blacklist */
+    line-height: 19rem;
     letter-spacing: 0.04em;
+}
+.mediaLarge .RewardsViewApp_viewTitle_22 {
+    font-size: 24rem;
+}
+.mediaExtraLarge .RewardsViewApp_viewTitle_22 {
+    font-size: 36rem;
 }
 .RewardsViewApp_title_1b {
     color: #fefeec;
-    font-size: 42rem;
+    font-size: 36rem;
     font-weight: 700;
-    line-height: 49rem;
-    letter-spacing: 0;
-    margin: 7rem 0;
+    line-height: 110%;
+    /* stylelint-disable-next-line unit-blacklist */
+    letter-spacing: 0.04em;
+    margin-bottom: 4rem;
+}
+.mediaMedium .RewardsViewApp_title_1b {
+    margin-bottom: 8rem;
+    font-size: 56rem;
 }
 .mediaLarge .RewardsViewApp_title_1b {
-    color: #fefeec;
-    font-size: 96rem;
-    font-weight: 700;
-    line-height: 113rem;
+    margin-bottom: 14rem;
+    font-size: 73rem;
+}
+.mediaExtraLarge .RewardsViewApp_title_1b {
+    margin-bottom: 20rem;
+    font-size: 144rem;
 }
 .RewardsViewApp_mainRewards_60 {
     display: flex;
     flex-direction: row;
+    margin-top: -80rem;
+    position: relative;
+}
+.mediaSmall .RewardsViewApp_mainRewards_60 {
+    margin-top: -20rem;
+}
+.mediaMedium .RewardsViewApp_mainRewards_60 {
+    margin-top: -30rem;
+}
+.mediaLarge .RewardsViewApp_mainRewards_60 {
+    margin-top: -125rem;
+}
+.mediaExtraLarge .RewardsViewApp_mainRewards_60 {
+    margin-top: -200rem;
 }
 .RewardsViewApp_heroImageBlock_70 {
     display: flex;
@@ -443,26 +748,23 @@
     margin-bottom: 28rem;
     position: relative;
 }
+.RewardsViewApp_heroImageBlock__main_d4 {
+    margin-top: -10rem;
+}
 .mediaSmall .RewardsViewApp_heroImageBlock_70 {
     margin-bottom: 20rem;
 }
 .mediaMedium .RewardsViewApp_heroImageBlock_70 {
     margin-bottom: 26rem;
 }
+.mediaMedium .RewardsViewApp_heroImageBlock__main_d4 {
+    margin-top: -43rem;
+}
 .mediaLarge .RewardsViewApp_heroImageBlock_70 {
     margin-bottom: 41rem;
 }
-.RewardsViewApp_heroImageBlock_70 + .RewardsViewApp_heroImageBlock_70 {
-    margin-left: -40rem;
-}
-.mediaSmall .RewardsViewApp_heroImageBlock_70 + .RewardsViewApp_heroImageBlock_70 {
-    margin-left: 20rem;
-}
-.mediaMedium .RewardsViewApp_heroImageBlock_70 + .RewardsViewApp_heroImageBlock_70 {
-    margin-left: 30rem;
-}
-.mediaLarge .RewardsViewApp_heroImageBlock_70 + .RewardsViewApp_heroImageBlock_70 {
-    margin-left: 40rem;
+.mediaExtraLarge .RewardsViewApp_heroImageBlock_70 + .RewardsViewApp_heroImageBlock_70 {
+    margin-left: 60rem;
 }
 .RewardsViewApp_heroImage_5d {
     width: 232rem;
@@ -479,10 +781,7 @@
 }
 .RewardsViewApp_heroImageSubtitle_62 {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 5rem;
-    padding: 0 20rem;
+    margin-top: 10rem;
 }
 .mediaSmall .RewardsViewApp_heroImageSubtitle_62 {
     color: #f4e1b3;
@@ -491,24 +790,32 @@
     line-height: 21rem;
     /* stylelint-disable-next-line unit-blacklist */
     letter-spacing: 0.04em;
-    margin-top: 16rem;
+    margin-top: 23rem;
 }
 .RewardsViewApp_heroImageSubtitle_label_59 {
-    color: #f2f2f7;
-    font-size: 22rem;
+    color: #e9e2bf;
+    font-size: 18rem;
     font-weight: 700;
-    line-height: 19rem;
+    line-height: 21rem;
+    /* stylelint-disable-next-line unit-blacklist */
     letter-spacing: 0.04em;
     display: flex;
     flex-wrap: wrap;
     max-width: 220rem;
-    margin-top: 6rem;
-    margin-bottom: 20rem;
+    line-height: 120%;
     text-align: center;
 }
-.RewardsViewApp_heroImageSubtitle_value_1d {
-    display: flex;
-    flex-direction: row;
+.mediaMedium .RewardsViewApp_heroImageSubtitle_label_59 {
+    color: #e9e2bf;
+    font-size: 22rem;
+    font-weight: 700;
+    line-height: 19rem;
+    letter-spacing: 0.04em;
+    max-width: 320rem;
+    line-height: 120%;
+}
+.mediaLarge .RewardsViewApp_heroImageSubtitle_label_59 {
+    font-size: 24rem;
 }
 .RewardsViewApp_footer_d3 .RewardsViewApp_infoText_40 {
     color: #f4e1b3;
@@ -533,13 +840,21 @@
     font-size: 24rem;
     font-weight: 700;
     position: absolute;
-    right: 26rem;
-    bottom: 106rem;
-    z-index: 1;
+    top: 180rem;
+    right: 12rem;
+}
+.RewardsViewApp_heroImageBlock__main_d4 .RewardsViewApp_multiplyer_78 {
+    font-size: 36rem;
+    top: 240rem;
+}
+.mediaMedium .RewardsViewApp_heroImageBlock__main_d4 .RewardsViewApp_multiplyer_78 {
+    font-size: 56rem;
+    top: 365rem;
 }
 .mediaMedium .RewardsViewApp_multiplyer_78 {
     font-size: 36rem;
-    right: 16rem;
+    top: 240rem;
+    right: 20rem;
 }
 .RewardsViewApp_info_e6 {
     color: #ffdd99;
@@ -569,4 +884,39 @@
     height: 34rem;
     border: 1rem solid #f4e1b3;
     background-color: rgba(1, 3, 38, 0.22);
+    z-index: 2;
+}
+.RewardsViewApp_rays_9a {
+    opacity: 0;
+    animation-name: RewardsViewApp_raysAppearance_56, RewardsViewApp_rotate_53;
+    animation-duration: 1.5s, 120s;
+    animation-fill-mode: forwards, forwards;
+    animation-timing-function: cubic-bezier(0.07, 0.82, 0.17, 1), linear;
+    animation-delay: 0.8s, 1.2s;
+    animation-iteration-count: 1, infinite;
+    width: 55.7%;
+    padding-bottom: 99.84%;
+    background: url('R.images.gui.maps.icons.awards.multipleAwards.rays') no-repeat center / contain;
+    mix-blend-mode: screen;
+    position: absolute;
+}
+@keyframes RewardsViewApp_raysAppearance_56 {
+    0% {
+        opacity: 0;
+        transform: translateY(20rem);
+    }
+
+    100% {
+        opacity: 0.5;
+        transform: translateY(0);
+    }
+}
+@keyframes RewardsViewApp_rotate_53 {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
 }

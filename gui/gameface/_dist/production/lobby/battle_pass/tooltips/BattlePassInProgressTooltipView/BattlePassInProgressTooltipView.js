@@ -944,8 +944,8 @@
                             ),
                         ),
                     ),
-                    N = 'BattleRoyaleTable_pointsColumn_f0',
-                    k = 'BattleRoyaleTable_header_7e',
+                    k = 'BattleRoyaleTable_pointsColumn_f0',
+                    N = 'BattleRoyaleTable_header_7e',
                     M = 'BattleRoyaleTable_label_e2',
                     I = R.strings.battle_pass.tooltips.pointsTable,
                     x = ({ rewardPoints: u }) => {
@@ -971,15 +971,15 @@
                             r().createElement(T, {
                                 columnWidth: 140,
                                 header: I.solo(),
-                                headerClassMix: k,
+                                headerClassMix: N,
                                 labels: e,
                                 labelClassMix: M,
                             }),
-                            r().createElement(O, { points: t, columnClassMix: N }),
+                            r().createElement(O, { points: t, columnClassMix: k }),
                             r().createElement(T, {
                                 columnWidth: 140,
                                 header: I.squad(),
-                                headerClassMix: k,
+                                headerClassMix: N,
                                 labels: a,
                                 labelClassMix: M,
                             }),
@@ -1322,7 +1322,7 @@
                 Date.now();
                 let Fu, Du;
                 !(function (u) {
-                    (u.style = 'style'), (u.tankman = 'tankman');
+                    (u.style = 'style'), (u.tankman = 'tankman'), (u.vehicle = 'vehicle');
                 })(Fu || (Fu = {})),
                     (function (u) {
                         (u.Default = 'default'), (u.Marathon = 'marathon'), (u.Resource = 'resource');
@@ -1443,7 +1443,7 @@
                             r().createElement(Su, { size: u, disabled: a, baseStyles: o, isComplete: i, lineRef: t })
                         );
                     },
-                    Nu = (u, e) => {
+                    ku = (u, e) => {
                         let t;
                         const n = setTimeout(() => {
                             t = u();
@@ -1452,10 +1452,10 @@
                             'function' == typeof t && t(), clearTimeout(n);
                         };
                     };
-                let ku, Mu;
+                let Nu, Mu;
                 !(function (u) {
                     (u.Idle = 'Idle'), (u.Grow = 'Grow'), (u.Shrink = 'Shrink'), (u.End = 'End');
-                })(ku || (ku = {})),
+                })(Nu || (Nu = {})),
                     (function (u) {
                         (u.Idle = 'Idle'), (u.In = 'In'), (u.End = 'End');
                     })(Mu || (Mu = {}));
@@ -1487,14 +1487,14 @@
                                 );
                             (0, n.useEffect)(() => {
                                 if (_ && !t) {
-                                    return Nu(() => {
+                                    return ku(() => {
                                         m(Mu.In);
                                     }, e);
                                 }
                             }, [m, t, _, e]),
                                 (0, n.useEffect)(() => {
                                     if (D) {
-                                        return Nu(() => {
+                                        return ku(() => {
                                             i && i(), m(Mu.End);
                                         }, u + e);
                                     }
@@ -1597,13 +1597,13 @@
                             className: A,
                         }) => {
                             const c = o < a,
-                                F = (0, n.useState)(ku.Idle),
+                                F = (0, n.useState)(Nu.Idle),
                                 D = F[0],
                                 d = F[1],
-                                _ = D === ku.End,
-                                m = D === ku.Idle,
-                                B = D === ku.Grow,
-                                C = D === ku.Shrink,
+                                _ = D === Nu.End,
+                                m = D === Nu.Idle,
+                                B = D === Nu.Grow,
+                                C = D === Nu.Shrink,
                                 p = (0, n.useCallback)(
                                     (u) => {
                                         d(u), l && l(u);
@@ -1612,7 +1612,7 @@
                                 ),
                                 g = (0, n.useCallback)(
                                     (u, e) =>
-                                        Nu(() => {
+                                        ku(() => {
                                             p(u);
                                         }, e),
                                     [p],
@@ -1620,11 +1620,11 @@
                             (0, n.useEffect)(() => {
                                 if (!t)
                                     return m
-                                        ? g(ku.Grow, e)
+                                        ? g(Nu.Grow, e)
                                         : B
-                                          ? g(ku.Shrink, u)
+                                          ? g(Nu.Shrink, u)
                                           : C
-                                            ? g(ku.End, u)
+                                            ? g(Nu.End, u)
                                             : void (_ && E && E());
                             }, [g, t, _, B, m, C, E, e, u]);
                             const b = (0, n.useMemo)(() => Object.assign({ width: '100%' }, Wu(u), qu(c)), [c, u]),
@@ -1665,7 +1665,7 @@
                                 D = c[1],
                                 d = (0, n.useCallback)(
                                     (u) => {
-                                        u === ku.Shrink && D(!0), l && l(u);
+                                        u === Nu.Shrink && D(!0), l && l(u);
                                     },
                                     [l],
                                 ),
@@ -1987,6 +1987,7 @@
                         (u.TankmenXpFactor = 'tankmenXPFactor'),
                         (u.FreeXpFactor = 'freeXPFactor'),
                         (u.BattleToken = 'battleToken'),
+                        (u.HBVehicleUnlock = 'hbUnlockVehicles'),
                         (u.PremiumUniversal = 'premium_universal'),
                         (u.Gold = 'gold'),
                         (u.Credits = 'credits'),
@@ -2021,7 +2022,9 @@
                         (u.Branch = 'branch'),
                         (u.VehicleSelect = 'vehicleSelect'),
                         (u.StyleProgress = 'styleProgress'),
-                        (u.ParagonsUnlocks = 'paragonsUnlocks');
+                        (u.ParagonsUnlocks = 'paragonsUnlocks'),
+                        (u.HistoricalBattleDiscount25 = 'historical_battles_main_discount'),
+                        (u.LootBoxToken = 'lootBoxToken');
                 })(pe || (pe = {})),
                     (function (u) {
                         (u.Gold = 'gold'),
@@ -2144,6 +2147,7 @@
                         pe.TankmenXpFactor,
                         pe.FreeXpFactor,
                         pe.BattleToken,
+                        pe.HBVehicleUnlock,
                         pe.PremiumUniversal,
                         pe.NaturalCover,
                         pe.BpCoin,
@@ -2166,15 +2170,16 @@
                     Te = [pe.BattlePassPoints],
                     Se = [pe.PremiumPlus, pe.Premium],
                     Oe = ['engravings', 'backgrounds'],
-                    Ne = ['engraving', 'background'],
-                    ke = (u, e = be.Small) => {
+                    ke = ['engraving', 'background'],
+                    Ne = (u, e = be.Small) => {
                         const t = u.name,
                             n = u.type,
                             r = u.value,
                             a = u.icon,
                             s = u.item,
                             o = u.dogTagType,
-                            i = ((u) => {
+                            i = u.iconSmall,
+                            E = ((u) => {
                                 switch (u) {
                                     case be.S600x450:
                                         return 'c_600x450';
@@ -2218,15 +2223,20 @@
                                             return `R.images.gui.maps.icons.quests.bonuses.${e}.${u.icon}`;
                                     }
                                 })(u, e);
+                            case 'hbUnlockVehicles':
+                            default:
+                                return `R.images.gui.maps.icons.quests.bonuses.${e}.${t}`;
                             case 'crewBooks':
                                 return `R.images.gui.maps.icons.crewBooks.books.${e}.${a}`;
+                            case 'entitlements':
+                                return `R.images.gui.maps.icons.quests.bonuses.${e}.${i}`;
                             case 'dogTagComponents':
                                 return ((u, e, t) => {
                                     const n = Oe[u];
                                     if (n) {
                                         const r = R.images.gui.maps.icons.dogtags.$dyn(e).$dyn(n),
                                             a = r.$dyn(t);
-                                        return a ? `${a}` : `${r.$dyn(Ne[u])}`;
+                                        return a ? `${a}` : `${r.$dyn(ke[u])}`;
                                     }
                                     return (
                                         console.error(
@@ -2236,9 +2246,9 @@
                                     );
                                 })(o, e, a);
                             case 'dossier_badge':
-                                return `R.images.gui.maps.icons.quests.bonuses.badges.${i}.${a}`;
+                                return `R.images.gui.maps.icons.quests.bonuses.badges.${E}.${a}`;
                             case 'dossier_achievement':
-                                return `R.images.gui.maps.icons.achievement.${i}.${a}`;
+                                return `R.images.gui.maps.icons.achievement.${E}.${a}`;
                             case 'xp':
                             case 'xpFactor':
                                 return `R.images.gui.maps.icons.quests.bonuses.${e}.exp`;
@@ -2264,9 +2274,7 @@
                             case 'styleProgressToken':
                                 return `R.images.gui.maps.icons.quests.bonuses.${e}.style_3d`;
                             case 'collectionItem':
-                                return `R.images.gui.maps.icons.collectionItems.${i}.${a}`;
-                            default:
-                                return `R.images.gui.maps.icons.quests.bonuses.${e}.${t}`;
+                                return `R.images.gui.maps.icons.collectionItems.${E}.${a}`;
                         }
                     },
                     Me = [
@@ -2750,7 +2758,7 @@
                     it = (u) => {
                         return {
                             name: u.item || u.name,
-                            image: ke(u, be.Small),
+                            image: Ne(u, be.Small),
                             special: u.overlayType,
                             value: u.value,
                             valueType:
@@ -2809,7 +2817,7 @@
                         (u.COMP7 = 'comp7');
                 })(lt || (lt = {}));
                 const At = R.strings.battle_pass.tooltips,
-                    ct = { randoms: 'c_1', ranked: 'ranked', mapbox: 'c_1', comp7: 'c_24' },
+                    ct = { randoms: 'c_1', ranked: 'ranked', mapbox: 'c_1', comp7: 'c_24', stronghold_units: 'c_20' },
                     Ft = R.strings.battle_pass.tooltips.pointsTable,
                     Dt = R.strings.battle_pass.tooltips.prestigePoints,
                     dt = (0, f.Pi)(() => {
@@ -2833,8 +2841,7 @@
                                 ),
                             },
                             d = a === lt.BATTLE_ROYALE,
-                            _ = a === lt.FRONTLINE,
-                            B = a === lt.RANKED;
+                            _ = a === lt.FRONTLINE;
                         return r().createElement(
                             'div',
                             { className: Q.base },
@@ -2874,23 +2881,22 @@
                                           mixClass: Q.playGame,
                                       }),
                             ),
-                            !B &&
-                                (d
-                                    ? r().createElement(
-                                          $.c,
-                                          { mixClass: Q.perBattlePointsTable, separatorRows: A.soloMode },
-                                          r().createElement(x, { rewardPoints: A }),
-                                      )
-                                    : r().createElement(
-                                          $.c,
-                                          { mixClass: Q.perBattlePointsTable, separatorRows: l.items },
-                                          r().createElement(G, {
-                                              rewardPoints: l,
-                                              hasDraw: !_,
-                                              topPlace: (a === lt.COMP7 ? Dt : Ft).topPlace(),
-                                              battleType: a,
-                                          }),
-                                      )),
+                            d
+                                ? r().createElement(
+                                      $.c,
+                                      { mixClass: Q.perBattlePointsTable, separatorRows: A.soloMode },
+                                      r().createElement(x, { rewardPoints: A }),
+                                  )
+                                : r().createElement(
+                                      $.c,
+                                      { mixClass: Q.perBattlePointsTable, separatorRows: l.items },
+                                      r().createElement(G, {
+                                          rewardPoints: l,
+                                          hasDraw: !_,
+                                          topPlace: (a === lt.COMP7 ? Dt : Ft).topPlace(),
+                                          battleType: a,
+                                      }),
+                                  ),
                             F &&
                                 r().createElement(
                                     r().Fragment,
@@ -3063,9 +3069,9 @@
                 Object.defineProperty(u, Symbol.toStringTag, { value: 'Module' }),
                 Object.defineProperty(u, '__esModule', { value: !0 });
         }),
-        (__webpack_require__.j = 251),
+        (__webpack_require__.j = 6251),
         (() => {
-            var u = { 251: 0, 109: 0, 773: 0, 235: 0 };
+            var u = { 6251: 0, 8109: 0, 1773: 0, 6235: 0 };
             __webpack_require__.O.j = (e) => 0 === u[e];
             var e = (e, t) => {
                     var n,
@@ -3083,6 +3089,6 @@
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             t.forEach(e.bind(null, 0)), (t.push = e.bind(null, t.push.bind(t)));
         })();
-    var __webpack_exports__ = __webpack_require__.O(void 0, [519], () => __webpack_require__(4444));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [1519], () => __webpack_require__(4444));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

@@ -33,21 +33,21 @@
                         addPreloadTexture: () => f,
                         children: () => F,
                         displayStatus: () => _,
-                        displayStatusIs: () => K,
+                        displayStatusIs: () => j,
                         events: () => l,
                         extraSize: () => q,
                         forceTriggerMouseMove: () => H,
                         freezeTextureBeforeResize: () => S,
                         getBrowserTexturePath: () => T,
-                        getDisplayStatus: () => j,
+                        getDisplayStatus: () => K,
                         getScale: () => L,
-                        getSize: () => k,
+                        getSize: () => P,
                         getViewGlobalPosition: () => R,
                         isEventHandled: () => W,
                         isFocused: () => U,
                         pxToRem: () => N,
                         remToPx: () => x,
-                        resize: () => P,
+                        resize: () => k,
                         sendEvent: () => g,
                         setAnimateWindow: () => I,
                         setEventHandled: () => V,
@@ -222,10 +222,10 @@
                 function y(u) {
                     viewEnv.setHitAreaPaddingsRem(u.top, u.right, u.bottom, u.left, 15);
                 }
-                function k(u = 'px') {
+                function P(u = 'px') {
                     return 'rem' === u ? viewEnv.getViewSizeRem() : viewEnv.getViewSizePx();
                 }
-                function P(u, e, t = 'px') {
+                function k(u, e, t = 'px') {
                     return 'rem' === t ? viewEnv.resizeViewRem(u, e) : viewEnv.resizeViewPx(u, e);
                 }
                 function R(u = 'rem') {
@@ -259,10 +259,10 @@
                 function H() {
                     viewEnv.forceTriggerMouseMove();
                 }
-                function j() {
+                function K() {
                     return viewEnv.getShowingStatus();
                 }
-                const K = Object.keys(_).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === _[e]), u), {}),
+                const j = Object.keys(_).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === _[e]), u), {}),
                     q = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
@@ -987,13 +987,13 @@
                                   Object.assign(
                                       {
                                           onMouseEnter:
-                                              ((k = e.props.onMouseEnter),
+                                              ((P = e.props.onMouseEnter),
                                               (u) => {
                                                   (u.clientX === window.innerWidth &&
                                                       u.clientY === window.innerHeight) ||
                                                       ((f.current.timeoutId = window.setTimeout(T, s ? 100 : 400)),
                                                       F && F(u),
-                                                      k && k(u));
+                                                      P && P(u));
                                               }),
                                           onMouseLeave: ((u) => (e) => {
                                               M(), null == E || E(e), null == u || u(e);
@@ -1009,7 +1009,7 @@
                                   ),
                               )
                             : e;
-                        var k;
+                        var P;
                     };
                 let O;
                 !(function (u) {
@@ -1028,7 +1028,7 @@
                     }),
                     M = 'Bonus_base_84',
                     y = 'Bonus_amount_c8',
-                    k = (0, n.memo)(({ iconName: u, amount: e, tooltip: t, classMix: F }) => {
+                    P = (0, n.memo)(({ iconName: u, amount: e, tooltip: t, classMix: F }) => {
                         const E = (0, n.useMemo)(
                                 () => ({
                                     backgroundImage: `url(${R.images.gui.maps.icons.quests.bonuses.s180x135.$dyn(u)})`,
@@ -1057,7 +1057,7 @@
                             ),
                         );
                     }),
-                    P = 'Order_base_76',
+                    k = 'Order_base_76',
                     S = 'Order_amount_e1',
                     L = (0, n.memo)(({ type: u, amount: e, classMix: t }) => {
                         const F = (0, n.useMemo)(
@@ -1066,7 +1066,7 @@
                                 }),
                                 [u],
                             ),
-                            E = p()(P, t),
+                            E = p()(k, t),
                             o = (0, n.useMemo)(() => r(R.strings.hb_shop.common.pieces(), { number: e }), [e]),
                             i = e > 1;
                         return A().createElement(
@@ -1086,10 +1086,10 @@
                     V = 'OrderWithBonusesContentApp_order_79',
                     W = 'OrderWithBonusesContentApp_gift_e5',
                     H = 'OrderWithBonusesContentApp_giftIcon_3d',
-                    j = 'OrderWithBonusesContentApp_divider_87';
-                function K() {
+                    K = 'OrderWithBonusesContentApp_divider_87';
+                function j() {
                     return (
-                        (K =
+                        (j =
                             Object.assign ||
                             function (u) {
                                 for (var e = 1; e < arguments.length; e++) {
@@ -1098,7 +1098,7 @@
                                 }
                                 return u;
                             }),
-                        K.apply(this, arguments)
+                        j.apply(this, arguments)
                     );
                 }
                 const q = () => {
@@ -1111,14 +1111,14 @@
                         A().createElement(
                             'div',
                             { className: I },
-                            e.map(({ value: u }) => A().createElement(k, K({ key: u.iconName, classMix: x }, u))),
+                            e.map(({ value: u }) => A().createElement(P, j({ key: u.iconName, classMix: x }, u))),
                             A().createElement(
                                 'div',
                                 { className: U },
                                 R.strings.hb_shop.booster_buy_dialog.composition(),
                             ),
                         ),
-                        A().createElement('div', { className: j }),
+                        A().createElement('div', { className: K }),
                         A().createElement(
                             'div',
                             { className: V },
@@ -1193,7 +1193,6 @@
                 Object.defineProperty(u, Symbol.toStringTag, { value: 'Module' }),
                 Object.defineProperty(u, '__esModule', { value: !0 });
         }),
-        (__webpack_require__.j = 83),
         (() => {
             var u = { 83: 0 };
             __webpack_require__.O.j = (e) => 0 === u[e];

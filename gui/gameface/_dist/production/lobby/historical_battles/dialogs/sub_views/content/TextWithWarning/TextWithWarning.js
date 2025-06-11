@@ -30,12 +30,12 @@
                 A.r(t),
                     A.d(t, {
                         addModelObserver: () => x,
-                        addPreloadTexture: () => T,
+                        addPreloadTexture: () => b,
                         children: () => D,
                         displayStatus: () => l,
                         displayStatusIs: () => K,
                         events: () => d,
-                        extraSize: () => q,
+                        extraSize: () => $,
                         forceTriggerMouseMove: () => z,
                         freezeTextureBeforeResize: () => R,
                         getBrowserTexturePath: () => O,
@@ -48,12 +48,12 @@
                         pxToRem: () => L,
                         remToPx: () => N,
                         resize: () => P,
-                        sendEvent: () => b,
+                        sendEvent: () => T,
                         setAnimateWindow: () => U,
                         setEventHandled: () => I,
                         setInputPaddingsRem: () => f,
                         setSidePaddingsRem: () => y,
-                        whenTutorialReady: () => $,
+                        whenTutorialReady: () => q,
                     });
                 const C = B('clientResized'),
                     r = { down: B('mousedown'), up: B('mouseup'), move: B('mousemove') };
@@ -196,7 +196,7 @@
                         return viewEnv.handleViewEvent({ __Type: A, type: u });
                         var F;
                     },
-                    b = {
+                    T = {
                         close(u) {
                             p('popover' === u ? m : v);
                         },
@@ -207,7 +207,7 @@
                             p(h, { isMouseEvent: !0, on: u });
                         },
                     };
-                function T(u) {
+                function b(u) {
                     viewEnv.addPreloadTexture(u);
                 }
                 function f(u) {
@@ -263,7 +263,7 @@
                     return viewEnv.getShowingStatus();
                 }
                 const K = Object.keys(l).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === l[e]), u), {}),
-                    q = {
+                    $ = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -271,7 +271,7 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    $ = Promise.all([
+                    q = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : d.onDomBuilt(u);
                         }),
@@ -829,11 +829,11 @@
                         return '';
                     },
                     p = _.Sw.instance;
-                let b;
+                let T;
                 !(function (u) {
                     (u.None = 'None'), (u.Shallow = 'Shallow'), (u.Deep = 'Deep');
-                })(b || (b = {}));
-                const T = (u = 'model', e = b.Deep) => {
+                })(T || (T = {}));
+                const b = (u = 'model', e = T.Deep) => {
                     const A = (0, F.useState)(0),
                         E = (A[0], A[1]),
                         D = (0, F.useMemo)(() => l(), []),
@@ -857,24 +857,24 @@
                         w(() => {
                             if (
                                 ('boolean' == typeof e &&
-                                    ((e = e ? b.Deep : b.None),
+                                    ((e = e ? T.Deep : T.None),
                                     console.warn(
                                         'Boolean key for useModel "tracking" param is deprecated. Use ModelTracking enum values instead!',
                                     )),
-                                e !== b.None)
+                                e !== T.None)
                             ) {
                                 const A = (u) => {
                                         ((u) => u && 'CoherentArrayProxy' === u.__proto__.constructor.name)(u) &&
-                                        e === b.Deep
+                                        e === T.Deep
                                             ? (u === r && E((u) => u + 1), o(u))
                                             : o(Object.assign([], u));
                                     },
                                     F = g(u);
-                                i.current = p.addCallback(F, A, B, e === b.Deep);
+                                i.current = p.addCallback(F, A, B, e === T.Deep);
                             }
                         }),
                         (0, F.useEffect)(() => {
-                            if (e !== b.None)
+                            if (e !== T.None)
                                 return () => {
                                     p.removeCallback(i.current, B);
                                 };
@@ -1008,7 +1008,7 @@
                     I = 'App_warningText_fd',
                     V = 'App_mainText_8b',
                     z = () => {
-                        const u = T(),
+                        const u = b(),
                             e = u.mainText,
                             A = u.warningText,
                             D = u.warningImageSubstitution,
@@ -1095,7 +1095,6 @@
                 Object.defineProperty(u, Symbol.toStringTag, { value: 'Module' }),
                 Object.defineProperty(u, '__esModule', { value: !0 });
         }),
-        (__webpack_require__.j = 760),
         (() => {
             var u = { 760: 0 };
             __webpack_require__.O.j = (e) => 0 === u[e];

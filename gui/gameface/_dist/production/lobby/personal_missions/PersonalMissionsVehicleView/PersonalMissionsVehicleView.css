@@ -674,13 +674,17 @@
     bottom: 221rem;
 }
 .mediaLarge .App_tankViewButtons_f2 {
-    right: 590rem;
-    bottom: 246rem;
+    right: 692rem;
+    bottom: 284rem;
 }
 .mediaExtraLarge .App_tankViewButtons_f2 {
     width: 180rem;
     right: 790rem;
     bottom: 360rem;
+}
+.mediaExtraLarge .App_tankViewButtons__scaledX1_48 {
+    right: 1466rem;
+    bottom: 576rem;
 }
 .App_tankViewButtons_f2 {
     animation-name: App_fadeIn_b0;

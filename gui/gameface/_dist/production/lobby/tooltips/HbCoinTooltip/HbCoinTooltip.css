@@ -11,6 +11,373 @@
     position: relative;
 }
 
+.Box_mt__XS_0c {
+    margin-top: 4rem;
+}
+.Box_mt__SM_eb {
+    margin-top: 8rem;
+}
+.Box_mt__SMp_cf {
+    margin-top: 10rem;
+}
+.Box_mt__MD_25 {
+    margin-top: 16rem;
+}
+.Box_mt__MDp_49 {
+    margin-top: 20rem;
+}
+.Box_mt__LG_e8 {
+    margin-top: 32rem;
+}
+.Box_mt__XL_83 {
+    margin-top: 64rem;
+}
+
+.Box_mr__XS_7c {
+    margin-right: 4rem;
+}
+
+.Box_mr__SM_08 {
+    margin-right: 8rem;
+}
+
+.Box_mr__SMp_06 {
+    margin-right: 10rem;
+}
+
+.Box_mr__MD_4a {
+    margin-right: 16rem;
+}
+
+.Box_mr__MDp_b6 {
+    margin-right: 20rem;
+}
+
+.Box_mr__LG_d0 {
+    margin-right: 32rem;
+}
+
+.Box_mr__XL_db {
+    margin-right: 64rem;
+}
+
+.Box_mb__XS_bb {
+    margin-bottom: 4rem;
+}
+
+.Box_mb__SM_83 {
+    margin-bottom: 8rem;
+}
+
+.Box_mb__SMp_04 {
+    margin-bottom: 10rem;
+}
+
+.Box_mb__MD_ed {
+    margin-bottom: 16rem;
+}
+
+.Box_mb__MDp_65 {
+    margin-bottom: 20rem;
+}
+
+.Box_mb__LG_c8 {
+    margin-bottom: 32rem;
+}
+
+.Box_mb__XL_f8 {
+    margin-bottom: 64rem;
+}
+
+.Box_ml__XS_8a {
+    margin-left: 4rem;
+}
+
+.Box_ml__SM_e6 {
+    margin-left: 8rem;
+}
+
+.Box_ml__SMp_fb {
+    margin-left: 10rem;
+}
+
+.Box_ml__MD_2b {
+    margin-left: 16rem;
+}
+
+.Box_ml__MDp_c7 {
+    margin-left: 20rem;
+}
+
+.Box_ml__LG_39 {
+    margin-left: 32rem;
+}
+
+.Box_ml__XL_4a {
+    margin-left: 64rem;
+}
+
+.FormatText_base_d0 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* eslint-disable-next-line expectedscss*/
+.Text_paragraph-P10_2c {
+    font-size: 10rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.Text_paragraph-P12_22 {
+    font-size: 12rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+.Text_paragraph-P14_a7 {
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+.Text_paragraph-P16_90 {
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+.Text_paragraph-P18_50 {
+    font-size: 18rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+.Text_paragraph-P24_33 {
+    font-size: 24rem;
+    font-weight: 400;
+    line-height: 32rem;
+}
+.Text_heading-H14_8b {
+    font-size: 14rem;
+    font-weight: 700;
+    line-height: 1.15;
+}
+.Text_heading-H15_9e {
+    font-size: 15rem;
+    font-weight: 700;
+    line-height: 1.15;
+}
+.Text_heading-H18_b7 {
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H20R_f6 {
+    font-size: 20rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.Text_heading-H22_27 {
+    font-size: 22rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.Text_heading-H24R_be {
+    font-size: 24rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.Text_heading-H24_0c {
+    font-size: 24rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.Text_heading-H28_78 {
+    font-size: 28rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H36_32 {
+    font-size: 36rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H56_c3 {
+    font-size: 56rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H73_8f {
+    font-size: 73rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H144_a9 {
+    font-size: 144rem;
+    font-weight: 700;
+    line-height: 1;
+}
+.Text_BLACK_REAL_30 {
+    color: #000000;
+}
+.Text_WHITE_REAL_bc {
+    color: #ffffff;
+}
+.Text_WHITE_62 {
+    color: #f2f2f7;
+}
+.Text_WHITE_ORANGE_54 {
+    color: #fefeec;
+}
+.Text_WHITE_SPANISH_df {
+    color: #e9e2bf;
+}
+.Text_PAR_15 {
+    color: #8c8c7e;
+}
+.Text_PAR_SECONDARY_5d {
+    color: #595950;
+}
+.Text_PAR_TERTIARY_c9 {
+    color: #37362e;
+}
+.Text_INFO_RED_30 {
+    color: #ff0000;
+}
+.Text_RED_66 {
+    color: #ff2717;
+}
+.Text_RED_DARK_d8 {
+    color: #b70000;
+}
+.Text_YELLOW_ed {
+    color: #feab34;
+}
+.Text_ORANGE_be {
+    color: #ee7000;
+}
+.Text_CREAM_57 {
+    color: #ffdd99;
+}
+.Text_BROWN_18 {
+    color: #cbac77;
+}
+.Text_GREEN_BRIGHT_3f {
+    color: #80d43a;
+}
+.Text_GREEN_e3 {
+    color: #7ab300;
+}
+.Text_GREEN_DARK_f1 {
+    color: #497212;
+}
+.Text_BLUE_BOOSTER_21 {
+    color: #ccffff;
+}
+.Text_BLUE_TEAMKILLER_ab {
+    color: #09e2ff;
+}
+.Text_CRED_f7 {
+    color: #ced9d9;
+}
+.Text_GOLD_28 {
+    color: #ffc363;
+}
+.Text_BOND_be {
+    color: #c9c9b6;
+}
+.Text_PROM_65 {
+    color: #a29b70;
+}
+
+.FormatTextWithColorTags_blackReal_3c {
+    color: #000000;
+}
+
+.FormatTextWithColorTags_whiteReal_8a {
+    color: #ffffff;
+}
+
+.FormatTextWithColorTags_white_16 {
+    color: #f2f2f7;
+}
+
+.FormatTextWithColorTags_whiteOrange_18 {
+    color: #fefeec;
+}
+
+.FormatTextWithColorTags_whiteSpanish_10 {
+    color: #e9e2bf;
+}
+
+.FormatTextWithColorTags_par_ca {
+    color: #8c8c7e;
+}
+
+.FormatTextWithColorTags_parSecondary_8d {
+    color: #595950;
+}
+
+.FormatTextWithColorTags_parTertiary_a3 {
+    color: #37362e;
+}
+
+.FormatTextWithColorTags_red_60 {
+    color: #ff2717;
+}
+
+.FormatTextWithColorTags_redDark_03 {
+    color: #b70000;
+}
+
+.FormatTextWithColorTags_yellow_ad {
+    color: #feab34;
+}
+
+.FormatTextWithColorTags_orange_e4 {
+    color: #ee7000;
+}
+
+.FormatTextWithColorTags_cream_cd {
+    color: #ffdd99;
+}
+
+.FormatTextWithColorTags_brown_c8 {
+    color: #cbac77;
+}
+
+.FormatTextWithColorTags_greenBright_f0 {
+    color: #80d43a;
+}
+
+.FormatTextWithColorTags_green_c5 {
+    color: #7ab300;
+}
+
+.FormatTextWithColorTags_greenDark_af {
+    color: #497212;
+}
+
+.FormatTextWithColorTags_blueBooster_ac {
+    color: #ccffff;
+}
+
+.FormatTextWithColorTags_blueTeamkiller_6f {
+    color: #09e2ff;
+}
+
+.FormatTextWithColorTags_cred_4e {
+    color: #ced9d9;
+}
+
+.FormatTextWithColorTags_gold_90 {
+    color: #ffc363;
+}
+
+.FormatTextWithColorTags_bond_71 {
+    color: #c9c9b6;
+}
+
+.FormatTextWithColorTags_prom_dd {
+    color: #a29b70;
+}
+
 .ExtendedText_base_71 {
     display: flex;
     line-height: 1.2;
@@ -160,6 +527,242 @@
     width: 100%;
 }
 
+/* @mixin coinCountColor {
+    &__defence {
+        color: #bdfbff;
+    }
+
+    &__counterattack {
+        color: $CREAM;
+    }
+
+    &__offence {
+        color: $WHITE;
+    }
+} */
+
+.HBCoin_base_d8 {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.HBCoin_label__default_e9 {
+    color: #ffffff;
+}
+
+.HBCoin_label__booster_fe {
+    color: #fd9;
+}
+
+.HBCoin_label__counterattackGlow_e3 {
+    text-shadow:
+        0 0 4rem rgba(255, 127, 0, 0.25),
+        0 0 8rem #ff2a00,
+        0 0 15rem #e52;
+}
+
+.HBCoin_label__offenceGlow_7c {
+    text-shadow:
+        0 0 4rem rgba(255, 127, 0, 0.25),
+        0 0 8rem #ff2a00,
+        0 0 15rem #e52;
+}
+
+.HBCoin_label__defenceGlow_78 {
+    text-shadow:
+        0 0 4rem rgba(0, 31, 185, 0.25),
+        0 0 8rem #0075ff,
+        0 0 15rem #00c2ff;
+}
+
+.HBCoin_label__animated_82 {
+    transition:
+        text-shadow 0.2s,
+        font-size 0.2s ease-out;
+}
+
+.HBCoin_label__notEnough_0e {
+    color: #ff2717;
+}
+
+.HBCoin_label__sizeP14_c0 {
+    color: #8c8c7e;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    padding-bottom: 2rem;
+}
+
+.HBCoin_label__sizeH15_73 {
+    color: #e9e2bf;
+    font-size: 15rem;
+    font-weight: 700;
+    line-height: 1.15;
+    padding-bottom: 2rem;
+}
+
+.HBCoin_label__sizeH18_f6 {
+    color: #ffdd99;
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
+    padding-bottom: 4rem;
+}
+
+.HBCoin_label__sizeH20_14 {
+    padding-bottom: 3rem;
+    color: #e9e2bf;
+    font-size: 20rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.HBCoin_label__sizeH22_9c {
+    color: #ced9d9;
+    font-size: 22rem;
+    font-weight: 700;
+    line-height: 1.2;
+    padding-bottom: 3rem;
+}
+
+.HBCoin_label__sizeH24_b0 {
+    color: #ffdd99;
+    font-size: 24rem;
+    font-weight: 700;
+    line-height: 1.2;
+    padding-bottom: 5rem;
+}
+
+.HBCoin_label__sizeH28_6d {
+    color: #e9e2bf;
+    font-size: 28rem;
+    font-weight: 700;
+    line-height: 1.1;
+    padding-bottom: 5rem;
+}
+
+.HBCoin_label__sizeH36_10 {
+    color: #f2f2f7;
+    font-size: 36rem;
+    font-weight: 700;
+    line-height: 1.1;
+    padding-bottom: 7rem;
+}
+
+.HBCoin_label__sizeH42_4f {
+    padding-bottom: 7rem;
+    font-size: 42rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.HBCoin_label__sizeH56_88 {
+    padding-bottom: 7rem;
+    color: #ffffff;
+    font-size: 56rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.HBCoin_label__sizeH73_c1 {
+    color: #f2f2f7;
+    font-size: 73rem;
+    font-weight: 700;
+    line-height: 1.1;
+    padding-bottom: 16rem;
+}
+
+.HBCoin_label__sizeH144_61 {
+    color: #f2f2f7;
+    font-size: 144rem;
+    font-weight: 700;
+    line-height: 1;
+    padding-bottom: 16rem;
+}
+
+.HBCoin_label__progression_08 {
+    color: #fefeec;
+}
+
+.HBCoin_label__booster_fe {
+    color: #ffdd99;
+}
+
+.HBCoin_maxAmount_eb {
+    margin-right: 3rem;
+    color: #fefeec99;
+}
+
+.HBCoin_icon_27 {
+    background: no-repeat 50% / contain;
+}
+
+.HBCoin_icon__animated_17 {
+    transition:
+        width 0.2s linear,
+        height 0.2s linear,
+        margin-left 0.2s;
+}
+
+.HBCoin_icon__size16x16_6b {
+    width: 16rem;
+    height: 16rem;
+    margin-left: 3rem;
+}
+
+.HBCoin_icon__size24x24_35 {
+    width: 24rem;
+    height: 24rem;
+    margin-left: 3rem;
+}
+
+.HBCoin_icon__size32x32_70 {
+    width: 32rem;
+    height: 32rem;
+    margin-left: 5rem;
+}
+
+.HBCoin_icon__size48x48_42 {
+    width: 48rem;
+    height: 48rem;
+    margin-left: 10rem;
+}
+
+.HBCoin_icon__size80x80_ca {
+    width: 80rem;
+    height: 80rem;
+    margin-left: 10rem;
+    margin-top: 10rem;
+}
+
+.HBCoin_icon__size134x134_4d {
+    width: 134rem;
+    height: 134rem;
+}
+
+.HBCoin_stockBg_25 {
+    width: 80rem;
+    height: 45rem;
+    background: url('R.images.gui.maps.icons.library.RedActionBG') no-repeat 0 / contain;
+    position: absolute;
+    right: -30rem;
+    bottom: -17rem;
+    z-index: -1;
+}
+
+.HBCoin_stockBg__sizeH18_9b {
+    bottom: -12rem;
+}
+
+.HBCoin_stockBg__sizeH22_5a {
+    bottom: -11rem;
+}
+
+.mediaExtraLarge .HBCoin_stockBg_25 {
+    bottom: -10rem;
+}
+
 .HbCoinTooltipApp_base_21 {
     border: 1rem solid rgba(242, 242, 230, 0.1);
     background-color: #12110b;
@@ -174,134 +777,94 @@
         rgba(51, 51, 41, 0) 88%,
         rgba(51, 51, 41, 0.1) 100%
     );
-    width: 360rem;
+    width: 400rem;
+    padding: 0;
 }
 
 .HbCoinTooltipApp_header_18 {
+    padding: 18rem 0 8rem 28rem;
+}
+
+.HbCoinTooltipApp_title_7f {
     color: #e9e2bf;
     font-size: 18rem;
     font-weight: 700;
     line-height: 1.1;
+    margin-bottom: 4rem;
 }
 
-.HbCoinTooltipApp_coin_22 {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    height: 134rem;
-    margin: 18rem 0 25rem;
-    background: no-repeat 50% / contain;
+.HbCoinTooltipApp_subtitle_73 {
+    color: #8c8c7e;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
 }
 
 .HbCoinTooltipApp_divider_a2 {
     width: 100%;
     height: 12rem;
     background: url('R.images.historical_battles.gui.maps.icons.common.dividerDotty') no-repeat 50% / contain;
-    margin: 6rem 0 9rem;
 }
 
-.HbCoinTooltipApp_divider__insufficient_e1 {
-    margin: 13rem 0 -5rem;
+.HbCoinTooltipApp_orders_0c {
+    margin-top: 12rem;
+    padding: 0 28rem 24rem;
 }
 
-.HbCoinTooltipApp_dividerAmount_f0 {
-    width: 100%;
-    margin: 0;
-    position: absolute;
-}
-
-.HbCoinTooltipApp_dividerAmount__top_93 {
-    top: -6rem;
-}
-
-.HbCoinTooltipApp_dividerAmount__bottom_74 {
-    bottom: -6rem;
-}
-
-.HbCoinTooltipApp_text_7d {
-    color: #8c8c7e;
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
-}
-
-.HbCoinTooltipApp_text__defence_a0 {
-    color: #bdfbff;
-}
-
-.HbCoinTooltipApp_text__counterattack_4e {
-    color: #ffdd99;
-}
-
-.HbCoinTooltipApp_text__offence_b0 {
-    color: #f2f2f7;
-}
-
-.HbCoinTooltipApp_text_7d {
-    line-height: 1.25;
-    white-space: pre;
-}
-
-.HbCoinTooltipApp_text__earnings_22 {
-    color: #8c8c7e;
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
-}
-
-.HbCoinTooltipApp_text__insufficient_b1 {
-    margin: 1rem 0 2rem;
-}
-
-.HbCoinTooltipApp_amount_fd {
+.HbCoinTooltipApp_coins_85 {
     display: flex;
     justify-content: center;
-    margin-top: 18rem;
-    padding: 14rem 0 17rem;
-    position: relative;
-}
-
-.HbCoinTooltipApp_bg_5a {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+    align-items: center;
+    height: 52rem;
+    margin: 16rem 0;
     background: linear-gradient(
         90deg,
         rgba(201, 201, 182, 0) 0%,
-        #c9c9b6 38%,
-        #c9c9b6 64.5%,
+        rgba(201, 201, 182, 0.08) 38.22%,
+        rgba(201, 201, 182, 0.08) 64.56%,
         rgba(201, 201, 182, 0) 100%
     );
-    opacity: 0.07;
+    position: relative;
 }
 
-.HbCoinTooltipApp_subheader_47 {
-    color: #e9e2bf;
-    font-size: 15rem;
-    font-weight: 700;
-    line-height: 1.15;
-    margin: 15rem 0 6rem;
+.HbCoinTooltipApp_coins_divider_a5 {
+    width: 100%;
+    height: 12rem;
+    background: url('R.images.historical_battles.gui.maps.icons.common.dividerDotty') no-repeat 50% / contain;
+    position: absolute;
+}
+
+.HbCoinTooltipApp_coins_divider__top_5f {
+    top: -6rem;
+}
+
+.HbCoinTooltipApp_coins_divider__bottom_2e {
+    bottom: -6rem;
+}
+
+.HbCoinTooltipApp_coins_text_1a {
+    color: #8c8c7e;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    margin-left: 6rem;
+}
+
+.HbCoinTooltipApp_suggestions_01 {
+    padding: 0 28rem 4rem;
+}
+
+.HbCoinTooltipApp_base_image_12 {
+    height: 134rem;
+    margin: 6rem 0;
+    background: url('R.images.historical_battles.gui.maps.icons.hbCoin.c_134x134.offence') no-repeat 50% / contain;
 }
 
 .HbCoinTooltipApp_icon_11 {
     width: 16rem;
     height: 16rem;
     margin: 2rem 0 -2rem;
-    background: no-repeat 50% / contain;
-}
-
-.HbCoinTooltipApp_icon__counterattack_b9 {
-    background-image: url('R.images.historical_battles.gui.maps.icons.hbCoin.c_16x16.counterattack');
-}
-
-.HbCoinTooltipApp_icon__defence_de {
-    background-image: url('R.images.historical_battles.gui.maps.icons.hbCoin.c_16x16.defence');
-}
-
-.HbCoinTooltipApp_icon__offence_e2 {
-    background-image: url('R.images.historical_battles.gui.maps.icons.hbCoin.c_16x16.offence');
+    background: url('R.images.historical_battles.gui.maps.icons.hbCoin.c_24x24.offence') no-repeat 50% / contain;
 }
 
 .HbCoinTooltipApp_orderIcon_84 {
@@ -311,6 +874,38 @@
     background: url('R.images.historical_battles.gui.maps.icons.common.modifierIcon') no-repeat 50% / contain;
 }
 
-.HbCoinTooltipApp_mode_d8 {
+.HbCoinTooltipApp_suggestions_title_cb,
+.HbCoinTooltipApp_orders_title_f0 {
     color: #e9e2bf;
+    font-size: 15rem;
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 16rem;
+}
+
+.HbCoinTooltipApp_suggestion_text_78,
+.HbCoinTooltipApp_orders_text_c8 {
+    color: #8c8c7e;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+.HbCoinTooltipApp_suggestion_4c {
+    display: flex;
+    margin-left: 10rem;
+    color: #e9e2bf;
+}
+
+.HbCoinTooltipApp_suggestion_4c + .HbCoinTooltipApp_suggestion_4c {
+    margin-top: 8rem;
+}
+
+.HbCoinTooltipApp_description_89 {
+    color: #8c8c7e;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    margin-top: 6rem;
+    padding: 0 28rem;
 }

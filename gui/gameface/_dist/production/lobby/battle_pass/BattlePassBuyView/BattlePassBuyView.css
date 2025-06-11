@@ -3170,6 +3170,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 
 .Content_base_27 {
     display: flex;
+    justify-content: center;
     width: 960rem;
     max-height: 360rem;
     margin-top: 50rem;
@@ -3187,9 +3188,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .mediaLarge .Content_base_27 {
     width: 1300rem;
     max-height: 671rem;
-}
-.Content_base__center_f5 {
-    justify-content: center;
 }
 
 .Content_mainContent_dd {

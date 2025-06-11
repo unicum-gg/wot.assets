@@ -1,0 +1,743 @@
+.TextButton_base_b6 {
+    display: flex;
+    align-items: center;
+    padding: 0 3rem;
+    font-size: 12rem;
+    position: relative;
+    cursor: pointer;
+}
+
+.TextButton_base__right_39 {
+    flex-direction: row-reverse;
+}
+.TextButton_icon_17 {
+    width: 32rem;
+    height: 32rem;
+    background: no-repeat center / contain;
+    position: relative;
+}
+.TextButton_icon__back_43,
+.TextButton_icon__forward_59 {
+    margin: -1rem -5rem;
+    background-image: url('R.images.gui.maps.icons.components.text_button.back');
+    transform: translateY(1rem);
+}
+.TextButton_icon__forward_59 {
+    transform: rotate(180deg) translateY(1rem);
+}
+.TextButton_icon__close_53 {
+    margin: -1rem 0;
+    background-image: url('R.images.gui.maps.icons.components.text_button.close');
+}
+.TextButton_icon__info_33 {
+    margin: -1rem -5rem;
+    background-image: url('R.images.gui.maps.icons.components.text_button.info');
+}
+.TextButton_glow_a4 {
+    width: 100%;
+    height: 100%;
+    background: no-repeat center / contain;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    transition: opacity 0.16s;
+}
+.TextButton_icon__back_43 .TextButton_glow_a4,
+.TextButton_icon__forward_59 .TextButton_glow_a4 {
+    background-image: url('R.images.gui.maps.icons.components.text_button.back_hover');
+}
+.TextButton_icon__close_53 .TextButton_glow_a4 {
+    background-image: url('R.images.gui.maps.icons.components.text_button.close_hover');
+}
+.TextButton_icon__info_33 .TextButton_glow_a4 {
+    background-image: url('R.images.gui.maps.icons.components.text_button.info_hover');
+}
+.TextButton_base_b6:hover .TextButton_glow_a4 {
+    opacity: 1;
+}
+.TextButton_base_b6:active .TextButton_glow_a4 {
+    opacity: 0;
+}
+.TextButton_caption_82 {
+    position: relative;
+    transition:
+        color 0.16s,
+        text-shadow 0.16s;
+}
+.TextButton_caption__back_b9,
+.TextButton_caption__forward_4e,
+.TextButton_caption__close_36 {
+    color: #ffdd99;
+    text-shadow:
+        0 0 10rem rgba(255, 42, 0, 1),
+        0 0 10rem rgba(255, 42, 0, 0.4),
+        0 0 10rem rgba(255, 42, 0, 0.4),
+        0 0 2rem rgba(255, 42, 0, 0.4),
+        0 0 1rem rgba(255, 42, 0, 0.4),
+        0 0 2rem rgba(255, 42, 0, 0.4),
+        0 0 1rem rgba(255, 42, 0, 0.4);
+}
+.TextButton_base_b6:hover .TextButton_caption__back_b9,
+.TextButton_base_b6:hover .TextButton_caption__forward_4e,
+.TextButton_base_b6:hover .TextButton_caption__close_36 {
+    color: #fffa9f;
+}
+.TextButton_base_b6:active .TextButton_caption__back_b9,
+.TextButton_base_b6:active .TextButton_caption__forward_4e,
+.TextButton_base_b6:active .TextButton_caption__close_36 {
+    color: #ffdd99;
+}
+.TextButton_caption__info_23 {
+    padding: 0 5rem;
+    color: #ccffff;
+    text-shadow:
+        0 0 12rem rgba(31, 68, 255, 0.8),
+        0 0 8rem #00eaff;
+}
+.TextButton_base_b6:hover .TextButton_caption__info_23 {
+    color: #e3ffff;
+    text-shadow:
+        0 0 12rem rgba(31, 68, 255, 0.8),
+        0 0 12rem rgba(0, 234, 255, 1),
+        0 0 8rem #00eaff;
+}
+.TextButton_base_b6:active .TextButton_caption__info_23 {
+    color: #ccffff;
+    text-shadow:
+        0 0 12rem rgba(31, 68, 255, 0.6),
+        0 0 8rem #00eaff;
+}
+.TextButton_goto_e7 {
+    color: #7c7c6c;
+}
+.TextButton_base__left_ff .TextButton_goto_e7 {
+    margin-left: 8rem;
+}
+.TextButton_base__right_39 .TextButton_goto_e7 {
+    margin-right: 8rem;
+}
+.TextButton_shine_e2 {
+    width: 90rem;
+    height: 40rem;
+    background: url('R.images.gui.maps.icons.components.text_button.shine') no-repeat center / contain;
+    opacity: 0;
+    position: absolute;
+    top: -4rem;
+    transition: opacity 0.16s;
+    pointer-events: none;
+}
+.TextButton_base__left_ff .TextButton_shine_e2 {
+    left: -4rem;
+}
+.TextButton_base__right_39 .TextButton_shine_e2 {
+    right: -4rem;
+    transform: rotate(180deg);
+}
+.TextButton_base_b6:hover .TextButton_shine_e2 {
+    opacity: 1;
+}
+.TextButton_base_b6:active .TextButton_shine_e2 {
+    opacity: 0;
+}
+
+.Box_mt__XS_0c {
+    margin-top: 4rem;
+}
+.Box_mt__SM_eb {
+    margin-top: 8rem;
+}
+.Box_mt__SMp_cf {
+    margin-top: 10rem;
+}
+.Box_mt__MD_25 {
+    margin-top: 16rem;
+}
+.Box_mt__MDp_49 {
+    margin-top: 20rem;
+}
+.Box_mt__LG_e8 {
+    margin-top: 32rem;
+}
+.Box_mt__XL_83 {
+    margin-top: 64rem;
+}
+
+.Box_mr__XS_7c {
+    margin-right: 4rem;
+}
+
+.Box_mr__SM_08 {
+    margin-right: 8rem;
+}
+
+.Box_mr__SMp_06 {
+    margin-right: 10rem;
+}
+
+.Box_mr__MD_4a {
+    margin-right: 16rem;
+}
+
+.Box_mr__MDp_b6 {
+    margin-right: 20rem;
+}
+
+.Box_mr__LG_d0 {
+    margin-right: 32rem;
+}
+
+.Box_mr__XL_db {
+    margin-right: 64rem;
+}
+
+.Box_mb__XS_bb {
+    margin-bottom: 4rem;
+}
+
+.Box_mb__SM_83 {
+    margin-bottom: 8rem;
+}
+
+.Box_mb__SMp_04 {
+    margin-bottom: 10rem;
+}
+
+.Box_mb__MD_ed {
+    margin-bottom: 16rem;
+}
+
+.Box_mb__MDp_65 {
+    margin-bottom: 20rem;
+}
+
+.Box_mb__LG_c8 {
+    margin-bottom: 32rem;
+}
+
+.Box_mb__XL_f8 {
+    margin-bottom: 64rem;
+}
+
+.Box_ml__XS_8a {
+    margin-left: 4rem;
+}
+
+.Box_ml__SM_e6 {
+    margin-left: 8rem;
+}
+
+.Box_ml__SMp_fb {
+    margin-left: 10rem;
+}
+
+.Box_ml__MD_2b {
+    margin-left: 16rem;
+}
+
+.Box_ml__MDp_c7 {
+    margin-left: 20rem;
+}
+
+.Box_ml__LG_39 {
+    margin-left: 32rem;
+}
+
+.Box_ml__XL_4a {
+    margin-left: 64rem;
+}
+
+.FormatText_base_d0 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* eslint-disable-next-line expectedscss*/
+.Text_paragraph-P10_2c {
+    font-size: 10rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.Text_paragraph-P12_22 {
+    font-size: 12rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+.Text_paragraph-P14_a7 {
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+.Text_paragraph-P16_90 {
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+.Text_paragraph-P18_50 {
+    font-size: 18rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+.Text_paragraph-P24_33 {
+    font-size: 24rem;
+    font-weight: 400;
+    line-height: 32rem;
+}
+.Text_heading-H14_8b {
+    font-size: 14rem;
+    font-weight: 700;
+    line-height: 1.15;
+}
+.Text_heading-H15_9e {
+    font-size: 15rem;
+    font-weight: 700;
+    line-height: 1.15;
+}
+.Text_heading-H18_b7 {
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H20R_f6 {
+    font-size: 20rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.Text_heading-H22_27 {
+    font-size: 22rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.Text_heading-H24R_be {
+    font-size: 24rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.Text_heading-H24_0c {
+    font-size: 24rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.Text_heading-H28_78 {
+    font-size: 28rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H36_32 {
+    font-size: 36rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H56_c3 {
+    font-size: 56rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H73_8f {
+    font-size: 73rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H144_a9 {
+    font-size: 144rem;
+    font-weight: 700;
+    line-height: 1;
+}
+.Text_BLACK_REAL_30 {
+    color: #000000;
+}
+.Text_WHITE_REAL_bc {
+    color: #ffffff;
+}
+.Text_WHITE_62 {
+    color: #f2f2f7;
+}
+.Text_WHITE_ORANGE_54 {
+    color: #fefeec;
+}
+.Text_WHITE_SPANISH_df {
+    color: #e9e2bf;
+}
+.Text_PAR_15 {
+    color: #8c8c7e;
+}
+.Text_PAR_SECONDARY_5d {
+    color: #595950;
+}
+.Text_PAR_TERTIARY_c9 {
+    color: #37362e;
+}
+.Text_INFO_RED_30 {
+    color: #ff0000;
+}
+.Text_RED_66 {
+    color: #ff2717;
+}
+.Text_RED_DARK_d8 {
+    color: #b70000;
+}
+.Text_YELLOW_ed {
+    color: #feab34;
+}
+.Text_ORANGE_be {
+    color: #ee7000;
+}
+.Text_CREAM_57 {
+    color: #ffdd99;
+}
+.Text_BROWN_18 {
+    color: #cbac77;
+}
+.Text_GREEN_BRIGHT_3f {
+    color: #80d43a;
+}
+.Text_GREEN_e3 {
+    color: #7ab300;
+}
+.Text_GREEN_DARK_f1 {
+    color: #497212;
+}
+.Text_BLUE_BOOSTER_21 {
+    color: #ccffff;
+}
+.Text_BLUE_TEAMKILLER_ab {
+    color: #09e2ff;
+}
+.Text_CRED_f7 {
+    color: #ced9d9;
+}
+.Text_GOLD_28 {
+    color: #ffc363;
+}
+.Text_BOND_be {
+    color: #c9c9b6;
+}
+.Text_PROM_65 {
+    color: #a29b70;
+}
+
+.FrontButton_base_4c {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 386rem;
+    height: 178rem;
+    position: relative;
+    cursor: pointer;
+}
+
+.FrontButton_base__selected_ec,
+.FrontButton_base__countdown_0b,
+.FrontButton_base__disabled_91 {
+    cursor: default;
+    pointer-events: none;
+}
+
+.mediaMedium .FrontButton_base_4c {
+    width: 480rem;
+    height: 226rem;
+}
+
+.mediaExtraLarge .FrontButton_base_4c {
+    width: 640rem;
+    height: 300rem;
+}
+
+.FrontButton_hover_8a {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: no-repeat center / contain;
+    opacity: 0;
+    transition: opacity 0.2s linear;
+}
+
+.FrontButton_base__defence_96 .FrontButton_hover_8a {
+    background-image: url('R.images.historical_battles.gui.maps.icons.frontPanel.hover.defence.small');
+}
+
+.mediaMedium .FrontButton_base__defence_96 .FrontButton_hover_8a {
+    background-image: url('R.images.historical_battles.gui.maps.icons.frontPanel.hover.defence.medium');
+}
+
+.mediaExtraLarge .FrontButton_base__defence_96 .FrontButton_hover_8a {
+    background-image: url('R.images.historical_battles.gui.maps.icons.frontPanel.hover.defence.big');
+}
+
+.FrontButton_base__offence_1e .FrontButton_hover_8a {
+    background-image: url('R.images.historical_battles.gui.maps.icons.frontPanel.hover.offence.small');
+}
+
+.mediaMedium .FrontButton_base__offence_1e .FrontButton_hover_8a {
+    background-image: url('R.images.historical_battles.gui.maps.icons.frontPanel.hover.offence.medium');
+}
+
+.mediaExtraLarge .FrontButton_base__offence_1e .FrontButton_hover_8a {
+    background-image: url('R.images.historical_battles.gui.maps.icons.frontPanel.hover.offence.big');
+}
+
+.FrontButton_base_4c:hover .FrontButton_hover_8a {
+    opacity: 1;
+}
+
+.FrontButton_selected_e2 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: no-repeat center / contain;
+}
+
+.FrontButton_base__defence_96 .FrontButton_selected_e2 {
+    background-image: url('R.images.historical_battles.gui.maps.icons.frontPanel.selected.defence.small');
+}
+
+.mediaMedium .FrontButton_base__defence_96 .FrontButton_selected_e2 {
+    background-image: url('R.images.historical_battles.gui.maps.icons.frontPanel.selected.defence.medium');
+}
+
+.mediaExtraLarge .FrontButton_base__defence_96 .FrontButton_selected_e2 {
+    background-image: url('R.images.historical_battles.gui.maps.icons.frontPanel.selected.defence.big');
+}
+
+.FrontButton_base__offence_1e .FrontButton_selected_e2 {
+    background-image: url('R.images.historical_battles.gui.maps.icons.frontPanel.selected.offence.small');
+}
+
+.mediaMedium .FrontButton_base__offence_1e .FrontButton_selected_e2 {
+    background-image: url('R.images.historical_battles.gui.maps.icons.frontPanel.selected.offence.medium');
+}
+
+.mediaExtraLarge .FrontButton_base__offence_1e .FrontButton_selected_e2 {
+    background-image: url('R.images.historical_battles.gui.maps.icons.frontPanel.selected.offence.big');
+}
+
+.FrontButton_label_cd {
+    color: #ced9d9;
+    font-size: 22rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-top: 36rem;
+    text-shadow: 0 0 7rem #000;
+    opacity: 0.7;
+    z-index: 1;
+    transform: scale(1);
+    transition:
+        opacity 0.2s linear,
+        transform 0.2s linear;
+}
+
+.mediaMedium .FrontButton_label_cd {
+    margin-top: 42rem;
+    font-size: 28rem;
+}
+
+.mediaExtraLarge .FrontButton_label_cd {
+    margin-top: 54rem;
+    font-size: 36rem;
+}
+
+.FrontButton_base_4c:hover .FrontButton_label_cd {
+    opacity: 0.9;
+    transform: scale(1.06);
+}
+
+.FrontButton_base__selected_ec .FrontButton_label_cd {
+    margin-top: 31rem;
+    font-size: 28rem;
+    opacity: 1;
+}
+
+.mediaMedium .FrontButton_base__selected_ec .FrontButton_label_cd {
+    margin-top: 36rem;
+    font-size: 36rem;
+}
+
+.mediaExtraLarge .FrontButton_base__selected_ec .FrontButton_label_cd {
+    margin-top: 41rem;
+    font-size: 56rem;
+}
+
+.FrontButton_base__countdown_0b .FrontButton_label_cd {
+    margin-top: 22rem;
+}
+
+.mediaMedium .FrontButton_base__countdown_0b .FrontButton_label_cd {
+    margin-top: 30rem;
+}
+
+.mediaExtraLarge .FrontButton_base__countdown_0b .FrontButton_label_cd {
+    margin-top: 40rem;
+}
+
+.FrontButton_base__defence_96 .FrontButton_label_cd {
+    color: #ffffff;
+}
+
+.FrontButton_base__defence_96.FrontButton_base__selected_ec .FrontButton_label_cd {
+    color: #f2f2f7;
+}
+
+.FrontButton_base__offence_1e .FrontButton_label_cd {
+    color: #fefeec;
+}
+
+.FrontButton_countDown_29 {
+    color: #c9c9b6;
+    font-size: 12rem;
+    font-weight: 400;
+    line-height: 1.3;
+    margin-top: 5rem;
+}
+
+.mediaMedium .FrontButton_countDown_29 {
+    color: #c9c9b6;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+.mediaExtraLarge .FrontButton_countDown_29 {
+    color: #c9c9b6;
+    font-size: 18rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+
+.FrontButton_countDown_icon_55 {
+    width: 32rem;
+    height: 32rem;
+    margin: -8rem -4rem 0 -5rem;
+    background: url('R.images.historical_battles.gui.maps.icons.library.clock.c_32x32') no-repeat center / contain;
+}
+
+.mediaMedium .FrontButton_countDown_icon_55 {
+    margin: -7rem -3rem 0 -4rem;
+}
+
+.mediaExtraLarge .FrontButton_countDown_icon_55 {
+    margin: -4rem -4rem 0 -7rem;
+}
+
+.FrontButton_countDown_text_e3 {
+    color: #ffdd99;
+    font-size: 12rem;
+    font-weight: 400;
+    line-height: 1.3;
+    text-shadow:
+        0 0 4rem rgba(255, 127, 0, 0.25),
+        0 0 8rem #ff2a00,
+        0 0 15rem #e52;
+}
+
+.mediaMedium .FrontButton_countDown_text_e3 {
+    color: #ffdd99;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+.mediaExtraLarge .FrontButton_countDown_text_e3 {
+    color: #ffdd99;
+    font-size: 18rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+
+.App_base_69 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.App_bg_51 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: url('R.images.historical_battles.gui.maps.icons.frontPanel.bg.small') no-repeat top / contain;
+}
+
+.mediaMedium .App_bg_51 {
+    background-image: url('R.images.historical_battles.gui.maps.icons.frontPanel.bg.medium');
+}
+
+.mediaExtraLarge .App_bg_51 {
+    background-image: url('R.images.historical_battles.gui.maps.icons.frontPanel.bg.big');
+}
+
+.App_buttonClose_04,
+.App_buttonInfo_ac {
+    position: absolute;
+    top: 17rem;
+}
+
+.mediaSmall .App_buttonClose_04,
+.mediaSmall .App_buttonInfo_ac {
+    top: 22rem;
+}
+
+.mediaMedium .App_buttonClose_04,
+.mediaMedium .App_buttonInfo_ac {
+    top: 27rem;
+}
+
+.mediaLarge .App_buttonClose_04,
+.mediaLarge .App_buttonInfo_ac {
+    top: 31rem;
+}
+
+.mediaExtraLarge .App_buttonClose_04,
+.mediaExtraLarge .App_buttonInfo_ac {
+    top: 43rem;
+}
+
+.App_buttonClose_04 {
+    right: 14rem;
+}
+
+.mediaSmall .App_buttonClose_04 {
+    right: 35rem;
+}
+
+.mediaLarge .App_buttonClose_04 {
+    right: 40rem;
+}
+
+.mediaExtraLarge .App_buttonClose_04 {
+    right: 57rem;
+}
+
+.App_buttonInfo_ac {
+    left: 15rem;
+}
+
+.mediaSmall .App_buttonInfo_ac {
+    left: 36rem;
+}
+
+.mediaLarge .App_buttonInfo_ac {
+    left: 40rem;
+}
+
+.mediaExtraLarge .App_buttonInfo_ac {
+    left: 56rem;
+}
+
+.App_frontButton_77 {
+    margin: 0 -26rem;
+}
+
+.mediaMedium .App_frontButton_77 {
+    margin: 0 -28rem;
+}
+
+.mediaExtraLarge .App_frontButton_77 {
+    margin: 0 -32rem;
+}

@@ -796,7 +796,7 @@
                     };
                 window.ViewEnvHelper = w;
             },
-            241: (e, u, t) => {
+            279: (e, u, t) => {
                 'use strict';
                 var r = {};
                 t.r(r),
@@ -1132,8 +1132,8 @@
                             i = a.mediaSize;
                         return s().createElement('div', y({ className: B()(t, x[n], P[o], L[i]) }, r), u);
                     },
-                    N = ['children'],
-                    k = (e) => {
+                    k = ['children'],
+                    N = (e) => {
                         let u = e.children,
                             t = (function (e, u) {
                                 if (null == e) return {};
@@ -1143,7 +1143,7 @@
                                     n = Object.keys(e);
                                 for (r = 0; r < n.length; r++) (t = n[r]), u.indexOf(t) >= 0 || (a[t] = e[t]);
                                 return a;
-                            })(e, N);
+                            })(e, k);
                         return s().createElement(D, null, s().createElement(M, t, u));
                     };
                 var O = t(493),
@@ -1591,6 +1591,7 @@
                         (e.TankmenXpFactor = 'tankmenXPFactor'),
                         (e.FreeXpFactor = 'freeXPFactor'),
                         (e.BattleToken = 'battleToken'),
+                        (e.HBVehicleUnlock = 'hbUnlockVehicles'),
                         (e.PremiumUniversal = 'premium_universal'),
                         (e.Gold = 'gold'),
                         (e.Credits = 'credits'),
@@ -1625,7 +1626,9 @@
                         (e.Branch = 'branch'),
                         (e.VehicleSelect = 'vehicleSelect'),
                         (e.StyleProgress = 'styleProgress'),
-                        (e.ParagonsUnlocks = 'paragonsUnlocks');
+                        (e.ParagonsUnlocks = 'paragonsUnlocks'),
+                        (e.HistoricalBattleDiscount25 = 'historical_battles_main_discount'),
+                        (e.LootBoxToken = 'lootBoxToken');
                 })(de || (de = {})),
                     (function (e) {
                         (e.Gold = 'gold'),
@@ -2040,6 +2043,7 @@
                         de.TankmenXpFactor,
                         de.FreeXpFactor,
                         de.BattleToken,
+                        de.HBVehicleUnlock,
                         de.PremiumUniversal,
                         de.NaturalCover,
                         de.BpCoin,
@@ -2060,8 +2064,8 @@
                     ],
                     Le = [de.Gold, de.Credits, de.Crystal, de.FreeXp],
                     Me = [de.BattlePassPoints],
-                    Ne = [de.PremiumPlus, de.Premium],
-                    ke = ['engravings', 'backgrounds'],
+                    ke = [de.PremiumPlus, de.Premium],
+                    Ne = ['engravings', 'backgrounds'],
                     Oe = ['engraving', 'background'],
                     Ie = (e, u, t) => {
                         const r = u && { contentId: u };
@@ -2256,7 +2260,8 @@
                                         n = e.icon,
                                         s = e.item,
                                         o = e.dogTagType,
-                                        i = ((e) => {
+                                        i = e.iconSmall,
+                                        l = ((e) => {
                                             switch (e) {
                                                 case _e.S600x450:
                                                     return 'c_600x450';
@@ -2300,11 +2305,16 @@
                                                         return `R.images.gui.maps.icons.quests.bonuses.${u}.${e.icon}`;
                                                 }
                                             })(e, u);
+                                        case 'hbUnlockVehicles':
+                                        default:
+                                            return `R.images.gui.maps.icons.quests.bonuses.${u}.${t}`;
                                         case 'crewBooks':
                                             return `R.images.gui.maps.icons.crewBooks.books.${u}.${n}`;
+                                        case 'entitlements':
+                                            return `R.images.gui.maps.icons.quests.bonuses.${u}.${i}`;
                                         case 'dogTagComponents':
                                             return ((e, u, t) => {
-                                                const r = ke[e];
+                                                const r = Ne[e];
                                                 if (r) {
                                                     const a = R.images.gui.maps.icons.dogtags.$dyn(u).$dyn(r),
                                                         n = a.$dyn(t);
@@ -2318,9 +2328,9 @@
                                                 );
                                             })(o, u, n);
                                         case 'dossier_badge':
-                                            return `R.images.gui.maps.icons.quests.bonuses.badges.${i}.${n}`;
+                                            return `R.images.gui.maps.icons.quests.bonuses.badges.${l}.${n}`;
                                         case 'dossier_achievement':
-                                            return `R.images.gui.maps.icons.achievement.${i}.${n}`;
+                                            return `R.images.gui.maps.icons.achievement.${l}.${n}`;
                                         case 'xp':
                                         case 'xpFactor':
                                             return `R.images.gui.maps.icons.quests.bonuses.${u}.exp`;
@@ -2346,9 +2356,7 @@
                                         case 'styleProgressToken':
                                             return `R.images.gui.maps.icons.quests.bonuses.${u}.style_3d`;
                                         case 'collectionItem':
-                                            return `R.images.gui.maps.icons.collectionItems.${i}.${n}`;
-                                        default:
-                                            return `R.images.gui.maps.icons.quests.bonuses.${u}.${t}`;
+                                            return `R.images.gui.maps.icons.collectionItems.${l}.${n}`;
                                     }
                                 })(e, u);
                         }
@@ -2371,7 +2379,7 @@
                                               ? Ee.CURRENCY
                                               : Me.includes(u)
                                                 ? Ee.NUMBER
-                                                : Ne.includes(u)
+                                                : ke.includes(u)
                                                   ? Ee.PREMIUM_PLUS
                                                   : Ee.STRING),
                                     tooltipArgs: Ie({ tooltipId: e.tooltipId, tooltipContentId: e.tooltipContentId }),
@@ -2999,7 +3007,7 @@
                         '--progress-delta-shadow': e.delta.shadow,
                     }),
                     Mu = (e, u, t) => ('number' == typeof t ? (J(0, u, t) / u) * 100 : e),
-                    Nu = {
+                    ku = {
                         bgImageBase: 'R.images.gui.maps.icons.components.progress_bar.pattern_grey',
                         line: { bgColorBase: '#f50', bgColorDisabled: 'transparent', bgColorFinished: '#59a011' },
                         pattern: {
@@ -3014,7 +3022,7 @@
                             shadow: '0 0 4px 1px #ffaa0066, 0 0 9px 1px #ffaa0066, 0 0 12px 2px #ff550066, 0 0 12px 4px #ff000066',
                         },
                     },
-                    ku = {
+                    Nu = {
                         freezed: !1,
                         withStack: !1,
                         type: iu.Growing,
@@ -3024,9 +3032,9 @@
                     Ou = (0, n.memo)(
                         ({
                             maxValue: e = 100,
-                            theme: u = Nu,
+                            theme: u = ku,
                             size: t = ou.Default,
-                            animationSettings: r = ku,
+                            animationSettings: r = Nu,
                             disabled: a = !1,
                             withoutBackground: o = !1,
                             progressBarBackgroundClassMix: i,
@@ -3919,8 +3927,8 @@
                         SM: { mt: xt.mt__SM, mr: xt.mr__SM, mb: xt.mb__SM, ml: xt.ml__SM },
                         XS: { mt: xt.mt__XS, mr: xt.mr__XS, mb: xt.mb__XS, ml: xt.ml__XS },
                     },
-                    Nt = (Object.keys(Mt), ['mt', 'mr', 'mb', 'ml']),
-                    kt = { mt: 'marginTop', mr: 'marginRight', mb: 'marginBottom', ml: 'marginLeft' },
+                    kt = (Object.keys(Mt), ['mt', 'mr', 'mb', 'ml']),
+                    Nt = { mt: 'marginTop', mr: 'marginRight', mb: 'marginBottom', ml: 'marginLeft' },
                     Ot = yt((e) => {
                         let u = e.className,
                             t = e.width,
@@ -3960,8 +3968,8 @@
                             P = void 0 === x ? (y ? 'wrap' : void 0) : x,
                             L = e.grow,
                             M = e.shrink,
-                            N = e.flex,
-                            k = void 0 === N ? (L || M ? `${L ? 1 : 0} ${M ? 1 : 0} auto` : void 0) : N,
+                            k = e.flex,
+                            N = void 0 === k ? (L || M ? `${L ? 1 : 0} ${M ? 1 : 0} auto` : void 0) : k,
                             O = e.style,
                             I = e.children,
                             H = (function (e, u) {
@@ -3976,20 +3984,20 @@
                         const W = (0, n.useMemo)(() => {
                                 const e = { mt: i, mr: c, mb: m, ml: E },
                                     u = ((e) =>
-                                        Nt.reduce((u, t) => {
+                                        kt.reduce((u, t) => {
                                             const r = e[t];
                                             return r && 'number' != typeof r ? u.concat(Mt[!0 === r ? 'MD' : r][t]) : u;
                                         }, []))(e),
                                     a = ((e) =>
-                                        Nt.reduce((u, t) => {
+                                        kt.reduce((u, t) => {
                                             const r = e[t];
-                                            return 'number' == typeof r && (u[kt[t]] = r + 'rem'), u;
+                                            return 'number' == typeof r && (u[Nt[t]] = r + 'rem'), u;
                                         }, {}))(e);
                                 return {
                                     computedStyle: Object.assign({}, O, a, {
                                         width: void 0 !== t && 'number' == typeof t ? t + 'rem' : t,
                                         height: void 0 !== r && 'number' == typeof r ? r + 'rem' : r,
-                                        flex: k,
+                                        flex: N,
                                         alignSelf: R,
                                         display: p || T ? 'flex' : void 0,
                                         flexDirection: p,
@@ -3999,7 +4007,7 @@
                                     }),
                                     computedClassNames: u,
                                 };
-                            }, [t, r, i, c, m, E, O, k, R, p, P, w, T]),
+                            }, [t, r, i, c, m, E, O, N, R, p, P, w, T]),
                             U = W.computedStyle,
                             G = W.computedClassNames;
                         return s().createElement('div', Lt({ className: B()(xt.base, ...G, u), style: U }, H), I);
@@ -4882,13 +4890,13 @@
                 const Pr = 'HorizontalBar_base__nonActive_82',
                     Lr = 'disable',
                     Mr = { pending: !1, offset: 0 },
-                    Nr = (e) => {
+                    kr = (e) => {
                         var u;
                         return 0.9 * (null != (u = e.getWrapperSize()) ? u : 0);
                     },
-                    kr = () => {},
+                    Nr = () => {},
                     Or = (e, u) => Math.max(20, e.offsetWidth * u),
-                    Ir = (0, n.memo)(({ api: e, classNames: u = {}, getStepByRailClick: t = Nr, onDrag: r = kr }) => {
+                    Ir = (0, n.memo)(({ api: e, classNames: u = {}, getStepByRailClick: t = kr, onDrag: r = Nr }) => {
                         const a = (0, n.useRef)(null),
                             o = (0, n.useRef)(null),
                             i = (0, n.useRef)(null),
@@ -4953,7 +4961,7 @@
                                         const u = () => {
                                             g();
                                         };
-                                        let t = kr;
+                                        let t = Nr;
                                         const r = () => {
                                             t(), (t = lr(F));
                                         };
@@ -5494,13 +5502,13 @@
                             },
                             [a, l, m, S, t],
                         ),
-                        N = (0, n.useCallback)(
+                        k = (0, n.useCallback)(
                             (e) => {
                                 a || (E && E(e), b(!1));
                             },
                             [a, E],
                         ),
-                        k = B()(
+                        N = B()(
                             ua.base,
                             ua[`base__${r}`],
                             {
@@ -5530,12 +5538,12 @@
                             'div',
                             {
                                 ref: g,
-                                className: k,
+                                className: N,
                                 onMouseEnter: x,
                                 onMouseMove: P,
                                 onMouseUp: L,
                                 onMouseDown: M,
-                                onMouseLeave: N,
+                                onMouseLeave: k,
                                 onClick: y,
                             },
                             r !== ta.ghost &&
@@ -5883,7 +5891,7 @@
                             r = e.maxValue,
                             a = void 0 === r ? 100 : r,
                             o = e.theme,
-                            i = void 0 === o ? Nu : o,
+                            i = void 0 === o ? ku : o,
                             l = (function (e, u) {
                                 if (null == e) return {};
                                 var t,
@@ -6024,7 +6032,7 @@
                         }, [l, d, c, i, _, m]);
                         const f = (0, n.useMemo)(
                             () =>
-                                Object.assign({}, ku, {
+                                Object.assign({}, Nu, {
                                     withStack: !0,
                                     type: iu.Growing,
                                     delta: { duration: A, delay: 300 },
@@ -6404,7 +6412,7 @@
                             ),
                         );
                     }),
-                    Na = {
+                    ka = {
                         [H.PROGRESSION]: () =>
                             s().createElement(
                                 Ju,
@@ -6412,8 +6420,8 @@
                                 s().createElement(Ma, null),
                             ),
                     },
-                    ka = ({ viewType: e }) => {
-                        const u = Na[e];
+                    Na = ({ viewType: e }) => {
+                        const u = ka[e];
                         return u
                             ? s().createElement(
                                   n.Suspense,
@@ -6433,13 +6441,13 @@
                         return s().createElement(
                             'div',
                             { className: 'App_base_43' },
-                            s().createElement(ka, { viewType: e }),
+                            s().createElement(Na, { viewType: e }),
                         );
                     });
                 engine.whenReady.then(() => {
                     I().render(
                         s().createElement(
-                            k,
+                            N,
                             null,
                             s().createElement(
                                 Ia,
@@ -6532,6 +6540,6 @@
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             t.forEach(u.bind(null, 0)), (t.push = u.bind(null, t.push.bind(t)));
         })();
-    var __webpack_exports__ = __webpack_require__.O(void 0, [503], () => __webpack_require__(241));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [503], () => __webpack_require__(279));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

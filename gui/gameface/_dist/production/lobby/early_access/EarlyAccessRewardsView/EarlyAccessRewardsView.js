@@ -1316,6 +1316,7 @@
                             (u.TankmenXpFactor = 'tankmenXPFactor'),
                             (u.FreeXpFactor = 'freeXPFactor'),
                             (u.BattleToken = 'battleToken'),
+                            (u.HBVehicleUnlock = 'hbUnlockVehicles'),
                             (u.PremiumUniversal = 'premium_universal'),
                             (u.Gold = 'gold'),
                             (u.Credits = 'credits'),
@@ -1350,7 +1351,9 @@
                             (u.Branch = 'branch'),
                             (u.VehicleSelect = 'vehicleSelect'),
                             (u.StyleProgress = 'styleProgress'),
-                            (u.ParagonsUnlocks = 'paragonsUnlocks');
+                            (u.ParagonsUnlocks = 'paragonsUnlocks'),
+                            (u.HistoricalBattleDiscount25 = 'historical_battles_main_discount'),
+                            (u.LootBoxToken = 'lootBoxToken');
                     })(Z || (Z = {})),
                     (function (u) {
                         (u.Gold = 'gold'),
@@ -1463,6 +1466,7 @@
                         Z.TankmenXpFactor,
                         Z.FreeXpFactor,
                         Z.BattleToken,
+                        Z.HBVehicleUnlock,
                         Z.PremiumUniversal,
                         Z.NaturalCover,
                         Z.BpCoin,
@@ -1493,7 +1497,8 @@
                             n = u.icon,
                             i = u.item,
                             s = u.dogTagType,
-                            o = ((u) => {
+                            o = u.iconSmall,
+                            E = ((u) => {
                                 switch (u) {
                                     case uu.S600x450:
                                         return 'c_600x450';
@@ -1537,8 +1542,13 @@
                                             return `R.images.gui.maps.icons.quests.bonuses.${e}.${u.icon}`;
                                     }
                                 })(u, e);
+                            case 'hbUnlockVehicles':
+                            default:
+                                return `R.images.gui.maps.icons.quests.bonuses.${e}.${t}`;
                             case 'crewBooks':
                                 return `R.images.gui.maps.icons.crewBooks.books.${e}.${n}`;
+                            case 'entitlements':
+                                return `R.images.gui.maps.icons.quests.bonuses.${e}.${o}`;
                             case 'dogTagComponents':
                                 return ((u, e, t) => {
                                     const r = Eu[u];
@@ -1555,9 +1565,9 @@
                                     );
                                 })(s, e, n);
                             case 'dossier_badge':
-                                return `R.images.gui.maps.icons.quests.bonuses.badges.${o}.${n}`;
+                                return `R.images.gui.maps.icons.quests.bonuses.badges.${E}.${n}`;
                             case 'dossier_achievement':
-                                return `R.images.gui.maps.icons.achievement.${o}.${n}`;
+                                return `R.images.gui.maps.icons.achievement.${E}.${n}`;
                             case 'xp':
                             case 'xpFactor':
                                 return `R.images.gui.maps.icons.quests.bonuses.${e}.exp`;
@@ -1583,9 +1593,7 @@
                             case 'styleProgressToken':
                                 return `R.images.gui.maps.icons.quests.bonuses.${e}.style_3d`;
                             case 'collectionItem':
-                                return `R.images.gui.maps.icons.collectionItems.${o}.${n}`;
-                            default:
-                                return `R.images.gui.maps.icons.quests.bonuses.${e}.${t}`;
+                                return `R.images.gui.maps.icons.collectionItems.${E}.${n}`;
                         }
                     },
                     cu = (u, e, t) => {

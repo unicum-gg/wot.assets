@@ -158,10 +158,10 @@
                         displayStatusIs: () => b,
                         events: () => t.U,
                         extraSize: () => P,
-                        forceTriggerMouseMove: () => g,
+                        forceTriggerMouseMove: () => h,
                         freezeTextureBeforeResize: () => c,
                         getBrowserTexturePath: () => o,
-                        getDisplayStatus: () => h,
+                        getDisplayStatus: () => g,
                         getScale: () => l,
                         getSize: () => s,
                         getViewGlobalPosition: () => C,
@@ -230,10 +230,10 @@
                 function w() {
                     return viewEnv.isEventHandled();
                 }
-                function g() {
+                function h() {
                     viewEnv.forceTriggerMouseMove();
                 }
-                function h() {
+                function g() {
                     return viewEnv.getShowingStatus();
                 }
                 const b = Object.keys(F.W).reduce(
@@ -647,8 +647,8 @@
                         u.keyCode === a.n.ESCAPE && e();
                     };
                 var w = E(7572);
-                const g = F.instance,
-                    h = {
+                const h = F.instance,
+                    g = {
                         DataTracker: t.Z,
                         ViewModel: w.Z,
                         ViewEventType: r,
@@ -726,11 +726,11 @@
                                 }
                             return E;
                         },
-                        ClickOutsideManager: g,
+                        ClickOutsideManager: h,
                         SystemLocale: D,
                         UserLocale: n,
                     };
-                window.ViewEnvHelper = h;
+                window.ViewEnvHelper = g;
             },
             4121: (u, e, E) => {
                 var A = E(6179),
@@ -889,7 +889,7 @@
                                 .match(u);
                     })(),
                     w = ['zh_cn', 'zh_sg', 'zh_tw'],
-                    g = (u, e = _.left) => {
+                    h = (u, e = _.left) => {
                         const E = R.strings.settings.LANGUAGE_CODE().toLowerCase();
                         return w.includes(E)
                             ? v(u)
@@ -901,7 +901,7 @@
                                   return m(F, /( )/, e).forEach((u) => (E = E.concat(m(u, A, _.left)))), E;
                               })(u, e);
                     },
-                    h = 'FormatText_base_d0',
+                    g = 'FormatText_base_d0',
                     b = ({ binding: u, text: e = '', classMix: E, alignment: t = _.left }) =>
                         null === e
                             ? (console.error("FormatText was supplied with 'null'"), null)
@@ -911,11 +911,11 @@
                                   e.split('\n').map((e, D) =>
                                       F().createElement(
                                           'div',
-                                          { className: r()(h, E), key: `${e}-${D}` },
+                                          { className: r()(g, E), key: `${e}-${D}` },
                                           ((u, e, E) =>
                                               u
                                                   .split(/%\((.*?)\)(?:[sd])?/g)
-                                                  .map((u) => (E && u in E ? E[u] : g(u, e))))(e, t, u).map((u, e) =>
+                                                  .map((u) => (E && u in E ? E[u] : h(u, e))))(e, t, u).map((u, e) =>
                                               F().createElement(A.Fragment, { key: `${e}-${u}` }, u),
                                           ),
                                       ),
@@ -1045,6 +1045,7 @@
                         (u.TankmenXpFactor = 'tankmenXPFactor'),
                         (u.FreeXpFactor = 'freeXPFactor'),
                         (u.BattleToken = 'battleToken'),
+                        (u.HBVehicleUnlock = 'hbUnlockVehicles'),
                         (u.PremiumUniversal = 'premium_universal'),
                         (u.Gold = 'gold'),
                         (u.Credits = 'credits'),
@@ -1079,7 +1080,9 @@
                         (u.Branch = 'branch'),
                         (u.VehicleSelect = 'vehicleSelect'),
                         (u.StyleProgress = 'styleProgress'),
-                        (u.ParagonsUnlocks = 'paragonsUnlocks');
+                        (u.ParagonsUnlocks = 'paragonsUnlocks'),
+                        (u.HistoricalBattleDiscount25 = 'historical_battles_main_discount'),
+                        (u.LootBoxToken = 'lootBoxToken');
                 })(U || (U = {})),
                     (function (u) {
                         (u.Gold = 'gold'),

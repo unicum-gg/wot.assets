@@ -1255,7 +1255,7 @@
                     };
                 window.ViewEnvHelper = w;
             },
-            4448: (u, e, t) => {
+            685: (u, e, t) => {
                 'use strict';
                 var n = t(6179),
                     a = t.n(n);
@@ -2639,6 +2639,7 @@
                         'soundHover',
                         'soundClick',
                         'size',
+                        'classNames',
                         'onClick',
                         'onMouseEnter',
                         'onMouseLeave',
@@ -2677,14 +2678,15 @@
                         c = void 0 === E ? 'play' : E,
                         A = u.size,
                         F = void 0 === A ? We.NORMAL : A,
-                        m = u.onClick,
-                        D = u.onMouseEnter,
-                        _ = u.onMouseLeave,
-                        d = u.onMouseDown,
-                        C = u.onMouseUp,
-                        B = u.onFocus,
-                        h = u.onBlur,
-                        v = (function (u, e) {
+                        m = u.classNames,
+                        D = u.onClick,
+                        _ = u.onMouseEnter,
+                        d = u.onMouseLeave,
+                        C = u.onMouseDown,
+                        B = u.onMouseUp,
+                        h = u.onFocus,
+                        v = u.onBlur,
+                        b = (function (u, e) {
                             if (null == u) return {};
                             var t,
                                 n,
@@ -2693,105 +2695,107 @@
                             for (n = 0; n < r.length; n++) (t = r[n]), e.indexOf(t) >= 0 || (a[t] = u[t]);
                             return a;
                         })(u, Ie);
-                    const b = (0, n.useState)(!1),
-                        w = b[0],
-                        p = b[1],
-                        f = (0, n.useState)(!1),
-                        S = f[0],
-                        T = f[1],
-                        x = (0, n.useState)(s),
-                        L = x[0],
-                        k = x[1],
-                        y = (0, n.useRef)(null),
-                        M = (0, n.useCallback)(() => {
-                            y.current && (y.current.focus(), k(!0));
+                    const w = (0, n.useState)(!1),
+                        p = w[0],
+                        f = w[1],
+                        S = (0, n.useState)(!1),
+                        T = S[0],
+                        x = S[1],
+                        L = (0, n.useState)(s),
+                        k = L[0],
+                        y = L[1],
+                        M = (0, n.useRef)(null),
+                        N = (0, n.useCallback)(() => {
+                            M.current && (M.current.focus(), y(!0));
                         }, []),
-                        N = (0, n.useCallback)(
+                        R = (0, n.useCallback)(
                             (u) => {
-                                L && null !== y.current && !y.current.contains(u.target) && k(!1);
+                                k && null !== M.current && !M.current.contains(u.target) && y(!1);
                             },
-                            [L],
+                            [k],
                         );
                     (0, n.useEffect)(
                         () => (
-                            document.addEventListener('mousedown', N),
+                            document.addEventListener('mousedown', R),
                             () => {
-                                document.removeEventListener('mousedown', N);
+                                document.removeEventListener('mousedown', R);
                             }
                         ),
-                        [N],
+                        [R],
                     ),
                         (0, n.useEffect)(() => {
-                            k(s);
+                            y(s);
                         }, [s]);
-                    const R = (0, n.useCallback)(
+                    const O = (0, n.useCallback)(
                             (u) => {
-                                m && m(u);
+                                D && D(u);
                             },
-                            [m],
-                        ),
-                        O = (0, n.useCallback)(
-                            (u) => {
-                                p(!0), d && d(u), c && (0, I.G)(c), s && M();
-                            },
-                            [s, d, M, c],
+                            [D],
                         ),
                         P = (0, n.useCallback)(
                             (u) => {
-                                p(!1), C && C(u);
+                                f(!0), C && C(u), c && (0, I.G)(c), s && N();
                             },
-                            [C],
+                            [s, C, N, c],
                         ),
                         H = (0, n.useCallback)(
                             (u) => {
-                                D && D(u), l && (0, I.G)(l), T(!0);
-                            },
-                            [D, l],
-                        ),
-                        W = (0, n.useCallback)(
-                            (u) => {
-                                p(!1), T(!1), _ && _(u);
-                            },
-                            [_],
-                        ),
-                        $ = (0, n.useCallback)(
-                            (u) => {
-                                k(!0), B && B(u);
+                                f(!1), B && B(u);
                             },
                             [B],
                         ),
+                        W = (0, n.useCallback)(
+                            (u) => {
+                                _ && _(u), l && (0, I.G)(l), x(!0);
+                            },
+                            [_, l],
+                        ),
+                        $ = (0, n.useCallback)(
+                            (u) => {
+                                f(!1), x(!1), d && d(u);
+                            },
+                            [d],
+                        ),
                         U = (0, n.useCallback)(
                             (u) => {
-                                k(!1), h && h(u);
+                                y(!0), h && h(u);
                             },
                             [h],
                         ),
-                        G = g()(
+                        G = (0, n.useCallback)(
+                            (u) => {
+                                y(!1), v && v(u);
+                            },
+                            [v],
+                        ),
+                        V = g()(
                             Pe.base,
                             r && Pe.base__visibleLabel,
-                            w && Pe.base__mouseDown,
-                            S && Pe.base__hovered,
-                            L && Pe.base__focused,
+                            p && Pe.base__mouseDown,
+                            T && Pe.base__hovered,
+                            k && Pe.base__focused,
+                            null == m ? void 0 : m.base,
                         ),
-                        V = g()(Pe.icon, Pe[`icon__${F}`]);
+                        z = g()(Pe.icon, Pe[`icon__${F}`], null == m ? void 0 : m.icon),
+                        j = g()(Pe.label, null == m ? void 0 : m.label);
                     return a().createElement(
                         'div',
                         He(
                             {
-                                ref: y,
-                                className: G,
-                                onClick: R,
-                                onMouseEnter: H,
-                                onMouseLeave: W,
-                                onMouseDown: O,
-                                onMouseUp: P,
-                                onFocus: $,
-                                onBlur: U,
+                                ref: M,
+                                className: V,
+                                onClick: O,
+                                onMouseEnter: W,
+                                onMouseLeave: $,
+                                onMouseDown: P,
+                                onMouseUp: H,
+                                onFocus: U,
+                                onBlur: G,
                             },
-                            v,
+                            b,
                         ),
-                        a().createElement('div', { className: V }),
-                        a().createElement('div', { className: Pe.label }, e),
+                        a().createElement('div', { className: z }),
+                        a().createElement('div', { className: j }, e),
                     );
                 });
                 var Ue = t(9356),
@@ -3533,6 +3537,6 @@
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             t.forEach(e.bind(null, 0)), (t.push = e.bind(null, t.push.bind(t)));
         })();
-    var __webpack_exports__ = __webpack_require__.O(void 0, [52], () => __webpack_require__(4448));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [52], () => __webpack_require__(685));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

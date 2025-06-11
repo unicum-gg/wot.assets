@@ -840,6 +840,6 @@
                 n = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             n.forEach(t.bind(null, 0)), (n.push = t.bind(null, n.push.bind(n)));
         })();
-    var __webpack_exports__ = __webpack_require__.O(void 0, [519], () => __webpack_require__(3679));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [1519], () => __webpack_require__(3679));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

@@ -1,0 +1,114 @@
+.FormatText_base_d0 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.LootboxCount_base_fd {
+    display: flex;
+}
+
+.LootboxCount_infin_1d {
+    width: 44rem;
+    height: 40rem;
+    margin: -6rem -13rem;
+    background: url('R.images.gui_lootboxes.gui.maps.entryPoint.infin') no-repeat center / contain;
+}
+
+.LootboxCount_base__large_4e .LootboxCount_infin_1d {
+    width: 48rem;
+    height: 42rem;
+    margin: -3rem -13rem;
+}
+
+.LootboxCount_base__disabled_48 .LootboxCount_infin_1d {
+    opacity: 0.3;
+}
+
+.Lootbox_base_36 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.Lootbox_shine_49 {
+    align-self: center;
+    width: 150rem;
+    height: 150rem;
+    background: url('swf://gui/flash/animations/eventLootBoxes/lootboxShine.swf') no-repeat center / contain;
+    mix-blend-mode: screen;
+    position: absolute;
+    z-index: 1;
+    pointer-events: none;
+}
+.Lootbox_base__large_8a .Lootbox_shine_49 {
+    width: 275rem;
+    height: 275rem;
+}
+.Lootbox_wrapper_2b {
+    width: 114rem;
+    height: 114rem;
+    position: relative;
+    z-index: 2;
+    cursor: pointer;
+    pointer-events: auto;
+}
+.Lootbox_base__large_8a .Lootbox_wrapper_2b {
+    width: 222rem;
+    height: 214rem;
+}
+.Lootbox_wrapper_2b .Lootbox_base__disabled_fa {
+    opacity: 0.4;
+    cursor: default;
+}
+.Lootbox_icon_a9 {
+    width: 80rem;
+    height: 80rem;
+    background: url('R.images.gui_lootboxes.gui.maps.entryPoint.entry') no-repeat center / cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.Lootbox_base__large_8a .Lootbox_icon_a9 {
+    width: 160rem;
+    height: 160rem;
+    background-image: url('R.images.gui_lootboxes.gui.maps.entryPoint.entryMedium');
+}
+.Lootbox_base__disabled_fa .Lootbox_icon_a9 {
+    opacity: 0.4;
+}
+.Lootbox_icon__hovered_61 {
+    filter: brightness(1.3);
+}
+.Lootbox_count_51 {
+    display: flex;
+    flex-direction: column;
+    color: #f2f2f7;
+    text-shadow: 0 0 14rem #f00;
+    position: absolute;
+    right: 4rem;
+    bottom: 24rem;
+}
+.Lootbox_base__large_8a .Lootbox_count_51 {
+    right: 16rem;
+    bottom: 54rem;
+}
+.Lootbox_base__disabled_fa .Lootbox_count_51 {
+    color: #595950;
+}
+.Lootbox_disabledAlert_13 {
+    width: 100rem;
+    height: 30rem;
+    background: url('R.images.gui_lootboxes.gui.maps.entryPoint.disabled') no-repeat center / cover;
+    position: absolute;
+    bottom: 20rem;
+    left: 50%;
+    z-index: 99;
+    transform: translateX(-50%);
+}
+.Lootbox_base__large_8a .Lootbox_disabledAlert_13 {
+    bottom: 50rem;
+}

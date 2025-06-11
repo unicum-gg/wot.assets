@@ -19,12 +19,6 @@
             280: (u, e, A) => {
                 A(6179), A(6483), A(3649), A(5287);
             },
-            9766: (u, e, A) => {
-                A(280), A(8082);
-            },
-            8082: (u, e, A) => {
-                A(3649);
-            },
             6373: (u, e, A) => {
                 A(2056), A(6179);
                 R.views.common.tooltip_window.simple_tooltip_content;
@@ -795,7 +789,7 @@
                         (u.Small = 'small'), (u.Big = 'big');
                     })(E || (E = {}));
             },
-            3561: (u, e, A) => {
+            6895: (u, e, A) => {
                 var F = A(6483),
                     E = A.n(F),
                     t = A(6179),
@@ -874,7 +868,7 @@
                         ),
                     );
                 }).defaultProps = { size: 'normal', fadeInAnimation: !1, hide: !1, maximumNumber: 99 };
-                A(2372), A(9766), A(6373), A(7727);
+                A(2372), A(280), A(3649), A(6373), A(7727);
                 A(2269);
                 R.strings.battle_pass.awardsWidget;
             },
@@ -936,9 +930,9 @@
                 Object.defineProperty(u, Symbol.toStringTag, { value: 'Module' }),
                 Object.defineProperty(u, '__esModule', { value: !0 });
         }),
-        (__webpack_require__.j = 737),
+        (__webpack_require__.j = 7737),
         (() => {
-            var u = { 737: 0 };
+            var u = { 7737: 0 };
             __webpack_require__.O.j = (e) => 0 === u[e];
             var e = (e, A) => {
                     var F,
@@ -956,6 +950,6 @@
                 A = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             A.forEach(e.bind(null, 0)), (A.push = e.bind(null, A.push.bind(A)));
         })();
-    var __webpack_exports__ = __webpack_require__.O(void 0, [519], () => __webpack_require__(3561));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [1519], () => __webpack_require__(6895));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

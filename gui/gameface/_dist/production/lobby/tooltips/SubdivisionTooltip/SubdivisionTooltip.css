@@ -1,0 +1,878 @@
+.TooltipDecorator_base_c9 {
+    display: flex;
+    position: absolute;
+}
+
+.TooltipDecorator_base__theme-default_6d .TooltipDecorator_decorator_3d {
+    padding: 4rem 6rem 8rem;
+    border-image-source: url('R.images.gui.maps.icons.tooltip.tooltip_background');
+    border-image-slice: 24 fill;
+    border-image-width: 24rem;
+    position: relative;
+}
+
+.Box_mt__XS_0c {
+    margin-top: 4rem;
+}
+.Box_mt__SM_eb {
+    margin-top: 8rem;
+}
+.Box_mt__SMp_cf {
+    margin-top: 10rem;
+}
+.Box_mt__MD_25 {
+    margin-top: 16rem;
+}
+.Box_mt__MDp_49 {
+    margin-top: 20rem;
+}
+.Box_mt__LG_e8 {
+    margin-top: 32rem;
+}
+.Box_mt__XL_83 {
+    margin-top: 64rem;
+}
+
+.Box_mr__XS_7c {
+    margin-right: 4rem;
+}
+
+.Box_mr__SM_08 {
+    margin-right: 8rem;
+}
+
+.Box_mr__SMp_06 {
+    margin-right: 10rem;
+}
+
+.Box_mr__MD_4a {
+    margin-right: 16rem;
+}
+
+.Box_mr__MDp_b6 {
+    margin-right: 20rem;
+}
+
+.Box_mr__LG_d0 {
+    margin-right: 32rem;
+}
+
+.Box_mr__XL_db {
+    margin-right: 64rem;
+}
+
+.Box_mb__XS_bb {
+    margin-bottom: 4rem;
+}
+
+.Box_mb__SM_83 {
+    margin-bottom: 8rem;
+}
+
+.Box_mb__SMp_04 {
+    margin-bottom: 10rem;
+}
+
+.Box_mb__MD_ed {
+    margin-bottom: 16rem;
+}
+
+.Box_mb__MDp_65 {
+    margin-bottom: 20rem;
+}
+
+.Box_mb__LG_c8 {
+    margin-bottom: 32rem;
+}
+
+.Box_mb__XL_f8 {
+    margin-bottom: 64rem;
+}
+
+.Box_ml__XS_8a {
+    margin-left: 4rem;
+}
+
+.Box_ml__SM_e6 {
+    margin-left: 8rem;
+}
+
+.Box_ml__SMp_fb {
+    margin-left: 10rem;
+}
+
+.Box_ml__MD_2b {
+    margin-left: 16rem;
+}
+
+.Box_ml__MDp_c7 {
+    margin-left: 20rem;
+}
+
+.Box_ml__LG_39 {
+    margin-left: 32rem;
+}
+
+.Box_ml__XL_4a {
+    margin-left: 64rem;
+}
+
+.FormatText_base_d0 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* eslint-disable-next-line expectedscss*/
+.Text_paragraph-P10_2c {
+    font-size: 10rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.Text_paragraph-P12_22 {
+    font-size: 12rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+.Text_paragraph-P14_a7 {
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+.Text_paragraph-P16_90 {
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+.Text_paragraph-P18_50 {
+    font-size: 18rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+.Text_paragraph-P24_33 {
+    font-size: 24rem;
+    font-weight: 400;
+    line-height: 32rem;
+}
+.Text_heading-H14_8b {
+    font-size: 14rem;
+    font-weight: 700;
+    line-height: 1.15;
+}
+.Text_heading-H15_9e {
+    font-size: 15rem;
+    font-weight: 700;
+    line-height: 1.15;
+}
+.Text_heading-H18_b7 {
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H20R_f6 {
+    font-size: 20rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.Text_heading-H22_27 {
+    font-size: 22rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.Text_heading-H24R_be {
+    font-size: 24rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.Text_heading-H24_0c {
+    font-size: 24rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.Text_heading-H28_78 {
+    font-size: 28rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H36_32 {
+    font-size: 36rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H56_c3 {
+    font-size: 56rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H73_8f {
+    font-size: 73rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H144_a9 {
+    font-size: 144rem;
+    font-weight: 700;
+    line-height: 1;
+}
+.Text_BLACK_REAL_30 {
+    color: #000000;
+}
+.Text_WHITE_REAL_bc {
+    color: #ffffff;
+}
+.Text_WHITE_62 {
+    color: #f2f2f7;
+}
+.Text_WHITE_ORANGE_54 {
+    color: #fefeec;
+}
+.Text_WHITE_SPANISH_df {
+    color: #e9e2bf;
+}
+.Text_PAR_15 {
+    color: #8c8c7e;
+}
+.Text_PAR_SECONDARY_5d {
+    color: #595950;
+}
+.Text_PAR_TERTIARY_c9 {
+    color: #37362e;
+}
+.Text_INFO_RED_30 {
+    color: #ff0000;
+}
+.Text_RED_66 {
+    color: #ff2717;
+}
+.Text_RED_DARK_d8 {
+    color: #b70000;
+}
+.Text_YELLOW_ed {
+    color: #feab34;
+}
+.Text_ORANGE_be {
+    color: #ee7000;
+}
+.Text_CREAM_57 {
+    color: #ffdd99;
+}
+.Text_BROWN_18 {
+    color: #cbac77;
+}
+.Text_GREEN_BRIGHT_3f {
+    color: #80d43a;
+}
+.Text_GREEN_e3 {
+    color: #7ab300;
+}
+.Text_GREEN_DARK_f1 {
+    color: #497212;
+}
+.Text_BLUE_BOOSTER_21 {
+    color: #ccffff;
+}
+.Text_BLUE_TEAMKILLER_ab {
+    color: #09e2ff;
+}
+.Text_CRED_f7 {
+    color: #ced9d9;
+}
+.Text_GOLD_28 {
+    color: #ffc363;
+}
+.Text_BOND_be {
+    color: #c9c9b6;
+}
+.Text_PROM_65 {
+    color: #a29b70;
+}
+
+.FormatTextWithColorTags_blackReal_3c {
+    color: #000000;
+}
+
+.FormatTextWithColorTags_whiteReal_8a {
+    color: #ffffff;
+}
+
+.FormatTextWithColorTags_white_16 {
+    color: #f2f2f7;
+}
+
+.FormatTextWithColorTags_whiteOrange_18 {
+    color: #fefeec;
+}
+
+.FormatTextWithColorTags_whiteSpanish_10 {
+    color: #e9e2bf;
+}
+
+.FormatTextWithColorTags_par_ca {
+    color: #8c8c7e;
+}
+
+.FormatTextWithColorTags_parSecondary_8d {
+    color: #595950;
+}
+
+.FormatTextWithColorTags_parTertiary_a3 {
+    color: #37362e;
+}
+
+.FormatTextWithColorTags_red_60 {
+    color: #ff2717;
+}
+
+.FormatTextWithColorTags_redDark_03 {
+    color: #b70000;
+}
+
+.FormatTextWithColorTags_yellow_ad {
+    color: #feab34;
+}
+
+.FormatTextWithColorTags_orange_e4 {
+    color: #ee7000;
+}
+
+.FormatTextWithColorTags_cream_cd {
+    color: #ffdd99;
+}
+
+.FormatTextWithColorTags_brown_c8 {
+    color: #cbac77;
+}
+
+.FormatTextWithColorTags_greenBright_f0 {
+    color: #80d43a;
+}
+
+.FormatTextWithColorTags_green_c5 {
+    color: #7ab300;
+}
+
+.FormatTextWithColorTags_greenDark_af {
+    color: #497212;
+}
+
+.FormatTextWithColorTags_blueBooster_ac {
+    color: #ccffff;
+}
+
+.FormatTextWithColorTags_blueTeamkiller_6f {
+    color: #09e2ff;
+}
+
+.FormatTextWithColorTags_cred_4e {
+    color: #ced9d9;
+}
+
+.FormatTextWithColorTags_gold_90 {
+    color: #ffc363;
+}
+
+.FormatTextWithColorTags_bond_71 {
+    color: #c9c9b6;
+}
+
+.FormatTextWithColorTags_prom_dd {
+    color: #a29b70;
+}
+
+.Level_base_12 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 72rem;
+    height: 72rem;
+    position: relative;
+}
+
+.Level_base__tiny_b4 {
+    width: 30rem;
+    height: 30rem;
+}
+
+.Level_base__extraSmall_05 {
+    width: 36rem;
+    height: 36rem;
+}
+
+.Level_base__small_98 {
+    width: 48rem;
+    height: 48rem;
+}
+
+.Level_base__medium_f0 {
+    width: 60rem;
+    height: 60rem;
+}
+
+.Level_base__large_c3 {
+    width: 72rem;
+    height: 72rem;
+}
+
+.Level_base__extraLarge_dc {
+    width: 82rem;
+    height: 82rem;
+}
+
+.Level_bg_f5 {
+    background: rgba(17, 17, 17, 0.5);
+    position: absolute;
+    top: auto;
+    left: auto;
+    transform: rotate(45deg);
+}
+
+.Level_base__tiny_b4 .Level_bg_f5 {
+    width: 23rem;
+    height: 23rem;
+    border-radius: 4rem;
+}
+
+.Level_base__extraSmall_05 .Level_bg_f5 {
+    width: 28rem;
+    height: 28rem;
+    border-radius: 4rem;
+}
+
+.Level_base__small_98 .Level_bg_f5 {
+    width: 35rem;
+    height: 35rem;
+    border-radius: 6rem;
+}
+
+.Level_base__medium_f0 .Level_bg_f5 {
+    width: 45rem;
+    height: 45rem;
+    border-radius: 7rem;
+}
+
+.Level_base__large_c3 .Level_bg_f5 {
+    width: 55rem;
+    height: 55rem;
+    border-radius: 8rem;
+}
+
+.Level_base__extraLarge_dc .Level_bg_f5 {
+    width: 62rem;
+    height: 62rem;
+    border-radius: 8rem;
+}
+
+.Level_border_11 {
+    background: #c6a97b;
+    position: absolute;
+    top: auto;
+    left: auto;
+    transform: rotate(45deg);
+}
+
+.Level_base__yellow_63 .Level_border_11 {
+    background-color: #feab34;
+}
+
+.Level_base__tiny_b4 .Level_border_11 {
+    width: 19rem;
+    height: 19rem;
+    border-radius: 2rem;
+}
+
+.Level_base__extraSmall_05 .Level_border_11 {
+    width: 24rem;
+    height: 24rem;
+    border-radius: 3rem;
+}
+
+.Level_base__small_98 .Level_border_11 {
+    width: 31rem;
+    height: 31rem;
+    border-radius: 4rem;
+}
+
+.Level_base__medium_f0 .Level_border_11 {
+    width: 39rem;
+    height: 39rem;
+    border-radius: 5rem;
+}
+
+.Level_base__large_c3 .Level_border_11 {
+    width: 49rem;
+    height: 49rem;
+    border-radius: 6rem;
+}
+
+.Level_base__extraLarge_dc .Level_border_11 {
+    width: 54rem;
+    height: 54rem;
+    border-radius: 6rem;
+}
+
+.Level_innerGlow_47 {
+    background: rgb(17, 17, 17);
+    position: absolute;
+    top: auto;
+    left: auto;
+    transform: rotate(45deg);
+}
+
+.Level_base__tiny_b4 .Level_innerGlow_47 {
+    width: 17rem;
+    height: 17rem;
+    border-radius: 2rem;
+    box-shadow:
+        0 -2rem 5rem 0 rgba(104, 0, 0, 0.25) inset,
+        0 2rem 5rem 0 rgba(104, 0, 0, 0.25) inset;
+}
+
+.Level_base__extraSmall_05 .Level_innerGlow_47 {
+    width: 22rem;
+    height: 22rem;
+    border-radius: 3rem;
+    box-shadow:
+        0 -3rem 6rem 0 rgba(104, 0, 0, 0.25) inset,
+        0 3rem 6rem 0 rgba(104, 0, 0, 0.25) inset;
+}
+
+.Level_base__small_98 .Level_innerGlow_47 {
+    width: 29rem;
+    height: 29rem;
+    border-radius: 3rem;
+    box-shadow:
+        0 -4rem 8rem 0 rgba(104, 0, 0, 0.25) inset,
+        0 4rem 8rem 0 rgba(104, 0, 0, 0.25) inset;
+}
+
+.Level_base__medium_f0 .Level_innerGlow_47 {
+    width: 37rem;
+    height: 37rem;
+    border-radius: 4rem;
+    box-shadow:
+        0 5rem 10rem #68000040 inset,
+        0 -5rem 10rem #68000040 inset;
+}
+
+.Level_base__large_c3 .Level_innerGlow_47 {
+    width: 47rem;
+    height: 47rem;
+    border-radius: 5rem;
+    box-shadow:
+        0 -6rem 12rem rgba(104, 0, 0, 0.25) inset,
+        0 6rem 12rem rgba(104, 0, 0, 0.25) inset;
+}
+
+.Level_base__extraLarge_dc .Level_innerGlow_47 {
+    width: 52rem;
+    height: 52rem;
+    border-radius: 5rem;
+    box-shadow:
+        0 7rem 13rem #68000040 inset,
+        0 -7rem 13rem #68000040 inset;
+}
+
+.Level_lock_0b {
+    background: no-repeat center / cover;
+    position: absolute;
+}
+
+.Level_base__tiny_b4 .Level_lock_0b {
+    width: 30rem;
+    height: 30rem;
+    background-image: url('R.images.historical_battles.gui.maps.icons.hangar.lock.c_30');
+    top: -9rem;
+    right: -9rem;
+}
+
+.Level_base__extraSmall_05 .Level_lock_0b {
+    width: 36rem;
+    height: 36rem;
+    background-image: url('R.images.historical_battles.gui.maps.icons.hangar.lock.c_36');
+    top: -11rem;
+    right: -10rem;
+}
+
+.Level_base__small_98 .Level_lock_0b {
+    width: 36rem;
+    height: 36rem;
+    background-image: url('R.images.historical_battles.gui.maps.icons.hangar.lock.c_36');
+    top: -7rem;
+    right: -8rem;
+}
+
+.Level_base__medium_f0 .Level_lock_0b {
+    width: 46rem;
+    height: 46rem;
+    background-image: url('R.images.historical_battles.gui.maps.icons.hangar.lock.c_46');
+    top: -10rem;
+    right: -10rem;
+}
+
+.Level_base__large_c3 .Level_lock_0b {
+    width: 48rem;
+    height: 48rem;
+    background-image: url('R.images.historical_battles.gui.maps.icons.hangar.lock.c_48');
+    top: -8rem;
+    right: -7rem;
+}
+
+.Level_base__extraLarge_dc .Level_lock_0b {
+    width: 48rem;
+    height: 48rem;
+    background-image: url('R.images.historical_battles.gui.maps.icons.hangar.lock.c_48');
+    top: -5rem;
+    right: -4rem;
+}
+
+.Level_text_ae {
+    margin-top: -2rem;
+    z-index: 1;
+}
+
+.Level_base__tiny_b4 .Level_text_ae {
+    color: #ffdd99;
+    font-size: 12rem;
+    font-weight: 400;
+    line-height: 1.3;
+    margin-left: 1rem;
+    font-size: 11rem;
+    font-weight: 500;
+}
+
+.Level_base__extraSmall_05 .Level_text_ae {
+    color: #ffdd99;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    font-weight: 500;
+}
+
+.Level_base__small_98 .Level_text_ae {
+    color: #ffdd99;
+    font-size: 18rem;
+    font-weight: 400;
+    line-height: 1.25;
+    font-weight: 500;
+}
+
+.Level_base__medium_f0 .Level_text_ae {
+    color: #ffdd99;
+    font-size: 22rem;
+    font-weight: 700;
+    line-height: 1.2;
+    font-weight: 500;
+}
+
+.Level_base__large_c3 .Level_text_ae {
+    color: #ffdd99;
+    font-size: 28rem;
+    font-weight: 700;
+    line-height: 1.1;
+    font-weight: 500;
+}
+
+.Level_base__extraLarge_dc .Level_text_ae {
+    color: #ffdd99;
+    font-size: 36rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-left: -1rem;
+    font-size: 32rem;
+    font-weight: 500;
+}
+
+.Level_base__yellow_63 .Level_text_ae {
+    color: #feab34;
+}
+
+.VehicleType_base_62 {
+    background: no-repeat 50% / contain;
+}
+
+.VehicleType_base__c_16x16_b9 {
+    width: 16rem;
+    height: 16rem;
+}
+
+.VehicleType_base__c_24x24_54 {
+    width: 24rem;
+    height: 24rem;
+}
+
+.VehicleType_base__c_48x48_11 {
+    width: 48rem;
+    height: 48rem;
+}
+
+.VehicleType_base__c_60x60_a1 {
+    width: 60rem;
+    height: 60rem;
+}
+
+.VehicleType_base__c_83x74_26 {
+    width: 83rem;
+    height: 74rem;
+}
+
+.SubdivisionTooltipApp_base_61 {
+    border: 1rem solid rgba(242, 242, 230, 0.1);
+    background-color: #12110b;
+    padding: 0;
+}
+
+.SubdivisionTooltipApp_content_5c {
+    padding: 14rem 18rem;
+    background: linear-gradient(
+        180deg,
+        rgba(51, 51, 41, 0.3) 0%,
+        rgba(51, 51, 41, 0) 15.5%,
+        rgba(51, 51, 41, 0) 88%,
+        rgba(51, 51, 41, 0.1) 100%
+    );
+    width: 380rem;
+    padding: 0;
+    background: no-repeat 0 0 / 240rem;
+}
+
+.SubdivisionTooltipApp_header_c0 {
+    display: flex;
+    padding: 18rem 0 8rem 28rem;
+}
+
+.SubdivisionTooltipApp_header_icons_30 {
+    width: 80rem;
+    height: 80rem;
+    margin-right: 20rem;
+    background: no-repeat 0% / contain;
+    position: relative;
+}
+
+.SubdivisionTooltipApp_header_text_8d {
+    display: flex;
+    flex-direction: column;
+}
+
+.SubdivisionTooltipApp_title_20 {
+    color: #e9e2bf;
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 6rem;
+}
+
+.SubdivisionTooltipApp_description_7a {
+    color: #8c8c7e;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    padding: 6rem 28rem 16rem;
+}
+
+.SubdivisionTooltipApp_level_icon_3d {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.SubdivisionTooltipApp_tank_f5 {
+    width: 100%;
+    position: relative;
+}
+
+.SubdivisionTooltipApp_tank_divider_2e {
+    width: 100%;
+    height: 12rem;
+    background: url('R.images.historical_battles.gui.maps.icons.common.dividerDotty') no-repeat 50% / contain;
+    margin-top: -6rem;
+    position: absolute;
+}
+
+.SubdivisionTooltipApp_tank_content_4d {
+    display: flex;
+    align-items: center;
+    padding: 3rem 83rem;
+}
+
+.SubdivisionTooltipApp_tank_icon_b1 {
+    width: 48rem;
+    height: 48rem;
+    margin-right: 4rem;
+    background: 50% / cover no-repeat;
+}
+
+.SubdivisionTooltipApp_tank_name_0b {
+    color: #e9e2bf;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+.SubdivisionTooltipApp_tank_f5::before {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        rgba(201, 201, 182, 0) 0%,
+        #c9c9b6 38.22%,
+        #c9c9b6 64.56%,
+        rgba(201, 201, 182, 0) 100%
+    );
+    opacity: 0.07;
+    content: ' ';
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.SubdivisionTooltipApp_vehicles_title_44 {
+    color: #e9e2bf;
+    font-size: 14rem;
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 8rem;
+    padding: 0 28rem 4rem;
+}
+
+.SubdivisionTooltipApp_vehicle_type_c9 {
+    margin: 0 5rem;
+}
+
+.SubdivisionTooltipApp_iconExp_3f {
+    width: 16rem;
+    height: 16rem;
+    margin-left: 4rem;
+    margin-top: 2rem;
+    background: url('R.images.historical_battles.gui.maps.icons.hbCoin.c_24x24.offence') no-repeat center / contain;
+}
+
+.mediaMedium .SubdivisionTooltipApp_iconExp_3f {
+    width: 20rem;
+    height: 20rem;
+    margin-top: 0;
+    background-image: url('R.images.historical_battles.gui.maps.icons.hbCoin.c_24x24.offence');
+}
+
+.mediaLarge .SubdivisionTooltipApp_iconExp_3f {
+    width: 24rem;
+    height: 24rem;
+}
+
+.mediaExtraLarge .SubdivisionTooltipApp_iconExp_3f {
+    width: 32rem;
+    height: 32rem;
+    margin-left: 6rem;
+}
+
+.SubdivisionTooltipApp_level_08 {
+    color: #8c8c7e;
+}
+
+.SubdivisionTooltipApp_experience_35 {
+    margin-top: 8rem;
+    color: #8c8c7e;
+}
+
+.SubdivisionTooltipApp_level__max_f3 {
+    color: #fefeec;
+}

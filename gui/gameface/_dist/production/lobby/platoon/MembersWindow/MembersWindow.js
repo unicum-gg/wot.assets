@@ -361,7 +361,7 @@
                             (u.SYMBOL_LOCK = 'SymbolLock');
                     })(a || (a = {}));
             },
-            358: (u, e, t) => {
+            860: (u, e, t) => {
                 t.d(e, { Z: () => o });
                 var n = t(67);
                 class a {
@@ -421,7 +421,7 @@
             },
             572: (__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
                 __webpack_require__.d(__webpack_exports__, { Z: () => __WEBPACK_DEFAULT_EXPORT__ });
-                var _DataTracker__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(358),
+                var _DataTracker__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(860),
                     _index__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(114);
                 class ViewModel {
                     constructor(path, watchingFields = []) {
@@ -510,7 +510,7 @@
                 }
                 n.__instance = void 0;
                 const a = n;
-                var o = t(358);
+                var o = t(860);
                 const r = {
                         getNumberFormat: (u, e) => systemLocale.getNumberFormat(u, e),
                         getRealFormat: (u, e) => systemLocale.getRealFormat(u, e),
@@ -741,7 +741,7 @@
                         return window.addEventListener('keydown', e), () => window.removeEventListener('keydown', e);
                     };
             },
-            257: (u, e, t) => {
+            6: (u, e, t) => {
                 var n = t(483),
                     a = t.n(n),
                     o = t(67),
@@ -3074,6 +3074,6 @@
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             t.forEach(e.bind(null, 0)), (t.push = e.bind(null, t.push.bind(t)));
         })();
-    var __webpack_exports__ = __webpack_require__.O(void 0, [720], () => __webpack_require__(257));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [720], () => __webpack_require__(6));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

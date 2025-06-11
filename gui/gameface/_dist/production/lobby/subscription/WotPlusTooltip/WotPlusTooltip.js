@@ -19,16 +19,16 @@
                 A.r(t),
                     A.d(t, {
                         addModelObserver: () => S,
-                        addPreloadTexture: () => P,
+                        addPreloadTexture: () => T,
                         children: () => D,
                         displayStatus: () => p,
                         displayStatusIs: () => Q,
                         events: () => v,
-                        extraSize: () => $,
-                        forceTriggerMouseMove: () => Y,
+                        extraSize: () => H,
+                        forceTriggerMouseMove: () => V,
                         freezeTextureBeforeResize: () => U,
                         getBrowserTexturePath: () => x,
-                        getDisplayStatus: () => V,
+                        getDisplayStatus: () => Y,
                         getScale: () => M,
                         getSize: () => k,
                         getViewGlobalPosition: () => N,
@@ -40,9 +40,9 @@
                         sendEvent: () => w,
                         setAnimateWindow: () => L,
                         setEventHandled: () => X,
-                        setInputPaddingsRem: () => T,
+                        setInputPaddingsRem: () => P,
                         setSidePaddingsRem: () => O,
-                        whenTutorialReady: () => H,
+                        whenTutorialReady: () => $,
                     });
                 var B = A(483),
                     n = A.n(B);
@@ -209,10 +209,10 @@
                             y(f, { isMouseEvent: !0, on: u });
                         },
                     };
-                function P(u) {
+                function T(u) {
                     viewEnv.addPreloadTexture(u);
                 }
-                function T(u) {
+                function P(u) {
                     viewEnv.setHitAreaPaddingsRem(u, u, u, u, 15);
                 }
                 function x(u, e, A, F = 1) {
@@ -258,14 +258,14 @@
                 function q() {
                     return viewEnv.isEventHandled();
                 }
-                function Y() {
+                function V() {
                     viewEnv.forceTriggerMouseMove();
                 }
-                function V() {
+                function Y() {
                     return viewEnv.getShowingStatus();
                 }
                 const Q = Object.keys(p).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === p[e]), u), {}),
-                    $ = {
+                    H = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -273,7 +273,7 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    H = Promise.all([
+                    $ = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : v.onDomBuilt(u);
                         }),
@@ -475,6 +475,7 @@
                         (u.TankmenXpFactor = 'tankmenXPFactor'),
                         (u.FreeXpFactor = 'freeXPFactor'),
                         (u.BattleToken = 'battleToken'),
+                        (u.HBVehicleUnlock = 'hbUnlockVehicles'),
                         (u.PremiumUniversal = 'premium_universal'),
                         (u.Gold = 'gold'),
                         (u.Credits = 'credits'),
@@ -509,7 +510,9 @@
                         (u.Branch = 'branch'),
                         (u.VehicleSelect = 'vehicleSelect'),
                         (u.StyleProgress = 'styleProgress'),
-                        (u.ParagonsUnlocks = 'paragonsUnlocks');
+                        (u.ParagonsUnlocks = 'paragonsUnlocks'),
+                        (u.HistoricalBattleDiscount25 = 'historical_battles_main_discount'),
+                        (u.LootBoxToken = 'lootBoxToken');
                 })(lu || (lu = {})),
                     (function (u) {
                         (u.Gold = 'gold'),
@@ -626,12 +629,12 @@
                         Array.isArray(u) ||
                         (A = (function (u, e) {
                             if (!u) return;
-                            if ('string' == typeof u) return Pu(u, e);
+                            if ('string' == typeof u) return Tu(u, e);
                             var A = Object.prototype.toString.call(u).slice(8, -1);
                             'Object' === A && u.constructor && (A = u.constructor.name);
                             if ('Map' === A || 'Set' === A) return Array.from(u);
                             if ('Arguments' === A || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(A))
-                                return Pu(u, e);
+                                return Tu(u, e);
                         })(u)) ||
                         (e && u && 'number' == typeof u.length)
                     ) {
@@ -645,12 +648,12 @@
                         'Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.',
                     );
                 }
-                function Pu(u, e) {
+                function Tu(u, e) {
                     (null == e || e > u.length) && (e = u.length);
                     for (var A = 0, F = new Array(e); A < e; A++) F[A] = u[A];
                     return F;
                 }
-                const Tu = (u) => (0 === u ? window : window.subViews.get(u));
+                const Pu = (u) => (0 === u ? window : window.subViews.get(u));
                 var xu = A(946);
                 const Su = ((u, e) => {
                         const A = (0, W.createContext)({});
@@ -662,7 +665,7 @@
                                         const t = (function ({
                                                 initializer: u = !0,
                                                 rootId: e = 0,
-                                                getRoot: A = Tu,
+                                                getRoot: A = Pu,
                                                 context: F = 'model',
                                             } = {}) {
                                                 const E = new Map();

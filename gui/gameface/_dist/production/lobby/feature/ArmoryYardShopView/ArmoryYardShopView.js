@@ -1149,11 +1149,11 @@
                 var O = t(493),
                     I = t.n(O),
                     H = t(5521),
-                    W = t(4179);
-                const U = (e) => {
+                    U = t(4179);
+                const W = (e) => {
                     console.error(e.type + ': useKeydownListener hook :: Callback is not defined');
                 };
-                function G(e = H.n.NONE, u = U, t = !1) {
+                function G(e = H.n.NONE, u = W, t = !1) {
                     (0, a.useEffect)(() => {
                         if (e !== H.n.NONE)
                             return (
@@ -1643,7 +1643,7 @@
                             Object.assign(
                                 {
                                     __Type: 'GFViewEventProxy',
-                                    type: W.B0.TOOLTIP,
+                                    type: U.B0.TOOLTIP,
                                     contentID: e,
                                     decoratorID: u,
                                     targetID: r,
@@ -2348,18 +2348,18 @@
                         bond: 'FormatTextWithColorTags_bond_71',
                         prom: 'FormatTextWithColorTags_prom_dd',
                     },
-                    We = /(?:%\(|{)\w*(?:_[Oo]pen|Start)(?:\)s|})?(.*?)(?:%\(|{)\w*(?:_[Cc]lose|End)(?:\)s|})?/g,
-                    Ue = /(?<=(?:%\(|{))(.*?)(?=(?:_[Oo]pen|Start))/,
+                    Ue = /(?:%\(|{)\w*(?:_[Oo]pen|Start)(?:\)s|})?(.*?)(?:%\(|{)\w*(?:_[Cc]lose|End)(?:\)s|})?/g,
+                    We = /(?<=(?:%\(|{))(.*?)(?=(?:_[Oo]pen|Start))/,
                     Ge = /(?<=(?:_[Oo]pen|Start)(?:\)s?|}))(.*?)(?=(?:%\(|{))/,
                     ze = (0, a.memo)(({ text: e, binding: u, classMix: t }) => {
                         const r = (0, a.useCallback)((e) => ({ color: `#${e}` }), []),
                             n = (0, a.useMemo)(() => u || {}, [u]);
-                        let i = We.exec(e),
+                        let i = Ue.exec(e),
                             s = e,
                             l = 0;
                         for (; i; ) {
                             const t = i[0],
-                                a = Ue.exec(t),
+                                a = We.exec(t),
                                 c = Ge.exec(t),
                                 _ = i[1];
                             if (a && c) {
@@ -2378,7 +2378,7 @@
                                               o().createElement(Ie, { text: _, binding: u }),
                                           ));
                             }
-                            i = We.exec(e);
+                            i = Ue.exec(e);
                         }
                         return o().createElement(Ie, { text: s, classMix: t, binding: n });
                     }),
@@ -3407,8 +3407,8 @@
                 class Iu extends o().PureComponent {
                     render() {
                         let e;
-                        e = 'gold' === this.props.format ? W.B3.GOLD : W.B3.INTEGRAL;
-                        const u = W.Z5.getNumberFormat(this.props.value, e);
+                        e = 'gold' === this.props.format ? U.B3.GOLD : U.B3.INTEGRAL;
+                        const u = U.Z5.getNumberFormat(this.props.value, e);
                         return void 0 !== this.props.value && void 0 !== u ? u : null;
                     }
                 }
@@ -3457,7 +3457,7 @@
                         stock__interactive: 'Currency_stock__interactive_93',
                         stockBackground: 'Currency_stockBackground_82',
                     },
-                    Wu = ({
+                    Uu = ({
                         isDiscount: e,
                         isInteractiveDiscount: u,
                         size: t,
@@ -3495,8 +3495,8 @@
                                 ),
                         );
                     };
-                Wu.defaultProps = { isEnough: !0 };
-                const Uu = o().memo(Wu);
+                Uu.defaultProps = { isEnough: !0 };
+                const Wu = o().memo(Uu);
                 let Gu, zu, Xu, $u, ju, Vu, Yu;
                 !(function (e) {
                     (e.Items = 'items'),
@@ -3518,6 +3518,7 @@
                         (e.TankmenXpFactor = 'tankmenXPFactor'),
                         (e.FreeXpFactor = 'freeXPFactor'),
                         (e.BattleToken = 'battleToken'),
+                        (e.HBVehicleUnlock = 'hbUnlockVehicles'),
                         (e.PremiumUniversal = 'premium_universal'),
                         (e.Gold = 'gold'),
                         (e.Credits = 'credits'),
@@ -3552,7 +3553,9 @@
                         (e.Branch = 'branch'),
                         (e.VehicleSelect = 'vehicleSelect'),
                         (e.StyleProgress = 'styleProgress'),
-                        (e.ParagonsUnlocks = 'paragonsUnlocks');
+                        (e.ParagonsUnlocks = 'paragonsUnlocks'),
+                        (e.HistoricalBattleDiscount25 = 'historical_battles_main_discount'),
+                        (e.LootBoxToken = 'lootBoxToken');
                 })(Gu || (Gu = {})),
                     (function (e) {
                         (e.Gold = 'gold'),
@@ -3823,7 +3826,7 @@
                                 for (r = 0; r < a.length; r++) (t = a[r]), u.indexOf(t) >= 0 || (n[t] = e[t]);
                                 return n;
                             })(e, rt);
-                        const W = (0, a.useMemo)(() => {
+                        const U = (0, a.useMemo)(() => {
                                 const e = { mt: s, mr: c, mb: E, ml: d },
                                     u = ((e) =>
                                         ot.reduce((u, t) => {
@@ -3850,9 +3853,9 @@
                                     computedClassNames: u,
                                 };
                             }, [t, r, s, c, E, d, O, k, w, C, P, S, y]),
-                            U = W.computedStyle,
-                            G = W.computedClassNames;
-                        return o().createElement('div', nt({ className: h()(tt.base, ...G, u), style: U }, H), I);
+                            W = U.computedStyle,
+                            G = U.computedClassNames;
+                        return o().createElement('div', nt({ className: h()(tt.base, ...G, u), style: W }, H), I);
                     });
                 var lt = t(3532),
                     ct = t.n(lt);
@@ -4019,7 +4022,7 @@
                             E = (0, a.useRef)(null),
                             m = (0, a.useRef)({ shortened: !1 }),
                             d = (0, a.useCallback)(() => {
-                                (0, W.Eu)().then(() => {
+                                (0, U.Eu)().then(() => {
                                     const e = ((e) => {
                                         const u = e.current;
                                         return u ? window.getComputedStyle(u).getPropertyValue('line-height') : '';
@@ -4359,7 +4362,7 @@
                                         o().Fragment,
                                         null,
                                         o().createElement(gt, { text: Pt.altText(), className: 'Card_altText_e1' }),
-                                        o().createElement(Uu, { type: ku.gold, value: y, size: Nu.small }),
+                                        o().createElement(Wu, { type: ku.gold, value: y, size: Nu.small }),
                                     ),
                             ),
                             w(
@@ -4407,7 +4410,7 @@
                             o().createElement('div', { className: 'CardBundle_bg_c1' }),
                             o().createElement('div', {
                                 className: 'CardBundle_flag_1b',
-                                style: { backgroundImage: `url(${i})` },
+                                style: { backgroundImage: `url(R.images.gui.maps.shop.nations.flag_${i})` },
                             }),
                             o().createElement(
                                 'div',
@@ -4467,7 +4470,7 @@
                                                 text: Rt.altText(),
                                                 className: 'CardBundle_altText_aa',
                                             }),
-                                            o().createElement(Uu, { type: ku.gold, value: D, size: Nu.small }),
+                                            o().createElement(Wu, { type: ku.gold, value: D, size: Nu.small }),
                                         ),
                                 ),
                             ),
@@ -4558,7 +4561,7 @@
                             )
                         );
                     };
-                let It, Ht, Wt, Ut, Gt, zt, Xt;
+                let It, Ht, Ut, Wt, Gt, zt, Xt;
                 !(function (e) {
                     (e.BeforeProgression = 'beforeProgression'),
                         (e.Active = 'active'),
@@ -4573,10 +4576,10 @@
                         (e[(e.EmptyRewards = 0)] = 'EmptyRewards'),
                             (e[(e.ReadyRewards = 1)] = 'ReadyRewards'),
                             (e[(e.AnimatedRewards = 2)] = 'AnimatedRewards');
-                    })(Wt || (Wt = {})),
+                    })(Ut || (Ut = {})),
                     (function (e) {
                         (e[(e.Progress = 0)] = 'Progress'), (e[(e.Quests = 1)] = 'Quests'), (e[(e.Shop = 2)] = 'Shop');
-                    })(Ut || (Ut = {})),
+                    })(Wt || (Wt = {})),
                     (function (e) {
                         (e[(e.Keyboard = 0)] = 'Keyboard'), (e[(e.Mouse = 1)] = 'Mouse');
                     })(Gt || (Gt = {})),

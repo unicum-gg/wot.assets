@@ -43,7 +43,7 @@
             470: (u, e, t) => {
                 'use strict';
                 var r = {};
-                t.r(r), t.d(r, { mouse: () => o, onResize: () => B });
+                t.r(r), t.d(r, { mouse: () => o, onResize: () => l });
                 var A = {};
                 t.r(A),
                     t.d(A, {
@@ -96,8 +96,8 @@
                 function i(u) {
                     viewEnv.setTrackMouseOnStage(u);
                 }
-                const B = n('clientResized'),
-                    l = { down: n('mousedown'), up: n('mouseup'), move: n('mousemove') };
+                const l = n('clientResized'),
+                    B = { down: n('mousedown'), up: n('mouseup'), move: n('mousemove') };
                 const o = (function () {
                     const u = { listeners: 0, enabled: !0, initialized: !1 };
                     function e() {
@@ -125,7 +125,7 @@
                                     u.listeners += 1;
                                     let A = !0;
                                     const E = `mouse${e}`,
-                                        F = l[e]((u) => t([u, 'outside']));
+                                        F = B[e]((u) => t([u, 'outside']));
                                     function a(u) {
                                         t([u, 'inside']);
                                     }
@@ -439,7 +439,7 @@
                         extraSmall: { weight: 0, width: 1024, height: 768 },
                     };
                 var iu;
-                function Bu(u, e, t) {
+                function lu(u, e, t) {
                     const r = (function (u, e) {
                             switch (!0) {
                                 case u >= e.extraLarge.width:
@@ -504,10 +504,10 @@
                         (u.smallHeight = 'smallHeight'),
                         (u.extraSmallHeight = 'extraSmallHeight');
                 })(iu || (iu = {}));
-                const lu = q.client.getSize('rem'),
-                    ou = lu.width,
-                    Cu = lu.height,
-                    mu = Object.assign({ width: ou, height: Cu }, Bu(ou, Cu, nu)),
+                const Bu = q.client.getSize('rem'),
+                    ou = Bu.width,
+                    Cu = Bu.height,
+                    mu = Object.assign({ width: ou, height: Cu }, lu(ou, Cu, nu)),
                     su = (0, Q.createContext)(mu),
                     du = ['children'];
                 const cu = (u) => {
@@ -529,8 +529,8 @@
                         D = r.extraSmall,
                         n = r.extraLargeWidth,
                         i = r.largeWidth,
-                        B = r.mediumWidth,
-                        l = r.smallWidth,
+                        l = r.mediumWidth,
+                        B = r.smallWidth,
                         o = r.extraSmallWidth,
                         C = r.extraLargeHeight,
                         m = r.largeHeight,
@@ -547,8 +547,8 @@
                     } else {
                         if (t.extraLargeWidth && n) return Du(e, t, _);
                         if (t.largeWidth && i) return Du(e, t, _);
-                        if (t.mediumWidth && B) return Du(e, t, _);
-                        if (t.smallWidth && l) return Du(e, t, _);
+                        if (t.mediumWidth && l) return Du(e, t, _);
+                        if (t.smallWidth && B) return Du(e, t, _);
                         if (t.extraSmallWidth && o) return Du(e, t, _);
                         if (
                             !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
@@ -592,7 +592,7 @@
                         E = (0, Q.useCallback)((u, e) => {
                             const t = q.view.pxToRem(u),
                                 r = q.view.pxToRem(e);
-                            A(Object.assign({ width: t, height: r }, Bu(t, r, nu)));
+                            A(Object.assign({ width: t, height: r }, lu(t, r, nu)));
                         }, []);
                     _u(() => {
                         engine.on('clientResized', E);
@@ -810,9 +810,9 @@
                             a = u.mr,
                             n = void 0 === a ? A : a,
                             i = u.mb,
-                            B = void 0 === i ? A : i,
-                            l = u.ml,
-                            o = void 0 === l ? A : l,
+                            l = void 0 === i ? A : i,
+                            B = u.ml,
+                            o = void 0 === B ? A : B,
                             C = u.column,
                             m = u.row,
                             s = u.flexDirection,
@@ -853,7 +853,7 @@
                                 return A;
                             })(u, Tu);
                         const W = (0, Q.useMemo)(() => {
-                                const u = { mt: F, mr: n, mb: B, ml: o },
+                                const u = { mt: F, mr: n, mb: l, ml: o },
                                     e = ((u) =>
                                         Ru.reduce((e, t) => {
                                             const r = u[t];
@@ -878,7 +878,7 @@
                                     }),
                                     computedClassNames: e,
                                 };
-                            }, [t, r, F, n, B, o, O, H, w, d, T, f, v]),
+                            }, [t, r, F, n, l, o, O, H, w, d, T, f, v]),
                             I = W.computedStyle,
                             G = W.computedClassNames;
                         return Z().createElement('div', yu({ className: D()(Lu.base, ...G, e), style: I }, N), P);
@@ -1072,8 +1072,8 @@
                             a = void 0 === F ? E : F,
                             n = u.mr,
                             i = void 0 === n ? E : n,
-                            B = u.mb,
-                            l = void 0 === B ? E : B,
+                            l = u.mb,
+                            B = void 0 === l ? E : l,
                             o = u.ml,
                             C = void 0 === o ? E : o,
                             m = u.style,
@@ -1104,7 +1104,7 @@
                                     style: _,
                                     mt: !0 === a ? ee[t || 'paragraph-P16'].mt : a,
                                     mr: !0 === i ? ee[t || 'paragraph-P16'].mr : i,
-                                    mb: !0 === l ? ee[t || 'paragraph-P16'].mb : l,
+                                    mb: !0 === B ? ee[t || 'paragraph-P16'].mb : B,
                                     ml: !0 === C ? ee[t || 'paragraph-P16'].ml : C,
                                 },
                                 d,
@@ -1117,18 +1117,21 @@
                     (u.Completed = 'completed'), (u.Available = 'available'), (u.Locked = 'locked');
                 })(Ae || (Ae = {})),
                     (function (u) {
-                        (u.Active = 'active'), (u.Completed = 'completed'), (u.CompletedPerfect = 'completedPerfect');
+                        (u.Active = 'active'),
+                            (u.Completed = 'completed'),
+                            (u.CompletedPerfect = 'completedPerfect'),
+                            (u.Disabled = 'disabled');
                     })(Ee || (Ee = {}));
                 var Fe = t(515);
                 const ae = 'completed',
                     De = 'active',
                     ne = 'empty';
                 function ie() {}
-                function Be() {
+                function le() {
                     return !1;
                 }
                 console.log;
-                var le = t(174);
+                var Be = t(174);
                 function oe(u, e) {
                     var t = ('undefined' != typeof Symbol && u[Symbol.iterator]) || u['@@iterator'];
                     if (t) return (t = t.call(u)).next.bind(t);
@@ -1239,18 +1242,18 @@
                                             n = (u) =>
                                                 'mocks' === t ? (null == A ? void 0 : A.getter(u)) : D.readByPath(u),
                                             i = (u) => a.current.push(u),
-                                            B = u({
+                                            l = u({
                                                 mode: t,
                                                 readByPath: n,
                                                 externalModel: D,
                                                 observableModel: {
                                                     array: (u, e) => {
                                                         const r = null != e ? e : n(u),
-                                                            A = le.LO.box(r, { equals: Be });
+                                                            A = Be.LO.box(r, { equals: le });
                                                         return (
                                                             'real' === t &&
                                                                 D.subscribe(
-                                                                    (0, le.aD)((u) => A.set(u)),
+                                                                    (0, Be.aD)((u) => A.set(u)),
                                                                     u,
                                                                 ),
                                                             A
@@ -1258,11 +1261,11 @@
                                                     },
                                                     object: (u, e) => {
                                                         const r = null != e ? e : n(u),
-                                                            A = le.LO.box(r, { equals: Be });
+                                                            A = Be.LO.box(r, { equals: le });
                                                         return (
                                                             'real' === t &&
                                                                 D.subscribe(
-                                                                    (0, le.aD)((u) => A.set(u)),
+                                                                    (0, Be.aD)((u) => A.set(u)),
                                                                     u,
                                                                 ),
                                                             A
@@ -1272,13 +1275,13 @@
                                                         const r = n(e);
                                                         if (Array.isArray(u)) {
                                                             const A = u.reduce(
-                                                                (u, e) => ((u[e] = le.LO.box(r[e], {})), u),
+                                                                (u, e) => ((u[e] = Be.LO.box(r[e], {})), u),
                                                                 {},
                                                             );
                                                             return (
                                                                 'real' === t &&
                                                                     D.subscribe(
-                                                                        (0, le.aD)((e) => {
+                                                                        (0, Be.aD)((e) => {
                                                                             u.forEach((u) => {
                                                                                 A[u].set(e[u]);
                                                                             });
@@ -1292,13 +1295,13 @@
                                                             const A = u,
                                                                 E = Object.entries(A),
                                                                 F = E.reduce(
-                                                                    (u, [e, t]) => ((u[t] = le.LO.box(r[e], {})), u),
+                                                                    (u, [e, t]) => ((u[t] = Be.LO.box(r[e], {})), u),
                                                                     {},
                                                                 );
                                                             return (
                                                                 'real' === t &&
                                                                     D.subscribe(
-                                                                        (0, le.aD)((u) => {
+                                                                        (0, Be.aD)((u) => {
                                                                             E.forEach(([e, t]) => {
                                                                                 F[t].set(u[e]);
                                                                             });
@@ -1312,27 +1315,27 @@
                                                 },
                                                 cleanup: i,
                                             }),
-                                            l = { mode: t, model: B, externalModel: D, cleanup: i };
+                                            B = { mode: t, model: l, externalModel: D, cleanup: i };
                                         return {
-                                            model: B,
-                                            controls: 'mocks' === t && A ? A.controls(l) : e(l),
+                                            model: l,
+                                            controls: 'mocks' === t && A ? A.controls(B) : e(B),
                                             externalModel: D,
                                             mode: t,
                                         };
                                     },
                                     n = (0, Q.useRef)(!1),
                                     i = (0, Q.useState)(r),
-                                    B = i[0],
-                                    l = i[1],
+                                    l = i[0],
+                                    B = i[1],
                                     o = (0, Q.useState)(() => D(r, A, F)),
                                     C = o[0],
                                     m = o[1];
                                 return (
                                     (0, Q.useEffect)(() => {
-                                        n.current ? m(D(B, A, F)) : (n.current = !0);
-                                    }, [F, B, A]),
+                                        n.current ? m(D(l, A, F)) : (n.current = !0);
+                                    }, [F, l, A]),
                                     (0, Q.useEffect)(() => {
-                                        l(r);
+                                        B(r);
                                     }, [r]),
                                     (0, Q.useEffect)(
                                         () => () => {
@@ -1347,8 +1350,8 @@
                         ];
                     })(({ observableModel: u }) => {
                         const e = { root: u.object(), operations: u.array('operations'), rewards: u.array('rewards') },
-                            t = (0, de.Om)(() => se(e.operations.get(), (u) => Object.assign({}, u)), { equals: Be }),
-                            r = (0, de.Om)(() => se(e.rewards.get(), (u) => Object.assign({}, u)), { equals: Be });
+                            t = (0, de.Om)(() => se(e.operations.get(), (u) => Object.assign({}, u)), { equals: le }),
+                            r = (0, de.Om)(() => se(e.rewards.get(), (u) => Object.assign({}, u)), { equals: le });
                         return Object.assign({}, e, { computes: { getOperations: t, getRewards: r } });
                     }, ie),
                     _e = ce[0],
@@ -1398,6 +1401,9 @@
                         footerLabelText: 'App_footerLabelText_c0',
                         footerBottomWrapper: 'App_footerBottomWrapper_0a',
                         footerBottomText: 'App_footerBottomText_24',
+                        disabled: 'App_disabled_4a',
+                        disabledHeader: 'App_disabledHeader_90',
+                        disabledBody: 'App_disabledBody_58',
                     },
                     he = R.strings.pm_announce.oldTooltip,
                     xe = (0, Fe.Pi)(() => {
@@ -1407,168 +1413,180 @@
                             r = u.computes.getRewards(),
                             A = e === Ee.Active,
                             E = e === Ee.CompletedPerfect,
-                            F = (0, Q.useMemo)(
+                            F = e === Ee.Disabled,
+                            a = (0, Q.useMemo)(
                                 () => (A ? he.complete() : E ? he.completedPerfect.header() : he.completed.header()),
                                 [E, A],
                             );
-                        return Z().createElement(
-                            'div',
-                            { className: D()(pe.base, pe[`base__${e}`]) },
-                            Z().createElement('div', { className: pe.bg }),
-                            Z().createElement(
-                                'div',
-                                { className: pe.content },
-                                Z().createElement(re, { className: pe.header, text: he.header() }),
-                                !E &&
-                                    Z().createElement(
-                                        Z().Fragment,
-                                        null,
-                                        Z().createElement(re, {
-                                            className: pe.subTitle,
-                                            text: A ? he.subtitle() : he.subtitlePerfect(),
-                                        }),
-                                        Z().createElement(
-                                            'div',
-                                            { className: pe.operationsWrapper },
-                                            t.map((u, e) => {
-                                                const r = ((A = u.completed), (E = u.all), A ? (A < E ? De : ae) : ne);
-                                                var A, E;
-                                                const F = r === De;
-                                                return Z().createElement(
-                                                    Z().Fragment,
-                                                    { key: u.name },
-                                                    Z().createElement(
-                                                        'div',
-                                                        {
-                                                            className: D()(
-                                                                pe.operation,
-                                                                e === t.length - 1 && pe.operation__last,
-                                                            ),
-                                                        },
-                                                        Z().createElement('div', { className: pe.dot }),
-                                                        Z().createElement(re, {
-                                                            className: D()(pe.operationText, pe.operationText__name),
-                                                            text: he.operation(),
-                                                            format: { binding: { title: u.name } },
-                                                        }),
-                                                        Z().createElement(re, {
-                                                            className: D()(
-                                                                pe.operationText,
-                                                                pe.operationText__done,
-                                                                pe[`operationText__${r}`],
-                                                            ),
-                                                            text: String(u.completed),
-                                                        }),
-                                                        Z().createElement(re, {
-                                                            className: D()(
-                                                                pe.operationText,
-                                                                pe.operationText__divider,
-                                                                !F && pe[`operationText__${r}`],
-                                                            ),
-                                                            text: he.divider(),
-                                                        }),
-                                                        Z().createElement(re, {
-                                                            className: D()(
-                                                                pe.operationText,
-                                                                pe.all,
-                                                                !F && pe[`operationText__${r}`],
-                                                            ),
-                                                            text: String(u.all),
-                                                        }),
-                                                    ),
-                                                    e + 1 === 4 &&
-                                                        Z().createElement('div', {
-                                                            className: D()(pe.divider, pe.divider__operations),
-                                                        }),
-                                                );
-                                            }),
-                                        ),
-                                        A
-                                            ? Z().createElement(
+                        return F
+                            ? Z().createElement(
+                                  'div',
+                                  { className: pe.disabled },
+                                  Z().createElement(re, { className: pe.disabledHeader, text: he.header() }),
+                                  Z().createElement(re, { className: pe.disabledBody, text: he.disabled.subtitle() }),
+                              )
+                            : Z().createElement(
+                                  'div',
+                                  { className: D()(pe.base, pe[`base__${e}`]) },
+                                  Z().createElement('div', { className: pe.bg }),
+                                  Z().createElement(
+                                      'div',
+                                      { className: pe.content },
+                                      Z().createElement(re, { className: pe.header, text: he.header() }),
+                                      !E &&
+                                          Z().createElement(
+                                              Z().Fragment,
+                                              null,
+                                              Z().createElement(re, {
+                                                  className: pe.subTitle,
+                                                  text: A ? he.subtitle() : he.subtitlePerfect(),
+                                              }),
+                                              Z().createElement(
                                                   'div',
-                                                  { className: pe.rewardsSection },
-                                                  Z().createElement('div', { className: pe.ribbon }),
-                                                  Z().createElement(re, {
-                                                      className: D()(pe.subTitle, pe.subTitle__rewards),
-                                                      text: he.rewardTitle(),
-                                                  }),
-                                                  Z().createElement(
-                                                      'div',
-                                                      { className: pe.rewardsWrapper },
-                                                      r.map((u, e) => {
-                                                          const t = (e + 1) % 4 == 0 || e + 1 === r.length;
-                                                          return Z().createElement(
+                                                  { className: pe.operationsWrapper },
+                                                  t.map((u, e) => {
+                                                      const r =
+                                                          ((A = u.completed), (E = u.all), A ? (A < E ? De : ae) : ne);
+                                                      var A, E;
+                                                      const F = r === De;
+                                                      return Z().createElement(
+                                                          Z().Fragment,
+                                                          { key: u.name },
+                                                          Z().createElement(
                                                               'div',
                                                               {
-                                                                  key: u.name,
                                                                   className: D()(
-                                                                      pe.reward,
-                                                                      pe[`reward__${u.status}`],
-                                                                      t && pe.reward__lastInRow,
+                                                                      pe.operation,
+                                                                      e === t.length - 1 && pe.operation__last,
                                                                   ),
                                                               },
-                                                              Z().createElement('div', {
-                                                                  className: pe.rewardIcon,
-                                                                  style: { backgroundImage: `url(${u.icon})` },
+                                                              Z().createElement('div', { className: pe.dot }),
+                                                              Z().createElement(re, {
+                                                                  className: D()(
+                                                                      pe.operationText,
+                                                                      pe.operationText__name,
+                                                                  ),
+                                                                  text: he.operation(),
+                                                                  format: { binding: { title: u.name } },
                                                               }),
-                                                              Z().createElement(
-                                                                  'div',
-                                                                  { className: pe.rewardName },
-                                                                  u.status !== Ae.Available &&
-                                                                      Z().createElement('div', {
-                                                                          className: D()(
-                                                                              pe.labelIcon,
-                                                                              pe[`labelIcon__${u.status}`],
-                                                                          ),
-                                                                      }),
-                                                                  Z().createElement(re, {
-                                                                      text: u.name,
-                                                                      className: D()(pe.rewardText),
-                                                                  }),
-                                                              ),
-                                                          );
-                                                      }),
-                                                  ),
-                                              )
-                                            : Z().createElement(
-                                                  'div',
-                                                  { className: pe.rewardCollected },
-                                                  Z().createElement('div', { className: pe.rewardCollectedBg }),
-                                                  Z().createElement(
-                                                      'div',
-                                                      { className: pe.rewardCollectedLabel },
-                                                      Z().createElement('div', {
-                                                          className: pe.rewardCollectedLabelIcon,
-                                                      }),
-                                                      Z().createElement(re, {
-                                                          className: pe.rewardCollectedLabelText,
-                                                          text: he.collectVehicle(),
-                                                      }),
-                                                  ),
+                                                              Z().createElement(re, {
+                                                                  className: D()(
+                                                                      pe.operationText,
+                                                                      pe.operationText__done,
+                                                                      pe[`operationText__${r}`],
+                                                                  ),
+                                                                  text: String(u.completed),
+                                                              }),
+                                                              Z().createElement(re, {
+                                                                  className: D()(
+                                                                      pe.operationText,
+                                                                      pe.operationText__divider,
+                                                                      !F && pe[`operationText__${r}`],
+                                                                  ),
+                                                                  text: he.divider(),
+                                                              }),
+                                                              Z().createElement(re, {
+                                                                  className: D()(
+                                                                      pe.operationText,
+                                                                      pe.all,
+                                                                      !F && pe[`operationText__${r}`],
+                                                                  ),
+                                                                  text: String(u.all),
+                                                              }),
+                                                          ),
+                                                          e + 1 === 4 &&
+                                                              Z().createElement('div', {
+                                                                  className: D()(pe.divider, pe.divider__operations),
+                                                              }),
+                                                      );
+                                                  }),
                                               ),
-                                    ),
-                                e !== Ee.Completed && Z().createElement('div', { className: pe.divider }),
-                                Z().createElement(
-                                    'div',
-                                    { className: pe.footer },
-                                    Z().createElement(
-                                        'div',
-                                        { className: pe.footerLabel },
-                                        Z().createElement('div', { className: pe.footerLabelIcon }),
-                                        Z().createElement(re, { text: F, className: pe.footerLabelText }),
-                                    ),
-                                    !A &&
-                                        Z().createElement(
-                                            'div',
-                                            { className: pe.footerBottomWrapper },
-                                            Z().createElement(re, {
-                                                className: pe.footerBottomText,
-                                                text: E ? he.completedPerfect.body() : he.completed.body(),
-                                            }),
-                                        ),
-                                ),
-                            ),
-                        );
+                                              A
+                                                  ? Z().createElement(
+                                                        'div',
+                                                        { className: pe.rewardsSection },
+                                                        Z().createElement('div', { className: pe.ribbon }),
+                                                        Z().createElement(re, {
+                                                            className: D()(pe.subTitle, pe.subTitle__rewards),
+                                                            text: he.rewardTitle(),
+                                                        }),
+                                                        Z().createElement(
+                                                            'div',
+                                                            { className: pe.rewardsWrapper },
+                                                            r.map((u, e) => {
+                                                                const t = (e + 1) % 4 == 0 || e + 1 === r.length;
+                                                                return Z().createElement(
+                                                                    'div',
+                                                                    {
+                                                                        key: u.name,
+                                                                        className: D()(
+                                                                            pe.reward,
+                                                                            pe[`reward__${u.status}`],
+                                                                            t && pe.reward__lastInRow,
+                                                                        ),
+                                                                    },
+                                                                    Z().createElement('div', {
+                                                                        className: pe.rewardIcon,
+                                                                        style: { backgroundImage: `url(${u.icon})` },
+                                                                    }),
+                                                                    Z().createElement(
+                                                                        'div',
+                                                                        { className: pe.rewardName },
+                                                                        u.status !== Ae.Available &&
+                                                                            Z().createElement('div', {
+                                                                                className: D()(
+                                                                                    pe.labelIcon,
+                                                                                    pe[`labelIcon__${u.status}`],
+                                                                                ),
+                                                                            }),
+                                                                        Z().createElement(re, {
+                                                                            text: u.name,
+                                                                            className: D()(pe.rewardText),
+                                                                        }),
+                                                                    ),
+                                                                );
+                                                            }),
+                                                        ),
+                                                    )
+                                                  : Z().createElement(
+                                                        'div',
+                                                        { className: pe.rewardCollected },
+                                                        Z().createElement('div', { className: pe.rewardCollectedBg }),
+                                                        Z().createElement(
+                                                            'div',
+                                                            { className: pe.rewardCollectedLabel },
+                                                            Z().createElement('div', {
+                                                                className: pe.rewardCollectedLabelIcon,
+                                                            }),
+                                                            Z().createElement(re, {
+                                                                className: pe.rewardCollectedLabelText,
+                                                                text: he.collectVehicle(),
+                                                            }),
+                                                        ),
+                                                    ),
+                                          ),
+                                      e !== Ee.Completed && Z().createElement('div', { className: pe.divider }),
+                                      Z().createElement(
+                                          'div',
+                                          { className: pe.footer },
+                                          Z().createElement(
+                                              'div',
+                                              { className: pe.footerLabel },
+                                              Z().createElement('div', { className: pe.footerLabelIcon }),
+                                              Z().createElement(re, { text: a, className: pe.footerLabelText }),
+                                          ),
+                                          !A &&
+                                              Z().createElement(
+                                                  'div',
+                                                  { className: pe.footerBottomWrapper },
+                                                  Z().createElement(re, {
+                                                      className: pe.footerBottomText,
+                                                      text: E ? he.completedPerfect.body() : he.completed.body(),
+                                                  }),
+                                              ),
+                                      ),
+                                  ),
+                              );
                     });
                 engine.whenReady.then(() => {
                     Eu().render(

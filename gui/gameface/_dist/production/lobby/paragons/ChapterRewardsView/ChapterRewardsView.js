@@ -2795,6 +2795,7 @@
                         (e.TankmenXpFactor = 'tankmenXPFactor'),
                         (e.FreeXpFactor = 'freeXPFactor'),
                         (e.BattleToken = 'battleToken'),
+                        (e.HBVehicleUnlock = 'hbUnlockVehicles'),
                         (e.PremiumUniversal = 'premium_universal'),
                         (e.Gold = 'gold'),
                         (e.Credits = 'credits'),
@@ -2829,7 +2830,9 @@
                         (e.Branch = 'branch'),
                         (e.VehicleSelect = 'vehicleSelect'),
                         (e.StyleProgress = 'styleProgress'),
-                        (e.ParagonsUnlocks = 'paragonsUnlocks');
+                        (e.ParagonsUnlocks = 'paragonsUnlocks'),
+                        (e.HistoricalBattleDiscount25 = 'historical_battles_main_discount'),
+                        (e.LootBoxToken = 'lootBoxToken');
                 })(Ke || (Ke = {})),
                     (function (e) {
                         (e.Gold = 'gold'),
@@ -2952,6 +2955,7 @@
                         Ke.TankmenXpFactor,
                         Ke.FreeXpFactor,
                         Ke.BattleToken,
+                        Ke.HBVehicleUnlock,
                         Ke.PremiumUniversal,
                         Ke.NaturalCover,
                         Ke.BpCoin,
@@ -2992,7 +2996,8 @@
                             a = e.icon,
                             s = e.item,
                             i = e.dogTagType,
-                            o = ((e) => {
+                            o = e.iconSmall,
+                            l = ((e) => {
                                 switch (e) {
                                     case Je.S600x450:
                                         return 'c_600x450';
@@ -3036,8 +3041,13 @@
                                             return `R.images.gui.maps.icons.quests.bonuses.${u}.${e.icon}`;
                                     }
                                 })(e, u);
+                            case 'hbUnlockVehicles':
+                            default:
+                                return `R.images.gui.maps.icons.quests.bonuses.${u}.${t}`;
                             case 'crewBooks':
                                 return `R.images.gui.maps.icons.crewBooks.books.${u}.${a}`;
+                            case 'entitlements':
+                                return `R.images.gui.maps.icons.quests.bonuses.${u}.${o}`;
                             case 'dogTagComponents':
                                 return ((e, u, t) => {
                                     const r = cu[e];
@@ -3054,9 +3064,9 @@
                                     );
                                 })(i, u, a);
                             case 'dossier_badge':
-                                return `R.images.gui.maps.icons.quests.bonuses.badges.${o}.${a}`;
+                                return `R.images.gui.maps.icons.quests.bonuses.badges.${l}.${a}`;
                             case 'dossier_achievement':
-                                return `R.images.gui.maps.icons.achievement.${o}.${a}`;
+                                return `R.images.gui.maps.icons.achievement.${l}.${a}`;
                             case 'xp':
                             case 'xpFactor':
                                 return `R.images.gui.maps.icons.quests.bonuses.${u}.exp`;
@@ -3082,9 +3092,7 @@
                             case 'styleProgressToken':
                                 return `R.images.gui.maps.icons.quests.bonuses.${u}.style_3d`;
                             case 'collectionItem':
-                                return `R.images.gui.maps.icons.collectionItems.${o}.${a}`;
-                            default:
-                                return `R.images.gui.maps.icons.quests.bonuses.${u}.${t}`;
+                                return `R.images.gui.maps.icons.collectionItems.${l}.${a}`;
                         }
                     },
                     _u = (e, u, t) => {

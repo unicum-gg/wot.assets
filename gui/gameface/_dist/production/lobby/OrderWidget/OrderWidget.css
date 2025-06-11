@@ -1,0 +1,625 @@
+.Box_mt__XS_0c {
+    margin-top: 4rem;
+}
+.Box_mt__SM_eb {
+    margin-top: 8rem;
+}
+.Box_mt__SMp_cf {
+    margin-top: 10rem;
+}
+.Box_mt__MD_25 {
+    margin-top: 16rem;
+}
+.Box_mt__MDp_49 {
+    margin-top: 20rem;
+}
+.Box_mt__LG_e8 {
+    margin-top: 32rem;
+}
+.Box_mt__XL_83 {
+    margin-top: 64rem;
+}
+
+.Box_mr__XS_7c {
+    margin-right: 4rem;
+}
+
+.Box_mr__SM_08 {
+    margin-right: 8rem;
+}
+
+.Box_mr__SMp_06 {
+    margin-right: 10rem;
+}
+
+.Box_mr__MD_4a {
+    margin-right: 16rem;
+}
+
+.Box_mr__MDp_b6 {
+    margin-right: 20rem;
+}
+
+.Box_mr__LG_d0 {
+    margin-right: 32rem;
+}
+
+.Box_mr__XL_db {
+    margin-right: 64rem;
+}
+
+.Box_mb__XS_bb {
+    margin-bottom: 4rem;
+}
+
+.Box_mb__SM_83 {
+    margin-bottom: 8rem;
+}
+
+.Box_mb__SMp_04 {
+    margin-bottom: 10rem;
+}
+
+.Box_mb__MD_ed {
+    margin-bottom: 16rem;
+}
+
+.Box_mb__MDp_65 {
+    margin-bottom: 20rem;
+}
+
+.Box_mb__LG_c8 {
+    margin-bottom: 32rem;
+}
+
+.Box_mb__XL_f8 {
+    margin-bottom: 64rem;
+}
+
+.Box_ml__XS_8a {
+    margin-left: 4rem;
+}
+
+.Box_ml__SM_e6 {
+    margin-left: 8rem;
+}
+
+.Box_ml__SMp_fb {
+    margin-left: 10rem;
+}
+
+.Box_ml__MD_2b {
+    margin-left: 16rem;
+}
+
+.Box_ml__MDp_c7 {
+    margin-left: 20rem;
+}
+
+.Box_ml__LG_39 {
+    margin-left: 32rem;
+}
+
+.Box_ml__XL_4a {
+    margin-left: 64rem;
+}
+
+.FormatText_base_d0 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* eslint-disable-next-line expectedscss*/
+.Text_paragraph-P10_2c {
+    font-size: 10rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.Text_paragraph-P12_22 {
+    font-size: 12rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+.Text_paragraph-P14_a7 {
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+.Text_paragraph-P16_90 {
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+.Text_paragraph-P18_50 {
+    font-size: 18rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+.Text_paragraph-P24_33 {
+    font-size: 24rem;
+    font-weight: 400;
+    line-height: 32rem;
+}
+.Text_heading-H14_8b {
+    font-size: 14rem;
+    font-weight: 700;
+    line-height: 1.15;
+}
+.Text_heading-H15_9e {
+    font-size: 15rem;
+    font-weight: 700;
+    line-height: 1.15;
+}
+.Text_heading-H18_b7 {
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H20R_f6 {
+    font-size: 20rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.Text_heading-H22_27 {
+    font-size: 22rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.Text_heading-H24R_be {
+    font-size: 24rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.Text_heading-H24_0c {
+    font-size: 24rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.Text_heading-H28_78 {
+    font-size: 28rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H36_32 {
+    font-size: 36rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H56_c3 {
+    font-size: 56rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H73_8f {
+    font-size: 73rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H144_a9 {
+    font-size: 144rem;
+    font-weight: 700;
+    line-height: 1;
+}
+.Text_BLACK_REAL_30 {
+    color: #000000;
+}
+.Text_WHITE_REAL_bc {
+    color: #ffffff;
+}
+.Text_WHITE_62 {
+    color: #f2f2f7;
+}
+.Text_WHITE_ORANGE_54 {
+    color: #fefeec;
+}
+.Text_WHITE_SPANISH_df {
+    color: #e9e2bf;
+}
+.Text_PAR_15 {
+    color: #8c8c7e;
+}
+.Text_PAR_SECONDARY_5d {
+    color: #595950;
+}
+.Text_PAR_TERTIARY_c9 {
+    color: #37362e;
+}
+.Text_INFO_RED_30 {
+    color: #ff0000;
+}
+.Text_RED_66 {
+    color: #ff2717;
+}
+.Text_RED_DARK_d8 {
+    color: #b70000;
+}
+.Text_YELLOW_ed {
+    color: #feab34;
+}
+.Text_ORANGE_be {
+    color: #ee7000;
+}
+.Text_CREAM_57 {
+    color: #ffdd99;
+}
+.Text_BROWN_18 {
+    color: #cbac77;
+}
+.Text_GREEN_BRIGHT_3f {
+    color: #80d43a;
+}
+.Text_GREEN_e3 {
+    color: #7ab300;
+}
+.Text_GREEN_DARK_f1 {
+    color: #497212;
+}
+.Text_BLUE_BOOSTER_21 {
+    color: #ccffff;
+}
+.Text_BLUE_TEAMKILLER_ab {
+    color: #09e2ff;
+}
+.Text_CRED_f7 {
+    color: #ced9d9;
+}
+.Text_GOLD_28 {
+    color: #ffc363;
+}
+.Text_BOND_be {
+    color: #c9c9b6;
+}
+.Text_PROM_65 {
+    color: #a29b70;
+}
+
+.OrderWidgetItems_base_1f {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding-top: 10rem;
+    background: no-repeat left / contain;
+}
+
+.OrderWidgetItems_base__offence_98 {
+    background-image: url('R.images.historical_battles.gui.maps.icons.hangar.orderWidget.offence.orders_background_small');
+}
+
+.mediaMedium .OrderWidgetItems_base__offence_98 {
+    background-image: url('R.images.historical_battles.gui.maps.icons.hangar.orderWidget.offence.orders_background_medium');
+}
+
+.mediaExtraLarge .OrderWidgetItems_base__offence_98 {
+    background-image: url('R.images.historical_battles.gui.maps.icons.hangar.orderWidget.offence.orders_background_large');
+}
+
+.OrderWidgetItems_base__defence_6c {
+    background-image: url('R.images.historical_battles.gui.maps.icons.hangar.orderWidget.defence.orders_background_small');
+}
+
+.mediaMedium .OrderWidgetItems_base__defence_6c {
+    background-image: url('R.images.historical_battles.gui.maps.icons.hangar.orderWidget.defence.orders_background_medium');
+}
+
+.mediaExtraLarge .OrderWidgetItems_base__defence_6c {
+    background-image: url('R.images.historical_battles.gui.maps.icons.hangar.orderWidget.defence.orders_background_large');
+}
+
+.OrderWidgetItems_order_9a {
+    display: flex;
+    align-items: center;
+    padding-left: 8rem;
+}
+
+.mediaMedium .OrderWidgetItems_order_9a {
+    padding-left: 18rem;
+}
+
+.mediaExtraLarge .OrderWidgetItems_order_9a {
+    padding-left: 23rem;
+}
+
+.OrderWidgetItems_order_icon_4f {
+    width: 48rem;
+    height: 48rem;
+    background: no-repeat 50% / contain;
+}
+
+.mediaMedium .OrderWidgetItems_order_icon_4f {
+    width: 80rem;
+    height: 80rem;
+}
+
+.OrderWidgetItems_order_icon__x5_24 {
+    background-image: url('R.images.historical_battles.gui.maps.icons.order.c_48x48.x5');
+}
+
+.mediaMedium .OrderWidgetItems_order_icon__x5_24 {
+    background-image: url('R.images.historical_battles.gui.maps.icons.order.c_80x80.x5');
+}
+
+.OrderWidgetItems_order_icon__x10_ee {
+    background-image: url('R.images.historical_battles.gui.maps.icons.order.c_48x48.x10');
+}
+
+.mediaMedium .OrderWidgetItems_order_icon__x10_ee {
+    background-image: url('R.images.historical_battles.gui.maps.icons.order.c_80x80.x10');
+}
+
+.OrderWidgetItems_order_icon__x15_cc {
+    background-image: url('R.images.historical_battles.gui.maps.icons.order.c_48x48.x15');
+}
+
+.mediaMedium .OrderWidgetItems_order_icon__x15_cc {
+    background-image: url('R.images.historical_battles.gui.maps.icons.order.c_80x80.x15');
+}
+
+.OrderWidgetItems_order_title_a4 {
+    display: none;
+    margin-bottom: 4rem;
+}
+
+.mediaMedium .OrderWidgetItems_order_title_a4 {
+    color: #f2f2f7;
+    font-size: 15rem;
+    font-weight: 700;
+    line-height: 1.15;
+    display: flex;
+}
+
+.mediaExtraLarge .OrderWidgetItems_order_title_a4 {
+    color: #f2f2f7;
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.OrderWidgetItems_order_count_30 {
+    color: #e9e2bf;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+.mediaExtraLarge .OrderWidgetItems_order_count_30 {
+    color: #e9e2bf;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+
+.OrderWidgetItems_order_count__empty_87 {
+    opacity: 0.7;
+}
+
+.OrderWidgetItems_texts_container_9c {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.mediaMedium .OrderWidgetItems_texts_container_9c {
+    padding-left: 10rem;
+}
+
+.mediaExtraLarge .OrderWidgetItems_texts_container_9c {
+    padding-left: 13rem;
+}
+
+.App_base_08 {
+    display: flex;
+    align-items: flex-end;
+    width: 100%;
+    height: 100%;
+}
+
+.App_banner_4f {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    width: 180rem;
+    height: 180rem;
+    position: relative;
+    transition: background-size 0.3s ease-out;
+    cursor: pointer;
+}
+
+.mediaMedium .App_banner_4f {
+    width: 260rem;
+    height: 260rem;
+}
+
+.mediaExtraLarge .App_banner_4f {
+    width: 346rem;
+    height: 346rem;
+}
+
+.App_banner_4f:hover {
+    background-size: 103%;
+}
+
+.App_banner_4f:hover .App_title_6e {
+    margin-bottom: 27rem;
+}
+
+.mediaMedium .App_banner_4f:hover .App_title_6e {
+    margin-bottom: 34rem;
+}
+
+.mediaExtraLarge .App_banner_4f:hover .App_title_6e {
+    margin-bottom: 44rem;
+}
+
+.App_banner_4f:hover .App_background_b9 {
+    opacity: 0;
+}
+
+.App_banner_4f:hover .App_background__hover_32 {
+    opacity: 1;
+}
+
+.App_background_b9,
+.App_background__hover_32 {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: opacity 0.3s ease-out;
+}
+
+.App_background_b9 {
+    opacity: 1;
+}
+
+.App_background__hover_32 {
+    opacity: 0;
+}
+
+.App_banner__offence_12 {
+    background: url('R.images.historical_battles.gui.maps.icons.hangar.orderWidget.offence.banner_small') no-repeat
+        center / 100%;
+}
+
+.mediaMedium .App_banner__offence_12 {
+    background-image: url('R.images.historical_battles.gui.maps.icons.hangar.orderWidget.offence.banner_medium');
+}
+
+.mediaExtraLarge .App_banner__offence_12 {
+    background-image: url('R.images.historical_battles.gui.maps.icons.hangar.orderWidget.offence.banner_large');
+}
+
+.App_banner__offence_12 .App_background_b9 {
+    background: url('R.images.historical_battles.gui.maps.icons.hangar.orderWidget.offence.default_background_small')
+        no-repeat center / cover;
+}
+
+.mediaMedium .App_banner__offence_12 .App_background_b9 {
+    background-image: url('R.images.historical_battles.gui.maps.icons.hangar.orderWidget.offence.default_background_medium');
+}
+
+.mediaExtraLarge .App_banner__offence_12 .App_background_b9 {
+    background-image: url('R.images.historical_battles.gui.maps.icons.hangar.orderWidget.offence.default_background_large');
+}
+
+.App_banner__offence_12 .App_background__hover_32 {
+    background: url('R.images.historical_battles.gui.maps.icons.hangar.orderWidget.offence.hover_background_small')
+        no-repeat center / cover;
+}
+
+.mediaMedium .App_banner__offence_12 .App_background__hover_32 {
+    background-image: url('R.images.historical_battles.gui.maps.icons.hangar.orderWidget.offence.hover_background_medium');
+}
+
+.mediaExtraLarge .App_banner__offence_12 .App_background__hover_32 {
+    background-image: url('R.images.historical_battles.gui.maps.icons.hangar.orderWidget.offence.hover_background_large');
+}
+
+.App_banner__offence_12 .App_title_6e {
+    color: #fefeec;
+    text-shadow:
+        0 0 10rem rgba(255, 171, 44, 0.4),
+        0 0 20rem #883902,
+        0 0 7rem #000,
+        0 0 2rem rgba(0, 0, 0, 0.25),
+        0 0 10rem rgba(0, 0, 0, 0.5);
+}
+
+.mediaMedium .App_banner__offence_12 .App_title_6e {
+    color: #fefeec;
+}
+
+.mediaExtraLarge .App_banner__offence_12 .App_title_6e {
+    color: #fefeec;
+}
+
+.App_banner__defence_4e {
+    background: url('R.images.historical_battles.gui.maps.icons.hangar.orderWidget.defence.banner_small') no-repeat
+        center / 100%;
+}
+
+.mediaMedium .App_banner__defence_4e {
+    background-image: url('R.images.historical_battles.gui.maps.icons.hangar.orderWidget.defence.banner_medium');
+}
+
+.mediaExtraLarge .App_banner__defence_4e {
+    background-image: url('R.images.historical_battles.gui.maps.icons.hangar.orderWidget.defence.banner_large');
+}
+
+.App_banner__defence_4e .App_background_b9 {
+    background: url('R.images.historical_battles.gui.maps.icons.hangar.orderWidget.defence.default_background_small')
+        no-repeat center / cover;
+}
+
+.mediaMedium .App_banner__defence_4e .App_background_b9 {
+    background-image: url('R.images.historical_battles.gui.maps.icons.hangar.orderWidget.defence.default_background_medium');
+}
+
+.mediaExtraLarge .App_banner__defence_4e .App_background_b9 {
+    background-image: url('R.images.historical_battles.gui.maps.icons.hangar.orderWidget.defence.default_background_large');
+}
+
+.App_banner__defence_4e .App_background__hover_32 {
+    background: url('R.images.historical_battles.gui.maps.icons.hangar.orderWidget.defence.hover_background_small')
+        no-repeat center / cover;
+}
+
+.mediaMedium .App_banner__defence_4e .App_background__hover_32 {
+    background-image: url('R.images.historical_battles.gui.maps.icons.hangar.orderWidget.defence.hover_background_medium');
+}
+
+.mediaExtraLarge .App_banner__defence_4e .App_background__hover_32 {
+    background-image: url('R.images.historical_battles.gui.maps.icons.hangar.orderWidget.defence.hover_background_large');
+}
+
+.App_banner__defence_4e .App_title_6e {
+    color: #ffffff;
+    text-shadow:
+        0 0 7rem #000,
+        0 0 2rem rgba(0, 0, 0, 0.25),
+        0 0 10rem rgba(0, 0, 0, 0.5),
+        0 0 10rem rgba(40, 203, 255, 0.6),
+        0 0 20rem rgba(40, 61, 255, 0.5);
+}
+
+.mediaMedium .App_banner__defence_4e .App_title_6e {
+    color: #ffffff;
+}
+
+.mediaExtraLarge .App_banner__defence_4e .App_title_6e {
+    color: #ffffff;
+}
+
+.App_title_6e {
+    color: #e9e2bf;
+    font-size: 15rem;
+    font-weight: 700;
+    line-height: 1.15;
+    align-self: center;
+    width: 100%;
+    max-width: 140rem;
+    margin-bottom: 14rem;
+    text-align: center;
+    transition: margin-bottom 0.3s ease-out;
+}
+
+.mediaMedium .App_title_6e {
+    color: #ced9d9;
+    font-size: 22rem;
+    font-weight: 700;
+    line-height: 1.2;
+    max-width: 220rem;
+    margin-bottom: 22rem;
+}
+
+.mediaExtraLarge .App_title_6e {
+    color: #f2f2f7;
+    font-size: 28rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 26rem;
+}

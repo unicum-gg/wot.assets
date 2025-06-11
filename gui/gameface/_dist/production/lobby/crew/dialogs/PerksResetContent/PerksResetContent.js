@@ -2293,14 +2293,16 @@
             },
             5298: (u, e, t) => {
                 'use strict';
-                t.d(e, { l: () => n });
+                t.d(e, { lG: () => n });
                 var r = t(776);
                 const n = (u, e) => ({
                     isEnabled: u !== r.f.absent,
                     args: e,
                     contentId: R.views.dialogs.common.DialogTemplateGenericTooltip('resId'),
                     decoratorId:
-                        u === r.f.normal ? R.views.common.tooltip_window.tooltip_window.TooltipWindow('resId') : void 0,
+                        u === r.f.unbound
+                            ? R.views.common.tooltip_window.tooltip_window.TooltipWindow('resId')
+                            : void 0,
                     ignoreShowDelay: u === r.f.backport,
                     ignoreMouseClick: !0,
                 });
@@ -3719,7 +3721,7 @@
                     );
                 }
                 const O = ({ cost: u, tooltip: e, index: t, tooltipRootId: r }) => {
-                        const a = (0, S.l)(e.type, { index: t });
+                        const a = (0, S.lG)(e.type, { index: t });
                         return u.value === u.discountValue && 0 === u.value
                             ? n().createElement('div', { className: k }, R.strings.dialogs.priceCard.price.free())
                             : n().createElement(
@@ -3865,7 +3867,10 @@
                 let r;
                 t.d(e, { f: () => r }),
                     (function (u) {
-                        (u.backport = 'backport'), (u.normal = 'normal'), (u.absent = 'absent');
+                        (u.backport = 'backport'),
+                            (u.unbound = 'unbound'),
+                            (u.normal = 'normal'),
+                            (u.absent = 'absent');
                     })(r || (r = {}));
             },
             8460: (u, e, t) => {

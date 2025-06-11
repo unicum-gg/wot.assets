@@ -11,6 +11,281 @@
     position: relative;
 }
 
+.Box_mt__XS_0c {
+    margin-top: 4rem;
+}
+.Box_mt__SM_eb {
+    margin-top: 8rem;
+}
+.Box_mt__SMp_cf {
+    margin-top: 10rem;
+}
+.Box_mt__MD_25 {
+    margin-top: 16rem;
+}
+.Box_mt__MDp_49 {
+    margin-top: 20rem;
+}
+.Box_mt__LG_e8 {
+    margin-top: 32rem;
+}
+.Box_mt__XL_83 {
+    margin-top: 64rem;
+}
+
+.Box_mr__XS_7c {
+    margin-right: 4rem;
+}
+
+.Box_mr__SM_08 {
+    margin-right: 8rem;
+}
+
+.Box_mr__SMp_06 {
+    margin-right: 10rem;
+}
+
+.Box_mr__MD_4a {
+    margin-right: 16rem;
+}
+
+.Box_mr__MDp_b6 {
+    margin-right: 20rem;
+}
+
+.Box_mr__LG_d0 {
+    margin-right: 32rem;
+}
+
+.Box_mr__XL_db {
+    margin-right: 64rem;
+}
+
+.Box_mb__XS_bb {
+    margin-bottom: 4rem;
+}
+
+.Box_mb__SM_83 {
+    margin-bottom: 8rem;
+}
+
+.Box_mb__SMp_04 {
+    margin-bottom: 10rem;
+}
+
+.Box_mb__MD_ed {
+    margin-bottom: 16rem;
+}
+
+.Box_mb__MDp_65 {
+    margin-bottom: 20rem;
+}
+
+.Box_mb__LG_c8 {
+    margin-bottom: 32rem;
+}
+
+.Box_mb__XL_f8 {
+    margin-bottom: 64rem;
+}
+
+.Box_ml__XS_8a {
+    margin-left: 4rem;
+}
+
+.Box_ml__SM_e6 {
+    margin-left: 8rem;
+}
+
+.Box_ml__SMp_fb {
+    margin-left: 10rem;
+}
+
+.Box_ml__MD_2b {
+    margin-left: 16rem;
+}
+
+.Box_ml__MDp_c7 {
+    margin-left: 20rem;
+}
+
+.Box_ml__LG_39 {
+    margin-left: 32rem;
+}
+
+.Box_ml__XL_4a {
+    margin-left: 64rem;
+}
+
+.FormatText_base_d0 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* eslint-disable-next-line expectedscss*/
+.Text_paragraph-P10_2c {
+    font-size: 10rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.Text_paragraph-P12_22 {
+    font-size: 12rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+.Text_paragraph-P14_a7 {
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+.Text_paragraph-P16_90 {
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+.Text_paragraph-P18_50 {
+    font-size: 18rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+.Text_paragraph-P24_33 {
+    font-size: 24rem;
+    font-weight: 400;
+    line-height: 32rem;
+}
+.Text_heading-H14_8b {
+    font-size: 14rem;
+    font-weight: 700;
+    line-height: 1.15;
+}
+.Text_heading-H15_9e {
+    font-size: 15rem;
+    font-weight: 700;
+    line-height: 1.15;
+}
+.Text_heading-H18_b7 {
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H20R_f6 {
+    font-size: 20rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.Text_heading-H22_27 {
+    font-size: 22rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.Text_heading-H24R_be {
+    font-size: 24rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.Text_heading-H24_0c {
+    font-size: 24rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.Text_heading-H28_78 {
+    font-size: 28rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H36_32 {
+    font-size: 36rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H56_c3 {
+    font-size: 56rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H73_8f {
+    font-size: 73rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H144_a9 {
+    font-size: 144rem;
+    font-weight: 700;
+    line-height: 1;
+}
+.Text_BLACK_REAL_30 {
+    color: #000000;
+}
+.Text_WHITE_REAL_bc {
+    color: #ffffff;
+}
+.Text_WHITE_62 {
+    color: #f2f2f7;
+}
+.Text_WHITE_ORANGE_54 {
+    color: #fefeec;
+}
+.Text_WHITE_SPANISH_df {
+    color: #e9e2bf;
+}
+.Text_PAR_15 {
+    color: #8c8c7e;
+}
+.Text_PAR_SECONDARY_5d {
+    color: #595950;
+}
+.Text_PAR_TERTIARY_c9 {
+    color: #37362e;
+}
+.Text_INFO_RED_30 {
+    color: #ff0000;
+}
+.Text_RED_66 {
+    color: #ff2717;
+}
+.Text_RED_DARK_d8 {
+    color: #b70000;
+}
+.Text_YELLOW_ed {
+    color: #feab34;
+}
+.Text_ORANGE_be {
+    color: #ee7000;
+}
+.Text_CREAM_57 {
+    color: #ffdd99;
+}
+.Text_BROWN_18 {
+    color: #cbac77;
+}
+.Text_GREEN_BRIGHT_3f {
+    color: #80d43a;
+}
+.Text_GREEN_e3 {
+    color: #7ab300;
+}
+.Text_GREEN_DARK_f1 {
+    color: #497212;
+}
+.Text_BLUE_BOOSTER_21 {
+    color: #ccffff;
+}
+.Text_BLUE_TEAMKILLER_ab {
+    color: #09e2ff;
+}
+.Text_CRED_f7 {
+    color: #ced9d9;
+}
+.Text_GOLD_28 {
+    color: #ffc363;
+}
+.Text_BOND_be {
+    color: #c9c9b6;
+}
+.Text_PROM_65 {
+    color: #a29b70;
+}
+
 .VehicleInfo_base_4f {
     display: flex;
     align-items: center;
@@ -80,6 +355,12 @@
     background-size: 15rem 16rem;
 }
 
+.VehicleInfo_base__level11_96 {
+    padding-left: 15rem;
+    background-image: url('R.images.gui.maps.icons.levels.tank_level_11');
+    background-size: 15rem 16rem;
+}
+
 .VehicleInfo_vehicleType_e2 {
     width: 16rem;
     height: 16rem;
@@ -98,59 +379,15 @@
     font-weight: 400;
     line-height: 1.3;
     margin-left: 3rem;
-    text-shadow: 0 0 5px rgba(201, 201, 182, 0.5);
+    text-shadow: 0 0 5rem rgba(201, 201, 182, 0.5);
 }
 
-.BlockCompleted_base_0a {
-    line-height: normal;
-}
-.BlockCompleted_separator_c8 {
-    width: 283rem;
-    height: 1rem;
-    background: url('R.images.gui.maps.icons.battlePass.tooltips.Devider_points') 50% / contain no-repeat;
-}
-.BlockCompleted_rewards_d5 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 403rem;
-    height: 154rem;
-    background: url('R.images.gui.maps.icons.battlePass.tooltips.Ribbon_large') bottom / cover no-repeat;
-    color: #c9c9b6;
+.VehicleInfo_vehicleName__special_03 {
+    color: #feab34;
     font-size: 14rem;
-}
-.BlockCompleted_whiteBg_52 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 403rem;
-    height: 64rem;
-    background: url('R.images.gui.maps.icons.battlePass.tooltips.Gradient_devider') center / cover repeat-y;
-    position: relative;
-}
-.BlockCompleted_whiteBgLine_94 {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    color: #80d43a;
-    font-size: 14rem;
-}
-.BlockCompleted_whiteBgIcon_17 {
-    width: 12rem;
-    height: 12rem;
-    margin-top: 2rem;
-    margin-right: 4rem;
-    background: url('R.images.gui.maps.icons.library.done') center / contain no-repeat;
-}
-.BlockCompleted_description_a4 {
-    width: 100%;
-    padding: 20rem 20rem 0;
-    color: #cbac77;
-    font-size: 14rem;
-    line-height: 1.2;
-    text-align: center;
+    font-weight: 400;
+    line-height: 1.3;
+    text-shadow: 0 0 5rem rgba(254, 171, 52, 0.5);
 }
 
 .Content_base_06 {
@@ -200,97 +437,47 @@
     margin-bottom: 10rem;
 }
 
-.styles_base_86 {
-    line-height: normal;
-}
-.styles_separator_f8 {
-    width: 283rem;
-    height: 1rem;
-    background: url('R.images.gui.maps.icons.battlePass.tooltips.Devider_points') 50% / contain no-repeat;
-}
-.styles_rewards_26 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 403rem;
-    height: 154rem;
-    background: url('R.images.gui.maps.icons.battlePass.tooltips.Ribbon_large') bottom / cover no-repeat;
-    color: #c9c9b6;
-    font-size: 14rem;
-}
-.styles_base_86 {
+.EndSoon_base_b4 {
     display: flex;
     flex-direction: row;
-    width: 403rem;
-    padding-left: 28rem;
-    padding-bottom: 10rem;
-    background: url('R.images.gui.maps.icons.battlePass.tooltips.Gradient_devider') center top / 100% 40rem no-repeat;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: -3rem;
+    text-shadow:
+        0 0 4rem #ff7f0040,
+        0 0 8rem #ff2a00,
+        0 0 15rem #e52;
     position: relative;
 }
-.styles_separators_5c {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 403rem;
+
+.EndSoon_timerLight_8d {
+    width: 280rem;
+    height: 280rem;
+    background: url('R.images.gui.maps.icons.battlePass.tooltips.timer_glow') no-repeat center / contain;
+    mix-blend-mode: lighten;
     position: absolute;
-}
-/* override*/
-.styles_separator_f8 {
-    position: absolute;
-    top: 80rem;
+    top: 21rem;
     left: 50%;
-    transform: translateX(-50%);
-}
-.styles_tableHeader_a0 {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    height: 40rem;
-    color: #8c8c7e;
-    font-size: 14rem;
-}
-.styles_label_d5 {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    height: 40rem;
-    font-size: 14rem;
-}
-.styles_label__table_9e {
-    justify-content: flex-start;
-    color: #8c8c7e;
-}
-.styles_pointsColumn_20 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-right: 25rem;
+    transform: translate(-50%, -50%);
 }
 
-.Point_base_e9 {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+.EndSoon_timerIcon_83 {
+    width: 37rem;
+    height: 37rem;
+    background: url('R.images.gui.maps.icons.library.marathon.time_icon_glow') center / cover no-repeat;
 }
 
-.Point_points_2a {
-    color: #e9e2bf;
+.EndSoon_timerLabel_41 {
+    color: #ffdd99;
     font-size: 16rem;
-}
-
-.Point_points__special_c7 {
-    color: #80d43a;
-    font-size: 16rem;
-}
-
-.Point_pointIcon_9e {
-    width: 24rem;
-    height: 24rem;
-    margin-left: 6rem;
-    margin-top: 4rem;
-    background: url('R.images.gui.maps.icons.battlePass.tooltips.points_24') center / contain no-repeat;
+    font-weight: 400;
+    line-height: 1.25;
+    margin-right: 8rem;
+    text-shadow:
+        0 0 4rem #ff7f0040,
+        0 0 8rem #ff2a00,
+        0 0 15rem #e52;
 }
 
 .Footer_base_5c {
@@ -313,14 +500,26 @@
     font-size: 14rem;
 }
 .Footer_description_dc {
-    width: 100%;
-    margin-bottom: 20rem;
-    color: #8c8c7e;
+    color: #cbac77;
     font-size: 14rem;
-    line-height: 1.2;
+    font-weight: 400;
+    line-height: 1.3;
+    width: 100%;
+    margin-bottom: 10rem;
+}
+.Footer_descriptionText_e9 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 .Footer_rewards_98 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
     margin: 18rem -28rem -28rem;
+    padding-top: 16rem;
 }
 .Footer_awardImage_9e {
     display: flex;
@@ -334,17 +533,24 @@
 }
 .Footer_awardPoints_6a {
     margin-bottom: 2rem;
-    padding-top: 20rem;
+    padding-top: 30rem;
     transform: translateY(50%);
 }
 
 .Points_points_ce {
     display: flex;
-    flex-direction: row;
-    margin-bottom: 24rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20rem;
+}
+
+.Points_pointsContainer_97 {
     color: #8c8c7e;
     font-size: 36rem;
     font-weight: 700;
+    line-height: 1.1;
+    display: flex;
 }
 
 .Points_pointsSplitter_fb {
@@ -354,4 +560,16 @@
 
 .Points_pointsCurrentLabel_9d {
     color: #f5eed5;
+}
+
+.Points_pointsTitle_55 {
+    color: #8c8c7e;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 8rem;
 }

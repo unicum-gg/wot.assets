@@ -35,8 +35,8 @@
                         w = f[1],
                         S = (0, i.useState)(!1),
                         T = S[0],
-                        y = S[1],
-                        k = (0, i.useCallback)(() => {
+                        k = S[1],
+                        y = (0, i.useCallback)(() => {
                             c || (h.current && (h.current.focus(), b(!0)));
                         }, [c]),
                         x = (0, i.useCallback)(
@@ -53,7 +53,7 @@
                         ),
                         O = (0, i.useCallback)(
                             (e) => {
-                                c || (null !== E && (0, a.G)(E), _ && _(e), y(!0));
+                                c || (null !== E && (0, a.G)(E), _ && _(e), k(!0));
                             },
                             [c, E, _],
                         ),
@@ -71,9 +71,9 @@
                         ),
                         N = (0, i.useCallback)(
                             (e) => {
-                                c || (null !== m && (0, a.G)(m), F && F(e), t && k(), w(!0));
+                                c || (null !== m && (0, a.G)(m), F && F(e), t && y(), w(!0));
                             },
-                            [c, m, F, k, t],
+                            [c, m, F, y, t],
                         ),
                         I = (0, i.useCallback)(
                             (e) => {
@@ -404,6 +404,7 @@
                             (e.TankmenXpFactor = 'tankmenXPFactor'),
                             (e.FreeXpFactor = 'freeXPFactor'),
                             (e.BattleToken = 'battleToken'),
+                            (e.HBVehicleUnlock = 'hbUnlockVehicles'),
                             (e.PremiumUniversal = 'premium_universal'),
                             (e.Gold = 'gold'),
                             (e.Credits = 'credits'),
@@ -438,7 +439,9 @@
                             (e.Branch = 'branch'),
                             (e.VehicleSelect = 'vehicleSelect'),
                             (e.StyleProgress = 'styleProgress'),
-                            (e.ParagonsUnlocks = 'paragonsUnlocks');
+                            (e.ParagonsUnlocks = 'paragonsUnlocks'),
+                            (e.HistoricalBattleDiscount25 = 'historical_battles_main_discount'),
+                            (e.LootBoxToken = 'lootBoxToken');
                     })(n || (n = {})),
                     (function (e) {
                         (e.Gold = 'gold'),
@@ -567,6 +570,7 @@
                         s.E4.TankmenXpFactor,
                         s.E4.FreeXpFactor,
                         s.E4.BattleToken,
+                        s.E4.HBVehicleUnlock,
                         s.E4.PremiumUniversal,
                         s.E4.NaturalCover,
                         s.E4.BpCoin,
@@ -607,7 +611,8 @@
                             a = e.icon,
                             i = e.item,
                             o = e.dogTagType,
-                            l = ((e) => {
+                            l = e.iconSmall,
+                            c = ((e) => {
                                 switch (e) {
                                     case s.h2.S600x450:
                                         return 'c_600x450';
@@ -651,8 +656,13 @@
                                             return `R.images.gui.maps.icons.quests.bonuses.${u}.${e.icon}`;
                                     }
                                 })(e, u);
+                            case 'hbUnlockVehicles':
+                            default:
+                                return `R.images.gui.maps.icons.quests.bonuses.${u}.${t}`;
                             case 'crewBooks':
                                 return `R.images.gui.maps.icons.crewBooks.books.${u}.${a}`;
+                            case 'entitlements':
+                                return `R.images.gui.maps.icons.quests.bonuses.${u}.${l}`;
                             case 'dogTagComponents':
                                 return ((e, u, t) => {
                                     const n = m[e];
@@ -669,9 +679,9 @@
                                     );
                                 })(o, u, a);
                             case 'dossier_badge':
-                                return `R.images.gui.maps.icons.quests.bonuses.badges.${l}.${a}`;
+                                return `R.images.gui.maps.icons.quests.bonuses.badges.${c}.${a}`;
                             case 'dossier_achievement':
-                                return `R.images.gui.maps.icons.achievement.${l}.${a}`;
+                                return `R.images.gui.maps.icons.achievement.${c}.${a}`;
                             case 'xp':
                             case 'xpFactor':
                                 return `R.images.gui.maps.icons.quests.bonuses.${u}.exp`;
@@ -697,9 +707,7 @@
                             case 'styleProgressToken':
                                 return `R.images.gui.maps.icons.quests.bonuses.${u}.style_3d`;
                             case 'collectionItem':
-                                return `R.images.gui.maps.icons.collectionItems.${l}.${a}`;
-                            default:
-                                return `R.images.gui.maps.icons.quests.bonuses.${u}.${t}`;
+                                return `R.images.gui.maps.icons.collectionItems.${c}.${a}`;
                         }
                     },
                     F = (e, u, t) => {
@@ -1002,7 +1010,7 @@
                                     b && b(),
                                     (w.current.isVisible = !0));
                             }, [t, B, r, S, b]),
-                            y = (0, a.useCallback)(() => {
+                            k = (0, a.useCallback)(() => {
                                 if (w.current.isVisible || w.current.timeoutId) {
                                     const e = w.current.timeoutId;
                                     e > 0 && (clearTimeout(e), (w.current.timeoutId = 0)),
@@ -1011,36 +1019,36 @@
                                         (w.current.isVisible = !1);
                                 }
                             }, [t, B, S, f]),
-                            k = (0, a.useCallback)((e) => {
+                            y = (0, a.useCallback)((e) => {
                                 w.current.isVisible &&
                                     ((w.current.prevTarget = document.elementFromPoint(e.clientX, e.clientY)),
                                     (w.current.hideTimerId = window.setTimeout(() => {
                                         const u = document.elementFromPoint(e.clientX, e.clientY);
-                                        u && !u.isSameNode(w.current.prevTarget) && y();
+                                        u && !u.isSameNode(w.current.prevTarget) && k();
                                     }, 200)));
                             }, []);
                         return (
                             (0, a.useEffect)(() => {
                                 const e = w.current.hideTimerId;
                                 return (
-                                    document.addEventListener('wheel', k, { capture: !0 }),
+                                    document.addEventListener('wheel', y, { capture: !0 }),
                                     () => {
-                                        document.removeEventListener('wheel', k, { capture: !0 }),
+                                        document.removeEventListener('wheel', y, { capture: !0 }),
                                             e && window.clearTimeout(e);
                                     }
                                 );
                             }, []),
                             (0, a.useEffect)(() => {
-                                !1 === h && y();
-                            }, [h, y]),
+                                !1 === h && k();
+                            }, [h, k]),
                             (0, a.useEffect)(
                                 () => (
-                                    window.addEventListener('mouseleave', y),
+                                    window.addEventListener('mouseleave', k),
                                     () => {
-                                        window.removeEventListener('mouseleave', y), y();
+                                        window.removeEventListener('mouseleave', k), k();
                                     }
                                 ),
-                                [y],
+                                [k],
                             ),
                             h
                                 ? (0, a.cloneElement)(
@@ -1057,13 +1065,13 @@
                                                           R && R(e));
                                                   }),
                                               onMouseLeave: ((e) => (u) => {
-                                                  y(), null == c || c(u), null == e || e(u);
+                                                  k(), null == c || c(u), null == e || e(u);
                                               })(u.props.onMouseLeave),
                                               onClick: ((e) => (u) => {
-                                                  !1 === F && y(), null == E || E(u), null == e || e(u);
+                                                  !1 === F && k(), null == E || E(u), null == e || e(u);
                                               })(u.props.onClick),
                                               onMouseDown: ((e) => (u) => {
-                                                  !1 === F && y(), null == d || d(u), null == e || e(u);
+                                                  !1 === F && k(), null == d || d(u), null == e || e(u);
                                               })(u.props.onMouseDown),
                                           },
                                           v,
@@ -3080,7 +3088,7 @@
                     w = (e) => (e ? { left: 0 } : { right: 0 }),
                     S = (e, u) => (e ? { right: 100 - u + '%' } : { left: `${u}%` }),
                     T = (e) => ({ transitionDuration: `${e}ms` }),
-                    y = (0, n.memo)(
+                    k = (0, n.memo)(
                         ({
                             transitionDuration: e,
                             transitionDelay: u,
@@ -3124,8 +3132,8 @@
                                             : void (F && l && l());
                             }, [f, t, F, D, B, h, l, u, e]);
                             const v = (0, n.useMemo)(() => Object.assign({ width: '100%' }, T(e), w(E)), [E, e]),
-                                y = (0, n.useMemo)(() => Object.assign({ width: '0%' }, T(e), w(E)), [E, e]),
-                                k = (0, n.useMemo)(() => Object.assign({ width: '0%' }, S(E, a), T(e)), [a, E, e]),
+                                k = (0, n.useMemo)(() => Object.assign({ width: '0%' }, T(e), w(E)), [E, e]),
+                                y = (0, n.useMemo)(() => Object.assign({ width: '0%' }, S(E, a), T(e)), [a, E, e]),
                                 R = (0, n.useMemo)(
                                     () => Object.assign({ width: `${Math.abs(o - a)}%` }, S(E, a), T(e)),
                                     [a, E, o, e],
@@ -3138,16 +3146,16 @@
                             );
                             return r().createElement(
                                 'div',
-                                { style: B ? k : R, className: x },
+                                { style: B ? y : R, className: x },
                                 r().createElement(
                                     'div',
-                                    { style: h ? y : v, className: 'ProgressBarDeltaGrow_glow_68' },
+                                    { style: h ? k : v, className: 'ProgressBarDeltaGrow_glow_68' },
                                     r().createElement(g, { size: s }),
                                 ),
                             );
                         },
                     ),
-                    k = (0, n.memo)(
+                    y = (0, n.memo)(
                         ({
                             to: e,
                             size: u,
@@ -3186,7 +3194,7 @@
                                     baseStyles: m ? g : F,
                                 }),
                                 t >= 0 &&
-                                    r().createElement(y, {
+                                    r().createElement(k, {
                                         transitionDuration: o.delta.duration,
                                         transitionDelay: o.delta.delay,
                                         onChangeAnimationState: A,
@@ -3238,7 +3246,7 @@
                             case _.Simple:
                                 return r().createElement(v, P({}, a, { onEndAnimation: l, isComplete: s }));
                             case _.Growing:
-                                return r().createElement(k, P({}, a, { onEndAnimation: l, isComplete: s }));
+                                return r().createElement(y, P({}, a, { onEndAnimation: l, isComplete: s }));
                             default:
                                 return null;
                         }

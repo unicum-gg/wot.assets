@@ -1087,14 +1087,14 @@
                         [b.Large]: `${h().SMALL_WIDTH} ${h().MEDIUM_WIDTH} ${h().LARGE_WIDTH}`,
                         [b.ExtraLarge]: `${h().SMALL_WIDTH} ${h().MEDIUM_WIDTH} ${h().LARGE_WIDTH} ${h().EXTRA_LARGE_WIDTH}`,
                     },
-                    S = {
+                    T = {
                         [v.ExtraSmall]: '',
                         [v.Small]: h().SMALL_HEIGHT,
                         [v.Medium]: `${h().SMALL_HEIGHT} ${h().MEDIUM_HEIGHT}`,
                         [v.Large]: `${h().SMALL_HEIGHT} ${h().MEDIUM_HEIGHT} ${h().LARGE_HEIGHT}`,
                         [v.ExtraLarge]: `${h().SMALL_HEIGHT} ${h().MEDIUM_HEIGHT} ${h().LARGE_HEIGHT} ${h().EXTRA_LARGE_HEIGHT}`,
                     },
-                    T = {
+                    S = {
                         [p.ExtraSmall]: '',
                         [p.Small]: h().SMALL,
                         [p.Medium]: `${h().SMALL} ${h().MEDIUM}`,
@@ -1117,7 +1117,7 @@
                             i = a.mediaWidth,
                             o = a.mediaHeight,
                             l = a.mediaSize;
-                        return n().createElement('div', w({ className: C()(t, y[i], S[o], T[l]) }, r), e);
+                        return n().createElement('div', w({ className: C()(t, y[i], T[o], S[l]) }, r), e);
                     },
                     L = ['children'],
                     P = (u) => {
@@ -1293,10 +1293,10 @@
                                     : f,
                             w = u.alignItems,
                             y = void 0 === w ? (g ? 'flex-start' : h && 'center') || (p && 'flex-end') || void 0 : w,
-                            S = u.alignSelf,
-                            T = u.wrap,
+                            T = u.alignSelf,
+                            S = u.wrap,
                             M = u.flexWrap,
-                            L = void 0 === M ? (T ? 'wrap' : void 0) : M,
+                            L = void 0 === M ? (S ? 'wrap' : void 0) : M,
                             P = u.grow,
                             O = u.shrink,
                             R = u.flex,
@@ -1329,7 +1329,7 @@
                                         width: void 0 !== t && 'number' == typeof t ? t + 'rem' : t,
                                         height: void 0 !== a && 'number' == typeof a ? a + 'rem' : a,
                                         flex: k,
-                                        alignSelf: S,
+                                        alignSelf: T,
                                         display: B || y ? 'flex' : void 0,
                                         flexDirection: B,
                                         flexWrap: L,
@@ -1338,7 +1338,7 @@
                                     }),
                                     computedClassNames: e,
                                 };
-                            }, [t, a, l, E, _, F, N, k, S, B, L, x, y]),
+                            }, [t, a, l, E, _, F, N, k, T, B, L, x, y]),
                             U = G.computedStyle,
                             W = G.computedClassNames;
                         return n().createElement('div', Y({ className: C()(j.base, ...W, e), style: U }, I), H);
@@ -1866,13 +1866,13 @@
                             },
                             [B],
                         ),
-                        S = (0, r.useCallback)(
+                        T = (0, r.useCallback)(
                             (u) => {
                                 i || (m && m(u));
                             },
                             [i, m],
                         ),
-                        T = (0, r.useCallback)(
+                        S = (0, r.useCallback)(
                             (u) => {
                                 i || (null !== l && Z(l), E && E(u), x(!0));
                             },
@@ -1933,12 +1933,12 @@
                             {
                                 ref: D,
                                 className: k,
-                                onMouseEnter: T,
+                                onMouseEnter: S,
                                 onMouseMove: M,
                                 onMouseUp: L,
                                 onMouseDown: P,
                                 onMouseLeave: O,
-                                onClick: S,
+                                onClick: T,
                             },
                             a !== Cu.ghost &&
                                 n().createElement(
@@ -2071,8 +2071,8 @@
                         );
                     };
                 yu.defaultProps = { isEnough: !0 };
-                const Su = n().memo(yu);
-                let Tu, Mu, Lu, Pu, Ou, Ru, ku, Nu;
+                const Tu = n().memo(yu);
+                let Su, Mu, Lu, Pu, Ou, Ru, ku, Nu;
                 !(function (u) {
                     (u.Items = 'items'),
                         (u.Equipment = 'equipment'),
@@ -2093,6 +2093,7 @@
                         (u.TankmenXpFactor = 'tankmenXPFactor'),
                         (u.FreeXpFactor = 'freeXPFactor'),
                         (u.BattleToken = 'battleToken'),
+                        (u.HBVehicleUnlock = 'hbUnlockVehicles'),
                         (u.PremiumUniversal = 'premium_universal'),
                         (u.Gold = 'gold'),
                         (u.Credits = 'credits'),
@@ -2127,8 +2128,10 @@
                         (u.Branch = 'branch'),
                         (u.VehicleSelect = 'vehicleSelect'),
                         (u.StyleProgress = 'styleProgress'),
-                        (u.ParagonsUnlocks = 'paragonsUnlocks');
-                })(Tu || (Tu = {})),
+                        (u.ParagonsUnlocks = 'paragonsUnlocks'),
+                        (u.HistoricalBattleDiscount25 = 'historical_battles_main_discount'),
+                        (u.LootBoxToken = 'lootBoxToken');
+                })(Su || (Su = {})),
                     (function (u) {
                         (u.Gold = 'gold'),
                             (u.Credits = 'credits'),
@@ -2491,7 +2494,7 @@
                     Ce = 'WHITE_SPANISH',
                     ge = 'CREAM',
                     he = n().memo(({ levelCount: u, discountPercent: e, price: t, type: a }) => {
-                        const i = t.price.find((u) => u.name === Tu.Gold),
+                        const i = t.price.find((u) => u.name === Su.Gold),
                             o = (0, r.useState)(!1),
                             l = o[0],
                             s = o[1],
@@ -2512,7 +2515,7 @@
                                     : 'linear-gradient(to top, transparent 5%, #fff 60%, #fff 100%)',
                                 INCREASE_CONFIG: ae,
                             }),
-                            d = t.discount.find((u) => u.name === Tu.Gold),
+                            d = t.discount.find((u) => u.name === Su.Gold),
                             B = f().mediaSize,
                             g = (0, r.useCallback)(() => {
                                 s(!0), Z('personal_reserves_hover');
@@ -2639,7 +2642,7 @@
                                             className: 'Bundle_priceWithoutDiscount_27',
                                         }),
                                     ),
-                                    n().createElement(Su, {
+                                    n().createElement(Tu, {
                                         type: null == d ? void 0 : d.name,
                                         value: null == d ? void 0 : d.value,
                                         size: _e(B),
@@ -2877,8 +2880,8 @@
                         ye.apply(this, arguments)
                     );
                 }
-                const Se = R.views.common.tooltip_window.simple_tooltip_content,
-                    Te = (u) => {
+                const Te = R.views.common.tooltip_window.simple_tooltip_content,
+                    Se = (u) => {
                         let e = u.children,
                             t = u.body,
                             a = u.header,
@@ -2905,7 +2908,7 @@
                                 {
                                     contentId:
                                         ((c = null == l ? void 0 : l.hasHtmlContent),
-                                        c ? Se.SimpleTooltipHtmlContent('resId') : Se.SimpleTooltipContent('resId')),
+                                        c ? Te.SimpleTooltipHtmlContent('resId') : Te.SimpleTooltipContent('resId')),
                                     decoratorId: R.views.common.tooltip_window.tooltip_window.TooltipWindow('resId'),
                                     args: E,
                                 },
@@ -2919,7 +2922,7 @@
                     Le = R.strings.armory_yard.bundles,
                     Pe = n().memo(({ tokenPrice: u, onBuyTokens: e }) => {
                         const t = f().mediaSize,
-                            a = u.price.find((u) => u.name === Tu.Gold),
+                            a = u.price.find((u) => u.name === Su.Gold),
                             i = (0, r.useState)(!1),
                             o = i[0],
                             l = i[1],
@@ -2934,7 +2937,7 @@
                             A = t === p.ExtraSmall || t === p.Small,
                             F = A ? Le.buyTokenShort() : Le.buyToken();
                         return n().createElement(
-                            Te,
+                            Se,
                             { body: Le.buyTokenTooltip(), isEnabled: A },
                             n().createElement(
                                 K,
@@ -2973,7 +2976,7 @@
                                         n().createElement(
                                             K,
                                             { className: 'Footer_footerCurrency_ce' },
-                                            n().createElement(Su, {
+                                            n().createElement(Tu, {
                                                 type: null == a ? void 0 : a.name,
                                                 value: null == a ? void 0 : a.value,
                                                 size: 'small',

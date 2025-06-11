@@ -392,7 +392,7 @@
             2344: (u, e, t) => {
                 'use strict';
                 t.d(e, { DA: () => r.D, tT: () => r.t });
-                t(2790), t(3469), t(2133), t(579);
+                t(2790), t(3469), t(2133), t(4777), t(579);
                 var r = t(5360);
                 t(9056);
             },
@@ -412,6 +412,10 @@
             2133: (u, e, t) => {
                 'use strict';
                 t(6179);
+            },
+            4777: (u, e, t) => {
+                'use strict';
+                t(7727), t(6179);
             },
             5360: (u, e, t) => {
                 'use strict';
@@ -572,6 +576,13 @@
                             (u.SYMBOL = 'Symbol'),
                             (u.SYMBOL_LOCK = 'SymbolLock');
                     })(n || (n = {}));
+            },
+            7727: (u, e, t) => {
+                'use strict';
+                function r(u) {
+                    engine.call('PlaySound', u);
+                }
+                t.d(e, { G: () => r });
             },
             3649: (u, e, t) => {
                 'use strict';
@@ -1031,7 +1042,7 @@
                         return '';
                     };
             },
-            1355: (u, e, t) => {
+            1045: (u, e, t) => {
                 'use strict';
                 var r = t(6179),
                     n = t.n(r);
@@ -1362,10 +1373,8 @@
                     return n().createElement(d, null, n().createElement(y, t, e));
                 };
                 var H = t(493),
-                    N = t.n(H);
-                function P(u) {
-                    engine.call('PlaySound', u);
-                }
+                    N = t.n(H),
+                    P = t(7727);
                 const I = {
                         base: 'TextButton_base_b6',
                         base__right: 'TextButton_base__right_39',
@@ -1419,7 +1428,7 @@
                             (this._onMouseEnter = (u) => (e) => {
                                 u && u(e),
                                     this.setState({ hover: !0 }),
-                                    this.props.soundHover && P(this.props.soundHover);
+                                    this.props.soundHover && (0, P.G)(this.props.soundHover);
                             }),
                             (this._onMouseLeave = (u) => (e) => {
                                 u && u(e), this.setState({ hover: !1, click: !1 });
@@ -1427,7 +1436,7 @@
                             (this._onMouseDown = (u) => (e) => {
                                 u && u(e),
                                     this.setState({ click: !0 }),
-                                    this.props.soundClick && P(this.props.soundClick);
+                                    this.props.soundClick && (0, P.G)(this.props.soundClick);
                             }),
                             (this._onMouseUp = (u) => (e) => {
                                 u && u(e), this.setState({ click: !1 });
@@ -1594,7 +1603,7 @@
                         ),
                         T = (0, r.useCallback)(
                             (u) => {
-                                E || (null !== A && P(A), o && o(u), b(!0));
+                                E || (null !== A && (0, P.G)(A), o && o(u), b(!0));
                             },
                             [E, A, o],
                         ),
@@ -1612,7 +1621,7 @@
                         ),
                         O = (0, r.useCallback)(
                             (u) => {
-                                E || (null !== s && P(s), D && D(u), t && x(), p(!0));
+                                E || (null !== s && (0, P.G)(s), D && D(u), t && x(), p(!0));
                             },
                             [E, s, D, x, t],
                         ),
@@ -2077,6 +2086,6 @@
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             t.forEach(e.bind(null, 0)), (t.push = e.bind(null, t.push.bind(t)));
         })();
-    var __webpack_exports__ = __webpack_require__.O(void 0, [52], () => __webpack_require__(1355));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [52], () => __webpack_require__(1045));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

@@ -762,7 +762,7 @@
                     };
                 window.ViewEnvHelper = v;
             },
-            407: (e, t, u) => {
+            277: (e, t, u) => {
                 'use strict';
                 var i = {};
                 u.r(i),
@@ -1290,6 +1290,7 @@
                         (e.TankmenXpFactor = 'tankmenXPFactor'),
                         (e.FreeXpFactor = 'freeXPFactor'),
                         (e.BattleToken = 'battleToken'),
+                        (e.HBVehicleUnlock = 'hbUnlockVehicles'),
                         (e.PremiumUniversal = 'premium_universal'),
                         (e.Gold = 'gold'),
                         (e.Credits = 'credits'),
@@ -1324,7 +1325,9 @@
                         (e.Branch = 'branch'),
                         (e.VehicleSelect = 'vehicleSelect'),
                         (e.StyleProgress = 'styleProgress'),
-                        (e.ParagonsUnlocks = 'paragonsUnlocks');
+                        (e.ParagonsUnlocks = 'paragonsUnlocks'),
+                        (e.HistoricalBattleDiscount25 = 'historical_battles_main_discount'),
+                        (e.LootBoxToken = 'lootBoxToken');
                 })(J || (J = {})),
                     (function (e) {
                         (e.Gold = 'gold'),
@@ -1447,6 +1450,7 @@
                         J.TankmenXpFactor,
                         J.FreeXpFactor,
                         J.BattleToken,
+                        J.HBVehicleUnlock,
                         J.PremiumUniversal,
                         J.NaturalCover,
                         J.BpCoin,
@@ -1477,7 +1481,8 @@
                             r = e.icon,
                             n = e.item,
                             o = e.dogTagType,
-                            s = ((e) => {
+                            s = e.iconSmall,
+                            l = ((e) => {
                                 switch (e) {
                                     case te.S600x450:
                                         return 'c_600x450';
@@ -1521,8 +1526,13 @@
                                             return `R.images.gui.maps.icons.quests.bonuses.${t}.${e.icon}`;
                                     }
                                 })(e, t);
+                            case 'hbUnlockVehicles':
+                            default:
+                                return `R.images.gui.maps.icons.quests.bonuses.${t}.${u}`;
                             case 'crewBooks':
                                 return `R.images.gui.maps.icons.crewBooks.books.${t}.${r}`;
+                            case 'entitlements':
+                                return `R.images.gui.maps.icons.quests.bonuses.${t}.${s}`;
                             case 'dogTagComponents':
                                 return ((e, t, u) => {
                                     const i = de[e];
@@ -1539,9 +1549,9 @@
                                     );
                                 })(o, t, r);
                             case 'dossier_badge':
-                                return `R.images.gui.maps.icons.quests.bonuses.badges.${s}.${r}`;
+                                return `R.images.gui.maps.icons.quests.bonuses.badges.${l}.${r}`;
                             case 'dossier_achievement':
-                                return `R.images.gui.maps.icons.achievement.${s}.${r}`;
+                                return `R.images.gui.maps.icons.achievement.${l}.${r}`;
                             case 'xp':
                             case 'xpFactor':
                                 return `R.images.gui.maps.icons.quests.bonuses.${t}.exp`;
@@ -1567,9 +1577,7 @@
                             case 'styleProgressToken':
                                 return `R.images.gui.maps.icons.quests.bonuses.${t}.style_3d`;
                             case 'collectionItem':
-                                return `R.images.gui.maps.icons.collectionItems.${s}.${r}`;
-                            default:
-                                return `R.images.gui.maps.icons.quests.bonuses.${t}.${u}`;
+                                return `R.images.gui.maps.icons.collectionItems.${l}.${r}`;
                         }
                     },
                     ge = (e, t, u) => {
@@ -6804,6 +6812,6 @@
                 u = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             u.forEach(t.bind(null, 0)), (u.push = t.bind(null, u.push.bind(u)));
         })();
-    var __webpack_exports__ = __webpack_require__.O(void 0, [314], () => __webpack_require__(407));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [314], () => __webpack_require__(277));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

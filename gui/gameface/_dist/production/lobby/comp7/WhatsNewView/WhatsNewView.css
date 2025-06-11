@@ -744,6 +744,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     display: flex;
     flex-direction: column;
     align-items: center;
+    min-height: 105rem;
     color: #8c8c7e;
 }
 
@@ -917,27 +918,21 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 .Slider_track_e5 {
     display: flex;
-    transform: translateX(calc(var(--slideWidth) * var(--currentSlideIndex) * -1));
-
-    /* transition shorthand doesn't work with css variables */
-    transition-timing-function: cubic-bezier(0.78, 0.13, 0.15, 0.86);
-    transition-duration: var(--transitionDuration);
-    transition-property: transform;
-}
-.Slider_track__withoutTransition_53 {
-    transition-property: none;
+    position: relative;
 }
 .Slider_slide_9d {
     width: var(--slideWidth);
     opacity: 0;
-
-    /* transition shorthand doesn't work with css variables */
-    transition-timing-function: cubic-bezier(0.78, 0.13, 0.15, 0.86);
-    transition-duration: var(--transitionDuration);
-    transition-property: opacity;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 0.75s ease;
 }
 .Slider_slide__active_8f {
     opacity: 1;
+    position: relative;
+    transition: opacity 0.75s ease;
+    transition-delay: 0.25s;
 }
 .Slider_prev_92,
 .Slider_next_39 {

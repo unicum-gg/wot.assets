@@ -31,6 +31,8 @@
     left: 2rem;
 }
 .AbilityPanel_ability__shell_e8.AbilityPanel_ability__ready_fd .AbilityPanel_ability_effect_80,
+.AbilityPanel_ability__wave_d6.AbilityPanel_ability__ready_fd .AbilityPanel_ability_effect_80,
+.AbilityPanel_ability__stun_shot_ef.AbilityPanel_ability__ready_fd .AbilityPanel_ability_effect_80,
 .AbilityPanel_ability__acceleration_62.AbilityPanel_ability__ready_fd .AbilityPanel_ability_effect_80,
 .AbilityPanel_ability__shield_39.AbilityPanel_ability__ready_fd .AbilityPanel_ability_effect_80,
 .AbilityPanel_ability__black_hole_2f.AbilityPanel_ability__ready_fd .AbilityPanel_ability_effect_80,
@@ -100,11 +102,15 @@
     background-image: url('R.images.cosmic_event.gui.maps.icons.battle.ability_panel.size_74x72.ability_border_shell');
 }
 .AbilityPanel_ability__acceleration_62 .AbilityPanel_ability_border_40,
+.AbilityPanel_ability__stun_shot_ef .AbilityPanel_ability_border_40,
+.AbilityPanel_ability__wave_d6 .AbilityPanel_ability_border_40,
 .AbilityPanel_ability__shield_39 .AbilityPanel_ability_border_40 {
     background: url('R.images.cosmic_event.gui.maps.icons.battle.ability_panel.size_60x58.ability_border') center
         center / 57rem 56rem no-repeat;
 }
 .mediaMedium .AbilityPanel_ability__acceleration_62 .AbilityPanel_ability_border_40,
+.mediaMedium .AbilityPanel_ability__stun_shot_ef .AbilityPanel_ability_border_40,
+.mediaMedium .AbilityPanel_ability__wave_d6 .AbilityPanel_ability_border_40,
 .mediaMedium .AbilityPanel_ability__shield_39 .AbilityPanel_ability_border_40 {
     background: url('R.images.cosmic_event.gui.maps.icons.battle.ability_panel.size_74x72.ability_border') center
         center / 72rem 68rem no-repeat;
@@ -230,6 +236,12 @@
 .AbilityPanel_ability__ready_fd .AbilityPanel_ability_reloadMask_background_29 {
     display: none;
 }
+.AbilityPanel_ability__stun_shot_ef {
+    margin-right: 25rem;
+}
+.AbilityPanel_ability__wave_d6 {
+    margin-right: 6rem;
+}
 .AbilityPanel_ability__shell_e8 {
     margin-right: 25rem;
 }
@@ -268,6 +280,26 @@
 .mediaMedium .AbilityPanel_ability__shield_39 .AbilityPanel_ability_icon_f2,
 .mediaMedium .AbilityPanel_ability__shield_39 .AbilityPanel_ability_reloadMask_icon_31 {
     background: url('R.images.cosmic_event.gui.maps.icons.battle.ability_panel.icons.shield') center center / 48rem
+        48rem no-repeat;
+}
+.AbilityPanel_ability__wave_d6 .AbilityPanel_ability_icon_f2,
+.AbilityPanel_ability__wave_d6 .AbilityPanel_ability_reloadMask_icon_31 {
+    background: url('R.images.cosmic_event.gui.maps.icons.battle.ability_panel.icons.wave_small') center center / 40rem
+        40rem no-repeat;
+}
+.mediaMedium .AbilityPanel_ability__wave_d6 .AbilityPanel_ability_icon_f2,
+.mediaMedium .AbilityPanel_ability__wave_d6 .AbilityPanel_ability_reloadMask_icon_31 {
+    background: url('R.images.cosmic_event.gui.maps.icons.battle.ability_panel.icons.wave') center center / 48rem 48rem
+        no-repeat;
+}
+.AbilityPanel_ability__stun_shot_ef .AbilityPanel_ability_icon_f2,
+.AbilityPanel_ability__stun_shot_ef .AbilityPanel_ability_reloadMask_icon_31 {
+    background: url('R.images.cosmic_event.gui.maps.icons.battle.ability_panel.icons.stun_shot_small') center center /
+        40rem 40rem no-repeat;
+}
+.mediaMedium .AbilityPanel_ability__stun_shot_ef .AbilityPanel_ability_icon_f2,
+.mediaMedium .AbilityPanel_ability__stun_shot_ef .AbilityPanel_ability_reloadMask_icon_31 {
+    background: url('R.images.cosmic_event.gui.maps.icons.battle.ability_panel.icons.stun_shot') center center / 48rem
         48rem no-repeat;
 }
 .AbilityPanel_ability__black_hole_2f .AbilityPanel_ability_icon_f2,
@@ -393,170 +425,6 @@
 
     to {
         height: 100.5%;
-    }
-}
-
-.Aim_base_d6 {
-    width: 132rem;
-    height: 112rem;
-    background: url('R.images.cosmic_event.gui.maps.icons.battle.crosshair.aim_loading') center center / 32rem 32rem
-        no-repeat;
-    position: absolute;
-    transform: translate(-50%, -50%);
-}
-
-.Aim_base__ready_38 {
-    background: url('R.images.cosmic_event.gui.maps.icons.battle.crosshair.static_aim') center center / 32rem 32rem
-        no-repeat;
-}
-
-.Aim_base__ready_38 .Aim_corner_9c {
-    background: url('R.images.cosmic_event.gui.maps.icons.battle.crosshair.ghost_corner') 0 0 / 17rem 16rem no-repeat;
-}
-
-.Aim_corner_9c {
-    width: 17rem;
-    height: 16rem;
-    background: url('R.images.cosmic_event.gui.maps.icons.battle.crosshair.corner_loading') 0 0 / 17rem 16rem no-repeat;
-    position: absolute;
-}
-
-.Aim_corner__top_left_46 {
-    top: 0;
-    left: 0;
-}
-
-.Aim_corner__top_right_37 {
-    top: 0;
-    right: 0;
-    transform: scaleX(-1);
-}
-
-.Aim_corner__bottom_right_a2 {
-    right: 0;
-    bottom: 0;
-    transform: scaleY(-1) scaleX(-1);
-}
-
-.Aim_corner__bottom_left_d9 {
-    bottom: 0;
-    left: 0;
-    transform: scaleY(-1);
-}
-
-.Crosshair_base_64 {
-    width: 132rem;
-    height: 112rem;
-    background: url('R.images.cosmic_event.gui.maps.icons.battle.crosshair.aim') center center / 32rem 32rem no-repeat;
-    position: absolute;
-    transform: translate(-50%, -50%);
-}
-.Crosshair_reloading_cb {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-end;
-    width: 4rem;
-    height: 72rem;
-    position: absolute;
-    top: 20rem;
-}
-.Crosshair_reloading__left_9d {
-    left: 0rem;
-}
-.Crosshair_reloading__right_d9 {
-    right: 0rem;
-}
-.Crosshair_reloading_bar_9d {
-    width: 4rem;
-    height: 6rem;
-    background: url('R.images.cosmic_event.gui.maps.icons.battle.crosshair.crosshair_loading') bottom left / 4rem 6rem
-        repeat-y;
-}
-.Crosshair_reloading__ready_9d .Crosshair_reloading_bar_9d {
-    background: url('R.images.cosmic_event.gui.maps.icons.battle.crosshair.crosshair_loaded') bottom left / 4rem 6rem
-        repeat-y;
-}
-.Crosshair_reloading_timeLeft_85 {
-    text-align: right;
-    filter: drop-shadow(0 0 1rem #010326) drop-shadow(0 0 1rem #010326);
-    position: absolute;
-    top: 53rem;
-    right: 100%;
-    transform: translate(-25rem, -50%);
-    color: #ff7354;
-    font-size: 18rem;
-    font-weight: 400;
-    line-height: 21rem;
-    /* stylelint-disable-next-line unit-blacklist */
-    letter-spacing: 0.04em;
-}
-.Crosshair_reloading_timeLeft__rapidShelling_4a {
-    min-width: 34rem;
-    padding-bottom: 37rem;
-    background: url('R.images.cosmic_event.gui.maps.icons.battle.crosshair.rapid_shelling') left bottom / 32rem
-        no-repeat;
-    top: 72rem;
-}
-.Crosshair_reloading_timeLeft__powerShot_9a {
-    min-width: 34rem;
-    padding-bottom: 37rem;
-    background: url('R.images.cosmic_event.gui.maps.icons.battle.crosshair.power_shot') left bottom / 32rem no-repeat;
-    top: 72rem;
-}
-.Crosshair_reloading__ready_9d .Crosshair_reloading_timeLeft_85 {
-    color: #f4e1b3;
-    filter: drop-shadow(0 0 1rem #000);
-}
-.Crosshair_reloading_effect_b8 {
-    width: 10rem;
-    height: 76rem;
-    background-color: #f4e1b3;
-    opacity: 0;
-    position: absolute;
-    top: 0;
-    left: -4rem;
-}
-.Crosshair_reloading__ready_9d .Crosshair_reloading_effect_b8 {
-    animation: Crosshair_flash_d9 0.5s ease-in-out;
-}
-.Crosshair_corner_66 {
-    width: 17rem;
-    height: 16rem;
-    background: url('R.images.cosmic_event.gui.maps.icons.battle.crosshair.corner') 0 0 / 17rem 16rem no-repeat;
-    position: absolute;
-}
-.Crosshair_corner__top_left_86 {
-    top: 0;
-    left: 0;
-}
-.Crosshair_corner__top_right_04 {
-    top: 0;
-    right: 0;
-    transform: scaleX(-1);
-}
-.Crosshair_corner__bottom_right_99 {
-    right: 0;
-    bottom: 0;
-    transform: scaleY(-1) scaleX(-1);
-}
-.Crosshair_corner__bottom_left_e3 {
-    bottom: 0;
-    left: 0;
-    transform: scaleY(-1);
-}
-@keyframes Crosshair_flash_d9 {
-    from {
-        opacity: 0;
-    }
-
-    30% {
-        opacity: 0.5;
-        transform: scale(1);
-    }
-
-    to {
-        opacity: 0;
-        transform: scale(1.25);
     }
 }
 
@@ -806,30 +674,6 @@
     top: -2rem;
 }
 
-.CosmicReactHudApp_base_c3 {
-    display: flex;
-    width: 100vw;
-    height: 100vh;
-    margin: 0;
-    background-color: transparent;
-    letter-spacing: 0.04em;
-    overflow: hidden;
-}
-
-.CosmicReactHudApp_base__respawning_50 .CosmicReactHudApp_hideWhenRespawning_7f {
-    opacity: 0;
-}
-
-.CosmicReactHudApp_base__targeting_03 .CosmicReactHudApp_hideWhenTargeting_45 {
-    opacity: 0;
-}
-
-.CosmicReactHudApp_hideWhenRespawning_7f,
-.CosmicReactHudApp_hideWhenTargeting_45 {
-    opacity: 1;
-    transition: opacity 0.3s;
-}
-
 .FormatText_base_d0 {
     display: flex;
     flex-wrap: wrap;
@@ -978,7 +822,7 @@
     /* stylelint-disable-next-line unit-blacklist */
     letter-spacing: 0.04em;
     width: 66rem;
-    margin-right: 10rem;
+    margin: -4rem 10rem 0 0;
     text-align: right;
 }
 .MessageLog_Message_icon_35 {
@@ -993,7 +837,7 @@
     line-height: 21rem;
     /* stylelint-disable-next-line unit-blacklist */
     letter-spacing: 0.04em;
-    margin-right: 20rem;
+    margin: -4rem 20rem 0 0;
 }
 .MessageLog_Message_effect_f5 {
     width: 100%;
@@ -1020,8 +864,13 @@
     animation: MessageLog_flash_f1 400ms ease-in-out;
     animation-fill-mode: both;
 }
-.MessageLog_Message__kill_9d {
+.MessageLog_Message__kill_9d,
+.MessageLog_Message__killStreak_50 {
     background-image: url('R.images.cosmic_event.gui.maps.icons.battle.messages.message_bg__kill');
+}
+.MessageLog_Message__firstBlood_4a,
+.MessageLog_Message__revenge_1f {
+    background-image: url('R.images.cosmic_event.gui.maps.icons.battle.messages.message_bg__firstBlood');
 }
 .MessageLog_Message__kill_9d .MessageLog_Message_marsPoints_8a,
 .MessageLog_Message__kill_9d .MessageLog_Message_type_14 {
@@ -1229,6 +1078,7 @@
     line-height: 21rem;
     /* stylelint-disable-next-line unit-blacklist */
     letter-spacing: 0.04em;
+    position: relative;
 }
 .mediaMedium .PlayerList_playerEntry_ac {
     height: 31rem;
@@ -1248,13 +1098,33 @@
     display: flex;
     flex: 1 1 auto;
 }
+.PlayerList_playerVehicle_1a {
+    width: 20rem;
+    height: 20rem;
+    margin-right: 9rem;
+    background: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.rover_one') no-repeat center / cover;
+}
+.PlayerList_playerVehicle_1a.PlayerList_playerVehicleNew_e3 {
+    background: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.rover_two') no-repeat center / cover;
+}
+.PlayerList_playerEntrySelected_37 .PlayerList_playerVehicle_1a {
+    background: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.rover_one_selected') no-repeat center / cover;
+}
+.PlayerList_playerEntrySelected_37 .PlayerList_playerVehicle_1a.PlayerList_playerVehicleNew_e3 {
+    background: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.rover_two_selected') no-repeat center / cover;
+}
+.mediaMedium .PlayerList_playerVehicle_1a {
+    margin-top: 1rem;
+}
 .PlayerList_playerName_a7 {
     flex: 0 1 auto;
-    margin-left: 5rem;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
     position: relative;
+}
+.mediaMedium .PlayerList_playerName_a7 {
+    margin-left: 1rem;
 }
 .PlayerList_playerClan_d6 {
     white-space: nowrap;
@@ -1274,6 +1144,15 @@
 }
 .PlayerList_playerEntrySelected_37 .PlayerList_playerScore_d6 {
     color: #f2c572;
+}
+.PlayerList_playerRevenge_46 {
+    width: 24rem;
+    height: 24rem;
+    background: url('R.images.cosmic_event.gui.maps.icons.battle.player_list.revenge') no-repeat center / cover;
+    position: absolute;
+    top: 2rem;
+    right: -25rem;
+    transition: opacity 0.2s ease-out 0.2s;
 }
 @media (min-width: 1025rem) {
     .PlayerList_playerList_c6 {
@@ -1407,4 +1286,427 @@
 }
 .VehicleMarkers_vehicleMarker__visible_17 {
     visibility: visible;
+}
+
+.Crosshair_base_64 {
+    width: 132rem;
+    height: 112rem;
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+
+.Crosshair_base__secondVehicle_b6 {
+    width: 150rem;
+    height: 130rem;
+    margin-top: -20rem;
+}
+.Crosshair_centralDot_16 {
+    width: 132rem;
+    height: 112rem;
+    background: url('R.images.cosmic_event.gui.maps.icons.battle.crosshair.aim') center center / 32rem 32rem no-repeat;
+    position: absolute;
+}
+.Crosshair_base__secondVehicle_b6 .Crosshair_centralDot_16 {
+    width: 150rem;
+    height: 130rem;
+    margin-top: 18rem;
+}
+.Crosshair_reloading_cb {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    width: 4rem;
+    height: 72rem;
+    position: absolute;
+    top: 20rem;
+}
+.Crosshair_reloading__left_9d {
+    left: 0;
+}
+.Crosshair_reloading__second_6d .Crosshair_reloading__left_9d {
+    height: 112rem;
+    top: 3rem;
+    left: 36rem;
+    transform: rotate(29deg);
+}
+.Crosshair_reloading__right_d9 {
+    right: 0;
+}
+.Crosshair_reloading__second_6d .Crosshair_reloading__right_d9 {
+    height: 112rem;
+    top: 3rem;
+    right: 36rem;
+    transform: rotate(151deg);
+}
+.Crosshair_reloading__bottom_6a {
+    height: 103rem;
+    top: 78rem;
+    left: 49%;
+    transform: rotate(270deg) translateX(49%);
+}
+.Crosshair_reloading_bar_9d {
+    width: 4rem;
+    height: 6rem;
+    background: url('R.images.cosmic_event.gui.maps.icons.battle.crosshair.crosshair_loading') bottom left / 4rem 6rem
+        repeat-y;
+}
+.Crosshair_reloading__ready_9d .Crosshair_reloading_bar_9d {
+    background: url('R.images.cosmic_event.gui.maps.icons.battle.crosshair.crosshair_loaded') bottom left / 4rem 6rem
+        repeat-y;
+}
+.Crosshair_reloading_timeLeft_85 {
+    color: #ff7354;
+    font-size: 18rem;
+    font-weight: 400;
+    line-height: 21rem;
+    /* stylelint-disable-next-line unit-blacklist */
+    letter-spacing: 0.04em;
+    text-align: right;
+    filter: drop-shadow(0 0 1rem #010326) drop-shadow(0 0 1rem #010326);
+    position: absolute;
+    top: 53rem;
+    right: 100%;
+    transform: translate(-25rem, -50%);
+}
+.Crosshair_reloading__second_6d .Crosshair_reloading_timeLeft_85 {
+    top: 62rem;
+    transform: translate(-15rem, -50%);
+}
+.Crosshair_reloading_timeLeft__rapidShelling_4a {
+    min-width: 34rem;
+    padding-bottom: 37rem;
+    background: url('R.images.cosmic_event.gui.maps.icons.battle.crosshair.rapid_shelling') left bottom / 32rem
+        no-repeat;
+    top: 72rem;
+}
+.Crosshair_reloading_timeLeft__powerShot_9a {
+    min-width: 34rem;
+    padding-bottom: 37rem;
+    background: url('R.images.cosmic_event.gui.maps.icons.battle.crosshair.power_shot') left bottom / 32rem no-repeat;
+    top: 72rem;
+}
+.Crosshair_reloading_timeLeft__stunShot_a9 {
+    min-width: 34rem;
+    padding-bottom: 37rem;
+    background: url('R.images.cosmic_event.gui.maps.icons.battle.crosshair.stun_shot') left bottom / 32rem no-repeat;
+    top: 72rem;
+}
+.Crosshair_reloading__ready_9d .Crosshair_reloading_timeLeft_85 {
+    color: #f4e1b3;
+    filter: drop-shadow(0 0 1rem #000);
+}
+.Crosshair_reloading_effect_b8 {
+    width: 10rem;
+    height: 76rem;
+    background-color: #f4e1b3;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: -4rem;
+}
+.Crosshair_reloading__second_6d .Crosshair_reloading_effect_b8 {
+    height: 110rem;
+}
+.Crosshair_reloading__second_6d .Crosshair_reloading__bottom_6a .Crosshair_reloading_effect_b8 {
+    height: 100rem;
+}
+.Crosshair_reloading__ready_9d .Crosshair_reloading_effect_b8 {
+    animation: Crosshair_flash_d9 0.5s ease-in-out;
+}
+.Crosshair_corner_66 {
+    width: 17rem;
+    height: 16rem;
+    background: url('R.images.cosmic_event.gui.maps.icons.battle.crosshair.corner') 0 0 / 17rem 16rem no-repeat;
+    position: absolute;
+}
+.Crosshair_base__secondVehicle_b6 .Crosshair_corner_66 {
+    width: 22rem;
+    height: 10rem;
+    background: url('R.images.cosmic_event.gui.maps.icons.battle.crosshair.corner_second') 0 0 / 22rem 10rem no-repeat;
+}
+.Crosshair_corner__top_left_86 {
+    top: 0;
+    left: 0;
+}
+.Crosshair_corner__top_right_04 {
+    top: 0;
+    right: 0;
+    transform: scaleX(-1);
+}
+.Crosshair_corner__top_center_31 {
+    top: 0;
+    right: 50%;
+    transform: translateX(50%);
+}
+.Crosshair_corner__bottom_right_99 {
+    right: 0;
+    bottom: 0;
+    transform: scaleY(-1) scaleX(-1);
+}
+.Crosshair_base__secondVehicle_b6 .Crosshair_corner__bottom_right_99 {
+    right: -2rem;
+    bottom: 3rem;
+    transform: scaleY(-1) scaleX(-1) rotate(-60deg);
+}
+.Crosshair_corner__bottom_left_e3 {
+    bottom: 0;
+    left: 0;
+    transform: scaleY(-1);
+}
+.Crosshair_base__secondVehicle_b6 .Crosshair_corner__bottom_left_e3 {
+    bottom: 3rem;
+    left: -2rem;
+    transform: scaleY(-1) rotate(-60deg);
+}
+@keyframes Crosshair_flash_d9 {
+    from {
+        opacity: 0;
+    }
+
+    30% {
+        opacity: 0.5;
+        transform: scale(1);
+    }
+
+    to {
+        opacity: 0;
+        transform: scale(1.25);
+    }
+}
+
+@keyframes Aim_hideFrames_8e {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes Aim_leftFrames_50 {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+.Aim_base_d6 {
+    width: 132rem;
+    height: 112rem;
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+.Aim_base__secondVehicle_6f {
+    width: 150rem;
+    height: 130rem;
+    margin-top: -18rem;
+}
+.Aim_centralDot_44 {
+    width: 132rem;
+    height: 112rem;
+    background: url('R.images.cosmic_event.gui.maps.icons.battle.crosshair.aim_loading') center center / 32rem 32rem
+        no-repeat;
+    position: absolute;
+}
+.Aim_base__secondVehicle_6f .Aim_centralDot_44 {
+    width: 150rem;
+    height: 130rem;
+    margin-top: 18rem;
+}
+.Aim_base__ready_38 .Aim_centralDot_44 {
+    background: url('R.images.cosmic_event.gui.maps.icons.battle.crosshair.static_aim') center center / 32rem 32rem
+        no-repeat;
+}
+.Aim_corner_9c {
+    width: 17rem;
+    height: 16rem;
+    background: url('R.images.cosmic_event.gui.maps.icons.battle.crosshair.corner_loading') 0 0 / 17rem 16rem no-repeat;
+    position: absolute;
+}
+.Aim_base__secondVehicle_6f .Aim_corner_9c {
+    width: 22rem;
+    height: 10rem;
+    background: url('R.images.cosmic_event.gui.maps.icons.battle.crosshair.corner_second_loading') 0 0 / 22rem 10rem
+        no-repeat;
+}
+.Aim_base__ready_38 .Aim_corner_9c {
+    background: url('R.images.cosmic_event.gui.maps.icons.battle.crosshair.ghost_second_corner') 0 0 / 22rem 10rem
+        no-repeat;
+}
+.Aim_corner__top_left_46 {
+    top: 0;
+    left: 0;
+}
+.Aim_corner__top_right_37 {
+    top: 0;
+    right: 0;
+    transform: scaleX(-1);
+}
+.Aim_corner__top_center_37 {
+    top: 0;
+    right: 50%;
+    transform: translateX(50%) scaleX(-1);
+}
+.Aim_corner__bottom_right_a2 {
+    right: 0;
+    bottom: 0;
+    transform: scaleY(-1) scaleX(-1);
+}
+.Aim_base__secondVehicle_6f .Aim_corner__bottom_right_a2 {
+    right: -2rem;
+    bottom: 3rem;
+    transform: scaleY(-1) scaleX(-1) rotate(-60deg);
+}
+.Aim_corner__bottom_left_d9 {
+    bottom: 0;
+    left: 0;
+    transform: scaleY(-1);
+}
+.Aim_base__secondVehicle_6f .Aim_corner__bottom_left_d9 {
+    bottom: 3rem;
+    left: -2rem;
+    transform: scaleY(-1) rotate(-60deg);
+}
+.Aim_killStreakHint_1e {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400%;
+    position: absolute;
+    top: -27rem;
+    left: 50%;
+    transform: translate(-50%, -100%);
+}
+.mediaMedium .Aim_killStreakHint_1e {
+    top: -33rem;
+}
+.Aim_killStreakHint_text_b5 {
+    display: flex;
+    justify-content: center;
+    color: #f4e1b3;
+    font-size: 18rem;
+    font-weight: 400;
+}
+.Aim_killStreakHint_text__animStart_9b {
+    opacity: 0;
+    transform: translateX(100%);
+    transition: none;
+}
+.Aim_killStreakHint_text__animEnd_04 {
+    opacity: 1;
+    transform: translateX(0%);
+    animation-name: Aim_hideFrames_8e, Aim_leftFrames_50;
+    animation-duration: 0.2s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+    animation-delay: 1.8s;
+    animation-iteration-count: 1;
+    opacity: 1;
+    transform: translateX(0%);
+    transition:
+        opacity 0.2s ease-out,
+        transform 0.2s ease-out;
+}
+.mediaMedium .Aim_killStreakHint_text_b5 {
+    font-size: 24rem;
+}
+.Aim_killStreakHint_arrow_23 {
+    width: 14rem;
+    height: 14rem;
+    margin: 4rem 10rem 0;
+    background: url('R.images.cosmic_event.gui.maps.icons.battle.crosshair.kill_streak.arrow_small') no-repeat center /
+        cover;
+}
+.Aim_killStreakHint_arrow__right_48 {
+    transform: rotate(180deg);
+}
+.Aim_killStreakHint_arrow__animStart_22 {
+    opacity: 0;
+    transition: none;
+}
+.Aim_killStreakHint_arrow__animEnd_27 {
+    opacity: 1;
+    animation-name: Aim_hideFrames_8e;
+    animation-duration: 0.2s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+    animation-delay: 1.6s;
+    animation-iteration-count: 1;
+    opacity: 1;
+    transition: opacity 0.2s ease-out 0.2s;
+}
+.mediaMedium .Aim_killStreakHint_arrow_23 {
+    width: 22rem;
+    height: 22rem;
+    margin: 4rem 15rem 0;
+    background-image: url('R.images.cosmic_event.gui.maps.icons.battle.crosshair.kill_streak.arrow_big');
+}
+.Aim_killStreak_ec {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    right: -21rem;
+    transform: translate(100%, -50%);
+}
+.mediaMedium .Aim_killStreak_ec {
+    right: -25rem;
+}
+.Aim_killStreak_icon_f2 {
+    width: 48rem;
+    height: 48rem;
+    background: url('R.images.cosmic_event.gui.maps.icons.battle.crosshair.kill_streak.icon') no-repeat center / cover;
+}
+.Aim_killStreak_text_37 {
+    display: flex;
+    margin: 12rem 0 0 5rem;
+    color: #f4e1b3;
+    font-size: 16rem;
+    font-weight: 500;
+    text-shadow: 0 0 4rem rgba(0, 0, 0, 0.5);
+}
+.Aim_killStreak_text_anim_9a {
+    margin-top: -2rem;
+    font-size: 20rem;
+}
+.Aim_killStreak_text_anim__animStart_ca {
+    transform: scale(2);
+    transition: none;
+}
+.Aim_killStreak_text_anim__animEnd_ec {
+    transform: scale(1);
+    transition: transform 0.15s ease-out;
+}
+.mediaMedium .Aim_killStreak_text_37 {
+    margin: 10rem 0 0 5rem;
+    font-size: 20rem;
+}
+.mediaMedium .Aim_killStreak_text_anim_9a {
+    margin-top: -4rem;
+    font-size: 24rem;
+}
+
+.CosmicReactHudApp_base_c3 {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    background-color: transparent;
+    letter-spacing: 0.04em;
+    overflow: hidden;
+}
+
+.CosmicReactHudApp_base__respawning_50 .CosmicReactHudApp_hideWhenRespawning_7f {
+    opacity: 0;
+}
+
+.CosmicReactHudApp_base__targeting_03 .CosmicReactHudApp_hideWhenTargeting_45 {
+    opacity: 0;
+}
+
+.CosmicReactHudApp_hideWhenRespawning_7f,
+.CosmicReactHudApp_hideWhenTargeting_45 {
+    opacity: 1;
+    transition: opacity 0.3s;
 }

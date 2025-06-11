@@ -753,6 +753,7 @@
                         (u.TankmenXpFactor = 'tankmenXPFactor'),
                         (u.FreeXpFactor = 'freeXPFactor'),
                         (u.BattleToken = 'battleToken'),
+                        (u.HBVehicleUnlock = 'hbUnlockVehicles'),
                         (u.PremiumUniversal = 'premium_universal'),
                         (u.Gold = 'gold'),
                         (u.Credits = 'credits'),
@@ -787,7 +788,9 @@
                         (u.Branch = 'branch'),
                         (u.VehicleSelect = 'vehicleSelect'),
                         (u.StyleProgress = 'styleProgress'),
-                        (u.ParagonsUnlocks = 'paragonsUnlocks');
+                        (u.ParagonsUnlocks = 'paragonsUnlocks'),
+                        (u.HistoricalBattleDiscount25 = 'historical_battles_main_discount'),
+                        (u.LootBoxToken = 'lootBoxToken');
                 })(F || (F = {})),
                     (function (u) {
                         (u.Gold = 'gold'),
@@ -901,6 +904,7 @@
                     F.TankmenXpFactor,
                     F.FreeXpFactor,
                     F.BattleToken,
+                    F.HBVehicleUnlock,
                     F.PremiumUniversal,
                     F.NaturalCover,
                     F.BpCoin,
@@ -955,6 +959,7 @@
                     })(g || (g = {})),
                     ((T = b || (b = {})).style = 'style'),
                     (T.tankman = 'tankman'),
+                    (T.vehicle = 'vehicle'),
                     (function (u) {
                         (u.Default = 'default'), (u.Marathon = 'marathon'), (u.Resource = 'resource');
                     })(w || (w = {})),
@@ -1394,8 +1399,8 @@
                                 .match(u);
                     })(),
                     O = ['zh_cn', 'zh_sg', 'zh_tw'];
-                var S = t(6620);
-                const x = ({ binding: u, text: e = '', classMix: t, alignment: E = w.left }) =>
+                var x = t(6620);
+                const S = ({ binding: u, text: e = '', classMix: t, alignment: E = w.left }) =>
                         null === e
                             ? (console.error("FormatText was supplied with 'null'"), null)
                             : n().createElement(
@@ -1479,17 +1484,17 @@
                                         ? n().createElement(
                                               'span',
                                               { className: k[u] },
-                                              n().createElement(x, { text: i, binding: e }),
+                                              n().createElement(S, { text: i, binding: e }),
                                           )
                                         : n().createElement(
                                               'span',
                                               { style: E(u) },
-                                              n().createElement(x, { text: i, binding: e }),
+                                              n().createElement(S, { text: i, binding: e }),
                                           ));
                             }
                             F = N.exec(u);
                         }
-                        return n().createElement(x, { text: o, classMix: t, binding: A });
+                        return n().createElement(S, { text: o, classMix: t, binding: A });
                     }),
                     I = R.strings.gui_lootboxes.tooltips.currencyKey,
                     G = R.strings.lootboxes,
@@ -1541,7 +1546,7 @@
                                         n().createElement(
                                             'div',
                                             { className: 'App_currencyWrapper_81' },
-                                            n().createElement(S.s, { icon: s, count: r }),
+                                            n().createElement(x.s, { icon: s, count: r }),
                                         ),
                                     ),
                                 ),

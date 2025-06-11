@@ -3359,7 +3359,7 @@
                         );
                     };
             },
-            5562: (e, t, n) => {
+            952: (e, t, n) => {
                 var a = {};
                 n.r(a),
                     n.d(a, {
@@ -10986,6 +10986,6 @@
                 n = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             n.forEach(t.bind(null, 0)), (n.push = t.bind(null, n.push.bind(n)));
         })();
-    var __webpack_exports__ = __webpack_require__.O(void 0, [727], () => __webpack_require__(5562));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [727], () => __webpack_require__(952));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

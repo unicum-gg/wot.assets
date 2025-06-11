@@ -1,0 +1,30 @@
+.App_base_31 {
+    width: 100%;
+    height: 100%;
+    background: no-repeat center / 100%;
+    position: relative;
+}
+
+.App_base__offence_42 {
+    background-image: url('R.images.historical_battles.gui.maps.icons.backgrounds.hangarVignette.c_1366x768.offence');
+}
+
+.mediaMedium .App_base__offence_42 {
+    background-image: url('R.images.historical_battles.gui.maps.icons.backgrounds.hangarVignette.c_1920x1080.offence');
+}
+
+.mediaExtraLarge .App_base__offence_42 {
+    background-image: url('R.images.historical_battles.gui.maps.icons.backgrounds.hangarVignette.c_2560x1440.offence');
+}
+
+.App_base__defence_a7 {
+    background-image: url('R.images.historical_battles.gui.maps.icons.backgrounds.hangarVignette.c_1366x768.defence');
+}
+
+.mediaMedium .App_base__defence_a7 {
+    background-image: url('R.images.historical_battles.gui.maps.icons.backgrounds.hangarVignette.c_1920x1080.defence');
+}
+
+.mediaExtraLarge .App_base__defence_a7 {
+    background-image: url('R.images.historical_battles.gui.maps.icons.backgrounds.hangarVignette.c_2560x1440.defence');
+}

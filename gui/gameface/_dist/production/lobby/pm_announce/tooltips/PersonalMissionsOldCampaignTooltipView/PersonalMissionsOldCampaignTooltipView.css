@@ -570,3 +570,19 @@
 .App_base__completedPerfect_ee .App_footerBottomText_24 {
     width: 265rem;
 }
+.App_disabled_4a {
+    padding: 18rem 12rem 18rem 18rem;
+}
+.App_disabledHeader_90 {
+    color: #e9e2bf;
+    font-size: 15rem;
+    font-weight: 700;
+    line-height: 1.15;
+    padding-bottom: 4rem;
+}
+.App_disabledBody_58 {
+    color: #8c8c7e;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}

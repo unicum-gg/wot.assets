@@ -721,7 +721,7 @@
                     };
                 window.ViewEnvHelper = v;
             },
-            452: (e, u, t) => {
+            737: (e, u, t) => {
                 'use strict';
                 var a = t(179),
                     r = t.n(a);
@@ -1581,6 +1581,7 @@
                         (e.TankmenXpFactor = 'tankmenXPFactor'),
                         (e.FreeXpFactor = 'freeXPFactor'),
                         (e.BattleToken = 'battleToken'),
+                        (e.HBVehicleUnlock = 'hbUnlockVehicles'),
                         (e.PremiumUniversal = 'premium_universal'),
                         (e.Gold = 'gold'),
                         (e.Credits = 'credits'),
@@ -1615,7 +1616,9 @@
                         (e.Branch = 'branch'),
                         (e.VehicleSelect = 'vehicleSelect'),
                         (e.StyleProgress = 'styleProgress'),
-                        (e.ParagonsUnlocks = 'paragonsUnlocks');
+                        (e.ParagonsUnlocks = 'paragonsUnlocks'),
+                        (e.HistoricalBattleDiscount25 = 'historical_battles_main_discount'),
+                        (e.LootBoxToken = 'lootBoxToken');
                 })(de || (de = {})),
                     (function (e) {
                         (e.Gold = 'gold'),
@@ -1738,6 +1741,7 @@
                         de.TankmenXpFactor,
                         de.FreeXpFactor,
                         de.BattleToken,
+                        de.HBVehicleUnlock,
                         de.PremiumUniversal,
                         de.NaturalCover,
                         de.BpCoin,
@@ -1768,7 +1772,8 @@
                             n = e.icon,
                             i = e.item,
                             s = e.dogTagType,
-                            o = ((e) => {
+                            o = e.iconSmall,
+                            l = ((e) => {
                                 switch (e) {
                                     case Fe.S600x450:
                                         return 'c_600x450';
@@ -1812,8 +1817,13 @@
                                             return `R.images.gui.maps.icons.quests.bonuses.${u}.${e.icon}`;
                                     }
                                 })(e, u);
+                            case 'hbUnlockVehicles':
+                            default:
+                                return `R.images.gui.maps.icons.quests.bonuses.${u}.${t}`;
                             case 'crewBooks':
                                 return `R.images.gui.maps.icons.crewBooks.books.${u}.${n}`;
+                            case 'entitlements':
+                                return `R.images.gui.maps.icons.quests.bonuses.${u}.${o}`;
                             case 'dogTagComponents':
                                 return ((e, u, t) => {
                                     const a = be[e];
@@ -1830,9 +1840,9 @@
                                     );
                                 })(s, u, n);
                             case 'dossier_badge':
-                                return `R.images.gui.maps.icons.quests.bonuses.badges.${o}.${n}`;
+                                return `R.images.gui.maps.icons.quests.bonuses.badges.${l}.${n}`;
                             case 'dossier_achievement':
-                                return `R.images.gui.maps.icons.achievement.${o}.${n}`;
+                                return `R.images.gui.maps.icons.achievement.${l}.${n}`;
                             case 'xp':
                             case 'xpFactor':
                                 return `R.images.gui.maps.icons.quests.bonuses.${u}.exp`;
@@ -1858,9 +1868,7 @@
                             case 'styleProgressToken':
                                 return `R.images.gui.maps.icons.quests.bonuses.${u}.style_3d`;
                             case 'collectionItem':
-                                return `R.images.gui.maps.icons.collectionItems.${o}.${n}`;
-                            default:
-                                return `R.images.gui.maps.icons.quests.bonuses.${u}.${t}`;
+                                return `R.images.gui.maps.icons.collectionItems.${l}.${n}`;
                         }
                     },
                     Se = (e, u, t) => {
@@ -2632,6 +2640,6 @@
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             t.forEach(u.bind(null, 0)), (t.push = u.bind(null, t.push.bind(t)));
         })();
-    var __webpack_exports__ = __webpack_require__.O(void 0, [127], () => __webpack_require__(452));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [127], () => __webpack_require__(737));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

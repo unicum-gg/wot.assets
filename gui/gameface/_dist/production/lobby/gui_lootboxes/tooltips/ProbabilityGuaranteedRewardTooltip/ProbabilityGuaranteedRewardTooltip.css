@@ -11,11 +11,6 @@
     position: relative;
 }
 
-.FormatText_base_d0 {
-    display: flex;
-    flex-wrap: wrap;
-}
-
 .Box_mt__XS_0c {
     margin-top: 4rem;
 }
@@ -120,6 +115,11 @@
 
 .Box_ml__XL_4a {
     margin-left: 64rem;
+}
+
+.FormatText_base_d0 {
+    display: flex;
+    flex-wrap: wrap;
 }
 
 /* eslint-disable-next-line expectedscss*/

@@ -6542,6 +6542,7 @@ body {
     width: 100rem;
     height: 135rem;
     position: relative;
+    transform: translateY(3rem);
     transition: opacity 0.3s;
     cursor: pointer;
 }
@@ -6610,6 +6611,44 @@ body {
 
 .mediaMedium .App_light__chapterNotChosen_ff {
     animation: App_lightChapterNotChosen_3d cubic-bezier(0.6, 0.04, 0.98, 0.34) 0.8s;
+}
+
+.App_hintBody_61,
+.App_hintBodyX2_8a {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.App_hintBody_61 {
+    width: 100rem;
+    height: 106rem;
+}
+
+.mediaMedium .App_hintBody_61 {
+    width: 120rem;
+    height: 135rem;
+}
+
+.App_hintBody__large_ba {
+    width: 120rem;
+    height: 110rem;
+}
+
+.mediaMedium .App_hintBody__large_ba {
+    width: 145rem;
+    height: 135rem;
+}
+
+.App_hintBodyX2_8a {
+    width: 125rem;
+    height: 135rem;
+}
+
+.App_hintBodyX2__large_e3 {
+    width: 145rem;
+    height: 135rem;
 }
 
 @keyframes App_lightChapterNotChosenSmall_d9 {

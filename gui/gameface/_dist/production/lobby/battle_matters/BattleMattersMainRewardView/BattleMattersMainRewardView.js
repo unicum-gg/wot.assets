@@ -1658,6 +1658,7 @@
                         'soundHover',
                         'soundClick',
                         'size',
+                        'classNames',
                         'onClick',
                         'onMouseEnter',
                         'onMouseLeave',
@@ -1696,14 +1697,15 @@
                             s = void 0 === o ? 'play' : o,
                             D = u.size,
                             l = void 0 === D ? fu.NORMAL : D,
-                            B = u.onClick,
-                            c = u.onMouseEnter,
-                            C = u.onMouseLeave,
-                            d = u.onMouseDown,
-                            _ = u.onMouseUp,
-                            m = u.onFocus,
-                            g = u.onBlur,
-                            v = (function (u, e) {
+                            B = u.classNames,
+                            c = u.onClick,
+                            C = u.onMouseEnter,
+                            d = u.onMouseLeave,
+                            _ = u.onMouseDown,
+                            m = u.onMouseUp,
+                            g = u.onFocus,
+                            v = u.onBlur,
+                            w = (function (u, e) {
                                 if (null == u) return {};
                                 var t,
                                     r,
@@ -1712,105 +1714,107 @@
                                 for (r = 0; r < n.length; r++) (t = n[r]), e.indexOf(t) >= 0 || (a[t] = u[t]);
                                 return a;
                             })(u, bu);
-                        const w = (0, r.useState)(!1),
-                            b = w[0],
-                            p = w[1],
-                            f = (0, r.useState)(!1),
-                            x = f[0],
-                            L = f[1],
-                            T = (0, r.useState)(A),
-                            M = T[0],
-                            S = T[1],
-                            k = (0, r.useRef)(null),
-                            y = (0, r.useCallback)(() => {
-                                k.current && (k.current.focus(), S(!0));
+                        const b = (0, r.useState)(!1),
+                            p = b[0],
+                            f = b[1],
+                            x = (0, r.useState)(!1),
+                            L = x[0],
+                            T = x[1],
+                            M = (0, r.useState)(A),
+                            S = M[0],
+                            k = M[1],
+                            y = (0, r.useRef)(null),
+                            O = (0, r.useCallback)(() => {
+                                y.current && (y.current.focus(), k(!0));
                             }, []),
-                            O = (0, r.useCallback)(
+                            R = (0, r.useCallback)(
                                 (u) => {
-                                    M && null !== k.current && !k.current.contains(u.target) && S(!1);
+                                    S && null !== y.current && !y.current.contains(u.target) && k(!1);
                                 },
-                                [M],
+                                [S],
                             );
                         (0, r.useEffect)(
                             () => (
-                                document.addEventListener('mousedown', O),
+                                document.addEventListener('mousedown', R),
                                 () => {
-                                    document.removeEventListener('mousedown', O);
+                                    document.removeEventListener('mousedown', R);
                                 }
                             ),
-                            [O],
+                            [R],
                         ),
                             (0, r.useEffect)(() => {
-                                S(A);
+                                k(A);
                             }, [A]);
-                        const R = (0, r.useCallback)(
+                        const P = (0, r.useCallback)(
                                 (u) => {
-                                    B && B(u);
+                                    c && c(u);
                                 },
-                                [B],
-                            ),
-                            P = (0, r.useCallback)(
-                                (u) => {
-                                    p(!0), d && d(u), s && H(s), A && y();
-                                },
-                                [A, d, y, s],
+                                [c],
                             ),
                             N = (0, r.useCallback)(
                                 (u) => {
-                                    p(!1), _ && _(u);
+                                    f(!0), _ && _(u), s && H(s), A && O();
                                 },
-                                [_],
+                                [A, _, O, s],
                             ),
                             W = (0, r.useCallback)(
                                 (u) => {
-                                    c && c(u), F && H(F), L(!0);
-                                },
-                                [c, F],
-                            ),
-                            I = (0, r.useCallback)(
-                                (u) => {
-                                    p(!1), L(!1), C && C(u);
-                                },
-                                [C],
-                            ),
-                            U = (0, r.useCallback)(
-                                (u) => {
-                                    S(!0), m && m(u);
+                                    f(!1), m && m(u);
                                 },
                                 [m],
                             ),
+                            I = (0, r.useCallback)(
+                                (u) => {
+                                    C && C(u), F && H(F), T(!0);
+                                },
+                                [C, F],
+                            ),
+                            U = (0, r.useCallback)(
+                                (u) => {
+                                    f(!1), T(!1), d && d(u);
+                                },
+                                [d],
+                            ),
                             G = (0, r.useCallback)(
                                 (u) => {
-                                    S(!1), g && g(u);
+                                    k(!0), g && g(u);
                                 },
                                 [g],
                             ),
-                            $ = h()(
+                            $ = (0, r.useCallback)(
+                                (u) => {
+                                    k(!1), v && v(u);
+                                },
+                                [v],
+                            ),
+                            j = h()(
                                 wu.base,
                                 n && wu.base__visibleLabel,
-                                b && wu.base__mouseDown,
-                                x && wu.base__hovered,
-                                M && wu.base__focused,
+                                p && wu.base__mouseDown,
+                                L && wu.base__hovered,
+                                S && wu.base__focused,
+                                null == B ? void 0 : B.base,
                             ),
-                            j = h()(wu.icon, wu[`icon__${l}`]);
+                            V = h()(wu.icon, wu[`icon__${l}`], null == B ? void 0 : B.icon),
+                            z = h()(wu.label, null == B ? void 0 : B.label);
                         return a().createElement(
                             'div',
                             pu(
                                 {
-                                    ref: k,
-                                    className: $,
-                                    onClick: R,
-                                    onMouseEnter: W,
-                                    onMouseLeave: I,
-                                    onMouseDown: P,
-                                    onMouseUp: N,
-                                    onFocus: U,
-                                    onBlur: G,
+                                    ref: y,
+                                    className: j,
+                                    onClick: P,
+                                    onMouseEnter: I,
+                                    onMouseLeave: U,
+                                    onMouseDown: N,
+                                    onMouseUp: W,
+                                    onFocus: G,
+                                    onBlur: $,
                                 },
-                                v,
+                                w,
                             ),
-                            a().createElement('div', { className: j }),
-                            a().createElement('div', { className: wu.label }, e),
+                            a().createElement('div', { className: V }),
+                            a().createElement('div', { className: z }, e),
                         );
                     }),
                     Lu = ['I', 'IV', 'V', 'IX', 'X', 'XL', 'L', 'XC', 'C', 'CD', 'D', 'CM', 'M'],

@@ -160,6 +160,20 @@
     width: 100%;
 }
 
+/* @mixin coinCountColor {
+    &__defence {
+        color: #bdfbff;
+    }
+
+    &__counterattack {
+        color: $CREAM;
+    }
+
+    &__offence {
+        color: $WHITE;
+    }
+} */
+
 .HbCoinExchangeTooltipApp_base_1f {
     border: 1rem solid rgba(242, 242, 230, 0.1);
     background-color: #12110b;
@@ -255,16 +269,12 @@
     background: url('R.images.gui.maps.icons.components.countdown.clock') no-repeat 50% / cover;
 }
 
-.HbCoinExchangeTooltipApp_rateText__defence_7b {
-    color: #bdfbff;
+.HbCoinExchangeTooltipApp_rateText__default_70 {
+    color: #ffffff;
 }
 
-.HbCoinExchangeTooltipApp_rateText__counterattack_57 {
-    color: #ffdd99;
-}
-
-.HbCoinExchangeTooltipApp_rateText__offence_81 {
-    color: #f2f2f7;
+.HbCoinExchangeTooltipApp_rateText__booster_dc {
+    color: #fd9;
 }
 
 .HbCoinExchangeTooltipApp_text_27 {

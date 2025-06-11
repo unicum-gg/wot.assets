@@ -39,6 +39,7 @@
                             (u.TankmenXpFactor = 'tankmenXPFactor'),
                             (u.FreeXpFactor = 'freeXPFactor'),
                             (u.BattleToken = 'battleToken'),
+                            (u.HBVehicleUnlock = 'hbUnlockVehicles'),
                             (u.PremiumUniversal = 'premium_universal'),
                             (u.Gold = 'gold'),
                             (u.Credits = 'credits'),
@@ -73,7 +74,9 @@
                             (u.Branch = 'branch'),
                             (u.VehicleSelect = 'vehicleSelect'),
                             (u.StyleProgress = 'styleProgress'),
-                            (u.ParagonsUnlocks = 'paragonsUnlocks');
+                            (u.ParagonsUnlocks = 'paragonsUnlocks'),
+                            (u.HistoricalBattleDiscount25 = 'historical_battles_main_discount'),
+                            (u.LootBoxToken = 'lootBoxToken');
                     })(E || (E = {})),
                     (function (u) {
                         (u.Gold = 'gold'),
@@ -189,6 +192,7 @@
                     E.E4.TankmenXpFactor,
                     E.E4.FreeXpFactor,
                     E.E4.BattleToken,
+                    E.E4.HBVehicleUnlock,
                     E.E4.PremiumUniversal,
                     E.E4.NaturalCover,
                     E.E4.BpCoin,
@@ -371,14 +375,14 @@
                         displayStatusIs: () => T,
                         events: () => A.U,
                         extraSize: () => b,
-                        forceTriggerMouseMove: () => h,
+                        forceTriggerMouseMove: () => w,
                         freezeTextureBeforeResize: () => _,
                         getBrowserTexturePath: () => r,
                         getDisplayStatus: () => P,
                         getScale: () => l,
                         getSize: () => a,
                         getViewGlobalPosition: () => C,
-                        isEventHandled: () => w,
+                        isEventHandled: () => h,
                         isFocused: () => p,
                         pxToRem: () => c,
                         remToPx: () => d,
@@ -440,10 +444,10 @@
                 function v() {
                     return viewEnv.setEventHandled();
                 }
-                function w() {
+                function h() {
                     return viewEnv.isEventHandled();
                 }
-                function h() {
+                function w() {
                     viewEnv.forceTriggerMouseMove();
                 }
                 function P() {
@@ -881,11 +885,11 @@
                     v = (u, e) => {
                         u.keyCode === B.n.ESCAPE && e();
                     };
-                var w = t(7572);
-                const h = F.instance,
+                var h = t(7572);
+                const w = F.instance,
                     P = {
                         DataTracker: A.Z,
-                        ViewModel: w.Z,
+                        ViewModel: h.Z,
                         ViewEventType: i,
                         NumberFormatType: r,
                         RealFormatType: D,
@@ -961,7 +965,7 @@
                                 }
                             return t;
                         },
-                        ClickOutsideManager: h,
+                        ClickOutsideManager: w,
                         SystemLocale: n,
                         UserLocale: o,
                     };
@@ -970,7 +974,7 @@
             930: (u, e, t) => {
                 let E, F;
                 !(function (u) {
-                    (u.style = 'style'), (u.tankman = 'tankman');
+                    (u.style = 'style'), (u.tankman = 'tankman'), (u.vehicle = 'vehicle');
                 })(E || (E = {})),
                     (function (u) {
                         (u.Default = 'default'), (u.Marathon = 'marathon'), (u.Resource = 'resource');
@@ -1079,9 +1083,9 @@
                 Object.defineProperty(u, Symbol.toStringTag, { value: 'Module' }),
                 Object.defineProperty(u, '__esModule', { value: !0 });
         }),
-        (__webpack_require__.j = 132),
+        (__webpack_require__.j = 3132),
         (() => {
-            var u = { 132: 0 };
+            var u = { 3132: 0 };
             __webpack_require__.O.j = (e) => 0 === u[e];
             var e = (e, t) => {
                     var E,
@@ -1099,6 +1103,6 @@
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             t.forEach(e.bind(null, 0)), (t.push = e.bind(null, t.push.bind(t)));
         })();
-    var __webpack_exports__ = __webpack_require__.O(void 0, [519], () => __webpack_require__(3942));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [1519], () => __webpack_require__(3942));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

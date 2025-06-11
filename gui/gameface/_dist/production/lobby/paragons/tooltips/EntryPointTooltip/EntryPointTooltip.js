@@ -964,6 +964,7 @@
                         (e.TankmenXpFactor = 'tankmenXPFactor'),
                         (e.FreeXpFactor = 'freeXPFactor'),
                         (e.BattleToken = 'battleToken'),
+                        (e.HBVehicleUnlock = 'hbUnlockVehicles'),
                         (e.PremiumUniversal = 'premium_universal'),
                         (e.Gold = 'gold'),
                         (e.Credits = 'credits'),
@@ -998,7 +999,9 @@
                         (e.Branch = 'branch'),
                         (e.VehicleSelect = 'vehicleSelect'),
                         (e.StyleProgress = 'styleProgress'),
-                        (e.ParagonsUnlocks = 'paragonsUnlocks');
+                        (e.ParagonsUnlocks = 'paragonsUnlocks'),
+                        (e.HistoricalBattleDiscount25 = 'historical_battles_main_discount'),
+                        (e.LootBoxToken = 'lootBoxToken');
                 })(w || (w = {})),
                     (function (e) {
                         (e.Gold = 'gold'),
@@ -1122,6 +1125,7 @@
                         w.TankmenXpFactor,
                         w.FreeXpFactor,
                         w.BattleToken,
+                        w.HBVehicleUnlock,
                         w.PremiumUniversal,
                         w.NaturalCover,
                         w.BpCoin,
@@ -1152,7 +1156,8 @@
                             a = e.icon,
                             s = e.item,
                             i = e.dogTagType,
-                            o = ((e) => {
+                            o = e.iconSmall,
+                            l = ((e) => {
                                 switch (e) {
                                     case x.S600x450:
                                         return 'c_600x450';
@@ -1196,8 +1201,13 @@
                                             return `R.images.gui.maps.icons.quests.bonuses.${u}.${e.icon}`;
                                     }
                                 })(e, u);
+                            case 'hbUnlockVehicles':
+                            default:
+                                return `R.images.gui.maps.icons.quests.bonuses.${u}.${t}`;
                             case 'crewBooks':
                                 return `R.images.gui.maps.icons.crewBooks.books.${u}.${a}`;
+                            case 'entitlements':
+                                return `R.images.gui.maps.icons.quests.bonuses.${u}.${o}`;
                             case 'dogTagComponents':
                                 return ((e, u, t) => {
                                     const r = $[e];
@@ -1214,9 +1224,9 @@
                                     );
                                 })(i, u, a);
                             case 'dossier_badge':
-                                return `R.images.gui.maps.icons.quests.bonuses.badges.${o}.${a}`;
+                                return `R.images.gui.maps.icons.quests.bonuses.badges.${l}.${a}`;
                             case 'dossier_achievement':
-                                return `R.images.gui.maps.icons.achievement.${o}.${a}`;
+                                return `R.images.gui.maps.icons.achievement.${l}.${a}`;
                             case 'xp':
                             case 'xpFactor':
                                 return `R.images.gui.maps.icons.quests.bonuses.${u}.exp`;
@@ -1242,9 +1252,7 @@
                             case 'styleProgressToken':
                                 return `R.images.gui.maps.icons.quests.bonuses.${u}.style_3d`;
                             case 'collectionItem':
-                                return `R.images.gui.maps.icons.collectionItems.${o}.${a}`;
-                            default:
-                                return `R.images.gui.maps.icons.quests.bonuses.${u}.${t}`;
+                                return `R.images.gui.maps.icons.collectionItems.${l}.${a}`;
                         }
                     },
                     z = (e, u, t) => {
@@ -1280,7 +1288,7 @@
                         }
                     },
                     q = (e, u, t = W.left) => e.split(u).reduce(t === W.left ? j : X, []),
-                    Y = (() => {
+                    V = (() => {
                         const e = new RegExp(
                             /[\(\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]?[\u3002\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]?[ %\+\x2D-9A-Za-\{\}\xA0\xC0-\u0237\u2013\u2014\u2026]+[\)\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3002\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\uFF01\uFF0C\uFF1A\uFF1B\uFF1F\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]?[\u3002\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]?/gmu
                                 .source +
@@ -1301,11 +1309,11 @@
                                 .replace(/ /g, ' ')
                                 .match(e);
                     })(),
-                    V = ['zh_cn', 'zh_sg', 'zh_tw'],
+                    Y = ['zh_cn', 'zh_sg', 'zh_tw'],
                     K = (e, u = W.left) => {
                         const t = R.strings.settings.LANGUAGE_CODE().toLowerCase();
-                        return V.includes(t)
-                            ? Y(e)
+                        return Y.includes(t)
+                            ? V(e)
                             : ((e, u = W.left) => {
                                   let t = [];
                                   const r =
@@ -2528,7 +2536,7 @@
                     },
                     Xe = (Object.keys(je), ['mt', 'mr', 'mb', 'ml']),
                     qe = { mt: 'marginTop', mr: 'marginRight', mb: 'marginBottom', ml: 'marginLeft' },
-                    Ye = Ge((e) => {
+                    Ve = Ge((e) => {
                         let u = e.className,
                             t = e.width,
                             r = e.height,
@@ -2611,7 +2619,7 @@
                             H = $.computedClassNames;
                         return i().createElement('div', We({ className: n()(He.base, ...H, u), style: G }, U), I);
                     }),
-                    Ve = 'FormatText_base_d0',
+                    Ye = 'FormatText_base_d0',
                     Ke = ({ binding: e, text: u = '', classMix: t, alignment: r = W.left }) =>
                         null === u
                             ? (console.error("FormatText was supplied with 'null'"), null)
@@ -2621,7 +2629,7 @@
                                   u.split('\n').map((u, a) =>
                                       i().createElement(
                                           'div',
-                                          { className: n()(Ve, t), key: `${u}-${a}` },
+                                          { className: n()(Ye, t), key: `${u}-${a}` },
                                           ((e, u, t) =>
                                               e
                                                   .split(/%\((.*?)\)(?:[sd])?/g)
@@ -2771,7 +2779,7 @@
                             p = C.computedStyle,
                             h = C.colorClassName;
                         return i().createElement(
-                            Ye,
+                            Ve,
                             uu(
                                 {
                                     className: n()(Je.base, t && Je[t], h, r),
@@ -3253,7 +3261,7 @@
                         qu.apply(this, arguments)
                     );
                 }
-                const Yu = (0, s.memo)(
+                const Vu = (0, s.memo)(
                         ({
                             size: e,
                             value: u,
@@ -3290,7 +3298,7 @@
                                 : i().createElement(zu, qu({ key: `${n}-${u}` }, c));
                         },
                     ),
-                    Vu = (e) => ({
+                    Yu = (e) => ({
                         '--progress-base': `url(${e.bgImageBase})`,
                         '--progress-line-base': e.line.bgColorBase,
                         '--progress-line-disabled': e.line.bgColorDisabled,
@@ -3355,9 +3363,9 @@
                             }, [t, u, e]))(c, e, E);
                         return i().createElement(
                             'div',
-                            { className: n()(Du.base, Du[`base__${t}`]), style: Vu(u) },
+                            { className: n()(Du.base, Du[`base__${t}`]), style: Yu(u) },
                             !o && i().createElement(Cu, { size: t, classMix: l }),
-                            i().createElement(Yu, {
+                            i().createElement(Vu, {
                                 size: t,
                                 lineRef: m,
                                 disabled: a,
@@ -4005,8 +4013,8 @@
                         );
                     },
                     qt = 'Progression_base_4a',
-                    Yt = 'Progression_progressLineContainer_5b',
-                    Vt = 'Progression_point_33',
+                    Vt = 'Progression_progressLineContainer_5b',
+                    Yt = 'Progression_point_33',
                     Kt = 'Progression_line_ea',
                     Qt = 'Progression_line__top_7a',
                     Zt = 'Progression_line__bottom_55',
@@ -4019,7 +4027,7 @@
                             { className: qt },
                             i().createElement(
                                 'div',
-                                { className: Yt, style: { width: 310 * a + 'rem', transform: `translateX(${c}rem)` } },
+                                { className: Vt, style: { width: 310 * a + 'rem', transform: `translateX(${c}rem)` } },
                                 l
                                     .slice(0, l.length)
                                     .map((e, u) =>
@@ -4027,7 +4035,7 @@
                                             'div',
                                             {
                                                 key: e,
-                                                className: n()(Vt),
+                                                className: n()(Yt),
                                                 style: { transform: `translateX(${310 * u}rem)` },
                                             },
                                             i().createElement('div', { className: n()(Kt, Qt) }),

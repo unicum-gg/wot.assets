@@ -1,0 +1,1560 @@
+.CButton_base_40 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2rem;
+    box-shadow: 0 0 0 1rem rgba(0, 0, 0, 0.6);
+    position: relative;
+    cursor: pointer;
+}
+
+.CButton_base__main_42,
+.CButton_base__primary_7f,
+.CButton_base__primaryGreen_6f,
+.CButton_base__primaryRed_ec,
+.CButton_base__secondary_50 {
+    background-size: 100% 100%;
+}
+
+.CButton_base__main_42 {
+    background-image: url('R.images.gui.maps.icons.components.button.back_main');
+}
+
+.CButton_base__primary_7f {
+    background-image: url('R.images.gui.maps.icons.components.button.back_primary');
+}
+
+.CButton_base__primaryGreen_6f {
+    background-image: url('R.images.gui.maps.icons.components.button.back_primary_green');
+}
+
+.CButton_base__primaryRed_ec {
+    background-image: url('R.images.gui.maps.icons.components.button.back_primary_red');
+}
+
+.CButton_base__secondary_50 {
+    background-image: url('R.images.gui.maps.icons.components.button.back_secondary');
+}
+
+.CButton_base__ghost_ed {
+    border-radius: 3rem;
+    box-shadow:
+        0 0 0 1rem rgba(0, 0, 0, 0.3),
+        0 0 0 1rem rgba(255, 255, 255, 0.15) inset;
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+.CButton_base__extraSmall_27 {
+    min-height: 17rem;
+    padding: 0 16rem;
+}
+
+.CButton_base__small_df,
+.CButton_base__medium_74 {
+    padding: 0 20rem;
+}
+
+.CButton_base__small_df {
+    min-height: 18rem;
+}
+
+.CButton_base__medium_74 {
+    min-height: 32rem;
+}
+
+.CButton_base__disabled_d9 {
+    cursor: default;
+}
+/* Element .back and background-image in element .base need for fix bug in GF https://jira-archive.lesta.group/browse/WOTD-158525
+The bug is that under certain conditions, when using border-image, stripes appear. Strip is a single-pixel gap
+between 'border-image-width' and 'fill'.
+This bug is reproduced in Google Chrome 81.0.4044.113
+*/
+.CButton_back_e5 {
+    border-image-slice: 4 fill;
+    border-image-width: 4rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.CButton_base__main_42 .CButton_back_e5 {
+    border-image-source: url('R.images.gui.maps.icons.components.button.back_main');
+}
+.CButton_base__primary_7f .CButton_back_e5 {
+    border-image-source: url('R.images.gui.maps.icons.components.button.back_primary');
+}
+.CButton_base__primaryGreen_6f .CButton_back_e5 {
+    border-image-source: url('R.images.gui.maps.icons.components.button.back_primary_green');
+}
+.CButton_base__primaryRed_ec .CButton_back_e5 {
+    border-image-source: url('R.images.gui.maps.icons.components.button.back_primary_red');
+}
+.CButton_base__secondary_50 .CButton_back_e5 {
+    border-image-source: url('R.images.gui.maps.icons.components.button.back_secondary');
+}
+.CButton_texture_fe {
+    background: url('R.images.gui.maps.icons.components.button.standard_texture_file');
+    background-size: 155rem 31rem;
+    mix-blend-mode: soft-light;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.CButton_state_11 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition: box-shadow 0.16s ease-in-out;
+}
+.CButton_base__focus_83 .CButton_state_11 {
+    border-radius: 2rem;
+    box-shadow: inset 0 0 2rem 1rem rgba(255, 85, 0, 0.2);
+}
+.CButton_stateHighlightHover_ff,
+.CButton_stateHighlightActive_35,
+.CButton_stateDisabled_54 {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.CButton_base__firstHover_d5 .CButton_stateHighlightHover_ff,
+.CButton_base__firstHover_d5 .CButton_stateHighlightActive_35,
+.CButton_base__firstHover_d5 .CButton_stateDisabled_54 {
+    transition: opacity 0.16s ease-in-out;
+}
+.CButton_stateHighlightHover_ff {
+    background-image: linear-gradient(
+        180deg,
+        rgba(252, 248, 235, 0.25) 0%,
+        rgba(252, 248, 235, 0.1) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+}
+.CButton_base_40:hover .CButton_stateHighlightHover_ff {
+    opacity: 1;
+}
+.CButton_base_40:active .CButton_stateHighlightHover_ff {
+    opacity: 0;
+}
+.CButton_base__disabled_d9:hover .CButton_stateHighlightHover_ff {
+    opacity: 0;
+}
+.CButton_base__ghost_ed .CButton_stateHighlightHover_ff {
+    box-shadow: 0 15rem 12rem 0 rgba(242, 242, 230, 0.11) inset;
+    background-color: rgba(8, 6, 0, 0.18);
+    background-image: none;
+}
+.CButton_stateHighlightActive_35 {
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.15) 100%);
+}
+.CButton_base__highlightActive_b2 .CButton_stateHighlightActive_35 {
+    opacity: 1;
+}
+.CButton_stateDisabled_54 {
+    background-color: rgba(0, 0, 0, 0.25);
+    background-image: url('R.images.gui.maps.icons.components.button.texture_disable');
+    background-size: 15rem;
+}
+.CButton_base__disabled_d9 .CButton_stateDisabled_54 {
+    opacity: 1;
+}
+.CButton_content_cc {
+    display: flex;
+    align-items: center;
+    color: #f2f2e6;
+    font-weight: 700;
+    line-height: 1.2;
+    text-shadow: 0 -1rem 1rem #000;
+    letter-spacing: 0.03em;
+    transform: translateY(-1rem);
+}
+.CButton_content_cc[lang='ja'],
+.CButton_content_cc[lang='ko'],
+.CButton_content_cc[lang='zh_tw'],
+.CButton_content_cc[lang='zh_sg'],
+.CButton_content_cc[lang='zh_cn'],
+.CButton_content_cc[lang='th'] {
+    font-weight: 400;
+}
+.CButton_base__main_42 .CButton_content_cc,
+.CButton_base__primaryRed_ec .CButton_content_cc {
+    text-shadow: 0 -1rem 1rem #600;
+}
+.CButton_base__secondary_50 .CButton_content_cc {
+    color: rgba(254, 254, 236, 0.75);
+}
+.CButton_base__primaryGreen_6f .CButton_content_cc {
+    text-shadow: 0 -1rem 1rem #1c2502;
+}
+.CButton_base__extraSmall_27 .CButton_content_cc {
+    font-size: 12rem;
+}
+.CButton_base__small_df .CButton_content_cc {
+    font-size: 14rem;
+}
+.CButton_base__medium_74 .CButton_content_cc {
+    font-size: 15rem;
+}
+.CButton_base__disabled_d9 .CButton_content_cc {
+    opacity: 0.6;
+}
+
+.Box_mt__XS_0c {
+    margin-top: 4rem;
+}
+.Box_mt__SM_eb {
+    margin-top: 8rem;
+}
+.Box_mt__SMp_cf {
+    margin-top: 10rem;
+}
+.Box_mt__MD_25 {
+    margin-top: 16rem;
+}
+.Box_mt__MDp_49 {
+    margin-top: 20rem;
+}
+.Box_mt__LG_e8 {
+    margin-top: 32rem;
+}
+.Box_mt__XL_83 {
+    margin-top: 64rem;
+}
+
+.Box_mr__XS_7c {
+    margin-right: 4rem;
+}
+
+.Box_mr__SM_08 {
+    margin-right: 8rem;
+}
+
+.Box_mr__SMp_06 {
+    margin-right: 10rem;
+}
+
+.Box_mr__MD_4a {
+    margin-right: 16rem;
+}
+
+.Box_mr__MDp_b6 {
+    margin-right: 20rem;
+}
+
+.Box_mr__LG_d0 {
+    margin-right: 32rem;
+}
+
+.Box_mr__XL_db {
+    margin-right: 64rem;
+}
+
+.Box_mb__XS_bb {
+    margin-bottom: 4rem;
+}
+
+.Box_mb__SM_83 {
+    margin-bottom: 8rem;
+}
+
+.Box_mb__SMp_04 {
+    margin-bottom: 10rem;
+}
+
+.Box_mb__MD_ed {
+    margin-bottom: 16rem;
+}
+
+.Box_mb__MDp_65 {
+    margin-bottom: 20rem;
+}
+
+.Box_mb__LG_c8 {
+    margin-bottom: 32rem;
+}
+
+.Box_mb__XL_f8 {
+    margin-bottom: 64rem;
+}
+
+.Box_ml__XS_8a {
+    margin-left: 4rem;
+}
+
+.Box_ml__SM_e6 {
+    margin-left: 8rem;
+}
+
+.Box_ml__SMp_fb {
+    margin-left: 10rem;
+}
+
+.Box_ml__MD_2b {
+    margin-left: 16rem;
+}
+
+.Box_ml__MDp_c7 {
+    margin-left: 20rem;
+}
+
+.Box_ml__LG_39 {
+    margin-left: 32rem;
+}
+
+.Box_ml__XL_4a {
+    margin-left: 64rem;
+}
+
+.FormatText_base_d0 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* eslint-disable-next-line expectedscss*/
+.Text_paragraph-P10_2c {
+    font-size: 10rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.Text_paragraph-P12_22 {
+    font-size: 12rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+.Text_paragraph-P14_a7 {
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+.Text_paragraph-P16_90 {
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+.Text_paragraph-P18_50 {
+    font-size: 18rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+.Text_paragraph-P24_33 {
+    font-size: 24rem;
+    font-weight: 400;
+    line-height: 32rem;
+}
+.Text_heading-H14_8b {
+    font-size: 14rem;
+    font-weight: 700;
+    line-height: 1.15;
+}
+.Text_heading-H15_9e {
+    font-size: 15rem;
+    font-weight: 700;
+    line-height: 1.15;
+}
+.Text_heading-H18_b7 {
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H20R_f6 {
+    font-size: 20rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.Text_heading-H22_27 {
+    font-size: 22rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.Text_heading-H24R_be {
+    font-size: 24rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.Text_heading-H24_0c {
+    font-size: 24rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.Text_heading-H28_78 {
+    font-size: 28rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H36_32 {
+    font-size: 36rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H56_c3 {
+    font-size: 56rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H73_8f {
+    font-size: 73rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H144_a9 {
+    font-size: 144rem;
+    font-weight: 700;
+    line-height: 1;
+}
+.Text_BLACK_REAL_30 {
+    color: #000000;
+}
+.Text_WHITE_REAL_bc {
+    color: #ffffff;
+}
+.Text_WHITE_62 {
+    color: #f2f2f7;
+}
+.Text_WHITE_ORANGE_54 {
+    color: #fefeec;
+}
+.Text_WHITE_SPANISH_df {
+    color: #e9e2bf;
+}
+.Text_PAR_15 {
+    color: #8c8c7e;
+}
+.Text_PAR_SECONDARY_5d {
+    color: #595950;
+}
+.Text_PAR_TERTIARY_c9 {
+    color: #37362e;
+}
+.Text_INFO_RED_30 {
+    color: #ff0000;
+}
+.Text_RED_66 {
+    color: #ff2717;
+}
+.Text_RED_DARK_d8 {
+    color: #b70000;
+}
+.Text_YELLOW_ed {
+    color: #feab34;
+}
+.Text_ORANGE_be {
+    color: #ee7000;
+}
+.Text_CREAM_57 {
+    color: #ffdd99;
+}
+.Text_BROWN_18 {
+    color: #cbac77;
+}
+.Text_GREEN_BRIGHT_3f {
+    color: #80d43a;
+}
+.Text_GREEN_e3 {
+    color: #7ab300;
+}
+.Text_GREEN_DARK_f1 {
+    color: #497212;
+}
+.Text_BLUE_BOOSTER_21 {
+    color: #ccffff;
+}
+.Text_BLUE_TEAMKILLER_ab {
+    color: #09e2ff;
+}
+.Text_CRED_f7 {
+    color: #ced9d9;
+}
+.Text_GOLD_28 {
+    color: #ffc363;
+}
+.Text_BOND_be {
+    color: #c9c9b6;
+}
+.Text_PROM_65 {
+    color: #a29b70;
+}
+
+.TextButton_base_b6 {
+    display: flex;
+    align-items: center;
+    padding: 0 3rem;
+    font-size: 12rem;
+    position: relative;
+    cursor: pointer;
+}
+
+.TextButton_base__right_39 {
+    flex-direction: row-reverse;
+}
+.TextButton_icon_17 {
+    width: 32rem;
+    height: 32rem;
+    background: no-repeat center / contain;
+    position: relative;
+}
+.TextButton_icon__back_43,
+.TextButton_icon__forward_59 {
+    margin: -1rem -5rem;
+    background-image: url('R.images.gui.maps.icons.components.text_button.back');
+    transform: translateY(1rem);
+}
+.TextButton_icon__forward_59 {
+    transform: rotate(180deg) translateY(1rem);
+}
+.TextButton_icon__close_53 {
+    margin: -1rem 0;
+    background-image: url('R.images.gui.maps.icons.components.text_button.close');
+}
+.TextButton_icon__info_33 {
+    margin: -1rem -5rem;
+    background-image: url('R.images.gui.maps.icons.components.text_button.info');
+}
+.TextButton_glow_a4 {
+    width: 100%;
+    height: 100%;
+    background: no-repeat center / contain;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    transition: opacity 0.16s;
+}
+.TextButton_icon__back_43 .TextButton_glow_a4,
+.TextButton_icon__forward_59 .TextButton_glow_a4 {
+    background-image: url('R.images.gui.maps.icons.components.text_button.back_hover');
+}
+.TextButton_icon__close_53 .TextButton_glow_a4 {
+    background-image: url('R.images.gui.maps.icons.components.text_button.close_hover');
+}
+.TextButton_icon__info_33 .TextButton_glow_a4 {
+    background-image: url('R.images.gui.maps.icons.components.text_button.info_hover');
+}
+.TextButton_base_b6:hover .TextButton_glow_a4 {
+    opacity: 1;
+}
+.TextButton_base_b6:active .TextButton_glow_a4 {
+    opacity: 0;
+}
+.TextButton_caption_82 {
+    position: relative;
+    transition:
+        color 0.16s,
+        text-shadow 0.16s;
+}
+.TextButton_caption__back_b9,
+.TextButton_caption__forward_4e,
+.TextButton_caption__close_36 {
+    color: #ffdd99;
+    text-shadow:
+        0 0 10rem rgba(255, 42, 0, 1),
+        0 0 10rem rgba(255, 42, 0, 0.4),
+        0 0 10rem rgba(255, 42, 0, 0.4),
+        0 0 2rem rgba(255, 42, 0, 0.4),
+        0 0 1rem rgba(255, 42, 0, 0.4),
+        0 0 2rem rgba(255, 42, 0, 0.4),
+        0 0 1rem rgba(255, 42, 0, 0.4);
+}
+.TextButton_base_b6:hover .TextButton_caption__back_b9,
+.TextButton_base_b6:hover .TextButton_caption__forward_4e,
+.TextButton_base_b6:hover .TextButton_caption__close_36 {
+    color: #fffa9f;
+}
+.TextButton_base_b6:active .TextButton_caption__back_b9,
+.TextButton_base_b6:active .TextButton_caption__forward_4e,
+.TextButton_base_b6:active .TextButton_caption__close_36 {
+    color: #ffdd99;
+}
+.TextButton_caption__info_23 {
+    padding: 0 5rem;
+    color: #ccffff;
+    text-shadow:
+        0 0 12rem rgba(31, 68, 255, 0.8),
+        0 0 8rem #00eaff;
+}
+.TextButton_base_b6:hover .TextButton_caption__info_23 {
+    color: #e3ffff;
+    text-shadow:
+        0 0 12rem rgba(31, 68, 255, 0.8),
+        0 0 12rem rgba(0, 234, 255, 1),
+        0 0 8rem #00eaff;
+}
+.TextButton_base_b6:active .TextButton_caption__info_23 {
+    color: #ccffff;
+    text-shadow:
+        0 0 12rem rgba(31, 68, 255, 0.6),
+        0 0 8rem #00eaff;
+}
+.TextButton_goto_e7 {
+    color: #7c7c6c;
+}
+.TextButton_base__left_ff .TextButton_goto_e7 {
+    margin-left: 8rem;
+}
+.TextButton_base__right_39 .TextButton_goto_e7 {
+    margin-right: 8rem;
+}
+.TextButton_shine_e2 {
+    width: 90rem;
+    height: 40rem;
+    background: url('R.images.gui.maps.icons.components.text_button.shine') no-repeat center / contain;
+    opacity: 0;
+    position: absolute;
+    top: -4rem;
+    transition: opacity 0.16s;
+    pointer-events: none;
+}
+.TextButton_base__left_ff .TextButton_shine_e2 {
+    left: -4rem;
+}
+.TextButton_base__right_39 .TextButton_shine_e2 {
+    right: -4rem;
+    transform: rotate(180deg);
+}
+.TextButton_base_b6:hover .TextButton_shine_e2 {
+    opacity: 1;
+}
+.TextButton_base_b6:active .TextButton_shine_e2 {
+    opacity: 0;
+}
+
+.Level_base_12 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 72rem;
+    height: 72rem;
+    position: relative;
+}
+
+.Level_base__tiny_b4 {
+    width: 30rem;
+    height: 30rem;
+}
+
+.Level_base__extraSmall_05 {
+    width: 36rem;
+    height: 36rem;
+}
+
+.Level_base__small_98 {
+    width: 48rem;
+    height: 48rem;
+}
+
+.Level_base__medium_f0 {
+    width: 60rem;
+    height: 60rem;
+}
+
+.Level_base__large_c3 {
+    width: 72rem;
+    height: 72rem;
+}
+
+.Level_base__extraLarge_dc {
+    width: 82rem;
+    height: 82rem;
+}
+
+.Level_bg_f5 {
+    background: rgba(17, 17, 17, 0.5);
+    position: absolute;
+    top: auto;
+    left: auto;
+    transform: rotate(45deg);
+}
+
+.Level_base__tiny_b4 .Level_bg_f5 {
+    width: 23rem;
+    height: 23rem;
+    border-radius: 4rem;
+}
+
+.Level_base__extraSmall_05 .Level_bg_f5 {
+    width: 28rem;
+    height: 28rem;
+    border-radius: 4rem;
+}
+
+.Level_base__small_98 .Level_bg_f5 {
+    width: 35rem;
+    height: 35rem;
+    border-radius: 6rem;
+}
+
+.Level_base__medium_f0 .Level_bg_f5 {
+    width: 45rem;
+    height: 45rem;
+    border-radius: 7rem;
+}
+
+.Level_base__large_c3 .Level_bg_f5 {
+    width: 55rem;
+    height: 55rem;
+    border-radius: 8rem;
+}
+
+.Level_base__extraLarge_dc .Level_bg_f5 {
+    width: 62rem;
+    height: 62rem;
+    border-radius: 8rem;
+}
+
+.Level_border_11 {
+    background: #c6a97b;
+    position: absolute;
+    top: auto;
+    left: auto;
+    transform: rotate(45deg);
+}
+
+.Level_base__yellow_63 .Level_border_11 {
+    background-color: #feab34;
+}
+
+.Level_base__tiny_b4 .Level_border_11 {
+    width: 19rem;
+    height: 19rem;
+    border-radius: 2rem;
+}
+
+.Level_base__extraSmall_05 .Level_border_11 {
+    width: 24rem;
+    height: 24rem;
+    border-radius: 3rem;
+}
+
+.Level_base__small_98 .Level_border_11 {
+    width: 31rem;
+    height: 31rem;
+    border-radius: 4rem;
+}
+
+.Level_base__medium_f0 .Level_border_11 {
+    width: 39rem;
+    height: 39rem;
+    border-radius: 5rem;
+}
+
+.Level_base__large_c3 .Level_border_11 {
+    width: 49rem;
+    height: 49rem;
+    border-radius: 6rem;
+}
+
+.Level_base__extraLarge_dc .Level_border_11 {
+    width: 54rem;
+    height: 54rem;
+    border-radius: 6rem;
+}
+
+.Level_innerGlow_47 {
+    background: rgb(17, 17, 17);
+    position: absolute;
+    top: auto;
+    left: auto;
+    transform: rotate(45deg);
+}
+
+.Level_base__tiny_b4 .Level_innerGlow_47 {
+    width: 17rem;
+    height: 17rem;
+    border-radius: 2rem;
+    box-shadow:
+        0 -2rem 5rem 0 rgba(104, 0, 0, 0.25) inset,
+        0 2rem 5rem 0 rgba(104, 0, 0, 0.25) inset;
+}
+
+.Level_base__extraSmall_05 .Level_innerGlow_47 {
+    width: 22rem;
+    height: 22rem;
+    border-radius: 3rem;
+    box-shadow:
+        0 -3rem 6rem 0 rgba(104, 0, 0, 0.25) inset,
+        0 3rem 6rem 0 rgba(104, 0, 0, 0.25) inset;
+}
+
+.Level_base__small_98 .Level_innerGlow_47 {
+    width: 29rem;
+    height: 29rem;
+    border-radius: 3rem;
+    box-shadow:
+        0 -4rem 8rem 0 rgba(104, 0, 0, 0.25) inset,
+        0 4rem 8rem 0 rgba(104, 0, 0, 0.25) inset;
+}
+
+.Level_base__medium_f0 .Level_innerGlow_47 {
+    width: 37rem;
+    height: 37rem;
+    border-radius: 4rem;
+    box-shadow:
+        0 5rem 10rem #68000040 inset,
+        0 -5rem 10rem #68000040 inset;
+}
+
+.Level_base__large_c3 .Level_innerGlow_47 {
+    width: 47rem;
+    height: 47rem;
+    border-radius: 5rem;
+    box-shadow:
+        0 -6rem 12rem rgba(104, 0, 0, 0.25) inset,
+        0 6rem 12rem rgba(104, 0, 0, 0.25) inset;
+}
+
+.Level_base__extraLarge_dc .Level_innerGlow_47 {
+    width: 52rem;
+    height: 52rem;
+    border-radius: 5rem;
+    box-shadow:
+        0 7rem 13rem #68000040 inset,
+        0 -7rem 13rem #68000040 inset;
+}
+
+.Level_lock_0b {
+    background: no-repeat center / cover;
+    position: absolute;
+}
+
+.Level_base__tiny_b4 .Level_lock_0b {
+    width: 30rem;
+    height: 30rem;
+    background-image: url('R.images.historical_battles.gui.maps.icons.hangar.lock.c_30');
+    top: -9rem;
+    right: -9rem;
+}
+
+.Level_base__extraSmall_05 .Level_lock_0b {
+    width: 36rem;
+    height: 36rem;
+    background-image: url('R.images.historical_battles.gui.maps.icons.hangar.lock.c_36');
+    top: -11rem;
+    right: -10rem;
+}
+
+.Level_base__small_98 .Level_lock_0b {
+    width: 36rem;
+    height: 36rem;
+    background-image: url('R.images.historical_battles.gui.maps.icons.hangar.lock.c_36');
+    top: -7rem;
+    right: -8rem;
+}
+
+.Level_base__medium_f0 .Level_lock_0b {
+    width: 46rem;
+    height: 46rem;
+    background-image: url('R.images.historical_battles.gui.maps.icons.hangar.lock.c_46');
+    top: -10rem;
+    right: -10rem;
+}
+
+.Level_base__large_c3 .Level_lock_0b {
+    width: 48rem;
+    height: 48rem;
+    background-image: url('R.images.historical_battles.gui.maps.icons.hangar.lock.c_48');
+    top: -8rem;
+    right: -7rem;
+}
+
+.Level_base__extraLarge_dc .Level_lock_0b {
+    width: 48rem;
+    height: 48rem;
+    background-image: url('R.images.historical_battles.gui.maps.icons.hangar.lock.c_48');
+    top: -5rem;
+    right: -4rem;
+}
+
+.Level_text_ae {
+    margin-top: -2rem;
+    z-index: 1;
+}
+
+.Level_base__tiny_b4 .Level_text_ae {
+    color: #ffdd99;
+    font-size: 12rem;
+    font-weight: 400;
+    line-height: 1.3;
+    margin-left: 1rem;
+    font-size: 11rem;
+    font-weight: 500;
+}
+
+.Level_base__extraSmall_05 .Level_text_ae {
+    color: #ffdd99;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    font-weight: 500;
+}
+
+.Level_base__small_98 .Level_text_ae {
+    color: #ffdd99;
+    font-size: 18rem;
+    font-weight: 400;
+    line-height: 1.25;
+    font-weight: 500;
+}
+
+.Level_base__medium_f0 .Level_text_ae {
+    color: #ffdd99;
+    font-size: 22rem;
+    font-weight: 700;
+    line-height: 1.2;
+    font-weight: 500;
+}
+
+.Level_base__large_c3 .Level_text_ae {
+    color: #ffdd99;
+    font-size: 28rem;
+    font-weight: 700;
+    line-height: 1.1;
+    font-weight: 500;
+}
+
+.Level_base__extraLarge_dc .Level_text_ae {
+    color: #ffdd99;
+    font-size: 36rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-left: -1rem;
+    font-size: 32rem;
+    font-weight: 500;
+}
+
+.Level_base__yellow_63 .Level_text_ae {
+    color: #feab34;
+}
+
+@keyframes App_fadeIn_e1 {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes App_fadeOut_6e {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes App_rotating_d3 {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes App_rotate_98 {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+@keyframes App_slideUp_4f {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, 60rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+}
+
+@keyframes App_headerAnimation_83 {
+    0% {
+        top: 50%;
+        transform: translate(-50%, -100%);
+    }
+
+    60% {
+        top: 50%;
+        transform: translate(-50%, -100%);
+    }
+
+    100% {
+        top: 0%;
+        transform: translate(-50%, 0%);
+    }
+}
+
+@keyframes App_fadeIn_e1 {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes App_subDivisionIconLargeFadeIn_9c {
+    0% {
+        opacity: 1;
+    }
+
+    30% {
+        transform: scale(1);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(0.8);
+    }
+}
+
+.App_base_01 {
+    opacity: 0;
+    animation-name: App_fadeIn_e1;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.07, 0.82, 0.17, 1);
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background: no-repeat center/cover;
+    position: relative;
+}
+
+.App_buttonClose_eb {
+    position: absolute;
+    top: 30rem;
+    right: 29rem;
+}
+
+.mediaExtraLarge .App_buttonClose_eb {
+    right: 34rem;
+}
+
+.App_subDivisionIconLarge_e1 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: no-repeat center/contain;
+    opacity: 0;
+    transform: scale(1);
+    animation:
+        App_fadeIn_e1 300ms ease-in-out forwards,
+        App_subDivisionIconLargeFadeIn_9c 500ms ease-in-out forwards 300ms;
+}
+
+.App_header_86 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30rem;
+    opacity: 0;
+    z-index: 2;
+    transform: translate(-50%, -100%);
+    animation:
+        App_fadeIn_e1 600ms ease-in-out forwards 500ms,
+        App_headerAnimation_83 1200ms ease-in-out forwards 500ms;
+}
+
+.mediaMedium .App_header_86 {
+    margin-top: 40rem;
+}
+
+.mediaLarge .App_header_86 {
+    margin-top: 70rem;
+}
+
+.mediaExtraLarge .App_header_86 {
+    margin-top: 67rem;
+}
+
+.App_subTitle_bf {
+    color: #e9e2bf;
+    font-size: 22rem;
+    font-weight: 700;
+    line-height: 1.2;
+    display: flex;
+}
+
+.mediaMedium .App_subTitle_bf {
+    color: #e9e2bf;
+    font-size: 24rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.mediaExtraLarge .App_subTitle_bf {
+    color: #e9e2bf;
+    font-size: 36rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.App_divider_23 {
+    width: 3rem;
+    height: 20rem;
+    margin: 5rem 10rem;
+    background: #e9e2bf;
+}
+
+.mediaExtraLarge .App_divider_23 {
+    width: 4rem;
+    height: 30rem;
+    margin: 7rem 15rem;
+}
+
+.App_title_ef {
+    color: #f2f2f7;
+    font-size: 36rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-top: -2rem;
+    line-height: 120%;
+}
+
+.mediaMedium .App_title_ef {
+    color: #f2f2f7;
+    font-size: 56rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-top: 0;
+    line-height: 120%;
+}
+
+.mediaExtraLarge .App_title_ef {
+    color: #f2f2f7;
+    font-size: 73rem;
+    font-weight: 700;
+    line-height: 1.1;
+    line-height: 120%;
+}
+
+.App_ribbon_d8 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 1366rem;
+    height: 356rem;
+    margin-top: -244rem;
+    background: url('R.images.historical_battles.gui.maps.icons.divisionUpgradeRewards.ribbons.regular') no-repeat
+        center / cover;
+    opacity: 0;
+    z-index: 2;
+    transform: translateX(-50%);
+    animation: App_slideUp_4f 0.4s 1.2s ease-in-out forwards;
+}
+
+.mediaMedium .App_ribbon_d8 {
+    width: 1600rem;
+    height: 417rem;
+    margin-top: -260rem;
+    background-image: url('R.images.historical_battles.gui.maps.icons.divisionUpgradeRewards.ribbons.medium');
+}
+
+.mediaLarge .App_ribbon_d8 {
+    width: 1920rem;
+    height: 500rem;
+    margin-top: -305rem;
+    background-image: url('R.images.historical_battles.gui.maps.icons.divisionUpgradeRewards.ribbons.large');
+}
+
+.mediaExtraLarge .App_ribbon_d8 {
+    width: 100%;
+    height: 700rem;
+    margin-top: -405rem;
+}
+
+.App_subDivision_92 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 296rem;
+    height: 222rem;
+    margin-top: -269rem;
+    background: no-repeat center/cover;
+    opacity: 0;
+    z-index: 2;
+    transform: translateX(-50%);
+    animation: App_slideUp_4f 0.4s ease-in-out forwards 1.2s;
+}
+
+.mediaMedium .App_subDivision_92 {
+    margin-top: -283rem;
+}
+
+.mediaLarge .App_subDivision_92 {
+    width: 460rem;
+    height: 346rem;
+    margin-top: -370rem;
+}
+
+.mediaExtraLarge .App_subDivision_92 {
+    margin-top: -470rem;
+}
+
+.App_subDivisionLevelContainer_df {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.App_subDivisionLevel_a8 {
+    position: absolute;
+    top: 153rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.mediaLarge .App_subDivisionLevel_a8 {
+    top: 260rem;
+}
+
+.App_divisionTitle_75 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: -40rem;
+    opacity: 0;
+    z-index: 3;
+    transform: translateX(-50%);
+    animation: App_fadeIn_e1 300ms ease-in-out forwards 1.2s;
+}
+
+.mediaMedium .App_divisionTitle_75 {
+    margin-top: -54rem;
+}
+
+.mediaLarge .App_divisionTitle_75 {
+    margin-top: -10rem;
+}
+
+.mediaExtraLarge .App_divisionTitle_75 {
+    margin-top: -103rem;
+}
+
+.App_divisionName_f6 {
+    color: #f2f2f7;
+    font-size: 28rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.mediaLarge .App_divisionName_f6 {
+    color: #f2f2f7;
+    font-size: 36rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.mediaExtraLarge .App_divisionName_f6 {
+    color: #f2f2f7;
+    font-size: 56rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.App_glowContainer_5a {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: -5%;
+    pointer-events: none;
+}
+
+.mediaMedium .App_glowContainer_5a {
+    top: -2%;
+}
+
+.mediaLarge .App_glowContainer_5a {
+    top: 4%;
+}
+
+.mediaExtraLarge .App_glowContainer_5a {
+    top: 9%;
+}
+
+.App_glow_8b {
+    width: 620rem;
+    padding-bottom: 100%;
+    background: url('swf://gui/flash/animations/historicalBattles/rays.swf') no-repeat center / contain;
+    opacity: 0;
+    mix-blend-mode: additive;
+    position: absolute;
+    left: 50%;
+    z-index: 1;
+    transform: translateX(-50%);
+    animation: App_fadeIn_e1 500ms forwards 1.4s;
+}
+
+.mediaMedium .App_glow_8b {
+    width: 712rem;
+}
+
+.mediaLarge .App_glow_8b {
+    width: 840rem;
+}
+
+.mediaMedium .App_glow__scaled_cd {
+    top: -30rem;
+}
+
+.App_glow2_66 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    opacity: 0;
+    animation-name: App_fadeIn_e1, App_rotate_98;
+    animation-duration: 0.4s, 70s;
+    animation-fill-mode: forwards, forwards;
+    animation-timing-function: cubic-bezier(0.07, 0.82, 0.17, 1), linear;
+    animation-delay: 600ms, 1.2s;
+    animation-iteration-count: 1, infinite;
+    width: 924rem;
+    height: 768rem;
+    background: url('R.images.historical_battles.gui.maps.icons.divisionUpgradeRewards.radial_lines') no-repeat center /
+        cover;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+}
+
+.mediaMedium .App_glow2_66 {
+    width: 1024rem;
+    height: 851rem;
+}
+
+.mediaLarge .App_glow2_66 {
+    width: 1300rem;
+    height: 1080rem;
+}
+
+.mediaExtraLarge .App_glow2_66 {
+    width: 1733rem;
+    height: 1440rem;
+}
+
+.App_unlockBlock_ed {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 23rem;
+    opacity: 0;
+    z-index: 2;
+    transform: translate(-50%, -50%);
+    animation: App_fadeIn_e1 300ms forwards 1.9s;
+    animation-timing-function: ease-in-out;
+}
+
+.mediaMedium .App_unlockBlock_ed {
+    margin-top: 27rem;
+}
+
+.mediaLarge .App_unlockBlock_ed {
+    margin-top: 78rem;
+}
+
+.mediaExtraLarge .App_unlockBlock_ed {
+    margin-top: 60rem;
+}
+
+.App_line_e2 {
+    width: 150rem;
+    height: 1rem;
+    background: linear-gradient(270deg, rgba(254, 254, 236, 0.6) -80%, rgba(254, 254, 236, 0) 100%);
+}
+
+.mediaMedium .App_line_e2 {
+    width: 252rem;
+}
+
+.App_lineRight_51 {
+    transform: rotateY(180deg);
+}
+
+.App_unlockText_9a {
+    color: #c9c9b6;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+    margin: -3rem 24rem 0;
+}
+
+.mediaMedium .App_unlockText_9a {
+    color: #c9c9b6;
+    font-size: 20rem;
+    font-weight: 400;
+    line-height: 1.2;
+    margin: -3rem 34rem 0;
+}
+
+.mediaLarge .App_unlockText_9a {
+    color: #c9c9b6;
+    font-size: 24rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+.mediaExtraLarge .App_unlockText_9a {
+    color: #c9c9b6;
+    font-size: 28rem;
+    font-weight: 700;
+    line-height: 1.1;
+    font-weight: 400;
+}
+
+.App_rewards_c9 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: 44rem;
+    opacity: 0;
+    z-index: 2;
+    transform: translateX(-50%);
+    animation: App_fadeIn_e1 300ms forwards 2.5s;
+    animation-timing-function: ease-in-out;
+}
+
+.mediaMedium .App_rewards_c9 {
+    margin-top: 58rem;
+}
+
+.mediaLarge .App_rewards_c9 {
+    margin-top: 110rem;
+}
+
+.mediaExtraLarge .App_rewards_c9 {
+    margin-top: 105rem;
+}
+
+.App_buttonContainer_a2 {
+    opacity: 0;
+    position: absolute;
+    bottom: 51rem;
+    left: 50%;
+    z-index: 2;
+    transform: translateX(-50%);
+    animation: App_fadeIn_e1 300ms ease-in-out forwards 3s;
+}
+
+.mediaMedium .App_buttonContainer_a2 {
+    bottom: 41rem;
+}
+
+.mediaLarge .App_buttonContainer_a2 {
+    bottom: 60rem;
+}
+
+.mediaExtraLarge .App_buttonContainer_a2 {
+    bottom: 100rem;
+}
+
+.App_button_7f {
+    width: 160rem;
+}
+
+.Rewards_base_81 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Rewards_reward_02 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.Rewards_reward__unlockBranch_35 {
+    margin-right: 30rem;
+}
+
+.mediaMedium .Rewards_reward__unlockBranch_35 {
+    margin-right: 70rem;
+}
+
+.mediaLarge .Rewards_reward__unlockBranch_35 {
+    margin-right: 90rem;
+}
+
+.Rewards_iconImage_b6 {
+    width: 174rem;
+    height: 174rem;
+    background: no-repeat center / cover;
+}
+
+.mediaLarge .Rewards_iconImage_b6 {
+    width: 222rem;
+    height: 222rem;
+}
+
+.mediaExtraLarge .Rewards_iconImage_b6 {
+    width: 270rem;
+    height: 270rem;
+}
+
+.Rewards_iconImage__unlockBranch_13 {
+    width: 232rem;
+}
+
+.mediaLarge .Rewards_iconImage__unlockBranch_13 {
+    width: 296rem;
+}
+
+.mediaExtraLarge .Rewards_iconImage__unlockBranch_13 {
+    width: 360rem;
+}
+
+.Rewards_iconName_b1 {
+    color: #e9e2bf;
+    font-size: 15rem;
+    font-weight: 700;
+    line-height: 1.15;
+    margin-top: 7rem;
+}
+
+.mediaLarge .Rewards_iconName_b1 {
+    color: #e9e2bf;
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-top: 6rem;
+}
+
+.mediaExtraLarge .Rewards_iconName_b1 {
+    color: #e9e2bf;
+    font-size: 22rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-top: 15rem;
+}

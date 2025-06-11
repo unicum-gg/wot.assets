@@ -1,0 +1,1159 @@
+.Box_mt__XS_0c {
+    margin-top: 4rem;
+}
+.Box_mt__SM_eb {
+    margin-top: 8rem;
+}
+.Box_mt__SMp_cf {
+    margin-top: 10rem;
+}
+.Box_mt__MD_25 {
+    margin-top: 16rem;
+}
+.Box_mt__MDp_49 {
+    margin-top: 20rem;
+}
+.Box_mt__LG_e8 {
+    margin-top: 32rem;
+}
+.Box_mt__XL_83 {
+    margin-top: 64rem;
+}
+
+.Box_mr__XS_7c {
+    margin-right: 4rem;
+}
+
+.Box_mr__SM_08 {
+    margin-right: 8rem;
+}
+
+.Box_mr__SMp_06 {
+    margin-right: 10rem;
+}
+
+.Box_mr__MD_4a {
+    margin-right: 16rem;
+}
+
+.Box_mr__MDp_b6 {
+    margin-right: 20rem;
+}
+
+.Box_mr__LG_d0 {
+    margin-right: 32rem;
+}
+
+.Box_mr__XL_db {
+    margin-right: 64rem;
+}
+
+.Box_mb__XS_bb {
+    margin-bottom: 4rem;
+}
+
+.Box_mb__SM_83 {
+    margin-bottom: 8rem;
+}
+
+.Box_mb__SMp_04 {
+    margin-bottom: 10rem;
+}
+
+.Box_mb__MD_ed {
+    margin-bottom: 16rem;
+}
+
+.Box_mb__MDp_65 {
+    margin-bottom: 20rem;
+}
+
+.Box_mb__LG_c8 {
+    margin-bottom: 32rem;
+}
+
+.Box_mb__XL_f8 {
+    margin-bottom: 64rem;
+}
+
+.Box_ml__XS_8a {
+    margin-left: 4rem;
+}
+
+.Box_ml__SM_e6 {
+    margin-left: 8rem;
+}
+
+.Box_ml__SMp_fb {
+    margin-left: 10rem;
+}
+
+.Box_ml__MD_2b {
+    margin-left: 16rem;
+}
+
+.Box_ml__MDp_c7 {
+    margin-left: 20rem;
+}
+
+.Box_ml__LG_39 {
+    margin-left: 32rem;
+}
+
+.Box_ml__XL_4a {
+    margin-left: 64rem;
+}
+
+.FormatText_base_d0 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* eslint-disable-next-line expectedscss*/
+.Text_paragraph-P10_2c {
+    font-size: 10rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.Text_paragraph-P12_22 {
+    font-size: 12rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+.Text_paragraph-P14_a7 {
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+.Text_paragraph-P16_90 {
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+.Text_paragraph-P18_50 {
+    font-size: 18rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+.Text_paragraph-P24_33 {
+    font-size: 24rem;
+    font-weight: 400;
+    line-height: 32rem;
+}
+.Text_heading-H14_8b {
+    font-size: 14rem;
+    font-weight: 700;
+    line-height: 1.15;
+}
+.Text_heading-H15_9e {
+    font-size: 15rem;
+    font-weight: 700;
+    line-height: 1.15;
+}
+.Text_heading-H18_b7 {
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H20R_f6 {
+    font-size: 20rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.Text_heading-H22_27 {
+    font-size: 22rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.Text_heading-H24R_be {
+    font-size: 24rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.Text_heading-H24_0c {
+    font-size: 24rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.Text_heading-H28_78 {
+    font-size: 28rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H36_32 {
+    font-size: 36rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H56_c3 {
+    font-size: 56rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H73_8f {
+    font-size: 73rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H144_a9 {
+    font-size: 144rem;
+    font-weight: 700;
+    line-height: 1;
+}
+.Text_BLACK_REAL_30 {
+    color: #000000;
+}
+.Text_WHITE_REAL_bc {
+    color: #ffffff;
+}
+.Text_WHITE_62 {
+    color: #f2f2f7;
+}
+.Text_WHITE_ORANGE_54 {
+    color: #fefeec;
+}
+.Text_WHITE_SPANISH_df {
+    color: #e9e2bf;
+}
+.Text_PAR_15 {
+    color: #8c8c7e;
+}
+.Text_PAR_SECONDARY_5d {
+    color: #595950;
+}
+.Text_PAR_TERTIARY_c9 {
+    color: #37362e;
+}
+.Text_INFO_RED_30 {
+    color: #ff0000;
+}
+.Text_RED_66 {
+    color: #ff2717;
+}
+.Text_RED_DARK_d8 {
+    color: #b70000;
+}
+.Text_YELLOW_ed {
+    color: #feab34;
+}
+.Text_ORANGE_be {
+    color: #ee7000;
+}
+.Text_CREAM_57 {
+    color: #ffdd99;
+}
+.Text_BROWN_18 {
+    color: #cbac77;
+}
+.Text_GREEN_BRIGHT_3f {
+    color: #80d43a;
+}
+.Text_GREEN_e3 {
+    color: #7ab300;
+}
+.Text_GREEN_DARK_f1 {
+    color: #497212;
+}
+.Text_BLUE_BOOSTER_21 {
+    color: #ccffff;
+}
+.Text_BLUE_TEAMKILLER_ab {
+    color: #09e2ff;
+}
+.Text_CRED_f7 {
+    color: #ced9d9;
+}
+.Text_GOLD_28 {
+    color: #ffc363;
+}
+.Text_BOND_be {
+    color: #c9c9b6;
+}
+.Text_PROM_65 {
+    color: #a29b70;
+}
+
+/*
+    Gameface can't calculate gradient biggest than 8128px
+    in JS 8000 reserved like anchor for start optimization
+*/
+/* stylelint-disable-line */
+.ProgressBar_base_45 {
+    width: 100%;
+    height: 12rem;
+    position: relative;
+}
+.ProgressBar_base__medium_62 {
+    height: 6rem;
+}
+.ProgressBar_base__small_df {
+    height: 2rem;
+}
+.ProgressBar_background_51 {
+    width: 100%;
+    max-width: 8001px;
+    height: 100%;
+    background-image: var(--progress-base);
+    background-repeat: repeat;
+    background-position: 0 50%;
+    background-size: 3rem 10rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.ProgressBar_background__medium_6e {
+    height: 6rem;
+}
+.ProgressBar_background__small_46 {
+    height: 2rem;
+}
+.ProgressBar_lineWrapper_6a {
+    display: flex;
+    flex: 1;
+}
+
+.ProgressBarBlink_base_24 {
+    width: 60rem;
+    height: 100rem;
+    background-image: var(--progress-glow);
+    background-size: contain;
+    mix-blend-mode: lighten;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(50%, -50%);
+    pointer-events: none;
+}
+
+.ProgressBarBlink_base__medium_ec {
+    width: 42rem;
+    height: 70rem;
+}
+
+.ProgressBarBlink_base__small_0f {
+    width: 44rem;
+    height: 43rem;
+    background-image: var(--progress-glow-small);
+}
+
+/*
+    Gameface can't calculate gradient biggest than 8128px
+    in JS 8000 reserved like anchor for start optimization
+*/
+/* stylelint-disable-line */
+.ProgressLineImpose_base_80 {
+    max-width: 8001px;
+    height: 100%;
+    background-color: var(--progress-line-base);
+    position: relative;
+    transition-timing-function: cubic-bezier(1, 0, 0.92, 1);
+    transition-property: width;
+}
+.ProgressLineImpose_base__disabled_cc {
+    background-color: var(--progress-line-disabled);
+}
+.ProgressLineImpose_base__finished_d4 {
+    background-color: var(--progress-line-finished);
+}
+.ProgressLineImpose_base__withoutBounce_56 {
+    transition-timing-function: cubic-bezier(1, 0, 0.75, 0.75);
+}
+.ProgressLineImpose_pattern_1c {
+    max-width: 8001px;
+    background-image: var(--progress-pattern-base);
+    background-repeat: repeat;
+    background-position: 0 50%;
+    background-size: 3rem 10rem;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+    left: 1rem;
+}
+.ProgressLineImpose_base__small_55 .ProgressLineImpose_pattern_1c {
+    top: 0;
+    bottom: 0;
+}
+.ProgressLineImpose_base__disabled_cc .ProgressLineImpose_pattern_1c {
+    background-image: var(--progress-pattern-disabled);
+    left: 0;
+}
+.ProgressLineImpose_base__finished_d4 .ProgressLineImpose_pattern_1c {
+    background-image: var(--progress-pattern-finished);
+}
+.ProgressLineImpose_gradient_35 {
+    max-width: 8001px;
+    background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.75));
+    mix-blend-mode: overlay;
+    position: absolute;
+    top: 1rem;
+    right: 0;
+    bottom: 1rem;
+    left: 0;
+}
+.ProgressLineImpose_base__small_55 .ProgressLineImpose_gradient_35 {
+    top: 0;
+    bottom: 0;
+}
+.ProgressLineImpose_base__disabled_cc .ProgressLineImpose_gradient_35 {
+    display: none;
+}
+.ProgressLineImpose_base__finished_d4 .ProgressLineImpose_gradient_35 {
+    background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.75), rgba(0, 0, 0, 0.5));
+}
+.ProgressLineImpose_glow_a5 {
+    width: 60rem;
+    max-width: 8001px;
+    height: 100rem;
+    background-image: var(--progress-glow);
+    background-size: contain;
+    mix-blend-mode: lighten;
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+.ProgressLineImpose_glow__left_d8 {
+    left: 1rem;
+}
+.ProgressLineImpose_base__disabled_cc .ProgressLineImpose_glow_a5,
+.ProgressLineImpose_base__finished_d4 .ProgressLineImpose_glow_a5 {
+    display: none;
+}
+.ProgressLineImpose_base__small_55 .ProgressLineImpose_glow_a5 {
+    width: 44rem;
+    height: 43rem;
+    background-image: var(--progress-glow-small);
+}
+
+/*
+    Gameface can't calculate gradient biggest than 8128px
+    in JS 8000 reserved like anchor for start optimization
+*/
+/* stylelint-disable-line */
+.ProgressBarDeltaSimple_base_6c {
+    width: 0;
+    height: 100%;
+    position: absolute;
+    top: 0;
+}
+.ProgressBarDeltaSimple_delta_99 {
+    width: 0;
+    max-width: 8001px;
+    height: 100%;
+    box-shadow: var(--progress-delta-shadow);
+    background-color: var(--progress-delta-color);
+    position: absolute;
+    bottom: 0;
+    transform-origin: right center;
+    transition-timing-function: cubic-bezier(1, 0, 0.92, 1), cubic-bezier(0.21, 0.61, 0.35, 1);
+    transition-property: width, transform;
+}
+
+/*
+    Gameface can't calculate gradient biggest than 8128px
+    in JS 8000 reserved like anchor for start optimization
+*/
+/* stylelint-disable-line */
+.ProgressBarDeltaGrow_base_7e {
+    width: 0;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    transition-timing-function: cubic-bezier(1, 0, 0.92, 1);
+    transition-property: width;
+}
+.ProgressBarDeltaGrow_base__withoutBounce_b5 {
+    transition-timing-function: cubic-bezier(1, 0, 0.75, 0.75);
+}
+.ProgressBarDeltaGrow_glow_68 {
+    width: 0;
+    max-width: 8001px;
+    height: 100%;
+    box-shadow: var(--progress-delta-shadow);
+    background-color: var(--progress-delta-color);
+    position: absolute;
+    bottom: 0;
+    transform-origin: right center;
+    transition-timing-function: cubic-bezier(1, 0, 0.92, 1);
+    transition-property: width;
+}
+.ProgressBarDeltaGrow_base__withoutBounce_b5 .ProgressBarDeltaGrow_glow_68 {
+    transition-timing-function: cubic-bezier(1, 0, 0.75, 0.75);
+}
+
+.FormatTextWithColorTags_blackReal_3c {
+    color: #000000;
+}
+
+.FormatTextWithColorTags_whiteReal_8a {
+    color: #ffffff;
+}
+
+.FormatTextWithColorTags_white_16 {
+    color: #f2f2f7;
+}
+
+.FormatTextWithColorTags_whiteOrange_18 {
+    color: #fefeec;
+}
+
+.FormatTextWithColorTags_whiteSpanish_10 {
+    color: #e9e2bf;
+}
+
+.FormatTextWithColorTags_par_ca {
+    color: #8c8c7e;
+}
+
+.FormatTextWithColorTags_parSecondary_8d {
+    color: #595950;
+}
+
+.FormatTextWithColorTags_parTertiary_a3 {
+    color: #37362e;
+}
+
+.FormatTextWithColorTags_red_60 {
+    color: #ff2717;
+}
+
+.FormatTextWithColorTags_redDark_03 {
+    color: #b70000;
+}
+
+.FormatTextWithColorTags_yellow_ad {
+    color: #feab34;
+}
+
+.FormatTextWithColorTags_orange_e4 {
+    color: #ee7000;
+}
+
+.FormatTextWithColorTags_cream_cd {
+    color: #ffdd99;
+}
+
+.FormatTextWithColorTags_brown_c8 {
+    color: #cbac77;
+}
+
+.FormatTextWithColorTags_greenBright_f0 {
+    color: #80d43a;
+}
+
+.FormatTextWithColorTags_green_c5 {
+    color: #7ab300;
+}
+
+.FormatTextWithColorTags_greenDark_af {
+    color: #497212;
+}
+
+.FormatTextWithColorTags_blueBooster_ac {
+    color: #ccffff;
+}
+
+.FormatTextWithColorTags_blueTeamkiller_6f {
+    color: #09e2ff;
+}
+
+.FormatTextWithColorTags_cred_4e {
+    color: #ced9d9;
+}
+
+.FormatTextWithColorTags_gold_90 {
+    color: #ffc363;
+}
+
+.FormatTextWithColorTags_bond_71 {
+    color: #c9c9b6;
+}
+
+.FormatTextWithColorTags_prom_dd {
+    color: #a29b70;
+}
+
+.Progress_base__completed_39 {
+    opacity: 0.7;
+}
+
+.Progress_title_57 {
+    color: #fefeec;
+    font-size: 15rem;
+    font-weight: 700;
+    line-height: 1.15;
+}
+
+.mediaLarge .Progress_title_57 {
+    color: #fefeec;
+    font-size: 22rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.mediaExtraLarge .Progress_title_57 {
+    color: #f2f2f7;
+    font-size: 24rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.Progress_title__disabled_7c {
+    opacity: 0.8;
+    color: #fefeec;
+    font-size: 14rem;
+    font-weight: 700;
+    line-height: 1.15;
+}
+
+.mediaLarge .Progress_title__disabled_7c {
+    color: #e9e2bf;
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.mediaExtraLarge .Progress_title__disabled_7c {
+    color: #ced9d9;
+    font-size: 22rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.Progress_title__locked_e8 {
+    color: #fefeec;
+    font-size: 14rem;
+    font-weight: 700;
+    line-height: 1.15;
+}
+
+.mediaLarge .Progress_title__locked_e8 {
+    color: #e9e2bf;
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.mediaExtraLarge .Progress_title__locked_e8 {
+    color: #ced9d9;
+    font-size: 22rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.Progress_base_header_36 {
+    display: flex;
+    align-items: center;
+    margin-bottom: 6rem;
+}
+
+.mediaLarge .Progress_base_header_36 {
+    margin-bottom: 8rem;
+}
+
+.mediaExtraLarge .Progress_base_header_36 {
+    margin-bottom: 12rem;
+}
+
+.Progress_base_header__locked_e7 {
+    height: 20rem;
+    margin-bottom: 8rem;
+}
+
+.mediaLarge .Progress_base_header__locked_e7 {
+    margin-bottom: 8rem;
+}
+
+.mediaExtraLarge .Progress_base_header__locked_e7 {
+    height: 26rem;
+}
+
+.Progress_base_progress_db {
+    display: flex;
+    justify-content: space-between;
+    height: 20rem;
+}
+
+.mediaLarge .Progress_base_progress_db {
+    height: 24rem;
+}
+
+.Progress_base__completed_39 .Progress_base_progress_db {
+    justify-content: flex-start;
+}
+
+.Progress_lock_89 {
+    width: 40rem;
+    height: 40rem;
+    background: url('R.images.historical_battles.gui.maps.icons.hangar.lock.c_48') no-repeat center / cover;
+}
+
+.mediaLarge .Progress_lock_89 {
+    width: 48rem;
+    height: 48rem;
+}
+
+.mediaExtraLarge .Progress_lock_89 {
+    width: 56rem;
+    height: 56rem;
+}
+
+.Progress_check_0b {
+    width: 14rem;
+    height: 14rem;
+    margin: 4rem 5rem 0;
+    background: url('R.images.historical_battles.gui.maps.icons.hangar.mainRewardWidget.check') no-repeat center / cover;
+}
+
+.mediaLarge .Progress_check_0b {
+    width: 16rem;
+    height: 16rem;
+    margin: 4rem 8rem 0;
+}
+
+.mediaExtraLarge .Progress_check_0b {
+    width: 18rem;
+    height: 18rem;
+    margin: 3rem 10rem 0;
+}
+
+.Progress_progress_background_55 {
+    background-image: url('R.images.gui.maps.icons.components.progress_bar.pattern_disabled');
+}
+
+.Progress_progress_bar_0e {
+    margin-top: 8rem;
+}
+
+.mediaExtraLarge .Progress_progress_bar_0e {
+    margin-top: 16rem;
+}
+
+.Progress_timer_27 {
+    display: flex;
+    align-items: center;
+}
+
+.Progress_timer_countdown_25 {
+    color: #ffdd99;
+    font-size: 11rem;
+    line-height: 14rem;
+    text-shadow:
+        0 0 4.8rem rgba(255, 127, 0, 0.25),
+        0 0 9.6rem #ff2a00,
+        0 0 18rem #e52;
+}
+
+.mediaLarge .Progress_timer_countdown_25 {
+    font-size: 14rem;
+    line-height: 18rem;
+}
+
+.mediaExtraLarge .Progress_timer_countdown_25 {
+    font-size: 17rem;
+    line-height: 22rem;
+}
+
+.Progress_timer_icon_4b {
+    width: 24rem;
+    height: 24rem;
+    background: url('R.images.historical_battles.gui.maps.icons.hangar.mainRewardWidget.timer') no-repeat center / cover;
+}
+
+.mediaLarge .Progress_timer_icon_4b {
+    width: 32rem;
+    height: 32rem;
+}
+
+.mediaExtraLarge .Progress_timer_icon_4b {
+    width: 40rem;
+    height: 40rem;
+}
+
+.Progress_subtitle_64 {
+    color: #e9e2bf;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    opacity: 0.7;
+}
+
+.mediaLarge .Progress_subtitle_64 {
+    color: #e9e2bf;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+
+.mediaExtraLarge .Progress_subtitle_64 {
+    font-size: 20rem;
+    line-height: 24rem;
+}
+
+.Progress_subtitle__completed_67 {
+    color: #80d43a;
+    opacity: 1;
+}
+
+.mediaLarge .Progress_subtitle__completed_67 {
+    color: #80d43a;
+}
+
+.mediaExtraLarge .Progress_subtitle__completed_67 {
+    color: #80d43a;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+
+.Progress_subtitle__disabled_5f {
+    opacity: 0.8;
+}
+
+.Progress_counter_90 {
+    display: flex;
+    color: #e9e2bf;
+    font-size: 14rem;
+    font-weight: 700;
+    line-height: 15rem;
+}
+
+.mediaLarge .Progress_counter_90 {
+    font-size: 18rem;
+    line-height: 20rem;
+}
+
+.mediaExtraLarge .Progress_counter_90 {
+    font-size: 22rem;
+    line-height: 24rem;
+}
+
+.App_base_a9 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 212rem;
+    height: 401rem;
+    position: absolute;
+    right: 0;
+}
+
+.mediaLarge .App_base_a9 {
+    width: 300rem;
+    height: 546rem;
+}
+
+.mediaExtraLarge .App_base_a9 {
+    width: 360rem;
+    height: 650rem;
+}
+
+.App_stages_text_56 {
+    color: #80d43a;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    display: flex;
+    justify-content: center;
+}
+
+.mediaLarge .App_stages_text_56 {
+    color: #80d43a;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+
+.mediaExtraLarge .App_stages_text_56 {
+    font-size: 20rem;
+    line-height: 24rem;
+}
+
+.App_check_38 {
+    width: 16rem;
+    height: 16rem;
+    margin-top: 6rem;
+    background: url('R.images.historical_battles.gui.maps.icons.hangar.mainRewardWidget.check') no-repeat center / cover;
+}
+
+.mediaMedium .App_check_38 {
+    width: 18rem;
+    height: 18rem;
+    margin-top: 6rem;
+}
+
+.App_lighting_14,
+.App_lighting__hover_03 {
+    width: 212rem;
+    height: 212rem;
+    background: no-repeat center / cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: opacity 0.3s ease-out;
+}
+
+.mediaLarge .App_lighting_14,
+.mediaLarge .App_lighting__hover_03 {
+    width: 300rem;
+    height: 300rem;
+}
+
+.mediaExtraLarge .App_lighting_14,
+.mediaExtraLarge .App_lighting__hover_03 {
+    width: 360rem;
+    height: 360rem;
+}
+
+.App_lighting_14 {
+    opacity: 1;
+}
+
+.App_lighting__hover_03 {
+    opacity: 0;
+}
+
+.App_stages_8b {
+    width: 100%;
+    padding: 0 16rem;
+    opacity: 0;
+    position: absolute;
+    top: 220rem;
+    transition:
+        top 0.3s ease-in-out,
+        opacity 0.3s ease-in-out;
+}
+
+.mediaLarge .App_stages_8b {
+    padding: 0 33rem;
+    top: 330rem;
+}
+
+.mediaExtraLarge .App_stages_8b {
+    padding: 0 45rem;
+    top: 390rem;
+}
+
+.App_base__completed_ba .App_stages_8b {
+    padding: 0;
+}
+
+.App_base_a9:hover .App_stages_8b {
+    opacity: 1;
+    top: 258rem;
+}
+
+.mediaLarge .App_base_a9:hover .App_stages_8b {
+    top: 371rem;
+}
+
+.mediaExtraLarge .App_base_a9:hover .App_stages_8b {
+    top: 448rem;
+}
+
+.App_stages_item_76 + .App_stages_item_76 {
+    margin-top: 18rem;
+}
+
+.mediaLarge .App_stages_item_76 + .App_stages_item_76 {
+    margin-top: 26rem;
+}
+
+.mediaExtraLarge .App_stages_item_76 + .App_stages_item_76 {
+    margin-top: 30rem;
+}
+
+.App_base__offence_7d .App_lighting_14 {
+    background-image: url('R.images.historical_battles.gui.maps.icons.hangar.mainRewardWidget.offence.default_light_small');
+}
+
+.mediaLarge .App_base__offence_7d .App_lighting_14 {
+    background-image: url('R.images.historical_battles.gui.maps.icons.hangar.mainRewardWidget.offence.default_light_medium');
+}
+
+.mediaExtraLarge .App_base__offence_7d .App_lighting_14 {
+    background-image: url('R.images.historical_battles.gui.maps.icons.hangar.mainRewardWidget.offence.default_light_large');
+}
+
+.App_base__offence_7d .App_lighting__hover_03 {
+    background-image: url('R.images.historical_battles.gui.maps.icons.hangar.mainRewardWidget.offence.hover_light_small');
+}
+
+.mediaLarge .App_base__offence_7d .App_lighting__hover_03 {
+    background-image: url('R.images.historical_battles.gui.maps.icons.hangar.mainRewardWidget.offence.hover_light_medium');
+}
+
+.mediaExtraLarge .App_base__offence_7d .App_lighting__hover_03 {
+    background-image: url('R.images.historical_battles.gui.maps.icons.hangar.mainRewardWidget.offence.hover_light_large');
+}
+
+.App_base__defence_8c .App_lighting_14 {
+    background-image: url('R.images.historical_battles.gui.maps.icons.hangar.mainRewardWidget.defence.default_light_small');
+}
+
+.mediaLarge .App_base__defence_8c .App_lighting_14 {
+    background-image: url('R.images.historical_battles.gui.maps.icons.hangar.mainRewardWidget.defence.default_light_medium');
+}
+
+.mediaExtraLarge .App_base__defence_8c .App_lighting_14 {
+    background-image: url('R.images.historical_battles.gui.maps.icons.hangar.mainRewardWidget.defence.default_light_large');
+}
+
+.App_base__defence_8c .App_lighting__hover_03 {
+    background-image: url('R.images.historical_battles.gui.maps.icons.hangar.mainRewardWidget.defence.hover_light_small');
+}
+
+.mediaLarge .App_base__defence_8c .App_lighting__hover_03 {
+    background-image: url('R.images.historical_battles.gui.maps.icons.hangar.mainRewardWidget.defence.hover_light_medium');
+}
+
+.mediaExtraLarge .App_base__defence_8c .App_lighting__hover_03 {
+    background-image: url('R.images.historical_battles.gui.maps.icons.hangar.mainRewardWidget.defence.hover_light_large');
+}
+
+.App_text_9a {
+    width: 100%;
+    margin-top: -4rem;
+    text-align: center;
+}
+
+.mediaLarge .App_text_9a {
+    margin-top: -2rem;
+}
+
+.mediaExtraLarge .App_text_9a {
+    margin-top: 2rem;
+}
+
+.App_title_68 {
+    color: #fefeec;
+    font-size: 15rem;
+    font-weight: 700;
+    line-height: 1.15;
+}
+
+.mediaLarge .App_title_68 {
+    color: #fefeec;
+    font-size: 22rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.mediaExtraLarge .App_title_68 {
+    color: #fefeec;
+    font-size: 28rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.App_info_40 {
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.mediaLarge .App_info_40 {
+    margin-top: 8rem;
+}
+
+.mediaExtraLarge .App_info_40 {
+    margin-top: 10rem;
+}
+
+.App_info_text_1c {
+    color: #e9e2bf;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    margin-right: 4rem;
+}
+
+.mediaLarge .App_info_text_1c {
+    color: #e9e2bf;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+    margin-right: 5rem;
+}
+
+.mediaExtraLarge .App_info_text_1c {
+    margin-right: 6rem;
+    font-size: 20rem;
+    line-height: 24rem;
+}
+
+.App_info_icon_b0 {
+    width: 12rem;
+    height: 12rem;
+    margin-bottom: -4rem;
+    background: url('R.images.historical_battles.gui.maps.icons.hangar.mainRewardWidget.info') no-repeat center / cover;
+}
+
+.mediaLarge .App_info_icon_b0 {
+    width: 16rem;
+    height: 16rem;
+}
+
+.mediaExtraLarge .App_info_icon_b0 {
+    width: 20rem;
+    height: 20rem;
+}
+
+.App_base_a9:hover .App_lighting_14 {
+    opacity: 0;
+}
+
+.App_base_a9:hover .App_lighting__hover_03 {
+    opacity: 1;
+}
+
+.App_icon_5b {
+    width: 212rem;
+    height: 212rem;
+    background: no-repeat center / 100%;
+}
+
+.mediaLarge .App_icon_5b {
+    width: 300rem;
+    height: 300rem;
+}
+
+.mediaExtraLarge .App_icon_5b {
+    width: 360rem;
+    height: 360rem;
+}
+
+.App_base__defence_8c .App_icon_5b {
+    background-image: url('R.images.historical_battles.gui.maps.icons.hangar.mainRewardWidget.defence.main_reward_small');
+}
+
+.mediaLarge .App_base__defence_8c .App_icon_5b {
+    background-image: url('R.images.historical_battles.gui.maps.icons.hangar.mainRewardWidget.defence.main_reward_medium');
+}
+
+.mediaExtraLarge .App_base__defence_8c .App_icon_5b {
+    background-image: url('R.images.historical_battles.gui.maps.icons.hangar.mainRewardWidget.defence.main_reward_large');
+}
+
+.App_base__offence_7d .App_icon_5b {
+    background-image: url('R.images.historical_battles.gui.maps.icons.hangar.mainRewardWidget.offence.main_reward_small');
+}
+
+.mediaLarge .App_base__offence_7d .App_icon_5b {
+    background-image: url('R.images.historical_battles.gui.maps.icons.hangar.mainRewardWidget.offence.main_reward_medium');
+}
+
+.mediaExtraLarge .App_base__offence_7d .App_icon_5b {
+    background-image: url('R.images.historical_battles.gui.maps.icons.hangar.mainRewardWidget.offence.main_reward_large');
+}
+
+.App_base__x2scaled_65.App_base__defence_8c .App_icon_5b {
+    background-image: url('R.images.historical_battles.gui.maps.icons.hangar.mainRewardWidget.defence.main_reward_large');
+}
+
+.App_base__x2scaled_65.App_base__offence_7d .App_icon_5b {
+    background-image: url('R.images.historical_battles.gui.maps.icons.hangar.mainRewardWidget.offence.main_reward_large');
+}

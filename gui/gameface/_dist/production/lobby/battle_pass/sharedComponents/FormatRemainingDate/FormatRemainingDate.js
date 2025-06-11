@@ -90,6 +90,6 @@
                 A = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             A.forEach(F.bind(null, 0)), (A.push = F.bind(null, A.push.bind(A)));
         })();
-    var D = E.O(void 0, [519], () => E(6256));
+    var D = E.O(void 0, [1519], () => E(6256));
     D = E.O(D);
 })();

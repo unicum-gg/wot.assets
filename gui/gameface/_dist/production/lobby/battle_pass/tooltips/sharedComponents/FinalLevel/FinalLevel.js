@@ -70,6 +70,6 @@
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             t.forEach(r.bind(null, 0)), (t.push = r.bind(null, t.push.bind(t)));
         })();
-    var n = o.O(void 0, [519], () => o(1546));
+    var n = o.O(void 0, [1519], () => o(1546));
     n = o.O(n);
 })();

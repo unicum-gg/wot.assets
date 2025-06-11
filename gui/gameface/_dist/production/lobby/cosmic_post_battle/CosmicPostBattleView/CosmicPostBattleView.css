@@ -146,7 +146,7 @@
     justify-content: flex-start;
     align-items: center;
     flex: 1 0 auto;
-    background-image: url('R.images.cosmic_event.gui.maps.icons.postBattleView.arenaScoreTab.bg');
+    background-image: url('R.images.cosmic_event.gui.maps.icons.postBattleView.bg');
     background-repeat: no-repeat;
     background-position: right bottom;
     background-size: cover;
@@ -162,6 +162,10 @@
     flex: 1 0 auto;
     margin-top: 100rem;
 }
+.mediaExtraLarge .ArenaScore_wrapper_ea {
+    margin-top: 366rem;
+    transform: scale(1.4);
+}
 .ArenaScore_marsPoints_11 {
     display: flex;
     flex-direction: row;
@@ -169,6 +173,16 @@
     align-items: center;
     width: 100rem;
     position: relative;
+}
+.ArenaScore_rover_91 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 94rem;
+}
+.ArenaScore_rover_icon_38 {
+    width: 24rem;
+    height: 24rem;
 }
 .ArenaScore_tableHeader_7c {
     display: flex;
@@ -203,6 +217,20 @@
     height: 18rem;
     opacity: 0.5;
 }
+.ArenaScore_tableHeader_rover_c3 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 95rem;
+    height: 100%;
+    border-left: 1rem solid rgba(255, 255, 255, 0.2);
+}
+.ArenaScore_tableHeader_rover_icon_7b {
+    width: 32rem;
+    height: 32rem;
+    opacity: 0.5;
+}
 .ArenaScore_textAccent_7e {
     color: #f2c572 !important;
 }
@@ -215,6 +243,9 @@
     position: absolute;
     top: -3rem;
     left: 9rem;
+}
+.ArenaScore_winnerIcon_x2Scale_df {
+    left: 10rem;
 }
 .ArenaScore_playersTable_c1 {
     display: flex;
@@ -352,9 +383,8 @@
     overflow: hidden;
 }
 .ArenaScore_playerTable_topHeader_img_de {
-    width: 114rem;
-    height: 72rem;
-    margin: 15rem;
+    width: 160rem;
+    height: 100rem;
 }
 .ArenaScore_playerTable_topRow_f7 {
     display: flex;
@@ -931,15 +961,10 @@
 .BattleResults_base_d0 {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     flex: 1 0 auto;
     position: relative;
-}
-
-.mediaSmall .BattleResults_base_d0 {
-    justify-content: flex-start;
-    align-items: flex-start;
 }
 .BattleResults_wrapper_d4 {
     display: flex;
@@ -947,16 +972,21 @@
     justify-content: flex-start;
     align-items: center;
     flex: 1 0 auto;
-    margin-top: 65rem;
+    margin-top: 60rem;
     position: relative;
 }
 .mediaSmall .BattleResults_wrapper_d4 {
-    margin-left: 90rem;
-    margin-top: 60rem;
+    margin-top: 65rem;
+}
+.mediaMedium .BattleResults_wrapper_d4 {
+    margin-top: 125rem;
 }
 .mediaLarge .BattleResults_wrapper_d4 {
-    margin-left: 200rem;
     margin-top: 140rem;
+}
+.mediaExtraLarge .BattleResults_wrapper_d4 {
+    margin-top: 336rem;
+    transform: scale(1.4);
 }
 .BattleResults_heading_ce {
     margin-bottom: 15rem;
@@ -989,10 +1019,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: flex-start;
-    margin: 5rem 0;
-}
-.mediaLarge .BattleResults_achievements_e0 {
-    margin-top: 25rem;
+    margin: -1rem 0 5rem;
 }
 .mediaLarge .BattleResults_achievements_e0 {
     margin-top: 45rem;
@@ -1264,6 +1291,18 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    position: absolute;
+    bottom: 20rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.mediaMedium .Footer_footer_74 .Footer_affirmativeButton_container_d0 {
+    bottom: 40rem;
+}
+
+.mediaExtraLarge .Footer_footer_74 .Footer_affirmativeButton_container_d0 {
+    bottom: 90rem;
 }
 
 .Footer_footer_74 .Footer_affirmativeButton_wrapper_29 {
