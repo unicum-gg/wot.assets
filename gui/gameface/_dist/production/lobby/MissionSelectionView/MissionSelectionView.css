@@ -693,7 +693,8 @@
 .MissionSelectionViewApp_shadowTop_1a {
     width: 100vw;
     height: 284rem;
-    background: radial-gradient(
+    background:
+        radial-gradient(
             40% 50% at 50% -5%,
             rgba(0, 0, 0, 1) 0%,
             rgba(0, 0, 0, 0.7) 60%,

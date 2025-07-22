@@ -140,6 +140,43 @@
     opacity: 0;
 }
 
+.RewardsList_base_0b {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.RewardsList_rewards_68 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 30rem;
+}
+
+.mediaMedium .RewardsList_rewards_68 {
+    margin-top: 40rem;
+}
+
+.RewardsList_reward_6a {
+    height: 48rem;
+}
+
+.RewardsList_reward__info_f1 {
+    margin: -10rem -15rem 0 !important;
+}
+
+.RewardsList_reward_6a + .RewardsList_reward_6a {
+    margin-left: 34rem;
+}
+
+.mediaMedium .RewardsList_reward_6a + .RewardsList_reward_6a {
+    margin-left: 30rem;
+}
+
+.mediaMedium .RewardsList_reward_6a {
+    height: 80rem;
+}
+
 .Preview_base_1f {
     display: flex;
     flex-direction: column;
@@ -298,7 +335,7 @@
     position: absolute;
     top: -73rem;
     left: -74rem;
-    z-index: -2;
+    z-index: -1;
     pointer-events: none;
 }
 
@@ -1147,6 +1184,10 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .ChangeCurrency_icon__crystal_11 {
+    background-image: url('R.images.gui.maps.icons.library.crystal_16x16');
+}
+
+.ChangeCurrency_icon__scaled__crystal_ff {
     background-image: url('R.images.armory_yard.gui.maps.icons.buy.crystal');
 }
 
@@ -1554,7 +1595,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     width: 1366rem;
 }
 
-.Header_h1_53 {
+.Header_mainTitle_a0 {
     color: #fefeec;
     font-size: 18rem;
     font-weight: 700;
@@ -1563,7 +1604,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     opacity: 0.8;
 }
 
-.Header_h2_46 {
+.Header_pageTtile_9f {
     color: #fefeec;
     font-size: 36rem;
     font-weight: 700;
@@ -1571,15 +1612,15 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     margin-bottom: 3rem;
 }
 
-.mediaLarge .Header_h2_46 {
+.mediaLarge .Header_pageTtile_9f {
     font-size: 48rem;
 }
 
-.mediaExtraLarge .Header_h2_46 {
+.mediaExtraLarge .Header_pageTtile_9f {
     font-size: 58rem;
 }
 
-.Header_h3_4e {
+.Header_subTtile_e2 {
     color: #fefeec;
     font-size: 16rem;
     font-weight: 400;
@@ -1588,129 +1629,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     text-align: center;
     white-space: pre-wrap;
     opacity: 0.7;
-}
-
-/*
-    Gameface can't calculate gradient biggest than 8128px
-    in JS 8000 reserved like anchor for start optimization
-*/
-/* stylelint-disable-line */
-.LevelProgressBar_base_75 {
-    width: 100%;
-    height: 12rem;
-    position: relative;
-}
-.LevelProgressBar_base__small_68 {
-    height: 2rem;
-}
-.LevelProgressBar_glowMask_e5 {
-    width: 100%;
-    height: 39rem;
-    position: absolute;
-    top: -13rem;
-    pointer-events: none;
-}
-.LevelProgressBar_glowMask__enabled_ef {
-    mask-image: linear-gradient(#000, #000);
-}
-.LevelProgressBar_glow_75 {
-    width: 19rem;
-    height: 39rem;
-    background: no-repeat center / cover;
-    mix-blend-mode: additive;
-    position: absolute;
-    top: 0;
-    pointer-events: none;
-}
-.LevelProgressBar_glow__left_21 {
-    background-image: url('R.images.armory_yard.gui.maps.icons.buy.flare_left');
-    left: -17rem;
-}
-.LevelProgressBar_glow__right_80 {
-    width: 19rem;
-    height: 39rem;
-    background-image: url('R.images.armory_yard.gui.maps.icons.buy.flare_right');
-    right: -17rem;
-}
-.LevelProgressBar_base__disabled_d4 .LevelProgressBar_glow_75,
-.LevelProgressBar_base__finished_a5 .LevelProgressBar_glow_75 {
-    display: none;
-}
-.LevelProgressBar_progressBar_0c {
-    background-image: var(--progress-base);
-    background-repeat: repeat no-repeat;
-    background-position: 0 50%;
-    background-size: 3rem 10rem;
-    pointer-events: none;
-}
-.LevelProgressBar_delta_ac {
-    width: 0;
-    max-width: 8001px;
-    box-shadow: var(--progress-delta-shadow);
-    background-color: var(--progress-delta-color);
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    transform-origin: right center;
-    transition-timing-function: cubic-bezier(1, 0, 0.92, 1.39), cubic-bezier(0.21, 0.61, 0.35, 1);
-    transition-property: width, transform;
-}
-.LevelProgressBar_line_1c {
-    max-width: 8001px;
-    height: 100%;
-    background-color: var(--progress-line-base);
-    position: relative;
-    transition-timing-function: cubic-bezier(1, 0, 0.92, 1.39);
-    transition-property: width;
-}
-.LevelProgressBar_base__disabled_d4 .LevelProgressBar_line_1c {
-    background-color: var(--progress-line-disabled);
-}
-.LevelProgressBar_base__finished_a5 .LevelProgressBar_line_1c {
-    background-color: var(--progress-line-finished);
-}
-.LevelProgressBar_pattern_cc {
-    max-width: 8001px;
-    background-image: var(--progress-pattern-base);
-    background-repeat: repeat no-repeat;
-    background-position: 0 50%;
-    background-size: 3rem 10rem;
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    bottom: 1rem;
-    left: 1rem;
-}
-.LevelProgressBar_base__small_68 .LevelProgressBar_pattern_cc {
-    top: 0;
-    bottom: 0;
-}
-.LevelProgressBar_base__disabled_d4 .LevelProgressBar_pattern_cc {
-    background-image: var(--progress-pattern-disabled);
-}
-.LevelProgressBar_base__finished_a5 .LevelProgressBar_pattern_cc {
-    background-image: var(--progress-pattern-finished);
-}
-.LevelProgressBar_gradient_d4 {
-    max-width: 8001px;
-    background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.75));
-    mix-blend-mode: overlay;
-    position: absolute;
-    top: 1rem;
-    right: 0;
-    bottom: 1rem;
-    left: 0;
-}
-.LevelProgressBar_base__small_68 .LevelProgressBar_gradient_d4 {
-    top: 0;
-    bottom: 0;
-}
-.LevelProgressBar_base__disabled_d4 .LevelProgressBar_gradient_d4 {
-    display: none;
-}
-.LevelProgressBar_base__finished_a5 .LevelProgressBar_gradient_d4 {
-    background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.75), rgba(0, 0, 0, 0.5));
 }
 
 /*
@@ -1921,6 +1839,129 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 .ProgressBarDeltaGrow_base__withoutBounce_b5 .ProgressBarDeltaGrow_glow_68 {
     transition-timing-function: cubic-bezier(1, 0, 0.75, 0.75);
+}
+
+/*
+    Gameface can't calculate gradient biggest than 8128px
+    in JS 8000 reserved like anchor for start optimization
+*/
+/* stylelint-disable-line */
+.LevelProgressBar_base_75 {
+    width: 100%;
+    height: 12rem;
+    position: relative;
+}
+.LevelProgressBar_base__small_68 {
+    height: 2rem;
+}
+.LevelProgressBar_glowMask_e5 {
+    width: 100%;
+    height: 39rem;
+    position: absolute;
+    top: -13rem;
+    pointer-events: none;
+}
+.LevelProgressBar_glowMask__enabled_ef {
+    mask-image: linear-gradient(#000, #000);
+}
+.LevelProgressBar_glow_75 {
+    width: 19rem;
+    height: 39rem;
+    background: no-repeat center / cover;
+    mix-blend-mode: additive;
+    position: absolute;
+    top: 0;
+    pointer-events: none;
+}
+.LevelProgressBar_glow__left_21 {
+    background-image: url('R.images.armory_yard.gui.maps.icons.buy.flare_left');
+    left: -17rem;
+}
+.LevelProgressBar_glow__right_80 {
+    width: 19rem;
+    height: 39rem;
+    background-image: url('R.images.armory_yard.gui.maps.icons.buy.flare_right');
+    right: -17rem;
+}
+.LevelProgressBar_base__disabled_d4 .LevelProgressBar_glow_75,
+.LevelProgressBar_base__finished_a5 .LevelProgressBar_glow_75 {
+    display: none;
+}
+.LevelProgressBar_progressBar_0c {
+    background-image: var(--progress-base);
+    background-repeat: repeat no-repeat;
+    background-position: 0 50%;
+    background-size: 3rem 10rem;
+    pointer-events: none;
+}
+.LevelProgressBar_delta_ac {
+    width: 0;
+    max-width: 8001px;
+    box-shadow: var(--progress-delta-shadow);
+    background-color: var(--progress-delta-color);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    transform-origin: right center;
+    transition-timing-function: cubic-bezier(1, 0, 0.92, 1.39), cubic-bezier(0.21, 0.61, 0.35, 1);
+    transition-property: width, transform;
+}
+.LevelProgressBar_line_1c {
+    max-width: 8001px;
+    height: 100%;
+    background-color: var(--progress-line-base);
+    position: relative;
+    transition-timing-function: cubic-bezier(1, 0, 0.92, 1.39);
+    transition-property: width;
+}
+.LevelProgressBar_base__disabled_d4 .LevelProgressBar_line_1c {
+    background-color: var(--progress-line-disabled);
+}
+.LevelProgressBar_base__finished_a5 .LevelProgressBar_line_1c {
+    background-color: var(--progress-line-finished);
+}
+.LevelProgressBar_pattern_cc {
+    max-width: 8001px;
+    background-image: var(--progress-pattern-base);
+    background-repeat: repeat no-repeat;
+    background-position: 0 50%;
+    background-size: 3rem 10rem;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+    left: 1rem;
+}
+.LevelProgressBar_base__small_68 .LevelProgressBar_pattern_cc {
+    top: 0;
+    bottom: 0;
+}
+.LevelProgressBar_base__disabled_d4 .LevelProgressBar_pattern_cc {
+    background-image: var(--progress-pattern-disabled);
+}
+.LevelProgressBar_base__finished_a5 .LevelProgressBar_pattern_cc {
+    background-image: var(--progress-pattern-finished);
+}
+.LevelProgressBar_gradient_d4 {
+    max-width: 8001px;
+    background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.75));
+    mix-blend-mode: overlay;
+    position: absolute;
+    top: 1rem;
+    right: 0;
+    bottom: 1rem;
+    left: 0;
+}
+.LevelProgressBar_base__small_68 .LevelProgressBar_gradient_d4 {
+    top: 0;
+    bottom: 0;
+}
+.LevelProgressBar_base__disabled_d4 .LevelProgressBar_gradient_d4 {
+    display: none;
+}
+.LevelProgressBar_base__finished_a5 .LevelProgressBar_gradient_d4 {
+    background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.75), rgba(0, 0, 0, 0.5));
 }
 
 .LevelSlider_base_3b {
@@ -2264,133 +2305,11 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     background: url('R.images.armory_yard.gui.maps.icons.buy.icon_rewards_title') no-repeat center / contain;
 }
 
-.FormatTextWithColorTags_blackReal_3c {
-    color: #000000;
-}
-
-.FormatTextWithColorTags_whiteReal_8a {
-    color: #ffffff;
-}
-
-.FormatTextWithColorTags_white_16 {
-    color: #f2f2f7;
-}
-
-.FormatTextWithColorTags_whiteOrange_18 {
-    color: #fefeec;
-}
-
-.FormatTextWithColorTags_whiteSpanish_10 {
-    color: #e9e2bf;
-}
-
-.FormatTextWithColorTags_par_ca {
-    color: #8c8c7e;
-}
-
-.FormatTextWithColorTags_parSecondary_8d {
-    color: #595950;
-}
-
-.FormatTextWithColorTags_parTertiary_a3 {
-    color: #37362e;
-}
-
-.FormatTextWithColorTags_red_60 {
-    color: #ff2717;
-}
-
-.FormatTextWithColorTags_redDark_03 {
-    color: #b70000;
-}
-
-.FormatTextWithColorTags_yellow_ad {
-    color: #feab34;
-}
-
-.FormatTextWithColorTags_orange_e4 {
-    color: #ee7000;
-}
-
-.FormatTextWithColorTags_cream_cd {
+.GroupTitle_completedSteps_29 {
     color: #ffdd99;
-}
-
-.FormatTextWithColorTags_brown_c8 {
-    color: #cbac77;
-}
-
-.FormatTextWithColorTags_greenBright_f0 {
-    color: #80d43a;
-}
-
-.FormatTextWithColorTags_green_c5 {
-    color: #7ab300;
-}
-
-.FormatTextWithColorTags_greenDark_af {
-    color: #497212;
-}
-
-.FormatTextWithColorTags_blueBooster_ac {
-    color: #ccffff;
-}
-
-.FormatTextWithColorTags_blueTeamkiller_6f {
-    color: #09e2ff;
-}
-
-.FormatTextWithColorTags_cred_4e {
-    color: #ced9d9;
-}
-
-.FormatTextWithColorTags_gold_90 {
-    color: #ffc363;
-}
-
-.FormatTextWithColorTags_bond_71 {
-    color: #c9c9b6;
-}
-
-.FormatTextWithColorTags_prom_dd {
-    color: #a29b70;
-}
-
-.RewardsList_base_0b {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.RewardsList_rewards_68 {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 30rem;
-}
-
-.mediaMedium .RewardsList_rewards_68 {
-    margin-top: 40rem;
-}
-
-.RewardsList_reward_6a {
-    height: 48rem;
-}
-
-.RewardsList_reward__info_f1 {
-    margin: -10rem -15rem 0 !important;
-}
-
-.RewardsList_reward_6a + .RewardsList_reward_6a {
-    margin-left: 34rem;
-}
-
-.mediaMedium .RewardsList_reward_6a + .RewardsList_reward_6a {
-    margin-left: 30rem;
-}
-
-.mediaMedium .RewardsList_reward_6a {
-    height: 80rem;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
 }
 
 .Content_base_92 {
@@ -2502,20 +2421,14 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     overflow: hidden;
     position: relative;
 }
 
 .App_base__background_da {
     background: #000 url('R.images.armory_yard.gui.maps.icons.bg__gp4') no-repeat center / cover;
-}
-
-.App_close_07 {
-    position: absolute;
-    top: 45rem;
-    right: 30rem;
 }
 
 .App_back_df {

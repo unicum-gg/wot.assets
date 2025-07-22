@@ -20,19 +20,19 @@
             559: (e, t, r) => {
                 'use strict';
                 var a = {};
-                r.r(a), r.d(a, { mouse: () => h, onResize: () => g });
+                (r.r(a), r.d(a, { mouse: () => h, onResize: () => g }));
                 var n = {};
-                r.r(n),
+                (r.r(n),
                     r.d(n, {
                         events: () => a,
                         getMouseGlobalPosition: () => f,
                         getSize: () => v,
                         graphicsQuality: () => x,
-                    });
+                    }));
                 var i = {};
-                r.r(i), r.d(i, { getBgUrl: () => E, getTextureUrl: () => w });
+                (r.r(i), r.d(i, { getBgUrl: () => E, getTextureUrl: () => w }));
                 var l = {};
-                r.r(l),
+                (r.r(l),
                     r.d(l, {
                         addModelObserver: () => I,
                         addPreloadTexture: () => A,
@@ -59,7 +59,7 @@
                         setInputPaddingsRem: () => R,
                         setSidePaddingsRem: () => O,
                         whenTutorialReady: () => Q,
-                    });
+                    }));
                 var o = r(6179),
                     u = r.n(o);
                 const s = (e, t, r) =>
@@ -136,10 +136,10 @@
                     );
                     return Object.assign({}, n, {
                         disable() {
-                            (e.enabled = !1), a();
+                            ((e.enabled = !1), a());
                         },
                         enable() {
-                            (e.enabled = !0), a();
+                            ((e.enabled = !0), a());
                         },
                         enableOutside() {
                             e.enabled && m(!0);
@@ -198,7 +198,7 @@
                                         a,
                                         n = {},
                                         i = Object.keys(e);
-                                    for (a = 0; a < i.length; a++) (r = i[a]), t.indexOf(r) >= 0 || (n[r] = e[r]);
+                                    for (a = 0; a < i.length; a++) ((r = i[a]), t.indexOf(r) >= 0 || (n[r] = e[r]));
                                     return n;
                                 })(t, b);
                             return void 0 !== n
@@ -363,7 +363,7 @@
                     };
                 }
                 !(function (e) {
-                    (e.extraLarge = 'extraLarge'),
+                    ((e.extraLarge = 'extraLarge'),
                         (e.large = 'large'),
                         (e.medium = 'medium'),
                         (e.small = 'small'),
@@ -377,7 +377,7 @@
                         (e.largeHeight = 'largeHeight'),
                         (e.mediumHeight = 'mediumHeight'),
                         (e.smallHeight = 'smallHeight'),
-                        (e.extraSmallHeight = 'extraSmallHeight');
+                        (e.extraSmallHeight = 'extraSmallHeight'));
                 })(Y || (Y = {}));
                 const ee = J.client.getSize('rem'),
                     te = ee.width,
@@ -393,7 +393,7 @@
                                 a,
                                 n = {},
                                 i = Object.keys(e);
-                            for (a = 0; a < i.length; a++) (r = i[a]), t.indexOf(r) >= 0 || (n[r] = e[r]);
+                            for (a = 0; a < i.length; a++) ((r = i[a]), t.indexOf(r) >= 0 || (n[r] = e[r]));
                             return n;
                         })(e, ie);
                     const a = (0, o.useContext)(ne),
@@ -469,10 +469,10 @@
                                     a = J.view.pxToRem(t);
                                 n(Object.assign({ width: r, height: a }, Z(r, a, K)));
                             }, []);
-                        oe(() => {
+                        (oe(() => {
                             engine.on('clientResized', i);
                         }),
-                            (0, o.useEffect)(() => () => engine.off('clientResized', i), [i]);
+                            (0, o.useEffect)(() => () => engine.off('clientResized', i), [i]));
                         const l = (0, o.useMemo)(() => Object.assign({}, a), [a]);
                         return u().createElement(ne.Provider, { value: l }, e);
                     });
@@ -481,27 +481,27 @@
                     me = r(926),
                     ge = r.n(me);
                 let ce, he, ve;
-                !(function (e) {
-                    (e[(e.ExtraSmall = K.extraSmall.width)] = 'ExtraSmall'),
+                (!(function (e) {
+                    ((e[(e.ExtraSmall = K.extraSmall.width)] = 'ExtraSmall'),
                         (e[(e.Small = K.small.width)] = 'Small'),
                         (e[(e.Medium = K.medium.width)] = 'Medium'),
                         (e[(e.Large = K.large.width)] = 'Large'),
-                        (e[(e.ExtraLarge = K.extraLarge.width)] = 'ExtraLarge');
+                        (e[(e.ExtraLarge = K.extraLarge.width)] = 'ExtraLarge'));
                 })(ce || (ce = {})),
                     (function (e) {
-                        (e[(e.ExtraSmall = K.extraSmall.width)] = 'ExtraSmall'),
+                        ((e[(e.ExtraSmall = K.extraSmall.width)] = 'ExtraSmall'),
                             (e[(e.Small = K.small.width)] = 'Small'),
                             (e[(e.Medium = K.medium.width)] = 'Medium'),
                             (e[(e.Large = K.large.width)] = 'Large'),
-                            (e[(e.ExtraLarge = K.extraLarge.width)] = 'ExtraLarge');
+                            (e[(e.ExtraLarge = K.extraLarge.width)] = 'ExtraLarge'));
                     })(he || (he = {})),
                     (function (e) {
-                        (e[(e.ExtraSmall = K.extraSmall.height)] = 'ExtraSmall'),
+                        ((e[(e.ExtraSmall = K.extraSmall.height)] = 'ExtraSmall'),
                             (e[(e.Small = K.small.height)] = 'Small'),
                             (e[(e.Medium = K.medium.height)] = 'Medium'),
                             (e[(e.Large = K.large.height)] = 'Large'),
-                            (e[(e.ExtraLarge = K.extraLarge.height)] = 'ExtraLarge');
-                    })(ve || (ve = {}));
+                            (e[(e.ExtraLarge = K.extraLarge.height)] = 'ExtraLarge'));
+                    })(ve || (ve = {})));
                 const fe = () => {
                         const e = (0, o.useContext)(ne),
                             t = e.width,
@@ -519,7 +519,7 @@
                                     case e.extraSmall:
                                         return ce.ExtraSmall;
                                     default:
-                                        return console.error('Unreachable media context resolution'), ce.ExtraSmall;
+                                        return (console.error('Unreachable media context resolution'), ce.ExtraSmall);
                                 }
                             })(e),
                             n = ((e) => {
@@ -535,7 +535,7 @@
                                     case e.extraSmallWidth:
                                         return he.ExtraSmall;
                                     default:
-                                        return console.error('Unreachable media context resolution'), he.ExtraSmall;
+                                        return (console.error('Unreachable media context resolution'), he.ExtraSmall);
                                 }
                             })(e),
                             i = ((e) => {
@@ -551,7 +551,7 @@
                                     case e.extraSmallHeight:
                                         return ve.ExtraSmall;
                                     default:
-                                        return console.error('Unreachable media context resolution'), ve.ExtraSmall;
+                                        return (console.error('Unreachable media context resolution'), ve.ExtraSmall);
                                 }
                             })(e);
                         return { mediaSize: a, mediaWidth: n, mediaHeight: i, remScreenWidth: t, remScreenHeight: r };
@@ -601,7 +601,7 @@
                                     a,
                                     n = {},
                                     i = Object.keys(e);
-                                for (a = 0; a < i.length; a++) (r = i[a]), t.indexOf(r) >= 0 || (n[r] = e[r]);
+                                for (a = 0; a < i.length; a++) ((r = i[a]), t.indexOf(r) >= 0 || (n[r] = e[r]));
                                 return n;
                             })(e, xe);
                         const n = fe(),
@@ -619,7 +619,7 @@
                                 a,
                                 n = {},
                                 i = Object.keys(e);
-                            for (a = 0; a < i.length; a++) (r = i[a]), t.indexOf(r) >= 0 || (n[r] = e[r]);
+                            for (a = 0; a < i.length; a++) ((r = i[a]), t.indexOf(r) >= 0 || (n[r] = e[r]));
                             return n;
                         })(e, He);
                     return u().createElement(ue, null, u().createElement(be, r, t));
@@ -705,7 +705,7 @@
                                                     subscribe: (r, i) => {
                                                         const o = 'string' == typeof i ? `${a}.${i}` : a,
                                                             u = J.view.addModelObserver(o, t, !0);
-                                                        return n.set(u, r), e && r(l(i)), u;
+                                                        return (n.set(u, r), e && r(l(i)), u);
                                                     },
                                                     readByPath: l,
                                                     createCallback: (e, t) => {
@@ -835,7 +835,7 @@
                                     }, [a]),
                                     (0, o.useEffect)(
                                         () => () => {
-                                            f.externalModel.dispose(), s.current.forEach((e) => e());
+                                            (f.externalModel.dispose(), s.current.forEach((e) => e()));
                                         },
                                         [f],
                                     ),
@@ -874,9 +874,9 @@
         var n = r[e];
         if (void 0 !== n) return n.exports;
         var i = (r[e] = { exports: {} });
-        return t[e](i, i.exports, a), i.exports;
+        return (t[e](i, i.exports, a), i.exports);
     }
-    (a.m = t),
+    ((a.m = t),
         (e = []),
         (a.O = (t, r, n, i) => {
             if (!r) {
@@ -900,7 +900,7 @@
         }),
         (a.n = (e) => {
             var t = e && e.__esModule ? () => e.default : () => e;
-            return a.d(t, { a: t }), t;
+            return (a.d(t, { a: t }), t);
         }),
         (a.d = (e, t) => {
             for (var r in t) a.o(t, r) && !a.o(e, r) && Object.defineProperty(e, r, { enumerable: !0, get: t[r] });
@@ -915,10 +915,10 @@
         })()),
         (a.o = (e, t) => Object.prototype.hasOwnProperty.call(e, t)),
         (a.r = (e) => {
-            'undefined' != typeof Symbol &&
+            ('undefined' != typeof Symbol &&
                 Symbol.toStringTag &&
                 Object.defineProperty(e, Symbol.toStringTag, { value: 'Module' }),
-                Object.defineProperty(e, '__esModule', { value: !0 });
+                Object.defineProperty(e, '__esModule', { value: !0 }));
         }),
         (a.j = 859),
         (() => {
@@ -933,12 +933,12 @@
                         for (n in o) a.o(o, n) && (a.m[n] = o[n]);
                         if (u) var d = u(a);
                     }
-                    for (t && t(r); s < l.length; s++) (i = l[s]), a.o(e, i) && e[i] && e[i][0](), (e[i] = 0);
+                    for (t && t(r); s < l.length; s++) ((i = l[s]), a.o(e, i) && e[i] && e[i][0](), (e[i] = 0));
                     return a.O(d);
                 },
                 r = (self.webpackChunkgameface = self.webpackChunkgameface || []);
-            r.forEach(t.bind(null, 0)), (r.push = t.bind(null, r.push.bind(r)));
-        })();
+            (r.forEach(t.bind(null, 0)), (r.push = t.bind(null, r.push.bind(r))));
+        })());
     var n = a.O(void 0, [617], () => a(559));
     n = a.O(n);
 })();

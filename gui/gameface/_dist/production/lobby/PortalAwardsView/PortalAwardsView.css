@@ -470,7 +470,8 @@
     display: none;
 }
 .SwfAwardVideo_vignette_d1 {
-    background-image: radial-gradient(ellipse at center, transparent, #1d2839),
+    background-image:
+        radial-gradient(ellipse at center, transparent, #1d2839),
         linear-gradient(0deg, transparent, transparent 95%, #1d2839 100%),
         linear-gradient(90deg, transparent, transparent 95%, #1d2839 100%),
         linear-gradient(180deg, transparent, transparent 95%, #1d2839 100%),

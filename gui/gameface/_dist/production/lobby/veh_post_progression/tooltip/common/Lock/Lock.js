@@ -3,7 +3,7 @@
     var u,
         F = {
             280: (u, F, A) => {
-                A(6179), A(6483), A(3649), A(5287);
+                (A(6179), A(6483), A(3649), A(5287));
             },
             9690: (u, F, A) => {
                 ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());
@@ -11,7 +11,7 @@
             3649: (u, F, A) => {
                 let E;
                 !(function (u) {
-                    (u[(u.left = 0)] = 'left'), (u[(u.right = 1)] = 'right');
+                    ((u[(u.left = 0)] = 'left'), (u[(u.right = 1)] = 'right'));
                 })(E || (E = {}));
                 (() => {
                     const u = new RegExp(
@@ -31,7 +31,7 @@
                 })();
             },
             7846: (u, F, A) => {
-                A(6179), A(9690), A(280);
+                (A(6179), A(9690), A(280));
                 R.strings.veh_post_progression.tooltips.pairModification.status.unavailableLocked;
             },
             5287: () => {},
@@ -41,9 +41,9 @@
         var D = A[u];
         if (void 0 !== D) return D.exports;
         var B = (A[u] = { exports: {} });
-        return F[u](B, B.exports, E), B.exports;
+        return (F[u](B, B.exports, E), B.exports);
     }
-    (E.m = F),
+    ((E.m = F),
         (u = []),
         (E.O = (F, A, D, B) => {
             if (!A) {
@@ -67,7 +67,7 @@
         }),
         (E.n = (u) => {
             var F = u && u.__esModule ? () => u.default : () => u;
-            return E.d(F, { a: F }), F;
+            return (E.d(F, { a: F }), F);
         }),
         (E.d = (u, F) => {
             for (var A in F) E.o(F, A) && !E.o(u, A) && Object.defineProperty(u, A, { enumerable: !0, get: F[A] });
@@ -94,12 +94,12 @@
                         for (D in e) E.o(e, D) && (E.m[D] = e[D]);
                         if (r) var o = r(E);
                     }
-                    for (F && F(A); t < C.length; t++) (B = C[t]), E.o(u, B) && u[B] && u[B][0](), (u[B] = 0);
+                    for (F && F(A); t < C.length; t++) ((B = C[t]), E.o(u, B) && u[B] && u[B][0](), (u[B] = 0));
                     return E.O(o);
                 },
                 A = (self.webpackChunkgameface = self.webpackChunkgameface || []);
-            A.forEach(F.bind(null, 0)), (A.push = F.bind(null, A.push.bind(A)));
-        })();
+            (A.forEach(F.bind(null, 0)), (A.push = F.bind(null, A.push.bind(A))));
+        })());
     var D = E.O(void 0, [428], () => E(7846));
     D = E.O(D);
 })();

@@ -937,7 +937,8 @@
     padding: 20rem 24rem;
 }
 .App_header__withShadow_84 {
-    background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.4) 100%),
+    background:
+        linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.4) 100%),
         radial-gradient(50% 100% at 50% 0%, rgba(255, 255, 255, 0.15) 0%, transparent 100%);
 }
 .App_headerText_6c {
@@ -962,7 +963,8 @@
     padding: 16rem 24rem 24rem;
 }
 .App_questCardWrapper__active_92 {
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.4) 100%),
+    background:
+        linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.4) 100%),
         radial-gradient(50% 100% at 50% 100%, rgba(255, 255, 255, 0.15) 0%, transparent 100%);
 }
 .App_footerWrapper_1a {

@@ -1765,12 +1765,14 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .mediaMedium .ShopOfferCard_warningOverlay_90 {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
         url('R.images.gui.maps.icons.battlePass.buy.block_Medium');
 }
 
 .mediaLarge .ShopOfferCard_warningOverlay_90 {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
         url('R.images.gui.maps.icons.battlePass.buy.block_Large');
 }
 

@@ -1518,6 +1518,293 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     line-height: 1.3;
 }
 
+.AnimatedQuestCard_base_48 {
+    width: 150rem;
+    height: 62rem;
+}
+
+.mediaMedium .AnimatedQuestCard_base_48 {
+    width: 181rem;
+    height: 75rem;
+}
+
+.mediaLarge .AnimatedQuestCard_base_48 {
+    width: 210rem;
+    height: 88rem;
+}
+
+.mediaExtraLarge .AnimatedQuestCard_base_48 {
+    width: 286rem;
+    height: 121rem;
+}
+
+.AnimatedQuestCard_stroke_5c {
+    width: 100%;
+    height: 100%;
+    background: no-repeat center / contain;
+    opacity: 0;
+    position: absolute;
+}
+
+.AnimatedQuestCard_stroke__scaledBlink_af {
+    animation: AnimatedQuestCard_scaledBlink_6c 0.9s ease-out 1.5s;
+}
+
+.AnimatedQuestCard_stroke__show_e0 {
+    animation: AnimatedQuestCard_showToHide_5e 0.9s ease-out 1s;
+    animation-fill-mode: forwards;
+}
+
+.AnimatedQuestCard_stroke__lock_3a {
+    background-image: url('R.images.gui.maps.icons.personalMissions3.QuestsView.card.anim_disable_stroke');
+}
+
+.AnimatedQuestCard_stroke__progress_75 {
+    background-image: url('R.images.gui.maps.icons.personalMissions3.QuestsView.card.anim_inProgress_stroke');
+}
+
+.AnimatedQuestCard_stroke__pause_ac {
+    background-image: url('R.images.gui.maps.icons.personalMissions3.QuestsView.card.anim_pause_stroke');
+}
+
+.AnimatedQuestCard_stroke__complete_66 {
+    background-image: url('R.images.gui.maps.icons.personalMissions3.QuestsView.card.anim_complete_stroke');
+}
+
+.AnimatedQuestCard_bg_2b {
+    width: 100%;
+    height: 100%;
+    background: no-repeat center / contain;
+    position: absolute;
+}
+
+.AnimatedQuestCard_bg__show_29 {
+    opacity: 0;
+    animation: AnimatedQuestCard_show_f8 1s ease-out 2s;
+    animation-fill-mode: forwards;
+}
+
+.AnimatedQuestCard_bg__hide_b9 {
+    animation: AnimatedQuestCard_hide_92 0.9s ease-out 1.5s;
+    animation-fill-mode: forwards;
+}
+
+.AnimatedQuestCard_bg__lock_b2 {
+    background-image: url('R.images.gui.maps.icons.personalMissions3.QuestsView.card.disable_bg');
+}
+
+.AnimatedQuestCard_bg__progress_b9 {
+    background-image: url('R.images.gui.maps.icons.personalMissions3.QuestsView.card.inProgress');
+}
+
+.AnimatedQuestCard_bg__pause_2b {
+    background-image: url('R.images.gui.maps.icons.personalMissions3.QuestsView.card.pause_bg');
+}
+
+.AnimatedQuestCard_bg__complete_45 {
+    background-image: url('R.images.gui.maps.icons.personalMissions3.QuestsView.card.done_bg');
+}
+
+.AnimatedQuestCard_icon_dc {
+    width: 16rem;
+    height: 16rem;
+    background: no-repeat center / contain;
+    position: absolute;
+    right: 10rem;
+    bottom: 11rem;
+    z-index: 3;
+}
+
+.AnimatedQuestCard_icon__show_56 {
+    opacity: 0;
+    animation: AnimatedQuestCard_animCompleteIcon_e1 0.4s ease-in-out 2s;
+    animation-fill-mode: forwards;
+}
+
+.AnimatedQuestCard_icon__downScale_90 {
+    animation: AnimatedQuestCard_hideIcon_bb 0.4s ease-in-out 2s;
+    animation-fill-mode: forwards;
+}
+
+.AnimatedQuestCard_icon__upScale_68 {
+    opacity: 0;
+    animation: AnimatedQuestCard_upScale_87 0.4s ease-in-out 2.4s;
+    animation-fill-mode: forwards;
+}
+
+.AnimatedQuestCard_icon__unlock_6d {
+    animation: AnimatedQuestCard_unlockIcon_fd 0.9s ease-out 1.5s;
+    animation-fill-mode: forwards;
+}
+
+.AnimatedQuestCard_icon__showScale_a0 {
+    opacity: 0;
+    animation: AnimatedQuestCard_showScale_f8 0.4s ease-in-out 2.4s;
+    animation-fill-mode: forwards;
+}
+
+.mediaMedium .AnimatedQuestCard_icon_dc {
+    width: 20rem;
+    height: 20rem;
+}
+
+.mediaLarge .AnimatedQuestCard_icon_dc {
+    width: 24rem;
+    height: 24rem;
+    right: 8rem;
+    bottom: 11rem;
+}
+
+.AnimatedQuestCard_icon__pause_a8 {
+    background-image: url('R.images.gui.maps.icons.personalMissions3.QuestsView.card.pause');
+}
+
+.mediaMedium .AnimatedQuestCard_icon__pause_a8 {
+    background-image: url('R.images.gui.maps.icons.personalMissions3.QuestsView.card.pause_medium');
+}
+
+.mediaLarge .AnimatedQuestCard_icon__pause_a8 {
+    background-image: url('R.images.gui.maps.icons.personalMissions3.QuestsView.card.pause_large');
+}
+
+.AnimatedQuestCard_icon__lock_20 {
+    background-image: url('R.images.gui.maps.icons.personalMissions3.QuestsView.card.lock');
+}
+
+.mediaMedium .AnimatedQuestCard_icon__lock_20 {
+    background-image: url('R.images.gui.maps.icons.personalMissions3.QuestsView.card.lock_medium');
+}
+
+.mediaLarge .AnimatedQuestCard_icon__lock_20 {
+    background-image: url('R.images.gui.maps.icons.personalMissions3.QuestsView.card.lock_large');
+}
+
+.AnimatedQuestCard_icon__complete_65 {
+    background-image: url('R.images.gui.maps.icons.personalMissions3.QuestsView.card.done');
+}
+
+.mediaMedium .AnimatedQuestCard_icon__complete_65 {
+    background-image: url('R.images.gui.maps.icons.personalMissions3.QuestsView.card.done_medium');
+}
+
+.mediaLarge .AnimatedQuestCard_icon__complete_65 {
+    background-image: url('R.images.gui.maps.icons.personalMissions3.QuestsView.card.done_large');
+}
+
+.AnimatedQuestCard_icon__progress_72 {
+    background-image: url('R.images.gui.maps.icons.personalMissions3.QuestsView.card.active');
+}
+
+.mediaMedium .AnimatedQuestCard_icon__progress_72 {
+    background-image: url('R.images.gui.maps.icons.personalMissions3.QuestsView.card.active_medium');
+}
+
+.mediaLarge .AnimatedQuestCard_icon__progress_72 {
+    background-image: url('R.images.gui.maps.icons.personalMissions3.QuestsView.card.active_large');
+}
+
+@keyframes AnimatedQuestCard_scaledBlink_6c {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(1.3);
+    }
+}
+
+@keyframes AnimatedQuestCard_showToHide_5e {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes AnimatedQuestCard_hide_92 {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes AnimatedQuestCard_show_f8 {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes AnimatedQuestCard_hideIcon_bb {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(0);
+    }
+}
+
+@keyframes AnimatedQuestCard_showScale_f8 {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes AnimatedQuestCard_animCompleteIcon_e1 {
+    0% {
+        opacity: 0;
+        transform: scale(2);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes AnimatedQuestCard_upScale_87 {
+    0% {
+        opacity: 0;
+        transform: scale(2);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes AnimatedQuestCard_unlockIcon_fd {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(3);
+    }
+}
+
 .QuestCard_base_18 {
     width: 150rem;
     height: 62rem;
@@ -1553,11 +1840,29 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     height: 121rem;
 }
 
-.QuestCard_base__isNewAvailbale_0a {
-    animation-name: QuestCard_newStatus_80;
-    animation-duration: 2s;
-    animation-timing-function: ease-in-out;
-    animation-iteration-count: infinite;
+.QuestCard_base__available_6b {
+    background: url('R.images.gui.maps.icons.personalMissions3.QuestsView.card.available') no-repeat center / contain;
+}
+
+.mediaMedium .QuestCard_base__available_6b {
+    background-image: url('R.images.gui.maps.icons.personalMissions3.QuestsView.card.available_large');
+}
+
+.mediaLarge .QuestCard_base__available_6b {
+    background-image: url('R.images.gui.maps.icons.personalMissions3.QuestsView.card.available_large');
+}
+
+.QuestCard_base__hover_13 {
+    background: url('R.images.gui.maps.icons.personalMissions3.QuestsView.card.available_hover') no-repeat center /
+        contain;
+}
+
+.mediaMedium .QuestCard_base__hover_13 {
+    background-image: url('R.images.gui.maps.icons.personalMissions3.QuestsView.card.available_hover_m');
+}
+
+.mediaLarge .QuestCard_base__hover_13 {
+    background-image: url('R.images.gui.maps.icons.personalMissions3.QuestsView.card.available_hover_l');
 }
 
 .QuestCard_base__available_6b.QuestCard_base__hover_13,
@@ -1683,6 +1988,9 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .mediaLarge .QuestCard_base__donePause_e7.QuestCard_base__hover_13 {
     background-image: url('R.images.gui.maps.icons.personalMissions3.QuestsView.card.pause_bg_hover_large');
 }
+.QuestCard_animQuest_52 {
+    position: absolute;
+}
 .QuestCard_contentWrapper_d9 {
     display: flex;
     flex-direction: column;
@@ -1690,7 +1998,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     width: 100%;
     height: 100%;
     text-align: center;
-    z-index: 1;
 }
 .QuestCard_questID_98 {
     color: #37362e;
@@ -1699,6 +2006,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     line-height: 1.3;
     width: 100%;
     margin-bottom: 6rem;
+    z-index: 3;
 }
 .mediaMedium .QuestCard_questID_98 {
     color: rgba(89, 89, 80, 1);
@@ -1854,14 +2162,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     top: 0;
     left: 0;
 }
-.QuestCard_disableWrapper__isUnlock_0b {
-    border: 1rem solid #f2f2f7;
-    box-shadow: 0rem 0rem 9.24rem 1.06rem rgba(252, 193, 180, 1);
-    opacity: 0;
-    animation-name: QuestCard_unlockBg_7b;
-    animation-duration: 1s;
-    animation-timing-function: ease-in;
-}
 .QuestCard_disableIcon_fe {
     width: 16rem;
     height: 16rem;
@@ -1954,55 +2254,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     width: 24rem;
     height: 24rem;
     background-image: url('R.images.gui.maps.icons.personalMissions3.QuestsView.card.active_large');
-}
-@keyframes QuestCard_unlockBg_7b {
-    0% {
-        background-image: url('R.images.gui.maps.icons.personalMissions3.QuestsView.card.disable_bg');
-        opacity: 1;
-    }
-
-    50% {
-        border: 1rem solid #f2f2f7;
-        box-shadow: 0rem 0rem 9.24rem 1.06rem rgba(252, 193, 180, 1);
-        opacity: 1;
-    }
-
-    100% {
-        opacity: 0;
-        transform: scale(1.3);
-    }
-}
-@keyframes QuestCard_doneHonor_d4 {
-    0% {
-        opacity: 0;
-        transform: scale(2);
-    }
-
-    100% {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-@keyframes QuestCard_newStatus_80 {
-    0% {
-        border: none;
-        opacity: 0;
-    }
-
-    100% {
-        background: url('R.images.gui.maps.icons.personalMissions3.QuestsView.card.available');
-        opacity: 1;
-    }
-}
-@keyframes QuestCard_unlock_08 {
-    0% {
-        opacity: 1;
-    }
-
-    100% {
-        opacity: 0;
-        transform: scale(1.5);
-    }
 }
 
 .QuestLine_base_29 {
@@ -2335,78 +2586,91 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 
 .VehicleTab_bg__hover_54 {
     border: 1rem solid rgba(254, 171, 52, 0.5);
-    background: linear-gradient(0deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.03)),
+    background:
+        linear-gradient(0deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.03)),
         linear-gradient(0deg, rgba(255, 150, 0, 0.2), rgba(255, 150, 0, 0.2)),
         radial-gradient(59.37% 59.37% at 50% 100%, rgba(254, 171, 52, 0.1) 0%, rgba(254, 171, 52, 0) 100%);
 }
 
 .VehicleTab_bg__selected_bc.VehicleTab_bg__hover_54 {
-    background: linear-gradient(0deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.03)),
+    background:
+        linear-gradient(0deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.03)),
         linear-gradient(0deg, rgba(255, 150, 0, 0.2), rgba(255, 150, 0, 0.2)),
         radial-gradient(59.37% 59.37% at 50% 100%, rgba(254, 171, 52, 0.1) 0%, rgba(254, 171, 52, 0) 100%);
 }
 
 .VehicleTab_bg__inProgress_c7 {
     border: 1px solid rgba(254, 171, 52, 0.5);
-    background: linear-gradient(0deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.03)),
+    background:
+        linear-gradient(0deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.03)),
         linear-gradient(0deg, rgba(255, 150, 0, 0.15), rgba(255, 150, 0, 0.15)),
         radial-gradient(59.37% 59.37% at 50% 100%, rgba(254, 171, 52, 0.1) 0%, rgba(254, 171, 52, 0) 100%);
 }
 
 .VehicleTab_bg__inProgress_c7.VehicleTab_bg__hover_54 {
-    background: linear-gradient(0deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.03)),
+    background:
+        linear-gradient(0deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.03)),
         linear-gradient(0deg, rgba(255, 150, 0, 0.2), rgba(255, 150, 0, 0.2)),
         radial-gradient(59.37% 59.37% at 50% 100%, rgba(254, 171, 52, 0.1) 0%, rgba(254, 171, 52, 0) 100%);
 }
 
 .VehicleTab_bg__selected_bc {
     border: 1rem solid rgba(254, 171, 52, 1);
-    background: linear-gradient(0deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.03)),
+    background:
+        linear-gradient(0deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.03)),
         linear-gradient(0deg, rgba(255, 150, 0, 0.15), rgba(255, 150, 0, 0.15)),
         radial-gradient(59.37% 59.37% at 50% 100%, rgba(254, 171, 52, 0.1) 0%, rgba(254, 171, 52, 0) 100%);
 }
 
 .VehicleTab_bg__completed_8a.VehicleTab_bg__selected_bc.VehicleTab_bg__hover_54 {
-    background: rgba(132, 210, 12, 0.2),
+    background:
+        rgba(132, 210, 12, 0.2),
         radial-gradient(59.37% 59.37% at 50% 100%, rgba(122, 179, 0, 0.15) 0%, rgba(122, 179, 0, 0) 100%);
 }
 
 .VehicleTab_bg__completed_8a {
     border: 1rem solid rgba(122, 179, 0, 0.7);
-    background: rgba(132, 210, 12, 0.15),
+    background:
+        rgba(132, 210, 12, 0.15),
         radial-gradient(59.37% 59.37% at 50% 100%, rgba(122, 179, 0, 0.15) 0%, rgba(122, 179, 0, 0) 100%);
 }
 
 .VehicleTab_bg__completed_8a.VehicleTab_bg__selected_bc {
     border: 1rem solid rgba(122, 179, 0, 1);
-    background: rgba(132, 210, 12, 0.15),
+    background:
+        rgba(132, 210, 12, 0.15),
         radial-gradient(59.37% 59.37% at 50% 100%, rgba(122, 179, 0, 0.15) 0%, rgba(122, 179, 0, 0) 100%);
 }
 
 .VehicleTab_bg__completed_8a.VehicleTab_bg__hover_54 {
-    background: rgba(132, 210, 12, 0.2),
+    background:
+        rgba(132, 210, 12, 0.2),
         radial-gradient(59.37% 59.37% at 50% 100%, rgba(122, 179, 0, 0.15) 0%, rgba(122, 179, 0, 0) 100%);
 }
 
 .VehicleTab_bg__completeWithHonord_08.VehicleTab_bg__selected_bc.VehicleTab_bg__hover_54 {
-    background: rgba(132, 210, 12, 0.2),
+    background:
+        rgba(132, 210, 12, 0.2),
         radial-gradient(59.37% 59.37% at 50% 100%, rgba(122, 179, 0, 0.15) 0%, rgba(122, 179, 0, 0) 100%);
 }
 
 .VehicleTab_bg__completeWithHonor_a9 {
     border: 1rem solid rgba(122, 179, 0, 0.7);
-    background: rgba(132, 210, 12, 0.15),
+    background:
+        rgba(132, 210, 12, 0.15),
         radial-gradient(59.37% 59.37% at 50% 100%, rgba(122, 179, 0, 0.15) 0%, rgba(122, 179, 0, 0) 100%);
 }
 
 .VehicleTab_bg__completeWithHonor_a9.VehicleTab_bg__selected_bc {
     border: 1rem solid rgba(122, 179, 0, 1);
-    background: rgba(132, 210, 12, 0.15),
+    background:
+        rgba(132, 210, 12, 0.15),
         radial-gradient(59.37% 59.37% at 50% 100%, rgba(122, 179, 0, 0.15) 0%, rgba(122, 179, 0, 0) 100%);
 }
 
 .VehicleTab_bg__completeWithHonor_a9.VehicleTab_bg__hover_54 {
-    background: rgba(132, 210, 12, 0.2),
+    background:
+        rgba(132, 210, 12, 0.2),
         radial-gradient(59.37% 59.37% at 50% 100%, rgba(122, 179, 0, 0.15) 0%, rgba(122, 179, 0, 0) 100%);
 }
 
@@ -3522,6 +3786,10 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     right: -14rem;
 }
 
+.AnimatedReward_base_8f {
+    display: flex;
+}
+
 .AnimatedReward_reward_b0 {
     opacity: 1;
 }
@@ -3530,19 +3798,26 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     opacity: 0.5;
 }
 
-.AnimatedReward_reward__animated_03 {
-    animation-name: AnimatedReward_rewardScaleAnim_83;
+.AnimatedReward_reward__disappear_af {
+    animation-name: AnimatedReward_scaleUp_51;
     animation-duration: 1.5s;
+    animation-timing-function: linear;
 }
 
-@keyframes AnimatedReward_rewardScaleAnim_83 {
-    0% {
-        opacity: 1;
-    }
+.AnimatedReward_reward__appear_18 {
+    animation-name: AnimatedReward_scaleDown_ce;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+}
 
-    100% {
-        opacity: 0;
-    }
+.AnimatedReward_reward__moreThanOne_12 {
+    margin-left: -110rem;
+    opacity: 0;
+    animation-name: AnimatedReward_showSecondReward_f0;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+    animation-delay: 1.5s;
 }
 
 .AnimatedReward_rewardText_88 {
@@ -3550,14 +3825,87 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .AnimatedReward_shine_e2 {
-    width: 150rem;
-    height: 150rem;
+    width: 260rem;
+    height: 260rem;
+    margin-left: 20rem;
     background: url('swf://gui/flash/animations/battlePass/shine.swf') no-repeat center / cover;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: -104rem;
+    left: -122rem;
     pointer-events: none;
+}
+
+.mediaLarge .AnimatedReward_shine_e2 {
+    top: -90rem;
+    left: -110rem;
+}
+
+.AnimatedReward_shine__disappear_22 {
+    animation-name: AnimatedReward_scaleUp_51;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+}
+
+.AnimatedReward_shine__appear_53 {
+    animation-name: AnimatedReward_scaleDownShine_a0;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+}
+
+@keyframes AnimatedReward_showSecondReward_f0 {
+    0% {
+        margin-left: -110rem;
+        opacity: 0;
+    }
+
+    100% {
+        margin-left: -10rem;
+        opacity: 1;
+    }
+}
+
+@keyframes AnimatedReward_scaleUp_51 {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1.3);
+    }
+}
+
+@keyframes AnimatedReward_scaleDown_ce {
+    0% {
+        opacity: 1;
+        transform: scale(1.3);
+    }
+
+    50% {
+        transform: scale(1.5);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes AnimatedReward_scaleDownShine_a0 {
+    0% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+
+    50% {
+        opacity: 0;
+        transform: scale(1.8);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(1);
+    }
 }
 
 .ChooseRewardButton_base_aa {
@@ -3659,10 +4007,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     height: 120rem;
 }
 
-.RewardList_base__withChooseReward_79 {
-    top: -10rem;
-}
-
 .RewardList_rewardWrapper_3e {
     display: flex;
     flex-direction: column;
@@ -3674,8 +4018,14 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     margin-right: 30rem;
 }
 
+.RewardList_rewardWrapper__withChooseReward_93 {
+    top: -10rem;
+}
+
 .RewardList_chooseButton_e0 {
     margin-top: 8rem;
+    position: absolute;
+    bottom: 14rem;
 }
 
 .Content_base_51 {
@@ -4136,7 +4486,8 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 
 .SmallQuestCard_base__inProgress_8c {
     border: 1rem solid rgba(254, 171, 52, 0.4);
-    background: linear-gradient(0deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.03)),
+    background:
+        linear-gradient(0deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.03)),
         linear-gradient(0deg, rgba(255, 150, 0, 0.15), rgba(255, 150, 0, 0.15)),
         radial-gradient(59.37% 59.37% at 50% 100%, rgba(254, 171, 52, 0.1) 0%, rgba(254, 171, 52, 0) 100%);
 }
@@ -4147,7 +4498,8 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 
 .SmallQuestCard_base__inProgress_8c.SmallQuestCard_base__hover_8a {
     border: 1rem solid rgba(255, 234, 190, 0.4);
-    background: linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)),
+    background:
+        linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)),
         linear-gradient(0deg, rgba(226, 176, 77, 0.1), rgba(226, 176, 77, 0.1));
 }
 
@@ -4159,7 +4511,8 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .SmallQuestCard_base__doneHonor_75,
 .SmallQuestCard_base__donePause_4f {
     border: 1rem solid rgba(122, 179, 0, 0.7);
-    background: rgba(73, 114, 18, 0.03),
+    background:
+        rgba(73, 114, 18, 0.03),
         radial-gradient(59.37% 59.37% at 50% 100%, rgba(122, 179, 0, 0.15) 0%, rgba(122, 179, 0, 0) 100%);
 }
 
@@ -4172,7 +4525,8 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .SmallQuestCard_base__done_04.SmallQuestCard_base__hover_8a,
 .SmallQuestCard_base__doneHonor_75.SmallQuestCard_base__hover_8a,
 .SmallQuestCard_base__donePause_4f.SmallQuestCard_base__hover_8a {
-    background: rgba(73, 114, 18, 0.1),
+    background:
+        rgba(73, 114, 18, 0.1),
         radial-gradient(59.37% 59.37% at 50% 100%, rgba(122, 179, 0, 0.15) 0%, rgba(122, 179, 0, 0) 100%);
 }
 

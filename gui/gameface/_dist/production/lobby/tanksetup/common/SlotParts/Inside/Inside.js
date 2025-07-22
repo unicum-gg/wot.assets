@@ -31,10 +31,10 @@
                 });
             },
             3141: (e, n, o) => {
-                o(6483), o(6179), o(906), o(4105);
+                (o(6483), o(6179), o(906), o(4105));
             },
             4105: (e, n, o) => {
-                o(6179), o(6483);
+                (o(6179), o(6483));
             },
         },
         o = {};
@@ -42,9 +42,9 @@
         var r = o[e];
         if (void 0 !== r) return r.exports;
         var i = (o[e] = { exports: {} });
-        return n[e](i, i.exports, t), i.exports;
+        return (n[e](i, i.exports, t), i.exports);
     }
-    (t.m = n),
+    ((t.m = n),
         (e = []),
         (t.O = (n, o, r, i) => {
             if (!o) {
@@ -68,7 +68,7 @@
         }),
         (t.n = (e) => {
             var n = e && e.__esModule ? () => e.default : () => e;
-            return t.d(n, { a: n }), n;
+            return (t.d(n, { a: n }), n);
         }),
         (t.d = (e, n) => {
             for (var o in n) t.o(n, o) && !t.o(e, o) && Object.defineProperty(e, o, { enumerable: !0, get: n[o] });
@@ -95,12 +95,12 @@
                         for (r in _) t.o(_, r) && (t.m[r] = _[r]);
                         if (s) var c = s(t);
                     }
-                    for (n && n(o); u < a.length; u++) (i = a[u]), t.o(e, i) && e[i] && e[i][0](), (e[i] = 0);
+                    for (n && n(o); u < a.length; u++) ((i = a[u]), t.o(e, i) && e[i] && e[i][0](), (e[i] = 0));
                     return t.O(c);
                 },
                 o = (self.webpackChunkgameface = self.webpackChunkgameface || []);
-            o.forEach(n.bind(null, 0)), (o.push = n.bind(null, o.push.bind(o)));
-        })();
+            (o.forEach(n.bind(null, 0)), (o.push = n.bind(null, o.push.bind(o))));
+        })());
     var r = t.O(void 0, [727], () => t(3141));
     r = t.O(r);
 })();

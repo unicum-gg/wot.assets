@@ -71,12 +71,12 @@
                     };
                 var b = t(122);
                 let p, _;
-                !(function (e) {
-                    (e.Idle = 'Idle'), (e.Grow = 'Grow'), (e.Shrink = 'Shrink'), (e.End = 'End');
+                (!(function (e) {
+                    ((e.Idle = 'Idle'), (e.Grow = 'Grow'), (e.Shrink = 'Shrink'), (e.End = 'End'));
                 })(p || (p = {})),
                     (function (e) {
-                        (e.Idle = 'Idle'), (e.In = 'In'), (e.End = 'End');
-                    })(_ || (_ = {}));
+                        ((e.Idle = 'Idle'), (e.In = 'In'), (e.End = 'End'));
+                    })(_ || (_ = {})));
                 const h = 'ProgressBarDeltaSimple_base_6c',
                     E = 'ProgressBarDeltaSimple_delta_99',
                     w = (0, s.memo)(
@@ -99,11 +99,11 @@
                                 y = g === _.Idle,
                                 v = (0, s.useCallback)(
                                     (e) => {
-                                        f(e), m && m(e);
+                                        (f(e), m && m(e));
                                     },
                                     [m],
                                 );
-                            (0, s.useEffect)(() => {
+                            ((0, s.useEffect)(() => {
                                 if (y && !t) {
                                     const e = n;
                                     return (0, b.F)(() => {
@@ -115,10 +115,10 @@
                                     if (p) {
                                         const t = e + n;
                                         return (0, b.F)(() => {
-                                            l && l(), v(_.End);
+                                            (l && l(), v(_.End));
                                         }, t);
                                     }
-                                }, [v, p, l, n, e]);
+                                }, [v, p, l, n, e]));
                             const C = (0, s.useMemo)(
                                     () => ({
                                         width: '100%',
@@ -226,7 +226,7 @@
                                 I = _ === p.Shrink,
                                 P = (0, s.useCallback)(
                                     (e) => {
-                                        h(e), d && d(e);
+                                        (h(e), d && d(e));
                                     },
                                     [d],
                                 ),
@@ -285,7 +285,7 @@
                                 b = c[1],
                                 _ = (0, s.useCallback)(
                                     (e) => {
-                                        e === p.Shrink && b(!0), d && d(e);
+                                        (e === p.Shrink && b(!0), d && d(e));
                                     },
                                     [d],
                                 ),
@@ -344,7 +344,7 @@
                                     a,
                                     r = {},
                                     s = Object.keys(e);
-                                for (a = 0; a < s.length; a++) (t = s[a]), n.indexOf(t) >= 0 || (r[t] = e[t]);
+                                for (a = 0; a < s.length; a++) ((t = s[a]), n.indexOf(t) >= 0 || (r[t] = e[t]));
                                 return r;
                             })(e, z);
                         const r = (0, s.useState)(!1),
@@ -352,7 +352,7 @@
                             m = r[1],
                             d = (0, s.useCallback)(() => {
                                 const e = 100 === a.to;
-                                e !== i && m(e), e && n && n(), t && t();
+                                (e !== i && m(e), e && n && n(), t && t());
                             }, [i, n, t, a.to]);
                         switch (a.animationSettings.type) {
                             case l.r.Simple:
@@ -386,12 +386,12 @@
                                 a,
                                 r = {},
                                 s = Object.keys(e);
-                            for (a = 0; a < s.length; a++) (t = s[a]), n.indexOf(t) >= 0 || (r[t] = e[t]);
+                            for (a = 0; a < s.length; a++) ((t = s[a]), n.indexOf(t) >= 0 || (r[t] = e[t]));
                             return r;
                         })(e, O);
                     const a = (0, s.useRef)({}),
                         r = (0, s.useCallback)(() => {
-                            (a.current.from = void 0), n && n();
+                            ((a.current.from = void 0), n && n());
                         }, [n]),
                         i = 'number' == typeof a.current.from ? a.current.from : t.from;
                     return (
@@ -534,13 +534,13 @@
             },
             736: (e, n, t) => {
                 let a, r;
-                t.d(n, { $: () => a, r: () => r }),
+                (t.d(n, { $: () => a, r: () => r }),
                     (function (e) {
-                        (e.Small = 'small'), (e.Medium = 'medium'), (e.Big = 'big'), (e.Default = 'big');
+                        ((e.Small = 'small'), (e.Medium = 'medium'), (e.Big = 'big'), (e.Default = 'big'));
                     })(a || (a = {})),
                     (function (e) {
-                        (e[(e.Simple = 0)] = 'Simple'), (e[(e.Growing = 1)] = 'Growing');
-                    })(r || (r = {}));
+                        ((e[(e.Simple = 0)] = 'Simple'), (e[(e.Growing = 1)] = 'Growing'));
+                    })(r || (r = {})));
             },
             515: (e, n, t) => {
                 t.d(n, { u: () => a });
@@ -554,27 +554,27 @@
                         t = e();
                     }, n);
                     return () => {
-                        'function' == typeof t && t(), clearTimeout(a);
+                        ('function' == typeof t && t(), clearTimeout(a));
                     };
                 };
             },
             438: (e, n, t) => {
-                t(483), t(179);
-                t(875), t(736);
-                R.strings.quests.dailyQuests.postBattle.genericAmpersand(),
-                    R.strings.quests.dailyQuests.postBattle.and();
+                (t(483), t(179));
+                (t(875), t(736));
+                (R.strings.quests.dailyQuests.postBattle.genericAmpersand(),
+                    R.strings.quests.dailyQuests.postBattle.and());
                 var a = t(229);
                 a.I.CENTER;
             },
             229: (e, n, t) => {
                 let a, r;
-                t.d(n, { $: () => r, I: () => a }),
+                (t.d(n, { $: () => r, I: () => a }),
                     (function (e) {
-                        (e.LEFT = 'left'), (e.RIGHT = 'right'), (e.CENTER = 'center');
+                        ((e.LEFT = 'left'), (e.RIGHT = 'right'), (e.CENTER = 'center'));
                     })(a || (a = {})),
                     (function (e) {
-                        (e.BIG = 'big'), (e.HUGE = 'huge');
-                    })(r || (r = {}));
+                        ((e.BIG = 'big'), (e.HUGE = 'huge'));
+                    })(r || (r = {})));
             },
         },
         t = {};
@@ -582,9 +582,9 @@
         var r = t[e];
         if (void 0 !== r) return r.exports;
         var s = (t[e] = { exports: {} });
-        return n[e](s, s.exports, a), s.exports;
+        return (n[e](s, s.exports, a), s.exports);
     }
-    (a.m = n),
+    ((a.m = n),
         (e = []),
         (a.O = (n, t, r, s) => {
             if (!t) {
@@ -608,7 +608,7 @@
         }),
         (a.n = (e) => {
             var n = e && e.__esModule ? () => e.default : () => e;
-            return a.d(n, { a: n }), n;
+            return (a.d(n, { a: n }), n);
         }),
         (a.d = (e, n) => {
             for (var t in n) a.o(n, t) && !a.o(e, t) && Object.defineProperty(e, t, { enumerable: !0, get: n[t] });
@@ -635,12 +635,12 @@
                         for (r in i) a.o(i, r) && (a.m[r] = i[r]);
                         if (l) var d = l(a);
                     }
-                    for (n && n(t); m < o.length; m++) (s = o[m]), a.o(e, s) && e[s] && e[s][0](), (e[s] = 0);
+                    for (n && n(t); m < o.length; m++) ((s = o[m]), a.o(e, s) && e[s] && e[s][0](), (e[s] = 0));
                     return a.O(d);
                 },
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
-            t.forEach(n.bind(null, 0)), (t.push = n.bind(null, t.push.bind(t)));
-        })();
+            (t.forEach(n.bind(null, 0)), (t.push = n.bind(null, t.push.bind(t))));
+        })());
     var r = a.O(void 0, [45], () => a(438));
     r = a.O(r);
 })();

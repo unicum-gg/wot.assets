@@ -567,8 +567,8 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     align-items: center;
     height: 100%;
     padding-top: 20rem;
-    background-image: radial-gradient(50% 50% at 50% 50%, transparent, rgba(0, 0, 0, 0.5)),
-        url('R.images.gui.maps.icons.mapbox.bg');
+    background-image:
+        radial-gradient(50% 50% at 50% 50%, transparent, rgba(0, 0, 0, 0.5)), url('R.images.gui.maps.icons.mapbox.bg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;

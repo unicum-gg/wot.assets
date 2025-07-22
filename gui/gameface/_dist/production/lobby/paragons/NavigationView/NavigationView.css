@@ -38,7 +38,7 @@
     position: absolute;
     top: -4rem;
     left: 0;
-    animation: Spinner_spin_f5 0.28s linear infinite;
+    animation: Spinner_spin_f5 5s linear infinite;
 }
 
 .Spinner_logo_bf {
@@ -57,7 +57,7 @@
     }
 
     100% {
-        transform: rotate(20deg);
+        transform: rotate(360deg);
     }
 }
 
@@ -3729,7 +3729,8 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     width: 200rem;
     height: 410rem;
     box-shadow: 0 0 25rem 0 rgba(255, 255, 255, 0.1) inset;
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    background:
+        linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
         linear-gradient(0.65deg, rgba(0, 0, 0, 0.15) 0.92%, rgba(0, 0, 0, 0) 99.81%);
     position: relative;
 }
@@ -3972,12 +3973,14 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 
 .UnifiedChapter_base__active_35 {
     box-shadow: 0 0 30rem 0 rgba(255, 122, 0, 0.3) inset;
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    background:
+        linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
         linear-gradient(0deg, rgba(255, 92, 0, 0.1), rgba(255, 92, 0, 0.1));
 }
 
 .UnifiedChapter_base__active__hover_b0 {
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    background:
+        linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
         linear-gradient(0deg, rgba(252, 147, 71, 0.15), rgba(252, 147, 71, 0.15));
 }
 
@@ -3997,12 +4000,14 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 
 .UnifiedChapter_base__finished_c7 {
     box-shadow: 0 0 25rem 0 rgba(143, 255, 0, 0.1) inset;
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    background:
+        linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
         linear-gradient(0deg, rgba(39, 48, 28, 0.4), rgba(39, 48, 28, 0.4));
 }
 
 .UnifiedChapter_base__finished__hover_68 {
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    background:
+        linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
         linear-gradient(0deg, rgba(39, 48, 28, 0.6), rgba(39, 48, 28, 0.6));
 }
 .UnifiedChapter_allSpace_aa {

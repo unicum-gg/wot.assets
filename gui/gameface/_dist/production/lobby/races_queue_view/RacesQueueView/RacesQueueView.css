@@ -574,7 +574,8 @@
     width: 585rem;
     height: 48rem;
     margin-bottom: 24rem;
-    background: linear-gradient(0deg, rgba(18, 18, 18, 0.7), rgba(18, 18, 18, 0.7)),
+    background:
+        linear-gradient(0deg, rgba(18, 18, 18, 0.7), rgba(18, 18, 18, 0.7)),
         radial-gradient(65.83% 138.54% at 50% 138.54%, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 64.67%);
 }
 

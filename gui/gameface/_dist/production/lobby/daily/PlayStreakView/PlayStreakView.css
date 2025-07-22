@@ -338,7 +338,7 @@
 }
 
 .Card_base__locked_9a .Card_baseInner_7c {
-    filter: grayscale(100%);
+    filter: grayscale(65%);
     opacity: 0.4;
 }
 
@@ -1229,11 +1229,11 @@
     position: relative;
 }
 
-.mediaMedium .PlayStreak_calendar_f2 {
+.mediaMediumHeight .PlayStreak_calendar_f2 {
     min-height: 400rem;
 }
 
-.mediaLargeWidth .PlayStreak_calendar_f2 {
+.mediaLarge .PlayStreak_calendar_f2 {
     min-height: 600rem;
 }
 

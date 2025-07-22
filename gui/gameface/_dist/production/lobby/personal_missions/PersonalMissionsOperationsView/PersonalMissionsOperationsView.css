@@ -988,46 +988,22 @@
 .mediaExtraLarge .LastOperation_content_b7 {
     padding-left: 50rem;
 }
-.LastOperation_base__development_bb .LastOperation_content_b7 {
-    padding-left: 15rem;
-}
-.mediaMedium .LastOperation_base__development_bb .LastOperation_content_b7 {
-    padding-left: 20rem;
-}
-.mediaLarge .LastOperation_base__development_bb .LastOperation_content_b7 {
-    padding-left: 30rem;
-}
-.mediaExtraLarge .LastOperation_base__development_bb .LastOperation_content_b7 {
-    padding-left: 32rem;
-}
 .LastOperation_icon_f2 {
-    width: 180rem;
+    width: 203rem;
     height: 135rem;
     background: no-repeat center / cover;
 }
 .mediaMedium .LastOperation_icon_f2 {
-    width: 234rem;
+    width: 254rem;
     height: 174rem;
 }
 .mediaLarge .LastOperation_icon_f2 {
-    width: 260rem;
+    width: 298rem;
     height: 195rem;
 }
 .mediaExtraLarge .LastOperation_icon_f2 {
-    width: 293rem;
-    height: 222rem;
-}
-.LastOperation_base__development_bb .LastOperation_icon_f2 {
-    width: 203rem;
-}
-.mediaMedium .LastOperation_base__development_bb .LastOperation_icon_f2 {
-    width: 254rem;
-}
-.mediaLarge .LastOperation_base__development_bb .LastOperation_icon_f2 {
-    width: 298rem;
-}
-.mediaExtraLarge .LastOperation_base__development_bb .LastOperation_icon_f2 {
     width: 336rem;
+    height: 222rem;
 }
 .LastOperation_leftSection_20 {
     display: flex;
@@ -1099,17 +1075,6 @@
     line-height: 1.1;
     margin-bottom: 7rem;
 }
-.LastOperation_base__development_bb .LastOperation_title_f0 {
-    margin-left: 18rem;
-    margin-bottom: -11rem;
-    opacity: 0.5;
-}
-.mediaMedium .LastOperation_base__development_bb .LastOperation_title_f0 {
-    margin-bottom: -4rem;
-}
-.mediaLarge .LastOperation_base__development_bb .LastOperation_title_f0 {
-    margin-bottom: -5rem;
-}
 .LastOperation_subtitle_92 {
     display: flex;
     align-items: center;
@@ -1126,28 +1091,22 @@
 }
 .LastOperation_subtitle__text_58 {
     color: #e9e2bf;
-    font-size: 14rem;
+    font-size: 15rem;
     font-weight: 700;
     line-height: 1.15;
     opacity: 0.5;
 }
 .mediaLarge .LastOperation_subtitle__text_58 {
     color: #e9e2bf;
-    font-size: 15rem;
+    font-size: 18rem;
     font-weight: 700;
-    line-height: 1.15;
+    line-height: 1.1;
 }
-.LastOperation_base__development_bb .LastOperation_subtitle_92 {
-    margin-bottom: 1rem;
-}
-.mediaMedium .LastOperation_base__development_bb .LastOperation_subtitle_92 {
-    margin-bottom: 2rem;
-}
-.mediaLarge .LastOperation_base__development_bb .LastOperation_subtitle_92 {
-    margin-bottom: 15rem;
-}
-.mediaExtraLarge .LastOperation_base__development_bb .LastOperation_subtitle_92 {
-    margin-bottom: 21rem;
+.mediaExtraLarge .LastOperation_subtitle__text_58 {
+    color: #e9e2bf;
+    font-size: 24rem;
+    font-weight: 700;
+    line-height: 1.2;
 }
 .LastOperation_base__completed_4c .LastOperation_subtitle_92 {
     margin-bottom: 6rem;
@@ -1174,8 +1133,8 @@
     line-height: 1.25;
 }
 .LastOperation_typeIcon_19 {
-    width: 27rem;
-    height: 27rem;
+    width: 30rem;
+    height: 30rem;
     margin-left: -4rem;
     margin-right: -4rem;
     background: no-repeat center / cover;
@@ -1184,8 +1143,14 @@
     transform: translateY(1rem);
 }
 .mediaLarge .LastOperation_typeIcon_19 {
-    width: 30rem;
-    height: 30rem;
+    width: 44rem;
+    height: 44rem;
+    margin-left: -6rem;
+    margin-right: -6rem;
+}
+.mediaExtraLarge .LastOperation_typeIcon_19 {
+    width: 52rem;
+    height: 52rem;
 }
 .LastOperation_taskCompleted_4f {
     color: #f2f2f7;
@@ -1204,7 +1169,6 @@
     line-height: 1.25;
 }
 .LastOperation_base__development_bb .LastOperation_taskCompleted_4f {
-    margin-left: 18rem;
     opacity: 0.7;
 }
 .LastOperation_completedText_25 {
@@ -1242,9 +1206,6 @@
     display: flex;
     width: 100%;
 }
-.LastOperation_base__development_bb .LastOperation_progressBarWrapper_30 {
-    margin-left: 18rem;
-}
 .LastOperation_progressBar_02 {
     width: 286rem;
     height: 6rem;
@@ -1263,6 +1224,23 @@
     height: 24rem;
     background: url('R.images.gui.maps.icons.personalMissions.operations.states.fullyCompleted') no-repeat center /
         cover;
+}
+.LastOperation_developmentWrapper_7d {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 100rem;
+    bottom: 5rem;
+}
+.mediaMedium .LastOperation_developmentWrapper_7d {
+    bottom: 15rem;
+}
+.mediaLarge .LastOperation_developmentWrapper_7d {
+    right: 135rem;
+}
+.mediaExtraLarge .LastOperation_developmentWrapper_7d {
+    right: 182rem;
+    bottom: 20rem;
 }
 
 .Operation_base_e5 {
@@ -2066,14 +2044,16 @@
 .mediaMedium .TakeRewards_button_be {
     min-width: 172rem;
     height: 38rem;
-    background-image: linear-gradient(180deg, rgba(48, 44, 41, 0.6) 15%, rgba(36, 15, 0, 0.6) 85%),
+    background-image:
+        linear-gradient(180deg, rgba(48, 44, 41, 0.6) 15%, rgba(36, 15, 0, 0.6) 85%),
         url('R.images.gui.maps.icons.personalMissions3.OperationsView.takeButton.take_rewards_pattern_s');
 }
 
 .mediaLarge .TakeRewards_button_be {
     min-width: 198rem;
     height: 44rem;
-    background-image: linear-gradient(180deg, rgba(48, 44, 41, 0.6) 15%, rgba(36, 15, 0, 0.6) 85%),
+    background-image:
+        linear-gradient(180deg, rgba(48, 44, 41, 0.6) 15%, rgba(36, 15, 0, 0.6) 85%),
         url('R.images.gui.maps.icons.personalMissions3.OperationsView.takeButton.take_rewards_pattern');
 }
 

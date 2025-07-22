@@ -1574,7 +1574,8 @@
 }
 
 .ArenaTimer_base__finishSoon_67 {
-    background: url('R.images.races.gui.maps.icons.battle.player_list.player_bg_disabled'),
+    background:
+        url('R.images.races.gui.maps.icons.battle.player_list.player_bg_disabled'),
         linear-gradient(0deg, rgba(201, 63, 32, 0.7), rgba(201, 63, 32, 0.7));
 }
 

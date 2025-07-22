@@ -16,7 +16,7 @@
                 };
                 var d;
                 !(function (e) {
-                    (e.Dots = 'dots'), (e.Dashed = 'dashed'), (e.Short = 'short');
+                    ((e.Dots = 'dots'), (e.Dashed = 'dashed'), (e.Short = 'short'));
                 })(d || (d = {}));
                 const c = s().memo(({ type: e = d.Dashed, classMix: r }) =>
                     s().createElement('div', { className: o()(n.base, n[`base__${e}`], r) }),
@@ -48,9 +48,9 @@
         var o = t[e];
         if (void 0 !== o) return o.exports;
         var i = (t[e] = { exports: {} });
-        return r[e](i, i.exports, a), i.exports;
+        return (r[e](i, i.exports, a), i.exports);
     }
-    (a.m = r),
+    ((a.m = r),
         (e = []),
         (a.O = (r, t, o, i) => {
             if (!t) {
@@ -74,7 +74,7 @@
         }),
         (a.n = (e) => {
             var r = e && e.__esModule ? () => e.default : () => e;
-            return a.d(r, { a: r }), r;
+            return (a.d(r, { a: r }), r);
         }),
         (a.d = (e, r) => {
             for (var t in r) a.o(r, t) && !a.o(e, t) && Object.defineProperty(e, t, { enumerable: !0, get: r[t] });
@@ -101,12 +101,12 @@
                         for (o in n) a.o(n, o) && (a.m[o] = n[o]);
                         if (d) var l = d(a);
                     }
-                    for (r && r(t); c < s.length; c++) (i = s[c]), a.o(e, i) && e[i] && e[i][0](), (e[i] = 0);
+                    for (r && r(t); c < s.length; c++) ((i = s[c]), a.o(e, i) && e[i] && e[i][0](), (e[i] = 0));
                     return a.O(l);
                 },
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
-            t.forEach(r.bind(null, 0)), (t.push = r.bind(null, t.push.bind(t)));
-        })();
+            (t.forEach(r.bind(null, 0)), (t.push = r.bind(null, t.push.bind(t))));
+        })());
     var o = a.O(void 0, [705], () => a(7945));
     o = a.O(o);
 })();

@@ -1067,16 +1067,16 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     opacity: 1;
 }
 .ToggleButton_icon_f0 {
-    width: 20rem;
-    height: 20rem;
+    width: 26rem;
+    height: 26rem;
     background: no-repeat center / contain;
     position: absolute;
     z-index: 3;
 }
 .ToggleButton_icon__gold_82 {
-    background-image: url('R.images.armory_yard.gui.maps.icons.shop.buy.gold');
-    top: 7rem;
-    left: 22rem;
+    background-image: url('R.images.armory_yard.gui.maps.icons.shop.buy.postProgressionGold');
+    top: 5rem;
+    left: 19rem;
 }
 .ToggleButton_icon__crystal_45 {
     width: 23rem;

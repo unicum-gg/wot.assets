@@ -376,7 +376,8 @@
     width: 420rem;
     height: 220rem;
     padding: 20rem 0;
-    background: linear-gradient(0deg, #070705, #070705),
+    background:
+        linear-gradient(0deg, #070705, #070705),
         linear-gradient(
             180deg,
             rgba(201, 201, 182, 0.05) 0%,

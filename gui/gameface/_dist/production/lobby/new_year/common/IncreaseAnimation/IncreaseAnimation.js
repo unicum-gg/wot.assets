@@ -4,7 +4,7 @@
         r = {
             7727: (e, r, o) => {},
             9904: (e, r, o) => {
-                o(6483), o(7727), o(6179), o(1187);
+                (o(6483), o(7727), o(6179), o(1187));
             },
             1187: (e, r, o) => {
                 R.views.common.tooltip_window.tooltip_window.TooltipWindow('resId');
@@ -15,9 +15,9 @@
         var n = o[e];
         if (void 0 !== n) return n.exports;
         var i = (o[e] = { exports: {} });
-        return r[e](i, i.exports, t), i.exports;
+        return (r[e](i, i.exports, t), i.exports);
     }
-    (t.m = r),
+    ((t.m = r),
         (e = []),
         (t.O = (r, o, n, i) => {
             if (!o) {
@@ -41,7 +41,7 @@
         }),
         (t.n = (e) => {
             var r = e && e.__esModule ? () => e.default : () => e;
-            return t.d(r, { a: r }), r;
+            return (t.d(r, { a: r }), r);
         }),
         (t.d = (e, r) => {
             for (var o in r) t.o(r, o) && !t.o(e, o) && Object.defineProperty(e, o, { enumerable: !0, get: r[o] });
@@ -68,12 +68,12 @@
                         for (n in f) t.o(f, n) && (t.m[n] = f[n]);
                         if (l) var u = l(t);
                     }
-                    for (r && r(o); s < a.length; s++) (i = a[s]), t.o(e, i) && e[i] && e[i][0](), (e[i] = 0);
+                    for (r && r(o); s < a.length; s++) ((i = a[s]), t.o(e, i) && e[i] && e[i][0](), (e[i] = 0));
                     return t.O(u);
                 },
                 o = (self.webpackChunkgameface = self.webpackChunkgameface || []);
-            o.forEach(r.bind(null, 0)), (o.push = r.bind(null, o.push.bind(o)));
-        })();
+            (o.forEach(r.bind(null, 0)), (o.push = r.bind(null, o.push.bind(o))));
+        })());
     var n = t.O(void 0, [4503], () => t(9904));
     n = t.O(n);
 })();

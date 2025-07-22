@@ -4,11 +4,11 @@
         r = {
             7799: (e, r, t) => {
                 let n;
-                t(6179),
+                (t(6179),
                     (function (e) {
-                        (e.Quest = 'quest'), (e.Default = 'quest');
+                        ((e.Quest = 'quest'), (e.Default = 'quest'));
                     })(n || (n = {})),
-                    R.images.new_year.gui.maps.icons.newYear.buttons;
+                    R.images.new_year.gui.maps.icons.newYear.buttons);
             },
         },
         t = {};
@@ -16,9 +16,9 @@
         var o = t[e];
         if (void 0 !== o) return o.exports;
         var a = (t[e] = { exports: {} });
-        return r[e](a, a.exports, n), a.exports;
+        return (r[e](a, a.exports, n), a.exports);
     }
-    (n.m = r),
+    ((n.m = r),
         (e = []),
         (n.O = (r, t, o, a) => {
             if (!t) {
@@ -42,7 +42,7 @@
         }),
         (n.n = (e) => {
             var r = e && e.__esModule ? () => e.default : () => e;
-            return n.d(r, { a: r }), r;
+            return (n.d(r, { a: r }), r);
         }),
         (n.d = (e, r) => {
             for (var t in r) n.o(r, t) && !n.o(e, t) && Object.defineProperty(e, t, { enumerable: !0, get: r[t] });
@@ -69,12 +69,12 @@
                         for (o in u) n.o(u, o) && (n.m[o] = u[o]);
                         if (s) var l = s(n);
                     }
-                    for (r && r(t); f < i.length; f++) (a = i[f]), n.o(e, a) && e[a] && e[a][0](), (e[a] = 0);
+                    for (r && r(t); f < i.length; f++) ((a = i[f]), n.o(e, a) && e[a] && e[a][0](), (e[a] = 0));
                     return n.O(l);
                 },
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
-            t.forEach(r.bind(null, 0)), (t.push = r.bind(null, t.push.bind(t)));
-        })();
+            (t.forEach(r.bind(null, 0)), (t.push = r.bind(null, t.push.bind(t))));
+        })());
     var o = n.O(void 0, [4503], () => n(7799));
     o = n.O(o);
 })();

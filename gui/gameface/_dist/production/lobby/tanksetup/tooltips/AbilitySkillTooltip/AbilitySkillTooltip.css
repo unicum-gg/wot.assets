@@ -327,7 +327,8 @@
 
 .App_base_eb {
     width: 412rem;
-    background: linear-gradient(0deg, #070705, #070705),
+    background:
+        linear-gradient(0deg, #070705, #070705),
         linear-gradient(
             180deg,
             rgba(51, 51, 41, 0.08) 0%,

@@ -3860,7 +3860,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     position: absolute;
     top: -4rem;
     left: 0;
-    animation: Spinner_spin_f5 0.28s linear infinite;
+    animation: Spinner_spin_f5 5s linear infinite;
 }
 
 .Spinner_logo_bf {
@@ -3879,7 +3879,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     }
 
     100% {
-        transform: rotate(20deg);
+        transform: rotate(360deg);
     }
 }
 

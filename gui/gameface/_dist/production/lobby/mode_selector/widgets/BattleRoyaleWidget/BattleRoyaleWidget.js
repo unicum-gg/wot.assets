@@ -4,19 +4,19 @@
         e = {
             8962: (u, e, F) => {
                 var A = {};
-                F.r(A), F.d(A, { mouse: () => g, onResize: () => a });
+                (F.r(A), F.d(A, { mouse: () => g, onResize: () => a }));
                 var E = {};
-                F.r(E),
+                (F.r(E),
                     F.d(E, {
                         events: () => A,
                         getMouseGlobalPosition: () => d,
                         getSize: () => o,
                         graphicsQuality: () => m,
-                    });
+                    }));
                 var B = {};
-                F.r(B), F.d(B, { getBgUrl: () => h, getTextureUrl: () => s });
+                (F.r(B), F.d(B, { getBgUrl: () => h, getTextureUrl: () => s }));
                 var D = {};
-                F.r(D),
+                (F.r(D),
                     F.d(D, {
                         addModelObserver: () => T,
                         addPreloadTexture: () => y,
@@ -43,7 +43,7 @@
                         setInputPaddingsRem: () => L,
                         setSidePaddingsRem: () => P,
                         whenTutorialReady: () => J,
-                    });
+                    }));
                 F(6483);
                 var t = F(6179),
                     i = F.n(t);
@@ -121,10 +121,10 @@
                     );
                     return Object.assign({}, E, {
                         disable() {
-                            (u.enabled = !1), A();
+                            ((u.enabled = !1), A());
                         },
                         enable() {
-                            (u.enabled = !0), A();
+                            ((u.enabled = !0), A());
                         },
                         enableOutside() {
                             u.enabled && n(!0);
@@ -183,7 +183,7 @@
                                         A,
                                         E = {},
                                         B = Object.keys(u);
-                                    for (A = 0; A < B.length; A++) (F = B[A]), e.indexOf(F) >= 0 || (E[F] = u[F]);
+                                    for (A = 0; A < B.length; A++) ((F = B[A]), e.indexOf(F) >= 0 || (E[F] = u[F]));
                                     return E;
                                 })(e, x);
                             return void 0 !== E
@@ -348,7 +348,7 @@
                     };
                 }
                 !(function (u) {
-                    (u.extraLarge = 'extraLarge'),
+                    ((u.extraLarge = 'extraLarge'),
                         (u.large = 'large'),
                         (u.medium = 'medium'),
                         (u.small = 'small'),
@@ -362,7 +362,7 @@
                         (u.largeHeight = 'largeHeight'),
                         (u.mediumHeight = 'mediumHeight'),
                         (u.smallHeight = 'smallHeight'),
-                        (u.extraSmallHeight = 'extraSmallHeight');
+                        (u.extraSmallHeight = 'extraSmallHeight'));
                 })(X || (X = {}));
                 const uu = K.client.getSize('rem'),
                     eu = uu.width,
@@ -378,7 +378,7 @@
                                 A,
                                 E = {},
                                 B = Object.keys(u);
-                            for (A = 0; A < B.length; A++) (F = B[A]), e.indexOf(F) >= 0 || (E[F] = u[F]);
+                            for (A = 0; A < B.length; A++) ((F = B[A]), e.indexOf(F) >= 0 || (E[F] = u[F]));
                             return E;
                         })(u, Bu);
                     const A = (0, t.useContext)(Eu),
@@ -454,16 +454,16 @@
                                 A = K.view.pxToRem(e);
                             E(Object.assign({ width: F, height: A }, Y(F, A, N)));
                         }, []);
-                    tu(() => {
+                    (tu(() => {
                         engine.on('clientResized', B);
                     }),
-                        (0, t.useEffect)(() => () => engine.off('clientResized', B), [B]);
+                        (0, t.useEffect)(() => () => engine.off('clientResized', B), [B]));
                     const D = (0, t.useMemo)(() => Object.assign({}, A), [A]);
                     return i().createElement(Eu.Provider, { value: D }, u);
                 });
                 let iu;
                 !(function (u) {
-                    (u[(u.left = 0)] = 'left'), (u[(u.right = 1)] = 'right');
+                    ((u[(u.left = 0)] = 'left'), (u[(u.right = 1)] = 'right'));
                 })(iu || (iu = {}));
                 (() => {
                     const u = new RegExp(
@@ -482,23 +482,23 @@
                     );
                 })();
                 let Cu, ru;
-                !(function (u) {
-                    (u.B0 = 'b0'),
+                (!(function (u) {
+                    ((u.B0 = 'b0'),
                         (u.B1 = 'b1'),
                         (u.B2 = 'b2'),
                         (u.B3 = 'b3'),
                         (u.B4 = 'b4'),
                         (u.B5 = 'b5'),
-                        (u.B6 = 'b6');
+                        (u.B6 = 'b6'));
                 })(Cu || (Cu = {})),
                     (function (u) {
-                        (u.Small = 'small'), (u.Medium = 'medium'), (u.Big = 'big');
-                    })(ru || (ru = {}));
+                        ((u.Small = 'small'), (u.Medium = 'medium'), (u.Big = 'big'));
+                    })(ru || (ru = {})));
                 let nu;
                 !(function (u) {
-                    (u.Huge = 'huge'), (u.Big = 'big'), (u.Medium = 'medium'), (u.Small = 'small');
+                    ((u.Huge = 'huge'), (u.Big = 'big'), (u.Medium = 'medium'), (u.Small = 'small'));
                 })(nu || (nu = {}));
-                Cu.B4,
+                (Cu.B4,
                     Cu.B5,
                     Cu.B6,
                     Cu.B0,
@@ -556,7 +556,7 @@
                     nu.Huge,
                     nu.Big,
                     nu.Medium,
-                    nu.Small;
+                    nu.Small);
             },
         },
         F = {};
@@ -564,9 +564,9 @@
         var E = F[u];
         if (void 0 !== E) return E.exports;
         var B = (F[u] = { exports: {} });
-        return e[u](B, B.exports, A), B.exports;
+        return (e[u](B, B.exports, A), B.exports);
     }
-    (A.m = e),
+    ((A.m = e),
         (u = []),
         (A.O = (e, F, E, B) => {
             if (!F) {
@@ -590,7 +590,7 @@
         }),
         (A.n = (u) => {
             var e = u && u.__esModule ? () => u.default : () => u;
-            return A.d(e, { a: e }), e;
+            return (A.d(e, { a: e }), e);
         }),
         (A.d = (u, e) => {
             for (var F in e) A.o(e, F) && !A.o(u, F) && Object.defineProperty(u, F, { enumerable: !0, get: e[F] });
@@ -605,10 +605,10 @@
         })()),
         (A.o = (u, e) => Object.prototype.hasOwnProperty.call(u, e)),
         (A.r = (u) => {
-            'undefined' != typeof Symbol &&
+            ('undefined' != typeof Symbol &&
                 Symbol.toStringTag &&
                 Object.defineProperty(u, Symbol.toStringTag, { value: 'Module' }),
-                Object.defineProperty(u, '__esModule', { value: !0 });
+                Object.defineProperty(u, '__esModule', { value: !0 }));
         }),
         (A.j = 275),
         (() => {
@@ -623,12 +623,12 @@
                         for (E in t) A.o(t, E) && (A.m[E] = t[E]);
                         if (i) var r = i(A);
                     }
-                    for (e && e(F); C < D.length; C++) (B = D[C]), A.o(u, B) && u[B] && u[B][0](), (u[B] = 0);
+                    for (e && e(F); C < D.length; C++) ((B = D[C]), A.o(u, B) && u[B] && u[B][0](), (u[B] = 0));
                     return A.O(r);
                 },
                 F = (self.webpackChunkgameface = self.webpackChunkgameface || []);
-            F.forEach(e.bind(null, 0)), (F.push = e.bind(null, F.push.bind(F)));
-        })();
+            (F.forEach(e.bind(null, 0)), (F.push = e.bind(null, F.push.bind(F))));
+        })());
     var E = A.O(void 0, [705], () => A(8962));
     E = A.O(E);
 })();

@@ -537,13 +537,8 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     justify-content: center;
     align-items: center;
     background-color: #000000;
-    background-image: linear-gradient(
-            to top,
-            transparent,
-            rgba(0, 0, 0, 0.45) 15%,
-            rgba(0, 0, 0, 0.45) 30%,
-            transparent 50%
-        ),
+    background-image:
+        linear-gradient(to top, transparent, rgba(0, 0, 0, 0.45) 15%, rgba(0, 0, 0, 0.45) 30%, transparent 50%),
         radial-gradient(transparent, rgba(0, 0, 0, 0.7)), url('R.images.frontline.gui.maps.bg.info');
     background-repeat: no-repeat;
     background-position: center;

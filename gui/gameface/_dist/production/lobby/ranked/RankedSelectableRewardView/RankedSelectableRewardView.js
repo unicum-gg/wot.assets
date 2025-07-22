@@ -8,13 +8,13 @@
                 function u(e, t) {
                     for (var u in t) {
                         var n = t[u];
-                        'number' == typeof n && (n += 'px'), (e.style[u] = n);
+                        ('number' == typeof n && (n += 'px'), (e.style[u] = n));
                     }
                     return e;
                 }
                 function n(e) {
                     var t = document.createElement('div');
-                    return (t.className = e), t;
+                    return ((t.className = e), t);
                 }
                 var r =
                     'undefined' != typeof Element &&
@@ -80,13 +80,13 @@
                           }, e.settings.scrollingThreshold));
                 }
                 var A = function (e) {
-                        (this.element = e), (this.handlers = {});
+                        ((this.element = e), (this.handlers = {}));
                     },
                     _ = { isEmpty: { configurable: !0 } };
-                (A.prototype.bind = function (e, t) {
-                    void 0 === this.handlers[e] && (this.handlers[e] = []),
+                ((A.prototype.bind = function (e, t) {
+                    (void 0 === this.handlers[e] && (this.handlers[e] = []),
                         this.handlers[e].push(t),
-                        this.element.addEventListener(e, t, !1);
+                        this.element.addEventListener(e, t, !1));
                 }),
                     (A.prototype.unbind = function (e, t) {
                         var u = this;
@@ -103,38 +103,38 @@
                             return 0 === e.handlers[t].length;
                         });
                     }),
-                    Object.defineProperties(A.prototype, _);
+                    Object.defineProperties(A.prototype, _));
                 var F = function () {
                     this.eventElements = [];
                 };
                 function g(e) {
                     return parseInt(e, 10) || 0;
                 }
-                (F.prototype.eventElement = function (e) {
+                ((F.prototype.eventElement = function (e) {
                     var t = this.eventElements.filter(function (t) {
                         return t.element === e;
                     })[0];
-                    return t || ((t = new A(e)), this.eventElements.push(t)), t;
+                    return (t || ((t = new A(e)), this.eventElements.push(t)), t);
                 }),
                     (F.prototype.bind = function (e, t, u) {
                         this.eventElement(e).bind(t, u);
                     }),
                     (F.prototype.unbind = function (e, t, u) {
                         var n = this.eventElement(e);
-                        n.unbind(t, u), n.isEmpty && this.eventElements.splice(this.eventElements.indexOf(n), 1);
+                        (n.unbind(t, u), n.isEmpty && this.eventElements.splice(this.eventElements.indexOf(n), 1));
                     }),
                     (F.prototype.unbindAll = function () {
-                        this.eventElements.forEach(function (e) {
+                        (this.eventElements.forEach(function (e) {
                             return e.unbindAll();
                         }),
-                            (this.eventElements = []);
+                            (this.eventElements = []));
                     }),
                     (F.prototype.once = function (e, t, u) {
                         var n = this.eventElement(e);
                         n.bind(t, function e(r) {
-                            n.unbind(t, e), u(r);
+                            (n.unbind(t, e), u(r));
                         });
-                    });
+                    }));
                 var b = {
                     isWebKit: 'undefined' != typeof document && 'WebkitAppearance' in document.documentElement.style,
                     supportsTouch:
@@ -156,7 +156,7 @@
                 function v(e) {
                     if ('function' == typeof window.CustomEvent) return new CustomEvent(e);
                     var t = document.createEvent('CustomEvent');
-                    return t.initCustomEvent(e, !1, !1, void 0), t;
+                    return (t.initCustomEvent(e, !1, !1, void 0), t);
                 }
                 var D = function (e, t, u, n, r, o) {
                     var i;
@@ -178,7 +178,7 @@
                         void 0 === o && (o = !1);
                         var E = e.element;
                         if (!e.reach) return;
-                        (e.reach[s] = null), E[l] < 1 && (e.reach[s] = 'start');
+                        ((e.reach[s] = null), E[l] < 1 && (e.reach[s] = 'start'));
                         E[l] > e[i] - e[a] - 1 && (e.reach[s] = 'end');
                         t &&
                             !r &&
@@ -188,13 +188,13 @@
                                 : t > 0 && E.dispatchEvent(v('ps-scroll-' + d)),
                             n &&
                                 (function (e, t) {
-                                    m(e, t), h(e, t);
+                                    (m(e, t), h(e, t));
                                 })(e, s));
                         e.reach[s] && (t || o) && E.dispatchEvent(v('ps-' + s + '-reach-' + e.reach[s]));
                     })(e, u, i, n, r, o);
                 };
                 var f = function (e, t, n, r) {
-                    void 0 === t && (t = !1), void 0 === n && (n = 0), void 0 === r && (r = !1);
+                    (void 0 === t && (t = !1), void 0 === n && (n = 0), void 0 === r && (r = !1));
                     var o = e.element;
                     if (o) {
                         if (
@@ -211,7 +211,7 @@
                         var d = Math.floor(o.scrollTop),
                             E = Math.floor(o.scrollLeft) - n,
                             m = parseFloat(getComputedStyle(document.documentElement).fontSize);
-                        o.contains(e.scrollbarXRail) ||
+                        (o.contains(e.scrollbarXRail) ||
                             (a(o, s.rail('x')).forEach(function (e) {
                                 return i(e);
                             }),
@@ -277,7 +277,7 @@
                                             t.scrollbarYLeft -
                                             t.scrollbarYOuterWidth)
                                       : (i.left = t.scrollbarYLeft + e.scrollLeft);
-                                u(t.scrollbarYRail, i),
+                                (u(t.scrollbarYRail, i),
                                     u(t.scrollbarX, {
                                         left: t.scrollbarXLeft,
                                         width: t.scrollbarXWidth - t.railBorderXWidth * n,
@@ -285,7 +285,7 @@
                                     u(t.scrollbarY, {
                                         top: t.scrollbarYTop,
                                         height: t.scrollbarYHeight - t.railBorderYWidth * n,
-                                    });
+                                    }));
                             })(o, e, m),
                             e.scrollbarXButtonStart.classList.toggle('disabled', E < 1),
                             e.scrollbarXButtonEnd.classList.toggle('disabled', E + e.containerWidth >= e.contentWidth),
@@ -309,7 +309,7 @@
                             (e.lastScrollTop = d),
                             (e.lastScrollLeft = E),
                             (e.scrollTopPercent = o.scrollTop / o.scrollHeight),
-                            (e.scrollLeftPercent = o.scrollLeft / o.scrollWidth);
+                            (e.scrollLeftPercent = o.scrollLeft / o.scrollWidth));
                     }
                 };
                 function B(e, t) {
@@ -472,13 +472,13 @@
                                                 D = _ ? 0 : p;
                                             window.scrollTo(v, D);
                                         } else t[E] = p;
-                                        r && r(p), requestAnimationFrame(e);
+                                        (r && r(p), requestAnimationFrame(e));
                                     } else u && u();
                                 }
                             }
                         };
                         requestAnimationFrame(function (e) {
-                            (d = e), p(e);
+                            ((d = e), p(e));
                         });
                     },
                     y = function (e) {
@@ -569,18 +569,18 @@
                                                         ? 1
                                                         : -1;
                                                 })({ axis: t, cursorPositionOnRail: i, i: e });
-                                            y({ axis: t, cursorPositionOnRail: i, direction: a, i: e }) &&
+                                            (y({ axis: t, cursorPositionOnRail: i, direction: a, i: e }) &&
                                                 clearTimeout(r),
-                                                f(e, !1, u);
+                                                f(e, !1, u));
                                         }
                                         n.stopPropagation();
                                     }
                                 };
-                            o(),
+                            (o(),
                                 (r = setInterval(o, 100)),
                                 e.event.once(e.ownerDocument, 'mouseup', function () {
                                     clearTimeout(r);
-                                });
+                                }));
                         };
                     };
                 function R(e, t, u) {
@@ -598,10 +598,10 @@
                         F = null,
                         b = null;
                     function p(u) {
-                        (A[s] = g(_ + b * (u[o] - F))), m(e, d), f(e, !1, t), u.stopPropagation(), u.preventDefault();
+                        ((A[s] = g(_ + b * (u[o] - F))), m(e, d), f(e, !1, t), u.stopPropagation(), u.preventDefault());
                     }
                     function v() {
-                        h(e, d), e[E].classList.remove(c.clicking), e.event.unbind(e.ownerDocument, 'mousemove', p);
+                        (h(e, d), e[E].classList.remove(c.clicking), e.event.unbind(e.ownerDocument, 'mousemove', p));
                     }
                     e.event.bind(e[a], 'mousedown', function (t) {
                         1 === t.buttons &&
@@ -618,17 +618,17 @@
                 var x = 1e3,
                     k = {
                         'click-rail': function (e, t) {
-                            e.event.bind(e.scrollbarY, 'mousedown', function (e) {
+                            (e.event.bind(e.scrollbarY, 'mousedown', function (e) {
                                 return e.stopPropagation();
                             }),
                                 e.event.bind(e.scrollbarYRail, 'mousedown', T(e, 'y', 0)),
                                 e.event.bind(e.scrollbarX, 'mousedown', function (e) {
                                     return e.stopPropagation();
                                 }),
-                                e.event.bind(e.scrollbarXRail, 'mousedown', T(e, 'x', t));
+                                e.event.bind(e.scrollbarXRail, 'mousedown', T(e, 'x', t)));
                         },
                         'drag-thumb': function (e, t) {
-                            R(e, t, [
+                            (R(e, t, [
                                 'containerWidth',
                                 'contentWidth',
                                 'screenX',
@@ -649,7 +649,7 @@
                                     'scrollTop',
                                     'y',
                                     'scrollbarYRail',
-                                ]);
+                                ]));
                         },
                         keyboard: function (e, t) {
                             var u = e.element;
@@ -782,7 +782,7 @@
                                     var l = !1,
                                         c = (i * e.settings.wheelSpeed) | 0,
                                         d = (a * e.settings.wheelSpeed) | 0;
-                                    e.settings.useBothWheelAxes
+                                    (e.settings.useBothWheelAxes
                                         ? e.scrollbarYActive && !e.scrollbarXActive
                                             ? (a ? (n.scrollTop -= d) : (n.scrollTop += c), (l = !0))
                                             : e.scrollbarXActive &&
@@ -803,11 +803,11 @@
                                                     !e.settings.wheelPropagation
                                                 );
                                             })(i, a)),
-                                        l && !r.ctrlKey && (r.stopPropagation(), r.preventDefault());
+                                        l && !r.ctrlKey && (r.stopPropagation(), r.preventDefault()));
                                 }
                             }
-                            e.event.bind(n, 'wheel', r),
-                                void 0 !== window.onmousewheel && e.event.bind(n, 'mousewheel', r);
+                            (e.event.bind(n, 'wheel', r),
+                                void 0 !== window.onmousewheel && e.event.bind(n, 'mousewheel', r));
                         },
                         touch: function (e, u) {
                             if (b.supportsTouch || b.supportsIePointer) {
@@ -831,7 +831,7 @@
                                             e.event.bind(n, 'MSPointerUp', h)));
                             }
                             function l(t, r) {
-                                (n.scrollTop -= r), (n.scrollLeft -= t), f(e, !1, u);
+                                ((n.scrollTop -= r), (n.scrollLeft -= t), f(e, !1, u));
                             }
                             function c(e) {
                                 return e.targetTouches ? e.targetTouches[0] : e;
@@ -850,10 +850,10 @@
                             function E(e) {
                                 if (d(e)) {
                                     var t = c(e);
-                                    (r.pageX = t.pageX),
+                                    ((r.pageX = t.pageX),
                                         (r.pageY = t.pageY),
                                         (o = new Date().getTime()),
-                                        null !== a && clearInterval(a);
+                                        null !== a && clearInterval(a));
                                 }
                             }
                             function m(u) {
@@ -895,10 +895,10 @@
                                         })(u.target, m, h)
                                     )
                                         return;
-                                    l(m, h), (r = E);
+                                    (l(m, h), (r = E));
                                     var A = new Date().getTime(),
                                         _ = A - o;
-                                    _ > 0 && ((i.x = m / _), (i.y = h / _), (o = A)),
+                                    (_ > 0 && ((i.x = m / _), (i.y = h / _), (o = A)),
                                         (function (t, u) {
                                             var r = Math.floor(n.scrollTop),
                                                 o = n.scrollLeft,
@@ -917,7 +917,7 @@
                                             )
                                                 return !0;
                                             return !0;
-                                        })(m, h) && u.preventDefault();
+                                        })(m, h) && u.preventDefault());
                                 }
                             }
                             function h() {
@@ -946,7 +946,7 @@
                                 e.onScroll();
                             }
                             function s(n, r, o, i) {
-                                void 0 === o && (o = null),
+                                (void 0 === o && (o = null),
                                     void 0 === i && (i = !1),
                                     L({
                                         scrollableDomEle: u,
@@ -961,7 +961,7 @@
                                             startBound: t,
                                             endBound: e.contentWidth - e.containerWidth + t,
                                         },
-                                    });
+                                    }));
                             }
                             function d() {
                                 if (r) return r;
@@ -972,7 +972,7 @@
                             function A(r) {
                                 if (e.scrollbarXActive) {
                                     var l = n - r.screenX;
-                                    (u.scrollLeft += l), (n = r.screenX);
+                                    ((u.scrollLeft += l), (n = r.screenX));
                                     var s = new Date().getTime();
                                     if (((o = (l / (s - i)) * 1e3), (i = s), e.onScroll(), t > 0)) {
                                         var c = e.contentWidth - e.containerWidth + 2 * t;
@@ -980,19 +980,19 @@
                                             ? 0 === a && (a = window.setTimeout(E, 250))
                                             : 0 !== a && (window.clearTimeout(a), (a = 0));
                                     }
-                                    m(e, 'x'),
+                                    (m(e, 'x'),
                                         m(e, 'dragging', { immediately: !0 }),
                                         r.stopPropagation(),
-                                        r.preventDefault();
+                                        r.preventDefault());
                                 }
                             }
                             function _(e) {
-                                (n = e.screenX),
+                                ((n = e.screenX),
                                     (r = !0),
                                     requestAnimationFrame(function () {
                                         r = !1;
                                     }),
-                                    (i = new Date().getTime());
+                                    (i = new Date().getTime()));
                             }
                             function F(n) {
                                 var r = e.contentWidth - e.containerWidth + t;
@@ -1001,10 +1001,10 @@
                                 else {
                                     new Date().getTime() - i < 100 && s(o / 4, x, d, !0);
                                 }
-                                h(e, 'x'),
+                                (h(e, 'x'),
                                     h(e, 'dragging', { immediately: !0 }),
                                     e.scrollbarXRail.classList.remove(c.clicking),
-                                    e.event.unbind(e.ownerDocument, 'mousemove', A);
+                                    e.event.unbind(e.ownerDocument, 'mousemove', A));
                             }
                             function g() {
                                 r = !0;
@@ -1056,10 +1056,10 @@
                         }),
                         r))
                             o.settings[i] = r[i];
-                        (this.containerWidth = null),
+                        ((this.containerWidth = null),
                             (this.containerHeight = null),
                             (this.contentWidth = null),
-                            (this.contentHeight = null);
+                            (this.contentHeight = null));
                         var a,
                             d,
                             E = function () {
@@ -1068,7 +1068,7 @@
                             m = function () {
                                 return e.classList.remove(c.focus);
                             };
-                        (this.isRtl = 'rtl' === t(e).direction),
+                        ((this.isRtl = 'rtl' === t(e).direction),
                             (this.isNegativeScroll =
                                 ((d = e.scrollLeft),
                                 (e.scrollLeft = -1),
@@ -1112,7 +1112,7 @@
                             (this.scrollbarYTop = null),
                             p().then(function () {
                                 var n = t(o.scrollbarXRail);
-                                (o.scrollbarXBottom = parseInt(n.bottom, 10)),
+                                ((o.scrollbarXBottom = parseInt(n.bottom, 10)),
                                     isNaN(o.scrollbarXBottom)
                                         ? ((o.isScrollbarXUsingBottom = !1), (o.scrollbarXTop = g(n.top)))
                                         : (o.isScrollbarXUsingBottom = !0),
@@ -1121,9 +1121,9 @@
                                     (o.railXMarginWidth = g(n.marginLeft) + g(n.marginRight)),
                                     u(o.scrollbarXRail, { display: '' }),
                                     (o.railXWidth = null),
-                                    (o.railXRatio = null);
+                                    (o.railXRatio = null));
                                 var r = t(o.scrollbarYRail);
-                                (o.scrollbarYRight = parseInt(r.right, 10)),
+                                ((o.scrollbarYRight = parseInt(r.right, 10)),
                                     isNaN(o.scrollbarYRight)
                                         ? ((o.isScrollbarYUsingRight = !1), (o.scrollbarYLeft = g(r.left)))
                                         : (o.isScrollbarYUsingRight = !0),
@@ -1194,10 +1194,10 @@
                                         o.event.bind(o.element, 'wheel', function (e) {
                                             return o.onWheel(e);
                                         }),
-                                    f(o, !1, o.settings.overScrollWidth, !1);
-                            });
+                                    f(o, !1, o.settings.overScrollWidth, !1));
+                            }));
                     };
-                (M.prototype._getAnimationSettings = function (e, t, u, n) {
+                ((M.prototype._getAnimationSettings = function (e, t, u, n) {
                     var r = this,
                         o = 0;
                     return (
@@ -1210,7 +1210,7 @@
                             scrollAmount: e - o,
                             direction: t,
                             onRefUpdateCallback: function (e) {
-                                f(r, !0, r.settings.overScrollWidth, !1), u && u(e);
+                                (f(r, !0, r.settings.overScrollWidth, !1), u && u(e));
                             },
                             onAnimationCompleteCallback: function () {
                                 n && n();
@@ -1243,27 +1243,27 @@
                             u(this.scrollbarXRail, { display: 'none' }),
                             u(this.scrollbarYRail, { display: 'none' }),
                             p().then(function () {
-                                e.settings.isDisableScrollToLastPositionOnResize ||
+                                (e.settings.isDisableScrollToLastPositionOnResize ||
                                     ((e.element.scrollTop = e.element.scrollHeight * e.scrollTopPercent),
                                     (e.element.scrollLeft = e.element.scrollWidth * e.scrollLeftPercent)),
                                     f(e, !1, e.settings.overScrollWidth, !1),
                                     D(e, 'top', 0, !1, !1, !0),
                                     D(e, 'left', 0, !1, !1, !0),
                                     u(e.scrollbarXRail, { display: '' }),
-                                    u(e.scrollbarYRail, { display: '' });
+                                    u(e.scrollbarYRail, { display: '' }));
                             }));
                     }),
                     (M.prototype.setScrollLeft = function (e, t, u) {
                         L(this._getAnimationSettings(e, 'right', t, u));
                     }),
                     (M.prototype.setScrollLeftImmediately = function (e) {
-                        (this.element.scrollLeft = 0 | e), this.update();
+                        ((this.element.scrollLeft = 0 | e), this.update());
                     }),
                     (M.prototype.setScrollTop = function (e, t, u) {
                         L(this._getAnimationSettings(e, 'bottom', t, u));
                     }),
                     (M.prototype.setScrollTopImmediately = function (e) {
-                        (this.element.scrollTop = 0 | e), this.update();
+                        ((this.element.scrollTop = 0 | e), this.update());
                     }),
                     (M.prototype.onScroll = function (e) {
                         this.isAlive && f(this, !1, this.settings.overScrollWidth, !0);
@@ -1312,7 +1312,7 @@
                             })
                             .join(' ');
                     }),
-                    (e.exports = M);
+                    (e.exports = M));
             },
             926: (e) => {
                 e.exports = {
@@ -1332,15 +1332,15 @@
             },
             596: (e, t, u) => {
                 'use strict';
-                u.r(t),
+                (u.r(t),
                     u.d(t, {
                         events: () => n,
                         getMouseGlobalPosition: () => c,
                         getSize: () => s,
                         graphicsQuality: () => d,
-                    });
+                    }));
                 var n = {};
-                u.r(n), u.d(n, { mouse: () => l, onResize: () => i });
+                (u.r(n), u.d(n, { mouse: () => l, onResize: () => i }));
                 var r = u(472);
                 function o(e) {
                     viewEnv.setTrackMouseOnStage(e);
@@ -1398,10 +1398,10 @@
                     );
                     return Object.assign({}, r, {
                         disable() {
-                            (e.enabled = !1), n();
+                            ((e.enabled = !1), n());
                         },
                         enable() {
-                            (e.enabled = !0), n();
+                            ((e.enabled = !0), n());
                         },
                         enableOutside() {
                             e.enabled && o(!0);
@@ -1439,9 +1439,9 @@
                 'use strict';
                 u.d(t, { O: () => W });
                 var n = {};
-                u.r(n), u.d(n, { getBgUrl: () => a, getTextureUrl: () => i });
+                (u.r(n), u.d(n, { getBgUrl: () => a, getTextureUrl: () => i }));
                 var r = {};
-                u.r(r),
+                (u.r(r),
                     u.d(r, {
                         addModelObserver: () => v,
                         addPreloadTexture: () => g,
@@ -1468,7 +1468,7 @@
                         setInputPaddingsRem: () => b,
                         setSidePaddingsRem: () => D,
                         whenTutorialReady: () => N,
-                    });
+                    }));
                 var o = u(596);
                 function i(e, t, u = 1) {
                     return viewEnv.getChildTexturePath(e, t.width, t.height, u);
@@ -1509,7 +1509,7 @@
                                         n,
                                         r = {},
                                         o = Object.keys(e);
-                                    for (n = 0; n < o.length; n++) (u = o[n]), t.indexOf(u) >= 0 || (r[u] = e[u]);
+                                    for (n = 0; n < o.length; n++) ((u = o[n]), t.indexOf(u) >= 0 || (r[u] = e[u]));
                                     return r;
                                 })(t, d);
                             return void 0 !== r
@@ -1621,9 +1621,9 @@
             521: (e, t, u) => {
                 'use strict';
                 let n, r;
-                u.d(t, { n: () => n }),
+                (u.d(t, { n: () => n }),
                     (function (e) {
-                        (e[(e.NONE = -1)] = 'NONE'),
+                        ((e[(e.NONE = -1)] = 'NONE'),
                             (e[(e.ALT = 165)] = 'ALT'),
                             (e[(e.ENTER = 13)] = 'ENTER'),
                             (e[(e.ESCAPE = 27)] = 'ESCAPE'),
@@ -1684,10 +1684,10 @@
                             (e[(e.FORWARD_SLASH = 191)] = 'FORWARD_SLASH'),
                             (e[(e.COMMA = 188)] = 'COMMA'),
                             (e[(e.DASH = 189)] = 'DASH'),
-                            (e[(e.PERIOD = 190)] = 'PERIOD');
+                            (e[(e.PERIOD = 190)] = 'PERIOD'));
                     })(n || (n = {})),
                     (function (e) {
-                        (e.ALT = 'Alt'),
+                        ((e.ALT = 'Alt'),
                             (e.ALT_GRAPH = 'AltGraph'),
                             (e.CAPS_LOCK = 'CapsLock'),
                             (e.CONTROL = 'Control'),
@@ -1698,8 +1698,8 @@
                             (e.SCROLL_LOCK = 'ScrollLock'),
                             (e.SHIFT = 'Shift'),
                             (e.SYMBOL = 'Symbol'),
-                            (e.SYMBOL_LOCK = 'SymbolLock');
-                    })(r || (r = {}));
+                            (e.SYMBOL_LOCK = 'SymbolLock'));
+                    })(r || (r = {})));
             },
             358: (e, t, u) => {
                 'use strict';
@@ -1707,7 +1707,7 @@
                 var n = u(153);
                 class r {
                     constructor() {
-                        (this._callbacks = void 0),
+                        ((this._callbacks = void 0),
                             (this._updateHandler = void 0),
                             (this._views = void 0),
                             (this.clearViewCallbacks = (e) => {
@@ -1719,14 +1719,15 @@
                             }),
                             (this._callbacks = {}),
                             (this._views = {}),
-                            (this._updateHandler = void 0);
+                            (this._updateHandler = void 0));
                     }
                     static get instance() {
-                        return window.__dataTracker || (window.__dataTracker = new r()), window.__dataTracker;
+                        return (window.__dataTracker || (window.__dataTracker = new r()), window.__dataTracker);
                     }
                     clear() {
-                        void 0 !== this._updateHandler && (this._updateHandler.clear(), (this._updateHandler = void 0)),
-                            (this._callbacks = {});
+                        (void 0 !== this._updateHandler &&
+                            (this._updateHandler.clear(), (this._updateHandler = void 0)),
+                            (this._callbacks = {}));
                     }
                     addCallback(e, t, u = 0, r = !0) {
                         void 0 === this._updateHandler &&
@@ -1767,35 +1768,35 @@
                     _index__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(364);
                 class ViewModel {
                     constructor(path, watchingFields = []) {
-                        (this.dataTracker = void 0),
+                        ((this.dataTracker = void 0),
                             (this.modelPath = void 0),
                             (this.callbacks = void 0),
                             (this.data = void 0),
                             (this._notifyObservers = () => {
-                                (this.data = eval(this.modelPath)),
+                                ((this.data = eval(this.modelPath)),
                                     this.callbacks.forEach((e) => {
                                         e(this.data);
-                                    });
+                                    }));
                             }),
                             (this.dataTracker = new _DataTracker__WEBPACK_IMPORTED_MODULE_0__.Z()),
                             (this.modelPath = path),
                             (this.callbacks = new Set()),
                             (0, _index__WEBPACK_IMPORTED_MODULE_1__.ry)().then(() => {
-                                this._addCallback(path),
+                                (this._addCallback(path),
                                     watchingFields.forEach((e) => {
                                         this._addCallback(path + '.' + e);
                                     }),
-                                    this._notifyObservers();
-                            });
+                                    this._notifyObservers());
+                            }));
                     }
                     subscribe(e) {
-                        this.callbacks.add(e), null !== this.data && void 0 !== this.data && e(this.data);
+                        (this.callbacks.add(e), null !== this.data && void 0 !== this.data && e(this.data));
                     }
                     unsubscribe(e) {
                         this.callbacks.delete(e);
                     }
                     destroy() {
-                        this.dataTracker.clear(), this.callbacks.clear();
+                        (this.dataTracker.clear(), this.callbacks.clear());
                     }
                     _addCallback(e) {
                         this.dataTracker.addCallback(e, this._notifyObservers);
@@ -1808,7 +1809,7 @@
                 u.d(t, { Sw: () => o.Z, B0: () => l, ry: () => g, Eu: () => b });
                 class n {
                     constructor() {
-                        (this.entries = []),
+                        ((this.entries = []),
                             (this._listenMouse = !1),
                             (this.onMouseDown = (e) => {
                                 this.entries.forEach(({ container: t, callback: u }) => {
@@ -1819,19 +1820,19 @@
                                     } while (n);
                                     u();
                                 });
-                            });
+                            }));
                     }
                     static get instance() {
-                        return n.__instance || (n.__instance = new n()), n.__instance;
+                        return (n.__instance || (n.__instance = new n()), n.__instance);
                     }
                     register(e, t) {
-                        this.addMouseListener(), this.entries.push({ container: e, callback: t });
+                        (this.addMouseListener(), this.entries.push({ container: e, callback: t }));
                     }
                     unregister(e, t) {
                         const u = e,
                             n = t;
-                        (this.entries = this.entries.filter(({ container: e, callback: t }) => e !== u || t !== n)),
-                            this.removeMouseListener();
+                        ((this.entries = this.entries.filter(({ container: e, callback: t }) => e !== u || t !== n)),
+                            this.removeMouseListener());
                     }
                     addMouseListener() {
                         this._listenMouse ||
@@ -1861,14 +1862,14 @@
                     };
                 let l;
                 !(function (e) {
-                    (e[(e.UNDEFINED = 0)] = 'UNDEFINED'),
+                    ((e[(e.UNDEFINED = 0)] = 'UNDEFINED'),
                         (e[(e.TOOLTIP = 1)] = 'TOOLTIP'),
                         (e[(e.POP_OVER = 2)] = 'POP_OVER'),
                         (e[(e.CONTEXT_MENU = 4)] = 'CONTEXT_MENU'),
                         (e[(e.DROP_DOWN = 8)] = 'DROP_DOWN'),
                         (e[(e.MOVE = 16)] = 'MOVE'),
                         (e[(e.CLOSE = 32)] = 'CLOSE'),
-                        (e[(e.MINIMIZE = 64)] = 'MINIMIZE');
+                        (e[(e.MINIMIZE = 64)] = 'MINIMIZE'));
                 })(l || (l = {}));
                 const s = Object.freeze({ INTEGRAL: 0, GOLD: 1 }),
                     c = Object.freeze({ FRACTIONAL: 0, WO_ZERO_DIGITS: 1 }),
@@ -1934,7 +1935,7 @@
                                         n,
                                         r = {},
                                         o = Object.keys(e);
-                                    for (n = 0; n < o.length; n++) (u = o[n]), t.indexOf(u) >= 0 || (r[u] = e[u]);
+                                    for (n = 0; n < o.length; n++) ((u = o[n]), t.indexOf(u) >= 0 || (r[u] = e[u]));
                                     return r;
                                 })(t, A);
                             void 0 !== r
@@ -2010,7 +2011,8 @@
                         addEscapeListener: (e) => {
                             const t = (t) => D(t, e);
                             return (
-                                window.addEventListener('keydown', t), () => window.removeEventListener('keydown', t)
+                                window.addEventListener('keydown', t),
+                                () => window.removeEventListener('keydown', t)
                             );
                         },
                         closeOnEsc: (e) => {
@@ -2045,7 +2047,7 @@
                     };
                 window.ViewEnvHelper = C;
             },
-            209: (e, t, u) => {
+            57: (e, t, u) => {
                 'use strict';
                 var n = u(179),
                     r = u.n(n),
@@ -2104,26 +2106,26 @@
                 }
                 class m extends r().PureComponent {
                     constructor(...e) {
-                        super(...e),
+                        (super(...e),
                             (this.state = { hover: !1, click: !1 }),
                             (this._onMouseEnter = (e) => (t) => {
-                                e && e(t),
+                                (e && e(t),
                                     this.setState({ hover: !0 }),
-                                    this.props.soundHover && s(this.props.soundHover);
+                                    this.props.soundHover && s(this.props.soundHover));
                             }),
                             (this._onMouseLeave = (e) => (t) => {
-                                e && e(t), this.setState({ hover: !1, click: !1 });
+                                (e && e(t), this.setState({ hover: !1, click: !1 }));
                             }),
                             (this._onMouseDown = (e) => (t) => {
-                                e && e(t),
+                                (e && e(t),
                                     this.setState({ click: !0 }),
-                                    this.props.soundClick && s(this.props.soundClick);
+                                    this.props.soundClick && s(this.props.soundClick));
                             }),
                             (this._onMouseUp = (e) => (t) => {
-                                e && e(t), this.setState({ click: !1 });
+                                (e && e(t), this.setState({ click: !1 }));
                             }),
                             (this.handleFocus = () => this.setState({ focus: !0 })),
-                            (this.handleBlur = () => this.setState({ focus: !1 }));
+                            (this.handleBlur = () => this.setState({ focus: !1 })));
                     }
                     render() {
                         const e = this.props,
@@ -2146,7 +2148,7 @@
                                         n,
                                         r = {},
                                         o = Object.keys(e);
-                                    for (n = 0; n < o.length; n++) (u = o[n]), t.indexOf(u) >= 0 || (r[u] = e[u]);
+                                    for (n = 0; n < o.length; n++) ((u = o[n]), t.indexOf(u) >= 0 || (r[u] = e[u]));
                                     return r;
                                 })(e, d)),
                             F = l()(c.base, c[`base__${i}`], c[`base__${o}`], null == a ? void 0 : a.base),
@@ -2185,7 +2187,7 @@
                     });
                 }
                 !(function (e) {
-                    (e[(e.left = 0)] = 'left'), (e[(e.right = 1)] = 'right');
+                    ((e[(e.left = 0)] = 'left'), (e[(e.right = 1)] = 'right'));
                 })(h || (h = {}));
                 const _ = (e) => e.replace(/&nbsp;/g, ' ');
                 (() => {
@@ -2206,7 +2208,7 @@
                 })();
                 let F;
                 !(function (e) {
-                    (e.SHORT_DATE = 'short-date'),
+                    ((e.SHORT_DATE = 'short-date'),
                         (e.SHORT_TIME = 'short-time'),
                         (e.SHORT_DATE_TIME = 'short-date-time'),
                         (e.FULL_DATE = 'full-date'),
@@ -2218,7 +2220,7 @@
                         (e.WEEK_DAY = 'week-day'),
                         (e.WEEK_DAY_TIME = 'week-day-time'),
                         (e.YEAR = 'year'),
-                        (e.DATE_YEAR = 'date-year');
+                        (e.DATE_YEAR = 'date-year'));
                 })(F || (F = {}));
                 var g = u(364);
                 Date.now();
@@ -2275,7 +2277,7 @@
                     S = g.Sw.instance;
                 let L;
                 !(function (e) {
-                    (e.None = 'None'), (e.Shallow = 'Shallow'), (e.Deep = 'Deep');
+                    ((e.None = 'None'), (e.Shallow = 'Shallow'), (e.Deep = 'Deep'));
                 })(L || (L = {}));
                 const y = (e = 'model', t = L.Deep) => {
                     const u = (0, n.useState)(0),
@@ -2343,7 +2345,7 @@
                         function n(n) {
                             if (n.keyCode === e) {
                                 if (b.O.view.isEventHandled()) return;
-                                b.O.view.setEventHandled(), t(n), u && n.stopPropagation();
+                                (b.O.view.setEventHandled(), t(n), u && n.stopPropagation());
                             }
                         }
                     }, [t, e, u]);
@@ -2417,7 +2419,7 @@
                     };
                 }
                 !(function (e) {
-                    (e.extraLarge = 'extraLarge'),
+                    ((e.extraLarge = 'extraLarge'),
                         (e.large = 'large'),
                         (e.medium = 'medium'),
                         (e.small = 'small'),
@@ -2431,7 +2433,7 @@
                         (e.largeHeight = 'largeHeight'),
                         (e.mediumHeight = 'mediumHeight'),
                         (e.smallHeight = 'smallHeight'),
-                        (e.extraSmallHeight = 'extraSmallHeight');
+                        (e.extraSmallHeight = 'extraSmallHeight'));
                 })(N || (N = {}));
                 const I = b.O.client.getSize('rem'),
                     Y = I.width,
@@ -2447,7 +2449,7 @@
                                 n,
                                 r = {},
                                 o = Object.keys(e);
-                            for (n = 0; n < o.length; n++) (u = o[n]), t.indexOf(u) >= 0 || (r[u] = e[u]);
+                            for (n = 0; n < o.length; n++) ((u = o[n]), t.indexOf(u) >= 0 || (r[u] = e[u]));
                             return r;
                         })(e, z);
                     const r = (0, n.useContext)(G),
@@ -2519,35 +2521,35 @@
                                 n = b.O.view.pxToRem(t);
                             i(Object.assign({ width: u, height: n }, W(u, n, M)));
                         }, []);
-                    D(() => {
+                    (D(() => {
                         engine.on('clientResized', a);
                     }),
-                        (0, n.useEffect)(() => () => engine.off('clientResized', a), [a]);
+                        (0, n.useEffect)(() => () => engine.off('clientResized', a), [a]));
                     const l = (0, n.useMemo)(() => Object.assign({}, o), [o]);
                     return r().createElement(G.Provider, { value: l }, e);
                 });
                 let q, V, K;
-                !(function (e) {
-                    (e[(e.ExtraSmall = M.extraSmall.width)] = 'ExtraSmall'),
+                (!(function (e) {
+                    ((e[(e.ExtraSmall = M.extraSmall.width)] = 'ExtraSmall'),
                         (e[(e.Small = M.small.width)] = 'Small'),
                         (e[(e.Medium = M.medium.width)] = 'Medium'),
                         (e[(e.Large = M.large.width)] = 'Large'),
-                        (e[(e.ExtraLarge = M.extraLarge.width)] = 'ExtraLarge');
+                        (e[(e.ExtraLarge = M.extraLarge.width)] = 'ExtraLarge'));
                 })(q || (q = {})),
                     (function (e) {
-                        (e[(e.ExtraSmall = M.extraSmall.width)] = 'ExtraSmall'),
+                        ((e[(e.ExtraSmall = M.extraSmall.width)] = 'ExtraSmall'),
                             (e[(e.Small = M.small.width)] = 'Small'),
                             (e[(e.Medium = M.medium.width)] = 'Medium'),
                             (e[(e.Large = M.large.width)] = 'Large'),
-                            (e[(e.ExtraLarge = M.extraLarge.width)] = 'ExtraLarge');
+                            (e[(e.ExtraLarge = M.extraLarge.width)] = 'ExtraLarge'));
                     })(V || (V = {})),
                     (function (e) {
-                        (e[(e.ExtraSmall = M.extraSmall.height)] = 'ExtraSmall'),
+                        ((e[(e.ExtraSmall = M.extraSmall.height)] = 'ExtraSmall'),
                             (e[(e.Small = M.small.height)] = 'Small'),
                             (e[(e.Medium = M.medium.height)] = 'Medium'),
                             (e[(e.Large = M.large.height)] = 'Large'),
-                            (e[(e.ExtraLarge = M.extraLarge.height)] = 'ExtraLarge');
-                    })(K || (K = {}));
+                            (e[(e.ExtraLarge = M.extraLarge.height)] = 'ExtraLarge'));
+                    })(K || (K = {})));
                 const Q = () => {
                         const e = (0, n.useContext)(G),
                             t = e.width,
@@ -2565,7 +2567,7 @@
                                     case e.extraSmall:
                                         return q.ExtraSmall;
                                     default:
-                                        return console.error('Unreachable media context resolution'), q.ExtraSmall;
+                                        return (console.error('Unreachable media context resolution'), q.ExtraSmall);
                                 }
                             })(e),
                             o = ((e) => {
@@ -2581,7 +2583,7 @@
                                     case e.extraSmallWidth:
                                         return V.ExtraSmall;
                                     default:
-                                        return console.error('Unreachable media context resolution'), V.ExtraSmall;
+                                        return (console.error('Unreachable media context resolution'), V.ExtraSmall);
                                 }
                             })(e),
                             i = ((e) => {
@@ -2597,7 +2599,7 @@
                                     case e.extraSmallHeight:
                                         return K.ExtraSmall;
                                     default:
-                                        return console.error('Unreachable media context resolution'), K.ExtraSmall;
+                                        return (console.error('Unreachable media context resolution'), K.ExtraSmall);
                                 }
                             })(e);
                         return { mediaSize: r, mediaWidth: o, mediaHeight: i, remScreenWidth: t, remScreenHeight: u };
@@ -2647,7 +2649,7 @@
                                     n,
                                     r = {},
                                     o = Object.keys(e);
-                                for (n = 0; n < o.length; n++) (u = o[n]), t.indexOf(u) >= 0 || (r[u] = e[u]);
+                                for (n = 0; n < o.length; n++) ((u = o[n]), t.indexOf(u) >= 0 || (r[u] = e[u]));
                                 return r;
                             })(e, Z);
                         const o = Q(),
@@ -2665,7 +2667,7 @@
                                     n,
                                     r = {},
                                     o = Object.keys(e);
-                                for (n = 0; n < o.length; n++) (u = o[n]), t.indexOf(u) >= 0 || (r[u] = e[u]);
+                                for (n = 0; n < o.length; n++) ((u = o[n]), t.indexOf(u) >= 0 || (r[u] = e[u]));
                                 return r;
                             })(e, re);
                         return r().createElement(j, null, r().createElement(ne, u, t));
@@ -2695,17 +2697,17 @@
                         content: 'CButton_content_cc',
                     };
                 let le, se;
-                !(function (e) {
-                    (e.main = 'main'),
+                (!(function (e) {
+                    ((e.main = 'main'),
                         (e.primary = 'primary'),
                         (e.primaryGreen = 'primaryGreen'),
                         (e.primaryRed = 'primaryRed'),
                         (e.secondary = 'secondary'),
-                        (e.ghost = 'ghost');
+                        (e.ghost = 'ghost'));
                 })(le || (le = {})),
                     (function (e) {
-                        (e.extraSmall = 'extraSmall'), (e.small = 'small'), (e.medium = 'medium');
-                    })(se || (se = {}));
+                        ((e.extraSmall = 'extraSmall'), (e.small = 'small'), (e.medium = 'medium'));
+                    })(se || (se = {})));
                 const ce = ({
                     children: e,
                     size: t,
@@ -2913,7 +2915,7 @@
                                     n,
                                     r = {},
                                     o = Object.keys(e);
-                                for (n = 0; n < o.length; n++) (u = o[n]), t.indexOf(u) >= 0 || (r[u] = e[u]);
+                                for (n = 0; n < o.length; n++) ((u = o[n]), t.indexOf(u) >= 0 || (r[u] = e[u]));
                                 return r;
                             })(e, Ee);
                         const f = (0, n.useRef)({ timeoutId: 0, isVisible: !1, prevTarget: null, hideTimerId: null }),
@@ -2927,10 +2929,10 @@
                             w = (0, n.useCallback)(() => {
                                 if (f.current.isVisible || f.current.timeoutId) {
                                     const e = f.current.timeoutId;
-                                    e > 0 && (clearTimeout(e), (f.current.timeoutId = 0)),
+                                    (e > 0 && (clearTimeout(e), (f.current.timeoutId = 0)),
                                         he(u, h, { on: !1 }, B),
                                         f.current.isVisible && v && v(),
-                                        (f.current.isVisible = !1);
+                                        (f.current.isVisible = !1));
                                 }
                             }, [u, h, B, v]),
                             S = (0, n.useCallback)((e) => {
@@ -2941,13 +2943,13 @@
                                         t && !t.isSameNode(f.current.prevTarget) && w();
                                     }, 200)));
                             }, []);
-                        (0, n.useEffect)(() => {
+                        ((0, n.useEffect)(() => {
                             const e = f.current.hideTimerId;
                             return (
                                 document.addEventListener('wheel', S, { capture: !0 }),
                                 () => {
-                                    document.removeEventListener('wheel', S, { capture: !0 }),
-                                        e && window.clearTimeout(e);
+                                    (document.removeEventListener('wheel', S, { capture: !0 }),
+                                        e && window.clearTimeout(e));
                                 }
                             );
                         }, []),
@@ -2958,11 +2960,11 @@
                                 () => (
                                     window.addEventListener('mouseleave', w),
                                     () => {
-                                        window.removeEventListener('mouseleave', w), w();
+                                        (window.removeEventListener('mouseleave', w), w());
                                     }
                                 ),
                                 [w],
-                            );
+                            ));
                         return _
                             ? (0, n.cloneElement)(
                                   t,
@@ -2978,13 +2980,13 @@
                                                       L && L(e));
                                               }),
                                           onMouseLeave: ((e) => (t) => {
-                                              w(), null == i || i(t), null == e || e(t);
+                                              (w(), null == i || i(t), null == e || e(t));
                                           })(t.props.onMouseLeave),
                                           onClick: ((e) => (t) => {
-                                              !1 === E && w(), null == l || l(t), null == e || e(t);
+                                              (!1 === E && w(), null == l || l(t), null == e || e(t));
                                           })(t.props.onClick),
                                           onMouseDown: ((e) => (t) => {
-                                              !1 === E && w(), null == a || a(t), null == e || e(t);
+                                              (!1 === E && w(), null == a || a(t), null == e || e(t));
                                           })(t.props.onMouseDown),
                                       },
                                       D,
@@ -3053,11 +3055,11 @@
                         return (
                             (u = requestAnimationFrame(() => {
                                 u = requestAnimationFrame(() => {
-                                    (u = null), (t = e());
+                                    ((u = null), (t = e()));
                                 });
                             })),
                             () => {
-                                'function' == typeof t && t(), null !== u && cancelAnimationFrame(u);
+                                ('function' == typeof t && t(), null !== u && cancelAnimationFrame(u));
                             }
                         );
                     },
@@ -3179,7 +3181,7 @@
                             }, [h]),
                             U = (0, n.useCallback)(
                                 (e) => {
-                                    'function' == typeof t ? t(e) : null !== t && (t.current = e), T(e);
+                                    ('function' == typeof t ? t(e) : null !== t && (t.current = e), T(e));
                                 },
                                 [t],
                             ),
@@ -3206,20 +3208,20 @@
                                     y.addEventListener('over-scroll-ending', X),
                                     B(!0),
                                     () => {
-                                        window.removeEventListener('resize', G),
+                                        (window.removeEventListener('resize', G),
                                             document.removeEventListener('mousemove', z),
                                             y &&
                                                 (y.removeEventListener('ps-scroll-x', W),
                                                 y.removeEventListener('ps-scroll-y', I),
                                                 y.removeEventListener('over-scroll-beginning', Y),
-                                                y.removeEventListener('over-scroll-ending', X));
+                                                y.removeEventListener('over-scroll-ending', X)));
                                     }
                                 );
                         }, [z, W, Y, X, G, y, w, I]);
                         const $ = (0, n.useRef)(y || null);
                         $.current = y || null;
                         const j = Se($);
-                        (0, n.useEffect)(
+                        ((0, n.useEffect)(
                             () => (
                                 !w && y && j && S(new (ye())(y, Object.assign({}, s))),
                                 () => {
@@ -3255,7 +3257,7 @@
                                     (g.setScrollTopImmediately = N),
                                     (g.updateScrollArea = M),
                                     (g.getScrollbar = k));
-                            }, [g, P, O, H, N, M, k]);
+                            }, [g, P, O, H, N, M, k]));
                         const q = l()(Te, { [Re]: A, [Me]: !f, [xe]: _, [ke]: F }, p);
                         return r().createElement('div', { className: q, ref: U }, b);
                     }),
@@ -3282,7 +3284,7 @@
                                     n,
                                     r = {},
                                     o = Object.keys(e);
-                                for (n = 0; n < o.length; n++) (u = o[n]), t.indexOf(u) >= 0 || (r[u] = e[u]);
+                                for (n = 0; n < o.length; n++) ((u = o[n]), t.indexOf(u) >= 0 || (r[u] = e[u]));
                                 return r;
                             })(e, Oe);
                         return r().createElement(
@@ -3329,7 +3331,7 @@
                                     n,
                                     r = {},
                                     o = Object.keys(e);
-                                for (n = 0; n < o.length; n++) (u = o[n]), t.indexOf(u) >= 0 || (r[u] = e[u]);
+                                for (n = 0; n < o.length; n++) ((u = o[n]), t.indexOf(u) >= 0 || (r[u] = e[u]));
                                 return r;
                             })(e, We);
                         const c = (0, n.useMemo)(() => {
@@ -3357,8 +3359,8 @@
                     Ge = 'state_limited',
                     ze = 'state_received';
                 let $e, je, qe, Ve, Ke, Qe, Ze;
-                !(function (e) {
-                    (e.Items = 'items'),
+                (!(function (e) {
+                    ((e.Items = 'items'),
                         (e.Equipment = 'equipment'),
                         (e.Xp = 'xp'),
                         (e.XpFactor = 'xpFactor'),
@@ -3377,7 +3379,6 @@
                         (e.TankmenXpFactor = 'tankmenXPFactor'),
                         (e.FreeXpFactor = 'freeXPFactor'),
                         (e.BattleToken = 'battleToken'),
-                        (e.HBVehicleUnlock = 'hbUnlockVehicles'),
                         (e.PremiumUniversal = 'premium_universal'),
                         (e.Gold = 'gold'),
                         (e.Credits = 'credits'),
@@ -3413,11 +3414,10 @@
                         (e.VehicleSelect = 'vehicleSelect'),
                         (e.StyleProgress = 'styleProgress'),
                         (e.ParagonsUnlocks = 'paragonsUnlocks'),
-                        (e.HistoricalBattleDiscount25 = 'historical_battles_main_discount'),
-                        (e.LootBoxToken = 'lootBoxToken');
+                        (e.LootBoxToken = 'lootBoxToken'));
                 })($e || ($e = {})),
                     (function (e) {
-                        (e.Gold = 'gold'),
+                        ((e.Gold = 'gold'),
                             (e.Credits = 'credits'),
                             (e.Crystal = 'crystal'),
                             (e.Premium = 'premium'),
@@ -3453,10 +3453,10 @@
                             (e.RankedBonusBattles = 'rankedBonusBattles'),
                             (e.BattlePassPoints = 'battlePassPoints'),
                             (e.BattleBadge = 'dossier_badge'),
-                            (e.BattleAchievement = 'dossier_achievement');
+                            (e.BattleAchievement = 'dossier_achievement'));
                     })(je || (je = {})),
                     (function (e) {
-                        (e.Big = 'big'),
+                        ((e.Big = 'big'),
                             (e.Small = 'small'),
                             (e.Mini = 'mini'),
                             (e.S600x450 = 's600x450'),
@@ -3466,17 +3466,17 @@
                             (e.S180x135 = 's180x135'),
                             (e.S128x100 = 's128x100'),
                             (e.S80x80 = 's80x80'),
-                            (e.S48x48 = 's48x48');
+                            (e.S48x48 = 's48x48'));
                     })(qe || (qe = {})),
                     (function (e) {
-                        (e.MULTI = 'multi'),
+                        ((e.MULTI = 'multi'),
                             (e.CURRENCY = 'currency'),
                             (e.PREMIUM_PLUS = 'premium_plus'),
                             (e.NUMBER = 'number'),
-                            (e.STRING = 'string');
+                            (e.STRING = 'string'));
                     })(Ve || (Ve = {})),
                     (function (e) {
-                        (e.BATTLE_BOOSTER = 'battleBooster'),
+                        ((e.BATTLE_BOOSTER = 'battleBooster'),
                             (e.BATTLE_BOOSTER_REPLACE = 'battleBoosterReplace'),
                             (e.BUILT_IN_EQUIPMENT = 'builtInEquipment'),
                             (e.EQUIPMENT_PLUS = 'equipmentPlus'),
@@ -3488,13 +3488,13 @@
                             (e.PROGRESSION_STYLE_UPGRADED_1 = 'progressionStyleUpgraded_1'),
                             (e.PROGRESSION_STYLE_UPGRADED_2 = 'progressionStyleUpgraded_2'),
                             (e.PROGRESSION_STYLE_UPGRADED_3 = 'progressionStyleUpgraded_3'),
-                            (e.PROGRESSION_STYLE_UPGRADED_4 = 'progressionStyleUpgraded_4');
+                            (e.PROGRESSION_STYLE_UPGRADED_4 = 'progressionStyleUpgraded_4'));
                     })(Ke || (Ke = {})),
                     (function (e) {
                         e.BATTLE_BOOSTER = 'battleBooster';
                     })(Qe || (Qe = {})),
                     (function (e) {
-                        (e.BATTLE_BOOSTER = 'battleBooster'),
+                        ((e.BATTLE_BOOSTER = 'battleBooster'),
                             (e.BATTLE_BOOSTER_REPLACE = 'battleBoosterReplace'),
                             (e.BUILT_IN_EQUIPMENT = 'builtInEquipment'),
                             (e.EQUIPMENT_PLUS = 'equipmentPlus'),
@@ -3506,8 +3506,8 @@
                             (e.PROGRESSION_STYLE_UPGRADED_1 = 'progressionStyleUpgraded_1'),
                             (e.PROGRESSION_STYLE_UPGRADED_2 = 'progressionStyleUpgraded_2'),
                             (e.PROGRESSION_STYLE_UPGRADED_3 = 'progressionStyleUpgraded_3'),
-                            (e.PROGRESSION_STYLE_UPGRADED_4 = 'progressionStyleUpgraded_4');
-                    })(Ze || (Ze = {}));
+                            (e.PROGRESSION_STYLE_UPGRADED_4 = 'progressionStyleUpgraded_4'));
+                    })(Ze || (Ze = {})));
                 const Je = (e, t = qe.Small) => `R.images.gui.maps.icons.quests.bonuses.${t}.${e}_gift`,
                     et = (e, t = 's180x135', u = 'R.images.gui.maps.icons.selectableReward.reward') => `${u}.${t}.${e}`,
                     tt = 'Reward_base_ae',
@@ -3539,12 +3539,12 @@
                     };
                 let ft;
                 !(function (e) {
-                    (e.Plus = 'plus'), (e.Minus = 'minus');
+                    ((e.Plus = 'plus'), (e.Minus = 'minus'));
                 })(ft || (ft = {}));
                 const Bt = ({ type: e = ft.Plus, isEnabled: t = !0, onClick: u }) => {
                     const o = (0, n.useCallback)(
                             (e) => {
-                                e.stopPropagation(), t && u(e);
+                                (e.stopPropagation(), t && u(e));
                             },
                             [t, u],
                         ),
@@ -3553,7 +3553,7 @@
                 };
                 var Ct;
                 !(function (e) {
-                    (e.None = ''), (e.Trophy = 'trophy'), (e.Deluxe = 'delux');
+                    ((e.None = ''), (e.Trophy = 'trophy'), (e.Deluxe = 'delux'));
                 })(Ct || (Ct = {}));
                 const wt = R.strings.selectable_reward.reward;
                 const St = ({ type: e, count: t, state: u, storageCount: o, packSize: i, onAdd: a, onReduce: c }) => {
@@ -3574,7 +3574,7 @@
                                 u === Ue && (s('bp_click_plus'), a(e));
                             }, [u, e, a]),
                             b = (0, n.useCallback)(() => {
-                                s('bp_click_minus'), c(e);
+                                (s('bp_click_minus'), c(e));
                             }, [e, c]),
                             p = (0, n.useCallback)(() => {
                                 s('bp_highlight');
@@ -3727,7 +3727,7 @@
                                     null == s.current.updateScrollArea || s.current.updateScrollArea(),
                                     Ce(
                                         Ce(() => {
-                                            b(!1), null == s.current.updateScrollArea || s.current.updateScrollArea();
+                                            (b(!1), null == s.current.updateScrollArea || s.current.updateScrollArea());
                                         }),
                                     )
                                 ),
@@ -3738,9 +3738,9 @@
                                     var e,
                                         t =
                                             ((e = function* () {
-                                                yield (0, g.Eu)(),
+                                                (yield (0, g.Eu)(),
                                                     yield (0, g.Eu)(),
-                                                    null == s.current.updateScrollArea || s.current.updateScrollArea();
+                                                    null == s.current.updateScrollArea || s.current.updateScrollArea());
                                             }),
                                             function () {
                                                 var t = this,
@@ -3823,7 +3823,7 @@
                             b = (0, n.useMemo)(() => A(Kt.counter(), { count: t, limit: u }), [t, u]),
                             p = (0, n.useMemo)(() => ({ type: e }), [e]),
                             v = (0, n.useCallback)(() => {
-                                s('bp_click'), i(e);
+                                (s('bp_click'), i(e));
                             }, [i, e]),
                             D = (0, n.useCallback)(() => {
                                 s('bp_highlight');
@@ -3883,7 +3883,7 @@
                 }
                 let lu;
                 !(function (e) {
-                    (e[(e.None = 0)] = 'None'), (e[(e.Accepting = 1)] = 'Accepting');
+                    ((e[(e.None = 0)] = 'None'), (e[(e.Accepting = 1)] = 'Accepting'));
                 })(lu || (lu = {}));
                 const su = (0, n.createContext)(lu.None),
                     cu = ({ title: e, subTitle: t, isLargeWindowed: u }) => {
@@ -3906,7 +3906,7 @@
                                         u = e();
                                     }, t);
                                     return () => {
-                                        'function' == typeof u && u(), clearTimeout(n);
+                                        ('function' == typeof u && u(), clearTimeout(n));
                                     };
                                 })(h, 600);
                         });
@@ -3991,7 +3991,7 @@
                     bu = 'SelectableRewardBase_base_68';
                 let pu;
                 !(function (e) {
-                    (e.Normal = 'normal'), (e.Error = 'error');
+                    ((e.Normal = 'normal'), (e.Error = 'error'));
                 })(pu || (pu = {}));
                 const vu = ({ modelPath: e = 'model', title: t, subTitle: u }) => {
                         const o = y(e).tabs.length ? pu.Normal : pu.Error,
@@ -4077,9 +4077,9 @@
         var t = __webpack_module_cache__[e];
         if (void 0 !== t) return t.exports;
         var u = (__webpack_module_cache__[e] = { exports: {} });
-        return __webpack_modules__[e](u, u.exports, __webpack_require__), u.exports;
+        return (__webpack_modules__[e](u, u.exports, __webpack_require__), u.exports);
     }
-    (__webpack_require__.m = __webpack_modules__),
+    ((__webpack_require__.m = __webpack_modules__),
         (deferred = []),
         (__webpack_require__.O = (e, t, u, n) => {
             if (!t) {
@@ -4104,7 +4104,7 @@
         }),
         (__webpack_require__.n = (e) => {
             var t = e && e.__esModule ? () => e.default : () => e;
-            return __webpack_require__.d(t, { a: t }), t;
+            return (__webpack_require__.d(t, { a: t }), t);
         }),
         (__webpack_require__.d = (e, t) => {
             for (var u in t)
@@ -4122,10 +4122,10 @@
         })()),
         (__webpack_require__.o = (e, t) => Object.prototype.hasOwnProperty.call(e, t)),
         (__webpack_require__.r = (e) => {
-            'undefined' != typeof Symbol &&
+            ('undefined' != typeof Symbol &&
                 Symbol.toStringTag &&
                 Object.defineProperty(e, Symbol.toStringTag, { value: 'Module' }),
-                Object.defineProperty(e, '__esModule', { value: !0 });
+                Object.defineProperty(e, '__esModule', { value: !0 }));
         }),
         (__webpack_require__.j = 44),
         (() => {
@@ -4141,12 +4141,12 @@
                         if (a) var s = a(__webpack_require__);
                     }
                     for (t && t(u); l < o.length; l++)
-                        (r = o[l]), __webpack_require__.o(e, r) && e[r] && e[r][0](), (e[r] = 0);
+                        ((r = o[l]), __webpack_require__.o(e, r) && e[r] && e[r][0](), (e[r] = 0));
                     return __webpack_require__.O(s);
                 },
                 u = (self.webpackChunkgameface = self.webpackChunkgameface || []);
-            u.forEach(t.bind(null, 0)), (u.push = t.bind(null, u.push.bind(u)));
-        })();
-    var __webpack_exports__ = __webpack_require__.O(void 0, [976], () => __webpack_require__(209));
+            (u.forEach(t.bind(null, 0)), (u.push = t.bind(null, u.push.bind(u))));
+        })());
+    var __webpack_exports__ = __webpack_require__.O(void 0, [976], () => __webpack_require__(57));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

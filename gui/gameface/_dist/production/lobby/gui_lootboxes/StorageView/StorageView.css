@@ -2145,6 +2145,159 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     transform: translate(-50%, -50%);
 }
 
+.CurrencyKey_base_53 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 22rem;
+}
+
+.CurrencyKey_icon_85 {
+    width: 16rem;
+    height: 16rem;
+    margin-right: 6rem;
+    background: no-repeat center / contain;
+}
+
+.CurrencyKey_value_29 {
+    color: #ffdd99;
+    font-size: 12rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+.CurrencyKeyList_base_2d {
+    position: relative;
+}
+
+.CurrencyKeyList_base_2d::before {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(270deg, #21232d 0%, rgba(54, 59, 78, 0) 100%);
+    opacity: 0.3;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.CurrencyKeyList_base_2d::after {
+    width: 100%;
+    height: 1rem;
+    background: linear-gradient(270deg, #fff 0%, rgba(255, 255, 255, 0) 100%);
+    opacity: 0.1;
+    content: '';
+    position: absolute;
+    bottom: -1rem;
+    left: 0;
+}
+
+.CurrencyKeyList_wrapper_1e {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    min-width: 260rem;
+    height: 33rem;
+    margin-right: 16rem;
+}
+
+.mediaMedium .CurrencyKeyList_wrapper_1e {
+    height: 36rem;
+    margin-top: 9rem;
+}
+
+.TriggerHint_base_e5 {
+    position: absolute;
+    top: 0;
+    right: 1rem;
+    transition:
+        opacity 0.25s ease-in-out,
+        visibility 0.25s ease-in-out;
+}
+
+.TriggerHint_base__hidden_4e {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.TriggerHint_selection_13 {
+    width: 100%;
+    height: 33rem;
+    border: 1rem #fd9 solid;
+    filter: drop-shadow(0 0 4rem rgba(255, 127, 0, 0.25)) drop-shadow(0 0 8rem #ff2a00) drop-shadow(0 0 15rem #e52);
+}
+
+.mediaMedium .TriggerHint_selection_13 {
+    height: 45rem;
+}
+
+.TriggerHint_info_36 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 105rem;
+    background: linear-gradient(
+        0deg,
+        rgba(52, 1, 1, 0) 0%,
+        rgba(52, 1, 1, 0.6) 30.59%,
+        rgba(52, 1, 1, 0.65) 49.25%,
+        rgba(52, 1, 1, 0.6) 67.49%,
+        rgba(52, 1, 1, 0) 99.55%
+    );
+    text-align: center;
+    position: relative;
+    pointer-events: none;
+}
+
+.TriggerHint_text_59 {
+    color: #fd9;
+    font-size: 12rem;
+    font-weight: 400;
+    line-height: 1.3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20rem;
+    filter: drop-shadow(0 0 4rem rgba(255, 127, 0, 0.25)) drop-shadow(0 0 8rem #ff2a00) drop-shadow(0 0 15rem #e52);
+    overflow-wrap: break-word;
+}
+
+.TriggerHint_arrowHolder_c0 {
+    width: 129rem;
+    height: 124rem;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.TriggerHint_arrow_6c {
+    width: 100%;
+    height: 100%;
+    background: url('R.images.gui_lootboxes.gui.maps.storage.currencyKey.trigger_hint') no-repeat center / contain;
+    animation: TriggerHint_fadeUp_f3 infinite ease-in-out 1.4s;
+}
+
+@keyframes TriggerHint_fadeUp_f3 {
+    0% {
+        opacity: 0;
+        transform: translateY(0);
+    }
+
+    70%,
+    90% {
+        opacity: 1;
+        transform: translateY(-35rem);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-35rem);
+    }
+}
+
 .NoBoxes_base_a6 {
     display: flex;
     flex-direction: column;
@@ -2325,7 +2478,8 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .App_vignette_b8 {
     width: 100%;
     height: 100%;
-    background: radial-gradient(
+    background:
+        radial-gradient(
             34.5% 46.5% at 4% 48%,
             rgba(28, 29, 31, 0.48) 0%,
             rgba(28, 29, 31, 0.56) 68.55%,
@@ -2357,7 +2511,8 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     z-index: 3;
 }
 .mediaMedium .App_vignette_b8 {
-    background: radial-gradient(
+    background:
+        radial-gradient(
             ellipse 29.5% 45.5% at 4% 51%,
             rgba(28, 29, 31, 0.48) 0%,
             rgba(28, 29, 31, 0.56) 68.55%,
@@ -2529,4 +2684,10 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .mediaMedium .App_buyButtonWrapper_6b {
     height: 150rem;
     bottom: 20rem;
+}
+.App_currencyWrapper_bb {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 100;
 }

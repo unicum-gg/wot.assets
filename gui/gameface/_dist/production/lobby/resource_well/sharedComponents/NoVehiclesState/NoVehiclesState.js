@@ -146,18 +146,18 @@
             },
             2106: (e, t, a) => {
                 let s, n;
-                a.d(t, { L: () => s }),
+                (a.d(t, { L: () => s }),
                     (function (e) {
-                        (e.main = 'main'),
+                        ((e.main = 'main'),
                             (e.primary = 'primary'),
                             (e.primaryGreen = 'primaryGreen'),
                             (e.primaryRed = 'primaryRed'),
                             (e.secondary = 'secondary'),
-                            (e.ghost = 'ghost');
+                            (e.ghost = 'ghost'));
                     })(s || (s = {})),
                     (function (e) {
-                        (e.extraSmall = 'extraSmall'), (e.small = 'small'), (e.medium = 'medium');
-                    })(n || (n = {}));
+                        ((e.extraSmall = 'extraSmall'), (e.small = 'small'), (e.medium = 'medium'));
+                    })(n || (n = {})));
             },
             7727: (e, t, a) => {
                 function s(e) {
@@ -166,7 +166,7 @@
                 a.d(t, { G: () => s });
             },
             6324: (e, t, a) => {
-                a(3457), a(6179);
+                (a(3457), a(6179));
                 R.strings.resource_well.mainView.footer;
             },
             6880: (e, t, a) => {
@@ -201,9 +201,9 @@
         var n = a[e];
         if (void 0 !== n) return n.exports;
         var r = (a[e] = { exports: {} });
-        return t[e](r, r.exports, s), r.exports;
+        return (t[e](r, r.exports, s), r.exports);
     }
-    (s.m = t),
+    ((s.m = t),
         (e = []),
         (s.O = (t, a, n, r) => {
             if (!a) {
@@ -227,7 +227,7 @@
         }),
         (s.n = (e) => {
             var t = e && e.__esModule ? () => e.default : () => e;
-            return s.d(t, { a: t }), t;
+            return (s.d(t, { a: t }), t);
         }),
         (s.d = (e, t) => {
             for (var a in t) s.o(t, a) && !s.o(e, a) && Object.defineProperty(e, a, { enumerable: !0, get: t[a] });
@@ -254,12 +254,12 @@
                         for (n in l) s.o(l, n) && (s.m[n] = l[n]);
                         if (_) var u = _(s);
                     }
-                    for (t && t(a); i < o.length; i++) (r = o[i]), s.o(e, r) && e[r] && e[r][0](), (e[r] = 0);
+                    for (t && t(a); i < o.length; i++) ((r = o[i]), s.o(e, r) && e[r] && e[r][0](), (e[r] = 0));
                     return s.O(u);
                 },
                 a = (self.webpackChunkgameface = self.webpackChunkgameface || []);
-            a.forEach(t.bind(null, 0)), (a.push = t.bind(null, a.push.bind(a)));
-        })();
+            (a.forEach(t.bind(null, 0)), (a.push = t.bind(null, a.push.bind(a))));
+        })());
     var n = s.O(void 0, [52], () => s(6324));
     n = s.O(n);
 })();

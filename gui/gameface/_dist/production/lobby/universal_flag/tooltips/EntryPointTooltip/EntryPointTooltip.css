@@ -5,7 +5,8 @@
     width: 380rem;
     border: 1rem solid #f2f2e61a;
     border-radius: 2rem;
-    background: linear-gradient(
+    background:
+        linear-gradient(
             180deg,
             rgba(51, 51, 41, 0.3) 0%,
             rgba(51, 51, 41, 0) 16%,
@@ -75,6 +76,8 @@
     margin-left: -12rem;
     margin-top: 2rem;
     margin-right: -6rem;
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
 .Header_timerIcon__clock_7b {

@@ -876,13 +876,15 @@
 }
 
 .Progression_limit_d9::before {
-    background: linear-gradient(0deg, rgba(239, 189, 112, 0.2) 0%, rgba(239, 189, 112, 0) 100%),
+    background:
+        linear-gradient(0deg, rgba(239, 189, 112, 0.2) 0%, rgba(239, 189, 112, 0) 100%),
         linear-gradient(0deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%);
     top: -25rem;
 }
 
 .Progression_limit_d9::after {
-    background: linear-gradient(180deg, rgba(239, 189, 112, 0.2) 0%, rgba(239, 189, 112, 0) 100%),
+    background:
+        linear-gradient(180deg, rgba(239, 189, 112, 0.2) 0%, rgba(239, 189, 112, 0) 100%),
         linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%);
     bottom: -45rem;
 }
