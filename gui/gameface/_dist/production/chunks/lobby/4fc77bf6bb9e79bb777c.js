@@ -3,7 +3,7 @@
     [248],
     {
         1509: (e, t, a) => {
-            a.r(t), a.d(t, { default: () => ze });
+            (a.r(t), a.d(t, { default: () => ze }));
             var r = a(6179),
                 n = a.n(r),
                 o = a(8958),
@@ -59,7 +59,7 @@
                         case V:
                             return `animation_${t}_${a}_${V}`;
                         default:
-                            return console.warn(`Unsupported type: ${e}`), '';
+                            return (console.warn(`Unsupported type: ${e}`), '');
                     }
                 },
                 K = (function () {
@@ -149,7 +149,7 @@
                                     const i = () => {
                                         n !== e.length - 1 || p(r);
                                     };
-                                    m.start(
+                                    (m.start(
                                         Object.assign(
                                             {},
                                             ((e, t) => {
@@ -271,7 +271,7 @@
                                         ),
                                     ),
                                         (a.currentAnimationInfo = o),
-                                        (a.currentIndex = r);
+                                        (a.currentIndex = r));
                                 }
                             });
                         },
@@ -285,7 +285,7 @@
                     return {
                         get: m,
                         init: (e, d, u, p) => {
-                            (a = d), (t = e.length - 1);
+                            ((a = d), (t = e.length - 1));
                             let g = 0;
                             m().animations = h.u4(
                                 e,
@@ -293,7 +293,7 @@
                                     const d = L(O, m);
                                     if (((e[d] = { springController: r(d, g) }), g++, m < t)) {
                                         const t = L(P, m);
-                                        (e[t] = { springController: n(t, g) }), g++;
+                                        ((e[t] = { springController: n(t, g) }), g++);
                                     }
                                     return (
                                         h.UI(a, (t, a) => {
@@ -301,18 +301,19 @@
                                                 n = (0, B.C)(u, t.specialAwardName);
                                             if (r) {
                                                 const r = L($, m, a);
-                                                (e[r] = { springController: o(r, g, n, () => p(t, n ? '' : r)) }), g++;
+                                                ((e[r] = { springController: o(r, g, n, () => p(t, n ? '' : r)) }),
+                                                    g++);
                                                 const s = L(T, m, a);
-                                                (e[s] = { springController: i(s, g, n) }), g++;
+                                                ((e[s] = { springController: i(s, g, n) }), g++);
                                             } else {
                                                 const t = L(k, m, a);
-                                                (e[t] = { springController: s(t, g) }), g++;
+                                                ((e[t] = { springController: s(t, g) }), g++);
                                             }
                                             if (t.isCompensation) {
                                                 const t = L(V, m, a);
-                                                (e[t] = { springController: l(t, g) }), g++;
+                                                ((e[t] = { springController: l(t, g) }), g++);
                                                 const r = L(S, m, a);
-                                                (e[r] = { springController: c(r, g) }), g++;
+                                                ((e[r] = { springController: c(r, g) }), g++);
                                             }
                                         }),
                                         e
@@ -342,7 +343,7 @@
                             p(t);
                         },
                         skip: () => {
-                            m().order.forEach((e) => {
+                            (m().order.forEach((e) => {
                                 const t = y(e.name);
                                 null == t ||
                                     t.set(
@@ -360,12 +361,12 @@
                                                 case V:
                                                     return G;
                                                 default:
-                                                    return console.warn(`animation skip: Unsupported type: ${e}`), {};
+                                                    return (console.warn(`animation skip: Unsupported type: ${e}`), {});
                                             }
                                         })(e.type),
                                     );
                             }),
-                                u();
+                                u());
                         },
                         getSpringControllerByName: y,
                     };
@@ -642,7 +643,7 @@
                         x = h[0],
                         C = h[1],
                         N = (0, r.useRef)(null);
-                    (0, me.L)(N),
+                    ((0, me.L)(N),
                         (0, r.useEffect)(() => {
                             switch (f) {
                                 case p.B1.skip:
@@ -654,7 +655,7 @@
                                 case p.B1.page:
                                     C.start(Ee);
                             }
-                        }, [f]);
+                        }, [f]));
                     const R = l.computes.rewardAnimationsController(),
                         E = (0, A.y)(e) ? T : k,
                         I = R.getSpringControllerByName(L(E, a, t)),
@@ -828,7 +829,7 @@
                     (0, r.useEffect)(() => {
                         switch ((0, c.P)(T)) {
                             case p.B1.skip:
-                                $.set($e), k.skip();
+                                ($.set($e), k.skip());
                                 break;
                             case p.B1.preparation:
                                 $.set(Se);
@@ -853,7 +854,7 @@
                                     texts: R,
                                     controls: {
                                         onClose: () => {
-                                            a.clearActiveRareReward(), k.resume();
+                                            (a.clearActiveRareReward(), k.resume());
                                         },
                                         onPlay: () => a.setIsVideoPlaying(!0),
                                         onEnded: () => a.setIsVideoPlaying(!1),
@@ -945,7 +946,7 @@
                         C = t.info.isReopen.get(),
                         N = t.computes.multimediaResource(),
                         R = (0, i.v)(p.Kg, (e) => e.value);
-                    (0, s.gd)(
+                    ((0, s.gd)(
                         l.n.ESCAPE,
                         () => {
                             R === p.B1.initial && a.close();
@@ -964,7 +965,7 @@
                         (0, r.useEffect)(() => {
                             p.Kg.send({ type: p.QK.setAnimationActive, isAnimationActive: f });
                         }, [f]),
-                        (0, w.s)(C, h, R);
+                        (0, w.s)(C, h, R));
                     const A = (0, y.H)(R, a.openNext),
                         E = A.loadingStyle,
                         B = A.contentStyle;

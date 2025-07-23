@@ -1,0 +1,1016 @@
+.Box_mt__XS_0c {
+    margin-top: 4rem;
+}
+.Box_mt__SM_eb {
+    margin-top: 8rem;
+}
+.Box_mt__SMp_cf {
+    margin-top: 10rem;
+}
+.Box_mt__MD_25 {
+    margin-top: 16rem;
+}
+.Box_mt__MDp_49 {
+    margin-top: 20rem;
+}
+.Box_mt__LG_e8 {
+    margin-top: 32rem;
+}
+.Box_mt__XL_83 {
+    margin-top: 64rem;
+}
+
+.Box_mr__XS_7c {
+    margin-right: 4rem;
+}
+
+.Box_mr__SM_08 {
+    margin-right: 8rem;
+}
+
+.Box_mr__SMp_06 {
+    margin-right: 10rem;
+}
+
+.Box_mr__MD_4a {
+    margin-right: 16rem;
+}
+
+.Box_mr__MDp_b6 {
+    margin-right: 20rem;
+}
+
+.Box_mr__LG_d0 {
+    margin-right: 32rem;
+}
+
+.Box_mr__XL_db {
+    margin-right: 64rem;
+}
+
+.Box_mb__XS_bb {
+    margin-bottom: 4rem;
+}
+
+.Box_mb__SM_83 {
+    margin-bottom: 8rem;
+}
+
+.Box_mb__SMp_04 {
+    margin-bottom: 10rem;
+}
+
+.Box_mb__MD_ed {
+    margin-bottom: 16rem;
+}
+
+.Box_mb__MDp_65 {
+    margin-bottom: 20rem;
+}
+
+.Box_mb__LG_c8 {
+    margin-bottom: 32rem;
+}
+
+.Box_mb__XL_f8 {
+    margin-bottom: 64rem;
+}
+
+.Box_ml__XS_8a {
+    margin-left: 4rem;
+}
+
+.Box_ml__SM_e6 {
+    margin-left: 8rem;
+}
+
+.Box_ml__SMp_fb {
+    margin-left: 10rem;
+}
+
+.Box_ml__MD_2b {
+    margin-left: 16rem;
+}
+
+.Box_ml__MDp_c7 {
+    margin-left: 20rem;
+}
+
+.Box_ml__LG_39 {
+    margin-left: 32rem;
+}
+
+.Box_ml__XL_4a {
+    margin-left: 64rem;
+}
+
+.FormatText_base_d0 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* eslint-disable-next-line expectedscss*/
+.Text_paragraph-P10_2c {
+    font-size: 10rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.Text_paragraph-P12_22 {
+    font-size: 12rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+.Text_paragraph-P14_a7 {
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+.Text_paragraph-P16_90 {
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+.Text_paragraph-P18_50 {
+    font-size: 18rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+.Text_paragraph-P24_33 {
+    font-size: 24rem;
+    font-weight: 400;
+    line-height: 32rem;
+}
+.Text_heading-H14_8b {
+    font-size: 14rem;
+    font-weight: 700;
+    line-height: 1.15;
+}
+.Text_heading-H15_9e {
+    font-size: 15rem;
+    font-weight: 700;
+    line-height: 1.15;
+}
+.Text_heading-H18_b7 {
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H20R_f6 {
+    font-size: 20rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.Text_heading-H22_27 {
+    font-size: 22rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.Text_heading-H24R_be {
+    font-size: 24rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.Text_heading-H24_0c {
+    font-size: 24rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.Text_heading-H28_78 {
+    font-size: 28rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H36_32 {
+    font-size: 36rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H56_c3 {
+    font-size: 56rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H73_8f {
+    font-size: 73rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H144_a9 {
+    font-size: 144rem;
+    font-weight: 700;
+    line-height: 1;
+}
+.Text_BLACK_REAL_30 {
+    color: #000000;
+}
+.Text_WHITE_REAL_bc {
+    color: #ffffff;
+}
+.Text_WHITE_62 {
+    color: #f2f2f7;
+}
+.Text_WHITE_ORANGE_54 {
+    color: #fefeec;
+}
+.Text_WHITE_SPANISH_df {
+    color: #e9e2bf;
+}
+.Text_PAR_15 {
+    color: #8c8c7e;
+}
+.Text_PAR_SECONDARY_5d {
+    color: #595950;
+}
+.Text_PAR_TERTIARY_c9 {
+    color: #37362e;
+}
+.Text_INFO_RED_30 {
+    color: #ff0000;
+}
+.Text_RED_66 {
+    color: #ff2717;
+}
+.Text_RED_DARK_d8 {
+    color: #b70000;
+}
+.Text_YELLOW_ed {
+    color: #feab34;
+}
+.Text_ORANGE_be {
+    color: #ee7000;
+}
+.Text_CREAM_57 {
+    color: #ffdd99;
+}
+.Text_BROWN_18 {
+    color: #cbac77;
+}
+.Text_GREEN_BRIGHT_3f {
+    color: #80d43a;
+}
+.Text_GREEN_e3 {
+    color: #7ab300;
+}
+.Text_GREEN_DARK_f1 {
+    color: #497212;
+}
+.Text_BLUE_BOOSTER_21 {
+    color: #ccffff;
+}
+.Text_BLUE_TEAMKILLER_ab {
+    color: #09e2ff;
+}
+.Text_CRED_f7 {
+    color: #ced9d9;
+}
+.Text_GOLD_28 {
+    color: #ffc363;
+}
+.Text_BOND_be {
+    color: #c9c9b6;
+}
+.Text_PROM_65 {
+    color: #a29b70;
+}
+
+@keyframes PlayStreakTab_flare_14 {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    20% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+@keyframes PlayStreakTab_scale_80 {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    30% {
+        transform: translate(-50%, -50%) scale(1.5);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+@keyframes PlayStreakTab_hide_3f {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    30% {
+        transform: translate(-50%, -50%) scale(2);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(2.7);
+    }
+}
+
+@keyframes PlayStreakTab_scaleCircle_d3 {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(5);
+    }
+}
+
+.PlayStreakTab_base_2c {
+    width: 340rem;
+    height: 90rem;
+    margin-bottom: 8rem;
+    position: relative;
+    cursor: pointer;
+}
+
+.PlayStreakTab_base__selected_26 {
+    cursor: default;
+}
+
+.mediaLarge .PlayStreakTab_base_2c {
+    width: 480rem;
+    height: 100rem;
+}
+
+.PlayStreakTab_bg_29,
+.PlayStreakTab_hoverBg_38,
+.PlayStreakTab_selectedBg_3f,
+.PlayStreakTab_disabledBg_52,
+.PlayStreakTab_flare_14 {
+    width: 341rem;
+    height: 90rem;
+    background: no-repeat center / cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.mediaLarge .PlayStreakTab_bg_29,
+.mediaLarge .PlayStreakTab_hoverBg_38,
+.mediaLarge .PlayStreakTab_selectedBg_3f,
+.mediaLarge .PlayStreakTab_disabledBg_52,
+.mediaLarge .PlayStreakTab_flare_14 {
+    width: 482rem;
+    height: 100rem;
+}
+
+.PlayStreakTab_flareWrapper_96 {
+    width: 341rem;
+    height: 90rem;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.mediaLarge .PlayStreakTab_flareWrapper_96 {
+    width: 482rem;
+    height: 100rem;
+}
+
+.PlayStreakTab_bg_29 {
+    background-image: url('R.images.gui.maps.icons.playStreak.window.tab.default');
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+
+.mediaLarge .PlayStreakTab_bg_29 {
+    background-image: url('R.images.gui.maps.icons.playStreak.window.tab.default_big');
+}
+
+.PlayStreakTab_base__hover_ac .PlayStreakTab_bg_29,
+.PlayStreakTab_base__selected_26 .PlayStreakTab_bg_29 {
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.PlayStreakTab_base__animatingProgress_49 .PlayStreakTab_bg_29 {
+    opacity: 0;
+}
+
+.PlayStreakTab_base__completed_a5 .PlayStreakTab_bg_29,
+.PlayStreakTab_base__animatingComplete_e6 .PlayStreakTab_bg_29 {
+    background-image: url('R.images.gui.maps.icons.playStreak.window.tab.completed_default');
+}
+
+.mediaLarge .PlayStreakTab_base__completed_a5 .PlayStreakTab_bg_29,
+.mediaLarge .PlayStreakTab_base__animatingComplete_e6 .PlayStreakTab_bg_29 {
+    background-image: url('R.images.gui.maps.icons.playStreak.window.tab.completed_default_big');
+}
+
+.PlayStreakTab_base__paused_fd .PlayStreakTab_bg_29 {
+    background-image: url('R.images.gui.maps.icons.playStreak.window.tab.default');
+}
+
+.mediaLarge .PlayStreakTab_base__paused_fd .PlayStreakTab_bg_29 {
+    background-image: url('R.images.gui.maps.icons.playStreak.window.tab.default_big');
+}
+
+.PlayStreakTab_hoverBg_38 {
+    background-image: url('R.images.gui.maps.icons.playStreak.window.tab.hover');
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.mediaLarge .PlayStreakTab_hoverBg_38 {
+    background-image: url('R.images.gui.maps.icons.playStreak.window.tab.hover_big');
+}
+
+.PlayStreakTab_base__hover_ac .PlayStreakTab_hoverBg_38 {
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+
+.PlayStreakTab_base__animatingProgress_49 .PlayStreakTab_hoverBg_38 {
+    opacity: 0;
+}
+
+.PlayStreakTab_base__completed_a5 .PlayStreakTab_hoverBg_38 {
+    background-image: url('R.images.gui.maps.icons.playStreak.window.tab.completed_hover');
+}
+
+.mediaLarge .PlayStreakTab_base__completed_a5 .PlayStreakTab_hoverBg_38 {
+    background-image: url('R.images.gui.maps.icons.playStreak.window.tab.completed_hover_big');
+}
+
+.PlayStreakTab_base__paused_fd .PlayStreakTab_hoverBg_38 {
+    background-image: url('R.images.gui.maps.icons.playStreak.window.tab.hover');
+}
+
+.mediaLarge .PlayStreakTab_base__paused_fd .PlayStreakTab_hoverBg_38 {
+    background-image: url('R.images.gui.maps.icons.playStreak.window.tab.hover_big');
+}
+
+.PlayStreakTab_selectedBg_3f {
+    width: 373rem;
+    height: 122rem;
+    background-image: url('R.images.gui.maps.icons.playStreak.window.tab.selected');
+    opacity: 0;
+    top: -13rem;
+    left: -15rem;
+    transition: opacity 0.5s;
+}
+
+.mediaLarge .PlayStreakTab_selectedBg_3f {
+    width: 512rem;
+    height: 132rem;
+    background-image: url('R.images.gui.maps.icons.playStreak.window.tab.selected_big');
+}
+
+.PlayStreakTab_base__selected_26 .PlayStreakTab_selectedBg_3f {
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+
+.PlayStreakTab_base__animatingProgress_49 .PlayStreakTab_selectedBg_3f {
+    opacity: 0;
+}
+
+.PlayStreakTab_base__completed_a5 .PlayStreakTab_selectedBg_3f {
+    width: 381rem;
+    height: 130rem;
+    background-image: url('R.images.gui.maps.icons.playStreak.window.tab.completed_selected');
+    top: -15rem;
+    left: -20rem;
+}
+
+.mediaLarge .PlayStreakTab_base__completed_a5 .PlayStreakTab_selectedBg_3f {
+    width: 521rem;
+    height: 140rem;
+    background-image: url('R.images.gui.maps.icons.playStreak.window.tab.completed_selected_big');
+}
+
+.PlayStreakTab_base__paused_fd .PlayStreakTab_selectedBg_3f {
+    width: 373rem;
+    height: 122rem;
+    background-image: url('R.images.gui.maps.icons.playStreak.window.tab.selected');
+    top: -12rem;
+    left: -16rem;
+}
+
+.mediaLarge .PlayStreakTab_base__paused_fd .PlayStreakTab_selectedBg_3f {
+    width: 513rem;
+    height: 132rem;
+    background-image: url('R.images.gui.maps.icons.playStreak.window.tab.selected_big');
+}
+
+.PlayStreakTab_disabledBg_52 {
+    background-image: url('R.images.gui.maps.icons.playStreak.window.tab.disabled');
+}
+
+.mediaLarge .PlayStreakTab_disabledBg_52 {
+    background-image: url('R.images.gui.maps.icons.playStreak.window.tab.disabled_big');
+}
+
+.PlayStreakTab_base__animatingProgress_49 .PlayStreakTab_disabledBg_52 {
+    opacity: 0;
+}
+
+.PlayStreakTab_disabledBg__event_5e {
+    background-image: url('R.images.gui.maps.icons.playStreak.window.tab.disabled_event');
+}
+
+.mediaLarge .PlayStreakTab_disabledBg__event_5e {
+    background-image: url('R.images.gui.maps.icons.playStreak.window.tab.disabled_event_big');
+}
+
+.PlayStreakTab_flare_14 {
+    background-image: url('R.images.gui.maps.icons.daily.playStreak.flare');
+    opacity: 1;
+    mix-blend-mode: overlay;
+    transform: translateX(-100%);
+    animation: PlayStreakTab_flare_14 5s linear 2s infinite;
+}
+
+.PlayStreakTab_base__animatingInit_6b .PlayStreakTab_flare_14,
+.PlayStreakTab_base__animatingStart_6f .PlayStreakTab_flare_14,
+.PlayStreakTab_base__animatingProgress_49 .PlayStreakTab_flare_14,
+.PlayStreakTab_base__animatingComplete_e6 .PlayStreakTab_flare_14 {
+    animation: unset;
+}
+
+.PlayStreakTab_base__animatingProgress_49 .PlayStreakTab_flare_14 {
+    opacity: 0;
+}
+
+.PlayStreakTab_base__completed_a5 .PlayStreakTab_flare_14 {
+    animation: PlayStreakTab_flare_14 4s linear 0.5s 1;
+}
+
+.PlayStreakTab_contentWrapper_2b {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.PlayStreakTab_base__animatingInit_6b .PlayStreakTab_contentWrapper_2b {
+    overflow: visible;
+}
+
+.PlayStreakTab_iconWrapper_5b {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90rem;
+    height: 100%;
+    transition: opacity 0.5s;
+}
+
+.PlayStreakTab_base__disabled_de .PlayStreakTab_iconWrapper_5b {
+    opacity: 0.5;
+}
+
+.PlayStreakTab_base__disabled_de.PlayStreakTab_base__selected_26 .PlayStreakTab_iconWrapper_5b,
+.PlayStreakTab_base__disabled_de.PlayStreakTab_base__selected_26.PlayStreakTab_base__completed_a5
+    .PlayStreakTab_iconWrapper_5b {
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+
+.PlayStreakTab_base__disabled_de.PlayStreakTab_base__changeStatus_e5.PlayStreakTab_base__animatingProgress_49
+    .PlayStreakTab_iconWrapper_5b {
+    opacity: 0;
+}
+
+.mediaLarge .PlayStreakTab_iconWrapper_5b {
+    width: 116rem;
+}
+
+.PlayStreakTab_statusAlert_61 {
+    width: 32rem;
+    height: 32rem;
+    background: url('R.images.gui.maps.icons.playStreak.window.tab.alert') no-repeat center / contain;
+}
+
+.mediaLarge .PlayStreakTab_statusAlert_61 {
+    width: 44rem;
+    height: 44rem;
+}
+
+.PlayStreakTab_streakLength_16 {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.PlayStreakTab_circleGlow_f5 {
+    width: 100rem;
+    height: 100rem;
+    background: url('R.images.gui.maps.icons.playStreak.window.icons.circle_glow') no-repeat center / 100% 100%;
+    mix-blend-mode: screen;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: 0.5s ease all;
+}
+
+.PlayStreakTab_base__disabled_de .PlayStreakTab_circleGlow_f5,
+.PlayStreakTab_base__animatingProgress_49 .PlayStreakTab_circleGlow_f5,
+.PlayStreakTab_base__completed_a5 .PlayStreakTab_circleGlow_f5 {
+    opacity: 0;
+}
+
+.PlayStreakTab_base__animatingStart_6f .PlayStreakTab_circleGlow_f5,
+.PlayStreakTab_base__disabled_de.PlayStreakTab_base__changeStatus_e5.PlayStreakTab_base__animatingProgress_49
+    .PlayStreakTab_circleGlow_f5 {
+    animation: PlayStreakTab_scaleCircle_d3 0.4s linear forwards;
+}
+
+.PlayStreakTab_streakLengthValue_84 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+    font-size: 28rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.mediaLarge .PlayStreakTab_streakLengthValue_84 {
+    color: #ffffff;
+    font-size: 36rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.PlayStreakTab_base__animatingStart_6f .PlayStreakTab_streakLengthValue_84 {
+    animation: PlayStreakTab_scale_80 0.6s ease-out;
+}
+
+.PlayStreakTab_streakLengthValue__animated_03 {
+    opacity: 0.3;
+}
+
+.PlayStreakTab_base__animatingStart_6f .PlayStreakTab_streakLengthValue__animated_03 {
+    animation: PlayStreakTab_hide_3f 0.5s cubic-bezier(0.13, 1.19, 0.59, 0.96) forwards;
+}
+
+.PlayStreakTab_separator_00 {
+    width: 3rem;
+    height: 60rem;
+    background: url('R.images.gui.maps.icons.playStreak.window.tab.separator') no-repeat center / cover;
+}
+
+.PlayStreakTab_base__animatingProgress_49 .PlayStreakTab_separator_00 {
+    opacity: 0;
+}
+
+.mediaLarge .PlayStreakTab_separator_00 {
+    height: 80rem;
+}
+
+.PlayStreakTab_rightBlockWrapper_e8 {
+    display: flex;
+    flex-direction: column;
+    width: 250rem;
+    height: 100%;
+    padding: 13rem 14rem 13rem 18rem;
+}
+
+.PlayStreakTab_base__animatingProgress_49 .PlayStreakTab_rightBlockWrapper_e8 {
+    opacity: 0;
+}
+
+.mediaLarge .PlayStreakTab_rightBlockWrapper_e8 {
+    width: 364rem;
+    padding-left: 28rem;
+}
+
+.PlayStreakTab_description_3e {
+    color: #ffffff;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    display: flex;
+    line-height: 18rem;
+    opacity: 0.4;
+}
+
+.mediaLarge .PlayStreakTab_description_3e {
+    font-size: 16rem;
+}
+
+.PlayStreakTab_base__selected_26 .PlayStreakTab_description_3e,
+.PlayStreakTab_base__completed_a5 .PlayStreakTab_description_3e,
+.PlayStreakTab_base__disabled_de.PlayStreakTab_base__selected_26 .PlayStreakTab_description_3e {
+    opacity: 0.6;
+    transition: opacity 0.5s;
+}
+
+.PlayStreakTab_pause_3e {
+    margin-top: 12rem;
+    opacity: 0.6;
+    position: relative;
+}
+
+.PlayStreakTab_base__selected_26 .PlayStreakTab_pause_3e,
+.PlayStreakTab_base__completed_a5 .PlayStreakTab_pause_3e {
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+
+.PlayStreakTab_pauseInner_f1 {
+    display: flex;
+    align-items: center;
+    width: 115rem;
+}
+
+.mediaLarge .PlayStreakTab_pauseInner_f1 {
+    width: 135rem;
+}
+
+.PlayStreakTab_pauseText_c0 {
+    color: #ffffff;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+.mediaLarge .PlayStreakTab_pauseText_c0 {
+    color:;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+
+.PlayStreakTab_pauseText__zero_b9 {
+    color: #ff2717;
+}
+
+.PlayStreakTab_hourglass_ef {
+    width: 16rem;
+    height: 16rem;
+    background: url('R.images.gui.maps.icons.playStreak.window.icons.hourglass') no-repeat center / 100% 100%;
+    position: relative;
+    top: 2rem;
+}
+
+.PlayStreakTab_sparks_a0 {
+    width: 300rem;
+    height: 100rem;
+    background: url('R.images.gui.maps.icons.playStreak.window.aside.sparks') no-repeat center / contain;
+    opacity: 0.8;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+    transform: translate(-65%, -50%);
+}
+
+/*
+    Gameface can't calculate gradient biggest than 8128px
+    in JS 8000 reserved like anchor for start optimization
+*/
+/* stylelint-disable-line */
+.ProgressBar_base_45 {
+    width: 100%;
+    height: 12rem;
+    position: relative;
+}
+.ProgressBar_base__medium_62 {
+    height: 6rem;
+}
+.ProgressBar_base__small_df {
+    height: 2rem;
+}
+.ProgressBar_background_51 {
+    width: 100%;
+    max-width: 8001px;
+    height: 100%;
+    background-image: var(--progress-base);
+    background-repeat: repeat;
+    background-position: 0 50%;
+    background-size: 3rem 10rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.ProgressBar_background__medium_6e {
+    height: 6rem;
+}
+.ProgressBar_background__small_46 {
+    height: 2rem;
+}
+.ProgressBar_lineWrapper_6a {
+    display: flex;
+    flex: 1;
+}
+
+.ProgressBarBlink_base_24 {
+    width: 60rem;
+    height: 100rem;
+    background-image: var(--progress-glow);
+    background-size: contain;
+    mix-blend-mode: lighten;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(50%, -50%);
+    pointer-events: none;
+}
+
+.ProgressBarBlink_base__medium_ec {
+    width: 42rem;
+    height: 70rem;
+}
+
+.ProgressBarBlink_base__small_0f {
+    width: 44rem;
+    height: 43rem;
+    background-image: var(--progress-glow-small);
+}
+
+/*
+    Gameface can't calculate gradient biggest than 8128px
+    in JS 8000 reserved like anchor for start optimization
+*/
+/* stylelint-disable-line */
+.ProgressLineImpose_base_80 {
+    max-width: 8001px;
+    height: 100%;
+    background-color: var(--progress-line-base);
+    position: relative;
+    transition-timing-function: cubic-bezier(1, 0, 0.92, 1);
+    transition-property: width;
+}
+.ProgressLineImpose_base__disabled_cc {
+    background-color: var(--progress-line-disabled);
+}
+.ProgressLineImpose_base__finished_d4 {
+    background-color: var(--progress-line-finished);
+}
+.ProgressLineImpose_base__withoutBounce_56 {
+    transition-timing-function: cubic-bezier(1, 0, 0.75, 0.75);
+}
+.ProgressLineImpose_pattern_1c {
+    max-width: 8001px;
+    background-image: var(--progress-pattern-base);
+    background-repeat: repeat;
+    background-position: 0 50%;
+    background-size: 3rem 10rem;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+    left: 1rem;
+}
+.ProgressLineImpose_base__small_55 .ProgressLineImpose_pattern_1c {
+    top: 0;
+    bottom: 0;
+}
+.ProgressLineImpose_base__disabled_cc .ProgressLineImpose_pattern_1c {
+    background-image: var(--progress-pattern-disabled);
+    left: 0;
+}
+.ProgressLineImpose_base__finished_d4 .ProgressLineImpose_pattern_1c {
+    background-image: var(--progress-pattern-finished);
+}
+.ProgressLineImpose_gradient_35 {
+    max-width: 8001px;
+    background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.75));
+    mix-blend-mode: overlay;
+    position: absolute;
+    top: 1rem;
+    right: 0;
+    bottom: 1rem;
+    left: 0;
+}
+.ProgressLineImpose_base__small_55 .ProgressLineImpose_gradient_35 {
+    top: 0;
+    bottom: 0;
+}
+.ProgressLineImpose_base__disabled_cc .ProgressLineImpose_gradient_35 {
+    display: none;
+}
+.ProgressLineImpose_base__finished_d4 .ProgressLineImpose_gradient_35 {
+    background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.75), rgba(0, 0, 0, 0.5));
+}
+.ProgressLineImpose_glow_a5 {
+    width: 60rem;
+    max-width: 8001px;
+    height: 100rem;
+    background-image: var(--progress-glow);
+    background-size: contain;
+    mix-blend-mode: lighten;
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+.ProgressLineImpose_glow__left_d8 {
+    left: 1rem;
+}
+.ProgressLineImpose_base__disabled_cc .ProgressLineImpose_glow_a5,
+.ProgressLineImpose_base__finished_d4 .ProgressLineImpose_glow_a5 {
+    display: none;
+}
+.ProgressLineImpose_base__small_55 .ProgressLineImpose_glow_a5 {
+    width: 44rem;
+    height: 43rem;
+    background-image: var(--progress-glow-small);
+}
+
+/*
+    Gameface can't calculate gradient biggest than 8128px
+    in JS 8000 reserved like anchor for start optimization
+*/
+/* stylelint-disable-line */
+.ProgressBarDeltaSimple_base_6c {
+    width: 0;
+    height: 100%;
+    position: absolute;
+    top: 0;
+}
+.ProgressBarDeltaSimple_delta_99 {
+    width: 0;
+    max-width: 8001px;
+    height: 100%;
+    box-shadow: var(--progress-delta-shadow);
+    background-color: var(--progress-delta-color);
+    position: absolute;
+    bottom: 0;
+    transform-origin: right center;
+    transition-timing-function: cubic-bezier(1, 0, 0.92, 1), cubic-bezier(0.21, 0.61, 0.35, 1);
+    transition-property: width, transform;
+}
+
+/*
+    Gameface can't calculate gradient biggest than 8128px
+    in JS 8000 reserved like anchor for start optimization
+*/
+/* stylelint-disable-line */
+.ProgressBarDeltaGrow_base_7e {
+    width: 0;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    transition-timing-function: cubic-bezier(1, 0, 0.92, 1);
+    transition-property: width;
+}
+.ProgressBarDeltaGrow_base__withoutBounce_b5 {
+    transition-timing-function: cubic-bezier(1, 0, 0.75, 0.75);
+}
+.ProgressBarDeltaGrow_glow_68 {
+    width: 0;
+    max-width: 8001px;
+    height: 100%;
+    box-shadow: var(--progress-delta-shadow);
+    background-color: var(--progress-delta-color);
+    position: absolute;
+    bottom: 0;
+    transform-origin: right center;
+    transition-timing-function: cubic-bezier(1, 0, 0.92, 1);
+    transition-property: width;
+}
+.ProgressBarDeltaGrow_base__withoutBounce_b5 .ProgressBarDeltaGrow_glow_68 {
+    transition-timing-function: cubic-bezier(1, 0, 0.75, 0.75);
+}
+
+.RecoveryProgression_base_a6 {
+    width: 64rem;
+    position: relative;
+}
+
+.RecoveryProgression_content_31 {
+    display: flex;
+    justify-content: center;
+    margin-top: 12rem;
+}
+
+.RecoveryProgression_limitDay_80 {
+    color: #e9e2bf;
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.RecoveryProgression_limitDay__complete_77 {
+    color: #7ab300;
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
+}

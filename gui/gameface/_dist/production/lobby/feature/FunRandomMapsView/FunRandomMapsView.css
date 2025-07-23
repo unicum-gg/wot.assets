@@ -1525,8 +1525,7 @@
 .MapsView_base_5c {
     width: 100%;
     height: 100%;
-    background: url('R.images.fun_random.gui.maps.icons.feature.asset_packs.modes.fep133.library.progression_bg')
-        no-repeat center / cover;
+    background: url('R.images.fun_random.gui.maps.icons.feature.maps_view.progression_bg') no-repeat center / cover;
     overflow: hidden;
 }
 

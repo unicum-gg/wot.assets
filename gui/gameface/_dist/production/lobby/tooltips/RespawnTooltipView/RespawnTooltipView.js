@@ -4,10 +4,10 @@
         e = {
             8446: (u, e, F) => {
                 var A = {};
-                F.r(A),
-                    F.d(A, { mouse: () => v, off: () => m, on: () => d, onResize: () => l, onScaleUpdated: () => c });
+                (F.r(A),
+                    F.d(A, { mouse: () => v, off: () => m, on: () => d, onResize: () => l, onScaleUpdated: () => c }));
                 var E = {};
-                F.r(E),
+                (F.r(E),
                     F.d(E, {
                         events: () => A,
                         getMouseGlobalPosition: () => b,
@@ -15,11 +15,11 @@
                         graphicsQuality: () => w,
                         playSound: () => f,
                         setRTPC: () => p,
-                    });
+                    }));
                 var D = {};
-                F.r(D), F.d(D, { getBgUrl: () => P, getTextureUrl: () => T });
+                (F.r(D), F.d(D, { getBgUrl: () => P, getTextureUrl: () => T }));
                 var t = {};
-                F.r(t),
+                (F.r(t),
                     F.d(t, {
                         addModelObserver: () => V,
                         addPreloadTexture: () => N,
@@ -47,7 +47,7 @@
                         setInputPaddingsRem: () => j,
                         setSidePaddingsRem: () => $,
                         whenTutorialReady: () => Du,
-                    });
+                    }));
                 var B = F(7363),
                     n = F.n(B),
                     C = F(1533),
@@ -121,10 +121,10 @@
                         );
                         return Object.assign({}, E, {
                             disable() {
-                                (u.enabled = !1), A();
+                                ((u.enabled = !1), A());
                             },
                             enable() {
-                                (u.enabled = !0), A();
+                                ((u.enabled = !0), A());
                             },
                             enableOutside() {
                                 u.enabled && s(!0);
@@ -352,15 +352,15 @@
                                 (0, B.useMemo)(
                                     () => ({
                                         run: (e) => {
-                                            window.cancelAnimationFrame(u.current),
+                                            (window.cancelAnimationFrame(u.current),
                                                 (u.current = window.requestAnimationFrame(() => {
                                                     u.current = window.requestAnimationFrame(() => {
-                                                        e(), (u.current = 0);
+                                                        (e(), (u.current = 0));
                                                     });
-                                                }));
+                                                })));
                                         },
                                         clear: () => {
-                                            window.cancelAnimationFrame(u.current), (u.current = 0);
+                                            (window.cancelAnimationFrame(u.current), (u.current = 0));
                                         },
                                         get isRunning() {
                                             return 0 !== u.current;
@@ -395,7 +395,7 @@
                             Cu({}, t, {
                                 className: a()(Bu.base, Bu[`base__theme-${D}`], A),
                                 ref: function (u) {
-                                    (r.current = u), 'function' == typeof e ? e(u) : e && (e.current = u);
+                                    ((r.current = u), 'function' == typeof e ? e(u) : e && (e.current = u));
                                 },
                             }),
                             n().createElement('div', { className: Bu.decorator }, F),
@@ -406,7 +406,7 @@
                     au = F(1281);
                 let iu;
                 !(function (u) {
-                    (u[(u.left = 0)] = 'left'), (u[(u.right = 1)] = 'right');
+                    ((u[(u.left = 0)] = 'left'), (u[(u.right = 1)] = 'right'));
                 })(iu || (iu = {}));
                 const su = (u) => u.replace(/&nbsp;/g, ' '),
                     lu = (u, e, F) => {
@@ -448,7 +448,7 @@
                     })(),
                     gu = ['zh_cn', 'zh_sg', 'zh_tw'],
                     vu = ({ binding: u, text: e = '', classMix: F, alignment: A = iu.left, formatWithBrackets: E }) => {
-                        if (null === e) return console.error("FormatText was supplied with 'null'"), null;
+                        if (null === e) return (console.error("FormatText was supplied with 'null'"), null);
                         const D = E && u ? ((t = u), e.replace(/\{\w+\}/g, (u) => String(t[u.slice(1, -1)]))) : e;
                         var t;
                         return n().createElement(
@@ -533,7 +533,7 @@
                             if (B && r) {
                                 const u = B[0],
                                     D = u + C++ + u;
-                                (t = t.replace(F, `%(${D})`)),
+                                ((t = t.replace(F, `%(${D})`)),
                                     (E[D] = fu[u]
                                         ? n().createElement(
                                               'span',
@@ -544,7 +544,7 @@
                                               'span',
                                               { style: A(u) },
                                               n().createElement(vu, { text: o, binding: e }),
-                                          ));
+                                          )));
                             }
                             D = pu.exec(u);
                         }
@@ -602,7 +602,7 @@
                                                     subscribe: (F, D) => {
                                                         const B = 'string' == typeof D ? `${A}.${D}` : A,
                                                             n = tu.view.addModelObserver(B, e, !0);
-                                                        return E.set(n, F), u && F(t(D)), n;
+                                                        return (E.set(n, F), u && F(t(D)), n);
                                                     },
                                                     readByPath: t,
                                                     createCallback: (u, e) => {
@@ -789,7 +789,7 @@
                                     }, [u]),
                                     (0, B.useEffect)(
                                         () => () => {
-                                            l.externalModel.dispose(), t.current.forEach((u) => u());
+                                            (l.externalModel.dispose(), t.current.forEach((u) => u()));
                                         },
                                         [l],
                                     ),
@@ -903,9 +903,9 @@
         var E = F[u];
         if (void 0 !== E) return E.exports;
         var D = (F[u] = { exports: {} });
-        return e[u](D, D.exports, A), D.exports;
+        return (e[u](D, D.exports, A), D.exports);
     }
-    (A.m = e),
+    ((A.m = e),
         (u = []),
         (A.O = (e, F, E, D) => {
             if (!F) {
@@ -929,7 +929,7 @@
         }),
         (A.n = (u) => {
             var e = u && u.__esModule ? () => u.default : () => u;
-            return A.d(e, { a: e }), e;
+            return (A.d(e, { a: e }), e);
         }),
         (A.d = (u, e) => {
             for (var F in e) A.o(e, F) && !A.o(u, F) && Object.defineProperty(u, F, { enumerable: !0, get: e[F] });
@@ -944,10 +944,10 @@
         })()),
         (A.o = (u, e) => Object.prototype.hasOwnProperty.call(u, e)),
         (A.r = (u) => {
-            'undefined' != typeof Symbol &&
+            ('undefined' != typeof Symbol &&
                 Symbol.toStringTag &&
                 Object.defineProperty(u, Symbol.toStringTag, { value: 'Module' }),
-                Object.defineProperty(u, '__esModule', { value: !0 });
+                Object.defineProperty(u, '__esModule', { value: !0 }));
         }),
         (A.j = 841),
         (() => {
@@ -962,12 +962,12 @@
                         for (E in B) A.o(B, E) && (A.m[E] = B[E]);
                         if (n) var r = n(A);
                     }
-                    for (e && e(F); C < t.length; C++) (D = t[C]), A.o(u, D) && u[D] && u[D][0](), (u[D] = 0);
+                    for (e && e(F); C < t.length; C++) ((D = t[C]), A.o(u, D) && u[D] && u[D][0](), (u[D] = 0));
                     return A.O(r);
                 },
                 F = (self.webpackChunkgameface = self.webpackChunkgameface || []);
-            F.forEach(e.bind(null, 0)), (F.push = e.bind(null, F.push.bind(F)));
-        })();
+            (F.forEach(e.bind(null, 0)), (F.push = e.bind(null, F.push.bind(F))));
+        })());
     var E = A.O(void 0, [503], () => A(8446));
     E = A.O(E);
 })();

@@ -4,19 +4,19 @@
         e = {
             372: (u, e, t) => {
                 var n = {};
-                t.r(n), t.d(n, { mouse: () => h, onResize: () => p });
+                (t.r(n), t.d(n, { mouse: () => h, onResize: () => p }));
                 var F = {};
-                t.r(F),
+                (t.r(F),
                     t.d(F, {
                         events: () => n,
                         getMouseGlobalPosition: () => x,
                         getSize: () => w,
                         graphicsQuality: () => S,
-                    });
+                    }));
                 var A = {};
-                t.r(A), t.d(A, { getBgUrl: () => T, getTextureUrl: () => P });
+                (t.r(A), t.d(A, { getBgUrl: () => T, getTextureUrl: () => P }));
                 var E = {};
-                t.r(E),
+                (t.r(E),
                     t.d(E, {
                         addModelObserver: () => H,
                         addPreloadTexture: () => V,
@@ -43,35 +43,35 @@
                         setInputPaddingsRem: () => W,
                         setSidePaddingsRem: () => U,
                         whenTutorialReady: () => ou,
-                    });
+                    }));
                 var i = t(179),
                     o = t.n(i),
                     r = t(493),
                     D = t.n(r),
                     B = t(515);
                 let a, C, s, l;
-                !(function (u) {
-                    (u.HangarView = 'hangar'),
+                (!(function (u) {
+                    ((u.HangarView = 'hangar'),
                         (u.BattlePassProgression = 'battle_pass_progression'),
-                        (u.CollectionProgression = 'collection_progression');
+                        (u.CollectionProgression = 'collection_progression'));
                 })(a || (a = {})),
                     (function (u) {
-                        (u.CollectionEntryPointView = 'collection_entry_point_view'),
+                        ((u.CollectionEntryPointView = 'collection_entry_point_view'),
                             (u.BattlePassCollectionEntryPoint = 'battle_pass_collection_entry_point'),
-                            (u.CollectionProgressTooltip = 'collection_progress_tooltip');
+                            (u.CollectionProgressTooltip = 'collection_progress_tooltip'));
                     })(C || (C = {})),
                     (function (u) {
                         u.Click = 'click';
                     })(s || (s = {})),
                     (function (u) {
-                        (u[(u.NonSet = 0)] = 'NonSet'),
+                        ((u[(u.NonSet = 0)] = 'NonSet'),
                             (u[(u.Debug = 10)] = 'Debug'),
                             (u[(u.Info = 20)] = 'Info'),
-                            (u[(u.Warning = 30)] = 'Warning');
-                    })(l || (l = {}));
+                            (u[(u.Warning = 30)] = 'Warning'));
+                    })(l || (l = {})));
                 let c;
                 !(function (u) {
-                    (u.Click = 'click'), (u.KeyDown = 'keydown');
+                    ((u.Click = 'click'), (u.KeyDown = 'keydown'));
                 })(c || (c = {}));
                 const d = 'metrics',
                     m = ({ partnerID: u, item: e, parentScreen: t, itemState: n, info: F }) => ({
@@ -84,7 +84,7 @@
                     _ = (u, e) => {
                         const t = (0, i.useCallback)(
                             (t, n = l.Info, F) => {
-                                F || (F = {}),
+                                (F || (F = {}),
                                     Object.keys(F).length >= 200 ||
                                         window.uiLoggerModel.log({
                                             feature: u,
@@ -92,7 +92,7 @@
                                             action: t,
                                             logLevel: n,
                                             params: JSON.stringify(F),
-                                        });
+                                        }));
                             },
                             [u, e],
                         );
@@ -167,10 +167,10 @@
                     );
                     return Object.assign({}, F, {
                         disable() {
-                            (u.enabled = !1), n();
+                            ((u.enabled = !1), n());
                         },
                         enable() {
-                            (u.enabled = !0), n();
+                            ((u.enabled = !0), n());
                         },
                         enableOutside() {
                             u.enabled && b(!0);
@@ -229,7 +229,7 @@
                                         n,
                                         F = {},
                                         A = Object.keys(u);
-                                    for (n = 0; n < A.length; n++) (t = A[n]), e.indexOf(t) >= 0 || (F[t] = u[t]);
+                                    for (n = 0; n < A.length; n++) ((t = A[n]), e.indexOf(t) >= 0 || (F[t] = u[t]));
                                     return F;
                                 })(e, k);
                             return void 0 !== F
@@ -371,7 +371,7 @@
                 const au = (u) => (0 === u ? window : window.subViews.get(u));
                 let Cu;
                 !(function (u) {
-                    (u[(u.left = 0)] = 'left'), (u[(u.right = 1)] = 'right');
+                    ((u[(u.left = 0)] = 'left'), (u[(u.right = 1)] = 'right'));
                 })(Cu || (Cu = {}));
                 (() => {
                     const u = new RegExp(
@@ -390,17 +390,17 @@
                     );
                 })();
                 let su, lu;
-                !(function (u) {
-                    (u[(u.NotStarted = 0)] = 'NotStarted'),
+                (!(function (u) {
+                    ((u[(u.NotStarted = 0)] = 'NotStarted'),
                         (u[(u.JustStarted = 1)] = 'JustStarted'),
                         (u[(u.Active = 2)] = 'Active'),
                         (u[(u.EndSoon = 3)] = 'EndSoon'),
                         (u[(u.End = 4)] = 'End'),
-                        (u[(u.Disabled = 5)] = 'Disabled');
+                        (u[(u.Disabled = 5)] = 'Disabled'));
                 })(su || (su = {})),
                     (function (u) {
-                        (u.Small = 'small'), (u.Big = 'big');
-                    })(lu || (lu = {}));
+                        ((u.Small = 'small'), (u.Big = 'big'));
+                    })(lu || (lu = {})));
                 R.strings.comp7.banner;
                 const cu = (u) => {
                         const e = new Date(1e3 * u);
@@ -447,7 +447,7 @@
                                                     subscribe: (t, A) => {
                                                         const i = 'string' == typeof A ? `${n}.${A}` : n,
                                                             o = ru.view.addModelObserver(i, e, !0);
-                                                        return F.set(o, t), u && t(E(A)), o;
+                                                        return (F.set(o, t), u && t(E(A)), o);
                                                     },
                                                     readByPath: E,
                                                     createCallback: (u, e) => {
@@ -577,7 +577,7 @@
                                     }, [n]),
                                     (0, i.useEffect)(
                                         () => () => {
-                                            c.externalModel.dispose(), r.current.forEach((u) => u());
+                                            (c.externalModel.dispose(), r.current.forEach((u) => u()));
                                         },
                                         [c],
                                     ),
@@ -618,15 +618,15 @@
                     mu = du[0],
                     _u = du[1];
                 let vu, fu;
-                !(function (u) {
-                    (u.Completed = 'completed'), (u.Disabled = 'disabled'), (u.Active = 'active');
+                (!(function (u) {
+                    ((u.Completed = 'completed'), (u.Disabled = 'disabled'), (u.Active = 'active'));
                 })(vu || (vu = {})),
                     (function (u) {
-                        (u.Big = 'big'),
+                        ((u.Big = 'big'),
                             (u.WideSmall = 'wideSmall'),
                             (u.ThinSmall = 'thinSmall'),
-                            (u.ThinExtraSmall = 'thinExtraSmall');
-                    })(fu || (fu = {}));
+                            (u.ThinExtraSmall = 'thinExtraSmall'));
+                    })(fu || (fu = {})));
                 const gu = {
                         '302*152': fu.Big,
                         '302*114': fu.WideSmall,
@@ -902,9 +902,9 @@
         var F = t[u];
         if (void 0 !== F) return F.exports;
         var A = (t[u] = { exports: {} });
-        return e[u](A, A.exports, n), A.exports;
+        return (e[u](A, A.exports, n), A.exports);
     }
-    (n.m = e),
+    ((n.m = e),
         (u = []),
         (n.O = (e, t, F, A) => {
             if (!t) {
@@ -928,7 +928,7 @@
         }),
         (n.n = (u) => {
             var e = u && u.__esModule ? () => u.default : () => u;
-            return n.d(e, { a: e }), e;
+            return (n.d(e, { a: e }), e);
         }),
         (n.d = (u, e) => {
             for (var t in e) n.o(e, t) && !n.o(u, t) && Object.defineProperty(u, t, { enumerable: !0, get: e[t] });
@@ -943,10 +943,10 @@
         })()),
         (n.o = (u, e) => Object.prototype.hasOwnProperty.call(u, e)),
         (n.r = (u) => {
-            'undefined' != typeof Symbol &&
+            ('undefined' != typeof Symbol &&
                 Symbol.toStringTag &&
                 Object.defineProperty(u, Symbol.toStringTag, { value: 'Module' }),
-                Object.defineProperty(u, '__esModule', { value: !0 });
+                Object.defineProperty(u, '__esModule', { value: !0 }));
         }),
         (n.j = 369),
         (() => {
@@ -961,12 +961,12 @@
                         for (F in i) n.o(i, F) && (n.m[F] = i[F]);
                         if (o) var D = o(n);
                     }
-                    for (e && e(t); r < E.length; r++) (A = E[r]), n.o(u, A) && u[A] && u[A][0](), (u[A] = 0);
+                    for (e && e(t); r < E.length; r++) ((A = E[r]), n.o(u, A) && u[A] && u[A][0](), (u[A] = 0));
                     return n.O(D);
                 },
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
-            t.forEach(e.bind(null, 0)), (t.push = e.bind(null, t.push.bind(t)));
-        })();
+            (t.forEach(e.bind(null, 0)), (t.push = e.bind(null, t.push.bind(t))));
+        })());
     var F = n.O(void 0, [314], () => n(372));
     F = n.O(F);
 })();

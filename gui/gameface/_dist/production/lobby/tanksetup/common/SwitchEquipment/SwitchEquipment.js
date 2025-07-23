@@ -4,14 +4,14 @@
         r = {
             7727: (e, r, t) => {},
             9605: (e, r, t) => {
-                t(6179), t(6483);
+                (t(6179), t(6483));
                 let n;
                 !(function (e) {
-                    (e[(e.NORMAL = 0)] = 'NORMAL'), (e[(e.WARNING = 1)] = 'WARNING');
+                    ((e[(e.NORMAL = 0)] = 'NORMAL'), (e[(e.WARNING = 1)] = 'WARNING'));
                 })(n || (n = {}));
             },
             9344: (e, r, t) => {
-                t(6483), t(7727), t(6179), t(9605);
+                (t(6483), t(7727), t(6179), t(9605));
             },
         },
         t = {};
@@ -19,9 +19,9 @@
         var o = t[e];
         if (void 0 !== o) return o.exports;
         var a = (t[e] = { exports: {} });
-        return r[e](a, a.exports, n), a.exports;
+        return (r[e](a, a.exports, n), a.exports);
     }
-    (n.m = r),
+    ((n.m = r),
         (e = []),
         (n.O = (r, t, o, a) => {
             if (!t) {
@@ -45,7 +45,7 @@
         }),
         (n.n = (e) => {
             var r = e && e.__esModule ? () => e.default : () => e;
-            return n.d(r, { a: r }), r;
+            return (n.d(r, { a: r }), r);
         }),
         (n.d = (e, r) => {
             for (var t in r) n.o(r, t) && !n.o(e, t) && Object.defineProperty(e, t, { enumerable: !0, get: r[t] });
@@ -72,12 +72,12 @@
                         for (o in f) n.o(f, o) && (n.m[o] = f[o]);
                         if (u) var c = u(n);
                     }
-                    for (r && r(t); l < i.length; l++) (a = i[l]), n.o(e, a) && e[a] && e[a][0](), (e[a] = 0);
+                    for (r && r(t); l < i.length; l++) ((a = i[l]), n.o(e, a) && e[a] && e[a][0](), (e[a] = 0));
                     return n.O(c);
                 },
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
-            t.forEach(r.bind(null, 0)), (t.push = r.bind(null, t.push.bind(t)));
-        })();
+            (t.forEach(r.bind(null, 0)), (t.push = r.bind(null, t.push.bind(t))));
+        })());
     var o = n.O(void 0, [727], () => n(9344));
     o = n.O(o);
 })();

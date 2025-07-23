@@ -1482,9 +1482,6 @@
 .mediaMedium .App_background_6b {
     height: 120%;
 }
-.App_background__hasMarathon_e7 {
-    background-image: url('R.images.gui.maps.icons.battlePass.backgrounds.marathon');
-}
 .App_infoButtons_78 {
     display: flex;
     flex-direction: column;
@@ -1532,8 +1529,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 718rem;
-    height: 100%;
 }
 .App_chapterLeft_91,
 .App_chapterRight_5c {
@@ -1560,13 +1555,39 @@
     width: 608rem;
     height: 1870rem;
 }
+.App_base__hasMarathon_7f .App_chapterHolder_48 {
+    width: 196rem;
+    height: 603rem;
+}
+.mediaSmall .App_base__hasMarathon_7f .App_chapterHolder_48 {
+    width: 242rem;
+    height: 744rem;
+}
+.mediaMedium .App_base__hasMarathon_7f .App_chapterHolder_48 {
+    width: 300rem;
+    height: 923rem;
+}
+.mediaLarge .App_base__hasMarathon_7f .App_chapterHolder_48 {
+    width: 354rem;
+    height: 1089rem;
+}
+.mediaExtraLarge .App_base__hasMarathon_7f .App_chapterHolder_48 {
+    width: 468rem;
+    height: 1440rem;
+}
 .App_chapterLeft_91 {
     background: url('R.images.gui.maps.icons.battlePass.chapter_choice.chapter.c_left') no-repeat right / 100%;
     mask-image: linear-gradient(to right, transparent, #000 30%, #000 100%);
 }
+.App_base__hasMarathon_7f .App_chapterLeft_91 {
+    background-image: url('R.images.gui.maps.icons.battlePass.chapter_choice.marathon.c_left');
+}
 .App_chapterRight_5c {
     background: url('R.images.gui.maps.icons.battlePass.chapter_choice.chapter.c_right') no-repeat left / 100%;
     mask-image: linear-gradient(to left, transparent, #000 30%, #000 100%);
+}
+.App_base__hasMarathon_7f .App_chapterRight_5c {
+    background-image: url('R.images.gui.maps.icons.battlePass.chapter_choice.marathon.c_right');
 }
 
 .CButton_base_40 {
@@ -2322,7 +2343,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 
 .Chapter_base__small_32 {
     width: 196rem;
-    height: 602rem;
+    height: 603rem;
 }
 
 .mediaSmall .Chapter_base__small_32 {
@@ -2332,12 +2353,12 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 
 .mediaMedium .Chapter_base__small_32 {
     width: 300rem;
-    height: 922rem;
+    height: 923rem;
 }
 
 .mediaLarge .Chapter_base__small_32 {
-    width: 352rem;
-    height: 1082rem;
+    width: 354rem;
+    height: 1089rem;
 }
 
 .mediaExtraLarge .Chapter_base__small_32 {
@@ -2384,23 +2405,23 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     background-size: 608rem 1870rem;
 }
 
-.Chapter_bg__small_10 {
-    background-size: 196rem 602rem;
+.Chapter_base__small_32 .Chapter_bg_2e {
+    background-size: 196rem 603rem;
 }
 
-.mediaSmall .Chapter_bg__small_10 {
+.mediaSmall .Chapter_base__small_32 .Chapter_bg_2e {
     background-size: 242rem 744rem;
 }
 
-.mediaMedium .Chapter_bg__small_10 {
-    background-size: 300rem 922rem;
+.mediaMedium .Chapter_base__small_32 .Chapter_bg_2e {
+    background-size: 300rem 923rem;
 }
 
-.mediaLarge .Chapter_bg__small_10 {
-    background-size: 352rem 1082rem;
+.mediaLarge .Chapter_base__small_32 .Chapter_bg_2e {
+    background-size: 354rem 1089rem;
 }
 
-.mediaExtraLarge .Chapter_bg__small_10 {
+.mediaExtraLarge .Chapter_base__small_32 .Chapter_bg_2e {
     background-size: 468rem 1440rem;
 }
 
@@ -2437,6 +2458,26 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 
 .mediaExtraLarge .Chapter_bgInner_83 {
     background-size: 608rem 1870rem;
+}
+
+.Chapter_base__small_32 .Chapter_bgInner_83 {
+    background-size: 196rem 603rem;
+}
+
+.mediaSmall .Chapter_base__small_32 .Chapter_bgInner_83 {
+    background-size: 242rem 744rem;
+}
+
+.mediaMedium .Chapter_base__small_32 .Chapter_bgInner_83 {
+    background-size: 300rem 923rem;
+}
+
+.mediaLarge .Chapter_base__small_32 .Chapter_bgInner_83 {
+    background-size: 354rem 1089rem;
+}
+
+.mediaExtraLarge .Chapter_base__small_32 .Chapter_bgInner_83 {
+    background-size: 468rem 1440rem;
 }
 
 .Chapter_base__disabled_6d .Chapter_bgInner_83 {
@@ -2519,19 +2560,25 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .Chapter_base__small_32 .Chapter_commanderImg_90 {
     width: 196rem;
     height: 260rem;
-    top: 10rem;
+    top: 13rem;
+}
+
+.mediaSmall .Chapter_base__small_32 .Chapter_commanderImg_90 {
+    width: 242rem;
+    height: 322rem;
+    top: 25rem;
 }
 
 .mediaMedium .Chapter_base__small_32 .Chapter_commanderImg_90 {
     width: 300rem;
     height: 398rem;
-    top: 76rem;
+    top: 25rem;
 }
 
 .mediaLarge .Chapter_base__small_32 .Chapter_commanderImg_90 {
     width: 352rem;
     height: 468rem;
-    top: 30rem;
+    top: -30rem;
 }
 
 .mediaExtraLarge .Chapter_base__small_32 .Chapter_commanderImg_90 {
@@ -2713,18 +2760,25 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .Chapter_base__small_32 .Chapter_vehicleImg_b1 {
     width: 196rem;
     height: 129rem;
+    bottom: -45rem;
+}
+
+.mediaSmall .Chapter_base__small_32 .Chapter_vehicleImg_b1 {
+    width: 242rem;
+    height: 160rem;
+    bottom: -25rem;
 }
 
 .mediaMedium .Chapter_base__small_32 .Chapter_vehicleImg_b1 {
     width: 300rem;
     height: 198rem;
-    bottom: 0;
+    bottom: -35rem;
 }
 
 .mediaLarge .Chapter_base__small_32 .Chapter_vehicleImg_b1 {
     width: 352rem;
     height: 232rem;
-    bottom: -35rem;
+    bottom: -85rem;
 }
 
 .mediaExtraLarge .Chapter_base__small_32 .Chapter_vehicleImg_b1 {
@@ -2774,7 +2828,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     width: 100%;
     min-height: 160rem;
     margin-top: 25rem;
-    margin-bottom: -85rem;
+    margin-bottom: -80rem;
     position: relative;
     z-index: 2;
 }
@@ -2787,6 +2841,14 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 
 .mediaLarge .Chapter_content_61 {
     margin-bottom: -50rem;
+}
+
+.Chapter_base__small_32 .Chapter_content_61 {
+    margin-bottom: -80rem;
+}
+
+.mediaLarge .Chapter_base__small_32 .Chapter_content_61 {
+    margin-bottom: -130rem;
 }
 
 .Chapter_buttonBlockHolder_db {
@@ -2942,6 +3004,22 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     font-size: 28rem;
 }
 
+.Chapter_base__small_32 .Chapter_title_57 {
+    font-size: 15rem;
+}
+
+.mediaSmall .Chapter_base__small_32 .Chapter_title_57 {
+    font-size: 18rem;
+}
+
+.mediaMedium .Chapter_base__small_32 .Chapter_title_57 {
+    font-size: 22rem;
+}
+
+.mediaExtraLarge .Chapter_base__small_32 .Chapter_title_57 {
+    font-size: 28rem;
+}
+
 .Chapter_base__active_e5 .Chapter_title_57 {
     color: #ffdd99;
     opacity: 1;
@@ -2992,16 +3070,24 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     bottom: 40rem;
 }
 
+.Chapter_base__small_32 .Chapter_preview_1d {
+    bottom: -30rem;
+}
+
+.mediaSmall .Chapter_base__small_32 .Chapter_preview_1d {
+    bottom: 15rem;
+}
+
 .mediaMedium .Chapter_base__small_32 .Chapter_preview_1d {
-    bottom: 70rem;
+    bottom: 10rem;
 }
 
 .mediaLarge .Chapter_base__small_32 .Chapter_preview_1d {
-    bottom: 40rem;
+    bottom: -25rem;
 }
 
 .mediaExtraLarge .Chapter_base__small_32 .Chapter_preview_1d {
-    bottom: 60rem;
+    bottom: 25rem;
 }
 
 .Chapter_base__medium_e2 .Chapter_preview_1d {
@@ -3040,11 +3126,23 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     transition: opacity 0.3s linear;
 }
 
+.mediaMedium .Chapter_styleTitle_0d {
+    font-size: 18rem;
+}
+
 .mediaLarge .Chapter_styleTitle_0d {
     font-size: 22rem;
 }
 
 .mediaExtraLarge .Chapter_styleTitle_0d {
+    font-size: 24rem;
+}
+
+.mediaLarge .Chapter_base__small_32 .Chapter_styleTitle_0d {
+    font-size: 18rem;
+}
+
+.mediaExtraLarge .Chapter_base__small_32 .Chapter_styleTitle_0d {
     font-size: 24rem;
 }
 
@@ -3110,7 +3208,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .mediaExtraLarge .Chapter_styleHolder_55 {
-    height: 85rem;
+    height: 75rem;
 }
 
 .Chapter_inactiveText_b6 {

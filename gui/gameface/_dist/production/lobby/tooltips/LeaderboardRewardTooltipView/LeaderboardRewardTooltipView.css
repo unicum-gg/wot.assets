@@ -24,8 +24,8 @@
 .Column_base__notFirstColumn_74::after {
     width: 1rem;
     height: 100%;
-    background: linear-gradient(to bottom, transparent 50%, rgba(18, 17, 11, 1) 50%),
-        linear-gradient(180deg, #c9c9b6 100%);
+    background:
+        linear-gradient(to bottom, transparent 50%, rgba(18, 17, 11, 1) 50%), linear-gradient(180deg, #c9c9b6 100%);
     background-size:
         4rem 3rem,
         100% 100%;
@@ -57,7 +57,8 @@
 .Column_separator_99 {
     width: 100%;
     height: 1rem;
-    background: linear-gradient(to right, transparent 50%, rgba(18, 17, 11, 1) 50%),
+    background:
+        linear-gradient(to right, transparent 50%, rgba(18, 17, 11, 1) 50%),
         linear-gradient(270deg, #c9c9b6 0%, #12110b 100%);
     background-size:
         3rem 2rem,
@@ -68,7 +69,8 @@
 }
 
 .Column_base__notFirstColumn_74 .Column_separator_99 {
-    background-image: linear-gradient(to left, transparent 50%, rgba(18, 17, 11, 1) 50%),
+    background-image:
+        linear-gradient(to left, transparent 50%, rgba(18, 17, 11, 1) 50%),
         linear-gradient(90deg, #c9c9b6 0%, #12110b 100%);
 }
 
@@ -145,7 +147,8 @@
 
 .App_base_d9 {
     width: 363rem;
-    background: linear-gradient(0deg, #12110b, #12110b),
+    background:
+        linear-gradient(0deg, #12110b, #12110b),
         linear-gradient(0deg, rgba(242, 242, 230, 0.1), rgba(242, 242, 230, 0.1));
 }
 

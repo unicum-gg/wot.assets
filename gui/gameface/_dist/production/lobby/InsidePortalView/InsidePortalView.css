@@ -2360,7 +2360,8 @@ This bug is reproduced in Google Chrome 81.0.4044.113
         360rem;
 }
 .SwfPortalVideo_vignette_40 {
-    background-image: radial-gradient(ellipse at center, transparent, transparent 60%, #1d2839),
+    background-image:
+        radial-gradient(ellipse at center, transparent, transparent 60%, #1d2839),
         linear-gradient(0deg, transparent, transparent 95%, #1d2839 100%),
         linear-gradient(90deg, transparent, transparent 95%, #1d2839 100%),
         linear-gradient(180deg, transparent, transparent 95%, #1d2839 100%),

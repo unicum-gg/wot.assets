@@ -1,0 +1,24 @@
+.Spinner_base_aa {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.Spinner_spinner_e7 {
+    width: 24rem;
+    height: 24rem;
+    background: url('R.images.mt_birthday.gui.maps.icons.common.spinner') no-repeat center / cover;
+    animation: Spinner_spinner_e7 1s linear infinite;
+}
+
+@keyframes Spinner_spinner_e7 {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}

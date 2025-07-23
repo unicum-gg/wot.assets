@@ -15,7 +15,7 @@
                     s = (0, a.createContext)(u);
             },
             1039: (e, t, i) => {
-                i(3138), i(6536), i(6179), i(3495), i(1043), i(5262);
+                (i(3138), i(6536), i(6179), i(3495), i(1043), i(5262));
             },
             6010: (e, t, i) => {
                 var r = i(6179),
@@ -108,7 +108,7 @@
                         : e;
             },
             7739: (e, t, i) => {
-                i(6010), i(1039), i(3495);
+                (i(6010), i(1039), i(3495));
             },
             1043: (e, t, i) => {
                 i.d(t, { j: () => r });
@@ -170,9 +170,9 @@
                         extraSmallHeight: a === i.extraSmall.weight,
                     };
                 }
-                i.d(t, { T: () => a }),
+                (i.d(t, { T: () => a }),
                     (function (e) {
-                        (e.extraLarge = 'extraLarge'),
+                        ((e.extraLarge = 'extraLarge'),
                             (e.large = 'large'),
                             (e.medium = 'medium'),
                             (e.small = 'small'),
@@ -186,12 +186,12 @@
                             (e.largeHeight = 'largeHeight'),
                             (e.mediumHeight = 'mediumHeight'),
                             (e.smallHeight = 'smallHeight'),
-                            (e.extraSmallHeight = 'extraSmallHeight');
-                    })(r || (r = {}));
+                            (e.extraSmallHeight = 'extraSmallHeight'));
+                    })(r || (r = {})));
             },
             527: (e, t, i) => {
-                i.r(t),
-                    i.d(t, { mouse: () => u, off: () => d, on: () => o, onResize: () => n, onScaleUpdated: () => l });
+                (i.r(t),
+                    i.d(t, { mouse: () => u, off: () => d, on: () => o, onResize: () => n, onScaleUpdated: () => l }));
                 var r = i(2472),
                     a = i(1176);
                 const n = (0, r.E)('clientResized'),
@@ -250,10 +250,10 @@
                     );
                     return Object.assign({}, n, {
                         disable() {
-                            (e.enabled = !1), r();
+                            ((e.enabled = !1), r());
                         },
                         enable() {
-                            (e.enabled = !0), r();
+                            ((e.enabled = !0), r());
                         },
                         enableOutside() {
                             e.enabled && (0, a.R)(!0);
@@ -265,7 +265,7 @@
                 })();
             },
             5959: (e, t, i) => {
-                i.r(t),
+                (i.r(t),
                     i.d(t, {
                         events: () => r,
                         getMouseGlobalPosition: () => l,
@@ -273,7 +273,7 @@
                         graphicsQuality: () => o,
                         playSound: () => a.G,
                         setRTPC: () => a.E,
-                    });
+                    }));
                 var r = i(527),
                     a = i(2493);
                 function n(e = 'px') {
@@ -338,7 +338,7 @@
                 function a(e, t, i) {
                     return `url(${r(e, t, i)})`;
                 }
-                i.r(t), i.d(t, { getBgUrl: () => a, getTextureUrl: () => r });
+                (i.r(t), i.d(t, { getBgUrl: () => a, getTextureUrl: () => r }));
             },
             6112: (e, t, i) => {
                 i.d(t, { W: () => r });
@@ -365,7 +365,7 @@
                 };
             },
             7641: (e, t, i) => {
-                i.r(t),
+                (i.r(t),
                     i.d(t, {
                         addModelObserver: () => s,
                         addPreloadTexture: () => d,
@@ -392,7 +392,7 @@
                         setInputPaddingsRem: () => g,
                         setSidePaddingsRem: () => m,
                         whenTutorialReady: () => W,
-                    });
+                    }));
                 var r = i(3722),
                     a = i(6112),
                     n = i(6538),
@@ -532,56 +532,56 @@
                 i(6179);
             },
             5415: (e, t, i) => {
-                i(6179), i(7739);
+                (i(6179), i(7739));
                 var r = i(1043);
                 let a, n, l;
-                !(function (e) {
-                    (e[(e.ExtraSmall = r.j.extraSmall.width)] = 'ExtraSmall'),
+                (!(function (e) {
+                    ((e[(e.ExtraSmall = r.j.extraSmall.width)] = 'ExtraSmall'),
                         (e[(e.Small = r.j.small.width)] = 'Small'),
                         (e[(e.Medium = r.j.medium.width)] = 'Medium'),
                         (e[(e.Large = r.j.large.width)] = 'Large'),
-                        (e[(e.ExtraLarge = r.j.extraLarge.width)] = 'ExtraLarge');
+                        (e[(e.ExtraLarge = r.j.extraLarge.width)] = 'ExtraLarge'));
                 })(a || (a = {})),
                     (function (e) {
-                        (e[(e.ExtraSmall = r.j.extraSmall.width)] = 'ExtraSmall'),
+                        ((e[(e.ExtraSmall = r.j.extraSmall.width)] = 'ExtraSmall'),
                             (e[(e.Small = r.j.small.width)] = 'Small'),
                             (e[(e.Medium = r.j.medium.width)] = 'Medium'),
                             (e[(e.Large = r.j.large.width)] = 'Large'),
-                            (e[(e.ExtraLarge = r.j.extraLarge.width)] = 'ExtraLarge');
+                            (e[(e.ExtraLarge = r.j.extraLarge.width)] = 'ExtraLarge'));
                     })(n || (n = {})),
                     (function (e) {
-                        (e[(e.ExtraSmall = r.j.extraSmall.height)] = 'ExtraSmall'),
+                        ((e[(e.ExtraSmall = r.j.extraSmall.height)] = 'ExtraSmall'),
                             (e[(e.Small = r.j.small.height)] = 'Small'),
                             (e[(e.Medium = r.j.medium.height)] = 'Medium'),
                             (e[(e.Large = r.j.large.height)] = 'Large'),
-                            (e[(e.ExtraLarge = r.j.extraLarge.height)] = 'ExtraLarge');
-                    })(l || (l = {}));
+                            (e[(e.ExtraLarge = r.j.extraLarge.height)] = 'ExtraLarge'));
+                    })(l || (l = {})));
             },
             9690: (e, t, i) => {
                 ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());
             },
             6845: (e, t, i) => {
-                i(6483), i(5415), i(9690), i(6179), i(3905);
+                (i(6483), i(5415), i(9690), i(6179), i(3905));
             },
             3905: (e, t, i) => {
                 let r, a, n;
-                !(function (e) {
-                    (e.EntryPoint = 'ENTRY_POINT'),
+                (!(function (e) {
+                    ((e.EntryPoint = 'ENTRY_POINT'),
                         (e.InfoPage = 'INFO_PAGE'),
                         (e.Rewards = 'REWARDS'),
-                        (e.HasBoxesView = 'HAS_BOXES_VIEW');
+                        (e.HasBoxesView = 'HAS_BOXES_VIEW'));
                 })(r || (r = {})),
                     (function (e) {
-                        (e.Videos = 'videos'),
+                        ((e.Videos = 'videos'),
                             (e.Images = 'images'),
                             (e.Texts = 'texts'),
                             (e.DynamicVideos = 'dynamicVideos'),
                             (e.DynamicImages = 'dynamicImages'),
-                            (e.DynamicTexts = 'dynamicTexts');
+                            (e.DynamicTexts = 'dynamicTexts'));
                     })(a || (a = {})),
                     (function (e) {
                         e.InfoPage = 'infoPage';
-                    })(n || (n = {}));
+                    })(n || (n = {})));
             },
         },
         i = {};
@@ -589,9 +589,9 @@
         var a = i[e];
         if (void 0 !== a) return a.exports;
         var n = (i[e] = { exports: {} });
-        return t[e](n, n.exports, r), n.exports;
+        return (t[e](n, n.exports, r), n.exports);
     }
-    (r.m = t),
+    ((r.m = t),
         (e = []),
         (r.O = (t, i, a, n) => {
             if (!i) {
@@ -615,7 +615,7 @@
         }),
         (r.n = (e) => {
             var t = e && e.__esModule ? () => e.default : () => e;
-            return r.d(t, { a: t }), t;
+            return (r.d(t, { a: t }), t);
         }),
         (r.d = (e, t) => {
             for (var i in t) r.o(t, i) && !r.o(e, i) && Object.defineProperty(e, i, { enumerable: !0, get: t[i] });
@@ -630,10 +630,10 @@
         })()),
         (r.o = (e, t) => Object.prototype.hasOwnProperty.call(e, t)),
         (r.r = (e) => {
-            'undefined' != typeof Symbol &&
+            ('undefined' != typeof Symbol &&
                 Symbol.toStringTag &&
                 Object.defineProperty(e, Symbol.toStringTag, { value: 'Module' }),
-                Object.defineProperty(e, '__esModule', { value: !0 });
+                Object.defineProperty(e, '__esModule', { value: !0 }));
         }),
         (r.j = 35),
         (() => {
@@ -648,12 +648,12 @@
                         for (a in o) r.o(o, a) && (r.m[a] = o[a]);
                         if (d) var u = d(r);
                     }
-                    for (t && t(i); g < l.length; g++) (n = l[g]), r.o(e, n) && e[n] && e[n][0](), (e[n] = 0);
+                    for (t && t(i); g < l.length; g++) ((n = l[g]), r.o(e, n) && e[n] && e[n][0](), (e[n] = 0));
                     return r.O(u);
                 },
                 i = (self.webpackChunkgameface = self.webpackChunkgameface || []);
-            i.forEach(t.bind(null, 0)), (i.push = t.bind(null, i.push.bind(i)));
-        })();
+            (i.forEach(t.bind(null, 0)), (i.push = t.bind(null, i.push.bind(i))));
+        })());
     var a = r.O(void 0, [866], () => r(6845));
     a = r.O(a);
 })();

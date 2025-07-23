@@ -38,17 +38,17 @@
                     content: 'CButton_content_cc',
                 };
                 let i, u;
-                !(function (e) {
-                    (e.main = 'main'),
+                (!(function (e) {
+                    ((e.main = 'main'),
                         (e.primary = 'primary'),
                         (e.primaryGreen = 'primaryGreen'),
                         (e.primaryRed = 'primaryRed'),
                         (e.secondary = 'secondary'),
-                        (e.ghost = 'ghost');
+                        (e.ghost = 'ghost'));
                 })(i || (i = {})),
                     (function (e) {
-                        (e.extraSmall = 'extraSmall'), (e.small = 'small'), (e.medium = 'medium');
-                    })(u || (u = {}));
+                        ((e.extraSmall = 'extraSmall'), (e.small = 'small'), (e.medium = 'medium'));
+                    })(u || (u = {})));
                 const c = ({
                     children: e,
                     size: t,
@@ -181,7 +181,7 @@
                     );
                 };
                 c.defaultProps = { type: i.primary, isFocused: !1, soundHover: 'highlight', soundClick: 'play' };
-                (0, o.memo)(c), R.strings.resource_well;
+                ((0, o.memo)(c), R.strings.resource_well);
             },
         },
         a = {};
@@ -189,9 +189,9 @@
         var n = a[e];
         if (void 0 !== n) return n.exports;
         var r = (a[e] = { exports: {} });
-        return t[e](r, r.exports, s), r.exports;
+        return (t[e](r, r.exports, s), r.exports);
     }
-    (s.m = t),
+    ((s.m = t),
         (e = []),
         (s.O = (t, a, n, r) => {
             if (!a) {
@@ -215,7 +215,7 @@
         }),
         (s.n = (e) => {
             var t = e && e.__esModule ? () => e.default : () => e;
-            return s.d(t, { a: t }), t;
+            return (s.d(t, { a: t }), t);
         }),
         (s.d = (e, t) => {
             for (var a in t) s.o(t, a) && !s.o(e, a) && Object.defineProperty(e, a, { enumerable: !0, get: t[a] });
@@ -242,12 +242,12 @@
                         for (n in l) s.o(l, n) && (s.m[n] = l[n]);
                         if (_) var u = _(s);
                     }
-                    for (t && t(a); i < o.length; i++) (r = o[i]), s.o(e, r) && e[r] && e[r][0](), (e[r] = 0);
+                    for (t && t(a); i < o.length; i++) ((r = o[i]), s.o(e, r) && e[r] && e[r][0](), (e[r] = 0));
                     return s.O(u);
                 },
                 a = (self.webpackChunkgameface = self.webpackChunkgameface || []);
-            a.forEach(t.bind(null, 0)), (a.push = t.bind(null, a.push.bind(a)));
-        })();
+            (a.forEach(t.bind(null, 0)), (a.push = t.bind(null, a.push.bind(a))));
+        })());
     var n = s.O(void 0, [52], () => s(984));
     n = s.O(n);
 })();

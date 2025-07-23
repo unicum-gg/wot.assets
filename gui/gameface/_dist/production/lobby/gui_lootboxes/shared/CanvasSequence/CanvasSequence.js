@@ -55,7 +55,7 @@
                                 n,
                                 o = {},
                                 a = Object.keys(e);
-                            for (n = 0; n < a.length; n++) (r = a[n]), t.indexOf(r) >= 0 || (o[r] = e[r]);
+                            for (n = 0; n < a.length; n++) ((r = a[n]), t.indexOf(r) >= 0 || (o[r] = e[r]));
                             return o;
                         })(e, a);
                     const x = (0, n.useRef)(null);
@@ -66,20 +66,20 @@
                             const n = s - 1,
                                 o = e.getContext('2d'),
                                 a = (n) => {
-                                    o.clearRect(0, 0, e.width, e.height), o.drawImage(n, 0, 0, t, r);
+                                    (o.clearRect(0, 0, e.width, e.height), o.drawImage(n, 0, 0, t, r));
                                 };
                             if ('stop' === w) {
                                 const e = l(0),
                                     t = new Image();
                                 t.src = e;
                                 const r = () => a(t);
-                                return t.addEventListener('load', r), () => t.removeEventListener('load', r);
+                                return (t.addEventListener('load', r), () => t.removeEventListener('load', r));
                             }
                             const i = ((e, t) => {
                                     const r = [];
                                     for (let n = 0; n < e; n++) {
                                         const e = new Image();
-                                        (e.src = t(n)), r.push(e);
+                                        ((e.src = t(n)), r.push(e));
                                     }
                                     return r;
                                 })(s, l),
@@ -87,13 +87,13 @@
                                     let r = t;
                                     return () => {
                                         const t = r;
-                                        return (r += 1), r > e && (r = 0), t;
+                                        return ((r += 1), r > e && (r = 0), t);
                                     };
                                 })(n, m),
                                 u = setInterval(() => {
                                     const e = c(),
                                         t = i[e];
-                                    a(i[e]), f(e, t), e === n && (y(), g || clearInterval(u));
+                                    (a(i[e]), f(e, t), e === n && (y(), g || clearInterval(u)));
                                 }, d);
                             return () => clearInterval(u);
                         }, [s, d, l, r, m, g, f, y, w, t]),
@@ -107,9 +107,9 @@
         var o = r[e];
         if (void 0 !== o) return o.exports;
         var a = (r[e] = { exports: {} });
-        return t[e](a, a.exports, n), a.exports;
+        return (t[e](a, a.exports, n), a.exports);
     }
-    (n.m = t),
+    ((n.m = t),
         (e = []),
         (n.O = (t, r, o, a) => {
             if (!r) {
@@ -133,7 +133,7 @@
         }),
         (n.n = (e) => {
             var t = e && e.__esModule ? () => e.default : () => e;
-            return n.d(t, { a: t }), t;
+            return (n.d(t, { a: t }), t);
         }),
         (n.d = (e, t) => {
             for (var r in t) n.o(t, r) && !n.o(e, r) && Object.defineProperty(e, r, { enumerable: !0, get: t[r] });
@@ -160,12 +160,12 @@
                         for (o in c) n.o(c, o) && (n.m[o] = c[o]);
                         if (l) var u = l(n);
                     }
-                    for (t && t(r); s < i.length; s++) (a = i[s]), n.o(e, a) && e[a] && e[a][0](), (e[a] = 0);
+                    for (t && t(r); s < i.length; s++) ((a = i[s]), n.o(e, a) && e[a] && e[a][0](), (e[a] = 0));
                     return n.O(u);
                 },
                 r = (self.webpackChunkgameface = self.webpackChunkgameface || []);
-            r.forEach(t.bind(null, 0)), (r.push = t.bind(null, r.push.bind(r)));
-        })();
+            (r.forEach(t.bind(null, 0)), (r.push = t.bind(null, r.push.bind(r))));
+        })());
     var o = n.O(void 0, [503], () => n(7568));
     o = n.O(o);
 })();

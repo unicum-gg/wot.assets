@@ -2490,7 +2490,8 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .RewardCard_border_0e {
     width: 1rem;
     height: 50%;
-    background: linear-gradient(180deg, rgba(239, 189, 112, 0.2) 0%, rgba(239, 189, 112, 0) 100%),
+    background:
+        linear-gradient(180deg, rgba(239, 189, 112, 0.2) 0%, rgba(239, 189, 112, 0) 100%),
         linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%);
     position: absolute;
     top: 39rem;

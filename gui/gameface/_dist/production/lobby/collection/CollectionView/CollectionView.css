@@ -364,7 +364,8 @@
     width: 100%;
     height: 100%;
     background: no-repeat center;
-    background-image: linear-gradient(0deg, rgba(1, 1, 1, 0.4) 0%, transparent 200rem),
+    background-image:
+        linear-gradient(0deg, rgba(1, 1, 1, 0.4) 0%, transparent 200rem),
         linear-gradient(90deg, rgba(1, 1, 1, 0.4) 0%, transparent 10%),
         linear-gradient(180deg, rgba(1, 1, 1, 0.4) 0%, transparent 150rem),
         linear-gradient(270deg, rgba(1, 1, 1, 0.4) 0%, transparent 10%);
@@ -374,7 +375,8 @@
 }
 
 .mediaLarge .CollectionLayout_vignetteBg_53 {
-    background-image: linear-gradient(0deg, rgba(1, 1, 1, 0.4) 0%, transparent 200rem),
+    background-image:
+        linear-gradient(0deg, rgba(1, 1, 1, 0.4) 0%, transparent 200rem),
         linear-gradient(90deg, rgba(1, 1, 1, 0.4) 0%, transparent 10%),
         linear-gradient(180deg, rgba(1, 1, 1, 0.4) 0%, transparent 200rem),
         linear-gradient(270deg, rgba(1, 1, 1, 0.4) 0%, transparent 10%);

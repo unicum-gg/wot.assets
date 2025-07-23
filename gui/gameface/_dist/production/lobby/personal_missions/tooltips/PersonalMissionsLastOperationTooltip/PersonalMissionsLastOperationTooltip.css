@@ -293,7 +293,7 @@
 }
 
 .App_base__development_44 {
-    height: 705rem;
+    height: 720rem;
 }
 
 .App_base__completed_a7 {
@@ -349,7 +349,7 @@
     z-index: 2;
 }
 .App_base__development_44 .App_subtitle_4c {
-    margin-bottom: 154rem;
+    margin-bottom: 198rem;
 }
 .App_subtitle__rewards_7d {
     position: absolute;
@@ -376,22 +376,16 @@
     justify-content: center;
     align-items: center;
     position: absolute;
-    top: 251rem;
+    top: 262rem;
     left: 50%;
+    z-index: 3;
     transform: translateX(-50%);
 }
-.App_lockIcon_22 {
-    width: 48rem;
-    height: 48rem;
-    margin-left: -9rem;
-    background: url('R.images.gui.maps.icons.missions.commonIcons.lock_mission_48') no-repeat center / cover;
-}
 .App_labelText_a4 {
-    color: #ffdd99;
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
-    transform: translateX(-15rem);
+    color: #e9e2bf;
+    font-size: 15rem;
+    font-weight: 700;
+    line-height: 1.15;
 }
 .App_counterWrapper_b5 {
     display: flex;
@@ -495,6 +489,11 @@
     left: -20rem;
     z-index: 1;
 }
+.App_base__development_44 .App_operationStatus_1f {
+    position: relative;
+    top: 10rem;
+    z-index: 2;
+}
 .App_divider_0e {
     width: 363rem;
     height: 9rem;
@@ -505,6 +504,7 @@
 .App_base__development_44 .App_divider_0e {
     position: absolute;
     bottom: 55rem;
+    left: -20rem;
 }
 .App_footer_ed {
     display: flex;
@@ -543,7 +543,7 @@
     width: 38rem;
     height: 38rem;
     margin-right: -3rem;
-    background-image: url('R.images.gui.maps.icons.resourceWell.icons.time_ico');
+    background-image: url('R.images.gui.maps.icons.personalMissions3.tooltips.LastOperationTooltip.clock');
     transform: translateY(2rem);
 }
 .App_base__completed_a7 .App_footerLabelIcon_86 {
@@ -585,4 +585,25 @@
 }
 .App_footerBottomText_b0 > div {
     justify-content: center;
+}
+.App_dCFooter_fb {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: absolute;
+    bottom: 20rem;
+    left: -5rem;
+}
+.App_dCFooterIcon_7a {
+    width: 24rem;
+    height: 24rem;
+    background: url('R.images.gui.maps.icons.personalMissions.operations.states.completed') no-repeat center / cover;
+}
+.App_dCFooterText_d7 {
+    color: #7ab300;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+    transform: translateY(-1rem);
 }

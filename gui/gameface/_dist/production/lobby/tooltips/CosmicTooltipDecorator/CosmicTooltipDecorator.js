@@ -3,7 +3,7 @@
     var e,
         n = {
             527: (e, n, t) => {
-                t.r(n), t.d(n, { mouse: () => s, onResize: () => o });
+                (t.r(n), t.d(n, { mouse: () => s, onResize: () => o }));
                 var r = t(2472),
                     i = t(1176);
                 const o = (0, r.E)('clientResized'),
@@ -59,10 +59,10 @@
                         );
                         return Object.assign({}, o, {
                             disable() {
-                                (e.enabled = !1), r();
+                                ((e.enabled = !1), r());
                             },
                             enable() {
-                                (e.enabled = !0), r();
+                                ((e.enabled = !0), r());
                             },
                             enableOutside() {
                                 e.enabled && (0, i.R)(!0);
@@ -74,13 +74,13 @@
                     })();
             },
             5959: (e, n, t) => {
-                t.r(n),
+                (t.r(n),
                     t.d(n, {
                         events: () => r,
                         getMouseGlobalPosition: () => o,
                         getSize: () => i,
                         graphicsQuality: () => a,
-                    });
+                    }));
                 var r = t(527);
                 function i(e = 'px') {
                     return 'rem' === e ? viewEnv.getClientSizeRem() : viewEnv.getClientSizePx();
@@ -123,7 +123,7 @@
                 function i(e, n, t) {
                     return `url(${r(e, n, t)})`;
                 }
-                t.r(n), t.d(n, { getBgUrl: () => i, getTextureUrl: () => r });
+                (t.r(n), t.d(n, { getBgUrl: () => i, getTextureUrl: () => r }));
             },
             6112: (e, n, t) => {
                 t.d(n, { W: () => r });
@@ -150,7 +150,7 @@
                 };
             },
             7641: (e, n, t) => {
-                t.r(n),
+                (t.r(n),
                     t.d(n, {
                         addModelObserver: () => c,
                         addPreloadTexture: () => s,
@@ -177,7 +177,7 @@
                         setInputPaddingsRem: () => u,
                         setSidePaddingsRem: () => l,
                         whenTutorialReady: () => S,
-                    });
+                    }));
                 var r = t(3722),
                     i = t(6112),
                     o = t(6538),
@@ -269,7 +269,7 @@
                                         r,
                                         i = {},
                                         o = Object.keys(e);
-                                    for (r = 0; r < o.length; r++) (t = o[r]), n.indexOf(t) >= 0 || (i[t] = e[t]);
+                                    for (r = 0; r < o.length; r++) ((t = o[r]), n.indexOf(t) >= 0 || (i[t] = e[t]));
                                     return i;
                                 })(n, r);
                             return void 0 !== o
@@ -337,7 +337,7 @@
                                 r,
                                 i = {},
                                 o = Object.keys(e);
-                            for (r = 0; r < o.length; r++) (t = o[r]), n.indexOf(t) >= 0 || (i[t] = e[t]);
+                            for (r = 0; r < o.length; r++) ((t = o[r]), n.indexOf(t) >= 0 || (i[t] = e[t]));
                             return i;
                         })(e, u);
                     const l = (function () {
@@ -351,15 +351,15 @@
                                 (0, a.useMemo)(
                                     () => ({
                                         run: (n) => {
-                                            window.cancelAnimationFrame(e.current),
+                                            (window.cancelAnimationFrame(e.current),
                                                 (e.current = window.requestAnimationFrame(() => {
                                                     e.current = window.requestAnimationFrame(() => {
-                                                        n(), (e.current = 0);
+                                                        (n(), (e.current = 0));
                                                     });
-                                                }));
+                                                })));
                                         },
                                         clear: () => {
-                                            window.cancelAnimationFrame(e.current), (e.current = 0);
+                                            (window.cancelAnimationFrame(e.current), (e.current = 0));
                                         },
                                         get isRunning() {
                                             return 0 !== e.current;
@@ -394,7 +394,7 @@
                             d({}, c, {
                                 className: i()('CosmicTooltipDecorator_base_7d', r),
                                 ref: function (e) {
-                                    (v.current = e), 'function' == typeof n ? n(e) : n && (n.current = e);
+                                    ((v.current = e), 'function' == typeof n ? n(e) : n && (n.current = e));
                                 },
                             }),
                             s().createElement('div', { className: 'CosmicTooltipDecorator_bg_cubes_b6' }),
@@ -410,9 +410,9 @@
         var i = t[e];
         if (void 0 !== i) return i.exports;
         var o = (t[e] = { exports: {} });
-        return n[e].call(o.exports, o, o.exports, r), o.exports;
+        return (n[e].call(o.exports, o, o.exports, r), o.exports);
     }
-    (r.m = n),
+    ((r.m = n),
         (e = []),
         (r.O = (n, t, i, o) => {
             if (!t) {
@@ -436,7 +436,7 @@
         }),
         (r.n = (e) => {
             var n = e && e.__esModule ? () => e.default : () => e;
-            return r.d(n, { a: n }), n;
+            return (r.d(n, { a: n }), n);
         }),
         (r.d = (e, n) => {
             for (var t in n) r.o(n, t) && !r.o(e, t) && Object.defineProperty(e, t, { enumerable: !0, get: n[t] });
@@ -451,10 +451,10 @@
         })()),
         (r.o = (e, n) => Object.prototype.hasOwnProperty.call(e, n)),
         (r.r = (e) => {
-            'undefined' != typeof Symbol &&
+            ('undefined' != typeof Symbol &&
                 Symbol.toStringTag &&
                 Object.defineProperty(e, Symbol.toStringTag, { value: 'Module' }),
-                Object.defineProperty(e, '__esModule', { value: !0 });
+                Object.defineProperty(e, '__esModule', { value: !0 }));
         }),
         (() => {
             var e = { 84: 0 };
@@ -468,12 +468,12 @@
                         for (i in s) r.o(s, i) && (r.m[i] = s[i]);
                         if (u) var c = u(r);
                     }
-                    for (n && n(t); d < a.length; d++) (o = a[d]), r.o(e, o) && e[o] && e[o][0](), (e[o] = 0);
+                    for (n && n(t); d < a.length; d++) ((o = a[d]), r.o(e, o) && e[o] && e[o][0](), (e[o] = 0));
                     return r.O(c);
                 },
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
-            t.forEach(n.bind(null, 0)), (t.push = n.bind(null, t.push.bind(t)));
-        })();
+            (t.forEach(n.bind(null, 0)), (t.push = n.bind(null, t.push.bind(t))));
+        })());
     var i = r.O(void 0, [503], () => r(6711));
     i = r.O(i);
 })();

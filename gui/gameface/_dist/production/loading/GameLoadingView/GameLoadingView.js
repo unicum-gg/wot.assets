@@ -25,35 +25,35 @@
                         n = e();
                     }, t);
                     return () => {
-                        'function' == typeof n && n(), clearTimeout(a);
+                        ('function' == typeof n && n(), clearTimeout(a));
                     };
                 };
                 let g, _, m, f;
-                !(function (e) {
-                    (e[(e.None = 0)] = 'None'),
+                (!(function (e) {
+                    ((e[(e.None = 0)] = 'None'),
                         (e[(e.In = 1)] = 'In'),
                         (e[(e.Visible = 2)] = 'Visible'),
-                        (e[(e.Out = 3)] = 'Out');
+                        (e[(e.Out = 3)] = 'Out'));
                 })(g || (g = {})),
                     (function (e) {
-                        (e[(e.Logo = 1)] = 'Logo'), (e[(e.FairPlayMessage = 2)] = 'FairPlayMessage');
+                        ((e[(e.Logo = 1)] = 'Logo'), (e[(e.FairPlayMessage = 2)] = 'FairPlayMessage'));
                     })(_ || (_ = {})),
                     (function (e) {
-                        (e[(e.Invisible = 0)] = 'Invisible'), (e[(e.Visible = 1)] = 'Visible');
+                        ((e[(e.Invisible = 0)] = 'Invisible'), (e[(e.Visible = 1)] = 'Visible'));
                     })(m || (m = {})),
                     (function (e) {
-                        (e.Default = 'default'), (e.Korea = 'korea'), (e.China = 'china');
-                    })(f || (f = {}));
+                        ((e.Default = 'default'), (e.Korea = 'korea'), (e.China = 'china'));
+                    })(f || (f = {})));
                 const b = 'Background_base_a7',
                     p = 'Background_bg_42',
                     v = 'Background_image_78';
                 var h;
                 !(function (e) {
-                    (e[(e.NotLoaded = 0)] = 'NotLoaded'),
+                    ((e[(e.NotLoaded = 0)] = 'NotLoaded'),
                         (e[(e.Loading = 1)] = 'Loading'),
                         (e[(e.Waiting = 2)] = 'Waiting'),
                         (e[(e.Loaded = 3)] = 'Loaded'),
-                        (e[(e.Failed = 4)] = 'Failed');
+                        (e[(e.Failed = 4)] = 'Failed'));
                 })(h || (h = {}));
                 const E = ({ backgroundPath: e, preloadPath: t = '', onLoaded: n, className: o }) => {
                         const s = (0, a.useRef)(h.NotLoaded),
@@ -61,17 +61,17 @@
                             c = i[0],
                             u = i[1],
                             d = t || e;
-                        (0, a.useEffect)(() => {
+                        ((0, a.useEffect)(() => {
                             if (!e) return;
                             const t = s.current === h.Failed;
-                            u(t),
-                                [h.Failed, h.Loaded].includes(s.current) ? null == n || n(t) : (s.current = h.Waiting);
+                            (u(t),
+                                [h.Failed, h.Loaded].includes(s.current) ? null == n || n(t) : (s.current = h.Waiting));
                         }, [e, n]),
                             (0, a.useEffect)(() => {
                                 s.current !== h.Waiting && (s.current = h.Loading);
-                            }, [d]);
+                            }, [d]));
                         const g = (0, a.useCallback)(() => {
-                            s.current === h.Waiting && (u(!1), null == n || n()), (s.current = h.Loaded);
+                            (s.current === h.Waiting && (u(!1), null == n || n()), (s.current = h.Loaded));
                         }, [n]);
                         return r().createElement(
                             'div',
@@ -82,7 +82,7 @@
                                 src: d,
                                 onLoad: g,
                                 onError: () => {
-                                    s.current === h.Waiting && (u(!0), null == n || n(!0)), (s.current = h.Failed);
+                                    (s.current === h.Waiting && (u(!0), null == n || n(!0)), (s.current = h.Failed));
                                 },
                             }),
                             c &&
@@ -110,7 +110,7 @@
                                         e.progress === a && e.progressMax === n ? e : { progress: a, progressMax: n },
                                     );
                                 };
-                                return engine.on(C, e), () => engine.off(C, e);
+                                return (engine.on(C, e), () => engine.off(C, e));
                             }, []),
                             r().createElement(
                                 'div',
@@ -170,16 +170,16 @@
                             }),
                         );
                     },
-                    A = 'LogoSlide_base_66',
-                    B = 'LogoSlide_backLogo_ed',
-                    V = 'LogoSlide_logo_80',
+                    V = 'LogoSlide_base_66',
+                    A = 'LogoSlide_backLogo_ed',
+                    B = 'LogoSlide_logo_80',
                     W = 'LogoSlide_awards_62',
                     D = () =>
                         r().createElement(
                             'div',
-                            { className: A },
+                            { className: V },
+                            r().createElement('div', { className: A }),
                             r().createElement('div', { className: B }),
-                            r().createElement('div', { className: V }),
                             r().createElement('div', { className: W }),
                         ),
                     $ = {
@@ -212,10 +212,14 @@
                             h = (0, a.useRef)(!0);
                         (0, a.useEffect)(() => {
                             const e = (e) => c(e);
-                            return engine.on(K, e), () => engine.off(K, e);
+                            return (engine.on(K, e), () => engine.off(K, e));
                         }, []);
                         const y = u((t = !1) => {
-                            e && (b(t), (h.current = !e.backgroundPath), n(), (p.current = !0));
+                            e &&
+                                (b(t),
+                                (h.current = !e.backgroundPath || !(null != e && e.hasVignette)),
+                                n(),
+                                (p.current = !0));
                         });
                         if (
                             ((0, a.useEffect)(() => {
@@ -306,22 +310,22 @@
                             p = f[1],
                             v = (0, a.useRef)(),
                             h = (0, a.useRef)(!0);
-                        (0, a.useEffect)(() => {
+                        ((0, a.useEffect)(() => {
                             const e = (e) => n(e);
-                            return engine.on(X, e), engine.trigger('onViewReady'), () => engine.off(X, e);
+                            return (engine.on(X, e), engine.trigger('onViewReady'), () => engine.off(X, e));
                         }, []),
                             (0, a.useEffect)(() => {
                                 const e = v.current !== (null == t ? void 0 : t.backgroundPath);
                                 if (!t || (!e && t.backgroundPath)) i(t);
                                 else {
-                                    (v.current = t.backgroundPath), engine.trigger(Y);
+                                    ((v.current = t.backgroundPath), engine.trigger(Y));
                                     const e = () => {
-                                        p(g.Visible), i(t);
+                                        (p(g.Visible), i(t));
                                     };
-                                    if (!h.current) return p(g.In), m(t.backgroundPath), d(e, t.transitionTime);
-                                    (h.current = !1), e();
+                                    if (!h.current) return (p(g.In), m(t.backgroundPath), d(e, t.transitionTime));
+                                    ((h.current = !1), e());
                                 }
-                            }, [t]);
+                            }, [t]));
                         const E = u(() => {
                             b === g.Visible && p(g.Out);
                         });
@@ -329,7 +333,7 @@
                             (0, a.useEffect)(() => {
                                 if (s && b === g.Out)
                                     return d(() => {
-                                        p(g.None), engine.trigger(Z);
+                                        (p(g.None), engine.trigger(Z));
                                     }, s.transitionTime);
                             }, [s, b]),
                             r().createElement(
@@ -359,9 +363,9 @@
         var r = n[e];
         if (void 0 !== r) return r.exports;
         var o = (n[e] = { exports: {} });
-        return t[e](o, o.exports, a), o.exports;
+        return (t[e](o, o.exports, a), o.exports);
     }
-    (a.m = t),
+    ((a.m = t),
         (e = []),
         (a.O = (t, n, r, o) => {
             if (!n) {
@@ -385,7 +389,7 @@
         }),
         (a.n = (e) => {
             var t = e && e.__esModule ? () => e.default : () => e;
-            return a.d(t, { a: t }), t;
+            return (a.d(t, { a: t }), t);
         }),
         (a.d = (e, t) => {
             for (var n in t) a.o(t, n) && !a.o(e, n) && Object.defineProperty(e, n, { enumerable: !0, get: t[n] });
@@ -411,12 +415,12 @@
                         for (r in i) a.o(i, r) && (a.m[r] = i[r]);
                         if (l) var u = l(a);
                     }
-                    for (t && t(n); c < s.length; c++) (o = s[c]), a.o(e, o) && e[o] && e[o][0](), (e[o] = 0);
+                    for (t && t(n); c < s.length; c++) ((o = s[c]), a.o(e, o) && e[o] && e[o][0](), (e[o] = 0));
                     return a.O(u);
                 },
                 n = (self.webpackChunkgameface = self.webpackChunkgameface || []);
-            n.forEach(t.bind(null, 0)), (n.push = t.bind(null, n.push.bind(n)));
-        })();
+            (n.forEach(t.bind(null, 0)), (n.push = t.bind(null, n.push.bind(n))));
+        })());
     var r = a.O(void 0, [501], () => a(910));
     r = a.O(r);
 })();

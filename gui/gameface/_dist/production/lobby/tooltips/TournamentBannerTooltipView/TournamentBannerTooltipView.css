@@ -24,7 +24,8 @@
     display: flex;
     width: 310rem;
     padding: 18rem 20rem;
-    background: linear-gradient(0deg, #12110b, #12110b),
+    background:
+        linear-gradient(0deg, #12110b, #12110b),
         linear-gradient(0deg, rgba(242, 242, 230, 0.1), rgba(242, 242, 230, 0.1));
 }
 

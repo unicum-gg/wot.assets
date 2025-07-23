@@ -3,10 +3,10 @@
     var e,
         r = {
             8750: (e, r, t) => {
-                t(6179), t(6483);
+                (t(6179), t(6483));
                 let n;
                 !(function (e) {
-                    (e.SMALL = 'small'), (e.MEDIUM = 'medium'), (e.BIG = 'big');
+                    ((e.SMALL = 'small'), (e.MEDIUM = 'medium'), (e.BIG = 'big'));
                 })(n || (n = {}));
             },
         },
@@ -15,9 +15,9 @@
         var o = t[e];
         if (void 0 !== o) return o.exports;
         var i = (t[e] = { exports: {} });
-        return r[e](i, i.exports, n), i.exports;
+        return (r[e](i, i.exports, n), i.exports);
     }
-    (n.m = r),
+    ((n.m = r),
         (e = []),
         (n.O = (r, t, o, i) => {
             if (!t) {
@@ -41,7 +41,7 @@
         }),
         (n.n = (e) => {
             var r = e && e.__esModule ? () => e.default : () => e;
-            return n.d(r, { a: r }), r;
+            return (n.d(r, { a: r }), r);
         }),
         (n.d = (e, r) => {
             for (var t in r) n.o(r, t) && !n.o(e, t) && Object.defineProperty(e, t, { enumerable: !0, get: r[t] });
@@ -68,12 +68,12 @@
                         for (o in f) n.o(f, o) && (n.m[o] = f[o]);
                         if (l) var s = l(n);
                     }
-                    for (r && r(t); u < a.length; u++) (i = a[u]), n.o(e, i) && e[i] && e[i][0](), (e[i] = 0);
+                    for (r && r(t); u < a.length; u++) ((i = a[u]), n.o(e, i) && e[i] && e[i][0](), (e[i] = 0));
                     return n.O(s);
                 },
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
-            t.forEach(r.bind(null, 0)), (t.push = r.bind(null, t.push.bind(t)));
-        })();
+            (t.forEach(r.bind(null, 0)), (t.push = r.bind(null, t.push.bind(t))));
+        })());
     var o = n.O(void 0, [727], () => n(8750));
     o = n.O(o);
 })();

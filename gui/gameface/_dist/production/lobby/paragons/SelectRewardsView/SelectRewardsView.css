@@ -1278,7 +1278,8 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     box-shadow:
         0 3rem 6rem #00000026,
         0 0 10rem #0000004d;
-    background: radial-gradient(
+    background:
+        radial-gradient(
             400.96% 100% at 50% 100%,
             rgba(25, 25, 26, 0.3) 0%,
             rgba(25, 25, 26, 0.3) 30%,

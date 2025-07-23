@@ -930,6 +930,13 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     width: 430rem;
 }
 
+.DescriptionLevels_descriptionLevels_27 {
+    color: #ffdd99;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+
 .Reward_base_ea {
     display: flex;
     flex-direction: column;
@@ -1141,7 +1148,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     position: absolute;
     top: 43rem;
     left: 30rem;
-    z-index: 10;
+    z-index: 1;
 }
 .App_content_d3 {
     margin-bottom: 160rem;
@@ -1156,6 +1163,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .App_glow_39 {
     width: 300rem;
     height: 300rem;
+    background: url('swf://gui/flash/animations/battlePass/rays.swf') no-repeat center / cover;
     opacity: 1;
     mix-blend-mode: lighten; /* additive;*/
     position: absolute;
@@ -1275,7 +1283,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     position: absolute;
     bottom: 110rem;
     left: 0;
-    z-index: 10;
+    z-index: 1;
 }
 .mediaMedium .App_footer_ba {
     bottom: 120rem;
@@ -1308,6 +1316,12 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     margin: 20rem;
     position: absolute;
     bottom: 45rem;
+}
+.App_alertText_8e {
+    color: #e7ae59;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
 }
 .App_lip_6a {
     width: 840rem;

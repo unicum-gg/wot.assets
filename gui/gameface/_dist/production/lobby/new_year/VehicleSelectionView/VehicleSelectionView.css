@@ -2704,7 +2704,8 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     box-shadow:
         0 0 28rem 0 rgba(255, 122, 0, 0.28) inset,
         0 0 5rem 0 rgba(255, 122, 0, 0.5);
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    background:
+        linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
         linear-gradient(0deg, rgba(255, 107, 0, 0.2), rgba(255, 107, 0, 0.2));
 }
 
@@ -2713,7 +2714,8 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     box-shadow:
         0 0 28rem 0 rgba(255, 122, 0, 0.28) inset,
         0 0 5rem 0 rgba(255, 122, 0, 0.5);
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    background:
+        linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
         linear-gradient(0deg, rgba(255, 107, 0, 0.25), rgba(255, 107, 0, 0.25));
 }
 

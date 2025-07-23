@@ -7974,7 +7974,8 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 .NyRewardsInfoView_base__collections_a2 {
     /* the color must be above the the background image */
-    background-image: linear-gradient(180deg, rgba(0, 10, 31, 0.15), rgba(0, 10, 31, 0.15)),
+    background-image:
+        linear-gradient(180deg, rgba(0, 10, 31, 0.15), rgba(0, 10, 31, 0.15)),
         url('R.images.new_year.gui.maps.icons.newYear.collections_reward.bg');
 }
 .NyRewardsInfoView_base__faded_0e {

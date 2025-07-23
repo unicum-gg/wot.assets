@@ -5,7 +5,7 @@
             527: (e, n, i) => {
                 var o = i(2472),
                     t = i(1176);
-                (0, o.E)('clientResized'), (0, o.E)('self.onScaleUpdated');
+                ((0, o.E)('clientResized'), (0, o.E)('self.onScaleUpdated'));
                 const r = { down: (0, o.E)('mousedown'), up: (0, o.E)('mouseup'), move: (0, o.E)('mousemove') };
                 !(function () {
                     const e = { listeners: 0, enabled: !0, initialized: !1 };
@@ -58,10 +58,10 @@
                     );
                     Object.assign({}, a, {
                         disable() {
-                            (e.enabled = !1), o();
+                            ((e.enabled = !1), o());
                         },
                         enable() {
-                            (e.enabled = !0), o();
+                            ((e.enabled = !0), o());
                         },
                         enableOutside() {
                             e.enabled && (0, t.R)(!0);
@@ -111,10 +111,10 @@
                 var o = i(5959);
                 const t = { highlight: 'highlight', click: 'play', yes1: 'yes1' },
                     r = Object.keys(t).reduce((e, n) => ((e[n] = () => (0, o.playSound)(t[n])), e), {});
-                Object.assign({}, r, { sound: o.playSound }), o.setRTPC;
+                (Object.assign({}, r, { sound: o.playSound }), o.setRTPC);
             },
             2984: (e, n, i) => {
-                i(6483), i(514), i(6179), i(9674);
+                (i(6483), i(514), i(6179), i(9674));
             },
             9674: (e, n, i) => {
                 const o = {
@@ -150,9 +150,9 @@
         var t = i[e];
         if (void 0 !== t) return t.exports;
         var r = (i[e] = { exports: {} });
-        return n[e](r, r.exports, o), r.exports;
+        return (n[e](r, r.exports, o), r.exports);
     }
-    (o.m = n),
+    ((o.m = n),
         (e = []),
         (o.O = (n, i, t, r) => {
             if (!i) {
@@ -176,7 +176,7 @@
         }),
         (o.n = (e) => {
             var n = e && e.__esModule ? () => e.default : () => e;
-            return o.d(n, { a: n }), n;
+            return (o.d(n, { a: n }), n);
         }),
         (o.d = (e, n) => {
             for (var i in n) o.o(n, i) && !o.o(e, i) && Object.defineProperty(e, i, { enumerable: !0, get: n[i] });
@@ -203,12 +203,12 @@
                         for (t in l) o.o(l, t) && (o.m[t] = l[t]);
                         if (s) var d = s(o);
                     }
-                    for (n && n(i); u < a.length; u++) (r = a[u]), o.o(e, r) && e[r] && e[r][0](), (e[r] = 0);
+                    for (n && n(i); u < a.length; u++) ((r = a[u]), o.o(e, r) && e[r] && e[r][0](), (e[r] = 0));
                     return o.O(d);
                 },
                 i = (self.webpackChunkgameface = self.webpackChunkgameface || []);
-            i.forEach(n.bind(null, 0)), (i.push = n.bind(null, i.push.bind(i)));
-        })();
+            (i.forEach(n.bind(null, 0)), (i.push = n.bind(null, i.push.bind(i))));
+        })());
     var t = o.O(void 0, [866], () => o(2984));
     t = o.O(t);
 })();

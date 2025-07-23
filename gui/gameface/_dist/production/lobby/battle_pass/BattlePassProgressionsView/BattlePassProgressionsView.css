@@ -454,7 +454,7 @@ body {
     align-items: center;
     width: 100%;
     height: 100%;
-    background-color: #0a0b08;
+    background-color: #0f0f0f;
 }
 
 .BattlePassOffSeasonViewContent_content_17 {
@@ -722,7 +722,7 @@ body {
     width: 100%;
     height: 100%;
     --widget-size: 418rem;
-    background: no-repeat 100% 50% / 1640rem 820rem #12171e;
+    background: no-repeat 100% 50% / 1640rem 820rem #0f0f0f;
     position: relative;
 }
 .mediaSmall .BattlePassProgressionsViewContent_base_67 {
@@ -798,7 +798,7 @@ body {
     width: var(--widget-size);
     position: absolute;
     top: 55%;
-    right: 30rem;
+    right: 0;
     transform: translateY(70%);
 }
 .mediaMedium .BattlePassProgressionsViewContent_extraChapterWidget_e2 {
@@ -1163,6 +1163,10 @@ body {
 .Separator_preview_44 {
     width: 60rem;
     height: 60rem;
+    transform: translate(0, -100%);
+}
+
+.Separator_base__hasSound_49 .Separator_preview_44 {
     transform: translate(-100%, -100%);
 }
 
@@ -1170,6 +1174,10 @@ body {
     width: 60rem;
     height: 68rem;
     transform: translate(100%, -100%);
+}
+
+.Separator_previewLabel_7b {
+    display: none;
 }
 
 .Box_mt__XS_0c {
@@ -1449,14 +1457,15 @@ body {
 
 .StyleDescription_base_b1 {
     flex: 1;
+    position: relative;
 }
 
 .StyleDescription_title_9e {
-    margin-bottom: 4rem;
     color: rgba(254, 254, 236, 0.9);
     font-size: 18rem;
     font-weight: 700;
     line-height: 1.1;
+    margin-bottom: 4rem;
 }
 
 .mediaMedium .StyleDescription_title_9e {
@@ -1467,12 +1476,12 @@ body {
 }
 
 .StyleDescription_subTitle_99 {
-    display: flex;
-    align-items: center;
     color: #fefeec;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
+    display: flex;
+    align-items: center;
 }
 
 .mediaMedium .StyleDescription_subTitle_99 {
@@ -1504,16 +1513,23 @@ body {
 }
 
 .StyleDescription_remark_0e {
-    display: flex;
-    margin-top: 6rem;
     color: #ffdd99;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
+    display: flex;
+    width: 175rem;
+    margin-top: 6rem;
+    position: absolute;
+    bottom: -40rem;
 }
 
 .mediaMedium .StyleDescription_remark_0e {
+    color: #ffdd99;
     font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+    width: 200rem;
 }
 
 .StyleDescription_lockIcon_6e {

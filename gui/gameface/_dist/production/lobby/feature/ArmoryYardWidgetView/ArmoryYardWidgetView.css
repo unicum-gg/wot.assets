@@ -294,9 +294,19 @@ body {
     margin-bottom: -1rem;
 }
 
+.StateBlock_base__active__clockHidden_7a,
+.StateBlock_base__completed__clockHidden_79 {
+    margin-bottom: 4rem;
+}
+
 .StateBlock_base__active__thinExtraSmall_d8,
 .StateBlock_base__completed__thinExtraSmall_f0 {
     margin-bottom: 2rem;
+}
+
+.StateBlock_base__active__thinExtraSmall__clockHidden_61,
+.StateBlock_base__completed__thinExtraSmall__clockHidden_1d {
+    margin-bottom: 7rem;
 }
 
 .StateBlock_base__active__thinSmall_4c,
@@ -308,6 +318,11 @@ body {
     margin-bottom: 2rem;
 }
 
+.StateBlock_base__active__thinSmall__clockHidden_27,
+.StateBlock_base__completed__thinSmall__clockHidden_ed {
+    margin-bottom: 7rem;
+}
+
 .StateBlock_base__active__wideSmall_ef,
 .StateBlock_base__completed__wideSmall_0d {
     color: #ffdd99;
@@ -317,6 +332,11 @@ body {
     margin-bottom: 1rem;
 }
 
+.StateBlock_base__active__wideSmall__clockHidden_df,
+.StateBlock_base__completed__wideSmall__clockHidden_d3 {
+    margin-bottom: 6rem;
+}
+
 .StateBlock_base__active__big_b8,
 .StateBlock_base__completed__big_b5 {
     color: #ffdd99;
@@ -324,6 +344,11 @@ body {
     font-weight: 400;
     line-height: 1.25;
     margin-bottom: 1rem;
+}
+
+.StateBlock_base__active__big__clockHidden_bd,
+.StateBlock_base__completed__big__clockHidden_9f {
+    margin-bottom: 6rem;
 }
 
 .StateBlock_base__postProgression_ca {
@@ -409,6 +434,7 @@ body {
 .StateBlock_icon__lock_c8 {
     margin-right: -4rem;
     background-image: url('R.images.armory_yard.gui.maps.icons.widget.small.anounce');
+    transform: translateY(1rem);
 }
 
 .SequencedBg_base_b6 {
