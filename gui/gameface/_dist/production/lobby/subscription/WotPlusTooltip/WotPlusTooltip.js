@@ -22,24 +22,24 @@
                         addPreloadTexture: () => T,
                         children: () => D,
                         displayStatus: () => p,
-                        displayStatusIs: () => Q,
+                        displayStatusIs: () => V,
                         events: () => v,
                         extraSize: () => $,
                         forceTriggerMouseMove: () => Y,
                         freezeTextureBeforeResize: () => U,
                         getBrowserTexturePath: () => x,
-                        getDisplayStatus: () => V,
+                        getDisplayStatus: () => Q,
                         getScale: () => M,
                         getSize: () => k,
                         getViewGlobalPosition: () => N,
-                        isEventHandled: () => q,
+                        isEventHandled: () => X,
                         isFocused: () => j,
                         pxToRem: () => G,
                         remToPx: () => z,
                         resize: () => I,
                         sendEvent: () => w,
                         setAnimateWindow: () => L,
-                        setEventHandled: () => X,
+                        setEventHandled: () => q,
                         setInputPaddingsRem: () => P,
                         setSidePaddingsRem: () => O,
                         whenTutorialReady: () => H,
@@ -252,19 +252,19 @@
                 function j() {
                     return viewEnv.isFocused();
                 }
-                function X() {
+                function q() {
                     return viewEnv.setEventHandled();
                 }
-                function q() {
+                function X() {
                     return viewEnv.isEventHandled();
                 }
                 function Y() {
                     viewEnv.forceTriggerMouseMove();
                 }
-                function V() {
+                function Q() {
                     return viewEnv.getShowingStatus();
                 }
-                const Q = Object.keys(p).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === p[e]), u), {}),
+                const V = Object.keys(p).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === p[e]), u), {}),
                     $ = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
@@ -510,7 +510,10 @@
                         (u.VehicleSelect = 'vehicleSelect'),
                         (u.StyleProgress = 'styleProgress'),
                         (u.ParagonsUnlocks = 'paragonsUnlocks'),
-                        (u.LootBoxToken = 'lootBoxToken'));
+                        (u.LootBoxToken = 'lootBoxToken'),
+                        (u.GoldenTicket = 'birthday2025_golden_ticket'),
+                        (u.PostStamp = 'giftsystem_4_stamp'),
+                        (u.Quests = 'quests'));
                 })(lu || (lu = {})),
                     (function (u) {
                         ((u.Gold = 'gold'),

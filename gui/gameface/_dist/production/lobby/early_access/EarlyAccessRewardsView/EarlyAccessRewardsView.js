@@ -1091,14 +1091,14 @@
                         [f.Large]: `${v().SMALL_WIDTH} ${v().MEDIUM_WIDTH} ${v().LARGE_WIDTH}`,
                         [f.ExtraLarge]: `${v().SMALL_WIDTH} ${v().MEDIUM_WIDTH} ${v().LARGE_WIDTH} ${v().EXTRA_LARGE_WIDTH}`,
                     },
-                    O = {
+                    y = {
                         [x.ExtraSmall]: '',
                         [x.Small]: v().SMALL_HEIGHT,
                         [x.Medium]: `${v().SMALL_HEIGHT} ${v().MEDIUM_HEIGHT}`,
                         [x.Large]: `${v().SMALL_HEIGHT} ${v().MEDIUM_HEIGHT} ${v().LARGE_HEIGHT}`,
                         [x.ExtraLarge]: `${v().SMALL_HEIGHT} ${v().MEDIUM_HEIGHT} ${v().LARGE_HEIGHT} ${v().EXTRA_LARGE_HEIGHT}`,
                     },
-                    y = {
+                    O = {
                         [w.ExtraSmall]: '',
                         [w.Small]: v().SMALL,
                         [w.Medium]: `${v().SMALL} ${v().MEDIUM}`,
@@ -1121,7 +1121,7 @@
                             i = n.mediaWidth,
                             s = n.mediaHeight,
                             o = n.mediaSize;
-                        return a().createElement('div', M({ className: p()(t, L[i], O[s], y[o]) }, r), e);
+                        return a().createElement('div', M({ className: p()(t, L[i], y[s], O[o]) }, r), e);
                     },
                     N = ['children'];
                 const k = (u) => {
@@ -1353,7 +1353,10 @@
                             (u.VehicleSelect = 'vehicleSelect'),
                             (u.StyleProgress = 'styleProgress'),
                             (u.ParagonsUnlocks = 'paragonsUnlocks'),
-                            (u.LootBoxToken = 'lootBoxToken'));
+                            (u.LootBoxToken = 'lootBoxToken'),
+                            (u.GoldenTicket = 'birthday2025_golden_ticket'),
+                            (u.PostStamp = 'giftsystem_4_stamp'),
+                            (u.Quests = 'quests'));
                     })(Z || (Z = {})),
                     (function (u) {
                         ((u.Gold = 'gold'),
@@ -1483,6 +1486,8 @@
                         Z.CosmicLootboxCommon,
                         Z.CosmicLootboxSilver,
                         Z.SelectableBonus,
+                        Z.GoldenTicket,
+                        Z.PostStamp,
                     ],
                     iu = [Z.Gold, Z.Credits, Z.Crystal, Z.FreeXp],
                     su = [Z.BattlePassPoints],
@@ -1560,7 +1565,28 @@
                             case 'dossier_badge':
                                 return `R.images.gui.maps.icons.quests.bonuses.badges.${o}.${n}`;
                             case 'dossier_achievement':
-                                return `R.images.gui.maps.icons.achievement.${o}.${n}`;
+                                return `R.images.gui.maps.icons.achievement.${((u) => {
+                                    switch (u) {
+                                        case uu.S600x450:
+                                            return 'c_600x450';
+                                        case uu.S400x300:
+                                            return 'c_400x300';
+                                        case uu.S296x222:
+                                            return 'c_296x222';
+                                        case uu.S232x174:
+                                            return 'c_232x174';
+                                        case uu.S180x135:
+                                            return 'big';
+                                        case uu.Big:
+                                        case uu.S80x80:
+                                            return 'c_80x80';
+                                        case uu.Small:
+                                        case uu.S48x48:
+                                            return 'c_48x48';
+                                        default:
+                                            return u;
+                                    }
+                                })(e)}.${n}`;
                             case 'xp':
                             case 'xpFactor':
                                 return `R.images.gui.maps.icons.quests.bonuses.${e}.exp`;
@@ -1942,7 +1968,7 @@
                             ),
                         );
                     },
-                    Ru = (u) => {
+                    Su = (u) => {
                         let e = u.children,
                             t = u.contentId,
                             a = u.args,
@@ -2066,7 +2092,7 @@
                             : e;
                         var x;
                     },
-                    Su = ['children'];
+                    Ru = ['children'];
                 function Tu() {
                     return (
                         (Tu =
@@ -2091,9 +2117,9 @@
                                     n = Object.keys(u);
                                 for (r = 0; r < n.length; r++) ((t = n[r]), e.indexOf(t) >= 0 || (a[t] = u[t]));
                                 return a;
-                            })(u, Su);
+                            })(u, Ru);
                         return a().createElement(
-                            Ru,
+                            Su,
                             Tu(
                                 {
                                     contentId:
@@ -2108,9 +2134,9 @@
                         );
                     },
                     Lu = ['children', 'body', 'header', 'note', 'alert', 'args'];
-                function Ou() {
+                function yu() {
                     return (
-                        (Ou =
+                        (yu =
                             Object.assign ||
                             function (u) {
                                 for (var e = 1; e < arguments.length; e++) {
@@ -2119,10 +2145,10 @@
                                 }
                                 return u;
                             }),
-                        Ou.apply(this, arguments)
+                        yu.apply(this, arguments)
                     );
                 }
-                const yu = R.views.common.tooltip_window.simple_tooltip_content,
+                const Ou = R.views.common.tooltip_window.simple_tooltip_content,
                     Pu = (u) => {
                         let e = u.children,
                             t = u.body,
@@ -2145,12 +2171,12 @@
                             return u;
                         }, [s, t, n, i, o]);
                         return a().createElement(
-                            Ru,
-                            Ou(
+                            Su,
+                            yu(
                                 {
                                     contentId:
                                         ((A = null == o ? void 0 : o.hasHtmlContent),
-                                        A ? yu.SimpleTooltipHtmlContent('resId') : yu.SimpleTooltipContent('resId')),
+                                        A ? Ou.SimpleTooltipHtmlContent('resId') : Ou.SimpleTooltipContent('resId')),
                                     decoratorId: R.views.common.tooltip_window.tooltip_window.TooltipWindow('resId'),
                                     args: l,
                                 },
@@ -2182,7 +2208,7 @@
                             i = e.args,
                             s = null == i ? void 0 : i.contentId;
                         return n || s
-                            ? a().createElement(Ru, Nu({}, e, { contentId: n || s }), r)
+                            ? a().createElement(Su, Nu({}, e, { contentId: n || s }), r)
                             : a().createElement(Mu, e, r);
                     },
                     Iu = {
@@ -2495,15 +2521,15 @@
                                       void 0
                                     : w,
                             x = u.alignItems,
-                            R = void 0 === x ? (C ? 'flex-start' : g && 'center') || (h && 'flex-end') || void 0 : x,
-                            S = u.alignSelf,
+                            S = void 0 === x ? (C ? 'flex-start' : g && 'center') || (h && 'flex-end') || void 0 : x,
+                            R = u.alignSelf,
                             T = u.wrap,
                             M = u.flexWrap,
                             L = void 0 === M ? (T ? 'wrap' : void 0) : M,
-                            O = u.grow,
-                            y = u.shrink,
+                            y = u.grow,
+                            O = u.shrink,
                             P = u.flex,
-                            N = void 0 === P ? (O || y ? `${O ? 1 : 0} ${y ? 1 : 0} auto` : void 0) : P,
+                            N = void 0 === P ? (y || O ? `${y ? 1 : 0} ${O ? 1 : 0} auto` : void 0) : P,
                             k = u.style,
                             I = u.children,
                             H = (function (u, e) {
@@ -2532,16 +2558,16 @@
                                         width: void 0 !== t && 'number' == typeof t ? t + 'rem' : t,
                                         height: void 0 !== n && 'number' == typeof n ? n + 'rem' : n,
                                         flex: N,
-                                        alignSelf: S,
-                                        display: B || R ? 'flex' : void 0,
+                                        alignSelf: R,
+                                        display: B || S ? 'flex' : void 0,
                                         flexDirection: B,
                                         flexWrap: L,
                                         justifyContent: f,
-                                        alignItems: R,
+                                        alignItems: S,
                                     }),
                                     computedClassNames: e,
                                 };
-                            }, [t, n, o, l, c, F, k, N, S, B, L, f, R]),
+                            }, [t, n, o, l, c, F, k, N, R, B, L, f, S]),
                             G = U.computedStyle,
                             W = U.computedClassNames;
                         return a().createElement('div', Vu({ className: p()(Yu.base, ...W, e), style: G }, H), I);
@@ -2817,8 +2843,8 @@
                             a().createElement(he, { className: we, text: u.label }),
                         );
                     },
-                    Re = 'RewardList_base_03',
-                    Se = 'RewardList_reward_ef';
+                    Se = 'RewardList_base_03',
+                    Re = 'RewardList_reward_ef';
                 function Te() {
                     return (
                         (Te =
@@ -2855,12 +2881,12 @@
                             );
                         return a().createElement(
                             'div',
-                            { className: Re },
+                            { className: Se },
                             s.map((u, e) =>
                                 a().createElement(
                                     pe,
                                     { key: e, index: e, delay: t },
-                                    a().createElement(Hu, Te({}, u, { image: u.image(n), size: n, className: Se })),
+                                    a().createElement(Hu, Te({}, u, { image: u.image(n), size: n, className: Re })),
                                 ),
                             ),
                             i &&
@@ -2873,14 +2899,14 @@
                                         size: n,
                                         value: E,
                                         tooltipArgs: l,
-                                        className: Se,
+                                        className: Re,
                                     }),
                                 ),
                         );
                     },
                     Le = 'Content_base_24',
-                    Oe = 'Content_ribbon_c0',
-                    ye = 'Content_ribbon__onlyRegular_96',
+                    ye = 'Content_ribbon_c0',
+                    Oe = 'Content_ribbon__onlyRegular_96',
                     Pe = 'Content_mainRewards_65',
                     Ne = 'Content_regularRewards_e8',
                     ke = 'Content_regularRewards__onlyRegular_d2',
@@ -2892,7 +2918,7 @@
                             n = u.computes.hasRegularRewards(),
                             i = u.computes.hasRegularRewardsOnly(),
                             s = u.computes.getRewardsShowDelay(),
-                            o = p()(Oe, i && ye),
+                            o = p()(ye, i && Oe),
                             E = p()(Ne, i && ke);
                         return a().createElement(
                             'div',
@@ -3000,13 +3026,13 @@
                             },
                             [A],
                         ),
-                        O = (0, r.useCallback)(
+                        y = (0, r.useCallback)(
                             (u) => {
                                 i || (_ && _(u), b(!1));
                             },
                             [i, _],
                         ),
-                        y = (0, r.useCallback)(
+                        O = (0, r.useCallback)(
                             (u) => {
                                 i || (null !== E && I(E), c && c(u), t && x(), b(!0));
                             },
@@ -3051,8 +3077,8 @@
                                 className: N,
                                 onMouseEnter: M,
                                 onMouseMove: L,
-                                onMouseUp: O,
-                                onMouseDown: y,
+                                onMouseUp: y,
+                                onMouseDown: O,
                                 onMouseLeave: P,
                                 onClick: T,
                             },

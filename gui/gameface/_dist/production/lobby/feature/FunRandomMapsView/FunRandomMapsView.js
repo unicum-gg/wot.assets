@@ -2650,38 +2650,38 @@
                                     (e !== D.scrollPosition.goal && g(e, { immediate: !0 }),
                                         m.trigger('recalculateContent'));
                                 });
-                            return (
-                                (0, a.useEffect)(
-                                    () => (
-                                        window.addEventListener('resize', f),
-                                        () => {
-                                            window.removeEventListener('resize', f);
-                                        }
-                                    ),
-                                    [f],
+                            (0, a.useEffect)(
+                                () => (
+                                    window.addEventListener('resize', f),
+                                    () => {
+                                        window.removeEventListener('resize', f);
+                                    }
                                 ),
-                                (0, a.useMemo)(
-                                    () => ({
-                                        getWrapperSize: () => (F.current ? n(F.current) : void 0),
-                                        getContainerSize: () => (A.current ? u(A.current) : void 0),
-                                        getBounds: () =>
-                                            A.current
-                                                ? e(A.current)
-                                                : (console.warn('getBounds: contentRef.current is null'), [0, 0]),
-                                        stepTimeout: E.step.clampedArrowStepTimeout,
-                                        clampPosition: i,
-                                        handleMouseWheel: h,
-                                        applyScroll: g,
-                                        applyStepTo: p,
-                                        contentRef: A,
-                                        wrapperRef: F,
-                                        scrollPosition: B,
-                                        animationScroll: D,
-                                        recalculateContent: v,
-                                        events: { on: m.on, off: m.off },
-                                    }),
-                                    [D.scrollPosition, g, p, m.off, m.on, v, h, B, E.step.clampedArrowStepTimeout],
-                                )
+                                [f],
+                            );
+                            const b = (0, a.useCallback)((u) => m.trigger('isThumbDraggingChanged', u), [m]);
+                            return (0, a.useMemo)(
+                                () => ({
+                                    getWrapperSize: () => (F.current ? n(F.current) : void 0),
+                                    getContainerSize: () => (A.current ? u(A.current) : void 0),
+                                    getBounds: () =>
+                                        A.current
+                                            ? e(A.current)
+                                            : (console.warn('getBounds: contentRef.current is null'), [0, 0]),
+                                    stepTimeout: E.step.clampedArrowStepTimeout,
+                                    clampPosition: i,
+                                    handleMouseWheel: h,
+                                    applyScroll: g,
+                                    applyStepTo: p,
+                                    contentRef: A,
+                                    wrapperRef: F,
+                                    scrollPosition: B,
+                                    animationScroll: D,
+                                    recalculateContent: v,
+                                    handleIsThumbDragging: b,
+                                    events: { on: m.on, off: m.off },
+                                }),
+                                [D.scrollPosition, g, p, b, m.off, m.on, v, h, B, E.step.clampedArrowStepTimeout],
                             );
                         };
                     },
@@ -3101,7 +3101,9 @@
                                         });
                                     },
                                     t = () => {
-                                        (window.removeEventListener('mousemove', e), d(he));
+                                        (window.removeEventListener('mousemove', e),
+                                            u.handleIsThumbDragging(!1),
+                                            d(he));
                                     };
                                 return (
                                     window.addEventListener('mousemove', e),
@@ -3147,7 +3149,8 @@
                                             0 === e.button &&
                                             (Y('play'),
                                             e.target === r
-                                                ? d({ pending: !0, offset: e.screenY - r.getBoundingClientRect().y })
+                                                ? (u.handleIsThumbDragging(!0),
+                                                  d({ pending: !0, offset: e.screenY - r.getBoundingClientRect().y }))
                                                 : ((n = e.screenY > r.getBoundingClientRect().y ? ne.Prev : ne.Next),
                                                   c.current &&
                                                       ve(u, (e) => {

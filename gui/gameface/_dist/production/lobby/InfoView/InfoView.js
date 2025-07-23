@@ -1109,14 +1109,14 @@
                         [x.Large]: `${v().SMALL_HEIGHT} ${v().MEDIUM_HEIGHT} ${v().LARGE_HEIGHT}`,
                         [x.ExtraLarge]: `${v().SMALL_HEIGHT} ${v().MEDIUM_HEIGHT} ${v().LARGE_HEIGHT} ${v().EXTRA_LARGE_HEIGHT}`,
                     },
-                    N = {
+                    k = {
                         [b.ExtraSmall]: '',
                         [b.Small]: v().SMALL,
                         [b.Medium]: `${v().SMALL} ${v().MEDIUM}`,
                         [b.Large]: `${v().SMALL} ${v().MEDIUM} ${v().LARGE}`,
                         [b.ExtraLarge]: `${v().SMALL} ${v().MEDIUM} ${v().LARGE} ${v().EXTRA_LARGE}`,
                     },
-                    k = (e) => {
+                    N = (e) => {
                         let u = e.children,
                             t = e.className,
                             n = (function (e, u) {
@@ -1132,7 +1132,7 @@
                             a = r.mediaWidth,
                             i = r.mediaHeight,
                             o = r.mediaSize;
-                        return s().createElement('div', y({ className: f()(t, T[a], M[i], N[o]) }, n), u);
+                        return s().createElement('div', y({ className: f()(t, T[a], M[i], k[o]) }, n), u);
                     },
                     O = ['children'],
                     P = (e) => {
@@ -1146,7 +1146,7 @@
                                 for (n = 0; n < a.length; n++) ((t = a[n]), u.indexOf(t) >= 0 || (r[t] = e[t]));
                                 return r;
                             })(e, O);
-                        return s().createElement(C, null, s().createElement(k, t, u));
+                        return s().createElement(C, null, s().createElement(N, t, u));
                     };
                 var I = t(493),
                     H = t.n(I);
@@ -1424,38 +1424,38 @@
                                     (u !== g.scrollPosition.goal && C(u, { immediate: !0 }),
                                         d.trigger('recalculateContent'));
                                 });
-                            return (
-                                (0, i.useEffect)(
-                                    () => (
-                                        window.addEventListener('resize', h),
-                                        () => {
-                                            window.removeEventListener('resize', h);
-                                        }
-                                    ),
-                                    [h],
+                            (0, i.useEffect)(
+                                () => (
+                                    window.addEventListener('resize', h),
+                                    () => {
+                                        window.removeEventListener('resize', h);
+                                    }
                                 ),
-                                (0, i.useMemo)(
-                                    () => ({
-                                        getWrapperSize: () => (_.current ? r(_.current) : void 0),
-                                        getContainerSize: () => (m.current ? e(m.current) : void 0),
-                                        getBounds: () =>
-                                            m.current
-                                                ? u(m.current)
-                                                : (console.warn('getBounds: contentRef.current is null'), [0, 0]),
-                                        stepTimeout: E.step.clampedArrowStepTimeout,
-                                        clampPosition: s,
-                                        handleMouseWheel: f,
-                                        applyScroll: C,
-                                        applyStepTo: p,
-                                        contentRef: m,
-                                        wrapperRef: _,
-                                        scrollPosition: D,
-                                        animationScroll: g,
-                                        recalculateContent: v,
-                                        events: { on: d.on, off: d.off },
-                                    }),
-                                    [g.scrollPosition, C, p, d.off, d.on, v, f, D, E.step.clampedArrowStepTimeout],
-                                )
+                                [h],
+                            );
+                            const b = (0, i.useCallback)((e) => d.trigger('isThumbDraggingChanged', e), [d]);
+                            return (0, i.useMemo)(
+                                () => ({
+                                    getWrapperSize: () => (_.current ? r(_.current) : void 0),
+                                    getContainerSize: () => (m.current ? e(m.current) : void 0),
+                                    getBounds: () =>
+                                        m.current
+                                            ? u(m.current)
+                                            : (console.warn('getBounds: contentRef.current is null'), [0, 0]),
+                                    stepTimeout: E.step.clampedArrowStepTimeout,
+                                    clampPosition: s,
+                                    handleMouseWheel: f,
+                                    applyScroll: C,
+                                    applyStepTo: p,
+                                    contentRef: m,
+                                    wrapperRef: _,
+                                    scrollPosition: D,
+                                    animationScroll: g,
+                                    recalculateContent: v,
+                                    handleIsThumbDragging: b,
+                                    events: { on: d.on, off: d.off },
+                                }),
+                                [g.scrollPosition, C, p, b, d.off, d.on, v, f, D, E.step.clampedArrowStepTimeout],
                             );
                         };
                     },
@@ -1869,7 +1869,9 @@
                                         });
                                     },
                                     t = () => {
-                                        (window.removeEventListener('mousemove', u), A(me));
+                                        (window.removeEventListener('mousemove', u),
+                                            e.handleIsThumbDragging(!1),
+                                            A(me));
                                     };
                                 return (
                                     window.addEventListener('mousemove', u),
@@ -1915,7 +1917,8 @@
                                             0 === u.button &&
                                             (V('play'),
                                             u.target === n
-                                                ? A({ pending: !0, offset: u.screenY - n.getBoundingClientRect().y })
+                                                ? (e.handleIsThumbDragging(!0),
+                                                  A({ pending: !0, offset: u.screenY - n.getBoundingClientRect().y }))
                                                 : ((r = u.screenY > n.getBoundingClientRect().y ? Y.Prev : Y.Next),
                                                   c.current &&
                                                       de(e, (u) => {
@@ -2160,28 +2163,28 @@
                     })(),
                     Te = ['zh_cn', 'zh_sg', 'zh_tw'];
                 let Me;
-                var Ne;
-                (((Ne = Me || (Me = {})).SHORT_DATE = 'short-date'),
-                    (Ne.SHORT_TIME = 'short-time'),
-                    (Ne.SHORT_DATE_TIME = 'short-date-time'),
-                    (Ne.FULL_DATE = 'full-date'),
-                    (Ne.FULL_DATE_TIME = 'full-date-time'),
-                    (Ne.MONTH = 'month'),
-                    (Ne.MONTH_DATE = 'month-date'),
-                    (Ne.DATE_MONTH = 'date-month'),
-                    (Ne.MONTH_YEAR = 'month-year'),
-                    (Ne.WEEK_DAY = 'week-day'),
-                    (Ne.WEEK_DAY_TIME = 'week-day-time'),
-                    (Ne.YEAR = 'year'),
-                    (Ne.DATE_YEAR = 'date-year'));
+                var ke;
+                (((ke = Me || (Me = {})).SHORT_DATE = 'short-date'),
+                    (ke.SHORT_TIME = 'short-time'),
+                    (ke.SHORT_DATE_TIME = 'short-date-time'),
+                    (ke.FULL_DATE = 'full-date'),
+                    (ke.FULL_DATE_TIME = 'full-date-time'),
+                    (ke.MONTH = 'month'),
+                    (ke.MONTH_DATE = 'month-date'),
+                    (ke.DATE_MONTH = 'date-month'),
+                    (ke.MONTH_YEAR = 'month-year'),
+                    (ke.WEEK_DAY = 'week-day'),
+                    (ke.WEEK_DAY_TIME = 'week-day-time'),
+                    (ke.YEAR = 'year'),
+                    (ke.DATE_YEAR = 'date-year'));
                 Date.now();
-                var ke = t(5521);
+                var Ne = t(5521);
                 const Oe = (e) => {
                     console.error(e.type + ': useKeydownListener hook :: Callback is not defined');
                 };
-                function Pe(e = ke.n.NONE, u = Oe, t = !1) {
+                function Pe(e = Ne.n.NONE, u = Oe, t = !1) {
                     (0, i.useEffect)(() => {
-                        if (e !== ke.n.NONE)
+                        if (e !== Ne.n.NONE)
                             return (
                                 window.addEventListener('keydown', n, t),
                                 () => {
@@ -2655,9 +2658,9 @@
                             y = e.flexWrap,
                             T = void 0 === y ? (L ? 'wrap' : void 0) : y,
                             M = e.grow,
-                            N = e.shrink,
-                            k = e.flex,
-                            O = void 0 === k ? (M || N ? `${M ? 1 : 0} ${N ? 1 : 0} auto` : void 0) : k,
+                            k = e.shrink,
+                            N = e.flex,
+                            O = void 0 === N ? (M || k ? `${M ? 1 : 0} ${k ? 1 : 0} auto` : void 0) : N,
                             P = e.style,
                             I = e.children,
                             H = (function (e, u) {
@@ -2973,16 +2976,16 @@
                             ),
                         );
                     }),
-                    Nu = ['I', 'IV', 'V', 'IX', 'X', 'XL', 'L', 'XC', 'C', 'CD', 'D', 'CM', 'M'],
-                    ku = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3],
+                    ku = ['I', 'IV', 'V', 'IX', 'X', 'XL', 'L', 'XC', 'C', 'CD', 'D', 'CM', 'M'],
+                    Nu = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3],
                     Ou = ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE()),
                     Pu = (e) =>
                         Ou
                             ? `${e}`
                             : (function (e) {
                                   let u = '';
-                                  for (let t = ku.length - 1; t >= 0; t--)
-                                      for (; e >= ku[t]; ) ((u += Nu[t]), (e -= ku[t]));
+                                  for (let t = Nu.length - 1; t >= 0; t--)
+                                      for (; e >= Nu[t]; ) ((u += ku[t]), (e -= Nu[t]));
                                   return u;
                               })(e),
                     Iu = [
@@ -4118,8 +4121,8 @@
                             { isImg: !0, value: R.images.gui.maps.icons.specialization.medium_tactics() },
                         ],
                     ],
-                    Nt = 'ReserveCategoriesSection_categoryCell_16',
-                    kt = 'ReserveCategoriesSection_progressionTableCell_85',
+                    kt = 'ReserveCategoriesSection_categoryCell_16',
+                    Nt = 'ReserveCategoriesSection_progressionTableCell_85',
                     Ot = (0, Ie.Pi)(() => {
                         const e = Ze().model.computes.getSkillsCategories();
                         return s().createElement(
@@ -4144,7 +4147,7 @@
                                         { key: t, className: 'ReserveCategoriesSection_categoryColumn_b1' },
                                         s().createElement(
                                             'div',
-                                            { className: f()(Nt, 'ReserveCategoriesSection_categoryCell__title_1b') },
+                                            { className: f()(kt, 'ReserveCategoriesSection_categoryCell__title_1b') },
                                             s().createElement('div', {
                                                 className: 'ReserveCategoriesSection_categoryTypeIcon_bb',
                                                 style: {
@@ -4156,7 +4159,7 @@
                                         Ve(u, (e, u) =>
                                             s().createElement(
                                                 'div',
-                                                { key: u, className: Nt },
+                                                { key: u, className: kt },
                                                 s().createElement(
                                                     'div',
                                                     {
@@ -4209,7 +4212,7 @@
                                             { key: n, className: 'ReserveCategoriesSection_progressionTableColumn_34' },
                                             s().createElement(
                                                 'div',
-                                                { className: kt },
+                                                { className: Nt },
                                                 s().createElement('div', {
                                                     className: 'ReserveCategoriesSection_progressionTableHeaderIcon_dd',
                                                     style: Object.assign({}, u && { backgroundImage: `url(${u})` }),
@@ -4229,7 +4232,7 @@
                                                     {
                                                         key: u,
                                                         className: f()(
-                                                            kt,
+                                                            Nt,
                                                             !n &&
                                                                 'ReserveCategoriesSection_progressionTableCell__accentStart_4f',
                                                         ),
@@ -4510,7 +4513,7 @@
                         var D;
                         return (
                             (D = () => a && n.close()),
-                            Pe(ke.n.ESCAPE, D),
+                            Pe(Ne.n.ESCAPE, D),
                             s().createElement(
                                 'div',
                                 { className: f()('InfoViewApp_base_a5', a && 'InfoViewApp_base__fullScreen_0a') },

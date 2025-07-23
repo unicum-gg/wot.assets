@@ -1950,7 +1950,10 @@
                         (u.VehicleSelect = 'vehicleSelect'),
                         (u.StyleProgress = 'styleProgress'),
                         (u.ParagonsUnlocks = 'paragonsUnlocks'),
-                        (u.LootBoxToken = 'lootBoxToken'));
+                        (u.LootBoxToken = 'lootBoxToken'),
+                        (u.GoldenTicket = 'birthday2025_golden_ticket'),
+                        (u.PostStamp = 'giftsystem_4_stamp'),
+                        (u.Quests = 'quests'));
                 })(Lu || (Lu = {})),
                     (function (u) {
                         ((u.Gold = 'gold'),
@@ -2079,6 +2082,8 @@
                     Lu.CosmicLootboxCommon,
                     Lu.CosmicLootboxSilver,
                     Lu.SelectableBonus,
+                    Lu.GoldenTicket,
+                    Lu.PostStamp,
                     Lu.Gold,
                     Lu.Credits,
                     Lu.Crystal,

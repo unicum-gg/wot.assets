@@ -39,13 +39,13 @@
                         M = (0, s.useCallback)(() => {
                             c || (C.current && (C.current.focus(), b(!0)));
                         }, [c]),
-                        N = (0, s.useCallback)(
+                        T = (0, s.useCallback)(
                             (e) => {
                                 B && null !== C.current && !C.current.contains(e.target) && b(!1);
                             },
                             [B],
                         ),
-                        T = (0, s.useCallback)(
+                        N = (0, s.useCallback)(
                             (e) => {
                                 c || (g && g(e));
                             },
@@ -97,12 +97,12 @@
                     return (
                         (0, s.useEffect)(
                             () => (
-                                document.addEventListener('mousedown', N),
+                                document.addEventListener('mousedown', T),
                                 () => {
-                                    document.removeEventListener('mousedown', N);
+                                    document.removeEventListener('mousedown', T);
                                 }
                             ),
-                            [N],
+                            [T],
                         ),
                         (0, s.useEffect)(() => {
                             b(t);
@@ -117,7 +117,7 @@
                                 onMouseUp: I,
                                 onMouseDown: O,
                                 onMouseLeave: k,
-                                onClick: T,
+                                onClick: N,
                             },
                             r !== l.L.ghost &&
                                 i().createElement(
@@ -1314,9 +1314,9 @@
                 var r = {};
                 (t.r(r),
                     t.d(r, {
-                        Area: () => Te,
+                        Area: () => Ne,
                         Bar: () => Re,
-                        DefaultScroll: () => Ne,
+                        DefaultScroll: () => Te,
                         Direction: () => me,
                         defaultSettings: () => de,
                         useHorizontalScrollApi: () => Fe,
@@ -1598,14 +1598,14 @@
                         M.apply(this, arguments)
                     );
                 }
-                const N = {
+                const T = {
                         [S.ExtraSmall]: '',
                         [S.Small]: f().SMALL_WIDTH,
                         [S.Medium]: `${f().SMALL_WIDTH} ${f().MEDIUM_WIDTH}`,
                         [S.Large]: `${f().SMALL_WIDTH} ${f().MEDIUM_WIDTH} ${f().LARGE_WIDTH}`,
                         [S.ExtraLarge]: `${f().SMALL_WIDTH} ${f().MEDIUM_WIDTH} ${f().LARGE_WIDTH} ${f().EXTRA_LARGE_WIDTH}`,
                     },
-                    T = {
+                    N = {
                         [w.ExtraSmall]: '',
                         [w.Small]: f().SMALL_HEIGHT,
                         [w.Medium]: `${f().SMALL_HEIGHT} ${f().MEDIUM_HEIGHT}`,
@@ -1635,7 +1635,7 @@
                             a = n.mediaWidth,
                             i = n.mediaHeight,
                             o = n.mediaSize;
-                        return s().createElement('div', M({ className: B()(t, N[a], T[i], L[o]) }, r), u);
+                        return s().createElement('div', M({ className: B()(t, T[a], N[i], L[o]) }, r), u);
                     },
                     I = ['children'];
                 const O = (e) => {
@@ -2057,6 +2057,7 @@
                                 ),
                                 [b],
                             );
+                            const v = (0, a.useCallback)((e) => E.trigger('isThumbDraggingChanged', e), [E]);
                             return (0, a.useMemo)(
                                 () => ({
                                     getWrapperSize: () => (d.current ? n(d.current) : void 0),
@@ -2075,9 +2076,10 @@
                                     scrollPosition: p,
                                     animationScroll: F,
                                     recalculateContent: f,
+                                    handleIsThumbDragging: v,
                                     events: { on: E.on, off: E.off },
                                 }),
-                                [F.scrollPosition, C, h, E.off, E.on, f, B, p, _.step.clampedArrowStepTimeout],
+                                [F.scrollPosition, C, h, v, E.off, E.on, f, B, p, _.step.clampedArrowStepTimeout],
                             );
                         };
                     },
@@ -2323,7 +2325,7 @@
                         wrapper: 'HorizontalScroll_wrapper_1e',
                         defaultScrollArea: 'HorizontalScroll_defaultScrollArea_8d',
                     },
-                    Ne = ({
+                    Te = ({
                         children: e,
                         api: u,
                         className: t,
@@ -2345,12 +2347,12 @@
                             s().createElement(
                                 'div',
                                 { className: B()(Me.defaultScrollArea, n) },
-                                s().createElement(Te, { className: o, api: m, classNames: i }, e),
+                                s().createElement(Ne, { className: o, api: m, classNames: i }, e),
                             ),
                             s().createElement(Re, { getStepByRailClick: l, api: u, onDrag: c, classNames: _ }),
                         );
                     },
-                    Te = ({ api: e, className: u, classNames: t, children: r, style: n }) => (
+                    Ne = ({ api: e, className: u, classNames: t, children: r, style: n }) => (
                         (0, a.useEffect)(() => ae(e.recalculateContent)),
                         s().createElement(
                             'div',
@@ -2370,9 +2372,9 @@
                             ),
                         )
                     );
-                ((Te.Bar = Re),
-                    (Te.Default = Ne),
-                    (Te.SeniorityAwards = ({ api: e, className: u, classNames: t, children: r }) => (
+                ((Ne.Bar = Re),
+                    (Ne.Default = Te),
+                    (Ne.SeniorityAwards = ({ api: e, className: u, classNames: t, children: r }) => (
                         (0, a.useEffect)(() => ae(e.recalculateContent)),
                         s().createElement(
                             'div',
@@ -2521,7 +2523,9 @@
                                         });
                                     },
                                     t = () => {
-                                        (window.removeEventListener('mousemove', u), A(Ve));
+                                        (window.removeEventListener('mousemove', u),
+                                            e.handleIsThumbDragging(!1),
+                                            A(Ve));
                                     };
                                 return (
                                     window.addEventListener('mousemove', u),
@@ -2564,7 +2568,11 @@
                                         const r = c.current;
                                         if (r && 0 === u.button)
                                             if (((0, U.G)('play'), u.target === r))
-                                                A({ pending: !0, offset: u.screenY - r.getBoundingClientRect().y });
+                                                (e.handleIsThumbDragging(!0),
+                                                    A({
+                                                        pending: !0,
+                                                        offset: u.screenY - r.getBoundingClientRect().y,
+                                                    }));
                                             else {
                                                 ((u) => {
                                                     c.current &&
@@ -2760,7 +2768,10 @@
                         (e.VehicleSelect = 'vehicleSelect'),
                         (e.StyleProgress = 'styleProgress'),
                         (e.ParagonsUnlocks = 'paragonsUnlocks'),
-                        (e.LootBoxToken = 'lootBoxToken'));
+                        (e.LootBoxToken = 'lootBoxToken'),
+                        (e.GoldenTicket = 'birthday2025_golden_ticket'),
+                        (e.PostStamp = 'giftsystem_4_stamp'),
+                        (e.Quests = 'quests'));
                 })(ru || (ru = {})),
                     (function (e) {
                         ((e.Gold = 'gold'),
@@ -3015,11 +3026,11 @@
                             y = e.alignSelf,
                             R = e.wrap,
                             M = e.flexWrap,
-                            N = void 0 === M ? (R ? 'wrap' : void 0) : M,
-                            T = e.grow,
+                            T = void 0 === M ? (R ? 'wrap' : void 0) : M,
+                            N = e.grow,
                             L = e.shrink,
                             P = e.flex,
-                            I = void 0 === P ? (T || L ? `${T ? 1 : 0} ${L ? 1 : 0} auto` : void 0) : P,
+                            I = void 0 === P ? (N || L ? `${N ? 1 : 0} ${L ? 1 : 0} auto` : void 0) : P,
                             O = e.style,
                             k = e.children,
                             H = (function (e, u) {
@@ -3051,13 +3062,13 @@
                                         alignSelf: y,
                                         display: p || x ? 'flex' : void 0,
                                         flexDirection: p,
-                                        flexWrap: N,
+                                        flexWrap: T,
                                         justifyContent: S,
                                         alignItems: x,
                                     }),
                                     computedClassNames: u,
                                 };
-                            }, [t, r, o, c, m, E, O, I, y, p, N, S, x]),
+                            }, [t, r, o, c, m, E, O, I, y, p, T, S, x]),
                             W = U.computedStyle,
                             G = U.computedClassNames;
                         return s().createElement('div', gu({ className: B()(Fu.base, ...G, u), style: W }, H), k);
@@ -3127,8 +3138,8 @@
                 const yu = Object.keys(vu()),
                     Ru = { mt: 'MD', mr: 'SM', mb: 'SM', ml: 'SM' },
                     Mu = { mt: 'SM', mr: 'XS', mb: 'XS', ml: 'XS' },
-                    Nu = { mt: 'XS', mr: 'XS', mb: 'XS', ml: 'XS' },
-                    Tu = {
+                    Tu = { mt: 'XS', mr: 'XS', mb: 'XS', ml: 'XS' },
+                    Nu = {
                         XL: { mt: 'XL', mr: 'XL', mb: 'XL', ml: 'XL' },
                         LG: { mt: 'LG', mr: 'LG', mb: 'LG', ml: 'LG' },
                         MDp: { mt: 'MDp', mr: 'MDp', mb: 'MDp', ml: 'MDp' },
@@ -3138,7 +3149,7 @@
                         XS: { mt: 'XS', mr: 'XS', mb: 'XS', ml: 'XS' },
                     },
                     Lu =
-                        (Object.keys(Tu),
+                        (Object.keys(Nu),
                         {
                             'heading-H144': { mt: 'XL', mr: 'LG', mb: 'LG', ml: 'LG' },
                             'heading-H73': { mt: 'LG', mr: 'MD', mb: 'MD', ml: 'MD' },
@@ -3150,14 +3161,14 @@
                             'heading-H22': Mu,
                             'heading-H20R': Mu,
                             'heading-H18': Mu,
-                            'heading-H15': Nu,
-                            'heading-H14': Nu,
+                            'heading-H15': Tu,
+                            'heading-H14': Tu,
                             'paragraph-P24': Mu,
                             'paragraph-P18': Mu,
                             'paragraph-P16': Mu,
-                            'paragraph-P14': Nu,
-                            'paragraph-P12': Nu,
-                            'paragraph-P10': Nu,
+                            'paragraph-P14': Tu,
+                            'paragraph-P12': Tu,
+                            'paragraph-P10': Tu,
                         }),
                     Pu =
                         (Object.keys(Lu),
@@ -4076,8 +4087,8 @@
                                 iconMax: s().createElement('div', { className: B()(ut.icon, ut.icon__max) }),
                                 iconLoaded: s().createElement('div', { className: B()(ut.icon, ut.icon__loaded) }),
                             },
-                            N = (0, a.useMemo)(() => ({ tooltipId: _ }), [_]),
-                            T = o - r;
+                            T = (0, a.useMemo)(() => ({ tooltipId: _ }), [_]),
+                            N = o - r;
                         (0, a.useEffect)(() => {
                             h && E({ [i]: { value: 0, rate: l } });
                         }, [h, l, E, i]);
@@ -4122,14 +4133,14 @@
                                 i === ru.PremiumPlus
                                     ? s().createElement(Iu, {
                                           text: tt.resourcesLoadingView.premium(),
-                                          format: { binding: { days: T } },
+                                          format: { binding: { days: N } },
                                           color: 0 === o ? Xu.RED : Xu.GOLD,
                                       })
                                     : s().createElement(
                                           s().Fragment,
                                           null,
                                           s().createElement('div', { className: ut.countIcon }),
-                                          s().createElement(eu, { value: T }),
+                                          s().createElement(eu, { value: N }),
                                       ),
                             ),
                             s().createElement(
@@ -4139,7 +4150,7 @@
                                         R.views.common.tooltip_window.backport_tooltip_content.BackportTooltipContent(
                                             'resId',
                                         ),
-                                    args: N,
+                                    args: T,
                                 },
                                 s().createElement(
                                     'div',
@@ -4483,7 +4494,7 @@
                         const u = B()(Rt.base, Rt[`base__${e}`]);
                         return s().createElement('div', { className: u });
                     },
-                    Nt = {
+                    Tt = {
                         base: 'ProgressLineImpose_base_80',
                         base__disabled: 'ProgressLineImpose_base__disabled_cc',
                         base__finished: 'ProgressLineImpose_base__finished_d4',
@@ -4494,21 +4505,21 @@
                         glow: 'ProgressLineImpose_glow_a5',
                         glow__left: 'ProgressLineImpose_glow__left_d8',
                     },
-                    Tt = (0, a.memo)(
+                    Nt = (0, a.memo)(
                         ({ size: e, lineRef: u, disabled: t, baseStyles: r, isComplete: n, withoutBounce: a }) => {
                             const i = B()(
-                                    Nt.base,
-                                    Nt[`base__${e}`],
-                                    t && Nt.base__disabled,
-                                    n && Nt.base__finished,
-                                    a && Nt.base__withoutBounce,
+                                    Tt.base,
+                                    Tt[`base__${e}`],
+                                    t && Tt.base__disabled,
+                                    n && Tt.base__finished,
+                                    a && Tt.base__withoutBounce,
                                 ),
                                 o = !t && !n;
                             return s().createElement(
                                 'div',
                                 { className: i, style: r, ref: u },
-                                s().createElement('div', { className: Nt.pattern }),
-                                s().createElement('div', { className: Nt.gradient }),
+                                s().createElement('div', { className: Tt.pattern }),
+                                s().createElement('div', { className: Tt.gradient }),
                                 o && s().createElement(Mt, { size: e }),
                             );
                         },
@@ -4520,7 +4531,7 @@
                             (0, a.useEffect)(() => {
                                 o && n && n();
                             }, [o, n]),
-                            s().createElement(Tt, { size: e, disabled: r, baseStyles: i, isComplete: o, lineRef: t })
+                            s().createElement(Nt, { size: e, disabled: r, baseStyles: i, isComplete: o, lineRef: t })
                         );
                     },
                     Pt = (e, u) => {
@@ -4637,7 +4648,7 @@
                             return s().createElement(
                                 s().Fragment,
                                 null,
-                                s().createElement(Tt, {
+                                s().createElement(Nt, {
                                     size: u,
                                     lineRef: r,
                                     disabled: n,
@@ -4757,7 +4768,7 @@
                             return s().createElement(
                                 s().Fragment,
                                 null,
-                                s().createElement(Tt, {
+                                s().createElement(Nt, {
                                     size: u,
                                     lineRef: r,
                                     disabled: n,
@@ -5191,8 +5202,8 @@
                     },
                     Rr = 'Header_base_3b',
                     Mr = 'Header_title_10',
-                    Nr = 'Header_subtitle_0d',
-                    Tr = () =>
+                    Tr = 'Header_subtitle_0d',
+                    Nr = () =>
                         s().createElement(
                             'div',
                             { className: Rr },
@@ -5203,7 +5214,7 @@
                             ),
                             s().createElement(
                                 'div',
-                                { className: Nr },
+                                { className: Tr },
                                 R.strings.resource_well.resourcesLoadingView.subtitle(),
                             ),
                         ),
@@ -5263,7 +5274,7 @@
                                 'div',
                                 { className: ue },
                                 s().createElement('div', { className: re }, s().createElement(ee.M, null)),
-                                s().createElement(Tr, null),
+                                s().createElement(Nr, null),
                                 s().createElement(
                                     'div',
                                     { className: te },

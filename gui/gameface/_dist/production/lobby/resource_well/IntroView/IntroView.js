@@ -1331,9 +1331,20 @@
                 };
                 G.defaultProps = { type: W.primary, isFocused: !1, soundHover: 'highlight', soundClick: 'play' };
                 const V = (0, E.memo)(G);
-                var $ = t(3649);
-                const z = 'FormatText_base_d0',
-                    j = ({ binding: u, text: e = '', classMix: t, alignment: a = $.v2.left }) =>
+                var $ = t(4179);
+                class z extends A().PureComponent {
+                    render() {
+                        let u;
+                        if ('gold' === this.props.format) u = $.B3.GOLD;
+                        else u = $.B3.INTEGRAL;
+                        const e = $.Z5.getNumberFormat(this.props.value, u);
+                        return void 0 !== this.props.value && void 0 !== e ? e : null;
+                    }
+                }
+                z.defaultProps = { format: 'integral' };
+                var j = t(3649);
+                const K = 'FormatText_base_d0',
+                    q = ({ binding: u, text: e = '', classMix: t, alignment: a = j.v2.left }) =>
                         null === e
                             ? (console.error("FormatText was supplied with 'null'"), null)
                             : A().createElement(
@@ -1342,24 +1353,13 @@
                                   e.split('\n').map((e, r) =>
                                       A().createElement(
                                           'div',
-                                          { className: h()(z, t), key: `${e}-${r}` },
-                                          (0, $.Uw)(e, a, u).map((u, e) =>
+                                          { className: h()(K, t), key: `${e}-${r}` },
+                                          (0, j.Uw)(e, a, u).map((u, e) =>
                                               A().createElement(E.Fragment, { key: `${e}-${u}` }, u),
                                           ),
                                       ),
                                   ),
                               );
-                var K = t(4179);
-                class q extends A().PureComponent {
-                    render() {
-                        let u;
-                        if ('gold' === this.props.format) u = K.B3.GOLD;
-                        else u = K.B3.INTEGRAL;
-                        const e = K.Z5.getNumberFormat(this.props.value, u);
-                        return void 0 !== this.props.value && void 0 !== e ? e : null;
-                    }
-                }
-                q.defaultProps = { format: 'integral' };
                 let Y;
                 !(function (u) {
                     ((u.SHORT_DATE = 'short-date'),
@@ -1422,7 +1422,7 @@
                         }
                         return '';
                     },
-                    tu = K.Sw.instance;
+                    tu = $.Sw.instance;
                 let Eu;
                 !(function (u) {
                     ((u.None = 'None'), (u.Shallow = 'Shallow'), (u.Deep = 'Deep'));
@@ -1476,7 +1476,7 @@
                         D
                     );
                 };
-                K.Sw.instance;
+                $.Sw.instance;
                 var au = t(5521);
                 const ru = (u) => {
                     console.error(u.type + ': useKeydownListener hook :: Callback is not defined');
@@ -1541,11 +1541,14 @@
                             E = u.vehicleInfo,
                             a = u.regularRewardVehiclesCount,
                             r = u.topRewardPlayersCount,
-                            F = b().mediaSize;
-                        var i;
+                            F = b().mediaSize,
+                            i = () => {
+                                e();
+                            };
+                        var n;
                         return (
-                            (i = e),
-                            Fu(au.n.ESCAPE, i),
+                            (n = i),
+                            Fu(au.n.ESCAPE, n),
                             A().createElement(
                                 'div',
                                 { className: Bu },
@@ -1582,7 +1585,7 @@
                                                 A().createElement(
                                                     'div',
                                                     { className: wu },
-                                                    A().createElement(j, {
+                                                    A().createElement(q, {
                                                         classMix: bu,
                                                         text: Lu.vehTitle(),
                                                         binding: {
@@ -1593,15 +1596,15 @@
                                                         },
                                                     }),
                                                 ),
-                                                A().createElement(j, {
+                                                A().createElement(q, {
                                                     classMix: pu,
                                                     text: Lu.vehDescription(),
                                                     binding: {
-                                                        topPlayers: A().createElement(q, {
+                                                        topPlayers: A().createElement(z, {
                                                             format: 'integral',
                                                             value: r,
                                                         }),
-                                                        basePlayers: A().createElement(q, {
+                                                        basePlayers: A().createElement(z, {
                                                             format: 'integral',
                                                             value: a,
                                                         }),
@@ -1623,9 +1626,7 @@
                                                         }
                                                     })(),
                                                     mixClass: fu,
-                                                    onClick: () => {
-                                                        e();
-                                                    },
+                                                    onClick: i,
                                                 },
                                                 Lu.button(),
                                             ),

@@ -1305,6 +1305,7 @@
                                 ),
                                 [v],
                             );
+                            const f = (0, a.useCallback)((u) => F.trigger('isThumbDraggingChanged', u), [F]);
                             return (0, a.useMemo)(
                                 () => ({
                                     getWrapperSize: () => (A.current ? r(A.current) : void 0),
@@ -1323,9 +1324,10 @@
                                     scrollPosition: B,
                                     animationScroll: _,
                                     recalculateContent: b,
+                                    handleIsThumbDragging: f,
                                     events: { on: F.on, off: F.off },
                                 }),
-                                [_.scrollPosition, p, g, F.off, F.on, b, h, B, E.step.clampedArrowStepTimeout],
+                                [_.scrollPosition, p, g, f, F.off, F.on, b, h, B, E.step.clampedArrowStepTimeout],
                             );
                         };
                     })({
@@ -1472,7 +1474,9 @@
                                         });
                                     },
                                     t = () => {
-                                        (window.removeEventListener('mousemove', e), m(ru));
+                                        (window.removeEventListener('mousemove', e),
+                                            u.handleIsThumbDragging(!1),
+                                            m(ru));
                                     };
                                 return (
                                     window.addEventListener('mousemove', e),
@@ -1526,7 +1530,11 @@
                                         const a = c.current;
                                         if (a && 0 === e.button)
                                             if ((Y('play'), e.target === a))
-                                                m({ pending: !0, offset: e.screenY - a.getBoundingClientRect().y });
+                                                (u.handleIsThumbDragging(!0),
+                                                    m({
+                                                        pending: !0,
+                                                        offset: e.screenY - a.getBoundingClientRect().y,
+                                                    }));
                                             else {
                                                 ((e) => {
                                                     c.current &&

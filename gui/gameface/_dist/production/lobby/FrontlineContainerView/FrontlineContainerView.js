@@ -553,7 +553,10 @@
                             (e.VehicleSelect = 'vehicleSelect'),
                             (e.StyleProgress = 'styleProgress'),
                             (e.ParagonsUnlocks = 'paragonsUnlocks'),
-                            (e.LootBoxToken = 'lootBoxToken'));
+                            (e.LootBoxToken = 'lootBoxToken'),
+                            (e.GoldenTicket = 'birthday2025_golden_ticket'),
+                            (e.PostStamp = 'giftsystem_4_stamp'),
+                            (e.Quests = 'quests'));
                     })(n || (n = {})),
                     (function (e) {
                         ((e.Gold = 'gold'),
@@ -700,6 +703,8 @@
                         i.E4.CosmicLootboxCommon,
                         i.E4.CosmicLootboxSilver,
                         i.E4.SelectableBonus,
+                        i.E4.GoldenTicket,
+                        i.E4.PostStamp,
                     ],
                     l = [i.E4.Gold, i.E4.Credits, i.E4.Crystal, i.E4.FreeXp],
                     c = [i.E4.BattlePassPoints],
@@ -787,7 +792,28 @@
                             case 'dossier_badge':
                                 return `R.images.gui.maps.icons.quests.bonuses.badges.${l}.${r}`;
                             case 'dossier_achievement':
-                                return `R.images.gui.maps.icons.achievement.${l}.${r}`;
+                                return `R.images.gui.maps.icons.achievement.${((e) => {
+                                    switch (e) {
+                                        case i.h2.S600x450:
+                                            return 'c_600x450';
+                                        case i.h2.S400x300:
+                                            return 'c_400x300';
+                                        case i.h2.S296x222:
+                                            return 'c_296x222';
+                                        case i.h2.S232x174:
+                                            return 'c_232x174';
+                                        case i.h2.S180x135:
+                                            return 'big';
+                                        case i.h2.Big:
+                                        case i.h2.S80x80:
+                                            return 'c_80x80';
+                                        case i.h2.Small:
+                                        case i.h2.S48x48:
+                                            return 'c_48x48';
+                                        default:
+                                            return e;
+                                    }
+                                })(t)}.${r}`;
                             case 'xp':
                             case 'xpFactor':
                                 return `R.images.gui.maps.icons.quests.bonuses.${t}.exp`;
@@ -4541,7 +4567,7 @@
                                         image: (0, Z.ry)(e, t),
                                         value: e.value,
                                         valueType: (0, Z.p3)(e.name),
-                                        tooltipArgs: (0, Z.pI)({ tooltipId: e.tooltipId }, 0, {
+                                        tooltipArgs: (0, Z.pI)({ tooltipId: e.tooltipId }, Number(e.tooltipContentId), {
                                             targetId: R.views.frontline.lobby.ProgressView('resId'),
                                         }),
                                     }),
@@ -5638,38 +5664,38 @@
                                     (t !== g.scrollPosition.goal && f(t, { immediate: !0 }),
                                         _.trigger('recalculateContent'));
                                 });
-                            return (
-                                (0, p.useEffect)(
-                                    () => (
-                                        window.addEventListener('resize', S),
-                                        () => {
-                                            window.removeEventListener('resize', S);
-                                        }
-                                    ),
-                                    [S],
+                            (0, p.useEffect)(
+                                () => (
+                                    window.addEventListener('resize', S),
+                                    () => {
+                                        window.removeEventListener('resize', S);
+                                    }
                                 ),
-                                (0, p.useMemo)(
-                                    () => ({
-                                        getWrapperSize: () => (m.current ? a(m.current) : void 0),
-                                        getContainerSize: () => (c.current ? e(c.current) : void 0),
-                                        getBounds: () =>
-                                            c.current
-                                                ? t(c.current)
-                                                : (console.warn('getBounds: contentRef.current is null'), [0, 0]),
-                                        stepTimeout: l.step.clampedArrowStepTimeout,
-                                        clampPosition: s,
-                                        handleMouseWheel: v,
-                                        applyScroll: f,
-                                        applyStepTo: B,
-                                        contentRef: c,
-                                        wrapperRef: m,
-                                        scrollPosition: F,
-                                        animationScroll: g,
-                                        recalculateContent: R,
-                                        events: { on: _.on, off: _.off },
-                                    }),
-                                    [g.scrollPosition, f, B, _.off, _.on, R, v, F, l.step.clampedArrowStepTimeout],
-                                )
+                                [S],
+                            );
+                            const T = (0, p.useCallback)((e) => _.trigger('isThumbDraggingChanged', e), [_]);
+                            return (0, p.useMemo)(
+                                () => ({
+                                    getWrapperSize: () => (m.current ? a(m.current) : void 0),
+                                    getContainerSize: () => (c.current ? e(c.current) : void 0),
+                                    getBounds: () =>
+                                        c.current
+                                            ? t(c.current)
+                                            : (console.warn('getBounds: contentRef.current is null'), [0, 0]),
+                                    stepTimeout: l.step.clampedArrowStepTimeout,
+                                    clampPosition: s,
+                                    handleMouseWheel: v,
+                                    applyScroll: f,
+                                    applyStepTo: B,
+                                    contentRef: c,
+                                    wrapperRef: m,
+                                    scrollPosition: F,
+                                    animationScroll: g,
+                                    recalculateContent: R,
+                                    handleIsThumbDragging: T,
+                                    events: { on: _.on, off: _.off },
+                                }),
+                                [g.scrollPosition, f, B, T, _.off, _.on, R, v, F, l.step.clampedArrowStepTimeout],
                             );
                         };
                     },
@@ -6076,7 +6102,7 @@
                                         });
                                     },
                                     u = () => {
-                                        (window.removeEventListener('mousemove', t), d(j));
+                                        (window.removeEventListener('mousemove', t), e.handleIsThumbDragging(!1), d(j));
                                     };
                                 return (
                                     window.addEventListener('mousemove', t),
@@ -6122,7 +6148,8 @@
                                             0 === t.button &&
                                             ((0, v.G)('play'),
                                             t.target === n
-                                                ? d({ pending: !0, offset: t.screenY - n.getBoundingClientRect().y })
+                                                ? (e.handleIsThumbDragging(!0),
+                                                  d({ pending: !0, offset: t.screenY - n.getBoundingClientRect().y }))
                                                 : ((a = t.screenY > n.getBoundingClientRect().y ? S.Prev : S.Next),
                                                   o.current &&
                                                       X(e, (t) => {

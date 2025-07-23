@@ -2761,43 +2761,46 @@
                             const A = u.dailyWin,
                                 c = u.streakLength,
                                 d = u.isFirstAppearance,
-                                F = u.redemptionDayCount,
-                                m = u.redemptionMaxDayCount,
-                                _ = A ? c : c + 1,
-                                D = A ? m - F : m - F + 1,
-                                C = s ? qe.widget.content.tooltip.blocked.head() : qe.widget.content.tooltip.head(),
-                                B = s
-                                    ? ((p = qe.widget.content.tooltip.blocked.body()),
-                                      (h = { redemptionMaxDayCount: m }),
-                                      p.replace(/(\{|%\()\w+(\}|\)s)/g, (u) => {
+                                F = u.isFirstAppearanceRedemptionDay,
+                                m = u.isLastDayRedemption,
+                                _ = u.redemptionDayCount,
+                                D = u.redemptionMaxDayCount,
+                                C = F || d || m,
+                                B = A ? c : c + 1,
+                                p = A ? D - _ : D - _ + 1,
+                                h = s ? qe.widget.content.tooltip.blocked.head() : qe.widget.content.tooltip.head(),
+                                b = s
+                                    ? ((f = qe.widget.content.tooltip.blocked.body()),
+                                      (v = { redemptionMaxDayCount: D }),
+                                      f.replace(/(\{|%\()\w+(\}|\)s)/g, (u) => {
                                           const e = 0 === u.indexOf('%') ? 2 : 1;
-                                          return String(h[u.slice(e, -e)]);
+                                          return String(v[u.slice(e, -e)]);
                                       }))
                                     : qe.widget.content.tooltip.body();
-                            var p, h;
-                            const b = e === Z.Normal,
-                                f = g()(
+                            var f, v;
+                            const w = e === Z.Normal,
+                                S = g()(
                                     Xe.base,
                                     Xe[`base__${e}`],
-                                    d && Xe.showAnim,
+                                    C && Xe.showAnim,
                                     n && Xe.base__complete,
                                     t && Xe.base__appearEnd,
                                     i && Xe.base__disappearEnd,
                                     r && Xe.base__progress,
                                 ),
-                                v = g()(
+                                x = g()(
                                     Xe.iconWrapper,
                                     Xe.iconWrapper__center,
                                     r && Xe.iconWrapper__toggleIcon,
                                     !r && n && Xe.iconWrapper__completeEnd,
                                 ),
-                                w = Ve.icons.$dyn('c_32_' + (s ? 'play_streak__disable' : 'play_streak'));
+                                M = Ve.icons.$dyn('c_32_' + (s ? 'play_streak__disable' : 'play_streak'));
                             return a().createElement(
                                 Ku,
-                                { header: C, body: String(B) },
+                                { header: h, body: String(b) },
                                 a().createElement(
                                     'div',
-                                    { className: f, onClick: l, onMouseEnter: E },
+                                    { className: S, onClick: l, onMouseEnter: E },
                                     a().createElement('div', {
                                         className: g()(
                                             Xe.background,
@@ -2808,26 +2811,26 @@
                                     a().createElement('div', { className: Xe.hoverBg }),
                                     a().createElement(
                                         'div',
-                                        { className: v },
+                                        { className: x },
                                         a().createElement(
                                             'div',
                                             {
                                                 className: g()(Xe.icon, Xe.icon__default),
-                                                style: { backgroundImage: `url(${w})` },
+                                                style: { backgroundImage: `url(${M})` },
                                             },
-                                            !s && a().createElement('div', { className: Xe.total }, _),
+                                            !s && a().createElement('div', { className: Xe.total }, B),
                                         ),
                                         a().createElement('div', { className: g()(Xe.icon, Xe.icon__complete) }),
                                         s &&
                                             a().createElement(te, {
-                                                current: D,
-                                                max: m,
+                                                current: p,
+                                                max: D,
                                                 completed: !1,
                                                 disabled: !1,
                                                 className: Xe.missionProgress,
                                             }),
                                     ),
-                                    b &&
+                                    w &&
                                         a().createElement(
                                             a().Fragment,
                                             null,
@@ -2841,7 +2844,7 @@
                                                     a().createElement(Uu, {
                                                         className: Xe.description,
                                                         text:
-                                                            (A && !d) || (A && d && n)
+                                                            (A && !C) || (A && C && n)
                                                                 ? qe.window.playStreakRewards.tab.content.complete()
                                                                 : qe.widget.content.quest(),
                                                         format: {
@@ -2889,85 +2892,89 @@
                 const Ze = (0, r.memo)(({ quest: u, cardType: e, handleQuestSelect: t, onMouseEnter: n }) => {
                     const i = u.dailyWin,
                         o = u.isFirstAppearance,
-                        s = u.isBlocked,
-                        l = u.redemptionDayCount,
-                        E = u.redemptionMaxDayCount,
-                        A = i ? E - l : E - l + 1,
-                        c = (0, r.useState)(!1),
-                        d = c[0],
-                        F = c[1],
-                        m = (0, r.useState)(!1),
-                        _ = m[0],
-                        D = m[1],
-                        C = (0, r.useState)(!1),
-                        B = C[0],
-                        g = C[1],
-                        p = (0, r.useState)(!1),
-                        h = p[0],
-                        b = p[1],
-                        f = (0, r.useState)(!1),
-                        v = f[0],
-                        w = f[1],
-                        S = (0, r.useState)(s),
-                        x = S[0],
-                        M = S[1],
-                        y = Ye(),
-                        L = Ye(),
-                        R = e === Z.Micro ? Z.Mini : e;
-                    ((0, r.useEffect)(() => (T(Y.Init), () => P()), []),
+                        s = u.isFirstAppearanceRedemptionDay,
+                        l = u.isLastDayRedemption,
+                        E = u.isBlocked,
+                        A = u.redemptionDayCount,
+                        c = u.redemptionMaxDayCount,
+                        d = s || o || l,
+                        F = l || E,
+                        m = i ? c - A : c - A + 1,
+                        _ = (0, r.useState)(!1),
+                        D = _[0],
+                        C = _[1],
+                        B = (0, r.useState)(!1),
+                        g = B[0],
+                        p = B[1],
+                        h = (0, r.useState)(!1),
+                        b = h[0],
+                        f = h[1],
+                        v = (0, r.useState)(!1),
+                        w = v[0],
+                        S = v[1],
+                        x = (0, r.useState)(!1),
+                        M = x[0],
+                        y = x[1],
+                        L = (0, r.useState)(F),
+                        R = L[0],
+                        k = L[1],
+                        P = Ye(),
+                        T = Ye(),
+                        O = e === Z.Micro ? Z.Mini : e;
+                    ((0, r.useEffect)(() => (H(Y.Init), () => N()), []),
                         (0, r.useEffect)(() => {
-                            i && !o && k(Y.Progress, Ue.PROGRESS_BAR_DURATION[R]);
+                            i && !d && I(Y.Progress, Ue.PROGRESS_BAR_DURATION[O]);
                         }, [i]),
                         (0, r.useEffect)(() => {
-                            if (v)
+                            if (M)
                                 return ce(() => {
-                                    w(!1);
+                                    y(!1);
                                 }, ze);
-                        }, [v]));
-                    const k = (u, e) => {
-                            L.run(() => {
-                                T(u);
+                        }, [M]));
+                    const I = (u, e) => {
+                            T.run(() => {
+                                H(u);
                             }, e);
                         },
-                        P = () => {
-                            (y.isRunning && y.clear(), L.isRunning && L.clear());
+                        N = () => {
+                            (P.isRunning && P.clear(), T.isRunning && T.clear());
                         },
-                        T = (u) => {
-                            P();
+                        H = (u) => {
+                            N();
                             const e = Qe;
                             switch (u) {
                                 case Y.Init:
                                     return (
-                                        y.run(() => {
-                                            (b(!1), F(!0));
+                                        P.run(() => {
+                                            (S(!1), C(!0));
                                         }, e),
-                                        void k(Y.Appear, 2 * Qe)
+                                        void I(Y.Appear, 2 * Qe)
                                     );
                                 case Y.Appear:
-                                    return (F(!0), void (i && k(Y.Progress, Ue.PROGRESS_BAR_DURATION[R])));
+                                    return (C(!0), void (i && I(Y.Progress, Ue.PROGRESS_BAR_DURATION[O])));
                                 case Y.Progress:
-                                    return (D(!0), void (i && k(Y.Complete, je)));
+                                    return (p(!0), void (i && I(Y.Complete, je)));
                                 case Y.Complete:
                                     return (
-                                        g(!0),
-                                        F(!0),
-                                        void (i && s && A === E ? k(Y.ChangeIcon, je) : k(Y.CompleteEnd, $e))
+                                        f(!0),
+                                        C(!0),
+                                        void (i && F && m === c ? I(Y.ChangeIcon, je) : I(Y.CompleteEnd, $e))
                                     );
                                 case Y.CompleteEnd:
-                                    return void D(!1);
+                                    return void p(!1);
                                 case Y.ChangeIcon:
-                                    return (M(!1), void k(Y.CompleteEnd, $e));
+                                    return (k(!1), void I(Y.CompleteEnd, $e));
                             }
                         };
                     return a().createElement(Ke, {
                         quest: u,
                         cardType: e,
-                        isAnimationProgress: _,
-                        isAnimationAppear: d,
-                        isAnimationBackgroundBlink: v,
-                        isAnimationComplete: B,
-                        isAnimationDisappear: h,
-                        isShowBlocked: x,
+                        isAnimationProgress: g,
+                        isAnimationAppear: D,
+                        isAnimationBackgroundBlink: M,
+                        isAnimationComplete: b,
+                        isAnimationDisappear: w,
+                        isShowBlocked: R,
                         handleQuestSelect: t,
                         onMouseEnter: n,
                     });
@@ -3208,11 +3215,8 @@
                                 j = t[A].groupID && t[A].hasPremium,
                                 $ = i === Z.Micro ? Z.Mini : i;
                             ((0, r.useEffect)(() => {
-                                D && (W.current = ru(t));
-                            }, [D]),
-                                (0, r.useEffect)(() => {
-                                    ((N.current = A + 1 >= t.length), (H.current = t[A]));
-                                }, [t, A]),
+                                ((N.current = A + 1 >= t.length), (H.current = t[A]));
+                            }, [t, A]),
                                 (0, r.useEffect)(() => (X(Y.Init), () => Q()), []),
                                 (0, r.useEffect)(() => {
                                     G &&
@@ -3246,15 +3250,15 @@
                                 Q = () => {
                                     (T.isRunning && T.clear(), O.isRunning && O.clear());
                                 },
-                                X = (t) => {
+                                X = (r) => {
                                     Q();
-                                    const r = u * it;
-                                    switch (t) {
+                                    const a = u * it;
+                                    switch (r) {
                                         case Y.Init:
                                             return (
                                                 T.run(() => {
-                                                    (m(!0), f(!1));
-                                                }, r),
+                                                    (m(!0), f(!1), (W.current = ru(t)));
+                                                }, a),
                                                 H.current.completed && N.current ? void P(!0) : void z(Y.Appear, it * e)
                                             );
                                         case Y.Appear:
@@ -3362,7 +3366,9 @@
                                       a().createElement(
                                           'div',
                                           { className: mt },
-                                          l.isFirstAppearance
+                                          l.isFirstAppearance ||
+                                              l.isFirstAppearanceRedemptionDay ||
+                                              l.isLastDayRedemption
                                               ? a().createElement(Ze, {
                                                     quest: l,
                                                     handleQuestSelect: d,

@@ -159,10 +159,10 @@
                         events: () => i.U,
                         extraSize: () => k,
                         forceTriggerMouseMove: () => O,
-                        freezeTextureBeforeResize: () => v,
+                        freezeTextureBeforeResize: () => p,
                         getBrowserTexturePath: () => l,
                         getDisplayStatus: () => S,
-                        getScale: () => p,
+                        getScale: () => v,
                         getSize: () => u,
                         getViewGlobalPosition: () => m,
                         isEventHandled: () => g,
@@ -206,10 +206,10 @@
                     const t = viewEnv.getViewGlobalPositionRem();
                     return 'rem' === e ? t : { x: h(t.x), y: h(t.y) };
                 }
-                function v() {
+                function p() {
                     viewEnv.freezeTextureBeforeResize();
                 }
-                function p() {
+                function v() {
                     return viewEnv.getScale();
                 }
                 function w(e) {
@@ -559,8 +559,8 @@
                     u = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1 }),
                     E = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1, YEAR_MONTH: 2 });
                 var m = n(5521),
-                    v = n(3138);
-                const p = ['args'];
+                    p = n(3138);
+                const v = ['args'];
                 function w(e, t, n, o, r, i, a) {
                     try {
                         var s = e[i](a),
@@ -612,7 +612,7 @@
                                         i = Object.keys(e);
                                     for (o = 0; o < i.length; o++) ((n = i[o]), t.indexOf(n) >= 0 || (r[n] = e[n]));
                                     return r;
-                                })(t, p);
+                                })(t, v);
                             void 0 !== r
                                 ? viewEnv.handleViewEvent(
                                       Object.assign({ __Type: n, type: e }, i, {
@@ -660,17 +660,17 @@
                             T(_.CONTEXT_MENU, { isMouseEvent: !0, contentID: e, on: !0, decoratorID: n, args: t });
                         },
                         sendShowPopOverEvent: (e, t, n, o, r = R.invalid('resId'), i) => {
-                            const a = v.O.view.getViewGlobalPosition(),
+                            const a = p.O.view.getViewGlobalPosition(),
                                 s = n.getBoundingClientRect(),
                                 l = s.x,
                                 c = s.y,
                                 d = s.width,
                                 u = s.height,
                                 E = {
-                                    x: v.O.view.pxToRem(l) + a.x,
-                                    y: v.O.view.pxToRem(c) + a.y,
-                                    width: v.O.view.pxToRem(d),
-                                    height: v.O.view.pxToRem(u),
+                                    x: p.O.view.pxToRem(l) + a.x,
+                                    y: p.O.view.pxToRem(c) + a.y,
+                                    width: p.O.view.pxToRem(d),
+                                    height: p.O.view.pxToRem(u),
                                 };
                             T(_.POP_OVER, {
                                 isMouseEvent: !0,
@@ -733,7 +733,7 @@
                 var o = n(6179),
                     r = n.n(o);
                 let i, a, s, _, l, c, d;
-                var u, E, m, v;
+                var u, E, m, p;
                 (!(function (e) {
                     ((e.Items = 'items'),
                         (e.Equipment = 'equipment'),
@@ -789,7 +789,10 @@
                         (e.VehicleSelect = 'vehicleSelect'),
                         (e.StyleProgress = 'styleProgress'),
                         (e.ParagonsUnlocks = 'paragonsUnlocks'),
-                        (e.LootBoxToken = 'lootBoxToken'));
+                        (e.LootBoxToken = 'lootBoxToken'),
+                        (e.GoldenTicket = 'birthday2025_golden_ticket'),
+                        (e.PostStamp = 'giftsystem_4_stamp'),
+                        (e.Quests = 'quests'));
                 })(i || (i = {})),
                     (function (e) {
                         ((e.Gold = 'gold'),
@@ -830,17 +833,17 @@
                             (e.BattleBadge = 'dossier_badge'),
                             (e.BattleAchievement = 'dossier_achievement'));
                     })(a || (a = {})),
-                    ((v = s || (s = {})).Big = 'big'),
-                    (v.Small = 'small'),
-                    (v.Mini = 'mini'),
-                    (v.S600x450 = 's600x450'),
-                    (v.S400x300 = 's400x300'),
-                    (v.S296x222 = 's296x222'),
-                    (v.S232x174 = 's232x174'),
-                    (v.S180x135 = 's180x135'),
-                    (v.S128x100 = 's128x100'),
-                    (v.S80x80 = 's80x80'),
-                    (v.S48x48 = 's48x48'),
+                    ((p = s || (s = {})).Big = 'big'),
+                    (p.Small = 'small'),
+                    (p.Mini = 'mini'),
+                    (p.S600x450 = 's600x450'),
+                    (p.S400x300 = 's400x300'),
+                    (p.S296x222 = 's296x222'),
+                    (p.S232x174 = 's232x174'),
+                    (p.S180x135 = 's180x135'),
+                    (p.S128x100 = 's128x100'),
+                    (p.S80x80 = 's80x80'),
+                    (p.S48x48 = 's48x48'),
                     ((m = _ || (_ = {})).MULTI = 'multi'),
                     (m.CURRENCY = 'currency'),
                     (m.PREMIUM_PLUS = 'premium_plus'),
@@ -873,12 +876,12 @@
                     (u.PROGRESSION_STYLE_UPGRADED_2 = 'progressionStyleUpgraded_2'),
                     (u.PROGRESSION_STYLE_UPGRADED_3 = 'progressionStyleUpgraded_3'),
                     (u.PROGRESSION_STYLE_UPGRADED_4 = 'progressionStyleUpgraded_4'));
-                var p = n(4179);
+                var v = n(4179);
                 class w extends r().PureComponent {
                     render() {
                         let e;
-                        e = 'gold' === this.props.format ? p.B3.GOLD : p.B3.INTEGRAL;
-                        const t = p.Z5.getNumberFormat(this.props.value, e);
+                        e = 'gold' === this.props.format ? v.B3.GOLD : v.B3.INTEGRAL;
+                        const t = v.Z5.getNumberFormat(this.props.value, e);
                         return void 0 !== this.props.value && void 0 !== t ? t : null;
                     }
                 }
@@ -920,6 +923,8 @@
                     i.CosmicLootboxCommon,
                     i.CosmicLootboxSilver,
                     i.SelectableBonus,
+                    i.GoldenTicket,
+                    i.PostStamp,
                     i.Gold,
                     i.Credits,
                     i.Crystal,

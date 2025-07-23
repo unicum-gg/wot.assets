@@ -163,13 +163,13 @@
                         getBrowserTexturePath: () => D,
                         getDisplayStatus: () => b,
                         getScale: () => c,
-                        getSize: () => B,
+                        getSize: () => s,
                         getViewGlobalPosition: () => C,
                         isEventHandled: () => h,
                         isFocused: () => p,
                         pxToRem: () => _,
                         remToPx: () => d,
-                        resize: () => s,
+                        resize: () => B,
                         sendEvent: () => r.qP,
                         setAnimateWindow: () => m,
                         setEventHandled: () => v,
@@ -196,10 +196,10 @@
                 function i(u) {
                     viewEnv.setHitAreaPaddingsRem(u.top, u.right, u.bottom, u.left, 15);
                 }
-                function B(u = 'px') {
+                function s(u = 'px') {
                     return 'rem' === u ? viewEnv.getViewSizeRem() : viewEnv.getViewSizePx();
                 }
-                function s(u, e, t = 'px') {
+                function B(u, e, t = 'px') {
                     return 'rem' === t ? viewEnv.resizeViewRem(u, e) : viewEnv.resizeViewPx(u, e);
                 }
                 function C(u = 'rem') {
@@ -556,8 +556,8 @@
                     (D[(D.MINIMIZE = 64)] = 'MINIMIZE'));
                 const a = Object.freeze({ INTEGRAL: 0, GOLD: 1 }),
                     i = Object.freeze({ FRACTIONAL: 0, WO_ZERO_DIGITS: 1 }),
-                    B = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1 }),
-                    s = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1, YEAR_MONTH: 2 });
+                    s = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1 }),
+                    B = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1, YEAR_MONTH: 2 });
                 var C = t(5521),
                     l = t(3138);
                 const c = ['args'];
@@ -650,8 +650,8 @@
                         ViewEventType: o,
                         NumberFormatType: a,
                         RealFormatType: i,
-                        TimeFormatType: B,
-                        DateFormatType: s,
+                        TimeFormatType: s,
+                        DateFormatType: B,
                         makeGlobalBoundingBox: d,
                         sendMoveEvent: (u) => p(o.MOVE, { isMouseEvent: !0, on: u }),
                         sendCloseEvent: v,
@@ -665,12 +665,12 @@
                                 D = n.x,
                                 a = n.y,
                                 i = n.width,
-                                B = n.height,
-                                s = {
+                                s = n.height,
+                                B = {
                                     x: l.O.view.pxToRem(D) + r.x,
                                     y: l.O.view.pxToRem(a) + r.y,
                                     width: l.O.view.pxToRem(i),
-                                    height: l.O.view.pxToRem(B),
+                                    height: l.O.view.pxToRem(s),
                                 };
                             p(o.POP_OVER, {
                                 isMouseEvent: !0,
@@ -678,7 +678,7 @@
                                 decoratorID: E || R.invalid('resId'),
                                 targetID: A,
                                 direction: e,
-                                bbox: d(s),
+                                bbox: d(B),
                                 on: !0,
                                 args: F,
                             });
@@ -734,7 +734,7 @@
                 var E = t(6179),
                     A = t.n(E);
                 let F, r, n, o, D, a, i;
-                var B, s, C, l;
+                var s, B, C, l;
                 (!(function (u) {
                     ((u.Items = 'items'),
                         (u.Equipment = 'equipment'),
@@ -790,7 +790,10 @@
                         (u.VehicleSelect = 'vehicleSelect'),
                         (u.StyleProgress = 'styleProgress'),
                         (u.ParagonsUnlocks = 'paragonsUnlocks'),
-                        (u.LootBoxToken = 'lootBoxToken'));
+                        (u.LootBoxToken = 'lootBoxToken'),
+                        (u.GoldenTicket = 'birthday2025_golden_ticket'),
+                        (u.PostStamp = 'giftsystem_4_stamp'),
+                        (u.Quests = 'quests'));
                 })(F || (F = {})),
                     (function (u) {
                         ((u.Gold = 'gold'),
@@ -847,21 +850,7 @@
                     (C.PREMIUM_PLUS = 'premium_plus'),
                     (C.NUMBER = 'number'),
                     (C.STRING = 'string'),
-                    ((s = D || (D = {})).BATTLE_BOOSTER = 'battleBooster'),
-                    (s.BATTLE_BOOSTER_REPLACE = 'battleBoosterReplace'),
-                    (s.BUILT_IN_EQUIPMENT = 'builtInEquipment'),
-                    (s.EQUIPMENT_PLUS = 'equipmentPlus'),
-                    (s.EQUIPMENT_TROPHY_BASIC = 'equipmentTrophyBasic'),
-                    (s.EQUIPMENT_TROPHY_UPGRADED = 'equipmentTrophyUpgraded'),
-                    (s.EQUIPMENT_MODERNIZED_UPGRADED_1 = 'equipmentModernized_1'),
-                    (s.EQUIPMENT_MODERNIZED_UPGRADED_2 = 'equipmentModernized_2'),
-                    (s.EQUIPMENT_MODERNIZED_UPGRADED_3 = 'equipmentModernized_3'),
-                    (s.PROGRESSION_STYLE_UPGRADED_1 = 'progressionStyleUpgraded_1'),
-                    (s.PROGRESSION_STYLE_UPGRADED_2 = 'progressionStyleUpgraded_2'),
-                    (s.PROGRESSION_STYLE_UPGRADED_3 = 'progressionStyleUpgraded_3'),
-                    (s.PROGRESSION_STYLE_UPGRADED_4 = 'progressionStyleUpgraded_4'),
-                    ((a || (a = {})).BATTLE_BOOSTER = 'battleBooster'),
-                    ((B = i || (i = {})).BATTLE_BOOSTER = 'battleBooster'),
+                    ((B = D || (D = {})).BATTLE_BOOSTER = 'battleBooster'),
                     (B.BATTLE_BOOSTER_REPLACE = 'battleBoosterReplace'),
                     (B.BUILT_IN_EQUIPMENT = 'builtInEquipment'),
                     (B.EQUIPMENT_PLUS = 'equipmentPlus'),
@@ -873,7 +862,21 @@
                     (B.PROGRESSION_STYLE_UPGRADED_1 = 'progressionStyleUpgraded_1'),
                     (B.PROGRESSION_STYLE_UPGRADED_2 = 'progressionStyleUpgraded_2'),
                     (B.PROGRESSION_STYLE_UPGRADED_3 = 'progressionStyleUpgraded_3'),
-                    (B.PROGRESSION_STYLE_UPGRADED_4 = 'progressionStyleUpgraded_4'));
+                    (B.PROGRESSION_STYLE_UPGRADED_4 = 'progressionStyleUpgraded_4'),
+                    ((a || (a = {})).BATTLE_BOOSTER = 'battleBooster'),
+                    ((s = i || (i = {})).BATTLE_BOOSTER = 'battleBooster'),
+                    (s.BATTLE_BOOSTER_REPLACE = 'battleBoosterReplace'),
+                    (s.BUILT_IN_EQUIPMENT = 'builtInEquipment'),
+                    (s.EQUIPMENT_PLUS = 'equipmentPlus'),
+                    (s.EQUIPMENT_TROPHY_BASIC = 'equipmentTrophyBasic'),
+                    (s.EQUIPMENT_TROPHY_UPGRADED = 'equipmentTrophyUpgraded'),
+                    (s.EQUIPMENT_MODERNIZED_UPGRADED_1 = 'equipmentModernized_1'),
+                    (s.EQUIPMENT_MODERNIZED_UPGRADED_2 = 'equipmentModernized_2'),
+                    (s.EQUIPMENT_MODERNIZED_UPGRADED_3 = 'equipmentModernized_3'),
+                    (s.PROGRESSION_STYLE_UPGRADED_1 = 'progressionStyleUpgraded_1'),
+                    (s.PROGRESSION_STYLE_UPGRADED_2 = 'progressionStyleUpgraded_2'),
+                    (s.PROGRESSION_STYLE_UPGRADED_3 = 'progressionStyleUpgraded_3'),
+                    (s.PROGRESSION_STYLE_UPGRADED_4 = 'progressionStyleUpgraded_4'));
                 var c = t(4179);
                 class _ extends A().PureComponent {
                     render() {
@@ -921,6 +924,8 @@
                     F.CosmicLootboxCommon,
                     F.CosmicLootboxSilver,
                     F.SelectableBonus,
+                    F.GoldenTicket,
+                    F.PostStamp,
                     F.Gold,
                     F.Credits,
                     F.Crystal,
@@ -1009,8 +1014,8 @@
                     let t = u.children,
                         E = u.className,
                         i = u.theme,
-                        B = void 0 === i ? 'default' : i,
-                        s = (function (u, e) {
+                        s = void 0 === i ? 'default' : i,
+                        B = (function (u, e) {
                             if (null == u) return {};
                             var t,
                                 E,
@@ -1070,8 +1075,8 @@
                         (0, r.useEffect)(c, []),
                         n().createElement(
                             'div',
-                            a({}, s, {
-                                className: A()(o.base, o[`base__theme-${B}`], E),
+                            a({}, B, {
+                                className: A()(o.base, o[`base__theme-${s}`], E),
                                 ref: function (u) {
                                     ((l.current = u), 'function' == typeof e ? e(u) : e && (e.current = u));
                                 },
@@ -1080,8 +1085,8 @@
                         )
                     );
                 });
-                var B = t(493),
-                    s = t.n(B),
+                var s = t(493),
+                    B = t.n(s),
                     C = t(3403);
                 function l(u) {
                     return u;
@@ -1319,25 +1324,25 @@
                                                 },
                                                 cleanup: a,
                                             }),
-                                            B = { mode: u, model: i, externalModel: n, cleanup: a };
+                                            s = { mode: u, model: i, externalModel: n, cleanup: a };
                                         return {
                                             model: i,
-                                            controls: 'mocks' === u && E ? E.controls(B) : e(B),
+                                            controls: 'mocks' === u && E ? E.controls(s) : e(s),
                                             externalModel: n,
                                             mode: u,
                                         };
                                     },
                                     i = (0, r.useRef)(!1),
-                                    B = (0, r.useState)(u),
-                                    s = B[0],
-                                    C = B[1],
+                                    s = (0, r.useState)(u),
+                                    B = s[0],
+                                    C = s[1],
                                     v = (0, r.useState)(() => a(u, E, o)),
                                     h = v[0],
                                     g = v[1];
                                 return (
                                     (0, r.useEffect)(() => {
-                                        i.current ? g(a(s, E, o)) : (i.current = !0);
-                                    }, [o, s, E]),
+                                        i.current ? g(a(B, E, o)) : (i.current = !0);
+                                    }, [o, B, E]),
                                     (0, r.useEffect)(() => {
                                         C(u);
                                     }, [u]),
@@ -1398,8 +1403,8 @@
                                 .match(u);
                     })(),
                     O = ['zh_cn', 'zh_sg', 'zh_tw'];
-                var x = t(6620);
-                const S = ({ binding: u, text: e = '', classMix: t, alignment: E = w.left }) =>
+                var S = t(6620);
+                const x = ({ binding: u, text: e = '', classMix: t, alignment: E = w.left }) =>
                         null === e
                             ? (console.error("FormatText was supplied with 'null'"), null)
                             : n().createElement(
@@ -1483,17 +1488,17 @@
                                         ? n().createElement(
                                               'span',
                                               { className: k[u] },
-                                              n().createElement(S, { text: i, binding: e }),
+                                              n().createElement(x, { text: i, binding: e }),
                                           )
                                         : n().createElement(
                                               'span',
                                               { style: E(u) },
-                                              n().createElement(S, { text: i, binding: e }),
+                                              n().createElement(x, { text: i, binding: e }),
                                           )));
                             }
                             F = N.exec(u);
                         }
-                        return n().createElement(S, { text: o, classMix: t, binding: A });
+                        return n().createElement(x, { text: o, classMix: t, binding: A });
                     }),
                     I = R.strings.gui_lootboxes.tooltips.currencyKey,
                     G = R.strings.lootboxes,
@@ -1509,8 +1514,8 @@
                             D = F.userName,
                             a = F.iconName,
                             i = u.computes.getFirstLootboxName,
-                            B = W.$dyn(`${((s = a), s.replace(/-/g, '_'))}`);
-                        var s;
+                            s = W.$dyn(`${((B = a), B.replace(/-/g, '_'))}`);
+                        var B;
                         const C = G.userName.$dyn(i()),
                             l = I.descriptionPart1.$dyn(D),
                             c = r ? I.title_v2.$dyn(D) : I.title_v2_noKey.$dyn(D);
@@ -1545,14 +1550,14 @@
                                         n().createElement(
                                             'div',
                                             { className: 'App_currencyWrapper_81' },
-                                            n().createElement(x.s, { icon: B, count: r }),
+                                            n().createElement(S.s, { icon: s, count: r }),
                                         ),
                                     ),
                                 ),
                         );
                     });
                 engine.whenReady.then(() => {
-                    s().render(
+                    B().render(
                         n().createElement(h, null, n().createElement(i, null, n().createElement(q, null))),
                         document.getElementById('root'),
                     );

@@ -910,7 +910,7 @@
                         }),
                     N = 'TooltipAdvancedFooter_base_d6',
                     O = 'TooltipAdvancedFooter_altBtn_e0',
-                    x = i().memo(function ({ classMix: u }) {
+                    P = i().memo(function ({ classMix: u }) {
                         return i().createElement(
                             'div',
                             { className: r()(N, u) },
@@ -918,7 +918,7 @@
                             i().createElement('div', null, R.strings.tooltips.advanced.info()),
                         );
                     }),
-                    P = {
+                    x = {
                         base: 'TooltipContentSection_base_5c',
                         label: 'TooltipContentSection_label_91',
                         base__withPadding: 'TooltipContentSection_base__withPadding_c4',
@@ -931,9 +931,9 @@
                 const S = ({ label: u, theme: e = L.Default, className: t, children: n }) =>
                         i().createElement(
                             'div',
-                            { className: r()(P.base, P[`base__${e}`], t) },
-                            i().createElement('div', { className: P.label }, u),
-                            i().createElement('div', { className: P.content }, n),
+                            { className: r()(x.base, x[`base__${e}`], t) },
+                            i().createElement('div', { className: x.label }, u),
+                            i().createElement('div', { className: x.content }, n),
                         ),
                     M = 'Divided_base_06',
                     I = 'Divided_divider_64',
@@ -1235,7 +1235,10 @@
                 !(function (u) {
                     ((u.Objective = 'objective'), (u.Possessive = 'possessive'));
                 })(su || (su = {}));
-                (R.strings.crew.filterPanel.counter.reset.header(), R.strings.crew.filterPanel.counter.reset.body());
+                (R.strings.crew.filterPanel.counter.reset.header(),
+                    R.strings.crew.filterPanel.counter.reset.body(),
+                    R.strings.crew.filterPanel.counterMultySelect.reset.header(),
+                    R.strings.crew.filterPanel.counterMultySelect.reset.body());
                 let cu;
                 !(function (u) {
                     ((u.CREW_FREEXP_HIGHLIGHT = 'crew_crewbook_freeexp_highlight'),
@@ -1474,7 +1477,7 @@
                             ),
                         );
                     },
-                    xu = (u) => {
+                    Pu = (u) => {
                         let e = u.children,
                             t = u.contentId,
                             n = u.args,
@@ -1598,7 +1601,7 @@
                             : e;
                         var w;
                     },
-                    Pu = ['children'];
+                    xu = ['children'];
                 function Ru() {
                     return (
                         (Ru =
@@ -1623,9 +1626,9 @@
                                     a = Object.keys(u);
                                 for (n = 0; n < a.length; n++) ((t = a[n]), e.indexOf(t) >= 0 || (r[t] = u[t]));
                                 return r;
-                            })(u, Pu);
+                            })(u, xu);
                         return i().createElement(
-                            xu,
+                            Pu,
                             Ru(
                                 {
                                     contentId:
@@ -1677,7 +1680,7 @@
                             return u;
                         }, [a, t, n, r, s]);
                         return i().createElement(
-                            xu,
+                            Pu,
                             Mu(
                                 {
                                     contentId:
@@ -1714,7 +1717,7 @@
                         a = e.args,
                         o = null == a ? void 0 : a.contentId;
                     return r || o
-                        ? i().createElement(xu, Uu({}, e, { contentId: r || o }), n)
+                        ? i().createElement(Pu, Uu({}, e, { contentId: r || o }), n)
                         : i().createElement(Lu, e, n);
                 };
                 var zu = t(8045);
@@ -2215,8 +2218,8 @@
                     },
                     Ne = 'VehicleSpecialization_base_2f',
                     Oe = 'VehicleSpecialization_tank_2e',
-                    xe = 'VehicleSpecialization_tankIcon_df',
-                    Pe = 'VehicleSpecialization_tankLevel_7c',
+                    Pe = 'VehicleSpecialization_tankIcon_df',
+                    xe = 'VehicleSpecialization_tankLevel_7c',
                     Re = 'VehicleSpecialization_tankName_fc',
                     Le = 'VehicleSpecialization_tankName__isPremium_fa',
                     Se = 'VehicleSpecialization_percent_7c',
@@ -2259,7 +2262,7 @@
                                     Te,
                                     Ve({}, o, {
                                         className: Oe,
-                                        classNames: { level: Pe, typeIcon: xe, name: r()(Re, he(n) && Le) },
+                                        classNames: { level: xe, typeIcon: Pe, name: r()(Re, he(n) && Le) },
                                         type: ke.whiteSpanish,
                                         isShortName: !0,
                                     }),
@@ -2359,7 +2362,7 @@
                                     ),
                                 ),
                             ),
-                        i().createElement(x, { classMix: Xe }),
+                        i().createElement(P, { classMix: Xe }),
                     );
                 });
                 engine.whenReady.then(() => {

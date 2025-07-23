@@ -1258,7 +1258,7 @@
                     }, [t, e, u]);
                 }
                 var Y = u(515);
-                let K, Z, Q, J, ee, te, ue;
+                let K, Q, Z, J, ee, te, ue;
                 (!(function (e) {
                     ((e.Items = 'items'),
                         (e.Equipment = 'equipment'),
@@ -1314,7 +1314,10 @@
                         (e.VehicleSelect = 'vehicleSelect'),
                         (e.StyleProgress = 'styleProgress'),
                         (e.ParagonsUnlocks = 'paragonsUnlocks'),
-                        (e.LootBoxToken = 'lootBoxToken'));
+                        (e.LootBoxToken = 'lootBoxToken'),
+                        (e.GoldenTicket = 'birthday2025_golden_ticket'),
+                        (e.PostStamp = 'giftsystem_4_stamp'),
+                        (e.Quests = 'quests'));
                 })(K || (K = {})),
                     (function (e) {
                         ((e.Gold = 'gold'),
@@ -1354,7 +1357,7 @@
                             (e.BattlePassPoints = 'battlePassPoints'),
                             (e.BattleBadge = 'dossier_badge'),
                             (e.BattleAchievement = 'dossier_achievement'));
-                    })(Z || (Z = {})),
+                    })(Q || (Q = {})),
                     (function (e) {
                         ((e.Big = 'big'),
                             (e.Small = 'small'),
@@ -1367,7 +1370,7 @@
                             (e.S128x100 = 's128x100'),
                             (e.S80x80 = 's80x80'),
                             (e.S48x48 = 's48x48'));
-                    })(Q || (Q = {})),
+                    })(Z || (Z = {})),
                     (function (e) {
                         ((e.MULTI = 'multi'),
                             (e.CURRENCY = 'currency'),
@@ -1782,13 +1785,15 @@
                         K.CosmicLootboxCommon,
                         K.CosmicLootboxSilver,
                         K.SelectableBonus,
+                        K.GoldenTicket,
+                        K.PostStamp,
                     ],
                     ye = [K.Gold, K.Credits, K.Crystal, K.FreeXp],
                     Pe = [K.BattlePassPoints],
                     Te = [K.PremiumPlus, K.Premium],
                     Re = ['engravings', 'backgrounds'],
                     Me = ['engraving', 'background'],
-                    ke = (e, t = Q.Small) => {
+                    ke = (e, t = Z.Small) => {
                         const u = e.name,
                             i = e.type,
                             r = e.value,
@@ -1797,17 +1802,17 @@
                             n = e.dogTagType,
                             l = ((e) => {
                                 switch (e) {
-                                    case Q.S600x450:
+                                    case Z.S600x450:
                                         return 'c_600x450';
-                                    case Q.S400x300:
+                                    case Z.S400x300:
                                         return 'c_400x300';
-                                    case Q.S296x222:
+                                    case Z.S296x222:
                                         return 'c_296x222';
-                                    case Q.S232x174:
+                                    case Z.S232x174:
                                         return 'c_232x174';
-                                    case Q.Big:
+                                    case Z.Big:
                                         return 'c_80x80';
-                                    case Q.Small:
+                                    case Z.Small:
                                         return 'c_48x48';
                                     default:
                                         return e;
@@ -1831,9 +1836,9 @@
                             case 'battleToken':
                                 return ((e, t) => {
                                     switch (t) {
-                                        case Q.Big:
+                                        case Z.Big:
                                             return e.iconBig.replace('..', 'img://gui');
-                                        case Q.Small:
+                                        case Z.Small:
                                             return e.iconSmall.replace('..', 'img://gui');
                                         default:
                                             return `R.images.gui.maps.icons.quests.bonuses.${t}.${e.icon}`;
@@ -1859,7 +1864,28 @@
                             case 'dossier_badge':
                                 return `R.images.gui.maps.icons.quests.bonuses.badges.${l}.${a}`;
                             case 'dossier_achievement':
-                                return `R.images.gui.maps.icons.achievement.${l}.${a}`;
+                                return `R.images.gui.maps.icons.achievement.${((e) => {
+                                    switch (e) {
+                                        case Z.S600x450:
+                                            return 'c_600x450';
+                                        case Z.S400x300:
+                                            return 'c_400x300';
+                                        case Z.S296x222:
+                                            return 'c_296x222';
+                                        case Z.S232x174:
+                                            return 'c_232x174';
+                                        case Z.S180x135:
+                                            return 'big';
+                                        case Z.Big:
+                                        case Z.S80x80:
+                                            return 'c_80x80';
+                                        case Z.Small:
+                                        case Z.S48x48:
+                                            return 'c_48x48';
+                                        default:
+                                            return e;
+                                    }
+                                })(t)}.${a}`;
                             case 'xp':
                             case 'xpFactor':
                                 return `R.images.gui.maps.icons.quests.bonuses.${t}.exp`;
@@ -3260,7 +3286,7 @@
                         (e.Style3d = 'style3d'),
                         (e.OtherCustomization = 'otherCustomization'));
                 })(Ke || (Ke = {}));
-                const Ze = (e) => {
+                const Qe = (e) => {
                         let t,
                             u = null;
                         return (
@@ -3274,14 +3300,14 @@
                             }
                         );
                     },
-                    Qe = [];
+                    Ze = [];
                 function Je(e) {
                     const t = (0, a.useRef)(e);
                     return (
                         (0, a.useLayoutEffect)(() => {
                             t.current = e;
                         }),
-                        (0, a.useCallback)((...e) => (0, t.current)(...e), Qe)
+                        (0, a.useCallback)((...e) => (0, t.current)(...e), Ze)
                     );
                 }
                 function et(e, t, u = []) {
@@ -3495,7 +3521,7 @@
                                     );
                                 })(
                                     () =>
-                                        Ze(() => {
+                                        Qe(() => {
                                             const e = c.current;
                                             e &&
                                                 (D(n(e, F.scrollPosition.goal), { immediate: !0 }),
@@ -3519,6 +3545,7 @@
                                 ),
                                 [w],
                             );
+                            const v = (0, a.useCallback)((e) => E.trigger('isThumbDraggingChanged', e), [E]);
                             return (0, a.useMemo)(
                                 () => ({
                                     getWrapperSize: () => (g.current ? r(g.current) : void 0),
@@ -3537,9 +3564,10 @@
                                     scrollPosition: f,
                                     animationScroll: F,
                                     recalculateContent: _,
+                                    handleIsThumbDragging: v,
                                     events: { on: E.on, off: E.off },
                                 }),
-                                [F.scrollPosition, D, C, E.off, E.on, _, B, f, d.step.clampedArrowStepTimeout],
+                                [F.scrollPosition, D, C, v, E.off, E.on, _, B, f, d.step.clampedArrowStepTimeout],
                             );
                         };
                     },
@@ -3640,16 +3668,16 @@
                                 })(),
                                     m());
                             });
-                        ((0, a.useEffect)(() => Ze(F)),
+                        ((0, a.useEffect)(() => Qe(F)),
                             (0, a.useEffect)(
                                 () =>
-                                    Ze(() => {
+                                    Qe(() => {
                                         const t = () => {
                                             m();
                                         };
                                         let u = pt;
                                         const i = () => {
-                                            (u(), (u = Ze(F)));
+                                            (u(), (u = Qe(F)));
                                         };
                                         return (
                                             e.events.on('recalculateContent', F),
@@ -3792,7 +3820,7 @@
                         );
                     },
                     _t = ({ api: e, className: t, classNames: u, children: i, style: r }) => (
-                        (0, a.useEffect)(() => Ze(e.recalculateContent)),
+                        (0, a.useEffect)(() => Qe(e.recalculateContent)),
                         o().createElement(
                             'div',
                             { className: B()(Bt.base, t), style: r },
@@ -3814,7 +3842,7 @@
                 ((_t.Bar = Ct),
                     (_t.Default = wt),
                     (_t.SeniorityAwards = ({ api: e, className: t, classNames: u, children: i }) => (
-                        (0, a.useEffect)(() => Ze(e.recalculateContent)),
+                        (0, a.useEffect)(() => Qe(e.recalculateContent)),
                         o().createElement(
                             'div',
                             { className: B()(Bt.base, t) },
@@ -3926,7 +3954,7 @@
                                     (m(), F());
                                 });
                             });
-                        ((0, a.useEffect)(() => Ze(f)),
+                        ((0, a.useEffect)(() => Qe(f)),
                             (0, a.useEffect)(() => {
                                 const t = () => {
                                     Nt(e, () => {
@@ -3935,7 +3963,7 @@
                                 };
                                 let u = Mt;
                                 const i = () => {
-                                    (u(), (u = Ze(f)));
+                                    (u(), (u = Qe(f)));
                                 };
                                 return (
                                     e.events.on('recalculateContent', f),
@@ -3971,7 +3999,9 @@
                                         });
                                     },
                                     u = () => {
-                                        (window.removeEventListener('mousemove', t), A(kt));
+                                        (window.removeEventListener('mousemove', t),
+                                            e.handleIsThumbDragging(!1),
+                                            A(kt));
                                     };
                                 return (
                                     window.addEventListener('mousemove', t),
@@ -4014,7 +4044,11 @@
                                         const i = h.current;
                                         if (i && 0 === t.button)
                                             if ((H('play'), t.target === i))
-                                                A({ pending: !0, offset: t.screenY - i.getBoundingClientRect().y });
+                                                (e.handleIsThumbDragging(!0),
+                                                    A({
+                                                        pending: !0,
+                                                        offset: t.screenY - i.getBoundingClientRect().y,
+                                                    }));
                                             else {
                                                 ((t) => {
                                                     h.current &&
@@ -4078,7 +4112,7 @@
                         );
                     },
                     Gt = ({ className: e, classNames: t, children: u, api: i }) => (
-                        (0, a.useEffect)(() => Ze(i.recalculateContent)),
+                        (0, a.useEffect)(() => Qe(i.recalculateContent)),
                         o().createElement(
                             'div',
                             { className: B()(Ht.base, e), ref: i.wrapperRef, onWheel: i.handleMouseWheel },
@@ -4197,8 +4231,8 @@
                         );
                     }),
                     Kt = 'LoupeButton_base_7c',
-                    Zt = 'LoupeButton_icon_59',
-                    Qt = 'LoupeButton_iconHover_0e',
+                    Qt = 'LoupeButton_icon_59',
+                    Zt = 'LoupeButton_iconHover_0e',
                     Jt = 'LoupeButton_hoverText_e7',
                     eu = ({ onClick: e }) =>
                         o().createElement(
@@ -4210,7 +4244,7 @@
                                 },
                                 onMouseEnter: () => H('highlight'),
                             },
-                            o().createElement('div', { className: Zt }, o().createElement('div', { className: Qt })),
+                            o().createElement('div', { className: Qt }, o().createElement('div', { className: Zt })),
                             o().createElement(
                                 'div',
                                 { className: Jt },

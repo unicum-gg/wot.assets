@@ -1358,7 +1358,10 @@
                             (e.VehicleSelect = 'vehicleSelect'),
                             (e.StyleProgress = 'styleProgress'),
                             (e.ParagonsUnlocks = 'paragonsUnlocks'),
-                            (e.LootBoxToken = 'lootBoxToken'));
+                            (e.LootBoxToken = 'lootBoxToken'),
+                            (e.GoldenTicket = 'birthday2025_golden_ticket'),
+                            (e.PostStamp = 'giftsystem_4_stamp'),
+                            (e.Quests = 'quests'));
                     })(ee || (ee = {})),
                     (function (e) {
                         ((e.Gold = 'gold'),
@@ -1497,6 +1500,8 @@
                         ee.CosmicLootboxCommon,
                         ee.CosmicLootboxSilver,
                         ee.SelectableBonus,
+                        ee.GoldenTicket,
+                        ee.PostStamp,
                     ],
                     le = [ee.Gold, ee.Credits, ee.Crystal, ee.FreeXp],
                     ce = [ee.BattlePassPoints],
@@ -1574,7 +1579,28 @@
                             case 'dossier_badge':
                                 return `R.images.gui.maps.icons.quests.bonuses.badges.${o}.${n}`;
                             case 'dossier_achievement':
-                                return `R.images.gui.maps.icons.achievement.${o}.${n}`;
+                                return `R.images.gui.maps.icons.achievement.${((e) => {
+                                    switch (e) {
+                                        case te.S600x450:
+                                            return 'c_600x450';
+                                        case te.S400x300:
+                                            return 'c_400x300';
+                                        case te.S296x222:
+                                            return 'c_296x222';
+                                        case te.S232x174:
+                                            return 'c_232x174';
+                                        case te.S180x135:
+                                            return 'big';
+                                        case te.Big:
+                                        case te.S80x80:
+                                            return 'c_80x80';
+                                        case te.Small:
+                                        case te.S48x48:
+                                            return 'c_48x48';
+                                        default:
+                                            return e;
+                                    }
+                                })(u)}.${n}`;
                             case 'xp':
                             case 'xpFactor':
                                 return `R.images.gui.maps.icons.quests.bonuses.${u}.exp`;
@@ -3389,72 +3415,70 @@
                             void 0 !== D ? r().createElement(Nu, $u({}, D, { text: u })) : u,
                         );
                     });
-                let Ku, Qu, Zu, Ju;
-                (!(function (e) {
+                let Ku;
+                !(function (e) {
                     ((e[(e.LEFT = 0)] = 'LEFT'),
                         (e[(e.WHEEL = 1)] = 'WHEEL'),
                         (e[(e.RIGHT = 2)] = 'RIGHT'),
                         (e[(e.FOURTH = 3)] = 'FOURTH'),
                         (e[(e.FIFTH = 4)] = 'FIFTH'));
-                })(Ku || (Ku = {})),
-                    (function (e) {
-                        ((e.small = 'small'),
-                            (e.medium = 'medium'),
-                            (e.large = 'large'),
-                            (e.extraLarge = 'extraLarge'));
-                    })(Qu || (Qu = {})),
+                })(Ku || (Ku = {}));
+                const Qu = {
+                    base: 'Checkbox_base_36',
+                    base__disabled: 'Checkbox_base__disabled_08',
+                    base__center: 'Checkbox_base__center_52',
+                    base__bottom: 'Checkbox_base__bottom_28',
+                    input: 'Checkbox_input_37',
+                    base__mouseDown: 'Checkbox_base__mouseDown_45',
+                    base__small: 'Checkbox_base__small_18',
+                    base__medium: 'Checkbox_base__medium_12',
+                    base__large: 'Checkbox_base__large_f7',
+                    base__extraLarge: 'Checkbox_base__extraLarge_c9',
+                    alertOverlay: 'Checkbox_alertOverlay_52',
+                    base__alert: 'Checkbox_base__alert_b7',
+                    blink: 'Checkbox_blink_5e',
+                    base__checked: 'Checkbox_base__checked_a2',
+                    inputHoverOverlay: 'Checkbox_inputHoverOverlay_36',
+                    highlight: 'Checkbox_highlight_b8',
+                    base__main: 'Checkbox_base__main_3a',
+                    base__primary: 'Checkbox_base__primary_ab',
+                    checkmark: 'Checkbox_checkmark_60',
+                    fadeIn: 'Checkbox_fadeIn_1a',
+                    label: 'Checkbox_label_bc',
+                    labelContent: 'Checkbox_labelContent_64',
+                };
+                let Zu, Ju, et;
+                (!(function (e) {
+                    ((e.small = 'small'), (e.medium = 'medium'), (e.large = 'large'), (e.extraLarge = 'extraLarge'));
+                })(Zu || (Zu = {})),
                     (function (e) {
                         ((e.primary = 'primary'), (e.main = 'main'));
-                    })(Zu || (Zu = {})),
+                    })(Ju || (Ju = {})),
                     (function (e) {
                         ((e.Center = 'center'), (e.Bottom = 'bottom'));
-                    })(Ju || (Ju = {})));
-                const et = {
-                        base: 'Checkbox_base_36',
-                        base__disabled: 'Checkbox_base__disabled_08',
-                        base__center: 'Checkbox_base__center_52',
-                        base__bottom: 'Checkbox_base__bottom_28',
-                        input: 'Checkbox_input_37',
-                        base__mouseDown: 'Checkbox_base__mouseDown_45',
-                        base__small: 'Checkbox_base__small_18',
-                        base__medium: 'Checkbox_base__medium_12',
-                        base__large: 'Checkbox_base__large_f7',
-                        base__extraLarge: 'Checkbox_base__extraLarge_c9',
-                        alertOverlay: 'Checkbox_alertOverlay_52',
-                        base__alert: 'Checkbox_base__alert_b7',
-                        blink: 'Checkbox_blink_5e',
-                        base__checked: 'Checkbox_base__checked_a2',
-                        inputHoverOverlay: 'Checkbox_inputHoverOverlay_36',
-                        highlight: 'Checkbox_highlight_b8',
-                        base__main: 'Checkbox_base__main_3a',
-                        base__primary: 'Checkbox_base__primary_ab',
-                        checkmark: 'Checkbox_checkmark_60',
-                        fadeIn: 'Checkbox_fadeIn_1a',
-                        label: 'Checkbox_label_bc',
-                        labelContent: 'Checkbox_labelContent_64',
-                    },
-                    ut = [
-                        'id',
-                        'isChecked',
-                        'isDisabled',
-                        'isAlert',
-                        'size',
-                        'type',
-                        'soundHover',
-                        'soundClick',
-                        'onMouseEnter',
-                        'onMouseLeave',
-                        'onMouseUp',
-                        'onMouseDown',
-                        'onClick',
-                        'onChange',
-                        'onFocus',
-                        'onBlur',
-                        'text',
-                        'contentStyles',
-                        'children',
-                        'alignment',
-                    ];
+                    })(et || (et = {})));
+                const ut = [
+                    'id',
+                    'isChecked',
+                    'isDisabled',
+                    'isAlert',
+                    'size',
+                    'type',
+                    'soundHover',
+                    'soundClick',
+                    'onMouseEnter',
+                    'onMouseLeave',
+                    'onMouseUp',
+                    'onMouseDown',
+                    'onClick',
+                    'onChange',
+                    'onFocus',
+                    'onBlur',
+                    'text',
+                    'contentStyles',
+                    'children',
+                    'alignment',
+                ];
                 function tt() {
                     return (
                         (tt =
@@ -3478,9 +3502,9 @@
                             o = e.isAlert,
                             l = void 0 !== o && o,
                             c = e.size,
-                            _ = void 0 === c ? Qu.medium : c,
+                            _ = void 0 === c ? Zu.medium : c,
                             E = e.type,
-                            m = void 0 === E ? Zu.primary : E,
+                            m = void 0 === E ? Ju.primary : E,
                             d = e.soundHover,
                             A = void 0 === d ? 'highlight' : d,
                             F = e.soundClick,
@@ -3556,10 +3580,10 @@
                             ),
                             j = r().createElement(
                                 'div',
-                                { className: et.label },
+                                { className: Qu.label },
                                 r().createElement(
                                     'div',
-                                    { className: C()(et.labelContent, 's-labelContent'), style: y },
+                                    { className: C()(Qu.labelContent, 's-labelContent'), style: y },
                                     S || x,
                                 ),
                             );
@@ -3568,13 +3592,13 @@
                             tt(
                                 {
                                     id: u,
-                                    className: C()(et.base, et[`base__${_}`], et[`base__${m}`], {
-                                        [et.base__checked]: n,
-                                        [et.base__disabled]: i,
-                                        [et.base__mouseDown]: P,
-                                        [et.base__alert]: l,
-                                        [et.base__center]: R === Ju.Center,
-                                        [et.base__bottom]: R === Ju.Bottom,
+                                    className: C()(Qu.base, Qu[`base__${_}`], Qu[`base__${m}`], {
+                                        [Qu.base__checked]: n,
+                                        [Qu.base__disabled]: i,
+                                        [Qu.base__mouseDown]: P,
+                                        [Qu.base__alert]: l,
+                                        [Qu.base__center]: R === et.Center,
+                                        [Qu.base__bottom]: R === et.Bottom,
                                     }),
                                     onClick: I,
                                     onMouseEnter: G,
@@ -3588,12 +3612,12 @@
                             ),
                             r().createElement(
                                 'div',
-                                { className: et.input },
-                                r().createElement('div', { className: et.alertOverlay }),
-                                r().createElement('div', { className: et.inputHoverOverlay }),
-                                r().createElement('div', { className: et.highlight }),
+                                { className: Qu.input },
+                                r().createElement('div', { className: Qu.alertOverlay }),
+                                r().createElement('div', { className: Qu.inputHoverOverlay }),
+                                r().createElement('div', { className: Qu.highlight }),
                             ),
-                            r().createElement('div', { className: et.checkmark }),
+                            r().createElement('div', { className: Qu.checkmark }),
                             ((S || x) && j) || null,
                         );
                     },
@@ -3636,7 +3660,7 @@
                                         'div',
                                         { className: rt.checkbox },
                                         r().createElement(at, {
-                                            type: Zu.main,
+                                            type: Ju.main,
                                             isChecked: i,
                                             text: nt.$dyn(n),
                                             onChange: () => l(n),

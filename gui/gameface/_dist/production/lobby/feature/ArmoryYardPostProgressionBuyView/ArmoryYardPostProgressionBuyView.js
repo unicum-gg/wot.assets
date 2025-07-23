@@ -1260,7 +1260,10 @@
                         (u.VehicleSelect = 'vehicleSelect'),
                         (u.StyleProgress = 'styleProgress'),
                         (u.ParagonsUnlocks = 'paragonsUnlocks'),
-                        (u.LootBoxToken = 'lootBoxToken'));
+                        (u.LootBoxToken = 'lootBoxToken'),
+                        (u.GoldenTicket = 'birthday2025_golden_ticket'),
+                        (u.PostStamp = 'giftsystem_4_stamp'),
+                        (u.Quests = 'quests'));
                 })(N || (N = {})),
                     (function (u) {
                         ((u.Gold = 'gold'),
@@ -1477,10 +1480,10 @@
                 z.defaultProps = { side: 'left', type: 'back', soundHover: 'highlight', soundClick: 'play' };
                 var $ = t(5521),
                     K = t(4179);
-                const Z = (u) => {
+                const Q = (u) => {
                     console.error(u.type + ': useKeydownListener hook :: Callback is not defined');
                 };
-                function Q(u = $.n.NONE, e = Z, t = !1) {
+                function Z(u = $.n.NONE, e = Q, t = !1) {
                     (0, r.useEffect)(() => {
                         if (u !== $.n.NONE)
                             return (
@@ -1945,10 +1948,10 @@
                             T = u.wrap,
                             L = u.flexWrap,
                             M = void 0 === L ? (T ? 'wrap' : void 0) : L,
-                            R = u.grow,
-                            k = u.shrink,
+                            k = u.grow,
+                            R = u.shrink,
                             P = u.flex,
-                            O = void 0 === P ? (R || k ? `${R ? 1 : 0} ${k ? 1 : 0} auto` : void 0) : P,
+                            O = void 0 === P ? (k || R ? `${k ? 1 : 0} ${R ? 1 : 0} auto` : void 0) : P,
                             N = u.style,
                             H = u.children,
                             I = (function (u, e) {
@@ -2072,7 +2075,7 @@
                               );
                 var Lu = t(3532),
                     Mu = t.n(Lu);
-                const Ru = {
+                const ku = {
                         'paragraph-P10': 'Text_paragraph-P10_2c',
                         'paragraph-P12': 'Text_paragraph-P12_22',
                         'paragraph-P14': 'Text_paragraph-P14_a7',
@@ -2116,7 +2119,7 @@
                         BOND: 'Text_BOND_be',
                         PROM: 'Text_PROM_65',
                     },
-                    ku = ['text', 'variant', 'className', 'color', 'm', 'mt', 'mr', 'mb', 'ml', 'style', 'format'];
+                    Ru = ['text', 'variant', 'className', 'color', 'm', 'mt', 'mr', 'mb', 'ml', 'style', 'format'];
                 function Pu() {
                     return (
                         (Pu =
@@ -2171,7 +2174,7 @@
                         (u) =>
                             u
                                 ? ((u) => Ou.includes(u))(u)
-                                    ? { colorClassName: Ru[u] }
+                                    ? { colorClassName: ku[u] }
                                     : { colorStyle: { color: u } }
                                 : {}),
                     Wu = mu((u) => {
@@ -2198,7 +2201,7 @@
                                     a = Object.keys(u);
                                 for (r = 0; r < a.length; r++) ((t = a[r]), e.indexOf(t) >= 0 || (n[t] = u[t]));
                                 return n;
-                            })(u, ku);
+                            })(u, Ru);
                         const g = (0, r.useMemo)(() => {
                                 const u = Uu(o),
                                     e = u.colorClassName,
@@ -2212,7 +2215,7 @@
                             vu,
                             Pu(
                                 {
-                                    className: C()(Ru.base, t && Ru[t], p, a),
+                                    className: C()(ku.base, t && ku[t], p, a),
                                     style: h,
                                     mt: !0 === l ? Gu[t || 'paragraph-P16'].mt : l,
                                     mr: !0 === _ ? Gu[t || 'paragraph-P16'].mr : _,
@@ -2401,7 +2404,7 @@
                 };
                 zu.defaultProps = { type: Vu.primary, isFocused: !1, soundHover: 'highlight', soundClick: 'play' };
                 const $u = (0, r.memo)(zu);
-                let Ku, Zu, Qu;
+                let Ku, Qu, Zu;
                 (!(function (u) {
                     ((u.small = 'small'), (u.big = 'big'), (u.large = 'large'), (u.extraLarge = 'extraLarge'));
                 })(Ku || (Ku = {})),
@@ -2412,10 +2415,10 @@
                             (u.xp = 'xp'),
                             (u.freeXP = 'freeXP'),
                             (u.equipCoin = 'equipCoin'));
-                    })(Zu || (Zu = {})),
+                    })(Qu || (Qu = {})),
                     (function (u) {
                         ((u.Red = 'RedActionBG'), (u.Blue = 'BlueActionBG'));
-                    })(Qu || (Qu = {})));
+                    })(Zu || (Zu = {})));
                 class Ju extends n().PureComponent {
                     render() {
                         let u;
@@ -2478,7 +2481,7 @@
                         value: o,
                         discountValue: i,
                         showPlus: s,
-                        stockBackgroundName: l = Qu.Red,
+                        stockBackgroundName: l = Zu.Red,
                     }) => {
                         const E = C()(ue.value, ue[`value__${r}`], !a && ue.value__notEnough),
                             _ = C()(ue.icon, ue[`icon__${r}-${t}`]),
@@ -2492,7 +2495,7 @@
                                 'span',
                                 { className: E },
                                 A,
-                                n().createElement(Ju, { value: o, format: r === Zu.gold ? 'gold' : 'integral' }),
+                                n().createElement(Ju, { value: o, format: r === Qu.gold ? 'gold' : 'integral' }),
                             ),
                             n().createElement('span', { className: _ }),
                             u &&
@@ -2961,7 +2964,7 @@
                                 p = B === de.Gold,
                                 v = B === de.Crystal,
                                 b = p || o >= D,
-                                f = v ? Zu.crystal : Zu.gold,
+                                f = v ? Qu.crystal : Qu.gold,
                                 x = (0, r.useCallback)(() => {
                                     if (l < e) {
                                         if (p) {
@@ -3154,7 +3157,7 @@
                             callback: e = () => o.O.view.sendEvent.close(),
                             preventPropagation: t = !0,
                         } = {}) {
-                            Q(u, e, t);
+                            Z(u, e, t);
                         })({ callback: r.back }),
                         n().createElement(
                             'div',

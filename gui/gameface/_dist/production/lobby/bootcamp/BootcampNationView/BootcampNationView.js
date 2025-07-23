@@ -1725,6 +1725,7 @@
                                 ),
                                 [f],
                             );
+                            const w = (0, r.useCallback)((u) => d.trigger('isThumbDraggingChanged', u), [d]);
                             return (0, r.useMemo)(
                                 () => ({
                                     getWrapperSize: () => (F.current ? a(F.current) : void 0),
@@ -1743,9 +1744,10 @@
                                     scrollPosition: B,
                                     animationScroll: _,
                                     recalculateContent: p,
+                                    handleIsThumbDragging: w,
                                     events: { on: d.on, off: d.off },
                                 }),
-                                [_.scrollPosition, g, h, d.off, d.on, p, v, B, c.step.clampedArrowStepTimeout],
+                                [_.scrollPosition, g, h, w, d.off, d.on, p, v, B, c.step.clampedArrowStepTimeout],
                             );
                         };
                     })({

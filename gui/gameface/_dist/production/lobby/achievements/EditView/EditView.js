@@ -1357,6 +1357,7 @@
                                 ),
                                 [f],
                             );
+                            const p = (0, a.useCallback)((e) => _.trigger('isThumbDraggingChanged', e), [_]);
                             return (0, a.useMemo)(
                                 () => ({
                                     getWrapperSize: () => (m.current ? r(m.current) : void 0),
@@ -1375,9 +1376,10 @@
                                     scrollPosition: h,
                                     animationScroll: g,
                                     recalculateContent: b,
+                                    handleIsThumbDragging: p,
                                     events: { on: _.on, off: _.off },
                                 }),
-                                [g.scrollPosition, C, v, _.off, _.on, b, B, h, d.step.clampedArrowStepTimeout],
+                                [g.scrollPosition, C, v, p, _.off, _.on, b, B, h, d.step.clampedArrowStepTimeout],
                             );
                         };
                     },
@@ -2273,7 +2275,9 @@
                                         });
                                     },
                                     t = () => {
-                                        (window.removeEventListener('mousemove', u), A(Ge));
+                                        (window.removeEventListener('mousemove', u),
+                                            e.handleIsThumbDragging(!1),
+                                            A(Ge));
                                     };
                                 return (
                                     window.addEventListener('mousemove', u),
@@ -2316,7 +2320,11 @@
                                         const n = c.current;
                                         if (n && 0 === u.button)
                                             if ((Q('play'), u.target === n))
-                                                A({ pending: !0, offset: u.screenY - n.getBoundingClientRect().y });
+                                                (e.handleIsThumbDragging(!0),
+                                                    A({
+                                                        pending: !0,
+                                                        offset: u.screenY - n.getBoundingClientRect().y,
+                                                    }));
                                             else {
                                                 ((u) => {
                                                     c.current &&
@@ -3264,72 +3272,70 @@
                                 ),
                         );
                     });
-                let st, lt, ct, dt;
-                (!(function (e) {
+                let st;
+                !(function (e) {
                     ((e[(e.LEFT = 0)] = 'LEFT'),
                         (e[(e.WHEEL = 1)] = 'WHEEL'),
                         (e[(e.RIGHT = 2)] = 'RIGHT'),
                         (e[(e.FOURTH = 3)] = 'FOURTH'),
                         (e[(e.FIFTH = 4)] = 'FIFTH'));
-                })(st || (st = {})),
-                    (function (e) {
-                        ((e.small = 'small'),
-                            (e.medium = 'medium'),
-                            (e.large = 'large'),
-                            (e.extraLarge = 'extraLarge'));
-                    })(lt || (lt = {})),
+                })(st || (st = {}));
+                const lt = {
+                    base: 'Checkbox_base_36',
+                    base__disabled: 'Checkbox_base__disabled_08',
+                    base__center: 'Checkbox_base__center_52',
+                    base__bottom: 'Checkbox_base__bottom_28',
+                    input: 'Checkbox_input_37',
+                    base__mouseDown: 'Checkbox_base__mouseDown_45',
+                    base__small: 'Checkbox_base__small_18',
+                    base__medium: 'Checkbox_base__medium_12',
+                    base__large: 'Checkbox_base__large_f7',
+                    base__extraLarge: 'Checkbox_base__extraLarge_c9',
+                    alertOverlay: 'Checkbox_alertOverlay_52',
+                    base__alert: 'Checkbox_base__alert_b7',
+                    blink: 'Checkbox_blink_5e',
+                    base__checked: 'Checkbox_base__checked_a2',
+                    inputHoverOverlay: 'Checkbox_inputHoverOverlay_36',
+                    highlight: 'Checkbox_highlight_b8',
+                    base__main: 'Checkbox_base__main_3a',
+                    base__primary: 'Checkbox_base__primary_ab',
+                    checkmark: 'Checkbox_checkmark_60',
+                    fadeIn: 'Checkbox_fadeIn_1a',
+                    label: 'Checkbox_label_bc',
+                    labelContent: 'Checkbox_labelContent_64',
+                };
+                let ct, dt, Et;
+                (!(function (e) {
+                    ((e.small = 'small'), (e.medium = 'medium'), (e.large = 'large'), (e.extraLarge = 'extraLarge'));
+                })(ct || (ct = {})),
                     (function (e) {
                         ((e.primary = 'primary'), (e.main = 'main'));
-                    })(ct || (ct = {})),
+                    })(dt || (dt = {})),
                     (function (e) {
                         ((e.Center = 'center'), (e.Bottom = 'bottom'));
-                    })(dt || (dt = {})));
-                const Et = {
-                        base: 'Checkbox_base_36',
-                        base__disabled: 'Checkbox_base__disabled_08',
-                        base__center: 'Checkbox_base__center_52',
-                        base__bottom: 'Checkbox_base__bottom_28',
-                        input: 'Checkbox_input_37',
-                        base__mouseDown: 'Checkbox_base__mouseDown_45',
-                        base__small: 'Checkbox_base__small_18',
-                        base__medium: 'Checkbox_base__medium_12',
-                        base__large: 'Checkbox_base__large_f7',
-                        base__extraLarge: 'Checkbox_base__extraLarge_c9',
-                        alertOverlay: 'Checkbox_alertOverlay_52',
-                        base__alert: 'Checkbox_base__alert_b7',
-                        blink: 'Checkbox_blink_5e',
-                        base__checked: 'Checkbox_base__checked_a2',
-                        inputHoverOverlay: 'Checkbox_inputHoverOverlay_36',
-                        highlight: 'Checkbox_highlight_b8',
-                        base__main: 'Checkbox_base__main_3a',
-                        base__primary: 'Checkbox_base__primary_ab',
-                        checkmark: 'Checkbox_checkmark_60',
-                        fadeIn: 'Checkbox_fadeIn_1a',
-                        label: 'Checkbox_label_bc',
-                        labelContent: 'Checkbox_labelContent_64',
-                    },
-                    mt = [
-                        'id',
-                        'isChecked',
-                        'isDisabled',
-                        'isAlert',
-                        'size',
-                        'type',
-                        'soundHover',
-                        'soundClick',
-                        'onMouseEnter',
-                        'onMouseLeave',
-                        'onMouseUp',
-                        'onMouseDown',
-                        'onClick',
-                        'onChange',
-                        'onFocus',
-                        'onBlur',
-                        'text',
-                        'contentStyles',
-                        'children',
-                        'alignment',
-                    ];
+                    })(Et || (Et = {})));
+                const mt = [
+                    'id',
+                    'isChecked',
+                    'isDisabled',
+                    'isAlert',
+                    'size',
+                    'type',
+                    'soundHover',
+                    'soundClick',
+                    'onMouseEnter',
+                    'onMouseLeave',
+                    'onMouseUp',
+                    'onMouseDown',
+                    'onClick',
+                    'onChange',
+                    'onFocus',
+                    'onBlur',
+                    'text',
+                    'contentStyles',
+                    'children',
+                    'alignment',
+                ];
                 function _t() {
                     return (
                         (_t =
@@ -3353,9 +3359,9 @@
                         s = e.isAlert,
                         l = void 0 !== s && s,
                         c = e.size,
-                        d = void 0 === c ? lt.medium : c,
+                        d = void 0 === c ? ct.medium : c,
                         E = e.type,
-                        m = void 0 === E ? ct.primary : E,
+                        m = void 0 === E ? dt.primary : E,
                         _ = e.soundHover,
                         A = void 0 === _ ? 'highlight' : _,
                         F = e.soundClick,
@@ -3431,10 +3437,10 @@
                         ),
                         V = i().createElement(
                             'div',
-                            { className: Et.label },
+                            { className: lt.label },
                             i().createElement(
                                 'div',
-                                { className: B()(Et.labelContent, 's-labelContent'), style: x },
+                                { className: B()(lt.labelContent, 's-labelContent'), style: x },
                                 S || y,
                             ),
                         );
@@ -3443,13 +3449,13 @@
                         _t(
                             {
                                 id: u,
-                                className: B()(Et.base, Et[`base__${d}`], Et[`base__${m}`], {
-                                    [Et.base__checked]: n,
-                                    [Et.base__disabled]: o,
-                                    [Et.base__mouseDown]: N,
-                                    [Et.base__alert]: l,
-                                    [Et.base__center]: L === dt.Center,
-                                    [Et.base__bottom]: L === dt.Bottom,
+                                className: B()(lt.base, lt[`base__${d}`], lt[`base__${m}`], {
+                                    [lt.base__checked]: n,
+                                    [lt.base__disabled]: o,
+                                    [lt.base__mouseDown]: N,
+                                    [lt.base__alert]: l,
+                                    [lt.base__center]: L === Et.Center,
+                                    [lt.base__bottom]: L === Et.Bottom,
                                 }),
                                 onClick: P,
                                 onMouseEnter: W,
@@ -3463,12 +3469,12 @@
                         ),
                         i().createElement(
                             'div',
-                            { className: Et.input },
-                            i().createElement('div', { className: Et.alertOverlay }),
-                            i().createElement('div', { className: Et.inputHoverOverlay }),
-                            i().createElement('div', { className: Et.highlight }),
+                            { className: lt.input },
+                            i().createElement('div', { className: lt.alertOverlay }),
+                            i().createElement('div', { className: lt.inputHoverOverlay }),
+                            i().createElement('div', { className: lt.highlight }),
                         ),
-                        i().createElement('div', { className: Et.checkmark }),
+                        i().createElement('div', { className: lt.checkmark }),
                         ((S || y) && V) || null,
                     );
                 };
@@ -3522,8 +3528,8 @@
                                         At,
                                         {
                                             isChecked: a,
-                                            size: s <= p.Large ? lt.medium : lt.large,
-                                            type: ct.main,
+                                            size: s <= p.Large ? ct.medium : ct.large,
+                                            type: dt.main,
                                             onChange: n.changeAutoSelect,
                                             isDisabled: t.computes.isSelecting(),
                                         },

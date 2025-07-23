@@ -2175,7 +2175,10 @@
                 !(function (u) {
                     ((u.Objective = 'objective'), (u.Possessive = 'possessive'));
                 })(i || (i = {}));
-                (R.strings.crew.filterPanel.counter.reset.header(), R.strings.crew.filterPanel.counter.reset.body());
+                (R.strings.crew.filterPanel.counter.reset.header(),
+                    R.strings.crew.filterPanel.counter.reset.body(),
+                    R.strings.crew.filterPanel.counterMultySelect.reset.header(),
+                    R.strings.crew.filterPanel.counterMultySelect.reset.body());
                 let o;
                 !(function (u) {
                     ((u.CREW_FREEXP_HIGHLIGHT = 'crew_crewbook_freeexp_highlight'),
@@ -2306,8 +2309,8 @@
                                   ),
                               );
                     },
-                    N = 'Title_base_5e',
-                    M = 'Title_base__highLight_1c',
+                    M = 'Title_base_5e',
+                    N = 'Title_base__highLight_1c',
                     H = n().memo(function ({ title: u, cardType: e, kwargs: t, className: r }) {
                         switch (e) {
                             case D.Reset:
@@ -2315,11 +2318,11 @@
                             case D.Recruit:
                                 return n().createElement(
                                     'div',
-                                    { className: A()(N, (null == t ? void 0 : t.isHighlight) && M, r) },
+                                    { className: A()(M, (null == t ? void 0 : t.isHighlight) && N, r) },
                                     u,
                                 );
                             default:
-                                return n().createElement('div', { className: A()(N, r) }, u);
+                                return n().createElement('div', { className: A()(M, r) }, u);
                         }
                     }),
                     I = {

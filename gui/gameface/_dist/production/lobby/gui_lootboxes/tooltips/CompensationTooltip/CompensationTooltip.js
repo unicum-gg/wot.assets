@@ -151,7 +151,7 @@
             7641: (u, e, t) => {
                 (t.r(e),
                     t.d(e, {
-                        addModelObserver: () => A,
+                        addModelObserver: () => c,
                         addPreloadTexture: () => i,
                         children: () => n,
                         displayStatus: () => s.W,
@@ -174,7 +174,7 @@
                         setAnimateWindow: () => C,
                         setEventHandled: () => v,
                         setInputPaddingsRem: () => a,
-                        setSidePaddingsRem: () => c,
+                        setSidePaddingsRem: () => A,
                         whenTutorialReady: () => f,
                     }));
                 var n = t(3722),
@@ -190,10 +190,10 @@
                 function E(u, e, t, n = 1) {
                     return viewEnv.getWebBrowserTexturePath(u, e, t, n);
                 }
-                function A(u, e, t) {
+                function c(u, e, t) {
                     return viewEnv.addDataChangedCallback(u, e, t);
                 }
-                function c(u) {
+                function A(u) {
                     viewEnv.setHitAreaPaddingsRem(u.top, u.right, u.bottom, u.left, 15);
                 }
                 function F(u = 'px') {
@@ -490,7 +490,7 @@
                 const __WEBPACK_DEFAULT_EXPORT__ = ViewModel;
             },
             4179: (u, e, t) => {
-                t.d(e, { B3: () => A, Z5: () => o, ry: () => C });
+                t.d(e, { B3: () => c, Z5: () => o, ry: () => C });
                 class n {
                     constructor() {
                         ((this.entries = []),
@@ -554,8 +554,8 @@
                     (E[(E.MOVE = 16)] = 'MOVE'),
                     (E[(E.CLOSE = 32)] = 'CLOSE'),
                     (E[(E.MINIMIZE = 64)] = 'MINIMIZE'));
-                const A = Object.freeze({ INTEGRAL: 0, GOLD: 1 }),
-                    c = Object.freeze({ FRACTIONAL: 0, WO_ZERO_DIGITS: 1 }),
+                const c = Object.freeze({ INTEGRAL: 0, GOLD: 1 }),
+                    A = Object.freeze({ FRACTIONAL: 0, WO_ZERO_DIGITS: 1 }),
                     F = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1 }),
                     l = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1, YEAR_MONTH: 2 });
                 var D = t(5521),
@@ -648,8 +648,8 @@
                         DataTracker: r.Z,
                         ViewModel: b.Z,
                         ViewEventType: a,
-                        NumberFormatType: A,
-                        RealFormatType: c,
+                        NumberFormatType: c,
+                        RealFormatType: A,
                         TimeFormatType: F,
                         DateFormatType: l,
                         makeGlobalBoundingBox: m,
@@ -663,13 +663,13 @@
                             const o = B.O.view.getViewGlobalPosition(),
                                 i = t.getBoundingClientRect(),
                                 E = i.x,
-                                A = i.y,
-                                c = i.width,
+                                c = i.y,
+                                A = i.width,
                                 F = i.height,
                                 l = {
                                     x: B.O.view.pxToRem(E) + o.x,
-                                    y: B.O.view.pxToRem(A) + o.y,
-                                    width: B.O.view.pxToRem(c),
+                                    y: B.O.view.pxToRem(c) + o.y,
+                                    width: B.O.view.pxToRem(A),
                                     height: B.O.view.pxToRem(F),
                                 };
                             p(a.POP_OVER, {
@@ -741,9 +741,9 @@
                         decorator: 'TooltipDecorator_decorator_3d',
                     },
                     E = ['children', 'className', 'theme'];
-                function A() {
+                function c() {
                     return (
-                        (A =
+                        (c =
                             Object.assign ||
                             function (u) {
                                 for (var e = 1; e < arguments.length; e++) {
@@ -752,14 +752,14 @@
                                 }
                                 return u;
                             }),
-                        A.apply(this, arguments)
+                        c.apply(this, arguments)
                     );
                 }
-                const c = i().forwardRef(function (u, e) {
+                const A = i().forwardRef(function (u, e) {
                     let t = u.children,
                         n = u.className,
-                        c = u.theme,
-                        F = void 0 === c ? 'default' : c,
+                        A = u.theme,
+                        F = void 0 === A ? 'default' : A,
                         l = (function (u, e) {
                             if (null == u) return {};
                             var t,
@@ -820,7 +820,7 @@
                         (0, o.useEffect)(_, []),
                         i().createElement(
                             'div',
-                            A({}, l, {
+                            c({}, l, {
                                 className: s()(a.base, a[`base__theme-${F}`], n),
                                 ref: function (u) {
                                     ((B.current = u), 'function' == typeof e ? e(u) : e && (e.current = u));
@@ -849,7 +849,7 @@
                 }
                 var p = t(3946);
                 let v, g, b, h, w, T, f;
-                var P, y, S;
+                var P, S, y;
                 (!(function (u) {
                     ((u.Items = 'items'),
                         (u.Equipment = 'equipment'),
@@ -905,7 +905,10 @@
                         (u.VehicleSelect = 'vehicleSelect'),
                         (u.StyleProgress = 'styleProgress'),
                         (u.ParagonsUnlocks = 'paragonsUnlocks'),
-                        (u.LootBoxToken = 'lootBoxToken'));
+                        (u.LootBoxToken = 'lootBoxToken'),
+                        (u.GoldenTicket = 'birthday2025_golden_ticket'),
+                        (u.PostStamp = 'giftsystem_4_stamp'),
+                        (u.Quests = 'quests'));
                 })(v || (v = {})),
                     (function (u) {
                         ((u.Gold = 'gold'),
@@ -959,24 +962,24 @@
                             (u.S80x80 = 's80x80'),
                             (u.S48x48 = 's48x48'));
                     })(b || (b = {})),
-                    ((S = h || (h = {})).MULTI = 'multi'),
-                    (S.CURRENCY = 'currency'),
-                    (S.PREMIUM_PLUS = 'premium_plus'),
-                    (S.NUMBER = 'number'),
-                    (S.STRING = 'string'),
-                    ((y = w || (w = {})).BATTLE_BOOSTER = 'battleBooster'),
-                    (y.BATTLE_BOOSTER_REPLACE = 'battleBoosterReplace'),
-                    (y.BUILT_IN_EQUIPMENT = 'builtInEquipment'),
-                    (y.EQUIPMENT_PLUS = 'equipmentPlus'),
-                    (y.EQUIPMENT_TROPHY_BASIC = 'equipmentTrophyBasic'),
-                    (y.EQUIPMENT_TROPHY_UPGRADED = 'equipmentTrophyUpgraded'),
-                    (y.EQUIPMENT_MODERNIZED_UPGRADED_1 = 'equipmentModernized_1'),
-                    (y.EQUIPMENT_MODERNIZED_UPGRADED_2 = 'equipmentModernized_2'),
-                    (y.EQUIPMENT_MODERNIZED_UPGRADED_3 = 'equipmentModernized_3'),
-                    (y.PROGRESSION_STYLE_UPGRADED_1 = 'progressionStyleUpgraded_1'),
-                    (y.PROGRESSION_STYLE_UPGRADED_2 = 'progressionStyleUpgraded_2'),
-                    (y.PROGRESSION_STYLE_UPGRADED_3 = 'progressionStyleUpgraded_3'),
-                    (y.PROGRESSION_STYLE_UPGRADED_4 = 'progressionStyleUpgraded_4'),
+                    ((y = h || (h = {})).MULTI = 'multi'),
+                    (y.CURRENCY = 'currency'),
+                    (y.PREMIUM_PLUS = 'premium_plus'),
+                    (y.NUMBER = 'number'),
+                    (y.STRING = 'string'),
+                    ((S = w || (w = {})).BATTLE_BOOSTER = 'battleBooster'),
+                    (S.BATTLE_BOOSTER_REPLACE = 'battleBoosterReplace'),
+                    (S.BUILT_IN_EQUIPMENT = 'builtInEquipment'),
+                    (S.EQUIPMENT_PLUS = 'equipmentPlus'),
+                    (S.EQUIPMENT_TROPHY_BASIC = 'equipmentTrophyBasic'),
+                    (S.EQUIPMENT_TROPHY_UPGRADED = 'equipmentTrophyUpgraded'),
+                    (S.EQUIPMENT_MODERNIZED_UPGRADED_1 = 'equipmentModernized_1'),
+                    (S.EQUIPMENT_MODERNIZED_UPGRADED_2 = 'equipmentModernized_2'),
+                    (S.EQUIPMENT_MODERNIZED_UPGRADED_3 = 'equipmentModernized_3'),
+                    (S.PROGRESSION_STYLE_UPGRADED_1 = 'progressionStyleUpgraded_1'),
+                    (S.PROGRESSION_STYLE_UPGRADED_2 = 'progressionStyleUpgraded_2'),
+                    (S.PROGRESSION_STYLE_UPGRADED_3 = 'progressionStyleUpgraded_3'),
+                    (S.PROGRESSION_STYLE_UPGRADED_4 = 'progressionStyleUpgraded_4'),
                     ((T || (T = {})).BATTLE_BOOSTER = 'battleBooster'),
                     ((P = f || (f = {})).BATTLE_BOOSTER = 'battleBooster'),
                     (P.BATTLE_BOOSTER_REPLACE = 'battleBoosterReplace'),
@@ -991,16 +994,16 @@
                     (P.PROGRESSION_STYLE_UPGRADED_2 = 'progressionStyleUpgraded_2'),
                     (P.PROGRESSION_STYLE_UPGRADED_3 = 'progressionStyleUpgraded_3'),
                     (P.PROGRESSION_STYLE_UPGRADED_4 = 'progressionStyleUpgraded_4'));
-                var k = t(4179);
-                class x extends i().PureComponent {
+                var x = t(4179);
+                class k extends i().PureComponent {
                     render() {
                         let u;
-                        u = 'gold' === this.props.format ? k.B3.GOLD : k.B3.INTEGRAL;
-                        const e = k.Z5.getNumberFormat(this.props.value, u);
+                        u = 'gold' === this.props.format ? x.B3.GOLD : x.B3.INTEGRAL;
+                        const e = x.Z5.getNumberFormat(this.props.value, u);
                         return void 0 !== this.props.value && void 0 !== e ? e : null;
                     }
                 }
-                ((x.defaultProps = { format: 'integral' }),
+                ((k.defaultProps = { format: 'integral' }),
                     v.Items,
                     v.Equipment,
                     v.Xp,
@@ -1036,6 +1039,8 @@
                     v.CosmicLootboxCommon,
                     v.CosmicLootboxSilver,
                     v.SelectableBonus,
+                    v.GoldenTicket,
+                    v.PostStamp,
                     v.Gold,
                     v.Credits,
                     v.Crystal,
@@ -1216,7 +1221,28 @@
                                         case 'dossier_badge':
                                             return `R.images.gui.maps.icons.quests.bonuses.badges.${a}.${r}`;
                                         case 'dossier_achievement':
-                                            return `R.images.gui.maps.icons.achievement.${a}.${r}`;
+                                            return `R.images.gui.maps.icons.achievement.${((u) => {
+                                                switch (u) {
+                                                    case b.S600x450:
+                                                        return 'c_600x450';
+                                                    case b.S400x300:
+                                                        return 'c_400x300';
+                                                    case b.S296x222:
+                                                        return 'c_296x222';
+                                                    case b.S232x174:
+                                                        return 'c_232x174';
+                                                    case b.S180x135:
+                                                        return 'big';
+                                                    case b.Big:
+                                                    case b.S80x80:
+                                                        return 'c_80x80';
+                                                    case b.Small:
+                                                    case b.S48x48:
+                                                        return 'c_48x48';
+                                                    default:
+                                                        return u;
+                                                }
+                                            })(e)}.${r}`;
                                         case 'xp':
                                         case 'xpFactor':
                                             return `R.images.gui.maps.icons.quests.bonuses.${e}.exp`;
@@ -1384,7 +1410,7 @@
                                             i = (e) =>
                                                 'mocks' === u ? (null == t ? void 0 : t.getter(e)) : o.readByPath(e),
                                             E = (u) => a.current.push(u),
-                                            A = (({ observableModel: u }) => {
+                                            c = (({ observableModel: u }) => {
                                                 const e = {
                                                         itemBefore: u.array('itemBefore'),
                                                         itemAfter: u.array('itemAfter'),
@@ -1471,24 +1497,24 @@
                                                 },
                                                 cleanup: E,
                                             }),
-                                            c = { mode: u, model: A, externalModel: o, cleanup: E };
+                                            A = { mode: u, model: c, externalModel: o, cleanup: E };
                                         return {
-                                            model: A,
-                                            controls: 'mocks' === u && t ? t.controls(c) : {},
+                                            model: c,
+                                            controls: 'mocks' === u && t ? t.controls(A) : {},
                                             externalModel: o,
                                             mode: u,
                                         };
                                     },
-                                    A = (0, o.useRef)(!1),
-                                    c = (0, o.useState)(u),
-                                    F = c[0],
-                                    l = c[1],
+                                    c = (0, o.useRef)(!1),
+                                    A = (0, o.useState)(u),
+                                    F = A[0],
+                                    l = A[1],
                                     D = (0, o.useState)(() => E(u, e, s)),
                                     v = D[0],
                                     g = D[1];
                                 return (
                                     (0, o.useEffect)(() => {
-                                        A.current ? g(E(F, e, s)) : (A.current = !0);
+                                        c.current ? g(E(F, e, s)) : (c.current = !0);
                                     }, [s, F, e]),
                                     (0, o.useEffect)(() => {
                                         l(u);
@@ -1611,7 +1637,7 @@
                                 i().createElement(
                                     'div',
                                     { className: s()(z.compensationCount, z[`compensationCount__${e.name}`]) },
-                                    i().createElement(x, { value: Number(e.value) }),
+                                    i().createElement(k, { value: Number(e.value) }),
                                 ),
                             ),
                             i().createElement('div', { className: z.baseBackground }),
@@ -1660,7 +1686,7 @@
                     });
                 engine.whenReady.then(() => {
                     l().render(
-                        i().createElement(U, null, i().createElement(c, null, i().createElement(K, null))),
+                        i().createElement(U, null, i().createElement(A, null, i().createElement(K, null))),
                         document.getElementById('root'),
                     );
                 });

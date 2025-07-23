@@ -1220,8 +1220,8 @@
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 1;
     transition: border-image linear 0.5s;
+    pointer-events: none;
 }
 .QuestCard_base__weekly_15 .QuestCard_border_eb {
     border-image-source: url('R.images.gui.maps.icons.daily.quests.quest_card.border_active');
@@ -1257,6 +1257,7 @@
     position: absolute;
     top: 0;
     left: 0;
+    pointer-events: none;
 }
 .QuestCard_base__enabled_f0 .QuestCard_background_f3 {
     background-image: url('R.images.gui.maps.icons.daily.quests.quest_card.background_disabled');
@@ -1300,6 +1301,7 @@
     top: 0;
     left: 0;
     transition: opacity 0.5s ease-in;
+    pointer-events: none;
 }
 .QuestCard_rerollBackground__visible_ca {
     opacity: 1;
@@ -1378,7 +1380,7 @@
     height: 100%;
     padding: 18rem 20rem;
     opacity: 1;
-    z-index: 1;
+    pointer-events: none;
 }
 .mediaSmall .QuestCard_cardWrapper_62 {
     padding: 18rem 30rem;
@@ -1559,6 +1561,7 @@
     align-items: center;
     margin: 0 4rem;
     position: relative;
+    pointer-events: auto;
 }
 .QuestCard_rewardWrapper__appear_4b {
     filter: brightness(1.5);
@@ -2314,17 +2317,16 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .QuestCardList_cardList_86 {
     display: flex;
     flex: 1;
-    margin-top: 10rem;
-    margin-bottom: 65rem; /* margin + footer*/
+    margin-bottom: 58rem; /* footer height + 3rem of correction */
     opacity: 1;
     position: relative;
     transition: opacity 0.3s linear;
 }
 .mediaMedium .QuestCardList_cardList_86 {
-    margin-bottom: 75rem;
+    margin-bottom: 65rem;
 }
 .mediaLarge .QuestCardList_cardList_86 {
-    margin-bottom: 90rem;
+    margin-bottom: 80rem;
 }
 .QuestCardList_cardList__allComplete_57 {
     margin-top: 0;
@@ -2390,6 +2392,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 .QuestCardList_scrollBar_d4 {
     height: 100%;
+    padding: 10rem 0;
     position: absolute;
     right: -12rem;
     transform: translateX(100%);

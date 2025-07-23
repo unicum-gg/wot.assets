@@ -3137,38 +3137,38 @@
                                     (u !== D.scrollPosition.goal && g(u, { immediate: !0 }),
                                         d.trigger('recalculateContent'));
                                 });
-                            return (
-                                (0, a.useEffect)(
-                                    () => (
-                                        window.addEventListener('resize', v),
-                                        () => {
-                                            window.removeEventListener('resize', v);
-                                        }
-                                    ),
-                                    [v],
+                            (0, a.useEffect)(
+                                () => (
+                                    window.addEventListener('resize', v),
+                                    () => {
+                                        window.removeEventListener('resize', v);
+                                    }
                                 ),
-                                (0, a.useMemo)(
-                                    () => ({
-                                        getWrapperSize: () => (m.current ? n(m.current) : void 0),
-                                        getContainerSize: () => (E.current ? e(E.current) : void 0),
-                                        getBounds: () =>
-                                            E.current
-                                                ? u(E.current)
-                                                : (console.warn('getBounds: contentRef.current is null'), [0, 0]),
-                                        stepTimeout: _.step.clampedArrowStepTimeout,
-                                        clampPosition: i,
-                                        handleMouseWheel: p,
-                                        applyScroll: g,
-                                        applyStepTo: h,
-                                        contentRef: E,
-                                        wrapperRef: m,
-                                        scrollPosition: C,
-                                        animationScroll: D,
-                                        recalculateContent: f,
-                                        events: { on: d.on, off: d.off },
-                                    }),
-                                    [D.scrollPosition, g, h, d.off, d.on, f, p, C, _.step.clampedArrowStepTimeout],
-                                )
+                                [v],
+                            );
+                            const b = (0, a.useCallback)((e) => d.trigger('isThumbDraggingChanged', e), [d]);
+                            return (0, a.useMemo)(
+                                () => ({
+                                    getWrapperSize: () => (m.current ? n(m.current) : void 0),
+                                    getContainerSize: () => (E.current ? e(E.current) : void 0),
+                                    getBounds: () =>
+                                        E.current
+                                            ? u(E.current)
+                                            : (console.warn('getBounds: contentRef.current is null'), [0, 0]),
+                                    stepTimeout: _.step.clampedArrowStepTimeout,
+                                    clampPosition: i,
+                                    handleMouseWheel: p,
+                                    applyScroll: g,
+                                    applyStepTo: h,
+                                    contentRef: E,
+                                    wrapperRef: m,
+                                    scrollPosition: C,
+                                    animationScroll: D,
+                                    recalculateContent: f,
+                                    handleIsThumbDragging: b,
+                                    events: { on: d.on, off: d.off },
+                                }),
+                                [D.scrollPosition, g, h, b, d.off, d.on, f, p, C, _.step.clampedArrowStepTimeout],
                             );
                         };
                     },
@@ -3588,7 +3588,9 @@
                                         });
                                     },
                                     t = () => {
-                                        (window.removeEventListener('mousemove', u), A(Vu));
+                                        (window.removeEventListener('mousemove', u),
+                                            e.handleIsThumbDragging(!1),
+                                            A(Vu));
                                     };
                                 return (
                                     window.addEventListener('mousemove', u),
@@ -3634,7 +3636,8 @@
                                             0 === u.button &&
                                             (ce('play'),
                                             u.target === r
-                                                ? A({ pending: !0, offset: u.screenY - r.getBoundingClientRect().y })
+                                                ? (e.handleIsThumbDragging(!0),
+                                                  A({ pending: !0, offset: u.screenY - r.getBoundingClientRect().y }))
                                                 : ((n = u.screenY > r.getBoundingClientRect().y ? wu.Prev : wu.Next),
                                                   c.current &&
                                                       qu(e, (u) => {
@@ -3872,7 +3875,10 @@
                         (e.VehicleSelect = 'vehicleSelect'),
                         (e.StyleProgress = 'styleProgress'),
                         (e.ParagonsUnlocks = 'paragonsUnlocks'),
-                        (e.LootBoxToken = 'lootBoxToken'));
+                        (e.LootBoxToken = 'lootBoxToken'),
+                        (e.GoldenTicket = 'birthday2025_golden_ticket'),
+                        (e.PostStamp = 'giftsystem_4_stamp'),
+                        (e.Quests = 'quests'));
                 })(lt || (lt = {})),
                     (function (e) {
                         ((e.Gold = 'gold'),

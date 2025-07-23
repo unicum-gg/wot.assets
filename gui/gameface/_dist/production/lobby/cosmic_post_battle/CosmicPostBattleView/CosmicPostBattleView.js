@@ -1270,10 +1270,10 @@
                     }, [u, e, t]);
                 }
                 var j = t(3282);
-                function V(e) {
+                function q(e) {
                     return e;
                 }
-                function q() {
+                function V() {
                     return !1;
                 }
                 console.log;
@@ -1430,18 +1430,18 @@
                                                     t = (0, J.computedFn)(() =>
                                                         Z(u.playersList.get(), (e) =>
                                                             Object.assign({}, e, {
-                                                                playersScore: Z(e.playersScore, V),
+                                                                playersScore: Z(e.playersScore, q),
                                                             }),
                                                         ),
                                                     ),
-                                                    a = (0, J.computedFn)(() => Z(u.currentPlayersScore.get(), V)),
+                                                    a = (0, J.computedFn)(() => Z(u.currentPlayersScore.get(), q)),
                                                     r = (0, J.computedFn)(() => {
                                                         const e = u.currentPlayerEntry.get();
                                                         return Object.assign({}, e, { playersScore: a() });
                                                     }),
                                                     n = (0, J.computedFn)(() =>
                                                         Z(u.dailyQuests.get(), (e) =>
-                                                            Object.assign({}, e, { rewards: Z(e.rewards, V) }),
+                                                            Object.assign({}, e, { rewards: Z(e.rewards, q) }),
                                                         ),
                                                     );
                                                 return Object.assign({}, u, {
@@ -1459,7 +1459,7 @@
                                                 observableModel: {
                                                     array: (u, t) => {
                                                         const a = null != t ? t : o(u),
-                                                            r = X.observable.box(a, { equals: q });
+                                                            r = X.observable.box(a, { equals: V });
                                                         return (
                                                             'real' === e &&
                                                                 i.subscribe(
@@ -1471,7 +1471,7 @@
                                                     },
                                                     object: (u, t) => {
                                                         const a = null != t ? t : o(u),
-                                                            r = X.observable.box(a, { equals: q });
+                                                            r = X.observable.box(a, { equals: V });
                                                         return (
                                                             'real' === e &&
                                                                 i.subscribe(
@@ -1941,7 +1941,10 @@
                         (e.VehicleSelect = 'vehicleSelect'),
                         (e.StyleProgress = 'styleProgress'),
                         (e.ParagonsUnlocks = 'paragonsUnlocks'),
-                        (e.LootBoxToken = 'lootBoxToken'));
+                        (e.LootBoxToken = 'lootBoxToken'),
+                        (e.GoldenTicket = 'birthday2025_golden_ticket'),
+                        (e.PostStamp = 'giftsystem_4_stamp'),
+                        (e.Quests = 'quests'));
                 })(ge || (ge = {})),
                     (function (e) {
                         ((e.Gold = 'gold'),
@@ -2077,6 +2080,8 @@
                     ge.CosmicLootboxCommon,
                     ge.CosmicLootboxSilver,
                     ge.SelectableBonus,
+                    ge.GoldenTicket,
+                    ge.PostStamp,
                     ge.Gold,
                     ge.Credits,
                     ge.Crystal,
@@ -2157,7 +2162,28 @@
                             case 'dossier_badge':
                                 return `R.images.gui.maps.icons.quests.bonuses.badges.${o}.${n}`;
                             case 'dossier_achievement':
-                                return `R.images.gui.maps.icons.achievement.${o}.${n}`;
+                                return `R.images.gui.maps.icons.achievement.${((e) => {
+                                    switch (e) {
+                                        case he.S600x450:
+                                            return 'c_600x450';
+                                        case he.S400x300:
+                                            return 'c_400x300';
+                                        case he.S296x222:
+                                            return 'c_296x222';
+                                        case he.S232x174:
+                                            return 'c_232x174';
+                                        case he.S180x135:
+                                            return 'big';
+                                        case he.Big:
+                                        case he.S80x80:
+                                            return 'c_80x80';
+                                        case he.Small:
+                                        case he.S48x48:
+                                            return 'c_48x48';
+                                        default:
+                                            return e;
+                                    }
+                                })(u)}.${n}`;
                             case 'xp':
                             case 'xpFactor':
                                 return `R.images.gui.maps.icons.quests.bonuses.${u}.exp`;
@@ -2519,7 +2545,7 @@
                         info__premiumTank: 'Reward_info__premiumTank_d3',
                         timer: 'Reward_timer_d3',
                     },
-                    Ve = ({
+                    qe = ({
                         name: e,
                         image: u,
                         isPeriodic: t = !1,
@@ -2647,7 +2673,7 @@
                                 ),
                         );
                     },
-                    qe = {
+                    Ve = {
                         base: 'ProgressBar_base_45',
                         base__medium: 'ProgressBar_base__medium_62',
                         base__small: 'ProgressBar_base__small_df',
@@ -2664,7 +2690,7 @@
                         ((e[(e.Simple = 0)] = 'Simple'), (e[(e.Growing = 1)] = 'Growing'));
                     })(Ke || (Ke = {})));
                 const Qe = ({ size: e = Xe.Default, classMix: u }) =>
-                        r().createElement('div', { className: C()(qe.background, qe[`background__${e}`], u) }),
+                        r().createElement('div', { className: C()(Ve.background, Ve[`background__${e}`], u) }),
                     Ze = {
                         base: 'ProgressBarBlink_base_24',
                         base__medium: 'ProgressBarBlink_base__medium_ec',
@@ -3158,7 +3184,7 @@
                                 }, [t, u, e]))(l, e, c);
                             return r().createElement(
                                 'div',
-                                { className: C()(qe.base, qe[`base__${t}`]), style: pu(u) },
+                                { className: C()(Ve.base, Ve[`base__${t}`]), style: pu(u) },
                                 !i && r().createElement(Qe, { size: t, classMix: o }),
                                 r().createElement(gu, {
                                     size: t,
@@ -3396,7 +3422,7 @@
                                                               }),
                                                           }))).map((e, u) =>
                                                               r().createElement(
-                                                                  Ve,
+                                                                  qe,
                                                                   Ru({ className: 'BattleResults_reward_67' }, e, {
                                                                       key: u,
                                                                       size: he.Small,

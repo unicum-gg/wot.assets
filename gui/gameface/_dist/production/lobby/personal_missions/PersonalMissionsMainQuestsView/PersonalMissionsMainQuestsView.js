@@ -4389,7 +4389,10 @@
                         (e.VehicleSelect = 'vehicleSelect'),
                         (e.StyleProgress = 'styleProgress'),
                         (e.ParagonsUnlocks = 'paragonsUnlocks'),
-                        (e.LootBoxToken = 'lootBoxToken'));
+                        (e.LootBoxToken = 'lootBoxToken'),
+                        (e.GoldenTicket = 'birthday2025_golden_ticket'),
+                        (e.PostStamp = 'giftsystem_4_stamp'),
+                        (e.Quests = 'quests'));
                 })($a || ($a = {})),
                     (function (e) {
                         ((e.Gold = 'gold'),
@@ -4529,6 +4532,8 @@
                         $a.CosmicLootboxCommon,
                         $a.CosmicLootboxSilver,
                         $a.SelectableBonus,
+                        $a.GoldenTicket,
+                        $a.PostStamp,
                     ],
                     us = [$a.Gold, $a.Credits, $a.Crystal, $a.FreeXp],
                     ts = [$a.BattlePassPoints],
@@ -4606,7 +4611,28 @@
                             case 'dossier_badge':
                                 return `R.images.gui.maps.icons.quests.bonuses.badges.${o}.${r}`;
                             case 'dossier_achievement':
-                                return `R.images.gui.maps.icons.achievement.${o}.${r}`;
+                                return `R.images.gui.maps.icons.achievement.${((e) => {
+                                    switch (e) {
+                                        case Xa.S600x450:
+                                            return 'c_600x450';
+                                        case Xa.S400x300:
+                                            return 'c_400x300';
+                                        case Xa.S296x222:
+                                            return 'c_296x222';
+                                        case Xa.S232x174:
+                                            return 'c_232x174';
+                                        case Xa.S180x135:
+                                            return 'big';
+                                        case Xa.Big:
+                                        case Xa.S80x80:
+                                            return 'c_80x80';
+                                        case Xa.Small:
+                                        case Xa.S48x48:
+                                            return 'c_48x48';
+                                        default:
+                                            return e;
+                                    }
+                                })(u)}.${r}`;
                             case 'xp':
                             case 'xpFactor':
                                 return `R.images.gui.maps.icons.quests.bonuses.${u}.exp`;

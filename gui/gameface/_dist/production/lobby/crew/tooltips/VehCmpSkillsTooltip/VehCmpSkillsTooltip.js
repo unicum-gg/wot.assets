@@ -151,7 +151,7 @@
             7641: (u, e, t) => {
                 (t.r(e),
                     t.d(e, {
-                        addModelObserver: () => A,
+                        addModelObserver: () => l,
                         addPreloadTexture: () => s,
                         children: () => n,
                         displayStatus: () => r.W,
@@ -174,7 +174,7 @@
                         setAnimateWindow: () => p,
                         setEventHandled: () => h,
                         setInputPaddingsRem: () => a,
-                        setSidePaddingsRem: () => l,
+                        setSidePaddingsRem: () => A,
                         whenTutorialReady: () => y,
                     }));
                 var n = t(3722),
@@ -190,10 +190,10 @@
                 function E(u, e, t, n = 1) {
                     return viewEnv.getWebBrowserTexturePath(u, e, t, n);
                 }
-                function A(u, e, t) {
+                function l(u, e, t) {
                     return viewEnv.addDataChangedCallback(u, e, t);
                 }
-                function l(u) {
+                function A(u) {
                     viewEnv.setHitAreaPaddingsRem(u.top, u.right, u.bottom, u.left, 15);
                 }
                 function c(u = 'px') {
@@ -560,8 +560,8 @@
                         (u[(u.MINIMIZE = 64)] = 'MINIMIZE'));
                 })(a || (a = {}));
                 const E = Object.freeze({ INTEGRAL: 0, GOLD: 1 }),
-                    A = Object.freeze({ FRACTIONAL: 0, WO_ZERO_DIGITS: 1 }),
-                    l = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1 }),
+                    l = Object.freeze({ FRACTIONAL: 0, WO_ZERO_DIGITS: 1 }),
+                    A = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1 }),
                     c = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1, YEAR_MONTH: 2 });
                 var F = t(5521),
                     d = t(3138);
@@ -654,8 +654,8 @@
                         ViewModel: v.Z,
                         ViewEventType: a,
                         NumberFormatType: E,
-                        RealFormatType: A,
-                        TimeFormatType: l,
+                        RealFormatType: l,
+                        TimeFormatType: A,
                         DateFormatType: c,
                         makeGlobalBoundingBox: _,
                         sendMoveEvent: (u) => p(a.MOVE, { isMouseEvent: !0, on: u }),
@@ -668,13 +668,13 @@
                             const i = d.O.view.getViewGlobalPosition(),
                                 s = t.getBoundingClientRect(),
                                 E = s.x,
-                                A = s.y,
-                                l = s.width,
+                                l = s.y,
+                                A = s.width,
                                 c = s.height,
                                 F = {
                                     x: d.O.view.pxToRem(E) + i.x,
-                                    y: d.O.view.pxToRem(A) + i.y,
-                                    width: d.O.view.pxToRem(l),
+                                    y: d.O.view.pxToRem(l) + i.y,
+                                    width: d.O.view.pxToRem(A),
                                     height: d.O.view.pxToRem(c),
                                 };
                             p(a.POP_OVER, {
@@ -774,10 +774,10 @@
                         'base__theme-default': 'TooltipDecorator_base__theme-default_6d',
                         decorator: 'TooltipDecorator_decorator_3d',
                     },
-                    A = ['children', 'className', 'theme'];
-                function l() {
+                    l = ['children', 'className', 'theme'];
+                function A() {
                     return (
-                        (l =
+                        (A =
                             Object.assign ||
                             function (u) {
                                 for (var e = 1; e < arguments.length; e++) {
@@ -786,7 +786,7 @@
                                 }
                                 return u;
                             }),
-                        l.apply(this, arguments)
+                        A.apply(this, arguments)
                     );
                 }
                 const c = s().forwardRef(function (u, e) {
@@ -802,7 +802,7 @@
                                 o = Object.keys(u);
                             for (n = 0; n < o.length; n++) ((t = o[n]), e.indexOf(t) >= 0 || (r[t] = u[t]));
                             return r;
-                        })(u, A);
+                        })(u, l);
                     const D = a(),
                         B = s().useRef(null);
                     var _;
@@ -826,7 +826,7 @@
                         (0, i.useEffect)(_, []),
                         s().createElement(
                             'div',
-                            l({}, d, {
+                            A({}, d, {
                                 className: r()(E.base, E[`base__theme-${F}`], n),
                                 ref: function (u) {
                                     ((B.current = u), 'function' == typeof e ? e(u) : e && (e.current = u));
@@ -900,9 +900,9 @@
                             s = u.onMouseDown,
                             a = u.onClick,
                             E = u.ignoreShowDelay,
-                            A = void 0 !== E && E,
-                            l = u.ignoreMouseClick,
-                            c = void 0 !== l && l,
+                            l = void 0 !== E && E,
+                            A = u.ignoreMouseClick,
+                            c = void 0 !== A && A,
                             F = u.decoratorId,
                             d = void 0 === F ? 0 : F,
                             D = u.isEnabled,
@@ -995,7 +995,7 @@
                                               (u) => {
                                                   (u.clientX === window.innerWidth &&
                                                       u.clientY === window.innerHeight) ||
-                                                      ((w.current.timeoutId = window.setTimeout(y, A ? 100 : 400)),
+                                                      ((w.current.timeoutId = window.setTimeout(y, l ? 100 : 400)),
                                                       r && r(u),
                                                       O && O(u));
                                               }),
@@ -1088,7 +1088,7 @@
                                 for (n = 0; n < o.length; n++) ((t = o[n]), e.indexOf(t) >= 0 || (r[t] = u[t]));
                                 return r;
                             })(u, w);
-                        const A = (0, i.useMemo)(() => {
+                        const l = (0, i.useMemo)(() => {
                             const u = Object.assign({}, a, { body: t, header: n, note: r, alert: o });
                             for (const e in u) void 0 === u[e] && delete u[e];
                             return u;
@@ -1098,16 +1098,16 @@
                             g(
                                 {
                                     contentId:
-                                        ((l = null == a ? void 0 : a.hasHtmlContent),
-                                        l ? y.SimpleTooltipHtmlContent('resId') : y.SimpleTooltipContent('resId')),
+                                        ((A = null == a ? void 0 : a.hasHtmlContent),
+                                        A ? y.SimpleTooltipHtmlContent('resId') : y.SimpleTooltipContent('resId')),
                                     decoratorId: R.views.common.tooltip_window.tooltip_window.TooltipWindow('resId'),
-                                    args: A,
+                                    args: l,
                                 },
                                 E,
                             ),
                             e,
                         );
-                        var l;
+                        var A;
                     };
                 function T() {
                     return (
@@ -1410,40 +1410,40 @@
                             a = null;
                         for (let E = t; E >= 0; E--) {
                             const t = u[E],
-                                A = Number(u[E].getAttribute('data-block-type'));
-                            if (A === W.LineBreak || A === W.NewLine || A === W.Binding) continue;
-                            const l = t.textContent || '';
+                                l = Number(u[E].getAttribute('data-block-type'));
+                            if (l === W.LineBreak || l === W.NewLine || l === W.Binding) continue;
+                            const A = t.textContent || '';
                             if (!(t.childElementCount > 1)) {
                                 const u = au(t, n, r),
-                                    A = u[0],
+                                    l = u[0],
                                     c = u[1];
-                                if (!A) {
+                                if (!l) {
                                     c > 0 && (r -= c);
                                     continue;
                                 }
-                                const F = l.slice(0, l.length - c) + o,
+                                const F = A.slice(0, A.length - c) + o,
                                     d = e[E];
                                 ((a = s().cloneElement(d, d.props, F)), (i = E));
                                 break;
                             }
                             {
                                 const u = t.children,
-                                    A = e[E],
-                                    c = A.props.children,
+                                    l = e[E],
+                                    c = l.props.children,
                                     F = Eu(u, c, u.length - 1, n, r, o),
                                     d = F[0],
                                     D = F[1];
                                 if (!(d < 0)) {
                                     const u = c.slice(0, d);
-                                    ((a = s().cloneElement(A, A.props, u, D)), (i = E));
+                                    ((a = s().cloneElement(l, l.props, u, D)), (i = E));
                                     break;
                                 }
-                                r -= l.length;
+                                r -= A.length;
                             }
                         }
                         return [i, a];
                     },
-                    Au = (u, e, t, n = '...') => {
+                    lu = (u, e, t, n = '...') => {
                         const r = [...e],
                             o = u.current;
                         if (!o) return [r, !1];
@@ -1452,7 +1452,7 @@
                             a = o.lastElementChild;
                         if (!iu(a, i) && su(a, s) <= 0) return [r, !1];
                         const E = o.children,
-                            A = ((u, e) => {
+                            l = ((u, e) => {
                                 let t = 0,
                                     n = u.length - 1;
                                 for (; n - t >= 0; ) {
@@ -1461,13 +1461,13 @@
                                 }
                                 return t - 1;
                             })(E, i);
-                        if (A < 0) return [r, !1];
-                        const l = Eu(E, r, A, s, n.length, n),
-                            c = l[0],
-                            F = l[1];
+                        if (l < 0) return [r, !1];
+                        const A = Eu(E, r, l, s, n.length, n),
+                            c = A[0],
+                            F = A[1];
                         return (F && (r.splice(c, 1, F), r.splice(c + 1)), [r, !0]);
                     },
-                    lu = s().memo(
+                    Au = s().memo(
                         ({
                             text: u,
                             classMix: e,
@@ -1476,8 +1476,8 @@
                             isTooltipEnable: o = !1,
                             isTruncationAvailable: a = !1,
                             targetId: E,
-                            justifyContent: A = j.FlexStart,
-                            alignContent: l = j.FlexStart,
+                            justifyContent: l = j.FlexStart,
+                            alignContent: A = j.FlexStart,
                             truncateIdentify: c = '...',
                         }) => {
                             const F = (0, i.useRef)(null),
@@ -1498,14 +1498,14 @@
                                     (u) => {
                                         ((d.current.width = u.contentRect.width),
                                             (d.current.height = u.contentRect.height));
-                                        const e = Au(F, C, d.current, c),
+                                        const e = lu(F, C, d.current, c),
                                             n = e[0],
                                             r = e[1];
                                         (_({ elementList: n, isTruncated: r, isTruncateFinished: !0 }), t && t(r));
                                     },
                                     [t, c, C],
                                 ),
-                                h = (0, i.useMemo)(() => ({ justifyContent: A, alignContent: l }), [l, A]);
+                                h = (0, i.useMemo)(() => ({ justifyContent: l, alignContent: A }), [A, l]);
                             return (
                                 ((u, e, t = !0) => {
                                     const n = (0, i.useCallback)(
@@ -1585,7 +1585,10 @@
                 !(function (u) {
                     ((u.Objective = 'objective'), (u.Possessive = 'possessive'));
                 })(_u || (_u = {}));
-                (R.strings.crew.filterPanel.counter.reset.header(), R.strings.crew.filterPanel.counter.reset.body());
+                (R.strings.crew.filterPanel.counter.reset.header(),
+                    R.strings.crew.filterPanel.counter.reset.body(),
+                    R.strings.crew.filterPanel.counterMultySelect.reset.header(),
+                    R.strings.crew.filterPanel.counterMultySelect.reset.body());
                 let Cu;
                 !(function (u) {
                     ((u.CREW_FREEXP_HIGHLIGHT = 'crew_crewbook_freeexp_highlight'),
@@ -1644,8 +1647,8 @@
                         const t = (0, i.createContext)({});
                         return [
                             function ({ mode: n = 'real', options: r, children: a, mocks: E }) {
-                                const A = (0, i.useRef)([]),
-                                    l = (t, n, r) => {
+                                const l = (0, i.useRef)([]),
+                                    A = (t, n, r) => {
                                         var i;
                                         const s = (function ({
                                                 initializer: u = !0,
@@ -1713,7 +1716,7 @@
                                                       }),
                                             E = (u) =>
                                                 'mocks' === t ? (null == r ? void 0 : r.getter(u)) : a.readByPath(u),
-                                            l = (u) => A.current.push(u),
+                                            A = (u) => l.current.push(u),
                                             c = u({
                                                 mode: t,
                                                 readByPath: E,
@@ -1785,9 +1788,9 @@
                                                         }
                                                     },
                                                 },
-                                                cleanup: l,
+                                                cleanup: A,
                                             }),
-                                            F = { mode: t, model: c, externalModel: a, cleanup: l };
+                                            F = { mode: t, model: c, externalModel: a, cleanup: A };
                                         return {
                                             model: c,
                                             controls: 'mocks' === t && r ? r.controls(F) : e(F),
@@ -1799,19 +1802,19 @@
                                     F = (0, i.useState)(n),
                                     d = F[0],
                                     D = F[1],
-                                    B = (0, i.useState)(() => l(n, r, E)),
+                                    B = (0, i.useState)(() => A(n, r, E)),
                                     _ = B[0],
                                     C = B[1];
                                 return (
                                     (0, i.useEffect)(() => {
-                                        c.current ? C(l(d, r, E)) : (c.current = !0);
+                                        c.current ? C(A(d, r, E)) : (c.current = !0);
                                     }, [E, d, r]),
                                     (0, i.useEffect)(() => {
                                         D(n);
                                     }, [n]),
                                     (0, i.useEffect)(
                                         () => () => {
-                                            (_.externalModel.dispose(), A.current.forEach((u) => u()));
+                                            (_.externalModel.dispose(), l.current.forEach((u) => u()));
                                         },
                                         [_],
                                     ),
@@ -1862,7 +1865,7 @@
                                         { className: Nu },
                                         R.strings.tooltips.vehCmpSkillsTooltip.info.header(),
                                     ),
-                                    s().createElement(lu, {
+                                    s().createElement(Au, {
                                         text: R.strings.tooltips.vehCmpSkillsTooltip.info.text(),
                                         binding: { percentage: s().createElement('div', { className: Mu }, Bu(100)) },
                                     }),

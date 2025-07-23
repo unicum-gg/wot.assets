@@ -439,7 +439,10 @@
                             (e.VehicleSelect = 'vehicleSelect'),
                             (e.StyleProgress = 'styleProgress'),
                             (e.ParagonsUnlocks = 'paragonsUnlocks'),
-                            (e.LootBoxToken = 'lootBoxToken'));
+                            (e.LootBoxToken = 'lootBoxToken'),
+                            (e.GoldenTicket = 'birthday2025_golden_ticket'),
+                            (e.PostStamp = 'giftsystem_4_stamp'),
+                            (e.Quests = 'quests'));
                     })(n || (n = {})),
                     (function (e) {
                         ((e.Gold = 'gold'),
@@ -585,6 +588,8 @@
                         s.E4.CosmicLootboxCommon,
                         s.E4.CosmicLootboxSilver,
                         s.E4.SelectableBonus,
+                        s.E4.GoldenTicket,
+                        s.E4.PostStamp,
                     ],
                     l = [s.E4.Gold, s.E4.Credits, s.E4.Crystal, s.E4.FreeXp],
                     c = [s.E4.BattlePassPoints],
@@ -672,7 +677,28 @@
                             case 'dossier_badge':
                                 return `R.images.gui.maps.icons.quests.bonuses.badges.${l}.${a}`;
                             case 'dossier_achievement':
-                                return `R.images.gui.maps.icons.achievement.${l}.${a}`;
+                                return `R.images.gui.maps.icons.achievement.${((e) => {
+                                    switch (e) {
+                                        case s.h2.S600x450:
+                                            return 'c_600x450';
+                                        case s.h2.S400x300:
+                                            return 'c_400x300';
+                                        case s.h2.S296x222:
+                                            return 'c_296x222';
+                                        case s.h2.S232x174:
+                                            return 'c_232x174';
+                                        case s.h2.S180x135:
+                                            return 'big';
+                                        case s.h2.Big:
+                                        case s.h2.S80x80:
+                                            return 'c_80x80';
+                                        case s.h2.Small:
+                                        case s.h2.S48x48:
+                                            return 'c_48x48';
+                                        default:
+                                            return e;
+                                    }
+                                })(u)}.${a}`;
                             case 'xp':
                             case 'xpFactor':
                                 return `R.images.gui.maps.icons.quests.bonuses.${u}.exp`;
@@ -3436,7 +3462,7 @@
                                         image: (0, Z.ry)(e, u),
                                         value: e.value,
                                         valueType: (0, Z.p3)(e.name),
-                                        tooltipArgs: (0, Z.pI)({ tooltipId: e.tooltipId }, 0, {
+                                        tooltipArgs: (0, Z.pI)({ tooltipId: e.tooltipId }, Number(e.tooltipContentId), {
                                             targetId: R.views.frontline.lobby.ProgressView('resId'),
                                         }),
                                     }),

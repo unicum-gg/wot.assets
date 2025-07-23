@@ -188,8 +188,8 @@
                         getViewGlobalPosition: () => f,
                         isEventHandled: () => y,
                         isFocused: () => w,
-                        pxToRem: () => E,
-                        remToPx: () => g,
+                        pxToRem: () => g,
+                        remToPx: () => E,
                         resize: () => v,
                         sendEvent: () => a.qP,
                         setAnimateWindow: () => h,
@@ -225,7 +225,7 @@
                 }
                 function f(e = 'rem') {
                     const t = viewEnv.getViewGlobalPositionRem();
-                    return 'rem' === e ? t : { x: g(t.x), y: g(t.y) };
+                    return 'rem' === e ? t : { x: E(t.x), y: E(t.y) };
                 }
                 function m() {
                     viewEnv.freezeTextureBeforeResize();
@@ -233,10 +233,10 @@
                 function p() {
                     return viewEnv.getScale();
                 }
-                function E(e) {
+                function g(e) {
                     return viewEnv.pxToRem(e);
                 }
-                function g(e) {
+                function E(e) {
                     return viewEnv.remToPx(e);
                 }
                 function h(e, t) {
@@ -535,7 +535,7 @@
                 const __WEBPACK_DEFAULT_EXPORT__ = ViewModel;
             },
             4179: (e, t, n) => {
-                n.d(t, { ry: () => g });
+                n.d(t, { ry: () => E });
                 class r {
                     constructor() {
                         ((this.entries = []),
@@ -616,8 +616,8 @@
                     }
                     s.done ? t(c) : Promise.resolve(c).then(r, o);
                 }
-                const E = (e) => ({ __Type: 'GFBoundingBox', x: e.x, y: e.y, width: e.width, height: e.height }),
-                    g = (function () {
+                const g = (e) => ({ __Type: 'GFBoundingBox', x: e.x, y: e.y, width: e.width, height: e.height }),
+                    E = (function () {
                         var e,
                             t =
                                 ((e = function* () {
@@ -698,7 +698,7 @@
                         RealFormatType: u,
                         TimeFormatType: d,
                         DateFormatType: _,
-                        makeGlobalBoundingBox: E,
+                        makeGlobalBoundingBox: g,
                         sendMoveEvent: (e) => h(c.MOVE, { isMouseEvent: !0, on: e }),
                         sendCloseEvent: w,
                         sendClosePopOverEvent: () => h(c.POP_OVER, { on: !1 }),
@@ -724,7 +724,7 @@
                                 decoratorID: r || R.invalid('resId'),
                                 targetID: o,
                                 direction: t,
-                                bbox: E(v),
+                                bbox: g(v),
                                 on: !0,
                                 args: i,
                             });
@@ -740,7 +740,7 @@
                             b(e, w);
                         },
                         handleViewEvent: h,
-                        onBindingsReady: g,
+                        onBindingsReady: E,
                         onLayoutReady: () =>
                             new Promise((e) => {
                                 requestAnimationFrame(() => {
@@ -839,7 +839,7 @@
                     for (var n = 0, r = new Array(t); n < t; n++) r[n] = e[n];
                     return r;
                 }
-                function E(e, t, n) {
+                function g(e, t, n) {
                     const r = (0, c.useMemo)(
                         () =>
                             (function (e, t, n, r) {
@@ -882,7 +882,7 @@
                     );
                     return ((0, c.useEffect)(() => r.cancel, [r]), r);
                 }
-                var g = n(7030);
+                var E = n(7030);
                 let h;
                 !(function (e) {
                     ((e[(e.Next = -1)] = 'Next'), (e[(e.Prev = 1)] = 'Prev'));
@@ -924,14 +924,14 @@
                                         };
                                     return (0, c.useMemo)(() => ({ on: n, off: r, trigger: o }), []);
                                 })(),
-                                b = E(
+                                b = g(
                                     () => {
                                         f.O.view.forceTriggerMouseMove();
                                     },
                                     [],
                                     150,
                                 ),
-                                y = (0, g.useSpring)(() => ({
+                                y = (0, E.useSpring)(() => ({
                                     scrollPosition: 0,
                                     onChange: (e) => {
                                         const t = v.current;
@@ -1031,6 +1031,7 @@
                                 ),
                                 [N],
                             );
+                            const L = (0, c.useCallback)((e) => h.trigger('isThumbDraggingChanged', e), [h]);
                             return (0, c.useMemo)(
                                 () => ({
                                     getWrapperSize: () => (p.current ? o(p.current) : void 0),
@@ -1049,9 +1050,10 @@
                                     scrollPosition: P,
                                     animationScroll: S,
                                     recalculateContent: C,
+                                    handleIsThumbDragging: L,
                                     events: { on: h.on, off: h.off },
                                 }),
-                                [S.scrollPosition, O, R, h.off, h.on, C, T, P, _.step.clampedArrowStepTimeout],
+                                [S.scrollPosition, O, R, L, h.off, h.on, C, T, P, _.step.clampedArrowStepTimeout],
                             );
                         };
                     },
@@ -1093,10 +1095,10 @@
                             f = (0, c.useRef)(null),
                             m = (0, c.useRef)(null),
                             p = (0, c.useRef)(null),
-                            E = e.stepTimeout || 100,
-                            g = (0, c.useState)(L),
-                            w = g[0],
-                            b = g[1],
+                            g = e.stepTimeout || 100,
+                            E = (0, c.useState)(L),
+                            w = E[0],
+                            b = E[1],
                             y = (0, c.useCallback)(
                                 (e) => {
                                     (b(e),
@@ -1204,7 +1206,7 @@
                                     }
                                 );
                             }, [e, w.offset, w.pending, r, y]));
-                        const B = _((t) => e.applyStepTo(t), E, [e]),
+                        const B = _((t) => e.applyStepTo(t), g, [e]),
                             z = B[0],
                             W = B[1];
                         (0, c.useEffect)(
@@ -1346,8 +1348,8 @@
                     }),
                     U = 'VerticalBar_base_f3',
                     H = 'VerticalBar_base__nonActive_42',
-                    V = 'VerticalBar_topButton_d7',
-                    I = 'VerticalBar_bottomButton_06',
+                    I = 'VerticalBar_topButton_d7',
+                    V = 'VerticalBar_bottomButton_06',
                     G = 'VerticalBar_track_df',
                     q = 'VerticalBar_thumb_32',
                     j = 'VerticalBar_rail_43',
@@ -1368,10 +1370,10 @@
                             f = (0, c.useRef)(null),
                             m = (0, c.useRef)(null),
                             p = (0, c.useRef)(null),
-                            E = e.stepTimeout || 100,
-                            g = (0, c.useState)(X),
-                            w = g[0],
-                            b = g[1],
+                            g = e.stepTimeout || 100,
+                            E = (0, c.useState)(X),
+                            w = E[0],
+                            b = E[1],
                             y = (0, c.useCallback)(
                                 (e) => {
                                     (b(e),
@@ -1470,7 +1472,7 @@
                                         });
                                     },
                                     n = () => {
-                                        (window.removeEventListener('mousemove', t), y(X));
+                                        (window.removeEventListener('mousemove', t), e.handleIsThumbDragging(!1), y(X));
                                     };
                                 return (
                                     window.addEventListener('mousemove', t),
@@ -1481,7 +1483,7 @@
                                     }
                                 );
                             }, [e, w.offset, w.pending, r, y]));
-                        const O = _((t) => e.applyStepTo(t), E, [e]),
+                        const O = _((t) => e.applyStepTo(t), g, [e]),
                             R = O[0],
                             T = O[1];
                         (0, c.useEffect)(
@@ -1498,7 +1500,7 @@
                             'div',
                             { className: a()(U, t.base), ref: o, onWheel: e.handleMouseWheel },
                             l().createElement('div', {
-                                className: a()(V, t.topButton),
+                                className: a()(I, t.topButton),
                                 onMouseDown: (e) => {
                                     e.target.classList.contains(K) || 0 !== e.button || ((0, v.G)('play'), R(h.Next));
                                 },
@@ -1513,7 +1515,11 @@
                                         const r = p.current;
                                         if (r && 0 === t.button)
                                             if (((0, v.G)('play'), t.target === r))
-                                                y({ pending: !0, offset: t.screenY - r.getBoundingClientRect().y });
+                                                (e.handleIsThumbDragging(!0),
+                                                    y({
+                                                        pending: !0,
+                                                        offset: t.screenY - r.getBoundingClientRect().y,
+                                                    }));
                                             else {
                                                 ((t) => {
                                                     p.current &&
@@ -1533,7 +1539,7 @@
                                 l().createElement('div', { className: a()(j, t.rail) }),
                             ),
                             l().createElement('div', {
-                                className: a()(I, t.bottomButton),
+                                className: a()(V, t.bottomButton),
                                 onMouseDown: (e) => {
                                     e.target.classList.contains(K) || 0 !== e.button || ((0, v.G)('play'), R(h.Prev));
                                 },

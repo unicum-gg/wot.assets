@@ -1831,7 +1831,7 @@
                                 )
                         : e;
                 var Z = t(3946);
-                const J = ((e, u) => {
+                const Q = ((e, u) => {
                         const t = (0, r.createContext)({});
                         return [
                             function ({ mode: a = 'real', options: o, children: l, mocks: i }) {
@@ -2087,8 +2087,8 @@
                             openCollection: e.createCallbackNoArgs('collectionEntryPoint.openCollection'),
                         }),
                     ),
-                    Q = J[0],
-                    ee = J[1],
+                    J = Q[0],
+                    ee = Q[1],
                     ue = {
                         base: 'App_base_26',
                         backgroundBlur: 'App_backgroundBlur_26',
@@ -2860,7 +2860,7 @@
                 !(function (e) {
                     ((e.None = 'None'), (e.Shallow = 'Shallow'), (e.Deep = 'Deep'));
                 })(Ze || (Ze = {}));
-                const Je = (e = 'model', u = Ze.Deep) => {
+                const Qe = (e = 'model', u = Ze.Deep) => {
                         const t = (0, r.useState)(0),
                             a = (t[0], t[1]),
                             n = (0, r.useMemo)(() => (0, Ue.F)(), []),
@@ -2909,7 +2909,7 @@
                             _
                         );
                     },
-                    Qe = 'display',
+                    Je = 'display',
                     eu = 'enabled',
                     uu = 'enabled_change';
                 var tu = t(3649),
@@ -3040,7 +3040,10 @@
                         (e.VehicleSelect = 'vehicleSelect'),
                         (e.StyleProgress = 'styleProgress'),
                         (e.ParagonsUnlocks = 'paragonsUnlocks'),
-                        (e.LootBoxToken = 'lootBoxToken'));
+                        (e.LootBoxToken = 'lootBoxToken'),
+                        (e.GoldenTicket = 'birthday2025_golden_ticket'),
+                        (e.PostStamp = 'giftsystem_4_stamp'),
+                        (e.Quests = 'quests'));
                 })(mu || (mu = {})),
                     (function (e) {
                         ((e.Gold = 'gold'),
@@ -3170,6 +3173,8 @@
                     mu.CosmicLootboxCommon,
                     mu.CosmicLootboxSilver,
                     mu.SelectableBonus,
+                    mu.GoldenTicket,
+                    mu.PostStamp,
                     mu.Gold,
                     mu.Credits,
                     mu.Crystal,
@@ -3370,7 +3375,7 @@
                                 V = ku.chapter.fullName.quoted.$num(e) || `chapter/fullName/quoted/${e}`,
                                 Y = y ? (0, au.Vu)(e, b) : (0, au.s0)(e, b),
                                 K = ((e, u) => {
-                                    const t = Je('tutorialModel.effects.items').filter((t) => {
+                                    const t = Qe('tutorialModel.effects.items').filter((t) => {
                                         if (!t) return !1;
                                         const a = t.value,
                                             r = window.__featureId.toString();
@@ -3387,7 +3392,7 @@
                                                 effectType: u,
                                                 effectBuilder: a.builder,
                                             }),
-                                                u === Qe &&
+                                                u === Je &&
                                                     window.tutorialApi &&
                                                     window.tutorialApi.updateComponents());
                                         },
@@ -3399,13 +3404,13 @@
                                     },
                                     [e, E],
                                 ),
-                                J = (0, r.useCallback)(
+                                Q = (0, r.useCallback)(
                                     (u) => {
                                         (E.activateChapter(e), u.stopPropagation());
                                     },
                                     [e, E],
                                 ),
-                                Q = (0, r.useCallback)(() => {
+                                J = (0, r.useCallback)(() => {
                                     (D.$.playClick(), E.selectChapter(e));
                                 }, [e, E]),
                                 ue = We(() => {
@@ -3507,7 +3512,7 @@
                                 [K, a],
                             );
                             const ne = ((e, u) => {
-                                const t = Je('tutorialModel.triggers.items').filter((t) => {
+                                const t = Qe('tutorialModel.triggers.items').filter((t) => {
                                     if (!t) return !1;
                                     const a = t.value,
                                         r = a.triggers.filter((e) => e.value === u);
@@ -3543,7 +3548,7 @@
                                     },
                                     n().createElement(
                                         'div',
-                                        { className: x, onMouseEnter: ue, onClick: Q, onMouseLeave: () => c(!1) },
+                                        { className: x, onMouseEnter: ue, onClick: J, onMouseLeave: () => c(!1) },
                                         n().createElement(
                                             'div',
                                             { className: xu.bg, style: Y },
@@ -3613,7 +3618,7 @@
                                                             { body: ku.tooltips.footerBuyBtn.activateChapter.descr() },
                                                             n().createElement(
                                                                 oe,
-                                                                { type: ae.primary, size: T, onClick: J },
+                                                                { type: ae.primary, size: T, onClick: Q },
                                                                 n().createElement(He, {
                                                                     text: ku.chapter.activateChapter(),
                                                                 }),
@@ -3732,8 +3737,8 @@
                     Yu = 'ChapterCompleted_title_1a',
                     Ku = 'ChapterCompleted_boughtGlow_56',
                     Zu = 'ChapterCompleted_bought_b1',
-                    Ju = 'ChapterCompleted_button_33',
-                    Qu = 'ChapterCompleted_buttonWrapper_04',
+                    Qu = 'ChapterCompleted_button_33',
+                    Ju = 'ChapterCompleted_buttonWrapper_04',
                     et = R.strings.battle_pass,
                     ut = (0, I.Pi)(({ chapterId: e, progression: u }) => {
                         const t = (0, r.useState)(!1),
@@ -3794,10 +3799,10 @@
                                   )
                                 : n().createElement(
                                       'div',
-                                      { className: Qu },
+                                      { className: Ju },
                                       n().createElement(
                                           'div',
-                                          { className: Ju },
+                                          { className: Qu },
                                           n().createElement(
                                               oe,
                                               { onClick: () => s.buyChapter(e), type: ae.main, size: d },
@@ -4080,7 +4085,7 @@
                     });
                 engine.whenReady.then(() => {
                     p().render(
-                        n().createElement(F, null, n().createElement(Q, null, n().createElement(pt, null))),
+                        n().createElement(F, null, n().createElement(J, null, n().createElement(pt, null))),
                         document.getElementById('root'),
                     );
                 });
@@ -5339,19 +5344,19 @@
                             shadow: '0 0 4px 1px #ffaa0066, 0 0 9px 1px #ffaa0066, 0 0 12px 2px #ff550066, 0 0 12px 4px #ff000066',
                         },
                     },
-                    J = {
+                    Q = {
                         freezed: !1,
                         withStack: !1,
                         type: h.Growing,
                         delta: { duration: 500, delay: 0 },
                         line: { duration: 500, delay: 0 },
                     },
-                    Q = (0, n.memo)(
+                    J = (0, n.memo)(
                         ({
                             maxValue: e = 100,
                             theme: u = Z,
                             size: t = b.Default,
-                            animationSettings: a = J,
+                            animationSettings: a = Q,
                             disabled: l = !1,
                             withoutBackground: i = !1,
                             progressBarBackgroundClassMix: s,
@@ -5419,7 +5424,7 @@
                             return o().createElement(
                                 'div',
                                 { className: l },
-                                o().createElement(Q, {
+                                o().createElement(J, {
                                     key: e.to,
                                     size: b.Small,
                                     value: e.to || 0,

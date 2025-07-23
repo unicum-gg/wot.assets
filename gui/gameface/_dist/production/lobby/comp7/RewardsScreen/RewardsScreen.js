@@ -1082,8 +1082,8 @@
                             o = r.mediaSize;
                         return n().createElement('div', S({ className: g()(t, x[i], y[s], k[o]) }, a), u);
                     },
-                    O = ['children'];
-                const P = (e) => {
+                    P = ['children'];
+                const O = (e) => {
                     let u = e.children,
                         t = (function (e, u) {
                             if (null == e) return {};
@@ -1093,7 +1093,7 @@
                                 r = Object.keys(e);
                             for (a = 0; a < r.length; a++) ((t = r[a]), u.indexOf(t) >= 0 || (n[t] = e[t]));
                             return n;
-                        })(e, O);
+                        })(e, P);
                     return n().createElement(B, null, n().createElement(L, t, u));
                 };
                 var I = t(493),
@@ -1197,13 +1197,13 @@
                             },
                             [i, A],
                         ),
-                        O = (0, a.useCallback)(
+                        P = (0, a.useCallback)(
                             (e) => {
                                 i || (null !== l && H(l), d && d(e), t && T(), f(!0));
                             },
                             [i, l, d, T, t],
                         ),
-                        P = (0, a.useCallback)(
+                        O = (0, a.useCallback)(
                             (e) => {
                                 i || (_ && _(e), f(!1));
                             },
@@ -1243,8 +1243,8 @@
                                 onMouseEnter: y,
                                 onMouseMove: k,
                                 onMouseUp: L,
-                                onMouseDown: O,
-                                onMouseLeave: P,
+                                onMouseDown: P,
+                                onMouseLeave: O,
                                 onClick: x,
                             },
                             r !== G.ghost &&
@@ -1880,10 +1880,10 @@
                                 .replace(/ /g, ' ')
                                 .match(e);
                     })(),
-                    Oe = ['zh_cn', 'zh_sg', 'zh_tw'],
-                    Pe = (e, u = Te.left) => {
+                    Pe = ['zh_cn', 'zh_sg', 'zh_tw'],
+                    Oe = (e, u = Te.left) => {
                         const t = R.strings.settings.LANGUAGE_CODE().toLowerCase();
-                        return Oe.includes(t)
+                        return Pe.includes(t)
                             ? Le(e)
                             : ((e, u = Te.left) => {
                                   let t = [];
@@ -2508,8 +2508,8 @@
                         });
                     }),
                     Lu = 'Achievement_base_df',
-                    Ou = 'Achievement_container_2c',
-                    Pu = 'Achievement_container__withNotice_88',
+                    Pu = 'Achievement_container_2c',
+                    Ou = 'Achievement_container__withNotice_88',
                     Iu = 'Achievement_rank_3d',
                     Mu = 'Achievement_notice_fb',
                     Nu = (0, ae.Pi)(() => {
@@ -2528,7 +2528,7 @@
                             { className: Lu },
                             n().createElement(
                                 ve.animated.div,
-                                { className: g()(Ou, t && Pu), style: r },
+                                { className: g()(Pu, t && Ou), style: r },
                                 (() => {
                                     switch (u) {
                                         case X.Rank:
@@ -2618,7 +2618,7 @@
                                           ((e, u, t) =>
                                               e
                                                   .split(/%\((.*?)\)(?:[sd])?/g)
-                                                  .map((e) => (t && e in t ? t[e] : Pe(e, u))))(u, r, e).map((e, u) =>
+                                                  .map((e) => (t && e in t ? t[e] : Oe(e, u))))(u, r, e).map((e, u) =>
                                               n().createElement(a.Fragment, { key: `${u}-${e}` }, e),
                                           ),
                                       ),
@@ -3020,7 +3020,10 @@
                         (e.VehicleSelect = 'vehicleSelect'),
                         (e.StyleProgress = 'styleProgress'),
                         (e.ParagonsUnlocks = 'paragonsUnlocks'),
-                        (e.LootBoxToken = 'lootBoxToken'));
+                        (e.LootBoxToken = 'lootBoxToken'),
+                        (e.GoldenTicket = 'birthday2025_golden_ticket'),
+                        (e.PostStamp = 'giftsystem_4_stamp'),
+                        (e.Quests = 'quests'));
                 })(bt || (bt = {})),
                     (function (e) {
                         ((e.Gold = 'gold'),
@@ -3124,7 +3127,7 @@
                     }
                 }
                 Lt.defaultProps = { format: 'integral' };
-                const Ot = [
+                const Pt = [
                         bt.Items,
                         bt.Equipment,
                         bt.Xp,
@@ -3160,14 +3163,16 @@
                         bt.CosmicLootboxCommon,
                         bt.CosmicLootboxSilver,
                         bt.SelectableBonus,
+                        bt.GoldenTicket,
+                        bt.PostStamp,
                     ],
-                    Pt = [bt.Gold, bt.Credits, bt.Crystal, bt.FreeXp],
+                    Ot = [bt.Gold, bt.Credits, bt.Crystal, bt.FreeXp],
                     It = [bt.BattlePassPoints],
                     Mt = [bt.PremiumPlus, bt.Premium],
                     Nt = (e) =>
-                        Ot.includes(e)
+                        Pt.includes(e)
                             ? St.MULTI
-                            : Pt.includes(e)
+                            : Ot.includes(e)
                               ? St.CURRENCY
                               : It.includes(e)
                                 ? St.NUMBER
@@ -3247,7 +3252,28 @@
                             case 'dossier_badge':
                                 return `R.images.gui.maps.icons.quests.bonuses.badges.${o}.${r}`;
                             case 'dossier_achievement':
-                                return `R.images.gui.maps.icons.achievement.${o}.${r}`;
+                                return `R.images.gui.maps.icons.achievement.${((e) => {
+                                    switch (e) {
+                                        case Tt.S600x450:
+                                            return 'c_600x450';
+                                        case Tt.S400x300:
+                                            return 'c_400x300';
+                                        case Tt.S296x222:
+                                            return 'c_296x222';
+                                        case Tt.S232x174:
+                                            return 'c_232x174';
+                                        case Tt.S180x135:
+                                            return 'big';
+                                        case Tt.Big:
+                                        case Tt.S80x80:
+                                            return 'c_80x80';
+                                        case Tt.Small:
+                                        case Tt.S48x48:
+                                            return 'c_48x48';
+                                        default:
+                                            return e;
+                                    }
+                                })(u)}.${r}`;
                             case 'xp':
                             case 'xpFactor':
                                 return `R.images.gui.maps.icons.quests.bonuses.${u}.exp`;
@@ -4115,7 +4141,7 @@
                     });
                 engine.whenReady.then(() => {
                     M().render(
-                        n().createElement(P, null, n().createElement(pe, null, n().createElement(ga, null))),
+                        n().createElement(O, null, n().createElement(pe, null, n().createElement(ga, null))),
                         document.getElementById('root'),
                     );
                 });

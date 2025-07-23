@@ -1079,6 +1079,7 @@
     display: flex;
     align-items: center;
     margin-bottom: 10rem;
+    position: relative;
 }
 .mediaMedium .LastOperation_subtitle_92 {
     margin-bottom: 14rem;
@@ -1089,24 +1090,21 @@
 .mediaExtraLarge .LastOperation_subtitle_92 {
     margin-bottom: 27rem;
 }
-.LastOperation_subtitle__text_58 {
-    color: #e9e2bf;
-    font-size: 15rem;
-    font-weight: 700;
-    line-height: 1.15;
-    opacity: 0.5;
+.LastOperation_subtitle__bg_e0 {
+    width: 230rem;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    filter: blur(21rem);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
 }
-.mediaLarge .LastOperation_subtitle__text_58 {
-    color: #e9e2bf;
-    font-size: 18rem;
-    font-weight: 700;
-    line-height: 1.1;
+.mediaLarge .LastOperation_subtitle__bg_e0 {
+    width: 273rem;
 }
-.mediaExtraLarge .LastOperation_subtitle__text_58 {
-    color: #e9e2bf;
-    font-size: 24rem;
-    font-weight: 700;
-    line-height: 1.2;
+.mediaExtraLarge .LastOperation_subtitle__bg_e0 {
+    width: 317rem;
 }
 .LastOperation_base__completed_4c .LastOperation_subtitle_92 {
     margin-bottom: 6rem;
@@ -1119,6 +1117,45 @@
 }
 .mediaExtraLarge .LastOperation_base__completed_4c .LastOperation_subtitle_92 {
     margin-bottom: 23rem;
+}
+.LastOperation_subtitleText_6e {
+    color: #e9e2bf;
+    font-size: 15rem;
+    font-weight: 700;
+    line-height: 1.15;
+}
+.mediaLarge .LastOperation_subtitleText_6e {
+    color: #e9e2bf;
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
+    line-height: 150%;
+}
+.mediaExtraLarge .LastOperation_subtitleText_6e {
+    color: #e9e2bf;
+    font-size: 24rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.LastOperation_subtitleText__inGame_41 {
+    color: #8c8c7e;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    margin-left: 6rem;
+}
+.mediaLarge .LastOperation_subtitleText__inGame_41 {
+    color: #8c8c7e;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+    transform: translateY(1rem);
+}
+.mediaExtraLarge .LastOperation_subtitleText__inGame_41 {
+    color: #8c8c7e;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
 }
 .LastOperation_iconLock_f2 {
     width: 48rem;

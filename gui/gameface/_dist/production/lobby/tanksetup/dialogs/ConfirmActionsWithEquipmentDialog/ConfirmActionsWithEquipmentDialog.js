@@ -1066,8 +1066,8 @@
                     S = f.height,
                     P = Object.assign({ width: w, height: S }, y(w, S, v)),
                     N = (0, n.createContext)(P),
-                    x = ['children'];
-                const T = (u) => {
+                    T = ['children'];
+                const x = (u) => {
                     let e = u.children,
                         t = (function (u, e) {
                             if (null == u) return {};
@@ -1077,7 +1077,7 @@
                                 i = Object.keys(u);
                             for (n = 0; n < i.length; n++) ((t = i[n]), e.indexOf(t) >= 0 || (r[t] = u[t]));
                             return r;
-                        })(u, x);
+                        })(u, T);
                     const r = (0, n.useContext)(N),
                         i = r.extraLarge,
                         s = r.large,
@@ -1119,7 +1119,7 @@
                     }
                     return null;
                 };
-                T.defaultProps = {
+                x.defaultProps = {
                     extraLarge: !1,
                     large: !1,
                     medium: !1,
@@ -1136,7 +1136,7 @@
                     smallHeight: !1,
                     extraSmallHeight: !1,
                 };
-                (0, n.memo)(T);
+                (0, n.memo)(x);
                 const k = (u) => {
                     const e = (0, n.useRef)(!1);
                     e.current || (u(), (e.current = !0));
@@ -1480,7 +1480,10 @@
                         (u.VehicleSelect = 'vehicleSelect'),
                         (u.StyleProgress = 'styleProgress'),
                         (u.ParagonsUnlocks = 'paragonsUnlocks'),
-                        (u.LootBoxToken = 'lootBoxToken'));
+                        (u.LootBoxToken = 'lootBoxToken'),
+                        (u.GoldenTicket = 'birthday2025_golden_ticket'),
+                        (u.PostStamp = 'giftsystem_4_stamp'),
+                        (u.Quests = 'quests'));
                 })(eu || (eu = {})),
                     (function (u) {
                         ((u.Gold = 'gold'),
@@ -1993,8 +1996,8 @@
                             _ && r().createElement(j, { className: null == l ? void 0 : l.alert, alertText: o }),
                         ),
                     Nu = 'Content_base_a7',
-                    xu = 'Content_currency_4f',
-                    Tu = 'Content_column_9d',
+                    Tu = 'Content_currency_4f',
+                    xu = 'Content_column_9d',
                     Ru = 'Content_alert_0f',
                     ku = R.strings.tank_setup.dialogs.confirmActionsWithEquipmentDialog.content,
                     Ou = (0, A.Pi)(() => {
@@ -2015,8 +2018,8 @@
                                 priceBlockText: a,
                                 alertText: s,
                                 showAlertMessage: !0,
-                                className: Tu,
-                                classNames: { currency: xu, alert: Ru },
+                                className: xu,
+                                classNames: { currency: Tu, alert: Ru },
                             }),
                         );
                     }),
@@ -2347,6 +2350,8 @@
                         eu.CosmicLootboxCommon,
                         eu.CosmicLootboxSilver,
                         eu.SelectableBonus,
+                        eu.GoldenTicket,
+                        eu.PostStamp,
                         eu.Gold,
                         eu.Credits,
                         eu.Crystal,
@@ -2588,13 +2593,13 @@
                                 },
                                 [s, m],
                             ),
-                            x = (0, n.useCallback)(
+                            T = (0, n.useCallback)(
                                 (u) => {
                                     s || (null !== o && d(o), l && l(u), w(!0));
                                 },
                                 [s, o, l],
                             ),
-                            T = (0, n.useCallback)(
+                            x = (0, n.useCallback)(
                                 (u) => {
                                     _ && _(u);
                                 },
@@ -2649,8 +2654,8 @@
                                 {
                                     ref: B,
                                     className: I,
-                                    onMouseEnter: x,
-                                    onMouseMove: T,
+                                    onMouseEnter: T,
+                                    onMouseMove: x,
                                     onMouseUp: k,
                                     onMouseDown: O,
                                     onMouseLeave: M,
@@ -3399,7 +3404,7 @@
                     }),
                     Pe = 'App_dialogBackground_3a',
                     Ne = 'App_dialogCenter_6a',
-                    xe = (0, A.Pi)(() => {
+                    Te = (0, A.Pi)(() => {
                         const u = Cu(),
                             e = u.model,
                             t = u.controls,
@@ -3428,7 +3433,7 @@
                     });
                 engine.whenReady.then(() => {
                     s().render(
-                        r().createElement(Bu, null, r().createElement(xe, null)),
+                        r().createElement(Bu, null, r().createElement(Te, null)),
                         document.getElementById('root'),
                     );
                 });

@@ -1994,6 +1994,23 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .LootboxCard_innerText_fc {
     justify-content: center;
 }
+.LootboxCard_hoverBlock_92 {
+    width: 180rem;
+    height: 59rem;
+    background: url('R.images.gui_lootboxes.gui.maps.storage.carousel.hover') no-repeat center bottom / 100%;
+    opacity: 0;
+    mix-blend-mode: difference;
+    position: absolute;
+    bottom: -1rem;
+    left: 50%;
+    z-index: 4;
+    transform: translateX(-50%);
+    transition: opacity 0.3s ease-in-out;
+    pointer-events: none;
+}
+.LootboxCard_hoverBlock__visible_91 {
+    opacity: 1;
+}
 .LootboxCard_hover_da {
     width: 180rem;
     height: 59rem;
@@ -2024,125 +2041,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     left: 50%;
     z-index: 4;
     transform: translateX(-50%);
-}
-
-.Counter_base_82 {
-    padding: 0 10rem;
-}
-
-.Counter_text_79 {
-    color: #ffffff;
-    font-size: 28rem;
-    font-weight: 700;
-    line-height: 1.1;
-    text-shadow: 0 0 16rem #ffa800;
-    position: relative;
-}
-
-.InfoIcon_base_6d {
-    width: 24rem;
-    height: 24rem;
-    background: url('R.images.gui.maps.icons.library.info') no-repeat center / contain;
-}
-
-.InfoIcon_base__clickable_f2 {
-    opacity: 1;
-    transition: opacity 300ms;
-    cursor: pointer;
-}
-
-.InfoIcon_base__clickable_f2:hover {
-    opacity: 0.7;
-}
-
-.GuaranteedRewardCount_base_6e {
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-}
-
-.GuaranteedRewardCount_text_94 {
-    color: #e8f3f3;
-    font-size: 16rem;
-    font-weight: 400;
-    line-height: 1.25;
-    display: flex;
-    align-items: flex-end;
-}
-
-.GuaranteedRewardCount_icon_e8 {
-    position: relative;
-    top: 3rem;
-}
-
-.GuaranteedRewardNext_base_da {
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    position: relative;
-}
-.GuaranteedRewardNext_text_f7 {
-    color: #ffffff;
-    font-size: 22rem;
-    font-weight: 700;
-    line-height: 1.2;
-    display: flex;
-    align-items: flex-end;
-    text-shadow: 0 0 16rem #ff7a00;
-}
-.GuaranteedRewardNext_icon_23 {
-    position: relative;
-    top: 2rem;
-}
-.GuaranteedRewardNext_shineContainer_46 {
-    width: 800rem;
-    height: 170rem;
-    margin-top: 5rem;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    z-index: -2;
-    transform: translate(-50%, -50%);
-    pointer-events: none;
-}
-.GuaranteedRewardNext_shine_02 {
-    width: 450rem;
-    height: 250rem;
-    margin-top: 5rem;
-    background: url('R.images.gui_lootboxes.gui.maps.storage.guaranteed.shine_with_particles') no-repeat center /
-        contain;
-    mix-blend-mode: screen;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    z-index: -1;
-    transform: translate(-50%, -52%);
-    animation: GuaranteedRewardNext_dragonBreath_76 3s ease-in-out infinite;
-}
-@keyframes GuaranteedRewardNext_dragonBreath_76 {
-    0% {
-        opacity: 0.35;
-    }
-
-    50% {
-        opacity: 1;
-    }
-
-    100% {
-        opacity: 0.35;
-    }
-}
-
-.GuaranteedReward_shine_c9 {
-    width: 300rem;
-    height: 277rem;
-    margin-top: 5rem;
-    background: url('R.images.gui_lootboxes.gui.maps.storage.guaranteed.shine') no-repeat center / contain;
-    position: absolute;
-    top: 68%;
-    left: 92%;
-    z-index: -1;
-    transform: translate(-50%, -50%);
 }
 
 .CurrencyKey_base_53 {
@@ -2298,6 +2196,125 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     }
 }
 
+.Counter_base_82 {
+    padding: 0 10rem;
+}
+
+.Counter_text_79 {
+    color: #ffffff;
+    font-size: 28rem;
+    font-weight: 700;
+    line-height: 1.1;
+    text-shadow: 0 0 16rem #ffa800;
+    position: relative;
+}
+
+.InfoIcon_base_6d {
+    width: 24rem;
+    height: 24rem;
+    background: url('R.images.gui.maps.icons.library.info') no-repeat center / contain;
+}
+
+.InfoIcon_base__clickable_f2 {
+    opacity: 1;
+    transition: opacity 300ms;
+    cursor: pointer;
+}
+
+.InfoIcon_base__clickable_f2:hover {
+    opacity: 0.7;
+}
+
+.GuaranteedRewardCount_base_6e {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.GuaranteedRewardCount_text_94 {
+    color: #e8f3f3;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+    display: flex;
+    align-items: flex-end;
+}
+
+.GuaranteedRewardCount_icon_e8 {
+    position: relative;
+    top: 3rem;
+}
+
+.GuaranteedRewardNext_base_da {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: relative;
+}
+.GuaranteedRewardNext_text_f7 {
+    color: #ffffff;
+    font-size: 22rem;
+    font-weight: 700;
+    line-height: 1.2;
+    display: flex;
+    align-items: flex-end;
+    text-shadow: 0 0 16rem #ff7a00;
+}
+.GuaranteedRewardNext_icon_23 {
+    position: relative;
+    top: 2rem;
+}
+.GuaranteedRewardNext_shineContainer_46 {
+    width: 800rem;
+    height: 170rem;
+    margin-top: 5rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: -2;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+.GuaranteedRewardNext_shine_02 {
+    width: 450rem;
+    height: 250rem;
+    margin-top: 5rem;
+    background: url('R.images.gui_lootboxes.gui.maps.storage.guaranteed.shine_with_particles') no-repeat center /
+        contain;
+    mix-blend-mode: screen;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+    transform: translate(-50%, -52%);
+    animation: GuaranteedRewardNext_dragonBreath_76 3s ease-in-out infinite;
+}
+@keyframes GuaranteedRewardNext_dragonBreath_76 {
+    0% {
+        opacity: 0.35;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.35;
+    }
+}
+
+.GuaranteedReward_shine_c9 {
+    width: 300rem;
+    height: 277rem;
+    margin-top: 5rem;
+    background: url('R.images.gui_lootboxes.gui.maps.storage.guaranteed.shine') no-repeat center / contain;
+    position: absolute;
+    top: 68%;
+    left: 92%;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+}
+
 .NoBoxes_base_a6 {
     display: flex;
     flex-direction: column;
@@ -2442,6 +2459,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     align-items: center;
     width: 100%;
     height: 100%;
+    background: url('R.images.gui_lootboxes.gui.maps.storage.bg') no-repeat center / cover;
     position: relative;
 }
 .App_close_4b {
@@ -2466,14 +2484,12 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .App_bg_10 {
     width: 100%;
     height: 100%;
-    background: url('R.images.gui_lootboxes.gui.maps.storage.bg') no-repeat center / cover;
+    background: no-repeat center / cover;
     position: absolute;
     top: 0;
     left: 0;
     z-index: 1;
-}
-.App_bg__event_01 {
-    background-image: url('R.images.gui_lootboxes.gui.maps.storage.bg_event');
+    transform: translateX(-0.5rem) translateY(0.5rem);
 }
 .App_vignette_b8 {
     width: 100%;
@@ -2549,10 +2565,17 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    opacity: 1;
     position: absolute;
     top: 40rem;
     left: 0;
     z-index: 2;
+    transition: opacity 0.3s ease-in-out;
+    pointer-events: auto;
+}
+.App_eventImage__hide_b8 {
+    opacity: 0;
+    pointer-events: none;
 }
 .mediaMedium .App_eventImage_77 {
     width: 480rem;
@@ -2567,10 +2590,17 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     top: 120rem;
 }
 .App_descriptionWrapper_c6 {
+    opacity: 1;
     position: absolute;
     top: 200rem;
     left: 40rem;
     z-index: 10;
+    transition: opacity 0.3s ease-in-out;
+    pointer-events: auto;
+}
+.App_descriptionWrapper__hide_91 {
+    opacity: 0;
+    pointer-events: none;
 }
 .mediaSmall .App_descriptionWrapper_c6 {
     top: 203rem;
@@ -2585,10 +2615,17 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     top: 370rem;
 }
 .App_possibleRewardsWrapper_6e {
+    opacity: 1;
     position: absolute;
     top: 150rem;
     right: 16rem;
     z-index: 10;
+    transition: opacity 0.3s ease-in-out;
+    pointer-events: auto;
+}
+.App_possibleRewardsWrapper__hide_46 {
+    opacity: 0;
+    pointer-events: none;
 }
 .mediaMedium .App_possibleRewardsWrapper_6e {
     top: 200rem;
@@ -2597,21 +2634,35 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     top: 350rem;
 }
 .App_guaranteedReward_b0 {
+    opacity: 1;
     position: absolute;
     bottom: 213rem;
     left: 50%;
     z-index: 5;
     transform: translateX(-50%);
+    transition: opacity 0.3s ease-in-out;
+    pointer-events: auto;
+}
+.App_guaranteedReward__hide_b7 {
+    opacity: 0;
+    pointer-events: none;
 }
 .mediaMedium .App_guaranteedReward_b0 {
     bottom: 258rem;
 }
 .App_openButtonsWrapper_fc {
+    opacity: 1;
     position: absolute;
     bottom: 149rem;
     left: 50%;
     z-index: 100;
     transform: translateX(-50%);
+    transition: opacity 0.3s ease-in-out;
+    pointer-events: auto;
+}
+.App_openButtonsWrapper__hide_6a {
+    opacity: 0;
+    pointer-events: none;
 }
 .mediaMedium .App_openButtonsWrapper_fc {
     bottom: 194rem;
@@ -2620,11 +2671,18 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     display: flex;
     width: 748rem;
     height: 101rem;
+    opacity: 1;
     position: absolute;
     bottom: 20rem;
     left: 50%;
     z-index: 5;
     transform: translateX(-50%);
+    transition: opacity 0.3s ease-in-out;
+    pointer-events: auto;
+}
+.App_carousel__hide_17 {
+    opacity: 0;
+    pointer-events: none;
 }
 .mediaMedium .App_carousel_53 {
     width: 1112rem;

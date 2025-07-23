@@ -947,7 +947,10 @@
                         (u.VehicleSelect = 'vehicleSelect'),
                         (u.StyleProgress = 'styleProgress'),
                         (u.ParagonsUnlocks = 'paragonsUnlocks'),
-                        (u.LootBoxToken = 'lootBoxToken'));
+                        (u.LootBoxToken = 'lootBoxToken'),
+                        (u.GoldenTicket = 'birthday2025_golden_ticket'),
+                        (u.PostStamp = 'giftsystem_4_stamp'),
+                        (u.Quests = 'quests'));
                 })(m || (m = {})),
                     (function (u) {
                         ((u.Gold = 'gold'),
@@ -1333,7 +1336,7 @@
                         ? o().createElement(f, L({}, e, { contentId: a || i }), r)
                         : o().createElement(T, e, r);
                 };
-                class I extends o().PureComponent {
+                class k extends o().PureComponent {
                     render() {
                         let u;
                         if ('gold' === this.props.format) u = h.B3.GOLD;
@@ -1342,8 +1345,8 @@
                         return void 0 !== this.props.value && void 0 !== e ? e : null;
                     }
                 }
-                I.defaultProps = { format: 'integral' };
-                const k = [
+                k.defaultProps = { format: 'integral' };
+                const I = [
                         m.Items,
                         m.Equipment,
                         m.Xp,
@@ -1379,6 +1382,8 @@
                         m.CosmicLootboxCommon,
                         m.CosmicLootboxSilver,
                         m.SelectableBonus,
+                        m.GoldenTicket,
+                        m.PostStamp,
                     ],
                     U = [m.Gold, m.Credits, m.Crystal, m.FreeXp],
                     G = [m.BattlePassPoints],
@@ -1456,7 +1461,28 @@
                             case 'dossier_badge':
                                 return `R.images.gui.maps.icons.quests.bonuses.badges.${s}.${n}`;
                             case 'dossier_achievement':
-                                return `R.images.gui.maps.icons.achievement.${s}.${n}`;
+                                return `R.images.gui.maps.icons.achievement.${((u) => {
+                                    switch (u) {
+                                        case d.S600x450:
+                                            return 'c_600x450';
+                                        case d.S400x300:
+                                            return 'c_400x300';
+                                        case d.S296x222:
+                                            return 'c_296x222';
+                                        case d.S232x174:
+                                            return 'c_232x174';
+                                        case d.S180x135:
+                                            return 'big';
+                                        case d.Big:
+                                        case d.S80x80:
+                                            return 'c_80x80';
+                                        case d.Small:
+                                        case d.S48x48:
+                                            return 'c_48x48';
+                                        default:
+                                            return u;
+                                    }
+                                })(e)}.${n}`;
                             case 'xp':
                             case 'xpFactor':
                                 return `R.images.gui.maps.icons.quests.bonuses.${e}.exp`;
@@ -1587,7 +1613,7 @@
                                     }
                                     case B.CURRENCY:
                                     case B.NUMBER:
-                                        return o().createElement(I, { format: 'integral', value: Number(u) });
+                                        return o().createElement(k, { format: 'integral', value: Number(u) });
                                     case B.PREMIUM_PLUS: {
                                         const e = Number(u);
                                         return isNaN(e) ? u : null;
@@ -2075,8 +2101,8 @@
                             M = u.shrink,
                             L = u.flex,
                             N = void 0 === L ? (y || M ? `${y ? 1 : 0} ${M ? 1 : 0} auto` : void 0) : L,
-                            I = u.style,
-                            k = u.children,
+                            k = u.style,
+                            I = u.children,
                             U = (function (u, e) {
                                 if (null == u) return {};
                                 var t,
@@ -2099,7 +2125,7 @@
                                             return ('number' == typeof r && (e[hu[t]] = r + 'rem'), e);
                                         }, {}))(u);
                                 return {
-                                    computedStyle: Object.assign({}, I, a, {
+                                    computedStyle: Object.assign({}, k, a, {
                                         width: void 0 !== t && 'number' == typeof t ? t + 'rem' : t,
                                         height: void 0 !== r && 'number' == typeof r ? r + 'rem' : r,
                                         flex: N,
@@ -2112,10 +2138,10 @@
                                     }),
                                     computedClassNames: e,
                                 };
-                            }, [t, r, E, A, c, m, I, N, x, C, O, f, S]),
+                            }, [t, r, E, A, c, m, k, N, x, C, O, f, S]),
                             H = G.computedStyle,
                             W = G.computedClassNames;
-                        return o().createElement('div', Cu({ className: a()(du.base, ...W, e), style: H }, U), k);
+                        return o().createElement('div', Cu({ className: a()(du.base, ...W, e), style: H }, U), I);
                     });
                 let bu;
                 !(function (u) {
@@ -2238,9 +2264,9 @@
                         PROM: 'Text_PROM_65',
                     },
                     Nu = ['text', 'variant', 'className', 'color', 'm', 'mt', 'mr', 'mb', 'ml', 'style', 'format'];
-                function Iu() {
+                function ku() {
                     return (
-                        (Iu =
+                        (ku =
                             Object.assign ||
                             function (u) {
                                 for (var e = 1; e < arguments.length; e++) {
@@ -2249,11 +2275,11 @@
                                 }
                                 return u;
                             }),
-                        Iu.apply(this, arguments)
+                        ku.apply(this, arguments)
                     );
                 }
                 Object.keys(V());
-                const ku = Object.keys(Mu()),
+                const Iu = Object.keys(Mu()),
                     Uu = { mt: 'MD', mr: 'SM', mb: 'SM', ml: 'SM' },
                     Gu = { mt: 'SM', mr: 'XS', mb: 'XS', ml: 'XS' },
                     Hu = { mt: 'XS', mr: 'XS', mb: 'XS', ml: 'XS' },
@@ -2292,7 +2318,7 @@
                         (Object.keys(Xu),
                         (u) =>
                             u
-                                ? ((u) => ku.includes(u))(u)
+                                ? ((u) => Iu.includes(u))(u)
                                     ? { colorClassName: Lu[u] }
                                     : { colorStyle: { color: u } }
                                 : {}),
@@ -2332,7 +2358,7 @@
                             h = g.colorClassName;
                         return o().createElement(
                             vu,
-                            Iu(
+                            ku(
                                 {
                                     className: a()(Lu.base, t && Lu[t], h, r),
                                     style: p,
@@ -2343,7 +2369,7 @@
                                 },
                                 C,
                             ),
-                            void 0 !== B ? o().createElement(Ou, Iu({}, B, { text: e })) : e,
+                            void 0 !== B ? o().createElement(Ou, ku({}, B, { text: e })) : e,
                         );
                     });
                 var Yu = t(8515);
@@ -2450,7 +2476,7 @@
                                           value: u.value,
                                           valueType:
                                               ((r = u.name),
-                                              k.includes(r)
+                                              I.includes(r)
                                                   ? B.MULTI
                                                   : U.includes(r)
                                                     ? B.CURRENCY
@@ -2672,19 +2698,19 @@
                 }
                 console.log;
                 var Ne = t(9174);
-                function Ie(u, e) {
+                function ke(u, e) {
                     var t = ('undefined' != typeof Symbol && u[Symbol.iterator]) || u['@@iterator'];
                     if (t) return (t = t.call(u)).next.bind(t);
                     if (
                         Array.isArray(u) ||
                         (t = (function (u, e) {
                             if (!u) return;
-                            if ('string' == typeof u) return ke(u, e);
+                            if ('string' == typeof u) return Ie(u, e);
                             var t = Object.prototype.toString.call(u).slice(8, -1);
                             'Object' === t && u.constructor && (t = u.constructor.name);
                             if ('Map' === t || 'Set' === t) return Array.from(u);
                             if ('Arguments' === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t))
-                                return ke(u, e);
+                                return Ie(u, e);
                         })(u)) ||
                         (e && u && 'number' == typeof u.length)
                     ) {
@@ -2698,7 +2724,7 @@
                         'Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.',
                     );
                 }
-                function ke(u, e) {
+                function Ie(u, e) {
                     (null == e || e > u.length) && (e = u.length);
                     for (var t = 0, r = new Array(e); t < e; t++) r[t] = u[t];
                     return r;
@@ -2776,7 +2802,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var u, t = Ie(a.keys()); !(u = t()).done; ) i(u.value, e);
+                                                        for (var u, t = ke(a.keys()); !(u = t()).done; ) i(u.value, e);
                                                     },
                                                     unsubscribe: i,
                                                 };

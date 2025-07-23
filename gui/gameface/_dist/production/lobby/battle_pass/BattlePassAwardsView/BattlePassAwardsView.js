@@ -1149,11 +1149,11 @@
                     return a;
                 }
                 const Y = (u) => (0 === u ? window : window.subViews.get(u));
-                function z(u, e) {
+                function q(u, e) {
                     var t;
                     if (!(e >= u.length)) return Array.isArray(u) ? u[e] : null == (t = u[e]) ? void 0 : t.value;
                 }
-                const q = z;
+                const z = q;
                 function j(u, e) {
                     return Array.isArray(u) ? u.map(e) : u.map((u, t, a) => e(null == u ? void 0 : u.value, t, a));
                 }
@@ -1381,7 +1381,7 @@
                                 D = (0, X.Om)((u) =>
                                     (function (u, e) {
                                         if (Array.isArray(u)) return u.some(e);
-                                        for (let t = 0; t < u.length; t++) if (e(q(u, t), t, u)) return !0;
+                                        for (let t = 0; t < u.length; t++) if (e(z(u, t), t, u)) return !0;
                                         return !1;
                                     })(e.availableChapterTypes.get(), (e) => e === u),
                                 );
@@ -1714,7 +1714,10 @@
                         (u.VehicleSelect = 'vehicleSelect'),
                         (u.StyleProgress = 'styleProgress'),
                         (u.ParagonsUnlocks = 'paragonsUnlocks'),
-                        (u.LootBoxToken = 'lootBoxToken'));
+                        (u.LootBoxToken = 'lootBoxToken'),
+                        (u.GoldenTicket = 'birthday2025_golden_ticket'),
+                        (u.PostStamp = 'giftsystem_4_stamp'),
+                        (u.Quests = 'quests'));
                 })(fu || (fu = {})),
                     (function (u) {
                         ((u.Gold = 'gold'),
@@ -1854,6 +1857,8 @@
                         fu.CosmicLootboxCommon,
                         fu.CosmicLootboxSilver,
                         fu.SelectableBonus,
+                        fu.GoldenTicket,
+                        fu.PostStamp,
                     ],
                     Ou = [fu.Gold, fu.Credits, fu.Crystal, fu.FreeXp],
                     Nu = [fu.BattlePassPoints],
@@ -1931,7 +1936,28 @@
                             case 'dossier_badge':
                                 return `R.images.gui.maps.icons.quests.bonuses.badges.${o}.${n}`;
                             case 'dossier_achievement':
-                                return `R.images.gui.maps.icons.achievement.${o}.${n}`;
+                                return `R.images.gui.maps.icons.achievement.${((u) => {
+                                    switch (u) {
+                                        case Tu.S600x450:
+                                            return 'c_600x450';
+                                        case Tu.S400x300:
+                                            return 'c_400x300';
+                                        case Tu.S296x222:
+                                            return 'c_296x222';
+                                        case Tu.S232x174:
+                                            return 'c_232x174';
+                                        case Tu.S180x135:
+                                            return 'big';
+                                        case Tu.Big:
+                                        case Tu.S80x80:
+                                            return 'c_80x80';
+                                        case Tu.Small:
+                                        case Tu.S48x48:
+                                            return 'c_48x48';
+                                        default:
+                                            return u;
+                                    }
+                                })(e)}.${n}`;
                             case 'xp':
                             case 'xpFactor':
                                 return `R.images.gui.maps.icons.quests.bonuses.${e}.exp`;
@@ -2165,10 +2191,10 @@
                             : e;
                         var T;
                     },
-                    zu = ['children'];
-                function qu() {
+                    qu = ['children'];
+                function zu() {
                     return (
-                        (qu =
+                        (zu =
                             Object.assign ||
                             function (u) {
                                 for (var e = 1; e < arguments.length; e++) {
@@ -2177,7 +2203,7 @@
                                 }
                                 return u;
                             }),
-                        qu.apply(this, arguments)
+                        zu.apply(this, arguments)
                     );
                 }
                 const ju = (u) => {
@@ -2190,10 +2216,10 @@
                                     n = Object.keys(u);
                                 for (a = 0; a < n.length; a++) ((t = n[a]), e.indexOf(t) >= 0 || (r[t] = u[t]));
                                 return r;
-                            })(u, zu);
+                            })(u, qu);
                         return r().createElement(
                             Yu,
-                            qu(
+                            zu(
                                 {
                                     contentId:
                                         R.views.common.tooltip_window.backport_tooltip_content.BackportTooltipContent(
@@ -2860,7 +2886,7 @@
                     }),
                     Ve = 'Glow_base_92',
                     Ye = 'Glow_glow_02',
-                    ze = ({ className: u }) =>
+                    qe = ({ className: u }) =>
                         r().createElement(
                             'div',
                             { className: g()(Ve, u) },
@@ -2870,10 +2896,10 @@
                                 alt: '',
                             }),
                         );
-                let qe, je, Xe;
+                let ze, je, Xe;
                 (!(function (u) {
                     ((u.small = 'small'), (u.big = 'big'), (u.large = 'large'), (u.extraLarge = 'extraLarge'));
-                })(qe || (qe = {})),
+                })(ze || (ze = {})),
                     (function (u) {
                         ((u.credits = 'credits'),
                             (u.gold = 'gold'),
@@ -3220,7 +3246,7 @@
                         return r().createElement(
                             'div',
                             { className: g()(ht, u) },
-                            o && !t && r().createElement(ze, { className: Rt }),
+                            o && !t && r().createElement(qe, { className: Rt }),
                             r().createElement('div', { className: g()(wt, n && vt, A && bt) }),
                             r().createElement('div', { className: ft }),
                             i && !E
@@ -3387,11 +3413,11 @@
                         const Y = Mt(x, F, w, N, I, () => {
                                 x ? t.enableToOpenAdditionView() : I ? b(w + 1) : (0, nu.Sy)();
                             }),
-                            z = C && D,
-                            q = { backgroundImage: `url(${bu(Pt, o)})`, '--banner-height': L };
+                            q = C && D,
+                            z = { backgroundImage: `url(${bu(Pt, o)})`, '--banner-height': L };
                         return r().createElement(
                             'div',
-                            { className: St.base, style: q },
+                            { className: St.base, style: z },
                             !A && r().createElement('div', { className: St.saturate }),
                             r().createElement('div', { className: g()(St.overlay, !o && St.overlay__common) }),
                             r().createElement(
@@ -3417,7 +3443,7 @@
                                     ),
                                     r().createElement(
                                         'div',
-                                        { className: g()(St.rewards, z && St.rewards__additionalCentring) },
+                                        { className: g()(St.rewards, q && St.rewards__additionalCentring) },
                                         r().createElement(Tt, {
                                             className: g()(
                                                 St.mainRewards,

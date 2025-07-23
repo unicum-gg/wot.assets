@@ -1590,7 +1590,10 @@
                             (u.VehicleSelect = 'vehicleSelect'),
                             (u.StyleProgress = 'styleProgress'),
                             (u.ParagonsUnlocks = 'paragonsUnlocks'),
-                            (u.LootBoxToken = 'lootBoxToken'));
+                            (u.LootBoxToken = 'lootBoxToken'),
+                            (u.GoldenTicket = 'birthday2025_golden_ticket'),
+                            (u.PostStamp = 'giftsystem_4_stamp'),
+                            (u.Quests = 'quests'));
                     })(lu || (lu = {})),
                     (function (u) {
                         ((u.Gold = 'gold'),
@@ -1719,6 +1722,8 @@
                     lu.CosmicLootboxCommon,
                     lu.CosmicLootboxSilver,
                     lu.SelectableBonus,
+                    lu.GoldenTicket,
+                    lu.PostStamp,
                     lu.Gold,
                     lu.Credits,
                     lu.Crystal,
@@ -1799,7 +1804,28 @@
                             case 'dossier_badge':
                                 return `R.images.gui.maps.icons.quests.bonuses.badges.${o}.${s}`;
                             case 'dossier_achievement':
-                                return `R.images.gui.maps.icons.achievement.${o}.${s}`;
+                                return `R.images.gui.maps.icons.achievement.${((u) => {
+                                    switch (u) {
+                                        case cu.S600x450:
+                                            return 'c_600x450';
+                                        case cu.S400x300:
+                                            return 'c_400x300';
+                                        case cu.S296x222:
+                                            return 'c_296x222';
+                                        case cu.S232x174:
+                                            return 'c_232x174';
+                                        case cu.S180x135:
+                                            return 'big';
+                                        case cu.Big:
+                                        case cu.S80x80:
+                                            return 'c_80x80';
+                                        case cu.Small:
+                                        case cu.S48x48:
+                                            return 'c_48x48';
+                                        default:
+                                            return u;
+                                    }
+                                })(e)}.${s}`;
                             case 'xp':
                             case 'xpFactor':
                                 return `R.images.gui.maps.icons.quests.bonuses.${e}.exp`;
@@ -1960,13 +1986,13 @@
                                   Object.assign(
                                       {
                                           onMouseEnter:
-                                              ((R = e.props.onMouseEnter),
+                                              ((S = e.props.onMouseEnter),
                                               (u) => {
                                                   (u.clientX === window.innerWidth &&
                                                       u.clientY === window.innerHeight) ||
                                                       ((b.current.timeoutId = window.setTimeout(v, E ? 100 : 400)),
                                                       s && s(u),
-                                                      R && R(u));
+                                                      S && S(u));
                                               }),
                                           onMouseLeave: ((u) => (e) => {
                                               (f(), null == r || r(e), null == u || u(e));
@@ -1982,7 +2008,7 @@
                                   ),
                               )
                             : e;
-                        var R;
+                        var S;
                     },
                     bu = {
                         base: 'Reward_base_63',
@@ -2059,7 +2085,7 @@
                         [j.PartialDone]: fu.rewardGot(),
                         [j.Done]: fu.allRewardGot(),
                     },
-                    Ru = (0, n.memo)(({ rewardGot: u, doneValue: e, wasDone: t, animState: n }) => {
+                    Su = (0, n.memo)(({ rewardGot: u, doneValue: e, wasDone: t, animState: n }) => {
                         const s = O(['base'], vu),
                             r = Q(s.base, vu, n),
                             i = y()(vu.item, (u || t) && vu.item__got);
@@ -2069,7 +2095,7 @@
                             a().createElement('div', { className: i }, t ? fu.allRewardGot() : Tu[e]),
                         );
                     }),
-                    Su = {
+                    Ru = {
                         base: 'ResultRewards_base_75',
                         base__small: 'ResultRewards_base__small_78',
                         base__extraSmall: 'ResultRewards_base__extraSmall_1c',
@@ -2091,8 +2117,8 @@
                                     (s(t), t === u && e && e());
                                 }, [a, s, u, e]);
                             })(r.length, s),
-                            c = O(['base'], Su),
-                            _ = Q(c.base, Su, t);
+                            c = O(['base'], Ru),
+                            _ = Q(c.base, Ru, t);
                         return (
                             (0, n.useEffect)(() => {
                                 if (!i && s && l) {
@@ -2107,10 +2133,10 @@
                                     ? a().createElement(
                                           a().Fragment,
                                           null,
-                                          a().createElement('div', { className: Su.ribbon }),
+                                          a().createElement('div', { className: Ru.ribbon }),
                                           a().createElement(
                                               'div',
-                                              { className: Su.rewards },
+                                              { className: Ru.rewards },
                                               r.map(({ value: u }, e) =>
                                                   a().createElement(wu, {
                                                       key: `${e}_${u.name}_${u.value}`,
@@ -2124,7 +2150,7 @@
                                               ),
                                           ),
                                       )
-                                    : a().createElement(Ru, { animState: t, doneValue: u, rewardGot: o, wasDone: e }),
+                                    : a().createElement(Su, { animState: t, doneValue: u, rewardGot: o, wasDone: e }),
                             )
                         );
                     }),

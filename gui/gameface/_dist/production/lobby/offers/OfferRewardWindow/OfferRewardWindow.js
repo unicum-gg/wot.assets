@@ -33,9 +33,9 @@
                         addPreloadTexture: () => f,
                         children: () => r,
                         displayStatus: () => B,
-                        displayStatusIs: () => j,
+                        displayStatusIs: () => q,
                         events: () => C,
-                        extraSize: () => q,
+                        extraSize: () => j,
                         forceTriggerMouseMove: () => Y,
                         freezeTextureBeforeResize: () => M,
                         getBrowserTexturePath: () => P,
@@ -262,8 +262,8 @@
                 function V() {
                     return viewEnv.getShowingStatus();
                 }
-                const j = Object.keys(B).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === B[e]), u), {}),
-                    q = {
+                const q = Object.keys(B).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === B[e]), u), {}),
+                    j = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -1336,9 +1336,9 @@
                 H.defaultProps = { type: L.primary, isFocused: !1, soundHover: 'highlight', soundClick: 'play' };
                 const Y = (0, n.memo)(H),
                     V = ['children'];
-                function j() {
+                function q() {
                     return (
-                        (j =
+                        (q =
                             Object.assign ||
                             function (u) {
                                 for (var e = 1; e < arguments.length; e++) {
@@ -1347,10 +1347,10 @@
                                 }
                                 return u;
                             }),
-                        j.apply(this, arguments)
+                        q.apply(this, arguments)
                     );
                 }
-                const q = (u) => {
+                const j = (u) => {
                     let e = u.children,
                         t = (function (u, e) {
                             if (null == u) return {};
@@ -1363,7 +1363,7 @@
                         })(u, V);
                     return o().createElement(
                         w,
-                        j(
+                        q(
                             {
                                 contentId:
                                     R.views.common.tooltip_window.backport_tooltip_content.BackportTooltipContent(
@@ -1399,7 +1399,7 @@
                         a = null == s ? void 0 : s.contentId;
                     return r || a
                         ? o().createElement(w, W({}, e, { contentId: r || a }), n)
-                        : o().createElement(q, e, n);
+                        : o().createElement(j, e, n);
                 };
                 let X, $, K, Q, Z, J, uu;
                 (!(function (u) {
@@ -1457,7 +1457,10 @@
                         (u.VehicleSelect = 'vehicleSelect'),
                         (u.StyleProgress = 'styleProgress'),
                         (u.ParagonsUnlocks = 'paragonsUnlocks'),
-                        (u.LootBoxToken = 'lootBoxToken'));
+                        (u.LootBoxToken = 'lootBoxToken'),
+                        (u.GoldenTicket = 'birthday2025_golden_ticket'),
+                        (u.PostStamp = 'giftsystem_4_stamp'),
+                        (u.Quests = 'quests'));
                 })(X || (X = {})),
                     (function (u) {
                         ((u.Gold = 'gold'),
@@ -1597,6 +1600,8 @@
                         X.CosmicLootboxCommon,
                         X.CosmicLootboxSilver,
                         X.SelectableBonus,
+                        X.GoldenTicket,
+                        X.PostStamp,
                     ],
                     nu = [X.Gold, X.Credits, X.Crystal, X.FreeXp],
                     ou = [X.BattlePassPoints],

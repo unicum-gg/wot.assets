@@ -788,6 +788,12 @@
     flex-direction: column;
     width: 100%;
     height: 166rem;
+    padding-top: 12rem;
+}
+.Layout_base__small_cb .Layout_footer_f4,
+.Layout_base__medium_df .Layout_footer_f4,
+.Layout_base__large_f6 .Layout_footer_f4,
+.Layout_base__huge_d2 .Layout_footer_f4 {
     padding-top: 20rem;
 }
 
@@ -867,7 +873,6 @@ body {
     padding-bottom: 23rem;
     position: absolute;
     bottom: 35rem;
-    z-index: 1;
 }
 
 .SetupApp_back_20 {

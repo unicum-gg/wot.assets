@@ -57,13 +57,13 @@
                         getBrowserTexturePath: () => L,
                         getDisplayStatus: () => z,
                         getScale: () => R,
-                        getSize: () => y,
-                        getViewGlobalPosition: () => T,
+                        getSize: () => T,
+                        getViewGlobalPosition: () => P,
                         isEventHandled: () => U,
                         isFocused: () => W,
                         pxToRem: () => O,
                         remToPx: () => H,
-                        resize: () => P,
+                        resize: () => y,
                         sendEvent: () => w,
                         setAnimateWindow: () => k,
                         setEventHandled: () => I,
@@ -238,13 +238,13 @@
                 function M(e) {
                     viewEnv.setHitAreaPaddingsRem(e.top, e.right, e.bottom, e.left, 15);
                 }
-                function y(e = 'px') {
+                function T(e = 'px') {
                     return 'rem' === e ? viewEnv.getViewSizeRem() : viewEnv.getViewSizePx();
                 }
-                function P(e, u, t = 'px') {
+                function y(e, u, t = 'px') {
                     return 'rem' === t ? viewEnv.resizeViewRem(e, u) : viewEnv.resizeViewPx(e, u);
                 }
-                function T(e = 'rem') {
+                function P(e = 'rem') {
                     const u = viewEnv.getViewGlobalPositionRem();
                     return 'rem' === e ? u : { x: H(u.x), y: H(u.y) };
                 }
@@ -736,7 +736,7 @@
                         useHorizontalScrollApi: () => J,
                     }));
                 var n = {};
-                (t.r(n), t.d(n, { Area: () => Te, Bar: () => Me, Default: () => Pe, useVerticalScrollApi: () => De }));
+                (t.r(n), t.d(n, { Area: () => Pe, Bar: () => Me, Default: () => ye, useVerticalScrollApi: () => De }));
                 var a = t(179),
                     i = t.n(a);
                 const o = (e, u, t) =>
@@ -1015,21 +1015,21 @@
                         M.apply(this, arguments)
                     );
                 }
-                const y = {
+                const T = {
                         [b.ExtraSmall]: '',
                         [b.Small]: p().SMALL_WIDTH,
                         [b.Medium]: `${p().SMALL_WIDTH} ${p().MEDIUM_WIDTH}`,
                         [b.Large]: `${p().SMALL_WIDTH} ${p().MEDIUM_WIDTH} ${p().LARGE_WIDTH}`,
                         [b.ExtraLarge]: `${p().SMALL_WIDTH} ${p().MEDIUM_WIDTH} ${p().LARGE_WIDTH} ${p().EXTRA_LARGE_WIDTH}`,
                     },
-                    P = {
+                    y = {
                         [S.ExtraSmall]: '',
                         [S.Small]: p().SMALL_HEIGHT,
                         [S.Medium]: `${p().SMALL_HEIGHT} ${p().MEDIUM_HEIGHT}`,
                         [S.Large]: `${p().SMALL_HEIGHT} ${p().MEDIUM_HEIGHT} ${p().LARGE_HEIGHT}`,
                         [S.ExtraLarge]: `${p().SMALL_HEIGHT} ${p().MEDIUM_HEIGHT} ${p().LARGE_HEIGHT} ${p().EXTRA_LARGE_HEIGHT}`,
                     },
-                    T = {
+                    P = {
                         [w.ExtraSmall]: '',
                         [w.Small]: p().SMALL,
                         [w.Medium]: `${p().SMALL} ${p().MEDIUM}`,
@@ -1052,7 +1052,7 @@
                             a = n.mediaWidth,
                             o = n.mediaHeight,
                             s = n.mediaSize;
-                        return i().createElement('div', M({ className: v()(t, y[a], P[o], T[s]) }, r), u);
+                        return i().createElement('div', M({ className: v()(t, T[a], y[o], P[s]) }, r), u);
                     },
                     O = ['children'];
                 const H = (e) => {
@@ -1332,6 +1332,7 @@
                                 ),
                                 [f],
                             );
+                            const w = (0, a.useCallback)((e) => d.trigger('isThumbDraggingChanged', e), [d]);
                             return (0, a.useMemo)(
                                 () => ({
                                     getWrapperSize: () => (F.current ? n(F.current) : void 0),
@@ -1350,9 +1351,10 @@
                                     scrollPosition: B,
                                     animationScroll: _,
                                     recalculateContent: p,
+                                    handleIsThumbDragging: w,
                                     events: { on: d.on, off: d.off },
                                 }),
-                                [_.scrollPosition, g, h, d.off, d.on, p, v, B, E.step.clampedArrowStepTimeout],
+                                [_.scrollPosition, g, h, w, d.off, d.on, p, v, B, E.step.clampedArrowStepTimeout],
                             );
                         };
                     },
@@ -1784,7 +1786,9 @@
                                         });
                                     },
                                     t = () => {
-                                        (window.removeEventListener('mousemove', u), m(be));
+                                        (window.removeEventListener('mousemove', u),
+                                            e.handleIsThumbDragging(!1),
+                                            m(be));
                                     };
                                 return (
                                     window.addEventListener('mousemove', u),
@@ -1827,7 +1831,11 @@
                                         const r = c.current;
                                         if (r && 0 === u.button)
                                             if (($('play'), u.target === r))
-                                                m({ pending: !0, offset: u.screenY - r.getBoundingClientRect().y });
+                                                (e.handleIsThumbDragging(!0),
+                                                    m({
+                                                        pending: !0,
+                                                        offset: u.screenY - r.getBoundingClientRect().y,
+                                                    }));
                                             else {
                                                 ((u) => {
                                                     c.current &&
@@ -1857,13 +1865,13 @@
                             }),
                         );
                     }),
-                    ye = {
+                    Te = {
                         content: 'VerticalScroll_content_cb',
                         defaultScroll: 'VerticalScroll_defaultScroll_f8',
                         bar: 'VerticalScroll_bar_1e',
                         area: 'VerticalScroll_area_af',
                     },
-                    Pe = ({
+                    ye = ({
                         children: e,
                         api: u,
                         className: t,
@@ -1876,33 +1884,33 @@
                     }) => {
                         const E = (0, a.useMemo)(() => {
                                 const e = r || {};
-                                return Object.assign({}, e, { base: v()(ye.base, e.base) });
+                                return Object.assign({}, e, { base: v()(Te.base, e.base) });
                             }, [r]),
                             A = (0, a.useMemo)(() => Object.assign({}, u, { handleMouseWheel: () => {} }), [u]);
                         return i().createElement(
                             'div',
-                            { className: v()(ye.defaultScroll, t), onWheel: u.handleMouseWheel },
+                            { className: v()(Te.defaultScroll, t), onWheel: u.handleMouseWheel },
                             i().createElement(
                                 'div',
-                                { className: v()(ye.area, n) },
-                                i().createElement(Te, { className: o, classNames: s, api: A }, e),
+                                { className: v()(Te.area, n) },
+                                i().createElement(Pe, { className: o, classNames: s, api: A }, e),
                             ),
                             i().createElement(Me, { getStepByRailClick: l, api: u, onDrag: c, classNames: E }),
                         );
                     },
-                    Te = ({ className: e, classNames: u, children: t, api: r }) => (
+                    Pe = ({ className: e, classNames: u, children: t, api: r }) => (
                         (0, a.useEffect)(() => I(r.recalculateContent)),
                         i().createElement(
                             'div',
-                            { className: v()(ye.base, e), ref: r.wrapperRef, onWheel: r.handleMouseWheel },
+                            { className: v()(Te.base, e), ref: r.wrapperRef, onWheel: r.handleMouseWheel },
                             i().createElement(
                                 'div',
-                                { className: v()(ye.content, null == u ? void 0 : u.content), ref: r.contentRef },
+                                { className: v()(Te.content, null == u ? void 0 : u.content), ref: r.contentRef },
                                 t,
                             ),
                         )
                     );
-                Te.Default = Pe;
+                Pe.Default = ye;
                 const Ne = { Vertical: n, Horizontal: r },
                     Re = {
                         base: 'TextButton_base_b6',
@@ -2368,9 +2376,9 @@
                         );
                     },
                     Mu = 'ReservesConversionViewApp_base_cb',
-                    yu = 'ReservesConversionViewApp_closeButton_be',
-                    Pu = 'ReservesConversionViewApp_scrollArea_4a',
-                    Tu = 'ReservesConversionViewApp_mainTitle_75',
+                    Tu = 'ReservesConversionViewApp_closeButton_be',
+                    yu = 'ReservesConversionViewApp_scrollArea_4a',
+                    Pu = 'ReservesConversionViewApp_mainTitle_75',
                     Nu = 'ReservesConversionViewApp_mainDescription_3c',
                     Ru = 'ReservesConversionViewApp_boosterBlocksContainer_ba',
                     Ou = 'ReservesConversionViewApp_credits_7a',
@@ -2407,7 +2415,7 @@
                                 { className: Mu },
                                 i().createElement(
                                     'div',
-                                    { className: yu },
+                                    { className: Tu },
                                     i().createElement(ke, {
                                         caption: Hu.close,
                                         type: 'close',
@@ -2420,8 +2428,8 @@
                                     { api: l },
                                     i().createElement(
                                         'div',
-                                        { className: Pu },
-                                        i().createElement('div', { className: Tu }, Hu.mainTitle),
+                                        { className: yu },
+                                        i().createElement('div', { className: Pu }, Hu.mainTitle),
                                         i().createElement('div', { className: Nu }, Hu.mainDescription),
                                         i().createElement(
                                             'div',

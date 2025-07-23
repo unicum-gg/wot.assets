@@ -742,41 +742,29 @@
                     i = t.n(r),
                     a = t(6483),
                     E = t.n(a);
-                function A(u) {
+                let A;
+                function F(u) {
                     engine.call('PlaySound', u);
                 }
-                const F = {
-                    playHighlight() {
-                        A('highlight');
-                    },
-                    playClick() {
-                        A('play');
-                    },
-                    playYes() {
-                        A('yes1');
-                    },
-                };
-                let s, c, D, l;
-                (!(function (u) {
+                !(function (u) {
                     ((u[(u.LEFT = 0)] = 'LEFT'),
                         (u[(u.WHEEL = 1)] = 'WHEEL'),
                         (u[(u.RIGHT = 2)] = 'RIGHT'),
                         (u[(u.FOURTH = 3)] = 'FOURTH'),
                         (u[(u.FIFTH = 4)] = 'FIFTH'));
-                })(s || (s = {})),
-                    (function (u) {
-                        ((u.small = 'small'),
-                            (u.medium = 'medium'),
-                            (u.large = 'large'),
-                            (u.extraLarge = 'extraLarge'));
-                    })(c || (c = {})),
-                    (function (u) {
-                        ((u.primary = 'primary'), (u.main = 'main'));
-                    })(D || (D = {})),
-                    (function (u) {
-                        ((u.Center = 'center'), (u.Bottom = 'bottom'));
-                    })(l || (l = {})));
-                const d = {
+                })(A || (A = {}));
+                const s = {
+                        playHighlight() {
+                            F('highlight');
+                        },
+                        playClick() {
+                            F('play');
+                        },
+                        playYes() {
+                            F('yes1');
+                        },
+                    },
+                    c = {
                         base: 'Checkbox_base_36',
                         base__disabled: 'Checkbox_base__disabled_08',
                         base__center: 'Checkbox_base__center_52',
@@ -799,29 +787,39 @@
                         fadeIn: 'Checkbox_fadeIn_1a',
                         label: 'Checkbox_label_bc',
                         labelContent: 'Checkbox_labelContent_64',
-                    },
-                    _ = [
-                        'id',
-                        'isChecked',
-                        'isDisabled',
-                        'isAlert',
-                        'size',
-                        'type',
-                        'soundHover',
-                        'soundClick',
-                        'onMouseEnter',
-                        'onMouseLeave',
-                        'onMouseUp',
-                        'onMouseDown',
-                        'onClick',
-                        'onChange',
-                        'onFocus',
-                        'onBlur',
-                        'text',
-                        'contentStyles',
-                        'children',
-                        'alignment',
-                    ];
+                    };
+                let D, l, d;
+                (!(function (u) {
+                    ((u.small = 'small'), (u.medium = 'medium'), (u.large = 'large'), (u.extraLarge = 'extraLarge'));
+                })(D || (D = {})),
+                    (function (u) {
+                        ((u.primary = 'primary'), (u.main = 'main'));
+                    })(l || (l = {})),
+                    (function (u) {
+                        ((u.Center = 'center'), (u.Bottom = 'bottom'));
+                    })(d || (d = {})));
+                const _ = [
+                    'id',
+                    'isChecked',
+                    'isDisabled',
+                    'isAlert',
+                    'size',
+                    'type',
+                    'soundHover',
+                    'soundClick',
+                    'onMouseEnter',
+                    'onMouseLeave',
+                    'onMouseUp',
+                    'onMouseDown',
+                    'onClick',
+                    'onChange',
+                    'onFocus',
+                    'onBlur',
+                    'text',
+                    'contentStyles',
+                    'children',
+                    'alignment',
+                ];
                 function B() {
                     return (
                         (B =
@@ -842,12 +840,12 @@
                             r = void 0 !== t && t,
                             i = u.isDisabled,
                             a = void 0 !== i && i,
-                            F = u.isAlert,
-                            C = void 0 !== F && F,
+                            s = u.isAlert,
+                            C = void 0 !== s && s,
                             v = u.size,
-                            m = void 0 === v ? c.medium : v,
+                            m = void 0 === v ? D.medium : v,
                             b = u.type,
-                            w = void 0 === b ? D.primary : b,
+                            w = void 0 === b ? l.primary : b,
                             h = u.soundHover,
                             p = void 0 === h ? 'highlight' : h,
                             f = u.soundClick,
@@ -886,8 +884,8 @@
                             ),
                             q = (0, n.useCallback)(
                                 (u) => {
-                                    const e = u.button === s.LEFT;
-                                    a || (e && W(!0), e && T && T(u), g && A(g));
+                                    const e = u.button === A.LEFT;
+                                    a || (e && W(!0), e && T && T(u), g && F(g));
                                 },
                                 [a, T, g],
                             ),
@@ -899,7 +897,7 @@
                             ),
                             G = (0, n.useCallback)(
                                 (u) => {
-                                    a || (k && k(u), p && A(p));
+                                    a || (k && k(u), p && F(p));
                                 },
                                 [a, k, p],
                             ),
@@ -923,10 +921,10 @@
                             ),
                             Q = o().createElement(
                                 'div',
-                                { className: d.label },
+                                { className: c.label },
                                 o().createElement(
                                     'div',
-                                    { className: E()(d.labelContent, 's-labelContent'), style: S },
+                                    { className: E()(c.labelContent, 's-labelContent'), style: S },
                                     L || N,
                                 ),
                             );
@@ -935,13 +933,13 @@
                             B(
                                 {
                                     id: e,
-                                    className: E()(d.base, d[`base__${m}`], d[`base__${w}`], {
-                                        [d.base__checked]: r,
-                                        [d.base__disabled]: a,
-                                        [d.base__mouseDown]: V,
-                                        [d.base__alert]: C,
-                                        [d.base__center]: I === l.Center,
-                                        [d.base__bottom]: I === l.Bottom,
+                                    className: E()(c.base, c[`base__${m}`], c[`base__${w}`], {
+                                        [c.base__checked]: r,
+                                        [c.base__disabled]: a,
+                                        [c.base__mouseDown]: V,
+                                        [c.base__alert]: C,
+                                        [c.base__center]: I === d.Center,
+                                        [c.base__bottom]: I === d.Bottom,
                                     }),
                                     onClick: K,
                                     onMouseEnter: G,
@@ -955,12 +953,12 @@
                             ),
                             o().createElement(
                                 'div',
-                                { className: d.input },
-                                o().createElement('div', { className: d.alertOverlay }),
-                                o().createElement('div', { className: d.inputHoverOverlay }),
-                                o().createElement('div', { className: d.highlight }),
+                                { className: c.input },
+                                o().createElement('div', { className: c.alertOverlay }),
+                                o().createElement('div', { className: c.inputHoverOverlay }),
+                                o().createElement('div', { className: c.highlight }),
                             ),
-                            o().createElement('div', { className: d.checkmark }),
+                            o().createElement('div', { className: c.checkmark }),
                             ((L || N) && Q) || null,
                         );
                     },
@@ -1213,15 +1211,15 @@
                         ({ children: u, disableAutoSizeUpdate: e, onOutsideClick: t, customStyles: r = {} }, i) => {
                             const a = (0, n.useRef)(null),
                                 A = (0, n.useRef)(null),
-                                s = (0, n.useRef)(null),
+                                F = (0, n.useRef)(null),
                                 c = (0, n.useState)(window.decorator && window.decorator.directionType),
                                 D = c[0],
                                 l = c[1],
                                 d = (0, n.useCallback)(() => {
-                                    (F.playClick(), O.O.view.sendEvent.close());
+                                    (s.playClick(), O.O.view.sendEvent.close());
                                 }, []),
                                 _ = (0, n.useCallback)(() => {
-                                    F.playHighlight();
+                                    s.playHighlight();
                                 }, []),
                                 B = E()(P.arrow, P[`arrow${x[D]}`]);
                             T(
@@ -1236,7 +1234,7 @@
                                     (u) => {
                                         let e = u.target;
                                         do {
-                                            if (e === a.current || e === s.current) return;
+                                            if (e === a.current || e === F.current) return;
                                             e = e.parentNode;
                                         } while (e);
                                         const n = window.decorator;
@@ -1252,7 +1250,7 @@
                                         }
                                         t ? t() : O.O.view.sendEvent.close('popover');
                                     },
-                                    [a, s, t],
+                                    [a, F, t],
                                 ),
                                 v = (0, n.useCallback)(
                                     () => (
@@ -1325,7 +1323,7 @@
                                                         className: P.closeBtn,
                                                         onClick: d,
                                                         onMouseEnter: _,
-                                                        ref: s,
+                                                        ref: F,
                                                     }),
                                                 ),
                                         ),
@@ -1579,8 +1577,8 @@
                                                 'div',
                                                 { className: ou.checkbox },
                                                 o().createElement(nu, {
-                                                    type: D.main,
-                                                    size: c.small,
+                                                    type: l.main,
+                                                    size: D.small,
                                                     text: u.title,
                                                     isChecked: u.isChecked,
                                                     isDisabled: !u.isEnabled,

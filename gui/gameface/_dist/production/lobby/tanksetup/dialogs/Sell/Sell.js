@@ -1167,7 +1167,10 @@
                         (u.VehicleSelect = 'vehicleSelect'),
                         (u.StyleProgress = 'styleProgress'),
                         (u.ParagonsUnlocks = 'paragonsUnlocks'),
-                        (u.LootBoxToken = 'lootBoxToken'));
+                        (u.LootBoxToken = 'lootBoxToken'),
+                        (u.GoldenTicket = 'birthday2025_golden_ticket'),
+                        (u.PostStamp = 'giftsystem_4_stamp'),
+                        (u.Quests = 'quests'));
                 })(b || (b = {})),
                     (function (u) {
                         ((u.Gold = 'gold'),
@@ -1306,6 +1309,8 @@
                     b.CosmicLootboxCommon,
                     b.CosmicLootboxSilver,
                     b.SelectableBonus,
+                    b.GoldenTicket,
+                    b.PostStamp,
                     b.Gold,
                     b.Credits,
                     b.Crystal,
@@ -1499,11 +1504,11 @@
                 function G(u, e) {
                     return Array.isArray(u) ? u.map(e) : u.map((u, t, n) => e(null == u ? void 0 : u.value, t, n));
                 }
-                var V = t(3403);
-                function W(u) {
+                var q = t(3403);
+                function V(u) {
                     engine.call('PlaySound', u);
                 }
-                const q = {
+                const W = {
                         base: 'TextButton_base_b6',
                         base__right: 'TextButton_base__right_39',
                         icon: 'TextButton_icon_17',
@@ -1556,7 +1561,7 @@
                             (this._onMouseEnter = (u) => (e) => {
                                 (u && u(e),
                                     this.setState({ hover: !0 }),
-                                    this.props.soundHover && W(this.props.soundHover));
+                                    this.props.soundHover && V(this.props.soundHover));
                             }),
                             (this._onMouseLeave = (u) => (e) => {
                                 (u && u(e), this.setState({ hover: !1, click: !1 }));
@@ -1564,7 +1569,7 @@
                             (this._onMouseDown = (u) => (e) => {
                                 (u && u(e),
                                     this.setState({ click: !0 }),
-                                    this.props.soundClick && W(this.props.soundClick));
+                                    this.props.soundClick && V(this.props.soundClick));
                             }),
                             (this._onMouseUp = (u) => (e) => {
                                 (u && u(e), this.setState({ click: !1 }));
@@ -1596,11 +1601,11 @@
                                     for (n = 0; n < i.length; n++) ((t = i[n]), e.indexOf(t) >= 0 || (r[t] = u[t]));
                                     return r;
                                 })(u, X)),
-                            F = o()(q.base, q[`base__${s}`], q[`base__${i}`], null == a ? void 0 : a.base),
-                            d = o()(q.icon, q[`icon__${s}`], q[`icon__${i}`], null == a ? void 0 : a.icon),
-                            D = o()(q.glow, null == a ? void 0 : a.glow),
-                            m = o()(q.caption, q[`caption__${s}`], null == a ? void 0 : a.caption),
-                            C = o()(q.goto, null == a ? void 0 : a.goto);
+                            F = o()(W.base, W[`base__${s}`], W[`base__${i}`], null == a ? void 0 : a.base),
+                            d = o()(W.icon, W[`icon__${s}`], W[`icon__${i}`], null == a ? void 0 : a.icon),
+                            D = o()(W.glow, null == a ? void 0 : a.glow),
+                            m = o()(W.caption, W[`caption__${s}`], null == a ? void 0 : a.caption),
+                            C = o()(W.goto, null == a ? void 0 : a.goto);
                         return r().createElement(
                             'div',
                             j(
@@ -1616,7 +1621,7 @@
                                 },
                                 A,
                             ),
-                            'info' !== s && r().createElement('div', { className: q.shine }),
+                            'info' !== s && r().createElement('div', { className: W.shine }),
                             r().createElement('div', { className: d }, r().createElement('div', { className: D })),
                             r().createElement('div', { className: m }, e),
                             n && r().createElement('div', { className: C }, n),
@@ -2418,15 +2423,15 @@
                               ),
                     Hu = 'Alert_alert_66',
                     Gu = 'Alert_icon_ea',
-                    Vu = 'Alert_alertText_14',
-                    Wu = ({ alertText: u, className: e }) =>
+                    qu = 'Alert_alertText_14',
+                    Vu = ({ alertText: u, className: e }) =>
                         r().createElement(
                             'div',
                             { className: o()(Hu, e) },
                             r().createElement('i', { className: Gu }),
-                            r().createElement('span', { className: Vu }, u),
+                            r().createElement('span', { className: qu }, u),
                         ),
-                    qu = 'PriceBlock_base_7a',
+                    Wu = 'PriceBlock_base_7a',
                     Xu = 'PriceBlock_priceContainer_d3',
                     ju = 'PriceBlock_text_2c',
                     zu = 'PriceBlock_currency_13',
@@ -2446,7 +2451,7 @@
                     }) =>
                         r().createElement(
                             'div',
-                            { className: o()(qu, l) },
+                            { className: o()(Wu, l) },
                             r().createElement(
                                 'div',
                                 { className: o()(Xu, null == _ ? void 0 : _.priceContainer) },
@@ -2463,7 +2468,7 @@
                                         classMix: null == _ ? void 0 : _.additionalText,
                                     }),
                             ),
-                            E && r().createElement(Wu, { className: null == _ ? void 0 : _.alert, alertText: c }),
+                            E && r().createElement(Vu, { className: null == _ ? void 0 : _.alert, alertText: c }),
                         ),
                     $u = (u, e) => {
                         const t = u.$dyn(e);
@@ -2483,7 +2488,7 @@
                         priceContainer: 'Content_priceContainer_66',
                     },
                     Zu = R.strings.tank_setup.dialogs.sell.alertText.equipment,
-                    Ju = (0, V.Pi)(() => {
+                    Ju = (0, q.Pi)(() => {
                         const u = Nu().model,
                             e = u.equipment.cost.get(),
                             t = e.type,
@@ -2583,7 +2588,7 @@
                         ),
                         N = (0, n.useCallback)(
                             (u) => {
-                                s || (null !== c && W(c), _ && _(u), f(!0));
+                                s || (null !== c && V(c), _ && _(u), f(!0));
                             },
                             [s, c, _],
                         ),
@@ -2601,7 +2606,7 @@
                         ),
                         O = (0, n.useCallback)(
                             (u) => {
-                                s || (null !== l && W(l), A && A(u), t && w(), b(!0));
+                                s || (null !== l && V(l), A && A(u), t && w(), b(!0));
                             },
                             [s, l, A, w, t],
                         ),
@@ -3031,10 +3036,10 @@
                                             this.setState({ activeDecrement: !0 }))));
                             }),
                             (this.playHoverSound = () => {
-                                this.props.isDisabled || W('highlight');
+                                this.props.isDisabled || V('highlight');
                             }),
                             (this.playClickSound = () => {
-                                this.props.isDisabled || W('play');
+                                this.props.isDisabled || V('play');
                             }),
                             (this.stop = () => {
                                 (this.timer && clearTimeout(this.timer), (this.timer = null));
@@ -3219,7 +3224,7 @@
                     de = 'Footer_button_ab',
                     De = 'Footer_text_cc',
                     me = R.strings.tank_setup.dialogs.sell.button,
-                    Ce = (0, V.Pi)(() => {
+                    Ce = (0, q.Pi)(() => {
                         const u = Nu(),
                             e = u.model,
                             t = u.controls,
@@ -3271,7 +3276,7 @@
                     }),
                     pe = 'Header_base_d6',
                     Be = 'Header_text_97',
-                    he = (0, V.Pi)(() => {
+                    he = (0, q.Pi)(() => {
                         const u = Nu().model,
                             e = r().createElement(Uu, {
                                 text: $u(Ku(R.strings.artefacts, u.equipment.props.get().name), 'name'),
@@ -3300,7 +3305,7 @@
                         ge.apply(this, arguments)
                     );
                 }
-                const be = (0, V.Pi)(() => {
+                const be = (0, q.Pi)(() => {
                         const u = Nu(),
                             e = u.controls,
                             t = u.model,

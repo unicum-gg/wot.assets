@@ -2408,11 +2408,11 @@
                     );
                 }
                 const V = 'tabs-role';
-                var K;
+                var q;
                 !(function (e) {
                     ((e.LIST = 'tabs-list'), (e.CONTENT = 'tab-content'), (e.TAB = 'tab-key'));
-                })(K || (K = {}));
-                class q extends n.Component {
+                })(q || (q = {}));
+                class K extends n.Component {
                     constructor(...e) {
                         (super(...e),
                             (this.tabsProps = {}),
@@ -2421,8 +2421,8 @@
                             (this.state = { activeKey: '', activeElements: [] }),
                             (this._getFirstTabKey = (e) => {
                                 if (!e) return;
-                                const t = e.find((e) => e.props[K.TAB]);
-                                return t && t.props[K.TAB];
+                                const t = e.find((e) => e.props[q.TAB]);
+                                return t && t.props[q.TAB];
                             }),
                             (this.handleSetActiveKey = (e) => {
                                 (this.setState({ activeKey: e }),
@@ -2432,14 +2432,14 @@
                     }
                     componentDidMount() {
                         const e = a().Children.toArray(this.props.children),
-                            t = e.findIndex((e) => e.props[V] === K.LIST);
+                            t = e.findIndex((e) => e.props[V] === q.LIST);
                         if (t < 0) return;
                         const u =
                             this.props.activeKey || this._getFirstTabKey(a().Children.toArray(e[t].props.children));
                         ((e[t] = a().cloneElement(e[t], {
                             children: a()
                                 .Children.toArray(e[t].props.children)
-                                .map((e) => a().cloneElement(e, { key: e.props[K.TAB] })),
+                                .map((e) => a().cloneElement(e, { key: e.props[q.TAB] })),
                         })),
                             (this.elementsList = e),
                             (this.tabsListIndex = t),
@@ -2476,7 +2476,7 @@
                             l = F()(X, this.props.isTabsCentered && $);
                         if (t.activeKey !== this.state.activeKey || r) {
                             const e = this.elementsList.findIndex((e) => {
-                                    if (e.props[V] === K.CONTENT) return e.props[K.TAB].includes(this.state.activeKey);
+                                    if (e.props[V] === q.CONTENT) return e.props[q.TAB].includes(this.state.activeKey);
                                 }),
                                 t = this.elementsList.filter((t, u) => [this.tabsListIndex, e].includes(u)),
                                 r = t[0].props.children,
@@ -2486,13 +2486,13 @@
                                         Object.assign(
                                             {},
                                             n[t],
-                                            { key: t, isActive: this.state.activeKey === e.props[K.TAB] },
+                                            { key: t, isActive: this.state.activeKey === e.props[q.TAB] },
                                             this.props.isVerticalTabs
                                                 ? {}
                                                 : { isFirst: 0 === t, isLast: t === r.length - 1 },
                                             {
                                                 onClick: (e) => {
-                                                    const u = n[t][K.TAB];
+                                                    const u = n[t][q.TAB];
                                                     this.state.activeKey === u ||
                                                         (n[t].onClick && n[t].onClick(e),
                                                         this.handleSetActiveKey(u),
@@ -2512,7 +2512,7 @@
                                     activeElements: [
                                         a().createElement(
                                             'div',
-                                            { className: l, key: K.LIST },
+                                            { className: l, key: q.LIST },
                                             a().createElement('div', j({}, u.props, { className: o }), s),
                                         ),
                                         t[1],
@@ -2526,7 +2526,7 @@
                         return a().createElement('div', { className: t }, e);
                     }
                 }
-                q.defaultProps = { onClickSound: R.sounds.play(), onMouseEnterSound: R.sounds.highlight() };
+                K.defaultProps = { onClickSound: R.sounds.play(), onMouseEnterSound: R.sounds.highlight() };
                 const Q = ['children', 'className', 'activeKey', 'onClickSound', 'onMouseEnterSound', 'isTabsCentered'];
                 function Z() {
                     return (
@@ -2562,7 +2562,7 @@
                             'div',
                             Z({ className: u }, o),
                             a().createElement(
-                                q,
+                                K,
                                 { activeKey: n, onClickSound: r, onMouseEnterSound: s, isTabsCentered: i },
                                 t,
                             ),
@@ -2988,8 +2988,8 @@
                     ze = 'App_shadow_c1',
                     je = 'App_background__win_2b',
                     Ve = 'App_playerVehicleStatus_e9',
-                    Ke = 'App_mapName_bf',
-                    qe = 'App_bottomComponents_0b',
+                    qe = 'App_mapName_bf',
+                    Ke = 'App_bottomComponents_0b',
                     Qe = 'App_closeButton_fa',
                     Ze = 'AppAnimations_baseEnterDone_7f',
                     Je = { enterActive: 'AppAnimations_baseEnterActive_88', enterDone: Ze },
@@ -3588,8 +3588,8 @@
                             u
                         );
                     };
-                var Kt = u(380),
-                    qt = u.n(Kt);
+                var qt = u(380),
+                    Kt = u.n(qt);
                 const Qt = 'ScrollArea_base_47',
                     Zt = 'ScrollArea_base__scrollIndent_1d',
                     Jt = 'ScrollArea_base__verticalScrollbarMargin_50',
@@ -3718,7 +3718,7 @@
                         const j = Vt(z);
                         ((0, n.useEffect)(
                             () => (
-                                !w && y && j && S(new (qt())(y, Object.assign({}, o))),
+                                !w && y && j && S(new (Kt())(y, Object.assign({}, o))),
                                 () => {
                                     w && (w.destroy(), S(void 0));
                                 }
@@ -4104,8 +4104,8 @@
                     zu = 'PremiumRewards_ribbonLine_ec',
                     ju = 'PremiumRewards_ribbonLine__left_6d',
                     Vu = 'PremiumRewards_ribbonLine__right_7e',
-                    Ku = 'PremiumRewards_ribbonDot_1c',
-                    qu = 'PremiumRewards_ribbonDot__left_fd',
+                    qu = 'PremiumRewards_ribbonDot_1c',
+                    Ku = 'PremiumRewards_ribbonDot__left_fd',
                     Qu = 'PremiumRewards_ribbonDot__right_c4',
                     Zu = 'PremiumRewards_premium_33',
                     Ju = 'PremiumRewards_premiumLine_0c',
@@ -4126,7 +4126,7 @@
                                     'div',
                                     { className: Ju },
                                     a().createElement('div', { className: F()(zu, ju) }),
-                                    a().createElement('div', { className: F()(Ku, qu) }),
+                                    a().createElement('div', { className: F()(qu, Ku) }),
                                 ),
                                 a().createElement(
                                     'div',
@@ -4157,7 +4157,7 @@
                                     'div',
                                     { className: Ju },
                                     a().createElement('div', { className: F()(zu, Vu) }),
-                                    a().createElement('div', { className: F()(Ku, Qu) }),
+                                    a().createElement('div', { className: F()(qu, Qu) }),
                                 ),
                             ),
                         ),
@@ -4514,8 +4514,8 @@
                     zn = 'ProgressBarDeltaGrow_glow_68',
                     jn = (e) => (e ? { left: 0 } : { right: 0 }),
                     Vn = (e, t) => (e ? { right: 100 - t + '%' } : { left: `${t}%` }),
-                    Kn = (e) => ({ transitionDuration: `${e}ms` }),
-                    qn = (0, n.memo)(
+                    qn = (e) => ({ transitionDuration: `${e}ms` }),
+                    Kn = (0, n.memo)(
                         ({
                             transitionDuration: e,
                             transitionDelay: t,
@@ -4558,11 +4558,11 @@
                                             ? D(On.End, e)
                                             : void (h && o && o());
                             }, [D, u, h, A, b, p, o, t, e]);
-                            const B = (0, n.useMemo)(() => Object.assign({ width: '100%' }, Kn(e), jn(m)), [m, e]),
-                                v = (0, n.useMemo)(() => Object.assign({ width: '0%' }, Kn(e), jn(m)), [m, e]),
-                                C = (0, n.useMemo)(() => Object.assign({ width: '0%' }, Vn(m, r), Kn(e)), [r, m, e]),
+                            const B = (0, n.useMemo)(() => Object.assign({ width: '100%' }, qn(e), jn(m)), [m, e]),
+                                v = (0, n.useMemo)(() => Object.assign({ width: '0%' }, qn(e), jn(m)), [m, e]),
+                                C = (0, n.useMemo)(() => Object.assign({ width: '0%' }, Vn(m, r), qn(e)), [r, m, e]),
                                 f = (0, n.useMemo)(
-                                    () => Object.assign({ width: `${Math.abs(i - r)}%` }, Vn(m, r), Kn(e)),
+                                    () => Object.assign({ width: `${Math.abs(i - r)}%` }, Vn(m, r), qn(e)),
                                     [r, m, i, e],
                                 );
                             if (h) return null;
@@ -4617,7 +4617,7 @@
                                     baseStyles: _ ? A : b,
                                 }),
                                 u >= 0 &&
-                                    a().createElement(qn, {
+                                    a().createElement(Kn, {
                                         transitionDuration: o.delta.duration,
                                         transitionDelay: o.delta.delay,
                                         onChangeAnimationState: h,
@@ -5138,7 +5138,10 @@
                         (e.VehicleSelect = 'vehicleSelect'),
                         (e.StyleProgress = 'styleProgress'),
                         (e.ParagonsUnlocks = 'paragonsUnlocks'),
-                        (e.LootBoxToken = 'lootBoxToken'));
+                        (e.LootBoxToken = 'lootBoxToken'),
+                        (e.GoldenTicket = 'birthday2025_golden_ticket'),
+                        (e.PostStamp = 'giftsystem_4_stamp'),
+                        (e.Quests = 'quests'));
                 })(va || (va = {})),
                     (function (e) {
                         ((e.Gold = 'gold'),
@@ -5267,6 +5270,8 @@
                     va.CosmicLootboxCommon,
                     va.CosmicLootboxSilver,
                     va.SelectableBonus,
+                    va.GoldenTicket,
+                    va.PostStamp,
                     va.Gold,
                     va.Credits,
                     va.Crystal,
@@ -5666,7 +5671,7 @@
                         Va.apply(this, arguments)
                     );
                 }
-                const Ka = (0, n.memo)((e) => {
+                const qa = (0, n.memo)((e) => {
                         const t = e.progression,
                             u = e.size,
                             n = e.battlePassState,
@@ -5746,7 +5751,7 @@
                             ),
                         );
                     }),
-                    qa = 'BattlePassEmblem_base_65',
+                    Ka = 'BattlePassEmblem_base_65',
                     Qa = 'BattlePassEmblem_flag_0c',
                     Za = 'BattlePassEmblem_flag__isChapterChosen_08',
                     Ja = 'BattlePassEmblem_emblem_2c',
@@ -5783,7 +5788,7 @@
                         return a().createElement(
                             'div',
                             {
-                                className: qa,
+                                className: Ka,
                                 onClick: u.submit,
                                 onMouseDown: () => {
                                     W.playClick();
@@ -5796,7 +5801,7 @@
                             a().createElement(
                                 'div',
                                 { className: Ja },
-                                a().createElement(Ka, {
+                                a().createElement(qa, {
                                     progression: d,
                                     size: g,
                                     battlePassState: A,
@@ -6323,15 +6328,15 @@
                                 { isTabsCentered: !0 },
                                 a().createElement(
                                     'div',
-                                    { 'tabs-role': K.LIST },
+                                    { 'tabs-role': q.LIST },
                                     a().createElement(
                                         Fe,
-                                        { 'tabs-role': K.TAB, 'tab-key': Hr.Results, onClick: m },
+                                        { 'tabs-role': q.TAB, 'tab-key': Hr.Results, onClick: m },
                                         R.strings.battle_royale.battleResult.tab.result(),
                                     ),
                                     a().createElement(
                                         Fe,
-                                        { 'tabs-role': K.TAB, 'tab-key': Hr.Leaderboard, onClick: m },
+                                        { 'tabs-role': q.TAB, 'tab-key': Hr.Leaderboard, onClick: m },
                                         R.strings.battle_royale.battleResult.tab.leaderboard(),
                                     ),
                                 ),
@@ -6348,8 +6353,8 @@
                             },
                             a().createElement(
                                 'div',
-                                { className: qe },
-                                a().createElement('p', { className: Ke }, e),
+                                { className: Ke },
+                                a().createElement('p', { className: qe }, e),
                                 a().createElement('div', { className: Ve }, a().createElement(lt, null)),
                             ),
                         ),

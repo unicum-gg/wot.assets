@@ -20,3 +20,16 @@
 .FormatColorTagText_text_85 {
     flex: 1;
 }
+
+.FormatColorTagText_effect_0f {
+    color: #ffc363;
+}
+
+.FormatColorTagText_icon_36 {
+    width: 10rem;
+    height: 16rem;
+    background: url('R.images.gui.maps.icons.tanksetup.cards.effect') no-repeat center / contain;
+    position: relative;
+    top: 2rem;
+    left: -2rem;
+}

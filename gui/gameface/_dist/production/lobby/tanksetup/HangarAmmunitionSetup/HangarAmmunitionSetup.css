@@ -788,6 +788,12 @@
     flex-direction: column;
     width: 100%;
     height: 166rem;
+    padding-top: 12rem;
+}
+.Layout_base__small_cb .Layout_footer_f4,
+.Layout_base__medium_df .Layout_footer_f4,
+.Layout_base__large_f6 .Layout_footer_f4,
+.Layout_base__huge_d2 .Layout_footer_f4 {
     padding-top: 20rem;
 }
 
@@ -867,7 +873,6 @@ body {
     padding-bottom: 23rem;
     position: absolute;
     bottom: 35rem;
-    z-index: 1;
 }
 
 .SetupApp_back_20 {
@@ -4407,6 +4412,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .ScrollableCards_scroll_4b {
+    width: 100%;
     margin-right: -5rem;
 }
 
@@ -4431,6 +4437,19 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 
 .FormatColorTagText_text_85 {
     flex: 1;
+}
+
+.FormatColorTagText_effect_0f {
+    color: #ffc363;
+}
+
+.FormatColorTagText_icon_36 {
+    width: 10rem;
+    height: 16rem;
+    background: url('R.images.gui.maps.icons.tanksetup.cards.effect') no-repeat center / contain;
+    position: relative;
+    top: 2rem;
+    left: -2rem;
 }
 
 .BaseCard_base_17 {
@@ -5281,6 +5300,14 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .Header_tabs__tiny_35 {
     margin-top: 16rem;
 }
+.Header_headerHolder_db {
+    width: 100%;
+}
+.Header_tabsHolder_8e {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
 
 .Header_base_aa {
     display: flex;
@@ -5322,6 +5349,602 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .mediaLargeWidth .Header_infoButton_5e {
     opacity: 0;
     pointer-events: none;
+}
+
+.TextOverflow_base_3b {
+    flex: 0 1 auto;
+    width: auto;
+    line-height: 1.3;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.DropDownControl_base_46 {
+    display: flex;
+    height: 100%;
+    border: 1rem solid #464538;
+    border-radius: 2rem;
+    box-shadow:
+        inset 0 0 1rem #000,
+        inset 0 0 8rem #000;
+    transition: background 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.DropDownControl_base__small_22 {
+    height: 24rem;
+}
+
+.DropDownControl_base__medium_09 {
+    height: 32rem;
+}
+
+.DropDownControl_base__over_e7 {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.DropDownControl_base__down_1c,
+.DropDownControl_base__open_e3 {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.4) 100%);
+}
+
+.DropDownControl_base__focused_63 {
+    border-color: #75552c;
+}
+
+.DropDownControl_base__selected_46 {
+    border-color: #7ab300;
+}
+
+.DropDownControl_base__disabled_37 {
+    cursor: default;
+}
+.DropDownControl_label_12 {
+    display: flex;
+    align-items: flex-end;
+    flex: 1;
+    padding: 0 8rem;
+    color: #8c8c7e;
+}
+.DropDownControl_label__small_e7 {
+    padding-bottom: 2rem;
+    font-size: 14rem;
+}
+.DropDownControl_label__medium_0b {
+    padding-bottom: 5rem;
+    font-size: 16rem;
+}
+.DropDownControl_label__placeholder_98 {
+    color: #595950;
+}
+.DropDownControl_base__down_1c .DropDownControl_label_12,
+.DropDownControl_base__open_e3 .DropDownControl_label_12 {
+    opacity: 0.8;
+}
+.DropDownControl_base__disabled_37 .DropDownControl_label_12 {
+    color: #37362e;
+}
+.DropDownControl_button_cb {
+    display: flex;
+    background: url('R.images.gui.maps.icons.components.dropdown.button') no-repeat center / 100%;
+    position: relative;
+    top: 1rem;
+    right: 1rem;
+    pointer-events: none;
+}
+.DropDownControl_button__small_b5 {
+    width: 22rem;
+    height: 20rem;
+}
+.DropDownControl_button__medium_14 {
+    width: 28rem;
+    height: 28rem;
+}
+.DropDownControl_base__down_1c .DropDownControl_button_cb {
+    opacity: 0.6;
+}
+.DropDownControl_base__open_e3 .DropDownControl_button_cb {
+    opacity: 0.8;
+}
+.DropDownControl_base__disabled_37 .DropDownControl_button_cb {
+    opacity: 0.8;
+}
+.DropDownControl_gradient_b5 {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
+    position: absolute;
+}
+.DropDownControl_disabled_4e {
+    width: 100%;
+    height: 100%;
+    background: url('R.images.gui.maps.icons.library.disabled_pattern') center / 9rem;
+    opacity: 0.8;
+    position: absolute;
+}
+.DropDownControl_arrow_de {
+    background: no-repeat center / contain;
+    position: absolute;
+}
+.DropDownControl_arrow__small_77 {
+    width: 9rem;
+    height: 6rem;
+    background-image: url('R.images.gui.maps.icons.components.dropdown.arrow_small');
+    top: 7rem;
+    left: 7rem;
+}
+.DropDownControl_arrow__medium_3d {
+    width: 13rem;
+    height: 7rem;
+    background-image: url('R.images.gui.maps.icons.components.dropdown.arrow_medium');
+    top: 11rem;
+    left: 8rem;
+}
+.DropDownControl_base__open_e3 .DropDownControl_arrow_de {
+    transform: rotate(180deg);
+}
+.DropDownControl_alert_75 {
+    border: 1rem solid #ee7000;
+    border-radius: 2rem;
+    box-shadow: inset 0 0 6rem rgba(141, 13, 3, 0.1);
+    position: absolute;
+    top: -1rem;
+    right: -1rem;
+    bottom: -1rem;
+    left: -1rem;
+    z-index: 1;
+    animation: DropDownControl_blink_68 2s ease-in-out infinite;
+    pointer-events: none;
+}
+@keyframes DropDownControl_blink_68 {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.DropDownItem_base_5e {
+    padding-left: 8rem;
+    padding-right: 8rem;
+    color: #8c8c7e;
+    cursor: pointer;
+}
+
+.DropDownItem_base_5e:hover {
+    background-color: #1c1b12;
+}
+
+.DropDownItem_base__small_d6 {
+    padding-top: 3rem;
+    padding-bottom: 5rem;
+}
+
+.DropDownItem_base__medium_e4 {
+    padding-top: 6rem;
+    padding-bottom: 8rem;
+}
+
+.DropDownItem_base__selected_8e {
+    color: #cbac77;
+}
+
+.DropDownItem_base__disabled_21 {
+    color: #37362e;
+    pointer-events: none;
+}
+
+.DropDownItems_base__withScroll_19 {
+    padding-right: 15rem;
+}
+
+.DropDownList_base_62 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-height: 198rem;
+    position: relative;
+}
+
+.DropDownList_base__small_0c {
+    font-size: 14rem;
+    line-height: 16rem;
+}
+
+.DropDownList_base__medium_99 {
+    font-size: 16rem;
+    line-height: 18rem;
+}
+.DropDownList_scrollMix_45 .ps__rail-y {
+    right: 1rem;
+}
+
+.PureDropDown_base_fc {
+    display: flex;
+    flex-direction: column;
+    width: 200rem;
+    border-radius: 2rem;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.6);
+    background-color: rgba(23, 23, 15, 0.8);
+    position: relative;
+}
+
+.PureDropDown_base__small_a6 {
+    height: 24rem;
+}
+
+.PureDropDown_base__medium_05 {
+    height: 32rem;
+}
+.PureDropDown_control__down_18 {
+    z-index: 3;
+}
+.PureDropDown_list_28 {
+    display: flex;
+    width: 100%;
+    border: 1rem solid #464538;
+    border-radius: 2rem;
+    background-color: #090906;
+    position: absolute;
+    left: 0;
+    transition: opacity 0.25s;
+}
+.PureDropDown_list__up_a1 {
+    opacity: 0;
+    z-index: -1;
+    pointer-events: none;
+}
+.PureDropDown_list__down_c4 {
+    opacity: 1;
+    z-index: 2;
+}
+.PureDropDown_list__under_64 {
+    margin-top: -1rem;
+    top: 100%;
+}
+.PureDropDown_list__above_c8 {
+    top: 1rem;
+    transform: translateY(-100%);
+}
+
+.AutoRenewalDropdown_base_3d {
+    width: 190rem;
+}
+
+.AutoRenewalDropdown_dropdownList_c6 {
+    max-height: 224rem;
+}
+
+.AutoRenewal_dropdown_35 {
+    margin-left: 10rem;
+}
+
+.DealPanel_base_10 {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 32rem;
+    position: relative;
+    z-index: 2;
+}
+
+.DealPanel_base__tiny_86 {
+    justify-content: center;
+}
+
+.DealPanel_base__small_f6,
+.DealPanel_base__medium_8a {
+    width: 902rem;
+}
+
+.DealPanel_base__small_f6.DealPanel_base__renewal_8b,
+.DealPanel_base__medium_8a.DealPanel_base__renewal_8b {
+    justify-content: space-between;
+}
+
+.DealPanel_base__large_7b,
+.DealPanel_base__huge_b3 {
+    width: 1102rem;
+}
+
+.DealPanel_base__large_7b.DealPanel_base__renewal_8b,
+.DealPanel_base__huge_b3.DealPanel_base__renewal_8b {
+    justify-content: space-between;
+}
+
+.DealPanel_base__dialog_b4 {
+    flex-direction: column-reverse;
+}
+
+.DealPanel_base__renewal_8b {
+    justify-content: flex-start;
+}
+.DealPanel_storage_40 {
+    display: flex;
+    align-items: center;
+}
+.DealPanel_storage__medium_fe,
+.DealPanel_storage__large_1e,
+.DealPanel_storage__huge_e3 {
+    padding-top: 4rem;
+}
+.DealPanel_from_70 {
+    color: #8c8c7e;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+    margin-right: 3rem;
+}
+.DealPanel_base__dialog_b4 .DealPanel_from_70 {
+    display: block;
+}
+.DealPanel_plus_b0 {
+    width: 24rem;
+    height: 24rem;
+    margin: 0 3rem;
+    background: url('R.images.gui.maps.icons.tanksetup.hangar.plus') no-repeat center / contain;
+    position: relative;
+    top: 1rem;
+}
+.DealPanel_renewal_a8 {
+    display: flex;
+    margin-right: 30rem;
+}
+.DealPanel_renewal__dialog_aa {
+    margin-top: 15rem;
+    position: relative;
+    top: 0;
+}
+.DealPanel_control_39 {
+    margin-left: 20rem;
+}
+.DealPanel_totalPrice_2d {
+    display: flex;
+    align-items: center;
+    margin-left: 30rem;
+    position: relative;
+    top: -2rem;
+}
+.DealPanel_totalPrice__mixed_fd {
+    margin-left: 0;
+}
+
+.TotalPrice_base_d9 {
+    display: flex;
+    align-items: center;
+}
+
+.TotalPrice_message_66 {
+    color: #8c8c7e;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+    margin-top: 5rem;
+    margin-right: 7rem;
+    position: relative;
+}
+
+.TotalPrice_message__hidden_29 {
+    display: none;
+}
+
+.TotalPrice_plus_f0 {
+    width: 24rem;
+    height: 24rem;
+    margin: 0 3rem;
+    background: url('R.images.gui.maps.icons.tanksetup.hangar.plus') no-repeat center / contain;
+    position: relative;
+    top: 1rem;
+}
+
+.CompareHeader_base_7a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 902rem;
+}
+
+.CompareHeader_base__small_ad,
+.CompareHeader_base__medium_b7 {
+    width: 902rem;
+}
+
+.CompareHeader_base__large_6f,
+.CompareHeader_base__huge_d0 {
+    width: 1102rem;
+}
+.CompareHeader_title_59 {
+    color: #f5eed5;
+    font-size: 28rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-top: 12rem;
+    text-align: center;
+}
+.CompareHeader_description_1c {
+    color: #8c8c7e;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    margin-top: 12rem;
+    text-align: center;
+}
+.CompareHeader_controlsContainer_8b {
+    width: 100%;
+    margin-top: 17rem;
+    position: relative;
+}
+.CompareHeader_tabs_15 {
+    position: absolute;
+    left: 0;
+}
+.CompareHeader_filters_80 {
+    position: absolute;
+    top: 10rem;
+    right: 0;
+}
+
+.InfoButton_base__standalone_a0 {
+    display: none;
+    position: absolute;
+    top: 51rem;
+    left: 20rem;
+}
+
+.mediaLarge .InfoButton_base__standalone_a0 {
+    display: flex;
+}
+.InfoButton_base__onlyIcon_bb {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30rem;
+    height: 30rem;
+    border: 1rem solid rgba(147, 147, 147, 0.35);
+    border-radius: 2rem;
+    background: rgba(0, 0, 0, 0.15);
+}
+
+.InfoButton_hidden_e0 {
+    display: none;
+}
+
+.Introduction_base_7e {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.Introduction_base__enter_b2 {
+    opacity: 0;
+}
+
+.Introduction_base__enterActive_10 {
+    opacity: 1;
+    transition: opacity 0.3s ease-in;
+}
+
+.Introduction_base__exit_65 {
+    opacity: 1;
+}
+
+.Introduction_base__exitActive_b8 {
+    opacity: 0;
+    transition: opacity 0.3s ease-out;
+}
+
+.Introduction_introduction_3a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.Introduction_image_bc {
+    width: 350rem;
+    height: 250rem;
+    margin-top: -40rem;
+    background: no-repeat center / contain;
+}
+
+.Introduction_base__large_b6 .Introduction_image_bc,
+.Introduction_base__huge_de .Introduction_image_bc {
+    width: 600rem;
+    height: 450rem;
+    margin-top: 0;
+}
+
+.Introduction_image__deluxe_5d {
+    background-image: url('R.images.gui.maps.icons.modules.listOverlay');
+}
+
+.Introduction_image__deluxeLarge_4a {
+    background-image: url('R.images.gui.maps.icons.modules.listOverlayBig');
+}
+
+.Introduction_image__trophy_e6 {
+    background-image: url('R.images.gui.maps.icons.modules.trophyOverlay');
+}
+
+.Introduction_image__trophyLarge_d7 {
+    background-image: url('R.images.gui.maps.icons.modules.trophyOverlayBig');
+}
+
+.Introduction_image__modernized_5d {
+    background-image: url('R.images.gui.maps.icons.modules.modernizedOverlay');
+}
+
+.Introduction_image__modernizedLarge_00 {
+    background-image: url('R.images.gui.maps.icons.modules.modernizedOverlayBig');
+}
+
+.Introduction_image__economic_99 {
+    background-image: url('R.images.gui.maps.icons.modules.economicOverlay');
+}
+
+.Introduction_image__economicLarge_20 {
+    background-image: url('R.images.gui.maps.icons.modules.economicOverlayBig');
+}
+
+.Introduction_description_4b {
+    width: 600rem;
+    margin: -40rem 0 -20rem;
+}
+
+.Introduction_base__large_b6 .Introduction_description_4b,
+.Introduction_base__huge_de .Introduction_description_4b {
+    margin: -60rem 0 0;
+}
+
+.Introduction_title_96 {
+    color: #f2f2f7;
+    font-size: 28rem;
+    font-weight: 700;
+    line-height: 1.1;
+    text-align: center;
+}
+
+.Introduction_message_87 {
+    color: #8c8c7e;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    display: flex;
+    justify-content: center;
+    margin: 10rem 0 35rem;
+    text-align: center;
+}
+
+.Introduction_currency_04 {
+    color: #e9e2bf;
+}
+
+.Introduction_icon_06 {
+    width: 16rem;
+    height: 16rem;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: relative;
+}
+
+.Introduction_icon__currency-deluxe_e0 {
+    background-image: url('R.images.gui.maps.icons.library.CrystalIcon_2');
+    transform: translateY(2rem);
+}
+
+.Introduction_icon__currency-modernized_07 {
+    background-image: url('R.images.gui.maps.icons.library.equipCoin_1');
+    transform: translateY(3rem);
 }
 
 .Tabs_base_d9 {
@@ -5473,110 +6096,26 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     margin-right: -10rem;
 }
 
-.DealPanel_base_10 {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
+.BattleBoosterSetup_intro_d3 {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
     position: relative;
-    z-index: 1;
 }
 
-.DealPanel_base__tiny_86 {
-    justify-content: center;
-}
-
-.DealPanel_base__small_f6,
-.DealPanel_base__medium_8a {
-    width: 902rem;
-}
-
-.DealPanel_base__large_7b,
-.DealPanel_base__huge_b3 {
-    width: 1102rem;
-}
-
-.DealPanel_base__dialog_b4 {
-    flex-direction: column-reverse;
-}
-.DealPanel_storage_40 {
-    display: flex;
-    align-items: center;
-}
-.DealPanel_storage__medium_fe,
-.DealPanel_storage__large_1e,
-.DealPanel_storage__huge_e3 {
-    padding-top: 4rem;
-}
-.DealPanel_from_70 {
+.Booster_base_e5 {
     color: #8c8c7e;
-    font-size: 16rem;
+    font-size: 14rem;
     font-weight: 400;
-    line-height: 1.25;
-    margin-right: 3rem;
+    line-height: 1.3;
+    line-height: 18rem;
 }
-.DealPanel_base__dialog_b4 .DealPanel_from_70 {
-    display: block;
-}
-.DealPanel_plus_b0 {
-    width: 24rem;
-    height: 24rem;
-    margin: 0 3rem;
-    background: url('R.images.gui.maps.icons.tanksetup.hangar.plus') no-repeat center / contain;
+.Booster_unit_5e {
+    color: #80d43a;
     position: relative;
-    top: 1rem;
 }
-.DealPanel_renewal_a8 {
-    display: flex;
-    position: absolute;
-    top: 8rem;
-    left: 0;
-}
-.DealPanel_renewal__dialog_aa {
-    margin-top: 15rem;
-    position: relative;
-    top: 0;
-}
-.DealPanel_control_39 {
-    margin-left: 20rem;
-}
-.DealPanel_totalPrice_2d {
-    display: flex;
-    align-items: center;
-    margin-left: 30rem;
-    position: relative;
-    top: -2rem;
-}
-.DealPanel_totalPrice__mixed_fd {
-    margin-left: 0;
-}
-
-.TotalPrice_base_d9 {
-    display: flex;
-    align-items: center;
-}
-
-.TotalPrice_message_66 {
-    color: #8c8c7e;
-    font-size: 16rem;
-    font-weight: 400;
-    line-height: 1.25;
-    margin-top: 5rem;
-    margin-right: 7rem;
-    position: relative;
-    top: 2rem;
-}
-
-.TotalPrice_message__hidden_29 {
-    display: none;
-}
-
-.TotalPrice_plus_f0 {
-    width: 24rem;
-    height: 24rem;
-    margin: 0 3rem;
-    background: url('R.images.gui.maps.icons.tanksetup.hangar.plus') no-repeat center / contain;
-    position: relative;
-    top: 1rem;
+.Booster_unit__special_54 {
+    color: #b4ff48;
 }
 
 .Action_base_bf {
@@ -5649,21 +6188,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     transform: translateY(0);
 }
 
-.Booster_base_e5 {
-    color: #8c8c7e;
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
-    line-height: 18rem;
-}
-.Booster_unit_5e {
-    color: #80d43a;
-    position: relative;
-}
-.Booster_unit__special_54 {
-    color: #b4ff48;
-}
-
 .Cards_base_0a {
     display: flex;
     flex-wrap: wrap;
@@ -5687,53 +6211,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .Cards_card__large_b2,
 .Cards_card__huge_78 {
     padding: 0 0 20rem 20rem;
-}
-
-.CompareHeader_base_7a {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 902rem;
-}
-
-.CompareHeader_base__small_ad,
-.CompareHeader_base__medium_b7 {
-    width: 902rem;
-}
-
-.CompareHeader_base__large_6f,
-.CompareHeader_base__huge_d0 {
-    width: 1102rem;
-}
-.CompareHeader_title_59 {
-    color: #f5eed5;
-    font-size: 28rem;
-    font-weight: 700;
-    line-height: 1.1;
-    margin-top: 12rem;
-    text-align: center;
-}
-.CompareHeader_description_1c {
-    color: #8c8c7e;
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
-    margin-top: 12rem;
-    text-align: center;
-}
-.CompareHeader_controlsContainer_8b {
-    width: 100%;
-    margin-top: 17rem;
-    position: relative;
-}
-.CompareHeader_tabs_15 {
-    position: absolute;
-    left: 0;
-}
-.CompareHeader_filters_80 {
-    position: absolute;
-    top: 10rem;
-    right: 0;
 }
 
 .Consumable_base_54 {
@@ -6109,129 +6586,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .Cards_card__large_0e,
 .Cards_card__huge_84 {
     padding: 0 0 20rem 20rem;
-}
-
-.Introduction_base_0e {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-}
-
-.Introduction_base__enter_93 {
-    opacity: 0;
-}
-
-.Introduction_base__enterActive_e5 {
-    opacity: 1;
-    transition: opacity 0.3s ease-in;
-}
-
-.Introduction_base__exit_74 {
-    opacity: 1;
-}
-
-.Introduction_base__exitActive_4e {
-    opacity: 0;
-    transition: opacity 0.3s ease-out;
-}
-
-.Introduction_introduction_b1 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.Introduction_image_78 {
-    width: 350rem;
-    height: 250rem;
-    margin-top: -40rem;
-    background: no-repeat center / contain;
-}
-
-.Introduction_base__large_30 .Introduction_image_78,
-.Introduction_base__huge_51 .Introduction_image_78 {
-    width: 600rem;
-    height: 450rem;
-    margin-top: 0;
-}
-
-.Introduction_image__deluxe_b6 {
-    background-image: url('R.images.gui.maps.icons.modules.listOverlay');
-}
-
-.Introduction_image__deluxeLarge_ce {
-    background-image: url('R.images.gui.maps.icons.modules.listOverlayBig');
-}
-
-.Introduction_image__trophy_1f {
-    background-image: url('R.images.gui.maps.icons.modules.trophyOverlay');
-}
-
-.Introduction_image__trophyLarge_58 {
-    background-image: url('R.images.gui.maps.icons.modules.trophyOverlayBig');
-}
-
-.Introduction_image__modernized_f6 {
-    background-image: url('R.images.gui.maps.icons.modules.modernizedOverlay');
-}
-
-.Introduction_image__modernizedLarge_d7 {
-    background-image: url('R.images.gui.maps.icons.modules.modernizedOverlayBig');
-}
-
-.Introduction_description_f2 {
-    width: 600rem;
-    margin: -40rem 0 -20rem;
-}
-
-.Introduction_base__large_30 .Introduction_description_f2,
-.Introduction_base__huge_51 .Introduction_description_f2 {
-    margin: -60rem 0 0;
-}
-
-.Introduction_title_74 {
-    color: #f2f2f7;
-    font-size: 28rem;
-    font-weight: 700;
-    line-height: 1.1;
-    text-align: center;
-}
-
-.Introduction_message_d3 {
-    color: #8c8c7e;
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
-    display: flex;
-    justify-content: center;
-    margin: 10rem 0 35rem;
-    text-align: center;
-}
-
-.Introduction_currency_60 {
-    color: #e9e2bf;
-}
-
-.Introduction_icon_0d {
-    width: 16rem;
-    height: 16rem;
-    background-repeat: no-repeat;
-    background-size: contain;
-    position: relative;
-}
-
-.Introduction_icon__currency-deluxe_5e {
-    background-image: url('R.images.gui.maps.icons.library.CrystalIcon_2');
-    transform: translateY(2rem);
-}
-
-.Introduction_icon__currency-modernized_09 {
-    background-image: url('R.images.gui.maps.icons.library.equipCoin_1');
-    transform: translateY(3rem);
 }
 
 .OptDevicesSetup_intro_ae {

@@ -1103,7 +1103,7 @@
                         [b.Large]: `${h().SMALL} ${h().MEDIUM} ${h().LARGE}`,
                         [b.ExtraLarge]: `${h().SMALL} ${h().MEDIUM} ${h().LARGE} ${h().EXTRA_LARGE}`,
                     },
-                    M = (e) => {
+                    T = (e) => {
                         let u = e.children,
                             t = e.className,
                             a = (function (e, u) {
@@ -1121,7 +1121,7 @@
                             s = r.mediaSize;
                         return n().createElement('div', S({ className: C()(t, O[i], y[o], L[s]) }, a), u);
                     },
-                    T = ['children'];
+                    M = ['children'];
                 const k = (e) => {
                     let u = e.children,
                         t = (function (e, u) {
@@ -1132,8 +1132,8 @@
                                 r = Object.keys(e);
                             for (a = 0; a < r.length; a++) ((t = r[a]), u.indexOf(t) >= 0 || (n[t] = e[t]));
                             return n;
-                        })(e, T);
-                    return n().createElement(p, null, n().createElement(M, t, u));
+                        })(e, M);
+                    return n().createElement(p, null, n().createElement(T, t, u));
                 };
                 var I = t(493),
                     P = t.n(I),
@@ -1298,11 +1298,11 @@
                             O = e.alignSelf,
                             y = e.wrap,
                             L = e.flexWrap,
-                            M = void 0 === L ? (y ? 'wrap' : void 0) : L,
-                            T = e.grow,
+                            T = void 0 === L ? (y ? 'wrap' : void 0) : L,
+                            M = e.grow,
                             R = e.shrink,
                             k = e.flex,
-                            I = void 0 === k ? (T || R ? `${T ? 1 : 0} ${R ? 1 : 0} auto` : void 0) : k,
+                            I = void 0 === k ? (M || R ? `${M ? 1 : 0} ${R ? 1 : 0} auto` : void 0) : k,
                             P = e.style,
                             N = e.children,
                             H = (function (e, u) {
@@ -1334,13 +1334,13 @@
                                         alignSelf: O,
                                         display: p || S ? 'flex' : void 0,
                                         flexDirection: p,
-                                        flexWrap: M,
+                                        flexWrap: T,
                                         justifyContent: w,
                                         alignItems: S,
                                     }),
                                     computedClassNames: u,
                                 };
-                            }, [t, r, s, E, m, d, P, I, O, p, M, w, S]),
+                            }, [t, r, s, E, m, d, P, I, O, p, T, w, S]),
                             G = W.computedStyle,
                             $ = W.computedClassNames;
                         return n().createElement('div', X({ className: C()(U.base, ...$, u), style: G }, H), N);
@@ -1803,13 +1803,13 @@
                 !(function (e) {
                     ((e.Available = 'available'), (e.Disable = 'disable'), (e.Hidden = 'hidden'));
                 })(Le || (Le = {}));
-                var Me = t(521);
-                const Te = (e) => {
+                var Te = t(521);
+                const Me = (e) => {
                     console.error(e.type + ': useKeydownListener hook :: Callback is not defined');
                 };
-                function Re(e = Me.n.NONE, u = Te, t = !1) {
+                function Re(e = Te.n.NONE, u = Me, t = !1) {
                     (0, a.useEffect)(() => {
-                        if (e !== Me.n.NONE)
+                        if (e !== Te.n.NONE)
                             return (
                                 window.addEventListener('keydown', a, t),
                                 () => {
@@ -2427,7 +2427,7 @@
                     Ou = (e) => (e ? { left: 0 } : { right: 0 }),
                     yu = (e, u) => (e ? { right: 100 - u + '%' } : { left: `${u}%` }),
                     Lu = (e) => ({ transitionDuration: `${e}ms` }),
-                    Mu = (0, a.memo)(
+                    Tu = (0, a.memo)(
                         ({
                             transitionDuration: e,
                             transitionDelay: u,
@@ -2490,7 +2490,7 @@
                             );
                         },
                     ),
-                    Tu = (0, a.memo)(
+                    Mu = (0, a.memo)(
                         ({
                             to: e,
                             size: u,
@@ -2529,7 +2529,7 @@
                                     baseStyles: A ? D : F,
                                 }),
                                 t >= 0 &&
-                                    n().createElement(Mu, {
+                                    n().createElement(Tu, {
                                         transitionDuration: s.delta.duration,
                                         transitionDelay: s.delta.delay,
                                         onChangeAnimationState: _,
@@ -2581,7 +2581,7 @@
                             case mu.Simple:
                                 return n().createElement(fu, ku({}, r, { onEndAnimation: l, isComplete: o }));
                             case mu.Growing:
-                                return n().createElement(Tu, ku({}, r, { onEndAnimation: l, isComplete: o }));
+                                return n().createElement(Mu, ku({}, r, { onEndAnimation: l, isComplete: o }));
                             default:
                                 return null;
                         }
@@ -2770,7 +2770,9 @@
                         base__disabled: 'LastOperation_base__disabled_dd',
                         title: 'LastOperation_title_f0',
                         subtitle: 'LastOperation_subtitle_92',
-                        subtitle__text: 'LastOperation_subtitle__text_58',
+                        subtitle__bg: 'LastOperation_subtitle__bg_e0',
+                        subtitleText: 'LastOperation_subtitleText_6e',
+                        subtitleText__inGame: 'LastOperation_subtitleText__inGame_41',
                         iconLock: 'LastOperation_iconLock_f2',
                         development: 'LastOperation_development_43',
                         typeIcon: 'LastOperation_typeIcon_19',
@@ -2855,14 +2857,19 @@
                                             n().createElement(
                                                 'div',
                                                 { className: Ku.subtitle },
-                                                n().createElement(Ce, { className: Ku.subtitle__text, text: u }),
+                                                n().createElement('div', { className: Ku.subtitle__bg }),
+                                                n().createElement(Ce, { className: Ku.subtitleText, text: u }),
                                                 n().createElement('div', {
                                                     className: C()(Ku.typeIcon, Ku[`typeIcon__${B}${E ? qu : ''}`]),
                                                     style: {
                                                         backgroundImage: `url(R.images.gui.maps.icons.vehicleTypes.c_44x44.${B}${E ? qu : ''})`,
                                                     },
                                                 }),
-                                                n().createElement(Ce, { className: Ku.subtitle__text, text: l }),
+                                                n().createElement(Ce, { className: Ku.subtitleText, text: l }),
+                                                n().createElement(Ce, {
+                                                    className: Ku.subtitleText__inGame,
+                                                    text: Yu.lastOperation.inGame(),
+                                                }),
                                             ),
                                             s === qe.Completed
                                                 ? n().createElement(
@@ -3086,12 +3093,12 @@
                                 O = !B && s !== Ye.Disabled,
                                 y = J(t),
                                 L = O && d,
-                                M = L
+                                T = L
                                     ? {
                                           header:
-                                              ((T = ot.simple.disabled.header()),
+                                              ((M = ot.simple.disabled.header()),
                                               (k = { name: e }),
-                                              T.replace(/(\{|%\()\w+(\}|\)s)/g, (e) => {
+                                              M.replace(/(\{|%\()\w+(\}|\)s)/g, (e) => {
                                                   const u = 0 === e.indexOf('%') ? 2 : 1;
                                                   return String(k[e.slice(u, -u)]);
                                               })),
@@ -3106,10 +3113,10 @@
                                           args: { operationId: c },
                                           ignoreShowDelay: !0,
                                       };
-                            var T, k;
+                            var M, k;
                             return n().createElement(
                                 tt,
-                                { tooltipArgs: M },
+                                { tooltipArgs: T },
                                 n().createElement(
                                     'div',
                                     {
@@ -3559,8 +3566,8 @@
                 })(Lt || (Lt = {}));
                 Date.now();
                 he.Sw.instance;
-                const Mt = yt,
-                    Tt = 'Video_video_26',
+                const Tt = yt,
+                    Mt = 'Video_video_26',
                     Rt = n().memo(function ({
                         src: e,
                         className: u,
@@ -3598,7 +3605,7 @@
                                     t
                                 );
                             })(A),
-                            _ = Mt(r),
+                            _ = Tt(r),
                             F = (0, a.useCallback)(() => {
                                 s && !_ && s();
                             }, [s, _]),
@@ -3636,7 +3643,7 @@
                                 n().createElement('video', {
                                     ref: A,
                                     src: e,
-                                    className: C()(Tt),
+                                    className: C()(Mt),
                                     loop: !1,
                                     autoPlay: t,
                                     onError: E,
@@ -3897,7 +3904,7 @@
                     }, [D]);
                     const p = Je.some((e) => d.some((u) => u.status === e));
                     var B;
-                    ((B = u.close), Re(Me.n.ESCAPE, B));
+                    ((B = u.close), Re(Te.n.ESCAPE, B));
                     return n().createElement(
                         'div',
                         { className: C()(lu.base, (l || _) && lu.base__visible, _ && lu.base__low) },

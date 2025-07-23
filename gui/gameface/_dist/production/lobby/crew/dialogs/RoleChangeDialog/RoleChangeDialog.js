@@ -1139,9 +1139,9 @@
                         (e.YEAR = 'year'),
                         (e.DATE_YEAR = 'date-year'));
                 })(U || (U = {}));
-                var V = t(4179);
+                var $ = t(4179);
                 Date.now();
-                const $ = (e = 1) => {
+                const V = (e = 1) => {
                         const u = new Error().stack;
                         let t,
                             n = R.invalid('resId');
@@ -1166,7 +1166,7 @@
                             }))(e, (e, u) => `${e}.${u}.value`),
                     K = (e) => {
                         const u = ((e) => {
-                                const u = $(),
+                                const u = V(),
                                     t = u.caller,
                                     n = u.resId,
                                     r = window.__feature && window.__feature !== t && t ? `subViews.${t}` : '';
@@ -1186,7 +1186,7 @@
                         }
                         return '';
                     },
-                    Y = V.Sw.instance;
+                    Y = $.Sw.instance;
                 let X;
                 !(function (e) {
                     ((e.None = 'None'), (e.Shallow = 'Shallow'), (e.Deep = 'Deep'));
@@ -1194,7 +1194,7 @@
                 const Z = (e = 'model', u = X.Deep) => {
                     const t = (0, n.useState)(0),
                         r = (t[0], t[1]),
-                        a = (0, n.useMemo)(() => $(), []),
+                        a = (0, n.useMemo)(() => V(), []),
                         i = a.caller,
                         o = a.resId,
                         s = (0, n.useMemo)(
@@ -1240,7 +1240,7 @@
                         c
                     );
                 };
-                V.Sw.instance;
+                $.Sw.instance;
                 var Q = t(5521);
                 const J = (e) => {
                     console.error(e.type + ': useKeydownListener hook :: Callback is not defined');
@@ -1355,7 +1355,7 @@
                                             ((t.onreadystatechange = () => {
                                                 4 === t.readyState &&
                                                     (200 === t.status
-                                                        ? (0, V.Eu)().then(() => {
+                                                        ? (0, $.Eu)().then(() => {
                                                               (console.info(`Sub view ${u} loaded: ${e}`),
                                                                   engine.TriggerEvent(
                                                                       `subView:inject->${u}`,
@@ -1634,7 +1634,7 @@
                             Object.assign(
                                 {
                                     __Type: 'GFViewEventProxy',
-                                    type: V.B0.TOOLTIP,
+                                    type: $.B0.TOOLTIP,
                                     contentID: e,
                                     decoratorID: u,
                                     targetID: n,
@@ -1673,7 +1673,7 @@
                                 return r;
                             })(e, he);
                         const p = (0, n.useRef)({ timeoutId: 0, isVisible: !1, prevTarget: null, hideTimerId: null }),
-                            b = (0, n.useMemo)(() => h || $().resId, [h]),
+                            b = (0, n.useMemo)(() => h || V().resId, [h]),
                             f = (0, n.useCallback)(() => {
                                 (p.current.isVisible && p.current.timeoutId) ||
                                     (Be(t, A, { isMouseEvent: !0, on: !0, arguments: ge(r) }, b),
@@ -1905,7 +1905,7 @@
                         Oe.apply(this, arguments)
                     );
                 }
-                const Re = (0, n.memo)(() => {
+                const Ne = (0, n.memo)(() => {
                         const e = Z('model').onButtonClicked,
                             u = Z('model.focus'),
                             t = u.focusedIndex,
@@ -1928,7 +1928,7 @@
                             )
                         );
                     }),
-                    Ne = 'DialogTemplateWrapper_base_f7',
+                    Re = 'DialogTemplateWrapper_base_f7',
                     Ie = 'DialogTemplateWrapper_base__hidden_5f',
                     Pe = 'DialogTemplateWrapper_subView_30';
                 function He() {
@@ -1997,7 +1997,7 @@
                                 ),
                             [D, a],
                         ),
-                        p = B()(Ne, d && Ie);
+                        p = B()(Re, d && Ie);
                     return r().createElement(
                         h,
                         null,
@@ -2007,7 +2007,7 @@
                             r().createElement(
                                 e,
                                 He(
-                                    { onClose: A, buttons: r().createElement(Re, null), displayFlags: l, isShown: !d },
+                                    { onClose: A, buttons: r().createElement(Ne, null), displayFlags: l, isShown: !d },
                                     C,
                                 ),
                             ),
@@ -2015,10 +2015,10 @@
                     );
                 });
                 var Ue = t(3403);
-                const Ve = ['children'];
-                function $e() {
+                const $e = ['children'];
+                function Ve() {
                     return (
-                        ($e =
+                        (Ve =
                             Object.assign ||
                             function (e) {
                                 for (var u = 1; u < arguments.length; u++) {
@@ -2027,7 +2027,7 @@
                                 }
                                 return e;
                             }),
-                        $e.apply(this, arguments)
+                        Ve.apply(this, arguments)
                     );
                 }
                 const je = (e) => {
@@ -2040,10 +2040,10 @@
                                 a = Object.keys(e);
                             for (n = 0; n < a.length; n++) ((t = a[n]), u.indexOf(t) >= 0 || (r[t] = e[t]));
                             return r;
-                        })(e, Ve);
+                        })(e, $e);
                     return r().createElement(
                         Ce,
-                        $e(
+                        Ve(
                             {
                                 contentId:
                                     R.views.common.tooltip_window.backport_tooltip_content.BackportTooltipContent(
@@ -2722,19 +2722,19 @@
                 }
                 console.log;
                 var Ou = t(9174);
-                function Ru(e, u) {
+                function Nu(e, u) {
                     var t = ('undefined' != typeof Symbol && e[Symbol.iterator]) || e['@@iterator'];
                     if (t) return (t = t.call(e)).next.bind(t);
                     if (
                         Array.isArray(e) ||
                         (t = (function (e, u) {
                             if (!e) return;
-                            if ('string' == typeof e) return Nu(e, u);
+                            if ('string' == typeof e) return Ru(e, u);
                             var t = Object.prototype.toString.call(e).slice(8, -1);
                             'Object' === t && e.constructor && (t = e.constructor.name);
                             if ('Map' === t || 'Set' === t) return Array.from(e);
                             if ('Arguments' === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t))
-                                return Nu(e, u);
+                                return Ru(e, u);
                         })(e)) ||
                         (u && e && 'number' == typeof e.length)
                     ) {
@@ -2748,7 +2748,7 @@
                         'Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.',
                     );
                 }
-                function Nu(e, u) {
+                function Ru(e, u) {
                     (null == u || u > e.length) && (u = e.length);
                     for (var t = 0, n = new Array(u); t < u; t++) n[t] = e[t];
                     return n;
@@ -2811,7 +2811,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var e, t = Ru(r.keys()); !(e = t()).done; ) a(e.value, u);
+                                                        for (var e, t = Nu(r.keys()); !(e = t()).done; ) a(e.value, u);
                                                     },
                                                     unsubscribe: a,
                                                 };
@@ -2957,15 +2957,15 @@
                     Hu = Pu[0],
                     Wu = Pu[1],
                     Uu = ['I', 'IV', 'V', 'IX', 'X', 'XL', 'L', 'XC', 'C', 'CD', 'D', 'CM', 'M'],
-                    Vu = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
-                const $u = ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE()),
+                    $u = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
+                const Vu = ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE()),
                     ju = (e) =>
-                        $u
+                        Vu
                             ? `${e}`
                             : (function (e) {
                                   let u = '';
-                                  for (let t = Vu.length - 1; t >= 0; t--)
-                                      for (; e >= Vu[t]; ) ((u += Uu[t]), (e -= Vu[t]));
+                                  for (let t = $u.length - 1; t >= 0; t--)
+                                      for (; e >= $u[t]; ) ((u += Uu[t]), (e -= $u[t]));
                                   return u;
                               })(e),
                     Gu = {
@@ -3101,55 +3101,46 @@
                         (e.c444x300 = 'special'),
                         (e.c204x256 = 'c_204x256'));
                 })(ot || (ot = {}));
-                const st = ({ name: e, size: u = ot.c100x60, classMix: t, isSkin: a = !1 }) => {
-                        const i = (0, n.useMemo)(() => {
-                                try {
-                                    let t = R.images.gui.maps.icons.tankmen.icons.$dyn(u);
-                                    a && (t = t.$dyn('crewSkins'));
-                                    const n = t.$dyn(H(e));
-                                    if (!n) throw Error;
-                                    return { backgroundImage: `url(${n})` };
-                                } catch (u) {
-                                    console.error('Cant find resource in TankmanIcon: ', e);
-                                }
-                            }, [e, u, a]),
-                            o = u === ot.c204x256;
+                const st = R.images.gui.maps.icons.tankmen.icons,
+                    lt = (0, n.memo)(({ name: e, size: u = ot.c100x60, className: t, isSkin: n = !1 }) => {
+                        const a = (n ? st.$dyn(u).$dyn('crewSkins') : st.$dyn(u)).$dyn(H(e)),
+                            i = u === ot.c204x256;
                         return r().createElement(
                             'div',
-                            { style: i, className: B()(it.base, it[`base__${u}`], t) },
-                            o && r().createElement('div', { className: it.innerShadow }),
+                            { style: { backgroundImage: `url(${a})` }, className: B()(it.base, it[`base__${u}`], t) },
+                            i && r().createElement('div', { className: it.innerShadow }),
                         );
-                    },
-                    lt = 'IconContent_base_0c',
-                    ct = 'IconContent_separator_0e',
-                    Et = 'IconContent_iconShift_56',
-                    dt = 'IconContent_roles_ea',
-                    _t = 'IconContent_iconRole_23',
-                    At = 'IconContent_arrow_55',
-                    Ft = (0, Ue.Pi)(() => {
+                    }),
+                    ct = 'IconContent_base_0c',
+                    Et = 'IconContent_separator_0e',
+                    dt = 'IconContent_iconShift_56',
+                    _t = 'IconContent_roles_ea',
+                    At = 'IconContent_iconRole_23',
+                    Ft = 'IconContent_arrow_55',
+                    mt = (0, Ue.Pi)(() => {
                         const e = Wu().model;
                         return r().createElement(
                             'div',
-                            { className: lt },
-                            r().createElement(st, {
+                            { className: ct },
+                            r().createElement(lt, {
                                 name: e.iconName.get(),
                                 size: ot.c158x118,
                                 isSkin: e.isSkin.get(),
-                                classMix: Et,
+                                className: dt,
                             }),
-                            r().createElement('div', { className: ct }),
+                            r().createElement('div', { className: Et }),
                             r().createElement(
                                 'div',
-                                { className: dt },
+                                { className: _t },
                                 r().createElement('div', {
-                                    className: _t,
+                                    className: At,
                                     style: {
                                         backgroundImage: `url('${R.images.gui.maps.icons.tankmen.roles.c_52x52.$dyn(e.currentRole.get())}')`,
                                     },
                                 }),
-                                r().createElement('div', { className: At }),
+                                r().createElement('div', { className: Ft }),
                                 r().createElement('div', {
-                                    className: _t,
+                                    className: At,
                                     style: {
                                         backgroundImage: `url('${R.images.gui.maps.icons.tankmen.roles.c_52x52_highlight.$dyn(e.newRole.get())}')`,
                                     },
@@ -3157,10 +3148,10 @@
                             ),
                         );
                     }),
-                    mt = ['onClose', 'buttons', 'isShown', 'displayFlags'];
-                function Dt() {
+                    Dt = ['onClose', 'buttons', 'isShown', 'displayFlags'];
+                function ht() {
                     return (
-                        (Dt =
+                        (ht =
                             Object.assign ||
                             function (e) {
                                 for (var u = 1; u < arguments.length; u++) {
@@ -3169,10 +3160,10 @@
                                 }
                                 return e;
                             }),
-                        Dt.apply(this, arguments)
+                        ht.apply(this, arguments)
                     );
                 }
-                const ht = (0, Ue.Pi)((e) => {
+                const gt = (0, Ue.Pi)((e) => {
                     let u = e.onClose,
                         t = e.buttons,
                         n = e.isShown,
@@ -3185,12 +3176,12 @@
                                 a = Object.keys(e);
                             for (n = 0; n < a.length; n++) ((t = a[n]), u.indexOf(t) >= 0 || (r[t] = e[t]));
                             return r;
-                        })(e, mt);
+                        })(e, Dt);
                     const o = Wu().model;
                     return r().createElement(
                         Lu,
-                        Dt({ onClose: u, buttons: t, displayFlags: a, isShown: n }, i, {
-                            icon: r().createElement(Ft, null),
+                        ht({ onClose: u, buttons: t, displayFlags: a, isShown: n }, i, {
+                            icon: r().createElement(mt, null),
                             title: o.isTankChange.get()
                                 ? r().createElement(fu, {
                                       text: R.strings.dialogs.crewMemberRoleChange.title.extended(),
@@ -3207,7 +3198,7 @@
                         r().createElement(
                             Hu,
                             null,
-                            r().createElement(O, null, r().createElement(We, { Template: ht })),
+                            r().createElement(O, null, r().createElement(We, { Template: gt })),
                         ),
                         document.getElementById('root'),
                     );

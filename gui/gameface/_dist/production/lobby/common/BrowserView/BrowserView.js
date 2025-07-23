@@ -1566,10 +1566,10 @@
                             k(
                                 () => (
                                     window.addEventListener('mouseleave', y.blur),
-                                    window.addEventListener('mouseover', y.focus),
+                                    window.addEventListener('mouseenter', y.focus),
                                     () => {
                                         (window.removeEventListener('mouseleave', y.blur),
-                                            window.removeEventListener('mouseover', y.focus));
+                                            window.removeEventListener('mouseenter', y.focus));
                                     }
                                 ),
                             ));

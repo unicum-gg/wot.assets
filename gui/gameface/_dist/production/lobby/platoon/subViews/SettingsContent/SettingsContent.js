@@ -2280,72 +2280,70 @@
                         ),
                     );
                 };
-                let se, Fe, le, De;
-                (!(function (u) {
+                let se;
+                !(function (u) {
                     ((u[(u.LEFT = 0)] = 'LEFT'),
                         (u[(u.WHEEL = 1)] = 'WHEEL'),
                         (u[(u.RIGHT = 2)] = 'RIGHT'),
                         (u[(u.FOURTH = 3)] = 'FOURTH'),
                         (u[(u.FIFTH = 4)] = 'FIFTH'));
-                })(se || (se = {})),
-                    (function (u) {
-                        ((u.small = 'small'),
-                            (u.medium = 'medium'),
-                            (u.large = 'large'),
-                            (u.extraLarge = 'extraLarge'));
-                    })(Fe || (Fe = {})),
+                })(se || (se = {}));
+                const Fe = {
+                    base: 'Checkbox_base_36',
+                    base__disabled: 'Checkbox_base__disabled_08',
+                    base__center: 'Checkbox_base__center_52',
+                    base__bottom: 'Checkbox_base__bottom_28',
+                    input: 'Checkbox_input_37',
+                    base__mouseDown: 'Checkbox_base__mouseDown_45',
+                    base__small: 'Checkbox_base__small_18',
+                    base__medium: 'Checkbox_base__medium_12',
+                    base__large: 'Checkbox_base__large_f7',
+                    base__extraLarge: 'Checkbox_base__extraLarge_c9',
+                    alertOverlay: 'Checkbox_alertOverlay_52',
+                    base__alert: 'Checkbox_base__alert_b7',
+                    blink: 'Checkbox_blink_5e',
+                    base__checked: 'Checkbox_base__checked_a2',
+                    inputHoverOverlay: 'Checkbox_inputHoverOverlay_36',
+                    highlight: 'Checkbox_highlight_b8',
+                    base__main: 'Checkbox_base__main_3a',
+                    base__primary: 'Checkbox_base__primary_ab',
+                    checkmark: 'Checkbox_checkmark_60',
+                    fadeIn: 'Checkbox_fadeIn_1a',
+                    label: 'Checkbox_label_bc',
+                    labelContent: 'Checkbox_labelContent_64',
+                };
+                let le, De, _e;
+                (!(function (u) {
+                    ((u.small = 'small'), (u.medium = 'medium'), (u.large = 'large'), (u.extraLarge = 'extraLarge'));
+                })(le || (le = {})),
                     (function (u) {
                         ((u.primary = 'primary'), (u.main = 'main'));
-                    })(le || (le = {})),
+                    })(De || (De = {})),
                     (function (u) {
                         ((u.Center = 'center'), (u.Bottom = 'bottom'));
-                    })(De || (De = {})));
-                const _e = {
-                        base: 'Checkbox_base_36',
-                        base__disabled: 'Checkbox_base__disabled_08',
-                        base__center: 'Checkbox_base__center_52',
-                        base__bottom: 'Checkbox_base__bottom_28',
-                        input: 'Checkbox_input_37',
-                        base__mouseDown: 'Checkbox_base__mouseDown_45',
-                        base__small: 'Checkbox_base__small_18',
-                        base__medium: 'Checkbox_base__medium_12',
-                        base__large: 'Checkbox_base__large_f7',
-                        base__extraLarge: 'Checkbox_base__extraLarge_c9',
-                        alertOverlay: 'Checkbox_alertOverlay_52',
-                        base__alert: 'Checkbox_base__alert_b7',
-                        blink: 'Checkbox_blink_5e',
-                        base__checked: 'Checkbox_base__checked_a2',
-                        inputHoverOverlay: 'Checkbox_inputHoverOverlay_36',
-                        highlight: 'Checkbox_highlight_b8',
-                        base__main: 'Checkbox_base__main_3a',
-                        base__primary: 'Checkbox_base__primary_ab',
-                        checkmark: 'Checkbox_checkmark_60',
-                        fadeIn: 'Checkbox_fadeIn_1a',
-                        label: 'Checkbox_label_bc',
-                        labelContent: 'Checkbox_labelContent_64',
-                    },
-                    ce = [
-                        'id',
-                        'isChecked',
-                        'isDisabled',
-                        'isAlert',
-                        'size',
-                        'type',
-                        'soundHover',
-                        'soundClick',
-                        'onMouseEnter',
-                        'onMouseLeave',
-                        'onMouseUp',
-                        'onMouseDown',
-                        'onClick',
-                        'onChange',
-                        'onFocus',
-                        'onBlur',
-                        'text',
-                        'contentStyles',
-                        'children',
-                        'alignment',
-                    ];
+                    })(_e || (_e = {})));
+                const ce = [
+                    'id',
+                    'isChecked',
+                    'isDisabled',
+                    'isAlert',
+                    'size',
+                    'type',
+                    'soundHover',
+                    'soundClick',
+                    'onMouseEnter',
+                    'onMouseLeave',
+                    'onMouseUp',
+                    'onMouseDown',
+                    'onClick',
+                    'onChange',
+                    'onFocus',
+                    'onBlur',
+                    'text',
+                    'contentStyles',
+                    'children',
+                    'alignment',
+                ];
                 function Be() {
                     return (
                         (Be =
@@ -2369,9 +2367,9 @@
                         A = u.isAlert,
                         s = void 0 !== A && A,
                         F = u.size,
-                        l = void 0 === F ? Fe.medium : F,
+                        l = void 0 === F ? le.medium : F,
                         D = u.type,
-                        _ = void 0 === D ? le.primary : D,
+                        _ = void 0 === D ? De.primary : D,
                         c = u.soundHover,
                         B = void 0 === c ? 'highlight' : c,
                         C = u.soundClick,
@@ -2447,10 +2445,10 @@
                         ),
                         V = n().createElement(
                             'div',
-                            { className: _e.label },
+                            { className: Fe.label },
                             n().createElement(
                                 'div',
-                                { className: o()(_e.labelContent, 's-labelContent'), style: S },
+                                { className: o()(Fe.labelContent, 's-labelContent'), style: S },
                                 x || M,
                             ),
                         );
@@ -2459,13 +2457,13 @@
                         Be(
                             {
                                 id: e,
-                                className: o()(_e.base, _e[`base__${l}`], _e[`base__${_}`], {
-                                    [_e.base__checked]: a,
-                                    [_e.base__disabled]: E,
-                                    [_e.base__mouseDown]: O,
-                                    [_e.base__alert]: s,
-                                    [_e.base__center]: L === De.Center,
-                                    [_e.base__bottom]: L === De.Bottom,
+                                className: o()(Fe.base, Fe[`base__${l}`], Fe[`base__${_}`], {
+                                    [Fe.base__checked]: a,
+                                    [Fe.base__disabled]: E,
+                                    [Fe.base__mouseDown]: O,
+                                    [Fe.base__alert]: s,
+                                    [Fe.base__center]: L === _e.Center,
+                                    [Fe.base__bottom]: L === _e.Bottom,
                                 }),
                                 onClick: H,
                                 onMouseEnter: W,
@@ -2479,12 +2477,12 @@
                         ),
                         n().createElement(
                             'div',
-                            { className: _e.input },
-                            n().createElement('div', { className: _e.alertOverlay }),
-                            n().createElement('div', { className: _e.inputHoverOverlay }),
-                            n().createElement('div', { className: _e.highlight }),
+                            { className: Fe.input },
+                            n().createElement('div', { className: Fe.alertOverlay }),
+                            n().createElement('div', { className: Fe.inputHoverOverlay }),
+                            n().createElement('div', { className: Fe.highlight }),
                         ),
-                        n().createElement('div', { className: _e.checkmark }),
+                        n().createElement('div', { className: Fe.checkmark }),
                         ((x || M) && V) || null,
                     );
                 };
@@ -2511,8 +2509,8 @@
                             e = (0, r.useCallback)(() => u.switchVoiceChat(), [u]);
                         return n().createElement(Ce, {
                             isChecked: u.isVoiceChatEnabled,
-                            size: Fe.small,
-                            type: le.main,
+                            size: le.small,
+                            type: De.main,
                             onChange: e,
                             text: R.strings.platoon.settings.voice(),
                         });

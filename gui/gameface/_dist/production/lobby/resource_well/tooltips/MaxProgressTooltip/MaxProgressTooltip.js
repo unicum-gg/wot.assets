@@ -943,8 +943,8 @@
                         e.current || (u(), (e.current = !0));
                     },
                     O = (u) => u && 'ArrayItem' === u.__proto__.constructor.name,
-                    S = (u, e) => (u.length > 0 ? `${u}.${e}` : e),
-                    y = (u) =>
+                    y = (u, e) => (u.length > 0 ? `${u}.${e}` : e),
+                    S = (u) =>
                         ((u, e) =>
                             u.split('.').reduce((u, E) => {
                                 const A = f(`${u}.${E}`, window);
@@ -956,7 +956,7 @@
                                     E = e.caller,
                                     A = e.resId,
                                     F = window.__feature && window.__feature !== E && E ? `subViews.${E}` : '';
-                                return { modelPrefix: F, modelPath: S(F, u || ''), resId: A };
+                                return { modelPrefix: F, modelPath: y(F, u || ''), resId: A };
                             })(),
                             E = e.modelPrefix,
                             A = u.split('.');
@@ -964,7 +964,7 @@
                             const u = [A[0]];
                             return (
                                 A.reduce((e, A) => {
-                                    const F = f(S(E, `${e}.${A}`), window);
+                                    const F = f(y(E, `${e}.${A}`), window);
                                     return O(F) ? (u.push(F.id), `${e}.${A}.value`) : (u.push(A), `${e}.${A}`);
                                 }),
                                 u.reduce((u, e) => u + '.' + e)
@@ -992,7 +992,7 @@
                                 const e = f(u, window);
                                 for (const u in e) 'function' == typeof e[u] && (e[u] = e[u].bind(e));
                                 return O(e) ? e.value : e;
-                            })(y(r)),
+                            })(S(r)),
                         ),
                         B = o[0],
                         i = o[1],
@@ -1082,7 +1082,10 @@
                         (u.VehicleSelect = 'vehicleSelect'),
                         (u.StyleProgress = 'styleProgress'),
                         (u.ParagonsUnlocks = 'paragonsUnlocks'),
-                        (u.LootBoxToken = 'lootBoxToken'));
+                        (u.LootBoxToken = 'lootBoxToken'),
+                        (u.GoldenTicket = 'birthday2025_golden_ticket'),
+                        (u.PostStamp = 'giftsystem_4_stamp'),
+                        (u.Quests = 'quests'));
                 })(L || (L = {})),
                     (function (u) {
                         ((u.Gold = 'gold'),

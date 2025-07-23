@@ -233,13 +233,20 @@
 .AdditionalReward_reward_37 {
     width: 642rem;
     height: 96rem;
-    background: url('R.images.gui.maps.icons.resourceWell.award.muzzle_s') no-repeat center / contain;
+    background: url('R.images.gui.maps.icons.resourceWell.award.number_3') no-repeat center / 642rem 96rem;
 }
 
 .mediaLarge .AdditionalReward_reward_37 {
     width: 670rem;
     height: 128rem;
-    background-image: url('R.images.gui.maps.icons.resourceWell.award.muzzle_m');
+}
+
+.AdditionalReward_reward__digits4_92 {
+    background-image: url('R.images.gui.maps.icons.resourceWell.award.number_4');
+}
+
+.AdditionalReward_reward__digits5_8c {
+    background-image: url('R.images.gui.maps.icons.resourceWell.award.number_5');
 }
 
 .AdditionalReward_tooltip_6a {
@@ -254,28 +261,35 @@
 }
 
 .AdditionalReward_number_a3 {
-    color: #f2f2f7;
-    font-size: 28rem;
+    color: #fdc37e;
+    font-size: 36rem;
     font-weight: 700;
     line-height: 1.1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1;
+    text-shadow:
+        0px 0px 3px rgba(255, 66, 0, 0.6),
+        0px 0px 11px rgba(208, 24, 0, 0.8);
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-54%, -50%) rotate(-60deg);
+    transform: translate(-49%, -60%);
 }
 
-.mediaLarge .AdditionalReward_number_a3 {
-    font-size: 42rem;
-}
-
-.AdditionalReward_texture_4c {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: url('R.images.gui.maps.icons.resourceWell.award.texture') no-repeat center / cover;
-    mix-blend-mode: darken;
+.AdditionalReward_numberDigit_31 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 28rem;
+    height: 40rem;
+    margin: 4rem 1.6rem 0;
+    color: #ff9fa7;
+    font-weight: 400;
+    text-shadow:
+        0 0 2rem #f00,
+        0 0 2rem #f00;
 }
 
 .CButton_base_40 {
@@ -925,18 +939,19 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .App_rewardImg_39 {
     width: 400rem;
     height: 300rem;
-    background: url('R.images.gui.maps.icons.resourceWell.vehicles.It33_Orso_400x300') no-repeat center / contain;
+    background: url('R.images.gui.maps.icons.resourceWell.vehicles.G178_Sturmtiger_V1_400x300') no-repeat center /
+        contain;
 }
 .mediaMedium .App_rewardImg_39 {
     width: 600rem;
     height: 450rem;
-    background-image: url('R.images.gui.maps.icons.resourceWell.vehicles.It33_Orso_600x450');
+    background-image: url('R.images.gui.maps.icons.resourceWell.vehicles.G178_Sturmtiger_V1_600x450');
 }
 .App_rewardImg__3d_93 {
-    background-image: url('R.images.gui.maps.icons.resourceWell.vehicles.It33_Orso_400x300_3d');
+    background-image: url('R.images.gui.maps.icons.resourceWell.vehicles.G178_Sturmtiger_V1_400x300_3d');
 }
 .mediaMedium .App_rewardImg__3d_93 {
-    background-image: url('R.images.gui.maps.icons.resourceWell.vehicles.It33_Orso_600x450_3d');
+    background-image: url('R.images.gui.maps.icons.resourceWell.vehicles.G178_Sturmtiger_V1_600x450_3d');
 }
 .App_close_ef {
     position: absolute;

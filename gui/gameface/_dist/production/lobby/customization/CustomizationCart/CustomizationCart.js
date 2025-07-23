@@ -970,6 +970,7 @@
                                 ),
                                 [N],
                             );
+                            const M = (0, s.useCallback)((e) => m.trigger('isThumbDraggingChanged', e), [m]);
                             return (0, s.useMemo)(
                                 () => ({
                                     getWrapperSize: () => (F.current ? o(F.current) : void 0),
@@ -988,9 +989,10 @@
                                     scrollPosition: b,
                                     animationScroll: f,
                                     recalculateContent: S,
+                                    handleIsThumbDragging: M,
                                     events: { on: m.on, off: m.off },
                                 }),
-                                [f.scrollPosition, w, y, m.off, m.on, S, k, b, _.step.clampedArrowStepTimeout],
+                                [f.scrollPosition, w, y, M, m.off, m.on, S, k, b, _.step.clampedArrowStepTimeout],
                             );
                         };
                     },
@@ -1446,72 +1448,70 @@
                 };
                 Q.defaultProps = { type: X.primary, isFocused: !1, soundHover: 'highlight', soundClick: 'play' };
                 const J = (0, s.memo)(Q);
-                let ee, ue, te, ne;
-                (!(function (e) {
+                let ee;
+                !(function (e) {
                     ((e[(e.LEFT = 0)] = 'LEFT'),
                         (e[(e.WHEEL = 1)] = 'WHEEL'),
                         (e[(e.RIGHT = 2)] = 'RIGHT'),
                         (e[(e.FOURTH = 3)] = 'FOURTH'),
                         (e[(e.FIFTH = 4)] = 'FIFTH'));
-                })(ee || (ee = {})),
-                    (function (e) {
-                        ((e.small = 'small'),
-                            (e.medium = 'medium'),
-                            (e.large = 'large'),
-                            (e.extraLarge = 'extraLarge'));
-                    })(ue || (ue = {})),
+                })(ee || (ee = {}));
+                const ue = {
+                    base: 'Checkbox_base_36',
+                    base__disabled: 'Checkbox_base__disabled_08',
+                    base__center: 'Checkbox_base__center_52',
+                    base__bottom: 'Checkbox_base__bottom_28',
+                    input: 'Checkbox_input_37',
+                    base__mouseDown: 'Checkbox_base__mouseDown_45',
+                    base__small: 'Checkbox_base__small_18',
+                    base__medium: 'Checkbox_base__medium_12',
+                    base__large: 'Checkbox_base__large_f7',
+                    base__extraLarge: 'Checkbox_base__extraLarge_c9',
+                    alertOverlay: 'Checkbox_alertOverlay_52',
+                    base__alert: 'Checkbox_base__alert_b7',
+                    blink: 'Checkbox_blink_5e',
+                    base__checked: 'Checkbox_base__checked_a2',
+                    inputHoverOverlay: 'Checkbox_inputHoverOverlay_36',
+                    highlight: 'Checkbox_highlight_b8',
+                    base__main: 'Checkbox_base__main_3a',
+                    base__primary: 'Checkbox_base__primary_ab',
+                    checkmark: 'Checkbox_checkmark_60',
+                    fadeIn: 'Checkbox_fadeIn_1a',
+                    label: 'Checkbox_label_bc',
+                    labelContent: 'Checkbox_labelContent_64',
+                };
+                let te, ne, oe;
+                (!(function (e) {
+                    ((e.small = 'small'), (e.medium = 'medium'), (e.large = 'large'), (e.extraLarge = 'extraLarge'));
+                })(te || (te = {})),
                     (function (e) {
                         ((e.primary = 'primary'), (e.main = 'main'));
-                    })(te || (te = {})),
+                    })(ne || (ne = {})),
                     (function (e) {
                         ((e.Center = 'center'), (e.Bottom = 'bottom'));
-                    })(ne || (ne = {})));
-                const oe = {
-                        base: 'Checkbox_base_36',
-                        base__disabled: 'Checkbox_base__disabled_08',
-                        base__center: 'Checkbox_base__center_52',
-                        base__bottom: 'Checkbox_base__bottom_28',
-                        input: 'Checkbox_input_37',
-                        base__mouseDown: 'Checkbox_base__mouseDown_45',
-                        base__small: 'Checkbox_base__small_18',
-                        base__medium: 'Checkbox_base__medium_12',
-                        base__large: 'Checkbox_base__large_f7',
-                        base__extraLarge: 'Checkbox_base__extraLarge_c9',
-                        alertOverlay: 'Checkbox_alertOverlay_52',
-                        base__alert: 'Checkbox_base__alert_b7',
-                        blink: 'Checkbox_blink_5e',
-                        base__checked: 'Checkbox_base__checked_a2',
-                        inputHoverOverlay: 'Checkbox_inputHoverOverlay_36',
-                        highlight: 'Checkbox_highlight_b8',
-                        base__main: 'Checkbox_base__main_3a',
-                        base__primary: 'Checkbox_base__primary_ab',
-                        checkmark: 'Checkbox_checkmark_60',
-                        fadeIn: 'Checkbox_fadeIn_1a',
-                        label: 'Checkbox_label_bc',
-                        labelContent: 'Checkbox_labelContent_64',
-                    },
-                    re = [
-                        'id',
-                        'isChecked',
-                        'isDisabled',
-                        'isAlert',
-                        'size',
-                        'type',
-                        'soundHover',
-                        'soundClick',
-                        'onMouseEnter',
-                        'onMouseLeave',
-                        'onMouseUp',
-                        'onMouseDown',
-                        'onClick',
-                        'onChange',
-                        'onFocus',
-                        'onBlur',
-                        'text',
-                        'contentStyles',
-                        'children',
-                        'alignment',
-                    ];
+                    })(oe || (oe = {})));
+                const re = [
+                    'id',
+                    'isChecked',
+                    'isDisabled',
+                    'isAlert',
+                    'size',
+                    'type',
+                    'soundHover',
+                    'soundClick',
+                    'onMouseEnter',
+                    'onMouseLeave',
+                    'onMouseUp',
+                    'onMouseDown',
+                    'onClick',
+                    'onChange',
+                    'onFocus',
+                    'onBlur',
+                    'text',
+                    'contentStyles',
+                    'children',
+                    'alignment',
+                ];
                 function se() {
                     return (
                         (se =
@@ -1535,9 +1535,9 @@
                         i = e.isAlert,
                         c = void 0 !== i && i,
                         l = e.size,
-                        E = void 0 === l ? ue.medium : l,
+                        E = void 0 === l ? te.medium : l,
                         d = e.type,
-                        A = void 0 === d ? te.primary : d,
+                        A = void 0 === d ? ne.primary : d,
                         F = e.soundHover,
                         m = void 0 === F ? 'highlight' : F,
                         C = e.soundClick,
@@ -1613,10 +1613,10 @@
                         ),
                         q = a().createElement(
                             'div',
-                            { className: oe.label },
+                            { className: ue.label },
                             a().createElement(
                                 'div',
-                                { className: _()(oe.labelContent, 's-labelContent'), style: k },
+                                { className: _()(ue.labelContent, 's-labelContent'), style: k },
                                 y || N,
                             ),
                         );
@@ -1625,13 +1625,13 @@
                         se(
                             {
                                 id: u,
-                                className: _()(oe.base, oe[`base__${E}`], oe[`base__${A}`], {
-                                    [oe.base__checked]: n,
-                                    [oe.base__disabled]: r,
-                                    [oe.base__mouseDown]: P,
-                                    [oe.base__alert]: c,
-                                    [oe.base__center]: S === ne.Center,
-                                    [oe.base__bottom]: S === ne.Bottom,
+                                className: _()(ue.base, ue[`base__${E}`], ue[`base__${A}`], {
+                                    [ue.base__checked]: n,
+                                    [ue.base__disabled]: r,
+                                    [ue.base__mouseDown]: P,
+                                    [ue.base__alert]: c,
+                                    [ue.base__center]: S === oe.Center,
+                                    [ue.base__bottom]: S === oe.Bottom,
                                 }),
                                 onClick: R,
                                 onMouseEnter: U,
@@ -1645,12 +1645,12 @@
                         ),
                         a().createElement(
                             'div',
-                            { className: oe.input },
-                            a().createElement('div', { className: oe.alertOverlay }),
-                            a().createElement('div', { className: oe.inputHoverOverlay }),
-                            a().createElement('div', { className: oe.highlight }),
+                            { className: ue.input },
+                            a().createElement('div', { className: ue.alertOverlay }),
+                            a().createElement('div', { className: ue.inputHoverOverlay }),
+                            a().createElement('div', { className: ue.highlight }),
                         ),
-                        a().createElement('div', { className: oe.checkmark }),
+                        a().createElement('div', { className: ue.checkmark }),
                         ((y || N) && q) || null,
                     );
                 };
@@ -2679,7 +2679,9 @@
                                         });
                                     },
                                     t = () => {
-                                        (window.removeEventListener('mousemove', u), B(bu));
+                                        (window.removeEventListener('mousemove', u),
+                                            e.handleIsThumbDragging(!1),
+                                            B(bu));
                                     };
                                 return (
                                     window.addEventListener('mousemove', u),
@@ -2722,7 +2724,11 @@
                                         const n = l.current;
                                         if (n && 0 === u.button)
                                             if ((H('play'), u.target === n))
-                                                B({ pending: !0, offset: u.screenY - n.getBoundingClientRect().y });
+                                                (e.handleIsThumbDragging(!0),
+                                                    B({
+                                                        pending: !0,
+                                                        offset: u.screenY - n.getBoundingClientRect().y,
+                                                    }));
                                             else {
                                                 ((u) => {
                                                     l.current &&

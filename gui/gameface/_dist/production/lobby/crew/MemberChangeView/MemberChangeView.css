@@ -1046,6 +1046,281 @@
     text-align: right;
 }
 
+.Box_mt__XS_0c {
+    margin-top: 4rem;
+}
+.Box_mt__SM_eb {
+    margin-top: 8rem;
+}
+.Box_mt__SMp_cf {
+    margin-top: 10rem;
+}
+.Box_mt__MD_25 {
+    margin-top: 16rem;
+}
+.Box_mt__MDp_49 {
+    margin-top: 20rem;
+}
+.Box_mt__LG_e8 {
+    margin-top: 32rem;
+}
+.Box_mt__XL_83 {
+    margin-top: 64rem;
+}
+
+.Box_mr__XS_7c {
+    margin-right: 4rem;
+}
+
+.Box_mr__SM_08 {
+    margin-right: 8rem;
+}
+
+.Box_mr__SMp_06 {
+    margin-right: 10rem;
+}
+
+.Box_mr__MD_4a {
+    margin-right: 16rem;
+}
+
+.Box_mr__MDp_b6 {
+    margin-right: 20rem;
+}
+
+.Box_mr__LG_d0 {
+    margin-right: 32rem;
+}
+
+.Box_mr__XL_db {
+    margin-right: 64rem;
+}
+
+.Box_mb__XS_bb {
+    margin-bottom: 4rem;
+}
+
+.Box_mb__SM_83 {
+    margin-bottom: 8rem;
+}
+
+.Box_mb__SMp_04 {
+    margin-bottom: 10rem;
+}
+
+.Box_mb__MD_ed {
+    margin-bottom: 16rem;
+}
+
+.Box_mb__MDp_65 {
+    margin-bottom: 20rem;
+}
+
+.Box_mb__LG_c8 {
+    margin-bottom: 32rem;
+}
+
+.Box_mb__XL_f8 {
+    margin-bottom: 64rem;
+}
+
+.Box_ml__XS_8a {
+    margin-left: 4rem;
+}
+
+.Box_ml__SM_e6 {
+    margin-left: 8rem;
+}
+
+.Box_ml__SMp_fb {
+    margin-left: 10rem;
+}
+
+.Box_ml__MD_2b {
+    margin-left: 16rem;
+}
+
+.Box_ml__MDp_c7 {
+    margin-left: 20rem;
+}
+
+.Box_ml__LG_39 {
+    margin-left: 32rem;
+}
+
+.Box_ml__XL_4a {
+    margin-left: 64rem;
+}
+
+.FormatText_base_d0 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* eslint-disable-next-line expectedscss*/
+.Text_paragraph-P10_2c {
+    font-size: 10rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.Text_paragraph-P12_22 {
+    font-size: 12rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+.Text_paragraph-P14_a7 {
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+.Text_paragraph-P16_90 {
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+.Text_paragraph-P18_50 {
+    font-size: 18rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+.Text_paragraph-P24_33 {
+    font-size: 24rem;
+    font-weight: 400;
+    line-height: 32rem;
+}
+.Text_heading-H14_8b {
+    font-size: 14rem;
+    font-weight: 700;
+    line-height: 1.15;
+}
+.Text_heading-H15_9e {
+    font-size: 15rem;
+    font-weight: 700;
+    line-height: 1.15;
+}
+.Text_heading-H18_b7 {
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H20R_f6 {
+    font-size: 20rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.Text_heading-H22_27 {
+    font-size: 22rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.Text_heading-H24R_be {
+    font-size: 24rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.Text_heading-H24_0c {
+    font-size: 24rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.Text_heading-H28_78 {
+    font-size: 28rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H36_32 {
+    font-size: 36rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H56_c3 {
+    font-size: 56rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H73_8f {
+    font-size: 73rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H144_a9 {
+    font-size: 144rem;
+    font-weight: 700;
+    line-height: 1;
+}
+.Text_BLACK_REAL_30 {
+    color: #000000;
+}
+.Text_WHITE_REAL_bc {
+    color: #ffffff;
+}
+.Text_WHITE_62 {
+    color: #f2f2f7;
+}
+.Text_WHITE_ORANGE_54 {
+    color: #fefeec;
+}
+.Text_WHITE_SPANISH_df {
+    color: #e9e2bf;
+}
+.Text_PAR_15 {
+    color: #8c8c7e;
+}
+.Text_PAR_SECONDARY_5d {
+    color: #595950;
+}
+.Text_PAR_TERTIARY_c9 {
+    color: #37362e;
+}
+.Text_INFO_RED_30 {
+    color: #ff0000;
+}
+.Text_RED_66 {
+    color: #ff2717;
+}
+.Text_RED_DARK_d8 {
+    color: #b70000;
+}
+.Text_YELLOW_ed {
+    color: #feab34;
+}
+.Text_ORANGE_be {
+    color: #ee7000;
+}
+.Text_CREAM_57 {
+    color: #ffdd99;
+}
+.Text_BROWN_18 {
+    color: #cbac77;
+}
+.Text_GREEN_BRIGHT_3f {
+    color: #80d43a;
+}
+.Text_GREEN_e3 {
+    color: #7ab300;
+}
+.Text_GREEN_DARK_f1 {
+    color: #497212;
+}
+.Text_BLUE_BOOSTER_21 {
+    color: #ccffff;
+}
+.Text_BLUE_TEAMKILLER_ab {
+    color: #09e2ff;
+}
+.Text_CRED_f7 {
+    color: #ced9d9;
+}
+.Text_GOLD_28 {
+    color: #ffc363;
+}
+.Text_BOND_be {
+    color: #c9c9b6;
+}
+.Text_PROM_65 {
+    color: #a29b70;
+}
+
 .ButtonsBar_base_9c {
     display: flex;
     flex-direction: row;
@@ -1054,46 +1329,49 @@
     background: url('R.images.gui.maps.icons.crewWidget.buttonsBar.background') no-repeat center / contain;
     position: relative;
 }
-
 .ButtonsBar_button_d1 {
     width: 44rem;
     height: 20rem;
     margin-top: 7rem;
     position: relative;
 }
-
 .ButtonsBar_button__crewOperaions_70 {
     margin-left: 8rem;
 }
-
 .ButtonsBar_button__crewBooks_b4 {
     margin-left: 12rem;
     z-index: 2;
 }
-
 .ButtonsBar_button__toggle_64 {
     margin-left: 6rem;
     z-index: 1;
 }
-
 .ButtonsBar_icon_57 {
     width: 32rem;
     height: 22rem;
     position: relative;
 }
-
+.ButtonsBar_acceleratedTrainingContainer_ee {
+    opacity: 0;
+    transform: translateX(-20rem);
+    transition: all 0.2s;
+    pointer-events: none;
+}
+.ButtonsBar_acceleratedTrainingContainer__visible_79 {
+    opacity: 1;
+    transform: translateX(0rem);
+    pointer-events: auto;
+}
 .ButtonsBar_acceleratedTraining_94 {
     display: flex;
     margin: 7rem 0 0 5rem;
 }
-
 .ButtonsBar_acceleratedTraining__icon_9b {
     width: 32rem;
     height: 22rem;
     background: url('R.images.gui.maps.icons.crewWidget.buttonsBar.icons.acceleratedTraining') no-repeat center /
         contain;
 }
-
 .ButtonsBar_acceleratedTraining__label_ad {
     color: #f2f2f7;
     font-size: 14rem;
@@ -1590,17 +1868,35 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     flex-direction: row;
     width: 370rem;
     height: 61rem;
-    background: url('R.images.gui.maps.icons.crewWidget.slot.background') no-repeat center / contain;
     position: relative;
     cursor: pointer;
 }
 
-.BaseSlot_base__hovered_61 {
+.BaseSlot_base__inactive_7e {
+    cursor: initial;
+}
+
+.BaseSlot_background_ef {
+    width: 370rem;
+    height: 61rem;
+    background: url('R.images.gui.maps.icons.crewWidget.slot.background') no-repeat center / contain;
+    position: absolute;
+    top: 0rem;
+    left: -150rem;
+    transition: left 0.2s;
+    cursor: pointer;
+}
+
+.BaseSlot_background__hovered_ee {
     background-image: url('R.images.gui.maps.icons.crewWidget.slot.hoveredBackground');
 }
 
-.BaseSlot_base__inactive_7e {
+.BaseSlot_background__inactive_6b {
     cursor: initial;
+}
+
+.BaseSlot_base__widgetHovered_48 .BaseSlot_background_ef {
+    left: 0rem;
 }
 
 .BaseSlot_hoverGlow_de {
@@ -1643,7 +1939,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     position: absolute;
     top: 0;
     left: 0;
-    transition: opacity 0.3s;
+    transition: opacity 0.2s;
 }
 
 .BaseSlot_hover__visible_1f {
@@ -1657,6 +1953,11 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     position: absolute;
     top: 0;
     left: 0;
+    transition: transform 0.2s;
+}
+
+.BaseSlot_base__widgetHovered_48 .BaseSlot_disabled_67 {
+    transform: translateX(-100rem);
 }
 
 .DogSlot_base_8f {
@@ -1701,10 +2002,41 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     position: relative;
 }
 
+.DogSlot_name__hidden_56 {
+    opacity: 0;
+}
+
+.DogSlot_name_9c {
+    transition: opacity 0.2s;
+}
+
 .DogSlot_btnDetails_b7 {
     width: 118rem;
     height: 20rem;
     margin-top: 8rem;
+}
+
+.DogSlot_btnDetails__hidden_44 {
+    opacity: 0;
+}
+
+.DogSlot_btnDetails_b7 {
+    transition: opacity 0.2s;
+}
+
+.DogSlot_infoIcon_09 {
+    width: 18rem;
+    height: 18rem;
+    margin-top: -20rem;
+    background: url('R.images.gui.maps.icons.crewWidget.slot.dogInfo') no-repeat center / contain;
+}
+
+.DogSlot_infoIcon__hidden_8e {
+    opacity: 0;
+}
+
+.DogSlot_infoIcon_09 {
+    transition: opacity 0.2s;
 }
 
 .ChangeCrewButton_base_0f {
@@ -1866,6 +2198,19 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     pointer-events: auto;
 }
 
+.SpecializationAndName_secondaryRolesWrapper_d0 {
+    display: flex;
+    opacity: 1;
+}
+
+.SpecializationAndName_secondaryRolesWrapper__hidden_ac {
+    opacity: 0;
+}
+
+.SpecializationAndName_secondaryRolesWrapper_d0 {
+    transition: opacity 0.2s;
+}
+
 .SpecializationAndName_role_55 {
     width: 18rem;
     height: 18rem;
@@ -1893,6 +2238,14 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     opacity: 1;
 }
 
+.SpecializationAndName_percent__wrapped_9b {
+    margin-left: var(--marginLeft);
+}
+
+.SpecializationAndName_percent_e6 {
+    transition: margin-left 0.2s;
+}
+
 .SpecializationAndName_acceleratedTrainingIcon_35 {
     margin: 2rem 0 0 3rem;
 }
@@ -1909,6 +2262,15 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     white-space: nowrap;
     overflow: hidden;
     position: relative;
+    transition: opacity 0.2s;
+}
+
+.SpecializationAndName_name__hidden_20 {
+    opacity: 0;
+}
+
+.SpecializationAndName_name__visible_55 {
+    opacity: 1;
 }
 
 .EmptySlotContent_base_77 {
@@ -1947,281 +2309,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     position: absolute;
     top: 30rem;
     left: 106rem;
-}
-
-.Box_mt__XS_0c {
-    margin-top: 4rem;
-}
-.Box_mt__SM_eb {
-    margin-top: 8rem;
-}
-.Box_mt__SMp_cf {
-    margin-top: 10rem;
-}
-.Box_mt__MD_25 {
-    margin-top: 16rem;
-}
-.Box_mt__MDp_49 {
-    margin-top: 20rem;
-}
-.Box_mt__LG_e8 {
-    margin-top: 32rem;
-}
-.Box_mt__XL_83 {
-    margin-top: 64rem;
-}
-
-.Box_mr__XS_7c {
-    margin-right: 4rem;
-}
-
-.Box_mr__SM_08 {
-    margin-right: 8rem;
-}
-
-.Box_mr__SMp_06 {
-    margin-right: 10rem;
-}
-
-.Box_mr__MD_4a {
-    margin-right: 16rem;
-}
-
-.Box_mr__MDp_b6 {
-    margin-right: 20rem;
-}
-
-.Box_mr__LG_d0 {
-    margin-right: 32rem;
-}
-
-.Box_mr__XL_db {
-    margin-right: 64rem;
-}
-
-.Box_mb__XS_bb {
-    margin-bottom: 4rem;
-}
-
-.Box_mb__SM_83 {
-    margin-bottom: 8rem;
-}
-
-.Box_mb__SMp_04 {
-    margin-bottom: 10rem;
-}
-
-.Box_mb__MD_ed {
-    margin-bottom: 16rem;
-}
-
-.Box_mb__MDp_65 {
-    margin-bottom: 20rem;
-}
-
-.Box_mb__LG_c8 {
-    margin-bottom: 32rem;
-}
-
-.Box_mb__XL_f8 {
-    margin-bottom: 64rem;
-}
-
-.Box_ml__XS_8a {
-    margin-left: 4rem;
-}
-
-.Box_ml__SM_e6 {
-    margin-left: 8rem;
-}
-
-.Box_ml__SMp_fb {
-    margin-left: 10rem;
-}
-
-.Box_ml__MD_2b {
-    margin-left: 16rem;
-}
-
-.Box_ml__MDp_c7 {
-    margin-left: 20rem;
-}
-
-.Box_ml__LG_39 {
-    margin-left: 32rem;
-}
-
-.Box_ml__XL_4a {
-    margin-left: 64rem;
-}
-
-.FormatText_base_d0 {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-/* eslint-disable-next-line expectedscss*/
-.Text_paragraph-P10_2c {
-    font-size: 10rem;
-    font-weight: 400;
-    line-height: 1.2;
-}
-.Text_paragraph-P12_22 {
-    font-size: 12rem;
-    font-weight: 400;
-    line-height: 1.3;
-}
-.Text_paragraph-P14_a7 {
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
-}
-.Text_paragraph-P16_90 {
-    font-size: 16rem;
-    font-weight: 400;
-    line-height: 1.25;
-}
-.Text_paragraph-P18_50 {
-    font-size: 18rem;
-    font-weight: 400;
-    line-height: 1.25;
-}
-.Text_paragraph-P24_33 {
-    font-size: 24rem;
-    font-weight: 400;
-    line-height: 32rem;
-}
-.Text_heading-H14_8b {
-    font-size: 14rem;
-    font-weight: 700;
-    line-height: 1.15;
-}
-.Text_heading-H15_9e {
-    font-size: 15rem;
-    font-weight: 700;
-    line-height: 1.15;
-}
-.Text_heading-H18_b7 {
-    font-size: 18rem;
-    font-weight: 700;
-    line-height: 1.1;
-}
-.Text_heading-H20R_f6 {
-    font-size: 20rem;
-    font-weight: 400;
-    line-height: 1.2;
-}
-.Text_heading-H22_27 {
-    font-size: 22rem;
-    font-weight: 700;
-    line-height: 1.2;
-}
-.Text_heading-H24R_be {
-    font-size: 24rem;
-    font-weight: 400;
-    line-height: 1.2;
-}
-.Text_heading-H24_0c {
-    font-size: 24rem;
-    font-weight: 700;
-    line-height: 1.2;
-}
-.Text_heading-H28_78 {
-    font-size: 28rem;
-    font-weight: 700;
-    line-height: 1.1;
-}
-.Text_heading-H36_32 {
-    font-size: 36rem;
-    font-weight: 700;
-    line-height: 1.1;
-}
-.Text_heading-H56_c3 {
-    font-size: 56rem;
-    font-weight: 700;
-    line-height: 1.1;
-}
-.Text_heading-H73_8f {
-    font-size: 73rem;
-    font-weight: 700;
-    line-height: 1.1;
-}
-.Text_heading-H144_a9 {
-    font-size: 144rem;
-    font-weight: 700;
-    line-height: 1;
-}
-.Text_BLACK_REAL_30 {
-    color: #000000;
-}
-.Text_WHITE_REAL_bc {
-    color: #ffffff;
-}
-.Text_WHITE_62 {
-    color: #f2f2f7;
-}
-.Text_WHITE_ORANGE_54 {
-    color: #fefeec;
-}
-.Text_WHITE_SPANISH_df {
-    color: #e9e2bf;
-}
-.Text_PAR_15 {
-    color: #8c8c7e;
-}
-.Text_PAR_SECONDARY_5d {
-    color: #595950;
-}
-.Text_PAR_TERTIARY_c9 {
-    color: #37362e;
-}
-.Text_INFO_RED_30 {
-    color: #ff0000;
-}
-.Text_RED_66 {
-    color: #ff2717;
-}
-.Text_RED_DARK_d8 {
-    color: #b70000;
-}
-.Text_YELLOW_ed {
-    color: #feab34;
-}
-.Text_ORANGE_be {
-    color: #ee7000;
-}
-.Text_CREAM_57 {
-    color: #ffdd99;
-}
-.Text_BROWN_18 {
-    color: #cbac77;
-}
-.Text_GREEN_BRIGHT_3f {
-    color: #80d43a;
-}
-.Text_GREEN_e3 {
-    color: #7ab300;
-}
-.Text_GREEN_DARK_f1 {
-    color: #497212;
-}
-.Text_BLUE_BOOSTER_21 {
-    color: #ccffff;
-}
-.Text_BLUE_TEAMKILLER_ab {
-    color: #09e2ff;
-}
-.Text_CRED_f7 {
-    color: #ced9d9;
-}
-.Text_GOLD_28 {
-    color: #ffc363;
-}
-.Text_BOND_be {
-    color: #c9c9b6;
-}
-.Text_PROM_65 {
-    color: #a29b70;
 }
 
 .RoleLevelIcon_base_e1 {
@@ -2350,8 +2437,8 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .AnimatedNewSkill_base_6b {
-    width: 14rem;
-    height: 14rem;
+    width: 16rem;
+    height: 16rem;
 }
 
 .AnimatedNewSkill_base__big_31 {
@@ -2371,6 +2458,23 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     height: 24rem;
 }
 
+.Skill_container_0f {
+    display: flex;
+}
+
+.Skill_divider_e8 {
+    width: 1rem;
+    height: 24rem;
+    margin-left: 8rem;
+    background: #fff6;
+}
+
+.Skill_divider__small_42 {
+    height: 14rem;
+    margin-left: 6rem;
+    margin-top: 1rem;
+}
+
 .SkillsList_base_11 {
     display: flex;
     flex-direction: column;
@@ -2378,11 +2482,71 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     position: relative;
 }
 
+.SkillsList_numOfSkills_64 {
+    display: flex;
+    justify-content: flex-end;
+    width: 30rem;
+    position: absolute;
+    top: 2rem;
+    left: -35rem;
+}
+
+.SkillsList_numOfSkills__twoRows_8d {
+    top: 5rem;
+}
+
+.SkillsList_numOfSkills__hidden_c5 {
+    opacity: 0;
+}
+
+.SkillsList_numOfSkills_64 {
+    transition: opacity 0.2s;
+}
+
+.SkillsList_numOfSkillsContent_a4 {
+    color: rgba(242, 242, 247, 0.7);
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    display: flex;
+    text-shadow: 0 0 14rem rgba(16, 16, 16, 0.9);
+}
+
+.SkillsList_numOfSkillsContent__withNew_b6 {
+    color: #ffdd99;
+}
+
 .SkillsList_row_03 {
     display: flex;
     flex-direction: row;
     margin-bottom: 1rem;
     position: relative;
+}
+
+.SkillsList_skillsWithOutLast_02 {
+    display: flex;
+    flex-direction: row;
+}
+
+.SkillsList_skillsWithOutLast__hidden_8d {
+    opacity: 0;
+    transform: translateX(30rem);
+}
+
+.SkillsList_skillsWithOutLast_02 {
+    transition: all 0.2s;
+}
+
+.SkillsList_lastSkill_96 {
+    margin-left: 0rem;
+}
+
+.SkillsList_lastSkill__wrapped_9d {
+    margin-left: var(--leftPosition);
+}
+
+.SkillsList_lastSkill_96 {
+    transition: margin-left 0.2s;
 }
 
 .SkillsList_possibleLevel_97 {
@@ -2579,7 +2743,8 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .ToggleButtonIcon_icon__tankmanKind_5e,
 .ToggleButtonIcon_icon__vehicleGradeElite_26,
 .ToggleButtonIcon_icon__locationRecruit_3b,
-.ToggleButtonIcon_icon__locationTankman_f6 {
+.ToggleButtonIcon_icon__locationTankman_f6,
+.ToggleButtonIcon_icon__locationUnique_cb {
     background-size: 24rem 24rem;
 }
 .ToggleButtonIcon_icon__personalDataType_a8,
@@ -2675,6 +2840,24 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     width: 74rem;
     height: 57rem;
     background: url('R.images.gui.maps.icons.crew.filter.glow') no-repeat 50%/ 74rem 57rem;
+}
+
+.NumberRangeWithLabel_blink_89 {
+    animation: NumberRangeWithLabel_blink_89 400ms 100ms forwards linear;
+}
+
+@keyframes NumberRangeWithLabel_blink_89 {
+    0% {
+        filter: brightness(1);
+    }
+
+    50% {
+        filter: brightness(2);
+    }
+
+    100% {
+        filter: brightness(1);
+    }
 }
 
 .AlertCounter_base_f3 {
@@ -3088,6 +3271,22 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     width: 198rem;
 }
 
+.FilterPanelWidgetApp_chooseButton_2b {
+    width: 105rem;
+    height: 24rem;
+}
+
+.FilterPanelWidgetApp_button_8e {
+    width: 105rem;
+    height: 24rem;
+}
+
+.FilterPanelWidgetApp_button__demobilize_d8 {
+    width: 123rem;
+    height: 24rem;
+    margin-left: 14rem;
+}
+
 .ListHeader_base_ad {
     display: flex;
     justify-content: space-between;
@@ -3290,6 +3489,17 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     flex-wrap: wrap;
 }
 
+.Skills_skillContainer_54 {
+    display: flex;
+}
+
+.Skills_divider_ee {
+    width: 1rem;
+    height: 24rem;
+    margin: 0 6rem 0 8rem;
+    background: #fff6;
+}
+
 .ThemeHelper_base_39 {
     display: flex;
     justify-content: center;
@@ -3341,6 +3551,16 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     cursor: default;
 }
 
+.TankmanCard_base__selectedFromMultiselect_cb {
+    box-shadow: inset 0 0 30rem rgba(255, 122, 0, 0.3);
+    background: linear-gradient(0deg, rgba(255, 92, 0, 0.1), rgba(255, 92, 0, 0.1)), rgba(0, 0, 0, 0.6);
+    cursor: pointer;
+}
+
+.TankmanCard_base__selectDisabled_b1 {
+    cursor: default;
+}
+
 .TankmanCard_base__disabled_1f {
     background-color: rgba(0, 0, 0, 0.1);
     cursor: default;
@@ -3357,8 +3577,16 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .TankmanCard_base__selected_24 .TankmanCard_themeHelper_78 {
     border: 1rem solid #ff7a00;
 }
+.TankmanCard_base__selectedFromMultiselect_cb .TankmanCard_themeHelper_78 {
+    border: 1rem solid #ff7a00;
+}
 .TankmanCard_base__disabled_1f .TankmanCard_themeHelper_78 {
     background-image: url('R.images.gui.maps.icons.components.button.texture_disable');
+}
+.TankmanCard_base__selectDisabled_b1 .TankmanCard_themeHelper_78 {
+    background: rgba(0, 0, 0, 0.1) url('R.images.gui.maps.icons.crew.tankmanCard.selectDisabled') no-repeat center /
+        contain;
+    z-index: 3;
 }
 .TankmanCard_locationIcon_26 {
     position: absolute;
@@ -3439,11 +3667,15 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .TankmanCard_base__disabled_1f .TankmanCard_content_0c {
     opacity: 0.5;
 }
+.TankmanCard_fadeForSkills_3b {
+    mask-image: linear-gradient(180deg, #d9d9d9 52.81%, rgba(115, 115, 115, 0.2) 94.26%);
+}
 .TankmanCard_skills_ef {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     width: 262rem;
+    height: 50rem;
     margin-left: -2rem;
     margin-top: -1rem;
     margin-bottom: -2rem;
@@ -3469,6 +3701,35 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 
 .TankmanVirtualList_grid_41 {
     margin: 0 -9rem;
+}
+
+.BarracksTankmanCard_base_15 {
+    margin: 9rem;
+}
+
+.BarracksTankmanCard_headerWrapper_e3 {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 4rem;
+}
+
+.BarracksTankmanCard_header_d6 {
+    color: #f2f2f7;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+    width: 100%;
+    height: 40rem;
+    padding: 10rem;
+    opacity: 0.6;
+}
+
+.BarracksTankmanCard_selectMode_a2 {
+    width: 100%;
+    position: absolute;
+    bottom: 12rem;
+    left: 0;
 }
 
 .Actions_base_07 {

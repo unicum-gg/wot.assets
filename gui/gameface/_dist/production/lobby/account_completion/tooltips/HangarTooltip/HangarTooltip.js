@@ -41,16 +41,16 @@
                         getBrowserTexturePath: () => R,
                         getDisplayStatus: () => $,
                         getScale: () => L,
-                        getSize: () => O,
+                        getSize: () => x,
                         getViewGlobalPosition: () => y,
-                        isEventHandled: () => G,
+                        isEventHandled: () => H,
                         isFocused: () => U,
                         pxToRem: () => M,
                         remToPx: () => N,
-                        resize: () => x,
+                        resize: () => O,
                         sendEvent: () => b,
                         setAnimateWindow: () => I,
-                        setEventHandled: () => H,
+                        setEventHandled: () => G,
                         setInputPaddingsRem: () => T,
                         setSidePaddingsRem: () => S,
                         whenTutorialReady: () => V,
@@ -222,10 +222,10 @@
                 function S(u) {
                     viewEnv.setHitAreaPaddingsRem(u.top, u.right, u.bottom, u.left, 15);
                 }
-                function O(u = 'px') {
+                function x(u = 'px') {
                     return 'rem' === u ? viewEnv.getViewSizeRem() : viewEnv.getViewSizePx();
                 }
-                function x(u, e, t = 'px') {
+                function O(u, e, t = 'px') {
                     return 'rem' === t ? viewEnv.resizeViewRem(u, e) : viewEnv.resizeViewPx(u, e);
                 }
                 function y(u = 'rem') {
@@ -250,10 +250,10 @@
                 function U() {
                     return viewEnv.isFocused();
                 }
-                function H() {
+                function G() {
                     return viewEnv.setEventHandled();
                 }
-                function G() {
+                function H() {
                     return viewEnv.isEventHandled();
                 }
                 function W() {
@@ -931,7 +931,7 @@
                         }
                     },
                     S = (u, e, t = f.left) => u.split(e).reduce(t === f.left ? T : P, []),
-                    O = (() => {
+                    x = (() => {
                         const u = new RegExp(
                             /[\(\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]?[\u3002\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]?[ %\+\x2D-9A-Za-\{\}\xA0\xC0-\u0237\u2013\u2014\u2026]+[\)\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3002\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\uFF01\uFF0C\uFF1A\uFF1B\uFF1F\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]?[\u3002\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]?/gmu
                                 .source +
@@ -952,11 +952,11 @@
                                 .replace(/ /g, ' ')
                                 .match(u);
                     })(),
-                    x = ['zh_cn', 'zh_sg', 'zh_tw'],
+                    O = ['zh_cn', 'zh_sg', 'zh_tw'],
                     y = (u, e = f.left) => {
                         const t = R.strings.settings.LANGUAGE_CODE().toLowerCase();
-                        return x.includes(t)
-                            ? O(u)
+                        return O.includes(t)
+                            ? x(u)
                             : ((u, e = f.left) => {
                                   let t = [];
                                   const r =
@@ -1068,10 +1068,10 @@
                         (u.smallHeight = 'smallHeight'),
                         (u.extraSmallHeight = 'extraSmallHeight'));
                 })(I || (I = {}));
-                const H = g.O.client.getSize('rem'),
-                    G = H.width,
-                    W = H.height,
-                    $ = Object.assign({ width: G, height: W }, U(G, W, N)),
+                const G = g.O.client.getSize('rem'),
+                    H = G.width,
+                    W = G.height,
+                    $ = Object.assign({ width: H, height: W }, U(H, W, N)),
                     q = (0, r.createContext)($),
                     Y = ['children'];
                 const V = (u) => {
@@ -1227,7 +1227,10 @@
                             (u.VehicleSelect = 'vehicleSelect'),
                             (u.StyleProgress = 'styleProgress'),
                             (u.ParagonsUnlocks = 'paragonsUnlocks'),
-                            (u.LootBoxToken = 'lootBoxToken'));
+                            (u.LootBoxToken = 'lootBoxToken'),
+                            (u.GoldenTicket = 'birthday2025_golden_ticket'),
+                            (u.PostStamp = 'giftsystem_4_stamp'),
+                            (u.Quests = 'quests'));
                     })(j || (j = {})),
                     (function (u) {
                         ((u.Gold = 'gold'),
@@ -1357,6 +1360,8 @@
                         j.CosmicLootboxCommon,
                         j.CosmicLootboxSilver,
                         j.SelectableBonus,
+                        j.GoldenTicket,
+                        j.PostStamp,
                     ],
                     tu = [j.Gold, j.Credits, j.Crystal, j.FreeXp],
                     ru = [j.BattlePassPoints],
@@ -1434,7 +1439,28 @@
                             case 'dossier_badge':
                                 return `R.images.gui.maps.icons.quests.bonuses.badges.${s}.${a}`;
                             case 'dossier_achievement':
-                                return `R.images.gui.maps.icons.achievement.${s}.${a}`;
+                                return `R.images.gui.maps.icons.achievement.${((u) => {
+                                    switch (u) {
+                                        case K.S600x450:
+                                            return 'c_600x450';
+                                        case K.S400x300:
+                                            return 'c_400x300';
+                                        case K.S296x222:
+                                            return 'c_296x222';
+                                        case K.S232x174:
+                                            return 'c_232x174';
+                                        case K.S180x135:
+                                            return 'big';
+                                        case K.Big:
+                                        case K.S80x80:
+                                            return 'c_80x80';
+                                        case K.Small:
+                                        case K.S48x48:
+                                            return 'c_48x48';
+                                        default:
+                                            return u;
+                                    }
+                                })(e)}.${a}`;
                             case 'xp':
                             case 'xpFactor':
                                 return `R.images.gui.maps.icons.quests.bonuses.${e}.exp`;
@@ -2010,8 +2036,8 @@
                     Ru = 'HangarApp_base_3b',
                     Pu = 'HangarApp_base__large_db',
                     Su = 'HangarApp_title_75',
-                    Ou = 'HangarApp_title__large_24',
-                    xu = 'HangarApp_separator_70',
+                    xu = 'HangarApp_title__large_24',
+                    Ou = 'HangarApp_separator_70',
                     yu = 'HangarApp_text_e0',
                     ku = 'HangarApp_textName_8f',
                     Lu = 'HangarApp_textInner_59',
@@ -2035,7 +2061,7 @@
                                 [i, E],
                             ),
                             D = s()(Ru, o && Pu),
-                            l = s()(Su, A && Ou),
+                            l = s()(Su, A && xu),
                             B = s()(Mu, Boolean(E) && Nu);
                         return n().createElement(
                             b,
@@ -2049,7 +2075,7 @@
                                     n().createElement(
                                         n().Fragment,
                                         null,
-                                        n().createElement('div', { className: xu }),
+                                        n().createElement('div', { className: Ou }),
                                         n().createElement(
                                             'div',
                                             { className: Su },

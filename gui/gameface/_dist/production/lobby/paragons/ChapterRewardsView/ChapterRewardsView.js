@@ -2035,6 +2035,7 @@
                                 ),
                                 [h],
                             );
+                            const f = (0, s.useCallback)((e) => _.trigger('isThumbDraggingChanged', e), [_]);
                             return (0, s.useMemo)(
                                 () => ({
                                     getWrapperSize: () => (m.current ? n(m.current) : void 0),
@@ -2053,9 +2054,10 @@
                                     scrollPosition: D,
                                     animationScroll: F,
                                     recalculateContent: v,
+                                    handleIsThumbDragging: f,
                                     events: { on: _.on, off: _.off },
                                 }),
-                                [F.scrollPosition, C, g, _.off, _.on, v, p, D, c.step.clampedArrowStepTimeout],
+                                [F.scrollPosition, C, g, f, _.off, _.on, v, p, D, c.step.clampedArrowStepTimeout],
                             );
                         };
                     },
@@ -2487,7 +2489,9 @@
                                         });
                                     },
                                     t = () => {
-                                        (window.removeEventListener('mousemove', u), F(he));
+                                        (window.removeEventListener('mousemove', u),
+                                            e.handleIsThumbDragging(!1),
+                                            F(he));
                                     };
                                 return (
                                     window.addEventListener('mousemove', u),
@@ -2530,7 +2534,11 @@
                                         const r = E.current;
                                         if (r && 0 === u.button)
                                             if ((v('play'), u.target === r))
-                                                F({ pending: !0, offset: u.screenY - r.getBoundingClientRect().y });
+                                                (e.handleIsThumbDragging(!0),
+                                                    F({
+                                                        pending: !0,
+                                                        offset: u.screenY - r.getBoundingClientRect().y,
+                                                    }));
                                             else {
                                                 ((u) => {
                                                     E.current &&
@@ -2846,7 +2854,10 @@
                         (e.VehicleSelect = 'vehicleSelect'),
                         (e.StyleProgress = 'styleProgress'),
                         (e.ParagonsUnlocks = 'paragonsUnlocks'),
-                        (e.LootBoxToken = 'lootBoxToken'));
+                        (e.LootBoxToken = 'lootBoxToken'),
+                        (e.GoldenTicket = 'birthday2025_golden_ticket'),
+                        (e.PostStamp = 'giftsystem_4_stamp'),
+                        (e.Quests = 'quests'));
                 })(Ke || (Ke = {})),
                     (function (e) {
                         ((e.Gold = 'gold'),
@@ -2986,6 +2997,8 @@
                         Ke.CosmicLootboxCommon,
                         Ke.CosmicLootboxSilver,
                         Ke.SelectableBonus,
+                        Ke.GoldenTicket,
+                        Ke.PostStamp,
                     ],
                     su = [Ke.Gold, Ke.Credits, Ke.Crystal, Ke.FreeXp],
                     iu = [Ke.BattlePassPoints],
@@ -3073,7 +3086,28 @@
                             case 'dossier_badge':
                                 return `R.images.gui.maps.icons.quests.bonuses.badges.${o}.${a}`;
                             case 'dossier_achievement':
-                                return `R.images.gui.maps.icons.achievement.${o}.${a}`;
+                                return `R.images.gui.maps.icons.achievement.${((e) => {
+                                    switch (e) {
+                                        case Je.S600x450:
+                                            return 'c_600x450';
+                                        case Je.S400x300:
+                                            return 'c_400x300';
+                                        case Je.S296x222:
+                                            return 'c_296x222';
+                                        case Je.S232x174:
+                                            return 'c_232x174';
+                                        case Je.S180x135:
+                                            return 'big';
+                                        case Je.Big:
+                                        case Je.S80x80:
+                                            return 'c_80x80';
+                                        case Je.Small:
+                                        case Je.S48x48:
+                                            return 'c_48x48';
+                                        default:
+                                            return e;
+                                    }
+                                })(u)}.${a}`;
                             case 'xp':
                             case 'xpFactor':
                                 return `R.images.gui.maps.icons.quests.bonuses.${u}.exp`;

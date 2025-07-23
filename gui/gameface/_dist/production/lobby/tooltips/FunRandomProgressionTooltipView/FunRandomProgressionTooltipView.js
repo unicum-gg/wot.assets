@@ -907,7 +907,10 @@
                             (u.VehicleSelect = 'vehicleSelect'),
                             (u.StyleProgress = 'styleProgress'),
                             (u.ParagonsUnlocks = 'paragonsUnlocks'),
-                            (u.LootBoxToken = 'lootBoxToken'));
+                            (u.LootBoxToken = 'lootBoxToken'),
+                            (u.GoldenTicket = 'birthday2025_golden_ticket'),
+                            (u.PostStamp = 'giftsystem_4_stamp'),
+                            (u.Quests = 'quests'));
                     })(m || (m = {})),
                     (function (u) {
                         ((u.Gold = 'gold'),
@@ -1037,6 +1040,8 @@
                         m.CosmicLootboxCommon,
                         m.CosmicLootboxSilver,
                         m.SelectableBonus,
+                        m.GoldenTicket,
+                        m.PostStamp,
                     ],
                     f = [m.Gold, m.Credits, m.Crystal, m.FreeXp],
                     T = [m.BattlePassPoints],
@@ -1114,7 +1119,28 @@
                             case 'dossier_badge':
                                 return `R.images.gui.maps.icons.quests.bonuses.badges.${i}.${o}`;
                             case 'dossier_achievement':
-                                return `R.images.gui.maps.icons.achievement.${i}.${o}`;
+                                return `R.images.gui.maps.icons.achievement.${((u) => {
+                                    switch (u) {
+                                        case g.S600x450:
+                                            return 'c_600x450';
+                                        case g.S400x300:
+                                            return 'c_400x300';
+                                        case g.S296x222:
+                                            return 'c_296x222';
+                                        case g.S232x174:
+                                            return 'c_232x174';
+                                        case g.S180x135:
+                                            return 'big';
+                                        case g.Big:
+                                        case g.S80x80:
+                                            return 'c_80x80';
+                                        case g.Small:
+                                        case g.S48x48:
+                                            return 'c_48x48';
+                                        default:
+                                            return u;
+                                    }
+                                })(e)}.${o}`;
                             case 'xp':
                             case 'xpFactor':
                                 return `R.images.gui.maps.icons.quests.bonuses.${e}.exp`;
@@ -1145,12 +1171,12 @@
                                 return `R.images.gui.maps.icons.quests.bonuses.${e}.${t}`;
                         }
                     };
-                function M() {
+                function x() {
                     return !1;
                 }
                 console.log;
                 var k = t(9174);
-                function x(u, e) {
+                function M(u, e) {
                     (null == e || e > u.length) && (e = u.length);
                     for (var t = 0, n = new Array(e); t < e; t++) n[t] = u[t];
                     return n;
@@ -1230,7 +1256,7 @@
                                                                         (t = (function (u, e) {
                                                                             if (u) {
                                                                                 if ('string' == typeof u)
-                                                                                    return x(u, e);
+                                                                                    return M(u, e);
                                                                                 var t = Object.prototype.toString
                                                                                     .call(u)
                                                                                     .slice(8, -1);
@@ -1244,7 +1270,7 @@
                                                                                             /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(
                                                                                                 t,
                                                                                             )
-                                                                                          ? x(u, e)
+                                                                                          ? M(u, e)
                                                                                           : void 0
                                                                                 );
                                                                             }
@@ -1314,7 +1340,7 @@
                                                                 };
                                                                 var t;
                                                             }),
-                                                        { equals: M },
+                                                        { equals: x },
                                                     ),
                                                     n = (0, L.Om)(() => e.rewards.get().length);
                                                 return Object.assign({}, e, {
@@ -1327,7 +1353,7 @@
                                                 observableModel: {
                                                     array: (e, t) => {
                                                         const n = null != t ? t : i(e),
-                                                            r = k.LO.box(n, { equals: M });
+                                                            r = k.LO.box(n, { equals: x });
                                                         return (
                                                             'real' === u &&
                                                                 s.subscribe(
@@ -1339,7 +1365,7 @@
                                                     },
                                                     object: (e, t) => {
                                                         const n = null != t ? t : i(e),
-                                                            r = k.LO.box(n, { equals: M });
+                                                            r = k.LO.box(n, { equals: x });
                                                         return (
                                                             'real' === u &&
                                                                 s.subscribe(
@@ -2048,7 +2074,7 @@
                     }),
                     Su = (u, e, t) => (t < u ? u : t > e ? e : t),
                     Ou = (u, e, t) => ('number' == typeof t ? (Su(0, e, t) / e) * 100 : u),
-                    Mu = {
+                    xu = {
                         bgImageBase: 'R.images.gui.maps.icons.components.progress_bar.pattern_grey',
                         line: { bgColorBase: '#f50', bgColorDisabled: 'transparent', bgColorFinished: '#59a011' },
                         pattern: {
@@ -2070,10 +2096,10 @@
                         delta: { duration: 500, delay: 0 },
                         line: { duration: 500, delay: 0 },
                     },
-                    xu = (0, a.memo)(
+                    Mu = (0, a.memo)(
                         ({
                             maxValue: u = 100,
-                            theme: e = Mu,
+                            theme: e = xu,
                             size: t = ru.Default,
                             animationSettings: n = ku,
                             disabled: o = !1,
@@ -2140,7 +2166,7 @@
                                     { className: 'Quest_progressValue_c0' },
                                     s().createElement(uu, { text: a, binding: { done: t, total: n } }),
                                 ),
-                                s().createElement(xu, { size: ru.Small, value: t, maxValue: n }),
+                                s().createElement(Mu, { size: ru.Small, value: t, maxValue: n }),
                             ),
                         );
                     }),

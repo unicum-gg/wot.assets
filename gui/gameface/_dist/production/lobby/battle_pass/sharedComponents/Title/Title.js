@@ -74,7 +74,10 @@
                             (u.VehicleSelect = 'vehicleSelect'),
                             (u.StyleProgress = 'styleProgress'),
                             (u.ParagonsUnlocks = 'paragonsUnlocks'),
-                            (u.LootBoxToken = 'lootBoxToken'));
+                            (u.LootBoxToken = 'lootBoxToken'),
+                            (u.GoldenTicket = 'birthday2025_golden_ticket'),
+                            (u.PostStamp = 'giftsystem_4_stamp'),
+                            (u.Quests = 'quests'));
                     })(E || (E = {})),
                     (function (u) {
                         ((u.Gold = 'gold'),
@@ -207,6 +210,8 @@
                     E.E4.CosmicLootboxCommon,
                     E.E4.CosmicLootboxSilver,
                     E.E4.SelectableBonus,
+                    E.E4.GoldenTicket,
+                    E.E4.PostStamp,
                     E.E4.Gold,
                     E.E4.Credits,
                     E.E4.Crystal,
@@ -365,7 +370,7 @@
             7641: (u, e, t) => {
                 (t.r(e),
                     t.d(e, {
-                        addModelObserver: () => D,
+                        addModelObserver: () => s,
                         addPreloadTexture: () => o,
                         children: () => E,
                         displayStatus: () => F.W,
@@ -388,7 +393,7 @@
                         setAnimateWindow: () => m,
                         setEventHandled: () => v,
                         setInputPaddingsRem: () => i,
-                        setSidePaddingsRem: () => s,
+                        setSidePaddingsRem: () => D,
                         whenTutorialReady: () => g,
                     }));
                 var E = t(3722),
@@ -404,10 +409,10 @@
                 function r(u, e, t, E = 1) {
                     return viewEnv.getWebBrowserTexturePath(u, e, t, E);
                 }
-                function D(u, e, t) {
+                function s(u, e, t) {
                     return viewEnv.addDataChangedCallback(u, e, t);
                 }
-                function s(u) {
+                function D(u) {
                     viewEnv.setHitAreaPaddingsRem(u.top, u.right, u.bottom, u.left, 15);
                 }
                 function a(u = 'px') {
@@ -796,8 +801,8 @@
                         (u[(u.MINIMIZE = 64)] = 'MINIMIZE'));
                 })(i || (i = {}));
                 const r = Object.freeze({ INTEGRAL: 0, GOLD: 1 }),
-                    D = Object.freeze({ FRACTIONAL: 0, WO_ZERO_DIGITS: 1 }),
-                    s = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1 }),
+                    s = Object.freeze({ FRACTIONAL: 0, WO_ZERO_DIGITS: 1 }),
+                    D = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1 }),
                     a = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1, YEAR_MONTH: 2 });
                 var B = t(5521),
                     C = t(3138);
@@ -890,8 +895,8 @@
                         ViewModel: w.Z,
                         ViewEventType: i,
                         NumberFormatType: r,
-                        RealFormatType: D,
-                        TimeFormatType: s,
+                        RealFormatType: s,
+                        TimeFormatType: D,
                         DateFormatType: a,
                         makeGlobalBoundingBox: c,
                         sendMoveEvent: (u) => m(i.MOVE, { isMouseEvent: !0, on: u }),
@@ -904,13 +909,13 @@
                             const n = C.O.view.getViewGlobalPosition(),
                                 o = t.getBoundingClientRect(),
                                 r = o.x,
-                                D = o.y,
-                                s = o.width,
+                                s = o.y,
+                                D = o.width,
                                 a = o.height,
                                 B = {
                                     x: C.O.view.pxToRem(r) + n.x,
-                                    y: C.O.view.pxToRem(D) + n.y,
-                                    width: C.O.view.pxToRem(s),
+                                    y: C.O.view.pxToRem(s) + n.y,
+                                    width: C.O.view.pxToRem(D),
                                     height: C.O.view.pxToRem(a),
                                 };
                             m(i.POP_OVER, {

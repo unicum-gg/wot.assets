@@ -766,7 +766,10 @@
                         (u.VehicleSelect = 'vehicleSelect'),
                         (u.StyleProgress = 'styleProgress'),
                         (u.ParagonsUnlocks = 'paragonsUnlocks'),
-                        (u.LootBoxToken = 'lootBoxToken'));
+                        (u.LootBoxToken = 'lootBoxToken'),
+                        (u.GoldenTicket = 'birthday2025_golden_ticket'),
+                        (u.PostStamp = 'giftsystem_4_stamp'),
+                        (u.Quests = 'quests'));
                 })(s || (s = {})),
                     (function (u) {
                         ((u.Gold = 'gold'),
@@ -907,6 +910,8 @@
                         s.CosmicLootboxCommon,
                         s.CosmicLootboxSilver,
                         s.SelectableBonus,
+                        s.GoldenTicket,
+                        s.PostStamp,
                     ],
                     m = [s.Gold, s.Credits, s.Crystal, s.FreeXp],
                     p = [s.BattlePassPoints],

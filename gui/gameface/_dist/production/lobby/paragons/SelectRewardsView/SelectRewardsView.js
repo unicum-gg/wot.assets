@@ -1356,7 +1356,7 @@
                         (0, a.useCallback)((...e) => (0, u.current)(...e), q)
                     );
                 }
-                function Z(e, u, t = []) {
+                function Q(e, u, t = []) {
                     const r = (0, a.useRef)(0),
                         n = (0, a.useCallback)(() => window.clearInterval(r.current), t || []);
                     (0, a.useEffect)(() => n, [n]);
@@ -1368,7 +1368,7 @@
                         n,
                     ];
                 }
-                function Q(e, u) {
+                function Z(e, u) {
                     var t = ('undefined' != typeof Symbol && e[Symbol.iterator]) || e['@@iterator'];
                     if (t) return (t = t.call(e)).next.bind(t);
                     if (
@@ -1479,7 +1479,7 @@
                                             u(e).delete(t);
                                         },
                                         n = (e, ...t) => {
-                                            for (var r, n = Q(u(e).values()); !(r = n()).done; ) (0, r.value)(...t);
+                                            for (var r, n = Z(u(e).values()); !(r = n()).done; ) (0, r.value)(...t);
                                         };
                                     return (0, a.useMemo)(() => ({ on: t, off: r, trigger: n }), []);
                                 })(),
@@ -1590,6 +1590,7 @@
                                 ),
                                 [f],
                             );
+                            const b = (0, a.useCallback)((e) => _.trigger('isThumbDraggingChanged', e), [_]);
                             return (0, a.useMemo)(
                                 () => ({
                                     getWrapperSize: () => (m.current ? n(m.current) : void 0),
@@ -1608,9 +1609,10 @@
                                     scrollPosition: B,
                                     animationScroll: D,
                                     recalculateContent: v,
+                                    handleIsThumbDragging: b,
                                     events: { on: _.on, off: _.off },
                                 }),
-                                [D.scrollPosition, p, g, _.off, _.on, v, h, B, E.step.clampedArrowStepTimeout],
+                                [D.scrollPosition, p, g, b, _.off, _.on, v, h, B, E.step.clampedArrowStepTimeout],
                             );
                         };
                     },
@@ -1769,7 +1771,7 @@
                                     }
                                 );
                             }, [e, m.offset, m.pending, r, d]));
-                        const B = Z((u) => e.applyStepTo(u), E, [e]),
+                        const B = Q((u) => e.applyStepTo(u), E, [e]),
                             C = B[0],
                             p = B[1];
                         (0, a.useEffect)(
@@ -2042,7 +2044,9 @@
                                         });
                                     },
                                     t = () => {
-                                        (window.removeEventListener('mousemove', u), d(Te));
+                                        (window.removeEventListener('mousemove', u),
+                                            e.handleIsThumbDragging(!1),
+                                            d(Te));
                                     };
                                 return (
                                     window.addEventListener('mousemove', u),
@@ -2053,7 +2057,7 @@
                                     }
                                 );
                             }, [e, m.offset, m.pending, r, d]));
-                        const C = Z((u) => e.applyStepTo(u), E, [e]),
+                        const C = Q((u) => e.applyStepTo(u), E, [e]),
                             p = C[0],
                             g = C[1];
                         (0, a.useEffect)(
@@ -2085,7 +2089,11 @@
                                         const r = c.current;
                                         if (r && 0 === u.button)
                                             if ((W('play'), u.target === r))
-                                                d({ pending: !0, offset: u.screenY - r.getBoundingClientRect().y });
+                                                (e.handleIsThumbDragging(!0),
+                                                    d({
+                                                        pending: !0,
+                                                        offset: u.screenY - r.getBoundingClientRect().y,
+                                                    }));
                                             else {
                                                 ((u) => {
                                                     c.current &&
@@ -2276,7 +2284,7 @@
                     );
                 }
                 Object.keys(Ge());
-                const Ze = {
+                const Qe = {
                         XL: { mt: Ye.mt__XL, mr: Ye.mr__XL, mb: Ye.mb__XL, ml: Ye.ml__XL },
                         LG: { mt: Ye.mt__LG, mr: Ye.mr__LG, mb: Ye.mb__LG, ml: Ye.ml__LG },
                         MDp: { mt: Ye.mt__MDp, mr: Ye.mr__MDp, mb: Ye.mb__MDp, ml: Ye.ml__MDp },
@@ -2285,7 +2293,7 @@
                         SM: { mt: Ye.mt__SM, mr: Ye.mr__SM, mb: Ye.mb__SM, ml: Ye.ml__SM },
                         XS: { mt: Ye.mt__XS, mr: Ye.mr__XS, mb: Ye.mb__XS, ml: Ye.ml__XS },
                     },
-                    Qe = (Object.keys(Ze), ['mt', 'mr', 'mb', 'ml']),
+                    Ze = (Object.keys(Qe), ['mt', 'mr', 'mb', 'ml']),
                     Je = { mt: 'marginTop', mr: 'marginRight', mb: 'marginBottom', ml: 'marginLeft' },
                     eu = $e((e) => {
                         let u = e.className,
@@ -2342,12 +2350,12 @@
                         const W = (0, a.useMemo)(() => {
                                 const e = { mt: s, mr: c, mb: A, ml: _ },
                                     u = ((e) =>
-                                        Qe.reduce((u, t) => {
+                                        Ze.reduce((u, t) => {
                                             const r = e[t];
-                                            return r && 'number' != typeof r ? u.concat(Ze[!0 === r ? 'MD' : r][t]) : u;
+                                            return r && 'number' != typeof r ? u.concat(Qe[!0 === r ? 'MD' : r][t]) : u;
                                         }, []))(e),
                                     n = ((e) =>
-                                        Qe.reduce((u, t) => {
+                                        Ze.reduce((u, t) => {
                                             const r = e[t];
                                             return ('number' == typeof r && (u[Je[t]] = r + 'rem'), u);
                                         }, {}))(e);
@@ -2995,7 +3003,7 @@
                         return void 0 !== this.props.value && void 0 !== u ? u : null;
                     }
                 }
-                let $u, Yu, qu, Ku, Zu, Qu, Ju;
+                let $u, Yu, qu, Ku, Qu, Zu, Ju;
                 ((Vu.defaultProps = { format: 'integral' }),
                     (function (e) {
                         ((e.Items = 'items'),
@@ -3052,7 +3060,10 @@
                             (e.VehicleSelect = 'vehicleSelect'),
                             (e.StyleProgress = 'styleProgress'),
                             (e.ParagonsUnlocks = 'paragonsUnlocks'),
-                            (e.LootBoxToken = 'lootBoxToken'));
+                            (e.LootBoxToken = 'lootBoxToken'),
+                            (e.GoldenTicket = 'birthday2025_golden_ticket'),
+                            (e.PostStamp = 'giftsystem_4_stamp'),
+                            (e.Quests = 'quests'));
                     })($u || ($u = {})),
                     (function (e) {
                         ((e.Gold = 'gold'),
@@ -3127,10 +3138,10 @@
                             (e.PROGRESSION_STYLE_UPGRADED_2 = 'progressionStyleUpgraded_2'),
                             (e.PROGRESSION_STYLE_UPGRADED_3 = 'progressionStyleUpgraded_3'),
                             (e.PROGRESSION_STYLE_UPGRADED_4 = 'progressionStyleUpgraded_4'));
-                    })(Zu || (Zu = {})),
+                    })(Qu || (Qu = {})),
                     (function (e) {
                         e.BATTLE_BOOSTER = 'battleBooster';
-                    })(Qu || (Qu = {})),
+                    })(Zu || (Zu = {})),
                     (function (e) {
                         ((e.BATTLE_BOOSTER = 'battleBooster'),
                             (e.BATTLE_BOOSTER_REPLACE = 'battleBoosterReplace'),
@@ -3181,6 +3192,8 @@
                     $u.CosmicLootboxCommon,
                     $u.CosmicLootboxSilver,
                     $u.SelectableBonus,
+                    $u.GoldenTicket,
+                    $u.PostStamp,
                     $u.Gold,
                     $u.Credits,
                     $u.Crystal,
@@ -3522,7 +3535,7 @@
                     (function (e) {
                         ((e.SMALL = 'small'), (e.NORMAL = 'normal'));
                     })(Kt || (Kt = {})));
-                const Zt = [
+                const Qt = [
                     'label',
                     'isVisibleLabel',
                     'autofocus',
@@ -3538,9 +3551,9 @@
                     'onBlur',
                     'type',
                 ];
-                function Qt() {
+                function Zt() {
                     return (
-                        (Qt =
+                        (Zt =
                             Object.assign ||
                             function (e) {
                                 for (var u = 1; u < arguments.length; u++) {
@@ -3549,7 +3562,7 @@
                                 }
                                 return e;
                             }),
-                        Qt.apply(this, arguments)
+                        Zt.apply(this, arguments)
                     );
                 }
                 const Jt = {
@@ -3585,7 +3598,7 @@
                                     a = Object.keys(e);
                                 for (r = 0; r < a.length; r++) ((t = a[r]), u.indexOf(t) >= 0 || (n[t] = e[t]));
                                 return n;
-                            })(e, Zt);
+                            })(e, Qt);
                         const b = (0, a.useState)(!1),
                             w = b[0],
                             S = b[1],
@@ -3669,7 +3682,7 @@
                             V = h()(Yt.icon, Yt[`icon__${m}`]);
                         return o().createElement(
                             'div',
-                            Qt(
+                            Zt(
                                 {
                                     ref: P,
                                     className: j,

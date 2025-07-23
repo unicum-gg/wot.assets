@@ -2163,7 +2163,7 @@
                         );
                     }
                 }
-                let de, Ee, me, Ae;
+                let de;
                 ((le.defaultProps = {
                     itemCount: 1,
                     itemMaxCount: 1,
@@ -2177,65 +2177,63 @@
                             (e[(e.RIGHT = 2)] = 'RIGHT'),
                             (e[(e.FOURTH = 3)] = 'FOURTH'),
                             (e[(e.FIFTH = 4)] = 'FIFTH'));
-                    })(de || (de = {})),
-                    (function (e) {
-                        ((e.small = 'small'),
-                            (e.medium = 'medium'),
-                            (e.large = 'large'),
-                            (e.extraLarge = 'extraLarge'));
-                    })(Ee || (Ee = {})),
+                    })(de || (de = {})));
+                const Ee = {
+                    base: 'Checkbox_base_36',
+                    base__disabled: 'Checkbox_base__disabled_08',
+                    base__center: 'Checkbox_base__center_52',
+                    base__bottom: 'Checkbox_base__bottom_28',
+                    input: 'Checkbox_input_37',
+                    base__mouseDown: 'Checkbox_base__mouseDown_45',
+                    base__small: 'Checkbox_base__small_18',
+                    base__medium: 'Checkbox_base__medium_12',
+                    base__large: 'Checkbox_base__large_f7',
+                    base__extraLarge: 'Checkbox_base__extraLarge_c9',
+                    alertOverlay: 'Checkbox_alertOverlay_52',
+                    base__alert: 'Checkbox_base__alert_b7',
+                    blink: 'Checkbox_blink_5e',
+                    base__checked: 'Checkbox_base__checked_a2',
+                    inputHoverOverlay: 'Checkbox_inputHoverOverlay_36',
+                    highlight: 'Checkbox_highlight_b8',
+                    base__main: 'Checkbox_base__main_3a',
+                    base__primary: 'Checkbox_base__primary_ab',
+                    checkmark: 'Checkbox_checkmark_60',
+                    fadeIn: 'Checkbox_fadeIn_1a',
+                    label: 'Checkbox_label_bc',
+                    labelContent: 'Checkbox_labelContent_64',
+                };
+                let me, Ae, Fe;
+                (!(function (e) {
+                    ((e.small = 'small'), (e.medium = 'medium'), (e.large = 'large'), (e.extraLarge = 'extraLarge'));
+                })(me || (me = {})),
                     (function (e) {
                         ((e.primary = 'primary'), (e.main = 'main'));
-                    })(me || (me = {})),
+                    })(Ae || (Ae = {})),
                     (function (e) {
                         ((e.Center = 'center'), (e.Bottom = 'bottom'));
-                    })(Ae || (Ae = {})));
-                const Fe = {
-                        base: 'Checkbox_base_36',
-                        base__disabled: 'Checkbox_base__disabled_08',
-                        base__center: 'Checkbox_base__center_52',
-                        base__bottom: 'Checkbox_base__bottom_28',
-                        input: 'Checkbox_input_37',
-                        base__mouseDown: 'Checkbox_base__mouseDown_45',
-                        base__small: 'Checkbox_base__small_18',
-                        base__medium: 'Checkbox_base__medium_12',
-                        base__large: 'Checkbox_base__large_f7',
-                        base__extraLarge: 'Checkbox_base__extraLarge_c9',
-                        alertOverlay: 'Checkbox_alertOverlay_52',
-                        base__alert: 'Checkbox_base__alert_b7',
-                        blink: 'Checkbox_blink_5e',
-                        base__checked: 'Checkbox_base__checked_a2',
-                        inputHoverOverlay: 'Checkbox_inputHoverOverlay_36',
-                        highlight: 'Checkbox_highlight_b8',
-                        base__main: 'Checkbox_base__main_3a',
-                        base__primary: 'Checkbox_base__primary_ab',
-                        checkmark: 'Checkbox_checkmark_60',
-                        fadeIn: 'Checkbox_fadeIn_1a',
-                        label: 'Checkbox_label_bc',
-                        labelContent: 'Checkbox_labelContent_64',
-                    },
-                    pe = [
-                        'id',
-                        'isChecked',
-                        'isDisabled',
-                        'isAlert',
-                        'size',
-                        'type',
-                        'soundHover',
-                        'soundClick',
-                        'onMouseEnter',
-                        'onMouseLeave',
-                        'onMouseUp',
-                        'onMouseDown',
-                        'onClick',
-                        'onChange',
-                        'onFocus',
-                        'onBlur',
-                        'text',
-                        'contentStyles',
-                        'children',
-                        'alignment',
-                    ];
+                    })(Fe || (Fe = {})));
+                const pe = [
+                    'id',
+                    'isChecked',
+                    'isDisabled',
+                    'isAlert',
+                    'size',
+                    'type',
+                    'soundHover',
+                    'soundClick',
+                    'onMouseEnter',
+                    'onMouseLeave',
+                    'onMouseUp',
+                    'onMouseDown',
+                    'onClick',
+                    'onChange',
+                    'onFocus',
+                    'onBlur',
+                    'text',
+                    'contentStyles',
+                    'children',
+                    'alignment',
+                ];
                 function De() {
                     return (
                         (De =
@@ -2259,9 +2257,9 @@
                             o = e.isAlert,
                             c = void 0 !== o && o,
                             _ = e.size,
-                            l = void 0 === _ ? Ee.medium : _,
+                            l = void 0 === _ ? me.medium : _,
                             d = e.type,
-                            E = void 0 === d ? me.primary : d,
+                            E = void 0 === d ? Ae.primary : d,
                             m = e.soundHover,
                             A = void 0 === m ? 'highlight' : m,
                             p = e.soundClick,
@@ -2337,10 +2335,10 @@
                             ),
                             z = i().createElement(
                                 'div',
-                                { className: Fe.label },
+                                { className: Ee.label },
                                 i().createElement(
                                     'div',
-                                    { className: F()(Fe.labelContent, 's-labelContent'), style: N },
+                                    { className: F()(Ee.labelContent, 's-labelContent'), style: N },
                                     k || S,
                                 ),
                             );
@@ -2349,13 +2347,13 @@
                             De(
                                 {
                                     id: u,
-                                    className: F()(Fe.base, Fe[`base__${l}`], Fe[`base__${E}`], {
-                                        [Fe.base__checked]: r,
-                                        [Fe.base__disabled]: a,
-                                        [Fe.base__mouseDown]: P,
-                                        [Fe.base__alert]: c,
-                                        [Fe.base__center]: M === Ae.Center,
-                                        [Fe.base__bottom]: M === Ae.Bottom,
+                                    className: F()(Ee.base, Ee[`base__${l}`], Ee[`base__${E}`], {
+                                        [Ee.base__checked]: r,
+                                        [Ee.base__disabled]: a,
+                                        [Ee.base__mouseDown]: P,
+                                        [Ee.base__alert]: c,
+                                        [Ee.base__center]: M === Fe.Center,
+                                        [Ee.base__bottom]: M === Fe.Bottom,
                                     }),
                                     onClick: R,
                                     onMouseEnter: H,
@@ -2369,12 +2367,12 @@
                             ),
                             i().createElement(
                                 'div',
-                                { className: Fe.input },
-                                i().createElement('div', { className: Fe.alertOverlay }),
-                                i().createElement('div', { className: Fe.inputHoverOverlay }),
-                                i().createElement('div', { className: Fe.highlight }),
+                                { className: Ee.input },
+                                i().createElement('div', { className: Ee.alertOverlay }),
+                                i().createElement('div', { className: Ee.inputHoverOverlay }),
+                                i().createElement('div', { className: Ee.highlight }),
                             ),
-                            i().createElement('div', { className: Fe.checkmark }),
+                            i().createElement('div', { className: Ee.checkmark }),
                             ((k || S) && z) || null,
                         );
                     },

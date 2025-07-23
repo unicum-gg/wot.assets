@@ -1345,18 +1345,18 @@
                             W = G.computedClassNames;
                         return n().createElement('div', Y({ className: C()(j.base, ...W, e), style: U }, I), H);
                     });
-                function Z(u) {
+                function Q(u) {
                     engine.call('PlaySound', u);
                 }
-                const Q = {
+                const Z = {
                         playHighlight() {
-                            Z('highlight');
+                            Q('highlight');
                         },
                         playClick() {
-                            Z('play');
+                            Q('play');
                         },
                         playYes() {
-                            Z('yes1');
+                            Q('yes1');
                         },
                     },
                     J = {
@@ -1412,7 +1412,7 @@
                             (this._onMouseEnter = (u) => (e) => {
                                 (u && u(e),
                                     this.setState({ hover: !0 }),
-                                    this.props.soundHover && Z(this.props.soundHover));
+                                    this.props.soundHover && Q(this.props.soundHover));
                             }),
                             (this._onMouseLeave = (u) => (e) => {
                                 (u && u(e), this.setState({ hover: !1, click: !1 }));
@@ -1420,7 +1420,7 @@
                             (this._onMouseDown = (u) => (e) => {
                                 (u && u(e),
                                     this.setState({ click: !0 }),
-                                    this.props.soundClick && Z(this.props.soundClick));
+                                    this.props.soundClick && Q(this.props.soundClick));
                             }),
                             (this._onMouseUp = (u) => (e) => {
                                 (u && u(e), this.setState({ click: !1 }));
@@ -1565,7 +1565,10 @@
                         (u.VehicleSelect = 'vehicleSelect'),
                         (u.StyleProgress = 'styleProgress'),
                         (u.ParagonsUnlocks = 'paragonsUnlocks'),
-                        (u.LootBoxToken = 'lootBoxToken'));
+                        (u.LootBoxToken = 'lootBoxToken'),
+                        (u.GoldenTicket = 'birthday2025_golden_ticket'),
+                        (u.PostStamp = 'giftsystem_4_stamp'),
+                        (u.Quests = 'quests'));
                 })(lu || (lu = {})),
                     (function (u) {
                         ((u.Gold = 'gold'),
@@ -2057,7 +2060,7 @@
                         ),
                         S = (0, r.useCallback)(
                             (u) => {
-                                i || (null !== l && Z(l), E && E(u), x(!0));
+                                i || (null !== l && Q(l), E && E(u), x(!0));
                             },
                             [i, l, E],
                         ),
@@ -2075,7 +2078,7 @@
                         ),
                         P = (0, r.useCallback)(
                             (u) => {
-                                i || (null !== s && Z(s), _ && _(u), t && y(), b(!0));
+                                i || (null !== s && Q(s), _ && _(u), t && y(), b(!0));
                             },
                             [i, s, _, y, t],
                         ),
@@ -2398,8 +2401,8 @@
                 Object.keys(H());
                 const Vu = Object.keys(qu()),
                     Ku = { mt: 'MD', mr: 'SM', mb: 'SM', ml: 'SM' },
-                    Zu = { mt: 'SM', mr: 'XS', mb: 'XS', ml: 'XS' },
-                    Qu = { mt: 'XS', mr: 'XS', mb: 'XS', ml: 'XS' },
+                    Qu = { mt: 'SM', mr: 'XS', mb: 'XS', ml: 'XS' },
+                    Zu = { mt: 'XS', mr: 'XS', mb: 'XS', ml: 'XS' },
                     Ju =
                         (Object.keys({
                             XL: { mt: 'XL', mr: 'XL', mb: 'XL', ml: 'XL' },
@@ -2415,20 +2418,20 @@
                             'heading-H73': { mt: 'LG', mr: 'MD', mb: 'MD', ml: 'MD' },
                             'heading-H56': Ku,
                             'heading-H36': Ku,
-                            'heading-H28': Zu,
-                            'heading-H24': Zu,
-                            'heading-H24R': Zu,
-                            'heading-H22': Zu,
-                            'heading-H20R': Zu,
-                            'heading-H18': Zu,
-                            'heading-H15': Qu,
-                            'heading-H14': Qu,
-                            'paragraph-P24': Zu,
-                            'paragraph-P18': Zu,
-                            'paragraph-P16': Zu,
-                            'paragraph-P14': Qu,
-                            'paragraph-P12': Qu,
-                            'paragraph-P10': Qu,
+                            'heading-H28': Qu,
+                            'heading-H24': Qu,
+                            'heading-H24R': Qu,
+                            'heading-H22': Qu,
+                            'heading-H20R': Qu,
+                            'heading-H18': Qu,
+                            'heading-H15': Zu,
+                            'heading-H14': Zu,
+                            'paragraph-P24': Qu,
+                            'paragraph-P18': Qu,
+                            'paragraph-P16': Qu,
+                            'paragraph-P14': Zu,
+                            'paragraph-P12': Zu,
+                            'paragraph-P10': Zu,
                         }),
                     ue =
                         (Object.keys(Ju),
@@ -2549,7 +2552,7 @@
                             }),
                             B = f().mediaSize,
                             g = (0, r.useCallback)(() => {
-                                (E(!0), Z('personal_reserves_hover'));
+                                (E(!0), Q('personal_reserves_hover'));
                             }, []),
                             h = (0, r.useCallback)(() => {
                                 E(!1);
@@ -2692,7 +2695,7 @@
                             a = e.computes.getFinalBundles(),
                             i = (0, r.useCallback)(
                                 (u) => () => {
-                                    (Q.playClick(), t.buyBundle(u));
+                                    (Z.playClick(), t.buyBundle(u));
                                 },
                                 [t],
                             );
@@ -2961,7 +2964,7 @@
                             s = (0, te.useTransition)(o, Object.assign({ key: o }, ne)),
                             E = (0, te.useSpring)({ scale: o ? 1.06 : 1, INCREASE_CONFIG: ae }),
                             c = (0, r.useCallback)(() => {
-                                (Z('personal_reserves_hover'), l(!0));
+                                (Q('personal_reserves_hover'), l(!0));
                             }, []),
                             _ = (0, r.useCallback)(() => {
                                 l(!1);
@@ -3197,7 +3200,7 @@
                         ),
                     ),
                     Ke = R.strings.armory_yard.bundles,
-                    Ze = (0, ou.Pi)(() => {
+                    Qe = (0, ou.Pi)(() => {
                         const u = vu(),
                             e = u.model,
                             t = u.controls,
@@ -3217,7 +3220,7 @@
                             return () => clearInterval(u);
                         }, [l]);
                         const m = (0, r.useCallback)(() => {
-                            (Q.playClick(), t.buyTokens());
+                            (Z.playClick(), t.buyTokens());
                         }, [t]);
                         return (
                             (function ({
@@ -3262,7 +3265,7 @@
                             )
                         );
                     }),
-                    Qe = {
+                    Ze = {
                         isBlurEnabled: !0,
                         currentLevel: 23,
                         endTime: (Date.now() + 5365e4) / 1e3,
@@ -3313,7 +3316,7 @@
                         },
                     },
                     Je = {
-                        getter: ((ut = Qe), (u) => (u ? u.split('.').reduce((u, e) => u[e], ut) : ut)),
+                        getter: ((ut = Ze), (u) => (u ? u.split('.').reduce((u, e) => u[e], ut) : ut)),
                         controls: () =>
                             (function (u) {
                                 const e = {};
@@ -3335,7 +3338,7 @@
                         n().createElement(
                             bu,
                             { mode: 'real', mocks: Je },
-                            n().createElement(P, null, n().createElement(Ze, null)),
+                            n().createElement(P, null, n().createElement(Qe, null)),
                         ),
                         document.getElementById('root'),
                     );

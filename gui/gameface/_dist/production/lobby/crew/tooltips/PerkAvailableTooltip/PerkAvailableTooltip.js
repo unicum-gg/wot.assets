@@ -875,7 +875,10 @@
                 !(function (u) {
                     ((u.Objective = 'objective'), (u.Possessive = 'possessive'));
                 })(p || (p = {}));
-                (R.strings.crew.filterPanel.counter.reset.header(), R.strings.crew.filterPanel.counter.reset.body());
+                (R.strings.crew.filterPanel.counter.reset.header(),
+                    R.strings.crew.filterPanel.counter.reset.body(),
+                    R.strings.crew.filterPanel.counterMultySelect.reset.header(),
+                    R.strings.crew.filterPanel.counterMultySelect.reset.body());
                 let v;
                 !(function (u) {
                     ((u.CREW_FREEXP_HIGHLIGHT = 'crew_crewbook_freeexp_highlight'),
@@ -1133,7 +1136,7 @@
                     'onShow',
                     'onHide',
                 ];
-                function N(u) {
+                function S(u) {
                     return Object.entries(u || {}).map(([u, e]) => {
                         const t = { __Type: 'GFValueProxy', name: u };
                         switch (typeof e) {
@@ -1151,7 +1154,7 @@
                         return t;
                     });
                 }
-                const S = (u, e, t = {}, n = 0) => {
+                const N = (u, e, t = {}, n = 0) => {
                         viewEnv.handleViewEvent(
                             Object.assign(
                                 {
@@ -1216,7 +1219,7 @@
                             ),
                             f = (0, i.useCallback)(() => {
                                 (m.current.isVisible && m.current.timeoutId) ||
-                                    (S(t, D, { isMouseEvent: !0, on: !0, arguments: N(n) }, b),
+                                    (N(t, D, { isMouseEvent: !0, on: !0, arguments: S(n) }, b),
                                     p && p(),
                                     (m.current.isVisible = !0));
                             }, [t, D, n, b, p]),
@@ -1224,7 +1227,7 @@
                                 if (m.current.isVisible || m.current.timeoutId) {
                                     const u = m.current.timeoutId;
                                     (u > 0 && (clearTimeout(u), (m.current.timeoutId = 0)),
-                                        S(t, D, { on: !1 }, b),
+                                        N(t, D, { on: !1 }, b),
                                         m.current.isVisible && v && v(),
                                         (m.current.isVisible = !1));
                                 }
@@ -1828,8 +1831,8 @@
                     },
                     Mu = 'PerkAvailableTooltipApp_base_8b',
                     Ru = 'PerkAvailableTooltipApp_header_ca',
-                    Nu = 'PerkAvailableTooltipApp_divider_9e',
-                    Su = 'PerkAvailableTooltipApp_perks_2b',
+                    Su = 'PerkAvailableTooltipApp_divider_9e',
+                    Nu = 'PerkAvailableTooltipApp_perks_2b',
                     Iu = 100,
                     Uu = () => {
                         const u = L().model,
@@ -1843,12 +1846,12 @@
                             { className: Mu },
                             a().createElement(
                                 b,
-                                { classNames: { divider: Nu } },
+                                { classNames: { divider: Su } },
                                 a().createElement('div', { className: Ru }, R.strings.tooltips.perkAvailable.header()),
                             ),
                             a().createElement(
                                 'div',
-                                { className: Su },
+                                { className: Nu },
                                 a().createElement(xu, {
                                     count: u.zeroPerkCount.get(),
                                     text: R.strings.tooltips.perkAvailable.zeroPerk(),

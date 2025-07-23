@@ -1866,13 +1866,18 @@
                             },
                             () => (0, i.useContext)(t),
                         ];
-                    })(({ observableModel: u }) => u.primitives(['bunksCount', 'oldCost', 'newCost', 'isEnough']), Bu),
+                    })(
+                        ({ observableModel: u }) =>
+                            u.primitives(['bunksCount', 'oldCost', 'newCost', 'isEnough', 'currencyType']),
+                        Bu,
+                    ),
                     bu = vu[0],
                     fu = vu[1],
                     wu = 'BunksConfirmDiscountTooltipApp_base_f7',
                     yu = 'BunksConfirmDiscountTooltipApp_title_b1',
                     ku = () => {
-                        const u = fu().model;
+                        const u = fu().model,
+                            e = u.currencyType.get();
                         return a().createElement(
                             'div',
                             { className: wu },
@@ -1887,7 +1892,7 @@
                                     currency: a().createElement(m, {
                                         value: u.oldCost.get(),
                                         isEnough: u.isEnough.get(),
-                                        type: D.gold,
+                                        type: e,
                                         size: d.small,
                                     }),
                                     bunksCount: u.bunksCount.get(),
@@ -1899,7 +1904,7 @@
                                     currency: a().createElement(m, {
                                         value: u.newCost.get(),
                                         isEnough: u.isEnough.get(),
-                                        type: D.gold,
+                                        type: e,
                                         size: d.small,
                                     }),
                                     bunksCount: u.bunksCount.get(),

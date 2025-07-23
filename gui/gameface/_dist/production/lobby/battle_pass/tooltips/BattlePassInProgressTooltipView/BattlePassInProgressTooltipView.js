@@ -946,15 +946,15 @@
                             ),
                         ),
                     ),
-                    N = 'BattleRoyaleTable_pointsColumn_f0',
-                    k = 'BattleRoyaleTable_header_7e',
+                    k = 'BattleRoyaleTable_pointsColumn_f0',
+                    N = 'BattleRoyaleTable_header_7e',
                     M = 'BattleRoyaleTable_label_e2',
-                    I = R.strings.battle_pass.tooltips.pointsTable,
-                    x = ({ rewardPoints: u }) => {
+                    x = R.strings.battle_pass.tooltips.pointsTable,
+                    I = ({ rewardPoints: u }) => {
                         const e = (0, n.useMemo)(
                                 () =>
                                     u.soloMode.map(({ value: u }, e) =>
-                                        _(e > 0 ? I.places() : I.place(), { place: u.place }),
+                                        _(e > 0 ? x.places() : x.place(), { place: u.place }),
                                     ),
                                 [u],
                             ),
@@ -962,7 +962,7 @@
                             a = (0, n.useMemo)(
                                 () =>
                                     u.squadMode.map(({ value: u }, e) =>
-                                        _(e > 0 ? I.places() : I.place(), { place: u.place }),
+                                        _(e > 0 ? x.places() : x.place(), { place: u.place }),
                                     ),
                                 [u],
                             ),
@@ -972,16 +972,16 @@
                             null,
                             r().createElement(T, {
                                 columnWidth: 140,
-                                header: I.solo(),
-                                headerClassMix: k,
+                                header: x.solo(),
+                                headerClassMix: N,
                                 labels: e,
                                 labelClassMix: M,
                             }),
-                            r().createElement(O, { points: t, columnClassMix: N }),
+                            r().createElement(O, { points: t, columnClassMix: k }),
                             r().createElement(T, {
                                 columnWidth: 140,
-                                header: I.squad(),
-                                headerClassMix: k,
+                                header: x.squad(),
+                                headerClassMix: N,
                                 labels: a,
                                 labelClassMix: M,
                             }),
@@ -1445,7 +1445,7 @@
                             r().createElement(Su, { size: u, disabled: a, baseStyles: o, isComplete: i, lineRef: t })
                         );
                     },
-                    Nu = (u, e) => {
+                    ku = (u, e) => {
                         let t;
                         const n = setTimeout(() => {
                             t = u();
@@ -1454,15 +1454,15 @@
                             ('function' == typeof t && t(), clearTimeout(n));
                         };
                     };
-                let ku, Mu;
+                let Nu, Mu;
                 (!(function (u) {
                     ((u.Idle = 'Idle'), (u.Grow = 'Grow'), (u.Shrink = 'Shrink'), (u.End = 'End'));
-                })(ku || (ku = {})),
+                })(Nu || (Nu = {})),
                     (function (u) {
                         ((u.Idle = 'Idle'), (u.In = 'In'), (u.End = 'End'));
                     })(Mu || (Mu = {})));
-                const Iu = 'ProgressBarDeltaSimple_base_6c',
-                    xu = 'ProgressBarDeltaSimple_delta_99',
+                const xu = 'ProgressBarDeltaSimple_base_6c',
+                    Iu = 'ProgressBarDeltaSimple_delta_99',
                     Lu = (0, n.memo)(
                         ({
                             transitionDuration: u,
@@ -1489,14 +1489,14 @@
                                 );
                             ((0, n.useEffect)(() => {
                                 if (_ && !t) {
-                                    return Nu(() => {
+                                    return ku(() => {
                                         m(Mu.In);
                                     }, e);
                                 }
                             }, [m, t, _, e]),
                                 (0, n.useEffect)(() => {
                                     if (D) {
-                                        return Nu(() => {
+                                        return ku(() => {
                                             (i && i(), m(Mu.End));
                                         }, u + e);
                                     }
@@ -1527,10 +1527,10 @@
                                 ? null
                                 : r().createElement(
                                       'div',
-                                      { className: Iu, style: p },
+                                      { className: xu, style: p },
                                       r().createElement(
                                           'div',
-                                          { style: _ ? B : C, className: xu },
+                                          { style: _ ? B : C, className: Iu },
                                           r().createElement(yu, { size: s }),
                                       ),
                                   );
@@ -1599,13 +1599,13 @@
                             className: A,
                         }) => {
                             const c = o < a,
-                                F = (0, n.useState)(ku.Idle),
+                                F = (0, n.useState)(Nu.Idle),
                                 D = F[0],
                                 d = F[1],
-                                _ = D === ku.End,
-                                m = D === ku.Idle,
-                                B = D === ku.Grow,
-                                C = D === ku.Shrink,
+                                _ = D === Nu.End,
+                                m = D === Nu.Idle,
+                                B = D === Nu.Grow,
+                                C = D === Nu.Shrink,
                                 p = (0, n.useCallback)(
                                     (u) => {
                                         (d(u), l && l(u));
@@ -1614,7 +1614,7 @@
                                 ),
                                 g = (0, n.useCallback)(
                                     (u, e) =>
-                                        Nu(() => {
+                                        ku(() => {
                                             p(u);
                                         }, e),
                                     [p],
@@ -1622,11 +1622,11 @@
                             (0, n.useEffect)(() => {
                                 if (!t)
                                     return m
-                                        ? g(ku.Grow, e)
+                                        ? g(Nu.Grow, e)
                                         : B
-                                          ? g(ku.Shrink, u)
+                                          ? g(Nu.Shrink, u)
                                           : C
-                                            ? g(ku.End, u)
+                                            ? g(Nu.End, u)
                                             : void (_ && E && E());
                             }, [g, t, _, B, m, C, E, e, u]);
                             const b = (0, n.useMemo)(() => Object.assign({ width: '100%' }, Wu(u), qu(c)), [c, u]),
@@ -1667,7 +1667,7 @@
                                 D = c[1],
                                 d = (0, n.useCallback)(
                                     (u) => {
-                                        (u === ku.Shrink && D(!0), l && l(u));
+                                        (u === Nu.Shrink && D(!0), l && l(u));
                                     },
                                     [l],
                                 ),
@@ -2024,7 +2024,10 @@
                         (u.VehicleSelect = 'vehicleSelect'),
                         (u.StyleProgress = 'styleProgress'),
                         (u.ParagonsUnlocks = 'paragonsUnlocks'),
-                        (u.LootBoxToken = 'lootBoxToken'));
+                        (u.LootBoxToken = 'lootBoxToken'),
+                        (u.GoldenTicket = 'birthday2025_golden_ticket'),
+                        (u.PostStamp = 'giftsystem_4_stamp'),
+                        (u.Quests = 'quests'));
                 })(pe || (pe = {})),
                     (function (u) {
                         ((u.Gold = 'gold'),
@@ -2164,13 +2167,15 @@
                         pe.CosmicLootboxCommon,
                         pe.CosmicLootboxSilver,
                         pe.SelectableBonus,
+                        pe.GoldenTicket,
+                        pe.PostStamp,
                     ],
                     ye = [pe.Gold, pe.Credits, pe.Crystal, pe.FreeXp],
                     Te = [pe.BattlePassPoints],
                     Se = [pe.PremiumPlus, pe.Premium],
                     Oe = ['engravings', 'backgrounds'],
-                    Ne = ['engraving', 'background'],
-                    ke = (u, e = be.Small) => {
+                    ke = ['engraving', 'background'],
+                    Ne = (u, e = be.Small) => {
                         const t = u.name,
                             n = u.type,
                             r = u.value,
@@ -2229,7 +2234,7 @@
                                     if (n) {
                                         const r = R.images.gui.maps.icons.dogtags.$dyn(e).$dyn(n),
                                             a = r.$dyn(t);
-                                        return a ? `${a}` : `${r.$dyn(Ne[u])}`;
+                                        return a ? `${a}` : `${r.$dyn(ke[u])}`;
                                     }
                                     return (
                                         console.error(
@@ -2241,7 +2246,28 @@
                             case 'dossier_badge':
                                 return `R.images.gui.maps.icons.quests.bonuses.badges.${i}.${a}`;
                             case 'dossier_achievement':
-                                return `R.images.gui.maps.icons.achievement.${i}.${a}`;
+                                return `R.images.gui.maps.icons.achievement.${((u) => {
+                                    switch (u) {
+                                        case be.S600x450:
+                                            return 'c_600x450';
+                                        case be.S400x300:
+                                            return 'c_400x300';
+                                        case be.S296x222:
+                                            return 'c_296x222';
+                                        case be.S232x174:
+                                            return 'c_232x174';
+                                        case be.S180x135:
+                                            return 'big';
+                                        case be.Big:
+                                        case be.S80x80:
+                                            return 'c_80x80';
+                                        case be.Small:
+                                        case be.S48x48:
+                                            return 'c_48x48';
+                                        default:
+                                            return u;
+                                    }
+                                })(e)}.${a}`;
                             case 'xp':
                             case 'xpFactor':
                                 return `R.images.gui.maps.icons.quests.bonuses.${e}.exp`;
@@ -2288,7 +2314,7 @@
                         'onShow',
                         'onHide',
                     ];
-                function Ie(u) {
+                function xe(u) {
                     return Object.entries(u || {}).map(([u, e]) => {
                         const t = { __Type: 'GFValueProxy', name: u };
                         switch (typeof e) {
@@ -2306,7 +2332,7 @@
                         return t;
                     });
                 }
-                const xe = (u, e, t = {}, n = 0) => {
+                const Ie = (u, e, t = {}, n = 0) => {
                         viewEnv.handleViewEvent(
                             Object.assign(
                                 {
@@ -2371,7 +2397,7 @@
                             ),
                             w = (0, n.useCallback)(() => {
                                 (b.current.isVisible && b.current.timeoutId) ||
-                                    (xe(t, D, { isMouseEvent: !0, on: !0, arguments: Ie(r) }, v),
+                                    (Ie(t, D, { isMouseEvent: !0, on: !0, arguments: xe(r) }, v),
                                     C && C(),
                                     (b.current.isVisible = !0));
                             }, [t, D, r, v, C]),
@@ -2379,7 +2405,7 @@
                                 if (b.current.isVisible || b.current.timeoutId) {
                                     const u = b.current.timeoutId;
                                     (u > 0 && (clearTimeout(u), (b.current.timeoutId = 0)),
-                                        xe(t, D, { on: !1 }, v),
+                                        Ie(t, D, { on: !1 }, v),
                                         b.current.isVisible && p && p(),
                                         (b.current.isVisible = !1));
                                 }
@@ -2753,7 +2779,7 @@
                     it = (u) => {
                         return {
                             name: u.item || u.name,
-                            image: ke(u, be.Small),
+                            image: Ne(u, be.Small),
                             special: u.overlayType,
                             value: u.value,
                             valueType:
@@ -2887,7 +2913,7 @@
                                 ? r().createElement(
                                       $.c,
                                       { mixClass: Q.perBattlePointsTable, separatorRows: A.soloMode },
-                                      r().createElement(x, { rewardPoints: A }),
+                                      r().createElement(I, { rewardPoints: A }),
                                   )
                                 : r().createElement(
                                       $.c,
