@@ -1653,28 +1653,23 @@
                                         i().createElement('div', { className: 'App_description_d2' }, au(e)),
                                     ),
                                 ),
-                                t.length > 0 &&
+                                i().createElement('div', { className: 'App_separator_35' }),
+                                i().createElement(
+                                    'div',
+                                    { className: 'App_params_dc' },
                                     i().createElement(
-                                        i().Fragment,
-                                        null,
-                                        i().createElement('div', { className: 'App_separator_35' }),
-                                        i().createElement(
-                                            'div',
-                                            { className: 'App_params_dc' },
-                                            i().createElement(
-                                                'div',
-                                                { className: 'App_paramsTitle_4a' },
-                                                1 === t.length
-                                                    ? R.strings.battle_modifiers.modifiersDomainTooltip.subtitle.single()
-                                                    : R.strings.battle_modifiers.modifiersDomainTooltip.subtitle.plural(),
-                                            ),
-                                            i().createElement(
-                                                'div',
-                                                { className: 'App_paramsList_4b' },
-                                                t.map(({ value: u }, e) => i().createElement(eu, { value: u, key: e })),
-                                            ),
-                                        ),
+                                        'div',
+                                        { className: 'App_paramsTitle_4a' },
+                                        1 === t.length
+                                            ? R.strings.battle_modifiers.modifiersDomainTooltip.subtitle.single()
+                                            : R.strings.battle_modifiers.modifiersDomainTooltip.subtitle.plural(),
                                     ),
+                                    i().createElement(
+                                        'div',
+                                        { className: 'App_paramsList_4b' },
+                                        t.map(({ value: u }, e) => i().createElement(eu, { value: u, key: e })),
+                                    ),
+                                ),
                             ),
                         );
                     };

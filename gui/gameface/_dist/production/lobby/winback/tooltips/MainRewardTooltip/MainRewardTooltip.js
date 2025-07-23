@@ -1307,7 +1307,7 @@
                     }
                 }
                 H.defaultProps = { format: 'integral' };
-                const j = [
+                const $ = [
                         v.Items,
                         v.Equipment,
                         v.Xp,
@@ -1346,7 +1346,7 @@
                         v.OptionalDevice,
                         v.Attachment,
                     ],
-                    $ = [v.Gold, v.Credits, v.Crystal, v.FreeXp],
+                    j = [v.Gold, v.Credits, v.Crystal, v.FreeXp],
                     X = [v.BattlePassPoints, v.EquipCoin],
                     W = [v.PremiumPlus, v.Premium],
                     K = ['engravings', 'backgrounds'],
@@ -1442,6 +1442,8 @@
                                 return `R.images.gui.maps.icons.collectionItems.${A}.${E}`;
                             case 'attachment':
                                 return `R.images.gui.maps.vehicles.attachments.${e}.${E}`;
+                            case 'statTracker':
+                                return `R.images.gui.maps.vehicles.statTrackers.${e}.${E}`;
                             default:
                                 return `R.images.gui.maps.icons.quests.bonuses.${e}.${t}`;
                         }
@@ -1990,9 +1992,9 @@
                                     value: u.value,
                                     valueType:
                                         ((e = u.name),
-                                        j.includes(e)
+                                        $.includes(e)
                                             ? w.MULTI
-                                            : $.includes(e)
+                                            : j.includes(e)
                                               ? w.CURRENCY
                                               : X.includes(e)
                                                 ? w.NUMBER

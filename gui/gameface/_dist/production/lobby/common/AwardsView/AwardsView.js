@@ -2198,6 +2198,8 @@
                                 return `R.images.gui.maps.icons.collectionItems.${o}.${a}`;
                             case 'attachment':
                                 return `R.images.gui.maps.vehicles.attachments.${u}.${a}`;
+                            case 'statTracker':
+                                return `R.images.gui.maps.vehicles.statTrackers.${u}.${a}`;
                             default:
                                 return `R.images.gui.maps.icons.quests.bonuses.${u}.${t}`;
                         }

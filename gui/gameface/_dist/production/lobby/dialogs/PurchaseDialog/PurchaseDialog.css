@@ -419,6 +419,11 @@
     margin-right: -10rem;
 }
 
+.Reward_base__s48x48_46 .Reward_title_36,
+.Reward_base__small_c0 .Reward_title_36 {
+    margin: -10rem -10rem 0;
+}
+
 .Reward_timer_d3 {
     background: no-repeat center / contain;
     position: absolute;

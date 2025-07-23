@@ -700,6 +700,8 @@
                                 return `R.images.gui.maps.icons.collectionItems.${l}.${a}`;
                             case 'attachment':
                                 return `R.images.gui.maps.vehicles.attachments.${u}.${a}`;
+                            case 'statTracker':
+                                return `R.images.gui.maps.vehicles.statTrackers.${u}.${a}`;
                             default:
                                 return `R.images.gui.maps.icons.quests.bonuses.${u}.${t}`;
                         }
@@ -3980,43 +3982,48 @@
                                     ),
                             ),
                         );
-                    },
-                    X = {
+                    };
+                var X = t(514);
+                const K = {
                         base: 'CommanderAward_base_11',
-                        base__big: 'CommanderAward_base__big_ce',
                         icon: 'CommanderAward_icon_92',
                         base__hover: 'CommanderAward_base__hover_fc',
                     },
-                    K = R.strings.battle_pass.awardsWidget,
-                    Q = ({ onClick: e, size: u }) => {
-                        const t = (0, n.useState)(!1),
-                            a = t[0],
-                            i = t[1],
-                            o = K.description.commander();
+                    Q = R.strings.battle_pass.awardsWidget,
+                    J = ({ onClick: e, size: u, tankmenScreenID: t }) => {
+                        const a = (0, n.useState)(!1),
+                            i = a[0],
+                            o = a[1],
+                            c = Q.description.commander(),
+                            E =
+                                R.images.gui.maps.icons.battlePass.awards_widget.$dyn(`commander_icon_small_${t}`) ||
+                                R.images.gui.maps.icons.battlePass.awards_widget.commander_icon_small();
                         return r().createElement(
                             l.i,
-                            { body: o, isEnabled: Boolean(o) },
+                            { body: c, isEnabled: Boolean(c) },
                             r().createElement(
                                 'div',
                                 {
-                                    className: s()(X.base, X[`base__${u}`], a && X.base__hover),
+                                    className: s()(K.base, K[`base__${u}`], i && K.base__hover),
                                     onMouseEnter: () => {
-                                        ((0, c.G)(R.sounds.bp_highlight_02()), i(!0));
+                                        (X.hY.sound(R.sounds.bp_highlight_02()), o(!0));
                                     },
-                                    onMouseLeave: () => i(!1),
+                                    onMouseLeave: () => o(!1),
                                     onClick: () => {
-                                        (c.$.playClick(), e());
+                                        (X.hY.sound(R.sounds.play()), e());
                                     },
                                 },
-                                r().createElement(p, { size: u, isHover: a }),
-                                r().createElement(B, { size: u, isHover: a }),
-                                r().createElement(L, { size: u, isHover: a, title: K.title.commander() }),
-                                r().createElement('div', { className: X.icon }),
+                                r().createElement(p, { size: u, isHover: i }),
+                                r().createElement(B, { size: u, isHover: i }),
+                                r().createElement(L, { size: u, isHover: i, title: Q.title.commander() }),
+                                r().createElement('div', {
+                                    className: K.icon,
+                                    style: { backgroundImage: `url(${E})` },
+                                }),
                             ),
                         );
-                    };
-                var J = t(514);
-                const ee = { base: 'TalerAward_base_ef', base__big: 'TalerAward_base__big_6b' },
+                    },
+                    ee = { base: 'TalerAward_base_ef', base__big: 'TalerAward_base__big_6b' },
                     ue = R.strings.battle_pass.awardsWidget,
                     te = ({ count: e, onClick: u, size: t }) => {
                         const a = (0, n.useState)(!1),
@@ -4030,13 +4037,13 @@
                                 {
                                     className: s()(ee.base, ee[`base__${t}`], i && ee.base__hover),
                                     onMouseEnter: () => {
-                                        (J.hY.sound(R.sounds.bp_highlight_02()), o(!0));
+                                        (X.hY.sound(R.sounds.bp_highlight_02()), o(!0));
                                     },
                                     onMouseLeave: () => {
                                         o(!1);
                                     },
                                     onClick: () => {
-                                        (J.hY.click(), u());
+                                        (X.hY.click(), u());
                                     },
                                 },
                                 r().createElement(p, { size: t, isHover: i }),
@@ -4079,13 +4086,13 @@
                                 {
                                     className: s()(ne.base, ne[`base__${t}`], c && ne.base__hasAppearAnimation),
                                     onMouseEnter: () => {
-                                        (J.hY.sound('bp_highlight_02'), o(!0));
+                                        (X.hY.sound('bp_highlight_02'), o(!0));
                                     },
                                     onMouseLeave: () => {
                                         o(!1);
                                     },
                                     onClick: () => {
-                                        (J.hY.sound('play'), u());
+                                        (X.hY.sound('play'), u());
                                     },
                                 },
                                 r().createElement(p, { size: t, isHover: i, type: E }),
@@ -4121,7 +4128,7 @@
                                         s = n.bpcoinCount,
                                         i = n.ticketsCount,
                                         o = n.isChooseRewardsEnabled,
-                                        l = n.isSpecialVoiceTankmenEnabled,
+                                        l = n.tankmenScreenID,
                                         c = n.isTalerEnabled,
                                         E = n.isBpCoinEnabled,
                                         d = n.isTicketsEnabled,
@@ -4182,9 +4189,10 @@
                                             props: {
                                                 size: e,
                                                 count: 0,
+                                                tankmenScreenID: l,
                                                 onClick: u.createCallbackNoArgs('showTankmen'),
                                             },
-                                            condition: l,
+                                            condition: 0 !== l,
                                         },
                                     ];
                                 });
@@ -4230,7 +4238,7 @@
                                                 case _.Collection:
                                                     return r().createElement(Z, u);
                                                 case _.Commander:
-                                                    return r().createElement(Q, u);
+                                                    return r().createElement(J, u);
                                                 default:
                                                     return (console.warn('Unknown award type: ', e), null);
                                             }

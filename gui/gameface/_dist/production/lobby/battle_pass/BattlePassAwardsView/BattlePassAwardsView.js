@@ -1153,18 +1153,18 @@
                 }
                 console.log;
                 var H = t(9174);
-                function W(u, e) {
+                function $(u, e) {
                     var t = ('undefined' != typeof Symbol && u[Symbol.iterator]) || u['@@iterator'];
                     if (t) return (t = t.call(u)).next.bind(t);
                     if (
                         Array.isArray(u) ||
                         (t = (function (u, e) {
                             if (!u) return;
-                            if ('string' == typeof u) return $(u, e);
+                            if ('string' == typeof u) return W(u, e);
                             var t = Object.prototype.toString.call(u).slice(8, -1);
                             'Object' === t && u.constructor && (t = u.constructor.name);
                             if ('Map' === t || 'Set' === t) return Array.from(u);
-                            if ('Arguments' === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t)) return $(u, e);
+                            if ('Arguments' === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t)) return W(u, e);
                         })(u)) ||
                         (e && u && 'number' == typeof u.length)
                     ) {
@@ -1178,7 +1178,7 @@
                         'Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.',
                     );
                 }
-                function $(u, e) {
+                function W(u, e) {
                     (null == e || e > u.length) && (e = u.length);
                     for (var t = 0, a = new Array(e); t < e; t++) a[t] = u[t];
                     return a;
@@ -1245,7 +1245,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var u, t = W(r.keys()); !(u = t()).done; ) n(u.value, e);
+                                                        for (var u, t = $(r.keys()); !(u = t()).done; ) n(u.value, e);
                                                     },
                                                     unsubscribe: n,
                                                 };
@@ -2006,6 +2006,8 @@
                                 return `R.images.gui.maps.icons.collectionItems.${o}.${n}`;
                             case 'attachment':
                                 return `R.images.gui.maps.vehicles.attachments.${e}.${n}`;
+                            case 'statTracker':
+                                return `R.images.gui.maps.vehicles.statTrackers.${e}.${n}`;
                             default:
                                 return `R.images.gui.maps.icons.quests.bonuses.${e}.${t}`;
                         }
@@ -2027,7 +2029,7 @@
                         'onShow',
                         'onHide',
                     ];
-                function Wu(u) {
+                function $u(u) {
                     return Object.entries(u || {}).map(([u, e]) => {
                         const t = { __Type: 'GFValueProxy', name: u };
                         switch (typeof e) {
@@ -2045,7 +2047,7 @@
                         return t;
                     });
                 }
-                const $u = (u, e, t = {}, a = 0) => {
+                const Wu = (u, e, t = {}, a = 0) => {
                         viewEnv.handleViewEvent(
                             Object.assign(
                                 {
@@ -2115,7 +2117,7 @@
                             ),
                             b = (0, a.useCallback)(() => {
                                 (h.current.isVisible && h.current.timeoutId) ||
-                                    ($u(t, _, { isMouseEvent: !0, on: !0, arguments: Wu(r) }, w),
+                                    (Wu(t, _, { isMouseEvent: !0, on: !0, arguments: $u(r) }, w),
                                     C && C(),
                                     (h.current.isVisible = !0));
                             }, [t, _, r, w, C]),
@@ -2123,7 +2125,7 @@
                                 if (h.current.isVisible || h.current.timeoutId) {
                                     const u = h.current.timeoutId;
                                     (u > 0 && (clearTimeout(u), (h.current.timeoutId = 0)),
-                                        $u(t, _, { on: !1 }, w),
+                                        Wu(t, _, { on: !1 }, w),
                                         h.current.isVisible && g && g(),
                                         (h.current.isVisible = !1));
                                 }
@@ -2821,8 +2823,8 @@
                     Ue = 'Footer_title__highlight_36',
                     Ge = 'Footer_buttonContainer_64',
                     He = 'Footer_postProgressionButton_a3',
-                    We = R.strings.battle_pass.battlePassAwardsView,
-                    $e = (0, Du.Pi)(({ button: u, className: e }) => {
+                    $e = R.strings.battle_pass.battlePassAwardsView,
+                    We = (0, Du.Pi)(({ button: u, className: e }) => {
                         const t = X(),
                             a = t.model,
                             n = t.controls,
@@ -2837,17 +2839,17 @@
                             _ = ((u, e, t) => {
                                 switch (u) {
                                     case I.BUY_BATTLE_PASS:
-                                        return ou(We.mainReward.bpBuyAwardsCaption(), {
+                                        return ou($e.mainReward.bpBuyAwardsCaption(), {
                                             chapter: R.strings.battle_pass.chapter.fullName.$num(e),
                                         });
                                     case I.BUY_BATTLE_PASS_WITH_LEVELS:
-                                        return ou(We.mainReward.bpBuyWithLevels(), {
+                                        return ou($e.mainReward.bpBuyWithLevels(), {
                                             chapter: R.strings.battle_pass.chapter.fullName.$num(e),
                                         });
                                     case I.BUY_MULTIPLE_BATTLE_PASS:
-                                        return We.footer.allChaptersText();
+                                        return $e.footer.allChaptersText();
                                     case I.STYLE_UPGRADE:
-                                        return t ? We.footer.bpDescriptionGotStyle() : '';
+                                        return t ? $e.footer.bpDescriptionGotStyle() : '';
                                     default:
                                         return '';
                                 }
@@ -2861,7 +2863,7 @@
                                       'div',
                                       { className: Ne },
                                       r().createElement('div', { className: ke }),
-                                      r().createElement('div', null, We.footer.postProgressionText()),
+                                      r().createElement('div', null, $e.footer.postProgressionText()),
                                   )
                                 : Boolean(_.length) && r().createElement('div', { className: g()(Ie, d && Ue) }, _),
                             r().createElement(
@@ -2882,7 +2884,7 @@
                                             onClick: n.onShowPostProgression,
                                             mixClass: He,
                                         },
-                                        We.footer.postProgressionButton(),
+                                        $e.footer.postProgressionButton(),
                                     ),
                             ),
                         );
@@ -3216,8 +3218,8 @@
                     Ut = 'RewardsApp_additionalRewards__diffTop_ff',
                     Gt = 'RewardsApp_additionalRewards__slideTop_da',
                     Ht = 'RewardsApp_base__buyWithLevels_ae',
-                    Wt = 'RewardsApp_additionalRewards__animateSlide_6c',
-                    $t = 'RewardsApp_additionalRewards__indentS_b4',
+                    $t = 'RewardsApp_additionalRewards__animateSlide_6c',
+                    Wt = 'RewardsApp_additionalRewards__indentS_b4',
                     Vt = 'RewardsApp_mainRewards_18',
                     Yt = 'RewardsApp_mainRewards__slideTop_ed',
                     zt = 'RewardsApp_mainRewards__animateSlide_a7',
@@ -3321,9 +3323,9 @@
                             U = Math.ceil(_ / 10),
                             G = b < U,
                             H = U > 1,
-                            W = c && !B && !G && !C,
-                            $ = W && H,
-                            V = !W || $,
+                            $ = c && !B && !G && !C,
+                            W = $ && H,
+                            V = !$ || W,
                             Y = (0, a.useRef)(null),
                             z = () => {
                                 ((u) => {
@@ -3340,7 +3342,7 @@
                             };
                         ((0, a.useEffect)(() => {
                             (z(), L(!1));
-                        }, [W, $]),
+                        }, [$, W]),
                             (0, a.useEffect)(() => {
                                 const u = () => {
                                     (z(), L(!0));
@@ -3390,17 +3392,17 @@
                                     r().createElement(
                                         'div',
                                         { className: g()(Nt, j && kt) },
-                                        r().createElement(Rt, { className: g()(Vt, $ && Yt, $ && !y && zt) }),
+                                        r().createElement(Rt, { className: g()(Vt, W && Yt, W && !y && zt) }),
                                         F &&
                                             r().createElement(Fe, {
                                                 rewards: k,
                                                 pageNumber: b,
-                                                className: g()(It, p && $t, A && Ut, $ && Gt, $ && !y && Wt),
+                                                className: g()(It, p && Wt, A && Ut, W && Gt, W && !y && $t),
                                             }),
                                     ),
                                 ),
-                                V && r().createElement($e, { button: q, className: g()(qt, $ && jt, !W && Xt) }),
-                                W && r().createElement(xe, { className: g()(Kt, H && Qt), parentRef: Y }),
+                                V && r().createElement(We, { button: q, className: g()(qt, W && jt, !$ && Xt) }),
+                                $ && r().createElement(xe, { className: g()(Kt, H && Qt), parentRef: Y }),
                             ),
                         );
                     });

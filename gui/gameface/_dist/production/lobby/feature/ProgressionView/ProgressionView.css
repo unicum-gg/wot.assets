@@ -2147,7 +2147,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 
 .OneSerialVehicle_dust_a9 {
     position: absolute;
-    top: -3rem;
+    top: 0;
     z-index: 1;
 }
 
@@ -2156,17 +2156,17 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .mediaMedium .OneSerialVehicle_base__tankIndex--0_a5 .OneSerialVehicle_dust_a9 {
-    top: 124rem;
+    top: 103rem;
     left: 480rem;
 }
 
 .mediaLarge .OneSerialVehicle_base__tankIndex--0_a5 .OneSerialVehicle_dust_a9 {
-    top: 265rem;
+    top: 240rem;
     left: 700rem;
 }
 
 .mediaExtraLarge .OneSerialVehicle_base__tankIndex--0_a5 .OneSerialVehicle_dust_a9 {
-    top: 595rem;
+    top: 556rem;
     left: 1060rem;
 }
 

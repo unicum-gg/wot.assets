@@ -2357,7 +2357,7 @@
                             { className: We },
                             l().createElement('input', {
                                 onInput: B,
-                                onKeyDown: w,
+                                onKeyUp: w,
                                 ref: v,
                                 required: !0,
                                 className: He,

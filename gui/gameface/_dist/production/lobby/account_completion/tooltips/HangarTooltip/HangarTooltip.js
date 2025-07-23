@@ -41,13 +41,13 @@
                         events: () => x,
                         extraSize: () => au,
                         forceTriggerMouseMove: () => uu,
-                        freezeTextureBeforeResize: () => $,
+                        freezeTextureBeforeResize: () => z,
                         getBrowserTexturePath: () => G,
                         getDisplayStatus: () => eu,
                         getFontNames: () => tu,
                         getScale: () => j,
                         getSize: () => q,
-                        getViewGlobalPosition: () => z,
+                        getViewGlobalPosition: () => $,
                         isEventHandled: () => J,
                         isFocused: () => Q,
                         pxToRem: () => V,
@@ -257,11 +257,11 @@
                 function Y(u, e, t = 'px') {
                     return 'rem' === t ? viewEnv.resizeViewRem(u, e) : viewEnv.resizeViewPx(u, e);
                 }
-                function z(u = 'rem') {
+                function $(u = 'rem') {
                     const e = viewEnv.getViewGlobalPositionRem();
                     return 'rem' === u ? e : { x: X(e.x), y: X(e.y) };
                 }
-                function $() {
+                function z() {
                     viewEnv.freezeTextureBeforeResize();
                 }
                 function j() {
@@ -1170,8 +1170,8 @@
                         y.OptionalDevice,
                         y.Attachment,
                     ],
-                    z = [y.Gold, y.Credits, y.Crystal, y.FreeXp],
-                    $ = [y.BattlePassPoints, y.EquipCoin],
+                    $ = [y.Gold, y.Credits, y.Crystal, y.FreeXp],
+                    z = [y.BattlePassPoints, y.EquipCoin],
                     j = [y.PremiumPlus, y.Premium],
                     V = ['engravings', 'backgrounds'],
                     X = ['engraving', 'background'],
@@ -1266,6 +1266,8 @@
                                 return `R.images.gui.maps.icons.collectionItems.${E}.${a}`;
                             case 'attachment':
                                 return `R.images.gui.maps.vehicles.attachments.${e}.${a}`;
+                            case 'statTracker':
+                                return `R.images.gui.maps.vehicles.statTrackers.${e}.${a}`;
                             default:
                                 return `R.images.gui.maps.icons.quests.bonuses.${e}.${t}`;
                         }
@@ -1961,9 +1963,9 @@
                                                 ((r = u.name),
                                                 Y.includes(r)
                                                     ? N.MULTI
-                                                    : z.includes(r)
+                                                    : $.includes(r)
                                                       ? N.CURRENCY
-                                                      : $.includes(r)
+                                                      : z.includes(r)
                                                         ? N.NUMBER
                                                         : j.includes(r)
                                                           ? N.PREMIUM_PLUS

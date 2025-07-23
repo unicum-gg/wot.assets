@@ -5,12 +5,12 @@ var e = Object.defineProperty,
             'symbol' != typeof n ? n + '' : n,
             r,
         );
-import { c as n, a as r, b as o, r as s, j as i, d as a, R as d, e as u } from './vendor.js';
-const c = n();
-function l(e, t) {
+import { c as n, a as r, b as o, d as s, r as i, j as a, e as d, R as u, f as c } from './vendor.js';
+const l = n();
+function h(e, t) {
     return e && e.length > 0 ? `${e}.${t}` : t;
 }
-function h(e, t) {
+function f(e, t) {
     switch (t) {
         case 'error':
             console.error(e);
@@ -28,7 +28,7 @@ function h(e, t) {
             console.warn('Unknown severity log type:', t);
     }
 }
-class f {
+class m {
     constructor(e, t) {
         ((this.root = e), (this.prefix = t));
     }
@@ -36,7 +36,7 @@ class f {
         return this.readOr(e, () => {});
     }
     readOr(e, t, n = 'silent') {
-        const r = l(this.prefix, e),
+        const r = h(this.prefix, e),
             o = (function (e, t) {
                 const n = t.split('.');
                 if (window.R && window.R.images) {
@@ -50,7 +50,7 @@ class f {
                 }
                 throw new Error('R class with images field is not defined');
             })(this.root, r);
-        return void 0 === o ? ('silent' !== n && h(`Resource not found: ${r}`, n), t()) : o;
+        return void 0 === o ? ('silent' !== n && f(`Resource not found: ${r}`, n), t()) : o;
     }
     readOrEmpty(e, t = 'warn') {
         return this.readOr(e, () => '', t);
@@ -64,7 +64,7 @@ class f {
         return void 0 !== this.read(e);
     }
 }
-function m(e) {
+function w(e) {
     return (t) => (
         engine.on(e, t),
         () => {
@@ -75,10 +75,10 @@ function m(e) {
 function p(e) {
     viewEnv.setTrackMouseOnStage(e);
 }
-const w = m('clientResized'),
-    y = m('self.onScaleUpdated'),
-    g = { down: m('mousedown'), up: m('mouseup'), move: m('mousemove') };
-function v(e = 'px') {
+const y = w('clientResized'),
+    g = w('self.onScaleUpdated'),
+    v = { down: w('mousedown'), up: w('mouseup'), move: w('mousemove') };
+function b(e = 'px') {
     return 'rem' === e ? viewEnv.getClientSizeRem() : viewEnv.getClientSizePx();
 }
 !(function () {
@@ -107,7 +107,7 @@ function v(e = 'px') {
                 return (n) => {
                     e.listeners += 1;
                     const o = `mouse${t}`,
-                        s = g[t]((e) => n([e, 'outside']));
+                        s = v[t]((e) => n([e, 'outside']));
                     function i(e) {
                         n([e, 'inside']);
                     }
@@ -125,14 +125,14 @@ function v(e = 'px') {
         {},
     );
 })();
-const b = { highlight: 'highlight', click: 'play', yes1: 'yes1' },
-    E = {
-        ...Object.keys(b).reduce(
+const E = { highlight: 'highlight', click: 'play', yes1: 'yes1' },
+    x = {
+        ...Object.keys(E).reduce(
             (e, t) => (
                 (e[t] = () =>
                     (function (e) {
                         engine.call('PlaySound', e);
-                    })(b[t])),
+                    })(E[t])),
                 e
             ),
             {},
@@ -141,12 +141,12 @@ const b = { highlight: 'highlight', click: 'play', yes1: 'yes1' },
             engine.call('PlaySound', e);
         },
     },
-    x = { notReady: 0, ready: 1, showing: 2, shown: 3, hiding: 4, hidden: 5 },
+    O = { notReady: 0, ready: 1, showing: 2, shown: 3, hiding: 4, hidden: 5 },
     T = {
-        onTextureFrozen: m('self.onTextureFrozen'),
-        onTextureReady: m('self.onTextureReady'),
-        onDomBuilt: m('self.onDomBuilt'),
-        onLoaded: m('self.onLoaded'),
+        onTextureFrozen: w('self.onTextureFrozen'),
+        onTextureReady: w('self.onTextureReady'),
+        onDomBuilt: w('self.onDomBuilt'),
+        onLoaded: w('self.onLoaded'),
         onHitTest: (() => {
             const e = new Set(),
                 t = (t, n) => {
@@ -164,21 +164,21 @@ const b = { highlight: 'highlight', click: 'play', yes1: 'yes1' },
                 }
             );
         })(),
-        onDisplayChanged: m('self.onShowingStatusChanged'),
-        onFocusUpdated: m('self.onFocusChanged'),
+        onDisplayChanged: w('self.onShowingStatusChanged'),
+        onFocusUpdated: w('self.onFocusChanged'),
         children: {
-            onAdded: m('children.onAdded'),
-            onLoaded: m('children.onLoaded'),
-            onRemoved: m('children.onRemoved'),
-            onAttached: m('children.onAttached'),
-            onTextureReady: m('children.onTextureReady'),
-            onRequestPosition: m('children.requestPosition'),
+            onAdded: w('children.onAdded'),
+            onLoaded: w('children.onLoaded'),
+            onRemoved: w('children.onRemoved'),
+            onAttached: w('children.onAttached'),
+            onTextureReady: w('children.onTextureReady'),
+            onRequestPosition: w('children.requestPosition'),
         },
     };
-function O() {
+function P() {
     return !1;
 }
-(Object.keys(x).reduce((e, t) => ((e[t] = () => viewEnv.getShowingStatus() === x[t]), e), {}),
+(Object.keys(O).reduce((e, t) => ((e[t] = () => viewEnv.getShowingStatus() === O[t]), e), {}),
     'symbol' != typeof Symbol.dispose && Object.defineProperty(Symbol, 'dispose', { value: Symbol.for('dispose') }),
     'symbol' != typeof Symbol.asyncDispose &&
         Object.defineProperty(Symbol, 'asyncDispose', { value: Symbol.for('asyncDispose') }),
@@ -433,9 +433,9 @@ function O() {
                 (this.url = t.url || ''));
         }
     })());
-const P = -1;
+const j = -1;
 ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());
-class j {
+class L {
     constructor() {
         t(this, 'items', []);
     }
@@ -474,7 +474,7 @@ class j {
 class S {
     play(e) {
         const t = window.R.sounds[e];
-        'function' == typeof t ? E.sound(t.apply(window.R.sounds)) : h(`Sound not found: ${e}`, 'warn');
+        'function' == typeof t ? x.sound(t.apply(window.R.sounds)) : f(`Sound not found: ${e}`, 'warn');
     }
 }
 function k(e) {
@@ -491,7 +491,7 @@ function k(e) {
     }
     throw new Error('R class with strings field is not defined');
 }
-class L {
+class A {
     constructor(e) {
         this.prefix = e;
     }
@@ -499,15 +499,15 @@ class L {
         return this.readOr(e, () => {});
     }
     readOr(e, t, n = 'silent') {
-        const r = l(this.prefix, e),
+        const r = h(this.prefix, e),
             o = k(r);
-        return void 0 === o ? ('silent' !== n && h(`Resource not found: ${r}`, n), t()) : o;
+        return void 0 === o ? ('silent' !== n && f(`Resource not found: ${r}`, n), t()) : o;
     }
     readOrEmpty(e, t = 'warn') {
         return this.readOr(e, () => '', t);
     }
     readOrThrow(e) {
-        const t = l(this.prefix, e),
+        const t = h(this.prefix, e),
             n = k(t);
         if (void 0 === n) throw new Error(`Resource not found: ${t}`);
         return n;
@@ -534,7 +534,7 @@ class N {
             }
             throw new Error('R class with videos field is not defined');
         })(this.root, e);
-        return void 0 === r ? ('silent' !== n && h(`Resource not found: ${e}`, n), t()) : r;
+        return void 0 === r ? ('silent' !== n && f(`Resource not found: ${e}`, n), t()) : r;
     }
     readOrEmpty(e, t = 'warn') {
         return this.readOr(e, () => '', t);
@@ -548,46 +548,46 @@ class N {
         return void 0 !== this.read(e);
     }
 }
-class A {
+class C {
     read(e) {
         return e(window.R.views);
     }
 }
-const D = s.createContext(void 0);
+const D = i.createContext(void 0);
 function _({ children: e }) {
-    const [t, n] = s.useState(() => v('rem'));
+    const [t, n] = i.useState(() => b('rem'));
     return (
-        s.useEffect(() => {
+        i.useEffect(() => {
             function e() {
-                n(v('rem'));
+                n(b('rem'));
             }
-            const t = w(e),
-                r = y(e);
+            const t = y(e),
+                r = g(e);
             return () => {
                 (t(), r());
             };
         }, []),
-        i.jsx(D.Provider, { value: t, children: e })
+        a.jsx(D.Provider, { value: t, children: e })
     );
 }
-const C = { extraSmall: 'extraSmall', small: 'small', medium: 'medium', large: 'large', extraLarge: 'extraLarge' },
+const U = { extraSmall: 'extraSmall', small: 'small', medium: 'medium', large: 'large', extraLarge: 'extraLarge' },
     B = {
-        small: { weight: 1, name: C.small, className: 'mediaSmall', width: 1366, height: 768 },
-        medium: { weight: 2, name: C.medium, className: 'mediaMedium', width: 1600, height: 900 },
-        large: { weight: 3, name: C.large, className: 'mediaLarge', width: 1920, height: 1080 },
-        extraLarge: { weight: 4, name: C.extraLarge, className: 'mediaExtraLarge', width: 2560, height: 1440 },
+        small: { weight: 1, name: U.small, className: 'mediaSmall', width: 1366, height: 768 },
+        medium: { weight: 2, name: U.medium, className: 'mediaMedium', width: 1600, height: 900 },
+        large: { weight: 3, name: U.large, className: 'mediaLarge', width: 1920, height: 1080 },
+        extraLarge: { weight: 4, name: U.extraLarge, className: 'mediaExtraLarge', width: 2560, height: 1440 },
     },
-    U = Object.values(B);
-function H() {
+    H = Object.values(B);
+function M() {
     const { width: e, height: t } = (function () {
-            const e = s.useContext(D);
+            const e = i.useContext(D);
             if (!e) throw new Error('useMediaContext must be used within a MediaProvider');
             return e;
         })(),
-        n = s.useMemo(
+        n = i.useMemo(
             () =>
                 (function (e, t) {
-                    const n = U.reduce(
+                    const n = H.reduce(
                             (n, r) => (
                                 r.width <= e &&
                                     (n.width.classes.push(r.className),
@@ -605,7 +605,7 @@ function H() {
                             },
                         ),
                         r = n[n.width.weight <= n.height.weight ? 'width' : 'height'],
-                        o = r.names[r.names.length - 1] ?? C.extraSmall;
+                        o = r.names[r.names.length - 1] ?? U.extraSmall;
                     return {
                         className: r.classes.join(' '),
                         breakpoint: { name: o, weight: r.weight },
@@ -622,19 +622,19 @@ function H() {
         breaks: n.breaks,
     };
 }
-function M({ children: e, className: t, ...n }) {
-    const { mediaClass: r } = H();
-    return i.jsx('div', { className: a(t, 'media-wrapper', r), ...n, children: e });
+function F({ children: e, className: t, ...n }) {
+    const { mediaClass: r } = M();
+    return a.jsx('div', { className: d(t, 'media-wrapper', r), ...n, children: e });
 }
-function F({ children: e, ...t }) {
-    return i.jsx(_, { children: i.jsx(M, { ...t, children: e }) });
+function $({ children: e, ...t }) {
+    return a.jsx(_, { children: a.jsx(F, { ...t, children: e }) });
 }
-const $ = () => {
+const q = () => {
         const e = new Map();
         function t(t) {
             const n = e.get(t);
             if (n) return n;
-            const r = new j();
+            const r = new L();
             return (e.set(t, r), r);
         }
         function n(t, n) {
@@ -645,7 +645,7 @@ const $ = () => {
             handlers: e,
             obtain: t,
             register: function (e, r) {
-                if (e === P) return O;
+                if (e === j) return P;
                 const o = t(e);
                 return (o.includes(r) || o.push(r), () => n(e, r));
             },
@@ -658,21 +658,21 @@ const $ = () => {
             },
         };
     },
-    q = s.createContext(void 0);
-function z(e) {
-    const t = s.useMemo($, []);
-    s.useEffect(() => {
+    z = i.createContext(void 0);
+function X(e) {
+    const t = i.useMemo(q, []);
+    i.useEffect(() => {
         function e(e) {
             const n = t.takeCurrent(e.keyCode);
             n && n(e);
         }
         return (window.addEventListener('keydown', e), () => window.removeEventListener('keydown', e));
     });
-    const n = s.useMemo(() => ({ keydown: { register: t.register, unregister: t.unregister } }), [t]);
-    return i.jsx(q.Provider, { value: n, children: e.children });
+    const n = i.useMemo(() => ({ keydown: { register: t.register, unregister: t.unregister } }), [t]);
+    return a.jsx(z.Provider, { value: n, children: e.children });
 }
-s.createContext({ mode: 'real' });
-async function X(e, { root: t = document.getElementById('root'), withMedia: n = !0 } = {}) {
+i.createContext({ mode: 'real' });
+async function I(e, { root: t = document.getElementById('root'), withMedia: n = !0 } = {}) {
     var r;
     !(function () {
         const e = (t = window.model, { depth: n = 16, convertArrays: r = !0 } = {}) => {
@@ -718,14 +718,16 @@ async function X(e, { root: t = document.getElementById('root'), withMedia: n = 
         };
         window._showModel = e;
     })();
-    const o = n ? F : d.Fragment,
+    const o = n ? $ : u.Fragment,
         s = (null == (r = null == window ? void 0 : window.engine) ? void 0 : r.whenReady) ?? Promise.resolve();
-    (await s, u.createRoot(t).render(i.jsx(o, { children: i.jsx(z, { children: e }) })));
+    (await s,
+        document.documentElement.setAttribute('lang', l.resolve('langCode')),
+        c.createRoot(t).render(a.jsx(o, { children: a.jsx(X, { children: e }) })));
 }
-(s.forwardRef(function (e, t) {
-    const n = s.useRef(null);
+(i.forwardRef(function (e, t) {
+    const n = i.useRef(null);
     return (
-        s.useEffect(() => {
+        i.useEffect(() => {
             const e = n.current;
             if (null !== e)
                 return T.onHitTest((t) => {
@@ -733,7 +735,7 @@ async function X(e, { root: t = document.getElementById('root'), withMedia: n = 
                     return n.left <= t.x && t.x <= n.right && n.top <= t.y && t.y <= n.bottom;
                 });
         }, []),
-        i.jsx('div', {
+        a.jsx('div', {
             ...e,
             ref:
                 ((r = [t, n]),
@@ -748,12 +750,13 @@ async function X(e, { root: t = document.getElementById('root'), withMedia: n = 
     );
     var r;
 }),
-    c.register({
-        strings: r(() => new L()).singleton(),
-        images: r(() => new f(window.R.images.gui.maps.icons)).singleton(),
-        atlases: r(() => new f(window.R.atlases)).singleton(),
+    l.register({
+        strings: r(() => new A()).singleton(),
+        images: r(() => new m(window.R.images.gui.maps.icons)).singleton(),
+        atlases: r(() => new m(window.R.atlases)).singleton(),
         videos: o(N).singleton(),
-        views: o(A).singleton(),
+        views: o(C).singleton(),
         sounds: o(S).singleton(),
+        langCode: s(window.R.strings.settings.LANGUAGE_CODE()),
     }));
-export { X as r };
+export { I as r };

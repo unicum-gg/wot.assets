@@ -5,7 +5,7 @@
             174: (u, A, F) => {
                 var e = {};
                 (F.r(e),
-                    F.d(e, { mouse: () => c, off: () => s, on: () => a, onResize: () => o, onScaleUpdated: () => i }));
+                    F.d(e, { mouse: () => c, off: () => s, on: () => i, onResize: () => o, onScaleUpdated: () => a }));
                 var E = {};
                 (F.r(E),
                     F.d(E, {
@@ -63,8 +63,8 @@
                     viewEnv.setTrackMouseOnStage(u);
                 }
                 const o = n('clientResized'),
-                    i = n('self.onScaleUpdated'),
-                    a = (u, A) => engine.on(u, A),
+                    a = n('self.onScaleUpdated'),
+                    i = (u, A) => engine.on(u, A),
                     s = (u, A) => engine.off(u, A),
                     l = { down: n('mousedown'), up: n('mouseup'), move: n('mousemove') };
                 const c = (function () {
@@ -154,12 +154,12 @@
                     },
                     p = { highlight: 'highlight', click: 'play', yes1: 'yes1' },
                     b = Object.keys(p).reduce((u, A) => ((u[A] = () => d(p[A])), u), {}),
-                    w = { play: Object.assign({}, b, { sound: d }), setRTPC: v },
-                    h = ['I', 'IV', 'V', 'IX', 'X', 'XL', 'L', 'XC', 'C', 'CD', 'D', 'CM', 'M'],
+                    h = { play: Object.assign({}, b, { sound: d }), setRTPC: v },
+                    w = ['I', 'IV', 'V', 'IX', 'X', 'XL', 'L', 'XC', 'C', 'CD', 'D', 'CM', 'M'],
                     y = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function x(u) {
                     let A = '';
-                    for (let F = y.length - 1; F >= 0; F--) for (; u >= y[F]; ) ((A += h[F]), (u -= y[F]));
+                    for (let F = y.length - 1; F >= 0; F--) for (; u >= y[F]; ) ((A += w[F]), (u -= y[F]));
                     return A;
                 }
                 ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());
@@ -313,10 +313,10 @@
                         }),
                         engine.whenReady,
                     ]),
-                    nu = { view: B, client: E, sound: w };
+                    nu = { view: B, client: E, sound: h };
                 var ru = F(363),
                     ou = F.n(ru);
-                function iu() {
+                function au() {
                     const u = (0, ru.useRef)(0);
                     var A;
                     return (
@@ -345,7 +345,7 @@
                         )
                     );
                 }
-                const au = {
+                const iu = {
                         base: 'TooltipDecorator_base_c9',
                         'base__theme-default': 'TooltipDecorator_base__theme-default_6d',
                         decorator: 'TooltipDecorator_decorator_3d',
@@ -379,7 +379,7 @@
                             for (e = 0; e < D.length; e++) ((F = D[e]), A.indexOf(F) >= 0 || (E[F] = u[F]));
                             return E;
                         })(u, su);
-                    const t = iu(),
+                    const t = au(),
                         n = ou().useRef(null);
                     var r;
                     return (
@@ -403,12 +403,12 @@
                         ou().createElement(
                             'div',
                             lu({}, B, {
-                                className: C()(au.base, au[`base__theme-${D}`], e),
+                                className: C()(iu.base, iu[`base__theme-${D}`], e),
                                 ref: function (u) {
                                     ((n.current = u), 'function' == typeof A ? A(u) : A && (A.current = u));
                                 },
                             }),
-                            ou().createElement('div', { className: au.decorator }, F),
+                            ou().createElement('div', { className: iu.decorator }, F),
                         )
                     );
                 });
@@ -428,12 +428,12 @@
                         Array.isArray(u) ||
                         (F = (function (u, A) {
                             if (!u) return;
-                            if ('string' == typeof u) return wu(u, A);
+                            if ('string' == typeof u) return hu(u, A);
                             var F = Object.prototype.toString.call(u).slice(8, -1);
                             'Object' === F && u.constructor && (F = u.constructor.name);
                             if ('Map' === F || 'Set' === F) return Array.from(u);
                             if ('Arguments' === F || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(F))
-                                return wu(u, A);
+                                return hu(u, A);
                         })(u)) ||
                         (A && u && 'number' == typeof u.length)
                     ) {
@@ -447,12 +447,12 @@
                         'Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.',
                     );
                 }
-                function wu(u, A) {
+                function hu(u, A) {
                     (null == A || A > u.length) && (A = u.length);
                     for (var F = 0, e = new Array(A); F < A; F++) e[F] = u[F];
                     return e;
                 }
-                const hu = (u) => (0 === u ? window : window.subViews.get(u));
+                const wu = (u) => (0 === u ? window : window.subViews.get(u));
                 const yu = ((u, A) => {
                         const F = (0, ru.createContext)({});
                         return [
@@ -463,7 +463,7 @@
                                         const B = (function ({
                                                 initializer: u = !0,
                                                 rootId: A = 0,
-                                                getRoot: F = hu,
+                                                getRoot: F = wu,
                                                 context: e = 'model',
                                             } = {}) {
                                                 const E = new Map();
@@ -600,10 +600,10 @@
                                                 },
                                                 cleanup: r,
                                             }),
-                                            i = { mode: F, model: o, externalModel: C, cleanup: r };
+                                            a = { mode: F, model: o, externalModel: C, cleanup: r };
                                         return {
                                             model: o,
-                                            controls: 'mocks' === F && E ? E.controls(i) : A(i),
+                                            controls: 'mocks' === F && E ? E.controls(a) : A(a),
                                             externalModel: C,
                                             mode: F,
                                         };
@@ -611,16 +611,16 @@
                                     n = (0, ru.useRef)(!1),
                                     r = (0, ru.useState)(e),
                                     o = r[0],
-                                    i = r[1],
-                                    a = (0, ru.useState)(() => C(e, E, B)),
-                                    s = a[0],
-                                    l = a[1];
+                                    a = r[1],
+                                    i = (0, ru.useState)(() => C(e, E, B)),
+                                    s = i[0],
+                                    l = i[1];
                                 return (
                                     (0, ru.useEffect)(() => {
                                         n.current ? l(C(o, E, B)) : (n.current = !0);
                                     }, [B, o, E]),
                                     (0, ru.useEffect)(() => {
-                                        i(e);
+                                        a(e);
                                     }, [e]),
                                     (0, ru.useEffect)(
                                         () => () => {
@@ -724,13 +724,23 @@
                             ),
                         );
                     },
-                    Hu = 'Content_base_bd',
+                    Hu = { base: 'Content_base_bd', paragraph__indent: 'Content_paragraph__indent_06' },
                     Uu = (0, mu.Pi)(() => {
                         const u = _u().model.root.get().description;
                         return ou().createElement(
                             'div',
-                            { className: Hu },
-                            ou().createElement($u, { text: String(u) }),
+                            { className: Hu.base },
+                            null == u
+                                ? void 0
+                                : u
+                                      .split('\n\n')
+                                      .map((u, A) =>
+                                          ou().createElement($u, {
+                                              key: A,
+                                              text: u,
+                                              classMix: C()(Hu.paragraph, A > 0 && Hu.paragraph__indent),
+                                          }),
+                                      ),
                         );
                     });
                 function qu(u, A) {

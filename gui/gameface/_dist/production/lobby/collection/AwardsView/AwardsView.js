@@ -212,7 +212,7 @@
                         displayStatus: () => r.W,
                         displayStatusIs: () => x,
                         events: () => o.U,
-                        extraSize: () => R,
+                        extraSize: () => T,
                         forceTriggerMouseMove: () => B,
                         freezeTextureBeforeResize: () => A,
                         getBrowserTexturePath: () => h,
@@ -231,7 +231,7 @@
                         setEventHandled: () => D,
                         setInputPaddingsRem: () => l,
                         setSidePaddingsRem: () => c,
-                        whenTutorialReady: () => T,
+                        whenTutorialReady: () => R,
                     }));
                 var i = u(690),
                     a = u(722),
@@ -302,7 +302,7 @@
                         (e, t) => ((e[t] = () => viewEnv.getShowingStatus() === r.W[t]), e),
                         {},
                     ),
-                    R = {
+                    T = {
                         set: (e, t) => {
                             viewEnv.setExtraSizeRem(e, t);
                         },
@@ -310,7 +310,7 @@
                             viewEnv.getExtraSizeRem(e, t);
                         },
                     },
-                    T = Promise.all([
+                    R = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : o.U.onDomBuilt(e);
                         }),
@@ -1609,6 +1609,8 @@
                                 return `R.images.gui.maps.icons.collectionItems.${s}.${r}`;
                             case 'attachment':
                                 return `R.images.gui.maps.vehicles.attachments.${t}.${r}`;
+                            case 'statTracker':
+                                return `R.images.gui.maps.vehicles.statTrackers.${t}.${r}`;
                             default:
                                 return `R.images.gui.maps.icons.quests.bonuses.${t}.${u}`;
                         }
@@ -1867,13 +1869,13 @@
                 function xe(e, t) {
                     return Array.isArray(e) ? e.map(t) : e.map((e, u, i) => t(null == e ? void 0 : e.value, u, i));
                 }
-                function Re(e, t) {
+                function Te(e, t) {
                     for (let u = 0; u < e.length; u++) {
                         const i = be(e[u]);
                         if (t(i, u, e)) return i;
                     }
                 }
-                function Te(e, t) {
+                function Re(e, t) {
                     return (function (e, t, u) {
                         const i = [];
                         for (let a = 0; a < e.length; a++) {
@@ -2916,7 +2918,7 @@
                                             for (const e in t)
                                                 if (Object.prototype.hasOwnProperty.call(t, e)) {
                                                     const o = Number(e),
-                                                        n = Re(a, (e) => e.itemId === o);
+                                                        n = Te(a, (e) => e.itemId === o);
                                                     if (!n) continue;
                                                     ((i[o] = Object.assign(t[e], n)),
                                                         u.push(i[o]),
@@ -2976,14 +2978,14 @@
                                     },
                                     { equals: _e },
                                 ),
-                                c = (0, Le.Om)((e) => Re(t.rewardsInfo.get(), (t) => t.requiredItemsCount === e), {
+                                c = (0, Le.Om)((e) => Te(t.rewardsInfo.get(), (t) => t.requiredItemsCount === e), {
                                     equals: _e,
                                 }),
                                 g = (0, Le.Om)(
                                     (e) => {
                                         const t = c(e);
                                         return t
-                                            ? Te(t.rewards, (e) => ({
+                                            ? Re(t.rewards, (e) => ({
                                                   index: e.index,
                                                   name: e.name,
                                                   getImage: (t) => Ee(e, t),
@@ -3966,9 +3968,9 @@
                         raysAppearance: 'Rewards_raysAppearance_35',
                         rotate: 'Rewards_rotate_fe',
                     };
-                function Rt() {
+                function Tt() {
                     return (
-                        (Rt =
+                        (Tt =
                             Object.assign ||
                             function (e) {
                                 for (var t = 1; t < arguments.length; t++) {
@@ -3977,10 +3979,10 @@
                                 }
                                 return e;
                             }),
-                        Rt.apply(this, arguments)
+                        Tt.apply(this, arguments)
                     );
                 }
-                const Tt = (0, X.Pi)(() => {
+                const Rt = (0, X.Pi)(() => {
                         const e = We().model.computes.getRewards(),
                             t = S().mediaSize,
                             u =
@@ -4000,7 +4002,7 @@
                                     { className: xt.rewardWrapper, key: t },
                                     a().createElement(
                                         bt,
-                                        Rt({}, e, {
+                                        Tt({}, e, {
                                             size: u,
                                             image: e.getImage(u),
                                             classNames: {
@@ -4050,7 +4052,7 @@
                                     className: Ut,
                                 }),
                             a().createElement('div', { className: Pt }, a().createElement('div', { className: yt })),
-                            a().createElement(Tt, null),
+                            a().createElement(Rt, null),
                         );
                     }),
                     Ht = R.strings.collections,

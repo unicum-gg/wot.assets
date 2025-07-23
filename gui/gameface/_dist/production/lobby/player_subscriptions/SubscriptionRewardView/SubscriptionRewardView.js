@@ -62,7 +62,7 @@
                         getDisplayStatus: () => ue,
                         getFontNames: () => te,
                         getScale: () => j,
-                        getSize: () => $,
+                        getSize: () => W,
                         getViewGlobalPosition: () => q,
                         isEventHandled: () => J,
                         isFocused: () => Q,
@@ -73,7 +73,7 @@
                         setAnimateWindow: () => K,
                         setEventHandled: () => Z,
                         setInputPaddingsRem: () => U,
-                        setSidePaddingsRem: () => W,
+                        setSidePaddingsRem: () => $,
                         whenTutorialReady: () => ie,
                     }));
                 const l = s('clientResized'),
@@ -264,10 +264,10 @@
                 function G(e, u, t) {
                     return viewEnv.addDataChangedCallback(e, u, t);
                 }
-                function W(e) {
+                function $(e) {
                     viewEnv.setHitAreaPaddingsRem(e.top, e.right, e.bottom, e.left, 15);
                 }
-                function $(e = 'px') {
+                function W(e = 'px') {
                     return 'rem' === e ? viewEnv.getViewSizeRem() : viewEnv.getViewSizePx();
                 }
                 function V(e, u, t = 'px') {
@@ -1122,7 +1122,7 @@
                             (e.medium = 'medium'),
                             (e.large = 'large'));
                     })(G || (G = {})));
-                const W = ({
+                const $ = ({
                     children: e,
                     size: u,
                     isFocused: t,
@@ -1218,8 +1218,8 @@
                         )
                     );
                 };
-                W.defaultProps = { type: H.primary, isFocused: !1, soundHover: 'highlight', soundClick: 'play' };
-                const $ = W;
+                $.defaultProps = { type: H.primary, isFocused: !1, soundHover: 'highlight', soundClick: 'play' };
+                const W = $;
                 let V, q, z, j, Y, X, K, Q;
                 (!(function (e) {
                     ((e.Items = 'items'),
@@ -1529,6 +1529,8 @@
                                 return `R.images.gui.maps.icons.collectionItems.${o}.${a}`;
                             case 'attachment':
                                 return `R.images.gui.maps.vehicles.attachments.${u}.${a}`;
+                            case 'statTracker':
+                                return `R.images.gui.maps.vehicles.statTrackers.${u}.${a}`;
                             default:
                                 return `R.images.gui.maps.icons.quests.bonuses.${u}.${t}`;
                         }
@@ -2224,13 +2226,13 @@
                 const Ue = (e, u) => e.split('.').reduce((e, u) => e && e[u], u),
                     He = (e) => e && 'ArrayItem' === e.__proto__.constructor.name,
                     Ge = (e, u) => (e.length > 0 ? `${e}.${u}` : u),
-                    We = (e) =>
+                    $e = (e) =>
                         ((e, u) =>
                             e.split('.').reduce((e, t) => {
                                 const r = Ue(`${e}.${t}`, window);
                                 return He(r) ? u(e, t, r) : `${e}.${t}`;
                             }))(e, (e, u) => `${e}.${u}.value`),
-                    $e = (e) => {
+                    We = (e) => {
                         const u = ((e) => {
                                 const u = ce(),
                                     t = u.caller,
@@ -2276,7 +2278,7 @@
                                     const u = Ue(e, window);
                                     for (const e in u) 'function' == typeof u[e] && (u[e] = u[e].bind(u));
                                     return He(u) ? u.value : u;
-                                })(We(l)),
+                                })($e(l)),
                             ),
                             c = E[0],
                             d = E[1],
@@ -2297,7 +2299,7 @@
                                                 ? (e === c && n((e) => e + 1), d(e))
                                                 : d(Object.assign([], e));
                                         },
-                                        r = $e(e);
+                                        r = We(e);
                                     _.current = qe.addCallback(r, t, o, u === ze.Deep);
                                 }
                             }),
@@ -2520,7 +2522,7 @@
                                     ),
                                 ),
                                 n().createElement(
-                                    $,
+                                    W,
                                     { mixClass: Je.chooseButton, onClick: () => o() },
                                     i ? uu.selectRewards : uu.affirmative,
                                 ),
