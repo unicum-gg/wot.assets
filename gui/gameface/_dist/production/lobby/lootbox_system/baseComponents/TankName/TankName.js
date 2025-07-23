@@ -15,7 +15,7 @@
                     m = (0, n.createContext)(u);
             },
             1039: (e, t, i) => {
-                i(3138), i(6536), i(7363), i(3495), i(1043), i(5262);
+                (i(3138), i(6536), i(7363), i(3495), i(1043), i(5262));
             },
             6010: (e, t, i) => {
                 var r = i(7363),
@@ -30,7 +30,7 @@
                                 r,
                                 n = {},
                                 a = Object.keys(e);
-                            for (r = 0; r < a.length; r++) (i = a[r]), t.indexOf(i) >= 0 || (n[i] = e[i]);
+                            for (r = 0; r < a.length; r++) ((i = a[r]), t.indexOf(i) >= 0 || (n[i] = e[i]));
                             return n;
                         })(e, o);
                     const l = (0, r.useContext)(a.Y),
@@ -47,9 +47,9 @@
                         v = l.extraLargeHeight,
                         x = l.largeHeight,
                         f = l.mediumHeight,
-                        w = l.smallHeight,
-                        P = l.extraSmallHeight,
-                        _ = { extraLarge: v, large: x, medium: f, small: w, extraSmall: P };
+                        P = l.smallHeight,
+                        w = l.extraSmallHeight,
+                        T = { extraLarge: v, large: x, medium: f, small: P, extraSmall: w };
                     if (i.extraLarge || i.large || i.medium || i.small || i.extraSmall) {
                         if (i.extraLarge && s) return t;
                         if (i.large && d) return t;
@@ -57,19 +57,19 @@
                         if (i.small && m) return t;
                         if (i.extraSmall && g) return t;
                     } else {
-                        if (i.extraLargeWidth && c) return (0, n.H)(t, i, _);
-                        if (i.largeWidth && h) return (0, n.H)(t, i, _);
-                        if (i.mediumWidth && E) return (0, n.H)(t, i, _);
-                        if (i.smallWidth && p) return (0, n.H)(t, i, _);
-                        if (i.extraSmallWidth && S) return (0, n.H)(t, i, _);
+                        if (i.extraLargeWidth && c) return (0, n.H)(t, i, T);
+                        if (i.largeWidth && h) return (0, n.H)(t, i, T);
+                        if (i.mediumWidth && E) return (0, n.H)(t, i, T);
+                        if (i.smallWidth && p) return (0, n.H)(t, i, T);
+                        if (i.extraSmallWidth && S) return (0, n.H)(t, i, T);
                         if (
                             !(i.extraLargeWidth || i.largeWidth || i.mediumWidth || i.smallWidth || i.extraSmallWidth)
                         ) {
                             if (i.extraLargeHeight && v) return t;
                             if (i.largeHeight && x) return t;
                             if (i.mediumHeight && f) return t;
-                            if (i.smallHeight && w) return t;
-                            if (i.extraSmallHeight && P) return t;
+                            if (i.smallHeight && P) return t;
+                            if (i.extraSmallHeight && w) return t;
                         }
                     }
                     return null;
@@ -107,7 +107,7 @@
                         : e;
             },
             7739: (e, t, i) => {
-                i(6010), i(1039), i(3495);
+                (i(6010), i(1039), i(3495));
             },
             1043: (e, t, i) => {
                 i.d(t, { j: () => r });
@@ -169,9 +169,9 @@
                         extraSmallHeight: n === i.extraSmall.weight,
                     };
                 }
-                i.d(t, { T: () => n }),
+                (i.d(t, { T: () => n }),
                     (function (e) {
-                        (e.extraLarge = 'extraLarge'),
+                        ((e.extraLarge = 'extraLarge'),
                             (e.large = 'large'),
                             (e.medium = 'medium'),
                             (e.small = 'small'),
@@ -185,13 +185,13 @@
                             (e.largeHeight = 'largeHeight'),
                             (e.mediumHeight = 'mediumHeight'),
                             (e.smallHeight = 'smallHeight'),
-                            (e.extraSmallHeight = 'extraSmallHeight');
-                    })(r || (r = {}));
+                            (e.extraSmallHeight = 'extraSmallHeight'));
+                    })(r || (r = {})));
             },
             2862: (e, t, i) => {
                 let r, n, a, o, l, s, d, u;
-                !(function (e) {
-                    (e.Items = 'items'),
+                (!(function (e) {
+                    ((e.Items = 'items'),
                         (e.Equipment = 'equipment'),
                         (e.Xp = 'xp'),
                         (e.XpFactor = 'xpFactor'),
@@ -241,10 +241,11 @@
                         (e.OptionalDevice = 'optionalDevice'),
                         (e.EquipCoin = 'equipCoin'),
                         (e.LootBox = 'lootBox'),
-                        (e.BrCoin = 'brcoin');
+                        (e.BrCoin = 'brcoin'),
+                        (e.Attachment = 'attachment'));
                 })(r || (r = {})),
                     (function (e) {
-                        (e.Gold = 'gold'),
+                        ((e.Gold = 'gold'),
                             (e.Credits = 'credits'),
                             (e.Crystal = 'crystal'),
                             (e.Premium = 'premium'),
@@ -281,10 +282,10 @@
                             (e.BattlePassPoints = 'battlePassPoints'),
                             (e.BattleBadge = 'dossier_badge'),
                             (e.BattleAchievement = 'dossier_achievement'),
-                            (e.EquipCoin = 'equipCoin');
+                            (e.EquipCoin = 'equipCoin'));
                     })(n || (n = {})),
                     (function (e) {
-                        (e.Big = 'big'),
+                        ((e.Big = 'big'),
                             (e.Small = 'small'),
                             (e.Mini = 'mini'),
                             (e.S600x450 = 's600x450'),
@@ -295,17 +296,20 @@
                             (e.S128x100 = 's128x100'),
                             (e.S80x80 = 's80x80'),
                             (e.S64x64 = 's64x64'),
-                            (e.S48x48 = 's48x48');
+                            (e.S48x48 = 's48x48'));
                     })(a || (a = {})),
                     (function (e) {
-                        (e.MULTI = 'multi'),
+                        ((e.MULTI = 'multi'),
                             (e.CURRENCY = 'currency'),
                             (e.PREMIUM_PLUS = 'premium_plus'),
                             (e.NUMBER = 'number'),
-                            (e.STRING = 'string');
+                            (e.STRING = 'string'));
                     })(o || (o = {})),
                     (function (e) {
-                        (e.BATTLE_BOOSTER = 'battleBooster'),
+                        ((e.ATTACHMENT_RARE = 'rare'),
+                            (e.ATTACHMENT_EPIC = 'epic'),
+                            (e.ATTACHMENT_LEGENDARY = 'legendary'),
+                            (e.BATTLE_BOOSTER = 'battleBooster'),
                             (e.BATTLE_BOOSTER_REPLACE = 'battleBoosterReplace'),
                             (e.BUILT_IN_EQUIPMENT = 'builtInEquipment'),
                             (e.EQUIPMENT_PLUS = 'equipmentPlus'),
@@ -319,13 +323,16 @@
                             (e.PROGRESSION_STYLE_UPGRADED_3 = 'progressionStyleUpgraded_3'),
                             (e.PROGRESSION_STYLE_UPGRADED_4 = 'progressionStyleUpgraded_4'),
                             (e.PROGRESSION_STYLE_UPGRADED_5 = 'progressionStyleUpgraded_5'),
-                            (e.PROGRESSION_STYLE_UPGRADED_6 = 'progressionStyleUpgraded_6');
+                            (e.PROGRESSION_STYLE_UPGRADED_6 = 'progressionStyleUpgraded_6'));
                     })(l || (l = {})),
                     (function (e) {
                         e.BATTLE_BOOSTER = 'battleBooster';
                     })(s || (s = {})),
                     (function (e) {
-                        (e.BATTLE_BOOSTER = 'battleBooster'),
+                        ((e.ATTACHMENT_RARE = 'rare'),
+                            (e.ATTACHMENT_EPIC = 'epic'),
+                            (e.ATTACHMENT_LEGENDARY = 'legendary'),
+                            (e.BATTLE_BOOSTER = 'battleBooster'),
                             (e.BATTLE_BOOSTER_REPLACE = 'battleBoosterReplace'),
                             (e.BUILT_IN_EQUIPMENT = 'builtInEquipment'),
                             (e.EQUIPMENT_PLUS = 'equipmentPlus'),
@@ -339,15 +346,16 @@
                             (e.PROGRESSION_STYLE_UPGRADED_3 = 'progressionStyleUpgraded_3'),
                             (e.PROGRESSION_STYLE_UPGRADED_4 = 'progressionStyleUpgraded_4'),
                             (e.PROGRESSION_STYLE_UPGRADED_5 = 'progressionStyleUpgraded_5'),
-                            (e.PROGRESSION_STYLE_UPGRADED_6 = 'progressionStyleUpgraded_6');
+                            (e.PROGRESSION_STYLE_UPGRADED_6 = 'progressionStyleUpgraded_6'));
                     })(d || (d = {})),
                     (function (e) {
-                        (e[(e.Engraving = 0)] = 'Engraving'), (e[(e.Background = 1)] = 'Background');
-                    })(u || (u = {}));
+                        ((e[(e.Engraving = 0)] = 'Engraving'), (e[(e.Background = 1)] = 'Background'));
+                    })(u || (u = {})));
+                r.Attachment;
             },
             527: (e, t, i) => {
-                i.r(t),
-                    i.d(t, { mouse: () => u, off: () => s, on: () => l, onResize: () => a, onScaleUpdated: () => o });
+                (i.r(t),
+                    i.d(t, { mouse: () => u, off: () => s, on: () => l, onResize: () => a, onScaleUpdated: () => o }));
                 var r = i(2472),
                     n = i(1176);
                 const a = (0, r.E)('clientResized'),
@@ -406,10 +414,10 @@
                     );
                     return Object.assign({}, a, {
                         disable() {
-                            (e.enabled = !1), r();
+                            ((e.enabled = !1), r());
                         },
                         enable() {
-                            (e.enabled = !0), r();
+                            ((e.enabled = !0), r());
                         },
                         enableOutside() {
                             e.enabled && (0, n.R)(!0);
@@ -421,7 +429,7 @@
                 })();
             },
             5959: (e, t, i) => {
-                i.r(t),
+                (i.r(t),
                     i.d(t, {
                         events: () => r,
                         getMouseGlobalPosition: () => o,
@@ -429,7 +437,7 @@
                         graphicsQuality: () => l,
                         playSound: () => n.G,
                         setRTPC: () => n.E,
-                    });
+                    }));
                 var r = i(527),
                     n = i(2493);
                 function a(e = 'px') {
@@ -494,7 +502,7 @@
                 function n(e, t, i) {
                     return `url(${r(e, t, i)})`;
                 }
-                i.r(t), i.d(t, { getBgUrl: () => n, getTextureUrl: () => r });
+                (i.r(t), i.d(t, { getBgUrl: () => n, getTextureUrl: () => r }));
             },
             6112: (e, t, i) => {
                 i.d(t, { W: () => r });
@@ -521,7 +529,7 @@
                 };
             },
             7641: (e, t, i) => {
-                i.r(t),
+                (i.r(t),
                     i.d(t, {
                         addModelObserver: () => m,
                         addPreloadTexture: () => s,
@@ -531,7 +539,7 @@
                         displayStatusIs: () => B,
                         events: () => o.U,
                         extraSize: () => L,
-                        forceTriggerMouseMove: () => T,
+                        forceTriggerMouseMove: () => _,
                         freezeTextureBeforeResize: () => p,
                         getBrowserTexturePath: () => u,
                         getDisplayStatus: () => R,
@@ -539,18 +547,18 @@
                         getScale: () => S,
                         getSize: () => c,
                         getViewGlobalPosition: () => E,
-                        isEventHandled: () => _,
-                        isFocused: () => w,
+                        isEventHandled: () => T,
+                        isFocused: () => P,
                         pxToRem: () => v,
                         remToPx: () => x,
                         resize: () => h,
                         sendEvent: () => l.qP,
                         setAnimateWindow: () => f,
-                        setEventHandled: () => P,
+                        setEventHandled: () => w,
                         setInputPaddingsRem: () => d,
                         setSidePaddingsRem: () => g,
                         whenTutorialReady: () => O,
-                    });
+                    }));
                 var r = i(9690),
                     n = i(3722),
                     a = i(6112),
@@ -596,16 +604,16 @@
                 function f(e, t) {
                     viewEnv.setAnimateWindow(e, t);
                 }
-                function w() {
+                function P() {
                     return viewEnv.isFocused();
                 }
-                function P() {
+                function w() {
                     return viewEnv.setEventHandled();
                 }
-                function _() {
+                function T() {
                     return viewEnv.isEventHandled();
                 }
-                function T() {
+                function _() {
                     viewEnv.forceTriggerMouseMove();
                 }
                 function R() {
@@ -652,7 +660,7 @@
                                         r,
                                         n = {},
                                         a = Object.keys(e);
-                                    for (r = 0; r < a.length; r++) (i = a[r]), t.indexOf(i) >= 0 || (n[i] = e[i]);
+                                    for (r = 0; r < a.length; r++) ((i = a[r]), t.indexOf(i) >= 0 || (n[i] = e[i]));
                                     return n;
                                 })(t, r);
                             return void 0 !== a
@@ -694,30 +702,30 @@
                 i(7363);
             },
             5415: (e, t, i) => {
-                i(7363), i(7739);
+                (i(7363), i(7739));
                 var r = i(1043);
                 let n, a, o;
-                !(function (e) {
-                    (e[(e.ExtraSmall = r.j.extraSmall.width)] = 'ExtraSmall'),
+                (!(function (e) {
+                    ((e[(e.ExtraSmall = r.j.extraSmall.width)] = 'ExtraSmall'),
                         (e[(e.Small = r.j.small.width)] = 'Small'),
                         (e[(e.Medium = r.j.medium.width)] = 'Medium'),
                         (e[(e.Large = r.j.large.width)] = 'Large'),
-                        (e[(e.ExtraLarge = r.j.extraLarge.width)] = 'ExtraLarge');
+                        (e[(e.ExtraLarge = r.j.extraLarge.width)] = 'ExtraLarge'));
                 })(n || (n = {})),
                     (function (e) {
-                        (e[(e.ExtraSmall = r.j.extraSmall.width)] = 'ExtraSmall'),
+                        ((e[(e.ExtraSmall = r.j.extraSmall.width)] = 'ExtraSmall'),
                             (e[(e.Small = r.j.small.width)] = 'Small'),
                             (e[(e.Medium = r.j.medium.width)] = 'Medium'),
                             (e[(e.Large = r.j.large.width)] = 'Large'),
-                            (e[(e.ExtraLarge = r.j.extraLarge.width)] = 'ExtraLarge');
+                            (e[(e.ExtraLarge = r.j.extraLarge.width)] = 'ExtraLarge'));
                     })(a || (a = {})),
                     (function (e) {
-                        (e[(e.ExtraSmall = r.j.extraSmall.height)] = 'ExtraSmall'),
+                        ((e[(e.ExtraSmall = r.j.extraSmall.height)] = 'ExtraSmall'),
                             (e[(e.Small = r.j.small.height)] = 'Small'),
                             (e[(e.Medium = r.j.medium.height)] = 'Medium'),
                             (e[(e.Large = r.j.large.height)] = 'Large'),
-                            (e[(e.ExtraLarge = r.j.extraLarge.height)] = 'ExtraLarge');
-                    })(o || (o = {}));
+                            (e[(e.ExtraLarge = r.j.extraLarge.height)] = 'ExtraLarge'));
+                    })(o || (o = {})));
             },
             9690: (e, t, i) => {
                 i.d(t, { cg: () => a });
@@ -725,35 +733,35 @@
                     n = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function a(e) {
                     let t = '';
-                    for (let i = n.length - 1; i >= 0; i--) for (; e >= n[i]; ) (t += r[i]), (e -= n[i]);
+                    for (let i = n.length - 1; i >= 0; i--) for (; e >= n[i]; ) ((t += r[i]), (e -= n[i]));
                     return t;
                 }
                 ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());
             },
             6845: (e, t, i) => {
-                i(6483), i(5415), i(9690), i(7363), i(3905);
+                (i(6483), i(5415), i(9690), i(7363), i(3905));
             },
             3905: (e, t, i) => {
                 var r = i(114);
                 let n, a, o;
-                !(function (e) {
-                    (e.EntryPoint = 'ENTRY_POINT'),
+                (!(function (e) {
+                    ((e.EntryPoint = 'ENTRY_POINT'),
                         (e.InfoPage = 'INFO_PAGE'),
                         (e.Rewards = 'REWARDS'),
-                        (e.HasBoxesView = 'HAS_BOXES_VIEW');
+                        (e.HasBoxesView = 'HAS_BOXES_VIEW'));
                 })(n || (n = {})),
                     (function (e) {
-                        (e.Videos = 'videos'),
+                        ((e.Videos = 'videos'),
                             (e.Images = 'images'),
                             (e.Texts = 'texts'),
                             (e.Sounds = 'sounds'),
                             (e.DynamicVideos = 'dynamicVideos'),
                             (e.DynamicImages = 'dynamicImages'),
-                            (e.DynamicTexts = 'dynamicTexts');
+                            (e.DynamicTexts = 'dynamicTexts'));
                     })(a || (a = {})),
                     (function (e) {
                         e.InfoPage = 'infoPage';
-                    })(o || (o = {}));
+                    })(o || (o = {})));
                 r.tB.attachment;
             },
             114: (e, t, i) => {
@@ -807,9 +815,9 @@
         var n = i[e];
         if (void 0 !== n) return n.exports;
         var a = (i[e] = { exports: {} });
-        return t[e](a, a.exports, r), a.exports;
+        return (t[e](a, a.exports, r), a.exports);
     }
-    (r.m = t),
+    ((r.m = t),
         (e = []),
         (r.O = (t, i, n, a) => {
             if (!i) {
@@ -833,7 +841,7 @@
         }),
         (r.n = (e) => {
             var t = e && e.__esModule ? () => e.default : () => e;
-            return r.d(t, { a: t }), t;
+            return (r.d(t, { a: t }), t);
         }),
         (r.d = (e, t) => {
             for (var i in t) r.o(t, i) && !r.o(e, i) && Object.defineProperty(e, i, { enumerable: !0, get: t[i] });
@@ -848,10 +856,10 @@
         })()),
         (r.o = (e, t) => Object.prototype.hasOwnProperty.call(e, t)),
         (r.r = (e) => {
-            'undefined' != typeof Symbol &&
+            ('undefined' != typeof Symbol &&
                 Symbol.toStringTag &&
                 Object.defineProperty(e, Symbol.toStringTag, { value: 'Module' }),
-                Object.defineProperty(e, '__esModule', { value: !0 });
+                Object.defineProperty(e, '__esModule', { value: !0 }));
         }),
         (r.j = 35),
         (() => {
@@ -866,12 +874,12 @@
                         for (n in l) r.o(l, n) && (r.m[n] = l[n]);
                         if (s) var u = s(r);
                     }
-                    for (t && t(i); d < o.length; d++) (a = o[d]), r.o(e, a) && e[a] && e[a][0](), (e[a] = 0);
+                    for (t && t(i); d < o.length; d++) ((a = o[d]), r.o(e, a) && e[a] && e[a][0](), (e[a] = 0));
                     return r.O(u);
                 },
                 i = (self.webpackChunkgameface = self.webpackChunkgameface || []);
-            i.forEach(t.bind(null, 0)), (i.push = t.bind(null, i.push.bind(i)));
-        })();
+            (i.forEach(t.bind(null, 0)), (i.push = t.bind(null, i.push.bind(i))));
+        })());
     var n = r.O(void 0, [866], () => r(6845));
     n = r.O(n);
 })();

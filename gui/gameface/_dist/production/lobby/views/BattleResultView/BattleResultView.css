@@ -1388,13 +1388,13 @@ body {
     opacity: 0.15;
 }
 .PremiumRewards_ribbonLine__left_1d {
-    background: linear-gradient(270deg, rgba(255, 255, 255, 0.27) 0%, rgba(255, 255, 255, 0) 14.6%),
-        rgba(255, 255, 255, 0.1);
+    background:
+        linear-gradient(270deg, rgba(255, 255, 255, 0.27) 0%, rgba(255, 255, 255, 0) 14.6%), rgba(255, 255, 255, 0.1);
     opacity: 1;
 }
 .PremiumRewards_ribbonLine__right_3e {
-    background: linear-gradient(270deg, rgba(255, 255, 255, 0.27) 0%, rgba(255, 255, 255, 0) 14.6%),
-        rgba(255, 255, 255, 0.1);
+    background:
+        linear-gradient(270deg, rgba(255, 255, 255, 0.27) 0%, rgba(255, 255, 255, 0) 14.6%), rgba(255, 255, 255, 0.1);
     opacity: 1;
     transform: matrix(-1, 0, 0, 1, 0, 0);
 }

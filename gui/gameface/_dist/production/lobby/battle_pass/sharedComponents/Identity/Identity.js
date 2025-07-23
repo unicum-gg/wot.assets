@@ -3,10 +3,10 @@
     var e,
         r = {
             6254: (e, r, t) => {
-                t(6483), t(6179);
+                (t(6483), t(6179));
                 let o;
                 !(function (e) {
-                    (e.PROGRESSION = 'progression'), (e.CHAPTER_CHOICE = 'chapter_choice');
+                    ((e.PROGRESSION = 'progression'), (e.CHAPTER_CHOICE = 'chapter_choice'));
                 })(o || (o = {}));
             },
         },
@@ -15,9 +15,9 @@
         var n = t[e];
         if (void 0 !== n) return n.exports;
         var i = (t[e] = { exports: {} });
-        return r[e](i, i.exports, o), i.exports;
+        return (r[e](i, i.exports, o), i.exports);
     }
-    (o.m = r),
+    ((o.m = r),
         (e = []),
         (o.O = (r, t, n, i) => {
             if (!t) {
@@ -41,7 +41,7 @@
         }),
         (o.n = (e) => {
             var r = e && e.__esModule ? () => e.default : () => e;
-            return o.d(r, { a: r }), r;
+            return (o.d(r, { a: r }), r);
         }),
         (o.d = (e, r) => {
             for (var t in r) o.o(r, t) && !o.o(e, t) && Object.defineProperty(e, t, { enumerable: !0, get: r[t] });
@@ -68,12 +68,12 @@
                         for (n in f) o.o(f, n) && (o.m[n] = f[n]);
                         if (c) var l = c(o);
                     }
-                    for (r && r(t); u < a.length; u++) (i = a[u]), o.o(e, i) && e[i] && e[i][0](), (e[i] = 0);
+                    for (r && r(t); u < a.length; u++) ((i = a[u]), o.o(e, i) && e[i] && e[i][0](), (e[i] = 0));
                     return o.O(l);
                 },
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
-            t.forEach(r.bind(null, 0)), (t.push = r.bind(null, t.push.bind(t)));
-        })();
+            (t.forEach(r.bind(null, 0)), (t.push = r.bind(null, t.push.bind(t))));
+        })());
     var n = o.O(void 0, [1519], () => o(6254));
     n = o.O(n);
 })();

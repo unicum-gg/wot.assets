@@ -4,10 +4,10 @@
         n = {
             4965: (e, n, t) => {
                 var o = {};
-                t.r(o),
-                    t.d(o, { mouse: () => g, off: () => f, on: () => m, onResize: () => d, onScaleUpdated: () => v });
+                (t.r(o),
+                    t.d(o, { mouse: () => g, off: () => f, on: () => m, onResize: () => d, onScaleUpdated: () => v }));
                 var r = {};
-                t.r(r),
+                (t.r(r),
                     t.d(r, {
                         events: () => o,
                         getMouseGlobalPosition: () => y,
@@ -15,11 +15,11 @@
                         graphicsQuality: () => E,
                         playSound: () => b,
                         setRTPC: () => h,
-                    });
+                    }));
                 var i = {};
-                t.r(i), t.d(i, { getBgUrl: () => k, getTextureUrl: () => S });
+                (t.r(i), t.d(i, { getBgUrl: () => k, getTextureUrl: () => S }));
                 var a = {};
-                t.r(a),
+                (t.r(a),
                     t.d(a, {
                         addModelObserver: () => $,
                         addPreloadTexture: () => F,
@@ -48,7 +48,7 @@
                         setInputPaddingsRem: () => I,
                         setSidePaddingsRem: () => H,
                         whenTutorialReady: () => le,
-                    });
+                    }));
                 var s = t(6483),
                     l = t.n(s);
                 function c(e) {
@@ -118,10 +118,10 @@
                     );
                     return Object.assign({}, r, {
                         disable() {
-                            (e.enabled = !1), o();
+                            ((e.enabled = !1), o());
                         },
                         enable() {
-                            (e.enabled = !0), o();
+                            ((e.enabled = !0), o());
                         },
                         enableOutside() {
                             e.enabled && u(!0);
@@ -159,7 +159,7 @@
                     O = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function C(e) {
                     let n = '';
-                    for (let t = O.length - 1; t >= 0; t--) for (; e >= O[t]; ) (n += P[t]), (e -= O[t]);
+                    for (let t = O.length - 1; t >= 0; t--) for (; e >= O[t]; ) ((n += P[t]), (e -= O[t]));
                     return n;
                 }
                 ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());
@@ -201,7 +201,7 @@
                                         o,
                                         r = {},
                                         i = Object.keys(e);
-                                    for (o = 0; o < i.length; o++) (t = i[o]), n.indexOf(t) >= 0 || (r[t] = e[t]);
+                                    for (o = 0; o < i.length; o++) ((t = i[o]), n.indexOf(t) >= 0 || (r[t] = e[t]));
                                     return r;
                                 })(n, M);
                             return void 0 !== r
@@ -327,15 +327,15 @@
                         (0, ue.useMemo)(
                             () => ({
                                 run: (n) => {
-                                    window.cancelAnimationFrame(e.current),
+                                    (window.cancelAnimationFrame(e.current),
                                         (e.current = window.requestAnimationFrame(() => {
                                             e.current = window.requestAnimationFrame(() => {
-                                                n(), (e.current = 0);
+                                                (n(), (e.current = 0));
                                             });
-                                        }));
+                                        })));
                                 },
                                 clear: () => {
-                                    window.cancelAnimationFrame(e.current), (e.current = 0);
+                                    (window.cancelAnimationFrame(e.current), (e.current = 0));
                                 },
                                 get isRunning() {
                                     return 0 !== e.current;
@@ -376,7 +376,7 @@
                                 o,
                                 r = {},
                                 i = Object.keys(e);
-                            for (o = 0; o < i.length; o++) (t = i[o]), n.indexOf(t) >= 0 || (r[t] = e[t]);
+                            for (o = 0; o < i.length; o++) ((t = i[o]), n.indexOf(t) >= 0 || (r[t] = e[t]));
                             return r;
                         })(e, fe);
                     const s = ve(),
@@ -405,7 +405,7 @@
                             pe({}, a, {
                                 className: l()(me.base, me[`base__theme-${i}`], o),
                                 ref: function (e) {
-                                    (c.current = e), 'function' == typeof n ? n(e) : n && (n.current = e);
+                                    ((c.current = e), 'function' == typeof n ? n(e) : n && (n.current = e));
                                 },
                             }),
                             de().createElement('div', { className: me.decorator }, t),
@@ -494,7 +494,7 @@
                                                     subscribe: (t, i) => {
                                                         const s = 'string' == typeof i ? `${o}.${i}` : o,
                                                             l = ce.view.addModelObserver(s, n, !0);
-                                                        return r.set(l, t), e && t(a(i)), l;
+                                                        return (r.set(l, t), e && t(a(i)), l);
                                                     },
                                                     readByPath: a,
                                                     createCallback: (e, n) => {
@@ -624,7 +624,7 @@
                                     }, [o]),
                                     (0, ue.useEffect)(
                                         () => () => {
-                                            f.externalModel.dispose(), s.current.forEach((e) => e());
+                                            (f.externalModel.dispose(), s.current.forEach((e) => e()));
                                         },
                                         [f],
                                     ),
@@ -742,9 +742,9 @@
         var r = t[e];
         if (void 0 !== r) return r.exports;
         var i = (t[e] = { exports: {} });
-        return n[e](i, i.exports, o), i.exports;
+        return (n[e](i, i.exports, o), i.exports);
     }
-    (o.m = n),
+    ((o.m = n),
         (e = []),
         (o.O = (n, t, r, i) => {
             if (!t) {
@@ -768,7 +768,7 @@
         }),
         (o.n = (e) => {
             var n = e && e.__esModule ? () => e.default : () => e;
-            return o.d(n, { a: n }), n;
+            return (o.d(n, { a: n }), n);
         }),
         (o.d = (e, n) => {
             for (var t in n) o.o(n, t) && !o.o(e, t) && Object.defineProperty(e, t, { enumerable: !0, get: n[t] });
@@ -783,10 +783,10 @@
         })()),
         (o.o = (e, n) => Object.prototype.hasOwnProperty.call(e, n)),
         (o.r = (e) => {
-            'undefined' != typeof Symbol &&
+            ('undefined' != typeof Symbol &&
                 Symbol.toStringTag &&
                 Object.defineProperty(e, Symbol.toStringTag, { value: 'Module' }),
-                Object.defineProperty(e, '__esModule', { value: !0 });
+                Object.defineProperty(e, '__esModule', { value: !0 }));
         }),
         (o.j = 3470),
         (() => {
@@ -801,12 +801,12 @@
                         for (r in s) o.o(s, r) && (o.m[r] = s[r]);
                         if (l) var u = l(o);
                     }
-                    for (n && n(t); c < a.length; c++) (i = a[c]), o.o(e, i) && e[i] && e[i][0](), (e[i] = 0);
+                    for (n && n(t); c < a.length; c++) ((i = a[c]), o.o(e, i) && e[i] && e[i][0](), (e[i] = 0));
                     return o.O(u);
                 },
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
-            t.forEach(n.bind(null, 0)), (t.push = n.bind(null, t.push.bind(t)));
-        })();
+            (t.forEach(n.bind(null, 0)), (t.push = n.bind(null, t.push.bind(t))));
+        })());
     var r = o.O(void 0, [9056], () => o(4965));
     r = o.O(r);
 })();

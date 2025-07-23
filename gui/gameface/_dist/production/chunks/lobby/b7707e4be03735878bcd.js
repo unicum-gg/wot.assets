@@ -3,7 +3,7 @@
     [261],
     {
         8314: (e, t, a) => {
-            a.r(t), a.d(t, { default: () => gt });
+            (a.r(t), a.d(t, { default: () => gt }));
             var r = a(7363),
                 n = a.n(r),
                 s = a(8958),
@@ -48,10 +48,10 @@
                             const n = (0, x.y)(e),
                                 s = (0, v.C)(t, e.specialAwardName);
                             if (n) {
-                                if (s) return a.push(B(S, r)), void a.push(B(N, r));
+                                if (s) return (a.push(B(S, r)), void a.push(B(N, r)));
                                 a.push(B(R, r));
                             }
-                            a.push(B(f, r)), a.push(B(N, r)), e.isCompensation && (a.push(B(T, r)), a.push(B(I, r)));
+                            (a.push(B(f, r)), a.push(B(N, r)), e.isCompensation && (a.push(B(T, r)), a.push(B(I, r))));
                         }),
                         a.push(A.FINISH),
                         a
@@ -538,13 +538,13 @@
                                         C(!0);
                                         break;
                                     case B(f, t).name:
-                                        P.start(Be()), $.start(Be()), ye.hY.sound(w.rewardAppear);
+                                        (P.start(Be()), $.start(Be()), ye.hY.sound(w.rewardAppear));
                                         break;
                                     case B(N, t).name:
-                                        P.start(ke()), $.start(ke());
+                                        (P.start(ke()), $.start(ke()));
                                         break;
                                     case B(T, t).name:
-                                        P.start({
+                                        (P.start({
                                             to: [
                                                 {
                                                     opacity: 1,
@@ -591,10 +591,10 @@
                                                     { opacity: 0, display: 'none' },
                                                 ],
                                                 config: { duration: 1e3 },
-                                            });
+                                            }));
                                         break;
                                     case B(I, t).name:
-                                        P.start({
+                                        (P.start({
                                             to: {
                                                 opacity: 0,
                                                 transform: 'scale(1) rotateZ(0deg)',
@@ -605,7 +605,7 @@
                                             $.start({ from: { opacity: 0 }, config: { duration: 0 } }),
                                             U.start(Ae),
                                             Q.start(Ge()),
-                                            ye.hY.sound(w.compensationAppear);
+                                            ye.hY.sound(w.compensationAppear));
                                 }
                             };
                             return (
@@ -788,7 +788,7 @@
                                     f.skipAll();
                                     break;
                                 case g.B1.preparation:
-                                    f.reset(), v(qe);
+                                    (f.reset(), v(qe));
                                     break;
                                 case g.B1.rewards:
                                     f.start();
@@ -870,7 +870,7 @@
                     const D = { active: C, reset: (0, r.useCallback)(() => A(!1), []) },
                         W = (0, _.H)(E),
                         $ = (0, r.useCallback)(() => {
-                            a.clearActiveRareReward(), A(!0), W.resume();
+                            (a.clearActiveRareReward(), A(!0), W.resume());
                         }, [W, a]);
                     return n().createElement(
                         'div',
@@ -968,7 +968,7 @@
                         R = t.isReopen.get(),
                         T = (0, i.v)(g.Kg, (e) => e.value),
                         I = (0, _.H)(E);
-                    (0, o.gd)(
+                    ((0, o.gd)(
                         c.n.ESCAPE,
                         () => {
                             T === g.B1.initial && a.close();
@@ -987,7 +987,7 @@
                         (0, r.useEffect)(() => {
                             g.Kg.send({ type: g.QK.setAnimationActive, isAnimationActive: x });
                         }, [x]),
-                        (0, y.s)(R, f, T);
+                        (0, y.s)(R, f, T));
                     const C = (0, b.H)(T, a.openNext),
                         A = C.loadingStyle,
                         B = C.contentStyle;

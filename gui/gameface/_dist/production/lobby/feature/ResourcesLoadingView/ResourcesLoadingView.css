@@ -1563,7 +1563,8 @@
     width: 400rem;
     height: 148rem;
     background: no-repeat 0 100% / contain;
-    background-image: url('R.images.resource_well.gui.maps.icons.resourcesLoading.categoryGlow'),
+    background-image:
+        url('R.images.resource_well.gui.maps.icons.resourcesLoading.categoryGlow'),
         url('R.images.resource_well.gui.maps.icons.resourcesLoading.categoryGlowActive');
     opacity: 0;
     mix-blend-mode: screen;

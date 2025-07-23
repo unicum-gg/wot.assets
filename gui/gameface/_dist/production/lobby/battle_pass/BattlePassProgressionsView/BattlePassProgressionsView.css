@@ -794,6 +794,103 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     opacity: 0.6;
 }
 
+.TankmanSkills_base_59 {
+    display: flex;
+    position: relative;
+    z-index: 0;
+}
+
+.TankmanSkills_skill_2d {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.TankmanSkills_zeroSkill_e7 {
+    width: 24rem;
+    height: 24rem;
+    position: absolute;
+}
+
+.mediaMedium .TankmanSkills_zeroSkill_e7 {
+    width: 32rem;
+    height: 32rem;
+}
+
+.TankmanSkills_glow_b1 {
+    width: 52rem;
+    height: 52rem;
+    background: url('R.images.gui.maps.icons.battlePass.icons.zero_perk_glow') no-repeat center / contain;
+    position: absolute;
+    top: -56%;
+    left: -36%;
+    pointer-events: none;
+}
+
+.mediaMedium .TankmanSkills_glow_b1 {
+    width: 72rem;
+    height: 72rem;
+    top: -60%;
+    left: -50%;
+}
+
+.TankmanSkills_zeroSkillIcon_f8 {
+    width: 12rem;
+    height: 12rem;
+    background: url('R.images.gui.maps.icons.battlePass.icons.zero_perk') no-repeat center / contain;
+    position: absolute;
+    top: -20%;
+    right: -24%;
+}
+
+.mediaMedium .TankmanSkills_zeroSkillIcon_f8 {
+    width: 16rem;
+    height: 16rem;
+}
+
+.TankmanSkills_skillIcon_9c {
+    width: 24rem;
+    height: 24rem;
+    margin: 0 4rem;
+    background: center / contain;
+}
+
+.TankmanSkills_skillIcon__specificPerk_23 {
+    margin: 0;
+}
+
+.mediaMedium .TankmanSkills_skillIcon_9c {
+    width: 32rem;
+    height: 32rem;
+}
+
+.TankmanSkills_divider_38 {
+    width: 0;
+    height: 16rem;
+    margin: 0 2rem;
+    border: 1rem solid #f2f2f7;
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+.mediaMedium .TankmanSkills_divider_38 {
+    height: 24rem;
+    margin: 0 4rem;
+}
+
+.TankmanSkills_light_6b {
+    width: 338rem;
+    height: 168rem;
+    background: url('R.images.gui.maps.icons.battlePass.lights.perk_light') no-repeat center / contain;
+    opacity: 0.8;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
 .TankmanDescription_title_56 {
     color: #ffc363;
     font-size: 15rem;
@@ -824,25 +921,24 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 
 .TankmanDescription_skills_11 {
     display: flex;
-    margin: 0 -2rem;
+    margin: 8rem -2rem 0;
     position: relative;
     z-index: 0;
 }
 
+.mediaMedium .TankmanDescription_skills_11 {
+    margin-top: 12rem;
+}
+
 .TankmanDescription_skill_2d {
-    width: 32rem;
-    height: 32rem;
-    margin: 8rem -5rem 0 0;
-    background: center / contain;
+    display: flex;
+    align-items: center;
+    margin: 0 -5rem 0 0;
+    position: relative;
 }
 
 .TankmanDescription_skill__paidReward_6e {
-    margin: 8rem 0 0 -5rem;
-}
-
-.mediaSmall .TankmanDescription_skill_2d {
-    width: 48rem;
-    height: 48rem;
+    margin: 0 0 0 -5rem;
 }
 
 .TankmanDescription_description_78 {
@@ -1053,6 +1149,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     width: 309rem;
     height: 232rem;
     background: url('R.images.gui.maps.icons.battlePass.progression.extra.timerLight') no-repeat center / contain;
+    opacity: 0.7;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -1068,13 +1165,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     z-index: 1;
 }
 
-.mediaLarge .Timer_icon_c5 {
-    width: 36rem;
-    height: 36rem;
-    margin: 2rem 10rem 0 -10rem;
-    background-image: url('R.images.gui.maps.icons.battlePass.progression.widget_rewards.time_icon_big');
-}
-
 .Timer_value_1c {
     color: #ffffff;
     font-size: 24rem;
@@ -1082,11 +1172,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     line-height: 1.2;
     margin-top: -5rem;
     z-index: 1;
-}
-
-.mediaLarge .Timer_value_1c {
-    margin-top: -7rem;
-    font-size: 48rem;
 }
 
 .VehicleDescription_vehicleBg_26 {
@@ -1287,6 +1372,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     height: 100%;
     margin-right: -4rem;
     position: relative;
+    z-index: 1;
 }
 
 .mediaMedium .ExtraChapterWidget_content_a7 {
@@ -1324,6 +1410,10 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 
 .mediaLarge .ExtraChapterWidget_timer_9b {
     margin-top: 40rem;
+}
+
+.mediaExtraLarge .ExtraChapterWidget_timer_9b {
+    margin-top: 70rem;
 }
 
 .Separator_base_c5 {
@@ -3335,20 +3425,12 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .mediaMedium .CommanderAward_base_11 {
     height: 140rem;
 }
-.CommanderAward_base__big_ce {
-    width: 100rem;
-    height: 175rem;
-}
-.mediaMedium .CommanderAward_base__big_ce {
-    width: 160rem;
-    height: 280rem;
-}
 
 .CommanderAward_icon_92 {
     width: 76rem;
     height: 91rem;
     border-radius: 3rem;
-    background: url('R.images.gui.maps.icons.battlePass.awards_widget.commander_icon_small') no-repeat center / contain;
+    background: no-repeat center / contain;
     filter: brightness(0.9);
     position: absolute;
     top: 2rem;
@@ -3358,25 +3440,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 
 .CommanderAward_base__hover_fc .CommanderAward_icon_92 {
     filter: brightness(1.2);
-}
-
-.CommanderAward_base__big_ce .CommanderAward_icon_92 {
-    width: 96rem;
-    height: 114rem;
-    background-image: url('R.images.gui.maps.icons.battlePass.awards_widget.commander_icon_big');
-    filter: grayscale(20%);
-    top: 9rem;
-    transition: filter 0.3s linear;
-}
-
-.mediaMedium .CommanderAward_base__big_ce .CommanderAward_icon_92 {
-    width: 152rem;
-    height: 182rem;
-    top: 14rem;
-}
-
-.CommanderAward_base__hover_fc .CommanderAward_base__big_ce .CommanderAward_icon_92 {
-    filter: grayscale(0%);
 }
 
 .TalerAward_base_ef {
@@ -3669,27 +3732,27 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .AwardsWrapper_award_49 {
-    margin-right: 3rem;
+    margin-left: 3rem;
 }
 
 .mediaSmall .AwardsWrapper_award_49 {
-    margin-right: 10rem;
+    margin-left: 10rem;
 }
 
 .mediaMedium .AwardsWrapper_award_49 {
-    margin-right: 20rem;
+    margin-left: 20rem;
 }
 
 .AwardsWrapper_base__big_6b .AwardsWrapper_award_49 {
-    margin-right: 20rem;
+    margin-left: 20rem;
 }
 
 .mediaMedium .AwardsWrapper_base__big_6b .AwardsWrapper_award_49 {
-    margin-right: 30rem;
+    margin-left: 30rem;
 }
 
-.AwardsWrapper_base_e5 .AwardsWrapper_award_49:last-child {
-    margin-right: 0;
+.AwardsWrapper_base_e5 .AwardsWrapper_award_49:first-child {
+    margin-left: 0;
 }
 
 /* vertical offset for positioning progression's progressbar at the center of screen */
@@ -5739,6 +5802,11 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     height: 575rem;
 }
 
+.Reward_base__normalize_a6 .Reward_overlay_68 {
+    width: 100%;
+    height: 100%;
+}
+
 .Reward_highlight_36 {
     width: 100%;
     height: 100%;
@@ -5813,6 +5881,11 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     max-width: 100rem;
     margin-left: -10rem;
     margin-right: -10rem;
+}
+
+.Reward_base__s48x48_46 .Reward_title_36,
+.Reward_base__small_c0 .Reward_title_36 {
+    margin: -10rem -10rem 0;
 }
 
 .Reward_timer_d3 {
@@ -6006,6 +6079,31 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .mediaMedium .Rewards_explosion_f6 {
     width: 200rem;
     height: 200rem;
+}
+
+.Rewards_preview_2f {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    top: 90%;
+    z-index: 1;
+}
+
+.Rewards_iconButton_6d {
+    width: 44rem;
+    height: 44rem;
+    opacity: 0.7;
+    transition: opacity 0.25s ease-in-out;
+}
+
+.mediaMedium .Rewards_iconButton_6d {
+    width: 60rem;
+    height: 60rem;
+}
+
+.Rewards_base_46:hover .Rewards_iconButton_6d {
+    opacity: 1;
 }
 
 @keyframes Rewards_changeReward_ee {

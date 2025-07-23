@@ -32,20 +32,20 @@ body {
         transform 0.5s cubic-bezier(0.07, 0.82, 0.17, 1);
 }
 .mediaMedium .App_bg_20 {
-    background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.25)),
-        url('R.images.gui.maps.icons.battleRoyale.banner.c_220x112');
+    background-image:
+        linear-gradient(90deg, rgba(0, 0, 0, 0.25)), url('R.images.gui.maps.icons.battleRoyale.banner.c_220x112');
 }
 .App_base_21:hover .App_bg_20 {
     filter: brightness(1.05);
     transform: scale(1.03);
 }
 .App_base__single_c6 .App_bg_20 {
-    background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.25)),
-        url('R.images.gui.maps.icons.battleRoyale.banner.c_300x112');
+    background-image:
+        linear-gradient(90deg, rgba(0, 0, 0, 0.25)), url('R.images.gui.maps.icons.battleRoyale.banner.c_300x112');
 }
 .mediaLarge .App_bg_20 {
-    background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.25)),
-        url('R.images.gui.maps.icons.battleRoyale.banner.c_300x150');
+    background-image:
+        linear-gradient(90deg, rgba(0, 0, 0, 0.25)), url('R.images.gui.maps.icons.battleRoyale.banner.c_300x150');
 }
 .App_highlight_af {
     width: 100%;

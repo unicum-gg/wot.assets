@@ -11,11 +11,11 @@
                 o = a(7727);
             let c;
             !(function (e) {
-                (e[(e.LEFT = 0)] = 'LEFT'),
+                ((e[(e.LEFT = 0)] = 'LEFT'),
                     (e[(e.WHEEL = 1)] = 'WHEEL'),
                     (e[(e.RIGHT = 2)] = 'RIGHT'),
                     (e[(e.FOURTH = 3)] = 'FOURTH'),
-                    (e[(e.FIFTH = 4)] = 'FIFTH');
+                    (e[(e.FIFTH = 4)] = 'FIFTH'));
             })(c || (c = {}));
             var l = a(8844);
             const u = {
@@ -112,7 +112,7 @@
                             n,
                             r = {},
                             s = Object.keys(e);
-                        for (n = 0; n < s.length; n++) (a = s[n]), t.indexOf(a) >= 0 || (r[a] = e[a]);
+                        for (n = 0; n < s.length; n++) ((a = s[n]), t.indexOf(a) >= 0 || (r[a] = e[a]));
                         return r;
                     })(e, d);
                 const H = (0, n.useState)(!1),
@@ -209,16 +209,16 @@
         },
         8844: (e, t, a) => {
             let n, r, s;
-            a.d(t, { N3: () => s, Rh: () => r, yB: () => n }),
+            (a.d(t, { N3: () => s, Rh: () => r, yB: () => n }),
                 (function (e) {
-                    (e.small = 'small'), (e.medium = 'medium'), (e.large = 'large'), (e.extraLarge = 'extraLarge');
+                    ((e.small = 'small'), (e.medium = 'medium'), (e.large = 'large'), (e.extraLarge = 'extraLarge'));
                 })(n || (n = {})),
                 (function (e) {
-                    (e.primary = 'primary'), (e.main = 'main');
+                    ((e.primary = 'primary'), (e.main = 'main'));
                 })(r || (r = {})),
                 (function (e) {
-                    (e.Center = 'center'), (e.Bottom = 'bottom');
-                })(s || (s = {}));
+                    ((e.Center = 'center'), (e.Bottom = 'bottom'));
+                })(s || (s = {})));
         },
         5834: (e, t, a) => {
             function n(e, t = '-') {
@@ -466,7 +466,7 @@
                                       case G.customizations:
                                           return b().createElement(R, { rareBonus: e, texts: t });
                                       default:
-                                          return console.warn(`Unsupported bonus: ${e.name}`), null;
+                                          return (console.warn(`Unsupported bonus: ${e.name}`), null);
                                   }
                               })(),
                           )
@@ -480,7 +480,7 @@
                 D = 'RareRewardOverlay_media__image_56';
             let G;
             !(function (e) {
-                (e.vehicle = 'vehicles'), (e.lootbox = 'lootBox'), (e.customizations = 'customizations');
+                ((e.vehicle = 'vehicles'), (e.lootbox = 'lootBox'), (e.customizations = 'customizations'));
             })(G || (G = {}));
             const K = ({
                 res: e,
@@ -524,7 +524,7 @@
                                   ref: B,
                                   autoplay: !0,
                                   onEnded: () => {
-                                      N(!1), C(!0), E();
+                                      (N(!1), C(!0), E());
                                   },
                                   className: F,
                               })
@@ -590,7 +590,8 @@
                                 t.onChangeTime((e) => {
                                     if (p && !p.current) {
                                         const t = e.currentTime;
-                                        if (_ && a && t && a - t <= b.remainder) return (p.current = !0), void b.next();
+                                        if (_ && a && t && a - t <= b.remainder)
+                                            return ((p.current = !0), void b.next());
                                     }
                                 });
                         }, [v.current, _]),
@@ -635,7 +636,7 @@
                         T = (0, u.P)(S),
                         L = (0, m._)(d.p6),
                         $ = () => {
-                            B !== C && O(C), g.Kg.send({ type: g.QK.toRewards });
+                            (B !== C && O(C), g.Kg.send({ type: g.QK.toRewards }));
                         };
                     return (
                         (0, s.useEffect)(() => {
@@ -644,19 +645,19 @@
                                     O(C);
                                     break;
                                 case g.A_:
-                                    O(w),
+                                    (O(w),
                                         a &&
                                             (() => {
                                                 const e = A.current;
-                                                null == e || e.play(), l.hY.sound(t.sound);
-                                            })();
+                                                (null == e || e.play(), l.hY.sound(t.sound));
+                                            })());
                                     break;
                                 case g.Az:
-                                    O(C),
+                                    (O(C),
                                         a &&
                                             (() => {
                                                 const e = setTimeout($, 400);
-                                            })();
+                                            })());
                             }
                         }, [T]),
                         (0, b.G)(A, a && B === w, n),
@@ -674,7 +675,7 @@
                                 style: L,
                                 src: t.video,
                                 onEnded: () => {
-                                    $(), R();
+                                    ($(), R());
                                 },
                                 onPlay: x,
                             }),
@@ -805,13 +806,13 @@
                             (0, s.useMemo)(
                                 () => ({
                                     run: (t, a) => {
-                                        window.clearTimeout(e.current),
+                                        (window.clearTimeout(e.current),
                                             (e.current = window.setTimeout(() => {
-                                                (e.current = 0), t();
-                                            }, a));
+                                                ((e.current = 0), t());
+                                            }, a)));
                                     },
                                     clear: () => {
-                                        window.clearTimeout(e.current), (e.current = 0);
+                                        (window.clearTimeout(e.current), (e.current = 0));
                                     },
                                     get isRunning() {
                                         return 0 !== e.current;
@@ -830,15 +831,15 @@
                             (0, s.useMemo)(
                                 () => ({
                                     run: (t) => {
-                                        window.cancelAnimationFrame(e.current),
+                                        (window.cancelAnimationFrame(e.current),
                                             (e.current = window.requestAnimationFrame(() => {
                                                 e.current = window.requestAnimationFrame(() => {
-                                                    t(), (e.current = 0);
+                                                    (t(), (e.current = 0));
                                                 });
-                                            }));
+                                            })));
                                     },
                                     clear: () => {
-                                        window.cancelAnimationFrame(e.current), (e.current = 0);
+                                        (window.cancelAnimationFrame(e.current), (e.current = 0));
                                     },
                                     get isRunning() {
                                         return 0 !== e.current;
@@ -850,29 +851,29 @@
                     })(),
                     _ = (0, s.useMemo)(() => {
                         const e = () => {
-                            if (o.current >= t.length) return (l.current = 'end'), void u.trigger('end');
+                            if (o.current >= t.length) return ((l.current = 'end'), void u.trigger('end'));
                             const a = t[o.current],
                                 n = t[o.current - 1],
                                 r = (n && !n.pauseNextSteps && n.duration) || 0,
                                 s = (a.delay || 0) + r;
-                            d.run(() => {
+                            (d.run(() => {
                                 if (!c.current)
                                     return void console.error(
                                         `${t[o.current].name} step don't know on what rootRef it should be set`,
                                     );
                                 const a = t[o.current];
                                 if ((c.current.classList.add(a.name), u.trigger('change', a), a.pauseNextSteps))
-                                    return (l.current = 'paused'), u.trigger('pause'), void o.current++;
-                                o.current++, e();
+                                    return ((l.current = 'paused'), u.trigger('pause'), void o.current++);
+                                (o.current++, e());
                             }, s),
-                                (l.current = 'running');
+                                (l.current = 'running'));
                         };
                         return {
                             rootRef: c,
                             steps: t,
                             events: { on: u.on, off: u.off },
                             start: () => {
-                                e(), u.trigger('start');
+                                (e(), u.trigger('start'));
                             },
                             resume: () => {
                                 'paused' === l.current
@@ -882,9 +883,9 @@
                                       );
                             },
                             skipAll: () => {
-                                d.clear(),
+                                (d.clear(),
                                     m.run(() => {
-                                        (l.current = 'skip'),
+                                        ((l.current = 'skip'),
                                             u.trigger('skipAll'),
                                             t.forEach((e) => {
                                                 c.current
@@ -894,18 +895,18 @@
                                                       );
                                             }),
                                             (l.current = 'end'),
-                                            u.trigger('end');
-                                    });
+                                            u.trigger('end'));
+                                    }));
                             },
                             reset: () => {
-                                t.forEach((e) => {
+                                (t.forEach((e) => {
                                     c.current
                                         ? (c.current.classList.remove(e.name),
                                           c.current.classList.remove(`${e.name}__skip`),
                                           u.trigger('reset'))
                                         : console.error(`${e} tried to be set, but rootRef was not received in api`);
                                 }),
-                                    (o.current = 0);
+                                    (o.current = 0));
                             },
                         };
                     }, [d, o, u, m, t]);
@@ -969,14 +970,14 @@
             var n = a(7363),
                 r = a(198);
             const s = (e, t, a) => {
-                (0, n.useEffect)(() => {
+                ((0, n.useEffect)(() => {
                     a === r.B1.preparation && t
                         ? r.Kg.send({ type: r.QK.toWaiting })
                         : a !== r.B1.waiting || t || r.Kg.send({ type: r.QK.toOpen });
                 }, [t, a]),
                     (0, n.useEffect)(() => {
                         e ? r.Kg.send({ type: r.QK.toSkip }) : r.Kg.send({ type: r.QK.toOpen });
-                    }, []);
+                    }, []));
             };
         },
         6486: (e, t, a) => {
@@ -1094,7 +1095,7 @@
                         {
                             className: r()(c, b),
                             onClick: () => {
-                                s.hY.click(), s.hY.sound(a.purchaseClick), i();
+                                (s.hY.click(), s.hY.sound(a.purchaseClick), i());
                             },
                         },
                         o().createElement(
@@ -1176,17 +1177,17 @@
         },
         4736: (e, t, a) => {
             let n, r;
-            a.d(t, { G: () => r }),
+            (a.d(t, { G: () => r }),
                 (function (e) {
-                    (e.Heavy = 'heavyTank'),
+                    ((e.Heavy = 'heavyTank'),
                         (e.Medium = 'mediumTank'),
                         (e.Light = 'lightTank'),
                         (e.Spg = 'SPG'),
-                        (e.AtSpg = 'AT-SPG');
+                        (e.AtSpg = 'AT-SPG'));
                 })(n || (n = {})),
                 (function (e) {
-                    (e.Common = 'common'), (e.Rare = 'rare'), (e.Epic = 'epic');
-                })(r || (r = {}));
+                    ((e.Common = 'common'), (e.Rare = 'rare'), (e.Epic = 'epic'));
+                })(r || (r = {})));
         },
     },
 ]);

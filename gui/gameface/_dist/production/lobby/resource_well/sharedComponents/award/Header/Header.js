@@ -3,7 +3,7 @@
     var e,
         r = {
             3074: (e, r, a) => {
-                a(6483), a(7363);
+                (a(6483), a(7363));
             },
             7363: (e) => {
                 e.exports = React;
@@ -14,9 +14,9 @@
         var t = a[e];
         if (void 0 !== t) return t.exports;
         var n = (a[e] = { exports: {} });
-        return r[e](n, n.exports, o), n.exports;
+        return (r[e](n, n.exports, o), n.exports);
     }
-    (o.m = r),
+    ((o.m = r),
         (e = []),
         (o.O = (r, a, t, n) => {
             if (!a) {
@@ -40,7 +40,7 @@
         }),
         (o.n = (e) => {
             var r = e && e.__esModule ? () => e.default : () => e;
-            return o.d(r, { a: r }), r;
+            return (o.d(r, { a: r }), r);
         }),
         (o.d = (e, r) => {
             for (var a in r) o.o(r, a) && !o.o(e, a) && Object.defineProperty(e, a, { enumerable: !0, get: r[a] });
@@ -59,12 +59,12 @@
                         for (t in i) o.o(i, t) && (o.m[t] = i[t]);
                         if (v) var s = v(o);
                     }
-                    for (r && r(a); l < f.length; l++) (n = f[l]), o.o(e, n) && e[n] && e[n][0](), (e[n] = 0);
+                    for (r && r(a); l < f.length; l++) ((n = f[l]), o.o(e, n) && e[n] && e[n][0](), (e[n] = 0));
                     return o.O(s);
                 },
                 a = (self.webpackChunkgameface = self.webpackChunkgameface || []);
-            a.forEach(r.bind(null, 0)), (a.push = r.bind(null, a.push.bind(a)));
-        })();
+            (a.forEach(r.bind(null, 0)), (a.push = r.bind(null, a.push.bind(a))));
+        })());
     var t = o.O(void 0, [52], () => o(3074));
     t = o.O(t);
 })();

@@ -209,7 +209,7 @@
                                 k = w === m.S.Shrink,
                                 I = (0, s.useCallback)(
                                     (e) => {
-                                        y(e), _ && _(e);
+                                        (y(e), _ && _(e));
                                     },
                                     [_],
                                 ),
@@ -279,11 +279,11 @@
                             v = p === s.V.Idle,
                             w = (0, a.useCallback)(
                                 (e) => {
-                                    _(e), g && g(e);
+                                    (_(e), g && g(e));
                                 },
                                 [g],
                             );
-                        (0, a.useEffect)(() => {
+                        ((0, a.useEffect)(() => {
                             if (v && !t) {
                                 const e = n;
                                 return (0, o.F)(() => {
@@ -295,10 +295,10 @@
                                 if (h) {
                                     const t = e + n;
                                     return (0, o.F)(() => {
-                                        u && u(), w(s.V.End);
+                                        (u && u(), w(s.V.End));
                                     }, t);
                                 }
-                            }, [w, h, u, n, e]);
+                            }, [w, h, u, n, e]));
                         const y = (0, a.useMemo)(
                                 () => ({
                                     width: '100%',
@@ -360,7 +360,7 @@
                             _ = b[1],
                             h = (0, a.useCallback)(
                                 (e) => {
-                                    e === i.S.Shrink && _(!0), g && g(e);
+                                    (e === i.S.Shrink && _(!0), g && g(e));
                                 },
                                 [g],
                             ),
@@ -472,7 +472,7 @@
                                 a,
                                 r = {},
                                 o = Object.keys(e);
-                            for (a = 0; a < o.length; a++) (t = o[a]), n.indexOf(t) >= 0 || (r[t] = e[t]);
+                            for (a = 0; a < o.length; a++) ((t = o[a]), n.indexOf(t) >= 0 || (r[t] = e[t]));
                             return r;
                         })(e, l);
                     const c = (0, a.useState)(!1),
@@ -480,7 +480,7 @@
                         g = c[1],
                         f = (0, a.useCallback)(() => {
                             const e = 100 === d.to;
-                            e !== u && g(e), e && n && n(), t && t();
+                            (e !== u && g(e), e && n && n(), t && t());
                         }, [u, n, t, d.to]);
                     switch (d.animationSettings.type) {
                         case o.r.Simple:
@@ -494,13 +494,13 @@
             },
             6823: (e, n, t) => {
                 let a, r;
-                t.d(n, { S: () => a, V: () => r }),
+                (t.d(n, { S: () => a, V: () => r }),
                     (function (e) {
-                        (e.Idle = 'Idle'), (e.Grow = 'Grow'), (e.Shrink = 'Shrink'), (e.End = 'End');
+                        ((e.Idle = 'Idle'), (e.Grow = 'Grow'), (e.Shrink = 'Shrink'), (e.End = 'End'));
                     })(a || (a = {})),
                     (function (e) {
-                        (e.Idle = 'Idle'), (e.In = 'In'), (e.End = 'End');
-                    })(r || (r = {}));
+                        ((e.Idle = 'Idle'), (e.In = 'In'), (e.End = 'End'));
+                    })(r || (r = {})));
             },
             2386: (e, n, t) => {
                 t.d(n, { F: () => l });
@@ -530,12 +530,12 @@
                                 a,
                                 r = {},
                                 o = Object.keys(e);
-                            for (a = 0; a < o.length; a++) (t = o[a]), n.indexOf(t) >= 0 || (r[t] = e[t]);
+                            for (a = 0; a < o.length; a++) ((t = o[a]), n.indexOf(t) >= 0 || (r[t] = e[t]));
                             return r;
                         })(e, s);
                     const l = (0, a.useRef)({}),
                         m = (0, a.useCallback)(() => {
-                            (l.current.from = void 0), n && n();
+                            ((l.current.from = void 0), n && n());
                         }, [n]),
                         d = 'number' == typeof l.current.from ? l.current.from : t.from;
                     return (
@@ -600,13 +600,13 @@
             },
             7736: (e, n, t) => {
                 let a, r;
-                t.d(n, { $: () => a, r: () => r }),
+                (t.d(n, { $: () => a, r: () => r }),
                     (function (e) {
-                        (e.Small = 'small'), (e.Medium = 'medium'), (e.Default = 'medium');
+                        ((e.Small = 'small'), (e.Medium = 'medium'), (e.Default = 'medium'));
                     })(a || (a = {})),
                     (function (e) {
-                        (e[(e.Simple = 0)] = 'Simple'), (e[(e.Growing = 1)] = 'Growing');
-                    })(r || (r = {}));
+                        ((e[(e.Simple = 0)] = 'Simple'), (e[(e.Growing = 1)] = 'Growing'));
+                    })(r || (r = {})));
             },
             1635: (e, n, t) => {
                 t.d(n, { S: () => s });
@@ -636,27 +636,27 @@
                         t = e();
                     }, n);
                     return () => {
-                        'function' == typeof t && t(), clearTimeout(a);
+                        ('function' == typeof t && t(), clearTimeout(a));
                     };
                 };
             },
             3847: (e, n, t) => {
-                t(6483), t(7363);
-                t(1975), t(7736);
-                R.strings.quests.dailyQuests.postBattle.genericAmpersand(),
-                    R.strings.quests.dailyQuests.postBattle.and();
+                (t(6483), t(7363));
+                (t(1975), t(7736));
+                (R.strings.quests.dailyQuests.postBattle.genericAmpersand(),
+                    R.strings.quests.dailyQuests.postBattle.and());
                 var a = t(800);
                 a.I.CENTER;
             },
             800: (e, n, t) => {
                 let a, r;
-                t.d(n, { $: () => r, I: () => a }),
+                (t.d(n, { $: () => r, I: () => a }),
                     (function (e) {
-                        (e.LEFT = 'left'), (e.RIGHT = 'right'), (e.CENTER = 'center');
+                        ((e.LEFT = 'left'), (e.RIGHT = 'right'), (e.CENTER = 'center'));
                     })(a || (a = {})),
                     (function (e) {
-                        (e.BIG = 'big'), (e.HUGE = 'huge');
-                    })(r || (r = {}));
+                        ((e.BIG = 'big'), (e.HUGE = 'huge'));
+                    })(r || (r = {})));
             },
             2468: (e, n, t) => {
                 t.d(n, { Z: () => a });
@@ -707,9 +707,9 @@
         var r = t[e];
         if (void 0 !== r) return r.exports;
         var o = (t[e] = { exports: {} });
-        return n[e](o, o.exports, a), o.exports;
+        return (n[e](o, o.exports, a), o.exports);
     }
-    (a.m = n),
+    ((a.m = n),
         (e = []),
         (a.O = (n, t, r, o) => {
             if (!t) {
@@ -733,7 +733,7 @@
         }),
         (a.n = (e) => {
             var n = e && e.__esModule ? () => e.default : () => e;
-            return a.d(n, { a: n }), n;
+            return (a.d(n, { a: n }), n);
         }),
         (a.d = (e, n) => {
             for (var t in n) a.o(n, t) && !a.o(e, t) && Object.defineProperty(e, t, { enumerable: !0, get: n[t] });
@@ -760,12 +760,12 @@
                         for (r in i) a.o(i, r) && (a.m[r] = i[r]);
                         if (l) var d = l(a);
                     }
-                    for (n && n(t); m < s.length; m++) (o = s[m]), a.o(e, o) && e[o] && e[o][0](), (e[o] = 0);
+                    for (n && n(t); m < s.length; m++) ((o = s[m]), a.o(e, o) && e[o] && e[o][0](), (e[o] = 0));
                     return a.O(d);
                 },
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
-            t.forEach(n.bind(null, 0)), (t.push = n.bind(null, t.push.bind(t)));
-        })();
+            (t.forEach(n.bind(null, 0)), (t.push = n.bind(null, t.push.bind(t))));
+        })());
     var r = a.O(void 0, [45], () => a(3847));
     r = a.O(r);
 })();

@@ -822,7 +822,8 @@ in JS 8000 reserved like anchor for start optimization
 }
 
 .SelectorItem_bg_49:hover {
-    background-image: url('R.images.gui.maps.icons.blueprints.fragment.conversion.hover_bg'),
+    background-image:
+        url('R.images.gui.maps.icons.blueprints.fragment.conversion.hover_bg'),
         url('R.images.gui.maps.icons.blueprints.fragment.conversion.bg');
 }
 

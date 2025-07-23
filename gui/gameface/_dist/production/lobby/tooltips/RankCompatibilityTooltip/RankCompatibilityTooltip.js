@@ -4,10 +4,10 @@
         A = {
             5325: (u, A, F) => {
                 var e = {};
-                F.r(e),
-                    F.d(e, { mouse: () => c, off: () => s, on: () => a, onResize: () => o, onScaleUpdated: () => i });
+                (F.r(e),
+                    F.d(e, { mouse: () => c, off: () => s, on: () => a, onResize: () => o, onScaleUpdated: () => i }));
                 var E = {};
-                F.r(E),
+                (F.r(E),
                     F.d(E, {
                         events: () => e,
                         getMouseGlobalPosition: () => f,
@@ -15,11 +15,11 @@
                         graphicsQuality: () => p,
                         playSound: () => d,
                         setRTPC: () => m,
-                    });
+                    }));
                 var D = {};
-                F.r(D), F.d(D, { getBgUrl: () => _, getTextureUrl: () => w });
+                (F.r(D), F.d(D, { getBgUrl: () => _, getTextureUrl: () => w }));
                 var B = {};
-                F.r(B),
+                (F.r(B),
                     F.d(B, {
                         addModelObserver: () => j,
                         addPreloadTexture: () => z,
@@ -48,7 +48,7 @@
                         setInputPaddingsRem: () => N,
                         setSidePaddingsRem: () => $,
                         whenTutorialReady: () => eu,
-                    });
+                    }));
                 var t = F(6483),
                     n = F.n(t);
                 function C(u) {
@@ -118,10 +118,10 @@
                         );
                         return Object.assign({}, E, {
                             disable() {
-                                (u.enabled = !1), e();
+                                ((u.enabled = !1), e());
                             },
                             enable() {
-                                (u.enabled = !0), e();
+                                ((u.enabled = !0), e());
                             },
                             enableOutside() {
                                 u.enabled && r(!0);
@@ -192,7 +192,7 @@
                                         e,
                                         E = {},
                                         D = Object.keys(u);
-                                    for (e = 0; e < D.length; e++) (F = D[e]), A.indexOf(F) >= 0 || (E[F] = u[F]);
+                                    for (e = 0; e < D.length; e++) ((F = D[e]), A.indexOf(F) >= 0 || (E[F] = u[F]));
                                     return E;
                                 })(A, S);
                             return void 0 !== E
@@ -290,7 +290,7 @@
                     })(),
                     uu = function (u) {
                         let A = '';
-                        for (let F = x.length - 1; F >= 0; F--) for (; u >= x[F]; ) (A += y[F]), (u -= x[F]);
+                        for (let F = x.length - 1; F >= 0; F--) for (; u >= x[F]; ) ((A += y[F]), (u -= x[F]));
                         return A;
                     },
                     Au = Object.keys(T).reduce((u, A) => ((u[A] = () => viewEnv.getShowingStatus() === T[A]), u), {}),
@@ -342,7 +342,7 @@
                                 e,
                                 E = {},
                                 D = Object.keys(u);
-                            for (e = 0; e < D.length; e++) (F = D[e]), A.indexOf(F) >= 0 || (E[F] = u[F]);
+                            for (e = 0; e < D.length; e++) ((F = D[e]), A.indexOf(F) >= 0 || (E[F] = u[F]));
                             return E;
                         })(u, nu);
                     const t = (function () {
@@ -356,15 +356,15 @@
                                 (0, Du.useMemo)(
                                     () => ({
                                         run: (A) => {
-                                            window.cancelAnimationFrame(u.current),
+                                            (window.cancelAnimationFrame(u.current),
                                                 (u.current = window.requestAnimationFrame(() => {
                                                     u.current = window.requestAnimationFrame(() => {
-                                                        A(), (u.current = 0);
+                                                        (A(), (u.current = 0));
                                                     });
-                                                }));
+                                                })));
                                         },
                                         clear: () => {
-                                            window.cancelAnimationFrame(u.current), (u.current = 0);
+                                            (window.cancelAnimationFrame(u.current), (u.current = 0));
                                         },
                                         get isRunning() {
                                             return 0 !== u.current;
@@ -399,7 +399,7 @@
                             Cu({}, B, {
                                 className: n()(tu.base, tu[`base__theme-${D}`], e),
                                 ref: function (u) {
-                                    (C.current = u), 'function' == typeof A ? A(u) : A && (A.current = u);
+                                    ((C.current = u), 'function' == typeof A ? A(u) : A && (A.current = u));
                                 },
                             }),
                             Bu().createElement('div', { className: tu.decorator }, F),
@@ -409,40 +409,40 @@
                 var ou = F(1533),
                     iu = F.n(ou);
                 let au, su, lu, cu, du;
-                !(function (u) {
-                    (u[(u.Progression = 0)] = 'Progression'),
+                (!(function (u) {
+                    ((u[(u.Progression = 0)] = 'Progression'),
                         (u[(u.RankRewards = 1)] = 'RankRewards'),
                         (u[(u.YearlyRewards = 2)] = 'YearlyRewards'),
                         (u[(u.WeeklyQuests = 3)] = 'WeeklyQuests'),
                         (u[(u.Shop = 4)] = 'Shop'),
                         (u[(u.Leaderboard = 5)] = 'Leaderboard'),
-                        (u[(u.YearlyStatistics = 6)] = 'YearlyStatistics');
+                        (u[(u.YearlyStatistics = 6)] = 'YearlyStatistics'));
                 })(au || (au = {})),
                     (function (u) {
-                        (u[(u.First = 6)] = 'First'),
+                        ((u[(u.First = 6)] = 'First'),
                             (u[(u.Second = 5)] = 'Second'),
                             (u[(u.Third = 4)] = 'Third'),
                             (u[(u.Fourth = 3)] = 'Fourth'),
                             (u[(u.Fifth = 2)] = 'Fifth'),
-                            (u[(u.Sixth = 1)] = 'Sixth');
+                            (u[(u.Sixth = 1)] = 'Sixth'));
                     })(su || (su = {})),
                     (function (u) {
-                        (u.First = 'first'), (u.Second = 'second'), (u.Third = 'third');
+                        ((u.First = 'first'), (u.Second = 'second'), (u.Third = 'third'));
                     })(lu || (lu = {})),
                     (function (u) {
-                        (u[(u.A = 1)] = 'A'),
+                        ((u[(u.A = 1)] = 'A'),
                             (u[(u.B = 2)] = 'B'),
                             (u[(u.C = 3)] = 'C'),
                             (u[(u.D = 4)] = 'D'),
-                            (u[(u.E = 5)] = 'E');
+                            (u[(u.E = 5)] = 'E'));
                     })(cu || (cu = {})),
                     (function (u) {
-                        (u.Achieved = 'achieved'), (u.Possible = 'possible'), (u.NotAchieved = 'notAchieved');
-                    })(du || (du = {}));
+                        ((u.Achieved = 'achieved'), (u.Possible = 'possible'), (u.NotAchieved = 'notAchieved'));
+                    })(du || (du = {})));
                 var mu = F(1281);
                 let vu;
                 !(function (u) {
-                    (u[(u.left = 0)] = 'left'), (u[(u.right = 1)] = 'right');
+                    ((u[(u.left = 0)] = 'left'), (u[(u.right = 1)] = 'right'));
                 })(vu || (vu = {}));
                 const fu = (u) => u.replace(/&nbsp;/g, ' '),
                     pu = (u, A, F) => {
@@ -496,7 +496,7 @@
                     Tu = [su.First, su.Second, su.Third, su.Fourth];
                 let ku;
                 !(function (u) {
-                    (u[(u.x22 = 22)] = 'x22'),
+                    ((u[(u.x22 = 22)] = 'x22'),
                         (u[(u.x40 = 40)] = 'x40'),
                         (u[(u.x48 = 48)] = 'x48'),
                         (u[(u.x64 = 64)] = 'x64'),
@@ -507,7 +507,7 @@
                         (u[(u.x260 = 260)] = 'x260'),
                         (u[(u.x320 = 320)] = 'x320'),
                         (u[(u.x420 = 420)] = 'x420'),
-                        (u[(u.x600 = 600)] = 'x600');
+                        (u[(u.x600 = 600)] = 'x600'));
                 })(ku || (ku = {}));
                 const Su = ({ rank: u, size: A, division: F, seasonName: e, className: E }) => {
                         const D = (0, Du.useMemo)(() => {
@@ -596,7 +596,7 @@
                             ),
                         ),
                     $u = ({ binding: u, text: A = '', classMix: F, alignment: e = vu.left, formatWithBrackets: E }) => {
-                        if (null === A) return console.error("FormatText was supplied with 'null'"), null;
+                        if (null === A) return (console.error("FormatText was supplied with 'null'"), null);
                         const D = E && u ? ((B = u), A.replace(/\{\w+\}/g, (u) => String(B[u.slice(1, -1)]))) : A;
                         var B;
                         return Bu().createElement(
@@ -691,7 +691,7 @@
                                                     subscribe: (F, D) => {
                                                         const t = 'string' == typeof D ? `${e}.${D}` : e,
                                                             n = Eu.view.addModelObserver(t, A, !0);
-                                                        return E.set(n, F), u && F(B(D)), n;
+                                                        return (E.set(n, F), u && F(B(D)), n);
                                                     },
                                                     readByPath: B,
                                                     createCallback: (u, A) => {
@@ -870,7 +870,7 @@
                                     }, [u]),
                                     (0, Du.useEffect)(
                                         () => () => {
-                                            a.externalModel.dispose(), B.current.forEach((u) => u());
+                                            (a.externalModel.dispose(), B.current.forEach((u) => u()));
                                         },
                                         [a],
                                     ),
@@ -926,9 +926,9 @@
         var E = F[u];
         if (void 0 !== E) return E.exports;
         var D = (F[u] = { exports: {} });
-        return A[u](D, D.exports, e), D.exports;
+        return (A[u](D, D.exports, e), D.exports);
     }
-    (e.m = A),
+    ((e.m = A),
         (u = []),
         (e.O = (A, F, E, D) => {
             if (!F) {
@@ -952,7 +952,7 @@
         }),
         (e.n = (u) => {
             var A = u && u.__esModule ? () => u.default : () => u;
-            return e.d(A, { a: A }), A;
+            return (e.d(A, { a: A }), A);
         }),
         (e.d = (u, A) => {
             for (var F in A) e.o(A, F) && !e.o(u, F) && Object.defineProperty(u, F, { enumerable: !0, get: A[F] });
@@ -967,10 +967,10 @@
         })()),
         (e.o = (u, A) => Object.prototype.hasOwnProperty.call(u, A)),
         (e.r = (u) => {
-            'undefined' != typeof Symbol &&
+            ('undefined' != typeof Symbol &&
                 Symbol.toStringTag &&
                 Object.defineProperty(u, Symbol.toStringTag, { value: 'Module' }),
-                Object.defineProperty(u, '__esModule', { value: !0 });
+                Object.defineProperty(u, '__esModule', { value: !0 }));
         }),
         (e.j = 'lobby/tooltips/RankCompatibilityTooltip/RankCompatibilityTooltip'),
         (() => {
@@ -985,12 +985,12 @@
                         for (E in t) e.o(t, E) && (e.m[E] = t[E]);
                         if (n) var r = n(e);
                     }
-                    for (A && A(F); C < B.length; C++) (D = B[C]), e.o(u, D) && u[D] && u[D][0](), (u[D] = 0);
+                    for (A && A(F); C < B.length; C++) ((D = B[C]), e.o(u, D) && u[D] && u[D][0](), (u[D] = 0));
                     return e.O(r);
                 },
                 F = (self.webpackChunkgameface = self.webpackChunkgameface || []);
-            F.forEach(A.bind(null, 0)), (F.push = A.bind(null, F.push.bind(F)));
-        })();
+            (F.forEach(A.bind(null, 0)), (F.push = A.bind(null, F.push.bind(F))));
+        })());
     var E = e.O(void 0, ['lib/comp7.vendors'], () => e(5325));
     E = e.O(E);
 })();

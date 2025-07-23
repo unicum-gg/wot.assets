@@ -4,10 +4,10 @@
         n = {
             6540: (e, n, t) => {
                 var i = {};
-                t.r(i),
-                    t.d(i, { mouse: () => E, off: () => b, on: () => w, onResize: () => g, onScaleUpdated: () => p });
+                (t.r(i),
+                    t.d(i, { mouse: () => E, off: () => b, on: () => w, onResize: () => g, onScaleUpdated: () => p }));
                 var o = {};
-                t.r(o),
+                (t.r(o),
                     t.d(o, {
                         events: () => i,
                         getMouseGlobalPosition: () => x,
@@ -15,11 +15,11 @@
                         graphicsQuality: () => P,
                         playSound: () => y,
                         setRTPC: () => _,
-                    });
+                    }));
                 var r = {};
-                t.r(r), t.d(r, { getBgUrl: () => N, getTextureUrl: () => V });
+                (t.r(r), t.d(r, { getBgUrl: () => N, getTextureUrl: () => V }));
                 var a = {};
-                t.r(a),
+                (t.r(a),
                     t.d(a, {
                         addModelObserver: () => I,
                         addPreloadTexture: () => B,
@@ -48,7 +48,7 @@
                         setInputPaddingsRem: () => D,
                         setSidePaddingsRem: () => H,
                         whenTutorialReady: () => se,
-                    });
+                    }));
                 var s = t(7363),
                     l = t.n(s),
                     d = t(1533),
@@ -122,10 +122,10 @@
                         );
                         return Object.assign({}, o, {
                             disable() {
-                                (e.enabled = !1), i();
+                                ((e.enabled = !1), i());
                             },
                             enable() {
-                                (e.enabled = !0), i();
+                                ((e.enabled = !0), i());
                             },
                             enableOutside() {
                                 e.enabled && f(!0);
@@ -196,7 +196,7 @@
                                         i,
                                         o = {},
                                         r = Object.keys(e);
-                                    for (i = 0; i < r.length; i++) (t = r[i]), n.indexOf(t) >= 0 || (o[t] = e[t]);
+                                    for (i = 0; i < r.length; i++) ((t = r[i]), n.indexOf(t) >= 0 || (o[t] = e[t]));
                                     return o;
                                 })(n, L);
                             return void 0 !== o
@@ -294,7 +294,7 @@
                     })(),
                     oe = function (e) {
                         let n = '';
-                        for (let t = j.length - 1; t >= 0; t--) for (; e >= j[t]; ) (n += z[t]), (e -= j[t]);
+                        for (let t = j.length - 1; t >= 0; t--) for (; e >= j[t]; ) ((n += z[t]), (e -= j[t]));
                         return n;
                     },
                     re = Object.keys(M).reduce((e, n) => ((e[n] = () => viewEnv.getShowingStatus() === M[n]), e), {}),
@@ -344,7 +344,7 @@
                                     i,
                                     o = {},
                                     r = Object.keys(e);
-                                for (i = 0; i < r.length; i++) (t = r[i]), n.indexOf(t) >= 0 || (o[t] = e[t]);
+                                for (i = 0; i < r.length; i++) ((t = r[i]), n.indexOf(t) >= 0 || (o[t] = e[t]));
                                 return o;
                             })(e, ce);
                         const d = (function () {
@@ -358,15 +358,15 @@
                                     (0, s.useMemo)(
                                         () => ({
                                             run: (n) => {
-                                                window.cancelAnimationFrame(e.current),
+                                                (window.cancelAnimationFrame(e.current),
                                                     (e.current = window.requestAnimationFrame(() => {
                                                         e.current = window.requestAnimationFrame(() => {
-                                                            n(), (e.current = 0);
+                                                            (n(), (e.current = 0));
                                                         });
-                                                    }));
+                                                    })));
                                             },
                                             clear: () => {
-                                                window.cancelAnimationFrame(e.current), (e.current = 0);
+                                                (window.cancelAnimationFrame(e.current), (e.current = 0));
                                             },
                                             get isRunning() {
                                                 return 0 !== e.current;
@@ -401,7 +401,7 @@
                                 ue({}, a, {
                                     className: v()(de.base, de[`base__theme-${r}`], i),
                                     ref: function (e) {
-                                        (c.current = e), 'function' == typeof n ? n(e) : n && (n.current = e);
+                                        ((c.current = e), 'function' == typeof n ? n(e) : n && (n.current = e));
                                     },
                                 }),
                                 l().createElement('div', { className: de.decorator }, t),
@@ -439,7 +439,7 @@
                         ),
                     be = () => l().createElement(ve, null, l().createElement(we, null)),
                     he = document.createElement('div');
-                (window.onload = () => document.body.appendChild(he)), c().render(l().createElement(be, null), he);
+                ((window.onload = () => document.body.appendChild(he)), c().render(l().createElement(be, null), he));
             },
             7363: (e) => {
                 e.exports = React;
@@ -453,9 +453,9 @@
         var o = t[e];
         if (void 0 !== o) return o.exports;
         var r = (t[e] = { exports: {} });
-        return n[e](r, r.exports, i), r.exports;
+        return (n[e](r, r.exports, i), r.exports);
     }
-    (i.m = n),
+    ((i.m = n),
         (e = []),
         (i.O = (n, t, o, r) => {
             if (!t) {
@@ -479,7 +479,7 @@
         }),
         (i.n = (e) => {
             var n = e && e.__esModule ? () => e.default : () => e;
-            return i.d(n, { a: n }), n;
+            return (i.d(n, { a: n }), n);
         }),
         (i.d = (e, n) => {
             for (var t in n) i.o(n, t) && !i.o(e, t) && Object.defineProperty(e, t, { enumerable: !0, get: n[t] });
@@ -494,10 +494,10 @@
         })()),
         (i.o = (e, n) => Object.prototype.hasOwnProperty.call(e, n)),
         (i.r = (e) => {
-            'undefined' != typeof Symbol &&
+            ('undefined' != typeof Symbol &&
                 Symbol.toStringTag &&
                 Object.defineProperty(e, Symbol.toStringTag, { value: 'Module' }),
-                Object.defineProperty(e, '__esModule', { value: !0 });
+                Object.defineProperty(e, '__esModule', { value: !0 }));
         }),
         (i.j = 'lobby/tooltips/BrCoinTooltipView/BrCoinTooltipView'),
         (() => {
@@ -512,12 +512,12 @@
                         for (o in s) i.o(s, o) && (i.m[o] = s[o]);
                         if (l) var c = l(i);
                     }
-                    for (n && n(t); d < a.length; d++) (r = a[d]), i.o(e, r) && e[r] && e[r][0](), (e[r] = 0);
+                    for (n && n(t); d < a.length; d++) ((r = a[d]), i.o(e, r) && e[r] && e[r][0](), (e[r] = 0));
                     return i.O(c);
                 },
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
-            t.forEach(n.bind(null, 0)), (t.push = n.bind(null, t.push.bind(t)));
-        })();
+            (t.forEach(n.bind(null, 0)), (t.push = n.bind(null, t.push.bind(t))));
+        })());
     var o = i.O(void 0, ['lib/battle_royale.vendors'], () => i(6540));
     o = i.O(o);
 })();

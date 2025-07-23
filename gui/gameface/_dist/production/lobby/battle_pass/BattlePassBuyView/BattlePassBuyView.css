@@ -437,6 +437,11 @@ body {
     height: 575rem;
 }
 
+.Reward_base__normalize_a6 .Reward_overlay_68 {
+    width: 100%;
+    height: 100%;
+}
+
 .Reward_highlight_36 {
     width: 100%;
     height: 100%;
@@ -511,6 +516,11 @@ body {
     max-width: 100rem;
     margin-left: -10rem;
     margin-right: -10rem;
+}
+
+.Reward_base__s48x48_46 .Reward_title_36,
+.Reward_base__small_c0 .Reward_title_36 {
+    margin: -10rem -10rem 0;
 }
 
 .Reward_timer_d3 {
@@ -1059,10 +1069,6 @@ body {
     z-index: 0;
 }
 
-.mediaMedium .BattlePassBuyViewContent_base_85 {
-    padding-top: 60rem;
-}
-
 .mediaLarge .BattlePassBuyViewContent_base_85 {
     padding-top: 55rem;
 }
@@ -1136,7 +1142,7 @@ body {
     margin-bottom: 10rem;
 }
 
-.mediaMedium .BattlePassBuyViewContent_title_8a {
+.mediaLarge .BattlePassBuyViewContent_title_8a {
     color: #f2f2f7;
     font-size: 56rem;
     font-weight: 700;
@@ -1180,9 +1186,6 @@ body {
     position: relative;
     transform: scale(1);
     transition: transform 0.2s cubic-bezier(0.37, 0, 0.63, 1);
-}
-.mediaMedium .Illustration_img_44 {
-    height: 388rem;
 }
 .mediaLarge .Illustration_img_44 {
     height: 440rem;
@@ -1363,11 +1366,6 @@ body {
     cursor: pointer;
 }
 
-.mediaMedium .BattlePassBuyExtraCard_base_cf {
-    width: 300rem;
-    height: 590rem;
-}
-
 .mediaLarge .BattlePassBuyExtraCard_base_cf {
     width: 340rem;
     height: 670rem;
@@ -1376,11 +1374,6 @@ body {
 .BattlePassBuyExtraCard_base__small_d2 {
     width: 230rem;
     height: 310rem;
-}
-
-.mediaMedium .BattlePassBuyExtraCard_base__small_d2 {
-    width: 300rem;
-    height: 380rem;
 }
 
 .mediaLarge .BattlePassBuyExtraCard_base__small_d2 {
@@ -1415,10 +1408,6 @@ body {
     transition: transform 0.2s cubic-bezier(0.37, 0, 0.63, 1);
 }
 
-.mediaMedium .BattlePassBuyExtraCard_content_1a {
-    margin-top: 216rem;
-}
-
 .mediaLarge .BattlePassBuyExtraCard_content_1a {
     margin-top: 230rem;
 }
@@ -1427,7 +1416,7 @@ body {
     transform: translateY(-40rem);
 }
 
-.mediaMedium .BattlePassBuyExtraCard_base_cf:hover .BattlePassBuyExtraCard_content_1a {
+.mediaLarge .BattlePassBuyExtraCard_base_cf:hover .BattlePassBuyExtraCard_content_1a {
     transform: translateY(-30rem);
 }
 
@@ -1435,16 +1424,12 @@ body {
     transform: none;
 }
 
-.mediaMedium .BattlePassBuyExtraCard_base__disabled_a5:hover .BattlePassBuyExtraCard_content_1a {
+.mediaLarge .BattlePassBuyExtraCard_base__disabled_a5:hover .BattlePassBuyExtraCard_content_1a {
     transform: none;
 }
 
 .BattlePassBuyExtraCard_base__small_d2 .BattlePassBuyExtraCard_content_1a {
     margin-top: 50rem;
-}
-
-.mediaMedium .BattlePassBuyExtraCard_base__small_d2 .BattlePassBuyExtraCard_content_1a {
-    margin-top: 49rem;
 }
 
 .mediaLarge .BattlePassBuyExtraCard_base__small_d2 .BattlePassBuyExtraCard_content_1a {
@@ -1462,12 +1447,6 @@ body {
     height: 45rem;
     line-height: 1.1;
     text-align: center;
-}
-
-.mediaMedium .BattlePassBuyExtraCard_title_6c {
-    height: 63rem;
-    font-size: 24rem;
-    line-height: 1.15;
 }
 
 .mediaLarge .BattlePassBuyExtraCard_title_6c {
@@ -1512,7 +1491,7 @@ body {
     pointer-events: none;
 }
 
-.mediaMedium .BattlePassBuyExtraCard_chapterActiveText_70 {
+.mediaLarge .BattlePassBuyExtraCard_chapterActiveText_70 {
     color: #ffdd99;
     font-size: 15rem;
     font-weight: 700;
@@ -1590,7 +1569,7 @@ body {
     mask: linear-gradient(180deg, #e9e2bf 27%, rgba(233, 226, 191, 0) 90%);
 }
 
-.mediaMedium .CurrentLevel_level_fb {
+.mediaLarge .CurrentLevel_level_fb {
     color: #e9e2bf;
     font-size: 36rem;
     font-weight: 700;
@@ -1613,7 +1592,7 @@ body {
     line-height: 1.15;
 }
 
-.mediaMedium .CurrentLevel_text_7b {
+.mediaLarge .CurrentLevel_text_7b {
     color: #e9e2bf;
     font-size: 15rem;
     font-weight: 700;
@@ -1651,7 +1630,7 @@ body {
     animation: Description_fade-in_3c 0.8s;
 }
 
-.mediaMedium .Description_text_ee {
+.mediaLarge .Description_text_ee {
     color: #e9e2bf;
     font-size: 16rem;
     font-weight: 400;
@@ -1678,10 +1657,6 @@ body {
     position: relative;
     transition: transform 0.5s;
 }
-.mediaMedium .Logo_base_8b {
-    width: 160rem;
-    height: 120rem;
-}
 .mediaLarge .Logo_base_8b {
     width: 218rem;
     height: 164rem;
@@ -1698,7 +1673,7 @@ body {
     transition: transform 0.2s cubic-bezier(0.37, 0, 0.63, 1) 0.2s;
     pointer-events: none;
 }
-.mediaMedium .Logo_light_62 {
+.mediaLarge .Logo_light_62 {
     width: 400rem;
     height: 400rem;
 }
@@ -2027,7 +2002,7 @@ body {
     align-items: center;
     width: 100%;
 }
-.mediaMedium .Price_base_d1 {
+.mediaLarge .Price_base_d1 {
     color: #ffc363;
     font-size: 22rem;
     font-weight: 700;
@@ -2123,11 +2098,6 @@ body {
     cursor: pointer;
 }
 
-.mediaMedium .ShopOfferCard_base_3a {
-    width: 940rem;
-    height: 190rem;
-}
-
 .mediaLarge .ShopOfferCard_base_3a {
     width: 1060rem;
     height: 210rem;
@@ -2154,12 +2124,6 @@ body {
     z-index: 1;
     transform: translate(-50%, -50%);
     pointer-events: none;
-}
-
-.mediaMedium .ShopOfferCard_shopOfferBorder_25 {
-    width: 996rem;
-    height: 246rem;
-    background-image: url('R.images.gui.maps.icons.battlePass.buy.border.extra.halftone_medium');
 }
 
 .mediaLarge .ShopOfferCard_shopOfferBorder_25 {
@@ -2227,10 +2191,6 @@ body {
     margin-left: 320rem;
 }
 
-.mediaMedium .ShopOfferCard_content_ce {
-    margin-left: 420rem;
-}
-
 .mediaLarge .ShopOfferCard_content_ce {
     margin-left: 460rem;
 }
@@ -2241,13 +2201,6 @@ body {
     font-weight: 700;
     line-height: 1.1;
     transition: color 0.2s cubic-bezier(0.37, 0, 0.63, 1);
-}
-
-.mediaMedium .ShopOfferCard_title_4d {
-    color: #ffdd99;
-    font-size: 24rem;
-    font-weight: 700;
-    line-height: 1.2;
 }
 
 .mediaLarge .ShopOfferCard_title_4d {
@@ -2272,7 +2225,7 @@ body {
     transition: color 0.2s cubic-bezier(0.37, 0, 0.63, 1);
 }
 
-.mediaMedium .ShopOfferCard_description_1c {
+.mediaLarge .ShopOfferCard_description_1c {
     color: #ffdd99;
     font-size: 16rem;
     font-weight: 400;
@@ -2305,13 +2258,9 @@ body {
     transition: background-color 0.2s cubic-bezier(0.37, 0, 0.63, 1);
 }
 
-.mediaMedium .ShopOfferCard_warningOverlay_90 {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-        url('R.images.gui.maps.icons.battlePass.buy.block_Medium');
-}
-
 .mediaLarge .ShopOfferCard_warningOverlay_90 {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
         url('R.images.gui.maps.icons.battlePass.buy.block_Large');
 }
 
@@ -2397,6 +2346,7 @@ body {
     display: flex;
     flex-direction: row;
     min-height: 85%;
+    padding-bottom: 5vh;
 }
 
 .ExtraContent_cardsWrapper_31 {
@@ -2404,11 +2354,6 @@ body {
     flex-direction: column;
     justify-content: center;
     flex: 1;
-    padding-bottom: 5vh;
-}
-
-.mediaMedium .ExtraContent_cardsWrapper_31 {
-    padding-bottom: 5vh;
 }
 
 .ExtraContent_cards_b2 {
@@ -2425,14 +2370,14 @@ body {
     margin-left: 20rem;
 }
 
-.ExtraContent_cardsWrapper_31 + .ExtraContent_card__extra_fe {
+.ExtraContent_card__extra_fe {
     display: flex;
     align-items: center;
     margin-left: 20rem;
-    padding-bottom: 5vh;
 }
 
-.mediaMedium .ExtraContent_cardsWrapper_31 + .ExtraContent_card__extra_fe {
+.mediaLarge .ExtraContent_base__regular_4d .ExtraContent_card__extra_fe,
+.mediaLarge .ExtraContent_base__extraSingle_3f .ExtraContent_card__extra_fe {
     margin-left: 50rem;
 }
 
@@ -3472,7 +3417,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 
 .Rewards_priorityRewards_df {
     display: flex;
-    justify-content: center;
     margin-top: 10rem;
     padding-bottom: 10rem;
 }

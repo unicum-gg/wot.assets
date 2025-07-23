@@ -15,7 +15,8 @@
     width: 300rem;
     border: 1rem solid #f2f2e61a;
     border-radius: 2rem;
-    background: linear-gradient(
+    background:
+        linear-gradient(
             180deg,
             rgba(51, 51, 41, 0.3) 0%,
             rgba(51, 51, 41, 0) 16%,

@@ -11,11 +11,11 @@
                 c = o(7727);
             let l;
             !(function (e) {
-                (e[(e.LEFT = 0)] = 'LEFT'),
+                ((e[(e.LEFT = 0)] = 'LEFT'),
                     (e[(e.WHEEL = 1)] = 'WHEEL'),
                     (e[(e.RIGHT = 2)] = 'RIGHT'),
                     (e[(e.FOURTH = 3)] = 'FOURTH'),
-                    (e[(e.FIFTH = 4)] = 'FIFTH');
+                    (e[(e.FIFTH = 4)] = 'FIFTH'));
             })(l || (l = {}));
             var i = o(8844);
             const u = {
@@ -112,7 +112,7 @@
                             a,
                             n = {},
                             s = Object.keys(e);
-                        for (a = 0; a < s.length; a++) (o = s[a]), t.indexOf(o) >= 0 || (n[o] = e[o]);
+                        for (a = 0; a < s.length; a++) ((o = s[a]), t.indexOf(o) >= 0 || (n[o] = e[o]));
                         return n;
                     })(e, d);
                 const $ = (0, a.useState)(!1),
@@ -209,19 +209,19 @@
         },
         8844: (e, t, o) => {
             let a, n, s;
-            o.d(t, { N3: () => s, Rh: () => n, yB: () => a }),
+            (o.d(t, { N3: () => s, Rh: () => n, yB: () => a }),
                 (function (e) {
-                    (e.small = 'small'), (e.medium = 'medium'), (e.large = 'large'), (e.extraLarge = 'extraLarge');
+                    ((e.small = 'small'), (e.medium = 'medium'), (e.large = 'large'), (e.extraLarge = 'extraLarge'));
                 })(a || (a = {})),
                 (function (e) {
-                    (e.primary = 'primary'), (e.main = 'main');
+                    ((e.primary = 'primary'), (e.main = 'main'));
                 })(n || (n = {})),
                 (function (e) {
-                    (e.Center = 'center'), (e.Bottom = 'bottom');
-                })(s || (s = {}));
+                    ((e.Center = 'center'), (e.Bottom = 'bottom'));
+                })(s || (s = {})));
         },
         5998: (e, t, o) => {
-            o.r(t), o.d(t, { default: () => Fe });
+            (o.r(t), o.d(t, { default: () => Fe }));
             var a = o(7363),
                 n = o.n(a),
                 s = o(8958),
@@ -475,12 +475,12 @@
                                 r
                             );
                         })(f.length + N.length + w.length + Number(A) * T.length, () => {
-                            H(!0), o();
+                            (H(!0), o());
                         }),
                         G = () => l.setShowAdditionalLayers(!0),
                         V = () => l.setShowAdditionalLayers(!1),
                         $ = () => {
-                            _.hY.sound(h.boxMouseLeave), l.setIsBoxHovered(!1);
+                            (_.hY.sound(h.boxMouseLeave), l.setIsBoxHovered(!1));
                         },
                         P = (e, t) => {
                             const o = r.computes.extractSublayers(e);
@@ -565,7 +565,7 @@
                                     settings: p,
                                     wrapperSize: L,
                                     onMouseEnter: () => {
-                                        _.hY.sound(h.boxMouseEnter), l.setIsBoxHovered(!0);
+                                        (_.hY.sound(h.boxMouseEnter), l.setIsBoxHovered(!0));
                                     },
                                     onMouseLeave: $,
                                     onClick: () => {
@@ -599,7 +599,7 @@
             };
             let ye;
             !(function (e) {
-                (e.Button = 'button'), (e.Slot = 'slot');
+                ((e.Button = 'button'), (e.Slot = 'slot'));
             })(ye || (ye = {}));
             const ve = () => {},
                 ke = n().memo(
@@ -699,7 +699,7 @@
                         L = { title: u.guaranteedTitle, nextBox: u.guaranteedNextBox },
                         I = { glow: d.glowIcon, info: d.infoIcon, strongGlow: d.guaranteedGlowIcon },
                         H = () => {
-                            _.hY.sound(b.boxMouseLeave), r.setIsBoxHovered(!1);
+                            (_.hY.sound(b.boxMouseLeave), r.setIsBoxHovered(!1));
                         },
                         M = (0, g.f)(T ? Ce.ZT : e, [T], 1100);
                     (0, m.gd)(Be.n.SPACE, M);
@@ -838,14 +838,14 @@
                         ie = le[0],
                         ue = le[1],
                         de = () => {
-                            o.isBoxHovered.get() && _.hY.sound(z.boxMouseLeave), S || J || s.close();
+                            (o.isBoxHovered.get() && _.hY.sound(z.boxMouseLeave), S || J || s.close());
                         };
                     (0, m.I9)(de);
                     const _e = () => {
-                            K(!0), s.setShowAdditionalLayers(!1), ce.start(A()), ue.start(A()), oe(De);
+                            (K(!0), s.setShowAdditionalLayers(!1), ce.start(A()), ue.start(A()), oe(De));
                         },
                         be = () => {
-                            ce.start(L), ue.start(L);
+                            (ce.start(L), ue.start(L));
                         };
                     return (
                         (0, a.useEffect)(() => {
@@ -864,7 +864,7 @@
                             d.graphicsQuality.isLow() && s.setAnimationState(!1);
                         }, [s]),
                         (0, a.useEffect)(() => {
-                            oe(Pe), K(!1);
+                            (oe(Pe), K(!1));
                         }, []),
                         n().createElement(
                             'div',
@@ -872,7 +872,7 @@
                             n().createElement(me, {
                                 onClick: _e,
                                 onLoaded: () => {
-                                    oe(ze), ce.start(T), ue.start(T);
+                                    (oe(ze), ce.start(T), ue.start(T));
                                 },
                                 className: Ge.boxLayout,
                             }),
@@ -1120,7 +1120,7 @@
                         {
                             className: n()(l, b),
                             onClick: () => {
-                                s.hY.click(), s.hY.sound(o.purchaseClick), r();
+                                (s.hY.click(), s.hY.sound(o.purchaseClick), r());
                             },
                         },
                         c().createElement(

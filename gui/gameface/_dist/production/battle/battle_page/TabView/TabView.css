@@ -213,7 +213,8 @@
     border: 1rem solid #3d3b31e0;
     border-radius: 2rem;
     box-shadow: 0rem 0rem 10rem 0rem #3b3b2ed6 inset;
-    background: linear-gradient(0deg, #070705, #070705),
+    background:
+        linear-gradient(0deg, #070705, #070705),
         linear-gradient(
             180deg,
             rgba(51, 51, 41, 0.08) 0%,
@@ -1269,6 +1270,7 @@
     align-items: center;
 }
 .FullStatsApp_fullStats_4f {
+    margin-left: -85rem;
     position: relative;
 }
 .FullStatsApp_fullStats_header_2c {

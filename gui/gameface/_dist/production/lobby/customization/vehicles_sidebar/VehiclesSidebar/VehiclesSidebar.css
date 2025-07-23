@@ -649,7 +649,8 @@ body {
 }
 
 .VehicleItemWrapper_light_8c {
-    background: linear-gradient(90deg, #f2e3d500 0, #f2e3d51a 51%, #f2e3d500 0),
+    background:
+        linear-gradient(90deg, #f2e3d500 0, #f2e3d51a 51%, #f2e3d500 0),
         linear-gradient(270deg, #f2e3d500 0, #f2e3d51a 50%, #f2e3d500 0);
     opacity: 0;
     position: absolute;

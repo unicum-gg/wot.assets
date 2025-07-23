@@ -11,22 +11,22 @@
                 o.d(e, { G: () => a });
             },
             2004: (r, e, o) => {
-                o(6483), o(7727), o(7363);
+                (o(6483), o(7727), o(7363));
                 let a, t;
                 var n;
-                !(function (r) {
-                    (r.main = 'main'),
+                (!(function (r) {
+                    ((r.main = 'main'),
                         (r.primary = 'primary'),
                         (r.primaryGreen = 'primaryGreen'),
                         (r.primaryRed = 'primaryRed'),
                         (r.secondary = 'secondary'),
-                        (r.ghost = 'ghost');
+                        (r.ghost = 'ghost'));
                 })(a || (a = {})),
                     ((n = t || (t = {})).extraSmall = 'extraSmall'),
                     (n.small = 'small'),
                     (n.medium = 'medium'),
-                    (n.large = 'large');
-                a.primary, R.strings.resource_well;
+                    (n.large = 'large'));
+                (a.primary, R.strings.resource_well);
             },
             7363: (r) => {
                 r.exports = React;
@@ -37,9 +37,9 @@
         var t = o[r];
         if (void 0 !== t) return t.exports;
         var n = (o[r] = { exports: {} });
-        return e[r](n, n.exports, a), n.exports;
+        return (e[r](n, n.exports, a), n.exports);
     }
-    (a.m = e),
+    ((a.m = e),
         (r = []),
         (a.O = (e, o, t, n) => {
             if (!o) {
@@ -63,7 +63,7 @@
         }),
         (a.n = (r) => {
             var e = r && r.__esModule ? () => r.default : () => r;
-            return a.d(e, { a: e }), e;
+            return (a.d(e, { a: e }), e);
         }),
         (a.d = (r, e) => {
             for (var o in e) a.o(e, o) && !a.o(r, o) && Object.defineProperty(r, o, { enumerable: !0, get: e[o] });
@@ -90,12 +90,12 @@
                         for (t in l) a.o(l, t) && (a.m[t] = l[t]);
                         if (s) var c = s(a);
                     }
-                    for (e && e(o); u < i.length; u++) (n = i[u]), a.o(r, n) && r[n] && r[n][0](), (r[n] = 0);
+                    for (e && e(o); u < i.length; u++) ((n = i[u]), a.o(r, n) && r[n] && r[n][0](), (r[n] = 0));
                     return a.O(c);
                 },
                 o = (self.webpackChunkgameface = self.webpackChunkgameface || []);
-            o.forEach(e.bind(null, 0)), (o.push = e.bind(null, o.push.bind(o)));
-        })();
+            (o.forEach(e.bind(null, 0)), (o.push = e.bind(null, o.push.bind(o))));
+        })());
     var t = a.O(void 0, ['lib/resource_well.vendors'], () => a(2004));
     t = a.O(t);
 })();

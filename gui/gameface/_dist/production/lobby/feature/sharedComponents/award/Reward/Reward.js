@@ -7,9 +7,9 @@
             },
             3649: (u, F, A) => {
                 let E;
-                A(1281),
+                (A(1281),
                     (function (u) {
-                        (u[(u.left = 0)] = 'left'), (u[(u.right = 1)] = 'right');
+                        ((u[(u.left = 0)] = 'left'), (u[(u.right = 1)] = 'right'));
                     })(E || (E = {})),
                     new RegExp(
                         /[\(\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]?[\u3002\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]?[ %\+\x2D-9A-Za-\{\}\xA0\xC0-\u0237\u2013\u2014\u2026]+[\)\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3002\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\uFF01\uFF0C\uFF1A\uFF1B\uFF1F\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]?[\u3002\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]?/gmu
@@ -24,20 +24,20 @@
                             /[\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]/gmu
                                 .source,
                         'gum',
-                    );
+                    ));
             },
             5617: (u, F, A) => {
                 let E;
-                A(6483),
+                (A(6483),
                     A(9690),
                     A(3649),
                     A(7363),
                     (function (u) {
-                        (u.Intro = 'intro'), (u.Award = 'award'), (u.Progression = 'progression');
-                    })(E || (E = {}));
+                        ((u.Intro = 'intro'), (u.Award = 'award'), (u.Progression = 'progression'));
+                    })(E || (E = {})));
             },
             7631: (u, F, A) => {
-                A(6483), A(3649), A(7363), A(5617), R.strings.resource_well.awardView;
+                (A(6483), A(3649), A(7363), A(5617), R.strings.resource_well.awardView);
             },
             7363: (u) => {
                 u.exports = React;
@@ -48,9 +48,9 @@
         var D = A[u];
         if (void 0 !== D) return D.exports;
         var B = (A[u] = { exports: {} });
-        return F[u](B, B.exports, E), B.exports;
+        return (F[u](B, B.exports, E), B.exports);
     }
-    (E.m = F),
+    ((E.m = F),
         (u = []),
         (E.O = (F, A, D, B) => {
             if (!A) {
@@ -74,7 +74,7 @@
         }),
         (E.n = (u) => {
             var F = u && u.__esModule ? () => u.default : () => u;
-            return E.d(F, { a: F }), F;
+            return (E.d(F, { a: F }), F);
         }),
         (E.d = (u, F) => {
             for (var A in F) E.o(F, A) && !E.o(u, A) && Object.defineProperty(u, A, { enumerable: !0, get: F[A] });
@@ -104,12 +104,12 @@
                         for (D in e) E.o(e, D) && (E.m[D] = e[D]);
                         if (r) var t = r(E);
                     }
-                    for (F && F(A); o < C.length; o++) (B = C[o]), E.o(u, B) && u[B] && u[B][0](), (u[B] = 0);
+                    for (F && F(A); o < C.length; o++) ((B = C[o]), E.o(u, B) && u[B] && u[B][0](), (u[B] = 0));
                     return E.O(t);
                 },
                 A = (self.webpackChunkgameface = self.webpackChunkgameface || []);
-            A.forEach(F.bind(null, 0)), (A.push = F.bind(null, A.push.bind(A)));
-        })();
+            (A.forEach(F.bind(null, 0)), (A.push = F.bind(null, A.push.bind(A))));
+        })());
     var D = E.O(void 0, ['lib/resource_well.vendors'], () => E(7631));
     D = E.O(D);
 })();

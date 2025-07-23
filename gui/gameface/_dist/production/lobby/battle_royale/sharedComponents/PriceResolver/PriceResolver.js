@@ -3,26 +3,26 @@
     var __webpack_modules__ = {
             329: (e, n, t) => {
                 let r, i, o;
-                t.d(n, { V2: () => i, et: () => r, we: () => o }),
+                (t.d(n, { V2: () => i, et: () => r, we: () => o }),
                     (function (e) {
-                        (e.small = 'small'), (e.big = 'big'), (e.large = 'large'), (e.extraLarge = 'extraLarge');
+                        ((e.small = 'small'), (e.big = 'big'), (e.large = 'large'), (e.extraLarge = 'extraLarge'));
                     })(r || (r = {})),
                     (function (e) {
-                        (e.credits = 'credits'),
+                        ((e.credits = 'credits'),
                             (e.gold = 'gold'),
                             (e.crystal = 'crystal'),
                             (e.xp = 'xp'),
                             (e.freeXP = 'freeXP'),
                             (e.eliteXP = 'eliteXP'),
-                            (e.equipCoin = 'equipCoin');
+                            (e.equipCoin = 'equipCoin'));
                     })(i || (i = {})),
                     (function (e) {
-                        (e.Red = 'RedActionBG'), (e.Blue = 'BlueActionBG');
-                    })(o || (o = {}));
+                        ((e.Red = 'RedActionBG'), (e.Blue = 'BlueActionBG'));
+                    })(o || (o = {})));
             },
             527: (e, n, t) => {
-                t.r(n),
-                    t.d(n, { mouse: () => l, off: () => s, on: () => _, onResize: () => o, onScaleUpdated: () => a });
+                (t.r(n),
+                    t.d(n, { mouse: () => l, off: () => s, on: () => _, onResize: () => o, onScaleUpdated: () => a }));
                 var r = t(472),
                     i = t(176);
                 const o = (0, r.E)('clientResized'),
@@ -81,10 +81,10 @@
                     );
                     return Object.assign({}, o, {
                         disable() {
-                            (e.enabled = !1), r();
+                            ((e.enabled = !1), r());
                         },
                         enable() {
-                            (e.enabled = !0), r();
+                            ((e.enabled = !0), r());
                         },
                         enableOutside() {
                             e.enabled && (0, i.R)(!0);
@@ -96,7 +96,7 @@
                 })();
             },
             959: (e, n, t) => {
-                t.r(n),
+                (t.r(n),
                     t.d(n, {
                         events: () => r,
                         getMouseGlobalPosition: () => a,
@@ -104,7 +104,7 @@
                         graphicsQuality: () => _,
                         playSound: () => i.G,
                         setRTPC: () => i.E,
-                    });
+                    }));
                 var r = t(527),
                     i = t(493);
                 function o(e = 'px') {
@@ -169,7 +169,7 @@
                 function i(e, n, t) {
                     return `url(${r(e, n, t)})`;
                 }
-                t.r(n), t.d(n, { getBgUrl: () => i, getTextureUrl: () => r });
+                (t.r(n), t.d(n, { getBgUrl: () => i, getTextureUrl: () => r }));
             },
             112: (e, n, t) => {
                 t.d(n, { W: () => r });
@@ -196,7 +196,7 @@
                 };
             },
             641: (e, n, t) => {
-                t.r(n),
+                (t.r(n),
                     t.d(n, {
                         addModelObserver: () => u,
                         addPreloadTexture: () => s,
@@ -225,7 +225,7 @@
                         setInputPaddingsRem: () => c,
                         setSidePaddingsRem: () => d,
                         whenTutorialReady: () => x,
-                    });
+                    }));
                 var r = t(690),
                     i = t(722),
                     o = t(112),
@@ -327,7 +327,7 @@
                                         r,
                                         i = {},
                                         o = Object.keys(e);
-                                    for (r = 0; r < o.length; r++) (t = o[r]), n.indexOf(t) >= 0 || (i[t] = e[t]);
+                                    for (r = 0; r < o.length; r++) ((t = o[r]), n.indexOf(t) >= 0 || (i[t] = e[t]));
                                     return i;
                                 })(n, r);
                             return void 0 !== o
@@ -371,7 +371,7 @@
                     i = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function o(e) {
                     let n = '';
-                    for (let t = i.length - 1; t >= 0; t--) for (; e >= i[t]; ) (n += r[t]), (e -= i[t]);
+                    for (let t = i.length - 1; t >= 0; t--) for (; e >= i[t]; ) ((n += r[t]), (e -= i[t]));
                     return n;
                 }
                 ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());
@@ -381,7 +381,7 @@
                 var r = t(138);
                 class i {
                     constructor() {
-                        (this._callbacks = void 0),
+                        ((this._callbacks = void 0),
                             (this._updateHandler = void 0),
                             (this._views = void 0),
                             (this.clearViewCallbacks = (e) => {
@@ -393,14 +393,15 @@
                             }),
                             (this._callbacks = {}),
                             (this._views = {}),
-                            (this._updateHandler = void 0);
+                            (this._updateHandler = void 0));
                     }
                     static get instance() {
-                        return window.__dataTracker || (window.__dataTracker = new i()), window.__dataTracker;
+                        return (window.__dataTracker || (window.__dataTracker = new i()), window.__dataTracker);
                     }
                     clear() {
-                        void 0 !== this._updateHandler && (this._updateHandler.clear(), (this._updateHandler = void 0)),
-                            (this._callbacks = {});
+                        (void 0 !== this._updateHandler &&
+                            (this._updateHandler.clear(), (this._updateHandler = void 0)),
+                            (this._callbacks = {}));
                     }
                     addCallback(e, n, t = 0, i = !0) {
                         void 0 === this._updateHandler &&
@@ -440,35 +441,35 @@
                     _index__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(596);
                 class ViewModel {
                     constructor(path, watchingFields = []) {
-                        (this.dataTracker = void 0),
+                        ((this.dataTracker = void 0),
                             (this.modelPath = void 0),
                             (this.callbacks = void 0),
                             (this.data = void 0),
                             (this._notifyObservers = () => {
-                                (this.data = eval(this.modelPath)),
+                                ((this.data = eval(this.modelPath)),
                                     this.callbacks.forEach((e) => {
                                         e(this.data);
-                                    });
+                                    }));
                             }),
                             (this.dataTracker = new _DataTracker__WEBPACK_IMPORTED_MODULE_0__.Z()),
                             (this.modelPath = path),
                             (this.callbacks = new Set()),
                             (0, _index__WEBPACK_IMPORTED_MODULE_1__.ry)().then(() => {
-                                this._addCallback(path),
+                                (this._addCallback(path),
                                     watchingFields.forEach((e) => {
                                         this._addCallback(path + '.' + e);
                                     }),
-                                    this._notifyObservers();
-                            });
+                                    this._notifyObservers());
+                            }));
                     }
                     subscribe(e) {
-                        this.callbacks.add(e), null !== this.data && void 0 !== this.data && e(this.data);
+                        (this.callbacks.add(e), null !== this.data && void 0 !== this.data && e(this.data));
                     }
                     unsubscribe(e) {
                         this.callbacks.delete(e);
                     }
                     destroy() {
-                        this.dataTracker.clear(), this.callbacks.clear();
+                        (this.dataTracker.clear(), this.callbacks.clear());
                     }
                     _addCallback(e) {
                         this.dataTracker.addCallback(e, this._notifyObservers);
@@ -480,7 +481,7 @@
                 t.d(n, { B3: () => c, Z5: () => a, ry: () => h });
                 class r {
                     constructor() {
-                        (this.entries = []),
+                        ((this.entries = []),
                             (this._listenMouse = !1),
                             (this.onMouseDown = (e) => {
                                 this.entries.forEach(({ container: n, callback: t }) => {
@@ -491,19 +492,19 @@
                                     } while (r);
                                     t();
                                 });
-                            });
+                            }));
                     }
                     static get instance() {
-                        return r.__instance || (r.__instance = new r()), r.__instance;
+                        return (r.__instance || (r.__instance = new r()), r.__instance);
                     }
                     register(e, n) {
-                        this.addMouseListener(), this.entries.push({ container: e, callback: n });
+                        (this.addMouseListener(), this.entries.push({ container: e, callback: n }));
                     }
                     unregister(e, n) {
                         const t = e,
                             r = n;
-                        (this.entries = this.entries.filter(({ container: e, callback: n }) => e !== t || n !== r)),
-                            this.removeMouseListener();
+                        ((this.entries = this.entries.filter(({ container: e, callback: n }) => e !== t || n !== r)),
+                            this.removeMouseListener());
                     }
                     addMouseListener() {
                         this._listenMouse ||
@@ -533,22 +534,22 @@
                     };
                 let s;
                 !(function (e) {
-                    (e[(e.UNDEFINED = 0)] = 'UNDEFINED'),
+                    ((e[(e.UNDEFINED = 0)] = 'UNDEFINED'),
                         (e[(e.TOOLTIP = 1)] = 'TOOLTIP'),
                         (e[(e.POP_OVER = 2)] = 'POP_OVER'),
                         (e[(e.CONTEXT_MENU = 4)] = 'CONTEXT_MENU'),
                         (e[(e.DROP_DOWN = 8)] = 'DROP_DOWN'),
                         (e[(e.MOVE = 16)] = 'MOVE'),
                         (e[(e.CLOSE = 32)] = 'CLOSE'),
-                        (e[(e.MINIMIZE = 64)] = 'MINIMIZE');
+                        (e[(e.MINIMIZE = 64)] = 'MINIMIZE'));
                 })(s || (s = {}));
                 const c = Object.freeze({ INTEGRAL: 0, GOLD: 1 }),
                     l = Object.freeze({ FRACTIONAL: 0, WO_ZERO_DIGITS: 1 }),
                     u = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1 }),
                     d = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1, YEAR_MONTH: 2 });
                 let v, g;
-                !(function (e) {
-                    (e[(e.NONE = -1)] = 'NONE'),
+                (!(function (e) {
+                    ((e[(e.NONE = -1)] = 'NONE'),
                         (e[(e.ALT = 165)] = 'ALT'),
                         (e[(e.ENTER = 13)] = 'ENTER'),
                         (e[(e.ESCAPE = 27)] = 'ESCAPE'),
@@ -577,10 +578,10 @@
                         (e[(e.KEY_6 = 54)] = 'KEY_6'),
                         (e[(e.KEY_7 = 55)] = 'KEY_7'),
                         (e[(e.KEY_8 = 56)] = 'KEY_8'),
-                        (e[(e.KEY_9 = 57)] = 'KEY_9');
+                        (e[(e.KEY_9 = 57)] = 'KEY_9'));
                 })(v || (v = {})),
                     (function (e) {
-                        (e.ALT = 'Alt'),
+                        ((e.ALT = 'Alt'),
                             (e.ALT_GRAPH = 'AltGraph'),
                             (e.CAPS_LOCK = 'CapsLock'),
                             (e.CONTROL = 'Control'),
@@ -591,8 +592,8 @@
                             (e.SCROLL_LOCK = 'ScrollLock'),
                             (e.SHIFT = 'Shift'),
                             (e.SYMBOL = 'Symbol'),
-                            (e.SYMBOL_LOCK = 'SymbolLock');
-                    })(g || (g = {}));
+                            (e.SYMBOL_LOCK = 'SymbolLock'));
+                    })(g || (g = {})));
                 var E = t(138);
                 const m = ['args'];
                 function p(e, n, t, r, i, o, a) {
@@ -644,7 +645,7 @@
                                         r,
                                         i = {},
                                         o = Object.keys(e);
-                                    for (r = 0; r < o.length; r++) (t = o[r]), n.indexOf(t) >= 0 || (i[t] = e[t]);
+                                    for (r = 0; r < o.length; r++) ((t = o[r]), n.indexOf(t) >= 0 || (i[t] = e[t]));
                                     return i;
                                 })(n, m);
                             void 0 !== i
@@ -720,7 +721,8 @@
                         addEscapeListener: (e) => {
                             const n = (n) => f(n, e);
                             return (
-                                window.addEventListener('keydown', n), () => window.removeEventListener('keydown', n)
+                                window.addEventListener('keydown', n),
+                                () => window.removeEventListener('keydown', n)
                             );
                         },
                         closeOnEsc: (e) => {
@@ -1016,9 +1018,9 @@
         var n = __webpack_module_cache__[e];
         if (void 0 !== n) return n.exports;
         var t = (__webpack_module_cache__[e] = { exports: {} });
-        return __webpack_modules__[e](t, t.exports, __webpack_require__), t.exports;
+        return (__webpack_modules__[e](t, t.exports, __webpack_require__), t.exports);
     }
-    (__webpack_require__.m = __webpack_modules__),
+    ((__webpack_require__.m = __webpack_modules__),
         (deferred = []),
         (__webpack_require__.O = (e, n, t, r) => {
             if (!n) {
@@ -1043,7 +1045,7 @@
         }),
         (__webpack_require__.n = (e) => {
             var n = e && e.__esModule ? () => e.default : () => e;
-            return __webpack_require__.d(n, { a: n }), n;
+            return (__webpack_require__.d(n, { a: n }), n);
         }),
         (__webpack_require__.d = (e, n) => {
             for (var t in n)
@@ -1061,10 +1063,10 @@
         })()),
         (__webpack_require__.o = (e, n) => Object.prototype.hasOwnProperty.call(e, n)),
         (__webpack_require__.r = (e) => {
-            'undefined' != typeof Symbol &&
+            ('undefined' != typeof Symbol &&
                 Symbol.toStringTag &&
                 Object.defineProperty(e, Symbol.toStringTag, { value: 'Module' }),
-                Object.defineProperty(e, '__esModule', { value: !0 });
+                Object.defineProperty(e, '__esModule', { value: !0 }));
         }),
         (__webpack_require__.j = 766),
         (() => {
@@ -1080,12 +1082,12 @@
                         if (_) var c = _(__webpack_require__);
                     }
                     for (n && n(t); s < o.length; s++)
-                        (i = o[s]), __webpack_require__.o(e, i) && e[i] && e[i][0](), (e[i] = 0);
+                        ((i = o[s]), __webpack_require__.o(e, i) && e[i] && e[i][0](), (e[i] = 0));
                     return __webpack_require__.O(c);
                 },
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
-            t.forEach(n.bind(null, 0)), (t.push = n.bind(null, t.push.bind(t)));
-        })();
+            (t.forEach(n.bind(null, 0)), (t.push = n.bind(null, t.push.bind(t))));
+        })());
     var __webpack_exports__ = __webpack_require__.O(void 0, [695], () => __webpack_require__(851));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

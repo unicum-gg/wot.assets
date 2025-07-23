@@ -44,7 +44,8 @@
 .App_vignette_0c {
     width: 100%;
     height: 100%;
-    background: linear-gradient(
+    background:
+        linear-gradient(
             90deg,
             rgba(24, 9, 55, 0.8) 0%,
             rgba(0, 0, 0, 0) 27%,

@@ -649,7 +649,7 @@
                 ]);
             class p {
                 constructor(e) {
-                    (this.textNodes = []), (this.element = e);
+                    ((this.textNodes = []), (this.element = e));
                 }
                 hasText() {
                     return this.textNodes.length > 0;
@@ -657,18 +657,18 @@
             }
             class f {
                 constructor(e, t) {
-                    (this.separator = '​'),
+                    ((this.separator = '​'),
                         (this.threshold = Q),
                         (this.parser_ = e),
                         void 0 !== t &&
                             (void 0 !== t.className && (this.className = t.className),
                             void 0 !== t.separator && (this.separator = t.separator),
-                            void 0 !== t.threshold && (this.threshold = t.threshold));
+                            void 0 !== t.threshold && (this.threshold = t.threshold)));
                 }
                 applyToElement(e) {
                     for (var t, W = B(this.getBlocks(e)); !(t = W()).done; ) {
                         const e = t.value;
-                        s(e.hasText()), this.applyToParagraph(e);
+                        (s(e.hasText()), this.applyToParagraph(e));
                     }
                 }
                 *getBlocks(e, t) {
@@ -690,7 +690,7 @@
                         return h.has(t) ? c : i;
                     })(e);
                     if (W === T) return;
-                    if (W === u) return t && t.hasText() && (yield t, (t.textNodes = [])), void s(!e.firstChild);
+                    if (W === u) return (t && t.hasText() && (yield t, (t.textNodes = [])), void s(!e.firstChild));
                     s(W === c || W === i);
                     const U = !t || W === c,
                         r = U ? new p(e) : t;
@@ -721,14 +721,14 @@
                     let n = 0;
                     for (var o, a = B(U); !(o = a()).done; ) {
                         const e = o.value;
-                        s(e.length > 0), (n += e.length), r.push(n);
+                        (s(e.length > 0), (n += e.length), r.push(n));
                     }
-                    s(r[0] > 0),
+                    (s(r[0] > 0),
                         s(r[r.length - 1] === W.length),
                         ++r[r.length - 1],
                         s(r.length > 1),
                         this.splitTextNodes(t, r),
-                        this.applyBlockStyle(e.element);
+                        this.applyBlockStyle(e.element));
                 }
                 splitTextNodes(e, t) {
                     s(t.length > 0);
@@ -751,33 +751,33 @@
                         let l = 0;
                         for (; r < B; ) {
                             const e = r - n;
-                            s(e >= l), a.push(W.substring(l, e)), (l = e), ++U, s(t[U] > r), (r = t[U]);
+                            (s(e >= l), a.push(W.substring(l, e)), (l = e), ++U, s(t[U] > r), (r = t[U]));
                         }
-                        s(a.length > 0), l < W.length && a.push(W.substring(l)), this.splitTextNode(e, a), (n = B);
+                        (s(a.length > 0), l < W.length && a.push(W.substring(l)), this.splitTextNode(e, a), (n = B));
                     }
-                    s(n === W), s(U < t.length), s(t[U] >= W);
+                    (s(n === W), s(U < t.length), s(t[U] >= W));
                 }
                 splitTextNode(e, t) {
-                    s(t.length > 1), s(e.nodeValue === t.join(''));
+                    (s(t.length > 1), s(e.nodeValue === t.join('')));
                     const W = this.separator;
                     if ('string' == typeof W) return void (e.nodeValue = t.join(W));
                     const U = e.ownerDocument;
                     let r = [];
                     for (var n, o = B(t); !(n = o()).done; ) {
                         const e = n.value;
-                        e && r.push(U.createTextNode(e)), r.push(null);
+                        (e && r.push(U.createTextNode(e)), r.push(null));
                     }
-                    r.pop(), (r = r.map((e) => e || W.cloneNode(!0))), e.replaceWith(...r);
+                    (r.pop(), (r = r.map((e) => e || W.cloneNode(!0))), e.replaceWith(...r));
                 }
                 applyBlockStyle(e) {
                     if (this.className) return void e.classList.add(this.className);
                     const t = e.style;
-                    (t.wordBreak = 'keep-all'), (t.overflowWrap = 'break-word');
+                    ((t.wordBreak = 'keep-all'), (t.overflowWrap = 'break-word'));
                 }
                 static defineClassAs(e, t) {
                     const W = e.createElement('style');
-                    (W.textContent = `.${t} { word-break: keep-all; overflow-wrap: break-word; }`),
-                        e.head.appendChild(W);
+                    ((W.textContent = `.${t} { word-break: keep-all; overflow-wrap: break-word; }`),
+                        e.head.appendChild(W));
                 }
             }
             if (116 == W.j) var g = W(759);
@@ -906,7 +906,7 @@
                                 .map((e) => this.model.get(e) || 0)
                                 .reduce((e, t) => e + t),
                             s = o > 0 ? 'B' : 'O';
-                        o > t && n.push(''), (n[n.length - 1] += e[B]), (W = U), (U = r), (r = s);
+                        (o > t && n.push(''), (n[n.length - 1] += e[B]), (W = U), (U = r), (r = s));
                     }
                     return n;
                 }
@@ -918,9 +918,9 @@
                     const W = (0, n.X)(e);
                     if (v.hasChildTextNode(W.body)) {
                         const e = W.createElement('span');
-                        e.append(...W.body.childNodes), W.body.append(e);
+                        (e.append(...W.body.childNodes), W.body.append(e));
                     }
-                    return this.applyElement(W.body.childNodes[0], t), W.body.innerHTML;
+                    return (this.applyElement(W.body.childNodes[0], t), W.body.innerHTML);
                 }
             }
             const E = () => new v(new Map(Object.entries(r)));

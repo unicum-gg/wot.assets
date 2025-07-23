@@ -10,18 +10,18 @@
                 a = '',
                 n = 1,
                 r = t.length + 1;
-            for (; n < r; ) (i = l[n - 1]), (s = t[n - 1] || ''), (a += i + s), n++;
-            return (a += l[l.length - 1]), { result: a, isWGFE: !0 };
+            for (; n < r; ) ((i = l[n - 1]), (s = t[n - 1] || ''), (a += i + s), n++);
+            return ((a += l[l.length - 1]), { result: a, isWGFE: !0 });
         };
     class l extends HTMLElement {
         constructor() {
-            super(), (this.__eventListeners = []);
+            (super(), (this.__eventListeners = []));
         }
         connectedCallback() {
-            this.__render(), this.$connectedCallback();
+            (this.__render(), this.$connectedCallback());
         }
         disconnectedCallback() {
-            this.__cleanupEventListeners(), this.$disconnectedCallback();
+            (this.__cleanupEventListeners(), this.$disconnectedCallback());
         }
         attrs() {}
         update() {
@@ -36,19 +36,19 @@
             const t = document.createElement('div');
             requestAnimationFrame(() => {
                 requestAnimationFrame(() => {
-                    (t.innerHTML = e.result),
+                    ((t.innerHTML = e.result),
                         this.__cleanup(),
                         Array.prototype.slice.apply(t.childNodes).forEach((e) => this.appendChild(e)),
                         engine.synchronizeModels(),
-                        this.$afterRender.call(this);
+                        this.$afterRender.call(this));
                 });
             });
         }
         __cleanupEventListeners() {
-            this.__eventListeners.forEach((e) => {
+            (this.__eventListeners.forEach((e) => {
                 e.el.removeEventListener(e.eventName, e.callback);
             }),
-                (this.__eventListeners = []);
+                (this.__eventListeners = []));
         }
         __data() {
             return this.data();
@@ -90,7 +90,7 @@
         const m = setInterval(() => {
             if (n > 0) {
                 const e = a - Date.now();
-                (l = Date.now()), (n = e), s(d(e, 0, i));
+                ((l = Date.now()), (n = e), s(d(e, 0, i)));
             } else clearInterval(m);
         }, r);
     }
@@ -139,8 +139,8 @@
             return (
                 i.forEach((e, t) => {
                     const i = e !== s[t];
-                    (l += `<div class="${o.newValue} ${i ? o.newValue__animated : ''}">${s[t] ? s[t] : ''}</div>`),
-                        (a += `<div class="${o.currentValue} ${i ? o.currentValue__animated : ''}">${e}</div>`);
+                    ((l += `<div class="${o.newValue} ${i ? o.newValue__animated : ''}">${s[t] ? s[t] : ''}</div>`),
+                        (a += `<div class="${o.currentValue} ${i ? o.currentValue__animated : ''}">${e}</div>`));
                 }),
                 `<div class="${o.inner}">\n                <div class="${o.newDigits}">${l}</div>\n                <div class="${o.currentDigits}">${a}</div>\n            </div>`
             );
@@ -152,7 +152,7 @@
                 let l = null;
                 m(t, 0, !1, (a) => {
                     const d = l || a;
-                    (l = a),
+                    ((l = a),
                         (e.textContent = ''),
                         (e.innerHTML = ((e, t, i, s, l) => {
                             switch (s) {
@@ -165,7 +165,7 @@
                                 default:
                                     return p(c(e.minutes), c(t.minutes)) + ':' + p(c(e.seconds), c(t.seconds));
                             }
-                        })(d, l, t, i, s));
+                        })(d, l, t, i, s)));
                 });
             }
         },
@@ -192,7 +192,7 @@
         example6_text: 'TimerExamples_example6_text_e9',
         example6_timer: 'TimerExamples_example6_timer_28',
     };
-    customElements.define(
+    (customElements.define(
         e,
         class extends l {
             constructor() {
@@ -379,12 +379,12 @@
         `;
                 }
             },
-        );
+        ));
     const $ = { seconds: 65 };
     engine.whenReady.then(() => {
-        engine.createJSModel('ViewState', $), engine.synchronizeModels();
+        (engine.createJSModel('ViewState', $), engine.synchronizeModels());
         const e = document.getElementById('root'),
             t = document.createElement(i);
-        t.setAttribute('view-state-model', 'ViewState'), e.appendChild(t);
+        (t.setAttribute('view-state-model', 'ViewState'), e.appendChild(t));
     });
 })();

@@ -3,7 +3,7 @@
     [86],
     {
         2980: (e, a, t) => {
-            t.r(a), t.d(a, { default: () => la });
+            (t.r(a), t.d(a, { default: () => la }));
             var r = t(7363),
                 n = t.n(r),
                 s = t(8958),
@@ -64,10 +64,10 @@
                                 v.UI(t, (t, n) => {
                                     const s = (0, h.y)(t),
                                         i = (0, f.C)(a, t.specialAwardName);
-                                    s
+                                    (s
                                         ? (i ? e.push(P(C, r, n)) : e.push(P(N, r, n)), e.push(P(A, r, n)))
                                         : 0 !== n && e.push(P(A, r, n)),
-                                        t.isCompensation && (e.push(P(T, r, n)), e.push(P(k, r, n)));
+                                        t.isCompensation && (e.push(P(T, r, n)), e.push(P(k, r, n))));
                                 }),
                                 e
                             ),
@@ -419,7 +419,7 @@
                                         (0, h.y)(e) || 0 !== a || (H.start(ye()), ce.hY.sound(w.multiRewardAppear));
                                         break;
                                     case P(A, t, a).name:
-                                        H.start((0, h.y)(e) ? ye() : Ee()), ce.hY.sound(w.multiRewardAppear);
+                                        (H.start((0, h.y)(e) ? ye() : Ee()), ce.hY.sound(w.multiRewardAppear));
                                         break;
                                     case P(N, t, a).name:
                                         E(!0);
@@ -480,11 +480,11 @@
                         }, [z.events, t, a, e, H, c, Z, w]),
                         (0, r.useEffect)(() => {
                             const a = () => {
-                                H.start(
+                                (H.start(
                                     (0, h.y)(e) ? Ee() : { to: _e, config: { duration: 0, easing: F.Z.easeOutCubic } },
                                 ),
                                     e.isCompensation &&
-                                        Z.start({ to: we, config: { duration: 0, easing: F.Z.easeInOutCubic } });
+                                        Z.start({ to: we, config: { duration: 0, easing: F.Z.easeInOutCubic } }));
                             };
                             return (
                                 z.events.on('skipAll', a),
@@ -666,10 +666,10 @@
                     (0, r.useEffect)(() => {
                         switch ((0, l.P)(V)) {
                             case p.B1.skip:
-                                H.set(Fe), G.skipAll();
+                                (H.set(Fe), G.skipAll());
                                 break;
                             case p.B1.preparation:
-                                H.set(Ye), G.reset();
+                                (H.set(Ye), G.reset());
                                 break;
                             case p.B1.rewards:
                                 G.start();
@@ -691,7 +691,7 @@
                                     texts: k,
                                     controls: {
                                         onClose: () => {
-                                            t.setActiveRareReward(null), G.resume();
+                                            (t.setActiveRareReward(null), G.resume());
                                         },
                                         onPlay: () => t.setIsVideoPlaying(!0),
                                         onEnded: () => t.setIsVideoPlaying(!1),
@@ -785,7 +785,7 @@
                         C = a.computes.multimediaResource(),
                         N = (0, i.v)(p.Kg, (e) => e.value),
                         k = (0, g.H)(R);
-                    (0, r.useEffect)(() => {
+                    ((0, r.useEffect)(() => {
                         const e = (e) => {
                             e.name === O && p.Kg.send({ type: p.QK.toPage });
                         };
@@ -815,7 +815,7 @@
                         (0, r.useEffect)(() => {
                             p.Kg.send({ type: p.QK.setAnimationActive, isAnimationActive: h });
                         }, [h]),
-                        (0, b.s)(A, E, N);
+                        (0, b.s)(A, E, N));
                     const T = (0, w.H)(N, t.openNext),
                         B = T.loadingStyle,
                         I = T.contentStyle;

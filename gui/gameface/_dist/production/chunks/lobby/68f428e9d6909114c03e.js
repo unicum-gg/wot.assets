@@ -3,7 +3,7 @@
     [984],
     {
         3503: (e, t, o) => {
-            o.r(t), o.d(t, { default: () => Z });
+            (o.r(t), o.d(t, { default: () => Z }));
             var n = o(7363),
                 s = o.n(n),
                 a = o(8958),
@@ -122,7 +122,7 @@
                         p = n.length > 1,
                         B = p ? m.eventName : x.boxName.dynOpt(a),
                         b = () => {
-                            y.hY.sound(d.purchaseClick), o.buyBoxes();
+                            (y.hY.sound(d.purchaseClick), o.buyBoxes());
                         };
                     return s().createElement(
                         'div',

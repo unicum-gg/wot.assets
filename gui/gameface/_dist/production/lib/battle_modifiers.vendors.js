@@ -4,7 +4,7 @@
     {
         394: (W, U) => {
             'use strict';
-            Object.defineProperty(U, '__esModule', { value: !0 }),
+            (Object.defineProperty(U, '__esModule', { value: !0 }),
                 (U.model = void 0),
                 (U.model = {
                     'BB2:108120': 1817,
@@ -491,11 +491,11 @@
                     'BW1:とは': -13,
                     'UW1:く': 13,
                     'UW4:私': 12,
-                });
+                }));
         },
         444: (W, U) => {
             'use strict';
-            Object.defineProperty(U, '__esModule', { value: !0 }),
+            (Object.defineProperty(U, '__esModule', { value: !0 }),
                 (U.model = void 0),
                 (U.model = {
                     'UP3:O': 771,
@@ -1808,11 +1808,11 @@
                     'UW3:包': -3,
                     'UW4:舍': -3,
                     'UW6:空': 3,
-                });
+                }));
         },
         826: (W, U) => {
             'use strict';
-            Object.defineProperty(U, '__esModule', { value: !0 }),
+            (Object.defineProperty(U, '__esModule', { value: !0 }),
                 (U.unicodeBlocks = void 0),
                 (U.unicodeBlocks = [
                     0, 128, 256, 384, 592, 688, 768, 880, 1024, 1280, 1328, 1424, 1536, 1792, 1872, 1920, 1984, 2048,
@@ -1837,13 +1837,13 @@
                     124928, 125184, 126064, 126208, 126464, 126976, 127024, 127136, 127232, 127488, 127744, 128512,
                     128592, 128640, 128768, 128896, 129024, 129280, 129536, 129648, 129792, 131072, 173824, 177984,
                     178208, 183984, 194560, 196608, 917504, 917760, 983040, 1048576,
-                ]);
+                ]));
         },
         456: (W, U) => {
             'use strict';
-            Object.defineProperty(U, '__esModule', { value: !0 }),
+            (Object.defineProperty(U, '__esModule', { value: !0 }),
                 (U.parseFromString = void 0),
-                (U.parseFromString = (W) => new DOMParser().parseFromString(W, 'text/html'));
+                (U.parseFromString = (W) => new DOMParser().parseFromString(W, 'text/html')));
         },
         834: (W, U, B) => {
             'use strict';
@@ -1883,7 +1883,7 @@
                 for (var B = 0, e = new Array(U); B < U; B++) e[B] = W[B];
                 return e;
             }
-            Object.defineProperty(U, '__esModule', { value: !0 }), (U.HTMLProcessor = void 0);
+            (Object.defineProperty(U, '__esModule', { value: !0 }), (U.HTMLProcessor = void 0));
             const r = B(91),
                 o = console.assert,
                 n = {
@@ -1969,7 +1969,7 @@
                 ]);
             class a {
                 constructor(W) {
-                    (this.textNodes = []), (this.element = W);
+                    ((this.textNodes = []), (this.element = W));
                 }
                 hasText() {
                     return this.textNodes.length > 0;
@@ -1977,18 +1977,18 @@
             }
             U.HTMLProcessor = class {
                 constructor(W, U) {
-                    (this.separator = '​'),
+                    ((this.separator = '​'),
                         (this.threshold = r.DEFAULT_THRES),
                         (this.parser_ = W),
                         void 0 !== U &&
                             (void 0 !== U.className && (this.className = U.className),
                             void 0 !== U.separator && (this.separator = U.separator),
-                            void 0 !== U.threshold && (this.threshold = U.threshold));
+                            void 0 !== U.threshold && (this.threshold = U.threshold)));
                 }
                 applyToElement(W) {
                     for (var U, B = e(this.getBlocks(W)); !(U = B()).done; ) {
                         const W = U.value;
-                        o(W.hasText()), this.applyToParagraph(W);
+                        (o(W.hasText()), this.applyToParagraph(W));
                     }
                 }
                 *getBlocks(W, U) {
@@ -2010,7 +2010,7 @@
                         return s.has(U) ? 1 : 0;
                     })(W);
                     if (2 === B) return;
-                    if (3 === B) return U && U.hasText() && (yield U, (U.textNodes = [])), void o(!W.firstChild);
+                    if (3 === B) return (U && U.hasText() && (yield U, (U.textNodes = [])), void o(!W.firstChild));
                     o(1 === B || 0 === B);
                     const t = !U || 1 === B,
                         r = t ? new a(W) : U;
@@ -2041,14 +2041,14 @@
                     let n = 0;
                     for (var s, a = e(t); !(s = a()).done; ) {
                         const W = s.value;
-                        o(W.length > 0), (n += W.length), r.push(n);
+                        (o(W.length > 0), (n += W.length), r.push(n));
                     }
-                    o(r[0] > 0),
+                    (o(r[0] > 0),
                         o(r[r.length - 1] === B.length),
                         ++r[r.length - 1],
                         o(r.length > 1),
                         this.splitTextNodes(U, r),
-                        this.applyBlockStyle(W.element);
+                        this.applyBlockStyle(W.element));
                 }
                 splitTextNodes(W, U) {
                     o(U.length > 0);
@@ -2071,33 +2071,33 @@
                         let i = 0;
                         for (; r < e; ) {
                             const W = r - n;
-                            o(W >= i), a.push(B.substring(i, W)), (i = W), ++t, o(U[t] > r), (r = U[t]);
+                            (o(W >= i), a.push(B.substring(i, W)), (i = W), ++t, o(U[t] > r), (r = U[t]));
                         }
-                        o(a.length > 0), i < B.length && a.push(B.substring(i)), this.splitTextNode(W, a), (n = e);
+                        (o(a.length > 0), i < B.length && a.push(B.substring(i)), this.splitTextNode(W, a), (n = e));
                     }
-                    o(n === B), o(t < U.length), o(U[t] >= B);
+                    (o(n === B), o(t < U.length), o(U[t] >= B));
                 }
                 splitTextNode(W, U) {
-                    o(U.length > 1), o(W.nodeValue === U.join(''));
+                    (o(U.length > 1), o(W.nodeValue === U.join('')));
                     const B = this.separator;
                     if ('string' == typeof B) return void (W.nodeValue = U.join(B));
                     const t = W.ownerDocument;
                     let r = [];
                     for (var n, s = e(U); !(n = s()).done; ) {
                         const W = n.value;
-                        W && r.push(t.createTextNode(W)), r.push(null);
+                        (W && r.push(t.createTextNode(W)), r.push(null));
                     }
-                    r.pop(), (r = r.map((W) => W || B.cloneNode(!0))), W.replaceWith(...r);
+                    (r.pop(), (r = r.map((W) => W || B.cloneNode(!0))), W.replaceWith(...r));
                 }
                 applyBlockStyle(W) {
                     if (this.className) return void W.classList.add(this.className);
                     const U = W.style;
-                    (U.wordBreak = 'keep-all'), (U.overflowWrap = 'break-word');
+                    ((U.wordBreak = 'keep-all'), (U.overflowWrap = 'break-word'));
                 }
                 static defineClassAs(W, U) {
                     const B = W.createElement('style');
-                    (B.textContent = `.${U} { word-break: keep-all; overflow-wrap: break-word; }`),
-                        W.head.appendChild(B);
+                    ((B.textContent = `.${U} { word-break: keep-all; overflow-wrap: break-word; }`),
+                        W.head.appendChild(B));
                 }
             };
         },
@@ -2109,24 +2109,24 @@
                         ? function (W, U, B, e) {
                               void 0 === e && (e = B);
                               var t = Object.getOwnPropertyDescriptor(U, B);
-                              (t && !('get' in t ? !U.__esModule : t.writable || t.configurable)) ||
+                              ((t && !('get' in t ? !U.__esModule : t.writable || t.configurable)) ||
                                   (t = {
                                       enumerable: !0,
                                       get: function () {
                                           return U[B];
                                       },
                                   }),
-                                  Object.defineProperty(W, e, t);
+                                  Object.defineProperty(W, e, t));
                           }
                         : function (W, U, B, e) {
-                              void 0 === e && (e = B), (W[e] = U[B]);
+                              (void 0 === e && (e = B), (W[e] = U[B]));
                           }),
                 t =
                     (this && this.__exportStar) ||
                     function (W, U) {
                         for (var B in W) 'default' === B || Object.prototype.hasOwnProperty.call(U, B) || e(U, W, B);
                     };
-            Object.defineProperty(U, '__esModule', { value: !0 }), t(B(91), U);
+            (Object.defineProperty(U, '__esModule', { value: !0 }), t(B(91), U));
         },
         91: (W, U, B) => {
             'use strict';
@@ -2135,12 +2135,12 @@
                 for (var B = 0, e = new Array(U); B < U; B++) e[B] = W[B];
                 return e;
             }
-            Object.defineProperty(U, '__esModule', { value: !0 }),
+            (Object.defineProperty(U, '__esModule', { value: !0 }),
                 (U.loadDefaultSimplifiedChineseParser =
                     U.loadDefaultJapaneseParser =
                     U.Parser =
                     U.DEFAULT_THRES =
-                        void 0);
+                        void 0));
             const t = B(826),
                 r = B(394),
                 o = B(444),
@@ -2275,7 +2275,7 @@
                                 .map((W) => this.model.get(W) || 0)
                                 .reduce((W, U) => W + U),
                             s = n > 0 ? 'B' : 'O';
-                        n > B && o.push(''), (o[o.length - 1] += W[U]), (e = t), (t = r), (r = s);
+                        (n > B && o.push(''), (o[o.length - 1] += W[U]), (e = t), (t = r), (r = s));
                     }
                     return o;
                 }
@@ -2290,18 +2290,18 @@
                     const e = (0, n.parseFromString)(W);
                     if (i.hasChildTextNode(e.body)) {
                         const W = e.createElement('span');
-                        W.append(...e.body.childNodes), e.body.append(W);
+                        (W.append(...e.body.childNodes), e.body.append(W));
                     }
-                    return this.applyElement(e.body.childNodes[0], B), e.body.innerHTML;
+                    return (this.applyElement(e.body.childNodes[0], B), e.body.innerHTML);
                 }
             }
-            (U.Parser = i),
+            ((U.Parser = i),
                 (U.loadDefaultJapaneseParser = () => new i(new Map(Object.entries(r.model)))),
-                (U.loadDefaultSimplifiedChineseParser = () => new i(new Map(Object.entries(o.model))));
+                (U.loadDefaultSimplifiedChineseParser = () => new i(new Map(Object.entries(o.model)))));
         },
         39: (W, U) => {
             'use strict';
-            Object.defineProperty(U, '__esModule', { value: !0 }),
+            (Object.defineProperty(U, '__esModule', { value: !0 }),
                 (U.INVALID = U.SEP = U.bisectRight = void 0),
                 (U.bisectRight = (W, B) => {
                     const e = Math.floor(W.length / 2);
@@ -2316,7 +2316,7 @@
                             : e + (0, U.bisectRight)(W.slice(e), B);
                 }),
                 (U.SEP = '▁'),
-                (U.INVALID = '▔');
+                (U.INVALID = '▔'));
         },
         483: (W, U) => {
             var B;

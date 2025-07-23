@@ -4,10 +4,10 @@
         n = {
             9981: (e, n, t) => {
                 var i = {};
-                t.r(i),
-                    t.d(i, { mouse: () => P, off: () => y, on: () => b, onResize: () => h, onScaleUpdated: () => E });
+                (t.r(i),
+                    t.d(i, { mouse: () => P, off: () => y, on: () => b, onResize: () => h, onScaleUpdated: () => E }));
                 var r = {};
-                t.r(r),
+                (t.r(r),
                     t.d(r, {
                         events: () => i,
                         getMouseGlobalPosition: () => O,
@@ -15,11 +15,11 @@
                         graphicsQuality: () => z,
                         playSound: () => x,
                         setRTPC: () => T,
-                    });
+                    }));
                 var o = {};
-                t.r(o), t.d(o, { getBgUrl: () => F, getTextureUrl: () => N });
+                (t.r(o), t.d(o, { getBgUrl: () => F, getTextureUrl: () => N }));
                 var a = {};
-                t.r(a),
+                (t.r(a),
                     t.d(a, {
                         addModelObserver: () => $,
                         addPreloadTexture: () => D,
@@ -47,7 +47,7 @@
                         setInputPaddingsRem: () => H,
                         setSidePaddingsRem: () => U,
                         whenTutorialReady: () => le,
-                    });
+                    }));
                 var s = t(7363),
                     l = t.n(s),
                     c = t(1533),
@@ -124,10 +124,10 @@
                         );
                         return Object.assign({}, r, {
                             disable() {
-                                (e.enabled = !1), i();
+                                ((e.enabled = !1), i());
                             },
                             enable() {
-                                (e.enabled = !0), i();
+                                ((e.enabled = !0), i());
                             },
                             enableOutside() {
                                 e.enabled && w(!0);
@@ -355,15 +355,15 @@
                                     (0, s.useMemo)(
                                         () => ({
                                             run: (n) => {
-                                                window.cancelAnimationFrame(e.current),
+                                                (window.cancelAnimationFrame(e.current),
                                                     (e.current = window.requestAnimationFrame(() => {
                                                         e.current = window.requestAnimationFrame(() => {
-                                                            n(), (e.current = 0);
+                                                            (n(), (e.current = 0));
                                                         });
-                                                    }));
+                                                    })));
                                             },
                                             clear: () => {
-                                                window.cancelAnimationFrame(e.current), (e.current = 0);
+                                                (window.cancelAnimationFrame(e.current), (e.current = 0));
                                             },
                                             get isRunning() {
                                                 return 0 !== e.current;
@@ -398,7 +398,7 @@
                                 ve({}, a, {
                                     className: p()(de.base, de[`base__theme-${o}`], i),
                                     ref: function (e) {
-                                        (d.current = e), 'function' == typeof n ? n(e) : n && (n.current = e);
+                                        ((d.current = e), 'function' == typeof n ? n(e) : n && (n.current = e));
                                     },
                                 }),
                                 l().createElement('div', { className: de.decorator }, t),
@@ -451,9 +451,9 @@
         var r = t[e];
         if (void 0 !== r) return r.exports;
         var o = (t[e] = { exports: {} });
-        return n[e](o, o.exports, i), o.exports;
+        return (n[e](o, o.exports, i), o.exports);
     }
-    (i.m = n),
+    ((i.m = n),
         (e = []),
         (i.O = (n, t, r, o) => {
             if (!t) {
@@ -477,7 +477,7 @@
         }),
         (i.n = (e) => {
             var n = e && e.__esModule ? () => e.default : () => e;
-            return i.d(n, { a: n }), n;
+            return (i.d(n, { a: n }), n);
         }),
         (i.d = (e, n) => {
             for (var t in n) i.o(n, t) && !i.o(e, t) && Object.defineProperty(e, t, { enumerable: !0, get: n[t] });
@@ -492,10 +492,10 @@
         })()),
         (i.o = (e, n) => Object.prototype.hasOwnProperty.call(e, n)),
         (i.r = (e) => {
-            'undefined' != typeof Symbol &&
+            ('undefined' != typeof Symbol &&
                 Symbol.toStringTag &&
                 Object.defineProperty(e, Symbol.toStringTag, { value: 'Module' }),
-                Object.defineProperty(e, '__esModule', { value: !0 });
+                Object.defineProperty(e, '__esModule', { value: !0 }));
         }),
         (i.j = 21),
         (() => {
@@ -510,12 +510,12 @@
                         for (r in s) i.o(s, r) && (i.m[r] = s[r]);
                         if (l) var d = l(i);
                     }
-                    for (n && n(t); c < a.length; c++) (o = a[c]), i.o(e, o) && e[o] && e[o][0](), (e[o] = 0);
+                    for (n && n(t); c < a.length; c++) ((o = a[c]), i.o(e, o) && e[o] && e[o][0](), (e[o] = 0));
                     return i.O(d);
                 },
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
-            t.forEach(n.bind(null, 0)), (t.push = n.bind(null, t.push.bind(t)));
-        })();
+            (t.forEach(n.bind(null, 0)), (t.push = n.bind(null, t.push.bind(t))));
+        })());
     var r = i.O(void 0, [503], () => i(9981));
     r = i.O(r);
 })();
