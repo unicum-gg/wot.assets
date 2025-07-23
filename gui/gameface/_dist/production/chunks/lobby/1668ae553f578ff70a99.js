@@ -34,7 +34,7 @@
                 E = 'Counter_totalValue_2a';
             let S;
             !(function (e) {
-                (e.Challenge = 'challenge'), (e.Quest = 'quest'), (e.Advanced = 'advanced');
+                ((e.Challenge = 'challenge'), (e.Quest = 'quest'), (e.Advanced = 'advanced'));
             })(S || (S = {}));
             const w = R.strings.ny.newYear.challenge.logo,
                 C = ({ currentValue: e, totalValue: t, type: r }) =>
@@ -161,7 +161,7 @@
             };
             let E;
             !(function (e) {
-                (e.Right = 'right'), (e.Left = 'left'), (e.None = 'none');
+                ((e.Right = 'right'), (e.Left = 'left'), (e.None = 'none'));
             })(E || (E = {}));
             const S = ({ content: e, startPosition: t = 0, onRest: r = g.Bi }) => {
                 const a = (0, p.GS)().mediaSize,
@@ -183,7 +183,7 @@
                     x = (0, _.useState)(!0),
                     O = x[0],
                     H = x[1];
-                !(function (e, t) {
+                (!(function (e, t) {
                     const r = e.contentRef,
                         a = e.wrapperRef,
                         o = e.scrollPosition,
@@ -205,7 +205,7 @@
                                     (t.style.cursor = a <= r ? 'auto' : 'dragging' === p.type ? 'move' : 'grab');
                             });
                         });
-                    (0, _.useEffect)(() => {
+                    ((0, _.useEffect)(() => {
                         b();
                     }, [p.type, b]),
                         (0, s.a)(() => {
@@ -235,7 +235,7 @@
                                     f({ type: 'scrollingToEnd' });
                                 });
                             return () => {
-                                e(), c();
+                                (e(), c());
                             };
                         }, [d.scrollPosition, n, r, p, o, a, t]),
                         (0, _.useEffect)(() => {
@@ -243,7 +243,7 @@
                             const e = () => {
                                 f(u);
                             };
-                            return d.scrollPosition.idle && e(), m.on('rest', e), () => m.off('rest', e);
+                            return (d.scrollPosition.idle && e(), m.on('rest', e), () => m.off('rest', e));
                         }, [d.scrollPosition, p.type, m]),
                         (0, _.useEffect)(() => {
                             const e = r.current;
@@ -255,14 +255,14 @@
                                     previousScrollPosition: d.scrollPosition.get(),
                                 });
                             };
-                            return e.addEventListener('mousedown', t), () => e.removeEventListener('mousedown', t);
-                        }, [d.scrollPosition, r]);
+                            return (e.addEventListener('mousedown', t), () => e.removeEventListener('mousedown', t));
+                        }, [d.scrollPosition, r]));
                 })(D),
                     (0, v.b)(() =>
                         (0, m.v)(() => {
-                            V(), D.applyScroll(t * N);
+                            (V(), D.applyScroll(t * N));
                         }),
-                    );
+                    ));
                 const V = () => {
                         const e = D.contentRef.current;
                         e && T(e.scrollWidth / N > y);
@@ -286,15 +286,15 @@
                     }),
                     j = (0, c.z)(() => {
                         (0, m.v)(() => {
-                            G(), V();
+                            (G(), V());
                         });
                     }),
                     M = (0, c.z)(() => {
                         const e = B.goal;
-                        null == r || r(e), H(!0), J();
+                        (null == r || r(e), H(!0), J());
                     }),
                     X = (0, c.z)(() => {
-                        (0, f.G)(R.sounds.hangar_newyear_celeb_screen_card_more_show()), H(!1), V();
+                        ((0, f.G)(R.sounds.hangar_newyear_celeb_screen_card_more_show()), H(!1), V());
                     });
                 return (
                     (0, _.useEffect)(
@@ -304,10 +304,10 @@
                             D.events.on('recalculateContent', J),
                             window.addEventListener('resize', j),
                             () => {
-                                D.events.off('rest', M),
+                                (D.events.off('rest', M),
                                     D.events.off('start', X),
                                     D.events.off('recalculateContent', J),
-                                    window.removeEventListener('resize', j);
+                                    window.removeEventListener('resize', j));
                             }
                         ),
                         [X, D.events, j, M, J],
@@ -325,14 +325,14 @@
                                 d().createElement('div', {
                                     className: o()(h.arrow, h.arrow__left, z === E.Left && h.arrow__disabled),
                                     onClick: () => {
-                                        (0, f.G)(R.sounds.gui_hangar_hover()), D.applyStepTo(n.Direction.Next);
+                                        ((0, f.G)(R.sounds.gui_hangar_hover()), D.applyStepTo(n.Direction.Next));
                                     },
                                     onMouseEnter: f.$.playHighlight,
                                 }),
                                 d().createElement('div', {
                                     className: o()(h.arrow, h.arrow__right, z === E.Right && h.arrow__disabled),
                                     onClick: () => {
-                                        (0, f.G)(R.sounds.gui_hangar_hover()), D.applyStepTo(n.Direction.Prev);
+                                        ((0, f.G)(R.sounds.gui_hangar_hover()), D.applyStepTo(n.Direction.Prev));
                                     },
                                     onMouseEnter: f.$.playHighlight,
                                 }),
@@ -449,12 +449,12 @@
                 );
             }
             let d, u;
-            !(function (e) {
-                (e.Default = 'default'), (e.Empty = 'empty'), (e.Disabled = 'disabled');
+            (!(function (e) {
+                ((e.Default = 'default'), (e.Empty = 'empty'), (e.Disabled = 'disabled'));
             })(d || (d = {})),
                 (function (e) {
-                    (e.Top = 'top'), (e.Left = 'left');
-                })(u || (u = {}));
+                    ((e.Top = 'top'), (e.Left = 'left'));
+                })(u || (u = {})));
             const m = (e) => {
                 let t = e.state,
                     r = void 0 === t ? d.Default : t,
@@ -526,7 +526,7 @@
             };
             let s;
             !(function (e) {
-                (e.Check = 'check'), (e.Lock = 'lock');
+                ((e.Check = 'check'), (e.Lock = 'lock'));
             })(s || (s = {}));
             const i = ({ iconType: e, hasIconAnimation: t, className: r }) =>
                 l().createElement(

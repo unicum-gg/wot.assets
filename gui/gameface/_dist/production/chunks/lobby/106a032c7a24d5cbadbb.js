@@ -2,7 +2,7 @@
     [5041],
     {
         3368: () => {
-            !(function () {
+            (!(function () {
                 let e,
                     t,
                     a,
@@ -11,25 +11,25 @@
                     s,
                     l,
                     o = -1;
-                document.addEventListener('mousedown', (a) => {
-                    document.getSelection().empty(),
+                (document.addEventListener('mousedown', (a) => {
+                    (document.getSelection().empty(),
                         a.target.select &&
                             -1 === o &&
-                            ((e = a.target), (t = e.getBoundingClientRect()), e.setSelectionRange(0, 0));
+                            ((e = a.target), (t = e.getBoundingClientRect()), e.setSelectionRange(0, 0)));
                 }),
                     document.addEventListener('mousemove', (a) => {
                         if ((-1 === o && a.target.select && a.target === e && (o = e.selectionStart), o > -1)) {
                             const n = Math.min(Math.max(a.x, t.left), t.right),
                                 r = Math.min(Math.max(a.y, t.top), t.bottom),
                                 s = document.createEvent('MouseEvent');
-                            s.initMouseEvent('mousedown', !0, !0, null, 1, n, r, n, r, !1, !1, !1, !1, 0, null),
-                                e.dispatchEvent(s);
+                            (s.initMouseEvent('mousedown', !0, !0, null, 1, n, r, n, r, !1, !1, !1, !1, 0, null),
+                                e.dispatchEvent(s));
                             const l = e.selectionEnd;
                             l > o ? e.setSelectionRange(o, l, 'forward') : e.setSelectionRange(l, o, 'backward');
                         }
                     }),
                     document.addEventListener('mouseup', () => {
-                        (e = null), (o = -1);
+                        ((e = null), (o = -1));
                     }),
                     document.addEventListener('dblclick', (e) => {
                         e.target.select &&
@@ -40,13 +40,13 @@
                             (s = -1 !== n.lastIndexOf(' ', r) ? n.lastIndexOf(' ', r) + 1 : 0),
                             (l = -1 !== n.indexOf(' ', r) ? n.indexOf(' ', r) : n.length),
                             a.setSelectionRange(s, l, 'forward'));
-                    });
+                    }));
             })(),
                 (function () {
                     let e = null;
-                    document.addEventListener('mousedown', (t) => {
-                        document.getSelection().empty(),
-                            0 !== t.button || t.target.select || e || (e = document.caretPositionFromPoint(t.x, t.y));
+                    (document.addEventListener('mousedown', (t) => {
+                        (document.getSelection().empty(),
+                            0 !== t.button || t.target.select || e || (e = document.caretPositionFromPoint(t.x, t.y)));
                     }),
                         document.addEventListener('mousemove', (t) => {
                             if (0 === t.button && !t.target.select && e) {
@@ -59,12 +59,12 @@
                         }),
                         document.addEventListener('mouseup', () => {
                             e = null;
-                        });
-                })();
+                        }));
+                })());
         },
         2307: (e, t, a) => {
             'use strict';
-            a.r(t), a.d(t, { default: () => En });
+            (a.r(t), a.d(t, { default: () => En }));
             var n = a(6179),
                 r = a.n(n),
                 s = a(6483),
@@ -152,7 +152,7 @@
                 O = a(8764);
             let P;
             !(function (e) {
-                (e[(e.Pending = 1)] = 'Pending'), (e[(e.Loaded = 2)] = 'Loaded'), (e[(e.Failure = 3)] = 'Failure');
+                ((e[(e.Pending = 1)] = 'Pending'), (e[(e.Loaded = 2)] = 'Loaded'), (e[(e.Failure = 3)] = 'Failure'));
             })(P || (P = {}));
             var D = a(3215),
                 L = a(9480),
@@ -164,15 +164,18 @@
             Symbol('uniqSeconds');
             const j = (e) => e;
             let $, U, G;
-            !(function (e) {
-                (e.Default = 'default'), (e.Search = 'search');
+            (!(function (e) {
+                ((e.Default = 'default'), (e.Search = 'search'));
             })($ || ($ = {})),
                 (function (e) {
-                    (e.None = 'none'), (e.Search = 'search'), (e.Friends = 'friends'), (e.BestFriends = 'bestFriends');
+                    ((e.None = 'none'),
+                        (e.Search = 'search'),
+                        (e.Friends = 'friends'),
+                        (e.BestFriends = 'bestFriends'));
                 })(U || (U = {})),
                 (function (e) {
-                    (e.Up = 'up'), (e.Down = 'down'), (e.None = 'none');
-                })(G || (G = {}));
+                    ((e.Up = 'up'), (e.Down = 'down'), (e.None = 'none'));
+                })(G || (G = {})));
             var z = a(1612);
             var q = a(4827);
             const Z = ['hangarName'];
@@ -203,7 +206,7 @@
                         t.subscribe(
                             (0, T.aD)(() => {
                                 const e = a('friends');
-                                n.friends.set(K(e)), n.totalFriendsCount.set(e.length);
+                                (n.friends.set(K(e)), n.totalFriendsCount.set(e.length));
                             }),
                             'friends',
                         );
@@ -274,7 +277,7 @@
                                 setSearchFocus: (t) => e.searchFocused.set(t),
                                 resetSearch: () => e.search.set(''),
                                 updateHeaderState: (t, a) => {
-                                    e.headerState.set(t), e.scrollDirection.set(a);
+                                    (e.headerState.set(t), e.scrollDirection.set(a));
                                 },
                                 closeBanner: () => {
                                     t.setBannerDisplayed(!1);
@@ -419,7 +422,7 @@
                                 A.$.playHighlight();
                             },
                             onClick: () => {
-                                A.$.playClick(), null == t || t();
+                                (A.$.playClick(), null == t || t());
                             },
                         }),
                     ),
@@ -469,7 +472,7 @@
                 Ue = R.strings.ny.friends.card.empty;
             let Ge;
             !(function (e) {
-                (e.Cooldown = 'cooldown'), (e.AvailableAddition = 'availableAddition'), (e.Promo = 'promo');
+                ((e.Cooldown = 'cooldown'), (e.AvailableAddition = 'availableAddition'), (e.Promo = 'promo'));
             })(Ge || (Ge = {}));
             const ze = (0, y.Pi)(({ state: e, id: t, className: a }) => {
                 const n = Q().model;
@@ -514,7 +517,7 @@
                                         ),
                                     );
                                 default:
-                                    return console.error('Unknown EmptyCardState ', Ge), null;
+                                    return (console.error('Unknown EmptyCardState ', Ge), null);
                             }
                         })(),
                     ),
@@ -536,7 +539,7 @@
             };
             let Qe;
             !(function (e) {
-                (e.Enabled = 'enabled'), (e.Disabled = 'disabled');
+                ((e.Enabled = 'enabled'), (e.Disabled = 'disabled'));
             })(Qe || (Qe = {}));
             const Ke = (e, t, a, n, r) =>
                     e === Qe.Enabled
@@ -905,7 +908,7 @@
             };
             let va;
             !(function (e) {
-                (e.bestFriend = 'bestFriend'), (e.friend = 'friend');
+                ((e.bestFriend = 'bestFriend'), (e.friend = 'friend'));
             })(va || (va = {}));
             const ga = R.strings.ny.friends.tooltips.commonInfo,
                 pa = (e) => {
@@ -915,7 +918,7 @@
                         case va.bestFriend:
                             return ga.bestFriends();
                         default:
-                            return console.error('Unknown infoType for tooltip text', e), '';
+                            return (console.error('Unknown infoType for tooltip text', e), '');
                     }
                 },
                 ba = ({ infoType: e }) =>
@@ -1004,7 +1007,7 @@
             }
             var xa;
             !(function (e) {
-                (e.Search = 'search'), (e.Clear = 'clear');
+                ((e.Search = 'search'), (e.Clear = 'clear'));
             })(xa || (xa = {}));
             const Ba = (e) => {
                 let t = e.className,
@@ -1059,7 +1062,7 @@
                         Ia({}, f, {
                             value: d,
                             onChange: (e) => {
-                                h(e.target.value), null == m || m(e);
+                                (h(e.target.value), null == m || m(e));
                             },
                             type: 'text',
                             ref: E,
@@ -1067,10 +1070,10 @@
                             onFocus: (e) => {
                                 p(!0);
                                 const t = e.target.value.length;
-                                e.target.setSelectionRange(t, t), null == _ || _(e);
+                                (e.target.setSelectionRange(t, t), null == _ || _(e));
                             },
                             onBlur: (e) => {
-                                p(!1), null == u || u(e);
+                                (p(!1), null == u || u(e));
                             },
                         }),
                     ),
@@ -1123,17 +1126,17 @@
                             },
                             autoFocus: t.searchFocused.get(),
                             onChange: (e) => {
-                                !1 === o &&
+                                (!1 === o &&
                                     0 === s.length &&
                                     1 === e.target.value.length &&
                                     (a.setBannerDisplayed(!0), i(!0)),
-                                    a.updateSearch(e.target.value);
+                                    a.updateSearch(e.target.value));
                             },
                             onFocus: () => {
                                 a.setSearchFocus(!0);
                             },
                             onBlur: () => {
-                                a.setSearchFocus(!1), i(!1);
+                                (a.setSearchFocus(!1), i(!1));
                             },
                         }),
                     );
@@ -1307,14 +1310,14 @@
                     i = (function () {
                         const e = (0, n.useRef)(h.ZT),
                             t = () => {
-                                e.current(), (e.current = h.ZT);
+                                (e.current(), (e.current = h.ZT));
                             };
                         return (
                             (0, da.k)(t),
                             (0, n.useMemo)(
                                 () => ({
                                     run: (a) => {
-                                        t(), (e.current = (0, Kt.v)(a));
+                                        (t(), (e.current = (0, Kt.v)(a)));
                                     },
                                     clear: t,
                                     get isRunning() {
@@ -1351,7 +1354,7 @@
                         function m() {
                             const t = e.animationScroll.scrollPosition.get(),
                                 a = o.current - t;
-                            0 !== a && d(a < 0 ? G.Down : G.Up), (o.current = t);
+                            (0 !== a && d(a < 0 ? G.Down : G.Up), (o.current = t));
                         }
                         function u() {
                             d(G.Up);
@@ -1366,7 +1369,7 @@
                             e.events.on('change', m),
                             e.events.on('recalculateContent', u),
                             () => {
-                                _(), e.events.off('change', m), e.events.off('recalculateContent', u);
+                                (_(), e.events.off('change', m), e.events.off('recalculateContent', u));
                             }
                         );
                     }),
@@ -1533,10 +1536,10 @@
         4827: (e, t, a) => {
             'use strict';
             let n;
-            a.d(t, { B: () => n }),
+            (a.d(t, { B: () => n }),
                 (function (e) {
-                    (e.China = 'CN'), (e.Ru = 'RU');
-                })(n || (n = {}));
+                    ((e.China = 'CN'), (e.Ru = 'RU'));
+                })(n || (n = {})));
         },
         5032: (e, t, a) => {
             'use strict';
@@ -1585,12 +1588,12 @@
                 );
             }
             let m, u;
-            !(function (e) {
-                (e.Default = 'default'), (e.Empty = 'empty'), (e.Disabled = 'disabled');
+            (!(function (e) {
+                ((e.Default = 'default'), (e.Empty = 'empty'), (e.Disabled = 'disabled'));
             })(m || (m = {})),
                 (function (e) {
-                    (e.Top = 'top'), (e.Left = 'left');
-                })(u || (u = {}));
+                    ((e.Top = 'top'), (e.Left = 'left'));
+                })(u || (u = {})));
             const _ = (e) => {
                 let t = e.state,
                     a = void 0 === t ? m.Default : t,

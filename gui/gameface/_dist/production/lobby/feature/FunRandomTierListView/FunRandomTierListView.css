@@ -433,7 +433,7 @@
 
 .App_scroll_47 {
     margin-right: 10rem;
-    padding: 10rem 0;
+    padding: 10rem 0 45rem;
 }
 
 @keyframes App_show_01 {
@@ -555,6 +555,11 @@
 .Reward_base__s600x450_f8 .Reward_overlay_68 {
     width: 670rem;
     height: 575rem;
+}
+
+.Reward_base__normalize_a6 .Reward_overlay_68 {
+    width: 100%;
+    height: 100%;
 }
 
 .Reward_highlight_36 {

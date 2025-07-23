@@ -1796,7 +1796,8 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     right: 0;
     bottom: 0;
     left: 0;
-    background: linear-gradient(0deg, rgba(33, 33, 33, 0.8), rgba(33, 33, 33, 0.8)),
+    background:
+        linear-gradient(0deg, rgba(33, 33, 33, 0.8), rgba(33, 33, 33, 0.8)),
         linear-gradient(0deg, rgba(255, 224, 171, 0.07), rgba(255, 224, 171, 0.07));
     opacity: 0;
     transition: opacity 0.2s ease;
@@ -4117,7 +4118,8 @@ body {
 }
 
 .Container_base__hangar_ab:hover {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
         linear-gradient(rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15));
 }
 

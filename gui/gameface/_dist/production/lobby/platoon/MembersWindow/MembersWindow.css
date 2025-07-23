@@ -225,12 +225,14 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .Button_base__close_b1:hover {
-    background-image: url('R.images.gui.maps.icons.windows.controls.Window_CloseButton_OverBitmap'),
+    background-image:
+        url('R.images.gui.maps.icons.windows.controls.Window_CloseButton_OverBitmap'),
         url('R.images.gui.maps.icons.windows.controls.Window_CloseButton_UpBitmap');
 }
 
 .Button_base__close_b1:active {
-    background-image: url('R.images.gui.maps.icons.windows.controls.Window_CloseButton_PressBitmap'),
+    background-image:
+        url('R.images.gui.maps.icons.windows.controls.Window_CloseButton_PressBitmap'),
         url('R.images.gui.maps.icons.windows.controls.Window_CloseButton_UpBitmap');
 }
 
@@ -240,12 +242,14 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .Button_base__minimize_f7:hover {
-    background-image: url('R.images.gui.maps.icons.windows.controls.minimize_over'),
+    background-image:
+        url('R.images.gui.maps.icons.windows.controls.minimize_over'),
         url('R.images.gui.maps.icons.windows.controls.minimize_up');
 }
 
 .Button_base__minimize_f7:active {
-    background-image: url('R.images.gui.maps.icons.windows.controls.minimize_press'),
+    background-image:
+        url('R.images.gui.maps.icons.windows.controls.minimize_press'),
         url('R.images.gui.maps.icons.windows.controls.minimize_up');
 }
 
@@ -1191,8 +1195,16 @@ so we just add specificity to css classes here
     align-items: flex-start;
 }
 
-.Header_leavePlatoonButton_e4 {
+.Header_topLeftButtonsWrapper_75 {
+    display: flex;
+}
+
+.Header_base__wide_be .Header_topLeftButtonsWrapper_75 {
     width: 100%;
+}
+
+.Header_base__wide_be .Header_leavePlatoonButton_e4 {
+    flex: 1;
 }
 
 .Header_dropdowns_f3 {

@@ -851,7 +851,8 @@
     background: radial-gradient(55% 60% at 50% -5%, rgba(51, 145, 255, 0.7), transparent) no-repeat center / 130% 210%;
 }
 .CardDecorator_glow__left_14 {
-    background: radial-gradient(
+    background:
+        radial-gradient(
             34% 70% at 28% 50%,
             rgba(113, 178, 255, 0.8) 0%,
             rgba(113, 178, 255, 0.28) 47%,
@@ -861,7 +862,8 @@
         radial-gradient(109% 73% at 35% 50%, rgba(51, 145, 255, 0.5), transparent);
 }
 .mediaMedium .CardDecorator_glow__left_14 {
-    background: radial-gradient(
+    background:
+        radial-gradient(
             34% 70% at 34% 50%,
             rgba(113, 178, 255, 0.8) 0%,
             rgba(113, 178, 255, 0.28) 47%,

@@ -3,6 +3,10 @@ body {
     overflow: hidden;
 }
 
+html {
+    overflow: hidden;
+}
+
 .DateText_endDate_53 {
     color: #ffdd99;
     font-size: 16rem;
@@ -22,11 +26,11 @@ body {
 
 .DateText_endDate_53.DateText_base__thinSmall_01 {
     font-size: 16rem;
-    bottom: 8rem;
+    bottom: 7rem;
 }
 
 .DateText_endDate_53.DateText_base__thinExtraSmall_c8 {
-    font-size: 12rem;
+    font-size: 14rem;
     bottom: 12rem;
 }
 
@@ -38,50 +42,24 @@ body {
 }
 
 .DateText_timerIcon_e5 {
-    width: 32rem;
-    height: 32rem;
-    margin: 0 -4rem -8rem -1rem;
-    background: url('R.images.fun_random.gui.maps.icons.feature.entry_point.time_icon') no-repeat center / contain;
+    width: 24rem;
+    height: 24rem;
+    margin: 0 0 -3rem;
+    background: url('R.images.gui.maps.icons.common.components.banner.clock') no-repeat center / contain;
+    z-index: 1;
 }
 
 .DateText_base__thinExtraSmall_c8 .DateText_timerIcon_e5 {
-    margin-bottom: -9rem;
+    margin: 2rem 0 -4rem;
 }
 
-.DateText_base__disabled_3b .DateText_timerIcon_e5 {
-    background: url('R.images.fun_random.gui.maps.icons.feature.entry_point.icon_lock') no-repeat center / contain;
+.DateText_timerIcon__disabled_d1 {
+    margin: 0 0 -4rem;
+    background-image: url('R.images.gui.maps.icons.common.components.banner.lock');
 }
 
-.DateText_base__thinExtraSmall_c8.DateText_base__disabled_3b .DateText_timerIcon_e5 {
-    margin-bottom: -9rem;
-}
-
-.SubTitle_subtitle_b2 {
-    color: #e9e2bf;
-    font-size: 16rem;
-    font-weight: 400;
-    line-height: 1.25;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
-    width: 100%;
-    text-align: center;
-    position: absolute;
-    bottom: 52rem;
-}
-
-.SubTitle_subtitle_b2.SubTitle_base__wideSmall_b6 {
-    bottom: 34rem;
-}
-
-.SubTitle_subtitle_b2.SubTitle_base__thinSmall_3c {
-    bottom: 37rem;
-}
-
-.SubTitle_subtitle_b2.SubTitle_base__thinExtraSmall_c4 {
-    font-size: 14rem;
-    bottom: 38rem;
+.DateText_base__thinExtraSmall_c8 .DateText_timerIcon__disabled_d1 {
+    margin: -1rem 0 -5rem;
 }
 
 @keyframes App_zoom-in_ad {
@@ -183,6 +161,19 @@ body {
     box-shadow: inset 0 0 2rem rgba(255, 255, 255, 1);
 }
 
+.App_overlay_f8 {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 1;
+    position: absolute;
+    transition: opacity 0.5s cubic-bezier(0.07, 0.82, 0.17, 1);
+}
+
+.App_base_15:hover .App_overlay_f8 {
+    opacity: 0.8;
+}
+
 .App_header_b9 {
     color: #ffffff;
     font-size: 24rem;
@@ -196,20 +187,25 @@ body {
     padding: 2rem;
     text-align: center;
     position: absolute;
-    bottom: 62rem;
+    bottom: 63rem;
 }
 
 .App_base__wideSmall_1d .App_header_b9 {
     bottom: 44rem;
 }
 
-.App_base__thinSmall_39 .App_header_b9,
+.App_base__thinSmall_39 .App_header_b9 {
+    font-size: 22rem;
+    bottom: 44rem;
+}
+
 .App_base__thinExtraSmall_5c .App_header_b9 {
-    font-size: 18rem;
-    bottom: 47rem;
+    font-size: 15rem;
+    bottom: 48rem;
 }
 
 .App_base__disabled_a2 .App_header_b9 {
+    opacity: 0.7;
     bottom: 75rem;
 }
 
@@ -217,9 +213,44 @@ body {
     bottom: 54rem;
 }
 
-.App_base__thinSmall_39.App_base__disabled_a2 .App_header_b9,
+.App_base__thinSmall_39.App_base__disabled_a2 .App_header_b9 {
+    bottom: 54rem;
+}
+
 .App_base__thinExtraSmall_5c.App_base__disabled_a2 .App_header_b9 {
-    bottom: 57rem;
+    bottom: 55rem;
+}
+
+.App_subtitle_6a {
+    color: #e9e2bf;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    bottom: 52rem;
+}
+
+.App_base__disabled_a2 .App_subtitle_6a {
+    opacity: 0.56;
+}
+
+.App_base__wideSmall_1d .App_subtitle_6a {
+    bottom: 34rem;
+}
+
+.App_base__thinSmall_39 .App_subtitle_6a {
+    bottom: 36rem;
+}
+
+.App_base__thinExtraSmall_5c .App_subtitle_6a {
+    font-size: 12rem;
+    bottom: 42rem;
 }
 
 .App_hoverEffect_d1 {
@@ -243,6 +274,18 @@ body {
     opacity: 0.3;
 }
 
-.App_hoverEffect_d1.App_disabled_33 {
-    filter: grayscale(100%) brightness(1);
+.App_alertIcon_98 {
+    width: 24rem;
+    height: 24rem;
+    position: absolute;
+    top: 5rem;
+    left: 6rem;
+}
+
+.App_alertIcon__mediumRisk_74 {
+    background: url('R.images.gui.maps.icons.library.alertBigIcon') no-repeat left / contain;
+}
+
+.App_alertIcon__highRisk_16 {
+    background: url('R.images.gui.maps.icons.library.CancelBigIcon') no-repeat left / contain;
 }

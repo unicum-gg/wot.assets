@@ -40,17 +40,20 @@
                     content: 'CButton_content_cc',
                 };
                 let l, u;
-                !(function (e) {
-                    (e.main = 'main'),
+                (!(function (e) {
+                    ((e.main = 'main'),
                         (e.primary = 'primary'),
                         (e.primaryGreen = 'primaryGreen'),
                         (e.primaryRed = 'primaryRed'),
                         (e.secondary = 'secondary'),
-                        (e.ghost = 'ghost');
+                        (e.ghost = 'ghost'));
                 })(l || (l = {})),
                     (function (e) {
-                        (e.extraSmall = 'extraSmall'), (e.small = 'small'), (e.medium = 'medium'), (e.large = 'large');
-                    })(u || (u = {}));
+                        ((e.extraSmall = 'extraSmall'),
+                            (e.small = 'small'),
+                            (e.medium = 'medium'),
+                            (e.large = 'large'));
+                    })(u || (u = {})));
                 const c = ({
                     children: e,
                     size: t,
@@ -159,9 +162,9 @@
         var s = a[e];
         if (void 0 !== s) return s.exports;
         var r = (a[e] = { exports: {} });
-        return t[e](r, r.exports, n), r.exports;
+        return (t[e](r, r.exports, n), r.exports);
     }
-    (n.m = t),
+    ((n.m = t),
         (e = []),
         (n.O = (t, a, s, r) => {
             if (!a) {
@@ -185,7 +188,7 @@
         }),
         (n.n = (e) => {
             var t = e && e.__esModule ? () => e.default : () => e;
-            return n.d(t, { a: t }), t;
+            return (n.d(t, { a: t }), t);
         }),
         (n.d = (e, t) => {
             for (var a in t) n.o(t, a) && !n.o(e, a) && Object.defineProperty(e, a, { enumerable: !0, get: t[a] });
@@ -204,12 +207,12 @@
                         for (s in _) n.o(_, s) && (n.m[s] = _[s]);
                         if (i) var u = i(n);
                     }
-                    for (t && t(a); l < o.length; l++) (r = o[l]), n.o(e, r) && e[r] && e[r][0](), (e[r] = 0);
+                    for (t && t(a); l < o.length; l++) ((r = o[l]), n.o(e, r) && e[r] && e[r][0](), (e[r] = 0));
                     return n.O(u);
                 },
                 a = (self.webpackChunkgameface = self.webpackChunkgameface || []);
-            a.forEach(t.bind(null, 0)), (a.push = t.bind(null, a.push.bind(a)));
-        })();
+            (a.forEach(t.bind(null, 0)), (a.push = t.bind(null, a.push.bind(a))));
+        })());
     var s = n.O(void 0, [52], () => n(984));
     s = n.O(s);
 })();

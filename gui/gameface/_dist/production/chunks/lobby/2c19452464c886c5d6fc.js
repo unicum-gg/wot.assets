@@ -112,18 +112,18 @@
         },
         2106: (e, t, a) => {
             let n, o;
-            a.d(t, { L: () => n, q: () => o }),
+            (a.d(t, { L: () => n, q: () => o }),
                 (function (e) {
-                    (e.main = 'main'),
+                    ((e.main = 'main'),
                         (e.primary = 'primary'),
                         (e.primaryGreen = 'primaryGreen'),
                         (e.primaryRed = 'primaryRed'),
                         (e.secondary = 'secondary'),
-                        (e.ghost = 'ghost');
+                        (e.ghost = 'ghost'));
                 })(n || (n = {})),
                 (function (e) {
-                    (e.extraSmall = 'extraSmall'), (e.small = 'small'), (e.medium = 'medium'), (e.large = 'large');
-                })(o || (o = {}));
+                    ((e.extraSmall = 'extraSmall'), (e.small = 'small'), (e.medium = 'medium'), (e.large = 'large'));
+                })(o || (o = {})));
         },
         280: (e, t, a) => {
             a.d(t, { z: () => c });
@@ -134,7 +134,7 @@
                 l = a.n(r),
                 i = a(5287);
             const c = ({ binding: e, text: t = '', classMix: a, alignment: n = s.v2.left, formatWithBrackets: c }) => {
-                if (null === t) return console.error("FormatText was supplied with 'null'"), null;
+                if (null === t) return (console.error("FormatText was supplied with 'null'"), null);
                 const _ = c && e ? (0, s.WU)(t, e) : t;
                 return l().createElement(
                     r.Fragment,
@@ -158,7 +158,7 @@
             a(3649);
         },
         8629: (e, t, a) => {
-            a.r(t), a.d(t, { default: () => j });
+            (a.r(t), a.d(t, { default: () => j }));
             var n = a(6179),
                 o = a.n(n),
                 s = a(6483),
@@ -240,7 +240,7 @@
                             className: r()(k, n),
                             onClick: a,
                             onMouseEnter: () => {
-                                N.$.playHighlight(), null == s || s();
+                                (N.$.playHighlight(), null == s || s());
                             },
                         },
                         o().createElement('div', { className: w, style: l }),
@@ -262,7 +262,7 @@
                 P = R.strings.ny.infoPage;
             let V;
             !(function (e) {
-                (e.Resource = 'resource'), (e.Mining = 'mining'), (e.Kit = 'kit'), (e.KitCN = 'kitCN');
+                ((e.Resource = 'resource'), (e.Mining = 'mining'), (e.Kit = 'kit'), (e.KitCN = 'kitCN'));
             })(V || (V = {}));
             const q = [V.Resource, V.Mining, V.Kit],
                 U = (0, c.Pi)(() => {
@@ -349,10 +349,10 @@
         },
         4827: (e, t, a) => {
             let n;
-            a.d(t, { B: () => n }),
+            (a.d(t, { B: () => n }),
                 (function (e) {
-                    (e.China = 'CN'), (e.Ru = 'RU');
-                })(n || (n = {}));
+                    ((e.China = 'CN'), (e.Ru = 'RU'));
+                })(n || (n = {})));
         },
         406: (e, t, a) => {
             a.d(t, { B: () => c });
@@ -417,7 +417,7 @@
                             if (p && g) {
                                 const e = p[0],
                                     a = e + m++ + g[0].replaceAll(')', '') + e;
-                                (_ = _.replace(d, `%(${a})`)),
+                                ((_ = _.replace(d, `%(${a})`)),
                                     (i[a] = r[e]
                                         ? s().createElement(
                                               'span',
@@ -428,7 +428,7 @@
                                               'span',
                                               { style: ((u = e), { color: `#${u}` }) },
                                               s().createElement(n.z, { text: b, binding: t }),
-                                          ));
+                                          )));
                             }
                             c = a.exec(e);
                         }

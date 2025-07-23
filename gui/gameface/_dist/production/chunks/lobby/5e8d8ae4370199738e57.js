@@ -11,11 +11,11 @@
                 i = o(7727);
             let c;
             !(function (e) {
-                (e[(e.LEFT = 0)] = 'LEFT'),
+                ((e[(e.LEFT = 0)] = 'LEFT'),
                     (e[(e.WHEEL = 1)] = 'WHEEL'),
                     (e[(e.RIGHT = 2)] = 'RIGHT'),
                     (e[(e.FOURTH = 3)] = 'FOURTH'),
-                    (e[(e.FIFTH = 4)] = 'FIFTH');
+                    (e[(e.FIFTH = 4)] = 'FIFTH'));
             })(c || (c = {}));
             var l = o(8844);
             const u = {
@@ -210,19 +210,19 @@
         },
         8844: (e, t, o) => {
             let a, n, s;
-            o.d(t, { N3: () => s, Rh: () => n, yB: () => a }),
+            (o.d(t, { N3: () => s, Rh: () => n, yB: () => a }),
                 (function (e) {
-                    (e.small = 'small'), (e.medium = 'medium'), (e.large = 'large'), (e.extraLarge = 'extraLarge');
+                    ((e.small = 'small'), (e.medium = 'medium'), (e.large = 'large'), (e.extraLarge = 'extraLarge'));
                 })(a || (a = {})),
                 (function (e) {
-                    (e.primary = 'primary'), (e.main = 'main');
+                    ((e.primary = 'primary'), (e.main = 'main'));
                 })(n || (n = {})),
                 (function (e) {
-                    (e.Center = 'center'), (e.Bottom = 'bottom');
-                })(s || (s = {}));
+                    ((e.Center = 'center'), (e.Bottom = 'bottom'));
+                })(s || (s = {})));
         },
         5998: (e, t, o) => {
-            o.r(t), o.d(t, { default: () => $e });
+            (o.r(t), o.d(t, { default: () => $e }));
             var a = o(7363),
                 n = o.n(a),
                 s = o(8958),
@@ -466,12 +466,12 @@
                                 r
                             );
                         })(me.length - Number(!b || !I) + 2 * (w.length - 1), () => {
-                            P(!0), o();
+                            (P(!0), o());
                         }),
                         D = () => c.setShowAdditionalLayers(!0),
                         z = () => c.setShowAdditionalLayers(!1),
                         F = () => {
-                            _.hY.sound(k.boxMouseLeave), c.setIsBoxHovered(!1);
+                            (_.hY.sound(k.boxMouseLeave), c.setIsBoxHovered(!1));
                         },
                         J = (e, t = S.c1) => {
                             const o = (0, q.H)(v[e], f[e].dynOpt(t)),
@@ -543,7 +543,7 @@
                                     settings: p,
                                     wrapperSize: V,
                                     onMouseEnter: () => {
-                                        _.hY.sound(k.boxMouseEnter), c.setIsBoxHovered(!0);
+                                        (_.hY.sound(k.boxMouseEnter), c.setIsBoxHovered(!0));
                                     },
                                     onMouseLeave: F,
                                     onClick: () => {
@@ -577,7 +577,7 @@
             };
             let ye;
             !(function (e) {
-                (e.Button = 'button'), (e.Slot = 'slot');
+                ((e.Button = 'button'), (e.Slot = 'slot'));
             })(ye || (ye = {}));
             const Be = () => {},
                 ke = n().memo(
@@ -677,7 +677,7 @@
                         L = { title: u.guaranteedTitle, nextBox: u.guaranteedNextBox },
                         I = { glow: d.glowIcon, info: d.infoIcon, strongGlow: d.guaranteedGlowIcon },
                         V = () => {
-                            _.hY.sound(b.boxMouseLeave), r.setIsBoxHovered(!1);
+                            (_.hY.sound(b.boxMouseLeave), r.setIsBoxHovered(!1));
                         },
                         H = (0, g.f)(T ? Ce.ZT : e, [T], 1100);
                     (0, m.gd)(fe.n.SPACE, H);
@@ -817,14 +817,14 @@
                         ue = le[0],
                         de = le[1],
                         _e = () => {
-                            o.isBoxHovered.get() && _.hY.sound(Y.boxMouseLeave), G || K || s.close();
+                            (o.isBoxHovered.get() && _.hY.sound(Y.boxMouseLeave), G || K || s.close());
                         };
                     (0, m.I9)(_e);
                     const me = () => {
-                            ee(!0), s.setShowAdditionalLayers(!1), ce.start(A()), de.start(A()), ae(Fe);
+                            (ee(!0), s.setShowAdditionalLayers(!1), ce.start(A()), de.start(A()), ae(Fe));
                         },
                         ge = () => {
-                            ce.start(L), de.start(L);
+                            (ce.start(L), de.start(L));
                         };
                     return (
                         (0, a.useEffect)(() => {
@@ -843,7 +843,7 @@
                             d.graphicsQuality.isLow() && s.setAnimationState(!1);
                         }, [s]),
                         (0, a.useEffect)(() => {
-                            ae(De), ee(!1);
+                            (ae(De), ee(!1));
                         }, []),
                         n().createElement(
                             'div',
@@ -851,7 +851,7 @@
                             n().createElement(be, {
                                 onClick: me,
                                 onLoaded: () => {
-                                    ae(Ue), ce.start(T), de.start(T);
+                                    (ae(Ue), ce.start(T), de.start(T));
                                 },
                                 className: Se.boxLayout,
                             }),
@@ -1100,7 +1100,7 @@
                         {
                             className: n()(c, b),
                             onClick: () => {
-                                s.hY.click(), s.hY.sound(o.purchaseClick), r();
+                                (s.hY.click(), s.hY.sound(o.purchaseClick), r());
                             },
                         },
                         i().createElement(

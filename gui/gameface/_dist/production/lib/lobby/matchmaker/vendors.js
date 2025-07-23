@@ -514,24 +514,18 @@
                     'UW1:く': 13,
                     'UW4:私': 12,
                 };
-            function B(e, t) {
+            function n(e, t) {
                 var W = ('undefined' != typeof Symbol && e[Symbol.iterator]) || e['@@iterator'];
                 if (W) return (W = W.call(e)).next.bind(W);
                 if (
                     Array.isArray(e) ||
                     (W = (function (e, t) {
-                        if (e) {
-                            if ('string' == typeof e) return n(e, t);
-                            var W = {}.toString.call(e).slice(8, -1);
-                            return (
-                                'Object' === W && e.constructor && (W = e.constructor.name),
-                                'Map' === W || 'Set' === W
-                                    ? Array.from(e)
-                                    : 'Arguments' === W || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(W)
-                                      ? n(e, t)
-                                      : void 0
-                            );
-                        }
+                        if (!e) return;
+                        if ('string' == typeof e) return B(e, t);
+                        var W = Object.prototype.toString.call(e).slice(8, -1);
+                        'Object' === W && e.constructor && (W = e.constructor.name);
+                        if ('Map' === W || 'Set' === W) return Array.from(e);
+                        if ('Arguments' === W || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(W)) return B(e, t);
                     })(e)) ||
                     (t && e && 'number' == typeof e.length)
                 ) {
@@ -545,9 +539,9 @@
                     'Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.',
                 );
             }
-            function n(e, t) {
+            function B(e, t) {
                 (null == t || t > e.length) && (t = e.length);
-                for (var W = 0, U = Array(t); W < t; W++) U[W] = e[W];
+                for (var W = 0, U = new Array(t); W < t; W++) U[W] = e[W];
                 return U;
             }
             const o = console.assert,
@@ -555,43 +549,43 @@
                 a = 3,
                 l = 0,
                 i = 1,
-                T = 2,
-                c = 3,
+                c = 2,
+                T = 3,
                 u = {
-                    AREA: T,
-                    BASE: T,
-                    BASEFONT: T,
-                    DATALIST: T,
-                    HEAD: T,
-                    LINK: T,
-                    META: T,
-                    NOEMBED: T,
-                    NOFRAMES: T,
-                    PARAM: T,
-                    RP: T,
-                    SCRIPT: T,
-                    STYLE: T,
-                    TEMPLATE: T,
-                    TITLE: T,
-                    NOSCRIPT: T,
-                    HR: c,
-                    LISTING: T,
-                    PLAINTEXT: T,
-                    PRE: T,
-                    XMP: T,
-                    BR: c,
-                    RT: T,
-                    INPUT: T,
-                    SELECT: T,
-                    BUTTON: T,
-                    TEXTAREA: T,
-                    ABBR: T,
-                    CODE: T,
-                    IFRAME: T,
-                    TIME: T,
-                    VAR: T,
+                    AREA: c,
+                    BASE: c,
+                    BASEFONT: c,
+                    DATALIST: c,
+                    HEAD: c,
+                    LINK: c,
+                    META: c,
+                    NOEMBED: c,
+                    NOFRAMES: c,
+                    PARAM: c,
+                    RP: c,
+                    SCRIPT: c,
+                    STYLE: c,
+                    TEMPLATE: c,
+                    TITLE: c,
+                    NOSCRIPT: c,
+                    HR: T,
+                    LISTING: c,
+                    PLAINTEXT: c,
+                    PRE: c,
+                    XMP: c,
+                    BR: T,
+                    RT: c,
+                    INPUT: c,
+                    SELECT: c,
+                    BUTTON: c,
+                    TEXTAREA: c,
+                    ABBR: c,
+                    CODE: c,
+                    IFRAME: c,
+                    TIME: c,
+                    VAR: c,
                 },
-                d = new Set([
+                h = new Set([
                     'HTML',
                     'BODY',
                     'ADDRESS',
@@ -638,9 +632,9 @@
                     'SUMMARY',
                     'MARQUEE',
                 ]);
-            class h {
+            class d {
                 constructor(e) {
-                    (this.textNodes = []), (this.element = e);
+                    ((this.textNodes = []), (this.element = e));
                 }
                 hasText() {
                     return this.textNodes.length > 0;
@@ -648,18 +642,18 @@
             }
             class p {
                 constructor(e, t) {
-                    (this.separator = '​'),
-                        (this.threshold = y),
+                    ((this.separator = '​'),
+                        (this.threshold = Q),
                         (this.parser_ = e),
                         void 0 !== t &&
                             (void 0 !== t.className && (this.className = t.className),
                             void 0 !== t.separator && (this.separator = t.separator),
-                            void 0 !== t.threshold && (this.threshold = t.threshold));
+                            void 0 !== t.threshold && (this.threshold = t.threshold)));
                 }
                 applyToElement(e) {
-                    for (var t, W = B(this.getBlocks(e)); !(t = W()).done; ) {
+                    for (var t, W = n(this.getBlocks(e)); !(t = W()).done; ) {
                         const e = t.value;
-                        o(e.hasText()), this.applyToParagraph(e);
+                        (o(e.hasText()), this.applyToParagraph(e));
                     }
                 }
                 *getBlocks(e, t) {
@@ -673,24 +667,24 @@
                             switch (t.whiteSpace) {
                                 case 'nowrap':
                                 case 'pre':
-                                    return T;
+                                    return c;
                             }
                             const W = t.display;
                             if (W) return 'inline' === W ? l : i;
                         }
-                        return d.has(t) ? i : l;
+                        return h.has(t) ? i : l;
                     })(e);
-                    if (W === T) return;
-                    if (W === c) return t && t.hasText() && (yield t, (t.textNodes = [])), void o(!e.firstChild);
+                    if (W === c) return;
+                    if (W === T) return (t && t.hasText() && (yield t, (t.textNodes = [])), void o(!e.firstChild));
                     o(W === i || W === l);
                     const U = !t || W === i,
-                        r = U ? new h(e) : t;
+                        r = U ? new d(e) : t;
                     o(r);
-                    for (var n, p = B(e.childNodes); !(n = p()).done; ) {
-                        const e = n.value;
+                    for (var B, p = n(e.childNodes); !(B = p()).done; ) {
+                        const e = B.value;
                         switch (e.nodeType) {
                             case s:
-                                for (var f, g = B(this.getBlocks(e, r)); !(f = g()).done; ) {
+                                for (var f, g = n(this.getBlocks(e, r)); !(f = g()).done; ) {
                                     const e = f.value;
                                     yield e;
                                 }
@@ -709,17 +703,17 @@
                     const U = this.parser_.parse(W, this.threshold);
                     if ((o(U.length > 0), o(U.reduce((e, t) => e + t.length, 0) === W.length), U.length <= 1)) return;
                     const r = [];
-                    let n = 0;
-                    for (var s, a = B(U); !(s = a()).done; ) {
+                    let B = 0;
+                    for (var s, a = n(U); !(s = a()).done; ) {
                         const e = s.value;
-                        o(e.length > 0), (n += e.length), r.push(n);
+                        (o(e.length > 0), (B += e.length), r.push(B));
                     }
-                    o(r[0] > 0),
+                    (o(r[0] > 0),
                         o(r[r.length - 1] === W.length),
                         ++r[r.length - 1],
                         o(r.length > 1),
                         this.splitTextNodes(t, r),
-                        this.applyBlockStyle(e.element);
+                        this.applyBlockStyle(e.element));
                 }
                 splitTextNodes(e, t) {
                     o(t.length > 0);
@@ -728,47 +722,47 @@
                     let U = 0,
                         r = t[0];
                     o(r > 0);
-                    let n = 0;
-                    for (var s, a = B(e); !(s = a()).done; ) {
+                    let B = 0;
+                    for (var s, a = n(e); !(s = a()).done; ) {
                         const e = s.value,
                             W = e.nodeValue;
                         if (!W) continue;
-                        const B = n + W.length;
-                        if (r >= B) {
-                            n = B;
+                        const n = B + W.length;
+                        if (r >= n) {
+                            B = n;
                             continue;
                         }
                         const a = [];
                         let l = 0;
-                        for (; r < B; ) {
-                            const e = r - n;
-                            o(e >= l), a.push(W.substring(l, e)), (l = e), ++U, o(t[U] > r), (r = t[U]);
+                        for (; r < n; ) {
+                            const e = r - B;
+                            (o(e >= l), a.push(W.substring(l, e)), (l = e), ++U, o(t[U] > r), (r = t[U]));
                         }
-                        o(a.length > 0), l < W.length && a.push(W.substring(l)), this.splitTextNode(e, a), (n = B);
+                        (o(a.length > 0), l < W.length && a.push(W.substring(l)), this.splitTextNode(e, a), (B = n));
                     }
-                    o(n === W), o(U < t.length), o(t[U] >= W);
+                    (o(B === W), o(U < t.length), o(t[U] >= W));
                 }
                 splitTextNode(e, t) {
-                    o(t.length > 1), o(e.nodeValue === t.join(''));
+                    (o(t.length > 1), o(e.nodeValue === t.join('')));
                     const W = this.separator;
                     if ('string' == typeof W) return void (e.nodeValue = t.join(W));
                     const U = e.ownerDocument;
                     let r = [];
-                    for (var n, s = B(t); !(n = s()).done; ) {
-                        const e = n.value;
-                        e && r.push(U.createTextNode(e)), r.push(null);
+                    for (var B, s = n(t); !(B = s()).done; ) {
+                        const e = B.value;
+                        (e && r.push(U.createTextNode(e)), r.push(null));
                     }
-                    r.pop(), (r = r.map((e) => e || W.cloneNode(!0))), e.replaceWith(...r);
+                    (r.pop(), (r = r.map((e) => e || W.cloneNode(!0))), e.replaceWith(...r));
                 }
                 applyBlockStyle(e) {
                     if (this.className) return void e.classList.add(this.className);
                     const t = e.style;
-                    (t.wordBreak = 'keep-all'), (t.overflowWrap = 'break-word');
+                    ((t.wordBreak = 'keep-all'), (t.overflowWrap = 'break-word'));
                 }
                 static defineClassAs(e, t) {
                     const W = e.createElement('style');
-                    (W.textContent = `.${t} { word-break: keep-all; overflow-wrap: break-word; }`),
-                        e.head.appendChild(W);
+                    ((W.textContent = `.${t} { word-break: keep-all; overflow-wrap: break-word; }`),
+                        e.head.appendChild(W));
                 }
             }
             const f = (e, t) => {
@@ -790,18 +784,12 @@
                 if (
                     Array.isArray(e) ||
                     (W = (function (e, t) {
-                        if (e) {
-                            if ('string' == typeof e) return Q(e, t);
-                            var W = {}.toString.call(e).slice(8, -1);
-                            return (
-                                'Object' === W && e.constructor && (W = e.constructor.name),
-                                'Map' === W || 'Set' === W
-                                    ? Array.from(e)
-                                    : 'Arguments' === W || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(W)
-                                      ? Q(e, t)
-                                      : void 0
-                            );
-                        }
+                        if (!e) return;
+                        if ('string' == typeof e) return y(e, t);
+                        var W = Object.prototype.toString.call(e).slice(8, -1);
+                        'Object' === W && e.constructor && (W = e.constructor.name);
+                        if ('Map' === W || 'Set' === W) return Array.from(e);
+                        if ('Arguments' === W || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(W)) return y(e, t);
                     })(e)) ||
                     (t && e && 'number' == typeof e.length)
                 ) {
@@ -815,12 +803,12 @@
                     'Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.',
                 );
             }
-            function Q(e, t) {
+            function y(e, t) {
                 (null == t || t > e.length) && (t = e.length);
-                for (var W = 0, U = Array(t); W < t; W++) U[W] = e[W];
+                for (var W = 0, U = new Array(t); W < t; W++) U[W] = e[W];
                 return U;
             }
-            const y = 1e3,
+            const Q = 1e3,
                 m = 3;
             class E {
                 constructor(e) {
@@ -832,58 +820,58 @@
                     if (void 0 === t) return g;
                     return `${f(U, t)}`.padStart(3, '0');
                 }
-                static getFeature(e, t, W, U, r, B, n, o, s) {
+                static getFeature(e, t, W, U, r, n, B, o, s) {
                     const a = E.getUnicodeBlockFeature(e),
                         l = E.getUnicodeBlockFeature(t),
                         i = E.getUnicodeBlockFeature(W),
-                        T = E.getUnicodeBlockFeature(U),
-                        c = E.getUnicodeBlockFeature(r),
-                        u = E.getUnicodeBlockFeature(B),
-                        d = {
-                            UP1: n,
+                        c = E.getUnicodeBlockFeature(U),
+                        T = E.getUnicodeBlockFeature(r),
+                        u = E.getUnicodeBlockFeature(n),
+                        h = {
+                            UP1: B,
                             UP2: o,
                             UP3: s,
-                            BP1: n + o,
+                            BP1: B + o,
                             BP2: o + s,
                             UW1: e,
                             UW2: t,
                             UW3: W,
                             UW4: U,
                             UW5: r,
-                            UW6: B,
+                            UW6: n,
                             BW1: t + W,
                             BW2: W + U,
                             BW3: U + r,
                             TW1: e + t + W,
                             TW2: t + W + U,
                             TW3: W + U + r,
-                            TW4: U + r + B,
+                            TW4: U + r + n,
                             UB1: a,
                             UB2: l,
                             UB3: i,
-                            UB4: T,
-                            UB5: c,
+                            UB4: c,
+                            UB5: T,
                             UB6: u,
                             BB1: l + i,
-                            BB2: i + T,
-                            BB3: T + c,
+                            BB2: i + c,
+                            BB3: c + T,
                             TB1: a + l + i,
-                            TB2: l + i + T,
-                            TB3: i + T + c,
-                            TB4: T + c + u,
-                            UQ1: n + a,
+                            TB2: l + i + c,
+                            TB3: i + c + T,
+                            TB4: c + T + u,
+                            UQ1: B + a,
                             UQ2: o + l,
                             UQ3: s + i,
                             BQ1: o + l + i,
-                            BQ2: o + i + T,
+                            BQ2: o + i + c,
                             BQ3: s + l + i,
-                            BQ4: s + i + T,
+                            BQ4: s + i + c,
                             TQ1: o + a + l + i,
-                            TQ2: o + l + i + T,
+                            TQ2: o + l + i + c,
                             TQ3: s + a + l + i,
-                            TQ4: s + l + i + T,
+                            TQ4: s + l + i + c,
                         };
-                    return Object.entries(d)
+                    return Object.entries(h)
                         .filter((e) => !e[1].includes(g))
                         .map(([e, t]) => `${e}:${t}`);
                 }
@@ -893,20 +881,20 @@
                     }
                     return !1;
                 }
-                parse(e, t = y) {
+                parse(e, t = Q) {
                     if ('' === e) return [];
                     let W = 'U',
                         U = 'U',
                         r = 'U';
-                    const B = [e[0]];
-                    for (let n = 1; n < e.length; n++) {
+                    const n = [e[0]];
+                    for (let B = 1; B < e.length; B++) {
                         const o = E.getFeature(
-                                e[n - 3] || g,
-                                e[n - 2] || g,
-                                e[n - 1],
-                                e[n],
-                                e[n + 1] || g,
-                                e[n + 2] || g,
+                                e[B - 3] || g,
+                                e[B - 2] || g,
+                                e[B - 1],
+                                e[B],
+                                e[B + 1] || g,
+                                e[B + 2] || g,
                                 W,
                                 U,
                                 r,
@@ -914,21 +902,21 @@
                                 .map((e) => this.model.get(e) || 0)
                                 .reduce((e, t) => e + t),
                             s = o > 0 ? 'B' : 'O';
-                        o > t && B.push(''), (B[B.length - 1] += e[n]), (W = U), (U = r), (r = s);
+                        (o > t && n.push(''), (n[n.length - 1] += e[B]), (W = U), (U = r), (r = s));
                     }
-                    return B;
+                    return n;
                 }
-                applyElement(e, t = y) {
+                applyElement(e, t = Q) {
                     new p(this, { separator: e.ownerDocument.createElement('wbr'), threshold: t }).applyToElement(e);
                 }
-                translateHTMLString(e, t = y) {
+                translateHTMLString(e, t = Q) {
                     if ('' === e) return e;
                     const W = ((e) => new DOMParser().parseFromString(e, 'text/html'))(e);
                     if (E.hasChildTextNode(W.body)) {
                         const e = W.createElement('span');
-                        e.append(...W.body.childNodes), W.body.append(e);
+                        (e.append(...W.body.childNodes), W.body.append(e));
                     }
-                    return this.applyElement(W.body.childNodes[0], t), W.body.innerHTML;
+                    return (this.applyElement(W.body.childNodes[0], t), W.body.innerHTML);
                 }
             }
             const v = () => new E(new Map(Object.entries(r)));
@@ -942,12 +930,12 @@
                     for (var e = [], t = 0; t < arguments.length; t++) {
                         var W = arguments[t];
                         if (W) {
-                            var B = typeof W;
-                            if ('string' === B || 'number' === B) e.push(W);
+                            var n = typeof W;
+                            if ('string' === n || 'number' === n) e.push(W);
                             else if (Array.isArray(W) && W.length) {
-                                var n = r.apply(null, W);
-                                n && e.push(n);
-                            } else if ('object' === B) for (var o in W) U.call(W, o) && W[o] && e.push(o);
+                                var B = r.apply(null, W);
+                                B && e.push(B);
+                            } else if ('object' === n) for (var o in W) U.call(W, o) && W[o] && e.push(o);
                         }
                     }
                     return e.join(' ');

@@ -64,4 +64,11 @@
 
 (def element ActionPriceBRBig() layout=true
     (macro ActionPrice "ACTION_PRICE_BR_BIG")
+
+    (controller $ToolTip
+        (delay = 0.4)
+        (args tooltipId='BrCoinTooltipView')
+        (content = "R.views.battle_royale.lobby.tooltips.BrCoinTooltipView.resId")
+        (bind enabled "type == 'brcoin'")
+    )
 )

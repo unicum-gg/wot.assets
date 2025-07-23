@@ -3,20 +3,20 @@
     [7438],
     {
         2607: (e, t, s) => {
-            s.r(t), s.d(t, { default: () => se });
+            (s.r(t), s.d(t, { default: () => se }));
             var n = s(6179),
                 o = s.n(n),
                 a = s(6483),
                 r = s.n(a);
             let c;
             !(function (e) {
-                (e.Available = 'Available'),
+                ((e.Available = 'Available'),
                     (e.Timer = 'Timer'),
                     (e.NotFavorite = 'NotFavorite'),
                     (e.Limit = 'Limit'),
                     (e.LimitTimer = 'LimitTimer'),
                     (e.Finished = 'Finished'),
-                    (e.FinishedHidden = 'FinishedHidden');
+                    (e.FinishedHidden = 'FinishedHidden'));
             })(c || (c = {}));
             var i = s(3403),
                 l = s(5678),
@@ -290,7 +290,7 @@
                         a().createElement('div', {
                             className: l,
                             onClick: () => {
-                                n.hY.sound(R.sounds.cancelcloseno()), e();
+                                (n.hY.sound(R.sounds.cancelcloseno()), e());
                             },
                             onMouseEnter: () => n.hY.sound(R.sounds.highlight()),
                         }),
@@ -320,7 +320,7 @@
                         F = b[1],
                         p = (0, a.createRef)(),
                         g = (0, a.useCallback)(() => {
-                            _(!1), null == n || n(!1);
+                            (_(!1), null == n || n(!1));
                         }, [n]);
                     (0, a.useEffect)(
                         () => (window.addEventListener('mouseup', g), () => window.removeEventListener('mouseup', g)),
@@ -343,11 +343,11 @@
                         ),
                         E = (0, a.useCallback)(
                             (e) => {
-                                e.preventDefault(),
+                                (e.preventDefault(),
                                     0 === e.button &&
                                         N(e) &&
                                         d &&
-                                        (_(!0), null == n || n(!0), F({ x: e.clientX, y: e.clientY }));
+                                        (_(!0), null == n || n(!0), F({ x: e.clientX, y: e.clientY })));
                             },
                             [N, d, n],
                         ),
@@ -357,7 +357,7 @@
                                     if (!N(e)) return;
                                     const s = e.clientX !== v.x ? e.clientX - v.x : 0,
                                         n = e.clientY !== v.y ? e.clientY - v.y : 0;
-                                    F({ x: e.clientX, y: e.clientY }), t({ dx: s, dy: n, dz: 0 });
+                                    (F({ x: e.clientX, y: e.clientY }), t({ dx: s, dy: n, dz: 0 }));
                                 }
                             },
                             [N, m, v.x, v.y, t],
@@ -371,11 +371,11 @@
                             [N, d, t],
                         ),
                         h = (0, a.useCallback)(() => {
-                            _(!1), null == n || n(!1);
+                            (_(!1), null == n || n(!1));
                         }, [n]),
                         f = (0, a.useCallback)(
                             (e) => {
-                                0 === e.buttons && m && (_(!1), null == n || n(!1)), s({ isOver3dScene: !0 });
+                                (0 === e.buttons && m && (_(!1), null == n || n(!1)), s({ isOver3dScene: !0 }));
                             },
                             [n, s, m],
                         ),

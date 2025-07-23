@@ -1204,7 +1204,8 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     bottom: 0;
     left: 0;
     background-color: rgba(13, 9, 55, 0.6);
-    background-image: linear-gradient(180deg, #0d0937 0%, transparent 20%, transparent 80%, #0d0937 100%),
+    background-image:
+        linear-gradient(180deg, #0d0937 0%, transparent 20%, transparent 80%, #0d0937 100%),
         linear-gradient(90deg, #0d0937 0%, transparent 40%, transparent 60%, #0d0937 100%);
     animation: App_fadeInVignette_49 0.3s ease-in-out forwards;
     pointer-events: none;

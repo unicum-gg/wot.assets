@@ -163,7 +163,7 @@ body {
 }
 .BattlePassProgressionsViewContent_base__extra_e2 {
     --widget-size: 418rem;
-    background-color: #151a22;
+    background-color: #161c1f;
     background-position: 100% 50%;
     background-size: 1640rem 820rem;
 }
@@ -5739,6 +5739,11 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     height: 575rem;
 }
 
+.Reward_base__normalize_a6 .Reward_overlay_68 {
+    width: 100%;
+    height: 100%;
+}
+
 .Reward_highlight_36 {
     width: 100%;
     height: 100%;
@@ -6006,6 +6011,31 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .mediaMedium .Rewards_explosion_f6 {
     width: 200rem;
     height: 200rem;
+}
+
+.Rewards_preview_2f {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    top: 90%;
+    z-index: 1;
+}
+
+.Rewards_iconButton_6d {
+    width: 44rem;
+    height: 44rem;
+    opacity: 0.7;
+    transition: opacity 0.25s ease-in-out;
+}
+
+.mediaMedium .Rewards_iconButton_6d {
+    width: 60rem;
+    height: 60rem;
+}
+
+.Rewards_base_46:hover .Rewards_iconButton_6d {
+    opacity: 1;
 }
 
 @keyframes Rewards_changeReward_ee {

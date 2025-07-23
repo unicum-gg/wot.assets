@@ -88,7 +88,7 @@
                                     s = i.current;
                                 if (!r || !s) return;
                                 const o = F(e.value.progress, a);
-                                (r.style.animationDelay = o), (s.style.animationDelay = o);
+                                ((r.style.animationDelay = o), (s.style.animationDelay = o));
                             },
                             onRest: () => {
                                 null == n || n();
@@ -236,7 +236,7 @@
                 T = (0, u.Pi)(({ root: e, onClose: r }) => {
                     (0, t.useEffect)(() => {
                         const a = e.current;
-                        if (a) return E.c1.register(a, r), () => E.c1.unregister(a, r);
+                        if (a) return (E.c1.register(a, r), () => E.c1.unregister(a, r));
                     }, [e, r]);
                     return l().createElement(
                         'div',
@@ -245,7 +245,7 @@
                         l().createElement('div', {
                             className: O,
                             onClick: () => {
-                                (0, d.G)(R.sounds.cancelcloseno()), r();
+                                ((0, d.G)(R.sounds.cancelcloseno()), r());
                             },
                             onMouseEnter: d.$.playHighlight,
                         }),
@@ -383,10 +383,10 @@
                                     className: j.icon,
                                     onClick: () => {
                                         if (((0, d.G)(R.sounds.hangar_newyear_friends_progress()), f))
-                                            return h(!1), void s.getReward();
+                                            return (h(!1), void s.getReward());
                                         if (e === w.t.Friends) {
                                             const e = !v;
-                                            h(e), !m && e && s.openAnimationTrigger();
+                                            (h(e), !m && e && s.openAnimationTrigger());
                                         }
                                     },
                                 }),
@@ -430,13 +430,13 @@
         },
         8284: (e, r, a) => {
             let s, o;
-            a.d(r, { t: () => o, v: () => s }),
+            (a.d(r, { t: () => o, v: () => s }),
                 (function (e) {
-                    (e.Available = 'available'), (e.Received = 'received'), (e.Disabled = 'disabled');
+                    ((e.Available = 'available'), (e.Received = 'received'), (e.Disabled = 'disabled'));
                 })(s || (s = {})),
                 (function (e) {
-                    (e.Friends = 'friends'), (e.Glade = 'glade');
-                })(o || (o = {}));
+                    ((e.Friends = 'friends'), (e.Glade = 'glade'));
+                })(o || (o = {})));
         },
     },
 ]);

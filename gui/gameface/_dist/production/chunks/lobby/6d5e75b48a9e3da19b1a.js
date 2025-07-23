@@ -3,7 +3,7 @@
     [3522],
     {
         8521: (e, a, t) => {
-            t.r(a), t.d(a, { default: () => xa });
+            (t.r(a), t.d(a, { default: () => xa }));
             var s = t(6179),
                 r = t.n(s),
                 n = t(6483),
@@ -13,16 +13,16 @@
                 i = t(4906),
                 d = t(3572);
             let m, u;
-            !(function (e) {
-                (e[(e.Active = 0)] = 'Active'),
+            (!(function (e) {
+                ((e[(e.Active = 0)] = 'Active'),
                     (e[(e.Completed = 1)] = 'Completed'),
                     (e[(e.JustCompleted = 2)] = 'JustCompleted'),
                     (e[(e.InTransition = 3)] = 'InTransition'),
-                    (e[(e.Locked = 4)] = 'Locked');
+                    (e[(e.Locked = 4)] = 'Locked'));
             })(m || (m = {})),
                 (function (e) {
-                    (e.Main = 'main'), (e.Advanced = 'advanced');
-                })(u || (u = {}));
+                    ((e.Main = 'main'), (e.Advanced = 'advanced'));
+                })(u || (u = {})));
             var _ = t(3215),
                 g = t(4598),
                 p = t(9480),
@@ -297,10 +297,10 @@
                 me = R.strings.ny.newYear.challenge.card;
             let ue;
             !(function (e) {
-                (e[(e.ReplacementsAvailable = 0)] = 'ReplacementsAvailable'),
+                ((e[(e.ReplacementsAvailable = 0)] = 'ReplacementsAvailable'),
                     (e[(e.ReplacementsMissing = 1)] = 'ReplacementsMissing'),
                     (e[(e.ReplacementsLocked = 2)] = 'ReplacementsLocked'),
-                    (e[(e.VehicleInBattle = 3)] = 'VehicleInBattle');
+                    (e[(e.VehicleInBattle = 3)] = 'VehicleInBattle'));
             })(ue || (ue = {}));
             const _e = (e) => {
                     switch (e) {
@@ -382,7 +382,7 @@
                                         r().createElement(ge, { token: a, onMouseEnter: t, onMouseLeave: s }),
                                     );
                                 default:
-                                    return console.error('Unknown state ', e), null;
+                                    return (console.error('Unknown state ', e), null);
                             }
                         })(),
                     );
@@ -667,7 +667,8 @@
                                         onChange: (e) => {
                                             const a = e.value.x,
                                                 t = a ? Number(a.split('rem')[0]) : 0;
-                                            !p && t > 100 && w.stop(), p && 105 === t && w.start(Object.assign({}, ua));
+                                            (!p && t > 100 && w.stop(),
+                                                p && 105 === t && w.start(Object.assign({}, ua)));
                                         },
                                     },
                                     ua,

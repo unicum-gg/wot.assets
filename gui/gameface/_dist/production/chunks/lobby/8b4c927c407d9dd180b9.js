@@ -16,12 +16,12 @@
                 lineWrapper: 'ProgressBar_lineWrapper_6a',
             };
             let l, m;
-            !(function (e) {
-                (e.Small = 'small'), (e.Medium = 'medium'), (e.Default = 'medium');
+            (!(function (e) {
+                ((e.Small = 'small'), (e.Medium = 'medium'), (e.Default = 'medium'));
             })(l || (l = {})),
                 (function (e) {
-                    (e[(e.Simple = 0)] = 'Simple'), (e[(e.Growing = 1)] = 'Growing');
-                })(m || (m = {}));
+                    ((e[(e.Simple = 0)] = 'Simple'), (e[(e.Growing = 1)] = 'Growing'));
+                })(m || (m = {})));
             const c = ({ size: e = l.Default }) => {
                     const n = o()(i.background, i[`background__${e}`]);
                     return s().createElement('div', { className: n });
@@ -73,12 +73,12 @@
                 };
             var _ = t(122);
             let f, h;
-            !(function (e) {
-                (e.Idle = 'Idle'), (e.Grow = 'Grow'), (e.Shrink = 'Shrink'), (e.End = 'End');
+            (!(function (e) {
+                ((e.Idle = 'Idle'), (e.Grow = 'Grow'), (e.Shrink = 'Shrink'), (e.End = 'End'));
             })(f || (f = {})),
                 (function (e) {
-                    (e.Idle = 'Idle'), (e.In = 'In'), (e.End = 'End');
-                })(h || (h = {}));
+                    ((e.Idle = 'Idle'), (e.In = 'In'), (e.End = 'End'));
+                })(h || (h = {})));
             const C = 'ProgressBarDeltaSimple_base_6c',
                 w = 'ProgressBarDeltaSimple_delta_99',
                 E = (0, r.memo)(
@@ -101,11 +101,11 @@
                             E = u === h.Idle,
                             y = (0, r.useCallback)(
                                 (e) => {
-                                    p(e), m && m(e);
+                                    (p(e), m && m(e));
                                 },
                                 [m],
                             );
-                        (0, r.useEffect)(() => {
+                        ((0, r.useEffect)(() => {
                             if (E && !t) {
                                 const e = n;
                                 return (0, _.F)(() => {
@@ -117,10 +117,10 @@
                                 if (b) {
                                     const t = e + n;
                                     return (0, _.F)(() => {
-                                        l && l(), y(h.End);
+                                        (l && l(), y(h.End));
                                     }, t);
                                 }
-                            }, [y, b, l, n, e]);
+                            }, [y, b, l, n, e]));
                         const S = (0, r.useMemo)(
                                 () => ({
                                     width: '100%',
@@ -222,7 +222,7 @@
                             y = b === f.Shrink,
                             z = (0, r.useCallback)(
                                 (e) => {
-                                    h(e), c && c(e);
+                                    (h(e), c && c(e));
                                 },
                                 [c],
                             ),
@@ -275,7 +275,7 @@
                             b = d[1],
                             _ = (0, r.useCallback)(
                                 (e) => {
-                                    e === f.Shrink && b(!0), c && c(e);
+                                    (e === f.Shrink && b(!0), c && c(e));
                                 },
                                 [c],
                             ),
@@ -343,7 +343,7 @@
                         l = o[1],
                         c = (0, r.useCallback)(() => {
                             const e = 100 === a.to;
-                            e !== i && l(e), e && n && n(), t && t();
+                            (e !== i && l(e), e && n && n(), t && t());
                         }, [i, n, t, a.to]);
                     switch (a.animationSettings.type) {
                         case m.Simple:
@@ -383,7 +383,7 @@
                     })(e, F);
                 const a = (0, r.useRef)({}),
                     o = (0, r.useCallback)(() => {
-                        (a.current.from = void 0), n && n();
+                        ((a.current.from = void 0), n && n());
                     }, [n]),
                     i = 'number' == typeof a.current.from ? a.current.from : t.from;
                 return (
@@ -604,7 +604,7 @@
                             if (p && b) {
                                 const e = p[0],
                                     t = e + g++ + b[0].replaceAll(')', '') + e;
-                                (c = c.replace(u, `%(${t})`)),
+                                ((c = c.replace(u, `%(${t})`)),
                                     (l[t] = s[e]
                                         ? r().createElement(
                                               'span',
@@ -615,7 +615,7 @@
                                               'span',
                                               { style: ((d = e), { color: `#${d}` }) },
                                               r().createElement(a.z, { text: _, binding: n }),
-                                          ));
+                                          )));
                             }
                             m = t.exec(e);
                         }

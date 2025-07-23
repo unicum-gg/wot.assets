@@ -153,19 +153,13 @@
 }
 
 .App_additionalBackground_c6 {
-    background: url('R.images.gui.maps.icons.battlePass.backgrounds.additional_background') no-repeat right / contain;
-    background-position-y: 70%;
-    background-size: 120%;
+    background: url('R.images.gui.maps.icons.battlePass.backgrounds.additional_background') no-repeat center / cover;
     z-index: -1;
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-}
-
-.mediaMedium .App_additionalBackground_c6 {
-    background-size: 105%;
 }
 
 .App_infoButtons_78 {

@@ -110,18 +110,21 @@
             },
             2106: (e, t, a) => {
                 let n, s;
-                a.d(t, { L: () => n }),
+                (a.d(t, { L: () => n }),
                     (function (e) {
-                        (e.main = 'main'),
+                        ((e.main = 'main'),
                             (e.primary = 'primary'),
                             (e.primaryGreen = 'primaryGreen'),
                             (e.primaryRed = 'primaryRed'),
                             (e.secondary = 'secondary'),
-                            (e.ghost = 'ghost');
+                            (e.ghost = 'ghost'));
                     })(n || (n = {})),
                     (function (e) {
-                        (e.extraSmall = 'extraSmall'), (e.small = 'small'), (e.medium = 'medium'), (e.large = 'large');
-                    })(s || (s = {}));
+                        ((e.extraSmall = 'extraSmall'),
+                            (e.small = 'small'),
+                            (e.medium = 'medium'),
+                            (e.large = 'large'));
+                    })(s || (s = {})));
             },
             7727: (e, t, a) => {
                 function n(e) {
@@ -132,7 +135,7 @@
                 a.d(t, { G: () => n });
             },
             4037: (e, t, a) => {
-                a(3457), a(2106), a(7363);
+                (a(3457), a(2106), a(7363));
             },
             6880: (e, t, a) => {
                 a.d(t, { Z: () => n });
@@ -169,9 +172,9 @@
         var s = a[e];
         if (void 0 !== s) return s.exports;
         var o = (a[e] = { exports: {} });
-        return t[e](o, o.exports, n), o.exports;
+        return (t[e](o, o.exports, n), o.exports);
     }
-    (n.m = t),
+    ((n.m = t),
         (e = []),
         (n.O = (t, a, s, o) => {
             if (!a) {
@@ -195,7 +198,7 @@
         }),
         (n.n = (e) => {
             var t = e && e.__esModule ? () => e.default : () => e;
-            return n.d(t, { a: t }), t;
+            return (n.d(t, { a: t }), t);
         }),
         (n.d = (e, t) => {
             for (var a in t) n.o(t, a) && !n.o(e, a) && Object.defineProperty(e, a, { enumerable: !0, get: t[a] });
@@ -222,12 +225,12 @@
                         for (s in i) n.o(i, s) && (n.m[s] = i[s]);
                         if (_) var l = _(n);
                     }
-                    for (t && t(a); u < r.length; u++) (o = r[u]), n.o(e, o) && e[o] && e[o][0](), (e[o] = 0);
+                    for (t && t(a); u < r.length; u++) ((o = r[u]), n.o(e, o) && e[o] && e[o][0](), (e[o] = 0));
                     return n.O(l);
                 },
                 a = (self.webpackChunkgameface = self.webpackChunkgameface || []);
-            a.forEach(t.bind(null, 0)), (a.push = t.bind(null, a.push.bind(a)));
-        })();
+            (a.forEach(t.bind(null, 0)), (a.push = t.bind(null, a.push.bind(a))));
+        })());
     var s = n.O(void 0, [866], () => n(4037));
     s = n.O(s);
 })();

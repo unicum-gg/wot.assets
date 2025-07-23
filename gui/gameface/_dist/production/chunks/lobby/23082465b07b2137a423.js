@@ -11,7 +11,7 @@
                 c = a.n(o),
                 r = a(5287);
             const i = ({ binding: e, text: t = '', classMix: a, alignment: n = s.v2.left, formatWithBrackets: i }) => {
-                if (null === t) return console.error("FormatText was supplied with 'null'"), null;
+                if (null === t) return (console.error("FormatText was supplied with 'null'"), null);
                 const d = i && e ? (0, s.WU)(t, e) : t;
                 return c().createElement(
                     o.Fragment,
@@ -35,7 +35,7 @@
             a(3649);
         },
         10: (e, t, a) => {
-            a.r(t), a.d(t, { default: () => j });
+            (a.r(t), a.d(t, { default: () => j }));
             var n = a(6179),
                 l = a.n(n);
             const s = 'ChallengeOffice_base_fd';
@@ -69,7 +69,7 @@
             };
             let S;
             !(function (e) {
-                (e.Normal = 'normal'), (e.Wide = 'wide');
+                ((e.Normal = 'normal'), (e.Wide = 'wide'));
             })(S || (S = {}));
             const f = ({ children: e, onClick: t, isEnabled: a, hasFeedbackWhenHover: n, size: s = S.Normal }) =>
                     l().createElement(

@@ -3,7 +3,7 @@
     [824],
     {
         6482: (e, t, a) => {
-            a.r(t), a.d(t, { default: () => ct });
+            (a.r(t), a.d(t, { default: () => ct }));
             var r = a(6179),
                 n = a.n(r),
                 s = a(8958),
@@ -491,13 +491,13 @@
                             }
                         },
                         j = (e) => {
-                            xe(e, P),
+                            (xe(e, P),
                                 xe(e, D),
                                 ((e, t) => {
                                     t[e].start({ from: ve, config: { duration: 0 } });
                                 })(e, q),
                                 ((e, t, a) => {
-                                    t[e].start({
+                                    (t[e].start({
                                         to: [
                                             {
                                                 opacity: 1,
@@ -510,8 +510,8 @@
                                         config: { duration: 500 },
                                         onRest: a,
                                     }),
-                                        ie.hY.sound(S.Q.compensationAppear);
-                                })(e, W, () => J(e));
+                                        ie.hY.sound(S.Q.compensationAppear));
+                                })(e, W, () => J(e)));
                         },
                         Q = (e) => {
                             var t;
@@ -519,7 +519,7 @@
                             be(e, P, () => {
                                 a
                                     ? ((e) => {
-                                          ((e, t, a) => {
+                                          (((e, t, a) => {
                                               t[e].start({
                                                   to: [
                                                       {
@@ -571,7 +571,7 @@
                                                       ],
                                                       config: { duration: 1e3 },
                                                   });
-                                              })(e, Z);
+                                              })(e, Z));
                                       })(e)
                                     : J(e);
                             });
@@ -596,16 +596,16 @@
                                           D[e].start({ to: we, immediate: !0, delay: 500 }))
                                         : k(e))
                                 );
-                            U(e),
+                            (U(e),
                                 ye(e, D, () => {
                                     be(e, D);
-                                });
+                                }));
                         },
                         Y = () => {
-                            U(H.current),
+                            (U(H.current),
                                 ye(H.current, D, () => {
                                     be(H.current, D);
-                                });
+                                }));
                         };
                     return (
                         (0, r.useEffect)(() => {
@@ -617,7 +617,7 @@
                                     break;
                                 case g.Az:
                                 case g.A_:
-                                    N($e), (H.current = 0);
+                                    (N($e), (H.current = 0));
                                     break;
                                 case g.B1.rewards:
                                     F(H.current);
@@ -819,7 +819,7 @@
                     }, [I]);
                     const L = { active: S, reset: (0, r.useCallback)(() => T(!1), []) },
                         M = (0, r.useCallback)(() => {
-                            a.clearActiveRareReward(), T(!0);
+                            (a.clearActiveRareReward(), T(!0));
                         }, [a]);
                     return n().createElement(
                         'div',
@@ -914,7 +914,7 @@
                         f = t.computes.multimediaResource(),
                         N = t.isReopen.get(),
                         S = (0, i.v)(g.Kg, (e) => e.value);
-                    (0, o.gd)(
+                    ((0, o.gd)(
                         l.n.ESCAPE,
                         () => {
                             S === g.B1.initial && a.close();
@@ -933,7 +933,7 @@
                         (0, r.useEffect)(() => {
                             g.Kg.send({ type: g.QK.setAnimationActive, isAnimationActive: v });
                         }, [v]),
-                        (0, w.s)(N, x, S);
+                        (0, w.s)(N, x, S));
                     const T = (0, _.H)(S, a.openNext),
                         C = T.loadingStyle,
                         I = T.contentStyle;

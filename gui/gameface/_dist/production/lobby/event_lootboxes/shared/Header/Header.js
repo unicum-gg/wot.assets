@@ -4,9 +4,9 @@
         F = {
             649: (u, F, A) => {
                 let E;
-                A(281),
+                (A(281),
                     (function (u) {
-                        (u[(u.left = 0)] = 'left'), (u[(u.right = 1)] = 'right');
+                        ((u[(u.left = 0)] = 'left'), (u[(u.right = 1)] = 'right'));
                     })(E || (E = {})),
                     new RegExp(
                         /[\(\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]?[\u3002\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]?[ %\+\x2D-9A-Za-\{\}\xA0\xC0-\u0237\u2013\u2014\u2026]+[\)\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3002\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\uFF01\uFF0C\uFF1A\uFF1B\uFF1F\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]?[\u3002\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]?/gmu
@@ -21,12 +21,12 @@
                             /[\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]/gmu
                                 .source,
                         'gum',
-                    );
+                    ));
             },
             776: (u, F, A) => {
                 let E;
                 var D;
-                A(179),
+                (A(179),
                     A(649),
                     ((D = E || (E = {})).Heavy = 'heavyTank'),
                     (D.Medium = 'mediumTank'),
@@ -37,7 +37,7 @@
                     R.strings.event_lootboxes.time.hours(),
                     R.strings.event_lootboxes.time.minutes(),
                     R.strings.event_lootboxes.time.seconds(),
-                    R.strings.event_lootboxes.welcomeScreen.header;
+                    R.strings.event_lootboxes.welcomeScreen.header);
             },
         },
         A = {};
@@ -45,9 +45,9 @@
         var D = A[u];
         if (void 0 !== D) return D.exports;
         var B = (A[u] = { exports: {} });
-        return F[u](B, B.exports, E), B.exports;
+        return (F[u](B, B.exports, E), B.exports);
     }
-    (E.m = F),
+    ((E.m = F),
         (u = []),
         (E.O = (F, A, D, B) => {
             if (!A) {
@@ -94,12 +94,12 @@
                         for (D in e) E.o(e, D) && (E.m[D] = e[D]);
                         if (t) var o = t(E);
                     }
-                    for (F && F(A); r < C.length; r++) (B = C[r]), E.o(u, B) && u[B] && u[B][0](), (u[B] = 0);
+                    for (F && F(A); r < C.length; r++) ((B = C[r]), E.o(u, B) && u[B] && u[B][0](), (u[B] = 0));
                     return E.O(o);
                 },
                 A = (self.webpackChunkgameface = self.webpackChunkgameface || []);
-            A.forEach(F.bind(null, 0)), (A.push = F.bind(null, A.push.bind(A)));
-        })();
+            (A.forEach(F.bind(null, 0)), (A.push = F.bind(null, A.push.bind(A))));
+        })());
     var D = E.O(void 0, [503], () => E(776));
     D = E.O(D);
 })();

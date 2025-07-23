@@ -11,11 +11,11 @@
                 r = t(7727);
             let c;
             !(function (e) {
-                (e[(e.LEFT = 0)] = 'LEFT'),
+                ((e[(e.LEFT = 0)] = 'LEFT'),
                     (e[(e.WHEEL = 1)] = 'WHEEL'),
                     (e[(e.RIGHT = 2)] = 'RIGHT'),
                     (e[(e.FOURTH = 3)] = 'FOURTH'),
-                    (e[(e.FIFTH = 4)] = 'FIFTH');
+                    (e[(e.FIFTH = 4)] = 'FIFTH'));
             })(c || (c = {}));
             var l = t(8844);
             const u = {
@@ -210,16 +210,16 @@
         },
         8844: (e, a, t) => {
             let s, n, i;
-            t.d(a, { N3: () => i, Rh: () => n, yB: () => s }),
+            (t.d(a, { N3: () => i, Rh: () => n, yB: () => s }),
                 (function (e) {
-                    (e.small = 'small'), (e.medium = 'medium'), (e.large = 'large'), (e.extraLarge = 'extraLarge');
+                    ((e.small = 'small'), (e.medium = 'medium'), (e.large = 'large'), (e.extraLarge = 'extraLarge'));
                 })(s || (s = {})),
                 (function (e) {
-                    (e.primary = 'primary'), (e.main = 'main');
+                    ((e.primary = 'primary'), (e.main = 'main'));
                 })(n || (n = {})),
                 (function (e) {
-                    (e.Center = 'center'), (e.Bottom = 'bottom');
-                })(i || (i = {}));
+                    ((e.Center = 'center'), (e.Bottom = 'bottom'));
+                })(i || (i = {})));
         },
         9690: (e, a, t) => {
             t.d(a, { HG: () => r, cg: () => i });
@@ -227,7 +227,7 @@
                 n = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
             function i(e) {
                 let a = '';
-                for (let t = n.length - 1; t >= 0; t--) for (; e >= n[t]; ) (a += s[t]), (e -= n[t]);
+                for (let t = n.length - 1; t >= 0; t--) for (; e >= n[t]; ) ((a += s[t]), (e -= n[t]));
                 return a;
             }
             const o = ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE()),
@@ -471,7 +471,7 @@
                                       case M.customizations:
                                           return g().createElement(N, { rareBonus: e, texts: a });
                                       default:
-                                          return console.warn(`Unsupported bonus: ${e.name}`), null;
+                                          return (console.warn(`Unsupported bonus: ${e.name}`), null);
                                   }
                               })(),
                           )
@@ -485,7 +485,7 @@
                 G = 'RareRewardOverlay_media__image_56';
             let M;
             !(function (e) {
-                (e.vehicle = 'vehicles'), (e.lootbox = 'lootBox'), (e.customizations = 'customizations');
+                ((e.vehicle = 'vehicles'), (e.lootbox = 'lootBox'), (e.customizations = 'customizations'));
             })(M || (M = {}));
             const Q = ({
                 res: e,
@@ -529,7 +529,7 @@
                                   ref: $,
                                   autoplay: !0,
                                   onEnded: () => {
-                                      B(!1), R(!0), f();
+                                      (B(!1), R(!0), f());
                                   },
                                   className: F,
                               })
@@ -600,7 +600,7 @@
                                 a.onChangeTime((e) => {
                                     if (y && !y.current) {
                                         const a = e.currentTime;
-                                        if (t && a && t - a <= p.remainder) return (y.current = !0), void p.next();
+                                        if (t && a && t - a <= p.remainder) return ((y.current = !0), void p.next());
                                     }
                                 });
                         }, [h.current, b]),
@@ -645,7 +645,7 @@
                         T = (0, u.P)(S),
                         P = (0, d._)(m.p6),
                         A = () => {
-                            B !== x && $(x), b.Kg.send({ type: b.QK.toRewards });
+                            (B !== x && $(x), b.Kg.send({ type: b.QK.toRewards }));
                         };
                     return (
                         (0, i.useEffect)(() => {
@@ -654,19 +654,19 @@
                                     $(x);
                                     break;
                                 case b.A_:
-                                    $(C),
+                                    ($(C),
                                         t &&
                                             (() => {
                                                 const e = O.current;
-                                                null == e || e.play(), l.hY.sound(a.sound);
-                                            })();
+                                                (null == e || e.play(), l.hY.sound(a.sound));
+                                            })());
                                     break;
                                 case b.Az:
-                                    $(x),
+                                    ($(x),
                                         t &&
                                             (() => {
                                                 const e = setTimeout(A, 400);
-                                            })();
+                                            })());
                             }
                         }, [T]),
                         (0, g.G)(O, t && B === C, s),
@@ -684,7 +684,7 @@
                                 style: P,
                                 src: a.video,
                                 onEnded: () => {
-                                    A(), w();
+                                    (A(), w());
                                 },
                                 onPlay: R,
                             }),
@@ -833,14 +833,14 @@
             var s = t(6179),
                 n = t(198);
             const i = (e, a, t) => {
-                (0, s.useEffect)(() => {
+                ((0, s.useEffect)(() => {
                     t === n.B1.preparation && a
                         ? n.Kg.send({ type: n.QK.toWaiting })
                         : t !== n.B1.waiting || a || n.Kg.send({ type: n.QK.toOpen });
                 }, [a, t]),
                     (0, s.useEffect)(() => {
                         e ? n.Kg.send({ type: n.QK.toSkip }) : n.Kg.send({ type: n.QK.toOpen });
-                    }, []);
+                    }, []));
             };
         },
         6486: (e, a, t) => {
@@ -959,7 +959,7 @@
                         {
                             className: n()(l, o),
                             onClick: () => {
-                                i.hY.click(), i.hY.sound(c.Q.purchaseClick), s();
+                                (i.hY.click(), i.hY.sound(c.Q.purchaseClick), s());
                             },
                         },
                         r().createElement(
@@ -1131,17 +1131,17 @@
         },
         4736: (e, a, t) => {
             let s, n;
-            t.d(a, { G: () => n }),
+            (t.d(a, { G: () => n }),
                 (function (e) {
-                    (e.Heavy = 'heavyTank'),
+                    ((e.Heavy = 'heavyTank'),
                         (e.Medium = 'mediumTank'),
                         (e.Light = 'lightTank'),
                         (e.Spg = 'SPG'),
-                        (e.AtSpg = 'AT-SPG');
+                        (e.AtSpg = 'AT-SPG'));
                 })(s || (s = {})),
                 (function (e) {
-                    (e.Common = 'common'), (e.Rare = 'rare'), (e.Epic = 'epic');
-                })(n || (n = {}));
+                    ((e.Common = 'common'), (e.Rare = 'rare'), (e.Epic = 'epic'));
+                })(n || (n = {})));
         },
     },
 ]);

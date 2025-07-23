@@ -11,7 +11,7 @@
                 r = a.n(i),
                 o = a(5287);
             const c = ({ binding: e, text: t = '', classMix: a, alignment: n = s.v2.left, formatWithBrackets: c }) => {
-                if (null === t) return console.error("FormatText was supplied with 'null'"), null;
+                if (null === t) return (console.error("FormatText was supplied with 'null'"), null);
                 const d = c && e ? (0, s.WU)(t, e) : t;
                 return r().createElement(
                     i.Fragment,
@@ -40,7 +40,7 @@
             const l = (e, t = []) => {
                 const a = (0, n.useRef)(),
                     l = (0, n.useCallback)((...t) => {
-                        a.current && a.current(), (a.current = e(...t));
+                        (a.current && a.current(), (a.current = e(...t)));
                     }, t);
                 return (
                     (0, n.useEffect)(
@@ -54,7 +54,7 @@
             };
         },
         9155: (e, t, a) => {
-            a.r(t), a.d(t, { default: () => ut });
+            (a.r(t), a.d(t, { default: () => ut }));
             var n = a(6179),
                 l = a.n(n),
                 s = a(6483),
@@ -93,12 +93,12 @@
                 slideInNotification: 'RewardKit_slideInNotification_e5',
             };
             let g, p;
-            !(function (e) {
-                (e.Usual = 'usual'), (e.Premium = 'premium'), (e.Default = 'default');
+            (!(function (e) {
+                ((e.Usual = 'usual'), (e.Premium = 'premium'), (e.Default = 'default'));
             })(g || (g = {})),
                 (function (e) {
                     e.MediumKit = 'mediumKit';
-                })(p || (p = {}));
+                })(p || (p = {})));
             const E = ({ count: e = 0, type: t = g.Default, size: a, isHoverEnabled: n = !0, classNames: s }) =>
                     l().createElement(
                         'div',
@@ -195,7 +195,7 @@
                             {
                                 className: N,
                                 onClick: () => {
-                                    (0, m.G)('tabb'), r();
+                                    ((0, m.G)('tabb'), r());
                                 },
                                 onMouseEnter: () => (0, m.G)(R.sounds.gui_lootbox_hangar_icon_rollover()),
                                 onMouseLeave: () => (0, m.G)(R.sounds.gui_lootbox_hangar_icon_rollout()),
@@ -321,7 +321,7 @@
                             className: te,
                             onMouseEnter: m.$.playHighlight,
                             onClick: () => {
-                                e.onMaxLevelMessageClosed(), (0, m.G)(R.sounds.cancelcloseno());
+                                (e.onMaxLevelMessageClosed(), (0, m.G)(R.sounds.cancelcloseno()));
                             },
                         }),
                     );
@@ -367,13 +367,13 @@
                 me = 'App_upgradeWidget__toysBar_5f';
             let be;
             !(function (e) {
-                (e.Available = 'available'),
+                ((e.Available = 'available'),
                     (e.AvailableExtra = 'availableExtra'),
                     (e.Collected = 'collected'),
                     (e.Unavailable = 'unavailable'),
                     (e.UnavailableExtra = 'unavailableExtra'),
                     (e.Finished = 'finished'),
-                    (e.FinishedHidden = 'finishedHidden');
+                    (e.FinishedHidden = 'finishedHidden'));
             })(be || (be = {}));
             var ve = a(3604),
                 ge = a(3457),
@@ -606,7 +606,7 @@
             };
             let st;
             !(function (e) {
-                (e.Initial = 'initial'), (e.Active = 'active'), (e.LevelUp = 'levelUp');
+                ((e.Initial = 'initial'), (e.Active = 'active'), (e.LevelUp = 'levelUp'));
             })(st || (st = {}));
             const it = (0, c.Pi)(({ className: e, isHidden: t = !1 }) => {
                 const a = B(),
@@ -666,7 +666,7 @@
                                 e,
                             ),
                             onMouseEnter: () => {
-                                x(!0), M || (0, m.G)(R.sounds.hangar_newyear_lvl_up_widget_hover());
+                                (x(!0), M || (0, m.G)(R.sounds.hangar_newyear_lvl_up_widget_hover()));
                             },
                             onMouseLeave: () => {
                                 x(!1);
@@ -854,7 +854,7 @@
                         s().createElement('div', {
                             className: c,
                             onClick: () => {
-                                n.hY.sound(R.sounds.cancelcloseno()), e();
+                                (n.hY.sound(R.sounds.cancelcloseno()), e());
                             },
                             onMouseEnter: () => n.hY.sound(R.sounds.highlight()),
                         }),
@@ -884,7 +884,7 @@
                         g = b[1],
                         p = (0, s.createRef)(),
                         E = (0, s.useCallback)(() => {
-                            m(!1), null == n || n(!1);
+                            (m(!1), null == n || n(!1));
                         }, [n]);
                     (0, s.useEffect)(
                         () => (window.addEventListener('mouseup', E), () => window.removeEventListener('mouseup', E)),
@@ -907,11 +907,11 @@
                         ),
                         h = (0, s.useCallback)(
                             (e) => {
-                                e.preventDefault(),
+                                (e.preventDefault(),
                                     0 === e.button &&
                                         w(e) &&
                                         d &&
-                                        (m(!0), null == n || n(!0), g({ x: e.clientX, y: e.clientY }));
+                                        (m(!0), null == n || n(!0), g({ x: e.clientX, y: e.clientY })));
                             },
                             [w, d, n],
                         ),
@@ -921,7 +921,7 @@
                                     if (!w(e)) return;
                                     const a = e.clientX !== v.x ? e.clientX - v.x : 0,
                                         n = e.clientY !== v.y ? e.clientY - v.y : 0;
-                                    g({ x: e.clientX, y: e.clientY }), t({ dx: a, dy: n, dz: 0 });
+                                    (g({ x: e.clientX, y: e.clientY }), t({ dx: a, dy: n, dz: 0 }));
                                 }
                             },
                             [w, u, v.x, v.y, t],
@@ -935,11 +935,11 @@
                             [w, d, t],
                         ),
                         C = (0, s.useCallback)(() => {
-                            m(!1), null == n || n(!1);
+                            (m(!1), null == n || n(!1));
                         }, [n]),
                         R = (0, s.useCallback)(
                             (e) => {
-                                0 === e.buttons && u && (m(!1), null == n || n(!1)), a({ isOver3dScene: !0 });
+                                (0 === e.buttons && u && (m(!1), null == n || n(!1)), a({ isOver3dScene: !0 }));
                             },
                             [n, a, u],
                         ),

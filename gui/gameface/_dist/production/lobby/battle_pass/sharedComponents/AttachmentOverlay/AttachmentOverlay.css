@@ -1,0 +1,10 @@
+.AttachmentOverlay_base_b7 {
+    width: 100%;
+    height: 100%;
+    background: no-repeat center / 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}

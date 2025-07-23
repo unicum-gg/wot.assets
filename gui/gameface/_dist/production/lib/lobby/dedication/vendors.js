@@ -3,7 +3,7 @@
     {
         281: () => {
             'use strict';
-            console.assert,
+            (console.assert,
                 new Set([
                     'HTML',
                     'BODY',
@@ -50,7 +50,7 @@
                     'DETAILS',
                     'SUMMARY',
                     'MARQUEE',
-                ]);
+                ]));
         },
         483: (e, r) => {
             var a;

@@ -350,73 +350,6 @@
     opacity: 0;
 }
 
-.InfoBlock_titleBlock_22 {
-    text-align: center;
-}
-
-.InfoBlock_title_af {
-    color: #f2f2f7;
-    font-size: 56rem;
-    font-weight: 700;
-    line-height: 1.1;
-}
-
-.InfoBlock_subtitle_f4 {
-    color: rgb(2, 190, 100);
-    font-size: 22rem;
-    font-weight: 700;
-    line-height: 1.2;
-    margin-bottom: 24rem;
-}
-
-.InfoBlock_eventTime_b5 {
-    color: #e9e2bf;
-    font-size: 16rem;
-    font-weight: 400;
-    line-height: 1.25;
-}
-
-.InfoBlock_cardsContainer_2c {
-    display: flex;
-    margin-top: 47rem;
-}
-
-.InfoBlock_card_b7 {
-    width: 310rem;
-    text-align: center;
-}
-
-.InfoBlock_card_b7 + .InfoBlock_card_b7 {
-    margin-left: 18rem;
-}
-
-.InfoBlock_img_13 {
-    width: 100%;
-    height: 185rem;
-    margin-bottom: 30rem;
-    background: no-repeat center / contain;
-}
-
-.InfoBlock_cardTitle_dd {
-    color: #e9e2bf;
-    font-size: 18rem;
-    font-weight: 700;
-    line-height: 1.1;
-    margin-bottom: 6rem;
-}
-
-.InfoBlock_cardSubtitle_65 {
-    color: #8c8c7e;
-    font-size: 16rem;
-    font-weight: 400;
-    line-height: 1.25;
-    line-height: 20rem;
-}
-
-.mediaMedium .InfoBlock_cardSubtitle_65 {
-    line-height: 24rem;
-}
-
 .App_base_5d {
     color: #8c8c7e;
     font-size: 16rem;
@@ -428,8 +361,7 @@
     height: 100%;
     padding: 35rem 0 5rem;
     background:
-        radial-gradient(transparent 50%, rgba(0, 0, 0, 0.5) 75%),
-        linear-gradient(90deg, rgba(0, 0, 0, 0.6)),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.3)),
         url('R.images.battle_royale.gui.maps.infopage.background') no-repeat center / cover;
     position: relative;
     z-index: 2;
@@ -553,12 +485,8 @@
     height: 136rem;
 }
 
-.App_base_5d .App_indentTable_a1 {
+.App_base_5d .App_indentBPTable_cc {
     margin-bottom: 15rem;
-}
-
-.App_infoBlock_7e {
-    margin-bottom: 24rem;
 }
 
 .FormatTextWithColorTags_blackReal_3c {
@@ -681,13 +609,13 @@
 
 .Article_images_c8 {
     display: flex;
-    justify-content: space-between;
 }
 
 .Article_imageContainer_6a {
     display: flex;
     flex-direction: column;
     flex: 1;
+    max-width: 471rem;
 }
 
 .Article_images__mapStyle_21 .Article_imageContainer_6a {
@@ -713,6 +641,11 @@
 .Article_accent_0a {
     margin-top: 20rem;
     color: #e9e2bf;
+}
+
+.Article_divider_4b {
+    width: 20rem;
+    height: 100%;
 }
 
 .Details_base_78 {
@@ -767,15 +700,34 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 32rem;
     margin-bottom: 50rem;
     position: relative;
 }
 
+.Header_header_57 {
+    margin: 40rem 0;
+    text-align: center;
+}
+
+.Header_title_2a {
+    margin-bottom: 10rem;
+    color: #f2f2f7;
+    font-size: 44rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.Header_subtitle_ce {
+    color: #e9e2bf;
+    font-size: 15rem;
+    font-weight: 700;
+    line-height: 1.15;
+}
+
 .Header_container_bf {
     display: flex;
-    width: 756rem;
-    height: 426rem;
+    width: 100%;
+    height: 540rem;
     position: relative;
     cursor: pointer;
 }
@@ -976,7 +928,7 @@
     height: 16rem;
     margin-top: 3rem;
     background: url('R.images.battle_royale_progression.gui.maps.progression.token_battle_royale') no-repeat center /
-        cover;
+        contain;
 }
 
 .Column_dash_29 {

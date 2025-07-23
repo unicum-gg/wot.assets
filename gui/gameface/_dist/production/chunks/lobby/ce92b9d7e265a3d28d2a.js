@@ -13,7 +13,7 @@
             }
         },
         412: (e, t, a) => {
-            a.r(t), a.d(t, { default: () => Kt });
+            (a.r(t), a.d(t, { default: () => Kt }));
             var n = a(1856),
                 s = a(3138),
                 r = a(9630),
@@ -62,7 +62,7 @@
             }
             let h;
             !(function (e) {
-                (e.Accent = 'accent'), (e.Default = 'default');
+                ((e.Accent = 'accent'), (e.Default = 'default'));
             })(h || (h = {}));
             const w = (e) => {
                 let t = e.onClick,
@@ -81,7 +81,7 @@
                     })(e, E);
                 const c = (0, k.N)(
                     () => {
-                        t(), (0, v.G)(R.sounds.hangar_newyear_hud_side_click());
+                        (t(), (0, v.G)(R.sounds.hangar_newyear_hud_side_click()));
                     },
                     [t],
                     200,
@@ -280,11 +280,11 @@
                 me = a(3946);
             let _e;
             !(function (e) {
-                (e.Idle = 'idle'),
+                ((e.Idle = 'idle'),
                     (e.Start = 'start'),
                     (e.Bump = 'bump'),
                     (e.FinalDisappearances = 'finalDisappearances'),
-                    (e.End = 'end');
+                    (e.End = 'end'));
             })(_e || (_e = {}));
             const pe = { icon: '', item: '', value: '', name: '', label: '', itemType: '' },
                 ge = (0, L.q)()(
@@ -516,7 +516,7 @@
                                                 let t = 0;
                                                 return [
                                                     function a() {
-                                                        e(), (t = requestAnimationFrame(a));
+                                                        (e(), (t = requestAnimationFrame(a)));
                                                     },
                                                     function () {
                                                         cancelAnimationFrame(t);
@@ -549,7 +549,7 @@
                                             }),
                                             n = a[0],
                                             s = a[1];
-                                        return n(), s;
+                                        return (n(), s);
                                     };
                                 e.changeTimeLoop = t();
                                 const a = (t) => (
@@ -596,7 +596,7 @@
                                         return null == (e = k.current) ? void 0 : e.pause();
                                     },
                                     l = () => {
-                                        i(), c(0);
+                                        (i(), c(0));
                                     },
                                     d = () => {
                                         var e, t;
@@ -606,15 +606,15 @@
                                             : [];
                                     },
                                     u = (e) => {
-                                        c(e), o();
+                                        (c(e), o());
                                     },
                                     m = (e) => {
-                                        c(e), i();
+                                        (c(e), i());
                                     },
                                     g = () => {
-                                        (e.changeTimeHandlers = []),
+                                        ((e.changeTimeHandlers = []),
                                             (e.changeKeyframeHandlers = []),
-                                            null == e.changeTimeLoop || e.changeTimeLoop();
+                                            null == e.changeTimeLoop || e.changeTimeLoop());
                                     },
                                     f = (e, t) => {
                                         var a;
@@ -655,7 +655,7 @@
                                         onKeyframes: n,
                                     }),
                                     () => {
-                                        g(), (S.current = null);
+                                        (g(), (S.current = null));
                                     }
                                 );
                             }
@@ -682,23 +682,23 @@
                 et = a(9762),
                 tt = a(6457);
             let at, nt;
-            !(function (e) {
-                (e.Idle = 'idle'),
+            (!(function (e) {
+                ((e.Idle = 'idle'),
                     (e.OpeningParticles = 'openingParticles'),
                     (e.AppearReward = 'appearReward'),
                     (e.SwitchingToClosed = 'switchingToClosed'),
                     (e.LastSacks = 'lastSacks'),
-                    (e.Slide = 'slide');
+                    (e.Slide = 'slide'));
             })(at || (at = {})),
                 (function (e) {
-                    (e.StartOpening = 'startOpening'),
+                    ((e.StartOpening = 'startOpening'),
                         (e.Appear = 'appear'),
                         (e.OpeningEnd = 'openingEnd'),
                         (e.ToSlide = 'toSlide'),
                         (e.ToCloseSacks = 'toCloseSacks'),
                         (e.SlideEnd = 'slideEnd'),
-                        (e.UpdateContext = 'updateContext');
-                })(nt || (nt = {}));
+                        (e.UpdateContext = 'updateContext'));
+                })(nt || (nt = {})));
             const st = (0, c.createContext)({}),
                 rt = () => {
                     const e = (0, c.useContext)(st);
@@ -781,7 +781,7 @@
                 };
             var wt;
             !(function (e) {
-                (e[(e.First = 0)] = 'First'), (e[(e.Second = 1)] = 'Second');
+                ((e[(e.First = 0)] = 'First'), (e[(e.Second = 1)] = 'Second'));
             })(wt || (wt = {}));
             const Ct = (0, m.Pi)(({ className: e }) => {
                     const t = Se(),
@@ -824,7 +824,7 @@
                                     config: { duration: 800, easing: Qe.Z.easeOutCirc },
                                     delay: 1e3,
                                     onRest: () => {
-                                        n.setIsRewardAppeared(!0), (i.current = wt.First);
+                                        (n.setIsRewardAppeared(!0), (i.current = wt.First));
                                     },
                                 },
                             ];
@@ -887,9 +887,9 @@
                                 p(1);
                                 break;
                             case at.AppearReward:
-                                return p(0), (0, dt.F)(() => p((e) => e + 1), 0);
+                                return (p(0), (0, dt.F)(() => p((e) => e + 1), 0));
                             case at.SwitchingToClosed:
-                                p(1), u({ type: nt.OpeningEnd });
+                                (p(1), u({ type: nt.OpeningEnd }));
                         }
                     }, [u, d.value]);
                     const g = (0, Ue.GS)().mediaSize,
@@ -1019,7 +1019,7 @@
                         u = i[1];
                     return (
                         (0, c.useEffect)(() => {
-                            n(d), u(r.step.state);
+                            (n(d), u(r.step.state));
                         }, [r.step.state, d, n]),
                         o().createElement(
                             'div',
@@ -1065,7 +1065,7 @@
                         p = s === _e.Start || s === _e.Bump,
                         g = (0, c.useCallback)(
                             (e) => {
-                                a.setUpdateState(e), e === _e.End && d(n);
+                                (a.setUpdateState(e), e === _e.End && d(n));
                             },
                             [a, n],
                         ),
@@ -1198,7 +1198,7 @@
                         k = () => {
                             !f || d ? S() : r.setIsSkipAnimation(!0);
                         };
-                    (0, c.useEffect)(() => {
+                    ((0, c.useEffect)(() => {
                         var e;
                         (null == (e = g.state) ? void 0 : e.value) === at.LastSacks &&
                             (m ? g.send({ type: nt.OpeningEnd }) : r.setIsSkipAnimation(!1));
@@ -1219,7 +1219,7 @@
                                 (null == (e = g.state) ? void 0 : e.value) === at.Idle &&
                                 (S(), r.setIsSkipAnimation(!1));
                         }, [g, r, S, d]),
-                        (0, ze.gd)(Ke.n.SPACE, k);
+                        (0, ze.gd)(Ke.n.SPACE, k));
                     const v = n.computes.getBundleType(),
                         b = (0, Ue.GS)().mediaSize;
                     return o().createElement(

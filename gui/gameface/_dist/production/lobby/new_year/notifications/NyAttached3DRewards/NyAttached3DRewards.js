@@ -2,8 +2,8 @@
     'use strict';
     var __webpack_modules__ = {
             527: (u, e, t) => {
-                t.r(e),
-                    t.d(e, { mouse: () => l, off: () => s, on: () => i, onResize: () => r, onScaleUpdated: () => a });
+                (t.r(e),
+                    t.d(e, { mouse: () => l, off: () => s, on: () => i, onResize: () => r, onScaleUpdated: () => a }));
                 var n = t(2472),
                     o = t(1176);
                 const r = (0, n.E)('clientResized'),
@@ -62,10 +62,10 @@
                     );
                     return Object.assign({}, r, {
                         disable() {
-                            (u.enabled = !1), n();
+                            ((u.enabled = !1), n());
                         },
                         enable() {
-                            (u.enabled = !0), n();
+                            ((u.enabled = !0), n());
                         },
                         enableOutside() {
                             u.enabled && (0, o.R)(!0);
@@ -77,7 +77,7 @@
                 })();
             },
             5959: (u, e, t) => {
-                t.r(e),
+                (t.r(e),
                     t.d(e, {
                         events: () => n,
                         getMouseGlobalPosition: () => a,
@@ -85,7 +85,7 @@
                         graphicsQuality: () => i,
                         playSound: () => o.G,
                         setRTPC: () => o.E,
-                    });
+                    }));
                 var n = t(527),
                     o = t(2493);
                 function r(u = 'px') {
@@ -150,7 +150,7 @@
                 function o(u, e, t) {
                     return `url(${n(u, e, t)})`;
                 }
-                t.r(e), t.d(e, { getBgUrl: () => o, getTextureUrl: () => n });
+                (t.r(e), t.d(e, { getBgUrl: () => o, getTextureUrl: () => n }));
             },
             6112: (u, e, t) => {
                 t.d(e, { W: () => n });
@@ -177,7 +177,7 @@
                 };
             },
             7641: (u, e, t) => {
-                t.r(e),
+                (t.r(e),
                     t.d(e, {
                         addModelObserver: () => c,
                         addPreloadTexture: () => s,
@@ -205,7 +205,7 @@
                         setInputPaddingsRem: () => E,
                         setSidePaddingsRem: () => A,
                         whenTutorialReady: () => T,
-                    });
+                    }));
                 var n = t(3722),
                     o = t(6112),
                     r = t(6538),
@@ -347,9 +347,9 @@
             },
             5521: (u, e, t) => {
                 let n, o;
-                t.d(e, { n: () => n }),
+                (t.d(e, { n: () => n }),
                     (function (u) {
-                        (u[(u.NONE = -1)] = 'NONE'),
+                        ((u[(u.NONE = -1)] = 'NONE'),
                             (u[(u.ALT = 165)] = 'ALT'),
                             (u[(u.ENTER = 13)] = 'ENTER'),
                             (u[(u.ESCAPE = 27)] = 'ESCAPE'),
@@ -378,10 +378,10 @@
                             (u[(u.KEY_6 = 54)] = 'KEY_6'),
                             (u[(u.KEY_7 = 55)] = 'KEY_7'),
                             (u[(u.KEY_8 = 56)] = 'KEY_8'),
-                            (u[(u.KEY_9 = 57)] = 'KEY_9');
+                            (u[(u.KEY_9 = 57)] = 'KEY_9'));
                     })(n || (n = {})),
                     (function (u) {
-                        (u.ALT = 'Alt'),
+                        ((u.ALT = 'Alt'),
                             (u.ALT_GRAPH = 'AltGraph'),
                             (u.CAPS_LOCK = 'CapsLock'),
                             (u.CONTROL = 'Control'),
@@ -392,15 +392,15 @@
                             (u.SCROLL_LOCK = 'ScrollLock'),
                             (u.SHIFT = 'Shift'),
                             (u.SYMBOL = 'Symbol'),
-                            (u.SYMBOL_LOCK = 'SymbolLock');
-                    })(o || (o = {}));
+                            (u.SYMBOL_LOCK = 'SymbolLock'));
+                    })(o || (o = {})));
             },
             1358: (u, e, t) => {
                 t.d(e, { Z: () => r });
                 var n = t(3138);
                 class o {
                     constructor() {
-                        (this._callbacks = void 0),
+                        ((this._callbacks = void 0),
                             (this._updateHandler = void 0),
                             (this._views = void 0),
                             (this.clearViewCallbacks = (u) => {
@@ -412,14 +412,15 @@
                             }),
                             (this._callbacks = {}),
                             (this._views = {}),
-                            (this._updateHandler = void 0);
+                            (this._updateHandler = void 0));
                     }
                     static get instance() {
-                        return window.__dataTracker || (window.__dataTracker = new o()), window.__dataTracker;
+                        return (window.__dataTracker || (window.__dataTracker = new o()), window.__dataTracker);
                     }
                     clear() {
-                        void 0 !== this._updateHandler && (this._updateHandler.clear(), (this._updateHandler = void 0)),
-                            (this._callbacks = {});
+                        (void 0 !== this._updateHandler &&
+                            (this._updateHandler.clear(), (this._updateHandler = void 0)),
+                            (this._callbacks = {}));
                     }
                     addCallback(u, e, t = 0, o = !0) {
                         void 0 === this._updateHandler &&
@@ -459,35 +460,35 @@
                     _index__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(9916);
                 class ViewModel {
                     constructor(path, watchingFields = []) {
-                        (this.dataTracker = void 0),
+                        ((this.dataTracker = void 0),
                             (this.modelPath = void 0),
                             (this.callbacks = void 0),
                             (this.data = void 0),
                             (this._notifyObservers = () => {
-                                (this.data = eval(this.modelPath)),
+                                ((this.data = eval(this.modelPath)),
                                     this.callbacks.forEach((u) => {
                                         u(this.data);
-                                    });
+                                    }));
                             }),
                             (this.dataTracker = new _DataTracker__WEBPACK_IMPORTED_MODULE_0__.Z()),
                             (this.modelPath = path),
                             (this.callbacks = new Set()),
                             (0, _index__WEBPACK_IMPORTED_MODULE_1__.ry)().then(() => {
-                                this._addCallback(path),
+                                (this._addCallback(path),
                                     watchingFields.forEach((u) => {
                                         this._addCallback(path + '.' + u);
                                     }),
-                                    this._notifyObservers();
-                            });
+                                    this._notifyObservers());
+                            }));
                     }
                     subscribe(u) {
-                        this.callbacks.add(u), null !== this.data && void 0 !== this.data && u(this.data);
+                        (this.callbacks.add(u), null !== this.data && void 0 !== this.data && u(this.data));
                     }
                     unsubscribe(u) {
                         this.callbacks.delete(u);
                     }
                     destroy() {
-                        this.dataTracker.clear(), this.callbacks.clear();
+                        (this.dataTracker.clear(), this.callbacks.clear());
                     }
                     _addCallback(u) {
                         this.dataTracker.addCallback(u, this._notifyObservers);
@@ -499,7 +500,7 @@
                 t.d(e, { B3: () => s, Z5: () => a.Z5, B0: () => i, ry: () => B });
                 class n {
                     constructor() {
-                        (this.entries = []),
+                        ((this.entries = []),
                             (this._listenMouse = !1),
                             (this.onMouseDown = (u) => {
                                 this.entries.forEach(({ container: e, callback: t }) => {
@@ -510,19 +511,19 @@
                                     } while (n);
                                     t();
                                 });
-                            });
+                            }));
                     }
                     static get instance() {
-                        return n.__instance || (n.__instance = new n()), n.__instance;
+                        return (n.__instance || (n.__instance = new n()), n.__instance);
                     }
                     register(u, e) {
-                        this.addMouseListener(), this.entries.push({ container: u, callback: e });
+                        (this.addMouseListener(), this.entries.push({ container: u, callback: e }));
                     }
                     unregister(u, e) {
                         const t = u,
                             n = e;
-                        (this.entries = this.entries.filter(({ container: u, callback: e }) => u !== t || e !== n)),
-                            this.removeMouseListener();
+                        ((this.entries = this.entries.filter(({ container: u, callback: e }) => u !== t || e !== n)),
+                            this.removeMouseListener());
                     }
                     addMouseListener() {
                         this._listenMouse ||
@@ -540,14 +541,14 @@
                 var a = t(8613);
                 let i;
                 !(function (u) {
-                    (u[(u.UNDEFINED = 0)] = 'UNDEFINED'),
+                    ((u[(u.UNDEFINED = 0)] = 'UNDEFINED'),
                         (u[(u.TOOLTIP = 1)] = 'TOOLTIP'),
                         (u[(u.POP_OVER = 2)] = 'POP_OVER'),
                         (u[(u.CONTEXT_MENU = 4)] = 'CONTEXT_MENU'),
                         (u[(u.DROP_DOWN = 8)] = 'DROP_DOWN'),
                         (u[(u.MOVE = 16)] = 'MOVE'),
                         (u[(u.CLOSE = 32)] = 'CLOSE'),
-                        (u[(u.MINIMIZE = 64)] = 'MINIMIZE');
+                        (u[(u.MINIMIZE = 64)] = 'MINIMIZE'));
                 })(i || (i = {}));
                 const s = Object.freeze({ INTEGRAL: 0, GOLD: 1 }),
                     E = Object.freeze({ FRACTIONAL: 0, WO_ZERO_DIGITS: 1 }),
@@ -682,7 +683,8 @@
                         addEscapeListener: (u) => {
                             const e = (e) => p(e, u);
                             return (
-                                window.addEventListener('keydown', e), () => window.removeEventListener('keydown', e)
+                                window.addEventListener('keydown', e),
+                                () => window.removeEventListener('keydown', e)
                             );
                         },
                         closeOnEsc: (u) => {
@@ -748,7 +750,7 @@
                 t(1281);
                 let i;
                 !(function (u) {
-                    (u[(u.left = 0)] = 'left'), (u[(u.right = 1)] = 'right');
+                    ((u[(u.left = 0)] = 'left'), (u[(u.right = 1)] = 'right'));
                 })(i || (i = {}));
                 (() => {
                     const u = new RegExp(
@@ -809,17 +811,20 @@
                         content: 'CButton_content_cc',
                     };
                 let d, _;
-                !(function (u) {
-                    (u.main = 'main'),
+                (!(function (u) {
+                    ((u.main = 'main'),
                         (u.primary = 'primary'),
                         (u.primaryGreen = 'primaryGreen'),
                         (u.primaryRed = 'primaryRed'),
                         (u.secondary = 'secondary'),
-                        (u.ghost = 'ghost');
+                        (u.ghost = 'ghost'));
                 })(d || (d = {})),
                     (function (u) {
-                        (u.extraSmall = 'extraSmall'), (u.small = 'small'), (u.medium = 'medium'), (u.large = 'large');
-                    })(_ || (_ = {}));
+                        ((u.extraSmall = 'extraSmall'),
+                            (u.small = 'small'),
+                            (u.medium = 'medium'),
+                            (u.large = 'large'));
+                    })(_ || (_ = {})));
                 const D = ({
                     children: u,
                     size: e,
@@ -1157,7 +1162,7 @@
                                                     subscribe: (t, r) => {
                                                         const i = 'string' == typeof r ? `${n}.${r}` : n,
                                                             s = H.O.view.addModelObserver(i, e, !0);
-                                                        return o.set(s, t), u && t(a(r)), s;
+                                                        return (o.set(s, t), u && t(a(r)), s);
                                                     },
                                                     readByPath: a,
                                                     createCallback: (u, e) => {
@@ -1287,7 +1292,7 @@
                                     }, [r]),
                                     (0, n.useEffect)(
                                         () => () => {
-                                            D.externalModel.dispose(), E.current.forEach((u) => u());
+                                            (D.externalModel.dispose(), E.current.forEach((u) => u()));
                                         },
                                         [D],
                                     ),
@@ -1320,9 +1325,9 @@
                     }
                 }
                 let au, iu, su, Eu, lu, cu, Au, Fu;
-                (ru.defaultProps = { format: 'integral' }),
+                ((ru.defaultProps = { format: 'integral' }),
                     (function (u) {
-                        (u.Items = 'items'),
+                        ((u.Items = 'items'),
                             (u.Equipment = 'equipment'),
                             (u.Xp = 'xp'),
                             (u.XpFactor = 'xpFactor'),
@@ -1371,10 +1376,10 @@
                             (u.BattleBoosterGift = 'battleBooster_gift'),
                             (u.OptionalDevice = 'optionalDevice'),
                             (u.LootBox = 'lootBox'),
-                            (u.BrCoin = 'brcoin');
+                            (u.BrCoin = 'brcoin'));
                     })(au || (au = {})),
                     (function (u) {
-                        (u.Gold = 'gold'),
+                        ((u.Gold = 'gold'),
                             (u.Credits = 'credits'),
                             (u.Crystal = 'crystal'),
                             (u.Premium = 'premium'),
@@ -1411,10 +1416,10 @@
                             (u.BattlePassPoints = 'battlePassPoints'),
                             (u.BattleBadge = 'dossier_badge'),
                             (u.BattleAchievement = 'dossier_achievement'),
-                            (u.EquipCoin = 'equipCoin');
+                            (u.EquipCoin = 'equipCoin'));
                     })(iu || (iu = {})),
                     (function (u) {
-                        (u.Big = 'big'),
+                        ((u.Big = 'big'),
                             (u.Small = 'small'),
                             (u.Mini = 'mini'),
                             (u.S600x450 = 's600x450'),
@@ -1425,17 +1430,17 @@
                             (u.S128x100 = 's128x100'),
                             (u.S80x80 = 's80x80'),
                             (u.S64x64 = 's64x64'),
-                            (u.S48x48 = 's48x48');
+                            (u.S48x48 = 's48x48'));
                     })(su || (su = {})),
                     (function (u) {
-                        (u.MULTI = 'multi'),
+                        ((u.MULTI = 'multi'),
                             (u.CURRENCY = 'currency'),
                             (u.PREMIUM_PLUS = 'premium_plus'),
                             (u.NUMBER = 'number'),
-                            (u.STRING = 'string');
+                            (u.STRING = 'string'));
                     })(Eu || (Eu = {})),
                     (function (u) {
-                        (u.BATTLE_BOOSTER = 'battleBooster'),
+                        ((u.BATTLE_BOOSTER = 'battleBooster'),
                             (u.BATTLE_BOOSTER_REPLACE = 'battleBoosterReplace'),
                             (u.BUILT_IN_EQUIPMENT = 'builtInEquipment'),
                             (u.EQUIPMENT_PLUS = 'equipmentPlus'),
@@ -1449,13 +1454,13 @@
                             (u.PROGRESSION_STYLE_UPGRADED_3 = 'progressionStyleUpgraded_3'),
                             (u.PROGRESSION_STYLE_UPGRADED_4 = 'progressionStyleUpgraded_4'),
                             (u.PROGRESSION_STYLE_UPGRADED_5 = 'progressionStyleUpgraded_5'),
-                            (u.PROGRESSION_STYLE_UPGRADED_6 = 'progressionStyleUpgraded_6');
+                            (u.PROGRESSION_STYLE_UPGRADED_6 = 'progressionStyleUpgraded_6'));
                     })(lu || (lu = {})),
                     (function (u) {
                         u.BATTLE_BOOSTER = 'battleBooster';
                     })(cu || (cu = {})),
                     (function (u) {
-                        (u.BATTLE_BOOSTER = 'battleBooster'),
+                        ((u.BATTLE_BOOSTER = 'battleBooster'),
                             (u.BATTLE_BOOSTER_REPLACE = 'battleBoosterReplace'),
                             (u.BUILT_IN_EQUIPMENT = 'builtInEquipment'),
                             (u.EQUIPMENT_PLUS = 'equipmentPlus'),
@@ -1469,11 +1474,11 @@
                             (u.PROGRESSION_STYLE_UPGRADED_3 = 'progressionStyleUpgraded_3'),
                             (u.PROGRESSION_STYLE_UPGRADED_4 = 'progressionStyleUpgraded_4'),
                             (u.PROGRESSION_STYLE_UPGRADED_5 = 'progressionStyleUpgraded_5'),
-                            (u.PROGRESSION_STYLE_UPGRADED_6 = 'progressionStyleUpgraded_6');
+                            (u.PROGRESSION_STYLE_UPGRADED_6 = 'progressionStyleUpgraded_6'));
                     })(Au || (Au = {})),
                     (function (u) {
-                        (u[(u.Engraving = 0)] = 'Engraving'), (u[(u.Background = 1)] = 'Background');
-                    })(Fu || (Fu = {}));
+                        ((u[(u.Engraving = 0)] = 'Engraving'), (u[(u.Background = 1)] = 'Background'));
+                    })(Fu || (Fu = {})));
                 const du = [
                         au.Items,
                         au.Equipment,
@@ -1622,10 +1627,10 @@
                             f = (0, n.useCallback)(() => {
                                 if (b.current.isVisible || b.current.timeoutId) {
                                     const u = b.current.timeoutId;
-                                    u > 0 && (clearTimeout(u), (b.current.timeoutId = 0)),
+                                    (u > 0 && (clearTimeout(u), (b.current.timeoutId = 0)),
                                         pu(t, d, { on: !1 }, g),
                                         b.current.isVisible && p && p(),
-                                        (b.current.isVisible = !1);
+                                        (b.current.isVisible = !1));
                                 }
                             }, [t, d, g, p]),
                             h = (0, n.useCallback)((u) => {
@@ -1636,13 +1641,13 @@
                                         e && !e.isSameNode(b.current.prevTarget) && f();
                                     }, 200)));
                             }, []);
-                        (0, n.useEffect)(() => {
+                        ((0, n.useEffect)(() => {
                             const u = b.current.hideTimerId;
                             return (
                                 document.addEventListener('wheel', h, { capture: !0 }),
                                 () => {
-                                    document.removeEventListener('wheel', h, { capture: !0 }),
-                                        u && window.clearTimeout(u);
+                                    (document.removeEventListener('wheel', h, { capture: !0 }),
+                                        u && window.clearTimeout(u));
                                 }
                             );
                         }, []),
@@ -1653,11 +1658,11 @@
                                 () => (
                                     window.addEventListener('mouseleave', f),
                                     () => {
-                                        window.removeEventListener('mouseleave', f), f();
+                                        (window.removeEventListener('mouseleave', f), f());
                                     }
                                 ),
                                 [f],
-                            );
+                            ));
                         return D
                             ? (0, n.cloneElement)(
                                   e,
@@ -1673,13 +1678,13 @@
                                                       y && y(u));
                                               }),
                                           onMouseLeave: ((u) => (e) => {
-                                              f(), null == a || a(e), null == u || u(e);
+                                              (f(), null == a || a(e), null == u || u(e));
                                           })(e.props.onMouseLeave),
                                           onClick: ((u) => (e) => {
-                                              !1 === A && f(), null == s || s(e), null == u || u(e);
+                                              (!1 === A && f(), null == s || s(e), null == u || u(e));
                                           })(e.props.onClick),
                                           onMouseDown: ((u) => (e) => {
-                                              !1 === A && f(), null == i || i(e), null == u || u(e);
+                                              (!1 === A && f(), null == i || i(e), null == u || u(e));
                                           })(e.props.onMouseDown),
                                       },
                                       v,
@@ -1806,27 +1811,27 @@
                     return r ? o().createElement(vu, Tu({}, e, { contentId: r }), n) : o().createElement(wu, e, n);
                 };
                 let Ou, ku, Su, Nu, xu;
-                !(function (u) {
-                    (u.Small = 'small'),
+                (!(function (u) {
+                    ((u.Small = 'small'),
                         (u.Big = 'big'),
                         (u.S180x135 = 's180x135'),
                         (u.S232x174 = 's232x174'),
                         (u.S296x222 = 's296x222'),
                         (u.S360x270 = 's360x270'),
                         (u.S400x300 = 's400x300'),
-                        (u.S600x450 = 's600x450');
+                        (u.S600x450 = 's600x450'));
                 })(Ou || (Ou = {})),
                     (function (u) {
-                        (u.None = 'noAnimation'),
+                        ((u.None = 'noAnimation'),
                             (u.Default = 'defaultAnimation'),
                             (u.OnlyButton = 'onlyButtonAnimation'),
-                            (u.OnlyText = 'onlyTextAnimation');
+                            (u.OnlyText = 'onlyTextAnimation'));
                     })(ku || (ku = {})),
                     (function (u) {
-                        (u.Default = 'default'), (u.Big = 'Big');
+                        ((u.Default = 'default'), (u.Big = 'Big'));
                     })(Su || (Su = {})),
                     (function (u) {
-                        (u.GiftMachineToken = 'battleToken'),
+                        ((u.GiftMachineToken = 'battleToken'),
                             (u.Tman = 'tmanToken'),
                             (u.AchievementReward = 'dossier_achievement'),
                             (u.Customizations = 'customizations'),
@@ -1839,13 +1844,13 @@
                             (u.RandomDecoration = 'randomNyToy'),
                             (u.RandomInstruction = 'randomNyInstruction'),
                             (u.RandomCrewInstruction = 'randomNyCrewInstruction'),
-                            (u.EquipCoin = 'equipCoin');
+                            (u.EquipCoin = 'equipCoin'));
                     })(Nu || (Nu = {})),
                     (function (u) {
-                        (u.CelebrityAction = 'questTokenAnim'),
+                        ((u.CelebrityAction = 'questTokenAnim'),
                             (u.Story = 'questTokenStory'),
-                            (u.Decoration = 'questTokenDecoration');
-                    })(xu || (xu = {}));
+                            (u.Decoration = 'questTokenDecoration'));
+                    })(xu || (xu = {})));
                 const Iu = {
                         base: 'CommonReward_base_c0',
                         base__small: 'CommonReward_base__small_cb',
@@ -1948,8 +1953,8 @@
                         );
                     };
                 let Uu, Gu, qu, Yu, Vu, zu, ju;
-                !(function (u) {
-                    (u.Undefined = 'undefined'),
+                (!(function (u) {
+                    ((u.Undefined = 'undefined'),
                         (u.NewYear = 'NewYear'),
                         (u.Christmas = 'Christmas'),
                         (u.Fairytale = 'Fairytale'),
@@ -1965,43 +1970,43 @@
                         (u.Gift2 = 'Gift2'),
                         (u.Bro = 'Bro'),
                         (u.Dog = 'Dog'),
-                        (u.Surprise = 'Surprise');
+                        (u.Surprise = 'Surprise'));
                 })(Uu || (Uu = {})),
                     (function (u) {
-                        (u.Crystal = 'ny_crystal'),
+                        ((u.Crystal = 'ny_crystal'),
                             (u.Emerald = 'ny_emerald'),
                             (u.Amber = 'ny_amber'),
                             (u.Iron = 'ny_iron'),
-                            (u.AnyResource = 'anyResource');
+                            (u.AnyResource = 'anyResource'));
                     })(Gu || (Gu = {})),
                     (function (u) {
-                        (u.XP = 'xpFactor'),
+                        ((u.XP = 'xpFactor'),
                             (u.TankmenXP = 'tankmenXPFactor'),
                             (u.FreeXp = 'freeXPFactor'),
-                            (u.Credits = 'creditsFactor');
+                            (u.Credits = 'creditsFactor'));
                     })(qu || (qu = {})),
                     (function (u) {
-                        (u.NewYear = 'NewYear'),
+                        ((u.NewYear = 'NewYear'),
                             (u.Christmas = 'Christmas'),
                             (u.Fairytale = 'Fairytale'),
-                            (u.Oriental = 'Oriental');
+                            (u.Oriental = 'Oriental'));
                     })(Yu || (Yu = {})),
                     (function (u) {
-                        (u.Level1 = 'level1'), (u.Level2 = 'level2'), (u.Level3 = 'level3'), (u.Level4 = 'level4');
+                        ((u.Level1 = 'level1'), (u.Level2 = 'level2'), (u.Level3 = 'level3'), (u.Level4 = 'level4'));
                     })(Vu || (Vu = {})),
                     (function (u) {
-                        (u.Zero = 'zero'), (u.Number = 'number'), (u.Default = 'default');
+                        ((u.Zero = 'zero'), (u.Number = 'number'), (u.Default = 'default'));
                     })(zu || (zu = {})),
                     (function (u) {
-                        (u.Undefined = 'undefined'),
+                        ((u.Undefined = 'undefined'),
                             (u.ToEvent = 'toEvent'),
                             (u.ToGuestD = 'toGuestD'),
                             (u.ToGuestC = 'toGuestC'),
                             (u.ToMarkertplace = 'toMarkertplace'),
                             (u.ToGiftmachine = 'toGiftmachine'),
-                            (u.ToRewards = 'toRewards');
-                    })(ju || (ju = {}));
-                R.strings.settings.LANGUAGE_CODE(),
+                            (u.ToRewards = 'toRewards'));
+                    })(ju || (ju = {})));
+                (R.strings.settings.LANGUAGE_CODE(),
                     Nu.Tman,
                     Nu.GiftMachineToken,
                     Nu.AddcEconomicBonuses,
@@ -2029,7 +2034,7 @@
                     Gu.Amber,
                     Ou.S360x270,
                     Ou.S400x300,
-                    Ou.S600x450;
+                    Ou.S600x450);
                 const Hu = (u) => {
                         switch (u) {
                             case Nu.Tman:
@@ -2183,9 +2188,9 @@
         var e = __webpack_module_cache__[u];
         if (void 0 !== e) return e.exports;
         var t = (__webpack_module_cache__[u] = { exports: {} });
-        return __webpack_modules__[u](t, t.exports, __webpack_require__), t.exports;
+        return (__webpack_modules__[u](t, t.exports, __webpack_require__), t.exports);
     }
-    (__webpack_require__.m = __webpack_modules__),
+    ((__webpack_require__.m = __webpack_modules__),
         (deferred = []),
         (__webpack_require__.O = (u, e, t, n) => {
             if (!e) {
@@ -2210,7 +2215,7 @@
         }),
         (__webpack_require__.n = (u) => {
             var e = u && u.__esModule ? () => u.default : () => u;
-            return __webpack_require__.d(e, { a: e }), e;
+            return (__webpack_require__.d(e, { a: e }), e);
         }),
         (__webpack_require__.d = (u, e) => {
             for (var t in e)
@@ -2228,10 +2233,10 @@
         })()),
         (__webpack_require__.o = (u, e) => Object.prototype.hasOwnProperty.call(u, e)),
         (__webpack_require__.r = (u) => {
-            'undefined' != typeof Symbol &&
+            ('undefined' != typeof Symbol &&
                 Symbol.toStringTag &&
                 Object.defineProperty(u, Symbol.toStringTag, { value: 'Module' }),
-                Object.defineProperty(u, '__esModule', { value: !0 });
+                Object.defineProperty(u, '__esModule', { value: !0 }));
         }),
         (__webpack_require__.j = 6258),
         (() => {
@@ -2247,12 +2252,12 @@
                         if (i) var E = i(__webpack_require__);
                     }
                     for (e && e(t); s < r.length; s++)
-                        (o = r[s]), __webpack_require__.o(u, o) && u[o] && u[o][0](), (u[o] = 0);
+                        ((o = r[s]), __webpack_require__.o(u, o) && u[o] && u[o][0](), (u[o] = 0));
                     return __webpack_require__.O(E);
                 },
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
-            t.forEach(e.bind(null, 0)), (t.push = e.bind(null, t.push.bind(t)));
-        })();
+            (t.forEach(e.bind(null, 0)), (t.push = e.bind(null, t.push.bind(t))));
+        })());
     var __webpack_exports__ = __webpack_require__.O(void 0, [8360], () => __webpack_require__(9535));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

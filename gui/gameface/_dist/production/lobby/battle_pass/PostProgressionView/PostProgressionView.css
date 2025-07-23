@@ -1618,6 +1618,11 @@
     height: 575rem;
 }
 
+.Reward_base__normalize_a6 .Reward_overlay_68 {
+    width: 100%;
+    height: 100%;
+}
+
 .Reward_highlight_36 {
     width: 100%;
     height: 100%;
@@ -1723,7 +1728,9 @@
     opacity: 1;
     transition: opacity 0.7s ease-out;
 }
-
+.mediaExtraLarge .CardRewards_base_f2 {
+    margin-bottom: 40rem;
+}
 .CardRewards_base__completed_08 {
     opacity: 0.5;
 }
@@ -2223,6 +2230,7 @@
     display: flex;
     align-items: flex-end;
     height: 180rem;
+    z-index: 1;
 }
 .mediaMedium .Cards_base_3e {
     height: 274rem;
@@ -2235,9 +2243,6 @@
     display: flex;
     justify-content: center;
     width: 100%;
-    position: absolute;
-    bottom: 0;
-    left: 0;
 }
 
 .ExtraChapter_base_37 {
@@ -2621,21 +2626,40 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    margin-top: 50rem;
+    position: relative;
+}
+.mediaMedium .NotAvailable_base_54 {
+    margin-top: 40rem;
+}
+.mediaLarge .NotAvailable_base_54 {
+    margin-top: 70rem;
+}
+.mediaExtraLarge .NotAvailable_base_54 {
+    margin-top: 80rem;
+}
+
+.NotAvailable_background_c6 {
+    align-self: center;
     width: 900rem;
     height: 230rem;
     background: url('R.images.gui.maps.icons.battlePass.post_progression.footer.notAvailable.lockBg') no-repeat center /
         contain;
+    position: absolute;
 }
-.mediaMedium .NotAvailable_base_54 {
+
+.mediaMedium .NotAvailable_background_c6 {
     width: 1260rem;
     height: 294rem;
     background-image: url('R.images.gui.maps.icons.battlePass.post_progression.footer.notAvailable.lockBg_medium');
 }
-.mediaLarge .NotAvailable_base_54 {
+
+.mediaLarge .NotAvailable_background_c6 {
     height: 332rem;
     background-image: url('R.images.gui.maps.icons.battlePass.post_progression.footer.notAvailable.lockBg_large');
 }
-.mediaExtraLarge .NotAvailable_base_54 {
+
+.mediaExtraLarge .NotAvailable_background_c6 {
     height: 352rem;
     background-image: url('R.images.gui.maps.icons.battlePass.post_progression.footer.notAvailable.lockBg_extraLarge');
 }
@@ -2688,18 +2712,18 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     line-height: 24rem;
 }
 
-.mediaMedium .NotAvailable_description_9b {
+.mediaLarge .NotAvailable_description_9b {
     font-size: 20rem;
     line-height: 29rem;
 }
 
 .NotAvailable_completedCount_12 {
-    font-size: 20rem;
+    font-size: 18rem;
     font-weight: 700;
     line-height: 22rem;
 }
 
-.mediaMedium .NotAvailable_completedCount_12 {
+.mediaLarge .NotAvailable_completedCount_12 {
     font-size: 24rem;
     line-height: 26rem;
 }
@@ -3531,6 +3555,10 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     overflow: hidden;
 }
 
+.ProgressBar_progressBar_b0 :first-child {
+    padding: 0;
+}
+
 .ProgressBar_progressBar__disabled_21 {
     pointer-events: none;
 }
@@ -3541,7 +3569,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     height: 38rem;
     position: absolute;
     left: 50%;
-    z-index: 2;
+    z-index: -1;
     transform: translate(-50%, 50%);
 }
 
@@ -3707,7 +3735,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .App_base_21 {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     width: 100%;
     height: 100%;
     background: no-repeat center / cover;
@@ -3733,12 +3761,11 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 
 .App_awardsWidget_e1 {
     align-self: center;
-    position: absolute;
-    top: 25rem;
+    margin-top: 25rem;
 }
 
 .mediaMedium .App_awardsWidget_e1 {
-    top: 15rem;
+    margin-top: 15rem;
 }
 
 .App_award_6a {
@@ -3758,15 +3785,12 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-bottom: 30rem;
+    flex-grow: 1;
+    margin-bottom: 50rem;
 }
 
 .mediaMedium .App_content_c6 {
-    margin-bottom: 20rem;
-}
-
-.mediaLarge .App_content_c6 {
-    margin-bottom: 50rem;
+    margin-bottom: 80rem;
 }
 
 .mediaExtraLarge .App_content_c6 {
@@ -3774,13 +3798,20 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .App_header_a1 {
-    margin-bottom: 28rem;
+    margin-top: 10rem;
 }
 
-.mediaMedium .App_header_a1 {
-    margin-bottom: 5rem;
+.mediaLarge .App_header_a1 {
+    margin-top: 30rem;
 }
 
 .mediaExtraLarge .App_header_a1 {
-    margin-bottom: 120rem;
+    margin-top: 100rem;
+}
+
+.App_progression_75 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1;
 }

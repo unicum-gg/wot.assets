@@ -6,32 +6,32 @@
                 o(8546);
             },
             4420: (e, t, o) => {
-                o(6483), o(7363), o(9485);
+                (o(6483), o(7363), o(9485));
             },
             8546: (e, t, o) => {
                 let r, i, n, a;
-                !(function (e) {
-                    (e.Micro = 'micro'), (e.Small = 'small'), (e.Medium = 'medium');
+                (!(function (e) {
+                    ((e.Micro = 'micro'), (e.Small = 'small'), (e.Medium = 'medium'));
                 })(r || (r = {})),
                     (function (e) {
-                        (e.ACTIVE = 'active'), (e.COMPLETED = 'completed'), (e.NOT_CHOSEN = 'notChosen');
+                        ((e.ACTIVE = 'active'), (e.COMPLETED = 'completed'), (e.NOT_CHOSEN = 'notChosen'));
                     })(i || (i = {})),
                     (function (e) {
-                        (e.AwaitSeason = 'awaitSeason'),
+                        ((e.AwaitSeason = 'awaitSeason'),
                             (e.Bought = 'bought'),
                             (e.Free = 'free'),
                             (e.Completed = 'completed'),
                             (e.CompletedRightNow = 'completedRightNow'),
                             (e.SwitchedChapterRightNow = 'switchedChapterRightNow'),
                             (e.NoVehiclesBase = 'noVehiclesBase'),
-                            (e.ChapterNotChosen = 'chapterNotChosen');
+                            (e.ChapterNotChosen = 'chapterNotChosen'));
                     })(n || (n = {})),
                     (function (e) {
-                        (e.None = ''),
+                        ((e.None = ''),
                             (e.ShowLevel = 'show'),
                             (e.HideLevel = 'hide'),
-                            (e.HideLevelWithDelay = 'hideWithDelay');
-                    })(a || (a = {}));
+                            (e.HideLevelWithDelay = 'hideWithDelay'));
+                    })(a || (a = {})));
             },
             7363: (e) => {
                 e.exports = React;
@@ -42,9 +42,9 @@
         var i = o[e];
         if (void 0 !== i) return i.exports;
         var n = (o[e] = { exports: {} });
-        return t[e](n, n.exports, r), n.exports;
+        return (t[e](n, n.exports, r), n.exports);
     }
-    (r.m = t),
+    ((r.m = t),
         (e = []),
         (r.O = (t, o, i, n) => {
             if (!o) {
@@ -68,7 +68,7 @@
         }),
         (r.n = (e) => {
             var t = e && e.__esModule ? () => e.default : () => e;
-            return r.d(t, { a: t }), t;
+            return (r.d(t, { a: t }), t);
         }),
         (r.d = (e, t) => {
             for (var o in t) r.o(t, o) && !r.o(e, o) && Object.defineProperty(e, o, { enumerable: !0, get: t[o] });
@@ -95,12 +95,12 @@
                         for (i in h) r.o(h, i) && (r.m[i] = h[i]);
                         if (l) var s = l(r);
                     }
-                    for (t && t(o); c < a.length; c++) (n = a[c]), r.o(e, n) && e[n] && e[n][0](), (e[n] = 0);
+                    for (t && t(o); c < a.length; c++) ((n = a[c]), r.o(e, n) && e[n] && e[n][0](), (e[n] = 0));
                     return r.O(s);
                 },
                 o = (self.webpackChunkgameface = self.webpackChunkgameface || []);
-            o.forEach(t.bind(null, 0)), (o.push = t.bind(null, o.push.bind(o)));
-        })();
+            (o.forEach(t.bind(null, 0)), (o.push = t.bind(null, o.push.bind(o))));
+        })());
     var i = r.O(void 0, [1519], () => r(4420));
     i = r.O(i);
 })();

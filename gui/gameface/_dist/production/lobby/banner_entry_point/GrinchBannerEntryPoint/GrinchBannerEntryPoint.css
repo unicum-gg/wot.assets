@@ -188,7 +188,8 @@ body {
     height: 100%;
     border: 2rem solid rgba(255, 255, 255, 0.25);
     border-radius: 2rem;
-    background: linear-gradient(0deg, rgba(255, 0, 0, 0.01) 0%, rgba(255, 0, 0, 0.01) 100%),
+    background:
+        linear-gradient(0deg, rgba(255, 0, 0, 0.01) 0%, rgba(255, 0, 0, 0.01) 100%),
         linear-gradient(180deg, rgba(0, 0, 0, 0.3) 49.38%, rgba(0, 0, 0, 0.5) 100%);
     position: absolute;
     top: 0;

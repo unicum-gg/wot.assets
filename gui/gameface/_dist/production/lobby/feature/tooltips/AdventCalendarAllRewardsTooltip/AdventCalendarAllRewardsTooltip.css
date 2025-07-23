@@ -75,7 +75,8 @@
     flex-direction: column;
     width: 410rem;
     padding: 26rem 24rem 6rem;
-    background: linear-gradient(
+    background:
+        linear-gradient(
             153deg,
             rgba(12, 114, 234, 0.42) 0%,
             rgba(12, 52, 150, 0.25) 39.47%,

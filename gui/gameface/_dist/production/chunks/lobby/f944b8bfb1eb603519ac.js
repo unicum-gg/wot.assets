@@ -36,7 +36,7 @@
                         B = M[1],
                         _ = (0, f.useCallback)(
                             (e) => {
-                                B(e), P.current && n({ type: e.pending ? 'dragStart' : 'dragEnd', thumb: P.current });
+                                (B(e), P.current && n({ type: e.pending ? 'dragStart' : 'dragEnd', thumb: P.current }));
                             },
                             [n],
                         ),
@@ -50,40 +50,40 @@
                                 l = Math.min(1, n / o),
                                 i = (0, s.u)(0, 1, a / (o - n)),
                                 c = (t.offsetWidth - S(t, l)) * i;
-                            (r.style.transform = `translateX(${0 | c}px)`),
+                            ((r.style.transform = `translateX(${0 | c}px)`),
                                 ((e) => {
                                     if (C.current && E.current && y.current && P.current) {
                                         if (0 === e)
-                                            return C.current.classList.add(p), void E.current.classList.remove(p);
+                                            return (C.current.classList.add(p), void E.current.classList.remove(p));
                                         if (
                                             ((t = y.current),
                                             (r = P.current),
                                             e - (t.offsetWidth - r.offsetWidth) >= -0.5)
                                         )
-                                            return C.current.classList.remove(p), void E.current.classList.add(p);
+                                            return (C.current.classList.remove(p), void E.current.classList.add(p));
                                         var t, r;
-                                        C.current.classList.remove(p), E.current.classList.remove(p);
+                                        (C.current.classList.remove(p), E.current.classList.remove(p));
                                     }
-                                })(c);
+                                })(c));
                         },
                         W = (0, i.z)(() => {
-                            (() => {
+                            ((() => {
                                 const t = P.current,
                                     r = y.current,
                                     n = e.getWrapperSize(),
                                     o = e.getContainerSize();
                                 if (!(o && t && n && r)) return;
                                 const s = Math.min(1, n / o);
-                                (t.style.width = `${S(r, s)}px`),
+                                ((t.style.width = `${S(r, s)}px`),
                                     (t.style.display = 'flex'),
                                     N.current &&
                                         (1 === s
                                             ? N.current.classList.add(g.Z.base__nonActive)
-                                            : N.current.classList.remove(g.Z.base__nonActive));
+                                            : N.current.classList.remove(g.Z.base__nonActive)));
                             })(),
-                                R();
+                                R());
                         });
-                    (0, f.useEffect)(() => (0, a.v)(W)),
+                    ((0, f.useEffect)(() => (0, a.v)(W)),
                         (0, f.useEffect)(
                             () =>
                                 (0, a.v)(() => {
@@ -92,7 +92,7 @@
                                     };
                                     let r = b;
                                     const n = () => {
-                                        r(), (r = (0, a.v)(W));
+                                        (r(), (r = (0, a.v)(W)));
                                     };
                                     return (
                                         e.events.on('recalculateContent', W),
@@ -100,11 +100,11 @@
                                         e.events.on('change', t),
                                         e.events.on('resizeHandled', n),
                                         () => {
-                                            r(),
+                                            (r(),
                                                 e.events.off('recalculateContent', W),
                                                 e.events.off('rest', t),
                                                 e.events.off('change', t),
-                                                e.events.off('resizeHandled', n);
+                                                e.events.off('resizeHandled', n));
                                         }
                                     );
                                 }),
@@ -123,21 +123,21 @@
                                     if ('inside' === r && t.clientX < 0) return;
                                     const c = t.clientX - w.offset - l.getBoundingClientRect().x,
                                         u = (c / l.offsetWidth) * (null != (o = e.getContainerSize()) ? o : 0);
-                                    e.scrollPosition.start({
+                                    (e.scrollPosition.start({
                                         scrollPosition: e.clampPosition(s, u),
                                         reset: !0,
                                         immediate: !0,
                                         from: { scrollPosition: e.animationScroll.scrollPosition.get() },
                                     }),
-                                        n({ type: 'dragging', thumb: i, thumbOffset: c, contentOffset: u });
+                                        n({ type: 'dragging', thumb: i, thumbOffset: c, contentOffset: u }));
                                 }),
                                 r = l.O.client.events.mouse.up(() => {
-                                    t(), _(v);
+                                    (t(), _(v));
                                 });
                             return () => {
-                                t(), r();
+                                (t(), r());
                             };
-                        }, [e, w.offset, w.pending, n, _]);
+                        }, [e, w.offset, w.pending, n, _]));
                     const k = (0, c.B)((t) => e.applyStepTo(t), z, [e]),
                         A = k[0],
                         Z = k[1];
@@ -238,7 +238,7 @@
             };
         },
         7950: (e, t, r) => {
-            r.r(t),
+            (r.r(t),
                 r.d(t, {
                     Area: () => d,
                     Bar: () => i.$Q,
@@ -246,7 +246,7 @@
                     Direction: () => f.Nm,
                     defaultSettings: () => f.he,
                     useHorizontalScrollApi: () => f.T5,
-                });
+                }));
             var n = r(6483),
                 o = r.n(n),
                 s = r(1856),
@@ -276,7 +276,7 @@
                     ),
                 )
             );
-            (d.Bar = i.$Q), (d.Default = c.K);
+            ((d.Bar = i.$Q), (d.Default = c.K));
         },
         6358: (e, t, r) => {
             r.d(t, { Nm: () => n.Nm, T5: () => o, he: () => n.he });
@@ -311,7 +311,7 @@
                 f = r(7030);
             let d;
             !(function (e) {
-                (e[(e.Next = -1)] = 'Next'), (e[(e.Prev = 1)] = 'Prev');
+                ((e[(e.Next = -1)] = 'Next'), (e[(e.Prev = 1)] = 'Prev'));
             })(d || (d = {}));
             const m = {
                     step: { type: 'proportional', factor: 4, clampedArrowStepTimeout: 100 },
@@ -399,8 +399,8 @@
                             ),
                             _ = (0, u.useCallback)(
                                 (e) => {
-                                    0 !== e.deltaY && B(d(e)),
-                                        S.current && C.trigger('mouseWheel', e, P.scrollPosition, t(S.current));
+                                    (0 !== e.deltaY && B(d(e)),
+                                        S.current && C.trigger('mouseWheel', e, P.scrollPosition, t(S.current)));
                                 },
                                 [P.scrollPosition, B, C],
                             ),
@@ -418,7 +418,8 @@
                                 const e = S.current;
                                 if (!e) return;
                                 const t = v(e, P.scrollPosition.goal);
-                                t !== P.scrollPosition.goal && w(t, { immediate: !0 }), C.trigger('recalculateContent');
+                                (t !== P.scrollPosition.goal && w(t, { immediate: !0 }),
+                                    C.trigger('recalculateContent'));
                             });
                         (0, u.useEffect)(
                             () => (
@@ -538,7 +539,7 @@
                 const a = (null != r ? r : []).concat([t]);
                 return [
                     (0, n.useCallback)((r) => {
-                        (o.current = window.setInterval(() => e(r, !0), t)), e(r, !1);
+                        ((o.current = window.setInterval(() => e(r, !0), t)), e(r, !1));
                     }, a),
                     s,
                 ];
@@ -550,7 +551,7 @@
                 o = r(6179);
             function s(e, t, r) {
                 const s = (0, o.useMemo)(() => (0, n.Z)(r, e), t);
-                return (0, o.useEffect)(() => s.cancel, [s]), s;
+                return ((0, o.useEffect)(() => s.cancel, [s]), s);
             }
         },
         9900: (e, t, r) => {

@@ -3,7 +3,7 @@
     [5785],
     {
         5785: (e, t, n) => {
-            n.r(t), n.d(t, { default: () => g });
+            (n.r(t), n.d(t, { default: () => g }));
             var a = n(6179),
                 l = n.n(a),
                 o = n(122),
@@ -130,7 +130,7 @@
                         S = b[1],
                         f = (0, o.createRef)(),
                         M = (0, o.useCallback)(() => {
-                            m(!1), null == a || a(!1);
+                            (m(!1), null == a || a(!1));
                         }, [a]);
                     (0, o.useEffect)(
                         () => (window.addEventListener('mouseup', M), () => window.removeEventListener('mouseup', M)),
@@ -153,11 +153,11 @@
                         ),
                         k = (0, o.useCallback)(
                             (e) => {
-                                e.preventDefault(),
+                                (e.preventDefault(),
                                     0 === e.button &&
                                         C(e) &&
                                         i &&
-                                        (m(!0), null == a || a(!0), S({ x: e.clientX, y: e.clientY }));
+                                        (m(!0), null == a || a(!0), S({ x: e.clientX, y: e.clientY })));
                             },
                             [C, i, a],
                         ),
@@ -167,7 +167,7 @@
                                     if (!C(e)) return;
                                     const n = e.clientX !== v.x ? e.clientX - v.x : 0,
                                         a = e.clientY !== v.y ? e.clientY - v.y : 0;
-                                    S({ x: e.clientX, y: e.clientY }), t({ dx: n, dy: a, dz: 0 });
+                                    (S({ x: e.clientX, y: e.clientY }), t({ dx: n, dy: a, dz: 0 }));
                                 }
                             },
                             [C, p, v.x, v.y, t],
@@ -181,11 +181,11 @@
                             [C, i, t],
                         ),
                         E = (0, o.useCallback)(() => {
-                            m(!1), null == a || a(!1);
+                            (m(!1), null == a || a(!1));
                         }, [a]),
                         g = (0, o.useCallback)(
                             (e) => {
-                                0 === e.buttons && p && (m(!1), null == a || a(!1)), n({ isOver3dScene: !0 });
+                                (0 === e.buttons && p && (m(!1), null == a || a(!1)), n({ isOver3dScene: !0 }));
                             },
                             [a, n, p],
                         ),

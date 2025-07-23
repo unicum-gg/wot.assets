@@ -91,9 +91,9 @@
         },
         2862: (e, s, a) => {
             let r, t, n, i, o, l, _, c;
-            a.d(s, { $h: () => i, A2: () => l, E4: () => r, h2: () => n, kK: () => o, sh: () => _ }),
+            (a.d(s, { $h: () => i, A2: () => l, E4: () => r, h2: () => n, kK: () => o, sh: () => _ }),
                 (function (e) {
-                    (e.Items = 'items'),
+                    ((e.Items = 'items'),
                         (e.Equipment = 'equipment'),
                         (e.Xp = 'xp'),
                         (e.XpFactor = 'xpFactor'),
@@ -142,10 +142,10 @@
                         (e.BattleBoosterGift = 'battleBooster_gift'),
                         (e.OptionalDevice = 'optionalDevice'),
                         (e.LootBox = 'lootBox'),
-                        (e.BrCoin = 'brcoin');
+                        (e.BrCoin = 'brcoin'));
                 })(r || (r = {})),
                 (function (e) {
-                    (e.Gold = 'gold'),
+                    ((e.Gold = 'gold'),
                         (e.Credits = 'credits'),
                         (e.Crystal = 'crystal'),
                         (e.Premium = 'premium'),
@@ -182,10 +182,10 @@
                         (e.BattlePassPoints = 'battlePassPoints'),
                         (e.BattleBadge = 'dossier_badge'),
                         (e.BattleAchievement = 'dossier_achievement'),
-                        (e.EquipCoin = 'equipCoin');
+                        (e.EquipCoin = 'equipCoin'));
                 })(t || (t = {})),
                 (function (e) {
-                    (e.Big = 'big'),
+                    ((e.Big = 'big'),
                         (e.Small = 'small'),
                         (e.Mini = 'mini'),
                         (e.S600x450 = 's600x450'),
@@ -196,17 +196,17 @@
                         (e.S128x100 = 's128x100'),
                         (e.S80x80 = 's80x80'),
                         (e.S64x64 = 's64x64'),
-                        (e.S48x48 = 's48x48');
+                        (e.S48x48 = 's48x48'));
                 })(n || (n = {})),
                 (function (e) {
-                    (e.MULTI = 'multi'),
+                    ((e.MULTI = 'multi'),
                         (e.CURRENCY = 'currency'),
                         (e.PREMIUM_PLUS = 'premium_plus'),
                         (e.NUMBER = 'number'),
-                        (e.STRING = 'string');
+                        (e.STRING = 'string'));
                 })(i || (i = {})),
                 (function (e) {
-                    (e.BATTLE_BOOSTER = 'battleBooster'),
+                    ((e.BATTLE_BOOSTER = 'battleBooster'),
                         (e.BATTLE_BOOSTER_REPLACE = 'battleBoosterReplace'),
                         (e.BUILT_IN_EQUIPMENT = 'builtInEquipment'),
                         (e.EQUIPMENT_PLUS = 'equipmentPlus'),
@@ -220,13 +220,13 @@
                         (e.PROGRESSION_STYLE_UPGRADED_3 = 'progressionStyleUpgraded_3'),
                         (e.PROGRESSION_STYLE_UPGRADED_4 = 'progressionStyleUpgraded_4'),
                         (e.PROGRESSION_STYLE_UPGRADED_5 = 'progressionStyleUpgraded_5'),
-                        (e.PROGRESSION_STYLE_UPGRADED_6 = 'progressionStyleUpgraded_6');
+                        (e.PROGRESSION_STYLE_UPGRADED_6 = 'progressionStyleUpgraded_6'));
                 })(o || (o = {})),
                 (function (e) {
                     e.BATTLE_BOOSTER = 'battleBooster';
                 })(l || (l = {})),
                 (function (e) {
-                    (e.BATTLE_BOOSTER = 'battleBooster'),
+                    ((e.BATTLE_BOOSTER = 'battleBooster'),
                         (e.BATTLE_BOOSTER_REPLACE = 'battleBoosterReplace'),
                         (e.BUILT_IN_EQUIPMENT = 'builtInEquipment'),
                         (e.EQUIPMENT_PLUS = 'equipmentPlus'),
@@ -240,11 +240,11 @@
                         (e.PROGRESSION_STYLE_UPGRADED_3 = 'progressionStyleUpgraded_3'),
                         (e.PROGRESSION_STYLE_UPGRADED_4 = 'progressionStyleUpgraded_4'),
                         (e.PROGRESSION_STYLE_UPGRADED_5 = 'progressionStyleUpgraded_5'),
-                        (e.PROGRESSION_STYLE_UPGRADED_6 = 'progressionStyleUpgraded_6');
+                        (e.PROGRESSION_STYLE_UPGRADED_6 = 'progressionStyleUpgraded_6'));
                 })(_ || (_ = {})),
                 (function (e) {
-                    (e[(e.Engraving = 0)] = 'Engraving'), (e[(e.Background = 1)] = 'Background');
-                })(c || (c = {}));
+                    ((e[(e.Engraving = 0)] = 'Engraving'), (e[(e.Background = 1)] = 'Background'));
+                })(c || (c = {})));
         },
         729: (e, s, a) => {
             a.d(s, { c$: () => P, i2: () => T, m9: () => S, p3: () => u, pI: () => p, ry: () => E });
@@ -477,7 +477,7 @@
                 };
         },
         7852: (e, s, a) => {
-            a.r(s), a.d(s, { default: () => ne });
+            (a.r(s), a.d(s, { default: () => ne }));
             var r = a(6179),
                 t = a.n(r),
                 n = a(5415),

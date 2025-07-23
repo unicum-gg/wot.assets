@@ -20,10 +20,10 @@
             953: (e, t, r) => {
                 'use strict';
                 var a = {};
-                r.r(a),
-                    r.d(a, { mouse: () => E, off: () => w, on: () => f, onResize: () => h, onScaleUpdated: () => v });
+                (r.r(a),
+                    r.d(a, { mouse: () => E, off: () => w, on: () => f, onResize: () => h, onScaleUpdated: () => v }));
                 var i = {};
-                r.r(i),
+                (r.r(i),
                     r.d(i, {
                         events: () => a,
                         getMouseGlobalPosition: () => L,
@@ -31,11 +31,11 @@
                         graphicsQuality: () => H,
                         playSound: () => p,
                         setRTPC: () => S,
-                    });
+                    }));
                 var n = {};
-                r.r(n), r.d(n, { getBgUrl: () => W, getTextureUrl: () => T });
+                (r.r(n), r.d(n, { getBgUrl: () => W, getTextureUrl: () => T }));
                 var l = {};
-                r.r(l),
+                (r.r(l),
                     r.d(l, {
                         addModelObserver: () => V,
                         addPreloadTexture: () => $,
@@ -63,7 +63,7 @@
                         setInputPaddingsRem: () => z,
                         setSidePaddingsRem: () => j,
                         whenTutorialReady: () => ie,
-                    });
+                    }));
                 var o = r(942),
                     s = r(601),
                     d = r.n(s);
@@ -139,10 +139,10 @@
                         );
                         return Object.assign({}, i, {
                             disable() {
-                                (e.enabled = !1), a();
+                                ((e.enabled = !1), a());
                             },
                             enable() {
-                                (e.enabled = !0), a();
+                                ((e.enabled = !0), a());
                             },
                             enableOutside() {
                                 e.enabled && g(!0);
@@ -371,7 +371,7 @@
                                                     subscribe: (r, n) => {
                                                         const o = 'string' == typeof n ? `${a}.${n}` : a,
                                                             s = ne.view.addModelObserver(o, t, !0);
-                                                        return i.set(s, r), e && r(l(n)), s;
+                                                        return (i.set(s, r), e && r(l(n)), s);
                                                     },
                                                     readByPath: l,
                                                     createCallback: (e, t) => {
@@ -510,7 +510,8 @@
                                                                 n = Object.entries(i),
                                                                 o = n.reduce(
                                                                     (e, [t, r]) => (
-                                                                        (e[r] = c.observable.box(a[t], {})), e
+                                                                        (e[r] = c.observable.box(a[t], {})),
+                                                                        e
                                                                     ),
                                                                     {},
                                                                 );
@@ -555,7 +556,7 @@
                                     }, [e]),
                                     (0, o.useEffect)(
                                         () => () => {
-                                            v.externalModel.dispose(), n.current.forEach((e) => e());
+                                            (v.externalModel.dispose(), n.current.forEach((e) => e()));
                                         },
                                         [v],
                                     ),
@@ -635,7 +636,7 @@
                     };
                 }
                 !(function (e) {
-                    (e.extraLarge = 'extraLarge'),
+                    ((e.extraLarge = 'extraLarge'),
                         (e.large = 'large'),
                         (e.medium = 'medium'),
                         (e.small = 'small'),
@@ -649,7 +650,7 @@
                         (e.largeHeight = 'largeHeight'),
                         (e.mediumHeight = 'mediumHeight'),
                         (e.smallHeight = 'smallHeight'),
-                        (e.extraSmallHeight = 'extraSmallHeight');
+                        (e.extraSmallHeight = 'extraSmallHeight'));
                 })(me || (me = {}));
                 const he = ne.client.getSize('rem'),
                     ve = he.width,
@@ -716,7 +717,7 @@
                         }
                         return null;
                     };
-                (pe.defaultProps = {
+                ((pe.defaultProps = {
                     extraLarge: !1,
                     large: !1,
                     medium: !1,
@@ -733,7 +734,7 @@
                     smallHeight: !1,
                     extraSmallHeight: !1,
                 }),
-                    (0, o.memo)(pe);
+                    (0, o.memo)(pe));
                 const Se = ({ children: e }) => {
                     const t = (0, o.useContext)(xe),
                         r = (0, o.useState)(t),
@@ -748,19 +749,19 @@
                             const e = ne.client.getSize('px');
                             n(e.width, e.height);
                         }, [n]);
-                    ((e) => {
+                    (((e) => {
                         const t = (0, o.useRef)(!1);
                         t.current || (e(), (t.current = !0));
                     })(() => {
-                        ne.client.events.on('clientResized', n), ne.client.events.on('self.onScaleUpdated', l);
+                        (ne.client.events.on('clientResized', n), ne.client.events.on('self.onScaleUpdated', l));
                     }),
                         (0, o.useEffect)(
                             () => () => {
-                                ne.client.events.off('clientResized', n),
-                                    ne.client.events.off('self.onScaleUpdated', l);
+                                (ne.client.events.off('clientResized', n),
+                                    ne.client.events.off('self.onScaleUpdated', l));
                             },
                             [n, l],
-                        );
+                        ));
                     const s = (0, o.useMemo)(() => Object.assign({}, a), [a]);
                     return o.createElement(xe.Provider, { value: s }, e);
                 };
@@ -769,27 +770,27 @@
                     He = r(926),
                     ye = r.n(He);
                 let Me, _e, Te;
-                !(function (e) {
-                    (e[(e.ExtraSmall = ce.extraSmall.width)] = 'ExtraSmall'),
+                (!(function (e) {
+                    ((e[(e.ExtraSmall = ce.extraSmall.width)] = 'ExtraSmall'),
                         (e[(e.Small = ce.small.width)] = 'Small'),
                         (e[(e.Medium = ce.medium.width)] = 'Medium'),
                         (e[(e.Large = ce.large.width)] = 'Large'),
-                        (e[(e.ExtraLarge = ce.extraLarge.width)] = 'ExtraLarge');
+                        (e[(e.ExtraLarge = ce.extraLarge.width)] = 'ExtraLarge'));
                 })(Me || (Me = {})),
                     (function (e) {
-                        (e[(e.ExtraSmall = ce.extraSmall.width)] = 'ExtraSmall'),
+                        ((e[(e.ExtraSmall = ce.extraSmall.width)] = 'ExtraSmall'),
                             (e[(e.Small = ce.small.width)] = 'Small'),
                             (e[(e.Medium = ce.medium.width)] = 'Medium'),
                             (e[(e.Large = ce.large.width)] = 'Large'),
-                            (e[(e.ExtraLarge = ce.extraLarge.width)] = 'ExtraLarge');
+                            (e[(e.ExtraLarge = ce.extraLarge.width)] = 'ExtraLarge'));
                     })(_e || (_e = {})),
                     (function (e) {
-                        (e[(e.ExtraSmall = ce.extraSmall.height)] = 'ExtraSmall'),
+                        ((e[(e.ExtraSmall = ce.extraSmall.height)] = 'ExtraSmall'),
                             (e[(e.Small = ce.small.height)] = 'Small'),
                             (e[(e.Medium = ce.medium.height)] = 'Medium'),
                             (e[(e.Large = ce.large.height)] = 'Large'),
-                            (e[(e.ExtraLarge = ce.extraLarge.height)] = 'ExtraLarge');
-                    })(Te || (Te = {}));
+                            (e[(e.ExtraLarge = ce.extraLarge.height)] = 'ExtraLarge'));
+                    })(Te || (Te = {})));
                 const Re = ['children', 'className'];
                 function We() {
                     return (
@@ -857,7 +858,8 @@
                                                 return Me.ExtraSmall;
                                             default:
                                                 return (
-                                                    console.error('Unreachable media context resolution'), Me.ExtraSmall
+                                                    console.error('Unreachable media context resolution'),
+                                                    Me.ExtraSmall
                                                 );
                                         }
                                     })(e),
@@ -875,7 +877,8 @@
                                                 return _e.ExtraSmall;
                                             default:
                                                 return (
-                                                    console.error('Unreachable media context resolution'), _e.ExtraSmall
+                                                    console.error('Unreachable media context resolution'),
+                                                    _e.ExtraSmall
                                                 );
                                         }
                                     })(e),
@@ -893,7 +896,8 @@
                                                 return Te.ExtraSmall;
                                             default:
                                                 return (
-                                                    console.error('Unreachable media context resolution'), Te.ExtraSmall
+                                                    console.error('Unreachable media context resolution'),
+                                                    Te.ExtraSmall
                                                 );
                                         }
                                     })(e);
@@ -1000,9 +1004,9 @@
         var i = r[e];
         if (void 0 !== i) return i.exports;
         var n = (r[e] = { exports: {} });
-        return t[e].call(n.exports, n, n.exports, a), n.exports;
+        return (t[e].call(n.exports, n, n.exports, a), n.exports);
     }
-    (a.m = t),
+    ((a.m = t),
         (e = []),
         (a.O = (t, r, i, n) => {
             if (!r) {
@@ -1026,7 +1030,7 @@
         }),
         (a.n = (e) => {
             var t = e && e.__esModule ? () => e.default : () => e;
-            return a.d(t, { a: t }), t;
+            return (a.d(t, { a: t }), t);
         }),
         (a.d = (e, t) => {
             for (var r in t) a.o(t, r) && !a.o(e, r) && Object.defineProperty(e, r, { enumerable: !0, get: t[r] });
@@ -1041,10 +1045,10 @@
         })()),
         (a.o = (e, t) => Object.prototype.hasOwnProperty.call(e, t)),
         (a.r = (e) => {
-            'undefined' != typeof Symbol &&
+            ('undefined' != typeof Symbol &&
                 Symbol.toStringTag &&
                 Object.defineProperty(e, Symbol.toStringTag, { value: 'Module' }),
-                Object.defineProperty(e, '__esModule', { value: !0 });
+                Object.defineProperty(e, '__esModule', { value: !0 }));
         }),
         (() => {
             var e = { 335: 0 };
@@ -1058,12 +1062,12 @@
                         for (i in o) a.o(o, i) && (a.m[i] = o[i]);
                         if (s) var u = s(a);
                     }
-                    for (t && t(r); d < l.length; d++) (n = l[d]), a.o(e, n) && e[n] && e[n][0](), (e[n] = 0);
+                    for (t && t(r); d < l.length; d++) ((n = l[d]), a.o(e, n) && e[n] && e[n][0](), (e[n] = 0));
                     return a.O(u);
                 },
                 r = (self.webpackChunkgameface = self.webpackChunkgameface || []);
-            r.forEach(t.bind(null, 0)), (r.push = t.bind(null, r.push.bind(r)));
-        })();
+            (r.forEach(t.bind(null, 0)), (r.push = t.bind(null, r.push.bind(r))));
+        })());
     var i = a.O(void 0, [503], () => a(953));
     i = a.O(i);
 })();

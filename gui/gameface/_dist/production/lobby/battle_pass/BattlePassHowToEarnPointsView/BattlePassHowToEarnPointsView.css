@@ -323,8 +323,7 @@
     width: 170rem;
 }
 
-.Table_cell__text_8c[lang='fi'],
-.Table_cell__text_8c[lang='kk'] {
+.Table_cell__text_8c[lang='fi'] {
     width: 200rem;
 }
 
@@ -342,9 +341,7 @@
     width: 285rem;
 }
 
-.Table_cell__wide_52[lang='kk'],
 .Table_cell__wide_52[lang='no'],
-.Table_cell__wideHead_0b[lang='kk'],
 .Table_cell__wideHead_0b[lang='no'] {
     width: 250rem;
 }

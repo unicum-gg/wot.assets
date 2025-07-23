@@ -4,16 +4,16 @@
         e = {
             1182: (u, e, t) => {
                 var F = {};
-                t.r(F),
+                (t.r(F),
                     t.d(F, {
                         mouse: () => Fu,
                         off: () => eu,
                         on: () => uu,
                         onResize: () => K,
                         onScaleUpdated: () => X,
-                    });
+                    }));
                 var A = {};
-                t.r(A),
+                (t.r(A),
                     t.d(A, {
                         events: () => F,
                         getMouseGlobalPosition: () => ou,
@@ -21,11 +21,11 @@
                         graphicsQuality: () => ru,
                         playSound: () => Au,
                         setRTPC: () => nu,
-                    });
+                    }));
                 var n = {};
-                t.r(n), t.d(n, { getBgUrl: () => su, getTextureUrl: () => iu });
+                (t.r(n), t.d(n, { getBgUrl: () => su, getTextureUrl: () => iu }));
                 var E = {};
-                t.r(E),
+                (t.r(E),
                     t.d(E, {
                         addModelObserver: () => yu,
                         addPreloadTexture: () => pu,
@@ -53,7 +53,7 @@
                         setInputPaddingsRem: () => hu,
                         setSidePaddingsRem: () => xu,
                         whenTutorialReady: () => Iu,
-                    });
+                    }));
                 var o = t(6179),
                     r = t.n(o),
                     a = t(493),
@@ -63,7 +63,7 @@
                 t(1281);
                 let s;
                 !(function (u) {
-                    (u[(u.left = 0)] = 'left'), (u[(u.right = 1)] = 'right');
+                    ((u[(u.left = 0)] = 'left'), (u[(u.right = 1)] = 'right'));
                 })(s || (s = {}));
                 (() => {
                     const u = new RegExp(
@@ -122,17 +122,20 @@
                         content: 'CButton_content_cc',
                     };
                 let m, v;
-                !(function (u) {
-                    (u.main = 'main'),
+                (!(function (u) {
+                    ((u.main = 'main'),
                         (u.primary = 'primary'),
                         (u.primaryGreen = 'primaryGreen'),
                         (u.primaryRed = 'primaryRed'),
                         (u.secondary = 'secondary'),
-                        (u.ghost = 'ghost');
+                        (u.ghost = 'ghost'));
                 })(m || (m = {})),
                     (function (u) {
-                        (u.extraSmall = 'extraSmall'), (u.small = 'small'), (u.medium = 'medium'), (u.large = 'large');
-                    })(v || (v = {}));
+                        ((u.extraSmall = 'extraSmall'),
+                            (u.small = 'small'),
+                            (u.medium = 'medium'),
+                            (u.large = 'large'));
+                    })(v || (v = {})));
                 const g = ({
                     children: u,
                     size: e,
@@ -434,10 +437,10 @@
                     );
                     return Object.assign({}, A, {
                         disable() {
-                            (u.enabled = !1), F();
+                            ((u.enabled = !1), F());
                         },
                         enable() {
-                            (u.enabled = !0), F();
+                            ((u.enabled = !0), F());
                         },
                         enableOutside() {
                             u.enabled && J(!0);
@@ -701,7 +704,7 @@
                                                     subscribe: (t, n) => {
                                                         const o = 'string' == typeof n ? `${F}.${n}` : F,
                                                             r = qu.view.addModelObserver(o, e, !0);
-                                                        return A.set(r, t), u && t(E(n)), r;
+                                                        return (A.set(r, t), u && t(E(n)), r);
                                                     },
                                                     readByPath: E,
                                                     createCallback: (u, e) => {
@@ -831,7 +834,7 @@
                                     }, [F]),
                                     (0, o.useEffect)(
                                         () => () => {
-                                            c.externalModel.dispose(), a.current.forEach((u) => u());
+                                            (c.externalModel.dispose(), a.current.forEach((u) => u()));
                                         },
                                         [c],
                                     ),
@@ -895,9 +898,9 @@
         var A = t[u];
         if (void 0 !== A) return A.exports;
         var n = (t[u] = { exports: {} });
-        return e[u](n, n.exports, F), n.exports;
+        return (e[u](n, n.exports, F), n.exports);
     }
-    (F.m = e),
+    ((F.m = e),
         (u = []),
         (F.O = (e, t, A, n) => {
             if (!t) {
@@ -921,7 +924,7 @@
         }),
         (F.n = (u) => {
             var e = u && u.__esModule ? () => u.default : () => u;
-            return F.d(e, { a: e }), e;
+            return (F.d(e, { a: e }), e);
         }),
         (F.d = (u, e) => {
             for (var t in e) F.o(e, t) && !F.o(u, t) && Object.defineProperty(u, t, { enumerable: !0, get: e[t] });
@@ -936,10 +939,10 @@
         })()),
         (F.o = (u, e) => Object.prototype.hasOwnProperty.call(u, e)),
         (F.r = (u) => {
-            'undefined' != typeof Symbol &&
+            ('undefined' != typeof Symbol &&
                 Symbol.toStringTag &&
                 Object.defineProperty(u, Symbol.toStringTag, { value: 'Module' }),
-                Object.defineProperty(u, '__esModule', { value: !0 });
+                Object.defineProperty(u, '__esModule', { value: !0 }));
         }),
         (F.j = 494),
         (() => {
@@ -954,12 +957,12 @@
                         for (A in o) F.o(o, A) && (F.m[A] = o[A]);
                         if (r) var D = r(F);
                     }
-                    for (e && e(t); a < E.length; a++) (n = E[a]), F.o(u, n) && u[n] && u[n][0](), (u[n] = 0);
+                    for (e && e(t); a < E.length; a++) ((n = E[a]), F.o(u, n) && u[n] && u[n][0](), (u[n] = 0));
                     return F.O(D);
                 },
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
-            t.forEach(e.bind(null, 0)), (t.push = e.bind(null, t.push.bind(t)));
-        })();
+            (t.forEach(e.bind(null, 0)), (t.push = e.bind(null, t.push.bind(t))));
+        })());
     var A = F.O(void 0, [8360], () => F(1182));
     A = F.O(A);
 })();

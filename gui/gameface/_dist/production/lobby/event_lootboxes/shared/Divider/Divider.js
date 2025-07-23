@@ -3,7 +3,7 @@
     var r,
         e = {
             188: (r, e, t) => {
-                t(179), t(483);
+                (t(179), t(483));
             },
         },
         t = {};
@@ -11,9 +11,9 @@
         var n = t[r];
         if (void 0 !== n) return n.exports;
         var i = (t[r] = { exports: {} });
-        return e[r](i, i.exports, o), i.exports;
+        return (e[r](i, i.exports, o), i.exports);
     }
-    (o.m = e),
+    ((o.m = e),
         (r = []),
         (o.O = (e, t, n, i) => {
             if (!t) {
@@ -60,12 +60,12 @@
                         for (n in f) o.o(f, n) && (o.m[n] = f[n]);
                         if (c) var s = c(o);
                     }
-                    for (e && e(t); l < a.length; l++) (i = a[l]), o.o(r, i) && r[i] && r[i][0](), (r[i] = 0);
+                    for (e && e(t); l < a.length; l++) ((i = a[l]), o.o(r, i) && r[i] && r[i][0](), (r[i] = 0));
                     return o.O(s);
                 },
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
-            t.forEach(e.bind(null, 0)), (t.push = e.bind(null, t.push.bind(t)));
-        })();
+            (t.forEach(e.bind(null, 0)), (t.push = e.bind(null, t.push.bind(t))));
+        })());
     var n = o.O(void 0, [503], () => o(188));
     n = o.O(n);
 })();

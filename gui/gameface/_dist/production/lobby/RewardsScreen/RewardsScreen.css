@@ -1550,6 +1550,11 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     height: 575rem;
 }
 
+.Reward_base__normalize_a6 .Reward_overlay_68 {
+    width: 100%;
+    height: 100%;
+}
+
 .Reward_highlight_36 {
     width: 100%;
     height: 100%;
@@ -2628,6 +2633,44 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     background-size: 1rem 14rem;
 }
 
+.Header_laceBase_7b {
+    width: 800rem;
+}
+.mediaSmall .Header_laceBase_7b {
+    width: 850rem;
+}
+.mediaMedium .Header_laceBase_7b {
+    width: 900rem;
+}
+.mediaLarge .Header_laceBase_7b {
+    width: 960rem;
+}
+.mediaExtraLarge .Header_laceBase_7b {
+    width: 1200rem;
+}
+
+.Header_laceContainer_f4 {
+    filter: drop-shadow(0 5rem 10rem #70a9ff);
+    opacity: 0.5;
+    transform: translateY(4rem);
+}
+
+.mediaMedium .Header_laceContainer_f4 {
+    transform: translateY(6rem);
+}
+
+.mediaExtraLarge .Header_laceContainer_f4 {
+    transform: translateY(8rem);
+}
+
+.Header_titleInner_0d {
+    padding: 0 36rem;
+}
+
+.mediaMedium .Header_titleInner_0d {
+    padding: 0 50rem;
+}
+
 .SeasonResult_base_f0 {
     display: flex;
     align-items: center;
@@ -2671,6 +2714,10 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     opacity: 1;
 }
 
+.showPoints .SeasonResult_seasonPointsCounter_80 {
+    opacity: 1;
+}
+
 .SeasonResult_count_ef {
     font-size: 28rem;
     font-weight: 700;
@@ -2694,12 +2741,8 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .SeasonResult_seasonName_91 {
-    color: #86a1b6;
+    color: rgba(255, 255, 255, 0.6);
     font-size: 14rem;
-    text-shadow:
-        0 0 4rem #000,
-        0 0 8rem #021a3a,
-        0 0 8rem #888eb2;
 }
 
 .YearResult_base_5a {
@@ -2738,12 +2781,8 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 
 .YearResult_description_1c {
     margin-left: 8rem;
-    color: #86a1b6;
+    color: rgba(255, 255, 255, 0.6);
     font-size: 14rem;
-    text-shadow:
-        0 0 4rem #000,
-        0 0 8rem #021a3a,
-        0 0 8rem #888eb2;
 }
 
 .SeasonsResultsHeading_base_1a {
@@ -2755,6 +2794,10 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .showResultsRanks .SeasonsResultsHeading_base_1a {
+    opacity: 1;
+}
+
+.showPoints .SeasonsResultsHeading_base_1a {
     opacity: 1;
 }
 
@@ -2778,6 +2821,10 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     opacity: 1;
 }
 
+.showPoints .SeasonsResultsHeading_divider_3a {
+    opacity: 1;
+}
+
 .SeasonsResultsHeading_yearResult_2c {
     opacity: 0;
     transition: opacity 0.5s linear;
@@ -2787,7 +2834,37 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     opacity: 1;
 }
 
-.YearlyAwardsBackground_base_e8 {
+.showPoints .SeasonsResultsHeading_yearResult_2c {
+    opacity: 1;
+}
+
+.sharedStyles_content_2f {
+    flex: 1 1 auto;
+    width: 100%;
+    z-index: 1;
+}
+
+.sharedStyles_header_2d {
+    opacity: 0;
+    transition: opacity 0.5s linear;
+}
+
+.showHeader .sharedStyles_header_2d {
+    opacity: 1;
+}
+
+.sharedStyles_close_10 {
+    opacity: 0;
+    transition: opacity 0.5s linear;
+    pointer-events: none;
+}
+
+.showHeader .sharedStyles_close_10 {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.sharedStyles_background_7a {
     position: absolute;
     top: 0;
     right: 0;
@@ -2798,107 +2875,16 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     background-color: #050b13;
 }
 
-.YearlyAwardsBackground_background_ab,
-.YearlyAwardsBackground_baseVehicleBg_b0,
-.YearlyAwardsBackground_highlightedVehicleBg_5e {
+.sharedStyles_backgroundImage_57 {
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-    background: no-repeat center / 1537rem 768rem;
+    background: no-repeat center / cover;
 }
 
-.mediaMedium .YearlyAwardsBackground_background_ab,
-.mediaMedium .YearlyAwardsBackground_baseVehicleBg_b0,
-.mediaMedium .YearlyAwardsBackground_highlightedVehicleBg_5e {
-    background-size: 1800rem 900rem;
-}
-
-.mediaLarge .YearlyAwardsBackground_background_ab,
-.mediaLarge .YearlyAwardsBackground_baseVehicleBg_b0,
-.mediaLarge .YearlyAwardsBackground_highlightedVehicleBg_5e {
-    background-size: 2332rem 1164rem;
-}
-
-.mediaExtraLarge .YearlyAwardsBackground_background_ab,
-.mediaExtraLarge .YearlyAwardsBackground_baseVehicleBg_b0,
-.mediaExtraLarge .YearlyAwardsBackground_highlightedVehicleBg_5e {
-    background-size: cover;
-}
-
-.YearlyAwardsBackground_baseVehicleBg_b0 {
-    background-image: url('R.images.comp7.gui.maps.icons.backgrounds.yearly_vehicle_bg');
-}
-
-.YearlyAwardsBackground_highlightedVehicleBg_5e {
-    background-image: url('R.images.comp7.gui.maps.icons.backgrounds.active_yearly_vehicle_bg');
-    opacity: 0;
-    transition: opacity 0.5s;
-}
-
-.changeVehicleBg .YearlyAwardsBackground_highlightedVehicleBg_5e {
-    opacity: 1;
-}
-
-.YearlyAwardsApp_content_3d {
-    flex: 1 1 auto;
-    width: 100%;
-    z-index: 1;
-}
-
-.YearlyAwardsApp_header_ab {
-    opacity: 0;
-    transition: opacity 0.5s linear;
-}
-
-.showHeader .YearlyAwardsApp_header_ab {
-    opacity: 1;
-}
-
-.YearlyAwardsApp_laceBase_30 {
-    width: 800rem;
-}
-
-.mediaSmall .YearlyAwardsApp_laceBase_30 {
-    width: 850rem;
-}
-
-.mediaMedium .YearlyAwardsApp_laceBase_30 {
-    width: 900rem;
-}
-
-.mediaLarge .YearlyAwardsApp_laceBase_30 {
-    width: 960rem;
-}
-
-.mediaExtraLarge .YearlyAwardsApp_laceBase_30 {
-    width: 1200rem;
-}
-
-.YearlyAwardsApp_laceContainer_d1 {
-    filter: drop-shadow(0 5rem 10rem #70a9ff);
-    opacity: 0.5;
-    transform: translateY(4rem);
-}
-
-.mediaMedium .YearlyAwardsApp_laceContainer_d1 {
-    transform: translateY(6rem);
-}
-
-.mediaExtraLarge .YearlyAwardsApp_laceContainer_d1 {
-    transform: translateY(8rem);
-}
-
-.YearlyAwardsApp_titleInner_fd {
-    padding: 0 36rem;
-}
-
-.mediaMedium .YearlyAwardsApp_titleInner_fd {
-    padding: 0 50rem;
-}
-
-.YearlyAwardsApp_yearlyVehicle_92 {
+.sharedStyles_yearlyVehicleContent_89 {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -2911,109 +2897,116 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     pointer-events: none;
 }
 
-.mediaMedium .YearlyAwardsApp_yearlyVehicle_92 {
+.mediaMedium .sharedStyles_yearlyVehicleContent_89 {
     margin-bottom: 56rem;
 }
 
-.mediaLarge .YearlyAwardsApp_yearlyVehicle_92 {
+.mediaLarge .sharedStyles_yearlyVehicleContent_89 {
     margin-bottom: 76rem;
 }
 
-.mediaExtraLarge .YearlyAwardsApp_yearlyVehicle_92 {
+.mediaExtraLarge .sharedStyles_yearlyVehicleContent_89 {
     margin-bottom: 146rem;
 }
 
-.showContent .YearlyAwardsApp_yearlyVehicle_92 {
+.showContent .sharedStyles_yearlyVehicleContent_89 {
     opacity: 1;
     pointer-events: auto;
 }
 
-.YearlyAwardsApp_rewardList_43 {
+.sharedStyles_rewardList_aa {
     flex: 1 1 auto;
 }
 
-.YearlyAwardsApp_mainRewards_fd {
+.sharedStyles_mainRewards_fa {
     position: relative;
     top: -60rem;
 }
 
-.mediaSmall .YearlyAwardsApp_mainRewards_fd {
+.mediaSmall .sharedStyles_mainRewards_fa {
     top: -50rem;
 }
 
-.mediaMedium .YearlyAwardsApp_mainRewards_fd {
+.mediaMedium .sharedStyles_mainRewards_fa {
     top: -60rem;
 }
 
-.mediaLarge .YearlyAwardsApp_mainRewards_fd {
+.mediaLarge .sharedStyles_mainRewards_fa {
     top: -60rem;
 }
 
-.mediaExtraLarge .YearlyAwardsApp_mainRewards_fd {
+.mediaExtraLarge .sharedStyles_mainRewards_fa {
     top: -110rem;
 }
 
-.YearlyAwardsApp_rewardInfo_30 {
+.sharedStyles_rewardInfo_e1 {
     font-size: 20rem;
     font-weight: 700;
 }
 
-.mediaLarge .YearlyAwardsApp_rewardInfo_30 {
+.mediaLarge .sharedStyles_rewardInfo_e1 {
     font-size: 28rem;
 }
 
-.YearlyAwardsApp_rewardList__singleMainReward_ca .YearlyAwardsApp_ribbon_f8 {
+.sharedStyles_rewardList__singleMainReward_be .sharedStyles_ribbon_63 {
     top: 60rem;
 }
 
-.YearlyAwardsApp_additionalRewardsContainer_17 {
+.sharedStyles_additionalRewardsContainer_9e {
     position: relative;
     bottom: -20rem;
 }
 
-.mediaSmall .YearlyAwardsApp_additionalRewardsContainer_17 {
+.mediaSmall .sharedStyles_additionalRewardsContainer_9e {
     bottom: -20rem;
 }
 
-.mediaMedium .YearlyAwardsApp_additionalRewardsContainer_17 {
+.mediaMedium .sharedStyles_additionalRewardsContainer_9e {
     bottom: -30rem;
 }
 
-.mediaLarge .YearlyAwardsApp_additionalRewardsContainer_17 {
+.mediaLarge .sharedStyles_additionalRewardsContainer_9e {
     bottom: -40rem;
 }
 
-.mediaExtraLarge .YearlyAwardsApp_additionalRewardsContainer_17 {
+.mediaExtraLarge .sharedStyles_additionalRewardsContainer_9e {
     bottom: -20rem;
 }
 
-.YearlyAwardsApp_additionalTitle_7b {
+.sharedStyles_additionalTitle_2d {
     margin-bottom: 20rem;
     color: #e9e2bf;
     font-size: 15rem;
     font-weight: 700;
 }
 
-.YearlyAwardsApp_reward_1b {
+.sharedStyles_yearlyVehicleAdditionalRewards_92 {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 48rem;
+}
+
+.sharedStyles_reward_f9 {
     padding: 0 10rem;
 }
 
-.mediaMedium .YearlyAwardsApp_reward_1b {
+.mediaMedium .sharedStyles_reward_f9 {
     padding: 0 14rem;
 }
 
-.YearlyAwardsApp_yearlyVehicle_92 .YearlyAwardsApp_vehicleName_62 {
+.sharedStyles_yearlyVehicleContent_89 .sharedStyles_vehicleName_a1 {
     margin-bottom: 12rem;
     font-size: 28rem;
 }
 
-.YearlyAwardsApp_buttons_c4 {
+.sharedStyles_buttons_ad {
     opacity: 0;
     transition: opacity 0.5s linear;
     pointer-events: none;
 }
 
-.showButtons .YearlyAwardsApp_buttons_c4 {
+.showButtons .sharedStyles_buttons_ad {
     opacity: 1;
     pointer-events: auto;
 }
@@ -3102,4 +3095,32 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .VehicleName_base__83x74_a7 .VehicleName_vehicleType_93 {
     width: 83rem;
     height: 74rem;
+}
+
+.VehicleVideo_base_49 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.VehicleVideo_video_a1,
+.VehicleVideo_loopedVideo_eb {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.VehicleVideo_loopedVideo_eb {
+    opacity: 0;
+}
+
+.VehicleVideo_loopedVideo__visible_c4 {
+    opacity: 1;
 }

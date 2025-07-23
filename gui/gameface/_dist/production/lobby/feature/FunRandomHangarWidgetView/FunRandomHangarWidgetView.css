@@ -290,19 +290,13 @@
 .Status_base_a8 {
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
     align-items: center;
-    height: 85rem;
-    padding-bottom: 42rem;
-}
-.Status_base__completedResettable_61,
-.Status_base__completedFinal_81 {
-    height: 74rem;
 }
 .Status_progress_f1 {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 39rem;
     transition: opacity 0.2s cubic-bezier(0.07, 0.82, 0.16, 1) 0s;
 }
 .Status_base__completedResettable_61 .Status_progress_f1,
@@ -320,6 +314,7 @@
     margin-bottom: 6rem;
     line-height: 20rem;
     text-align: center;
+    mix-blend-mode: screen;
 }
 .Status_progressBar_68 {
     width: 44rem;
@@ -330,19 +325,19 @@
     transition: opacity 0.2s cubic-bezier(0.07, 0.82, 0.16, 1) 0s;
 }
 .Status_base__completedResettable_61 .Status_statusIcon_bf {
-    width: 32rem;
-    height: 32rem;
-    background: url('R.images.gui.maps.icons.components.countdown.clock') center center / cover;
+    width: 48rem;
+    height: 48rem;
+    background: url('R.images.gui.maps.icons.components.countdown.big.clock') center center / cover;
     opacity: 1;
-    bottom: 30rem;
+    top: 33rem;
     transition-delay: 0.2s;
 }
 .Status_base__completedFinal_81 .Status_statusIcon_bf {
-    width: 24rem;
-    height: 24rem;
-    background: url('R.images.gui.maps.icons.library.check') center center / cover;
+    width: 32rem;
+    height: 32rem;
+    background: url('R.images.gui.maps.icons.library.done') center center / cover;
     opacity: 1;
-    bottom: 34rem;
+    top: 43rem;
     transition-delay: 0.2s;
 }
 .Status_infiniteIcon_3b {
@@ -508,44 +503,27 @@ body {
     flex-direction: column;
     align-items: center;
     width: 360rem;
-    height: 147rem;
+    height: var(--flagHeight);
     position: relative;
     cursor: pointer;
-}
-.App_base__completedResettable_78 .App_animContainer_b4,
-.App_base__completedFinal_76 .App_animContainer_b4,
-.App_base__disabled_e8 .App_animContainer_b4 {
-    height: 132rem;
 }
 .App_backgroundWrapper_0b {
     position: absolute;
     top: 0;
-    left: 50%;
     z-index: -1;
     transition:
         transform 0.2s cubic-bezier(0.07, 0.82, 0.16, 1),
         height 0.2s cubic-bezier(0.07, 0.82, 0.16, 1);
 }
 .App_base_59:hover .App_backgroundWrapper_0b {
-    transform: translateY(5rem);
-}
-.App_base__completedResettable_78 .App_backgroundWrapper_0b,
-.App_base__completedFinal_76 .App_backgroundWrapper_0b,
-.App_base__disabled_e8 .App_backgroundWrapper_0b {
-    height: 110rem;
+    transform: translateY(var(--hoverOffset));
 }
 .App_base__completedResettable_78 .App_backgroundWrapper_0b {
     filter: saturate(0);
 }
 .App_background_75 {
-    width: 74rem;
-    height: 132rem;
-    transform: translate(-50%, 0);
-}
-.App_base__completedResettable_78 .App_background_75,
-.App_base__completedFinal_76 .App_background_75,
-.App_base__disabled_e8 .App_background_75 {
-    height: 110rem;
+    width: var(--flagWidth);
+    height: var(--flagHeight);
 }
 .App_modifications_5f {
     display: flex;
@@ -564,15 +542,16 @@ body {
     text-shadow: 0 4rem 4rem rgba(0, 0, 0, 0.25);
     white-space: nowrap;
     position: absolute;
-    top: 56rem;
+    top: 58rem;
     transform: translateY(-50%);
 }
 .App_status_1c {
-    width: 74rem;
+    width: var(--flagWidth);
+    height: calc(var(--flagHeight) - 42rem);
     position: absolute;
     bottom: 0;
     transition: transform 0.2s cubic-bezier(0.07, 0.82, 0.16, 1);
 }
 .App_base_59:hover .App_status_1c {
-    transform: translateY(5rem);
+    transform: translateY(var(--hoverOffset));
 }

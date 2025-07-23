@@ -31519,7 +31519,7 @@
                             for (var i = decorators.length - 1; i >= 0; i--)
                                 if ((d = decorators[i]))
                                     r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-                        return c > 3 && r && Object.defineProperty(target, key, r), r;
+                        return (c > 3 && r && Object.defineProperty(target, key, r), r);
                     };
 
                 function observableSymbol() {
@@ -31731,7 +31731,7 @@
                             for (var i = decorators.length - 1; i >= 0; i--)
                                 if ((d = decorators[i]))
                                     r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-                        return c > 3 && r && Object.defineProperty(target, key, r), r;
+                        return (c > 3 && r && Object.defineProperty(target, key, r), r);
                     };
 
                 var RESERVED_NAMES = ['model', 'reset', 'submit', 'isDirty', 'isPropertyDirty', 'resetProperty'];
@@ -33902,18 +33902,12 @@
                     var _this$options_; // bound
 
                     if ((_this$options_ = this.options_) == null ? void 0 : _this$options_.bound) {
-                        return this.extend_(adm, key, descriptor, false) === null
-                            ? 0
-                            : /* Cancel */
-                              1;
+                        return this.extend_(adm, key, descriptor, false) === null ? 0 : /* Cancel */ 1;
                         /* Break */
                     } // own
 
                     if (source === adm.target_) {
-                        return this.extend_(adm, key, descriptor, false) === null
-                            ? 0
-                            : /* Cancel */
-                              2;
+                        return this.extend_(adm, key, descriptor, false) === null ? 0 : /* Cancel */ 2;
                         /* Continue */
                     } // prototype
 
@@ -34030,10 +34024,7 @@
                     var _this$options_; // own
 
                     if (source === adm.target_) {
-                        return this.extend_(adm, key, descriptor, false) === null
-                            ? 0
-                            : /* Cancel */
-                              2;
+                        return this.extend_(adm, key, descriptor, false) === null ? 0 : /* Cancel */ 2;
                         /* Continue */
                     } // prototype
                     // bound - must annotate protos to support super.flow()
@@ -34042,9 +34033,8 @@
                         ((_this$options_ = this.options_) == null ? void 0 : _this$options_.bound) &&
                         !isFlow(adm.target_[key])
                     ) {
-                        if (this.extend_(adm, key, descriptor, false) === null)
-                            return 0;
-                            /* Cancel */
+                        if (this.extend_(adm, key, descriptor, false) === null) return 0;
+                        /* Cancel */
                     }
 
                     if (isFlow(descriptor.value)) {
@@ -34137,10 +34127,7 @@
                 }
 
                 function make_$3(adm, key, descriptor) {
-                    return this.extend_(adm, key, descriptor, false) === null
-                        ? 0
-                        : /* Cancel */
-                          1;
+                    return this.extend_(adm, key, descriptor, false) === null ? 0 : /* Cancel */ 1;
                     /* Break */
                 }
 
@@ -34184,10 +34171,7 @@
                 }
 
                 function make_$4(adm, key, descriptor) {
-                    return this.extend_(adm, key, descriptor, false) === null
-                        ? 0
-                        : /* Cancel */
-                          1;
+                    return this.extend_(adm, key, descriptor, false) === null ? 0 : /* Cancel */ 1;
                     /* Break */
                 }
 

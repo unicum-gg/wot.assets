@@ -10,7 +10,7 @@
         var o = t[s];
         if (void 0 !== o) return o.exports;
         var i = (t[s] = { exports: {} });
-        return r[s](i, i.exports, e), i.exports;
+        return (r[s](i, i.exports, e), i.exports);
     }
     (() => {
         e(7363);

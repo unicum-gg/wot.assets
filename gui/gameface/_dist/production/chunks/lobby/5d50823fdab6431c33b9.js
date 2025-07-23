@@ -112,18 +112,18 @@
         },
         2106: (e, t, a) => {
             let s, n;
-            a.d(t, { L: () => s, q: () => n }),
+            (a.d(t, { L: () => s, q: () => n }),
                 (function (e) {
-                    (e.main = 'main'),
+                    ((e.main = 'main'),
                         (e.primary = 'primary'),
                         (e.primaryGreen = 'primaryGreen'),
                         (e.primaryRed = 'primaryRed'),
                         (e.secondary = 'secondary'),
-                        (e.ghost = 'ghost');
+                        (e.ghost = 'ghost'));
                 })(s || (s = {})),
                 (function (e) {
-                    (e.extraSmall = 'extraSmall'), (e.small = 'small'), (e.medium = 'medium'), (e.large = 'large');
-                })(n || (n = {}));
+                    ((e.extraSmall = 'extraSmall'), (e.small = 'small'), (e.medium = 'medium'), (e.large = 'large'));
+                })(n || (n = {})));
         },
         5739: (e, t, a) => {
             a.d(t, { Q: () => u });
@@ -214,9 +214,9 @@
         },
         2862: (e, t, a) => {
             let s, n, r, i, o, c, l, _;
-            a.d(t, { $h: () => i, A2: () => c, E4: () => s, h2: () => r, kK: () => o, sh: () => l }),
+            (a.d(t, { $h: () => i, A2: () => c, E4: () => s, h2: () => r, kK: () => o, sh: () => l }),
                 (function (e) {
-                    (e.Items = 'items'),
+                    ((e.Items = 'items'),
                         (e.Equipment = 'equipment'),
                         (e.Xp = 'xp'),
                         (e.XpFactor = 'xpFactor'),
@@ -265,10 +265,10 @@
                         (e.BattleBoosterGift = 'battleBooster_gift'),
                         (e.OptionalDevice = 'optionalDevice'),
                         (e.LootBox = 'lootBox'),
-                        (e.BrCoin = 'brcoin');
+                        (e.BrCoin = 'brcoin'));
                 })(s || (s = {})),
                 (function (e) {
-                    (e.Gold = 'gold'),
+                    ((e.Gold = 'gold'),
                         (e.Credits = 'credits'),
                         (e.Crystal = 'crystal'),
                         (e.Premium = 'premium'),
@@ -305,10 +305,10 @@
                         (e.BattlePassPoints = 'battlePassPoints'),
                         (e.BattleBadge = 'dossier_badge'),
                         (e.BattleAchievement = 'dossier_achievement'),
-                        (e.EquipCoin = 'equipCoin');
+                        (e.EquipCoin = 'equipCoin'));
                 })(n || (n = {})),
                 (function (e) {
-                    (e.Big = 'big'),
+                    ((e.Big = 'big'),
                         (e.Small = 'small'),
                         (e.Mini = 'mini'),
                         (e.S600x450 = 's600x450'),
@@ -319,17 +319,17 @@
                         (e.S128x100 = 's128x100'),
                         (e.S80x80 = 's80x80'),
                         (e.S64x64 = 's64x64'),
-                        (e.S48x48 = 's48x48');
+                        (e.S48x48 = 's48x48'));
                 })(r || (r = {})),
                 (function (e) {
-                    (e.MULTI = 'multi'),
+                    ((e.MULTI = 'multi'),
                         (e.CURRENCY = 'currency'),
                         (e.PREMIUM_PLUS = 'premium_plus'),
                         (e.NUMBER = 'number'),
-                        (e.STRING = 'string');
+                        (e.STRING = 'string'));
                 })(i || (i = {})),
                 (function (e) {
-                    (e.BATTLE_BOOSTER = 'battleBooster'),
+                    ((e.BATTLE_BOOSTER = 'battleBooster'),
                         (e.BATTLE_BOOSTER_REPLACE = 'battleBoosterReplace'),
                         (e.BUILT_IN_EQUIPMENT = 'builtInEquipment'),
                         (e.EQUIPMENT_PLUS = 'equipmentPlus'),
@@ -343,13 +343,13 @@
                         (e.PROGRESSION_STYLE_UPGRADED_3 = 'progressionStyleUpgraded_3'),
                         (e.PROGRESSION_STYLE_UPGRADED_4 = 'progressionStyleUpgraded_4'),
                         (e.PROGRESSION_STYLE_UPGRADED_5 = 'progressionStyleUpgraded_5'),
-                        (e.PROGRESSION_STYLE_UPGRADED_6 = 'progressionStyleUpgraded_6');
+                        (e.PROGRESSION_STYLE_UPGRADED_6 = 'progressionStyleUpgraded_6'));
                 })(o || (o = {})),
                 (function (e) {
                     e.BATTLE_BOOSTER = 'battleBooster';
                 })(c || (c = {})),
                 (function (e) {
-                    (e.BATTLE_BOOSTER = 'battleBooster'),
+                    ((e.BATTLE_BOOSTER = 'battleBooster'),
                         (e.BATTLE_BOOSTER_REPLACE = 'battleBoosterReplace'),
                         (e.BUILT_IN_EQUIPMENT = 'builtInEquipment'),
                         (e.EQUIPMENT_PLUS = 'equipmentPlus'),
@@ -363,11 +363,11 @@
                         (e.PROGRESSION_STYLE_UPGRADED_3 = 'progressionStyleUpgraded_3'),
                         (e.PROGRESSION_STYLE_UPGRADED_4 = 'progressionStyleUpgraded_4'),
                         (e.PROGRESSION_STYLE_UPGRADED_5 = 'progressionStyleUpgraded_5'),
-                        (e.PROGRESSION_STYLE_UPGRADED_6 = 'progressionStyleUpgraded_6');
+                        (e.PROGRESSION_STYLE_UPGRADED_6 = 'progressionStyleUpgraded_6'));
                 })(l || (l = {})),
                 (function (e) {
-                    (e[(e.Engraving = 0)] = 'Engraving'), (e[(e.Background = 1)] = 'Background');
-                })(_ || (_ = {}));
+                    ((e[(e.Engraving = 0)] = 'Engraving'), (e[(e.Background = 1)] = 'Background'));
+                })(_ || (_ = {})));
         },
         729: (e, t, a) => {
             a.d(t, { c$: () => b, i2: () => v, m9: () => S, p3: () => u, pI: () => p, ry: () => E });
@@ -600,7 +600,7 @@
                 };
         },
         7773: (e, t, a) => {
-            a.r(t), a.d(t, { default: () => Me });
+            (a.r(t), a.d(t, { default: () => Me }));
             var s = a(6179),
                 n = a.n(s),
                 r = a(7522),
@@ -611,17 +611,17 @@
                 _ = a(729),
                 u = a(5433);
             let m, d;
-            !(function (e) {
-                (e.Received = 'received'), (e.Available = 'available'), (e.Unavailable = 'unavailable');
+            (!(function (e) {
+                ((e.Received = 'received'), (e.Available = 'available'), (e.Unavailable = 'unavailable'));
             })(m || (m = {})),
                 (function (e) {
-                    (e.DEFAULT = 'default'),
+                    ((e.DEFAULT = 'default'),
                         (e.NOT_IN_INVENTORY = 'notInInventory'),
                         (e.BROKEN = 'broken'),
                         (e.IN_BATTLE = 'inBattle'),
                         (e.IN_UNIT = 'inUnit'),
-                        (e.CUSTOMIZATION_UNAVAILABLE = 'customizationUnavailable');
-                })(d || (d = {}));
+                        (e.CUSTOMIZATION_UNAVAILABLE = 'customizationUnavailable'));
+                })(d || (d = {})));
             var E = a(3215),
                 p = a(9480),
                 g = a(3946);
@@ -1019,7 +1019,7 @@
                                         ),
                                     );
                                 default:
-                                    return console.error('Unknown state', r), null;
+                                    return (console.error('Unknown state', r), null);
                             }
                         })(),
                     );
@@ -1332,7 +1332,7 @@
                         g = E[1],
                         b = (0, r.createRef)(),
                         R = (0, r.useCallback)(() => {
-                            d(!1), null == s || s(!1);
+                            (d(!1), null == s || s(!1));
                         }, [s]);
                     (0, r.useEffect)(
                         () => (window.addEventListener('mouseup', R), () => window.removeEventListener('mouseup', R)),
@@ -1355,11 +1355,11 @@
                         ),
                         S = (0, r.useCallback)(
                             (e) => {
-                                e.preventDefault(),
+                                (e.preventDefault(),
                                     0 === e.button &&
                                         v(e) &&
                                         _ &&
-                                        (d(!0), null == s || s(!0), g({ x: e.clientX, y: e.clientY }));
+                                        (d(!0), null == s || s(!0), g({ x: e.clientX, y: e.clientY })));
                             },
                             [v, _, s],
                         ),
@@ -1369,7 +1369,7 @@
                                     if (!v(e)) return;
                                     const a = e.clientX !== p.x ? e.clientX - p.x : 0,
                                         s = e.clientY !== p.y ? e.clientY - p.y : 0;
-                                    g({ x: e.clientX, y: e.clientY }), t({ dx: a, dy: s, dz: 0 });
+                                    (g({ x: e.clientX, y: e.clientY }), t({ dx: a, dy: s, dz: 0 }));
                                 }
                             },
                             [v, m, p.x, p.y, t],
@@ -1383,11 +1383,11 @@
                             [v, _, t],
                         ),
                         k = (0, r.useCallback)(() => {
-                            d(!1), null == s || s(!1);
+                            (d(!1), null == s || s(!1));
                         }, [s]),
                         P = (0, r.useCallback)(
                             (e) => {
-                                0 === e.buttons && m && (d(!1), null == s || s(!1)), a({ isOver3dScene: !0 });
+                                (0 === e.buttons && m && (d(!1), null == s || s(!1)), a({ isOver3dScene: !0 }));
                             },
                             [s, a, m],
                         ),

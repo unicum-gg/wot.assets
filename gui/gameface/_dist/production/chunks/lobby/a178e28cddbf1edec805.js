@@ -11,7 +11,7 @@
                 o = t.n(i),
                 l = t(5287);
             const c = ({ binding: e, text: a = '', classMix: t, alignment: s = r.v2.left, formatWithBrackets: c }) => {
-                if (null === a) return console.error("FormatText was supplied with 'null'"), null;
+                if (null === a) return (console.error("FormatText was supplied with 'null'"), null);
                 const _ = c && e ? (0, r.WU)(a, e) : a;
                 return o().createElement(
                     i.Fragment,
@@ -82,9 +82,9 @@
         },
         2862: (e, a, t) => {
             let s, n, r, i, o, l, c, _;
-            t.d(a, { $h: () => i, A2: () => l, E4: () => s, h2: () => r, kK: () => o, sh: () => c }),
+            (t.d(a, { $h: () => i, A2: () => l, E4: () => s, h2: () => r, kK: () => o, sh: () => c }),
                 (function (e) {
-                    (e.Items = 'items'),
+                    ((e.Items = 'items'),
                         (e.Equipment = 'equipment'),
                         (e.Xp = 'xp'),
                         (e.XpFactor = 'xpFactor'),
@@ -133,10 +133,10 @@
                         (e.BattleBoosterGift = 'battleBooster_gift'),
                         (e.OptionalDevice = 'optionalDevice'),
                         (e.LootBox = 'lootBox'),
-                        (e.BrCoin = 'brcoin');
+                        (e.BrCoin = 'brcoin'));
                 })(s || (s = {})),
                 (function (e) {
-                    (e.Gold = 'gold'),
+                    ((e.Gold = 'gold'),
                         (e.Credits = 'credits'),
                         (e.Crystal = 'crystal'),
                         (e.Premium = 'premium'),
@@ -173,10 +173,10 @@
                         (e.BattlePassPoints = 'battlePassPoints'),
                         (e.BattleBadge = 'dossier_badge'),
                         (e.BattleAchievement = 'dossier_achievement'),
-                        (e.EquipCoin = 'equipCoin');
+                        (e.EquipCoin = 'equipCoin'));
                 })(n || (n = {})),
                 (function (e) {
-                    (e.Big = 'big'),
+                    ((e.Big = 'big'),
                         (e.Small = 'small'),
                         (e.Mini = 'mini'),
                         (e.S600x450 = 's600x450'),
@@ -187,17 +187,17 @@
                         (e.S128x100 = 's128x100'),
                         (e.S80x80 = 's80x80'),
                         (e.S64x64 = 's64x64'),
-                        (e.S48x48 = 's48x48');
+                        (e.S48x48 = 's48x48'));
                 })(r || (r = {})),
                 (function (e) {
-                    (e.MULTI = 'multi'),
+                    ((e.MULTI = 'multi'),
                         (e.CURRENCY = 'currency'),
                         (e.PREMIUM_PLUS = 'premium_plus'),
                         (e.NUMBER = 'number'),
-                        (e.STRING = 'string');
+                        (e.STRING = 'string'));
                 })(i || (i = {})),
                 (function (e) {
-                    (e.BATTLE_BOOSTER = 'battleBooster'),
+                    ((e.BATTLE_BOOSTER = 'battleBooster'),
                         (e.BATTLE_BOOSTER_REPLACE = 'battleBoosterReplace'),
                         (e.BUILT_IN_EQUIPMENT = 'builtInEquipment'),
                         (e.EQUIPMENT_PLUS = 'equipmentPlus'),
@@ -211,13 +211,13 @@
                         (e.PROGRESSION_STYLE_UPGRADED_3 = 'progressionStyleUpgraded_3'),
                         (e.PROGRESSION_STYLE_UPGRADED_4 = 'progressionStyleUpgraded_4'),
                         (e.PROGRESSION_STYLE_UPGRADED_5 = 'progressionStyleUpgraded_5'),
-                        (e.PROGRESSION_STYLE_UPGRADED_6 = 'progressionStyleUpgraded_6');
+                        (e.PROGRESSION_STYLE_UPGRADED_6 = 'progressionStyleUpgraded_6'));
                 })(o || (o = {})),
                 (function (e) {
                     e.BATTLE_BOOSTER = 'battleBooster';
                 })(l || (l = {})),
                 (function (e) {
-                    (e.BATTLE_BOOSTER = 'battleBooster'),
+                    ((e.BATTLE_BOOSTER = 'battleBooster'),
                         (e.BATTLE_BOOSTER_REPLACE = 'battleBoosterReplace'),
                         (e.BUILT_IN_EQUIPMENT = 'builtInEquipment'),
                         (e.EQUIPMENT_PLUS = 'equipmentPlus'),
@@ -231,11 +231,11 @@
                         (e.PROGRESSION_STYLE_UPGRADED_3 = 'progressionStyleUpgraded_3'),
                         (e.PROGRESSION_STYLE_UPGRADED_4 = 'progressionStyleUpgraded_4'),
                         (e.PROGRESSION_STYLE_UPGRADED_5 = 'progressionStyleUpgraded_5'),
-                        (e.PROGRESSION_STYLE_UPGRADED_6 = 'progressionStyleUpgraded_6');
+                        (e.PROGRESSION_STYLE_UPGRADED_6 = 'progressionStyleUpgraded_6'));
                 })(c || (c = {})),
                 (function (e) {
-                    (e[(e.Engraving = 0)] = 'Engraving'), (e[(e.Background = 1)] = 'Background');
-                })(_ || (_ = {}));
+                    ((e[(e.Engraving = 0)] = 'Engraving'), (e[(e.Background = 1)] = 'Background'));
+                })(_ || (_ = {})));
         },
         729: (e, a, t) => {
             t.d(a, { c$: () => g, i2: () => v, m9: () => w, p3: () => m, pI: () => b, ry: () => p });
@@ -473,7 +473,7 @@
             const n = (e, a = []) => {
                 const t = (0, s.useRef)(),
                     n = (0, s.useCallback)((...a) => {
-                        t.current && t.current(), (t.current = e(...a));
+                        (t.current && t.current(), (t.current = e(...a)));
                     }, a);
                 return (
                     (0, s.useEffect)(
@@ -495,7 +495,7 @@
                     return (
                         (a = requestAnimationFrame(() => {
                             a = requestAnimationFrame(() => {
-                                (a = null), e();
+                                ((a = null), e());
                             });
                         })),
                         () => {
@@ -577,20 +577,20 @@
                         const s = c - 1,
                             n = e.getContext('2d'),
                             r = (s) => {
-                                n.clearRect(0, 0, e.width, e.height), n.drawImage(s, 0, 0, a, t);
+                                (n.clearRect(0, 0, e.width, e.height), n.drawImage(s, 0, 0, a, t));
                             };
                         if ('stop' === v) {
                             const e = l(0),
                                 a = new Image();
                             a.src = e;
                             const t = () => r(a);
-                            return a.addEventListener('load', t), () => a.removeEventListener('load', t);
+                            return (a.addEventListener('load', t), () => a.removeEventListener('load', t));
                         }
                         const i = ((e, a) => {
                                 const t = [];
                                 for (let s = 0; s < e; s++) {
                                     const e = new Image();
-                                    (e.src = a(s)), t.push(e);
+                                    ((e.src = a(s)), t.push(e));
                                 }
                                 return t;
                             })(c, l),
@@ -598,13 +598,13 @@
                                 let t = a;
                                 return () => {
                                     const a = t;
-                                    return (t += 1), t > e && (t = 0), a;
+                                    return ((t += 1), t > e && (t = 0), a);
                                 };
                             })(s, b),
                             _ = setInterval(() => {
                                 const e = o(),
                                     a = i[e];
-                                r(i[e]), m(e, a), e === s && (h(), g || clearInterval(_));
+                                (r(i[e]), m(e, a), e === s && (h(), g || clearInterval(_)));
                             }, d);
                         return () => clearInterval(_);
                     }, [c, d, l, t, b, g, m, h, v, a]),
@@ -999,12 +999,12 @@
                             F = (0, m.useCallback)(() => {
                                 A && ((0, c.G)(R.sounds.hangar_newyear_slot_over_off()), D(!1));
                             }, [A]);
-                        (0, m.useEffect)(() => {
+                        ((0, m.useEffect)(() => {
                             !$ && A && ((0, c.G)(R.sounds.hangar_newyear_slot_over_off()), D(!1));
                         }, [$, A]),
                             (0, l.H)(() => {
                                 !f && B && O(!1);
-                            }, [f, B]);
+                            }, [f, B]));
                         const q = n()(
                                 b.Z.base,
                                 b.Z[`base__${t}`],
@@ -1281,7 +1281,7 @@
                 _ = t(2862);
             let m;
             !(function (e) {
-                (e.Medium = 'medium'), (e.Large = 'large');
+                ((e.Medium = 'medium'), (e.Large = 'large'));
             })(m || (m = {}));
             const u = R.views.lobby.new_year.tooltips,
                 d = ({
@@ -1348,7 +1348,7 @@
                 E = R.images.gui.maps.icons.newYear.tank_types;
             let g;
             !(function (e) {
-                (e.Light = 'light'), (e.Dark = 'dark');
+                ((e.Light = 'light'), (e.Dark = 'dark'));
             })(g || (g = {}));
             const v = (e) => {
                 let a = e.vehicleInfo,
@@ -1467,7 +1467,7 @@
                             case o.$u.Big:
                                 return 'big';
                             default:
-                                return (t = e), d.includes(t) ? a.replace('s', 'c_') : a;
+                                return ((t = e), d.includes(t) ? a.replace('s', 'c_') : a);
                         }
                         var t;
                     })()}`;
@@ -1530,27 +1530,27 @@
                 o = (e) => 'item' in e && e.item && e.item.startsWith('modernized'),
                 l = (e) => 'icon' in e && 'attachment' === e.icon;
             let c, _, m, u, d;
-            !(function (e) {
-                (e.Small = 'small'),
+            (!(function (e) {
+                ((e.Small = 'small'),
                     (e.Big = 'big'),
                     (e.S180x135 = 's180x135'),
                     (e.S232x174 = 's232x174'),
                     (e.S296x222 = 's296x222'),
                     (e.S360x270 = 's360x270'),
                     (e.S400x300 = 's400x300'),
-                    (e.S600x450 = 's600x450');
+                    (e.S600x450 = 's600x450'));
             })(c || (c = {})),
                 (function (e) {
-                    (e.None = 'noAnimation'),
+                    ((e.None = 'noAnimation'),
                         (e.Default = 'defaultAnimation'),
                         (e.OnlyButton = 'onlyButtonAnimation'),
-                        (e.OnlyText = 'onlyTextAnimation');
+                        (e.OnlyText = 'onlyTextAnimation'));
                 })(_ || (_ = {})),
                 (function (e) {
-                    (e.Default = 'default'), (e.Big = 'Big');
+                    ((e.Default = 'default'), (e.Big = 'Big'));
                 })(m || (m = {})),
                 (function (e) {
-                    (e.GiftMachineToken = 'battleToken'),
+                    ((e.GiftMachineToken = 'battleToken'),
                         (e.Tman = 'tmanToken'),
                         (e.AchievementReward = 'dossier_achievement'),
                         (e.Customizations = 'customizations'),
@@ -1563,13 +1563,13 @@
                         (e.RandomDecoration = 'randomNyToy'),
                         (e.RandomInstruction = 'randomNyInstruction'),
                         (e.RandomCrewInstruction = 'randomNyCrewInstruction'),
-                        (e.EquipCoin = 'equipCoin');
+                        (e.EquipCoin = 'equipCoin'));
                 })(u || (u = {})),
                 (function (e) {
-                    (e.CelebrityAction = 'questTokenAnim'),
+                    ((e.CelebrityAction = 'questTokenAnim'),
                         (e.Story = 'questTokenStory'),
-                        (e.Decoration = 'questTokenDecoration');
-                })(d || (d = {}));
+                        (e.Decoration = 'questTokenDecoration'));
+                })(d || (d = {})));
         },
         7298: (e, a, t) => {
             t.d(a, { _: () => i });

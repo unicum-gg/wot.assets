@@ -4,10 +4,10 @@
         n = {
             8491: (e, n, t) => {
                 var r = {};
-                t.r(r),
-                    t.d(r, { mouse: () => y, off: () => b, on: () => w, onResize: () => f, onScaleUpdated: () => p });
+                (t.r(r),
+                    t.d(r, { mouse: () => y, off: () => b, on: () => w, onResize: () => f, onScaleUpdated: () => p }));
                 var a = {};
-                t.r(a),
+                (t.r(a),
                     t.d(a, {
                         events: () => r,
                         getMouseGlobalPosition: () => T,
@@ -15,11 +15,11 @@
                         graphicsQuality: () => P,
                         playSound: () => h,
                         setRTPC: () => E,
-                    });
+                    }));
                 var i = {};
-                t.r(i), t.d(i, { getBgUrl: () => C, getTextureUrl: () => A });
+                (t.r(i), t.d(i, { getBgUrl: () => C, getTextureUrl: () => A }));
                 var o = {};
-                t.r(o),
+                (t.r(o),
                     t.d(o, {
                         addModelObserver: () => W,
                         addPreloadTexture: () => K,
@@ -47,7 +47,7 @@
                         setInputPaddingsRem: () => B,
                         setSidePaddingsRem: () => H,
                         whenTutorialReady: () => ce,
-                    });
+                    }));
                 var s = t(6179),
                     l = t.n(s),
                     c = t(493),
@@ -121,10 +121,10 @@
                     );
                     return Object.assign({}, a, {
                         disable() {
-                            (e.enabled = !1), r();
+                            ((e.enabled = !1), r());
                         },
                         enable() {
-                            (e.enabled = !0), r();
+                            ((e.enabled = !0), r());
                         },
                         enableOutside() {
                             e.enabled && _(!0);
@@ -321,15 +321,15 @@
                         (0, s.useMemo)(
                             () => ({
                                 run: (n) => {
-                                    window.cancelAnimationFrame(e.current),
+                                    (window.cancelAnimationFrame(e.current),
                                         (e.current = window.requestAnimationFrame(() => {
                                             e.current = window.requestAnimationFrame(() => {
-                                                n(), (e.current = 0);
+                                                (n(), (e.current = 0));
                                             });
-                                        }));
+                                        })));
                                 },
                                 clear: () => {
-                                    window.cancelAnimationFrame(e.current), (e.current = 0);
+                                    (window.cancelAnimationFrame(e.current), (e.current = 0));
                                 },
                                 get isRunning() {
                                     return 0 !== e.current;
@@ -400,7 +400,7 @@
                             _e({}, o, {
                                 className: m()(me.base, me[`base__theme-${i}`], r),
                                 ref: function (e) {
-                                    (u.current = e), 'function' == typeof n ? n(e) : n && (n.current = e);
+                                    ((u.current = e), 'function' == typeof n ? n(e) : n && (n.current = e));
                                 },
                             }),
                             l().createElement('div', { className: me.decorator }, t),
@@ -408,8 +408,8 @@
                     );
                 });
                 let pe, we, be, ge, ye, he, Ee;
-                !(function (e) {
-                    (e.Undefined = 'undefined'),
+                (!(function (e) {
+                    ((e.Undefined = 'undefined'),
                         (e.NewYear = 'NewYear'),
                         (e.Christmas = 'Christmas'),
                         (e.Fairytale = 'Fairytale'),
@@ -425,42 +425,42 @@
                         (e.Gift2 = 'Gift2'),
                         (e.Bro = 'Bro'),
                         (e.Dog = 'Dog'),
-                        (e.Surprise = 'Surprise');
+                        (e.Surprise = 'Surprise'));
                 })(pe || (pe = {})),
                     (function (e) {
-                        (e.Crystal = 'ny_crystal'),
+                        ((e.Crystal = 'ny_crystal'),
                             (e.Emerald = 'ny_emerald'),
                             (e.Amber = 'ny_amber'),
                             (e.Iron = 'ny_iron'),
-                            (e.AnyResource = 'anyResource');
+                            (e.AnyResource = 'anyResource'));
                     })(we || (we = {})),
                     (function (e) {
-                        (e.XP = 'xpFactor'),
+                        ((e.XP = 'xpFactor'),
                             (e.TankmenXP = 'tankmenXPFactor'),
                             (e.FreeXp = 'freeXPFactor'),
-                            (e.Credits = 'creditsFactor');
+                            (e.Credits = 'creditsFactor'));
                     })(be || (be = {})),
                     (function (e) {
-                        (e.NewYear = 'NewYear'),
+                        ((e.NewYear = 'NewYear'),
                             (e.Christmas = 'Christmas'),
                             (e.Fairytale = 'Fairytale'),
-                            (e.Oriental = 'Oriental');
+                            (e.Oriental = 'Oriental'));
                     })(ge || (ge = {})),
                     (function (e) {
-                        (e.Level1 = 'level1'), (e.Level2 = 'level2'), (e.Level3 = 'level3'), (e.Level4 = 'level4');
+                        ((e.Level1 = 'level1'), (e.Level2 = 'level2'), (e.Level3 = 'level3'), (e.Level4 = 'level4'));
                     })(ye || (ye = {})),
                     (function (e) {
-                        (e.Zero = 'zero'), (e.Number = 'number'), (e.Default = 'default');
+                        ((e.Zero = 'zero'), (e.Number = 'number'), (e.Default = 'default'));
                     })(he || (he = {})),
                     (function (e) {
-                        (e.Undefined = 'undefined'),
+                        ((e.Undefined = 'undefined'),
                             (e.ToEvent = 'toEvent'),
                             (e.ToGuestD = 'toGuestD'),
                             (e.ToGuestC = 'toGuestC'),
                             (e.ToMarkertplace = 'toMarkertplace'),
                             (e.ToGiftmachine = 'toGiftmachine'),
-                            (e.ToRewards = 'toRewards');
-                    })(Ee || (Ee = {}));
+                            (e.ToRewards = 'toRewards'));
+                    })(Ee || (Ee = {})));
                 const Re = {
                     base: 'ResourceName_base_75',
                     base__reverse: 'ResourceName_base__reverse_1b',
@@ -475,7 +475,7 @@
                 };
                 let Ne;
                 !(function (e) {
-                    (e.s24 = '24'), (e.s48 = '48'), (e.Default = '24');
+                    ((e.s24 = '24'), (e.s48 = '48'), (e.Default = '24'));
                 })(Ne || (Ne = {}));
                 const Te = ({ type: e, isReverse: n, classNames: t, size: r = Ne.Default }) =>
                     l().createElement(
@@ -603,9 +603,9 @@
         var a = t[e];
         if (void 0 !== a) return a.exports;
         var i = (t[e] = { exports: {} });
-        return n[e](i, i.exports, r), i.exports;
+        return (n[e](i, i.exports, r), i.exports);
     }
-    (r.m = n),
+    ((r.m = n),
         (e = []),
         (r.O = (n, t, a, i) => {
             if (!t) {
@@ -629,7 +629,7 @@
         }),
         (r.n = (e) => {
             var n = e && e.__esModule ? () => e.default : () => e;
-            return r.d(n, { a: n }), n;
+            return (r.d(n, { a: n }), n);
         }),
         (r.d = (e, n) => {
             for (var t in n) r.o(n, t) && !r.o(e, t) && Object.defineProperty(e, t, { enumerable: !0, get: n[t] });
@@ -644,10 +644,10 @@
         })()),
         (r.o = (e, n) => Object.prototype.hasOwnProperty.call(e, n)),
         (r.r = (e) => {
-            'undefined' != typeof Symbol &&
+            ('undefined' != typeof Symbol &&
                 Symbol.toStringTag &&
                 Object.defineProperty(e, Symbol.toStringTag, { value: 'Module' }),
-                Object.defineProperty(e, '__esModule', { value: !0 });
+                Object.defineProperty(e, '__esModule', { value: !0 }));
         }),
         (r.j = 2920),
         (() => {
@@ -662,12 +662,12 @@
                         for (a in s) r.o(s, a) && (r.m[a] = s[a]);
                         if (l) var u = l(r);
                     }
-                    for (n && n(t); c < o.length; c++) (i = o[c]), r.o(e, i) && e[i] && e[i][0](), (e[i] = 0);
+                    for (n && n(t); c < o.length; c++) ((i = o[c]), r.o(e, i) && e[i] && e[i][0](), (e[i] = 0));
                     return r.O(u);
                 },
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
-            t.forEach(n.bind(null, 0)), (t.push = n.bind(null, t.push.bind(t)));
-        })();
+            (t.forEach(n.bind(null, 0)), (t.push = n.bind(null, t.push.bind(t))));
+        })());
     var a = r.O(void 0, [8360], () => r(8491));
     a = r.O(a);
 })();

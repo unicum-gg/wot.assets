@@ -3,32 +3,32 @@
     var e,
         r = {
             5461: (e, r, t) => {
-                t(7363), t(6483), t(7727);
+                (t(7363), t(6483), t(7727));
                 let n;
                 !(function (e) {
-                    (e[(e.LEFT = 0)] = 'LEFT'),
+                    ((e[(e.LEFT = 0)] = 'LEFT'),
                         (e[(e.WHEEL = 1)] = 'WHEEL'),
                         (e[(e.RIGHT = 2)] = 'RIGHT'),
                         (e[(e.FOURTH = 3)] = 'FOURTH'),
-                        (e[(e.FIFTH = 4)] = 'FIFTH');
+                        (e[(e.FIFTH = 4)] = 'FIFTH'));
                 })(n || (n = {}));
                 t(8844);
             },
             8844: (e, r, t) => {
                 let n, o, a;
-                !(function (e) {
-                    (e.small = 'small'), (e.medium = 'medium'), (e.large = 'large'), (e.extraLarge = 'extraLarge');
+                (!(function (e) {
+                    ((e.small = 'small'), (e.medium = 'medium'), (e.large = 'large'), (e.extraLarge = 'extraLarge'));
                 })(n || (n = {})),
                     (function (e) {
-                        (e.primary = 'primary'), (e.main = 'main');
+                        ((e.primary = 'primary'), (e.main = 'main'));
                     })(o || (o = {})),
                     (function (e) {
-                        (e.Center = 'center'), (e.Bottom = 'bottom');
-                    })(a || (a = {}));
+                        ((e.Center = 'center'), (e.Bottom = 'bottom'));
+                    })(a || (a = {})));
             },
             7727: (e, r, t) => {},
             8821: (e, r, t) => {
-                t(6483), t(5461), t(7363);
+                (t(6483), t(5461), t(7363));
             },
             7363: (e) => {
                 e.exports = React;
@@ -39,9 +39,9 @@
         var o = t[e];
         if (void 0 !== o) return o.exports;
         var a = (t[e] = { exports: {} });
-        return r[e](a, a.exports, n), a.exports;
+        return (r[e](a, a.exports, n), a.exports);
     }
-    (n.m = r),
+    ((n.m = r),
         (e = []),
         (n.O = (r, t, o, a) => {
             if (!t) {
@@ -65,7 +65,7 @@
         }),
         (n.n = (e) => {
             var r = e && e.__esModule ? () => e.default : () => e;
-            return n.d(r, { a: r }), r;
+            return (n.d(r, { a: r }), r);
         }),
         (n.d = (e, r) => {
             for (var t in r) n.o(r, t) && !n.o(e, t) && Object.defineProperty(e, t, { enumerable: !0, get: r[t] });
@@ -92,12 +92,12 @@
                         for (o in l) n.o(l, o) && (n.m[o] = l[o]);
                         if (f) var c = f(n);
                     }
-                    for (r && r(t); u < i.length; u++) (a = i[u]), n.o(e, a) && e[a] && e[a][0](), (e[a] = 0);
+                    for (r && r(t); u < i.length; u++) ((a = i[u]), n.o(e, a) && e[a] && e[a][0](), (e[a] = 0));
                     return n.O(c);
                 },
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
-            t.forEach(r.bind(null, 0)), (t.push = r.bind(null, t.push.bind(t)));
-        })();
+            (t.forEach(r.bind(null, 0)), (t.push = r.bind(null, t.push.bind(t))));
+        })());
     var o = n.O(void 0, [866], () => n(8821));
     o = n.O(o);
 })();

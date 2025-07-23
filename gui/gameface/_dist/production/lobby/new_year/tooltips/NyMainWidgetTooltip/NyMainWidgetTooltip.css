@@ -1196,7 +1196,8 @@
 .App_base_d9 {
     width: 420rem;
     padding: 25rem;
-    background: linear-gradient(165.14deg, #09346a 0%, rgba(255, 15, 100, 0) 50%, rgba(8, 21, 44, 0.2) 80%),
+    background:
+        linear-gradient(165.14deg, #09346a 0%, rgba(255, 15, 100, 0) 50%, rgba(8, 21, 44, 0.2) 80%),
         radial-gradient(50% 50% at 50% 50%, rgba(0, 71, 255, 0.2) 0%, rgba(0, 71, 255, 0) 100%);
     position: relative;
 }

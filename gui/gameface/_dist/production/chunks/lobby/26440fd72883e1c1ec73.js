@@ -11,7 +11,7 @@
                 r = a.n(c),
                 o = a(5287);
             const i = ({ binding: e, text: t = '', classMix: a, alignment: n = s.v2.left, formatWithBrackets: i }) => {
-                if (null === t) return console.error("FormatText was supplied with 'null'"), null;
+                if (null === t) return (console.error("FormatText was supplied with 'null'"), null);
                 const m = i && e ? (0, s.WU)(t, e) : t;
                 return r().createElement(
                     c.Fragment,
@@ -31,14 +31,14 @@
             const n = (e, t, a) => (a < e ? e : a > t ? t : a);
         },
         7015: (e, t, a) => {
-            a.r(t), a.d(t, { default: () => F });
+            (a.r(t), a.d(t, { default: () => F }));
             var n = a(6179),
                 l = a.n(n),
                 s = a(3403),
                 c = a(545);
             let r;
             !(function (e) {
-                (e.Tournament = 'tournament'), (e.GuestA = 'guest_A'), (e.GuestC = 'guest_cat');
+                ((e.Tournament = 'tournament'), (e.GuestA = 'guest_A'), (e.GuestC = 'guest_cat'));
             })(r || (r = {}));
             var o = a(3215),
                 i = a(3946),
@@ -202,7 +202,7 @@
                         h = v[1],
                         p = (0, s.createRef)(),
                         C = (0, s.useCallback)(() => {
-                            g(!1), null == n || n(!1);
+                            (g(!1), null == n || n(!1));
                         }, [n]);
                     (0, s.useEffect)(
                         () => (window.addEventListener('mouseup', C), () => window.removeEventListener('mouseup', C)),
@@ -225,11 +225,11 @@
                         ),
                         E = (0, s.useCallback)(
                             (e) => {
-                                e.preventDefault(),
+                                (e.preventDefault(),
                                     0 === e.button &&
                                         b(e) &&
                                         m &&
-                                        (g(!0), null == n || n(!0), h({ x: e.clientX, y: e.clientY }));
+                                        (g(!0), null == n || n(!0), h({ x: e.clientX, y: e.clientY })));
                             },
                             [b, m, n],
                         ),
@@ -239,7 +239,7 @@
                                     if (!b(e)) return;
                                     const a = e.clientX !== _.x ? e.clientX - _.x : 0,
                                         n = e.clientY !== _.y ? e.clientY - _.y : 0;
-                                    h({ x: e.clientX, y: e.clientY }), t({ dx: a, dy: n, dz: 0 });
+                                    (h({ x: e.clientX, y: e.clientY }), t({ dx: a, dy: n, dz: 0 }));
                                 }
                             },
                             [b, d, _.x, _.y, t],
@@ -253,11 +253,11 @@
                             [b, m, t],
                         ),
                         S = (0, s.useCallback)(() => {
-                            g(!1), null == n || n(!1);
+                            (g(!1), null == n || n(!1));
                         }, [n]),
                         y = (0, s.useCallback)(
                             (e) => {
-                                0 === e.buttons && d && (g(!1), null == n || n(!1)), a({ isOver3dScene: !0 });
+                                (0 === e.buttons && d && (g(!1), null == n || n(!1)), a({ isOver3dScene: !0 }));
                             },
                             [n, a, d],
                         ),

@@ -112,18 +112,18 @@
         },
         2106: (e, t, s) => {
             let a, n;
-            s.d(t, { L: () => a, q: () => n }),
+            (s.d(t, { L: () => a, q: () => n }),
                 (function (e) {
-                    (e.main = 'main'),
+                    ((e.main = 'main'),
                         (e.primary = 'primary'),
                         (e.primaryGreen = 'primaryGreen'),
                         (e.primaryRed = 'primaryRed'),
                         (e.secondary = 'secondary'),
-                        (e.ghost = 'ghost');
+                        (e.ghost = 'ghost'));
                 })(a || (a = {})),
                 (function (e) {
-                    (e.extraSmall = 'extraSmall'), (e.small = 'small'), (e.medium = 'medium'), (e.large = 'large');
-                })(n || (n = {}));
+                    ((e.extraSmall = 'extraSmall'), (e.small = 'small'), (e.medium = 'medium'), (e.large = 'large'));
+                })(n || (n = {})));
         },
         2145: (e, t, s) => {
             s.d(t, { O: () => m });
@@ -153,7 +153,7 @@
                     );
         },
         1193: (e, t, s) => {
-            s.r(t), s.d(t, { default: () => qe });
+            (s.r(t), s.d(t, { default: () => qe }));
             var a = s(6179),
                 n = s.n(a),
                 o = s(6483),
@@ -165,10 +165,10 @@
                 m = s(2608);
             let d;
             !(function (e) {
-                (e[(e.Locked = 0)] = 'Locked'),
+                ((e[(e.Locked = 0)] = 'Locked'),
                     (e[(e.Active = 1)] = 'Active'),
                     (e[(e.Completed = 2)] = 'Completed'),
-                    (e[(e.JustCompleted = 3)] = 'JustCompleted');
+                    (e[(e.JustCompleted = 3)] = 'JustCompleted'));
             })(d || (d = {}));
             var _ = s(3215),
                 b = s(4598),
@@ -177,11 +177,11 @@
                 v = s(9480);
             let g;
             !(function (e) {
-                (e.Locked = 'locked'),
+                ((e.Locked = 'locked'),
                     (e.Available = 'available'),
                     (e.NotEnough = 'notEnough'),
                     (e.Completed = 'completed'),
-                    (e.WalletDisabled = 'walletDisabled');
+                    (e.WalletDisabled = 'walletDisabled'));
             })(g || (g = {}));
             const E = (0, _.q)()(
                     ({ observableModel: e }) => {
@@ -301,7 +301,7 @@
                 O = R.strings.ny.newYear.challenge.quests.bonus;
             let H;
             !(function (e) {
-                (e.Initial = 'initial'), (e.HidePreviousBonus = 'hide'), (e.ShowCurrentBonus = 'show');
+                ((e.Initial = 'initial'), (e.HidePreviousBonus = 'hide'), (e.ShowCurrentBonus = 'show'));
             })(H || (H = {}));
             const Z = (0, r.Pi)(() => {
                     const e = h(),
@@ -315,21 +315,21 @@
                         m = (0, a.useState)(H.Initial),
                         d = m[0],
                         _ = m[1];
-                    (0, a.useEffect)(() => {
+                    ((0, a.useEffect)(() => {
                         if (c) return (0, M.F)(() => _(H.HidePreviousBonus), 300);
                     }, [c]),
                         (0, a.useEffect)(() => {
                             switch (d) {
                                 case H.HidePreviousBonus:
                                     return (0, M.F)(() => {
-                                        _(H.ShowCurrentBonus), s.updateBonus();
+                                        (_(H.ShowCurrentBonus), s.updateBonus());
                                     }, 500);
                                 case H.ShowCurrentBonus:
                                     return (0, M.F)(() => _(H.Initial), 500);
                                 default:
                                     return;
                             }
-                        }, [d, s]);
+                        }, [d, s]));
                     return n().createElement(
                         w.u,
                         {

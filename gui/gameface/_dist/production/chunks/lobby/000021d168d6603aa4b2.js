@@ -3,7 +3,7 @@
     [2714],
     {
         2714: (e, t, a) => {
-            a.r(t), a.d(t, { default: () => ge });
+            (a.r(t), a.d(t, { default: () => ge }));
             var n = a(6179),
                 l = a.n(n),
                 s = a(2608),
@@ -265,7 +265,7 @@
                 C = 'Counter_totalValue_2a';
             let b;
             !(function (e) {
-                (e.Challenge = 'challenge'), (e.Quest = 'quest'), (e.Advanced = 'advanced');
+                ((e.Challenge = 'challenge'), (e.Quest = 'quest'), (e.Advanced = 'advanced'));
             })(b || (b = {}));
             const y = R.strings.ny.newYear.challenge.logo,
                 h = ({ currentValue: e, totalValue: t, type: a }) =>

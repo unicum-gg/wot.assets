@@ -1,0 +1,254 @@
+.FormatText_base_d0 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.VehicleReceivedState_base_fe {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.VehicleReceivedState_receiveDecoration_d5 {
+    width: 48rem;
+    height: 48rem;
+    position: relative;
+}
+
+.VehicleReceivedState_receiveDoneIcon_5a {
+    width: 48rem;
+    height: 48rem;
+    background: url('R.images.resource_well.gui.maps.icons.counterStates.done_icon') no-repeat center / contain;
+    z-index: 1;
+}
+
+.VehicleReceivedState_receiveGreenBg_01 {
+    width: 320rem;
+    height: 259rem;
+    background: url('R.images.resource_well.gui.maps.icons.counterStates.green_bg') no-repeat center / contain;
+    position: absolute;
+    top: -111rem;
+    left: 50%;
+    z-index: -1;
+    transform: translateX(-50%);
+}
+
+.VehicleReceivedState_receiveGreenLine_a0 {
+    width: 450rem;
+    height: 1rem;
+    background: url('R.images.resource_well.gui.maps.icons.counterStates.green_line') no-repeat center / contain;
+    position: absolute;
+    top: 51%;
+    left: 50%;
+    z-index: -1;
+    transform: translateX(-50%);
+}
+
+.VehicleReceivedState_receiveTitle_a0 {
+    color: #7ab300;
+    white-space: nowrap;
+    position: absolute;
+    top: 43rem;
+    z-index: 1;
+}
+
+.VehicleInfo_base_a4 {
+    display: flex;
+    align-items: center;
+}
+
+.VehicleInfo_base__intro_3f {
+    color: #ffdd99;
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.mediaMedium .VehicleInfo_base__intro_3f {
+    color: #ffdd99;
+    font-size: 24rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.mediaLarge .VehicleInfo_base__intro_3f {
+    color: #ffdd99;
+    font-size: 28rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.mediaExtraLarge .VehicleInfo_base__intro_3f {
+    color: #ffdd99;
+    font-size: 36rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.VehicleInfo_base__progression_3a {
+    color: #f2f2f7;
+    font-size: 28rem;
+    font-weight: 700;
+    line-height: 1.1;
+    color: #fff;
+}
+
+.mediaLarge .VehicleInfo_base__progression_3a {
+    font-size: 36rem;
+}
+
+.VehicleInfo_type_41 {
+    position: relative;
+}
+
+.VehicleInfo_type_41[lang='ko'] {
+    transform: translateY(-2rem);
+}
+
+.VehicleInfo_base__intro_3f .VehicleInfo_type_41 {
+    width: 36rem;
+    transform: translateY(2rem);
+}
+
+.VehicleInfo_base__intro_3f .VehicleInfo_type_41[lang='ko'] {
+    transform: translateY(-2rem);
+}
+
+.mediaMedium .VehicleInfo_base__intro_3f .VehicleInfo_type_41 {
+    width: 50rem;
+    transform: translateY(4rem);
+}
+
+.mediaMedium .VehicleInfo_base__intro_3f .VehicleInfo_type_41[lang='ko'] {
+    transform: translateY(-2rem);
+}
+
+.mediaExtraLarge .VehicleInfo_base__intro_3f .VehicleInfo_type_41 {
+    width: 55rem;
+}
+
+.VehicleInfo_base__award_f8 .VehicleInfo_type_41 {
+    width: 50rem;
+    transform: translateY(3rem);
+}
+
+.VehicleInfo_base__award_f8 .VehicleInfo_type_41[lang='ko'] {
+    transform: translateY(-2rem);
+}
+
+.mediaLarge .VehicleInfo_base__award_f8 .VehicleInfo_type_41 {
+    width: 60rem;
+    transform: translateY(4rem);
+}
+
+.mediaLarge .VehicleInfo_base__award_f8 .VehicleInfo_type_41[lang='ko'] {
+    transform: translateY(-2rem);
+}
+
+.VehicleInfo_base__progression_3a .VehicleInfo_type_41 {
+    width: 50rem;
+    transform: translateY(2rem);
+}
+
+.VehicleInfo_base__progression_3a .VehicleInfo_type_41[lang='ko'] {
+    transform: translateY(-2rem);
+}
+
+.mediaLarge .VehicleInfo_base__progression_3a .VehicleInfo_type_41[lang='ko'] {
+    transform: translateY(-4rem);
+}
+
+.VehicleInfo_ico_6c {
+    background: no-repeat center / contain;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.VehicleInfo_base__intro_3f .VehicleInfo_ico_6c {
+    width: 56rem;
+    height: 56rem;
+}
+
+.mediaMedium .VehicleInfo_base__intro_3f .VehicleInfo_ico_6c {
+    width: 83rem;
+    height: 74rem;
+}
+
+.VehicleInfo_base__award_f8 .VehicleInfo_ico_6c {
+    width: 74rem;
+    height: 74rem;
+}
+
+.mediaLarge .VehicleInfo_base__award_f8 .VehicleInfo_ico_6c {
+    width: 84rem;
+    height: 84rem;
+}
+
+.VehicleInfo_base__progression_3a .VehicleInfo_ico_6c {
+    width: 70rem;
+    height: 70rem;
+}
+
+.Reward_base_b2 {
+    position: relative;
+}
+
+.Reward_title_2e {
+    color: #f2f2f7;
+    font-size: 24rem;
+    font-weight: 700;
+    line-height: 1.2;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.mediaMedium .Reward_title_2e {
+    color: #f2f2f7;
+    font-size: 28rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.mediaLarge .Reward_title_2e {
+    color: #f2f2f7;
+    font-size: 36rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.Reward_title__block_6b {
+    position: static;
+    transform: translateX(0);
+}
+
+.Reward_formatText_b2 {
+    flex-wrap: nowrap;
+}
+
+.Reward_vehicleInfoWrapper_ad {
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+}
+
+.Reward_receivedWrapper_f4 {
+    margin-top: 19rem;
+    font-size: 20rem;
+    font-weight: 400;
+}
+
+.mediaMedium .Reward_receivedWrapper_f4 {
+    margin-top: 24rem;
+}
+
+.mediaExtraLarge .Reward_receivedWrapper_f4 {
+    font-size: 24rem;
+}
