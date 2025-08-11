@@ -3994,10 +3994,10 @@
                             o().createElement(
                                 'div',
                                 { className: Ea },
-                                o().createElement('div', { className: ga }),
-                                o().createElement('div', { className: ga }),
                                 o().createElement('div', { className: pa }),
                                 o().createElement('div', { className: ba }, a),
+                                o().createElement('div', { className: ga }),
+                                o().createElement('div', { className: ga }),
                             ),
                         );
                     },

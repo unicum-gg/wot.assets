@@ -184,7 +184,7 @@ body {
     background-size: 3800rem 1900rem;
 }
 .BattlePassProgressionsViewContent_base__extraChapter_17 {
-    background-color: #0a1316;
+    background-color: #151920;
 }
 .BattlePassProgressionsViewContent_header_76 {
     margin-top: 32rem;
@@ -1155,6 +1155,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     left: 50%;
     z-index: 0;
     transform: translate(-50%, -50%);
+    pointer-events: none;
 }
 
 .Timer_icon_c5 {

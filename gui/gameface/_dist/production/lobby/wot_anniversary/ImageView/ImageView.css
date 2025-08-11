@@ -1,0 +1,93 @@
+@keyframes App_fadeIn_fc {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes App_fadeInWithScale_b2 {
+    0% {
+        opacity: 0;
+        transform: scale(1.2);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes App_slideUp_59 {
+    0% {
+        opacity: 0;
+        transform: translateY(20rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes App_fadeOut_99 {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.App_base_74 {
+    opacity: 0;
+    animation-name: App_fadeIn_fc;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.App_close_9a {
+    width: 47rem;
+    height: 47rem;
+    position: absolute;
+    top: 32rem;
+    right: 32rem;
+    cursor: pointer;
+}
+
+.mediaLarge .App_close_9a {
+    top: 40rem;
+    right: 40rem;
+}
+
+.App_closeImage_0b {
+    width: 100%;
+    height: 100%;
+    background: no-repeat center / contain;
+    position: absolute;
+}
+
+.App_closeImage__default_98 {
+    background-image: url('R.images.gui.maps.icons.wot_anniversary.card.close.default');
+}
+
+.App_closeImage__hover_2c {
+    background-image: url('R.images.gui.maps.icons.wot_anniversary.card.close.hover');
+    opacity: 0;
+    transition: opacity 0.16s;
+}
+
+.App_closeImage__hover_2c:hover {
+    opacity: 1;
+}

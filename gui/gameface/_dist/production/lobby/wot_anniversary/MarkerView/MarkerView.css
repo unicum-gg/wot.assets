@@ -1,0 +1,79 @@
+.App_base_09 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.App_content_7c {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 56rem;
+    height: 32rem;
+    margin-top: 20rem;
+    background: url('R.images.gui.maps.icons.wot_anniversary.marker.smallEnvelope') no-repeat center / contain;
+    position: relative;
+}
+
+.mediaMedium .App_content_7c {
+    width: 74rem;
+    height: 42rem;
+    background-image: url('R.images.gui.maps.icons.wot_anniversary.marker.mediumEnvelope');
+}
+
+.mediaExtraLarge .App_content_7c {
+    width: 94rem;
+    height: 50rem;
+    margin-top: 30rem;
+    background-image: url('R.images.gui.maps.icons.wot_anniversary.marker.largeEnvelope');
+}
+
+.App_count_ae {
+    margin-top: -6rem;
+    color: #4d2b2b;
+    font-size: 16rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.mediaMedium .App_count_ae {
+    margin-top: -10rem;
+    font-size: 18rem;
+}
+
+.mediaExtraLarge .App_count_ae {
+    font-size: 24rem;
+}
+
+.App_glareMask_c0 {
+    width: 100%;
+    height: 100%;
+    opacity: 0.4;
+    mix-blend-mode: overlay;
+    position: absolute;
+    top: 0;
+    left: 0;
+    mask-image: url('R.images.gui.maps.icons.wot_anniversary.marker.smallEnvelope');
+    mask-size: 100% 100%;
+}
+
+.mediaMedium .App_glareMask_c0 {
+    mask-image: url('R.images.gui.maps.icons.wot_anniversary.marker.mediumEnvelope');
+}
+
+.mediaExtraLarge .App_glareMask_c0 {
+    mask-image: url('R.images.gui.maps.icons.wot_anniversary.marker.largeEnvelope');
+}
+
+.App_glare_c3 {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(255, 255, 255, 1) 100%);
+    position: absolute;
+    top: 0;
+    left: 0;
+}

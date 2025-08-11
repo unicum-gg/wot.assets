@@ -1,0 +1,156 @@
+.TooltipDecorator_base_c9 {
+    display: flex;
+    position: absolute;
+}
+
+.TooltipDecorator_base__theme-default_6d .TooltipDecorator_decorator_3d {
+    padding: 4rem 6rem 8rem;
+    border-image-source: url('R.atlases.components.tooltip_background');
+    border-image-slice: 24 fill;
+    border-image-width: 24rem;
+    position: relative;
+}
+
+.FormatText_base_d0 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.FormatTextWithColorTags_blackReal_3c {
+    color: #000000;
+}
+
+.FormatTextWithColorTags_whiteReal_8a {
+    color: #ffffff;
+}
+
+.FormatTextWithColorTags_white_16 {
+    color: #f2f2f7;
+}
+
+.FormatTextWithColorTags_whiteOrange_18 {
+    color: #fefeec;
+}
+
+.FormatTextWithColorTags_whiteSpanish_10 {
+    color: #e9e2bf;
+}
+
+.FormatTextWithColorTags_par_ca {
+    color: #8c8c7e;
+}
+
+.FormatTextWithColorTags_parSecondary_8d {
+    color: #595950;
+}
+
+.FormatTextWithColorTags_parTertiary_a3 {
+    color: #37362e;
+}
+
+.FormatTextWithColorTags_red_60 {
+    color: #ff2717;
+}
+
+.FormatTextWithColorTags_redDark_03 {
+    color: #b70000;
+}
+
+.FormatTextWithColorTags_yellow_ad {
+    color: #feab34;
+}
+
+.FormatTextWithColorTags_orange_e4 {
+    color: #ee7000;
+}
+
+.FormatTextWithColorTags_cream_cd {
+    color: #ffdd99;
+}
+
+.FormatTextWithColorTags_brown_c8 {
+    color: #cbac77;
+}
+
+.FormatTextWithColorTags_greenBright_f0 {
+    color: #80d43a;
+}
+
+.FormatTextWithColorTags_green_c5 {
+    color: #7ab300;
+}
+
+.FormatTextWithColorTags_greenDark_af {
+    color: #497212;
+}
+
+.FormatTextWithColorTags_blueBooster_ac {
+    color: #ccffff;
+}
+
+.FormatTextWithColorTags_blueTeamkiller_6f {
+    color: #09e2ff;
+}
+
+.FormatTextWithColorTags_cred_4e {
+    color: #ced9d9;
+}
+
+.FormatTextWithColorTags_gold_90 {
+    color: #ffc363;
+}
+
+.FormatTextWithColorTags_bond_71 {
+    color: #c9c9b6;
+}
+
+.FormatTextWithColorTags_prom_dd {
+    color: #a29b70;
+}
+
+/* This specific rule is used to fix https://jira.wargaming.net/browse/WOTPRG-9871 */
+
+.FormatTextWithColorTags_parNoWidth_5a {
+    width: 0;
+    color: #8c8c7e;
+}
+
+/* @NOTE: combination of width: 101% and white-space: pre-wrap fixes the scaling issue on 4k scale. WOTD-281501*/
+.App_base_c2 {
+    width: 101%;
+    max-width: 450rem;
+    padding: 16rem 21rem;
+}
+.App_header_77 {
+    color: #e9e2bf;
+    font-size: 15rem;
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 7rem;
+    white-space: pre-wrap;
+}
+.App_body_b2 {
+    display: flex;
+}
+.App_description_2f {
+    color: #8c8c7e;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    white-space: pre-wrap;
+}
+.App_description_2f + .App_description_2f {
+    margin-top: 8rem;
+}
+.App_body__success_fa .App_description_2f {
+    color: #80d43a;
+}
+.App_icon_68 {
+    width: 20rem;
+    height: 20rem;
+    margin: 1rem 2rem 0 -5rem;
+    background: no-repeat center / contain;
+}
+.App_body__success_fa .App_icon_68 {
+    background-image: url('R.images.gui.maps.icons.wot_anniversary.progressionBoxTooltip.check');
+}

@@ -2230,7 +2230,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 
 .ParallelVehicle_dust_ce {
     position: absolute;
-    top: 0;
+    top: -11rem;
     z-index: 1;
 }
 
@@ -2239,17 +2239,17 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .mediaMedium .ParallelVehicle_base__tankIndex--0_d8 .ParallelVehicle_dust_ce {
-    top: 103rem;
+    top: 117rem;
     left: 280rem;
 }
 
 .mediaLarge .ParallelVehicle_base__tankIndex--0_d8 .ParallelVehicle_dust_ce {
-    top: 240rem;
+    top: 258rem;
     left: 445rem;
 }
 
 .mediaExtraLarge .ParallelVehicle_base__tankIndex--0_d8 .ParallelVehicle_dust_ce {
-    top: 556rem;
+    top: 567rem;
     left: 760rem;
 }
 
@@ -2258,17 +2258,17 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .mediaMedium .ParallelVehicle_base__tankIndex--1_2a .ParallelVehicle_dust_ce {
-    top: 103rem;
+    top: 117rem;
     right: 412rem;
 }
 
 .mediaLarge .ParallelVehicle_base__tankIndex--1_2a .ParallelVehicle_dust_ce {
-    top: 240rem;
+    top: 258rem;
     right: 608rem;
 }
 
 .mediaExtraLarge .ParallelVehicle_base__tankIndex--1_2a .ParallelVehicle_dust_ce {
-    top: 556rem;
+    top: 567rem;
     right: 915rem;
 }
 
