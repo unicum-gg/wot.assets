@@ -4828,8 +4828,9 @@
                         let r = e.length;
                         if (!r) return '';
                         r = u ? (t ? 6 : 11) : t ? 11 : 16;
-                        const n = e.length > r ? '...' : '';
-                        return `${e.slice(0, r)}${n}${u}`;
+                        const n = e.length > r ? '...' : '',
+                            a = u ? ` [${u}]` : '';
+                        return `${e.slice(0, r)}${n}${a}`;
                     },
                     l = (e) => ({
                         name: e.name,

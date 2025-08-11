@@ -7503,8 +7503,9 @@
                         let n = e.length;
                         if (!n) return '';
                         n = t ? (u ? 6 : 11) : u ? 11 : 16;
-                        const r = e.length > n ? '...' : '';
-                        return `${e.slice(0, n)}${r}${t}`;
+                        const r = e.length > n ? '...' : '',
+                            a = t ? ` [${t}]` : '';
+                        return `${e.slice(0, n)}${r}${a}`;
                     },
                     l = (e) => ({
                         name: e.name,

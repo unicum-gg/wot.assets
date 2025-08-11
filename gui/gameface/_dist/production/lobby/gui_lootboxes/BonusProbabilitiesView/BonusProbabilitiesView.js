@@ -3719,47 +3719,50 @@
                 xe.Default = Se;
                 const Re = { Vertical: n, Horizontal: r };
                 var ye = t(6373),
-                    Pe = t(3415);
-                const Te = 'vehicles';
-                var Le = t(4891);
-                const Ne = ({
-                    vehicleName: e,
-                    shortVehicleLabel: u,
-                    rentDays: t,
-                    lootboxName: r,
-                    lootboxID: n,
-                    rentBattles: o,
-                    inInventory: i,
-                    tooltipArgs: s,
-                }) => {
-                    const l =
-                            R.images.gui_lootboxes.gui.maps.rewards.vehicles.$dyn(`${(0, H.BN)(e)}`) ||
-                            R.images.gui.maps.icons.quests.bonuses.big.vehicles(),
-                        c = t > 0 || o > 0,
-                        d = E()('VehicleReward_base_b9', i && 'VehicleReward_base__inInventory_7e'),
-                        A = (0, Le.B)({
-                            info: JSON.stringify({ reward: Te, value: e, lootboxName: r, lootboxID: n }),
-                        }).rewardVehicleToopltipWatched;
-                    return a().createElement(
-                        Pe.l,
-                        { tooltipArgs: Object.assign({}, s, A) },
-                        a().createElement(
-                            'div',
-                            { className: d },
-                            a().createElement('div', {
-                                className: 'VehicleReward_icon_9a',
-                                style: { backgroundImage: `url(${l})` },
-                            }),
+                    Pe = t(3415),
+                    Te = t(4891);
+                const Le = 'vehicles',
+                    Ne = ({
+                        vehicleName: e,
+                        shortVehicleLabel: u,
+                        rentDays: t,
+                        lootboxName: r,
+                        lootboxID: n,
+                        rentBattles: o,
+                        inInventory: i,
+                        tooltipArgs: s,
+                        isRent: l,
+                        wasSold: c,
+                    }) => {
+                        const d =
+                                R.images.gui_lootboxes.gui.maps.rewards.vehicles.$dyn(`${(0, H.BN)(e)}`) ||
+                                R.images.gui.maps.icons.quests.bonuses.big.vehicles(),
+                            A = t > 0 || o > 0,
+                            m = (i && !l) || c,
+                            F = E()('VehicleReward_base_b9', m && 'VehicleReward_base__inInventory_7e'),
+                            D = (0, Te.B)({
+                                info: JSON.stringify({ reward: Le, value: e, lootboxName: r, lootboxID: n }),
+                            }).rewardVehicleToopltipWatched;
+                        return a().createElement(
+                            Pe.l,
+                            { tooltipArgs: Object.assign({}, s, D) },
                             a().createElement(
                                 'div',
-                                { className: 'VehicleReward_label_0c' },
-                                i && a().createElement('div', { className: 'VehicleReward_checkIcon_c6' }),
-                                a().createElement('div', { className: 'VehicleReward_name_02' }, u),
+                                { className: F },
+                                a().createElement('div', {
+                                    className: 'VehicleReward_icon_9a',
+                                    style: { backgroundImage: `url(${d})` },
+                                }),
+                                a().createElement(
+                                    'div',
+                                    { className: 'VehicleReward_label_0c' },
+                                    m && a().createElement('div', { className: 'VehicleReward_checkIcon_c6' }),
+                                    a().createElement('div', { className: 'VehicleReward_name_02' }, u),
+                                ),
+                                A && a().createElement('div', { className: 'VehicleReward_rentIcon_f2' }),
                             ),
-                            c && a().createElement('div', { className: 'VehicleReward_rentIcon_f2' }),
-                        ),
-                    );
-                };
+                        );
+                    };
                 var ke = t(5739);
                 function Oe() {
                     return (
@@ -3776,7 +3779,7 @@
                     );
                 }
                 const Me = a().memo(({ bonus: e, lootboxName: u, lootboxID: t }) => {
-                    const r = (0, Le.B)({
+                    const r = (0, Te.B)({
                         info: JSON.stringify({ reward: e.name, value: e.value, lootboxName: u, lootboxID: t }),
                     }).rewardToopltipWatched;
                     return a().createElement(
@@ -3808,7 +3811,7 @@
                             a().createElement(
                                 'div',
                                 { key: r, className: i },
-                                e.name === Te
+                                e.name === Le
                                     ? a().createElement(Ne, Ie({}, e, { lootboxName: u, lootboxID: t }))
                                     : a().createElement(Me, { bonus: e, lootboxName: u, lootboxID: t }),
                             ),
@@ -3831,7 +3834,7 @@
                 }
                 const Ue = R.strings.gui_lootboxes,
                     Ge = a().memo(({ probability: e, bonuses: u, index: t, lootboxName: r, lootboxID: n }) => {
-                        const o = (0, Le.B)(),
+                        const o = (0, Te.B)(),
                             i = o.probabilityPercentToopltipWatched,
                             s = o.probabilityPercentClick;
                         return a().createElement(
@@ -4075,7 +4078,7 @@
                 }
                 const ru = R.strings.gui_lootboxes,
                     nu = (0, h.Pi)(({ bonuses: e, probability: u, isCurrent: t, lootboxName: r, lootboxID: n }) => {
-                        const o = (0, Le.B)(),
+                        const o = (0, Te.B)(),
                             i = o.probabilityPercentWithGarantToopltipWatched,
                             s = o.probabilityPercentWithGarantClick;
                         return a().createElement(

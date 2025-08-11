@@ -1,0 +1,267 @@
+.TextButton_base_b6 {
+    display: flex;
+    align-items: center;
+    padding: 0 3rem;
+    font-size: 12rem;
+    position: relative;
+    cursor: pointer;
+}
+
+.TextButton_base__right_39 {
+    flex-direction: row-reverse;
+}
+.TextButton_icon_17 {
+    width: 32rem;
+    height: 32rem;
+    background: no-repeat center / contain;
+    position: relative;
+}
+.TextButton_icon__back_43,
+.TextButton_icon__forward_59 {
+    margin: -1rem -5rem;
+    background-image: url('R.images.gui.maps.icons.components.text_button.back');
+    transform: translateY(1rem);
+}
+.TextButton_icon__forward_59 {
+    transform: rotate(180deg) translateY(1rem);
+}
+.TextButton_icon__close_53 {
+    margin: -1rem 0;
+    background-image: url('R.images.gui.maps.icons.components.text_button.close');
+}
+.TextButton_icon__info_33 {
+    margin: -1rem -5rem;
+    background-image: url('R.images.gui.maps.icons.components.text_button.info');
+}
+.TextButton_glow_a4 {
+    width: 100%;
+    height: 100%;
+    background: no-repeat center / contain;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    transition: opacity 0.16s;
+}
+.TextButton_icon__back_43 .TextButton_glow_a4,
+.TextButton_icon__forward_59 .TextButton_glow_a4 {
+    background-image: url('R.images.gui.maps.icons.components.text_button.back_hover');
+}
+.TextButton_icon__close_53 .TextButton_glow_a4 {
+    background-image: url('R.images.gui.maps.icons.components.text_button.close_hover');
+}
+.TextButton_icon__info_33 .TextButton_glow_a4 {
+    background-image: url('R.images.gui.maps.icons.components.text_button.info_hover');
+}
+.TextButton_base_b6:hover .TextButton_glow_a4 {
+    opacity: 1;
+}
+.TextButton_base_b6:active .TextButton_glow_a4 {
+    opacity: 0;
+}
+.TextButton_caption_82 {
+    position: relative;
+    transition:
+        color 0.16s,
+        text-shadow 0.16s;
+}
+.TextButton_caption__back_b9,
+.TextButton_caption__forward_4e,
+.TextButton_caption__close_36 {
+    color: #ffdd99;
+    text-shadow:
+        0 0 10rem rgba(255, 42, 0, 1),
+        0 0 10rem rgba(255, 42, 0, 0.4),
+        0 0 10rem rgba(255, 42, 0, 0.4),
+        0 0 2rem rgba(255, 42, 0, 0.4),
+        0 0 1rem rgba(255, 42, 0, 0.4),
+        0 0 2rem rgba(255, 42, 0, 0.4),
+        0 0 1rem rgba(255, 42, 0, 0.4);
+}
+.TextButton_base_b6:hover .TextButton_caption__back_b9,
+.TextButton_base_b6:hover .TextButton_caption__forward_4e,
+.TextButton_base_b6:hover .TextButton_caption__close_36 {
+    color: #fffa9f;
+}
+.TextButton_base_b6:active .TextButton_caption__back_b9,
+.TextButton_base_b6:active .TextButton_caption__forward_4e,
+.TextButton_base_b6:active .TextButton_caption__close_36 {
+    color: #ffdd99;
+}
+.TextButton_caption__info_23 {
+    padding: 0 5rem;
+    color: #ccffff;
+    text-shadow:
+        0 0 12rem rgba(31, 68, 255, 0.8),
+        0 0 8rem #00eaff;
+}
+.TextButton_base_b6:hover .TextButton_caption__info_23 {
+    color: #e3ffff;
+    text-shadow:
+        0 0 12rem rgba(31, 68, 255, 0.8),
+        0 0 12rem rgba(0, 234, 255, 1),
+        0 0 8rem #00eaff;
+}
+.TextButton_base_b6:active .TextButton_caption__info_23 {
+    color: #ccffff;
+    text-shadow:
+        0 0 12rem rgba(31, 68, 255, 0.6),
+        0 0 8rem #00eaff;
+}
+.TextButton_goto_e7 {
+    color: #7c7c6c;
+}
+.TextButton_base__left_ff .TextButton_goto_e7 {
+    margin-left: 8rem;
+}
+.TextButton_base__right_39 .TextButton_goto_e7 {
+    margin-right: 8rem;
+}
+.TextButton_shine_e2 {
+    width: 90rem;
+    height: 40rem;
+    background: url('R.images.gui.maps.icons.components.text_button.shine') no-repeat center / contain;
+    opacity: 0;
+    position: absolute;
+    top: -4rem;
+    transition: opacity 0.16s;
+    pointer-events: none;
+}
+.TextButton_base__left_ff .TextButton_shine_e2 {
+    left: -4rem;
+}
+.TextButton_base__right_39 .TextButton_shine_e2 {
+    right: -4rem;
+    transform: rotate(180deg);
+}
+.TextButton_base_b6:hover .TextButton_shine_e2 {
+    opacity: 1;
+}
+.TextButton_base_b6:active .TextButton_shine_e2 {
+    opacity: 0;
+}
+
+.App_base_31 {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.App_fade_30 {
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    animation: App_fadeIn_7b 800ms ease-in forwards;
+}
+.App_fade__closed_6c {
+    animation: App_fadeOut_4e 250ms ease-out forwards;
+}
+@keyframes App_fadeIn_7b {
+    0% {
+        opacity: 1;
+        z-index: 1;
+    }
+
+    100% {
+        opacity: 0;
+        z-index: -1;
+    }
+}
+@keyframes App_fadeOut_4e {
+    0% {
+        opacity: 0;
+        z-index: -1;
+    }
+
+    100% {
+        opacity: 1;
+        z-index: 1;
+    }
+}
+.App_close_83 {
+    position: absolute;
+    top: 56rem;
+    right: 40rem;
+}
+.mediaMedium .App_close_83 {
+    top: 66rem;
+}
+.mediaLarge .App_close_83 {
+    right: 30rem;
+}
+.App_header_3d {
+    width: 286rem;
+    height: 58rem;
+    background: url('R.images.mt_birthday.gui.maps.icons.collage.logo_1366') center / cover no-repeat;
+    position: absolute;
+    top: 64rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.mediaMedium .App_header_3d {
+    width: 344rem;
+    height: 70rem;
+    background-image: url('R.images.mt_birthday.gui.maps.icons.collage.logo_1600');
+    top: 74rem;
+}
+.mediaLarge .App_header_3d {
+    width: 408rem;
+    height: 83rem;
+    background-image: url('R.images.mt_birthday.gui.maps.icons.collage.logo_1920');
+    top: 80rem;
+}
+.App_header__mask_d1 {
+    background: none;
+    mask-image: url('R.images.mt_birthday.gui.maps.icons.collage.mask_logo_1366');
+    mask-size: 100%;
+    mask-position: center;
+}
+.mediaMedium .App_header__mask_d1 {
+    background: none;
+    mask-image: url('R.images.mt_birthday.gui.maps.icons.collage.mask_logo_1600');
+}
+.mediaLarge .App_header__mask_d1 {
+    background: none;
+    mask-image: url('R.images.mt_birthday.gui.maps.icons.collage.mask_logo_1920');
+}
+.App_blink_ab {
+    width: 25rem;
+    height: 256rem;
+    background: linear-gradient(270deg, rgba(255, 182, 149, 0) 12.37%, #ffb28f 50.35%, rgba(255, 182, 149, 0) 82.77%);
+    position: absolute;
+    top: -77rem;
+    left: -50%;
+    transform: rotate(51deg);
+    animation: App_runBlink_67 10s linear infinite;
+}
+@keyframes App_runBlink_67 {
+    0% {
+        left: -50%;
+    }
+
+    45% {
+        left: 100%;
+    }
+
+    100% {
+        left: 100%;
+    }
+}
+
+.SceneWrapper_base_c8 {
+    width: 100%;
+    height: 100%;
+    cursor: grab;
+}
+
+.SceneWrapper_base__down_53 {
+    cursor: all-scroll;
+}
+
+.SceneWrapper_base__moveSpaceDisabled_7b {
+    cursor: auto;
+}
