@@ -286,155 +286,6 @@
     color: #a29b70;
 }
 
-.ExtendedText_base_71 {
-    display: flex;
-    line-height: 1.2;
-    position: relative;
-}
-
-.ExtendedText_base__zeroPadding_25 {
-    padding: 0;
-}
-
-.ExtendedText_base__isTruncationAvailable_5b {
-    width: 100%;
-}
-
-.ExtendedText_truncated_97 {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    position: relative;
-}
-
-.ExtendedText_truncated__hide_31 {
-    opacity: 0;
-}
-
-.ExtendedText_unTruncated_b8 {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    position: relative;
-    width: 100%;
-    height: 100%;
-    justify-content: flex-start;
-    align-content: flex-start;
-    color: #ff2717;
-    opacity: 0;
-    position: absolute;
-    top: 0;
-    right: 0;
-    pointer-events: none;
-}
-
-.colors_blackReal_fc {
-    color: #000000;
-}
-
-.colors_whiteReal_31 {
-    color: #ffffff;
-}
-
-.colors_white_45 {
-    color: #f2f2f7;
-}
-
-.colors_whiteOrange_81 {
-    color: #fefeec;
-}
-
-.colors_whiteSpanish_c3 {
-    color: #e9e2bf;
-}
-
-.colors_par_5b {
-    color: #8c8c7e;
-}
-
-.colors_parSecondary_fd {
-    color: #595950;
-}
-
-.colors_parTertiary_97 {
-    color: #37362e;
-}
-
-.colors_red_79 {
-    color: #ff2717;
-}
-
-.colors_redDark_73 {
-    color: #b70000;
-}
-
-.colors_yellow_76 {
-    color: #feab34;
-}
-
-.colors_orange_cd {
-    color: #ee7000;
-}
-
-.colors_cream_0f {
-    color: #ffdd99;
-}
-
-.colors_brown_82 {
-    color: #cbac77;
-}
-
-.colors_greenBright_68 {
-    color: #80d43a;
-}
-
-.colors_green_fa {
-    color: #7ab300;
-}
-
-.colors_greenDark_a9 {
-    color: #497212;
-}
-
-.colors_blueBooster_26 {
-    color: #ccffff;
-}
-
-.colors_blueTeamkiller_86 {
-    color: #09e2ff;
-}
-
-.colors_cred_35 {
-    color: #ced9d9;
-}
-
-.colors_gold_c3 {
-    color: #ffc363;
-}
-
-.colors_bond_ce {
-    color: #c9c9b6;
-}
-
-.colors_prom_83 {
-    color: #a29b70;
-}
-
-.renderers_noBreakWrapper_10 {
-    display: flex;
-    flex-wrap: nowrap;
-}
-
-.renderers_lineBreak_b5 {
-    width: 100%;
-    height: 0;
-}
-
-.renderers_newLine_bd {
-    flex: 1;
-    width: 100%;
-}
-
 .Content_base_c1 {
     width: 400rem;
     height: 100%;
@@ -445,6 +296,7 @@
         rgba(51, 51, 41, 0) 88%,
         rgba(51, 51, 41, 0.1) 100%
     );
+    position: relative;
 }
 
 .Content_content_48 {
@@ -452,7 +304,7 @@
     flex-direction: column;
     width: 100%;
     height: 100%;
-    padding: 20rem;
+    padding: 20rem 24rem;
 }
 
 .Content_title_10 {
@@ -460,16 +312,70 @@
     font-size: 18rem;
     font-weight: 700;
     line-height: 1.1;
-    margin-bottom: 8rem;
+    margin-bottom: 4rem;
 }
 
-.Content_starterBg_22 {
+.Content_subTitle_b7 {
+    color: #8c8c7e;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+.Content_discountHeader_e9 {
     width: 180rem;
     height: 135rem;
-    margin-bottom: 16rem;
-    background: url('R.images.white_tiger.gui.maps.icons.rewards.large.main_prize_discount') no-repeat center / cover;
+    margin-top: 8rem;
+    background: no-repeat center / cover;
     position: relative;
     transform: translateX(50%);
+}
+
+.Content_base_discount_10_00 .Content_discountHeader_e9 {
+    background-image: url('R.images.gui.maps.icons.quests.bonuses.s180x135.main_prize_discount_10');
+}
+
+.Content_base_discount_20_65 .Content_discountHeader_e9 {
+    background-image: url('R.images.gui.maps.icons.quests.bonuses.s180x135.main_prize_discount_20');
+}
+
+.Content_base_discount_30_13 .Content_discountHeader_e9 {
+    background-image: url('R.images.gui.maps.icons.quests.bonuses.s180x135.main_prize_discount_30');
+}
+
+.Content_base_discount_40_7e .Content_discountHeader_e9 {
+    background-image: url('R.images.gui.maps.icons.quests.bonuses.s180x135.main_prize_discount_40');
+}
+
+.Content_base_discount_50_0e .Content_discountHeader_e9 {
+    background-image: url('R.images.gui.maps.icons.quests.bonuses.s180x135.main_prize_discount_50');
+}
+
+.Content_discountIcon_94 {
+    width: 48rem;
+    height: 48rem;
+    margin-right: 16rem;
+    background: no-repeat center / cover;
+}
+
+.Content_base_discount_10_00 .Content_discountIcon_94 {
+    background-image: url('R.images.white_tiger.gui.maps.icons.discount_tickets.s64x64.c_10');
+}
+
+.Content_base_discount_20_65 .Content_discountIcon_94 {
+    background-image: url('R.images.white_tiger.gui.maps.icons.discount_tickets.s64x64.c_20');
+}
+
+.Content_base_discount_30_13 .Content_discountIcon_94 {
+    background-image: url('R.images.white_tiger.gui.maps.icons.discount_tickets.s64x64.c_30');
+}
+
+.Content_base_discount_40_7e .Content_discountIcon_94 {
+    background-image: url('R.images.white_tiger.gui.maps.icons.discount_tickets.s64x64.c_40');
+}
+
+.Content_base_discount_50_0e .Content_discountIcon_94 {
+    background-image: url('R.images.white_tiger.gui.maps.icons.discount_tickets.s64x64.c_50');
 }
 
 .Content_description_57 {
@@ -477,11 +383,18 @@
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
-    margin-bottom: 16rem;
+    margin: 16rem 0;
 }
 
 .Content_highlight_0b {
     color: #ffdd99;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+.Content_highlight_second_a2 {
+    color: #cbac77;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
@@ -504,10 +417,10 @@
 
 .Content_discountWrapper_f3 {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     align-items: center;
-    height: 73rem;
-    border-top: 1rem rgba(201, 201, 182, 0);
-    border-bottom: 1rem rgba(201, 201, 182, 0);
+    height: 83rem;
     background-image: linear-gradient(
         270deg,
         rgba(255, 255, 230, 0) 0%,
@@ -517,21 +430,10 @@
     );
 }
 
-.Content_starterBgMedium_cf {
-    width: 48rem;
-    height: 48rem;
-    margin-right: 12rem;
-    background: url('R.images.white_tiger.gui.maps.icons.rewards.small.main_prize_discount') no-repeat center / cover;
-}
-
 .Content_countWrapper_d8 {
     display: flex;
     flex-direction: column;
     margin-right: 12rem;
-}
-
-.Content_countTitle_34 {
-    margin-bottom: 2rem;
 }
 
 .Content_countTitle_34,
@@ -545,7 +447,7 @@
 .Content_pointerBg_f7 {
     width: 14rem;
     height: 57rem;
-    margin-right: 12rem;
+    margin-right: 16rem;
     background: url('R.images.white_tiger.gui.maps.icons.portals.pointer') no-repeat center / cover;
 }
 
@@ -554,7 +456,7 @@
     font-size: 15rem;
     font-weight: 700;
     line-height: 1.15;
-    margin-bottom: 8rem;
+    margin: 16rem 0 4rem;
 }
 
 .Content_startCostWrapper_9e {
@@ -565,15 +467,14 @@
 
 .Content_startCostBlock_dd {
     display: flex;
-    align-items: flex-end;
+    align-items: center;
 }
 
 .Content_oldPrice_7e {
-    color: #8c8c7e;
-    font-size: 16rem;
-    font-weight: 400;
-    line-height: 1.25;
     margin-right: 4rem;
+    color: #8c8c7e;
+    font-size: 20rem;
+    font-weight: 400;
     position: relative;
 }
 
@@ -589,43 +490,17 @@
 
 .Content_currentPrice_29 {
     color: #e9e2bf;
-    font-size: 20rem;
+    font-size: 24rem;
     font-weight: 400;
     line-height: 1.2;
 }
 
 .Content_starterBgSmall_8e {
-    width: 24rem;
-    height: 24rem;
-    margin-right: 11rem;
-    margin-bottom: -3rem;
-    background: url('R.images.white_tiger.gui.maps.icons.keys.boss_24') no-repeat center / cover;
+    width: 48rem;
+    height: 48rem;
+    margin: 0 0 -3rem -4rem;
+    background: url('R.images.white_tiger.gui.maps.icons.keys.boss_48') no-repeat center / cover;
     position: relative;
-}
-
-.Content_discountValueContainer_56 {
-    position: relative;
-}
-
-.Content_discountShine_c2 {
-    width: 67rem;
-    height: 58rem;
-    background: url('R.images.white_tiger.gui.maps.icons.progression.discountShine') no-repeat center / cover;
-    position: absolute;
-    top: -18rem;
-    left: -16rem;
-    z-index: 1;
-}
-
-.Content_value_fc {
-    margin-bottom: 2rem;
-    text-shadow: 0 0 14rem #00a2ff;
-    position: relative;
-    z-index: 2;
-    color: #fefeec;
-    font-size: 16rem;
-    font-weight: 400;
-    line-height: 1.25;
 }
 
 .Content_howToDescription_d3 {
@@ -633,7 +508,17 @@
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
-    margin-bottom: 2rem;
+    margin-bottom: 8rem;
+}
+
+.Content_portalLaunchDesc_19 {
+    color: #8c8c7e;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    display: flex;
+    justify-content: center;
+    width: 100%;
 }
 
 .Content_discountValue_6d {
@@ -642,4 +527,29 @@
     font-weight: 700;
     line-height: 1.1;
     margin-top: -3rem;
+}
+
+.Content_discount_08 {
+    color: #fefeec;
+    font-size: 14rem;
+    font-weight: 700;
+    line-height: 1.15;
+    margin-top: 8rem;
+    text-align: center;
+}
+
+.Content_discount__inactive_82 {
+    color: #ffffff;
+    opacity: 0.8;
+}
+
+.Content_discount__active_ba {
+    color: #c9e8ff;
+    text-shadow:
+        0 0 4rem #0860f1,
+        0 0 8rem rgba(0, 75, 198, 0.25);
+}
+
+.Content_discount__notAvailable_26 {
+    color: #595950;
 }

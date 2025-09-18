@@ -1109,11 +1109,11 @@
                     return o().createElement(g, null, o().createElement(N, t, u));
                 };
                 var I = t(493),
-                    U = t.n(I);
-                let H, W, G;
+                    H = t.n(I);
+                let U, W, G;
                 (!(function (e) {
                     ((e.small = 'small'), (e.big = 'big'), (e.large = 'large'), (e.extraLarge = 'extraLarge'));
-                })(H || (H = {})),
+                })(U || (U = {})),
                     (function (e) {
                         ((e.credits = 'credits'),
                             (e.gold = 'gold'),
@@ -1126,20 +1126,18 @@
                         ((e.Red = 'RedActionBG'), (e.Blue = 'BlueActionBG'));
                     })(G || (G = {})));
                 var z = t(4179);
-                class q extends o().PureComponent {
-                    render() {
-                        let e;
-                        if ('gold' === this.props.format) e = z.B3.GOLD;
-                        else e = z.B3.INTEGRAL;
-                        const u = z.Z5.getNumberFormat(this.props.value, e);
-                        return void 0 !== this.props.value && void 0 !== u ? u : null;
-                    }
-                }
+                const q = ({ format: e, value: u }) => {
+                    const t = ((e, u = 'integral') => {
+                        let t;
+                        t = 'gold' === u ? z.B3.GOLD : z.B3.INTEGRAL;
+                        return void 0 === e ? '' : z.Z5.getNumberFormat(e, t);
+                    })(u, e);
+                    return t ? o().createElement('span', null, t) : null;
+                };
                 let $;
-                ((q.defaultProps = { format: 'integral' }),
-                    (function (e) {
-                        ((e.Deconstruct = 'deconstruct'), (e.Upgrade = 'upgrade'));
-                    })($ || ($ = {})));
+                !(function (e) {
+                    ((e.Deconstruct = 'deconstruct'), (e.Upgrade = 'upgrade'));
+                })($ || ($ = {}));
                 var V = t(5521);
                 const Y = (e) => {
                     console.error(e.type + ': useKeydownListener hook :: Callback is not defined');
@@ -1856,7 +1854,7 @@
                         base__left: 'TextButton_base__left_ff',
                         shine: 'TextButton_shine_e2',
                     },
-                    Ue = [
+                    He = [
                         'caption',
                         'onClick',
                         'goto',
@@ -1870,9 +1868,9 @@
                         'soundClick',
                         'soundHover',
                     ];
-                function He() {
+                function Ue() {
                     return (
-                        (He =
+                        (Ue =
                             Object.assign ||
                             function (e) {
                                 for (var u = 1; u < arguments.length; u++) {
@@ -1881,7 +1879,7 @@
                                 }
                                 return e;
                             }),
-                        He.apply(this, arguments)
+                        Ue.apply(this, arguments)
                     );
                 }
                 class We extends o().PureComponent {
@@ -1930,7 +1928,7 @@
                                         a = Object.keys(e);
                                     for (n = 0; n < a.length; n++) ((t = a[n]), u.indexOf(t) >= 0 || (r[t] = e[t]));
                                     return r;
-                                })(e, Ue)),
+                                })(e, He)),
                             A = h()(Ie.base, Ie[`base__${a}`], Ie[`base__${r}`], null == i ? void 0 : i.base),
                             d = h()(Ie.icon, Ie[`icon__${a}`], Ie[`icon__${r}`], null == i ? void 0 : i.icon),
                             F = h()(Ie.glow, null == i ? void 0 : i.glow),
@@ -1938,7 +1936,7 @@
                             m = h()(Ie.goto, null == i ? void 0 : i.goto);
                         return o().createElement(
                             'div',
-                            He(
+                            Ue(
                                 {
                                     className: A,
                                     onMouseEnter: this._onMouseEnter(s),
@@ -2858,8 +2856,8 @@
                     }),
                     Ou = 'HorizontalBar_base_49',
                     Iu = 'HorizontalBar_base__nonActive_82',
-                    Uu = 'HorizontalBar_leftButton_5f',
-                    Hu = 'HorizontalBar_rightButton_03',
+                    Hu = 'HorizontalBar_leftButton_5f',
+                    Uu = 'HorizontalBar_rightButton_03',
                     Wu = 'HorizontalBar_track_0d',
                     Gu = 'HorizontalBar_thumb_fd',
                     zu = 'HorizontalBar_rail_32',
@@ -3011,7 +3009,7 @@
                             'div',
                             { className: h()(Ou, u.base), ref: r, onWheel: e.handleMouseWheel },
                             o().createElement('div', {
-                                className: h()(Uu, u.leftButton),
+                                className: h()(Hu, u.leftButton),
                                 onMouseDown: (e) => {
                                     e.target.classList.contains(qu) || 0 !== e.button || (Ae('play'), B(Mu.Next));
                                 },
@@ -3045,7 +3043,7 @@
                                 o().createElement('div', { className: h()(zu, u.rail) }),
                             ),
                             o().createElement('div', {
-                                className: h()(Hu, u.rightButton),
+                                className: h()(Uu, u.rightButton),
                                 onMouseDown: (e) => {
                                     e.target.classList.contains(qu) || 0 !== e.button || (Ae('play'), B(Mu.Prev));
                                 },
@@ -3452,7 +3450,13 @@
                         (e.LootBoxToken = 'lootBoxToken'),
                         (e.GoldenTicket = 'birthday2025_golden_ticket'),
                         (e.PostStamp = 'giftsystem_4_stamp'),
-                        (e.Quests = 'quests'));
+                        (e.Quests = 'quests'),
+                        (e.WtStamp = 'stamp'),
+                        (e.WtHunter = 'wt_hunter'),
+                        (e.WtHunterCollection = 'hunter_collection'),
+                        (e.WtTicket = 'wtevent_ticket'),
+                        (e.WtMainPrizeDiscount = 'main_prize_discount'),
+                        (e.WtTicket25 = 'wtevent_ticket25'));
                 })(Ct || (Ct = {})),
                     (function (e) {
                         ((e.Gold = 'gold'),
@@ -3650,6 +3654,11 @@
                         Ct.SelectableBonus,
                         Ct.GoldenTicket,
                         Ct.PostStamp,
+                        Ct.WtStamp,
+                        Ct.WtTicket,
+                        Ct.WtMainPrizeDiscount,
+                        Ct.WtHunter,
+                        Ct.WtHunterCollection,
                         Ct.Gold,
                         Ct.Credits,
                         Ct.Crystal,
@@ -3828,8 +3837,8 @@
                                 console.error('Unreachable state: add level for proper equipment state');
                         }
                     },
-                    Ut = R.strings.tank_setup,
-                    Ht = (0, X.Pi)(() => {
+                    Ht = R.strings.tank_setup,
+                    Ut = (0, X.Pi)(() => {
                         const e = Bu().model,
                             u = e.inventoryEquipment.get(),
                             t = e.vehicleEquipment.get(),
@@ -3844,7 +3853,7 @@
                                     null,
                                     o().createElement(eu, {
                                         classMix: Mt,
-                                        text: Ut.dialogs.deconstructConfirm.content.items.inventory(),
+                                        text: Ht.dialogs.deconstructConfirm.content.items.inventory(),
                                         binding: { counter: o().createElement('div', { className: kt }, r) },
                                     }),
                                     o().createElement(
@@ -3885,7 +3894,7 @@
                                     null,
                                     o().createElement(eu, {
                                         classMix: Mt,
-                                        text: Ut.dialogs.deconstructConfirm.content.items.vehicle(),
+                                        text: Ht.dialogs.deconstructConfirm.content.items.vehicle(),
                                         binding: { counter: o().createElement('div', { className: kt }, n) },
                                     }),
                                     o().createElement(
@@ -3939,9 +3948,9 @@
                                 ? o().createElement(
                                       mt.Vertical.Area.Default,
                                       { className: qt, api: t },
-                                      o().createElement(Ht, null),
+                                      o().createElement(Ut, null),
                                   )
-                                : o().createElement(Ht, null),
+                                : o().createElement(Ut, null),
                             o().createElement('div', { className: h()(Gt, n && zt) }),
                         );
                     }),
@@ -4013,7 +4022,7 @@
                                             ? Jt.footer.warning.noEquipmentLeft()
                                             : Jt.footer.warning.vehicleDeconstruct(),
                                         price: E,
-                                        size: H.big,
+                                        size: U.big,
                                         type: W.equipCoin,
                                         showAlertMessage: l,
                                         className: pu,
@@ -4037,7 +4046,7 @@
                         );
                     });
                 engine.whenReady.then(() => {
-                    U().render(
+                    H().render(
                         o().createElement(O, null, o().createElement(Cu, null, o().createElement(en, null))),
                         document.getElementById('root'),
                     );

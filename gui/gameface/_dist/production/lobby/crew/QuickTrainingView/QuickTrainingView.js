@@ -4521,17 +4521,15 @@
                     (function (e) {
                         ((e.Red = 'RedActionBG'), (e.Blue = 'BlueActionBG'));
                     })(Ot || (Ot = {})));
-                class Pt extends i().PureComponent {
-                    render() {
-                        let e;
-                        if ('gold' === this.props.format) e = bt.B3.GOLD;
-                        else e = bt.B3.INTEGRAL;
-                        const t = bt.Z5.getNumberFormat(this.props.value, e);
-                        return void 0 !== this.props.value && void 0 !== t ? t : null;
-                    }
-                }
-                Pt.defaultProps = { format: 'integral' };
-                const Ht = {
+                const Pt = ({ format: e, value: t }) => {
+                        const u = ((e, t = 'integral') => {
+                            let u;
+                            u = 'gold' === t ? bt.B3.GOLD : bt.B3.INTEGRAL;
+                            return void 0 === e ? '' : bt.Z5.getNumberFormat(e, u);
+                        })(t, e);
+                        return u ? i().createElement('span', null, u) : null;
+                    },
+                    Ht = {
                         base: 'Currency_base_57',
                         icon: 'Currency_icon_c5',
                         base__small: 'Currency_base__small_af',
@@ -4974,12 +4972,17 @@
                     Xu = 'ExperienceStepper_btnIncrement__disabled_b8',
                     $u = 'ExperienceStepper_btnDecrement_fb',
                     Vu = 'ExperienceStepper_btnDecrement__disabled_3e',
-                    qu = 'perk',
-                    Ku = 'percent',
-                    Yu = 'play',
-                    Qu = /\d+/,
-                    Ju = () => (0, Se.G)('highlight'),
-                    en = ({ value: e, maxValue: t, isActive: u }) => {
+                    qu = 'ExperienceStepper_btnDecrement__scaled_d6';
+                let Ku;
+                !(function (e) {
+                    ((e[(e.H_1440 = 1440)] = 'H_1440'), (e[(e.H_1600 = 1600)] = 'H_1600'));
+                })(Ku || (Ku = {}));
+                const Yu = 'perk',
+                    Qu = 'percent',
+                    Ju = 'play',
+                    en = /\d+/,
+                    tn = () => (0, Se.G)('highlight'),
+                    un = ({ value: e, maxValue: t, isActive: u }) => {
                         const n = he().controls,
                             r = e < t,
                             a = e > 1,
@@ -5005,16 +5008,20 @@
                             c = (0, m.GS)(),
                             d = c.mediaSize,
                             _ = c.mediaWidth,
-                            E = (d < m.cJ.Large && 2 === s) || _ >= m.fd.Large,
-                            g = l()(zu, Zu, !r && Xu, E && Uu),
-                            A = l()(zu, $u, !a && Vu, E && Uu),
-                            C = (0, o.useRef)(null);
+                            E = c.remScreenWidth,
+                            g = c.remScreenHeight,
+                            A = (d < m.cJ.Large && s > 1) || _ >= m.fd.Large,
+                            C = g * s,
+                            p = E * s === m.cJ.ExtraLarge && (C === Ku.H_1440 || C === Ku.H_1600) && 1.25 === s,
+                            F = l()(zu, Zu, !r && Xu, A && Uu),
+                            D = l()(zu, $u, !a && Vu, A && Uu, p && qu),
+                            b = (0, o.useRef)(null);
                         return i().createElement(
                             L.u,
                             { contentId: R.views.lobby.crew.tooltips.ExperienceStepperTooltip('resId') },
                             i().createElement(
                                 'div',
-                                { ref: C, className: Ru },
+                                { ref: b, className: Ru },
                                 i().createElement(
                                     'div',
                                     { className: Pu },
@@ -5027,19 +5034,19 @@
                                             className: Wu,
                                             onBlur: () => {
                                                 var e;
-                                                return null == (e = C.current) ? void 0 : e.classList.remove(Ou);
+                                                return null == (e = b.current) ? void 0 : e.classList.remove(Ou);
                                             },
                                             onFocus: () => {
                                                 var e;
-                                                return u && (null == (e = C.current) ? void 0 : e.classList.add(Ou));
+                                                return u && (null == (e = b.current) ? void 0 : e.classList.add(Ou));
                                             },
                                             onKeyDown: (e) => {
                                                 let t,
                                                     u = 0;
                                                 ((t =
                                                     e.ctrlKey || e.which === Dt.n.PAGE_UP || e.which === Dt.n.PAGE_DOWN
-                                                        ? qu
-                                                        : Ku),
+                                                        ? Yu
+                                                        : Qu),
                                                     (e.which !== Dt.n.ARROW_UP && e.which !== Dt.n.PAGE_UP) || !r
                                                         ? (e.which !== Dt.n.ARROW_DOWN && e.which !== Dt.n.PAGE_DOWN) ||
                                                           !a ||
@@ -5050,14 +5057,14 @@
                                             onChange: (e) => {
                                                 var u;
                                                 let r = Number(
-                                                    null == (u = Qu.exec(e.currentTarget.value)) ? void 0 : u[0],
+                                                    null == (u = en.exec(e.currentTarget.value)) ? void 0 : u[0],
                                                 );
                                                 (!Number.isInteger(r) && n.onFreeXpManualInput(1),
                                                     r > t ? (r = t) : r < 1 && (r = 1),
                                                     n.onFreeXpManualInput(r));
                                             },
                                             onWheel: (e) => {
-                                                e.deltaY > 0 ? n.onFreeXpUpdated(Ku, 1) : n.onFreeXpUpdated(Ku, -1);
+                                                e.deltaY > 0 ? n.onFreeXpUpdated(Qu, 1) : n.onFreeXpUpdated(Qu, -1);
                                             },
                                         }),
                                     ),
@@ -5067,32 +5074,32 @@
                                     'div',
                                     { className: ju },
                                     i().createElement('div', {
-                                        className: g,
-                                        onMouseEnter: Ju,
+                                        className: F,
+                                        onMouseEnter: tn,
                                         onClick: (e) =>
                                             r &&
                                             (({ ctrlKey: e }) => {
-                                                ((0, Se.G)(Yu), n.onFreeXpUpdated(e ? qu : Ku, 1));
+                                                ((0, Se.G)(Ju), n.onFreeXpUpdated(e ? Yu : Qu, 1));
                                             })(e),
                                     }),
                                     i().createElement('div', {
-                                        className: A,
-                                        onMouseEnter: Ju,
+                                        className: D,
+                                        onMouseEnter: tn,
                                         onClick: (e) =>
                                             a &&
                                             (({ ctrlKey: e }) => {
-                                                ((0, Se.G)(Yu), n.onFreeXpUpdated(e ? qu : Ku, -1));
+                                                ((0, Se.G)(Ju), n.onFreeXpUpdated(e ? Yu : Qu, -1));
                                             })(e),
                                     }),
                                 ),
                             ),
                         );
                     },
-                    tn = 'FreeXpCard_discount_48',
-                    un = 'FreeXpCard_discountValue_ca',
-                    nn = 'FreeXpCard_bottomStepper_4a',
-                    rn = R.strings.crew_books.card.freeExp,
-                    an = (0, h.Pi)(() => {
+                    nn = 'FreeXpCard_discount_48',
+                    rn = 'FreeXpCard_discountValue_ca',
+                    an = 'FreeXpCard_bottomStepper_4a',
+                    on = R.strings.crew_books.card.freeExp,
+                    sn = (0, h.Pi)(() => {
                         const e = he(),
                             t = e.model,
                             u = e.controls,
@@ -5112,8 +5119,8 @@
                             withFullWidthOption: !0,
                             icon: 'freeXp',
                             cardState: c,
-                            title: rn.title(),
-                            description: rn.mainText(),
+                            title: on.title(),
+                            description: on.mainText(),
                             additionalDescription: i().createElement(
                                 L.u,
                                 {
@@ -5124,7 +5131,7 @@
                                     'div',
                                     null,
                                     i().createElement(Ft.ZP, {
-                                        text: rn.additionalText(),
+                                        text: on.additionalText(),
                                         format: {
                                             binding: {
                                                 value: i().createElement(Ft.ZP, {
@@ -5143,7 +5150,7 @@
                                                             }),
                                                         },
                                                     },
-                                                    text: rn.additionalTextValues(),
+                                                    text: on.additionalTextValues(),
                                                 }),
                                             },
                                         },
@@ -5153,33 +5160,33 @@
                             headerContent: l
                                 ? i().createElement(
                                       'div',
-                                      { className: tn },
+                                      { className: nn },
                                       i().createElement(Ft.ZP, {
-                                          text: rn.discountValue(),
+                                          text: on.discountValue(),
                                           format: { binding: { discount: a } },
-                                          className: un,
+                                          className: rn,
                                       }),
                                   )
                                 : null,
                             bottomContent: i().createElement(
                                 'div',
-                                { className: nn },
-                                i().createElement(en, { value: o, maxValue: r, isActive: d }),
+                                { className: an },
+                                i().createElement(un, { value: o, maxValue: r, isActive: d }),
                             ),
                             onCardSelect: () => u.onFreeXpSelected(!d),
                             onCardMouseEnter: u.onFreeXpMouseEnter,
                             hoverSound: Ut.gO.CREW_FREEXP_HIGHLIGHT,
                         });
                     }),
-                    on = 'SectionFooter_base_82',
-                    sn = 'SectionFooter_base__visible_e5',
-                    ln = 'SectionFooter_labelContainer_68',
-                    cn = 'SectionFooter_confirmCurrency_ed',
-                    dn = 'SectionFooter_confirmLabel_53',
-                    mn = 'SectionFooter_confirmLabelMemberName_23',
-                    _n = 'SectionFooter_confirmBtn_5d',
-                    En = R.strings.crew_books.confirm,
-                    gn = (0, h.Pi)(() => {
+                    ln = 'SectionFooter_base_82',
+                    cn = 'SectionFooter_base__visible_e5',
+                    dn = 'SectionFooter_labelContainer_68',
+                    mn = 'SectionFooter_confirmCurrency_ed',
+                    _n = 'SectionFooter_confirmLabel_53',
+                    En = 'SectionFooter_confirmLabelMemberName_23',
+                    gn = 'SectionFooter_confirmBtn_5d',
+                    An = R.strings.crew_books.confirm,
+                    Cn = (0, h.Pi)(() => {
                         const e = (0, m.GS)().mediaSize,
                             t = he(),
                             u = t.model,
@@ -5190,19 +5197,19 @@
                             s = e < m.cJ.Medium ? It.small : It.big;
                         return i().createElement(
                             'div',
-                            { className: l()(on, (o || a) && sn) },
+                            { className: l()(ln, (o || a) && cn) },
                             i().createElement(
                                 'div',
-                                { className: ln },
+                                { className: dn },
                                 o &&
                                     i().createElement(Ft.ZP, {
-                                        className: dn,
-                                        text: e >= m.cJ.Small && a ? En.crewLabelSeparated() : En.crewLabel(),
+                                        className: _n,
+                                        text: e >= m.cJ.Small && a ? An.crewLabelSeparated() : An.crewLabel(),
                                         format: {
                                             binding: {
                                                 xpValue: i().createElement(
                                                     'div',
-                                                    { className: cn },
+                                                    { className: mn },
                                                     i().createElement(Gt, {
                                                         type: Rt.xp,
                                                         size: s,
@@ -5215,18 +5222,18 @@
                                     }),
                                 a &&
                                     i().createElement(Ft.ZP, {
-                                        className: dn,
-                                        text: o ? En.personalExtraLabel() : En.personalLabel(),
+                                        className: _n,
+                                        text: o ? An.personalExtraLabel() : An.personalLabel(),
                                         format: {
                                             binding: {
                                                 memberName: i().createElement(
                                                     'div',
-                                                    { className: mn },
+                                                    { className: En },
                                                     u.tankmanName.get(),
                                                 ),
                                                 xpValue: i().createElement(
                                                     'div',
-                                                    { className: cn },
+                                                    { className: mn },
                                                     i().createElement(Gt, {
                                                         type: Rt.xp,
                                                         size: s,
@@ -5240,28 +5247,28 @@
                             ),
                             i().createElement(
                                 bu.u5,
-                                { size: bu.qE.medium, mixClass: _n, onClick: n.onLearn },
+                                { size: bu.qE.medium, mixClass: gn, onClick: n.onLearn },
                                 i().createElement(Ft.ZP, { text: R.strings.crew_books.buttons.learn() }),
                             ),
                             i().createElement(
                                 bu.u5,
-                                { type: bu.L$.secondary, size: bu.qE.medium, mixClass: _n, onClick: n.onCancel },
+                                { type: bu.L$.secondary, size: bu.qE.medium, mixClass: gn, onClick: n.onCancel },
                                 i().createElement(Ft.ZP, { text: R.strings.crew_books.buttons.cancel() }),
                             ),
                         );
                     }),
-                    An = 'CrewBooksSection_base_33',
-                    Cn = 'CrewBooksSection_base__centered_be',
-                    pn = 'CrewBooksSection_mainContentWrapper_2a',
-                    Fn = 'CrewBooksSection_mainContent_91',
-                    Dn = 'CrewBooksSection_title_fe',
-                    bn = 'CrewBooksSection_divider_f1',
-                    vn = 'CrewBooksSection_divider__bottom_d6',
-                    Bn = 'CrewBooksSection_cardContainer_69',
-                    hn = 'CrewBooksSection_cards_7f',
-                    fn = 'CrewBooksSection_cardsScrollContent_8f',
-                    wn = 'CrewBooksSection_cardsScrollBar_c4',
-                    yn = (0, h.Pi)(() => {
+                    pn = 'CrewBooksSection_base_33',
+                    Fn = 'CrewBooksSection_base__centered_be',
+                    Dn = 'CrewBooksSection_mainContentWrapper_2a',
+                    bn = 'CrewBooksSection_mainContent_91',
+                    vn = 'CrewBooksSection_title_fe',
+                    Bn = 'CrewBooksSection_divider_f1',
+                    hn = 'CrewBooksSection_divider__bottom_d6',
+                    fn = 'CrewBooksSection_cardContainer_69',
+                    wn = 'CrewBooksSection_cards_7f',
+                    yn = 'CrewBooksSection_cardsScrollContent_8f',
+                    kn = 'CrewBooksSection_cardsScrollBar_c4',
+                    Sn = (0, h.Pi)(() => {
                         const e = (0, m.GS)(),
                             t = e.mediaSize,
                             u = e.remScreenWidth,
@@ -5289,52 +5296,52 @@
                             }),
                             i().createElement(
                                 'div',
-                                { className: l()(An, E && Cn) },
+                                { className: l()(pn, E && Fn) },
                                 i().createElement(Mt, { onAboutClick: s.onAbout, onCloseClick: s.onClose }),
                                 i().createElement(
                                     'div',
-                                    { className: pn },
+                                    { className: Dn },
                                     i().createElement(
                                         'div',
-                                        { className: Fn },
+                                        { className: bn },
                                         i().createElement(Ft.ZP, {
-                                            className: Dn,
+                                            className: vn,
                                             text: R.strings.crew_books.page.title(),
                                         }),
-                                        i().createElement('div', { className: bn }),
+                                        i().createElement('div', { className: Bn }),
                                         i().createElement(
                                             pt.Vertical.Area.Default,
-                                            { barClassNames: { base: wn }, scrollClassNames: { content: fn }, api: r },
+                                            { barClassNames: { base: kn }, scrollClassNames: { content: yn }, api: r },
                                             i().createElement(
                                                 'div',
-                                                { className: hn },
+                                                { className: wn },
                                                 i().createElement(
                                                     'div',
-                                                    { className: Bn },
-                                                    i().createElement(an, null),
+                                                    { className: fn },
+                                                    i().createElement(sn, null),
                                                 ),
                                                 c.map((e) =>
                                                     i().createElement(
                                                         'div',
-                                                        { key: e.title, className: Bn },
+                                                        { key: e.title, className: fn },
                                                         i().createElement(xu, { book: e }),
                                                     ),
                                                 ),
                                             ),
                                         ),
-                                        i().createElement('div', { className: l()(bn, vn) }),
-                                        i().createElement(gn, null),
+                                        i().createElement('div', { className: l()(Bn, hn) }),
+                                        i().createElement(Cn, null),
                                     ),
                                 ),
                             )
                         );
                     }),
-                    kn = 'QuickTrainingViewApp_base_b9',
-                    Sn = 'QuickTrainingViewApp_flagWrapper_b7',
-                    Ln = 'QuickTrainingViewApp_flag_54',
-                    xn = 'QuickTrainingViewApp_leftPanelSection_7e',
-                    Tn = 'QuickTrainingViewApp_pageTips_41';
-                function Nn(e, t, u, n, r, a, o) {
+                    Ln = 'QuickTrainingViewApp_base_b9',
+                    xn = 'QuickTrainingViewApp_flagWrapper_b7',
+                    Tn = 'QuickTrainingViewApp_flag_54',
+                    Nn = 'QuickTrainingViewApp_leftPanelSection_7e',
+                    Mn = 'QuickTrainingViewApp_pageTips_41';
+                function In(e, t, u, n, r, a, o) {
                     try {
                         var i = e[a](o),
                             s = i.value;
@@ -5343,7 +5350,7 @@
                     }
                     i.done ? t(s) : Promise.resolve(s).then(n, r);
                 }
-                const Mn = (0, h.Pi)(() => {
+                const Rn = (0, h.Pi)(() => {
                     const e = new WeakMap(),
                         t = (0, f.useSpringRef)(),
                         u = he(),
@@ -5371,10 +5378,10 @@
                                                 return new Promise(function (n, r) {
                                                     var a = u.apply(e, t);
                                                     function o(e) {
-                                                        Nn(a, n, r, o, i, 'next', e);
+                                                        In(a, n, r, o, i, 'next', e);
                                                     }
                                                     function i(e) {
-                                                        Nn(a, n, r, o, i, 'throw', e);
+                                                        In(a, n, r, o, i, 'throw', e);
                                                     }
                                                     o(void 0);
                                                 });
@@ -5394,12 +5401,12 @@
                         ),
                         i().createElement(
                             'div',
-                            { className: kn },
+                            { className: Ln },
                             i().createElement(
                                 'div',
-                                { className: Sn },
+                                { className: xn },
                                 i().createElement('div', {
-                                    className: Ln,
+                                    className: Tn,
                                     style: {
                                         backgroundImage: `url(R.images.gui.maps.icons.crew.flags.${n.nationName.get()})`,
                                     },
@@ -5407,11 +5414,11 @@
                             ),
                             i().createElement(
                                 'div',
-                                { className: xn },
+                                { className: Nn },
                                 i().createElement(Ae.O, null),
                                 i().createElement(
                                     'div',
-                                    { className: Tn },
+                                    { className: Mn },
                                     s((t, u) =>
                                         i().createElement(
                                             f.animated.div,
@@ -5427,13 +5434,13 @@
                                     ),
                                 ),
                             ),
-                            i().createElement(yn, null),
+                            i().createElement(Sn, null),
                         )
                     );
                 });
                 engine.whenReady.then(() => {
                     v().render(
-                        i().createElement(Be, null, i().createElement(D, null, i().createElement(Mn, null))),
+                        i().createElement(Be, null, i().createElement(D, null, i().createElement(Rn, null))),
                         document.getElementById('root'),
                     );
                 });
@@ -5636,6 +5643,7 @@
                                         'isCrewLocked',
                                         'nation',
                                         'isAcceleratedTraining',
+                                        'isExtended',
                                     ]),
                                     {
                                         slots: e.array('slots', []),
@@ -7681,33 +7689,41 @@
                         const e = C(),
                             t = e.model,
                             u = e.controls,
-                            n = t.isDisabled.get(),
-                            o = t.hasDog.get(),
-                            i = t.computes.getLayoutInfo();
-                        return r().createElement(
-                            'div',
-                            {
-                                className: de,
-                                onMouseEnter: () => {
-                                    (u.setIsWidgetHover(!0),
-                                        i.isCurrentLayoutHangar && !n && (0, a.G)(R.sounds.crew_hover()));
+                            o = t.isDisabled.get(),
+                            i = t.hasDog.get(),
+                            s = t.computes.getLayoutInfo(),
+                            l = t.isExtended.get();
+                        return (
+                            (0, n.useEffect)(() => {
+                                u.setIsWidgetHover(l);
+                            }, [l, u]),
+                            r().createElement(
+                                'div',
+                                {
+                                    className: de,
+                                    onMouseEnter: () => {
+                                        l ||
+                                            (u.setIsWidgetHover(!0),
+                                            s.isCurrentLayoutHangar && !o && (0, a.G)(R.sounds.crew_hover()));
+                                    },
+                                    onMouseLeave: () => {
+                                        l ||
+                                            (u.setIsWidgetHover(!1),
+                                            s.isCurrentLayoutHangar && !o && (0, a.G)(R.sounds.crew_unhover()));
+                                    },
                                 },
-                                onMouseLeave: () => {
-                                    (u.setIsWidgetHover(!1),
-                                        i.isCurrentLayoutHangar && !n && (0, a.G)(R.sounds.crew_unhover()));
-                                },
-                            },
-                            t.computes.isButtonBarVisible() &&
-                                r().createElement(
-                                    'div',
-                                    { className: me },
-                                    r().createElement(ce, {
-                                        isWidgetDisabled: n,
-                                        isCurrentLayoutHangar: i.isCurrentLayoutHangar,
-                                    }),
-                                ),
-                            r().createElement(en, { layoutInfo: i, isWidgetDisabled: n, className: _e }),
-                            o && r().createElement(Te, { layoutInfo: i, isDisabled: n }),
+                                t.computes.isButtonBarVisible() &&
+                                    r().createElement(
+                                        'div',
+                                        { className: me },
+                                        r().createElement(ce, {
+                                            isWidgetDisabled: o,
+                                            isCurrentLayoutHangar: s.isCurrentLayoutHangar,
+                                        }),
+                                    ),
+                                r().createElement(en, { layoutInfo: s, isWidgetDisabled: o, className: _e }),
+                                i && r().createElement(Te, { layoutInfo: s, isDisabled: o }),
+                            )
                         );
                     }),
                     un = (0, n.memo)(() =>

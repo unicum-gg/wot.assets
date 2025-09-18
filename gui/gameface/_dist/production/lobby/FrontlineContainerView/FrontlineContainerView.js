@@ -556,7 +556,13 @@
                             (e.LootBoxToken = 'lootBoxToken'),
                             (e.GoldenTicket = 'birthday2025_golden_ticket'),
                             (e.PostStamp = 'giftsystem_4_stamp'),
-                            (e.Quests = 'quests'));
+                            (e.Quests = 'quests'),
+                            (e.WtStamp = 'stamp'),
+                            (e.WtHunter = 'wt_hunter'),
+                            (e.WtHunterCollection = 'hunter_collection'),
+                            (e.WtTicket = 'wtevent_ticket'),
+                            (e.WtMainPrizeDiscount = 'main_prize_discount'),
+                            (e.WtTicket25 = 'wtevent_ticket25'));
                     })(n || (n = {})),
                     (function (e) {
                         ((e.Gold = 'gold'),
@@ -657,15 +663,16 @@
                 var n = u(6179),
                     a = u.n(n),
                     r = u(4179);
-                class s extends a().PureComponent {
-                    render() {
-                        let e;
-                        e = 'gold' === this.props.format ? r.B3.GOLD : r.B3.INTEGRAL;
-                        const t = r.Z5.getNumberFormat(this.props.value, e);
-                        return void 0 !== this.props.value && void 0 !== t ? t : null;
-                    }
-                }
-                s.defaultProps = { format: 'integral' };
+                const s = ({ format: e, value: t }) => {
+                    const u = ((e, t = 'integral') => {
+                        let u;
+                        return (
+                            (u = 'gold' === t ? r.B3.GOLD : r.B3.INTEGRAL),
+                            void 0 === e ? '' : r.Z5.getNumberFormat(e, u)
+                        );
+                    })(t, e);
+                    return u ? a().createElement('span', null, u) : null;
+                };
                 var i = u(2862);
                 const o = [
                         i.E4.Items,
@@ -705,6 +712,11 @@
                         i.E4.SelectableBonus,
                         i.E4.GoldenTicket,
                         i.E4.PostStamp,
+                        i.E4.WtStamp,
+                        i.E4.WtTicket,
+                        i.E4.WtMainPrizeDiscount,
+                        i.E4.WtHunter,
+                        i.E4.WtHunterCollection,
                     ],
                     l = [i.E4.Gold, i.E4.Credits, i.E4.Crystal, i.E4.FreeXp],
                     c = [i.E4.BattlePassPoints],
@@ -3729,8 +3741,8 @@
                 });
                 u(7044);
                 var U = u(7902);
-                const $ = (e, t) => e.split('.').reduce((e, t) => e && e[t], t);
-                var W = u(6536);
+                const W = (e, t) => e.split('.').reduce((e, t) => e && e[t], t);
+                var $ = u(6536);
                 const G = (e) => e && 'ArrayItem' === e.__proto__.constructor.name,
                     z = (e, t) => (e.length > 0 ? `${e}.${t}` : t),
                     V = n.Sw.instance;
@@ -3750,14 +3762,14 @@
                         ),
                         l = (0, r.useState)(() =>
                             ((e) => {
-                                const t = $(e, window);
+                                const t = W(e, window);
                                 for (const e in t) 'function' == typeof t[e] && (t[e] = t[e].bind(t));
                                 return G(t) ? t.value : t;
                             })(
                                 ((e) =>
                                     ((e, t) =>
                                         e.split('.').reduce((e, t) => {
-                                            const u = $(`${e}.${t}`, window);
+                                            const u = W(`${e}.${t}`, window);
                                             return G(u) ? ((e, t) => `${e}.${t}.value`)(e, t) : `${e}.${t}`;
                                         }))(e))(o),
                             ),
@@ -3766,7 +3778,7 @@
                         m = l[1],
                         _ = (0, r.useRef)(-1);
                     return (
-                        (0, W.Z)(() => {
+                        (0, $.Z)(() => {
                             if (
                                 ('boolean' == typeof t &&
                                     ((t = t ? j.Deep : j.None),
@@ -3798,7 +3810,7 @@
                                             const e = [n[0]];
                                             return (
                                                 n.reduce((t, n) => {
-                                                    const a = $(z(u, `${t}.${n}`), window);
+                                                    const a = W(z(u, `${t}.${n}`), window);
                                                     return G(a)
                                                         ? (e.push(a.id), `${t}.${n}.value`)
                                                         : (e.push(n), `${t}.${n}`);
@@ -4465,7 +4477,7 @@
                                 : a().createElement(L, H({ key: `${r}-${t}` }, c));
                         },
                     ),
-                    $ = (e) => ({
+                    W = (e) => ({
                         '--progress-base': `url(${e.bgImageBase})`,
                         '--progress-line-base': e.line.bgColorBase,
                         '--progress-line-disabled': e.line.bgColorDisabled,
@@ -4478,8 +4490,8 @@
                         '--progress-delta-color': e.delta.color,
                         '--progress-delta-shadow': e.delta.shadow,
                     });
-                var W = u(7515);
-                const G = (e, t, u) => ('number' == typeof u ? ((0, W.u)(0, t, u) / t) * 100 : e),
+                var $ = u(7515);
+                const G = (e, t, u) => ('number' == typeof u ? ((0, $.u)(0, t, u) / t) * 100 : e),
                     z = {
                         bgImageBase: 'R.images.gui.maps.icons.components.progress_bar.pattern_grey',
                         line: { bgColorBase: '#f50', bgColorDisabled: 'transparent', bgColorFinished: '#59a011' },
@@ -4520,12 +4532,12 @@
                         }) => {
                             const D = ((e, t, u) =>
                                 (0, n.useMemo)(() => {
-                                    const n = ((0, W.u)(0, t, e) / t) * 100;
+                                    const n = ((0, $.u)(0, t, e) / t) * 100;
                                     return { value: n, deltaFrom: G(n, t, u) };
                                 }, [u, t, e]))(c, e, m);
                             return a().createElement(
                                 'div',
-                                { className: s()(d.base, d[`base__${u}`]), style: $(t) },
+                                { className: s()(d.base, d[`base__${u}`]), style: W(t) },
                                 !o && a().createElement(A, { size: u, classMix: l }),
                                 a().createElement(U, {
                                     size: u,
@@ -5347,7 +5359,7 @@
                 var n = {};
                 (u.r(n),
                     u.d(n, {
-                        Area: () => $,
+                        Area: () => W,
                         Bar: () => O,
                         DefaultScroll: () => U,
                         Direction: () => S,
@@ -5355,7 +5367,7 @@
                         useHorizontalScrollApi: () => x,
                     }));
                 var a = {};
-                (u.r(a), u.d(a, { Area: () => J, Bar: () => q, Default: () => Q, useVerticalScrollApi: () => W }));
+                (u.r(a), u.d(a, { Area: () => J, Bar: () => q, Default: () => Q, useVerticalScrollApi: () => $ }));
                 var r = u(3215),
                     s = u(4598),
                     i = u(9480);
@@ -5930,12 +5942,12 @@
                             F().createElement(
                                 'div',
                                 { className: g()(H.defaultScrollArea, a) },
-                                F().createElement($, { className: s, api: c, classNames: r }, e),
+                                F().createElement(W, { className: s, api: c, classNames: r }, e),
                             ),
                             F().createElement(O, { getStepByRailClick: i, api: t, onDrag: o, classNames: l }),
                         );
                     },
-                    $ = ({ api: e, className: t, classNames: u, children: n, style: a }) => (
+                    W = ({ api: e, className: t, classNames: u, children: n, style: a }) => (
                         (0, p.useEffect)(() => (0, A.v)(e.recalculateContent)),
                         F().createElement(
                             'div',
@@ -5955,9 +5967,9 @@
                             ),
                         )
                     );
-                (($.Bar = O),
-                    ($.Default = U),
-                    ($.SeniorityAwards = ({ api: e, className: t, classNames: u, children: n }) => (
+                ((W.Bar = O),
+                    (W.Default = U),
+                    (W.SeniorityAwards = ({ api: e, className: t, classNames: u, children: n }) => (
                         (0, p.useEffect)(() => (0, A.v)(e.recalculateContent)),
                         F().createElement(
                             'div',
@@ -5973,7 +5985,7 @@
                             ),
                         )
                     )));
-                const W = T({
+                const $ = T({
                         getBounds: (e) => [0, e.scrollHeight - e.offsetHeight],
                         getContainerSize: (e) => e.scrollHeight,
                         getWrapperSize: (e) => e.offsetHeight,
@@ -6436,9 +6448,9 @@
                                     computedClassNames: t,
                                 };
                             }, [u, n, s, o, c, _, I, P, y, D, k, w, R]),
-                            $ = U.computedStyle,
-                            W = U.computedClassNames;
-                        return F().createElement('div', De({ className: g()(pe.base, ...W, t), style: $ }, H), O);
+                            W = U.computedStyle,
+                            $ = U.computedClassNames;
+                        return F().createElement('div', De({ className: g()(pe.base, ...$, t), style: W }, H), O);
                     });
                 var he = u(280),
                     Ce = u(3532),
@@ -6599,8 +6611,8 @@
                     Oe = 'AboutSection_tableCell_1a',
                     He = 'AboutSection_tableCell__centered_c2',
                     Ue = R.strings.fl_info_page.about,
-                    $e = [5, 20, 30],
-                    We = (0, ae.Pi)(() => {
+                    We = [5, 20, 30],
+                    $e = (0, ae.Pi)(() => {
                         const e = d().model,
                             t = e.computes.getWinTablePoints(),
                             u = e.computes.getLoseTablePoints(),
@@ -6637,7 +6649,7 @@
                                     'div',
                                     { className: Ie },
                                     F().createElement('div', { className: Oe }),
-                                    $e.map((e) =>
+                                    We.map((e) =>
                                         F().createElement(Pe, {
                                             key: e,
                                             text: Ue.scoresTable.topCell(),
@@ -6651,7 +6663,7 @@
                                         'div',
                                         { key: u, className: Ie },
                                         F().createElement('div', { className: g()(Oe, He) }, e),
-                                        $e.map((e, u) => {
+                                        We.map((e, u) => {
                                             const n = t[u];
                                             return F().createElement(
                                                 'div',
@@ -7503,7 +7515,7 @@
                         ),
                     ),
                     vt = (0, ae.Pi)(() => {
-                        const e = W(),
+                        const e = $(),
                             t = d(),
                             u = t.model,
                             n = t.controls,
@@ -7572,7 +7584,7 @@
                                     F().createElement(lt, { withBattlePass: s }),
                                     F().createElement(Bt, null),
                                     F().createElement(Ze, { withBattlePass: s, validVehicleLevels: A }),
-                                    s && F().createElement(We, null),
+                                    s && F().createElement($e, null),
                                 ),
                             )
                         );

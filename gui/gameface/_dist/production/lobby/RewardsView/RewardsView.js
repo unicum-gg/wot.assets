@@ -360,7 +360,13 @@
                             (e.LootBoxToken = 'lootBoxToken'),
                             (e.GoldenTicket = 'birthday2025_golden_ticket'),
                             (e.PostStamp = 'giftsystem_4_stamp'),
-                            (e.Quests = 'quests'));
+                            (e.Quests = 'quests'),
+                            (e.WtStamp = 'stamp'),
+                            (e.WtHunter = 'wt_hunter'),
+                            (e.WtHunterCollection = 'hunter_collection'),
+                            (e.WtTicket = 'wtevent_ticket'),
+                            (e.WtMainPrizeDiscount = 'main_prize_discount'),
+                            (e.WtTicket25 = 'wtevent_ticket25'));
                     })(n || (n = {})),
                     (function (e) {
                         ((e.Gold = 'gold'),
@@ -460,15 +466,16 @@
                 var n = r(6179),
                     a = r.n(n),
                     i = r(4179);
-                class s extends a().PureComponent {
-                    render() {
-                        let e;
-                        e = 'gold' === this.props.format ? i.B3.GOLD : i.B3.INTEGRAL;
-                        const t = i.Z5.getNumberFormat(this.props.value, e);
-                        return void 0 !== this.props.value && void 0 !== t ? t : null;
-                    }
-                }
-                s.defaultProps = { format: 'integral' };
+                const s = ({ format: e, value: t }) => {
+                    const r = ((e, t = 'integral') => {
+                        let r;
+                        return (
+                            (r = 'gold' === t ? i.B3.GOLD : i.B3.INTEGRAL),
+                            void 0 === e ? '' : i.Z5.getNumberFormat(e, r)
+                        );
+                    })(t, e);
+                    return r ? a().createElement('span', null, r) : null;
+                };
                 var o = r(2862);
                 const l = [
                         o.E4.Items,
@@ -508,6 +515,11 @@
                         o.E4.SelectableBonus,
                         o.E4.GoldenTicket,
                         o.E4.PostStamp,
+                        o.E4.WtStamp,
+                        o.E4.WtTicket,
+                        o.E4.WtMainPrizeDiscount,
+                        o.E4.WtHunter,
+                        o.E4.WtHunterCollection,
                     ],
                     c = [o.E4.Gold, o.E4.Credits, o.E4.Crystal, o.E4.FreeXp],
                     u = [o.E4.BattlePassPoints],
@@ -929,8 +941,8 @@
                             f = e.targetId,
                             S = void 0 === f ? 0 : f,
                             R = e.onShow,
-                            P = e.onHide,
-                            T = (function (e, t) {
+                            T = e.onHide,
+                            P = (function (e, t) {
                                 if (null == e) return {};
                                 var r,
                                     n,
@@ -952,11 +964,11 @@
                                     const e = x.current.timeoutId;
                                     (e > 0 && (clearTimeout(e), (x.current.timeoutId = 0)),
                                         l(r, v, { on: !1 }, O),
-                                        x.current.isVisible && P && P(),
+                                        x.current.isVisible && T && T(),
                                         (x.current.isVisible = !1));
                                 }
-                            }, [r, v, O, P]),
-                            L = (0, i.useCallback)((e) => {
+                            }, [r, v, O, T]),
+                            M = (0, i.useCallback)((e) => {
                                 x.current.isVisible &&
                                     ((x.current.prevTarget = document.elementFromPoint(e.clientX, e.clientY)),
                                     (x.current.hideTimerId = window.setTimeout(() => {
@@ -968,9 +980,9 @@
                             (0, i.useEffect)(() => {
                                 const e = x.current.hideTimerId;
                                 return (
-                                    document.addEventListener('wheel', L, { capture: !0 }),
+                                    document.addEventListener('wheel', M, { capture: !0 }),
                                     () => {
-                                        (document.removeEventListener('wheel', L, { capture: !0 }),
+                                        (document.removeEventListener('wheel', M, { capture: !0 }),
                                             e && window.clearTimeout(e));
                                     }
                                 );
@@ -993,13 +1005,13 @@
                                       Object.assign(
                                           {
                                               onMouseEnter:
-                                                  ((M = t.props.onMouseEnter),
+                                                  ((L = t.props.onMouseEnter),
                                                   (e) => {
                                                       (e.clientX === window.innerWidth &&
                                                           e.clientY === window.innerHeight) ||
                                                           ((x.current.timeoutId = window.setTimeout(k, g ? 100 : 400)),
                                                           c && c(e),
-                                                          M && M(e));
+                                                          L && L(e));
                                                   }),
                                               onMouseLeave: ((e) => (t) => {
                                                   (y(), null == u || u(t), null == e || e(t));
@@ -1011,12 +1023,12 @@
                                                   (!1 === E && y(), null == d || d(t), null == e || e(t));
                                               })(t.props.onMouseDown),
                                           },
-                                          T,
+                                          P,
                                       ),
                                   )
                                 : t
                         );
-                        var M;
+                        var L;
                     };
             },
             8246: (e, t, r) => {
@@ -1403,13 +1415,13 @@
                         addPreloadTexture: () => o,
                         children: () => n,
                         displayStatus: () => a.W,
-                        displayStatusIs: () => T,
+                        displayStatusIs: () => P,
                         events: () => i.U,
                         extraSize: () => x,
                         forceTriggerMouseMove: () => R,
                         freezeTextureBeforeResize: () => h,
                         getBrowserTexturePath: () => c,
-                        getDisplayStatus: () => P,
+                        getDisplayStatus: () => T,
                         getScale: () => E,
                         getSize: () => _,
                         getViewGlobalPosition: () => g,
@@ -1481,10 +1493,10 @@
                 function R() {
                     viewEnv.forceTriggerMouseMove();
                 }
-                function P() {
+                function T() {
                     return viewEnv.getShowingStatus();
                 }
-                const T = Object.keys(a.W).reduce(
+                const P = Object.keys(a.W).reduce(
                         (e, t) => ((e[t] = () => viewEnv.getShowingStatus() === a.W[t]), e),
                         {},
                     ),
@@ -2015,11 +2027,11 @@
                     S = (e, t) => {
                         e.keyCode === g.n.ESCAPE && t();
                     };
-                var P = r(7572);
-                const T = a.instance,
+                var T = r(7572);
+                const P = a.instance,
                     x = {
                         DataTracker: i.Z,
-                        ViewModel: P.Z,
+                        ViewModel: T.Z,
                         ViewEventType: l,
                         NumberFormatType: u,
                         RealFormatType: d,
@@ -2096,7 +2108,7 @@
                                 }
                             return r;
                         },
-                        ClickOutsideManager: T,
+                        ClickOutsideManager: P,
                         SystemLocale: s,
                         UserLocale: o,
                     };
@@ -2326,16 +2338,16 @@
                     onMouseDown: b,
                     children: f,
                     soundHover: S,
-                    soundClick: P,
-                    counter: T,
+                    soundClick: T,
+                    counter: P,
                     tokensCount: x = 0,
                 }) => {
                     const O = (0, n.useState)(!1),
                         k = O[0],
                         y = O[1],
-                        L = (0, n.useState)(!1),
-                        M = L[0],
-                        N = L[1],
+                        M = (0, n.useState)(!1),
+                        L = M[0],
+                        N = M[1],
                         C = (e, t) => {
                             e && t && e(t);
                         },
@@ -2345,7 +2357,7 @@
                             g && d.base__yellow,
                             _ && d.base__disabled,
                             k && !_ && d.base__hover,
-                            M && d.base__click,
+                            L && d.base__click,
                             m && !_ && d.base__highlight,
                         ),
                         I = o()(d.glowBorder, d.glowBorder__hover),
@@ -2375,7 +2387,7 @@
                                 _ || (C(e, t), 0 === t.button && N(!1));
                             })(w),
                             onClick: ((e) => (t) => {
-                                _ || ((0, u.G)(P), C(e, t));
+                                _ || ((0, u.G)(T), C(e, t));
                             })(E),
                         },
                         m &&
@@ -2406,12 +2418,12 @@
                                         : a().createElement('div', { className: d.count }, t),
                                     a().createElement('div', { className: d.label }, e),
                                 ),
-                            Boolean(T) &&
+                            Boolean(P) &&
                                 !_ &&
                                 a().createElement(
                                     'div',
                                     { className: d.counter },
-                                    a().createElement(l.A, { value: T }),
+                                    a().createElement(l.A, { value: P }),
                                 ),
                             x > 0 &&
                                 a().createElement(
@@ -2445,11 +2457,11 @@
                     b = r(2862),
                     f = r(5415),
                     S = r(1558);
-                let P;
+                let T;
                 !(function (e) {
                     ((e.Static = 'static'), (e.Claimable = 'claimable'));
-                })(P || (P = {}));
-                var T = r(5989);
+                })(T || (T = {}));
+                var P = r(5989);
                 const x = (0, n.memo)(
                         ({
                             claimState: e,
@@ -2463,7 +2475,7 @@
                             isBattlePassRewardDisable: d,
                             classMix: _,
                         }) => {
-                            const m = e === P.Claimable;
+                            const m = e === T.Claimable;
                             return a().createElement(
                                 'div',
                                 {
@@ -2481,7 +2493,7 @@
                                         a().createElement('div', { className: 'FrontlineReward_glow_0d' }),
                                         a().createElement('div', { className: 'FrontlineReward_glowReverse_42' }),
                                     ),
-                                a().createElement(T.I, {
+                                a().createElement(P.I, {
                                     item: i.ob.RewardTooltip,
                                     info: t,
                                     parentScreen: i.RM.RewardsView,
@@ -2526,7 +2538,7 @@
                 !(function (e) {
                     ((e.None = 'none'), (e.White = 'white'), (e.Gold = 'gold'));
                 })(y || (y = {}));
-                const L = ({ levelsRange: e, frontlineLevel: t, isBattlePassComplete: r, isLastCol: n }) => {
+                const M = ({ levelsRange: e, frontlineLevel: t, isBattlePassComplete: r, isLastCol: n }) => {
                         const i = (0, f.GS)(),
                             s = i.mediaSize,
                             l = i.remScreenHeight,
@@ -2572,7 +2584,7 @@
                             ),
                         );
                     },
-                    M = (0, g.Pi)(() => {
+                    L = (0, g.Pi)(() => {
                         const e = v().model,
                             t = e.root.get(),
                             r = t.frontlineLevel,
@@ -2585,7 +2597,7 @@
                                 a().createElement(
                                     a().Fragment,
                                     { key: `${e.lvlStart}-${e.lvlEnd}` },
-                                    a().createElement(L, {
+                                    a().createElement(M, {
                                         levelsRange: e,
                                         frontlineLevel: r,
                                         isBattlePassComplete: n,
@@ -2636,7 +2648,7 @@
                             { text: R.strings.fl_rewards.title(), classMix: 'RewardsViewApp_pageTitle_61' },
                             a().createElement(I, { level: l, rewardsCount: o, frontlineState: c }),
                         ),
-                        a().createElement('div', { className: 'RewardsViewApp_table_32' }, a().createElement(M, null)),
+                        a().createElement('div', { className: 'RewardsViewApp_table_32' }, a().createElement(L, null)),
                         a().createElement(
                             'div',
                             { className: 'RewardsViewApp_claimButton_3d' },

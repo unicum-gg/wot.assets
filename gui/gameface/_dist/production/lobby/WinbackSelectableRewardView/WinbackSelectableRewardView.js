@@ -3573,6 +3573,12 @@
                     (Ft.GoldenTicket = 'birthday2025_golden_ticket'),
                     (Ft.PostStamp = 'giftsystem_4_stamp'),
                     (Ft.Quests = 'quests'),
+                    (Ft.WtStamp = 'stamp'),
+                    (Ft.WtHunter = 'wt_hunter'),
+                    (Ft.WtHunterCollection = 'hunter_collection'),
+                    (Ft.WtTicket = 'wtevent_ticket'),
+                    (Ft.WtMainPrizeDiscount = 'main_prize_discount'),
+                    (Ft.WtTicket25 = 'wtevent_ticket25'),
                     (function (e) {
                         ((e.Gold = 'gold'),
                             (e.Credits = 'credits'),
@@ -3655,72 +3661,79 @@
                     (_t.PROGRESSION_STYLE_UPGRADED_2 = 'progressionStyleUpgraded_2'),
                     (_t.PROGRESSION_STYLE_UPGRADED_3 = 'progressionStyleUpgraded_3'),
                     (_t.PROGRESSION_STYLE_UPGRADED_4 = 'progressionStyleUpgraded_4'));
-                class Dt extends o().PureComponent {
-                    render() {
-                        let e;
-                        e = 'gold' === this.props.format ? j.B3.GOLD : j.B3.INTEGRAL;
-                        const u = j.Z5.getNumberFormat(this.props.value, e);
-                        return void 0 !== this.props.value && void 0 !== u ? u : null;
-                    }
-                }
-                ((Dt.defaultProps = { format: 'integral' }),
-                    at.Items,
-                    at.Equipment,
-                    at.Xp,
-                    at.XpFactor,
-                    at.Blueprints,
-                    at.BlueprintsAny,
-                    at.Goodies,
-                    at.Berths,
-                    at.Slots,
-                    at.Tokens,
-                    at.CrewSkins,
-                    at.CrewBooks,
-                    at.Customizations,
-                    at.CreditsFactor,
-                    at.TankmenXp,
-                    at.TankmenXpFactor,
-                    at.FreeXpFactor,
-                    at.BattleToken,
-                    at.PremiumUniversal,
-                    at.NaturalCover,
-                    at.BpCoin,
-                    at.BattlePassSelectToken,
-                    at.BattlaPassFinalAchievement,
-                    at.BattleBadge,
-                    at.BonusX5,
-                    at.CrewBonusX3,
-                    at.NewYearFillers,
-                    at.NewYearInvoice,
-                    at.EpicSelectToken,
-                    at.Comp7TokenWeeklyReward,
-                    at.Comp7TokenCouponReward,
-                    at.BattleBoosterGift,
-                    at.CosmicLootboxCommon,
-                    at.CosmicLootboxSilver,
-                    at.SelectableBonus,
-                    at.GoldenTicket,
-                    at.PostStamp,
-                    at.Gold,
-                    at.Credits,
-                    at.Crystal,
-                    at.FreeXp,
-                    at.BattlePassPoints,
-                    at.PremiumPlus,
-                    at.Premium);
-                const Ct = (e, u, t) => {
-                        const r = u && { contentId: u };
-                        return Object.assign(
-                            {
-                                args: e,
-                                isEnabled: Boolean((e && e.tooltipId) || u),
-                                ignoreMouseClick: !0,
-                                ignoreShowDelay: !u,
-                            },
-                            r,
-                            t,
-                        );
+                const Dt = ({ format: e, value: u }) => {
+                        const t = ((e, u = 'integral') => {
+                            let t;
+                            return (
+                                (t = 'gold' === u ? j.B3.GOLD : j.B3.INTEGRAL),
+                                void 0 === e ? '' : j.Z5.getNumberFormat(e, t)
+                            );
+                        })(u, e);
+                        return t ? o().createElement('span', null, t) : null;
                     },
+                    Ct =
+                        (at.Items,
+                        at.Equipment,
+                        at.Xp,
+                        at.XpFactor,
+                        at.Blueprints,
+                        at.BlueprintsAny,
+                        at.Goodies,
+                        at.Berths,
+                        at.Slots,
+                        at.Tokens,
+                        at.CrewSkins,
+                        at.CrewBooks,
+                        at.Customizations,
+                        at.CreditsFactor,
+                        at.TankmenXp,
+                        at.TankmenXpFactor,
+                        at.FreeXpFactor,
+                        at.BattleToken,
+                        at.PremiumUniversal,
+                        at.NaturalCover,
+                        at.BpCoin,
+                        at.BattlePassSelectToken,
+                        at.BattlaPassFinalAchievement,
+                        at.BattleBadge,
+                        at.BonusX5,
+                        at.CrewBonusX3,
+                        at.NewYearFillers,
+                        at.NewYearInvoice,
+                        at.EpicSelectToken,
+                        at.Comp7TokenWeeklyReward,
+                        at.Comp7TokenCouponReward,
+                        at.BattleBoosterGift,
+                        at.CosmicLootboxCommon,
+                        at.CosmicLootboxSilver,
+                        at.SelectableBonus,
+                        at.GoldenTicket,
+                        at.PostStamp,
+                        at.WtStamp,
+                        at.WtTicket,
+                        at.WtMainPrizeDiscount,
+                        at.WtHunter,
+                        at.WtHunterCollection,
+                        at.Gold,
+                        at.Credits,
+                        at.Crystal,
+                        at.FreeXp,
+                        at.BattlePassPoints,
+                        at.PremiumPlus,
+                        at.Premium,
+                        (e, u, t) => {
+                            const r = u && { contentId: u };
+                            return Object.assign(
+                                {
+                                    args: e,
+                                    isEnabled: Boolean((e && e.tooltipId) || u),
+                                    ignoreMouseClick: !0,
+                                    ignoreShowDelay: !u,
+                                },
+                                r,
+                                t,
+                            );
+                        }),
                     gt = (e, u, t) => {
                         var r;
                         const n = e.$dyn(u);

@@ -1684,8 +1684,8 @@
                         close: u.createCallbackNoArgs('onClose'),
                         videoStarted: u.createCallbackNoArgs('onVideoStarted'),
                     })),
-                    G = I[0],
-                    W = I[1],
+                    W = I[0],
+                    G = I[1],
                     U = {
                         base: 'CButton_base_40',
                         base__main: 'CButton_base__main_42',
@@ -1913,7 +1913,13 @@
                         (u.LootBoxToken = 'lootBoxToken'),
                         (u.GoldenTicket = 'birthday2025_golden_ticket'),
                         (u.PostStamp = 'giftsystem_4_stamp'),
-                        (u.Quests = 'quests'));
+                        (u.Quests = 'quests'),
+                        (u.WtStamp = 'stamp'),
+                        (u.WtHunter = 'wt_hunter'),
+                        (u.WtHunterCollection = 'hunter_collection'),
+                        (u.WtTicket = 'wtevent_ticket'),
+                        (u.WtMainPrizeDiscount = 'main_prize_discount'),
+                        (u.WtTicket25 = 'wtevent_ticket25'));
                 })(q || (q = {})),
                     (function (u) {
                         ((u.Gold = 'gold'),
@@ -2184,7 +2190,7 @@
                                 for (r = 0; r < a.length; r++) ((t = a[r]), e.indexOf(t) >= 0 || (n[t] = u[t]));
                                 return n;
                             })(u, su);
-                        const G = (0, n.useMemo)(() => {
+                        const W = (0, n.useMemo)(() => {
                                 const u = { mt: E, mr: A, mb: F, ml: D },
                                     e = ((u) =>
                                         Au.reduce((e, t) => {
@@ -2211,9 +2217,9 @@
                                     computedClassNames: e,
                                 };
                             }, [t, r, E, A, F, D, N, k, T, C, M, f, x]),
-                            W = G.computedStyle,
-                            U = G.computedClassNames;
-                        return a().createElement('div', Eu({ className: i()(iu.base, ...U, e), style: W }, I), H);
+                            G = W.computedStyle,
+                            U = W.computedClassNames;
+                        return a().createElement('div', Eu({ className: i()(iu.base, ...U, e), style: G }, I), H);
                     });
                 var du = t(3649);
                 const Du = ({ binding: u, text: e = '', classMix: t, alignment: r = du.v2.left }) =>
@@ -2576,8 +2582,8 @@
                             );
                         },
                     ),
-                    Gu = 'DoubleVideoComponent_video_01',
-                    Wu = (0, n.memo)(
+                    Wu = 'DoubleVideoComponent_video_01',
+                    Gu = (0, n.memo)(
                         ({
                             firstVideoDuration: u,
                             firstVideoRes: e,
@@ -2644,7 +2650,7 @@
                                     d &&
                                         a().createElement(ku.n, {
                                             src: e,
-                                            className: Gu,
+                                            className: Wu,
                                             isPaused: !r,
                                             isCeilTime: !1,
                                             onStarted: p,
@@ -2655,7 +2661,7 @@
                                     h &&
                                         a().createElement(ku.n, {
                                             src: A,
-                                            className: Gu,
+                                            className: Wu,
                                             isPaused: !r || m,
                                             isCeilTime: !1,
                                             onUpdated: v,
@@ -2702,7 +2708,7 @@
                                 a().createElement(
                                     'div',
                                     { className: 'VehicleVideoReward_base_98' },
-                                    a().createElement(Wu, {
+                                    a().createElement(Gu, {
                                         firstVideoRes: u,
                                         secondVideoRes: e,
                                         firstVideoDuration: t,
@@ -2975,7 +2981,7 @@
                     );
                 }
                 const ie = (0, L.Pi)(() => {
-                    const u = W(),
+                    const u = G(),
                         e = u.controls,
                         t = u.model,
                         r = t.root.get(),
@@ -3241,7 +3247,7 @@
                 });
                 engine.whenReady.then(() => {
                     h().render(
-                        a().createElement(G, null, a().createElement(B, null, a().createElement(ie, null))),
+                        a().createElement(W, null, a().createElement(B, null, a().createElement(ie, null))),
                         document.getElementById('root'),
                     );
                 });

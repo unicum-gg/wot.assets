@@ -6,15 +6,16 @@
                 var r = t(6179),
                     n = t.n(r),
                     a = t(4179);
-                class i extends n().PureComponent {
-                    render() {
-                        let u;
-                        u = 'gold' === this.props.format ? a.B3.GOLD : a.B3.INTEGRAL;
-                        const e = a.Z5.getNumberFormat(this.props.value, u);
-                        return void 0 !== this.props.value && void 0 !== e ? e : null;
-                    }
-                }
-                i.defaultProps = { format: 'integral' };
+                const i = ({ format: u, value: e }) => {
+                    const t = ((u, e = 'integral') => {
+                        let t;
+                        return (
+                            (t = 'gold' === e ? a.B3.GOLD : a.B3.INTEGRAL),
+                            void 0 === u ? '' : a.Z5.getNumberFormat(u, t)
+                        );
+                    })(e, u);
+                    return t ? n().createElement('span', null, t) : null;
+                };
             },
             3495: (u, e, t) => {
                 'use strict';
@@ -387,7 +388,13 @@
                             (u.LootBoxToken = 'lootBoxToken'),
                             (u.GoldenTicket = 'birthday2025_golden_ticket'),
                             (u.PostStamp = 'giftsystem_4_stamp'),
-                            (u.Quests = 'quests'));
+                            (u.Quests = 'quests'),
+                            (u.WtStamp = 'stamp'),
+                            (u.WtHunter = 'wt_hunter'),
+                            (u.WtHunterCollection = 'hunter_collection'),
+                            (u.WtTicket = 'wtevent_ticket'),
+                            (u.WtMainPrizeDiscount = 'main_prize_discount'),
+                            (u.WtTicket25 = 'wtevent_ticket25'));
                     })(r || (r = {})),
                     (function (u) {
                         ((u.Gold = 'gold'),
@@ -527,6 +534,11 @@
                         i.E4.SelectableBonus,
                         i.E4.GoldenTicket,
                         i.E4.PostStamp,
+                        i.E4.WtStamp,
+                        i.E4.WtTicket,
+                        i.E4.WtMainPrizeDiscount,
+                        i.E4.WtHunter,
+                        i.E4.WtHunterCollection,
                     ],
                     s = [i.E4.Gold, i.E4.Credits, i.E4.Crystal, i.E4.FreeXp],
                     l = [i.E4.BattlePassPoints],

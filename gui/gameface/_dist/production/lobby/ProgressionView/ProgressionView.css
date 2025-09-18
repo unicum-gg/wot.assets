@@ -163,6 +163,276 @@
     opacity: 0;
 }
 
+.Box_mt__XS_0c {
+    margin-top: 4rem;
+}
+.Box_mt__SM_eb {
+    margin-top: 8rem;
+}
+.Box_mt__SMp_cf {
+    margin-top: 10rem;
+}
+.Box_mt__MD_25 {
+    margin-top: 16rem;
+}
+.Box_mt__MDp_49 {
+    margin-top: 20rem;
+}
+.Box_mt__LG_e8 {
+    margin-top: 32rem;
+}
+.Box_mt__XL_83 {
+    margin-top: 64rem;
+}
+
+.Box_mr__XS_7c {
+    margin-right: 4rem;
+}
+
+.Box_mr__SM_08 {
+    margin-right: 8rem;
+}
+
+.Box_mr__SMp_06 {
+    margin-right: 10rem;
+}
+
+.Box_mr__MD_4a {
+    margin-right: 16rem;
+}
+
+.Box_mr__MDp_b6 {
+    margin-right: 20rem;
+}
+
+.Box_mr__LG_d0 {
+    margin-right: 32rem;
+}
+
+.Box_mr__XL_db {
+    margin-right: 64rem;
+}
+
+.Box_mb__XS_bb {
+    margin-bottom: 4rem;
+}
+
+.Box_mb__SM_83 {
+    margin-bottom: 8rem;
+}
+
+.Box_mb__SMp_04 {
+    margin-bottom: 10rem;
+}
+
+.Box_mb__MD_ed {
+    margin-bottom: 16rem;
+}
+
+.Box_mb__MDp_65 {
+    margin-bottom: 20rem;
+}
+
+.Box_mb__LG_c8 {
+    margin-bottom: 32rem;
+}
+
+.Box_mb__XL_f8 {
+    margin-bottom: 64rem;
+}
+
+.Box_ml__XS_8a {
+    margin-left: 4rem;
+}
+
+.Box_ml__SM_e6 {
+    margin-left: 8rem;
+}
+
+.Box_ml__SMp_fb {
+    margin-left: 10rem;
+}
+
+.Box_ml__MD_2b {
+    margin-left: 16rem;
+}
+
+.Box_ml__MDp_c7 {
+    margin-left: 20rem;
+}
+
+.Box_ml__LG_39 {
+    margin-left: 32rem;
+}
+
+.Box_ml__XL_4a {
+    margin-left: 64rem;
+}
+
+/* eslint-disable-next-line expectedscss*/
+.Text_paragraph-P10_2c {
+    font-size: 10rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.Text_paragraph-P12_22 {
+    font-size: 12rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+.Text_paragraph-P14_a7 {
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+.Text_paragraph-P16_90 {
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+.Text_paragraph-P18_50 {
+    font-size: 18rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+.Text_paragraph-P24_33 {
+    font-size: 24rem;
+    font-weight: 400;
+    line-height: 32rem;
+}
+.Text_heading-H14_8b {
+    font-size: 14rem;
+    font-weight: 700;
+    line-height: 1.15;
+}
+.Text_heading-H15_9e {
+    font-size: 15rem;
+    font-weight: 700;
+    line-height: 1.15;
+}
+.Text_heading-H18_b7 {
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H20R_f6 {
+    font-size: 20rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.Text_heading-H22_27 {
+    font-size: 22rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.Text_heading-H24R_be {
+    font-size: 24rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.Text_heading-H24_0c {
+    font-size: 24rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.Text_heading-H28_78 {
+    font-size: 28rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H36_32 {
+    font-size: 36rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H56_c3 {
+    font-size: 56rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H73_8f {
+    font-size: 73rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H144_a9 {
+    font-size: 144rem;
+    font-weight: 700;
+    line-height: 1;
+}
+.Text_BLACK_REAL_30 {
+    color: #000000;
+}
+.Text_WHITE_REAL_bc {
+    color: #ffffff;
+}
+.Text_WHITE_62 {
+    color: #f2f2f7;
+}
+.Text_WHITE_ORANGE_54 {
+    color: #fefeec;
+}
+.Text_WHITE_SPANISH_df {
+    color: #e9e2bf;
+}
+.Text_PAR_15 {
+    color: #8c8c7e;
+}
+.Text_PAR_SECONDARY_5d {
+    color: #595950;
+}
+.Text_PAR_TERTIARY_c9 {
+    color: #37362e;
+}
+.Text_INFO_RED_30 {
+    color: #ff0000;
+}
+.Text_RED_66 {
+    color: #ff2717;
+}
+.Text_RED_DARK_d8 {
+    color: #b70000;
+}
+.Text_YELLOW_ed {
+    color: #feab34;
+}
+.Text_ORANGE_be {
+    color: #ee7000;
+}
+.Text_CREAM_57 {
+    color: #ffdd99;
+}
+.Text_BROWN_18 {
+    color: #cbac77;
+}
+.Text_GREEN_BRIGHT_3f {
+    color: #80d43a;
+}
+.Text_GREEN_e3 {
+    color: #7ab300;
+}
+.Text_GREEN_DARK_f1 {
+    color: #497212;
+}
+.Text_BLUE_BOOSTER_21 {
+    color: #ccffff;
+}
+.Text_BLUE_TEAMKILLER_ab {
+    color: #09e2ff;
+}
+.Text_CRED_f7 {
+    color: #ced9d9;
+}
+.Text_GOLD_28 {
+    color: #ffc363;
+}
+.Text_BOND_be {
+    color: #c9c9b6;
+}
+.Text_PROM_65 {
+    color: #a29b70;
+}
+
 /*
     Gameface can't calculate gradient biggest than 8128px
     in JS 8000 reserved like anchor for start optimization
@@ -594,9 +864,6 @@
 .DailyQuestCard_dailyQuest__completed_7b .DailyQuestCard_dailyQuest_description_41 {
     color: #7ab300;
 }
-.DailyQuestCard_dailyQuest__completed_7b .DailyQuestCard_dailyQuest_bottomText_0e {
-    color: #7ab300;
-}
 .DailyQuestCard_dailyQuest__completed_7b .DailyQuestCard_dailyQuest_top_left_20,
 .DailyQuestCard_dailyQuest__completed_7b .DailyQuestCard_dailyQuest_top_right_47 {
     border-color: rgba(135, 218, 83, 0.7);
@@ -649,7 +916,7 @@
     font-weight: 400;
     line-height: 1.3;
     max-width: 224rem;
-    min-height: 55rem; /* 14*1.3*3rem */
+    min-height: 58rem;
     margin-top: 10rem;
 }
 .DailyQuestCard_dailyQuest_points_07 {
@@ -680,26 +947,6 @@
     width: 48rem;
     height: 48rem;
     text-align: initial;
-}
-.DailyQuestCard_dailyQuest_bottomText_0e {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    margin-top: 4rem;
-    text-align: center;
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    color: #f2f2f7;
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
-}
-.DailyQuestCard_dailyQuest_bottomText__isCompleted_8b,
-.DailyQuestCard_dailyQuest_bottomText_completed_35 {
-    color: #80d43a;
 }
 .DailyQuestCard_timer_f2 {
     display: flex;
@@ -1287,30 +1534,216 @@
     }
 }
 
+.SmallVideoBtn_base_56 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 156rem;
+    height: 29rem;
+    border-radius: 2rem;
+    overflow: hidden;
+}
+
+.SmallVideoBtn_base_56:hover {
+    cursor: pointer;
+}
+
+.SmallVideoBtn_content_7c {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 154rem;
+    height: 27rem;
+    border-image: url('R.images.white_tiger.gui.maps.icons.progression.border') 1 1 1 1 fill;
+    border-image-width: 1rem;
+    position: relative;
+    transition: all 0.1s ease-out;
+}
+
+.SmallVideoBtn_base_56:hover .SmallVideoBtn_content_7c {
+    background: url('R.images.white_tiger.gui.maps.icons.progression.btn_hover') bottom / cover no-repeat;
+}
+
+.SmallVideoBtn_base__locked_9a .SmallVideoBtn_content_7c {
+    border: 1rem solid rgba(255, 255, 255, 0.2);
+}
+
+.SmallVideoBtn_base__locked_9a .SmallVideoBtn_content_7c:hover {
+    background: url('R.images.white_tiger.gui.maps.icons.progression.btn_hover_locked') bottom / cover no-repeat;
+    cursor: default;
+}
+
+.SmallVideoBtn_bg_36 {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(38, 164, 255, 0.2) 0%, rgba(38, 164, 255, 0) 100%);
+    position: absolute;
+}
+
+.SmallVideoBtn_base__locked_9a .SmallVideoBtn_bg_36 {
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.SmallVideoBtn_iconWrapper_d6 {
+    width: 20rem;
+    height: 20rem;
+    margin-right: 4rem;
+    position: relative;
+}
+
+.SmallVideoBtn_icon_57 {
+    width: 35rem;
+    height: 34rem;
+    background: url('R.images.white_tiger.gui.maps.icons.progression.play_icon') center / cover no-repeat;
+    position: absolute;
+    top: 50%;
+    left: -10%;
+    transform: translate(-20%, -50%);
+}
+
+.SmallVideoBtn_base__locked_9a .SmallVideoBtn_icon_57 {
+    background-image: url('R.images.white_tiger.gui.maps.icons.progression.lock_small');
+}
+
+.SmallVideoBtn_label_54 {
+    color: #c9e8ff;
+    font-size: 12rem;
+    text-shadow:
+        0 0 2rem #26a4ff,
+        0 0 4rem #26a4ff,
+        0 0 8rem #26a4ff;
+    z-index: 1;
+    transition: color 0.1s ease-out;
+}
+
+.SmallVideoBtn_base__locked_9a .SmallVideoBtn_label_54 {
+    color: #8c8c7e;
+    text-shadow: none;
+}
+
+.SmallVideoBtn_base__locked_9a:hover .SmallVideoBtn_label_54 {
+    color: #fefeec;
+}
+
+.VideoBtn_base_73 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 132rem;
+    height: 92rem;
+    padding: 8rem;
+    border-radius: 2rem;
+    border-image: url('R.images.white_tiger.gui.maps.icons.progression.tooltips.border') 1 1 1 1 stretch;
+    border-image-width: 1rem;
+    transition: all 0.25s ease-out;
+}
+
+.VideoBtn_base_73:hover {
+    cursor: pointer;
+}
+
+.VideoBtn_base__locked_3b:hover {
+    cursor: default;
+}
+
+.VideoBtn_content_d8 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 130rem;
+    height: 90rem;
+    border-radius: 2rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.VideoBtn_shadow_56 {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.72);
+    position: absolute;
+    transition: all 0.25s ease-out;
+}
+
+.VideoBtn_base_73:hover .VideoBtn_shadow_56 {
+    background: rgba(0, 0, 0, 0.51);
+}
+
+.VideoBtn_icon_22 {
+    width: 40rem;
+    height: 40rem;
+    background: url('R.images.white_tiger.gui.maps.icons.progression.play_icon_big') center / cover no-repeat;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.25s ease-out;
+}
+
+.VideoBtn_base_73:hover .VideoBtn_icon_22 {
+    background-image: url('R.images.white_tiger.gui.maps.icons.progression.play_icon_big_hover');
+    top: 25%;
+    transform: translate(-50%, -25%);
+}
+
+.VideoBtn_base__locked_3b .VideoBtn_icon_22 {
+    background-image: url('R.images.white_tiger.gui.maps.icons.progression.lock');
+}
+
+.VideoBtn_base__locked_3b:hover .VideoBtn_icon_22 {
+    background-image: url('R.images.white_tiger.gui.maps.icons.progression.lock');
+    top: 20%;
+    transform: translate(-50%, -25%);
+}
+
+.VideoBtn_label_da {
+    color: #c9e8ff;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    width: 70rem;
+    text-align: center;
+    text-shadow:
+        0 0 2rem #26a4ff,
+        0 0 4rem #26a4ff,
+        0 0 8rem #26a4ff;
+    opacity: 0;
+    position: absolute;
+    bottom: 14rem;
+    transition: all 0.25s ease-out;
+}
+
+.VideoBtn_base_73:hover .VideoBtn_label_da {
+    opacity: 1;
+}
+
+.VideoBtn_base__locked_3b .VideoBtn_label_da {
+    color: #8c8c7e;
+    text-shadow: none;
+    bottom: 13rem;
+}
+
+.VideoBtn_base__locked_3b:hover .VideoBtn_label_da {
+    color: #fefeec;
+}
+
 .WTProgressionsViewApp_base_c7 {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
     height: 100%;
-    background: url('R.images.white_tiger.gui.maps.icons.progression.background.background__gp4') center / cover
-        no-repeat;
+    background: url('R.images.white_tiger.gui.maps.icons.welcome.background_dark__gp4') center / cover no-repeat;
     overflow: hidden;
     position: relative;
 }
-.WTProgressionsViewApp_bgDecoration_top_11 {
-    width: 100%;
-    height: 100%;
+.WTProgressionsViewApp_cloud_1e {
     position: absolute;
-    background: url('R.images.white_tiger.gui.maps.icons.progression.background.top__gp4') top center / cover no-repeat;
     top: 0;
-}
-.WTProgressionsViewApp_bgDecoration_cloud_44 {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    background: url('R.images.white_tiger.gui.maps.icons.progression.background.cloud') top left / contain no-repeat;
-    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: url('R.images.white_tiger.gui.maps.icons.progression.background.cloud') center / cover no-repeat;
     animation: WTProgressionsViewApp_cloudAnimate_79 1500ms forwards;
 }
 .WTProgressionsViewApp_closeButton_ac {
@@ -1383,6 +1816,9 @@
         rgba(0, 0, 0, 0) 100%
     );
     position: relative;
+}
+.mediaExtraLarge .WTProgressionsViewApp_container_88 {
+    transform: scale(1.35);
 }
 .WTProgressionsViewApp_container_top_68 {
     display: flex;
@@ -1541,6 +1977,63 @@
     margin-top: 30rem;
     margin-bottom: 30rem;
 }
+.WTProgressionsViewApp_introVideoSmallWrapper_31 {
+    position: absolute;
+    bottom: -10rem;
+    left: 0;
+    z-index: 2;
+}
+.mediaSmall .WTProgressionsViewApp_introVideoSmallWrapper_31 {
+    bottom: 0;
+    left: -160rem;
+}
+.WTProgressionsViewApp_outroVideoSmallWrapper_d1 {
+    position: absolute;
+    right: 0;
+    bottom: -10rem;
+    z-index: 2;
+}
+.mediaSmall .WTProgressionsViewApp_outroVideoSmallWrapper_d1 {
+    right: -160rem;
+    bottom: 0;
+}
+.WTProgressionsViewApp_introBtnWrapper_fd {
+    position: absolute;
+    bottom: 310rem;
+    left: 76rem;
+    z-index: 2;
+}
+.mediaLarge .WTProgressionsViewApp_introBtnWrapper_fd {
+    bottom: 413rem;
+    left: 81rem;
+}
+.mediaExtraLarge .WTProgressionsViewApp_introBtnWrapper_fd {
+    bottom: 570rem;
+    transform: scale(1.35);
+}
+.WTProgressionsViewApp_outroBtnWrapper_1f {
+    position: absolute;
+    right: 76rem;
+    bottom: 310rem;
+    z-index: 2;
+}
+.mediaLarge .WTProgressionsViewApp_outroBtnWrapper_1f {
+    right: 81rem;
+    bottom: 413rem;
+}
+.mediaExtraLarge .WTProgressionsViewApp_outroBtnWrapper_1f {
+    bottom: 570rem;
+    transform: scale(1.35);
+}
+.WTProgressionsViewApp_introBtn_4d {
+    background: url('R.images.white_tiger.gui.maps.icons.progression.cutscene_button') bottom / cover no-repeat;
+}
+.WTProgressionsViewApp_outroBtn_ce {
+    background: url('R.images.white_tiger.gui.maps.icons.progression.cutscene_button_right') bottom / cover no-repeat;
+}
+.WTProgressionsViewApp_outroBtn__locked_12 {
+    background-image: url('R.images.white_tiger.gui.maps.icons.progression.cutscene_button_locked');
+}
 .WTProgressionsViewApp_timer_b0 {
     display: flex;
     align-items: center;
@@ -1554,14 +2047,16 @@
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
-    display: flex;
-    align-items: center;
-    margin-left: 5rem;
+    margin-left: 6rem;
     margin-right: 10rem;
+}
+.WTProgressionsViewApp_timer_countdown_b1 {
+    margin-top: -7rem;
 }
 .WTProgressionsViewApp_timer_highlight_08 {
     width: 142rem;
     height: 6rem;
+    margin-top: -4rem;
 }
 .WTProgressionsViewApp_timer_highlight__rotated_0c {
     transform: rotate(180deg);
@@ -1570,6 +2065,11 @@
     width: 95%;
     margin-top: -80rem;
     margin-bottom: 30rem;
+}
+.mediaExtraLarge .WTProgressionsViewApp_progress_da {
+    width: 72%;
+    margin-bottom: 110rem;
+    transform: scale(1.35);
 }
 @keyframes WTProgressionsViewApp_cloudAnimate_79 {
     0% {

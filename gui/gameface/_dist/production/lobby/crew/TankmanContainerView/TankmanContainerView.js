@@ -7395,6 +7395,7 @@
                                         'isCrewLocked',
                                         'nation',
                                         'isAcceleratedTraining',
+                                        'isExtended',
                                     ]),
                                     {
                                         slots: e.array('slots', []),
@@ -9440,33 +9441,41 @@
                         const e = p(),
                             t = e.model,
                             a = e.controls,
-                            n = t.isDisabled.get(),
-                            s = t.hasDog.get(),
-                            i = t.computes.getLayoutInfo();
-                        return r().createElement(
-                            'div',
-                            {
-                                className: me,
-                                onMouseEnter: () => {
-                                    (a.setIsWidgetHover(!0),
-                                        i.isCurrentLayoutHangar && !n && (0, u.G)(R.sounds.crew_hover()));
+                            s = t.isDisabled.get(),
+                            i = t.hasDog.get(),
+                            l = t.computes.getLayoutInfo(),
+                            o = t.isExtended.get();
+                        return (
+                            (0, n.useEffect)(() => {
+                                a.setIsWidgetHover(o);
+                            }, [o, a]),
+                            r().createElement(
+                                'div',
+                                {
+                                    className: me,
+                                    onMouseEnter: () => {
+                                        o ||
+                                            (a.setIsWidgetHover(!0),
+                                            l.isCurrentLayoutHangar && !s && (0, u.G)(R.sounds.crew_hover()));
+                                    },
+                                    onMouseLeave: () => {
+                                        o ||
+                                            (a.setIsWidgetHover(!1),
+                                            l.isCurrentLayoutHangar && !s && (0, u.G)(R.sounds.crew_unhover()));
+                                    },
                                 },
-                                onMouseLeave: () => {
-                                    (a.setIsWidgetHover(!1),
-                                        i.isCurrentLayoutHangar && !n && (0, u.G)(R.sounds.crew_unhover()));
-                                },
-                            },
-                            t.computes.isButtonBarVisible() &&
-                                r().createElement(
-                                    'div',
-                                    { className: de },
-                                    r().createElement(ce, {
-                                        isWidgetDisabled: n,
-                                        isCurrentLayoutHangar: i.isCurrentLayoutHangar,
-                                    }),
-                                ),
-                            r().createElement(en, { layoutInfo: i, isWidgetDisabled: n, className: _e }),
-                            s && r().createElement(Te, { layoutInfo: i, isDisabled: n }),
+                                t.computes.isButtonBarVisible() &&
+                                    r().createElement(
+                                        'div',
+                                        { className: de },
+                                        r().createElement(ce, {
+                                            isWidgetDisabled: s,
+                                            isCurrentLayoutHangar: l.isCurrentLayoutHangar,
+                                        }),
+                                    ),
+                                r().createElement(en, { layoutInfo: l, isWidgetDisabled: s, className: _e }),
+                                i && r().createElement(Te, { layoutInfo: l, isDisabled: s }),
+                            )
                         );
                     }),
                     an = (0, n.memo)(() =>

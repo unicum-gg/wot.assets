@@ -3117,6 +3117,44 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     opacity: 0.25;
 }
 
+.Card_infoIcon_47 {
+    width: 24rem;
+    height: 24rem;
+    background: url('R.images.gui.maps.icons.playStreak.window.card.info_icon') no-repeat center / 100% 100%;
+    position: absolute;
+    top: 4rem;
+    right: 6rem;
+    z-index: 2;
+}
+
+.mediaSmall .Card_infoIcon_47 {
+    top: 8rem;
+    right: 10rem;
+}
+
+.mediaLarge .Card_infoIcon_47 {
+    top: 10rem;
+}
+
+.Card_base__complete_ed.Card_base__animatingStart_a8 .Card_infoIcon_47,
+.Card_base__complete_ed.Card_base__animatingComplete_80 .Card_infoIcon_47,
+.Card_base__current_ee.Card_base__animatingStart_a8 .Card_infoIcon_47,
+.Card_base__current_ee.Card_base__animatingComplete_80 .Card_infoIcon_47 {
+    background: url('R.images.gui.maps.icons.playStreak.window.card.info_icon') no-repeat center / 100% 100%;
+}
+
+.Card_base__locked_9a .Card_infoIcon_47 {
+    opacity: 0.5;
+}
+
+.Card_base__blocked_48 .Card_infoIcon_47 {
+    opacity: 0.5;
+}
+
+.Card_base__complete_ed.Card_base__blocked_48 .Card_infoIcon_47 {
+    opacity: 0.25;
+}
+
 .Card_check_3b {
     opacity: 0;
     position: absolute;

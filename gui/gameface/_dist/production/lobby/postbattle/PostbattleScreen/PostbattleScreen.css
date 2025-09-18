@@ -403,7 +403,7 @@
 .CButton_base__disabled_d9 {
     cursor: default;
 }
-/* Element .back and background-image in element .base need for fix bug in GF https://jira.wargaming.net/browse/WOTD-158525
+/* Element .back and background-image in element .base need for fix bug in GF https://jira-archive.lesta.group/browse/WOTD-158525
 The bug is that under certain conditions, when using border-image, stripes appear. Strip is a single-pixel gap
 between 'border-image-width' and 'fill'.
 This bug is reproduced in Google Chrome 81.0.4044.113
@@ -958,7 +958,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .Currency_icon__large_72.Currency_icon__credits_bd {
-    background-image: url('R.images.gui.maps.icons.library.CreditsIcon_48x48');
+    background-image: url('R.images.gui.maps.icons.quests.bonuses.small.credits');
 }
 
 .Currency_icon__large_72.Currency_icon__crystal_2c {
@@ -1706,7 +1706,11 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .EventTask_image__ticket_b1 {
-    background-image: url('R.images.white_tiger.gui.maps.icons.postbattle.wt_ticket');
+    background-image: url('R.images.white_tiger.gui.maps.icons.tickets.ticket_180x135');
+}
+
+.EventTask_image__ticket2025_96 {
+    background-image: url('R.images.white_tiger.gui.maps.icons.tickets.ticket2025_180x135');
 }
 
 .EventTask_image__wtHunter_d0 {
@@ -4436,21 +4440,19 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     position: relative;
 }
 
-.mediaSmall .Card_base_80 {
-    margin: 0 15rem 30rem;
+.Card_base__completed_94 {
+    border: 1rem solid rgba(137, 167, 1, 0.25);
+    box-shadow: inset 0 0 24rem rgba(137, 167, 1, 0.05);
+    background-color: rgba(137, 167, 1, 0.05);
 }
 
-.mediaSmall .Card_base_80 .Card_completed_af .Card_border_anim_bg_21 {
-    animation: Card_border-anim_78 0.7s 0.5s linear forwards;
+.mediaSmall .Card_base_80 {
+    margin: 0 15rem 30rem;
 }
 
 .mediaMedium .Card_base_80 {
     width: 330rem;
     height: 390rem;
-}
-
-.mediaMedium .Card_base_80 .Card_completed_af .Card_border_anim_bg_21 {
-    animation: Card_border-anim_78 0.7s 0.5s linear forwards;
 }
 
 .mediaLarge .Card_base_80 {
@@ -4461,9 +4463,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     width: 32rem;
     height: 32rem;
     margin-right: 12rem;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
+    background: no-repeat center / contain;
 }
 .mediaMedium .Card_card_icon_50 {
     margin-right: 16rem;
@@ -4473,170 +4473,16 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     height: 50rem;
     margin-right: 30rem;
 }
-.Card_border_anim_9d {
-    width: 290rem;
-    height: 330rem;
-    clip-path: polygon(
-        0 0,
-        0 330rem,
-        290rem 330rem,
-        290rem 329rem,
-        1rem 329rem,
-        1rem 1rem,
-        289rem 1rem,
-        289rem 329rem,
-        290rem 329rem,
-        290rem 0,
-        0 0
-    );
-    overflow: hidden;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-.mediaMedium .Card_border_anim_9d {
-    width: 330rem;
-    height: 390rem;
-    clip-path: polygon(
-        0 0,
-        0 390rem,
-        330rem 390rem,
-        330rem 389rem,
-        1rem 389rem,
-        1rem 1rem,
-        329rem 1rem,
-        329rem 389rem,
-        330rem 389rem,
-        330rem 0,
-        0 0
-    );
-}
-.mediaLarge .Card_border_anim_9d {
-    width: 400rem;
-    height: 410rem;
-    clip-path: polygon(
-        0 0,
-        0 410rem,
-        400rem 410rem,
-        400rem 409rem,
-        1rem 409rem,
-        1rem 1rem,
-        399rem 1rem,
-        399rem 409rem,
-        400rem 409rem,
-        400rem 0,
-        0 0
-    );
-}
 .Card_decorator_a9 {
-    width: 95%;
     height: 1rem;
-    margin-top: -1rem;
-    background-image: url('R.images.gui.maps.icons.missions.decorations.DQ_default_line');
-    background-repeat: no-repeat;
-    background-size: 100%;
-    mix-blend-mode: normal;
+    background: url('R.images.gui.maps.icons.missions.decorations.DQ_default_line') no-repeat center / 100%;
     position: absolute;
-    z-index: 5;
+    top: -1rem;
+    right: 3%;
+    left: 3%;
 }
-.Card_border_anim_bg_21 {
-    display: none;
-    width: 500rem;
-    height: 410rem;
-    background-image: linear-gradient(120deg, transparent 30%, #fff 58%, transparent 59%);
-    opacity: 0.8;
-    position: absolute;
-    top: 0;
-    left: 0;
-    transform: translateX(-400rem);
-}
-.Card_premium_ca.Card_locked_f9 {
-    background-image: url('R.images.gui.maps.icons.missions.icons.PM_disabled_pattern');
-}
-.Card_premium_ca.Card_locked_f9 .Card_decorator_a9 {
-    background-image: url('R.images.gui.maps.icons.missions.decorations.DQ_default_line');
-    opacity: 1;
-}
-.Card_premium_ca.Card_locked_f9 > * {
-    opacity: 0.3;
-}
-.Card_premium_ca.Card_locked_f9 .Card_premArrow_67 {
-    opacity: 1;
-}
-.Card_premium_ca.Card_locked_f9 .Card_premiumLock_82 {
-    width: 80rem;
-    height: 80rem;
-    background-image: url('R.images.gui.maps.icons.missions.icons.lock');
-    background-repeat: no-repeat;
-    background-size: 100%;
-    opacity: 1;
-    position: absolute;
-    top: -14rem;
-    left: -15rem;
-    z-index: 9;
-}
-.Card_premium_ca.Card_active_3a {
-    border: 1rem solid rgba(255, 178, 102, 0.3);
-    box-shadow: inset 0 0 24px rgba(255, 85, 0, 0.1);
-    background: rgba(255, 85, 0, 0.1);
-}
-.Card_premium_ca.Card_active_3a .Card_decorator_a9 {
-    height: 80rem;
-    background-image: url('R.images.gui.maps.icons.missions.decorations.PM_flare');
-    overflow: visible;
-    top: -38rem;
-}
-.Card_premium_ca .Card_premArrow_67 {
-    width: 30rem;
-    margin-left: 1rem;
-    background-image: url('R.images.gui.maps.icons.missions.icons.PM_arrow');
-}
-.Card_premium_ca.Card_small_1a .Card_premArrow_67 {
-    width: 22rem;
-    margin-left: 0;
-    background-image: url('R.images.gui.maps.icons.missions.icons.PM_arrow_small');
-    background-size: 11rem 28rem;
-}
-.Card_premium_ca.Card_completed_af .Card_premArrow_67,
-.Card_premium_ca.Card_completed_final_a7 .Card_premArrow_67 {
-    background-image: url('R.images.gui.maps.icons.missions.icons.PM_arrow_completed');
-}
-.Card_premium_ca.Card_completed_af.Card_small_1a .Card_premArrow_67,
-.Card_premium_ca.Card_completed_final_a7.Card_small_1a .Card_premArrow_67 {
-    background-image: url('R.images.gui.maps.icons.missions.icons.PM_arrow_completed_small');
-}
-.Card_completed_af {
-    border: 1rem solid rgba(137, 167, 1, 0.25);
-    box-shadow: inset 0 0 24px rgba(137, 167, 1, 0.05);
-    background: rgba(137, 167, 1, 0.05);
-}
-.Card_completed_af .Card_border_anim_bg_21 {
-    display: block;
-    animation: Card_border-anim_78 0.6s 0.4s ease-in forwards;
-}
-.Card_completed_af .Card_completed_anim_bg_f6 {
-    animation: Card_bg-blink_ff 1s 0.5s cubic-bezier(0.45, 0.05, 0.55, 0.95) 2 forwards;
-}
-.Card_completed_af .Card_decorator_a9 {
+.Card_base__completed_94 .Card_decorator_a9 {
     background-image: url('R.images.gui.maps.icons.missions.decorations.DQ_complete_line');
-}
-.Card_completed_final_a7 {
-    border: 1rem solid rgba(137, 167, 1, 0.25);
-    box-shadow: inset 0 0 24px rgba(137, 167, 1, 0.05);
-    background: rgba(137, 167, 1, 0.05);
-}
-.Card_completed_final_a7 .Card_decorator_a9 {
-    background-image: url('R.images.gui.maps.icons.missions.decorations.DQ_complete_line');
-}
-.Card_completed_anim_bg_f6 {
-    width: 100%;
-    height: 100%;
-    border-radius: 3rem;
-    background-color: rgba(76, 111, 29, 0);
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
 }
 .Card_battle_conditions_wrapper_83 {
     display: flex;
@@ -4657,24 +4503,9 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     align-items: center;
     margin-bottom: 25rem;
 }
-.Card_small_1a .Card_battle_conditions_inner_wrapper_1b {
-    margin-bottom: 15rem;
-}
-.Card_battle_conditions_inner_wrapper__no_margin_08,
-.Card_small_1a .Card_battle_conditions_inner_wrapper__no_margin_08 {
-    margin-bottom: 0;
-}
 .Card_rewards_wrapper_c5 {
-    align-items: center;
     margin-bottom: 25rem;
     position: relative;
-    z-index: 3;
-}
-.Card_medium_86 .Card_rewards_wrapper_c5 {
-    margin-bottom: 20rem;
-}
-.Card_small_1a .Card_rewards_wrapper_c5 {
-    margin-bottom: 21rem;
 }
 .Card_rewardBlock_wrapper_92 {
     display: flex;
@@ -4682,162 +4513,15 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     align-content: center;
 }
 .Card_rewardsText_ed {
-    margin-bottom: 2rem;
     color: #e9e2bf;
     font-size: 16rem;
-    line-height: 20rem;
+    font-weight: 400;
+    line-height: 1.25;
+    margin-bottom: 2rem;
     text-align: center;
 }
-.Card_completed_af .Card_rewardsText_ed {
+.Card_base__completed_94 .Card_rewardsText_ed {
     color: #7ab300;
-}
-.Card_reroll_btn_27 {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    top: 0;
-    right: 0;
-    cursor: pointer;
-}
-.Card_reroll_btn_images_70 {
-    position: relative;
-}
-.Card_reroll_btn_images_70 .Card_reroll_img_57 {
-    width: 48rem;
-    height: 48rem;
-    background-image: url('R.images.gui.maps.icons.missions.icons.reroll_button');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 100%;
-}
-.Card_reroll_btn_images_70 .Card_reroll_img_hover_bf {
-    width: 48rem;
-    height: 48rem;
-    background-image: url('R.images.gui.maps.icons.missions.icons.reroll_button_hover');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 100%;
-    opacity: 0;
-    position: absolute;
-    top: 0;
-    right: 0;
-    transition: opacity 0.2s ease;
-}
-.Card_reroll_btn_images_70 .Card_reroll_img_disabled_3e {
-    display: none;
-    width: 48rem;
-    height: 48rem;
-    background-image: url('R.images.gui.maps.icons.missions.icons.reroll_button_disabled');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 100%;
-    opacity: 0;
-    position: absolute;
-    top: 0;
-    right: 0;
-}
-.Card_reroll_btn_27 p {
-    max-width: 125rem;
-    margin: 0 -5rem 0 0;
-    color: #fd9;
-    font-size: 14rem;
-    text-align: right;
-    text-shadow:
-        0 0 15px #e52,
-        0 0 8px #ff2a00,
-        0 0 4px rgba(255, 127, 0, 0.25);
-    white-space: pre;
-    opacity: 0;
-    transition: opacity 0.2s ease;
-}
-.Card_reroll_btn_27:hover p {
-    opacity: 1;
-}
-.Card_reroll_btn_27:hover .Card_reroll_img_hover_bf {
-    opacity: 1;
-}
-.Card_reroll_btn__disabled_49 p {
-    display: none;
-}
-.Card_reroll_btn__disabled_49 .Card_reroll_btn_images_70 .Card_reroll_img_57 {
-    display: none;
-}
-.Card_reroll_btn__disabled_49 .Card_reroll_btn_images_70 .Card_reroll_img_hover_bf {
-    display: none;
-}
-.Card_reroll_btn__disabled_49 .Card_reroll_btn_images_70 .Card_reroll_img_disabled_3e {
-    display: flex;
-    opacity: 1;
-    cursor: auto;
-}
-.Card_completed_af .Card_reroll_btn_27,
-.Card_completed_final_a7 .Card_reroll_btn_27 {
-    display: none;
-}
-.Card_premArrow_67 {
-    width: 30rem;
-    height: 100%;
-    background-image: url('R.images.gui.maps.icons.missions.icons.PM_arrow');
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-    background-size: 14rem 38rem;
-    position: absolute;
-    left: 100%;
-}
-.Card_conditionText_e1 {
-    color: #c9c9b6;
-    font-size: 16rem;
-    line-height: 20rem;
-}
-.Card_completedMissions_c7 {
-    color: #f2f2f7;
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
-    position: absolute;
-    bottom: -30rem;
-    left: 50%;
-    transform: translateX(-50%);
-}
-.Card_completed_af .Card_completedMissions_c7,
-.Card_completed_final_a7 .Card_completedMissions_c7,
-.Card_completedMissions__current_75 {
-    color: #80d43a;
-}
-@keyframes Card_border-anim_78 {
-    0% {
-        transform: translateX(-400rem);
-    }
-
-    100% {
-        transform: translateX(400rem);
-    }
-}
-@keyframes Card_bg-blink_ff {
-    0% {
-        background-color: rgba(76, 111, 29, 0);
-    }
-
-    50% {
-        background-color: rgba(76, 111, 29, 0.3);
-    }
-
-    100% {
-        background-color: rgba(76, 111, 29, 0);
-    }
-}
-@keyframes Card_completed-icon_23 {
-    from {
-        opacity: 0;
-        transform: scale(1.6);
-    }
-
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
 }
 
 .Cards_base_01 {

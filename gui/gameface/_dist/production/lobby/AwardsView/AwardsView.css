@@ -404,128 +404,6 @@
     bottom: 15rem;
 }
 
-.FormatText_base_d0 {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-@keyframes Vehicle_show_2f {
-    0% {
-        opacity: 0;
-        visibility: hidden;
-    }
-
-    100% {
-        opacity: 1;
-        visibility: visible;
-    }
-}
-
-@keyframes Vehicle_translate-down_4f {
-    0% {
-        opacity: 0;
-        transform: translateY(-20rem);
-    }
-
-    100% {
-        opacity: 1;
-        transform: none;
-    }
-}
-
-@keyframes Vehicle_translate-up_a7 {
-    0% {
-        opacity: 0;
-        transform: translateY(20rem);
-    }
-
-    100% {
-        opacity: 1;
-        transform: none;
-    }
-}
-
-.Vehicle_base_95 {
-    display: flex;
-    align-items: center;
-}
-
-.Vehicle_base__hasAnimation_56 {
-    opacity: 0;
-    animation: Vehicle_show_2f 0.1s 0.1s ease-in-out forwards;
-}
-
-.Vehicle_type_11 {
-    width: 81rem;
-    height: 73rem;
-    margin: 0 -14rem;
-    background: no-repeat center / contain;
-}
-
-.Vehicle_flag_f9 {
-    width: 27rem;
-    height: 17rem;
-    margin-right: 12rem;
-    background: no-repeat center / contain;
-}
-
-.Vehicle_name_63,
-.Vehicle_level_df {
-    color: #e9e2bf;
-    font-size: 15rem;
-    font-weight: 700;
-    line-height: 1.15;
-    margin-top: -3rem;
-}
-
-.mediaMedium .Vehicle_name_63,
-.mediaMedium .Vehicle_level_df {
-    font-size: 18rem;
-}
-
-.Vehicle_base__large_e9 .Vehicle_name_63,
-.Vehicle_base__large_e9 .Vehicle_level_df {
-    font-size: 22rem;
-}
-
-.mediaMedium .Vehicle_base__large_e9 .Vehicle_name_63,
-.mediaMedium .Vehicle_base__large_e9 .Vehicle_level_df {
-    font-size: 28rem;
-}
-
-.mediaLarge .Vehicle_base__large_e9 .Vehicle_name_63,
-.mediaLarge .Vehicle_base__large_e9 .Vehicle_level_df {
-    font-size: 36rem;
-}
-
-.Vehicle_base__single_eb .Vehicle_name_63,
-.Vehicle_base__single_eb .Vehicle_level_df {
-    font-size: 18rem;
-}
-
-.mediaMedium .Vehicle_base__single_eb .Vehicle_name_63,
-.mediaMedium .Vehicle_base__single_eb .Vehicle_level_df {
-    font-size: 22rem;
-}
-
-.Vehicle_base__primary_47 .Vehicle_name_63,
-.Vehicle_base__primary_47 .Vehicle_level_df {
-    color: #f2f2f7;
-}
-
-.Vehicle_base__secondary_0e .Vehicle_name_63,
-.Vehicle_base__secondary_0e .Vehicle_level_df {
-    color: #e9e2bf;
-}
-
-.Vehicle_base__large_e9 .Vehicle_name_63 {
-    margin-left: 5rem;
-}
-
-.Vehicle_base__large_e9 .Vehicle_level_df {
-    margin-right: 5rem;
-}
-
 @keyframes Reward_slideUp_93 {
     0% {
         opacity: 0;
@@ -763,23 +641,6 @@
 .Reward_base__extraSmall_f1 .Reward_rewardImage__postBattle_01 {
     top: -40rem;
 }
-.Reward_count_bc {
-    color: #e9e2bf;
-    font-size: 20rem;
-    font-weight: 400;
-    position: absolute;
-    right: 55rem;
-    bottom: 30rem;
-}
-.Reward_base__large_b7 .Reward_count_bc {
-    bottom: 38rem;
-}
-.Reward_base__small_63 .Reward_count_bc,
-.Reward_base__extraSmall_f1 .Reward_count_bc {
-    font-size: 16rem;
-    right: 10rem;
-    bottom: 15rem;
-}
 .Reward_rewardText_73 {
     color: #e9e2bf;
     font-size: 20rem;
@@ -815,37 +676,6 @@
 .Reward_base__large_b7 .Reward_currency_86,
 .Reward_base__extraLarge_d0 .Reward_currency_86 {
     font-size: 33rem;
-}
-.Reward_rentWrapper_0a {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    position: absolute;
-    bottom: -30rem;
-    left: 50%;
-    transform: translateX(-50%);
-}
-.Reward_base__small_63 .Reward_rentWrapper_0a,
-.Reward_base__extraSmall_f1 .Reward_rentWrapper_0a {
-    bottom: -70rem;
-}
-.Reward_mainRewardLabel_fa {
-    bottom: -10rem;
-}
-.Reward_mainRewardRent_e1 {
-    color: #ffdd99;
-    font-size: 16rem;
-    font-weight: 400;
-    line-height: 1.25;
-    text-shadow:
-        0 0 4rem rgba(255, 127, 0, 0.25),
-        0 0 8rem rgba(255, 42, 0, 0.6),
-        0 0 15rem #e52;
-}
-.Reward_icon_b1 {
-    width: 40rem;
-    height: 40rem;
-    background: url('R.images.white_tiger.gui.maps.icons.rewards.rent') no-repeat center / contain;
 }
 
 @keyframes mainRewards_slideUp_9d {
@@ -1054,7 +884,7 @@
 .CButton_base__disabled_d9 {
     cursor: default;
 }
-/* Element .back and background-image in element .base need for fix bug in GF https://jira.wargaming.net/browse/WOTD-158525
+/* Element .back and background-image in element .base need for fix bug in GF https://jira-archive.lesta.group/browse/WOTD-158525
 The bug is that under certain conditions, when using border-image, stripes appear. Strip is a single-pixel gap
 between 'border-image-width' and 'fill'.
 This bug is reproduced in Google Chrome 81.0.4044.113

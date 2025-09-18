@@ -29,7 +29,7 @@
                 }
                 (t.r(i),
                     t.d(i, {
-                        addModelObserver: () => P,
+                        addModelObserver: () => k,
                         addPreloadTexture: () => f,
                         children: () => r,
                         displayStatus: () => B,
@@ -41,7 +41,7 @@
                         getBrowserTexturePath: () => S,
                         getDisplayStatus: () => V,
                         getScale: () => M,
-                        getSize: () => k,
+                        getSize: () => x,
                         getViewGlobalPosition: () => R,
                         isEventHandled: () => W,
                         isFocused: () => I,
@@ -52,7 +52,7 @@
                         setAnimateWindow: () => U,
                         setEventHandled: () => H,
                         setInputPaddingsRem: () => T,
-                        setSidePaddingsRem: () => x,
+                        setSidePaddingsRem: () => P,
                         whenTutorialReady: () => z,
                     }));
                 const l = o('clientResized'),
@@ -216,13 +216,13 @@
                 function S(u, e, t, n = 1) {
                     return viewEnv.getWebBrowserTexturePath(u, e, t, n);
                 }
-                function P(u, e, t) {
+                function k(u, e, t) {
                     return viewEnv.addDataChangedCallback(u, e, t);
                 }
-                function x(u) {
+                function P(u) {
                     viewEnv.setHitAreaPaddingsRem(u.top, u.right, u.bottom, u.left, 15);
                 }
-                function k(u = 'px') {
+                function x(u = 'px') {
                     return 'rem' === u ? viewEnv.getViewSizeRem() : viewEnv.getViewSizePx();
                 }
                 function y(u, e, t = 'px') {
@@ -954,11 +954,11 @@
                         f = h[1],
                         T = (0, n.useState)(!1),
                         S = T[0],
-                        P = T[1],
-                        x = (0, n.useCallback)(() => {
+                        k = T[1],
+                        P = (0, n.useCallback)(() => {
                             i || (D.current && (D.current.focus(), C(!0)));
                         }, [i]),
-                        k = (0, n.useCallback)(
+                        x = (0, n.useCallback)(
                             (u) => {
                                 m && null !== D.current && !D.current.contains(u.target) && C(!1);
                             },
@@ -972,7 +972,7 @@
                         ),
                         O = (0, n.useCallback)(
                             (u) => {
-                                i || (null !== s && w(s), E && E(u), P(!0));
+                                i || (null !== s && w(s), E && E(u), k(!0));
                             },
                             [i, s, E],
                         ),
@@ -990,9 +990,9 @@
                         ),
                         L = (0, n.useCallback)(
                             (u) => {
-                                i || (null !== l && w(l), F && F(u), t && x(), f(!0));
+                                i || (null !== l && w(l), F && F(u), t && P(), f(!0));
                             },
-                            [i, l, F, x, t],
+                            [i, l, F, P, t],
                         ),
                         U = (0, n.useCallback)(
                             (u) => {
@@ -1016,12 +1016,12 @@
                     return (
                         (0, n.useEffect)(
                             () => (
-                                document.addEventListener('mousedown', k),
+                                document.addEventListener('mousedown', x),
                                 () => {
-                                    document.removeEventListener('mousedown', k);
+                                    document.removeEventListener('mousedown', x);
                                 }
                             ),
-                            [k],
+                            [x],
                         ),
                         (0, n.useEffect)(() => {
                             C(t);
@@ -1062,7 +1062,7 @@
                 };
                 T.defaultProps = { type: b.primary, isFocused: !1, soundHover: 'highlight', soundClick: 'play' };
                 const S = (0, n.memo)(T),
-                    P = {
+                    k = {
                         base: 'TextButton_base_b6',
                         base__right: 'TextButton_base__right_39',
                         icon: 'TextButton_icon_17',
@@ -1080,7 +1080,7 @@
                         base__left: 'TextButton_base__left_ff',
                         shine: 'TextButton_shine_e2',
                     },
-                    x = [
+                    P = [
                         'caption',
                         'onClick',
                         'goto',
@@ -1094,9 +1094,9 @@
                         'soundClick',
                         'soundHover',
                     ];
-                function k() {
+                function x() {
                     return (
-                        (k =
+                        (x =
                             Object.assign ||
                             function (u) {
                                 for (var e = 1; e < arguments.length; e++) {
@@ -1105,7 +1105,7 @@
                                 }
                                 return u;
                             }),
-                        k.apply(this, arguments)
+                        x.apply(this, arguments)
                     );
                 }
                 class y extends a().PureComponent {
@@ -1154,15 +1154,15 @@
                                         r = Object.keys(u);
                                     for (n = 0; n < r.length; n++) ((t = r[n]), e.indexOf(t) >= 0 || (a[t] = u[t]));
                                     return a;
-                                })(u, x)),
-                            _ = g()(P.base, P[`base__${i}`], P[`base__${r}`], null == o ? void 0 : o.base),
-                            c = g()(P.icon, P[`icon__${i}`], P[`icon__${r}`], null == o ? void 0 : o.icon),
-                            d = g()(P.glow, null == o ? void 0 : o.glow),
-                            D = g()(P.caption, P[`caption__${i}`], null == o ? void 0 : o.caption),
-                            B = g()(P.goto, null == o ? void 0 : o.goto);
+                                })(u, P)),
+                            _ = g()(k.base, k[`base__${i}`], k[`base__${r}`], null == o ? void 0 : o.base),
+                            c = g()(k.icon, k[`icon__${i}`], k[`icon__${r}`], null == o ? void 0 : o.icon),
+                            d = g()(k.glow, null == o ? void 0 : o.glow),
+                            D = g()(k.caption, k[`caption__${i}`], null == o ? void 0 : o.caption),
+                            B = g()(k.goto, null == o ? void 0 : o.goto);
                         return a().createElement(
                             'div',
-                            k(
+                            x(
                                 {
                                     className: _,
                                     onMouseEnter: this._onMouseEnter(s),
@@ -1175,7 +1175,7 @@
                                 },
                                 F,
                             ),
-                            'info' !== i && a().createElement('div', { className: P.shine }),
+                            'info' !== i && a().createElement('div', { className: k.shine }),
                             a().createElement('div', { className: c }, a().createElement('div', { className: d })),
                             a().createElement('div', { className: D }, e),
                             n && a().createElement('div', { className: B }, n),
@@ -1427,7 +1427,13 @@
                         (u.LootBoxToken = 'lootBoxToken'),
                         (u.GoldenTicket = 'birthday2025_golden_ticket'),
                         (u.PostStamp = 'giftsystem_4_stamp'),
-                        (u.Quests = 'quests'));
+                        (u.Quests = 'quests'),
+                        (u.WtStamp = 'stamp'),
+                        (u.WtHunter = 'wt_hunter'),
+                        (u.WtHunterCollection = 'hunter_collection'),
+                        (u.WtTicket = 'wtevent_ticket'),
+                        (u.WtMainPrizeDiscount = 'main_prize_discount'),
+                        (u.WtTicket25 = 'wtevent_ticket25'));
                 })(Z || (Z = {})),
                     (function (u) {
                         ((u.Gold = 'gold'),
@@ -1521,17 +1527,15 @@
                             (u.PROGRESSION_STYLE_UPGRADED_3 = 'progressionStyleUpgraded_3'),
                             (u.PROGRESSION_STYLE_UPGRADED_4 = 'progressionStyleUpgraded_4'));
                     })(nu || (nu = {})));
-                class au extends a().PureComponent {
-                    render() {
-                        let u;
-                        if ('gold' === this.props.format) u = N.B3.GOLD;
-                        else u = N.B3.INTEGRAL;
-                        const e = N.Z5.getNumberFormat(this.props.value, u);
-                        return void 0 !== this.props.value && void 0 !== e ? e : null;
-                    }
-                }
-                au.defaultProps = { format: 'integral' };
-                const ru = [
+                const au = ({ format: u, value: e }) => {
+                        const t = ((u, e = 'integral') => {
+                            let t;
+                            t = 'gold' === e ? N.B3.GOLD : N.B3.INTEGRAL;
+                            return void 0 === u ? '' : N.Z5.getNumberFormat(u, t);
+                        })(e, u);
+                        return t ? a().createElement('span', null, t) : null;
+                    },
+                    ru = [
                         Z.Items,
                         Z.Equipment,
                         Z.Xp,
@@ -1569,6 +1573,11 @@
                         Z.SelectableBonus,
                         Z.GoldenTicket,
                         Z.PostStamp,
+                        Z.WtStamp,
+                        Z.WtTicket,
+                        Z.WtMainPrizeDiscount,
+                        Z.WtHunter,
+                        Z.WtHunterCollection,
                     ],
                     iu = [Z.Gold, Z.Credits, Z.Crystal, Z.FreeXp],
                     ou = [Z.BattlePassPoints],

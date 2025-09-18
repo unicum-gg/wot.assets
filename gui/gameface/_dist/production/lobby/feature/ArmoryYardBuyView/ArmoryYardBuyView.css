@@ -333,28 +333,16 @@
     width: 280rem;
     height: 280rem;
     position: absolute;
-    top: -73rem;
-    left: -74rem;
+    top: 50%;
+    left: 50%;
     z-index: -1;
+    transform: translate(-50%, -50%) scale(var(--scale));
+    transform-origin: center center;
     pointer-events: none;
 }
 
-.FinalReward_sequence__scaledX2_81 {
-    top: 65rem;
-    left: 77rem;
-    transform: scale(2);
-}
-
 .mediaMedium .FinalReward_sequence_02 {
-    top: -71rem;
-    left: -43rem;
-    transform: scale(1.35);
-}
-
-.mediaMedium .FinalReward_sequence__scaledX2_81 {
-    top: 111rem;
-    left: 141rem;
-    transform: scale(2.5);
+    transform: translate(-50%, -50%) scale(calc(1.35 * var(--scale)));
 }
 
 .FinalReward_preview_53 {
@@ -375,6 +363,9 @@
 }
 
 .SequencedBg_base_a9 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 280rem;
     height: 280rem;
 }

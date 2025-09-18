@@ -595,157 +595,6 @@ body {
     margin-left: 5rem;
 }
 
-.TextOverflow_base_3b {
-    flex: 0 1 auto;
-    width: auto;
-    line-height: 1.3;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-}
-
-.Content_base_0b {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    width: 675rem;
-    height: 39rem;
-    color: #f2f2f7;
-    position: relative;
-}
-
-.Content_base__platoon_e3 {
-    height: 23rem;
-    margin-top: 10rem;
-}
-
-.Content_name_f9 {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    width: 255rem;
-    margin-left: 20rem;
-    font-size: 16rem;
-    position: absolute;
-}
-
-.Content_base__rowBrPlayer_3b .Content_name_f9 {
-    color: #feab34;
-}
-
-.Content_userName_7c {
-    flex: 0 1 auto;
-}
-
-.Content_clanTag_e7 {
-    flex: 0 0 auto;
-    margin-left: 5rem;
-}
-
-.Content_anonymizer_7f {
-    display: flex;
-    width: 20rem;
-    height: 20rem;
-    margin-left: 5rem;
-    margin-top: 4rem;
-    background: url('R.images.gui.maps.icons.battleRoyale.battleResult.leaderboard.anon_br_postbattle') no-repeat
-        center / contain;
-    opacity: 0;
-    transition: opacity 0.1s;
-    pointer-events: auto;
-}
-
-.Content_base__hover_cf .Content_anonymizer_7f {
-    opacity: 1;
-}
-
-.Content_vehicle_3e {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: 283rem;
-    position: absolute;
-}
-
-.Content_vehicleTypeIcon_5c {
-    width: 24rem;
-    height: 24rem;
-    margin-top: 1rem;
-    margin-right: 4rem;
-    background: no-repeat center / contain;
-}
-
-.Content_vehicleName_18 {
-    color: rgba(255, 255, 255, 0.5);
-    font-size: 16rem;
-}
-
-.Content_level_cb {
-    justify-content: center;
-    width: 22rem;
-    margin-left: 490rem;
-    font-size: 16rem;
-    position: absolute;
-}
-
-.Content_damage_cb {
-    justify-content: center;
-    width: 35rem;
-    margin-left: 577rem;
-    font-size: 12rem;
-    position: absolute;
-}
-
-.Content_kills_6c {
-    justify-content: center;
-    width: 16rem;
-    margin-left: 642rem;
-    font-size: 12rem;
-    position: absolute;
-}
-
-.LeaderboardRow_base_19 {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 700rem;
-    border-bottom: 1rem solid rgba(255, 255, 255, 0.1);
-    color: #f2f2f7;
-    position: relative;
-}
-
-.LeaderboardRow_base__leader_6c {
-    border-top: 1rem solid rgba(255, 255, 255, 0.1);
-    background-image: radial-gradient(50% 16380% at 50% 50%, rgba(255, 255, 255, 0.1) 50%, transparent 100%);
-}
-
-.LeaderboardRow_place_61 {
-    width: 25rem;
-    font-size: 16rem;
-    text-align: center;
-    opacity: 0.6;
-}
-
-.LeaderboardRow_base__leader_6c .LeaderboardRow_place_61 {
-    height: 20rem;
-    background: url('R.images.gui.maps.icons.battleRoyale.battleResult.leaderboard.place_1') no-repeat center / contain;
-    color: transparent;
-    opacity: 1;
-}
-
-.LeaderboardRow_players_c7 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.LeaderboardRow_base__platoon_95 .LeaderboardRow_players_c7 {
-    padding-bottom: 10rem;
-}
-
 .ScrollArea_base_47 {
     width: 100%;
     min-width: 1rem;
@@ -920,6 +769,157 @@ body {
 }
 .ps__button-end-y {
     bottom: -14rem;
+}
+
+.TextOverflow_base_3b {
+    flex: 0 1 auto;
+    width: auto;
+    line-height: 1.3;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.Content_base_0b {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 675rem;
+    height: 39rem;
+    color: #f2f2f7;
+    position: relative;
+}
+
+.Content_base__platoon_e3 {
+    height: 23rem;
+    margin-top: 10rem;
+}
+
+.Content_name_f9 {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 255rem;
+    margin-left: 20rem;
+    font-size: 16rem;
+    position: absolute;
+}
+
+.Content_base__rowBrPlayer_3b .Content_name_f9 {
+    color: #feab34;
+}
+
+.Content_userName_7c {
+    flex: 0 1 auto;
+}
+
+.Content_clanTag_e7 {
+    flex: 0 0 auto;
+    margin-left: 5rem;
+}
+
+.Content_anonymizer_7f {
+    display: flex;
+    width: 20rem;
+    height: 20rem;
+    margin-left: 5rem;
+    margin-top: 4rem;
+    background: url('R.images.gui.maps.icons.battleRoyale.battleResult.leaderboard.anon_br_postbattle') no-repeat
+        center / contain;
+    opacity: 0;
+    transition: opacity 0.1s;
+    pointer-events: auto;
+}
+
+.Content_base__hover_cf .Content_anonymizer_7f {
+    opacity: 1;
+}
+
+.Content_vehicle_3e {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 283rem;
+    position: absolute;
+}
+
+.Content_vehicleTypeIcon_5c {
+    width: 24rem;
+    height: 24rem;
+    margin-top: 1rem;
+    margin-right: 4rem;
+    background: no-repeat center / contain;
+}
+
+.Content_vehicleName_18 {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 16rem;
+}
+
+.Content_level_cb {
+    justify-content: center;
+    width: 22rem;
+    margin-left: 490rem;
+    font-size: 16rem;
+    position: absolute;
+}
+
+.Content_damage_cb {
+    justify-content: center;
+    width: 35rem;
+    margin-left: 577rem;
+    font-size: 12rem;
+    position: absolute;
+}
+
+.Content_kills_6c {
+    justify-content: center;
+    width: 16rem;
+    margin-left: 642rem;
+    font-size: 12rem;
+    position: absolute;
+}
+
+.LeaderboardRow_base_19 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 700rem;
+    border-bottom: 1rem solid rgba(255, 255, 255, 0.1);
+    color: #f2f2f7;
+    position: relative;
+}
+
+.LeaderboardRow_base__leader_6c {
+    border-top: 1rem solid rgba(255, 255, 255, 0.1);
+    background-image: radial-gradient(50% 16380% at 50% 50%, rgba(255, 255, 255, 0.1) 50%, transparent 100%);
+}
+
+.LeaderboardRow_place_61 {
+    width: 25rem;
+    font-size: 16rem;
+    text-align: center;
+    opacity: 0.6;
+}
+
+.LeaderboardRow_base__leader_6c .LeaderboardRow_place_61 {
+    height: 20rem;
+    background: url('R.images.gui.maps.icons.battleRoyale.battleResult.leaderboard.place_1') no-repeat center / contain;
+    color: transparent;
+    opacity: 1;
+}
+
+.LeaderboardRow_players_c7 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.LeaderboardRow_base__platoon_95 .LeaderboardRow_players_c7 {
+    padding-bottom: 10rem;
 }
 
 .Leaderboard_base_49 {

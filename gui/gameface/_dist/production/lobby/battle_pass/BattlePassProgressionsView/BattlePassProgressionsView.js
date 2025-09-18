@@ -6,16 +6,14 @@
                 var u = a(6179),
                     r = a.n(u),
                     n = a(4179);
-                class o extends r().PureComponent {
-                    render() {
-                        let e;
-                        if ('gold' === this.props.format) e = n.B3.GOLD;
-                        else e = n.B3.INTEGRAL;
-                        const t = n.Z5.getNumberFormat(this.props.value, e);
-                        return void 0 !== this.props.value && void 0 !== t ? t : null;
-                    }
-                }
-                o.defaultProps = { format: 'integral' };
+                const o = ({ format: e, value: t }) => {
+                    const a = ((e, t = 'integral') => {
+                        let a;
+                        a = 'gold' === t ? n.B3.GOLD : n.B3.INTEGRAL;
+                        return void 0 === e ? '' : n.Z5.getNumberFormat(e, a);
+                    })(t, e);
+                    return a ? r().createElement('span', null, a) : null;
+                };
             },
             280: (e, t, a) => {
                 'use strict';
@@ -4945,7 +4943,13 @@
                         (e.LootBoxToken = 'lootBoxToken'),
                         (e.GoldenTicket = 'birthday2025_golden_ticket'),
                         (e.PostStamp = 'giftsystem_4_stamp'),
-                        (e.Quests = 'quests'));
+                        (e.Quests = 'quests'),
+                        (e.WtStamp = 'stamp'),
+                        (e.WtHunter = 'wt_hunter'),
+                        (e.WtHunterCollection = 'hunter_collection'),
+                        (e.WtTicket = 'wtevent_ticket'),
+                        (e.WtMainPrizeDiscount = 'main_prize_discount'),
+                        (e.WtTicket25 = 'wtevent_ticket25'));
                 })(tn || (tn = {})),
                     (function (e) {
                         ((e.Gold = 'gold'),
@@ -5078,6 +5082,11 @@
                         tn.SelectableBonus,
                         tn.GoldenTicket,
                         tn.PostStamp,
+                        tn.WtStamp,
+                        tn.WtTicket,
+                        tn.WtMainPrizeDiscount,
+                        tn.WtHunter,
+                        tn.WtHunterCollection,
                     ],
                     _n = [tn.Gold, tn.Credits, tn.Crystal, tn.FreeXp],
                     dn = [tn.BattlePassPoints],

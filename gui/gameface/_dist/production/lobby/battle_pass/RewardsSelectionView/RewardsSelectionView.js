@@ -2534,8 +2534,8 @@
                         return r || o;
                     };
                 var G = u(926),
-                    $ = u.n(G);
-                let z;
+                    z = u.n(G);
+                let $;
                 function j(e, t) {
                     return e.replace(/(\{|%\()\w+(\}|\)s)/g, (e) => {
                         const u = 0 === e.indexOf('%') ? 2 : 1;
@@ -2544,7 +2544,7 @@
                 }
                 !(function (e) {
                     ((e[(e.left = 0)] = 'left'), (e[(e.right = 1)] = 'right'));
-                })(z || (z = {}));
+                })($ || ($ = {}));
                 const q = (e) => e.replace(/&nbsp;/g, ' ');
                 (() => {
                     const e = new RegExp(
@@ -2695,24 +2695,24 @@
                 }
                 const ae = {
                         [I.ExtraSmall]: '',
-                        [I.Small]: $().SMALL_WIDTH,
-                        [I.Medium]: `${$().SMALL_WIDTH} ${$().MEDIUM_WIDTH}`,
-                        [I.Large]: `${$().SMALL_WIDTH} ${$().MEDIUM_WIDTH} ${$().LARGE_WIDTH}`,
-                        [I.ExtraLarge]: `${$().SMALL_WIDTH} ${$().MEDIUM_WIDTH} ${$().LARGE_WIDTH} ${$().EXTRA_LARGE_WIDTH}`,
+                        [I.Small]: z().SMALL_WIDTH,
+                        [I.Medium]: `${z().SMALL_WIDTH} ${z().MEDIUM_WIDTH}`,
+                        [I.Large]: `${z().SMALL_WIDTH} ${z().MEDIUM_WIDTH} ${z().LARGE_WIDTH}`,
+                        [I.ExtraLarge]: `${z().SMALL_WIDTH} ${z().MEDIUM_WIDTH} ${z().LARGE_WIDTH} ${z().EXTRA_LARGE_WIDTH}`,
                     },
                     le = {
                         [Y.ExtraSmall]: '',
-                        [Y.Small]: $().SMALL_HEIGHT,
-                        [Y.Medium]: `${$().SMALL_HEIGHT} ${$().MEDIUM_HEIGHT}`,
-                        [Y.Large]: `${$().SMALL_HEIGHT} ${$().MEDIUM_HEIGHT} ${$().LARGE_HEIGHT}`,
-                        [Y.ExtraLarge]: `${$().SMALL_HEIGHT} ${$().MEDIUM_HEIGHT} ${$().LARGE_HEIGHT} ${$().EXTRA_LARGE_HEIGHT}`,
+                        [Y.Small]: z().SMALL_HEIGHT,
+                        [Y.Medium]: `${z().SMALL_HEIGHT} ${z().MEDIUM_HEIGHT}`,
+                        [Y.Large]: `${z().SMALL_HEIGHT} ${z().MEDIUM_HEIGHT} ${z().LARGE_HEIGHT}`,
+                        [Y.ExtraLarge]: `${z().SMALL_HEIGHT} ${z().MEDIUM_HEIGHT} ${z().LARGE_HEIGHT} ${z().EXTRA_LARGE_HEIGHT}`,
                     },
                     se = {
                         [W.ExtraSmall]: '',
-                        [W.Small]: $().SMALL,
-                        [W.Medium]: `${$().SMALL} ${$().MEDIUM}`,
-                        [W.Large]: `${$().SMALL} ${$().MEDIUM} ${$().LARGE}`,
-                        [W.ExtraLarge]: `${$().SMALL} ${$().MEDIUM} ${$().LARGE} ${$().EXTRA_LARGE}`,
+                        [W.Small]: z().SMALL,
+                        [W.Medium]: `${z().SMALL} ${z().MEDIUM}`,
+                        [W.Large]: `${z().SMALL} ${z().MEDIUM} ${z().LARGE}`,
+                        [W.ExtraLarge]: `${z().SMALL} ${z().MEDIUM} ${z().LARGE} ${z().EXTRA_LARGE}`,
                     },
                     ce = (e) => {
                         let t = e.children,
@@ -3245,14 +3245,14 @@
                                 },
                                 [t],
                             ),
-                            $ = (0, n.useCallback)(() => {
+                            z = (0, n.useCallback)(() => {
                                 S &&
                                     (S.update(),
                                     (x.current = h(() => {
                                         k();
                                     })));
                             }, [S, k]),
-                            z = (0, n.useCallback)((e) => {
+                            $ = (0, n.useCallback)((e) => {
                                 0 === e.screenX &&
                                     0 === e.screenY &&
                                     (e.stopImmediatePropagation(), e.preventDefault());
@@ -3260,16 +3260,16 @@
                         (0, n.useEffect)(() => {
                             if (S && T)
                                 return (
-                                    document.addEventListener('mousemove', z),
-                                    window.addEventListener('resize', $),
+                                    document.addEventListener('mousemove', $),
+                                    window.addEventListener('resize', z),
                                     T.addEventListener('ps-scroll-x', I),
                                     T.addEventListener('ps-scroll-y', Y),
                                     T.addEventListener('over-scroll-beginning', X),
                                     T.addEventListener('over-scroll-ending', U),
                                     B(!0),
                                     () => {
-                                        (window.removeEventListener('resize', $),
-                                            document.removeEventListener('mousemove', z),
+                                        (window.removeEventListener('resize', z),
+                                            document.removeEventListener('mousemove', $),
                                             T &&
                                                 (T.removeEventListener('ps-scroll-x', I),
                                                 T.removeEventListener('ps-scroll-y', Y),
@@ -3277,7 +3277,7 @@
                                                 T.removeEventListener('over-scroll-ending', U)));
                                     }
                                 );
-                        }, [z, I, X, U, $, T, S, Y]);
+                        }, [$, I, X, U, z, T, S, Y]);
                         const j = (0, n.useRef)(T || null);
                         j.current = T || null;
                         const q = ke(j);
@@ -3362,10 +3362,10 @@
                             t,
                         );
                     },
-                    $e = ['children', 'body', 'header', 'note', 'alert', 'args'];
-                function ze() {
+                    ze = ['children', 'body', 'header', 'note', 'alert', 'args'];
+                function $e() {
                     return (
-                        (ze =
+                        ($e =
                             Object.assign ||
                             function (e) {
                                 for (var t = 1; t < arguments.length; t++) {
@@ -3374,7 +3374,7 @@
                                 }
                                 return e;
                             }),
-                        ze.apply(this, arguments)
+                        $e.apply(this, arguments)
                     );
                 }
                 const je = R.views.common.tooltip_window.simple_tooltip_content,
@@ -3393,7 +3393,7 @@
                                     o = Object.keys(e);
                                 for (n = 0; n < o.length; n++) ((u = o[n]), t.indexOf(u) >= 0 || (r[u] = e[u]));
                                 return r;
-                            })(e, $e);
+                            })(e, ze);
                         const c = (0, n.useMemo)(() => {
                             const e = Object.assign({}, l, { body: u, header: o, note: i, alert: a });
                             for (const t in e) void 0 === e[t] && delete e[t];
@@ -3401,7 +3401,7 @@
                         }, [a, u, o, i, l]);
                         return r().createElement(
                             fe,
-                            ze(
+                            $e(
                                 {
                                     contentId:
                                         ((d = null == l ? void 0 : l.hasHtmlContent),
@@ -3477,7 +3477,13 @@
                         (e.LootBoxToken = 'lootBoxToken'),
                         (e.GoldenTicket = 'birthday2025_golden_ticket'),
                         (e.PostStamp = 'giftsystem_4_stamp'),
-                        (e.Quests = 'quests'));
+                        (e.Quests = 'quests'),
+                        (e.WtStamp = 'stamp'),
+                        (e.WtHunter = 'wt_hunter'),
+                        (e.WtHunterCollection = 'hunter_collection'),
+                        (e.WtTicket = 'wtevent_ticket'),
+                        (e.WtMainPrizeDiscount = 'main_prize_discount'),
+                        (e.WtTicket25 = 'wtevent_ticket25'));
                 })(Ze || (Ze = {})),
                     (function (e) {
                         ((e.Gold = 'gold'),
@@ -3616,7 +3622,7 @@
                 };
                 var Rt;
                 !(function (e) {
-                    ((e.None = ''), (e.Trophy = 'trophy'), (e.Deluxe = 'delux'));
+                    ((e.None = ''), (e.Trophy = 'trophy'), (e.Deluxe = 'delux'), (e.Modernized = 'modernized'));
                 })(Rt || (Rt = {}));
                 const xt = R.strings.selectable_reward.reward;
                 const kt = ({ type: e, count: t, state: u, storageCount: o, packSize: i, onAdd: a, onReduce: c }) => {
@@ -3628,7 +3634,9 @@
                                     ? Rt.Trophy
                                     : e.startsWith(Rt.Deluxe)
                                       ? Rt.Deluxe
-                                      : Rt.None;
+                                      : e.startsWith(Rt.Modernized)
+                                        ? Rt.Modernized
+                                        : Rt.None;
                             })(e),
                             A = (0, n.useCallback)(() => {
                                 u === Ve ? (s('bp_click'), a(e)) : u === Ke && s('bp_click_limit');
@@ -3861,8 +3869,8 @@
                             )
                         );
                     },
-                    $t = 'Category_base_23',
-                    zt = 'Category_base__viewReady_69',
+                    zt = 'Category_base_23',
+                    $t = 'Category_base__viewReady_69',
                     jt = 'Category_glow_a9',
                     qt = 'Category_base__selected_9e',
                     Vt = 'Category_title_54',
@@ -3898,7 +3906,7 @@
                                 }),
                             [],
                         );
-                        const D = l()($t, _ && zt, d && Zt, o && qt, E && Jt);
+                        const D = l()(zt, _ && $t, d && Zt, o && qt, E && Jt);
                         return r().createElement(
                             'div',
                             { className: D, onClick: v, onMouseEnter: f },
@@ -4084,7 +4092,7 @@
                         a = i.width,
                         s = i.height,
                         c = s >= 1017 && s < w.large.height && a === w.large.width,
-                        d = l()(Bu, c && $().LARGE);
+                        d = l()(Bu, c && z().LARGE);
                     return r().createElement(
                         me.Provider,
                         { value: e },

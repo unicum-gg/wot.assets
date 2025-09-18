@@ -1310,7 +1310,13 @@
                         (e.LootBoxToken = 'lootBoxToken'),
                         (e.GoldenTicket = 'birthday2025_golden_ticket'),
                         (e.PostStamp = 'giftsystem_4_stamp'),
-                        (e.Quests = 'quests'));
+                        (e.Quests = 'quests'),
+                        (e.WtStamp = 'stamp'),
+                        (e.WtHunter = 'wt_hunter'),
+                        (e.WtHunterCollection = 'hunter_collection'),
+                        (e.WtTicket = 'wtevent_ticket'),
+                        (e.WtMainPrizeDiscount = 'main_prize_discount'),
+                        (e.WtTicket25 = 'wtevent_ticket25'));
                 })(K || (K = {})),
                     (function (e) {
                         ((e.Gold = 'gold'),
@@ -1417,18 +1423,16 @@
                             if (('string' != typeof u && (u = u.$dyn(i[e])), 'string' == typeof u)) return u;
                         }
                         return '';
-                    };
-                class oe extends a().PureComponent {
-                    render() {
-                        let e;
-                        if ('gold' === this.props.format) e = j.B3.GOLD;
-                        else e = j.B3.INTEGRAL;
-                        const t = j.Z5.getNumberFormat(this.props.value, e);
-                        return void 0 !== this.props.value && void 0 !== t ? t : null;
-                    }
-                }
-                oe.defaultProps = { format: 'integral' };
-                const se = [
+                    },
+                    oe = ({ format: e, value: t }) => {
+                        const u = ((e, t = 'integral') => {
+                            let u;
+                            u = 'gold' === t ? j.B3.GOLD : j.B3.INTEGRAL;
+                            return void 0 === e ? '' : j.Z5.getNumberFormat(e, u);
+                        })(t, e);
+                        return u ? a().createElement('span', null, u) : null;
+                    },
+                    se = [
                         K.Items,
                         K.Equipment,
                         K.Xp,
@@ -1466,6 +1470,11 @@
                         K.SelectableBonus,
                         K.GoldenTicket,
                         K.PostStamp,
+                        K.WtStamp,
+                        K.WtTicket,
+                        K.WtMainPrizeDiscount,
+                        K.WtHunter,
+                        K.WtHunterCollection,
                     ],
                     le = [K.Gold, K.Credits, K.Crystal, K.FreeXp],
                     ne = [K.BattlePassPoints],

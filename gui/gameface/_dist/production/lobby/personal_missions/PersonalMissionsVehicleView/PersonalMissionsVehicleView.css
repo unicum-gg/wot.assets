@@ -1480,15 +1480,31 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     margin-top: 20rem;
 }
 
+.AdditionalRewards_content__soloBadge_72 {
+    justify-content: flex-start;
+}
+
 .AdditionalRewards_additionalReward_02 {
     display: flex;
     align-items: center;
+    border-left: 1rem rgba(255, 255, 255, 0.3) solid;
+}
+
+.AdditionalRewards_additionalReward__achievement_2a {
+    margin-right: 50rem;
+    border-left: none;
 }
 
 .AdditionalRewards_iconWrapper_f5 {
+    margin-left: 20rem;
     margin-right: 16rem;
     background: no-repeat center / cover;
     position: relative;
+}
+
+.AdditionalRewards_additionalReward__achievement_2a .AdditionalRewards_iconWrapper_f5 {
+    margin-left: 0rem;
+    margin-right: -2rem;
 }
 
 .AdditionalRewards_rewardDone_39 {
@@ -1512,6 +1528,10 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     line-height: 1.25;
     max-width: 143rem;
     opacity: 0.8;
+}
+
+.AdditionalRewards_additionalReward__achievement_2a .AdditionalRewards_rewardText_ef {
+    max-width: 112rem;
 }
 
 .AdditionalRewards_separator_bd {

@@ -6,15 +6,16 @@
                 var r = t(6179),
                     n = t.n(r),
                     o = t(4179);
-                class a extends n().PureComponent {
-                    render() {
-                        let e;
-                        e = 'gold' === this.props.format ? o.B3.GOLD : o.B3.INTEGRAL;
-                        const u = o.Z5.getNumberFormat(this.props.value, e);
-                        return void 0 !== this.props.value && void 0 !== u ? u : null;
-                    }
-                }
-                a.defaultProps = { format: 'integral' };
+                const a = ({ format: e, value: u }) => {
+                    const t = ((e, u = 'integral') => {
+                        let t;
+                        return (
+                            (t = 'gold' === u ? o.B3.GOLD : o.B3.INTEGRAL),
+                            void 0 === e ? '' : o.Z5.getNumberFormat(e, t)
+                        );
+                    })(u, e);
+                    return t ? n().createElement('span', null, t) : null;
+                };
             },
             3495: (e, u, t) => {
                 'use strict';
@@ -389,7 +390,13 @@
                             (e.LootBoxToken = 'lootBoxToken'),
                             (e.GoldenTicket = 'birthday2025_golden_ticket'),
                             (e.PostStamp = 'giftsystem_4_stamp'),
-                            (e.Quests = 'quests'));
+                            (e.Quests = 'quests'),
+                            (e.WtStamp = 'stamp'),
+                            (e.WtHunter = 'wt_hunter'),
+                            (e.WtHunterCollection = 'hunter_collection'),
+                            (e.WtTicket = 'wtevent_ticket'),
+                            (e.WtMainPrizeDiscount = 'main_prize_discount'),
+                            (e.WtTicket25 = 'wtevent_ticket25'));
                     })(r || (r = {})),
                     (function (e) {
                         ((e.Gold = 'gold'),
@@ -529,6 +536,11 @@
                         a.E4.SelectableBonus,
                         a.E4.GoldenTicket,
                         a.E4.PostStamp,
+                        a.E4.WtStamp,
+                        a.E4.WtTicket,
+                        a.E4.WtMainPrizeDiscount,
+                        a.E4.WtHunter,
+                        a.E4.WtHunterCollection,
                     ],
                     s = [a.E4.Gold, a.E4.Credits, a.E4.Crystal, a.E4.FreeXp],
                     l = [a.E4.BattlePassPoints],
@@ -1018,13 +1030,13 @@
                                       Object.assign(
                                           {
                                               onMouseEnter:
-                                                  ((P = u.props.onMouseEnter),
+                                                  ((T = u.props.onMouseEnter),
                                                   (e) => {
                                                       (e.clientX === window.innerWidth &&
                                                           e.clientY === window.innerHeight) ||
                                                           ((w.current.timeoutId = window.setTimeout(x, m ? 100 : 400)),
                                                           l && l(e),
-                                                          P && P(e));
+                                                          T && T(e));
                                                   }),
                                               onMouseLeave: ((e) => (u) => {
                                                   (R(), null == c || c(u), null == e || e(u));
@@ -1041,7 +1053,7 @@
                                   )
                                 : u
                         );
-                        var P;
+                        var T;
                     };
             },
             926: (e) => {
@@ -2367,8 +2379,8 @@
                 }
                 x.defaultProps = { side: 'left', type: 'back', soundHover: 'highlight', soundClick: 'play' };
                 var y = t(2862),
-                    P = t(729);
-                function T() {}
+                    T = t(729);
+                function P() {}
                 function L() {
                     return !1;
                 }
@@ -2520,13 +2532,13 @@
                                                     t = (e, u) =>
                                                         Object.assign(
                                                             {
-                                                                image: (0, P.ry)(e, y.h2.Big),
-                                                                tooltipArgs: (0, P.pI)(
+                                                                image: (0, T.ry)(e, y.h2.Big),
+                                                                tooltipArgs: (0, T.pI)(
                                                                     { tooltipId: e.tooltipId, slotId: u },
                                                                     Number(e.tooltipContentId),
                                                                 ),
                                                                 special: e.overlayType,
-                                                                valueType: (0, P.p3)(e.name),
+                                                                valueType: (0, T.p3)(e.name),
                                                             },
                                                             e,
                                                         ),
@@ -2675,7 +2687,7 @@
                                                                                                         u,
                                                                                                     );
                                                                                             }
-                                                                                        return (0, P.ry)(e, u);
+                                                                                        return (0, T.ry)(e, u);
                                                                                     })(e, u),
                                                                             }),
                                                                         )),
@@ -3719,8 +3731,8 @@
                 xe.Default = Se;
                 const Re = { Vertical: n, Horizontal: r };
                 var ye = t(6373),
-                    Pe = t(3415),
-                    Te = t(4891);
+                    Te = t(3415),
+                    Pe = t(4891);
                 const Le = 'vehicles',
                     Ne = ({
                         vehicleName: e,
@@ -3740,11 +3752,11 @@
                             A = t > 0 || o > 0,
                             m = (i && !l) || c,
                             F = E()('VehicleReward_base_b9', m && 'VehicleReward_base__inInventory_7e'),
-                            D = (0, Te.B)({
+                            D = (0, Pe.B)({
                                 info: JSON.stringify({ reward: Le, value: e, lootboxName: r, lootboxID: n }),
                             }).rewardVehicleToopltipWatched;
                         return a().createElement(
-                            Pe.l,
+                            Te.l,
                             { tooltipArgs: Object.assign({}, s, D) },
                             a().createElement(
                                 'div',
@@ -3779,7 +3791,7 @@
                     );
                 }
                 const Me = a().memo(({ bonus: e, lootboxName: u, lootboxID: t }) => {
-                    const r = (0, Te.B)({
+                    const r = (0, Pe.B)({
                         info: JSON.stringify({ reward: e.name, value: e.value, lootboxName: u, lootboxID: t }),
                     }).rewardToopltipWatched;
                     return a().createElement(
@@ -3834,7 +3846,7 @@
                 }
                 const Ue = R.strings.gui_lootboxes,
                     Ge = a().memo(({ probability: e, bonuses: u, index: t, lootboxName: r, lootboxID: n }) => {
-                        const o = (0, Te.B)(),
+                        const o = (0, Pe.B)(),
                             i = o.probabilityPercentToopltipWatched,
                             s = o.probabilityPercentClick;
                         return a().createElement(
@@ -4040,7 +4052,7 @@
                                     'div',
                                     { className: 'AnimatedSlots_slotsWrapper_0f' },
                                     a().createElement('div', { className: qe }),
-                                    a().createElement($e, { slots: r[u], setActiveDividers: T }),
+                                    a().createElement($e, { slots: r[u], setActiveDividers: P }),
                                     a().createElement('div', {
                                         className: E()(qe, 'AnimatedSlots_divider__bottom_3b'),
                                     }),
@@ -4078,7 +4090,7 @@
                 }
                 const ru = R.strings.gui_lootboxes,
                     nu = (0, h.Pi)(({ bonuses: e, probability: u, isCurrent: t, lootboxName: r, lootboxID: n }) => {
-                        const o = (0, Te.B)(),
+                        const o = (0, Pe.B)(),
                             i = o.probabilityPercentWithGarantToopltipWatched,
                             s = o.probabilityPercentWithGarantClick;
                         return a().createElement(
@@ -4117,7 +4129,7 @@
                                 'div',
                                 { className: 'LootList_rewardsWrapper_55' },
                                 e.map((e, u) => {
-                                    const t = (0, P.pI)({ tooltipId: e.tooltipId }, Number(e.tooltipContentId));
+                                    const t = (0, T.pI)({ tooltipId: e.tooltipId }, Number(e.tooltipContentId));
                                     return a().createElement(
                                         'div',
                                         { className: 'LootList_bonusContainer_2a', key: `bonus-${u}` },

@@ -147,7 +147,282 @@
     width: 100%;
 }
 
-.TankCard_wrapper_7b {
+.Box_mt__XS_0c {
+    margin-top: 4rem;
+}
+.Box_mt__SM_eb {
+    margin-top: 8rem;
+}
+.Box_mt__SMp_cf {
+    margin-top: 10rem;
+}
+.Box_mt__MD_25 {
+    margin-top: 16rem;
+}
+.Box_mt__MDp_49 {
+    margin-top: 20rem;
+}
+.Box_mt__LG_e8 {
+    margin-top: 32rem;
+}
+.Box_mt__XL_83 {
+    margin-top: 64rem;
+}
+
+.Box_mr__XS_7c {
+    margin-right: 4rem;
+}
+
+.Box_mr__SM_08 {
+    margin-right: 8rem;
+}
+
+.Box_mr__SMp_06 {
+    margin-right: 10rem;
+}
+
+.Box_mr__MD_4a {
+    margin-right: 16rem;
+}
+
+.Box_mr__MDp_b6 {
+    margin-right: 20rem;
+}
+
+.Box_mr__LG_d0 {
+    margin-right: 32rem;
+}
+
+.Box_mr__XL_db {
+    margin-right: 64rem;
+}
+
+.Box_mb__XS_bb {
+    margin-bottom: 4rem;
+}
+
+.Box_mb__SM_83 {
+    margin-bottom: 8rem;
+}
+
+.Box_mb__SMp_04 {
+    margin-bottom: 10rem;
+}
+
+.Box_mb__MD_ed {
+    margin-bottom: 16rem;
+}
+
+.Box_mb__MDp_65 {
+    margin-bottom: 20rem;
+}
+
+.Box_mb__LG_c8 {
+    margin-bottom: 32rem;
+}
+
+.Box_mb__XL_f8 {
+    margin-bottom: 64rem;
+}
+
+.Box_ml__XS_8a {
+    margin-left: 4rem;
+}
+
+.Box_ml__SM_e6 {
+    margin-left: 8rem;
+}
+
+.Box_ml__SMp_fb {
+    margin-left: 10rem;
+}
+
+.Box_ml__MD_2b {
+    margin-left: 16rem;
+}
+
+.Box_ml__MDp_c7 {
+    margin-left: 20rem;
+}
+
+.Box_ml__LG_39 {
+    margin-left: 32rem;
+}
+
+.Box_ml__XL_4a {
+    margin-left: 64rem;
+}
+
+.FormatText_base_d0 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* eslint-disable-next-line expectedscss*/
+.Text_paragraph-P10_2c {
+    font-size: 10rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.Text_paragraph-P12_22 {
+    font-size: 12rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+.Text_paragraph-P14_a7 {
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+.Text_paragraph-P16_90 {
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+.Text_paragraph-P18_50 {
+    font-size: 18rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+.Text_paragraph-P24_33 {
+    font-size: 24rem;
+    font-weight: 400;
+    line-height: 32rem;
+}
+.Text_heading-H14_8b {
+    font-size: 14rem;
+    font-weight: 700;
+    line-height: 1.15;
+}
+.Text_heading-H15_9e {
+    font-size: 15rem;
+    font-weight: 700;
+    line-height: 1.15;
+}
+.Text_heading-H18_b7 {
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H20R_f6 {
+    font-size: 20rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.Text_heading-H22_27 {
+    font-size: 22rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.Text_heading-H24R_be {
+    font-size: 24rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.Text_heading-H24_0c {
+    font-size: 24rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.Text_heading-H28_78 {
+    font-size: 28rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H36_32 {
+    font-size: 36rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H56_c3 {
+    font-size: 56rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H73_8f {
+    font-size: 73rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H144_a9 {
+    font-size: 144rem;
+    font-weight: 700;
+    line-height: 1;
+}
+.Text_BLACK_REAL_30 {
+    color: #000000;
+}
+.Text_WHITE_REAL_bc {
+    color: #ffffff;
+}
+.Text_WHITE_62 {
+    color: #f2f2f7;
+}
+.Text_WHITE_ORANGE_54 {
+    color: #fefeec;
+}
+.Text_WHITE_SPANISH_df {
+    color: #e9e2bf;
+}
+.Text_PAR_15 {
+    color: #8c8c7e;
+}
+.Text_PAR_SECONDARY_5d {
+    color: #595950;
+}
+.Text_PAR_TERTIARY_c9 {
+    color: #37362e;
+}
+.Text_INFO_RED_30 {
+    color: #ff0000;
+}
+.Text_RED_66 {
+    color: #ff2717;
+}
+.Text_RED_DARK_d8 {
+    color: #b70000;
+}
+.Text_YELLOW_ed {
+    color: #feab34;
+}
+.Text_ORANGE_be {
+    color: #ee7000;
+}
+.Text_CREAM_57 {
+    color: #ffdd99;
+}
+.Text_BROWN_18 {
+    color: #cbac77;
+}
+.Text_GREEN_BRIGHT_3f {
+    color: #80d43a;
+}
+.Text_GREEN_e3 {
+    color: #7ab300;
+}
+.Text_GREEN_DARK_f1 {
+    color: #497212;
+}
+.Text_BLUE_BOOSTER_21 {
+    color: #ccffff;
+}
+.Text_BLUE_TEAMKILLER_ab {
+    color: #09e2ff;
+}
+.Text_CRED_f7 {
+    color: #ced9d9;
+}
+.Text_GOLD_28 {
+    color: #ffc363;
+}
+.Text_BOND_be {
+    color: #c9c9b6;
+}
+.Text_PROM_65 {
+    color: #a29b70;
+}
+
+.TankCard_base_c3 {
     display: flex;
     width: 180rem;
     height: 100rem;
@@ -156,15 +431,19 @@
     cursor: pointer;
 }
 
-.TankCard_wrapper__large_79 {
+.TankCard_base__disabled_b0 {
+    pointer-events: none;
+}
+
+.mediaLarge .TankCard_base_c3 {
     width: 216rem;
     height: 110rem;
 }
-
-.TankCard_wrapper__disabled_c4 {
-    pointer-events: none;
-}
 .TankCard_specialLabel_21 {
+    color: #feab34;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
     text-shadow:
         0 0 4rem rgba(255, 127, 0, 0.25),
         0 0 8rem #ff2a00,
@@ -172,13 +451,8 @@
     position: absolute;
     right: 5rem;
     bottom: 18rem;
-    z-index: 1;
-    color: #feab34;
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
 }
-.TankCard_wrapper__large_79 .TankCard_specialLabel_21 {
+.mediaLarge .TankCard_specialLabel_21 {
     right: 10rem;
     bottom: 25rem;
 }
@@ -186,25 +460,21 @@
     position: absolute;
     right: 5rem;
     bottom: 3rem;
-    z-index: 1;
 }
-.TankCard_wrapper__large_79 .TankCard_labelWrapper_3a {
+.mediaLarge .TankCard_labelWrapper_3a {
     right: 10rem;
     bottom: 7rem;
 }
 .TankCard_label_fb {
-    padding-left: 18rem;
-    text-align: right;
     color: #f2f2f7;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
+    padding-left: 18rem;
+    text-align: right;
 }
-.TankCard_wrapper__special_17 .TankCard_label_fb {
+.TankCard_base__bossSpecial_d6 .TankCard_label_fb {
     color: #feab34;
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
     text-shadow:
         0 0 4rem rgba(255, 127, 0, 0.25),
         0 0 8rem #ff2a00,
@@ -213,15 +483,12 @@
 .TankCard_labelIcon_ac {
     width: 16rem;
     height: 16rem;
-    background: no-repeat center / contain;
+    background: url('R.images.white_tiger.gui.maps.icons.carousel.icon_boss') no-repeat center / contain;
     position: absolute;
     left: 0;
 }
-.TankCard_labelIcon__hunter_f2 {
+.TankCard_base__hunter_7e .TankCard_labelIcon_ac {
     background-image: url('R.images.white_tiger.gui.maps.icons.carousel.icon_hunter');
-}
-.TankCard_labelIcon__boss_31 {
-    background-image: url('R.images.white_tiger.gui.maps.icons.carousel.icon_boss');
 }
 .TankCard_image_ea {
     width: 160rem;
@@ -232,79 +499,68 @@
     left: 50%;
     transform: translate(-50%, -50%);
 }
-.TankCard_wrapper__large_79 .TankCard_image_ea {
+.mediaLarge .TankCard_image_ea {
     width: 216rem;
     height: 110rem;
 }
 .TankCard_effect_e1 {
-    width: 180rem;
-    height: 100rem;
-    background: url('R.images.white_tiger.gui.maps.icons.carousel.effect') no-repeat center / contain;
-    opacity: 0.4;
-    position: absolute;
-    top: 100%;
-    left: 100%;
-    transform: translate(-100%, -100%);
-    transition: opacity linear 0.3s;
-}
-.TankCard_effect__special_b7 {
-    background-image: url('R.images.white_tiger.gui.maps.icons.carousel.effect_special');
-}
-.TankCard_wrapper__large_79 .TankCard_effect_e1 {
-    width: 216rem;
-    height: 110rem;
-    background-image: url('R.images.white_tiger.gui.maps.icons.carousel.effect_large');
-}
-.TankCard_wrapper__large_79 .TankCard_effect__special_b7 {
-    background-image: url('R.images.white_tiger.gui.maps.icons.carousel.effect_special_large');
-}
-.TankCard_wrapper_7b:hover .TankCard_effect_e1 {
-    opacity: 0.7;
-}
-.TankCard_wrapper__selected_bd .TankCard_effect_e1 {
-    opacity: 0.5;
-}
-.TankCard_gradient_d1 {
     width: 100%;
     height: 100%;
-    background: url('R.images.white_tiger.gui.maps.icons.carousel.effect_hover') no-repeat center / contain;
-    opacity: 0;
+    background: url('R.images.white_tiger.gui.maps.icons.carousel.effect') no-repeat center / contain;
+    opacity: 0.4;
     position: absolute;
     top: 0;
     left: 0;
     transition: opacity linear 0.3s;
 }
-.TankCard_wrapper_7b:hover .TankCard_gradient_d1 {
-    opacity: 0.75;
+.mediaLarge .TankCard_effect_e1 {
+    background-image: url('R.images.white_tiger.gui.maps.icons.carousel.effect_large');
+}
+.TankCard_base__bossSpecial_d6 .TankCard_effect_e1 {
+    background-image: url('R.images.white_tiger.gui.maps.icons.carousel.effect_bossSpecial');
+}
+.mediaLarge .TankCard_base__bossSpecial_d6 .TankCard_effect_e1 {
+    background-image: url('R.images.white_tiger.gui.maps.icons.carousel.effect_bossSpecial_large');
+}
+.TankCard_base__boss2025_6c .TankCard_effect_e1 {
+    background-image: url('R.images.white_tiger.gui.maps.icons.carousel.effect_boss2025');
+}
+.mediaLarge .TankCard_base__boss2025_6c .TankCard_effect_e1 {
+    background-image: url('R.images.white_tiger.gui.maps.icons.carousel.effect_boss2025_large');
+}
+.TankCard_base_c3:hover .TankCard_effect_e1 {
+    opacity: 0.7;
+}
+.TankCard_base__selected_46 .TankCard_effect_e1 {
+    opacity: 0.5;
 }
 .TankCard_quantityWrapper_ac {
     height: 25%;
     padding-left: 30rem;
     padding-top: 1rem;
     position: relative;
-    z-index: 2;
 }
-.TankCard_wrapper__large_79 .TankCard_quantityWrapper_ac {
+.mediaLarge .TankCard_quantityWrapper_ac {
     padding-top: 3rem;
 }
 .TankCard_quantity_87 {
-    color: #fff;
+    color: #ffffff;
     font-size: 18rem;
     font-weight: 700;
+    line-height: 1.1;
     text-shadow:
-        0 4px 8px rgba(0, 75, 198, 0.25),
-        0 0 4px #0860f1;
+        0 4rem 8rem rgba(0, 75, 198, 0.25),
+        0 0 4rem #0860f1;
 }
 .TankCard_quantityIcon_81 {
     width: 16rem;
     height: 16rem;
-    background: url('R.images.white_tiger.gui.maps.icons.tickets.ticket_16') no-repeat center / contain;
+    background: no-repeat center / contain;
     position: absolute;
     top: 6rem;
     left: 8rem;
 }
-.TankCard_wrapper__large_79 .TankCard_quantityIcon_81 {
-    background-image: url('R.images.white_tiger.gui.maps.icons.tickets.ticket_32');
+.mediaLarge .TankCard_quantityIcon_81 {
     top: 8rem;
     left: 10rem;
 }
@@ -312,36 +568,40 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    z-index: 1;
     transform: translate(-50%, -50%);
 }
 .TankCard_message_c9 {
-    padding-left: 32rem;
-    color: #fff;
+    color: #ffffff;
     font-size: 15rem;
     font-weight: 700;
-    text-align: center;
+    line-height: 1.15;
+    padding-left: 32rem;
     text-shadow:
         0 4rem 8rem rgba(0, 75, 198, 0.25),
         0 0 4rem #0860f1;
 }
-.TankCard_wrapper__large_79 .TankCard_message_c9 {
-    font-size: 18rem;
-}
 .TankCard_message__ticket_6a {
     padding-left: 0;
+    color: #ffdd99;
+    text-shadow:
+        0 0 4rem rgba(255, 127, 0, 0.25),
+        0 0 8rem #ff2a00,
+        0 0 15rem #e52;
 }
-.TankCard_message__special_bf {
-    color: #fd9;
+.TankCard_message__unsuitable_39 {
+    color: #ffffff;
+    text-shadow:
+        0 4rem 8rem rgba(0, 75, 198, 0.25),
+        0 0 4rem #0860f1;
+}
+.TankCard_base__bossSpecial_d6 .TankCard_message_c9 {
+    color: #ffdd99;
     text-shadow:
         0 0 15rem #e52,
         0 0 8rem #ff2a00;
 }
-.TankCard_message__unsuitable_39 {
-    color: #fff;
-    text-shadow:
-        0 4rem 8rem rgba(0, 75, 198, 0.25),
-        0 0 4rem #0860f1;
+.mediaLarge .TankCard_message_c9 {
+    font-size: 18rem;
 }
 .TankCard_icon_d2 {
     width: 32rem;
@@ -351,8 +611,8 @@
     top: -5rem;
     left: 0;
 }
-.TankCard_wrapper__large_79 .TankCard_icon_d2 {
-    top: -2rem;
+.mediaLarge .TankCard_icon_d2 {
+    top: -4rem;
 }
 .TankCard_icon__inBattle_f6 {
     background-image: url('R.images.white_tiger.gui.maps.icons.carousel.inbattle');
@@ -374,7 +634,6 @@
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 1;
 }
 .TankCard_shadow__inBattle_70 {
     opacity: 0.7;
@@ -394,33 +653,42 @@
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 2;
 }
-.TankCard_wrapper_7b:hover .TankCard_border_0b {
+.TankCard_base_c3:hover .TankCard_border_0b {
     border: 1rem solid rgba(160, 247, 243, 0.35);
     box-shadow:
         0 0 8rem rgba(92, 44, 226, 0.35),
         0 0 4rem rgba(38, 47, 255, 0.35),
         0 0 2rem rgba(38, 73, 255, 0.35);
 }
-.TankCard_wrapper__special_17 .TankCard_border_0b {
+.TankCard_base__bossSpecial_d6 .TankCard_border_0b {
     border: 1rem solid rgba(204, 146, 76, 0.2);
 }
-.TankCard_wrapper__special_17:hover .TankCard_border_0b {
+.TankCard_base__bossSpecial_d6:hover .TankCard_border_0b {
     border: 1rem solid rgba(204, 146, 76, 0.35);
     box-shadow: none;
     filter: drop-shadow(0 0 12rem #e40b0b) drop-shadow(0 0 4rem #d13200);
 }
-.TankCard_wrapper__selected_bd .TankCard_border_0b,
-.TankCard_wrapper__selected_bd:hover .TankCard_border_0b {
+.TankCard_base__boss2025_6c:hover .TankCard_border_0b {
+    border: 1rem solid rgba(208, 30, 30, 0.35);
+    box-shadow: none;
+    filter: drop-shadow(0 0 12rem #e40b0b) drop-shadow(0 0 4rem #d13200);
+}
+.TankCard_base__selected_46 .TankCard_border_0b,
+.TankCard_base__selected_46:hover .TankCard_border_0b {
     border: 1rem solid rgba(160, 247, 243, 0.9);
     box-shadow:
         0 0 8rem rgba(92, 44, 226, 0.9),
         0 0 4rem rgba(38, 47, 255, 0.9),
         0 0 2rem rgba(38, 73, 255, 0.9);
 }
-.TankCard_wrapper__selected_bd.TankCard_wrapper__special_17 .TankCard_border_0b {
+.TankCard_base__selected_46.TankCard_base__bossSpecial_d6 .TankCard_border_0b {
     border: 1rem solid rgba(204, 146, 76, 0.9);
+    box-shadow: none;
+    filter: drop-shadow(0 0 12rem #e40b0b) drop-shadow(0 0 4rem #d13200);
+}
+.TankCard_base__selected_46.TankCard_base__boss2025_6c .TankCard_border_0b {
+    border: 1rem solid rgba(208, 30, 30, 0.9);
     box-shadow: none;
     filter: drop-shadow(0 0 12rem #e40b0b) drop-shadow(0 0 4rem #d13200);
 }
@@ -445,16 +713,12 @@
     position: relative;
 }
 
-.Content_base__small_36,
-.Content_base__medium_ac {
+.mediaSmall .Content_base_aa {
     justify-content: center;
-    width: 1100rem;
+    width: 100%;
 }
 
-.Content_base__large_85,
-.Content_base__extraLarge_03 {
-    justify-content: center;
-    width: 1461rem;
+.mediaLarge .Content_base_aa {
     padding: 13rem 0 9rem;
     background-image: url('R.images.white_tiger.gui.maps.icons.carousel.carousel_bg_big');
 }
@@ -466,10 +730,7 @@
     position: relative;
 }
 
-.Content_base__small_36 .Content_wrapper_43,
-.Content_base__medium_ac .Content_wrapper_43,
-.Content_base__large_85 .Content_wrapper_43,
-.Content_base__extraLarge_03 .Content_wrapper_43 {
+.mediaSmall .Content_wrapper_43 {
     justify-content: center;
     width: auto;
 }
@@ -481,13 +742,15 @@
     position: relative;
 }
 
-.Content_base__small_36 .Content_carouselBodyWrapper_5c,
-.Content_base__medium_ac .Content_carouselBodyWrapper_5c {
+.mediaSmall .Content_carouselBodyWrapper_5c {
     width: 1000rem;
 }
 
-.Content_base__large_85 .Content_carouselBodyWrapper_5c,
-.Content_base__extraLarge_03 .Content_carouselBodyWrapper_5c {
+.mediaLarge .Content_carouselBodyWrapper_5c {
+    width: 1428rem;
+}
+
+.mediaExtraLarge .Content_carouselBodyWrapper_5c {
     width: auto;
     overflow: visible;
 }
@@ -499,16 +762,7 @@
     transition: transform 0.3s;
 }
 
-.Content_carouselBody__moveOnce_d7 {
-    transform: translateX(-188rem);
-}
-
-.Content_carouselBody__moveTwice_b2 {
-    transform: translateX(-376rem);
-}
-
-.Content_base__large_85 .Content_carouselBody_b0,
-.Content_base__extraLarge_03 .Content_carouselBody_b0 {
+.mediaExtraLarge .Content_carouselBody_b0 {
     width: auto;
     transform: none;
 }
@@ -518,7 +772,6 @@
     height: 100%;
     background: url('R.images.white_tiger.gui.maps.icons.carousel.arrow') no-repeat center / contain;
     position: relative;
-    z-index: 1;
     cursor: pointer;
 }
 
@@ -561,7 +814,6 @@
 .Content_devider_e5 {
     width: 60rem;
     position: relative;
-    z-index: 1;
 }
 
 .Content_deviderContent_c5 {
@@ -571,7 +823,6 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    z-index: -1;
     transform: translate(-50%, -50%);
 }
 
@@ -663,7 +914,7 @@
 .CButton_base__disabled_d9 {
     cursor: default;
 }
-/* Element .back and background-image in element .base need for fix bug in GF https://jira.wargaming.net/browse/WOTD-158525
+/* Element .back and background-image in element .base need for fix bug in GF https://jira-archive.lesta.group/browse/WOTD-158525
 The bug is that under certain conditions, when using border-image, stripes appear. Strip is a single-pixel gap
 between 'border-image-width' and 'fill'.
 This bug is reproduced in Google Chrome 81.0.4044.113
@@ -809,75 +1060,65 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .ChangeVehiclePanel_base_a6 {
     display: flex;
     flex-direction: column;
+    justify-content: flex-end;
     align-items: center;
     width: 772rem;
-    height: 81rem;
-    background: url('R.images.white_tiger.gui.maps.icons.hangar.bgTicket_small') no-repeat 0 0 / contain;
+    height: 111rem;
+    background: url('R.images.white_tiger.gui.maps.icons.hangar.bgTicket_small') no-repeat center bottom / contain;
     text-align: center;
 }
 
-.ChangeVehiclePanel_base__large_9b {
-    height: 135rem;
-    background-image: url('R.images.white_tiger.gui.maps.icons.hangar.bgTicket');
+.mediaLarge .ChangeVehiclePanel_base_a6 {
+    height: 150rem;
+    background: url('R.images.white_tiger.gui.maps.icons.hangar.bgTicket') no-repeat center 35rem / contain;
 }
 
 .ChangeVehiclePanel_titleWrapper_27 {
     margin-left: 12rem;
-    margin-top: -40rem;
+    margin-bottom: 11rem;
     position: relative;
 }
 
+.mediaLarge .ChangeVehiclePanel_titleWrapper_27 {
+    margin-bottom: 18rem;
+}
+
 .ChangeVehiclePanel_descriptionWrapper_34 {
-    padding-top: 30rem;
+    margin-bottom: 11rem;
     position: relative;
+}
+
+.mediaLarge .ChangeVehiclePanel_descriptionWrapper_34 {
+    margin-bottom: 15rem;
 }
 
 .ChangeVehiclePanel_description_a3 {
     color: #ffffff;
-    font-size: 14rem;
+    font-size: 16rem;
     font-weight: 400;
-    line-height: 1.3;
-    padding-left: 22rem;
-    padding-bottom: 13rem;
+    line-height: 1.25;
     text-shadow:
-        0 0 8px rgba(0, 75, 198, 0.25),
-        0 0 4px #0860f1;
-}
-
-.ChangeVehiclePanel_base__large_9b .ChangeVehiclePanel_description_a3 {
-    padding-left: 0;
-    padding-top: 14rem;
+        0 0 8rem #0860f1,
+        0 0 10rem rgb(0, 75, 198);
 }
 
 .ChangeVehiclePanel_descriptionIcon_d2 {
-    width: 16rem;
-    height: 16rem;
-    background: url('R.images.white_tiger.gui.maps.icons.tickets.ticket_16') no-repeat center center / contain;
-    position: absolute;
-    top: 31rem;
-    left: 0;
+    width: 48rem;
+    height: 48rem;
+    margin-bottom: -1rem;
+    background: no-repeat center / contain;
 }
 
-.ChangeVehiclePanel_base__large_9b .ChangeVehiclePanel_descriptionIcon_d2 {
-    width: 32rem;
-    height: 32rem;
-    padding-bottom: 14rem;
-    background-image: url('R.images.white_tiger.gui.maps.icons.tickets.ticket_32');
-    position: relative;
-    top: 0;
+.mediaLarge .ChangeVehiclePanel_descriptionIcon_d2 {
+    width: 80rem;
+    height: 80rem;
+    margin-bottom: 5rem;
 }
 
 .ChangeVehiclePanel_buttonHolder_43 {
     display: flex;
     flex-direction: row;
-}
-
-.ChangeVehiclePanel_buttonText_8a {
-    color: #fefeec;
-    font-size: 12rem;
-    font-weight: 400;
-    line-height: 1.3;
-    text-shadow: 0 -1px 2px rgba(0, 0, 0, 0.7);
+    margin-bottom: 12rem;
 }
 
 .ChangeVehiclePanel_button_b6 {
@@ -909,7 +1150,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .AmmunitionIcon_infinity_45 {
     width: 96rem;
     height: 96rem;
-    background: url('R.images.white_tiger.gui.maps.icons.hangar.infinity') no-repeat center / contain;
+    background: no-repeat center / contain;
     position: absolute;
     top: 50%;
     left: 50%;

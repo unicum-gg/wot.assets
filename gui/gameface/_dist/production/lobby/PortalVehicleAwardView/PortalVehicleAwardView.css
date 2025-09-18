@@ -1,44 +1,48 @@
-.CurrencyBalance_base_e7 {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    height: 40rem;
-}
+@keyframes DelayedAnimationWrapper_show_92 {
+    0% {
+        opacity: 0;
+        visibility: hidden;
+    }
 
-.CurrencyBalance_currency_b6 {
-    height: 20rem;
-    margin-left: 20rem;
-    padding-left: 20rem;
-    background-repeat: no-repeat;
-    background-size: 16rem 16rem;
-    color: #c9c9b6;
-    font-size: 14rem;
+    100% {
+        opacity: 1;
+        visibility: visible;
+    }
 }
+@keyframes DelayedAnimationWrapper_translate-down_51 {
+    0% {
+        opacity: 0;
+        transform: translateY(-20rem);
+    }
 
-.CurrencyBalance_currency__credit_7f {
-    background-image: url('R.images.gui.maps.icons.library.CreditsIcon_2');
-    background-position: 0 2rem;
-    color: #ced9d9;
+    100% {
+        opacity: 1;
+        transform: none;
+    }
 }
+@keyframes DelayedAnimationWrapper_translate-up_48 {
+    0% {
+        opacity: 0;
+        transform: translateY(20rem);
+    }
 
-.CurrencyBalance_currency__gold_27 {
-    background-image: url('R.images.gui.maps.icons.library.GoldIcon_2');
-    background-position: 0 1rem;
-    color: #ffc363;
+    100% {
+        opacity: 1;
+        transform: none;
+    }
 }
+.DelayedAnimationWrapper_base_af {
+    width: 100vw;
+    height: 100vh;
+    opacity: 0;
 
-.CurrencyBalance_currency__crystal_7d {
-    background-image: url('R.images.gui.maps.icons.library.CrystalIcon_2');
+    /* GF positions element relative to its direct parent, not to its closest positioned ancestor. */
+    position: absolute;
+    animation: DelayedAnimationWrapper_show_92 0.1s 0.1s ease-in-out forwards;
+    pointer-events: none;
 }
-
-.CurrencyBalance_currency__freexp_06 {
-    background-image: url('R.images.gui.maps.icons.library.FreeXpIcon_2');
-    background-position: 0 1rem;
-}
-
-.CurrencyBalance_errorText_b7 {
-    padding-right: 18rem;
-    background: url('R.images.gui.maps.icons.library.alertIcon') right center / 16rem 16rem no-repeat;
+.DelayedAnimationWrapper_base_af > * {
+    pointer-events: auto;
 }
 
 .TextButton_base_b6 {
@@ -340,114 +344,7 @@
     }
 }
 
-@keyframes SwfAwardVideo_slideUp_ce {
-    0% {
-        opacity: 0;
-        transform: translateY(-20rem);
-    }
-
-    33% {
-        opacity: 1;
-        transform: translateY(5rem);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-@keyframes SwfAwardVideo_fadeOut_9d {
-    0% {
-        opacity: 1;
-    }
-
-    100% {
-        opacity: 0;
-    }
-}
-@keyframes SwfAwardVideo_fadeIn_9a {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
-@keyframes SwfAwardVideo_fadeInScale_62 {
-    0% {
-        opacity: 0;
-        transform: translate(-50%, -50%) scale(0);
-    }
-
-    100% {
-        opacity: 0.8;
-        transform: translate(-50%, -50%) scale(1);
-    }
-}
-@keyframes SwfAwardVideo_fadeInWithScale_62 {
-    0% {
-        opacity: 0;
-        transform: scale(1.2);
-    }
-
-    100% {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-@keyframes SwfAwardVideo_scale_71 {
-    0% {
-        transform: scale(0);
-    }
-
-    100% {
-        transform: scale(1);
-    }
-}
-@keyframes SwfAwardVideo_raysAppearance_d4 {
-    0% {
-        opacity: 0;
-        transform: translateY(20rem);
-    }
-
-    100% {
-        opacity: 0.2;
-        transform: translateY(0);
-    }
-}
-@keyframes SwfAwardVideo_rotate_94 {
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
-        transform: rotate(360deg);
-    }
-}
-@keyframes SwfAwardVideo_fadeTop_03 {
-    from {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    to {
-        opacity: 0;
-        transform: translateY(-200%);
-    }
-}
-@keyframes SwfAwardVideo_fadeBot_70 {
-    from {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    to {
-        opacity: 0;
-        transform: translateY(200%);
-    }
-}
-.SwfAwardVideo_base_04 {
+.SwfAwardVideo_base_18 {
     position: absolute;
     top: 0;
     right: 0;
@@ -455,8 +352,9 @@
     left: 0;
     background: #1d2839;
     overflow: hidden;
+    z-index: -1;
 }
-.SwfAwardVideo_wrapper_11 {
+.SwfAwardVideo_wrapper_eb {
     position: absolute;
     top: 0;
     right: 0;
@@ -466,387 +364,11 @@
     justify-content: center;
     align-items: center;
 }
-.SwfAwardVideo_video__hidden_47 {
+.SwfAwardVideo_video__hidden_6b {
     display: none;
 }
-.SwfAwardVideo_vignette_d1 {
-    background-image:
-        radial-gradient(ellipse at center, transparent, #1d2839),
-        linear-gradient(0deg, transparent, transparent 95%, #1d2839 100%),
-        linear-gradient(90deg, transparent, transparent 95%, #1d2839 100%),
-        linear-gradient(180deg, transparent, transparent 95%, #1d2839 100%),
-        linear-gradient(270deg, transparent, transparent 95%, #1d2839 100%);
-}
 
-.Gradient_base_c7 {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: linear-gradient(180deg, #13141d 0%, #23253a 44%, #2c202f 88%, #341b23 100%);
-    opacity: 0.7;
-}
-
-.Gradient_base__hasAnimation_15 {
-    animation: Gradient_showGradient_30 0.5s;
-}
-
-@keyframes Gradient_showGradient_30 {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 0.7;
-    }
-}
-
-@keyframes DelayedAnimationWrapper_show_92 {
-    0% {
-        opacity: 0;
-        visibility: hidden;
-    }
-
-    100% {
-        opacity: 1;
-        visibility: visible;
-    }
-}
-@keyframes DelayedAnimationWrapper_translate-down_51 {
-    0% {
-        opacity: 0;
-        transform: translateY(-20rem);
-    }
-
-    100% {
-        opacity: 1;
-        transform: none;
-    }
-}
-@keyframes DelayedAnimationWrapper_translate-up_48 {
-    0% {
-        opacity: 0;
-        transform: translateY(20rem);
-    }
-
-    100% {
-        opacity: 1;
-        transform: none;
-    }
-}
-.DelayedAnimationWrapper_base_af {
-    width: 100vw;
-    height: 100vh;
-    opacity: 0;
-
-    /* GF positions element relative to its direct parent, not to its closest positioned ancestor. */
-    position: absolute;
-    animation: DelayedAnimationWrapper_show_92 0.1s 0.1s ease-in-out forwards;
-    pointer-events: none;
-}
-.DelayedAnimationWrapper_base_af > * {
-    pointer-events: auto;
-}
-
-.Checkbox_base_36 {
-    display: flex;
-    align-items: flex-start;
-    position: relative;
-    cursor: pointer;
-}
-
-.Checkbox_base__disabled_08 {
-    pointer-events: none;
-}
-
-.Checkbox_base__center_52 {
-    align-items: center;
-}
-
-.Checkbox_base__bottom_28 {
-    align-items: flex-end;
-}
-
-.Checkbox_input_37 {
-    border: 1rem solid rgba(190, 190, 190, 0.45);
-    border-radius: 2rem;
-    background-color: rgba(0, 0, 0, 0.3);
-    opacity: 0.6;
-    position: relative;
-    transition: background-color 0.1s linear;
-}
-
-.Checkbox_base__mouseDown_45 .Checkbox_input_37 {
-    background-color: rgba(0, 0, 0, 0.4);
-}
-
-.Checkbox_base__small_18 .Checkbox_input_37 {
-    width: 12rem;
-    height: 12rem;
-}
-
-.Checkbox_base__medium_12 .Checkbox_input_37 {
-    width: 18rem;
-    height: 18rem;
-}
-
-.Checkbox_base__large_f7 .Checkbox_input_37 {
-    width: 24rem;
-    height: 24rem;
-}
-
-.Checkbox_base__extraLarge_c9 .Checkbox_input_37 {
-    width: 32rem;
-    height: 32rem;
-}
-
-.Checkbox_alertOverlay_52 {
-    position: absolute;
-    top: -1rem;
-    right: -1rem;
-    bottom: -1rem;
-    left: -1rem;
-    border: 1rem solid #feab34;
-    border-radius: 2rem;
-    box-shadow: inset 0 0 9rem rgba(0, 0, 0, 0.25);
-    opacity: 0;
-    pointer-events: none;
-}
-
-.Checkbox_base__alert_b7 .Checkbox_alertOverlay_52 {
-    animation: Checkbox_blink_5e 2s ease-in-out infinite;
-}
-
-.Checkbox_base__alert_b7.Checkbox_base__checked_a2 .Checkbox_alertOverlay_52,
-.Checkbox_base__alert_b7.Checkbox_base__disabled_08 .Checkbox_alertOverlay_52 {
-    opacity: 0;
-    animation: initial;
-}
-
-.Checkbox_inputHoverOverlay_36 {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-image: linear-gradient(to top, #201f1c, #494741);
-    opacity: 0;
-    transition: opacity 0.1s linear;
-    pointer-events: none;
-}
-
-.Checkbox_base_36:hover .Checkbox_inputHoverOverlay_36 {
-    opacity: 0.8;
-}
-
-.Checkbox_base_36.Checkbox_base__mouseDown_45:hover .Checkbox_inputHoverOverlay_36 {
-    opacity: 0;
-}
-
-.Checkbox_highlight_b8 {
-    background: no-repeat 50% / contain;
-    opacity: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    transition: opacity 0.1s linear;
-    pointer-events: none;
-}
-
-.Checkbox_base__checked_a2 .Checkbox_highlight_b8 {
-    opacity: 1;
-}
-
-.Checkbox_base__checked_a2.Checkbox_base__disabled_08 .Checkbox_highlight_b8 {
-    opacity: 0;
-}
-
-.Checkbox_base__small_18 .Checkbox_highlight_b8 {
-    width: 34rem;
-    height: 34rem;
-}
-
-.Checkbox_base__medium_12 .Checkbox_highlight_b8 {
-    width: 40rem;
-    height: 40rem;
-}
-
-.Checkbox_base__large_f7 .Checkbox_highlight_b8 {
-    width: 46rem;
-    height: 46rem;
-}
-
-.Checkbox_base__extraLarge_c9 .Checkbox_highlight_b8 {
-    width: 54rem;
-    height: 54rem;
-}
-
-.Checkbox_base__main_3a.Checkbox_base__small_18 .Checkbox_highlight_b8 {
-    background-image: url('R.images.gui.maps.icons.components.checkbox.checkbox_s');
-}
-
-.Checkbox_base__main_3a.Checkbox_base__medium_12 .Checkbox_highlight_b8 {
-    background-image: url('R.images.gui.maps.icons.components.checkbox.checkbox_m');
-}
-
-.Checkbox_base__main_3a.Checkbox_base__large_f7 .Checkbox_highlight_b8 {
-    background-image: url('R.images.gui.maps.icons.components.checkbox.checkbox_l');
-}
-
-.Checkbox_base__main_3a.Checkbox_base__extraLarge_c9 .Checkbox_highlight_b8 {
-    background-image: url('R.images.gui.maps.icons.components.checkbox.checkbox_xl');
-}
-
-.Checkbox_base__primary_ab.Checkbox_base__small_18 .Checkbox_highlight_b8 {
-    background-image: url('R.images.gui.maps.icons.components.checkbox.checkbox_s_green');
-}
-
-.Checkbox_base__primary_ab.Checkbox_base__medium_12 .Checkbox_highlight_b8 {
-    background-image: url('R.images.gui.maps.icons.components.checkbox.checkbox_m_green');
-}
-
-.Checkbox_base__primary_ab.Checkbox_base__large_f7 .Checkbox_highlight_b8 {
-    background-image: url('R.images.gui.maps.icons.components.checkbox.checkbox_l_green');
-}
-
-.Checkbox_base__primary_ab.Checkbox_base__extraLarge_c9 .Checkbox_highlight_b8 {
-    background-image: url('R.images.gui.maps.icons.components.checkbox.checkbox_xl_green');
-}
-
-.Checkbox_checkmark_60 {
-    background: center / contain no-repeat;
-    opacity: 0;
-    position: absolute;
-    left: 0;
-}
-
-.Checkbox_base__checked_a2 .Checkbox_checkmark_60 {
-    /* Using a transition causes the image to blink on appear */
-    animation: Checkbox_fadeIn_1a 0.1s linear 0 normal forwards;
-}
-
-.Checkbox_base__checked_a2.Checkbox_base__disabled_08 .Checkbox_checkmark_60 {
-    opacity: 0.5;
-}
-
-.Checkbox_base__small_18 .Checkbox_checkmark_60 {
-    width: 11rem;
-    height: 11rem;
-}
-
-.Checkbox_base__medium_12 .Checkbox_checkmark_60 {
-    width: 19rem;
-    height: 20rem;
-    transform: translate(1rem, -4rem);
-}
-
-.Checkbox_base__large_f7 .Checkbox_checkmark_60 {
-    width: 23rem;
-    height: 24rem;
-    transform: translate(3rem, -3rem);
-}
-
-.Checkbox_base__extraLarge_c9 .Checkbox_checkmark_60 {
-    width: 36rem;
-    height: 36rem;
-    transform: translate(2rem, -8rem);
-}
-
-.Checkbox_base__main_3a.Checkbox_base__small_18 .Checkbox_checkmark_60 {
-    background-image: url('R.images.gui.maps.icons.components.checkbox.icon_checked_s');
-}
-
-.Checkbox_base__main_3a.Checkbox_base__medium_12 .Checkbox_checkmark_60 {
-    background-image: url('R.images.gui.maps.icons.components.checkbox.icon_checked_m');
-}
-
-.Checkbox_base__main_3a.Checkbox_base__large_f7 .Checkbox_checkmark_60 {
-    background-image: url('R.images.gui.maps.icons.components.checkbox.icon_checked_l');
-}
-
-.Checkbox_base__main_3a.Checkbox_base__extraLarge_c9 .Checkbox_checkmark_60 {
-    background-image: url('R.images.gui.maps.icons.components.checkbox.icon_checked_xl');
-}
-
-.Checkbox_base__primary_ab.Checkbox_base__small_18 .Checkbox_checkmark_60 {
-    background-image: url('R.images.gui.maps.icons.components.checkbox.icon_checked_s_green');
-}
-
-.Checkbox_base__primary_ab.Checkbox_base__medium_12 .Checkbox_checkmark_60 {
-    background-image: url('R.images.gui.maps.icons.components.checkbox.icon_checked_m_green');
-}
-
-.Checkbox_base__primary_ab.Checkbox_base__large_f7 .Checkbox_checkmark_60 {
-    background-image: url('R.images.gui.maps.icons.components.checkbox.icon_checked_l_green');
-}
-
-.Checkbox_base__primary_ab.Checkbox_base__extraLarge_c9 .Checkbox_checkmark_60 {
-    background-image: url('R.images.gui.maps.icons.components.checkbox.icon_checked_xl_green');
-}
-
-.Checkbox_label_bc {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    flex: 1;
-    height: 100%;
-    padding-left: 10rem;
-    position: relative;
-}
-
-.Checkbox_labelContent_64 {
-    color: #8c8c7e;
-    font-size: 14rem;
-    line-height: 1.15;
-    transition: color 0.1s linear;
-}
-
-.Checkbox_base__extraLarge_c9 .Checkbox_labelContent_64 {
-    font-size: 16rem;
-}
-
-.Checkbox_base_36:hover .Checkbox_labelContent_64 {
-    color: #c8c8b6;
-}
-
-.Checkbox_base__disabled_08 .Checkbox_labelContent_64,
-.Checkbox_base__disabled_08:hover .Checkbox_labelContent_64 {
-    color: #37362e;
-}
-
-@keyframes Checkbox_fadeIn_1a {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
-
-@keyframes Checkbox_blink_5e {
-    0% {
-        opacity: 0;
-    }
-
-    50% {
-        opacity: 1;
-    }
-
-    100% {
-        opacity: 0;
-    }
-}
-
-.AnimationCheckbox_animationCheckbox_c5 {
-    position: absolute;
-    bottom: 30rem;
-    left: 30rem;
-}
-
-@keyframes AwardWrapper_slideUp_7b {
+@keyframes AwardWrapper_slideUp_19 {
     0% {
         opacity: 0;
         transform: translateY(-20rem);
@@ -862,8 +384,7 @@
         transform: translateY(0);
     }
 }
-
-@keyframes AwardWrapper_fadeOut_a9 {
+@keyframes AwardWrapper_fadeOut_d8 {
     0% {
         opacity: 1;
     }
@@ -872,8 +393,7 @@
         opacity: 0;
     }
 }
-
-@keyframes AwardWrapper_fadeIn_57 {
+@keyframes AwardWrapper_fadeIn_60 {
     0% {
         opacity: 0;
     }
@@ -882,8 +402,7 @@
         opacity: 1;
     }
 }
-
-@keyframes AwardWrapper_fadeInScale_9a {
+@keyframes AwardWrapper_fadeInScale_78 {
     0% {
         opacity: 0;
         transform: translate(-50%, -50%) scale(0);
@@ -894,8 +413,7 @@
         transform: translate(-50%, -50%) scale(1);
     }
 }
-
-@keyframes AwardWrapper_fadeInWithScale_99 {
+@keyframes AwardWrapper_fadeInWithScale_fd {
     0% {
         opacity: 0;
         transform: scale(1.2);
@@ -906,8 +424,7 @@
         transform: scale(1);
     }
 }
-
-@keyframes AwardWrapper_scale_40 {
+@keyframes AwardWrapper_scale_59 {
     0% {
         transform: scale(0);
     }
@@ -916,8 +433,7 @@
         transform: scale(1);
     }
 }
-
-@keyframes AwardWrapper_raysAppearance_22 {
+@keyframes AwardWrapper_raysAppearance_4e {
     0% {
         opacity: 0;
         transform: translateY(20rem);
@@ -928,8 +444,7 @@
         transform: translateY(0);
     }
 }
-
-@keyframes AwardWrapper_rotate_0d {
+@keyframes AwardWrapper_rotate_42 {
     from {
         transform: rotate(0deg);
     }
@@ -938,8 +453,7 @@
         transform: rotate(360deg);
     }
 }
-
-@keyframes AwardWrapper_fadeTop_d5 {
+@keyframes AwardWrapper_fadeTop_5b {
     from {
         opacity: 1;
         transform: translateY(0);
@@ -950,8 +464,7 @@
         transform: translateY(-200%);
     }
 }
-
-@keyframes AwardWrapper_fadeBot_95 {
+@keyframes AwardWrapper_fadeBot_e1 {
     from {
         opacity: 1;
         transform: translateY(0);
@@ -962,47 +475,40 @@
         transform: translateY(200%);
     }
 }
-
-.AwardWrapper_base_85 {
+.AwardWrapper_base_34 {
     width: 100%;
     height: 100%;
     overflow-y: hidden;
     position: relative;
     transition: opacity 0.2s;
 }
-
-.AwardWrapper_base__hidden_b6 {
+.AwardWrapper_base__hidden_71 {
     opacity: 0;
 }
-
-.AwardWrapper_back_44 {
+.AwardWrapper_back_d2 {
     position: absolute;
     top: 31rem;
     left: 22rem;
     z-index: 1;
 }
-
-.mediaSmall .AwardWrapper_back_44 {
+.mediaSmall .AwardWrapper_back_d2 {
     top: 42rem;
     left: 36rem;
 }
-
-.mediaMedium .AwardWrapper_back_44 {
+.mediaMedium .AwardWrapper_back_d2 {
     top: 46rem;
 }
-
-.mediaLarge .AwardWrapper_back_44 {
+.mediaLarge .AwardWrapper_back_d2 {
     top: 53rem;
 }
-
-.AwardWrapper_title_09 {
+.AwardWrapper_title_3d {
     color: #f2f2f7;
     font-size: 36rem;
     font-weight: 700;
     line-height: 1.1;
-    margin-top: 42rem;
+    margin-top: 36rem;
     opacity: 0;
-    animation-name: AwardWrapper_slideUp_7b;
+    animation-name: AwardWrapper_slideUp_19;
     animation-duration: 0.8s;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.07, 0.82, 0.17, 1);
@@ -1010,72 +516,30 @@
     animation-iteration-count: 1;
     text-align: center;
 }
-
-.mediaMedium .AwardWrapper_title_09 {
+.mediaMedium .AwardWrapper_title_3d {
     color: #f2f2f7;
     font-size: 56rem;
     font-weight: 700;
     line-height: 1.1;
-    margin-top: 48rem;
+    margin-top: 44rem;
 }
-
-.mediaLarge .AwardWrapper_title_09 {
+.mediaLarge .AwardWrapper_title_3d {
     color: #f2f2f7;
     font-size: 73rem;
     font-weight: 700;
     line-height: 1.1;
-    margin-top: 50rem;
+    margin-top: 46rem;
 }
-
-.AwardWrapper_content_65 {
+.AwardWrapper_content_60 {
     display: flex;
     flex: 1;
 }
-
-.AwardWrapper_headerButtonWrapper_45 {
+.AwardWrapper_headerButtonWrapper_48 {
     margin-top: 8rem;
     position: relative;
 }
-
-.mediaMedium .AwardWrapper_headerButtonWrapper_45 {
+.mediaMedium .AwardWrapper_headerButtonWrapper_48 {
     margin-top: 0;
-}
-
-.AwardWrapper_currencyWrapper_2a {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 0;
-    right: 0;
-}
-
-.AwardWrapper_currencyBgWrapper_11 {
-    height: 35rem;
-    padding-left: 30rem;
-    padding-right: 30rem;
-    background: linear-gradient(
-        270deg,
-        rgba(0, 0, 0, 0.2) 0%,
-        #000 27.9%,
-        rgba(0, 0, 0, 0.29) 47.28%,
-        rgba(0, 0, 0, 0) 100%
-    );
-}
-
-.mediaMedium .AwardWrapper_currencyBgWrapper_11 {
-    height: 40rem;
-}
-
-.AwardWrapper_backgroundSeperator_76 {
-    height: 1rem;
-    background: linear-gradient(
-        270deg,
-        rgba(255, 255, 255, 0.06) 0%,
-        rgba(255, 255, 255, 0.2) 27.9%,
-        rgba(255, 255, 255, 0.19) 46.44%,
-        rgba(255, 255, 255, 0) 100%
-    );
-    opacity: 0.3;
 }
 
 .CButton_base_40 {
@@ -1145,7 +609,7 @@
 .CButton_base__disabled_d9 {
     cursor: default;
 }
-/* Element .back and background-image in element .base need for fix bug in GF https://jira.wargaming.net/browse/WOTD-158525
+/* Element .back and background-image in element .base need for fix bug in GF https://jira-archive.lesta.group/browse/WOTD-158525
 The bug is that under certain conditions, when using border-image, stripes appear. Strip is a single-pixel gap
 between 'border-image-width' and 'fill'.
 This bug is reproduced in Google Chrome 81.0.4044.113
@@ -1288,6 +752,63 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     opacity: 0.6;
 }
 
+.Preview_base_1f {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60rem;
+    height: 60rem;
+    opacity: 0.7;
+    position: relative;
+    transition: opacity 0.25s ease-out;
+    cursor: pointer;
+}
+
+.Preview_base__hovered_ee {
+    opacity: 1;
+}
+.Preview_icon_f3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('R.images.gui.maps.icons.library.previewVehicle') no-repeat center / contain;
+    transition: opacity 0.25s ease-out;
+    pointer-events: none;
+}
+.Preview_icon__small_a1 {
+    width: 70rem;
+    height: 70rem;
+}
+.Preview_icon__normal_5c {
+    width: 100rem;
+    height: 100rem;
+}
+.Preview_base__mouseDown_d0 .Preview_icon_f3 {
+    opacity: 0.7;
+}
+.Preview_label_2e {
+    color: #ffdd99;
+    font-size: 14rem;
+    line-height: 1.25;
+    text-shadow:
+        0 0 4rem rgba(255, 127, 0, 0.25),
+        0 0 8rem #ff2a00,
+        0 0 12rem #e52;
+    opacity: 0;
+    position: absolute;
+    bottom: -8rem;
+    transform: translateY(-5rem);
+    transition:
+        transform 0.25s ease-out,
+        opacity 0.25s ease-out;
+}
+.Preview_base__visibleLabel_92 .Preview_label_2e,
+.Preview_base__hovered_ee .Preview_label_2e {
+    opacity: 1;
+    transform: translateY(0rem);
+}
+
 @keyframes Vehicle_show_2f {
     0% {
         opacity: 0;
@@ -1403,63 +924,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 
 .Vehicle_base__large_e9 .Vehicle_level_df {
     margin-right: 5rem;
-}
-
-.Preview_base_1f {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 60rem;
-    height: 60rem;
-    opacity: 0.7;
-    position: relative;
-    transition: opacity 0.25s ease-out;
-    cursor: pointer;
-}
-
-.Preview_base__hovered_ee {
-    opacity: 1;
-}
-.Preview_icon_f3 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: url('R.images.gui.maps.icons.library.previewVehicle') no-repeat center / contain;
-    transition: opacity 0.25s ease-out;
-    pointer-events: none;
-}
-.Preview_icon__small_a1 {
-    width: 70rem;
-    height: 70rem;
-}
-.Preview_icon__normal_5c {
-    width: 100rem;
-    height: 100rem;
-}
-.Preview_base__mouseDown_d0 .Preview_icon_f3 {
-    opacity: 0.7;
-}
-.Preview_label_2e {
-    color: #ffdd99;
-    font-size: 14rem;
-    line-height: 1.25;
-    text-shadow:
-        0 0 4rem rgba(255, 127, 0, 0.25),
-        0 0 8rem #ff2a00,
-        0 0 12rem #e52;
-    opacity: 0;
-    position: absolute;
-    bottom: -8rem;
-    transform: translateY(-5rem);
-    transition:
-        transform 0.25s ease-out,
-        opacity 0.25s ease-out;
-}
-.Preview_base__visibleLabel_92 .Preview_label_2e,
-.Preview_base__hovered_ee .Preview_label_2e {
-    opacity: 1;
-    transform: translateY(0rem);
 }
 
 .Currency_currency_ef {
@@ -1767,7 +1231,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .Compensation_tank_d8 {
     width: 232rem;
     height: 174rem;
-    background: url('R.images.white_tiger.gui.maps.icons.rewards.large.vehicles') no-repeat center / contain;
+    background: url('R.images.gui.maps.icons.quests.bonuses.s180x135.vehicles') no-repeat center / contain;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -1827,7 +1291,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .Compensation_base__multiply_2e .Compensation_gold_64 {
     width: 64rem;
     height: 64rem;
-    background: url('R.images.white_tiger.gui.maps.icons.rewards.small.gold');
+    background: url('R.images.gui.maps.icons.quests.bonuses.big.gold');
 }
 
 .mediaMedium .Compensation_base__multiply_2e .Compensation_gold_64 {
@@ -1838,7 +1302,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .Compensation_base__additionalReward_ba .Compensation_gold_64 {
     width: 48rem;
     height: 48rem;
-    background: url('R.images.white_tiger.gui.maps.icons.rewards.small.gold') no-repeat center / contain;
+    background: url('R.images.gui.maps.icons.quests.bonuses.big.gold') no-repeat center / contain;
 }
 
 .mediaMedium .Compensation_base__additionalReward_ba .Compensation_gold_64 {
@@ -1947,7 +1411,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     width: 400rem;
     height: 300rem;
 }
-.mediaMedium .Reward_base__singleReward_8f {
+.mediaLarge .Reward_base__singleReward_8f {
     width: 600rem;
     height: 450rem;
 }
@@ -2106,6 +1570,444 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     transform: scale(1);
 }
 
+.Box_mt__XS_0c {
+    margin-top: 4rem;
+}
+.Box_mt__SM_eb {
+    margin-top: 8rem;
+}
+.Box_mt__SMp_cf {
+    margin-top: 10rem;
+}
+.Box_mt__MD_25 {
+    margin-top: 16rem;
+}
+.Box_mt__MDp_49 {
+    margin-top: 20rem;
+}
+.Box_mt__LG_e8 {
+    margin-top: 32rem;
+}
+.Box_mt__XL_83 {
+    margin-top: 64rem;
+}
+
+.Box_mr__XS_7c {
+    margin-right: 4rem;
+}
+
+.Box_mr__SM_08 {
+    margin-right: 8rem;
+}
+
+.Box_mr__SMp_06 {
+    margin-right: 10rem;
+}
+
+.Box_mr__MD_4a {
+    margin-right: 16rem;
+}
+
+.Box_mr__MDp_b6 {
+    margin-right: 20rem;
+}
+
+.Box_mr__LG_d0 {
+    margin-right: 32rem;
+}
+
+.Box_mr__XL_db {
+    margin-right: 64rem;
+}
+
+.Box_mb__XS_bb {
+    margin-bottom: 4rem;
+}
+
+.Box_mb__SM_83 {
+    margin-bottom: 8rem;
+}
+
+.Box_mb__SMp_04 {
+    margin-bottom: 10rem;
+}
+
+.Box_mb__MD_ed {
+    margin-bottom: 16rem;
+}
+
+.Box_mb__MDp_65 {
+    margin-bottom: 20rem;
+}
+
+.Box_mb__LG_c8 {
+    margin-bottom: 32rem;
+}
+
+.Box_mb__XL_f8 {
+    margin-bottom: 64rem;
+}
+
+.Box_ml__XS_8a {
+    margin-left: 4rem;
+}
+
+.Box_ml__SM_e6 {
+    margin-left: 8rem;
+}
+
+.Box_ml__SMp_fb {
+    margin-left: 10rem;
+}
+
+.Box_ml__MD_2b {
+    margin-left: 16rem;
+}
+
+.Box_ml__MDp_c7 {
+    margin-left: 20rem;
+}
+
+.Box_ml__LG_39 {
+    margin-left: 32rem;
+}
+
+.Box_ml__XL_4a {
+    margin-left: 64rem;
+}
+
+.FormatText_base_d0 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* eslint-disable-next-line expectedscss*/
+.Text_paragraph-P10_2c {
+    font-size: 10rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.Text_paragraph-P12_22 {
+    font-size: 12rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+.Text_paragraph-P14_a7 {
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+.Text_paragraph-P16_90 {
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+.Text_paragraph-P18_50 {
+    font-size: 18rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+.Text_paragraph-P24_33 {
+    font-size: 24rem;
+    font-weight: 400;
+    line-height: 32rem;
+}
+.Text_heading-H14_8b {
+    font-size: 14rem;
+    font-weight: 700;
+    line-height: 1.15;
+}
+.Text_heading-H15_9e {
+    font-size: 15rem;
+    font-weight: 700;
+    line-height: 1.15;
+}
+.Text_heading-H18_b7 {
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H20R_f6 {
+    font-size: 20rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.Text_heading-H22_27 {
+    font-size: 22rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.Text_heading-H24R_be {
+    font-size: 24rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.Text_heading-H24_0c {
+    font-size: 24rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.Text_heading-H28_78 {
+    font-size: 28rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H36_32 {
+    font-size: 36rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H56_c3 {
+    font-size: 56rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H73_8f {
+    font-size: 73rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H144_a9 {
+    font-size: 144rem;
+    font-weight: 700;
+    line-height: 1;
+}
+.Text_BLACK_REAL_30 {
+    color: #000000;
+}
+.Text_WHITE_REAL_bc {
+    color: #ffffff;
+}
+.Text_WHITE_62 {
+    color: #f2f2f7;
+}
+.Text_WHITE_ORANGE_54 {
+    color: #fefeec;
+}
+.Text_WHITE_SPANISH_df {
+    color: #e9e2bf;
+}
+.Text_PAR_15 {
+    color: #8c8c7e;
+}
+.Text_PAR_SECONDARY_5d {
+    color: #595950;
+}
+.Text_PAR_TERTIARY_c9 {
+    color: #37362e;
+}
+.Text_INFO_RED_30 {
+    color: #ff0000;
+}
+.Text_RED_66 {
+    color: #ff2717;
+}
+.Text_RED_DARK_d8 {
+    color: #b70000;
+}
+.Text_YELLOW_ed {
+    color: #feab34;
+}
+.Text_ORANGE_be {
+    color: #ee7000;
+}
+.Text_CREAM_57 {
+    color: #ffdd99;
+}
+.Text_BROWN_18 {
+    color: #cbac77;
+}
+.Text_GREEN_BRIGHT_3f {
+    color: #80d43a;
+}
+.Text_GREEN_e3 {
+    color: #7ab300;
+}
+.Text_GREEN_DARK_f1 {
+    color: #497212;
+}
+.Text_BLUE_BOOSTER_21 {
+    color: #ccffff;
+}
+.Text_BLUE_TEAMKILLER_ab {
+    color: #09e2ff;
+}
+.Text_CRED_f7 {
+    color: #ced9d9;
+}
+.Text_GOLD_28 {
+    color: #ffc363;
+}
+.Text_BOND_be {
+    color: #c9c9b6;
+}
+.Text_PROM_65 {
+    color: #a29b70;
+}
+
+@keyframes Vehicle_show_6a {
+    0% {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    100% {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+@keyframes Vehicle_translate-down_56 {
+    0% {
+        opacity: 0;
+        transform: translateY(-20rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+@keyframes Vehicle_translate-up_4b {
+    0% {
+        opacity: 0;
+        transform: translateY(20rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+.Vehicle_base_52 {
+    display: flex;
+    align-items: center;
+}
+.Vehicle_base__hasAnimation_6a {
+    opacity: 0;
+    animation: Vehicle_show_6a 0.1s 0.1s ease-in-out forwards;
+}
+.Vehicle_type_33 {
+    width: 83rem;
+    height: 74rem;
+    margin: 6rem -5rem 0 -18rem;
+    background: no-repeat center / contain;
+}
+.mediaMedium .Vehicle_type_33 {
+    margin: 6rem -8rem 0 -10rem;
+}
+.mediaLarge .Vehicle_type_33 {
+    margin-top: 8rem;
+}
+.Vehicle_name_63,
+.Vehicle_level_37 {
+    color: #ced9d9;
+    font-size: 22rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.mediaMedium .Vehicle_name_63,
+.mediaMedium .Vehicle_level_37 {
+    font-size: 28rem;
+}
+.mediaLarge .Vehicle_name_63,
+.mediaLarge .Vehicle_level_37 {
+    font-size: 36rem;
+}
+.Vehicle_name_63 {
+    color: #ffc363;
+}
+.Vehicle_level_37 {
+    color: #e9e2bf;
+}
+
+@keyframes FirstLaunchReward_show_0e {
+    0% {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    100% {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+@keyframes FirstLaunchReward_translate-down_9d {
+    0% {
+        opacity: 0;
+        transform: translateY(-20rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+@keyframes FirstLaunchReward_translate-up_61 {
+    0% {
+        opacity: 0;
+        transform: translateY(20rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+.FirstLaunchReward_base_64 {
+    color: #ced9d9;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: FirstLaunchReward_show_0e 0.1s 0.8s ease-in-out forwards;
+}
+.mediaMedium .FirstLaunchReward_base_64 {
+    font-size: 22rem;
+}
+.FirstLaunchReward_gold_40 {
+    color: #ffc363;
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
+    display: flex;
+    align-items: center;
+    margin-left: 5rem;
+}
+.mediaMedium .FirstLaunchReward_gold_40 {
+    color: #ffc363;
+    font-size: 22rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: -1rem 0 0 6rem;
+}
+.FirstLaunchReward_goldIcon_05 {
+    width: 16rem;
+    height: 16rem;
+    margin: 6rem 0 0 3rem;
+    background: url('R.images.gui.maps.icons.library.goldIconBig') no-repeat center / contain;
+}
+.mediaMedium .FirstLaunchReward_goldIcon_05 {
+    width: 24rem;
+    height: 24rem;
+    margin: 6rem 0 0;
+    background-image: url('R.images.gui.maps.icons.quests.bonuses.small.gold');
+}
+.FirstLaunchReward_infoIcon_7b {
+    width: 16rem;
+    height: 16rem;
+    margin: 2rem 0 0 8rem;
+    background: url('R.images.gui.maps.icons.library.attentionIcon1') no-repeat center / contain;
+}
+.mediaMedium .FirstLaunchReward_infoIcon_7b {
+    margin: 4rem 0 0 6rem;
+}
+
 @keyframes Content_show_35 {
     0% {
         opacity: 0;
@@ -2117,7 +2019,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
         visibility: visible;
     }
 }
-
 @keyframes Content_translate-down_fa {
     0% {
         opacity: 0;
@@ -2129,7 +2030,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
         transform: none;
     }
 }
-
 @keyframes Content_translate-up_17 {
     0% {
         opacity: 0;
@@ -2141,36 +2041,63 @@ This bug is reproduced in Google Chrome 81.0.4044.113
         transform: none;
     }
 }
-
 .Content_base_a4 {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
     position: relative;
-    z-index: 2;
 }
-
+.Content_firstLaunchReward_d0 {
+    margin-top: 47rem;
+}
+.mediaMedium .Content_firstLaunchReward_d0 {
+    margin-top: 63rem;
+}
+.mediaLarge .Content_firstLaunchReward_d0 {
+    margin-top: 73rem;
+}
+.Content_vehicle_3e {
+    margin-top: -12rem;
+}
+.mediaMedium .Content_vehicle_3e {
+    margin-top: -3rem;
+}
+.mediaLarge .Content_vehicle_3e {
+    margin-top: 2rem;
+}
+.Content_vehicleBg_17 {
+    width: 631rem;
+    height: 242rem;
+    background: radial-gradient(50% 50% at 50% 50%, #000 0%, transparent 100%);
+    filter: blur(40px);
+    opacity: 0;
+    position: absolute;
+    top: -101rem;
+    left: 50%;
+    z-index: -1;
+    transform: translateX(-50%);
+    animation: Content_showVehicleBg_5d 0.1s 1s ease-in-out forwards;
+}
+.mediaLarge .Content_vehicleBg_17 {
+    top: -78rem;
+}
 .Content_toolTipArea_5a {
     flex: 1;
     width: 75%;
     margin-top: 35rem;
 }
-
 .mediaSmall .Content_toolTipArea_5a {
     width: 55%;
 }
-
 .mediaMedium .Content_toolTipArea_5a {
     margin-top: 100rem;
 }
-
 .Content_wrapper_e6 {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
-
 .Content_controls_67 {
     opacity: 0;
     animation: Content_show_35 0.1s 0.1s ease-in-out forwards;
@@ -2178,17 +2105,13 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     justify-content: center;
     margin-bottom: 54rem;
     position: relative;
-    z-index: 3;
 }
-
 .mediaMedium .Content_controls_67 {
     margin: 66rem;
 }
-
 .mediaLarge .Content_controls_67 {
     margin-bottom: 61rem;
 }
-
 .Content_additional_aa {
     opacity: 0;
     animation: Content_show_35 0.1s 0.1s ease-in-out forwards;
@@ -2198,17 +2121,13 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     align-items: center;
     margin-bottom: 56rem;
     position: relative;
-    z-index: 3;
 }
-
 .mediaMedium .Content_additional_aa {
     margin-bottom: 0;
 }
-
 .mediaLarge .Content_additional_aa {
     margin-bottom: 7rem;
 }
-
 .Content_additionalBackground_60 {
     width: 657rem;
     height: 252rem;
@@ -2219,22 +2138,18 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     transform: translate(-50%, -50%);
     pointer-events: none;
 }
-
 .mediaMedium .Content_additionalBackground_60 {
     width: 833rem;
     height: 320rem;
 }
-
 .mediaLarge .Content_additionalBackground_60 {
     width: 1111rem;
     height: 426rem;
 }
-
 .Content_additionalWrapper_87 {
     display: flex;
     align-items: center;
 }
-
 .Content_additionalTitle_ea {
     margin-bottom: 10rem;
     position: relative;
@@ -2243,11 +2158,9 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     font-weight: 400;
     line-height: 1.3;
 }
-
 .mediaMedium .Content_additionalTitle_ea {
     margin-bottom: 20rem;
 }
-
 .Content_btnHolder_44 {
     display: flex;
     flex-direction: column;
@@ -2255,9 +2168,17 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     min-width: 200rem;
     margin: 0 20rem 20rem;
 }
-
 .mediaLarge .Content_btnHolder_44 {
     margin: 0 27rem 20rem;
+}
+@keyframes Content_showVehicleBg_5d {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0.5;
+    }
 }
 
 body {

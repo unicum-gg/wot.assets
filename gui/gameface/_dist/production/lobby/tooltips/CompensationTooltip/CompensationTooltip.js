@@ -2196,7 +2196,13 @@
                         (u.LootBoxToken = 'lootBoxToken'),
                         (u.GoldenTicket = 'birthday2025_golden_ticket'),
                         (u.PostStamp = 'giftsystem_4_stamp'),
-                        (u.Quests = 'quests'));
+                        (u.Quests = 'quests'),
+                        (u.WtStamp = 'stamp'),
+                        (u.WtHunter = 'wt_hunter'),
+                        (u.WtHunterCollection = 'hunter_collection'),
+                        (u.WtTicket = 'wtevent_ticket'),
+                        (u.WtMainPrizeDiscount = 'main_prize_discount'),
+                        (u.WtTicket25 = 'wtevent_ticket25'));
                 })(yu || (yu = {})),
                     (function (u) {
                         ((u.Gold = 'gold'),
@@ -2290,16 +2296,17 @@
                             (u.PROGRESSION_STYLE_UPGRADED_3 = 'progressionStyleUpgraded_3'),
                             (u.PROGRESSION_STYLE_UPGRADED_4 = 'progressionStyleUpgraded_4'));
                     })(Gu || (Gu = {})));
-                class Wu extends n().PureComponent {
-                    render() {
-                        let u;
-                        u = 'gold' === this.props.format ? hu.B3.GOLD : hu.B3.INTEGRAL;
-                        const e = hu.Z5.getNumberFormat(this.props.value, u);
-                        return void 0 !== this.props.value && void 0 !== e ? e : null;
-                    }
-                }
-                Wu.defaultProps = { format: 'integral' };
-                const Xu = [
+                const Wu = ({ format: u, value: e }) => {
+                        const t = ((u, e = 'integral') => {
+                            let t;
+                            return (
+                                (t = 'gold' === e ? hu.B3.GOLD : hu.B3.INTEGRAL),
+                                void 0 === u ? '' : hu.Z5.getNumberFormat(u, t)
+                            );
+                        })(e, u);
+                        return t ? n().createElement('span', null, t) : null;
+                    },
+                    Xu = [
                         yu.Items,
                         yu.Equipment,
                         yu.Xp,
@@ -2337,6 +2344,11 @@
                         yu.SelectableBonus,
                         yu.GoldenTicket,
                         yu.PostStamp,
+                        yu.WtStamp,
+                        yu.WtTicket,
+                        yu.WtMainPrizeDiscount,
+                        yu.WtHunter,
+                        yu.WtHunterCollection,
                     ],
                     ju = [yu.Gold, yu.Credits, yu.Crystal, yu.FreeXp],
                     qu = [yu.BattlePassPoints],

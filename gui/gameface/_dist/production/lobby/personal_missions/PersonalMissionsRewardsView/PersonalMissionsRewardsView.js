@@ -1645,7 +1645,13 @@
                         (e.LootBoxToken = 'lootBoxToken'),
                         (e.GoldenTicket = 'birthday2025_golden_ticket'),
                         (e.PostStamp = 'giftsystem_4_stamp'),
-                        (e.Quests = 'quests'));
+                        (e.Quests = 'quests'),
+                        (e.WtStamp = 'stamp'),
+                        (e.WtHunter = 'wt_hunter'),
+                        (e.WtHunterCollection = 'hunter_collection'),
+                        (e.WtTicket = 'wtevent_ticket'),
+                        (e.WtMainPrizeDiscount = 'main_prize_discount'),
+                        (e.WtTicket25 = 'wtevent_ticket25'));
                 })(le || (le = {})),
                     (function (e) {
                         ((e.Gold = 'gold'),
@@ -1752,17 +1758,15 @@
                             (e.Battle = 'battle'),
                             (e.Master = 'master'));
                     })(De || (De = {})));
-                class Be extends r().PureComponent {
-                    render() {
-                        let e;
-                        if ('gold' === this.props.format) e = q.B3.GOLD;
-                        else e = q.B3.INTEGRAL;
-                        const u = q.Z5.getNumberFormat(this.props.value, e);
-                        return void 0 !== this.props.value && void 0 !== u ? u : null;
-                    }
-                }
-                Be.defaultProps = { format: 'integral' };
-                const Ce = [
+                const Be = ({ format: e, value: u }) => {
+                        const t = ((e, u = 'integral') => {
+                            let t;
+                            t = 'gold' === u ? q.B3.GOLD : q.B3.INTEGRAL;
+                            return void 0 === e ? '' : q.Z5.getNumberFormat(e, t);
+                        })(u, e);
+                        return t ? r().createElement('span', null, t) : null;
+                    },
+                    Ce = [
                         le.Items,
                         le.Equipment,
                         le.Xp,
@@ -1800,6 +1804,11 @@
                         le.SelectableBonus,
                         le.GoldenTicket,
                         le.PostStamp,
+                        le.WtStamp,
+                        le.WtTicket,
+                        le.WtMainPrizeDiscount,
+                        le.WtHunter,
+                        le.WtHunterCollection,
                     ],
                     ge = [le.Gold, le.Credits, le.Crystal, le.FreeXp],
                     pe = [le.BattlePassPoints],

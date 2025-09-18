@@ -3818,7 +3818,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 20rem;
+    margin-top: 120rem;
 }
 
 .RewardsViewApp_claimButton_3d {

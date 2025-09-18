@@ -1119,14 +1119,14 @@
                             { caller: t, stack: u, resId: r }
                         );
                     },
-                    $ = (e, u) => e.split('.').reduce((e, u) => e && e[u], u),
-                    W = (e) => e && 'ArrayItem' === e.__proto__.constructor.name,
+                    W = (e, u) => e.split('.').reduce((e, u) => e && e[u], u),
+                    $ = (e) => e && 'ArrayItem' === e.__proto__.constructor.name,
                     z = (e, u) => (e.length > 0 ? `${e}.${u}` : u),
                     q = (e) =>
                         ((e, u) =>
                             e.split('.').reduce((e, t) => {
-                                const r = $(`${e}.${t}`, window);
-                                return W(r) ? u(e, t, r) : `${e}.${t}`;
+                                const r = W(`${e}.${t}`, window);
+                                return $(r) ? u(e, t, r) : `${e}.${t}`;
                             }))(e, (e, u) => `${e}.${u}.value`),
                     Y = (e) => {
                         const u = ((e) => {
@@ -1142,8 +1142,8 @@
                             const e = [r[0]];
                             return (
                                 r.reduce((u, r) => {
-                                    const n = $(z(t, `${u}.${r}`), window);
-                                    return W(n) ? (e.push(n.id), `${u}.${r}.value`) : (e.push(r), `${u}.${r}`);
+                                    const n = W(z(t, `${u}.${r}`), window);
+                                    return $(n) ? (e.push(n.id), `${u}.${r}.value`) : (e.push(r), `${u}.${r}`);
                                 }),
                                 e.reduce((e, u) => e + '.' + u)
                             );
@@ -1167,9 +1167,9 @@
                             ),
                             l = (0, r.useState)(() =>
                                 ((e) => {
-                                    const u = $(e, window);
+                                    const u = W(e, window);
                                     for (const e in u) 'function' == typeof u[e] && (u[e] = u[e].bind(u));
-                                    return W(u) ? u.value : u;
+                                    return $(u) ? u.value : u;
                                 })(q(o)),
                             ),
                             E = l[0],
@@ -1803,7 +1803,7 @@
                         (e.HeightMedium = 'heightMedium'),
                         (e.HeightLarge = 'heightLarge'));
                 })(Ge || (Ge = {}));
-                const $e = (e) => {
+                const We = (e) => {
                         switch (!0) {
                             case e.extraSmallHeight:
                             case e.smallHeight:
@@ -1816,7 +1816,7 @@
                                 return Ge.HeightLarge;
                         }
                     },
-                    We = (e) => {
+                    $e = (e) => {
                         switch (!0) {
                             case e.extraSmallWidth:
                                 return Ge.WidthSmall;
@@ -1831,7 +1831,7 @@
                     },
                     ze = () => {
                         const e = n().useContext(F);
-                        return { horizontalSize: We(e), verticalSize: $e(e) };
+                        return { horizontalSize: $e(e), verticalSize: We(e) };
                     },
                     qe = 'Progression_base_f1',
                     Ye = 'Progression_dividersConrainer_55',
@@ -1886,78 +1886,82 @@
                                 n().createElement('div', { ref: e }, n().createElement(He, { value: s, maxValue: o })),
                             )
                         );
+                    },
+                    Je = ({ format: e, value: u }) => {
+                        const t = ((e, u = 'integral') => {
+                            let t;
+                            t = 'gold' === u ? H.B3.GOLD : H.B3.INTEGRAL;
+                            return void 0 === e ? '' : H.Z5.getNumberFormat(e, t);
+                        })(u, e);
+                        return t ? n().createElement('span', null, t) : null;
                     };
-                class Je extends n().PureComponent {
-                    render() {
-                        let e;
-                        if ('gold' === this.props.format) e = H.B3.GOLD;
-                        else e = H.B3.INTEGRAL;
-                        const u = H.Z5.getNumberFormat(this.props.value, e);
-                        return void 0 !== this.props.value && void 0 !== u ? u : null;
-                    }
-                }
                 let eu, uu, tu, ru, nu, au, iu;
-                ((Je.defaultProps = { format: 'integral' }),
-                    (function (e) {
-                        ((e.Items = 'items'),
-                            (e.Equipment = 'equipment'),
-                            (e.Xp = 'xp'),
-                            (e.XpFactor = 'xpFactor'),
-                            (e.Blueprints = 'blueprints'),
-                            (e.BlueprintsAny = 'blueprintsAny'),
-                            (e.Goodies = 'goodies'),
-                            (e.Berths = 'berths'),
-                            (e.Slots = 'slots'),
-                            (e.Tokens = 'tokens'),
-                            (e.CrewSkins = 'crewSkins'),
-                            (e.CrewBooks = 'crewBooks'),
-                            (e.Customizations = 'customizations'),
-                            (e.CreditsFactor = 'creditsFactor'),
-                            (e.Currency = 'currency'),
-                            (e.TankmenXp = 'tankmenXP'),
-                            (e.TankmenXpFactor = 'tankmenXPFactor'),
-                            (e.FreeXpFactor = 'freeXPFactor'),
-                            (e.BattleToken = 'battleToken'),
-                            (e.PremiumUniversal = 'premium_universal'),
-                            (e.Gold = 'gold'),
-                            (e.Credits = 'credits'),
-                            (e.Crystal = 'crystal'),
-                            (e.FreeXp = 'freeXP'),
-                            (e.Premium = 'premium'),
-                            (e.PremiumPlus = 'premium_plus'),
-                            (e.BattlePassPoints = 'battlePassPoints'),
-                            (e.BattlePassSelectToken = 'battlePassSelectToken'),
-                            (e.SelectableBonus = 'selectableBonus'),
-                            (e.StyleProgressToken = 'styleProgressToken'),
-                            (e.TmanToken = 'tmanToken'),
-                            (e.NaturalCover = 'naturalCover'),
-                            (e.BpCoin = 'bpcoin'),
-                            (e.BattlaPassFinalAchievement = 'dossier_achievement'),
-                            (e.BattleBadge = 'dossier_badge'),
-                            (e.NewYearAlbumsAccess = 'newYearAlbumsAccess'),
-                            (e.NewYearFillers = 'ny22Fillers'),
-                            (e.NewYearInvoice = 'newYearInvoice'),
-                            (e.NewYearToyFragments = 'ny22ToyFragments'),
-                            (e.NewYearSlot = 'newYearSlot'),
-                            (e.BonusX5 = 'battle_bonus_x5'),
-                            (e.CrewBonusX3 = 'crew_bonus_x3'),
-                            (e.Vehicles = 'vehicles'),
-                            (e.EpicSelectToken = 'epicSelectToken'),
-                            (e.CollectionItem = 'collectionItem'),
-                            (e.Comp7TokenWeeklyReward = 'comp7TokenWeeklyReward'),
-                            (e.Comp7TokenCouponReward = 'comp7TokenCouponReward'),
-                            (e.BattleBoosterGift = 'battleBooster_gift'),
-                            (e.CosmicLootboxSilver = 'lootBoxToken'),
-                            (e.CosmicLootboxCommon = 'cosmic_2024_2'),
-                            (e.Branch = 'branch'),
-                            (e.VehicleSelect = 'vehicleSelect'),
-                            (e.StyleProgress = 'styleProgress'),
-                            (e.ParagonsUnlocks = 'paragonsUnlocks'),
-                            (e.LootBoxToken = 'lootBoxToken'),
-                            (e.GoldenTicket = 'birthday2025_golden_ticket'),
-                            (e.PostStamp = 'giftsystem_4_stamp'),
-                            (e.Quests = 'quests'));
-                    })(eu || (eu = {})),
+                (!(function (e) {
+                    ((e.Items = 'items'),
+                        (e.Equipment = 'equipment'),
+                        (e.Xp = 'xp'),
+                        (e.XpFactor = 'xpFactor'),
+                        (e.Blueprints = 'blueprints'),
+                        (e.BlueprintsAny = 'blueprintsAny'),
+                        (e.Goodies = 'goodies'),
+                        (e.Berths = 'berths'),
+                        (e.Slots = 'slots'),
+                        (e.Tokens = 'tokens'),
+                        (e.CrewSkins = 'crewSkins'),
+                        (e.CrewBooks = 'crewBooks'),
+                        (e.Customizations = 'customizations'),
+                        (e.CreditsFactor = 'creditsFactor'),
+                        (e.Currency = 'currency'),
+                        (e.TankmenXp = 'tankmenXP'),
+                        (e.TankmenXpFactor = 'tankmenXPFactor'),
+                        (e.FreeXpFactor = 'freeXPFactor'),
+                        (e.BattleToken = 'battleToken'),
+                        (e.PremiumUniversal = 'premium_universal'),
+                        (e.Gold = 'gold'),
+                        (e.Credits = 'credits'),
+                        (e.Crystal = 'crystal'),
+                        (e.FreeXp = 'freeXP'),
+                        (e.Premium = 'premium'),
+                        (e.PremiumPlus = 'premium_plus'),
+                        (e.BattlePassPoints = 'battlePassPoints'),
+                        (e.BattlePassSelectToken = 'battlePassSelectToken'),
+                        (e.SelectableBonus = 'selectableBonus'),
+                        (e.StyleProgressToken = 'styleProgressToken'),
+                        (e.TmanToken = 'tmanToken'),
+                        (e.NaturalCover = 'naturalCover'),
+                        (e.BpCoin = 'bpcoin'),
+                        (e.BattlaPassFinalAchievement = 'dossier_achievement'),
+                        (e.BattleBadge = 'dossier_badge'),
+                        (e.NewYearAlbumsAccess = 'newYearAlbumsAccess'),
+                        (e.NewYearFillers = 'ny22Fillers'),
+                        (e.NewYearInvoice = 'newYearInvoice'),
+                        (e.NewYearToyFragments = 'ny22ToyFragments'),
+                        (e.NewYearSlot = 'newYearSlot'),
+                        (e.BonusX5 = 'battle_bonus_x5'),
+                        (e.CrewBonusX3 = 'crew_bonus_x3'),
+                        (e.Vehicles = 'vehicles'),
+                        (e.EpicSelectToken = 'epicSelectToken'),
+                        (e.CollectionItem = 'collectionItem'),
+                        (e.Comp7TokenWeeklyReward = 'comp7TokenWeeklyReward'),
+                        (e.Comp7TokenCouponReward = 'comp7TokenCouponReward'),
+                        (e.BattleBoosterGift = 'battleBooster_gift'),
+                        (e.CosmicLootboxSilver = 'lootBoxToken'),
+                        (e.CosmicLootboxCommon = 'cosmic_2024_2'),
+                        (e.Branch = 'branch'),
+                        (e.VehicleSelect = 'vehicleSelect'),
+                        (e.StyleProgress = 'styleProgress'),
+                        (e.ParagonsUnlocks = 'paragonsUnlocks'),
+                        (e.LootBoxToken = 'lootBoxToken'),
+                        (e.GoldenTicket = 'birthday2025_golden_ticket'),
+                        (e.PostStamp = 'giftsystem_4_stamp'),
+                        (e.Quests = 'quests'),
+                        (e.WtStamp = 'stamp'),
+                        (e.WtHunter = 'wt_hunter'),
+                        (e.WtHunterCollection = 'hunter_collection'),
+                        (e.WtTicket = 'wtevent_ticket'),
+                        (e.WtMainPrizeDiscount = 'main_prize_discount'),
+                        (e.WtTicket25 = 'wtevent_ticket25'));
+                })(eu || (eu = {})),
                     (function (e) {
                         ((e.Gold = 'gold'),
                             (e.Credits = 'credits'),
@@ -2088,6 +2092,11 @@
                         eu.SelectableBonus,
                         eu.GoldenTicket,
                         eu.PostStamp,
+                        eu.WtStamp,
+                        eu.WtTicket,
+                        eu.WtMainPrizeDiscount,
+                        eu.WtHunter,
+                        eu.WtHunterCollection,
                     ],
                     ou = [eu.Gold, eu.Credits, eu.Crystal, eu.FreeXp],
                     lu = [eu.BattlePassPoints],
@@ -2762,17 +2771,17 @@
                             )
                         );
                     },
-                    $u = 'Content_base_0d',
-                    Wu = () =>
+                    Wu = 'Content_base_0d',
+                    $u = () =>
                         n().createElement(
                             'div',
-                            { className: $u },
+                            { className: Wu },
                             n().createElement(ue, null),
                             n().createElement(Ze, null),
                             n().createElement(Gu, null),
                         ),
                     zu = 'App_content_a7',
-                    qu = () => n().createElement('div', { className: zu }, n().createElement(Wu, null));
+                    qu = () => n().createElement('div', { className: zu }, n().createElement($u, null));
                 engine.whenReady.then(() => {
                     i().render(
                         n().createElement(k, null, n().createElement(qu, null)),

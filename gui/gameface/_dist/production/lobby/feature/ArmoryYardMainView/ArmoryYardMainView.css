@@ -3468,17 +3468,12 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     width: 280rem;
     height: 280rem;
     position: absolute;
-    top: -73rem;
-    left: -40rem;
+    top: 50%;
+    left: 50%;
     z-index: -1;
-    transform: scale(1.35);
+    transform: translate(-50%, -50%) scale(calc(1.35 * var(--scale)));
+    transform-origin: center center;
     pointer-events: none;
-}
-
-.FinalReward_sequence__scaledX2_5b {
-    top: 111rem;
-    left: 141rem;
-    transform: scale(2.5);
 }
 
 .FinalReward_info_a2 {
@@ -3643,6 +3638,9 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .SequencedBg_base_8f {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 280rem;
     height: 280rem;
 }

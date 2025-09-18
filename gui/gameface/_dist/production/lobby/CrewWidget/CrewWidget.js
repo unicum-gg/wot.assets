@@ -2174,6 +2174,7 @@
                         content: 'App_content_8c',
                         member: 'App_member_27',
                         member__boss: 'App_member__boss_c1',
+                        member__boss_2025: 'App_member__boss_2025_cb',
                         member__hunter_1: 'App_member__hunter_1_56',
                         member__hunter_2: 'App_member__hunter_2_76',
                         member__hunter_3: 'App_member__hunter_3_96',

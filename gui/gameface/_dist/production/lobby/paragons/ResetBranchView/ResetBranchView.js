@@ -2969,7 +2969,13 @@
                         (e.LootBoxToken = 'lootBoxToken'),
                         (e.GoldenTicket = 'birthday2025_golden_ticket'),
                         (e.PostStamp = 'giftsystem_4_stamp'),
-                        (e.Quests = 'quests'));
+                        (e.Quests = 'quests'),
+                        (e.WtStamp = 'stamp'),
+                        (e.WtHunter = 'wt_hunter'),
+                        (e.WtHunterCollection = 'hunter_collection'),
+                        (e.WtTicket = 'wtevent_ticket'),
+                        (e.WtMainPrizeDiscount = 'main_prize_discount'),
+                        (e.WtTicket25 = 'wtevent_ticket25'));
                 })(Su || (Su = {})),
                     (function (e) {
                         ((e.Gold = 'gold'),
@@ -3186,18 +3192,16 @@
                         name: 'Card_name_02',
                         inner: 'Card_inner_69',
                         cardContent: 'Card_cardContent_36',
-                    };
-                class Qu extends s().PureComponent {
-                    render() {
-                        let e;
-                        if ('gold' === this.props.format) e = we.B3.GOLD;
-                        else e = we.B3.INTEGRAL;
-                        const u = we.Z5.getNumberFormat(this.props.value, e);
-                        return void 0 !== this.props.value && void 0 !== u ? u : null;
-                    }
-                }
-                Qu.defaultProps = { format: 'integral' };
-                const Zu = [
+                    },
+                    Qu = ({ format: e, value: u }) => {
+                        const t = ((e, u = 'integral') => {
+                            let t;
+                            t = 'gold' === u ? we.B3.GOLD : we.B3.INTEGRAL;
+                            return void 0 === e ? '' : we.Z5.getNumberFormat(e, t);
+                        })(u, e);
+                        return t ? s().createElement('span', null, t) : null;
+                    },
+                    Zu = [
                         Su.Items,
                         Su.Equipment,
                         Su.Xp,
@@ -3235,6 +3239,11 @@
                         Su.SelectableBonus,
                         Su.GoldenTicket,
                         Su.PostStamp,
+                        Su.WtStamp,
+                        Su.WtTicket,
+                        Su.WtMainPrizeDiscount,
+                        Su.WtHunter,
+                        Su.WtHunterCollection,
                     ],
                     Ju = [Su.Gold, Su.Credits, Su.Crystal, Su.FreeXp],
                     et = [Su.BattlePassPoints],

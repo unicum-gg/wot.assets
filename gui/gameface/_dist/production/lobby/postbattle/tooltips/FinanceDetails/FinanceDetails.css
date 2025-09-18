@@ -113,7 +113,7 @@
 }
 
 .Currency_icon__large_72.Currency_icon__credits_bd {
-    background-image: url('R.images.gui.maps.icons.library.CreditsIcon_48x48');
+    background-image: url('R.images.gui.maps.icons.quests.bonuses.small.credits');
 }
 
 .Currency_icon__large_72.Currency_icon__crystal_2c {
@@ -509,7 +509,7 @@
 }
 
 .TooltipContent_titleIcon__credits_7c {
-    background-image: url('R.images.gui.maps.icons.library.CreditsIcon_48x48');
+    background-image: url('R.images.gui.maps.icons.quests.bonuses.small.credits');
 }
 
 .TooltipContent_titleIcon__crystal_43 {

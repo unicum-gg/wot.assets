@@ -3742,17 +3742,15 @@
                     (function (e) {
                         ((e.Red = 'RedActionBG'), (e.Blue = 'BlueActionBG'));
                     })(Fu || (Fu = {})));
-                class Cu extends r().PureComponent {
-                    render() {
-                        let e;
-                        if ('gold' === this.props.format) e = U.B3.GOLD;
-                        else e = U.B3.INTEGRAL;
-                        const u = U.Z5.getNumberFormat(this.props.value, e);
-                        return void 0 !== this.props.value && void 0 !== u ? u : null;
-                    }
-                }
-                Cu.defaultProps = { format: 'integral' };
-                const bu = {
+                const Cu = ({ format: e, value: u }) => {
+                        const t = ((e, u = 'integral') => {
+                            let t;
+                            t = 'gold' === u ? U.B3.GOLD : U.B3.INTEGRAL;
+                            return void 0 === e ? '' : U.Z5.getNumberFormat(e, t);
+                        })(u, e);
+                        return t ? r().createElement('span', null, t) : null;
+                    },
+                    bu = {
                         base: 'Currency_base_57',
                         icon: 'Currency_icon_c5',
                         base__small: 'Currency_base__small_af',

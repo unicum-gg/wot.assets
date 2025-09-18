@@ -422,16 +422,14 @@
                 var n = t(6179),
                     r = t.n(n),
                     o = t(4179);
-                class i extends r().PureComponent {
-                    render() {
-                        let e;
-                        if ('gold' === this.props.format) e = o.B3.GOLD;
-                        else e = o.B3.INTEGRAL;
-                        const u = o.Z5.getNumberFormat(this.props.value, e);
-                        return void 0 !== this.props.value && void 0 !== u ? u : null;
-                    }
-                }
-                i.defaultProps = { format: 'integral' };
+                const i = ({ format: e, value: u }) => {
+                    const t = ((e, u = 'integral') => {
+                        let t;
+                        t = 'gold' === u ? o.B3.GOLD : o.B3.INTEGRAL;
+                        return void 0 === e ? '' : o.Z5.getNumberFormat(e, t);
+                    })(u, e);
+                    return t ? r().createElement('span', null, t) : null;
+                };
             },
             3495: (e, u, t) => {
                 t.d(u, { Y: () => d });

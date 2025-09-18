@@ -1329,14 +1329,14 @@
                         },
                     ),
                     q = 'Alert_alert_66',
-                    X = 'Alert_icon_ea',
-                    z = 'Alert_alertText_14',
+                    z = 'Alert_icon_ea',
+                    X = 'Alert_alertText_14',
                     j = ({ alertText: u, className: e }) =>
                         r().createElement(
                             'div',
                             { className: F()(q, e) },
-                            r().createElement('i', { className: X }),
-                            r().createElement('span', { className: z }, u),
+                            r().createElement('i', { className: z }),
+                            r().createElement('span', { className: X }, u),
                         );
                 let Y, $, K;
                 (!(function (u) {
@@ -1353,16 +1353,14 @@
                     (function (u) {
                         ((u.Red = 'RedActionBG'), (u.Blue = 'BlueActionBG'));
                     })(K || (K = {})));
-                class Q extends r().PureComponent {
-                    render() {
-                        let u;
-                        if ('gold' === this.props.format) u = l.B3.GOLD;
-                        else u = l.B3.INTEGRAL;
-                        const e = l.Z5.getNumberFormat(this.props.value, u);
-                        return void 0 !== this.props.value && void 0 !== e ? e : null;
-                    }
-                }
-                Q.defaultProps = { format: 'integral' };
+                const Q = ({ format: u, value: e }) => {
+                    const t = ((u, e = 'integral') => {
+                        let t;
+                        t = 'gold' === e ? l.B3.GOLD : l.B3.INTEGRAL;
+                        return void 0 === u ? '' : l.Z5.getNumberFormat(u, t);
+                    })(e, u);
+                    return t ? r().createElement('span', null, t) : null;
+                };
                 function Z(u, e) {
                     return Array.isArray(u) ? u.map(e) : u.map((u, t, n) => e(null == u ? void 0 : u.value, t, n));
                 }
@@ -1483,7 +1481,13 @@
                         (u.LootBoxToken = 'lootBoxToken'),
                         (u.GoldenTicket = 'birthday2025_golden_ticket'),
                         (u.PostStamp = 'giftsystem_4_stamp'),
-                        (u.Quests = 'quests'));
+                        (u.Quests = 'quests'),
+                        (u.WtStamp = 'stamp'),
+                        (u.WtHunter = 'wt_hunter'),
+                        (u.WtHunterCollection = 'hunter_collection'),
+                        (u.WtTicket = 'wtevent_ticket'),
+                        (u.WtMainPrizeDiscount = 'main_prize_discount'),
+                        (u.WtTicket25 = 'wtevent_ticket25'));
                 })(eu || (eu = {})),
                     (function (u) {
                         ((u.Gold = 'gold'),
@@ -1998,8 +2002,8 @@
                     Nu = 'Content_base_a7',
                     Tu = 'Content_currency_4f',
                     xu = 'Content_column_9d',
-                    Ru = 'Content_alert_0f',
-                    ku = R.strings.tank_setup.dialogs.confirmActionsWithEquipmentDialog.content,
+                    ku = 'Content_alert_0f',
+                    Ru = R.strings.tank_setup.dialogs.confirmActionsWithEquipmentDialog.content,
                     Ou = (0, A.Pi)(() => {
                         const u = Cu().model,
                             e = u.computes.priceDevice(),
@@ -2007,7 +2011,7 @@
                             n = u.root.get(),
                             i = n.dialogType,
                             s = n.alertText,
-                            a = ku.$dyn(i);
+                            a = Ru.$dyn(i);
                         return r().createElement(
                             'div',
                             { className: Nu },
@@ -2019,7 +2023,7 @@
                                 alertText: s,
                                 showAlertMessage: !0,
                                 className: xu,
-                                classNames: { currency: Tu, alert: Ru },
+                                classNames: { currency: Tu, alert: ku },
                             }),
                         );
                     }),
@@ -2251,8 +2255,8 @@
                         qu.apply(this, arguments)
                     );
                 }
-                const Xu = R.views.common.tooltip_window.simple_tooltip_content,
-                    zu = (u) => {
+                const zu = R.views.common.tooltip_window.simple_tooltip_content,
+                    Xu = (u) => {
                         let e = u.children,
                             t = u.body,
                             i = u.header,
@@ -2279,7 +2283,7 @@
                                 {
                                     contentId:
                                         ((_ = null == o ? void 0 : o.hasHtmlContent),
-                                        _ ? Xu.SimpleTooltipHtmlContent('resId') : Xu.SimpleTooltipContent('resId')),
+                                        _ ? zu.SimpleTooltipHtmlContent('resId') : zu.SimpleTooltipContent('resId')),
                                     decoratorId: R.views.common.tooltip_window.tooltip_window.TooltipWindow('resId'),
                                     args: l,
                                 },
@@ -2306,7 +2310,7 @@
                 const Yu = ({ children: u, tooltipArgs: e, className: t }) => {
                         if (!e) return u;
                         const n = r().createElement('div', { className: t }, u);
-                        if (e.header || e.body) return r().createElement(zu, e, n);
+                        if (e.header || e.body) return r().createElement(Xu, e, n);
                         const i = e.contentId,
                             s = e.args,
                             a = null == s ? void 0 : s.contentId;
@@ -2352,6 +2356,11 @@
                         eu.SelectableBonus,
                         eu.GoldenTicket,
                         eu.PostStamp,
+                        eu.WtStamp,
+                        eu.WtTicket,
+                        eu.WtMainPrizeDiscount,
+                        eu.WtHunter,
+                        eu.WtHunterCollection,
                         eu.Gold,
                         eu.Credits,
                         eu.Crystal,
@@ -2712,7 +2721,7 @@
                                 }),
                             ),
                             r().createElement(
-                                zu,
+                                Xu,
                                 { isEnabled: s, body: u },
                                 r().createElement('div', { ref: t, className: F()(re, e) }, u),
                             )

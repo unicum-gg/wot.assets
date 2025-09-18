@@ -128,8 +128,8 @@
         contain;
     position: relative;
 }
-.App_keys__hasNew_f7 {
-    background: none;
+.App_base_08:hover .App_keys_e1 {
+    background-image: url('R.images.white_tiger.gui.maps.icons.entryBoxPoint.background_portal_new');
 }
 .App_inputArea_bb {
     width: 125rem;

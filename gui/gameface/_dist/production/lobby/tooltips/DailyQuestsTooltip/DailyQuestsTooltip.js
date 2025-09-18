@@ -894,7 +894,13 @@
                         (e.LootBoxToken = 'lootBoxToken'),
                         (e.GoldenTicket = 'birthday2025_golden_ticket'),
                         (e.PostStamp = 'giftsystem_4_stamp'),
-                        (e.Quests = 'quests'));
+                        (e.Quests = 'quests'),
+                        (e.WtStamp = 'stamp'),
+                        (e.WtHunter = 'wt_hunter'),
+                        (e.WtHunterCollection = 'hunter_collection'),
+                        (e.WtTicket = 'wtevent_ticket'),
+                        (e.WtMainPrizeDiscount = 'main_prize_discount'),
+                        (e.WtTicket25 = 'wtevent_ticket25'));
                 })(c || (c = {})),
                     (function (e) {
                         ((e.Gold = 'gold'),
@@ -1118,7 +1124,7 @@
                                         (f.current.isVisible = !1));
                                 }
                             }, [t, A, h, v]),
-                            S = (0, r.useCallback)((e) => {
+                            T = (0, r.useCallback)((e) => {
                                 f.current.isVisible &&
                                     ((f.current.prevTarget = document.elementFromPoint(e.clientX, e.clientY)),
                                     (f.current.hideTimerId = window.setTimeout(() => {
@@ -1130,9 +1136,9 @@
                             (0, r.useEffect)(() => {
                                 const e = f.current.hideTimerId;
                                 return (
-                                    document.addEventListener('wheel', S, { capture: !0 }),
+                                    document.addEventListener('wheel', T, { capture: !0 }),
                                     () => {
-                                        (document.removeEventListener('wheel', S, { capture: !0 }),
+                                        (document.removeEventListener('wheel', T, { capture: !0 }),
                                             e && window.clearTimeout(e));
                                     }
                                 );
@@ -1155,13 +1161,13 @@
                                       Object.assign(
                                           {
                                               onMouseEnter:
-                                                  ((T = u.props.onMouseEnter),
+                                                  ((S = u.props.onMouseEnter),
                                                   (e) => {
                                                       (e.clientX === window.innerWidth &&
                                                           e.clientY === window.innerHeight) ||
                                                           ((f.current.timeoutId = window.setTimeout(y, c ? 100 : 400)),
                                                           s && s(e),
-                                                          T && T(e));
+                                                          S && S(e));
                                                   }),
                                               onMouseLeave: ((e) => (u) => {
                                                   (P(), null == o || o(u), null == e || e(u));
@@ -1178,7 +1184,7 @@
                                   )
                                 : u
                         );
-                        var T;
+                        var S;
                     },
                     v = ['children'];
                 function w() {
@@ -1237,7 +1243,7 @@
                     );
                 }
                 const P = R.views.common.tooltip_window.simple_tooltip_content,
-                    S = (e) => {
+                    T = (e) => {
                         let u = e.children,
                             t = e.body,
                             n = e.header,
@@ -1274,9 +1280,9 @@
                         );
                         var E;
                     };
-                function T() {
+                function S() {
                     return (
-                        (T =
+                        (S =
                             Object.assign ||
                             function (e) {
                                 for (var u = 1; u < arguments.length; u++) {
@@ -1285,30 +1291,31 @@
                                 }
                                 return e;
                             }),
-                        T.apply(this, arguments)
+                        S.apply(this, arguments)
                     );
                 }
                 const O = ({ children: e, tooltipArgs: u, className: t }) => {
-                    if (!u) return e;
-                    const n = s().createElement('div', { className: t }, e);
-                    if (u.header || u.body) return s().createElement(S, u, n);
-                    const r = u.contentId,
-                        o = u.args,
-                        a = null == o ? void 0 : o.contentId;
-                    return r || a
-                        ? s().createElement(b, T({}, u, { contentId: r || a }), n)
-                        : s().createElement(f, u, n);
-                };
-                class k extends s().PureComponent {
-                    render() {
-                        let e;
-                        e = 'gold' === this.props.format ? D.B3.GOLD : D.B3.INTEGRAL;
-                        const u = D.Z5.getNumberFormat(this.props.value, e);
-                        return void 0 !== this.props.value && void 0 !== u ? u : null;
-                    }
-                }
-                k.defaultProps = { format: 'integral' };
-                const N = [
+                        if (!u) return e;
+                        const n = s().createElement('div', { className: t }, e);
+                        if (u.header || u.body) return s().createElement(T, u, n);
+                        const r = u.contentId,
+                            o = u.args,
+                            a = null == o ? void 0 : o.contentId;
+                        return r || a
+                            ? s().createElement(b, S({}, u, { contentId: r || a }), n)
+                            : s().createElement(f, u, n);
+                    },
+                    k = ({ format: e, value: u }) => {
+                        const t = ((e, u = 'integral') => {
+                            let t;
+                            return (
+                                (t = 'gold' === u ? D.B3.GOLD : D.B3.INTEGRAL),
+                                void 0 === e ? '' : D.Z5.getNumberFormat(e, t)
+                            );
+                        })(u, e);
+                        return t ? s().createElement('span', null, t) : null;
+                    },
+                    N = [
                         c.Items,
                         c.Equipment,
                         c.Xp,
@@ -1346,6 +1353,11 @@
                         c.SelectableBonus,
                         c.GoldenTicket,
                         c.PostStamp,
+                        c.WtStamp,
+                        c.WtTicket,
+                        c.WtMainPrizeDiscount,
+                        c.WtHunter,
+                        c.WtHunterCollection,
                     ],
                     I = [c.Gold, c.Credits, c.Crystal, c.FreeXp],
                     M = [c.BattlePassPoints],
@@ -2215,19 +2227,19 @@
                             shadow: '0 0 4px 1px #ffaa0066, 0 0 9px 1px #ffaa0066, 0 0 12px 2px #ff550066, 0 0 12px 4px #ff000066',
                         },
                     },
-                    Se = {
+                    Te = {
                         freezed: !1,
                         withStack: !1,
                         type: ee.Growing,
                         delta: { duration: 500, delay: 0 },
                         line: { duration: 500, delay: 0 },
                     },
-                    Te = (0, r.memo)(
+                    Se = (0, r.memo)(
                         ({
                             maxValue: e = 100,
                             theme: u = Pe,
                             size: t = J.Default,
-                            animationSettings: n = Se,
+                            animationSettings: n = Te,
                             disabled: o = !1,
                             withoutBackground: a = !1,
                             progressBarBackgroundClassMix: i,
@@ -2278,7 +2290,7 @@
                             }),
                             A = (0, r.useMemo)(
                                 () =>
-                                    Object.assign({}, Se, {
+                                    Object.assign({}, Te, {
                                         line: { delay: 1e3, duration: 1e3 },
                                         delta: {
                                             className: 'BattleConditions_timingFunction_8f',
@@ -2295,7 +2307,7 @@
                                       s().createElement(
                                           'div',
                                           { className: l()(K, null == i ? void 0 : i.progressBar), style: n },
-                                          s().createElement(Te, {
+                                          s().createElement(Se, {
                                               size: J.Small,
                                               value: c,
                                               deltaFrom: c - E,
@@ -2325,7 +2337,7 @@
                                       s().createElement(
                                           'div',
                                           { className: l()(K, null == i ? void 0 : i.progressBar), style: n },
-                                          s().createElement(Te, {
+                                          s().createElement(Se, {
                                               size: J.Small,
                                               value: c,
                                               deltaFrom: c - E,
@@ -2596,7 +2608,7 @@
                             { className: ze.base },
                             e.map((e, r) =>
                                 s().createElement(
-                                    S,
+                                    T,
                                     {
                                         isEnabled: n,
                                         header: je.dailyQuestsLockedReward.header(),

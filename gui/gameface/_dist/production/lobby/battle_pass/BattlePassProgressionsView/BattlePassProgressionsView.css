@@ -3543,15 +3543,15 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     margin-right: 20rem;
 }
 .Header_awards_7b {
-    margin-top: -3rem;
-    margin-right: 0;
-    position: relative;
+    position: absolute;
+    top: -3rem;
+    right: 0;
 }
 .mediaMedium .Header_awards_7b {
-    margin-top: -18rem;
+    top: -18rem;
 }
 .mediaLarge .Header_awards_7b {
-    margin-top: 0;
+    top: 0;
 }
 .Header_logo_2d {
     margin-right: 12rem;

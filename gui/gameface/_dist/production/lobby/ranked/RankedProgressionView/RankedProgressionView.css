@@ -895,6 +895,74 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     }
 }
 
+@keyframes AnimatedBackground_slideUp_ad {
+    0% {
+        opacity: 0;
+        transform: translateY(20rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes AnimatedBackground_fadeInWithScale_eb {
+    0% {
+        opacity: 0;
+        transform: scale(1.2);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes AnimatedBackground_lockStartAnimation_da {
+    0% {
+        filter: blur(0);
+    }
+
+    100% {
+        filter: blur(4px);
+    }
+}
+
+@keyframes AnimatedBackground_lockEndAnimation_d1 {
+    0% {
+        filter: blur(4px);
+        opacity: 1;
+        transform: translateX(-50%) scale(1);
+    }
+
+    100% {
+        filter: blur(24px);
+        opacity: 0;
+        transform: translateX(-50%) scale(1.7);
+    }
+}
+
+@keyframes AnimatedBackground_fadeIn_f8 {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes AnimatedBackground_fadeOut_13 {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
 .AnimatedBackground_base_5f {
     width: 500rem;
     height: 500rem;
@@ -1446,7 +1514,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .Rank_back_5d {
     width: 100%;
     height: 100%;
-    background: url('R.images.gui.maps.icons.rankedBattles.ranks.back.medium') no-repeat center / contain;
+    background: url('R.images.gui.maps.icons.rankedBattles.ranks.back.small') no-repeat center / contain;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -1454,7 +1522,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .mediaMedium .Rank_back_5d {
-    background-image: url('R.images.gui.maps.icons.rankedBattles.ranks.back.big');
+    background-image: url('R.images.gui.maps.icons.rankedBattles.ranks.back.medium');
 }
 
 .Rank_info_37 {

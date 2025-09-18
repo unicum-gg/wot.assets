@@ -1285,11 +1285,11 @@
 }
 @keyframes StateNormal_logoSmallX2IconHover_49 {
     from {
-        bottom: -10rem;
+        bottom: 25rem;
     }
 
     to {
-        bottom: -15rem;
+        bottom: 20rem;
     }
 }
 @keyframes StateNormal_freePointsHover_1d {
@@ -1366,11 +1366,11 @@
 }
 @keyframes StateNormal_logoSmallX2IconOut_8f {
     from {
-        bottom: -15rem;
+        bottom: 20rem;
     }
 
     to {
-        bottom: -10rem;
+        bottom: 25rem;
     }
 }
 @keyframes StateNormal_emblemLevelUp_72 {
@@ -1676,10 +1676,6 @@
     width: 50rem;
     height: 50rem;
 }
-.StateNormal_base__smallX2_07 .StateNormal_chapterLogoIcon_26 {
-    bottom: -10rem;
-    transform: translateY(-50rem);
-}
 .StateNormal_freePoints_37 {
     color: #ffdd99;
     font-size: 30rem;
@@ -1693,7 +1689,7 @@
 }
 .StateNormal_base__smallX2_07 .StateNormal_freePoints_37 {
     bottom: -5rem;
-    transform: translateY(-50rem);
+    transform: translateY(-40rem);
 }
 
 @keyframes StateAttention_fadeInWithScale_b7 {
@@ -1784,11 +1780,11 @@
 }
 @keyframes StateAttention_logoSmallX2IconHover_02 {
     from {
-        bottom: -10rem;
+        bottom: 25rem;
     }
 
     to {
-        bottom: -15rem;
+        bottom: 20rem;
     }
 }
 @keyframes StateAttention_freePointsHover_17 {
@@ -1865,11 +1861,11 @@
 }
 @keyframes StateAttention_logoSmallX2IconOut_48 {
     from {
-        bottom: -15rem;
+        bottom: 20rem;
     }
 
     to {
-        bottom: -10rem;
+        bottom: 25rem;
     }
 }
 @keyframes StateAttention_emblemLevelUp_43 {
@@ -2227,11 +2223,11 @@
 }
 @keyframes StateBuyBP_logoSmallX2IconHover_6c {
     from {
-        bottom: -10rem;
+        bottom: 25rem;
     }
 
     to {
-        bottom: -15rem;
+        bottom: 20rem;
     }
 }
 @keyframes StateBuyBP_freePointsHover_12 {
@@ -2308,11 +2304,11 @@
 }
 @keyframes StateBuyBP_logoSmallX2IconOut_91 {
     from {
-        bottom: -15rem;
+        bottom: 20rem;
     }
 
     to {
-        bottom: -10rem;
+        bottom: 25rem;
     }
 }
 @keyframes StateBuyBP_emblemLevelUp_86 {
@@ -2658,11 +2654,11 @@
 }
 @keyframes StateChapterNotChosen_logoSmallX2IconHover_9e {
     from {
-        bottom: -10rem;
+        bottom: 25rem;
     }
 
     to {
-        bottom: -15rem;
+        bottom: 20rem;
     }
 }
 @keyframes StateChapterNotChosen_freePointsHover_5a {
@@ -2739,11 +2735,11 @@
 }
 @keyframes StateChapterNotChosen_logoSmallX2IconOut_b2 {
     from {
-        bottom: -15rem;
+        bottom: 20rem;
     }
 
     to {
-        bottom: -10rem;
+        bottom: 25rem;
     }
 }
 @keyframes StateChapterNotChosen_emblemLevelUp_08 {
@@ -3084,11 +3080,11 @@
 }
 @keyframes StateComplete_logoSmallX2IconHover_0d {
     from {
-        bottom: -10rem;
+        bottom: 25rem;
     }
 
     to {
-        bottom: -15rem;
+        bottom: 20rem;
     }
 }
 @keyframes StateComplete_freePointsHover_b7 {
@@ -3165,11 +3161,11 @@
 }
 @keyframes StateComplete_logoSmallX2IconOut_e0 {
     from {
-        bottom: -15rem;
+        bottom: 20rem;
     }
 
     to {
-        bottom: -10rem;
+        bottom: 25rem;
     }
 }
 @keyframes StateComplete_emblemLevelUp_86 {
@@ -3516,11 +3512,11 @@
 }
 @keyframes StateLevelUp_logoSmallX2IconHover_55 {
     from {
-        bottom: -10rem;
+        bottom: 25rem;
     }
 
     to {
-        bottom: -15rem;
+        bottom: 20rem;
     }
 }
 @keyframes StateLevelUp_freePointsHover_c9 {
@@ -3597,11 +3593,11 @@
 }
 @keyframes StateLevelUp_logoSmallX2IconOut_c9 {
     from {
-        bottom: -15rem;
+        bottom: 20rem;
     }
 
     to {
-        bottom: -10rem;
+        bottom: 25rem;
     }
 }
 @keyframes StateLevelUp_emblemLevelUp_f4 {
@@ -3947,11 +3943,11 @@
 }
 @keyframes StateMouseOut_logoSmallX2IconHover_7c {
     from {
-        bottom: -10rem;
+        bottom: 25rem;
     }
 
     to {
-        bottom: -15rem;
+        bottom: 20rem;
     }
 }
 @keyframes StateMouseOut_freePointsHover_e1 {
@@ -4028,11 +4024,11 @@
 }
 @keyframes StateMouseOut_logoSmallX2IconOut_d7 {
     from {
-        bottom: -15rem;
+        bottom: 20rem;
     }
 
     to {
-        bottom: -10rem;
+        bottom: 25rem;
     }
 }
 @keyframes StateMouseOut_emblemLevelUp_be {
@@ -4424,11 +4420,11 @@
 }
 @keyframes StateMouseOver_logoSmallX2IconHover_f6 {
     from {
-        bottom: -10rem;
+        bottom: 25rem;
     }
 
     to {
-        bottom: -15rem;
+        bottom: 20rem;
     }
 }
 @keyframes StateMouseOver_freePointsHover_64 {
@@ -4505,11 +4501,11 @@
 }
 @keyframes StateMouseOver_logoSmallX2IconOut_f4 {
     from {
-        bottom: -15rem;
+        bottom: 20rem;
     }
 
     to {
-        bottom: -10rem;
+        bottom: 25rem;
     }
 }
 @keyframes StateMouseOver_emblemLevelUp_cf {
@@ -4901,11 +4897,11 @@
 }
 @keyframes StateNotTakenRewards_logoSmallX2IconHover_59 {
     from {
-        bottom: -10rem;
+        bottom: 25rem;
     }
 
     to {
-        bottom: -15rem;
+        bottom: 20rem;
     }
 }
 @keyframes StateNotTakenRewards_freePointsHover_11 {
@@ -4982,11 +4978,11 @@
 }
 @keyframes StateNotTakenRewards_logoSmallX2IconOut_dd {
     from {
-        bottom: -15rem;
+        bottom: 20rem;
     }
 
     to {
-        bottom: -10rem;
+        bottom: 25rem;
     }
 }
 @keyframes StateNotTakenRewards_emblemLevelUp_d0 {
@@ -5333,11 +5329,11 @@
 }
 @keyframes StateShow_logoSmallX2IconHover_6c {
     from {
-        bottom: -10rem;
+        bottom: 25rem;
     }
 
     to {
-        bottom: -15rem;
+        bottom: 20rem;
     }
 }
 @keyframes StateShow_freePointsHover_42 {
@@ -5414,11 +5410,11 @@
 }
 @keyframes StateShow_logoSmallX2IconOut_af {
     from {
-        bottom: -15rem;
+        bottom: 20rem;
     }
 
     to {
-        bottom: -10rem;
+        bottom: 25rem;
     }
 }
 @keyframes StateShow_emblemLevelUp_ec {
@@ -5776,11 +5772,11 @@
 }
 @keyframes StateSwitchChapter_logoSmallX2IconHover_b9 {
     from {
-        bottom: -10rem;
+        bottom: 25rem;
     }
 
     to {
-        bottom: -15rem;
+        bottom: 20rem;
     }
 }
 @keyframes StateSwitchChapter_freePointsHover_6e {
@@ -5857,11 +5853,11 @@
 }
 @keyframes StateSwitchChapter_logoSmallX2IconOut_1b {
     from {
-        bottom: -15rem;
+        bottom: 20rem;
     }
 
     to {
-        bottom: -10rem;
+        bottom: 25rem;
     }
 }
 @keyframes StateSwitchChapter_emblemLevelUp_c5 {
@@ -6209,11 +6205,11 @@
 }
 @keyframes Content_logoSmallX2IconHover_ef {
     from {
-        bottom: -10rem;
+        bottom: 25rem;
     }
 
     to {
-        bottom: -15rem;
+        bottom: 20rem;
     }
 }
 @keyframes Content_freePointsHover_8d {
@@ -6290,11 +6286,11 @@
 }
 @keyframes Content_logoSmallX2IconOut_49 {
     from {
-        bottom: -15rem;
+        bottom: 20rem;
     }
 
     to {
-        bottom: -10rem;
+        bottom: 25rem;
     }
 }
 @keyframes Content_emblemLevelUp_38 {
@@ -6551,7 +6547,7 @@ body {
     height: 175rem;
 }
 .Content_base__smallX2_95 {
-    height: 185rem;
+    height: 175rem;
 }
 .Content_base__disabled_76,
 .Content_base__seasonWaiting_7c {

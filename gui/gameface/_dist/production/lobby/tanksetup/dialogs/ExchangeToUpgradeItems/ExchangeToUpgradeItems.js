@@ -3928,20 +3928,18 @@
                     })(S || (S = {})));
                 var k = t(2056),
                     M = t(4179);
-                class x extends r().PureComponent {
-                    render() {
-                        let e;
-                        if ('gold' === this.props.format) e = M.B3.GOLD;
-                        else e = M.B3.INTEGRAL;
-                        const u = M.Z5.getNumberFormat(this.props.value, e);
-                        return void 0 !== this.props.value && void 0 !== u ? u : null;
-                    }
-                }
+                const x = ({ format: e, value: u }) => {
+                    const t = ((e, u = 'integral') => {
+                        let t;
+                        t = 'gold' === u ? M.B3.GOLD : M.B3.INTEGRAL;
+                        return void 0 === e ? '' : M.Z5.getNumberFormat(e, t);
+                    })(u, e);
+                    return t ? r().createElement('span', null, t) : null;
+                };
                 let T;
-                ((x.defaultProps = { format: 'integral' }),
-                    (function (e) {
-                        ((e.backport = 'backport'), (e.normal = 'normal'), (e.absent = 'absent'));
-                    })(T || (T = {})));
+                !(function (e) {
+                    ((e.backport = 'backport'), (e.normal = 'normal'), (e.absent = 'absent'));
+                })(T || (T = {}));
                 const P = {
                         currency: 'CurrencyItem_currency_b6',
                         currency__credits: 'CurrencyItem_currency__credits_eb',

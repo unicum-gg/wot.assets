@@ -1532,16 +1532,17 @@
                         ((u.Red = 'RedActionBG'), (u.Blue = 'BlueActionBG'));
                     })(au || (au = {})));
                 var iu = t(4179);
-                class ou extends n().PureComponent {
-                    render() {
-                        let u;
-                        u = 'gold' === this.props.format ? iu.B3.GOLD : iu.B3.INTEGRAL;
-                        const e = iu.Z5.getNumberFormat(this.props.value, u);
-                        return void 0 !== this.props.value && void 0 !== e ? e : null;
-                    }
-                }
-                ou.defaultProps = { format: 'integral' };
-                const su = {
+                const ou = ({ format: u, value: e }) => {
+                        const t = ((u, e = 'integral') => {
+                            let t;
+                            return (
+                                (t = 'gold' === e ? iu.B3.GOLD : iu.B3.INTEGRAL),
+                                void 0 === u ? '' : iu.Z5.getNumberFormat(u, t)
+                            );
+                        })(e, u);
+                        return t ? n().createElement('span', null, t) : null;
+                    },
+                    su = {
                         base: 'Currency_base_57',
                         icon: 'Currency_icon_c5',
                         base__small: 'Currency_base__small_af',
@@ -2060,7 +2061,13 @@
                         (u.LootBoxToken = 'lootBoxToken'),
                         (u.GoldenTicket = 'birthday2025_golden_ticket'),
                         (u.PostStamp = 'giftsystem_4_stamp'),
-                        (u.Quests = 'quests'));
+                        (u.Quests = 'quests'),
+                        (u.WtStamp = 'stamp'),
+                        (u.WtHunter = 'wt_hunter'),
+                        (u.WtHunterCollection = 'hunter_collection'),
+                        (u.WtTicket = 'wtevent_ticket'),
+                        (u.WtMainPrizeDiscount = 'main_prize_discount'),
+                        (u.WtTicket25 = 'wtevent_ticket25'));
                 })(Nu || (Nu = {})),
                     (function (u) {
                         ((u.Gold = 'gold'),
@@ -2192,6 +2199,11 @@
                         Nu.SelectableBonus,
                         Nu.GoldenTicket,
                         Nu.PostStamp,
+                        Nu.WtStamp,
+                        Nu.WtTicket,
+                        Nu.WtMainPrizeDiscount,
+                        Nu.WtHunter,
+                        Nu.WtHunterCollection,
                     ],
                     qu = [Nu.Gold, Nu.Credits, Nu.Crystal, Nu.FreeXp],
                     Yu = [Nu.BattlePassPoints],

@@ -2,19 +2,7 @@
     'use strict';
     var __webpack_modules__ = {
             2372: (u, e, t) => {
-                var E = t(6179),
-                    F = t.n(E),
-                    A = t(4179);
-                class n extends F().PureComponent {
-                    render() {
-                        let u;
-                        if ('gold' === this.props.format) u = A.B3.GOLD;
-                        else u = A.B3.INTEGRAL;
-                        const e = A.Z5.getNumberFormat(this.props.value, u);
-                        return void 0 !== this.props.value && void 0 !== e ? e : null;
-                    }
-                }
-                n.defaultProps = { format: 'integral' };
+                (t(6179), t(4179));
             },
             2862: (u, e, t) => {
                 let E, F, A, n, o, i, r;
@@ -77,7 +65,13 @@
                             (u.LootBoxToken = 'lootBoxToken'),
                             (u.GoldenTicket = 'birthday2025_golden_ticket'),
                             (u.PostStamp = 'giftsystem_4_stamp'),
-                            (u.Quests = 'quests'));
+                            (u.Quests = 'quests'),
+                            (u.WtStamp = 'stamp'),
+                            (u.WtHunter = 'wt_hunter'),
+                            (u.WtHunterCollection = 'hunter_collection'),
+                            (u.WtTicket = 'wtevent_ticket'),
+                            (u.WtMainPrizeDiscount = 'main_prize_discount'),
+                            (u.WtTicket25 = 'wtevent_ticket25'));
                     })(E || (E = {})),
                     (function (u) {
                         ((u.Gold = 'gold'),
@@ -212,6 +206,11 @@
                     E.E4.SelectableBonus,
                     E.E4.GoldenTicket,
                     E.E4.PostStamp,
+                    E.E4.WtStamp,
+                    E.E4.WtTicket,
+                    E.E4.WtMainPrizeDiscount,
+                    E.E4.WtHunter,
+                    E.E4.WtHunterCollection,
                     E.E4.Gold,
                     E.E4.Credits,
                     E.E4.Crystal,
@@ -370,7 +369,7 @@
             7641: (u, e, t) => {
                 (t.r(e),
                     t.d(e, {
-                        addModelObserver: () => s,
+                        addModelObserver: () => D,
                         addPreloadTexture: () => o,
                         children: () => E,
                         displayStatus: () => F.W,
@@ -393,7 +392,7 @@
                         setAnimateWindow: () => m,
                         setEventHandled: () => v,
                         setInputPaddingsRem: () => i,
-                        setSidePaddingsRem: () => D,
+                        setSidePaddingsRem: () => s,
                         whenTutorialReady: () => g,
                     }));
                 var E = t(3722),
@@ -409,10 +408,10 @@
                 function r(u, e, t, E = 1) {
                     return viewEnv.getWebBrowserTexturePath(u, e, t, E);
                 }
-                function s(u, e, t) {
+                function D(u, e, t) {
                     return viewEnv.addDataChangedCallback(u, e, t);
                 }
-                function D(u) {
+                function s(u) {
                     viewEnv.setHitAreaPaddingsRem(u.top, u.right, u.bottom, u.left, 15);
                 }
                 function a(u = 'px') {
@@ -735,7 +734,7 @@
                 const __WEBPACK_DEFAULT_EXPORT__ = ViewModel;
             },
             4179: (u, e, t) => {
-                t.d(e, { B3: () => r, Z5: () => n, ry: () => d });
+                t.d(e, { ry: () => d });
                 class E {
                     constructor() {
                         ((this.entries = []),
@@ -801,8 +800,8 @@
                         (u[(u.MINIMIZE = 64)] = 'MINIMIZE'));
                 })(i || (i = {}));
                 const r = Object.freeze({ INTEGRAL: 0, GOLD: 1 }),
-                    s = Object.freeze({ FRACTIONAL: 0, WO_ZERO_DIGITS: 1 }),
-                    D = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1 }),
+                    D = Object.freeze({ FRACTIONAL: 0, WO_ZERO_DIGITS: 1 }),
+                    s = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1 }),
                     a = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1, YEAR_MONTH: 2 });
                 var B = t(5521),
                     C = t(3138);
@@ -895,8 +894,8 @@
                         ViewModel: w.Z,
                         ViewEventType: i,
                         NumberFormatType: r,
-                        RealFormatType: s,
-                        TimeFormatType: D,
+                        RealFormatType: D,
+                        TimeFormatType: s,
                         DateFormatType: a,
                         makeGlobalBoundingBox: c,
                         sendMoveEvent: (u) => m(i.MOVE, { isMouseEvent: !0, on: u }),
@@ -909,13 +908,13 @@
                             const n = C.O.view.getViewGlobalPosition(),
                                 o = t.getBoundingClientRect(),
                                 r = o.x,
-                                s = o.y,
-                                D = o.width,
+                                D = o.y,
+                                s = o.width,
                                 a = o.height,
                                 B = {
                                     x: C.O.view.pxToRem(r) + n.x,
-                                    y: C.O.view.pxToRem(s) + n.y,
-                                    width: C.O.view.pxToRem(D),
+                                    y: C.O.view.pxToRem(D) + n.y,
+                                    width: C.O.view.pxToRem(s),
                                     height: C.O.view.pxToRem(a),
                                 };
                             m(i.POP_OVER, {

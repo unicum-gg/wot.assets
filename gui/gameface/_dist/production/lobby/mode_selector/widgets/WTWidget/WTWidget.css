@@ -208,11 +208,6 @@
     transition-timing-function: cubic-bezier(1, 0, 0.75, 0.75);
 }
 
-.FormatText_base_d0 {
-    display: flex;
-    flex-wrap: wrap;
-}
-
 .ExtendedText_base_71 {
     display: flex;
     line-height: 1.2;
@@ -362,6 +357,281 @@
     width: 100%;
 }
 
+.Box_mt__XS_0c {
+    margin-top: 4rem;
+}
+.Box_mt__SM_eb {
+    margin-top: 8rem;
+}
+.Box_mt__SMp_cf {
+    margin-top: 10rem;
+}
+.Box_mt__MD_25 {
+    margin-top: 16rem;
+}
+.Box_mt__MDp_49 {
+    margin-top: 20rem;
+}
+.Box_mt__LG_e8 {
+    margin-top: 32rem;
+}
+.Box_mt__XL_83 {
+    margin-top: 64rem;
+}
+
+.Box_mr__XS_7c {
+    margin-right: 4rem;
+}
+
+.Box_mr__SM_08 {
+    margin-right: 8rem;
+}
+
+.Box_mr__SMp_06 {
+    margin-right: 10rem;
+}
+
+.Box_mr__MD_4a {
+    margin-right: 16rem;
+}
+
+.Box_mr__MDp_b6 {
+    margin-right: 20rem;
+}
+
+.Box_mr__LG_d0 {
+    margin-right: 32rem;
+}
+
+.Box_mr__XL_db {
+    margin-right: 64rem;
+}
+
+.Box_mb__XS_bb {
+    margin-bottom: 4rem;
+}
+
+.Box_mb__SM_83 {
+    margin-bottom: 8rem;
+}
+
+.Box_mb__SMp_04 {
+    margin-bottom: 10rem;
+}
+
+.Box_mb__MD_ed {
+    margin-bottom: 16rem;
+}
+
+.Box_mb__MDp_65 {
+    margin-bottom: 20rem;
+}
+
+.Box_mb__LG_c8 {
+    margin-bottom: 32rem;
+}
+
+.Box_mb__XL_f8 {
+    margin-bottom: 64rem;
+}
+
+.Box_ml__XS_8a {
+    margin-left: 4rem;
+}
+
+.Box_ml__SM_e6 {
+    margin-left: 8rem;
+}
+
+.Box_ml__SMp_fb {
+    margin-left: 10rem;
+}
+
+.Box_ml__MD_2b {
+    margin-left: 16rem;
+}
+
+.Box_ml__MDp_c7 {
+    margin-left: 20rem;
+}
+
+.Box_ml__LG_39 {
+    margin-left: 32rem;
+}
+
+.Box_ml__XL_4a {
+    margin-left: 64rem;
+}
+
+.FormatText_base_d0 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* eslint-disable-next-line expectedscss*/
+.Text_paragraph-P10_2c {
+    font-size: 10rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.Text_paragraph-P12_22 {
+    font-size: 12rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+.Text_paragraph-P14_a7 {
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+.Text_paragraph-P16_90 {
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+.Text_paragraph-P18_50 {
+    font-size: 18rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+.Text_paragraph-P24_33 {
+    font-size: 24rem;
+    font-weight: 400;
+    line-height: 32rem;
+}
+.Text_heading-H14_8b {
+    font-size: 14rem;
+    font-weight: 700;
+    line-height: 1.15;
+}
+.Text_heading-H15_9e {
+    font-size: 15rem;
+    font-weight: 700;
+    line-height: 1.15;
+}
+.Text_heading-H18_b7 {
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H20R_f6 {
+    font-size: 20rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.Text_heading-H22_27 {
+    font-size: 22rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.Text_heading-H24R_be {
+    font-size: 24rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.Text_heading-H24_0c {
+    font-size: 24rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.Text_heading-H28_78 {
+    font-size: 28rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H36_32 {
+    font-size: 36rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H56_c3 {
+    font-size: 56rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H73_8f {
+    font-size: 73rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H144_a9 {
+    font-size: 144rem;
+    font-weight: 700;
+    line-height: 1;
+}
+.Text_BLACK_REAL_30 {
+    color: #000000;
+}
+.Text_WHITE_REAL_bc {
+    color: #ffffff;
+}
+.Text_WHITE_62 {
+    color: #f2f2f7;
+}
+.Text_WHITE_ORANGE_54 {
+    color: #fefeec;
+}
+.Text_WHITE_SPANISH_df {
+    color: #e9e2bf;
+}
+.Text_PAR_15 {
+    color: #8c8c7e;
+}
+.Text_PAR_SECONDARY_5d {
+    color: #595950;
+}
+.Text_PAR_TERTIARY_c9 {
+    color: #37362e;
+}
+.Text_INFO_RED_30 {
+    color: #ff0000;
+}
+.Text_RED_66 {
+    color: #ff2717;
+}
+.Text_RED_DARK_d8 {
+    color: #b70000;
+}
+.Text_YELLOW_ed {
+    color: #feab34;
+}
+.Text_ORANGE_be {
+    color: #ee7000;
+}
+.Text_CREAM_57 {
+    color: #ffdd99;
+}
+.Text_BROWN_18 {
+    color: #cbac77;
+}
+.Text_GREEN_BRIGHT_3f {
+    color: #80d43a;
+}
+.Text_GREEN_e3 {
+    color: #7ab300;
+}
+.Text_GREEN_DARK_f1 {
+    color: #497212;
+}
+.Text_BLUE_BOOSTER_21 {
+    color: #ccffff;
+}
+.Text_BLUE_TEAMKILLER_ab {
+    color: #09e2ff;
+}
+.Text_CRED_f7 {
+    color: #ced9d9;
+}
+.Text_GOLD_28 {
+    color: #ffc363;
+}
+.Text_BOND_be {
+    color: #c9c9b6;
+}
+.Text_PROM_65 {
+    color: #a29b70;
+}
+
 .WTWidget_base_4b {
     display: flex;
     flex-direction: column;
@@ -393,50 +663,50 @@
     height: 136rem;
 }
 
-.WTWidget_emblem__b1_77 {
+.WTWidget_base__b1_78 .WTWidget_emblem_4b {
     top: 104rem;
 }
 
-.mediaMedium .WTWidget_emblem__b1_77 {
+.mediaMedium .WTWidget_base__b1_78 .WTWidget_emblem_4b {
     width: 136rem;
     height: 136rem;
 }
 
-.mediaLarge .WTWidget_emblem__b1_77 {
+.mediaLarge .WTWidget_base__b1_78 .WTWidget_emblem_4b {
     top: 146rem;
 }
 
-.WTWidget_emblem__b2_6e {
+.WTWidget_base__b2_9b .WTWidget_emblem_4b {
     top: 3rem;
 }
 
-.mediaMedium .WTWidget_emblem__b2_6e {
+.mediaMedium .WTWidget_base__b2_9b .WTWidget_emblem_4b {
     top: -3rem;
 }
 
-.mediaLarge .WTWidget_emblem__b2_6e {
+.mediaLarge .WTWidget_base__b2_9b .WTWidget_emblem_4b {
     top: 3rem;
 }
 
-.WTWidget_emblem__b3_5c {
+.WTWidget_base__b3_48 .WTWidget_emblem_4b {
     top: 3rem;
 }
 
-.mediaMedium .WTWidget_emblem__b3_5c {
+.mediaMedium .WTWidget_base__b3_48 .WTWidget_emblem_4b {
     top: 10rem;
 }
 
-.mediaLarge .WTWidget_emblem__b3_5c {
+.mediaLarge .WTWidget_base__b3_48 .WTWidget_emblem_4b {
     top: -15rem;
 }
 
-.WTWidget_emblem__b4_91 {
+.WTWidget_base__b4_c9 .WTWidget_emblem_4b {
     width: 60rem;
     height: 60rem;
     top: 3rem;
 }
 
-.mediaLarge .WTWidget_emblem__b4_91 {
+.mediaLarge .WTWidget_base__b4_c9 .WTWidget_emblem_4b {
     width: 90rem;
     height: 90rem;
     top: -8rem;
@@ -490,28 +760,28 @@
     top: 478rem;
 }
 
-.WTWidget_progress__b2_fc {
+.WTWidget_base__b2_9b .WTWidget_progress_f2 {
     top: 160rem;
 }
 
-.mediaMedium .WTWidget_progress__b2_fc {
+.mediaMedium .WTWidget_base__b2_9b .WTWidget_progress_f2 {
     top: 210rem;
 }
 
-.mediaLarge .WTWidget_progress__b2_fc {
+.mediaLarge .WTWidget_base__b2_9b .WTWidget_progress_f2 {
     top: 245rem;
 }
 
-.WTWidget_progress__b3_58 {
+.WTWidget_base__b3_48 .WTWidget_progress_f2 {
     width: 70%;
     top: 160rem;
 }
 
-.mediaMedium .WTWidget_progress__b3_58 {
+.mediaMedium .WTWidget_base__b3_48 .WTWidget_progress_f2 {
     top: 130rem;
 }
 
-.mediaLarge .WTWidget_progress__b3_58 {
+.mediaLarge .WTWidget_base__b3_48 .WTWidget_progress_f2 {
     top: 160rem;
 }
 
@@ -519,15 +789,12 @@
     margin-bottom: 9rem;
 }
 
-.WTWidget_currentAmount_55 {
-    color: #e9e2bf;
-}
-
 .WTWidget_tickets_8d {
     color: #e9e2bf;
     font-size: 12rem;
     font-weight: 400;
     line-height: 1.3;
+    display: flex;
     position: absolute;
     top: 87rem;
     left: 50%;
@@ -539,41 +806,51 @@
 }
 
 .mediaLarge .WTWidget_tickets_8d {
-    color: #8c8c7e;
+    color: #e9e2bf;
     font-size: 16rem;
     font-weight: 400;
     line-height: 1.25;
     top: 125rem;
 }
 
-.WTWidget_tickets__b2_b5 {
+.WTWidget_base__b2_9b .WTWidget_tickets_8d {
     top: 135rem;
 }
 
-.mediaMedium .WTWidget_tickets__b2_b5 {
+.mediaMedium .WTWidget_base__b2_9b .WTWidget_tickets_8d {
     top: 175rem;
 }
 
-.mediaLarge .WTWidget_tickets__b2_b5 {
+.mediaLarge .WTWidget_base__b2_9b .WTWidget_tickets_8d {
     top: 187rem;
 }
 
-.WTWidget_tickets__b3_b7 {
+.WTWidget_base__b3_48 .WTWidget_tickets_8d {
     top: 100rem;
 }
 
-.mediaMedium .WTWidget_tickets__b3_b7 {
+.mediaMedium .WTWidget_base__b3_48 .WTWidget_tickets_8d {
     top: 115rem;
 }
 
-.mediaLarge .WTWidget_tickets__b3_b7 {
+.mediaLarge .WTWidget_base__b3_48 .WTWidget_tickets_8d {
     top: 135rem;
 }
 
-.WTWidget_ticketsCount_1d {
-    padding-right: 18rem;
-    background: url('R.images.white_tiger.gui.maps.icons.tickets.ticket_16') no-repeat right center / 16rem;
+.WTWidget_ticketCount_9f,
+.WTWidget_ticket2025Count_43 {
+    margin-left: 5rem;
+    padding-right: 16rem;
+    background: no-repeat right center / 16rem;
     color: #ffdd99;
+}
+
+.WTWidget_ticketCount_9f {
+    background-image: url('R.images.white_tiger.gui.maps.icons.tickets.ticket_16');
+}
+
+.WTWidget_ticket2025Count_43 {
+    background-image: url('R.images.white_tiger.gui.maps.icons.tickets.ticket2025_16');
 }
 
 .WTWidget_progressionWrapper_2b {

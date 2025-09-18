@@ -1283,7 +1283,7 @@
                         }
                     }, [e, u, t]);
                 }
-                var Y = t(8515),
+                var Y = t(3403),
                     z = t(7030);
                 let V, K, Q, Z, J, uu, eu;
                 (!(function (u) {
@@ -1344,7 +1344,13 @@
                         (u.LootBoxToken = 'lootBoxToken'),
                         (u.GoldenTicket = 'birthday2025_golden_ticket'),
                         (u.PostStamp = 'giftsystem_4_stamp'),
-                        (u.Quests = 'quests'));
+                        (u.Quests = 'quests'),
+                        (u.WtStamp = 'stamp'),
+                        (u.WtHunter = 'wt_hunter'),
+                        (u.WtHunterCollection = 'hunter_collection'),
+                        (u.WtTicket = 'wtevent_ticket'),
+                        (u.WtMainPrizeDiscount = 'main_prize_discount'),
+                        (u.WtTicket25 = 'wtevent_ticket25'));
                 })(V || (V = {})),
                     (function (u) {
                         ((u.Gold = 'gold'),
@@ -1447,18 +1453,16 @@
                     },
                     ru = 400,
                     au = (u) => Math.sqrt(1 - Math.pow(u - 1, 2)),
-                    nu = [V.Vehicles, V.TmanToken, V.CollectionItem];
-                class iu extends a().PureComponent {
-                    render() {
-                        let u;
-                        if ('gold' === this.props.format) u = $.B3.GOLD;
-                        else u = $.B3.INTEGRAL;
-                        const e = $.Z5.getNumberFormat(this.props.value, u);
-                        return void 0 !== this.props.value && void 0 !== e ? e : null;
-                    }
-                }
-                iu.defaultProps = { format: 'integral' };
-                const su = [
+                    nu = [V.Vehicles, V.TmanToken, V.CollectionItem],
+                    iu = ({ format: u, value: e }) => {
+                        const t = ((u, e = 'integral') => {
+                            let t;
+                            t = 'gold' === e ? $.B3.GOLD : $.B3.INTEGRAL;
+                            return void 0 === u ? '' : $.Z5.getNumberFormat(u, t);
+                        })(e, u);
+                        return t ? a().createElement('span', null, t) : null;
+                    },
+                    su = [
                         V.Items,
                         V.Equipment,
                         V.Xp,
@@ -1496,6 +1500,11 @@
                         V.SelectableBonus,
                         V.GoldenTicket,
                         V.PostStamp,
+                        V.WtStamp,
+                        V.WtTicket,
+                        V.WtMainPrizeDiscount,
+                        V.WtHunter,
+                        V.WtHunterCollection,
                     ],
                     ou = [V.Gold, V.Credits, V.Crystal, V.FreeXp],
                     Eu = [V.BattlePassPoints],

@@ -84,7 +84,7 @@
                 }
                 (t.r(i),
                     t.d(i, {
-                        addModelObserver: () => T,
+                        addModelObserver: () => R,
                         addPreloadTexture: () => S,
                         children: () => n,
                         displayStatus: () => m,
@@ -93,7 +93,7 @@
                         extraSize: () => Y,
                         forceTriggerMouseMove: () => W,
                         freezeTextureBeforeResize: () => O,
-                        getBrowserTexturePath: () => R,
+                        getBrowserTexturePath: () => T,
                         getDisplayStatus: () => $,
                         getScale: () => y,
                         getSize: () => M,
@@ -268,10 +268,10 @@
                 function f(u) {
                     viewEnv.setHitAreaPaddingsRem(u, u, u, u, 15);
                 }
-                function R(u, e, t, a = 1) {
+                function T(u, e, t, a = 1) {
                     return viewEnv.getWebBrowserTexturePath(u, e, t, a);
                 }
-                function T(u, e, t) {
+                function R(u, e, t) {
                     return viewEnv.addDataChangedCallback(u, e, t);
                 }
                 function x(u) {
@@ -1535,7 +1535,7 @@
                     (function (u) {
                         ((u.extraSmall = 'extraSmall'), (u.small = 'small'), (u.medium = 'medium'));
                     })(fu || (fu = {})));
-                const Ru = ({
+                const Tu = ({
                     children: u,
                     size: e,
                     isFocused: t,
@@ -1666,8 +1666,8 @@
                         )
                     );
                 };
-                Ru.defaultProps = { type: Su.primary, isFocused: !1, soundHover: 'highlight', soundClick: 'play' };
-                const Tu = (0, a.memo)(Ru);
+                Tu.defaultProps = { type: Su.primary, isFocused: !1, soundHover: 'highlight', soundClick: 'play' };
+                const Ru = (0, a.memo)(Tu);
                 let xu, Mu, Lu, Pu, Ou, yu, ku;
                 (!(function (u) {
                     ((u.Items = 'items'),
@@ -1727,7 +1727,13 @@
                         (u.LootBoxToken = 'lootBoxToken'),
                         (u.GoldenTicket = 'birthday2025_golden_ticket'),
                         (u.PostStamp = 'giftsystem_4_stamp'),
-                        (u.Quests = 'quests'));
+                        (u.Quests = 'quests'),
+                        (u.WtStamp = 'stamp'),
+                        (u.WtHunter = 'wt_hunter'),
+                        (u.WtHunterCollection = 'hunter_collection'),
+                        (u.WtTicket = 'wtevent_ticket'),
+                        (u.WtMainPrizeDiscount = 'main_prize_discount'),
+                        (u.WtTicket25 = 'wtevent_ticket25'));
                 })(xu || (xu = {})),
                     (function (u) {
                         ((u.Gold = 'gold'),
@@ -1821,17 +1827,15 @@
                             (u.PROGRESSION_STYLE_UPGRADED_3 = 'progressionStyleUpgraded_3'),
                             (u.PROGRESSION_STYLE_UPGRADED_4 = 'progressionStyleUpgraded_4'));
                     })(ku || (ku = {})));
-                class Nu extends r().PureComponent {
-                    render() {
-                        let u;
-                        if ('gold' === this.props.format) u = Z.B3.GOLD;
-                        else u = Z.B3.INTEGRAL;
-                        const e = Z.Z5.getNumberFormat(this.props.value, u);
-                        return void 0 !== this.props.value && void 0 !== e ? e : null;
-                    }
-                }
-                Nu.defaultProps = { format: 'integral' };
-                const Iu = [
+                const Nu = ({ format: u, value: e }) => {
+                        const t = ((u, e = 'integral') => {
+                            let t;
+                            t = 'gold' === e ? Z.B3.GOLD : Z.B3.INTEGRAL;
+                            return void 0 === u ? '' : Z.Z5.getNumberFormat(u, t);
+                        })(e, u);
+                        return t ? r().createElement('span', null, t) : null;
+                    },
+                    Iu = [
                         xu.Items,
                         xu.Equipment,
                         xu.Xp,
@@ -1869,6 +1873,11 @@
                         xu.SelectableBonus,
                         xu.GoldenTicket,
                         xu.PostStamp,
+                        xu.WtStamp,
+                        xu.WtTicket,
+                        xu.WtMainPrizeDiscount,
+                        xu.WtHunter,
+                        xu.WtHunterCollection,
                     ],
                     Hu = [xu.Gold, xu.Credits, xu.Crystal, xu.FreeXp],
                     Uu = [xu.BattlePassPoints],
@@ -2537,7 +2546,7 @@
                                 'div',
                                 { className: oe.buttonWrapper },
                                 r().createElement(
-                                    Tu,
+                                    Ru,
                                     { type: Su.primary, size: i ? fu.small : fu.medium, onClick: Z.Sy },
                                     R.strings.epic_battle.awards.acceptButton(),
                                 ),
@@ -2616,7 +2625,7 @@
                                     'div',
                                     { className: De },
                                     r().createElement(
-                                        Tu,
+                                        Ru,
                                         { type: Su.primary, size: n ? fu.medium : fu.small, onClick: t },
                                         R.strings.epic_battle.awards.acceptButton(),
                                     ),
@@ -2747,8 +2756,8 @@
                         SM: { mt: be.mt__SM, mr: be.mr__SM, mb: be.mb__SM, ml: be.ml__SM },
                         XS: { mt: be.mt__XS, mr: be.mr__XS, mb: be.mb__XS, ml: be.ml__XS },
                     },
-                    Re = (Object.keys(fe), ['mt', 'mr', 'mb', 'ml']),
-                    Te = { mt: 'marginTop', mr: 'marginRight', mb: 'marginBottom', ml: 'marginLeft' },
+                    Te = (Object.keys(fe), ['mt', 'mr', 'mb', 'ml']),
+                    Re = { mt: 'marginTop', mr: 'marginRight', mb: 'marginBottom', ml: 'marginLeft' },
                     xe = we((u) => {
                         let e = u.className,
                             t = u.width,
@@ -2781,8 +2790,8 @@
                                       void 0
                                     : v,
                             f = u.alignItems,
-                            R = void 0 === f ? (C ? 'flex-start' : g && 'center') || (p && 'flex-end') || void 0 : f,
-                            T = u.alignSelf,
+                            T = void 0 === f ? (C ? 'flex-start' : g && 'center') || (p && 'flex-end') || void 0 : f,
+                            R = u.alignSelf,
                             x = u.wrap,
                             M = u.flexWrap,
                             L = void 0 === M ? (x ? 'wrap' : void 0) : M,
@@ -2804,30 +2813,30 @@
                         const U = (0, a.useMemo)(() => {
                                 const u = { mt: o, mr: l, mb: A, ml: F },
                                     e = ((u) =>
-                                        Re.reduce((e, t) => {
+                                        Te.reduce((e, t) => {
                                             const a = u[t];
                                             return a && 'number' != typeof a ? e.concat(fe[!0 === a ? 'MD' : a][t]) : e;
                                         }, []))(u),
                                     a = ((u) =>
-                                        Re.reduce((e, t) => {
+                                        Te.reduce((e, t) => {
                                             const a = u[t];
-                                            return ('number' == typeof a && (e[Te[t]] = a + 'rem'), e);
+                                            return ('number' == typeof a && (e[Re[t]] = a + 'rem'), e);
                                         }, {}))(u);
                                 return {
                                     computedStyle: Object.assign({}, N, a, {
                                         width: void 0 !== t && 'number' == typeof t ? t + 'rem' : t,
                                         height: void 0 !== n && 'number' == typeof n ? n + 'rem' : n,
                                         flex: k,
-                                        alignSelf: T,
-                                        display: B || R ? 'flex' : void 0,
+                                        alignSelf: R,
+                                        display: B || T ? 'flex' : void 0,
                                         flexDirection: B,
                                         flexWrap: L,
                                         justifyContent: S,
-                                        alignItems: R,
+                                        alignItems: T,
                                     }),
                                     computedClassNames: e,
                                 };
-                            }, [t, n, o, l, A, F, N, k, T, B, L, S, R]),
+                            }, [t, n, o, l, A, F, N, k, R, B, L, S, T]),
                             G = U.computedStyle,
                             W = U.computedClassNames;
                         return r().createElement('div', Se({ className: h()(be.base, ...W, e), style: G }, H), I);

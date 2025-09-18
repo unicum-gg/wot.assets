@@ -1332,16 +1332,14 @@
                 G.defaultProps = { type: W.primary, isFocused: !1, soundHover: 'highlight', soundClick: 'play' };
                 const V = (0, E.memo)(G);
                 var $ = t(4179);
-                class z extends A().PureComponent {
-                    render() {
-                        let u;
-                        if ('gold' === this.props.format) u = $.B3.GOLD;
-                        else u = $.B3.INTEGRAL;
-                        const e = $.Z5.getNumberFormat(this.props.value, u);
-                        return void 0 !== this.props.value && void 0 !== e ? e : null;
-                    }
-                }
-                z.defaultProps = { format: 'integral' };
+                const z = ({ format: u, value: e }) => {
+                    const t = ((u, e = 'integral') => {
+                        let t;
+                        t = 'gold' === e ? $.B3.GOLD : $.B3.INTEGRAL;
+                        return void 0 === u ? '' : $.Z5.getNumberFormat(u, t);
+                    })(e, u);
+                    return t ? A().createElement('span', null, t) : null;
+                };
                 var j = t(3649);
                 const K = 'FormatText_base_d0',
                     q = ({ binding: u, text: e = '', classMix: t, alignment: a = j.v2.left }) =>

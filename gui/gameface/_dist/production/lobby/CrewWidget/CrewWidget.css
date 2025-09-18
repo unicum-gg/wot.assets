@@ -475,6 +475,14 @@
     background-image: url('R.images.white_tiger.gui.maps.icons.hangar.tankmen.big.boss');
 }
 
+.App_member__boss_2025_cb {
+    background-image: url('R.images.white_tiger.gui.maps.icons.hangar.tankmen.small.boss_2025');
+}
+
+.mediaMedium .App_member__boss_2025_cb {
+    background-image: url('R.images.white_tiger.gui.maps.icons.hangar.tankmen.big.boss_2025');
+}
+
 .App_member__hunter_1_56 {
     background-image: url('R.images.white_tiger.gui.maps.icons.hangar.tankmen.small.hunter_1');
 }

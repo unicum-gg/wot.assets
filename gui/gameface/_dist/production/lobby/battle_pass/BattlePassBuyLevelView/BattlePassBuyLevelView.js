@@ -166,16 +166,14 @@
                 var n = t(6179),
                     r = t.n(n),
                     a = t(4179);
-                class s extends r().PureComponent {
-                    render() {
-                        let e;
-                        if ('gold' === this.props.format) e = a.B3.GOLD;
-                        else e = a.B3.INTEGRAL;
-                        const u = a.Z5.getNumberFormat(this.props.value, e);
-                        return void 0 !== this.props.value && void 0 !== u ? u : null;
-                    }
-                }
-                s.defaultProps = { format: 'integral' };
+                const s = ({ format: e, value: u }) => {
+                    const t = ((e, u = 'integral') => {
+                        let t;
+                        t = 'gold' === u ? a.B3.GOLD : a.B3.INTEGRAL;
+                        return void 0 === e ? '' : a.Z5.getNumberFormat(e, t);
+                    })(u, e);
+                    return t ? r().createElement('span', null, t) : null;
+                };
             },
             280: (e, u, t) => {
                 'use strict';
@@ -571,7 +569,13 @@
                             (e.LootBoxToken = 'lootBoxToken'),
                             (e.GoldenTicket = 'birthday2025_golden_ticket'),
                             (e.PostStamp = 'giftsystem_4_stamp'),
-                            (e.Quests = 'quests'));
+                            (e.Quests = 'quests'),
+                            (e.WtStamp = 'stamp'),
+                            (e.WtHunter = 'wt_hunter'),
+                            (e.WtHunterCollection = 'hunter_collection'),
+                            (e.WtTicket = 'wtevent_ticket'),
+                            (e.WtMainPrizeDiscount = 'main_prize_discount'),
+                            (e.WtTicket25 = 'wtevent_ticket25'));
                     })(n || (n = {})),
                     (function (e) {
                         ((e.Gold = 'gold'),
@@ -711,6 +715,11 @@
                         s.E4.SelectableBonus,
                         s.E4.GoldenTicket,
                         s.E4.PostStamp,
+                        s.E4.WtStamp,
+                        s.E4.WtTicket,
+                        s.E4.WtMainPrizeDiscount,
+                        s.E4.WtHunter,
+                        s.E4.WtHunterCollection,
                     ],
                     i = [s.E4.Gold, s.E4.Credits, s.E4.Crystal, s.E4.FreeXp],
                     l = [s.E4.BattlePassPoints],
@@ -2683,10 +2692,10 @@
                 U.defaultProps = { side: 'left', type: 'back', soundHover: 'highlight', soundClick: 'play' };
                 var H = t(5521);
                 t(4179);
-                const G = (e) => {
+                const W = (e) => {
                     console.error(e.type + ': useKeydownListener hook :: Callback is not defined');
                 };
-                function $(e = H.n.NONE, u = G, t = !1) {
+                function G(e = H.n.NONE, u = W, t = !1) {
                     (0, r.useEffect)(() => {
                         if (e !== H.n.NONE)
                             return (
@@ -2703,12 +2712,12 @@
                         }
                     }, [u, e, t]);
                 }
-                function W({
+                function $({
                     key: e = H.n.ESCAPE,
                     callback: u = () => w.O.view.sendEvent.close(),
                     preventPropagation: t = !0,
                 } = {}) {
-                    return ($(e, u, t), u);
+                    return (G(e, u, t), u);
                 }
                 let z;
                 !(function (e) {
@@ -3202,9 +3211,9 @@
                         a().createElement(Oe, Ue({}, t, { onEndAnimation: s, key: `${o}-${t.to}`, from: o }))
                     );
                 });
-                function Ge() {
+                function We() {
                     return (
-                        (Ge =
+                        (We =
                             Object.assign ||
                             function (e) {
                                 for (var u = 1; u < arguments.length; u++) {
@@ -3213,10 +3222,10 @@
                                 }
                                 return e;
                             }),
-                        Ge.apply(this, arguments)
+                        We.apply(this, arguments)
                     );
                 }
-                const $e = (0, r.memo)(
+                const Ge = (0, r.memo)(
                         ({
                             size: e,
                             value: u,
@@ -3250,10 +3259,10 @@
                             };
                             return s.withStack
                                 ? a().createElement(He, c)
-                                : a().createElement(Oe, Ge({ key: `${r}-${u}` }, c));
+                                : a().createElement(Oe, We({ key: `${r}-${u}` }, c));
                         },
                     ),
-                    We = (e) => ({
+                    $e = (e) => ({
                         '--progress-base': `url(${e.bgImageBase})`,
                         '--progress-line-base': e.line.bgColorBase,
                         '--progress-line-disabled': e.line.bgColorDisabled,
@@ -3318,9 +3327,9 @@
                                 }, [t, u, e]))(c, e, E);
                             return a().createElement(
                                 'div',
-                                { className: o()(de.base, de[`base__${t}`]), style: We(u) },
+                                { className: o()(de.base, de[`base__${t}`]), style: $e(u) },
                                 !i && a().createElement(Ae, { size: t, classMix: l }),
-                                a().createElement($e, {
+                                a().createElement(Ge, {
                                     size: t,
                                     lineRef: d,
                                     disabled: s,
@@ -3758,8 +3767,8 @@
                     Iu = 'Footer_levelsBlock_f7',
                     Uu = 'Footer_priceBlock_98',
                     Hu = 'Footer_levelsLabel_ab',
-                    Gu = 'Footer_footerLabel_a8',
-                    $u = ({ levelsToBuy: e, price: u }) =>
+                    Wu = 'Footer_footerLabel_a8',
+                    Gu = ({ levelsToBuy: e, price: u }) =>
                         a().createElement(
                             'div',
                             { className: Ou },
@@ -3768,7 +3777,7 @@
                                 { className: Iu },
                                 a().createElement(
                                     'div',
-                                    { className: Gu },
+                                    { className: Wu },
                                     R.strings.battle_pass.battlePassBuyView.levelsSelected(),
                                 ),
                                 a().createElement('div', { className: Hu }, e),
@@ -3778,13 +3787,13 @@
                                 { className: Uu },
                                 a().createElement(
                                     'div',
-                                    { className: Gu },
+                                    { className: Wu },
                                     R.strings.battle_pass.battlePassBuyView.price(),
                                 ),
                                 a().createElement(Mu, { type: 'gold', size: 'big', value: u }),
                             ),
                         ),
-                    Wu = R.strings.battle_pass.battlePassBuyView,
+                    $u = R.strings.battle_pass.battlePassBuyView,
                     zu = (0, h.Pi)(() => {
                         const e = k(),
                             u = e.model,
@@ -3803,7 +3812,7 @@
                                 [t.back, t.buy],
                             ),
                             A = (0, r.useCallback)(() => ({ [H.n.SPACE]: t.back, [H.n.ESCAPE]: t.back }), [t.back]);
-                        (j(_ ? m() : A()), W({ callback: t.back, preventPropagation: !1 }));
+                        (j(_ ? m() : A()), $({ callback: t.back, preventPropagation: !1 }));
                         const F = {
                             backgroundImage: `url(${(0, q.wD)(R.images.gui.maps.icons.battlePass.backgrounds.rewards, c.get())})`,
                         };
@@ -3825,8 +3834,8 @@
                                 { className: Q },
                                 a().createElement(Y.D, {
                                     chapter: c.get(),
-                                    buyBP: Wu.confirmAnyNumber.title(),
-                                    subTitle: Wu.confirmAnyNumber.descr(),
+                                    buyBP: $u.confirmAnyNumber.title(),
+                                    subTitle: $u.confirmAnyNumber.descr(),
                                     className: ue,
                                 }),
                                 a().createElement(
@@ -3838,7 +3847,7 @@
                                     'div',
                                     { className: J },
                                     a().createElement('div', { className: ee }),
-                                    a().createElement($u, { levelsToBuy: d, price: o.get() }),
+                                    a().createElement(Gu, { levelsToBuy: d, price: o.get() }),
                                     a().createElement(V._, {
                                         onAccept: t.buy,
                                         onCancel: t.back,
@@ -3905,7 +3914,7 @@
                             n = t.chapterID,
                             r = t.toLevel,
                             s = t.fromLevel;
-                        W({ callback: e, preventPropagation: !1 });
+                        $({ callback: e, preventPropagation: !1 });
                         const o = {
                             backgroundImage: `url(${(0, q.wD)(R.images.gui.maps.icons.battlePass.backgrounds.rewards, n.get())})`,
                         };
@@ -4776,9 +4785,9 @@
                         getDirection: (e) => (e.deltaY > 1 ? B.Next : B.Prev),
                     }),
                     H = 'VerticalBar_base_f3',
-                    G = 'VerticalBar_base__nonActive_42',
-                    $ = 'VerticalBar_topButton_d7',
-                    W = 'VerticalBar_bottomButton_06',
+                    W = 'VerticalBar_base__nonActive_42',
+                    G = 'VerticalBar_topButton_d7',
+                    $ = 'VerticalBar_bottomButton_06',
                     z = 'VerticalBar_track_df',
                     j = 'VerticalBar_thumb_32',
                     q = 'VerticalBar_rail_43',
@@ -4821,7 +4830,7 @@
                                 return (
                                     (u.style.height = `${Q(t, s)}px`),
                                     u.classList.add(j),
-                                    r.current && (1 === s ? r.current.classList.add(G) : r.current.classList.remove(G)),
+                                    r.current && (1 === s ? r.current.classList.add(W) : r.current.classList.remove(W)),
                                     s
                                 );
                             }),
@@ -4929,7 +4938,7 @@
                             'div',
                             { className: s()(H, u.base), ref: r, onWheel: e.handleMouseWheel },
                             l().createElement('div', {
-                                className: s()($, u.topButton),
+                                className: s()(G, u.topButton),
                                 onMouseDown: (e) => {
                                     e.target.classList.contains(V) || 0 !== e.button || ((0, _.G)('play'), S(B.Next));
                                 },
@@ -4968,7 +4977,7 @@
                                 l().createElement('div', { className: s()(q, u.rail) }),
                             ),
                             l().createElement('div', {
-                                className: s()(W, u.bottomButton),
+                                className: s()($, u.bottomButton),
                                 onMouseDown: (e) => {
                                     e.target.classList.contains(V) || 0 !== e.button || ((0, _.G)('play'), S(B.Prev));
                                 },

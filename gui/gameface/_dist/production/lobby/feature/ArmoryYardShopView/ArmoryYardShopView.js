@@ -3726,16 +3726,17 @@
                     (function (e) {
                         ((e.Red = 'RedActionBG'), (e.Blue = 'BlueActionBG'));
                     })(nt || (nt = {})));
-                class at extends o().PureComponent {
-                    render() {
-                        let e;
-                        e = 'gold' === this.props.format ? W.B3.GOLD : W.B3.INTEGRAL;
-                        const u = W.Z5.getNumberFormat(this.props.value, e);
-                        return void 0 !== this.props.value && void 0 !== u ? u : null;
-                    }
-                }
-                at.defaultProps = { format: 'integral' };
-                const ot = {
+                const at = ({ format: e, value: u }) => {
+                        const t = ((e, u = 'integral') => {
+                            let t;
+                            return (
+                                (t = 'gold' === u ? W.B3.GOLD : W.B3.INTEGRAL),
+                                void 0 === e ? '' : W.Z5.getNumberFormat(e, t)
+                            );
+                        })(u, e);
+                        return t ? o().createElement('span', null, t) : null;
+                    },
+                    ot = {
                         base: 'Currency_base_57',
                         icon: 'Currency_icon_c5',
                         base__small: 'Currency_base__small_af',
@@ -3878,7 +3879,13 @@
                         (e.LootBoxToken = 'lootBoxToken'),
                         (e.GoldenTicket = 'birthday2025_golden_ticket'),
                         (e.PostStamp = 'giftsystem_4_stamp'),
-                        (e.Quests = 'quests'));
+                        (e.Quests = 'quests'),
+                        (e.WtStamp = 'stamp'),
+                        (e.WtHunter = 'wt_hunter'),
+                        (e.WtHunterCollection = 'hunter_collection'),
+                        (e.WtTicket = 'wtevent_ticket'),
+                        (e.WtMainPrizeDiscount = 'main_prize_discount'),
+                        (e.WtTicket25 = 'wtevent_ticket25'));
                 })(lt || (lt = {})),
                     (function (e) {
                         ((e.Gold = 'gold'),

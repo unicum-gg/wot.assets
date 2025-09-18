@@ -1919,7 +1919,7 @@
                     }, n.ZT),
                     o = s[0],
                     l = s[1];
-                var B = t(8515),
+                var B = t(3403),
                     C = t(8975),
                     _ = t(9153);
                 const c = R.strings.quests.dailyQuests.tab,

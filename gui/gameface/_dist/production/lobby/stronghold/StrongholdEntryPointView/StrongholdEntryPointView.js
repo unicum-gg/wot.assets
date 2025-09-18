@@ -1380,24 +1380,25 @@
                     Fu = 'App_bg_6a',
                     au = 'App_base__disabled_20',
                     iu = 'App_base__single_1f',
-                    nu = 'App_shadow_33',
-                    Du = 'App_highlight_a5',
-                    ou = 'App_overlay_47',
-                    Bu = 'App_content_1f',
-                    su = 'App_title_a4',
-                    lu = 'App_info_0a',
-                    Cu = 'App_seasonDate_44',
-                    du = 'App_seasonDateIcon_89',
-                    cu = 'App_seasonDateText_e5',
-                    mu = R.strings.clans.banner,
-                    _u = ({ state: u }) => {
+                    nu = 'App_bg__GM_dd',
+                    Du = 'App_shadow_33',
+                    ou = 'App_highlight_a5',
+                    Bu = 'App_overlay_47',
+                    su = 'App_content_1f',
+                    lu = 'App_title_a4',
+                    Cu = 'App_info_0a',
+                    du = 'App_seasonDate_44',
+                    cu = 'App_seasonDateIcon_89',
+                    mu = 'App_seasonDateText_e5',
+                    _u = R.strings.clans.banner,
+                    hu = ({ state: u }) => {
                         switch (u) {
                             case K.PrimeTimeToday:
-                                return A().createElement(V, { text: mu.info.battlesToday() });
+                                return A().createElement(V, { text: _u.info.battlesToday() });
                             case K.PrimeTimeTomorrow:
-                                return A().createElement(V, { text: mu.info.battlesTomorrow() });
+                                return A().createElement(V, { text: _u.info.battlesTomorrow() });
                             case K.Ended:
-                                return A().createElement(V, { text: mu.info.battlesEnd() });
+                                return A().createElement(V, { text: _u.info.battlesEnd() });
                             default:
                                 return (
                                     console.error(`Unreachable code for state '${u}' in StrongholdEntryPointView.`),
@@ -1405,7 +1406,7 @@
                                 );
                         }
                     },
-                    hu = ({ text: u, timestamp: e }) => {
+                    gu = ({ text: u, timestamp: e }) => {
                         const t = ((u) => {
                                 const e = new Date(1e3 * u);
                                 return {
@@ -1422,7 +1423,7 @@
                             binding: { day: E, month: R.strings.menu.dateTime.months.$num(r + 1) },
                         });
                     };
-                let gu;
+                let wu;
                 !(function (u) {
                     ((u.SHORT_DATE = 'short-date'),
                         (u.SHORT_TIME = 'short-time'),
@@ -1437,70 +1438,70 @@
                         (u.WEEK_DAY_TIME = 'week-day-time'),
                         (u.YEAR = 'year'),
                         (u.DATE_YEAR = 'date-year'));
-                })(gu || (gu = {}));
-                var wu = t(596);
+                })(wu || (wu = {}));
+                var vu = t(596);
                 Date.now();
-                const vu = (u, e, t) => {
+                const Tu = (u, e, t) => {
                         switch (e) {
-                            case gu.SHORT_DATE:
+                            case wu.SHORT_DATE:
                                 return t
-                                    ? wu.Z5.getDateFormat(u, wu.kH.SHORT_FORMAT)
-                                    : wu.cy.getTimeFormat('%d.%m.%y', u, !0);
-                            case gu.SHORT_TIME:
+                                    ? vu.Z5.getDateFormat(u, vu.kH.SHORT_FORMAT)
+                                    : vu.cy.getTimeFormat('%d.%m.%y', u, !0);
+                            case wu.SHORT_TIME:
                                 return t
-                                    ? wu.Z5.getTimeFormat(u, wu.lf.SHORT_FORMAT)
-                                    : wu.cy.getTimeFormat('%I:%M %p', u, !0);
-                            case gu.SHORT_DATE_TIME:
+                                    ? vu.Z5.getTimeFormat(u, vu.lf.SHORT_FORMAT)
+                                    : vu.cy.getTimeFormat('%I:%M %p', u, !0);
+                            case wu.SHORT_DATE_TIME:
                                 if (t) {
-                                    return `${wu.Z5.getDateFormat(u, wu.kH.SHORT_FORMAT)}, ${wu.Z5.getTimeFormat(u, wu.lf.SHORT_FORMAT)}`;
+                                    return `${vu.Z5.getDateFormat(u, vu.kH.SHORT_FORMAT)}, ${vu.Z5.getTimeFormat(u, vu.lf.SHORT_FORMAT)}`;
                                 }
-                                return wu.cy.getTimeFormat('%d.%m.%y, %I:%M %p', u, !0);
-                            case gu.FULL_DATE:
+                                return vu.cy.getTimeFormat('%d.%m.%y, %I:%M %p', u, !0);
+                            case wu.FULL_DATE:
                                 return t
-                                    ? wu.Z5.getDateFormat(u, wu.kH.LONG_FORMAT)
-                                    : wu.cy.getTimeFormat('%B %d, %Y', u, !0);
-                            case gu.FULL_DATE_TIME:
+                                    ? vu.Z5.getDateFormat(u, vu.kH.LONG_FORMAT)
+                                    : vu.cy.getTimeFormat('%B %d, %Y', u, !0);
+                            case wu.FULL_DATE_TIME:
                                 if (t) {
-                                    return `${wu.Z5.getDateFormat(u, wu.kH.LONG_FORMAT)}, ${wu.Z5.getTimeFormat(u, wu.lf.SHORT_FORMAT)}`;
+                                    return `${vu.Z5.getDateFormat(u, vu.kH.LONG_FORMAT)}, ${vu.Z5.getTimeFormat(u, vu.lf.SHORT_FORMAT)}`;
                                 }
-                                return wu.cy.getTimeFormat('%B %d, %Y, %I:%M %p', u, !0);
-                            case gu.MONTH:
-                                return wu.cy.getTimeFormat('%B', u, !0);
-                            case gu.MONTH_DATE:
-                                return wu.cy.getTimeFormat('%B %e', u, !0);
-                            case gu.DATE_MONTH:
-                                return wu.cy.getTimeFormat('%e %B', u, !0);
-                            case gu.MONTH_YEAR:
-                                return wu.cy.getTimeFormat('%B %Y', u, !0);
-                            case gu.WEEK_DAY:
-                                return wu.cy.getTimeFormat('%A', u, !0);
-                            case gu.WEEK_DAY_TIME:
+                                return vu.cy.getTimeFormat('%B %d, %Y, %I:%M %p', u, !0);
+                            case wu.MONTH:
+                                return vu.cy.getTimeFormat('%B', u, !0);
+                            case wu.MONTH_DATE:
+                                return vu.cy.getTimeFormat('%B %e', u, !0);
+                            case wu.DATE_MONTH:
+                                return vu.cy.getTimeFormat('%e %B', u, !0);
+                            case wu.MONTH_YEAR:
+                                return vu.cy.getTimeFormat('%B %Y', u, !0);
+                            case wu.WEEK_DAY:
+                                return vu.cy.getTimeFormat('%A', u, !0);
+                            case wu.WEEK_DAY_TIME:
                                 if (t) {
-                                    return `${wu.cy.getTimeFormat('%A', u, !0)} ${wu.Z5.getTimeFormat(u, wu.lf.SHORT_FORMAT)}`;
+                                    return `${vu.cy.getTimeFormat('%A', u, !0)} ${vu.Z5.getTimeFormat(u, vu.lf.SHORT_FORMAT)}`;
                                 }
-                                return wu.cy.getTimeFormat('%A, %I:%M %p', u, !0);
-                            case gu.YEAR:
-                                return wu.cy.getTimeFormat('%Y', u, !0);
-                            case gu.DATE_YEAR:
-                                return wu.cy.getTimeFormat('%d, %Y', u, !0);
+                                return vu.cy.getTimeFormat('%A, %I:%M %p', u, !0);
+                            case wu.YEAR:
+                                return vu.cy.getTimeFormat('%Y', u, !0);
+                            case wu.DATE_YEAR:
+                                return vu.cy.getTimeFormat('%d, %Y', u, !0);
                         }
                     },
-                    Tu = R.strings.clans.banner,
-                    pu = ({ state: u, sprintType: e, startTimestamp: t, endTimestamp: E }) => {
-                        if (e === xu) return A().createElement(hu, { text: Tu.seasonDate.seasonLasts(), timestamp: E });
+                    pu = R.strings.clans.banner,
+                    fu = ({ state: u, sprintType: e, startTimestamp: t, endTimestamp: E }) => {
+                        if (e === bu) return A().createElement(gu, { text: pu.seasonDate.seasonLasts(), timestamp: E });
                         switch (u) {
                             case K.NotStarted:
-                                return A().createElement(hu, { text: Tu.seasonDate.seasonNotStarted(), timestamp: t });
+                                return A().createElement(gu, { text: pu.seasonDate.seasonNotStarted(), timestamp: t });
                             case K.Started:
-                                return A().createElement(hu, { text: Tu.seasonDate.seasonLasts(), timestamp: E });
+                                return A().createElement(gu, { text: pu.seasonDate.seasonLasts(), timestamp: E });
                             case K.PrimeTimeNotChosen:
-                                return A().createElement(V, { text: Tu.chooseTime() });
+                                return A().createElement(V, { text: pu.chooseTime() });
                             case K.PrimeTimeNow:
                             case K.PrimeTimeToday:
                             case K.PrimeTimeTomorrow:
                                 return A().createElement(V, {
-                                    text: Tu.primeTime(),
-                                    binding: { start: vu(t, gu.SHORT_TIME, !0), end: vu(E, gu.SHORT_TIME, !0) },
+                                    text: pu.primeTime(),
+                                    binding: { start: Tu(t, wu.SHORT_TIME, !0), end: Tu(E, wu.SHORT_TIME, !0) },
                                 });
                             default:
                                 return (
@@ -1509,15 +1510,15 @@
                                 );
                         }
                     },
-                    fu = R.strings.clans.banner,
-                    xu = 'GM',
-                    bu = {
+                    xu = R.strings.clans.banner,
+                    bu = 'GM',
+                    Lu = {
                         highlighted: [K.NotStarted, K.PrimeTimeNow, K.PrimeTimeNotChosen, K.Started],
                         withInfo: [K.Ended, K.PrimeTimeToday, K.PrimeTimeTomorrow],
                         withoutDate: [K.Ended, K.DataError],
                         disabled: [K.Ended, K.PrimeTimeToday, K.PrimeTimeTomorrow],
                     },
-                    Lu = (0, Z.Pi)(() => {
+                    Su = (0, Z.Pi)(() => {
                         const u = Au(),
                             e = u.controls,
                             t = u.model.root.get(),
@@ -1530,7 +1531,7 @@
                         return A().createElement(
                             'div',
                             {
-                                className: h()(ru, bu.disabled.includes(E) && au, r && iu),
+                                className: h()(ru, Lu.disabled.includes(E) && au, r && iu),
                                 onClick: () => {
                                     (Y(R.sounds.yes()), e.open());
                                 },
@@ -1538,38 +1539,38 @@
                                     q.playHighlight();
                                 },
                             },
-                            A().createElement('div', { className: Fu }),
-                            bu.disabled.includes(E) && A().createElement('div', { className: ou }),
-                            A().createElement('div', { className: nu }),
-                            bu.highlighted.includes(E) && A().createElement('div', { className: Du }),
+                            A().createElement('div', { className: h()(Fu, i === bu && nu) }),
+                            Lu.disabled.includes(E) && A().createElement('div', { className: Bu }),
+                            A().createElement('div', { className: Du }),
+                            Lu.highlighted.includes(E) && A().createElement('div', { className: ou }),
                             A().createElement(
                                 'div',
-                                { className: Bu },
-                                A().createElement('div', { className: su }, fu.title()),
+                                { className: su },
+                                A().createElement('div', { className: lu }, xu.title()),
                                 A().createElement(
                                     'div',
-                                    { className: lu },
+                                    { className: Cu },
                                     A().createElement(V, {
                                         text:
                                             'initial' === i
                                                 ? ''
-                                                : ((D = fu.type.$dyn(i.toLowerCase())),
+                                                : ((D = xu.type.$dyn(i.toLowerCase())),
                                                   (o = { stage: n }),
                                                   D.replace(/\{\w+\}/g, (u) => String(o[u.slice(1, -1)]))),
                                     }),
                                 ),
-                                bu.withInfo.includes(E) &&
-                                    i !== xu &&
-                                    A().createElement('div', { className: lu }, A().createElement(_u, { state: E })),
-                                !bu.withoutDate.includes(E) &&
+                                Lu.withInfo.includes(E) &&
+                                    i !== bu &&
+                                    A().createElement('div', { className: Cu }, A().createElement(hu, { state: E })),
+                                !Lu.withoutDate.includes(E) &&
                                     A().createElement(
                                         'div',
-                                        { className: Cu },
-                                        A().createElement('div', { className: du }),
+                                        { className: du },
+                                        A().createElement('div', { className: cu }),
                                         A().createElement(
                                             'div',
-                                            { className: cu },
-                                            A().createElement(pu, {
+                                            { className: mu },
+                                            A().createElement(fu, {
                                                 state: E,
                                                 sprintType: i,
                                                 startTimestamp: F,
@@ -1583,7 +1584,7 @@
                     });
                 engine.whenReady.then(() => {
                     k().render(
-                        A().createElement(Eu, null, A().createElement(H, null, A().createElement(Lu, null))),
+                        A().createElement(Eu, null, A().createElement(H, null, A().createElement(Su, null))),
                         document.getElementById('root'),
                     );
                 });

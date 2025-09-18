@@ -1379,8 +1379,8 @@
                     (function (e) {
                         ((e[(e.Simple = 0)] = 'Simple'), (e[(e.Growing = 1)] = 'Growing'));
                     })(J || (J = {})));
-                const ee = ({ size: e = Q.Default }) =>
-                        a().createElement('div', { className: S()(Z.background, Z[`background__${e}`]) }),
+                const ee = ({ size: e = Q.Default, classMix: t }) =>
+                        a().createElement('div', { className: S()(Z.background, Z[`background__${e}`], t) }),
                     te = {
                         base: 'ProgressBarBlink_base_24',
                         base__medium: 'ProgressBarBlink_base__medium_ec',
@@ -1874,32 +1874,33 @@
                             animationSettings: i = Te,
                             disabled: o = !1,
                             withoutBackground: s = !1,
-                            value: l,
-                            deltaFrom: d,
-                            lineRef: c,
-                            onChangeAnimationState: u,
-                            onEndAnimation: m,
-                            onComplete: _,
+                            progressBarBackgroundClassMix: l,
+                            value: d,
+                            deltaFrom: c,
+                            lineRef: u,
+                            onChangeAnimationState: m,
+                            onEndAnimation: _,
+                            onComplete: g,
                         }) => {
-                            const g = ((e, t, r) =>
+                            const h = ((e, t, r) =>
                                 (0, n.useMemo)(() => {
                                     const n = (Oe(0, t, e) / t) * 100;
                                     return { value: n, deltaFrom: Ae(n, t, r) };
-                                }, [r, t, e]))(l, e, d);
+                                }, [r, t, e]))(d, e, c);
                             return a().createElement(
                                 'div',
                                 { className: S()(Z.base, Z[`base__${r}`]), style: xe(t) },
-                                !s && a().createElement(ee, { size: r }),
+                                !s && a().createElement(ee, { size: r, classMix: l }),
                                 a().createElement(Le, {
                                     size: r,
-                                    lineRef: c,
+                                    lineRef: u,
                                     disabled: o,
-                                    value: g.value,
-                                    deltaFrom: g.deltaFrom,
+                                    value: h.value,
+                                    deltaFrom: h.deltaFrom,
                                     animationSettings: i,
-                                    onEndAnimation: m,
-                                    onChangeAnimationState: u,
-                                    onComplete: _,
+                                    onEndAnimation: _,
+                                    onChangeAnimationState: m,
+                                    onComplete: g,
                                 }),
                             );
                         },

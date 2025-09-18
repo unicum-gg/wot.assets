@@ -898,7 +898,7 @@
             },
             4179: (e, u, t) => {
                 'use strict';
-                t.d(u, { kH: () => E, B3: () => c, Z5: () => a, lf: () => m, cy: () => i, B0: () => s, ry: () => B });
+                t.d(u, { kH: () => E, Z5: () => a, lf: () => m, cy: () => i, B0: () => s, ry: () => B });
                 class n {
                     constructor() {
                         ((this.entries = []),
@@ -1430,7 +1430,7 @@
                                 .match(e);
                     })(),
                     j = ['zh_cn', 'zh_sg', 'zh_tw'];
-                let V, z;
+                let z, V;
                 function $(e) {
                     var u;
                     return e && 'value' in e && null != (u = e.constructor) && u.name.includes('ArrayItem')
@@ -1457,9 +1457,9 @@
                         (e.WEEK_DAY_TIME = 'week-day-time'),
                         (e.YEAR = 'year'),
                         (e.DATE_YEAR = 'date-year'));
-                })(V || (V = {})),
+                })(z || (z = {})),
                     Date.now(),
-                    ((X = z || (z = {})).Heavy = 'heavyTank'),
+                    ((X = V || (V = {})).Heavy = 'heavyTank'),
                     (X.Medium = 'mediumTank'),
                     (X.Light = 'lightTank'),
                     (X.Spg = 'SPG'),
@@ -1473,46 +1473,46 @@
                         const u = [...new Set(K(e, (e) => ((e) => Y[e] || '')(e)))];
                         return u.length > 1 ? `${u[0]}-${u[1]}` : `${u[0]}`;
                     },
-                    Z = (0, a.memo)(({ datetime: e, format: u = V.SHORT_DATE, localize: t = !0 }) =>
+                    Z = (0, a.memo)(({ datetime: e, format: u = z.SHORT_DATE, localize: t = !0 }) =>
                         ((e, u, t) => {
                             switch (u) {
-                                case V.SHORT_DATE:
+                                case z.SHORT_DATE:
                                     return t
                                         ? N.Z5.getDateFormat(e, N.kH.SHORT_FORMAT)
                                         : N.cy.getTimeFormat('%d.%m.%y', e, !0);
-                                case V.SHORT_TIME:
+                                case z.SHORT_TIME:
                                     return t
                                         ? N.Z5.getTimeFormat(e, N.lf.SHORT_FORMAT)
                                         : N.cy.getTimeFormat('%I:%M %p', e, !0);
-                                case V.SHORT_DATE_TIME:
+                                case z.SHORT_DATE_TIME:
                                     return t
                                         ? `${N.Z5.getDateFormat(e, N.kH.SHORT_FORMAT)}, ${N.Z5.getTimeFormat(e, N.lf.SHORT_FORMAT)}`
                                         : N.cy.getTimeFormat('%d.%m.%y, %I:%M %p', e, !0);
-                                case V.FULL_DATE:
+                                case z.FULL_DATE:
                                     return t
                                         ? N.Z5.getDateFormat(e, N.kH.LONG_FORMAT)
                                         : N.cy.getTimeFormat('%B %d, %Y', e, !0);
-                                case V.FULL_DATE_TIME:
+                                case z.FULL_DATE_TIME:
                                     return t
                                         ? `${N.Z5.getDateFormat(e, N.kH.LONG_FORMAT)}, ${N.Z5.getTimeFormat(e, N.lf.SHORT_FORMAT)}`
                                         : N.cy.getTimeFormat('%B %d, %Y, %I:%M %p', e, !0);
-                                case V.MONTH:
+                                case z.MONTH:
                                     return N.cy.getTimeFormat('%B', e, !0);
-                                case V.MONTH_DATE:
+                                case z.MONTH_DATE:
                                     return N.cy.getTimeFormat('%B %e', e, !0);
-                                case V.DATE_MONTH:
+                                case z.DATE_MONTH:
                                     return N.cy.getTimeFormat('%e %B', e, !0);
-                                case V.MONTH_YEAR:
+                                case z.MONTH_YEAR:
                                     return N.cy.getTimeFormat('%B %Y', e, !0);
-                                case V.WEEK_DAY:
+                                case z.WEEK_DAY:
                                     return N.cy.getTimeFormat('%A', e, !0);
-                                case V.WEEK_DAY_TIME:
+                                case z.WEEK_DAY_TIME:
                                     return t
                                         ? `${N.cy.getTimeFormat('%A', e, !0)} ${N.Z5.getTimeFormat(e, N.lf.SHORT_FORMAT)}`
                                         : N.cy.getTimeFormat('%A, %I:%M %p', e, !0);
-                                case V.YEAR:
+                                case z.YEAR:
                                     return N.cy.getTimeFormat('%Y', e, !0);
-                                case V.DATE_YEAR:
+                                case z.DATE_YEAR:
                                     return N.cy.getTimeFormat('%d, %Y', e, !0);
                             }
                         })(e, u, t),
@@ -1985,7 +1985,7 @@
                                                 binding: {
                                                     date: i().createElement(Z, {
                                                         datetime: o,
-                                                        format: V.FULL_DATE_TIME,
+                                                        format: z.FULL_DATE_TIME,
                                                     }),
                                                 },
                                                 classMix: fe.autoOpenText,
@@ -2213,7 +2213,7 @@
                         'onShow',
                         'onHide',
                     ];
-                function Ve(e) {
+                function ze(e) {
                     return Object.entries(e || {}).map(([e, u]) => {
                         const t = { __Type: 'GFValueProxy', name: e };
                         switch (typeof u) {
@@ -2231,7 +2231,7 @@
                         return t;
                     });
                 }
-                const ze = (e, u, t = {}, n = 0) => {
+                const Ve = (e, u, t = {}, n = 0) => {
                         viewEnv.handleViewEvent(
                             Object.assign(
                                 {
@@ -2296,7 +2296,7 @@
                             ),
                             v = (0, a.useCallback)(() => {
                                 (b.current.isVisible && b.current.timeoutId) ||
-                                    (ze(t, _, { isMouseEvent: !0, on: !0, arguments: Ve(n) }, h),
+                                    (Ve(t, _, { isMouseEvent: !0, on: !0, arguments: ze(n) }, h),
                                     B && B(),
                                     (b.current.isVisible = !0));
                             }, [t, _, n, h, B]),
@@ -2304,7 +2304,7 @@
                                 if (b.current.isVisible || b.current.timeoutId) {
                                     const e = b.current.timeoutId;
                                     (e > 0 && (clearTimeout(e), (b.current.timeoutId = 0)),
-                                        ze(t, _, { on: !1 }, h),
+                                        Ve(t, _, { on: !1 }, h),
                                         b.current.isVisible && C && C(),
                                         (b.current.isVisible = !1));
                                 }
@@ -3383,7 +3383,7 @@
                             [r, i, s, n, o],
                         );
                     };
-                let Wu, Uu, ju, Vu;
+                let Wu, Uu, ju, zu;
                 (!(function (e) {
                     e.Lootbox = 'lootbox';
                 })(Wu || (Wu = {})),
@@ -3418,8 +3418,8 @@
                             (e.OpenInHangarButton = 'open_in_hangar_button'),
                             (e.OKButton = 'ok_button'),
                             (e.CloseButton = 'close_button'));
-                    })(Vu || (Vu = {})));
-                const zu = (e) => {
+                    })(zu || (zu = {})));
+                const Vu = (e) => {
                         const u = ((e) => {
                             const u = Pu(e, ku),
                                 t = (0, a.useCallback)(
@@ -3433,58 +3433,58 @@
                         return {
                             rewardToopltipWatched: Gu(Wu.Lootbox, {
                                 action: Uu.TooltipWatched,
-                                item: Vu.RewardToopltip,
+                                item: zu.RewardToopltip,
                                 parentScreen: ju.Probability,
                                 timeLimit: 1,
                                 info: null == e ? void 0 : e.info,
                             }),
                             infoIconToopltipWatched: Gu(Wu.Lootbox, {
                                 action: Uu.TooltipWatched,
-                                item: Vu.InfoIcon,
+                                item: zu.InfoIcon,
                                 parentScreen: ju.Storage,
                                 timeLimit: 1,
                             }),
                             probabilityPercentToopltipWatched: Gu(Wu.Lootbox, {
                                 action: Uu.TooltipWatched,
-                                item: Vu.ProbabilityPercent,
+                                item: zu.ProbabilityPercent,
                                 parentScreen: ju.Probability,
                                 timeLimit: 1,
                             }),
                             probabilityPercentWithGarantToopltipWatched: Gu(Wu.Lootbox, {
                                 action: Uu.TooltipWatched,
-                                item: Vu.ProbabilityPercentWithGarant,
+                                item: zu.ProbabilityPercentWithGarant,
                                 parentScreen: ju.Probability,
                                 timeLimit: 1,
                             }),
                             rewardVehicleToopltipWatched: Gu(Wu.Lootbox, {
                                 action: Uu.TooltipWatched,
-                                item: Vu.RewardToopltip,
+                                item: zu.RewardToopltip,
                                 parentScreen: ju.Probability,
                                 timeLimit: 1,
                                 info: null == e ? void 0 : e.info,
                             }),
                             minorRewardsToopltipWatched: Gu(Wu.Lootbox, {
                                 action: Uu.TooltipWatched,
-                                item: Vu.MinorRewards,
+                                item: zu.MinorRewards,
                                 parentScreen: ju.Rewards,
                                 timeLimit: 1,
                             }),
                             rewardSharedToopltipWatched: Gu(Wu.Lootbox, {
                                 action: Uu.TooltipWatched,
-                                item: Vu.RewardToopltip,
+                                item: zu.RewardToopltip,
                                 parentScreen: null == e ? void 0 : e.parentScreen,
                                 timeLimit: 1,
                                 info: null == e ? void 0 : e.info,
                             }),
                             iconPossibleRewardGroupToopltipWatched: Gu(Wu.Lootbox, {
                                 action: Uu.TooltipWatched,
-                                item: Vu.IconPossibleRewardGroup,
+                                item: zu.IconPossibleRewardGroup,
                                 parentScreen: ju.Storage,
                                 timeLimit: 1,
                             }),
                             carouselLootboxToopltipWatched: Gu(Wu.Lootbox, {
                                 action: Uu.TooltipWatched,
-                                item: Vu.CarouselLootbox,
+                                item: zu.CarouselLootbox,
                                 parentScreen: ju.Storage,
                                 timeLimit: 2,
                             }),
@@ -3492,11 +3492,11 @@
                                 u({
                                     action: Uu.Click,
                                     parentScreen: ju.Probability,
-                                    item: Vu.ProbabilityPercentWithGarant,
+                                    item: zu.ProbabilityPercentWithGarant,
                                 });
                             },
                             probabilityPercentClick: () => {
-                                u({ action: Uu.Click, parentScreen: ju.Probability, item: Vu.ProbabilityPercent });
+                                u({ action: Uu.Click, parentScreen: ju.Probability, item: zu.ProbabilityPercent });
                             },
                             showLoseRewardsViewButton: (e, t) => {
                                 u({
@@ -3518,7 +3518,7 @@
                                 u({
                                     action: Uu.Show,
                                     parentScreen: ju.LoseRewards,
-                                    item: Vu.CloseButton,
+                                    item: zu.CloseButton,
                                     info: JSON.stringify({ lockpickCount: e }),
                                 });
                             },
@@ -3526,7 +3526,7 @@
                                 u({
                                     action: Uu.Click,
                                     parentScreen: ju.LoseRewards,
-                                    item: Vu.CloseButton,
+                                    item: zu.CloseButton,
                                     info: JSON.stringify({ lockpickCount: e }),
                                 });
                             },
@@ -3534,7 +3534,7 @@
                                 u({
                                     action: Uu.Click,
                                     parentScreen: ju.LoseRewards,
-                                    item: Vu.ESCButton,
+                                    item: zu.ESCButton,
                                     info: JSON.stringify({ lockpickCount: e }),
                                 });
                             },
@@ -3542,7 +3542,7 @@
                                 u({
                                     action: Uu.Show,
                                     parentScreen: ju.Rewards,
-                                    item: Vu.CloseButton,
+                                    item: zu.CloseButton,
                                     info: JSON.stringify({ lootboxCount: e }),
                                 });
                             },
@@ -3550,7 +3550,7 @@
                                 u({
                                     action: Uu.Click,
                                     parentScreen: ju.Rewards,
-                                    item: Vu.CloseButton,
+                                    item: zu.CloseButton,
                                     info: JSON.stringify({ lootboxCount: e }),
                                 });
                             },
@@ -3558,12 +3558,12 @@
                                 u({
                                     action: Uu.Click,
                                     parentScreen: ju.Rewards,
-                                    item: Vu.ESCButton,
+                                    item: zu.ESCButton,
                                     info: JSON.stringify({ lootboxCount: e }),
                                 });
                             },
                             rewardsViewMinorRewardsShow: () => {
-                                u({ action: Uu.Show, parentScreen: ju.Rewards, item: Vu.MinorRewards });
+                                u({ action: Uu.Show, parentScreen: ju.Rewards, item: zu.MinorRewards });
                             },
                             showRewardsViewButton: (e, t) => {
                                 u({
@@ -3585,7 +3585,7 @@
                                 u({
                                     action: Uu.Click,
                                     parentScreen: ju.RewardVideo,
-                                    item: Vu.CloseButton,
+                                    item: zu.CloseButton,
                                     info: JSON.stringify({ duration: e, lootboxType: t, lootboxID: n, reward: o }),
                                 });
                             },
@@ -3593,7 +3593,7 @@
                                 u({
                                     action: Uu.Click,
                                     parentScreen: ju.RewardVideo,
-                                    item: Vu.ESCButton,
+                                    item: zu.ESCButton,
                                     info: JSON.stringify({ duration: e, lootboxType: t, lootboxID: n, reward: o }),
                                 });
                             },
@@ -3601,15 +3601,15 @@
                                 u({
                                     action: Uu.VideoStarted,
                                     parentScreen: ju.RewardVideo,
-                                    item: Vu.RewardVideo,
+                                    item: zu.RewardVideo,
                                     info: JSON.stringify({ lootboxID: t, lootboxType: e, reward: n }),
                                 });
                             },
                             storageViewESCButtonClick: () => {
-                                u({ action: Uu.Click, parentScreen: ju.Storage, item: Vu.ESCButton });
+                                u({ action: Uu.Click, parentScreen: ju.Storage, item: zu.ESCButton });
                             },
                             iconPossibleRewardGroupClick: () => {
-                                u({ action: Uu.Click, parentScreen: ju.Storage, item: Vu.IconPossibleRewardGroup });
+                                u({ action: Uu.Click, parentScreen: ju.Storage, item: zu.IconPossibleRewardGroup });
                             },
                         };
                     },
@@ -3630,7 +3630,7 @@
                               },
                     Xu = i().memo(({ bonusGroups: e, lootBoxID: u }) => {
                         const t = Su().controls,
-                            n = zu(),
+                            n = Vu(),
                             o = n.iconPossibleRewardGroupToopltipWatched,
                             r = n.iconPossibleRewardGroupClick;
                         return i().createElement(
@@ -4652,7 +4652,7 @@
                                 F = D[1],
                                 B = (0, m.GS)().mediaSize,
                                 C = null != (d = Mt.userName.$dyn(e)) ? d : Mt.userName.default(),
-                                g = zu().carouselLootboxToopltipWatched,
+                                g = Vu().carouselLootboxToopltipWatched,
                                 b = l()(
                                     'LootboxCard_base_54',
                                     r && 'LootboxCard_base__selected_1b',
@@ -5041,13 +5041,13 @@
                             u && i().createElement(Wt, { keysWidth: n }),
                         );
                     }),
-                    Vt = ({ value: e, className: u }) =>
+                    zt = ({ value: e, className: u }) =>
                         i().createElement(
                             'div',
                             { className: l()('Counter_base_82', u) },
                             i().createElement('div', { className: 'Counter_text_79' }, e),
                         ),
-                    zt = ({ onClick: e }) =>
+                    Vt = ({ onClick: e }) =>
                         i().createElement('div', {
                             className: l()('InfoIcon_base_6d', e && 'InfoIcon_base__clickable_f2'),
                             onClick: e,
@@ -5066,14 +5066,14 @@
                                     format: { binding: { level: q(t) } },
                                 }),
                             ),
-                            i().createElement(Vt, { value: u }),
+                            i().createElement(zt, { value: u }),
                             i().createElement(
                                 'div',
                                 { className: $t },
                                 i().createElement(
                                     'div',
                                     { className: 'GuaranteedRewardCount_icon_e8' },
-                                    i().createElement(zt, { onClick: e }),
+                                    i().createElement(Vt, { onClick: e }),
                                 ),
                             ),
                         ),
@@ -5097,7 +5097,7 @@
                                 i().createElement(
                                     'div',
                                     { className: 'GuaranteedRewardNext_icon_23' },
-                                    i().createElement(zt, { onClick: t }),
+                                    i().createElement(Vt, { onClick: t }),
                                 ),
                             ),
                         );
@@ -5128,7 +5128,7 @@
                         lootBoxID: n,
                         onInfoClick: o,
                     }) {
-                        const r = zu().infoIconToopltipWatched,
+                        const r = Vu().infoIconToopltipWatched,
                             a = e < 1 ? Jt.Hidden : 1 === e ? Jt.NextGuaranteed : Jt.CountBeforeGuaranteed;
                         return i().createElement(
                             'div',
@@ -5367,7 +5367,7 @@
                             u = e.model,
                             t = e.controls,
                             n = (0, m.GS)().mediaSize,
-                            o = zu().storageViewESCButtonClick,
+                            o = Vu().storageViewESCButtonClick,
                             r = u.root.get(),
                             s = r.currentLootboxID,
                             c = r.currentState,
@@ -5395,10 +5395,10 @@
                             W = H[1],
                             U = (0, a.useState)(d),
                             j = U[0],
-                            V = U[1],
-                            z = (0, a.useState)(!1),
-                            $ = z[0],
-                            K = z[1],
+                            z = U[1],
+                            V = (0, a.useState)(!1),
+                            $ = V[0],
+                            K = V[1],
                             X = (0, a.useState)(Boolean(0 === (null == F ? void 0 : F.count))),
                             Y = X[0],
                             q = X[1],
@@ -5457,7 +5457,7 @@
                                 (W((null == F ? void 0 : F.boxID) || 0),
                                     q(Boolean(0 === (null == F ? void 0 : F.count))),
                                     (null != F && F.videoRes) ||
-                                        (V(!1), t.changeAnimationEnabledSetting({ enabled: !1, autoSwitch: !0 })));
+                                        (z(!1), t.changeAnimationEnabledSetting({ enabled: !1, autoSwitch: !0 })));
                             }, [t, F]));
                         const te = (0, a.useCallback)(
                                 (e, u) => {
@@ -5498,9 +5498,9 @@
                             ),
                             ie = (0, a.useCallback)(
                                 (e) => {
-                                    (t.onError(e), V(!1));
+                                    (t.onError(e), z(!1));
                                 },
-                                [t, V],
+                                [t, z],
                             ),
                             se = Cn.$dyn((null == F ? void 0 : F.userName) || '') || Cn.default();
                         return i().createElement(
@@ -5663,7 +5663,7 @@
                                           mixClass: 'App_animationControl_ba',
                                           isActiveAnimation: j,
                                           onClick: () => {
-                                              (V(!j), t.changeAnimationEnabledSetting({ enabled: !j, autoSwitch: !1 }));
+                                              (z(!j), t.changeAnimationEnabledSetting({ enabled: !j, autoSwitch: !1 }));
                                           },
                                           disabled: c !== rn.StorageViewing && !(null != F && F.videoRes),
                                       }),
@@ -5943,11 +5943,13 @@
             },
             6620: (e, u, t) => {
                 'use strict';
-                t.d(u, { s: () => S });
+                t.d(u, { s: () => w });
                 var n = t(6179),
                     o = t.n(n);
                 let r, a, i, s, l, c, d;
                 var m, E, _, A;
+                let D, p, F, B, C, g, b, h;
+                var v, f, x;
                 (!(function (e) {
                     ((e.Items = 'items'),
                         (e.Equipment = 'equipment'),
@@ -6006,7 +6008,13 @@
                         (e.LootBoxToken = 'lootBoxToken'),
                         (e.GoldenTicket = 'birthday2025_golden_ticket'),
                         (e.PostStamp = 'giftsystem_4_stamp'),
-                        (e.Quests = 'quests'));
+                        (e.Quests = 'quests'),
+                        (e.WtStamp = 'stamp'),
+                        (e.WtHunter = 'wt_hunter'),
+                        (e.WtHunterCollection = 'hunter_collection'),
+                        (e.WtTicket = 'wtevent_ticket'),
+                        (e.WtMainPrizeDiscount = 'main_prize_discount'),
+                        (e.WtTicket25 = 'wtevent_ticket25'));
                 })(r || (r = {})),
                     (function (e) {
                         ((e.Gold = 'gold'),
@@ -6089,19 +6097,8 @@
                     (m.PROGRESSION_STYLE_UPGRADED_1 = 'progressionStyleUpgraded_1'),
                     (m.PROGRESSION_STYLE_UPGRADED_2 = 'progressionStyleUpgraded_2'),
                     (m.PROGRESSION_STYLE_UPGRADED_3 = 'progressionStyleUpgraded_3'),
-                    (m.PROGRESSION_STYLE_UPGRADED_4 = 'progressionStyleUpgraded_4'));
-                var D = t(4179);
-                class p extends o().PureComponent {
-                    render() {
-                        let e;
-                        e = 'gold' === this.props.format ? D.B3.GOLD : D.B3.INTEGRAL;
-                        const u = D.Z5.getNumberFormat(this.props.value, e);
-                        return void 0 !== this.props.value && void 0 !== u ? u : null;
-                    }
-                }
-                let F, B, C, g, b, h, v, f;
-                var x, w, y;
-                ((p.defaultProps = { format: 'integral' }),
+                    (m.PROGRESSION_STYLE_UPGRADED_4 = 'progressionStyleUpgraded_4'),
+                    t(4179),
                     r.Items,
                     r.Equipment,
                     r.Xp,
@@ -6139,6 +6136,11 @@
                     r.SelectableBonus,
                     r.GoldenTicket,
                     r.PostStamp,
+                    r.WtStamp,
+                    r.WtTicket,
+                    r.WtMainPrizeDiscount,
+                    r.WtHunter,
+                    r.WtHunterCollection,
                     r.Gold,
                     r.Credits,
                     r.Crystal,
@@ -6146,43 +6148,43 @@
                     r.BattlePassPoints,
                     r.PremiumPlus,
                     r.Premium,
-                    ((y = F || (F = {})).Active = 'active'),
-                    (y.Paused = 'paused'),
-                    (y.Completed = 'completed'),
-                    (y.NotStarted = 'notStarted'),
-                    (y.Disabled = 'disabled'),
+                    ((x = D || (D = {})).Active = 'active'),
+                    (x.Paused = 'paused'),
+                    (x.Completed = 'completed'),
+                    (x.NotStarted = 'notStarted'),
+                    (x.Disabled = 'disabled'),
                     (function (e) {
                         ((e.Default = 'default'), (e.Marathon = 'marathon'), (e.Resource = 'resource'));
-                    })(B || (B = {})),
+                    })(p || (p = {})),
                     (function (e) {
                         ((e.Micro = 'micro'), (e.Small = 'small'), (e.Medium = 'medium'));
-                    })(C || (C = {})),
+                    })(F || (F = {})),
                     (function (e) {
                         ((e.ACTIVE = 'active'), (e.COMPLETED = 'completed'), (e.NOT_CHOSEN = 'notChosen'));
-                    })(g || (g = {})),
-                    ((w = b || (b = {})).AwaitSeason = 'awaitSeason'),
-                    (w.Bought = 'bought'),
-                    (w.Free = 'free'),
-                    (w.Completed = 'completed'),
-                    (w.CompletedRightNow = 'completedRightNow'),
-                    (w.SwitchedChapterRightNow = 'switchedChapterRightNow'),
-                    (w.NoVehiclesBase = 'noVehiclesBase'),
-                    (w.ChapterNotChosen = 'chapterNotChosen'),
+                    })(B || (B = {})),
+                    ((f = C || (C = {})).AwaitSeason = 'awaitSeason'),
+                    (f.Bought = 'bought'),
+                    (f.Free = 'free'),
+                    (f.Completed = 'completed'),
+                    (f.CompletedRightNow = 'completedRightNow'),
+                    (f.SwitchedChapterRightNow = 'switchedChapterRightNow'),
+                    (f.NoVehiclesBase = 'noVehiclesBase'),
+                    (f.ChapterNotChosen = 'chapterNotChosen'),
                     (function (e) {
                         ((e.None = ''),
                             (e.ShowLevel = 'show'),
                             (e.HideLevel = 'hide'),
                             (e.HideLevelWithDelay = 'hideWithDelay'));
-                    })(h || (h = {})),
-                    ((x = v || (v = {})).style = 'style'),
-                    (x.tankman = 'tankman'),
-                    (x.vehicle = 'vehicle'),
+                    })(g || (g = {})),
+                    ((v = b || (b = {})).style = 'style'),
+                    (v.tankman = 'tankman'),
+                    (v.vehicle = 'vehicle'),
                     (function (e) {
                         ((e.Default = 'default'), (e.Marathon = 'marathon'), (e.Resource = 'resource'));
-                    })(f || (f = {})),
-                    v.style,
-                    v.tankman);
-                const S = ({ icon: e, count: u }) =>
+                    })(h || (h = {})),
+                    b.style,
+                    b.tankman);
+                const w = ({ icon: e, count: u }) =>
                     o().createElement(
                         'div',
                         { className: 'CurrencyKey_base_53' },

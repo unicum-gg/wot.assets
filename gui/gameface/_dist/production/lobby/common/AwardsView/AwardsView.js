@@ -18,7 +18,7 @@
             },
             67: (e, u, t) => {
                 'use strict';
-                t.d(u, { O: () => j });
+                t.d(u, { O: () => V });
                 var a = {};
                 (t.r(a), t.d(a, { mouse: () => c, onResize: () => l }));
                 var r = {};
@@ -69,7 +69,7 @@
                         setEventHandled: () => H,
                         setInputPaddingsRem: () => S,
                         setSidePaddingsRem: () => x,
-                        whenTutorialReady: () => V,
+                        whenTutorialReady: () => z,
                     }));
                 const l = s('clientResized'),
                     E = { down: s('mousedown'), up: s('mouseup'), move: s('mousemove') };
@@ -287,13 +287,13 @@
                             viewEnv.getExtraSizeRem(e, u);
                         },
                     },
-                    V = Promise.all([
+                    z = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : B.onDomBuilt(e);
                         }),
                         engine.whenReady,
                     ]),
-                    j = { view: i, client: r };
+                    V = { view: i, client: r };
             },
             521: (e, u, t) => {
                 'use strict';
@@ -1261,9 +1261,9 @@
                         'soundClick',
                         'soundHover',
                     ];
-                function V() {
+                function z() {
                     return (
-                        (V =
+                        (z =
                             Object.assign ||
                             function (e) {
                                 for (var u = 1; u < arguments.length; u++) {
@@ -1272,10 +1272,10 @@
                                 }
                                 return e;
                             }),
-                        V.apply(this, arguments)
+                        z.apply(this, arguments)
                     );
                 }
-                class j extends r().PureComponent {
+                class V extends r().PureComponent {
                     constructor(...e) {
                         (super(...e),
                             (this.state = { hover: !1, click: !1 }),
@@ -1329,7 +1329,7 @@
                             D = C()(Y.goto, null == s ? void 0 : s.goto);
                         return r().createElement(
                             'div',
-                            V(
+                            z(
                                 {
                                     className: d,
                                     onMouseEnter: this._onMouseEnter(o),
@@ -1349,11 +1349,11 @@
                         );
                     }
                 }
-                j.defaultProps = { side: 'left', type: 'back', soundHover: 'highlight', soundClick: 'play' };
-                let z;
+                V.defaultProps = { side: 'left', type: 'back', soundHover: 'highlight', soundClick: 'play' };
+                let j;
                 !(function (e) {
                     ((e[(e.left = 0)] = 'left'), (e[(e.right = 1)] = 'right'));
-                })(z || (z = {}));
+                })(j || (j = {}));
                 const X = (e) => e.replace(/&nbsp;/g, ' ');
                 (() => {
                     const e = new RegExp(
@@ -1621,7 +1621,13 @@
                         (e.LootBoxToken = 'lootBoxToken'),
                         (e.GoldenTicket = 'birthday2025_golden_ticket'),
                         (e.PostStamp = 'giftsystem_4_stamp'),
-                        (e.Quests = 'quests'));
+                        (e.Quests = 'quests'),
+                        (e.WtStamp = 'stamp'),
+                        (e.WtHunter = 'wt_hunter'),
+                        (e.WtHunterCollection = 'hunter_collection'),
+                        (e.WtTicket = 'wtevent_ticket'),
+                        (e.WtMainPrizeDiscount = 'main_prize_discount'),
+                        (e.WtTicket25 = 'wtevent_ticket25'));
                 })(de || (de = {})),
                     (function (e) {
                         ((e.Gold = 'gold'),
@@ -1715,17 +1721,15 @@
                             (e.PROGRESSION_STYLE_UPGRADED_3 = 'progressionStyleUpgraded_3'),
                             (e.PROGRESSION_STYLE_UPGRADED_4 = 'progressionStyleUpgraded_4'));
                     })(ge || (ge = {})));
-                class Ce extends r().PureComponent {
-                    render() {
-                        let e;
-                        if ('gold' === this.props.format) e = Q.B3.GOLD;
-                        else e = Q.B3.INTEGRAL;
-                        const u = Q.Z5.getNumberFormat(this.props.value, e);
-                        return void 0 !== this.props.value && void 0 !== u ? u : null;
-                    }
-                }
-                Ce.defaultProps = { format: 'integral' };
-                const he = [
+                const Ce = ({ format: e, value: u }) => {
+                        const t = ((e, u = 'integral') => {
+                            let t;
+                            t = 'gold' === u ? Q.B3.GOLD : Q.B3.INTEGRAL;
+                            return void 0 === e ? '' : Q.Z5.getNumberFormat(e, t);
+                        })(u, e);
+                        return t ? r().createElement('span', null, t) : null;
+                    },
+                    he = [
                         de.Items,
                         de.Equipment,
                         de.Xp,
@@ -1763,6 +1767,11 @@
                         de.SelectableBonus,
                         de.GoldenTicket,
                         de.PostStamp,
+                        de.WtStamp,
+                        de.WtTicket,
+                        de.WtMainPrizeDiscount,
+                        de.WtHunter,
+                        de.WtHunterCollection,
                     ],
                     pe = [de.Gold, de.Credits, de.Crystal, de.FreeXp],
                     we = [de.BattlePassPoints],
@@ -2346,7 +2355,7 @@
                         fadeIn: 'AdditionalRewards_fadeIn_06',
                         fadeInWithScale: 'AdditionalRewards_fadeInWithScale_9a',
                     },
-                    Ve = () => {
+                    ze = () => {
                         const e = ie('model', ne.None),
                             u = e.mainRewards,
                             t = e.additionalRewards.items,
@@ -2431,8 +2440,8 @@
                             ),
                         );
                     },
-                    je = 'MainReward_base_08',
-                    ze = 'MainReward_reward_7c',
+                    Ve = 'MainReward_base_08',
+                    je = 'MainReward_reward_7c',
                     Xe = 'MainReward_reward__quadruple_19',
                     Ke = 'MainReward_imageWrapper_0a',
                     Qe = 'MainReward_image_3d',
@@ -2461,7 +2470,7 @@
                                 return '';
                             },
                             E = (e, u) => ({ backgroundImage: `url(${Se(e, u)})` }),
-                            c = C()(je, t && Je, a && Ze, n && tu);
+                            c = C()(Ve, t && Je, a && Ze, n && tu);
                         return r().createElement(
                             'div',
                             { className: c },
@@ -2472,7 +2481,7 @@
                                     i = t.tooltipId,
                                     s = t.name,
                                     c = s ? X(s) : '',
-                                    _ = C()(ze, 4 === o && Xe),
+                                    _ = C()(je, 4 === o && Xe),
                                     d = C()(Qe, 2 === o && eu, 3 === o && uu, 4 === o && au),
                                     A = !('premium_plus' === s) && !('credits' === s);
                                 return r().createElement(
@@ -2542,7 +2551,7 @@
                             r().createElement(
                                 'div',
                                 { className: lu },
-                                r().createElement(j, {
+                                r().createElement(V, {
                                     caption: R.strings.menu.viewHeader.closeBtn.label(),
                                     type: 'close',
                                     side: 'right',
@@ -2567,7 +2576,7 @@
                                         r().createElement('div', { className: d }),
                                         l && r().createElement(su, null),
                                     ),
-                                    E && r().createElement(Ve, null),
+                                    E && r().createElement(ze, null),
                                 ),
                                 r().createElement(
                                     'div',

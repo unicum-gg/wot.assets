@@ -1251,7 +1251,7 @@
                     );
                 }
                 Object.keys(H());
-                const $ = {
+                const z = {
                         XL: { mt: j.mt__XL, mr: j.mr__XL, mb: j.mb__XL, ml: j.ml__XL },
                         LG: { mt: j.mt__LG, mr: j.mr__LG, mb: j.mb__LG, ml: j.ml__LG },
                         MDp: { mt: j.mt__MDp, mr: j.mr__MDp, mb: j.mb__MDp, ml: j.ml__MDp },
@@ -1260,7 +1260,7 @@
                         SM: { mt: j.mt__SM, mr: j.mr__SM, mb: j.mb__SM, ml: j.ml__SM },
                         XS: { mt: j.mt__XS, mr: j.mr__XS, mb: j.mb__XS, ml: j.ml__XS },
                     },
-                    z = (Object.keys($), ['mt', 'mr', 'mb', 'ml']),
+                    $ = (Object.keys(z), ['mt', 'mr', 'mb', 'ml']),
                     V = { mt: 'marginTop', mr: 'marginRight', mb: 'marginBottom', ml: 'marginLeft' },
                     K = X((u) => {
                         let e = u.className,
@@ -1317,12 +1317,12 @@
                         const G = (0, r.useMemo)(() => {
                                 const u = { mt: l, mr: E, mb: _, ml: F },
                                     e = ((u) =>
-                                        z.reduce((e, t) => {
+                                        $.reduce((e, t) => {
                                             const r = u[t];
-                                            return r && 'number' != typeof r ? e.concat($[!0 === r ? 'MD' : r][t]) : e;
+                                            return r && 'number' != typeof r ? e.concat(z[!0 === r ? 'MD' : r][t]) : e;
                                         }, []))(u),
                                     r = ((u) =>
-                                        z.reduce((e, t) => {
+                                        $.reduce((e, t) => {
                                             const r = u[t];
                                             return ('number' == typeof r && (e[V[t]] = r + 'rem'), e);
                                         }, {}))(u);
@@ -1568,7 +1568,13 @@
                         (u.LootBoxToken = 'lootBoxToken'),
                         (u.GoldenTicket = 'birthday2025_golden_ticket'),
                         (u.PostStamp = 'giftsystem_4_stamp'),
-                        (u.Quests = 'quests'));
+                        (u.Quests = 'quests'),
+                        (u.WtStamp = 'stamp'),
+                        (u.WtHunter = 'wt_hunter'),
+                        (u.WtHunterCollection = 'hunter_collection'),
+                        (u.WtTicket = 'wtevent_ticket'),
+                        (u.WtMainPrizeDiscount = 'main_prize_discount'),
+                        (u.WtTicket25 = 'wtevent_ticket25'));
                 })(lu || (lu = {})),
                     (function (u) {
                         ((u.Gold = 'gold'),
@@ -2165,16 +2171,17 @@
                     (function (u) {
                         ((u.Red = 'RedActionBG'), (u.Blue = 'BlueActionBG'));
                     })(Lu || (Lu = {})));
-                class Pu extends n().PureComponent {
-                    render() {
-                        let u;
-                        u = 'gold' === this.props.format ? nu.B3.GOLD : nu.B3.INTEGRAL;
-                        const e = nu.Z5.getNumberFormat(this.props.value, u);
-                        return void 0 !== this.props.value && void 0 !== e ? e : null;
-                    }
-                }
-                Pu.defaultProps = { format: 'integral' };
-                const Ou = {
+                const Pu = ({ format: u, value: e }) => {
+                        const t = ((u, e = 'integral') => {
+                            let t;
+                            return (
+                                (t = 'gold' === e ? nu.B3.GOLD : nu.B3.INTEGRAL),
+                                void 0 === u ? '' : nu.Z5.getNumberFormat(u, t)
+                            );
+                        })(e, u);
+                        return t ? n().createElement('span', null, t) : null;
+                    },
+                    Ou = {
                         base: 'Currency_base_57',
                         icon: 'Currency_icon_c5',
                         base__small: 'Currency_base__small_af',
@@ -2383,10 +2390,10 @@
                         BOND: 'Text_BOND_be',
                         PROM: 'Text_PROM_65',
                     },
-                    $u = ['text', 'variant', 'className', 'color', 'm', 'mt', 'mr', 'mb', 'ml', 'style', 'format'];
-                function zu() {
+                    zu = ['text', 'variant', 'className', 'color', 'm', 'mt', 'mr', 'mb', 'ml', 'style', 'format'];
+                function $u() {
                     return (
-                        (zu =
+                        ($u =
                             Object.assign ||
                             function (u) {
                                 for (var e = 1; e < arguments.length; e++) {
@@ -2395,7 +2402,7 @@
                                 }
                                 return u;
                             }),
-                        zu.apply(this, arguments)
+                        $u.apply(this, arguments)
                     );
                 }
                 Object.keys(H());
@@ -2465,7 +2472,7 @@
                                     a = Object.keys(u);
                                 for (r = 0; r < a.length; r++) ((t = a[r]), e.indexOf(t) >= 0 || (n[t] = u[t]));
                                 return n;
-                            })(u, $u);
+                            })(u, zu);
                         const g = (0, r.useMemo)(() => {
                                 const u = ue(i),
                                     e = u.colorClassName,
@@ -2477,7 +2484,7 @@
                             p = g.colorClassName;
                         return n().createElement(
                             K,
-                            zu(
+                            $u(
                                 {
                                     className: C()(Yu.base, t && Yu[t], p, a),
                                     style: h,
@@ -2488,7 +2495,7 @@
                                 },
                                 B,
                             ),
-                            void 0 !== D ? n().createElement(Xu, zu({}, D, { text: e })) : e,
+                            void 0 !== D ? n().createElement(Xu, $u({}, D, { text: e })) : e,
                         );
                     });
                 var te = t(7030);
@@ -3111,14 +3118,14 @@
                     je = 'Timer_timerText__alert_2f',
                     qe = 'Timer_glow_1d',
                     Ye = 'Timer_separator_be',
-                    $e = R.strings.armory_yard.bundles,
-                    ze = 'CREAM',
+                    ze = R.strings.armory_yard.bundles,
+                    $e = 'CREAM',
                     Ve = n().memo(({ endTime: u, currentTime: e }) =>
                         n().createElement(
                             K,
                             { className: 'Timer_base_af', center: !0 },
                             n().createElement('div', { className: Ye }),
-                            n().createElement(ee, { className: 'Timer_availableText_12', text: $e.bundlesAvailable() }),
+                            n().createElement(ee, { className: 'Timer_availableText_12', text: ze.bundlesAvailable() }),
                             n().createElement('div', { className: 'Timer_timer_7d' }),
                             n().createElement(
                                 K,
@@ -3135,15 +3142,15 @@
                                     })(u - e);
                                     return t.days > 0
                                         ? n().createElement(ee, {
-                                              text: t.hours > 0 ? $e.countdown.daysWithHours() : $e.countdown.days(),
+                                              text: t.hours > 0 ? ze.countdown.daysWithHours() : ze.countdown.days(),
                                               className: Xe,
                                               format: {
                                                   binding: {
-                                                      day: n().createElement(ee, { text: t.days, color: ze }),
-                                                      hour: n().createElement(ee, { text: t.hours, color: ze }),
+                                                      day: n().createElement(ee, { text: t.days, color: $e }),
+                                                      hour: n().createElement(ee, { text: t.hours, color: $e }),
                                                   },
                                               },
-                                              color: ze,
+                                              color: $e,
                                           })
                                         : t.hours > 0
                                           ? n().createElement(
@@ -3153,16 +3160,16 @@
                                                 n().createElement(ee, {
                                                     text:
                                                         t.minutes > 0
-                                                            ? $e.countdown.hoursWithMinutes()
-                                                            : $e.countdown.hours(),
+                                                            ? ze.countdown.hoursWithMinutes()
+                                                            : ze.countdown.hours(),
                                                     className: C()(Xe, je),
                                                     format: {
                                                         binding: {
-                                                            hour: n().createElement(ee, { text: t.hours, color: ze }),
-                                                            min: n().createElement(ee, { text: t.minutes, color: ze }),
+                                                            hour: n().createElement(ee, { text: t.hours, color: $e }),
+                                                            min: n().createElement(ee, { text: t.minutes, color: $e }),
                                                         },
                                                     },
-                                                    color: ze,
+                                                    color: $e,
                                                 }),
                                             )
                                           : t.minutes > 0
@@ -3171,17 +3178,17 @@
                                                   null,
                                                   n().createElement('div', { className: qe }),
                                                   n().createElement(ee, {
-                                                      text: $e.countdown.min(),
+                                                      text: ze.countdown.min(),
                                                       className: C()(Xe, je),
                                                       format: {
                                                           binding: {
                                                               min: n().createElement(ee, {
                                                                   text: t.minutes,
-                                                                  color: ze,
+                                                                  color: $e,
                                                               }),
                                                           },
                                                       },
-                                                      color: ze,
+                                                      color: $e,
                                                   }),
                                               )
                                             : n().createElement(
@@ -3189,9 +3196,9 @@
                                                   null,
                                                   n().createElement('div', { className: qe }),
                                                   n().createElement(ee, {
-                                                      text: $e.countdown.sec(),
+                                                      text: ze.countdown.sec(),
                                                       className: C()(Xe, je),
-                                                      color: ze,
+                                                      color: $e,
                                                   }),
                                               );
                                 })(u, e),

@@ -202,13 +202,13 @@
                         addPreloadTexture: () => E,
                         children: () => r,
                         displayStatus: () => n.W,
-                        displayStatusIs: () => w,
+                        displayStatusIs: () => v,
                         events: () => a.U,
                         extraSize: () => f,
                         forceTriggerMouseMove: () => b,
                         freezeTextureBeforeResize: () => _,
                         getBrowserTexturePath: () => s,
-                        getDisplayStatus: () => v,
+                        getDisplayStatus: () => w,
                         getScale: () => B,
                         getSize: () => F,
                         getViewGlobalPosition: () => c,
@@ -280,10 +280,10 @@
                 function b() {
                     viewEnv.forceTriggerMouseMove();
                 }
-                function v() {
+                function w() {
                     return viewEnv.getShowingStatus();
                 }
-                const w = Object.keys(n.W).reduce(
+                const v = Object.keys(n.W).reduce(
                         (u, e) => ((u[e] = () => viewEnv.getShowingStatus() === n.W[e]), u),
                         {},
                     ),
@@ -701,7 +701,7 @@
                     };
                 var p = t(572);
                 const b = n.instance,
-                    v = {
+                    w = {
                         DataTracker: a.Z,
                         ViewModel: p.Z,
                         ViewEventType: o,
@@ -784,7 +784,7 @@
                         SystemLocale: i,
                         UserLocale: E,
                     };
-                window.ViewEnvHelper = v;
+                window.ViewEnvHelper = w;
             },
             471: (u, e, t) => {
                 'use strict';
@@ -1115,8 +1115,8 @@
                             t = (0, p.Om)(() => e.rewards.get().length);
                         return Object.assign({}, e, { computes: { getRewardsLength: t } });
                     }, B),
-                    v = b[0],
-                    w = b[1];
+                    w = b[0],
+                    v = b[1];
                 let f, S, x, T, P, O, M;
                 (!(function (u) {
                     ((u.Items = 'items'),
@@ -1176,7 +1176,13 @@
                         (u.LootBoxToken = 'lootBoxToken'),
                         (u.GoldenTicket = 'birthday2025_golden_ticket'),
                         (u.PostStamp = 'giftsystem_4_stamp'),
-                        (u.Quests = 'quests'));
+                        (u.Quests = 'quests'),
+                        (u.WtStamp = 'stamp'),
+                        (u.WtHunter = 'wt_hunter'),
+                        (u.WtHunterCollection = 'hunter_collection'),
+                        (u.WtTicket = 'wtevent_ticket'),
+                        (u.WtMainPrizeDiscount = 'main_prize_discount'),
+                        (u.WtTicket25 = 'wtevent_ticket25'));
                 })(f || (f = {})),
                     (function (u) {
                         ((u.Gold = 'gold'),
@@ -1271,17 +1277,15 @@
                             (u.PROGRESSION_STYLE_UPGRADED_4 = 'progressionStyleUpgraded_4'));
                     })(M || (M = {})));
                 var L = t(364);
-                class y extends E().PureComponent {
-                    render() {
-                        let u;
-                        if ('gold' === this.props.format) u = L.B3.GOLD;
-                        else u = L.B3.INTEGRAL;
-                        const e = L.Z5.getNumberFormat(this.props.value, u);
-                        return void 0 !== this.props.value && void 0 !== e ? e : null;
-                    }
-                }
-                y.defaultProps = { format: 'integral' };
-                const N = [
+                const y = ({ format: u, value: e }) => {
+                        const t = ((u, e = 'integral') => {
+                            let t;
+                            t = 'gold' === e ? L.B3.GOLD : L.B3.INTEGRAL;
+                            return void 0 === u ? '' : L.Z5.getNumberFormat(u, t);
+                        })(e, u);
+                        return t ? E().createElement('span', null, t) : null;
+                    },
+                    N = [
                         f.Items,
                         f.Equipment,
                         f.Xp,
@@ -1319,6 +1323,11 @@
                         f.SelectableBonus,
                         f.GoldenTicket,
                         f.PostStamp,
+                        f.WtStamp,
+                        f.WtTicket,
+                        f.WtMainPrizeDiscount,
+                        f.WtHunter,
+                        f.WtHunterCollection,
                     ],
                     k = [f.Gold, f.Credits, f.Crystal, f.FreeXp],
                     I = [f.BattlePassPoints],
@@ -1865,13 +1874,13 @@
                                     })().resId,
                                 [d],
                             ),
-                            v = (0, i.useCallback)(() => {
+                            w = (0, i.useCallback)(() => {
                                 (p.current.isVisible && p.current.timeoutId) ||
                                     (Fu(t, c, { isMouseEvent: !0, on: !0, arguments: lu(r) }, b),
                                     C && C(),
                                     (p.current.isVisible = !0));
                             }, [t, c, r, b, C]),
-                            w = (0, i.useCallback)(() => {
+                            v = (0, i.useCallback)(() => {
                                 if (p.current.isVisible || p.current.timeoutId) {
                                     const u = p.current.timeoutId;
                                     (u > 0 && (clearTimeout(u), (p.current.timeoutId = 0)),
@@ -1885,7 +1894,7 @@
                                     ((p.current.prevTarget = document.elementFromPoint(u.clientX, u.clientY)),
                                     (p.current.hideTimerId = window.setTimeout(() => {
                                         const e = document.elementFromPoint(u.clientX, u.clientY);
-                                        e && !e.isSameNode(p.current.prevTarget) && w();
+                                        e && !e.isSameNode(p.current.prevTarget) && v();
                                     }, 200)));
                             }, []);
                         ((0, i.useEffect)(() => {
@@ -1899,16 +1908,16 @@
                             );
                         }, []),
                             (0, i.useEffect)(() => {
-                                !1 === B && w();
-                            }, [B, w]),
+                                !1 === B && v();
+                            }, [B, v]),
                             (0, i.useEffect)(
                                 () => (
-                                    window.addEventListener('mouseleave', w),
+                                    window.addEventListener('mouseleave', v),
                                     () => {
-                                        (window.removeEventListener('mouseleave', w), w());
+                                        (window.removeEventListener('mouseleave', v), v());
                                     }
                                 ),
-                                [w],
+                                [v],
                             ));
                         return B
                             ? (0, i.cloneElement)(
@@ -1920,18 +1929,18 @@
                                               (u) => {
                                                   (u.clientX === window.innerWidth &&
                                                       u.clientY === window.innerHeight) ||
-                                                      ((p.current.timeoutId = window.setTimeout(v, A ? 100 : 400)),
+                                                      ((p.current.timeoutId = window.setTimeout(w, A ? 100 : 400)),
                                                       n && n(u),
                                                       S && S(u));
                                               }),
                                           onMouseLeave: ((u) => (e) => {
-                                              (w(), null == a || a(e), null == u || u(e));
+                                              (v(), null == a || a(e), null == u || u(e));
                                           })(e.props.onMouseLeave),
                                           onClick: ((u) => (e) => {
-                                              (!1 === F && w(), null == o || o(e), null == u || u(e));
+                                              (!1 === F && v(), null == o || o(e), null == u || u(e));
                                           })(e.props.onClick),
                                           onMouseDown: ((u) => (e) => {
-                                              (!1 === F && w(), null == E || E(e), null == u || u(e));
+                                              (!1 === F && v(), null == E || E(e), null == u || u(e));
                                           })(e.props.onMouseDown),
                                       },
                                       h,
@@ -2084,7 +2093,7 @@
                         info__premiumTank: 'Reward_info__premiumTank_d3',
                         timer: 'Reward_timer_d3',
                     },
-                    vu = ({
+                    wu = ({
                         name: u,
                         image: e,
                         isPeriodic: t = !1,
@@ -2212,8 +2221,8 @@
                                 ),
                         );
                     };
-                var wu = t(887),
-                    fu = t.n(wu);
+                var vu = t(887),
+                    fu = t.n(vu);
                 const Su = ['xl', 'lg', 'md', 'sm', 'xs'],
                     xu = (u) => u.includes('_') && ((u) => Su.includes(u))(u.split('_').at(-1)),
                     Ru = [ru.ExtraLarge, ru.Large, ru.Medium, ru.Small, ru.ExtraSmall],
@@ -2358,16 +2367,16 @@
                             h = u.center,
                             p = u.flexEnd,
                             b = u.spaceBetween,
-                            v = u.spaceAround,
-                            w = u.justifyContent,
+                            w = u.spaceAround,
+                            v = u.justifyContent,
                             f =
-                                void 0 === w
+                                void 0 === v
                                     ? (g ? 'flex-start' : h && 'center') ||
                                       (p && 'flex-end') ||
                                       (b && 'space-between') ||
-                                      (v && 'space-around') ||
+                                      (w && 'space-around') ||
                                       void 0
-                                    : w,
+                                    : v,
                             S = u.alignItems,
                             x = void 0 === S ? (g ? 'flex-start' : h && 'center') || (p && 'flex-end') || void 0 : S,
                             R = u.alignSelf,
@@ -2673,7 +2682,7 @@
                 }
                 const Be = R.strings.personal_missions_3.tooltips.RestRewards,
                     me = (0, _.Pi)(() => {
-                        const u = w().model,
+                        const u = v().model,
                             e = u.computes.getRewardsLength,
                             t = u.rewards.get(),
                             r = su(t, x.Small).parsedRewards,
@@ -2693,7 +2702,7 @@
                                         E().createElement(
                                             'div',
                                             { className: De, key: `rewards-${e}` },
-                                            E().createElement(vu, _e({}, u, { valueType: H(u.name), image: X(u) })),
+                                            E().createElement(wu, _e({}, u, { valueType: H(u.name), image: X(u) })),
                                             E().createElement(ie, { className: ce, text: u.label }),
                                         ),
                                     ),
@@ -2703,7 +2712,7 @@
                     });
                 engine.whenReady.then(() => {
                     c().render(
-                        E().createElement(v, null, E().createElement(F, null, E().createElement(me, null))),
+                        E().createElement(w, null, E().createElement(F, null, E().createElement(me, null))),
                         document.getElementById('root'),
                     );
                 });

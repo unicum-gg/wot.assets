@@ -1890,7 +1890,13 @@
                         (u.LootBoxToken = 'lootBoxToken'),
                         (u.GoldenTicket = 'birthday2025_golden_ticket'),
                         (u.PostStamp = 'giftsystem_4_stamp'),
-                        (u.Quests = 'quests'));
+                        (u.Quests = 'quests'),
+                        (u.WtStamp = 'stamp'),
+                        (u.WtHunter = 'wt_hunter'),
+                        (u.WtHunterCollection = 'hunter_collection'),
+                        (u.WtTicket = 'wtevent_ticket'),
+                        (u.WtMainPrizeDiscount = 'main_prize_discount'),
+                        (u.WtTicket25 = 'wtevent_ticket25'));
                 })(Nu || (Nu = {})),
                     (function (u) {
                         ((u.Gold = 'gold'),
@@ -1985,17 +1991,15 @@
                             (u.PROGRESSION_STYLE_UPGRADED_4 = 'progressionStyleUpgraded_4'));
                     })(Wu || (Wu = {})));
                 var Xu = t(596);
-                class ju extends o().PureComponent {
-                    render() {
-                        let u;
-                        if ('gold' === this.props.format) u = Xu.B3.GOLD;
-                        else u = Xu.B3.INTEGRAL;
-                        const e = Xu.Z5.getNumberFormat(this.props.value, u);
-                        return void 0 !== this.props.value && void 0 !== e ? e : null;
-                    }
-                }
-                ju.defaultProps = { format: 'integral' };
-                const qu = [
+                const ju = ({ format: u, value: e }) => {
+                        const t = ((u, e = 'integral') => {
+                            let t;
+                            t = 'gold' === e ? Xu.B3.GOLD : Xu.B3.INTEGRAL;
+                            return void 0 === u ? '' : Xu.Z5.getNumberFormat(u, t);
+                        })(e, u);
+                        return t ? o().createElement('span', null, t) : null;
+                    },
+                    qu = [
                         Nu.Items,
                         Nu.Equipment,
                         Nu.Xp,
@@ -2033,6 +2037,11 @@
                         Nu.SelectableBonus,
                         Nu.GoldenTicket,
                         Nu.PostStamp,
+                        Nu.WtStamp,
+                        Nu.WtTicket,
+                        Nu.WtMainPrizeDiscount,
+                        Nu.WtHunter,
+                        Nu.WtHunterCollection,
                     ],
                     Yu = [Nu.Gold, Nu.Credits, Nu.Crystal, Nu.FreeXp],
                     $u = [Nu.BattlePassPoints],

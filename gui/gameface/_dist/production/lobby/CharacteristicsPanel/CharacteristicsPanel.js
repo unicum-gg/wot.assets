@@ -2206,19 +2206,15 @@
                                             (t = requestAnimationFrame(() => {
                                                 t = requestAnimationFrame(() => {
                                                     ((t = null),
-                                                        (e = (() => {
-                                                            if (i.current) {
-                                                                const u = i.current.getBoundingClientRect();
-                                                                A.O.view.setSidePaddingsRem({
-                                                                    left: A.O.view.pxToRem(F ? 20 : 60),
-                                                                    right: 0,
-                                                                    top: 0,
-                                                                    bottom:
-                                                                        A.O.view.getSize('rem').height -
-                                                                        A.O.view.pxToRem(u.height),
-                                                                });
-                                                            }
-                                                        })()));
+                                                        (e = void (
+                                                            i.current &&
+                                                            A.O.view.setSidePaddingsRem({
+                                                                left: A.O.view.pxToRem(F ? 20 : 60),
+                                                                right: 0,
+                                                                top: 0,
+                                                                bottom: 0,
+                                                            })
+                                                        )));
                                                 });
                                             })),
                                             () => {
