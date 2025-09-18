@@ -19,7 +19,7 @@
             527: (e, u, t) => {
                 'use strict';
                 (t.r(u),
-                    t.d(u, { mouse: () => c, off: () => l, on: () => s, onResize: () => a, onScaleUpdated: () => r }));
+                    t.d(u, { mouse: () => o, off: () => l, on: () => s, onResize: () => a, onScaleUpdated: () => r }));
                 var i = t(2472),
                     n = t(1176);
                 const a = (0, i.E)('clientResized'),
@@ -27,7 +27,7 @@
                     s = (e, u) => engine.on(e, u),
                     l = (e, u) => engine.off(e, u),
                     E = { down: (0, i.E)('mousedown'), up: (0, i.E)('mouseup'), move: (0, i.E)('mousemove') };
-                const c = (function () {
+                const o = (function () {
                     const e = { listeners: 0, enabled: !0, initialized: !1 };
                     function u() {
                         e.enabled && (0, n.R)(!1);
@@ -152,10 +152,19 @@
             },
             3138: (e, u, t) => {
                 'use strict';
-                t.d(u, { O: () => a });
+                t.d(u, { O: () => r });
                 var i = t(5959),
-                    n = t(514);
-                const a = { view: t(7641), client: i, sound: n.ZP };
+                    n = t(7698),
+                    a = t(514);
+                const r = { view: t(7641), client: i, sound: a.ZP, intl: n.N };
+            },
+            7698: (e, u, t) => {
+                'use strict';
+                t.d(u, { N: () => i });
+                const i = {
+                    toUpperCase: (e) => window.systemLocale.toUpperCase(e),
+                    toLowerCase: (e) => window.systemLocale.toLowerCase(e),
+                };
             },
             514: (e, u, t) => {
                 'use strict';
@@ -205,22 +214,25 @@
                 'use strict';
                 (t.r(u),
                     t.d(u, {
-                        addModelObserver: () => o,
+                        addModelObserver: () => c,
                         addPreloadTexture: () => l,
-                        arabic2roman: () => f,
+                        arabic2roman: () => y,
                         children: () => n,
                         displayStatus: () => a.W,
-                        displayStatusIs: () => y,
+                        displayStatusIs: () => N,
+                        enableFullScreenModeSupported: () => H,
                         events: () => r.U,
-                        extraSize: () => N,
+                        extraSize: () => L,
                         forceTriggerMouseMove: () => v,
                         freezeTextureBeforeResize: () => h,
-                        getBrowserTexturePath: () => c,
+                        getBrowserTexturePath: () => o,
                         getDisplayStatus: () => p,
+                        getExternalPaddingsRem: () => f,
                         getFontNames: () => x,
                         getScale: () => _,
-                        getSize: () => d,
+                        getSize: () => A,
                         getViewGlobalPosition: () => F,
+                        initExternalPaddings: () => S,
                         isEventHandled: () => w,
                         isFocused: () => b,
                         pxToRem: () => g,
@@ -230,8 +242,8 @@
                         setAnimateWindow: () => B,
                         setEventHandled: () => C,
                         setInputPaddingsRem: () => E,
-                        setSidePaddingsRem: () => A,
-                        whenTutorialReady: () => L,
+                        setSidePaddingsRem: () => d,
+                        whenTutorialReady: () => R,
                     }));
                 var i = t(9690),
                     n = t(3722),
@@ -244,16 +256,16 @@
                 function E(e) {
                     viewEnv.setHitAreaPaddingsRem(e, e, e, e, 15);
                 }
-                function c(e, u, t, i = 1) {
+                function o(e, u, t, i = 1) {
                     return viewEnv.getWebBrowserTexturePath(e, u, t, i);
                 }
-                function o(e, u, t) {
+                function c(e, u, t) {
                     return viewEnv.addDataChangedCallback(e, u, t);
                 }
-                function A(e) {
+                function d(e) {
                     viewEnv.setHitAreaPaddingsRem(e.top, e.right, e.bottom, e.left, 15);
                 }
-                function d(e = 'px') {
+                function A(e = 'px') {
                     return 'rem' === e ? viewEnv.getViewSizeRem() : viewEnv.getViewSizePx();
                 }
                 function m(e, u, t = 'px') {
@@ -297,12 +309,15 @@
                         let e = [];
                         return () => (0 === e.length && (e = Object.keys(viewEnv.getFontsConfig())), e);
                     })(),
-                    f = i.cg,
-                    y = Object.keys(a.W).reduce(
+                    y = i.cg;
+                function f() {
+                    return viewEnv.getExternalPaddingsRem();
+                }
+                const N = Object.keys(a.W).reduce(
                         (e, u) => ((e[u] = () => viewEnv.getShowingStatus() === a.W[u]), e),
                         {},
                     ),
-                    N = {
+                    L = {
                         set: (e, u) => {
                             viewEnv.setExtraSizeRem(e, u);
                         },
@@ -310,12 +325,29 @@
                             viewEnv.getExtraSizeRem(e, u);
                         },
                     },
-                    L = Promise.all([
+                    R = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : r.U.onDomBuilt(e);
                         }),
                         engine.whenReady,
                     ]);
+                function H() {
+                    viewEnv.setFullscreenModeSupported(!0);
+                }
+                function S(e) {
+                    function u() {
+                        const u = viewEnv.getExternalPaddingsRem(),
+                            t = u.top,
+                            i = u.right,
+                            n = u.bottom,
+                            a = u.left;
+                        (e.style.setProperty('--external-padding-top', `${t}rem`),
+                            e.style.setProperty('--external-padding-right', `${i}rem`),
+                            e.style.setProperty('--external-padding-bottom', `${n}rem`),
+                            e.style.setProperty('--external-padding-left', `${a}rem`));
+                    }
+                    (u(), engine.on('self.onPaddingsUpdated', () => u()));
+                }
             },
             8566: (e, u, t) => {
                 'use strict';
@@ -596,10 +628,10 @@
                 })(s || (s = {}));
                 const l = Object.freeze({ INTEGRAL: 0, GOLD: 1 }),
                     E = Object.freeze({ FRACTIONAL: 0, WO_ZERO_DIGITS: 1 }),
-                    c = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1 }),
-                    o = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1, YEAR_MONTH: 2 });
-                var A = t(5521),
-                    d = t(3138);
+                    o = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1 }),
+                    c = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1, YEAR_MONTH: 2 });
+                var d = t(5521),
+                    A = t(3138);
                 const m = ['args'];
                 function F(e, u, t, i, n, a, r) {
                     try {
@@ -680,7 +712,7 @@
                     },
                     D = () => g(s.CLOSE),
                     B = (e, u) => {
-                        e.keyCode === A.n.ESCAPE && u();
+                        e.keyCode === d.n.ESCAPE && u();
                     };
                 var b = t(7572);
                 const C = n.instance,
@@ -690,8 +722,8 @@
                         ViewEventType: s,
                         NumberFormatType: l,
                         RealFormatType: E,
-                        TimeFormatType: c,
-                        DateFormatType: o,
+                        TimeFormatType: o,
+                        DateFormatType: c,
                         makeGlobalBoundingBox: h,
                         sendMoveEvent: (e) => g(s.MOVE, { isMouseEvent: !0, on: e }),
                         sendCloseEvent: D,
@@ -700,17 +732,17 @@
                             g(s.CONTEXT_MENU, { isMouseEvent: !0, contentID: e, on: !0, decoratorID: t, args: u });
                         },
                         sendShowPopOverEvent: (e, u, t, i, n = R.invalid('resId'), a) => {
-                            const r = d.O.view.getViewGlobalPosition(),
+                            const r = A.O.view.getViewGlobalPosition(),
                                 l = t.getBoundingClientRect(),
                                 E = l.x,
-                                c = l.y,
-                                o = l.width,
-                                A = l.height,
+                                o = l.y,
+                                c = l.width,
+                                d = l.height,
                                 m = {
-                                    x: d.O.view.pxToRem(E) + r.x,
-                                    y: d.O.view.pxToRem(c) + r.y,
-                                    width: d.O.view.pxToRem(o),
-                                    height: d.O.view.pxToRem(A),
+                                    x: A.O.view.pxToRem(E) + r.x,
+                                    y: A.O.view.pxToRem(o) + r.y,
+                                    width: A.O.view.pxToRem(c),
+                                    height: A.O.view.pxToRem(d),
                                 };
                             g(s.POP_OVER, {
                                 isMouseEvent: !0,
@@ -813,53 +845,60 @@
                     extraSmall: { weight: 0, width: 1024, height: 768 },
                 };
                 var l;
-                function E(e, u, t) {
-                    const i = (function (e, u) {
-                            switch (!0) {
-                                case e >= u.extraLarge.width:
-                                    return u.extraLarge.weight;
-                                case e >= u.large.width && e < u.extraLarge.width:
-                                    return u.large.weight;
-                                case e >= u.medium.width && e < u.large.width:
-                                    return u.medium.weight;
-                                case e >= u.small.width && e < u.medium.width:
-                                    return u.small.weight;
-                                default:
-                                    return u.extraSmall.weight;
-                            }
-                        })(e, t),
-                        n = (function (e, u) {
-                            switch (!0) {
-                                case e >= u.extraLarge.height:
-                                    return u.extraLarge.weight;
-                                case e >= u.large.height && e < u.extraLarge.height:
-                                    return u.large.weight;
-                                case e >= u.medium.height && e < u.large.height:
-                                    return u.medium.weight;
-                                case e >= u.small.height && e < u.medium.height:
-                                    return u.small.weight;
-                                default:
-                                    return u.extraSmall.weight;
-                            }
-                        })(u, t),
-                        a = Math.min(i, n);
-                    return {
-                        extraLarge: a === t.extraLarge.weight,
-                        large: a === t.large.weight,
-                        medium: a === t.medium.weight,
-                        small: a === t.small.weight,
-                        extraSmall: a === t.extraSmall.weight,
-                        extraLargeWidth: i === t.extraLarge.weight,
-                        largeWidth: i === t.large.weight,
-                        mediumWidth: i === t.medium.weight,
-                        smallWidth: i === t.small.weight,
-                        extraSmallWidth: i === t.extraSmall.weight,
-                        extraLargeHeight: n === t.extraLarge.weight,
-                        largeHeight: n === t.large.weight,
-                        mediumHeight: n === t.medium.weight,
-                        smallHeight: n === t.small.weight,
-                        extraSmallHeight: n === t.extraSmall.weight,
-                    };
+                function E(e = r.O.client.getSize('rem')) {
+                    const u = e.width,
+                        t = e.height;
+                    return Object.assign(
+                        { width: u, height: t },
+                        (function (e, u, t) {
+                            const i = (function (e, u) {
+                                    switch (!0) {
+                                        case e >= u.extraLarge.width:
+                                            return u.extraLarge.weight;
+                                        case e >= u.large.width && e < u.extraLarge.width:
+                                            return u.large.weight;
+                                        case e >= u.medium.width && e < u.large.width:
+                                            return u.medium.weight;
+                                        case e >= u.small.width && e < u.medium.width:
+                                            return u.small.weight;
+                                        default:
+                                            return u.extraSmall.weight;
+                                    }
+                                })(e, t),
+                                n = (function (e, u) {
+                                    switch (!0) {
+                                        case e >= u.extraLarge.height:
+                                            return u.extraLarge.weight;
+                                        case e >= u.large.height && e < u.extraLarge.height:
+                                            return u.large.weight;
+                                        case e >= u.medium.height && e < u.large.height:
+                                            return u.medium.weight;
+                                        case e >= u.small.height && e < u.medium.height:
+                                            return u.small.weight;
+                                        default:
+                                            return u.extraSmall.weight;
+                                    }
+                                })(u, t),
+                                a = Math.min(i, n);
+                            return {
+                                extraLarge: a === t.extraLarge.weight,
+                                large: a === t.large.weight,
+                                medium: a === t.medium.weight,
+                                small: a === t.small.weight,
+                                extraSmall: a === t.extraSmall.weight,
+                                extraLargeWidth: i === t.extraLarge.weight,
+                                largeWidth: i === t.large.weight,
+                                mediumWidth: i === t.medium.weight,
+                                smallWidth: i === t.small.weight,
+                                extraSmallWidth: i === t.extraSmall.weight,
+                                extraLargeHeight: n === t.extraLarge.weight,
+                                largeHeight: n === t.large.weight,
+                                mediumHeight: n === t.medium.weight,
+                                smallHeight: n === t.small.weight,
+                                extraSmallHeight: n === t.extraSmall.weight,
+                            };
+                        })(u, t, s),
+                    );
                 }
                 !(function (e) {
                     ((e.extraLarge = 'extraLarge'),
@@ -878,13 +917,10 @@
                         (e.smallHeight = 'smallHeight'),
                         (e.extraSmallHeight = 'extraSmallHeight'));
                 })(l || (l = {}));
-                const c = r.O.client.getSize('rem'),
-                    o = c.width,
-                    A = c.height,
-                    d = Object.assign({ width: o, height: A }, E(o, A, s)),
-                    m = (0, i.createContext)(d),
-                    F = ['children'];
-                const h = (e) => {
+                const o = E(),
+                    c = (0, i.createContext)(o),
+                    d = ['children'];
+                (0, i.memo)((e) => {
                     let u = e.children,
                         t = (function (e, u) {
                             if (null == e) return {};
@@ -894,16 +930,16 @@
                                 a = Object.keys(e);
                             for (i = 0; i < a.length; i++) ((t = a[i]), u.indexOf(t) >= 0 || (n[t] = e[t]));
                             return n;
-                        })(e, F);
-                    const n = (0, i.useContext)(m),
+                        })(e, d);
+                    const n = (0, i.useContext)(c),
                         r = n.extraLarge,
                         s = n.large,
                         l = n.medium,
                         E = n.small,
-                        c = n.extraSmall,
-                        o = n.extraLargeWidth,
-                        A = n.largeWidth,
-                        d = n.mediumWidth,
+                        o = n.extraSmall,
+                        A = n.extraLargeWidth,
+                        m = n.largeWidth,
+                        F = n.mediumWidth,
                         h = n.smallWidth,
                         _ = n.extraSmallWidth,
                         g = n.extraLargeHeight,
@@ -917,11 +953,11 @@
                         if (t.large && s) return u;
                         if (t.medium && l) return u;
                         if (t.small && E) return u;
-                        if (t.extraSmall && c) return u;
+                        if (t.extraSmall && o) return u;
                     } else {
-                        if (t.extraLargeWidth && o) return a(u, t, w);
-                        if (t.largeWidth && A) return a(u, t, w);
-                        if (t.mediumWidth && d) return a(u, t, w);
+                        if (t.extraLargeWidth && A) return a(u, t, w);
+                        if (t.largeWidth && m) return a(u, t, w);
+                        if (t.mediumWidth && F) return a(u, t, w);
                         if (t.smallWidth && h) return a(u, t, w);
                         if (t.extraSmallWidth && _) return a(u, t, w);
                         if (
@@ -935,140 +971,120 @@
                         }
                     }
                     return null;
+                });
+                const A = ({ children: e }) => {
+                    const u = (0, i.useState)(E),
+                        t = u[0],
+                        a = u[1],
+                        s = (0, i.useState)(!1),
+                        l = s[0],
+                        o = s[1];
+                    return (
+                        (0, i.useLayoutEffect)(() => {
+                            function e() {
+                                a((e) => {
+                                    const u = r.O.client.getSize('rem');
+                                    return e.width === u.width && e.height === u.height ? e : E(u);
+                                });
+                            }
+                            return (
+                                e(),
+                                o(!0),
+                                r.O.client.events.on('clientResized', e),
+                                r.O.client.events.on('self.onScaleUpdated', e),
+                                () => {
+                                    (r.O.client.events.off('clientResized', e),
+                                        r.O.client.events.off('self.onScaleUpdated', e));
+                                }
+                            );
+                        }, []),
+                        n().createElement(c.Provider, { value: t }, l && e)
+                    );
                 };
-                h.defaultProps = {
-                    extraLarge: !1,
-                    large: !1,
-                    medium: !1,
-                    small: !1,
-                    extraSmall: !1,
-                    extraLargeWidth: !1,
-                    largeWidth: !1,
-                    mediumWidth: !1,
-                    smallWidth: !1,
-                    extraSmallWidth: !1,
-                    extraLargeHeight: !1,
-                    largeHeight: !1,
-                    mediumHeight: !1,
-                    smallHeight: !1,
-                    extraSmallHeight: !1,
-                };
-                (0, i.memo)(h);
-                const _ = (e) => {
-                        const u = (0, i.useRef)(!1);
-                        u.current || (e(), (u.current = !0));
-                    },
-                    g = ({ children: e }) => {
-                        const u = (0, i.useContext)(m),
-                            t = (0, i.useState)(u),
-                            a = t[0],
-                            l = t[1],
-                            c = (0, i.useCallback)((e, u) => {
-                                const t = r.O.view.pxToRem(e),
-                                    i = r.O.view.pxToRem(u);
-                                l(Object.assign({ width: t, height: i }, E(t, i, s)));
-                            }, []),
-                            o = (0, i.useCallback)(() => {
-                                const e = r.O.client.getSize('px');
-                                c(e.width, e.height);
-                            }, [c]);
-                        (_(() => {
-                            (r.O.client.events.on('clientResized', c), r.O.client.events.on('self.onScaleUpdated', o));
-                        }),
-                            (0, i.useEffect)(
-                                () => () => {
-                                    (r.O.client.events.off('clientResized', c),
-                                        r.O.client.events.off('self.onScaleUpdated', o));
-                                },
-                                [c, o],
-                            ));
-                        const A = (0, i.useMemo)(() => Object.assign({}, a), [a]);
-                        return n().createElement(m.Provider, { value: A }, e);
-                    };
-                var D = t(6483),
-                    B = t.n(D),
-                    b = t(926),
-                    C = t.n(b);
-                let w, v, p;
+                var m = t(6483),
+                    F = t.n(m),
+                    h = t(926),
+                    _ = t.n(h);
+                let g, D, B;
                 (!(function (e) {
                     ((e[(e.ExtraSmall = s.extraSmall.width)] = 'ExtraSmall'),
                         (e[(e.Small = s.small.width)] = 'Small'),
                         (e[(e.Medium = s.medium.width)] = 'Medium'),
                         (e[(e.Large = s.large.width)] = 'Large'),
                         (e[(e.ExtraLarge = s.extraLarge.width)] = 'ExtraLarge'));
-                })(w || (w = {})),
+                })(g || (g = {})),
                     (function (e) {
                         ((e[(e.ExtraSmall = s.extraSmall.width)] = 'ExtraSmall'),
                             (e[(e.Small = s.small.width)] = 'Small'),
                             (e[(e.Medium = s.medium.width)] = 'Medium'),
                             (e[(e.Large = s.large.width)] = 'Large'),
                             (e[(e.ExtraLarge = s.extraLarge.width)] = 'ExtraLarge'));
-                    })(v || (v = {})),
+                    })(D || (D = {})),
                     (function (e) {
                         ((e[(e.ExtraSmall = s.extraSmall.height)] = 'ExtraSmall'),
                             (e[(e.Small = s.small.height)] = 'Small'),
                             (e[(e.Medium = s.medium.height)] = 'Medium'),
                             (e[(e.Large = s.large.height)] = 'Large'),
                             (e[(e.ExtraLarge = s.extraLarge.height)] = 'ExtraLarge'));
-                    })(p || (p = {})));
-                const x = () => {
-                        const e = (0, i.useContext)(m),
+                    })(B || (B = {})));
+                const b = () => {
+                        const e = (0, i.useContext)(c),
                             u = e.width,
                             t = e.height,
                             n = ((e) => {
                                 switch (!0) {
                                     case e.extraLarge:
-                                        return w.ExtraLarge;
+                                        return g.ExtraLarge;
                                     case e.large:
-                                        return w.Large;
+                                        return g.Large;
                                     case e.medium:
-                                        return w.Medium;
+                                        return g.Medium;
                                     case e.small:
-                                        return w.Small;
+                                        return g.Small;
                                     case e.extraSmall:
-                                        return w.ExtraSmall;
+                                        return g.ExtraSmall;
                                     default:
-                                        return (console.error('Unreachable media context resolution'), w.ExtraSmall);
+                                        return (console.error('Unreachable media context resolution'), g.ExtraSmall);
                                 }
                             })(e),
                             a = ((e) => {
                                 switch (!0) {
                                     case e.extraLargeWidth:
-                                        return v.ExtraLarge;
+                                        return D.ExtraLarge;
                                     case e.largeWidth:
-                                        return v.Large;
+                                        return D.Large;
                                     case e.mediumWidth:
-                                        return v.Medium;
+                                        return D.Medium;
                                     case e.smallWidth:
-                                        return v.Small;
+                                        return D.Small;
                                     case e.extraSmallWidth:
-                                        return v.ExtraSmall;
+                                        return D.ExtraSmall;
                                     default:
-                                        return (console.error('Unreachable media context resolution'), v.ExtraSmall);
+                                        return (console.error('Unreachable media context resolution'), D.ExtraSmall);
                                 }
                             })(e),
                             r = ((e) => {
                                 switch (!0) {
                                     case e.extraLargeHeight:
-                                        return p.ExtraLarge;
+                                        return B.ExtraLarge;
                                     case e.largeHeight:
-                                        return p.Large;
+                                        return B.Large;
                                     case e.mediumHeight:
-                                        return p.Medium;
+                                        return B.Medium;
                                     case e.smallHeight:
-                                        return p.Small;
+                                        return B.Small;
                                     case e.extraSmallHeight:
-                                        return p.ExtraSmall;
+                                        return B.ExtraSmall;
                                     default:
-                                        return (console.error('Unreachable media context resolution'), p.ExtraSmall);
+                                        return (console.error('Unreachable media context resolution'), B.ExtraSmall);
                                 }
                             })(e);
                         return { mediaSize: n, mediaWidth: a, mediaHeight: r, remScreenWidth: u, remScreenHeight: t };
                     },
-                    f = ['children', 'className'];
-                function y() {
+                    C = ['children', 'className'];
+                function w() {
                     return (
-                        (y =
+                        (w =
                             Object.assign ||
                             function (e) {
                                 for (var u = 1; u < arguments.length; u++) {
@@ -1077,31 +1093,31 @@
                                 }
                                 return e;
                             }),
-                        y.apply(this, arguments)
+                        w.apply(this, arguments)
                     );
                 }
-                const N = {
-                        [v.ExtraSmall]: '',
-                        [v.Small]: C().SMALL_WIDTH,
-                        [v.Medium]: `${C().SMALL_WIDTH} ${C().MEDIUM_WIDTH}`,
-                        [v.Large]: `${C().SMALL_WIDTH} ${C().MEDIUM_WIDTH} ${C().LARGE_WIDTH}`,
-                        [v.ExtraLarge]: `${C().SMALL_WIDTH} ${C().MEDIUM_WIDTH} ${C().LARGE_WIDTH} ${C().EXTRA_LARGE_WIDTH}`,
+                const v = {
+                        [D.ExtraSmall]: '',
+                        [D.Small]: _().SMALL_WIDTH,
+                        [D.Medium]: `${_().SMALL_WIDTH} ${_().MEDIUM_WIDTH}`,
+                        [D.Large]: `${_().SMALL_WIDTH} ${_().MEDIUM_WIDTH} ${_().LARGE_WIDTH}`,
+                        [D.ExtraLarge]: `${_().SMALL_WIDTH} ${_().MEDIUM_WIDTH} ${_().LARGE_WIDTH} ${_().EXTRA_LARGE_WIDTH}`,
                     },
-                    L = {
-                        [p.ExtraSmall]: '',
-                        [p.Small]: C().SMALL_HEIGHT,
-                        [p.Medium]: `${C().SMALL_HEIGHT} ${C().MEDIUM_HEIGHT}`,
-                        [p.Large]: `${C().SMALL_HEIGHT} ${C().MEDIUM_HEIGHT} ${C().LARGE_HEIGHT}`,
-                        [p.ExtraLarge]: `${C().SMALL_HEIGHT} ${C().MEDIUM_HEIGHT} ${C().LARGE_HEIGHT} ${C().EXTRA_LARGE_HEIGHT}`,
+                    p = {
+                        [B.ExtraSmall]: '',
+                        [B.Small]: _().SMALL_HEIGHT,
+                        [B.Medium]: `${_().SMALL_HEIGHT} ${_().MEDIUM_HEIGHT}`,
+                        [B.Large]: `${_().SMALL_HEIGHT} ${_().MEDIUM_HEIGHT} ${_().LARGE_HEIGHT}`,
+                        [B.ExtraLarge]: `${_().SMALL_HEIGHT} ${_().MEDIUM_HEIGHT} ${_().LARGE_HEIGHT} ${_().EXTRA_LARGE_HEIGHT}`,
                     },
-                    H = {
-                        [w.ExtraSmall]: '',
-                        [w.Small]: C().SMALL,
-                        [w.Medium]: `${C().SMALL} ${C().MEDIUM}`,
-                        [w.Large]: `${C().SMALL} ${C().MEDIUM} ${C().LARGE}`,
-                        [w.ExtraLarge]: `${C().SMALL} ${C().MEDIUM} ${C().LARGE} ${C().EXTRA_LARGE}`,
+                    x = {
+                        [g.ExtraSmall]: '',
+                        [g.Small]: _().SMALL,
+                        [g.Medium]: `${_().SMALL} ${_().MEDIUM}`,
+                        [g.Large]: `${_().SMALL} ${_().MEDIUM} ${_().LARGE}`,
+                        [g.ExtraLarge]: `${_().SMALL} ${_().MEDIUM} ${_().LARGE} ${_().EXTRA_LARGE}`,
                     },
-                    S = (e) => {
+                    y = (e) => {
                         let u = e.children,
                             t = e.className,
                             i = (function (e, u) {
@@ -1112,15 +1128,15 @@
                                     a = Object.keys(e);
                                 for (i = 0; i < a.length; i++) ((t = a[i]), u.indexOf(t) >= 0 || (n[t] = e[t]));
                                 return n;
-                            })(e, f);
-                        const a = x(),
+                            })(e, C);
+                        const a = b(),
                             r = a.mediaWidth,
                             s = a.mediaHeight,
                             l = a.mediaSize;
-                        return n().createElement('div', y({ className: B()(t, N[r], L[s], H[l]) }, i), u);
+                        return n().createElement('div', w({ className: F()(t, v[r], p[s], x[l]) }, i), u);
                     },
-                    O = ['children'];
-                const T = (e) => {
+                    f = ['children'];
+                const N = (e) => {
                     let u = e.children,
                         t = (function (e, u) {
                             if (null == e) return {};
@@ -1130,38 +1146,35 @@
                                 a = Object.keys(e);
                             for (i = 0; i < a.length; i++) ((t = a[i]), u.indexOf(t) >= 0 || (n[t] = e[t]));
                             return n;
-                        })(e, O);
-                    return n().createElement(g, null, n().createElement(S, t, u));
+                        })(e, f);
+                    return n().createElement(A, null, n().createElement(y, t, u));
                 };
-                var k = t(1533),
-                    M = t.n(k),
-                    P = t(3403),
-                    W = t(7030);
+                var L = t(1533),
+                    H = t.n(L),
+                    S = t(3403),
+                    O = t(7030);
                 t(1281);
-                let I;
+                let M;
                 !(function (e) {
                     ((e[(e.left = 0)] = 'left'), (e[(e.right = 1)] = 'right'));
-                })(I || (I = {}));
+                })(M || (M = {}));
                 (() => {
                     const e = new RegExp(
-                        /[\(\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]?[\u3002\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]?[ %\+\x2D-9A-Za-\{\}\xA0\xC0-\u0237\u2013\u2014\u2026]+[\)\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3002\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\uFF01\uFF0C\uFF1A\uFF1B\uFF1F\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]?[\u3002\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]?/gmu
-                            .source +
-                            '|' +
-                            /[\(\xAB\u201C\u275D][\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}][\0-\u2E7F\u2E9A\u2EF4-\u2EFF\u2FD6-\u3004\u3006\u3008-\u3020\u302A-\u3037\u303C-\u33FF\u4DC0-\u4DFF\uA000-\uF8FF\uFA6E\uFA6F\uFADA-\u{16FE1}\u{16FE4}-\u{16FEF}\u{16FF2}-\u{1FFFF}\u{2A6E0}-\u{2A6FF}\u{2B739}-\u{2B73F}\u{2B81E}\u{2B81F}\u{2CEA2}-\u{2CEAF}\u{2EBE1}-\u{2F7FF}\u{2FA1E}-\u{2FFFF}\u{3134B}-\u{10FFFF}]?|[\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}][\0-\u2E7F\u2E9A\u2EF4-\u2EFF\u2FD6-\u3004\u3006\u3008-\u3020\u302A-\u3037\u303C-\u33FF\u4DC0-\u4DFF\uA000-\uF8FF\uFA6E\uFA6F\uFADA-\u{16FE1}\u{16FE4}-\u{16FEF}\u{16FF2}-\u{1FFFF}\u{2A6E0}-\u{2A6FF}\u{2B739}-\u{2B73F}\u{2B81E}\u{2B81F}\u{2CEA2}-\u{2CEAF}\u{2EBE1}-\u{2F7FF}\u{2FA1E}-\u{2FFFF}\u{3134B}-\u{10FFFF}]?[\u3002\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]?[\)\xBB\u201D\u275E][\u3002\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]?/gmu
-                                .source +
-                            '|' +
-                            /[A-Za-z\xAA\xB5\xBA\xC0-\xD6\xD8-\xF6\xF8-\u02C1\u02C6-\u02D1\u02E0-\u02E4\u02EC\u02EE\u0370-\u0374\u0376\u0377\u037A-\u037D\u037F\u0386\u0388-\u038A\u038C\u038E-\u03A1\u03A3-\u03F5\u03F7-\u0481\u048A-\u052F\u0531-\u0556\u0559\u0560-\u0588\u05D0-\u05EA\u05EF-\u05F2\u0620-\u064A\u066E\u066F\u0671-\u06D3\u06D5\u06E5\u06E6\u06EE\u06EF\u06FA-\u06FC\u06FF\u0710\u0712-\u072F\u074D-\u07A5\u07B1\u07CA-\u07EA\u07F4\u07F5\u07FA\u0800-\u0815\u081A\u0824\u0828\u0840-\u0858\u0860-\u086A\u0870-\u0887\u0889-\u088E\u08A0-\u08C9\u0904-\u0939\u093D\u0950\u0958-\u0961\u0971-\u0980\u0985-\u098C\u098F\u0990\u0993-\u09A8\u09AA-\u09B0\u09B2\u09B6-\u09B9\u09BD\u09CE\u09DC\u09DD\u09DF-\u09E1\u09F0\u09F1\u09FC\u0A05-\u0A0A\u0A0F\u0A10\u0A13-\u0A28\u0A2A-\u0A30\u0A32\u0A33\u0A35\u0A36\u0A38\u0A39\u0A59-\u0A5C\u0A5E\u0A72-\u0A74\u0A85-\u0A8D\u0A8F-\u0A91\u0A93-\u0AA8\u0AAA-\u0AB0\u0AB2\u0AB3\u0AB5-\u0AB9\u0ABD\u0AD0\u0AE0\u0AE1\u0AF9\u0B05-\u0B0C\u0B0F\u0B10\u0B13-\u0B28\u0B2A-\u0B30\u0B32\u0B33\u0B35-\u0B39\u0B3D\u0B5C\u0B5D\u0B5F-\u0B61\u0B71\u0B83\u0B85-\u0B8A\u0B8E-\u0B90\u0B92-\u0B95\u0B99\u0B9A\u0B9C\u0B9E\u0B9F\u0BA3\u0BA4\u0BA8-\u0BAA\u0BAE-\u0BB9\u0BD0\u0C05-\u0C0C\u0C0E-\u0C10\u0C12-\u0C28\u0C2A-\u0C39\u0C3D\u0C58-\u0C5A\u0C5D\u0C60\u0C61\u0C80\u0C85-\u0C8C\u0C8E-\u0C90\u0C92-\u0CA8\u0CAA-\u0CB3\u0CB5-\u0CB9\u0CBD\u0CDD\u0CDE\u0CE0\u0CE1\u0CF1\u0CF2\u0D04-\u0D0C\u0D0E-\u0D10\u0D12-\u0D3A\u0D3D\u0D4E\u0D54-\u0D56\u0D5F-\u0D61\u0D7A-\u0D7F\u0D85-\u0D96\u0D9A-\u0DB1\u0DB3-\u0DBB\u0DBD\u0DC0-\u0DC6\u0E01-\u0E30\u0E32\u0E33\u0E40-\u0E46\u0E81\u0E82\u0E84\u0E86-\u0E8A\u0E8C-\u0EA3\u0EA5\u0EA7-\u0EB0\u0EB2\u0EB3\u0EBD\u0EC0-\u0EC4\u0EC6\u0EDC-\u0EDF\u0F00\u0F40-\u0F47\u0F49-\u0F6C\u0F88-\u0F8C\u1000-\u102A\u103F\u1050-\u1055\u105A-\u105D\u1061\u1065\u1066\u106E-\u1070\u1075-\u1081\u108E\u10A0-\u10C5\u10C7\u10CD\u10D0-\u10FA\u10FC-\u1248\u124A-\u124D\u1250-\u1256\u1258\u125A-\u125D\u1260-\u1288\u128A-\u128D\u1290-\u12B0\u12B2-\u12B5\u12B8-\u12BE\u12C0\u12C2-\u12C5\u12C8-\u12D6\u12D8-\u1310\u1312-\u1315\u1318-\u135A\u1380-\u138F\u13A0-\u13F5\u13F8-\u13FD\u1401-\u166C\u166F-\u167F\u1681-\u169A\u16A0-\u16EA\u16F1-\u16F8\u1700-\u1711\u171F-\u1731\u1740-\u1751\u1760-\u176C\u176E-\u1770\u1780-\u17B3\u17D7\u17DC\u1820-\u1878\u1880-\u1884\u1887-\u18A8\u18AA\u18B0-\u18F5\u1900-\u191E\u1950-\u196D\u1970-\u1974\u1980-\u19AB\u19B0-\u19C9\u1A00-\u1A16\u1A20-\u1A54\u1AA7\u1B05-\u1B33\u1B45-\u1B4C\u1B83-\u1BA0\u1BAE\u1BAF\u1BBA-\u1BE5\u1C00-\u1C23\u1C4D-\u1C4F\u1C5A-\u1C7D\u1C80-\u1C88\u1C90-\u1CBA\u1CBD-\u1CBF\u1CE9-\u1CEC\u1CEE-\u1CF3\u1CF5\u1CF6\u1CFA\u1D00-\u1DBF\u1E00-\u1F15\u1F18-\u1F1D\u1F20-\u1F45\u1F48-\u1F4D\u1F50-\u1F57\u1F59\u1F5B\u1F5D\u1F5F-\u1F7D\u1F80-\u1FB4\u1FB6-\u1FBC\u1FBE\u1FC2-\u1FC4\u1FC6-\u1FCC\u1FD0-\u1FD3\u1FD6-\u1FDB\u1FE0-\u1FEC\u1FF2-\u1FF4\u1FF6-\u1FFC\u2071\u207F\u2090-\u209C\u2102\u2107\u210A-\u2113\u2115\u2119-\u211D\u2124\u2126\u2128\u212A-\u212D\u212F-\u2139\u213C-\u213F\u2145-\u2149\u214E\u2183\u2184\u2C00-\u2CE4\u2CEB-\u2CEE\u2CF2\u2CF3\u2D00-\u2D25\u2D27\u2D2D\u2D30-\u2D67\u2D6F\u2D80-\u2D96\u2DA0-\u2DA6\u2DA8-\u2DAE\u2DB0-\u2DB6\u2DB8-\u2DBE\u2DC0-\u2DC6\u2DC8-\u2DCE\u2DD0-\u2DD6\u2DD8-\u2DDE\u2E2F\u3005\u3006\u3031-\u3035\u303B\u303C\u3041-\u3096\u309D-\u309F\u30A1-\u30FA\u30FC-\u30FF\u3105-\u312F\u3131-\u318E\u31A0-\u31BF\u31F0-\u31FF\u3400-\u4DBF\u4E00-\uA48C\uA4D0-\uA4FD\uA500-\uA60C\uA610-\uA61F\uA62A\uA62B\uA640-\uA66E\uA67F-\uA69D\uA6A0-\uA6E5\uA717-\uA71F\uA722-\uA788\uA78B-\uA7CA\uA7D0\uA7D1\uA7D3\uA7D5-\uA7D9\uA7F2-\uA801\uA803-\uA805\uA807-\uA80A\uA80C-\uA822\uA840-\uA873\uA882-\uA8B3\uA8F2-\uA8F7\uA8FB\uA8FD\uA8FE\uA90A-\uA925\uA930-\uA946\uA960-\uA97C\uA984-\uA9B2\uA9CF\uA9E0-\uA9E4\uA9E6-\uA9EF\uA9FA-\uA9FE\uAA00-\uAA28\uAA40-\uAA42\uAA44-\uAA4B\uAA60-\uAA76\uAA7A\uAA7E-\uAAAF\uAAB1\uAAB5\uAAB6\uAAB9-\uAABD\uAAC0\uAAC2\uAADB-\uAADD\uAAE0-\uAAEA\uAAF2-\uAAF4\uAB01-\uAB06\uAB09-\uAB0E\uAB11-\uAB16\uAB20-\uAB26\uAB28-\uAB2E\uAB30-\uAB5A\uAB5C-\uAB69\uAB70-\uABE2\uAC00-\uD7A3\uD7B0-\uD7C6\uD7CB-\uD7FB\uF900-\uFA6D\uFA70-\uFAD9\uFB00-\uFB06\uFB13-\uFB17\uFB1D\uFB1F-\uFB28\uFB2A-\uFB36\uFB38-\uFB3C\uFB3E\uFB40\uFB41\uFB43\uFB44\uFB46-\uFBB1\uFBD3-\uFD3D\uFD50-\uFD8F\uFD92-\uFDC7\uFDF0-\uFDFB\uFE70-\uFE74\uFE76-\uFEFC\uFF21-\uFF3A\uFF41-\uFF5A\uFF66-\uFFBE\uFFC2-\uFFC7\uFFCA-\uFFCF\uFFD2-\uFFD7\uFFDA-\uFFDC\u{10000}-\u{1000B}\u{1000D}-\u{10026}\u{10028}-\u{1003A}\u{1003C}\u{1003D}\u{1003F}-\u{1004D}\u{10050}-\u{1005D}\u{10080}-\u{100FA}\u{10280}-\u{1029C}\u{102A0}-\u{102D0}\u{10300}-\u{1031F}\u{1032D}-\u{10340}\u{10342}-\u{10349}\u{10350}-\u{10375}\u{10380}-\u{1039D}\u{103A0}-\u{103C3}\u{103C8}-\u{103CF}\u{10400}-\u{1049D}\u{104B0}-\u{104D3}\u{104D8}-\u{104FB}\u{10500}-\u{10527}\u{10530}-\u{10563}\u{10570}-\u{1057A}\u{1057C}-\u{1058A}\u{1058C}-\u{10592}\u{10594}\u{10595}\u{10597}-\u{105A1}\u{105A3}-\u{105B1}\u{105B3}-\u{105B9}\u{105BB}\u{105BC}\u{10600}-\u{10736}\u{10740}-\u{10755}\u{10760}-\u{10767}\u{10780}-\u{10785}\u{10787}-\u{107B0}\u{107B2}-\u{107BA}\u{10800}-\u{10805}\u{10808}\u{1080A}-\u{10835}\u{10837}\u{10838}\u{1083C}\u{1083F}-\u{10855}\u{10860}-\u{10876}\u{10880}-\u{1089E}\u{108E0}-\u{108F2}\u{108F4}\u{108F5}\u{10900}-\u{10915}\u{10920}-\u{10939}\u{10980}-\u{109B7}\u{109BE}\u{109BF}\u{10A00}\u{10A10}-\u{10A13}\u{10A15}-\u{10A17}\u{10A19}-\u{10A35}\u{10A60}-\u{10A7C}\u{10A80}-\u{10A9C}\u{10AC0}-\u{10AC7}\u{10AC9}-\u{10AE4}\u{10B00}-\u{10B35}\u{10B40}-\u{10B55}\u{10B60}-\u{10B72}\u{10B80}-\u{10B91}\u{10C00}-\u{10C48}\u{10C80}-\u{10CB2}\u{10CC0}-\u{10CF2}\u{10D00}-\u{10D23}\u{10E80}-\u{10EA9}\u{10EB0}\u{10EB1}\u{10F00}-\u{10F1C}\u{10F27}\u{10F30}-\u{10F45}\u{10F70}-\u{10F81}\u{10FB0}-\u{10FC4}\u{10FE0}-\u{10FF6}\u{11003}-\u{11037}\u{11071}\u{11072}\u{11075}\u{11083}-\u{110AF}\u{110D0}-\u{110E8}\u{11103}-\u{11126}\u{11144}\u{11147}\u{11150}-\u{11172}\u{11176}\u{11183}-\u{111B2}\u{111C1}-\u{111C4}\u{111DA}\u{111DC}\u{11200}-\u{11211}\u{11213}-\u{1122B}\u{11280}-\u{11286}\u{11288}\u{1128A}-\u{1128D}\u{1128F}-\u{1129D}\u{1129F}-\u{112A8}\u{112B0}-\u{112DE}\u{11305}-\u{1130C}\u{1130F}\u{11310}\u{11313}-\u{11328}\u{1132A}-\u{11330}\u{11332}\u{11333}\u{11335}-\u{11339}\u{1133D}\u{11350}\u{1135D}-\u{11361}\u{11400}-\u{11434}\u{11447}-\u{1144A}\u{1145F}-\u{11461}\u{11480}-\u{114AF}\u{114C4}\u{114C5}\u{114C7}\u{11580}-\u{115AE}\u{115D8}-\u{115DB}\u{11600}-\u{1162F}\u{11644}\u{11680}-\u{116AA}\u{116B8}\u{11700}-\u{1171A}\u{11740}-\u{11746}\u{11800}-\u{1182B}\u{118A0}-\u{118DF}\u{118FF}-\u{11906}\u{11909}\u{1190C}-\u{11913}\u{11915}\u{11916}\u{11918}-\u{1192F}\u{1193F}\u{11941}\u{119A0}-\u{119A7}\u{119AA}-\u{119D0}\u{119E1}\u{119E3}\u{11A00}\u{11A0B}-\u{11A32}\u{11A3A}\u{11A50}\u{11A5C}-\u{11A89}\u{11A9D}\u{11AB0}-\u{11AF8}\u{11C00}-\u{11C08}\u{11C0A}-\u{11C2E}\u{11C40}\u{11C72}-\u{11C8F}\u{11D00}-\u{11D06}\u{11D08}\u{11D09}\u{11D0B}-\u{11D30}\u{11D46}\u{11D60}-\u{11D65}\u{11D67}\u{11D68}\u{11D6A}-\u{11D89}\u{11D98}\u{11EE0}-\u{11EF2}\u{11FB0}\u{12000}-\u{12399}\u{12480}-\u{12543}\u{12F90}-\u{12FF0}\u{13000}-\u{1342E}\u{14400}-\u{14646}\u{16800}-\u{16A38}\u{16A40}-\u{16A5E}\u{16A70}-\u{16ABE}\u{16AD0}-\u{16AED}\u{16B00}-\u{16B2F}\u{16B40}-\u{16B43}\u{16B63}-\u{16B77}\u{16B7D}-\u{16B8F}\u{16E40}-\u{16E7F}\u{16F00}-\u{16F4A}\u{16F50}\u{16F93}-\u{16F9F}\u{16FE0}\u{16FE1}\u{16FE3}\u{17000}-\u{187F7}\u{18800}-\u{18CD5}\u{18D00}-\u{18D08}\u{1AFF0}-\u{1AFF3}\u{1AFF5}-\u{1AFFB}\u{1AFFD}\u{1AFFE}\u{1B000}-\u{1B122}\u{1B150}-\u{1B152}\u{1B164}-\u{1B167}\u{1B170}-\u{1B2FB}\u{1BC00}-\u{1BC6A}\u{1BC70}-\u{1BC7C}\u{1BC80}-\u{1BC88}\u{1BC90}-\u{1BC99}\u{1D400}-\u{1D454}\u{1D456}-\u{1D49C}\u{1D49E}\u{1D49F}\u{1D4A2}\u{1D4A5}\u{1D4A6}\u{1D4A9}-\u{1D4AC}\u{1D4AE}-\u{1D4B9}\u{1D4BB}\u{1D4BD}-\u{1D4C3}\u{1D4C5}-\u{1D505}\u{1D507}-\u{1D50A}\u{1D50D}-\u{1D514}\u{1D516}-\u{1D51C}\u{1D51E}-\u{1D539}\u{1D53B}-\u{1D53E}\u{1D540}-\u{1D544}\u{1D546}\u{1D54A}-\u{1D550}\u{1D552}-\u{1D6A5}\u{1D6A8}-\u{1D6C0}\u{1D6C2}-\u{1D6DA}\u{1D6DC}-\u{1D6FA}\u{1D6FC}-\u{1D714}\u{1D716}-\u{1D734}\u{1D736}-\u{1D74E}\u{1D750}-\u{1D76E}\u{1D770}-\u{1D788}\u{1D78A}-\u{1D7A8}\u{1D7AA}-\u{1D7C2}\u{1D7C4}-\u{1D7CB}\u{1DF00}-\u{1DF1E}\u{1E100}-\u{1E12C}\u{1E137}-\u{1E13D}\u{1E14E}\u{1E290}-\u{1E2AD}\u{1E2C0}-\u{1E2EB}\u{1E7E0}-\u{1E7E6}\u{1E7E8}-\u{1E7EB}\u{1E7ED}\u{1E7EE}\u{1E7F0}-\u{1E7FE}\u{1E800}-\u{1E8C4}\u{1E900}-\u{1E943}\u{1E94B}\u{1EE00}-\u{1EE03}\u{1EE05}-\u{1EE1F}\u{1EE21}\u{1EE22}\u{1EE24}\u{1EE27}\u{1EE29}-\u{1EE32}\u{1EE34}-\u{1EE37}\u{1EE39}\u{1EE3B}\u{1EE42}\u{1EE47}\u{1EE49}\u{1EE4B}\u{1EE4D}-\u{1EE4F}\u{1EE51}\u{1EE52}\u{1EE54}\u{1EE57}\u{1EE59}\u{1EE5B}\u{1EE5D}\u{1EE5F}\u{1EE61}\u{1EE62}\u{1EE64}\u{1EE67}-\u{1EE6A}\u{1EE6C}-\u{1EE72}\u{1EE74}-\u{1EE77}\u{1EE79}-\u{1EE7C}\u{1EE7E}\u{1EE80}-\u{1EE89}\u{1EE8B}-\u{1EE9B}\u{1EEA1}-\u{1EEA3}\u{1EEA5}-\u{1EEA9}\u{1EEAB}-\u{1EEBB}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]?[ \):;\u2022\u3001\u3002\u300A-\u300D\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]|[\(,1A-Za-\{\}\xAA\xB5\xBA\xC0-\xD6\xD8-\xF6\xF8-\u02C1\u02C6-\u02D1\u02E0-\u02E4\u02EC\u02EE\u0370-\u0374\u0376\u0377\u037A-\u037D\u037F\u0386\u0388-\u038A\u038C\u038E-\u03A1\u03A3-\u03F5\u03F7-\u0481\u048A-\u052F\u0531-\u0556\u0559\u0560-\u0588\u05D0-\u05EA\u05EF-\u05F2\u0620-\u064A\u066E\u066F\u0671-\u06D3\u06D5\u06E5\u06E6\u06EE\u06EF\u06FA-\u06FC\u06FF\u0710\u0712-\u072F\u074D-\u07A5\u07B1\u07CA-\u07EA\u07F4\u07F5\u07FA\u0800-\u0815\u081A\u0824\u0828\u0840-\u0858\u0860-\u086A\u0870-\u0887\u0889-\u088E\u08A0-\u08C9\u0904-\u0939\u093D\u0950\u0958-\u0961\u0971-\u0980\u0985-\u098C\u098F\u0990\u0993-\u09A8\u09AA-\u09B0\u09B2\u09B6-\u09B9\u09BD\u09CE\u09DC\u09DD\u09DF-\u09E1\u09F0\u09F1\u09FC\u0A05-\u0A0A\u0A0F\u0A10\u0A13-\u0A28\u0A2A-\u0A30\u0A32\u0A33\u0A35\u0A36\u0A38\u0A39\u0A59-\u0A5C\u0A5E\u0A72-\u0A74\u0A85-\u0A8D\u0A8F-\u0A91\u0A93-\u0AA8\u0AAA-\u0AB0\u0AB2\u0AB3\u0AB5-\u0AB9\u0ABD\u0AD0\u0AE0\u0AE1\u0AF9\u0B05-\u0B0C\u0B0F\u0B10\u0B13-\u0B28\u0B2A-\u0B30\u0B32\u0B33\u0B35-\u0B39\u0B3D\u0B5C\u0B5D\u0B5F-\u0B61\u0B71\u0B83\u0B85-\u0B8A\u0B8E-\u0B90\u0B92-\u0B95\u0B99\u0B9A\u0B9C\u0B9E\u0B9F\u0BA3\u0BA4\u0BA8-\u0BAA\u0BAE-\u0BB9\u0BD0\u0C05-\u0C0C\u0C0E-\u0C10\u0C12-\u0C28\u0C2A-\u0C39\u0C3D\u0C58-\u0C5A\u0C5D\u0C60\u0C61\u0C80\u0C85-\u0C8C\u0C8E-\u0C90\u0C92-\u0CA8\u0CAA-\u0CB3\u0CB5-\u0CB9\u0CBD\u0CDD\u0CDE\u0CE0\u0CE1\u0CF1\u0CF2\u0D04-\u0D0C\u0D0E-\u0D10\u0D12-\u0D3A\u0D3D\u0D4E\u0D54-\u0D56\u0D5F-\u0D61\u0D7A-\u0D7F\u0D85-\u0D96\u0D9A-\u0DB1\u0DB3-\u0DBB\u0DBD\u0DC0-\u0DC6\u0E01-\u0E30\u0E32\u0E33\u0E40-\u0E46\u0E81\u0E82\u0E84\u0E86-\u0E8A\u0E8C-\u0EA3\u0EA5\u0EA7-\u0EB0\u0EB2\u0EB3\u0EBD\u0EC0-\u0EC4\u0EC6\u0EDC-\u0EDF\u0F00\u0F40-\u0F47\u0F49-\u0F6C\u0F88-\u0F8C\u1000-\u102A\u103F\u1050-\u1055\u105A-\u105D\u1061\u1065\u1066\u106E-\u1070\u1075-\u1081\u108E\u10A0-\u10C5\u10C7\u10CD\u10D0-\u10FA\u10FC-\u1248\u124A-\u124D\u1250-\u1256\u1258\u125A-\u125D\u1260-\u1288\u128A-\u128D\u1290-\u12B0\u12B2-\u12B5\u12B8-\u12BE\u12C0\u12C2-\u12C5\u12C8-\u12D6\u12D8-\u1310\u1312-\u1315\u1318-\u135A\u1380-\u138F\u13A0-\u13F5\u13F8-\u13FD\u1401-\u166C\u166F-\u167F\u1681-\u169A\u16A0-\u16EA\u16F1-\u16F8\u1700-\u1711\u171F-\u1731\u1740-\u1751\u1760-\u176C\u176E-\u1770\u1780-\u17B3\u17D7\u17DC\u1820-\u1878\u1880-\u1884\u1887-\u18A8\u18AA\u18B0-\u18F5\u1900-\u191E\u1950-\u196D\u1970-\u1974\u1980-\u19AB\u19B0-\u19C9\u1A00-\u1A16\u1A20-\u1A54\u1AA7\u1B05-\u1B33\u1B45-\u1B4C\u1B83-\u1BA0\u1BAE\u1BAF\u1BBA-\u1BE5\u1C00-\u1C23\u1C4D-\u1C4F\u1C5A-\u1C7D\u1C80-\u1C88\u1C90-\u1CBA\u1CBD-\u1CBF\u1CE9-\u1CEC\u1CEE-\u1CF3\u1CF5\u1CF6\u1CFA\u1D00-\u1DBF\u1E00-\u1F15\u1F18-\u1F1D\u1F20-\u1F45\u1F48-\u1F4D\u1F50-\u1F57\u1F59\u1F5B\u1F5D\u1F5F-\u1F7D\u1F80-\u1FB4\u1FB6-\u1FBC\u1FBE\u1FC2-\u1FC4\u1FC6-\u1FCC\u1FD0-\u1FD3\u1FD6-\u1FDB\u1FE0-\u1FEC\u1FF2-\u1FF4\u1FF6-\u1FFC\u2071\u207F\u2090-\u209C\u2102\u2107\u210A-\u2113\u2115\u2119-\u211D\u2124\u2126\u2128\u212A-\u212D\u212F-\u2139\u213C-\u213F\u2145-\u2149\u214E\u2183\u2184\u2C00-\u2CE4\u2CEB-\u2CEE\u2CF2\u2CF3\u2D00-\u2D25\u2D27\u2D2D\u2D30-\u2D67\u2D6F\u2D80-\u2D96\u2DA0-\u2DA6\u2DA8-\u2DAE\u2DB0-\u2DB6\u2DB8-\u2DBE\u2DC0-\u2DC6\u2DC8-\u2DCE\u2DD0-\u2DD6\u2DD8-\u2DDE\u2E2F\u3005\u3006\u3031-\u3035\u303B\u303C\u3041-\u3096\u309D-\u309F\u30A1-\u30FA\u30FC-\u30FF\u3105-\u312F\u3131-\u318E\u31A0-\u31BF\u31F0-\u31FF\u3400-\u4DBF\u4E00-\uA48C\uA4D0-\uA4FD\uA500-\uA60C\uA610-\uA61F\uA62A\uA62B\uA640-\uA66E\uA67F-\uA69D\uA6A0-\uA6E5\uA717-\uA71F\uA722-\uA788\uA78B-\uA7CA\uA7D0\uA7D1\uA7D3\uA7D5-\uA7D9\uA7F2-\uA801\uA803-\uA805\uA807-\uA80A\uA80C-\uA822\uA840-\uA873\uA882-\uA8B3\uA8F2-\uA8F7\uA8FB\uA8FD\uA8FE\uA90A-\uA925\uA930-\uA946\uA960-\uA97C\uA984-\uA9B2\uA9CF\uA9E0-\uA9E4\uA9E6-\uA9EF\uA9FA-\uA9FE\uAA00-\uAA28\uAA40-\uAA42\uAA44-\uAA4B\uAA60-\uAA76\uAA7A\uAA7E-\uAAAF\uAAB1\uAAB5\uAAB6\uAAB9-\uAABD\uAAC0\uAAC2\uAADB-\uAADD\uAAE0-\uAAEA\uAAF2-\uAAF4\uAB01-\uAB06\uAB09-\uAB0E\uAB11-\uAB16\uAB20-\uAB26\uAB28-\uAB2E\uAB30-\uAB5A\uAB5C-\uAB69\uAB70-\uABE2\uAC00-\uD7A3\uD7B0-\uD7C6\uD7CB-\uD7FB\uF900-\uFA6D\uFA70-\uFAD9\uFB00-\uFB06\uFB13-\uFB17\uFB1D\uFB1F-\uFB28\uFB2A-\uFB36\uFB38-\uFB3C\uFB3E\uFB40\uFB41\uFB43\uFB44\uFB46-\uFBB1\uFBD3-\uFD3D\uFD50-\uFD8F\uFD92-\uFDC7\uFDF0-\uFDFB\uFE70-\uFE74\uFE76-\uFEFC\uFF21-\uFF3A\uFF41-\uFF5A\uFF66-\uFFBE\uFFC2-\uFFC7\uFFCA-\uFFCF\uFFD2-\uFFD7\uFFDA-\uFFDC\u{10000}-\u{1000B}\u{1000D}-\u{10026}\u{10028}-\u{1003A}\u{1003C}\u{1003D}\u{1003F}-\u{1004D}\u{10050}-\u{1005D}\u{10080}-\u{100FA}\u{10280}-\u{1029C}\u{102A0}-\u{102D0}\u{10300}-\u{1031F}\u{1032D}-\u{10340}\u{10342}-\u{10349}\u{10350}-\u{10375}\u{10380}-\u{1039D}\u{103A0}-\u{103C3}\u{103C8}-\u{103CF}\u{10400}-\u{1049D}\u{104B0}-\u{104D3}\u{104D8}-\u{104FB}\u{10500}-\u{10527}\u{10530}-\u{10563}\u{10570}-\u{1057A}\u{1057C}-\u{1058A}\u{1058C}-\u{10592}\u{10594}\u{10595}\u{10597}-\u{105A1}\u{105A3}-\u{105B1}\u{105B3}-\u{105B9}\u{105BB}\u{105BC}\u{10600}-\u{10736}\u{10740}-\u{10755}\u{10760}-\u{10767}\u{10780}-\u{10785}\u{10787}-\u{107B0}\u{107B2}-\u{107BA}\u{10800}-\u{10805}\u{10808}\u{1080A}-\u{10835}\u{10837}\u{10838}\u{1083C}\u{1083F}-\u{10855}\u{10860}-\u{10876}\u{10880}-\u{1089E}\u{108E0}-\u{108F2}\u{108F4}\u{108F5}\u{10900}-\u{10915}\u{10920}-\u{10939}\u{10980}-\u{109B7}\u{109BE}\u{109BF}\u{10A00}\u{10A10}-\u{10A13}\u{10A15}-\u{10A17}\u{10A19}-\u{10A35}\u{10A60}-\u{10A7C}\u{10A80}-\u{10A9C}\u{10AC0}-\u{10AC7}\u{10AC9}-\u{10AE4}\u{10B00}-\u{10B35}\u{10B40}-\u{10B55}\u{10B60}-\u{10B72}\u{10B80}-\u{10B91}\u{10C00}-\u{10C48}\u{10C80}-\u{10CB2}\u{10CC0}-\u{10CF2}\u{10D00}-\u{10D23}\u{10E80}-\u{10EA9}\u{10EB0}\u{10EB1}\u{10F00}-\u{10F1C}\u{10F27}\u{10F30}-\u{10F45}\u{10F70}-\u{10F81}\u{10FB0}-\u{10FC4}\u{10FE0}-\u{10FF6}\u{11003}-\u{11037}\u{11071}\u{11072}\u{11075}\u{11083}-\u{110AF}\u{110D0}-\u{110E8}\u{11103}-\u{11126}\u{11144}\u{11147}\u{11150}-\u{11172}\u{11176}\u{11183}-\u{111B2}\u{111C1}-\u{111C4}\u{111DA}\u{111DC}\u{11200}-\u{11211}\u{11213}-\u{1122B}\u{11280}-\u{11286}\u{11288}\u{1128A}-\u{1128D}\u{1128F}-\u{1129D}\u{1129F}-\u{112A8}\u{112B0}-\u{112DE}\u{11305}-\u{1130C}\u{1130F}\u{11310}\u{11313}-\u{11328}\u{1132A}-\u{11330}\u{11332}\u{11333}\u{11335}-\u{11339}\u{1133D}\u{11350}\u{1135D}-\u{11361}\u{11400}-\u{11434}\u{11447}-\u{1144A}\u{1145F}-\u{11461}\u{11480}-\u{114AF}\u{114C4}\u{114C5}\u{114C7}\u{11580}-\u{115AE}\u{115D8}-\u{115DB}\u{11600}-\u{1162F}\u{11644}\u{11680}-\u{116AA}\u{116B8}\u{11700}-\u{1171A}\u{11740}-\u{11746}\u{11800}-\u{1182B}\u{118A0}-\u{118DF}\u{118FF}-\u{11906}\u{11909}\u{1190C}-\u{11913}\u{11915}\u{11916}\u{11918}-\u{1192F}\u{1193F}\u{11941}\u{119A0}-\u{119A7}\u{119AA}-\u{119D0}\u{119E1}\u{119E3}\u{11A00}\u{11A0B}-\u{11A32}\u{11A3A}\u{11A50}\u{11A5C}-\u{11A89}\u{11A9D}\u{11AB0}-\u{11AF8}\u{11C00}-\u{11C08}\u{11C0A}-\u{11C2E}\u{11C40}\u{11C72}-\u{11C8F}\u{11D00}-\u{11D06}\u{11D08}\u{11D09}\u{11D0B}-\u{11D30}\u{11D46}\u{11D60}-\u{11D65}\u{11D67}\u{11D68}\u{11D6A}-\u{11D89}\u{11D98}\u{11EE0}-\u{11EF2}\u{11FB0}\u{12000}-\u{12399}\u{12480}-\u{12543}\u{12F90}-\u{12FF0}\u{13000}-\u{1342E}\u{14400}-\u{14646}\u{16800}-\u{16A38}\u{16A40}-\u{16A5E}\u{16A70}-\u{16ABE}\u{16AD0}-\u{16AED}\u{16B00}-\u{16B2F}\u{16B40}-\u{16B43}\u{16B63}-\u{16B77}\u{16B7D}-\u{16B8F}\u{16E40}-\u{16E7F}\u{16F00}-\u{16F4A}\u{16F50}\u{16F93}-\u{16F9F}\u{16FE0}\u{16FE1}\u{16FE3}\u{17000}-\u{187F7}\u{18800}-\u{18CD5}\u{18D00}-\u{18D08}\u{1AFF0}-\u{1AFF3}\u{1AFF5}-\u{1AFFB}\u{1AFFD}\u{1AFFE}\u{1B000}-\u{1B122}\u{1B150}-\u{1B152}\u{1B164}-\u{1B167}\u{1B170}-\u{1B2FB}\u{1BC00}-\u{1BC6A}\u{1BC70}-\u{1BC7C}\u{1BC80}-\u{1BC88}\u{1BC90}-\u{1BC99}\u{1D400}-\u{1D454}\u{1D456}-\u{1D49C}\u{1D49E}\u{1D49F}\u{1D4A2}\u{1D4A5}\u{1D4A6}\u{1D4A9}-\u{1D4AC}\u{1D4AE}-\u{1D4B9}\u{1D4BB}\u{1D4BD}-\u{1D4C3}\u{1D4C5}-\u{1D505}\u{1D507}-\u{1D50A}\u{1D50D}-\u{1D514}\u{1D516}-\u{1D51C}\u{1D51E}-\u{1D539}\u{1D53B}-\u{1D53E}\u{1D540}-\u{1D544}\u{1D546}\u{1D54A}-\u{1D550}\u{1D552}-\u{1D6A5}\u{1D6A8}-\u{1D6C0}\u{1D6C2}-\u{1D6DA}\u{1D6DC}-\u{1D6FA}\u{1D6FC}-\u{1D714}\u{1D716}-\u{1D734}\u{1D736}-\u{1D74E}\u{1D750}-\u{1D76E}\u{1D770}-\u{1D788}\u{1D78A}-\u{1D7A8}\u{1D7AA}-\u{1D7C2}\u{1D7C4}-\u{1D7CB}\u{1DF00}-\u{1DF1E}\u{1E100}-\u{1E12C}\u{1E137}-\u{1E13D}\u{1E14E}\u{1E290}-\u{1E2AD}\u{1E2C0}-\u{1E2EB}\u{1E7E0}-\u{1E7E6}\u{1E7E8}-\u{1E7EB}\u{1E7ED}\u{1E7EE}\u{1E7F0}-\u{1E7FE}\u{1E800}-\u{1E8C4}\u{1E900}-\u{1E943}\u{1E94B}\u{1EE00}-\u{1EE03}\u{1EE05}-\u{1EE1F}\u{1EE21}\u{1EE22}\u{1EE24}\u{1EE27}\u{1EE29}-\u{1EE32}\u{1EE34}-\u{1EE37}\u{1EE39}\u{1EE3B}\u{1EE42}\u{1EE47}\u{1EE49}\u{1EE4B}\u{1EE4D}-\u{1EE4F}\u{1EE51}\u{1EE52}\u{1EE54}\u{1EE57}\u{1EE59}\u{1EE5B}\u{1EE5D}\u{1EE5F}\u{1EE61}\u{1EE62}\u{1EE64}\u{1EE67}-\u{1EE6A}\u{1EE6C}-\u{1EE72}\u{1EE74}-\u{1EE77}\u{1EE79}-\u{1EE7C}\u{1EE7E}\u{1EE80}-\u{1EE89}\u{1EE8B}-\u{1EE9B}\u{1EEA1}-\u{1EEA3}\u{1EEA5}-\u{1EEA9}\u{1EEAB}-\u{1EEBB}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]/gmu
-                                .source +
-                            '|' +
-                            /[\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]/gmu
-                                .source,
+                        [
+                            /[\(\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]?[\u3002\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]?[ %\+\x2D-9A-Za-\{\}\xA0\xC0-\u0237\u2013\u2014\u2026]+[\)\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3002\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\uFF01\uFF0C\uFF1A\uFF1B\uFF1F\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]?[\u3002\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]?/gmu,
+                            /[\(\xAB\u201C\u275D][\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}][\0-\u2E7F\u2E9A\u2EF4-\u2EFF\u2FD6-\u3004\u3006\u3008-\u3020\u302A-\u3037\u303C-\u33FF\u4DC0-\u4DFF\uA000-\uF8FF\uFA6E\uFA6F\uFADA-\u{16FE1}\u{16FE4}-\u{16FEF}\u{16FF2}-\u{1FFFF}\u{2A6E0}-\u{2A6FF}\u{2B739}-\u{2B73F}\u{2B81E}\u{2B81F}\u{2CEA2}-\u{2CEAF}\u{2EBE1}-\u{2F7FF}\u{2FA1E}-\u{2FFFF}\u{3134B}-\u{10FFFF}]?|[\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}][\0-\u2E7F\u2E9A\u2EF4-\u2EFF\u2FD6-\u3004\u3006\u3008-\u3020\u302A-\u3037\u303C-\u33FF\u4DC0-\u4DFF\uA000-\uF8FF\uFA6E\uFA6F\uFADA-\u{16FE1}\u{16FE4}-\u{16FEF}\u{16FF2}-\u{1FFFF}\u{2A6E0}-\u{2A6FF}\u{2B739}-\u{2B73F}\u{2B81E}\u{2B81F}\u{2CEA2}-\u{2CEAF}\u{2EBE1}-\u{2F7FF}\u{2FA1E}-\u{2FFFF}\u{3134B}-\u{10FFFF}]?[\u3002\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]?[\)\xBB\u201D\u275E][\u3002\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]?/gmu,
+                            /[A-Za-z\xAA\xB5\xBA\xC0-\xD6\xD8-\xF6\xF8-\u02C1\u02C6-\u02D1\u02E0-\u02E4\u02EC\u02EE\u0370-\u0374\u0376\u0377\u037A-\u037D\u037F\u0386\u0388-\u038A\u038C\u038E-\u03A1\u03A3-\u03F5\u03F7-\u0481\u048A-\u052F\u0531-\u0556\u0559\u0560-\u0588\u05D0-\u05EA\u05EF-\u05F2\u0620-\u064A\u066E\u066F\u0671-\u06D3\u06D5\u06E5\u06E6\u06EE\u06EF\u06FA-\u06FC\u06FF\u0710\u0712-\u072F\u074D-\u07A5\u07B1\u07CA-\u07EA\u07F4\u07F5\u07FA\u0800-\u0815\u081A\u0824\u0828\u0840-\u0858\u0860-\u086A\u0870-\u0887\u0889-\u088E\u08A0-\u08C9\u0904-\u0939\u093D\u0950\u0958-\u0961\u0971-\u0980\u0985-\u098C\u098F\u0990\u0993-\u09A8\u09AA-\u09B0\u09B2\u09B6-\u09B9\u09BD\u09CE\u09DC\u09DD\u09DF-\u09E1\u09F0\u09F1\u09FC\u0A05-\u0A0A\u0A0F\u0A10\u0A13-\u0A28\u0A2A-\u0A30\u0A32\u0A33\u0A35\u0A36\u0A38\u0A39\u0A59-\u0A5C\u0A5E\u0A72-\u0A74\u0A85-\u0A8D\u0A8F-\u0A91\u0A93-\u0AA8\u0AAA-\u0AB0\u0AB2\u0AB3\u0AB5-\u0AB9\u0ABD\u0AD0\u0AE0\u0AE1\u0AF9\u0B05-\u0B0C\u0B0F\u0B10\u0B13-\u0B28\u0B2A-\u0B30\u0B32\u0B33\u0B35-\u0B39\u0B3D\u0B5C\u0B5D\u0B5F-\u0B61\u0B71\u0B83\u0B85-\u0B8A\u0B8E-\u0B90\u0B92-\u0B95\u0B99\u0B9A\u0B9C\u0B9E\u0B9F\u0BA3\u0BA4\u0BA8-\u0BAA\u0BAE-\u0BB9\u0BD0\u0C05-\u0C0C\u0C0E-\u0C10\u0C12-\u0C28\u0C2A-\u0C39\u0C3D\u0C58-\u0C5A\u0C5D\u0C60\u0C61\u0C80\u0C85-\u0C8C\u0C8E-\u0C90\u0C92-\u0CA8\u0CAA-\u0CB3\u0CB5-\u0CB9\u0CBD\u0CDD\u0CDE\u0CE0\u0CE1\u0CF1\u0CF2\u0D04-\u0D0C\u0D0E-\u0D10\u0D12-\u0D3A\u0D3D\u0D4E\u0D54-\u0D56\u0D5F-\u0D61\u0D7A-\u0D7F\u0D85-\u0D96\u0D9A-\u0DB1\u0DB3-\u0DBB\u0DBD\u0DC0-\u0DC6\u0E01-\u0E30\u0E32\u0E33\u0E40-\u0E46\u0E81\u0E82\u0E84\u0E86-\u0E8A\u0E8C-\u0EA3\u0EA5\u0EA7-\u0EB0\u0EB2\u0EB3\u0EBD\u0EC0-\u0EC4\u0EC6\u0EDC-\u0EDF\u0F00\u0F40-\u0F47\u0F49-\u0F6C\u0F88-\u0F8C\u1000-\u102A\u103F\u1050-\u1055\u105A-\u105D\u1061\u1065\u1066\u106E-\u1070\u1075-\u1081\u108E\u10A0-\u10C5\u10C7\u10CD\u10D0-\u10FA\u10FC-\u1248\u124A-\u124D\u1250-\u1256\u1258\u125A-\u125D\u1260-\u1288\u128A-\u128D\u1290-\u12B0\u12B2-\u12B5\u12B8-\u12BE\u12C0\u12C2-\u12C5\u12C8-\u12D6\u12D8-\u1310\u1312-\u1315\u1318-\u135A\u1380-\u138F\u13A0-\u13F5\u13F8-\u13FD\u1401-\u166C\u166F-\u167F\u1681-\u169A\u16A0-\u16EA\u16F1-\u16F8\u1700-\u1711\u171F-\u1731\u1740-\u1751\u1760-\u176C\u176E-\u1770\u1780-\u17B3\u17D7\u17DC\u1820-\u1878\u1880-\u1884\u1887-\u18A8\u18AA\u18B0-\u18F5\u1900-\u191E\u1950-\u196D\u1970-\u1974\u1980-\u19AB\u19B0-\u19C9\u1A00-\u1A16\u1A20-\u1A54\u1AA7\u1B05-\u1B33\u1B45-\u1B4C\u1B83-\u1BA0\u1BAE\u1BAF\u1BBA-\u1BE5\u1C00-\u1C23\u1C4D-\u1C4F\u1C5A-\u1C7D\u1C80-\u1C88\u1C90-\u1CBA\u1CBD-\u1CBF\u1CE9-\u1CEC\u1CEE-\u1CF3\u1CF5\u1CF6\u1CFA\u1D00-\u1DBF\u1E00-\u1F15\u1F18-\u1F1D\u1F20-\u1F45\u1F48-\u1F4D\u1F50-\u1F57\u1F59\u1F5B\u1F5D\u1F5F-\u1F7D\u1F80-\u1FB4\u1FB6-\u1FBC\u1FBE\u1FC2-\u1FC4\u1FC6-\u1FCC\u1FD0-\u1FD3\u1FD6-\u1FDB\u1FE0-\u1FEC\u1FF2-\u1FF4\u1FF6-\u1FFC\u2071\u207F\u2090-\u209C\u2102\u2107\u210A-\u2113\u2115\u2119-\u211D\u2124\u2126\u2128\u212A-\u212D\u212F-\u2139\u213C-\u213F\u2145-\u2149\u214E\u2183\u2184\u2C00-\u2CE4\u2CEB-\u2CEE\u2CF2\u2CF3\u2D00-\u2D25\u2D27\u2D2D\u2D30-\u2D67\u2D6F\u2D80-\u2D96\u2DA0-\u2DA6\u2DA8-\u2DAE\u2DB0-\u2DB6\u2DB8-\u2DBE\u2DC0-\u2DC6\u2DC8-\u2DCE\u2DD0-\u2DD6\u2DD8-\u2DDE\u2E2F\u3005\u3006\u3031-\u3035\u303B\u303C\u3041-\u3096\u309D-\u309F\u30A1-\u30FA\u30FC-\u30FF\u3105-\u312F\u3131-\u318E\u31A0-\u31BF\u31F0-\u31FF\u3400-\u4DBF\u4E00-\uA48C\uA4D0-\uA4FD\uA500-\uA60C\uA610-\uA61F\uA62A\uA62B\uA640-\uA66E\uA67F-\uA69D\uA6A0-\uA6E5\uA717-\uA71F\uA722-\uA788\uA78B-\uA7CA\uA7D0\uA7D1\uA7D3\uA7D5-\uA7D9\uA7F2-\uA801\uA803-\uA805\uA807-\uA80A\uA80C-\uA822\uA840-\uA873\uA882-\uA8B3\uA8F2-\uA8F7\uA8FB\uA8FD\uA8FE\uA90A-\uA925\uA930-\uA946\uA960-\uA97C\uA984-\uA9B2\uA9CF\uA9E0-\uA9E4\uA9E6-\uA9EF\uA9FA-\uA9FE\uAA00-\uAA28\uAA40-\uAA42\uAA44-\uAA4B\uAA60-\uAA76\uAA7A\uAA7E-\uAAAF\uAAB1\uAAB5\uAAB6\uAAB9-\uAABD\uAAC0\uAAC2\uAADB-\uAADD\uAAE0-\uAAEA\uAAF2-\uAAF4\uAB01-\uAB06\uAB09-\uAB0E\uAB11-\uAB16\uAB20-\uAB26\uAB28-\uAB2E\uAB30-\uAB5A\uAB5C-\uAB69\uAB70-\uABE2\uAC00-\uD7A3\uD7B0-\uD7C6\uD7CB-\uD7FB\uF900-\uFA6D\uFA70-\uFAD9\uFB00-\uFB06\uFB13-\uFB17\uFB1D\uFB1F-\uFB28\uFB2A-\uFB36\uFB38-\uFB3C\uFB3E\uFB40\uFB41\uFB43\uFB44\uFB46-\uFBB1\uFBD3-\uFD3D\uFD50-\uFD8F\uFD92-\uFDC7\uFDF0-\uFDFB\uFE70-\uFE74\uFE76-\uFEFC\uFF21-\uFF3A\uFF41-\uFF5A\uFF66-\uFFBE\uFFC2-\uFFC7\uFFCA-\uFFCF\uFFD2-\uFFD7\uFFDA-\uFFDC\u{10000}-\u{1000B}\u{1000D}-\u{10026}\u{10028}-\u{1003A}\u{1003C}\u{1003D}\u{1003F}-\u{1004D}\u{10050}-\u{1005D}\u{10080}-\u{100FA}\u{10280}-\u{1029C}\u{102A0}-\u{102D0}\u{10300}-\u{1031F}\u{1032D}-\u{10340}\u{10342}-\u{10349}\u{10350}-\u{10375}\u{10380}-\u{1039D}\u{103A0}-\u{103C3}\u{103C8}-\u{103CF}\u{10400}-\u{1049D}\u{104B0}-\u{104D3}\u{104D8}-\u{104FB}\u{10500}-\u{10527}\u{10530}-\u{10563}\u{10570}-\u{1057A}\u{1057C}-\u{1058A}\u{1058C}-\u{10592}\u{10594}\u{10595}\u{10597}-\u{105A1}\u{105A3}-\u{105B1}\u{105B3}-\u{105B9}\u{105BB}\u{105BC}\u{10600}-\u{10736}\u{10740}-\u{10755}\u{10760}-\u{10767}\u{10780}-\u{10785}\u{10787}-\u{107B0}\u{107B2}-\u{107BA}\u{10800}-\u{10805}\u{10808}\u{1080A}-\u{10835}\u{10837}\u{10838}\u{1083C}\u{1083F}-\u{10855}\u{10860}-\u{10876}\u{10880}-\u{1089E}\u{108E0}-\u{108F2}\u{108F4}\u{108F5}\u{10900}-\u{10915}\u{10920}-\u{10939}\u{10980}-\u{109B7}\u{109BE}\u{109BF}\u{10A00}\u{10A10}-\u{10A13}\u{10A15}-\u{10A17}\u{10A19}-\u{10A35}\u{10A60}-\u{10A7C}\u{10A80}-\u{10A9C}\u{10AC0}-\u{10AC7}\u{10AC9}-\u{10AE4}\u{10B00}-\u{10B35}\u{10B40}-\u{10B55}\u{10B60}-\u{10B72}\u{10B80}-\u{10B91}\u{10C00}-\u{10C48}\u{10C80}-\u{10CB2}\u{10CC0}-\u{10CF2}\u{10D00}-\u{10D23}\u{10E80}-\u{10EA9}\u{10EB0}\u{10EB1}\u{10F00}-\u{10F1C}\u{10F27}\u{10F30}-\u{10F45}\u{10F70}-\u{10F81}\u{10FB0}-\u{10FC4}\u{10FE0}-\u{10FF6}\u{11003}-\u{11037}\u{11071}\u{11072}\u{11075}\u{11083}-\u{110AF}\u{110D0}-\u{110E8}\u{11103}-\u{11126}\u{11144}\u{11147}\u{11150}-\u{11172}\u{11176}\u{11183}-\u{111B2}\u{111C1}-\u{111C4}\u{111DA}\u{111DC}\u{11200}-\u{11211}\u{11213}-\u{1122B}\u{11280}-\u{11286}\u{11288}\u{1128A}-\u{1128D}\u{1128F}-\u{1129D}\u{1129F}-\u{112A8}\u{112B0}-\u{112DE}\u{11305}-\u{1130C}\u{1130F}\u{11310}\u{11313}-\u{11328}\u{1132A}-\u{11330}\u{11332}\u{11333}\u{11335}-\u{11339}\u{1133D}\u{11350}\u{1135D}-\u{11361}\u{11400}-\u{11434}\u{11447}-\u{1144A}\u{1145F}-\u{11461}\u{11480}-\u{114AF}\u{114C4}\u{114C5}\u{114C7}\u{11580}-\u{115AE}\u{115D8}-\u{115DB}\u{11600}-\u{1162F}\u{11644}\u{11680}-\u{116AA}\u{116B8}\u{11700}-\u{1171A}\u{11740}-\u{11746}\u{11800}-\u{1182B}\u{118A0}-\u{118DF}\u{118FF}-\u{11906}\u{11909}\u{1190C}-\u{11913}\u{11915}\u{11916}\u{11918}-\u{1192F}\u{1193F}\u{11941}\u{119A0}-\u{119A7}\u{119AA}-\u{119D0}\u{119E1}\u{119E3}\u{11A00}\u{11A0B}-\u{11A32}\u{11A3A}\u{11A50}\u{11A5C}-\u{11A89}\u{11A9D}\u{11AB0}-\u{11AF8}\u{11C00}-\u{11C08}\u{11C0A}-\u{11C2E}\u{11C40}\u{11C72}-\u{11C8F}\u{11D00}-\u{11D06}\u{11D08}\u{11D09}\u{11D0B}-\u{11D30}\u{11D46}\u{11D60}-\u{11D65}\u{11D67}\u{11D68}\u{11D6A}-\u{11D89}\u{11D98}\u{11EE0}-\u{11EF2}\u{11FB0}\u{12000}-\u{12399}\u{12480}-\u{12543}\u{12F90}-\u{12FF0}\u{13000}-\u{1342E}\u{14400}-\u{14646}\u{16800}-\u{16A38}\u{16A40}-\u{16A5E}\u{16A70}-\u{16ABE}\u{16AD0}-\u{16AED}\u{16B00}-\u{16B2F}\u{16B40}-\u{16B43}\u{16B63}-\u{16B77}\u{16B7D}-\u{16B8F}\u{16E40}-\u{16E7F}\u{16F00}-\u{16F4A}\u{16F50}\u{16F93}-\u{16F9F}\u{16FE0}\u{16FE1}\u{16FE3}\u{17000}-\u{187F7}\u{18800}-\u{18CD5}\u{18D00}-\u{18D08}\u{1AFF0}-\u{1AFF3}\u{1AFF5}-\u{1AFFB}\u{1AFFD}\u{1AFFE}\u{1B000}-\u{1B122}\u{1B150}-\u{1B152}\u{1B164}-\u{1B167}\u{1B170}-\u{1B2FB}\u{1BC00}-\u{1BC6A}\u{1BC70}-\u{1BC7C}\u{1BC80}-\u{1BC88}\u{1BC90}-\u{1BC99}\u{1D400}-\u{1D454}\u{1D456}-\u{1D49C}\u{1D49E}\u{1D49F}\u{1D4A2}\u{1D4A5}\u{1D4A6}\u{1D4A9}-\u{1D4AC}\u{1D4AE}-\u{1D4B9}\u{1D4BB}\u{1D4BD}-\u{1D4C3}\u{1D4C5}-\u{1D505}\u{1D507}-\u{1D50A}\u{1D50D}-\u{1D514}\u{1D516}-\u{1D51C}\u{1D51E}-\u{1D539}\u{1D53B}-\u{1D53E}\u{1D540}-\u{1D544}\u{1D546}\u{1D54A}-\u{1D550}\u{1D552}-\u{1D6A5}\u{1D6A8}-\u{1D6C0}\u{1D6C2}-\u{1D6DA}\u{1D6DC}-\u{1D6FA}\u{1D6FC}-\u{1D714}\u{1D716}-\u{1D734}\u{1D736}-\u{1D74E}\u{1D750}-\u{1D76E}\u{1D770}-\u{1D788}\u{1D78A}-\u{1D7A8}\u{1D7AA}-\u{1D7C2}\u{1D7C4}-\u{1D7CB}\u{1DF00}-\u{1DF1E}\u{1E100}-\u{1E12C}\u{1E137}-\u{1E13D}\u{1E14E}\u{1E290}-\u{1E2AD}\u{1E2C0}-\u{1E2EB}\u{1E7E0}-\u{1E7E6}\u{1E7E8}-\u{1E7EB}\u{1E7ED}\u{1E7EE}\u{1E7F0}-\u{1E7FE}\u{1E800}-\u{1E8C4}\u{1E900}-\u{1E943}\u{1E94B}\u{1EE00}-\u{1EE03}\u{1EE05}-\u{1EE1F}\u{1EE21}\u{1EE22}\u{1EE24}\u{1EE27}\u{1EE29}-\u{1EE32}\u{1EE34}-\u{1EE37}\u{1EE39}\u{1EE3B}\u{1EE42}\u{1EE47}\u{1EE49}\u{1EE4B}\u{1EE4D}-\u{1EE4F}\u{1EE51}\u{1EE52}\u{1EE54}\u{1EE57}\u{1EE59}\u{1EE5B}\u{1EE5D}\u{1EE5F}\u{1EE61}\u{1EE62}\u{1EE64}\u{1EE67}-\u{1EE6A}\u{1EE6C}-\u{1EE72}\u{1EE74}-\u{1EE77}\u{1EE79}-\u{1EE7C}\u{1EE7E}\u{1EE80}-\u{1EE89}\u{1EE8B}-\u{1EE9B}\u{1EEA1}-\u{1EEA3}\u{1EEA5}-\u{1EEA9}\u{1EEAB}-\u{1EEBB}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]?[ \):;\u2022\u3001\u3002\u300A-\u300D\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]|[\(,1A-Za-\{\}\xAA\xB5\xBA\xC0-\xD6\xD8-\xF6\xF8-\u02C1\u02C6-\u02D1\u02E0-\u02E4\u02EC\u02EE\u0370-\u0374\u0376\u0377\u037A-\u037D\u037F\u0386\u0388-\u038A\u038C\u038E-\u03A1\u03A3-\u03F5\u03F7-\u0481\u048A-\u052F\u0531-\u0556\u0559\u0560-\u0588\u05D0-\u05EA\u05EF-\u05F2\u0620-\u064A\u066E\u066F\u0671-\u06D3\u06D5\u06E5\u06E6\u06EE\u06EF\u06FA-\u06FC\u06FF\u0710\u0712-\u072F\u074D-\u07A5\u07B1\u07CA-\u07EA\u07F4\u07F5\u07FA\u0800-\u0815\u081A\u0824\u0828\u0840-\u0858\u0860-\u086A\u0870-\u0887\u0889-\u088E\u08A0-\u08C9\u0904-\u0939\u093D\u0950\u0958-\u0961\u0971-\u0980\u0985-\u098C\u098F\u0990\u0993-\u09A8\u09AA-\u09B0\u09B2\u09B6-\u09B9\u09BD\u09CE\u09DC\u09DD\u09DF-\u09E1\u09F0\u09F1\u09FC\u0A05-\u0A0A\u0A0F\u0A10\u0A13-\u0A28\u0A2A-\u0A30\u0A32\u0A33\u0A35\u0A36\u0A38\u0A39\u0A59-\u0A5C\u0A5E\u0A72-\u0A74\u0A85-\u0A8D\u0A8F-\u0A91\u0A93-\u0AA8\u0AAA-\u0AB0\u0AB2\u0AB3\u0AB5-\u0AB9\u0ABD\u0AD0\u0AE0\u0AE1\u0AF9\u0B05-\u0B0C\u0B0F\u0B10\u0B13-\u0B28\u0B2A-\u0B30\u0B32\u0B33\u0B35-\u0B39\u0B3D\u0B5C\u0B5D\u0B5F-\u0B61\u0B71\u0B83\u0B85-\u0B8A\u0B8E-\u0B90\u0B92-\u0B95\u0B99\u0B9A\u0B9C\u0B9E\u0B9F\u0BA3\u0BA4\u0BA8-\u0BAA\u0BAE-\u0BB9\u0BD0\u0C05-\u0C0C\u0C0E-\u0C10\u0C12-\u0C28\u0C2A-\u0C39\u0C3D\u0C58-\u0C5A\u0C5D\u0C60\u0C61\u0C80\u0C85-\u0C8C\u0C8E-\u0C90\u0C92-\u0CA8\u0CAA-\u0CB3\u0CB5-\u0CB9\u0CBD\u0CDD\u0CDE\u0CE0\u0CE1\u0CF1\u0CF2\u0D04-\u0D0C\u0D0E-\u0D10\u0D12-\u0D3A\u0D3D\u0D4E\u0D54-\u0D56\u0D5F-\u0D61\u0D7A-\u0D7F\u0D85-\u0D96\u0D9A-\u0DB1\u0DB3-\u0DBB\u0DBD\u0DC0-\u0DC6\u0E01-\u0E30\u0E32\u0E33\u0E40-\u0E46\u0E81\u0E82\u0E84\u0E86-\u0E8A\u0E8C-\u0EA3\u0EA5\u0EA7-\u0EB0\u0EB2\u0EB3\u0EBD\u0EC0-\u0EC4\u0EC6\u0EDC-\u0EDF\u0F00\u0F40-\u0F47\u0F49-\u0F6C\u0F88-\u0F8C\u1000-\u102A\u103F\u1050-\u1055\u105A-\u105D\u1061\u1065\u1066\u106E-\u1070\u1075-\u1081\u108E\u10A0-\u10C5\u10C7\u10CD\u10D0-\u10FA\u10FC-\u1248\u124A-\u124D\u1250-\u1256\u1258\u125A-\u125D\u1260-\u1288\u128A-\u128D\u1290-\u12B0\u12B2-\u12B5\u12B8-\u12BE\u12C0\u12C2-\u12C5\u12C8-\u12D6\u12D8-\u1310\u1312-\u1315\u1318-\u135A\u1380-\u138F\u13A0-\u13F5\u13F8-\u13FD\u1401-\u166C\u166F-\u167F\u1681-\u169A\u16A0-\u16EA\u16F1-\u16F8\u1700-\u1711\u171F-\u1731\u1740-\u1751\u1760-\u176C\u176E-\u1770\u1780-\u17B3\u17D7\u17DC\u1820-\u1878\u1880-\u1884\u1887-\u18A8\u18AA\u18B0-\u18F5\u1900-\u191E\u1950-\u196D\u1970-\u1974\u1980-\u19AB\u19B0-\u19C9\u1A00-\u1A16\u1A20-\u1A54\u1AA7\u1B05-\u1B33\u1B45-\u1B4C\u1B83-\u1BA0\u1BAE\u1BAF\u1BBA-\u1BE5\u1C00-\u1C23\u1C4D-\u1C4F\u1C5A-\u1C7D\u1C80-\u1C88\u1C90-\u1CBA\u1CBD-\u1CBF\u1CE9-\u1CEC\u1CEE-\u1CF3\u1CF5\u1CF6\u1CFA\u1D00-\u1DBF\u1E00-\u1F15\u1F18-\u1F1D\u1F20-\u1F45\u1F48-\u1F4D\u1F50-\u1F57\u1F59\u1F5B\u1F5D\u1F5F-\u1F7D\u1F80-\u1FB4\u1FB6-\u1FBC\u1FBE\u1FC2-\u1FC4\u1FC6-\u1FCC\u1FD0-\u1FD3\u1FD6-\u1FDB\u1FE0-\u1FEC\u1FF2-\u1FF4\u1FF6-\u1FFC\u2071\u207F\u2090-\u209C\u2102\u2107\u210A-\u2113\u2115\u2119-\u211D\u2124\u2126\u2128\u212A-\u212D\u212F-\u2139\u213C-\u213F\u2145-\u2149\u214E\u2183\u2184\u2C00-\u2CE4\u2CEB-\u2CEE\u2CF2\u2CF3\u2D00-\u2D25\u2D27\u2D2D\u2D30-\u2D67\u2D6F\u2D80-\u2D96\u2DA0-\u2DA6\u2DA8-\u2DAE\u2DB0-\u2DB6\u2DB8-\u2DBE\u2DC0-\u2DC6\u2DC8-\u2DCE\u2DD0-\u2DD6\u2DD8-\u2DDE\u2E2F\u3005\u3006\u3031-\u3035\u303B\u303C\u3041-\u3096\u309D-\u309F\u30A1-\u30FA\u30FC-\u30FF\u3105-\u312F\u3131-\u318E\u31A0-\u31BF\u31F0-\u31FF\u3400-\u4DBF\u4E00-\uA48C\uA4D0-\uA4FD\uA500-\uA60C\uA610-\uA61F\uA62A\uA62B\uA640-\uA66E\uA67F-\uA69D\uA6A0-\uA6E5\uA717-\uA71F\uA722-\uA788\uA78B-\uA7CA\uA7D0\uA7D1\uA7D3\uA7D5-\uA7D9\uA7F2-\uA801\uA803-\uA805\uA807-\uA80A\uA80C-\uA822\uA840-\uA873\uA882-\uA8B3\uA8F2-\uA8F7\uA8FB\uA8FD\uA8FE\uA90A-\uA925\uA930-\uA946\uA960-\uA97C\uA984-\uA9B2\uA9CF\uA9E0-\uA9E4\uA9E6-\uA9EF\uA9FA-\uA9FE\uAA00-\uAA28\uAA40-\uAA42\uAA44-\uAA4B\uAA60-\uAA76\uAA7A\uAA7E-\uAAAF\uAAB1\uAAB5\uAAB6\uAAB9-\uAABD\uAAC0\uAAC2\uAADB-\uAADD\uAAE0-\uAAEA\uAAF2-\uAAF4\uAB01-\uAB06\uAB09-\uAB0E\uAB11-\uAB16\uAB20-\uAB26\uAB28-\uAB2E\uAB30-\uAB5A\uAB5C-\uAB69\uAB70-\uABE2\uAC00-\uD7A3\uD7B0-\uD7C6\uD7CB-\uD7FB\uF900-\uFA6D\uFA70-\uFAD9\uFB00-\uFB06\uFB13-\uFB17\uFB1D\uFB1F-\uFB28\uFB2A-\uFB36\uFB38-\uFB3C\uFB3E\uFB40\uFB41\uFB43\uFB44\uFB46-\uFBB1\uFBD3-\uFD3D\uFD50-\uFD8F\uFD92-\uFDC7\uFDF0-\uFDFB\uFE70-\uFE74\uFE76-\uFEFC\uFF21-\uFF3A\uFF41-\uFF5A\uFF66-\uFFBE\uFFC2-\uFFC7\uFFCA-\uFFCF\uFFD2-\uFFD7\uFFDA-\uFFDC\u{10000}-\u{1000B}\u{1000D}-\u{10026}\u{10028}-\u{1003A}\u{1003C}\u{1003D}\u{1003F}-\u{1004D}\u{10050}-\u{1005D}\u{10080}-\u{100FA}\u{10280}-\u{1029C}\u{102A0}-\u{102D0}\u{10300}-\u{1031F}\u{1032D}-\u{10340}\u{10342}-\u{10349}\u{10350}-\u{10375}\u{10380}-\u{1039D}\u{103A0}-\u{103C3}\u{103C8}-\u{103CF}\u{10400}-\u{1049D}\u{104B0}-\u{104D3}\u{104D8}-\u{104FB}\u{10500}-\u{10527}\u{10530}-\u{10563}\u{10570}-\u{1057A}\u{1057C}-\u{1058A}\u{1058C}-\u{10592}\u{10594}\u{10595}\u{10597}-\u{105A1}\u{105A3}-\u{105B1}\u{105B3}-\u{105B9}\u{105BB}\u{105BC}\u{10600}-\u{10736}\u{10740}-\u{10755}\u{10760}-\u{10767}\u{10780}-\u{10785}\u{10787}-\u{107B0}\u{107B2}-\u{107BA}\u{10800}-\u{10805}\u{10808}\u{1080A}-\u{10835}\u{10837}\u{10838}\u{1083C}\u{1083F}-\u{10855}\u{10860}-\u{10876}\u{10880}-\u{1089E}\u{108E0}-\u{108F2}\u{108F4}\u{108F5}\u{10900}-\u{10915}\u{10920}-\u{10939}\u{10980}-\u{109B7}\u{109BE}\u{109BF}\u{10A00}\u{10A10}-\u{10A13}\u{10A15}-\u{10A17}\u{10A19}-\u{10A35}\u{10A60}-\u{10A7C}\u{10A80}-\u{10A9C}\u{10AC0}-\u{10AC7}\u{10AC9}-\u{10AE4}\u{10B00}-\u{10B35}\u{10B40}-\u{10B55}\u{10B60}-\u{10B72}\u{10B80}-\u{10B91}\u{10C00}-\u{10C48}\u{10C80}-\u{10CB2}\u{10CC0}-\u{10CF2}\u{10D00}-\u{10D23}\u{10E80}-\u{10EA9}\u{10EB0}\u{10EB1}\u{10F00}-\u{10F1C}\u{10F27}\u{10F30}-\u{10F45}\u{10F70}-\u{10F81}\u{10FB0}-\u{10FC4}\u{10FE0}-\u{10FF6}\u{11003}-\u{11037}\u{11071}\u{11072}\u{11075}\u{11083}-\u{110AF}\u{110D0}-\u{110E8}\u{11103}-\u{11126}\u{11144}\u{11147}\u{11150}-\u{11172}\u{11176}\u{11183}-\u{111B2}\u{111C1}-\u{111C4}\u{111DA}\u{111DC}\u{11200}-\u{11211}\u{11213}-\u{1122B}\u{11280}-\u{11286}\u{11288}\u{1128A}-\u{1128D}\u{1128F}-\u{1129D}\u{1129F}-\u{112A8}\u{112B0}-\u{112DE}\u{11305}-\u{1130C}\u{1130F}\u{11310}\u{11313}-\u{11328}\u{1132A}-\u{11330}\u{11332}\u{11333}\u{11335}-\u{11339}\u{1133D}\u{11350}\u{1135D}-\u{11361}\u{11400}-\u{11434}\u{11447}-\u{1144A}\u{1145F}-\u{11461}\u{11480}-\u{114AF}\u{114C4}\u{114C5}\u{114C7}\u{11580}-\u{115AE}\u{115D8}-\u{115DB}\u{11600}-\u{1162F}\u{11644}\u{11680}-\u{116AA}\u{116B8}\u{11700}-\u{1171A}\u{11740}-\u{11746}\u{11800}-\u{1182B}\u{118A0}-\u{118DF}\u{118FF}-\u{11906}\u{11909}\u{1190C}-\u{11913}\u{11915}\u{11916}\u{11918}-\u{1192F}\u{1193F}\u{11941}\u{119A0}-\u{119A7}\u{119AA}-\u{119D0}\u{119E1}\u{119E3}\u{11A00}\u{11A0B}-\u{11A32}\u{11A3A}\u{11A50}\u{11A5C}-\u{11A89}\u{11A9D}\u{11AB0}-\u{11AF8}\u{11C00}-\u{11C08}\u{11C0A}-\u{11C2E}\u{11C40}\u{11C72}-\u{11C8F}\u{11D00}-\u{11D06}\u{11D08}\u{11D09}\u{11D0B}-\u{11D30}\u{11D46}\u{11D60}-\u{11D65}\u{11D67}\u{11D68}\u{11D6A}-\u{11D89}\u{11D98}\u{11EE0}-\u{11EF2}\u{11FB0}\u{12000}-\u{12399}\u{12480}-\u{12543}\u{12F90}-\u{12FF0}\u{13000}-\u{1342E}\u{14400}-\u{14646}\u{16800}-\u{16A38}\u{16A40}-\u{16A5E}\u{16A70}-\u{16ABE}\u{16AD0}-\u{16AED}\u{16B00}-\u{16B2F}\u{16B40}-\u{16B43}\u{16B63}-\u{16B77}\u{16B7D}-\u{16B8F}\u{16E40}-\u{16E7F}\u{16F00}-\u{16F4A}\u{16F50}\u{16F93}-\u{16F9F}\u{16FE0}\u{16FE1}\u{16FE3}\u{17000}-\u{187F7}\u{18800}-\u{18CD5}\u{18D00}-\u{18D08}\u{1AFF0}-\u{1AFF3}\u{1AFF5}-\u{1AFFB}\u{1AFFD}\u{1AFFE}\u{1B000}-\u{1B122}\u{1B150}-\u{1B152}\u{1B164}-\u{1B167}\u{1B170}-\u{1B2FB}\u{1BC00}-\u{1BC6A}\u{1BC70}-\u{1BC7C}\u{1BC80}-\u{1BC88}\u{1BC90}-\u{1BC99}\u{1D400}-\u{1D454}\u{1D456}-\u{1D49C}\u{1D49E}\u{1D49F}\u{1D4A2}\u{1D4A5}\u{1D4A6}\u{1D4A9}-\u{1D4AC}\u{1D4AE}-\u{1D4B9}\u{1D4BB}\u{1D4BD}-\u{1D4C3}\u{1D4C5}-\u{1D505}\u{1D507}-\u{1D50A}\u{1D50D}-\u{1D514}\u{1D516}-\u{1D51C}\u{1D51E}-\u{1D539}\u{1D53B}-\u{1D53E}\u{1D540}-\u{1D544}\u{1D546}\u{1D54A}-\u{1D550}\u{1D552}-\u{1D6A5}\u{1D6A8}-\u{1D6C0}\u{1D6C2}-\u{1D6DA}\u{1D6DC}-\u{1D6FA}\u{1D6FC}-\u{1D714}\u{1D716}-\u{1D734}\u{1D736}-\u{1D74E}\u{1D750}-\u{1D76E}\u{1D770}-\u{1D788}\u{1D78A}-\u{1D7A8}\u{1D7AA}-\u{1D7C2}\u{1D7C4}-\u{1D7CB}\u{1DF00}-\u{1DF1E}\u{1E100}-\u{1E12C}\u{1E137}-\u{1E13D}\u{1E14E}\u{1E290}-\u{1E2AD}\u{1E2C0}-\u{1E2EB}\u{1E7E0}-\u{1E7E6}\u{1E7E8}-\u{1E7EB}\u{1E7ED}\u{1E7EE}\u{1E7F0}-\u{1E7FE}\u{1E800}-\u{1E8C4}\u{1E900}-\u{1E943}\u{1E94B}\u{1EE00}-\u{1EE03}\u{1EE05}-\u{1EE1F}\u{1EE21}\u{1EE22}\u{1EE24}\u{1EE27}\u{1EE29}-\u{1EE32}\u{1EE34}-\u{1EE37}\u{1EE39}\u{1EE3B}\u{1EE42}\u{1EE47}\u{1EE49}\u{1EE4B}\u{1EE4D}-\u{1EE4F}\u{1EE51}\u{1EE52}\u{1EE54}\u{1EE57}\u{1EE59}\u{1EE5B}\u{1EE5D}\u{1EE5F}\u{1EE61}\u{1EE62}\u{1EE64}\u{1EE67}-\u{1EE6A}\u{1EE6C}-\u{1EE72}\u{1EE74}-\u{1EE77}\u{1EE79}-\u{1EE7C}\u{1EE7E}\u{1EE80}-\u{1EE89}\u{1EE8B}-\u{1EE9B}\u{1EEA1}-\u{1EEA3}\u{1EEA5}-\u{1EEA9}\u{1EEAB}-\u{1EEBB}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]/gmu,
+                            /[\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]/gmu,
+                        ]
+                            .map((e) => e.source)
+                            .join('|'),
                         'gum',
                     );
                 })();
-                var G = t(9916),
-                    U = t(8613);
-                (Date.now(), U.Ew.getRegionalDateTime, U.Ew.getFormattedDateTime);
-                const j = () => {
+                var T = t(9916),
+                    k = t(8613);
+                (Date.now(), k.Ew.getRegionalDateTime, k.Ew.getFormattedDateTime);
+                const P = () => {
                     const e = r.O.view.getSize('rem'),
                         u = (0, i.useState)({ height: e.height, width: e.width }),
                         t = u[0],
@@ -1181,13 +1194,13 @@
                         t
                     );
                 };
-                G.Sw.instance;
-                let z;
+                T.Sw.instance;
+                let W;
                 !(function (e) {
                     ((e.None = 'None'), (e.Shallow = 'Shallow'), (e.Deep = 'Deep'));
-                })(z || (z = {}));
-                G.Sw.instance;
-                const $ = (e, u, t) => {
+                })(W || (W = {}));
+                T.Sw.instance;
+                const I = (e, u, t) => {
                         const i = e.height / e.width > u.height / u.width ? e.height / u.height : e.width / u.width,
                             n = t.x * i,
                             a = t.y * i,
@@ -1196,7 +1209,7 @@
                             l = Math.min(Math.max(n - r, 0), e.width);
                         return { top: `${Math.min(Math.max(a - s, 0), e.height)}rem`, left: `${l}rem` };
                     },
-                    V = (e, u, t) => {
+                    U = (e, u, t) => {
                         let i;
                         i = e.width >= s.large.width ? 1 : e.width >= s.medium.width ? 0.7 : 0.55;
                         const n = t.x * i,
@@ -1206,42 +1219,41 @@
                             E = Math.min(Math.max(n - r, 0), e.width);
                         return { top: `${Math.min(Math.max(a - l, 0), e.height)}rem`, left: `${E}rem` };
                     },
-                    q = 'Hint_base_d5',
-                    K = 'Hint_content_5d',
-                    Y = 'Hint_text_64',
-                    X = 'Hint_title_f4',
-                    Z = 'Hint_description_ce',
-                    Q = ({ title: e = null, description: u = null, children: t }) =>
+                    G = 'Hint_base_d5',
+                    j = 'Hint_content_5d',
+                    $ = 'Hint_text_64',
+                    z = 'Hint_title_f4',
+                    V = 'Hint_description_ce',
+                    q = ({ title: e = null, description: u = null, children: t }) =>
                         n().createElement(
                             'div',
-                            { className: q },
-                            n().createElement('div', { className: K }, t),
+                            { className: G },
+                            n().createElement('div', { className: j }, t),
                             n().createElement(
                                 'div',
-                                { className: Y },
-                                e && n().createElement('div', { className: X }, e),
-                                u && n().createElement('div', { className: Z }, u),
+                                { className: $ },
+                                e && n().createElement('div', { className: z }, e),
+                                u && n().createElement('div', { className: V }, u),
                             ),
                         );
-                function J() {}
-                function ee() {
+                function K() {}
+                function Y() {
                     return !1;
                 }
                 console.log;
-                var ue = t(9174);
-                function te(e, u) {
+                var X = t(9174);
+                function Z(e, u) {
                     var t = ('undefined' != typeof Symbol && e[Symbol.iterator]) || e['@@iterator'];
                     if (t) return (t = t.call(e)).next.bind(t);
                     if (
                         Array.isArray(e) ||
                         (t = (function (e, u) {
                             if (!e) return;
-                            if ('string' == typeof e) return ie(e, u);
+                            if ('string' == typeof e) return Q(e, u);
                             var t = Object.prototype.toString.call(e).slice(8, -1);
                             'Object' === t && e.constructor && (t = e.constructor.name);
                             if ('Map' === t || 'Set' === t) return Array.from(e);
-                            if ('Arguments' === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t))
-                                return ie(e, u);
+                            if ('Arguments' === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t)) return Q(e, u);
                         })(e)) ||
                         (u && e && 'number' == typeof e.length)
                     ) {
@@ -1255,23 +1267,23 @@
                         'Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.',
                     );
                 }
-                function ie(e, u) {
+                function Q(e, u) {
                     (null == u || u > e.length) && (u = e.length);
                     for (var t = 0, i = new Array(u); t < u; t++) i[t] = e[t];
                     return i;
                 }
-                const ne = (e) => (0 === e ? window : window.subViews.get(e));
-                const ae = ((e, u) => {
+                const J = (e) => (0 === e ? window : window.subViews.get(e));
+                const ee = ((e, u) => {
                         const t = (0, i.createContext)({});
                         return [
                             function ({ mode: a = 'real', options: s, children: l, mocks: E }) {
-                                const c = (0, i.useRef)([]),
-                                    o = (t, i, n) => {
+                                const o = (0, i.useRef)([]),
+                                    c = (t, i, n) => {
                                         var a;
                                         const s = (function ({
                                                 initializer: e = !0,
                                                 rootId: u = 0,
-                                                getRoot: t = ne,
+                                                getRoot: t = J,
                                                 context: i = 'model',
                                             } = {}) {
                                                 const n = new Map();
@@ -1318,7 +1330,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var e, t = te(n.keys()); !(e = t()).done; ) a(e.value, u);
+                                                        for (var e, t = Z(n.keys()); !(e = t()).done; ) a(e.value, u);
                                                     },
                                                     unsubscribe: a,
                                                 };
@@ -1334,19 +1346,31 @@
                                                       }),
                                             E = (e) =>
                                                 'mocks' === t ? (null == n ? void 0 : n.getter(e)) : l.readByPath(e),
-                                            o = (e) => c.current.push(e),
-                                            A = e({
+                                            c = (e) => o.current.push(e),
+                                            d = e({
                                                 mode: t,
                                                 readByPath: E,
                                                 externalModel: l,
                                                 observableModel: {
-                                                    array: (e, u) => {
-                                                        const i = null != u ? u : E(e),
-                                                            n = ue.LO.box(i, { equals: ee });
+                                                    dict: (e) => {
+                                                        const u = E(e),
+                                                            i = X.LO.box(u, { equals: Y });
                                                         return (
                                                             'real' === t &&
                                                                 l.subscribe(
-                                                                    (0, ue.aD)((e) => n.set(e)),
+                                                                    (0, X.aD)((e) => i.set(e)),
+                                                                    e,
+                                                                ),
+                                                            i
+                                                        );
+                                                    },
+                                                    array: (e, u) => {
+                                                        const i = null != u ? u : E(e),
+                                                            n = X.LO.box(i, { equals: Y });
+                                                        return (
+                                                            'real' === t &&
+                                                                l.subscribe(
+                                                                    (0, X.aD)((e) => n.set(e)),
                                                                     e,
                                                                 ),
                                                             n
@@ -1354,11 +1378,11 @@
                                                     },
                                                     object: (e, u) => {
                                                         const i = null != u ? u : E(e),
-                                                            n = ue.LO.box(i, { equals: ee });
+                                                            n = X.LO.box(i, { equals: Y });
                                                         return (
                                                             'real' === t &&
                                                                 l.subscribe(
-                                                                    (0, ue.aD)((e) => n.set(e)),
+                                                                    (0, X.aD)((e) => n.set(e)),
                                                                     e,
                                                                 ),
                                                             n
@@ -1368,13 +1392,13 @@
                                                         const i = E(u);
                                                         if (Array.isArray(e)) {
                                                             const n = e.reduce(
-                                                                (e, u) => ((e[u] = ue.LO.box(i[u], {})), e),
+                                                                (e, u) => ((e[u] = X.LO.box(i[u], {})), e),
                                                                 {},
                                                             );
                                                             return (
                                                                 'real' === t &&
                                                                     l.subscribe(
-                                                                        (0, ue.aD)((u) => {
+                                                                        (0, X.aD)((u) => {
                                                                             e.forEach((e) => {
                                                                                 n[e].set(u[e]);
                                                                             });
@@ -1388,13 +1412,13 @@
                                                             const n = e,
                                                                 a = Object.entries(n),
                                                                 r = a.reduce(
-                                                                    (e, [u, t]) => ((e[t] = ue.LO.box(i[u], {})), e),
+                                                                    (e, [u, t]) => ((e[t] = X.LO.box(i[u], {})), e),
                                                                     {},
                                                                 );
                                                             return (
                                                                 'real' === t &&
                                                                     l.subscribe(
-                                                                        (0, ue.aD)((e) => {
+                                                                        (0, X.aD)((e) => {
                                                                             a.forEach(([u, t]) => {
                                                                                 r[t].set(e[u]);
                                                                             });
@@ -1406,33 +1430,33 @@
                                                         }
                                                     },
                                                 },
-                                                cleanup: o,
+                                                cleanup: c,
                                             }),
-                                            d = { mode: t, model: A, externalModel: l, cleanup: o };
+                                            A = { mode: t, model: d, externalModel: l, cleanup: c };
                                         return {
-                                            model: A,
-                                            controls: 'mocks' === t && n ? n.controls(d) : u(d),
+                                            model: d,
+                                            controls: 'mocks' === t && n ? n.controls(A) : u(A),
                                             externalModel: l,
                                             mode: t,
                                         };
                                     },
-                                    A = (0, i.useRef)(!1),
-                                    d = (0, i.useState)(a),
-                                    m = d[0],
-                                    F = d[1],
-                                    h = (0, i.useState)(() => o(a, s, E)),
+                                    d = (0, i.useRef)(!1),
+                                    A = (0, i.useState)(a),
+                                    m = A[0],
+                                    F = A[1],
+                                    h = (0, i.useState)(() => c(a, s, E)),
                                     _ = h[0],
                                     g = h[1];
                                 return (
                                     (0, i.useEffect)(() => {
-                                        A.current ? g(o(m, s, E)) : (A.current = !0);
+                                        d.current ? g(c(m, s, E)) : (d.current = !0);
                                     }, [E, m, s]),
                                     (0, i.useEffect)(() => {
                                         F(a);
                                     }, [a]),
                                     (0, i.useEffect)(
                                         () => () => {
-                                            (_.externalModel.dispose(), c.current.forEach((e) => e()));
+                                            (_.externalModel.dispose(), o.current.forEach((e) => e()));
                                         },
                                         [_],
                                     ),
@@ -1441,32 +1465,32 @@
                             },
                             () => (0, i.useContext)(t),
                         ];
-                    })(({ observableModel: e }) => e.object(), J),
-                    re = ae[0],
-                    se = ae[1],
-                    le = 'HintBackground_image_4b',
-                    Ee = 'HintBackground_image__crop_57',
-                    ce = ({ image: e, hasBlind: u = !1, crop: t = !1, className: i }) => {
-                        const a = `url(${e}${se().model.get().isColorBlind && u ? '_blind' : ''})`;
+                    })(({ observableModel: e }) => e.object(), K),
+                    ue = ee[0],
+                    te = ee[1],
+                    ie = 'HintBackground_image_4b',
+                    ne = 'HintBackground_image__crop_57',
+                    ae = ({ image: e, hasBlind: u = !1, crop: t = !1, className: i }) => {
+                        const a = `url(${e}${te().model.get().isColorBlind && u ? '_blind' : ''})`;
                         return n().createElement('div', {
                             style: { backgroundImage: a },
-                            className: B()(le, t && Ee, i),
+                            className: F()(ie, t && ne, i),
                         });
                     },
-                    oe = 'HintShadows_base_09',
-                    Ae = 'HintShadows_shadow_c0',
-                    de = 'HintShadows_shadow__top_8d',
-                    me = 'HintShadows_shadow__bottom_7a',
-                    Fe = 'HintShadows_vignette_c6',
-                    he = () =>
+                    re = 'HintShadows_base_09',
+                    se = 'HintShadows_shadow_c0',
+                    le = 'HintShadows_shadow__top_8d',
+                    Ee = 'HintShadows_shadow__bottom_7a',
+                    oe = 'HintShadows_vignette_c6',
+                    ce = () =>
                         n().createElement(
                             'div',
-                            { className: oe },
-                            n().createElement('div', { className: Fe }),
-                            n().createElement('div', { className: B()(Ae, de) }),
-                            n().createElement('div', { className: B()(Ae, me) }),
+                            { className: re },
+                            n().createElement('div', { className: oe }),
+                            n().createElement('div', { className: F()(se, le) }),
+                            n().createElement('div', { className: F()(se, Ee) }),
                         ),
-                    _e = {
+                    de = {
                         label: 'NewbieHint01_label_32',
                         label__left: 'NewbieHint01_label__left_46',
                         label__center: 'NewbieHint01_label__center_f9',
@@ -1477,113 +1501,113 @@
                         title__green: 'NewbieHint01_title__green_5f',
                         title__red: 'NewbieHint01_title__red_93',
                     },
-                    ge = { width: 2560, height: 1440 },
-                    De = { x: 1490, y: 610 },
-                    Be = { x: 1110, y: 891 },
-                    be = 'NewbieHint02_label_35',
-                    Ce = 'NewbieHint02_label__center_19',
-                    we = 'NewbieHint02_title_63',
-                    ve = 'NewbieHint02_keys_25',
-                    pe = 'NewbieHint02_firing_97',
-                    xe = 'NewbieHint02_camera_c5',
-                    fe = 'NewbieHint02_turret_a8',
-                    ye = { width: 2560, height: 1440 },
-                    Ne = {
-                        [w.ExtraSmall]: { x: 703, y: 812 },
-                        [w.Small]: { x: 703, y: 812 },
-                        [w.Medium]: { x: 740, y: 823 },
-                        [w.Large]: { x: 725, y: 833 },
-                        [w.ExtraLarge]: { x: 725, y: 865 },
+                    Ae = { width: 2560, height: 1440 },
+                    me = { x: 1490, y: 610 },
+                    Fe = { x: 1110, y: 891 },
+                    he = 'NewbieHint02_label_35',
+                    _e = 'NewbieHint02_label__center_19',
+                    ge = 'NewbieHint02_title_63',
+                    De = 'NewbieHint02_keys_25',
+                    Be = 'NewbieHint02_firing_97',
+                    be = 'NewbieHint02_camera_c5',
+                    Ce = 'NewbieHint02_turret_a8',
+                    we = { width: 2560, height: 1440 },
+                    ve = {
+                        [g.ExtraSmall]: { x: 703, y: 812 },
+                        [g.Small]: { x: 703, y: 812 },
+                        [g.Medium]: { x: 740, y: 823 },
+                        [g.Large]: { x: 725, y: 833 },
+                        [g.ExtraLarge]: { x: 725, y: 865 },
                     },
-                    Le = {
-                        [w.ExtraSmall]: { x: 1225, y: 500 },
-                        [w.Small]: { x: 1225, y: 500 },
-                        [w.Medium]: { x: 1239, y: 506 },
-                        [w.Large]: { x: 1211, y: 503 },
-                        [w.ExtraLarge]: { x: 1211, y: 534 },
+                    pe = {
+                        [g.ExtraSmall]: { x: 1225, y: 500 },
+                        [g.Small]: { x: 1225, y: 500 },
+                        [g.Medium]: { x: 1239, y: 506 },
+                        [g.Large]: { x: 1211, y: 503 },
+                        [g.ExtraLarge]: { x: 1211, y: 534 },
                     },
-                    Re = {
-                        [w.ExtraSmall]: { x: 1530, y: 590 },
-                        [w.Small]: { x: 1530, y: 590 },
-                        [w.Medium]: { x: 1487, y: 573 },
-                        [w.Large]: { x: 1507, y: 569 },
-                        [w.ExtraLarge]: { x: 1507, y: 598 },
+                    xe = {
+                        [g.ExtraSmall]: { x: 1530, y: 590 },
+                        [g.Small]: { x: 1530, y: 590 },
+                        [g.Medium]: { x: 1487, y: 573 },
+                        [g.Large]: { x: 1507, y: 569 },
+                        [g.ExtraLarge]: { x: 1507, y: 598 },
                     },
-                    He = {
-                        [w.ExtraSmall]: { x: 1820, y: 800 },
-                        [w.Small]: { x: 1820, y: 800 },
-                        [w.Medium]: { x: 1700, y: 728 },
-                        [w.Large]: { x: 1730, y: 735 },
-                        [w.ExtraLarge]: { x: 1730, y: 765 },
+                    ye = {
+                        [g.ExtraSmall]: { x: 1820, y: 800 },
+                        [g.Small]: { x: 1820, y: 800 },
+                        [g.Medium]: { x: 1700, y: 728 },
+                        [g.Large]: { x: 1730, y: 735 },
+                        [g.ExtraLarge]: { x: 1730, y: 765 },
                     },
-                    Se = {
+                    fe = {
                         bgPadding: 'NewbieHint03_bgPadding_b0',
                         label: 'NewbieHint03_label_c6',
                         mouse: 'NewbieHint03_mouse_f3',
                         shift: 'NewbieHint03_shift_a4',
                         title: 'NewbieHint03_title_31',
                     },
-                    Oe = { width: 2560, height: 1440 },
-                    Te = {
-                        [w.ExtraSmall]: { x: 1846, y: 975 },
-                        [w.Small]: { x: 1940, y: 958 },
-                        [w.Medium]: { x: 1937, y: 940 },
-                        [w.Large]: { x: 1865, y: 1e3 },
-                        [w.ExtraLarge]: { x: 1937, y: 900 },
+                    Ne = { width: 2560, height: 1440 },
+                    Le = {
+                        [g.ExtraSmall]: { x: 1846, y: 975 },
+                        [g.Small]: { x: 1940, y: 958 },
+                        [g.Medium]: { x: 1937, y: 940 },
+                        [g.Large]: { x: 1865, y: 1e3 },
+                        [g.ExtraLarge]: { x: 1937, y: 900 },
                     },
-                    ke = 'common_label_c8',
-                    Me = 'common_label__left_bd',
-                    Pe = 'common_label__center_24',
-                    We = 'common_title_cd',
-                    Ie = 'common_info_09',
-                    Ge = { width: 2560, height: 1440 },
-                    Ue = { x: 1148, y: 525 },
-                    je = { x: 1028, y: 940 },
-                    ze = { x: 1660, y: 537 },
-                    $e = 'NewbieHint05_label_88',
-                    Ve = 'NewbieHint05_label__left_4f',
-                    qe = 'NewbieHint05_title_c1',
-                    Ke = 'NewbieHint05_info_9f',
-                    Ye = 'NewbieHint05_block_73',
-                    Xe = 'NewbieHint05_block__left_77',
-                    Ze = 'NewbieHint05_label__narrow_66',
-                    Qe = 'NewbieHint05_fire_dd',
-                    Je = 'NewbieHint05_repair_64',
-                    eu = 'NewbieHint05_aid_be',
-                    uu = { width: 2560, height: 1440 },
-                    tu = {
-                        [w.ExtraSmall]: { x: 826, y: 288 },
-                        [w.Small]: { x: 826, y: 269 },
-                        [w.Medium]: { x: 882, y: 320 },
-                        [w.Large]: { x: 872, y: 332 },
-                        [w.ExtraLarge]: { x: 874, y: 332 },
+                    Re = 'common_label_c8',
+                    He = 'common_label__left_bd',
+                    Se = 'common_label__center_24',
+                    Oe = 'common_title_cd',
+                    Me = 'common_info_09',
+                    Te = { width: 2560, height: 1440 },
+                    ke = { x: 1148, y: 525 },
+                    Pe = { x: 1028, y: 940 },
+                    We = { x: 1660, y: 537 },
+                    Ie = 'NewbieHint05_label_88',
+                    Ue = 'NewbieHint05_label__left_4f',
+                    Ge = 'NewbieHint05_title_c1',
+                    je = 'NewbieHint05_info_9f',
+                    $e = 'NewbieHint05_block_73',
+                    ze = 'NewbieHint05_block__left_77',
+                    Ve = 'NewbieHint05_label__narrow_66',
+                    qe = 'NewbieHint05_fire_dd',
+                    Ke = 'NewbieHint05_repair_64',
+                    Ye = 'NewbieHint05_aid_be',
+                    Xe = { width: 2560, height: 1440 },
+                    Ze = {
+                        [g.ExtraSmall]: { x: 826, y: 288 },
+                        [g.Small]: { x: 826, y: 269 },
+                        [g.Medium]: { x: 882, y: 320 },
+                        [g.Large]: { x: 872, y: 332 },
+                        [g.ExtraLarge]: { x: 874, y: 332 },
                     },
-                    iu = {
-                        [w.ExtraSmall]: { x: 1154, y: 918 },
-                        [w.Small]: { x: 1154, y: 899 },
-                        [w.Medium]: { x: 1185, y: 890 },
-                        [w.Large]: { x: 1183, y: 887 },
-                        [w.ExtraLarge]: { x: 1183, y: 888 },
+                    Qe = {
+                        [g.ExtraSmall]: { x: 1154, y: 918 },
+                        [g.Small]: { x: 1154, y: 899 },
+                        [g.Medium]: { x: 1185, y: 890 },
+                        [g.Large]: { x: 1183, y: 887 },
+                        [g.ExtraLarge]: { x: 1183, y: 888 },
                     },
-                    nu = {
-                        [w.ExtraSmall]: { x: 1622, y: 434 },
-                        [w.Small]: { x: 1622, y: 415 },
-                        [w.Medium]: { x: 1590, y: 434 },
-                        [w.Large]: { x: 1586, y: 444 },
-                        [w.ExtraLarge]: { x: 1586, y: 443 },
+                    Je = {
+                        [g.ExtraSmall]: { x: 1622, y: 434 },
+                        [g.Small]: { x: 1622, y: 415 },
+                        [g.Medium]: { x: 1590, y: 434 },
+                        [g.Large]: { x: 1586, y: 444 },
+                        [g.ExtraLarge]: { x: 1586, y: 443 },
                     },
-                    au = 'NewbieHint06_label_68',
-                    ru = 'NewbieHint06_label__left_65',
-                    su = 'NewbieHint06_title_39',
-                    lu = 'NewbieHint06_info_4d',
-                    Eu = 'NewbieHint06_label__openArea_82',
-                    cu = 'NewbieHint06_label__object_cf',
-                    ou = { width: 2560, height: 1440 },
-                    Au = { x: 650, y: 287 },
-                    du = { x: 935, y: 647 },
-                    mu = { x: 1872, y: 530 },
-                    Fu = { x: 1555, y: 894 },
-                    hu = {
+                    eu = 'NewbieHint06_label_68',
+                    uu = 'NewbieHint06_label__left_65',
+                    tu = 'NewbieHint06_title_39',
+                    iu = 'NewbieHint06_info_4d',
+                    nu = 'NewbieHint06_label__openArea_82',
+                    au = 'NewbieHint06_label__object_cf',
+                    ru = { width: 2560, height: 1440 },
+                    su = { x: 650, y: 287 },
+                    lu = { x: 935, y: 647 },
+                    Eu = { x: 1872, y: 530 },
+                    ou = { x: 1555, y: 894 },
+                    cu = {
                         block: 'NewbieHint07_block_e0',
                         block__right: 'NewbieHint07_block__right_85',
                         win: 'NewbieHint07_win_65',
@@ -1598,51 +1622,51 @@
                         circle: 'NewbieHint07_circle_67',
                         or: 'NewbieHint07_or_81',
                     };
-                var _u;
+                var du;
                 !(function (e) {
                     ((e.Ally1 = 'ally1'), (e.Ally2 = 'ally2'), (e.Enemy1 = 'enemy1'), (e.Enemy2 = 'enemy2'));
-                })(_u || (_u = {}));
-                const gu = { width: 2560, height: 1440 },
-                    Du = [
-                        { point: { x: 570, y: 720 }, style: _u.Ally1 },
-                        { point: { x: 915, y: 782 }, style: _u.Ally2 },
-                        { point: { x: 1815, y: 823 }, style: _u.Ally1 },
-                        { point: { x: 1468, y: 755 }, style: _u.Enemy2 },
-                        { point: { x: 1692, y: 723 }, style: _u.Enemy1 },
-                        { point: { x: 2020, y: 737 }, style: _u.Enemy2 },
+                })(du || (du = {}));
+                const Au = { width: 2560, height: 1440 },
+                    mu = [
+                        { point: { x: 570, y: 720 }, style: du.Ally1 },
+                        { point: { x: 915, y: 782 }, style: du.Ally2 },
+                        { point: { x: 1815, y: 823 }, style: du.Ally1 },
+                        { point: { x: 1468, y: 755 }, style: du.Enemy2 },
+                        { point: { x: 1692, y: 723 }, style: du.Enemy1 },
+                        { point: { x: 2020, y: 737 }, style: du.Enemy2 },
                     ],
-                    Bu = 'NewbieHint08_block_4d',
-                    bu = 'NewbieHint08_block__right_42',
-                    Cu = 'NewbieHint08_arrow_4c',
-                    wu = 'NewbieHint08_arrow__right_4f',
-                    vu = 'NewbieHint08_title_b3',
-                    pu = 'NewbieHint10_label_c7',
-                    xu = 'NewbieHint10_label__left_0b',
-                    fu = 'NewbieHint10_label__top_89',
-                    yu = 'NewbieHint10_title_43',
-                    Nu = 'NewbieHint10_info_3d',
-                    Lu = 'NewbieHint10_label__right_40',
-                    Ru = { width: 2560, height: 1440 },
-                    Hu = { width: 1366, height: 768 },
-                    Su = { x: 767, y: 587 },
-                    Ou = { x: 432, y: 289 },
-                    Tu = { x: 767, y: 908 },
-                    ku = { x: 428, y: 485 },
-                    Mu = { x: 1917, y: 906 },
-                    Pu = { x: 953, y: 485 },
-                    Wu = 'NewbieHint12_label_cb',
-                    Iu = 'NewbieHint12_label__left_d9',
-                    Gu = 'NewbieHint12_title_03',
-                    Uu = 'NewbieHint12_info_12',
-                    ju = 'NewbieHint12_notPenetrated_f5',
-                    zu = 'NewbieHint12_penetrated_c4',
-                    $u = { width: 2560, height: 1440 },
-                    Vu = { x: 920, y: 390 },
-                    qu = { x: 920, y: 640 },
-                    Ku = { width: 2560, height: 1440 },
-                    Yu = { x: 645, y: 90 },
-                    Xu = { x: 1530, y: 90 };
-                let Zu;
+                    Fu = 'NewbieHint08_block_4d',
+                    hu = 'NewbieHint08_block__right_42',
+                    _u = 'NewbieHint08_arrow_4c',
+                    gu = 'NewbieHint08_arrow__right_4f',
+                    Du = 'NewbieHint08_title_b3',
+                    Bu = 'NewbieHint10_label_c7',
+                    bu = 'NewbieHint10_label__left_0b',
+                    Cu = 'NewbieHint10_label__top_89',
+                    wu = 'NewbieHint10_title_43',
+                    vu = 'NewbieHint10_info_3d',
+                    pu = 'NewbieHint10_label__right_40',
+                    xu = { width: 2560, height: 1440 },
+                    yu = { width: 1366, height: 768 },
+                    fu = { x: 767, y: 587 },
+                    Nu = { x: 432, y: 289 },
+                    Lu = { x: 767, y: 908 },
+                    Ru = { x: 428, y: 485 },
+                    Hu = { x: 1917, y: 906 },
+                    Su = { x: 953, y: 485 },
+                    Ou = 'NewbieHint12_label_cb',
+                    Mu = 'NewbieHint12_label__left_d9',
+                    Tu = 'NewbieHint12_title_03',
+                    ku = 'NewbieHint12_info_12',
+                    Pu = 'NewbieHint12_notPenetrated_f5',
+                    Wu = 'NewbieHint12_penetrated_c4',
+                    Iu = { width: 2560, height: 1440 },
+                    Uu = { x: 920, y: 390 },
+                    Gu = { x: 920, y: 640 },
+                    ju = { width: 2560, height: 1440 },
+                    $u = { x: 645, y: 90 },
+                    zu = { x: 1530, y: 90 };
+                let Vu;
                 !(function (e) {
                     ((e.NewbieHint1 = 'newbie_hint_1'),
                         (e.NewbieHint2 = 'newbie_hint_2'),
@@ -1656,172 +1680,172 @@
                         (e.NewbieHint10 = 'newbie_hint_10'),
                         (e.NewbieHint12 = 'newbie_hint_12'),
                         (e.NewbieHint13 = 'newbie_hint_13'));
-                })(Zu || (Zu = {}));
-                const Qu = {
-                        [Zu.NewbieHint1]: () => {
-                            const e = j(),
-                                u = V(e, ge, De),
-                                t = V(e, ge, Be);
+                })(Vu || (Vu = {}));
+                const qu = {
+                        [Vu.NewbieHint1]: () => {
+                            const e = P(),
+                                u = U(e, Ae, me),
+                                t = U(e, Ae, Fe);
                             return n().createElement(
-                                Q,
+                                q,
                                 {
                                     title: R.strings.prebattle.hints.hint1.header(),
                                     description: R.strings.prebattle.hints.hint1.description(),
                                 },
-                                n().createElement(ce, {
+                                n().createElement(ae, {
                                     image: 'R.images.gui.maps.icons.battleLoading.hints.newbie_hints.hint_01.background',
                                     crop: !0,
-                                    className: _e.bgPadding,
+                                    className: de.bgPadding,
                                 }),
-                                n().createElement(he, null),
+                                n().createElement(ce, null),
                                 n().createElement(
                                     'div',
-                                    { className: _e.label, style: u },
+                                    { className: de.label, style: u },
                                     n().createElement(
                                         'div',
-                                        { className: B()(_e.title, _e.title__green) },
+                                        { className: F()(de.title, de.title__green) },
                                         R.strings.prebattle.hints.hint1.green.header(),
                                     ),
                                     n().createElement(
                                         'div',
-                                        { className: _e.info },
+                                        { className: de.info },
                                         R.strings.prebattle.hints.hint1.green.description(),
                                     ),
                                 ),
                                 n().createElement(
                                     'div',
-                                    { className: B()(_e.label, _e.label__left), style: t },
+                                    { className: F()(de.label, de.label__left), style: t },
                                     n().createElement(
                                         'div',
-                                        { className: B()(_e.title, _e.title__red) },
+                                        { className: F()(de.title, de.title__red) },
                                         R.strings.prebattle.hints.hint1.red.header(),
                                     ),
                                     n().createElement(
                                         'div',
-                                        { className: _e.info },
+                                        { className: de.info },
                                         R.strings.prebattle.hints.hint1.red.description(),
                                     ),
                                 ),
                             );
                         },
-                        [Zu.NewbieHint2]: () => {
-                            const e = j(),
-                                u = x().mediaSize,
-                                t = V(e, ye, Ne[u]),
-                                i = V(e, ye, Le[u]),
-                                a = V(e, ye, Re[u]),
-                                r = V(e, ye, He[u]);
+                        [Vu.NewbieHint2]: () => {
+                            const e = P(),
+                                u = b().mediaSize,
+                                t = U(e, we, ve[u]),
+                                i = U(e, we, pe[u]),
+                                a = U(e, we, xe[u]),
+                                r = U(e, we, ye[u]);
                             return n().createElement(
-                                Q,
+                                q,
                                 {
                                     title: R.strings.prebattle.hints.hint2.header(),
                                     description: R.strings.prebattle.hints.hint2.description(),
                                 },
-                                n().createElement(ce, {
+                                n().createElement(ae, {
                                     image: 'R.images.gui.maps.icons.battleLoading.hints.newbie_hints.hint_02.background',
                                     crop: !0,
                                 }),
-                                n().createElement(he, null),
+                                n().createElement(ce, null),
                                 n().createElement(
                                     'div',
-                                    { className: B()(be, Ce), style: t },
-                                    n().createElement('div', { className: ve }),
+                                    { className: F()(he, _e), style: t },
+                                    n().createElement('div', { className: De }),
                                     n().createElement(
                                         'div',
-                                        { className: we },
+                                        { className: ge },
                                         R.strings.prebattle.hints.hint2.movement(),
                                     ),
                                 ),
                                 n().createElement(
                                     'div',
-                                    { className: B()(be, Ce), style: i },
-                                    n().createElement('div', { className: pe }),
+                                    { className: F()(he, _e), style: i },
+                                    n().createElement('div', { className: Be }),
                                     n().createElement(
                                         'div',
-                                        { className: we },
+                                        { className: ge },
                                         R.strings.prebattle.hints.hint2.firing(),
                                     ),
                                 ),
                                 n().createElement(
                                     'div',
-                                    { className: B()(be, Ce), style: a },
-                                    n().createElement('div', { className: xe }),
+                                    { className: F()(he, _e), style: a },
+                                    n().createElement('div', { className: be }),
                                     n().createElement(
                                         'div',
-                                        { className: we },
+                                        { className: ge },
                                         R.strings.prebattle.hints.hint2.freeCam(),
                                     ),
                                 ),
                                 n().createElement(
                                     'div',
-                                    { className: B()(be, Ce), style: r },
-                                    n().createElement('div', { className: fe }),
+                                    { className: F()(he, _e), style: r },
+                                    n().createElement('div', { className: Ce }),
                                     n().createElement(
                                         'div',
-                                        { className: we },
+                                        { className: ge },
                                         R.strings.prebattle.hints.hint2.turret(),
                                     ),
                                 ),
                             );
                         },
-                        [Zu.NewbieHint3]: () => {
-                            const e = j(),
-                                u = x().mediaSize,
-                                t = V(e, Oe, Te[u]),
-                                i = Oe.height - e.height < 200;
+                        [Vu.NewbieHint3]: () => {
+                            const e = P(),
+                                u = b().mediaSize,
+                                t = U(e, Ne, Le[u]),
+                                i = Ne.height - e.height < 200;
                             return n().createElement(
-                                Q,
+                                q,
                                 {
                                     title: R.strings.prebattle.hints.hint3.header(),
                                     description: R.strings.prebattle.hints.hint3.description(),
                                 },
-                                n().createElement(ce, {
+                                n().createElement(ae, {
                                     image: 'R.images.gui.maps.icons.battleLoading.hints.newbie_hints.hint_03.background',
                                     crop: !0,
-                                    className: B()(!i && Se.bgPadding),
+                                    className: F()(!i && fe.bgPadding),
                                 }),
-                                n().createElement(he, null),
+                                n().createElement(ce, null),
                                 n().createElement(
                                     'div',
-                                    { className: B()(Se.label, Se.label__center), style: t },
-                                    n().createElement('div', { className: Se.mouse }),
+                                    { className: F()(fe.label, fe.label__center), style: t },
+                                    n().createElement('div', { className: fe.mouse }),
                                     n().createElement(
                                         'div',
-                                        { className: Se.title },
+                                        { className: fe.title },
                                         R.strings.prebattle.hints.hint3.orLabel(),
                                     ),
-                                    n().createElement('div', { className: Se.shift }),
+                                    n().createElement('div', { className: fe.shift }),
                                 ),
                             );
                         },
-                        [Zu.NewbieHint4]: () => {
-                            const e = j(),
-                                u = V(e, Ge, Ue),
-                                t = V(e, Ge, je),
-                                i = V(e, Ge, ze),
-                                a = B()(ke, Me);
+                        [Vu.NewbieHint4]: () => {
+                            const e = P(),
+                                u = U(e, Te, ke),
+                                t = U(e, Te, Pe),
+                                i = U(e, Te, We),
+                                a = F()(Re, He);
                             return n().createElement(
-                                Q,
+                                q,
                                 {
                                     title: R.strings.prebattle.hints.hint4.header(),
                                     description: R.strings.prebattle.hints.hint4.description(),
                                 },
-                                n().createElement(ce, {
+                                n().createElement(ae, {
                                     image: 'R.images.gui.maps.icons.battleLoading.hints.newbie_hints.hint_04.background',
                                     crop: !0,
                                 }),
-                                n().createElement(he, null),
+                                n().createElement(ce, null),
                                 n().createElement(
                                     'div',
                                     { className: a, style: u },
                                     n().createElement(
                                         'div',
-                                        { className: We },
+                                        { className: Oe },
                                         R.strings.prebattle.hints.hint4.view.header(),
                                     ),
                                     n().createElement(
                                         'div',
-                                        { className: Ie },
+                                        { className: Me },
                                         R.strings.prebattle.hints.hint4.view.description(),
                                     ),
                                 ),
@@ -1830,379 +1854,379 @@
                                     { className: a, style: t },
                                     n().createElement(
                                         'div',
-                                        { className: We },
+                                        { className: Oe },
                                         R.strings.prebattle.hints.hint4.immobilized.header(),
                                     ),
                                     n().createElement(
                                         'div',
-                                        { className: Ie },
+                                        { className: Me },
                                         R.strings.prebattle.hints.hint4.immobilized.description(),
                                     ),
                                 ),
                                 n().createElement(
                                     'div',
-                                    { className: ke, style: i },
+                                    { className: Re, style: i },
                                     n().createElement(
                                         'div',
-                                        { className: We },
+                                        { className: Oe },
                                         R.strings.prebattle.hints.hint4.shooting.header(),
                                     ),
                                     n().createElement(
                                         'div',
-                                        { className: Ie },
+                                        { className: Me },
                                         R.strings.prebattle.hints.hint4.shooting.description(),
                                     ),
                                 ),
                             );
                         },
-                        [Zu.NewbieHint5]: () => {
-                            const e = j(),
-                                u = x().mediaSize,
-                                t = V(e, uu, tu[u]),
-                                i = V(e, uu, iu[u]),
-                                a = V(e, uu, nu[u]);
+                        [Vu.NewbieHint5]: () => {
+                            const e = P(),
+                                u = b().mediaSize,
+                                t = U(e, Xe, Ze[u]),
+                                i = U(e, Xe, Qe[u]),
+                                a = U(e, Xe, Je[u]);
                             return n().createElement(
-                                Q,
+                                q,
                                 {
                                     title: R.strings.prebattle.hints.hint5.header(),
                                     description: R.strings.prebattle.hints.hint5.description(),
                                 },
-                                n().createElement(ce, {
+                                n().createElement(ae, {
                                     image: 'R.images.gui.maps.icons.battleLoading.hints.newbie_hints.hint_05.background',
                                     crop: !0,
                                 }),
-                                n().createElement(he, null),
+                                n().createElement(ce, null),
                                 n().createElement(
                                     'div',
-                                    { className: Ye, style: t },
-                                    n().createElement('div', { className: Qe }),
+                                    { className: $e, style: t },
+                                    n().createElement('div', { className: qe }),
                                     n().createElement(
                                         'div',
-                                        { className: $e },
+                                        { className: Ie },
                                         n().createElement(
                                             'div',
-                                            { className: qe },
+                                            { className: Ge },
                                             R.strings.prebattle.hints.hint5.fire.header(),
                                         ),
                                         n().createElement(
                                             'div',
-                                            { className: Ke },
+                                            { className: je },
                                             R.strings.prebattle.hints.hint5.fire.description(),
                                         ),
                                     ),
                                 ),
                                 n().createElement(
                                     'div',
-                                    { className: B()(Ye, Xe), style: i },
+                                    { className: F()($e, ze), style: i },
                                     n().createElement(
                                         'div',
-                                        { className: B()($e, Ve) },
+                                        { className: F()(Ie, Ue) },
                                         n().createElement(
                                             'div',
-                                            { className: qe },
+                                            { className: Ge },
                                             R.strings.prebattle.hints.hint5.repair.header(),
                                         ),
                                         n().createElement(
                                             'div',
-                                            { className: Ke },
+                                            { className: je },
                                             R.strings.prebattle.hints.hint5.repair.description(),
                                         ),
                                     ),
-                                    n().createElement('div', { className: Je }),
+                                    n().createElement('div', { className: Ke }),
                                 ),
                                 n().createElement(
                                     'div',
-                                    { className: Ye, style: a },
-                                    n().createElement('div', { className: eu }),
+                                    { className: $e, style: a },
+                                    n().createElement('div', { className: Ye }),
                                     n().createElement(
                                         'div',
-                                        { className: B()($e, Ze) },
+                                        { className: F()(Ie, Ve) },
                                         n().createElement(
                                             'div',
-                                            { className: qe },
+                                            { className: Ge },
                                             R.strings.prebattle.hints.hint5.aid.header(),
                                         ),
                                         n().createElement(
                                             'div',
-                                            { className: Ke },
+                                            { className: je },
                                             R.strings.prebattle.hints.hint5.aid.description(),
                                         ),
                                     ),
                                 ),
                             );
                         },
-                        [Zu.NewbieHint6]: () => {
-                            const e = j(),
-                                u = $(e, ou, Au),
-                                t = $(e, ou, du),
-                                i = $(e, ou, mu),
-                                a = $(e, ou, Fu);
+                        [Vu.NewbieHint6]: () => {
+                            const e = P(),
+                                u = I(e, ru, su),
+                                t = I(e, ru, lu),
+                                i = I(e, ru, Eu),
+                                a = I(e, ru, ou);
                             return n().createElement(
-                                Q,
+                                q,
                                 {
                                     title: R.strings.prebattle.hints.hint6.header(),
                                     description: R.strings.prebattle.hints.hint6.description(),
                                 },
-                                n().createElement(ce, {
+                                n().createElement(ae, {
                                     image: 'R.images.gui.maps.icons.battleLoading.hints.newbie_hints.hint_06.background',
                                 }),
-                                n().createElement(ce, {
+                                n().createElement(ae, {
                                     image: 'R.images.gui.maps.icons.battleLoading.hints.newbie_hints.hint_06.area',
                                     hasBlind: !0,
                                 }),
-                                n().createElement(ce, {
+                                n().createElement(ae, {
                                     image: 'R.images.gui.maps.icons.battleLoading.hints.newbie_hints.hint_06.markers',
                                     hasBlind: !0,
                                 }),
-                                n().createElement(he, null),
+                                n().createElement(ce, null),
                                 n().createElement(
                                     'div',
-                                    { className: B()(au, ru, Eu), style: u },
+                                    { className: F()(eu, uu, nu), style: u },
                                     n().createElement(
                                         'div',
-                                        { className: su },
+                                        { className: tu },
                                         R.strings.prebattle.hints.hint6.visible(),
                                     ),
-                                    n().createElement('div', { className: lu }, R.strings.prebattle.hints.hint6.area()),
+                                    n().createElement('div', { className: iu }, R.strings.prebattle.hints.hint6.area()),
                                 ),
                                 n().createElement(
                                     'div',
-                                    { className: B()(au, ru), style: t },
+                                    { className: F()(eu, uu), style: t },
                                     n().createElement(
                                         'div',
-                                        { className: su },
+                                        { className: tu },
                                         R.strings.prebattle.hints.hint6.visible(),
                                     ),
-                                    n().createElement('div', { className: lu }, R.strings.prebattle.hints.hint6.shot()),
+                                    n().createElement('div', { className: iu }, R.strings.prebattle.hints.hint6.shot()),
                                 ),
                                 n().createElement(
                                     'div',
-                                    { className: B()(au, cu), style: i },
+                                    { className: F()(eu, au), style: i },
                                     n().createElement(
                                         'div',
-                                        { className: su },
+                                        { className: tu },
                                         R.strings.prebattle.hints.hint6.invisible(),
                                     ),
                                     n().createElement(
                                         'div',
-                                        { className: lu },
+                                        { className: iu },
                                         R.strings.prebattle.hints.hint6.object(),
                                     ),
                                 ),
                                 n().createElement(
                                     'div',
-                                    { className: au, style: a },
+                                    { className: eu, style: a },
                                     n().createElement(
                                         'div',
-                                        { className: su },
+                                        { className: tu },
                                         R.strings.prebattle.hints.hint6.invisible(),
                                     ),
                                     n().createElement(
                                         'div',
-                                        { className: lu },
+                                        { className: iu },
                                         R.strings.prebattle.hints.hint6.vegetation(),
                                     ),
                                 ),
                             );
                         },
-                        [Zu.NewbieHint7]: () => {
-                            const e = j(),
-                                u = Du.map(({ point: u, style: t }) => ({ point: $(e, gu, u), style: t }));
+                        [Vu.NewbieHint7]: () => {
+                            const e = P(),
+                                u = mu.map(({ point: u, style: t }) => ({ point: I(e, Au, u), style: t }));
                             return n().createElement(
-                                Q,
+                                q,
                                 {
                                     title: R.strings.prebattle.hints.hint7.header(),
                                     description: R.strings.prebattle.hints.hint7.description(),
                                 },
-                                n().createElement(ce, {
+                                n().createElement(ae, {
                                     image: 'R.images.gui.maps.icons.battleLoading.hints.newbie_hints.hint_07.background',
                                 }),
-                                n().createElement(he, null),
+                                n().createElement(ce, null),
                                 n().createElement(
                                     'div',
-                                    { className: hu.block },
+                                    { className: cu.block },
                                     n().createElement(
                                         'div',
-                                        { className: hu.win },
+                                        { className: cu.win },
                                         R.strings.prebattle.hints.hint7.victory(),
                                     ),
-                                    n().createElement('div', { className: hu.progress }),
+                                    n().createElement('div', { className: cu.progress }),
                                     n().createElement(
                                         'div',
-                                        { className: hu.reason },
+                                        { className: cu.reason },
                                         R.strings.prebattle.hints.hint7.base(),
                                     ),
                                 ),
                                 n().createElement(
                                     'div',
-                                    { className: B()(hu.block, hu.block__right) },
+                                    { className: F()(cu.block, cu.block__right) },
                                     n().createElement(
                                         'div',
-                                        { className: hu.win },
+                                        { className: cu.win },
                                         R.strings.prebattle.hints.hint7.victory(),
                                     ),
-                                    n().createElement('div', { className: hu.markers }),
+                                    n().createElement('div', { className: cu.markers }),
                                     n().createElement(
                                         'div',
-                                        { className: hu.reason },
+                                        { className: cu.reason },
                                         R.strings.prebattle.hints.hint7.vehicles(),
                                     ),
                                 ),
                                 u.map(({ point: e, style: u }) =>
                                     n().createElement('div', {
                                         key: e.top,
-                                        className: B()(hu.marker, hu[`marker__${u}`]),
+                                        className: F()(cu.marker, cu[`marker__${u}`]),
                                         style: e,
                                     }),
                                 ),
                                 n().createElement(
                                     'div',
-                                    { className: hu.circle },
+                                    { className: cu.circle },
                                     n().createElement(
                                         'div',
-                                        { className: hu.or },
+                                        { className: cu.or },
                                         R.strings.prebattle.hints.hint7.orLabel(),
                                     ),
                                 ),
                             );
                         },
-                        [Zu.NewbieHint8]: () =>
+                        [Vu.NewbieHint8]: () =>
                             n().createElement(
-                                Q,
+                                q,
                                 {
                                     title: R.strings.prebattle.hints.hint8.header(),
                                     description: R.strings.prebattle.hints.hint8.description(),
                                 },
-                                n().createElement(ce, {
+                                n().createElement(ae, {
                                     image: 'R.images.gui.maps.icons.battleLoading.hints.newbie_hints.hint_08.background',
                                 }),
-                                n().createElement(he, null),
+                                n().createElement(ce, null),
                                 n().createElement(
                                     'div',
-                                    { className: Bu },
-                                    n().createElement('div', { className: Cu }),
-                                    n().createElement('div', { className: vu }, R.strings.prebattle.hints.hint8.high()),
+                                    { className: Fu },
+                                    n().createElement('div', { className: _u }),
+                                    n().createElement('div', { className: Du }, R.strings.prebattle.hints.hint8.high()),
                                 ),
                                 n().createElement(
                                     'div',
-                                    { className: B()(Bu, bu) },
-                                    n().createElement('div', { className: B()(Cu, wu) }),
-                                    n().createElement('div', { className: vu }, R.strings.prebattle.hints.hint8.low()),
+                                    { className: F()(Fu, hu) },
+                                    n().createElement('div', { className: F()(_u, gu) }),
+                                    n().createElement('div', { className: Du }, R.strings.prebattle.hints.hint8.low()),
                                 ),
                             ),
-                        [Zu.NewbieHint9]: () =>
+                        [Vu.NewbieHint9]: () =>
                             n().createElement(
-                                Q,
+                                q,
                                 {
                                     title: R.strings.prebattle.hints.hint9.header(),
                                     description: R.strings.prebattle.hints.hint9.description(),
                                 },
-                                n().createElement(ce, {
+                                n().createElement(ae, {
                                     image: 'R.images.gui.maps.icons.battleLoading.hints.newbie_hints.hint_09.background',
                                 }),
-                                n().createElement(he, null),
+                                n().createElement(ce, null),
                             ),
-                        [Zu.NewbieHint10]: () => {
-                            const e = x().mediaSize,
-                                u = j(),
-                                t = e <= w.ExtraSmall,
-                                i = t ? Hu : Ru,
-                                a = t ? ku : Tu,
-                                r = t ? Pu : Mu,
-                                s = $(u, i, t ? Ou : Su),
-                                l = $(u, i, a),
-                                E = $(u, i, r);
+                        [Vu.NewbieHint10]: () => {
+                            const e = b().mediaSize,
+                                u = P(),
+                                t = e <= g.ExtraSmall,
+                                i = t ? yu : xu,
+                                a = t ? Ru : Lu,
+                                r = t ? Su : Hu,
+                                s = I(u, i, t ? Nu : fu),
+                                l = I(u, i, a),
+                                E = I(u, i, r);
                             return n().createElement(
-                                Q,
+                                q,
                                 {
                                     title: R.strings.prebattle.hints.hint10.header(),
                                     description: R.strings.prebattle.hints.hint10.description(),
                                 },
-                                n().createElement(ce, {
+                                n().createElement(ae, {
                                     image: 'R.images.gui.maps.icons.battleLoading.hints.newbie_hints.hint_10.background',
                                 }),
-                                n().createElement(he, null),
-                                n().createElement(ce, {
+                                n().createElement(ce, null),
+                                n().createElement(ae, {
                                     image: 'R.images.gui.maps.icons.battleLoading.hints.newbie_hints.hint_10.sniper',
                                 }),
-                                n().createElement(ce, {
+                                n().createElement(ae, {
                                     image:
                                         'R.images.gui.maps.icons.battleLoading.hints.newbie_hints.hint_10.guides_' +
                                         (t ? 'small' : 'big'),
                                 }),
-                                n().createElement(ce, {
+                                n().createElement(ae, {
                                     image: `R.images.gui.maps.icons.battleLoading.hints.newbie_hints.hint_10.center_${e}`,
                                 }),
                                 n().createElement(
                                     'div',
-                                    { className: B()(pu, xu, fu), style: s },
+                                    { className: F()(Bu, bu, Cu), style: s },
                                     n().createElement(
                                         'div',
-                                        { className: yu },
+                                        { className: wu },
                                         R.strings.prebattle.hints.hint10.penetration.header(),
                                     ),
                                     n().createElement(
                                         'div',
-                                        { className: Nu },
+                                        { className: vu },
                                         R.strings.prebattle.hints.hint10.penetration.description(),
                                     ),
                                 ),
                                 n().createElement(
                                     'div',
-                                    { className: B()(pu, xu, fu), style: l },
+                                    { className: F()(Bu, bu, Cu), style: l },
                                     n().createElement(
                                         'div',
-                                        { className: yu },
+                                        { className: wu },
                                         R.strings.prebattle.hints.hint10.spread.header(),
                                     ),
                                     n().createElement(
                                         'div',
-                                        { className: Nu },
+                                        { className: vu },
                                         R.strings.prebattle.hints.hint10.spread.description(),
                                     ),
                                 ),
                                 n().createElement(
                                     'div',
-                                    { className: B()(pu, Lu, fu), style: E },
+                                    { className: F()(Bu, pu, Cu), style: E },
                                     n().createElement(
                                         'div',
-                                        { className: yu },
+                                        { className: wu },
                                         R.strings.prebattle.hints.hint10.reloading.header(),
                                     ),
                                     n().createElement(
                                         'div',
-                                        { className: Nu },
+                                        { className: vu },
                                         R.strings.prebattle.hints.hint10.reloading.description(),
                                     ),
                                 ),
                             );
                         },
-                        [Zu.NewbieHint12]: () => {
-                            const e = j(),
-                                u = $(e, $u, qu),
-                                t = $(e, $u, Vu),
-                                i = B()(Wu, Iu);
+                        [Vu.NewbieHint12]: () => {
+                            const e = P(),
+                                u = I(e, Iu, Gu),
+                                t = I(e, Iu, Uu),
+                                i = F()(Ou, Mu);
                             return n().createElement(
-                                Q,
+                                q,
                                 {
                                     title: R.strings.prebattle.hints.hint12.header(),
                                     description: R.strings.prebattle.hints.hint12.description(),
                                 },
-                                n().createElement(ce, {
+                                n().createElement(ae, {
                                     image: 'R.images.gui.maps.icons.battleLoading.hints.newbie_hints.hint_12.background',
                                 }),
-                                n().createElement(he, null),
+                                n().createElement(ce, null),
                                 n().createElement(
                                     'div',
                                     { className: i, style: t },
                                     n().createElement(
                                         'div',
-                                        { className: Gu },
+                                        { className: Tu },
                                         R.strings.prebattle.hints.hint12.notPenetrated.header(),
                                     ),
                                     n().createElement(
                                         'div',
-                                        { className: B()(Uu, ju) },
+                                        { className: F()(ku, Pu) },
                                         R.strings.prebattle.hints.hint12.notPenetrated.description(),
                                     ),
                                 ),
@@ -2211,53 +2235,53 @@
                                     { className: i, style: u },
                                     n().createElement(
                                         'div',
-                                        { className: Gu },
+                                        { className: Tu },
                                         R.strings.prebattle.hints.hint12.penetrated.header(),
                                     ),
                                     n().createElement(
                                         'div',
-                                        { className: B()(Uu, zu) },
+                                        { className: F()(ku, Wu) },
                                         R.strings.prebattle.hints.hint12.penetrated.description(),
                                     ),
                                 ),
                             );
                         },
-                        [Zu.NewbieHint13]: () => {
-                            const e = j(),
-                                u = $(e, Ku, Yu),
-                                t = $(e, Ku, Xu),
-                                i = B()(ke, Pe);
+                        [Vu.NewbieHint13]: () => {
+                            const e = P(),
+                                u = I(e, ju, $u),
+                                t = I(e, ju, zu),
+                                i = F()(Re, Se);
                             return n().createElement(
-                                Q,
+                                q,
                                 {
                                     title: R.strings.prebattle.hints.hint13.header(),
                                     description: R.strings.prebattle.hints.hint13.description(),
                                 },
-                                n().createElement(ce, {
+                                n().createElement(ae, {
                                     image: 'R.images.gui.maps.icons.battleLoading.hints.newbie_hints.hint_13.background',
                                 }),
-                                n().createElement(ce, {
+                                n().createElement(ae, {
                                     image: 'R.images.gui.maps.icons.battleLoading.hints.newbie_hints.hint_13.ally',
                                 }),
-                                n().createElement(ce, {
+                                n().createElement(ae, {
                                     image: 'R.images.gui.maps.icons.battleLoading.hints.newbie_hints.hint_13.enemy',
                                     hasBlind: !0,
                                 }),
-                                n().createElement(ce, {
+                                n().createElement(ae, {
                                     image: 'R.images.gui.maps.icons.battleLoading.hints.newbie_hints.hint_13.items',
                                 }),
-                                n().createElement(he, null),
+                                n().createElement(ce, null),
                                 n().createElement(
                                     'div',
                                     { className: i, style: u },
                                     n().createElement(
                                         'div',
-                                        { className: We },
+                                        { className: Oe },
                                         R.strings.prebattle.hints.hint13.invisible.header(),
                                     ),
                                     n().createElement(
                                         'div',
-                                        { className: Ie },
+                                        { className: Me },
                                         R.strings.prebattle.hints.hint13.invisible.description(),
                                     ),
                                 ),
@@ -2266,69 +2290,69 @@
                                     { className: i, style: t },
                                     n().createElement(
                                         'div',
-                                        { className: We },
+                                        { className: Oe },
                                         R.strings.prebattle.hints.hint13.visible.header(),
                                     ),
                                     n().createElement(
                                         'div',
-                                        { className: Ie },
+                                        { className: Me },
                                         R.strings.prebattle.hints.hint13.visible.description(),
                                     ),
                                 ),
                             );
                         },
                     },
-                    Ju = 'App_base_4f',
-                    et = 'App_status_0a',
-                    ut = 'App_spinner_12',
-                    tt = 'App_loading_11',
-                    it = 'App_manual_57',
-                    nt = 'App_manual__narrow_6c',
-                    at = 'App_info_14',
-                    rt = [Zu.NewbieHint13],
-                    st = (0, P.Pi)(() => {
-                        const e = se().model.get(),
+                    Ku = 'App_base_4f',
+                    Yu = 'App_status_0a',
+                    Xu = 'App_spinner_12',
+                    Zu = 'App_loading_11',
+                    Qu = 'App_manual_57',
+                    Ju = 'App_manual__narrow_6c',
+                    et = 'App_info_14',
+                    ut = [Vu.NewbieHint13],
+                    tt = (0, S.Pi)(() => {
+                        const e = te().model.get(),
                             u = e.hintType,
                             t = e.canSkip,
-                            i = (0, W.useSpring)({
+                            i = (0, O.useSpring)({
                                 from: { opacity: 0 },
                                 to: { opacity: 1 },
                                 config: { duration: 100 },
                                 delay: 600,
                             }),
-                            a = Qu[u];
+                            a = qu[u];
                         return a
                             ? n().createElement(
-                                  W.animated.div,
-                                  { className: Ju, style: i },
+                                  O.animated.div,
+                                  { className: Ku, style: i },
                                   n().createElement(a, null),
                                   n().createElement(
                                       'div',
-                                      { className: et },
+                                      { className: Yu },
                                       t
                                           ? R.strings.prebattle.hints.skip()
                                           : n().createElement(
                                                 'div',
-                                                { className: tt },
-                                                n().createElement('div', { className: ut }),
+                                                { className: Zu },
+                                                n().createElement('div', { className: Xu }),
                                                 n().createElement('div', null, R.strings.prebattle.hints.loading()),
                                             ),
                                   ),
                                   n().createElement(
                                       'div',
-                                      { className: B()(it, rt.includes(u) && nt) },
+                                      { className: F()(Qu, ut.includes(u) && Ju) },
                                       R.strings.prebattle.hints.manual(),
-                                      n().createElement('div', { className: at }),
+                                      n().createElement('div', { className: et }),
                                   ),
                               )
                             : null;
                     });
                 engine.whenReady.then(() => {
-                    M().render(
+                    H().render(
                         n().createElement(
-                            g,
+                            A,
                             null,
-                            n().createElement(T, null, n().createElement(re, null, n().createElement(st, null))),
+                            n().createElement(N, null, n().createElement(ue, null, n().createElement(tt, null))),
                         ),
                         document.getElementById('root'),
                     );

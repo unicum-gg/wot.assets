@@ -256,6 +256,10 @@ body {
     overflow: hidden;
 }
 
+.mediaSmallHeight .SetupApp_base__padding_df {
+    padding-top: 78rem;
+}
+
 .SetupApp_close_da {
     position: absolute;
     top: 51rem;
@@ -299,6 +303,10 @@ body {
 .SetupApp_content__hidden_78 {
     opacity: 0;
     animation: SetupApp_hide-app_29 0.3s ease-in;
+}
+
+.SetupApp_content__padding_25 {
+    padding-top: 20rem;
 }
 
 .SetupApp_panel_42 {
@@ -1208,11 +1216,12 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     display: flex;
     width: 100%;
     height: 13rem;
+    visibility: hidden;
     position: relative;
 }
 
-.HorizontalBar_base__nonActive_82 {
-    visibility: hidden;
+.HorizontalBar_base__active_5e {
+    visibility: visible;
 }
 
 .HorizontalBar_base_49 .disable,
@@ -1309,11 +1318,12 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     flex-direction: column;
     width: 13rem;
     height: 100%;
+    visibility: hidden;
     position: relative;
 }
 
-.VerticalBar_base__nonActive_42 {
-    visibility: hidden;
+.VerticalBar_base__active_72 {
+    visibility: visible;
 }
 
 .VerticalBar_base_f3 .disable,
@@ -2333,8 +2343,8 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .Location_icon_7f {
-    width: 30rem;
-    height: 30rem;
+    width: 34rem;
+    height: 24rem;
     background: no-repeat center / contain;
 }
 
@@ -2347,7 +2357,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .Location_base__vehicle_a9 .Location_icon_7f {
-    background-image: url('R.images.gui.maps.icons.tanksetup.proposals.location.tank.png');
+    background-image: url('R.images.gui.maps.icons.tanksetup.proposals.location.tank');
 }
 
 .Location_count_45 {
@@ -2375,10 +2385,8 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     position: relative;
 }
 .Currency_icon_c5 {
-    --icon-height: 16rem;
-    --icon-width: var(--icon-height);
-    width: var(--icon-width);
-    height: var(--icon-height);
+    width: 16rem;
+    height: 16rem;
     background-repeat: no-repeat;
     background-size: contain;
     position: relative;
@@ -2397,7 +2405,8 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     background-image: url('R.images.gui.maps.icons.library.CreditsIcon_1');
 }
 .Currency_icon__credits-large_ac {
-    --icon-height: 48rem;
+    width: 48rem;
+    height: 48rem;
     margin-left: -1rem;
     background-image: url('R.images.gui.maps.shop.rewards.c_48x48.money_silver');
 }
@@ -2405,7 +2414,8 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     transform: translateY(4rem);
 }
 .Currency_icon__credits-extraLarge_16 {
-    --icon-height: 80rem;
+    width: 80rem;
+    height: 80rem;
     margin-right: -2rem;
     background-image: url('R.images.gui.maps.icons.library.credits_icon_80x80');
 }
@@ -2422,7 +2432,8 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     transform: translateY(4rem);
 }
 .Currency_icon__gold-large_36 {
-    --icon-height: 48rem;
+    width: 48rem;
+    height: 48rem;
     margin-left: -1rem;
     background-image: url('R.images.gui.maps.shop.rewards.c_48x48.money_gold');
 }
@@ -2430,7 +2441,8 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     transform: translateY(4rem);
 }
 .Currency_icon__gold-extraLarge_a0 {
-    --icon-height: 80rem;
+    width: 80rem;
+    height: 80rem;
     background-image: url('R.images.gui.maps.icons.library.gold_icon_80x80');
 }
 .Currency_icon__crystal-small_27 {
@@ -2440,20 +2452,22 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     transform: translateY(2rem);
 }
 .Currency_icon__crystal-big_cd {
-    --icon-height: 22rem;
-    --icon-width: 23rem;
+    width: 23rem;
+    height: 22rem;
     background-image: url('R.images.gui.maps.icons.library.crystal_23x22');
 }
 .Currency_base__big_bc .Currency_icon__crystal-big_cd {
     transform: translateY(4rem);
 }
 .Currency_icon__crystal-large_d3 {
-    --icon-height: 48rem;
+    width: 48rem;
+    height: 48rem;
     margin-left: -1rem;
     background-image: url('R.images.gui.maps.shop.rewards.c_48x48.money_bonds');
 }
 .Currency_icon__crystal-extraLarge_09 {
-    --icon-height: 80rem;
+    width: 80rem;
+    height: 80rem;
     background-image: url('R.images.gui.maps.icons.library.crystal_80x80');
 }
 .Currency_base__extraLarge_4d .Currency_icon__crystal-extraLarge_09 {
@@ -2466,8 +2480,8 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     transform: translateY(1rem);
 }
 .Currency_icon__xp-big_97 {
-    --icon-height: 22rem;
-    --icon-width: 23rem;
+    width: 23rem;
+    height: 22rem;
     margin-left: -5rem;
     background-image: url('R.images.gui.maps.icons.library.xpIcon_23x22');
 }
@@ -2475,12 +2489,14 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     transform: translateY(2rem);
 }
 .Currency_icon__xp-large_6b {
-    --icon-height: 48rem;
+    width: 48rem;
+    height: 48rem;
     margin: 0 -5rem 0 -6rem;
     background-image: url('R.images.gui.maps.shop.rewards.c_48x48.exp');
 }
 .Currency_icon__xp-extraLarge_67 {
-    --icon-height: 80rem;
+    width: 80rem;
+    height: 80rem;
     margin: 0 -5rem;
     background-image: url('R.images.gui.maps.icons.library.xp_tank_icon_80x80');
 }
@@ -2491,17 +2507,20 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     transform: translateY(1rem);
 }
 .Currency_icon__freeXP-big_21 {
-    --icon-height: 24rem;
+    width: 24rem;
+    height: 24rem;
     margin-left: -5rem;
     background-image: url('R.images.gui.maps.icons.library.freeXPIconBig24x24');
 }
 .Currency_icon__freeXP-large_c8 {
-    --icon-height: 48rem;
+    width: 48rem;
+    height: 48rem;
     margin: 0 -5rem 0 -6rem;
     background-image: url('R.images.gui.maps.shop.rewards.c_48x48.freeExp');
 }
 .Currency_icon__freeXP-extraLarge_58 {
-    --icon-height: 80rem;
+    width: 80rem;
+    height: 80rem;
     margin: 0 -5rem;
     background-image: url('R.images.gui.maps.icons.library.free_xp_icon_80x80');
 }
@@ -2515,17 +2534,20 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     transform: translateY(1rem);
 }
 .Currency_icon__eliteXP-big_c0 {
-    --icon-height: 24rem;
+    width: 24rem;
+    height: 24rem;
     margin-left: -5rem;
     background-image: url('R.images.gui.maps.icons.library.EliteXpIconBig');
 }
 .Currency_icon__eliteXP-large_1b {
-    --icon-height: 48rem;
+    width: 48rem;
+    height: 48rem;
     margin: 0 -5rem 0 -6rem;
     background-image: url('R.images.gui.maps.icons.library.elite_exp_48x48');
 }
 .Currency_icon__eliteXP-extraLarge_9b {
-    --icon-height: 80rem;
+    width: 80rem;
+    height: 80rem;
     margin: 0 -5rem;
     background-image: url('R.images.gui.maps.icons.library.elite_exp_80x80');
 }
@@ -2533,7 +2555,8 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     transform: translateY(4rem);
 }
 .Currency_icon__equipCoin-small_32 {
-    --icon-height: 16rem;
+    width: 16rem;
+    height: 16rem;
     margin-right: -2rem;
     background-image: url('R.images.gui.maps.icons.library.equipCoin_1');
 }
@@ -2541,19 +2564,22 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     transform: translateX(-1rem) translateY(1rem);
 }
 .Currency_icon__equipCoin-big_79 {
-    --icon-height: 24rem;
+    width: 24rem;
+    height: 24rem;
     background-image: url('R.images.gui.maps.icons.library.equipCoinBig');
 }
 .Currency_base__big_bc .Currency_icon__equipCoin-big_79 {
     transform: translateX(-5rem) translateY(3rem);
 }
 .Currency_icon__equipCoin-large_2c {
-    --icon-height: 48rem;
+    width: 48rem;
+    height: 48rem;
     margin-right: 2rem;
     background-image: url('R.images.gui.maps.shop.rewards.c_48x48.equipCoin');
 }
 .Currency_icon__equipCoin-extraLarge_8a {
-    --icon-height: 80rem;
+    width: 80rem;
+    height: 80rem;
     margin-right: 8rem;
     background-image: url('R.images.gui.maps.icons.library.equipCoin_icon_80x80');
 }
@@ -2563,8 +2589,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .Currency_value_e1 {
     /* font-size inherit does not work here, so 1em means the size does not change */
     /* stylelint-disable-next-line */
-    --font-size: 1em;
-    font-size: var(--font-size);
+    font-size: 1em;
     position: relative;
     z-index: 2;
 }
@@ -2572,22 +2597,22 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     padding-right: 2rem;
 }
 .Currency_base__big_bc .Currency_value_e1 {
-    --font-size: 24rem;
     padding-right: 5rem;
+    font-size: 24rem;
     font-weight: 700;
 }
 .Currency_base__big_bc .Currency_value_e1 + .Currency_icon_c5 {
     font-size: 24rem;
 }
 .Currency_base__large_65 .Currency_value_e1 {
-    --font-size: 36rem;
+    font-size: 36rem;
     font-weight: 700;
 }
 .Currency_base__large_65 .Currency_value_e1 + .Currency_icon_c5 {
     font-size: 36rem;
 }
 .Currency_base__extraLarge_4d .Currency_value_e1 {
-    --font-size: 56rem;
+    font-size: 56rem;
     font-weight: 700;
 }
 .Currency_value__freeXP_cb {
@@ -4220,14 +4245,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     bottom: 120rem;
 }
 
-.PopularLoadouts_shine1_08 {
-    animation: PopularLoadouts_shine1_08 1s ease-in-out;
-}
-
-.PopularLoadouts_shine2_47 {
-    animation: PopularLoadouts_shine2_47 1s ease-in-out;
-}
-
 .PopularLoadouts_border_d5 {
     width: 286rem;
     height: 40rem;
@@ -4433,26 +4450,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .PopularLoadouts_footer_arrowRight_37 {
     margin-left: -2rem;
     transform: scaleX(-1);
-}
-
-@keyframes PopularLoadouts_shine1_08 {
-    0% {
-        transform: translateX(0%) translateY(0%);
-    }
-
-    100% {
-        transform: translateX(100%) translateY(100%);
-    }
-}
-
-@keyframes PopularLoadouts_shine2_47 {
-    0% {
-        transform: translateX(0%) translateY(0%);
-    }
-
-    100% {
-        transform: translateX(100%) translateY(100%);
-    }
 }
 
 .TankName_base__medium_13 {

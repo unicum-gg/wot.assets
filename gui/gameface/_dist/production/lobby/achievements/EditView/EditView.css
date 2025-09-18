@@ -144,11 +144,12 @@
     display: flex;
     width: 100%;
     height: 13rem;
+    visibility: hidden;
     position: relative;
 }
 
-.HorizontalBar_base__nonActive_82 {
-    visibility: hidden;
+.HorizontalBar_base__active_5e {
+    visibility: visible;
 }
 
 .HorizontalBar_base_49 .disable,
@@ -245,11 +246,12 @@
     flex-direction: column;
     width: 13rem;
     height: 100%;
+    visibility: hidden;
     position: relative;
 }
 
-.VerticalBar_base__nonActive_42 {
-    visibility: hidden;
+.VerticalBar_base__active_72 {
+    visibility: visible;
 }
 
 .VerticalBar_base_f3 .disable,
@@ -1244,7 +1246,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .Header_frame_9c {
     width: 40rem;
     height: 40rem;
-    background: url('R.images.gui.maps.icons.components.checkbox.checkbox_m.png') no-repeat 50% / contain;
+    background: url('R.images.gui.maps.icons.components.checkbox.checkbox_m') no-repeat 50% / contain;
     opacity: 0;
     position: absolute;
     top: 0;
@@ -1254,7 +1256,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .mediaLarge .Header_frame_9c {
     width: 46rem;
     height: 46rem;
-    background-image: url('R.images.gui.maps.icons.components.checkbox.checkbox_l.png');
+    background-image: url('R.images.gui.maps.icons.components.checkbox.checkbox_l');
     transform: translate(-24%, -23%);
 }
 .Header_frame__animate_74 {

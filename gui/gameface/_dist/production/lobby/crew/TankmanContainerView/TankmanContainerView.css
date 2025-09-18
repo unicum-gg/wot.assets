@@ -156,11 +156,12 @@
     display: flex;
     width: 100%;
     height: 13rem;
+    visibility: hidden;
     position: relative;
 }
 
-.HorizontalBar_base__nonActive_82 {
-    visibility: hidden;
+.HorizontalBar_base__active_5e {
+    visibility: visible;
 }
 
 .HorizontalBar_base_49 .disable,
@@ -257,11 +258,12 @@
     flex-direction: column;
     width: 13rem;
     height: 100%;
+    visibility: hidden;
     position: relative;
 }
 
-.VerticalBar_base__nonActive_42 {
-    visibility: hidden;
+.VerticalBar_base__active_72 {
+    visibility: visible;
 }
 
 .VerticalBar_base_f3 .disable,
@@ -833,181 +835,6 @@
     top: 10rem;
     right: 8rem;
     bottom: 0;
-}
-
-.TextButton_base_b6 {
-    display: flex;
-    align-items: center;
-    padding: 0 3rem;
-    font-size: 12rem;
-    position: relative;
-    cursor: pointer;
-}
-
-.TextButton_base__right_39 {
-    flex-direction: row-reverse;
-}
-.TextButton_icon_17 {
-    width: 32rem;
-    height: 32rem;
-    background: no-repeat center / contain;
-    position: relative;
-}
-.TextButton_icon__back_43,
-.TextButton_icon__forward_59 {
-    margin: -1rem -5rem;
-    background-image: url('R.images.gui.maps.icons.components.text_button.back');
-    transform: translateY(1rem);
-}
-.TextButton_icon__forward_59 {
-    transform: rotate(180deg) translateY(1rem);
-}
-.TextButton_icon__close_53 {
-    margin: -1rem 0;
-    background-image: url('R.images.gui.maps.icons.components.text_button.close');
-}
-.TextButton_icon__info_33 {
-    margin: -1rem -5rem;
-    background-image: url('R.images.gui.maps.icons.components.text_button.info');
-}
-.TextButton_glow_a4 {
-    width: 100%;
-    height: 100%;
-    background: no-repeat center / contain;
-    opacity: 0;
-    position: absolute;
-    top: 0;
-    transition: opacity 0.16s;
-}
-.TextButton_icon__back_43 .TextButton_glow_a4,
-.TextButton_icon__forward_59 .TextButton_glow_a4 {
-    background-image: url('R.images.gui.maps.icons.components.text_button.back_hover');
-}
-.TextButton_icon__close_53 .TextButton_glow_a4 {
-    background-image: url('R.images.gui.maps.icons.components.text_button.close_hover');
-}
-.TextButton_icon__info_33 .TextButton_glow_a4 {
-    background-image: url('R.images.gui.maps.icons.components.text_button.info_hover');
-}
-.TextButton_base_b6:hover .TextButton_glow_a4 {
-    opacity: 1;
-}
-.TextButton_base_b6:active .TextButton_glow_a4 {
-    opacity: 0;
-}
-.TextButton_caption_82 {
-    position: relative;
-    transition:
-        color 0.16s,
-        text-shadow 0.16s;
-}
-.TextButton_caption__back_b9,
-.TextButton_caption__forward_4e,
-.TextButton_caption__close_36 {
-    color: #ffdd99;
-    text-shadow:
-        0 0 10rem rgba(255, 42, 0, 1),
-        0 0 10rem rgba(255, 42, 0, 0.4),
-        0 0 10rem rgba(255, 42, 0, 0.4),
-        0 0 2rem rgba(255, 42, 0, 0.4),
-        0 0 1rem rgba(255, 42, 0, 0.4),
-        0 0 2rem rgba(255, 42, 0, 0.4),
-        0 0 1rem rgba(255, 42, 0, 0.4);
-}
-.TextButton_base_b6:hover .TextButton_caption__back_b9,
-.TextButton_base_b6:hover .TextButton_caption__forward_4e,
-.TextButton_base_b6:hover .TextButton_caption__close_36 {
-    color: #fffa9f;
-}
-.TextButton_base_b6:active .TextButton_caption__back_b9,
-.TextButton_base_b6:active .TextButton_caption__forward_4e,
-.TextButton_base_b6:active .TextButton_caption__close_36 {
-    color: #ffdd99;
-}
-.TextButton_caption__info_23 {
-    padding: 0 5rem;
-    color: #ccffff;
-    text-shadow:
-        0 0 12rem rgba(31, 68, 255, 0.8),
-        0 0 8rem #00eaff;
-}
-.TextButton_base_b6:hover .TextButton_caption__info_23 {
-    color: #e3ffff;
-    text-shadow:
-        0 0 12rem rgba(31, 68, 255, 0.8),
-        0 0 12rem rgba(0, 234, 255, 1),
-        0 0 8rem #00eaff;
-}
-.TextButton_base_b6:active .TextButton_caption__info_23 {
-    color: #ccffff;
-    text-shadow:
-        0 0 12rem rgba(31, 68, 255, 0.6),
-        0 0 8rem #00eaff;
-}
-.TextButton_goto_e7 {
-    color: #7c7c6c;
-}
-.TextButton_base__left_ff .TextButton_goto_e7 {
-    margin-left: 8rem;
-}
-.TextButton_base__right_39 .TextButton_goto_e7 {
-    margin-right: 8rem;
-}
-.TextButton_shine_e2 {
-    width: 90rem;
-    height: 40rem;
-    background: url('R.images.gui.maps.icons.components.text_button.shine') no-repeat center / contain;
-    opacity: 0;
-    position: absolute;
-    top: -4rem;
-    transition: opacity 0.16s;
-    pointer-events: none;
-}
-.TextButton_base__left_ff .TextButton_shine_e2 {
-    left: -4rem;
-}
-.TextButton_base__right_39 .TextButton_shine_e2 {
-    right: -4rem;
-    transform: rotate(180deg);
-}
-.TextButton_base_b6:hover .TextButton_shine_e2 {
-    opacity: 1;
-}
-.TextButton_base_b6:active .TextButton_shine_e2 {
-    opacity: 0;
-}
-
-.common_close_0e {
-    margin-left: 20rem;
-}
-
-.TopButtons_base_ef {
-    display: flex;
-    position: absolute;
-    top: 11rem;
-    right: 8rem;
-    left: 10rem;
-    z-index: 1;
-}
-
-.mediaSmall .TopButtons_base_ef {
-    top: 21rem;
-    right: 18rem;
-    left: 21rem;
-}
-
-.TopButtons_leftButtons_9e {
-    display: flex;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-.TopButtons_rightButtons_33 {
-    display: flex;
-    position: absolute;
-    top: 0;
-    right: 0;
 }
 
 .TankName_base_f1 {
@@ -2697,6 +2524,34 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     width: 408rem;
 }
 
+.Error_base_46 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-70%);
+}
+
+.Error_alertIcon_04 {
+    width: 35rem;
+    height: 30rem;
+    margin-bottom: 10rem;
+    background: url('R.images.gui.maps.icons.library.icon_alert_32x32') no-repeat 50% 50% / contain;
+}
+
+.Error_errorCaption_f2 {
+    margin-bottom: 15rem;
+    color: #ee7000;
+    font-size: 14rem;
+    text-align: center;
+}
+
+.Error_button_cd {
+    width: 100rem;
+}
+
 .Spinner_base_87 {
     width: 260rem;
     height: 260rem;
@@ -2748,34 +2603,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     100% {
         transform: rotate(20deg);
     }
-}
-
-.Error_base_46 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-70%);
-}
-
-.Error_alertIcon_04 {
-    width: 35rem;
-    height: 30rem;
-    margin-bottom: 10rem;
-    background: url('R.images.gui.maps.icons.library.icon_alert_32x32') no-repeat 50% 50% / contain;
-}
-
-.Error_errorCaption_f2 {
-    margin-bottom: 15rem;
-    color: #ee7000;
-    font-size: 14rem;
-    text-align: center;
-}
-
-.Error_button_cd {
-    width: 100rem;
 }
 
 .Waiting_base_c5 {
@@ -2951,7 +2778,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .FilterToggleGroup_base__inPopup_11 .FilterToggleGroup_toggle_d4 {
     width: 30rem;
     height: 20rem;
-    margin: 0 15rem 14rem 0;
+    margin: 0 12rem 14rem 0;
 }
 
 .NumberRange_base_5e {
@@ -3428,7 +3255,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .WarningText_icon_5d {
     width: 24rem;
     height: 24rem;
-    background: url('R.images.gui.maps.icons.library.alertBigIcon.bg') no-repeat 50% / 24rem 24rem;
+    background: url('R.images.gui.maps.icons.library.alertBigIcon') no-repeat 50% / 24rem 24rem;
     position: relative;
     top: 1rem;
 }
@@ -4546,11 +4373,11 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 /* stylelint-disable-line */
 .ProgressBar_base_45 {
     width: 100%;
-    height: 12rem;
+    height: var(--progress-bg-height);
     position: relative;
 }
 .ProgressBar_base__small_df {
-    height: 2rem;
+    height: var(--progress-bg-height-small);
 }
 .ProgressBar_background_51 {
     width: 100%;
@@ -4559,13 +4386,13 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     background-image: var(--progress-base);
     background-repeat: repeat;
     background-position: 0 50%;
-    background-size: 3rem 10rem;
+    background-size: var(--progress-pattern-size);
     position: absolute;
     top: 0;
     left: 0;
 }
 .ProgressBar_background__small_46 {
-    height: 2rem;
+    height: var(--progress-bg-height-small);
 }
 .ProgressBar_lineWrapper_6a {
     display: flex;
@@ -4573,11 +4400,11 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .ProgressBarBlink_base_24 {
-    width: 60rem;
-    height: 100rem;
+    width: var(--progress-glow-width);
+    height: var(--progress-glow-height);
     background-image: var(--progress-glow);
     background-size: contain;
-    mix-blend-mode: lighten;
+    mix-blend-mode: var(--progress-glow-mixBlendMode);
     position: absolute;
     top: 50%;
     right: 0;
@@ -4586,33 +4413,9 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .ProgressBarBlink_base__small_0f {
-    width: 44rem;
-    height: 43rem;
+    width: var(--progress-glow-small-width);
+    height: var(--progress-glow-small-height);
     background-image: var(--progress-glow-small);
-}
-
-/*
-    Gameface can't calculate gradient biggest than 8128px
-    in JS 8000 reserved like anchor for start optimization
-*/
-/* stylelint-disable-line */
-.ProgressBarDeltaSimple_base_6c {
-    width: 0;
-    height: 100%;
-    position: absolute;
-    top: 0;
-}
-.ProgressBarDeltaSimple_delta_99 {
-    width: 0;
-    max-width: 8001px;
-    height: 100%;
-    box-shadow: var(--progress-delta-shadow);
-    background-color: var(--progress-delta-color);
-    position: absolute;
-    bottom: 0;
-    transform-origin: right center;
-    transition-timing-function: cubic-bezier(1, 0, 0.92, 1), cubic-bezier(0.21, 0.61, 0.35, 1);
-    transition-property: width, transform;
 }
 
 /*
@@ -4624,6 +4427,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     max-width: 8001px;
     height: 100%;
     background-color: var(--progress-line-base);
+    filter: var(--progress-line-filter);
     position: relative;
     transition-timing-function: cubic-bezier(1, 0, 0.92, 1);
     transition-property: width;
@@ -4642,12 +4446,12 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     background-image: var(--progress-pattern-base);
     background-repeat: repeat;
     background-position: 0 50%;
-    background-size: 3rem 10rem;
+    background-size: var(--progress-pattern-size);
     position: absolute;
-    top: 1rem;
-    right: 1rem;
-    bottom: 1rem;
-    left: 1rem;
+    top: var(--progress-pattern-border-size);
+    right: var(--progress-pattern-border-size);
+    bottom: var(--progress-pattern-border-size);
+    left: var(--progress-pattern-border-size);
 }
 .ProgressLineImpose_base__small_55 .ProgressLineImpose_pattern_1c {
     top: 0;
@@ -4662,12 +4466,12 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 .ProgressLineImpose_gradient_35 {
     max-width: 8001px;
-    background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.75));
-    mix-blend-mode: overlay;
+    background-image: var(--progress-pattern-gradient);
+    mix-blend-mode: var(--progress-pattern-gradient-mixBlendMode);
     position: absolute;
-    top: 1rem;
+    top: var(--progress-pattern-border-size);
     right: 0;
-    bottom: 1rem;
+    bottom: var(--progress-pattern-border-size);
     left: 0;
 }
 .ProgressLineImpose_base__small_55 .ProgressLineImpose_gradient_35 {
@@ -4678,15 +4482,15 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     display: none;
 }
 .ProgressLineImpose_base__finished_d4 .ProgressLineImpose_gradient_35 {
-    background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.75), rgba(0, 0, 0, 0.5));
+    background-image: var(--progress-pattern-gradient-finished);
 }
 .ProgressLineImpose_glow_a5 {
-    width: 60rem;
+    width: var(--progress-glow-width);
     max-width: 8001px;
-    height: 100rem;
+    height: var(--progress-glow-height);
     background-image: var(--progress-glow);
     background-size: contain;
-    mix-blend-mode: lighten;
+    mix-blend-mode: var(--progress-glow-mixBlendMode);
     position: absolute;
     top: 50%;
     left: 100%;
@@ -4694,15 +4498,15 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     pointer-events: none;
 }
 .ProgressLineImpose_glow__left_d8 {
-    left: 1rem;
+    left: var(--progress-pattern-border-size);
 }
 .ProgressLineImpose_base__disabled_cc .ProgressLineImpose_glow_a5,
 .ProgressLineImpose_base__finished_d4 .ProgressLineImpose_glow_a5 {
     display: none;
 }
 .ProgressLineImpose_base__small_55 .ProgressLineImpose_glow_a5 {
-    width: 44rem;
-    height: 43rem;
+    width: var(--progress-glow-small-width);
+    height: var(--progress-glow-small-height);
     background-image: var(--progress-glow-small);
 }
 
@@ -4736,6 +4540,30 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 .ProgressBarDeltaGrow_base__withoutBounce_b5 .ProgressBarDeltaGrow_glow_68 {
     transition-timing-function: cubic-bezier(1, 0, 0.75, 0.75);
+}
+
+/*
+    Gameface can't calculate gradient biggest than 8128px
+    in JS 8000 reserved like anchor for start optimization
+*/
+/* stylelint-disable-line */
+.ProgressBarDeltaSimple_base_6c {
+    width: 0;
+    height: 100%;
+    position: absolute;
+    top: 0;
+}
+.ProgressBarDeltaSimple_delta_99 {
+    width: 0;
+    max-width: 8001px;
+    height: 100%;
+    box-shadow: var(--progress-delta-shadow);
+    background-color: var(--progress-delta-color);
+    position: absolute;
+    bottom: 0;
+    transform-origin: right center;
+    transition-timing-function: cubic-bezier(1, 0, 0.92, 1), cubic-bezier(0.21, 0.61, 0.35, 1);
+    transition-property: width, transform;
 }
 
 .FormatText_base_d0 {
@@ -5972,13 +5800,13 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 
 .PersonalFileViewApp_content_ad {
     width: 602rem;
-    padding-top: 80rem;
+    padding-top: 72rem;
     position: relative;
 }
 
 .mediaMedium .PersonalFileViewApp_content_ad {
     width: 930rem;
-    padding-top: 110rem;
+    padding-top: 85rem;
 }
 
 .mediaLarge .PersonalFileViewApp_content_ad {
@@ -6218,7 +6046,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .ServiceRecordApp_base_3d {
     display: flex;
     height: 100%;
-    padding-left: 370rem;
+    padding-left: 378rem;
 }
 
 .mediaSmall .ServiceRecordApp_base_3d {
@@ -6228,12 +6056,12 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 
 .ServiceRecordApp_content_08 {
     width: 602rem;
-    padding-top: 80rem;
+    padding-top: 72rem;
 }
 
 .mediaMedium .ServiceRecordApp_content_08 {
     width: 930rem;
-    padding-top: 110rem;
+    padding-top: 85rem;
 }
 
 .mediaLarge .ServiceRecordApp_content_08 {
@@ -6273,8 +6101,21 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .ViewMapper_base_42 {
     width: 100%;
     height: 100%;
-    padding-bottom: 35rem;
+    padding-top: calc(var(--external-padding-top) + 12rem);
+    padding-bottom: var(--external-padding-bottom);
     position: relative;
+}
+
+.mediaMediumWidth .ViewMapper_base_42 {
+    padding-top: calc(var(--external-padding-top) + 15rem);
+}
+
+.mediaLargeWidth .ViewMapper_base_42 {
+    padding-top: calc(var(--external-padding-top) + 17rem);
+}
+
+.mediaExtraLargeWidth .ViewMapper_base_42 {
+    padding-top: calc(var(--external-padding-top) + 19rem);
 }
 
 .TankmanContainerApp_base_42 {
@@ -6300,26 +6141,54 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     display: flex;
 }
 
+.TankmanContainerApp_vehicleParams_eb {
+    max-height: 98%;
+}
+
+.TankmanContainerApp_ttsPerkTip_21 {
+    margin-top: 2rem;
+}
+
+.TankmanContainerApp_vehicleInfo_0c {
+    margin-bottom: -18rem;
+}
+
 .TankmanContainerApp_tabs_59 {
     position: absolute;
-    top: 20rem;
+    top: calc(var(--external-padding-top) + 12rem);
     left: 50%;
     transform: translateX(-50%);
 }
 
-.mediaMedium .TankmanContainerApp_tabs_59 {
-    top: 21rem;
+.mediaMediumWidth .TankmanContainerApp_tabs_59 {
+    top: calc(var(--external-padding-top) + 15rem);
 }
 
-.mediaLarge .TankmanContainerApp_tabs_59 {
-    top: 31rem;
+.mediaLargeWidth .TankmanContainerApp_tabs_59 {
+    top: calc(var(--external-padding-top) + 17rem);
+}
+
+.mediaExtraLargeWidth .TankmanContainerApp_tabs_59 {
+    top: calc(var(--external-padding-top) + 19rem);
 }
 
 .TankmanContainerApp_widget_f9 {
     width: 370rem;
     position: absolute;
-    top: 37rem;
+    top: calc(var(--external-padding-top) + 5rem);
     left: 5rem;
+}
+
+.mediaMediumWidth .TankmanContainerApp_widget_f9 {
+    top: calc(var(--external-padding-top) + 8rem);
+}
+
+.mediaLargeWidth .TankmanContainerApp_widget_f9 {
+    top: calc(var(--external-padding-top) + 10rem);
+}
+
+.mediaExtraLargeWidth .TankmanContainerApp_widget_f9 {
+    top: calc(var(--external-padding-top) + 12rem);
 }
 
 .TankmanContainerApp_ttc_a4 {
@@ -6327,12 +6196,20 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     width: 415rem;
     max-height: calc(100vh - 170rem);
     position: absolute;
-    top: 60rem;
+    top: calc(var(--external-padding-top) - 8rem);
     right: 0;
 }
 
-.mediaSmall .TankmanContainerApp_ttc_a4 {
+.mediaSmallWidth .TankmanContainerApp_ttc_a4 {
     display: flex;
+}
+
+.mediaMediumWidth .TankmanContainerApp_ttc_a4 {
+    top: calc(var(--external-padding-top) - 4rem);
+}
+
+.mediaExtraLargeWidth .TankmanContainerApp_ttc_a4 {
+    top: calc(var(--external-padding-top) - 1rem);
 }
 
 .TankmanContainerApp_ttc__withPerk_39 {

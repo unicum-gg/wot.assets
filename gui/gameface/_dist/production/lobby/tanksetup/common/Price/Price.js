@@ -82,20 +82,15 @@
                     })(o || (o = {})));
             },
             2372: (e, n, t) => {
-                t.d(n, { A: () => a });
-                var r = t(7363),
-                    i = t.n(r),
-                    o = t(9916);
-                class a extends i().PureComponent {
-                    render() {
-                        let e;
-                        if ('gold' === this.props.format) e = o.B3.GOLD;
-                        else e = o.B3.INTEGRAL;
-                        const n = o.Z5.getNumberFormat(this.props.value, e);
-                        return void 0 !== this.props.value && void 0 !== n ? n : null;
-                    }
-                }
-                a.defaultProps = { format: 'integral' };
+                t.d(n, { A: () => i });
+                var r = t(9916);
+                const i = ({ value: e, format: n = 'integral' }) => {
+                    const t = (function (e) {
+                            return 'gold' === e ? r.B3.GOLD : r.B3.INTEGRAL;
+                        })(n),
+                        i = r.Z5.getNumberFormat(e, t);
+                    return void 0 !== e && void 0 !== i ? i : null;
+                };
             },
             7078: (e, n, t) => {
                 (t(7363), t(2056));
@@ -233,10 +228,18 @@
                 t.d(n, { E: () => r });
             },
             3138: (e, n, t) => {
-                t.d(n, { O: () => o });
+                t.d(n, { O: () => a });
                 var r = t(5959),
-                    i = t(514);
-                const o = { view: t(7641), client: r, sound: i.ZP };
+                    i = t(7698),
+                    o = t(514);
+                const a = { view: t(7641), client: r, sound: o.ZP, intl: i.N };
+            },
+            7698: (e, n, t) => {
+                t.d(n, { N: () => r });
+                const r = {
+                    toUpperCase: (e) => window.systemLocale.toUpperCase(e),
+                    toLowerCase: (e) => window.systemLocale.toLowerCase(e),
+                };
             },
             514: (e, n, t) => {
                 t.d(n, { ZP: () => a });
@@ -286,28 +289,31 @@
                         arabic2roman: () => T,
                         children: () => i,
                         displayStatus: () => o.W,
-                        displayStatusIs: () => R,
+                        displayStatusIs: () => L,
+                        enableFullScreenModeSupported: () => M,
                         events: () => a.U,
-                        extraSize: () => L,
-                        forceTriggerMouseMove: () => O,
+                        extraSize: () => x,
+                        forceTriggerMouseMove: () => P,
                         freezeTextureBeforeResize: () => w,
                         getBrowserTexturePath: () => l,
-                        getDisplayStatus: () => P,
+                        getDisplayStatus: () => O,
+                        getExternalPaddingsRem: () => R,
                         getFontNames: () => k,
-                        getScale: () => h,
+                        getScale: () => p,
                         getSize: () => v,
                         getViewGlobalPosition: () => E,
+                        initExternalPaddings: () => N,
                         isEventHandled: () => C,
                         isFocused: () => y,
                         pxToRem: () => b,
-                        remToPx: () => p,
+                        remToPx: () => m,
                         resize: () => g,
                         sendEvent: () => _.qP,
-                        setAnimateWindow: () => m,
+                        setAnimateWindow: () => h,
                         setEventHandled: () => f,
                         setInputPaddingsRem: () => c,
                         setSidePaddingsRem: () => u,
-                        whenTutorialReady: () => x,
+                        whenTutorialReady: () => S,
                     }));
                 var r = t(9690),
                     i = t(3722),
@@ -337,21 +343,21 @@
                 }
                 function E(e = 'rem') {
                     const n = viewEnv.getViewGlobalPositionRem();
-                    return 'rem' === e ? n : { x: p(n.x), y: p(n.y) };
+                    return 'rem' === e ? n : { x: m(n.x), y: m(n.y) };
                 }
                 function w() {
                     viewEnv.freezeTextureBeforeResize();
                 }
-                function h() {
+                function p() {
                     return viewEnv.getScale();
                 }
                 function b(e) {
                     return viewEnv.pxToRem(e);
                 }
-                function p(e) {
+                function m(e) {
                     return viewEnv.remToPx(e);
                 }
-                function m(e, n) {
+                function h(e, n) {
                     viewEnv.setAnimateWindow(e, n);
                 }
                 function y() {
@@ -363,22 +369,25 @@
                 function C() {
                     return viewEnv.isEventHandled();
                 }
-                function O() {
+                function P() {
                     viewEnv.forceTriggerMouseMove();
                 }
-                function P() {
+                function O() {
                     return viewEnv.getShowingStatus();
                 }
                 const k = (() => {
                         let e = [];
                         return () => (0 === e.length && (e = Object.keys(viewEnv.getFontsConfig())), e);
                     })(),
-                    T = r.cg,
-                    R = Object.keys(o.W).reduce(
+                    T = r.cg;
+                function R() {
+                    return viewEnv.getExternalPaddingsRem();
+                }
+                const L = Object.keys(o.W).reduce(
                         (e, n) => ((e[n] = () => viewEnv.getShowingStatus() === o.W[n]), e),
                         {},
                     ),
-                    L = {
+                    x = {
                         set: (e, n) => {
                             viewEnv.setExtraSizeRem(e, n);
                         },
@@ -386,12 +395,29 @@
                             viewEnv.getExtraSizeRem(e, n);
                         },
                     },
-                    x = Promise.all([
+                    S = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : a.U.onDomBuilt(e);
                         }),
                         engine.whenReady,
                     ]);
+                function M() {
+                    viewEnv.setFullscreenModeSupported(!0);
+                }
+                function N(e) {
+                    function n() {
+                        const n = viewEnv.getExternalPaddingsRem(),
+                            t = n.top,
+                            r = n.right,
+                            i = n.bottom,
+                            o = n.left;
+                        (e.style.setProperty('--external-padding-top', `${t}rem`),
+                            e.style.setProperty('--external-padding-right', `${r}rem`),
+                            e.style.setProperty('--external-padding-bottom', `${i}rem`),
+                            e.style.setProperty('--external-padding-left', `${o}rem`));
+                    }
+                    (n(), engine.on('self.onPaddingsUpdated', () => n()));
+                }
             },
             8566: (e, n, t) => {
                 t.d(n, { qP: () => c });
@@ -611,7 +637,7 @@
                 const __WEBPACK_DEFAULT_EXPORT__ = ViewModel;
             },
             9916: (e, n, t) => {
-                t.d(n, { B3: () => s, Z5: () => a.Z5, ry: () => h });
+                t.d(n, { B3: () => s, Z5: () => a.Z5, ry: () => p });
                 class r {
                     constructor() {
                         ((this.entries = []),
@@ -681,7 +707,7 @@
                     _.done ? n(s) : Promise.resolve(s).then(r, i);
                 }
                 const w = (e) => ({ __Type: 'GFBoundingBox', x: e.x, y: e.y, width: e.width, height: e.height }),
-                    h = (function () {
+                    p = (function () {
                         var e,
                             n =
                                 ((e = function* () {
@@ -748,8 +774,8 @@
                         } else viewEnv.handleViewEvent({ __Type: t, type: e });
                         var r;
                     },
-                    p = () => b(_.CLOSE),
-                    m = (e, n) => {
+                    m = () => b(_.CLOSE),
+                    h = (e, n) => {
                         e.keyCode === u.n.ESCAPE && n();
                     };
                 var y = t(7572);
@@ -764,7 +790,7 @@
                         DateFormatType: d,
                         makeGlobalBoundingBox: w,
                         sendMoveEvent: (e) => b(_.MOVE, { isMouseEvent: !0, on: e }),
-                        sendCloseEvent: p,
+                        sendCloseEvent: m,
                         sendClosePopOverEvent: () => b(_.POP_OVER, { on: !1 }),
                         sendShowContextMenuEvent: (e, n, t = 0) => {
                             b(_.CONTEXT_MENU, { isMouseEvent: !0, contentID: e, on: !0, decoratorID: t, args: n });
@@ -794,17 +820,17 @@
                             });
                         },
                         addEscapeListener: (e) => {
-                            const n = (n) => m(n, e);
+                            const n = (n) => h(n, e);
                             return (
                                 window.addEventListener('keydown', n),
                                 () => window.removeEventListener('keydown', n)
                             );
                         },
                         closeOnEsc: (e) => {
-                            m(e, p);
+                            h(e, m);
                         },
                         handleViewEvent: b,
-                        onBindingsReady: h,
+                        onBindingsReady: p,
                         onLayoutReady: () =>
                             new Promise((e) => {
                                 requestAnimationFrame(() => {

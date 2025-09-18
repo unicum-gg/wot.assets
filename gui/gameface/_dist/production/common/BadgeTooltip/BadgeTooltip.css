@@ -224,6 +224,7 @@
     width: 24rem;
     height: 24rem;
     margin-left: 4rem;
+    background: no-repeat 50% / contain;
 }
 
 .BadgeTooltipApp_playerName_5e {
@@ -246,6 +247,9 @@
 }
 
 .BadgeTooltipApp_vehicleIcon_ef {
+    width: 90rem;
+    height: 24rem;
+    background: no-repeat 50% / contain;
     position: relative;
 }
 

@@ -1,145 +1,3 @@
-.TextButton_base_b6 {
-    display: flex;
-    align-items: center;
-    padding: 0 3rem;
-    font-size: 12rem;
-    position: relative;
-    cursor: pointer;
-}
-
-.TextButton_base__right_39 {
-    flex-direction: row-reverse;
-}
-.TextButton_icon_17 {
-    width: 32rem;
-    height: 32rem;
-    background: no-repeat center / contain;
-    position: relative;
-}
-.TextButton_icon__back_43,
-.TextButton_icon__forward_59 {
-    margin: -1rem -5rem;
-    background-image: url('R.images.gui.maps.icons.components.text_button.back');
-    transform: translateY(1rem);
-}
-.TextButton_icon__forward_59 {
-    transform: rotate(180deg) translateY(1rem);
-}
-.TextButton_icon__close_53 {
-    margin: -1rem 0;
-    background-image: url('R.images.gui.maps.icons.components.text_button.close');
-}
-.TextButton_icon__info_33 {
-    margin: -1rem -5rem;
-    background-image: url('R.images.gui.maps.icons.components.text_button.info');
-}
-.TextButton_glow_a4 {
-    width: 100%;
-    height: 100%;
-    background: no-repeat center / contain;
-    opacity: 0;
-    position: absolute;
-    top: 0;
-    transition: opacity 0.16s;
-}
-.TextButton_icon__back_43 .TextButton_glow_a4,
-.TextButton_icon__forward_59 .TextButton_glow_a4 {
-    background-image: url('R.images.gui.maps.icons.components.text_button.back_hover');
-}
-.TextButton_icon__close_53 .TextButton_glow_a4 {
-    background-image: url('R.images.gui.maps.icons.components.text_button.close_hover');
-}
-.TextButton_icon__info_33 .TextButton_glow_a4 {
-    background-image: url('R.images.gui.maps.icons.components.text_button.info_hover');
-}
-.TextButton_base_b6:hover .TextButton_glow_a4 {
-    opacity: 1;
-}
-.TextButton_base_b6:active .TextButton_glow_a4 {
-    opacity: 0;
-}
-.TextButton_caption_82 {
-    position: relative;
-    transition:
-        color 0.16s,
-        text-shadow 0.16s;
-}
-.TextButton_caption__back_b9,
-.TextButton_caption__forward_4e,
-.TextButton_caption__close_36 {
-    color: #ffdd99;
-    text-shadow:
-        0 0 10rem rgba(255, 42, 0, 1),
-        0 0 10rem rgba(255, 42, 0, 0.4),
-        0 0 10rem rgba(255, 42, 0, 0.4),
-        0 0 2rem rgba(255, 42, 0, 0.4),
-        0 0 1rem rgba(255, 42, 0, 0.4),
-        0 0 2rem rgba(255, 42, 0, 0.4),
-        0 0 1rem rgba(255, 42, 0, 0.4);
-}
-.TextButton_base_b6:hover .TextButton_caption__back_b9,
-.TextButton_base_b6:hover .TextButton_caption__forward_4e,
-.TextButton_base_b6:hover .TextButton_caption__close_36 {
-    color: #fffa9f;
-}
-.TextButton_base_b6:active .TextButton_caption__back_b9,
-.TextButton_base_b6:active .TextButton_caption__forward_4e,
-.TextButton_base_b6:active .TextButton_caption__close_36 {
-    color: #ffdd99;
-}
-.TextButton_caption__info_23 {
-    padding: 0 5rem;
-    color: #ccffff;
-    text-shadow:
-        0 0 12rem rgba(31, 68, 255, 0.8),
-        0 0 8rem #00eaff;
-}
-.TextButton_base_b6:hover .TextButton_caption__info_23 {
-    color: #e3ffff;
-    text-shadow:
-        0 0 12rem rgba(31, 68, 255, 0.8),
-        0 0 12rem rgba(0, 234, 255, 1),
-        0 0 8rem #00eaff;
-}
-.TextButton_base_b6:active .TextButton_caption__info_23 {
-    color: #ccffff;
-    text-shadow:
-        0 0 12rem rgba(31, 68, 255, 0.6),
-        0 0 8rem #00eaff;
-}
-.TextButton_goto_e7 {
-    color: #7c7c6c;
-}
-.TextButton_base__left_ff .TextButton_goto_e7 {
-    margin-left: 8rem;
-}
-.TextButton_base__right_39 .TextButton_goto_e7 {
-    margin-right: 8rem;
-}
-.TextButton_shine_e2 {
-    width: 90rem;
-    height: 40rem;
-    background: url('R.images.gui.maps.icons.components.text_button.shine') no-repeat center / contain;
-    opacity: 0;
-    position: absolute;
-    top: -4rem;
-    transition: opacity 0.16s;
-    pointer-events: none;
-}
-.TextButton_base__left_ff .TextButton_shine_e2 {
-    left: -4rem;
-}
-.TextButton_base__right_39 .TextButton_shine_e2 {
-    right: -4rem;
-    transform: rotate(180deg);
-}
-.TextButton_base_b6:hover .TextButton_shine_e2 {
-    opacity: 1;
-}
-.TextButton_base_b6:active .TextButton_shine_e2 {
-    opacity: 0;
-}
-
 .FormatText_base_d0 {
     display: flex;
     flex-wrap: wrap;
@@ -183,7 +41,7 @@
 .BonusXpBlock_base__locked_c9 .BonusXpBlock_locked_overlay_e2 {
     width: 100%;
     height: 100%;
-    background: linear-gradient(0deg, #000000 3.74%, rgba(0, 0, 0, 0) 98.38%);
+    background: linear-gradient(0deg, rgba(10, 10, 10, 0.5) 3.74%, rgba(0, 0, 0, 0) 98.38%);
     opacity: 1;
     position: absolute;
     top: 0;
@@ -1031,8 +889,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 81rem;
+    height: 60rem;
     position: relative;
+}
+
+.mediaMedium .SlotItem_slotContainer_70 {
+    height: 80rem;
 }
 
 .SlotItem_base_5b {
@@ -1040,49 +902,44 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    width: 81rem;
-    height: 81rem;
+    width: 60rem;
+    height: 60rem;
     position: relative;
 }
 
-.SlotItem_base__responsive_39 {
-    width: 64rem;
-    height: 64rem;
+.SlotItem_base__reducedSize_7c {
+    width: 50rem;
+    height: 50rem;
 }
 
-.SlotItem_base__responsive_39 .SlotItem_slotContainer_70 {
-    height: 64rem;
+.SlotItem_base__reducedSize_7c .SlotItem_slotContainer_70 {
+    width: 50rem;
+    height: 50rem;
 }
 
-.mediaMedium .SlotItem_base__responsive_39 .SlotItem_slotContainer_70 {
-    height: 81rem;
+.SlotItem_base__reducedSize_7c .SlotItem_mapImage_6b {
+    width: 46rem;
+    height: 46rem;
 }
 
-.SlotItem_base__responsive_39 .SlotItem_mapImage_6b {
-    width: 58rem;
-    height: 58rem;
+.mediaMedium .SlotItem_base_5b {
+    width: 80rem;
+    height: 80rem;
 }
 
-.mediaMedium .SlotItem_base__responsive_39 .SlotItem_mapImage_6b {
-    width: 75rem;
-    height: 75rem;
+.mediaMedium .SlotItem_base__reducedSize_7c {
+    width: 60rem;
+    height: 60rem;
 }
 
-.SlotItem_base__responsive_39 .SlotItem_timerContainer_91 {
-    padding-left: 22rem;
-    background-position-x: -12rem;
-    font-size: 12rem;
+.mediaMedium .SlotItem_base__reducedSize_7c .SlotItem_slotContainer_70 {
+    width: 60rem;
+    height: 60rem;
 }
 
-.mediaMedium .SlotItem_base__responsive_39 .SlotItem_timerContainer_91 {
-    padding-left: 24rem;
-    background-position-x: -10rem;
-    font-size: 14rem;
-}
-
-.mediaMedium .SlotItem_base__responsive_39 {
-    width: 81rem;
-    height: 81rem;
+.mediaMedium .SlotItem_base__reducedSize_7c .SlotItem_mapImage_6b {
+    width: 56rem;
+    height: 56rem;
 }
 
 .SlotItem_base__select_15 {
@@ -1095,6 +952,32 @@
 
 .SlotItem_base__replace_c5 {
     background: url('R.images.gui.maps.icons.account_dashboard.excluded_maps.slot_change') center center / cover;
+}
+
+.SlotItem_base__wotPlus_7e {
+    background: url('R.images.gui.maps.icons.account_dashboard.excluded_maps.slot_wotplus_locked_big') center center /
+        cover;
+}
+
+.SlotItem_base__reducedSize_7c .SlotItem_base__wotPlus_7e {
+    background: url('R.images.gui.maps.icons.account_dashboard.excluded_maps.slot_wotplus_locked') center center / cover;
+}
+
+.SlotItem_base__wotPlus_7e .SlotItem_mapTitle_a4 {
+    color: #8c8c7e;
+}
+
+.SlotItem_base__premium_85 {
+    background: url('R.images.gui.maps.icons.account_dashboard.excluded_maps.slot_premium_locked_big') center center /
+        cover;
+}
+
+.SlotItem_base__reducedSize_7c .SlotItem_base__premium_85 {
+    background: url('R.images.gui.maps.icons.account_dashboard.excluded_maps.slot_premium_locked') center center / cover;
+}
+
+.SlotItem_base__premium_85 .SlotItem_mapTitle_a4 {
+    color: #8c8c7e;
 }
 
 .SlotItem_base__cooldown_6a {
@@ -1124,9 +1007,40 @@
     margin-top: 2rem;
 }
 
+.SlotItem_lock_fd {
+    width: 9rem;
+    height: 11rem;
+    background: url('R.images.gui.maps.icons.account_dashboard.excluded_maps.lock') center center / cover;
+    position: relative;
+    top: 28rem;
+}
+
+.mediaMedium .SlotItem_lock_fd {
+    width: 12rem;
+    height: 16rem;
+    background: url('R.images.gui.maps.icons.account_dashboard.excluded_maps.lock_big') center center / cover;
+    top: 40rem;
+}
+
+.SlotItem_base__reducedSize_7c .SlotItem_lock_fd {
+    width: 9rem;
+    height: 11rem;
+    background: url('R.images.gui.maps.icons.account_dashboard.excluded_maps.lock') center center / cover;
+    top: 23rem;
+}
+
+.mediaMedium .SlotItem_base__reducedSize_7c .SlotItem_lock_fd {
+    top: 28rem;
+}
+
 .SlotItem_mapImage_6b {
-    width: 75rem;
-    height: 75rem;
+    width: 56rem;
+    height: 56rem;
+}
+
+.mediaMedium .SlotItem_mapImage_6b {
+    width: 76rem;
+    height: 76rem;
 }
 
 .SlotItem_timerContainer_91 {
@@ -1135,26 +1049,69 @@
     justify-content: center;
     align-items: center;
     min-height: 45rem;
-    padding-left: 24rem;
-    background: url('R.images.gui.maps.icons.account_dashboard.excluded_maps.icon_cooldown_slot') -10rem 50% / 45rem
-        45rem no-repeat;
     position: absolute;
+}
+
+.SlotItem_timerIcon_7c {
+    width: 36rem;
+    height: 36rem;
+    margin-left: -10rem;
+    margin-top: 1rem;
+}
+
+.mediaMedium .SlotItem_timerIcon_7c {
+    width: 42rem;
+    height: 42rem;
+    margin-left: -15rem;
+    margin-top: 1rem;
+}
+
+.SlotItem_base__reducedSize_7c .SlotItem_timerIcon_7c {
+    width: 36rem;
+    height: 36rem;
+    margin-left: -10rem;
 }
 
 .SlotItem_timerText_11 {
     color: #ffdd99;
+    font-size: 12rem;
+    font-weight: 400;
+    line-height: 1.3;
+    max-width: 35rem;
+    margin-left: -8rem;
+    line-height: 90%;
+}
+
+.mediaMedium .SlotItem_timerText_11 {
+    color: #ffdd99;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    max-width: 45rem;
+    margin-left: -10rem;
+    line-height: 95%;
+}
+
+.SlotItem_base__reducedSize_7c .SlotItem_timerText_11 {
+    color: #ffdd99;
+    font-size: 12rem;
+    font-weight: 400;
+    line-height: 1.3;
+    max-width: 35rem;
+    margin-left: -8rem;
+    line-height: 90%;
 }
 
 .SlotItem_mapTitle_a4 {
-    color: #e9e2bf;
-    font-size: 16rem;
+    color: #ffffff;
+    font-size: 14rem;
     font-weight: 400;
-    line-height: 1.25;
+    line-height: 1.3;
     width: 120rem;
     height: 10rem;
     text-align: center;
     position: absolute;
-    bottom: -14rem;
+    bottom: -21rem;
 }
 
 .CButton_base_40 {
@@ -1884,10 +1841,8 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     position: relative;
 }
 .Currency_icon_c5 {
-    --icon-height: 16rem;
-    --icon-width: var(--icon-height);
-    width: var(--icon-width);
-    height: var(--icon-height);
+    width: 16rem;
+    height: 16rem;
     background-repeat: no-repeat;
     background-size: contain;
     position: relative;
@@ -1906,7 +1861,8 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     background-image: url('R.images.gui.maps.icons.library.CreditsIcon_1');
 }
 .Currency_icon__credits-large_ac {
-    --icon-height: 48rem;
+    width: 48rem;
+    height: 48rem;
     margin-left: -1rem;
     background-image: url('R.images.gui.maps.shop.rewards.c_48x48.money_silver');
 }
@@ -1914,7 +1870,8 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     transform: translateY(4rem);
 }
 .Currency_icon__credits-extraLarge_16 {
-    --icon-height: 80rem;
+    width: 80rem;
+    height: 80rem;
     margin-right: -2rem;
     background-image: url('R.images.gui.maps.icons.library.credits_icon_80x80');
 }
@@ -1931,7 +1888,8 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     transform: translateY(4rem);
 }
 .Currency_icon__gold-large_36 {
-    --icon-height: 48rem;
+    width: 48rem;
+    height: 48rem;
     margin-left: -1rem;
     background-image: url('R.images.gui.maps.shop.rewards.c_48x48.money_gold');
 }
@@ -1939,7 +1897,8 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     transform: translateY(4rem);
 }
 .Currency_icon__gold-extraLarge_a0 {
-    --icon-height: 80rem;
+    width: 80rem;
+    height: 80rem;
     background-image: url('R.images.gui.maps.icons.library.gold_icon_80x80');
 }
 .Currency_icon__crystal-small_27 {
@@ -1949,20 +1908,22 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     transform: translateY(2rem);
 }
 .Currency_icon__crystal-big_cd {
-    --icon-height: 22rem;
-    --icon-width: 23rem;
+    width: 23rem;
+    height: 22rem;
     background-image: url('R.images.gui.maps.icons.library.crystal_23x22');
 }
 .Currency_base__big_bc .Currency_icon__crystal-big_cd {
     transform: translateY(4rem);
 }
 .Currency_icon__crystal-large_d3 {
-    --icon-height: 48rem;
+    width: 48rem;
+    height: 48rem;
     margin-left: -1rem;
     background-image: url('R.images.gui.maps.shop.rewards.c_48x48.money_bonds');
 }
 .Currency_icon__crystal-extraLarge_09 {
-    --icon-height: 80rem;
+    width: 80rem;
+    height: 80rem;
     background-image: url('R.images.gui.maps.icons.library.crystal_80x80');
 }
 .Currency_base__extraLarge_4d .Currency_icon__crystal-extraLarge_09 {
@@ -1975,8 +1936,8 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     transform: translateY(1rem);
 }
 .Currency_icon__xp-big_97 {
-    --icon-height: 22rem;
-    --icon-width: 23rem;
+    width: 23rem;
+    height: 22rem;
     margin-left: -5rem;
     background-image: url('R.images.gui.maps.icons.library.xpIcon_23x22');
 }
@@ -1984,12 +1945,14 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     transform: translateY(2rem);
 }
 .Currency_icon__xp-large_6b {
-    --icon-height: 48rem;
+    width: 48rem;
+    height: 48rem;
     margin: 0 -5rem 0 -6rem;
     background-image: url('R.images.gui.maps.shop.rewards.c_48x48.exp');
 }
 .Currency_icon__xp-extraLarge_67 {
-    --icon-height: 80rem;
+    width: 80rem;
+    height: 80rem;
     margin: 0 -5rem;
     background-image: url('R.images.gui.maps.icons.library.xp_tank_icon_80x80');
 }
@@ -2000,17 +1963,20 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     transform: translateY(1rem);
 }
 .Currency_icon__freeXP-big_21 {
-    --icon-height: 24rem;
+    width: 24rem;
+    height: 24rem;
     margin-left: -5rem;
     background-image: url('R.images.gui.maps.icons.library.freeXPIconBig24x24');
 }
 .Currency_icon__freeXP-large_c8 {
-    --icon-height: 48rem;
+    width: 48rem;
+    height: 48rem;
     margin: 0 -5rem 0 -6rem;
     background-image: url('R.images.gui.maps.shop.rewards.c_48x48.freeExp');
 }
 .Currency_icon__freeXP-extraLarge_58 {
-    --icon-height: 80rem;
+    width: 80rem;
+    height: 80rem;
     margin: 0 -5rem;
     background-image: url('R.images.gui.maps.icons.library.free_xp_icon_80x80');
 }
@@ -2024,17 +1990,20 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     transform: translateY(1rem);
 }
 .Currency_icon__eliteXP-big_c0 {
-    --icon-height: 24rem;
+    width: 24rem;
+    height: 24rem;
     margin-left: -5rem;
     background-image: url('R.images.gui.maps.icons.library.EliteXpIconBig');
 }
 .Currency_icon__eliteXP-large_1b {
-    --icon-height: 48rem;
+    width: 48rem;
+    height: 48rem;
     margin: 0 -5rem 0 -6rem;
     background-image: url('R.images.gui.maps.icons.library.elite_exp_48x48');
 }
 .Currency_icon__eliteXP-extraLarge_9b {
-    --icon-height: 80rem;
+    width: 80rem;
+    height: 80rem;
     margin: 0 -5rem;
     background-image: url('R.images.gui.maps.icons.library.elite_exp_80x80');
 }
@@ -2042,7 +2011,8 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     transform: translateY(4rem);
 }
 .Currency_icon__equipCoin-small_32 {
-    --icon-height: 16rem;
+    width: 16rem;
+    height: 16rem;
     margin-right: -2rem;
     background-image: url('R.images.gui.maps.icons.library.equipCoin_1');
 }
@@ -2050,19 +2020,22 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     transform: translateX(-1rem) translateY(1rem);
 }
 .Currency_icon__equipCoin-big_79 {
-    --icon-height: 24rem;
+    width: 24rem;
+    height: 24rem;
     background-image: url('R.images.gui.maps.icons.library.equipCoinBig');
 }
 .Currency_base__big_bc .Currency_icon__equipCoin-big_79 {
     transform: translateX(-5rem) translateY(3rem);
 }
 .Currency_icon__equipCoin-large_2c {
-    --icon-height: 48rem;
+    width: 48rem;
+    height: 48rem;
     margin-right: 2rem;
     background-image: url('R.images.gui.maps.shop.rewards.c_48x48.equipCoin');
 }
 .Currency_icon__equipCoin-extraLarge_8a {
-    --icon-height: 80rem;
+    width: 80rem;
+    height: 80rem;
     margin-right: 8rem;
     background-image: url('R.images.gui.maps.icons.library.equipCoin_icon_80x80');
 }
@@ -2072,8 +2045,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .Currency_value_e1 {
     /* font-size inherit does not work here, so 1em means the size does not change */
     /* stylelint-disable-next-line */
-    --font-size: 1em;
-    font-size: var(--font-size);
+    font-size: 1em;
     position: relative;
     z-index: 2;
 }
@@ -2081,22 +2053,22 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     padding-right: 2rem;
 }
 .Currency_base__big_bc .Currency_value_e1 {
-    --font-size: 24rem;
     padding-right: 5rem;
+    font-size: 24rem;
     font-weight: 700;
 }
 .Currency_base__big_bc .Currency_value_e1 + .Currency_icon_c5 {
     font-size: 24rem;
 }
 .Currency_base__large_65 .Currency_value_e1 {
-    --font-size: 36rem;
+    font-size: 36rem;
     font-weight: 700;
 }
 .Currency_base__large_65 .Currency_value_e1 + .Currency_icon_c5 {
     font-size: 36rem;
 }
 .Currency_base__extraLarge_4d .Currency_value_e1 {
-    --font-size: 56rem;
+    font-size: 56rem;
     font-weight: 700;
 }
 .Currency_value__freeXP_cb {
@@ -2892,7 +2864,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     --tallRowHeight: 340rem;
     --shortRowHeight: 130rem;
     --subscriptionHeight: 65rem;
-    --footerHeight: 45rem;
+    --footerHeight: 110rem;
 }
 
 .mediaMedium .AccountDashboardApp_base_b3 {
@@ -2904,25 +2876,22 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     --subscriptionHeight: 80rem;
 }
 
+.mediaMedium .AccountDashboardApp_base_b3 {
+    --footerHeight: 140rem;
+}
+
 .mediaLarge .AccountDashboardApp_base_b3 {
-    --footerHeight: 120rem;
+    --footerHeight: 200rem;
+}
+
+.mediaExtraLarge .AccountDashboardApp_base_b3 {
+    --footerHeight: 210rem;
 }
 
 .AccountDashboardApp_base__drafted_85 {
     max-width: 100%;
     max-height: 100%;
     padding-top: 50rem;
-}
-
-.AccountDashboardApp_close_23 {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20rem;
-    position: absolute;
-    top: 30rem;
-    right: 10rem;
-    z-index: 99;
 }
 
 .AccountDashboardApp_header_0f {

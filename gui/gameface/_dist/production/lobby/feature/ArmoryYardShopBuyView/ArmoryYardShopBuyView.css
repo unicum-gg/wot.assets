@@ -1170,6 +1170,10 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     cursor: default;
 }
 
+.TokensStepper_btnDecrement__scaled_82 {
+    transform: translateX(0.5rem);
+}
+
 .Calculator_base_96 {
     display: flex;
     flex-direction: row;
@@ -1187,6 +1191,8 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .Calculator_iconGold_54 {
+    width: 24rem;
+    height: 24rem;
     margin-right: 0;
 }
 
@@ -1337,7 +1343,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 .Footer_iconUnavailable_15 {
     width: 240rem;
-    height: 232rem;
+    height: 230rem;
     background: url('R.images.armory_yard.gui.maps.icons.shop.buy.buyUnavailable') no-repeat center / cover;
     position: absolute;
     bottom: -39rem;
@@ -1659,7 +1665,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     line-height: 1.3;
     position: absolute;
     bottom: -5rem;
-    left: 40rem;
+    left: 36rem;
 }
 
 .RewardsList_base_ba {

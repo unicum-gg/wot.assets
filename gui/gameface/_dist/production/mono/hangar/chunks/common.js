@@ -1,0 +1,40 @@
+const e = -1,
+    a = 'undamaged',
+    t = { ['54033']: 'alpha', ['50705']: 'alpha', ['51201']: 'super', ['56833']: 'super' },
+    l = {
+        ammoNotFull: 'ammoNotFull',
+        crewNotFull: 'crewNotFull',
+        exploded: 'exploded',
+        destroyed: 'destroyed',
+        damaged: 'damaged',
+        rentable: 'rentable',
+        rentableAgain: 'rentableAgain',
+        rentalIsOver: 'rentalIsOver',
+        tooHeavy: 'tooHeavy',
+        unsuitableToQueue: 'unsuitableToQueue',
+        unsuitableToUnit: 'unsuitableToUnit',
+        inPrebattle: 'inPrebattle',
+        battle: 'battle',
+        wot_plus_exclusive_vehicle_disabled: 'wot_plus_exclusive_vehicle_disabled',
+    },
+    o = {
+        [l.ammoNotFull]: 'ammo',
+        [l.crewNotFull]: 'crew',
+        [l.exploded]: 'repair',
+        [l.destroyed]: 'repair',
+        [l.damaged]: 'repair',
+        [l.rentable]: 'rental',
+        [l.rentableAgain]: 'rental',
+        [l.rentalIsOver]: 'rental',
+        [l.tooHeavy]: 'notSuitable',
+        [l.unsuitableToQueue]: 'notSuitable',
+        [l.unsuitableToUnit]: 'notSuitable',
+        [l.inPrebattle]: 'inPlatoon',
+        [l.battle]: 'inBattle',
+        [l.wot_plus_exclusive_vehicle_disabled]: 'notSuitable',
+    },
+    u = { bpTooltip: 'bpTooltip' };
+function n(e, a) {
+    return e !== l.unsuitableToQueue && a > 0;
+}
+export { e as E, a as U, o as a, l as b, t as i, u as t, n as v };

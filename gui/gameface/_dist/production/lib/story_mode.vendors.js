@@ -3147,7 +3147,7 @@
             });
             var W = void 0 !== o.ResizeObserver ? o.ResizeObserver : O;
             const U =
-                /^(battle\/(EpilogueWindow\/EpilogueWindo|OnboardingBattleResultView\/OnboardingBattleResultVie)w|common\/(CongratulationsWindow\/CongratulationsWindow|MedalTooltip\/MedalTooltip|OnboardingQueueView\/OnboardingQueueView)|lobby\/MissionTooltip\/MissionTooltip)$/.test(
+                /^(battle\/(EpilogueWindow\/EpilogueWindo|OnboardingBattleResultView\/OnboardingBattleResultVie)w|common\/(CongratulationsWindow\/CongratulationsWindow|MedalTooltip\/MedalTooltip|OnboardingQueueView\/OnboardingQueueView)|lobby\/(MissionTooltip\/Mission|NewbieBannerTooltip\/NewbieBanner)Tooltip)$/.test(
                     n.j,
                 )
                     ? null
@@ -4382,7 +4382,7 @@
             'use strict';
             if (
                 (n.d(t, { e: () => i }),
-                !/^(common\/(BadgeTooltip\/Badge|MedalTooltip\/Medal)Tooltip|lobby\/NewbieAdvertisingView\/NewbieAdvertisingView)$/.test(
+                !/^(common\/(BadgeTooltip\/Badge|MedalTooltip\/Medal)Tooltip|lobby\/Newbie(AdvertisingView\/NewbieAdvertisingView|BannerTooltip\/NewbieBannerTooltip))$/.test(
                     n.j,
                 ))
             )

@@ -914,11 +914,12 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .Bundle_glow_25 {
     width: 300rem;
     height: 300rem;
+    background: url('swf://gui/flash/animations/battlePass/rays.swf') no-repeat center / cover;
     opacity: 0;
     mix-blend-mode: lighten;
     position: absolute;
     top: -58rem;
-    z-index: 8;
+    z-index: 4;
     transition: all 450ms;
     pointer-events: none;
 }
@@ -960,7 +961,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     background: url('R.images.armory_yard.gui.maps.icons.buy.small.card') center / contain no-repeat;
     mix-blend-mode: lighten;
     position: absolute;
-    z-index: 4;
+    z-index: 3;
     pointer-events: none;
 }
 .mediaMedium .Bundle_card_71 {
@@ -1034,7 +1035,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     background-image: url('R.images.armory_yard.gui.maps.icons.buy.small.glow_hovered');
     mix-blend-mode: color-dodge;
     top: 13rem;
-    z-index: 20;
+    z-index: 6;
 }
 .mediaMedium .Bundle_cardGlow__hovered_1c {
     width: 384rem;
@@ -1086,7 +1087,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     background: url('R.images.armory_yard.gui.maps.icons.buy.small.metall') center / contain no-repeat;
     mix-blend-mode: lighten;
     position: absolute;
-    z-index: 10;
+    z-index: 5;
     pointer-events: none;
 }
 .mediaMedium .Bundle_metall_0f {
@@ -1119,13 +1120,13 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .Bundle_imagePercentWrapper_b8 {
     width: 100%;
     position: relative;
-    z-index: 10;
+    z-index: 5;
 }
 .Bundle_discountWrapper_7d {
     position: absolute;
     top: 9rem;
     right: 14rem;
-    z-index: 10;
+    z-index: 5;
 }
 .mediaMedium .Bundle_discountWrapper_7d {
     top: 13rem;
@@ -1140,14 +1141,14 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     right: 20rem;
 }
 .Bundle_discount_5a {
-    min-width: 35rem;
-    font-size: 16rem;
+    color: #e9e2bf;
+    font-size: 15rem;
     font-weight: 700;
-    font-style: normal;
-    line-height: 120%;
+    line-height: 1.15;
+    min-width: 35rem;
     opacity: 0.9;
     position: relative;
-    z-index: 10;
+    z-index: 5;
     transition: opacity 450ms;
 }
 .Bundle_discount__hover_53 {
@@ -1172,7 +1173,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     height: 140rem;
     position: absolute;
     top: 50rem;
-    z-index: 10;
+    z-index: 5;
     transition: all 450ms;
 }
 .Bundle_bundleImageWrapper__hover_3e {
@@ -1246,7 +1247,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     font-style: normal;
     line-height: 120%;
     text-align: center;
-    z-index: 10;
+    z-index: 5;
 }
 .Bundle_bundleTitle_48 > div {
     display: flex;
@@ -1265,13 +1266,13 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     font-size: 36rem;
 }
 .Bundle_buildingText_28 {
-    margin-bottom: 33rem;
-    font-size: 16rem;
+    color: #e9e2bf;
+    font-size: 15rem;
     font-weight: 700;
-    font-style: normal;
-    line-height: 120%;
+    line-height: 1.15;
+    margin-bottom: 33rem;
     text-align: center;
-    z-index: 10;
+    z-index: 5;
 }
 .Bundle_buildingText_28 > div {
     display: flex;
@@ -1306,7 +1307,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    z-index: 10;
+    z-index: 5;
 }
 .Bundle_withoutDiscountWrapper_ca {
     display: flex;
@@ -1350,7 +1351,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     width: 126rem;
     height: 24rem;
     margin-top: 10rem;
-    z-index: 10;
+    z-index: 5;
 }
 .mediaMedium .Bundle_buyButton_cc {
     width: 146rem;
@@ -1386,7 +1387,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     position: absolute;
     top: -66rem;
     left: -58rem;
-    z-index: 0;
     pointer-events: none;
 }
 .mediaMedium .Bundle_discountGlow_00 {
@@ -1490,7 +1490,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     background: url('R.images.armory_yard.gui.maps.icons.buy.small.token_buy_card') center / contain no-repeat;
     opacity: 0.1;
     position: absolute;
-    z-index: 25;
+    z-index: 3;
     transition: opacity 450ms;
 }
 .Footer_card__hover_cc {
@@ -1510,7 +1510,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     height: 100%;
     background: url('R.images.armory_yard.gui.maps.icons.buy.small.token_buy_bg') center / contain no-repeat;
     position: absolute;
-    z-index: 2;
+    z-index: 1;
 }
 .mediaMedium .Footer_bg_d2 {
     background-image: url('R.images.armory_yard.gui.maps.icons.buy.medium.token_buy_bg');
@@ -1540,7 +1540,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     opacity: 1;
     mix-blend-mode: lighten;
     position: absolute;
-    z-index: 20;
+    z-index: 2;
 }
 .mediaMedium .Footer_metall_8c {
     background-image: url('R.images.armory_yard.gui.maps.icons.buy.medium.token_buy_metall');
@@ -1557,7 +1557,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     margin-left: 12rem;
     background: url('R.images.armory_yard.gui.maps.icons.buy.medium.token') center / contain no-repeat;
     filter: brightness(1);
-    z-index: 26;
+    z-index: 4;
     transition: filter 450ms;
 }
 .Footer_token__hover_1e {
@@ -1572,7 +1572,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     display: flex;
     align-items: flex-start;
     margin-left: 8rem;
-    z-index: 26;
+    z-index: 4;
 }
 .mediaLarge .Footer_footerText_70 {
     margin-left: 4rem;
@@ -1612,6 +1612,9 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     font-weight: 400;
     line-height: 1.25;
 }
+.Footer_tokenPrice__or_66 {
+    margin-left: 6rem;
+}
 .Footer_buttonWrapper_0e {
     display: flex;
     align-items: center;
@@ -1620,9 +1623,12 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     right: 28rem;
 }
 .Footer_buyButton_e7 {
-    width: 140rem;
+    width: 110rem;
     height: 24rem;
-    z-index: 26;
+    z-index: 4;
+}
+.mediaMedium .Footer_buyButton_e7 {
+    width: 140rem;
 }
 .mediaLarge .Footer_buyButton_e7 {
     height: 32rem;
@@ -1790,17 +1796,10 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     line-height: 1.25;
 }
 
-.mediaExtraLarge .Timer_timerText_18 {
-    color: #ffdd99;
-    font-size: 16rem;
-    font-weight: 400;
-    line-height: 1.25;
-}
-
 .Timer_timerText__alert_2f {
     text-shadow:
-        0 0 15rem #e52,
-        0 0 8rem #ff2a00,
+        0 0 15rem rgba(238, 85, 34, 1),
+        0 0 8rem rgba(255, 42, 0, 1),
         0 0 4rem rgba(255, 127, 0, 0.25);
 }
 
@@ -1867,7 +1866,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     position: absolute;
     top: 43rem;
     left: 30rem;
-    z-index: 99;
+    z-index: 1;
 }
 
 .App_content_df {
@@ -1885,8 +1884,9 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 
 .App_bundles_9c {
     width: 100%;
+    margin-top: 25rem;
     position: absolute;
-    top: calc(50vh + 25rem);
+    top: 50%;
     left: 0;
     transform: translateY(-50%);
 }

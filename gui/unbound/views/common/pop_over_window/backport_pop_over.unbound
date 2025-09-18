@@ -16,8 +16,9 @@
         (style
             (position = absolute)
         )
-        (visible = false)
-        (bindcall init "boundX" "boundY" "boundWidth" "boundHeight" init=false watch=true)
+        (visible = true)
+        (alpha = 0)
+        (bindcall init "boundX" "boundY" "boundWidth" "boundHeight" "directionType" init=false watch=true)
     )
     (view_holder
         (name = 'contentViewHolder')

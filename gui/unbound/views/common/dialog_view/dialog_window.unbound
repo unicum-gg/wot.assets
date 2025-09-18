@@ -5,7 +5,8 @@
     )
 
     (name = 'dialogWindow')
-    (mouseEnabled = false)
+    (mouseEnabled = true)
+    (tabEnabled = true)
     (scope
         (var bgWidth:number = 1)
         (var bgHeight:number = 1)

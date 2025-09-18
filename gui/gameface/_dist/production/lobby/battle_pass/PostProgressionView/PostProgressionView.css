@@ -1,3 +1,203 @@
+/*
+    Gameface can't calculate gradient biggest than 8128px
+    in JS 8000 reserved like anchor for start optimization
+*/
+/* stylelint-disable-line */
+.ProgressBar_base_45 {
+    width: 100%;
+    height: var(--progress-bg-height);
+    position: relative;
+}
+.ProgressBar_base__small_df {
+    height: var(--progress-bg-height-small);
+}
+.ProgressBar_background_51 {
+    width: 100%;
+    max-width: 8001px;
+    height: 100%;
+    background-image: var(--progress-base);
+    background-repeat: repeat;
+    background-position: 0 50%;
+    background-size: var(--progress-pattern-size);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.ProgressBar_background__small_46 {
+    height: var(--progress-bg-height-small);
+}
+.ProgressBar_lineWrapper_6a {
+    display: flex;
+    flex: 1;
+}
+
+.ProgressBarBlink_base_24 {
+    width: var(--progress-glow-width);
+    height: var(--progress-glow-height);
+    background-image: var(--progress-glow);
+    background-size: contain;
+    mix-blend-mode: var(--progress-glow-mixBlendMode);
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(50%, -50%);
+    pointer-events: none;
+}
+
+.ProgressBarBlink_base__small_0f {
+    width: var(--progress-glow-small-width);
+    height: var(--progress-glow-small-height);
+    background-image: var(--progress-glow-small);
+}
+
+/*
+    Gameface can't calculate gradient biggest than 8128px
+    in JS 8000 reserved like anchor for start optimization
+*/
+/* stylelint-disable-line */
+.ProgressLineImpose_base_80 {
+    max-width: 8001px;
+    height: 100%;
+    background-color: var(--progress-line-base);
+    filter: var(--progress-line-filter);
+    position: relative;
+    transition-timing-function: cubic-bezier(1, 0, 0.92, 1);
+    transition-property: width;
+}
+.ProgressLineImpose_base__disabled_cc {
+    background-color: var(--progress-line-disabled);
+}
+.ProgressLineImpose_base__finished_d4 {
+    background-color: var(--progress-line-finished);
+}
+.ProgressLineImpose_base__withoutBounce_56 {
+    transition-timing-function: cubic-bezier(1, 0, 0.75, 0.75);
+}
+.ProgressLineImpose_pattern_1c {
+    max-width: 8001px;
+    background-image: var(--progress-pattern-base);
+    background-repeat: repeat;
+    background-position: 0 50%;
+    background-size: var(--progress-pattern-size);
+    position: absolute;
+    top: var(--progress-pattern-border-size);
+    right: var(--progress-pattern-border-size);
+    bottom: var(--progress-pattern-border-size);
+    left: var(--progress-pattern-border-size);
+}
+.ProgressLineImpose_base__small_55 .ProgressLineImpose_pattern_1c {
+    top: 0;
+    bottom: 0;
+}
+.ProgressLineImpose_base__disabled_cc .ProgressLineImpose_pattern_1c {
+    background-image: var(--progress-pattern-disabled);
+    left: 0;
+}
+.ProgressLineImpose_base__finished_d4 .ProgressLineImpose_pattern_1c {
+    background-image: var(--progress-pattern-finished);
+}
+.ProgressLineImpose_gradient_35 {
+    max-width: 8001px;
+    background-image: var(--progress-pattern-gradient);
+    mix-blend-mode: var(--progress-pattern-gradient-mixBlendMode);
+    position: absolute;
+    top: var(--progress-pattern-border-size);
+    right: 0;
+    bottom: var(--progress-pattern-border-size);
+    left: 0;
+}
+.ProgressLineImpose_base__small_55 .ProgressLineImpose_gradient_35 {
+    top: 0;
+    bottom: 0;
+}
+.ProgressLineImpose_base__disabled_cc .ProgressLineImpose_gradient_35 {
+    display: none;
+}
+.ProgressLineImpose_base__finished_d4 .ProgressLineImpose_gradient_35 {
+    background-image: var(--progress-pattern-gradient-finished);
+}
+.ProgressLineImpose_glow_a5 {
+    width: var(--progress-glow-width);
+    max-width: 8001px;
+    height: var(--progress-glow-height);
+    background-image: var(--progress-glow);
+    background-size: contain;
+    mix-blend-mode: var(--progress-glow-mixBlendMode);
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+.ProgressLineImpose_glow__left_d8 {
+    left: var(--progress-pattern-border-size);
+}
+.ProgressLineImpose_base__disabled_cc .ProgressLineImpose_glow_a5,
+.ProgressLineImpose_base__finished_d4 .ProgressLineImpose_glow_a5 {
+    display: none;
+}
+.ProgressLineImpose_base__small_55 .ProgressLineImpose_glow_a5 {
+    width: var(--progress-glow-small-width);
+    height: var(--progress-glow-small-height);
+    background-image: var(--progress-glow-small);
+}
+
+/*
+    Gameface can't calculate gradient biggest than 8128px
+    in JS 8000 reserved like anchor for start optimization
+*/
+/* stylelint-disable-line */
+.ProgressBarDeltaGrow_base_7e {
+    width: 0;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    transition-timing-function: cubic-bezier(1, 0, 0.92, 1);
+    transition-property: width;
+}
+.ProgressBarDeltaGrow_base__withoutBounce_b5 {
+    transition-timing-function: cubic-bezier(1, 0, 0.75, 0.75);
+}
+.ProgressBarDeltaGrow_glow_68 {
+    width: 0;
+    max-width: 8001px;
+    height: 100%;
+    box-shadow: var(--progress-delta-shadow);
+    background-color: var(--progress-delta-color);
+    position: absolute;
+    bottom: 0;
+    transform-origin: right center;
+    transition-timing-function: cubic-bezier(1, 0, 0.92, 1);
+    transition-property: width;
+}
+.ProgressBarDeltaGrow_base__withoutBounce_b5 .ProgressBarDeltaGrow_glow_68 {
+    transition-timing-function: cubic-bezier(1, 0, 0.75, 0.75);
+}
+
+/*
+    Gameface can't calculate gradient biggest than 8128px
+    in JS 8000 reserved like anchor for start optimization
+*/
+/* stylelint-disable-line */
+.ProgressBarDeltaSimple_base_6c {
+    width: 0;
+    height: 100%;
+    position: absolute;
+    top: 0;
+}
+.ProgressBarDeltaSimple_delta_99 {
+    width: 0;
+    max-width: 8001px;
+    height: 100%;
+    box-shadow: var(--progress-delta-shadow);
+    background-color: var(--progress-delta-color);
+    position: absolute;
+    bottom: 0;
+    transform-origin: right center;
+    transition-timing-function: cubic-bezier(1, 0, 0.92, 1), cubic-bezier(0.21, 0.61, 0.35, 1);
+    transition-property: width, transform;
+}
+
 .Background_base_67 {
     display: flex;
     justify-content: center;
@@ -1096,205 +1296,6 @@
     margin-left: 0;
 }
 
-/*
-    Gameface can't calculate gradient biggest than 8128px
-    in JS 8000 reserved like anchor for start optimization
-*/
-/* stylelint-disable-line */
-.ProgressBar_base_45 {
-    width: 100%;
-    height: 12rem;
-    position: relative;
-}
-.ProgressBar_base__small_df {
-    height: 2rem;
-}
-.ProgressBar_background_51 {
-    width: 100%;
-    max-width: 8001px;
-    height: 100%;
-    background-image: var(--progress-base);
-    background-repeat: repeat;
-    background-position: 0 50%;
-    background-size: 3rem 10rem;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-.ProgressBar_background__small_46 {
-    height: 2rem;
-}
-.ProgressBar_lineWrapper_6a {
-    display: flex;
-    flex: 1;
-}
-
-.ProgressBarBlink_base_24 {
-    width: 60rem;
-    height: 100rem;
-    background-image: var(--progress-glow);
-    background-size: contain;
-    mix-blend-mode: lighten;
-    position: absolute;
-    top: 50%;
-    right: 0;
-    transform: translate(50%, -50%);
-    pointer-events: none;
-}
-
-.ProgressBarBlink_base__small_0f {
-    width: 44rem;
-    height: 43rem;
-    background-image: var(--progress-glow-small);
-}
-
-/*
-    Gameface can't calculate gradient biggest than 8128px
-    in JS 8000 reserved like anchor for start optimization
-*/
-/* stylelint-disable-line */
-.ProgressBarDeltaSimple_base_6c {
-    width: 0;
-    height: 100%;
-    position: absolute;
-    top: 0;
-}
-.ProgressBarDeltaSimple_delta_99 {
-    width: 0;
-    max-width: 8001px;
-    height: 100%;
-    box-shadow: var(--progress-delta-shadow);
-    background-color: var(--progress-delta-color);
-    position: absolute;
-    bottom: 0;
-    transform-origin: right center;
-    transition-timing-function: cubic-bezier(1, 0, 0.92, 1), cubic-bezier(0.21, 0.61, 0.35, 1);
-    transition-property: width, transform;
-}
-
-/*
-    Gameface can't calculate gradient biggest than 8128px
-    in JS 8000 reserved like anchor for start optimization
-*/
-/* stylelint-disable-line */
-.ProgressLineImpose_base_80 {
-    max-width: 8001px;
-    height: 100%;
-    background-color: var(--progress-line-base);
-    position: relative;
-    transition-timing-function: cubic-bezier(1, 0, 0.92, 1);
-    transition-property: width;
-}
-.ProgressLineImpose_base__disabled_cc {
-    background-color: var(--progress-line-disabled);
-}
-.ProgressLineImpose_base__finished_d4 {
-    background-color: var(--progress-line-finished);
-}
-.ProgressLineImpose_base__withoutBounce_56 {
-    transition-timing-function: cubic-bezier(1, 0, 0.75, 0.75);
-}
-.ProgressLineImpose_pattern_1c {
-    max-width: 8001px;
-    background-image: var(--progress-pattern-base);
-    background-repeat: repeat;
-    background-position: 0 50%;
-    background-size: 3rem 10rem;
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    bottom: 1rem;
-    left: 1rem;
-}
-.ProgressLineImpose_base__small_55 .ProgressLineImpose_pattern_1c {
-    top: 0;
-    bottom: 0;
-}
-.ProgressLineImpose_base__disabled_cc .ProgressLineImpose_pattern_1c {
-    background-image: var(--progress-pattern-disabled);
-    left: 0;
-}
-.ProgressLineImpose_base__finished_d4 .ProgressLineImpose_pattern_1c {
-    background-image: var(--progress-pattern-finished);
-}
-.ProgressLineImpose_gradient_35 {
-    max-width: 8001px;
-    background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.75));
-    mix-blend-mode: overlay;
-    position: absolute;
-    top: 1rem;
-    right: 0;
-    bottom: 1rem;
-    left: 0;
-}
-.ProgressLineImpose_base__small_55 .ProgressLineImpose_gradient_35 {
-    top: 0;
-    bottom: 0;
-}
-.ProgressLineImpose_base__disabled_cc .ProgressLineImpose_gradient_35 {
-    display: none;
-}
-.ProgressLineImpose_base__finished_d4 .ProgressLineImpose_gradient_35 {
-    background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.75), rgba(0, 0, 0, 0.5));
-}
-.ProgressLineImpose_glow_a5 {
-    width: 60rem;
-    max-width: 8001px;
-    height: 100rem;
-    background-image: var(--progress-glow);
-    background-size: contain;
-    mix-blend-mode: lighten;
-    position: absolute;
-    top: 50%;
-    left: 100%;
-    transform: translate(-50%, -50%);
-    pointer-events: none;
-}
-.ProgressLineImpose_glow__left_d8 {
-    left: 1rem;
-}
-.ProgressLineImpose_base__disabled_cc .ProgressLineImpose_glow_a5,
-.ProgressLineImpose_base__finished_d4 .ProgressLineImpose_glow_a5 {
-    display: none;
-}
-.ProgressLineImpose_base__small_55 .ProgressLineImpose_glow_a5 {
-    width: 44rem;
-    height: 43rem;
-    background-image: var(--progress-glow-small);
-}
-
-/*
-    Gameface can't calculate gradient biggest than 8128px
-    in JS 8000 reserved like anchor for start optimization
-*/
-/* stylelint-disable-line */
-.ProgressBarDeltaGrow_base_7e {
-    width: 0;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    transition-timing-function: cubic-bezier(1, 0, 0.92, 1);
-    transition-property: width;
-}
-.ProgressBarDeltaGrow_base__withoutBounce_b5 {
-    transition-timing-function: cubic-bezier(1, 0, 0.75, 0.75);
-}
-.ProgressBarDeltaGrow_glow_68 {
-    width: 0;
-    max-width: 8001px;
-    height: 100%;
-    box-shadow: var(--progress-delta-shadow);
-    background-color: var(--progress-delta-color);
-    position: absolute;
-    bottom: 0;
-    transform-origin: right center;
-    transition-timing-function: cubic-bezier(1, 0, 0.92, 1);
-    transition-property: width;
-}
-.ProgressBarDeltaGrow_base__withoutBounce_b5 .ProgressBarDeltaGrow_glow_68 {
-    transition-timing-function: cubic-bezier(1, 0, 0.75, 0.75);
-}
-
 .Card_base_5d {
     display: flex;
     flex-direction: column;
@@ -2223,46 +2224,34 @@
     width: 100%;
 }
 
-.Banner_base_6a {
+.ExtraChapter_base_37 {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 680rem;
     height: 74rem;
-    border: 1rem solid rgb(255, 244, 221, 0.3);
+    border: 1rem solid rgba(255, 221, 153, 0.3);
     position: relative;
+    bottom: 20rem;
     cursor: pointer;
 }
-.mediaMedium .Banner_base_6a {
+.mediaMedium .ExtraChapter_base_37 {
     width: 798rem;
     height: 96rem;
+    bottom: 26rem;
 }
-.mediaLarge .Banner_base_6a {
+.mediaLarge .ExtraChapter_base_37 {
     width: 948rem;
     height: 112rem;
+    bottom: 40rem;
 }
-.mediaExtraLarge .Banner_base_6a {
+.mediaExtraLarge .ExtraChapter_base_37 {
     width: 1098rem;
     height: 130rem;
-}
-.Banner_base__small_01 {
-    width: 400rem;
-    margin: 0 10rem;
-}
-.mediaMedium .Banner_base__small_01 {
-    width: 500rem;
-}
-.mediaLarge .Banner_base__small_01 {
-    width: 600rem;
-    height: 113rem;
-    margin: 0 15rem;
-}
-.mediaExtraLarge .Banner_base__small_01 {
-    width: 680rem;
-    height: 130rem;
+    bottom: 105rem;
 }
 
-.Banner_wrapper_b1 {
+.ExtraChapter_wrapper_f7 {
     display: flex;
     align-items: center;
     width: 100%;
@@ -2271,11 +2260,11 @@
     pointer-events: none;
 }
 
-.Banner_border_bf {
+.ExtraChapter_border_a2 {
     width: 720rem;
     height: 114rem;
-    background: url('R.images.gui.maps.icons.battlePass.post_progression.footer.extraChapter.border.default.small')
-        no-repeat center / contain;
+    background: url('R.images.gui.maps.icons.battlePass.post_progression.footer.extraChapter.border_small') no-repeat
+        center / contain;
     opacity: 0;
     position: absolute;
     z-index: 1;
@@ -2283,119 +2272,92 @@
     pointer-events: none;
 }
 
-.mediaMedium .Banner_border_bf {
+.mediaMedium .ExtraChapter_border_a2 {
     width: 836rem;
     height: 136rem;
-    background-image: url('R.images.gui.maps.icons.battlePass.post_progression.footer.extraChapter.border.default.medium');
+    background-image: url('R.images.gui.maps.icons.battlePass.post_progression.footer.extraChapter.border_medium');
 }
 
-.mediaLarge .Banner_border_bf {
+.mediaLarge .ExtraChapter_border_a2 {
     width: 1008rem;
     height: 172rem;
-    background-image: url('R.images.gui.maps.icons.battlePass.post_progression.footer.extraChapter.border.default.large');
+    background-image: url('R.images.gui.maps.icons.battlePass.post_progression.footer.extraChapter.border_large');
 }
 
-.mediaExtraLarge .Banner_border_bf {
+.mediaExtraLarge .ExtraChapter_border_a2 {
     width: 1158rem;
     height: 190rem;
-    background-image: url('R.images.gui.maps.icons.battlePass.post_progression.footer.extraChapter.border.default.extraLarge');
+    background-image: url('R.images.gui.maps.icons.battlePass.post_progression.footer.extraChapter.border_extraLarge');
 }
 
-.Banner_border__small_36 {
-    width: 436rem;
-    height: 110rem;
-    background: url('R.images.gui.maps.icons.battlePass.post_progression.footer.extraChapter.border.small.small')
-        no-repeat center / contain;
-}
-
-.mediaMedium .Banner_border__small_36 {
-    width: 536rem;
-    height: 132rem;
-    background-image: url('R.images.gui.maps.icons.battlePass.post_progression.footer.extraChapter.border.small.medium');
-}
-
-.mediaLarge .Banner_border__small_36 {
-    width: 636rem;
-    height: 151rem;
-    background-image: url('R.images.gui.maps.icons.battlePass.post_progression.footer.extraChapter.border.small.large');
-}
-
-.mediaExtraLarge .Banner_border__small_36 {
-    width: 716rem;
-    height: 166rem;
-    background-image: url('R.images.gui.maps.icons.battlePass.post_progression.footer.extraChapter.border.small.extraLarge');
-}
-
-.Banner_base__hover_87 .Banner_border_bf {
+.ExtraChapter_base__hover_bf .ExtraChapter_border_a2 {
     opacity: 1;
 }
 
-.Banner_background_38 {
+.ExtraChapter_bg_25 {
     width: 100%;
     height: 100%;
-    background: no-repeat center / 100%;
+    background: url('R.images.gui.maps.icons.battlePass.post_progression.footer.extraChapter.bg') no-repeat center /
+        100%;
     position: absolute;
     transition: background-size 0.3s ease-in-out;
 }
 
-.Banner_base__hover_87 .Banner_background_38 {
+.ExtraChapter_base__hover_bf .ExtraChapter_bg_25 {
     background-size: 103%;
 }
 
-.Banner_widget_e7 {
+.ExtraChapter_widget_71 {
     width: 140rem;
     height: 105rem;
-    background: no-repeat center / cover;
+    background: url('R.images.gui.maps.icons.battlePass.post_progression.footer.extraChapter.widget') no-repeat center /
+        cover;
     position: absolute;
     left: 176rem;
     z-index: 2;
     pointer-events: none;
 }
 
-.mediaMedium .Banner_widget_e7 {
+.mediaMedium .ExtraChapter_widget_71 {
     width: 170rem;
     height: 127rem;
     left: 214rem;
 }
 
-.mediaLarge .Banner_widget_e7 {
+.mediaLarge .ExtraChapter_widget_71 {
     width: 210rem;
     height: 157rem;
     left: 322rem;
 }
 
-.mediaExtraLarge .Banner_widget_e7 {
+.mediaExtraLarge .ExtraChapter_widget_71 {
     width: 232rem;
     height: 174rem;
     left: 362rem;
 }
 
-.Banner_title_09 {
-    color: #ede6d9;
+.ExtraChapter_title_1c {
+    color: #e9e2bf;
     font-size: 18rem;
     font-weight: 700;
     line-height: 1.1;
     position: relative;
 }
 
-.mediaMedium .Banner_title_09 {
+.mediaMedium .ExtraChapter_title_1c {
     font-size: 22rem;
 }
 
-.mediaLarge .Banner_title_09 {
+.mediaLarge .ExtraChapter_title_1c {
     font-size: 26rem;
 }
 
-.mediaExtraLarge .Banner_title_09 {
+.mediaExtraLarge .ExtraChapter_title_1c {
     font-size: 28rem;
 }
 
-.mediaLarge .Banner_title__small_9f {
-    font-size: 28rem;
-}
-
-.Banner_description_fb {
-    color: #ede6d9;
+.ExtraChapter_description_33 {
+    color: #e9e2bf;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
@@ -2404,67 +2366,25 @@
     position: relative;
 }
 
-.mediaMedium .Banner_description_fb {
+.mediaMedium .ExtraChapter_description_33 {
     font-size: 16rem;
 }
 
-.Banner_description__small_7b {
-    margin-top: 3rem;
-    font-size: 12rem;
-}
-
-.Banner_content_86 {
+.ExtraChapter_content_9d {
     margin-left: 300rem;
     margin-right: 5rem;
 }
 
-.mediaMedium .Banner_content_86 {
+.mediaMedium .ExtraChapter_content_9d {
     margin-left: 366rem;
 }
 
-.mediaLarge .Banner_content_86 {
+.mediaLarge .ExtraChapter_content_9d {
     margin-left: 512rem;
 }
 
-.mediaExtraLarge .Banner_content_86 {
+.mediaExtraLarge .ExtraChapter_content_9d {
     margin-left: 568rem;
-}
-
-.Banner_content__small_e9 {
-    width: 240rem;
-    margin-left: 15rem;
-}
-
-.mediaMedium .Banner_content__small_e9 {
-    width: 300rem;
-    margin-left: 20rem;
-}
-
-.mediaLarge .Banner_content__small_e9 {
-    width: 360rem;
-    margin-left: 30rem;
-}
-
-.mediaExtraLarge .Banner_content__small_e9 {
-    margin-left: 40rem;
-}
-
-.ExtraChapter_base_37 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    bottom: 20rem;
-    cursor: pointer;
-}
-.mediaMedium .ExtraChapter_base_37 {
-    bottom: 26rem;
-}
-.mediaLarge .ExtraChapter_base_37 {
-    bottom: 40rem;
-}
-.mediaExtraLarge .ExtraChapter_base_37 {
-    bottom: 105rem;
 }
 
 .CButton_base_40 {
@@ -3806,25 +3726,30 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 
 .App_toolbar_de {
     position: absolute;
-    top: 8rem;
-    left: 50rem;
-}
-
-.mediaSmall .App_toolbar_de {
-    top: 1rem;
+    top: 64rem;
+    left: 25rem;
 }
 
 .mediaLarge .App_toolbar_de {
-    top: 6rem;
+    top: 90rem;
+    left: 42rem;
+}
+
+.mediaExtraLarge .App_toolbar_de {
+    top: 100rem;
 }
 
 .App_awardsWidget_e1 {
     align-self: center;
-    margin-top: 25rem;
+    margin-top: 40rem;
 }
 
-.mediaMedium .App_awardsWidget_e1 {
-    margin-top: 15rem;
+.mediaLarge .App_awardsWidget_e1 {
+    margin-top: 60rem;
+}
+
+.mediaExtraLarge .App_awardsWidget_e1 {
+    margin-top: 70rem;
 }
 
 .App_award_6a {
@@ -3873,4 +3798,16 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     flex-direction: column;
     justify-content: center;
     flex-grow: 1;
+}
+
+.App_footer_8e {
+    margin-bottom: 30rem;
+}
+
+.mediaMedium .App_footer_8e {
+    margin-bottom: 40rem;
+}
+
+.mediaExtraLarge .App_footer_8e {
+    margin-bottom: 50rem;
 }

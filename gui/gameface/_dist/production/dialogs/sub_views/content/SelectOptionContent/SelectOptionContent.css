@@ -1,3 +1,100 @@
+.FormatText_base_d0 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.FormatTextWithColorTags_blackReal_d5 {
+    color: #000000;
+}
+
+.FormatTextWithColorTags_whiteReal_d8 {
+    color: #ffffff;
+}
+
+.FormatTextWithColorTags_white_b9 {
+    color: #f2f2f7;
+}
+
+.FormatTextWithColorTags_whiteOrange_ea {
+    color: #fefeec;
+}
+
+.FormatTextWithColorTags_whiteSpanish_54 {
+    color: #e9e2bf;
+}
+
+.FormatTextWithColorTags_par_c1 {
+    color: #8c8c7e;
+}
+
+.FormatTextWithColorTags_parSecondary_4e {
+    color: #595950;
+}
+
+.FormatTextWithColorTags_parTertiary_14 {
+    color: #37362e;
+}
+
+.FormatTextWithColorTags_red_d9 {
+    color: #ff2717;
+}
+
+.FormatTextWithColorTags_redDark_ea {
+    color: #b70000;
+}
+
+.FormatTextWithColorTags_yellow_48 {
+    color: #feab34;
+}
+
+.FormatTextWithColorTags_orange_ad {
+    color: #ee7000;
+}
+
+.FormatTextWithColorTags_cream_96 {
+    color: #ffdd99;
+}
+
+.FormatTextWithColorTags_brown_27 {
+    color: #cbac77;
+}
+
+.FormatTextWithColorTags_greenBright_04 {
+    color: #80d43a;
+}
+
+.FormatTextWithColorTags_green_58 {
+    color: #7ab300;
+}
+
+.FormatTextWithColorTags_greenDark_af {
+    color: #497212;
+}
+
+.FormatTextWithColorTags_blueBooster_b3 {
+    color: #ccffff;
+}
+
+.FormatTextWithColorTags_blueTeamkiller_ab {
+    color: #09e2ff;
+}
+
+.FormatTextWithColorTags_cred_d3 {
+    color: #ced9d9;
+}
+
+.FormatTextWithColorTags_gold_28 {
+    color: #ffc363;
+}
+
+.FormatTextWithColorTags_bond_74 {
+    color: #c9c9b6;
+}
+
+.FormatTextWithColorTags_prom_58 {
+    color: #a29b70;
+}
+
 .Icon_base_67 {
     display: flex;
     justify-content: center;
@@ -17,7 +114,7 @@
 }
 
 .SelectOptionWrapper_base_38 + .SelectOptionWrapper_base_38 {
-    margin-left: 40rem;
+    margin-left: 20rem;
 }
 
 .SelectOptionWrapper_background_d0 {
@@ -86,16 +183,106 @@
     pointer-events: None;
 }
 
+.StorageIndicator_base_04 {
+    color: #e9e2bf;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    display: flex;
+    align-items: center;
+}
+
+.StorageIndicator_base__notEnough_74 {
+    color: #ff2717;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+.StorageIndicator_icon_b6 {
+    width: 27rem;
+    height: 23rem;
+    margin-top: 1rem;
+    margin-right: -1rem;
+    background: url('R.images.gui.maps.icons.demountKit.storege') no-repeat 50% / contain;
+}
+
+.StorageIndicator_icon__disabled_09 {
+    opacity: 0.7;
+}
+
+.DemountKitOption_base_80 {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.DemountKitOption_storage_49 {
+    position: absolute;
+    top: 1rem;
+    right: 7rem;
+}
+
+.DemountKitOption_text_a2 {
+    color: #e9e2bf;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    position: absolute;
+    right: 0;
+    bottom: 16rem;
+    left: 0;
+}
+
+.DemountKitOption_text__disabled_53 {
+    color: #8c8c7e;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+.DemountKitOption_icon_d9 {
+    margin: -5rem 0 0 3rem;
+}
+
+.MapOption_base_0d {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.MapOption_text_80 {
+    color: #fefeec;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+    position: absolute;
+    right: 0;
+    bottom: 16rem;
+    left: 0;
+    z-index: 2;
+}
+
+.MapOption_icon_bd {
+    padding: 2rem;
+    z-index: -1;
+}
+
+.MapOption_icon_bd img {
+    width: 150rem;
+    height: 150rem;
+    /* has to be !important, otherwise it scales for 4k monitors, which we don't want in this case*/
+    transform: none !important;
+}
+
 .Currency_base_57 {
     display: flex;
     align-items: center;
     position: relative;
 }
 .Currency_icon_c5 {
-    --icon-height: 16rem;
-    --icon-width: var(--icon-height);
-    width: var(--icon-width);
-    height: var(--icon-height);
+    width: 16rem;
+    height: 16rem;
     background-repeat: no-repeat;
     background-size: contain;
     position: relative;
@@ -114,7 +301,8 @@
     background-image: url('R.images.gui.maps.icons.library.CreditsIcon_1');
 }
 .Currency_icon__credits-large_ac {
-    --icon-height: 48rem;
+    width: 48rem;
+    height: 48rem;
     margin-left: -1rem;
     background-image: url('R.images.gui.maps.shop.rewards.c_48x48.money_silver');
 }
@@ -122,7 +310,8 @@
     transform: translateY(4rem);
 }
 .Currency_icon__credits-extraLarge_16 {
-    --icon-height: 80rem;
+    width: 80rem;
+    height: 80rem;
     margin-right: -2rem;
     background-image: url('R.images.gui.maps.icons.library.credits_icon_80x80');
 }
@@ -139,7 +328,8 @@
     transform: translateY(4rem);
 }
 .Currency_icon__gold-large_36 {
-    --icon-height: 48rem;
+    width: 48rem;
+    height: 48rem;
     margin-left: -1rem;
     background-image: url('R.images.gui.maps.shop.rewards.c_48x48.money_gold');
 }
@@ -147,7 +337,8 @@
     transform: translateY(4rem);
 }
 .Currency_icon__gold-extraLarge_a0 {
-    --icon-height: 80rem;
+    width: 80rem;
+    height: 80rem;
     background-image: url('R.images.gui.maps.icons.library.gold_icon_80x80');
 }
 .Currency_icon__crystal-small_27 {
@@ -157,20 +348,22 @@
     transform: translateY(2rem);
 }
 .Currency_icon__crystal-big_cd {
-    --icon-height: 22rem;
-    --icon-width: 23rem;
+    width: 23rem;
+    height: 22rem;
     background-image: url('R.images.gui.maps.icons.library.crystal_23x22');
 }
 .Currency_base__big_bc .Currency_icon__crystal-big_cd {
     transform: translateY(4rem);
 }
 .Currency_icon__crystal-large_d3 {
-    --icon-height: 48rem;
+    width: 48rem;
+    height: 48rem;
     margin-left: -1rem;
     background-image: url('R.images.gui.maps.shop.rewards.c_48x48.money_bonds');
 }
 .Currency_icon__crystal-extraLarge_09 {
-    --icon-height: 80rem;
+    width: 80rem;
+    height: 80rem;
     background-image: url('R.images.gui.maps.icons.library.crystal_80x80');
 }
 .Currency_base__extraLarge_4d .Currency_icon__crystal-extraLarge_09 {
@@ -183,8 +376,8 @@
     transform: translateY(1rem);
 }
 .Currency_icon__xp-big_97 {
-    --icon-height: 22rem;
-    --icon-width: 23rem;
+    width: 23rem;
+    height: 22rem;
     margin-left: -5rem;
     background-image: url('R.images.gui.maps.icons.library.xpIcon_23x22');
 }
@@ -192,12 +385,14 @@
     transform: translateY(2rem);
 }
 .Currency_icon__xp-large_6b {
-    --icon-height: 48rem;
+    width: 48rem;
+    height: 48rem;
     margin: 0 -5rem 0 -6rem;
     background-image: url('R.images.gui.maps.shop.rewards.c_48x48.exp');
 }
 .Currency_icon__xp-extraLarge_67 {
-    --icon-height: 80rem;
+    width: 80rem;
+    height: 80rem;
     margin: 0 -5rem;
     background-image: url('R.images.gui.maps.icons.library.xp_tank_icon_80x80');
 }
@@ -208,17 +403,20 @@
     transform: translateY(1rem);
 }
 .Currency_icon__freeXP-big_21 {
-    --icon-height: 24rem;
+    width: 24rem;
+    height: 24rem;
     margin-left: -5rem;
     background-image: url('R.images.gui.maps.icons.library.freeXPIconBig24x24');
 }
 .Currency_icon__freeXP-large_c8 {
-    --icon-height: 48rem;
+    width: 48rem;
+    height: 48rem;
     margin: 0 -5rem 0 -6rem;
     background-image: url('R.images.gui.maps.shop.rewards.c_48x48.freeExp');
 }
 .Currency_icon__freeXP-extraLarge_58 {
-    --icon-height: 80rem;
+    width: 80rem;
+    height: 80rem;
     margin: 0 -5rem;
     background-image: url('R.images.gui.maps.icons.library.free_xp_icon_80x80');
 }
@@ -232,17 +430,20 @@
     transform: translateY(1rem);
 }
 .Currency_icon__eliteXP-big_c0 {
-    --icon-height: 24rem;
+    width: 24rem;
+    height: 24rem;
     margin-left: -5rem;
     background-image: url('R.images.gui.maps.icons.library.EliteXpIconBig');
 }
 .Currency_icon__eliteXP-large_1b {
-    --icon-height: 48rem;
+    width: 48rem;
+    height: 48rem;
     margin: 0 -5rem 0 -6rem;
     background-image: url('R.images.gui.maps.icons.library.elite_exp_48x48');
 }
 .Currency_icon__eliteXP-extraLarge_9b {
-    --icon-height: 80rem;
+    width: 80rem;
+    height: 80rem;
     margin: 0 -5rem;
     background-image: url('R.images.gui.maps.icons.library.elite_exp_80x80');
 }
@@ -250,7 +451,8 @@
     transform: translateY(4rem);
 }
 .Currency_icon__equipCoin-small_32 {
-    --icon-height: 16rem;
+    width: 16rem;
+    height: 16rem;
     margin-right: -2rem;
     background-image: url('R.images.gui.maps.icons.library.equipCoin_1');
 }
@@ -258,19 +460,22 @@
     transform: translateX(-1rem) translateY(1rem);
 }
 .Currency_icon__equipCoin-big_79 {
-    --icon-height: 24rem;
+    width: 24rem;
+    height: 24rem;
     background-image: url('R.images.gui.maps.icons.library.equipCoinBig');
 }
 .Currency_base__big_bc .Currency_icon__equipCoin-big_79 {
     transform: translateX(-5rem) translateY(3rem);
 }
 .Currency_icon__equipCoin-large_2c {
-    --icon-height: 48rem;
+    width: 48rem;
+    height: 48rem;
     margin-right: 2rem;
     background-image: url('R.images.gui.maps.shop.rewards.c_48x48.equipCoin');
 }
 .Currency_icon__equipCoin-extraLarge_8a {
-    --icon-height: 80rem;
+    width: 80rem;
+    height: 80rem;
     margin-right: 8rem;
     background-image: url('R.images.gui.maps.icons.library.equipCoin_icon_80x80');
 }
@@ -280,8 +485,7 @@
 .Currency_value_e1 {
     /* font-size inherit does not work here, so 1em means the size does not change */
     /* stylelint-disable-next-line */
-    --font-size: 1em;
-    font-size: var(--font-size);
+    font-size: 1em;
     position: relative;
     z-index: 2;
 }
@@ -289,22 +493,22 @@
     padding-right: 2rem;
 }
 .Currency_base__big_bc .Currency_value_e1 {
-    --font-size: 24rem;
     padding-right: 5rem;
+    font-size: 24rem;
     font-weight: 700;
 }
 .Currency_base__big_bc .Currency_value_e1 + .Currency_icon_c5 {
     font-size: 24rem;
 }
 .Currency_base__large_65 .Currency_value_e1 {
-    --font-size: 36rem;
+    font-size: 36rem;
     font-weight: 700;
 }
 .Currency_base__large_65 .Currency_value_e1 + .Currency_icon_c5 {
     font-size: 36rem;
 }
 .Currency_base__extraLarge_4d .Currency_value_e1 {
-    --font-size: 56rem;
+    font-size: 56rem;
     font-weight: 700;
 }
 .Currency_value__freeXP_cb {
@@ -393,68 +597,6 @@
 
 .MoneyOption_icon_9d {
     margin: -2rem 0 0 5rem;
-}
-
-.StorageIndicator_base_04 {
-    color: #e9e2bf;
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
-    display: flex;
-    align-items: center;
-}
-
-.StorageIndicator_base__notEnough_74 {
-    color: #ff2717;
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
-}
-
-.StorageIndicator_icon_b6 {
-    width: 27rem;
-    height: 23rem;
-    margin-top: 1rem;
-    margin-right: -1rem;
-    background: url('R.images.gui.maps.icons.demountKit.storege') no-repeat 50% / contain;
-}
-
-.StorageIndicator_icon__disabled_09 {
-    opacity: 0.7;
-}
-
-.DemountKitOption_base_80 {
-    width: 100%;
-    height: 100%;
-    position: relative;
-}
-
-.DemountKitOption_storage_49 {
-    position: absolute;
-    top: 1rem;
-    right: 7rem;
-}
-
-.DemountKitOption_text_a2 {
-    color: #e9e2bf;
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
-    position: absolute;
-    right: 0;
-    bottom: 16rem;
-    left: 0;
-}
-
-.DemountKitOption_text__disabled_53 {
-    color: #8c8c7e;
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
-}
-
-.DemountKitOption_icon_d9 {
-    margin: -5rem 0 0 3rem;
 }
 
 .OptionList_base_0c {

@@ -368,12 +368,21 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     background-image: url('R.images.gui.maps.icons.buttons.toggle_indicator_active');
 }
 
+.ToggleButton_button_4f {
+    margin: 2rem;
+    padding: 0 17rem;
+}
+
 /*////////////*/
 
 /* Colors: https://confluence.wargaming.net/pages/viewpage.action?pageId=1111407054*/
 
-base {
-    margin: 0 2rem;
+.TierButton_base_73 {
+    margin-right: 5rem;
+}
+
+.TierButton_base_73:last-child {
+    margin-right: 0;
 }
 
 .TierButton_tier_e9 {
@@ -399,11 +408,12 @@ base {
 .TiersSettings_tiers_6f {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    margin-left: -1rem;
 }
 
 .TiersSettings_tiers__firstLine_07 {
-    margin: 7rem 0 13rem;
+    margin-top: 7rem;
+    margin-bottom: 13rem;
 }
 
 .Checkbox_base_36 {

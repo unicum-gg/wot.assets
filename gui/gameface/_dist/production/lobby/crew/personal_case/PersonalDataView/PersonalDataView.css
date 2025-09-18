@@ -623,7 +623,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .FilterToggleGroup_base__inPopup_11 .FilterToggleGroup_toggle_d4 {
     width: 30rem;
     height: 20rem;
-    margin: 0 15rem 14rem 0;
+    margin: 0 12rem 14rem 0;
 }
 
 .NumberRange_base_5e {
@@ -1100,7 +1100,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .WarningText_icon_5d {
     width: 24rem;
     height: 24rem;
-    background: url('R.images.gui.maps.icons.library.alertBigIcon.bg') no-repeat 50% / 24rem 24rem;
+    background: url('R.images.gui.maps.icons.library.alertBigIcon') no-repeat 50% / 24rem 24rem;
     position: relative;
     top: 1rem;
 }
@@ -1151,11 +1151,12 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     display: flex;
     width: 100%;
     height: 13rem;
+    visibility: hidden;
     position: relative;
 }
 
-.HorizontalBar_base__nonActive_82 {
-    visibility: hidden;
+.HorizontalBar_base__active_5e {
+    visibility: visible;
 }
 
 .HorizontalBar_base_49 .disable,
@@ -1252,11 +1253,12 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     flex-direction: column;
     width: 13rem;
     height: 100%;
+    visibility: hidden;
     position: relative;
 }
 
-.VerticalBar_base__nonActive_42 {
-    visibility: hidden;
+.VerticalBar_base__active_72 {
+    visibility: visible;
 }
 
 .VerticalBar_base_f3 .disable,

@@ -131,10 +131,18 @@
                 t.d(u, { E: () => a });
             },
             3138: (e, u, t) => {
-                t.d(u, { O: () => n });
+                t.d(u, { O: () => r });
                 var a = t(5959),
-                    i = t(514);
-                const n = { view: t(7641), client: a, sound: i.ZP };
+                    i = t(7698),
+                    n = t(514);
+                const r = { view: t(7641), client: a, sound: n.ZP, intl: i.N };
+            },
+            7698: (e, u, t) => {
+                t.d(u, { N: () => a });
+                const a = {
+                    toUpperCase: (e) => window.systemLocale.toUpperCase(e),
+                    toLowerCase: (e) => window.systemLocale.toLowerCase(e),
+                };
             },
             514: (e, u, t) => {
                 t.d(u, { ZP: () => r });
@@ -181,20 +189,23 @@
                     t.d(u, {
                         addModelObserver: () => E,
                         addPreloadTexture: () => o,
-                        arabic2roman: () => T,
+                        arabic2roman: () => w,
                         children: () => i,
                         displayStatus: () => n.W,
-                        displayStatusIs: () => w,
+                        displayStatusIs: () => P,
+                        enableFullScreenModeSupported: () => k,
                         events: () => r.U,
-                        extraSize: () => P,
+                        extraSize: () => S,
                         forceTriggerMouseMove: () => h,
                         freezeTextureBeforeResize: () => d,
                         getBrowserTexturePath: () => c,
                         getDisplayStatus: () => f,
+                        getExternalPaddingsRem: () => T,
                         getFontNames: () => y,
                         getScale: () => B,
                         getSize: () => F,
                         getViewGlobalPosition: () => D,
+                        initExternalPaddings: () => N,
                         isEventHandled: () => v,
                         isFocused: () => g,
                         pxToRem: () => _,
@@ -205,7 +216,7 @@
                         setEventHandled: () => b,
                         setInputPaddingsRem: () => l,
                         setSidePaddingsRem: () => A,
-                        whenTutorialReady: () => S,
+                        whenTutorialReady: () => R,
                     }));
                 var a = t(9690),
                     i = t(3722),
@@ -271,12 +282,15 @@
                         let e = [];
                         return () => (0 === e.length && (e = Object.keys(viewEnv.getFontsConfig())), e);
                     })(),
-                    T = a.cg,
-                    w = Object.keys(n.W).reduce(
+                    w = a.cg;
+                function T() {
+                    return viewEnv.getExternalPaddingsRem();
+                }
+                const P = Object.keys(n.W).reduce(
                         (e, u) => ((e[u] = () => viewEnv.getShowingStatus() === n.W[u]), e),
                         {},
                     ),
-                    P = {
+                    S = {
                         set: (e, u) => {
                             viewEnv.setExtraSizeRem(e, u);
                         },
@@ -284,12 +298,29 @@
                             viewEnv.getExtraSizeRem(e, u);
                         },
                     },
-                    S = Promise.all([
+                    R = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : r.U.onDomBuilt(e);
                         }),
                         engine.whenReady,
                     ]);
+                function k() {
+                    viewEnv.setFullscreenModeSupported(!0);
+                }
+                function N(e) {
+                    function u() {
+                        const u = viewEnv.getExternalPaddingsRem(),
+                            t = u.top,
+                            a = u.right,
+                            i = u.bottom,
+                            n = u.left;
+                        (e.style.setProperty('--external-padding-top', `${t}rem`),
+                            e.style.setProperty('--external-padding-right', `${a}rem`),
+                            e.style.setProperty('--external-padding-bottom', `${i}rem`),
+                            e.style.setProperty('--external-padding-left', `${n}rem`));
+                    }
+                    (u(), engine.on('self.onPaddingsUpdated', () => u()));
+                }
             },
             8566: (e, u, t) => {
                 t.d(u, { qP: () => n });
@@ -505,7 +536,7 @@
                 const __WEBPACK_DEFAULT_EXPORT__ = ViewModel;
             },
             9916: (e, u, t) => {
-                t.d(u, { B3: () => l, Z5: () => r.Z5, ry: () => _ });
+                t.d(u, { ry: () => _ });
                 class a {
                     constructor() {
                         ((this.entries = []),
@@ -756,7 +787,7 @@
                 var a = {};
                 (t.r(a),
                     t.d(a, {
-                        Area: () => H,
+                        Area: () => V,
                         Bar: () => z,
                         DefaultScroll: () => G,
                         Direction: () => P,
@@ -764,7 +795,7 @@
                         useHorizontalScrollApi: () => N,
                     }));
                 var i = {};
-                (t.r(i), t.d(i, { Area: () => ue, Bar: () => Q, Default: () => ee, useVerticalScrollApi: () => V }));
+                (t.r(i), t.d(i, { Area: () => ue, Bar: () => Q, Default: () => ee, useVerticalScrollApi: () => H }));
                 var n = t(7363),
                     r = t.n(n),
                     s = t(1533),
@@ -795,17 +826,14 @@
                     d = (e, u, t = A.left) => e.split(u).reduce(t === A.left ? m : D, []),
                     B = (() => {
                         const e = new RegExp(
-                            /[\(\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]?[\u3002\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]?[ %\+\x2D-9A-Za-\{\}\xA0\xC0-\u0237\u2013\u2014\u2026]+[\)\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3002\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\uFF01\uFF0C\uFF1A\uFF1B\uFF1F\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]?[\u3002\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]?/gmu
-                                .source +
-                                '|' +
-                                /[\(\xAB\u201C\u275D][\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}][\0-\u2E7F\u2E9A\u2EF4-\u2EFF\u2FD6-\u3004\u3006\u3008-\u3020\u302A-\u3037\u303C-\u33FF\u4DC0-\u4DFF\uA000-\uF8FF\uFA6E\uFA6F\uFADA-\u{16FE1}\u{16FE4}-\u{16FEF}\u{16FF2}-\u{1FFFF}\u{2A6E0}-\u{2A6FF}\u{2B739}-\u{2B73F}\u{2B81E}\u{2B81F}\u{2CEA2}-\u{2CEAF}\u{2EBE1}-\u{2F7FF}\u{2FA1E}-\u{2FFFF}\u{3134B}-\u{10FFFF}]?|[\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}][\0-\u2E7F\u2E9A\u2EF4-\u2EFF\u2FD6-\u3004\u3006\u3008-\u3020\u302A-\u3037\u303C-\u33FF\u4DC0-\u4DFF\uA000-\uF8FF\uFA6E\uFA6F\uFADA-\u{16FE1}\u{16FE4}-\u{16FEF}\u{16FF2}-\u{1FFFF}\u{2A6E0}-\u{2A6FF}\u{2B739}-\u{2B73F}\u{2B81E}\u{2B81F}\u{2CEA2}-\u{2CEAF}\u{2EBE1}-\u{2F7FF}\u{2FA1E}-\u{2FFFF}\u{3134B}-\u{10FFFF}]?[\u3002\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]?[\)\xBB\u201D\u275E][\u3002\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]?/gmu
-                                    .source +
-                                '|' +
-                                /[A-Za-z\xAA\xB5\xBA\xC0-\xD6\xD8-\xF6\xF8-\u02C1\u02C6-\u02D1\u02E0-\u02E4\u02EC\u02EE\u0370-\u0374\u0376\u0377\u037A-\u037D\u037F\u0386\u0388-\u038A\u038C\u038E-\u03A1\u03A3-\u03F5\u03F7-\u0481\u048A-\u052F\u0531-\u0556\u0559\u0560-\u0588\u05D0-\u05EA\u05EF-\u05F2\u0620-\u064A\u066E\u066F\u0671-\u06D3\u06D5\u06E5\u06E6\u06EE\u06EF\u06FA-\u06FC\u06FF\u0710\u0712-\u072F\u074D-\u07A5\u07B1\u07CA-\u07EA\u07F4\u07F5\u07FA\u0800-\u0815\u081A\u0824\u0828\u0840-\u0858\u0860-\u086A\u0870-\u0887\u0889-\u088E\u08A0-\u08C9\u0904-\u0939\u093D\u0950\u0958-\u0961\u0971-\u0980\u0985-\u098C\u098F\u0990\u0993-\u09A8\u09AA-\u09B0\u09B2\u09B6-\u09B9\u09BD\u09CE\u09DC\u09DD\u09DF-\u09E1\u09F0\u09F1\u09FC\u0A05-\u0A0A\u0A0F\u0A10\u0A13-\u0A28\u0A2A-\u0A30\u0A32\u0A33\u0A35\u0A36\u0A38\u0A39\u0A59-\u0A5C\u0A5E\u0A72-\u0A74\u0A85-\u0A8D\u0A8F-\u0A91\u0A93-\u0AA8\u0AAA-\u0AB0\u0AB2\u0AB3\u0AB5-\u0AB9\u0ABD\u0AD0\u0AE0\u0AE1\u0AF9\u0B05-\u0B0C\u0B0F\u0B10\u0B13-\u0B28\u0B2A-\u0B30\u0B32\u0B33\u0B35-\u0B39\u0B3D\u0B5C\u0B5D\u0B5F-\u0B61\u0B71\u0B83\u0B85-\u0B8A\u0B8E-\u0B90\u0B92-\u0B95\u0B99\u0B9A\u0B9C\u0B9E\u0B9F\u0BA3\u0BA4\u0BA8-\u0BAA\u0BAE-\u0BB9\u0BD0\u0C05-\u0C0C\u0C0E-\u0C10\u0C12-\u0C28\u0C2A-\u0C39\u0C3D\u0C58-\u0C5A\u0C5D\u0C60\u0C61\u0C80\u0C85-\u0C8C\u0C8E-\u0C90\u0C92-\u0CA8\u0CAA-\u0CB3\u0CB5-\u0CB9\u0CBD\u0CDD\u0CDE\u0CE0\u0CE1\u0CF1\u0CF2\u0D04-\u0D0C\u0D0E-\u0D10\u0D12-\u0D3A\u0D3D\u0D4E\u0D54-\u0D56\u0D5F-\u0D61\u0D7A-\u0D7F\u0D85-\u0D96\u0D9A-\u0DB1\u0DB3-\u0DBB\u0DBD\u0DC0-\u0DC6\u0E01-\u0E30\u0E32\u0E33\u0E40-\u0E46\u0E81\u0E82\u0E84\u0E86-\u0E8A\u0E8C-\u0EA3\u0EA5\u0EA7-\u0EB0\u0EB2\u0EB3\u0EBD\u0EC0-\u0EC4\u0EC6\u0EDC-\u0EDF\u0F00\u0F40-\u0F47\u0F49-\u0F6C\u0F88-\u0F8C\u1000-\u102A\u103F\u1050-\u1055\u105A-\u105D\u1061\u1065\u1066\u106E-\u1070\u1075-\u1081\u108E\u10A0-\u10C5\u10C7\u10CD\u10D0-\u10FA\u10FC-\u1248\u124A-\u124D\u1250-\u1256\u1258\u125A-\u125D\u1260-\u1288\u128A-\u128D\u1290-\u12B0\u12B2-\u12B5\u12B8-\u12BE\u12C0\u12C2-\u12C5\u12C8-\u12D6\u12D8-\u1310\u1312-\u1315\u1318-\u135A\u1380-\u138F\u13A0-\u13F5\u13F8-\u13FD\u1401-\u166C\u166F-\u167F\u1681-\u169A\u16A0-\u16EA\u16F1-\u16F8\u1700-\u1711\u171F-\u1731\u1740-\u1751\u1760-\u176C\u176E-\u1770\u1780-\u17B3\u17D7\u17DC\u1820-\u1878\u1880-\u1884\u1887-\u18A8\u18AA\u18B0-\u18F5\u1900-\u191E\u1950-\u196D\u1970-\u1974\u1980-\u19AB\u19B0-\u19C9\u1A00-\u1A16\u1A20-\u1A54\u1AA7\u1B05-\u1B33\u1B45-\u1B4C\u1B83-\u1BA0\u1BAE\u1BAF\u1BBA-\u1BE5\u1C00-\u1C23\u1C4D-\u1C4F\u1C5A-\u1C7D\u1C80-\u1C88\u1C90-\u1CBA\u1CBD-\u1CBF\u1CE9-\u1CEC\u1CEE-\u1CF3\u1CF5\u1CF6\u1CFA\u1D00-\u1DBF\u1E00-\u1F15\u1F18-\u1F1D\u1F20-\u1F45\u1F48-\u1F4D\u1F50-\u1F57\u1F59\u1F5B\u1F5D\u1F5F-\u1F7D\u1F80-\u1FB4\u1FB6-\u1FBC\u1FBE\u1FC2-\u1FC4\u1FC6-\u1FCC\u1FD0-\u1FD3\u1FD6-\u1FDB\u1FE0-\u1FEC\u1FF2-\u1FF4\u1FF6-\u1FFC\u2071\u207F\u2090-\u209C\u2102\u2107\u210A-\u2113\u2115\u2119-\u211D\u2124\u2126\u2128\u212A-\u212D\u212F-\u2139\u213C-\u213F\u2145-\u2149\u214E\u2183\u2184\u2C00-\u2CE4\u2CEB-\u2CEE\u2CF2\u2CF3\u2D00-\u2D25\u2D27\u2D2D\u2D30-\u2D67\u2D6F\u2D80-\u2D96\u2DA0-\u2DA6\u2DA8-\u2DAE\u2DB0-\u2DB6\u2DB8-\u2DBE\u2DC0-\u2DC6\u2DC8-\u2DCE\u2DD0-\u2DD6\u2DD8-\u2DDE\u2E2F\u3005\u3006\u3031-\u3035\u303B\u303C\u3041-\u3096\u309D-\u309F\u30A1-\u30FA\u30FC-\u30FF\u3105-\u312F\u3131-\u318E\u31A0-\u31BF\u31F0-\u31FF\u3400-\u4DBF\u4E00-\uA48C\uA4D0-\uA4FD\uA500-\uA60C\uA610-\uA61F\uA62A\uA62B\uA640-\uA66E\uA67F-\uA69D\uA6A0-\uA6E5\uA717-\uA71F\uA722-\uA788\uA78B-\uA7CA\uA7D0\uA7D1\uA7D3\uA7D5-\uA7D9\uA7F2-\uA801\uA803-\uA805\uA807-\uA80A\uA80C-\uA822\uA840-\uA873\uA882-\uA8B3\uA8F2-\uA8F7\uA8FB\uA8FD\uA8FE\uA90A-\uA925\uA930-\uA946\uA960-\uA97C\uA984-\uA9B2\uA9CF\uA9E0-\uA9E4\uA9E6-\uA9EF\uA9FA-\uA9FE\uAA00-\uAA28\uAA40-\uAA42\uAA44-\uAA4B\uAA60-\uAA76\uAA7A\uAA7E-\uAAAF\uAAB1\uAAB5\uAAB6\uAAB9-\uAABD\uAAC0\uAAC2\uAADB-\uAADD\uAAE0-\uAAEA\uAAF2-\uAAF4\uAB01-\uAB06\uAB09-\uAB0E\uAB11-\uAB16\uAB20-\uAB26\uAB28-\uAB2E\uAB30-\uAB5A\uAB5C-\uAB69\uAB70-\uABE2\uAC00-\uD7A3\uD7B0-\uD7C6\uD7CB-\uD7FB\uF900-\uFA6D\uFA70-\uFAD9\uFB00-\uFB06\uFB13-\uFB17\uFB1D\uFB1F-\uFB28\uFB2A-\uFB36\uFB38-\uFB3C\uFB3E\uFB40\uFB41\uFB43\uFB44\uFB46-\uFBB1\uFBD3-\uFD3D\uFD50-\uFD8F\uFD92-\uFDC7\uFDF0-\uFDFB\uFE70-\uFE74\uFE76-\uFEFC\uFF21-\uFF3A\uFF41-\uFF5A\uFF66-\uFFBE\uFFC2-\uFFC7\uFFCA-\uFFCF\uFFD2-\uFFD7\uFFDA-\uFFDC\u{10000}-\u{1000B}\u{1000D}-\u{10026}\u{10028}-\u{1003A}\u{1003C}\u{1003D}\u{1003F}-\u{1004D}\u{10050}-\u{1005D}\u{10080}-\u{100FA}\u{10280}-\u{1029C}\u{102A0}-\u{102D0}\u{10300}-\u{1031F}\u{1032D}-\u{10340}\u{10342}-\u{10349}\u{10350}-\u{10375}\u{10380}-\u{1039D}\u{103A0}-\u{103C3}\u{103C8}-\u{103CF}\u{10400}-\u{1049D}\u{104B0}-\u{104D3}\u{104D8}-\u{104FB}\u{10500}-\u{10527}\u{10530}-\u{10563}\u{10570}-\u{1057A}\u{1057C}-\u{1058A}\u{1058C}-\u{10592}\u{10594}\u{10595}\u{10597}-\u{105A1}\u{105A3}-\u{105B1}\u{105B3}-\u{105B9}\u{105BB}\u{105BC}\u{10600}-\u{10736}\u{10740}-\u{10755}\u{10760}-\u{10767}\u{10780}-\u{10785}\u{10787}-\u{107B0}\u{107B2}-\u{107BA}\u{10800}-\u{10805}\u{10808}\u{1080A}-\u{10835}\u{10837}\u{10838}\u{1083C}\u{1083F}-\u{10855}\u{10860}-\u{10876}\u{10880}-\u{1089E}\u{108E0}-\u{108F2}\u{108F4}\u{108F5}\u{10900}-\u{10915}\u{10920}-\u{10939}\u{10980}-\u{109B7}\u{109BE}\u{109BF}\u{10A00}\u{10A10}-\u{10A13}\u{10A15}-\u{10A17}\u{10A19}-\u{10A35}\u{10A60}-\u{10A7C}\u{10A80}-\u{10A9C}\u{10AC0}-\u{10AC7}\u{10AC9}-\u{10AE4}\u{10B00}-\u{10B35}\u{10B40}-\u{10B55}\u{10B60}-\u{10B72}\u{10B80}-\u{10B91}\u{10C00}-\u{10C48}\u{10C80}-\u{10CB2}\u{10CC0}-\u{10CF2}\u{10D00}-\u{10D23}\u{10E80}-\u{10EA9}\u{10EB0}\u{10EB1}\u{10F00}-\u{10F1C}\u{10F27}\u{10F30}-\u{10F45}\u{10F70}-\u{10F81}\u{10FB0}-\u{10FC4}\u{10FE0}-\u{10FF6}\u{11003}-\u{11037}\u{11071}\u{11072}\u{11075}\u{11083}-\u{110AF}\u{110D0}-\u{110E8}\u{11103}-\u{11126}\u{11144}\u{11147}\u{11150}-\u{11172}\u{11176}\u{11183}-\u{111B2}\u{111C1}-\u{111C4}\u{111DA}\u{111DC}\u{11200}-\u{11211}\u{11213}-\u{1122B}\u{11280}-\u{11286}\u{11288}\u{1128A}-\u{1128D}\u{1128F}-\u{1129D}\u{1129F}-\u{112A8}\u{112B0}-\u{112DE}\u{11305}-\u{1130C}\u{1130F}\u{11310}\u{11313}-\u{11328}\u{1132A}-\u{11330}\u{11332}\u{11333}\u{11335}-\u{11339}\u{1133D}\u{11350}\u{1135D}-\u{11361}\u{11400}-\u{11434}\u{11447}-\u{1144A}\u{1145F}-\u{11461}\u{11480}-\u{114AF}\u{114C4}\u{114C5}\u{114C7}\u{11580}-\u{115AE}\u{115D8}-\u{115DB}\u{11600}-\u{1162F}\u{11644}\u{11680}-\u{116AA}\u{116B8}\u{11700}-\u{1171A}\u{11740}-\u{11746}\u{11800}-\u{1182B}\u{118A0}-\u{118DF}\u{118FF}-\u{11906}\u{11909}\u{1190C}-\u{11913}\u{11915}\u{11916}\u{11918}-\u{1192F}\u{1193F}\u{11941}\u{119A0}-\u{119A7}\u{119AA}-\u{119D0}\u{119E1}\u{119E3}\u{11A00}\u{11A0B}-\u{11A32}\u{11A3A}\u{11A50}\u{11A5C}-\u{11A89}\u{11A9D}\u{11AB0}-\u{11AF8}\u{11C00}-\u{11C08}\u{11C0A}-\u{11C2E}\u{11C40}\u{11C72}-\u{11C8F}\u{11D00}-\u{11D06}\u{11D08}\u{11D09}\u{11D0B}-\u{11D30}\u{11D46}\u{11D60}-\u{11D65}\u{11D67}\u{11D68}\u{11D6A}-\u{11D89}\u{11D98}\u{11EE0}-\u{11EF2}\u{11FB0}\u{12000}-\u{12399}\u{12480}-\u{12543}\u{12F90}-\u{12FF0}\u{13000}-\u{1342E}\u{14400}-\u{14646}\u{16800}-\u{16A38}\u{16A40}-\u{16A5E}\u{16A70}-\u{16ABE}\u{16AD0}-\u{16AED}\u{16B00}-\u{16B2F}\u{16B40}-\u{16B43}\u{16B63}-\u{16B77}\u{16B7D}-\u{16B8F}\u{16E40}-\u{16E7F}\u{16F00}-\u{16F4A}\u{16F50}\u{16F93}-\u{16F9F}\u{16FE0}\u{16FE1}\u{16FE3}\u{17000}-\u{187F7}\u{18800}-\u{18CD5}\u{18D00}-\u{18D08}\u{1AFF0}-\u{1AFF3}\u{1AFF5}-\u{1AFFB}\u{1AFFD}\u{1AFFE}\u{1B000}-\u{1B122}\u{1B150}-\u{1B152}\u{1B164}-\u{1B167}\u{1B170}-\u{1B2FB}\u{1BC00}-\u{1BC6A}\u{1BC70}-\u{1BC7C}\u{1BC80}-\u{1BC88}\u{1BC90}-\u{1BC99}\u{1D400}-\u{1D454}\u{1D456}-\u{1D49C}\u{1D49E}\u{1D49F}\u{1D4A2}\u{1D4A5}\u{1D4A6}\u{1D4A9}-\u{1D4AC}\u{1D4AE}-\u{1D4B9}\u{1D4BB}\u{1D4BD}-\u{1D4C3}\u{1D4C5}-\u{1D505}\u{1D507}-\u{1D50A}\u{1D50D}-\u{1D514}\u{1D516}-\u{1D51C}\u{1D51E}-\u{1D539}\u{1D53B}-\u{1D53E}\u{1D540}-\u{1D544}\u{1D546}\u{1D54A}-\u{1D550}\u{1D552}-\u{1D6A5}\u{1D6A8}-\u{1D6C0}\u{1D6C2}-\u{1D6DA}\u{1D6DC}-\u{1D6FA}\u{1D6FC}-\u{1D714}\u{1D716}-\u{1D734}\u{1D736}-\u{1D74E}\u{1D750}-\u{1D76E}\u{1D770}-\u{1D788}\u{1D78A}-\u{1D7A8}\u{1D7AA}-\u{1D7C2}\u{1D7C4}-\u{1D7CB}\u{1DF00}-\u{1DF1E}\u{1E100}-\u{1E12C}\u{1E137}-\u{1E13D}\u{1E14E}\u{1E290}-\u{1E2AD}\u{1E2C0}-\u{1E2EB}\u{1E7E0}-\u{1E7E6}\u{1E7E8}-\u{1E7EB}\u{1E7ED}\u{1E7EE}\u{1E7F0}-\u{1E7FE}\u{1E800}-\u{1E8C4}\u{1E900}-\u{1E943}\u{1E94B}\u{1EE00}-\u{1EE03}\u{1EE05}-\u{1EE1F}\u{1EE21}\u{1EE22}\u{1EE24}\u{1EE27}\u{1EE29}-\u{1EE32}\u{1EE34}-\u{1EE37}\u{1EE39}\u{1EE3B}\u{1EE42}\u{1EE47}\u{1EE49}\u{1EE4B}\u{1EE4D}-\u{1EE4F}\u{1EE51}\u{1EE52}\u{1EE54}\u{1EE57}\u{1EE59}\u{1EE5B}\u{1EE5D}\u{1EE5F}\u{1EE61}\u{1EE62}\u{1EE64}\u{1EE67}-\u{1EE6A}\u{1EE6C}-\u{1EE72}\u{1EE74}-\u{1EE77}\u{1EE79}-\u{1EE7C}\u{1EE7E}\u{1EE80}-\u{1EE89}\u{1EE8B}-\u{1EE9B}\u{1EEA1}-\u{1EEA3}\u{1EEA5}-\u{1EEA9}\u{1EEAB}-\u{1EEBB}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]?[ \):;\u2022\u3001\u3002\u300A-\u300D\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]|[\(,1A-Za-\{\}\xAA\xB5\xBA\xC0-\xD6\xD8-\xF6\xF8-\u02C1\u02C6-\u02D1\u02E0-\u02E4\u02EC\u02EE\u0370-\u0374\u0376\u0377\u037A-\u037D\u037F\u0386\u0388-\u038A\u038C\u038E-\u03A1\u03A3-\u03F5\u03F7-\u0481\u048A-\u052F\u0531-\u0556\u0559\u0560-\u0588\u05D0-\u05EA\u05EF-\u05F2\u0620-\u064A\u066E\u066F\u0671-\u06D3\u06D5\u06E5\u06E6\u06EE\u06EF\u06FA-\u06FC\u06FF\u0710\u0712-\u072F\u074D-\u07A5\u07B1\u07CA-\u07EA\u07F4\u07F5\u07FA\u0800-\u0815\u081A\u0824\u0828\u0840-\u0858\u0860-\u086A\u0870-\u0887\u0889-\u088E\u08A0-\u08C9\u0904-\u0939\u093D\u0950\u0958-\u0961\u0971-\u0980\u0985-\u098C\u098F\u0990\u0993-\u09A8\u09AA-\u09B0\u09B2\u09B6-\u09B9\u09BD\u09CE\u09DC\u09DD\u09DF-\u09E1\u09F0\u09F1\u09FC\u0A05-\u0A0A\u0A0F\u0A10\u0A13-\u0A28\u0A2A-\u0A30\u0A32\u0A33\u0A35\u0A36\u0A38\u0A39\u0A59-\u0A5C\u0A5E\u0A72-\u0A74\u0A85-\u0A8D\u0A8F-\u0A91\u0A93-\u0AA8\u0AAA-\u0AB0\u0AB2\u0AB3\u0AB5-\u0AB9\u0ABD\u0AD0\u0AE0\u0AE1\u0AF9\u0B05-\u0B0C\u0B0F\u0B10\u0B13-\u0B28\u0B2A-\u0B30\u0B32\u0B33\u0B35-\u0B39\u0B3D\u0B5C\u0B5D\u0B5F-\u0B61\u0B71\u0B83\u0B85-\u0B8A\u0B8E-\u0B90\u0B92-\u0B95\u0B99\u0B9A\u0B9C\u0B9E\u0B9F\u0BA3\u0BA4\u0BA8-\u0BAA\u0BAE-\u0BB9\u0BD0\u0C05-\u0C0C\u0C0E-\u0C10\u0C12-\u0C28\u0C2A-\u0C39\u0C3D\u0C58-\u0C5A\u0C5D\u0C60\u0C61\u0C80\u0C85-\u0C8C\u0C8E-\u0C90\u0C92-\u0CA8\u0CAA-\u0CB3\u0CB5-\u0CB9\u0CBD\u0CDD\u0CDE\u0CE0\u0CE1\u0CF1\u0CF2\u0D04-\u0D0C\u0D0E-\u0D10\u0D12-\u0D3A\u0D3D\u0D4E\u0D54-\u0D56\u0D5F-\u0D61\u0D7A-\u0D7F\u0D85-\u0D96\u0D9A-\u0DB1\u0DB3-\u0DBB\u0DBD\u0DC0-\u0DC6\u0E01-\u0E30\u0E32\u0E33\u0E40-\u0E46\u0E81\u0E82\u0E84\u0E86-\u0E8A\u0E8C-\u0EA3\u0EA5\u0EA7-\u0EB0\u0EB2\u0EB3\u0EBD\u0EC0-\u0EC4\u0EC6\u0EDC-\u0EDF\u0F00\u0F40-\u0F47\u0F49-\u0F6C\u0F88-\u0F8C\u1000-\u102A\u103F\u1050-\u1055\u105A-\u105D\u1061\u1065\u1066\u106E-\u1070\u1075-\u1081\u108E\u10A0-\u10C5\u10C7\u10CD\u10D0-\u10FA\u10FC-\u1248\u124A-\u124D\u1250-\u1256\u1258\u125A-\u125D\u1260-\u1288\u128A-\u128D\u1290-\u12B0\u12B2-\u12B5\u12B8-\u12BE\u12C0\u12C2-\u12C5\u12C8-\u12D6\u12D8-\u1310\u1312-\u1315\u1318-\u135A\u1380-\u138F\u13A0-\u13F5\u13F8-\u13FD\u1401-\u166C\u166F-\u167F\u1681-\u169A\u16A0-\u16EA\u16F1-\u16F8\u1700-\u1711\u171F-\u1731\u1740-\u1751\u1760-\u176C\u176E-\u1770\u1780-\u17B3\u17D7\u17DC\u1820-\u1878\u1880-\u1884\u1887-\u18A8\u18AA\u18B0-\u18F5\u1900-\u191E\u1950-\u196D\u1970-\u1974\u1980-\u19AB\u19B0-\u19C9\u1A00-\u1A16\u1A20-\u1A54\u1AA7\u1B05-\u1B33\u1B45-\u1B4C\u1B83-\u1BA0\u1BAE\u1BAF\u1BBA-\u1BE5\u1C00-\u1C23\u1C4D-\u1C4F\u1C5A-\u1C7D\u1C80-\u1C88\u1C90-\u1CBA\u1CBD-\u1CBF\u1CE9-\u1CEC\u1CEE-\u1CF3\u1CF5\u1CF6\u1CFA\u1D00-\u1DBF\u1E00-\u1F15\u1F18-\u1F1D\u1F20-\u1F45\u1F48-\u1F4D\u1F50-\u1F57\u1F59\u1F5B\u1F5D\u1F5F-\u1F7D\u1F80-\u1FB4\u1FB6-\u1FBC\u1FBE\u1FC2-\u1FC4\u1FC6-\u1FCC\u1FD0-\u1FD3\u1FD6-\u1FDB\u1FE0-\u1FEC\u1FF2-\u1FF4\u1FF6-\u1FFC\u2071\u207F\u2090-\u209C\u2102\u2107\u210A-\u2113\u2115\u2119-\u211D\u2124\u2126\u2128\u212A-\u212D\u212F-\u2139\u213C-\u213F\u2145-\u2149\u214E\u2183\u2184\u2C00-\u2CE4\u2CEB-\u2CEE\u2CF2\u2CF3\u2D00-\u2D25\u2D27\u2D2D\u2D30-\u2D67\u2D6F\u2D80-\u2D96\u2DA0-\u2DA6\u2DA8-\u2DAE\u2DB0-\u2DB6\u2DB8-\u2DBE\u2DC0-\u2DC6\u2DC8-\u2DCE\u2DD0-\u2DD6\u2DD8-\u2DDE\u2E2F\u3005\u3006\u3031-\u3035\u303B\u303C\u3041-\u3096\u309D-\u309F\u30A1-\u30FA\u30FC-\u30FF\u3105-\u312F\u3131-\u318E\u31A0-\u31BF\u31F0-\u31FF\u3400-\u4DBF\u4E00-\uA48C\uA4D0-\uA4FD\uA500-\uA60C\uA610-\uA61F\uA62A\uA62B\uA640-\uA66E\uA67F-\uA69D\uA6A0-\uA6E5\uA717-\uA71F\uA722-\uA788\uA78B-\uA7CA\uA7D0\uA7D1\uA7D3\uA7D5-\uA7D9\uA7F2-\uA801\uA803-\uA805\uA807-\uA80A\uA80C-\uA822\uA840-\uA873\uA882-\uA8B3\uA8F2-\uA8F7\uA8FB\uA8FD\uA8FE\uA90A-\uA925\uA930-\uA946\uA960-\uA97C\uA984-\uA9B2\uA9CF\uA9E0-\uA9E4\uA9E6-\uA9EF\uA9FA-\uA9FE\uAA00-\uAA28\uAA40-\uAA42\uAA44-\uAA4B\uAA60-\uAA76\uAA7A\uAA7E-\uAAAF\uAAB1\uAAB5\uAAB6\uAAB9-\uAABD\uAAC0\uAAC2\uAADB-\uAADD\uAAE0-\uAAEA\uAAF2-\uAAF4\uAB01-\uAB06\uAB09-\uAB0E\uAB11-\uAB16\uAB20-\uAB26\uAB28-\uAB2E\uAB30-\uAB5A\uAB5C-\uAB69\uAB70-\uABE2\uAC00-\uD7A3\uD7B0-\uD7C6\uD7CB-\uD7FB\uF900-\uFA6D\uFA70-\uFAD9\uFB00-\uFB06\uFB13-\uFB17\uFB1D\uFB1F-\uFB28\uFB2A-\uFB36\uFB38-\uFB3C\uFB3E\uFB40\uFB41\uFB43\uFB44\uFB46-\uFBB1\uFBD3-\uFD3D\uFD50-\uFD8F\uFD92-\uFDC7\uFDF0-\uFDFB\uFE70-\uFE74\uFE76-\uFEFC\uFF21-\uFF3A\uFF41-\uFF5A\uFF66-\uFFBE\uFFC2-\uFFC7\uFFCA-\uFFCF\uFFD2-\uFFD7\uFFDA-\uFFDC\u{10000}-\u{1000B}\u{1000D}-\u{10026}\u{10028}-\u{1003A}\u{1003C}\u{1003D}\u{1003F}-\u{1004D}\u{10050}-\u{1005D}\u{10080}-\u{100FA}\u{10280}-\u{1029C}\u{102A0}-\u{102D0}\u{10300}-\u{1031F}\u{1032D}-\u{10340}\u{10342}-\u{10349}\u{10350}-\u{10375}\u{10380}-\u{1039D}\u{103A0}-\u{103C3}\u{103C8}-\u{103CF}\u{10400}-\u{1049D}\u{104B0}-\u{104D3}\u{104D8}-\u{104FB}\u{10500}-\u{10527}\u{10530}-\u{10563}\u{10570}-\u{1057A}\u{1057C}-\u{1058A}\u{1058C}-\u{10592}\u{10594}\u{10595}\u{10597}-\u{105A1}\u{105A3}-\u{105B1}\u{105B3}-\u{105B9}\u{105BB}\u{105BC}\u{10600}-\u{10736}\u{10740}-\u{10755}\u{10760}-\u{10767}\u{10780}-\u{10785}\u{10787}-\u{107B0}\u{107B2}-\u{107BA}\u{10800}-\u{10805}\u{10808}\u{1080A}-\u{10835}\u{10837}\u{10838}\u{1083C}\u{1083F}-\u{10855}\u{10860}-\u{10876}\u{10880}-\u{1089E}\u{108E0}-\u{108F2}\u{108F4}\u{108F5}\u{10900}-\u{10915}\u{10920}-\u{10939}\u{10980}-\u{109B7}\u{109BE}\u{109BF}\u{10A00}\u{10A10}-\u{10A13}\u{10A15}-\u{10A17}\u{10A19}-\u{10A35}\u{10A60}-\u{10A7C}\u{10A80}-\u{10A9C}\u{10AC0}-\u{10AC7}\u{10AC9}-\u{10AE4}\u{10B00}-\u{10B35}\u{10B40}-\u{10B55}\u{10B60}-\u{10B72}\u{10B80}-\u{10B91}\u{10C00}-\u{10C48}\u{10C80}-\u{10CB2}\u{10CC0}-\u{10CF2}\u{10D00}-\u{10D23}\u{10E80}-\u{10EA9}\u{10EB0}\u{10EB1}\u{10F00}-\u{10F1C}\u{10F27}\u{10F30}-\u{10F45}\u{10F70}-\u{10F81}\u{10FB0}-\u{10FC4}\u{10FE0}-\u{10FF6}\u{11003}-\u{11037}\u{11071}\u{11072}\u{11075}\u{11083}-\u{110AF}\u{110D0}-\u{110E8}\u{11103}-\u{11126}\u{11144}\u{11147}\u{11150}-\u{11172}\u{11176}\u{11183}-\u{111B2}\u{111C1}-\u{111C4}\u{111DA}\u{111DC}\u{11200}-\u{11211}\u{11213}-\u{1122B}\u{11280}-\u{11286}\u{11288}\u{1128A}-\u{1128D}\u{1128F}-\u{1129D}\u{1129F}-\u{112A8}\u{112B0}-\u{112DE}\u{11305}-\u{1130C}\u{1130F}\u{11310}\u{11313}-\u{11328}\u{1132A}-\u{11330}\u{11332}\u{11333}\u{11335}-\u{11339}\u{1133D}\u{11350}\u{1135D}-\u{11361}\u{11400}-\u{11434}\u{11447}-\u{1144A}\u{1145F}-\u{11461}\u{11480}-\u{114AF}\u{114C4}\u{114C5}\u{114C7}\u{11580}-\u{115AE}\u{115D8}-\u{115DB}\u{11600}-\u{1162F}\u{11644}\u{11680}-\u{116AA}\u{116B8}\u{11700}-\u{1171A}\u{11740}-\u{11746}\u{11800}-\u{1182B}\u{118A0}-\u{118DF}\u{118FF}-\u{11906}\u{11909}\u{1190C}-\u{11913}\u{11915}\u{11916}\u{11918}-\u{1192F}\u{1193F}\u{11941}\u{119A0}-\u{119A7}\u{119AA}-\u{119D0}\u{119E1}\u{119E3}\u{11A00}\u{11A0B}-\u{11A32}\u{11A3A}\u{11A50}\u{11A5C}-\u{11A89}\u{11A9D}\u{11AB0}-\u{11AF8}\u{11C00}-\u{11C08}\u{11C0A}-\u{11C2E}\u{11C40}\u{11C72}-\u{11C8F}\u{11D00}-\u{11D06}\u{11D08}\u{11D09}\u{11D0B}-\u{11D30}\u{11D46}\u{11D60}-\u{11D65}\u{11D67}\u{11D68}\u{11D6A}-\u{11D89}\u{11D98}\u{11EE0}-\u{11EF2}\u{11FB0}\u{12000}-\u{12399}\u{12480}-\u{12543}\u{12F90}-\u{12FF0}\u{13000}-\u{1342E}\u{14400}-\u{14646}\u{16800}-\u{16A38}\u{16A40}-\u{16A5E}\u{16A70}-\u{16ABE}\u{16AD0}-\u{16AED}\u{16B00}-\u{16B2F}\u{16B40}-\u{16B43}\u{16B63}-\u{16B77}\u{16B7D}-\u{16B8F}\u{16E40}-\u{16E7F}\u{16F00}-\u{16F4A}\u{16F50}\u{16F93}-\u{16F9F}\u{16FE0}\u{16FE1}\u{16FE3}\u{17000}-\u{187F7}\u{18800}-\u{18CD5}\u{18D00}-\u{18D08}\u{1AFF0}-\u{1AFF3}\u{1AFF5}-\u{1AFFB}\u{1AFFD}\u{1AFFE}\u{1B000}-\u{1B122}\u{1B150}-\u{1B152}\u{1B164}-\u{1B167}\u{1B170}-\u{1B2FB}\u{1BC00}-\u{1BC6A}\u{1BC70}-\u{1BC7C}\u{1BC80}-\u{1BC88}\u{1BC90}-\u{1BC99}\u{1D400}-\u{1D454}\u{1D456}-\u{1D49C}\u{1D49E}\u{1D49F}\u{1D4A2}\u{1D4A5}\u{1D4A6}\u{1D4A9}-\u{1D4AC}\u{1D4AE}-\u{1D4B9}\u{1D4BB}\u{1D4BD}-\u{1D4C3}\u{1D4C5}-\u{1D505}\u{1D507}-\u{1D50A}\u{1D50D}-\u{1D514}\u{1D516}-\u{1D51C}\u{1D51E}-\u{1D539}\u{1D53B}-\u{1D53E}\u{1D540}-\u{1D544}\u{1D546}\u{1D54A}-\u{1D550}\u{1D552}-\u{1D6A5}\u{1D6A8}-\u{1D6C0}\u{1D6C2}-\u{1D6DA}\u{1D6DC}-\u{1D6FA}\u{1D6FC}-\u{1D714}\u{1D716}-\u{1D734}\u{1D736}-\u{1D74E}\u{1D750}-\u{1D76E}\u{1D770}-\u{1D788}\u{1D78A}-\u{1D7A8}\u{1D7AA}-\u{1D7C2}\u{1D7C4}-\u{1D7CB}\u{1DF00}-\u{1DF1E}\u{1E100}-\u{1E12C}\u{1E137}-\u{1E13D}\u{1E14E}\u{1E290}-\u{1E2AD}\u{1E2C0}-\u{1E2EB}\u{1E7E0}-\u{1E7E6}\u{1E7E8}-\u{1E7EB}\u{1E7ED}\u{1E7EE}\u{1E7F0}-\u{1E7FE}\u{1E800}-\u{1E8C4}\u{1E900}-\u{1E943}\u{1E94B}\u{1EE00}-\u{1EE03}\u{1EE05}-\u{1EE1F}\u{1EE21}\u{1EE22}\u{1EE24}\u{1EE27}\u{1EE29}-\u{1EE32}\u{1EE34}-\u{1EE37}\u{1EE39}\u{1EE3B}\u{1EE42}\u{1EE47}\u{1EE49}\u{1EE4B}\u{1EE4D}-\u{1EE4F}\u{1EE51}\u{1EE52}\u{1EE54}\u{1EE57}\u{1EE59}\u{1EE5B}\u{1EE5D}\u{1EE5F}\u{1EE61}\u{1EE62}\u{1EE64}\u{1EE67}-\u{1EE6A}\u{1EE6C}-\u{1EE72}\u{1EE74}-\u{1EE77}\u{1EE79}-\u{1EE7C}\u{1EE7E}\u{1EE80}-\u{1EE89}\u{1EE8B}-\u{1EE9B}\u{1EEA1}-\u{1EEA3}\u{1EEA5}-\u{1EEA9}\u{1EEAB}-\u{1EEBB}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]/gmu
-                                    .source +
-                                '|' +
-                                /[\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]/gmu
-                                    .source,
+                            [
+                                /[\(\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]?[\u3002\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]?[ %\+\x2D-9A-Za-\{\}\xA0\xC0-\u0237\u2013\u2014\u2026]+[\)\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3002\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\uFF01\uFF0C\uFF1A\uFF1B\uFF1F\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]?[\u3002\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]?/gmu,
+                                /[\(\xAB\u201C\u275D][\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}][\0-\u2E7F\u2E9A\u2EF4-\u2EFF\u2FD6-\u3004\u3006\u3008-\u3020\u302A-\u3037\u303C-\u33FF\u4DC0-\u4DFF\uA000-\uF8FF\uFA6E\uFA6F\uFADA-\u{16FE1}\u{16FE4}-\u{16FEF}\u{16FF2}-\u{1FFFF}\u{2A6E0}-\u{2A6FF}\u{2B739}-\u{2B73F}\u{2B81E}\u{2B81F}\u{2CEA2}-\u{2CEAF}\u{2EBE1}-\u{2F7FF}\u{2FA1E}-\u{2FFFF}\u{3134B}-\u{10FFFF}]?|[\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}][\0-\u2E7F\u2E9A\u2EF4-\u2EFF\u2FD6-\u3004\u3006\u3008-\u3020\u302A-\u3037\u303C-\u33FF\u4DC0-\u4DFF\uA000-\uF8FF\uFA6E\uFA6F\uFADA-\u{16FE1}\u{16FE4}-\u{16FEF}\u{16FF2}-\u{1FFFF}\u{2A6E0}-\u{2A6FF}\u{2B739}-\u{2B73F}\u{2B81E}\u{2B81F}\u{2CEA2}-\u{2CEAF}\u{2EBE1}-\u{2F7FF}\u{2FA1E}-\u{2FFFF}\u{3134B}-\u{10FFFF}]?[\u3002\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]?[\)\xBB\u201D\u275E][\u3002\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]?/gmu,
+                                /[A-Za-z\xAA\xB5\xBA\xC0-\xD6\xD8-\xF6\xF8-\u02C1\u02C6-\u02D1\u02E0-\u02E4\u02EC\u02EE\u0370-\u0374\u0376\u0377\u037A-\u037D\u037F\u0386\u0388-\u038A\u038C\u038E-\u03A1\u03A3-\u03F5\u03F7-\u0481\u048A-\u052F\u0531-\u0556\u0559\u0560-\u0588\u05D0-\u05EA\u05EF-\u05F2\u0620-\u064A\u066E\u066F\u0671-\u06D3\u06D5\u06E5\u06E6\u06EE\u06EF\u06FA-\u06FC\u06FF\u0710\u0712-\u072F\u074D-\u07A5\u07B1\u07CA-\u07EA\u07F4\u07F5\u07FA\u0800-\u0815\u081A\u0824\u0828\u0840-\u0858\u0860-\u086A\u0870-\u0887\u0889-\u088E\u08A0-\u08C9\u0904-\u0939\u093D\u0950\u0958-\u0961\u0971-\u0980\u0985-\u098C\u098F\u0990\u0993-\u09A8\u09AA-\u09B0\u09B2\u09B6-\u09B9\u09BD\u09CE\u09DC\u09DD\u09DF-\u09E1\u09F0\u09F1\u09FC\u0A05-\u0A0A\u0A0F\u0A10\u0A13-\u0A28\u0A2A-\u0A30\u0A32\u0A33\u0A35\u0A36\u0A38\u0A39\u0A59-\u0A5C\u0A5E\u0A72-\u0A74\u0A85-\u0A8D\u0A8F-\u0A91\u0A93-\u0AA8\u0AAA-\u0AB0\u0AB2\u0AB3\u0AB5-\u0AB9\u0ABD\u0AD0\u0AE0\u0AE1\u0AF9\u0B05-\u0B0C\u0B0F\u0B10\u0B13-\u0B28\u0B2A-\u0B30\u0B32\u0B33\u0B35-\u0B39\u0B3D\u0B5C\u0B5D\u0B5F-\u0B61\u0B71\u0B83\u0B85-\u0B8A\u0B8E-\u0B90\u0B92-\u0B95\u0B99\u0B9A\u0B9C\u0B9E\u0B9F\u0BA3\u0BA4\u0BA8-\u0BAA\u0BAE-\u0BB9\u0BD0\u0C05-\u0C0C\u0C0E-\u0C10\u0C12-\u0C28\u0C2A-\u0C39\u0C3D\u0C58-\u0C5A\u0C5D\u0C60\u0C61\u0C80\u0C85-\u0C8C\u0C8E-\u0C90\u0C92-\u0CA8\u0CAA-\u0CB3\u0CB5-\u0CB9\u0CBD\u0CDD\u0CDE\u0CE0\u0CE1\u0CF1\u0CF2\u0D04-\u0D0C\u0D0E-\u0D10\u0D12-\u0D3A\u0D3D\u0D4E\u0D54-\u0D56\u0D5F-\u0D61\u0D7A-\u0D7F\u0D85-\u0D96\u0D9A-\u0DB1\u0DB3-\u0DBB\u0DBD\u0DC0-\u0DC6\u0E01-\u0E30\u0E32\u0E33\u0E40-\u0E46\u0E81\u0E82\u0E84\u0E86-\u0E8A\u0E8C-\u0EA3\u0EA5\u0EA7-\u0EB0\u0EB2\u0EB3\u0EBD\u0EC0-\u0EC4\u0EC6\u0EDC-\u0EDF\u0F00\u0F40-\u0F47\u0F49-\u0F6C\u0F88-\u0F8C\u1000-\u102A\u103F\u1050-\u1055\u105A-\u105D\u1061\u1065\u1066\u106E-\u1070\u1075-\u1081\u108E\u10A0-\u10C5\u10C7\u10CD\u10D0-\u10FA\u10FC-\u1248\u124A-\u124D\u1250-\u1256\u1258\u125A-\u125D\u1260-\u1288\u128A-\u128D\u1290-\u12B0\u12B2-\u12B5\u12B8-\u12BE\u12C0\u12C2-\u12C5\u12C8-\u12D6\u12D8-\u1310\u1312-\u1315\u1318-\u135A\u1380-\u138F\u13A0-\u13F5\u13F8-\u13FD\u1401-\u166C\u166F-\u167F\u1681-\u169A\u16A0-\u16EA\u16F1-\u16F8\u1700-\u1711\u171F-\u1731\u1740-\u1751\u1760-\u176C\u176E-\u1770\u1780-\u17B3\u17D7\u17DC\u1820-\u1878\u1880-\u1884\u1887-\u18A8\u18AA\u18B0-\u18F5\u1900-\u191E\u1950-\u196D\u1970-\u1974\u1980-\u19AB\u19B0-\u19C9\u1A00-\u1A16\u1A20-\u1A54\u1AA7\u1B05-\u1B33\u1B45-\u1B4C\u1B83-\u1BA0\u1BAE\u1BAF\u1BBA-\u1BE5\u1C00-\u1C23\u1C4D-\u1C4F\u1C5A-\u1C7D\u1C80-\u1C88\u1C90-\u1CBA\u1CBD-\u1CBF\u1CE9-\u1CEC\u1CEE-\u1CF3\u1CF5\u1CF6\u1CFA\u1D00-\u1DBF\u1E00-\u1F15\u1F18-\u1F1D\u1F20-\u1F45\u1F48-\u1F4D\u1F50-\u1F57\u1F59\u1F5B\u1F5D\u1F5F-\u1F7D\u1F80-\u1FB4\u1FB6-\u1FBC\u1FBE\u1FC2-\u1FC4\u1FC6-\u1FCC\u1FD0-\u1FD3\u1FD6-\u1FDB\u1FE0-\u1FEC\u1FF2-\u1FF4\u1FF6-\u1FFC\u2071\u207F\u2090-\u209C\u2102\u2107\u210A-\u2113\u2115\u2119-\u211D\u2124\u2126\u2128\u212A-\u212D\u212F-\u2139\u213C-\u213F\u2145-\u2149\u214E\u2183\u2184\u2C00-\u2CE4\u2CEB-\u2CEE\u2CF2\u2CF3\u2D00-\u2D25\u2D27\u2D2D\u2D30-\u2D67\u2D6F\u2D80-\u2D96\u2DA0-\u2DA6\u2DA8-\u2DAE\u2DB0-\u2DB6\u2DB8-\u2DBE\u2DC0-\u2DC6\u2DC8-\u2DCE\u2DD0-\u2DD6\u2DD8-\u2DDE\u2E2F\u3005\u3006\u3031-\u3035\u303B\u303C\u3041-\u3096\u309D-\u309F\u30A1-\u30FA\u30FC-\u30FF\u3105-\u312F\u3131-\u318E\u31A0-\u31BF\u31F0-\u31FF\u3400-\u4DBF\u4E00-\uA48C\uA4D0-\uA4FD\uA500-\uA60C\uA610-\uA61F\uA62A\uA62B\uA640-\uA66E\uA67F-\uA69D\uA6A0-\uA6E5\uA717-\uA71F\uA722-\uA788\uA78B-\uA7CA\uA7D0\uA7D1\uA7D3\uA7D5-\uA7D9\uA7F2-\uA801\uA803-\uA805\uA807-\uA80A\uA80C-\uA822\uA840-\uA873\uA882-\uA8B3\uA8F2-\uA8F7\uA8FB\uA8FD\uA8FE\uA90A-\uA925\uA930-\uA946\uA960-\uA97C\uA984-\uA9B2\uA9CF\uA9E0-\uA9E4\uA9E6-\uA9EF\uA9FA-\uA9FE\uAA00-\uAA28\uAA40-\uAA42\uAA44-\uAA4B\uAA60-\uAA76\uAA7A\uAA7E-\uAAAF\uAAB1\uAAB5\uAAB6\uAAB9-\uAABD\uAAC0\uAAC2\uAADB-\uAADD\uAAE0-\uAAEA\uAAF2-\uAAF4\uAB01-\uAB06\uAB09-\uAB0E\uAB11-\uAB16\uAB20-\uAB26\uAB28-\uAB2E\uAB30-\uAB5A\uAB5C-\uAB69\uAB70-\uABE2\uAC00-\uD7A3\uD7B0-\uD7C6\uD7CB-\uD7FB\uF900-\uFA6D\uFA70-\uFAD9\uFB00-\uFB06\uFB13-\uFB17\uFB1D\uFB1F-\uFB28\uFB2A-\uFB36\uFB38-\uFB3C\uFB3E\uFB40\uFB41\uFB43\uFB44\uFB46-\uFBB1\uFBD3-\uFD3D\uFD50-\uFD8F\uFD92-\uFDC7\uFDF0-\uFDFB\uFE70-\uFE74\uFE76-\uFEFC\uFF21-\uFF3A\uFF41-\uFF5A\uFF66-\uFFBE\uFFC2-\uFFC7\uFFCA-\uFFCF\uFFD2-\uFFD7\uFFDA-\uFFDC\u{10000}-\u{1000B}\u{1000D}-\u{10026}\u{10028}-\u{1003A}\u{1003C}\u{1003D}\u{1003F}-\u{1004D}\u{10050}-\u{1005D}\u{10080}-\u{100FA}\u{10280}-\u{1029C}\u{102A0}-\u{102D0}\u{10300}-\u{1031F}\u{1032D}-\u{10340}\u{10342}-\u{10349}\u{10350}-\u{10375}\u{10380}-\u{1039D}\u{103A0}-\u{103C3}\u{103C8}-\u{103CF}\u{10400}-\u{1049D}\u{104B0}-\u{104D3}\u{104D8}-\u{104FB}\u{10500}-\u{10527}\u{10530}-\u{10563}\u{10570}-\u{1057A}\u{1057C}-\u{1058A}\u{1058C}-\u{10592}\u{10594}\u{10595}\u{10597}-\u{105A1}\u{105A3}-\u{105B1}\u{105B3}-\u{105B9}\u{105BB}\u{105BC}\u{10600}-\u{10736}\u{10740}-\u{10755}\u{10760}-\u{10767}\u{10780}-\u{10785}\u{10787}-\u{107B0}\u{107B2}-\u{107BA}\u{10800}-\u{10805}\u{10808}\u{1080A}-\u{10835}\u{10837}\u{10838}\u{1083C}\u{1083F}-\u{10855}\u{10860}-\u{10876}\u{10880}-\u{1089E}\u{108E0}-\u{108F2}\u{108F4}\u{108F5}\u{10900}-\u{10915}\u{10920}-\u{10939}\u{10980}-\u{109B7}\u{109BE}\u{109BF}\u{10A00}\u{10A10}-\u{10A13}\u{10A15}-\u{10A17}\u{10A19}-\u{10A35}\u{10A60}-\u{10A7C}\u{10A80}-\u{10A9C}\u{10AC0}-\u{10AC7}\u{10AC9}-\u{10AE4}\u{10B00}-\u{10B35}\u{10B40}-\u{10B55}\u{10B60}-\u{10B72}\u{10B80}-\u{10B91}\u{10C00}-\u{10C48}\u{10C80}-\u{10CB2}\u{10CC0}-\u{10CF2}\u{10D00}-\u{10D23}\u{10E80}-\u{10EA9}\u{10EB0}\u{10EB1}\u{10F00}-\u{10F1C}\u{10F27}\u{10F30}-\u{10F45}\u{10F70}-\u{10F81}\u{10FB0}-\u{10FC4}\u{10FE0}-\u{10FF6}\u{11003}-\u{11037}\u{11071}\u{11072}\u{11075}\u{11083}-\u{110AF}\u{110D0}-\u{110E8}\u{11103}-\u{11126}\u{11144}\u{11147}\u{11150}-\u{11172}\u{11176}\u{11183}-\u{111B2}\u{111C1}-\u{111C4}\u{111DA}\u{111DC}\u{11200}-\u{11211}\u{11213}-\u{1122B}\u{11280}-\u{11286}\u{11288}\u{1128A}-\u{1128D}\u{1128F}-\u{1129D}\u{1129F}-\u{112A8}\u{112B0}-\u{112DE}\u{11305}-\u{1130C}\u{1130F}\u{11310}\u{11313}-\u{11328}\u{1132A}-\u{11330}\u{11332}\u{11333}\u{11335}-\u{11339}\u{1133D}\u{11350}\u{1135D}-\u{11361}\u{11400}-\u{11434}\u{11447}-\u{1144A}\u{1145F}-\u{11461}\u{11480}-\u{114AF}\u{114C4}\u{114C5}\u{114C7}\u{11580}-\u{115AE}\u{115D8}-\u{115DB}\u{11600}-\u{1162F}\u{11644}\u{11680}-\u{116AA}\u{116B8}\u{11700}-\u{1171A}\u{11740}-\u{11746}\u{11800}-\u{1182B}\u{118A0}-\u{118DF}\u{118FF}-\u{11906}\u{11909}\u{1190C}-\u{11913}\u{11915}\u{11916}\u{11918}-\u{1192F}\u{1193F}\u{11941}\u{119A0}-\u{119A7}\u{119AA}-\u{119D0}\u{119E1}\u{119E3}\u{11A00}\u{11A0B}-\u{11A32}\u{11A3A}\u{11A50}\u{11A5C}-\u{11A89}\u{11A9D}\u{11AB0}-\u{11AF8}\u{11C00}-\u{11C08}\u{11C0A}-\u{11C2E}\u{11C40}\u{11C72}-\u{11C8F}\u{11D00}-\u{11D06}\u{11D08}\u{11D09}\u{11D0B}-\u{11D30}\u{11D46}\u{11D60}-\u{11D65}\u{11D67}\u{11D68}\u{11D6A}-\u{11D89}\u{11D98}\u{11EE0}-\u{11EF2}\u{11FB0}\u{12000}-\u{12399}\u{12480}-\u{12543}\u{12F90}-\u{12FF0}\u{13000}-\u{1342E}\u{14400}-\u{14646}\u{16800}-\u{16A38}\u{16A40}-\u{16A5E}\u{16A70}-\u{16ABE}\u{16AD0}-\u{16AED}\u{16B00}-\u{16B2F}\u{16B40}-\u{16B43}\u{16B63}-\u{16B77}\u{16B7D}-\u{16B8F}\u{16E40}-\u{16E7F}\u{16F00}-\u{16F4A}\u{16F50}\u{16F93}-\u{16F9F}\u{16FE0}\u{16FE1}\u{16FE3}\u{17000}-\u{187F7}\u{18800}-\u{18CD5}\u{18D00}-\u{18D08}\u{1AFF0}-\u{1AFF3}\u{1AFF5}-\u{1AFFB}\u{1AFFD}\u{1AFFE}\u{1B000}-\u{1B122}\u{1B150}-\u{1B152}\u{1B164}-\u{1B167}\u{1B170}-\u{1B2FB}\u{1BC00}-\u{1BC6A}\u{1BC70}-\u{1BC7C}\u{1BC80}-\u{1BC88}\u{1BC90}-\u{1BC99}\u{1D400}-\u{1D454}\u{1D456}-\u{1D49C}\u{1D49E}\u{1D49F}\u{1D4A2}\u{1D4A5}\u{1D4A6}\u{1D4A9}-\u{1D4AC}\u{1D4AE}-\u{1D4B9}\u{1D4BB}\u{1D4BD}-\u{1D4C3}\u{1D4C5}-\u{1D505}\u{1D507}-\u{1D50A}\u{1D50D}-\u{1D514}\u{1D516}-\u{1D51C}\u{1D51E}-\u{1D539}\u{1D53B}-\u{1D53E}\u{1D540}-\u{1D544}\u{1D546}\u{1D54A}-\u{1D550}\u{1D552}-\u{1D6A5}\u{1D6A8}-\u{1D6C0}\u{1D6C2}-\u{1D6DA}\u{1D6DC}-\u{1D6FA}\u{1D6FC}-\u{1D714}\u{1D716}-\u{1D734}\u{1D736}-\u{1D74E}\u{1D750}-\u{1D76E}\u{1D770}-\u{1D788}\u{1D78A}-\u{1D7A8}\u{1D7AA}-\u{1D7C2}\u{1D7C4}-\u{1D7CB}\u{1DF00}-\u{1DF1E}\u{1E100}-\u{1E12C}\u{1E137}-\u{1E13D}\u{1E14E}\u{1E290}-\u{1E2AD}\u{1E2C0}-\u{1E2EB}\u{1E7E0}-\u{1E7E6}\u{1E7E8}-\u{1E7EB}\u{1E7ED}\u{1E7EE}\u{1E7F0}-\u{1E7FE}\u{1E800}-\u{1E8C4}\u{1E900}-\u{1E943}\u{1E94B}\u{1EE00}-\u{1EE03}\u{1EE05}-\u{1EE1F}\u{1EE21}\u{1EE22}\u{1EE24}\u{1EE27}\u{1EE29}-\u{1EE32}\u{1EE34}-\u{1EE37}\u{1EE39}\u{1EE3B}\u{1EE42}\u{1EE47}\u{1EE49}\u{1EE4B}\u{1EE4D}-\u{1EE4F}\u{1EE51}\u{1EE52}\u{1EE54}\u{1EE57}\u{1EE59}\u{1EE5B}\u{1EE5D}\u{1EE5F}\u{1EE61}\u{1EE62}\u{1EE64}\u{1EE67}-\u{1EE6A}\u{1EE6C}-\u{1EE72}\u{1EE74}-\u{1EE77}\u{1EE79}-\u{1EE7C}\u{1EE7E}\u{1EE80}-\u{1EE89}\u{1EE8B}-\u{1EE9B}\u{1EEA1}-\u{1EEA3}\u{1EEA5}-\u{1EEA9}\u{1EEAB}-\u{1EEBB}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]?[ \):;\u2022\u3001\u3002\u300A-\u300D\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]|[\(,1A-Za-\{\}\xAA\xB5\xBA\xC0-\xD6\xD8-\xF6\xF8-\u02C1\u02C6-\u02D1\u02E0-\u02E4\u02EC\u02EE\u0370-\u0374\u0376\u0377\u037A-\u037D\u037F\u0386\u0388-\u038A\u038C\u038E-\u03A1\u03A3-\u03F5\u03F7-\u0481\u048A-\u052F\u0531-\u0556\u0559\u0560-\u0588\u05D0-\u05EA\u05EF-\u05F2\u0620-\u064A\u066E\u066F\u0671-\u06D3\u06D5\u06E5\u06E6\u06EE\u06EF\u06FA-\u06FC\u06FF\u0710\u0712-\u072F\u074D-\u07A5\u07B1\u07CA-\u07EA\u07F4\u07F5\u07FA\u0800-\u0815\u081A\u0824\u0828\u0840-\u0858\u0860-\u086A\u0870-\u0887\u0889-\u088E\u08A0-\u08C9\u0904-\u0939\u093D\u0950\u0958-\u0961\u0971-\u0980\u0985-\u098C\u098F\u0990\u0993-\u09A8\u09AA-\u09B0\u09B2\u09B6-\u09B9\u09BD\u09CE\u09DC\u09DD\u09DF-\u09E1\u09F0\u09F1\u09FC\u0A05-\u0A0A\u0A0F\u0A10\u0A13-\u0A28\u0A2A-\u0A30\u0A32\u0A33\u0A35\u0A36\u0A38\u0A39\u0A59-\u0A5C\u0A5E\u0A72-\u0A74\u0A85-\u0A8D\u0A8F-\u0A91\u0A93-\u0AA8\u0AAA-\u0AB0\u0AB2\u0AB3\u0AB5-\u0AB9\u0ABD\u0AD0\u0AE0\u0AE1\u0AF9\u0B05-\u0B0C\u0B0F\u0B10\u0B13-\u0B28\u0B2A-\u0B30\u0B32\u0B33\u0B35-\u0B39\u0B3D\u0B5C\u0B5D\u0B5F-\u0B61\u0B71\u0B83\u0B85-\u0B8A\u0B8E-\u0B90\u0B92-\u0B95\u0B99\u0B9A\u0B9C\u0B9E\u0B9F\u0BA3\u0BA4\u0BA8-\u0BAA\u0BAE-\u0BB9\u0BD0\u0C05-\u0C0C\u0C0E-\u0C10\u0C12-\u0C28\u0C2A-\u0C39\u0C3D\u0C58-\u0C5A\u0C5D\u0C60\u0C61\u0C80\u0C85-\u0C8C\u0C8E-\u0C90\u0C92-\u0CA8\u0CAA-\u0CB3\u0CB5-\u0CB9\u0CBD\u0CDD\u0CDE\u0CE0\u0CE1\u0CF1\u0CF2\u0D04-\u0D0C\u0D0E-\u0D10\u0D12-\u0D3A\u0D3D\u0D4E\u0D54-\u0D56\u0D5F-\u0D61\u0D7A-\u0D7F\u0D85-\u0D96\u0D9A-\u0DB1\u0DB3-\u0DBB\u0DBD\u0DC0-\u0DC6\u0E01-\u0E30\u0E32\u0E33\u0E40-\u0E46\u0E81\u0E82\u0E84\u0E86-\u0E8A\u0E8C-\u0EA3\u0EA5\u0EA7-\u0EB0\u0EB2\u0EB3\u0EBD\u0EC0-\u0EC4\u0EC6\u0EDC-\u0EDF\u0F00\u0F40-\u0F47\u0F49-\u0F6C\u0F88-\u0F8C\u1000-\u102A\u103F\u1050-\u1055\u105A-\u105D\u1061\u1065\u1066\u106E-\u1070\u1075-\u1081\u108E\u10A0-\u10C5\u10C7\u10CD\u10D0-\u10FA\u10FC-\u1248\u124A-\u124D\u1250-\u1256\u1258\u125A-\u125D\u1260-\u1288\u128A-\u128D\u1290-\u12B0\u12B2-\u12B5\u12B8-\u12BE\u12C0\u12C2-\u12C5\u12C8-\u12D6\u12D8-\u1310\u1312-\u1315\u1318-\u135A\u1380-\u138F\u13A0-\u13F5\u13F8-\u13FD\u1401-\u166C\u166F-\u167F\u1681-\u169A\u16A0-\u16EA\u16F1-\u16F8\u1700-\u1711\u171F-\u1731\u1740-\u1751\u1760-\u176C\u176E-\u1770\u1780-\u17B3\u17D7\u17DC\u1820-\u1878\u1880-\u1884\u1887-\u18A8\u18AA\u18B0-\u18F5\u1900-\u191E\u1950-\u196D\u1970-\u1974\u1980-\u19AB\u19B0-\u19C9\u1A00-\u1A16\u1A20-\u1A54\u1AA7\u1B05-\u1B33\u1B45-\u1B4C\u1B83-\u1BA0\u1BAE\u1BAF\u1BBA-\u1BE5\u1C00-\u1C23\u1C4D-\u1C4F\u1C5A-\u1C7D\u1C80-\u1C88\u1C90-\u1CBA\u1CBD-\u1CBF\u1CE9-\u1CEC\u1CEE-\u1CF3\u1CF5\u1CF6\u1CFA\u1D00-\u1DBF\u1E00-\u1F15\u1F18-\u1F1D\u1F20-\u1F45\u1F48-\u1F4D\u1F50-\u1F57\u1F59\u1F5B\u1F5D\u1F5F-\u1F7D\u1F80-\u1FB4\u1FB6-\u1FBC\u1FBE\u1FC2-\u1FC4\u1FC6-\u1FCC\u1FD0-\u1FD3\u1FD6-\u1FDB\u1FE0-\u1FEC\u1FF2-\u1FF4\u1FF6-\u1FFC\u2071\u207F\u2090-\u209C\u2102\u2107\u210A-\u2113\u2115\u2119-\u211D\u2124\u2126\u2128\u212A-\u212D\u212F-\u2139\u213C-\u213F\u2145-\u2149\u214E\u2183\u2184\u2C00-\u2CE4\u2CEB-\u2CEE\u2CF2\u2CF3\u2D00-\u2D25\u2D27\u2D2D\u2D30-\u2D67\u2D6F\u2D80-\u2D96\u2DA0-\u2DA6\u2DA8-\u2DAE\u2DB0-\u2DB6\u2DB8-\u2DBE\u2DC0-\u2DC6\u2DC8-\u2DCE\u2DD0-\u2DD6\u2DD8-\u2DDE\u2E2F\u3005\u3006\u3031-\u3035\u303B\u303C\u3041-\u3096\u309D-\u309F\u30A1-\u30FA\u30FC-\u30FF\u3105-\u312F\u3131-\u318E\u31A0-\u31BF\u31F0-\u31FF\u3400-\u4DBF\u4E00-\uA48C\uA4D0-\uA4FD\uA500-\uA60C\uA610-\uA61F\uA62A\uA62B\uA640-\uA66E\uA67F-\uA69D\uA6A0-\uA6E5\uA717-\uA71F\uA722-\uA788\uA78B-\uA7CA\uA7D0\uA7D1\uA7D3\uA7D5-\uA7D9\uA7F2-\uA801\uA803-\uA805\uA807-\uA80A\uA80C-\uA822\uA840-\uA873\uA882-\uA8B3\uA8F2-\uA8F7\uA8FB\uA8FD\uA8FE\uA90A-\uA925\uA930-\uA946\uA960-\uA97C\uA984-\uA9B2\uA9CF\uA9E0-\uA9E4\uA9E6-\uA9EF\uA9FA-\uA9FE\uAA00-\uAA28\uAA40-\uAA42\uAA44-\uAA4B\uAA60-\uAA76\uAA7A\uAA7E-\uAAAF\uAAB1\uAAB5\uAAB6\uAAB9-\uAABD\uAAC0\uAAC2\uAADB-\uAADD\uAAE0-\uAAEA\uAAF2-\uAAF4\uAB01-\uAB06\uAB09-\uAB0E\uAB11-\uAB16\uAB20-\uAB26\uAB28-\uAB2E\uAB30-\uAB5A\uAB5C-\uAB69\uAB70-\uABE2\uAC00-\uD7A3\uD7B0-\uD7C6\uD7CB-\uD7FB\uF900-\uFA6D\uFA70-\uFAD9\uFB00-\uFB06\uFB13-\uFB17\uFB1D\uFB1F-\uFB28\uFB2A-\uFB36\uFB38-\uFB3C\uFB3E\uFB40\uFB41\uFB43\uFB44\uFB46-\uFBB1\uFBD3-\uFD3D\uFD50-\uFD8F\uFD92-\uFDC7\uFDF0-\uFDFB\uFE70-\uFE74\uFE76-\uFEFC\uFF21-\uFF3A\uFF41-\uFF5A\uFF66-\uFFBE\uFFC2-\uFFC7\uFFCA-\uFFCF\uFFD2-\uFFD7\uFFDA-\uFFDC\u{10000}-\u{1000B}\u{1000D}-\u{10026}\u{10028}-\u{1003A}\u{1003C}\u{1003D}\u{1003F}-\u{1004D}\u{10050}-\u{1005D}\u{10080}-\u{100FA}\u{10280}-\u{1029C}\u{102A0}-\u{102D0}\u{10300}-\u{1031F}\u{1032D}-\u{10340}\u{10342}-\u{10349}\u{10350}-\u{10375}\u{10380}-\u{1039D}\u{103A0}-\u{103C3}\u{103C8}-\u{103CF}\u{10400}-\u{1049D}\u{104B0}-\u{104D3}\u{104D8}-\u{104FB}\u{10500}-\u{10527}\u{10530}-\u{10563}\u{10570}-\u{1057A}\u{1057C}-\u{1058A}\u{1058C}-\u{10592}\u{10594}\u{10595}\u{10597}-\u{105A1}\u{105A3}-\u{105B1}\u{105B3}-\u{105B9}\u{105BB}\u{105BC}\u{10600}-\u{10736}\u{10740}-\u{10755}\u{10760}-\u{10767}\u{10780}-\u{10785}\u{10787}-\u{107B0}\u{107B2}-\u{107BA}\u{10800}-\u{10805}\u{10808}\u{1080A}-\u{10835}\u{10837}\u{10838}\u{1083C}\u{1083F}-\u{10855}\u{10860}-\u{10876}\u{10880}-\u{1089E}\u{108E0}-\u{108F2}\u{108F4}\u{108F5}\u{10900}-\u{10915}\u{10920}-\u{10939}\u{10980}-\u{109B7}\u{109BE}\u{109BF}\u{10A00}\u{10A10}-\u{10A13}\u{10A15}-\u{10A17}\u{10A19}-\u{10A35}\u{10A60}-\u{10A7C}\u{10A80}-\u{10A9C}\u{10AC0}-\u{10AC7}\u{10AC9}-\u{10AE4}\u{10B00}-\u{10B35}\u{10B40}-\u{10B55}\u{10B60}-\u{10B72}\u{10B80}-\u{10B91}\u{10C00}-\u{10C48}\u{10C80}-\u{10CB2}\u{10CC0}-\u{10CF2}\u{10D00}-\u{10D23}\u{10E80}-\u{10EA9}\u{10EB0}\u{10EB1}\u{10F00}-\u{10F1C}\u{10F27}\u{10F30}-\u{10F45}\u{10F70}-\u{10F81}\u{10FB0}-\u{10FC4}\u{10FE0}-\u{10FF6}\u{11003}-\u{11037}\u{11071}\u{11072}\u{11075}\u{11083}-\u{110AF}\u{110D0}-\u{110E8}\u{11103}-\u{11126}\u{11144}\u{11147}\u{11150}-\u{11172}\u{11176}\u{11183}-\u{111B2}\u{111C1}-\u{111C4}\u{111DA}\u{111DC}\u{11200}-\u{11211}\u{11213}-\u{1122B}\u{11280}-\u{11286}\u{11288}\u{1128A}-\u{1128D}\u{1128F}-\u{1129D}\u{1129F}-\u{112A8}\u{112B0}-\u{112DE}\u{11305}-\u{1130C}\u{1130F}\u{11310}\u{11313}-\u{11328}\u{1132A}-\u{11330}\u{11332}\u{11333}\u{11335}-\u{11339}\u{1133D}\u{11350}\u{1135D}-\u{11361}\u{11400}-\u{11434}\u{11447}-\u{1144A}\u{1145F}-\u{11461}\u{11480}-\u{114AF}\u{114C4}\u{114C5}\u{114C7}\u{11580}-\u{115AE}\u{115D8}-\u{115DB}\u{11600}-\u{1162F}\u{11644}\u{11680}-\u{116AA}\u{116B8}\u{11700}-\u{1171A}\u{11740}-\u{11746}\u{11800}-\u{1182B}\u{118A0}-\u{118DF}\u{118FF}-\u{11906}\u{11909}\u{1190C}-\u{11913}\u{11915}\u{11916}\u{11918}-\u{1192F}\u{1193F}\u{11941}\u{119A0}-\u{119A7}\u{119AA}-\u{119D0}\u{119E1}\u{119E3}\u{11A00}\u{11A0B}-\u{11A32}\u{11A3A}\u{11A50}\u{11A5C}-\u{11A89}\u{11A9D}\u{11AB0}-\u{11AF8}\u{11C00}-\u{11C08}\u{11C0A}-\u{11C2E}\u{11C40}\u{11C72}-\u{11C8F}\u{11D00}-\u{11D06}\u{11D08}\u{11D09}\u{11D0B}-\u{11D30}\u{11D46}\u{11D60}-\u{11D65}\u{11D67}\u{11D68}\u{11D6A}-\u{11D89}\u{11D98}\u{11EE0}-\u{11EF2}\u{11FB0}\u{12000}-\u{12399}\u{12480}-\u{12543}\u{12F90}-\u{12FF0}\u{13000}-\u{1342E}\u{14400}-\u{14646}\u{16800}-\u{16A38}\u{16A40}-\u{16A5E}\u{16A70}-\u{16ABE}\u{16AD0}-\u{16AED}\u{16B00}-\u{16B2F}\u{16B40}-\u{16B43}\u{16B63}-\u{16B77}\u{16B7D}-\u{16B8F}\u{16E40}-\u{16E7F}\u{16F00}-\u{16F4A}\u{16F50}\u{16F93}-\u{16F9F}\u{16FE0}\u{16FE1}\u{16FE3}\u{17000}-\u{187F7}\u{18800}-\u{18CD5}\u{18D00}-\u{18D08}\u{1AFF0}-\u{1AFF3}\u{1AFF5}-\u{1AFFB}\u{1AFFD}\u{1AFFE}\u{1B000}-\u{1B122}\u{1B150}-\u{1B152}\u{1B164}-\u{1B167}\u{1B170}-\u{1B2FB}\u{1BC00}-\u{1BC6A}\u{1BC70}-\u{1BC7C}\u{1BC80}-\u{1BC88}\u{1BC90}-\u{1BC99}\u{1D400}-\u{1D454}\u{1D456}-\u{1D49C}\u{1D49E}\u{1D49F}\u{1D4A2}\u{1D4A5}\u{1D4A6}\u{1D4A9}-\u{1D4AC}\u{1D4AE}-\u{1D4B9}\u{1D4BB}\u{1D4BD}-\u{1D4C3}\u{1D4C5}-\u{1D505}\u{1D507}-\u{1D50A}\u{1D50D}-\u{1D514}\u{1D516}-\u{1D51C}\u{1D51E}-\u{1D539}\u{1D53B}-\u{1D53E}\u{1D540}-\u{1D544}\u{1D546}\u{1D54A}-\u{1D550}\u{1D552}-\u{1D6A5}\u{1D6A8}-\u{1D6C0}\u{1D6C2}-\u{1D6DA}\u{1D6DC}-\u{1D6FA}\u{1D6FC}-\u{1D714}\u{1D716}-\u{1D734}\u{1D736}-\u{1D74E}\u{1D750}-\u{1D76E}\u{1D770}-\u{1D788}\u{1D78A}-\u{1D7A8}\u{1D7AA}-\u{1D7C2}\u{1D7C4}-\u{1D7CB}\u{1DF00}-\u{1DF1E}\u{1E100}-\u{1E12C}\u{1E137}-\u{1E13D}\u{1E14E}\u{1E290}-\u{1E2AD}\u{1E2C0}-\u{1E2EB}\u{1E7E0}-\u{1E7E6}\u{1E7E8}-\u{1E7EB}\u{1E7ED}\u{1E7EE}\u{1E7F0}-\u{1E7FE}\u{1E800}-\u{1E8C4}\u{1E900}-\u{1E943}\u{1E94B}\u{1EE00}-\u{1EE03}\u{1EE05}-\u{1EE1F}\u{1EE21}\u{1EE22}\u{1EE24}\u{1EE27}\u{1EE29}-\u{1EE32}\u{1EE34}-\u{1EE37}\u{1EE39}\u{1EE3B}\u{1EE42}\u{1EE47}\u{1EE49}\u{1EE4B}\u{1EE4D}-\u{1EE4F}\u{1EE51}\u{1EE52}\u{1EE54}\u{1EE57}\u{1EE59}\u{1EE5B}\u{1EE5D}\u{1EE5F}\u{1EE61}\u{1EE62}\u{1EE64}\u{1EE67}-\u{1EE6A}\u{1EE6C}-\u{1EE72}\u{1EE74}-\u{1EE77}\u{1EE79}-\u{1EE7C}\u{1EE7E}\u{1EE80}-\u{1EE89}\u{1EE8B}-\u{1EE9B}\u{1EEA1}-\u{1EEA3}\u{1EEA5}-\u{1EEA9}\u{1EEAB}-\u{1EEBB}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]/gmu,
+                                /[\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]/gmu,
+                            ]
+                                .map((e) => e.source)
+                                .join('|'),
                             'gum',
                         );
                         return (u) =>
@@ -901,12 +929,12 @@
                         console.error('[lib/sounds.js] playSound(', e, '): ', u);
                     });
                 }
-                function T(e, u) {
+                function w(e, u) {
                     (null == u || u > e.length) && (u = e.length);
                     for (var t = 0, a = new Array(u); t < u; t++) a[t] = e[t];
                     return a;
                 }
-                var w = t(7030);
+                var T = t(7030);
                 let P;
                 !(function (e) {
                     ((e[(e.Next = -1)] = 'Next'), (e[(e.Prev = 1)] = 'Prev'));
@@ -956,7 +984,7 @@
                                                             Array.isArray(e) ||
                                                             (t = (function (e, u) {
                                                                 if (e) {
-                                                                    if ('string' == typeof e) return T(e, u);
+                                                                    if ('string' == typeof e) return w(e, u);
                                                                     var t = Object.prototype.toString
                                                                         .call(e)
                                                                         .slice(8, -1);
@@ -970,7 +998,7 @@
                                                                                 /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(
                                                                                     t,
                                                                                 )
-                                                                              ? T(e, u)
+                                                                              ? w(e, u)
                                                                               : void 0
                                                                     );
                                                                 }
@@ -1045,7 +1073,7 @@
                                     [],
                                     150,
                                 ),
-                                d = (0, w.useSpring)(() => ({
+                                d = (0, T.useSpring)(() => ({
                                     scrollPosition: 0,
                                     onChange: (e) => {
                                         const u = E.current;
@@ -1206,7 +1234,7 @@
                         getDirection: (e) => (e.deltaY > 1 ? P.Next : P.Prev),
                         forceTriggerMouseMove: b.O.view.forceTriggerMouseMove,
                     }),
-                    x = 'HorizontalBar_base__nonActive_82',
+                    x = 'HorizontalBar_base__active_5e',
                     O = 'disable',
                     M = { pending: !1, offset: 0 },
                     L = (e) => {
@@ -1270,7 +1298,7 @@
                                     ((u.style.width = `${U(t, r)}px`),
                                         (u.style.display = 'flex'),
                                         i.current &&
-                                            (1 === r ? i.current.classList.add(x) : i.current.classList.remove(x)));
+                                            (1 !== r ? i.current.classList.add(x) : i.current.classList.remove(x)));
                                 })(),
                                     B());
                             });
@@ -1331,15 +1359,15 @@
                             }, [e, m.offset, m.pending, a, d]));
                         const C = f((u) => e.applyStepTo(u), A, [e]),
                             v = C[0],
-                            T = C[1];
+                            w = C[1];
                         (0, n.useEffect)(
                             () => (
-                                document.addEventListener('mouseup', T, !0),
-                                () => document.removeEventListener('mouseup', T, !0)
+                                document.addEventListener('mouseup', w, !0),
+                                () => document.removeEventListener('mouseup', w, !0)
                             ),
-                            [T],
+                            [w],
                         );
-                        const w = (e) => {
+                        const T = (e) => {
                             e.target.classList.contains(O) || y('highlight');
                         };
                         return r().createElement(
@@ -1350,9 +1378,9 @@
                                 onMouseDown: (e) => {
                                     e.target.classList.contains(O) || 0 !== e.button || (y('play'), v(P.Next));
                                 },
-                                onMouseUp: T,
+                                onMouseUp: w,
                                 ref: s,
-                                onMouseEnter: w,
+                                onMouseEnter: T,
                             }),
                             r().createElement(
                                 'div',
@@ -1374,7 +1402,7 @@
                                                   })(u.screenX > a.getBoundingClientRect().x ? P.Prev : P.Next));
                                     },
                                     ref: l,
-                                    onMouseEnter: w,
+                                    onMouseEnter: T,
                                 },
                                 r().createElement('div', { ref: E, className: c()('HorizontalBar_thumb_fd', u.thumb) }),
                                 r().createElement('div', { className: c()('HorizontalBar_rail_32', u.rail) }),
@@ -1384,9 +1412,9 @@
                                 onMouseDown: (e) => {
                                     e.target.classList.contains(O) || 0 !== e.button || (y('play'), v(P.Prev));
                                 },
-                                onMouseUp: T,
+                                onMouseUp: w,
                                 ref: o,
-                                onMouseEnter: w,
+                                onMouseEnter: T,
                             }),
                         );
                     }),
@@ -1417,12 +1445,12 @@
                             r().createElement(
                                 'div',
                                 { className: c()(W.defaultScrollArea, i) },
-                                r().createElement(H, { className: o, api: F, classNames: s }, e),
+                                r().createElement(V, { className: o, api: F, classNames: s }, e),
                             ),
                             r().createElement(z, { getStepByRailClick: l, api: u, onDrag: E, classNames: A }),
                         );
                     },
-                    H = ({ api: e, className: u, classNames: t, children: a }) => (
+                    V = ({ api: e, className: u, classNames: t, children: a }) => (
                         (0, n.useEffect)(() => p(e.recalculateContent)),
                         r().createElement(
                             'div',
@@ -1442,8 +1470,8 @@
                             ),
                         )
                     );
-                ((H.Bar = z), (H.Default = G));
-                const V = k({
+                ((V.Bar = z), (V.Default = G));
+                const H = k({
                         getBounds: (e) => [0, e.scrollHeight - e.offsetHeight],
                         getContainerSize: (e) => e.scrollHeight,
                         getWrapperSize: (e) => e.offsetHeight,
@@ -1452,7 +1480,7 @@
                         },
                         getDirection: (e) => (e.deltaY > 1 ? P.Next : P.Prev),
                     }),
-                    q = 'VerticalBar_base__nonActive_42',
+                    q = 'VerticalBar_base__active_72',
                     j = 'disable',
                     Y = () => {},
                     X = { pending: !1, offset: 0 },
@@ -1460,10 +1488,10 @@
                         var u;
                         return 0.9 * (null != (u = e.getWrapperSize()) ? u : 0);
                     },
-                    Z = (e, u) => {
+                    $ = (e, u) => {
                         e.contentRef.current && u(e.contentRef.current);
                     },
-                    $ = (e, u) => Math.max(20, e.offsetHeight * u),
+                    Z = (e, u) => Math.max(20, e.offsetHeight * u),
                     Q = (0, n.memo)(({ api: e, classNames: u = {}, getStepByRailClick: t = K, onDrag: a = Y }) => {
                         const i = (0, n.useRef)(null),
                             s = (0, n.useRef)(null),
@@ -1490,9 +1518,9 @@
                                 if (!(a && n && u && t)) return;
                                 const r = Math.min(1, a / n);
                                 return (
-                                    (u.style.height = `${$(t, r)}px`),
+                                    (u.style.height = `${Z(t, r)}px`),
                                     (u.style.display = 'flex'),
-                                    i.current && (1 === r ? i.current.classList.add(q) : i.current.classList.remove(q)),
+                                    i.current && (1 !== r ? i.current.classList.add(q) : i.current.classList.remove(q)),
                                     r
                                 );
                             }),
@@ -1505,7 +1533,7 @@
                                 const n = e.animationScroll.scrollPosition.get(),
                                     r = Math.min(1, a / i),
                                     c = g(0, 1, n / (i - a)),
-                                    A = (u.offsetHeight - $(u, r)) * c;
+                                    A = (u.offsetHeight - Z(u, r)) * c;
                                 ((t.style.transform = `translateY(${0 | A}px)`),
                                     ((e) => {
                                         if (s.current && o.current && l.current && E.current) {
@@ -1523,14 +1551,14 @@
                                     })(A));
                             }),
                             C = h(() => {
-                                Z(e, () => {
+                                $(e, () => {
                                     (B(), _());
                                 });
                             });
                         ((0, n.useEffect)(() => p(C)),
                             (0, n.useEffect)(() => {
                                 const u = () => {
-                                    Z(e, () => {
+                                    $(e, () => {
                                         _();
                                     });
                                 };
@@ -1558,7 +1586,7 @@
                                         d(X);
                                     }),
                                     t = b.O.client.events.mouse.move(([u]) => {
-                                        Z(e, (t) => {
+                                        $(e, (t) => {
                                             const i = l.current,
                                                 n = E.current,
                                                 r = e.getContainerSize();
@@ -1579,14 +1607,14 @@
                                 };
                             }, [e, m.offset, m.pending, a, d]));
                         const v = f((u) => e.applyStepTo(u), A, [e]),
-                            T = v[0],
-                            w = v[1];
+                            w = v[0],
+                            T = v[1];
                         (0, n.useEffect)(
                             () => (
-                                document.addEventListener('mouseup', w, !0),
-                                () => document.removeEventListener('mouseup', w, !0)
+                                document.addEventListener('mouseup', T, !0),
+                                () => document.removeEventListener('mouseup', T, !0)
                             ),
-                            [w],
+                            [T],
                         );
                         const S = (e) => {
                             e.target.classList.contains(j) || y('highlight');
@@ -1597,7 +1625,7 @@
                             r().createElement('div', {
                                 className: c()('VerticalBar_topButton_d7', u.topButton),
                                 onMouseDown: (e) => {
-                                    e.target.classList.contains(j) || 0 !== e.button || (y('play'), T(P.Next));
+                                    e.target.classList.contains(j) || 0 !== e.button || (y('play'), w(P.Next));
                                 },
                                 ref: s,
                                 onMouseEnter: S,
@@ -1616,7 +1644,7 @@
                                                 ? d({ pending: !0, offset: u.screenY - a.getBoundingClientRect().y })
                                                 : ((i = u.screenY > a.getBoundingClientRect().y ? P.Prev : P.Next),
                                                   E.current &&
-                                                      Z(e, (u) => {
+                                                      $(e, (u) => {
                                                           if (!u) return;
                                                           const a = t(e),
                                                               n = e.clampPosition(u, u.scrollTop + a * i);
@@ -1632,9 +1660,9 @@
                             r().createElement('div', {
                                 className: c()('VerticalBar_bottomButton_06', u.bottomButton),
                                 onMouseDown: (e) => {
-                                    e.target.classList.contains(j) || 0 !== e.button || (y('play'), T(P.Prev));
+                                    e.target.classList.contains(j) || 0 !== e.button || (y('play'), w(P.Prev));
                                 },
-                                onMouseUp: w,
+                                onMouseUp: T,
                                 ref: o,
                                 onMouseEnter: S,
                             }),
@@ -1709,15 +1737,15 @@
                         'caption',
                         'onClick',
                         'goto',
-                        'side',
-                        'type',
                         'classNames',
                         'onMouseEnter',
                         'onMouseLeave',
                         'onMouseDown',
                         'onMouseUp',
-                        'soundClick',
+                        'side',
+                        'type',
                         'soundHover',
+                        'soundClick',
                     ];
                 function ne() {
                     return (
@@ -1733,87 +1761,101 @@
                         ne.apply(this, arguments)
                     );
                 }
-                class re extends r().PureComponent {
-                    constructor(...e) {
-                        (super(...e),
-                            (this.state = { hover: !1, click: !1 }),
-                            (this._onMouseEnter = (e) => (u) => {
-                                (e && e(u),
-                                    this.setState({ hover: !0 }),
-                                    this.props.soundHover && y(this.props.soundHover));
-                            }),
-                            (this._onMouseLeave = (e) => (u) => {
-                                (e && e(u), this.setState({ hover: !1, click: !1 }));
-                            }),
-                            (this._onMouseDown = (e) => (u) => {
-                                (e && e(u),
-                                    this.setState({ click: !0 }),
-                                    this.props.soundClick && y(this.props.soundClick));
-                            }),
-                            (this._onMouseUp = (e) => (u) => {
-                                (e && e(u), this.setState({ click: !1 }));
-                            }),
-                            (this.handleFocus = () => this.setState({ focus: !0 })),
-                            (this.handleBlur = () => this.setState({ focus: !1 })));
-                    }
-                    render() {
-                        const e = this.props,
-                            u = e.caption,
-                            t = e.onClick,
-                            a = e.goto,
-                            i = e.side,
-                            n = e.type,
-                            s = e.classNames,
-                            o = e.onMouseEnter,
-                            l = e.onMouseLeave,
-                            E = e.onMouseDown,
-                            A = e.onMouseUp,
-                            F =
-                                (e.soundClick,
-                                e.soundHover,
-                                (function (e, u) {
-                                    if (null == e) return {};
-                                    var t,
-                                        a,
-                                        i = {},
-                                        n = Object.keys(e);
-                                    for (a = 0; a < n.length; a++) ((t = n[a]), u.indexOf(t) >= 0 || (i[t] = e[t]));
-                                    return i;
-                                })(e, ie)),
-                            m = c()(ae.base, ae[`base__${n}`], ae[`base__${i}`], null == s ? void 0 : s.base),
-                            D = c()(ae.icon, ae[`icon__${n}`], ae[`icon__${i}`], null == s ? void 0 : s.icon),
-                            d = c()(ae.glow, null == s ? void 0 : s.glow),
-                            B = c()(ae.caption, ae[`caption__${n}`], null == s ? void 0 : s.caption),
-                            _ = c()(ae.goto, null == s ? void 0 : s.goto);
-                        return r().createElement(
-                            'div',
-                            ne(
-                                {
-                                    className: m,
-                                    onMouseEnter: this._onMouseEnter(o),
-                                    onMouseLeave: this._onMouseLeave(l),
-                                    onMouseDown: this._onMouseDown(E),
-                                    onMouseUp: this._onMouseUp(A),
-                                    onFocus: this.handleFocus,
-                                    onBlur: this.handleBlur,
-                                    onClick: t,
-                                },
-                                F,
-                            ),
-                            'info' !== n && r().createElement('div', { className: ae.shine }),
-                            r().createElement('div', { className: D }, r().createElement('div', { className: d })),
-                            r().createElement('div', { className: B }, u),
-                            a && r().createElement('div', { className: _ }, a),
+                const re = (e) => {
+                    let u = e.caption,
+                        t = e.onClick,
+                        a = e.goto,
+                        i = e.classNames,
+                        s = e.onMouseEnter,
+                        o = e.onMouseLeave,
+                        l = e.onMouseDown,
+                        E = e.onMouseUp,
+                        A = e.side,
+                        F = void 0 === A ? 'left' : A,
+                        m = e.type,
+                        D = void 0 === m ? 'back' : m,
+                        d = e.soundHover,
+                        B = void 0 === d ? 'highlight' : d,
+                        _ = e.soundClick,
+                        C = void 0 === _ ? 'play' : _,
+                        p = (function (e, u) {
+                            if (null == e) return {};
+                            var t,
+                                a,
+                                i = {},
+                                n = Object.keys(e);
+                            for (a = 0; a < n.length; a++) ((t = n[a]), u.indexOf(t) >= 0 || (i[t] = e[t]));
+                            return i;
+                        })(e, ie);
+                    const g = (0, n.useCallback)(
+                            (e) => {
+                                (null == s || s(e), b.O.sound.play.sound(B));
+                            },
+                            [s, B],
+                        ),
+                        v = (0, n.useCallback)(
+                            (e) => {
+                                null == o || o(e);
+                            },
+                            [o],
+                        ),
+                        h = (0, n.useCallback)(
+                            (e) => {
+                                (null == l || l(e), b.O.sound.play.sound(C));
+                            },
+                            [l, C],
+                        ),
+                        f = (0, n.useCallback)(
+                            (e) => {
+                                null == E || E(e);
+                            },
+                            [E],
                         );
-                    }
-                }
-                re.defaultProps = { side: 'left', type: 'back', soundHover: 'highlight', soundClick: 'play' };
-                var se = t(5521),
-                    oe = t(9916);
-                const le = (e) => {
+                    return r().createElement(
+                        'div',
+                        ne(
+                            {
+                                className: c()(
+                                    ae.base,
+                                    ae[`base__${D}`],
+                                    ae[`base__${F}`],
+                                    null == i ? void 0 : i.base,
+                                ),
+                                onMouseEnter: g,
+                                onMouseLeave: v,
+                                onMouseDown: h,
+                                onMouseUp: f,
+                                onClick: t,
+                            },
+                            p,
+                        ),
+                        'info' !== D && r().createElement('div', { className: ae.shine }),
+                        r().createElement(
+                            'div',
+                            {
+                                className: c()(
+                                    ae.icon,
+                                    ae[`icon__${D}`],
+                                    ae[`icon__${F}`],
+                                    null == i ? void 0 : i.icon,
+                                ),
+                            },
+                            r().createElement('div', { className: c()(ae.glow, null == i ? void 0 : i.glow) }),
+                        ),
+                        r().createElement(
+                            'div',
+                            { className: c()(ae.caption, ae[`caption__${D}`], null == i ? void 0 : i.caption) },
+                            u,
+                        ),
+                        a && r().createElement('div', { className: c()(ae.goto, null == i ? void 0 : i.goto) }, a),
+                    );
+                };
+                var se = t(5521);
+                t(9916);
+                const oe = (e) => {
                     console.error(e.type + ': useKeydownListener hook :: Callback is not defined');
                 };
-                function ce(e = se.n.NONE, u = le, t = !1, a = !1) {
+                function le(e = se.n.NONE, u = oe, t = !1, a = !1) {
                     (0, n.useEffect)(() => {
                         if (e !== se.n.NONE)
                             return (
@@ -1830,28 +1872,28 @@
                         }
                     }, [u, e, t, a]);
                 }
-                var Ee = t(3403);
-                function Ae() {
+                var ce = t(3403);
+                function Ee() {
                     return !1;
                 }
                 console.log;
-                var Fe = t(9174);
-                function me(e, u) {
+                var Ae = t(9174);
+                function Fe(e, u) {
                     (null == u || u > e.length) && (u = e.length);
                     for (var t = 0, a = new Array(u); t < u; t++) a[t] = e[t];
                     return a;
                 }
-                const De = (e) => (0 === e ? window : window.subViews.get(e));
-                function de(e, u) {
+                const me = (e) => (0 === e ? window : window.subViews.get(e));
+                function De(e, u) {
                     var t;
                     if (!(u >= e.length)) return Array.isArray(e) ? e[u] : null == (t = e[u]) ? void 0 : t.value;
                 }
-                function Be(e, u) {
+                function de(e, u) {
                     return Array.isArray(e) ? e.map(u) : e.map((e, t, a) => u(null == e ? void 0 : e.value, t, a));
                 }
-                var _e = t(3946);
-                const Ce = R.strings.battle_royale_infopage.button,
-                    pe = ((e, u) => {
+                var Be = t(3946);
+                const _e = R.strings.battle_royale_infopage.button,
+                    Ce = ((e, u) => {
                         const t = (0, n.createContext)({});
                         return [
                             function ({ mode: e = 'real', options: a, children: i, mocks: s }) {
@@ -1861,7 +1903,7 @@
                                         const n = (function ({
                                                 initializer: e = !0,
                                                 rootId: u = 0,
-                                                getRoot: t = De,
+                                                getRoot: t = me,
                                                 context: a = 'model',
                                             } = {}) {
                                                 const i = new Map();
@@ -1921,7 +1963,7 @@
                                                                         (t = (function (e, u) {
                                                                             if (e) {
                                                                                 if ('string' == typeof e)
-                                                                                    return me(e, u);
+                                                                                    return Fe(e, u);
                                                                                 var t = Object.prototype.toString
                                                                                     .call(e)
                                                                                     .slice(8, -1);
@@ -1935,7 +1977,7 @@
                                                                                             /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(
                                                                                                 t,
                                                                                             )
-                                                                                          ? me(e, u)
+                                                                                          ? Fe(e, u)
                                                                                           : void 0
                                                                                 );
                                                                             }
@@ -1991,18 +2033,18 @@
                                                             bp: e.array('modesBP'),
                                                         },
                                                     ),
-                                                    t = (0, _e.Om)((e) => {
-                                                        const t = de(u.sh.types.get(), e);
+                                                    t = (0, Be.Om)((e) => {
+                                                        const t = De(u.sh.types.get(), e);
                                                         if (!t) throw Error('battleType is undefined');
                                                         return t;
                                                     }),
-                                                    a = (0, _e.Om)(
+                                                    a = (0, Be.Om)(
                                                         () => {
                                                             var e;
                                                             const t =
                                                                 null ==
-                                                                (e = de(
-                                                                    Be(u.bp.get(), (e) => e),
+                                                                (e = De(
+                                                                    de(u.bp.get(), (e) => e),
                                                                     0,
                                                                 ))
                                                                     ? void 0
@@ -2010,14 +2052,14 @@
                                                             if (!t) throw Error('Tables of BP are undefined');
                                                             return t;
                                                         },
-                                                        { equals: Ae },
+                                                        { equals: Ee },
                                                     ),
-                                                    i = (0, _e.Om)(() => {
+                                                    i = (0, Be.Om)(() => {
                                                         const e = u.root.get().isModeSelector;
                                                         return {
                                                             side: e ? 'left' : 'right',
                                                             type: e ? 'back' : 'close',
-                                                            caption: e ? Ce.back() : Ce.close(),
+                                                            caption: e ? _e.back() : _e.close(),
                                                         };
                                                     });
                                                 return Object.assign({}, u, {
@@ -2028,13 +2070,25 @@
                                                 readByPath: s,
                                                 externalModel: r,
                                                 observableModel: {
-                                                    array: (u, t) => {
-                                                        const a = null != t ? t : s(u),
-                                                            i = Fe.LO.box(a, { equals: Ae });
+                                                    dict: (u) => {
+                                                        const t = s(u),
+                                                            a = Ae.LO.box(t, { equals: Ee });
                                                         return (
                                                             'real' === e &&
                                                                 r.subscribe(
-                                                                    (0, Fe.aD)((e) => i.set(e)),
+                                                                    (0, Ae.aD)((e) => a.set(e)),
+                                                                    u,
+                                                                ),
+                                                            a
+                                                        );
+                                                    },
+                                                    array: (u, t) => {
+                                                        const a = null != t ? t : s(u),
+                                                            i = Ae.LO.box(a, { equals: Ee });
+                                                        return (
+                                                            'real' === e &&
+                                                                r.subscribe(
+                                                                    (0, Ae.aD)((e) => i.set(e)),
                                                                     u,
                                                                 ),
                                                             i
@@ -2042,11 +2096,11 @@
                                                     },
                                                     object: (u, t) => {
                                                         const a = null != t ? t : s(u),
-                                                            i = Fe.LO.box(a, { equals: Ae });
+                                                            i = Ae.LO.box(a, { equals: Ee });
                                                         return (
                                                             'real' === e &&
                                                                 r.subscribe(
-                                                                    (0, Fe.aD)((e) => i.set(e)),
+                                                                    (0, Ae.aD)((e) => i.set(e)),
                                                                     u,
                                                                 ),
                                                             i
@@ -2056,13 +2110,13 @@
                                                         const a = s(t);
                                                         if (Array.isArray(u)) {
                                                             const i = u.reduce(
-                                                                (e, u) => ((e[u] = Fe.LO.box(a[u], {})), e),
+                                                                (e, u) => ((e[u] = Ae.LO.box(a[u], {})), e),
                                                                 {},
                                                             );
                                                             return (
                                                                 'real' === e &&
                                                                     r.subscribe(
-                                                                        (0, Fe.aD)((e) => {
+                                                                        (0, Ae.aD)((e) => {
                                                                             u.forEach((u) => {
                                                                                 i[u].set(e[u]);
                                                                             });
@@ -2076,13 +2130,13 @@
                                                             const i = u,
                                                                 n = Object.entries(i),
                                                                 s = n.reduce(
-                                                                    (e, [u, t]) => ((e[t] = Fe.LO.box(a[u], {})), e),
+                                                                    (e, [u, t]) => ((e[t] = Ae.LO.box(a[u], {})), e),
                                                                     {},
                                                                 );
                                                             return (
                                                                 'real' === e &&
                                                                     r.subscribe(
-                                                                        (0, Fe.aD)((e) => {
+                                                                        (0, Ae.aD)((e) => {
                                                                             n.forEach(([u, t]) => {
                                                                                 s[t].set(e[u]);
                                                                             });
@@ -2133,150 +2187,150 @@
                         openVideo: e.createCallbackNoArgs('onOpenVideo'),
                         сloseWindow: e.createCallbackNoArgs('onClose'),
                     })),
-                    ge = pe[0],
-                    be = pe[1],
-                    ve = R.strings.battle_royale_infopage,
-                    he = {
-                        title: ve.mosaic.title(),
+                    pe = Ce[0],
+                    ge = Ce[1],
+                    be = R.strings.battle_royale_infopage,
+                    ve = {
+                        title: be.mosaic.title(),
                         mosaic: [
                             {
                                 imagePath: 'R.images.battle_royale.gui.maps.infopage.mosaic.general',
-                                title: ve.mosaic.info1.title(),
-                                subtitle: ve.mosaic.info1.subtitle(),
+                                title: be.mosaic.info1.title(),
+                                subtitle: be.mosaic.info1.subtitle(),
                             },
                             {
                                 imagePath: 'R.images.battle_royale.gui.maps.infopage.mosaic.economic',
-                                title: ve.mosaic.info2.title(),
-                                subtitle: ve.mosaic.info2.subtitle(),
+                                title: be.mosaic.info2.title(),
+                                subtitle: be.mosaic.info2.subtitle(),
                             },
                             {
                                 imagePath: 'R.images.battle_royale.gui.maps.infopage.mosaic.progression',
-                                title: ve.mosaic.info3.title(),
-                                subtitle: ve.mosaic.info3.subtitle(),
+                                title: be.mosaic.info3.title(),
+                                subtitle: be.mosaic.info3.subtitle(),
                             },
                             {
                                 imagePath: 'R.images.battle_royale.gui.maps.infopage.mosaic.respawn',
-                                title: ve.mosaic.info4.title(),
-                                subtitle: ve.mosaic.info4.subtitle(),
+                                title: be.mosaic.info4.title(),
+                                subtitle: be.mosaic.info4.subtitle(),
+                            },
+                        ],
+                    },
+                    he = {
+                        title: be.maps.title(),
+                        subtitle: be.maps.subtitle(),
+                        images: [
+                            {
+                                imagePath: 'R.images.battle_royale.gui.maps.infopage.maps.arzagir',
+                                title: be.maps.map1.title(),
+                            },
+                            {
+                                imagePath: 'R.images.battle_royale.gui.maps.infopage.maps.zone',
+                                title: be.maps.map2.title(),
+                            },
+                            {
+                                imagePath: 'R.images.battle_royale.gui.maps.infopage.maps.firnulfir',
+                                title: be.maps.map3.title(),
                             },
                         ],
                     },
                     fe = {
-                        title: ve.maps.title(),
-                        subtitle: ve.maps.subtitle(),
-                        images: [
-                            {
-                                imagePath: 'R.images.battle_royale.gui.maps.infopage.maps.arzagir',
-                                title: ve.maps.map1.title(),
-                            },
-                            {
-                                imagePath: 'R.images.battle_royale.gui.maps.infopage.maps.zone',
-                                title: ve.maps.map2.title(),
-                            },
-                            {
-                                imagePath: 'R.images.battle_royale.gui.maps.infopage.maps.firnulfir',
-                                title: ve.maps.map3.title(),
-                            },
-                        ],
+                        title: be.generalDescription.title(),
+                        subtitle: be.generalDescription.subtitle(),
+                        accent: be.generalDescription.accent(),
                     },
                     ye = {
-                        title: ve.generalDescription.title(),
-                        subtitle: ve.generalDescription.subtitle(),
-                        accent: ve.generalDescription.accent(),
-                    },
-                    Te = {
-                        title: ve.towerBlock.title(),
-                        subtitle: ve.towerBlock.subtitle(),
+                        title: be.towerBlock.title(),
+                        subtitle: be.towerBlock.subtitle(),
                         loots: [
                             {
                                 imagePath: 'R.images.battle_royale.gui.maps.infopage.tower.euipment',
-                                title: ve.towerBlock.ammunition.title(),
-                                subtitle: ve.towerBlock.ammunition.subtitle(),
+                                title: be.towerBlock.ammunition.title(),
+                                subtitle: be.towerBlock.ammunition.subtitle(),
                             },
                             {
                                 imagePath: 'R.images.battle_royale.gui.maps.infopage.tower.ammunition',
-                                title: ve.towerBlock.euipment.title(),
-                                subtitle: ve.towerBlock.euipment.subtitle(),
+                                title: be.towerBlock.euipment.title(),
+                                subtitle: be.towerBlock.euipment.subtitle(),
                             },
                             {
                                 imagePath: 'R.images.battle_royale.gui.maps.infopage.tower.cargo',
-                                title: ve.towerBlock.cargo.title(),
-                                subtitle: ve.towerBlock.cargo.subtitle(),
+                                title: be.towerBlock.cargo.title(),
+                                subtitle: be.towerBlock.cargo.subtitle(),
                             },
                             {
                                 imagePath: 'R.images.battle_royale.gui.maps.infopage.tower.trophies',
-                                title: ve.towerBlock.trophies.title(),
-                                subtitle: ve.towerBlock.trophies.subtitle(),
+                                title: be.towerBlock.trophies.title(),
+                                subtitle: be.towerBlock.trophies.subtitle(),
                             },
                         ],
                     },
                     we = {
-                        title: ve.zones.title(),
-                        subtitle: ve.zones.subtitle(),
+                        title: be.zones.title(),
+                        subtitle: be.zones.subtitle(),
                         images: [
                             {
                                 imagePath: 'R.images.battle_royale.gui.maps.infopage.zones.yellowZone',
-                                title: ve.zones.zoneYellow.title(),
-                                subtitle: ve.zones.zoneYellow.subtitle(),
+                                title: be.zones.zoneYellow.title(),
+                                subtitle: be.zones.zoneYellow.subtitle(),
                             },
                             {
                                 imagePath: 'R.images.battle_royale.gui.maps.infopage.zones.redZone',
-                                title: ve.zones.zoneRed.title(),
-                                subtitle: ve.zones.zoneRed.subtitle(),
+                                title: be.zones.zoneRed.title(),
+                                subtitle: be.zones.zoneRed.subtitle(),
                             },
                         ],
                     },
-                    Pe = {
-                        title: ve.sectorDetails.title(),
-                        textBlock: [{ text: ve.sectorDetails.subtitle() }],
+                    Te = {
+                        title: be.sectorDetails.title(),
+                        textBlock: [{ text: be.sectorDetails.subtitle() }],
                         imagePath: 'R.images.battle_royale.gui.maps.infopage.sector',
                     },
-                    Se = {
-                        title: ve.radarDetails.title(),
-                        textBlock: [{ text: ve.radarDetails.text1() }, { text: ve.radarDetails.text2() }],
+                    Pe = {
+                        title: be.radarDetails.title(),
+                        textBlock: [{ text: be.radarDetails.text1() }, { text: be.radarDetails.text2() }],
                         imagePath: 'R.images.battle_royale.gui.maps.infopage.radar',
                     },
-                    Re = {
-                        title: ve.progressionDetails.title(),
+                    Se = {
+                        title: be.progressionDetails.title(),
                         textBlock: [
-                            { text: ve.progressionDetails.subtitle() },
-                            { subtitle: ve.progressionDetails.title2(), text: ve.progressionDetails.subtitle2() },
+                            { text: be.progressionDetails.subtitle() },
+                            { subtitle: be.progressionDetails.title2(), text: be.progressionDetails.subtitle2() },
                         ],
                         imagePath: 'R.images.battle_royale.gui.maps.infopage.progression',
                     },
-                    ke = {
-                        title: ve.battleTasksDetails.title(),
-                        textBlock: [{ text: ve.battleTasksDetails.subtitle() }],
+                    Re = {
+                        title: be.battleTasksDetails.title(),
+                        textBlock: [{ text: be.battleTasksDetails.subtitle() }],
                         imagePath: 'R.images.battle_royale.gui.maps.infopage.battleTasks',
                     },
-                    Ne = {
-                        title: ve.shopDetails.title(),
-                        textBlock: [{ text: ve.shopDetails.text1() }, { text: ve.shopDetails.text2() }],
+                    ke = {
+                        title: be.shopDetails.title(),
+                        textBlock: [{ text: be.shopDetails.text1() }, { text: be.shopDetails.text2() }],
                         imagePath: 'R.images.battle_royale.gui.maps.infopage.shop',
                     },
-                    xe = { title: ve.articleBP.title(), subtitle: ve.articleBP.subtitle() },
-                    Oe = {
-                        title: ve.pointsBPDetailsSettings.title(),
-                        textBlock: [{ text: ve.pointsBPDetailsSettings.subtitle() }],
+                    Ne = { title: be.articleBP.title(), subtitle: be.articleBP.subtitle() },
+                    xe = {
+                        title: be.pointsBPDetailsSettings.title(),
+                        textBlock: [{ text: be.pointsBPDetailsSettings.subtitle() }],
                         imagePath: 'R.images.battle_royale.gui.maps.infopage.pointsBP',
                     },
-                    Me = {
-                        title: ve.respawn.title(),
+                    Oe = {
+                        title: be.respawn.title(),
                         textBlock: [
-                            { text: ve.respawn.text() },
-                            { subtitle: ve.respawn.block1.title(), text: ve.respawn.block1.subtitle() },
-                            { subtitle: ve.respawn.block2.title(), text: ve.respawn.block2.subtitle() },
+                            { text: be.respawn.text() },
+                            { subtitle: be.respawn.block1.title(), text: be.respawn.block1.subtitle() },
+                            { subtitle: be.respawn.block2.title(), text: be.respawn.block2.subtitle() },
                         ],
                         imagePath: 'R.images.battle_royale.gui.maps.infopage.respawn',
                     },
-                    Le = { title: ve.tableBPDetailsSettings.title(), subtitle: ve.tableBPDetailsSettings.subtitle() },
-                    Ie = { title: ve.pointsSHDetailsSettings.title(), subtitle: ve.pointsSHDetailsSettings.subtitle() },
-                    Ue = {
-                        title: ve.marauders.title(),
-                        textBlock: [{ text: ve.marauders.text() }],
+                    Me = { title: be.tableBPDetailsSettings.title(), subtitle: be.tableBPDetailsSettings.subtitle() },
+                    Le = { title: be.pointsSHDetailsSettings.title(), subtitle: be.pointsSHDetailsSettings.subtitle() },
+                    Ie = {
+                        title: be.marauders.title(),
+                        textBlock: [{ text: be.marauders.text() }],
                         imagePath: 'R.images.battle_royale.gui.maps.infopage.marauders',
                     },
-                    ze = {
+                    Ue = {
                         base: 'App_base_5d',
                         container: 'App_container_b5',
                         divider: 'App_divider_ec',
@@ -2305,7 +2359,7 @@
                         pointsBattleTask: 'App_pointsBattleTask_5b',
                         indentBPTable: 'App_indentBPTable_cc',
                     },
-                    We = {
+                    ze = {
                         blackReal: 'FormatTextWithColorTags_blackReal_3c',
                         whiteReal: 'FormatTextWithColorTags_whiteReal_8a',
                         white: 'FormatTextWithColorTags_white_16',
@@ -2331,28 +2385,28 @@
                         prom: 'FormatTextWithColorTags_prom_dd',
                         parNoWidth: 'FormatTextWithColorTags_parNoWidth_5a',
                     },
-                    Ge = /(?:%\(|{)\w*(?:_[Oo]pen|Start)(?:\)s|})?(.*?)(?:%\(|{)\w*(?:_[Cc]lose|End)(?:\)s|})?/g,
-                    He = /(?<=(?:%\(|{))(.*?)(?=(?:_[Oo]pen|Start))/,
+                    We = /(?:%\(|{)\w*(?:_[Oo]pen|Start)(?:\)s|})?(.*?)(?:%\(|{)\w*(?:_[Cc]lose|End)(?:\)s|})?/g,
+                    Ge = /(?<=(?:%\(|{))(.*?)(?=(?:_[Oo]pen|Start))/,
                     Ve = /(?<=(?:_[Oo]pen|Start)(?:\)s?|}))(.*?)(?=(?:%\(|{))/,
-                    qe = (0, n.memo)(({ text: e, binding: u, classMix: t }) => {
+                    He = (0, n.memo)(({ text: e, binding: u, classMix: t }) => {
                         const a = (0, n.useCallback)((e) => ({ color: `#${e}` }), []),
                             i = (0, n.useMemo)(() => u || {}, [u]);
-                        let s = Ge.exec(e),
+                        let s = We.exec(e),
                             o = e,
                             l = 0;
                         for (; s; ) {
                             const t = s[0],
-                                n = He.exec(t),
+                                n = Ge.exec(t),
                                 c = Ve.exec(t),
                                 E = s[1];
                             if (n && c) {
                                 const e = n[0],
                                     s = e + l++ + e;
                                 ((o = o.replace(t, `%(${s})`)),
-                                    (i[s] = We[e]
+                                    (i[s] = ze[e]
                                         ? r().createElement(
                                               'span',
-                                              { className: We[e] },
+                                              { className: ze[e] },
                                               r().createElement(C, { text: E, binding: u }),
                                           )
                                         : r().createElement(
@@ -2361,11 +2415,11 @@
                                               r().createElement(C, { text: E, binding: u }),
                                           )));
                             }
-                            s = Ge.exec(e);
+                            s = We.exec(e);
                         }
                         return r().createElement(C, { text: o, classMix: t, binding: i });
                     }),
-                    je = {
+                    qe = {
                         base: 'Article_base_c8',
                         title: 'Article_title_02',
                         head: 'Article_head_51',
@@ -2376,54 +2430,54 @@
                         accent: 'Article_accent_0a',
                         divider: 'Article_divider_4b',
                     },
-                    Ye = ({ description: e, classNames: u, mapsStyle: t }) =>
+                    je = ({ description: e, classNames: u, mapsStyle: t }) =>
                         r().createElement(
                             'div',
-                            { className: c()(je.base, null == u ? void 0 : u.alignCenter) },
+                            { className: c()(qe.base, null == u ? void 0 : u.alignCenter) },
                             r().createElement(
                                 'div',
-                                { className: je.head },
-                                r().createElement('div', { className: je.title }, e.title),
+                                { className: qe.head },
+                                r().createElement('div', { className: qe.title }, e.title),
                                 r().createElement(
                                     'div',
-                                    { className: je.subtitle },
-                                    r().createElement(qe, {
+                                    { className: qe.subtitle },
+                                    r().createElement(He, {
                                         classMix: null == u ? void 0 : u.alignCenter,
                                         text: e.subtitle,
                                     }),
                                 ),
-                                e.accent && r().createElement('div', { className: je.accent }, e.accent),
+                                e.accent && r().createElement('div', { className: qe.accent }, e.accent),
                             ),
                             e.images &&
                                 r().createElement(
                                     'div',
-                                    { className: c()(je.images, t && je.images__mapStyle) },
+                                    { className: c()(qe.images, t && qe.images__mapStyle) },
                                     e.images.map(({ imagePath: e, title: t, subtitle: a }, i) =>
                                         r().createElement(
                                             r().Fragment,
                                             null,
                                             r().createElement(
                                                 'div',
-                                                { className: je.imageContainer, key: i },
+                                                { className: qe.imageContainer, key: i },
                                                 r().createElement('img', {
-                                                    className: c()(je.image, null == u ? void 0 : u.image),
+                                                    className: c()(qe.image, null == u ? void 0 : u.image),
                                                     src: e,
                                                     alt: t,
                                                 }),
-                                                r().createElement('div', { className: je.text }, t),
+                                                r().createElement('div', { className: qe.text }, t),
                                                 a &&
                                                     r().createElement(
                                                         'div',
-                                                        { className: je.subtitle },
-                                                        r().createElement(qe, { text: a }),
+                                                        { className: qe.subtitle },
+                                                        r().createElement(He, { text: a }),
                                                     ),
                                             ),
-                                            1 !== i && r().createElement('div', { className: je.divider }),
+                                            1 !== i && r().createElement('div', { className: qe.divider }),
                                         ),
                                     ),
                                 ),
                         ),
-                    Xe = ({ description: e, reverse: u, smallImage: t, classNames: a, className: i, binding: n }) =>
+                    Ye = ({ description: e, reverse: u, smallImage: t, classNames: a, className: i, binding: n }) =>
                         r().createElement(
                             'div',
                             {
@@ -2450,9 +2504,9 @@
                                             r().createElement(
                                                 'div',
                                                 { className: 'Details_subtitle_76' },
-                                                r().createElement(qe, { text: e }),
+                                                r().createElement(He, { text: e }),
                                             ),
-                                        u && r().createElement(qe, { text: u, binding: Object.assign({}, n) }),
+                                        u && r().createElement(He, { text: u, binding: Object.assign({}, n) }),
                                     ),
                                 ),
                             ),
@@ -2463,7 +2517,7 @@
                                 alt: e.title,
                             }),
                         );
-                let Ke;
+                let Xe;
                 !(function (e) {
                     ((e.DayMonthNumeric = 'dayMonthNumeric'),
                         (e.DayMonthFull = 'dayMonthFull'),
@@ -2476,16 +2530,16 @@
                         (e.FullDate = 'fullDate'),
                         (e.FullTime = 'fullTime'),
                         (e.FullDateTime = 'fullDateTime'));
-                })(Ke || (Ke = {}));
-                var Ze = t(8613);
+                })(Xe || (Xe = {}));
+                var Ke = t(8613);
                 Date.now();
-                const $e = Ze.Ew.getRegionalDateTime,
-                    Qe = Ze.Ew.getFormattedDateTime,
-                    Je = (0, n.memo)(({ datetime: e, format: u = Ke.ShortDate, isConvertedToLocal: t = !0 }) =>
-                        Object.values(Ke).includes(u) ? $e(e, u, t) : Qe(e, u, t),
+                const $e = Ke.Ew.getRegionalDateTime,
+                    Ze = Ke.Ew.getFormattedDateTime,
+                    Qe = (0, n.memo)(({ datetime: e, format: u = Xe.ShortDate, isConvertedToLocal: t = !0 }) =>
+                        Object.values(Xe).includes(u) ? $e(e, u, t) : Ze(e, u, t),
                     ),
-                    eu = (0, Ee.Pi)(({ title: e, subtitle: u }) => {
-                        const t = be(),
+                    Je = (0, ce.Pi)(({ title: e, subtitle: u }) => {
+                        const t = ge(),
                             a = t.controls,
                             i = t.model,
                             n = a.openVideo,
@@ -2505,8 +2559,8 @@
                                     r().createElement(C, {
                                         text: u,
                                         binding: {
-                                            startDate: r().createElement(Je, { datetime: o, format: Ke.ShortDate }),
-                                            endDate: r().createElement(Je, { datetime: l, format: Ke.ShortDate }),
+                                            startDate: r().createElement(Qe, { datetime: o, format: Xe.ShortDate }),
+                                            endDate: r().createElement(Qe, { datetime: l, format: Xe.ShortDate }),
                                         },
                                     }),
                                 ),
@@ -2525,7 +2579,7 @@
                             ),
                         );
                     }),
-                    uu = ({ description: e }) =>
+                    eu = ({ description: e }) =>
                         r().createElement(
                             'div',
                             { className: 'Mosaic_base_6b' },
@@ -2549,14 +2603,14 @@
                                             r().createElement(
                                                 'div',
                                                 { className: 'Mosaic_itemSubtitle_76' },
-                                                r().createElement(qe, { text: t }),
+                                                r().createElement(He, { text: t }),
                                             ),
                                         ),
                                     ),
                                 ),
                             ),
                         ),
-                    tu = {
+                    uu = {
                         base: 'TableBP_base_37',
                         row: 'TableBP_row_49',
                         border: 'TableBP_border_7b',
@@ -2567,61 +2621,61 @@
                         points: 'TableBP_points_e1',
                         dash: 'TableBP_dash_20',
                     },
-                    au = 'points',
-                    iu = 'text',
-                    nu = (0, Ee.Pi)(() => {
-                        const e = be().model.computes.tableRowsBP(),
-                            u = de(e, 1),
-                            t = e.length > 1 ? u && Be(u.cell, (e) => e) : null;
+                    tu = 'points',
+                    au = 'text',
+                    iu = (0, ce.Pi)(() => {
+                        const e = ge().model.computes.tableRowsBP(),
+                            u = De(e, 1),
+                            t = e.length > 1 ? u && de(u.cell, (e) => e) : null;
                         return r().createElement(
                             'div',
-                            { className: tu.base },
-                            Be(e, (e, u) =>
+                            { className: uu.base },
+                            de(e, (e, u) =>
                                 r().createElement(
                                     'div',
-                                    { className: tu.row, key: u },
-                                    Be(e.cell, ({ text: e, points: a }, i) => {
+                                    { className: uu.row, key: u },
+                                    de(e.cell, ({ text: e, points: a }, i) => {
                                         const n = t && t[i].text;
                                         return r().createElement(
                                             'div',
                                             {
                                                 key: i,
                                                 className: c()(
-                                                    tu.cell,
-                                                    n && tu.cell__text,
-                                                    0 === u && tu.cell__inFirstRow,
-                                                    1 === i && tu.cell__inSecondCell,
+                                                    uu.cell,
+                                                    n && uu.cell__text,
+                                                    0 === u && uu.cell__inFirstRow,
+                                                    1 === i && uu.cell__inSecondCell,
                                                 ),
                                             },
                                             (() => {
                                                 switch (
-                                                    ((e, u, t) => (!e && !u && t > 0 ? 'none' : e ? au : iu))(a, e, u)
+                                                    ((e, u, t) => (!e && !u && t > 0 ? 'none' : e ? tu : au))(a, e, u)
                                                 ) {
+                                                    case tu:
+                                                        return r().createElement('div', { className: uu.points }, a);
                                                     case au:
-                                                        return r().createElement('div', { className: tu.points }, a);
-                                                    case iu:
-                                                        return r().createElement('div', { className: tu.text }, e);
+                                                        return r().createElement('div', { className: uu.text }, e);
                                                     default:
                                                         return r().createElement(
                                                             'div',
-                                                            { className: tu.dash },
+                                                            { className: uu.dash },
                                                             R.strings.common.common.dash(),
                                                         );
                                                 }
                                             })(),
-                                            r().createElement('div', { className: c()(n && tu.border) }),
+                                            r().createElement('div', { className: c()(n && uu.border) }),
                                         );
                                     }),
                                 ),
                             ),
                         );
                     }),
-                    ru = ({ type: e, rewards: u }) =>
+                    nu = ({ type: e, rewards: u }) =>
                         r().createElement(
                             'div',
                             { className: 'Column_base_b3' },
                             r().createElement('div', { className: 'Column_battleType_ba' }, e),
-                            Be(u, ({ place: e, points: u }, t) =>
+                            de(u, ({ place: e, points: u }, t) =>
                                 r().createElement(
                                     'div',
                                     { key: t, className: 'Column_cell_71' },
@@ -2641,17 +2695,17 @@
                                 ),
                             ),
                         ),
-                    su = (0, Ee.Pi)(() => {
-                        const e = be().model;
+                    ru = (0, ce.Pi)(() => {
+                        const e = ge().model;
                         return r().createElement(
                             'div',
                             { className: 'TableSH_base_5b' },
-                            Be(e.sh.modes.get(), (u, t) =>
-                                r().createElement(ru, { key: t, rewards: u, type: e.computes.battleTypeSH(t) }),
+                            de(e.sh.modes.get(), (u, t) =>
+                                r().createElement(nu, { key: t, rewards: u, type: e.computes.battleTypeSH(t) }),
                             ),
                         );
                     }),
-                    ou = {
+                    su = {
                         base: 'TowerBlock_base_da',
                         title: 'TowerBlock_title_8a',
                         head: 'TowerBlock_head_28',
@@ -2660,92 +2714,97 @@
                         descriptionTitle: 'TowerBlock_descriptionTitle_7c',
                         image: 'TowerBlock_image_77',
                     },
-                    lu = ({ description: e }) =>
+                    ou = ({ description: e }) =>
                         r().createElement(
                             'div',
-                            { className: ou.base },
+                            { className: su.base },
                             r().createElement(
                                 'div',
-                                { className: ou.head },
-                                r().createElement('div', { className: ou.title }, e.title),
-                                r().createElement('div', { className: ou.subtitle }, e.subtitle),
+                                { className: su.head },
+                                r().createElement('div', { className: su.title }, e.title),
+                                r().createElement('div', { className: su.subtitle }, e.subtitle),
                             ),
                             r().createElement(
                                 'div',
-                                { className: ou.loots },
+                                { className: su.loots },
                                 e.loots.map(({ imagePath: e, title: u, subtitle: t }, a) =>
                                     r().createElement(
                                         'div',
-                                        { className: ou.lootsContainer, key: u + a },
-                                        r().createElement('img', { className: ou.image, src: e, alt: u }),
+                                        { className: su.lootsContainer, key: u + a },
+                                        r().createElement('img', { className: su.image, src: e, alt: u }),
                                         r().createElement(
                                             'div',
-                                            { className: ou.description },
-                                            r().createElement('div', { className: ou.descriptionTitle }, u),
+                                            { className: su.description },
+                                            r().createElement('div', { className: su.descriptionTitle }, u),
                                             r().createElement(
                                                 'div',
-                                                { className: ou.descriptionSubtitle },
-                                                r().createElement(qe, { text: t }),
+                                                { className: su.descriptionSubtitle },
+                                                r().createElement(He, { text: t }),
                                             ),
                                         ),
                                     ),
                                 ),
                             ),
                         );
-                let cu, Eu, Au, Fu, mu, Du, du, Bu;
-                var _u, Cu, pu, gu, bu;
-                (((bu = cu || (cu = {})).Items = 'items'),
-                    (bu.Equipment = 'equipment'),
-                    (bu.Xp = 'xp'),
-                    (bu.XpFactor = 'xpFactor'),
-                    (bu.Blueprints = 'blueprints'),
-                    (bu.BlueprintsAny = 'blueprintsAny'),
-                    (bu.Goodies = 'goodies'),
-                    (bu.Berths = 'berths'),
-                    (bu.Slots = 'slots'),
-                    (bu.Tokens = 'tokens'),
-                    (bu.CrewSkins = 'crewSkins'),
-                    (bu.CrewBooks = 'crewBooks'),
-                    (bu.Customizations = 'customizations'),
-                    (bu.CreditsFactor = 'creditsFactor'),
-                    (bu.Tankman = 'tankman'),
-                    (bu.Tankwoman = 'tankwoman'),
-                    (bu.TankmenXp = 'tankmenXP'),
-                    (bu.TankmenXpFactor = 'tankmenXPFactor'),
-                    (bu.FreeXpFactor = 'freeXPFactor'),
-                    (bu.BattleToken = 'battleToken'),
-                    (bu.PremiumUniversal = 'premium_universal'),
-                    (bu.Gold = 'gold'),
-                    (bu.Credits = 'credits'),
-                    (bu.Crystal = 'crystal'),
-                    (bu.FreeXp = 'freeXP'),
-                    (bu.Premium = 'premium'),
-                    (bu.PremiumPlus = 'premium_plus'),
-                    (bu.BattlePassPoints = 'battlePassPoints'),
-                    (bu.BattlePassSelectToken = 'battlePassSelectToken'),
-                    (bu.BattlePassTicket = 'lootBox_commonTicket'),
-                    (bu.BattlePassTaler = 'bptaler'),
-                    (bu.StyleProgressToken = 'styleProgressToken'),
-                    (bu.TmanToken = 'tmanToken'),
-                    (bu.NaturalCover = 'naturalCover'),
-                    (bu.BpCoin = 'bpcoin'),
-                    (bu.BattlaPassFinalAchievement = 'dossier_achievement'),
-                    (bu.BattleBadge = 'dossier_badge'),
-                    (bu.BonusX5 = 'battle_bonus_x5'),
-                    (bu.CrewBonusX3 = 'crew_bonus_x3'),
-                    (bu.Vehicles = 'vehicles'),
-                    (bu.EpicSelectToken = 'epicSelectToken'),
-                    (bu.Comp7TokenWeeklyReward = 'comp7TokenWeeklyReward'),
-                    (bu.DeluxeGift = 'deluxe_gift'),
-                    (bu.BattleBoosterGift = 'battleBooster_gift'),
-                    (bu.ModernizedDevicesT1Gift = 'modernized_devices_t1_gift'),
-                    (bu.ModernizedDevicesT2Gift = 'modernized_devices_t2_gift'),
-                    (bu.ModernizedDevicesT3Gift = 'modernized_devices_t3_gift'),
-                    (bu.OptionalDevice = 'optionalDevice'),
-                    (bu.EquipCoin = 'equipCoin'),
-                    (bu.LootBox = 'lootBox'),
-                    (bu.BrCoin = 'brcoin'),
-                    (bu.Attachment = 'attachment'),
+                let lu, cu, Eu, Au, Fu, mu, Du, du;
+                var Bu, _u, Cu, pu, gu;
+                let bu, vu, hu, fu, yu, wu, Tu;
+                var Pu, Su, Ru;
+                (((gu = lu || (lu = {})).Items = 'items'),
+                    (gu.Equipment = 'equipment'),
+                    (gu.Xp = 'xp'),
+                    (gu.XpFactor = 'xpFactor'),
+                    (gu.Blueprints = 'blueprints'),
+                    (gu.BlueprintsAny = 'blueprintsAny'),
+                    (gu.Goodies = 'goodies'),
+                    (gu.Berths = 'berths'),
+                    (gu.Slots = 'slots'),
+                    (gu.Tokens = 'tokens'),
+                    (gu.CrewSkins = 'crewSkins'),
+                    (gu.CrewBooks = 'crewBooks'),
+                    (gu.Customizations = 'customizations'),
+                    (gu.CreditsFactor = 'creditsFactor'),
+                    (gu.Tankman = 'tankman'),
+                    (gu.Tankwoman = 'tankwoman'),
+                    (gu.TankmenXp = 'tankmenXP'),
+                    (gu.TankmenXpFactor = 'tankmenXPFactor'),
+                    (gu.FreeXpFactor = 'freeXPFactor'),
+                    (gu.BattleToken = 'battleToken'),
+                    (gu.PremiumUniversal = 'premium_universal'),
+                    (gu.Gold = 'gold'),
+                    (gu.Credits = 'credits'),
+                    (gu.Crystal = 'crystal'),
+                    (gu.FreeXp = 'freeXP'),
+                    (gu.Premium = 'premium'),
+                    (gu.PremiumPlus = 'premium_plus'),
+                    (gu.BattlePassPoints = 'battlePassPoints'),
+                    (gu.BattlePassSelectToken = 'battlePassSelectToken'),
+                    (gu.BattlePassTicket = 'lootBox_commonTicket'),
+                    (gu.BattlePassTaler = 'bptaler'),
+                    (gu.StyleProgressToken = 'styleProgressToken'),
+                    (gu.TmanToken = 'tmanToken'),
+                    (gu.NaturalCover = 'naturalCover'),
+                    (gu.BpCoin = 'bpcoin'),
+                    (gu.BattlaPassFinalAchievement = 'dossier_achievement'),
+                    (gu.BattleBadge = 'dossier_badge'),
+                    (gu.BonusX5 = 'battle_bonus_x5'),
+                    (gu.CrewBonusX3 = 'crew_bonus_x3'),
+                    (gu.Vehicles = 'vehicles'),
+                    (gu.EpicSelectToken = 'epicSelectToken'),
+                    (gu.Comp7TokenWeeklyReward = 'comp7TokenWeeklyReward'),
+                    (gu.DeluxeGift = 'deluxe_gift'),
+                    (gu.BattleBoosterGift = 'battleBooster_gift'),
+                    (gu.ModernizedDevicesT1Gift = 'modernized_devices_t1_gift'),
+                    (gu.ModernizedDevicesT2Gift = 'modernized_devices_t2_gift'),
+                    (gu.ModernizedDevicesT3Gift = 'modernized_devices_t3_gift'),
+                    (gu.OptionalDevice = 'optionalDevice'),
+                    (gu.EquipCoin = 'equipCoin'),
+                    (gu.LootBox = 'lootBox'),
+                    (gu.BrCoin = 'brcoin'),
+                    (gu.Attachment = 'attachment'),
+                    (gu.Stamp = 'stamp'),
+                    (gu.WtEventLootbox = 'wtevent_lootBox'),
+                    (gu.WtEventTicket = 'wtevent_ticket'),
                     (function (e) {
                         ((e.Gold = 'gold'),
                             (e.Credits = 'credits'),
@@ -2785,44 +2844,25 @@
                             (e.BattleBadge = 'dossier_badge'),
                             (e.BattleAchievement = 'dossier_achievement'),
                             (e.EquipCoin = 'equipCoin'));
-                    })(Eu || (Eu = {})),
-                    ((gu = Au || (Au = {})).Big = 'big'),
-                    (gu.Small = 'small'),
-                    (gu.Mini = 'mini'),
-                    (gu.S600x450 = 's600x450'),
-                    (gu.S400x300 = 's400x300'),
-                    (gu.S296x222 = 's296x222'),
-                    (gu.S232x174 = 's232x174'),
-                    (gu.S180x135 = 's180x135'),
-                    (gu.S128x100 = 's128x100'),
-                    (gu.S80x80 = 's80x80'),
-                    (gu.S64x64 = 's64x64'),
-                    (gu.S48x48 = 's48x48'),
-                    ((pu = Fu || (Fu = {})).MULTI = 'multi'),
-                    (pu.CURRENCY = 'currency'),
-                    (pu.PREMIUM_PLUS = 'premium_plus'),
-                    (pu.NUMBER = 'number'),
-                    (pu.STRING = 'string'),
-                    ((Cu = mu || (mu = {})).ATTACHMENT_RARE = 'rare'),
-                    (Cu.ATTACHMENT_EPIC = 'epic'),
-                    (Cu.ATTACHMENT_LEGENDARY = 'legendary'),
-                    (Cu.BATTLE_BOOSTER = 'battleBooster'),
-                    (Cu.BATTLE_BOOSTER_REPLACE = 'battleBoosterReplace'),
-                    (Cu.BUILT_IN_EQUIPMENT = 'builtInEquipment'),
-                    (Cu.EQUIPMENT_PLUS = 'equipmentPlus'),
-                    (Cu.EQUIPMENT_TROPHY_BASIC = 'equipmentTrophyBasic'),
-                    (Cu.EQUIPMENT_TROPHY_UPGRADED = 'equipmentTrophyUpgraded'),
-                    (Cu.EQUIPMENT_MODERNIZED_UPGRADED_1 = 'equipmentModernized_1'),
-                    (Cu.EQUIPMENT_MODERNIZED_UPGRADED_2 = 'equipmentModernized_2'),
-                    (Cu.EQUIPMENT_MODERNIZED_UPGRADED_3 = 'equipmentModernized_3'),
-                    (Cu.PROGRESSION_STYLE_UPGRADED_1 = 'progressionStyleUpgraded_1'),
-                    (Cu.PROGRESSION_STYLE_UPGRADED_2 = 'progressionStyleUpgraded_2'),
-                    (Cu.PROGRESSION_STYLE_UPGRADED_3 = 'progressionStyleUpgraded_3'),
-                    (Cu.PROGRESSION_STYLE_UPGRADED_4 = 'progressionStyleUpgraded_4'),
-                    (Cu.PROGRESSION_STYLE_UPGRADED_5 = 'progressionStyleUpgraded_5'),
-                    (Cu.PROGRESSION_STYLE_UPGRADED_6 = 'progressionStyleUpgraded_6'),
-                    ((Du || (Du = {})).BATTLE_BOOSTER = 'battleBooster'),
-                    ((_u = du || (du = {})).ATTACHMENT_RARE = 'rare'),
+                    })(cu || (cu = {})),
+                    ((pu = Eu || (Eu = {})).Big = 'big'),
+                    (pu.Small = 'small'),
+                    (pu.Mini = 'mini'),
+                    (pu.S600x450 = 's600x450'),
+                    (pu.S400x300 = 's400x300'),
+                    (pu.S296x222 = 's296x222'),
+                    (pu.S232x174 = 's232x174'),
+                    (pu.S180x135 = 's180x135'),
+                    (pu.S128x100 = 's128x100'),
+                    (pu.S80x80 = 's80x80'),
+                    (pu.S64x64 = 's64x64'),
+                    (pu.S48x48 = 's48x48'),
+                    ((Cu = Au || (Au = {})).MULTI = 'multi'),
+                    (Cu.CURRENCY = 'currency'),
+                    (Cu.PREMIUM_PLUS = 'premium_plus'),
+                    (Cu.NUMBER = 'number'),
+                    (Cu.STRING = 'string'),
+                    ((_u = Fu || (Fu = {})).ATTACHMENT_RARE = 'rare'),
                     (_u.ATTACHMENT_EPIC = 'epic'),
                     (_u.ATTACHMENT_LEGENDARY = 'legendary'),
                     (_u.BATTLE_BOOSTER = 'battleBooster'),
@@ -2840,295 +2880,306 @@
                     (_u.PROGRESSION_STYLE_UPGRADED_4 = 'progressionStyleUpgraded_4'),
                     (_u.PROGRESSION_STYLE_UPGRADED_5 = 'progressionStyleUpgraded_5'),
                     (_u.PROGRESSION_STYLE_UPGRADED_6 = 'progressionStyleUpgraded_6'),
+                    ((mu || (mu = {})).BATTLE_BOOSTER = 'battleBooster'),
+                    ((Bu = Du || (Du = {})).ATTACHMENT_RARE = 'rare'),
+                    (Bu.ATTACHMENT_EPIC = 'epic'),
+                    (Bu.ATTACHMENT_LEGENDARY = 'legendary'),
+                    (Bu.BATTLE_BOOSTER = 'battleBooster'),
+                    (Bu.BATTLE_BOOSTER_REPLACE = 'battleBoosterReplace'),
+                    (Bu.BUILT_IN_EQUIPMENT = 'builtInEquipment'),
+                    (Bu.EQUIPMENT_PLUS = 'equipmentPlus'),
+                    (Bu.EQUIPMENT_TROPHY_BASIC = 'equipmentTrophyBasic'),
+                    (Bu.EQUIPMENT_TROPHY_UPGRADED = 'equipmentTrophyUpgraded'),
+                    (Bu.EQUIPMENT_MODERNIZED_UPGRADED_1 = 'equipmentModernized_1'),
+                    (Bu.EQUIPMENT_MODERNIZED_UPGRADED_2 = 'equipmentModernized_2'),
+                    (Bu.EQUIPMENT_MODERNIZED_UPGRADED_3 = 'equipmentModernized_3'),
+                    (Bu.PROGRESSION_STYLE_UPGRADED_1 = 'progressionStyleUpgraded_1'),
+                    (Bu.PROGRESSION_STYLE_UPGRADED_2 = 'progressionStyleUpgraded_2'),
+                    (Bu.PROGRESSION_STYLE_UPGRADED_3 = 'progressionStyleUpgraded_3'),
+                    (Bu.PROGRESSION_STYLE_UPGRADED_4 = 'progressionStyleUpgraded_4'),
+                    (Bu.PROGRESSION_STYLE_UPGRADED_5 = 'progressionStyleUpgraded_5'),
+                    (Bu.PROGRESSION_STYLE_UPGRADED_6 = 'progressionStyleUpgraded_6'),
                     (function (e) {
                         ((e[(e.Engraving = 0)] = 'Engraving'), (e[(e.Background = 1)] = 'Background'));
-                    })(Bu || (Bu = {})),
-                    cu.Attachment);
-                class vu extends r().PureComponent {
-                    render() {
-                        let e;
-                        e = 'gold' === this.props.format ? oe.B3.GOLD : oe.B3.INTEGRAL;
-                        const u = oe.Z5.getNumberFormat(this.props.value, e);
-                        return void 0 !== this.props.value && void 0 !== u ? u : null;
-                    }
-                }
-                let hu, fu, yu, Tu, wu, Pu, Su;
-                var Ru, ku, Nu;
-                ((vu.defaultProps = { format: 'integral' }),
-                    cu.Items,
-                    cu.Equipment,
-                    cu.Xp,
-                    cu.XpFactor,
-                    cu.Blueprints,
-                    cu.BlueprintsAny,
-                    cu.Goodies,
-                    cu.Berths,
-                    cu.Slots,
-                    cu.Tokens,
-                    cu.CrewSkins,
-                    cu.CrewBooks,
-                    cu.Customizations,
-                    cu.CreditsFactor,
-                    cu.TankmenXp,
-                    cu.TankmenXpFactor,
-                    cu.FreeXpFactor,
-                    cu.BattleToken,
-                    cu.LootBox,
-                    cu.PremiumUniversal,
-                    cu.NaturalCover,
-                    cu.BpCoin,
-                    cu.BattlePassSelectToken,
-                    cu.BattlaPassFinalAchievement,
-                    cu.BattleBadge,
-                    cu.BattlePassTicket,
-                    cu.BonusX5,
-                    cu.CrewBonusX3,
-                    cu.EpicSelectToken,
-                    cu.Comp7TokenWeeklyReward,
-                    cu.DeluxeGift,
-                    cu.ModernizedDevicesT1Gift,
-                    cu.ModernizedDevicesT2Gift,
-                    cu.ModernizedDevicesT3Gift,
-                    cu.BattleBoosterGift,
-                    cu.OptionalDevice,
-                    cu.Attachment,
-                    cu.Gold,
-                    cu.Credits,
-                    cu.Crystal,
-                    cu.FreeXp,
-                    cu.BattlePassPoints,
-                    cu.EquipCoin,
-                    cu.PremiumPlus,
-                    cu.Premium,
-                    Au.Small,
-                    Au.Big,
-                    ((Nu = hu || (hu = {})).Active = 'active'),
-                    (Nu.Paused = 'paused'),
-                    (Nu.Completed = 'completed'),
-                    (Nu.NotStarted = 'notStarted'),
+                    })(du || (du = {})),
+                    lu.Attachment,
+                    lu.Items,
+                    lu.Equipment,
+                    lu.Xp,
+                    lu.XpFactor,
+                    lu.Blueprints,
+                    lu.BlueprintsAny,
+                    lu.Goodies,
+                    lu.Berths,
+                    lu.Slots,
+                    lu.Tokens,
+                    lu.CrewSkins,
+                    lu.CrewBooks,
+                    lu.Customizations,
+                    lu.CreditsFactor,
+                    lu.TankmenXp,
+                    lu.TankmenXpFactor,
+                    lu.FreeXpFactor,
+                    lu.BattleToken,
+                    lu.LootBox,
+                    lu.PremiumUniversal,
+                    lu.NaturalCover,
+                    lu.BpCoin,
+                    lu.BattlePassSelectToken,
+                    lu.BattlaPassFinalAchievement,
+                    lu.BattleBadge,
+                    lu.BattlePassTicket,
+                    lu.BonusX5,
+                    lu.CrewBonusX3,
+                    lu.EpicSelectToken,
+                    lu.Comp7TokenWeeklyReward,
+                    lu.DeluxeGift,
+                    lu.ModernizedDevicesT1Gift,
+                    lu.ModernizedDevicesT2Gift,
+                    lu.ModernizedDevicesT3Gift,
+                    lu.BattleBoosterGift,
+                    lu.OptionalDevice,
+                    lu.Attachment,
+                    lu.Stamp,
+                    lu.WtEventLootbox,
+                    lu.WtEventTicket,
+                    lu.Gold,
+                    lu.Credits,
+                    lu.Crystal,
+                    lu.FreeXp,
+                    lu.BattlePassPoints,
+                    lu.EquipCoin,
+                    lu.PremiumPlus,
+                    lu.Premium,
+                    Eu.Small,
+                    Eu.Big,
+                    ((Ru = bu || (bu = {})).Active = 'active'),
+                    (Ru.Paused = 'paused'),
+                    (Ru.Completed = 'completed'),
+                    (Ru.NotStarted = 'notStarted'),
                     (function (e) {
                         ((e.Vehicle = 'vehicle'), (e.Style = 'style'), (e.Tankman = 'tankman'));
-                    })(fu || (fu = {})),
+                    })(vu || (vu = {})),
                     (function (e) {
                         ((e.Micro = 'micro'), (e.Small = 'small'), (e.Medium = 'medium'));
-                    })(yu || (yu = {})),
+                    })(hu || (hu = {})),
                     (function (e) {
                         ((e.ACTIVE = 'active'), (e.COMPLETED = 'completed'), (e.NOT_CHOSEN = 'notChosen'));
-                    })(Tu || (Tu = {})),
-                    ((ku = wu || (wu = {})).AwaitSeason = 'awaitSeason'),
-                    (ku.Bought = 'bought'),
-                    (ku.Free = 'free'),
-                    (ku.Completed = 'completed'),
-                    (ku.CompletedRightNow = 'completedRightNow'),
-                    (ku.SwitchedChapterRightNow = 'switchedChapterRightNow'),
-                    (ku.NoVehiclesBase = 'noVehiclesBase'),
-                    (ku.ChapterNotChosen = 'chapterNotChosen'),
+                    })(fu || (fu = {})),
+                    ((Su = yu || (yu = {})).AwaitSeason = 'awaitSeason'),
+                    (Su.Bought = 'bought'),
+                    (Su.Free = 'free'),
+                    (Su.Completed = 'completed'),
+                    (Su.CompletedRightNow = 'completedRightNow'),
+                    (Su.SwitchedChapterRightNow = 'switchedChapterRightNow'),
+                    (Su.NoVehiclesBase = 'noVehiclesBase'),
+                    (Su.ChapterNotChosen = 'chapterNotChosen'),
                     (function (e) {
                         ((e.None = ''),
                             (e.ShowLevel = 'show'),
                             (e.HideLevel = 'hide'),
                             (e.HideLevelWithDelay = 'hideWithDelay'));
-                    })(Pu || (Pu = {})),
-                    ((Ru = Su || (Su = {})).style = 'style'),
-                    (Ru.tankman = 'tankman'),
-                    Su.style,
-                    Su.tankman);
-                const xu = R.strings.battle_royale_vehicles,
-                    Ou = 'light',
-                    Mu = 'medium',
-                    Lu = 'heavy',
-                    Iu = 'ussr',
-                    Uu = 'germany',
-                    zu = 'britain',
-                    Wu = 'france',
-                    Gu = 'china',
-                    Hu = 'poland',
-                    Vu = 'sweden',
-                    qu = [Iu, Uu, 'usa', zu, Wu, Gu, Hu, Vu],
-                    ju = [
+                    })(wu || (wu = {})),
+                    ((Pu = Tu || (Tu = {})).style = 'style'),
+                    (Pu.tankman = 'tankman'),
+                    Tu.style,
+                    Tu.tankman);
+                const ku = R.strings.battle_royale_vehicles,
+                    Nu = 'light',
+                    xu = 'medium',
+                    Ou = 'heavy',
+                    Mu = 'ussr',
+                    Lu = 'germany',
+                    Iu = 'britain',
+                    Uu = 'france',
+                    zu = 'china',
+                    Wu = 'poland',
+                    Gu = 'sweden',
+                    Vu = [Mu, Lu, 'usa', Iu, Uu, zu, Wu, Gu],
+                    Hu = [
                         {
                             imagePath: 'R.images.battle_royale.gui.maps.infopage.vehicles.abilities.repairKit',
-                            title: xu.abilities.repairKit(),
-                            description: xu.abilities.repairKitDescription(),
+                            title: ku.abilities.repairKit(),
+                            description: ku.abilities.repairKitDescription(),
                         },
                         {
                             imagePath: 'R.images.battle_royale.gui.maps.infopage.vehicles.abilities.recoveryKit',
-                            title: xu.abilities.recoveryKit(),
-                            description: xu.abilities.recoveryKitDescription(),
+                            title: ku.abilities.recoveryKit(),
+                            description: ku.abilities.recoveryKitDescription(),
                         },
                     ],
-                    Yu = {
-                        [Iu]: {
-                            name: xu.tanks.ussr.title(),
-                            description: xu.tanks.ussr.description(),
+                    qu = {
+                        [Mu]: {
+                            name: ku.tanks.ussr.title(),
+                            description: ku.tanks.ussr.description(),
                             tabImagePath: 'R.images.battle_royale.gui.maps.infopage.vehicles.slots.ussr',
                             imagePath: 'R.images.battle_royale.gui.maps.infopage.vehicles.ussr',
                             abilities: [
-                                ...ju,
+                                ...Hu,
                                 {
                                     imagePath: 'R.images.battle_royale.gui.maps.infopage.vehicles.abilities.minefield',
-                                    title: xu.abilities.minefield(),
-                                    description: xu.abilities.minefieldDescription(),
+                                    title: ku.abilities.minefield(),
+                                    description: ku.abilities.minefieldDescription(),
                                 },
                                 {
                                     imagePath:
                                         'R.images.battle_royale.gui.maps.infopage.vehicles.abilities.recoveryZone',
-                                    title: xu.abilities.recoveryZone(),
-                                    description: xu.abilities.recoveryZoneDescription(),
+                                    title: ku.abilities.recoveryZone(),
+                                    description: ku.abilities.recoveryZoneDescription(),
                                 },
                             ],
-                            vehicleType: Lu,
+                            vehicleType: Ou,
                         },
-                        [Uu]: {
-                            name: xu.tanks.germany.title(),
-                            description: xu.tanks.germany.description(),
+                        [Lu]: {
+                            name: ku.tanks.germany.title(),
+                            description: ku.tanks.germany.description(),
                             tabImagePath: 'R.images.battle_royale.gui.maps.infopage.vehicles.slots.germany',
                             imagePath: 'R.images.battle_royale.gui.maps.infopage.vehicles.germany',
                             abilities: [
-                                ...ju,
+                                ...Hu,
                                 {
                                     imagePath: 'R.images.battle_royale.gui.maps.infopage.vehicles.abilities.nitro',
-                                    title: xu.abilities.nitro(),
-                                    description: xu.abilities.nitroDescription(),
+                                    title: ku.abilities.nitro(),
+                                    description: ku.abilities.nitroDescription(),
                                 },
                                 {
                                     imagePath:
                                         'R.images.battle_royale.gui.maps.infopage.vehicles.abilities.recoveryDot',
-                                    title: xu.abilities.recoveryDot(),
-                                    description: xu.abilities.recoveryDotDescription(),
-                                },
-                            ],
-                            vehicleType: Lu,
-                        },
-                        usa: {
-                            name: xu.tanks.usa.title(),
-                            description: xu.tanks.usa.description(),
-                            tabImagePath: 'R.images.battle_royale.gui.maps.infopage.vehicles.slots.usa',
-                            imagePath: 'R.images.battle_royale.gui.maps.infopage.vehicles.usa',
-                            abilities: [
-                                ...ju,
-                                {
-                                    imagePath:
-                                        'R.images.battle_royale.gui.maps.infopage.vehicles.abilities.extremeConcentration',
-                                    title: xu.abilities.extremeConcentration(),
-                                    description: xu.abilities.extremeConcentrationDescription(),
-                                },
-                                {
-                                    imagePath: 'R.images.battle_royale.gui.maps.infopage.vehicles.abilities.trap',
-                                    title: xu.abilities.trap(),
-                                    description: xu.abilities.trapDescription(),
-                                },
-                            ],
-                            vehicleType: Mu,
-                        },
-                        [zu]: {
-                            name: xu.tanks.britain.title(),
-                            description: xu.tanks.britain.description(),
-                            tabImagePath: 'R.images.battle_royale.gui.maps.infopage.vehicles.slots.britain',
-                            imagePath: 'R.images.battle_royale.gui.maps.infopage.vehicles.britain',
-                            abilities: [
-                                ...ju,
-                                {
-                                    imagePath: 'R.images.battle_royale.gui.maps.infopage.vehicles.abilities.rustCloud',
-                                    title: xu.abilities.rustCloud(),
-                                    description: xu.abilities.rustCloudDescription(),
-                                },
-                                {
-                                    imagePath: 'R.images.battle_royale.gui.maps.infopage.vehicles.abilities.berserk',
-                                    title: xu.abilities.berserk(),
-                                    description: xu.abilities.berserkDescription(),
-                                },
-                            ],
-                            vehicleType: Mu,
-                        },
-                        [Wu]: {
-                            name: xu.tanks.france.title(),
-                            description: xu.tanks.france.description(),
-                            tabImagePath: 'R.images.battle_royale.gui.maps.infopage.vehicles.slots.france',
-                            imagePath: 'R.images.battle_royale.gui.maps.infopage.vehicles.france',
-                            abilities: [
-                                ...ju,
-                                {
-                                    imagePath: 'R.images.battle_royale.gui.maps.infopage.vehicles.abilities.airstrike',
-                                    title: xu.abilities.airstrike(),
-                                    description: xu.abilities.airstrikeDescription(),
-                                },
-                                {
-                                    imagePath: 'R.images.battle_royale.gui.maps.infopage.vehicles.abilities.brander',
-                                    title: xu.abilities.brander(),
-                                    description: xu.abilities.branderDescription(),
+                                    title: ku.abilities.recoveryDot(),
+                                    description: ku.abilities.recoveryDotDescription(),
                                 },
                             ],
                             vehicleType: Ou,
+                        },
+                        usa: {
+                            name: ku.tanks.usa.title(),
+                            description: ku.tanks.usa.description(),
+                            tabImagePath: 'R.images.battle_royale.gui.maps.infopage.vehicles.slots.usa',
+                            imagePath: 'R.images.battle_royale.gui.maps.infopage.vehicles.usa',
+                            abilities: [
+                                ...Hu,
+                                {
+                                    imagePath:
+                                        'R.images.battle_royale.gui.maps.infopage.vehicles.abilities.extremeConcentration',
+                                    title: ku.abilities.extremeConcentration(),
+                                    description: ku.abilities.extremeConcentrationDescription(),
+                                },
+                                {
+                                    imagePath: 'R.images.battle_royale.gui.maps.infopage.vehicles.abilities.trap',
+                                    title: ku.abilities.trap(),
+                                    description: ku.abilities.trapDescription(),
+                                },
+                            ],
+                            vehicleType: xu,
+                        },
+                        [Iu]: {
+                            name: ku.tanks.britain.title(),
+                            description: ku.tanks.britain.description(),
+                            tabImagePath: 'R.images.battle_royale.gui.maps.infopage.vehicles.slots.britain',
+                            imagePath: 'R.images.battle_royale.gui.maps.infopage.vehicles.britain',
+                            abilities: [
+                                ...Hu,
+                                {
+                                    imagePath: 'R.images.battle_royale.gui.maps.infopage.vehicles.abilities.rustCloud',
+                                    title: ku.abilities.rustCloud(),
+                                    description: ku.abilities.rustCloudDescription(),
+                                },
+                                {
+                                    imagePath: 'R.images.battle_royale.gui.maps.infopage.vehicles.abilities.berserk',
+                                    title: ku.abilities.berserk(),
+                                    description: ku.abilities.berserkDescription(),
+                                },
+                            ],
+                            vehicleType: xu,
+                        },
+                        [Uu]: {
+                            name: ku.tanks.france.title(),
+                            description: ku.tanks.france.description(),
+                            tabImagePath: 'R.images.battle_royale.gui.maps.infopage.vehicles.slots.france',
+                            imagePath: 'R.images.battle_royale.gui.maps.infopage.vehicles.france',
+                            abilities: [
+                                ...Hu,
+                                {
+                                    imagePath: 'R.images.battle_royale.gui.maps.infopage.vehicles.abilities.airstrike',
+                                    title: ku.abilities.airstrike(),
+                                    description: ku.abilities.airstrikeDescription(),
+                                },
+                                {
+                                    imagePath: 'R.images.battle_royale.gui.maps.infopage.vehicles.abilities.brander',
+                                    title: ku.abilities.brander(),
+                                    description: ku.abilities.branderDescription(),
+                                },
+                            ],
+                            vehicleType: Nu,
                             hasCN360Image: !0,
                         },
-                        [Gu]: {
-                            name: xu.tanks.china.title(),
-                            description: xu.tanks.china.description(),
+                        [zu]: {
+                            name: ku.tanks.china.title(),
+                            description: ku.tanks.china.description(),
                             tabImagePath: 'R.images.battle_royale.gui.maps.infopage.vehicles.slots.china',
                             imagePath: 'R.images.battle_royale.gui.maps.infopage.vehicles.china',
                             abilities: [
-                                ...ju,
+                                ...Hu,
                                 {
                                     imagePath:
                                         'R.images.battle_royale.gui.maps.infopage.vehicles.abilities.corrodingShot',
-                                    title: xu.abilities.corrodingShot(),
-                                    description: xu.abilities.corrodingShotDescription(),
+                                    title: ku.abilities.corrodingShot(),
+                                    description: ku.abilities.corrodingShotDescription(),
                                 },
                                 {
                                     imagePath:
                                         'R.images.battle_royale.gui.maps.infopage.vehicles.abilities.clingBrander',
-                                    title: xu.abilities.clingBrander(),
-                                    description: xu.abilities.clingBranderDescription(),
+                                    title: ku.abilities.clingBrander(),
+                                    description: ku.abilities.clingBranderDescription(),
                                 },
                             ],
-                            vehicleType: Ou,
+                            vehicleType: Nu,
                         },
-                        [Hu]: {
-                            name: xu.tanks.poland.title(),
-                            description: xu.tanks.poland.description(),
+                        [Wu]: {
+                            name: ku.tanks.poland.title(),
+                            description: ku.tanks.poland.description(),
                             tabImagePath: 'R.images.battle_royale.gui.maps.infopage.vehicles.slots.poland',
                             imagePath: 'R.images.battle_royale.gui.maps.infopage.vehicles.poland',
                             abilities: [
-                                ...ju,
+                                ...Hu,
                                 {
                                     imagePath:
                                         'R.images.battle_royale.gui.maps.infopage.vehicles.abilities.thunderStrike',
-                                    title: xu.abilities.thunderStrike(),
-                                    description: xu.abilities.thunderStrikeDescription(),
+                                    title: ku.abilities.thunderStrike(),
+                                    description: ku.abilities.thunderStrikeDescription(),
                                 },
                                 {
                                     imagePath:
                                         'R.images.battle_royale.gui.maps.infopage.vehicles.abilities.shotPassion',
-                                    title: xu.abilities.shotPassion(),
-                                    description: xu.abilities.shotPassionDescription(),
+                                    title: ku.abilities.shotPassion(),
+                                    description: ku.abilities.shotPassionDescription(),
                                 },
                             ],
-                            vehicleType: Mu,
+                            vehicleType: xu,
                         },
-                        [Vu]: {
-                            name: xu.tanks.sweden.title(),
-                            description: xu.tanks.sweden.description(),
+                        [Gu]: {
+                            name: ku.tanks.sweden.title(),
+                            description: ku.tanks.sweden.description(),
                             tabImagePath: 'R.images.battle_royale.gui.maps.infopage.vehicles.slots.sweden',
                             imagePath: 'R.images.battle_royale.gui.maps.infopage.vehicles.sweden',
                             abilities: [
-                                ...ju,
+                                ...Hu,
                                 {
                                     imagePath: 'R.images.battle_royale.gui.maps.infopage.vehicles.abilities.fireCircle',
-                                    title: xu.abilities.fireCircle(),
-                                    description: xu.abilities.fireCircleDescription(),
+                                    title: ku.abilities.fireCircle(),
+                                    description: ku.abilities.fireCircleDescription(),
                                 },
                                 {
                                     imagePath:
                                         'R.images.battle_royale.gui.maps.infopage.vehicles.abilities.adaptationHealthRestore',
-                                    title: xu.abilities.adaptationHealthRestore(),
-                                    description: xu.abilities.adaptationHealthRestoreDescription(),
+                                    title: ku.abilities.adaptationHealthRestore(),
+                                    description: ku.abilities.adaptationHealthRestoreDescription(),
                                 },
                             ],
-                            vehicleType: Lu,
+                            vehicleType: Ou,
                         },
                     },
-                    Xu = {
+                    ju = {
                         header: 'Vehicles_header_44',
                         tab: 'Vehicles_tab_9a',
                         tabGlow: 'Vehicles_tabGlow_26',
@@ -3151,96 +3202,96 @@
                         image: 'Vehicles_image_40',
                         type: 'Vehicles_type_b9',
                     },
-                    Ku = [];
-                for (var Zu = 0, $u = Object.entries(Yu); Zu < $u.length; Zu++) {
-                    const e = $u[Zu][1];
-                    Ku.push(e.imagePath);
+                    Yu = [];
+                for (var Xu = 0, Ku = Object.entries(qu); Xu < Ku.length; Xu++) {
+                    const e = Ku[Xu][1];
+                    Yu.push(e.imagePath);
                 }
-                const Qu = () => {
+                const $u = () => {
                         const e = (0, n.useState)(0),
                             u = e[0],
                             t = e[1];
                         var a;
                         return (
                             (a = () => {
-                                Ku.map((e) => {
+                                Yu.map((e) => {
                                     new Image().src = e;
                                 });
                             }),
                             (0, n.useEffect)(a, []),
                             r().createElement(
                                 'div',
-                                { className: Xu.base },
+                                { className: ju.base },
                                 r().createElement(
                                     'div',
-                                    { className: Xu.header },
-                                    qu.map((e, a) =>
+                                    { className: ju.header },
+                                    Vu.map((e, a) =>
                                         r().createElement(
                                             'div',
                                             {
-                                                className: c()(Xu.tab, u === a && Xu.tab__active),
+                                                className: c()(ju.tab, u === a && ju.tab__active),
                                                 key: a,
                                                 onClick: () => (t(a), void y('yes1')),
                                             },
                                             r().createElement('img', {
-                                                className: Xu.tabImage,
-                                                src: Yu[e].tabImagePath,
-                                                alt: Yu[e].name,
+                                                className: ju.tabImage,
+                                                src: qu[e].tabImagePath,
+                                                alt: qu[e].name,
                                             }),
-                                            r().createElement('div', { className: Xu.tabTitle }, Yu[e].name),
-                                            r().createElement('div', { className: c()(Xu.tabGlow, Xu.tabGlow__upper) }),
+                                            r().createElement('div', { className: ju.tabTitle }, qu[e].name),
+                                            r().createElement('div', { className: c()(ju.tabGlow, ju.tabGlow__upper) }),
                                             r().createElement('div', {
-                                                className: c()(Xu.tabGlow, Xu.tabGlow__bottom),
+                                                className: c()(ju.tabGlow, ju.tabGlow__bottom),
                                             }),
                                         ),
                                     ),
                                 ),
                                 r().createElement(
                                     'div',
-                                    { className: Xu.body },
+                                    { className: ju.body },
                                     r().createElement(
                                         'div',
-                                        { className: Xu.description },
+                                        { className: ju.description },
                                         r().createElement('img', {
-                                            className: Xu.image,
-                                            src: Yu[qu[u]].imagePath,
-                                            alt: Yu[qu[u]].name,
+                                            className: ju.image,
+                                            src: qu[Vu[u]].imagePath,
+                                            alt: qu[Vu[u]].name,
                                         }),
                                         r().createElement(
                                             'div',
-                                            { className: Xu.text },
+                                            { className: ju.text },
                                             r().createElement(
                                                 'div',
-                                                { className: Xu.title },
+                                                { className: ju.title },
                                                 r().createElement('img', {
-                                                    className: Xu.type,
-                                                    src: `R.images.battle_royale.gui.maps.infopage.vehicles.vehicleTypes.${Yu[qu[u]].vehicleType}`,
+                                                    className: ju.type,
+                                                    src: `R.images.battle_royale.gui.maps.infopage.vehicles.vehicleTypes.${qu[Vu[u]].vehicleType}`,
                                                 }),
-                                                r().createElement('div', { className: Xu.titleText }, Yu[qu[u]].name),
+                                                r().createElement('div', { className: ju.titleText }, qu[Vu[u]].name),
                                             ),
-                                            r().createElement('div', { className: Xu.subtitle }, Yu[qu[u]].description),
+                                            r().createElement('div', { className: ju.subtitle }, qu[Vu[u]].description),
                                         ),
                                     ),
                                     r().createElement(
                                         'div',
-                                        { className: Xu.container },
-                                        Yu[qu[u]].abilities.map((e) =>
+                                        { className: ju.container },
+                                        qu[Vu[u]].abilities.map((e) =>
                                             r().createElement(
                                                 'div',
-                                                { key: e.title, className: Xu.abilitiesItem },
+                                                { key: e.title, className: ju.abilitiesItem },
                                                 r().createElement('img', {
-                                                    className: Xu.abilitiesImage,
+                                                    className: ju.abilitiesImage,
                                                     src: e.imagePath,
                                                     alt: e.title,
                                                 }),
                                                 r().createElement(
                                                     'div',
-                                                    { className: Xu.abilitiesText },
-                                                    r().createElement('div', { className: Xu.abilitiesTitle }, e.title),
+                                                    { className: ju.abilitiesText },
+                                                    r().createElement('div', { className: ju.abilitiesTitle }, e.title),
                                                     r().createElement(
                                                         'div',
-                                                        { className: Xu.abilitiesSubtitle },
-                                                        r().createElement(qe, { text: e.description }),
+                                                        { className: ju.abilitiesSubtitle },
+                                                        r().createElement(He, { text: e.description }),
                                                     ),
                                                 ),
                                             ),
@@ -3250,8 +3301,8 @@
                             )
                         );
                     },
-                    Ju = (0, Ee.Pi)(() => {
-                        const e = be(),
+                    Zu = (0, ce.Pi)(() => {
+                        const e = ge(),
                             u = e.model,
                             t = e.controls,
                             a = u.computes.buttonSettings(),
@@ -3259,117 +3310,117 @@
                             n = a.caption,
                             s = a.side,
                             o = t.сloseWindow,
-                            l = V();
+                            l = H();
                         var E;
                         return (
                             (E = o),
-                            ce(se.n.ESCAPE, E),
+                            le(se.n.ESCAPE, E),
                             r().createElement(
                                 'div',
-                                { className: ze.base },
+                                { className: Ue.base },
                                 r().createElement(
                                     'div',
-                                    { className: c()(ze.closeButton, ze[`closeButton__${s}`]) },
+                                    { className: c()(Ue.closeButton, Ue[`closeButton__${s}`]) },
                                     r().createElement(re, { caption: n, type: i, side: s, onClick: o }),
                                 ),
                                 r().createElement(
                                     te.Vertical.Area.Default,
-                                    { className: ze.defaultVertical, api: l },
+                                    { className: Ue.defaultVertical, api: l },
                                     r().createElement(
                                         'div',
-                                        { className: ze.container },
-                                        r().createElement(eu, { title: ve.title(), subtitle: ve.subtitle() }),
-                                        r().createElement(uu, { description: he }),
-                                        r().createElement('div', { className: ze.divider }),
-                                        r().createElement(Ye, {
-                                            description: fe,
-                                            classNames: { alignCenter: ze.alignCenter, image: ze.map },
+                                        { className: Ue.container },
+                                        r().createElement(Je, { title: be.title(), subtitle: be.subtitle() }),
+                                        r().createElement(eu, { description: ve }),
+                                        r().createElement('div', { className: Ue.divider }),
+                                        r().createElement(je, {
+                                            description: he,
+                                            classNames: { alignCenter: Ue.alignCenter, image: Ue.map },
                                             mapsStyle: !0,
                                         }),
-                                        r().createElement('div', { className: ze.divider }),
-                                        r().createElement(Ye, {
-                                            description: ye,
-                                            classNames: { alignCenter: ze.alignCenter },
+                                        r().createElement('div', { className: Ue.divider }),
+                                        r().createElement(je, {
+                                            description: fe,
+                                            classNames: { alignCenter: Ue.alignCenter },
                                         }),
-                                        r().createElement(Qu, null),
-                                        r().createElement(Xe, {
-                                            description: Me,
+                                        r().createElement($u, null),
+                                        r().createElement(Ye, {
+                                            description: Oe,
                                             binding: {
                                                 soloRespawnPeriod: u.soloRespawnPeriod.get(),
                                                 platoonTimeToResurrect: u.platoonTimeToResurrect.get(),
                                                 platoonRespawnPeriod: u.platoonRespawnPeriod.get(),
                                             },
-                                            className: ze.respawnContainer,
-                                            classNames: { titleStyling: ze.respawnTitle, image: ze.respawn },
+                                            className: Ue.respawnContainer,
+                                            classNames: { titleStyling: Ue.respawnTitle, image: Ue.respawn },
                                         }),
-                                        r().createElement('div', { className: ze.divider }),
-                                        r().createElement(lu, { description: Te }),
-                                        r().createElement(Xe, {
-                                            description: Ue,
-                                            className: ze.maraudersContainer,
-                                            classNames: { titleStyling: ze.maraudersTitle, image: ze.marauder },
+                                        r().createElement('div', { className: Ue.divider }),
+                                        r().createElement(ou, { description: ye }),
+                                        r().createElement(Ye, {
+                                            description: Ie,
+                                            className: Ue.maraudersContainer,
+                                            classNames: { titleStyling: Ue.maraudersTitle, image: Ue.marauder },
                                             reverse: !0,
                                         }),
-                                        r().createElement('div', { className: ze.divider }),
-                                        r().createElement(Ye, { description: we, classNames: { image: ze.zone } }),
-                                        r().createElement('div', { className: ze.divider }),
-                                        r().createElement(Xe, {
-                                            description: Pe,
-                                            classNames: { image: ze.sector },
+                                        r().createElement('div', { className: Ue.divider }),
+                                        r().createElement(je, { description: we, classNames: { image: Ue.zone } }),
+                                        r().createElement('div', { className: Ue.divider }),
+                                        r().createElement(Ye, {
+                                            description: Te,
+                                            classNames: { image: Ue.sector },
                                             reverse: !0,
                                         }),
-                                        r().createElement('div', { className: ze.divider }),
-                                        r().createElement(Xe, { description: Se, classNames: { image: ze.radar } }),
+                                        r().createElement('div', { className: Ue.divider }),
+                                        r().createElement(Ye, { description: Pe, classNames: { image: Ue.radar } }),
                                         u.sh.modes.get().length > 0 &&
                                             r().createElement(
                                                 r().Fragment,
                                                 null,
-                                                r().createElement('div', { className: ze.divider }),
-                                                r().createElement(Xe, {
-                                                    description: Re,
-                                                    classNames: { image: ze.progression },
-                                                }),
-                                                r().createElement(Xe, {
-                                                    description: ke,
-                                                    smallImage: !0,
-                                                    classNames: { titleStyling: ze.titleStyling, image: ze.battleTask },
-                                                    reverse: !0,
+                                                r().createElement('div', { className: Ue.divider }),
+                                                r().createElement(Ye, {
+                                                    description: Se,
+                                                    classNames: { image: Ue.progression },
                                                 }),
                                                 r().createElement(Ye, {
-                                                    description: Ie,
-                                                    classNames: { alignCenter: ze.indentBPTable },
+                                                    description: Re,
+                                                    smallImage: !0,
+                                                    classNames: { titleStyling: Ue.titleStyling, image: Ue.battleTask },
+                                                    reverse: !0,
                                                 }),
-                                                r().createElement(su, null),
+                                                r().createElement(je, {
+                                                    description: Le,
+                                                    classNames: { alignCenter: Ue.indentBPTable },
+                                                }),
+                                                r().createElement(ru, null),
                                             ),
-                                        r().createElement('div', { className: ze.divider }),
-                                        r().createElement(Xe, { description: Ne, classNames: { image: ze.shop } }),
-                                        r().createElement('div', { className: ze.divider }),
+                                        r().createElement('div', { className: Ue.divider }),
+                                        r().createElement(Ye, { description: ke, classNames: { image: Ue.shop } }),
+                                        r().createElement('div', { className: Ue.divider }),
                                         u.bp.get().length > 0 &&
                                             r().createElement(
                                                 r().Fragment,
                                                 null,
-                                                r().createElement(Ye, { description: xe }),
-                                                r().createElement(Xe, {
-                                                    description: Oe,
+                                                r().createElement(je, { description: Ne }),
+                                                r().createElement(Ye, {
+                                                    description: xe,
                                                     classNames: {
-                                                        titleStyling: ze.titleStyling,
-                                                        image: ze.pointsBattleTask,
+                                                        titleStyling: Ue.titleStyling,
+                                                        image: Ue.pointsBattleTask,
                                                     },
                                                     smallImage: !0,
                                                     reverse: !0,
                                                 }),
-                                                r().createElement('div', { className: ze.divider }),
-                                                r().createElement(Ye, {
-                                                    description: Le,
-                                                    classNames: { alignCenter: ze.indentBPTable },
+                                                r().createElement('div', { className: Ue.divider }),
+                                                r().createElement(je, {
+                                                    description: Me,
+                                                    classNames: { alignCenter: Ue.indentBPTable },
                                                 }),
-                                                r().createElement(nu, null),
-                                                r().createElement('div', { className: ze.divider }),
+                                                r().createElement(iu, null),
+                                                r().createElement('div', { className: Ue.divider }),
                                             ),
                                         r().createElement(
                                             'div',
-                                            { className: ze.footer },
-                                            r().createElement(C, { text: ve.footer() }),
+                                            { className: Ue.footer },
+                                            r().createElement(C, { text: be.footer() }),
                                         ),
                                     ),
                                 ),
@@ -3378,7 +3429,7 @@
                     });
                 engine.whenReady.then(() => {
                     o().render(
-                        r().createElement(ge, null, r().createElement(Ju, null)),
+                        r().createElement(pe, null, r().createElement(Zu, null)),
                         document.getElementById('root'),
                     );
                 });

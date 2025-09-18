@@ -1,7 +1,7 @@
 <germany-tree.xml>
   <settings>	normal	</settings>
   <grid>	grid_1	  <rows>	12	</rows>
-    <columns>	10	</columns>
+    <columns>	11	</columns>
   </grid>
   <nodes>
     <G12_Ltraktor>
@@ -338,6 +338,9 @@
     <G121_Grille_15_L63>
       <row>	3	</row>
       <column>	10	</column>
+      <lines>
+        <G189_Hirschkafer></G189_Hirschkafer>
+      </lines>
     </G121_Grille_15_L63>
     <G134_PzKpfw_VII>
       <row>	4	</row>
@@ -346,6 +349,9 @@
     <G42_Maus>
       <row>	5	</row>
       <column>	10	</column>
+      <lines>
+        <G187_Taschenratte></G187_Taschenratte>
+      </lines>
     </G42_Maus>
     <G56_E-100>
       <row>	7	</row>
@@ -358,10 +364,32 @@
     <G89_Leopard1>
       <row>	10	</row>
       <column>	10	</column>
+      <lines>
+        <G185_Leopard_120_Verbessert></G185_Leopard_120_Verbessert>
+      </lines>
     </G89_Leopard1>
     <G125_Spz_57_Rh>
       <row>	11	</row>
       <column>	10	</column>
+      <lines>
+        <G188_LeKpz_Borkenkafer></G188_LeKpz_Borkenkafer>
+      </lines>
     </G125_Spz_57_Rh>
+    <G187_Taschenratte>
+      <row>	5	</row>
+      <column>	11	</column>
+    </G187_Taschenratte>
+    <G185_Leopard_120_Verbessert>
+      <row>	10	</row>
+      <column>	11	</column>
+    </G185_Leopard_120_Verbessert>
+    <G189_Hirschkafer>
+      <row>	3	</row>
+      <column>	11	</column>
+    </G189_Hirschkafer>
+    <G188_LeKpz_Borkenkafer>
+      <row>	11	</row>
+      <column>	11	</column>
+    </G188_LeKpz_Borkenkafer>
   </nodes>
 </germany-tree.xml>

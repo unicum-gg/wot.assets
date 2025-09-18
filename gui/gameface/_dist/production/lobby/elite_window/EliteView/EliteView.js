@@ -1811,15 +1811,13 @@
                         return a().createElement(
                             'div',
                             { className: g()(Tu.base, Tu[`base__${t}`]) },
-                            u
-                                .split('')
-                                .map((u, e) =>
-                                    a().createElement('div', {
-                                        key: e,
-                                        className: g()(Tu.letter, Tu[`letter__s${u}`]),
-                                        style: { backgroundImage: `url(${i}.c_${u})` },
-                                    }),
-                                ),
+                            u.split('').map((u, e) =>
+                                a().createElement('div', {
+                                    key: e,
+                                    className: g()(Tu.letter, Tu[`letter__s${u}`]),
+                                    style: { backgroundImage: `url(${i}.c_${u})` },
+                                }),
+                            ),
                         );
                     },
                     ku = {

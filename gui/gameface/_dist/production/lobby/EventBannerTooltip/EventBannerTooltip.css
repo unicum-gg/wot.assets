@@ -1,0 +1,350 @@
+.TooltipDecorator_base_c9 {
+    display: flex;
+    position: absolute;
+}
+
+.TooltipDecorator_base__theme-default_6d .TooltipDecorator_decorator_3d {
+    padding: 4rem 6rem 8rem;
+    border-image-source: url('R.atlases.components.tooltip_background');
+    border-image-slice: 24 fill;
+    border-image-width: 24rem;
+    position: relative;
+}
+
+.EventBannerTooltipApp_base_c8 {
+    font-family: PFDINMax;
+}
+
+.EventBannerTooltipApp_base_c8[lang='ja'],
+.EventBannerTooltipApp_base_c8[lang='ko'],
+.EventBannerTooltipApp_base_c8[lang='vi'],
+.EventBannerTooltipApp_base_c8[lang='zh_tw'],
+.EventBannerTooltipApp_base_c8[lang='zh_sg'],
+.EventBannerTooltipApp_base_c8[lang='zh_cn'],
+.EventBannerTooltipApp_base_c8[lang='th'] {
+    font-family: Warhelios;
+}
+
+.EventBannerTooltipApp_base_c8 {
+    display: flex;
+    flex-direction: column;
+    width: 338rem;
+    box-shadow: inset 0 0 10px rgba(59, 59, 46, 0.86);
+}
+
+.EventBannerTooltipApp_banner_31 {
+    width: 338rem;
+    height: 180rem;
+    background: url('R.images.story_mode.gui.maps.icons.eventBannerTooltip.banner') no-repeat 50% / contain;
+}
+
+.EventBannerTooltipApp_title_cb {
+    color: #fcf7e5;
+    font-size: 22rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 10rem 20rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+
+.EventBannerTooltipApp_text_3e {
+    color: #8c8c7e;
+    font-size: 18rem;
+    font-weight: 400;
+    line-height: 1.25;
+    margin: 14rem 20rem 13rem;
+    line-height: 1.1;
+    letter-spacing: 0.02em;
+}
+
+.EventBannerTooltipApp_modeWrapper_48 {
+    display: flex;
+    align-items: flex-start;
+    margin: 0 20rem 8rem;
+}
+
+.EventBannerTooltipApp_mode_d8 {
+    color: #353638;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    margin: 3rem 0 5rem;
+    padding: -2rem 5rem;
+    border-radius: 2rem;
+    box-shadow: 0 1rem 0 0 #353638;
+    background-color: #e9e7dc;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: 0.01em;
+}
+
+.EventBannerTooltipApp_modeText_9c {
+    color: rgba(178, 175, 171, 0.25);
+    font-size: 18rem;
+    font-weight: 400;
+    line-height: 1.25;
+    flex: 1;
+    margin: 0 0 0 6rem;
+    line-height: 1.05;
+    letter-spacing: 0.02em;
+}
+
+.EventBannerTooltipApp_line_7b {
+    width: 328rem;
+    height: 1rem;
+    margin: 5rem;
+    background: url('R.images.gui.maps.icons.achievements.tooltips.separator_dots_short') no-repeat 50% / contain;
+}
+
+.EventBannerTooltipApp_eventTitle_6f {
+    color: #e9e2bf;
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin: 10rem 20rem 0;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+
+.EventBannerTooltipApp_eventText_57 {
+    color: #8c8c7e;
+    font-size: 18rem;
+    font-weight: 400;
+    line-height: 1.25;
+    margin: 7rem 20rem 10rem;
+    line-height: 1.1;
+    letter-spacing: 0.02em;
+}
+
+.EventBannerTooltipApp_timerText_38 {
+    color: #8e867d;
+    font-size: 18rem;
+    font-weight: 400;
+    line-height: 1.25;
+    display: flex;
+    margin: 10rem 32rem 10rem 20rem;
+    letter-spacing: 0.02em;
+}
+
+.Countdown_base_f3 {
+    font-family: PFDINMax;
+}
+
+.Countdown_base_f3[lang='ja'],
+.Countdown_base_f3[lang='ko'],
+.Countdown_base_f3[lang='vi'],
+.Countdown_base_f3[lang='zh_tw'],
+.Countdown_base_f3[lang='zh_sg'],
+.Countdown_base_f3[lang='zh_cn'],
+.Countdown_base_f3[lang='th'] {
+    font-family: Warhelios;
+}
+
+.Countdown_base_f3 {
+    display: flex;
+    align-items: center;
+    margin: -1rem 0 0 -4rem;
+}
+
+.Countdown_text_81 {
+    color: #edcb9e;
+    font-size: 18rem;
+    font-weight: 400;
+    line-height: 1.25;
+    margin-left: -2rem;
+    font-weight: 500;
+    text-shadow:
+        0 1rem 0 #0000004d,
+        0 0 12rem #ff3d0052,
+        0 0 10rem #ffb1563d,
+        0 0 6rem #ffe49f29;
+}
+
+.Countdown_icon_73 {
+    width: 24rem;
+    height: 24rem;
+    background: url('R.images.story_mode.gui.maps.icons.eventBannerTooltip.icon_clock') no-repeat 50% / contain;
+}
+
+.ExtendedText_base_71 {
+    display: flex;
+    line-height: 1.2;
+    position: relative;
+}
+
+.ExtendedText_base__zeroPadding_25 {
+    padding: 0;
+}
+
+.ExtendedText_base__isTruncationAvailable_5b {
+    width: 100%;
+}
+
+.ExtendedText_truncated_97 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.ExtendedText_truncated__hide_31 {
+    opacity: 0;
+}
+
+.ExtendedText_unTruncated_b8 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    justify-content: flex-start;
+    align-content: flex-start;
+    color: #ff2717;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    pointer-events: none;
+}
+
+.ExtendedText_tooltip_91 {
+    display: flex;
+}
+
+.ExtendedText_tooltip__justify-flex-start_00 {
+    justify-content: flex-start;
+}
+
+.ExtendedText_tooltip__justify-center_08 {
+    justify-content: center;
+}
+
+.ExtendedText_tooltip__justify-flex-end_90 {
+    justify-content: flex-end;
+}
+
+.ExtendedText_tooltip__align-flex-start_40 {
+    align-content: flex-start;
+}
+
+.ExtendedText_tooltip__align-center_54 {
+    align-content: center;
+}
+
+.ExtendedText_tooltip__align-flex-end_d2 {
+    align-content: flex-end;
+}
+
+.colors_blackReal_fc {
+    color: #000000;
+}
+
+.colors_whiteReal_31 {
+    color: #ffffff;
+}
+
+.colors_white_45 {
+    color: #f2f2f7;
+}
+
+.colors_whiteOrange_81 {
+    color: #fefeec;
+}
+
+.colors_whiteSpanish_c3 {
+    color: #e9e2bf;
+}
+
+.colors_par_5b {
+    color: #8c8c7e;
+}
+
+.colors_parSecondary_fd {
+    color: #595950;
+}
+
+.colors_parTertiary_97 {
+    color: #37362e;
+}
+
+.colors_red_79 {
+    color: #ff2717;
+}
+
+.colors_redDark_73 {
+    color: #b70000;
+}
+
+.colors_yellow_76 {
+    color: #feab34;
+}
+
+.colors_orange_cd {
+    color: #ee7000;
+}
+
+.colors_cream_0f {
+    color: #ffdd99;
+}
+
+.colors_brown_82 {
+    color: #cbac77;
+}
+
+.colors_greenBright_68 {
+    color: #80d43a;
+}
+
+.colors_green_fa {
+    color: #7ab300;
+}
+
+.colors_greenDark_a9 {
+    color: #497212;
+}
+
+.colors_blueBooster_26 {
+    color: #ccffff;
+}
+
+.colors_blueTeamkiller_86 {
+    color: #09e2ff;
+}
+
+.colors_cred_35 {
+    color: #ced9d9;
+}
+
+.colors_gold_c3 {
+    color: #ffc363;
+}
+
+.colors_bond_ce {
+    color: #c9c9b6;
+}
+
+.colors_prom_83 {
+    color: #a29b70;
+}
+
+.renderers_noBreakWrapper_10 {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.renderers_lineBreak_b5 {
+    width: 100%;
+    height: 0;
+}
+
+.renderers_newLine_bd {
+    flex: 1;
+    width: 100%;
+}
+
+.renderers_word_f3 {
+    white-space: pre;
+    overflow-wrap: normal;
+}

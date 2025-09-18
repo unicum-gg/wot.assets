@@ -8,59 +8,6 @@
     background-size: 100% 100%;
 }
 
-.Spinner_base_87 {
-    width: 260rem;
-    height: 260rem;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
-}
-
-.Spinner_caption_cf {
-    color: #8c8c7e;
-    font-size: 12rem;
-    text-align: center;
-    white-space: pre;
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    transform: translateY(48rem);
-}
-
-.Spinner_gear_c4 {
-    width: 260rem;
-    height: 260rem;
-    margin-top: 2rem;
-    background: url('R.images.gui.maps.icons.components.spinner.spinner') 0 0;
-    background-size: 260rem 520rem;
-    position: absolute;
-    top: -4rem;
-    left: 0;
-    animation: Spinner_spin_f5 0.28s linear infinite;
-}
-
-.Spinner_logo_bf {
-    width: 260rem;
-    height: 260rem;
-    background: url('R.images.gui.maps.icons.components.spinner.spinner') 0 -260rem no-repeat;
-    background-size: 260rem 520rem;
-    position: absolute;
-    top: -4rem;
-    left: 0;
-}
-
-@keyframes Spinner_spin_f5 {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    100% {
-        transform: rotate(20deg);
-    }
-}
-
 .CButton_base_40 {
     display: flex;
     justify-content: center;
@@ -301,6 +248,59 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 
 .Error_button_cd {
     width: 100rem;
+}
+
+.Spinner_base_87 {
+    width: 260rem;
+    height: 260rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.Spinner_caption_cf {
+    color: #8c8c7e;
+    font-size: 12rem;
+    text-align: center;
+    white-space: pre;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    transform: translateY(48rem);
+}
+
+.Spinner_gear_c4 {
+    width: 260rem;
+    height: 260rem;
+    margin-top: 2rem;
+    background: url('R.images.gui.maps.icons.components.spinner.spinner') 0 0;
+    background-size: 260rem 520rem;
+    position: absolute;
+    top: -4rem;
+    left: 0;
+    animation: Spinner_spin_f5 0.28s linear infinite;
+}
+
+.Spinner_logo_bf {
+    width: 260rem;
+    height: 260rem;
+    background: url('R.images.gui.maps.icons.components.spinner.spinner') 0 -260rem no-repeat;
+    background-size: 260rem 520rem;
+    position: absolute;
+    top: -4rem;
+    left: 0;
+}
+
+@keyframes Spinner_spin_f5 {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(20deg);
+    }
 }
 
 .Waiting_base_c5 {

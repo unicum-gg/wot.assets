@@ -199,21 +199,6 @@
     margin-top: 10rem;
 }
 
-.ProgressScreen_base_52 {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 100%;
-    position: relative;
-}
-
-.ProgressScreen_rewardButton_c8 {
-    position: absolute;
-    top: 260rem;
-    left: 50%;
-    z-index: 99;
-}
-
 .HorizontalBar_base_49 {
     display: flex;
     width: 100%;
@@ -419,100 +404,278 @@
     flex: 1;
 }
 
+.Box_mt__XS_0c {
+    margin-top: 4rem;
+}
+.Box_mt__SM_eb {
+    margin-top: 8rem;
+}
+.Box_mt__SMp_cf {
+    margin-top: 10rem;
+}
+.Box_mt__MD_25 {
+    margin-top: 16rem;
+}
+.Box_mt__MDp_49 {
+    margin-top: 20rem;
+}
+.Box_mt__LG_e8 {
+    margin-top: 32rem;
+}
+.Box_mt__XL_83 {
+    margin-top: 64rem;
+}
+
+.Box_mr__XS_7c {
+    margin-right: 4rem;
+}
+
+.Box_mr__SM_08 {
+    margin-right: 8rem;
+}
+
+.Box_mr__SMp_06 {
+    margin-right: 10rem;
+}
+
+.Box_mr__MD_4a {
+    margin-right: 16rem;
+}
+
+.Box_mr__MDp_b6 {
+    margin-right: 20rem;
+}
+
+.Box_mr__LG_d0 {
+    margin-right: 32rem;
+}
+
+.Box_mr__XL_db {
+    margin-right: 64rem;
+}
+
+.Box_mb__XS_bb {
+    margin-bottom: 4rem;
+}
+
+.Box_mb__SM_83 {
+    margin-bottom: 8rem;
+}
+
+.Box_mb__SMp_04 {
+    margin-bottom: 10rem;
+}
+
+.Box_mb__MD_ed {
+    margin-bottom: 16rem;
+}
+
+.Box_mb__MDp_65 {
+    margin-bottom: 20rem;
+}
+
+.Box_mb__LG_c8 {
+    margin-bottom: 32rem;
+}
+
+.Box_mb__XL_f8 {
+    margin-bottom: 64rem;
+}
+
+.Box_ml__XS_8a {
+    margin-left: 4rem;
+}
+
+.Box_ml__SM_e6 {
+    margin-left: 8rem;
+}
+
+.Box_ml__SMp_fb {
+    margin-left: 10rem;
+}
+
+.Box_ml__MD_2b {
+    margin-left: 16rem;
+}
+
+.Box_ml__MDp_c7 {
+    margin-left: 20rem;
+}
+
+.Box_ml__LG_39 {
+    margin-left: 32rem;
+}
+
+.Box_ml__XL_4a {
+    margin-left: 64rem;
+}
+
 .FormatText_base_d0 {
     display: flex;
     flex-wrap: wrap;
 }
 
-.FormatTextWithColorTags_blackReal_3c {
+/* eslint-disable-next-line expectedscss*/
+.Text_paragraph-P10_2c {
+    font-size: 10rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.Text_paragraph-P12_22 {
+    font-size: 12rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+.Text_paragraph-P14_a7 {
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+.Text_paragraph-P16_90 {
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+.Text_paragraph-P18_50 {
+    font-size: 18rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+.Text_paragraph-P24_33 {
+    font-size: 24rem;
+    font-weight: 400;
+    line-height: 32rem;
+}
+.Text_heading-H14_8b {
+    font-size: 14rem;
+    font-weight: 700;
+    line-height: 1.15;
+}
+.Text_heading-H15_9e {
+    font-size: 15rem;
+    font-weight: 700;
+    line-height: 1.15;
+}
+.Text_heading-H18_b7 {
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H20R_f6 {
+    font-size: 20rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.Text_heading-H22_27 {
+    font-size: 22rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.Text_heading-H24R_be {
+    font-size: 24rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.Text_heading-H24_0c {
+    font-size: 24rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.Text_heading-H28_78 {
+    font-size: 28rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H36_32 {
+    font-size: 36rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H56_c3 {
+    font-size: 56rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H73_8f {
+    font-size: 73rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H144_a9 {
+    font-size: 144rem;
+    font-weight: 700;
+    line-height: 1;
+}
+.Text_BLACK_REAL_30 {
     color: #000000;
 }
-
-.FormatTextWithColorTags_whiteReal_8a {
+.Text_WHITE_REAL_bc {
     color: #ffffff;
 }
-
-.FormatTextWithColorTags_white_16 {
+.Text_WHITE_62 {
     color: #f2f2f7;
 }
-
-.FormatTextWithColorTags_whiteOrange_18 {
+.Text_WHITE_ORANGE_54 {
     color: #fefeec;
 }
-
-.FormatTextWithColorTags_whiteSpanish_10 {
+.Text_WHITE_SPANISH_df {
     color: #e9e2bf;
 }
-
-.FormatTextWithColorTags_par_ca {
+.Text_PAR_15 {
     color: #8c8c7e;
 }
-
-.FormatTextWithColorTags_parSecondary_8d {
+.Text_PAR_SECONDARY_5d {
     color: #595950;
 }
-
-.FormatTextWithColorTags_parTertiary_a3 {
+.Text_PAR_TERTIARY_c9 {
     color: #37362e;
 }
-
-.FormatTextWithColorTags_red_60 {
+.Text_INFO_RED_30 {
+    color: #ff0000;
+}
+.Text_RED_66 {
     color: #ff2717;
 }
-
-.FormatTextWithColorTags_redDark_03 {
+.Text_RED_DARK_d8 {
     color: #b70000;
 }
-
-.FormatTextWithColorTags_yellow_ad {
+.Text_YELLOW_ed {
     color: #feab34;
 }
-
-.FormatTextWithColorTags_orange_e4 {
+.Text_ORANGE_be {
     color: #ee7000;
 }
-
-.FormatTextWithColorTags_cream_cd {
+.Text_CREAM_57 {
     color: #ffdd99;
 }
-
-.FormatTextWithColorTags_brown_c8 {
+.Text_BROWN_18 {
     color: #cbac77;
 }
-
-.FormatTextWithColorTags_greenBright_f0 {
+.Text_GREEN_BRIGHT_3f {
     color: #80d43a;
 }
-
-.FormatTextWithColorTags_green_c5 {
+.Text_GREEN_e3 {
     color: #7ab300;
 }
-
-.FormatTextWithColorTags_greenDark_af {
+.Text_GREEN_DARK_f1 {
     color: #497212;
 }
-
-.FormatTextWithColorTags_blueBooster_ac {
+.Text_BLUE_BOOSTER_21 {
     color: #ccffff;
 }
-
-.FormatTextWithColorTags_blueTeamkiller_6f {
+.Text_BLUE_TEAMKILLER_ab {
     color: #09e2ff;
 }
-
-.FormatTextWithColorTags_cred_4e {
+.Text_CRED_f7 {
     color: #ced9d9;
 }
-
-.FormatTextWithColorTags_gold_90 {
+.Text_GOLD_28 {
     color: #ffc363;
 }
-
-.FormatTextWithColorTags_bond_71 {
+.Text_BOND_be {
     color: #c9c9b6;
 }
-
-.FormatTextWithColorTags_prom_dd {
+.Text_PROM_65 {
     color: #a29b70;
 }
 
@@ -745,7 +908,7 @@
 }
 
 .mediaLarge .ChapterProgress_label_f8 {
-    color: #fefeec;
+    color: #8c8c7e;
     font-size: 20rem;
     font-weight: 400;
     line-height: 1.2;
@@ -765,16 +928,36 @@
     right: 0;
 }
 
+.ChapterProgress_progress__total_d2 {
+    color: #8c8c7e;
+    font-size: 14rem;
+    font-weight: 700;
+    line-height: 1.15;
+}
+
 .mediaMedium .ChapterProgress_progress_2a {
     color: #ffdd99;
     font-size: 18rem;
-    font-weight: 400;
-    line-height: 1.25;
     font-weight: 700;
+    line-height: 1.1;
+}
+
+.mediaMedium .ChapterProgress_progress__total_d2 {
+    color: #8c8c7e;
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
 }
 
 .mediaLarge .ChapterProgress_progress_2a {
     color: #ffdd99;
+    font-size: 22rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.mediaLarge .ChapterProgress_progress__total_d2 {
+    color: #8c8c7e;
     font-size: 22rem;
     font-weight: 700;
     line-height: 1.2;
@@ -853,8 +1036,22 @@
     font-weight: 700;
 }
 
+.ChapterToken_progress__total_05 {
+    color: #8c8c7e;
+}
+
 .mediaMedium .ChapterToken_progress_54 {
+    color: #ffdd99;
     font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.mediaMedium .ChapterToken_progress__total_05 {
+    color: #8c8c7e;
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
 }
 
 .mediaLarge .ChapterToken_progress_54 {
@@ -954,6 +1151,13 @@
 }
 
 .Chapter_title_d4 {
+    color: #ffdd99;
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.Chapter_title__name_8a {
     color: #e9e2bf;
     font-size: 18rem;
     font-weight: 700;
@@ -961,14 +1165,28 @@
 }
 
 .mediaMedium .Chapter_title_d4 {
-    color: #ced9d9;
+    color: #ffdd99;
+    font-size: 22rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.mediaMedium .Chapter_title__name_8a {
+    color: #e9e2bf;
     font-size: 22rem;
     font-weight: 700;
     line-height: 1.2;
 }
 
 .mediaLarge .Chapter_title_d4 {
-    color: #f2f2f7;
+    color: #ffdd99;
+    font-size: 28rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.mediaLarge .Chapter_title__name_8a {
+    color: #e9e2bf;
     font-size: 28rem;
     font-weight: 700;
     line-height: 1.1;
@@ -1057,276 +1275,6 @@
     opacity: 0.4;
 }
 
-.Box_mt__XS_0c {
-    margin-top: 4rem;
-}
-.Box_mt__SM_eb {
-    margin-top: 8rem;
-}
-.Box_mt__SMp_cf {
-    margin-top: 10rem;
-}
-.Box_mt__MD_25 {
-    margin-top: 16rem;
-}
-.Box_mt__MDp_49 {
-    margin-top: 20rem;
-}
-.Box_mt__LG_e8 {
-    margin-top: 32rem;
-}
-.Box_mt__XL_83 {
-    margin-top: 64rem;
-}
-
-.Box_mr__XS_7c {
-    margin-right: 4rem;
-}
-
-.Box_mr__SM_08 {
-    margin-right: 8rem;
-}
-
-.Box_mr__SMp_06 {
-    margin-right: 10rem;
-}
-
-.Box_mr__MD_4a {
-    margin-right: 16rem;
-}
-
-.Box_mr__MDp_b6 {
-    margin-right: 20rem;
-}
-
-.Box_mr__LG_d0 {
-    margin-right: 32rem;
-}
-
-.Box_mr__XL_db {
-    margin-right: 64rem;
-}
-
-.Box_mb__XS_bb {
-    margin-bottom: 4rem;
-}
-
-.Box_mb__SM_83 {
-    margin-bottom: 8rem;
-}
-
-.Box_mb__SMp_04 {
-    margin-bottom: 10rem;
-}
-
-.Box_mb__MD_ed {
-    margin-bottom: 16rem;
-}
-
-.Box_mb__MDp_65 {
-    margin-bottom: 20rem;
-}
-
-.Box_mb__LG_c8 {
-    margin-bottom: 32rem;
-}
-
-.Box_mb__XL_f8 {
-    margin-bottom: 64rem;
-}
-
-.Box_ml__XS_8a {
-    margin-left: 4rem;
-}
-
-.Box_ml__SM_e6 {
-    margin-left: 8rem;
-}
-
-.Box_ml__SMp_fb {
-    margin-left: 10rem;
-}
-
-.Box_ml__MD_2b {
-    margin-left: 16rem;
-}
-
-.Box_ml__MDp_c7 {
-    margin-left: 20rem;
-}
-
-.Box_ml__LG_39 {
-    margin-left: 32rem;
-}
-
-.Box_ml__XL_4a {
-    margin-left: 64rem;
-}
-
-/* eslint-disable-next-line expectedscss*/
-.Text_paragraph-P10_2c {
-    font-size: 10rem;
-    font-weight: 400;
-    line-height: 1.2;
-}
-.Text_paragraph-P12_22 {
-    font-size: 12rem;
-    font-weight: 400;
-    line-height: 1.3;
-}
-.Text_paragraph-P14_a7 {
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
-}
-.Text_paragraph-P16_90 {
-    font-size: 16rem;
-    font-weight: 400;
-    line-height: 1.25;
-}
-.Text_paragraph-P18_50 {
-    font-size: 18rem;
-    font-weight: 400;
-    line-height: 1.25;
-}
-.Text_paragraph-P24_33 {
-    font-size: 24rem;
-    font-weight: 400;
-    line-height: 32rem;
-}
-.Text_heading-H14_8b {
-    font-size: 14rem;
-    font-weight: 700;
-    line-height: 1.15;
-}
-.Text_heading-H15_9e {
-    font-size: 15rem;
-    font-weight: 700;
-    line-height: 1.15;
-}
-.Text_heading-H18_b7 {
-    font-size: 18rem;
-    font-weight: 700;
-    line-height: 1.1;
-}
-.Text_heading-H20R_f6 {
-    font-size: 20rem;
-    font-weight: 400;
-    line-height: 1.2;
-}
-.Text_heading-H22_27 {
-    font-size: 22rem;
-    font-weight: 700;
-    line-height: 1.2;
-}
-.Text_heading-H24R_be {
-    font-size: 24rem;
-    font-weight: 400;
-    line-height: 1.2;
-}
-.Text_heading-H24_0c {
-    font-size: 24rem;
-    font-weight: 700;
-    line-height: 1.2;
-}
-.Text_heading-H28_78 {
-    font-size: 28rem;
-    font-weight: 700;
-    line-height: 1.1;
-}
-.Text_heading-H36_32 {
-    font-size: 36rem;
-    font-weight: 700;
-    line-height: 1.1;
-}
-.Text_heading-H56_c3 {
-    font-size: 56rem;
-    font-weight: 700;
-    line-height: 1.1;
-}
-.Text_heading-H73_8f {
-    font-size: 73rem;
-    font-weight: 700;
-    line-height: 1.1;
-}
-.Text_heading-H144_a9 {
-    font-size: 144rem;
-    font-weight: 700;
-    line-height: 1;
-}
-.Text_BLACK_REAL_30 {
-    color: #000000;
-}
-.Text_WHITE_REAL_bc {
-    color: #ffffff;
-}
-.Text_WHITE_62 {
-    color: #f2f2f7;
-}
-.Text_WHITE_ORANGE_54 {
-    color: #fefeec;
-}
-.Text_WHITE_SPANISH_df {
-    color: #e9e2bf;
-}
-.Text_PAR_15 {
-    color: #8c8c7e;
-}
-.Text_PAR_SECONDARY_5d {
-    color: #595950;
-}
-.Text_PAR_TERTIARY_c9 {
-    color: #37362e;
-}
-.Text_INFO_RED_30 {
-    color: #ff0000;
-}
-.Text_RED_66 {
-    color: #ff2717;
-}
-.Text_RED_DARK_d8 {
-    color: #b70000;
-}
-.Text_YELLOW_ed {
-    color: #feab34;
-}
-.Text_ORANGE_be {
-    color: #ee7000;
-}
-.Text_CREAM_57 {
-    color: #ffdd99;
-}
-.Text_BROWN_18 {
-    color: #cbac77;
-}
-.Text_GREEN_BRIGHT_3f {
-    color: #80d43a;
-}
-.Text_GREEN_e3 {
-    color: #7ab300;
-}
-.Text_GREEN_DARK_f1 {
-    color: #497212;
-}
-.Text_BLUE_BOOSTER_21 {
-    color: #ccffff;
-}
-.Text_BLUE_TEAMKILLER_ab {
-    color: #09e2ff;
-}
-.Text_CRED_f7 {
-    color: #ced9d9;
-}
-.Text_GOLD_28 {
-    color: #ffc363;
-}
-.Text_BOND_be {
-    color: #c9c9b6;
-}
-.Text_PROM_65 {
-    color: #a29b70;
-}
-
 .QuestCompleted_base_85 {
     display: flex;
     justify-content: center;
@@ -1391,6 +1339,10 @@
 
 .mediaMedium .QuestCompleted_label_3b {
     font-size: 16rem;
+}
+
+.mediaExtraLarge .QuestCompleted_label_3b {
+    font-size: 24rem;
 }
 
 .QuestToken_base_e9 {
@@ -1524,6 +1476,13 @@
     transform: scale(1);
 }
 
+.mediaExtraLarge .QuestToken_label_28 {
+    color: #ffdd99;
+    font-size: 24rem;
+    font-weight: 400;
+    line-height: 32rem;
+}
+
 .QuestToken_tokensCount_a5 {
     color: #e9e2bf;
     font-size: 14rem;
@@ -1543,6 +1502,13 @@
         0 0 4rem rgba(255, 127, 0, 0.25),
         0 0 8rem #ff2a00,
         0 0 15rem #e52;
+}
+
+.mediaExtraLarge .QuestToken_tokensCount_a5 {
+    color: #e9e2bf;
+    font-size: 24rem;
+    font-weight: 700;
+    line-height: 1.2;
 }
 
 .QuestToken_icon_c0 {
@@ -1566,6 +1532,15 @@
 .mediaMedium .QuestToken_icon__freeToken_81 {
     width: 20rem;
     background-image: url('R.images.armory_yard.gui.maps.icons.token.sf20');
+}
+
+.mediaExtraLarge .QuestToken_icon_c0 {
+    width: 27rem;
+    height: 30rem;
+}
+
+.mediaExtraLarge .QuestToken_icon__freeToken_81 {
+    width: 30rem;
 }
 
 .Reward_base_ea {
@@ -1776,112 +1751,134 @@
     padding-top: 0;
 }
 
-.Quest_base_2d {
-    display: flex;
-    flex-direction: row;
-    min-height: 124rem;
-    border-radius: 4rem;
-    border-image-slice: 2 fill;
-    border-image-width: 2rem;
-    overflow: hidden;
-    position: relative;
-}
-
-.mediaMedium .Quest_base_2d {
-    min-height: 202rem;
-}
-.Quest_state_44 {
-    width: 183rem;
-    height: 100%;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-}
-.mediaMedium .Quest_state_44 {
-    width: 326rem;
-}
-.mediaLarge .Quest_state_44 {
-    width: 366rem;
-}
-.Quest_content_93 {
-    flex: 1;
-    width: 100%;
-    margin: 10rem 6rem 8rem 16rem;
-    position: relative;
-}
-.mediaMedium .Quest_content_93 {
-    margin: 24rem 10rem 16rem 31rem;
-}
-.mediaLarge .Quest_content_93 {
-    margin-left: 35rem;
-}
-.Quest_base__notAvailable_51 .Quest_content_93 {
-    opacity: 0.5;
-}
-.Quest_description_63 {
-    width: 100%;
-    margin: 4rem 0 10rem;
-    padding-right: 5rem;
-    color: #e9e2bf;
-    font-size: 13rem;
-    font-weight: 400;
-    line-height: 1.2;
-}
-.mediaMedium .Quest_description_63 {
-    min-height: 56rem;
-    margin-bottom: 20rem;
-    font-size: 21rem;
-}
-.mediaLarge .Quest_description_63 {
+.mediaExtraLarge .RewardsList_info_5e {
     font-size: 24rem;
 }
-.Quest_condition_c5 {
+
+.RewardsList_infoCustom_cd {
+    color: #e9e2bf;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    margin: -5rem 0 0 -10rem;
+    text-align: right;
+    z-index: 1;
+}
+
+.RewardsList_infoCustom__big_08 {
+    margin: -8rem 2rem 0 -10rem;
+}
+
+.mediaMedium .RewardsList_infoCustom_cd {
+    margin-top: -10rem;
+}
+
+.mediaMedium .RewardsList_infoCustom__big_08 {
+    margin-top: -13rem;
+}
+
+.QuestProgress_base_0b {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.QuestProgress_conditionSeparator_ad {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.QuestProgress_condition_a1 {
     color: #e9e2bf;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
     display: flex;
-    margin: 0 0 -7rem 2rem;
-    transform: scale(0.85);
-    transform-origin: left center;
+    align-items: center;
+    transform: translateY(-3rem);
 }
-.mediaMedium .Quest_condition_c5 {
+
+.mediaMedium .QuestProgress_condition_a1 {
     color: #e9e2bf;
     font-size: 24rem;
     font-weight: 400;
     line-height: 32rem;
-    margin: 0 0 -22rem 6rem;
-    transform: scale(1);
+    transform: translateY(-11rem);
 }
-.Quest_base__notAvailable_51 .Quest_condition_c5 {
+
+.mediaExtraLarge .QuestProgress_condition_a1 {
+    font-size: 36rem;
+    transform: translateY(5rem);
+}
+
+.QuestProgress_base__notAvailable_01 .QuestProgress_condition_a1 {
     color: #8c8c7e;
 }
-.Quest_conditionIcon_04 {
-    width: 50rem;
-    height: 50rem;
-    margin: -16rem -9rem 0 -20rem;
-    background: no-repeat center / cover;
+
+.QuestProgress_conditionText_2d {
+    transform: translateX(-17rem);
 }
-.mediaMedium .Quest_conditionIcon_04 {
+
+.mediaMedium .QuestProgress_conditionText_2d {
+    transform: translateX(-45rem);
+}
+
+.mediaExtraLarge .QuestProgress_conditionText_2d {
+    transform: translateX(-50rem);
+}
+
+.QuestProgress_progressTotal_c3 {
+    color: #8c8c7e;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+.mediaMedium .QuestProgress_progressTotal_c3 {
+    color: #8c8c7e;
+    font-size: 24rem;
+    font-weight: 400;
+    line-height: 32rem;
+}
+
+.mediaExtraLarge .QuestProgress_progressTotal_c3 {
+    font-size: 36rem;
+}
+
+.QuestProgress_conditionIcon_49 {
+    width: 48rem;
+    height: 48rem;
+    background: no-repeat center / cover;
+    transform: translateX(-8rem);
+}
+
+.mediaMedium .QuestProgress_conditionIcon_49 {
     width: 90rem;
     height: 90rem;
-    margin: -28rem -16rem 0 -35rem;
+    transform: translateX(-20rem);
 }
-.Quest_dotIcon_5d {
-    width: 32rem;
-    height: 32rem;
-    background: url('R.images.armory_yard.gui.maps.icons.quests.quest.dot') no-repeat center / cover;
-    transform: translate(2rem, 2rem);
+
+.mediaExtraLarge .QuestProgress_conditionIcon_49 {
+    width: 135rem;
+    height: 135rem;
 }
-.Quest_progressBar_62 {
-    margin-left: 4rem;
-    margin-right: 26rem;
+
+.QuestProgress_progressBar_0f {
+    height: 2rem;
     position: relative;
+    transform: translateY(-10rem);
 }
-.mediaMedium .Quest_progressBar_62 {
-    margin-right: 40rem;
+
+.mediaMedium .QuestProgress_progressBar_0f {
+    transform: translateY(-35rem);
 }
-.Quest_progressBg_db {
+
+.mediaExtraLarge .QuestProgress_progressBar_0f {
+    transform: translateY(-30rem);
+}
+
+.QuestProgress_progressBg_fb {
     height: 10rem;
     background: url('R.images.armory_yard.gui.maps.icons.quests.progress_bar.pattern_disabled') repeat-x center /
         contain;
@@ -1891,28 +1888,317 @@
     left: 0;
     z-index: -1;
 }
+
+.QuestSeparator_base_cd {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-right: 5rem;
+}
+
+.mediaSmall .QuestSeparator_base_cd {
+    padding-right: 10rem;
+}
+
+.mediaMedium .QuestSeparator_base_cd {
+    padding-right: 4rem;
+}
+
+.mediaLarge .QuestSeparator_base_cd {
+    padding-right: 10rem;
+}
+
+.QuestSeparator_separatorLine_7f {
+    width: 6rem;
+    height: 44rem;
+    background: url('R.images.armory_yard.gui.maps.icons.quests.quest.separator') no-repeat center / cover;
+    transform: translateX(1rem);
+}
+
+.QuestSeparator_separatorLine__bottom_17 {
+    transform: rotate(180deg) translateY(20rem);
+}
+
+.QuestSeparator_separatorLine__bottomOr_15 {
+    transform: rotate(180deg) translateY(22rem);
+}
+
+.mediaMedium .QuestSeparator_separatorLine_7f {
+    width: 8rem;
+    height: 59rem;
+}
+
+.mediaMedium .QuestSeparator_separatorLine__bottom_17 {
+    transform: rotate(180deg) translateY(17rem);
+}
+
+.mediaMedium .QuestSeparator_separatorLine__bottomOr_15 {
+    transform: rotate(180deg) translateY(27rem);
+}
+
+.mediaLarge .QuestSeparator_separatorLine_7f {
+    width: 9rem;
+    height: 69rem;
+    transform: translate(1rem, -14rem);
+}
+
+.mediaLarge .QuestSeparator_separatorLine__bottom_17 {
+    transform: rotate(180deg) translateY(29rem);
+}
+
+.mediaLarge .QuestSeparator_separatorLine__bottomOr_15 {
+    transform: rotate(180deg) translateY(36rem);
+}
+
+.mediaExtraLarge .QuestSeparator_separatorLine_7f {
+    width: 15rem;
+    height: 110rem;
+    transform: translate(1rem, -10rem);
+}
+
+.mediaExtraLarge .QuestSeparator_separatorLine__bottom_17 {
+    transform: rotate(180deg) translateY(45rem);
+}
+
+.mediaExtraLarge .QuestSeparator_separatorLine__bottomOr_15 {
+    transform: rotate(180deg) translateY(55rem);
+}
+
+.QuestSeparator_separatorText_cc {
+    width: 22rem;
+    height: 22rem;
+    background: url('R.images.armory_yard.gui.maps.icons.quests.quest.and') no-repeat center / cover;
+    transform: translateY(-10rem);
+}
+
+.mediaMedium .QuestSeparator_separatorText_cc {
+    width: 30rem;
+    height: 30rem;
+}
+
+.mediaLarge .QuestSeparator_separatorText_cc {
+    width: 36rem;
+    height: 36rem;
+    transform: translateY(-20rem);
+}
+
+.mediaExtraLarge .QuestSeparator_separatorText_cc {
+    width: 70rem;
+    height: 70rem;
+    transform: translateY(-25rem);
+}
+
+.QuestSeparator_base__or_69 .QuestSeparator_separatorText_cc {
+    width: 25rem;
+    height: 28rem;
+    background-image: url('R.images.armory_yard.gui.maps.icons.quests.quest.or');
+}
+
+.mediaMedium .QuestSeparator_base__or_69 .QuestSeparator_separatorText_cc {
+    width: 30rem;
+    height: 48rem;
+}
+
+.mediaLarge .QuestSeparator_base__or_69 .QuestSeparator_separatorText_cc {
+    width: 47rem;
+    height: 57rem;
+}
+
+.mediaExtraLarge .QuestSeparator_base__or_69 .QuestSeparator_separatorText_cc {
+    width: 72rem;
+    height: 88rem;
+}
+
+.QuestCondition_base_a5 {
+    display: flex;
+}
+
+.QuestCondition_base__first_9f {
+    padding-left: 3rem;
+}
+
+.mediaSmall .QuestCondition_base__first_9f {
+    padding-left: 0;
+}
+
+.QuestCondition_quest_4e {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.QuestCondition_quest__multi_60 {
+    width: 125rem;
+}
+
+.mediaSmall .QuestCondition_quest__multi_60 {
+    width: 140rem;
+}
+
+.mediaMedium .QuestCondition_quest__multi_60 {
+    width: 209rem;
+}
+
+.mediaLarge .QuestCondition_quest__multi_60 {
+    width: 239rem;
+}
+
+.mediaExtraLarge .QuestCondition_quest__multi_60 {
+    width: 355rem;
+}
+
+.QuestCondition_description_e8 {
+    color: #e9e2bf;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    width: 100%;
+    height: 50rem;
+    transform: translateY(4rem);
+}
+
+.mediaMedium .QuestCondition_description_e8 {
+    height: 75rem;
+    font-size: 21rem;
+}
+
+.mediaLarge .QuestCondition_description_e8 {
+    color: #e9e2bf;
+    font-size: 24rem;
+    font-weight: 400;
+    line-height: 32rem;
+    height: 85rem;
+}
+
+.mediaExtraLarge .QuestCondition_description_e8 {
+    height: 135rem;
+    font-size: 36rem;
+    transform: translateY(20rem);
+}
+
+.Quest_base_2d {
+    display: flex;
+    flex-direction: row;
+    height: 148rem;
+    border-radius: 4rem;
+    border-image-slice: 2 fill;
+    border-image-width: 2rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.mediaMedium .Quest_base_2d {
+    height: 202rem;
+}
+
+.mediaLarge .Quest_base_2d {
+    height: 248rem;
+}
+
+.mediaExtraLarge .Quest_base_2d {
+    height: 370rem;
+}
+
+.Quest_base__manyConditions_b5 {
+    height: 182rem;
+}
+
+.mediaMedium .Quest_base__manyConditions_b5 {
+    height: 260rem;
+}
+
+.mediaLarge .Quest_base__manyConditions_b5 {
+    height: 304rem;
+}
+
+.mediaExtraLarge .Quest_base__manyConditions_b5 {
+    height: 450rem;
+}
+.Quest_state_44 {
+    width: 186rem;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    bottom: -10rem;
+}
+.mediaMedium .Quest_state_44 {
+    width: 326rem;
+}
+.mediaLarge .Quest_state_44 {
+    width: 366rem;
+}
+.mediaExtraLarge .Quest_state_44 {
+    width: 500rem;
+    bottom: 0;
+}
+.Quest_content_93 {
+    flex: 1;
+    margin: 7rem 35rem -4rem 10rem;
+    position: relative;
+}
+.mediaSmall .Quest_content_93 {
+    margin: 5rem 40rem -5rem 20rem;
+}
+.mediaMedium .Quest_content_93 {
+    margin: 5rem 50rem 5rem 20rem;
+}
+.mediaLarge .Quest_content_93 {
+    margin: 19rem 50rem 13rem 25rem;
+}
+.mediaExtraLarge .Quest_content_93 {
+    margin: 18rem 30rem 24rem 31rem;
+}
+.Quest_base__notAvailable_51 .Quest_content_93 {
+    opacity: 0.5;
+}
+.Quest_base__manyConditions_b5 .Quest_content_93 {
+    margin-right: 13rem;
+}
+.mediaSmall .Quest_base__manyConditions_b5 .Quest_content_93 {
+    margin-right: 20rem;
+}
+.mediaMedium .Quest_base__manyConditions_b5 .Quest_content_93 {
+    margin-right: 9rem;
+}
+.mediaLarge .Quest_base__manyConditions_b5 .Quest_content_93 {
+    margin-right: 28rem;
+}
+.mediaExtraLarge .Quest_base__manyConditions_b5 .Quest_content_93 {
+    margin-right: 34rem;
+}
+.Quest_quests_39 {
+    display: flex;
+    width: 100%;
+}
+.Quest_dotIcon_5d {
+    width: 32rem;
+    height: 32rem;
+    background: url('R.images.armory_yard.gui.maps.icons.quests.quest.dot') no-repeat center / cover;
+    transform: translate(2rem, 2rem);
+}
 .Quest_conditions_ca {
     color: #8c8c7e;
-    font-size: 12rem;
+    font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
     display: flex;
     flex-direction: column;
-    margin-left: -8rem;
-    margin-top: 9rem;
+    position: absolute;
+    bottom: 2rem;
+    left: 3rem;
 }
-.mediaSmall .Quest_conditions_ca {
-    margin-left: 0;
+.mediaLarge .Quest_conditions_ca {
+    bottom: -1rem;
 }
-.mediaMedium .Quest_conditions_ca {
-    margin-top: 13rem;
-    font-size: 16rem;
+.mediaExtraLarge .Quest_conditions_ca {
+    bottom: -4rem;
 }
 .Quest_battleLabel_99 {
     margin-right: 1rem;
 }
-.mediaSmall .Quest_battleLabel_99 {
-    margin-right: 4rem;
+.mediaExtraLarge .Quest_battleLabel_99 {
+    margin-right: 6rem;
 }
 .Quest_battleType_d6 {
     display: flex;
@@ -1922,8 +2208,14 @@
 .Quest_battleType__vehicle_11 {
     margin-top: -11rem;
 }
-.mediaMedium .Quest_battleType__vehicle_11 {
+.mediaLarge .Quest_battleType__vehicle_11 {
     margin-top: -5rem;
+}
+.mediaExtraLarge .Quest_battleType_d6 {
+    color: #8c8c7e;
+    font-size: 24rem;
+    font-weight: 400;
+    line-height: 32rem;
 }
 .Quest_ellipsis_c4 {
     color: #8c8c7e;
@@ -1949,6 +2241,12 @@
     font-weight: 400;
     line-height: 1.3;
 }
+.mediaExtraLarge .Quest_levelRoman_09 {
+    color: #fefeec;
+    font-size: 24rem;
+    font-weight: 400;
+    line-height: 32rem;
+}
 .Quest_vehicleSeparator_8a {
     width: 1rem;
     height: 10rem;
@@ -1956,7 +2254,11 @@
     opacity: 0.5;
     transform: translate(4rem, 2rem);
 }
-.mediaSmall .Quest_vehicleType_e1 {
+.mediaExtraLarge .Quest_vehicleSeparator_8a {
+    width: 2rem;
+    height: 20rem;
+}
+.mediaExtraLarge .Quest_vehicleType_e1 {
     margin-left: 6rem;
 }
 .Quest_vehicleTypeIcon_ec {
@@ -1973,18 +2275,27 @@
     margin-right: -9rem;
     opacity: 0.8;
 }
+.mediaExtraLarge .Quest_vehicleTypeIcon_ec {
+    width: 36rem;
+    height: 36rem;
+    margin-right: -15rem;
+}
 .Quest_battleTypeIcon_24 {
     width: 24rem;
     height: 24rem;
     background: no-repeat center / contain;
 }
-.mediaMedium .Quest_battleTypeIcon_24 {
+.mediaLarge .Quest_battleTypeIcon_24 {
     width: 32rem;
     height: 32rem;
 }
+.mediaExtraLarge .Quest_battleTypeIcon_24 {
+    width: 40rem;
+    height: 40rem;
+}
 .Quest_rewards_7a {
-    width: 183rem;
-    padding-top: 49rem;
+    width: 186rem;
+    padding-top: 47rem;
     position: relative;
 }
 .Quest_base__notAvailable_51 .Quest_rewards_7a {
@@ -1992,11 +2303,15 @@
 }
 .mediaMedium .Quest_rewards_7a {
     width: 326rem;
-    padding-top: 89rem;
+    padding-top: 20rem;
 }
 .mediaLarge .Quest_rewards_7a {
     width: 366rem;
     padding-top: 81rem;
+}
+.mediaExtraLarge .Quest_rewards_7a {
+    width: 500rem;
+    padding-top: 112rem;
 }
 .Quest_separator_3a {
     width: 1rem;
@@ -2007,6 +2322,32 @@
     top: 0;
     bottom: 0;
     left: 0;
+}
+.Quest_conditionAllWrapper_f4 {
+    width: 100%;
+    position: absolute;
+    bottom: 44rem;
+}
+.Quest_conditionAllWrapper__or_16 {
+    bottom: 42rem;
+}
+.mediaMedium .Quest_conditionAllWrapper_f4 {
+    bottom: 25rem;
+}
+.mediaMedium .Quest_conditionAllWrapper__or_16 {
+    bottom: 17rem;
+}
+.mediaLarge .Quest_conditionAllWrapper_f4 {
+    bottom: 30rem;
+}
+.mediaLarge .Quest_conditionAllWrapper__or_16 {
+    bottom: 24rem;
+}
+.mediaExtraLarge .Quest_conditionAllWrapper_f4 {
+    bottom: 55rem;
+}
+.mediaExtraLarge .Quest_conditionAllWrapper__or_16 {
+    bottom: 40rem;
 }
 
 .QuestsScreen_base_1a {
@@ -2070,6 +2411,9 @@
 .mediaLarge .QuestsScreen_mainContent_15 {
     min-width: 832rem;
     max-width: 959rem;
+}
+.mediaExtraLarge .QuestsScreen_mainContent_15 {
+    max-width: 1377rem;
 }
 .QuestsScreen_currentChapter_63 {
     position: absolute;
@@ -2170,35 +2514,28 @@
     width: 100rem;
 }
 
-.AdditionTabsContent_wrapper_e5 {
+.AdditionTabsContent_base_b4 {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 60%;
-    position: absolute;
-    top: 38rem;
-    z-index: 99;
-}
-.mediaSmall .AdditionTabsContent_wrapper_e5 {
-    width: 60%;
-    top: 65rem;
+    width: 100%;
 }
 
 .AdditionTabsContent_tab_c7 {
     color: #e9e2bf;
     font-size: 13rem;
-    filter: opacity(0.6);
-    transition: filter 0.3s;
+    opacity: 0.6;
+    transition: opacity 0.3s;
 }
 
 .AdditionTabsContent_tab__active_6a {
     color: #fd9;
     text-shadow:
-        0px 0px 4px rgba(255, 127, 0, 0.25),
-        0px 0px 8px #ff2a00,
-        0px 0px 15px #e52;
-    filter: opacity(1);
+        0rem 0rem 4rem rgba(255, 127, 0, 0.25),
+        0rem 0rem 8rem #ff2a00,
+        0rem 0rem 15rem #e52;
+    opacity: 1;
 }
 
 .mediaSmall .AdditionTabsContent_tab_c7 {
@@ -3131,17 +3468,12 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     width: 280rem;
     height: 280rem;
     position: absolute;
-    top: -73rem;
-    left: -40rem;
-    z-index: -2;
-    transform: scale(1.35);
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+    transform: translate(-50%, -50%) scale(calc(1.35 * var(--scale)));
+    transform-origin: center center;
     pointer-events: none;
-}
-
-.FinalReward_sequence__scaledX2_5b {
-    top: 111rem;
-    left: 141rem;
-    transform: scale(2.5);
 }
 
 .FinalReward_info_a2 {
@@ -3305,6 +3637,20 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     transform: translateY(0rem);
 }
 
+.SequencedBg_base_8f {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 280rem;
+    height: 280rem;
+}
+
+.SequencedBg_image_6e {
+    width: 100%;
+    height: 100%;
+    background: url('R.images.armory_yard.gui.maps.icons.progress.finalRewardSprite') no-repeat center / contain;
+}
+
 .TankName_base_a3 {
     display: flex;
     justify-content: flex-end;
@@ -3359,17 +3705,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     color: #ffc363;
 }
 
-.SequencedBg_base_8f {
-    width: 280rem;
-    height: 280rem;
-}
-
-.SequencedBg_image_6e {
-    width: 100%;
-    height: 100%;
-    background: url('R.images.armory_yard.gui.maps.icons.progress.finalRewardSprite') no-repeat center / contain;
-}
-
 .Progress_base_b6 {
     display: flex;
     flex-direction: row;
@@ -3385,7 +3720,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .Progress_levels_91 {
     display: flex;
     position: relative;
-    z-index: 2;
+    z-index: 1;
 }
 
 .Progress_step_51 {
@@ -3954,14 +4289,24 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     position: absolute;
     top: 90rem;
     right: 40rem;
-    z-index: 99;
+    z-index: 2;
+}
+.App_base__moving_3f .App_banner_0b {
+    opacity: 0;
+    transform: translateX(50rem);
+    pointer-events: none;
 }
 .App_tabs_6c {
     position: absolute;
     top: 50%;
     left: 15rem;
-    z-index: 99;
+    z-index: 2;
     transform: translate(0rem, -50%);
+}
+.App_base__moving_3f .App_tabs_6c {
+    opacity: 0;
+    transform: translate(-50rem, -50%);
+    pointer-events: none;
 }
 .mediaLarge .App_tabs_6c {
     left: 30rem;
@@ -3978,30 +4323,54 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     left: 0;
     z-index: 1;
 }
+.App_base__moving_3f .App_content_e8 {
+    opacity: 0;
+    transform: translateY(50rem);
+    pointer-events: none;
+}
 .App_info_9b {
     position: absolute;
     top: 23rem;
     left: 30rem;
-    z-index: 99;
+    z-index: 2;
+}
+.App_base__moving_3f .App_info_9b {
+    opacity: 0;
+    transform: translateY(-50rem);
+    pointer-events: none;
 }
 .App_player_1a {
     position: absolute;
     top: 23rem;
     left: 144rem;
-    z-index: 99;
+    z-index: 2;
+}
+.App_base__moving_3f .App_player_1a {
+    opacity: 0;
+    transform: translateY(-50rem);
+    pointer-events: none;
+}
+.App_base__moving_3f .App_player__active_e6 {
+    opacity: 1;
+    transform: translateX(0);
 }
 .App_close_79 {
     position: absolute;
     top: 23rem;
     right: 30rem;
-    z-index: 99;
+    z-index: 2;
+}
+.App_base__moving_3f .App_close_79 {
+    opacity: 0;
+    transform: translateY(-50rem);
+    pointer-events: none;
 }
 .App_header_b2 {
     max-width: 600rem;
     position: absolute;
     top: 27rem;
     left: 50%;
-    z-index: 99;
+    z-index: 2;
     transform: translate(-50%, 0);
 }
 .mediaLarge .App_header_b2 {
@@ -4014,7 +4383,12 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     position: absolute;
     bottom: 0;
     left: 0;
-    z-index: 99;
+    z-index: 2;
+}
+.App_base__moving_3f .App_progress_74 {
+    opacity: 0;
+    transform: translateY(50rem);
+    pointer-events: none;
 }
 .App_tabs_6c,
 .App_content_e8,
@@ -4026,37 +4400,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     transition:
         opacity 0.3s,
         transform 0.3s;
-}
-.App_base__moving_3f .App_tabs_6c,
-.App_base__moving_3f .App_content_e8,
-.App_base__moving_3f .App_info_9b,
-.App_base__moving_3f .App_player_1a,
-.App_base__moving_3f .App_close_79,
-.App_base__moving_3f .App_banner_0b,
-.App_base__moving_3f .App_progress_74 {
-    opacity: 0;
-    pointer-events: none;
-}
-.App_base__moving_3f .App_content_e8 {
-    transform: translateY(50rem);
-}
-.App_base__moving_3f .App_info_9b,
-.App_base__moving_3f .App_close_79,
-.App_base__moving_3f .App_player_1a {
-    transform: translateY(-50rem);
-}
-.App_base__moving_3f .App_player_1a.App_player__active_e6 {
-    opacity: 1;
-    transform: translateX(0);
-}
-.App_base__moving_3f .App_banner_0b {
-    transform: translateX(50rem);
-}
-.App_base__moving_3f .App_tabs_6c {
-    transform: translate(-50rem, -50%);
-}
-.App_base__moving_3f .App_progress_74 {
-    transform: translateY(50rem);
 }
 /* ===== Vertical Tabs ===== */
 .App_verticalTabs_40 {
@@ -4082,7 +4425,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     height: 32rem;
     margin-bottom: 10rem;
     filter: grayscale(0.5) opacity(0.7);
-    z-index: 98;
+    z-index: 3;
 }
 .App_icon__big_04 {
     width: 64rem;
@@ -4117,4 +4460,14 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 .App_arrow_2f {
     display: none;
+}
+.App_additionTabs_fd {
+    width: 60%;
+    position: absolute;
+    top: 38rem;
+    z-index: 2;
+}
+.mediaSmall .App_additionTabs_fd {
+    width: 60%;
+    top: 65rem;
 }

@@ -393,11 +393,11 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 /* stylelint-disable-line */
 .ProgressBar_base_45 {
     width: 100%;
-    height: 12rem;
+    height: var(--progress-bg-height);
     position: relative;
 }
 .ProgressBar_base__small_df {
-    height: 2rem;
+    height: var(--progress-bg-height-small);
 }
 .ProgressBar_background_51 {
     width: 100%;
@@ -406,13 +406,13 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     background-image: var(--progress-base);
     background-repeat: repeat;
     background-position: 0 50%;
-    background-size: 3rem 10rem;
+    background-size: var(--progress-pattern-size);
     position: absolute;
     top: 0;
     left: 0;
 }
 .ProgressBar_background__small_46 {
-    height: 2rem;
+    height: var(--progress-bg-height-small);
 }
 .ProgressBar_lineWrapper_6a {
     display: flex;
@@ -420,11 +420,11 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .ProgressBarBlink_base_24 {
-    width: 60rem;
-    height: 100rem;
+    width: var(--progress-glow-width);
+    height: var(--progress-glow-height);
     background-image: var(--progress-glow);
     background-size: contain;
-    mix-blend-mode: lighten;
+    mix-blend-mode: var(--progress-glow-mixBlendMode);
     position: absolute;
     top: 50%;
     right: 0;
@@ -433,33 +433,9 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .ProgressBarBlink_base__small_0f {
-    width: 44rem;
-    height: 43rem;
+    width: var(--progress-glow-small-width);
+    height: var(--progress-glow-small-height);
     background-image: var(--progress-glow-small);
-}
-
-/*
-    Gameface can't calculate gradient biggest than 8128px
-    in JS 8000 reserved like anchor for start optimization
-*/
-/* stylelint-disable-line */
-.ProgressBarDeltaSimple_base_6c {
-    width: 0;
-    height: 100%;
-    position: absolute;
-    top: 0;
-}
-.ProgressBarDeltaSimple_delta_99 {
-    width: 0;
-    max-width: 8001px;
-    height: 100%;
-    box-shadow: var(--progress-delta-shadow);
-    background-color: var(--progress-delta-color);
-    position: absolute;
-    bottom: 0;
-    transform-origin: right center;
-    transition-timing-function: cubic-bezier(1, 0, 0.92, 1), cubic-bezier(0.21, 0.61, 0.35, 1);
-    transition-property: width, transform;
 }
 
 /*
@@ -471,6 +447,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     max-width: 8001px;
     height: 100%;
     background-color: var(--progress-line-base);
+    filter: var(--progress-line-filter);
     position: relative;
     transition-timing-function: cubic-bezier(1, 0, 0.92, 1);
     transition-property: width;
@@ -489,12 +466,12 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     background-image: var(--progress-pattern-base);
     background-repeat: repeat;
     background-position: 0 50%;
-    background-size: 3rem 10rem;
+    background-size: var(--progress-pattern-size);
     position: absolute;
-    top: 1rem;
-    right: 1rem;
-    bottom: 1rem;
-    left: 1rem;
+    top: var(--progress-pattern-border-size);
+    right: var(--progress-pattern-border-size);
+    bottom: var(--progress-pattern-border-size);
+    left: var(--progress-pattern-border-size);
 }
 .ProgressLineImpose_base__small_55 .ProgressLineImpose_pattern_1c {
     top: 0;
@@ -509,12 +486,12 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 .ProgressLineImpose_gradient_35 {
     max-width: 8001px;
-    background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.75));
-    mix-blend-mode: overlay;
+    background-image: var(--progress-pattern-gradient);
+    mix-blend-mode: var(--progress-pattern-gradient-mixBlendMode);
     position: absolute;
-    top: 1rem;
+    top: var(--progress-pattern-border-size);
     right: 0;
-    bottom: 1rem;
+    bottom: var(--progress-pattern-border-size);
     left: 0;
 }
 .ProgressLineImpose_base__small_55 .ProgressLineImpose_gradient_35 {
@@ -525,15 +502,15 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     display: none;
 }
 .ProgressLineImpose_base__finished_d4 .ProgressLineImpose_gradient_35 {
-    background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.75), rgba(0, 0, 0, 0.5));
+    background-image: var(--progress-pattern-gradient-finished);
 }
 .ProgressLineImpose_glow_a5 {
-    width: 60rem;
+    width: var(--progress-glow-width);
     max-width: 8001px;
-    height: 100rem;
+    height: var(--progress-glow-height);
     background-image: var(--progress-glow);
     background-size: contain;
-    mix-blend-mode: lighten;
+    mix-blend-mode: var(--progress-glow-mixBlendMode);
     position: absolute;
     top: 50%;
     left: 100%;
@@ -541,15 +518,15 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     pointer-events: none;
 }
 .ProgressLineImpose_glow__left_d8 {
-    left: 1rem;
+    left: var(--progress-pattern-border-size);
 }
 .ProgressLineImpose_base__disabled_cc .ProgressLineImpose_glow_a5,
 .ProgressLineImpose_base__finished_d4 .ProgressLineImpose_glow_a5 {
     display: none;
 }
 .ProgressLineImpose_base__small_55 .ProgressLineImpose_glow_a5 {
-    width: 44rem;
-    height: 43rem;
+    width: var(--progress-glow-small-width);
+    height: var(--progress-glow-small-height);
     background-image: var(--progress-glow-small);
 }
 
@@ -583,6 +560,30 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 .ProgressBarDeltaGrow_base__withoutBounce_b5 .ProgressBarDeltaGrow_glow_68 {
     transition-timing-function: cubic-bezier(1, 0, 0.75, 0.75);
+}
+
+/*
+    Gameface can't calculate gradient biggest than 8128px
+    in JS 8000 reserved like anchor for start optimization
+*/
+/* stylelint-disable-line */
+.ProgressBarDeltaSimple_base_6c {
+    width: 0;
+    height: 100%;
+    position: absolute;
+    top: 0;
+}
+.ProgressBarDeltaSimple_delta_99 {
+    width: 0;
+    max-width: 8001px;
+    height: 100%;
+    box-shadow: var(--progress-delta-shadow);
+    background-color: var(--progress-delta-color);
+    position: absolute;
+    bottom: 0;
+    transform-origin: right center;
+    transition-timing-function: cubic-bezier(1, 0, 0.92, 1), cubic-bezier(0.21, 0.61, 0.35, 1);
+    transition-property: width, transform;
 }
 
 .IntermediateQuest_base_5b {
@@ -1281,11 +1282,12 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     display: flex;
     width: 100%;
     height: 13rem;
+    visibility: hidden;
     position: relative;
 }
 
-.HorizontalBar_base__nonActive_82 {
-    visibility: hidden;
+.HorizontalBar_base__active_5e {
+    visibility: visible;
 }
 
 .HorizontalBar_base_49 .disable,

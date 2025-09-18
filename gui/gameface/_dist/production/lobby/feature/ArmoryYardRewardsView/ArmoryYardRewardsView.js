@@ -238,7 +238,7 @@
                         setEventHandled: () => h,
                         setInputPaddingsRem: () => o,
                         setSidePaddingsRem: () => c,
-                        whenTutorialReady: () => R,
+                        whenTutorialReady: () => S,
                     }));
                 var r = t(3722),
                     a = t(6112),
@@ -311,7 +311,7 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    R = Promise.all([
+                    S = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : n.U.onDomBuilt(u);
                         }),
@@ -797,7 +797,7 @@
                     };
                 window.ViewEnvHelper = w;
             },
-            2588: (u, e, t) => {
+            5602: (u, e, t) => {
                 'use strict';
                 var r = t(6179),
                     a = t.n(r);
@@ -1283,79 +1283,91 @@
                         }
                     }, [e, u, t]);
                 }
-                var V = t(3403),
-                    q = t(7030);
+                var q = t(3403),
+                    V = t(7030);
                 const Y = (u) => Math.sqrt(1 - Math.pow(u - 1, 2)),
                     z = 400;
-                let K, Q, Z, J, uu, eu, tu, ru;
+                let K;
                 !(function (u) {
                     ((u.Stage = 'stage'), (u.Style = 'style'), (u.Shop = 'shop'));
                 })(K || (K = {}));
-                class au extends a().PureComponent {
-                    render() {
-                        let u;
-                        u = 'gold' === this.props.format ? $.B3.GOLD : $.B3.INTEGRAL;
-                        const e = $.Z5.getNumberFormat(this.props.value, u);
-                        return void 0 !== this.props.value && void 0 !== e ? e : null;
-                    }
-                }
-                ((au.defaultProps = { format: 'integral' }),
-                    (function (u) {
-                        ((u.Items = 'items'),
-                            (u.Equipment = 'equipment'),
-                            (u.Xp = 'xp'),
-                            (u.XpFactor = 'xpFactor'),
-                            (u.Blueprints = 'blueprints'),
-                            (u.BlueprintsAny = 'blueprintsAny'),
-                            (u.Goodies = 'goodies'),
-                            (u.Berths = 'berths'),
-                            (u.Slots = 'slots'),
-                            (u.Tokens = 'tokens'),
-                            (u.CrewSkins = 'crewSkins'),
-                            (u.CrewBooks = 'crewBooks'),
-                            (u.Customizations = 'customizations'),
-                            (u.CreditsFactor = 'creditsFactor'),
-                            (u.Currency = 'currency'),
-                            (u.TankmenXp = 'tankmenXP'),
-                            (u.TankmenXpFactor = 'tankmenXPFactor'),
-                            (u.FreeXpFactor = 'freeXPFactor'),
-                            (u.BattleToken = 'battleToken'),
-                            (u.PremiumUniversal = 'premium_universal'),
-                            (u.Gold = 'gold'),
-                            (u.Credits = 'credits'),
-                            (u.Crystal = 'crystal'),
-                            (u.FreeXp = 'freeXP'),
-                            (u.Premium = 'premium'),
-                            (u.PremiumPlus = 'premium_plus'),
-                            (u.BattlePassPoints = 'battlePassPoints'),
-                            (u.BattlePassSelectToken = 'battlePassSelectToken'),
-                            (u.SelectableBonus = 'selectableBonus'),
-                            (u.StyleProgressToken = 'styleProgressToken'),
-                            (u.TmanToken = 'tmanToken'),
-                            (u.NaturalCover = 'naturalCover'),
-                            (u.BpCoin = 'bpcoin'),
-                            (u.BattlaPassFinalAchievement = 'dossier_achievement'),
-                            (u.BattleBadge = 'dossier_badge'),
-                            (u.NewYearAlbumsAccess = 'newYearAlbumsAccess'),
-                            (u.NewYearFillers = 'ny22Fillers'),
-                            (u.NewYearInvoice = 'newYearInvoice'),
-                            (u.NewYearToyFragments = 'ny22ToyFragments'),
-                            (u.NewYearSlot = 'newYearSlot'),
-                            (u.BonusX5 = 'battle_bonus_x5'),
-                            (u.CrewBonusX3 = 'crew_bonus_x3'),
-                            (u.Vehicles = 'vehicles'),
-                            (u.EpicSelectToken = 'epicSelectToken'),
-                            (u.CollectionItem = 'collectionItem'),
-                            (u.Comp7TokenWeeklyReward = 'comp7TokenWeeklyReward'),
-                            (u.Comp7TokenCouponReward = 'comp7TokenCouponReward'),
-                            (u.BattleBoosterGift = 'battleBooster_gift'),
-                            (u.CosmicLootboxSilver = 'lootBoxToken'),
-                            (u.CosmicLootboxCommon = 'cosmic_2024_2'),
-                            (u.Branch = 'branch'),
-                            (u.VehicleSelect = 'vehicleSelect'),
-                            (u.StyleProgress = 'styleProgress'),
-                            (u.ParagonsUnlocks = 'paragonsUnlocks'));
-                    })(Q || (Q = {})),
+                const Q = ({ format: u, value: e }) => {
+                    const t = ((u, e = 'integral') => {
+                        let t;
+                        return (
+                            (t = 'gold' === e ? $.B3.GOLD : $.B3.INTEGRAL),
+                            void 0 === u ? '' : $.Z5.getNumberFormat(u, t)
+                        );
+                    })(e, u);
+                    return t ? a().createElement('span', null, t) : null;
+                };
+                let Z, J, uu, eu, tu, ru, au;
+                (!(function (u) {
+                    ((u.Items = 'items'),
+                        (u.Equipment = 'equipment'),
+                        (u.Xp = 'xp'),
+                        (u.XpFactor = 'xpFactor'),
+                        (u.Blueprints = 'blueprints'),
+                        (u.BlueprintsAny = 'blueprintsAny'),
+                        (u.Goodies = 'goodies'),
+                        (u.Berths = 'berths'),
+                        (u.Slots = 'slots'),
+                        (u.Tokens = 'tokens'),
+                        (u.CrewSkins = 'crewSkins'),
+                        (u.CrewBooks = 'crewBooks'),
+                        (u.Customizations = 'customizations'),
+                        (u.CreditsFactor = 'creditsFactor'),
+                        (u.Currency = 'currency'),
+                        (u.TankmenXp = 'tankmenXP'),
+                        (u.TankmenXpFactor = 'tankmenXPFactor'),
+                        (u.FreeXpFactor = 'freeXPFactor'),
+                        (u.BattleToken = 'battleToken'),
+                        (u.PremiumUniversal = 'premium_universal'),
+                        (u.Gold = 'gold'),
+                        (u.Credits = 'credits'),
+                        (u.Crystal = 'crystal'),
+                        (u.FreeXp = 'freeXP'),
+                        (u.Premium = 'premium'),
+                        (u.PremiumPlus = 'premium_plus'),
+                        (u.BattlePassPoints = 'battlePassPoints'),
+                        (u.BattlePassSelectToken = 'battlePassSelectToken'),
+                        (u.SelectableBonus = 'selectableBonus'),
+                        (u.StyleProgressToken = 'styleProgressToken'),
+                        (u.TmanToken = 'tmanToken'),
+                        (u.NaturalCover = 'naturalCover'),
+                        (u.BpCoin = 'bpcoin'),
+                        (u.BattlaPassFinalAchievement = 'dossier_achievement'),
+                        (u.BattleBadge = 'dossier_badge'),
+                        (u.NewYearAlbumsAccess = 'newYearAlbumsAccess'),
+                        (u.NewYearFillers = 'ny22Fillers'),
+                        (u.NewYearInvoice = 'newYearInvoice'),
+                        (u.NewYearToyFragments = 'ny22ToyFragments'),
+                        (u.NewYearSlot = 'newYearSlot'),
+                        (u.BonusX5 = 'battle_bonus_x5'),
+                        (u.CrewBonusX3 = 'crew_bonus_x3'),
+                        (u.Vehicles = 'vehicles'),
+                        (u.EpicSelectToken = 'epicSelectToken'),
+                        (u.CollectionItem = 'collectionItem'),
+                        (u.Comp7TokenWeeklyReward = 'comp7TokenWeeklyReward'),
+                        (u.Comp7TokenCouponReward = 'comp7TokenCouponReward'),
+                        (u.BattleBoosterGift = 'battleBooster_gift'),
+                        (u.CosmicLootboxSilver = 'lootBoxToken'),
+                        (u.CosmicLootboxCommon = 'cosmic_2024_2'),
+                        (u.Branch = 'branch'),
+                        (u.VehicleSelect = 'vehicleSelect'),
+                        (u.StyleProgress = 'styleProgress'),
+                        (u.ParagonsUnlocks = 'paragonsUnlocks'),
+                        (u.LootBoxToken = 'lootBoxToken'),
+                        (u.GoldenTicket = 'birthday2025_golden_ticket'),
+                        (u.PostStamp = 'giftsystem_4_stamp'),
+                        (u.Quests = 'quests'),
+                        (u.WtStamp = 'stamp'),
+                        (u.WtHunter = 'wt_hunter'),
+                        (u.WtHunterCollection = 'hunter_collection'),
+                        (u.WtTicket = 'wtevent_ticket'),
+                        (u.WtMainPrizeDiscount = 'main_prize_discount'),
+                        (u.WtTicket25 = 'wtevent_ticket25'));
+                })(Z || (Z = {})),
                     (function (u) {
                         ((u.Gold = 'gold'),
                             (u.Credits = 'credits'),
@@ -1394,7 +1406,7 @@
                             (u.BattlePassPoints = 'battlePassPoints'),
                             (u.BattleBadge = 'dossier_badge'),
                             (u.BattleAchievement = 'dossier_achievement'));
-                    })(Z || (Z = {})),
+                    })(J || (J = {})),
                     (function (u) {
                         ((u.Big = 'big'),
                             (u.Small = 'small'),
@@ -1407,32 +1419,32 @@
                             (u.S128x100 = 's128x100'),
                             (u.S80x80 = 's80x80'),
                             (u.S48x48 = 's48x48'));
-                    })(J || (J = {})),
+                    })(uu || (uu = {})),
                     (function (u) {
                         ((u.MULTI = 'multi'),
                             (u.CURRENCY = 'currency'),
                             (u.PREMIUM_PLUS = 'premium_plus'),
                             (u.NUMBER = 'number'),
                             (u.STRING = 'string'));
-                    })(uu || (uu = {})),
-                    (function (u) {
-                        ((u.BATTLE_BOOSTER = 'battleBooster'),
-                            (u.BATTLE_BOOSTER_REPLACE = 'battleBoosterReplace'),
-                            (u.BUILT_IN_EQUIPMENT = 'builtInEquipment'),
-                            (u.EQUIPMENT_PLUS = 'equipmentPlus'),
-                            (u.EQUIPMENT_TROPHY_BASIC = 'equipmentTrophyBasic'),
-                            (u.EQUIPMENT_TROPHY_UPGRADED = 'equipmentTrophyUpgraded'),
-                            (u.EQUIPMENT_MODERNIZED_UPGRADED_1 = 'equipmentModernized_1'),
-                            (u.EQUIPMENT_MODERNIZED_UPGRADED_2 = 'equipmentModernized_2'),
-                            (u.EQUIPMENT_MODERNIZED_UPGRADED_3 = 'equipmentModernized_3'),
-                            (u.PROGRESSION_STYLE_UPGRADED_1 = 'progressionStyleUpgraded_1'),
-                            (u.PROGRESSION_STYLE_UPGRADED_2 = 'progressionStyleUpgraded_2'),
-                            (u.PROGRESSION_STYLE_UPGRADED_3 = 'progressionStyleUpgraded_3'),
-                            (u.PROGRESSION_STYLE_UPGRADED_4 = 'progressionStyleUpgraded_4'));
                     })(eu || (eu = {})),
                     (function (u) {
-                        u.BATTLE_BOOSTER = 'battleBooster';
+                        ((u.BATTLE_BOOSTER = 'battleBooster'),
+                            (u.BATTLE_BOOSTER_REPLACE = 'battleBoosterReplace'),
+                            (u.BUILT_IN_EQUIPMENT = 'builtInEquipment'),
+                            (u.EQUIPMENT_PLUS = 'equipmentPlus'),
+                            (u.EQUIPMENT_TROPHY_BASIC = 'equipmentTrophyBasic'),
+                            (u.EQUIPMENT_TROPHY_UPGRADED = 'equipmentTrophyUpgraded'),
+                            (u.EQUIPMENT_MODERNIZED_UPGRADED_1 = 'equipmentModernized_1'),
+                            (u.EQUIPMENT_MODERNIZED_UPGRADED_2 = 'equipmentModernized_2'),
+                            (u.EQUIPMENT_MODERNIZED_UPGRADED_3 = 'equipmentModernized_3'),
+                            (u.PROGRESSION_STYLE_UPGRADED_1 = 'progressionStyleUpgraded_1'),
+                            (u.PROGRESSION_STYLE_UPGRADED_2 = 'progressionStyleUpgraded_2'),
+                            (u.PROGRESSION_STYLE_UPGRADED_3 = 'progressionStyleUpgraded_3'),
+                            (u.PROGRESSION_STYLE_UPGRADED_4 = 'progressionStyleUpgraded_4'));
                     })(tu || (tu = {})),
+                    (function (u) {
+                        u.BATTLE_BOOSTER = 'battleBooster';
+                    })(ru || (ru = {})),
                     (function (u) {
                         ((u.BATTLE_BOOSTER = 'battleBooster'),
                             (u.BATTLE_BOOSTER_REPLACE = 'battleBoosterReplace'),
@@ -1447,47 +1459,54 @@
                             (u.PROGRESSION_STYLE_UPGRADED_2 = 'progressionStyleUpgraded_2'),
                             (u.PROGRESSION_STYLE_UPGRADED_3 = 'progressionStyleUpgraded_3'),
                             (u.PROGRESSION_STYLE_UPGRADED_4 = 'progressionStyleUpgraded_4'));
-                    })(ru || (ru = {})));
+                    })(au || (au = {})));
                 const nu = [
-                        Q.Items,
-                        Q.Equipment,
-                        Q.Xp,
-                        Q.XpFactor,
-                        Q.Blueprints,
-                        Q.BlueprintsAny,
-                        Q.Goodies,
-                        Q.Berths,
-                        Q.Slots,
-                        Q.Tokens,
-                        Q.CrewSkins,
-                        Q.CrewBooks,
-                        Q.Customizations,
-                        Q.CreditsFactor,
-                        Q.TankmenXp,
-                        Q.TankmenXpFactor,
-                        Q.FreeXpFactor,
-                        Q.BattleToken,
-                        Q.PremiumUniversal,
-                        Q.NaturalCover,
-                        Q.BpCoin,
-                        Q.BattlePassSelectToken,
-                        Q.BattlaPassFinalAchievement,
-                        Q.BattleBadge,
-                        Q.BonusX5,
-                        Q.CrewBonusX3,
-                        Q.NewYearFillers,
-                        Q.NewYearInvoice,
-                        Q.EpicSelectToken,
-                        Q.Comp7TokenWeeklyReward,
-                        Q.Comp7TokenCouponReward,
-                        Q.BattleBoosterGift,
-                        Q.CosmicLootboxCommon,
-                        Q.CosmicLootboxSilver,
-                        Q.SelectableBonus,
+                        Z.Items,
+                        Z.Equipment,
+                        Z.Xp,
+                        Z.XpFactor,
+                        Z.Blueprints,
+                        Z.BlueprintsAny,
+                        Z.Goodies,
+                        Z.Berths,
+                        Z.Slots,
+                        Z.Tokens,
+                        Z.CrewSkins,
+                        Z.CrewBooks,
+                        Z.Customizations,
+                        Z.CreditsFactor,
+                        Z.TankmenXp,
+                        Z.TankmenXpFactor,
+                        Z.FreeXpFactor,
+                        Z.BattleToken,
+                        Z.PremiumUniversal,
+                        Z.NaturalCover,
+                        Z.BpCoin,
+                        Z.BattlePassSelectToken,
+                        Z.BattlaPassFinalAchievement,
+                        Z.BattleBadge,
+                        Z.BonusX5,
+                        Z.CrewBonusX3,
+                        Z.NewYearFillers,
+                        Z.NewYearInvoice,
+                        Z.EpicSelectToken,
+                        Z.Comp7TokenWeeklyReward,
+                        Z.Comp7TokenCouponReward,
+                        Z.BattleBoosterGift,
+                        Z.CosmicLootboxCommon,
+                        Z.CosmicLootboxSilver,
+                        Z.SelectableBonus,
+                        Z.GoldenTicket,
+                        Z.PostStamp,
+                        Z.WtStamp,
+                        Z.WtTicket,
+                        Z.WtMainPrizeDiscount,
+                        Z.WtHunter,
+                        Z.WtHunterCollection,
                     ],
-                    iu = [Q.Gold, Q.Credits, Q.Crystal, Q.FreeXp],
-                    su = [Q.BattlePassPoints],
-                    ou = [Q.PremiumPlus, Q.Premium],
+                    iu = [Z.Gold, Z.Credits, Z.Crystal, Z.FreeXp],
+                    su = [Z.BattlePassPoints],
+                    ou = [Z.PremiumPlus, Z.Premium],
                     lu = ['engravings', 'backgrounds'],
                     Eu = ['engraving', 'background'],
                     cu = (u, e, t) => {
@@ -1527,7 +1546,7 @@
                             image: (e) =>
                                 'premium_universal' === u.name
                                     ? `R.images.gui.maps.icons.quests.bonuses.${e}.premium_plus_universal`
-                                    : ((u, e = J.Small) => {
+                                    : ((u, e = uu.Small) => {
                                           const t = u.name,
                                               r = u.type,
                                               a = u.value,
@@ -1536,17 +1555,17 @@
                                               s = u.dogTagType,
                                               o = ((u) => {
                                                   switch (u) {
-                                                      case J.S600x450:
+                                                      case uu.S600x450:
                                                           return 'c_600x450';
-                                                      case J.S400x300:
+                                                      case uu.S400x300:
                                                           return 'c_400x300';
-                                                      case J.S296x222:
+                                                      case uu.S296x222:
                                                           return 'c_296x222';
-                                                      case J.S232x174:
+                                                      case uu.S232x174:
                                                           return 'c_232x174';
-                                                      case J.Big:
+                                                      case uu.Big:
                                                           return 'c_80x80';
-                                                      case J.Small:
+                                                      case uu.Small:
                                                           return 'c_48x48';
                                                       default:
                                                           return u;
@@ -1570,9 +1589,9 @@
                                               case 'battleToken':
                                                   return ((u, e) => {
                                                       switch (e) {
-                                                          case J.Big:
+                                                          case uu.Big:
                                                               return u.iconBig.replace('..', 'img://gui');
-                                                          case J.Small:
+                                                          case uu.Small:
                                                               return u.iconSmall.replace('..', 'img://gui');
                                                           default:
                                                               return `R.images.gui.maps.icons.quests.bonuses.${e}.${u.icon}`;
@@ -1598,7 +1617,28 @@
                                               case 'dossier_badge':
                                                   return `R.images.gui.maps.icons.quests.bonuses.badges.${o}.${n}`;
                                               case 'dossier_achievement':
-                                                  return `R.images.gui.maps.icons.achievement.${o}.${n}`;
+                                                  return `R.images.gui.maps.icons.achievement.${((u) => {
+                                                      switch (u) {
+                                                          case uu.S600x450:
+                                                              return 'c_600x450';
+                                                          case uu.S400x300:
+                                                              return 'c_400x300';
+                                                          case uu.S296x222:
+                                                              return 'c_296x222';
+                                                          case uu.S232x174:
+                                                              return 'c_232x174';
+                                                          case uu.S180x135:
+                                                              return 'big';
+                                                          case uu.Big:
+                                                          case uu.S80x80:
+                                                              return 'c_80x80';
+                                                          case uu.Small:
+                                                          case uu.S48x48:
+                                                              return 'c_48x48';
+                                                          default:
+                                                              return u;
+                                                      }
+                                                  })(e)}.${n}`;
                                               case 'xp':
                                               case 'xpFactor':
                                                   return `R.images.gui.maps.icons.quests.bonuses.${e}.exp`;
@@ -1633,14 +1673,14 @@
                             valueType:
                                 ((e = u.name),
                                 nu.includes(e)
-                                    ? uu.MULTI
+                                    ? eu.MULTI
                                     : iu.includes(e)
-                                      ? uu.CURRENCY
+                                      ? eu.CURRENCY
                                       : su.includes(e)
-                                        ? uu.NUMBER
+                                        ? eu.NUMBER
                                         : ou.includes(e)
-                                          ? uu.PREMIUM_PLUS
-                                          : uu.STRING),
+                                          ? eu.PREMIUM_PLUS
+                                          : eu.STRING),
                             label: u.label,
                             special: u.overlayType,
                             tooltipArgs: cu({ tooltipId: u.tooltipId }),
@@ -2109,10 +2149,10 @@
                         );
                         var S;
                     },
-                    Ru = ['children'];
-                function Su() {
+                    Su = ['children'];
+                function Ru() {
                     return (
-                        (Su =
+                        (Ru =
                             Object.assign ||
                             function (u) {
                                 for (var e = 1; e < arguments.length; e++) {
@@ -2121,7 +2161,7 @@
                                 }
                                 return u;
                             }),
-                        Su.apply(this, arguments)
+                        Ru.apply(this, arguments)
                     );
                 }
                 const xu = (u) => {
@@ -2134,10 +2174,10 @@
                                     n = Object.keys(u);
                                 for (r = 0; r < n.length; r++) ((t = n[r]), e.indexOf(t) >= 0 || (a[t] = u[t]));
                                 return a;
-                            })(u, Ru);
+                            })(u, Su);
                         return a().createElement(
                             fu,
-                            Su(
+                            Ru(
                                 {
                                     contentId:
                                         R.views.common.tooltip_window.backport_tooltip_content.BackportTooltipContent(
@@ -2257,7 +2297,7 @@
                         name: u,
                         image: e,
                         isPeriodic: t = !1,
-                        size: r = J.Big,
+                        size: r = uu.Big,
                         special: n,
                         value: i,
                         valueType: s,
@@ -2270,53 +2310,53 @@
                         const _ = ((u) => {
                                 if (void 0 === u) return null;
                                 switch (u) {
-                                    case eu.BATTLE_BOOSTER:
-                                    case eu.BATTLE_BOOSTER_REPLACE:
-                                        return tu.BATTLE_BOOSTER;
+                                    case tu.BATTLE_BOOSTER:
+                                    case tu.BATTLE_BOOSTER_REPLACE:
+                                        return ru.BATTLE_BOOSTER;
                                 }
                             })(n),
                             F = ((u) => {
                                 if (void 0 === u) return null;
                                 switch (u) {
-                                    case eu.BATTLE_BOOSTER:
-                                        return ru.BATTLE_BOOSTER;
-                                    case eu.BATTLE_BOOSTER_REPLACE:
-                                        return ru.BATTLE_BOOSTER_REPLACE;
-                                    case eu.BUILT_IN_EQUIPMENT:
-                                        return ru.BUILT_IN_EQUIPMENT;
-                                    case eu.EQUIPMENT_PLUS:
-                                        return ru.EQUIPMENT_PLUS;
-                                    case eu.EQUIPMENT_TROPHY_BASIC:
-                                        return ru.EQUIPMENT_TROPHY_BASIC;
-                                    case eu.EQUIPMENT_TROPHY_UPGRADED:
-                                        return ru.EQUIPMENT_TROPHY_UPGRADED;
-                                    case eu.EQUIPMENT_MODERNIZED_UPGRADED_1:
-                                        return ru.EQUIPMENT_MODERNIZED_UPGRADED_1;
-                                    case eu.EQUIPMENT_MODERNIZED_UPGRADED_2:
-                                        return ru.EQUIPMENT_MODERNIZED_UPGRADED_2;
-                                    case eu.EQUIPMENT_MODERNIZED_UPGRADED_3:
-                                        return ru.EQUIPMENT_MODERNIZED_UPGRADED_3;
-                                    case eu.PROGRESSION_STYLE_UPGRADED_1:
-                                        return ru.PROGRESSION_STYLE_UPGRADED_1;
-                                    case eu.PROGRESSION_STYLE_UPGRADED_2:
-                                        return ru.PROGRESSION_STYLE_UPGRADED_2;
-                                    case eu.PROGRESSION_STYLE_UPGRADED_3:
-                                        return ru.PROGRESSION_STYLE_UPGRADED_3;
-                                    case eu.PROGRESSION_STYLE_UPGRADED_4:
-                                        return ru.PROGRESSION_STYLE_UPGRADED_4;
+                                    case tu.BATTLE_BOOSTER:
+                                        return au.BATTLE_BOOSTER;
+                                    case tu.BATTLE_BOOSTER_REPLACE:
+                                        return au.BATTLE_BOOSTER_REPLACE;
+                                    case tu.BUILT_IN_EQUIPMENT:
+                                        return au.BUILT_IN_EQUIPMENT;
+                                    case tu.EQUIPMENT_PLUS:
+                                        return au.EQUIPMENT_PLUS;
+                                    case tu.EQUIPMENT_TROPHY_BASIC:
+                                        return au.EQUIPMENT_TROPHY_BASIC;
+                                    case tu.EQUIPMENT_TROPHY_UPGRADED:
+                                        return au.EQUIPMENT_TROPHY_UPGRADED;
+                                    case tu.EQUIPMENT_MODERNIZED_UPGRADED_1:
+                                        return au.EQUIPMENT_MODERNIZED_UPGRADED_1;
+                                    case tu.EQUIPMENT_MODERNIZED_UPGRADED_2:
+                                        return au.EQUIPMENT_MODERNIZED_UPGRADED_2;
+                                    case tu.EQUIPMENT_MODERNIZED_UPGRADED_3:
+                                        return au.EQUIPMENT_MODERNIZED_UPGRADED_3;
+                                    case tu.PROGRESSION_STYLE_UPGRADED_1:
+                                        return au.PROGRESSION_STYLE_UPGRADED_1;
+                                    case tu.PROGRESSION_STYLE_UPGRADED_2:
+                                        return au.PROGRESSION_STYLE_UPGRADED_2;
+                                    case tu.PROGRESSION_STYLE_UPGRADED_3:
+                                        return au.PROGRESSION_STYLE_UPGRADED_3;
+                                    case tu.PROGRESSION_STYLE_UPGRADED_4:
+                                        return au.PROGRESSION_STYLE_UPGRADED_4;
                                 }
                             })(n),
                             m = ((u, e) => {
                                 if (void 0 === u) return null;
                                 switch (e) {
-                                    case uu.MULTI: {
+                                    case eu.MULTI: {
                                         const e = Number(u);
                                         return isFinite(e) && e > 1 ? `x${Math.floor(e)}` : null;
                                     }
-                                    case uu.CURRENCY:
-                                    case uu.NUMBER:
-                                        return a().createElement(au, { format: 'integral', value: Number(u) });
-                                    case uu.PREMIUM_PLUS: {
+                                    case eu.CURRENCY:
+                                    case eu.NUMBER:
+                                        return a().createElement(Q, { format: 'integral', value: Number(u) });
+                                    case eu.PREMIUM_PLUS: {
                                         const e = Number(u);
                                         return isNaN(e) ? u : null;
                                     }
@@ -2363,7 +2403,7 @@
                                                 className: C()(
                                                     Nu.info,
                                                     Nu[`info__${u}`],
-                                                    s === uu.MULTI && Nu.info__multi,
+                                                    s === eu.MULTI && Nu.info__multi,
                                                     null == E ? void 0 : E.info,
                                                 ),
                                             },
@@ -2382,7 +2422,7 @@
                         );
                     },
                     Iu = ({ index: u = 0, delay: e = 0, children: t }) => {
-                        const r = (0, q.useSpring)({
+                        const r = (0, V.useSpring)({
                             from: { scale: 1.2, opacity: 0, transform: 'translateY(20rem)' },
                             to: { scale: 1, opacity: 1, transform: 'translateY(0)' },
                             delay: e + 900 + 200 * u,
@@ -2391,7 +2431,7 @@
                                 k(R.sounds.gui_random_reward_appear());
                             },
                         });
-                        return a().createElement(q.animated.div, { className: 'AnimatedReward_base_51', style: r }, t);
+                        return a().createElement(V.animated.div, { className: 'AnimatedReward_base_51', style: r }, t);
                     };
                 function Hu() {
                     return (
@@ -2408,8 +2448,8 @@
                     );
                 }
                 const Uu = ({ reward: u, index: e = 0 }) => {
-                    const t = w().mediaSize < p.Medium ? J.S296x222 : J.S400x300,
-                        r = u.valueType === uu.CURRENCY || u.valueType === uu.NUMBER;
+                    const t = w().mediaSize < p.Medium ? uu.S296x222 : uu.S400x300,
+                        r = u.valueType === eu.CURRENCY || u.valueType === eu.NUMBER;
                     return a().createElement(
                         'div',
                         { className: 'MainReward_base_6e' },
@@ -2451,7 +2491,7 @@
                         }
                     },
                     ju = (u, e, t = Gu.left) => u.split(e).reduce(t === Gu.left ? $u : Xu, []),
-                    Vu = (() => {
+                    qu = (() => {
                         const u = new RegExp(
                             /[\(\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]?[\u3002\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]?[ %\+\x2D-9A-Za-\{\}\xA0\xC0-\u0237\u2013\u2014\u2026]+[\)\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3002\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\uFF01\uFF0C\uFF1A\uFF1B\uFF1F\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]?[\u3002\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]?/gmu
                                 .source +
@@ -2472,7 +2512,7 @@
                                 .replace(/ /g, ' ')
                                 .match(u);
                     })(),
-                    qu = ['zh_cn', 'zh_sg', 'zh_tw'],
+                    Vu = ['zh_cn', 'zh_sg', 'zh_tw'],
                     Yu = 'RewardList_reward_85',
                     zu = 'RewardList_reward__info_2b';
                 function Ku() {
@@ -2490,7 +2530,7 @@
                     );
                 }
                 const Qu = ({ data: u, maxRewards: e = 0, showDelay: t = 0 }) => {
-                        const n = w().mediaSize < p.Medium ? J.Small : J.Big,
+                        const n = w().mediaSize < p.Medium ? uu.Small : uu.Big,
                             i = Boolean(e) && e < u.length,
                             s = i ? u.slice(0, e - 1) : u,
                             o = (0, r.useMemo)(
@@ -2583,7 +2623,7 @@
                         Ju.apply(this, arguments)
                     );
                 }
-                const ue = (0, V.Pi)(() => {
+                const ue = (0, q.Pi)(() => {
                         const u = pu().model,
                             e = u.computes.getIsShopWithVehicle(),
                             t = u.computes.getVehicleRewards(),
@@ -2966,8 +3006,8 @@
                                       (v && 'space-around') ||
                                       void 0
                                     : w,
-                            R = u.alignItems,
-                            S = void 0 === R ? (g ? 'flex-start' : h && 'center') || (p && 'flex-end') || void 0 : R,
+                            S = u.alignItems,
+                            R = void 0 === S ? (g ? 'flex-start' : h && 'center') || (p && 'flex-end') || void 0 : S,
                             x = u.alignSelf,
                             T = u.wrap,
                             M = u.flexWrap,
@@ -3005,15 +3045,15 @@
                                         height: void 0 !== n && 'number' == typeof n ? n + 'rem' : n,
                                         flex: N,
                                         alignSelf: x,
-                                        display: B || S ? 'flex' : void 0,
+                                        display: B || R ? 'flex' : void 0,
                                         flexDirection: B,
                                         flexWrap: y,
                                         justifyContent: f,
-                                        alignItems: S,
+                                        alignItems: R,
                                     }),
                                     computedClassNames: e,
                                 };
-                            }, [t, n, o, E, A, F, k, N, x, B, y, f, S]),
+                            }, [t, n, o, E, A, F, k, N, x, B, y, f, R]),
                             G = U.computedStyle,
                             W = U.computedClassNames;
                         return a().createElement('div', De({ className: C()(Fe.base, ...W, e), style: G }, H), I);
@@ -3034,8 +3074,8 @@
                                                       ? t[u]
                                                       : ((u, e = Gu.left) => {
                                                             const t = R.strings.settings.LANGUAGE_CODE().toLowerCase();
-                                                            return qu.includes(t)
-                                                                ? Vu(u)
+                                                            return Vu.includes(t)
+                                                                ? qu(u)
                                                                 : ((u, e = Gu.left) => {
                                                                       let t = [];
                                                                       const r =
@@ -3117,8 +3157,8 @@
                     );
                 }
                 Object.keys(oe());
-                const Re = Object.keys(be()),
-                    Se = { mt: 'MD', mr: 'SM', mb: 'SM', ml: 'SM' },
+                const Se = Object.keys(be()),
+                    Re = { mt: 'MD', mr: 'SM', mb: 'SM', ml: 'SM' },
                     xe = { mt: 'SM', mr: 'XS', mb: 'XS', ml: 'XS' },
                     Te = { mt: 'XS', mr: 'XS', mb: 'XS', ml: 'XS' },
                     Me =
@@ -3134,8 +3174,8 @@
                         {
                             'heading-H144': { mt: 'XL', mr: 'LG', mb: 'LG', ml: 'LG' },
                             'heading-H73': { mt: 'LG', mr: 'MD', mb: 'MD', ml: 'MD' },
-                            'heading-H56': Se,
-                            'heading-H36': Se,
+                            'heading-H56': Re,
+                            'heading-H36': Re,
                             'heading-H28': xe,
                             'heading-H24': xe,
                             'heading-H24R': xe,
@@ -3155,7 +3195,7 @@
                         (Object.keys(Me),
                         (u) =>
                             u
-                                ? ((u) => Re.includes(u))(u)
+                                ? ((u) => Se.includes(u))(u)
                                     ? { colorClassName: ve[u] }
                                     : { colorStyle: { color: u } }
                                 : {}),
@@ -3210,7 +3250,7 @@
                         );
                     }),
                     Oe = R.strings.armory_yard.rewardsView,
-                    Pe = (0, V.Pi)(() => {
+                    Pe = (0, q.Pi)(() => {
                         const u = pu(),
                             e = u.model,
                             t = u.controls,
@@ -3239,7 +3279,7 @@
                         );
                     }),
                     Ne = R.strings.armory_yard.rewardsView,
-                    ke = (0, V.Pi)(() => {
+                    ke = (0, q.Pi)(() => {
                         const u = pu().model,
                             e = u.state.get(),
                             t = u.stages.get();
@@ -3287,7 +3327,7 @@
                     He = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3],
                     Ue = ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE()),
                     Ge = R.strings.armory_yard.rewardsView.vehicle,
-                    We = (0, V.Pi)(() => {
+                    We = (0, q.Pi)(() => {
                         const u = pu().model,
                             e = w().mediaSize < p.Medium,
                             t = u.stages.get(),
@@ -3344,23 +3384,28 @@
                         );
                         var s;
                     }),
-                    $e = (0, V.Pi)(() => {
+                    $e = (0, q.Pi)(() => {
                         const u = pu(),
                             e = u.model,
                             t = u.controls,
                             n = (0, r.useState)(!0),
-                            i = n[0],
-                            s = n[1],
-                            o = e.computes.getFooterShowDelay(),
-                            l = e.computes.getIsShopWithVehicle();
-                        var E;
-                        ((E = t.close), j(W.n.ESCAPE, E));
-                        const c = (0, q.useSpring)({
+                            s = n[0],
+                            o = n[1],
+                            l = e.computes.getFooterShowDelay(),
+                            E = e.computes.getIsShopWithVehicle();
+                        !(function ({
+                            key: u = W.n.ESCAPE,
+                            callback: e = () => i.O.view.sendEvent.close(),
+                            preventPropagation: t = !0,
+                        } = {}) {
+                            j(u, e, t);
+                        })({ callback: t.close });
+                        const c = (0, V.useSpring)({
                             from: { opacity: 0, transform: 'translateY(20rem)' },
                             to: { opacity: 1, transform: 'translateY(0)' },
-                            delay: o + 900,
+                            delay: l + 900,
                             config: { duration: z, easing: Y },
-                            onRest: () => s(!1),
+                            onRest: () => o(!1),
                         });
                         return (
                             (0, r.useEffect)(() => {
@@ -3372,12 +3417,12 @@
                                 a().createElement('div', { className: 'App_vignette_ea' }),
                                 a().createElement(
                                     'div',
-                                    { className: C()('App_header_f2', l && 'App_header__withVehicle_e1') },
-                                    l ? a().createElement(We, null) : a().createElement(ke, null),
+                                    { className: C()('App_header_f2', E && 'App_header__withVehicle_e1') },
+                                    E ? a().createElement(We, null) : a().createElement(ke, null),
                                 ),
                                 a().createElement(
                                     'div',
-                                    { className: C()('App_content_e6', l && 'App_content__withVehicle_36') },
+                                    { className: C()('App_content_e6', E && 'App_content__withVehicle_36') },
                                     a().createElement(ue, null),
                                 ),
                                 a().createElement(G, {
@@ -3388,12 +3433,12 @@
                                     onClick: t.close,
                                 }),
                                 a().createElement(
-                                    q.animated.div,
+                                    V.animated.div,
                                     {
                                         className: C()(
                                             'App_footer_95',
-                                            l && 'App_footer__withVehicle_1a',
-                                            i && 'App_footer__disabled_98',
+                                            E && 'App_footer__withVehicle_1a',
+                                            s && 'App_footer__disabled_98',
                                         ),
                                         style: c,
                                     },
@@ -3430,7 +3475,7 @@
                                 name: 'credits',
                                 value: '100000',
                                 valueType: 'currency',
-                                label: 'Кредиты',
+                                label: 'Серебро',
                                 tooltipArgs: {
                                     args: { tooltipId: '1' },
                                     isEnabled: !0,
@@ -3456,7 +3501,7 @@
                                 name: 'credits',
                                 value: '100000',
                                 valueType: 'currency',
-                                label: 'Кредиты',
+                                label: 'Серебро',
                                 tooltipArgs: {
                                     args: { tooltipId: '1' },
                                     isEnabled: !0,
@@ -3540,8 +3585,8 @@
                             },
                         ],
                     },
-                    Ve = {
-                        getter: ((qe = je), (u) => (u ? u.split('.').reduce((u, e) => u[e], qe) : qe)),
+                    qe = {
+                        getter: ((Ve = je), (u) => (u ? u.split('.').reduce((u, e) => u[e], Ve) : Ve)),
                         computes: {
                             getVehicleRewards: () => je.vehicles,
                             getMainRewards: () => je.mainRewards,
@@ -3566,12 +3611,12 @@
                                 },
                             }),
                     };
-                var qe;
+                var Ve;
                 engine.whenReady.then(() => {
                     N().render(
                         a().createElement(
                             hu,
-                            { mode: 'real', mocks: Ve },
+                            { mode: 'real', mocks: qe },
                             a().createElement(O, null, a().createElement($e, null)),
                         ),
                         document.getElementById('root'),
@@ -3655,6 +3700,6 @@
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             (t.forEach(e.bind(null, 0)), (t.push = e.bind(null, t.push.bind(t))));
         })());
-    var __webpack_exports__ = __webpack_require__.O(void 0, [503], () => __webpack_require__(2588));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [503], () => __webpack_require__(5602));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

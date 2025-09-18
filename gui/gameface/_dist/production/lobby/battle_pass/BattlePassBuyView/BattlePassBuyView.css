@@ -1,236 +1,3 @@
-/* colors*/
-
-/* buttons*/
-
-@keyframes BattlePassBuyView_fadeOut_92 {
-    0% {
-        opacity: 1;
-    }
-
-    100% {
-        opacity: 0;
-    }
-}
-
-@keyframes BattlePassBuyView_fadeIn_ab {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
-
-@keyframes BattlePassBuyView_fadeInWithScale_b5 {
-    0% {
-        opacity: 0;
-        transform: scale(1.2);
-    }
-
-    100% {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-@keyframes BattlePassBuyView_slideUp_72 {
-    0% {
-        opacity: 0;
-        transform: translateY(20rem);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes BattlePassBuyView_scale_fc {
-    0% {
-        transform: scale(0);
-    }
-
-    100% {
-        transform: scale(1);
-    }
-}
-
-@keyframes BattlePassBuyView_rotate_42 {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
-body {
-    margin: 0;
-}
-
-.BattlePassBuyView_base_d6 {
-    opacity: 0;
-    animation-name: BattlePassBuyView_fadeIn_ab;
-    animation-duration: 0.8s;
-    animation-fill-mode: forwards;
-    animation-timing-function: cubic-bezier(0.07, 0.82, 0.17, 1);
-    animation-delay: 0.1s;
-    animation-iteration-count: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    background: #030511;
-    overflow: hidden;
-    position: relative;
-}
-
-.TextButton_base_b6 {
-    display: flex;
-    align-items: center;
-    padding: 0 3rem;
-    font-size: 12rem;
-    position: relative;
-    cursor: pointer;
-}
-
-.TextButton_base__right_39 {
-    flex-direction: row-reverse;
-}
-.TextButton_icon_17 {
-    width: 32rem;
-    height: 32rem;
-    background: no-repeat center / contain;
-    position: relative;
-}
-.TextButton_icon__back_43,
-.TextButton_icon__forward_59 {
-    margin: -1rem -5rem;
-    background-image: url('R.images.gui.maps.icons.components.text_button.back');
-    transform: translateY(1rem);
-}
-.TextButton_icon__forward_59 {
-    transform: rotate(180deg) translateY(1rem);
-}
-.TextButton_icon__close_53 {
-    margin: -1rem 0;
-    background-image: url('R.images.gui.maps.icons.components.text_button.close');
-}
-.TextButton_icon__info_33 {
-    margin: -1rem -5rem;
-    background-image: url('R.images.gui.maps.icons.components.text_button.info');
-}
-.TextButton_glow_a4 {
-    width: 100%;
-    height: 100%;
-    background: no-repeat center / contain;
-    opacity: 0;
-    position: absolute;
-    top: 0;
-    transition: opacity 0.16s;
-}
-.TextButton_icon__back_43 .TextButton_glow_a4,
-.TextButton_icon__forward_59 .TextButton_glow_a4 {
-    background-image: url('R.images.gui.maps.icons.components.text_button.back_hover');
-}
-.TextButton_icon__close_53 .TextButton_glow_a4 {
-    background-image: url('R.images.gui.maps.icons.components.text_button.close_hover');
-}
-.TextButton_icon__info_33 .TextButton_glow_a4 {
-    background-image: url('R.images.gui.maps.icons.components.text_button.info_hover');
-}
-.TextButton_base_b6:hover .TextButton_glow_a4 {
-    opacity: 1;
-}
-.TextButton_base_b6:active .TextButton_glow_a4 {
-    opacity: 0;
-}
-.TextButton_caption_82 {
-    position: relative;
-    transition:
-        color 0.16s,
-        text-shadow 0.16s;
-}
-.TextButton_caption__back_b9,
-.TextButton_caption__forward_4e,
-.TextButton_caption__close_36 {
-    color: #ffdd99;
-    text-shadow:
-        0 0 10rem rgba(255, 42, 0, 1),
-        0 0 10rem rgba(255, 42, 0, 0.4),
-        0 0 10rem rgba(255, 42, 0, 0.4),
-        0 0 2rem rgba(255, 42, 0, 0.4),
-        0 0 1rem rgba(255, 42, 0, 0.4),
-        0 0 2rem rgba(255, 42, 0, 0.4),
-        0 0 1rem rgba(255, 42, 0, 0.4);
-}
-.TextButton_base_b6:hover .TextButton_caption__back_b9,
-.TextButton_base_b6:hover .TextButton_caption__forward_4e,
-.TextButton_base_b6:hover .TextButton_caption__close_36 {
-    color: #fffa9f;
-}
-.TextButton_base_b6:active .TextButton_caption__back_b9,
-.TextButton_base_b6:active .TextButton_caption__forward_4e,
-.TextButton_base_b6:active .TextButton_caption__close_36 {
-    color: #ffdd99;
-}
-.TextButton_caption__info_23 {
-    padding: 0 5rem;
-    color: #ccffff;
-    text-shadow:
-        0 0 12rem rgba(31, 68, 255, 0.8),
-        0 0 8rem #00eaff;
-}
-.TextButton_base_b6:hover .TextButton_caption__info_23 {
-    color: #e3ffff;
-    text-shadow:
-        0 0 12rem rgba(31, 68, 255, 0.8),
-        0 0 12rem rgba(0, 234, 255, 1),
-        0 0 8rem #00eaff;
-}
-.TextButton_base_b6:active .TextButton_caption__info_23 {
-    color: #ccffff;
-    text-shadow:
-        0 0 12rem rgba(31, 68, 255, 0.6),
-        0 0 8rem #00eaff;
-}
-.TextButton_goto_e7 {
-    color: #7c7c6c;
-}
-.TextButton_base__left_ff .TextButton_goto_e7 {
-    margin-left: 8rem;
-}
-.TextButton_base__right_39 .TextButton_goto_e7 {
-    margin-right: 8rem;
-}
-.TextButton_shine_e2 {
-    width: 90rem;
-    height: 40rem;
-    background: url('R.images.gui.maps.icons.components.text_button.shine') no-repeat center / contain;
-    opacity: 0;
-    position: absolute;
-    top: -4rem;
-    transition: opacity 0.16s;
-    pointer-events: none;
-}
-.TextButton_base__left_ff .TextButton_shine_e2 {
-    left: -4rem;
-}
-.TextButton_base__right_39 .TextButton_shine_e2 {
-    right: -4rem;
-    transform: rotate(180deg);
-}
-.TextButton_base_b6:hover .TextButton_shine_e2 {
-    opacity: 1;
-}
-.TextButton_base_b6:active .TextButton_shine_e2 {
-    opacity: 0;
-}
-
 .ChapterBackground_base_fa {
     background: no-repeat center / cover;
     opacity: 0;
@@ -594,11 +361,12 @@ body {
     display: flex;
     width: 100%;
     height: 13rem;
+    visibility: hidden;
     position: relative;
 }
 
-.HorizontalBar_base__nonActive_82 {
-    visibility: hidden;
+.HorizontalBar_base__active_5e {
+    visibility: visible;
 }
 
 .HorizontalBar_base_49 .disable,
@@ -695,11 +463,12 @@ body {
     flex-direction: column;
     width: 13rem;
     height: 100%;
+    visibility: hidden;
     position: relative;
 }
 
-.VerticalBar_base__nonActive_42 {
-    visibility: hidden;
+.VerticalBar_base__active_72 {
+    visibility: visible;
 }
 
 .VerticalBar_base_f3 .disable,
@@ -969,7 +738,8 @@ body {
     right: 0;
     bottom: 0;
     left: 0;
-    z-index: -1;
+    z-index: 0;
+    pointer-events: none;
 }
 
 .RewardsViewContent_shadow_2a {
@@ -980,13 +750,6 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-}
-
-.RewardsViewContent_back_96 {
-    position: absolute;
-    top: 75rem;
-    left: 35rem;
-    z-index: 1;
 }
 
 /* colors*/
@@ -1060,6 +823,7 @@ body {
 .BattlePassBuyViewContent_base_85 {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     width: 100%;
     height: 100%;
@@ -1067,6 +831,10 @@ body {
     overflow: hidden;
     position: relative;
     z-index: 0;
+}
+
+.mediaMedium .BattlePassBuyViewContent_base_85 {
+    padding-top: 60rem;
 }
 
 .mediaLarge .BattlePassBuyViewContent_base_85 {
@@ -1115,23 +883,28 @@ body {
     z-index: 2;
 }
 
-.BattlePassBuyViewContent_back_d2 {
-    position: absolute;
-    top: 75rem;
-    left: 35rem;
-    z-index: 1;
-}
-
 .BattlePassBuyViewContent_header_50 {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-bottom: 20rem;
+    margin-bottom: 30rem;
     text-align: center;
 }
 
-.mediaLarge .BattlePassBuyViewContent_header_50 {
+.mediaSmall .BattlePassBuyViewContent_header_50 {
     margin-bottom: 40rem;
+}
+
+.mediaMedium .BattlePassBuyViewContent_header_50 {
+    margin-bottom: 60rem;
+}
+
+.mediaLarge .BattlePassBuyViewContent_header_50 {
+    margin-bottom: 80rem;
+}
+
+.mediaExtraLarge .BattlePassBuyViewContent_header_50 {
+    margin-bottom: 100rem;
 }
 
 .BattlePassBuyViewContent_title_8a {
@@ -1142,7 +915,7 @@ body {
     margin-bottom: 10rem;
 }
 
-.mediaLarge .BattlePassBuyViewContent_title_8a {
+.mediaMedium .BattlePassBuyViewContent_title_8a {
     color: #f2f2f7;
     font-size: 56rem;
     font-weight: 700;
@@ -1186,6 +959,9 @@ body {
     position: relative;
     transform: scale(1);
     transition: transform 0.2s cubic-bezier(0.37, 0, 0.63, 1);
+}
+.mediaMedium .Illustration_img_44 {
+    height: 388rem;
 }
 .mediaLarge .Illustration_img_44 {
     height: 440rem;
@@ -1366,6 +1142,11 @@ body {
     cursor: pointer;
 }
 
+.mediaMedium .BattlePassBuyExtraCard_base_cf {
+    width: 300rem;
+    height: 590rem;
+}
+
 .mediaLarge .BattlePassBuyExtraCard_base_cf {
     width: 340rem;
     height: 670rem;
@@ -1374,6 +1155,11 @@ body {
 .BattlePassBuyExtraCard_base__small_d2 {
     width: 230rem;
     height: 310rem;
+}
+
+.mediaMedium .BattlePassBuyExtraCard_base__small_d2 {
+    width: 300rem;
+    height: 380rem;
 }
 
 .mediaLarge .BattlePassBuyExtraCard_base__small_d2 {
@@ -1393,7 +1179,7 @@ body {
     display: flex;
     justify-content: center;
     position: absolute;
-    top: 0;
+    top: 20rem;
     left: 0;
 }
 
@@ -1408,6 +1194,10 @@ body {
     transition: transform 0.2s cubic-bezier(0.37, 0, 0.63, 1);
 }
 
+.mediaMedium .BattlePassBuyExtraCard_content_1a {
+    margin-top: 216rem;
+}
+
 .mediaLarge .BattlePassBuyExtraCard_content_1a {
     margin-top: 230rem;
 }
@@ -1416,7 +1206,7 @@ body {
     transform: translateY(-40rem);
 }
 
-.mediaLarge .BattlePassBuyExtraCard_base_cf:hover .BattlePassBuyExtraCard_content_1a {
+.mediaMedium .BattlePassBuyExtraCard_base_cf:hover .BattlePassBuyExtraCard_content_1a {
     transform: translateY(-30rem);
 }
 
@@ -1424,12 +1214,16 @@ body {
     transform: none;
 }
 
-.mediaLarge .BattlePassBuyExtraCard_base__disabled_a5:hover .BattlePassBuyExtraCard_content_1a {
+.mediaMedium .BattlePassBuyExtraCard_base__disabled_a5:hover .BattlePassBuyExtraCard_content_1a {
     transform: none;
 }
 
 .BattlePassBuyExtraCard_base__small_d2 .BattlePassBuyExtraCard_content_1a {
     margin-top: 50rem;
+}
+
+.mediaMedium .BattlePassBuyExtraCard_base__small_d2 .BattlePassBuyExtraCard_content_1a {
+    margin-top: 49rem;
 }
 
 .mediaLarge .BattlePassBuyExtraCard_base__small_d2 .BattlePassBuyExtraCard_content_1a {
@@ -1447,6 +1241,12 @@ body {
     height: 45rem;
     line-height: 1.1;
     text-align: center;
+}
+
+.mediaMedium .BattlePassBuyExtraCard_title_6c {
+    height: 63rem;
+    font-size: 24rem;
+    line-height: 1.15;
 }
 
 .mediaLarge .BattlePassBuyExtraCard_title_6c {
@@ -1491,7 +1291,7 @@ body {
     pointer-events: none;
 }
 
-.mediaLarge .BattlePassBuyExtraCard_chapterActiveText_70 {
+.mediaMedium .BattlePassBuyExtraCard_chapterActiveText_70 {
     color: #ffdd99;
     font-size: 15rem;
     font-weight: 700;
@@ -1569,7 +1369,7 @@ body {
     mask: linear-gradient(180deg, #e9e2bf 27%, rgba(233, 226, 191, 0) 90%);
 }
 
-.mediaLarge .CurrentLevel_level_fb {
+.mediaMedium .CurrentLevel_level_fb {
     color: #e9e2bf;
     font-size: 36rem;
     font-weight: 700;
@@ -1592,7 +1392,7 @@ body {
     line-height: 1.15;
 }
 
-.mediaLarge .CurrentLevel_text_7b {
+.mediaMedium .CurrentLevel_text_7b {
     color: #e9e2bf;
     font-size: 15rem;
     font-weight: 700;
@@ -1630,7 +1430,7 @@ body {
     animation: Description_fade-in_3c 0.8s;
 }
 
-.mediaLarge .Description_text_ee {
+.mediaMedium .Description_text_ee {
     color: #e9e2bf;
     font-size: 16rem;
     font-weight: 400;
@@ -1657,6 +1457,10 @@ body {
     position: relative;
     transition: transform 0.5s;
 }
+.mediaMedium .Logo_base_8b {
+    width: 160rem;
+    height: 120rem;
+}
 .mediaLarge .Logo_base_8b {
     width: 218rem;
     height: 164rem;
@@ -1673,7 +1477,7 @@ body {
     transition: transform 0.2s cubic-bezier(0.37, 0, 0.63, 1) 0.2s;
     pointer-events: none;
 }
-.mediaLarge .Logo_light_62 {
+.mediaMedium .Logo_light_62 {
     width: 400rem;
     height: 400rem;
 }
@@ -1711,10 +1515,8 @@ body {
     position: relative;
 }
 .Currency_icon_c5 {
-    --icon-height: 16rem;
-    --icon-width: var(--icon-height);
-    width: var(--icon-width);
-    height: var(--icon-height);
+    width: 16rem;
+    height: 16rem;
     background-repeat: no-repeat;
     background-size: contain;
     position: relative;
@@ -1733,7 +1535,8 @@ body {
     background-image: url('R.images.gui.maps.icons.library.CreditsIcon_1');
 }
 .Currency_icon__credits-large_ac {
-    --icon-height: 48rem;
+    width: 48rem;
+    height: 48rem;
     margin-left: -1rem;
     background-image: url('R.images.gui.maps.shop.rewards.c_48x48.money_silver');
 }
@@ -1741,7 +1544,8 @@ body {
     transform: translateY(4rem);
 }
 .Currency_icon__credits-extraLarge_16 {
-    --icon-height: 80rem;
+    width: 80rem;
+    height: 80rem;
     margin-right: -2rem;
     background-image: url('R.images.gui.maps.icons.library.credits_icon_80x80');
 }
@@ -1758,7 +1562,8 @@ body {
     transform: translateY(4rem);
 }
 .Currency_icon__gold-large_36 {
-    --icon-height: 48rem;
+    width: 48rem;
+    height: 48rem;
     margin-left: -1rem;
     background-image: url('R.images.gui.maps.shop.rewards.c_48x48.money_gold');
 }
@@ -1766,7 +1571,8 @@ body {
     transform: translateY(4rem);
 }
 .Currency_icon__gold-extraLarge_a0 {
-    --icon-height: 80rem;
+    width: 80rem;
+    height: 80rem;
     background-image: url('R.images.gui.maps.icons.library.gold_icon_80x80');
 }
 .Currency_icon__crystal-small_27 {
@@ -1776,20 +1582,22 @@ body {
     transform: translateY(2rem);
 }
 .Currency_icon__crystal-big_cd {
-    --icon-height: 22rem;
-    --icon-width: 23rem;
+    width: 23rem;
+    height: 22rem;
     background-image: url('R.images.gui.maps.icons.library.crystal_23x22');
 }
 .Currency_base__big_bc .Currency_icon__crystal-big_cd {
     transform: translateY(4rem);
 }
 .Currency_icon__crystal-large_d3 {
-    --icon-height: 48rem;
+    width: 48rem;
+    height: 48rem;
     margin-left: -1rem;
     background-image: url('R.images.gui.maps.shop.rewards.c_48x48.money_bonds');
 }
 .Currency_icon__crystal-extraLarge_09 {
-    --icon-height: 80rem;
+    width: 80rem;
+    height: 80rem;
     background-image: url('R.images.gui.maps.icons.library.crystal_80x80');
 }
 .Currency_base__extraLarge_4d .Currency_icon__crystal-extraLarge_09 {
@@ -1802,8 +1610,8 @@ body {
     transform: translateY(1rem);
 }
 .Currency_icon__xp-big_97 {
-    --icon-height: 22rem;
-    --icon-width: 23rem;
+    width: 23rem;
+    height: 22rem;
     margin-left: -5rem;
     background-image: url('R.images.gui.maps.icons.library.xpIcon_23x22');
 }
@@ -1811,12 +1619,14 @@ body {
     transform: translateY(2rem);
 }
 .Currency_icon__xp-large_6b {
-    --icon-height: 48rem;
+    width: 48rem;
+    height: 48rem;
     margin: 0 -5rem 0 -6rem;
     background-image: url('R.images.gui.maps.shop.rewards.c_48x48.exp');
 }
 .Currency_icon__xp-extraLarge_67 {
-    --icon-height: 80rem;
+    width: 80rem;
+    height: 80rem;
     margin: 0 -5rem;
     background-image: url('R.images.gui.maps.icons.library.xp_tank_icon_80x80');
 }
@@ -1827,17 +1637,20 @@ body {
     transform: translateY(1rem);
 }
 .Currency_icon__freeXP-big_21 {
-    --icon-height: 24rem;
+    width: 24rem;
+    height: 24rem;
     margin-left: -5rem;
     background-image: url('R.images.gui.maps.icons.library.freeXPIconBig24x24');
 }
 .Currency_icon__freeXP-large_c8 {
-    --icon-height: 48rem;
+    width: 48rem;
+    height: 48rem;
     margin: 0 -5rem 0 -6rem;
     background-image: url('R.images.gui.maps.shop.rewards.c_48x48.freeExp');
 }
 .Currency_icon__freeXP-extraLarge_58 {
-    --icon-height: 80rem;
+    width: 80rem;
+    height: 80rem;
     margin: 0 -5rem;
     background-image: url('R.images.gui.maps.icons.library.free_xp_icon_80x80');
 }
@@ -1851,17 +1664,20 @@ body {
     transform: translateY(1rem);
 }
 .Currency_icon__eliteXP-big_c0 {
-    --icon-height: 24rem;
+    width: 24rem;
+    height: 24rem;
     margin-left: -5rem;
     background-image: url('R.images.gui.maps.icons.library.EliteXpIconBig');
 }
 .Currency_icon__eliteXP-large_1b {
-    --icon-height: 48rem;
+    width: 48rem;
+    height: 48rem;
     margin: 0 -5rem 0 -6rem;
     background-image: url('R.images.gui.maps.icons.library.elite_exp_48x48');
 }
 .Currency_icon__eliteXP-extraLarge_9b {
-    --icon-height: 80rem;
+    width: 80rem;
+    height: 80rem;
     margin: 0 -5rem;
     background-image: url('R.images.gui.maps.icons.library.elite_exp_80x80');
 }
@@ -1869,7 +1685,8 @@ body {
     transform: translateY(4rem);
 }
 .Currency_icon__equipCoin-small_32 {
-    --icon-height: 16rem;
+    width: 16rem;
+    height: 16rem;
     margin-right: -2rem;
     background-image: url('R.images.gui.maps.icons.library.equipCoin_1');
 }
@@ -1877,19 +1694,22 @@ body {
     transform: translateX(-1rem) translateY(1rem);
 }
 .Currency_icon__equipCoin-big_79 {
-    --icon-height: 24rem;
+    width: 24rem;
+    height: 24rem;
     background-image: url('R.images.gui.maps.icons.library.equipCoinBig');
 }
 .Currency_base__big_bc .Currency_icon__equipCoin-big_79 {
     transform: translateX(-5rem) translateY(3rem);
 }
 .Currency_icon__equipCoin-large_2c {
-    --icon-height: 48rem;
+    width: 48rem;
+    height: 48rem;
     margin-right: 2rem;
     background-image: url('R.images.gui.maps.shop.rewards.c_48x48.equipCoin');
 }
 .Currency_icon__equipCoin-extraLarge_8a {
-    --icon-height: 80rem;
+    width: 80rem;
+    height: 80rem;
     margin-right: 8rem;
     background-image: url('R.images.gui.maps.icons.library.equipCoin_icon_80x80');
 }
@@ -1899,8 +1719,7 @@ body {
 .Currency_value_e1 {
     /* font-size inherit does not work here, so 1em means the size does not change */
     /* stylelint-disable-next-line */
-    --font-size: 1em;
-    font-size: var(--font-size);
+    font-size: 1em;
     position: relative;
     z-index: 2;
 }
@@ -1908,22 +1727,22 @@ body {
     padding-right: 2rem;
 }
 .Currency_base__big_bc .Currency_value_e1 {
-    --font-size: 24rem;
     padding-right: 5rem;
+    font-size: 24rem;
     font-weight: 700;
 }
 .Currency_base__big_bc .Currency_value_e1 + .Currency_icon_c5 {
     font-size: 24rem;
 }
 .Currency_base__large_65 .Currency_value_e1 {
-    --font-size: 36rem;
+    font-size: 36rem;
     font-weight: 700;
 }
 .Currency_base__large_65 .Currency_value_e1 + .Currency_icon_c5 {
     font-size: 36rem;
 }
 .Currency_base__extraLarge_4d .Currency_value_e1 {
-    --font-size: 56rem;
+    font-size: 56rem;
     font-weight: 700;
 }
 .Currency_value__freeXP_cb {
@@ -2002,7 +1821,7 @@ body {
     align-items: center;
     width: 100%;
 }
-.mediaLarge .Price_base_d1 {
+.mediaMedium .Price_base_d1 {
     color: #ffc363;
     font-size: 22rem;
     font-weight: 700;
@@ -2098,6 +1917,11 @@ body {
     cursor: pointer;
 }
 
+.mediaMedium .ShopOfferCard_base_3a {
+    width: 940rem;
+    height: 190rem;
+}
+
 .mediaLarge .ShopOfferCard_base_3a {
     width: 1060rem;
     height: 210rem;
@@ -2124,6 +1948,12 @@ body {
     z-index: 1;
     transform: translate(-50%, -50%);
     pointer-events: none;
+}
+
+.mediaMedium .ShopOfferCard_shopOfferBorder_25 {
+    width: 996rem;
+    height: 246rem;
+    background-image: url('R.images.gui.maps.icons.battlePass.buy.border.extra.halftone_medium');
 }
 
 .mediaLarge .ShopOfferCard_shopOfferBorder_25 {
@@ -2191,6 +2021,10 @@ body {
     margin-left: 320rem;
 }
 
+.mediaMedium .ShopOfferCard_content_ce {
+    margin-left: 420rem;
+}
+
 .mediaLarge .ShopOfferCard_content_ce {
     margin-left: 460rem;
 }
@@ -2201,6 +2035,13 @@ body {
     font-weight: 700;
     line-height: 1.1;
     transition: color 0.2s cubic-bezier(0.37, 0, 0.63, 1);
+}
+
+.mediaMedium .ShopOfferCard_title_4d {
+    color: #ffdd99;
+    font-size: 24rem;
+    font-weight: 700;
+    line-height: 1.2;
 }
 
 .mediaLarge .ShopOfferCard_title_4d {
@@ -2225,7 +2066,7 @@ body {
     transition: color 0.2s cubic-bezier(0.37, 0, 0.63, 1);
 }
 
-.mediaLarge .ShopOfferCard_description_1c {
+.mediaMedium .ShopOfferCard_description_1c {
     color: #ffdd99;
     font-size: 16rem;
     font-weight: 400;
@@ -2256,6 +2097,12 @@ body {
     bottom: -0.5rem;
     left: 0;
     transition: background-color 0.2s cubic-bezier(0.37, 0, 0.63, 1);
+}
+
+.mediaMedium .ShopOfferCard_warningOverlay_90 {
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url('R.images.gui.maps.icons.battlePass.buy.block_Medium');
 }
 
 .mediaLarge .ShopOfferCard_warningOverlay_90 {
@@ -2345,8 +2192,6 @@ body {
 .ExtraContent_base_4d {
     display: flex;
     flex-direction: row;
-    min-height: 85%;
-    padding-bottom: 5vh;
 }
 
 .ExtraContent_cardsWrapper_31 {
@@ -2354,6 +2199,11 @@ body {
     flex-direction: column;
     justify-content: center;
     flex: 1;
+    padding-bottom: 5vh;
+}
+
+.mediaMedium .ExtraContent_cardsWrapper_31 {
+    padding-bottom: 5vh;
 }
 
 .ExtraContent_cards_b2 {
@@ -2370,14 +2220,14 @@ body {
     margin-left: 20rem;
 }
 
-.ExtraContent_card__extra_fe {
+.ExtraContent_cardsWrapper_31 + .ExtraContent_card__extra_fe {
     display: flex;
     align-items: center;
     margin-left: 20rem;
+    padding-bottom: 5vh;
 }
 
-.mediaLarge .ExtraContent_base__regular_4d .ExtraContent_card__extra_fe,
-.mediaLarge .ExtraContent_base__extraSingle_3f .ExtraContent_card__extra_fe {
+.mediaMedium .ExtraContent_cardsWrapper_31 + .ExtraContent_card__extra_fe {
     margin-left: 50rem;
 }
 
@@ -3472,10 +3322,10 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 
 .ShopOfferWarning_glow_d4 {
     width: 960rem;
-    height: 240rem;
+    height: 480rem;
     background: url('R.images.gui.maps.icons.battlePass.buy.warningGlow') no-repeat center / contain;
     position: absolute;
-    bottom: 0;
+    bottom: -228rem;
     z-index: 2;
     pointer-events: none;
 }
@@ -3806,7 +3656,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .ConfirmBuyViewContent_shopOfferWarning_a7 {
     width: 100%;
     position: absolute;
-    bottom: 36rem;
+    bottom: 56rem;
 }
 
 .ConfirmBuyViewContent_animatedGlow_77 {

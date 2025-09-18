@@ -758,7 +758,7 @@
                     };
                 window.ViewEnvHelper = f;
             },
-            230: (u, e, t) => {
+            4802: (u, e, t) => {
                 'use strict';
                 var r = t(6179),
                     a = t.n(r);
@@ -1769,37 +1769,42 @@
                         e = u.controls,
                         t = u.model.root.get(),
                         n = t.isWindowAccessible,
-                        i = t.videoName,
-                        E = (0, r.useState)(!1),
-                        s = E[0],
-                        A = E[1],
-                        o = (0, r.useState)(!1),
-                        l = o[0],
-                        F = o[1],
-                        c = parseFloat('16.8s'),
-                        d = (0, r.useCallback)(() => {
-                            s && e.close();
-                        }, [e, s]),
+                        E = t.videoName,
+                        s = (0, r.useState)(!1),
+                        A = s[0],
+                        o = s[1],
+                        l = (0, r.useState)(!1),
+                        F = l[0],
+                        c = l[1],
+                        d = parseFloat('16.8s'),
                         D = (0, r.useCallback)(() => {
-                            s || e.videoStarted();
-                        }, [e, s]),
-                        _ = (0, r.useCallback)(
+                            A && e.close();
+                        }, [e, A]),
+                        _ = (0, r.useCallback)(() => {
+                            A || e.videoStarted();
+                        }, [e, A]),
+                        B = (0, r.useCallback)(
                             (u, e) => {
-                                (!s && u >= c && A(!0), !l && u >= e && F(!0));
+                                (!A && u >= d && o(!0), !F && u >= e && c(!0));
                             },
-                            [s, c, l],
+                            [A, d, F],
                         );
-                    var B;
-                    ((B = d), I(P.n.ESCAPE, B));
+                    !(function ({
+                        key: u = P.n.ESCAPE,
+                        callback: e = () => i.O.view.sendEvent.close(),
+                        preventPropagation: t = !0,
+                    } = {}) {
+                        I(u, e, t);
+                    })({ callback: D });
                     const m = (0, r.useCallback)(() => {
-                        e.onError(`R.videos.armory_yard.${i}`);
-                    }, [e, i]);
+                        e.onError(`R.videos.armory_yard.${E}`);
+                    }, [e, E]);
                     return a().createElement(
                         'div',
                         { className: 'App_base_15' },
                         a().createElement(
                             'div',
-                            { className: C()('App_bg_7e', s && 'App_bg__visible_4c') },
+                            { className: C()('App_bg_7e', A && 'App_bg__visible_4c') },
                             a().createElement('div', { className: 'App_glow_59' }),
                             a().createElement(
                                 'div',
@@ -1808,31 +1813,31 @@
                             ),
                             a().createElement('div', { className: 'App_bottom_bg1_7a' }),
                         ),
-                        i &&
+                        E &&
                             a().createElement(q, {
-                                src: R.videos.armory_yard.$dyn(i),
+                                src: R.videos.armory_yard.$dyn(E),
                                 className: 'App_video_da',
-                                isPaused: !n || l,
+                                isPaused: !n || F,
                                 autoPlay: !0,
-                                onStarted: D,
-                                onUpdated: _,
+                                onStarted: _,
+                                onUpdated: B,
                                 videoWidth: 1920,
                                 videoHeight: 1080,
                                 onError: m,
                             }),
                         a().createElement(
                             'div',
-                            { className: C()('App_header_89', s && 'App_header__visible_7b') },
+                            { className: C()('App_header_89', A && 'App_header__visible_7b') },
                             a().createElement(Du, null),
                         ),
                         a().createElement(
                             'div',
-                            { className: C()('App_glowWhiteAnimate1_21', s && 'App_glowWhiteAnimate1__visible_80') },
+                            { className: C()('App_glowWhiteAnimate1_21', A && 'App_glowWhiteAnimate1__visible_80') },
                             a().createElement('div', { className: 'App_glowWhiteAnimate2_a4' }),
                         ),
                         a().createElement(
                             'div',
-                            { className: C()('App_footer_b0', s && 'App_footer__visible_88') },
+                            { className: C()('App_footer_b0', A && 'App_footer__visible_88') },
                             a().createElement(cu, null),
                         ),
                     );
@@ -1921,6 +1926,6 @@
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             (t.forEach(e.bind(null, 0)), (t.push = e.bind(null, t.push.bind(t))));
         })());
-    var __webpack_exports__ = __webpack_require__.O(void 0, [503], () => __webpack_require__(230));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [503], () => __webpack_require__(4802));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

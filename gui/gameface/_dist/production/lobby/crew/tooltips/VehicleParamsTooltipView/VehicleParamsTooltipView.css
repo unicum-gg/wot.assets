@@ -370,6 +370,11 @@
     color: #8c8c7e;
 }
 
+.FormatText_base_d0 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .Header_base_a0 {
     display: flex;
     flex-direction: column;
@@ -402,17 +407,15 @@
 }
 
 .Header_titleWrapper_6a {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-end;
-    padding-bottom: 7rem;
-}
-
-.Header_title_7f {
     color: #e9e2bf;
     font-size: 18rem;
     font-weight: 700;
     line-height: 1.1;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    padding-bottom: 7rem;
 }
 
 .Header_unitOfMeasurement_1a {
@@ -421,7 +424,7 @@
     font-weight: 700;
     line-height: 1.15;
     margin-left: 5rem;
-    margin-bottom: -1rem;
+    transform: translateY(3rem);
 }
 
 .Header_descriptionWrapper_c3 {

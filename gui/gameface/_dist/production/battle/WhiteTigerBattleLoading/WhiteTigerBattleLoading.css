@@ -1,0 +1,468 @@
+/*
+    Gameface can't calculate gradient biggest than 8128px
+    in JS 8000 reserved like anchor for start optimization
+*/
+/* stylelint-disable-line */
+.ProgressBar_base_45 {
+    width: 100%;
+    height: var(--progress-bg-height);
+    position: relative;
+}
+.ProgressBar_base__small_df {
+    height: var(--progress-bg-height-small);
+}
+.ProgressBar_background_51 {
+    width: 100%;
+    max-width: 8001px;
+    height: 100%;
+    background-image: var(--progress-base);
+    background-repeat: repeat;
+    background-position: 0 50%;
+    background-size: var(--progress-pattern-size);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.ProgressBar_background__small_46 {
+    height: var(--progress-bg-height-small);
+}
+.ProgressBar_lineWrapper_6a {
+    display: flex;
+    flex: 1;
+}
+
+.ProgressBarBlink_base_24 {
+    width: var(--progress-glow-width);
+    height: var(--progress-glow-height);
+    background-image: var(--progress-glow);
+    background-size: contain;
+    mix-blend-mode: var(--progress-glow-mixBlendMode);
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(50%, -50%);
+    pointer-events: none;
+}
+
+.ProgressBarBlink_base__small_0f {
+    width: var(--progress-glow-small-width);
+    height: var(--progress-glow-small-height);
+    background-image: var(--progress-glow-small);
+}
+
+/*
+    Gameface can't calculate gradient biggest than 8128px
+    in JS 8000 reserved like anchor for start optimization
+*/
+/* stylelint-disable-line */
+.ProgressLineImpose_base_80 {
+    max-width: 8001px;
+    height: 100%;
+    background-color: var(--progress-line-base);
+    filter: var(--progress-line-filter);
+    position: relative;
+    transition-timing-function: cubic-bezier(1, 0, 0.92, 1);
+    transition-property: width;
+}
+.ProgressLineImpose_base__disabled_cc {
+    background-color: var(--progress-line-disabled);
+}
+.ProgressLineImpose_base__finished_d4 {
+    background-color: var(--progress-line-finished);
+}
+.ProgressLineImpose_base__withoutBounce_56 {
+    transition-timing-function: cubic-bezier(1, 0, 0.75, 0.75);
+}
+.ProgressLineImpose_pattern_1c {
+    max-width: 8001px;
+    background-image: var(--progress-pattern-base);
+    background-repeat: repeat;
+    background-position: 0 50%;
+    background-size: var(--progress-pattern-size);
+    position: absolute;
+    top: var(--progress-pattern-border-size);
+    right: var(--progress-pattern-border-size);
+    bottom: var(--progress-pattern-border-size);
+    left: var(--progress-pattern-border-size);
+}
+.ProgressLineImpose_base__small_55 .ProgressLineImpose_pattern_1c {
+    top: 0;
+    bottom: 0;
+}
+.ProgressLineImpose_base__disabled_cc .ProgressLineImpose_pattern_1c {
+    background-image: var(--progress-pattern-disabled);
+    left: 0;
+}
+.ProgressLineImpose_base__finished_d4 .ProgressLineImpose_pattern_1c {
+    background-image: var(--progress-pattern-finished);
+}
+.ProgressLineImpose_gradient_35 {
+    max-width: 8001px;
+    background-image: var(--progress-pattern-gradient);
+    mix-blend-mode: var(--progress-pattern-gradient-mixBlendMode);
+    position: absolute;
+    top: var(--progress-pattern-border-size);
+    right: 0;
+    bottom: var(--progress-pattern-border-size);
+    left: 0;
+}
+.ProgressLineImpose_base__small_55 .ProgressLineImpose_gradient_35 {
+    top: 0;
+    bottom: 0;
+}
+.ProgressLineImpose_base__disabled_cc .ProgressLineImpose_gradient_35 {
+    display: none;
+}
+.ProgressLineImpose_base__finished_d4 .ProgressLineImpose_gradient_35 {
+    background-image: var(--progress-pattern-gradient-finished);
+}
+.ProgressLineImpose_glow_a5 {
+    width: var(--progress-glow-width);
+    max-width: 8001px;
+    height: var(--progress-glow-height);
+    background-image: var(--progress-glow);
+    background-size: contain;
+    mix-blend-mode: var(--progress-glow-mixBlendMode);
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+.ProgressLineImpose_glow__left_d8 {
+    left: var(--progress-pattern-border-size);
+}
+.ProgressLineImpose_base__disabled_cc .ProgressLineImpose_glow_a5,
+.ProgressLineImpose_base__finished_d4 .ProgressLineImpose_glow_a5 {
+    display: none;
+}
+.ProgressLineImpose_base__small_55 .ProgressLineImpose_glow_a5 {
+    width: var(--progress-glow-small-width);
+    height: var(--progress-glow-small-height);
+    background-image: var(--progress-glow-small);
+}
+
+/*
+    Gameface can't calculate gradient biggest than 8128px
+    in JS 8000 reserved like anchor for start optimization
+*/
+/* stylelint-disable-line */
+.ProgressBarDeltaGrow_base_7e {
+    width: 0;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    transition-timing-function: cubic-bezier(1, 0, 0.92, 1);
+    transition-property: width;
+}
+.ProgressBarDeltaGrow_base__withoutBounce_b5 {
+    transition-timing-function: cubic-bezier(1, 0, 0.75, 0.75);
+}
+.ProgressBarDeltaGrow_glow_68 {
+    width: 0;
+    max-width: 8001px;
+    height: 100%;
+    box-shadow: var(--progress-delta-shadow);
+    background-color: var(--progress-delta-color);
+    position: absolute;
+    bottom: 0;
+    transform-origin: right center;
+    transition-timing-function: cubic-bezier(1, 0, 0.92, 1);
+    transition-property: width;
+}
+.ProgressBarDeltaGrow_base__withoutBounce_b5 .ProgressBarDeltaGrow_glow_68 {
+    transition-timing-function: cubic-bezier(1, 0, 0.75, 0.75);
+}
+
+/*
+    Gameface can't calculate gradient biggest than 8128px
+    in JS 8000 reserved like anchor for start optimization
+*/
+/* stylelint-disable-line */
+.ProgressBarDeltaSimple_base_6c {
+    width: 0;
+    height: 100%;
+    position: absolute;
+    top: 0;
+}
+.ProgressBarDeltaSimple_delta_99 {
+    width: 0;
+    max-width: 8001px;
+    height: 100%;
+    box-shadow: var(--progress-delta-shadow);
+    background-color: var(--progress-delta-color);
+    position: absolute;
+    bottom: 0;
+    transform-origin: right center;
+    transition-timing-function: cubic-bezier(1, 0, 0.92, 1), cubic-bezier(0.21, 0.61, 0.35, 1);
+    transition-property: width, transform;
+}
+
+.Button_bg_26,
+.Button_hover_6d {
+    width: 60rem;
+    height: 118rem;
+    background: no-repeat center / contain;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.mediaMedium .Button_bg_26,
+.mediaMedium .Button_hover_6d {
+    width: 73rem;
+    height: 145rem;
+}
+
+.Button_base_aa {
+    width: 60rem;
+    height: 118rem;
+    position: relative;
+    cursor: pointer;
+}
+
+.mediaMedium .Button_base_aa {
+    width: 73rem;
+    height: 145rem;
+}
+
+.Button_bg_26 {
+    background-image: url('R.images.white_tiger.gui.maps.icons.battleLoading.btnArrowSmall');
+    z-index: 0;
+}
+
+.mediaMedium .Button_bg_26 {
+    background-image: url('R.images.white_tiger.gui.maps.icons.battleLoading.btnArrow');
+}
+
+.Button_base__left_2c .Button_bg_26 {
+    transform: rotateY(180deg);
+}
+
+.Button_hover_6d {
+    background-image: url('R.images.white_tiger.gui.maps.icons.battleLoading.btnArrowHoverSmall');
+    opacity: 0;
+    z-index: 1;
+    transition: opacity 0.3s ease-in-out;
+    pointer-events: none;
+}
+
+.mediaMedium .Button_hover_6d {
+    background-image: url('R.images.white_tiger.gui.maps.icons.battleLoading.btnArrowHover');
+}
+
+.Button_base_aa:hover .Button_hover_6d {
+    opacity: 1;
+}
+
+.Button_base__left_2c .Button_hover_6d {
+    transform: rotateY(180deg);
+}
+
+.NavButton_base_bb {
+    position: relative;
+}
+
+.NavButton_navImg_61 {
+    width: 69rem;
+    height: 19rem;
+    background: url('R.images.white_tiger.gui.maps.icons.battleLoading.paginatorNormal') no-repeat center / contain;
+}
+
+.NavButton_navImg__active_37 {
+    background-image: url('R.images.white_tiger.gui.maps.icons.battleLoading.paginatorActive');
+    pointer-events: none;
+}
+
+.NavButton_navImg_61:hover {
+    background-image: url('R.images.white_tiger.gui.maps.icons.battleLoading.paginatorHover');
+    cursor: pointer;
+}
+
+.WhiteTigerBattleLoadingApp_base_97 {
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    overflow: hidden;
+    position: relative;
+}
+
+.WhiteTigerBattleLoadingApp_vignette_b5 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: url('R.images.white_tiger.gui.maps.icons.battleLoading.loadingPicVignette') no-repeat center / cover;
+}
+
+.WhiteTigerBattleLoadingApp_shadow_5e {
+    width: 1000rem;
+    height: 600rem;
+    background: url('R.images.white_tiger.gui.maps.icons.battleLoading.txtShadow') no-repeat center / cover;
+    position: absolute;
+    bottom: -89rem;
+    left: -50rem;
+    pointer-events: none;
+}
+
+.WhiteTigerBattleLoadingApp_bgImage_03 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: no-repeat center / cover;
+}
+
+.WhiteTigerBattleLoadingApp_block_2c {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 0 120rem;
+    position: absolute;
+    bottom: 86rem;
+    left: 0;
+    pointer-events: none;
+}
+
+.mediaMedium .WhiteTigerBattleLoadingApp_block_2c {
+    padding: 0 150rem;
+    bottom: 100rem;
+}
+
+.mediaLarge .WhiteTigerBattleLoadingApp_block_2c {
+    padding: 0 170rem;
+    bottom: 160rem;
+}
+
+.WhiteTigerBattleLoadingApp_hintContainer_31 {
+    width: 100%;
+    margin: 13rem 0 6rem;
+    position: relative;
+}
+
+.mediaMedium .WhiteTigerBattleLoadingApp_hintContainer_31 {
+    margin: 12rem 0 14rem;
+}
+
+.WhiteTigerBattleLoadingApp_hintText_a6 {
+    color: rgba(242, 242, 247, 0.6);
+    font-size: 18rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+
+.mediaMedium .WhiteTigerBattleLoadingApp_hintText_a6 {
+    color: rgba(242, 242, 247, 0.6);
+    font-size: 24rem;
+    font-weight: 400;
+    line-height: 32rem;
+    font-size: 28rem;
+}
+
+.WhiteTigerBattleLoadingApp_row__active_f9 .WhiteTigerBattleLoadingApp_hintText_a6 {
+    color: rgba(233, 226, 191, 1);
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.mediaMedium .WhiteTigerBattleLoadingApp_row__active_f9 .WhiteTigerBattleLoadingApp_hintText_a6 {
+    color: rgba(233, 226, 191, 1);
+    font-size: 28rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.WhiteTigerBattleLoadingApp_progressBar_e9 {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    width: 396rem;
+    background-color: #000000;
+    bottom: 42rem;
+}
+
+.mediaMedium .WhiteTigerBattleLoadingApp_progressBar_e9 {
+    width: 690rem;
+    bottom: 52rem;
+}
+
+.WhiteTigerBattleLoadingApp_progressBorder_b8 {
+    position: absolute;
+    top: -2rem;
+    right: -2rem;
+    bottom: -2rem;
+    left: -2rem;
+    border: 1rem solid #333;
+    border-radius: 3rem;
+}
+
+.WhiteTigerBattleLoadingApp_container_5a {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: translateY(-14rem);
+}
+
+.mediaMedium .WhiteTigerBattleLoadingApp_container_5a {
+    transform: translateY(0);
+}
+
+.WhiteTigerBattleLoadingApp_button_04 {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.WhiteTigerBattleLoadingApp_button__left_ee {
+    left: 32rem;
+}
+
+.mediaSmall .WhiteTigerBattleLoadingApp_button__left_ee {
+    left: 42rem;
+}
+
+.mediaMedium .WhiteTigerBattleLoadingApp_button__left_ee {
+    left: 50rem;
+}
+
+.mediaLarge .WhiteTigerBattleLoadingApp_button__left_ee {
+    left: 60rem;
+}
+
+.WhiteTigerBattleLoadingApp_button__right_32 {
+    right: 32rem;
+}
+
+.mediaSmall .WhiteTigerBattleLoadingApp_button__right_32 {
+    right: 42rem;
+}
+
+.mediaMedium .WhiteTigerBattleLoadingApp_button__right_32 {
+    right: 50rem;
+}
+
+.mediaLarge .WhiteTigerBattleLoadingApp_button__right_32 {
+    right: 60rem;
+}
+
+.WhiteTigerBattleLoadingApp_navigation_5b {
+    display: flex;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    margin-top: 45rem;
+}
+
+.mediaSmall .WhiteTigerBattleLoadingApp_navigation_5b {
+    margin-top: 65rem;
+}
+
+.mediaMedium .WhiteTigerBattleLoadingApp_navigation_5b {
+    margin-top: 85rem;
+}

@@ -166,37 +166,60 @@
     display: flex;
     flex-direction: column;
     position: absolute;
-    top: 30rem;
-    left: 30rem;
+    top: 70rem;
+    left: 25rem;
     z-index: 2;
 }
 
 .mediaSmall .App_infoButtons_78 {
     flex-direction: row;
-    top: 28rem;
-    left: 50rem;
+    top: 60rem;
 }
 
-.mediaMedium .App_infoButtons_78 {
-    top: 35rem;
+.mediaLargeWidth .App_infoButtons_78 {
+    top: 80rem;
+    left: 44rem;
 }
 
 .mediaExtraLarge .App_infoButtons_78 {
-    top: 50rem;
+    top: 100rem;
 }
 
 .App_header_41 {
     position: absolute;
-    top: 20rem;
+    top: 80rem;
     z-index: 2;
 }
 
 .mediaLarge .App_header_41 {
-    top: 20rem;
+    top: 85rem;
 }
 
 .mediaExtraLarge .App_header_41 {
-    top: 18rem;
+    top: 100rem;
+}
+
+.App_flags_d9 {
+    position: absolute;
+    top: 20rem;
+    right: 5rem;
+    z-index: 2;
+}
+
+.mediaSmall .App_flags_d9 {
+    right: 50rem;
+}
+
+.mediaMedium .App_flags_d9 {
+    top: 5rem;
+}
+
+.mediaLarge .App_flags_d9 {
+    top: 20rem;
+}
+
+.mediaExtraLarge .App_flags_d9 {
+    top: 40rem;
 }
 
 .FormatText_base_d0 {
@@ -1079,11 +1102,11 @@
 /* stylelint-disable-line */
 .ProgressBar_base_45 {
     width: 100%;
-    height: 12rem;
+    height: var(--progress-bg-height);
     position: relative;
 }
 .ProgressBar_base__small_df {
-    height: 2rem;
+    height: var(--progress-bg-height-small);
 }
 .ProgressBar_background_51 {
     width: 100%;
@@ -1092,13 +1115,13 @@
     background-image: var(--progress-base);
     background-repeat: repeat;
     background-position: 0 50%;
-    background-size: 3rem 10rem;
+    background-size: var(--progress-pattern-size);
     position: absolute;
     top: 0;
     left: 0;
 }
 .ProgressBar_background__small_46 {
-    height: 2rem;
+    height: var(--progress-bg-height-small);
 }
 .ProgressBar_lineWrapper_6a {
     display: flex;
@@ -1106,11 +1129,11 @@
 }
 
 .ProgressBarBlink_base_24 {
-    width: 60rem;
-    height: 100rem;
+    width: var(--progress-glow-width);
+    height: var(--progress-glow-height);
     background-image: var(--progress-glow);
     background-size: contain;
-    mix-blend-mode: lighten;
+    mix-blend-mode: var(--progress-glow-mixBlendMode);
     position: absolute;
     top: 50%;
     right: 0;
@@ -1119,33 +1142,9 @@
 }
 
 .ProgressBarBlink_base__small_0f {
-    width: 44rem;
-    height: 43rem;
+    width: var(--progress-glow-small-width);
+    height: var(--progress-glow-small-height);
     background-image: var(--progress-glow-small);
-}
-
-/*
-    Gameface can't calculate gradient biggest than 8128px
-    in JS 8000 reserved like anchor for start optimization
-*/
-/* stylelint-disable-line */
-.ProgressBarDeltaSimple_base_6c {
-    width: 0;
-    height: 100%;
-    position: absolute;
-    top: 0;
-}
-.ProgressBarDeltaSimple_delta_99 {
-    width: 0;
-    max-width: 8001px;
-    height: 100%;
-    box-shadow: var(--progress-delta-shadow);
-    background-color: var(--progress-delta-color);
-    position: absolute;
-    bottom: 0;
-    transform-origin: right center;
-    transition-timing-function: cubic-bezier(1, 0, 0.92, 1), cubic-bezier(0.21, 0.61, 0.35, 1);
-    transition-property: width, transform;
 }
 
 /*
@@ -1157,6 +1156,7 @@
     max-width: 8001px;
     height: 100%;
     background-color: var(--progress-line-base);
+    filter: var(--progress-line-filter);
     position: relative;
     transition-timing-function: cubic-bezier(1, 0, 0.92, 1);
     transition-property: width;
@@ -1175,12 +1175,12 @@
     background-image: var(--progress-pattern-base);
     background-repeat: repeat;
     background-position: 0 50%;
-    background-size: 3rem 10rem;
+    background-size: var(--progress-pattern-size);
     position: absolute;
-    top: 1rem;
-    right: 1rem;
-    bottom: 1rem;
-    left: 1rem;
+    top: var(--progress-pattern-border-size);
+    right: var(--progress-pattern-border-size);
+    bottom: var(--progress-pattern-border-size);
+    left: var(--progress-pattern-border-size);
 }
 .ProgressLineImpose_base__small_55 .ProgressLineImpose_pattern_1c {
     top: 0;
@@ -1195,12 +1195,12 @@
 }
 .ProgressLineImpose_gradient_35 {
     max-width: 8001px;
-    background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.75));
-    mix-blend-mode: overlay;
+    background-image: var(--progress-pattern-gradient);
+    mix-blend-mode: var(--progress-pattern-gradient-mixBlendMode);
     position: absolute;
-    top: 1rem;
+    top: var(--progress-pattern-border-size);
     right: 0;
-    bottom: 1rem;
+    bottom: var(--progress-pattern-border-size);
     left: 0;
 }
 .ProgressLineImpose_base__small_55 .ProgressLineImpose_gradient_35 {
@@ -1211,15 +1211,15 @@
     display: none;
 }
 .ProgressLineImpose_base__finished_d4 .ProgressLineImpose_gradient_35 {
-    background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.75), rgba(0, 0, 0, 0.5));
+    background-image: var(--progress-pattern-gradient-finished);
 }
 .ProgressLineImpose_glow_a5 {
-    width: 60rem;
+    width: var(--progress-glow-width);
     max-width: 8001px;
-    height: 100rem;
+    height: var(--progress-glow-height);
     background-image: var(--progress-glow);
     background-size: contain;
-    mix-blend-mode: lighten;
+    mix-blend-mode: var(--progress-glow-mixBlendMode);
     position: absolute;
     top: 50%;
     left: 100%;
@@ -1227,15 +1227,15 @@
     pointer-events: none;
 }
 .ProgressLineImpose_glow__left_d8 {
-    left: 1rem;
+    left: var(--progress-pattern-border-size);
 }
 .ProgressLineImpose_base__disabled_cc .ProgressLineImpose_glow_a5,
 .ProgressLineImpose_base__finished_d4 .ProgressLineImpose_glow_a5 {
     display: none;
 }
 .ProgressLineImpose_base__small_55 .ProgressLineImpose_glow_a5 {
-    width: 44rem;
-    height: 43rem;
+    width: var(--progress-glow-small-width);
+    height: var(--progress-glow-small-height);
     background-image: var(--progress-glow-small);
 }
 
@@ -1269,6 +1269,30 @@
 }
 .ProgressBarDeltaGrow_base__withoutBounce_b5 .ProgressBarDeltaGrow_glow_68 {
     transition-timing-function: cubic-bezier(1, 0, 0.75, 0.75);
+}
+
+/*
+    Gameface can't calculate gradient biggest than 8128px
+    in JS 8000 reserved like anchor for start optimization
+*/
+/* stylelint-disable-line */
+.ProgressBarDeltaSimple_base_6c {
+    width: 0;
+    height: 100%;
+    position: absolute;
+    top: 0;
+}
+.ProgressBarDeltaSimple_delta_99 {
+    width: 0;
+    max-width: 8001px;
+    height: 100%;
+    box-shadow: var(--progress-delta-shadow);
+    background-color: var(--progress-delta-color);
+    position: absolute;
+    bottom: 0;
+    transform-origin: right center;
+    transition-timing-function: cubic-bezier(1, 0, 0.92, 1), cubic-bezier(0.21, 0.61, 0.35, 1);
+    transition-property: width, transform;
 }
 
 @keyframes EmblemProgressBar_hideLevel_1e {
@@ -1528,22 +1552,16 @@
     height: 580rem;
 }
 
-.mediaLarge .Chapter_base__regular_27,
-.mediaLarge .Chapter_base__extraSingle_26 {
+.mediaLarge .Chapter_base_f0 {
     height: 742rem;
 }
 
-.mediaExtraLarge .Chapter_base__regular_27,
-.mediaExtraLarge .Chapter_base__extraSingle_26 {
+.mediaExtraLarge .Chapter_base_f0 {
     height: 1034rem;
 }
 
-.mediaLarge .Chapter_base__extraDouble_08 {
-    height: 710rem;
-}
-
-.mediaExtraLarge .Chapter_base__extraDouble_08 {
-    height: 850rem;
+.mediaExtraLarge .Chapter_base__qHDSize_da {
+    height: 1034rem;
 }
 
 .Chapter_bg_2e {
@@ -1552,50 +1570,32 @@
     background: no-repeat center / contain;
     filter: brightness(100%);
     position: relative;
-    top: 40rem;
+    top: 24rem;
     z-index: 1;
     transition: filter 0.3s linear;
+}
+
+.mediaMedium .Chapter_bg_2e {
+    width: 334rem;
+    height: 444rem;
+}
+
+.mediaLarge .Chapter_bg_2e {
+    width: 414rem;
+    height: 550rem;
+    top: 60rem;
+}
+
+.Chapter_base__qHDSize_da .Chapter_bg_2e {
+    width: 608rem;
+    height: 808rem;
+    top: 0;
 }
 
 .Chapter_base__paused_ff .Chapter_bg_2e,
 .Chapter_base__notStarted_9b .Chapter_bg_2e,
 .Chapter_base__completed_88 .Chapter_bg_2e {
     filter: brightness(90%);
-}
-
-.mediaMedium .Chapter_base__regular_27 .Chapter_bg_2e,
-.mediaMedium .Chapter_base__extraSingle_26 .Chapter_bg_2e {
-    width: 334rem;
-    height: 444rem;
-}
-
-.mediaLarge .Chapter_base__regular_27 .Chapter_bg_2e,
-.mediaLarge .Chapter_base__extraSingle_26 .Chapter_bg_2e {
-    width: 414rem;
-    height: 550rem;
-    top: 60rem;
-}
-
-.mediaExtraLarge .Chapter_base__regular_27 .Chapter_bg_2e,
-.mediaExtraLarge .Chapter_base__extraSingle_26 .Chapter_bg_2e {
-    width: 608rem;
-    height: 808rem;
-    top: 0;
-}
-
-.mediaMedium .Chapter_base__extraDouble_08 .Chapter_bg_2e {
-    width: 100%;
-    height: 398rem;
-    top: 10rem;
-}
-
-.mediaLarge .Chapter_base__extraDouble_08 .Chapter_bg_2e {
-    height: 478rem;
-    top: 0;
-}
-
-.mediaExtraLarge .Chapter_base__extraDouble_08 .Chapter_bg_2e {
-    height: 611rem;
 }
 
 .Chapter_base_f0:hover .Chapter_bg_2e {
@@ -1626,7 +1626,7 @@
     height: 400rem;
 }
 
-.mediaExtraLarge .Chapter_bgHover_ac {
+.Chapter_base__qHDSize_da .Chapter_bgHover_ac {
     width: 310rem;
     height: 600rem;
 }
@@ -1667,7 +1667,7 @@
     height: 408rem;
 }
 
-.mediaExtraLarge .Chapter_border_5c {
+.Chapter_base__qHDSize_da .Chapter_border_5c {
     width: 360rem;
     height: 600rem;
 }
@@ -1683,7 +1683,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
     position: relative;
 }
 
@@ -1693,46 +1692,27 @@
     background: no-repeat center / contain;
     filter: brightness(100%);
     position: absolute;
-    bottom: 20rem;
+    bottom: 4rem;
     left: 50%;
     z-index: 3;
     transform: translateX(-50%);
     transition: filter 0.3s linear;
 }
 
-.mediaMedium .Chapter_base__regular_27 .Chapter_vehicleImg_b1,
-.mediaMedium .Chapter_base__extraSingle_26 .Chapter_vehicleImg_b1 {
+.mediaMedium .Chapter_vehicleImg_b1 {
     width: 376rem;
     height: 248rem;
 }
 
-.mediaLarge .Chapter_base__regular_27 .Chapter_vehicleImg_b1,
-.mediaLarge .Chapter_base__extraSingle_26 .Chapter_vehicleImg_b1 {
+.mediaLarge .Chapter_vehicleImg_b1 {
     width: 452rem;
     height: 298rem;
 }
 
-.mediaExtraLarge .Chapter_base__regular_27 .Chapter_vehicleImg_b1,
-.mediaExtraLarge .Chapter_base__extraSingle_26 .Chapter_vehicleImg_b1 {
+.Chapter_base__qHDSize_da .Chapter_vehicleImg_b1 {
     width: 608rem;
     height: 400rem;
     bottom: 0;
-}
-
-.mediaMedium .Chapter_base__extraDouble_08 .Chapter_vehicleImg_b1 {
-    width: 300rem;
-    height: 198rem;
-    bottom: 0;
-}
-
-.mediaLarge .Chapter_base__extraDouble_08 .Chapter_vehicleImg_b1 {
-    width: 360rem;
-    height: 237rem;
-}
-
-.mediaExtraLarge .Chapter_base__extraDouble_08 .Chapter_vehicleImg_b1 {
-    width: 460rem;
-    height: 303rem;
 }
 
 .Chapter_base__notStarted_9b .Chapter_vehicleImg_b1,
@@ -1758,7 +1738,7 @@
     top: -70rem;
 }
 
-.mediaExtraLarge .Chapter_shieldWrapper_27 {
+.Chapter_base__qHDSize_da .Chapter_shieldWrapper_27 {
     top: -105rem;
 }
 
@@ -1789,7 +1769,7 @@
     transform: translateY(-18rem);
 }
 
-.mediaExtraLarge .Chapter_base__completed_88 .Chapter_shield_bc {
+.Chapter_base__qHDSize_da .Chapter_base__completed_88 .Chapter_shield_bc {
     transform: translateY(-59rem);
 }
 
@@ -1811,7 +1791,7 @@
     top: -100rem;
 }
 
-.mediaExtraLarge .Chapter_shieldShine_3f {
+.Chapter_base__qHDSize_da .Chapter_shieldShine_3f {
     width: 450rem;
     height: 450rem;
     top: -150rem;
@@ -1834,7 +1814,7 @@
     top: 63rem;
 }
 
-.mediaExtraLarge .Chapter_completedIcon_f2 {
+.Chapter_base__qHDSize_da .Chapter_completedIcon_f2 {
     width: 180rem;
     height: 32rem;
     top: 20rem;
@@ -1847,11 +1827,7 @@
     line-height: 1.1;
     width: 100%;
     margin-top: 73rem;
-    padding: 0 5rem;
     text-align: center;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
     position: relative;
     z-index: 5;
     transition: opacity 0.3s linear;
@@ -1866,7 +1842,22 @@
     margin-top: 80rem;
 }
 
-.mediaExtraLarge .Chapter_title_57 {
+.Chapter_content__extraChapterContent_02 .Chapter_title_57 {
+    color: #e9e2bf;
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.mediaMedium .Chapter_content__extraChapterContent_02 .Chapter_title_57 {
+    font-size: 28rem;
+}
+
+.mediaExtraLarge .Chapter_content__extraChapterContent_02 .Chapter_title_57 {
+    font-size: 36rem;
+}
+
+.Chapter_base__qHDSize_da .Chapter_title_57 {
     margin-top: 59rem;
     font-size: 36rem;
 }
@@ -1878,30 +1869,6 @@
 
 .Chapter_base_f0:hover .Chapter_title_57 {
     opacity: 1;
-}
-
-.Chapter_content__extraSingle_0f .Chapter_title_57,
-.Chapter_content__extraDouble_c8 .Chapter_title_57 {
-    color: #e9e2bf;
-    font-size: 18rem;
-    font-weight: 700;
-    line-height: 1.1;
-}
-
-.mediaMedium .Chapter_content__extraSingle_0f .Chapter_title_57,
-.mediaMedium .Chapter_content__extraDouble_c8 .Chapter_title_57 {
-    color: #e9e2bf;
-    font-size: 28rem;
-    font-weight: 700;
-    line-height: 1.1;
-}
-
-.mediaExtraLarge .Chapter_content__extraSingle_0f .Chapter_title_57,
-.mediaExtraLarge .Chapter_content__extraDouble_c8 .Chapter_title_57 {
-    color: #e9e2bf;
-    font-size: 36rem;
-    font-weight: 700;
-    line-height: 1.1;
 }
 
 .Chapter_vehicleStyle_85 {
@@ -1948,7 +1915,7 @@
     font-size: 18rem;
 }
 
-.mediaExtraLarge .Chapter_styleTitle_0d {
+.Chapter_base__qHDSize_da .Chapter_styleTitle_0d {
     font-size: 24rem;
 }
 
@@ -1957,16 +1924,14 @@
     opacity: 1;
 }
 
-.Chapter_content__extraSingle_0f .Chapter_styleTitle_0d,
-.Chapter_content__extraDouble_c8 .Chapter_styleTitle_0d {
+.Chapter_content__extraChapterContent_02 .Chapter_styleTitle_0d {
     color: #ffffff;
     font-size: 15rem;
     font-weight: 700;
     line-height: 1.15;
 }
 
-.mediaExtraLarge .Chapter_content__extraSingle_0f .Chapter_styleTitle_0d,
-.mediaExtraLarge .Chapter_content__extraDouble_c8 .Chapter_styleTitle_0d {
+.mediaExtraLarge .Chapter_content__extraChapterContent_02 .Chapter_styleTitle_0d {
     color: #ffffff;
     font-size: 24rem;
     font-weight: 700;
@@ -2003,8 +1968,7 @@
     opacity: 1;
 }
 
-.Chapter_content__extraSingle_0f .Chapter_vehicleTitle_10,
-.Chapter_content__extraDouble_c8 .Chapter_vehicleTitle_10 {
+.Chapter_content__extraChapterContent_02 .Chapter_vehicleTitle_10 {
     color: #e9e2bf;
     font-size: 15rem;
     font-weight: 700;
@@ -2042,6 +2006,15 @@
     width: 100%;
     height: auto;
     position: relative;
+}
+.mediaMedium .ChapterPostProgressionLine_base_d0 {
+    height: 26rem;
+}
+.mediaLarge .ChapterPostProgressionLine_base_d0 {
+    height: 21rem;
+}
+.mediaExtraLarge .ChapterPostProgressionLine_base_d0 {
+    height: auto;
 }
 
 .ChapterPostProgressionLine_circleShine_6b {
@@ -2159,7 +2132,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    align-self: flex-start;
     position: relative;
 }
 .PostProgressionEntryPoint_buttonBlock_5a {
@@ -2298,17 +2270,18 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    width: 22rem;
+    width: 28rem;
     height: 400rem;
 }
 .mediaMedium .Separator_base_8a {
-    width: 30rem;
+    width: 88rem;
     height: 526rem;
 }
 .mediaLarge .Separator_base_8a {
+    width: 84rem;
     height: 742rem;
 }
-.mediaExtraLarge .Separator_base_8a {
+.mediaExtraLarge .Separator_base__qHDSize_bb {
     width: 46rem;
     height: 1034rem;
 }
@@ -2349,63 +2322,74 @@
 
 .Chapters_base_81 {
     display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin-top: 124rem;
+}
+.mediaMedium .Chapters_base_81 {
+    margin-top: 112rem;
+}
+.mediaExtraLarge .Chapters_base_81 {
+    margin-top: 150rem;
+}
+.Chapters_base__normal_49 {
+    width: 718rem;
+}
+.mediaMedium .Chapters_base__normal_49 {
+    width: 1128rem;
+}
+.mediaLarge .Chapters_base__normal_49 {
+    width: 1356rem;
+}
+.mediaExtraLarge .Chapters_base__normal_49 {
+    justify-content: center;
+    width: 100%;
+}
+.Chapters_base__extend_cb {
+    width: 984rem;
+}
+.mediaMedium .Chapters_base__extend_cb {
+    width: 1508rem;
+}
+.mediaLarge .Chapters_base__extend_cb {
+    width: 1816rem;
+}
+.mediaExtraLarge .Chapters_base__extend_cb {
+    justify-content: center;
+    width: 100%;
+}
+.Chapters_regular_4d {
+    display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 60rem;
 }
-
-.mediaMedium .Chapters_base__regular_24,
-.mediaMedium .Chapters_base__extraSingle_13 {
-    margin-top: 66rem;
-}
-
-.mediaLarge .Chapters_base__regular_24,
-.mediaLarge .Chapters_base__extraSingle_13 {
-    margin-top: 55rem;
-}
-
-.mediaExtraLarge .Chapters_base__regular_24,
-.mediaExtraLarge .Chapters_base__extraSingle_13 {
-    margin-top: 115rem;
-}
-
-.mediaMedium .Chapters_base__extraDouble_83 {
-    margin-top: 90rem;
-}
-
-.mediaLarge .Chapters_base__extraDouble_83 {
-    margin-top: 140rem;
-}
-
-.mediaExtraLarge .Chapters_base__extraDouble_83 {
-    margin-top: 200rem;
-}
-.Chapters_chaptersContainer_17 {
+.Chapters_regularChapters_e9 {
     display: flex;
     justify-content: center;
     align-items: flex-start;
     margin-bottom: 26rem;
 }
-.mediaMedium .Chapters_chaptersContainer_17 {
+.mediaMedium .Chapters_regularChapters_e9 {
     margin-bottom: 36rem;
 }
-.mediaLarge .Chapters_chaptersContainer_17 {
-    margin-bottom: 27rem;
+.mediaLarge .Chapters_regularChapters_e9 {
+    margin-bottom: 20rem;
 }
-.mediaExtraLarge .Chapters_chaptersContainer_17 {
+.mediaExtraLarge .Chapters_regularChapters_e9 {
     margin-bottom: 28rem;
 }
 .Chapters_chapterWrapper_51 {
-    display: flex;
-    flex-direction: column;
+    height: 487rem;
+    position: relative;
 }
-.mediaMedium .Chapters_base__regular_24 .Chapters_chapter_da,
-.mediaMedium .Chapters_base__extraSingle_13 .Chapters_chapter_da {
-    margin-bottom: 25rem;
+.mediaMedium .Chapters_chapterWrapper_51 {
+    height: 606rem;
 }
-.mediaExtraLarge .Chapters_base__regular_24 .Chapters_chapter_da,
-.mediaExtraLarge .Chapters_base__extraSingle_13 .Chapters_chapter_da {
-    margin-bottom: 0;
+.mediaLarge .Chapters_chapterWrapper_51 {
+    height: 770rem;
+}
+.mediaExtraLarge .Chapters_chapterWrapper_51 {
+    height: 1034rem;
 }
 
 .Header_base_71 {
@@ -2430,7 +2414,7 @@
     font-size: 73rem;
 }
 
-.mediaExtraLarge .Header_title_af {
+.Header_base__qHDSize_a9 .Header_title_af {
     font-size: 96rem;
 }
 
@@ -2452,7 +2436,7 @@
     font-size: 20rem;
 }
 
-.mediaExtraLarge .Header_description_cc {
+.Header_base__qHDSize_a9 .Header_description_cc {
     margin-top: 10rem;
     font-size: 24rem;
 }

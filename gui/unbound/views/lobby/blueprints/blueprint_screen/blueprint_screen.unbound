@@ -793,7 +793,7 @@
             (name = "R.dynamic_ids.blueprint_screen.balance_content()")
             (style
                 (position = "absolute")
-                (bind top "isSmall ? 0 : 20")
+                (bind top "isSmall ? 60 : 80")
                 (right = 0px)
             )
             (bind visible "!isSchemeFullCompleted")
@@ -821,6 +821,7 @@
         (bindcall setFocus
             (bind enabled "!showUnavailableConfirm")
         )
+        (visible = false)
     )
     
     (block

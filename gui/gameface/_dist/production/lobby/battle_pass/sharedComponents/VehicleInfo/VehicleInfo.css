@@ -67,6 +67,12 @@
     background-size: 15rem 16rem;
 }
 
+.VehicleInfo_base__level11_96 {
+    padding-left: 17rem;
+    background-image: url('R.images.gui.maps.icons.levels.tank_level_11');
+    background-size: 17rem 16rem;
+}
+
 .VehicleInfo_vehicleType_e2 {
     width: 16rem;
     height: 16rem;

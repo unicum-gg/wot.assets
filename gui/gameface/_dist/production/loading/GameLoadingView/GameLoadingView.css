@@ -149,16 +149,16 @@
     left: 50%;
     transform: translate(-50%, -50%);
     width: 490rem;
-    height: 230rem;
-    margin-top: -40rem;
+    height: 320rem;
+    margin-top: -95rem;
     background: url('img://gui/maps/loading/login_logo.png') no-repeat center / cover;
 }
 
 @media (min-width: 1366px) and (min-height: 768px) {
     .LogoSlide_logo_80 {
         width: 800rem;
-        height: 400rem;
-        margin-top: 0;
+        height: 560rem;
+        margin-top: -80rem;
         background: url('img://gui/maps/loading/login_logo_big.png') no-repeat center / cover;
     }
 }
@@ -307,7 +307,7 @@
 }
 
 .Content_logo_87 {
-    width: 186rem;
+    width: 250rem;
     height: 50rem;
     background: url('img://gui/maps/loading/wot_logo.png') no-repeat center / 100% 100%;
     position: absolute;
@@ -324,7 +324,7 @@
 
 @media (min-width: 1600px) and (min-height: 900px) {
     .Content_logo_87 {
-        width: 249rem;
+        width: 330rem;
         height: 67rem;
         background: url('img://gui/maps/loading/wot_logo_big.png') no-repeat center / 100% 100%;
         left: 97rem;
