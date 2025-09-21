@@ -1,4 +1,4 @@
-import { j as o, A as e } from './vendor.js';
+import { j as o, x as e } from './vendor.js';
 import { dw as i } from './lib.js';
 const n = 'TooltipDecorator_decorator_81525906',
     s = 'TooltipDecorator_decoratorInner_5b7cf9de';

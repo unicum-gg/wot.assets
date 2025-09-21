@@ -1,5 +1,5 @@
 import { r as e, j as t, f as n, s as a } from '../../../chunks/vendor.js';
-import { i as s, aj as c, ak as l, aH as r, ad as i, P as o, Q as u, R as d, U as p } from '../../../chunks/lib.js';
+import { i as s, a8 as c, a9 as l, aG as r, $ as i, P as o, Q as u, R as d, U as p } from '../../../chunks/lib.js';
 const m = 'SceneWrapper_52fcfc1e',
     v = 'SceneWrapper_base__down_4ece5089',
     f = 'SceneWrapper_base__moveSpaceDisabled_1b1cd939';
@@ -98,10 +98,10 @@ const j = ({ className: n, timerStartTime: a }) => {
     A = 'PrebattleQueueApp_containerIcon_f2dd1b77',
     P = 'PrebattleQueueApp_smoke_9bb4e6a0',
     Q = 'PrebattleQueueApp_icon_b7fa2fd7',
-    k = 'PrebattleQueueApp_title_d262fafd',
-    w = 'PrebattleQueueApp_timer_dfb21a5c',
-    B = 'PrebattleQueueApp_searching_30a888c6',
-    D = 'PrebattleQueueApp_leaveBtn_8e3485b8',
+    w = 'PrebattleQueueApp_title_d262fafd',
+    B = 'PrebattleQueueApp_timer_dfb21a5c',
+    D = 'PrebattleQueueApp_searching_30a888c6',
+    k = 'PrebattleQueueApp_leaveBtn_8e3485b8',
     E = 'PrebattleQueueApp_tip_f191965b',
     O = a(() => {
         const { model: e, controls: n } = h(),
@@ -129,15 +129,15 @@ const j = ({ className: n, timerStartTime: a }) => {
                             ],
                         }),
                         t.jsx('div', {
-                            className: k,
+                            className: w,
                             children: R.strings.last_stand_lobby.difficult.uppercase.$dyn(`level_${a}`),
                         }),
-                        t.jsx(j, { className: w, timerStartTime: o }),
-                        t.jsx('div', { className: B, children: R.strings.last_stand_lobby.preBattle.searching() }),
+                        t.jsx(j, { className: B, timerStartTime: o }),
+                        t.jsx('div', { className: D, children: R.strings.last_stand_lobby.preBattle.searching() }),
                         t.jsx('div', { className: E, children: R.strings.last_stand_lobby.preBattle.tip() }),
                         s &&
                             t.jsx('div', {
-                                className: D,
+                                className: k,
                                 children: t.jsx(r, {
                                     theme: r.themes.secondary,
                                     size: u.value,

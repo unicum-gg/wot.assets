@@ -1,4 +1,4 @@
-import { j as e, A as l } from './vendor.js';
+import { j as e, x as l } from './vendor.js';
 const a = {
         base: 'LaceDivider_56ee691d',
         lace: 'LaceDivider_lace_81e14ab',

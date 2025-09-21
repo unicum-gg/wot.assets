@@ -1,6 +1,6 @@
 import { p as e, j as s } from '../../../chunks/vendor.js';
-import { i as t, r as a, F as r, T as i, a as n, U as o } from '../../../chunks/lib.js';
-const [m, d] = t()(
+import { i as t, r as a, b as r, T as i, d as n, U as o } from '../../../chunks/lib.js';
+const [d, m] = t()(
         ({ observableModel: e }) => ({ root: e.object() }),
         () => ({}),
     ),
@@ -14,7 +14,7 @@ const [m, d] = t()(
     v = 'one_time_gift.tooltips.OTGQuestTooltip',
     T = ['premium', 'personalReserves', 'x5BattleExperience', 'x3CrewExperience'],
     f = e(() => {
-        const { model: e } = d(),
+        const { model: e } = m(),
             { expireTime: t } = e.root.get(),
             i = new Date(1e3 * t),
             n = a.resolve('strings');
@@ -40,4 +40,4 @@ const [m, d] = t()(
         });
     }),
     g = () => s.jsx(i, { children: s.jsx(f, {}) });
-n(s.jsx(m, { children: s.jsx(o, { children: s.jsx(g, {}) }) }));
+n(s.jsx(d, { children: s.jsx(o, { children: s.jsx(g, {}) }) }));

@@ -1,4 +1,4 @@
-import { x as s, j as i, A as o } from '../../../../chunks/vendor.js';
+import { y as s, j as i, x as o } from '../../../../chunks/vendor.js';
 import { i as e, n, c4 as r, F as a, b_ as t, r as d } from '../../../../chunks/lib.js';
 import { t as c, T as m } from '../../../../chunks/tooltips.module.js';
 import { g as l } from '../../../../chunks/get_division_name.js';

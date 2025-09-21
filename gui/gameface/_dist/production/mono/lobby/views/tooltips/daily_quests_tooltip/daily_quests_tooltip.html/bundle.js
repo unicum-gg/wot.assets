@@ -1,7 +1,7 @@
 import { s, j as a, m as e } from '../../../../chunks/vendor.js';
 import {
     i as t,
-    ad as i,
+    $ as i,
     E as l,
     D as o,
     m as r,
@@ -11,9 +11,9 @@ import {
     aY as c,
     aZ as _,
     a_ as m,
-    Y as u,
-    Z as g,
-    ab as y,
+    a5 as u,
+    a6 as g,
+    a7 as y,
     P as j,
     a$ as b,
 } from '../../../../chunks/lib.js';
@@ -29,10 +29,10 @@ const [Q, v] = t()(({ observableModel: s }) => ({ root: s.object(), rewards: s.a
     k = 'DailyQuestsTooltipApp_dots_3cffe634',
     C = 'DailyQuestsTooltipApp_rewards_7150b30a',
     S = 'DailyQuestsTooltipApp_reward_19c85da',
-    E = 'DailyQuestsTooltipApp_timerStatus_b010e2f6',
-    M = 'DailyQuestsTooltipApp_timerStatus__badge_38721664',
-    W = 'DailyQuestsTooltipApp_timer_38721664',
-    $ = 'DailyQuestsTooltipApp_clockIcon_669ad5af',
+    $ = 'DailyQuestsTooltipApp_timerStatus_b010e2f6',
+    E = 'DailyQuestsTooltipApp_timerStatus__badge_38721664',
+    M = 'DailyQuestsTooltipApp_timer_38721664',
+    W = 'DailyQuestsTooltipApp_clockIcon_669ad5af',
     G = s(() => {
         const { model: s } = v(),
             { description: t, isBadge: i, resetTime: j, progress: b, percent: Q } = s.root.get(),
@@ -83,19 +83,19 @@ const [Q, v] = t()(({ observableModel: s }) => ({ root: s.object(), rewards: s.a
                             text: i
                                 ? R.strings.last_stand_tooltips.dailyQuests.badgeStatus()
                                 : R.strings.last_stand_tooltips.dailyQuests.status(),
-                            classMix: e(E, i && M),
+                            classMix: e($, i && E),
                             alignContent: n.Center,
                             justifyContent: n.Center,
                             binding: {
                                 timer: a.jsx(d, {
-                                    className: W,
+                                    className: M,
                                     style: p.Description,
                                     icon: c.None,
                                     duration: j,
                                     refreshRate: 1,
                                 }),
                                 date: a.jsx(_, { datetime: j, format: m.DayMonthFull }),
-                                icon: a.jsx('div', { className: $ }),
+                                icon: a.jsx('div', { className: W }),
                             },
                         }),
                     ],

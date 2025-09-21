@@ -1,4 +1,4 @@
-import { j as e, A as a } from './vendor.js';
+import { j as e, x as a } from './vendor.js';
 import { bl as l, ak as i, d6 as s, c$ as _, cK as c } from './lib.js';
 const n = {
     base: 'VehicleRole_b05c9386',

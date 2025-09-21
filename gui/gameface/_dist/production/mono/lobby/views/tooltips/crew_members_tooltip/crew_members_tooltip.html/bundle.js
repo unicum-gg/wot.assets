@@ -1,4 +1,4 @@
-import { j as s, A as e } from '../../../../chunks/vendor.js';
+import { j as s, x as e } from '../../../../chunks/vendor.js';
 import { r as i } from '../../../../chunks/lib.js';
 import { t as a, T as c } from '../../../../chunks/tooltips.module.js';
 /* empty css                        */ const r = 'App_4fcbfa35',

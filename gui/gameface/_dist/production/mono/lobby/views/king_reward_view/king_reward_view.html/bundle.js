@@ -1,17 +1,17 @@
-import { p as a, r as s, j as e, q as r, m as i, s as t } from '../../../chunks/vendor.js';
+import { p as s, r as a, j as e, q as r, m as i, s as t } from '../../../chunks/vendor.js';
 import {
     i as o,
     s as n,
-    a6 as d,
-    Z as l,
+    X as d,
+    a6 as l,
     p as c,
-    Y as p,
-    ab as m,
+    a5 as p,
+    a7 as m,
     u as _,
     k as u,
-    a4 as g,
-    ac as w,
-    a8 as j,
+    Y as g,
+    at as w,
+    _ as j,
     m as y,
     C as h,
     B as x,
@@ -22,24 +22,24 @@ import { S as f } from '../../../chunks/spring_wrapper.js';
 import { T as N } from '../../../chunks/text.module.js';
 import { T as k } from '../../../chunks/text_simple.js';
 import { K as v } from '../../../chunks/sound.js';
-import { g as T, a as C, c as K } from '../../../chunks/utils2.js';
+import { g as T, a as C, b as K } from '../../../chunks/utils2.js';
 import '../../../chunks/string-utils.js';
 const [E, S] = o()(
-        ({ observableModel: a }) => ({ root: a.object(), rewards: a.array('rewards', []) }),
-        ({ externalModel: a }) => ({
-            close: a.createCallbackNoArgs('onClose'),
-            outro: a.createCallbackNoArgs('onToOutroClick'),
+        ({ observableModel: s }) => ({ root: s.object(), rewards: s.array('rewards', []) }),
+        ({ externalModel: s }) => ({
+            close: s.createCallbackNoArgs('onClose'),
+            outro: s.createCallbackNoArgs('onToOutroClick'),
         }),
     ),
     B = { y: 5, opacity: 0 },
     D = { y: 0, opacity: 1 };
-var L = ((a) => (
-    (a.TITLE = 'title'),
-    (a.HEADER = 'header'),
-    (a.NAME = 'name'),
-    (a.REWARDS = 'rewards'),
-    (a.BUTTONS = 'buttons'),
-    a
+var L = ((s) => (
+    (s.TITLE = 'title'),
+    (s.HEADER = 'header'),
+    (s.NAME = 'name'),
+    (s.REWARDS = 'rewards'),
+    (s.BUTTONS = 'buttons'),
+    s
 ))(L || {});
 const W = 500,
     H = 200,
@@ -56,9 +56,9 @@ const W = 500,
 function P({ reward: t, index: o, className: _, skipAnim: u }) {
     const { breakpoint: g } = n(),
         w = g.weight <= d.small.weight ? l.Small : l.Big,
-        [j, y] = a(() => ({ y: -10, opacity: 0 }));
+        [j, y] = s(() => ({ y: -10, opacity: 0 }));
     return (
-        s.useEffect(() => {
+        a.useEffect(() => {
             y.start({
                 to: { y: 0, opacity: 1 },
                 delay: u ? 0 : O.rewards.delay + H + 120 * o,
@@ -95,19 +95,19 @@ const U = 'KingRewardApp_44b022a4',
     F = 'KingRewardApp_background_61f74de3',
     J = 'KingRewardApp_base__skipAnim_401ff0d7',
     V = 'KingRewardApp_video_static_frame_c8ce80ec',
-    Y = 'KingRewardApp_video_4860dd44',
-    Z = 'KingRewardApp_main_reward_73f8b15c',
+    X = 'KingRewardApp_video_4860dd44',
+    Y = 'KingRewardApp_main_reward_73f8b15c',
     G = 'KingRewardApp_title_30646d85',
     Q = 'KingRewardApp_header_114f124a',
-    X = 'KingRewardApp_rewardList_ec777914',
-    aa = 'KingRewardApp_rewardsTitle_3d78ce62',
-    sa = 'KingRewardApp_buttons_1776743d',
-    ea = 'KingRewardApp_button_7430bb7d',
-    ra = 'KingRewardApp_bottomContainer_bfb0d8e8',
-    ia = R.strings.last_stand_lobby.kingRewardCongratsView,
-    ta = t(() => {
-        const { model: a, controls: r } = S(),
-            [t, o] = s.useState(!1);
+    Z = 'KingRewardApp_rewardList_ec777914',
+    ss = 'KingRewardApp_rewardsTitle_3d78ce62',
+    as = 'KingRewardApp_buttons_1776743d',
+    es = 'KingRewardApp_button_7430bb7d',
+    rs = 'KingRewardApp_bottomContainer_bfb0d8e8',
+    is = R.strings.last_stand_lobby.kingRewardCongratsView,
+    ts = t(() => {
+        const { model: s, controls: r } = S(),
+            [t, o] = a.useState(!1);
         return (
             _(u.ENTER, r.close),
             _(u.ESCAPE, r.close),
@@ -125,12 +125,12 @@ const U = 'KingRewardApp_44b022a4',
                     e.jsxs('div', {
                         className: F,
                         children: [
-                            e.jsx('div', { className: Z }),
+                            e.jsx('div', { className: Y }),
                             w.isLow()
                                 ? e.jsx('div', { className: V })
                                 : e.jsx(j, {
                                       src: R.videos.last_stand.king_reward(),
-                                      className: Y,
+                                      className: X,
                                       loop: !0,
                                       autoplay: !0,
                                   }),
@@ -140,38 +140,38 @@ const U = 'KingRewardApp_44b022a4',
                     e.jsx(f, {
                         ...O[L.TITLE],
                         isCanceled: t,
-                        children: e.jsx('div', { className: G, children: ia.title() }),
+                        children: e.jsx('div', { className: G, children: is.title() }),
                     }),
                     e.jsx(f, {
                         ...O[L.HEADER],
                         isCanceled: t,
-                        children: e.jsx(k, { text: ia.header(), type: N.Heading, className: Q, shadow: !0 }),
+                        children: e.jsx(k, { text: is.header(), type: N.Heading, className: Q, shadow: !0 }),
                     }),
                     e.jsx(f, {
                         ...O[L.REWARDS],
-                        className: ra,
+                        className: rs,
                         isCanceled: t,
                         children: e.jsxs('div', {
-                            className: X,
+                            className: Z,
                             children: [
-                                e.jsx('div', { className: aa, children: ia.rewardsTitle() }),
-                                y(a.rewards.get(), (a, s) => e.jsx(P, { reward: a, index: s, skipAnim: t }, a.name)),
+                                e.jsx('div', { className: ss, children: is.rewardsTitle() }),
+                                y(s.rewards.get(), (s, a) => e.jsx(P, { reward: s, index: a, skipAnim: t }, s.name)),
                             ],
                         }),
                     }),
                     e.jsx(f, {
                         ...O[L.BUTTONS],
-                        className: ra,
+                        className: rs,
                         isCanceled: t,
                         children: e.jsx('div', {
-                            className: sa,
+                            className: as,
                             children: e.jsx(h, {
                                 type: x.primary,
                                 size: b.medium,
                                 onClick: r.outro,
-                                mixClass: ea,
+                                mixClass: es,
                                 isFocused: !0,
-                                children: a.root.get().isTransition ? ia.btn.continue() : ia.btn.outro(),
+                                children: s.root.get().isTransition ? is.btn.continue() : is.btn.outro(),
                             }),
                         }),
                     }),
@@ -179,4 +179,4 @@ const U = 'KingRewardApp_44b022a4',
             })
         );
     });
-A(e.jsx(E, { children: e.jsx(ta, {}) }));
+A(e.jsx(E, { children: e.jsx(ts, {}) }));

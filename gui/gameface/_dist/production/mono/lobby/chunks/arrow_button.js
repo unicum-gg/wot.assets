@@ -1,4 +1,4 @@
-import { A as e, j as a } from './vendor.js';
+import { x as e, j as a } from './vendor.js';
 import { p as r } from './lib.js';
 const _ = {
         base: 'ArrowButton_6b3aeda7',
@@ -38,22 +38,22 @@ function o({
     className: n,
     classNames: u,
     onMouseEnter: i,
-    ...A
+    ...b
 }) {
-    const b = e(_.layer, null == u ? void 0 : u.layer);
+    const A = e(_.layer, null == u ? void 0 : u.layer);
     return a.jsx('div', {
         className: e(_.base, _[`base__${s}`], _[`base__${o}`], l && _.base__disabled, n),
         onMouseEnter: (e) => {
             (null == i || i(e), r.sound(d));
         },
-        ...A,
+        ...b,
         children: a.jsx('div', {
             className: _.layers,
             children: t.map((r) =>
                 a.jsx(
                     'div',
                     {
-                        className: e(b, _[`layer__${r}`]),
+                        className: e(A, _[`layer__${r}`]),
                         style: { backgroundImage: `url(R.images.comp7.gui.maps.icons.arrows.${r}_${o})` },
                     },
                     r,

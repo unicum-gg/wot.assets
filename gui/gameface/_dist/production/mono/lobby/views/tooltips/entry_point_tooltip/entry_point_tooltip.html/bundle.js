@@ -1,12 +1,12 @@
-import { r as e, j as t, f as s, x as a, A as i } from '../../../../chunks/vendor.js';
+import { r as e, j as t, f as s, y as a, x as i } from '../../../../chunks/vendor.js';
 import { i as o, H as r, cc as n, ai as p, ck as d, dr as l, F as m, bF as _, r as c } from '../../../../chunks/lib.js';
 import { t as f, T as u } from '../../../../chunks/tooltips.module.js';
 import { g as x } from '../../../../chunks/get_roman_levels.js';
 import { a as b } from '../../../../chunks/get_season_name.js';
 import { S as h } from '../../../../chunks/season_model.js';
 import { u as g } from '../../../../chunks/use_server_time_polling.js';
-import { c as A } from '../../../../chunks/types.js';
-/* empty css                        */ const [v, j] = o()(
+import { c as v } from '../../../../chunks/types.js';
+/* empty css                        */ const [A, j] = o()(
         ({ observableModel: e }) => ({
             root: e.object(),
             vehicleLevels: e.array('vehicleLevels'),
@@ -15,15 +15,15 @@ import { c as A } from '../../../../chunks/types.js';
         ({ externalModel: e }) => ({ pollServerTime: e.createCallbackNoArgs('season.pollServerTime') }),
     ),
     T = 'DateRange_8756cb54',
-    N = 'DateRange_label_d6f3c1f3',
-    y = 'DateRange_image_68220085',
+    y = 'DateRange_label_d6f3c1f3',
+    N = 'DateRange_image_68220085',
     S = r.resolve('strings'),
     k = { full: 'full', numeric: 'numeric', compact: 'compact' },
     D = { [k.full]: n.DayMonthFull, [k.numeric]: n.DayMonthNumeric };
 function C({ startDate: a, endDate: i, className: o, size: r, isAdaptive: n, isMode: m }) {
     const _ = l,
-        c = r === A.medium,
-        f = r === A.small,
+        c = r === v.medium,
+        f = r === v.small,
         u = e.useMemo(
             () => (f || (n && c && m) ? C.format.compact : n || c ? C.format.numeric : C.format.full),
             [n, c, m, f],
@@ -32,7 +32,7 @@ function C({ startDate: a, endDate: i, className: o, size: r, isAdaptive: n, isM
         className: s(T, o),
         children: [
             t.jsx(p, {
-                className: y,
+                className: N,
                 path: 'ui_kit.datetime.x16x16.cooldown',
                 width: 18,
                 height: 17,
@@ -40,7 +40,7 @@ function C({ startDate: a, endDate: i, className: o, size: r, isAdaptive: n, isM
             }),
             u !== k.compact
                 ? t.jsx(d, {
-                      className: N,
+                      className: y,
                       text: S.readOrEmpty('user_missions.common.daterange.divider'),
                       params: { startDate: _(a, D[u]), endDate: _(i, D[u]) },
                   })
@@ -170,4 +170,4 @@ const I = a(() => {
             ],
         });
     });
-c(t.jsx(v, { children: t.jsx(u, { children: t.jsx(B, {}) }) }));
+c(t.jsx(A, { children: t.jsx(u, { children: t.jsx(B, {}) }) }));

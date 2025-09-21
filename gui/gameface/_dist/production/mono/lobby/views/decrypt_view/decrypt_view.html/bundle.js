@@ -9,23 +9,23 @@ import {
     o as d,
     q as _,
     e as m,
-    a9 as g,
-    aa as u,
+    aO as g,
+    aj as u,
     m as p,
     p as f,
-    Y as h,
-    Z as x,
-    ab as b,
+    a5 as h,
+    a6 as x,
+    a7 as b,
     u as T,
     k as y,
-    a4 as v,
-    ac as j,
+    Y as v,
+    at as j,
     P as N,
 } from '../../../chunks/lib.js';
 import { S as k, E as F } from '../../../chunks/spring_wrapper.js';
 import { V as w } from '../../../chunks/video_background.js';
-import { M as W } from '../../../chunks/sound.js';
-import { d as A, p as C, g as S, a as D, c as I } from '../../../chunks/utils2.js';
+import { h as W } from '../../../chunks/sound.js';
+import { c as A, p as C, g as S, a as D, b as I } from '../../../chunks/utils2.js';
 import { a as B, c as Q } from '../../../chunks/string-utils.js';
 const [E, $] = r()(
         ({ observableModel: e }) => ({
@@ -104,15 +104,15 @@ const [E, $] = r()(
         bond: 'FormatTextWithTags_bond_865ee503',
         prom: 'FormatTextWithTags_prom_ad610099',
     },
-    Z = /(?:%\(|{)\w*(?:_[Oo]pen|Start)(?:\)s|})?(.*?)(?:%\(|{)\w*(?:_[Cc]lose|End)(?:\)s|})?/g,
-    G = new RegExp('(?<=(?:%\\(|{))(.*?)(?=(?:_[Oo]pen|Start))'),
-    K = e.memo(function ({ text: s }) {
+    G = /(?:%\(|{)\w*(?:_[Oo]pen|Start)(?:\)s|})?(.*?)(?:%\(|{)\w*(?:_[Cc]lose|End)(?:\)s|})?/g,
+    K = new RegExp('(?<=(?:%\\(|{))(.*?)(?=(?:_[Oo]pen|Start))'),
+    X = e.memo(function ({ text: s }) {
         const t = e.useMemo(() => {
             let e = 0;
             const t = {};
             return {
-                replacedText: B(Q(s)).replace(Z, (s, r = '') => {
-                    const i = s.match(G);
+                replacedText: B(Q(s)).replace(G, (s, r = '') => {
+                    const i = s.match(K);
                     if (!(null == i ? void 0 : i[1])) return (console.warn('No tag type found in:', s), r);
                     const n = i[1].toLowerCase();
                     if (!(n in Y)) return (console.warn(`Unknown tag type: ${n}`), r);
@@ -124,7 +124,7 @@ const [E, $] = r()(
         }, [s]);
         return a.jsx(l, { text: t.replacedText, binding: t.binding });
     }),
-    X = (e) => {
+    Z = (e) => {
         const { children: s, isScrollActive: t } = e,
             r = d();
         return t ? a.jsx(_.Vertical.Area.Default, { ...e, api: r, children: s }) : s;
@@ -152,13 +152,13 @@ const [E, $] = r()(
                 children: a.jsx('div', {
                     className: ae,
                     ref: i,
-                    children: a.jsx(X, {
+                    children: a.jsx(Z, {
                         isScrollActive: o,
                         barClassNames: { base: te },
                         children: a.jsx('div', {
                             className: se,
                             ref: n,
-                            children: a.jsx(K, { text: R.strings.last_stand_lobby.meta.story.$dyn(t) }),
+                            children: a.jsx(X, { text: R.strings.last_stand_lobby.meta.story.$dyn(t) }),
                         }),
                     }),
                 }),

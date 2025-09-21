@@ -1,5 +1,5 @@
 import { j as e, f as a } from './vendor.js';
-import { r, f as s } from './lib.js';
+import { r, N as s } from './lib.js';
 const o = 'optDevices',
     n = 'shells',
     d = 'consumables',

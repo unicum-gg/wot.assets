@@ -1,7 +1,7 @@
-import { x as e, y as n, j as a, z as t, A as r } from '../../../chunks/vendor.js';
-import { i as s, u as o, M as i, F as d, p as m, O as c, a as l, b as g, r as u } from '../../../chunks/lib.js';
-import { g as _ } from '../../../chunks/get_time_left.js';
-import { I as p } from '../../../chunks/consts.js';
+import { y as e, z as n, j as t, A as a, x as r } from '../../../chunks/vendor.js';
+import { i as s, e as o, M as i, F as d, p as m, O as c, h as l, j as g, r as _ } from '../../../chunks/lib.js';
+import { g as p } from '../../../chunks/get_time_left.js';
+import { I as u } from '../../../chunks/consts.js';
 /* empty css                     */ var x = ((e) => (
     (e.Countdown = 'countdown'),
     (e.Live = 'live'),
@@ -26,17 +26,17 @@ const [b, y] = s()(
     },
     h = [x.Countdown, x.DayIsOver],
     v = (e) => {
-        const n = _(e);
+        const n = p(e);
         return e >= c
-            ? a.jsx(d, {
+            ? t.jsx(d, {
                   text: R.strings.comp7_ext.grandTournamentWidget.counter.days(),
                   binding: { days: n.totalDays, hours: n.hours },
               })
             : e >= l
-              ? a.jsx(d, { text: R.strings.comp7_ext.grandTournamentWidget.counter.hours(), binding: n })
+              ? t.jsx(d, { text: R.strings.comp7_ext.grandTournamentWidget.counter.hours(), binding: n })
               : e >= g
-                ? a.jsx(d, { text: R.strings.comp7_ext.grandTournamentWidget.counter.minutes(), binding: n })
-                : a.jsx(d, { text: R.strings.comp7_ext.grandTournamentWidget.counter.lastMinute() });
+                ? t.jsx(d, { text: R.strings.comp7_ext.grandTournamentWidget.counter.minutes(), binding: n })
+                : t.jsx(d, { text: R.strings.comp7_ext.grandTournamentWidget.counter.lastMinute() });
     },
     T = (e, n) =>
         e !== x.Countdown || n
@@ -45,13 +45,13 @@ const [b, y] = s()(
     k = e(() => {
         const { model: e, controls: s } = y(),
             { state: c, isExtended: l, timeLeft: g } = e.root.get(),
-            { mediaSize: u } = o(),
-            _ = u >= i.Medium && l,
-            b = `${c === x.Live ? '_live' : ''}${_ ? '_big' : ''}`,
-            k = n(p);
-        return a.jsxs(t.div, {
+            { mediaSize: _ } = o(),
+            p = _ >= i.Medium && l,
+            b = `${c === x.Live ? '_live' : ''}${p ? '_big' : ''}`,
+            k = n(u);
+        return t.jsxs(a.div, {
             style: k,
-            className: r(j.base, c === x.Live && j.base__live, _ && j.base__large),
+            className: r(j.base, c === x.Live && j.base__live, p && j.base__large),
             onClick: () => {
                 (m.click(), s.openComp7GrandTournament());
             },
@@ -59,35 +59,35 @@ const [b, y] = s()(
                 m.highlight();
             },
             children: [
-                a.jsx('div', {
+                t.jsx('div', {
                     className: r(j.layer, j.layer__background),
                     style: {
                         backgroundImage: `url(${R.images.comp7.gui.maps.icons.grandTournament.$dyn(`background${b}`)})`,
                     },
                 }),
-                a.jsx('div', {
+                t.jsx('div', {
                     className: r(j.layer, j.layer__logo),
                     style: {
                         backgroundImage: `url(${R.images.comp7.gui.maps.icons.grandTournament.$dyn(`logo${b}`)})`,
                     },
                 }),
-                a.jsx('div', {
+                t.jsx('div', {
                     className: j.textWrapper,
                     children: h.includes(c)
-                        ? a.jsx(d, {
-                              text: T(c, _),
+                        ? t.jsx(d, {
+                              text: T(c, p),
                               binding: {
-                                  timer: a.jsx('div', {
+                                  timer: t.jsx('div', {
                                       className: j.timerContainer,
-                                      children: a.jsx('div', { className: j.timer }),
+                                      children: t.jsx('div', { className: j.timer }),
                                   }),
                                   countdown: v(g),
                               },
                               classMix: j.timerText,
                           })
-                        : a.jsx('div', { children: `${R.strings.comp7_ext.grandTournamentWidget.$dyn(c)}` }),
+                        : t.jsx('div', { children: `${R.strings.comp7_ext.grandTournamentWidget.$dyn(c)}` }),
                 }),
             ],
         });
     });
-u(a.jsx(b, { children: a.jsx(k, {}) }));
+_(t.jsx(b, { children: t.jsx(k, {}) }));

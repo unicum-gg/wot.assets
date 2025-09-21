@@ -1,4 +1,4 @@
-import { T as i, x as a, j as n, A as e } from '../../../../chunks/vendor.js';
+import { T as i, y as a, j as n, x as e } from '../../../../chunks/vendor.js';
 import {
     i as t,
     cD as s,
@@ -94,18 +94,18 @@ const [I, q] = t()(({ observableModel: a }) => {
     }),
     S = 'EliteRankContent_34a2bc68',
     w = 'EliteRankContent_score_c1d75b8d',
-    A = 'EliteRankContent_scoreLabel_8db99086',
-    Q = 'EliteRankContent_formatTextString_42aa1ae3',
+    Q = 'EliteRankContent_scoreLabel_8db99086',
+    A = 'EliteRankContent_formatTextString_42aa1ae3',
     M = ({ rank: i, currentScore: a, fromScore: e, topPercentage: t }) =>
         n.jsxs('div', {
             className: S,
             children: [
                 n.jsx('div', { className: w, children: n.jsx(l, { value: a }) }),
-                n.jsx('div', { className: A, children: R.strings.comp7_ext.progressionTooltip.ratingScore() }),
+                n.jsx('div', { className: Q, children: R.strings.comp7_ext.progressionTooltip.ratingScore() }),
                 n.jsx(r, {
                     text: j(R.strings.comp7_ext.progressionTooltip.info, i),
                     binding: { fromScore: e, topPercentage: t },
-                    classMix: Q,
+                    classMix: A,
                 }),
             ],
         }),

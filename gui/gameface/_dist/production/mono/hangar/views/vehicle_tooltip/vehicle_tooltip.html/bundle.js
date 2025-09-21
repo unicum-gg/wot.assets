@@ -1,43 +1,43 @@
-import { j as e, f as s, x as t } from '../../../chunks/vendor.js';
+import { j as e, f as s, w as t } from '../../../chunks/vendor.js';
 import {
     i as a,
     c as r,
-    s as i,
+    P as i,
     n as l,
     ap as c,
-    cP as n,
-    l as o,
-    P as m,
-    cQ as d,
-    f as u,
+    cN as n,
+    W as o,
+    ac as m,
+    cO as d,
+    N as u,
     r as _,
-    F as p,
-    o as h,
-    C as x,
-    y as g,
-    d as v,
-    I as j,
-    x as f,
+    Z as p,
+    v as h,
+    a2 as x,
+    a1 as g,
+    I as v,
+    Y as j,
+    a0 as f,
     c8 as b,
-    J as y,
-    aJ as N,
+    a6 as N,
+    aJ as y,
     bd as P,
-    cR as E,
-    az as w,
+    cP as w,
+    az as E,
     bL as C,
     be as S,
-    cS as R,
+    cQ as R,
     aq as T,
-    cT as O,
-    cU as B,
+    cR as O,
+    cS as B,
     cd as k,
-    cV as L,
-    cO as $,
+    cT as L,
+    cU as $,
     bc as M,
-    cW as A,
-    a3 as G,
-    a4 as z,
-    a6 as V,
+    cV as A,
+    J as G,
+    F as z,
+    G as V,
 } from '../../../chunks/lib.js';
 import { b as F } from '../../../chunks/common.js';
 import { T as H } from '../../../chunks/tankman_role.js';
@@ -87,13 +87,13 @@ const [D, I] = a('VehicleTooltipModelProvider')(({ observableModel: e }) => {
     J = 'ACTIVE',
     Q = 'CANCELLED',
     U = 'critical',
-    q = 'info',
-    K = { 1: 3, 2: 2, 3: 1, 4: 4 },
-    Z = (e) => {
+    Z = 'info',
+    q = { 1: 3, 2: 2, 3: 1, 4: 4 },
+    K = (e) => {
         switch (e) {
             case U:
                 return '#f31201';
-            case q:
+            case Z:
                 return '#7ab300';
             default:
                 return '#ee7000';
@@ -192,11 +192,11 @@ const de = 'BattlePassPoints_row__battlePassPoints_4e755749',
                     : e.jsx(fe, { title: 'limitReached', reward: !0 }),
         });
     }),
-    ye = 'Bonds_row__bonds_34572d0b',
-    Ne = 'Bonds_row__limitReached_34572d0b',
+    Ne = 'Bonds_row__bonds_34572d0b',
+    ye = 'Bonds_row__limitReached_34572d0b',
     Pe = 'Bonds_leftColumn_3a40de5',
-    Ee = 'Bonds_row_eedc2ff2',
-    we = 'Bonds_row__displayTimer_34572d0b',
+    we = 'Bonds_row_eedc2ff2',
+    Ee = 'Bonds_row__displayTimer_34572d0b',
     Ce = 'Bonds_timerWrapper_520aac9d',
     Se = 'Bonds_timer_49fb046e',
     Re = 'Bonds_currency_e32a6c4d',
@@ -213,7 +213,7 @@ const de = 'BattlePassPoints_row__battlePassPoints_4e755749',
             l = r && a,
             c = _.resolve('strings');
         return e.jsxs(me, {
-            className: s(Ee, l && we, r ? Ne : ye),
+            className: s(we, l && Ee, r ? ye : Ne),
             children: [
                 e.jsx('div', {
                     className: Pe,
@@ -334,13 +334,13 @@ const de = 'BattlePassPoints_row__battlePassPoints_4e755749',
             title: ae,
             params: { count: r.length },
             className: s(Fe, t),
-            children: y(r, (s) =>
+            children: N(r, (s) =>
                 e.jsxs(
                     'div',
                     {
                         className: He,
                         children: [
-                            e.jsx(H, { role: N(s.roles, 0), className: Xe }),
+                            e.jsx(H, { role: y(s.roles, 0), className: Xe }),
                             s.roles.length > 1 &&
                                 e.jsx('div', { className: De, children: i.readOrEmpty('crew_perks.sign.plus') }),
                         ],
@@ -369,7 +369,7 @@ function Ue({ rentPeriodLeft: s, rentType: t }) {
         ],
     });
 }
-const qe = t(function () {
+const Ze = t(function () {
         const { model: s } = I(),
             { rentLeftTime: t, rentLeftBattles: a, rentLeftWins: r } = s.statistics.get(),
             i = (function (e) {
@@ -384,22 +384,22 @@ const qe = t(function () {
                 ? e.jsx(Ue, { rentPeriodLeft: r, rentType: ie })
                 : null;
     }),
-    Ke = 'Role_c276c189',
-    Ze = 'Role_vehicleRoleIcon_a0c92760',
+    qe = 'Role_c276c189',
+    Ke = 'Role_vehicleRoleIcon_a0c92760',
     Ye = 'Role_property_8f6d69d9',
     es = t(function ({ className: t }) {
         const { model: a } = I(),
             { type: r, role: i } = a.statistics.get(),
             l = _.resolve('strings');
         return e.jsxs(me, {
-            className: s(Ke, t),
+            className: s(qe, t),
             title: te,
             children: [
-                e.jsx(P, { classNames: { icon: Ze }, roleKey: w(i), size: E.x16x16 }),
+                e.jsx(P, { classNames: { icon: Ke }, roleKey: E(i), size: w.x16x16 }),
                 Y(r) &&
                     e.jsx('div', {
                         className: Ye,
-                        children: l.readOrEmpty(`menu.roleExp.roleGroupName.role_${ee[r]}_${w(i)}`),
+                        children: l.readOrEmpty(`menu.roleExp.roleGroupName.role_${ee[r]}_${E(i)}`),
                     }),
             ],
         });
@@ -454,7 +454,7 @@ const qe = t(function () {
         const { model: t } = I(),
             { wotPlus: a } = t.earnings.get(),
             { name: r, role: i, type: l, elite: c, level: n } = t.statistics.get(),
-            o = w(i);
+            o = E(i);
         return e.jsxs(os, {
             className: s,
             children: [
@@ -471,7 +471,7 @@ const qe = t(function () {
                 o !== R && o !== T.spg && e.jsx(es, { className: ns }),
                 e.jsx(Ie, { className: ns }),
                 a && e.jsx(as, { className: ns }),
-                e.jsx(qe, {}),
+                e.jsx(Ze, {}),
             ],
         });
     }),
@@ -535,20 +535,20 @@ const qe = t(function () {
             ],
         });
     }),
-    ys = {
+    Ns = {
         leftColumn: 'ServiceRecords_leftColumn_aa27c766',
         title: 'ServiceRecords_title_11ae1ccc',
         eliteSystem: 'ServiceRecords_eliteSystem_aeef0cfd',
         text: 'ServiceRecords_text_e426fb24',
     },
-    Ns = t(function () {
+    ys = t(function () {
         const { model: s } = I(),
             { marksOnGunPercentage: t, marksOnGun: a } = s.serviceRecords.get(),
             r = _.resolve('strings');
         return e.jsxs(me, {
             children: [
                 e.jsxs('div', {
-                    className: ys.leftColumn,
+                    className: Ns.leftColumn,
                     children: [
                         e.jsx(p, {
                             upgradeLegacy: !0,
@@ -558,36 +558,36 @@ const qe = t(function () {
                         e.jsx(j, { path: `library.marksOnGun.mark_${a}`, width: 24, height: 24 }),
                     ],
                 }),
-                e.jsx('div', { className: ys.text, children: r.pluralOrEmpty('achievements.marksOnGun.count', a) }),
+                e.jsx('div', { className: Ns.text, children: r.pluralOrEmpty('achievements.marksOnGun.count', a) }),
             ],
         });
     }),
     Ps = t(function () {
         const { model: s } = I(),
             { marksOfMastery: t } = s.serviceRecords.get(),
-            a = h(`tooltip.proficiency.class_icons_${K[t]}`, `tooltip.proficiency.class_icons_${K[t]}_upscale`);
+            a = h(`tooltip.proficiency.class_icons_${q[t]}`, `tooltip.proficiency.class_icons_${q[t]}_upscale`);
         return e.jsxs(me, {
             children: [
-                e.jsx('div', { className: ys.leftColumn, children: e.jsx(j, { path: a, width: 24, height: 24 }) }),
-                e.jsx(p, { className: ys.text, path: `achievements.markOfMastery${K[t]}` }),
+                e.jsx('div', { className: Ns.leftColumn, children: e.jsx(j, { path: a, width: 24, height: 24 }) }),
+                e.jsx(p, { className: Ns.text, path: `achievements.markOfMastery${q[t]}` }),
             ],
         });
     });
-function Es({ rate: s }) {
+function ws({ rate: s }) {
     const t = _.resolve('strings');
     return e.jsxs(me, {
         children: [
             e.jsx(p, {
                 upgradeLegacy: !0,
-                className: ys.leftColumn,
+                className: Ns.leftColumn,
                 path: 'common.percentValue',
                 params: { value: v.formatNumber('integral', Math.round(s)) },
             }),
-            e.jsx('div', { className: ys.text, children: t.readOrEmpty('achievements.winRate') }),
+            e.jsx('div', { className: Ns.text, children: t.readOrEmpty('achievements.winRate') }),
         ],
     });
 }
-const ws = u('ServiceRecords', ys.base),
+const Es = u('ServiceRecords', Ns.base),
     Cs = t(function ({ className: s }) {
         const { model: t } = I(),
             {
@@ -599,17 +599,17 @@ const ws = u('ServiceRecords', ys.base),
             } = t.serviceRecords.get(),
             n = _.resolve('strings'),
             o = l > 0 ? (i / l) * 100 : 0;
-        return e.jsxs(ws, {
+        return e.jsxs(Es, {
             className: s,
             children: [
                 e.jsx('div', {
-                    className: ys.title,
+                    className: Ns.title,
                     children: n.readOrEmpty('tooltips.tankCaruselTooltip.serviceRecords.header'),
                 }),
-                t.computes.elite() && 'undefined' !== a && e.jsx(bs, { className: ys.eliteSystem }),
+                t.computes.elite() && 'undefined' !== a && e.jsx(bs, { className: Ns.eliteSystem }),
                 r > 0 && e.jsx(Ps, {}),
-                c > 0 && e.jsx(Ns, {}),
-                l > 0 && e.jsx(Es, { rate: o }),
+                c > 0 && e.jsx(ys, {}),
+                l > 0 && e.jsx(ws, { rate: o }),
             ],
         });
     }),
@@ -630,7 +630,7 @@ const ws = u('ServiceRecords', ys.base),
             className: s,
             children: [
                 e.jsx('div', { className: Ss.gradient }),
-                y(a, (s, t) => {
+                N(a, (s, t) => {
                     if (s.isSpecial)
                         return e.jsxs(
                             me,
@@ -701,7 +701,7 @@ const ws = u('ServiceRecords', ys.base),
                             a.computes.serviceRecords() && e.jsx(Cs, { className: Ms }),
                             e.jsx(p, {
                                 upgradeLegacy: !0,
-                                style: { color: Z(a.stateLevel.get()) },
+                                style: { color: K(a.stateLevel.get()) },
                                 className: zs,
                                 path: `tooltips.vehicleStatus.${a.status.get()}.header`,
                                 params: {

@@ -22,21 +22,23 @@ const n = {
             HAS_BOXES_VIEW: { hasIdle: !1, tabsGuaranteedCount: 5 },
             INFO_PAGE: { hasDescription: !0 },
         },
+        wt: { HAS_BOXES_VIEW: { tabsGuaranteedCount: 5 } },
+        wtCn: { HAS_BOXES_VIEW: { tabsGuaranteedCount: 5 } },
     },
-    e = (e, s) => {
-        const i = o[t(e)];
-        return i
+    e = (e, a) => {
+        const s = o[t(e)];
+        return s
             ? ((t, n) => {
                   const o = (t, n) => {
                       const e = { ...t };
-                      for (const s in e)
+                      for (const a in e)
                           n &&
-                              s in n &&
-                              ('object' == typeof e[s] ? (e[s] = o(e[s], n[s] ?? e[s])) : (e[s] = n[s] ?? e[s]));
+                              a in n &&
+                              ('object' == typeof e[a] ? (e[a] = o(e[a], n[a] ?? e[a])) : (e[a] = n[a] ?? e[a]));
                       return e;
                   };
                   return o(t, n);
-              })(n[s], i[s])
-            : n[s];
+              })(n[a], s[a])
+            : n[a];
     };
 export { e as g };

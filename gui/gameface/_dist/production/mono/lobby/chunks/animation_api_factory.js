@@ -1,5 +1,5 @@
 import { r as e } from './vendor.js';
-import { bB as r, Y as t, aJ as n, d as s } from './lib.js';
+import { bB as r, Y as t, aJ as n, u as s } from './lib.js';
 const o = (o) => () => {
     const { steps: a, autoStart: u = !0 } = o,
         l = e.useRef(null),

@@ -3240,6 +3240,1505 @@ async function runView(e, { root: t = document.getElementById('root'), withMedia
             .render(jsxRuntimeExports.jsx(o, { children: jsxRuntimeExports.jsx(Provider$1, { children: e }) })),
         r && (initExternalPaddings$1(t), enableFullScreenModeSupported$1()));
 }
+function ColorsProvider(e) {
+    return jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children: e.children });
+}
+function UIProvider(e) {
+    return jsxRuntimeExports.jsx(ColorsProvider, {
+        children: jsxRuntimeExports.jsx(SoundsProvider, {
+            overrides: e.soundsOverrides,
+            severity: e.soundSeverity,
+            silent: e.soundsOff,
+            children: e.children,
+        }),
+    });
+}
+const undef = () => {};
+function withResolvePath(e) {
+    const t = e;
+    return reactExports.forwardRef(function (e, s) {
+        const r = useAdaptive(e, e.adaptive),
+            { path: n, ...o } = r,
+            a = r.images ?? resources.resolve('images'),
+            i = { ...o, ref: s };
+        {
+            const e = n ? a.readOr(n, undef, 'warn') : void 0;
+            return e ? jsxRuntimeExports.jsx(t, { ...i, src: e }) : jsxRuntimeExports.jsx(t, { ...i, unknown: !0 });
+        }
+    });
+}
+const defaultUnknownStyle = {
+        background:
+            'linear-gradient(45deg, #ccc 25%, transparent 25%),\nlinear-gradient(-45deg, #ccc 25%, transparent 25%),\nlinear-gradient(45deg, transparent 75%, #ccc 75%),\nlinear-gradient(-45deg, transparent 75%, #ccc 75%)',
+        backgroundSize: '20rem 20rem',
+        backgroundPosition: '0 0, 0 10rem, 10rem -10rem, -10rem 0rem',
+        backgroundColor: '#000',
+    },
+    Image$1 = withResolvePath(
+        reactExports.forwardRef(function (e, t) {
+            if (e.unknown) {
+                const {
+                    repeat: s,
+                    fit: r,
+                    position: n,
+                    width: o,
+                    src: a,
+                    height: i,
+                    unselectable: u,
+                    unknown: l,
+                    unknownStyle: c = defaultUnknownStyle,
+                    ...d
+                } = e;
+                return jsxRuntimeExports.jsx('div', {
+                    ...d,
+                    ref: t,
+                    style: { width: e.width, height: e.height, ...c, ...e.style },
+                });
+            }
+            const {
+                repeat: s,
+                fit: r,
+                position: n,
+                width: o,
+                height: a,
+                unknownStyle: i,
+                unknown: u,
+                unselectable: l,
+                ...c
+            } = e;
+            return jsxRuntimeExports.jsx('div', {
+                ...c,
+                ref: t,
+                style: {
+                    backgroundImage: `url(${e.src})`,
+                    backgroundRepeat: s ?? 'no-repeat',
+                    backgroundSize: r ?? 'contain',
+                    backgroundPosition: n ?? 'center center',
+                    width: 'number' == typeof o ? `${o}rem` : o,
+                    height: 'number' == typeof a ? `${a}rem` : a,
+                    ...c.style,
+                },
+            });
+        }),
+    );
+function Atlas(e) {
+    const t = e.config.frames[e.icon];
+    if (!t) return (console.error(`Error in Atlas: Frame for icon "${e.icon}" not found in path "${e.path}"`), null);
+    const { icon: s, width: r = `${t.w}px`, height: n = `${t.h}px`, ...o } = e;
+    return jsxRuntimeExports.jsx(Image$1, {
+        fit: `${e.config.meta.size.w}px ${e.config.meta.size.h}px`,
+        position: `${-t.x}px ${-t.y}px`,
+        width: r,
+        height: n,
+        ...o,
+    });
+}
+function defineStyledComponent(e, t, s) {
+    var r;
+    const n =
+            'object' == typeof t && 'cva' in t
+                ? null == (r = t.cva)
+                    ? void 0
+                    : r.variants
+                : null == s
+                  ? void 0
+                  : s.variants,
+        o = n ? Object.keys(n) : [];
+    if ('object' == typeof t) {
+        const s = t,
+            r = cva(s.className, s.cva),
+            n = s.element,
+            a = reactExports.forwardRef(function (e, t) {
+                return reactExports.createElement(n, {
+                    ...('function' == typeof n ? e : cleanProps(o, e)),
+                    ref: t,
+                    className: r(e),
+                });
+            });
+        return ((a.displayName = e), s.cva && (a.cva = s.cva), a);
+    }
+    const a = cva(t, s),
+        i = reactExports.forwardRef(function (t, s) {
+            return jsxRuntimeExports.jsx('div', { 'data-name': e, ...cleanProps(o, t), ref: s, className: a(t) });
+        });
+    return ((i.displayName = e), s && (i.cva = s), i);
+}
+function cleanProps(e, t) {
+    if (0 === e.length) return t;
+    const s = { ...t };
+    for (const r of e) delete s[r];
+    return s;
+}
+withResolvePath(
+    reactExports.forwardRef(function (e, t) {
+        const {
+            width: s,
+            height: r,
+            src: n,
+            unselectable: o,
+            unknown: a,
+            unknownStyle: i = defaultUnknownStyle,
+            ...u
+        } = e;
+        return e.unknown
+            ? jsxRuntimeExports.jsx('div', { ...u, style: { width: e.width, height: e.height, ...i } })
+            : jsxRuntimeExports.jsx('img', { ...u, ref: t, src: n, width: s, height: r });
+    }),
+);
+const sizes$i = { small: 'small', medium: 'medium' },
+    NodeTypes = { Text: 1, Tag: 2, Var: 3 };
+function parseArguments(e) {
+    const t = [];
+    let s = '',
+        r = !1,
+        n = !1,
+        o = '';
+    for (let a = 0; a < e.length; a++) {
+        const i = e[a];
+        ("'" !== i && '"' !== i) || n || r
+            ? i === o && n
+                ? ((n = !1), (s += i))
+                : '(' !== i || n
+                  ? ')' === i && r && !n
+                      ? ((r = !1), (s += i))
+                      : ' ' !== i || r || n
+                        ? (s += i)
+                        : s && (t.push(s), (s = ''))
+                  : ((r = !0), (s += i))
+            : ((n = !0), (o = i), (s += i));
+    }
+    return (s && t.push(s), t);
+}
+function parse(e, t) {
+    const s = [],
+        r = [];
+    let n = '',
+        o = !1,
+        a = '',
+        i = 0;
+    for (let u = 0; u < e.length; u++) {
+        const l = e[u];
+        if (l === t.start[0] && e.slice(u, u + t.start.length) === t.start) {
+            if (n) {
+                if (r.length > 0) {
+                    r[r.length - 1].node.children.push({ type: NodeTypes.Text, value: n });
+                } else s.push({ type: NodeTypes.Text, value: n });
+                n = '';
+            }
+            ((o = !0), (u += t.start.length - 1));
+        } else if (l === t.end[0] && e.slice(u, u + t.end.length) === t.end) {
+            ((o = !1), (u += t.end.length - 1));
+            const e = a.trim();
+            if (e.startsWith('@')) {
+                const t = e.slice(1).trim(),
+                    n = { type: NodeTypes.Tag, attrs: t.split('|'), instanceId: ++i, children: [] };
+                if (r.length > 0) {
+                    r[r.length - 1].node.children.push(n);
+                } else s.push(n);
+                r.push({ node: n, startIndex: s.length });
+            } else if ('/' === e) r.length > 0 && r.pop();
+            else {
+                const t = { type: NodeTypes.Var, instanceId: ++i, name: e };
+                if (r.length > 0) {
+                    r[r.length - 1].node.children.push(t);
+                } else s.push(t);
+            }
+            a = '';
+        } else o ? (a += l) : (n += l);
+    }
+    if (n)
+        if (r.length) {
+            r[r.length - 1].node.children.push({ type: NodeTypes.Text, value: n });
+        } else s.push({ type: NodeTypes.Text, value: n });
+    return s;
+}
+const COLORS =
+        'blackReal, whiteReal, white, whiteOrange, whiteSpanish, par, parSecondary, parTertiary, infoRed, red, redDark, yellow, orange, cream, brown, greenBright, green, greenDark, blueBooster, blueTeamkiller, cred, gold, bond, prom',
+    base$S = 'FormatText_db904f12',
+    base__fullSize = 'FormatText_base__fullSize_a514958e',
+    styles$11 = { COLORS: COLORS, base: base$S, base__fullSize: base__fullSize },
+    legacyColors = new Set((null == (_a = styles$11.COLORS) ? void 0 : _a.split(', ')) ?? []);
+let keyId = 0;
+function takeKey() {
+    return ++keyId;
+}
+function split$1(e) {
+    if (Array.isArray(e)) return e.map(split$1);
+    if ('string' == typeof e) {
+        const t = resources.resolve('langCode');
+        return jsxRuntimeExports.jsx(
+            reactExports.Fragment,
+            {
+                children: addSpaceAndMap(splitLocale(e, t), t, (e, t) =>
+                    jsxRuntimeExports.jsx('span', { children: e }, `${e}${t}`),
+                ),
+            },
+            takeKey(),
+        );
+    }
+    return e;
+}
+function style(e, ...t) {
+    return jsxRuntimeExports.jsx(
+        'span',
+        {
+            style: t.reduce((s, r) => {
+                if (Array.isArray(r)) {
+                    const [e, t] = r;
+                    return ((s[e] = t), s);
+                }
+                return (console.warn(`Invalid argument ${r} in ${e}: ${t}`), s);
+            }, {}),
+            children: e,
+        },
+        takeKey(),
+    );
+}
+function className(e, ...t) {
+    return jsxRuntimeExports.jsx(
+        'span',
+        { className: t.filter((e) => 'string' == typeof e && e.length > 0).join(' '), children: e },
+        takeKey(),
+    );
+}
+const color = (e, t) => ['color', t],
+    fontSize = (e, t) => ['fontSize', t],
+    fontWeight = (e, t) => ['fontWeight', t],
+    textDecoration = (e, t) => ['textDecoration', t],
+    bold = (e) => ['fontWeight', 'bold'];
+function colorLegacy(e, t) {
+    const s = takeKey();
+    return legacyColors.has(String(t))
+        ? jsxRuntimeExports.jsx('span', { className: `FormatText_colorLegacy__${t}`, children: e }, s)
+        : jsxRuntimeExports.jsx('span', { style: { color: `#${t}` }, children: e }, s);
+}
+const defaultFormatters = {
+    class: className,
+    colorLegacy: colorLegacy,
+    bold: bold,
+    split: split$1,
+    style: style,
+    color: color,
+    fontSize: fontSize,
+    fontWeight: fontWeight,
+    textDecoration: textDecoration,
+};
+function applyFunction(e, t, s, r) {
+    const n = s.map((t) => {
+            if ('string' != typeof t) return t;
+            const s = t.trim();
+            if (s.startsWith('(') && s.endsWith(')')) {
+                const [t, ...n] = s.slice(1, -1).split(' ');
+                return t ? applyFunction(e, t, n, r) : e;
+            }
+            return s.startsWith("'") && s.endsWith("'") ? s.slice(1, -1) : s;
+        }),
+        o = r[t];
+    return o ? o(e, ...n) : (console.error(`Function ${t} is not registered`), e);
+}
+function applyFunctions(e, t, s) {
+    return e.reduce((e, t) => {
+        const [r, ...n] = parseArguments(t.trim());
+        return r ? applyFunction(e, r, n, s) : e;
+    }, t);
+}
+function isEnd(e) {
+    return !((e >= 'a' && e <= 'z') || (e >= 'A' && e <= 'Z') || (e >= '0' && e <= '9') || '_' === e);
+}
+function resolveAttrParams(e, t) {
+    for (let s = 0; s < e.length; s++) {
+        if ('$' === e[s]) {
+            let r = s + 1;
+            for (; r < e.length && !isEnd(e[r]); ) r++;
+            const n = e.slice(s + 1, r),
+                o = t[n];
+            if (o) return resolveAttrParams(e.replace(`$${n}`, String(o)), t);
+        }
+    }
+    return e;
+}
+function resolveAttrsParams(e, t) {
+    const s = [];
+    for (let r = 0; r < e.length; r++) s[r] = resolveAttrParams(e[r], t);
+    return s;
+}
+const primitives = ['number', 'string', 'undefined'];
+function render(e, t, s = {}, r = !0) {
+    r && (keyId = 0);
+    const n = [];
+    function o(e) {
+        if (primitives.includes(typeof e)) {
+            const t = n.at(-1);
+            if ('string' == typeof t) return void (n[n.length - 1] = t + e);
+        }
+        n.push(e);
+    }
+    for (const a of e)
+        if (a.type === NodeTypes.Text) o(a.value);
+        else if (a.type === NodeTypes.Var)
+            null === s[a.name] || primitives.includes(typeof s[a.name])
+                ? o(s[a.name] ?? `{{${a.name}}}`)
+                : n.push(
+                      jsxRuntimeExports.jsx(
+                          reactExports.Fragment,
+                          { children: s[a.name] },
+                          `var-${a.name}-${a.instanceId}`,
+                      ),
+                  );
+        else if (a.type === NodeTypes.Tag) {
+            const e = render(a.children, t, s, !1),
+                r = applyFunctions(resolveAttrsParams(a.attrs, s), e, t);
+            n.push(r);
+        }
+    return n;
+}
+function upgradeColorTag(e) {
+    return e
+        .replace(/%\(([a-zA-Z0-9]+)_(Open|Start)\)s(.+?)%\(\1_(Close|End)\)s/, "{{@ colorLegacy '$1'}}$3{{/}}")
+        .replace(/\{([a-zA-Z0-9]+)_(Open|Start)\}(.+?)\{\1_(Close|End)\}/gi, "{{@ colorLegacy '$1'}}$3{{/}}");
+}
+function upgradeVariables(e) {
+    return e
+        .replace(/%\((\w+|\d)\)(?:s|d)?/gi, '{{$1}}')
+        .replace(new RegExp('(?<!\\{)\\{(\\w+|\\d)\\}', 'g'), '{{$1}}');
+}
+function upgradeSymbols(e) {
+    return e.replaceAll('&nbsp;', ' ').replaceAll('&zwnbsp;', '\ufeff');
+}
+function upgradeLegacy(e) {
+    return pipe(e, upgradeSymbols, upgradeColorTag, upgradeVariables);
+}
+const defaultBrackets = { start: '{{', end: '}}' },
+    FormatText = reactExports.memo(function (e) {
+        const {
+                brackets: t = defaultBrackets,
+                text: s,
+                params: r,
+                upgradeLegacy: n,
+                fullSize: o,
+                inline: a,
+                formatters: i,
+                split: u,
+                ...l
+            } = e,
+            c = reactExports.useMemo(
+                () => (e.upgradeLegacy ? upgradeLegacy(e.text) : e.text),
+                [e.text, e.upgradeLegacy],
+            ),
+            d = reactExports.useMemo(
+                () => (e.formatters ? { ...defaultFormatters, ...e.formatters } : defaultFormatters),
+                [e.formatters],
+            ),
+            _ = reactExports.useMemo(() => parse(u ? `{{@ split}}${c}{{/}}` : c, t), [t, c, u]),
+            m = reactExports.useMemo(() => render(_, d, e.params), [_, d, e.params]),
+            p = cx(styles$11.base, o && styles$11.base__fullSize, l.className);
+        return e.inline
+            ? (console.warn(
+                  "[FormatText] using the 'inline' props causes memory leaks due to incorrect working of the 'cohinline' attribute in GF version 1.48.2.3. Can cause client crashes.",
+                  "Use 'split' prop instead.",
+              ),
+              jsxRuntimeExports.jsx('p', {
+                  ...l,
+                  className: p,
+                  ref: (e) => {
+                      null == e || e.setAttribute('cohinline', 'true');
+                  },
+                  children: m,
+              }))
+            : jsxRuntimeExports.jsx('span', { ...l, className: p, children: m });
+    });
+function FormatString({ path: e, ...t }) {
+    return jsxRuntimeExports.jsx(FormatText, { text: resources.resolve('strings').readOrEmpty(e), ...t });
+}
+function FormatPluralString({ path: e, count: t, ...s }) {
+    return jsxRuntimeExports.jsx(FormatText, { text: resources.resolve('strings').pluralOrEmpty(e, t), ...s });
+}
+const base$R = 'Value_880359b5',
+    base__small$8 = 'Value_base__small_533886b2',
+    base__text = 'Value_base__text_3c091067',
+    base__medium$6 = 'Value_base__medium_c1f8595d',
+    value$1 = 'Value_29975a5b',
+    value__small = 'Value_value__small_f3df7ae5',
+    value__medium = 'Value_value__medium_62a482c',
+    styles$10 = {
+        base: base$R,
+        base__small: base__small$8,
+        base__text: base__text,
+        base__medium: base__medium$6,
+        value: value$1,
+        value__small: value__small,
+        value__medium: value__medium,
+    },
+    intl$1 = resources.resolve('intl'),
+    DEFAULT_MAX_VALUE = 99;
+function formatNumber(e, t) {
+    return e > t
+        ? jsxRuntimeExports.jsx(FormatString, { path: 'common.valuePlus', params: { value: t } })
+        : intl$1.formatNumber('integral', e);
+}
+function getValue(e, t) {
+    return 'number' == typeof e ? formatNumber(e, t) : e;
+}
+function Value({ classNames: e, size: t = sizes$i.small, value: s, maxValue: r = DEFAULT_MAX_VALUE }) {
+    return jsxRuntimeExports.jsx('div', {
+        className: cx(
+            styles$10.base,
+            styles$10[`base__${t}`],
+            'string' == typeof s && styles$10.base__text,
+            null == e ? void 0 : e.valueContainer,
+        ),
+        children: jsxRuntimeExports.jsx('div', {
+            className: cx(styles$10.value, styles$10[`value__${t}`], null == e ? void 0 : e.value),
+            children: getValue(s, r),
+        }),
+    });
+}
+const base$Q = 'Bubble_df22310d',
+    base__hidden$1 = 'Bubble_base__hidden_1700314d',
+    styles$$ = { base: base$Q, base__hidden: base__hidden$1 },
+    Bubble = {
+        Root: defineStyledComponent('Bubble', styles$$.base, { variants: { hidden: { true: styles$$.base__hidden } } }),
+        Value: Value,
+    },
+    Context$4 = reactExports.createContext(void 0);
+function useHorizontalScroll() {
+    const e = reactExports.useContext(Context$4);
+    if (!e) throw new Error('useHorizontalScroll must be used within a Scroll.Horizontal.Base component');
+    return e;
+}
+var Direction = ((e) => ((e[(e.Next = -1)] = 'Next'), (e[(e.Prev = 1)] = 'Prev'), e))(Direction || {});
+const defaultSettings = {
+        step: { type: 'proportional', factor: 4, clampedArrowStepTimeout: 100 },
+        animationConfig: { tension: 170, friction: 26 },
+    },
+    createApiHook = ({
+        getContainerSize: e,
+        getBounds: t,
+        setScrollPosition: s,
+        getDirection: r,
+        getWrapperSize: n,
+        triggerMouseMoveOnUpdate: o = !1,
+    }) => {
+        const a = (e, s) => {
+            const [r, n] = t(e);
+            return clamp(r, n, s);
+        };
+        return (i = {}) => {
+            const { settings: u = defaultSettings } = i,
+                [l, c] = reactExports.useState(!1),
+                d = reactExports.useRef(null),
+                _ = reactExports.useRef(null),
+                m = reactExports.useRef({ wrapper: 0, container: 0 }),
+                p = useEmitter(),
+                x = useThrottle(
+                    () => {
+                        forceTriggerMouseMove$1();
+                    },
+                    [],
+                    150,
+                ),
+                [f, E] = useSpring(() => ({
+                    scrollPosition: 0,
+                    onChange: (e) => {
+                        const t = d.current;
+                        t && (s(t, e), p.trigger('change', e));
+                    },
+                    onRest: (e) => p.trigger('rest', e),
+                    onStart: (e) => p.trigger('start', e),
+                    onPause: (e) => p.trigger('pause', e),
+                })),
+                h = reactExports.useCallback(
+                    (e, t, s) => {
+                        const r = f.scrollPosition.get(),
+                            n = (f.scrollPosition.goal ?? 0) - r;
+                        return a(e, t * s + n + r);
+                    },
+                    [f.scrollPosition],
+                ),
+                b = reactExports.useCallback(
+                    function (e, { immediate: t = !1, reset: s = !0 } = {}) {
+                        const r = d.current;
+                        r &&
+                            E.start({
+                                scrollPosition: a(r, e),
+                                immediate: t,
+                                reset: s,
+                                config: u.animationConfig,
+                                from: { scrollPosition: a(r, f.scrollPosition.get()) },
+                                onChange: () => {
+                                    o && x();
+                                },
+                            });
+                    },
+                    [E, u.animationConfig, f.scrollPosition, x],
+                ),
+                g = reactExports.useCallback(
+                    function (e) {
+                        const t = d.current,
+                            s = _.current;
+                        if (!t || !s) return;
+                        const r = ((e, t) => {
+                                switch (t.type) {
+                                    case 'proportional':
+                                        return n(e) / t.factor;
+                                    case 'fixed':
+                                        return t.value;
+                                }
+                            })(s, u.step),
+                            o = h(t, e, r);
+                        b(o);
+                    },
+                    [b, h, u.step],
+                ),
+                y = reactExports.useCallback(
+                    function (e) {
+                        l ||
+                            (0 !== e.deltaY && g(r(e)),
+                            d.current && p.trigger('mouseWheel', e, f.scrollPosition, t(d.current)));
+                    },
+                    [f.scrollPosition, g, p, l],
+                ),
+                v = useSkipFrame(),
+                C = reactExports.useCallback(
+                    function () {
+                        return v.run(() => {
+                            const e = d.current;
+                            e && (b(a(e, f.scrollPosition.goal), { immediate: !0 }), p.trigger('resizeHandled'));
+                        });
+                    },
+                    [v, b, f.scrollPosition.goal, p],
+                );
+            useRefResizeObserver(_, (e) => {
+                const t = e.target;
+                if (!(t instanceof HTMLElement)) return;
+                const s = n(t);
+                m.current.wrapper !== s && C();
+            });
+            const $ = useEvent(function () {
+                const t = d.current;
+                if (!t) return;
+                const s = e(t),
+                    r = _.current ? n(_.current) : 0;
+                if (m.current.container !== s || m.current.wrapper !== r) {
+                    const e = a(t, f.scrollPosition.goal);
+                    (e !== f.scrollPosition.goal && b(e, { immediate: !0 }),
+                        (m.current.container = s),
+                        (m.current.wrapper = r),
+                        p.trigger('recalculateContent'));
+                }
+            });
+            reactExports.useEffect(
+                () => (
+                    window.addEventListener('resize', C),
+                    () => {
+                        window.removeEventListener('resize', C);
+                    }
+                ),
+                [C],
+            );
+            return reactExports.useMemo(
+                () => ({
+                    getWrapperSize: () => (_.current ? n(_.current) : void 0),
+                    getContainerSize: () => (d.current ? e(d.current) : void 0),
+                    getBounds: () =>
+                        d.current ? t(d.current) : (console.warn('getBounds: contentRef.current is null'), [0, 0]),
+                    stepTimeout: u.step.clampedArrowStepTimeout,
+                    settings: u,
+                    clampPosition: a,
+                    handleMouseWheel: y,
+                    applyScroll: b,
+                    applyStepTo: g,
+                    contentRef: d,
+                    wrapperRef: _,
+                    scrollPosition: E,
+                    animationScroll: f,
+                    recalculateContent: $,
+                    disabled: l,
+                    setDisabled: c,
+                    events: { on: p.on, off: p.off },
+                }),
+                [u, y, b, g, E, f, $, l, c, p.on, p.off],
+            );
+        };
+    },
+    DEFAULT_HORIZONTAL_API_CONFIG = {
+        getBounds: (e) => {
+            var t;
+            return [0, e.offsetWidth - ((null == (t = e.parentElement) ? void 0 : t.offsetWidth) ?? 0)];
+        },
+        getContainerSize: (e) => e.offsetWidth,
+        getWrapperSize: (e) => e.offsetWidth,
+        setScrollPosition: (e, t) => {
+            e.style.transform = `translateX(-${Math.trunc(t.value.scrollPosition ?? 0)}px)`;
+        },
+        getDirection: (e) => (e.deltaY > 1 ? Direction.Next : Direction.Prev),
+        triggerMouseMoveOnUpdate: !0,
+    },
+    useApi$1 = createApiHook(DEFAULT_HORIZONTAL_API_CONFIG),
+    scrollOrientations = { horizontal: 'horizontal', vertical: 'vertical' },
+    CLAMPED_ARROW_STEP_TIMEOUT_DEFAULT = 100,
+    MOUSE_BUTTON_LEFT = 0,
+    background$8 = 'Thumb_background_7f3dd6ac',
+    border$8 = 'Thumb_border_5749138b',
+    innerBorder = 'Thumb_innerBorder_42bafd18',
+    icon$d = 'Thumb_icon_dca8bf26',
+    base$P = 'Thumb_6ff3e706',
+    base__vertical$1 = 'Thumb_base__vertical_55a67c91',
+    base__horizontal = 'Thumb_base__horizontal_27ca7ace',
+    base__active$2 = 'Thumb_base__active_830942bb',
+    styles$_ = {
+        background: background$8,
+        border: border$8,
+        innerBorder: innerBorder,
+        icon: icon$d,
+        base: base$P,
+        base__vertical: base__vertical$1,
+        base__horizontal: base__horizontal,
+        base__active: base__active$2,
+    },
+    BOUNCING_OFFSET = 2,
+    MIN_THUMB_SIZE = 13,
+    FORWARD_DISABLED = 'forwardDisabled',
+    BACKWARD_DISABLED = 'backwardDisabled';
+function updateDisabledStates(e, t) {
+    if (!e.trackRef.current || !e.thumbRef.current) return;
+    const s = e.trackRef.current.parentNode;
+    if (s instanceof HTMLElement) {
+        if (0 === t) return (s.classList.add(BACKWARD_DISABLED), void s.classList.remove(FORWARD_DISABLED));
+        if (e.isBoundThumb(t)) return (s.classList.remove(BACKWARD_DISABLED), void s.classList.add(FORWARD_DISABLED));
+        (s.classList.remove(BACKWARD_DISABLED), s.classList.remove(FORWARD_DISABLED));
+    }
+}
+function Thumb$1(e) {
+    const t = reactExports.useRef(null),
+        [s, r] = reactExports.useState(!1),
+        n = useEvent(function () {
+            const s = t.current,
+                r = e.trackRef.current,
+                n = e.api.getWrapperSize(),
+                o = e.api.getContainerSize();
+            if (!(n && o && s && r)) return;
+            const a = Math.min(1, n / o),
+                i = 'horizontal' === e.direction ? 'width' : 'height';
+            return ((s.style[i] = `${e.calculateSize(r, a)}px`), (s.style.display = 'flex'), a);
+        }),
+        [o, a] = useSpring(() => ({
+            from: { ...e.styles.closed, '--bouncingCorrection': '0px' },
+            easings: easings.easeInCubic,
+            config: { duration: 200 },
+        }));
+    reactExports.useEffect(() => {
+        s || e.dragging
+            ? a.start({
+                  to: e.styles.opened,
+                  onRest() {
+                      var e;
+                      null == (e = t.current) || e.classList.add(styles$_.base__active);
+                  },
+              })
+            : a.start({
+                  to: e.styles.closed,
+                  delay: 500,
+                  onRest() {
+                      var e;
+                      null == (e = t.current) || e.classList.remove(styles$_.base__active);
+                  },
+              });
+    }, [s, e.dragging, e.styles.closed, e.styles.opened, a]);
+    const i = useEvent(function () {
+            var s;
+            const r = e.trackRef.current,
+                n = t.current,
+                o = e.railBeforeRef.current,
+                i = e.railAfterRef.current,
+                u = e.api.getWrapperSize(),
+                l = e.api.getContainerSize();
+            if (!(u && r && n && o && i && l)) return;
+            const c = e.api.animationScroll.scrollPosition.get(),
+                d = Math.min(1, u / l),
+                _ = clamp(0, 1, c / (l - u)),
+                m = e.calculateSize(r, d),
+                p = (('horizontal' === e.direction ? r.offsetWidth : r.offsetHeight) - m) * _ || 0,
+                x = Math.round((2 * _ - 1) * BOUNCING_OFFSET);
+            (n.style.setProperty('--thumbOffset', `${p}px`),
+                null == (s = e.onUpdate) || s.call(e, { thumbSize: m, thumbOffset: p, newBouncingCorrection: x }));
+            const f = 0 === p || e.isBoundThumb(p) ? 0 : x;
+            return (
+                a.start({
+                    to: { '--bouncingCorrection': `${f}px` },
+                    ...(0 === f ? { delay: 100, config: { duration: 100 } } : { immediate: !0 }),
+                }),
+                p
+            );
+        }),
+        u = useSkipFrame(),
+        l = useEvent(function () {
+            n();
+            const t = i();
+            'number' == typeof t && updateDisabledStates(e, t);
+        });
+    reactExports.useEffect(() => u.run(l));
+    const { api: c } = e;
+    return (
+        reactExports.useEffect(() => {
+            function e() {
+                u.run(l);
+            }
+            return (
+                c.events.on('recalculateContent', e),
+                c.events.on('rest', l),
+                c.events.on('change', l),
+                c.events.on('resizeHandled', e),
+                () => {
+                    (c.events.off('recalculateContent', e),
+                        c.events.off('rest', l),
+                        c.events.off('change', l),
+                        c.events.off('resizeHandled', e));
+                }
+            );
+        }, [c, u, l]),
+        jsxRuntimeExports.jsxs(animated.div, {
+            ref: assignRefs([t, e.thumbRef]),
+            className: cx(styles$_.base, styles$_[`base__${e.direction}`], e.className),
+            style: o,
+            onMouseEnter: () => r(!0),
+            onMouseLeave: () => r(!1),
+            children: [
+                jsxRuntimeExports.jsx('div', { className: styles$_.background }),
+                jsxRuntimeExports.jsx('div', { className: styles$_.border }),
+                jsxRuntimeExports.jsx('div', { className: styles$_.innerBorder }),
+                jsxRuntimeExports.jsx('div', { className: styles$_.icon }),
+            ],
+        })
+    );
+}
+const initBarDraggingState = { pending: !1, offset: 0 };
+function useBarDragging(e, t, s, r, n) {
+    const [o, a] = reactExports.useState(initBarDraggingState),
+        i = useEvent(t),
+        u = reactExports.useCallback(
+            (t) => {
+                (a(t), e.current && i({ type: t.pending ? 'dragStart' : 'dragEnd', dragElement: e.current }));
+            },
+            [i, e],
+        );
+    return (
+        reactExports.useEffect(() => {
+            if (!o.pending) return;
+            const t = mouse.move(function ([t]) {
+                    const a = s.contentRef.current;
+                    if (!a) return;
+                    const u = r.current,
+                        l = e.current;
+                    if (!a || !u || !l) return;
+                    const c = n(t, o, { parent: u, thumb: l }),
+                        d = c * (s.getContainerSize() ?? 0);
+                    (s.scrollPosition.start({
+                        scrollPosition: s.clampPosition(a, d),
+                        reset: !0,
+                        immediate: !0,
+                        from: { scrollPosition: s.animationScroll.scrollPosition.get() },
+                    }),
+                        i({ type: 'dragging', dragElement: l, elementOffset: c, contentOffset: d }));
+                }),
+                a = mouse.up(() => {
+                    u(initBarDraggingState);
+                });
+            return () => {
+                (t(), a());
+            };
+        }, [s, o.offset, o.pending, i, u, e, r, o, n]),
+        u
+    );
+}
+const DISABLE_CLASS = 'disable',
+    ACTIVE_CLASS = 'scroll-active';
+function useUpdateStatesBar({ api: e, baseRef: t }) {
+    const s = useSkipFrame(),
+        r = useEvent(function () {
+            const s = e.getWrapperSize(),
+                r = e.getContainerSize();
+            if (null === t.current || void 0 === r || void 0 === s) return;
+            1 === Math.min(1, s / r || 1)
+                ? t.current.classList.remove(ACTIVE_CLASS)
+                : t.current.classList.add(ACTIVE_CLASS);
+        });
+    (reactExports.useEffect(() => s.run(r)),
+        reactExports.useEffect(() => {
+            function t() {
+                s.run(r);
+            }
+            return (
+                e.events.on('recalculateContent', t),
+                e.events.on('resizeHandled', t),
+                () => {
+                    (e.events.off('recalculateContent', t), e.events.off('resizeHandled', t));
+                }
+            );
+        }, [e, s, r]));
+}
+function getElementCoordinates(e, t) {
+    const s = e.getBoundingClientRect(),
+        r = t === scrollOrientations.horizontal ? s.x : s.y;
+    return { start: r, end: t === scrollOrientations.horizontal ? r + s.width : r + s.height };
+}
+function getCoordinate(e, t, s, r, n, o) {
+    return {
+        occurredEvent: o === scrollOrientations.horizontal ? e.screenX : e.screenY,
+        bar: getElementCoordinates(t, o),
+        thumb: getElementCoordinates(s, o),
+        backButton: getElementCoordinates(r, o),
+        forwardButton: getElementCoordinates(n, o),
+    };
+}
+function useBarHandlers(e, t, s, r, n, o, a) {
+    const i = useSounds(),
+        u = n.stepTimeout || CLAMPED_ARROW_STEP_TIMEOUT_DEFAULT,
+        [l, c] = useRepeatCallback((e) => n.applyStepTo(e), u, [n]);
+    reactExports.useEffect(
+        () => (document.addEventListener('mouseup', c, !0), () => document.removeEventListener('mouseup', c, !0)),
+        [c],
+    );
+    const d = reactExports.useCallback(
+            (e) => {
+                e.target.classList.contains(DISABLE_CLASS) ||
+                    (i.play('click', { target: 'Scroll:Back', original: e }), l(Direction.Next));
+            },
+            [l, i],
+        ),
+        _ = reactExports.useCallback(
+            (e) => {
+                e.target.classList.contains(DISABLE_CLASS) ||
+                    (i.play('click', { target: 'Scroll:Forward', original: e }), l(Direction.Prev));
+            },
+            [l, i],
+        ),
+        m = reactExports.useCallback(
+            (u) => {
+                const l = e.current,
+                    c = t.current,
+                    m = s.current,
+                    p = r.current;
+                if (!(l && c && m && p && u.button === MOUSE_BUTTON_LEFT)) return;
+                const x = getCoordinate(u, l, c, m, p, a),
+                    f = x.thumb.start <= x.occurredEvent && x.occurredEvent <= x.thumb.end,
+                    E =
+                        (x.backButton.start <= x.occurredEvent && x.occurredEvent <= x.backButton.end) ||
+                        (x.forwardButton.start <= x.occurredEvent && x.occurredEvent <= x.forwardButton.end);
+                if (f) o({ pending: !0, offset: x.occurredEvent - x.thumb.start });
+                else if (E) {
+                    ((x.occurredEvent > x.thumb.start ? Direction.Prev : Direction.Next) === Direction.Next ? d : _)(u);
+                } else {
+                    const e = x.occurredEvent - x.bar.start,
+                        t = x.thumb.end - x.thumb.start,
+                        s = x.bar.end - x.bar.start,
+                        r = n.getContainerSize();
+                    if ('number' != typeof r || Number.isNaN(r)) return console.error('Incorrect container size');
+                    const o = ((e - t / 2) / s) * r;
+                    n.applyScroll(o);
+                }
+                i.play('click', { target: 'Scroll:' + (f ? 'thumb' : E ? 'button' : ''), original: u });
+            },
+            [e, t, s, r, i, a, o, d, _, n],
+        ),
+        p = reactExports.useCallback(
+            (e) => {
+                e.target.classList.contains(DISABLE_CLASS) ||
+                    i.play('mouse-enter', { target: 'Scroll:Bar', original: e });
+            },
+            [i],
+        );
+    return reactExports.useMemo(
+        () => ({
+            handleMouseBackDown: d,
+            handleMouseEnter: p,
+            handleMouseDownTrack: m,
+            handleMouseForwardDown: _,
+            handleMouseForwardUp: c,
+            handleMouseBackUp: c,
+        }),
+        [d, p, m, _, c],
+    );
+}
+const rail$1 = 'HorizontalBar_rail_37858d8f',
+    base$O = 'HorizontalBar_4df27ac3',
+    track$1 = 'HorizontalBar_track_649dc296',
+    rail__left = 'HorizontalBar_rail__left_1a906b4e',
+    rail__right = 'HorizontalBar_rail__right_cd24364e',
+    button__right = 'HorizontalBar_button__right_e8f0aa2d',
+    button__left = 'HorizontalBar_button__left_da330e13',
+    button$3 = 'HorizontalBar_button_cbabd91',
+    styles$Z = {
+        rail: rail$1,
+        base: base$O,
+        track: track$1,
+        rail__left: rail__left,
+        rail__right: rail__right,
+        button__right: button__right,
+        button__left: button__left,
+        button: button$3,
+    },
+    THUMB_TO_RAIL_OFFSET$1 = 5,
+    THUMB_STYLES$1 = { closed: { height: '3rem', top: '4rem' }, opened: { height: '11rem', top: '0rem' } },
+    calculateThumbSize$1 = (e, t) => Math.max(remToPx$1(MIN_THUMB_SIZE), e.offsetWidth * t),
+    Bar$1 = reactExports.memo(function ({ classNames: e = {}, onDrag: t = noop }) {
+        const s = reactExports.useRef(null),
+            r = reactExports.useRef(null),
+            n = reactExports.useRef(null),
+            o = reactExports.useRef(null),
+            a = reactExports.useRef(null),
+            i = reactExports.useRef(null),
+            u = reactExports.useRef(null),
+            [l, c] = reactExports.useState(!1),
+            { api: d } = useHorizontalScroll();
+        useUpdateStatesBar({ baseRef: s, api: d });
+        const _ = useEvent(
+                (e, t, { parent: s }) => (e.screenX - t.offset - s.getBoundingClientRect().x) / s.offsetWidth,
+            ),
+            m = useEvent((e) => e - (o.current.offsetWidth - a.current.offsetWidth) >= -0.5),
+            p = reactExports.useCallback(
+                (e) => ('dragStart' === e.type ? c(!0) : 'dragEnd' === e.type && c(!1), t(e)),
+                [t],
+            ),
+            x = useBarDragging(a, p, d, o, _),
+            f = useEvent(({ thumbSize: e, thumbOffset: t, newBouncingCorrection: s }) => {
+                const r = o.current,
+                    n = i.current,
+                    a = u.current;
+                if (!r || !n || !a) return;
+                const l = remToPx$1(THUMB_TO_RAIL_OFFSET$1);
+                ((n.style.width = `${t - l + s}px`), (a.style.width = r.offsetWidth - e - t - l - s + 'px'));
+            }),
+            { handleMouseEnter: E, handleMouseDownTrack: h } = useBarHandlers(
+                s,
+                a,
+                n,
+                r,
+                d,
+                x,
+                scrollOrientations.horizontal,
+            );
+        return jsxRuntimeExports.jsxs('div', {
+            className: cx(styles$Z.base, e.base),
+            ref: s,
+            onWheel: d.handleMouseWheel,
+            onMouseDown: h,
+            onMouseEnter: E,
+            children: [
+                jsxRuntimeExports.jsx('div', {
+                    ref: r,
+                    className: cx(styles$Z.button, styles$Z.button__left, e.leftButton),
+                }),
+                jsxRuntimeExports.jsxs('div', {
+                    ref: o,
+                    className: cx(styles$Z.track, e.track),
+                    children: [
+                        jsxRuntimeExports.jsx('div', {
+                            ref: i,
+                            className: cx(styles$Z.rail, styles$Z.rail__left, e.leftRail),
+                        }),
+                        jsxRuntimeExports.jsx(Thumb$1, {
+                            dragging: l,
+                            api: d,
+                            calculateOffset: _,
+                            calculateSize: calculateThumbSize$1,
+                            direction: 'horizontal',
+                            isBoundThumb: m,
+                            railAfterRef: i,
+                            railBeforeRef: u,
+                            styles: THUMB_STYLES$1,
+                            onUpdate: f,
+                            thumbRef: a,
+                            trackRef: o,
+                        }),
+                        jsxRuntimeExports.jsx('div', {
+                            ref: u,
+                            className: cx(styles$Z.rail, styles$Z.rail__right, e.rightRail),
+                        }),
+                    ],
+                }),
+                jsxRuntimeExports.jsx('div', {
+                    ref: n,
+                    className: cx(styles$Z.button, styles$Z.button__right, e.rightButton),
+                }),
+            ],
+        });
+    }),
+    base$N = 'HorizontalScroll_5b201d2b',
+    wrapper$2 = 'HorizontalScroll_wrapper_abec8dee',
+    defaultScrollArea = 'HorizontalScroll_defaultScrollArea_a5c0f45',
+    styles$Y = { base: base$N, wrapper: wrapper$2, defaultScrollArea: defaultScrollArea },
+    DefaultScroll$1 = ({
+        children: e,
+        className: t,
+        barClassNames: s,
+        areaClassName: r,
+        classNames: n,
+        scrollClassName: o,
+        onDrag: a,
+    }) => {
+        const { api: i } = useHorizontalScroll(),
+            u = reactExports.useMemo(() => {
+                const e = s || {};
+                return { ...e, base: cx(styles$Y.base, e.base) };
+            }, [s]);
+        return jsxRuntimeExports.jsxs('div', {
+            className: cx(styles$Y.defaultScroll, t),
+            onWheel: i.handleMouseWheel,
+            children: [
+                jsxRuntimeExports.jsx('div', {
+                    className: cx(styles$Y.defaultScrollArea, r),
+                    children: jsxRuntimeExports.jsx(Area$1, { className: o, classNames: n, children: e }),
+                }),
+                jsxRuntimeExports.jsx(Bar$1, { onDrag: a, classNames: u }),
+            ],
+        });
+    };
+function Area$1({ className: e, classNames: t, children: s }) {
+    const { api: r } = useHorizontalScroll();
+    return (
+        reactExports.useEffect(() => createLayoutReadyInEffect(() => createLayoutReadyInEffect(r.recalculateContent))),
+        jsxRuntimeExports.jsx('div', {
+            className: cx(styles$Y.base, e),
+            children: jsxRuntimeExports.jsx('div', {
+                className: cx(styles$Y.wrapper, null == t ? void 0 : t.wrapper),
+                onWheel: r.handleMouseWheel,
+                ref: r.wrapperRef,
+                children: jsxRuntimeExports.jsx('div', {
+                    className: cx(styles$Y.content, null == t ? void 0 : t.content),
+                    ref: r.contentRef,
+                    children: s,
+                }),
+            }),
+        })
+    );
+}
+((Area$1.Bar = Bar$1), (Area$1.Default = DefaultScroll$1));
+const dragDirections = { horizontal: 'horizontal', vertical: 'vertical' };
+function getEventCoordinate(e, t) {
+    switch (t) {
+        case dragDirections.horizontal:
+            return e.clientX;
+        case dragDirections.vertical:
+            return e.clientY;
+        default:
+            assert(!1, `Such drag direction ${t} is not supported`);
+    }
+}
+function getScreenCoordinate(e, t) {
+    switch (t) {
+        case dragDirections.horizontal:
+            return e.screenX;
+        case dragDirections.vertical:
+            return e.screenY;
+        default:
+            assert(!1, `Such drag direction ${t} is not supported`);
+    }
+}
+const INITIAL_DRAGGING_STATE = { type: 'idle' };
+function useScrollByDragElements(e, t, s, r) {
+    const {
+            contentRef: n,
+            wrapperRef: o,
+            scrollPosition: a,
+            clampPosition: i,
+            animationScroll: u,
+            events: l,
+            disabled: c,
+        } = e,
+        [d, _] = reactExports.useState(INITIAL_DRAGGING_STATE),
+        [m, p] = reactExports.useState(0),
+        { gapBeforeStart: x } = r ?? {},
+        f = useSkipFrame(),
+        E = useEvent(() => {
+            f.run(() => {
+                const t = e.contentRef.current,
+                    s = e.getWrapperSize(),
+                    r = e.getContainerSize();
+                t && s && r && !c && (t.style.cursor = r <= s ? 'auto' : 'dragging' === d.type ? 'move' : 'grab');
+            });
+        });
+    return (
+        reactExports.useEffect(() => {
+            E();
+        }, [d.type, E]),
+        useResize(() => {
+            E();
+        }, [E]),
+        reactExports.useEffect(() => {
+            if ('pending' !== d.type) return;
+            const e = n.current,
+                s = o.current;
+            if (null === e || null === s) return;
+            const r = mouse.move(([e]) => {
+                    const s = getScreenCoordinate(e, t);
+                    (void 0 === x || Math.abs(m - s) > x) &&
+                        _({ type: 'dragging', positionFrom: s, previousScrollPosition: u.scrollPosition.get() });
+                }),
+                a = mouse.up(() => _({ type: 'scrollComplete' }));
+            return () => {
+                (r(), a());
+            };
+        }, [u.scrollPosition, n, m, t, d, x, o]),
+        reactExports.useEffect(() => {
+            if ('dragging' !== d.type) return;
+            const e = mouse.move(([e, r]) => {
+                const l = n.current,
+                    c = o.current;
+                if ('outside' === r) return void _({ type: 'scrollComplete' });
+                const m = getEventCoordinate(e, t);
+                if (null === l || null === c || ('inside' === r && m < 0)) return;
+                const p = c.offsetLeft,
+                    x = 'inside' === r ? m : m - p,
+                    f = d.positionFrom - x,
+                    E = d.previousScrollPosition + f;
+                a.start({ scrollPosition: i(l, E), from: { scrollPosition: u.scrollPosition.get() }, ...s });
+            });
+            const r = mouse.up(function () {
+                _({ type: 'scrollComplete' });
+            });
+            return () => {
+                (e(), r());
+            };
+        }, [u.scrollPosition, i, n, d, a, o, s, t]),
+        reactExports.useEffect(() => {
+            if ('scrollComplete' !== d.type) return;
+            const e = () => {
+                _(INITIAL_DRAGGING_STATE);
+            };
+            return (e(), l.on('rest', e), () => l.off('rest', e));
+        }, [u.scrollPosition, d.type, l]),
+        reactExports.useEffect(() => {
+            if (c) return;
+            const e = n.current;
+            if (!e) return;
+            const s = (e) => {
+                if (e.button !== mouseButtons.left) return;
+                const s = getScreenCoordinate(e, t);
+                (p(s),
+                    _(
+                        void 0 === x || x <= 0
+                            ? { type: 'dragging', positionFrom: s, previousScrollPosition: u.scrollPosition.get() }
+                            : { type: 'pending' },
+                    ));
+            };
+            return (e.addEventListener('mousedown', s), () => e.removeEventListener('mousedown', s));
+        }, [u.scrollPosition, n, c, t, x]),
+        d
+    );
+}
+function Base$q({ settings: e, children: t }) {
+    const s = useApi$1({ settings: e }),
+        r = reactExports.useMemo(() => ({ api: s }), [s]);
+    return jsxRuntimeExports.jsx(Context$4.Provider, { value: r, children: t });
+}
+const Context$3 = reactExports.createContext(void 0);
+function useVerticalScroll() {
+    const e = reactExports.useContext(Context$3);
+    if (!e) throw new Error('useVerticalScroll must be used within a Scroll.Vertical.Base component');
+    return e;
+}
+const DEFAULT_VERTICAL_API_CONFIG = {
+        getBounds: (e) => [0, e.scrollHeight - e.offsetHeight],
+        getContainerSize: (e) => e.scrollHeight,
+        getWrapperSize: (e) => e.offsetHeight,
+        setScrollPosition: (e, t) => {
+            e.scrollTop = Math.trunc(t.value.scrollPosition ?? 0);
+        },
+        getDirection: (e) => (e.deltaY > 1 ? Direction.Next : Direction.Prev),
+    },
+    useApi = createApiHook(DEFAULT_VERTICAL_API_CONFIG),
+    rail = 'VerticalBar_rail_3d663c9',
+    base$M = 'VerticalBar_7187fa00',
+    track = 'VerticalBar_track_ff482708',
+    rail__top = 'VerticalBar_rail__top_ee531f43',
+    rail__bottom = 'VerticalBar_rail__bottom_3eaa33b1',
+    button__bottom = 'VerticalBar_button__bottom_6880f123',
+    button__top = 'VerticalBar_button__top_b8383775',
+    button$2 = 'VerticalBar_button_7b0e4aca',
+    styles$X = {
+        rail: rail,
+        base: base$M,
+        track: track,
+        rail__top: rail__top,
+        rail__bottom: rail__bottom,
+        button__bottom: button__bottom,
+        button__top: button__top,
+        button: button$2,
+    },
+    THUMB_TO_RAIL_OFFSET = 5,
+    THUMB_STYLES = { closed: { width: '3rem', left: '3rem' }, opened: { width: '9rem', left: '0rem' } },
+    calculateThumbSize = (e, t) => Math.max(remToPx$1(MIN_THUMB_SIZE), e.offsetHeight * t),
+    Bar = reactExports.memo(function ({ classNames: e = {}, onDrag: t = noop }) {
+        const s = reactExports.useRef(null),
+            r = reactExports.useRef(null),
+            n = reactExports.useRef(null),
+            o = reactExports.useRef(null),
+            a = reactExports.useRef(null),
+            i = reactExports.useRef(null),
+            u = reactExports.useRef(null),
+            [l, c] = reactExports.useState(!1),
+            { api: d } = useVerticalScroll();
+        useUpdateStatesBar({ baseRef: s, api: d });
+        const _ = useEvent((e) => e - (o.current.offsetHeight - a.current.offsetHeight) >= -0.5),
+            m = useEvent(
+                (e, t, { parent: s }) => (e.screenY - t.offset - s.getBoundingClientRect().y) / s.offsetHeight,
+            ),
+            p = reactExports.useCallback(
+                (e) => ('dragStart' === e.type ? c(!0) : 'dragEnd' === e.type && c(!1), t(e)),
+                [t],
+            ),
+            x = useBarDragging(a, p, d, o, m),
+            f = useEvent(({ thumbSize: e, thumbOffset: t, newBouncingCorrection: s }) => {
+                const r = o.current,
+                    n = i.current,
+                    a = u.current;
+                if (!r || !n || !a) return;
+                const l = remToPx$1(THUMB_TO_RAIL_OFFSET);
+                ((n.style.height = `${t - l + s}px`), (a.style.height = r.offsetHeight - e - t - l - s + 'px'));
+            }),
+            { handleMouseEnter: E, handleMouseDownTrack: h } = useBarHandlers(
+                s,
+                a,
+                r,
+                n,
+                d,
+                x,
+                scrollOrientations.vertical,
+            );
+        return jsxRuntimeExports.jsxs('div', {
+            className: cx(styles$X.base, e.base),
+            ref: s,
+            onWheel: d.handleMouseWheel,
+            onMouseDown: h,
+            onMouseEnter: E,
+            children: [
+                jsxRuntimeExports.jsx('div', {
+                    ref: r,
+                    className: cx(styles$X.button, styles$X.button__top, e.topButton),
+                }),
+                jsxRuntimeExports.jsxs('div', {
+                    ref: o,
+                    className: cx(styles$X.track, e.track),
+                    children: [
+                        jsxRuntimeExports.jsx('div', {
+                            ref: i,
+                            className: cx(styles$X.rail, styles$X.rail__top, e.topRail),
+                        }),
+                        jsxRuntimeExports.jsx(Thumb$1, {
+                            dragging: l,
+                            api: d,
+                            calculateOffset: m,
+                            calculateSize: calculateThumbSize,
+                            direction: 'vertical',
+                            isBoundThumb: _,
+                            railAfterRef: i,
+                            railBeforeRef: u,
+                            styles: THUMB_STYLES,
+                            onUpdate: f,
+                            thumbRef: a,
+                            trackRef: o,
+                        }),
+                        jsxRuntimeExports.jsx('div', {
+                            ref: u,
+                            className: cx(styles$X.rail, styles$X.rail__bottom, e.bottomRail),
+                        }),
+                    ],
+                }),
+                jsxRuntimeExports.jsx('div', {
+                    ref: n,
+                    className: cx(styles$X.button, styles$X.button__bottom, e.bottomButton),
+                }),
+            ],
+        });
+    }),
+    content$c = 'VerticalScroll_content_62cb6120',
+    defaultScroll = 'VerticalScroll_defaultScroll_c69fa70e',
+    area = 'VerticalScroll_area_a3c0086a',
+    styles$W = { content: content$c, defaultScroll: defaultScroll, area: area },
+    DefaultScroll = ({
+        children: e,
+        className: t,
+        barClassNames: s,
+        areaClassName: r,
+        scrollClassName: n,
+        scrollClassNames: o,
+        onDrag: a,
+    }) => {
+        const { api: i } = useVerticalScroll(),
+            u = reactExports.useMemo(() => {
+                const e = s || {};
+                return { ...e, base: cx(styles$W.base, e.base) };
+            }, [s]);
+        return jsxRuntimeExports.jsxs('div', {
+            className: cx(styles$W.defaultScroll, t),
+            onWheel: i.handleMouseWheel,
+            children: [
+                jsxRuntimeExports.jsx('div', {
+                    className: cx(styles$W.area, r),
+                    children: jsxRuntimeExports.jsx(Area, { className: n, classNames: o, children: e }),
+                }),
+                jsxRuntimeExports.jsx(Bar, { onDrag: a, classNames: u }),
+            ],
+        });
+    },
+    Area = ({ className: e, classNames: t, children: s, ...r }) => {
+        const { api: n } = useVerticalScroll();
+        return (
+            reactExports.useEffect(() =>
+                createLayoutReadyInEffect(() => createLayoutReadyInEffect(n.recalculateContent)),
+            ),
+            jsxRuntimeExports.jsx('div', {
+                className: cx(styles$W.base, null == t ? void 0 : t.wrapper, e),
+                ref: n.wrapperRef,
+                onWheel: n.handleMouseWheel,
+                children: jsxRuntimeExports.jsx('div', {
+                    ...r,
+                    className: cx(styles$W.content, null == t ? void 0 : t.content),
+                    ref: n.contentRef,
+                    children: s,
+                }),
+            })
+        );
+    };
+function Base$p({ children: e }) {
+    const t = useApi(),
+        s = reactExports.useMemo(() => ({ api: t }), [t]);
+    return jsxRuntimeExports.jsx(Context$3.Provider, { value: s, children: e });
+}
+Area.Default = DefaultScroll;
+const IGNORE_DEFAULT = [2, 2];
+function useScrollBounding(e, [t, s] = IGNORE_DEFAULT) {
+    const [r, n] = reactExports.useState(!0),
+        [o, a] = reactExports.useState(!0);
+    return (
+        reactExports.useEffect(() => {
+            function r() {
+                const r = e.animationScroll.scrollPosition.get(),
+                    [o, i] = e.getBounds(),
+                    u = r >= i - s;
+                (n(r <= o + t), a(u));
+            }
+            return new DisposeBuilder()
+                .add(createLayoutReadyInEffect(r))
+                .add(e.events.on('resizeHandled', r))
+                .add(e.events.on('recalculateContent', r))
+                .add(e.events.on('change', r)).dispose;
+        }, [e, t, s]),
+        [r, o]
+    );
+}
+const themes$1 = { primary: 'primary', secondary: 'secondary', custom: 'custom' },
+    sizes$h = { extraSmall: 'extraSmall', small: 'small', medium: 'medium', large: 'large' },
+    base$L = 'HeadlessButton_df8536fc',
+    styles$V = { base: base$L },
+    HeadlessButtonBase = defineStyledComponent('Button', { element: 'button', className: styles$V.base }),
+    HeadlessButton = reactExports.forwardRef(function (
+        { children: e, onClick: t, onMouseEnter: s, soundTarget: r, disabled: n = !1, silent: o = !1, ...a },
+        i,
+    ) {
+        const u = useSounds();
+        return jsxRuntimeExports.jsx(HeadlessButtonBase, {
+            ...a,
+            ref: i,
+            onMouseEnter: function (e) {
+                (n || o || u.play('mouse-enter', { target: r || 'Button', original: e }), null == s || s(e));
+            },
+            onClick: function (e) {
+                n || (o || u.play('click', { target: r || 'Button', original: e }), null == t || t(e));
+            },
+            children: e,
+        });
+    }),
+    background$7 = 'Button_background_98ebcfb8',
+    border$7 = 'Button_border_7e6390d7',
+    overlay$4 = 'Button_overlay_174632c8',
+    base$K = 'Button_70871946',
+    base__enabled$1 = 'Button_base__enabled_96634d40',
+    base__disabled$6 = 'Button_base__disabled_b713e04a',
+    content$b = 'Button_content_298de63f',
+    content__fontAligned$1 = 'Button_content__fontAligned_66115778',
+    styles$U = {
+        background: background$7,
+        border: border$7,
+        overlay: overlay$4,
+        base: base$K,
+        base__enabled: base__enabled$1,
+        base__disabled: base__disabled$6,
+        'base__size-extraSmall': 'Button_base__size-extraSmall_d0cdb5ed',
+        'base__size-small': 'Button_base__size-small_fc7095a4',
+        'base__size-medium': 'Button_base__size-medium_814d61f0',
+        'base__size-large': 'Button_base__size-large_83da852e',
+        'base__theme-primary': 'Button_base__theme-primary_8ba55469',
+        'base__theme-secondary': 'Button_base__theme-secondary_3fa4afc',
+        content: content$b,
+        content__fontAligned: content__fontAligned$1,
+    },
+    Button$1 = reactExports.forwardRef(function (
+        {
+            children: e,
+            size: t = sizes$h.large,
+            theme: s = themes$1.primary,
+            disabled: r = !1,
+            silent: n = !1,
+            autoAlignContent: o = !0,
+            classNames: a,
+            className: i,
+            ...u
+        },
+        l,
+    ) {
+        return jsxRuntimeExports.jsxs(HeadlessButton, {
+            ...u,
+            ref: l,
+            silent: n,
+            disabled: r,
+            className: cx(
+                styles$U.base,
+                styles$U[`base__size-${t}`],
+                styles$U[`base__theme-${s}`],
+                r ? styles$U.base__disabled : styles$U.base__enabled,
+                i,
+                null == a ? void 0 : a.base,
+            ),
+            onClick: function (e) {
+                var t;
+                r || null == (t = u.onClick) || t.call(u, e);
+            },
+            children: [
+                jsxRuntimeExports.jsx('div', { className: cx(styles$U.background, null == a ? void 0 : a.background) }),
+                jsxRuntimeExports.jsx('div', { className: cx(styles$U.border, null == a ? void 0 : a.border) }),
+                jsxRuntimeExports.jsx('div', { className: cx(styles$U.overlay, null == a ? void 0 : a.overlay) }),
+                jsxRuntimeExports.jsx('div', {
+                    className: cx(styles$U.content, o && styles$U.content__fontAligned, null == a ? void 0 : a.content),
+                    children: e,
+                }),
+            ],
+        });
+    });
+function NotLoaded() {
+    return null;
+}
+function LazyModel(e) {
+    if (useLazyModel(e.id)) return e.children;
+    return (e.fallback || NotLoaded)();
+}
+function useLazyModel(e) {
+    const [t, s] = reactExports.useState(!1);
+    return (
+        reactExports.useEffect(
+            () => (
+                s(ids().includes(e)),
+                subscribe(e, (e) => {
+                    s('added' === e.type);
+                })
+            ),
+            [e],
+        ),
+        t
+    );
+}
+((Button$1.themes = themes$1), (Button$1.sizes = sizes$h));
 const LIGHT_TANK = 'lightTank',
     MEDIUM_TANK = 'mediumTank',
     HEAVY_TANK = 'heavyTank',
@@ -3292,21 +4791,8 @@ const RUDY_PL = 51345,
     heavyTankRoles = [roles$1.assault, roles$1.break, roles$1.universal, roles$1.support],
     mediumTankRoles = [roles$1.assault, roles$1.support, roles$1.universal, roles$1.sniper],
     lightTankRoles = [roles$1.universal, roles$1.wheeled],
-    vehicleState = { UNSUITABLE_TO_QUEUE: 'unsuitableToQueue' };
-function ColorsProvider(e) {
-    return jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children: e.children });
-}
-function UIProvider(e) {
-    return jsxRuntimeExports.jsx(ColorsProvider, {
-        children: jsxRuntimeExports.jsx(SoundsProvider, {
-            overrides: e.soundsOverrides,
-            severity: e.soundSeverity,
-            silent: e.soundsOff,
-            children: e.children,
-        }),
-    });
-}
-const RouterContext = reactExports.createContext(void 0);
+    vehicleState = { UNSUITABLE_TO_QUEUE: 'unsuitableToQueue' },
+    RouterContext = reactExports.createContext(void 0);
 function useRouter() {
     const e = reactExports.useContext(RouterContext);
     if (!e) throw new Error('useRouter must be used within a RouterProvider');
@@ -3360,42 +4846,6 @@ function ModelRouterProvider({ children: e, prefix: t = '', context: s, getRoot:
         }, [u]),
         p = reactExports.useMemo(() => ({ ..._, ...m }), [m, _]);
     return jsxRuntimeExports.jsx(RouterContext.Provider, { value: p, children: e });
-}
-function defineStyledComponent(e, t, s) {
-    var r;
-    const n =
-            'object' == typeof t && 'cva' in t
-                ? null == (r = t.cva)
-                    ? void 0
-                    : r.variants
-                : null == s
-                  ? void 0
-                  : s.variants,
-        o = n ? Object.keys(n) : [];
-    if ('object' == typeof t) {
-        const s = t,
-            r = cva(s.className, s.cva),
-            n = s.element,
-            a = reactExports.forwardRef(function (e, t) {
-                return reactExports.createElement(n, {
-                    ...('function' == typeof n ? e : cleanProps(o, e)),
-                    ref: t,
-                    className: r(e),
-                });
-            });
-        return ((a.displayName = e), s.cva && (a.cva = s.cva), a);
-    }
-    const a = cva(t, s),
-        i = reactExports.forwardRef(function (t, s) {
-            return jsxRuntimeExports.jsx('div', { 'data-name': e, ...cleanProps(o, t), ref: s, className: a(t) });
-        });
-    return ((i.displayName = e), s && (i.cva = s), i);
-}
-function cleanProps(e, t) {
-    if (0 === e.length) return t;
-    const s = { ...t };
-    for (const r of e) delete s[r];
-    return s;
 }
 const DEFAULT_NAME_KEYFRAME = 'Point',
     THRESHOLD = 0.02;
@@ -3612,462 +5062,22 @@ const VideoForwarded = reactExports.forwardRef(function (
     }),
     Video = reactExports.memo(VideoForwarded),
     textOverlay = 'GradientText_textOverlay_2d67fbb8',
-    base$S = 'GradientText_5009d812',
-    styles$11 = { textOverlay: textOverlay, base: base$S },
+    base$J = 'GradientText_5009d812',
+    styles$T = { textOverlay: textOverlay, base: base$J },
     GradientText = reactExports.forwardRef(function ({ classNames: e, children: t }, s) {
         return jsxRuntimeExports.jsxs('div', {
             ref: s,
-            className: cx(styles$11.base, null == e ? void 0 : e.base),
+            className: cx(styles$T.base, null == e ? void 0 : e.base),
             children: [
                 jsxRuntimeExports.jsx('div', { className: null == e ? void 0 : e.text, children: t }),
                 jsxRuntimeExports.jsx('div', {
-                    className: cx(styles$11.textOverlay, null == e ? void 0 : e.textOverlay),
+                    className: cx(styles$T.textOverlay, null == e ? void 0 : e.textOverlay),
                     children: t,
                 }),
             ],
         });
     }),
-    themes$1 = { primary: 'primary', secondary: 'secondary', custom: 'custom' },
-    sizes$i = { extraSmall: 'extraSmall', small: 'small', medium: 'medium', large: 'large' },
-    base$R = 'HeadlessButton_df8536fc',
-    styles$10 = { base: base$R },
-    HeadlessButtonBase = defineStyledComponent('Button', { element: 'button', className: styles$10.base }),
-    HeadlessButton = reactExports.forwardRef(function (
-        { children: e, onClick: t, onMouseEnter: s, soundTarget: r, disabled: n = !1, silent: o = !1, ...a },
-        i,
-    ) {
-        const u = useSounds();
-        return jsxRuntimeExports.jsx(HeadlessButtonBase, {
-            ...a,
-            ref: i,
-            onMouseEnter: function (e) {
-                (n || o || u.play('mouse-enter', { target: r || 'Button', original: e }), null == s || s(e));
-            },
-            onClick: function (e) {
-                n || (o || u.play('click', { target: r || 'Button', original: e }), null == t || t(e));
-            },
-            children: e,
-        });
-    }),
-    background$8 = 'Button_background_98ebcfb8',
-    border$8 = 'Button_border_7e6390d7',
-    overlay$4 = 'Button_overlay_174632c8',
-    base$Q = 'Button_70871946',
-    base__enabled$1 = 'Button_base__enabled_96634d40',
-    base__disabled$6 = 'Button_base__disabled_b713e04a',
-    content$c = 'Button_content_298de63f',
-    content__fontAligned$1 = 'Button_content__fontAligned_66115778',
-    styles$$ = {
-        background: background$8,
-        border: border$8,
-        overlay: overlay$4,
-        base: base$Q,
-        base__enabled: base__enabled$1,
-        base__disabled: base__disabled$6,
-        'base__size-extraSmall': 'Button_base__size-extraSmall_d0cdb5ed',
-        'base__size-small': 'Button_base__size-small_fc7095a4',
-        'base__size-medium': 'Button_base__size-medium_814d61f0',
-        'base__size-large': 'Button_base__size-large_83da852e',
-        'base__theme-primary': 'Button_base__theme-primary_8ba55469',
-        'base__theme-secondary': 'Button_base__theme-secondary_3fa4afc',
-        content: content$c,
-        content__fontAligned: content__fontAligned$1,
-    },
-    Button$1 = reactExports.forwardRef(function (
-        {
-            children: e,
-            size: t = sizes$i.large,
-            theme: s = themes$1.primary,
-            disabled: r = !1,
-            silent: n = !1,
-            autoAlignContent: o = !0,
-            classNames: a,
-            className: i,
-            ...u
-        },
-        l,
-    ) {
-        return jsxRuntimeExports.jsxs(HeadlessButton, {
-            ...u,
-            ref: l,
-            silent: n,
-            disabled: r,
-            className: cx(
-                styles$$.base,
-                styles$$[`base__size-${t}`],
-                styles$$[`base__theme-${s}`],
-                r ? styles$$.base__disabled : styles$$.base__enabled,
-                i,
-                null == a ? void 0 : a.base,
-            ),
-            onClick: function (e) {
-                var t;
-                r || null == (t = u.onClick) || t.call(u, e);
-            },
-            children: [
-                jsxRuntimeExports.jsx('div', { className: cx(styles$$.background, null == a ? void 0 : a.background) }),
-                jsxRuntimeExports.jsx('div', { className: cx(styles$$.border, null == a ? void 0 : a.border) }),
-                jsxRuntimeExports.jsx('div', { className: cx(styles$$.overlay, null == a ? void 0 : a.overlay) }),
-                jsxRuntimeExports.jsx('div', {
-                    className: cx(styles$$.content, o && styles$$.content__fontAligned, null == a ? void 0 : a.content),
-                    children: e,
-                }),
-            ],
-        });
-    });
-((Button$1.themes = themes$1), (Button$1.sizes = sizes$i));
-const undef = () => {};
-function withResolvePath(e) {
-    const t = e;
-    return reactExports.forwardRef(function (e, s) {
-        const r = useAdaptive(e, e.adaptive),
-            { path: n, ...o } = r,
-            a = r.images ?? resources.resolve('images'),
-            i = { ...o, ref: s };
-        {
-            const e = n ? a.readOr(n, undef, 'warn') : void 0;
-            return e ? jsxRuntimeExports.jsx(t, { ...i, src: e }) : jsxRuntimeExports.jsx(t, { ...i, unknown: !0 });
-        }
-    });
-}
-const defaultUnknownStyle = {
-        background:
-            'linear-gradient(45deg, #ccc 25%, transparent 25%),\nlinear-gradient(-45deg, #ccc 25%, transparent 25%),\nlinear-gradient(45deg, transparent 75%, #ccc 75%),\nlinear-gradient(-45deg, transparent 75%, #ccc 75%)',
-        backgroundSize: '20rem 20rem',
-        backgroundPosition: '0 0, 0 10rem, 10rem -10rem, -10rem 0rem',
-        backgroundColor: '#000',
-    },
-    Image$1 = withResolvePath(
-        reactExports.forwardRef(function (e, t) {
-            if (e.unknown) {
-                const {
-                    repeat: s,
-                    fit: r,
-                    position: n,
-                    width: o,
-                    src: a,
-                    height: i,
-                    unselectable: u,
-                    unknown: l,
-                    unknownStyle: c = defaultUnknownStyle,
-                    ...d
-                } = e;
-                return jsxRuntimeExports.jsx('div', {
-                    ...d,
-                    ref: t,
-                    style: { width: e.width, height: e.height, ...c, ...e.style },
-                });
-            }
-            const {
-                repeat: s,
-                fit: r,
-                position: n,
-                width: o,
-                height: a,
-                unknownStyle: i,
-                unknown: u,
-                unselectable: l,
-                ...c
-            } = e;
-            return jsxRuntimeExports.jsx('div', {
-                ...c,
-                ref: t,
-                style: {
-                    backgroundImage: `url(${e.src})`,
-                    backgroundRepeat: s ?? 'no-repeat',
-                    backgroundSize: r ?? 'contain',
-                    backgroundPosition: n ?? 'center center',
-                    width: 'number' == typeof o ? `${o}rem` : o,
-                    height: 'number' == typeof a ? `${a}rem` : a,
-                    ...c.style,
-                },
-            });
-        }),
-    );
-withResolvePath(
-    reactExports.forwardRef(function (e, t) {
-        const {
-            width: s,
-            height: r,
-            src: n,
-            unselectable: o,
-            unknown: a,
-            unknownStyle: i = defaultUnknownStyle,
-            ...u
-        } = e;
-        return e.unknown
-            ? jsxRuntimeExports.jsx('div', { ...u, style: { width: e.width, height: e.height, ...i } })
-            : jsxRuntimeExports.jsx('img', { ...u, ref: t, src: n, width: s, height: r });
-    }),
-);
-const NodeTypes = { Text: 1, Tag: 2, Var: 3 };
-function parseArguments(e) {
-    const t = [];
-    let s = '',
-        r = !1,
-        n = !1,
-        o = '';
-    for (let a = 0; a < e.length; a++) {
-        const i = e[a];
-        ("'" !== i && '"' !== i) || n || r
-            ? i === o && n
-                ? ((n = !1), (s += i))
-                : '(' !== i || n
-                  ? ')' === i && r && !n
-                      ? ((r = !1), (s += i))
-                      : ' ' !== i || r || n
-                        ? (s += i)
-                        : s && (t.push(s), (s = ''))
-                  : ((r = !0), (s += i))
-            : ((n = !0), (o = i), (s += i));
-    }
-    return (s && t.push(s), t);
-}
-function parse(e, t) {
-    const s = [],
-        r = [];
-    let n = '',
-        o = !1,
-        a = '',
-        i = 0;
-    for (let u = 0; u < e.length; u++) {
-        const l = e[u];
-        if (l === t.start[0] && e.slice(u, u + t.start.length) === t.start) {
-            if (n) {
-                if (r.length > 0) {
-                    r[r.length - 1].node.children.push({ type: NodeTypes.Text, value: n });
-                } else s.push({ type: NodeTypes.Text, value: n });
-                n = '';
-            }
-            ((o = !0), (u += t.start.length - 1));
-        } else if (l === t.end[0] && e.slice(u, u + t.end.length) === t.end) {
-            ((o = !1), (u += t.end.length - 1));
-            const e = a.trim();
-            if (e.startsWith('@')) {
-                const t = e.slice(1).trim(),
-                    n = { type: NodeTypes.Tag, attrs: t.split('|'), instanceId: ++i, children: [] };
-                if (r.length > 0) {
-                    r[r.length - 1].node.children.push(n);
-                } else s.push(n);
-                r.push({ node: n, startIndex: s.length });
-            } else if ('/' === e) r.length > 0 && r.pop();
-            else {
-                const t = { type: NodeTypes.Var, instanceId: ++i, name: e };
-                if (r.length > 0) {
-                    r[r.length - 1].node.children.push(t);
-                } else s.push(t);
-            }
-            a = '';
-        } else o ? (a += l) : (n += l);
-    }
-    if (n)
-        if (r.length) {
-            r[r.length - 1].node.children.push({ type: NodeTypes.Text, value: n });
-        } else s.push({ type: NodeTypes.Text, value: n });
-    return s;
-}
-const COLORS =
-        'blackReal, whiteReal, white, whiteOrange, whiteSpanish, par, parSecondary, parTertiary, infoRed, red, redDark, yellow, orange, cream, brown, greenBright, green, greenDark, blueBooster, blueTeamkiller, cred, gold, bond, prom',
-    base$P = 'FormatText_db904f12',
-    base__fullSize = 'FormatText_base__fullSize_a514958e',
-    styles$_ = { COLORS: COLORS, base: base$P, base__fullSize: base__fullSize },
-    legacyColors = new Set((null == (_a = styles$_.COLORS) ? void 0 : _a.split(', ')) ?? []);
-let keyId = 0;
-function takeKey() {
-    return ++keyId;
-}
-function split$1(e) {
-    if (Array.isArray(e)) return e.map(split$1);
-    if ('string' == typeof e) {
-        const t = resources.resolve('langCode');
-        return jsxRuntimeExports.jsx(
-            reactExports.Fragment,
-            {
-                children: addSpaceAndMap(splitLocale(e, t), t, (e, t) =>
-                    jsxRuntimeExports.jsx('span', { children: e }, `${e}${t}`),
-                ),
-            },
-            takeKey(),
-        );
-    }
-    return e;
-}
-function style(e, ...t) {
-    return jsxRuntimeExports.jsx(
-        'span',
-        {
-            style: t.reduce((s, r) => {
-                if (Array.isArray(r)) {
-                    const [e, t] = r;
-                    return ((s[e] = t), s);
-                }
-                return (console.warn(`Invalid argument ${r} in ${e}: ${t}`), s);
-            }, {}),
-            children: e,
-        },
-        takeKey(),
-    );
-}
-function className(e, ...t) {
-    return jsxRuntimeExports.jsx(
-        'span',
-        { className: t.filter((e) => 'string' == typeof e && e.length > 0).join(' '), children: e },
-        takeKey(),
-    );
-}
-const color = (e, t) => ['color', t],
-    fontSize = (e, t) => ['fontSize', t],
-    fontWeight = (e, t) => ['fontWeight', t],
-    textDecoration = (e, t) => ['textDecoration', t],
-    bold = (e) => ['fontWeight', 'bold'];
-function colorLegacy(e, t) {
-    const s = takeKey();
-    return legacyColors.has(String(t))
-        ? jsxRuntimeExports.jsx('span', { className: `FormatText_colorLegacy__${t}`, children: e }, s)
-        : jsxRuntimeExports.jsx('span', { style: { color: `#${t}` }, children: e }, s);
-}
-const defaultFormatters = {
-    class: className,
-    colorLegacy: colorLegacy,
-    bold: bold,
-    split: split$1,
-    style: style,
-    color: color,
-    fontSize: fontSize,
-    fontWeight: fontWeight,
-    textDecoration: textDecoration,
-};
-function applyFunction(e, t, s, r) {
-    const n = s.map((t) => {
-            if ('string' != typeof t) return t;
-            const s = t.trim();
-            if (s.startsWith('(') && s.endsWith(')')) {
-                const [t, ...n] = s.slice(1, -1).split(' ');
-                return t ? applyFunction(e, t, n, r) : e;
-            }
-            return s.startsWith("'") && s.endsWith("'") ? s.slice(1, -1) : s;
-        }),
-        o = r[t];
-    return o ? o(e, ...n) : (console.error(`Function ${t} is not registered`), e);
-}
-function applyFunctions(e, t, s) {
-    return e.reduce((e, t) => {
-        const [r, ...n] = parseArguments(t.trim());
-        return r ? applyFunction(e, r, n, s) : e;
-    }, t);
-}
-function isEnd(e) {
-    return !((e >= 'a' && e <= 'z') || (e >= 'A' && e <= 'Z') || (e >= '0' && e <= '9') || '_' === e);
-}
-function resolveAttrParams(e, t) {
-    for (let s = 0; s < e.length; s++) {
-        if ('$' === e[s]) {
-            let r = s + 1;
-            for (; r < e.length && !isEnd(e[r]); ) r++;
-            const n = e.slice(s + 1, r),
-                o = t[n];
-            if (o) return resolveAttrParams(e.replace(`$${n}`, String(o)), t);
-        }
-    }
-    return e;
-}
-function resolveAttrsParams(e, t) {
-    const s = [];
-    for (let r = 0; r < e.length; r++) s[r] = resolveAttrParams(e[r], t);
-    return s;
-}
-const primitives = ['number', 'string', 'undefined'];
-function render(e, t, s = {}, r = !0) {
-    r && (keyId = 0);
-    const n = [];
-    function o(e) {
-        if (primitives.includes(typeof e)) {
-            const t = n.at(-1);
-            if ('string' == typeof t) return void (n[n.length - 1] = t + e);
-        }
-        n.push(e);
-    }
-    for (const a of e)
-        if (a.type === NodeTypes.Text) o(a.value);
-        else if (a.type === NodeTypes.Var)
-            null === s[a.name] || primitives.includes(typeof s[a.name])
-                ? o(s[a.name] ?? `{{${a.name}}}`)
-                : n.push(
-                      jsxRuntimeExports.jsx(
-                          reactExports.Fragment,
-                          { children: s[a.name] },
-                          `var-${a.name}-${a.instanceId}`,
-                      ),
-                  );
-        else if (a.type === NodeTypes.Tag) {
-            const e = render(a.children, t, s, !1),
-                r = applyFunctions(resolveAttrsParams(a.attrs, s), e, t);
-            n.push(r);
-        }
-    return n;
-}
-function upgradeColorTag(e) {
-    return e
-        .replace(/%\(([a-zA-Z0-9]+)_(Open|Start)\)s(.+?)%\(\1_(Close|End)\)s/, "{{@ colorLegacy '$1'}}$3{{/}}")
-        .replace(/\{([a-zA-Z0-9]+)_(Open|Start)\}(.+?)\{\1_(Close|End)\}/gi, "{{@ colorLegacy '$1'}}$3{{/}}");
-}
-function upgradeVariables(e) {
-    return e
-        .replace(/%\((\w+|\d)\)(?:s|d)?/gi, '{{$1}}')
-        .replace(new RegExp('(?<!\\{)\\{(\\w+|\\d)\\}', 'g'), '{{$1}}');
-}
-function upgradeSymbols(e) {
-    return e.replaceAll('&nbsp;', ' ').replaceAll('&zwnbsp;', '\ufeff');
-}
-function upgradeLegacy(e) {
-    return pipe(e, upgradeSymbols, upgradeColorTag, upgradeVariables);
-}
-const defaultBrackets = { start: '{{', end: '}}' },
-    FormatText = reactExports.memo(function (e) {
-        const {
-                brackets: t = defaultBrackets,
-                text: s,
-                params: r,
-                upgradeLegacy: n,
-                fullSize: o,
-                inline: a,
-                formatters: i,
-                split: u,
-                ...l
-            } = e,
-            c = reactExports.useMemo(
-                () => (e.upgradeLegacy ? upgradeLegacy(e.text) : e.text),
-                [e.text, e.upgradeLegacy],
-            ),
-            d = reactExports.useMemo(
-                () => (e.formatters ? { ...defaultFormatters, ...e.formatters } : defaultFormatters),
-                [e.formatters],
-            ),
-            _ = reactExports.useMemo(() => parse(u ? `{{@ split}}${c}{{/}}` : c, t), [t, c, u]),
-            m = reactExports.useMemo(() => render(_, d, e.params), [_, d, e.params]),
-            p = cx(styles$_.base, o && styles$_.base__fullSize, l.className);
-        return e.inline
-            ? (console.warn(
-                  "[FormatText] using the 'inline' props causes memory leaks due to incorrect working of the 'cohinline' attribute in GF version 1.48.2.3. Can cause client crashes.",
-                  "Use 'split' prop instead.",
-              ),
-              jsxRuntimeExports.jsx('p', {
-                  ...l,
-                  className: p,
-                  ref: (e) => {
-                      null == e || e.setAttribute('cohinline', 'true');
-                  },
-                  children: m,
-              }))
-            : jsxRuntimeExports.jsx('span', { ...l, className: p, children: m });
-    });
-function FormatString({ path: e, ...t }) {
-    return jsxRuntimeExports.jsx(FormatText, { text: resources.resolve('strings').readOrEmpty(e), ...t });
-}
-function FormatPluralString({ path: e, count: t, ...s }) {
-    return jsxRuntimeExports.jsx(FormatText, { text: resources.resolve('strings').pluralOrEmpty(e, t), ...s });
-}
-const types$3 = {
+    types$3 = {
         tankXP: 'tankXP',
         freeXP: 'freeXP',
         credits: 'credits',
@@ -4081,7 +5091,7 @@ const types$3 = {
     },
     currencyTypes = Object.values(types$3),
     discountTypes = { currency: 'currency', experience: 'experience' },
-    sizes$h = {
+    sizes$g = {
         extraSmall: 'extraSmall',
         small: 'small',
         medium: 'medium',
@@ -4090,30 +5100,30 @@ const types$3 = {
         xxl: 'xxl',
     },
     imageSizes$1 = {
-        [sizes$h.extraSmall]: 16,
-        [sizes$h.small]: 24,
-        [sizes$h.medium]: 32,
-        [sizes$h.large]: 48,
-        [sizes$h.extraLarge]: 80,
-        [sizes$h.xxl]: 96,
+        [sizes$g.extraSmall]: 16,
+        [sizes$g.small]: 24,
+        [sizes$g.medium]: 32,
+        [sizes$g.large]: 48,
+        [sizes$g.extraLarge]: 80,
+        [sizes$g.xxl]: 96,
     },
     upscaledImageSizes = {
-        [sizes$h.extraSmall]: 32,
-        [sizes$h.small]: 48,
-        [sizes$h.medium]: 32,
-        [sizes$h.large]: 96,
-        [sizes$h.extraLarge]: 80,
-        [sizes$h.xxl]: 96,
+        [sizes$g.extraSmall]: 32,
+        [sizes$g.small]: 48,
+        [sizes$g.medium]: 32,
+        [sizes$g.large]: 96,
+        [sizes$g.extraLarge]: 80,
+        [sizes$g.xxl]: 96,
     },
     discountSizesConfig = {
-        [sizes$h.extraSmall]: { width: '60rem', height: '36rem' },
-        [sizes$h.small]: { width: '80rem', height: '48rem' },
-        [sizes$h.medium]: { width: '80rem', height: '48rem' },
-        [sizes$h.large]: { width: '106rem', height: '64rem' },
-        [sizes$h.extraLarge]: { width: '140rem', height: '84rem' },
-        [sizes$h.xxl]: { width: '140rem', height: '84rem' },
+        [sizes$g.extraSmall]: { width: '60rem', height: '36rem' },
+        [sizes$g.small]: { width: '80rem', height: '48rem' },
+        [sizes$g.medium]: { width: '80rem', height: '48rem' },
+        [sizes$g.large]: { width: '106rem', height: '64rem' },
+        [sizes$g.extraLarge]: { width: '140rem', height: '84rem' },
+        [sizes$g.xxl]: { width: '140rem', height: '84rem' },
     },
-    base$O = 'Currency_72d4be39',
+    base$I = 'Currency_72d4be39',
     base__reverse = 'Currency_base__reverse_f12e61b0',
     base__notEnough = 'Currency_base__notEnough_9a7842f',
     base__credits = 'Currency_base__credits_7b9ae721',
@@ -4121,8 +5131,8 @@ const types$3 = {
     base__freeXP = 'Currency_base__freeXP_d29d5a57',
     base__crystal = 'Currency_base__crystal_f830cb47',
     base__tankXP = 'Currency_base__tankXP_1707c68b',
-    styles$Z = {
-        base: base$O,
+    styles$S = {
+        base: base$I,
         base__reverse: base__reverse,
         base__notEnough: base__notEnough,
         base__credits: base__credits,
@@ -4131,16 +5141,16 @@ const types$3 = {
         base__crystal: base__crystal,
         base__tankXP: base__tankXP,
     },
-    intl$1 = resources.resolve('intl'),
-    Base$q = defineStyledComponent('Currency', styles$Z.base, {
-        variants: { reverse: { true: styles$Z.base__reverse } },
+    intl = resources.resolve('intl'),
+    Base$o = defineStyledComponent('Currency', styles$S.base, {
+        variants: { reverse: { true: styles$S.base__reverse } },
     });
 function formatCurrencyValue(e, t) {
     const s = t === types$3.gold ? 'gold' : 'integral';
     return Array.isArray(e)
-        ? e.map((e) => ('number' == typeof e ? intl$1.formatNumber(s, e) : e))
+        ? e.map((e) => ('number' == typeof e ? intl.formatNumber(s, e) : e))
         : 'number' == typeof e
-          ? intl$1.formatNumber(s, e)
+          ? intl.formatNumber(s, e)
           : e;
 }
 function Currency({
@@ -4149,7 +5159,7 @@ function Currency({
     className: s,
     classNames: r,
     imagePath: n,
-    size: o = sizes$h.small,
+    size: o = sizes$g.small,
     enough: a = !0,
     ...i
 }) {
@@ -4159,9 +5169,9 @@ function Currency({
         d = `${t}_${c}x${c}`,
         _ = n || currencyTypes.includes(t),
         m = useUpscale(`library.currency.${l}`, `library.currency.${d}`);
-    return jsxRuntimeExports.jsxs(Base$q, {
+    return jsxRuntimeExports.jsxs(Base$o, {
         ...i,
-        className: cx(null == r ? void 0 : r.base, a ? styles$Z[`base__${t}`] : styles$Z.base__notEnough, s),
+        className: cx(null == r ? void 0 : r.base, a ? styles$S[`base__${t}`] : styles$S.base__notEnough, s),
         children: [
             _ &&
                 jsxRuntimeExports.jsx(Image$1, {
@@ -4174,20 +5184,20 @@ function Currency({
         ],
     });
 }
-((Currency.sizes = sizes$h), (Currency.types = types$3));
-const base$N = 'WithDiscount_b8b3aa7f',
+((Currency.sizes = sizes$g), (Currency.types = types$3));
+const base$H = 'WithDiscount_b8b3aa7f',
     discount = 'WithDiscount_discount_f7ce1b97',
-    icon$d = 'WithDiscount_icon_a6c57ca8',
+    icon$c = 'WithDiscount_icon_a6c57ca8',
     icon__extraSmall = 'WithDiscount_icon__extraSmall_97673105',
     icon__small = 'WithDiscount_icon__small_60ee455a',
     icon__medium = 'WithDiscount_icon__medium_2877fd99',
     icon__large = 'WithDiscount_icon__large_6c06eeb7',
     icon__extraLarge = 'WithDiscount_icon__extraLarge_9d22aa45',
     icon__xxl = 'WithDiscount_icon__xxl_4080bb18',
-    styles$Y = {
-        base: base$N,
+    styles$R = {
+        base: base$H,
         discount: discount,
-        icon: icon$d,
+        icon: icon$c,
         icon__extraSmall: icon__extraSmall,
         icon__small: icon__small,
         icon__medium: icon__medium,
@@ -4198,7 +5208,7 @@ const base$N = 'WithDiscount_b8b3aa7f',
 function WithDiscount({
     children: e,
     imagePath: t,
-    size: s = sizes$h.small,
+    size: s = sizes$g.small,
     customImageSize: r,
     type: n,
     enabled: o = !1,
@@ -4207,95 +5217,25 @@ function WithDiscount({
 }) {
     const u = r ?? discountSizesConfig[s];
     return jsxRuntimeExports.jsxs('div', {
-        className: cx(styles$Y.base, null == i ? void 0 : i.base, a),
+        className: cx(styles$R.base, null == i ? void 0 : i.base, a),
         children: [
             e,
             o &&
                 jsxRuntimeExports.jsx('div', {
                     className: cx(
-                        styles$Y.discount,
+                        styles$R.discount,
                         null == i ? void 0 : i.discount,
-                        n === discountTypes.experience && styles$Y.discount__experience,
+                        n === discountTypes.experience && styles$R.discount__experience,
                     ),
                     children: jsxRuntimeExports.jsx(Image$1, {
                         width: u.width,
                         height: u.height,
-                        path: t ?? `library.currency.discount_${n}_${s === sizes$h.xxl ? sizes$h.extraLarge : s}`,
-                        className: cx(styles$Y.icon, null == i ? void 0 : i.icon, styles$Y[`icon__${s}`]),
+                        path: t ?? `library.currency.discount_${n}_${s === sizes$g.xxl ? sizes$g.extraLarge : s}`,
+                        className: cx(styles$R.icon, null == i ? void 0 : i.icon, styles$R[`icon__${s}`]),
                     }),
                 }),
         ],
     });
-}
-const sizes$g = { small: 'small', medium: 'medium' },
-    base$M = 'Value_880359b5',
-    base__small$8 = 'Value_base__small_533886b2',
-    base__text = 'Value_base__text_3c091067',
-    base__medium$6 = 'Value_base__medium_c1f8595d',
-    value$1 = 'Value_29975a5b',
-    value__small = 'Value_value__small_f3df7ae5',
-    value__medium = 'Value_value__medium_62a482c',
-    styles$X = {
-        base: base$M,
-        base__small: base__small$8,
-        base__text: base__text,
-        base__medium: base__medium$6,
-        value: value$1,
-        value__small: value__small,
-        value__medium: value__medium,
-    },
-    intl = resources.resolve('intl'),
-    DEFAULT_MAX_VALUE = 99;
-function formatNumber(e, t) {
-    return e > t
-        ? jsxRuntimeExports.jsx(FormatString, { path: 'common.valuePlus', params: { value: t } })
-        : intl.formatNumber('integral', e);
-}
-function getValue(e, t) {
-    return 'number' == typeof e ? formatNumber(e, t) : e;
-}
-function Value({ classNames: e, size: t = sizes$g.small, value: s, maxValue: r = DEFAULT_MAX_VALUE }) {
-    return jsxRuntimeExports.jsx('div', {
-        className: cx(
-            styles$X.base,
-            styles$X[`base__${t}`],
-            'string' == typeof s && styles$X.base__text,
-            null == e ? void 0 : e.valueContainer,
-        ),
-        children: jsxRuntimeExports.jsx('div', {
-            className: cx(styles$X.value, styles$X[`value__${t}`], null == e ? void 0 : e.value),
-            children: getValue(s, r),
-        }),
-    });
-}
-const base$L = 'Bubble_df22310d',
-    base__hidden$1 = 'Bubble_base__hidden_1700314d',
-    styles$W = { base: base$L, base__hidden: base__hidden$1 },
-    Bubble = {
-        Root: defineStyledComponent('Bubble', styles$W.base, { variants: { hidden: { true: styles$W.base__hidden } } }),
-        Value: Value,
-    };
-function NotLoaded() {
-    return null;
-}
-function LazyModel(e) {
-    if (useLazyModel(e.id)) return e.children;
-    return (e.fallback || NotLoaded)();
-}
-function useLazyModel(e) {
-    const [t, s] = reactExports.useState(!1);
-    return (
-        reactExports.useEffect(
-            () => (
-                s(ids().includes(e)),
-                subscribe(e, (e) => {
-                    s('added' === e.type);
-                })
-            ),
-            [e],
-        ),
-        t
-    );
 }
 class ErrorBoundary extends reactExports.Component {
     constructor() {
@@ -4373,8 +5313,8 @@ function Route({ path: e, component: t, exact: s }) {
         children: jsxRuntimeExports.jsx(t, { path: r.path, location: r.url, params: r.params, exact: s ?? !1 }),
     });
 }
-const base$K = 'TruncateText_dcb41d92',
-    styles$V = { base: base$K },
+const base$G = 'TruncateText_dcb41d92',
+    styles$Q = { base: base$G },
     TruncatedText = reactExports.forwardRef(function ({ text: e, tooltipParams: t, className: s, ...r }, n) {
         const o = useSimpleTooltip({ header: null == t ? void 0 : t.header, body: (null == t ? void 0 : t.body) || e }),
             a = reactExports.useRef(null),
@@ -4397,7 +5337,7 @@ const base$K = 'TruncateText_dcb41d92',
                 ref: function (e) {
                     ((a.current = e), 'function' == typeof n ? n(e) : n && (n.current = e));
                 },
-                className: cx(styles$V.base, s),
+                className: cx(styles$Q.base, s),
                 ...(i ? o : {}),
                 children: e,
             })
@@ -4414,7 +5354,7 @@ const base$K = 'TruncateText_dcb41d92',
         [sizes$f.x32x32]: { width: '32rem', height: '32rem' },
         [sizes$f.x48x48]: { width: '48rem', height: '48rem' },
     },
-    Base$p = defineStyledComponent('PlayerInfoAnonymizer', { element: Image$1 }),
+    Base$n = defineStyledComponent('PlayerInfoAnonymizer', { element: Image$1 }),
     AnonymizerIcon = reactExports.forwardRef(function (
         {
             size: e,
@@ -4426,10 +5366,10 @@ const base$K = 'TruncateText_dcb41d92',
         },
         a,
     ) {
-        return jsxRuntimeExports.jsx(Base$p, { ...o, ref: a, path: t, width: s, height: r, className: n });
+        return jsxRuntimeExports.jsx(Base$n, { ...o, ref: a, path: t, width: s, height: r, className: n });
     });
 AnonymizerIcon.sizes = sizes$f;
-const base$J = 'PlayerInfo_89eea88b',
+const base$F = 'PlayerInfo_89eea88b',
     badge = 'PlayerInfo_badge_9f134a01',
     name$1 = 'PlayerInfo_name_120449f9',
     name__medium = 'PlayerInfo_name__medium_4066d463',
@@ -4441,8 +5381,8 @@ const base$J = 'PlayerInfo_89eea88b',
     stripe__medium = 'PlayerInfo_stripe__medium_cc0a2a19',
     stripe__big = 'PlayerInfo_stripe__big_ccbc3007',
     stripeBadge = 'PlayerInfo_stripeBadge_605bfd0a',
-    styles$U = {
-        base: base$J,
+    styles$P = {
+        base: base$F,
         badge: badge,
         name: name$1,
         name__medium: name__medium,
@@ -4461,7 +5401,7 @@ const base$J = 'PlayerInfo_89eea88b',
         [sizes$e.x48x48]: { width: '48rem', height: '48rem' },
         [sizes$e.x80x80]: { width: '80rem', height: '80rem' },
     },
-    Base$o = defineStyledComponent('PlayerInfoBadge', { element: Image$1 }),
+    Base$m = defineStyledComponent('PlayerInfoBadge', { element: Image$1 }),
     Badge = reactExports.forwardRef(function (
         {
             size: e,
@@ -4474,19 +5414,19 @@ const base$J = 'PlayerInfo_89eea88b',
         },
         i,
     ) {
-        return jsxRuntimeExports.jsx(Base$o, {
+        return jsxRuntimeExports.jsx(Base$m, {
             ...a,
             ref: i,
             path: s,
             width: r,
             height: n,
-            className: cx(styles$U.badge, o),
+            className: cx(styles$P.badge, o),
         });
     });
 function ClanTag({ size: e, className: t, children: s, ...r }) {
     return jsxRuntimeExports.jsx('div', {
         ...r,
-        className: cx(styles$U.clanTag, e && styles$U[`clanTag__${e}`], t),
+        className: cx(styles$P.clanTag, e && styles$P[`clanTag__${e}`], t),
         children: s,
     });
 }
@@ -4504,7 +5444,7 @@ const sizes$d = { x64x28: '64x28', x34x16: '34x16', x26x16: '26x16', x10x10: '10
         [sizes$d.x34x16]: { width: '34rem', height: '16rem' },
         [sizes$d.x64x28]: { width: '64rem', height: '28rem' },
     },
-    Base$n = defineStyledComponent('PlayerInfoIgr', { element: Image$1 }),
+    Base$l = defineStyledComponent('PlayerInfoIgr', { element: Image$1 }),
     IgrIcon = reactExports.forwardRef(function (
         {
             size: e,
@@ -4516,10 +5456,10 @@ const sizes$d = { x64x28: '64x28', x34x16: '34x16', x26x16: '26x16', x10x10: '10
         },
         a,
     ) {
-        return jsxRuntimeExports.jsx(Base$n, { ...o, ref: a, path: t, width: s, height: r, className: n });
+        return jsxRuntimeExports.jsx(Base$l, { ...o, ref: a, path: t, width: s, height: r, className: n });
     });
 function Name({ size: e, className: t, children: s }) {
-    return jsxRuntimeExports.jsx('div', { className: cx(styles$U.name, e && styles$U[`name__${e}`], t), children: s });
+    return jsxRuntimeExports.jsx('div', { className: cx(styles$P.name, e && styles$P[`name__${e}`], t), children: s });
 }
 IgrIcon.sizes = sizes$d;
 const sizes$c = { default: 'default', regular: 'regular', medium: 'medium', big: 'big' },
@@ -4541,7 +5481,7 @@ const sizes$c = { default: 'default', regular: 'regular', medium: 'medium', big:
         [sizes$c.medium]: { width: '48rem', height: '48rem', marginLeft: '-32rem' },
         [sizes$c.big]: { width: '80rem', height: '80rem', marginLeft: '-25rem' },
     },
-    Base$m = defineStyledComponent('StripeBadgeIcon', { element: Image$1 }),
+    Base$k = defineStyledComponent('StripeBadgeIcon', { element: Image$1 }),
     StripeBadgeIcon = reactExports.forwardRef(function (
         {
             size: e = sizes$c.default,
@@ -4556,7 +5496,7 @@ const sizes$c = { default: 'default', regular: 'regular', medium: 'medium', big:
         u,
     ) {
         const l = sizesConfig$1[e];
-        return jsxRuntimeExports.jsx(Base$m, {
+        return jsxRuntimeExports.jsx(Base$k, {
             ...i,
             ref: u,
             path: r,
@@ -4572,7 +5512,7 @@ const sizes$c = { default: 'default', regular: 'regular', medium: 'medium', big:
         [sizes$c.medium]: { width: '68rem', height: '28rem' },
         [sizes$c.big]: { width: '100rem', height: '40rem' },
     },
-    Base$l = defineStyledComponent('StripeIcon', { element: Image$1 }),
+    Base$j = defineStyledComponent('StripeIcon', { element: Image$1 }),
     StripeIcon = reactExports.forwardRef(function (
         {
             size: e = sizes$c.default,
@@ -4587,17 +5527,17 @@ const sizes$c = { default: 'default', regular: 'regular', medium: 'medium', big:
         u,
     ) {
         return s
-            ? jsxRuntimeExports.jsx(Base$l, {
+            ? jsxRuntimeExports.jsx(Base$j, {
                   ...i,
                   ref: u,
                   path: r,
                   width: n,
                   height: o,
-                  className: cx(styles$U.stripeBadge, a),
+                  className: cx(styles$P.stripeBadge, a),
               })
             : null;
     }),
-    Base$k = defineStyledComponent('PlayerInfoStripe', styles$U.stripe),
+    Base$i = defineStyledComponent('PlayerInfoStripe', styles$P.stripe),
     Stripe = reactExports.forwardRef(function (
         { size: e = sizes$c.default, badgeId: t, classNames: s, className: r, ...n },
         o,
@@ -4605,10 +5545,10 @@ const sizes$c = { default: 'default', regular: 'regular', medium: 'medium', big:
         const a = resources.resolve('images'),
             i = stripeFolders[e],
             u = a.has(`library.badges.strips.${i}.strip_${t}`);
-        return jsxRuntimeExports.jsxs(Base$k, {
+        return jsxRuntimeExports.jsxs(Base$i, {
             ...n,
             ref: o,
-            className: cx(u && styles$U[`stripe__${e}`], r),
+            className: cx(u && styles$P[`stripe__${e}`], r),
             children: [
                 jsxRuntimeExports.jsx(StripeIcon, {
                     size: e,
@@ -4626,21 +5566,9 @@ const sizes$c = { default: 'default', regular: 'regular', medium: 'medium', big:
         });
     });
 Stripe.sizes = sizes$c;
-const Base$j = defineStyledComponent('AccountInfo', styles$U.base),
-    Wrapper = defineStyledComponent('AccountInfoWrapper', styles$U.base),
-    PlayerInfo = reactExports.forwardRef((e, t) => jsxRuntimeExports.jsx(Base$j, { ref: t, ...e }));
-function Atlas(e) {
-    const t = e.config.frames[e.icon];
-    if (!t) return (console.error(`Error in Atlas: Frame for icon "${e.icon}" not found in path "${e.path}"`), null);
-    const { icon: s, width: r = `${t.w}px`, height: n = `${t.h}px`, ...o } = e;
-    return jsxRuntimeExports.jsx(Image$1, {
-        fit: `${e.config.meta.size.w}px ${e.config.meta.size.h}px`,
-        position: `${-t.x}px ${-t.y}px`,
-        width: r,
-        height: n,
-        ...o,
-    });
-}
+const Base$h = defineStyledComponent('AccountInfo', styles$P.base),
+    Wrapper = defineStyledComponent('AccountInfoWrapper', styles$P.base),
+    PlayerInfo = reactExports.forwardRef((e, t) => jsxRuntimeExports.jsx(Base$h, { ref: t, ...e }));
 ((PlayerInfo.Name = Name),
     (PlayerInfo.ClanTag = ClanTag),
     (PlayerInfo.Badge = Badge),
@@ -4648,934 +5576,6 @@ function Atlas(e) {
     (PlayerInfo.AnonymizerIcon = AnonymizerIcon),
     (PlayerInfo.Stripe = Stripe),
     (PlayerInfo.Wrapper = Wrapper));
-const Context$4 = reactExports.createContext(void 0);
-function useHorizontalScroll() {
-    const e = reactExports.useContext(Context$4);
-    if (!e) throw new Error('useHorizontalScroll must be used within a Scroll.Horizontal.Base component');
-    return e;
-}
-var Direction = ((e) => ((e[(e.Next = -1)] = 'Next'), (e[(e.Prev = 1)] = 'Prev'), e))(Direction || {});
-const defaultSettings = {
-        step: { type: 'proportional', factor: 4, clampedArrowStepTimeout: 100 },
-        animationConfig: { tension: 170, friction: 26 },
-    },
-    createApiHook = ({
-        getContainerSize: e,
-        getBounds: t,
-        setScrollPosition: s,
-        getDirection: r,
-        getWrapperSize: n,
-        triggerMouseMoveOnUpdate: o = !1,
-    }) => {
-        const a = (e, s) => {
-            const [r, n] = t(e);
-            return clamp(r, n, s);
-        };
-        return (i = {}) => {
-            const { settings: u = defaultSettings } = i,
-                [l, c] = reactExports.useState(!1),
-                d = reactExports.useRef(null),
-                _ = reactExports.useRef(null),
-                m = reactExports.useRef({ wrapper: 0, container: 0 }),
-                p = useEmitter(),
-                x = useThrottle(
-                    () => {
-                        forceTriggerMouseMove$1();
-                    },
-                    [],
-                    150,
-                ),
-                [f, E] = useSpring(() => ({
-                    scrollPosition: 0,
-                    onChange: (e) => {
-                        const t = d.current;
-                        t && (s(t, e), p.trigger('change', e));
-                    },
-                    onRest: (e) => p.trigger('rest', e),
-                    onStart: (e) => p.trigger('start', e),
-                    onPause: (e) => p.trigger('pause', e),
-                })),
-                h = reactExports.useCallback(
-                    (e, t, s) => {
-                        const r = f.scrollPosition.get(),
-                            n = (f.scrollPosition.goal ?? 0) - r;
-                        return a(e, t * s + n + r);
-                    },
-                    [f.scrollPosition],
-                ),
-                b = reactExports.useCallback(
-                    function (e, { immediate: t = !1, reset: s = !0 } = {}) {
-                        const r = d.current;
-                        r &&
-                            E.start({
-                                scrollPosition: a(r, e),
-                                immediate: t,
-                                reset: s,
-                                config: u.animationConfig,
-                                from: { scrollPosition: a(r, f.scrollPosition.get()) },
-                                onChange: () => {
-                                    o && x();
-                                },
-                            });
-                    },
-                    [E, u.animationConfig, f.scrollPosition, x],
-                ),
-                g = reactExports.useCallback(
-                    function (e) {
-                        const t = d.current,
-                            s = _.current;
-                        if (!t || !s) return;
-                        const r = ((e, t) => {
-                                switch (t.type) {
-                                    case 'proportional':
-                                        return n(e) / t.factor;
-                                    case 'fixed':
-                                        return t.value;
-                                }
-                            })(s, u.step),
-                            o = h(t, e, r);
-                        b(o);
-                    },
-                    [b, h, u.step],
-                ),
-                y = reactExports.useCallback(
-                    function (e) {
-                        l ||
-                            (0 !== e.deltaY && g(r(e)),
-                            d.current && p.trigger('mouseWheel', e, f.scrollPosition, t(d.current)));
-                    },
-                    [f.scrollPosition, g, p, l],
-                ),
-                v = useSkipFrame(),
-                C = reactExports.useCallback(
-                    function () {
-                        return v.run(() => {
-                            const e = d.current;
-                            e && (b(a(e, f.scrollPosition.goal), { immediate: !0 }), p.trigger('resizeHandled'));
-                        });
-                    },
-                    [v, b, f.scrollPosition.goal, p],
-                );
-            useRefResizeObserver(_, (e) => {
-                const t = e.target;
-                if (!(t instanceof HTMLElement)) return;
-                const s = n(t);
-                m.current.wrapper !== s && C();
-            });
-            const $ = useEvent(function () {
-                const t = d.current;
-                if (!t) return;
-                const s = e(t),
-                    r = _.current ? n(_.current) : 0;
-                if (m.current.container !== s || m.current.wrapper !== r) {
-                    const e = a(t, f.scrollPosition.goal);
-                    (e !== f.scrollPosition.goal && b(e, { immediate: !0 }),
-                        (m.current.container = s),
-                        (m.current.wrapper = r),
-                        p.trigger('recalculateContent'));
-                }
-            });
-            reactExports.useEffect(
-                () => (
-                    window.addEventListener('resize', C),
-                    () => {
-                        window.removeEventListener('resize', C);
-                    }
-                ),
-                [C],
-            );
-            return reactExports.useMemo(
-                () => ({
-                    getWrapperSize: () => (_.current ? n(_.current) : void 0),
-                    getContainerSize: () => (d.current ? e(d.current) : void 0),
-                    getBounds: () =>
-                        d.current ? t(d.current) : (console.warn('getBounds: contentRef.current is null'), [0, 0]),
-                    stepTimeout: u.step.clampedArrowStepTimeout,
-                    settings: u,
-                    clampPosition: a,
-                    handleMouseWheel: y,
-                    applyScroll: b,
-                    applyStepTo: g,
-                    contentRef: d,
-                    wrapperRef: _,
-                    scrollPosition: E,
-                    animationScroll: f,
-                    recalculateContent: $,
-                    disabled: l,
-                    setDisabled: c,
-                    events: { on: p.on, off: p.off },
-                }),
-                [u, y, b, g, E, f, $, l, c, p.on, p.off],
-            );
-        };
-    },
-    DEFAULT_HORIZONTAL_API_CONFIG = {
-        getBounds: (e) => {
-            var t;
-            return [0, e.offsetWidth - ((null == (t = e.parentElement) ? void 0 : t.offsetWidth) ?? 0)];
-        },
-        getContainerSize: (e) => e.offsetWidth,
-        getWrapperSize: (e) => e.offsetWidth,
-        setScrollPosition: (e, t) => {
-            e.style.transform = `translateX(-${Math.trunc(t.value.scrollPosition ?? 0)}px)`;
-        },
-        getDirection: (e) => (e.deltaY > 1 ? Direction.Next : Direction.Prev),
-        triggerMouseMoveOnUpdate: !0,
-    },
-    useApi$1 = createApiHook(DEFAULT_HORIZONTAL_API_CONFIG),
-    scrollOrientations = { horizontal: 'horizontal', vertical: 'vertical' },
-    CLAMPED_ARROW_STEP_TIMEOUT_DEFAULT = 100,
-    MOUSE_BUTTON_LEFT = 0,
-    background$7 = 'Thumb_background_7f3dd6ac',
-    border$7 = 'Thumb_border_5749138b',
-    innerBorder = 'Thumb_innerBorder_42bafd18',
-    icon$c = 'Thumb_icon_dca8bf26',
-    base$I = 'Thumb_6ff3e706',
-    base__vertical$1 = 'Thumb_base__vertical_55a67c91',
-    base__horizontal = 'Thumb_base__horizontal_27ca7ace',
-    base__active$2 = 'Thumb_base__active_830942bb',
-    styles$T = {
-        background: background$7,
-        border: border$7,
-        innerBorder: innerBorder,
-        icon: icon$c,
-        base: base$I,
-        base__vertical: base__vertical$1,
-        base__horizontal: base__horizontal,
-        base__active: base__active$2,
-    },
-    BOUNCING_OFFSET = 2,
-    MIN_THUMB_SIZE = 13,
-    FORWARD_DISABLED = 'forwardDisabled',
-    BACKWARD_DISABLED = 'backwardDisabled';
-function updateDisabledStates(e, t) {
-    if (!e.trackRef.current || !e.thumbRef.current) return;
-    const s = e.trackRef.current.parentNode;
-    if (s instanceof HTMLElement) {
-        if (0 === t) return (s.classList.add(BACKWARD_DISABLED), void s.classList.remove(FORWARD_DISABLED));
-        if (e.isBoundThumb(t)) return (s.classList.remove(BACKWARD_DISABLED), void s.classList.add(FORWARD_DISABLED));
-        (s.classList.remove(BACKWARD_DISABLED), s.classList.remove(FORWARD_DISABLED));
-    }
-}
-function Thumb$1(e) {
-    const t = reactExports.useRef(null),
-        [s, r] = reactExports.useState(!1),
-        n = useEvent(function () {
-            const s = t.current,
-                r = e.trackRef.current,
-                n = e.api.getWrapperSize(),
-                o = e.api.getContainerSize();
-            if (!(n && o && s && r)) return;
-            const a = Math.min(1, n / o),
-                i = 'horizontal' === e.direction ? 'width' : 'height';
-            return ((s.style[i] = `${e.calculateSize(r, a)}px`), (s.style.display = 'flex'), a);
-        }),
-        [o, a] = useSpring(() => ({
-            from: { ...e.styles.closed, '--bouncingCorrection': '0px' },
-            easings: easings.easeInCubic,
-            config: { duration: 200 },
-        }));
-    reactExports.useEffect(() => {
-        s || e.dragging
-            ? a.start({
-                  to: e.styles.opened,
-                  onRest() {
-                      var e;
-                      null == (e = t.current) || e.classList.add(styles$T.base__active);
-                  },
-              })
-            : a.start({
-                  to: e.styles.closed,
-                  delay: 500,
-                  onRest() {
-                      var e;
-                      null == (e = t.current) || e.classList.remove(styles$T.base__active);
-                  },
-              });
-    }, [s, e.dragging, e.styles.closed, e.styles.opened, a]);
-    const i = useEvent(function () {
-            var s;
-            const r = e.trackRef.current,
-                n = t.current,
-                o = e.railBeforeRef.current,
-                i = e.railAfterRef.current,
-                u = e.api.getWrapperSize(),
-                l = e.api.getContainerSize();
-            if (!(u && r && n && o && i && l)) return;
-            const c = e.api.animationScroll.scrollPosition.get(),
-                d = Math.min(1, u / l),
-                _ = clamp(0, 1, c / (l - u)),
-                m = e.calculateSize(r, d),
-                p = (('horizontal' === e.direction ? r.offsetWidth : r.offsetHeight) - m) * _ || 0,
-                x = Math.round((2 * _ - 1) * BOUNCING_OFFSET);
-            (n.style.setProperty('--thumbOffset', `${p}px`),
-                null == (s = e.onUpdate) || s.call(e, { thumbSize: m, thumbOffset: p, newBouncingCorrection: x }));
-            const f = 0 === p || e.isBoundThumb(p) ? 0 : x;
-            return (
-                a.start({
-                    to: { '--bouncingCorrection': `${f}px` },
-                    ...(0 === f ? { delay: 100, config: { duration: 100 } } : { immediate: !0 }),
-                }),
-                p
-            );
-        }),
-        u = useSkipFrame(),
-        l = useEvent(function () {
-            n();
-            const t = i();
-            'number' == typeof t && updateDisabledStates(e, t);
-        });
-    reactExports.useEffect(() => u.run(l));
-    const { api: c } = e;
-    return (
-        reactExports.useEffect(() => {
-            function e() {
-                u.run(l);
-            }
-            return (
-                c.events.on('recalculateContent', e),
-                c.events.on('rest', l),
-                c.events.on('change', l),
-                c.events.on('resizeHandled', e),
-                () => {
-                    (c.events.off('recalculateContent', e),
-                        c.events.off('rest', l),
-                        c.events.off('change', l),
-                        c.events.off('resizeHandled', e));
-                }
-            );
-        }, [c, u, l]),
-        jsxRuntimeExports.jsxs(animated.div, {
-            ref: assignRefs([t, e.thumbRef]),
-            className: cx(styles$T.base, styles$T[`base__${e.direction}`], e.className),
-            style: o,
-            onMouseEnter: () => r(!0),
-            onMouseLeave: () => r(!1),
-            children: [
-                jsxRuntimeExports.jsx('div', { className: styles$T.background }),
-                jsxRuntimeExports.jsx('div', { className: styles$T.border }),
-                jsxRuntimeExports.jsx('div', { className: styles$T.innerBorder }),
-                jsxRuntimeExports.jsx('div', { className: styles$T.icon }),
-            ],
-        })
-    );
-}
-const initBarDraggingState = { pending: !1, offset: 0 };
-function useBarDragging(e, t, s, r, n) {
-    const [o, a] = reactExports.useState(initBarDraggingState),
-        i = useEvent(t),
-        u = reactExports.useCallback(
-            (t) => {
-                (a(t), e.current && i({ type: t.pending ? 'dragStart' : 'dragEnd', dragElement: e.current }));
-            },
-            [i, e],
-        );
-    return (
-        reactExports.useEffect(() => {
-            if (!o.pending) return;
-            const t = mouse.move(function ([t]) {
-                    const a = s.contentRef.current;
-                    if (!a) return;
-                    const u = r.current,
-                        l = e.current;
-                    if (!a || !u || !l) return;
-                    const c = n(t, o, { parent: u, thumb: l }),
-                        d = c * (s.getContainerSize() ?? 0);
-                    (s.scrollPosition.start({
-                        scrollPosition: s.clampPosition(a, d),
-                        reset: !0,
-                        immediate: !0,
-                        from: { scrollPosition: s.animationScroll.scrollPosition.get() },
-                    }),
-                        i({ type: 'dragging', dragElement: l, elementOffset: c, contentOffset: d }));
-                }),
-                a = mouse.up(() => {
-                    u(initBarDraggingState);
-                });
-            return () => {
-                (t(), a());
-            };
-        }, [s, o.offset, o.pending, i, u, e, r, o, n]),
-        u
-    );
-}
-const DISABLE_CLASS = 'disable',
-    ACTIVE_CLASS = 'scroll-active';
-function useUpdateStatesBar({ api: e, baseRef: t }) {
-    const s = useSkipFrame(),
-        r = useEvent(function () {
-            const s = e.getWrapperSize(),
-                r = e.getContainerSize();
-            if (null === t.current || void 0 === r || void 0 === s) return;
-            1 === Math.min(1, s / r || 1)
-                ? t.current.classList.remove(ACTIVE_CLASS)
-                : t.current.classList.add(ACTIVE_CLASS);
-        });
-    (reactExports.useEffect(() => s.run(r)),
-        reactExports.useEffect(() => {
-            function t() {
-                s.run(r);
-            }
-            return (
-                e.events.on('recalculateContent', t),
-                e.events.on('resizeHandled', t),
-                () => {
-                    (e.events.off('recalculateContent', t), e.events.off('resizeHandled', t));
-                }
-            );
-        }, [e, s, r]));
-}
-function getElementCoordinates(e, t) {
-    const s = e.getBoundingClientRect(),
-        r = t === scrollOrientations.horizontal ? s.x : s.y;
-    return { start: r, end: t === scrollOrientations.horizontal ? r + s.width : r + s.height };
-}
-function getCoordinate(e, t, s, r, n, o) {
-    return {
-        occurredEvent: o === scrollOrientations.horizontal ? e.screenX : e.screenY,
-        bar: getElementCoordinates(t, o),
-        thumb: getElementCoordinates(s, o),
-        backButton: getElementCoordinates(r, o),
-        forwardButton: getElementCoordinates(n, o),
-    };
-}
-function useBarHandlers(e, t, s, r, n, o, a) {
-    const i = useSounds(),
-        u = n.stepTimeout || CLAMPED_ARROW_STEP_TIMEOUT_DEFAULT,
-        [l, c] = useRepeatCallback((e) => n.applyStepTo(e), u, [n]);
-    reactExports.useEffect(
-        () => (document.addEventListener('mouseup', c, !0), () => document.removeEventListener('mouseup', c, !0)),
-        [c],
-    );
-    const d = reactExports.useCallback(
-            (e) => {
-                e.target.classList.contains(DISABLE_CLASS) ||
-                    (i.play('click', { target: 'Scroll:Back', original: e }), l(Direction.Next));
-            },
-            [l, i],
-        ),
-        _ = reactExports.useCallback(
-            (e) => {
-                e.target.classList.contains(DISABLE_CLASS) ||
-                    (i.play('click', { target: 'Scroll:Forward', original: e }), l(Direction.Prev));
-            },
-            [l, i],
-        ),
-        m = reactExports.useCallback(
-            (u) => {
-                const l = e.current,
-                    c = t.current,
-                    m = s.current,
-                    p = r.current;
-                if (!(l && c && m && p && u.button === MOUSE_BUTTON_LEFT)) return;
-                const x = getCoordinate(u, l, c, m, p, a),
-                    f = x.thumb.start <= x.occurredEvent && x.occurredEvent <= x.thumb.end,
-                    E =
-                        (x.backButton.start <= x.occurredEvent && x.occurredEvent <= x.backButton.end) ||
-                        (x.forwardButton.start <= x.occurredEvent && x.occurredEvent <= x.forwardButton.end);
-                if (f) o({ pending: !0, offset: x.occurredEvent - x.thumb.start });
-                else if (E) {
-                    ((x.occurredEvent > x.thumb.start ? Direction.Prev : Direction.Next) === Direction.Next ? d : _)(u);
-                } else {
-                    const e = x.occurredEvent - x.bar.start,
-                        t = x.thumb.end - x.thumb.start,
-                        s = x.bar.end - x.bar.start,
-                        r = n.getContainerSize();
-                    if ('number' != typeof r || Number.isNaN(r)) return console.error('Incorrect container size');
-                    const o = ((e - t / 2) / s) * r;
-                    n.applyScroll(o);
-                }
-                i.play('click', { target: 'Scroll:' + (f ? 'thumb' : E ? 'button' : ''), original: u });
-            },
-            [e, t, s, r, i, a, o, d, _, n],
-        ),
-        p = reactExports.useCallback(
-            (e) => {
-                e.target.classList.contains(DISABLE_CLASS) ||
-                    i.play('mouse-enter', { target: 'Scroll:Bar', original: e });
-            },
-            [i],
-        );
-    return reactExports.useMemo(
-        () => ({
-            handleMouseBackDown: d,
-            handleMouseEnter: p,
-            handleMouseDownTrack: m,
-            handleMouseForwardDown: _,
-            handleMouseForwardUp: c,
-            handleMouseBackUp: c,
-        }),
-        [d, p, m, _, c],
-    );
-}
-const rail$1 = 'HorizontalBar_rail_37858d8f',
-    base$H = 'HorizontalBar_4df27ac3',
-    track$1 = 'HorizontalBar_track_649dc296',
-    rail__left = 'HorizontalBar_rail__left_1a906b4e',
-    rail__right = 'HorizontalBar_rail__right_cd24364e',
-    button__right = 'HorizontalBar_button__right_e8f0aa2d',
-    button__left = 'HorizontalBar_button__left_da330e13',
-    button$3 = 'HorizontalBar_button_cbabd91',
-    styles$S = {
-        rail: rail$1,
-        base: base$H,
-        track: track$1,
-        rail__left: rail__left,
-        rail__right: rail__right,
-        button__right: button__right,
-        button__left: button__left,
-        button: button$3,
-    },
-    THUMB_TO_RAIL_OFFSET$1 = 5,
-    THUMB_STYLES$1 = { closed: { height: '3rem', top: '4rem' }, opened: { height: '11rem', top: '0rem' } },
-    calculateThumbSize$1 = (e, t) => Math.max(remToPx$1(MIN_THUMB_SIZE), e.offsetWidth * t),
-    Bar$1 = reactExports.memo(function ({ classNames: e = {}, onDrag: t = noop }) {
-        const s = reactExports.useRef(null),
-            r = reactExports.useRef(null),
-            n = reactExports.useRef(null),
-            o = reactExports.useRef(null),
-            a = reactExports.useRef(null),
-            i = reactExports.useRef(null),
-            u = reactExports.useRef(null),
-            [l, c] = reactExports.useState(!1),
-            { api: d } = useHorizontalScroll();
-        useUpdateStatesBar({ baseRef: s, api: d });
-        const _ = useEvent(
-                (e, t, { parent: s }) => (e.screenX - t.offset - s.getBoundingClientRect().x) / s.offsetWidth,
-            ),
-            m = useEvent((e) => e - (o.current.offsetWidth - a.current.offsetWidth) >= -0.5),
-            p = reactExports.useCallback(
-                (e) => ('dragStart' === e.type ? c(!0) : 'dragEnd' === e.type && c(!1), t(e)),
-                [t],
-            ),
-            x = useBarDragging(a, p, d, o, _),
-            f = useEvent(({ thumbSize: e, thumbOffset: t, newBouncingCorrection: s }) => {
-                const r = o.current,
-                    n = i.current,
-                    a = u.current;
-                if (!r || !n || !a) return;
-                const l = remToPx$1(THUMB_TO_RAIL_OFFSET$1);
-                ((n.style.width = `${t - l + s}px`), (a.style.width = r.offsetWidth - e - t - l - s + 'px'));
-            }),
-            { handleMouseEnter: E, handleMouseDownTrack: h } = useBarHandlers(
-                s,
-                a,
-                n,
-                r,
-                d,
-                x,
-                scrollOrientations.horizontal,
-            );
-        return jsxRuntimeExports.jsxs('div', {
-            className: cx(styles$S.base, e.base),
-            ref: s,
-            onWheel: d.handleMouseWheel,
-            onMouseDown: h,
-            onMouseEnter: E,
-            children: [
-                jsxRuntimeExports.jsx('div', {
-                    ref: r,
-                    className: cx(styles$S.button, styles$S.button__left, e.leftButton),
-                }),
-                jsxRuntimeExports.jsxs('div', {
-                    ref: o,
-                    className: cx(styles$S.track, e.track),
-                    children: [
-                        jsxRuntimeExports.jsx('div', {
-                            ref: i,
-                            className: cx(styles$S.rail, styles$S.rail__left, e.leftRail),
-                        }),
-                        jsxRuntimeExports.jsx(Thumb$1, {
-                            dragging: l,
-                            api: d,
-                            calculateOffset: _,
-                            calculateSize: calculateThumbSize$1,
-                            direction: 'horizontal',
-                            isBoundThumb: m,
-                            railAfterRef: i,
-                            railBeforeRef: u,
-                            styles: THUMB_STYLES$1,
-                            onUpdate: f,
-                            thumbRef: a,
-                            trackRef: o,
-                        }),
-                        jsxRuntimeExports.jsx('div', {
-                            ref: u,
-                            className: cx(styles$S.rail, styles$S.rail__right, e.rightRail),
-                        }),
-                    ],
-                }),
-                jsxRuntimeExports.jsx('div', {
-                    ref: n,
-                    className: cx(styles$S.button, styles$S.button__right, e.rightButton),
-                }),
-            ],
-        });
-    }),
-    base$G = 'HorizontalScroll_5b201d2b',
-    wrapper$2 = 'HorizontalScroll_wrapper_abec8dee',
-    defaultScrollArea = 'HorizontalScroll_defaultScrollArea_a5c0f45',
-    styles$R = { base: base$G, wrapper: wrapper$2, defaultScrollArea: defaultScrollArea },
-    DefaultScroll$1 = ({
-        children: e,
-        className: t,
-        barClassNames: s,
-        areaClassName: r,
-        classNames: n,
-        scrollClassName: o,
-        onDrag: a,
-    }) => {
-        const { api: i } = useHorizontalScroll(),
-            u = reactExports.useMemo(() => {
-                const e = s || {};
-                return { ...e, base: cx(styles$R.base, e.base) };
-            }, [s]);
-        return jsxRuntimeExports.jsxs('div', {
-            className: cx(styles$R.defaultScroll, t),
-            onWheel: i.handleMouseWheel,
-            children: [
-                jsxRuntimeExports.jsx('div', {
-                    className: cx(styles$R.defaultScrollArea, r),
-                    children: jsxRuntimeExports.jsx(Area$1, { className: o, classNames: n, children: e }),
-                }),
-                jsxRuntimeExports.jsx(Bar$1, { onDrag: a, classNames: u }),
-            ],
-        });
-    };
-function Area$1({ className: e, classNames: t, children: s }) {
-    const { api: r } = useHorizontalScroll();
-    return (
-        reactExports.useEffect(() => createLayoutReadyInEffect(() => createLayoutReadyInEffect(r.recalculateContent))),
-        jsxRuntimeExports.jsx('div', {
-            className: cx(styles$R.base, e),
-            children: jsxRuntimeExports.jsx('div', {
-                className: cx(styles$R.wrapper, null == t ? void 0 : t.wrapper),
-                onWheel: r.handleMouseWheel,
-                ref: r.wrapperRef,
-                children: jsxRuntimeExports.jsx('div', {
-                    className: cx(styles$R.content, null == t ? void 0 : t.content),
-                    ref: r.contentRef,
-                    children: s,
-                }),
-            }),
-        })
-    );
-}
-((Area$1.Bar = Bar$1), (Area$1.Default = DefaultScroll$1));
-const dragDirections = { horizontal: 'horizontal', vertical: 'vertical' };
-function getEventCoordinate(e, t) {
-    switch (t) {
-        case dragDirections.horizontal:
-            return e.clientX;
-        case dragDirections.vertical:
-            return e.clientY;
-        default:
-            assert(!1, `Such drag direction ${t} is not supported`);
-    }
-}
-function getScreenCoordinate(e, t) {
-    switch (t) {
-        case dragDirections.horizontal:
-            return e.screenX;
-        case dragDirections.vertical:
-            return e.screenY;
-        default:
-            assert(!1, `Such drag direction ${t} is not supported`);
-    }
-}
-const INITIAL_DRAGGING_STATE = { type: 'idle' };
-function useScrollByDragElements(e, t, s, r) {
-    const {
-            contentRef: n,
-            wrapperRef: o,
-            scrollPosition: a,
-            clampPosition: i,
-            animationScroll: u,
-            events: l,
-            disabled: c,
-        } = e,
-        [d, _] = reactExports.useState(INITIAL_DRAGGING_STATE),
-        [m, p] = reactExports.useState(0),
-        { gapBeforeStart: x } = r ?? {},
-        f = useSkipFrame(),
-        E = useEvent(() => {
-            f.run(() => {
-                const t = e.contentRef.current,
-                    s = e.getWrapperSize(),
-                    r = e.getContainerSize();
-                t && s && r && !c && (t.style.cursor = r <= s ? 'auto' : 'dragging' === d.type ? 'move' : 'grab');
-            });
-        });
-    return (
-        reactExports.useEffect(() => {
-            E();
-        }, [d.type, E]),
-        useResize(() => {
-            E();
-        }, [E]),
-        reactExports.useEffect(() => {
-            if ('pending' !== d.type) return;
-            const e = n.current,
-                s = o.current;
-            if (null === e || null === s) return;
-            const r = mouse.move(([e]) => {
-                    const s = getScreenCoordinate(e, t);
-                    (void 0 === x || Math.abs(m - s) > x) &&
-                        _({ type: 'dragging', positionFrom: s, previousScrollPosition: u.scrollPosition.get() });
-                }),
-                a = mouse.up(() => _({ type: 'scrollComplete' }));
-            return () => {
-                (r(), a());
-            };
-        }, [u.scrollPosition, n, m, t, d, x, o]),
-        reactExports.useEffect(() => {
-            if ('dragging' !== d.type) return;
-            const e = mouse.move(([e, r]) => {
-                const l = n.current,
-                    c = o.current;
-                if ('outside' === r) return void _({ type: 'scrollComplete' });
-                const m = getEventCoordinate(e, t);
-                if (null === l || null === c || ('inside' === r && m < 0)) return;
-                const p = c.offsetLeft,
-                    x = 'inside' === r ? m : m - p,
-                    f = d.positionFrom - x,
-                    E = d.previousScrollPosition + f;
-                a.start({ scrollPosition: i(l, E), from: { scrollPosition: u.scrollPosition.get() }, ...s });
-            });
-            const r = mouse.up(function () {
-                _({ type: 'scrollComplete' });
-            });
-            return () => {
-                (e(), r());
-            };
-        }, [u.scrollPosition, i, n, d, a, o, s, t]),
-        reactExports.useEffect(() => {
-            if ('scrollComplete' !== d.type) return;
-            const e = () => {
-                _(INITIAL_DRAGGING_STATE);
-            };
-            return (e(), l.on('rest', e), () => l.off('rest', e));
-        }, [u.scrollPosition, d.type, l]),
-        reactExports.useEffect(() => {
-            if (c) return;
-            const e = n.current;
-            if (!e) return;
-            const s = (e) => {
-                if (e.button !== mouseButtons.left) return;
-                const s = getScreenCoordinate(e, t);
-                (p(s),
-                    _(
-                        void 0 === x || x <= 0
-                            ? { type: 'dragging', positionFrom: s, previousScrollPosition: u.scrollPosition.get() }
-                            : { type: 'pending' },
-                    ));
-            };
-            return (e.addEventListener('mousedown', s), () => e.removeEventListener('mousedown', s));
-        }, [u.scrollPosition, n, c, t, x]),
-        d
-    );
-}
-function Base$i({ settings: e, children: t }) {
-    const s = useApi$1({ settings: e }),
-        r = reactExports.useMemo(() => ({ api: s }), [s]);
-    return jsxRuntimeExports.jsx(Context$4.Provider, { value: r, children: t });
-}
-const Context$3 = reactExports.createContext(void 0);
-function useVerticalScroll() {
-    const e = reactExports.useContext(Context$3);
-    if (!e) throw new Error('useVerticalScroll must be used within a Scroll.Vertical.Base component');
-    return e;
-}
-const DEFAULT_VERTICAL_API_CONFIG = {
-        getBounds: (e) => [0, e.scrollHeight - e.offsetHeight],
-        getContainerSize: (e) => e.scrollHeight,
-        getWrapperSize: (e) => e.offsetHeight,
-        setScrollPosition: (e, t) => {
-            e.scrollTop = Math.trunc(t.value.scrollPosition ?? 0);
-        },
-        getDirection: (e) => (e.deltaY > 1 ? Direction.Next : Direction.Prev),
-    },
-    useApi = createApiHook(DEFAULT_VERTICAL_API_CONFIG),
-    rail = 'VerticalBar_rail_3d663c9',
-    base$F = 'VerticalBar_7187fa00',
-    track = 'VerticalBar_track_ff482708',
-    rail__top = 'VerticalBar_rail__top_ee531f43',
-    rail__bottom = 'VerticalBar_rail__bottom_3eaa33b1',
-    button__bottom = 'VerticalBar_button__bottom_6880f123',
-    button__top = 'VerticalBar_button__top_b8383775',
-    button$2 = 'VerticalBar_button_7b0e4aca',
-    styles$Q = {
-        rail: rail,
-        base: base$F,
-        track: track,
-        rail__top: rail__top,
-        rail__bottom: rail__bottom,
-        button__bottom: button__bottom,
-        button__top: button__top,
-        button: button$2,
-    },
-    THUMB_TO_RAIL_OFFSET = 5,
-    THUMB_STYLES = { closed: { width: '3rem', left: '3rem' }, opened: { width: '9rem', left: '0rem' } },
-    calculateThumbSize = (e, t) => Math.max(remToPx$1(MIN_THUMB_SIZE), e.offsetHeight * t),
-    Bar = reactExports.memo(function ({ classNames: e = {}, onDrag: t = noop }) {
-        const s = reactExports.useRef(null),
-            r = reactExports.useRef(null),
-            n = reactExports.useRef(null),
-            o = reactExports.useRef(null),
-            a = reactExports.useRef(null),
-            i = reactExports.useRef(null),
-            u = reactExports.useRef(null),
-            [l, c] = reactExports.useState(!1),
-            { api: d } = useVerticalScroll();
-        useUpdateStatesBar({ baseRef: s, api: d });
-        const _ = useEvent((e) => e - (o.current.offsetHeight - a.current.offsetHeight) >= -0.5),
-            m = useEvent(
-                (e, t, { parent: s }) => (e.screenY - t.offset - s.getBoundingClientRect().y) / s.offsetHeight,
-            ),
-            p = reactExports.useCallback(
-                (e) => ('dragStart' === e.type ? c(!0) : 'dragEnd' === e.type && c(!1), t(e)),
-                [t],
-            ),
-            x = useBarDragging(a, p, d, o, m),
-            f = useEvent(({ thumbSize: e, thumbOffset: t, newBouncingCorrection: s }) => {
-                const r = o.current,
-                    n = i.current,
-                    a = u.current;
-                if (!r || !n || !a) return;
-                const l = remToPx$1(THUMB_TO_RAIL_OFFSET);
-                ((n.style.height = `${t - l + s}px`), (a.style.height = r.offsetHeight - e - t - l - s + 'px'));
-            }),
-            { handleMouseEnter: E, handleMouseDownTrack: h } = useBarHandlers(
-                s,
-                a,
-                r,
-                n,
-                d,
-                x,
-                scrollOrientations.vertical,
-            );
-        return jsxRuntimeExports.jsxs('div', {
-            className: cx(styles$Q.base, e.base),
-            ref: s,
-            onWheel: d.handleMouseWheel,
-            onMouseDown: h,
-            onMouseEnter: E,
-            children: [
-                jsxRuntimeExports.jsx('div', {
-                    ref: r,
-                    className: cx(styles$Q.button, styles$Q.button__top, e.topButton),
-                }),
-                jsxRuntimeExports.jsxs('div', {
-                    ref: o,
-                    className: cx(styles$Q.track, e.track),
-                    children: [
-                        jsxRuntimeExports.jsx('div', {
-                            ref: i,
-                            className: cx(styles$Q.rail, styles$Q.rail__top, e.topRail),
-                        }),
-                        jsxRuntimeExports.jsx(Thumb$1, {
-                            dragging: l,
-                            api: d,
-                            calculateOffset: m,
-                            calculateSize: calculateThumbSize,
-                            direction: 'vertical',
-                            isBoundThumb: _,
-                            railAfterRef: i,
-                            railBeforeRef: u,
-                            styles: THUMB_STYLES,
-                            onUpdate: f,
-                            thumbRef: a,
-                            trackRef: o,
-                        }),
-                        jsxRuntimeExports.jsx('div', {
-                            ref: u,
-                            className: cx(styles$Q.rail, styles$Q.rail__bottom, e.bottomRail),
-                        }),
-                    ],
-                }),
-                jsxRuntimeExports.jsx('div', {
-                    ref: n,
-                    className: cx(styles$Q.button, styles$Q.button__bottom, e.bottomButton),
-                }),
-            ],
-        });
-    }),
-    content$b = 'VerticalScroll_content_62cb6120',
-    defaultScroll = 'VerticalScroll_defaultScroll_c69fa70e',
-    area = 'VerticalScroll_area_a3c0086a',
-    styles$P = { content: content$b, defaultScroll: defaultScroll, area: area },
-    DefaultScroll = ({
-        children: e,
-        className: t,
-        barClassNames: s,
-        areaClassName: r,
-        scrollClassName: n,
-        scrollClassNames: o,
-        onDrag: a,
-    }) => {
-        const { api: i } = useVerticalScroll(),
-            u = reactExports.useMemo(() => {
-                const e = s || {};
-                return { ...e, base: cx(styles$P.base, e.base) };
-            }, [s]);
-        return jsxRuntimeExports.jsxs('div', {
-            className: cx(styles$P.defaultScroll, t),
-            onWheel: i.handleMouseWheel,
-            children: [
-                jsxRuntimeExports.jsx('div', {
-                    className: cx(styles$P.area, r),
-                    children: jsxRuntimeExports.jsx(Area, { className: n, classNames: o, children: e }),
-                }),
-                jsxRuntimeExports.jsx(Bar, { onDrag: a, classNames: u }),
-            ],
-        });
-    },
-    Area = ({ className: e, classNames: t, children: s, ...r }) => {
-        const { api: n } = useVerticalScroll();
-        return (
-            reactExports.useEffect(() =>
-                createLayoutReadyInEffect(() => createLayoutReadyInEffect(n.recalculateContent)),
-            ),
-            jsxRuntimeExports.jsx('div', {
-                className: cx(styles$P.base, null == t ? void 0 : t.wrapper, e),
-                ref: n.wrapperRef,
-                onWheel: n.handleMouseWheel,
-                children: jsxRuntimeExports.jsx('div', {
-                    ...r,
-                    className: cx(styles$P.content, null == t ? void 0 : t.content),
-                    ref: n.contentRef,
-                    children: s,
-                }),
-            })
-        );
-    };
-function Base$h({ children: e }) {
-    const t = useApi(),
-        s = reactExports.useMemo(() => ({ api: t }), [t]);
-    return jsxRuntimeExports.jsx(Context$3.Provider, { value: s, children: e });
-}
-Area.Default = DefaultScroll;
-const IGNORE_DEFAULT = [2, 2];
-function useScrollBounding(e, [t, s] = IGNORE_DEFAULT) {
-    const [r, n] = reactExports.useState(!0),
-        [o, a] = reactExports.useState(!0);
-    return (
-        reactExports.useEffect(() => {
-            function r() {
-                const r = e.animationScroll.scrollPosition.get(),
-                    [o, i] = e.getBounds(),
-                    u = r >= i - s;
-                (n(r <= o + t), a(u));
-            }
-            return new DisposeBuilder()
-                .add(createLayoutReadyInEffect(r))
-                .add(e.events.on('resizeHandled', r))
-                .add(e.events.on('recalculateContent', r))
-                .add(e.events.on('change', r)).dispose;
-        }, [e, t, s]),
-        [r, o]
-    );
-}
 const UNKNOWN_NATION = 'none',
     list = ['ussr', 'germany', 'usa', 'china', 'france', 'uk', 'japan', 'czech', 'sweden', 'poland', 'italy'],
     nationById = (e) => list[e] ?? UNKNOWN_NATION,
@@ -11969,46 +11969,46 @@ const base$1 = 'Countdown_99fa8328',
         });
     };
 export {
-    useSyncSizeTexture as $,
-    useLazyModel as A,
+    roundTo as $,
+    Area$1 as A,
     Button$1 as B,
-    Currency as C,
-    useMedia as D,
-    useLayoutReady as E,
-    FormatString as F,
-    GradientText as G,
-    createLayoutReadyInEffect as H,
-    Image$1 as I,
-    map$1 as J,
-    compose as K,
-    subtract as L,
-    MS_IN_SECOND$1 as M,
-    now as N,
-    toDays as O,
-    days as P,
-    toHours as Q,
-    hours as R,
-    minutes as S,
-    TruncatedText as T,
+    sizes$i as C,
+    Bubble as D,
+    useSyncSizeTexture as E,
+    UIProvider as F,
+    runView as G,
+    isTypeValidValue as H,
+    intl$2 as I,
+    JSXBuilder as J,
+    GradientText as K,
+    LazyModel as L,
+    easings as M,
+    defineStyledComponent as N,
+    useTimeout as O,
+    some as P,
+    MS_IN_SECOND$1 as Q,
+    MINUTES_IN_HOUR as R,
+    toMinutes as S,
+    useTooltip as T,
     UPSCALE as U,
     Video as V,
-    toSeconds as W,
-    map as X,
-    filter as Y,
-    useWulfTooltip as Z,
-    PlayerInfo as _,
-    isTypeValidValue as a,
+    seconds as W,
+    sort as X,
+    Image$1 as Y,
+    FormatString as Z,
+    filterMap as _,
+    useSpecialContextMenu as a,
     useHoverState as a$,
-    useRouter as a0,
-    matchPath as a1,
-    createTargetOverrides as a2,
-    JSXBuilder as a3,
-    UIProvider as a4,
-    ModelRouterProvider as a5,
-    runView as a6,
-    getViewGlobalPosition$1 as a7,
-    pxToRem$1 as a8,
-    useSpecialContextMenu as a9,
+    types$3 as a0,
+    sizes$g as a1,
+    Currency as a2,
+    useLazyModel as a3,
+    useMedia as a4,
+    createLayoutReadyInEffect as a5,
+    map$1 as a6,
+    TruncatedText as a7,
+    compose as a8,
+    subtract as a9,
     comparer as aA,
     getVehicleImageKey as aB,
     sameTanksRemap as aC,
@@ -12036,21 +12036,21 @@ export {
     writeClipboard as aY,
     usePopover as aZ,
     HeadlessButton as a_,
-    sizes$i as aa,
-    themes$1 as ab,
-    useAdaptive as ac,
-    useInterval as ad,
-    remToPx$1 as ae,
-    useHorizontalScroll as af,
-    useUnmount as ag,
-    useRem as ah,
-    Area$1 as ai,
-    Base$i as aj,
-    Atlas as ak,
-    useSpecialPopover as al,
-    mapRange as am,
-    LazyModel as an,
-    sizes$g as ao,
+    now as aa,
+    toDays as ab,
+    days as ac,
+    toHours as ad,
+    hours as ae,
+    minutes as af,
+    toSeconds as ag,
+    map as ah,
+    filter as ai,
+    useWulfTooltip as aj,
+    PlayerInfo as ak,
+    useRouter as al,
+    matchPath as am,
+    createTargetOverrides as an,
+    ModelRouterProvider as ao,
     types$4 as ap,
     roles$1 as aq,
     identity as ar,
@@ -12062,14 +12062,14 @@ export {
     isRentVehicle as ax,
     vehicleState as ay,
     getRoleByKey as az,
-    useAdaptiveWidth as b,
+    useAdaptive as b,
     assignRefs as b$,
     Slot$1 as b0,
     useVerticalScroll as b1,
     Area as b2,
     Popover as b3,
     MediaWrapperElement as b4,
-    Base$h as b5,
+    Base$p as b5,
     Bar as b6,
     Slottable as b7,
     Toggle as b8,
@@ -12152,16 +12152,16 @@ export {
     initExternalPaddings$1 as cK,
     enableFullScreenModeSupported$1 as cL,
     setSkipFramesAllowed as cM,
-    perkStates as cN,
-    Tooltip as cO,
-    greaterThan as cP,
-    convert as cQ,
-    sizes$a as cR,
-    WITHOUT_ROLE as cS,
-    PrestigeEmblem as cT,
-    sizes as cU,
-    grades as cV,
-    sizes$9 as cW,
+    greaterThan as cN,
+    convert as cO,
+    sizes$a as cP,
+    WITHOUT_ROLE as cQ,
+    PrestigeEmblem as cR,
+    sizes as cS,
+    grades as cT,
+    Tooltip as cU,
+    sizes$9 as cV,
+    perkStates as cW,
     roles as cX,
     createString as cY,
     renderResolvedString as cZ,
@@ -12192,7 +12192,7 @@ export {
     useCardContext as cx,
     readKey as cy,
     Card as cz,
-    intl$2 as d,
+    usePrevious as d,
     renderString as d0,
     upgradeLegacy as d1,
     compare as d2,
@@ -12204,26 +12204,26 @@ export {
     fromMs as d8,
     snakeToCamel as d9,
     play$1 as da,
-    easings as e,
-    defineStyledComponent as f,
-    useTimeout as g,
-    usePrevious as h,
+    useInterval as e,
+    remToPx$1 as f,
+    getViewGlobalPosition$1 as g,
+    useHorizontalScroll as h,
     initializeModelWithContext as i,
-    MINUTES_IN_HOUR as j,
-    useTooltip as k,
-    seconds as l,
-    sort as m,
+    useLayoutReady as j,
+    useUnmount as k,
+    useRem as l,
+    Base$q as m,
     noop as n,
-    useUpscale as o,
-    filterMap as p,
-    useSounds as q,
+    useSounds as o,
+    pxToRem$1 as p,
+    useAdaptiveWidth as q,
     resources as r,
-    some as s,
-    toMinutes as t,
+    sizes$h as s,
+    themes$1 as t,
     useSimpleTooltip as u,
-    Bubble as v,
-    roundTo as w,
-    types$3 as x,
-    sizes$h as y,
-    useSpecialTooltip as z,
+    useUpscale as v,
+    Atlas as w,
+    useSpecialPopover as x,
+    useSpecialTooltip as y,
+    mapRange as z,
 };

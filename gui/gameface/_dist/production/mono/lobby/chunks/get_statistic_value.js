@@ -1,4 +1,4 @@
-import { j as e, A as a } from './vendor.js';
+import { j as e, x as a } from './vendor.js';
 import { cY as s, cB as n, c4 as o } from './lib.js';
 const i = 'DivineGlow_2b9c4670',
     _ = 'DivineGlow_glow_fddce7f8',

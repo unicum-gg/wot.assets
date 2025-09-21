@@ -1,5 +1,5 @@
-import { j as e, f as t, o as s, g as n, x as o, r as a } from './vendor.js';
-import { d9 as r, i, cf as c, r as l, k as u, da as d } from './lib.js';
+import { j as e, f as t, o as s, g as n, w as o, r as a } from './vendor.js';
+import { d9 as r, i, cf as c, r as l, T as u, da as d } from './lib.js';
 const m = { base: 'AlertIcon_7dcecd8f', shadow: 'AlertIcon_shadow_daf8370', icon: 'AlertIcon_icon_35ce98b5' };
 function p({ icon: s, hasShadow: n = !1, className: o }) {
     return e.jsxs('div', {
@@ -10,8 +10,8 @@ function p({ icon: s, hasShadow: n = !1, className: o }) {
         ],
     });
 }
-var h = ((e) => ((e.Common = 'common'), (e.Rare = 'rare'), (e.Epic = 'epic'), e))(h || {});
-const _ = (e, t) => {
+var _ = ((e) => ((e.Common = 'common'), (e.Rare = 'rare'), (e.Epic = 'epic'), e))(_ || {});
+const h = (e, t) => {
     let s = e;
     const n = t.split('.');
     for (let o = 0; o < n.length; o++) {
@@ -20,14 +20,14 @@ const _ = (e, t) => {
     }
     return '';
 };
-var x = ((e) => (
+var b = ((e) => (
         (e.EntryPoint = 'ENTRY_POINT'),
         (e.InfoPage = 'INFO_PAGE'),
         (e.Rewards = 'REWARDS'),
         (e.HasBoxesView = 'HAS_BOXES_VIEW'),
         e
-    ))(x || {}),
-    y = ((e) => (
+    ))(b || {}),
+    x = ((e) => (
         (e.Videos = 'videos'),
         (e.Images = 'images'),
         (e.Texts = 'texts'),
@@ -36,9 +36,9 @@ var x = ((e) => (
         (e.DynamicImages = 'dynamicImages'),
         (e.DynamicTexts = 'dynamicTexts'),
         e
-    ))(y || {});
-(h.Rare, h.Epic);
-const b = {
+    ))(x || {});
+(_.Rare, _.Epic);
+const y = {
         ENTRY_POINT: {
             icon: { emptyIconBrightness: 0.3, boxesIconBrightness: 0.3 },
             shine: { opacityCustom: 0.15, opacityCustomNewBox: 0.4, opacityDiff: 0.15, animationDuration: '40s' },
@@ -55,12 +55,14 @@ const b = {
         REWARDS: { accentCount: 5 },
     },
     g = {
-        DEFAULT_CONFIG: b,
+        DEFAULT_CONFIG: y,
         anniversaryCN: {
             ENTRY_POINT: { icon: { emptyIconBrightness: 0.2 } },
             HAS_BOXES_VIEW: { hasIdle: !1, tabsGuaranteedCount: 5 },
             INFO_PAGE: { hasDescription: !0 },
         },
+        wt: { HAS_BOXES_VIEW: { tabsGuaranteedCount: 5 } },
+        wtCn: { HAS_BOXES_VIEW: { tabsGuaranteedCount: 5 } },
     },
     f = (e, t) => {
         const s = g[r(e)];
@@ -75,8 +77,8 @@ const b = {
                       return n;
                   };
                   return s(e, t);
-              })(b[t], s[t])
-            : b[t];
+              })(y[t], s[t])
+            : y[t];
     },
     v = (e, t) => {
         let s = e;
@@ -87,7 +89,7 @@ const b = {
         }
         return s;
     },
-    N = ({ type: e, filePath: t, eventName: s }, n = !1) => {
+    I = ({ type: e, filePath: t, eventName: s }, n = !1) => {
         const {
             parent: o,
             path: a,
@@ -96,16 +98,16 @@ const b = {
             const n = 'gui.maps.icons.lootBoxSystem.customizable',
                 o = 'lootbox.customizable';
             switch (e) {
-                case y.Images:
-                case y.DynamicImages:
+                case x.Images:
+                case x.DynamicImages:
                     return { parent: R.images, path: `${n}.${s}.${t}`, defaultPath: `${n}.default.${t}` };
-                case y.Videos:
-                case y.DynamicVideos:
+                case x.Videos:
+                case x.DynamicVideos:
                     return { parent: R.videos, path: `${o}.${s}.${t}`, defaultPath: `${o}.default.${t}` };
-                case y.Texts:
-                case y.DynamicTexts:
+                case x.Texts:
+                case x.DynamicTexts:
                     return { parent: R.strings, path: `lootbox_${s}.${t}`, defaultPath: `lootbox_system.${t}` };
-                case y.Sounds:
+                case x.Sounds:
                     return { parent: R.sounds, path: `${t}_${s}`, defaultPath: `${t}` };
                 default:
                     return (
@@ -114,13 +116,13 @@ const b = {
                     );
             }
         })(e, t, s);
-        return o ? { eventResource: n ? v(o, a) : _(o, a), defaultResource: n ? v(o, r) : _(o, r) } : null;
+        return o ? { eventResource: n ? v(o, a) : h(o, a), defaultResource: n ? v(o, r) : h(o, r) } : null;
     },
-    I = (e, t, s) =>
+    N = (e, t, s) =>
         Object.keys(e).reduce(
             (n, o) => (
                 (n[o] = (({ type: e, filePath: t, eventName: s }) => {
-                    const n = N({ type: e, filePath: t, eventName: s });
+                    const n = I({ type: e, filePath: t, eventName: s });
                     if (!n || (!n.eventResource && !n.defaultResource))
                         return (console.info(`Unreachable code: unknown resource (${e} ${s} ${t})`), '');
                     const { eventResource: o, defaultResource: a } = n;
@@ -133,7 +135,7 @@ const b = {
     E = (e, t) =>
         Object.keys(e).reduce((s, n) => {
             const o = e[n];
-            return o ? ((s[n] = I(o, n, t)), s) : s;
+            return o ? ((s[n] = N(o, n, t)), s) : s;
         }, {}),
     A = {
         images: {
@@ -146,10 +148,10 @@ const b = {
         sounds: { entryHover: 'gui_lb_icon_hover' },
     };
 var $ = ((e) => ((e.Boxes = 'boxes'), (e.Empty = 'empty'), e))($ || {});
-const [j, P] = i()(
+const [j, C] = i()(
         ({ observableModel: e }) => {
             const t = e.object().get().eventName,
-                o = { root: e.object(), style: s.box(f(t, x.EntryPoint)), resources: s.box(E(A, t)) },
+                o = { root: e.object(), style: s.box(f(t, b.EntryPoint)), resources: s.box(E(A, t)) },
                 a = n(() => {
                     const { boxesCount: e } = o.root.get();
                     return e ? 'boxes' : 'empty';
@@ -158,38 +160,38 @@ const [j, P] = i()(
         },
         ({ externalModel: e }) => ({ showLanding: e.createCallbackNoArgs('onEntryClick') }),
     ),
-    C = { base: 'Counter_d19ba807' },
-    D = 1e3;
-function S({ count: s, text: n, maxText: o, className: a }) {
+    P = { base: 'Counter_d19ba807' },
+    S = 1e3;
+function w({ count: s, text: n, maxText: o, className: a }) {
     return e.jsx('div', {
-        className: t(C.base, a),
-        children: s < D ? e.jsx(c, { text: n, params: { count: s }, upgradeLegacy: !0 }) : o,
+        className: t(P.base, a),
+        children: s < S ? e.jsx(c, { text: n, params: { count: s }, upgradeLegacy: !0 }) : o,
     });
 }
-const w = { base: 'Icon_1d8e6c37' };
+const D = { base: 'Icon_1d8e6c37' };
 function B({ image: s, brightness: n, disabled: o, className: a, ...r }) {
     return e.jsx('div', {
         ...r,
-        className: t(w.base, a),
+        className: t(D.base, a),
         style: { backgroundImage: `url(${s})`, filter: o ? 'brightness(.8) saturate(.5)' : `brightness(${n})` },
     });
 }
-const T = {
+const O = {
     base: 'Shine_91d96348',
     shineAnimation: 'Shine_shineAnimation_ead5930d',
     shineAnimation__reverse: 'Shine_shineAnimation__reverse_de32f2ac',
 };
-function O({ image: s, style: n }) {
+function T({ image: s, style: n }) {
     return e.jsxs('div', {
-        className: T.base,
+        className: O.base,
         style: { opacity: n.opacity },
         children: [
             e.jsx('div', {
-                className: T.shineAnimation,
+                className: O.shineAnimation,
                 style: { backgroundImage: `url(${s})`, animationDuration: n.animationDuration },
             }),
             e.jsx('div', {
-                className: t(T.shineAnimation, T.shineAnimation__reverse),
+                className: t(O.shineAnimation, O.shineAnimation__reverse),
                 style: { backgroundImage: `url(${s})`, animationDuration: n.animationDuration },
             }),
         ],
@@ -215,37 +217,37 @@ const G = o(function () {
             contentId: o.read((e) => e.mono.lootbox.tooltips.entry_point('resId')),
         }),
         [i, c] = a.useState(!1),
-        { model: m, controls: h } = P(),
-        { isEnabled: _, boxesCount: x, hasNew: y } = m.root.get(),
-        b = m.computes.getState(),
+        { model: m, controls: _ } = C(),
+        { isEnabled: h, boxesCount: b, hasNew: x } = m.root.get(),
+        y = m.computes.getState(),
         { images: g, texts: f, sounds: v } = m.resources.get(),
-        N = m.style.get(),
-        { opacityCustomNewBox: I, opacityCustom: E, opacityDiff: A, animationDuration: j } = N.shine,
-        C = i ? 1 + N.icon[`${b}IconBrightness`] : 1,
-        R = { opacity: (y ? I : E) + (i ? A : 0), animationDuration: j },
-        D = b === $.Empty ? g.iconEmpty : g.iconGold;
+        I = m.style.get(),
+        { opacityCustomNewBox: N, opacityCustom: E, opacityDiff: A, animationDuration: j } = I.shine,
+        P = i ? 1 + I.icon[`${y}IconBrightness`] : 1,
+        S = { opacity: (x ? N : E) + (i ? A : 0), animationDuration: j },
+        R = y === $.Empty ? g.iconEmpty : g.iconGold;
     return e.jsx('div', {
-        className: t(k.base, !_ && k.base__disabled),
+        className: t(k.base, !h && k.base__disabled),
         children: e.jsxs('div', {
             className: k.content,
             onClick: function () {
-                (s.play('yes1'), h.showLanding());
+                (s.play('yes1'), _.showLanding());
             },
             onMouseEnter: function () {
                 (d.sound(v.entryHover), c(!0));
             },
             onMouseLeave: () => c(!1),
             children: [
-                b === $.Boxes
+                y === $.Boxes
                     ? e.jsxs(e.Fragment, {
                           children: [
-                              _ && e.jsx(O, { image: g.shine, style: R }),
-                              e.jsx(S, { className: k.count, maxText: f.maxBoxesCount, count: x, text: f.boxesCount }),
+                              h && e.jsx(T, { image: g.shine, style: S }),
+                              e.jsx(w, { className: k.count, maxText: f.maxBoxesCount, count: b, text: f.boxesCount }),
                           ],
                       })
                     : e.jsx('div', { className: k.text, children: f.boxes }),
-                e.jsx(B, { ...r, disabled: !_, image: D, brightness: C, className: k.icon }),
-                !_ && e.jsx(p, { className: t(k.alert, k[`alert__${b}`]), hasShadow: !0, icon: g.alert }),
+                e.jsx(B, { ...r, disabled: !h, image: R, brightness: P, className: k.icon }),
+                !h && e.jsx(p, { className: t(k.alert, k[`alert__${y}`]), hasShadow: !0, icon: g.alert }),
             ],
         }),
     });

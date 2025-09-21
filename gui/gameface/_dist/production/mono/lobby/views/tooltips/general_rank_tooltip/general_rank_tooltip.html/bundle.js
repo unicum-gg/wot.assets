@@ -1,4 +1,4 @@
-import { x as s, j as i, A as e } from '../../../../chunks/vendor.js';
+import { y as s, j as i, x as e } from '../../../../chunks/vendor.js';
 import { i as o, n, F as a, b_ as r, r as t } from '../../../../chunks/lib.js';
 import { t as d, T as c } from '../../../../chunks/tooltips.module.js';
 import { g as l, a as m } from '../../../../chunks/get_rank_name.js';

@@ -1,5 +1,5 @@
 import { p as s, j as e, e as o } from '../../../../../chunks/vendor.js';
-import { i, c as a, a8 as l, l as c, B as t, t as r, s as n, b as p, U as d } from '../../../../../chunks/lib.js';
+import { i, c as a, a8 as l, q as c, B as t, t as r, s as n, b as p, U as d } from '../../../../../chunks/lib.js';
 const [b, _] = i()(
         ({ observableModel: s }) => ({ vehicle: s.object('vehicle'), ...s.primitives(['isPopUp', 'isDisabled']) }),
         ({ externalModel: s }) => ({

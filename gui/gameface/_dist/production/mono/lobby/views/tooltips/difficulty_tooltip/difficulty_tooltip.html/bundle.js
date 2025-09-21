@@ -1,14 +1,14 @@
 import { n as e, R as s, j as a, m as i, s as d } from '../../../../chunks/vendor.js';
 import {
     i as t,
-    ad as c,
+    $ as c,
     g as l,
     c as r,
     m as o,
-    Y as _,
-    Z as n,
-    ab as p,
-    ah as f,
+    a5 as _,
+    a6 as n,
+    a7 as p,
+    a3 as f,
     P as m,
     a$ as u,
 } from '../../../../chunks/lib.js';
@@ -26,20 +26,20 @@ const [y, j] = t()(({ observableModel: s }) => {
             );
         return { ...a, computes: { getRewardsByWaveIndex: i } };
     }, c),
-    b = 'Shield_fdadec95',
-    w = 'Shield_content_e83a128',
+    w = 'Shield_fdadec95',
+    b = 'Shield_content_e83a128',
     g = 'Shield_content__completed_7e44316c',
     D = 'Shield_check_c7a26a19',
     N = 'Shield_index_3ff5314e',
     k = s.memo(function ({ completed: e, index: s = -1, className: d }) {
         const t = s >= 0;
         return a.jsx('div', {
-            className: i(b, d),
+            className: i(w, d),
             children:
                 t && e
                     ? a.jsx('div', { className: D })
                     : a.jsx('div', {
-                          className: i(w, e && g),
+                          className: i(b, e && g),
                           children: t && a.jsx('div', { className: N, children: s }),
                       }),
         });

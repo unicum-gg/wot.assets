@@ -1,4 +1,4 @@
-import { x as s, j as e, A as i } from '../../../../chunks/vendor.js';
+import { y as s, j as e, x as i } from '../../../../chunks/vendor.js';
 import { i as t, n as c, F as o, r as l } from '../../../../chunks/lib.js';
 import { t as d, T as a } from '../../../../chunks/tooltips.module.js';
 /* empty css                        */ const [p, r] = t()(({ observableModel: s }) => ({ root: s.object() }), c),
@@ -14,7 +14,7 @@ import { t as d, T as a } from '../../../../chunks/tooltips.module.js';
     u = 'App_subtitle_915d9cd5',
     A = 'App_howToReceive_5cbf6889',
     f = 'App_paragraph_5142910c',
-    N = s(() => {
+    y = s(() => {
         const { model: s } = r(),
             { styleId: t, vehicles: c } = s.root.get();
         return e.jsxs('div', {
@@ -53,4 +53,4 @@ import { t as d, T as a } from '../../../../chunks/tooltips.module.js';
             ],
         });
     });
-l(e.jsx(p, { children: e.jsx(a, { children: e.jsx(N, {}) }) }));
+l(e.jsx(p, { children: e.jsx(a, { children: e.jsx(y, {}) }) }));

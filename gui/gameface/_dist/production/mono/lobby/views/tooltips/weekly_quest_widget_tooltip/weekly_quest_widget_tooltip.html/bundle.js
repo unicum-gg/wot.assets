@@ -1,4 +1,4 @@
-import { T as e, j as s, f as t, x as i, A as r } from '../../../../chunks/vendor.js';
+import { T as e, j as s, f as t, y as i, x as r } from '../../../../chunks/vendor.js';
 import {
     i as a,
     av as n,
@@ -89,7 +89,7 @@ const k = {
             ],
         });
     }),
-    A = {
+    y = {
         header: 'Reward_header_fe1c875b',
         description: 'Reward_description_901b8d14',
         divider: 'Reward_divider_ea66945c',
@@ -97,7 +97,7 @@ const k = {
         reward: 'Reward_e744e1e2',
     },
     D = R.strings.comp7_ext.weeklyQuestWidgetTooltip,
-    y = {
+    A = {
         header: 'Waiting_header_3d83166b',
         counterContainer: 'Waiting_counterContainer_440beb40',
         counter: 'Waiting_counter_da0557a8',
@@ -115,18 +115,18 @@ const k = {
             { timeToNewQuests: t, questsPassed: i, totalQuests: r } = e.root.get(),
             a = e.questNumbersToRewards.get().length - 1;
         return s.jsxs('div', {
-            className: y.base,
+            className: A.base,
             children: [
-                s.jsx(l, { text: z.header(), classMix: y.header }),
+                s.jsx(l, { text: z.header(), classMix: A.header }),
                 s.jsx(l, {
                     text: z.missionsCounter(),
-                    classMix: y.counterContainer,
+                    classMix: A.counterContainer,
                     binding: {
                         counter: s.jsx(l, {
                             text: z.counter(),
-                            classMix: y.counter,
+                            classMix: A.counter,
                             binding: {
-                                current: s.jsx('span', { className: y.counter__current, children: i }),
+                                current: s.jsx('span', { className: A.counter__current, children: i }),
                                 total: r,
                             },
                         }),
@@ -134,7 +134,7 @@ const k = {
                 }),
                 s.jsx(_, {
                     text: z.description(),
-                    classMix: y.description,
+                    classMix: A.description,
                     binding: {
                         questsList: m(a, (s) => e.computes.questRewardsNumber(s)).join(
                             R.strings.comp7_ext.listSeparator(),
@@ -143,17 +143,17 @@ const k = {
                     },
                 }),
                 s.jsxs('div', {
-                    className: y.timerBlock,
+                    className: A.timerBlock,
                     children: [
-                        s.jsx(W, { className: y.divider }),
+                        s.jsx(W, { className: A.divider }),
                         s.jsxs('div', {
-                            className: y.newMissionsDescriptionWrapper,
+                            className: A.newMissionsDescriptionWrapper,
                             children: [
                                 s.jsx(p, {
-                                    classMix: y.newMissionsDescription,
+                                    classMix: A.newMissionsDescription,
                                     content: b(z.newMissions(g), { value: g }),
                                 }),
-                                s.jsx(w, { start: t, className: y.newMissionsTimer }),
+                                s.jsx(w, { start: t, className: A.newMissionsTimer }),
                             ],
                         }),
                     ],
@@ -167,13 +167,13 @@ const k = {
         [f.Waiting]: B,
         [f.Reward]: () =>
             s.jsxs('div', {
-                className: A.base,
+                className: y.base,
                 children: [
-                    s.jsx(l, { text: D.completed(), classMix: A.header }),
-                    s.jsx(l, { text: D.completedDescription(), classMix: A.description }),
-                    s.jsx(W, { className: A.divider }),
-                    s.jsx('div', { className: A.rewardsText, children: D.rewards() }),
-                    s.jsx('div', { className: A.reward }),
+                    s.jsx(l, { text: D.completed(), classMix: y.header }),
+                    s.jsx(l, { text: D.completedDescription(), classMix: y.description }),
+                    s.jsx(W, { className: y.divider }),
+                    s.jsx('div', { className: y.rewardsText, children: D.rewards() }),
+                    s.jsx('div', { className: y.reward }),
                 ],
             }),
     },

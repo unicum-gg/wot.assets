@@ -1,5 +1,5 @@
 import { s, j as e, m as i } from '../../../../chunks/vendor.js';
-import { i as t, ad as a, D as l, b0 as o, a_ as d, P as c, a$ as n } from '../../../../chunks/lib.js';
+import { i as t, $ as a, D as l, b0 as o, a_ as d, P as c, a$ as n } from '../../../../chunks/lib.js';
 import { K as p, a as r } from '../../../../chunks/key_icon.js';
 import { f as _ } from '../../../../chunks/string-utils.js';
 const [m, y] = t()(({ observableModel: s }) => ({ root: s.object() }), a),

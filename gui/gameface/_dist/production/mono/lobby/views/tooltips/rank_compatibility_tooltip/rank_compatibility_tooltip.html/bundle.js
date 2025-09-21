@@ -1,4 +1,4 @@
-import { j as a, A as s, R as i, x as e } from '../../../../chunks/vendor.js';
+import { j as a, x as s, R as i, y as e } from '../../../../chunks/vendor.js';
 import { m as t, i as n, n as l, F as m, r as o } from '../../../../chunks/lib.js';
 import { t as r, T as c } from '../../../../chunks/tooltips.module.js';
 import { R as d, a as b } from '../../../../chunks/rank_emblem.js';
@@ -12,8 +12,8 @@ const x = 'RankCompatibilityTable_d1e1f461',
     g = 'RankCompatibilityTable_teammates_e198b34',
     N = 'RankCompatibilityTable_teammates__heading_18846859',
     v = 'RankCompatibilityTable_rank_c960c039',
-    u = 'RankCompatibilityTable_emptySlot_7884dfc9',
-    y = 'RankCompatibilityTable_divider_e6a19cf8',
+    y = 'RankCompatibilityTable_emptySlot_7884dfc9',
+    u = 'RankCompatibilityTable_divider_e6a19cf8',
     T = [_.First, _.Second, _.Third, _.Fourth, _.Fifth, _.Sixth],
     C = ({ seasonName: e, rankRangeRestriction: n, className: l, classNames: m }) =>
         a.jsxs('div', {
@@ -55,12 +55,12 @@ const x = 'RankCompatibilityTable_d1e1f461',
                                             children: t(T.length, (s) =>
                                                 Math.abs(s - m) <= n
                                                     ? a.jsx(d, { rank: T[s], size: b.x22, seasonName: e }, s)
-                                                    : a.jsx('div', { className: u }, s),
+                                                    : a.jsx('div', { className: y }, s),
                                             ),
                                         }),
                                     ],
                                 }),
-                                m !== T.length - 1 && a.jsx('div', { className: s(r.divider, y) }),
+                                m !== T.length - 1 && a.jsx('div', { className: s(r.divider, u) }),
                             ],
                         },
                         m,
@@ -69,14 +69,14 @@ const x = 'RankCompatibilityTable_d1e1f461',
             ],
         }),
     [f, F] = n()(({ observableModel: a }) => ({ root: a.object() }), l),
-    A = 'App_bce8e88b',
-    M = 'App_description_e694643b',
-    S = 'App_table_8784516a',
-    z = e(() => {
+    M = 'App_bce8e88b',
+    S = 'App_description_e694643b',
+    z = 'App_table_8784516a',
+    A = e(() => {
         const { model: i } = F(),
             { seasonName: e, squadSize: t, rankRangeRestriction: n } = i.root.get();
         return a.jsxs('div', {
-            className: s(A, r.base),
+            className: s(M, r.base),
             children: [
                 a.jsx(m, {
                     text: R.strings.comp7_ext.rankCompatibilityTooltip.heading(),
@@ -85,10 +85,10 @@ const x = 'RankCompatibilityTable_d1e1f461',
                 }),
                 a.jsx(m, {
                     text: R.strings.comp7_ext.rankCompatibilityTooltip.description(),
-                    classMix: s(r.description, M),
+                    classMix: s(r.description, S),
                 }),
-                a.jsx(C, { seasonName: e, rankRangeRestriction: n, className: S }),
+                a.jsx(C, { seasonName: e, rankRangeRestriction: n, className: z }),
             ],
         });
     });
-o(a.jsx(f, { children: a.jsx(c, { children: a.jsx(z, {}) }) }));
+o(a.jsx(f, { children: a.jsx(c, { children: a.jsx(A, {}) }) }));
