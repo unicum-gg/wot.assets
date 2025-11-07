@@ -2139,12 +2139,14 @@
                     fe = 'RankedStatBattles_base_3c',
                     be = 'RankedStatBattles_icon_d0',
                     pe = 'RankedStatBattles_value_a4',
-                    xe = (0, r.memo)(({ value: u, isUnavailable: e = !1 }) => {
-                        const t = ((u) => (e ? '---' : Q.Z5.getRealFormat(u, Q.Gr.WO_ZERO_DIGITS)))(u),
-                            r = R.strings.tooltips.rankedBattleView.stats.totalBattles;
+                    xe = R.strings.tooltips.rankedBattleView.stats.totalBattles,
+                    Le = String(xe.$dyn('header')),
+                    Te = String(xe.$dyn('body')),
+                    Se = (0, r.memo)(({ value: u, isUnavailable: e = !1 }) => {
+                        const t = ((u) => (e ? '---' : Q.Z5.getRealFormat(u, Q.Gr.WO_ZERO_DIGITS)))(u);
                         return a().createElement(
                             we,
-                            { header: r.$dyn('header'), body: r.$dyn('body') },
+                            { header: Le, body: Te },
                             a().createElement(
                                 'div',
                                 { className: fe },
@@ -2153,7 +2155,7 @@
                             ),
                         );
                     }),
-                    Le =
+                    Me =
                         (Z.Large,
                         Z.Medium,
                         {
@@ -2167,9 +2169,9 @@
                             wrapper: 'League_wrapper_12',
                             icon: 'League_icon_2f',
                         }),
-                    Te = { [Z.Large]: '130x130', [Z.Medium]: '100x100' },
-                    Se = { tooltipId: 'rankedBattlesLeague' },
-                    Me = (0, r.memo)((u) => {
+                    ke = { [Z.Large]: '130x130', [Z.Medium]: '100x100' },
+                    ye = { tooltipId: 'rankedBattlesLeague' },
+                    Oe = (0, r.memo)((u) => {
                         const e = u.leagueID,
                             t = u.efficiency,
                             n = u.efficiencyDiff,
@@ -2192,13 +2194,13 @@
                             ),
                             C = (0, r.useMemo)(() => {
                                 const u = R.images.gui.maps.icons.rankedBattles.league,
-                                    t = Te[B],
+                                    t = ke[B],
                                     r = u.$dyn(`c_${t}`);
                                 if (r) {
                                     return { backgroundImage: `url(${r.$num(e)})` };
                                 }
                             }, [e, B]),
-                            m = g()(Le.base, Le[`base__${F}`]);
+                            m = g()(Me.base, Me[`base__${F}`]);
                         return a().createElement(
                             'div',
                             { className: m, onClick: l, onMouseEnter: D, onMouseLeave: c },
@@ -2212,18 +2214,18 @@
                             }),
                             a().createElement(
                                 nu,
-                                { args: Se },
+                                { args: ye },
                                 a().createElement(
                                     'div',
-                                    { className: Le.wrapper },
-                                    a().createElement('div', { className: Le.icon, style: C }),
+                                    { className: Me.wrapper },
+                                    a().createElement('div', { className: Me.icon, style: C }),
                                     a().createElement(ce, { isAnimated: !0, isWidget: !0 }),
                                 ),
                             ),
-                            a().createElement(xe, { value: s, isUnavailable: A }),
+                            a().createElement(Se, { value: s, isUnavailable: A }),
                         );
                     }),
-                    ke = (0, N.Pi)(() => {
+                    Re = (0, N.Pi)(() => {
                         const u = K(),
                             e = u.model,
                             t = u.controls,
@@ -2264,7 +2266,7 @@
                                     'div',
                                     { className: g()(X.ranks, { [X.ranks_showLeague]: !f }) },
                                     f
-                                        ? a().createElement(Me, {
+                                        ? a().createElement(Oe, {
                                               leagueID: A,
                                               efficiency: F,
                                               efficiencyDiff: s,
@@ -2299,7 +2301,7 @@
                     });
                 engine.whenReady.then(() => {
                     P().render(
-                        a().createElement(O, null, a().createElement(q, null, a().createElement(ke, null))),
+                        a().createElement(O, null, a().createElement(q, null, a().createElement(Re, null))),
                         document.getElementById('root'),
                     );
                 });

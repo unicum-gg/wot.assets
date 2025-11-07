@@ -1,0 +1,260 @@
+body {
+    margin: 1rem;
+    overflow: visible;
+}
+
+html {
+    overflow: visible;
+}
+
+/* delay should be set always separately only for appearance effect, not hiding */
+/* should be percentage of screen width */
+.App_base_cb {
+    border-radius: 2rem;
+    overflow: visible;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+}
+.App_novelty_ee {
+    position: absolute;
+    top: 9rem;
+    right: 7rem;
+    z-index: 2;
+}
+.App_bg_f3 {
+    width: 100%;
+    height: 100%;
+    border-radius: 2rem;
+    background: no-repeat center / cover;
+    filter: brightness(1);
+    overflow: visible;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: scale(1);
+    transition:
+        filter 0.5s cubic-bezier(0.07, 0.82, 0.17, 1),
+        transform 0.5s cubic-bezier(0.07, 0.82, 0.17, 1);
+}
+.App_base__big_c4 .App_bg_f3 {
+    background-image: url('R.images.portal.gui.maps.icons.banner_entry_point.c_300x150');
+}
+.App_base__wideSmall_e3 .App_bg_f3 {
+    background-image: url('R.images.portal.gui.maps.icons.banner_entry_point.c_300x112');
+}
+.App_base__thinSmall_f5 .App_bg_f3 {
+    background-image: url('R.images.portal.gui.maps.icons.banner_entry_point.c_220x112');
+}
+.App_base__thinExtraSmall_c9 .App_bg_f3 {
+    background-image: url('R.images.portal.gui.maps.icons.banner_entry_point.c_160x112');
+}
+.App_base_cb:hover .App_bg_f3 {
+    filter: brightness(1.05);
+    transform: scale(1.03);
+}
+.App_base__disabled_6c .App_bg_f3 {
+    filter: brightness(1) grayscale(100%);
+}
+.App_base__disabled_6c:hover .App_bg_f3 {
+    filter: brightness(1.05) grayscale(100%);
+}
+.App_performanceIcon_07 {
+    width: 16rem;
+    height: 16rem;
+    background: no-repeat center / cover;
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+}
+.App_performanceIcon__low_da {
+    background-image: url('R.images.portal.gui.maps.icons.performance.notificationBlocker');
+}
+.App_performanceIcon__reduced_1c {
+    background-image: url('R.images.portal.gui.maps.icons.performance.notificationAlert');
+}
+.App_shadow_5a {
+    width: 100%;
+    height: 100%;
+    border: 1rem solid rgba(255, 255, 255, 0.25);
+    border-radius: 2rem;
+    background: linear-gradient(rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.3) 100%);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.App_highlight_44 {
+    width: 100%;
+    height: 100%;
+    border-image: url('R.images.portal.gui.maps.icons.banner_entry_point.border') 1 fill / 1rem;
+    background: url('R.images.portal.gui.maps.icons.banner_entry_point.highlight') no-repeat center / cover;
+    filter: brightness(0.6);
+    opacity: 0.6;
+    position: absolute;
+    inset: 0;
+}
+.App_base_cb:hover .App_highlight_44 {
+    filter: none;
+    opacity: 1;
+}
+.App_overlay_13 {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    opacity: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 0.5s cubic-bezier(0.07, 0.82, 0.17, 1);
+}
+.App_base_cb:hover .App_overlay_13 {
+    opacity: 0.8;
+}
+.App_particles_2e {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+    left: 1rem;
+    width: 100%;
+    height: 112rem;
+    mix-blend-mode: screen;
+}
+.mediaLarge .App_particles_2e {
+    height: 150rem;
+}
+.App_content_0a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.App_title_58 {
+    color: #e9e2bf;
+    font-size: 15rem;
+    font-weight: 700;
+    line-height: 1.15;
+    color: #ffffff;
+    font-weight: 700;
+    text-align: center;
+    text-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.5);
+    overflow-wrap: break-word;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.App_base__big_c4 .App_title_58 {
+    font-size: 24rem;
+}
+.App_base__wideSmall_e3 .App_title_58 {
+    font-size: 22rem;
+}
+.App_base__thinSmall_f5 .App_title_58 {
+    font-size: 18rem;
+}
+.App_base__thinExtraSmall_c9 .App_title_58 {
+    font-size: 15rem;
+}
+.App_info_d7 {
+    max-width: 150rem;
+    margin-top: -3rem;
+    color: #e9e2bf;
+    font-size: 12rem;
+    text-align: center;
+}
+.mediaMedium .App_info_d7 {
+    max-width: 200rem;
+    font-size: 16rem;
+}
+.mediaLarge .App_info_d7 {
+    max-width: 280rem;
+    margin-top: 2rem;
+}
+.App_base__extraSmall_67 .App_mask_3a,
+.App_base__extraSmall_67 .App_animation_8d {
+    width: 160rem;
+    height: 112rem;
+}
+.App_base__small_34 .App_mask_3a,
+.App_base__small_34 .App_animation_8d {
+    width: 220rem;
+    height: 112rem;
+}
+.App_base__medium_75 .App_mask_3a,
+.App_base__medium_75 .App_animation_8d {
+    width: 300rem;
+    height: 112rem;
+}
+.App_base__big_c4 .App_mask_3a,
+.App_base__big_c4 .App_animation_8d {
+    width: 300rem;
+    height: 150rem;
+}
+.App_mask_3a {
+    mask-size: 100%;
+}
+.App_base__extraLarge_41 .App_mask_3a {
+    mask-size: 200%;
+}
+.App_animation_8d {
+    width: 100%;
+    height: 100%;
+    mix-blend-mode: screen;
+    overflow: visible;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    pointer-events: none;
+}
+.App_hidden_0d {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.Countdown_seasonDate_0c {
+    padding-left: 21rem;
+    color: #ffdd99;
+    position: absolute;
+    bottom: 7rem;
+}
+
+.mediaLarge .Countdown_seasonDate_0c {
+    bottom: 12rem;
+}
+
+.Countdown_seasonDateIcon_3e {
+    width: 38rem;
+    height: 38rem;
+    background: url('R.images.gui.maps.icons.library.ClockIcon_1') no-repeat center / contain;
+    position: absolute;
+    top: 60%;
+    left: -10rem;
+    transform: translateY(-50%);
+}
+
+.Countdown_base__disabled_5c .Countdown_seasonDateIcon_3e {
+    width: 46rem;
+    height: 46rem;
+    background-image: url('R.images.gui.maps.icons.library.lock_icon');
+    top: 55%;
+    left: -14rem;
+    transform: translateY(-50%);
+}
+
+.Countdown_seasonDateText_27 {
+    font-size: 12rem;
+    text-align: center;
+    text-shadow:
+        0 0 4rem rgba(255, 127, 0, 0.25),
+        0 0 8rem #ff2a00,
+        0 0 15rem #e52;
+}
+
+.mediaMedium .Countdown_seasonDateText_27 {
+    font-size: 16rem;
+}

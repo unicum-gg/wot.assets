@@ -558,7 +558,7 @@
                 };
             },
             67: (e, u, t) => {
-                t.d(u, { O: () => W });
+                t.d(u, { O: () => Q });
                 var n = {};
                 (t.r(n), t.d(n, { mouse: () => E, onResize: () => l }));
                 var r = {};
@@ -833,7 +833,7 @@
                         }),
                         engine.whenReady,
                     ]),
-                    W = { view: o, client: r };
+                    Q = { view: o, client: r };
             },
             521: (e, u, t) => {
                 let n, r;
@@ -1396,6 +1396,7 @@
                         (e.SelectableBonus = 'selectableBonus'),
                         (e.StyleProgressToken = 'styleProgressToken'),
                         (e.TmanToken = 'tmanToken'),
+                        (e.PortalEventDiscount25 = 'portalEventDiscountToken'),
                         (e.NaturalCover = 'naturalCover'),
                         (e.BpCoin = 'bpcoin'),
                         (e.BattlaPassFinalAchievement = 'dossier_achievement'),
@@ -1423,12 +1424,9 @@
                         (e.GoldenTicket = 'birthday2025_golden_ticket'),
                         (e.PostStamp = 'giftsystem_4_stamp'),
                         (e.Quests = 'quests'),
-                        (e.WtStamp = 'stamp'),
-                        (e.WtHunter = 'wt_hunter'),
-                        (e.WtHunterCollection = 'hunter_collection'),
-                        (e.WtTicket = 'wtevent_ticket'),
-                        (e.WtMainPrizeDiscount = 'main_prize_discount'),
-                        (e.WtTicket25 = 'wtevent_ticket25'));
+                        (e.BlankPersonalMissions_1 = 'freeTokens_0'),
+                        (e.BlankPersonalMissions_2 = 'freeTokens_2'),
+                        (e.SACoin = 'sacoin'));
                 })(F || (F = {})),
                     (function (e) {
                         ((e.Gold = 'gold'),
@@ -1823,25 +1821,27 @@
                     );
                 }
                 const x = ({ children: e, tooltipArgs: u, className: t }) => {
-                        if (!u) return e;
-                        const n = s().createElement('div', { className: t }, e);
-                        if (u.header || u.body) return s().createElement(N, u, n);
-                        const r = u.contentId,
-                            o = u.args,
-                            a = null == o ? void 0 : o.contentId;
-                        return r || a
-                            ? s().createElement(y, M({}, u, { contentId: r || a }), n)
-                            : s().createElement(S, u, n);
-                    },
-                    L = ({ format: e, value: u }) => {
-                        const t = ((e, u = 'integral') => {
-                            let t;
-                            t = 'gold' === u ? v.B3.GOLD : v.B3.INTEGRAL;
-                            return void 0 === e ? '' : v.Z5.getNumberFormat(e, t);
-                        })(u, e);
-                        return t ? s().createElement('span', null, t) : null;
-                    },
-                    U = [
+                    if (!u) return e;
+                    const n = s().createElement('div', { className: t }, e);
+                    if (u.header || u.body) return s().createElement(N, u, n);
+                    const r = u.contentId,
+                        o = u.args,
+                        a = null == o ? void 0 : o.contentId;
+                    return r || a
+                        ? s().createElement(y, M({}, u, { contentId: r || a }), n)
+                        : s().createElement(S, u, n);
+                };
+                class L extends s().PureComponent {
+                    render() {
+                        let e;
+                        if ('gold' === this.props.format) e = v.B3.GOLD;
+                        else e = v.B3.INTEGRAL;
+                        const u = v.Z5.getNumberFormat(this.props.value, e);
+                        return void 0 !== this.props.value && void 0 !== u ? u : null;
+                    }
+                }
+                L.defaultProps = { format: 'integral' };
+                const U = [
                         F.Items,
                         F.Equipment,
                         F.Xp,
@@ -1879,11 +1879,9 @@
                         F.SelectableBonus,
                         F.GoldenTicket,
                         F.PostStamp,
-                        F.WtStamp,
-                        F.WtTicket,
-                        F.WtMainPrizeDiscount,
-                        F.WtHunter,
-                        F.WtHunterCollection,
+                        F.BlankPersonalMissions_1,
+                        F.BlankPersonalMissions_2,
+                        F.SACoin,
                     ],
                     G = [F.Gold, F.Credits, F.Crystal, F.FreeXp],
                     $ = [F.BattlePassPoints],
@@ -2009,6 +2007,8 @@
                                 return `R.images.gui.maps.icons.quests.bonuses.${u}.style_3d`;
                             case 'collectionItem':
                                 return `R.images.gui.maps.icons.collectionItems.${i}.${s}`;
+                            case 'portal':
+                                return `R.images.gui.maps.icons.rewards.${u}.${o}`;
                             default:
                                 return `R.images.gui.maps.icons.quests.bonuses.${u}.${t}`;
                         }
@@ -2038,7 +2038,7 @@
                         info__premiumTank: 'Reward_info__premiumTank_d3',
                         timer: 'Reward_timer_d3',
                     },
-                    W = ({
+                    Q = ({
                         name: e,
                         image: u,
                         isPeriodic: t = !1,
@@ -2167,7 +2167,7 @@
                         );
                     },
                     H = 'Rewards_base_26',
-                    Q = 'Rewards_base__vertical_9f',
+                    W = 'Rewards_base__vertical_9f',
                     X = 'Rewards_reward_7b',
                     K = 'Rewards_reward__vertical_c6';
                 function Z() {
@@ -2208,7 +2208,7 @@
                                     return String(A[e.slice(u, -u)]);
                                 }));
                         var _, A;
-                        const F = l()(H, t && Q, o),
+                        const F = l()(H, t && W, o),
                             m = l()(X, t && K, a);
                         return s().createElement(
                             'div',
@@ -2223,13 +2223,13 @@
                                               s().createElement(
                                                   'div',
                                                   { key: t, className: m },
-                                                  s().createElement(W, Z({ size: u }, e)),
+                                                  s().createElement(Q, Z({ size: u }, e)),
                                               ),
                                           ),
                                       s().createElement(
                                           'div',
                                           { className: m },
-                                          s().createElement(W, {
+                                          s().createElement(Q, {
                                               name: 'more',
                                               image: E,
                                               size: u,
@@ -2242,7 +2242,7 @@
                                       s().createElement(
                                           'div',
                                           { key: t, className: m },
-                                          s().createElement(W, Z({ size: u }, e)),
+                                          s().createElement(Q, Z({ size: u }, e)),
                                       ),
                                   ),
                         );
@@ -2359,7 +2359,7 @@
                                                   s().createElement(
                                                       'div',
                                                       { className: u ? '' : oe.base__locked },
-                                                      s().createElement(W, ae({ size: t }, n)),
+                                                      s().createElement(Q, ae({ size: t }, n)),
                                                   ),
                                               )
                                             : s().createElement(
@@ -2384,7 +2384,7 @@
                                                           s().createElement(
                                                               'div',
                                                               { className: u ? '' : oe.base__locked },
-                                                              s().createElement(W, ae({ size: t }, n)),
+                                                              s().createElement(Q, ae({ size: t }, n)),
                                                           ),
                                                       ),
                                                   ),

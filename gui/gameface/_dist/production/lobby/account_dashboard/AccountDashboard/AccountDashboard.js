@@ -53,10 +53,10 @@
                         events: () => B,
                         extraSize: () => z,
                         forceTriggerMouseMove: () => $,
-                        freezeTextureBeforeResize: () => R,
+                        freezeTextureBeforeResize: () => P,
                         getBrowserTexturePath: () => y,
                         getDisplayStatus: () => j,
-                        getScale: () => P,
+                        getScale: () => R,
                         getSize: () => N,
                         getViewGlobalPosition: () => M,
                         isEventHandled: () => U,
@@ -248,10 +248,10 @@
                     const u = viewEnv.getViewGlobalPositionRem();
                     return 'rem' === e ? u : { x: O(u.x), y: O(u.y) };
                 }
-                function R() {
+                function P() {
                     viewEnv.freezeTextureBeforeResize();
                 }
-                function P() {
+                function R() {
                     return viewEnv.getScale();
                 }
                 function L(e) {
@@ -1316,6 +1316,7 @@
                                         clearInterval(r);
                                     };
                                 }
+                                o(0);
                             }, [e, u, t, n]),
                             s
                         );
@@ -1654,8 +1655,8 @@
                         'model.bonusXp',
                         (e, u) => Object.assign({}, e, u),
                     ),
-                    Re = 'ExcludedMapsBlock_base_6b',
-                    Pe = 'ExcludedMapsBlock_base__disabled_68',
+                    Pe = 'ExcludedMapsBlock_base_6b',
+                    Re = 'ExcludedMapsBlock_base__disabled_68',
                     Le = 'ExcludedMapsBlock_header_d4',
                     Oe = 'ExcludedMapsBlock_base_background_03',
                     Ie = 'ExcludedMapsBlock_disabledPattern_09',
@@ -2291,7 +2292,7 @@
                             return u
                                 ? n().createElement(
                                       'div',
-                                      { className: g()(Re, e), onClick: s, onMouseEnter: o },
+                                      { className: g()(Pe, e), onClick: s, onMouseEnter: o },
                                       n().createElement('div', { className: Oe }),
                                       n().createElement('div', { className: We }),
                                       n().createElement('div', { className: Le }, yu.header),
@@ -2304,7 +2305,7 @@
                                   )
                                 : n().createElement(
                                       'div',
-                                      { className: g()(Re, Pe) },
+                                      { className: g()(Pe, Re) },
                                       n().createElement('div', { className: Oe }),
                                       n().createElement('div', { className: Ie }),
                                       n().createElement(
@@ -2356,8 +2357,8 @@
                         (e.EmailPending = 'emailPending'),
                         (e.Completed = 'completed'));
                 })(Mu || (Mu = {}));
-                const Ru = 'Header_base_5a',
-                    Pu = 'Header_accountTitleBlock_dc',
+                const Pu = 'Header_base_5a',
+                    Ru = 'Header_accountTitleBlock_dc',
                     Lu = 'Header_base__withSubtitle_20',
                     Ou = 'Header_accountName_41',
                     Iu = 'Header_suffixBadge_c8',
@@ -2477,7 +2478,7 @@
                             return n().createElement(
                                 'div',
                                 {
-                                    className: g()(Ru, A && Lu, r),
+                                    className: g()(Pu, A && Lu, r),
                                     style:
                                         ((v = e),
                                         (f = s),
@@ -2503,7 +2504,7 @@
                                 ),
                                 n().createElement(
                                     'div',
-                                    { className: Pu },
+                                    { className: Ru },
                                     m
                                         ? n().createElement(
                                               qe,
@@ -2940,7 +2941,7 @@
                             return R.strings.account_dashboard.temporarilyUnavailable();
                         },
                     },
-                    Rt = Be(
+                    Pt = Be(
                         (e) => {
                             let u = e.className,
                                 t = (function (e, u) {
@@ -3010,7 +3011,7 @@
                         'model.dogTags',
                         (e, u) => Object.assign({}, e, u),
                     ),
-                    Pt = 'PlayerSubscriptionsBlock_base_47',
+                    Rt = 'PlayerSubscriptionsBlock_base_47',
                     Lt = 'PlayerSubscriptionsBlock_base__disabled_aa',
                     Ot = 'PlayerSubscriptionsBlock_title_3b',
                     It = 'PlayerSubscriptionsBlock_base_background_0b',
@@ -3027,7 +3028,7 @@
                                 }, [u]);
                             return n().createElement(
                                 'div',
-                                { className: g()(Pt, !u && Lt, e), onClick: r, onMouseEnter: s },
+                                { className: g()(Rt, !u && Lt, e), onClick: r, onMouseEnter: s },
                                 n().createElement('div', { className: It }),
                                 n().createElement('div', { className: Wt }),
                                 !u && n().createElement('div', { className: Ut }),
@@ -3063,15 +3064,17 @@
                     (function (e) {
                         ((e.Red = 'RedActionBG'), (e.Blue = 'BlueActionBG'));
                     })(zt || (zt = {})));
-                const Xt = ({ format: e, value: u }) => {
-                        const t = ((e, u = 'integral') => {
-                            let t;
-                            t = 'gold' === u ? J.B3.GOLD : J.B3.INTEGRAL;
-                            return void 0 === e ? '' : J.Z5.getNumberFormat(e, t);
-                        })(u, e);
-                        return t ? n().createElement('span', null, t) : null;
-                    },
-                    Vt = {
+                class Xt extends n().PureComponent {
+                    render() {
+                        let e;
+                        if ('gold' === this.props.format) e = J.B3.GOLD;
+                        else e = J.B3.INTEGRAL;
+                        const u = J.Z5.getNumberFormat(this.props.value, e);
+                        return void 0 !== this.props.value && void 0 !== u ? u : null;
+                    }
+                }
+                Xt.defaultProps = { format: 'integral' };
+                const Vt = {
                         base: 'Currency_base_57',
                         icon: 'Currency_icon_c5',
                         base__small: 'Currency_base__small_af',
@@ -3586,8 +3589,8 @@
                     Na = 'ReserveCurrency_currencyHeader_5d',
                     Ta = 'ReserveCurrency_currencyHeader__disabled_94',
                     Ma = 'ReserveCurrency_currencyLocker_47',
-                    Ra = 'ReserveCurrency_currencyValue_6a',
-                    Pa = 'ReserveCurrency_currencyValue__locked_c0',
+                    Pa = 'ReserveCurrency_currencyValue_6a',
+                    Ra = 'ReserveCurrency_currencyValue__locked_c0',
                     La = 'ReserveCurrency_currencyCheckmark_eb',
                     Oa = 'ReserveCurrency_disabledWrapper_99',
                     Ia = 'ReserveCurrency_disabledBg_ed',
@@ -3613,7 +3616,7 @@
                                       e && n().createElement('div', { className: Ma }),
                                       n().createElement(
                                           'div',
-                                          { className: g()(Ra, e && Pa) },
+                                          { className: g()(Pa, e && Ra) },
                                           o && n().createElement('div', { className: La }),
                                           n().createElement(Kt, { size: i, type: r, value: o ? u : t }),
                                       ),
@@ -3962,7 +3965,7 @@
                                             n().createElement(ua, { className: g()(Qa, en) }),
                                             n().createElement(Me, { className: g()(Qa, un) }),
                                             n().createElement(Ga, { className: g()(Qa, tn) }),
-                                            n().createElement(Rt, { className: g()(Qa, an) }),
+                                            n().createElement(Pt, { className: g()(Qa, an) }),
                                             n().createElement(Da, { className: g()(Qa, nn) }),
                                             n().createElement(Su, { className: g()(Qa, rn) }),
                                         ),

@@ -412,7 +412,7 @@
                 const __WEBPACK_DEFAULT_EXPORT__ = ViewModel;
             },
             596: (u, e, t) => {
-                t.d(e, { Sw: () => E.Z, B3: () => i, Z5: () => o, B0: () => s, ry: () => m });
+                t.d(e, { Sw: () => E.Z, B3: () => i, Gr: () => A, Z5: () => o, B0: () => s, ry: () => m });
                 class n {
                     constructor() {
                         ((this.entries = []),
@@ -730,7 +730,7 @@
                     };
                 window.ViewEnvHelper = h;
             },
-            544: (u, e, t) => {
+            765: (u, e, t) => {
                 var n = t(179),
                     r = t.n(n),
                     E = t(493),
@@ -1046,7 +1046,7 @@
                             }
                             return n;
                         });
-                let L, U, G, $, q, Y, H;
+                let L, U, G, $, q, Y, V;
                 (!(function (u) {
                     ((u.Items = 'items'),
                         (u.Equipment = 'equipment'),
@@ -1079,6 +1079,7 @@
                         (u.SelectableBonus = 'selectableBonus'),
                         (u.StyleProgressToken = 'styleProgressToken'),
                         (u.TmanToken = 'tmanToken'),
+                        (u.PortalEventDiscount25 = 'portalEventDiscountToken'),
                         (u.NaturalCover = 'naturalCover'),
                         (u.BpCoin = 'bpcoin'),
                         (u.BattlaPassFinalAchievement = 'dossier_achievement'),
@@ -1106,12 +1107,9 @@
                         (u.GoldenTicket = 'birthday2025_golden_ticket'),
                         (u.PostStamp = 'giftsystem_4_stamp'),
                         (u.Quests = 'quests'),
-                        (u.WtStamp = 'stamp'),
-                        (u.WtHunter = 'wt_hunter'),
-                        (u.WtHunterCollection = 'hunter_collection'),
-                        (u.WtTicket = 'wtevent_ticket'),
-                        (u.WtMainPrizeDiscount = 'main_prize_discount'),
-                        (u.WtTicket25 = 'wtevent_ticket25'));
+                        (u.BlankPersonalMissions_1 = 'freeTokens_0'),
+                        (u.BlankPersonalMissions_2 = 'freeTokens_2'),
+                        (u.SACoin = 'sacoin'));
                 })(L || (L = {})),
                     (function (u) {
                         ((u.Gold = 'gold'),
@@ -1204,16 +1202,18 @@
                             (u.PROGRESSION_STYLE_UPGRADED_2 = 'progressionStyleUpgraded_2'),
                             (u.PROGRESSION_STYLE_UPGRADED_3 = 'progressionStyleUpgraded_3'),
                             (u.PROGRESSION_STYLE_UPGRADED_4 = 'progressionStyleUpgraded_4'));
-                    })(H || (H = {})));
-                const W = ({ format: u, value: e }) => {
-                        const t = ((u, e = 'integral') => {
-                            let t;
-                            t = 'gold' === e ? h.B3.GOLD : h.B3.INTEGRAL;
-                            return void 0 === u ? '' : h.Z5.getNumberFormat(u, t);
-                        })(e, u);
-                        return t ? r().createElement('span', null, t) : null;
-                    },
-                    V = [
+                    })(V || (V = {})));
+                class H extends r().PureComponent {
+                    render() {
+                        let u;
+                        if ('gold' === this.props.format) u = h.B3.GOLD;
+                        else u = h.B3.INTEGRAL;
+                        const e = h.Z5.getNumberFormat(this.props.value, u);
+                        return void 0 !== this.props.value && void 0 !== e ? e : null;
+                    }
+                }
+                H.defaultProps = { format: 'integral' };
+                const z = [
                         L.Items,
                         L.Equipment,
                         L.Xp,
@@ -1251,14 +1251,12 @@
                         L.SelectableBonus,
                         L.GoldenTicket,
                         L.PostStamp,
-                        L.WtStamp,
-                        L.WtTicket,
-                        L.WtMainPrizeDiscount,
-                        L.WtHunter,
-                        L.WtHunterCollection,
+                        L.BlankPersonalMissions_1,
+                        L.BlankPersonalMissions_2,
+                        L.SACoin,
                     ],
-                    z = [L.Gold, L.Credits, L.Crystal, L.FreeXp],
-                    j = [L.BattlePassPoints],
+                    j = [L.Gold, L.Credits, L.Crystal, L.FreeXp],
+                    W = [L.BattlePassPoints],
                     X = [L.PremiumPlus, L.Premium],
                     K = ['engravings', 'backgrounds'],
                     Q = ['engraving', 'background'],
@@ -1381,6 +1379,8 @@
                                 return `R.images.gui.maps.icons.quests.bonuses.${e}.style_3d`;
                             case 'collectionItem':
                                 return `R.images.gui.maps.icons.collectionItems.${s}.${E}`;
+                            case 'portal':
+                                return `R.images.gui.maps.icons.rewards.${e}.${o}`;
                             default:
                                 return `R.images.gui.maps.icons.quests.bonuses.${e}.${t}`;
                         }
@@ -1709,31 +1709,31 @@
                                 if (void 0 === u) return null;
                                 switch (u) {
                                     case q.BATTLE_BOOSTER:
-                                        return H.BATTLE_BOOSTER;
+                                        return V.BATTLE_BOOSTER;
                                     case q.BATTLE_BOOSTER_REPLACE:
-                                        return H.BATTLE_BOOSTER_REPLACE;
+                                        return V.BATTLE_BOOSTER_REPLACE;
                                     case q.BUILT_IN_EQUIPMENT:
-                                        return H.BUILT_IN_EQUIPMENT;
+                                        return V.BUILT_IN_EQUIPMENT;
                                     case q.EQUIPMENT_PLUS:
-                                        return H.EQUIPMENT_PLUS;
+                                        return V.EQUIPMENT_PLUS;
                                     case q.EQUIPMENT_TROPHY_BASIC:
-                                        return H.EQUIPMENT_TROPHY_BASIC;
+                                        return V.EQUIPMENT_TROPHY_BASIC;
                                     case q.EQUIPMENT_TROPHY_UPGRADED:
-                                        return H.EQUIPMENT_TROPHY_UPGRADED;
+                                        return V.EQUIPMENT_TROPHY_UPGRADED;
                                     case q.EQUIPMENT_MODERNIZED_UPGRADED_1:
-                                        return H.EQUIPMENT_MODERNIZED_UPGRADED_1;
+                                        return V.EQUIPMENT_MODERNIZED_UPGRADED_1;
                                     case q.EQUIPMENT_MODERNIZED_UPGRADED_2:
-                                        return H.EQUIPMENT_MODERNIZED_UPGRADED_2;
+                                        return V.EQUIPMENT_MODERNIZED_UPGRADED_2;
                                     case q.EQUIPMENT_MODERNIZED_UPGRADED_3:
-                                        return H.EQUIPMENT_MODERNIZED_UPGRADED_3;
+                                        return V.EQUIPMENT_MODERNIZED_UPGRADED_3;
                                     case q.PROGRESSION_STYLE_UPGRADED_1:
-                                        return H.PROGRESSION_STYLE_UPGRADED_1;
+                                        return V.PROGRESSION_STYLE_UPGRADED_1;
                                     case q.PROGRESSION_STYLE_UPGRADED_2:
-                                        return H.PROGRESSION_STYLE_UPGRADED_2;
+                                        return V.PROGRESSION_STYLE_UPGRADED_2;
                                     case q.PROGRESSION_STYLE_UPGRADED_3:
-                                        return H.PROGRESSION_STYLE_UPGRADED_3;
+                                        return V.PROGRESSION_STYLE_UPGRADED_3;
                                     case q.PROGRESSION_STYLE_UPGRADED_4:
-                                        return H.PROGRESSION_STYLE_UPGRADED_4;
+                                        return V.PROGRESSION_STYLE_UPGRADED_4;
                                 }
                             })(E),
                             C = ((u, e) => {
@@ -1745,7 +1745,7 @@
                                     }
                                     case $.CURRENCY:
                                     case $.NUMBER:
-                                        return r().createElement(W, { format: 'integral', value: Number(u) });
+                                        return r().createElement(H, { format: 'integral', value: Number(u) });
                                     case $.PREMIUM_PLUS: {
                                         const e = Number(u);
                                         return isNaN(e) ? u : null;
@@ -1841,9 +1841,47 @@
                         value__crystal: 'RewardLabelResolver_value__crystal_9c',
                         value__premiumTank: 'RewardLabelResolver_value__premiumTank_ab',
                     };
-                function vu() {
+                let vu, gu, wu, bu, hu;
+                (!(function (u) {
+                    ((u[(u.Engraving = 0)] = 'Engraving'), (u[(u.Background = 1)] = 'Background'));
+                })(vu || (vu = {})),
+                    (function (u) {
+                        ((u[(u.Equipped = 0)] = 'Equipped'),
+                            (u[(u.Locked = 1)] = 'Locked'),
+                            (u[(u.Open = 2)] = 'Open'));
+                    })(gu || (gu = {})),
+                    (function (u) {
+                        ((u.Engraving = 'engraving'), (u.Background = 'background'));
+                    })(wu || (wu = {})),
+                    (function (u) {
+                        ((u.Dedication = 'dedication'),
+                            (u.Skill = 'skill'),
+                            (u.RankedSkill = 'ranked_skill'),
+                            (u.Triumph = 'triumph'),
+                            (u.Medal = 'triumph_medal'),
+                            (u.Base = 'base'));
+                    })(bu || (bu = {})),
+                    (function (u) {
+                        ((u.Dedication = 'dedication'), (u.Triumph = 'triumph'), (u.Season = 'season'));
+                    })(hu || (hu = {})));
+                (hu.Dedication, bu.Dedication, hu.Triumph, bu.Triumph, hu.Season, bu.Skill, bu.RankedSkill);
+                let Tu;
+                !(function (u) {
+                    ((u.NUMBER = 'NUMBER'), (u.PERCENTAGE = 'PERCENTAGE'));
+                })(Tu || (Tu = {}));
+                (R.images.gui.maps.icons.dogtags,
+                    R.strings.dogtags.component,
+                    vu.Engraving,
+                    vu.Background,
+                    vu.Engraving,
+                    vu.Background);
+                const fu = (u, e = Tu.NUMBER) => {
+                    const t = h.Z5.getRealFormat(u, h.Gr.WO_ZERO_DIGITS).replace(/\s/g, ' ');
+                    return e === Tu.PERCENTAGE ? `${t} %` : t;
+                };
+                function Ru() {
                     return (
-                        (vu =
+                        (Ru =
                             Object.assign ||
                             function (u) {
                                 for (var e = 1; e < arguments.length; e++) {
@@ -1852,28 +1890,32 @@
                                 }
                                 return u;
                             }),
-                        vu.apply(this, arguments)
+                        Ru.apply(this, arguments)
                     );
                 }
-                const gu = R.strings.tooltips.additionalRewards,
-                    wu = (u) => {
+                const Pu = R.strings.tooltips.additionalRewards,
+                    Ou = (u) => {
+                        var e, t, n, E, o;
                         switch (u.name) {
                             case U.Credits:
                             case U.Gold:
                             case U.Crystal:
                                 return r().createElement(du, {
-                                    label: gu.$dyn(u.name),
-                                    value: u.value,
+                                    label: null != (e = Pu.$dyn(u.name)) ? e : '',
+                                    value: fu(Number(u.value)),
                                     bindingStyle: s()(pu.value, pu[`value__${u.name}`]),
                                 });
                             case U.Xp:
                             case U.FreeXp:
                             case U.TankmenXP:
-                                return r().createElement(du, { label: gu.$dyn(u.name), value: u.value });
+                                return r().createElement(du, {
+                                    label: null != (t = Pu.$dyn(u.name)) ? t : '',
+                                    value: fu(Number(u.value)),
+                                });
                             case U.Premium:
                             case U.PremiumPlus:
                                 return r().createElement(du, {
-                                    label: gu.$dyn(u.name),
+                                    label: null != (n = Pu.$dyn(u.name)) ? n : '',
                                     value: Number(u.value) > 1 ? `x${u.value}` : u.value,
                                     bindingKey: 'daysCount',
                                     bindingStyle: pu.value,
@@ -1881,20 +1923,27 @@
                             case U.Blueprints:
                             case U.BlueprintsAny:
                             case U.BlueprintsFinal:
-                                return r().createElement(_u, vu({}, u, { valueStyle: pu.value }));
+                                return r().createElement(_u, Ru({}, u, { valueStyle: pu.value }));
                             case U.Customizations:
                                 return r().createElement(mu, u);
                             case U.BattleAchievement:
+                                return r().createElement(du, {
+                                    label: null != (E = Pu.$dyn(u.name)) ? E : '',
+                                    value: u.label,
+                                });
                             case U.BattleBadge:
-                                return r().createElement(du, { label: gu.$dyn(u.name), value: u.label });
+                                return r().createElement(du, {
+                                    label: null != (o = Pu.$dyn(u.name)) ? o : '',
+                                    value: u.label,
+                                });
                             default:
                                 return r().createElement('span', null, u.label);
                         }
                     },
-                    bu = ['isLast'];
-                function hu() {
+                    Su = ['isLast'];
+                function yu() {
                     return (
-                        (hu =
+                        (yu =
                             Object.assign ||
                             function (u) {
                                 for (var e = 1; e < arguments.length; e++) {
@@ -1903,10 +1952,10 @@
                                 }
                                 return u;
                             }),
-                        hu.apply(this, arguments)
+                        yu.apply(this, arguments)
                     );
                 }
-                const Tu = (u) => {
+                const ku = (u) => {
                     let e = u.isLast,
                         t = (function (u, e) {
                             if (null == u) return {};
@@ -1916,17 +1965,17 @@
                                 E = Object.keys(u);
                             for (n = 0; n < E.length; n++) ((t = E[n]), e.indexOf(t) >= 0 || (r[t] = u[t]));
                             return r;
-                        })(u, bu);
+                        })(u, Su);
                     return r().createElement(
                         'div',
                         { className: s()(cu, e && Bu) },
-                        r().createElement(lu, hu({}, t, { size: G.Small })),
-                        r().createElement('div', { className: Cu }, r().createElement(wu, t)),
+                        r().createElement(lu, yu({}, t, { size: G.Small })),
+                        r().createElement('div', { className: Cu }, r().createElement(Ou, t)),
                     );
                 };
-                function fu() {
+                function Nu() {
                     return (
-                        (fu =
+                        (Nu =
                             Object.assign ||
                             function (u) {
                                 for (var e = 1; e < arguments.length; e++) {
@@ -1935,10 +1984,10 @@
                                 }
                                 return u;
                             }),
-                        fu.apply(this, arguments)
+                        Nu.apply(this, arguments)
                     );
                 }
-                const Ru = ({ rewards: u, rewardLimit: e }) => {
+                const Mu = ({ rewards: u, rewardLimit: e }) => {
                         const t = e ? u.slice(0, e) : u;
                         return r().createElement(
                             r().Fragment,
@@ -1948,19 +1997,19 @@
                                     E = Z(u, G.Small),
                                     o =
                                         ((a = u.name),
-                                        V.includes(a)
+                                        z.includes(a)
                                             ? $.MULTI
-                                            : z.includes(a)
+                                            : j.includes(a)
                                               ? $.CURRENCY
-                                              : j.includes(a)
+                                              : W.includes(a)
                                                 ? $.NUMBER
                                                 : X.includes(a)
                                                   ? $.PREMIUM_PLUS
                                                   : $.STRING);
                                 var a;
                                 return r().createElement(
-                                    Tu,
-                                    fu({ key: e }, u, {
+                                    ku,
+                                    Nu({ key: e }, u, {
                                         special: n,
                                         image: E,
                                         valueType: o,
@@ -1970,26 +2019,26 @@
                             }),
                         );
                     },
-                    Pu = 'App_base_06',
-                    Ou = 'App_background_79',
-                    Su = 'App_remaining_f8',
-                    yu = 'RewardsTooltipHeader_header_f4',
-                    ku = 'RewardsTooltipHeader_description_fe',
-                    Nu = 'RewardsTooltipHeader_count_d1',
-                    Mu = () => {
+                    xu = 'App_base_06',
+                    Iu = 'App_background_79',
+                    Lu = 'App_remaining_f8',
+                    Uu = 'RewardsTooltipHeader_header_f4',
+                    Gu = 'RewardsTooltipHeader_description_fe',
+                    $u = 'RewardsTooltipHeader_count_d1',
+                    qu = () => {
                         const u = x(),
                             e = u.headerText,
                             t = u.headerCount,
                             n = u.description,
                             E = u.descriptionCount,
-                            o = e && t ? { count: r().createElement('span', { className: Nu }, t) } : void 0,
+                            o = e && t ? { count: r().createElement('span', { className: $u }, t) } : void 0,
                             a = E ? { count: E } : void 0;
                         return r().createElement(
                             r().Fragment,
                             null,
                             r().createElement(
                                 'div',
-                                { className: yu },
+                                { className: Uu },
                                 r().createElement(_, {
                                     text: e || R.strings.tooltips.quests.awards.additional.header(),
                                     binding: o,
@@ -1998,12 +2047,12 @@
                             n &&
                                 r().createElement(
                                     'div',
-                                    { className: ku },
+                                    { className: Gu },
                                     r().createElement(_, { text: n, binding: a }),
                                 ),
                         );
                     },
-                    xu = () => {
+                    Yu = () => {
                         const u = x('model.bonus'),
                             e = (0, n.useRef)(null),
                             t = (0, n.useRef)(null),
@@ -2033,20 +2082,20 @@
                                 null,
                                 r().createElement(
                                     'div',
-                                    { className: Pu },
+                                    { className: xu },
                                     r().createElement(
                                         'div',
-                                        { className: Ou },
-                                        r().createElement(Mu, null),
+                                        { className: Iu },
+                                        r().createElement(qu, null),
                                         r().createElement(
                                             'div',
                                             { ref: t },
-                                            r().createElement(Ru, { rewardLimit: o, rewards: u }),
+                                            r().createElement(Mu, { rewardLimit: o, rewards: u }),
                                         ),
                                         i &&
                                             r().createElement(
                                                 'div',
-                                                { className: Su },
+                                                { className: Lu },
                                                 r().createElement(_, {
                                                     text: R.strings.tooltips.quests.awards.additional.bottom(),
                                                     binding: F,
@@ -2058,7 +2107,7 @@
                         );
                     };
                 engine.whenReady.then(() => {
-                    o().render(r().createElement(xu, null), document.getElementById('root'));
+                    o().render(r().createElement(Yu, null), document.getElementById('root'));
                 });
             },
         },
@@ -2138,6 +2187,6 @@
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             (t.forEach(e.bind(null, 0)), (t.push = e.bind(null, t.push.bind(t))));
         })());
-    var __webpack_exports__ = __webpack_require__.O(void 0, [807], () => __webpack_require__(544));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [807], () => __webpack_require__(765));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

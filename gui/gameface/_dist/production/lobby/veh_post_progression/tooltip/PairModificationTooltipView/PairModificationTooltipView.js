@@ -85,10 +85,10 @@
                         events: () => d,
                         extraSize: () => K,
                         forceTriggerMouseMove: () => $,
-                        freezeTextureBeforeResize: () => R,
+                        freezeTextureBeforeResize: () => x,
                         getBrowserTexturePath: () => k,
                         getDisplayStatus: () => z,
-                        getScale: () => x,
+                        getScale: () => R,
                         getSize: () => M,
                         getViewGlobalPosition: () => T,
                         isEventHandled: () => q,
@@ -280,10 +280,10 @@
                     const e = viewEnv.getViewGlobalPositionRem();
                     return 'rem' === u ? e : { x: L(e.x), y: L(e.y) };
                 }
-                function R() {
+                function x() {
                     viewEnv.freezeTextureBeforeResize();
                 }
-                function x() {
+                function R() {
                     return viewEnv.getScale();
                 }
                 function S(u) {
@@ -1341,15 +1341,17 @@
                     r = t.n(F),
                     i = t(329),
                     a = t(4179);
-                const D = ({ format: u, value: e }) => {
-                        const t = ((u, e = 'integral') => {
-                            let t;
-                            t = 'gold' === e ? a.B3.GOLD : a.B3.INTEGRAL;
-                            return void 0 === u ? '' : a.Z5.getNumberFormat(u, t);
-                        })(e, u);
-                        return t ? A().createElement('span', null, t) : null;
-                    },
-                    o = {
+                class D extends A().PureComponent {
+                    render() {
+                        let u;
+                        if ('gold' === this.props.format) u = a.B3.GOLD;
+                        else u = a.B3.INTEGRAL;
+                        const e = a.Z5.getNumberFormat(this.props.value, u);
+                        return void 0 !== this.props.value && void 0 !== e ? e : null;
+                    }
+                }
+                D.defaultProps = { format: 'integral' };
+                const o = {
                         base: 'Currency_base_57',
                         icon: 'Currency_icon_c5',
                         base__small: 'Currency_base__small_af',

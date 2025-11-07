@@ -1554,7 +1554,7 @@
                                         text:
                                             'initial' === i
                                                 ? ''
-                                                : ((D = xu.type.$dyn(i.toLowerCase())),
+                                                : ((D = String(xu.type.$dyn(i.toLowerCase()))),
                                                   (o = { stage: n }),
                                                   D.replace(/\{\w+\}/g, (u) => String(o[u.slice(1, -1)]))),
                                     }),

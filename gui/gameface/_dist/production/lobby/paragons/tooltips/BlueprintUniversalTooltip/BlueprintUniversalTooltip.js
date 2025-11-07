@@ -795,14 +795,16 @@
                     A = t(6483),
                     F = t.n(A),
                     i = t(4179);
-                const D = ({ format: u, value: e }) => {
-                    const t = ((u, e = 'integral') => {
-                        let t;
-                        t = 'gold' === e ? i.B3.GOLD : i.B3.INTEGRAL;
-                        return void 0 === u ? '' : i.Z5.getNumberFormat(u, t);
-                    })(e, u);
-                    return t ? a().createElement('span', null, t) : null;
-                };
+                class D extends a().PureComponent {
+                    render() {
+                        let u;
+                        if ('gold' === this.props.format) u = i.B3.GOLD;
+                        else u = i.B3.INTEGRAL;
+                        const e = i.Z5.getNumberFormat(this.props.value, u);
+                        return void 0 !== this.props.value && void 0 !== e ? e : null;
+                    }
+                }
+                D.defaultProps = { format: 'integral' };
                 var o = t(9887),
                     l = t.n(o);
                 const s = (u, e, t) =>

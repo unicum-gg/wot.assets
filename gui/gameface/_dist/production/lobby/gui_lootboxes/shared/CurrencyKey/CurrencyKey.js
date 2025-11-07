@@ -2,12 +2,12 @@
     'use strict';
     var __webpack_modules__ = {
             527: (e, t, n) => {
-                (n.r(t), n.d(t, { mouse: () => s, onResize: () => r }));
+                (n.r(t), n.d(t, { mouse: () => a, onResize: () => r }));
                 var o = n(2472),
                     i = n(1176);
                 const r = (0, o.E)('clientResized'),
-                    a = { down: (0, o.E)('mousedown'), up: (0, o.E)('mouseup'), move: (0, o.E)('mousemove') },
-                    s = (function () {
+                    s = { down: (0, o.E)('mousedown'), up: (0, o.E)('mouseup'), move: (0, o.E)('mousemove') },
+                    a = (function () {
                         const e = { listeners: 0, enabled: !0, initialized: !1 };
                         function t() {
                             e.enabled && (0, i.R)(!1);
@@ -34,7 +34,7 @@
                                         e.listeners += 1;
                                         let i = !0;
                                         const r = `mouse${t}`,
-                                            s = a[t]((e) => n([e, 'outside']));
+                                            a = s[t]((e) => n([e, 'outside']));
                                         function _(e) {
                                             n([e, 'inside']);
                                         }
@@ -43,7 +43,7 @@
                                             o(),
                                             () => {
                                                 i &&
-                                                    (s(),
+                                                    (a(),
                                                     window.removeEventListener(r, _),
                                                     (e.listeners -= 1),
                                                     o(),
@@ -78,7 +78,7 @@
                         events: () => o,
                         getMouseGlobalPosition: () => r,
                         getSize: () => i,
-                        graphicsQuality: () => a,
+                        graphicsQuality: () => s,
                     }));
                 var o = n(527);
                 function i(e = 'px') {
@@ -87,7 +87,7 @@
                 function r(e = 'px') {
                     return 'rem' === e ? viewEnv.getMouseGlobalPositionRem() : viewEnv.getMouseGlobalPositionPx();
                 }
-                const a = {
+                const s = {
                     isLow: () => 1 === viewEnv.getGraphicsQuality(),
                     isHigh: () => 0 === viewEnv.getGraphicsQuality(),
                     get: () => viewEnv.getGraphicsQuality(),
@@ -152,7 +152,7 @@
                 (n.r(t),
                     n.d(t, {
                         addModelObserver: () => c,
-                        addPreloadTexture: () => s,
+                        addPreloadTexture: () => a,
                         children: () => o,
                         displayStatus: () => i.W,
                         displayStatusIs: () => R,
@@ -170,7 +170,7 @@
                         pxToRem: () => w,
                         remToPx: () => h,
                         resize: () => E,
-                        sendEvent: () => a.qP,
+                        sendEvent: () => s.qP,
                         setAnimateWindow: () => P,
                         setEventHandled: () => b,
                         setInputPaddingsRem: () => _,
@@ -180,8 +180,8 @@
                 var o = n(3722),
                     i = n(6112),
                     r = n(6538),
-                    a = n(8566);
-                function s(e) {
+                    s = n(8566);
+                function a(e) {
                     viewEnv.addPreloadTexture(e);
                 }
                 function _(e) {
@@ -262,7 +262,7 @@
                         const n = 'GFViewEventProxy';
                         if (void 0 !== t) {
                             const r = t.args,
-                                a = (function (e, t) {
+                                s = (function (e, t) {
                                     if (null == e) return {};
                                     var n,
                                         o,
@@ -273,7 +273,7 @@
                                 })(t, o);
                             return void 0 !== r
                                 ? viewEnv.handleViewEvent(
-                                      Object.assign({ __Type: n, type: e }, a, {
+                                      Object.assign({ __Type: n, type: e }, s, {
                                           arguments:
                                               ((i = r),
                                               Object.entries(i).map(([e, t]) => {
@@ -289,7 +289,7 @@
                                               })),
                                       }),
                                   )
-                                : viewEnv.handleViewEvent(Object.assign({ __Type: n, type: e }, a));
+                                : viewEnv.handleViewEvent(Object.assign({ __Type: n, type: e }, s));
                         }
                         return viewEnv.handleViewEvent({ __Type: n, type: e });
                         var i;
@@ -490,7 +490,7 @@
                 const __WEBPACK_DEFAULT_EXPORT__ = ViewModel;
             },
             4179: (e, t, n) => {
-                n.d(t, { ry: () => P });
+                n.d(t, { B3: () => c, Z5: () => s, ry: () => P });
                 class o {
                     constructor() {
                         ((this.entries = []),
@@ -531,7 +531,7 @@
                 o.__instance = void 0;
                 const i = o;
                 var r = n(1358);
-                const a = {
+                const s = {
                         getNumberFormat: (e, t) => systemLocale.getNumberFormat(e, t),
                         getRealFormat: (e, t) => systemLocale.getRealFormat(e, t),
                         getTimeFormat: (e, t) => systemLocale.getTimeFormat(e, t),
@@ -539,7 +539,7 @@
                         toUpperCase: (e) => systemLocale.toUpperCase(e),
                         toLowerCase: (e) => systemLocale.toUpperCase(e),
                     },
-                    s = {
+                    a = {
                         getNumberFormat: (e) => userLocale.getNumberFormat(e),
                         getTimeFormat: (e, t, n) => userLocale.getTimeFormat(e, t, void 0 === n || n),
                         getTimeString: (e, t, n) => userLocale.getTimeString(e, t, void 0 === n || n),
@@ -561,14 +561,14 @@
                 var m = n(5521),
                     p = n(3138);
                 const v = ['args'];
-                function w(e, t, n, o, i, r, a) {
+                function w(e, t, n, o, i, r, s) {
                     try {
-                        var s = e[r](a),
-                            _ = s.value;
+                        var a = e[r](s),
+                            _ = a.value;
                     } catch (e) {
                         return void n(e);
                     }
-                    s.done ? t(_) : Promise.resolve(_).then(o, i);
+                    a.done ? t(_) : Promise.resolve(_).then(o, i);
                 }
                 const h = (e) => ({ __Type: 'GFBoundingBox', x: e.x, y: e.y, width: e.width, height: e.height }),
                     P = (function () {
@@ -587,13 +587,13 @@
                                         n = arguments;
                                     return new Promise(function (o, i) {
                                         var r = e.apply(t, n);
-                                        function a(e) {
-                                            w(r, o, i, a, s, 'next', e);
-                                        }
                                         function s(e) {
-                                            w(r, o, i, a, s, 'throw', e);
+                                            w(r, o, i, s, a, 'next', e);
                                         }
-                                        a(void 0);
+                                        function a(e) {
+                                            w(r, o, i, s, a, 'throw', e);
+                                        }
+                                        s(void 0);
                                     });
                                 });
                         return function () {
@@ -660,15 +660,15 @@
                             T(_.CONTEXT_MENU, { isMouseEvent: !0, contentID: e, on: !0, decoratorID: n, args: t });
                         },
                         sendShowPopOverEvent: (e, t, n, o, i = R.invalid('resId'), r) => {
-                            const a = p.O.view.getViewGlobalPosition(),
-                                s = n.getBoundingClientRect(),
-                                l = s.x,
-                                c = s.y,
-                                d = s.width,
-                                u = s.height,
+                            const s = p.O.view.getViewGlobalPosition(),
+                                a = n.getBoundingClientRect(),
+                                l = a.x,
+                                c = a.y,
+                                d = a.width,
+                                u = a.height,
                                 E = {
-                                    x: p.O.view.pxToRem(l) + a.x,
-                                    y: p.O.view.pxToRem(c) + a.y,
+                                    x: p.O.view.pxToRem(l) + s.x,
+                                    y: p.O.view.pxToRem(c) + s.y,
                                     width: p.O.view.pxToRem(d),
                                     height: p.O.view.pxToRem(u),
                                 };
@@ -724,83 +724,80 @@
                             return n;
                         },
                         ClickOutsideManager: S,
-                        SystemLocale: a,
-                        UserLocale: s,
+                        SystemLocale: s,
+                        UserLocale: a,
                     };
                 window.ViewEnvHelper = k;
             },
             6620: (e, t, n) => {
-                let o, i, r, a, s, _, l;
-                var c, d, u, E;
-                let m, p, v, w, h, P, T, b;
-                var g, O, S;
-                (n(6179),
-                    (function (e) {
-                        ((e.Items = 'items'),
-                            (e.Equipment = 'equipment'),
-                            (e.Xp = 'xp'),
-                            (e.XpFactor = 'xpFactor'),
-                            (e.Blueprints = 'blueprints'),
-                            (e.BlueprintsAny = 'blueprintsAny'),
-                            (e.Goodies = 'goodies'),
-                            (e.Berths = 'berths'),
-                            (e.Slots = 'slots'),
-                            (e.Tokens = 'tokens'),
-                            (e.CrewSkins = 'crewSkins'),
-                            (e.CrewBooks = 'crewBooks'),
-                            (e.Customizations = 'customizations'),
-                            (e.CreditsFactor = 'creditsFactor'),
-                            (e.Currency = 'currency'),
-                            (e.TankmenXp = 'tankmenXP'),
-                            (e.TankmenXpFactor = 'tankmenXPFactor'),
-                            (e.FreeXpFactor = 'freeXPFactor'),
-                            (e.BattleToken = 'battleToken'),
-                            (e.PremiumUniversal = 'premium_universal'),
-                            (e.Gold = 'gold'),
-                            (e.Credits = 'credits'),
-                            (e.Crystal = 'crystal'),
-                            (e.FreeXp = 'freeXP'),
-                            (e.Premium = 'premium'),
-                            (e.PremiumPlus = 'premium_plus'),
-                            (e.BattlePassPoints = 'battlePassPoints'),
-                            (e.BattlePassSelectToken = 'battlePassSelectToken'),
-                            (e.SelectableBonus = 'selectableBonus'),
-                            (e.StyleProgressToken = 'styleProgressToken'),
-                            (e.TmanToken = 'tmanToken'),
-                            (e.NaturalCover = 'naturalCover'),
-                            (e.BpCoin = 'bpcoin'),
-                            (e.BattlaPassFinalAchievement = 'dossier_achievement'),
-                            (e.BattleBadge = 'dossier_badge'),
-                            (e.NewYearAlbumsAccess = 'newYearAlbumsAccess'),
-                            (e.NewYearFillers = 'ny22Fillers'),
-                            (e.NewYearInvoice = 'newYearInvoice'),
-                            (e.NewYearToyFragments = 'ny22ToyFragments'),
-                            (e.NewYearSlot = 'newYearSlot'),
-                            (e.BonusX5 = 'battle_bonus_x5'),
-                            (e.CrewBonusX3 = 'crew_bonus_x3'),
-                            (e.Vehicles = 'vehicles'),
-                            (e.EpicSelectToken = 'epicSelectToken'),
-                            (e.CollectionItem = 'collectionItem'),
-                            (e.Comp7TokenWeeklyReward = 'comp7TokenWeeklyReward'),
-                            (e.Comp7TokenCouponReward = 'comp7TokenCouponReward'),
-                            (e.BattleBoosterGift = 'battleBooster_gift'),
-                            (e.CosmicLootboxSilver = 'lootBoxToken'),
-                            (e.CosmicLootboxCommon = 'cosmic_2024_2'),
-                            (e.Branch = 'branch'),
-                            (e.VehicleSelect = 'vehicleSelect'),
-                            (e.StyleProgress = 'styleProgress'),
-                            (e.ParagonsUnlocks = 'paragonsUnlocks'),
-                            (e.LootBoxToken = 'lootBoxToken'),
-                            (e.GoldenTicket = 'birthday2025_golden_ticket'),
-                            (e.PostStamp = 'giftsystem_4_stamp'),
-                            (e.Quests = 'quests'),
-                            (e.WtStamp = 'stamp'),
-                            (e.WtHunter = 'wt_hunter'),
-                            (e.WtHunterCollection = 'hunter_collection'),
-                            (e.WtTicket = 'wtevent_ticket'),
-                            (e.WtMainPrizeDiscount = 'main_prize_discount'),
-                            (e.WtTicket25 = 'wtevent_ticket25'));
-                    })(o || (o = {})),
+                var o = n(6179),
+                    i = n.n(o);
+                let r, s, a, _, l, c, d;
+                var u, E, m, p;
+                (!(function (e) {
+                    ((e.Items = 'items'),
+                        (e.Equipment = 'equipment'),
+                        (e.Xp = 'xp'),
+                        (e.XpFactor = 'xpFactor'),
+                        (e.Blueprints = 'blueprints'),
+                        (e.BlueprintsAny = 'blueprintsAny'),
+                        (e.Goodies = 'goodies'),
+                        (e.Berths = 'berths'),
+                        (e.Slots = 'slots'),
+                        (e.Tokens = 'tokens'),
+                        (e.CrewSkins = 'crewSkins'),
+                        (e.CrewBooks = 'crewBooks'),
+                        (e.Customizations = 'customizations'),
+                        (e.CreditsFactor = 'creditsFactor'),
+                        (e.Currency = 'currency'),
+                        (e.TankmenXp = 'tankmenXP'),
+                        (e.TankmenXpFactor = 'tankmenXPFactor'),
+                        (e.FreeXpFactor = 'freeXPFactor'),
+                        (e.BattleToken = 'battleToken'),
+                        (e.PremiumUniversal = 'premium_universal'),
+                        (e.Gold = 'gold'),
+                        (e.Credits = 'credits'),
+                        (e.Crystal = 'crystal'),
+                        (e.FreeXp = 'freeXP'),
+                        (e.Premium = 'premium'),
+                        (e.PremiumPlus = 'premium_plus'),
+                        (e.BattlePassPoints = 'battlePassPoints'),
+                        (e.BattlePassSelectToken = 'battlePassSelectToken'),
+                        (e.SelectableBonus = 'selectableBonus'),
+                        (e.StyleProgressToken = 'styleProgressToken'),
+                        (e.TmanToken = 'tmanToken'),
+                        (e.PortalEventDiscount25 = 'portalEventDiscountToken'),
+                        (e.NaturalCover = 'naturalCover'),
+                        (e.BpCoin = 'bpcoin'),
+                        (e.BattlaPassFinalAchievement = 'dossier_achievement'),
+                        (e.BattleBadge = 'dossier_badge'),
+                        (e.NewYearAlbumsAccess = 'newYearAlbumsAccess'),
+                        (e.NewYearFillers = 'ny22Fillers'),
+                        (e.NewYearInvoice = 'newYearInvoice'),
+                        (e.NewYearToyFragments = 'ny22ToyFragments'),
+                        (e.NewYearSlot = 'newYearSlot'),
+                        (e.BonusX5 = 'battle_bonus_x5'),
+                        (e.CrewBonusX3 = 'crew_bonus_x3'),
+                        (e.Vehicles = 'vehicles'),
+                        (e.EpicSelectToken = 'epicSelectToken'),
+                        (e.CollectionItem = 'collectionItem'),
+                        (e.Comp7TokenWeeklyReward = 'comp7TokenWeeklyReward'),
+                        (e.Comp7TokenCouponReward = 'comp7TokenCouponReward'),
+                        (e.BattleBoosterGift = 'battleBooster_gift'),
+                        (e.CosmicLootboxSilver = 'lootBoxToken'),
+                        (e.CosmicLootboxCommon = 'cosmic_2024_2'),
+                        (e.Branch = 'branch'),
+                        (e.VehicleSelect = 'vehicleSelect'),
+                        (e.StyleProgress = 'styleProgress'),
+                        (e.ParagonsUnlocks = 'paragonsUnlocks'),
+                        (e.LootBoxToken = 'lootBoxToken'),
+                        (e.GoldenTicket = 'birthday2025_golden_ticket'),
+                        (e.PostStamp = 'giftsystem_4_stamp'),
+                        (e.Quests = 'quests'),
+                        (e.BlankPersonalMissions_1 = 'freeTokens_0'),
+                        (e.BlankPersonalMissions_2 = 'freeTokens_2'),
+                        (e.SACoin = 'sacoin'));
+                })(r || (r = {})),
                     (function (e) {
                         ((e.Gold = 'gold'),
                             (e.Credits = 'credits'),
@@ -839,136 +836,145 @@
                             (e.BattlePassPoints = 'battlePassPoints'),
                             (e.BattleBadge = 'dossier_badge'),
                             (e.BattleAchievement = 'dossier_achievement'));
-                    })(i || (i = {})),
-                    ((E = r || (r = {})).Big = 'big'),
-                    (E.Small = 'small'),
-                    (E.Mini = 'mini'),
-                    (E.S600x450 = 's600x450'),
-                    (E.S400x300 = 's400x300'),
-                    (E.S296x222 = 's296x222'),
-                    (E.S232x174 = 's232x174'),
-                    (E.S180x135 = 's180x135'),
-                    (E.S128x100 = 's128x100'),
-                    (E.S80x80 = 's80x80'),
-                    (E.S48x48 = 's48x48'),
-                    ((u = a || (a = {})).MULTI = 'multi'),
-                    (u.CURRENCY = 'currency'),
-                    (u.PREMIUM_PLUS = 'premium_plus'),
-                    (u.NUMBER = 'number'),
-                    (u.STRING = 'string'),
-                    ((d = s || (s = {})).BATTLE_BOOSTER = 'battleBooster'),
-                    (d.BATTLE_BOOSTER_REPLACE = 'battleBoosterReplace'),
-                    (d.BUILT_IN_EQUIPMENT = 'builtInEquipment'),
-                    (d.EQUIPMENT_PLUS = 'equipmentPlus'),
-                    (d.EQUIPMENT_TROPHY_BASIC = 'equipmentTrophyBasic'),
-                    (d.EQUIPMENT_TROPHY_UPGRADED = 'equipmentTrophyUpgraded'),
-                    (d.EQUIPMENT_MODERNIZED_UPGRADED_1 = 'equipmentModernized_1'),
-                    (d.EQUIPMENT_MODERNIZED_UPGRADED_2 = 'equipmentModernized_2'),
-                    (d.EQUIPMENT_MODERNIZED_UPGRADED_3 = 'equipmentModernized_3'),
-                    (d.PROGRESSION_STYLE_UPGRADED_1 = 'progressionStyleUpgraded_1'),
-                    (d.PROGRESSION_STYLE_UPGRADED_2 = 'progressionStyleUpgraded_2'),
-                    (d.PROGRESSION_STYLE_UPGRADED_3 = 'progressionStyleUpgraded_3'),
-                    (d.PROGRESSION_STYLE_UPGRADED_4 = 'progressionStyleUpgraded_4'),
-                    ((_ || (_ = {})).BATTLE_BOOSTER = 'battleBooster'),
-                    ((c = l || (l = {})).BATTLE_BOOSTER = 'battleBooster'),
-                    (c.BATTLE_BOOSTER_REPLACE = 'battleBoosterReplace'),
-                    (c.BUILT_IN_EQUIPMENT = 'builtInEquipment'),
-                    (c.EQUIPMENT_PLUS = 'equipmentPlus'),
-                    (c.EQUIPMENT_TROPHY_BASIC = 'equipmentTrophyBasic'),
-                    (c.EQUIPMENT_TROPHY_UPGRADED = 'equipmentTrophyUpgraded'),
-                    (c.EQUIPMENT_MODERNIZED_UPGRADED_1 = 'equipmentModernized_1'),
-                    (c.EQUIPMENT_MODERNIZED_UPGRADED_2 = 'equipmentModernized_2'),
-                    (c.EQUIPMENT_MODERNIZED_UPGRADED_3 = 'equipmentModernized_3'),
-                    (c.PROGRESSION_STYLE_UPGRADED_1 = 'progressionStyleUpgraded_1'),
-                    (c.PROGRESSION_STYLE_UPGRADED_2 = 'progressionStyleUpgraded_2'),
-                    (c.PROGRESSION_STYLE_UPGRADED_3 = 'progressionStyleUpgraded_3'),
-                    (c.PROGRESSION_STYLE_UPGRADED_4 = 'progressionStyleUpgraded_4'),
-                    n(4179),
-                    o.Items,
-                    o.Equipment,
-                    o.Xp,
-                    o.XpFactor,
-                    o.Blueprints,
-                    o.BlueprintsAny,
-                    o.Goodies,
-                    o.Berths,
-                    o.Slots,
-                    o.Tokens,
-                    o.CrewSkins,
-                    o.CrewBooks,
-                    o.Customizations,
-                    o.CreditsFactor,
-                    o.TankmenXp,
-                    o.TankmenXpFactor,
-                    o.FreeXpFactor,
-                    o.BattleToken,
-                    o.PremiumUniversal,
-                    o.NaturalCover,
-                    o.BpCoin,
-                    o.BattlePassSelectToken,
-                    o.BattlaPassFinalAchievement,
-                    o.BattleBadge,
-                    o.BonusX5,
-                    o.CrewBonusX3,
-                    o.NewYearFillers,
-                    o.NewYearInvoice,
-                    o.EpicSelectToken,
-                    o.Comp7TokenWeeklyReward,
-                    o.Comp7TokenCouponReward,
-                    o.BattleBoosterGift,
-                    o.CosmicLootboxCommon,
-                    o.CosmicLootboxSilver,
-                    o.SelectableBonus,
-                    o.GoldenTicket,
-                    o.PostStamp,
-                    o.WtStamp,
-                    o.WtTicket,
-                    o.WtMainPrizeDiscount,
-                    o.WtHunter,
-                    o.WtHunterCollection,
-                    o.Gold,
-                    o.Credits,
-                    o.Crystal,
-                    o.FreeXp,
-                    o.BattlePassPoints,
-                    o.PremiumPlus,
-                    o.Premium,
-                    ((S = m || (m = {})).Active = 'active'),
-                    (S.Paused = 'paused'),
-                    (S.Completed = 'completed'),
-                    (S.NotStarted = 'notStarted'),
-                    (S.Disabled = 'disabled'),
+                    })(s || (s = {})),
+                    ((p = a || (a = {})).Big = 'big'),
+                    (p.Small = 'small'),
+                    (p.Mini = 'mini'),
+                    (p.S600x450 = 's600x450'),
+                    (p.S400x300 = 's400x300'),
+                    (p.S296x222 = 's296x222'),
+                    (p.S232x174 = 's232x174'),
+                    (p.S180x135 = 's180x135'),
+                    (p.S128x100 = 's128x100'),
+                    (p.S80x80 = 's80x80'),
+                    (p.S48x48 = 's48x48'),
+                    ((m = _ || (_ = {})).MULTI = 'multi'),
+                    (m.CURRENCY = 'currency'),
+                    (m.PREMIUM_PLUS = 'premium_plus'),
+                    (m.NUMBER = 'number'),
+                    (m.STRING = 'string'),
+                    ((E = l || (l = {})).BATTLE_BOOSTER = 'battleBooster'),
+                    (E.BATTLE_BOOSTER_REPLACE = 'battleBoosterReplace'),
+                    (E.BUILT_IN_EQUIPMENT = 'builtInEquipment'),
+                    (E.EQUIPMENT_PLUS = 'equipmentPlus'),
+                    (E.EQUIPMENT_TROPHY_BASIC = 'equipmentTrophyBasic'),
+                    (E.EQUIPMENT_TROPHY_UPGRADED = 'equipmentTrophyUpgraded'),
+                    (E.EQUIPMENT_MODERNIZED_UPGRADED_1 = 'equipmentModernized_1'),
+                    (E.EQUIPMENT_MODERNIZED_UPGRADED_2 = 'equipmentModernized_2'),
+                    (E.EQUIPMENT_MODERNIZED_UPGRADED_3 = 'equipmentModernized_3'),
+                    (E.PROGRESSION_STYLE_UPGRADED_1 = 'progressionStyleUpgraded_1'),
+                    (E.PROGRESSION_STYLE_UPGRADED_2 = 'progressionStyleUpgraded_2'),
+                    (E.PROGRESSION_STYLE_UPGRADED_3 = 'progressionStyleUpgraded_3'),
+                    (E.PROGRESSION_STYLE_UPGRADED_4 = 'progressionStyleUpgraded_4'),
+                    ((c || (c = {})).BATTLE_BOOSTER = 'battleBooster'),
+                    ((u = d || (d = {})).BATTLE_BOOSTER = 'battleBooster'),
+                    (u.BATTLE_BOOSTER_REPLACE = 'battleBoosterReplace'),
+                    (u.BUILT_IN_EQUIPMENT = 'builtInEquipment'),
+                    (u.EQUIPMENT_PLUS = 'equipmentPlus'),
+                    (u.EQUIPMENT_TROPHY_BASIC = 'equipmentTrophyBasic'),
+                    (u.EQUIPMENT_TROPHY_UPGRADED = 'equipmentTrophyUpgraded'),
+                    (u.EQUIPMENT_MODERNIZED_UPGRADED_1 = 'equipmentModernized_1'),
+                    (u.EQUIPMENT_MODERNIZED_UPGRADED_2 = 'equipmentModernized_2'),
+                    (u.EQUIPMENT_MODERNIZED_UPGRADED_3 = 'equipmentModernized_3'),
+                    (u.PROGRESSION_STYLE_UPGRADED_1 = 'progressionStyleUpgraded_1'),
+                    (u.PROGRESSION_STYLE_UPGRADED_2 = 'progressionStyleUpgraded_2'),
+                    (u.PROGRESSION_STYLE_UPGRADED_3 = 'progressionStyleUpgraded_3'),
+                    (u.PROGRESSION_STYLE_UPGRADED_4 = 'progressionStyleUpgraded_4'));
+                var v = n(4179);
+                class w extends i().PureComponent {
+                    render() {
+                        let e;
+                        e = 'gold' === this.props.format ? v.B3.GOLD : v.B3.INTEGRAL;
+                        const t = v.Z5.getNumberFormat(this.props.value, e);
+                        return void 0 !== this.props.value && void 0 !== t ? t : null;
+                    }
+                }
+                let h, P, T, b, g, O, S, R;
+                var k, f, y;
+                ((w.defaultProps = { format: 'integral' }),
+                    r.Items,
+                    r.Equipment,
+                    r.Xp,
+                    r.XpFactor,
+                    r.Blueprints,
+                    r.BlueprintsAny,
+                    r.Goodies,
+                    r.Berths,
+                    r.Slots,
+                    r.Tokens,
+                    r.CrewSkins,
+                    r.CrewBooks,
+                    r.Customizations,
+                    r.CreditsFactor,
+                    r.TankmenXp,
+                    r.TankmenXpFactor,
+                    r.FreeXpFactor,
+                    r.BattleToken,
+                    r.PremiumUniversal,
+                    r.NaturalCover,
+                    r.BpCoin,
+                    r.BattlePassSelectToken,
+                    r.BattlaPassFinalAchievement,
+                    r.BattleBadge,
+                    r.BonusX5,
+                    r.CrewBonusX3,
+                    r.NewYearFillers,
+                    r.NewYearInvoice,
+                    r.EpicSelectToken,
+                    r.Comp7TokenWeeklyReward,
+                    r.Comp7TokenCouponReward,
+                    r.BattleBoosterGift,
+                    r.CosmicLootboxCommon,
+                    r.CosmicLootboxSilver,
+                    r.SelectableBonus,
+                    r.GoldenTicket,
+                    r.PostStamp,
+                    r.BlankPersonalMissions_1,
+                    r.BlankPersonalMissions_2,
+                    r.SACoin,
+                    r.Gold,
+                    r.Credits,
+                    r.Crystal,
+                    r.FreeXp,
+                    r.BattlePassPoints,
+                    r.PremiumPlus,
+                    r.Premium,
+                    ((y = h || (h = {})).Active = 'active'),
+                    (y.Paused = 'paused'),
+                    (y.Completed = 'completed'),
+                    (y.NotStarted = 'notStarted'),
+                    (y.Disabled = 'disabled'),
                     (function (e) {
                         ((e.Default = 'default'), (e.Marathon = 'marathon'), (e.Resource = 'resource'));
-                    })(p || (p = {})),
+                    })(P || (P = {})),
                     (function (e) {
                         ((e.Micro = 'micro'), (e.Small = 'small'), (e.Medium = 'medium'));
-                    })(v || (v = {})),
+                    })(T || (T = {})),
                     (function (e) {
                         ((e.ACTIVE = 'active'), (e.COMPLETED = 'completed'), (e.NOT_CHOSEN = 'notChosen'));
-                    })(w || (w = {})),
-                    ((O = h || (h = {})).AwaitSeason = 'awaitSeason'),
-                    (O.Bought = 'bought'),
-                    (O.Free = 'free'),
-                    (O.Completed = 'completed'),
-                    (O.CompletedRightNow = 'completedRightNow'),
-                    (O.SwitchedChapterRightNow = 'switchedChapterRightNow'),
-                    (O.NoVehiclesBase = 'noVehiclesBase'),
-                    (O.ChapterNotChosen = 'chapterNotChosen'),
+                    })(b || (b = {})),
+                    ((f = g || (g = {})).AwaitSeason = 'awaitSeason'),
+                    (f.Bought = 'bought'),
+                    (f.Free = 'free'),
+                    (f.Completed = 'completed'),
+                    (f.CompletedRightNow = 'completedRightNow'),
+                    (f.SwitchedChapterRightNow = 'switchedChapterRightNow'),
+                    (f.NoVehiclesBase = 'noVehiclesBase'),
+                    (f.ChapterNotChosen = 'chapterNotChosen'),
                     (function (e) {
                         ((e.None = ''),
                             (e.ShowLevel = 'show'),
                             (e.HideLevel = 'hide'),
                             (e.HideLevelWithDelay = 'hideWithDelay'));
-                    })(P || (P = {})),
-                    ((g = T || (T = {})).style = 'style'),
-                    (g.tankman = 'tankman'),
-                    (g.vehicle = 'vehicle'),
+                    })(O || (O = {})),
+                    ((k = S || (S = {})).style = 'style'),
+                    (k.tankman = 'tankman'),
+                    (k.vehicle = 'vehicle'),
                     (function (e) {
                         ((e.Default = 'default'), (e.Marathon = 'marathon'), (e.Resource = 'resource'));
-                    })(b || (b = {})),
-                    T.style,
-                    T.tankman);
+                    })(R || (R = {})),
+                    S.style,
+                    S.tankman);
             },
         },
         __webpack_module_cache__ = {},
@@ -985,15 +991,15 @@
             if (!t) {
                 var i = 1 / 0;
                 for (_ = 0; _ < deferred.length; _++) {
-                    for (var [t, n, o] = deferred[_], r = !0, a = 0; a < t.length; a++)
+                    for (var [t, n, o] = deferred[_], r = !0, s = 0; s < t.length; s++)
                         (!1 & o || i >= o) &&
-                        Object.keys(__webpack_require__.O).every((e) => __webpack_require__.O[e](t[a]))
-                            ? t.splice(a--, 1)
+                        Object.keys(__webpack_require__.O).every((e) => __webpack_require__.O[e](t[s]))
+                            ? t.splice(s--, 1)
                             : ((r = !1), o < i && (i = o));
                     if (r) {
                         deferred.splice(_--, 1);
-                        var s = n();
-                        void 0 !== s && (e = s);
+                        var a = n();
+                        void 0 !== a && (e = a);
                     }
                 }
                 return e;
@@ -1034,11 +1040,11 @@
             var t = (t, n) => {
                     var o,
                         i,
-                        [r, a, s] = n,
+                        [r, s, a] = n,
                         _ = 0;
                     if (r.some((t) => 0 !== e[t])) {
-                        for (o in a) __webpack_require__.o(a, o) && (__webpack_require__.m[o] = a[o]);
-                        if (s) var l = s(__webpack_require__);
+                        for (o in s) __webpack_require__.o(s, o) && (__webpack_require__.m[o] = s[o]);
+                        if (a) var l = a(__webpack_require__);
                     }
                     for (t && t(n); _ < r.length; _++)
                         ((i = r[_]), __webpack_require__.o(e, i) && e[i] && e[i][0](), (e[i] = 0));

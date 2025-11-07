@@ -820,6 +820,7 @@
                         (u.SelectableBonus = 'selectableBonus'),
                         (u.StyleProgressToken = 'styleProgressToken'),
                         (u.TmanToken = 'tmanToken'),
+                        (u.PortalEventDiscount25 = 'portalEventDiscountToken'),
                         (u.NaturalCover = 'naturalCover'),
                         (u.BpCoin = 'bpcoin'),
                         (u.BattlaPassFinalAchievement = 'dossier_achievement'),
@@ -847,12 +848,9 @@
                         (u.GoldenTicket = 'birthday2025_golden_ticket'),
                         (u.PostStamp = 'giftsystem_4_stamp'),
                         (u.Quests = 'quests'),
-                        (u.WtStamp = 'stamp'),
-                        (u.WtHunter = 'wt_hunter'),
-                        (u.WtHunterCollection = 'hunter_collection'),
-                        (u.WtTicket = 'wtevent_ticket'),
-                        (u.WtMainPrizeDiscount = 'main_prize_discount'),
-                        (u.WtTicket25 = 'wtevent_ticket25'));
+                        (u.BlankPersonalMissions_1 = 'freeTokens_0'),
+                        (u.BlankPersonalMissions_2 = 'freeTokens_2'),
+                        (u.SACoin = 'sacoin'));
                 })(o || (o = {})),
                     (function (u) {
                         ((u.Gold = 'gold'),
@@ -1232,27 +1230,26 @@
                     );
                 }
                 const T = ({ children: u, tooltipArgs: e, className: t }) => {
-                        if (!e) return u;
-                        const r = n().createElement('div', { className: t }, u);
-                        if (e.header || e.body) return n().createElement(f, e, r);
-                        const a = e.contentId,
-                            i = e.args,
-                            o = null == i ? void 0 : i.contentId;
-                        return a || o
-                            ? n().createElement(g, S({}, e, { contentId: a || o }), r)
-                            : n().createElement(b, e, r);
-                    },
-                    P = ({ format: u, value: e }) => {
-                        const t = ((u, e = 'integral') => {
-                            let t;
-                            return (
-                                (t = 'gold' === e ? m.B3.GOLD : m.B3.INTEGRAL),
-                                void 0 === u ? '' : m.Z5.getNumberFormat(u, t)
-                            );
-                        })(e, u);
-                        return t ? n().createElement('span', null, t) : null;
-                    },
-                    O = [
+                    if (!e) return u;
+                    const r = n().createElement('div', { className: t }, u);
+                    if (e.header || e.body) return n().createElement(f, e, r);
+                    const a = e.contentId,
+                        i = e.args,
+                        o = null == i ? void 0 : i.contentId;
+                    return a || o
+                        ? n().createElement(g, S({}, e, { contentId: a || o }), r)
+                        : n().createElement(b, e, r);
+                };
+                class P extends n().PureComponent {
+                    render() {
+                        let u;
+                        u = 'gold' === this.props.format ? m.B3.GOLD : m.B3.INTEGRAL;
+                        const e = m.Z5.getNumberFormat(this.props.value, u);
+                        return void 0 !== this.props.value && void 0 !== e ? e : null;
+                    }
+                }
+                P.defaultProps = { format: 'integral' };
+                const O = [
                         o.Items,
                         o.Equipment,
                         o.Xp,
@@ -1290,11 +1287,9 @@
                         o.SelectableBonus,
                         o.GoldenTicket,
                         o.PostStamp,
-                        o.WtStamp,
-                        o.WtTicket,
-                        o.WtMainPrizeDiscount,
-                        o.WtHunter,
-                        o.WtHunterCollection,
+                        o.BlankPersonalMissions_1,
+                        o.BlankPersonalMissions_2,
+                        o.SACoin,
                     ],
                     M = [o.Gold, o.Credits, o.Crystal, o.FreeXp],
                     L = [o.BattlePassPoints],
@@ -1420,6 +1415,8 @@
                                 return `R.images.gui.maps.icons.quests.bonuses.${e}.style_3d`;
                             case 'collectionItem':
                                 return `R.images.gui.maps.icons.collectionItems.${s}.${a}`;
+                            case 'portal':
+                                return `R.images.gui.maps.icons.rewards.${e}.${i}`;
                             default:
                                 return `R.images.gui.maps.icons.quests.bonuses.${e}.${t}`;
                         }

@@ -851,6 +851,7 @@
                                         clearInterval(i);
                                     };
                                 }
+                                r(0);
                             }, [e, u, t, a]),
                             s
                         );

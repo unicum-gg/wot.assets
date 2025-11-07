@@ -1329,14 +1329,14 @@
                         },
                     ),
                     q = 'Alert_alert_66',
-                    z = 'Alert_icon_ea',
-                    X = 'Alert_alertText_14',
+                    X = 'Alert_icon_ea',
+                    z = 'Alert_alertText_14',
                     j = ({ alertText: u, className: e }) =>
                         r().createElement(
                             'div',
                             { className: F()(q, e) },
-                            r().createElement('i', { className: z }),
-                            r().createElement('span', { className: X }, u),
+                            r().createElement('i', { className: X }),
+                            r().createElement('span', { className: z }, u),
                         );
                 let Y, $, K;
                 (!(function (u) {
@@ -1353,14 +1353,16 @@
                     (function (u) {
                         ((u.Red = 'RedActionBG'), (u.Blue = 'BlueActionBG'));
                     })(K || (K = {})));
-                const Q = ({ format: u, value: e }) => {
-                    const t = ((u, e = 'integral') => {
-                        let t;
-                        t = 'gold' === e ? l.B3.GOLD : l.B3.INTEGRAL;
-                        return void 0 === u ? '' : l.Z5.getNumberFormat(u, t);
-                    })(e, u);
-                    return t ? r().createElement('span', null, t) : null;
-                };
+                class Q extends r().PureComponent {
+                    render() {
+                        let u;
+                        if ('gold' === this.props.format) u = l.B3.GOLD;
+                        else u = l.B3.INTEGRAL;
+                        const e = l.Z5.getNumberFormat(this.props.value, u);
+                        return void 0 !== this.props.value && void 0 !== e ? e : null;
+                    }
+                }
+                Q.defaultProps = { format: 'integral' };
                 function Z(u, e) {
                     return Array.isArray(u) ? u.map(e) : u.map((u, t, n) => e(null == u ? void 0 : u.value, t, n));
                 }
@@ -1455,6 +1457,7 @@
                         (u.SelectableBonus = 'selectableBonus'),
                         (u.StyleProgressToken = 'styleProgressToken'),
                         (u.TmanToken = 'tmanToken'),
+                        (u.PortalEventDiscount25 = 'portalEventDiscountToken'),
                         (u.NaturalCover = 'naturalCover'),
                         (u.BpCoin = 'bpcoin'),
                         (u.BattlaPassFinalAchievement = 'dossier_achievement'),
@@ -1482,12 +1485,9 @@
                         (u.GoldenTicket = 'birthday2025_golden_ticket'),
                         (u.PostStamp = 'giftsystem_4_stamp'),
                         (u.Quests = 'quests'),
-                        (u.WtStamp = 'stamp'),
-                        (u.WtHunter = 'wt_hunter'),
-                        (u.WtHunterCollection = 'hunter_collection'),
-                        (u.WtTicket = 'wtevent_ticket'),
-                        (u.WtMainPrizeDiscount = 'main_prize_discount'),
-                        (u.WtTicket25 = 'wtevent_ticket25'));
+                        (u.BlankPersonalMissions_1 = 'freeTokens_0'),
+                        (u.BlankPersonalMissions_2 = 'freeTokens_2'),
+                        (u.SACoin = 'sacoin'));
                 })(eu || (eu = {})),
                     (function (u) {
                         ((u.Gold = 'gold'),
@@ -2255,8 +2255,8 @@
                         qu.apply(this, arguments)
                     );
                 }
-                const zu = R.views.common.tooltip_window.simple_tooltip_content,
-                    Xu = (u) => {
+                const Xu = R.views.common.tooltip_window.simple_tooltip_content,
+                    zu = (u) => {
                         let e = u.children,
                             t = u.body,
                             i = u.header,
@@ -2283,7 +2283,7 @@
                                 {
                                     contentId:
                                         ((_ = null == o ? void 0 : o.hasHtmlContent),
-                                        _ ? zu.SimpleTooltipHtmlContent('resId') : zu.SimpleTooltipContent('resId')),
+                                        _ ? Xu.SimpleTooltipHtmlContent('resId') : Xu.SimpleTooltipContent('resId')),
                                     decoratorId: R.views.common.tooltip_window.tooltip_window.TooltipWindow('resId'),
                                     args: l,
                                 },
@@ -2310,7 +2310,7 @@
                 const Yu = ({ children: u, tooltipArgs: e, className: t }) => {
                         if (!e) return u;
                         const n = r().createElement('div', { className: t }, u);
-                        if (e.header || e.body) return r().createElement(Xu, e, n);
+                        if (e.header || e.body) return r().createElement(zu, e, n);
                         const i = e.contentId,
                             s = e.args,
                             a = null == s ? void 0 : s.contentId;
@@ -2356,11 +2356,9 @@
                         eu.SelectableBonus,
                         eu.GoldenTicket,
                         eu.PostStamp,
-                        eu.WtStamp,
-                        eu.WtTicket,
-                        eu.WtMainPrizeDiscount,
-                        eu.WtHunter,
-                        eu.WtHunterCollection,
+                        eu.BlankPersonalMissions_1,
+                        eu.BlankPersonalMissions_2,
+                        eu.SACoin,
                         eu.Gold,
                         eu.Credits,
                         eu.Crystal,
@@ -2721,7 +2719,7 @@
                                 }),
                             ),
                             r().createElement(
-                                Xu,
+                                zu,
                                 { isEnabled: s, body: u },
                                 r().createElement('div', { ref: t, className: F()(re, e) }, u),
                             )

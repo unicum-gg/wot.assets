@@ -5209,6 +5209,7 @@
                                         clearInterval(r);
                                     };
                                 }
+                                o(0);
                             }, [e, t, u, n]),
                             r
                         );

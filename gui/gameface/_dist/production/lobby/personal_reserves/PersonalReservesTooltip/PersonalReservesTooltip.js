@@ -912,6 +912,7 @@
                                         clearInterval(t);
                                     };
                                 }
+                                n(0);
                             }, [u, e, A, E]),
                             t
                         );

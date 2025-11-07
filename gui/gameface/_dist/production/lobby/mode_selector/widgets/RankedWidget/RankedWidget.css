@@ -660,6 +660,11 @@
     width: 332rem;
     height: 160rem;
 }
+
+.League_base__b2_c9 {
+    width: 332rem;
+    height: 160rem;
+}
 .League_wrapper_91 {
     position: relative;
 }
@@ -682,6 +687,11 @@
     height: 70rem;
     margin: 0 5rem;
 }
+.League_base__b2_c9 .League_icon_dd {
+    width: 70rem;
+    height: 70rem;
+    margin: 0 5rem;
+}
 
 .RankedWidget_base_9c {
     display: flex;
@@ -691,7 +701,6 @@
     height: 100%;
     overflow: hidden;
     position: relative;
-    pointer-events: none;
 }
 
 .RankedWidget_ranks_a7 {
@@ -764,23 +773,45 @@
 
 .RankedWidget_bonus__b0_8d,
 .RankedWidget_bonus__b1_3d {
-    bottom: 226rem;
+    bottom: 319rem;
+}
+
+.RankedWidget_bonus__b0__medium_68,
+.RankedWidget_bonus__b1__medium_80 {
+    bottom: 248rem;
 }
 
 .RankedWidget_bonus__b0__extraSmall_78,
 .RankedWidget_bonus__b0__small_bc,
 .RankedWidget_bonus__b1__extraSmall_f0,
 .RankedWidget_bonus__b1__small_d2 {
-    bottom: 181rem;
+    bottom: 194rem;
 }
 
 .RankedWidget_bonus__b2_42 {
-    bottom: 81rem;
+    bottom: 115rem;
+}
+
+.RankedWidget_bonus__b2__medium_ee {
+    display: none;
 }
 
 .RankedWidget_bonus__b2__extraSmall_63,
 .RankedWidget_bonus__b2__small_cb {
-    bottom: 80rem;
+    display: none;
+}
+
+.RankedWidget_bonus__b3_83 {
+    bottom: 56rem;
+}
+
+.RankedWidget_bonus__b3__medium_13 {
+    bottom: 44rem;
+}
+
+.RankedWidget_bonus__b3__extraSmall_03,
+.RankedWidget_bonus__b3__small_76 {
+    bottom: 36rem;
 }
 
 .RankedWidget_bonus__b5__extraSmall_c8,

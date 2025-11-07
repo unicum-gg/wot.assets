@@ -29,7 +29,7 @@
                 }
                 (t.r(i),
                     t.d(i, {
-                        addModelObserver: () => k,
+                        addModelObserver: () => P,
                         addPreloadTexture: () => f,
                         children: () => r,
                         displayStatus: () => B,
@@ -52,7 +52,7 @@
                         setAnimateWindow: () => U,
                         setEventHandled: () => H,
                         setInputPaddingsRem: () => T,
-                        setSidePaddingsRem: () => P,
+                        setSidePaddingsRem: () => k,
                         whenTutorialReady: () => z,
                     }));
                 const l = o('clientResized'),
@@ -216,10 +216,10 @@
                 function S(u, e, t, n = 1) {
                     return viewEnv.getWebBrowserTexturePath(u, e, t, n);
                 }
-                function k(u, e, t) {
+                function P(u, e, t) {
                     return viewEnv.addDataChangedCallback(u, e, t);
                 }
-                function P(u) {
+                function k(u) {
                     viewEnv.setHitAreaPaddingsRem(u.top, u.right, u.bottom, u.left, 15);
                 }
                 function x(u = 'px') {
@@ -954,8 +954,8 @@
                         f = h[1],
                         T = (0, n.useState)(!1),
                         S = T[0],
-                        k = T[1],
-                        P = (0, n.useCallback)(() => {
+                        P = T[1],
+                        k = (0, n.useCallback)(() => {
                             i || (D.current && (D.current.focus(), C(!0)));
                         }, [i]),
                         x = (0, n.useCallback)(
@@ -972,7 +972,7 @@
                         ),
                         O = (0, n.useCallback)(
                             (u) => {
-                                i || (null !== s && w(s), E && E(u), k(!0));
+                                i || (null !== s && w(s), E && E(u), P(!0));
                             },
                             [i, s, E],
                         ),
@@ -990,9 +990,9 @@
                         ),
                         L = (0, n.useCallback)(
                             (u) => {
-                                i || (null !== l && w(l), F && F(u), t && P(), f(!0));
+                                i || (null !== l && w(l), F && F(u), t && k(), f(!0));
                             },
-                            [i, l, F, P, t],
+                            [i, l, F, k, t],
                         ),
                         U = (0, n.useCallback)(
                             (u) => {
@@ -1062,7 +1062,7 @@
                 };
                 T.defaultProps = { type: b.primary, isFocused: !1, soundHover: 'highlight', soundClick: 'play' };
                 const S = (0, n.memo)(T),
-                    k = {
+                    P = {
                         base: 'TextButton_base_b6',
                         base__right: 'TextButton_base__right_39',
                         icon: 'TextButton_icon_17',
@@ -1080,7 +1080,7 @@
                         base__left: 'TextButton_base__left_ff',
                         shine: 'TextButton_shine_e2',
                     },
-                    P = [
+                    k = [
                         'caption',
                         'onClick',
                         'goto',
@@ -1154,12 +1154,12 @@
                                         r = Object.keys(u);
                                     for (n = 0; n < r.length; n++) ((t = r[n]), e.indexOf(t) >= 0 || (a[t] = u[t]));
                                     return a;
-                                })(u, P)),
-                            _ = g()(k.base, k[`base__${i}`], k[`base__${r}`], null == o ? void 0 : o.base),
-                            c = g()(k.icon, k[`icon__${i}`], k[`icon__${r}`], null == o ? void 0 : o.icon),
-                            d = g()(k.glow, null == o ? void 0 : o.glow),
-                            D = g()(k.caption, k[`caption__${i}`], null == o ? void 0 : o.caption),
-                            B = g()(k.goto, null == o ? void 0 : o.goto);
+                                })(u, k)),
+                            _ = g()(P.base, P[`base__${i}`], P[`base__${r}`], null == o ? void 0 : o.base),
+                            c = g()(P.icon, P[`icon__${i}`], P[`icon__${r}`], null == o ? void 0 : o.icon),
+                            d = g()(P.glow, null == o ? void 0 : o.glow),
+                            D = g()(P.caption, P[`caption__${i}`], null == o ? void 0 : o.caption),
+                            B = g()(P.goto, null == o ? void 0 : o.goto);
                         return a().createElement(
                             'div',
                             x(
@@ -1175,7 +1175,7 @@
                                 },
                                 F,
                             ),
-                            'info' !== i && a().createElement('div', { className: k.shine }),
+                            'info' !== i && a().createElement('div', { className: P.shine }),
                             a().createElement('div', { className: c }, a().createElement('div', { className: d })),
                             a().createElement('div', { className: D }, e),
                             n && a().createElement('div', { className: B }, n),
@@ -1401,6 +1401,7 @@
                         (u.SelectableBonus = 'selectableBonus'),
                         (u.StyleProgressToken = 'styleProgressToken'),
                         (u.TmanToken = 'tmanToken'),
+                        (u.PortalEventDiscount25 = 'portalEventDiscountToken'),
                         (u.NaturalCover = 'naturalCover'),
                         (u.BpCoin = 'bpcoin'),
                         (u.BattlaPassFinalAchievement = 'dossier_achievement'),
@@ -1428,12 +1429,9 @@
                         (u.GoldenTicket = 'birthday2025_golden_ticket'),
                         (u.PostStamp = 'giftsystem_4_stamp'),
                         (u.Quests = 'quests'),
-                        (u.WtStamp = 'stamp'),
-                        (u.WtHunter = 'wt_hunter'),
-                        (u.WtHunterCollection = 'hunter_collection'),
-                        (u.WtTicket = 'wtevent_ticket'),
-                        (u.WtMainPrizeDiscount = 'main_prize_discount'),
-                        (u.WtTicket25 = 'wtevent_ticket25'));
+                        (u.BlankPersonalMissions_1 = 'freeTokens_0'),
+                        (u.BlankPersonalMissions_2 = 'freeTokens_2'),
+                        (u.SACoin = 'sacoin'));
                 })(Z || (Z = {})),
                     (function (u) {
                         ((u.Gold = 'gold'),
@@ -1527,15 +1525,17 @@
                             (u.PROGRESSION_STYLE_UPGRADED_3 = 'progressionStyleUpgraded_3'),
                             (u.PROGRESSION_STYLE_UPGRADED_4 = 'progressionStyleUpgraded_4'));
                     })(nu || (nu = {})));
-                const au = ({ format: u, value: e }) => {
-                        const t = ((u, e = 'integral') => {
-                            let t;
-                            t = 'gold' === e ? N.B3.GOLD : N.B3.INTEGRAL;
-                            return void 0 === u ? '' : N.Z5.getNumberFormat(u, t);
-                        })(e, u);
-                        return t ? a().createElement('span', null, t) : null;
-                    },
-                    ru = [
+                class au extends a().PureComponent {
+                    render() {
+                        let u;
+                        if ('gold' === this.props.format) u = N.B3.GOLD;
+                        else u = N.B3.INTEGRAL;
+                        const e = N.Z5.getNumberFormat(this.props.value, u);
+                        return void 0 !== this.props.value && void 0 !== e ? e : null;
+                    }
+                }
+                au.defaultProps = { format: 'integral' };
+                const ru = [
                         Z.Items,
                         Z.Equipment,
                         Z.Xp,
@@ -1573,11 +1573,9 @@
                         Z.SelectableBonus,
                         Z.GoldenTicket,
                         Z.PostStamp,
-                        Z.WtStamp,
-                        Z.WtTicket,
-                        Z.WtMainPrizeDiscount,
-                        Z.WtHunter,
-                        Z.WtHunterCollection,
+                        Z.BlankPersonalMissions_1,
+                        Z.BlankPersonalMissions_2,
+                        Z.SACoin,
                     ],
                     iu = [Z.Gold, Z.Credits, Z.Crystal, Z.FreeXp],
                     ou = [Z.BattlePassPoints],

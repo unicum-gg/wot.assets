@@ -403,18 +403,6 @@ body {
     }
 }
 
-@keyframes AdditionalRewards_fadeInWithScale_79 {
-    0% {
-        opacity: 0;
-        transform: scale(1.2);
-    }
-
-    100% {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
 @keyframes AdditionalRewards_lockStartAnimation_1e {
     0% {
         filter: blur(0);
@@ -809,18 +797,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     }
 }
 
-@keyframes Footer_fadeInWithScale_cc {
-    0% {
-        opacity: 0;
-        transform: scale(1.2);
-    }
-
-    100% {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
 @keyframes Footer_lockStartAnimation_7f {
     0% {
         filter: blur(0);
@@ -1019,18 +995,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     100% {
         opacity: 1;
         transform: translateY(0);
-    }
-}
-
-@keyframes Glow_fadeInWithScale_7f {
-    0% {
-        opacity: 0;
-        transform: scale(1.2);
-    }
-
-    100% {
-        opacity: 1;
-        transform: scale(1);
     }
 }
 
@@ -1502,18 +1466,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     }
 }
 
-@keyframes MainRewards_fadeInWithScale_65 {
-    0% {
-        opacity: 0;
-        transform: scale(1.2);
-    }
-
-    100% {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
 @keyframes MainRewards_lockStartAnimation_bc {
     0% {
         filter: blur(0);
@@ -1740,18 +1692,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     100% {
         opacity: 1;
         transform: translateY(0);
-    }
-}
-
-@keyframes RewardsApp_fadeInWithScale_7c {
-    0% {
-        opacity: 0;
-        transform: scale(1.2);
-    }
-
-    100% {
-        opacity: 1;
-        transform: scale(1);
     }
 }
 

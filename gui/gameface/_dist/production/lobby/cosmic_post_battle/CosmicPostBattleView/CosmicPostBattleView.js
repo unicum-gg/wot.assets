@@ -1918,6 +1918,7 @@
                         (e.SelectableBonus = 'selectableBonus'),
                         (e.StyleProgressToken = 'styleProgressToken'),
                         (e.TmanToken = 'tmanToken'),
+                        (e.PortalEventDiscount25 = 'portalEventDiscountToken'),
                         (e.NaturalCover = 'naturalCover'),
                         (e.BpCoin = 'bpcoin'),
                         (e.BattlaPassFinalAchievement = 'dossier_achievement'),
@@ -1945,12 +1946,9 @@
                         (e.GoldenTicket = 'birthday2025_golden_ticket'),
                         (e.PostStamp = 'giftsystem_4_stamp'),
                         (e.Quests = 'quests'),
-                        (e.WtStamp = 'stamp'),
-                        (e.WtHunter = 'wt_hunter'),
-                        (e.WtHunterCollection = 'hunter_collection'),
-                        (e.WtTicket = 'wtevent_ticket'),
-                        (e.WtMainPrizeDiscount = 'main_prize_discount'),
-                        (e.WtTicket25 = 'wtevent_ticket25'));
+                        (e.BlankPersonalMissions_1 = 'freeTokens_0'),
+                        (e.BlankPersonalMissions_2 = 'freeTokens_2'),
+                        (e.SACoin = 'sacoin'));
                 })(ge || (ge = {})),
                     (function (e) {
                         ((e.Gold = 'gold'),
@@ -2042,67 +2040,63 @@
                             (e.PROGRESSION_STYLE_UPGRADED_3 = 'progressionStyleUpgraded_3'),
                             (e.PROGRESSION_STYLE_UPGRADED_4 = 'progressionStyleUpgraded_4'));
                     })(we || (we = {})));
-                const ye = ({ format: e, value: u }) => {
-                        const t = ((e, u = 'integral') => {
-                            let t;
-                            return (
-                                (t = 'gold' === u ? W.B3.GOLD : W.B3.INTEGRAL),
-                                void 0 === e ? '' : W.Z5.getNumberFormat(e, t)
-                            );
-                        })(u, e);
-                        return t ? r().createElement('span', null, t) : null;
-                    },
-                    Re =
-                        (ge.Items,
-                        ge.Equipment,
-                        ge.Xp,
-                        ge.XpFactor,
-                        ge.Blueprints,
-                        ge.BlueprintsAny,
-                        ge.Goodies,
-                        ge.Berths,
-                        ge.Slots,
-                        ge.Tokens,
-                        ge.CrewSkins,
-                        ge.CrewBooks,
-                        ge.Customizations,
-                        ge.CreditsFactor,
-                        ge.TankmenXp,
-                        ge.TankmenXpFactor,
-                        ge.FreeXpFactor,
-                        ge.BattleToken,
-                        ge.PremiumUniversal,
-                        ge.NaturalCover,
-                        ge.BpCoin,
-                        ge.BattlePassSelectToken,
-                        ge.BattlaPassFinalAchievement,
-                        ge.BattleBadge,
-                        ge.BonusX5,
-                        ge.CrewBonusX3,
-                        ge.NewYearFillers,
-                        ge.NewYearInvoice,
-                        ge.EpicSelectToken,
-                        ge.Comp7TokenWeeklyReward,
-                        ge.Comp7TokenCouponReward,
-                        ge.BattleBoosterGift,
-                        ge.CosmicLootboxCommon,
-                        ge.CosmicLootboxSilver,
-                        ge.SelectableBonus,
-                        ge.GoldenTicket,
-                        ge.PostStamp,
-                        ge.WtStamp,
-                        ge.WtTicket,
-                        ge.WtMainPrizeDiscount,
-                        ge.WtHunter,
-                        ge.WtHunterCollection,
-                        ge.Gold,
-                        ge.Credits,
-                        ge.Crystal,
-                        ge.FreeXp,
-                        ge.BattlePassPoints,
-                        ge.PremiumPlus,
-                        ge.Premium,
-                        ['engravings', 'backgrounds']),
+                class ye extends r().PureComponent {
+                    render() {
+                        let e;
+                        e = 'gold' === this.props.format ? W.B3.GOLD : W.B3.INTEGRAL;
+                        const u = W.Z5.getNumberFormat(this.props.value, e);
+                        return void 0 !== this.props.value && void 0 !== u ? u : null;
+                    }
+                }
+                ((ye.defaultProps = { format: 'integral' }),
+                    ge.Items,
+                    ge.Equipment,
+                    ge.Xp,
+                    ge.XpFactor,
+                    ge.Blueprints,
+                    ge.BlueprintsAny,
+                    ge.Goodies,
+                    ge.Berths,
+                    ge.Slots,
+                    ge.Tokens,
+                    ge.CrewSkins,
+                    ge.CrewBooks,
+                    ge.Customizations,
+                    ge.CreditsFactor,
+                    ge.TankmenXp,
+                    ge.TankmenXpFactor,
+                    ge.FreeXpFactor,
+                    ge.BattleToken,
+                    ge.PremiumUniversal,
+                    ge.NaturalCover,
+                    ge.BpCoin,
+                    ge.BattlePassSelectToken,
+                    ge.BattlaPassFinalAchievement,
+                    ge.BattleBadge,
+                    ge.BonusX5,
+                    ge.CrewBonusX3,
+                    ge.NewYearFillers,
+                    ge.NewYearInvoice,
+                    ge.EpicSelectToken,
+                    ge.Comp7TokenWeeklyReward,
+                    ge.Comp7TokenCouponReward,
+                    ge.BattleBoosterGift,
+                    ge.CosmicLootboxCommon,
+                    ge.CosmicLootboxSilver,
+                    ge.SelectableBonus,
+                    ge.GoldenTicket,
+                    ge.PostStamp,
+                    ge.BlankPersonalMissions_1,
+                    ge.BlankPersonalMissions_2,
+                    ge.SACoin,
+                    ge.Gold,
+                    ge.Credits,
+                    ge.Crystal,
+                    ge.FreeXp,
+                    ge.BattlePassPoints,
+                    ge.PremiumPlus,
+                    ge.Premium);
+                const Re = ['engravings', 'backgrounds'],
                     Te = ['engraving', 'background'],
                     Pe = (e, u = he.Small) => {
                         const t = e.name,
@@ -2223,6 +2217,8 @@
                                 return `R.images.gui.maps.icons.quests.bonuses.${u}.style_3d`;
                             case 'collectionItem':
                                 return `R.images.gui.maps.icons.collectionItems.${o}.${n}`;
+                            case 'portal':
+                                return `R.images.gui.maps.icons.rewards.${u}.${s}`;
                             default:
                                 return `R.images.gui.maps.icons.quests.bonuses.${u}.${t}`;
                         }

@@ -80,6 +80,10 @@
     background-image: url('R.images.gui.maps.icons.resourceWell.confirm.usa');
 }
 
+.Resource_resourceIcon__intunion_ec {
+    background-image: url('R.images.gui.maps.icons.resourceWell.confirm.intunion');
+}
+
 .Resource_resourceIcon__premium_plus_46 {
     background-image: url('R.images.gui.maps.icons.resourceWell.confirm.premium_plus');
 }

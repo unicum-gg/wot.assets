@@ -1103,7 +1103,7 @@
                         [p.Large]: `${h().SMALL} ${h().MEDIUM} ${h().LARGE}`,
                         [p.ExtraLarge]: `${h().SMALL} ${h().MEDIUM} ${h().LARGE} ${h().EXTRA_LARGE}`,
                     },
-                    L = (u) => {
+                    M = (u) => {
                         let e = u.children,
                             t = u.className,
                             _ = (function (u, e) {
@@ -1121,7 +1121,7 @@
                             o = i.mediaSize;
                         return r().createElement('div', f({ className: C()(t, x[a], T[n], k[o]) }, _), e);
                     },
-                    M = ['children'],
+                    L = ['children'],
                     y = (u) => {
                         let e = u.children,
                             t = (function (u, e) {
@@ -1132,11 +1132,11 @@
                                     i = Object.keys(u);
                                 for (_ = 0; _ < i.length; _++) ((t = i[_]), e.indexOf(t) >= 0 || (r[t] = u[t]));
                                 return r;
-                            })(u, M);
-                        return r().createElement(m, null, r().createElement(L, t, e));
+                            })(u, L);
+                        return r().createElement(m, null, r().createElement(M, t, e));
                     };
-                var O = t(493),
-                    P = t.n(O);
+                var P = t(493),
+                    O = t.n(P);
                 let H;
                 !(function (u) {
                     ((u.BeforeProgression = 'beforeProgression'),
@@ -1268,8 +1268,8 @@
                         SM: { mt: j.mt__SM, mr: j.mr__SM, mb: j.mb__SM, ml: j.ml__SM },
                         XS: { mt: j.mt__XS, mr: j.mr__XS, mb: j.mb__XS, ml: j.ml__XS },
                     },
-                    q = (Object.keys(K), ['mt', 'mr', 'mb', 'ml']),
-                    Y = { mt: 'marginTop', mr: 'marginRight', mb: 'marginBottom', ml: 'marginLeft' },
+                    Y = (Object.keys(K), ['mt', 'mr', 'mb', 'ml']),
+                    q = { mt: 'marginTop', mr: 'marginRight', mb: 'marginBottom', ml: 'marginLeft' },
                     Z = X((u) => {
                         let e = u.className,
                             t = u.width,
@@ -1305,12 +1305,12 @@
                             x = void 0 === f ? (g ? 'flex-start' : h && 'center') || (p && 'flex-end') || void 0 : f,
                             T = u.alignSelf,
                             k = u.wrap,
-                            L = u.flexWrap,
-                            M = void 0 === L ? (k ? 'wrap' : void 0) : L,
+                            M = u.flexWrap,
+                            L = void 0 === M ? (k ? 'wrap' : void 0) : M,
                             y = u.grow,
-                            O = u.shrink,
-                            P = u.flex,
-                            R = void 0 === P ? (y || O ? `${y ? 1 : 0} ${O ? 1 : 0} auto` : void 0) : P,
+                            P = u.shrink,
+                            O = u.flex,
+                            R = void 0 === O ? (y || P ? `${y ? 1 : 0} ${P ? 1 : 0} auto` : void 0) : O,
                             H = u.style,
                             W = u.children,
                             N = (function (u, e) {
@@ -1325,14 +1325,14 @@
                         const I = (0, _.useMemo)(() => {
                                 const u = { mt: o, mr: s, mb: A, ml: F },
                                     e = ((u) =>
-                                        q.reduce((e, t) => {
+                                        Y.reduce((e, t) => {
                                             const _ = u[t];
                                             return _ && 'number' != typeof _ ? e.concat(K[!0 === _ ? 'MD' : _][t]) : e;
                                         }, []))(u),
                                     _ = ((u) =>
-                                        q.reduce((e, t) => {
+                                        Y.reduce((e, t) => {
                                             const _ = u[t];
-                                            return ('number' == typeof _ && (e[Y[t]] = _ + 'rem'), e);
+                                            return ('number' == typeof _ && (e[q[t]] = _ + 'rem'), e);
                                         }, {}))(u);
                                 return {
                                     computedStyle: Object.assign({}, H, _, {
@@ -1342,13 +1342,13 @@
                                         alignSelf: T,
                                         display: B || x ? 'flex' : void 0,
                                         flexDirection: B,
-                                        flexWrap: M,
+                                        flexWrap: L,
                                         justifyContent: w,
                                         alignItems: x,
                                     }),
                                     computedClassNames: e,
                                 };
-                            }, [t, i, o, s, A, F, H, R, T, B, M, w, x]),
+                            }, [t, i, o, s, A, F, H, R, T, B, L, w, x]),
                             G = I.computedStyle,
                             $ = I.computedClassNames;
                         return r().createElement('div', V({ className: C()(j.base, ...$, e), style: G }, N), W);
@@ -1806,19 +1806,19 @@
                         wu('yes1');
                     },
                 };
-                var xu = t(3403),
-                    Tu = t(7030);
+                var xu = t(3282),
+                    Tu = t(8552);
                 const ku = 'wideSmall',
-                    Lu = 'thinExtraSmall',
-                    Mu = { '302*152': 'big', '302*114': ku, '222*114': 'thinSmall', '162*114': Lu },
+                    Mu = 'thinExtraSmall',
+                    Lu = { '302*152': 'big', '302*114': ku, '222*114': 'thinSmall', '162*114': Mu },
                     yu = (u) => (u < 0.5 ? 4 * u * u * u : (u - 1) * (2 * u - 2) * (2 * u - 2) + 1),
-                    Ou = {
+                    Pu = {
                         from: { x: 0, opacity: 0 },
                         to: { x: 0, opacity: 1 },
                         delay: 0,
                         config: { duration: 800, easing: yu },
                     },
-                    Pu = {
+                    Ou = {
                         from: { opacity: 0 },
                         enter: { opacity: 1 },
                         leave: { opacity: 0 },
@@ -1830,7 +1830,7 @@
                     return !1;
                 }
                 console.log;
-                var Wu = t(9174);
+                var Wu = t(3915);
                 function Nu(u, e) {
                     (null == e || e > u.length) && (e = u.length);
                     for (var t = 0, _ = new Array(e); t < e; t++) _[t] = u[t];
@@ -1970,11 +1970,11 @@
                                                 observableModel: {
                                                     array: (e, t) => {
                                                         const _ = null != t ? t : o(e),
-                                                            r = Wu.LO.box(_, { equals: Hu });
+                                                            r = Wu.observable.box(_, { equals: Hu });
                                                         return (
                                                             'real' === u &&
                                                                 n.subscribe(
-                                                                    (0, Wu.aD)((u) => r.set(u)),
+                                                                    (0, Wu.action)((u) => r.set(u)),
                                                                     e,
                                                                 ),
                                                             r
@@ -1982,11 +1982,11 @@
                                                     },
                                                     object: (e, t) => {
                                                         const _ = null != t ? t : o(e),
-                                                            r = Wu.LO.box(_, { equals: Hu });
+                                                            r = Wu.observable.box(_, { equals: Hu });
                                                         return (
                                                             'real' === u &&
                                                                 n.subscribe(
-                                                                    (0, Wu.aD)((u) => r.set(u)),
+                                                                    (0, Wu.action)((u) => r.set(u)),
                                                                     e,
                                                                 ),
                                                             r
@@ -1996,13 +1996,13 @@
                                                         const _ = o(t);
                                                         if (Array.isArray(e)) {
                                                             const r = e.reduce(
-                                                                (u, e) => ((u[e] = Wu.LO.box(_[e], {})), u),
+                                                                (u, e) => ((u[e] = Wu.observable.box(_[e], {})), u),
                                                                 {},
                                                             );
                                                             return (
                                                                 'real' === u &&
                                                                     n.subscribe(
-                                                                        (0, Wu.aD)((u) => {
+                                                                        (0, Wu.action)((u) => {
                                                                             e.forEach((e) => {
                                                                                 r[e].set(u[e]);
                                                                             });
@@ -2016,13 +2016,16 @@
                                                             const r = e,
                                                                 i = Object.entries(r),
                                                                 a = i.reduce(
-                                                                    (u, [e, t]) => ((u[t] = Wu.LO.box(_[e], {})), u),
+                                                                    (u, [e, t]) => (
+                                                                        (u[t] = Wu.observable.box(_[e], {})),
+                                                                        u
+                                                                    ),
                                                                     {},
                                                                 );
                                                             return (
                                                                 'real' === u &&
                                                                     n.subscribe(
-                                                                        (0, Wu.aD)((u) => {
+                                                                        (0, Wu.action)((u) => {
                                                                             i.forEach(([e, t]) => {
                                                                                 a[t].set(u[e]);
                                                                             });
@@ -2154,7 +2157,7 @@
                                   })
                                 : ju.countdown.sec();
                     },
-                    qu = (u, e, t, _) => {
+                    Yu = (u, e, t, _) => {
                         const i = new Date(1e3 * t),
                             a = t - _,
                             n = e - _;
@@ -2175,8 +2178,8 @@
                                 return {};
                         }
                     },
-                    Yu = ({ state: u, startTime: e, endTime: t, currentTime: _, currentSize: i }) => {
-                        const a = i === Lu && u === H.PostProgression,
+                    qu = ({ state: u, startTime: e, endTime: t, currentTime: _, currentSize: i }) => {
+                        const a = i === Mu && u === H.PostProgression,
                             n = u === H.PostProgression && (i === ku || 'big' === i),
                             o = vu(t - _).days > 0,
                             l = C()(
@@ -2202,7 +2205,7 @@
                                 r().createElement('div', { className: C()(Xu.icon, Xu.icon__lock) }),
                             r().createElement(Du, {
                                 text: String(a ? ju.postProgressionShort() : ju.$dyn(u)),
-                                format: { binding: qu(u, e, t, _) },
+                                format: { binding: Yu(u, e, t, _) },
                             }),
                         );
                     },
@@ -2414,7 +2417,7 @@
                     },
                     ne = ({ isHover: u, currentSize: e, isLowPreset: t }) => {
                         const _ = Zu(),
-                            i = (0, Tu.useTransition)(u, Object.assign({ key: u }, Pu)),
+                            i = (0, Tu.useTransition)(u, Object.assign({ key: u }, Ou)),
                             a = (0, Tu.useSpring)({ scale: u ? 1.03 : 1, INCREASE_CONFIG: Ru });
                         return r().createElement(
                             'div',
@@ -2460,7 +2463,7 @@
                         hover_intro: 'WidgetBeforeProgression_hover_intro_7a',
                     },
                     le = ({ isHover: u, currentSize: e }) => {
-                        const t = (0, Tu.useTransition)(u, Object.assign({ key: u }, Pu));
+                        const t = (0, Tu.useTransition)(u, Object.assign({ key: u }, Ou));
                         return r().createElement(
                             'div',
                             { className: oe.base },
@@ -2504,7 +2507,7 @@
                     },
                     Ee = ({ isHover: u, currentSize: e, isLowPreset: t }) => {
                         const _ = Zu(),
-                            i = (0, Tu.useTransition)(u, Object.assign({ key: u }, Pu)),
+                            i = (0, Tu.useTransition)(u, Object.assign({ key: u }, Ou)),
                             a = (0, Tu.useSpring)({ scale: u ? 1.03 : 1, INCREASE_CONFIG: Ru }),
                             n = C()(
                                 se.sparks,
@@ -2606,7 +2609,7 @@
                         stroke__big: 'App_stroke__big_5f',
                     },
                     ce = R.strings.armory_yard.widget,
-                    Fe = (0, xu.Pi)(() => {
+                    Fe = (0, xu.observer)(() => {
                         const u = Uu(),
                             e = u.model,
                             t = u.controls,
@@ -2652,7 +2655,7 @@
                                     t
                                 );
                             })(),
-                            v = Mu[`${b.width}*${b.height}`],
+                            v = Lu[`${b.width}*${b.height}`],
                             S = (0, _.useCallback)(() => {
                                 (fu.playYes(), t.action());
                             }, [t]),
@@ -2662,7 +2665,7 @@
                             f = (0, _.useCallback)(() => {
                                 p(!1);
                             }, []),
-                            x = (0, Tu.useSpring)(Ou),
+                            x = (0, Tu.useSpring)(Pu),
                             T = C()(Ae.base, h && Ae.base__hover),
                             k = C()(
                                 Ae.title,
@@ -2754,7 +2757,7 @@
                                     r().createElement(
                                         'div',
                                         { className: C()(Ae.state, Ae[`state__${v}`]) },
-                                        r().createElement(Yu, {
+                                        r().createElement(qu, {
                                             state: m,
                                             startTime: o,
                                             endTime: l,
@@ -2785,7 +2788,7 @@
                                 for (const t in u)
                                     if (Object.prototype.hasOwnProperty.call(u, t)) {
                                         const _ = u[t];
-                                        e[t] = (0, Wu.aD)(_);
+                                        e[t] = (0, Wu.action)(_);
                                     }
                                 return e;
                             })({
@@ -2796,7 +2799,7 @@
                     };
                 var me;
                 engine.whenReady.then(() => {
-                    P().render(
+                    O().render(
                         r().createElement(
                             $u,
                             { mode: 'real', mocks: De },
@@ -2813,7 +2816,7 @@
         var e = __webpack_module_cache__[u];
         if (void 0 !== e) return e.exports;
         var t = (__webpack_module_cache__[u] = { exports: {} });
-        return (__webpack_modules__[u](t, t.exports, __webpack_require__), t.exports);
+        return (__webpack_modules__[u].call(t.exports, t, t.exports, __webpack_require__), t.exports);
     }
     ((__webpack_require__.m = __webpack_modules__),
         (deferred = []),
@@ -2863,7 +2866,6 @@
                 Object.defineProperty(u, Symbol.toStringTag, { value: 'Module' }),
                 Object.defineProperty(u, '__esModule', { value: !0 }));
         }),
-        (__webpack_require__.j = 946),
         (() => {
             var u = { 946: 0 };
             __webpack_require__.O.j = (e) => 0 === u[e];

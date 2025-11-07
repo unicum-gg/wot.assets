@@ -1805,6 +1805,7 @@
                                         clearInterval(r);
                                     };
                                 }
+                                E(0);
                             }, [u, e, t, n]),
                             i
                         );

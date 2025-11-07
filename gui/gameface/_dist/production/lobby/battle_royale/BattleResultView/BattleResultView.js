@@ -3297,46 +3297,48 @@
                     );
                 }
                 const Ct = (e) => {
-                        let t = e.children,
-                            u = (function (e, t) {
-                                if (null == e) return {};
-                                var u,
-                                    n,
-                                    a = {},
-                                    r = Object.keys(e);
-                                for (n = 0; n < r.length; n++) ((u = r[n]), t.indexOf(u) >= 0 || (a[u] = e[u]));
-                                return a;
-                            })(e, Bt);
-                        return a().createElement(
-                            Dt,
-                            vt({}, u, { contentID: R.views.common.BackportContextMenu('resId') }),
-                            t,
-                        );
-                    },
-                    ft = ({ format: e, value: t }) => {
-                        const u = ((e, t = 'integral') => {
-                            let u;
-                            u = 'gold' === t ? Se.B3.GOLD : Se.B3.INTEGRAL;
-                            return void 0 === e ? '' : Se.Z5.getNumberFormat(e, u);
-                        })(t, e);
-                        return u ? a().createElement('span', null, u) : null;
-                    },
-                    wt = [
-                        'children',
-                        'contentId',
-                        'args',
-                        'onMouseEnter',
-                        'onMouseLeave',
-                        'onMouseDown',
-                        'onClick',
-                        'ignoreShowDelay',
-                        'ignoreMouseClick',
-                        'decoratorId',
-                        'isEnabled',
-                        'targetId',
-                        'onShow',
-                        'onHide',
-                    ];
+                    let t = e.children,
+                        u = (function (e, t) {
+                            if (null == e) return {};
+                            var u,
+                                n,
+                                a = {},
+                                r = Object.keys(e);
+                            for (n = 0; n < r.length; n++) ((u = r[n]), t.indexOf(u) >= 0 || (a[u] = e[u]));
+                            return a;
+                        })(e, Bt);
+                    return a().createElement(
+                        Dt,
+                        vt({}, u, { contentID: R.views.common.BackportContextMenu('resId') }),
+                        t,
+                    );
+                };
+                class ft extends a().PureComponent {
+                    render() {
+                        let e;
+                        if ('gold' === this.props.format) e = Se.B3.GOLD;
+                        else e = Se.B3.INTEGRAL;
+                        const t = Se.Z5.getNumberFormat(this.props.value, e);
+                        return void 0 !== this.props.value && void 0 !== t ? t : null;
+                    }
+                }
+                ft.defaultProps = { format: 'integral' };
+                const wt = [
+                    'children',
+                    'contentId',
+                    'args',
+                    'onMouseEnter',
+                    'onMouseLeave',
+                    'onMouseDown',
+                    'onClick',
+                    'ignoreShowDelay',
+                    'ignoreMouseClick',
+                    'decoratorId',
+                    'isEnabled',
+                    'targetId',
+                    'onShow',
+                    'onHide',
+                ];
                 function St(e) {
                     return Object.entries(e || {}).map(([e, t]) => {
                         const u = { __Type: 'GFValueProxy', name: e };
@@ -5113,6 +5115,7 @@
                         (e.SelectableBonus = 'selectableBonus'),
                         (e.StyleProgressToken = 'styleProgressToken'),
                         (e.TmanToken = 'tmanToken'),
+                        (e.PortalEventDiscount25 = 'portalEventDiscountToken'),
                         (e.NaturalCover = 'naturalCover'),
                         (e.BpCoin = 'bpcoin'),
                         (e.BattlaPassFinalAchievement = 'dossier_achievement'),
@@ -5140,12 +5143,9 @@
                         (e.GoldenTicket = 'birthday2025_golden_ticket'),
                         (e.PostStamp = 'giftsystem_4_stamp'),
                         (e.Quests = 'quests'),
-                        (e.WtStamp = 'stamp'),
-                        (e.WtHunter = 'wt_hunter'),
-                        (e.WtHunterCollection = 'hunter_collection'),
-                        (e.WtTicket = 'wtevent_ticket'),
-                        (e.WtMainPrizeDiscount = 'main_prize_discount'),
-                        (e.WtTicket25 = 'wtevent_ticket25'));
+                        (e.BlankPersonalMissions_1 = 'freeTokens_0'),
+                        (e.BlankPersonalMissions_2 = 'freeTokens_2'),
+                        (e.SACoin = 'sacoin'));
                 })(va || (va = {})),
                     (function (e) {
                         ((e.Gold = 'gold'),
@@ -5276,11 +5276,9 @@
                     va.SelectableBonus,
                     va.GoldenTicket,
                     va.PostStamp,
-                    va.WtStamp,
-                    va.WtTicket,
-                    va.WtMainPrizeDiscount,
-                    va.WtHunter,
-                    va.WtHunterCollection,
+                    va.BlankPersonalMissions_1,
+                    va.BlankPersonalMissions_2,
+                    va.SACoin,
                     va.Gold,
                     va.Credits,
                     va.Crystal,

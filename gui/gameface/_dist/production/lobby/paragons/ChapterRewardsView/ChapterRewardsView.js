@@ -104,8 +104,8 @@
                             I = void 0 === k ? (N ? 'wrap' : void 0) : k,
                             H = e.grow,
                             U = e.shrink,
-                            W = e.flex,
-                            G = void 0 === W ? (H || U ? `${H ? 1 : 0} ${U ? 1 : 0} auto` : void 0) : W,
+                            G = e.flex,
+                            W = void 0 === G ? (H || U ? `${H ? 1 : 0} ${U ? 1 : 0} auto` : void 0) : G,
                             $ = e.style,
                             j = e.children,
                             z = (function (e, u) {
@@ -133,7 +133,7 @@
                                     computedStyle: Object.assign({}, $, n, {
                                         width: void 0 !== t && 'number' == typeof t ? t + 'rem' : t,
                                         height: void 0 !== r && 'number' == typeof r ? r + 'rem' : r,
-                                        flex: G,
+                                        flex: W,
                                         alignSelf: O,
                                         display: b || P ? 'flex' : void 0,
                                         flexDirection: b,
@@ -143,7 +143,7 @@
                                     }),
                                     computedClassNames: u,
                                 };
-                            }, [t, r, i, D, C, p, $, G, O, b, I, M, P]),
+                            }, [t, r, i, D, C, p, $, W, O, b, I, M, P]),
                             V = X.computedStyle,
                             q = X.computedClassNames;
                         return l().createElement('div', m({ className: n()(c.Z.base, ...q, u), style: V }, z), j);
@@ -1801,7 +1801,7 @@
                         (0, s.useCallback)((...e) => (0, u.current)(...e), H)
                     );
                 }
-                function W(e, u, t = []) {
+                function G(e, u, t = []) {
                     const r = (0, s.useRef)(0),
                         n = (0, s.useCallback)(() => window.clearInterval(r.current), t || []);
                     (0, s.useEffect)(() => n, [n]);
@@ -1813,7 +1813,7 @@
                         n,
                     ];
                 }
-                function G(e, u) {
+                function W(e, u) {
                     var t = ('undefined' != typeof Symbol && e[Symbol.iterator]) || e['@@iterator'];
                     if (t) return (t = t.call(e)).next.bind(t);
                     if (
@@ -1924,7 +1924,7 @@
                                             u(e).delete(t);
                                         },
                                         n = (e, ...t) => {
-                                            for (var r, n = G(u(e).values()); !(r = n()).done; ) (0, r.value)(...t);
+                                            for (var r, n = W(u(e).values()); !(r = n()).done; ) (0, r.value)(...t);
                                         };
                                     return (0, s.useMemo)(() => ({ on: t, off: r, trigger: n }), []);
                                 })(),
@@ -2216,7 +2216,7 @@
                                     }
                                 );
                             }, [e, A.offset, A.pending, r, F]));
-                        const C = W((u) => e.applyStepTo(u), m, [e]),
+                        const C = G((u) => e.applyStepTo(u), m, [e]),
                             g = C[0],
                             p = C[1];
                         (0, s.useEffect)(
@@ -2502,7 +2502,7 @@
                                     }
                                 );
                             }, [e, A.offset, A.pending, r, F]));
-                        const g = W((u) => e.applyStepTo(u), m, [e]),
+                        const g = G((u) => e.applyStepTo(u), m, [e]),
                             p = g[0],
                             h = g[1];
                         (0, s.useEffect)(
@@ -2625,8 +2625,8 @@
                     Ie = 'LevelsRewards_scrollWrapper_42',
                     He = 'LevelsRewards_scrollContent_f8',
                     Ue = 'LevelsRewards_scrollBar_d3',
-                    We = 'RewardsColumn_base_14',
-                    Ge = 'RewardsColumn_particlesLine_dc',
+                    Ge = 'RewardsColumn_base_14',
+                    We = 'RewardsColumn_particlesLine_dc',
                     $e = 'RewardsColumn_particlesLine__right_d2',
                     je = 'RewardsColumn_rewards_8c',
                     ze = 'RewardsColumn_rewardItem_9b',
@@ -2831,6 +2831,7 @@
                         (e.SelectableBonus = 'selectableBonus'),
                         (e.StyleProgressToken = 'styleProgressToken'),
                         (e.TmanToken = 'tmanToken'),
+                        (e.PortalEventDiscount25 = 'portalEventDiscountToken'),
                         (e.NaturalCover = 'naturalCover'),
                         (e.BpCoin = 'bpcoin'),
                         (e.BattlaPassFinalAchievement = 'dossier_achievement'),
@@ -2858,12 +2859,9 @@
                         (e.GoldenTicket = 'birthday2025_golden_ticket'),
                         (e.PostStamp = 'giftsystem_4_stamp'),
                         (e.Quests = 'quests'),
-                        (e.WtStamp = 'stamp'),
-                        (e.WtHunter = 'wt_hunter'),
-                        (e.WtHunterCollection = 'hunter_collection'),
-                        (e.WtTicket = 'wtevent_ticket'),
-                        (e.WtMainPrizeDiscount = 'main_prize_discount'),
-                        (e.WtTicket25 = 'wtevent_ticket25'));
+                        (e.BlankPersonalMissions_1 = 'freeTokens_0'),
+                        (e.BlankPersonalMissions_2 = 'freeTokens_2'),
+                        (e.SACoin = 'sacoin'));
                 })(Ke || (Ke = {})),
                     (function (e) {
                         ((e.Gold = 'gold'),
@@ -2957,15 +2955,17 @@
                             (e.PROGRESSION_STYLE_UPGRADED_3 = 'progressionStyleUpgraded_3'),
                             (e.PROGRESSION_STYLE_UPGRADED_4 = 'progressionStyleUpgraded_4'));
                     })(ru || (ru = {})));
-                const nu = ({ format: e, value: u }) => {
-                        const t = ((e, u = 'integral') => {
-                            let t;
-                            t = 'gold' === u ? M.B3.GOLD : M.B3.INTEGRAL;
-                            return void 0 === e ? '' : M.Z5.getNumberFormat(e, t);
-                        })(u, e);
-                        return t ? i().createElement('span', null, t) : null;
-                    },
-                    au = [
+                class nu extends i().PureComponent {
+                    render() {
+                        let e;
+                        if ('gold' === this.props.format) e = M.B3.GOLD;
+                        else e = M.B3.INTEGRAL;
+                        const u = M.Z5.getNumberFormat(this.props.value, e);
+                        return void 0 !== this.props.value && void 0 !== u ? u : null;
+                    }
+                }
+                nu.defaultProps = { format: 'integral' };
+                const au = [
                         Ke.Items,
                         Ke.Equipment,
                         Ke.Xp,
@@ -3003,11 +3003,9 @@
                         Ke.SelectableBonus,
                         Ke.GoldenTicket,
                         Ke.PostStamp,
-                        Ke.WtStamp,
-                        Ke.WtTicket,
-                        Ke.WtMainPrizeDiscount,
-                        Ke.WtHunter,
-                        Ke.WtHunterCollection,
+                        Ke.BlankPersonalMissions_1,
+                        Ke.BlankPersonalMissions_2,
+                        Ke.SACoin,
                     ],
                     su = [Ke.Gold, Ke.Credits, Ke.Crystal, Ke.FreeXp],
                     iu = [Ke.BattlePassPoints],
@@ -3143,6 +3141,8 @@
                                 return `R.images.gui.maps.icons.quests.bonuses.${u}.style_3d`;
                             case 'collectionItem':
                                 return `R.images.gui.maps.icons.collectionItems.${o}.${a}`;
+                            case 'portal':
+                                return `R.images.gui.maps.icons.rewards.${u}.${s}`;
                             default:
                                 return `R.images.gui.maps.icons.quests.bonuses.${u}.${t}`;
                         }
@@ -3698,13 +3698,13 @@
                             );
                         },
                     ),
-                    Wu = [],
-                    Gu = (0, s.memo)(
+                    Gu = [],
+                    Wu = (0, s.memo)(
                         ({ isCompleted: e, rewards: u, isLastColumn: t, currentLevel: r, onOpenOverlay: n }) => {
-                            const a = l()(Ge, !t && $e);
+                            const a = l()(We, !t && $e);
                             return i().createElement(
                                 'div',
-                                { className: We },
+                                { className: Ge },
                                 i().createElement('div', { className: a }),
                                 i().createElement(
                                     'div',
@@ -3712,7 +3712,7 @@
                                     i().createElement(Uu, {
                                         currentLevel: r,
                                         onOpenOverlay: n,
-                                        rewardsData: u || Wu,
+                                        rewardsData: u || Gu,
                                         rewardItemClassMix: ze,
                                         isLevelAchieved: e,
                                         isVertical: !0,
@@ -3884,7 +3884,7 @@
                                                             isCompleted: n.isCompleted,
                                                         }),
                                                     ),
-                                                    i().createElement(Gu, {
+                                                    i().createElement(Wu, {
                                                         currentLevel: a + 1,
                                                         isCompleted: n.isCompleted,
                                                         isLastColumn: a === u.length - 1,

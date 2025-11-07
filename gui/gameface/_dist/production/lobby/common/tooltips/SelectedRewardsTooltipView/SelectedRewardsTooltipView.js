@@ -33,9 +33,9 @@
                         addPreloadTexture: () => b,
                         children: () => F,
                         displayStatus: () => c,
-                        displayStatusIs: () => z,
+                        displayStatusIs: () => V,
                         events: () => d,
-                        extraSize: () => V,
+                        extraSize: () => z,
                         forceTriggerMouseMove: () => q,
                         freezeTextureBeforeResize: () => x,
                         getBrowserTexturePath: () => P,
@@ -43,14 +43,14 @@
                         getScale: () => M,
                         getSize: () => R,
                         getViewGlobalPosition: () => k,
-                        isEventHandled: () => G,
+                        isEventHandled: () => W,
                         isFocused: () => I,
                         pxToRem: () => N,
                         remToPx: () => L,
                         resize: () => S,
                         sendEvent: () => T,
                         setAnimateWindow: () => U,
-                        setEventHandled: () => W,
+                        setEventHandled: () => G,
                         setInputPaddingsRem: () => f,
                         setSidePaddingsRem: () => y,
                         whenTutorialReady: () => H,
@@ -250,10 +250,10 @@
                 function I() {
                     return viewEnv.isFocused();
                 }
-                function W() {
+                function G() {
                     return viewEnv.setEventHandled();
                 }
-                function G() {
+                function W() {
                     return viewEnv.isEventHandled();
                 }
                 function q() {
@@ -262,8 +262,8 @@
                 function Y() {
                     return viewEnv.getShowingStatus();
                 }
-                const z = Object.keys(c).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === c[e]), u), {}),
-                    V = {
+                const V = Object.keys(c).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === c[e]), u), {}),
+                    z = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -1030,8 +1030,8 @@
                         prom: 'FormatTextWithColorTags_prom_dd',
                     },
                     I = /(?:%\(|{)\w*(?:_[Oo]pen|Start)(?:\)s|})?(.*?)(?:%\(|{)\w*(?:_[Cc]lose|End)(?:\)s|})?/g,
-                    W = /(?<=(?:%\(|{))(.*?)(?=(?:_[Oo]pen|Start))/,
-                    G = /(?<=(?:_[Oo]pen|Start)(?:\)s?|}))(.*?)(?=(?:%\(|{))/,
+                    G = /(?<=(?:%\(|{))(.*?)(?=(?:_[Oo]pen|Start))/,
+                    W = /(?<=(?:_[Oo]pen|Start)(?:\)s?|}))(.*?)(?=(?:%\(|{))/,
                     q = (0, E.memo)(({ text: u, binding: e, classMix: t }) => {
                         const F = (0, E.useCallback)((u) => ({ color: `#${u}` }), []),
                             n = (0, E.useMemo)(() => e || {}, [e]);
@@ -1040,8 +1040,8 @@
                             o = 0;
                         for (; D; ) {
                             const t = D[0],
-                                E = W.exec(t),
-                                a = G.exec(t),
+                                E = G.exec(t),
+                                a = W.exec(t),
                                 i = D[1];
                             if (E && a) {
                                 const u = E[0],
@@ -1063,7 +1063,7 @@
                         }
                         return A().createElement(L, { text: r, classMix: t, binding: n });
                     });
-                let Y, z, V, H, K, $, j;
+                let Y, V, z, H, K, $, j;
                 (!(function (u) {
                     ((u.Items = 'items'),
                         (u.Equipment = 'equipment'),
@@ -1096,6 +1096,7 @@
                         (u.SelectableBonus = 'selectableBonus'),
                         (u.StyleProgressToken = 'styleProgressToken'),
                         (u.TmanToken = 'tmanToken'),
+                        (u.PortalEventDiscount25 = 'portalEventDiscountToken'),
                         (u.NaturalCover = 'naturalCover'),
                         (u.BpCoin = 'bpcoin'),
                         (u.BattlaPassFinalAchievement = 'dossier_achievement'),
@@ -1123,12 +1124,9 @@
                         (u.GoldenTicket = 'birthday2025_golden_ticket'),
                         (u.PostStamp = 'giftsystem_4_stamp'),
                         (u.Quests = 'quests'),
-                        (u.WtStamp = 'stamp'),
-                        (u.WtHunter = 'wt_hunter'),
-                        (u.WtHunterCollection = 'hunter_collection'),
-                        (u.WtTicket = 'wtevent_ticket'),
-                        (u.WtMainPrizeDiscount = 'main_prize_discount'),
-                        (u.WtTicket25 = 'wtevent_ticket25'));
+                        (u.BlankPersonalMissions_1 = 'freeTokens_0'),
+                        (u.BlankPersonalMissions_2 = 'freeTokens_2'),
+                        (u.SACoin = 'sacoin'));
                 })(Y || (Y = {})),
                     (function (u) {
                         ((u.Gold = 'gold'),
@@ -1168,7 +1166,7 @@
                             (u.BattlePassPoints = 'battlePassPoints'),
                             (u.BattleBadge = 'dossier_badge'),
                             (u.BattleAchievement = 'dossier_achievement'));
-                    })(z || (z = {})),
+                    })(V || (V = {})),
                     (function (u) {
                         ((u.Big = 'big'),
                             (u.Small = 'small'),
@@ -1181,7 +1179,7 @@
                             (u.S128x100 = 's128x100'),
                             (u.S80x80 = 's80x80'),
                             (u.S48x48 = 's48x48'));
-                    })(V || (V = {})),
+                    })(z || (z = {})),
                     (function (u) {
                         ((u.MULTI = 'multi'),
                             (u.CURRENCY = 'currency'),
@@ -1222,7 +1220,7 @@
                             (u.PROGRESSION_STYLE_UPGRADED_3 = 'progressionStyleUpgraded_3'),
                             (u.PROGRESSION_STYLE_UPGRADED_4 = 'progressionStyleUpgraded_4'));
                     })(j || (j = {})));
-                const X = (u, e = V.Small) => `R.images.gui.maps.icons.quests.bonuses.${e}.${u}_gift`,
+                const X = (u, e = z.Small) => `R.images.gui.maps.icons.quests.bonuses.${e}.${u}_gift`,
                     Q = 'Category_base_e5',
                     Z = 'Category_image_e5',
                     J = 'Category_content_4f',

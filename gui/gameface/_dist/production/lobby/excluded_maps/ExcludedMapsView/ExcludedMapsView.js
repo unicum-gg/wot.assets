@@ -2345,6 +2345,7 @@
                                         clearInterval(r);
                                     };
                                 }
+                                s(0);
                             }, [u, e, t, n]),
                             o
                         );

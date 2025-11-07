@@ -1,0 +1,2332 @@
+.ScrambleText_base_cd {
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+}
+
+.ScrambleText_text_63 {
+    display: flex;
+    flex-wrap: nowrap;
+    font-size: 12rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    transition: color 0.8s ease;
+}
+
+.ScrambleText_text__hover_d1 {
+    color: #f54343;
+    text-shadow:
+        0 0 5rem rgba(255, 127, 0, 0.25),
+        0 0 11rem #ff2a00,
+        0 0 20rem #e52;
+}
+
+.mediaExtraLarge .ScrambleText_text_63 {
+    font-size: 16rem;
+}
+
+.ScrambleText_randomChar_d4 {
+    color: #fafafa;
+    opacity: 0.4;
+}
+
+.CloseButton_base_fb {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    min-width: 124rem;
+    position: relative;
+}
+
+.mediaExtraLarge .CloseButton_base_fb {
+    min-width: 158rem;
+}
+
+.CloseButton_text_7b {
+    color: #fd9;
+    text-shadow:
+        0 0 5rem rgba(255, 127, 0, 0.25),
+        0 0 11rem #ff2a00,
+        0 0 20rem #e52;
+}
+
+.CloseButton_icon_9a {
+    width: 40rem;
+    height: 40rem;
+    background: no-repeat center / cover;
+    cursor: pointer;
+}
+
+.mediaExtraLarge .CloseButton_icon_9a {
+    width: 46rem;
+    height: 46rem;
+}
+
+.CloseButton_icon__default_bc {
+    background-image: url('R.images.portal.gui.maps.icons.hangar.closeButton.icon_default');
+}
+
+.CloseButton_icon__hover_79 {
+    background-image: url('R.images.portal.gui.maps.icons.hangar.closeButton.icon_hover');
+}
+
+.SceneWrapper_base_36 {
+    width: 100%;
+    height: 100%;
+    cursor: grab;
+}
+
+.SceneWrapper_base__down_ab {
+    cursor: all-scroll;
+}
+
+.SceneWrapper_base__moveSpaceDisabled_03 {
+    cursor: auto;
+}
+
+.Box_mt__XS_0c {
+    margin-top: 4rem;
+}
+.Box_mt__SM_eb {
+    margin-top: 8rem;
+}
+.Box_mt__SMp_cf {
+    margin-top: 10rem;
+}
+.Box_mt__MD_25 {
+    margin-top: 16rem;
+}
+.Box_mt__MDp_49 {
+    margin-top: 20rem;
+}
+.Box_mt__LG_e8 {
+    margin-top: 32rem;
+}
+.Box_mt__XL_83 {
+    margin-top: 64rem;
+}
+
+.Box_mr__XS_7c {
+    margin-right: 4rem;
+}
+
+.Box_mr__SM_08 {
+    margin-right: 8rem;
+}
+
+.Box_mr__SMp_06 {
+    margin-right: 10rem;
+}
+
+.Box_mr__MD_4a {
+    margin-right: 16rem;
+}
+
+.Box_mr__MDp_b6 {
+    margin-right: 20rem;
+}
+
+.Box_mr__LG_d0 {
+    margin-right: 32rem;
+}
+
+.Box_mr__XL_db {
+    margin-right: 64rem;
+}
+
+.Box_mb__XS_bb {
+    margin-bottom: 4rem;
+}
+
+.Box_mb__SM_83 {
+    margin-bottom: 8rem;
+}
+
+.Box_mb__SMp_04 {
+    margin-bottom: 10rem;
+}
+
+.Box_mb__MD_ed {
+    margin-bottom: 16rem;
+}
+
+.Box_mb__MDp_65 {
+    margin-bottom: 20rem;
+}
+
+.Box_mb__LG_c8 {
+    margin-bottom: 32rem;
+}
+
+.Box_mb__XL_f8 {
+    margin-bottom: 64rem;
+}
+
+.Box_ml__XS_8a {
+    margin-left: 4rem;
+}
+
+.Box_ml__SM_e6 {
+    margin-left: 8rem;
+}
+
+.Box_ml__SMp_fb {
+    margin-left: 10rem;
+}
+
+.Box_ml__MD_2b {
+    margin-left: 16rem;
+}
+
+.Box_ml__MDp_c7 {
+    margin-left: 20rem;
+}
+
+.Box_ml__LG_39 {
+    margin-left: 32rem;
+}
+
+.Box_ml__XL_4a {
+    margin-left: 64rem;
+}
+
+.FormatText_base_d0 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* eslint-disable-next-line expectedscss*/
+.Text_paragraph-P10_2c {
+    font-size: 10rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.Text_paragraph-P12_22 {
+    font-size: 12rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+.Text_paragraph-P14_a7 {
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+.Text_paragraph-P16_90 {
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+.Text_paragraph-P18_50 {
+    font-size: 18rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+.Text_paragraph-P24_33 {
+    font-size: 24rem;
+    font-weight: 400;
+    line-height: 32rem;
+}
+.Text_heading-H14_8b {
+    font-size: 14rem;
+    font-weight: 700;
+    line-height: 1.15;
+}
+.Text_heading-H15_9e {
+    font-size: 15rem;
+    font-weight: 700;
+    line-height: 1.15;
+}
+.Text_heading-H18_b7 {
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H20R_f6 {
+    font-size: 20rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.Text_heading-H22_27 {
+    font-size: 22rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.Text_heading-H24R_be {
+    font-size: 24rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.Text_heading-H24_0c {
+    font-size: 24rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.Text_heading-H28_78 {
+    font-size: 28rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H36_32 {
+    font-size: 36rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H56_c3 {
+    font-size: 56rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H73_8f {
+    font-size: 73rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H144_a9 {
+    font-size: 144rem;
+    font-weight: 700;
+    line-height: 1;
+}
+.Text_BLACK_REAL_30 {
+    color: #000000;
+}
+.Text_WHITE_REAL_bc {
+    color: #ffffff;
+}
+.Text_WHITE_62 {
+    color: #f2f2f7;
+}
+.Text_WHITE_ORANGE_54 {
+    color: #fefeec;
+}
+.Text_WHITE_SPANISH_df {
+    color: #e9e2bf;
+}
+.Text_PAR_15 {
+    color: #8c8c7e;
+}
+.Text_PAR_SECONDARY_5d {
+    color: #595950;
+}
+.Text_PAR_TERTIARY_c9 {
+    color: #37362e;
+}
+.Text_INFO_RED_30 {
+    color: #ff0000;
+}
+.Text_RED_66 {
+    color: #ff2717;
+}
+.Text_RED_DARK_d8 {
+    color: #b70000;
+}
+.Text_YELLOW_ed {
+    color: #feab34;
+}
+.Text_ORANGE_be {
+    color: #ee7000;
+}
+.Text_CREAM_57 {
+    color: #ffdd99;
+}
+.Text_BROWN_18 {
+    color: #cbac77;
+}
+.Text_GREEN_BRIGHT_3f {
+    color: #80d43a;
+}
+.Text_GREEN_e3 {
+    color: #7ab300;
+}
+.Text_GREEN_DARK_f1 {
+    color: #497212;
+}
+.Text_BLUE_BOOSTER_21 {
+    color: #ccffff;
+}
+.Text_BLUE_TEAMKILLER_ab {
+    color: #09e2ff;
+}
+.Text_CRED_f7 {
+    color: #ced9d9;
+}
+.Text_GOLD_28 {
+    color: #ffc363;
+}
+.Text_BOND_be {
+    color: #c9c9b6;
+}
+.Text_PROM_65 {
+    color: #a29b70;
+}
+
+.Button_base_8d {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 160rem;
+    min-height: 32rem;
+    padding: 0 20rem;
+    overflow: visible;
+    position: relative;
+    cursor: pointer;
+}
+
+.Button_base__extraSmall_b6 {
+    min-width: 100rem;
+    min-height: 24rem;
+}
+
+.Button_base__small_93 {
+    min-height: 24rem;
+}
+
+.Button_base__large_f6 {
+    min-height: 40rem;
+}
+
+.Button_base__extraLarge_9e {
+    min-width: 208rem;
+    min-height: 52rem;
+}
+
+.Button_base__primary_61 {
+    border: 1rem solid #c43519;
+    box-shadow: 0 0 9rem 0 rgba(255, 0, 0, 0.5);
+}
+
+.Button_base__primary_61.Button_animated_7a {
+    animation: Button_ripplePulseButtonBorder_68 1.7s infinite ease-out;
+    animation-delay: 0.4s;
+}
+
+.Button_base__primary_61.Button_base__active_ca {
+    border: 1rem solid #be1f00;
+}
+
+.Button_base__primary_61.Button_base__disabled_9b {
+    border: 1rem solid #580e00;
+    box-shadow: none;
+}
+
+.Button_base__secondary_1c {
+    border: 1rem solid #464646;
+}
+
+.Button_base__secondary_1c.Button_base__disabled_9b {
+    border: 1rem solid #262626;
+}
+
+.Button_base__ghost_ca {
+    border: 1rem solid #464646;
+}
+
+.Button_base__ghost_ca.Button_base__hover_41 {
+    border: 1rem solid #909090;
+}
+
+.Button_base__ghost_ca.Button_base__active_ca {
+    border: 1rem solid #464646;
+}
+
+.Button_base__ghost_ca.Button_base__disabled_9b {
+    border: 1rem solid #1a1a1a;
+}
+
+.Button_base__disabled_9b {
+    cursor: default;
+}
+.Button_bgOverlay_f5,
+.Button_bgImage_ca,
+.Button_bgLines_4f {
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.Button_bgLines_4f {
+    background-image: url('R.images.portal.gui.maps.icons.button.lines');
+}
+.Button_bgLines__primary_65.Button_bgLines__disabled_13 {
+    background-image: url('R.images.portal.gui.maps.icons.button.lines06');
+}
+.Button_bgImage_ca {
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    transition: opacity 0.2s ease-in-out;
+    pointer-events: none;
+    inset: 0;
+}
+.Button_bgImage__primary_25 {
+    background-image: url('R.images.portal.gui.maps.icons.button.primary');
+    opacity: 0.7;
+}
+.Button_bgImage__primary_25.Button_bgImage__hover_82 {
+    opacity: 1;
+}
+.Button_bgImage__primary_25.Button_bgImage__active_9b {
+    opacity: 0.5;
+}
+.Button_bgImage__secondary_d0 {
+    background-image: url('R.images.portal.gui.maps.icons.button.secondary');
+}
+.Button_bgOverlay_f5 {
+    pointer-events: none;
+    inset: 0;
+}
+.Button_bgOverlay__primary_a0 {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+.Button_bgOverlay__secondary_ac {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+.Button_bgOverlay__secondary_ac.Button_bgOverlay__hover_66 {
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), rgba(0, 0, 0, 0.8);
+}
+.Button_bgOverlay__secondary_ac.Button_bgOverlay__active_26 {
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.05) 100%), rgba(0, 0, 0, 0.8);
+}
+.Button_bgOverlay__secondary_ac.Button_bgOverlay__disabled_b1 {
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.05) 100%), rgba(0, 0, 0, 0.8);
+}
+.Button_bgOverlay__ghost_85 {
+    background: rgba(0, 0, 0, 0.2);
+}
+.Button_bgOverlay__ghost_85.Button_bgOverlay__hover_66 {
+    background: rgba(0, 0, 0, 0.4);
+}
+.Button_bgOverlay__ghost_85.Button_bgOverlay__active_26 {
+    background: rgba(0, 0, 0, 0.2);
+}
+.Button_content_f2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-transform: uppercase;
+    position: relative;
+    transition: color 0.2s ease-in-out;
+}
+.Button_content__primary_3f {
+    color: #f7e5e1;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    text-shadow:
+        0 0 5rem rgba(201, 71, 45, 0.25),
+        0 0 10rem rgba(139, 23, 0, 0.5),
+        0 0 16rem #580e00;
+}
+.Button_base__hover_41 .Button_content__primary_3f {
+    color: #e09687;
+    text-shadow:
+        0 0 5rem rgba(201, 71, 45, 0.25),
+        0 0 10rem rgba(139, 23, 0, 0.5),
+        0 0 16rem #580e00;
+}
+.Button_base__active_ca .Button_content__primary_3f {
+    color: #c9472d;
+    text-shadow:
+        0 0 5rem rgba(201, 71, 45, 0.25),
+        0 0 10rem rgba(139, 23, 0, 0.5),
+        0 0 16rem #580e00;
+    opacity: 0.7;
+}
+.Button_base__disabled_9b .Button_content__primary_3f {
+    color: #f7e5e1;
+    text-shadow:
+        0 0 5rem rgba(201, 71, 45, 0.25),
+        0 0 10rem rgba(139, 23, 0, 0.5),
+        0 0 16rem #580e00;
+    opacity: 0.5;
+}
+.Button_content__secondary_a2 {
+    color: #b8b8b8;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+.Button_base__hover_41 .Button_content__secondary_a2 {
+    color: #e2e2e2;
+}
+.Button_base__active_ca .Button_content__secondary_a2 {
+    color: #e2e2e2;
+}
+.Button_base__disabled_9b .Button_content__secondary_a2 {
+    color: #585858;
+}
+.Button_content__ghost_f1 {
+    color: #c6c6c6;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    opacity: 0.6;
+}
+.Button_base__hover_41 .Button_content__ghost_f1 {
+    color: #c6c6c6;
+    opacity: 1;
+}
+.Button_base__active_ca .Button_content__ghost_f1 {
+    color: #b8b8b8;
+    opacity: 1;
+}
+.Button_base__disabled_9b .Button_content__ghost_f1 {
+    color: #c6c6c6;
+    opacity: 0.5;
+}
+.Button_btnIcon_77 {
+    width: 16rem;
+    height: 16rem;
+    margin-top: 2rem;
+    background: no-repeat center / cover;
+    position: relative;
+}
+.Button_btnIcon__right_95 {
+    margin-left: 2rem;
+}
+.Button_btnIcon__left_08 {
+    width: 36rem;
+    height: 36rem;
+    margin-right: 2rem;
+}
+.Button_pulseAnimatedBoxOne_ce,
+.Button_pulseAnimatedBoxTwo_80,
+.Button_pulseAnimatedBoxThree_bc {
+    width: 176rem;
+    height: 40rem;
+    border: 1rem solid #c43519;
+    position: absolute;
+    z-index: 1;
+    transform-origin: center;
+}
+.Button_pulseAnimatedBoxOne_ce {
+    animation: Button_ripplePulseOne_f5 1.7s infinite ease-out;
+    animation-delay: 0.4s;
+}
+.Button_pulseAnimatedBoxTwo_80 {
+    animation: Button_ripplePulseTwo_48 1.7s infinite ease-out;
+    animation-delay: 0.4s;
+}
+.Button_pulseAnimatedBoxThree_bc {
+    animation: Button_ripplePulseThree_45 1.7s infinite ease-out;
+    animation-delay: 0.4s;
+}
+@keyframes Button_ripplePulseOne_f5 {
+    0% {
+        width: 178rem;
+        height: 42rem;
+        border-color: #ef593b;
+        opacity: 1;
+    }
+
+    100% {
+        width: 230rem;
+        height: 90rem;
+        opacity: 0;
+    }
+}
+@keyframes Button_ripplePulseTwo_48 {
+    0% {
+        width: 178rem;
+        height: 42rem;
+        border-color: #ef593b;
+        opacity: 1;
+    }
+
+    100% {
+        width: 222rem;
+        height: 82rem;
+        opacity: 0;
+    }
+}
+@keyframes Button_ripplePulseThree_45 {
+    0% {
+        width: 178rem;
+        height: 42rem;
+        border-color: #ef593b;
+        opacity: 1;
+    }
+
+    100% {
+        width: 214rem;
+        height: 74rem;
+        opacity: 0;
+    }
+}
+@keyframes Button_ripplePulseButtonBorder_68 {
+    0% {
+        border-color: #ef593b;
+    }
+
+    100% {
+        border-color: #c43519;
+    }
+}
+
+.AmmunitionPanel_base_72 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.mediaExtraLarge .AmmunitionPanel_base_72 {
+    transform: scale(1.3);
+}
+
+.AmmunitionPanel_vehicleInfo_7d {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 18rem;
+}
+
+.AmmunitionPanel_levelupIcon_2b {
+    color: #e2e2e2;
+    font-size: 28rem;
+    font-weight: 700;
+    line-height: 1.1;
+    width: 210rem;
+    height: 210rem;
+    background: url('R.images.portal.gui.maps.icons.hangar.carousel.card.levelUp') no-repeat center/contain;
+    font-weight: 400;
+}
+
+.AmmunitionPanel_vehicleType_da {
+    width: 48rem;
+    height: 48rem;
+    margin-left: 6rem;
+    margin-right: 4rem;
+    background: no-repeat center/contain;
+}
+
+.AmmunitionPanel_vehicleType__lightTank_c7 {
+    position: relative;
+    top: 3rem;
+}
+
+.AmmunitionPanel_name_e7,
+.AmmunitionPanel_level_d0 {
+    color: #e2e2e2;
+    font-size: 24rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+.AmmunitionPanel_slotsWithButton_a1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 662rem;
+    height: 80rem;
+    background: url('R.images.portal.gui.maps..icons.hangar.ammunitionPanel.shadow') no-repeat center/contain;
+}
+
+.AmmunitionPanel_buttonContent_0e {
+    margin-left: -12rem;
+}
+
+.AmmunitionPanel_slotLargeMargin_05 {
+    margin-right: 19rem;
+    position: relative;
+}
+
+.AmmunitionPanel_slotMargin_46 {
+    margin-right: 6rem;
+}
+
+.AmmunitionPanel_slotContent_e8 {
+    width: 48rem;
+    height: 48rem;
+    background: no-repeat center / contain;
+}
+
+.AmmunitionPanel_repairkit_f6 {
+    width: 48rem;
+    height: 48rem;
+    background: url('R.images.portal.gui.maps.icons.hangar.ammunitionPanel.largeRepairkit') no-repeat center/contain;
+}
+
+.AmmunitionPanel_divider_29 {
+    width: 1rem;
+    height: 50rem;
+    margin-right: 19rem;
+}
+
+.AmmunitionPanel_infinityIcon_4f {
+    width: 34rem;
+    height: 22rem;
+    background: url('R.images.portal.gui.maps.icons.hangar.ammunitionPanel.infinity') no-repeat center/contain;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.AmmunitionPanel_button_70 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 186rem;
+    height: 100%;
+    margin-left: 24rem;
+    position: relative;
+}
+
+.AmmunitionPanel_button__withMask_0c {
+    background: url('R.images.portal.gui.maps..icons.hangar.ammunitionPanel.buttonMask') no-repeat center/contain;
+}
+
+.AmmunitionPanel_hasNewUpgrade_27 {
+    padding-right: 8rem;
+    text-align: center;
+}
+
+.Slot_base_f6 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 54rem;
+    height: 54rem;
+}
+
+.ComplexityLevel_base_f1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80rem;
+    height: 80rem;
+    position: relative;
+    cursor: pointer;
+}
+
+.mediaMedium .ComplexityLevel_base_f1 {
+    width: 104rem;
+    height: 104rem;
+}
+
+.mediaExtraLarge .ComplexityLevel_base_f1 {
+    width: 140rem;
+    height: 140rem;
+}
+
+.ComplexityLevel_base__selected_13 {
+    cursor: default;
+}
+
+.ComplexityLevel_base__locked_5b {
+    cursor: default;
+}
+.ComplexityLevel_defaultImage_98 {
+    width: 100%;
+    height: 100%;
+    background: no-repeat center/contain;
+    position: absolute;
+    z-index: 1;
+    transition: opacity 0.3s;
+}
+.ComplexityLevel_base__locked_5b .ComplexityLevel_defaultImage_98 {
+    opacity: 0.4;
+}
+.ComplexityLevel_hoverImage_57 {
+    width: 100%;
+    height: 100%;
+    background: no-repeat center/contain;
+    opacity: 0;
+    position: absolute;
+    z-index: 2;
+    transition: opacity 0.3s;
+}
+.ComplexityLevel_base__hovered_3e .ComplexityLevel_hoverImage_57 {
+    opacity: 1;
+}
+.ComplexityLevel_selectImage_ea {
+    width: 100%;
+    height: 100%;
+    background: no-repeat center/contain;
+    filter: brightness(1);
+    opacity: 0;
+    position: absolute;
+    z-index: 4;
+    transition: all 0.3s;
+}
+.ComplexityLevel_base__selected_13 .ComplexityLevel_selectImage_ea {
+    opacity: 1;
+}
+.ComplexityLevel_pressedImage_6d {
+    width: 100%;
+    height: 100%;
+    background: no-repeat center/contain;
+    filter: brightness(1);
+    opacity: 0;
+    position: absolute;
+    z-index: 3;
+    transition: all 0.3s;
+}
+.ComplexityLevel_base__pressed_fc .ComplexityLevel_pressedImage_6d {
+    opacity: 1;
+}
+.ComplexityLevel_lockIcon_ed {
+    width: 19rem;
+    height: 22rem;
+    background: url('R.images.portal.gui.maps.icons.hangar.complexityLevelSelector.lock') no-repeat center/contain;
+    position: absolute;
+    bottom: 0;
+}
+.mediaMedium .ComplexityLevel_lockIcon_ed {
+    width: 24rem;
+    height: 28rem;
+}
+.mediaExtraLarge .ComplexityLevel_lockIcon_ed {
+    width: 32rem;
+    height: 38rem;
+}
+.ComplexityLevel_lockSquadIcon_29 {
+    width: 19rem;
+    height: 22rem;
+    background: url('R.images.portal.gui.maps.icons.hangar.complexityLevelSelector.lockSquad') no-repeat center/contain;
+    position: absolute;
+    bottom: 0;
+    z-index: 1;
+}
+.mediaMedium .ComplexityLevel_lockSquadIcon_29 {
+    width: 24rem;
+    height: 28rem;
+}
+.mediaExtraLarge .ComplexityLevel_lockSquadIcon_29 {
+    width: 32rem;
+    height: 38rem;
+}
+.ComplexityLevel_description_59 {
+    color: #e2e2e2;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    position: absolute;
+    bottom: -15rem;
+}
+.mediaMedium .ComplexityLevel_description_59 {
+    color: #e2e2e2;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+    bottom: -20rem;
+}
+.mediaExtraLarge .ComplexityLevel_description_59 {
+    color: #e2e2e2;
+    font-size: 20rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.ComplexityLevel_base__hovered_3e .ComplexityLevel_description_59 {
+    color: #e09687;
+    text-shadow:
+        0 0 4rem #3c0102,
+        0 0 12rem #8e2022,
+        0 0 4rem rgba(201, 71, 45, 0.25),
+        0 0 8rem rgba(139, 23, 0, 0.5),
+        0 0 12rem #580e00;
+}
+.ComplexityLevel_base__pressed_fc .ComplexityLevel_description_59 {
+    color: #aa1c00;
+    text-shadow: none;
+}
+.ComplexityLevel_base__selected_13 .ComplexityLevel_description_59 {
+    color: #c9472d;
+    text-shadow: none;
+}
+.ComplexityLevel_base__locked_5b .ComplexityLevel_description_59 {
+    color: #909090;
+}
+
+.ComplexitySelector_base_37 {
+    display: flex;
+}
+
+.ComplexitySelector_level_56 + .ComplexitySelector_level_56 {
+    margin-left: 20rem;
+}
+
+.InfoButton_base_a9 {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    min-width: 126rem;
+    cursor: pointer;
+}
+
+.mediaExtraLarge .InfoButton_base_a9 {
+    min-width: 158rem;
+}
+
+.InfoButton_icon_96 {
+    width: 46rem;
+    height: 46rem;
+    margin-top: 2rem;
+    background: no-repeat center / cover;
+}
+
+.InfoButton_icon__default_4b {
+    background-image: url('R.images.portal.gui.maps.icons.info_button.icon_default');
+}
+
+.InfoButton_base_a9:hover .InfoButton_icon_96 {
+    background-image: url('R.images.portal.gui.maps.icons.info_button.icon_hover');
+}
+
+.InfoButton_text_91 {
+    color: #ccffff;
+    font-size: 12rem;
+    font-weight: 400;
+    line-height: 1.3;
+    margin-left: -10rem;
+    text-shadow:
+        0 0 8rem #00eaff,
+        0 0 18rem rgba(31, 68, 255, 0.8);
+    text-transform: uppercase;
+}
+
+.mediaExtraLarge .InfoButton_text_91 {
+    color: #ccffff;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+
+.InfoButton_base_a9:hover .InfoButton_text_91 {
+    color: #c9472d;
+    text-shadow:
+        0 0 4rem #be1f00,
+        0 0 8rem #8b1700,
+        0 0 15rem #580e00;
+}
+
+.PortalLobbyViewApp_base_93 {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    pointer-events: none;
+}
+
+.PortalLobbyViewApp_vignette_de {
+    width: 100%;
+    height: 100%;
+    background: url('R.images.portal.gui.maps.icons.hangar.urgent_background') no-repeat center / cover;
+    opacity: 0;
+    position: absolute;
+    transition: opacity 150ms;
+}
+
+.mediaMedium .PortalLobbyViewApp_vignette_de {
+    background: url('R.images.portal.gui.maps.icons.hangar.urgent_background_large') no-repeat center / cover;
+}
+
+.mediaExtraLarge .PortalLobbyViewApp_vignette_de {
+    background: url('R.images.portal.gui.maps.icons.hangar.urgent_background_extraLarge') no-repeat center / cover;
+}
+
+.PortalLobbyViewApp_vignette__visible_53 {
+    opacity: 1;
+}
+
+.PortalLobbyViewApp_questsWidget_5d {
+    position: absolute;
+    top: 40%;
+    left: 0;
+    transform: translateY(-50%);
+    pointer-events: auto;
+}
+
+.PortalLobbyViewApp_shopWidget_91 {
+    position: absolute;
+    top: 40%;
+    right: 0;
+    transform: translateY(-50%);
+    pointer-events: auto;
+}
+
+.PortalLobbyViewApp_closeButton_89 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 20rem;
+    right: 58rem;
+    z-index: 1;
+    pointer-events: auto;
+}
+
+.mediaLarge .PortalLobbyViewApp_closeButton_89 {
+    top: 16rem;
+    right: 55rem;
+}
+
+.mediaExtraLarge .PortalLobbyViewApp_closeButton_89 {
+    top: 52rem;
+    right: 110rem;
+    transform: scale(1.3);
+}
+
+.PortalLobbyViewApp_closeButtonContent_5a {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.PortalLobbyViewApp_closeIcon_53 {
+    width: 58rem;
+    height: 58rem;
+    background: no-repeat center / cover;
+    position: absolute;
+    top: -22rem;
+    right: -43rem;
+    cursor: pointer;
+}
+
+.mediaLarge .PortalLobbyViewApp_closeIcon_53 {
+    width: 64rem;
+    height: 64rem;
+    top: -25rem;
+    right: -45rem;
+}
+
+.mediaExtraLarge .PortalLobbyViewApp_closeIcon_53 {
+    width: 64rem;
+    height: 64rem;
+    top: -22rem;
+    right: -45rem;
+}
+
+.PortalLobbyViewApp_closeIcon__default_1a {
+    background-image: url('R.images.portal.gui.maps.icons.hangar.closeButton.icon_default');
+}
+
+.PortalLobbyViewApp_closeIcon__hover_76 {
+    background-image: url('R.images.portal.gui.maps.icons.hangar.closeButton.icon_hover');
+}
+
+.PortalLobbyViewApp_infoButton_cf {
+    position: absolute;
+    top: 30rem;
+    left: 35rem;
+    pointer-events: auto;
+}
+
+.mediaLarge .PortalLobbyViewApp_infoButton_cf {
+    top: 27rem;
+}
+
+.mediaExtraLarge .PortalLobbyViewApp_infoButton_cf {
+    top: 64rem;
+    left: 61rem;
+    transform: scale(1.3);
+}
+
+.PortalLobbyViewApp_progressionEntryPoint_8e {
+    width: 100rem;
+    height: 100rem;
+    border: 2rem solid #f00;
+    border-radius: 4rem;
+    position: absolute;
+    bottom: 16rem;
+    left: 16rem;
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+.PortalLobbyViewApp_complexity_ba {
+    position: absolute;
+    top: 14rem;
+    left: 50%;
+    transform: translateX(-50%);
+    pointer-events: auto;
+}
+
+.mediaLarge .PortalLobbyViewApp_complexity_ba {
+    top: 24rem;
+}
+
+.PortalLobbyViewApp_complexity__bg_11 {
+    width: 1000rem;
+    height: 186rem;
+    background: url('R.images.portal.gui.maps.icons.hangar.complexityLevelSelector.bg.s1000x186') no-repeat top / cover;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    z-index: -1;
+    transform: translateX(-50%);
+}
+
+.mediaMedium .PortalLobbyViewApp_complexity__bg_11 {
+    width: 1200rem;
+    height: 224rem;
+    background-image: url('R.images.portal.gui.maps.icons.hangar.complexityLevelSelector.bg.s1200x224');
+}
+
+.mediaExtraLarge .PortalLobbyViewApp_complexity__bg_11 {
+    width: 1600rem;
+    height: 300rem;
+    background-image: url('R.images.portal.gui.maps.icons.hangar.complexityLevelSelector.bg.s1600x300');
+}
+
+.PortalLobbyViewApp_ammunitionPanel_e3 {
+    position: absolute;
+    bottom: 159rem;
+    left: 50%;
+    transform: translateX(-50%);
+    pointer-events: auto;
+}
+
+.mediaMedium .PortalLobbyViewApp_ammunitionPanel_e3 {
+    bottom: 153rem;
+}
+
+.mediaLarge .PortalLobbyViewApp_ammunitionPanel_e3 {
+    bottom: 163rem;
+}
+
+.mediaExtraLarge .PortalLobbyViewApp_ammunitionPanel_e3 {
+    bottom: 255rem;
+}
+
+.PortalLobbyViewApp_carousel_d0 {
+    position: absolute;
+    bottom: 19rem;
+    left: 50%;
+    transform: translateX(-50%);
+    pointer-events: auto;
+}
+
+.mediaSmall .PortalLobbyViewApp_carousel_d0 {
+    bottom: 10rem;
+}
+
+.mediaExtraLarge .PortalLobbyViewApp_carousel_d0 {
+    bottom: 65rem;
+}
+
+.PortalLobbyViewApp_shadow_5c {
+    width: 100%;
+    height: 175rem;
+    background: radial-gradient(50% 100% at 50% 100%, #0b0505 60%, rgba(9, 21, 29, 0.05) 100%);
+    opacity: 0.7;
+    position: absolute;
+    bottom: -35rem;
+}
+
+.mediaExtraLarge .PortalLobbyViewApp_shadow_5c {
+    height: 244rem;
+}
+
+.QuestsWidget_base_58 {
+    width: 240rem;
+    height: 377rem;
+    position: relative;
+}
+
+.mediaMedium .QuestsWidget_base_58 {
+    width: 340rem;
+    height: 529rem;
+}
+
+.mediaExtraLarge .QuestsWidget_base_58 {
+    width: 485rem;
+    height: 773rem;
+}
+
+.QuestsWidget_base__hovered_93 {
+    cursor: pointer;
+}
+.QuestsWidget_mainImage_db {
+    width: 182rem;
+    height: 308rem;
+    background: url('R.images.portal.gui.maps.icons.hangar.questsWidget.mainImage') no-repeat center / contain;
+    position: absolute;
+    top: 50%;
+    left: -20rem;
+    z-index: 1;
+    transform: translate(0rem, -50%);
+    transition: transform 400ms;
+}
+.mediaMedium .QuestsWidget_mainImage_db {
+    width: 256rem;
+    height: 434rem;
+}
+.mediaExtraLarge .QuestsWidget_mainImage_db {
+    width: 367rem;
+    height: 621rem;
+    left: -30rem;
+}
+.QuestsWidget_base__hovered_93 .QuestsWidget_mainImage_db {
+    transform: translate(20rem, -50%);
+}
+.mediaExtraLarge .QuestsWidget_base__hovered_93 .QuestsWidget_mainImage_db {
+    transform: translate(30rem, -50%);
+}
+.QuestsWidget_secondaryImage_fc {
+    width: 99rem;
+    height: 344rem;
+    background: url('R.images.portal.gui.maps.icons.hangar.questsWidget.secondaryImage') no-repeat center / contain;
+    opacity: 0.5;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    z-index: 4;
+    transform: translateY(-50%);
+    transition: opacity 400ms;
+}
+.mediaMedium .QuestsWidget_secondaryImage_fc {
+    width: 140rem;
+    height: 485rem;
+}
+.mediaExtraLarge .QuestsWidget_secondaryImage_fc {
+    width: 199rem;
+    height: 694rem;
+}
+.QuestsWidget_base__hovered_93 .QuestsWidget_secondaryImage_fc {
+    opacity: 1;
+}
+.QuestsWidget_smoke_5c {
+    width: 240rem;
+    height: 332rem;
+    background: url('R.images.portal.gui.maps.icons.hangar.questsWidget.defaultSmoke') no-repeat center / contain;
+    position: absolute;
+    top: 0;
+    left: -15rem;
+    z-index: 0;
+    animation: QuestsWidget_floatFog_5d 20s infinite ease-in-out;
+}
+.mediaMedium .QuestsWidget_smoke_5c {
+    width: 339rem;
+    height: 457rem;
+}
+.mediaExtraLarge .QuestsWidget_smoke_5c {
+    width: 485rem;
+    height: 668rem;
+}
+.QuestsWidget_smokeHovered_42 {
+    width: 240rem;
+    height: 332rem;
+    background: url('R.images.portal.gui.maps.icons.hangar.questsWidget.hoverSmoke') no-repeat center / contain;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    transition: opacity 400ms;
+}
+.mediaMedium .QuestsWidget_smokeHovered_42 {
+    width: 339rem;
+    height: 467rem;
+}
+.mediaExtraLarge .QuestsWidget_smokeHovered_42 {
+    width: 485rem;
+    height: 668rem;
+}
+.QuestsWidget_base__hovered_93 .QuestsWidget_smokeHovered_42 {
+    opacity: 1;
+}
+.QuestsWidget_bottomImage_2f {
+    width: 240rem;
+    height: 130rem;
+    background: url('R.images.portal.gui.maps.icons.hangar.questsWidget.defaultBottomImage') no-repeat center / contain;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 3;
+}
+.mediaMedium .QuestsWidget_bottomImage_2f {
+    width: 340rem;
+    height: 183rem;
+}
+.mediaExtraLarge .QuestsWidget_bottomImage_2f {
+    width: 485rem;
+    height: 261rem;
+}
+.QuestsWidget_bottomImageHovered_8b {
+    width: 240rem;
+    height: 130rem;
+    background: url('R.images.portal.gui.maps.icons.hangar.questsWidget.hoverBottomImage') no-repeat center / contain;
+    opacity: 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 3;
+    transition: opacity 400ms;
+}
+.mediaMedium .QuestsWidget_bottomImageHovered_8b {
+    width: 340rem;
+    height: 183rem;
+}
+.mediaExtraLarge .QuestsWidget_bottomImageHovered_8b {
+    width: 485rem;
+    height: 261rem;
+}
+.QuestsWidget_base__hovered_93 .QuestsWidget_bottomImageHovered_8b {
+    opacity: 1;
+}
+.QuestsWidget_hoverImage_ea {
+    width: 182rem;
+    height: 308rem;
+    background: url('R.images.portal.gui.maps.icons.hangar.questsWidget.hoverImage') no-repeat center / contain;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: -20rem;
+    z-index: 2;
+    transform: translate(0rem, -50%);
+    transition:
+        opacity 400ms,
+        transform 400ms;
+}
+.mediaMedium .QuestsWidget_hoverImage_ea {
+    width: 256rem;
+    height: 434rem;
+}
+.mediaExtraLarge .QuestsWidget_hoverImage_ea {
+    width: 367rem;
+    height: 621rem;
+    left: -30rem;
+}
+.QuestsWidget_base__hovered_93 .QuestsWidget_hoverImage_ea {
+    opacity: 1;
+    transform: translate(20rem, -50%);
+}
+.mediaExtraLarge .QuestsWidget_base__hovered_93 .QuestsWidget_hoverImage_ea {
+    transform: translate(30rem, -50%);
+}
+.QuestsWidget_texts_c6 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 27rem;
+    left: 50rem;
+    z-index: 5;
+    justify-items: center;
+}
+.mediaMedium .QuestsWidget_texts_c6 {
+    bottom: 41rem;
+    left: 70rem;
+}
+.mediaExtraLarge .QuestsWidget_texts_c6 {
+    bottom: 84rem;
+    left: 88rem;
+}
+.QuestsWidget_progress_e7 {
+    color: #e2e2e2;
+    font-size: 22rem;
+    font-weight: 700;
+    line-height: 1.2;
+    text-shadow: 0 0 10rem rgba(0, 0, 0, 0);
+    transition:
+        text-shadow 400ms,
+        color 400ms;
+}
+.mediaMedium .QuestsWidget_progress_e7 {
+    color: #e2e2e2;
+    font-size: 28rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.mediaExtraLarge .QuestsWidget_progress_e7 {
+    color: #e2e2e2;
+    font-size: 36rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.QuestsWidget_base__hovered_93 .QuestsWidget_progress_e7 {
+    color: #e09687;
+    text-shadow:
+        0 0 3.9rem #3c0102,
+        0 0 11.9rem #8e2022,
+        0 0 4rem rgba(201, 71, 45, 0.25),
+        0 0 8rem rgba(139, 23, 0, 0.5),
+        0 0 12rem #580e00;
+}
+.QuestsWidget_description_0a {
+    color: #e2e2e2;
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
+    text-shadow: 0 0 10rem rgba(0, 0, 0, 0);
+    transition:
+        text-shadow 400ms,
+        color 400ms;
+}
+.mediaMedium .QuestsWidget_description_0a {
+    color: #e2e2e2;
+    font-size: 22rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.mediaExtraLarge .QuestsWidget_description_0a {
+    color: #e2e2e2;
+    font-size: 28rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.QuestsWidget_base__hovered_93 .QuestsWidget_description_0a {
+    color: #e09687;
+    text-shadow:
+        0 0 3.9rem #3c0102,
+        0 0 11.9rem #8e2022,
+        0 0 4rem rgba(201, 71, 45, 0.25),
+        0 0 8rem rgba(139, 23, 0, 0.5),
+        0 0 12rem #580e00;
+}
+.QuestsWidget_completed_21 {
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+    justify-items: center;
+}
+.mediaMedium .QuestsWidget_completed_21 {
+    margin-top: 6rem;
+}
+.QuestsWidget_completedIcon_16 {
+    width: 24rem;
+    height: 24rem;
+    background: url('R.images.gui.maps.icons.library.check()') no-repeat center / contain;
+    position: relative;
+    top: 1rem;
+}
+.QuestsWidget_completedText_aa {
+    color: #80d43a;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+.mediaMedium .QuestsWidget_completedText_aa {
+    color: #80d43a;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+.mediaExtraLarge .QuestsWidget_completedText_aa {
+    color: #80d43a;
+    font-size: 20rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+@keyframes QuestsWidget_floatFog_5d {
+    0% {
+        filter: brightness(1);
+        opacity: 0.7;
+        transform: translate(0rem, 0rem);
+    }
+
+    50% {
+        filter: brightness(1.2);
+        opacity: 1;
+        transform: translate(-12rem, 8rem);
+    }
+
+    75% {
+        filter: brightness(1.5);
+        opacity: 0.8;
+        transform: translate(-4rem, 4rem);
+    }
+
+    100% {
+        filter: brightness(1);
+        opacity: 0.7;
+        transform: translate(0rem, 0rem);
+    }
+}
+
+.ShopWidget_base_d1 {
+    width: 240rem;
+    height: 377rem;
+    position: relative;
+}
+
+.mediaMedium .ShopWidget_base_d1 {
+    width: 340rem;
+    height: 529rem;
+}
+
+.mediaExtraLarge .ShopWidget_base_d1 {
+    width: 485rem;
+    height: 773rem;
+}
+
+.ShopWidget_base__hovered_e3 {
+    cursor: pointer;
+}
+.ShopWidget_mainImage_d6 {
+    width: 182rem;
+    height: 308rem;
+    background: url('R.images.portal.gui.maps.icons.hangar.shopWidget.mainImage') no-repeat center / contain;
+    position: absolute;
+    top: 50%;
+    right: -20rem;
+    z-index: 1;
+    transform: translate(0rem, -50%);
+    transition: transform 400ms;
+}
+.mediaMedium .ShopWidget_mainImage_d6 {
+    width: 256rem;
+    height: 434rem;
+}
+.mediaExtraLarge .ShopWidget_mainImage_d6 {
+    width: 367rem;
+    height: 621rem;
+    right: -30rem;
+}
+.ShopWidget_base__hovered_e3 .ShopWidget_mainImage_d6 {
+    transform: translate(-20rem, -50%);
+}
+.mediaExtraLarge .ShopWidget_base__hovered_e3 .ShopWidget_mainImage_d6 {
+    transform: translate(-30rem, -50%);
+}
+.ShopWidget_secondaryImage_e0 {
+    width: 99rem;
+    height: 344rem;
+    background: url('R.images.portal.gui.maps.icons.hangar.shopWidget.secondaryImage') no-repeat center / contain;
+    opacity: 0.5;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    z-index: 4;
+    transform: translateY(-50%);
+    transition: opacity 400ms;
+}
+.mediaMedium .ShopWidget_secondaryImage_e0 {
+    width: 140rem;
+    height: 485rem;
+}
+.mediaExtraLarge .ShopWidget_secondaryImage_e0 {
+    width: 199rem;
+    height: 694rem;
+}
+.ShopWidget_base__hovered_e3 .ShopWidget_secondaryImage_e0 {
+    opacity: 1;
+}
+.ShopWidget_smoke_ee {
+    width: 240rem;
+    height: 332rem;
+    background: url('R.images.portal.gui.maps.icons.hangar.shopWidget.defaultSmoke') no-repeat center / contain;
+    position: absolute;
+    top: 0;
+    right: -15rem;
+    z-index: 0;
+    animation: ShopWidget_floatFog_2f 20s infinite ease-in-out;
+}
+.mediaMedium .ShopWidget_smoke_ee {
+    width: 339rem;
+    height: 457rem;
+}
+.mediaExtraLarge .ShopWidget_smoke_ee {
+    width: 485rem;
+    height: 668rem;
+}
+.ShopWidget_smokeHovered_72 {
+    width: 240rem;
+    height: 332rem;
+    background: url('R.images.portal.gui.maps.icons.hangar.shopWidget.hoverSmoke') no-repeat center / contain;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 0;
+    transition: opacity 400ms;
+}
+.mediaMedium .ShopWidget_smokeHovered_72 {
+    width: 339rem;
+    height: 467rem;
+}
+.mediaExtraLarge .ShopWidget_smokeHovered_72 {
+    width: 485rem;
+    height: 668rem;
+}
+.ShopWidget_base__hovered_e3 .ShopWidget_smokeHovered_72 {
+    opacity: 1;
+}
+.ShopWidget_bottomImage_e4 {
+    width: 240rem;
+    height: 130rem;
+    background: url('R.images.portal.gui.maps.icons.hangar.shopWidget.defaultBottomImage') no-repeat center / contain;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 3;
+}
+.mediaMedium .ShopWidget_bottomImage_e4 {
+    width: 340rem;
+    height: 183rem;
+}
+.mediaExtraLarge .ShopWidget_bottomImage_e4 {
+    width: 485rem;
+    height: 261rem;
+}
+.ShopWidget_bottomImageHovered_d1 {
+    width: 240rem;
+    height: 130rem;
+    background: url('R.images.portal.gui.maps.icons.hangar.shopWidget.hoverBottomImage') no-repeat center / contain;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 3;
+    transition: opacity 400ms;
+}
+.mediaMedium .ShopWidget_bottomImageHovered_d1 {
+    width: 340rem;
+    height: 183rem;
+}
+.mediaExtraLarge .ShopWidget_bottomImageHovered_d1 {
+    width: 485rem;
+    height: 261rem;
+}
+.ShopWidget_base__hovered_e3 .ShopWidget_bottomImageHovered_d1 {
+    opacity: 1;
+}
+.ShopWidget_hoverImage_e2 {
+    width: 182rem;
+    height: 308rem;
+    background: url('R.images.portal.gui.maps.icons.hangar.shopWidget.hoverImage') no-repeat center / contain;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    right: -20rem;
+    z-index: 2;
+    transform: translate(0rem, -50%);
+    transition:
+        opacity 400ms,
+        transform 400ms;
+}
+.mediaMedium .ShopWidget_hoverImage_e2 {
+    width: 256rem;
+    height: 434rem;
+}
+.mediaExtraLarge .ShopWidget_hoverImage_e2 {
+    width: 367rem;
+    height: 621rem;
+    right: -30rem;
+}
+.ShopWidget_base__hovered_e3 .ShopWidget_hoverImage_e2 {
+    opacity: 1;
+    transform: translate(-20rem, -50%);
+}
+.mediaExtraLarge .ShopWidget_base__hovered_e3 .ShopWidget_hoverImage_e2 {
+    transform: translate(-30rem, -50%);
+}
+.ShopWidget_text_38 {
+    color: #e2e2e2;
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
+    text-align: center;
+    text-shadow: 0 0 10rem rgba(0, 0, 0, 0);
+    white-space: pre-wrap;
+    position: absolute;
+    right: 50rem;
+    bottom: 31rem;
+    z-index: 5;
+    transition:
+        text-shadow 400ms,
+        color 400ms;
+}
+.mediaMedium .ShopWidget_text_38 {
+    color: #e2e2e2;
+    font-size: 22rem;
+    font-weight: 700;
+    line-height: 1.2;
+    bottom: 41rem;
+    left: 70rem;
+}
+.mediaExtraLarge .ShopWidget_text_38 {
+    color: #e2e2e2;
+    font-size: 28rem;
+    font-weight: 700;
+    line-height: 1.1;
+    bottom: 90rem;
+    left: 88rem;
+}
+.ShopWidget_base__hovered_e3 .ShopWidget_text_38 {
+    color: #e09687;
+    text-shadow:
+        0 0 3.9rem #3c0102,
+        0 0 11.9rem #8e2022,
+        0 0 4rem rgba(201, 71, 45, 0.25),
+        0 0 8rem rgba(139, 23, 0, 0.5),
+        0 0 12rem #580e00;
+}
+@keyframes ShopWidget_floatFog_2f {
+    0% {
+        filter: brightness(1);
+        opacity: 0.7;
+        transform: translate(0rem, 0rem);
+    }
+
+    50% {
+        filter: brightness(1.2);
+        opacity: 1;
+        transform: translate(-12rem, 8rem);
+    }
+
+    75% {
+        filter: brightness(1.5);
+        opacity: 0.8;
+        transform: translate(-4rem, 4rem);
+    }
+
+    100% {
+        filter: brightness(1);
+        opacity: 0.7;
+        transform: translate(0rem, 0rem);
+    }
+}
+
+.HorizontalBar_base_49 {
+    display: flex;
+    width: 100%;
+    height: 13rem;
+    position: relative;
+}
+
+.HorizontalBar_base__nonActive_82 {
+    visibility: hidden;
+}
+
+.HorizontalBar_base_49 .disable,
+.HorizontalBar_base_49 .disable:hover {
+    opacity: 0.3;
+    cursor: default;
+}
+
+.HorizontalBar_leftButton_5f,
+.HorizontalBar_rightButton_03 {
+    width: 13rem;
+    height: 13rem;
+    border: 1rem solid #7e7b68;
+    box-shadow: inset 0 0 1rem rgba(255, 255, 190, 0.3);
+    background: no-repeat center / 7rem 5rem;
+    opacity: 0.5;
+    z-index: 1;
+    transform: rotate(-90deg);
+    transition: opacity 130ms linear;
+    cursor: pointer;
+}
+
+.HorizontalBar_leftButton_5f:hover,
+.HorizontalBar_rightButton_03:hover {
+    opacity: 1;
+}
+
+.HorizontalBar_leftButton_5f {
+    background-image: url('R.images.gui.maps.icons.components.scroll_area.arrow_top');
+}
+
+.HorizontalBar_rightButton_03 {
+    background-image: url('R.images.gui.maps.icons.components.scroll_area.arrow_down');
+}
+
+.HorizontalBar_track_0d {
+    flex: 1;
+    margin: 0 1rem;
+    position: relative;
+    cursor: pointer;
+}
+
+.HorizontalBar_thumb_fd {
+    display: none;
+    flex: 0 0 100%;
+    width: 100%;
+    min-width: 20rem;
+    height: 13rem;
+    border: 1rem solid #7e7b68;
+    box-shadow: inset 0 0 1rem rgba(255, 255, 190, 0.3);
+    background: #26241b url('R.images.gui.maps.icons.components.scroll_area.thumb_horizontal') no-repeat center / 8rem
+        7rem;
+    opacity: 0.5;
+    position: absolute;
+    z-index: 1;
+    transition: opacity 130ms linear;
+    cursor: pointer;
+}
+
+.HorizontalBar_thumb_fd:hover {
+    opacity: 1;
+}
+
+.HorizontalBar_rail_32 {
+    height: 0;
+    border-top: 1rem solid #2f2e24;
+    position: absolute;
+    top: 6rem;
+    right: 5rem;
+    left: 5rem;
+}
+
+.HorizontalBar_rail_32:hover {
+    opacity: 0.7;
+}
+
+.HorizontalScroll_base_29 {
+    width: 100%;
+}
+
+.HorizontalScroll_wrapper_1e {
+    display: flex;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.HorizontalScroll_defaultScrollArea_8d {
+    width: 100%;
+    margin-bottom: 7rem;
+}
+
+.VerticalBar_base_f3 {
+    display: flex;
+    flex-direction: column;
+    width: 13rem;
+    height: 100%;
+    position: relative;
+}
+
+.VerticalBar_base__nonActive_42 {
+    visibility: hidden;
+}
+
+.VerticalBar_base_f3 .disable,
+.VerticalBar_base_f3 .disable:hover {
+    opacity: 0.3;
+    cursor: default;
+}
+
+.VerticalBar_topButton_d7,
+.VerticalBar_bottomButton_06 {
+    width: 13rem;
+    height: 13rem;
+    border: 1rem solid #7e7b68;
+    box-shadow: inset 0 0 1rem rgba(255, 255, 190, 0.3);
+    background: no-repeat center / 7rem 5rem;
+    opacity: 0.5;
+    z-index: 1;
+    transition: opacity 130ms linear;
+    cursor: pointer;
+}
+
+.VerticalBar_topButton_d7:hover,
+.VerticalBar_bottomButton_06:hover {
+    opacity: 1;
+}
+
+.VerticalBar_topButton_d7 {
+    background-image: url('R.images.gui.maps.icons.components.scroll_area.arrow_top');
+}
+
+.VerticalBar_bottomButton_06 {
+    background-image: url('R.images.gui.maps.icons.components.scroll_area.arrow_down');
+}
+
+.VerticalBar_track_df {
+    flex: 1;
+    margin: 1rem 0;
+    position: relative;
+    cursor: pointer;
+}
+
+.VerticalBar_thumb_32 {
+    display: flex;
+    flex: 0 0 13rem;
+    width: 13rem;
+    height: 100%;
+    min-height: 20rem;
+    border: 1rem solid #7e7b68;
+    box-shadow: inset 0 0 1rem rgba(255, 255, 190, 0.3);
+    background: #26241b url('R.images.gui.maps.icons.components.scroll_area.thumb') no-repeat center / 7rem 8rem;
+    opacity: 0.5;
+    position: absolute;
+    z-index: 1;
+    transition: opacity 130ms linear;
+    cursor: pointer;
+}
+
+.VerticalBar_thumb_32:hover {
+    opacity: 1;
+}
+
+.VerticalBar_rail_43 {
+    width: 0;
+    height: 100%;
+    border-left: 1rem solid #2f2e24;
+    border-top: 5rem solid transparent;
+    border-bottom: 5rem solid transparent;
+    position: absolute;
+    top: 0;
+    left: 6rem;
+    z-index: 0;
+}
+
+.VerticalBar_rail_43:hover {
+    opacity: 0.7;
+}
+
+.VerticalScroll_content_cb {
+    height: 100%;
+    overflow-y: hidden;
+}
+
+.VerticalScroll_defaultScroll_f8 {
+    display: flex;
+}
+
+.VerticalScroll_bar_1e {
+    flex: 1;
+    margin-left: 7rem;
+}
+
+.VerticalScroll_area_af {
+    flex: 1;
+}
+
+.TankCard_base_05 {
+    display: flex;
+    width: 200rem;
+    height: 120rem;
+    background: url('R.images.portal.gui.maps.icons.hangar.carousel.card.mainBg') no-repeat center / contain;
+    position: relative;
+}
+
+.TankCard_base__hovered_c2 {
+    cursor: pointer;
+}
+
+.TankCard_base__disabled_84 {
+    cursor: default;
+}
+
+.TankCard_base__disabled_84 .TankCard_hoverBg_e7 {
+    background: none;
+}
+.TankCard_vehicleData_42 {
+    display: flex;
+    flex-direction: column;
+    opacity: 0.5;
+    z-index: 6;
+}
+.TankCard_base__hovered_c2 .TankCard_vehicleData_42 {
+    opacity: 0.7;
+}
+.TankCard_base__selected_b0 .TankCard_vehicleData_42 {
+    opacity: 1;
+}
+.TankCard_typeWithName_bc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 1rem;
+    margin-top: 3rem;
+}
+.TankCard_vehicleType_6e {
+    width: 24rem;
+    height: 24rem;
+    background: no-repeat center / contain;
+}
+.TankCard_vehicleName_10 {
+    color: #f7e5e1;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+.TankCard_level_3f {
+    width: 90rem;
+    height: 90rem;
+    background: no-repeat center / contain;
+    opacity: 0.3;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.mediaExtraLarge .TankCard_level_3f {
+    width: 117rem;
+    height: 117rem;
+}
+.TankCard_base__selected_b0 .TankCard_level_3f {
+    opacity: 0.7;
+}
+.TankCard_tankImage_3b {
+    width: 200rem;
+    height: 144rem;
+    background: no-repeat center / contain;
+    opacity: 0.7;
+    position: absolute;
+    bottom: -15rem;
+    left: 50%;
+    z-index: 5;
+    transform: translateX(-50%);
+    transition: bottom 150ms;
+    pointer-events: none;
+}
+.TankCard_base__hovered_c2 .TankCard_tankImage_3b {
+    opacity: 0.9;
+}
+.TankCard_base__selected_b0 .TankCard_tankImage_3b {
+    opacity: 1;
+    bottom: 0;
+}
+.TankCard_tankImage__withEffects_0c {
+    filter: brightness(0.5);
+}
+.TankCard_border_1e {
+    width: 100%;
+    height: 100%;
+    background: url('R.images.portal.gui.maps.icons.hangar.carousel.card.stroke') no-repeat center / contain;
+    position: absolute;
+    z-index: 1;
+}
+.TankCard_hoverBg_e7 {
+    width: 100%;
+    height: 100%;
+    background: url('R.images.portal.gui.maps.icons.hangar.carousel.card.additionalBg') no-repeat center / contain;
+    opacity: 0;
+    position: absolute;
+    z-index: 2;
+    transition: opacity 200ms;
+}
+.TankCard_hoverBg__visible_c8 {
+    opacity: 1;
+}
+.TankCard_selectBg_26 {
+    width: 100%;
+    height: 100%;
+    background: url('R.images.portal.gui.maps.icons.hangar.carousel.card.texture') no-repeat center / contain;
+    opacity: 0;
+    position: absolute;
+    z-index: 3;
+    transition: opacity 200ms;
+}
+.TankCard_selectBg__visible_5d {
+    opacity: 1;
+}
+.TankCard_selectAdditionalBg_e6 {
+    width: 100%;
+    height: 100%;
+    background: url('R.images.portal.gui.maps.icons.hangar.carousel.card.lightStroke') no-repeat center / contain;
+    opacity: 0;
+    mix-blend-mode: hard-light;
+    position: absolute;
+    z-index: 4;
+    transition: opacity 200ms;
+}
+.TankCard_selectAdditionalBg__visible_2f {
+    opacity: 1;
+}
+.TankCard_battleStatus_1e {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 6;
+    transform: translate(-50%, -50%);
+}
+.TankCard_battleStatusImage_81 {
+    width: 33rem;
+    height: 32rem;
+    margin-right: 4rem;
+    background: no-repeat center / contain;
+}
+.TankCard_battleStatusImage__inBattle_c6 {
+    background-image: url('R.images.portal.gui.maps.icons.hangar.carousel.card.inBattle');
+}
+.TankCard_battleStatusImage__inPlatoon_42 {
+    background-image: url('R.images.portal.gui.maps.icons.hangar.carousel.card.inPrebattle');
+}
+.TankCard_battleStatusText_90 {
+    color: #fbfafe;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+    text-shadow:
+        0 0 12rem #580e00,
+        0 0 8rem #8b170080,
+        0 0 4rem #c9472d40;
+}
+.TankCard_update_df {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 6;
+}
+.TankCard_base__selected_b0 .TankCard_update_df {
+    margin-left: -10rem;
+    top: auto;
+    bottom: 10rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.TankCard_updateImage_c7 {
+    width: 44rem;
+    height: 42rem;
+    background: url('R.images.portal.gui.maps.icons.hangar.carousel.card.levelUp') no-repeat center / contain;
+}
+.TankCard_updateText_8e {
+    color: #d4f4ff;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    display: none;
+    text-shadow:
+        0 0 4rem #52fff3,
+        0 0 12rem rgba(194, 238, 243, 0.8);
+}
+.TankCard_base__selected_b0 .TankCard_updateText_8e {
+    display: flex;
+}
+
+.TankCarousel_base_27 {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 144rem;
+}
+
+.mediaExtraLarge .TankCarousel_base_27 {
+    transform: scale(1.3);
+}
+
+.TankCarousel_scroll_67 {
+    display: flex;
+    align-items: flex-end;
+    max-width: 564rem;
+    height: 100%;
+}
+
+.mediaSmall .TankCarousel_scroll_67 {
+    max-width: 100%;
+}
+
+.TankCarousel_scroll_67 {
+    mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, #000 3.12%, #000 52.63%, #000 97%, rgba(0, 0, 0, 0) 100%);
+}
+
+.TankCarousel_scrollWrapper_b7 {
+    display: flex;
+    align-items: flex-end;
+    height: 100%;
+}
+
+.TankCarousel_cardWrapper_71 {
+    display: flex;
+    padding: 0 20rem;
+}
+
+.TankCarousel_cardWrapper__noDraggin_c8 {
+    cursor: pointer;
+}
+
+.TankCarousel_tank_b5 + .TankCarousel_tank_b5 {
+    margin-left: 10rem;
+}
+
+.TankCarousel_arrow_14 {
+    width: 45rem;
+    height: 80rem;
+    background: no-repeat center / cover;
+    position: absolute;
+    bottom: 20rem;
+    transition: opacity 150ms;
+    cursor: pointer;
+}
+
+.TankCarousel_arrow__enabled_12 {
+    background-image: url('R.images.portal.gui.maps.icons.hangar.carousel.leftArrow');
+}
+
+.TankCarousel_arrow__enabled_12.TankCarousel_arrow__right_40 {
+    background-image: url('R.images.portal.gui.maps.icons.hangar.carousel.rightArrow');
+}
+
+.TankCarousel_arrow__left_54 {
+    left: -45rem;
+}
+
+.TankCarousel_arrow__right_40 {
+    right: -45rem;
+}
+
+.TankCarousel_arrow__disabled_8e {
+    background-image: url('R.images.portal.gui.maps.icons.hangar.carousel.leftArrow_disabled');
+    opacity: 1;
+}
+
+.TankCarousel_arrow__disabled_8e.TankCarousel_arrow__right_40 {
+    background-image: url('R.images.portal.gui.maps.icons.hangar.carousel.rightArrow_disabled');
+}
+
+.TankCarousel_arrow__hidden_d0 {
+    display: none;
+}
+
+.TankCarousel_arrowContainer_ca {
+    width: 45rem;
+    height: 80rem;
+    position: relative;
+}
+
+.TankCarousel_leftArrowHovered_36 {
+    width: 45rem;
+    height: 80rem;
+    background: url('R.images.portal.gui.maps.icons.hangar.carousel.leftArrow_hovered') no-repeat center / cover;
+    opacity: 0;
+    position: absolute;
+    transition: opacity 150ms;
+}
+
+.TankCarousel_leftArrowHovered__visible_9b {
+    opacity: 1;
+}
+
+.TankCarousel_rightArrowHovered_1e {
+    width: 45rem;
+    height: 80rem;
+    background: url('R.images.portal.gui.maps.icons.hangar.carousel.rightArrow_hovered') no-repeat center / cover;
+    opacity: 0;
+    position: absolute;
+    transition: opacity 150ms;
+}
+
+.TankCarousel_rightArrowHovered__visible_5c {
+    opacity: 1;
+}
+
+.TankCarousel_leftArrowPressed_c5 {
+    width: 45rem;
+    height: 80rem;
+    background: url('R.images.portal.gui.maps.icons.hangar.carousel.leftArrow_pressed') no-repeat center / cover;
+    opacity: 0;
+    position: absolute;
+    transition: opacity 150ms;
+}
+
+.TankCarousel_leftArrowPressed__visible_c2 {
+    opacity: 1;
+}
+
+.TankCarousel_rightArrowPressed_49 {
+    width: 45rem;
+    height: 80rem;
+    background: url('R.images.portal.gui.maps.icons.hangar.carousel.rightArrow_pressed') no-repeat center / cover;
+    opacity: 0;
+    position: absolute;
+    transition: opacity 150ms;
+}
+
+.TankCarousel_rightArrowPressed__visible_ae {
+    opacity: 1;
+}

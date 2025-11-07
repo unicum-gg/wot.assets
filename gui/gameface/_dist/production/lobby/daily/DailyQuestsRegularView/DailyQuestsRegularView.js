@@ -105,8 +105,8 @@
                             H = e.grow,
                             U = e.shrink,
                             Q = e.flex,
-                            W = void 0 === Q ? (H || U ? `${H ? 1 : 0} ${U ? 1 : 0} auto` : void 0) : Q,
-                            G = e.style,
+                            G = void 0 === Q ? (H || U ? `${H ? 1 : 0} ${U ? 1 : 0} auto` : void 0) : Q,
+                            W = e.style,
                             $ = e.children,
                             j = (function (e, u) {
                                 if (null == e) return {};
@@ -130,10 +130,10 @@
                                             return ('number' == typeof r && (u[A[t]] = r + 'rem'), u);
                                         }, {}))(e);
                                 return {
-                                    computedStyle: Object.assign({}, G, n, {
+                                    computedStyle: Object.assign({}, W, n, {
                                         width: void 0 !== t && 'number' == typeof t ? t + 'rem' : t,
                                         height: void 0 !== r && 'number' == typeof r ? r + 'rem' : r,
-                                        flex: W,
+                                        flex: G,
                                         alignSelf: M,
                                         display: b || L ? 'flex' : void 0,
                                         flexDirection: b,
@@ -143,7 +143,7 @@
                                     }),
                                     computedClassNames: u,
                                 };
-                            }, [t, r, i, F, B, p, G, W, M, b, I, N, L]),
+                            }, [t, r, i, F, B, p, W, G, M, b, I, N, L]),
                             z = Z.computedStyle,
                             q = Z.computedClassNames;
                         return l().createElement('div', d({ className: n()(c.Z.base, ...q, u), style: z }, j), $);
@@ -315,14 +315,16 @@
                 var r = t(6179),
                     n = t.n(r),
                     s = t(4179);
-                const a = ({ format: e, value: u }) => {
-                    const t = ((e, u = 'integral') => {
-                        let t;
-                        t = 'gold' === u ? s.B3.GOLD : s.B3.INTEGRAL;
-                        return void 0 === e ? '' : s.Z5.getNumberFormat(e, t);
-                    })(u, e);
-                    return t ? n().createElement('span', null, t) : null;
-                };
+                class a extends n().PureComponent {
+                    render() {
+                        let e;
+                        if ('gold' === this.props.format) e = s.B3.GOLD;
+                        else e = s.B3.INTEGRAL;
+                        const u = s.Z5.getNumberFormat(this.props.value, e);
+                        return void 0 !== this.props.value && void 0 !== u ? u : null;
+                    }
+                }
+                a.defaultProps = { format: 'integral' };
             },
             280: (e, u, t) => {
                 'use strict';
@@ -1316,6 +1318,7 @@
                             (e.SelectableBonus = 'selectableBonus'),
                             (e.StyleProgressToken = 'styleProgressToken'),
                             (e.TmanToken = 'tmanToken'),
+                            (e.PortalEventDiscount25 = 'portalEventDiscountToken'),
                             (e.NaturalCover = 'naturalCover'),
                             (e.BpCoin = 'bpcoin'),
                             (e.BattlaPassFinalAchievement = 'dossier_achievement'),
@@ -1343,12 +1346,9 @@
                             (e.GoldenTicket = 'birthday2025_golden_ticket'),
                             (e.PostStamp = 'giftsystem_4_stamp'),
                             (e.Quests = 'quests'),
-                            (e.WtStamp = 'stamp'),
-                            (e.WtHunter = 'wt_hunter'),
-                            (e.WtHunterCollection = 'hunter_collection'),
-                            (e.WtTicket = 'wtevent_ticket'),
-                            (e.WtMainPrizeDiscount = 'main_prize_discount'),
-                            (e.WtTicket25 = 'wtevent_ticket25'));
+                            (e.BlankPersonalMissions_1 = 'freeTokens_0'),
+                            (e.BlankPersonalMissions_2 = 'freeTokens_2'),
+                            (e.SACoin = 'sacoin'));
                     })(r || (r = {})),
                     (function (e) {
                         ((e.Gold = 'gold'),
@@ -1488,11 +1488,9 @@
                         a.E4.SelectableBonus,
                         a.E4.GoldenTicket,
                         a.E4.PostStamp,
-                        a.E4.WtStamp,
-                        a.E4.WtTicket,
-                        a.E4.WtMainPrizeDiscount,
-                        a.E4.WtHunter,
-                        a.E4.WtHunterCollection,
+                        a.E4.BlankPersonalMissions_1,
+                        a.E4.BlankPersonalMissions_2,
+                        a.E4.SACoin,
                     ],
                     o = [a.E4.Gold, a.E4.Credits, a.E4.Crystal, a.E4.FreeXp],
                     l = [a.E4.BattlePassPoints],
@@ -1628,6 +1626,8 @@
                                 return `R.images.gui.maps.icons.quests.bonuses.${u}.style_3d`;
                             case 'collectionItem':
                                 return `R.images.gui.maps.icons.collectionItems.${l}.${s}`;
+                            case 'portal':
+                                return `R.images.gui.maps.icons.rewards.${u}.${i}`;
                             default:
                                 return `R.images.gui.maps.icons.quests.bonuses.${u}.${t}`;
                         }
@@ -2448,7 +2448,7 @@
                             ),
                             [Q],
                         );
-                        const W = (e) => {
+                        const G = (e) => {
                             e.target.classList.contains(h) || (0, E.G)('highlight');
                         };
                         return l().createElement(
@@ -2462,7 +2462,7 @@
                                         ((0, E.G)('play'), U(_.Nm.Next));
                                 },
                                 ref: s,
-                                onMouseEnter: W,
+                                onMouseEnter: G,
                             }),
                             l().createElement(
                                 'div',
@@ -2490,7 +2490,7 @@
                                             }
                                     },
                                     ref: P,
-                                    onMouseEnter: W,
+                                    onMouseEnter: G,
                                 },
                                 l().createElement('div', { ref: R, className: u.thumb }),
                                 l().createElement('div', { className: a()(p, u.rail) }),
@@ -2504,7 +2504,7 @@
                                 },
                                 onMouseUp: Q,
                                 ref: y,
-                                onMouseEnter: W,
+                                onMouseEnter: G,
                             }),
                         );
                     }),
@@ -3751,6 +3751,7 @@
                                         clearInterval(i);
                                     };
                                 }
+                                l(0);
                             }, [e, u, t, a]),
                             o
                         );
@@ -4847,8 +4848,8 @@
                     H = 500,
                     U = 0,
                     Q = 500,
-                    W = 300,
-                    G = I + H,
+                    G = 300,
+                    W = I + H,
                     $ = 500,
                     j = 500,
                     Z = 500;
@@ -5084,8 +5085,8 @@
                     He = 'QuestCard_weekly_3e',
                     Ue = 'QuestCard_cardWrapper_62',
                     Qe = 'QuestCard_contentWrapper_a9',
-                    We = 'QuestCard_content_55',
-                    Ge = 'QuestCard_content__hidden_e3',
+                    Ge = 'QuestCard_content_55',
+                    We = 'QuestCard_content__hidden_e3',
                     $e = 'QuestCard_description_5a',
                     je = 'QuestCard_progressWrapper_12',
                     Ze = 'QuestCard_progressContainer_09',
@@ -5157,9 +5158,9 @@
                                 I = N.current,
                                 H = N.descrData,
                                 U = P ? k : I,
-                                W = e.status === q.N.UndoneSubscription,
-                                G = e.status === q.N.Done,
-                                $ = (e) => !G && e.withSubscription && (!b || W),
+                                G = e.status === q.N.UndoneSubscription,
+                                W = e.status === q.N.Done,
+                                $ = (e) => !W && e.withSubscription && (!b || G),
                                 j = (0, r.useState)(!1),
                                 Z = j[0],
                                 z = j[1],
@@ -5283,7 +5284,7 @@
                                                   { className: Qe },
                                                   n().createElement(
                                                       'div',
-                                                      { className: a()(We, se && Ge) },
+                                                      { className: a()(Ge, se && We) },
                                                       !s && n().createElement(o.ZP, { text: H, className: $e }),
                                                       n().createElement(
                                                           'div',
@@ -5389,7 +5390,7 @@
                                                                                 n().createElement(
                                                                                     Ae.l,
                                                                                     {
-                                                                                        tooltipArgs: !G &&
+                                                                                        tooltipArgs: !W &&
                                                                                             u.withSubscription &&
                                                                                             !b && {
                                                                                                 contentId:
@@ -5422,7 +5423,7 @@
                                                                                                         'resId',
                                                                                                     ),
                                                                                                 args: {
-                                                                                                    isQuestDone: G,
+                                                                                                    isQuestDone: W,
                                                                                                 },
                                                                                             },
                                                                                             key: `quest-reward-icon${t}`,
@@ -5439,7 +5440,7 @@
                                                                                         ),
                                                                                     ),
                                                                             );
-                                                                  })(W, e, u),
+                                                                  })(G, e, u),
                                                                   r &&
                                                                       n().createElement('div', {
                                                                           className: cu,
@@ -5504,8 +5505,8 @@
                     Hu = 'QuestCardBlock_dividerMask_13',
                     Uu = 'QuestCardBlock_progress_71',
                     Qu = 'QuestCardBlock_progress__disabled_a4',
-                    Wu = 'QuestCardBlock_currentProgress_be',
-                    Gu = 'QuestCardBlock_currentProgressItem_fb',
+                    Gu = 'QuestCardBlock_currentProgress_be',
+                    Wu = 'QuestCardBlock_currentProgressItem_fb',
                     $u = 'QuestCardBlock_maxProgress_7a',
                     ju = 'QuestCardBlock_dividerBottom_f2',
                     Zu = R.strings.quests;
@@ -5587,7 +5588,7 @@
                                     if (p)
                                         return (0, c.F)(() => {
                                             h(!1);
-                                        }, G);
+                                        }, W);
                                 }, [p]),
                                 n().createElement(
                                     'div',
@@ -5622,14 +5623,14 @@
                                                                 currentProgress: n().createElement(
                                                                     'div',
                                                                     {
-                                                                        className: Wu,
+                                                                        className: Gu,
                                                                         style: { '--currentProgress': t },
                                                                     },
                                                                     ie.map((e, u) =>
                                                                         n().createElement(o.ZP, {
                                                                             key: u,
                                                                             text: String(u),
-                                                                            className: Gu,
+                                                                            className: Wu,
                                                                         }),
                                                                     ),
                                                                 ),
@@ -5704,18 +5705,18 @@
                             P = y[0],
                             x = y[1],
                             N = P === _t.BANNER_HIDE,
-                            T = (0, m.tp)(A.computes.getCompletedlQuestLength(g), W),
+                            T = (0, m.tp)(A.computes.getCompletedlQuestLength(g), G),
                             L = C ? T : A.computes.getCompletedlQuestLength(g),
-                            O = (0, m.tp)(A.computes.getAllQuestsCompleted(g), W),
+                            O = (0, m.tp)(A.computes.getAllQuestsCompleted(g), G),
                             Q = C ? O : A.computes.getAllQuestsCompleted(g),
-                            G = (0, m.tp)(A.computes.isPremiumTab(), W),
-                            q = C ? G : A.computes.isPremiumTab(),
+                            W = (0, m.tp)(A.computes.isPremiumTab(), G),
+                            q = C ? W : A.computes.isPremiumTab(),
                             X = A.regular.get().isEnabled,
                             V = A.premium.get().isEnabled,
                             Y = q ? V : X,
-                            K = (0, m.tp)(A.computes.isPremiumBannerVisible(), W),
+                            K = (0, m.tp)(A.computes.isPremiumBannerVisible(), G),
                             J = C ? K : A.computes.isPremiumBannerVisible(),
-                            ee = (0, m.tp)(A.computes.getQuests(g), W),
+                            ee = (0, m.tp)(A.computes.getQuests(g), G),
                             ue = C ? ee : A.computes.getQuests(g),
                             te = A.computes.getEpicQuests(g),
                             re = A.computes.getCurrentTabIndex(),
@@ -5798,7 +5799,7 @@
                                 if (C)
                                     return (0, c.F)(() => {
                                         ((0, d.G)(R.sounds.dq_widget_slide_in()), p(!1));
-                                    }, W);
+                                    }, G);
                             }, [C]),
                             n().createElement(
                                 'div',

@@ -906,6 +906,7 @@
                                             clearInterval(i);
                                         };
                                     }
+                                    o(0);
                                 }, [u, e, t, r]),
                                 a
                             );

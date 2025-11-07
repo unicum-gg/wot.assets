@@ -2943,6 +2943,7 @@
                         (e.SelectableBonus = 'selectableBonus'),
                         (e.StyleProgressToken = 'styleProgressToken'),
                         (e.TmanToken = 'tmanToken'),
+                        (e.PortalEventDiscount25 = 'portalEventDiscountToken'),
                         (e.NaturalCover = 'naturalCover'),
                         (e.BpCoin = 'bpcoin'),
                         (e.BattlaPassFinalAchievement = 'dossier_achievement'),
@@ -2970,12 +2971,9 @@
                         (e.GoldenTicket = 'birthday2025_golden_ticket'),
                         (e.PostStamp = 'giftsystem_4_stamp'),
                         (e.Quests = 'quests'),
-                        (e.WtStamp = 'stamp'),
-                        (e.WtHunter = 'wt_hunter'),
-                        (e.WtHunterCollection = 'hunter_collection'),
-                        (e.WtTicket = 'wtevent_ticket'),
-                        (e.WtMainPrizeDiscount = 'main_prize_discount'),
-                        (e.WtTicket25 = 'wtevent_ticket25'));
+                        (e.BlankPersonalMissions_1 = 'freeTokens_0'),
+                        (e.BlankPersonalMissions_2 = 'freeTokens_2'),
+                        (e.SACoin = 'sacoin'));
                 })(Su || (Su = {})),
                     (function (e) {
                         ((e.Gold = 'gold'),
@@ -3192,16 +3190,18 @@
                         name: 'Card_name_02',
                         inner: 'Card_inner_69',
                         cardContent: 'Card_cardContent_36',
-                    },
-                    Qu = ({ format: e, value: u }) => {
-                        const t = ((e, u = 'integral') => {
-                            let t;
-                            t = 'gold' === u ? we.B3.GOLD : we.B3.INTEGRAL;
-                            return void 0 === e ? '' : we.Z5.getNumberFormat(e, t);
-                        })(u, e);
-                        return t ? s().createElement('span', null, t) : null;
-                    },
-                    Zu = [
+                    };
+                class Qu extends s().PureComponent {
+                    render() {
+                        let e;
+                        if ('gold' === this.props.format) e = we.B3.GOLD;
+                        else e = we.B3.INTEGRAL;
+                        const u = we.Z5.getNumberFormat(this.props.value, e);
+                        return void 0 !== this.props.value && void 0 !== u ? u : null;
+                    }
+                }
+                Qu.defaultProps = { format: 'integral' };
+                const Zu = [
                         Su.Items,
                         Su.Equipment,
                         Su.Xp,
@@ -3239,11 +3239,9 @@
                         Su.SelectableBonus,
                         Su.GoldenTicket,
                         Su.PostStamp,
-                        Su.WtStamp,
-                        Su.WtTicket,
-                        Su.WtMainPrizeDiscount,
-                        Su.WtHunter,
-                        Su.WtHunterCollection,
+                        Su.BlankPersonalMissions_1,
+                        Su.BlankPersonalMissions_2,
+                        Su.SACoin,
                     ],
                     Ju = [Su.Gold, Su.Credits, Su.Crystal, Su.FreeXp],
                     et = [Su.BattlePassPoints],
@@ -3369,6 +3367,8 @@
                                 return `R.images.gui.maps.icons.quests.bonuses.${u}.style_3d`;
                             case 'collectionItem':
                                 return `R.images.gui.maps.icons.collectionItems.${i}.${a}`;
+                            case 'portal':
+                                return `R.images.gui.maps.icons.rewards.${u}.${s}`;
                             default:
                                 return `R.images.gui.maps.icons.quests.bonuses.${u}.${t}`;
                         }

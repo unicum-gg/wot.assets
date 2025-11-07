@@ -924,6 +924,7 @@
                         (u.SelectableBonus = 'selectableBonus'),
                         (u.StyleProgressToken = 'styleProgressToken'),
                         (u.TmanToken = 'tmanToken'),
+                        (u.PortalEventDiscount25 = 'portalEventDiscountToken'),
                         (u.NaturalCover = 'naturalCover'),
                         (u.BpCoin = 'bpcoin'),
                         (u.BattlaPassFinalAchievement = 'dossier_achievement'),
@@ -951,12 +952,9 @@
                         (u.GoldenTicket = 'birthday2025_golden_ticket'),
                         (u.PostStamp = 'giftsystem_4_stamp'),
                         (u.Quests = 'quests'),
-                        (u.WtStamp = 'stamp'),
-                        (u.WtHunter = 'wt_hunter'),
-                        (u.WtHunterCollection = 'hunter_collection'),
-                        (u.WtTicket = 'wtevent_ticket'),
-                        (u.WtMainPrizeDiscount = 'main_prize_discount'),
-                        (u.WtTicket25 = 'wtevent_ticket25'));
+                        (u.BlankPersonalMissions_1 = 'freeTokens_0'),
+                        (u.BlankPersonalMissions_2 = 'freeTokens_2'),
+                        (u.SACoin = 'sacoin'));
                 })(m || (m = {})),
                     (function (u) {
                         ((u.Gold = 'gold'),
@@ -1332,25 +1330,27 @@
                     );
                 }
                 const N = ({ children: u, tooltipArgs: e, className: t }) => {
-                        if (!e) return u;
-                        const r = o().createElement('div', { className: t }, u);
-                        if (e.header || e.body) return o().createElement(M, e, r);
-                        const a = e.contentId,
-                            n = e.args,
-                            i = null == n ? void 0 : n.contentId;
-                        return a || i
-                            ? o().createElement(f, L({}, e, { contentId: a || i }), r)
-                            : o().createElement(T, e, r);
-                    },
-                    k = ({ format: u, value: e }) => {
-                        const t = ((u, e = 'integral') => {
-                            let t;
-                            t = 'gold' === e ? h.B3.GOLD : h.B3.INTEGRAL;
-                            return void 0 === u ? '' : h.Z5.getNumberFormat(u, t);
-                        })(e, u);
-                        return t ? o().createElement('span', null, t) : null;
-                    },
-                    I = [
+                    if (!e) return u;
+                    const r = o().createElement('div', { className: t }, u);
+                    if (e.header || e.body) return o().createElement(M, e, r);
+                    const a = e.contentId,
+                        n = e.args,
+                        i = null == n ? void 0 : n.contentId;
+                    return a || i
+                        ? o().createElement(f, L({}, e, { contentId: a || i }), r)
+                        : o().createElement(T, e, r);
+                };
+                class k extends o().PureComponent {
+                    render() {
+                        let u;
+                        if ('gold' === this.props.format) u = h.B3.GOLD;
+                        else u = h.B3.INTEGRAL;
+                        const e = h.Z5.getNumberFormat(this.props.value, u);
+                        return void 0 !== this.props.value && void 0 !== e ? e : null;
+                    }
+                }
+                k.defaultProps = { format: 'integral' };
+                const I = [
                         m.Items,
                         m.Equipment,
                         m.Xp,
@@ -1388,11 +1388,9 @@
                         m.SelectableBonus,
                         m.GoldenTicket,
                         m.PostStamp,
-                        m.WtStamp,
-                        m.WtTicket,
-                        m.WtMainPrizeDiscount,
-                        m.WtHunter,
-                        m.WtHunterCollection,
+                        m.BlankPersonalMissions_1,
+                        m.BlankPersonalMissions_2,
+                        m.SACoin,
                     ],
                     U = [m.Gold, m.Credits, m.Crystal, m.FreeXp],
                     G = [m.BattlePassPoints],
@@ -1518,6 +1516,8 @@
                                 return `R.images.gui.maps.icons.quests.bonuses.${e}.style_3d`;
                             case 'collectionItem':
                                 return `R.images.gui.maps.icons.collectionItems.${s}.${n}`;
+                            case 'portal':
+                                return `R.images.gui.maps.icons.rewards.${e}.${i}`;
                             default:
                                 return `R.images.gui.maps.icons.quests.bonuses.${e}.${t}`;
                         }
@@ -1560,7 +1560,7 @@
                         info__premiumTank: 'Reward_info__premiumTank_d3',
                         timer: 'Reward_timer_d3',
                     },
-                    z = ({
+                    $ = ({
                         name: u,
                         image: e,
                         isPeriodic: t = !1,
@@ -1688,8 +1688,8 @@
                                 ),
                         );
                     };
-                var $ = t(9887),
-                    V = t.n($);
+                var z = t(9887),
+                    V = t.n(z);
                 const K = (u, e, t) =>
                         e.extraLargeHeight || e.largeHeight || e.mediumHeight || e.smallHeight || e.extraSmallHeight
                             ? (e.extraLargeHeight && t.extraLarge) ||
@@ -2382,13 +2382,13 @@
                         );
                     });
                 var Yu = t(3403);
-                let zu, $u;
+                let $u, zu;
                 (!(function (u) {
                     ((u.Small = 'small'), (u.Medium = 'medium'), (u.Big = 'big'), (u.Default = 'big'));
-                })(zu || (zu = {})),
+                })($u || ($u = {})),
                     (function (u) {
                         ((u[(u.Simple = 0)] = 'Simple'), (u[(u.Growing = 1)] = 'Growing'));
-                    })($u || ($u = {})));
+                    })(zu || (zu = {})));
                 const Vu = Object.assign({}, m, {
                         RandomEquipment: 'random_equipment',
                         EquipCoin: 'equipCoin',
@@ -2420,7 +2420,7 @@
                     ie = [Ku, Qu, Zu, Ju, ue, ee, te, re, ae];
                 (R.strings.play_streak.window.playStreakRewards.calendar.card.tooltip,
                     R.strings.play_streak.window.playStreakRewards.recoveryMessage.tooltip,
-                    $u.Growing);
+                    zu.Growing);
                 let oe, se, Ee, le, Ae, Fe;
                 (!(function (u) {
                     ((u.left = 'left'), (u.right = 'right'));
@@ -2608,13 +2608,13 @@
                                                   o().createElement(
                                                       'div',
                                                       { key: t, className: _ },
-                                                      o().createElement(z, ge({ size: e }, u)),
+                                                      o().createElement($, ge({ size: e }, u)),
                                                   ),
                                               ),
                                           o().createElement(
                                               'div',
                                               { className: _ },
-                                              o().createElement(z, {
+                                              o().createElement($, {
                                                   name: 'more',
                                                   image: A,
                                                   size: e,
@@ -2627,7 +2627,7 @@
                                           o().createElement(
                                               'div',
                                               { key: t, className: _ },
-                                              o().createElement(z, ge({ size: e }, u)),
+                                              o().createElement($, ge({ size: e }, u)),
                                           ),
                                       ),
                             );
@@ -2955,8 +2955,8 @@
                     je = We[1],
                     qe = 'App_base_43',
                     Ye = 'App_rewardsList_72',
-                    ze = 'App_reward_0e',
-                    $e = 'App_text_e4';
+                    $e = 'App_reward_0e',
+                    ze = 'App_text_e4';
                 function Ve() {
                     return (
                         (Ve =
@@ -3021,11 +3021,11 @@
                             r.map((u, e) =>
                                 o().createElement(
                                     'div',
-                                    { className: ze, key: `${u.name}_${e}` },
-                                    o().createElement(z, Ve({}, u, { size: d.Small })),
+                                    { className: $e, key: `${u.name}_${e}` },
+                                    o().createElement($, Ve({}, u, { size: d.Small })),
                                     o().createElement(qu, {
                                         text: u.label,
-                                        className: $e,
+                                        className: ze,
                                         variant: 'paragraph-P12',
                                         color: 'PAR',
                                     }),

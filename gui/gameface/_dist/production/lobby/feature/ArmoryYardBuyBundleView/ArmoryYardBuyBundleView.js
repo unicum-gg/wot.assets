@@ -1532,17 +1532,16 @@
                         ((u.Red = 'RedActionBG'), (u.Blue = 'BlueActionBG'));
                     })(au || (au = {})));
                 var iu = t(4179);
-                const ou = ({ format: u, value: e }) => {
-                        const t = ((u, e = 'integral') => {
-                            let t;
-                            return (
-                                (t = 'gold' === e ? iu.B3.GOLD : iu.B3.INTEGRAL),
-                                void 0 === u ? '' : iu.Z5.getNumberFormat(u, t)
-                            );
-                        })(e, u);
-                        return t ? n().createElement('span', null, t) : null;
-                    },
-                    su = {
+                class ou extends n().PureComponent {
+                    render() {
+                        let u;
+                        u = 'gold' === this.props.format ? iu.B3.GOLD : iu.B3.INTEGRAL;
+                        const e = iu.Z5.getNumberFormat(this.props.value, u);
+                        return void 0 !== this.props.value && void 0 !== e ? e : null;
+                    }
+                }
+                ou.defaultProps = { format: 'integral' };
+                const su = {
                         base: 'Currency_base_57',
                         icon: 'Currency_icon_c5',
                         base__small: 'Currency_base__small_af',
@@ -2001,7 +2000,7 @@
                         }
                     }, [e, u, t]);
                 }
-                var Iu = t(3403);
+                var Iu = t(3282);
                 let Nu, Hu, Uu, Gu, Wu, Xu, $u;
                 (!(function (u) {
                     ((u.Items = 'items'),
@@ -2035,6 +2034,7 @@
                         (u.SelectableBonus = 'selectableBonus'),
                         (u.StyleProgressToken = 'styleProgressToken'),
                         (u.TmanToken = 'tmanToken'),
+                        (u.PortalEventDiscount25 = 'portalEventDiscountToken'),
                         (u.NaturalCover = 'naturalCover'),
                         (u.BpCoin = 'bpcoin'),
                         (u.BattlaPassFinalAchievement = 'dossier_achievement'),
@@ -2062,12 +2062,9 @@
                         (u.GoldenTicket = 'birthday2025_golden_ticket'),
                         (u.PostStamp = 'giftsystem_4_stamp'),
                         (u.Quests = 'quests'),
-                        (u.WtStamp = 'stamp'),
-                        (u.WtHunter = 'wt_hunter'),
-                        (u.WtHunterCollection = 'hunter_collection'),
-                        (u.WtTicket = 'wtevent_ticket'),
-                        (u.WtMainPrizeDiscount = 'main_prize_discount'),
-                        (u.WtTicket25 = 'wtevent_ticket25'));
+                        (u.BlankPersonalMissions_1 = 'freeTokens_0'),
+                        (u.BlankPersonalMissions_2 = 'freeTokens_2'),
+                        (u.SACoin = 'sacoin'));
                 })(Nu || (Nu = {})),
                     (function (u) {
                         ((u.Gold = 'gold'),
@@ -2199,11 +2196,9 @@
                         Nu.SelectableBonus,
                         Nu.GoldenTicket,
                         Nu.PostStamp,
-                        Nu.WtStamp,
-                        Nu.WtTicket,
-                        Nu.WtMainPrizeDiscount,
-                        Nu.WtHunter,
-                        Nu.WtHunterCollection,
+                        Nu.BlankPersonalMissions_1,
+                        Nu.BlankPersonalMissions_2,
+                        Nu.SACoin,
                     ],
                     qu = [Nu.Gold, Nu.Credits, Nu.Crystal, Nu.FreeXp],
                     Yu = [Nu.BattlePassPoints],
@@ -2254,7 +2249,7 @@
                     return !1;
                 }
                 console.log;
-                var ie = t(9174);
+                var ie = t(3915);
                 function oe(u, e) {
                     (null == e || e > u.length) && (e = u.length);
                     for (var t = 0, r = new Array(e); t < e; t++) r[t] = u[t];
@@ -2272,7 +2267,7 @@
                 function Ee(u, e) {
                     return Array.isArray(u) ? u.map(e) : u.map((u, t, r) => e(null == u ? void 0 : u.value, t, r));
                 }
-                var _e = t(3946);
+                var _e = t(6517);
                 const ce = ((u, e) => {
                         const t = (0, r.createContext)({});
                         return [
@@ -2398,7 +2393,7 @@
                                             E = (u) => l.current.push(u),
                                             _ = (({ observableModel: u }) => {
                                                 const e = { root: u.object(), rewards: u.array('rewards') },
-                                                    t = (0, _e.Om)(() =>
+                                                    t = (0, _e.computedFn)(() =>
                                                         (function (u, e) {
                                                             for (let t = 0; t < u.length; t++) {
                                                                 const r = le(u[t]);
@@ -2409,7 +2404,7 @@
                                                             (u) => u.name === Nu.Gold,
                                                         ),
                                                     ),
-                                                    r = (0, _e.Om)(
+                                                    r = (0, _e.computedFn)(
                                                         () =>
                                                             Ee(e.rewards.get(), (u) => {
                                                                 return Object.assign(
@@ -2555,6 +2550,8 @@
                                                                                               return `R.images.gui.maps.icons.quests.bonuses.${e}.style_3d`;
                                                                                           case 'collectionItem':
                                                                                               return `R.images.gui.maps.icons.collectionItems.${s}.${a}`;
+                                                                                          case 'portal':
+                                                                                              return `R.images.gui.maps.icons.rewards.${e}.${i}`;
                                                                                           default:
                                                                                               return `R.images.gui.maps.icons.quests.bonuses.${e}.${t}`;
                                                                                       }
@@ -2595,11 +2592,11 @@
                                                 observableModel: {
                                                     array: (e, t) => {
                                                         const r = null != t ? t : s(e),
-                                                            n = ie.LO.box(r, { equals: ae });
+                                                            n = ie.observable.box(r, { equals: ae });
                                                         return (
                                                             'real' === u &&
                                                                 o.subscribe(
-                                                                    (0, ie.aD)((u) => n.set(u)),
+                                                                    (0, ie.action)((u) => n.set(u)),
                                                                     e,
                                                                 ),
                                                             n
@@ -2607,11 +2604,11 @@
                                                     },
                                                     object: (e, t) => {
                                                         const r = null != t ? t : s(e),
-                                                            n = ie.LO.box(r, { equals: ae });
+                                                            n = ie.observable.box(r, { equals: ae });
                                                         return (
                                                             'real' === u &&
                                                                 o.subscribe(
-                                                                    (0, ie.aD)((u) => n.set(u)),
+                                                                    (0, ie.action)((u) => n.set(u)),
                                                                     e,
                                                                 ),
                                                             n
@@ -2621,13 +2618,13 @@
                                                         const r = s(t);
                                                         if (Array.isArray(e)) {
                                                             const n = e.reduce(
-                                                                (u, e) => ((u[e] = ie.LO.box(r[e], {})), u),
+                                                                (u, e) => ((u[e] = ie.observable.box(r[e], {})), u),
                                                                 {},
                                                             );
                                                             return (
                                                                 'real' === u &&
                                                                     o.subscribe(
-                                                                        (0, ie.aD)((u) => {
+                                                                        (0, ie.action)((u) => {
                                                                             e.forEach((e) => {
                                                                                 n[e].set(u[e]);
                                                                             });
@@ -2641,13 +2638,16 @@
                                                             const n = e,
                                                                 a = Object.entries(n),
                                                                 i = a.reduce(
-                                                                    (u, [e, t]) => ((u[t] = ie.LO.box(r[e], {})), u),
+                                                                    (u, [e, t]) => (
+                                                                        (u[t] = ie.observable.box(r[e], {})),
+                                                                        u
+                                                                    ),
                                                                     {},
                                                                 );
                                                             return (
                                                                 'real' === u &&
                                                                     o.subscribe(
-                                                                        (0, ie.aD)((u) => {
+                                                                        (0, ie.action)((u) => {
                                                                             a.forEach(([e, t]) => {
                                                                                 i[t].set(u[e]);
                                                                             });
@@ -3163,7 +3163,7 @@
                                 ),
                         );
                     };
-                var Le = t(7030);
+                var Le = t(8552);
                 const Me = (u) => Math.sqrt(1 - Math.pow(u - 1, 2)),
                     Pe = ({ index: u = 0, delay: e = 0, children: t }) => {
                         const r = (0, Le.useSpring)({
@@ -3210,7 +3210,7 @@
                     }),
                     Ie = 'App_buttonText_0f',
                     Ne = R.strings.armory_yard.buyBundle,
-                    He = (0, Iu.Pi)(() => {
+                    He = (0, Iu.observer)(() => {
                         const u = Fe(),
                             e = u.controls,
                             t = u.model,
@@ -3518,7 +3518,7 @@
                                 for (const t in u)
                                     if (Object.prototype.hasOwnProperty.call(u, t)) {
                                         const r = u[t];
-                                        e[t] = (0, ie.aD)(r);
+                                        e[t] = (0, ie.action)(r);
                                     }
                                 return e;
                             })({
@@ -3552,7 +3552,7 @@
         var e = __webpack_module_cache__[u];
         if (void 0 !== e) return e.exports;
         var t = (__webpack_module_cache__[u] = { exports: {} });
-        return (__webpack_modules__[u](t, t.exports, __webpack_require__), t.exports);
+        return (__webpack_modules__[u].call(t.exports, t, t.exports, __webpack_require__), t.exports);
     }
     ((__webpack_require__.m = __webpack_modules__),
         (deferred = []),
@@ -3602,7 +3602,6 @@
                 Object.defineProperty(u, Symbol.toStringTag, { value: 'Module' }),
                 Object.defineProperty(u, '__esModule', { value: !0 }));
         }),
-        (__webpack_require__.j = 929),
         (() => {
             var u = { 929: 0 };
             __webpack_require__.O.j = (e) => 0 === u[e];

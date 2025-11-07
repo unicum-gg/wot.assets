@@ -638,6 +638,63 @@
     z-index: 3;
 }
 
+.Preview_base_1f {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60rem;
+    height: 60rem;
+    opacity: 0.7;
+    position: relative;
+    transition: opacity 0.25s ease-out;
+    cursor: pointer;
+}
+
+.Preview_base__hovered_ee {
+    opacity: 1;
+}
+.Preview_icon_f3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('R.images.gui.maps.icons.library.previewVehicle') no-repeat center / contain;
+    transition: opacity 0.25s ease-out;
+    pointer-events: none;
+}
+.Preview_icon__small_a1 {
+    width: 70rem;
+    height: 70rem;
+}
+.Preview_icon__normal_5c {
+    width: 100rem;
+    height: 100rem;
+}
+.Preview_base__mouseDown_d0 .Preview_icon_f3 {
+    opacity: 0.7;
+}
+.Preview_label_2e {
+    color: #ffdd99;
+    font-size: 14rem;
+    line-height: 1.25;
+    text-shadow:
+        0 0 4rem rgba(255, 127, 0, 0.25),
+        0 0 8rem #ff2a00,
+        0 0 12rem #e52;
+    opacity: 0;
+    position: absolute;
+    bottom: -8rem;
+    transform: translateY(-5rem);
+    transition:
+        transform 0.25s ease-out,
+        opacity 0.25s ease-out;
+}
+.Preview_base__visibleLabel_92 .Preview_label_2e,
+.Preview_base__hovered_ee .Preview_label_2e {
+    opacity: 1;
+    transform: translateY(0rem);
+}
+
 .RotationVehicle_base_2f {
     display: flex;
     flex-direction: column;
@@ -653,10 +710,15 @@
     opacity: 0.3;
 }
 
+.RotationVehicle_iconWrapper_cb {
+    position: relative;
+}
+
 .RotationVehicle_icon_41 {
     width: 80rem;
     height: 80rem;
     background: no-repeat center / cover;
+    cursor: pointer;
 }
 
 .RotationVehicle_label_b8 {
@@ -689,6 +751,27 @@
     height: 22rem;
     margin-top: 2rem;
     background: url('R.images.gui_lootboxes.gui.maps.rotation.check') no-repeat center / cover;
+}
+
+.RotationVehicle_preview_ec {
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity 200ms;
+}
+
+.RotationVehicle_preview_ec:hover {
+    opacity: 1;
+}
+
+.RotationVehicle_preview__opacity_50 {
+    opacity: 1;
+}
+
+.RotationVehicle_preview__label_28 {
+    display: none;
 }
 
 .RotationVehicleList_base_7f {

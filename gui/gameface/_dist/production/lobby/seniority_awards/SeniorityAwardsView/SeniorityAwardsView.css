@@ -146,32 +146,73 @@ body {
     opacity: 0;
 }
 
-.SeniorityAwardCoin_base_f6 {
-    background: no-repeat center / cover;
+.AnimatedReward_base_64 {
+    margin: 0 -30rem;
+    position: relative;
+}
+.mediaMedium .AnimatedReward_base_64 {
+    margin: 0 -45rem;
+}
+.mediaLarge .AnimatedReward_base_64 {
+    margin: 0 -33rem;
+}
+.mediaExtraLarge .AnimatedReward_base_64 {
+    margin: 0 -22rem;
+}
+.AnimatedReward_base__withCoins_53 {
+    margin: 0 5rem;
+}
+.mediaSmall .AnimatedReward_base__withCoins_53 {
+    margin: 0 15rem;
+}
+.mediaLarge .AnimatedReward_base__withCoins_53 {
+    margin: 0 20rem;
 }
 
-.SeniorityAwardCoin_base__large_86 {
-    width: 300rem;
-    height: 300rem;
-    background-image: url('R.images.gui.maps.icons.seniorityAwards.rewards.sacoin_large');
+.SeniorityAwardCoin_base_cf {
+    background: no-repeat center / contain;
 }
 
-.SeniorityAwardCoin_base__medium_f5 {
-    width: 226rem;
-    height: 226rem;
-    background-image: url('R.images.gui.maps.icons.seniorityAwards.rewards.sacoin');
+.SeniorityAwardCoin_base__s48x48_4c,
+.SeniorityAwardCoin_base__small_af {
+    width: 48rem;
+    height: 48rem;
 }
 
-.SeniorityAwardCoin_base__small_a5 {
+.SeniorityAwardCoin_base__s80x80_3a,
+.SeniorityAwardCoin_base__big_a3 {
     width: 80rem;
     height: 80rem;
-    background-image: url('R.images.gui.maps.icons.seniorityAwards.rewards.sacoin_small');
 }
 
-.SeniorityAwardCoin_base__extraSmall_a1 {
-    width: 56rem;
-    height: 56rem;
-    background-image: url('R.images.gui.maps.icons.seniorityAwards.rewards.sacoin_extraSmall');
+.SeniorityAwardCoin_base__s128x100_67 {
+    width: 128rem;
+    height: 100rem;
+}
+
+.SeniorityAwardCoin_base__s180x135_47 {
+    width: 180rem;
+    height: 135rem;
+}
+
+.SeniorityAwardCoin_base__s232x174_cc {
+    width: 232rem;
+    height: 174rem;
+}
+
+.SeniorityAwardCoin_base__s296x222_43 {
+    width: 296rem;
+    height: 222rem;
+}
+
+.SeniorityAwardCoin_base__s400x300_c2 {
+    width: 400rem;
+    height: 300rem;
+}
+
+.SeniorityAwardCoin_base__s600x450_b5 {
+    width: 600rem;
+    height: 450rem;
 }
 
 .FormatText_base_d0 {
@@ -354,105 +395,9 @@ body {
     left: 70%;
     pointer-events: none;
 }
-
-.SeniorityReward_base_e4 {
-    width: 240rem;
-    height: 180rem;
-    position: relative;
-}
-.mediaMedium .SeniorityReward_base_e4 {
-    width: 350rem;
-    height: 260rem;
-}
-.mediaExtraLarge .SeniorityReward_base_e4 {
-    width: 400rem;
-    height: 300rem;
-}
-.SeniorityReward_base__withCoins_ea {
-    width: 80rem;
-    height: 80rem;
-}
-.mediaMedium .SeniorityReward_base__withCoins_ea {
-    width: 80rem;
-    height: 80rem;
-}
-.mediaLarge .SeniorityReward_base__withCoins_ea {
-    width: 80rem;
-    height: 80rem;
-}
-
-.SeniorityReward_icon_2a {
-    width: 100%;
-    height: 100%;
-    background: no-repeat center / contain;
-}
-
-.SeniorityReward_label_da {
-    color: #ffffff;
-    font-size: 20rem;
-    font-weight: 400;
-    line-height: 1.2;
-    position: absolute;
-    bottom: 0;
-    left: 170rem;
-}
-
-.mediaMedium .SeniorityReward_label_da {
-    bottom: 10rem;
-    left: 270rem;
-}
-
-.mediaExtraLarge .SeniorityReward_label_da {
-    left: 320rem;
-}
-
-.SeniorityReward_base__withCoins_ea .SeniorityReward_label_da {
-    font-size: 16rem;
-    bottom: -15rem;
-    left: 60rem;
-}
-
-.SeniorityReward_base__credits_5b .SeniorityReward_label_da,
-.SeniorityReward_base__gold_56 .SeniorityReward_label_da,
-.SeniorityReward_base__crystal_ce .SeniorityReward_label_da {
-    width: 100%;
-    text-align: center;
-    left: 0;
-}
-
-.SeniorityReward_overlay_f1 {
-    width: 200%;
-    height: 200%;
-    background: no-repeat center / 100%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    z-index: 2;
-    transform: translate(-49%, -47%);
-    pointer-events: none;
-}
-
-.AnimatedReward_base_64 {
-    margin: 0 -30rem;
-    position: relative;
-}
-.mediaMedium .AnimatedReward_base_64 {
-    margin: 0 -45rem;
-}
-.mediaLarge .AnimatedReward_base_64 {
-    margin: 0 -33rem;
-}
-.mediaExtraLarge .AnimatedReward_base_64 {
-    margin: 0 -22rem;
-}
-.AnimatedReward_base__withCoins_53 {
-    margin: 0 5rem;
-}
-.mediaSmall .AnimatedReward_base__withCoins_53 {
-    margin: 0 15rem;
-}
-.mediaLarge .AnimatedReward_base__withCoins_53 {
-    margin: 0 20rem;
+.mediaLarge .AwardCoin_count_2f {
+    bottom: 20rem;
+    left: 68%;
 }
 
 .RewardsAnimatedText_base_c4 {
@@ -466,6 +411,241 @@ body {
     font-size: 16rem;
     font-weight: 400;
     line-height: 1.25;
+}
+
+.Reward_base_ea {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.Reward_base__s48x48_46,
+.Reward_base__small_c0 {
+    width: 48rem;
+    height: 48rem;
+}
+
+.Reward_base__s80x80_ce,
+.Reward_base__big_e5 {
+    width: 80rem;
+    height: 80rem;
+}
+
+.Reward_base__s128x100_c3 {
+    width: 128rem;
+    height: 100rem;
+}
+
+.Reward_base__s180x135_7c {
+    width: 180rem;
+    height: 135rem;
+}
+
+.Reward_base__s232x174_67 {
+    width: 232rem;
+    height: 174rem;
+}
+
+.Reward_base__s296x222_78 {
+    width: 296rem;
+    height: 222rem;
+}
+
+.Reward_base__s400x300_07 {
+    width: 400rem;
+    height: 300rem;
+}
+
+.Reward_base__s600x450_f8 {
+    width: 600rem;
+    height: 450rem;
+}
+
+.Reward_tooltipWrapper_b5 {
+    height: 100%;
+}
+
+.Reward_icon_df {
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    position: relative;
+    z-index: 1;
+}
+
+.Reward_overlay_68 {
+    background: no-repeat center / 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+.Reward_base__s48x48_46 .Reward_overlay_68,
+.Reward_base__small_c0 .Reward_overlay_68 {
+    width: 96rem;
+    height: 96rem;
+    background-size: 100%;
+    overflow: visible;
+}
+
+.Reward_base__s80x80_ce .Reward_overlay_68,
+.Reward_base__big_e5 .Reward_overlay_68 {
+    width: 128rem;
+    height: 128rem;
+}
+
+.Reward_base__s180x135_7c .Reward_overlay_68 {
+    width: 266rem;
+    height: 241rem;
+}
+
+.Reward_base__s232x174_67 .Reward_overlay_68 {
+    width: 344rem;
+    height: 312rem;
+}
+
+.Reward_base__s296x222_78 .Reward_overlay_68 {
+    width: 450rem;
+    height: 408rem;
+}
+
+.Reward_base__s400x300_07 .Reward_overlay_68 {
+    width: 618rem;
+    height: 590rem;
+}
+
+.Reward_base__s600x450_f8 .Reward_overlay_68 {
+    width: 670rem;
+    height: 575rem;
+}
+
+.Reward_highlight_36 {
+    width: 100%;
+    height: 100%;
+    background: no-repeat center / contain;
+    position: absolute;
+    z-index: 0;
+}
+
+.Reward_image_89 {
+    position: relative;
+}
+
+.Reward_info_72 {
+    margin-top: -13rem;
+    color: #e9e2bf;
+    font-size: 14rem;
+    line-height: 18rem;
+    text-align: center;
+    z-index: 1;
+}
+
+.Reward_base__s48x48_46 .Reward_info_72,
+.Reward_base__small_c0 .Reward_info_72 {
+    margin: -10rem -10rem 0;
+}
+
+.Reward_info__multi_63 {
+    margin-right: 2rem;
+    text-align: right;
+}
+
+.Reward_base__s48x48_46 .Reward_info__multi_63,
+.Reward_base__small_c0 .Reward_info__multi_63 {
+    margin-right: 0;
+}
+
+.Reward_info__credits_ef {
+    color: #e9e2bf;
+}
+
+.Reward_info__gold_36 {
+    color: #ffc363;
+}
+
+.Reward_info__crystal_36 {
+    color: #c9c9b6;
+}
+
+.Reward_info__premiumTank_d3 {
+    color: #ffdd99;
+}
+
+.Reward_timer_d3 {
+    background: no-repeat center / contain;
+    position: absolute;
+    z-index: 1;
+}
+
+.Reward_base__s48x48_46 .Reward_timer_d3,
+.Reward_base__small_c0 .Reward_timer_d3 {
+    width: 23rem;
+    height: 23rem;
+    background-image: url('R.images.gui.maps.icons.quests.bonuses.small.timer');
+    top: -6rem;
+    right: -6rem;
+}
+
+.Reward_base__s80x80_ce .Reward_timer_d3,
+.Reward_base__big_e5 .Reward_timer_d3 {
+    width: 48rem;
+    height: 48rem;
+    background-image: url('R.images.gui.maps.icons.quests.bonuses.big.timer');
+    top: -14rem;
+    right: -14rem;
+}
+
+.SeniorityReward_base_e4 {
+    width: 232rem;
+    height: 174rem;
+    position: relative;
+}
+
+.mediaMedium .SeniorityReward_base_e4 {
+    width: 296rem;
+    height: 222rem;
+}
+
+.mediaExtraLarge .SeniorityReward_base_e4 {
+    width: 400rem;
+    height: 300rem;
+}
+
+.SeniorityReward_base__withCoins_ea {
+    width: 80rem;
+    height: 80rem;
+}
+
+.mediaMedium .SeniorityReward_base__withCoins_ea {
+    width: 80rem;
+    height: 80rem;
+}
+
+.mediaLarge .SeniorityReward_base__withCoins_ea {
+    width: 80rem;
+    height: 80rem;
+}
+
+.SeniorityReward_compensationIcon_39 {
+    width: 24rem;
+    height: 24rem;
+    background: url('R.images.gui.maps.icons.seniorityAwards.compensation_small') no-repeat center / contain;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    transform: translate(12rem, -12rem);
+}
+
+.mediaMedium .SeniorityReward_compensationIcon_39 {
+    width: 32rem;
+    height: 32rem;
+    transform: translate(16rem, -16rem);
 }
 
 @keyframes Rewards_fadeOut_67 {
@@ -542,34 +722,691 @@ body {
     flex-direction: column;
     align-items: center;
     height: 100%;
-    padding-top: 10rem;
     position: relative;
-}
-.mediaMedium .Rewards_base_e7 {
-    padding-top: -30rem;
-}
-.mediaLarge .Rewards_base_e7 {
-    padding-top: 0;
-}
-.mediaExtraLarge .Rewards_base_e7 {
-    padding-top: 15rem;
-}
-.Rewards_base__withCoins_62 {
-    padding-top: 230rem;
-}
-.mediaMedium .Rewards_base__withCoins_62 {
-    padding-top: 245rem;
-}
-.mediaLarge .Rewards_base__withCoins_62 {
-    padding-top: 245rem;
-}
-.mediaExtraLarge .Rewards_base__withCoins_62 {
-    padding-top: 320rem;
 }
 .Rewards_rewards_c5 {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 80rem;
+}
+.mediaSmall .Rewards_rewards_c5 {
+    padding-top: 35rem;
+}
+.mediaMedium .Rewards_rewards_c5 {
+    padding-top: 50rem;
+}
+.mediaLarge .Rewards_rewards_c5 {
+    padding-top: 60rem;
+}
+.mediaExtraLarge .Rewards_rewards_c5 {
+    padding-top: 168rem;
+}
+.Rewards_rewardsContainer_bc {
+    display: flex;
+    align-items: center;
     margin-top: 10rem;
+}
+
+.CButton_base_40 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2rem;
+    box-shadow: 0 0 0 1rem rgba(0, 0, 0, 0.6);
+    position: relative;
+    cursor: pointer;
+}
+
+.CButton_base__main_42,
+.CButton_base__primary_7f,
+.CButton_base__primaryGreen_6f,
+.CButton_base__primaryRed_ec,
+.CButton_base__secondary_50 {
+    background-size: 100% 100%;
+}
+
+.CButton_base__main_42 {
+    background-image: url('R.images.gui.maps.icons.components.button.back_main');
+}
+
+.CButton_base__primary_7f {
+    background-image: url('R.images.gui.maps.icons.components.button.back_primary');
+}
+
+.CButton_base__primaryGreen_6f {
+    background-image: url('R.images.gui.maps.icons.components.button.back_primary_green');
+}
+
+.CButton_base__primaryRed_ec {
+    background-image: url('R.images.gui.maps.icons.components.button.back_primary_red');
+}
+
+.CButton_base__secondary_50 {
+    background-image: url('R.images.gui.maps.icons.components.button.back_secondary');
+}
+
+.CButton_base__ghost_ed {
+    border-radius: 3rem;
+    box-shadow:
+        0 0 0 1rem rgba(0, 0, 0, 0.3),
+        0 0 0 1rem rgba(255, 255, 255, 0.15) inset;
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+.CButton_base__extraSmall_27 {
+    min-height: 17rem;
+    padding: 0 16rem;
+}
+
+.CButton_base__small_df,
+.CButton_base__medium_74 {
+    padding: 0 20rem;
+}
+
+.CButton_base__small_df {
+    min-height: 18rem;
+}
+
+.CButton_base__medium_74 {
+    min-height: 32rem;
+}
+
+.CButton_base__disabled_d9 {
+    cursor: default;
+}
+/* Element .back and background-image in element .base need for fix bug in GF https://jira-archive.lesta.group/browse/WOTD-158525
+The bug is that under certain conditions, when using border-image, stripes appear. Strip is a single-pixel gap
+between 'border-image-width' and 'fill'.
+This bug is reproduced in Google Chrome 81.0.4044.113
+*/
+.CButton_back_e5 {
+    border-image-slice: 4 fill;
+    border-image-width: 4rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.CButton_base__main_42 .CButton_back_e5 {
+    border-image-source: url('R.images.gui.maps.icons.components.button.back_main');
+}
+.CButton_base__primary_7f .CButton_back_e5 {
+    border-image-source: url('R.images.gui.maps.icons.components.button.back_primary');
+}
+.CButton_base__primaryGreen_6f .CButton_back_e5 {
+    border-image-source: url('R.images.gui.maps.icons.components.button.back_primary_green');
+}
+.CButton_base__primaryRed_ec .CButton_back_e5 {
+    border-image-source: url('R.images.gui.maps.icons.components.button.back_primary_red');
+}
+.CButton_base__secondary_50 .CButton_back_e5 {
+    border-image-source: url('R.images.gui.maps.icons.components.button.back_secondary');
+}
+.CButton_texture_fe {
+    background: url('R.images.gui.maps.icons.components.button.standard_texture_file');
+    background-size: 155rem 31rem;
+    mix-blend-mode: soft-light;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.CButton_state_11 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition: box-shadow 0.16s ease-in-out;
+}
+.CButton_base__focus_83 .CButton_state_11 {
+    border-radius: 2rem;
+    box-shadow: inset 0 0 2rem 1rem rgba(255, 85, 0, 0.2);
+}
+.CButton_stateHighlightHover_ff,
+.CButton_stateHighlightActive_35,
+.CButton_stateDisabled_54 {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.CButton_base__firstHover_d5 .CButton_stateHighlightHover_ff,
+.CButton_base__firstHover_d5 .CButton_stateHighlightActive_35,
+.CButton_base__firstHover_d5 .CButton_stateDisabled_54 {
+    transition: opacity 0.16s ease-in-out;
+}
+.CButton_stateHighlightHover_ff {
+    background-image: linear-gradient(
+        180deg,
+        rgba(252, 248, 235, 0.25) 0%,
+        rgba(252, 248, 235, 0.1) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+}
+.CButton_base_40:hover .CButton_stateHighlightHover_ff {
+    opacity: 1;
+}
+.CButton_base_40:active .CButton_stateHighlightHover_ff {
+    opacity: 0;
+}
+.CButton_base__disabled_d9:hover .CButton_stateHighlightHover_ff {
+    opacity: 0;
+}
+.CButton_base__ghost_ed .CButton_stateHighlightHover_ff {
+    box-shadow: 0 15rem 12rem 0 rgba(242, 242, 230, 0.11) inset;
+    background-color: rgba(8, 6, 0, 0.18);
+    background-image: none;
+}
+.CButton_stateHighlightActive_35 {
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.15) 100%);
+}
+.CButton_base__highlightActive_b2 .CButton_stateHighlightActive_35 {
+    opacity: 1;
+}
+.CButton_stateDisabled_54 {
+    background-color: rgba(0, 0, 0, 0.25);
+    background-image: url('R.images.gui.maps.icons.components.button.texture_disable');
+    background-size: 15rem;
+}
+.CButton_base__disabled_d9 .CButton_stateDisabled_54 {
+    opacity: 1;
+}
+.CButton_content_cc {
+    display: flex;
+    align-items: center;
+    color: #f2f2e6;
+    font-weight: 700;
+    line-height: 1.2;
+    text-shadow: 0 -1rem 1rem #000;
+    letter-spacing: 0.03em;
+    transform: translateY(-1rem);
+}
+.CButton_content_cc[lang='ja'],
+.CButton_content_cc[lang='ko'],
+.CButton_content_cc[lang='zh_tw'],
+.CButton_content_cc[lang='zh_sg'],
+.CButton_content_cc[lang='zh_cn'],
+.CButton_content_cc[lang='th'] {
+    font-weight: 400;
+}
+.CButton_base__main_42 .CButton_content_cc,
+.CButton_base__primaryRed_ec .CButton_content_cc {
+    text-shadow: 0 -1rem 1rem #600;
+}
+.CButton_base__secondary_50 .CButton_content_cc {
+    color: rgba(254, 254, 236, 0.75);
+}
+.CButton_base__primaryGreen_6f .CButton_content_cc {
+    text-shadow: 0 -1rem 1rem #1c2502;
+}
+.CButton_base__extraSmall_27 .CButton_content_cc {
+    font-size: 12rem;
+}
+.CButton_base__small_df .CButton_content_cc {
+    font-size: 14rem;
+}
+.CButton_base__medium_74 .CButton_content_cc {
+    font-size: 15rem;
+}
+.CButton_base__disabled_d9 .CButton_content_cc {
+    opacity: 0.6;
+}
+
+.Box_mt__XS_0c {
+    margin-top: 4rem;
+}
+.Box_mt__SM_eb {
+    margin-top: 8rem;
+}
+.Box_mt__SMp_cf {
+    margin-top: 10rem;
+}
+.Box_mt__MD_25 {
+    margin-top: 16rem;
+}
+.Box_mt__MDp_49 {
+    margin-top: 20rem;
+}
+.Box_mt__LG_e8 {
+    margin-top: 32rem;
+}
+.Box_mt__XL_83 {
+    margin-top: 64rem;
+}
+
+.Box_mr__XS_7c {
+    margin-right: 4rem;
+}
+
+.Box_mr__SM_08 {
+    margin-right: 8rem;
+}
+
+.Box_mr__SMp_06 {
+    margin-right: 10rem;
+}
+
+.Box_mr__MD_4a {
+    margin-right: 16rem;
+}
+
+.Box_mr__MDp_b6 {
+    margin-right: 20rem;
+}
+
+.Box_mr__LG_d0 {
+    margin-right: 32rem;
+}
+
+.Box_mr__XL_db {
+    margin-right: 64rem;
+}
+
+.Box_mb__XS_bb {
+    margin-bottom: 4rem;
+}
+
+.Box_mb__SM_83 {
+    margin-bottom: 8rem;
+}
+
+.Box_mb__SMp_04 {
+    margin-bottom: 10rem;
+}
+
+.Box_mb__MD_ed {
+    margin-bottom: 16rem;
+}
+
+.Box_mb__MDp_65 {
+    margin-bottom: 20rem;
+}
+
+.Box_mb__LG_c8 {
+    margin-bottom: 32rem;
+}
+
+.Box_mb__XL_f8 {
+    margin-bottom: 64rem;
+}
+
+.Box_ml__XS_8a {
+    margin-left: 4rem;
+}
+
+.Box_ml__SM_e6 {
+    margin-left: 8rem;
+}
+
+.Box_ml__SMp_fb {
+    margin-left: 10rem;
+}
+
+.Box_ml__MD_2b {
+    margin-left: 16rem;
+}
+
+.Box_ml__MDp_c7 {
+    margin-left: 20rem;
+}
+
+.Box_ml__LG_39 {
+    margin-left: 32rem;
+}
+
+.Box_ml__XL_4a {
+    margin-left: 64rem;
+}
+
+/* eslint-disable-next-line expectedscss*/
+.Text_paragraph-P10_2c {
+    font-size: 10rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.Text_paragraph-P12_22 {
+    font-size: 12rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+.Text_paragraph-P14_a7 {
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+.Text_paragraph-P16_90 {
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+.Text_paragraph-P18_50 {
+    font-size: 18rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+.Text_paragraph-P24_33 {
+    font-size: 24rem;
+    font-weight: 400;
+    line-height: 32rem;
+}
+.Text_heading-H14_8b {
+    font-size: 14rem;
+    font-weight: 700;
+    line-height: 1.15;
+}
+.Text_heading-H15_9e {
+    font-size: 15rem;
+    font-weight: 700;
+    line-height: 1.15;
+}
+.Text_heading-H18_b7 {
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H20R_f6 {
+    font-size: 20rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.Text_heading-H22_27 {
+    font-size: 22rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.Text_heading-H24R_be {
+    font-size: 24rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.Text_heading-H24_0c {
+    font-size: 24rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.Text_heading-H28_78 {
+    font-size: 28rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H36_32 {
+    font-size: 36rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H56_c3 {
+    font-size: 56rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H73_8f {
+    font-size: 73rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H144_a9 {
+    font-size: 144rem;
+    font-weight: 700;
+    line-height: 1;
+}
+.Text_BLACK_REAL_30 {
+    color: #000000;
+}
+.Text_WHITE_REAL_bc {
+    color: #ffffff;
+}
+.Text_WHITE_62 {
+    color: #f2f2f7;
+}
+.Text_WHITE_ORANGE_54 {
+    color: #fefeec;
+}
+.Text_WHITE_SPANISH_df {
+    color: #e9e2bf;
+}
+.Text_PAR_15 {
+    color: #8c8c7e;
+}
+.Text_PAR_SECONDARY_5d {
+    color: #595950;
+}
+.Text_PAR_TERTIARY_c9 {
+    color: #37362e;
+}
+.Text_INFO_RED_30 {
+    color: #ff0000;
+}
+.Text_RED_66 {
+    color: #ff2717;
+}
+.Text_RED_DARK_d8 {
+    color: #b70000;
+}
+.Text_YELLOW_ed {
+    color: #feab34;
+}
+.Text_ORANGE_be {
+    color: #ee7000;
+}
+.Text_CREAM_57 {
+    color: #ffdd99;
+}
+.Text_BROWN_18 {
+    color: #cbac77;
+}
+.Text_GREEN_BRIGHT_3f {
+    color: #80d43a;
+}
+.Text_GREEN_e3 {
+    color: #7ab300;
+}
+.Text_GREEN_DARK_f1 {
+    color: #497212;
+}
+.Text_BLUE_BOOSTER_21 {
+    color: #ccffff;
+}
+.Text_BLUE_TEAMKILLER_ab {
+    color: #09e2ff;
+}
+.Text_CRED_f7 {
+    color: #ced9d9;
+}
+.Text_GOLD_28 {
+    color: #ffc363;
+}
+.Text_BOND_be {
+    color: #c9c9b6;
+}
+.Text_PROM_65 {
+    color: #a29b70;
+}
+
+.CompensationLabel_base_8b {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.CompensationLabel_icon_8e {
+    width: 48rem;
+    height: 48rem;
+    background: url('R.images.gui.maps.icons.seniorityAwards.compensation_small') no-repeat center / contain;
+}
+
+.CompensationLabel_icon__vehicles_12 {
+    width: 40rem;
+    height: 40rem;
+    background-image: url('R.images.gui.maps.icons.seniorityAwards.tooltips.compensationTooltip.compensationVehicles');
+}
+
+.CompensationLabel_value_a8 {
+    color: #ffc363;
+    font-size: 24rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-left: 5rem;
+}
+
+.CompensationLabel_value__credits_c1 {
+    color: #e9e2bf;
+    font-size: 24rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.VehicleName_base_c7 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.VehicleName_base__white_c9 {
+    color: #f2f2f7;
+}
+
+.VehicleName_base__whiteSpanish_13 {
+    color: #e9e2bf;
+}
+
+.VehicleName_nation_b9 {
+    width: 25rem;
+    height: 17rem;
+    margin-top: 4rem;
+    margin-right: 5rem;
+    background: no-repeat center / contain;
+}
+
+.VehicleName_base__colored_e3 .VehicleName_level_a7 {
+    color: #e9e2bf;
+}
+
+.VehicleName_type_d7 {
+    width: 60rem;
+    height: 54rem;
+    margin: 0 -14rem;
+    background: no-repeat center / contain;
+    position: relative;
+    transform: translateY(3rem);
+}
+
+.VehicleName_type__elite_0b {
+    margin: 0 -8rem;
+}
+
+.VehicleName_base__medium_4f .VehicleName_type_d7 {
+    width: 83rem;
+    height: 73rem;
+    margin: 0 -23rem;
+    background: no-repeat center / contain;
+    position: relative;
+    top: -18rem;
+}
+
+.VehicleName_base__medium_4f .VehicleName_type__elite_0b {
+    margin: 0 -16rem;
+}
+
+.VehicleName_base__colored_e3 .VehicleName_name_80 {
+    color: #8c8c7e;
+}
+
+.MainReward_base_9e {
+    margin: 0 12rem;
+    position: relative;
+}
+
+.MainReward_base__disabled_a5 {
+    pointer-events: none;
+}
+
+.mediaLarge .MainReward_base_9e {
+    margin: 0 14rem;
+}
+
+.MainReward_info_6c {
+    color: #ffdd99;
+    font-size: 24rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: -40rem 0 0;
+}
+
+.mediaMedium .MainReward_info_6c {
+    margin: -56rem 0 0;
+    font-size: 36rem;
+}
+
+.MainReward_labelCont_19 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    position: relative;
+}
+
+.MainReward_label_c0 {
+    color: #e9e2bf;
+    font-size: 24rem;
+    font-weight: 700;
+    line-height: 1.2;
+    text-align: center;
+    position: absolute;
+    top: -10rem;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.MainReward_labelText_91 {
+    white-space: normal;
+}
+
+.MainReward_vehicleNameLabel_03 {
+    margin-top: -22rem;
+}
+
+.MainReward_selectableBonusContainer_ef {
+    margin-top: 0;
+    z-index: 1;
+}
+
+.mediaSmall .MainReward_selectableBonusContainer_ef {
+    margin-top: 12rem;
+}
+
+.MainReward_selectButton_7c {
+    color: #f2f2f7;
+    font-size: 14rem;
+    font-weight: 700;
+    line-height: 1.15;
+    width: 120rem;
+    height: 20rem;
+}
+
+.MainReward_selectLabel_d4 {
+    color: #e9e2bf;
+    font-size: 24rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 10rem;
+}
+
+.MainReward_rewardImage_8f {
+    transform: translateY(-25rem);
+}
+
+.mediaLarge .MainReward_rewardImage_8f {
+    transform: translateY(-10rem);
 }
 
 @keyframes Ribbon_fadeOut_6b {
@@ -654,15 +1491,19 @@ body {
     position: relative;
 }
 .Ribbon_ribbon_33 {
+    width: 1600rem;
     height: 442rem;
-    margin-top: 130rem;
+    margin-top: 100rem;
+    background: url('R.images.gui.maps.icons.seniorityAwards.ribbon.ribbon') no-repeat center / contain;
     position: relative;
 }
 .mediaLarge .Ribbon_ribbon_33 {
+    width: 1920rem;
     height: 530rem;
     margin-top: 100rem;
 }
 .mediaExtraLarge .Ribbon_ribbon_33 {
+    width: 2560rem;
     height: 706rem;
     margin-top: 240rem;
 }
@@ -670,14 +1511,34 @@ body {
     margin-top: 190rem;
 }
 .mediaExtraLarge .Ribbon_base__withCoins_66 .Ribbon_ribbon_33 {
-    margin-top: 290rem;
+    margin-top: 180rem;
+}
+.Ribbon_mainRewards_54 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: -10rem;
+    position: relative;
+    z-index: 3;
+}
+.mediaSmall .Ribbon_mainRewards_54 {
+    margin-top: -30rem;
+}
+.mediaMedium .Ribbon_mainRewards_54 {
+    margin-top: -80rem;
+}
+.mediaLarge .Ribbon_mainRewards_54 {
+    margin-top: -130rem;
+}
+.mediaExtraLarge .Ribbon_mainRewards_54 {
+    margin-top: -75rem;
 }
 .Ribbon_rewards_4b {
     width: 1600rem;
     height: 100%;
-    background: url('R.images.gui.maps.icons.seniorityAwards.ribbon.ribbon') no-repeat center / contain;
     position: relative;
-    z-index: 3;
+    z-index: 2;
 }
 .mediaLarge .Ribbon_rewards_4b {
     width: 1920rem;
@@ -686,20 +1547,8 @@ body {
     width: 2560rem;
 }
 .Ribbon_awardCoin_1e {
-    position: absolute;
-    bottom: 260rem;
-    left: 50%;
-    z-index: 4;
-    transform: translateX(-50%);
-}
-.mediaMedium .Ribbon_awardCoin_1e {
-    bottom: 235rem;
-}
-.mediaLarge .Ribbon_awardCoin_1e {
-    bottom: 335rem;
-}
-.mediaExtraLarge .Ribbon_awardCoin_1e {
-    bottom: 445rem;
+    position: relative;
+    z-index: 3;
 }
 .Ribbon_radialLines_e5 {
     width: 483rem;
@@ -1070,21 +1919,26 @@ body {
 }
 
 .Vehicle_nation_88 {
-    width: 26rem;
+    width: 25rem;
     height: 16rem;
-    margin: 0 10rem -2rem 0;
-    background: no-repeat center / contain;
+    margin: 0 10rem -5rem 0;
+    background: no-repeat center / cover;
+}
+
+.mediaMedium .Vehicle_nation_88 {
+    width: 30rem;
+    height: 20rem;
 }
 
 .Vehicle_type_14 {
     width: 32rem;
-    height: 32rem;
+    height: 48rem;
     margin: 0 6rem;
-    background: no-repeat center / contain;
+    background: no-repeat center / cover;
 }
 
 .mediaMedium .Vehicle_type_14 {
-    width: 48rem;
+    width: 38rem;
     height: 48rem;
 }
 
@@ -1102,11 +1956,19 @@ body {
 }
 
 .mediaSmall .Vehicles_container_d2 {
-    max-width: 87%;
+    max-width: 1188rem;
+}
+
+.mediaMedium .Vehicles_container_d2 {
+    max-width: 1376rem;
+}
+
+.mediaLarge .Vehicles_container_d2 {
+    max-width: 1651rem;
 }
 
 .mediaExtraLarge .Vehicles_container_d2 {
-    max-width: 91%;
+    max-width: 2329rem;
 }
 
 .Vehicles_scrollWrapper_b0 {
@@ -1133,10 +1995,6 @@ body {
     transform-origin: 50% 55%; /* fixed blur due to rotation*/
 }
 
-.Vehicles_scrollLeftButton_28 {
-    background-position-y: 30%;
-}
-
 .Vehicles_scrollTrack_bd {
     margin: 0;
 }
@@ -1146,7 +2004,7 @@ body {
 }
 
 .Vehicles_item__offset_ab + .Vehicles_item__offset_ab {
-    margin-left: -50rem;
+    margin-left: -40rem;
 }
 
 .mediaSmall .Vehicles_item__offset_ab + .Vehicles_item__offset_ab {
@@ -1154,15 +2012,15 @@ body {
 }
 
 .mediaMedium .Vehicles_item__offset_ab + .Vehicles_item__offset_ab {
-    margin-left: -54rem;
+    margin-left: -44rem;
 }
 
 .mediaLarge .Vehicles_item__offset_ab + .Vehicles_item__offset_ab {
-    margin-left: -78rem;
+    margin-left: -68rem;
 }
 
 .mediaExtraLarge .Vehicles_item__offset_ab + .Vehicles_item__offset_ab {
-    margin-left: -67rem;
+    margin-left: -57rem;
 }
 
 .Vehicles_item__big_85 {
@@ -1181,8 +2039,8 @@ body {
     opacity: 0;
     visibility: hidden;
     position: absolute;
-    top: 107%;
     right: 0;
+    bottom: -40rem;
     left: 0;
     transition:
         opacity 0.2s ease-out,
@@ -1244,216 +2102,6 @@ body {
     opacity: 0;
     transition-delay: 0s;
     pointer-events: none;
-}
-
-.CButton_base_40 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 2rem;
-    box-shadow: 0 0 0 1rem rgba(0, 0, 0, 0.6);
-    position: relative;
-    cursor: pointer;
-}
-
-.CButton_base__main_42,
-.CButton_base__primary_7f,
-.CButton_base__primaryGreen_6f,
-.CButton_base__primaryRed_ec,
-.CButton_base__secondary_50 {
-    background-size: 100% 100%;
-}
-
-.CButton_base__main_42 {
-    background-image: url('R.images.gui.maps.icons.components.button.back_main');
-}
-
-.CButton_base__primary_7f {
-    background-image: url('R.images.gui.maps.icons.components.button.back_primary');
-}
-
-.CButton_base__primaryGreen_6f {
-    background-image: url('R.images.gui.maps.icons.components.button.back_primary_green');
-}
-
-.CButton_base__primaryRed_ec {
-    background-image: url('R.images.gui.maps.icons.components.button.back_primary_red');
-}
-
-.CButton_base__secondary_50 {
-    background-image: url('R.images.gui.maps.icons.components.button.back_secondary');
-}
-
-.CButton_base__ghost_ed {
-    border-radius: 3rem;
-    box-shadow:
-        0 0 0 1rem rgba(0, 0, 0, 0.3),
-        0 0 0 1rem rgba(255, 255, 255, 0.15) inset;
-    background-color: rgba(0, 0, 0, 0.15);
-}
-
-.CButton_base__extraSmall_27 {
-    min-height: 17rem;
-    padding: 0 16rem;
-}
-
-.CButton_base__small_df,
-.CButton_base__medium_74 {
-    padding: 0 20rem;
-}
-
-.CButton_base__small_df {
-    min-height: 18rem;
-}
-
-.CButton_base__medium_74 {
-    min-height: 32rem;
-}
-
-.CButton_base__disabled_d9 {
-    cursor: default;
-}
-/* Element .back and background-image in element .base need for fix bug in GF https://jira-archive.lesta.group/browse/WOTD-158525
-The bug is that under certain conditions, when using border-image, stripes appear. Strip is a single-pixel gap
-between 'border-image-width' and 'fill'.
-This bug is reproduced in Google Chrome 81.0.4044.113
-*/
-.CButton_back_e5 {
-    border-image-slice: 4 fill;
-    border-image-width: 4rem;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-}
-.CButton_base__main_42 .CButton_back_e5 {
-    border-image-source: url('R.images.gui.maps.icons.components.button.back_main');
-}
-.CButton_base__primary_7f .CButton_back_e5 {
-    border-image-source: url('R.images.gui.maps.icons.components.button.back_primary');
-}
-.CButton_base__primaryGreen_6f .CButton_back_e5 {
-    border-image-source: url('R.images.gui.maps.icons.components.button.back_primary_green');
-}
-.CButton_base__primaryRed_ec .CButton_back_e5 {
-    border-image-source: url('R.images.gui.maps.icons.components.button.back_primary_red');
-}
-.CButton_base__secondary_50 .CButton_back_e5 {
-    border-image-source: url('R.images.gui.maps.icons.components.button.back_secondary');
-}
-.CButton_texture_fe {
-    background: url('R.images.gui.maps.icons.components.button.standard_texture_file');
-    background-size: 155rem 31rem;
-    mix-blend-mode: soft-light;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-}
-.CButton_state_11 {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    transition: box-shadow 0.16s ease-in-out;
-}
-.CButton_base__focus_83 .CButton_state_11 {
-    border-radius: 2rem;
-    box-shadow: inset 0 0 2rem 1rem rgba(255, 85, 0, 0.2);
-}
-.CButton_stateHighlightHover_ff,
-.CButton_stateHighlightActive_35,
-.CButton_stateDisabled_54 {
-    opacity: 0;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-}
-.CButton_base__firstHover_d5 .CButton_stateHighlightHover_ff,
-.CButton_base__firstHover_d5 .CButton_stateHighlightActive_35,
-.CButton_base__firstHover_d5 .CButton_stateDisabled_54 {
-    transition: opacity 0.16s ease-in-out;
-}
-.CButton_stateHighlightHover_ff {
-    background-image: linear-gradient(
-        180deg,
-        rgba(252, 248, 235, 0.25) 0%,
-        rgba(252, 248, 235, 0.1) 50%,
-        rgba(255, 255, 255, 0) 100%
-    );
-}
-.CButton_base_40:hover .CButton_stateHighlightHover_ff {
-    opacity: 1;
-}
-.CButton_base_40:active .CButton_stateHighlightHover_ff {
-    opacity: 0;
-}
-.CButton_base__disabled_d9:hover .CButton_stateHighlightHover_ff {
-    opacity: 0;
-}
-.CButton_base__ghost_ed .CButton_stateHighlightHover_ff {
-    box-shadow: 0 15rem 12rem 0 rgba(242, 242, 230, 0.11) inset;
-    background-color: rgba(8, 6, 0, 0.18);
-    background-image: none;
-}
-.CButton_stateHighlightActive_35 {
-    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.15) 100%);
-}
-.CButton_base__highlightActive_b2 .CButton_stateHighlightActive_35 {
-    opacity: 1;
-}
-.CButton_stateDisabled_54 {
-    background-color: rgba(0, 0, 0, 0.25);
-    background-image: url('R.images.gui.maps.icons.components.button.texture_disable');
-    background-size: 15rem;
-}
-.CButton_base__disabled_d9 .CButton_stateDisabled_54 {
-    opacity: 1;
-}
-.CButton_content_cc {
-    display: flex;
-    align-items: center;
-    color: #f2f2e6;
-    font-weight: 700;
-    line-height: 1.2;
-    text-shadow: 0 -1rem 1rem #000;
-    letter-spacing: 0.03em;
-    transform: translateY(-1rem);
-}
-.CButton_content_cc[lang='ja'],
-.CButton_content_cc[lang='ko'],
-.CButton_content_cc[lang='zh_tw'],
-.CButton_content_cc[lang='zh_sg'],
-.CButton_content_cc[lang='zh_cn'],
-.CButton_content_cc[lang='th'] {
-    font-weight: 400;
-}
-.CButton_base__main_42 .CButton_content_cc,
-.CButton_base__primaryRed_ec .CButton_content_cc {
-    text-shadow: 0 -1rem 1rem #600;
-}
-.CButton_base__secondary_50 .CButton_content_cc {
-    color: rgba(254, 254, 236, 0.75);
-}
-.CButton_base__primaryGreen_6f .CButton_content_cc {
-    text-shadow: 0 -1rem 1rem #1c2502;
-}
-.CButton_base__extraSmall_27 .CButton_content_cc {
-    font-size: 12rem;
-}
-.CButton_base__small_df .CButton_content_cc {
-    font-size: 14rem;
-}
-.CButton_base__medium_74 .CButton_content_cc {
-    font-size: 15rem;
-}
-.CButton_base__disabled_d9 .CButton_content_cc {
-    opacity: 0.6;
 }
 
 @keyframes Footer_fadeOut_8a {
@@ -1597,7 +2245,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     padding: 0 25rem;
     position: relative;
 }
-
 .Header_titleBox_72 {
     display: flex;
     justify-content: center;
@@ -1605,106 +2252,80 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     margin-bottom: 10rem;
     position: relative;
 }
-
 .Header_light_f6 {
-    width: 950rem;
-    height: 190rem;
-    background-image: radial-gradient(50% 50% at 50% 50%, rgba(40, 40, 67, 0.5), transparent);
+    width: 1274rem;
+    height: 400rem;
+    background: url('R.images.gui.maps.icons.seniorityAwards.headerLight') no-repeat center / contain;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -25%);
+    transform: translate(-50%, -40%);
     pointer-events: none;
 }
-
-.mediaSmall .Header_light_f6 {
-    width: 1205rem;
-    height: 237rem;
-}
-
-.mediaMedium .Header_light_f6 {
-    width: 1165rem;
-    height: 225rem;
-}
-
-.mediaLarge .Header_light_f6 {
-    width: 1741rem;
-    height: 285rem;
-}
-
-.mediaExtraLarge .Header_light_f6 {
-    width: 2057rem;
-    height: 428rem;
-}
-
 .Header_line_25 {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    width: 250rem;
-    height: 1rem;
-    background-image: linear-gradient(90deg, transparent, #fd9);
+    width: 230rem;
+    height: 12rem;
+    background: url('R.images.gui.maps.icons.seniorityAwards.headerFrame') no-repeat center / contain;
+    z-index: 1;
 }
-
-.mediaSmall .Header_line_25 {
-    width: 300rem;
+.mediaMedium .Header_line_25 {
+    width: 342rem;
+    height: 16rem;
 }
-
-.mediaLarge .Header_line_25 {
-    width: 493rem;
-}
-
 .Header_line__inverted_ab {
-    transform: rotate(180deg);
+    background-image: url('R.images.gui.maps.icons.seniorityAwards.headerFrameReverted');
 }
-
-.Header_square_08 {
-    width: 8rem;
-    height: 8rem;
-    background-color: #fd9;
-    transform: rotate(45deg);
+.mediaMedium .Header_line__inverted_ab {
+    width: 342rem;
+    height: 16rem;
 }
-
 .Header_title_4c {
-    margin: 0 22rem;
+    color: #f2f2f7;
     font-size: 28rem;
     font-weight: 700;
-    line-height: 1.2;
-    letter-spacing: 1.5rem;
+    line-height: 1.1;
+    margin: 0 30rem;
+    line-height: 115%;
     position: relative;
 }
-
 .mediaLarge .Header_title_4c {
+    color: #f2f2f7;
     font-size: 36rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin: 0 39rem;
+    line-height: 115%;
 }
-
 .Header_gradientText_37 {
     color: #f4e58b;
 }
-
 .Header_gradientText__copied_d8 {
     color: #ddab61;
     position: absolute;
     mask-image: linear-gradient(transparent, #fff);
 }
-
 .Header_subTitleBox_01 {
     color: #f2f2f7;
-    font-size: 45rem;
+    font-size: 36rem;
     font-weight: 700;
     line-height: 1.1;
-    letter-spacing: 1.5rem;
     position: relative;
 }
-
+.mediaMedium .Header_subTitleBox_01 {
+    color: #f2f2f7;
+    font-size: 56rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
 .mediaLarge .Header_subTitleBox_01 {
+    color: #f2f2f7;
     font-size: 73rem;
+    font-weight: 700;
+    line-height: 1.1;
 }
-
-.mediaExtraLarge .Header_subTitleBox_01 {
-    font-size: 100rem;
-}
-
 .Header_subTitle_e7 {
     justify-content: center;
 }
@@ -1846,9 +2467,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     transition: opacity 0.3s;
     pointer-events: none;
 }
-.mediaLarge .App_shadow_03 {
-    display: none;
-}
 .App_base__ribbon_86 .App_shadow_03 {
     opacity: 0.4;
 }
@@ -1909,6 +2527,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 .App_goto_32 {
     color: #8c8c7e;
+    transform: translateX(-4rem);
 }
 .App_header_de {
     opacity: 0;
@@ -1941,12 +2560,15 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     animation-iteration-count: 1;
     width: 100%;
     position: absolute;
-    bottom: 50rem;
+    bottom: 40rem;
     z-index: 3;
 }
 .mediaMediumHeight .App_footer_72 {
-    bottom: 81rem;
+    bottom: 45rem;
+}
+.mediaLargeHeight .App_footer_72 {
+    bottom: 65rem;
 }
 .mediaExtraLargeHeight .App_footer_72 {
-    bottom: 6vh;
+    bottom: 77rem;
 }

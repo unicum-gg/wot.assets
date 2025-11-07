@@ -1347,8 +1347,8 @@
                             close: u.createCallback((u) => ({ reason: u }), 'onCloseClicked'),
                         }),
                     ),
-                    z = Y[0],
-                    X = Y[1];
+                    X = Y[0],
+                    z = Y[1];
                 var V = t(5521),
                     K = t(4179);
                 const Q = (u) => {
@@ -2197,7 +2197,7 @@
                         closeBtn: 'DefaultDialogTemplate_closeBtn_5e',
                         closeBtn__responsive: 'DefaultDialogTemplate_closeBtn__responsive_49',
                     },
-                    zu = (0, n.memo)(
+                    Xu = (0, n.memo)(
                         ({
                             isShown: u = !0,
                             classMix: e,
@@ -2290,10 +2290,10 @@
                             );
                         },
                     );
-                let Xu, Vu, Ku;
+                let zu, Vu, Ku;
                 (!(function (u) {
                     ((u.small = 'small'), (u.big = 'big'), (u.large = 'large'), (u.extraLarge = 'extraLarge'));
-                })(Xu || (Xu = {})),
+                })(zu || (zu = {})),
                     (function (u) {
                         ((u.credits = 'credits'),
                             (u.gold = 'gold'),
@@ -2305,15 +2305,17 @@
                     (function (u) {
                         ((u.Red = 'RedActionBG'), (u.Blue = 'BlueActionBG'));
                     })(Ku || (Ku = {})));
-                const Qu = ({ format: u, value: e }) => {
-                        const t = ((u, e = 'integral') => {
-                            let t;
-                            t = 'gold' === e ? K.B3.GOLD : K.B3.INTEGRAL;
-                            return void 0 === u ? '' : K.Z5.getNumberFormat(u, t);
-                        })(e, u);
-                        return t ? r().createElement('span', null, t) : null;
-                    },
-                    Zu = {
+                class Qu extends r().PureComponent {
+                    render() {
+                        let u;
+                        if ('gold' === this.props.format) u = K.B3.GOLD;
+                        else u = K.B3.INTEGRAL;
+                        const e = K.Z5.getNumberFormat(this.props.value, u);
+                        return void 0 !== this.props.value && void 0 !== e ? e : null;
+                    }
+                }
+                Qu.defaultProps = { format: 'integral' };
+                const Zu = {
                         base: 'CurrentBalanceCurrencies_base_50',
                         currencyBlock: 'CurrentBalanceCurrencies_currencyBlock_af',
                         currencyContainer: 'CurrentBalanceCurrencies_currencyContainer_9a',
@@ -2475,6 +2477,7 @@
                         (u.SelectableBonus = 'selectableBonus'),
                         (u.StyleProgressToken = 'styleProgressToken'),
                         (u.TmanToken = 'tmanToken'),
+                        (u.PortalEventDiscount25 = 'portalEventDiscountToken'),
                         (u.NaturalCover = 'naturalCover'),
                         (u.BpCoin = 'bpcoin'),
                         (u.BattlaPassFinalAchievement = 'dossier_achievement'),
@@ -2502,12 +2505,9 @@
                         (u.GoldenTicket = 'birthday2025_golden_ticket'),
                         (u.PostStamp = 'giftsystem_4_stamp'),
                         (u.Quests = 'quests'),
-                        (u.WtStamp = 'stamp'),
-                        (u.WtHunter = 'wt_hunter'),
-                        (u.WtHunterCollection = 'hunter_collection'),
-                        (u.WtTicket = 'wtevent_ticket'),
-                        (u.WtMainPrizeDiscount = 'main_prize_discount'),
-                        (u.WtTicket25 = 'wtevent_ticket25'));
+                        (u.BlankPersonalMissions_1 = 'freeTokens_0'),
+                        (u.BlankPersonalMissions_2 = 'freeTokens_2'),
+                        (u.SACoin = 'sacoin'));
                 })(ie || (ie = {})),
                     (function (u) {
                         ((u.Gold = 'gold'),
@@ -2638,11 +2638,9 @@
                     ie.SelectableBonus,
                     ie.GoldenTicket,
                     ie.PostStamp,
-                    ie.WtStamp,
-                    ie.WtTicket,
-                    ie.WtMainPrizeDiscount,
-                    ie.WtHunter,
-                    ie.WtHunterCollection,
+                    ie.BlankPersonalMissions_1,
+                    ie.BlankPersonalMissions_2,
+                    ie.SACoin,
                     ie.Gold,
                     ie.Credits,
                     ie.Crystal,
@@ -3048,14 +3046,14 @@
                     $e = 'Alert_alert_66',
                     je = 'Alert_icon_ea',
                     Ye = 'Alert_alertText_14',
-                    ze = ({ alertText: u, className: e }) =>
+                    Xe = ({ alertText: u, className: e }) =>
                         r().createElement(
                             'div',
                             { className: g()($e, e) },
                             r().createElement('i', { className: je }),
                             r().createElement('span', { className: Ye }, u),
                         ),
-                    Xe = 'PriceBlock_base_7a',
+                    ze = 'PriceBlock_base_7a',
                     Ve = 'PriceBlock_priceContainer_d3',
                     Ke = 'PriceBlock_text_2c',
                     Qe = 'PriceBlock_currency_13',
@@ -3075,7 +3073,7 @@
                     }) =>
                         r().createElement(
                             'div',
-                            { className: g()(Xe, l) },
+                            { className: g()(ze, l) },
                             r().createElement(
                                 'div',
                                 { className: g()(Ve, null == E ? void 0 : E.priceContainer) },
@@ -3092,7 +3090,7 @@
                                         classMix: null == E ? void 0 : E.additionalText,
                                     }),
                             ),
-                            c && r().createElement(ze, { className: null == E ? void 0 : E.alert, alertText: s }),
+                            c && r().createElement(Xe, { className: null == E ? void 0 : E.alert, alertText: s }),
                         ),
                     Je = { additionalText: 'Footer_additionalText_30', missingCurrency: 'Footer_missingCurrency_f8' },
                     ut = R.strings.tank_setup.dialogs.experimentEquipment,
@@ -3120,7 +3118,7 @@
                                     ),
                                 },
                                 showAlertMessage: !o,
-                                size: Xu.big,
+                                size: zu.big,
                                 alertText: t ? et.notEnoughMoney() : et.notEnoughEquip(),
                                 classNames: { additionalText: Je.additionalText },
                                 isNeedAdditionalText: !o,
@@ -3150,7 +3148,7 @@
                 const lt = R.strings.tank_setup.dialogs.experimentEquipment.header,
                     Et = (0, st.Pi)(() => {
                         var u;
-                        const e = X(),
+                        const e = z(),
                             t = e.model,
                             a = e.controls,
                             i = t.root.get(),
@@ -3171,7 +3169,7 @@
                         ((A = _), Z(V.n.ESCAPE, A));
                         const F = $(t.displayFlags.get(), (u) => u),
                             D = o.slice(0, -1);
-                        return r().createElement(zu, {
+                        return r().createElement(Xu, {
                             isShown: !0,
                             onClose: c,
                             topRight: r().createElement(Ju, { balance: t.balance.get() }),
@@ -3199,7 +3197,7 @@
                     });
                 engine.whenReady.then(() => {
                     N().render(
-                        r().createElement(M, null, r().createElement(z, null, r().createElement(Et, null))),
+                        r().createElement(M, null, r().createElement(X, null, r().createElement(Et, null))),
                         document.getElementById('root'),
                     );
                 });

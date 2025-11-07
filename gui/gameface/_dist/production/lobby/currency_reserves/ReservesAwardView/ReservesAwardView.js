@@ -175,8 +175,8 @@
                 const g = 2,
                     h = 16,
                     v = 32,
-                    w = 64,
-                    p = (u, e) => {
+                    p = 64,
+                    w = (u, e) => {
                         const t = 'GFViewEventProxy';
                         if (void 0 !== e) {
                             const a = e.args,
@@ -214,13 +214,13 @@
                     },
                     b = {
                         close(u) {
-                            p('popover' === u ? g : v);
+                            w('popover' === u ? g : v);
                         },
                         minimize() {
-                            p(w);
+                            w(p);
                         },
                         move(u) {
-                            p(h, { isMouseEvent: !0, on: u });
+                            w(h, { isMouseEvent: !0, on: u });
                         },
                     };
                 function f(u) {
@@ -637,8 +637,8 @@
                         u.keyCode === l.n.ESCAPE && e();
                     };
                 var v = t(572);
-                const w = a.instance,
-                    p = {
+                const p = a.instance,
+                    w = {
                         DataTracker: n.Z,
                         ViewModel: v.Z,
                         ViewEventType: A,
@@ -717,11 +717,11 @@
                                 }
                             return t;
                         },
-                        ClickOutsideManager: w,
+                        ClickOutsideManager: p,
                         SystemLocale: E,
                         UserLocale: i,
                     };
-                window.ViewEnvHelper = p;
+                window.ViewEnvHelper = w;
             },
             985: (u, e, t) => {
                 'use strict';
@@ -844,7 +844,7 @@
                         g = a.mediumHeight,
                         h = a.smallHeight,
                         v = a.extraSmallHeight,
-                        w = { extraLarge: d, large: m, medium: g, small: h, extraSmall: v };
+                        p = { extraLarge: d, large: m, medium: g, small: h, extraSmall: v };
                     if (t.extraLarge || t.large || t.medium || t.small || t.extraSmall) {
                         if (t.extraLarge && E) return e;
                         if (t.large && i) return e;
@@ -852,11 +852,11 @@
                         if (t.small && F) return e;
                         if (t.extraSmall && s) return e;
                     } else {
-                        if (t.extraLargeWidth && o) return n(e, t, w);
-                        if (t.largeWidth && D) return n(e, t, w);
-                        if (t.mediumWidth && l) return n(e, t, w);
-                        if (t.smallWidth && B) return n(e, t, w);
-                        if (t.extraSmallWidth && C) return n(e, t, w);
+                        if (t.extraLargeWidth && o) return n(e, t, p);
+                        if (t.largeWidth && D) return n(e, t, p);
+                        if (t.mediumWidth && l) return n(e, t, p);
+                        if (t.smallWidth && B) return n(e, t, p);
+                        if (t.extraSmallWidth && C) return n(e, t, p);
                         if (
                             !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
                         ) {
@@ -912,21 +912,21 @@
                     g = t.n(m),
                     h = t(926),
                     v = t.n(h);
-                let w, p, b;
+                let p, w, b;
                 (!(function (u) {
                     ((u[(u.ExtraSmall = i.extraSmall.width)] = 'ExtraSmall'),
                         (u[(u.Small = i.small.width)] = 'Small'),
                         (u[(u.Medium = i.medium.width)] = 'Medium'),
                         (u[(u.Large = i.large.width)] = 'Large'),
                         (u[(u.ExtraLarge = i.extraLarge.width)] = 'ExtraLarge'));
-                })(w || (w = {})),
+                })(p || (p = {})),
                     (function (u) {
                         ((u[(u.ExtraSmall = i.extraSmall.width)] = 'ExtraSmall'),
                             (u[(u.Small = i.small.width)] = 'Small'),
                             (u[(u.Medium = i.medium.width)] = 'Medium'),
                             (u[(u.Large = i.large.width)] = 'Large'),
                             (u[(u.ExtraLarge = i.extraLarge.width)] = 'ExtraLarge'));
-                    })(p || (p = {})),
+                    })(w || (w = {})),
                     (function (u) {
                         ((u[(u.ExtraSmall = i.extraSmall.height)] = 'ExtraSmall'),
                             (u[(u.Small = i.small.height)] = 'Small'),
@@ -941,33 +941,33 @@
                             a = ((u) => {
                                 switch (!0) {
                                     case u.extraLarge:
-                                        return w.ExtraLarge;
+                                        return p.ExtraLarge;
                                     case u.large:
-                                        return w.Large;
+                                        return p.Large;
                                     case u.medium:
-                                        return w.Medium;
+                                        return p.Medium;
                                     case u.small:
-                                        return w.Small;
+                                        return p.Small;
                                     case u.extraSmall:
-                                        return w.ExtraSmall;
+                                        return p.ExtraSmall;
                                     default:
-                                        return (console.error('Unreachable media context resolution'), w.ExtraSmall);
+                                        return (console.error('Unreachable media context resolution'), p.ExtraSmall);
                                 }
                             })(u),
                             n = ((u) => {
                                 switch (!0) {
                                     case u.extraLargeWidth:
-                                        return p.ExtraLarge;
+                                        return w.ExtraLarge;
                                     case u.largeWidth:
-                                        return p.Large;
+                                        return w.Large;
                                     case u.mediumWidth:
-                                        return p.Medium;
+                                        return w.Medium;
                                     case u.smallWidth:
-                                        return p.Small;
+                                        return w.Small;
                                     case u.extraSmallWidth:
-                                        return p.ExtraSmall;
+                                        return w.ExtraSmall;
                                     default:
-                                        return (console.error('Unreachable media context resolution'), p.ExtraSmall);
+                                        return (console.error('Unreachable media context resolution'), w.ExtraSmall);
                                 }
                             })(u),
                             E = ((u) => {
@@ -1004,11 +1004,11 @@
                     );
                 }
                 const y = {
-                        [p.ExtraSmall]: '',
-                        [p.Small]: v().SMALL_WIDTH,
-                        [p.Medium]: `${v().SMALL_WIDTH} ${v().MEDIUM_WIDTH}`,
-                        [p.Large]: `${v().SMALL_WIDTH} ${v().MEDIUM_WIDTH} ${v().LARGE_WIDTH}`,
-                        [p.ExtraLarge]: `${v().SMALL_WIDTH} ${v().MEDIUM_WIDTH} ${v().LARGE_WIDTH} ${v().EXTRA_LARGE_WIDTH}`,
+                        [w.ExtraSmall]: '',
+                        [w.Small]: v().SMALL_WIDTH,
+                        [w.Medium]: `${v().SMALL_WIDTH} ${v().MEDIUM_WIDTH}`,
+                        [w.Large]: `${v().SMALL_WIDTH} ${v().MEDIUM_WIDTH} ${v().LARGE_WIDTH}`,
+                        [w.ExtraLarge]: `${v().SMALL_WIDTH} ${v().MEDIUM_WIDTH} ${v().LARGE_WIDTH} ${v().EXTRA_LARGE_WIDTH}`,
                     },
                     S = {
                         [b.ExtraSmall]: '',
@@ -1018,11 +1018,11 @@
                         [b.ExtraLarge]: `${v().SMALL_HEIGHT} ${v().MEDIUM_HEIGHT} ${v().LARGE_HEIGHT} ${v().EXTRA_LARGE_HEIGHT}`,
                     },
                     M = {
-                        [w.ExtraSmall]: '',
-                        [w.Small]: v().SMALL,
-                        [w.Medium]: `${v().SMALL} ${v().MEDIUM}`,
-                        [w.Large]: `${v().SMALL} ${v().MEDIUM} ${v().LARGE}`,
-                        [w.ExtraLarge]: `${v().SMALL} ${v().MEDIUM} ${v().LARGE} ${v().EXTRA_LARGE}`,
+                        [p.ExtraSmall]: '',
+                        [p.Small]: v().SMALL,
+                        [p.Medium]: `${v().SMALL} ${v().MEDIUM}`,
+                        [p.Large]: `${v().SMALL} ${v().MEDIUM} ${v().LARGE}`,
+                        [p.ExtraLarge]: `${v().SMALL} ${v().MEDIUM} ${v().LARGE} ${v().EXTRA_LARGE}`,
                     },
                     T = (u) => {
                         let e = u.children,
@@ -1118,10 +1118,10 @@
                         m = C[1],
                         h = (0, r.useState)(!1),
                         v = h[0],
-                        w = h[1],
-                        p = (0, r.useState)(!1),
-                        b = p[0],
-                        f = p[1],
+                        p = h[1],
+                        w = (0, r.useState)(!1),
+                        b = w[0],
+                        f = w[1],
                         x = (0, r.useCallback)(() => {
                             E || (B.current && (B.current.focus(), m(!0)));
                         }, [E]),
@@ -1151,19 +1151,19 @@
                         ),
                         T = (0, r.useCallback)(
                             (u) => {
-                                E || (l && l(u), w(!1));
+                                E || (l && l(u), p(!1));
                             },
                             [E, l],
                         ),
                         k = (0, r.useCallback)(
                             (u) => {
-                                E || (null !== F && N(F), D && D(u), t && x(), w(!0));
+                                E || (null !== F && N(F), D && D(u), t && x(), p(!0));
                             },
                             [E, F, D, x, t],
                         ),
                         O = (0, r.useCallback)(
                             (u) => {
-                                E || (_ && _(u), w(!1));
+                                E || (_ && _(u), p(!1));
                             },
                             [E, _],
                         ),
@@ -1245,15 +1245,17 @@
                         ((u.Red = 'RedActionBG'), (u.Blue = 'BlueActionBG'));
                     })(j || (j = {})));
                 var V = t(364);
-                const K = ({ format: u, value: e }) => {
-                        const t = ((u, e = 'integral') => {
-                            let t;
-                            t = 'gold' === e ? V.B3.GOLD : V.B3.INTEGRAL;
-                            return void 0 === u ? '' : V.Z5.getNumberFormat(u, t);
-                        })(e, u);
-                        return t ? a().createElement('span', null, t) : null;
-                    },
-                    Y = {
+                class K extends a().PureComponent {
+                    render() {
+                        let u;
+                        if ('gold' === this.props.format) u = V.B3.GOLD;
+                        else u = V.B3.INTEGRAL;
+                        const e = V.Z5.getNumberFormat(this.props.value, u);
+                        return void 0 !== this.props.value && void 0 !== e ? e : null;
+                    }
+                }
+                K.defaultProps = { format: 'integral' };
+                const Y = {
                         base: 'Currency_base_57',
                         icon: 'Currency_icon_c5',
                         base__small: 'Currency_base__small_af',
@@ -1650,10 +1652,10 @@
                     },
                     hu = (V.Sw.instance, {});
                 var vu = t(521);
-                const wu = (u) => {
+                const pu = (u) => {
                     console.error(u.type + ': useKeydownListener hook :: Callback is not defined');
                 };
-                function pu(u = vu.n.NONE, e = wu, t = !1) {
+                function wu(u = vu.n.NONE, e = pu, t = !1) {
                     (0, r.useEffect)(() => {
                         if (u !== vu.n.NONE)
                             return (
@@ -1716,7 +1718,7 @@
                                 F();
                             }, [F]);
                             var o;
-                            ((o = s), pu(vu.n.ESCAPE, o));
+                            ((o = s), wu(vu.n.ESCAPE, o));
                             const D = (0, r.useMemo)(
                                     () => ({
                                         extendSubscription: a().createElement(

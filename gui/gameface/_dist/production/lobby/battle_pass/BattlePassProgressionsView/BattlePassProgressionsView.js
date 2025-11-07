@@ -6,14 +6,16 @@
                 var u = a(6179),
                     r = a.n(u),
                     n = a(4179);
-                const o = ({ format: e, value: t }) => {
-                    const a = ((e, t = 'integral') => {
-                        let a;
-                        a = 'gold' === t ? n.B3.GOLD : n.B3.INTEGRAL;
-                        return void 0 === e ? '' : n.Z5.getNumberFormat(e, a);
-                    })(t, e);
-                    return a ? r().createElement('span', null, a) : null;
-                };
+                class o extends r().PureComponent {
+                    render() {
+                        let e;
+                        if ('gold' === this.props.format) e = n.B3.GOLD;
+                        else e = n.B3.INTEGRAL;
+                        const t = n.Z5.getNumberFormat(this.props.value, e);
+                        return void 0 !== this.props.value && void 0 !== t ? t : null;
+                    }
+                }
+                o.defaultProps = { format: 'integral' };
             },
             280: (e, t, a) => {
                 'use strict';
@@ -4917,6 +4919,7 @@
                         (e.SelectableBonus = 'selectableBonus'),
                         (e.StyleProgressToken = 'styleProgressToken'),
                         (e.TmanToken = 'tmanToken'),
+                        (e.PortalEventDiscount25 = 'portalEventDiscountToken'),
                         (e.NaturalCover = 'naturalCover'),
                         (e.BpCoin = 'bpcoin'),
                         (e.BattlaPassFinalAchievement = 'dossier_achievement'),
@@ -4944,12 +4947,9 @@
                         (e.GoldenTicket = 'birthday2025_golden_ticket'),
                         (e.PostStamp = 'giftsystem_4_stamp'),
                         (e.Quests = 'quests'),
-                        (e.WtStamp = 'stamp'),
-                        (e.WtHunter = 'wt_hunter'),
-                        (e.WtHunterCollection = 'hunter_collection'),
-                        (e.WtTicket = 'wtevent_ticket'),
-                        (e.WtMainPrizeDiscount = 'main_prize_discount'),
-                        (e.WtTicket25 = 'wtevent_ticket25'));
+                        (e.BlankPersonalMissions_1 = 'freeTokens_0'),
+                        (e.BlankPersonalMissions_2 = 'freeTokens_2'),
+                        (e.SACoin = 'sacoin'));
                 })(tn || (tn = {})),
                     (function (e) {
                         ((e.Gold = 'gold'),
@@ -5082,11 +5082,9 @@
                         tn.SelectableBonus,
                         tn.GoldenTicket,
                         tn.PostStamp,
-                        tn.WtStamp,
-                        tn.WtTicket,
-                        tn.WtMainPrizeDiscount,
-                        tn.WtHunter,
-                        tn.WtHunterCollection,
+                        tn.BlankPersonalMissions_1,
+                        tn.BlankPersonalMissions_2,
+                        tn.SACoin,
                     ],
                     _n = [tn.Gold, tn.Credits, tn.Crystal, tn.FreeXp],
                     dn = [tn.BattlePassPoints],
@@ -5212,6 +5210,8 @@
                                 return `R.images.gui.maps.icons.quests.bonuses.${t}.style_3d`;
                             case 'collectionItem':
                                 return `R.images.gui.maps.icons.collectionItems.${i}.${n}`;
+                            case 'portal':
+                                return `R.images.gui.maps.icons.rewards.${t}.${o}`;
                             default:
                                 return `R.images.gui.maps.icons.quests.bonuses.${t}.${a}`;
                         }

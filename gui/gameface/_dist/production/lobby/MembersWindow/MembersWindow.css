@@ -351,17 +351,17 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     position: absolute;
 }
 
-.SubView_base_df {
-    width: 100%;
-    height: 100%;
-    position: relative;
-}
-
 .BonusInfoIcon_bonusInfoIcon_3d {
     width: 16rem;
     height: 16rem;
     margin-left: 8rem;
     background-size: contain;
+}
+
+.SubView_base_df {
+    width: 100%;
+    height: 100%;
+    position: relative;
 }
 
 /*////////////*/
@@ -503,51 +503,46 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     background-image: url('R.images.gui.maps.icons.buttons.toggle_indicator_active');
 }
 
-.CommanderControls_left_11 {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
+/*////////////*/
 
-.CommanderControls_left_11 .CommanderControls_tiersLimit_85 {
-    width: auto;
-}
+/* Colors: https://confluence.lesta.group/pages/viewpage.action?pageId=2040068438*/
 
-.CommanderControls_left_11 .CommanderControls_findPlayers_66 {
-    margin-right: 11rem;
-}
-
-.Footer_base_6c {
+.Footer_base_d0 {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 0 10rem 19rem 20rem;
 }
 
-.Footer_message_55 {
+.Footer_message_3d {
     margin: 14rem 0 7rem;
     color: #595950;
     font-size: 14rem;
+    text-align: center;
 }
 
-.Footer_message__alert_ad {
+.Footer_message__alert_64 {
     color: #ff2717;
 }
 
-.Bonus_base_00 {
+/*////////////*/
+
+/* Colors: https://confluence.lesta.group/pages/viewpage.action?pageId=2040068438*/
+
+.Bonus_base_96 {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 0 8rem;
 }
 
-.Bonus_currencyImage_61 {
+.Bonus_currencyImage_16 {
     width: 40rem;
     height: 40rem;
-    background: no-repeat 50% / contain;
+    background: center / contain no-repeat;
 }
 
-.Bonus_caption_19 {
+.Bonus_caption_7e {
     margin-left: -1rem;
     margin-top: -17rem;
     color: #f5f0e5;
@@ -563,7 +558,11 @@ This bug is reproduced in Google Chrome 81.0.4044.113
         0 0 1rem rgba(255, 42, 0, 0.4);
 }
 
-.Bonuses_base_c0 {
+/*////////////*/
+
+/* Colors: https://confluence.lesta.group/pages/viewpage.action?pageId=2040068438*/
+
+.Bonuses_base_6f {
     display: flex;
     justify-content: flex-end;
     flex: 0 3 auto;
@@ -576,7 +575,11 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     flex-wrap: wrap;
 }
 
-.NoBonus_textContainer_18 {
+/*////////////*/
+
+/* Colors: https://confluence.lesta.group/pages/viewpage.action?pageId=2040068438*/
+
+.NoBonus_textContainer_ef {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -586,48 +589,157 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     margin: -10rem 2rem 0 10rem;
 }
 
-.NoBonus_textContainer__event_df {
-    margin-top: 0;
-}
-
-.NoBonus_text_08 {
+.NoBonus_textMix_ff {
     display: flex;
     justify-content: flex-end;
     color: #8c8c7e;
 }
 
-.NoBonus_icon_0e {
+.NoBonus_icon_69 {
     width: 40rem;
     height: 40rem;
     margin: -4rem 2rem 0 4rem;
-    background: no-repeat 50% / contain;
+    background: center / contain no-repeat;
 }
 
-.NoBonus_icon__event_dd {
-    margin-top: -8rem;
-}
-
-.Header_base_8d {
+.Header_base_26 {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     height: 68rem;
-    padding: 20rem 10rem 20rem 20rem;
-    background: no-repeat 50% / contain;
+    padding: 20rem 14rem;
+    background: center / contain no-repeat;
 }
 
-.Header_button_4f {
+.Header_base__wide_be {
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+}
+
+.Header_buttonContainer_84 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.Header_leavePlatoonButton_e4 {
+    width: 100%;
+}
+
+.Header_dropdowns_f3 {
+    display: flex;
+    align-items: center;
+    margin-top: 5rem;
+}
+
+.Header_muteButtonContainer_7e {
     margin-left: 10rem;
 }
 
-.Header_buttonIcon_99 {
+.Header_muteIcon_54 {
     width: 24rem;
     height: 18rem;
     margin: 1rem -10rem 0;
-    background: url('R.images.gui.maps.icons.platoon.members_window.mute_button') no-repeat 50% / contain;
+    background: url('R.images.gui.maps.icons.platoon.members_window.mute_button') center / contain no-repeat;
 }
 
-.Header_box_e4 {
+.SubView_base_b0 {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.SlotLabel_formattedText_e8 {
+    justify-content: center;
+}
+
+/*////////////*/
+
+/* Colors: https://confluence.lesta.group/pages/viewpage.action?pageId=2040068438*/
+
+.NoPlayer_base_42 {
+    width: 160rem;
+    height: 200rem;
+    padding: 0 10rem;
+    background: url('R.images.gui.maps.icons.platoon.members_window.tall_slot.cards.empty') center / contain no-repeat;
+    color: #595950;
+    font-size: 14rem;
+    text-align: center;
+    position: relative;
+}
+
+.NoPlayer_base__disabled_98 {
+    background-image: url('R.images.gui.maps.icons.platoon.members_window.tall_slot.cards.disable');
+}
+
+.NoPlayer_central_8a {
+    position: absolute;
+    top: 65rem;
+}
+
+.NoPlayer_image_41 {
+    width: 44rem;
+    height: 44rem;
+}
+
+.NoPlayer_image__disabled_14 {
+    background: url('R.images.gui.maps.icons.platoon.members_window.tall_slot.disabled_slot_big') center / contain
+        no-repeat;
+}
+
+.NoPlayer_image__empty_b1 {
+    background: url('R.images.gui.maps.icons.platoon.members_window.tall_slot.empty_slot_big') center / contain
+        no-repeat;
+}
+
+.NoPlayer_image__spinner_bd {
+    background: url('R.images.gui.maps.icons.platoon.members_window.tall_slot.loading_indicator_big') center / contain
+        no-repeat;
+    animation: NoPlayer_spinner_44 1s linear infinite;
+}
+
+.NoPlayer_footer_68 {
+    position: absolute;
+    bottom: 15rem;
+}
+
+@keyframes NoPlayer_spinner_44 {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/*////////////*/
+
+/* Colors: https://confluence.lesta.group/pages/viewpage.action?pageId=2040068438*/
+
+.WTRInfo_wtr_5e {
     display: flex;
+    flex-direction: row;
+    align-items: center;
+    z-index: 1;
+}
+
+.WTRInfo_wtrIcon_a9 {
+    width: 24rem;
+    height: 24rem;
+    background: url('R.images.gui.maps.icons.library.wtrIcon_24') center / contain no-repeat;
+}
+
+.WTRInfo_wtrValue_80 {
+    height: 20rem;
+    margin-left: 2rem;
+    color: #8c8c7e;
+}
+
+.MutedIcon_base_d2 {
+    width: 16rem;
+    height: 16rem;
+    background: url('R.images.gui.maps.icons.platoon.members_window.muted') center / contain no-repeat;
 }
 
 .TextOverflow_base_3b {
@@ -746,8 +858,254 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     background-image: url('R.images.gui.maps.icons.library.eye_48x48.png');
 }
 
-.PlayerName_userName_1e {
+/*////////////*/
+
+/* Colors: https://confluence.lesta.group/pages/viewpage.action?pageId=2040068438*/
+
+.PlayerName_userName_c9 {
     margin-left: 5rem;
+}
+
+/*////////////*/
+
+/* Colors: https://confluence.lesta.group/pages/viewpage.action?pageId=2040068438*/
+
+.VehicleDescription_base_1b {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    height: 20rem;
+    background-repeat: no-repeat;
+    color: #fff;
+    z-index: 1;
+}
+
+.VehicleDescription_vehicleType_a1 {
+    width: 16rem;
+    height: 16rem;
+    margin-top: 1rem;
+    background: center / contain no-repeat;
+}
+
+.VehicleDescription_vehicleType__elite_71 {
+    width: 24rem;
+    height: 24rem;
+}
+
+.VoiceAnimation_talkingAnimation_c4 {
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    transition: opacity 500ms;
+    pointer-events: none;
+}
+
+.VoiceAnimation_talkingAnimation__visible_18 {
+    opacity: 1;
+}
+
+.RankEmblem_base_ec {
+    width: var(--imageSize);
+    height: var(--imageSize);
+    background: no-repeat center / cover;
+}
+
+.Comp7RankData_base_e8 {
+    color: #ffdd99;
+    font-size: 12rem;
+    font-weight: 400;
+    line-height: 1.3;
+    display: flex;
+    align-items: center;
+    text-shadow:
+        0rem 0rem 4rem rgba(255, 127, 0, 0.25),
+        0rem 0rem 8rem #ff2a00,
+        0rem 0rem 15rem #e52;
+    z-index: 1;
+}
+
+.Comp7RankData_icon_75 {
+    margin: 2rem 4rem 0;
+}
+
+.Comp7RankData_base__general_01 .Comp7RankData_icon_75 {
+    margin: 2rem 1rem 0 -2rem;
+}
+
+.RankedRankData_base_e3 {
+    color: #ffdd99;
+    font-size: 12rem;
+    font-weight: 400;
+    line-height: 1.3;
+    display: flex;
+    align-items: center;
+    text-shadow:
+        0rem 0rem 4rem rgba(255, 127, 0, 0.25),
+        0rem 0rem 8rem #ff2a00,
+        0rem 0rem 15rem #e52;
+    z-index: 1;
+}
+
+.RankedRankData_icon_5f {
+    width: 24rem;
+    height: 24rem;
+    margin: 2rem 4rem 0;
+}
+
+/*////////////*/
+
+/* Colors: https://confluence.lesta.group/pages/viewpage.action?pageId=2040068438*/
+
+.Player_base_7d {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: center;
+    width: 160rem;
+    height: 200rem;
+    background: center / contain no-repeat;
+    color: #595950;
+    font-size: 14rem;
+    position: relative;
+}
+
+.Player_topping_6c {
+    width: 100%;
+    position: relative;
+    top: 1rem;
+}
+
+.Player_topping_6c > * {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.Player_toppingBack_cd {
+    width: 130rem;
+    height: 68rem;
+    pointer-events: none;
+}
+
+.Player_topping__isPlayer_03 .Player_toppingBack_cd {
+    background: url('R.images.gui.maps.icons.platoon.members_window.tall_slot.player_line') center / contain no-repeat;
+}
+
+.Player_topping__isCommander_b9 .Player_toppingBack_cd {
+    background: url('R.images.gui.maps.icons.platoon.members_window.tall_slot.commander_line') center / contain
+        no-repeat;
+}
+
+.Player_toppingPremiumIcon_20 {
+    width: 22rem;
+    height: 22rem;
+    background: url('R.images.gui.maps.icons.platoon.members_window.prem') center / contain no-repeat;
+}
+
+.Player_toppingPlayerIcon_0b {
+    width: 24rem;
+    height: 24rem;
+}
+
+.Player_topping__isCommander_b9 .Player_toppingPlayerIcon_0b {
+    background: url('R.images.gui.maps.icons.platoon.members_window.commander') center / contain no-repeat;
+}
+
+.Player_topping__isPlayer_03 .Player_toppingPlayerIcon_0b {
+    background: url('R.images.gui.maps.icons.platoon.members_window.platoon_player') center / contain no-repeat;
+}
+
+.Player_voice_83 {
+    width: 208rem;
+    height: 248rem;
+    background: url('R.images.gui.maps.icons.platoon.members_window.tall_slot.player_muted') center / contain no-repeat;
+    position: absolute;
+    top: -33rem;
+    left: -15rem;
+    pointer-events: none;
+}
+
+.Player_mutedContainer_69 {
+    position: absolute;
+    top: 5rem;
+    right: 6rem;
+}
+
+.Player_name_11 {
+    max-width: 150rem;
+    margin-top: 21rem;
+    color: #e9e2bf;
+}
+
+.Player_footer_1a {
+    margin: 0 10rem;
+    text-align: center;
+    position: absolute;
+    bottom: 15rem;
+}
+
+.Player_readiness_f9 {
+    display: none;
+    position: absolute;
+    bottom: -8rem;
+}
+
+.Player_readiness__isReady_c9 {
+    display: flex;
+    width: 150rem;
+    height: 16rem;
+    background: url('R.images.gui.maps.icons.platoon.members_window.tall_slot.ready_bottom') center / contain no-repeat;
+}
+
+.Player_vehicleImage_42 {
+    width: 156rem;
+    height: 153.5rem;
+    background: 50% 0 / cover no-repeat;
+    position: absolute;
+    bottom: 0;
+}
+
+.Player_flagImage_4e {
+    width: 100%;
+    height: 100%;
+    background: top / contain no-repeat;
+    position: absolute;
+    top: 0;
+}
+
+.VehicleDescription_base_4a {
+    display: flex;
+    flex-direction: row;
+}
+
+.VehicleDescription_vehicleLevel_0e {
+    width: 40rem;
+    height: 40rem;
+    background: no-repeat center / cover;
+}
+
+.Vehicle_base_c4 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    width: 99rem;
+    height: 100%;
+    position: relative;
+}
+
+.Vehicle_vehicle_cc {
+    width: 80rem;
+    height: 50rem;
+    background: center / contain no-repeat;
+    position: absolute;
+    right: 0;
 }
 
 .Box_mt__XS_0c {
@@ -1020,471 +1378,78 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     color: #a29b70;
 }
 
-.MutedIcon_base_50 {
-    width: 16rem;
-    height: 16rem;
-    background: url('R.images.gui.maps.icons.platoon.members_window.muted') no-repeat 50% / contain;
-}
-
-.VoiceAnimation_talkingAnimation_44 {
-    opacity: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
-    transition: opacity 500ms;
-    pointer-events: none;
-}
-
-.VoiceAnimation_talkingAnimation__visible_45 {
-    opacity: 1;
-}
-
-.Level_base_12 {
+.Complexity_base_72 {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    width: 72rem;
-    height: 72rem;
+    width: 100rem;
+    height: 100%;
     position: relative;
 }
 
-.Level_base__tiny_b4 {
-    width: 30rem;
-    height: 30rem;
-}
-
-.Level_base__extraSmall_05 {
-    width: 36rem;
-    height: 36rem;
-}
-
-.Level_base__small_98 {
+.Complexity_icon_f8 {
     width: 48rem;
-    height: 48rem;
-}
-
-.Level_base__medium_f0 {
-    width: 60rem;
-    height: 60rem;
-}
-
-.Level_base__large_c3 {
-    width: 72rem;
-    height: 72rem;
-}
-
-.Level_base__extraLarge_dc {
-    width: 82rem;
-    height: 82rem;
-}
-
-.Level_bg_f5 {
-    background: rgba(17, 17, 17, 0.5);
-    position: absolute;
-    top: auto;
-    left: auto;
-    transform: rotate(45deg);
-}
-
-.Level_base__tiny_b4 .Level_bg_f5 {
-    width: 23rem;
-    height: 23rem;
-    border-radius: 4rem;
-}
-
-.Level_base__extraSmall_05 .Level_bg_f5 {
-    width: 28rem;
-    height: 28rem;
-    border-radius: 4rem;
-}
-
-.Level_base__small_98 .Level_bg_f5 {
-    width: 35rem;
-    height: 35rem;
-    border-radius: 6rem;
-}
-
-.Level_base__medium_f0 .Level_bg_f5 {
-    width: 45rem;
-    height: 45rem;
-    border-radius: 7rem;
-}
-
-.Level_base__large_c3 .Level_bg_f5 {
-    width: 55rem;
-    height: 55rem;
-    border-radius: 8rem;
-}
-
-.Level_base__extraLarge_dc .Level_bg_f5 {
-    width: 62rem;
-    height: 62rem;
-    border-radius: 8rem;
-}
-
-.Level_border_11 {
-    background: #c6a97b;
-    position: absolute;
-    top: auto;
-    left: auto;
-    transform: rotate(45deg);
-}
-
-.Level_base__yellow_63 .Level_border_11 {
-    background-color: #feab34;
-}
-
-.Level_base__tiny_b4 .Level_border_11 {
-    width: 19rem;
-    height: 19rem;
-    border-radius: 2rem;
-}
-
-.Level_base__extraSmall_05 .Level_border_11 {
-    width: 24rem;
-    height: 24rem;
-    border-radius: 3rem;
-}
-
-.Level_base__small_98 .Level_border_11 {
-    width: 31rem;
-    height: 31rem;
-    border-radius: 4rem;
-}
-
-.Level_base__medium_f0 .Level_border_11 {
-    width: 39rem;
-    height: 39rem;
-    border-radius: 5rem;
-}
-
-.Level_base__large_c3 .Level_border_11 {
-    width: 49rem;
-    height: 49rem;
-    border-radius: 6rem;
-}
-
-.Level_base__extraLarge_dc .Level_border_11 {
-    width: 54rem;
-    height: 54rem;
-    border-radius: 6rem;
-}
-
-.Level_innerGlow_47 {
-    background: rgb(17, 17, 17);
-    position: absolute;
-    top: auto;
-    left: auto;
-    transform: rotate(45deg);
-}
-
-.Level_base__tiny_b4 .Level_innerGlow_47 {
-    width: 17rem;
-    height: 17rem;
-    border-radius: 2rem;
-    box-shadow:
-        0 -2rem 5rem 0 rgba(104, 0, 0, 0.25) inset,
-        0 2rem 5rem 0 rgba(104, 0, 0, 0.25) inset;
-}
-
-.Level_base__extraSmall_05 .Level_innerGlow_47 {
-    width: 22rem;
-    height: 22rem;
-    border-radius: 3rem;
-    box-shadow:
-        0 -3rem 6rem 0 rgba(104, 0, 0, 0.25) inset,
-        0 3rem 6rem 0 rgba(104, 0, 0, 0.25) inset;
-}
-
-.Level_base__small_98 .Level_innerGlow_47 {
-    width: 29rem;
-    height: 29rem;
-    border-radius: 3rem;
-    box-shadow:
-        0 -4rem 8rem 0 rgba(104, 0, 0, 0.25) inset,
-        0 4rem 8rem 0 rgba(104, 0, 0, 0.25) inset;
-}
-
-.Level_base__medium_f0 .Level_innerGlow_47 {
-    width: 37rem;
-    height: 37rem;
-    border-radius: 4rem;
-    box-shadow:
-        0 5rem 10rem #68000040 inset,
-        0 -5rem 10rem #68000040 inset;
-}
-
-.Level_base__large_c3 .Level_innerGlow_47 {
-    width: 47rem;
-    height: 47rem;
-    border-radius: 5rem;
-    box-shadow:
-        0 -6rem 12rem rgba(104, 0, 0, 0.25) inset,
-        0 6rem 12rem rgba(104, 0, 0, 0.25) inset;
-}
-
-.Level_base__extraLarge_dc .Level_innerGlow_47 {
-    width: 52rem;
-    height: 52rem;
-    border-radius: 5rem;
-    box-shadow:
-        0 7rem 13rem #68000040 inset,
-        0 -7rem 13rem #68000040 inset;
-}
-
-.Level_lock_0b {
-    background: no-repeat center / cover;
-    position: absolute;
-}
-
-.Level_base__tiny_b4 .Level_lock_0b {
-    width: 30rem;
-    height: 30rem;
-    background-image: url('R.images.historical_battles.gui.maps.icons.hangar.lock.c_30');
-    top: -9rem;
-    right: -9rem;
-}
-
-.Level_base__extraSmall_05 .Level_lock_0b {
-    width: 36rem;
     height: 36rem;
-    background-image: url('R.images.historical_battles.gui.maps.icons.hangar.lock.c_36');
-    top: -11rem;
-    right: -10rem;
+    margin-top: 4rem;
+    background: no-repeat center / contain;
 }
 
-.Level_base__small_98 .Level_lock_0b {
-    width: 36rem;
-    height: 36rem;
-    background-image: url('R.images.historical_battles.gui.maps.icons.hangar.lock.c_36');
-    top: -7rem;
-    right: -8rem;
-}
-
-.Level_base__medium_f0 .Level_lock_0b {
-    width: 46rem;
-    height: 46rem;
-    background-image: url('R.images.historical_battles.gui.maps.icons.hangar.lock.c_46');
-    top: -10rem;
-    right: -10rem;
-}
-
-.Level_base__large_c3 .Level_lock_0b {
-    width: 48rem;
-    height: 48rem;
-    background-image: url('R.images.historical_battles.gui.maps.icons.hangar.lock.c_48');
-    top: -8rem;
-    right: -7rem;
-}
-
-.Level_base__extraLarge_dc .Level_lock_0b {
-    width: 48rem;
-    height: 48rem;
-    background-image: url('R.images.historical_battles.gui.maps.icons.hangar.lock.c_48');
-    top: -5rem;
-    right: -4rem;
-}
-
-.Level_text_ae {
-    margin-top: -2rem;
-    z-index: 1;
-}
-
-.Level_base__tiny_b4 .Level_text_ae {
-    color: #ffdd99;
-    font-size: 12rem;
-    font-weight: 400;
-    line-height: 1.3;
-    margin-left: 1rem;
-    font-size: 11rem;
-    font-weight: 500;
-}
-
-.Level_base__extraSmall_05 .Level_text_ae {
-    color: #ffdd99;
+.Complexity_text_93 {
+    color: #e9e2bf;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
-    font-weight: 500;
+    margin-top: -12rem;
 }
 
-.Level_base__small_98 .Level_text_ae {
-    color: #ffdd99;
-    font-size: 18rem;
-    font-weight: 400;
-    line-height: 1.25;
-    font-weight: 500;
+.Complexity_base__isCurrentUser_87 .Complexity_text_93 {
+    color: #ffc363;
 }
 
-.Level_base__medium_f0 .Level_text_ae {
-    color: #ffdd99;
-    font-size: 22rem;
-    font-weight: 700;
-    line-height: 1.2;
-    font-weight: 500;
-}
-
-.Level_base__large_c3 .Level_text_ae {
-    color: #ffdd99;
-    font-size: 28rem;
-    font-weight: 700;
-    line-height: 1.1;
-    font-weight: 500;
-}
-
-.Level_base__extraLarge_dc .Level_text_ae {
-    color: #ffdd99;
-    font-size: 36rem;
-    font-weight: 700;
-    line-height: 1.1;
-    margin-left: -1rem;
-    font-size: 32rem;
-    font-weight: 500;
-}
-
-.Level_base__yellow_63 .Level_text_ae {
-    color: #feab34;
-}
-
-.WideSlot_base_99 {
+.WideSlot_base_31 {
     display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
     align-items: center;
     align-content: center;
     width: 401rem;
     height: 54rem;
     margin: 5rem 0 6rem;
-    background: no-repeat 50% / contain;
+    background-size: contain;
     color: #595950;
     font-size: 14rem;
     position: relative;
 }
 
-.WideSlot_mutedContainer_e3 {
+.WideSlot_mutedContainer_9d {
     width: 16rem;
     margin-left: 5rem;
 }
 
-.WideSlot_icon_29 {
+.WideSlot_icon_3d {
     width: 24rem;
     height: 24rem;
-    background: no-repeat 50% / contain;
+    background-size: contain;
     z-index: 1;
 }
 
-.WideSlot_icon__spinner_e2 {
-    animation: WideSlot_spinner_20 1s linear infinite;
-}
-
-.WideSlot_glow_39 {
-    width: 64rem;
-    height: 52rem;
-    background: url('R.images.historical_battles.gui.maps.icons.membersWindow.glow') no-repeat 50% / contain;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.WideSlot_memberType_f0 {
+.WideSlot_memberType_f8 {
     display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     height: 100%;
     position: relative;
 }
 
-.WideSlot_badge_f2 {
-    margin-right: 7rem;
+.WideSlot_spinner_8e {
+    animation-name: WideSlot_spinner_8e;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
 }
 
-.WideSlot_mainContent_2e {
-    width: 139rem;
-    margin: 0 4rem 0 17rem;
-}
-
-.WideSlot_mainContent__isEmpty_f2 {
-    width: 80%;
-}
-
-.WideSlot_flag_9a {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: no-repeat 50% / contain;
-    pointer-events: none;
-}
-
-.WideSlot_detailsContainer_76 {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 190rem;
-    margin-left: 3rem;
-    padding-right: 10rem;
-}
-
-.WideSlot_division_icon_92 {
-    width: 36rem;
-    height: 36rem;
-    background: no-repeat center / cover;
-}
-
-.WideSlot_division_name_f7 {
-    color: #e9e2bf;
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
-    flex: 1;
-    text-align: center;
-}
-
-.WideSlot_division_name__yellow_95 {
-    color: #feab34;
-}
-
-.WideSlot_readiness_30 {
-    width: 146rem;
-    height: 15rem;
-    background: url('R.images.gui.maps.icons.platoon.members_window.wide_slot.ready') no-repeat 50% / contain;
-    position: absolute;
-    bottom: -7rem;
-    left: 125rem;
-}
-
-.WideSlot_starIcon_da {
-    width: 9rem;
-    height: 9rem;
-    margin: 5rem 2rem 0 0;
-    background: url('R.images.gui.maps.icons.event.difficultyStarGrey') no-repeat 50% / contain;
-}
-
-.WideSlot_speciality_f3 {
-    width: 16rem;
-    height: 16rem;
-    margin: 1rem 4rem 0 0;
-    background: no-repeat 50% / contain;
-    position: relative;
-    z-index: 1;
-}
-
-.WideSlot_message_05 {
-    color: #ff2717;
-    font-size: 12rem;
-    font-weight: 400;
-    line-height: 1.3;
-    display: flex;
-    align-items: center;
-    max-width: 170rem;
-    position: absolute;
-    top: 0;
-    right: 11rem;
-    bottom: 0;
-}
-
-@keyframes WideSlot_spinner_20 {
+@keyframes WideSlot_spinner_8e {
     from {
         transform: rotate(0);
     }
@@ -1494,46 +1459,115 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     }
 }
 
-.Slots_base_a8 {
+.WideSlot_badge_47 {
+    margin-right: 7rem;
+}
+
+.WideSlot_mainContent_db {
+    width: 144rem;
+    margin-left: 17rem;
+}
+
+.WideSlot_mainContent__isEmpty_f3 {
+    width: 80%;
+}
+
+.WideSlot_complexity_8f {
+    margin-left: -9rem;
+}
+
+.WideSlot_infoContainer_b2 {
+    width: 70rem;
+    margin-left: 14rem;
+}
+
+.WideSlot_readiness_14 {
+    width: 146rem;
+    height: 15rem;
+    background: url('R.images.gui.maps.icons.platoon.members_window.wide_slot.ready') center / contain no-repeat;
+    position: absolute;
+    bottom: -7rem;
+    left: 125rem;
+}
+
+.SlotContainer_base__short_67 {
+    margin: 0 7rem;
+}
+
+.Slots_base_8e {
     display: flex;
     flex-direction: column;
     width: 100%;
     margin: 16rem 0 6rem;
-    padding: 0 9rem 0 19rem;
+    padding: 0 14rem;
 }
 
-.MembersWindowApp_base_ce {
+.Slots_base__isHorizontal_06 {
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 23rem 0 17rem;
+}
+
+.Slots_base__isHorizontal__short_f4 {
+    justify-content: center;
+}
+
+.CommanderControls_left_9b {
     display: flex;
+    flex-direction: row;
 }
 
-.MembersWindowApp_base__isHorizontal_b4 {
-    width: 783rem;
+.CommanderControls_left_9b .CommanderControls_tiersLimit_65 {
+    width: auto;
+}
+
+.CommanderControls_complexity_46 {
+    color: #8c8c7e;
+}
+
+.CommanderControls_complexity__level_12 {
+    color: #c43519;
+}
+
+.MembersWindow_base_08 {
+    display: flex;
+    flex-direction: row;
+}
+
+.MembersWindow_base__isHorizontal_d2 {
+    width: 784rem;
     height: 426rem;
 }
 
-.MembersWindowApp_base__isVertical_b1 {
+.MembersWindow_base__isHorizontal__short_9f {
+    width: 680rem;
+}
+
+.MembersWindow_base__isVertical_25 {
     width: 680rem;
     height: 528rem;
 }
 
-.MembersWindowApp_base_ce .MembersWindowApp_chatContainer_be {
+.MembersWindow_base_08 .MembersWindow_chatContainer_2c {
     width: initial;
 }
-.MembersWindowApp_commanderControls_e9 {
+.MembersWindow_commanderControls_c0 {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     height: 35rem;
-    padding: 0 10rem 15rem 19rem;
+    padding: 0 16rem 15rem;
 }
-.MembersWindowApp_platoon_3d {
+.MembersWindow_platoon_14 {
     color: #8c8c7e;
     font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
 }
-.MembersWindowApp_base__isHorizontal_b4 .MembersWindowApp_platoon_3d {
+.MembersWindow_base__isHorizontal_d2 .MembersWindow_platoon_14 {
     width: 532rem;
 }
-.MembersWindowApp_base__isVertical_b1 .MembersWindowApp_platoon_3d {
+.MembersWindow_base__isHorizontal__short_9f .MembersWindow_platoon_14 {
+    width: 430rem;
+}
+.MembersWindow_base__isVertical_25 .MembersWindow_platoon_14 {
     width: 430rem;
 }

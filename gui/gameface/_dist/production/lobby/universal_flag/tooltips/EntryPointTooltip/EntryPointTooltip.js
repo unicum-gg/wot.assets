@@ -1041,6 +1041,7 @@
                                         clearInterval(t);
                                     };
                                 }
+                                D(0);
                             }, [u, e, A, F]),
                             n
                         );

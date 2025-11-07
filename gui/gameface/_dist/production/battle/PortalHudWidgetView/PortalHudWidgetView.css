@@ -1,0 +1,937 @@
+.App_base_9b {
+    width: 100%;
+    height: 100%;
+    max-height: 140rem;
+}
+.App_widget_87 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding-bottom: 20rem;
+    position: relative;
+    z-index: 2;
+}
+.App_widgetBg_2c {
+    width: 100%;
+    height: 100%;
+    background: url('R.images.portal.gui.maps.icons.hud_widget.bg') no-repeat center / cover;
+    position: absolute;
+    z-index: 1;
+}
+
+.Camps_base_08 {
+    display: flex;
+    height: 100%;
+    padding: 22rem;
+    clip-path: polygon(0 0, 85% 0, 108% 110%, 21% 108%);
+}
+
+.Camps_wrapper_90 {
+    height: 100%;
+    margin-top: -20rem;
+    margin-right: -5rem;
+    position: relative;
+    top: 18rem;
+}
+
+.Camps_animation_7c {
+    display: flex;
+    flex-direction: column;
+    margin-right: 10rem;
+    position: relative;
+    transform: translateX(100%);
+    animation: Camps_slideIn_1b 0.5s ease-out forwards;
+}
+
+.Camps_glow_e9 {
+    width: 106rem;
+    height: 122rem;
+    background: url('R.images.portal.gui.maps.icons.hud_widget.camps.glow') no-repeat center / contain;
+    opacity: 0;
+    position: absolute;
+    top: -90rem;
+    left: -13rem;
+    z-index: 4;
+    animation: Camps_glowFade_c2 1s ease-in-out;
+}
+
+.Camps_info_e5 {
+    color: #ffffff;
+    font-size: 14rem;
+    font-weight: 700;
+    line-height: 1.15;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 10rem 10rem 0;
+}
+
+.Camps_camps_21 {
+    display: flex;
+    flex-direction: row;
+}
+
+.Camps_campWrapper_b6 {
+    display: flex;
+    flex-direction: column;
+    margin-right: -20rem;
+}
+
+.Camps_camp_21 {
+    width: 77rem;
+    height: 24rem;
+    position: relative;
+}
+
+.Camps_camp__active_09 .Camps_campBg__active_23 {
+    opacity: 1;
+}
+
+.Camps_camp__active_09 .Camps_campBg__canBeCaptured_83 {
+    opacity: 0;
+}
+
+.Camps_camp__active_09 .Camps_campBg__captured_36 {
+    opacity: 0;
+}
+
+.Camps_camp__canBeCaptured_2d .Camps_campBg__active_23 {
+    opacity: 0;
+}
+
+.Camps_camp__canBeCaptured_2d .Camps_campBg__canBeCaptured_83 {
+    opacity: 1;
+}
+
+.Camps_camp__canBeCaptured_2d .Camps_campBg__captured_36 {
+    opacity: 0;
+}
+
+.Camps_camp__captured_cd .Camps_campBg__active_23 {
+    opacity: 0;
+}
+
+.Camps_camp__captured_cd .Camps_campBg__canBeCaptured_83 {
+    opacity: 0;
+}
+
+.Camps_camp__captured_cd .Camps_campBg__captured_36 {
+    opacity: 1;
+}
+
+.Camps_campBg_5a {
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 1s ease;
+}
+
+.Camps_campBg__active_23 {
+    background: url('R.images.portal.gui.maps.icons.hud_widget.camps.bg.active') no-repeat center / cover;
+}
+
+.Camps_campBg__canBeCaptured_83 {
+    background: url('R.images.portal.gui.maps.icons.hud_widget.camps.bg.ready_to_capturing') no-repeat center / cover;
+}
+
+.Camps_campBg__captured_36 {
+    background: url('R.images.portal.gui.maps.icons.hud_widget.camps.bg.captured') no-repeat center / cover;
+}
+
+.Camps_icon_a0 {
+    width: 30rem;
+    height: 32rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+    transform: translate(-50%, -50%);
+}
+
+.Camps_horse_a7 {
+    background: url('R.images.portal.gui.maps.icons.hud_widget.camps.icon.horse.active') no-repeat center / cover;
+    opacity: 0;
+    animation: Camps_iconResize_90 600ms ease 1s forwards;
+}
+
+.Camps_horse__canBeCaptured_cb {
+    background: url('R.images.portal.gui.maps.icons.hud_widget.camps.icon.horse.ready_to_capturing') no-repeat center /
+        cover;
+}
+
+.Camps_horse__captured_6e {
+    background: url('R.images.portal.gui.maps.icons.hud_widget.camps.icon.horse.captured') no-repeat center / cover;
+}
+
+.Camps_hook_ac {
+    background: url('R.images.portal.gui.maps.icons.hud_widget.camps.icon.hook.active') no-repeat center / cover;
+    opacity: 0;
+    animation: Camps_iconResize_90 600ms ease 1.2s forwards;
+}
+
+.Camps_hook__canBeCaptured_3f {
+    background: url('R.images.portal.gui.maps.icons.hud_widget.camps.icon.hook.ready_to_capturing') no-repeat center /
+        cover;
+}
+
+.Camps_hook__captured_f9 {
+    background: url('R.images.portal.gui.maps.icons.hud_widget.camps.icon.hook.captured') no-repeat center / cover;
+}
+
+.Camps_satellite_41 {
+    background: url('R.images.portal.gui.maps.icons.hud_widget.camps.icon.satellite.active') no-repeat center / cover;
+    opacity: 0;
+    animation: Camps_iconResize_90 600ms ease 1.4s forwards;
+}
+
+.Camps_satellite__canBeCaptured_cd {
+    background: url('R.images.portal.gui.maps.icons.hud_widget.camps.icon.satellite.ready_to_capturing') no-repeat
+        center / cover;
+}
+
+.Camps_satellite__captured_03 {
+    background: url('R.images.portal.gui.maps.icons.hud_widget.camps.icon.satellite.captured') no-repeat center / cover;
+}
+
+.Camps_perspective_ed {
+    background: url('R.images.portal.gui.maps.icons.hud_widget.camps.icon.perspective.active') no-repeat center / cover;
+    opacity: 0;
+    animation: Camps_iconResize_90 600ms ease 1.6s forwards;
+}
+
+.Camps_perspective__canBeCaptured_51 {
+    background: url('R.images.portal.gui.maps.icons.hud_widget.camps.icon.perspective.ready_to_capturing') no-repeat
+        center / cover;
+}
+
+.Camps_perspective__captured_b9 {
+    background: url('R.images.portal.gui.maps.icons.hud_widget.camps.icon.perspective.captured') no-repeat center /
+        cover;
+}
+
+.Camps_defenders_d6 {
+    display: flex;
+    flex-direction: row;
+    width: 62rem;
+    margin-left: 20rem;
+    margin-top: 4rem;
+}
+
+.Camps_defender_04 {
+    flex: 1;
+    height: 4rem;
+    margin-left: 4rem;
+    background: #bb5335;
+    transform: skewX(45deg);
+}
+
+.Camps_defender__killed_74 {
+    border: none;
+    background: #909090;
+}
+
+@keyframes Camps_glowFade_c2 {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0.8;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes Camps_slideIn_1b {
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes Camps_iconResize_90 {
+    0% {
+        width: 100rem;
+        height: 102rem;
+        opacity: 0;
+    }
+
+    1% {
+        opacity: 1;
+    }
+
+    100% {
+        width: 30rem;
+        height: 32rem;
+        opacity: 1;
+    }
+}
+
+.Box_mt__XS_0c {
+    margin-top: 4rem;
+}
+.Box_mt__SM_eb {
+    margin-top: 8rem;
+}
+.Box_mt__SMp_cf {
+    margin-top: 10rem;
+}
+.Box_mt__MD_25 {
+    margin-top: 16rem;
+}
+.Box_mt__MDp_49 {
+    margin-top: 20rem;
+}
+.Box_mt__LG_e8 {
+    margin-top: 32rem;
+}
+.Box_mt__XL_83 {
+    margin-top: 64rem;
+}
+
+.Box_mr__XS_7c {
+    margin-right: 4rem;
+}
+
+.Box_mr__SM_08 {
+    margin-right: 8rem;
+}
+
+.Box_mr__SMp_06 {
+    margin-right: 10rem;
+}
+
+.Box_mr__MD_4a {
+    margin-right: 16rem;
+}
+
+.Box_mr__MDp_b6 {
+    margin-right: 20rem;
+}
+
+.Box_mr__LG_d0 {
+    margin-right: 32rem;
+}
+
+.Box_mr__XL_db {
+    margin-right: 64rem;
+}
+
+.Box_mb__XS_bb {
+    margin-bottom: 4rem;
+}
+
+.Box_mb__SM_83 {
+    margin-bottom: 8rem;
+}
+
+.Box_mb__SMp_04 {
+    margin-bottom: 10rem;
+}
+
+.Box_mb__MD_ed {
+    margin-bottom: 16rem;
+}
+
+.Box_mb__MDp_65 {
+    margin-bottom: 20rem;
+}
+
+.Box_mb__LG_c8 {
+    margin-bottom: 32rem;
+}
+
+.Box_mb__XL_f8 {
+    margin-bottom: 64rem;
+}
+
+.Box_ml__XS_8a {
+    margin-left: 4rem;
+}
+
+.Box_ml__SM_e6 {
+    margin-left: 8rem;
+}
+
+.Box_ml__SMp_fb {
+    margin-left: 10rem;
+}
+
+.Box_ml__MD_2b {
+    margin-left: 16rem;
+}
+
+.Box_ml__MDp_c7 {
+    margin-left: 20rem;
+}
+
+.Box_ml__LG_39 {
+    margin-left: 32rem;
+}
+
+.Box_ml__XL_4a {
+    margin-left: 64rem;
+}
+
+.FormatText_base_d0 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* eslint-disable-next-line expectedscss*/
+.Text_paragraph-P10_2c {
+    font-size: 10rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.Text_paragraph-P12_22 {
+    font-size: 12rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+.Text_paragraph-P14_a7 {
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+.Text_paragraph-P16_90 {
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+.Text_paragraph-P18_50 {
+    font-size: 18rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+.Text_paragraph-P24_33 {
+    font-size: 24rem;
+    font-weight: 400;
+    line-height: 32rem;
+}
+.Text_heading-H14_8b {
+    font-size: 14rem;
+    font-weight: 700;
+    line-height: 1.15;
+}
+.Text_heading-H15_9e {
+    font-size: 15rem;
+    font-weight: 700;
+    line-height: 1.15;
+}
+.Text_heading-H18_b7 {
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H20R_f6 {
+    font-size: 20rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.Text_heading-H22_27 {
+    font-size: 22rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.Text_heading-H24R_be {
+    font-size: 24rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.Text_heading-H24_0c {
+    font-size: 24rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.Text_heading-H28_78 {
+    font-size: 28rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H36_32 {
+    font-size: 36rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H56_c3 {
+    font-size: 56rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H73_8f {
+    font-size: 73rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H144_a9 {
+    font-size: 144rem;
+    font-weight: 700;
+    line-height: 1;
+}
+.Text_BLACK_REAL_30 {
+    color: #000000;
+}
+.Text_WHITE_REAL_bc {
+    color: #ffffff;
+}
+.Text_WHITE_62 {
+    color: #f2f2f7;
+}
+.Text_WHITE_ORANGE_54 {
+    color: #fefeec;
+}
+.Text_WHITE_SPANISH_df {
+    color: #e9e2bf;
+}
+.Text_PAR_15 {
+    color: #8c8c7e;
+}
+.Text_PAR_SECONDARY_5d {
+    color: #595950;
+}
+.Text_PAR_TERTIARY_c9 {
+    color: #37362e;
+}
+.Text_INFO_RED_30 {
+    color: #ff0000;
+}
+.Text_RED_66 {
+    color: #ff2717;
+}
+.Text_RED_DARK_d8 {
+    color: #b70000;
+}
+.Text_YELLOW_ed {
+    color: #feab34;
+}
+.Text_ORANGE_be {
+    color: #ee7000;
+}
+.Text_CREAM_57 {
+    color: #ffdd99;
+}
+.Text_BROWN_18 {
+    color: #cbac77;
+}
+.Text_GREEN_BRIGHT_3f {
+    color: #80d43a;
+}
+.Text_GREEN_e3 {
+    color: #7ab300;
+}
+.Text_GREEN_DARK_f1 {
+    color: #497212;
+}
+.Text_BLUE_BOOSTER_21 {
+    color: #ccffff;
+}
+.Text_BLUE_TEAMKILLER_ab {
+    color: #09e2ff;
+}
+.Text_CRED_f7 {
+    color: #ced9d9;
+}
+.Text_GOLD_28 {
+    color: #ffc363;
+}
+.Text_BOND_be {
+    color: #c9c9b6;
+}
+.Text_PROM_65 {
+    color: #a29b70;
+}
+
+.GuardianPower_base_d3 {
+    width: 140rem;
+    height: 140rem;
+    margin-top: 20rem;
+    background: url('R.images.portal.gui.maps.icons.hud_widget.guardian.portal') no-repeat center / cover;
+    color: #fff0f0;
+    position: relative;
+    animation: GuardianPower_resize_ea 800ms ease 5ms forwards;
+}
+.GuardianPower_content_73 {
+    color: #ffffff;
+    font-size: 14rem;
+    font-weight: 700;
+    line-height: 1.15;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 140rem;
+    height: 140rem;
+    position: absolute;
+    top: 82rem;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: GuardianPower_contentPosition_c6 800ms ease 5ms forwards;
+}
+.GuardianPower_icon_2a {
+    width: 60rem;
+    height: 60rem;
+    position: absolute;
+    top: 64rem;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: GuardianPower_iconPosition_b5 800ms ease 5ms forwards;
+}
+.GuardianPower_icon__attack_53 {
+    background: url('R.images.portal.gui.maps.icons.hud_widget.guardian.attack') no-repeat center / cover;
+}
+.GuardianPower_icon__shield_3e {
+    margin-top: 8rem;
+    background: url('R.images.portal.gui.maps.icons.hud_widget.guardian.shield') no-repeat center / cover;
+}
+@keyframes GuardianPower_resize_ea {
+    from {
+        width: 240rem;
+        height: 240rem;
+    }
+
+    to {
+        width: 140rem;
+        height: 140rem;
+    }
+}
+@keyframes GuardianPower_iconPosition_b5 {
+    from {
+        top: 114rem;
+    }
+
+    to {
+        top: 64rem;
+    }
+}
+@keyframes GuardianPower_contentPosition_c6 {
+    from {
+        top: 132rem;
+    }
+
+    to {
+        top: 82rem;
+    }
+}
+
+.SuperBossHP_base_4e {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+.SuperBossHP_HPbarWrapper_b6 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 650rem;
+    height: 100%;
+    clip-path: polygon(0 0, 100% 0, 519rem 100%, 131rem 100%);
+    position: absolute;
+    top: 40rem;
+}
+.SuperBossHP_HPbar_c7 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 530rem;
+    height: 90rem;
+    background: url('R.images.portal.gui.maps.icons.hud_widget.super_boss_hp.bg') no-repeat center / contain;
+    overflow: visible;
+    position: relative;
+    top: 10rem;
+    left: 0;
+}
+.SuperBossHP_HPInfo_5d {
+    color: #fff0f0;
+    font-size: 14rem;
+    font-weight: 700;
+    line-height: 1.15;
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+    transform: translate(-50%, -50%);
+}
+.SuperBossHP_infoSeparator_01 {
+    margin: 0 2rem;
+}
+.SuperBossHP_lines_a5 {
+    width: 530rem;
+    height: 28rem;
+    background: url('R.images.portal.gui.maps.icons.hud_widget.super_boss_hp.lines') no-repeat center / contain;
+    position: absolute;
+    top: -2rem;
+    left: 0;
+    z-index: 2;
+}
+.SuperBossHP_fillWrapper_5e {
+    width: 526rem;
+    height: 24rem;
+    padding: 1rem;
+    overflow: hidden;
+    position: relative;
+    top: 0;
+    left: -2rem;
+}
+.SuperBossHP_carriageWrapper_b6 {
+    width: 530rem;
+    height: 28rem;
+    padding: 1rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+}
+.SuperBossHP_HPBarFill_60 {
+    width: 526rem;
+    height: 24rem;
+    margin-left: 2rem;
+    background: url('R.images.portal.gui.maps.icons.hud_widget.super_boss_hp.fill') no-repeat left center / cover;
+    position: absolute;
+    top: 0;
+    left: -2rem;
+    z-index: 1;
+}
+.SuperBossHP_carriage_52 {
+    width: 50rem;
+    height: 80rem;
+    overflow: visible;
+    position: absolute;
+    top: 12rem;
+}
+.SuperBossHP_carriageIcon_f1 {
+    width: 40rem;
+    height: 65rem;
+    background: url('R.images.portal.gui.maps.icons.hud_widget.super_boss_hp.brick') no-repeat center / cover;
+    position: absolute;
+    top: 0;
+    left: -21rem;
+}
+.SuperBossHP_info_46 {
+    color: #fff0f0;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 9rem;
+}
+.SuperBossHP_infoBG_5f {
+    width: 322rem;
+    height: 100rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+}
+.SuperBossHP_title_44 {
+    color: #fff0f0;
+    font-size: 24rem;
+    font-weight: 700;
+    line-height: 1.2;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.SuperBossHP_roleIcon_01 {
+    width: 36rem;
+    height: 36rem;
+    margin-top: 5rem;
+    background: url('R.images.portal.gui.maps.icons.hud_widget.super_boss_hp.role') no-repeat center / cover;
+}
+.SuperBossHP_description_c7 {
+    color:;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    font-size: 15rem;
+}
+.SuperBossHP_hit_95 {
+    width: 100%;
+    z-index: 0;
+}
+@keyframes SuperBossHP_opacityHit_fb {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+.PortalHP_base_16 {
+    clip-path: polygon(56rem 0%, 108% 0%, 196rem 90%, -30rem 100%);
+    overflow: hidden;
+    position: relative;
+}
+
+.PortalHP_wrapper_2f {
+    display: flex;
+    flex-direction: column;
+    padding: 7rem;
+    position: relative;
+    top: -12rem;
+    left: -10rem;
+}
+
+.PortalHP_animation_16 {
+    display: flex;
+    flex-direction: column;
+    margin-right: 10rem;
+    position: relative;
+    transform: translateX(-100%);
+    animation: PortalHP_slideIn_b4 0.5s ease-out forwards;
+}
+
+.PortalHP_HPBarWrapper_07 {
+    width: 268rem;
+    height: 100%;
+    position: relative;
+    left: -12rem;
+}
+
+.PortalHP_HPBarBg_93 {
+    width: 280rem;
+    height: 48rem;
+    background: url('R.images.portal.gui.maps.icons.hud_widget.portal_hp.bg') no-repeat center / cover;
+    position: absolute;
+    top: 44rem;
+    left: 0;
+}
+
+.PortalHP_lines_18 {
+    width: 282rem;
+    height: 52rem;
+    background: url('R.images.portal.gui.maps.icons.hud_widget.portal_hp.lines') no-repeat center / cover;
+    position: absolute;
+    top: 42rem;
+    z-index: 4;
+}
+
+.PortalHP_contentWrapper_5b {
+    width: 269rem;
+    height: 100%;
+    clip-path: polygon(78rem 0%, 108% 0%, 176rem 100%, -40rem 100%);
+    overflow: hidden;
+    position: absolute;
+    top: 30%;
+    left: -2rem;
+    z-index: 3;
+}
+
+.PortalHP_fillWrapper_8f {
+    width: 280rem;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 1rem;
+}
+
+.PortalHP_fill_61 {
+    width: 280rem;
+    height: 49rem;
+    background: url('R.images.portal.gui.maps.icons.hud_widget.portal_hp.mask') no-repeat center / cover;
+    position: absolute;
+    top: 12rem;
+    left: 1rem;
+}
+
+.PortalHP_carriage_ca {
+    width: 45rem;
+    height: 100%;
+    background: url('R.images.portal.gui.maps.icons.hud_widget.portal_hp.hit_brick') no-repeat center / cover;
+    position: absolute;
+    top: -20rem;
+    right: -22rem;
+    z-index: 1;
+}
+
+.PortalHP_info_34 {
+    color: #f2f2f7;
+    font-size: 14rem;
+    font-weight: 700;
+    line-height: 1.15;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding-left: 56rem;
+    position: absolute;
+    top: 21rem;
+    left: 0;
+}
+
+.PortalHP_leftInfoWrapper_bd {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.PortalHP_portalIcon_a2 {
+    width: 36rem;
+    height: 24rem;
+    margin-left: 5rem;
+    padding: 10rem;
+    background: url('R.images.portal.gui.maps.icons.hud_widget.portal_hp.portal') no-repeat center / contain;
+}
+
+.PortalHP_displayNone_21 {
+    display: none;
+}
+
+.PortalHP_hit_46 {
+    width: 100%;
+    height: 20rem;
+    position: absolute;
+    top: 19rem;
+    left: 0;
+}
+
+.PortalHP_HPInfo_1c {
+    display: flex;
+    flex-direction: row;
+    margin-left: 10rem;
+}
+
+.PortalHP_infoSeparator_9f {
+    margin: 0 2rem;
+}
+
+@keyframes PortalHP_slideIn_b4 {
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes PortalHP_opacityHit_7d {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}

@@ -1005,6 +1005,7 @@
                                         clearInterval(n);
                                     };
                                 }
+                                A(0);
                             }, [u, e, t, r]),
                             n
                         );

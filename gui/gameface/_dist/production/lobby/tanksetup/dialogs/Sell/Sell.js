@@ -1144,6 +1144,7 @@
                         (u.SelectableBonus = 'selectableBonus'),
                         (u.StyleProgressToken = 'styleProgressToken'),
                         (u.TmanToken = 'tmanToken'),
+                        (u.PortalEventDiscount25 = 'portalEventDiscountToken'),
                         (u.NaturalCover = 'naturalCover'),
                         (u.BpCoin = 'bpcoin'),
                         (u.BattlaPassFinalAchievement = 'dossier_achievement'),
@@ -1171,12 +1172,9 @@
                         (u.GoldenTicket = 'birthday2025_golden_ticket'),
                         (u.PostStamp = 'giftsystem_4_stamp'),
                         (u.Quests = 'quests'),
-                        (u.WtStamp = 'stamp'),
-                        (u.WtHunter = 'wt_hunter'),
-                        (u.WtHunterCollection = 'hunter_collection'),
-                        (u.WtTicket = 'wtevent_ticket'),
-                        (u.WtMainPrizeDiscount = 'main_prize_discount'),
-                        (u.WtTicket25 = 'wtevent_ticket25'));
+                        (u.BlankPersonalMissions_1 = 'freeTokens_0'),
+                        (u.BlankPersonalMissions_2 = 'freeTokens_2'),
+                        (u.SACoin = 'sacoin'));
                 })(b || (b = {})),
                     (function (u) {
                         ((u.Gold = 'gold'),
@@ -1270,89 +1268,88 @@
                             (u.PROGRESSION_STYLE_UPGRADED_3 = 'progressionStyleUpgraded_3'),
                             (u.PROGRESSION_STYLE_UPGRADED_4 = 'progressionStyleUpgraded_4'));
                     })(P || (P = {})));
-                const N = ({ format: u, value: e }) => {
-                        const t = ((u, e = 'integral') => {
-                            let t;
-                            t = 'gold' === e ? c.B3.GOLD : c.B3.INTEGRAL;
-                            return void 0 === u ? '' : c.Z5.getNumberFormat(u, t);
-                        })(e, u);
-                        return t ? r().createElement('span', null, t) : null;
+                class N extends r().PureComponent {
+                    render() {
+                        let u;
+                        if ('gold' === this.props.format) u = c.B3.GOLD;
+                        else u = c.B3.INTEGRAL;
+                        const e = c.Z5.getNumberFormat(this.props.value, u);
+                        return void 0 !== this.props.value && void 0 !== e ? e : null;
+                    }
+                }
+                N.defaultProps = { format: 'integral' };
+                (b.Items,
+                    b.Equipment,
+                    b.Xp,
+                    b.XpFactor,
+                    b.Blueprints,
+                    b.BlueprintsAny,
+                    b.Goodies,
+                    b.Berths,
+                    b.Slots,
+                    b.Tokens,
+                    b.CrewSkins,
+                    b.CrewBooks,
+                    b.Customizations,
+                    b.CreditsFactor,
+                    b.TankmenXp,
+                    b.TankmenXpFactor,
+                    b.FreeXpFactor,
+                    b.BattleToken,
+                    b.PremiumUniversal,
+                    b.NaturalCover,
+                    b.BpCoin,
+                    b.BattlePassSelectToken,
+                    b.BattlaPassFinalAchievement,
+                    b.BattleBadge,
+                    b.BonusX5,
+                    b.CrewBonusX3,
+                    b.NewYearFillers,
+                    b.NewYearInvoice,
+                    b.EpicSelectToken,
+                    b.Comp7TokenWeeklyReward,
+                    b.Comp7TokenCouponReward,
+                    b.BattleBoosterGift,
+                    b.CosmicLootboxCommon,
+                    b.CosmicLootboxSilver,
+                    b.SelectableBonus,
+                    b.GoldenTicket,
+                    b.PostStamp,
+                    b.BlankPersonalMissions_1,
+                    b.BlankPersonalMissions_2,
+                    b.SACoin,
+                    b.Gold,
+                    b.Credits,
+                    b.Crystal,
+                    b.FreeXp,
+                    b.BattlePassPoints,
+                    b.PremiumPlus,
+                    b.Premium);
+                const T = {
+                        base: 'Reward_base_ea',
+                        base__s48x48: 'Reward_base__s48x48_46',
+                        base__small: 'Reward_base__small_c0',
+                        base__s80x80: 'Reward_base__s80x80_ce',
+                        base__big: 'Reward_base__big_e5',
+                        base__s128x100: 'Reward_base__s128x100_c3',
+                        base__s180x135: 'Reward_base__s180x135_7c',
+                        base__s232x174: 'Reward_base__s232x174_67',
+                        base__s296x222: 'Reward_base__s296x222_78',
+                        base__s400x300: 'Reward_base__s400x300_07',
+                        base__s600x450: 'Reward_base__s600x450_f8',
+                        tooltipWrapper: 'Reward_tooltipWrapper_b5',
+                        icon: 'Reward_icon_df',
+                        overlay: 'Reward_overlay_68',
+                        highlight: 'Reward_highlight_36',
+                        image: 'Reward_image_89',
+                        info: 'Reward_info_72',
+                        info__multi: 'Reward_info__multi_63',
+                        info__credits: 'Reward_info__credits_ef',
+                        info__gold: 'Reward_info__gold_36',
+                        info__crystal: 'Reward_info__crystal_36',
+                        info__premiumTank: 'Reward_info__premiumTank_d3',
+                        timer: 'Reward_timer_d3',
                     },
-                    T =
-                        (b.Items,
-                        b.Equipment,
-                        b.Xp,
-                        b.XpFactor,
-                        b.Blueprints,
-                        b.BlueprintsAny,
-                        b.Goodies,
-                        b.Berths,
-                        b.Slots,
-                        b.Tokens,
-                        b.CrewSkins,
-                        b.CrewBooks,
-                        b.Customizations,
-                        b.CreditsFactor,
-                        b.TankmenXp,
-                        b.TankmenXpFactor,
-                        b.FreeXpFactor,
-                        b.BattleToken,
-                        b.PremiumUniversal,
-                        b.NaturalCover,
-                        b.BpCoin,
-                        b.BattlePassSelectToken,
-                        b.BattlaPassFinalAchievement,
-                        b.BattleBadge,
-                        b.BonusX5,
-                        b.CrewBonusX3,
-                        b.NewYearFillers,
-                        b.NewYearInvoice,
-                        b.EpicSelectToken,
-                        b.Comp7TokenWeeklyReward,
-                        b.Comp7TokenCouponReward,
-                        b.BattleBoosterGift,
-                        b.CosmicLootboxCommon,
-                        b.CosmicLootboxSilver,
-                        b.SelectableBonus,
-                        b.GoldenTicket,
-                        b.PostStamp,
-                        b.WtStamp,
-                        b.WtTicket,
-                        b.WtMainPrizeDiscount,
-                        b.WtHunter,
-                        b.WtHunterCollection,
-                        b.Gold,
-                        b.Credits,
-                        b.Crystal,
-                        b.FreeXp,
-                        b.BattlePassPoints,
-                        b.PremiumPlus,
-                        b.Premium,
-                        {
-                            base: 'Reward_base_ea',
-                            base__s48x48: 'Reward_base__s48x48_46',
-                            base__small: 'Reward_base__small_c0',
-                            base__s80x80: 'Reward_base__s80x80_ce',
-                            base__big: 'Reward_base__big_e5',
-                            base__s128x100: 'Reward_base__s128x100_c3',
-                            base__s180x135: 'Reward_base__s180x135_7c',
-                            base__s232x174: 'Reward_base__s232x174_67',
-                            base__s296x222: 'Reward_base__s296x222_78',
-                            base__s400x300: 'Reward_base__s400x300_07',
-                            base__s600x450: 'Reward_base__s600x450_f8',
-                            tooltipWrapper: 'Reward_tooltipWrapper_b5',
-                            icon: 'Reward_icon_df',
-                            overlay: 'Reward_overlay_68',
-                            highlight: 'Reward_highlight_36',
-                            image: 'Reward_image_89',
-                            info: 'Reward_info_72',
-                            info__multi: 'Reward_info__multi_63',
-                            info__credits: 'Reward_info__credits_ef',
-                            info__gold: 'Reward_info__gold_36',
-                            info__crystal: 'Reward_info__crystal_36',
-                            info__premiumTank: 'Reward_info__premiumTank_d3',
-                            timer: 'Reward_timer_d3',
-                        }),
                     x = ({
                         name: u,
                         image: e,
@@ -1514,11 +1511,11 @@
                 function G(u, e) {
                     return Array.isArray(u) ? u.map(e) : u.map((u, t, n) => e(null == u ? void 0 : u.value, t, n));
                 }
-                var W = t(3403);
-                function q(u) {
+                var q = t(3403);
+                function V(u) {
                     engine.call('PlaySound', u);
                 }
-                const V = {
+                const W = {
                         base: 'TextButton_base_b6',
                         base__right: 'TextButton_base__right_39',
                         icon: 'TextButton_icon_17',
@@ -1550,9 +1547,9 @@
                         'soundClick',
                         'soundHover',
                     ];
-                function z() {
+                function j() {
                     return (
-                        (z =
+                        (j =
                             Object.assign ||
                             function (u) {
                                 for (var e = 1; e < arguments.length; e++) {
@@ -1561,17 +1558,17 @@
                                 }
                                 return u;
                             }),
-                        z.apply(this, arguments)
+                        j.apply(this, arguments)
                     );
                 }
-                class j extends r().PureComponent {
+                class z extends r().PureComponent {
                     constructor(...u) {
                         (super(...u),
                             (this.state = { hover: !1, click: !1 }),
                             (this._onMouseEnter = (u) => (e) => {
                                 (u && u(e),
                                     this.setState({ hover: !0 }),
-                                    this.props.soundHover && q(this.props.soundHover));
+                                    this.props.soundHover && V(this.props.soundHover));
                             }),
                             (this._onMouseLeave = (u) => (e) => {
                                 (u && u(e), this.setState({ hover: !1, click: !1 }));
@@ -1579,7 +1576,7 @@
                             (this._onMouseDown = (u) => (e) => {
                                 (u && u(e),
                                     this.setState({ click: !0 }),
-                                    this.props.soundClick && q(this.props.soundClick));
+                                    this.props.soundClick && V(this.props.soundClick));
                             }),
                             (this._onMouseUp = (u) => (e) => {
                                 (u && u(e), this.setState({ click: !1 }));
@@ -1611,14 +1608,14 @@
                                     for (n = 0; n < i.length; n++) ((t = i[n]), e.indexOf(t) >= 0 || (r[t] = u[t]));
                                     return r;
                                 })(u, X)),
-                            F = o()(V.base, V[`base__${s}`], V[`base__${i}`], null == a ? void 0 : a.base),
-                            d = o()(V.icon, V[`icon__${s}`], V[`icon__${i}`], null == a ? void 0 : a.icon),
-                            D = o()(V.glow, null == a ? void 0 : a.glow),
-                            m = o()(V.caption, V[`caption__${s}`], null == a ? void 0 : a.caption),
-                            C = o()(V.goto, null == a ? void 0 : a.goto);
+                            F = o()(W.base, W[`base__${s}`], W[`base__${i}`], null == a ? void 0 : a.base),
+                            d = o()(W.icon, W[`icon__${s}`], W[`icon__${i}`], null == a ? void 0 : a.icon),
+                            D = o()(W.glow, null == a ? void 0 : a.glow),
+                            m = o()(W.caption, W[`caption__${s}`], null == a ? void 0 : a.caption),
+                            C = o()(W.goto, null == a ? void 0 : a.goto);
                         return r().createElement(
                             'div',
-                            z(
+                            j(
                                 {
                                     className: F,
                                     onMouseEnter: this._onMouseEnter(c),
@@ -1631,7 +1628,7 @@
                                 },
                                 A,
                             ),
-                            'info' !== s && r().createElement('div', { className: V.shine }),
+                            'info' !== s && r().createElement('div', { className: W.shine }),
                             r().createElement('div', { className: d }, r().createElement('div', { className: D })),
                             r().createElement('div', { className: m }, e),
                             n && r().createElement('div', { className: C }, n),
@@ -1639,7 +1636,7 @@
                     }
                 }
                 let Y;
-                ((j.defaultProps = { side: 'left', type: 'back', soundHover: 'highlight', soundClick: 'play' }),
+                ((z.defaultProps = { side: 'left', type: 'back', soundHover: 'highlight', soundClick: 'play' }),
                     (function (u) {
                         ((u.responsiveHeader = 'responsiveHeader'),
                             (u.responsiveClosePosition = 'responsiveClosePosition'),
@@ -1974,7 +1971,7 @@
                                     r().createElement(
                                         'div',
                                         { className: v },
-                                        r().createElement(j, {
+                                        r().createElement(z, {
                                             caption: R.strings.menu.viewHeader.closeBtn.label(),
                                             type: 'close',
                                             side: 'right',
@@ -2433,18 +2430,18 @@
                               ),
                     Hu = 'Alert_alert_66',
                     Gu = 'Alert_icon_ea',
-                    Wu = 'Alert_alertText_14',
-                    qu = ({ alertText: u, className: e }) =>
+                    qu = 'Alert_alertText_14',
+                    Vu = ({ alertText: u, className: e }) =>
                         r().createElement(
                             'div',
                             { className: o()(Hu, e) },
                             r().createElement('i', { className: Gu }),
-                            r().createElement('span', { className: Wu }, u),
+                            r().createElement('span', { className: qu }, u),
                         ),
-                    Vu = 'PriceBlock_base_7a',
+                    Wu = 'PriceBlock_base_7a',
                     Xu = 'PriceBlock_priceContainer_d3',
-                    zu = 'PriceBlock_text_2c',
-                    ju = 'PriceBlock_currency_13',
+                    ju = 'PriceBlock_text_2c',
+                    zu = 'PriceBlock_currency_13',
                     Yu = ({
                         price: u,
                         isEnough: e,
@@ -2461,14 +2458,14 @@
                     }) =>
                         r().createElement(
                             'div',
-                            { className: o()(Vu, l) },
+                            { className: o()(Wu, l) },
                             r().createElement(
                                 'div',
                                 { className: o()(Xu, null == _ ? void 0 : _.priceContainer) },
-                                r().createElement('div', { className: zu }, n),
+                                r().createElement('div', { className: ju }, n),
                                 r().createElement(
                                     'div',
-                                    { className: o()(ju, null == _ ? void 0 : _.currency) },
+                                    { className: o()(zu, null == _ ? void 0 : _.currency) },
                                     r().createElement(Iu, { size: s, type: t, value: u, isEnough: e }),
                                 ),
                                 A &&
@@ -2478,7 +2475,7 @@
                                         classMix: null == _ ? void 0 : _.additionalText,
                                     }),
                             ),
-                            E && r().createElement(qu, { className: null == _ ? void 0 : _.alert, alertText: c }),
+                            E && r().createElement(Vu, { className: null == _ ? void 0 : _.alert, alertText: c }),
                         ),
                     $u = (u, e) => {
                         const t = u.$dyn(e);
@@ -2498,7 +2495,7 @@
                         priceContainer: 'Content_priceContainer_66',
                     },
                     Zu = R.strings.tank_setup.dialogs.sell.alertText.equipment,
-                    Ju = (0, W.Pi)(() => {
+                    Ju = (0, q.Pi)(() => {
                         const u = Nu().model,
                             e = u.equipment.cost.get(),
                             t = e.type,
@@ -2598,7 +2595,7 @@
                         ),
                         N = (0, n.useCallback)(
                             (u) => {
-                                s || (null !== c && q(c), _ && _(u), f(!0));
+                                s || (null !== c && V(c), _ && _(u), f(!0));
                             },
                             [s, c, _],
                         ),
@@ -2616,7 +2613,7 @@
                         ),
                         O = (0, n.useCallback)(
                             (u) => {
-                                s || (null !== l && q(l), A && A(u), t && w(), b(!0));
+                                s || (null !== l && V(l), A && A(u), t && w(), b(!0));
                             },
                             [s, l, A, w, t],
                         ),
@@ -3046,10 +3043,10 @@
                                             this.setState({ activeDecrement: !0 }))));
                             }),
                             (this.playHoverSound = () => {
-                                this.props.isDisabled || q('highlight');
+                                this.props.isDisabled || V('highlight');
                             }),
                             (this.playClickSound = () => {
-                                this.props.isDisabled || q('play');
+                                this.props.isDisabled || V('play');
                             }),
                             (this.stop = () => {
                                 (this.timer && clearTimeout(this.timer), (this.timer = null));
@@ -3234,7 +3231,7 @@
                     de = 'Footer_button_ab',
                     De = 'Footer_text_cc',
                     me = R.strings.tank_setup.dialogs.sell.button,
-                    Ce = (0, W.Pi)(() => {
+                    Ce = (0, q.Pi)(() => {
                         const u = Nu(),
                             e = u.model,
                             t = u.controls,
@@ -3286,7 +3283,7 @@
                     }),
                     pe = 'Header_base_d6',
                     Be = 'Header_text_97',
-                    he = (0, W.Pi)(() => {
+                    he = (0, q.Pi)(() => {
                         const u = Nu().model,
                             e = r().createElement(Uu, {
                                 text: $u(Ku(R.strings.artefacts, u.equipment.props.get().name), 'name'),
@@ -3315,7 +3312,7 @@
                         ge.apply(this, arguments)
                     );
                 }
-                const be = (0, W.Pi)(() => {
+                const be = (0, q.Pi)(() => {
                         const u = Nu(),
                             e = u.controls,
                             t = u.model,

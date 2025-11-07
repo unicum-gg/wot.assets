@@ -1186,7 +1186,7 @@
                         U.apply(this, arguments)
                     );
                 }
-                class W extends a().PureComponent {
+                class G extends a().PureComponent {
                     constructor(...e) {
                         (super(...e),
                             (this.state = { hover: !1, click: !1 }),
@@ -1260,8 +1260,8 @@
                         );
                     }
                 }
-                W.defaultProps = { side: 'left', type: 'back', soundHover: 'highlight', soundClick: 'play' };
-                var G = t(3403),
+                G.defaultProps = { side: 'left', type: 'back', soundHover: 'highlight', soundClick: 'play' };
+                var W = t(3403),
                     V = t(7030);
                 let $, X, j, z, q, Y, K;
                 (!(function (e) {
@@ -1296,6 +1296,7 @@
                         (e.SelectableBonus = 'selectableBonus'),
                         (e.StyleProgressToken = 'styleProgressToken'),
                         (e.TmanToken = 'tmanToken'),
+                        (e.PortalEventDiscount25 = 'portalEventDiscountToken'),
                         (e.NaturalCover = 'naturalCover'),
                         (e.BpCoin = 'bpcoin'),
                         (e.BattlaPassFinalAchievement = 'dossier_achievement'),
@@ -1323,12 +1324,9 @@
                         (e.GoldenTicket = 'birthday2025_golden_ticket'),
                         (e.PostStamp = 'giftsystem_4_stamp'),
                         (e.Quests = 'quests'),
-                        (e.WtStamp = 'stamp'),
-                        (e.WtHunter = 'wt_hunter'),
-                        (e.WtHunterCollection = 'hunter_collection'),
-                        (e.WtTicket = 'wtevent_ticket'),
-                        (e.WtMainPrizeDiscount = 'main_prize_discount'),
-                        (e.WtTicket25 = 'wtevent_ticket25'));
+                        (e.BlankPersonalMissions_1 = 'freeTokens_0'),
+                        (e.BlankPersonalMissions_2 = 'freeTokens_2'),
+                        (e.SACoin = 'sacoin'));
                 })($ || ($ = {})),
                     (function (e) {
                         ((e.Gold = 'gold'),
@@ -1427,17 +1425,16 @@
                     J = (e) => Math.sqrt(1 - Math.pow(e - 1, 2)),
                     ee = [$.Vehicles, $.TmanToken, $.CollectionItem];
                 var ue = t(4179);
-                const te = ({ format: e, value: u }) => {
-                        const t = ((e, u = 'integral') => {
-                            let t;
-                            return (
-                                (t = 'gold' === u ? ue.B3.GOLD : ue.B3.INTEGRAL),
-                                void 0 === e ? '' : ue.Z5.getNumberFormat(e, t)
-                            );
-                        })(u, e);
-                        return t ? a().createElement('span', null, t) : null;
-                    },
-                    ne = [
+                class te extends a().PureComponent {
+                    render() {
+                        let e;
+                        e = 'gold' === this.props.format ? ue.B3.GOLD : ue.B3.INTEGRAL;
+                        const u = ue.Z5.getNumberFormat(this.props.value, e);
+                        return void 0 !== this.props.value && void 0 !== u ? u : null;
+                    }
+                }
+                te.defaultProps = { format: 'integral' };
+                const ne = [
                         $.Items,
                         $.Equipment,
                         $.Xp,
@@ -1475,11 +1472,9 @@
                         $.SelectableBonus,
                         $.GoldenTicket,
                         $.PostStamp,
-                        $.WtStamp,
-                        $.WtTicket,
-                        $.WtMainPrizeDiscount,
-                        $.WtHunter,
-                        $.WtHunterCollection,
+                        $.BlankPersonalMissions_1,
+                        $.BlankPersonalMissions_2,
+                        $.SACoin,
                     ],
                     ae = [$.Gold, $.Credits, $.Crystal, $.FreeXp],
                     oe = [$.BattlePassPoints],
@@ -1777,6 +1772,8 @@
                                                 return `R.images.gui.maps.icons.quests.bonuses.${u}.style_3d`;
                                             case 'collectionItem':
                                                 return `R.images.gui.maps.icons.collectionItems.${s}.${o}`;
+                                            case 'portal':
+                                                return `R.images.gui.maps.icons.rewards.${u}.${i}`;
                                             default:
                                                 return `R.images.gui.maps.icons.quests.bonuses.${u}.${t}`;
                                         }
@@ -2418,9 +2415,9 @@
                         var S;
                     },
                     Ue = ['children'];
-                function We() {
+                function Ge() {
                     return (
-                        (We =
+                        (Ge =
                             Object.assign ||
                             function (e) {
                                 for (var u = 1; u < arguments.length; u++) {
@@ -2429,10 +2426,10 @@
                                 }
                                 return e;
                             }),
-                        We.apply(this, arguments)
+                        Ge.apply(this, arguments)
                     );
                 }
-                const Ge = (e) => {
+                const We = (e) => {
                         let u = e.children,
                             t = (function (e, u) {
                                 if (null == e) return {};
@@ -2445,7 +2442,7 @@
                             })(e, Ue);
                         return a().createElement(
                             He,
-                            We(
+                            Ge(
                                 {
                                     contentId:
                                         R.views.common.tooltip_window.backport_tooltip_content.BackportTooltipContent(
@@ -2534,7 +2531,7 @@
                             r = null == i ? void 0 : i.contentId;
                         return o || r
                             ? a().createElement(He, ze({}, u, { contentId: o || r }), n)
-                            : a().createElement(Ge, u, n);
+                            : a().createElement(We, u, n);
                     },
                     Ye = {
                         base: 'Reward_base_ea',
@@ -3424,7 +3421,7 @@
                             [h.ExtraLarge]: [j.S400x300, j.S600x450, j.S400x300],
                         },
                     },
-                    Lu = (0, G.Pi)(() => {
+                    Lu = (0, W.Pi)(() => {
                         const e = fe().model,
                             u = e.computes.getMainRewards(),
                             t = e.computes.getRegularRewards(),
@@ -3660,8 +3657,8 @@
                     (function (e) {
                         ((e.Simple = 'simpleKey'), (e.Lockpick = 'lockpick'));
                     })(Uu || (Uu = {})));
-                const Wu = R.strings.gui_lootboxes,
-                    Gu = (0, G.Pi)(
+                const Gu = R.strings.gui_lootboxes,
+                    Wu = (0, W.Pi)(
                         ({
                             animationDuration: e,
                             lootboxCount: u,
@@ -3728,7 +3725,7 @@
                                                     },
                                                     disabled: F,
                                                 },
-                                                Wu.rewards.controls.ok(),
+                                                Gu.rewards.controls.ok(),
                                             ),
                                         ),
                                         u > 0 &&
@@ -3747,8 +3744,8 @@
                                                         disabled: F,
                                                     },
                                                     1 === u
-                                                        ? Wu.lootboxesWithKeys.openLast()
-                                                        : Wu.lootboxesWithKeys.openOne(),
+                                                        ? Gu.lootboxesWithKeys.openLast()
+                                                        : Gu.lootboxesWithKeys.openOne(),
                                                 ),
                                             ),
                                         w &&
@@ -3767,9 +3764,9 @@
                                                         disabled: F,
                                                     },
                                                     u <= b
-                                                        ? Wu.lootboxesWithKeys.openAll()
+                                                        ? Gu.lootboxesWithKeys.openAll()
                                                         : a().createElement(ru, {
-                                                              text: Wu.lootboxesWithKeys.openMore(),
+                                                              text: Gu.lootboxesWithKeys.openMore(),
                                                               binding: { count: p },
                                                           }),
                                                 ),
@@ -3788,7 +3785,7 @@
                                                         },
                                                         disabled: F,
                                                     },
-                                                    Wu.rewards.controls.showVehicle(),
+                                                    Gu.rewards.controls.showVehicle(),
                                                 ),
                                             ),
                                     ),
@@ -3797,7 +3794,7 @@
                                             'div',
                                             { className: 'Footer_lockpicksContainer_03' },
                                             a().createElement(ru, {
-                                                text: Wu.lootboxesWithKeys.availableLockpicks(),
+                                                text: Gu.lootboxesWithKeys.availableLockpicks(),
                                                 binding: x,
                                             }),
                                         ),
@@ -4009,9 +4006,9 @@
                                     computedClassNames: u,
                                 };
                             }, [t, o, s, c, m, d, P, I, T, C, M, x, f]),
-                            W = U.computedStyle,
-                            G = U.computedClassNames;
-                        return a().createElement('div', Zu({ className: B()(Ku.base, ...G, u), style: W }, H), N);
+                            G = U.computedStyle,
+                            W = U.computedClassNames;
+                        return a().createElement('div', Zu({ className: B()(Ku.base, ...W, u), style: G }, H), N);
                     });
                 var nt = t(3532),
                     at = t.n(nt);
@@ -4342,7 +4339,7 @@
                     }, [u, e, t]);
                 }
                 const ft = R.strings.gui_lootboxes.rewards,
-                    Tt = (0, G.Pi)(() => {
+                    Tt = (0, W.Pi)(() => {
                         const e = fe(),
                             u = e.model,
                             t = e.controls,
@@ -4413,7 +4410,7 @@
                             a().createElement(
                                 'div',
                                 { className: 'App_close_c2' },
-                                a().createElement(W, {
+                                a().createElement(G, {
                                     caption: ft.controls.close(),
                                     type: 'close',
                                     side: 'right',
@@ -4425,7 +4422,7 @@
                             a().createElement(
                                 V.animated.div,
                                 { className: 'App_footer_46', style: S },
-                                a().createElement(Gu, {
+                                a().createElement(Wu, {
                                     animationDuration: c + Q,
                                     lootboxCount: x >= 0 && A.value ? (b ? x : Math.min(g, x)) : g,
                                     lootboxId: p,

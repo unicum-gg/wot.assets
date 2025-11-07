@@ -1156,7 +1156,7 @@
                     return !1;
                 }
                 console.log;
-                var Qu = t(9174);
+                var Qu = t(3915);
                 function Zu(u, e) {
                     (null == e || e > u.length) && (e = u.length);
                     for (var t = 0, A = new Array(e); t < e; t++) A[t] = u[t];
@@ -1296,11 +1296,11 @@
                                                 observableModel: {
                                                     array: (e, t) => {
                                                         const A = null != t ? t : D(e),
-                                                            E = Qu.LO.box(A, { equals: qu });
+                                                            E = Qu.observable.box(A, { equals: qu });
                                                         return (
                                                             'real' === u &&
                                                                 r.subscribe(
-                                                                    (0, Qu.aD)((u) => E.set(u)),
+                                                                    (0, Qu.action)((u) => E.set(u)),
                                                                     e,
                                                                 ),
                                                             E
@@ -1308,11 +1308,11 @@
                                                     },
                                                     object: (e, t) => {
                                                         const A = null != t ? t : D(e),
-                                                            E = Qu.LO.box(A, { equals: qu });
+                                                            E = Qu.observable.box(A, { equals: qu });
                                                         return (
                                                             'real' === u &&
                                                                 r.subscribe(
-                                                                    (0, Qu.aD)((u) => E.set(u)),
+                                                                    (0, Qu.action)((u) => E.set(u)),
                                                                     e,
                                                                 ),
                                                             E
@@ -1322,13 +1322,13 @@
                                                         const A = D(t);
                                                         if (Array.isArray(e)) {
                                                             const E = e.reduce(
-                                                                (u, e) => ((u[e] = Qu.LO.box(A[e], {})), u),
+                                                                (u, e) => ((u[e] = Qu.observable.box(A[e], {})), u),
                                                                 {},
                                                             );
                                                             return (
                                                                 'real' === u &&
                                                                     r.subscribe(
-                                                                        (0, Qu.aD)((u) => {
+                                                                        (0, Qu.action)((u) => {
                                                                             e.forEach((e) => {
                                                                                 E[e].set(u[e]);
                                                                             });
@@ -1342,13 +1342,16 @@
                                                             const E = e,
                                                                 F = Object.entries(E),
                                                                 D = F.reduce(
-                                                                    (u, [e, t]) => ((u[t] = Qu.LO.box(A[e], {})), u),
+                                                                    (u, [e, t]) => (
+                                                                        (u[t] = Qu.observable.box(A[e], {})),
+                                                                        u
+                                                                    ),
                                                                     {},
                                                                 );
                                                             return (
                                                                 'real' === u &&
                                                                     r.subscribe(
-                                                                        (0, Qu.aD)((u) => {
+                                                                        (0, Qu.action)((u) => {
                                                                             F.forEach(([e, t]) => {
                                                                                 D[t].set(u[e]);
                                                                             });
@@ -1411,7 +1414,7 @@
         var E = t[u];
         if (void 0 !== E) return E.exports;
         var F = (t[u] = { exports: {} });
-        return (e[u](F, F.exports, A), F.exports);
+        return (e[u].call(F.exports, F, F.exports, A), F.exports);
     }
     ((A.m = e),
         (u = []),
@@ -1457,7 +1460,6 @@
                 Object.defineProperty(u, Symbol.toStringTag, { value: 'Module' }),
                 Object.defineProperty(u, '__esModule', { value: !0 }));
         }),
-        (A.j = 232),
         (() => {
             var u = { 232: 0 };
             A.O.j = (e) => 0 === u[e];

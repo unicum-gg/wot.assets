@@ -1,0 +1,2721 @@
+.Box_mt__XS_0c {
+    margin-top: 4rem;
+}
+.Box_mt__SM_eb {
+    margin-top: 8rem;
+}
+.Box_mt__SMp_cf {
+    margin-top: 10rem;
+}
+.Box_mt__MD_25 {
+    margin-top: 16rem;
+}
+.Box_mt__MDp_49 {
+    margin-top: 20rem;
+}
+.Box_mt__LG_e8 {
+    margin-top: 32rem;
+}
+.Box_mt__XL_83 {
+    margin-top: 64rem;
+}
+
+.Box_mr__XS_7c {
+    margin-right: 4rem;
+}
+
+.Box_mr__SM_08 {
+    margin-right: 8rem;
+}
+
+.Box_mr__SMp_06 {
+    margin-right: 10rem;
+}
+
+.Box_mr__MD_4a {
+    margin-right: 16rem;
+}
+
+.Box_mr__MDp_b6 {
+    margin-right: 20rem;
+}
+
+.Box_mr__LG_d0 {
+    margin-right: 32rem;
+}
+
+.Box_mr__XL_db {
+    margin-right: 64rem;
+}
+
+.Box_mb__XS_bb {
+    margin-bottom: 4rem;
+}
+
+.Box_mb__SM_83 {
+    margin-bottom: 8rem;
+}
+
+.Box_mb__SMp_04 {
+    margin-bottom: 10rem;
+}
+
+.Box_mb__MD_ed {
+    margin-bottom: 16rem;
+}
+
+.Box_mb__MDp_65 {
+    margin-bottom: 20rem;
+}
+
+.Box_mb__LG_c8 {
+    margin-bottom: 32rem;
+}
+
+.Box_mb__XL_f8 {
+    margin-bottom: 64rem;
+}
+
+.Box_ml__XS_8a {
+    margin-left: 4rem;
+}
+
+.Box_ml__SM_e6 {
+    margin-left: 8rem;
+}
+
+.Box_ml__SMp_fb {
+    margin-left: 10rem;
+}
+
+.Box_ml__MD_2b {
+    margin-left: 16rem;
+}
+
+.Box_ml__MDp_c7 {
+    margin-left: 20rem;
+}
+
+.Box_ml__LG_39 {
+    margin-left: 32rem;
+}
+
+.Box_ml__XL_4a {
+    margin-left: 64rem;
+}
+
+.FormatText_base_d0 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* eslint-disable-next-line expectedscss*/
+.Text_paragraph-P10_2c {
+    font-size: 10rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.Text_paragraph-P12_22 {
+    font-size: 12rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+.Text_paragraph-P14_a7 {
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+.Text_paragraph-P16_90 {
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+.Text_paragraph-P18_50 {
+    font-size: 18rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+.Text_paragraph-P24_33 {
+    font-size: 24rem;
+    font-weight: 400;
+    line-height: 32rem;
+}
+.Text_heading-H14_8b {
+    font-size: 14rem;
+    font-weight: 700;
+    line-height: 1.15;
+}
+.Text_heading-H15_9e {
+    font-size: 15rem;
+    font-weight: 700;
+    line-height: 1.15;
+}
+.Text_heading-H18_b7 {
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H20R_f6 {
+    font-size: 20rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.Text_heading-H22_27 {
+    font-size: 22rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.Text_heading-H24R_be {
+    font-size: 24rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.Text_heading-H24_0c {
+    font-size: 24rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.Text_heading-H28_78 {
+    font-size: 28rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H36_32 {
+    font-size: 36rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H56_c3 {
+    font-size: 56rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H73_8f {
+    font-size: 73rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H144_a9 {
+    font-size: 144rem;
+    font-weight: 700;
+    line-height: 1;
+}
+.Text_BLACK_REAL_30 {
+    color: #000000;
+}
+.Text_WHITE_REAL_bc {
+    color: #ffffff;
+}
+.Text_WHITE_62 {
+    color: #f2f2f7;
+}
+.Text_WHITE_ORANGE_54 {
+    color: #fefeec;
+}
+.Text_WHITE_SPANISH_df {
+    color: #e9e2bf;
+}
+.Text_PAR_15 {
+    color: #8c8c7e;
+}
+.Text_PAR_SECONDARY_5d {
+    color: #595950;
+}
+.Text_PAR_TERTIARY_c9 {
+    color: #37362e;
+}
+.Text_INFO_RED_30 {
+    color: #ff0000;
+}
+.Text_RED_66 {
+    color: #ff2717;
+}
+.Text_RED_DARK_d8 {
+    color: #b70000;
+}
+.Text_YELLOW_ed {
+    color: #feab34;
+}
+.Text_ORANGE_be {
+    color: #ee7000;
+}
+.Text_CREAM_57 {
+    color: #ffdd99;
+}
+.Text_BROWN_18 {
+    color: #cbac77;
+}
+.Text_GREEN_BRIGHT_3f {
+    color: #80d43a;
+}
+.Text_GREEN_e3 {
+    color: #7ab300;
+}
+.Text_GREEN_DARK_f1 {
+    color: #497212;
+}
+.Text_BLUE_BOOSTER_21 {
+    color: #ccffff;
+}
+.Text_BLUE_TEAMKILLER_ab {
+    color: #09e2ff;
+}
+.Text_CRED_f7 {
+    color: #ced9d9;
+}
+.Text_GOLD_28 {
+    color: #ffc363;
+}
+.Text_BOND_be {
+    color: #c9c9b6;
+}
+.Text_PROM_65 {
+    color: #a29b70;
+}
+
+.ScrambleText_base_cd {
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+}
+
+.ScrambleText_text_63 {
+    display: flex;
+    flex-wrap: nowrap;
+    font-size: 12rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    transition: color 0.8s ease;
+}
+
+.ScrambleText_text__hover_d1 {
+    color: #f54343;
+    text-shadow:
+        0 0 5rem rgba(255, 127, 0, 0.25),
+        0 0 11rem #ff2a00,
+        0 0 20rem #e52;
+}
+
+.mediaExtraLarge .ScrambleText_text_63 {
+    font-size: 16rem;
+}
+
+.ScrambleText_randomChar_d4 {
+    color: #fafafa;
+    opacity: 0.4;
+}
+
+.CloseButton_base_fb {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    min-width: 124rem;
+    position: relative;
+}
+
+.mediaExtraLarge .CloseButton_base_fb {
+    min-width: 158rem;
+}
+
+.CloseButton_text_7b {
+    color: #fd9;
+    text-shadow:
+        0 0 5rem rgba(255, 127, 0, 0.25),
+        0 0 11rem #ff2a00,
+        0 0 20rem #e52;
+}
+
+.CloseButton_icon_9a {
+    width: 40rem;
+    height: 40rem;
+    background: no-repeat center / cover;
+    cursor: pointer;
+}
+
+.mediaExtraLarge .CloseButton_icon_9a {
+    width: 46rem;
+    height: 46rem;
+}
+
+.CloseButton_icon__default_bc {
+    background-image: url('R.images.portal.gui.maps.icons.hangar.closeButton.icon_default');
+}
+
+.CloseButton_icon__hover_79 {
+    background-image: url('R.images.portal.gui.maps.icons.hangar.closeButton.icon_hover');
+}
+
+.SceneWrapper_base_36 {
+    width: 100%;
+    height: 100%;
+    cursor: grab;
+}
+
+.SceneWrapper_base__down_ab {
+    cursor: all-scroll;
+}
+
+.SceneWrapper_base__moveSpaceDisabled_03 {
+    cursor: auto;
+}
+
+.InfoButton_base_a9 {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    min-width: 126rem;
+    cursor: pointer;
+}
+
+.mediaExtraLarge .InfoButton_base_a9 {
+    min-width: 158rem;
+}
+
+.InfoButton_icon_96 {
+    width: 46rem;
+    height: 46rem;
+    margin-top: 2rem;
+    background: no-repeat center / cover;
+}
+
+.InfoButton_icon__default_4b {
+    background-image: url('R.images.portal.gui.maps.icons.info_button.icon_default');
+}
+
+.InfoButton_base_a9:hover .InfoButton_icon_96 {
+    background-image: url('R.images.portal.gui.maps.icons.info_button.icon_hover');
+}
+
+.InfoButton_text_91 {
+    color: #ccffff;
+    font-size: 12rem;
+    font-weight: 400;
+    line-height: 1.3;
+    margin-left: -10rem;
+    text-shadow:
+        0 0 8rem #00eaff,
+        0 0 18rem rgba(31, 68, 255, 0.8);
+    text-transform: uppercase;
+}
+
+.mediaExtraLarge .InfoButton_text_91 {
+    color: #ccffff;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+
+.InfoButton_base_a9:hover .InfoButton_text_91 {
+    color: #c9472d;
+    text-shadow:
+        0 0 4rem #be1f00,
+        0 0 8rem #8b1700,
+        0 0 15rem #580e00;
+}
+
+.ProgressBar_base_06 {
+    height: 8rem;
+    background: url('R.images.portal.gui.maps.icons.upgrade.progression.pattern_disabled') no-repeat center / cover;
+}
+
+.ProgressBar_fillCutter_69 {
+    overflow: hidden;
+}
+
+.ProgressBar_fill_ff {
+    height: 100%;
+    background: url('R.images.portal.gui.maps.icons.upgrade.progression.pattern_learned') no-repeat center / cover;
+}
+
+@keyframes UpgradeSlot_slideLeftIn_fc {
+    from {
+        opacity: 0;
+        transform: translateX(40rem);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes UpgradeSlot_slideRightIn_f2 {
+    from {
+        opacity: 0;
+        transform: translateX(-40rem);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes UpgradeSlot_slideUp_80 {
+    0% {
+        opacity: 0;
+        transform: translateY(20rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes UpgradeSlot_slideDown_60 {
+    0% {
+        opacity: 0;
+        transform: translateY(-30%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes UpgradeSlot_fadeIn_83 {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+@keyframes UpgradeSlot_fadeOut_b2 {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+@keyframes UpgradeSlot_rotating_1f {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+.UpgradeSlot_base_db {
+    display: flex;
+    width: 84rem;
+    height: 84rem;
+    padding: 6rem;
+    background: url('R.images.portal.gui.maps.icons.upgrade.slot.border_locked') no-repeat center / cover;
+    position: relative;
+}
+.mediaMedium .UpgradeSlot_base_db {
+    width: 116rem;
+    height: 116rem;
+    padding: 8rem;
+}
+.mediaExtraLarge .UpgradeSlot_base_db {
+    width: 152rem;
+    height: 152rem;
+    padding: 10rem;
+}
+.UpgradeSlot_base__skipped_bf {
+    background-image: url('R.images.portal.gui.maps.icons.upgrade.slot.border_skipped');
+}
+.UpgradeSlot_base__skipped_bf.UpgradeSlot_base__top_59 {
+    background-image: url('R.images.portal.gui.maps.icons.upgrade.slot.border_skipped_top');
+}
+.UpgradeSlot_base__top_59 {
+    margin-bottom: -4rem;
+}
+.UpgradeSlot_base__bottom_b9 {
+    margin-top: -4rem;
+}
+.UpgradeSlot_base_db:hover {
+    cursor: pointer;
+}
+.UpgradeSlot_base__nonInteractive_6b:hover {
+    cursor: default;
+}
+.UpgradeSlot_colorBg_aa,
+.UpgradeSlot_statusBg_d6 {
+    width: 100%;
+    height: 100%;
+    margin: 6rem;
+    position: absolute;
+    z-index: -1;
+}
+.mediaMedium .UpgradeSlot_colorBg_aa,
+.mediaMedium .UpgradeSlot_statusBg_d6 {
+    margin: 8rem;
+}
+.mediaExtraLarge .UpgradeSlot_colorBg_aa,
+.mediaExtraLarge .UpgradeSlot_statusBg_d6 {
+    margin: 10rem;
+}
+.UpgradeSlot_colorBg_aa {
+    background: #0d0d0d;
+}
+.UpgradeSlot_statusBg_d6 {
+    background: url('R.images.portal.gui.maps.icons.upgrade.slot.bg_default') no-repeat center / cover;
+}
+.UpgradeSlot_base__learned_45 .UpgradeSlot_statusBg_d6 {
+    background-image: url('R.images.portal.gui.maps.icons.upgrade.slot.bg_module');
+}
+.UpgradeSlot_base__learned_45.UpgradeSlot_base__ability_3c .UpgradeSlot_statusBg_d6 {
+    background-image: url('R.images.portal.gui.maps.icons.upgrade.slot.bg_ability');
+}
+.UpgradeSlot_base__skipped_bf .UpgradeSlot_statusBg_d6 {
+    background-image: url('R.images.portal.gui.maps.icons.upgrade.slot.bg_skipped');
+}
+.UpgradeSlot_mask_ab {
+    overflow: hidden;
+    position: absolute;
+}
+.UpgradeSlot_base__top_59 .UpgradeSlot_mask_ab,
+.UpgradeSlot_base__bottom_b9 .UpgradeSlot_mask_ab {
+    width: 84rem;
+    height: 0;
+}
+.mediaMedium .UpgradeSlot_base__top_59 .UpgradeSlot_mask_ab,
+.mediaMedium .UpgradeSlot_base__bottom_b9 .UpgradeSlot_mask_ab {
+    width: 116rem;
+}
+.mediaExtraLarge .UpgradeSlot_base__top_59 .UpgradeSlot_mask_ab,
+.mediaExtraLarge .UpgradeSlot_base__bottom_b9 .UpgradeSlot_mask_ab {
+    width: 152rem;
+}
+.UpgradeSlot_base__top_59 .UpgradeSlot_mask_ab {
+    bottom: 0;
+}
+.UpgradeSlot_base__bottom_b9 .UpgradeSlot_mask_ab {
+    top: 0;
+}
+.UpgradeSlot_base__solo_e5 .UpgradeSlot_mask_ab {
+    width: 0;
+    height: 84rem;
+    left: 0;
+}
+.mediaMedium .UpgradeSlot_base__solo_e5 .UpgradeSlot_mask_ab {
+    height: 116rem;
+}
+.mediaExtraLarge .UpgradeSlot_base__solo_e5 .UpgradeSlot_mask_ab {
+    height: 152rem;
+}
+.UpgradeSlot_base__top_59 .UpgradeSlot_mask__learned_55,
+.UpgradeSlot_base__bottom_b9 .UpgradeSlot_mask__learned_55 {
+    height: 84rem;
+}
+.mediaMedium .UpgradeSlot_base__top_59 .UpgradeSlot_mask__learned_55,
+.mediaMedium .UpgradeSlot_base__bottom_b9 .UpgradeSlot_mask__learned_55 {
+    height: 116rem;
+}
+.mediaExtraLarge .UpgradeSlot_base__top_59 .UpgradeSlot_mask__learned_55,
+.mediaExtraLarge .UpgradeSlot_base__bottom_b9 .UpgradeSlot_mask__learned_55 {
+    height: 152rem;
+}
+.UpgradeSlot_base__solo_e5 .UpgradeSlot_mask__learned_55 {
+    width: 84rem;
+}
+.mediaMedium .UpgradeSlot_base__solo_e5 .UpgradeSlot_mask__learned_55 {
+    width: 116rem;
+}
+.mediaExtraLarge .UpgradeSlot_base__solo_e5 .UpgradeSlot_mask__learned_55 {
+    width: 152rem;
+}
+.UpgradeSlot_base__top_59 .UpgradeSlot_mask__animated_3e,
+.UpgradeSlot_base__bottom_b9 .UpgradeSlot_mask__animated_3e {
+    animation: UpgradeSlot_runHeight_b2 1.5s linear 1s forwards;
+}
+.mediaMedium .UpgradeSlot_base__top_59 .UpgradeSlot_mask__animated_3e,
+.mediaMedium .UpgradeSlot_base__bottom_b9 .UpgradeSlot_mask__animated_3e {
+    animation: UpgradeSlot_runHeightMedium_be 1.5s linear 1s forwards;
+}
+.mediaExtraLarge .UpgradeSlot_base__top_59 .UpgradeSlot_mask__animated_3e,
+.mediaExtraLarge .UpgradeSlot_base__bottom_b9 .UpgradeSlot_mask__animated_3e {
+    animation: UpgradeSlot_runHeightLarge_fc 1.5s linear 1s forwards;
+}
+.UpgradeSlot_base__solo_e5 .UpgradeSlot_mask__animated_3e {
+    animation: UpgradeSlot_runWidth_af 1.5s linear 0.8s forwards;
+}
+.mediaMedium .UpgradeSlot_base__solo_e5 .UpgradeSlot_mask__animated_3e {
+    animation: UpgradeSlot_runWidthMedium_61 1.5s linear 0.8s forwards;
+}
+.mediaExtraLarge .UpgradeSlot_base__solo_e5 .UpgradeSlot_mask__animated_3e {
+    animation: UpgradeSlot_runWidthLarge_94 1.5s linear 0.8s forwards;
+}
+.UpgradeSlot_borderLearned_3e {
+    width: 84rem;
+    height: 84rem;
+    background: url('R.images.portal.gui.maps.icons.upgrade.slot.border_learned') no-repeat center / cover;
+    position: absolute;
+}
+.UpgradeSlot_base__top_59 .UpgradeSlot_borderLearned_3e {
+    bottom: 0;
+}
+.UpgradeSlot_base__bottom_b9 .UpgradeSlot_borderLearned_3e {
+    top: 0;
+}
+.UpgradeSlot_base__solo_e5 .UpgradeSlot_borderLearned_3e {
+    left: 0;
+}
+.mediaMedium .UpgradeSlot_borderLearned_3e {
+    width: 116rem;
+    height: 116rem;
+}
+.mediaExtraLarge .UpgradeSlot_borderLearned_3e {
+    width: 152rem;
+    height: 152rem;
+}
+.UpgradeSlot_nodeImg_6c {
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    transition: opacity 0.3s;
+}
+.UpgradeSlot_base__locked_59 .UpgradeSlot_nodeImg_6c,
+.UpgradeSlot_base__needToLearn_2d .UpgradeSlot_nodeImg_6c {
+    filter: grayscale(1);
+    opacity: 0.6;
+}
+.UpgradeSlot_base__skipped_bf .UpgradeSlot_nodeImg_6c,
+.UpgradeSlot_base__skipped_bf.UpgradeSlot_base_db:hover .UpgradeSlot_nodeImg_6c,
+.UpgradeSlot_base__skipped_bf.UpgradeSlot_base__clicked_d9 .UpgradeSlot_nodeImg_6c {
+    filter: grayscale(1);
+    opacity: 0.4;
+}
+.UpgradeSlot_base_db:hover .UpgradeSlot_nodeImg_6c,
+.UpgradeSlot_base__clicked_d9 .UpgradeSlot_nodeImg_6c {
+    opacity: 1;
+}
+.UpgradeSlot_content_96 {
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+.UpgradeSlot_base__available_66 .UpgradeSlot_content_96,
+.UpgradeSlot_base__learned_45 .UpgradeSlot_content_96 {
+    background-image: url('R.images.portal.gui.maps.icons.upgrade.slot.available');
+}
+.UpgradeSlot_base__locked_59 .UpgradeSlot_content_96,
+.UpgradeSlot_base__notEnoughPoints_23 .UpgradeSlot_content_96 {
+    background-image: url('R.images.portal.gui.maps.icons.upgrade.slot.locked');
+    opacity: 0.6;
+}
+.UpgradeSlot_base__locked_59:hover .UpgradeSlot_content_96,
+.UpgradeSlot_base__notEnoughPoints_23:hover .UpgradeSlot_content_96,
+.UpgradeSlot_base__clicked_d9 .UpgradeSlot_content_96 {
+    background-image: url('R.images.portal.gui.maps.icons.upgrade.slot.locked');
+    opacity: 1;
+}
+.UpgradeSlot_resetGlow_72 {
+    width: 100%;
+    height: 100%;
+    background: url('R.images.portal.gui.maps.icons.upgrade.slot.effect_reset') no-repeat center / cover;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: UpgradeSlot_resetPulse_df 300ms ease-in-out forwards;
+}
+.UpgradeSlot_border_31 {
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    opacity: 0;
+    position: absolute;
+    transition: opacity 0.3s ease;
+}
+.UpgradeSlot_base__available_66.UpgradeSlot_base__viewed_40 .UpgradeSlot_border_31 {
+    border: 1rem solid #f00;
+    opacity: 1;
+    animation: UpgradeSlot_viewedBlink_db 2s infinite;
+}
+.UpgradeSlot_base__available_66.UpgradeSlot_base_db:hover .UpgradeSlot_border_31 {
+    background-image: url('R.images.portal.gui.maps.icons.upgrade.slot.available_hover');
+    opacity: 1;
+}
+.UpgradeSlot_base__available_66.UpgradeSlot_base__clicked_d9 .UpgradeSlot_border_31,
+.UpgradeSlot_base__available_66.UpgradeSlot_base__clicked_d9.UpgradeSlot_base_db:hover .UpgradeSlot_border_31 {
+    background-image: url('R.images.portal.gui.maps.icons.upgrade.slot.available_click');
+    opacity: 1;
+}
+.UpgradeSlot_base__locked_59.UpgradeSlot_base_db:hover .UpgradeSlot_border_31,
+.UpgradeSlot_base__notEnoughPoints_23.UpgradeSlot_base_db:hover .UpgradeSlot_border_31 {
+    background-image: url('R.images.portal.gui.maps.icons.upgrade.slot.locked_hover');
+    opacity: 0.5;
+}
+.UpgradeSlot_base__locked_59.UpgradeSlot_base__clicked_d9 .UpgradeSlot_border_31,
+.UpgradeSlot_base__locked_59.UpgradeSlot_base__clicked_d9.UpgradeSlot_base_db:hover .UpgradeSlot_border_31,
+.UpgradeSlot_base__notEnoughPoints_23.UpgradeSlot_base__clicked_d9 .UpgradeSlot_border_31,
+.UpgradeSlot_base__notEnoughPoints_23.UpgradeSlot_base__clicked_d9.UpgradeSlot_base_db:hover .UpgradeSlot_border_31 {
+    background-image: url('R.images.portal.gui.maps.icons.upgrade.slot.locked_click');
+    opacity: 1;
+}
+.UpgradeSlot_base__needToLearn_2d .UpgradeSlot_border_31 {
+    background-image: url('R.images.portal.gui.maps.icons.upgrade.slot.effect_blinking');
+    opacity: 1;
+    transform: scale(1.28);
+    animation: UpgradeSlot_viewedBlink_db 2s infinite;
+}
+.UpgradeSlot_modifierIcon_2c {
+    width: 24rem;
+    height: 24rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+.mediaMedium .UpgradeSlot_modifierIcon_2c {
+    width: 32rem;
+    height: 32rem;
+}
+.mediaExtraLarge .UpgradeSlot_modifierIcon_2c {
+    width: 48rem;
+    height: 48rem;
+}
+.UpgradeSlot_base__locked_59 .UpgradeSlot_modifierIcon_2c,
+.UpgradeSlot_base__notEnoughPoints_23 .UpgradeSlot_modifierIcon_2c {
+    opacity: 0.5;
+}
+.UpgradeSlot_lines_50,
+.UpgradeSlot_buttonDecorator_b2 {
+    width: 100%;
+    height: 100%;
+    opacity: 0.7;
+    position: absolute;
+    transition: opacity 0.3s;
+}
+.UpgradeSlot_base_db:hover .UpgradeSlot_lines_50,
+.UpgradeSlot_base_db:hover .UpgradeSlot_buttonDecorator_b2 {
+    opacity: 1;
+}
+.UpgradeSlot_base__notEnoughPoints_23:hover .UpgradeSlot_lines_50,
+.UpgradeSlot_base__notEnoughPoints_23:hover .UpgradeSlot_buttonDecorator_b2 {
+    opacity: 0.7;
+}
+.UpgradeSlot_lines_50 {
+    background-image: url('R.images.portal.gui.maps.icons.upgrade.buttons_lines');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.UpgradeSlot_leftLines_3f {
+    background-position: left;
+}
+.UpgradeSlot_rightLines_1f {
+    transform: rotate(180deg);
+}
+.UpgradeSlot_buttonDecorator_b2 {
+    background: url('R.images.portal.gui.maps.icons.upgrade.buttons_lines_hover') no-repeat center / cover;
+}
+.UpgradeSlot_pointsWrapper_91 {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    height: 20rem;
+    position: absolute;
+    bottom: 0;
+    transition: opacity 0.3s;
+}
+.mediaMedium .UpgradeSlot_pointsWrapper_91 {
+    height: 24rem;
+}
+.mediaExtraLarge .UpgradeSlot_pointsWrapper_91 {
+    height: 32rem;
+}
+.UpgradeSlot_base__available_66 .UpgradeSlot_pointsWrapper_91,
+.UpgradeSlot_base__notEnoughPoints_23 .UpgradeSlot_pointsWrapper_91 {
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.8);
+}
+.UpgradeSlot_base__notEnoughPoints_23 .UpgradeSlot_pointsWrapper_91 {
+    border: 1rem solid #580e00;
+    cursor: default;
+}
+.UpgradeSlot_base__available_66 .UpgradeSlot_pointsWrapper_91 {
+    border: 1rem solid #c43519;
+    box-shadow: 0 0 7rem 0 #f00;
+}
+.UpgradeSlot_base__locked_59 .UpgradeSlot_pointsWrapper_91,
+.UpgradeSlot_base__needToLearn_2d .UpgradeSlot_pointsWrapper_91 {
+    padding: 0 4rem 2rem 0;
+    opacity: 0.6;
+}
+.mediaExtraLarge .UpgradeSlot_base__locked_59 .UpgradeSlot_pointsWrapper_91,
+.mediaExtraLarge .UpgradeSlot_base__needToLearn_2d .UpgradeSlot_pointsWrapper_91 {
+    padding: 0 6rem 4rem 0;
+}
+.UpgradeSlot_base_db:hover .UpgradeSlot_pointsWrapper_91,
+.UpgradeSlot_base__clicked_d9 .UpgradeSlot_pointsWrapper_91 {
+    opacity: 1;
+}
+.UpgradeSlot_base__available_66 .UpgradeSlot_pointsWrapper_91:hover {
+    cursor: pointer;
+}
+.UpgradeSlot_points_72 {
+    color: #8c8c7e;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    margin-bottom: 1rem;
+    z-index: 2;
+}
+.mediaMedium .UpgradeSlot_points_72 {
+    color: #8c8c7e;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+    margin-bottom: 2rem;
+}
+.mediaExtraLarge .UpgradeSlot_points_72 {
+    margin-bottom: 3rem;
+    font-size: 20rem;
+}
+.UpgradeSlot_base__locked_59 .UpgradeSlot_points_72 {
+    color: #909090;
+}
+.mediaMedium .UpgradeSlot_base__locked_59 .UpgradeSlot_points_72 {
+    color: #909090;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+.mediaExtraLarge .UpgradeSlot_base__locked_59 .UpgradeSlot_points_72 {
+    font-size: 20rem;
+}
+.UpgradeSlot_base__notEnoughPoints_23 .UpgradeSlot_points_72 {
+    color: #f7e5e1;
+    opacity: 0.5;
+}
+.mediaMedium .UpgradeSlot_base__notEnoughPoints_23 .UpgradeSlot_points_72 {
+    color: #f7e5e1;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+.UpgradeSlot_base__available_66 .UpgradeSlot_points_72 {
+    color: #f7e5e1;
+    text-shadow:
+        0 0 4rem rgba(201, 71, 45, 0.25),
+        0 0 8rem rgba(139, 23, 0, 0.5),
+        0 0 12rem #580e00;
+}
+.UpgradeSlot_base__available_66 .UpgradeSlot_pointsWrapper_91:hover .UpgradeSlot_points_72 {
+    color: #e09687;
+}
+.UpgradeSlot_tokenImg_c0 {
+    width: 16rem;
+    height: 16rem;
+    margin-left: 2rem;
+    background: url('R.images.portal.gui.maps.icons.upgrade.token') no-repeat center / contain;
+    z-index: 3;
+}
+.mediaExtraLarge .UpgradeSlot_tokenImg_c0 {
+    width: 20rem;
+    height: 20rem;
+    margin-right: 2rem;
+}
+.UpgradeSlot_base__notEnoughPoints_23 .UpgradeSlot_tokenImg_c0 {
+    opacity: 0.5;
+}
+.UpgradeSlot_upgradeProgressLine_49 {
+    display: flex;
+    align-items: center;
+    width: 0;
+    height: 100%;
+    position: absolute;
+    left: 0;
+}
+.UpgradeSlot_bg_3d {
+    width: 100%;
+    height: 100%;
+    background: url('R.images.portal.gui.maps.icons.upgrade.button_progress') no-repeat center / cover;
+    opacity: 0.7;
+}
+.UpgradeSlot_glow_37 {
+    width: 17rem;
+    height: 33rem;
+    background: url('R.images.portal.gui.maps.icons.upgrade.btn_glow') no-repeat center / contain;
+    position: absolute;
+    right: -8rem;
+    transform: scale(1.2);
+}
+.mediaMedium .UpgradeSlot_glow_37 {
+    width: 21rem;
+    height: 41rem;
+    right: -10rem;
+}
+.mediaExtraLarge .UpgradeSlot_glow_37 {
+    width: 26rem;
+    height: 50rem;
+    right: -13rem;
+}
+.UpgradeSlot_upgradeProgressText_3d {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-shadow:
+        0 0 4rem #be1f00,
+        0 0 8rem #8b1700,
+        0 0 15rem #580e00;
+    z-index: 2;
+    color: #f7e5e1;
+    font-size: 12rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+.mediaMedium .UpgradeSlot_upgradeProgressText_3d {
+    color: #f7e5e1;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+.mediaExtraLarge .UpgradeSlot_upgradeProgressText_3d {
+    font-size: 20rem;
+}
+@keyframes UpgradeSlot_viewedBlink_db {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes UpgradeSlot_runHeight_b2 {
+    from {
+        height: 0rem;
+    }
+
+    to {
+        height: 84rem;
+    }
+}
+@keyframes UpgradeSlot_runHeightMedium_be {
+    from {
+        height: 0rem;
+    }
+
+    to {
+        height: 116rem;
+    }
+}
+@keyframes UpgradeSlot_runHeightLarge_fc {
+    from {
+        height: 0rem;
+    }
+
+    to {
+        height: 152rem;
+    }
+}
+@keyframes UpgradeSlot_runWidth_af {
+    from {
+        width: 0rem;
+    }
+
+    to {
+        width: 84rem;
+    }
+}
+@keyframes UpgradeSlot_runWidthMedium_61 {
+    from {
+        width: 0rem;
+    }
+
+    to {
+        width: 116rem;
+    }
+}
+@keyframes UpgradeSlot_runWidthLarge_94 {
+    from {
+        width: 0rem;
+    }
+
+    to {
+        width: 152rem;
+    }
+}
+@keyframes UpgradeSlot_resetPulse_df {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(1);
+    }
+}
+
+.Button_base_8d {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 160rem;
+    min-height: 32rem;
+    padding: 0 20rem;
+    overflow: visible;
+    position: relative;
+    cursor: pointer;
+}
+
+.Button_base__extraSmall_b6 {
+    min-width: 100rem;
+    min-height: 24rem;
+}
+
+.Button_base__small_93 {
+    min-height: 24rem;
+}
+
+.Button_base__large_f6 {
+    min-height: 40rem;
+}
+
+.Button_base__extraLarge_9e {
+    min-width: 208rem;
+    min-height: 52rem;
+}
+
+.Button_base__primary_61 {
+    border: 1rem solid #c43519;
+    box-shadow: 0 0 9rem 0 rgba(255, 0, 0, 0.5);
+}
+
+.Button_base__primary_61.Button_animated_7a {
+    animation: Button_ripplePulseButtonBorder_68 1.7s infinite ease-out;
+    animation-delay: 0.4s;
+}
+
+.Button_base__primary_61.Button_base__active_ca {
+    border: 1rem solid #be1f00;
+}
+
+.Button_base__primary_61.Button_base__disabled_9b {
+    border: 1rem solid #580e00;
+    box-shadow: none;
+}
+
+.Button_base__secondary_1c {
+    border: 1rem solid #464646;
+}
+
+.Button_base__secondary_1c.Button_base__disabled_9b {
+    border: 1rem solid #262626;
+}
+
+.Button_base__ghost_ca {
+    border: 1rem solid #464646;
+}
+
+.Button_base__ghost_ca.Button_base__hover_41 {
+    border: 1rem solid #909090;
+}
+
+.Button_base__ghost_ca.Button_base__active_ca {
+    border: 1rem solid #464646;
+}
+
+.Button_base__ghost_ca.Button_base__disabled_9b {
+    border: 1rem solid #1a1a1a;
+}
+
+.Button_base__disabled_9b {
+    cursor: default;
+}
+.Button_bgOverlay_f5,
+.Button_bgImage_ca,
+.Button_bgLines_4f {
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.Button_bgLines_4f {
+    background-image: url('R.images.portal.gui.maps.icons.button.lines');
+}
+.Button_bgLines__primary_65.Button_bgLines__disabled_13 {
+    background-image: url('R.images.portal.gui.maps.icons.button.lines06');
+}
+.Button_bgImage_ca {
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    transition: opacity 0.2s ease-in-out;
+    pointer-events: none;
+    inset: 0;
+}
+.Button_bgImage__primary_25 {
+    background-image: url('R.images.portal.gui.maps.icons.button.primary');
+    opacity: 0.7;
+}
+.Button_bgImage__primary_25.Button_bgImage__hover_82 {
+    opacity: 1;
+}
+.Button_bgImage__primary_25.Button_bgImage__active_9b {
+    opacity: 0.5;
+}
+.Button_bgImage__secondary_d0 {
+    background-image: url('R.images.portal.gui.maps.icons.button.secondary');
+}
+.Button_bgOverlay_f5 {
+    pointer-events: none;
+    inset: 0;
+}
+.Button_bgOverlay__primary_a0 {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+.Button_bgOverlay__secondary_ac {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+.Button_bgOverlay__secondary_ac.Button_bgOverlay__hover_66 {
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), rgba(0, 0, 0, 0.8);
+}
+.Button_bgOverlay__secondary_ac.Button_bgOverlay__active_26 {
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.05) 100%), rgba(0, 0, 0, 0.8);
+}
+.Button_bgOverlay__secondary_ac.Button_bgOverlay__disabled_b1 {
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.05) 100%), rgba(0, 0, 0, 0.8);
+}
+.Button_bgOverlay__ghost_85 {
+    background: rgba(0, 0, 0, 0.2);
+}
+.Button_bgOverlay__ghost_85.Button_bgOverlay__hover_66 {
+    background: rgba(0, 0, 0, 0.4);
+}
+.Button_bgOverlay__ghost_85.Button_bgOverlay__active_26 {
+    background: rgba(0, 0, 0, 0.2);
+}
+.Button_content_f2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-transform: uppercase;
+    position: relative;
+    transition: color 0.2s ease-in-out;
+}
+.Button_content__primary_3f {
+    color: #f7e5e1;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    text-shadow:
+        0 0 5rem rgba(201, 71, 45, 0.25),
+        0 0 10rem rgba(139, 23, 0, 0.5),
+        0 0 16rem #580e00;
+}
+.Button_base__hover_41 .Button_content__primary_3f {
+    color: #e09687;
+    text-shadow:
+        0 0 5rem rgba(201, 71, 45, 0.25),
+        0 0 10rem rgba(139, 23, 0, 0.5),
+        0 0 16rem #580e00;
+}
+.Button_base__active_ca .Button_content__primary_3f {
+    color: #c9472d;
+    text-shadow:
+        0 0 5rem rgba(201, 71, 45, 0.25),
+        0 0 10rem rgba(139, 23, 0, 0.5),
+        0 0 16rem #580e00;
+    opacity: 0.7;
+}
+.Button_base__disabled_9b .Button_content__primary_3f {
+    color: #f7e5e1;
+    text-shadow:
+        0 0 5rem rgba(201, 71, 45, 0.25),
+        0 0 10rem rgba(139, 23, 0, 0.5),
+        0 0 16rem #580e00;
+    opacity: 0.5;
+}
+.Button_content__secondary_a2 {
+    color: #b8b8b8;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+.Button_base__hover_41 .Button_content__secondary_a2 {
+    color: #e2e2e2;
+}
+.Button_base__active_ca .Button_content__secondary_a2 {
+    color: #e2e2e2;
+}
+.Button_base__disabled_9b .Button_content__secondary_a2 {
+    color: #585858;
+}
+.Button_content__ghost_f1 {
+    color: #c6c6c6;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    opacity: 0.6;
+}
+.Button_base__hover_41 .Button_content__ghost_f1 {
+    color: #c6c6c6;
+    opacity: 1;
+}
+.Button_base__active_ca .Button_content__ghost_f1 {
+    color: #b8b8b8;
+    opacity: 1;
+}
+.Button_base__disabled_9b .Button_content__ghost_f1 {
+    color: #c6c6c6;
+    opacity: 0.5;
+}
+.Button_btnIcon_77 {
+    width: 16rem;
+    height: 16rem;
+    margin-top: 2rem;
+    background: no-repeat center / cover;
+    position: relative;
+}
+.Button_btnIcon__right_95 {
+    margin-left: 2rem;
+}
+.Button_btnIcon__left_08 {
+    width: 36rem;
+    height: 36rem;
+    margin-right: 2rem;
+}
+.Button_pulseAnimatedBoxOne_ce,
+.Button_pulseAnimatedBoxTwo_80,
+.Button_pulseAnimatedBoxThree_bc {
+    width: 176rem;
+    height: 40rem;
+    border: 1rem solid #c43519;
+    position: absolute;
+    z-index: 1;
+    transform-origin: center;
+}
+.Button_pulseAnimatedBoxOne_ce {
+    animation: Button_ripplePulseOne_f5 1.7s infinite ease-out;
+    animation-delay: 0.4s;
+}
+.Button_pulseAnimatedBoxTwo_80 {
+    animation: Button_ripplePulseTwo_48 1.7s infinite ease-out;
+    animation-delay: 0.4s;
+}
+.Button_pulseAnimatedBoxThree_bc {
+    animation: Button_ripplePulseThree_45 1.7s infinite ease-out;
+    animation-delay: 0.4s;
+}
+@keyframes Button_ripplePulseOne_f5 {
+    0% {
+        width: 178rem;
+        height: 42rem;
+        border-color: #ef593b;
+        opacity: 1;
+    }
+
+    100% {
+        width: 230rem;
+        height: 90rem;
+        opacity: 0;
+    }
+}
+@keyframes Button_ripplePulseTwo_48 {
+    0% {
+        width: 178rem;
+        height: 42rem;
+        border-color: #ef593b;
+        opacity: 1;
+    }
+
+    100% {
+        width: 222rem;
+        height: 82rem;
+        opacity: 0;
+    }
+}
+@keyframes Button_ripplePulseThree_45 {
+    0% {
+        width: 178rem;
+        height: 42rem;
+        border-color: #ef593b;
+        opacity: 1;
+    }
+
+    100% {
+        width: 214rem;
+        height: 74rem;
+        opacity: 0;
+    }
+}
+@keyframes Button_ripplePulseButtonBorder_68 {
+    0% {
+        border-color: #ef593b;
+    }
+
+    100% {
+        border-color: #c43519;
+    }
+}
+
+.PopoverHint_base_10 {
+    width: 300rem;
+    height: 200rem;
+    border: 1rem solid #464646;
+    border-radius: 2rem;
+    box-shadow:
+        0 0 0 1rem rgba(0, 0, 0, 0.28),
+        0 0 24rem 0 rgba(242, 242, 230, 0.08) inset,
+        0 2rem 8rem 0 rgba(0, 0, 0, 0.48),
+        0 0 60rem 0 #000;
+    background: #131313;
+}
+.PopoverHint_popoverInnerWrap_ca {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+.PopoverHint_close_7d {
+    width: 18rem;
+    height: 18rem;
+    background: url('R.images.portal.gui.maps.icons.upgrade.close_icon') no-repeat center / contain;
+    position: absolute;
+    top: 8rem;
+    right: 8rem;
+    cursor: pointer;
+}
+.PopoverHint_img_18 {
+    width: 44rem;
+    height: 50rem;
+    margin-bottom: 16rem;
+    background: url('R.images.portal.gui.maps.icons.upgrade.mouse') no-repeat center / contain;
+}
+.PopoverHint_text_6c {
+    color: #e09687;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+    margin-bottom: 16rem;
+}
+.PopoverHint_popoverContent_98 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 28rem 20rem 20rem;
+}
+.PopoverHint_button_4b {
+    width: 160rem;
+}
+.PopoverHint_buttonText_21 {
+    font-size: 12rem;
+    font-weight: 500;
+}
+.PopoverHint_popoverArrow_13 {
+    width: 84rem;
+    height: 180rem;
+    background: url('R.images.portal.gui.maps.icons.upgrade.left_beak_bottom') no-repeat center / contain;
+    position: absolute;
+    bottom: -46rem;
+    left: -50rem;
+}
+
+@keyframes UpgradeTree_slideLeftIn_0f {
+    from {
+        opacity: 0;
+        transform: translateX(40rem);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes UpgradeTree_slideRightIn_b9 {
+    from {
+        opacity: 0;
+        transform: translateX(-40rem);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes UpgradeTree_slideUp_d0 {
+    0% {
+        opacity: 0;
+        transform: translateY(20rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes UpgradeTree_slideDown_61 {
+    0% {
+        opacity: 0;
+        transform: translateY(-30%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes UpgradeTree_fadeIn_db {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+@keyframes UpgradeTree_fadeOut_e6 {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+@keyframes UpgradeTree_rotating_6f {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+.UpgradeTree_base_8a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+.UpgradeTree_slotContainer_d0 {
+    display: flex;
+    align-items: center;
+    margin-bottom: 32rem;
+    position: relative;
+    opacity: 0;
+    animation-name: UpgradeTree_slideUp_d0;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.07, 0.82, 0.17, 1);
+    animation-delay: 0.3s;
+    animation-iteration-count: 1;
+}
+.mediaLarge .UpgradeTree_slotContainer_d0 {
+    margin-bottom: 30rem;
+}
+.mediaExtraLarge .UpgradeTree_slotContainer_d0 {
+    margin-bottom: 90rem;
+}
+.UpgradeTree_slotElements_21 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    position: relative;
+}
+.UpgradeTree_slotElements_21 + .UpgradeTree_slotElements_21 {
+    margin-left: 16rem;
+}
+.mediaSmall .UpgradeTree_slotElements_21 + .UpgradeTree_slotElements_21 {
+    margin-left: 48rem;
+}
+.mediaMedium .UpgradeTree_slotElements_21 + .UpgradeTree_slotElements_21 {
+    margin-left: 40rem;
+}
+.mediaLarge .UpgradeTree_slotElements_21 + .UpgradeTree_slotElements_21 {
+    margin-left: 64rem;
+}
+.mediaExtraLarge .UpgradeTree_slotElements_21 + .UpgradeTree_slotElements_21 {
+    margin-left: 90rem;
+}
+.UpgradeTree_popoverContainer_a0 {
+    position: absolute;
+    top: -70rem;
+    right: -321rem;
+    z-index: 3;
+}
+.mediaMedium .UpgradeTree_popoverContainer_a0 {
+    top: -38rem;
+}
+.mediaExtraLarge .UpgradeTree_popoverContainer_a0 {
+    top: 0;
+}
+.UpgradeTree_slot_54 {
+    position: relative;
+    z-index: 2;
+}
+.UpgradeTree_slot_54 + .UpgradeTree_slot_54 {
+    margin-top: 2rem;
+}
+.UpgradeTree_progressBarContainer_f6 {
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+}
+.UpgradeTree_lvlBlock_99 {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    opacity: 0.6;
+    position: absolute;
+    bottom: -30rem;
+}
+.mediaSmall .UpgradeTree_lvlBlock_99 {
+    bottom: -36rem;
+}
+.mediaMedium .UpgradeTree_lvlBlock_99 {
+    bottom: -28rem;
+}
+.mediaLarge .UpgradeTree_lvlBlock_99 {
+    bottom: -50rem;
+}
+.mediaExtraLarge .UpgradeTree_lvlBlock_99 {
+    bottom: -100rem;
+}
+.UpgradeTree_lvlText_28 {
+    color: #c43519;
+    font-size: 14rem;
+    font-weight: 700;
+    line-height: 1.15;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+.mediaMedium .UpgradeTree_lvlText_28 {
+    color: #c43519;
+    font-size: 20rem;
+    font-weight: 400;
+    line-height: 1.2;
+    font-weight: 700;
+}
+.mediaExtraLarge .UpgradeTree_lvlText_28 {
+    font-size: 26rem;
+}
+.UpgradeTree_slotElements_21:hover .UpgradeTree_lvlText_28 {
+    color: #c43519;
+    opacity: 1;
+}
+.UpgradeTree_lvlText__locked_7d {
+    color: #b8b8b8;
+    opacity: 0.6;
+}
+.mediaMedium .UpgradeTree_lvlText__locked_7d {
+    color: #b8b8b8;
+    font-size: 20rem;
+    font-weight: 400;
+    line-height: 1.2;
+    font-weight: 700;
+}
+.mediaExtraLarge .UpgradeTree_lvlText__locked_7d {
+    font-size: 26rem;
+}
+.UpgradeTree_slotElements_21:hover .UpgradeTree_lvlText__locked_7d {
+    color: #b8b8b8;
+    opacity: 1;
+}
+.UpgradeTree_lvlText__animate_ff {
+    animation: UpgradeTree_levelBounce_6e 0.3s ease-out 0.1s;
+}
+@keyframes UpgradeTree_levelBounce_6e {
+    0% {
+        font-weight: 500;
+        transform: scale(1);
+    }
+
+    33% {
+        color: #e09687;
+        font-weight: 700;
+        text-shadow:
+            0 0 3rem rgba(255, 127, 0, 0.25),
+            0 0 6rem #ff2a00,
+            0 0 12rem #e52;
+        transform: scale(1.2);
+    }
+
+    100% {
+        font-weight: 500;
+        transform: scale(1);
+    }
+}
+
+.AbilitiesList_base_09 {
+    display: flex;
+}
+
+.AbilitiesList_slot_69 + .AbilitiesList_slot_69 {
+    margin-left: 12rem;
+}
+
+.mediaMedium .AbilitiesList_slot_69 + .AbilitiesList_slot_69 {
+    margin-left: 16rem;
+}
+
+.AbilitySlot_base_b6 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48rem;
+    height: 48rem;
+    background-color: rgba(240, 240, 240, 0.05);
+    position: relative;
+}
+
+.mediaMedium .AbilitySlot_base_b6 {
+    width: 64rem;
+    height: 64rem;
+}
+
+.mediaExtraLarge .AbilitySlot_base_b6 {
+    width: 80rem;
+    height: 80rem;
+}
+
+.AbilitySlot_bg_c6 {
+    width: 100%;
+    height: 100%;
+    background: url('R.images.portal.gui.maps.icons.upgrade.abilities_back') no-repeat center / contain;
+    position: absolute;
+}
+
+.AbilitySlot_borderUnlocked_48 {
+    width: 100%;
+    height: 100%;
+    background: url('R.images.portal.gui.maps.icons.upgrade.ability_border') no-repeat center / contain;
+    position: absolute;
+}
+
+.AbilitySlot_borderLocked_a2 {
+    width: 100%;
+    height: 100%;
+    background: url('R.images.portal.gui.maps.icons.upgrade.ability_border_locked') no-repeat center / contain;
+    position: absolute;
+}
+
+.AbilitySlot_img_bc {
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+}
+
+.AbilitySlot_lock_d4 {
+    width: 19rem;
+    height: 22rem;
+    background: url('R.images.portal.gui.maps.icons.upgrade.lock') no-repeat center / contain;
+}
+
+.mediaMedium .AbilitySlot_lock_d4 {
+    width: 30rem;
+    height: 36rem;
+}
+
+.mediaExtraLarge .AbilitySlot_lock_d4 {
+    width: 32rem;
+    height: 38rem;
+}
+
+@keyframes App_slideLeftIn_f8 {
+    from {
+        opacity: 0;
+        transform: translateX(40rem);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes App_slideRightIn_44 {
+    from {
+        opacity: 0;
+        transform: translateX(-40rem);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes App_slideUp_f2 {
+    0% {
+        opacity: 0;
+        transform: translateY(20rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes App_slideDown_5b {
+    0% {
+        opacity: 0;
+        transform: translateY(-30%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes App_fadeIn_f0 {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+@keyframes App_fadeOut_79 {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+@keyframes App_rotating_3f {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+.App_base_d8 {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.App_vignette_33 {
+    width: 100%;
+    height: 100%;
+    background: url('R.images.portal.gui.maps.icons.upgrade.vignette.small') no-repeat center / cover;
+    position: absolute;
+    z-index: -1;
+    pointer-events: none;
+}
+.mediaLarge .App_vignette_33 {
+    background-image: url('R.images.portal.gui.maps.icons.upgrade.vignette.medium');
+}
+.mediaExtraLarge .App_vignette_33 {
+    background-image: url('R.images.portal.gui.maps.icons.upgrade.vignette.large');
+}
+.App_leftBlock_45 {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 24rem;
+    left: 20rem;
+}
+.App_leftBlock__extraSmallHeight_43 .App_leftBlock_45 {
+    flex-direction: row;
+}
+.mediaSmall .App_leftBlock_45 {
+    left: 40rem;
+}
+.mediaMedium .App_leftBlock_45 {
+    top: 28rem;
+}
+.mediaLarge .App_leftBlock_45 {
+    top: 40rem;
+    left: 100rem;
+}
+.mediaExtraLarge .App_leftBlock_45 {
+    top: 60rem;
+    left: 120rem;
+}
+.App_titleContainer_d4 {
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    animation-name: App_slideRightIn_44;
+    animation-duration: 0.7s;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.07, 0.82, 0.17, 1);
+    animation-delay: 0.4s;
+    animation-iteration-count: 1;
+}
+.App_level_3c {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40rem;
+    height: 40rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+.mediaMedium .App_level_3c {
+    width: 60rem;
+    height: 60rem;
+}
+.mediaExtraLarge .App_level_3c {
+    width: 80rem;
+    height: 80rem;
+}
+.App_tankName_3c {
+    color: #e2e2e2;
+    font-size: 28rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin: 0 0 4rem 8rem;
+}
+.mediaMedium .App_tankName_3c {
+    color: #e2e2e2;
+    font-size: 36rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-left: 12rem;
+}
+.mediaExtraLarge .App_tankName_3c {
+    color: #e2e2e2;
+    font-size: 56rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-left: 16rem;
+}
+.App_tokenContainer_dd {
+    display: flex;
+    align-items: center;
+    width: 80rem;
+    margin-left: 20rem;
+    background: url('R.images.portal.gui.maps.icons.upgrade.token_points_bg') no-repeat center / contain;
+}
+.mediaMedium .App_tokenContainer_dd {
+    width: 106rem;
+    margin-left: 28rem;
+}
+.mediaExtraLarge .App_tokenContainer_dd {
+    width: 148rem;
+    margin-left: 36rem;
+}
+.App_tokenImg_2b {
+    width: 24rem;
+    height: 24rem;
+    background: url('R.images.portal.gui.maps.icons.upgrade.token') no-repeat center / contain;
+}
+.mediaMedium .App_tokenImg_2b {
+    width: 32rem;
+    height: 32rem;
+}
+.mediaExtraLarge .App_tokenImg_2b {
+    width: 48rem;
+    height: 48rem;
+}
+.App_pointsValue_2c {
+    color: #f7e5e1;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+    margin: 0 0 3rem 4rem;
+    font-weight: 500;
+    text-shadow:
+        0 0 4rem rgba(190, 31, 0, 0.5),
+        0 0 8rem rgba(139, 23, 0, 0.5);
+}
+.mediaMedium .App_pointsValue_2c {
+    margin: 0 0 3rem 8rem;
+    font-size: 20rem;
+}
+.mediaExtraLarge .App_pointsValue_2c {
+    margin: 0 0 3rem 12rem;
+    font-size: 28rem;
+}
+.App_pointsValue__animate_f6 {
+    animation: App_pointsValueBounce_11 0.3s ease-out 0.1s;
+}
+.App_ttxPanelContainer_1b {
+    display: flex;
+    flex-direction: column;
+    margin-top: 16rem;
+    opacity: 0;
+    animation-name: App_slideRightIn_44;
+    animation-duration: 0.7s;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.07, 0.82, 0.17, 1);
+    animation-delay: 0.5s;
+    animation-iteration-count: 1;
+}
+.mediaMedium .App_ttxPanelContainer_1b {
+    margin-top: 12rem;
+}
+.mediaLarge .App_ttxPanelContainer_1b {
+    margin-top: 20rem;
+}
+.mediaExtraLarge .App_ttxPanelContainer_1b {
+    margin-top: 28rem;
+}
+.App_headWrapper_59 {
+    margin-bottom: 16rem;
+}
+.mediaMedium .App_headWrapper_59 {
+    margin-bottom: 12rem;
+}
+.mediaLarge .App_headWrapper_59 {
+    margin-bottom: 20rem;
+}
+.mediaExtraLarge .App_headWrapper_59 {
+    margin-bottom: 28rem;
+}
+.App_blockInfo_c2 {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 8rem;
+}
+.mediaMedium .App_blockInfo_c2.App_ttxInfo_8f {
+    margin-bottom: 8rem;
+}
+.mediaMedium .App_blockInfo_c2 {
+    margin-bottom: 16rem;
+}
+.App_title_6b {
+    color: #b8b8b8;
+    font-size: 15rem;
+}
+.mediaMedium .App_title_6b {
+    color: #b8b8b8;
+    font-size: 18rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+.mediaExtraLarge .App_title_6b {
+    font-size: 24rem;
+}
+.App_divider_33 {
+    display: flex;
+    width: 193rem;
+    height: 1rem;
+    margin-left: 12rem;
+    background: linear-gradient(270deg, rgba(88, 88, 88, 0) 0%, #585858 100%);
+}
+.mediaSmall .App_divider_33 {
+    width: 430rem;
+}
+.mediaExtraLarge .App_divider_33 {
+    width: 590rem;
+}
+.App_vehicleAbilitiesWrapper_b3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+.App_vehicleAbilitiesContainer_92 {
+    opacity: 0;
+    animation-name: App_slideRightIn_44;
+    animation-duration: 0.7s;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.07, 0.82, 0.17, 1);
+    animation-delay: 0.6s;
+    animation-iteration-count: 1;
+}
+.App_resetContainer_95 {
+    margin-top: 20rem;
+    position: relative;
+    z-index: 3;
+    opacity: 0;
+    animation-name: App_slideRightIn_44;
+    animation-duration: 0.7s;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.07, 0.82, 0.17, 1);
+    animation-delay: 0.6s;
+    animation-iteration-count: 1;
+}
+.mediaLarge .App_resetContainer_95 {
+    margin-top: 32rem;
+}
+.mediaExtraLarge .App_resetContainer_95 {
+    margin-top: 40rem;
+}
+.App_actionsBlock_57 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 20rem;
+    right: 24rem;
+}
+.mediaMedium .App_actionsBlock_57 {
+    top: 28rem;
+    right: 20rem;
+}
+.mediaLarge .App_actionsBlock_57 {
+    top: 40rem;
+    right: 28rem;
+}
+.mediaExtraLarge .App_actionsBlock_57 {
+    top: 60rem;
+    right: 80rem;
+    transform: scale(1.3);
+}
+.App_infoButton_c6 {
+    margin-right: 4rem;
+}
+.mediaLarge .App_infoButton_c6 {
+    margin-right: 17rem;
+}
+.App_arrowLeft_88 {
+    position: absolute;
+    bottom: 185rem;
+    left: 20rem;
+    z-index: 2;
+}
+.mediaMedium .App_arrowLeft_88 {
+    bottom: 233rem;
+}
+.mediaLarge .App_arrowLeft_88 {
+    bottom: 365rem;
+    left: 28rem;
+}
+.mediaExtraLarge .App_arrowLeft_88 {
+    bottom: 505rem;
+    left: 80rem;
+}
+.App_arrowRight_bc {
+    position: absolute;
+    right: 20rem;
+    bottom: 185rem;
+    z-index: 2;
+}
+.mediaMedium .App_arrowRight_bc {
+    bottom: 233rem;
+}
+.mediaLarge .App_arrowRight_bc {
+    right: 28rem;
+    bottom: 365rem;
+}
+.mediaExtraLarge .App_arrowRight_bc {
+    right: 80rem;
+    bottom: 505rem;
+}
+.App_upgradeTreeContainer_ae {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    position: absolute;
+    bottom: 11rem;
+}
+.mediaLarge .App_upgradeTreeContainer_ae {
+    bottom: 35rem;
+}
+.App_messageContainer_7e {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 18rem;
+}
+.mediaMedium .App_messageContainer_7e {
+    margin-bottom: 20rem;
+}
+.mediaLarge .App_messageContainer_7e {
+    margin-bottom: 40rem;
+}
+.mediaExtraLarge .App_messageContainer_7e {
+    margin-bottom: 50rem;
+}
+.App_info_71 {
+    display: flex;
+    align-items: center;
+}
+.App_info_71 + .App_commonMsg_20 {
+    margin-top: 6rem;
+}
+.mediaMedium .App_info_71 + .App_commonMsg_20 {
+    margin-top: 16rem;
+}
+.App_infoIcon_7c {
+    width: 34rem;
+    height: 34rem;
+    background: url('R.images.portal.gui.maps.icons.upgrade.infoIcon') no-repeat center / cover;
+}
+.App_infoLabel_c6 {
+    text-shadow:
+        0 0 4rem #be1f00,
+        0 0 8rem #8b1700,
+        0 0 15rem #580e00;
+}
+.App_commonMsg_20,
+.App_infoLabel_c6 {
+    color: #e09687;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+.mediaMedium .App_commonMsg_20,
+.mediaMedium .App_infoLabel_c6 {
+    color: #e09687;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+.mediaExtraLarge .App_commonMsg_20,
+.mediaExtraLarge .App_infoLabel_c6 {
+    font-size: 20rem;
+}
+.App_alertIcon_75 {
+    width: 24rem;
+    height: 24rem;
+    margin-right: 4rem;
+    background: url('R.images.gui.maps.icons.library.icon_alert_32x32') no-repeat 50% 50% / contain;
+}
+@keyframes App_pointsValueBounce_11 {
+    0% {
+        font-weight: 500;
+        transform: scale(1);
+    }
+
+    33% {
+        color: #e09687;
+        font-weight: 700;
+        text-shadow:
+            0 0 3rem rgba(255, 127, 0, 0.25),
+            0 0 6rem #ff2a00,
+            0 0 12rem #e52;
+        transform: scale(1.2);
+    }
+
+    100% {
+        font-weight: 500;
+        transform: scale(1);
+    }
+}
+
+.ArrowButton_base_d2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 24rem;
+    height: 48rem;
+    position: relative;
+}
+
+.ArrowButton_base_d2:hover {
+    cursor: pointer;
+}
+
+.ArrowButton_base__right_a9 {
+    transform: rotate(180deg);
+}
+
+.ArrowButton_base__disabled_98 {
+    opacity: 0.5;
+}
+
+.ArrowButton_base__disabled_98:hover {
+    cursor: default;
+}
+
+.mediaMedium .ArrowButton_base_d2 {
+    width: 40rem;
+    height: 80rem;
+}
+
+.mediaExtraLarge .ArrowButton_base_d2 {
+    width: 72rem;
+    height: 144rem;
+}
+
+.ArrowButton_arrowImg_ce {
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 0.3s;
+}
+
+.ResetButton_base_3c {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 160rem;
+    height: 24rem;
+    border: 1rem solid #464646;
+    background: rgba(0, 0, 0, 0.2);
+    position: relative;
+    transition: all 0.2s ease-in-out;
+}
+
+.ResetButton_base_3c:hover {
+    border-color: #909090;
+    background: rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+}
+
+.ResetButton_base__disabled_79 {
+    border-color: #262626;
+}
+
+.ResetButton_base__disabled_79:hover {
+    border-color: #262626;
+    cursor: default;
+}
+
+.mediaMedium .ResetButton_base_3c {
+    height: 32rem;
+}
+
+.mediaExtraLarge .ResetButton_base_3c {
+    height: 40rem;
+}
+.ResetButton_decorator_f6 {
+    width: 60rem;
+    height: 100%;
+    background: url('R.images.portal.gui.maps.icons.upgrade.buttons_lines') no-repeat center / cover;
+    opacity: 0.6;
+    position: absolute;
+    left: 0;
+}
+.ResetButton_decorator__right_c4 {
+    right: 0;
+    left: auto;
+    transform: rotate(180deg);
+}
+.ResetButton_title_42 {
+    color: #b8b8b8;
+    font-size: 12rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+.ResetButton_base__disabled_79 .ResetButton_title_42 {
+    opacity: 0.5;
+}
+.ResetButton_icon_7c {
+    width: 24rem;
+    height: 24rem;
+    background: url('R.images.portal.gui.maps.icons.upgrade.destroy_hummer') no-repeat center / contain;
+}
+.ResetButton_base__disabled_79 .ResetButton_icon_7c {
+    opacity: 0.5;
+}
+
+.HorizontalBar_base_49 {
+    display: flex;
+    width: 100%;
+    height: 13rem;
+    position: relative;
+}
+
+.HorizontalBar_base__nonActive_82 {
+    visibility: hidden;
+}
+
+.HorizontalBar_base_49 .disable,
+.HorizontalBar_base_49 .disable:hover {
+    opacity: 0.3;
+    cursor: default;
+}
+
+.HorizontalBar_leftButton_5f,
+.HorizontalBar_rightButton_03 {
+    width: 13rem;
+    height: 13rem;
+    border: 1rem solid #7e7b68;
+    box-shadow: inset 0 0 1rem rgba(255, 255, 190, 0.3);
+    background: no-repeat center / 7rem 5rem;
+    opacity: 0.5;
+    z-index: 1;
+    transform: rotate(-90deg);
+    transition: opacity 130ms linear;
+    cursor: pointer;
+}
+
+.HorizontalBar_leftButton_5f:hover,
+.HorizontalBar_rightButton_03:hover {
+    opacity: 1;
+}
+
+.HorizontalBar_leftButton_5f {
+    background-image: url('R.images.gui.maps.icons.components.scroll_area.arrow_top');
+}
+
+.HorizontalBar_rightButton_03 {
+    background-image: url('R.images.gui.maps.icons.components.scroll_area.arrow_down');
+}
+
+.HorizontalBar_track_0d {
+    flex: 1;
+    margin: 0 1rem;
+    position: relative;
+    cursor: pointer;
+}
+
+.HorizontalBar_thumb_fd {
+    display: none;
+    flex: 0 0 100%;
+    width: 100%;
+    min-width: 20rem;
+    height: 13rem;
+    border: 1rem solid #7e7b68;
+    box-shadow: inset 0 0 1rem rgba(255, 255, 190, 0.3);
+    background: #26241b url('R.images.gui.maps.icons.components.scroll_area.thumb_horizontal') no-repeat center / 8rem
+        7rem;
+    opacity: 0.5;
+    position: absolute;
+    z-index: 1;
+    transition: opacity 130ms linear;
+    cursor: pointer;
+}
+
+.HorizontalBar_thumb_fd:hover {
+    opacity: 1;
+}
+
+.HorizontalBar_rail_32 {
+    height: 0;
+    border-top: 1rem solid #2f2e24;
+    position: absolute;
+    top: 6rem;
+    right: 5rem;
+    left: 5rem;
+}
+
+.HorizontalBar_rail_32:hover {
+    opacity: 0.7;
+}
+
+.HorizontalScroll_base_29 {
+    width: 100%;
+}
+
+.HorizontalScroll_wrapper_1e {
+    display: flex;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.HorizontalScroll_defaultScrollArea_8d {
+    width: 100%;
+    margin-bottom: 7rem;
+}
+
+.VerticalBar_base_f3 {
+    display: flex;
+    flex-direction: column;
+    width: 13rem;
+    height: 100%;
+    position: relative;
+}
+
+.VerticalBar_base__nonActive_42 {
+    visibility: hidden;
+}
+
+.VerticalBar_base_f3 .disable,
+.VerticalBar_base_f3 .disable:hover {
+    opacity: 0.3;
+    cursor: default;
+}
+
+.VerticalBar_topButton_d7,
+.VerticalBar_bottomButton_06 {
+    width: 13rem;
+    height: 13rem;
+    border: 1rem solid #7e7b68;
+    box-shadow: inset 0 0 1rem rgba(255, 255, 190, 0.3);
+    background: no-repeat center / 7rem 5rem;
+    opacity: 0.5;
+    z-index: 1;
+    transition: opacity 130ms linear;
+    cursor: pointer;
+}
+
+.VerticalBar_topButton_d7:hover,
+.VerticalBar_bottomButton_06:hover {
+    opacity: 1;
+}
+
+.VerticalBar_topButton_d7 {
+    background-image: url('R.images.gui.maps.icons.components.scroll_area.arrow_top');
+}
+
+.VerticalBar_bottomButton_06 {
+    background-image: url('R.images.gui.maps.icons.components.scroll_area.arrow_down');
+}
+
+.VerticalBar_track_df {
+    flex: 1;
+    margin: 1rem 0;
+    position: relative;
+    cursor: pointer;
+}
+
+.VerticalBar_thumb_32 {
+    display: flex;
+    flex: 0 0 13rem;
+    width: 13rem;
+    height: 100%;
+    min-height: 20rem;
+    border: 1rem solid #7e7b68;
+    box-shadow: inset 0 0 1rem rgba(255, 255, 190, 0.3);
+    background: #26241b url('R.images.gui.maps.icons.components.scroll_area.thumb') no-repeat center / 7rem 8rem;
+    opacity: 0.5;
+    position: absolute;
+    z-index: 1;
+    transition: opacity 130ms linear;
+    cursor: pointer;
+}
+
+.VerticalBar_thumb_32:hover {
+    opacity: 1;
+}
+
+.VerticalBar_rail_43 {
+    width: 0;
+    height: 100%;
+    border-left: 1rem solid #2f2e24;
+    border-top: 5rem solid transparent;
+    border-bottom: 5rem solid transparent;
+    position: absolute;
+    top: 0;
+    left: 6rem;
+    z-index: 0;
+}
+
+.VerticalBar_rail_43:hover {
+    opacity: 0.7;
+}
+
+.VerticalScroll_content_cb {
+    height: 100%;
+    overflow-y: hidden;
+}
+
+.VerticalScroll_defaultScroll_f8 {
+    display: flex;
+}
+
+.VerticalScroll_bar_1e {
+    flex: 1;
+    margin-left: 7rem;
+}
+
+.VerticalScroll_area_af {
+    flex: 1;
+}
+
+.TtxList_base_44 {
+    display: flex;
+    flex-direction: column;
+    width: 356rem;
+    height: 190rem;
+    padding-left: 25rem;
+    position: relative;
+}
+
+.mediaSmall .TtxList_base_44 {
+    width: 656rem;
+    height: 200rem;
+    padding-left: 0;
+}
+
+.mediaExtraLarge .TtxList_base_44 {
+    width: 852rem;
+    height: 240rem;
+}
+
+.TtxList_slotsContainer_1d {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.TtxList_slot_2a {
+    width: 328rem;
+}
+
+.mediaExtraLarge .TtxList_slot_2a {
+    width: 426rem;
+}
+
+.mediaSmall .TtxList_slot_2a:nth-child(even) {
+    padding-left: 20rem;
+}
+
+.mediaExtraLarge .TtxList_slot_2a:nth-child(even) {
+    padding-left: 28rem;
+}
+
+.TtxList_bar_af {
+    height: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.TtxSlot_base_fd {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    height: 26rem;
+    position: relative;
+}
+
+.mediaExtraLarge .TtxSlot_base_fd {
+    height: 34rem;
+}
+.TtxSlot_separator_fc {
+    width: 100%;
+    height: 1rem;
+    background: linear-gradient(90deg, transparent 50%, #909090 50%) right;
+    background-size: 6rem 100%;
+    opacity: 0.8;
+    position: absolute;
+    bottom: 0;
+}
+.TtxSlot_base__last_39 .TtxSlot_separator_fc {
+    display: none;
+}
+.TtxSlot_base__penultimate_65 .TtxSlot_separator_fc {
+    display: flex;
+}
+.mediaSmall .TtxSlot_base__penultimate_65 .TtxSlot_separator_fc {
+    display: none;
+}
+.TtxSlot_icon_c5 {
+    width: 22rem;
+    height: 22rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: grayscale(1);
+}
+.mediaExtraLarge .TtxSlot_icon_c5 {
+    width: 32rem;
+    height: 32rem;
+}
+.TtxSlot_slotTitle_5e {
+    color: #909090;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    margin-left: 4rem;
+    opacity: 0.8;
+}
+.mediaExtraLarge .TtxSlot_slotTitle_5e {
+    color: #909090;
+    font-size: 18rem;
+    font-weight: 400;
+    line-height: 1.25;
+    margin: 2rem 0 0 6rem;
+}
+.TtxSlot_leftSide_25 {
+    display: flex;
+}
+.TtxSlot_valueList_70 {
+    display: flex;
+    flex-wrap: nowrap;
+    margin-bottom: 3rem;
+    position: relative;
+}
+.TtxSlot_slotValue_d9 {
+    color: #b8b8b8;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+.mediaExtraLarge .TtxSlot_slotValue_d9 {
+    font-size: 18rem;
+}
+.TtxSlot_slotValue__increase_97 {
+    color: #80d43a;
+    animation: TtxSlot_slotValueGlowYellow_1a 0.25s;
+}
+.TtxSlot_slotValue__decrease_61 {
+    color: #ff2717;
+    animation: TtxSlot_slotValueGlowRed_6b 0.25s;
+}
+.TtxSlot_valueDivider_ae {
+    color: #b8b8b8;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    margin: 0 2rem;
+}
+.mediaExtraLarge .TtxSlot_valueDivider_ae {
+    color: #b8b8b8;
+    font-size: 18rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+@keyframes TtxSlot_slotValueGlowYellow_1a {
+    0% {
+        text-shadow:
+            0 0 5rem rgba(255, 127, 0, 0.15),
+            0 0 10rem #00ff15,
+            0 0 16rem rgba(85, 238, 34, 0.5);
+    }
+
+    80% {
+        text-shadow:
+            0 0 5rem rgba(255, 127, 0, 0.15),
+            0 0 10rem #00ff15,
+            0 0 16rem rgba(85, 238, 34, 0.5);
+    }
+
+    100% {
+        text-shadow: none;
+    }
+}
+@keyframes TtxSlot_slotValueGlowRed_6b {
+    0% {
+        text-shadow:
+            0 0 5rem rgba(201, 71, 45, 0.25),
+            0 0 10rem rgba(139, 23, 0, 0.5),
+            0 0 16rem #ff0000;
+    }
+
+    80% {
+        text-shadow:
+            0 0 5rem rgba(201, 71, 45, 0.25),
+            0 0 10rem rgba(139, 23, 0, 0.5),
+            0 0 16rem #ff0000;
+    }
+
+    100% {
+        text-shadow: none;
+    }
+}

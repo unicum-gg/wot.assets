@@ -2,7 +2,7 @@
     'use strict';
     var __webpack_modules__ = {
             67: (u, e, t) => {
-                t.d(e, { O: () => j });
+                t.d(e, { O: () => z });
                 var n = {};
                 (t.r(n), t.d(n, { mouse: () => F, onResize: () => s }));
                 var r = {};
@@ -35,11 +35,11 @@
                         displayStatus: () => d,
                         displayStatusIs: () => H,
                         events: () => C,
-                        extraSize: () => q,
+                        extraSize: () => j,
                         forceTriggerMouseMove: () => V,
                         freezeTextureBeforeResize: () => N,
                         getBrowserTexturePath: () => R,
-                        getDisplayStatus: () => W,
+                        getDisplayStatus: () => q,
                         getScale: () => k,
                         getSize: () => S,
                         getViewGlobalPosition: () => M,
@@ -53,7 +53,7 @@
                         setEventHandled: () => G,
                         setInputPaddingsRem: () => g,
                         setSidePaddingsRem: () => O,
-                        whenTutorialReady: () => z,
+                        whenTutorialReady: () => W,
                     }));
                 const s = E('clientResized'),
                     A = { down: E('mousedown'), up: E('mouseup'), move: E('mousemove') };
@@ -157,8 +157,8 @@
                     },
                     m = ['args'];
                 const p = 2,
-                    w = 16,
-                    v = 32,
+                    v = 16,
+                    w = 32,
                     T = 64,
                     h = (u, e) => {
                         const t = 'GFViewEventProxy';
@@ -198,13 +198,13 @@
                     },
                     b = {
                         close(u) {
-                            h('popover' === u ? p : v);
+                            h('popover' === u ? p : w);
                         },
                         minimize() {
                             h(T);
                         },
                         move(u) {
-                            h(w, { isMouseEvent: !0, on: u });
+                            h(v, { isMouseEvent: !0, on: u });
                         },
                     };
                 function P(u) {
@@ -259,11 +259,11 @@
                 function V() {
                     viewEnv.forceTriggerMouseMove();
                 }
-                function W() {
+                function q() {
                     return viewEnv.getShowingStatus();
                 }
                 const H = Object.keys(d).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === d[e]), u), {}),
-                    q = {
+                    j = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -271,13 +271,13 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    z = Promise.all([
+                    W = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : C.onDomBuilt(u);
                         }),
                         engine.whenReady,
                     ]),
-                    j = { view: i, client: r };
+                    z = { view: i, client: r };
             },
             521: (u, e, t) => {
                 let n, r;
@@ -613,14 +613,14 @@
                         var n;
                     },
                     p = () => m(a.CLOSE),
-                    w = (u, e) => {
+                    v = (u, e) => {
                         u.keyCode === D.n.ESCAPE && e();
                     };
-                var v = t(572);
+                var w = t(572);
                 const T = r.instance,
                     h = {
                         DataTracker: o.Z,
-                        ViewModel: v.Z,
+                        ViewModel: w.Z,
                         ViewEventType: a,
                         NumberFormatType: s,
                         RealFormatType: A,
@@ -658,14 +658,14 @@
                             });
                         },
                         addEscapeListener: (u) => {
-                            const e = (e) => w(e, u);
+                            const e = (e) => v(e, u);
                             return (
                                 window.addEventListener('keydown', e),
                                 () => window.removeEventListener('keydown', e)
                             );
                         },
                         closeOnEsc: (u) => {
-                            w(u, p);
+                            v(u, p);
                         },
                         handleViewEvent: m,
                         onBindingsReady: C,
@@ -743,6 +743,7 @@
                         (u.SelectableBonus = 'selectableBonus'),
                         (u.StyleProgressToken = 'styleProgressToken'),
                         (u.TmanToken = 'tmanToken'),
+                        (u.PortalEventDiscount25 = 'portalEventDiscountToken'),
                         (u.NaturalCover = 'naturalCover'),
                         (u.BpCoin = 'bpcoin'),
                         (u.BattlaPassFinalAchievement = 'dossier_achievement'),
@@ -770,12 +771,9 @@
                         (u.GoldenTicket = 'birthday2025_golden_ticket'),
                         (u.PostStamp = 'giftsystem_4_stamp'),
                         (u.Quests = 'quests'),
-                        (u.WtStamp = 'stamp'),
-                        (u.WtHunter = 'wt_hunter'),
-                        (u.WtHunterCollection = 'hunter_collection'),
-                        (u.WtTicket = 'wtevent_ticket'),
-                        (u.WtMainPrizeDiscount = 'main_prize_discount'),
-                        (u.WtTicket25 = 'wtevent_ticket25'));
+                        (u.BlankPersonalMissions_1 = 'freeTokens_0'),
+                        (u.BlankPersonalMissions_2 = 'freeTokens_2'),
+                        (u.SACoin = 'sacoin'));
                 })(s || (s = {})),
                     (function (u) {
                         ((u.Gold = 'gold'),
@@ -870,15 +868,17 @@
                             (u.PROGRESSION_STYLE_UPGRADED_4 = 'progressionStyleUpgraded_4'));
                     })(c || (c = {})));
                 var B = t(364);
-                const d = ({ format: u, value: e }) => {
-                        const t = ((u, e = 'integral') => {
-                            let t;
-                            t = 'gold' === e ? B.B3.GOLD : B.B3.INTEGRAL;
-                            return void 0 === u ? '' : B.Z5.getNumberFormat(u, t);
-                        })(e, u);
-                        return t ? r().createElement('span', null, t) : null;
-                    },
-                    C = [
+                class d extends r().PureComponent {
+                    render() {
+                        let u;
+                        if ('gold' === this.props.format) u = B.B3.GOLD;
+                        else u = B.B3.INTEGRAL;
+                        const e = B.Z5.getNumberFormat(this.props.value, u);
+                        return void 0 !== this.props.value && void 0 !== e ? e : null;
+                    }
+                }
+                d.defaultProps = { format: 'integral' };
+                const C = [
                         s.Items,
                         s.Equipment,
                         s.Xp,
@@ -916,16 +916,14 @@
                         s.SelectableBonus,
                         s.GoldenTicket,
                         s.PostStamp,
-                        s.WtStamp,
-                        s.WtTicket,
-                        s.WtMainPrizeDiscount,
-                        s.WtHunter,
-                        s.WtHunterCollection,
+                        s.BlankPersonalMissions_1,
+                        s.BlankPersonalMissions_2,
+                        s.SACoin,
                     ],
                     m = [s.Gold, s.Credits, s.Crystal, s.FreeXp],
                     p = [s.BattlePassPoints],
-                    w = [s.PremiumPlus, s.Premium],
-                    v = (u = 1) => {
+                    v = [s.PremiumPlus, s.Premium],
+                    w = (u = 1) => {
                         const e = new Error().stack;
                         let t,
                             n = R.invalid('resId');
@@ -1007,7 +1005,7 @@
                             C = void 0 === d ? 0 : d,
                             m = u.onShow,
                             p = u.onHide,
-                            w = (function (u, e) {
+                            v = (function (u, e) {
                                 if (null == u) return {};
                                 var t,
                                     n,
@@ -1017,7 +1015,7 @@
                                 return r;
                             })(u, T);
                         const P = (0, n.useRef)({ timeoutId: 0, isVisible: !1, prevTarget: null, hideTimerId: null }),
-                            g = (0, n.useMemo)(() => C || v().resId, [C]),
+                            g = (0, n.useMemo)(() => C || w().resId, [C]),
                             R = (0, n.useCallback)(() => {
                                 (P.current.isVisible && P.current.timeoutId) ||
                                     (b(t, _, { isMouseEvent: !0, on: !0, arguments: h(r) }, g),
@@ -1087,7 +1085,7 @@
                                               (!1 === l && f(), null == E || E(e), null == u || u(e));
                                           })(e.props.onMouseDown),
                                       },
-                                      w,
+                                      v,
                                   ),
                               )
                             : e;
@@ -1259,7 +1257,7 @@
                                         return _.BATTLE_BOOSTER;
                                 }
                             })(o),
-                            w = ((u) => {
+                            v = ((u) => {
                                 if (void 0 === u) return null;
                                 switch (u) {
                                     case D.BATTLE_BOOSTER:
@@ -1290,7 +1288,7 @@
                                         return c.PROGRESSION_STYLE_UPGRADED_4;
                                 }
                             })(o),
-                            v = ((u, e) => {
+                            w = ((u, e) => {
                                 if (void 0 === u) return null;
                                 switch (e) {
                                     case l.MULTI: {
@@ -1332,15 +1330,15 @@
                                                 className: a()(U.icon, null == B ? void 0 : B.rewardIcon),
                                                 style: { backgroundImage: `url(${e})` },
                                             }),
-                                        w &&
+                                        v &&
                                             r().createElement('div', {
                                                 className: a()(U.overlay, null == B ? void 0 : B.overlay),
                                                 style: {
-                                                    backgroundImage: `url(R.images.gui.maps.icons.quests.bonuses.${n}.${w}_overlay)`,
+                                                    backgroundImage: `url(R.images.gui.maps.icons.quests.bonuses.${n}.${v}_overlay)`,
                                                 },
                                             }),
                                     ),
-                                    v &&
+                                    w &&
                                         r().createElement(
                                             'div',
                                             {
@@ -1351,7 +1349,7 @@
                                                     null == B ? void 0 : B.info,
                                                 ),
                                             },
-                                            v,
+                                            w,
                                         ),
                                 ),
                             ),
@@ -1401,9 +1399,9 @@
                         decorator: 'TooltipDecorator_decorator_3d',
                     },
                     V = ['children', 'className', 'theme'];
-                function W() {
+                function q() {
                     return (
-                        (W =
+                        (q =
                             Object.assign ||
                             function (u) {
                                 for (var e = 1; e < arguments.length; e++) {
@@ -1412,7 +1410,7 @@
                                 }
                                 return u;
                             }),
-                        W.apply(this, arguments)
+                        q.apply(this, arguments)
                     );
                 }
                 const H = r().forwardRef(function (u, e) {
@@ -1452,7 +1450,7 @@
                         (0, n.useEffect)(l, []),
                         r().createElement(
                             'div',
-                            W({}, s, {
+                            q({}, s, {
                                 className: a()(Y.base, Y[`base__theme-${E}`], o),
                                 ref: function (u) {
                                     ((F.current = u), 'function' == typeof e ? e(u) : e && (e.current = u));
@@ -1462,10 +1460,10 @@
                         )
                     );
                 });
-                let q;
+                let j;
                 !(function (u) {
                     ((u[(u.left = 0)] = 'left'), (u[(u.right = 1)] = 'right'));
-                })(q || (q = {}));
+                })(j || (j = {}));
                 (() => {
                     const u = new RegExp(
                         /[\(\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]?[\u3002\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]?[ %\+\x2D-9A-Za-\{\}\xA0\xC0-\u0237\u2013\u2014\u2026]+[\)\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3002\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\uFF01\uFF0C\uFF1A\uFF1B\uFF1F\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]?[\u3002\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]?/gmu
@@ -1482,7 +1480,7 @@
                         'gum',
                     );
                 })();
-                let z;
+                let W;
                 !(function (u) {
                     ((u.SHORT_DATE = 'short-date'),
                         (u.SHORT_TIME = 'short-time'),
@@ -1497,9 +1495,9 @@
                         (u.WEEK_DAY_TIME = 'week-day-time'),
                         (u.YEAR = 'year'),
                         (u.DATE_YEAR = 'date-year'));
-                })(z || (z = {}));
+                })(W || (W = {}));
                 Date.now();
-                const j = (u, e) => u.split('.').reduce((u, e) => u && u[e], e),
+                const z = (u, e) => u.split('.').reduce((u, e) => u && u[e], e),
                     X = (u) => {
                         const e = (0, n.useRef)(!1);
                         e.current || (u(), (e.current = !0));
@@ -1509,12 +1507,12 @@
                     $ = (u) =>
                         ((u, e) =>
                             u.split('.').reduce((u, t) => {
-                                const n = j(`${u}.${t}`, window);
+                                const n = z(`${u}.${t}`, window);
                                 return K(n) ? e(u, t, n) : `${u}.${t}`;
                             }))(u, (u, e) => `${u}.${e}.value`),
                     Z = (u) => {
                         const e = ((u) => {
-                                const e = v(),
+                                const e = w(),
                                     t = e.caller,
                                     n = e.resId,
                                     r = window.__feature && window.__feature !== t && t ? `subViews.${t}` : '';
@@ -1526,7 +1524,7 @@
                             const u = [n[0]];
                             return (
                                 n.reduce((e, n) => {
-                                    const r = j(Q(t, `${e}.${n}`), window);
+                                    const r = z(Q(t, `${e}.${n}`), window);
                                     return K(r) ? (u.push(r.id), `${e}.${n}.value`) : (u.push(n), `${e}.${n}`);
                                 }),
                                 u.reduce((u, e) => u + '.' + e)
@@ -1542,7 +1540,7 @@
                 const eu = (u = 'model', e = uu.Deep) => {
                         const t = (0, n.useState)(0),
                             r = (t[0], t[1]),
-                            o = (0, n.useMemo)(() => v(), []),
+                            o = (0, n.useMemo)(() => w(), []),
                             i = o.caller,
                             E = o.resId,
                             a = (0, n.useMemo)(
@@ -1551,7 +1549,7 @@
                             ),
                             s = (0, n.useState)(() =>
                                 ((u) => {
-                                    const e = j(u, window);
+                                    const e = z(u, window);
                                     for (const u in e) 'function' == typeof e[u] && (e[u] = e[u].bind(e));
                                     return K(e) ? e.value : e;
                                 })($(a)),
@@ -1625,7 +1623,7 @@
                                                           ? l.CURRENCY
                                                           : p.includes(t)
                                                             ? l.NUMBER
-                                                            : w.includes(t)
+                                                            : v.includes(t)
                                                               ? l.PREMIUM_PLUS
                                                               : l.STRING),
                                                 image: u.icon,

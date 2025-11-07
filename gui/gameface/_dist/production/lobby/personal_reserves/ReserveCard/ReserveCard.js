@@ -65,8 +65,8 @@
                 (A.r(F),
                     A.d(F, {
                         events: () => E,
-                        getMouseGlobalPosition: () => s,
-                        getSize: () => B,
+                        getMouseGlobalPosition: () => B,
+                        getSize: () => s,
                         graphicsQuality: () => C,
                     }));
                 var t = {};
@@ -85,7 +85,7 @@
                 }
                 (A.r(n),
                     A.d(n, {
-                        addModelObserver: () => T,
+                        addModelObserver: () => x,
                         addPreloadTexture: () => y,
                         children: () => t,
                         displayStatus: () => l,
@@ -108,7 +108,7 @@
                         setAnimateWindow: () => U,
                         setEventHandled: () => H,
                         setInputPaddingsRem: () => f,
-                        setSidePaddingsRem: () => x,
+                        setSidePaddingsRem: () => T,
                         whenTutorialReady: () => K,
                     }));
                 const a = D('clientResized'),
@@ -177,10 +177,10 @@
                         },
                     });
                 })();
-                function B(u = 'px') {
+                function s(u = 'px') {
                     return 'rem' === u ? viewEnv.getClientSizeRem() : viewEnv.getClientSizePx();
                 }
-                function s(u = 'px') {
+                function B(u = 'px') {
                     return 'rem' === u ? viewEnv.getMouseGlobalPositionRem() : viewEnv.getMouseGlobalPositionPx();
                 }
                 const C = {
@@ -272,10 +272,10 @@
                 function O(u, e, A, E = 1) {
                     return viewEnv.getWebBrowserTexturePath(u, e, A, E);
                 }
-                function T(u, e, A) {
+                function x(u, e, A) {
                     return viewEnv.addDataChangedCallback(u, e, A);
                 }
-                function x(u) {
+                function T(u) {
                     viewEnv.setHitAreaPaddingsRem(u.top, u.right, u.bottom, u.left, 15);
                 }
                 function k(u = 'px') {
@@ -368,6 +368,7 @@
                                         clearInterval(D);
                                     };
                                 }
+                                a(0);
                             }, [u, e, A, n]),
                             r
                         );
@@ -734,8 +735,8 @@
                 const a = Object.freeze({ INTEGRAL: 0, GOLD: 1 }),
                     o = Object.freeze({ FRACTIONAL: 0, WO_ZERO_DIGITS: 1 }),
                     i = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1 }),
-                    B = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1, YEAR_MONTH: 2 });
-                var s = A(521),
+                    s = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1, YEAR_MONTH: 2 });
+                var B = A(521),
                     C = A(67);
                 const _ = ['args'];
                 function c(u, e, A, E, F, t, n) {
@@ -817,7 +818,7 @@
                     },
                     m = () => v(r.CLOSE),
                     g = (u, e) => {
-                        u.keyCode === s.n.ESCAPE && e();
+                        u.keyCode === B.n.ESCAPE && e();
                     };
                 var h = A(572);
                 const b = F.instance,
@@ -828,7 +829,7 @@
                         NumberFormatType: a,
                         RealFormatType: o,
                         TimeFormatType: i,
-                        DateFormatType: B,
+                        DateFormatType: s,
                         makeGlobalBoundingBox: l,
                         sendMoveEvent: (u) => v(r.MOVE, { isMouseEvent: !0, on: u }),
                         sendCloseEvent: m,
@@ -842,12 +843,12 @@
                                 a = D.x,
                                 o = D.y,
                                 i = D.width,
-                                B = D.height,
-                                s = {
+                                s = D.height,
+                                B = {
                                     x: C.O.view.pxToRem(a) + n.x,
                                     y: C.O.view.pxToRem(o) + n.y,
                                     width: C.O.view.pxToRem(i),
-                                    height: C.O.view.pxToRem(B),
+                                    height: C.O.view.pxToRem(s),
                                 };
                             v(r.POP_OVER, {
                                 isMouseEvent: !0,
@@ -855,7 +856,7 @@
                                 decoratorID: E || R.invalid('resId'),
                                 targetID: F,
                                 direction: e,
-                                bbox: l(s),
+                                bbox: l(B),
                                 on: !0,
                                 args: t,
                             });
@@ -954,8 +955,8 @@
                     type: E,
                     disabled: o,
                     mixClass: i,
-                    soundHover: B,
-                    soundClick: s,
+                    soundHover: s,
+                    soundClick: B,
                     onMouseEnter: C,
                     onMouseMove: _,
                     onMouseDown: c,
@@ -972,8 +973,8 @@
                         y = p[1],
                         f = (0, n.useState)(!1),
                         O = f[0],
-                        T = f[1],
-                        x = (0, n.useCallback)(() => {
+                        x = f[1],
+                        T = (0, n.useCallback)(() => {
                             o || (m.current && (m.current.focus(), b(!0)));
                         }, [o]),
                         k = (0, n.useCallback)(
@@ -990,9 +991,9 @@
                         ),
                         M = (0, n.useCallback)(
                             (u) => {
-                                o || (null !== B && (0, t.G)(B), C && C(u), T(!0));
+                                o || (null !== s && (0, t.G)(s), C && C(u), x(!0));
                             },
-                            [o, B, C],
+                            [o, s, C],
                         ),
                         L = (0, n.useCallback)(
                             (u) => {
@@ -1008,9 +1009,9 @@
                         ),
                         N = (0, n.useCallback)(
                             (u) => {
-                                o || (null !== s && (0, t.G)(s), c && c(u), A && x(), y(!0));
+                                o || (null !== B && (0, t.G)(B), c && c(u), A && T(), y(!0));
                             },
-                            [o, s, c, x, A],
+                            [o, B, c, T, A],
                         ),
                         U = (0, n.useCallback)(
                             (u) => {
@@ -1080,16 +1081,16 @@
                 };
                 i.defaultProps = { type: a.primary, isFocused: !1, soundHover: 'highlight', soundClick: 'play' };
                 (0, n.memo)(i);
-                let B, s;
+                let s, B;
                 (!(function (u) {
                     ((u.Timer = 'timer'), (u.Countdown = 'countdown'), (u.Cooldown = 'cooldown'), (u.None = 'none'));
-                })(B || (B = {})),
+                })(s || (s = {})),
                     (function (u) {
                         ((u.Description = 'description'),
                             (u.Short = 'short'),
                             (u.Long = 'long'),
                             (u.Extended = 'extended'));
-                    })(s || (s = {})));
+                    })(B || (B = {})));
                 var C = A(44),
                     _ = A(344),
                     c = A(67);
@@ -1103,25 +1104,25 @@
                     p = (u, e) => {
                         const A = 2 === e ? b.big : b;
                         switch (u) {
-                            case B.Timer:
+                            case s.Timer:
                                 return A.clock();
-                            case B.Countdown:
+                            case s.Countdown:
                                 return A.hourglass();
-                            case B.Cooldown:
+                            case s.Cooldown:
                                 return A.lock();
                         }
                     };
                 (0, n.memo)(
                     ({
                         duration: u,
-                        icon: e = B.Timer,
-                        style: A = s.Description,
+                        icon: e = s.Timer,
+                        style: A = B.Description,
                         onTimeReached: E,
                         className: t = '',
                         classNames: r = {},
                         labelFormat: a = '',
                     }) => {
-                        const o = A !== s.Description ? 1 : void 0,
+                        const o = A !== B.Description ? 1 : void 0,
                             i = (0, _.au)(u, o),
                             b = (() => {
                                 const u = (0, n.useState)(c.O.view.getScale()),
@@ -1145,20 +1146,20 @@
                         E && E[i] && E[i]();
                         const w = ((u, e) => {
                             switch (e) {
-                                case s.Description:
+                                case B.Description:
                                     return (0, C.wB)(u);
-                                case s.Short:
+                                case B.Short:
                                     return `${h(u.minutes)}:${h(u.seconds)}`;
-                                case s.Long:
+                                case B.Long:
                                     return `${h(u.hours)}:${h(u.minutes)}:${h(u.seconds)}`;
-                                case s.Extended:
+                                case B.Extended:
                                     return `${(0, l.WU)(R.strings.common.duration.days(), { days: u.days })} | ${h(u.hours)}:${h(u.minutes)}:${h(u.seconds)}`;
                             }
                         })((0, C.f8)(i), A);
                         return D().createElement(
                             'div',
                             { className: F()(d, t) },
-                            e !== B.None &&
+                            e !== s.None &&
                                 D().createElement('div', {
                                     className: F()(v, r.icon),
                                     style: { backgroundImage: `url('${p(e, b)}')` },
@@ -1180,7 +1181,7 @@
                 })(y || (y = {}));
                 A(161);
                 (w.z.Personal, y.Personal, w.z.Event, y.Event, w.z.Clan, y.Clan);
-                let f, O, T;
+                let f, O, x;
                 (!(function (u) {
                     ((u.small = 'small'), (u.big = 'big'), (u.large = 'large'), (u.extraLarge = 'extraLarge'));
                 })(f || (f = {})),
@@ -1194,17 +1195,19 @@
                     })(O || (O = {})),
                     (function (u) {
                         ((u.Red = 'RedActionBG'), (u.Blue = 'BlueActionBG'));
-                    })(T || (T = {})));
-                var x = A(364);
-                const k = ({ format: u, value: e }) => {
-                        const A = ((u, e = 'integral') => {
-                            let A;
-                            A = 'gold' === e ? x.B3.GOLD : x.B3.INTEGRAL;
-                            return void 0 === u ? '' : x.Z5.getNumberFormat(u, A);
-                        })(e, u);
-                        return A ? D().createElement('span', null, A) : null;
-                    },
-                    P = {
+                    })(x || (x = {})));
+                var T = A(364);
+                class k extends D().PureComponent {
+                    render() {
+                        let u;
+                        if ('gold' === this.props.format) u = T.B3.GOLD;
+                        else u = T.B3.INTEGRAL;
+                        const e = T.Z5.getNumberFormat(this.props.value, u);
+                        return void 0 !== this.props.value && void 0 !== e ? e : null;
+                    }
+                }
+                k.defaultProps = { format: 'integral' };
+                const P = {
                         base: 'Currency_base_57',
                         icon: 'Currency_icon_c5',
                         base__small: 'Currency_base__small_af',
@@ -1257,11 +1260,11 @@
                         value: n,
                         discountValue: r,
                         showPlus: a,
-                        stockBackgroundName: o = T.Red,
+                        stockBackgroundName: o = x.Red,
                     }) => {
                         const i = F()(P.value, P[`value__${E}`], !t && P.value__notEnough),
-                            B = F()(P.icon, P[`icon__${E}-${A}`]),
-                            s = F()(P.stock, r && P.stock__indent, e && P.stock__interactive),
+                            s = F()(P.icon, P[`icon__${E}-${A}`]),
+                            B = F()(P.stock, r && P.stock__indent, e && P.stock__interactive),
                             C = a && n > 0 && '+',
                             _ = F()(P.base, P[`base__${A}`]);
                         return D().createElement(
@@ -1273,11 +1276,11 @@
                                 C,
                                 D().createElement(k, { value: n, format: E === O.gold ? 'gold' : 'integral' }),
                             ),
-                            D().createElement('span', { className: B }),
+                            D().createElement('span', { className: s }),
                             u &&
                                 D().createElement(
                                     'span',
-                                    { className: s },
+                                    { className: B },
                                     D().createElement('span', {
                                         className: P.stockBackground,
                                         style: { backgroundImage: `url(R.images.gui.maps.icons.library.${o})` },

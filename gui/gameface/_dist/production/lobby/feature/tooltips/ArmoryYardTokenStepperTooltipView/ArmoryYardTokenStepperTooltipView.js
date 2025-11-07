@@ -1149,7 +1149,7 @@
                     return !1;
                 }
                 console.log;
-                var Zu = t(9174);
+                var Zu = t(3915);
                 function Ju(u, e) {
                     (null == e || e > u.length) && (e = u.length);
                     for (var t = 0, A = new Array(e); t < e; t++) A[t] = u[t];
@@ -1289,11 +1289,11 @@
                                                 observableModel: {
                                                     array: (e, t) => {
                                                         const A = null != t ? t : a(e),
-                                                            F = Zu.LO.box(A, { equals: Qu });
+                                                            F = Zu.observable.box(A, { equals: Qu });
                                                         return (
                                                             'real' === u &&
                                                                 D.subscribe(
-                                                                    (0, Zu.aD)((u) => F.set(u)),
+                                                                    (0, Zu.action)((u) => F.set(u)),
                                                                     e,
                                                                 ),
                                                             F
@@ -1301,11 +1301,11 @@
                                                     },
                                                     object: (e, t) => {
                                                         const A = null != t ? t : a(e),
-                                                            F = Zu.LO.box(A, { equals: Qu });
+                                                            F = Zu.observable.box(A, { equals: Qu });
                                                         return (
                                                             'real' === u &&
                                                                 D.subscribe(
-                                                                    (0, Zu.aD)((u) => F.set(u)),
+                                                                    (0, Zu.action)((u) => F.set(u)),
                                                                     e,
                                                                 ),
                                                             F
@@ -1315,13 +1315,13 @@
                                                         const A = a(t);
                                                         if (Array.isArray(e)) {
                                                             const F = e.reduce(
-                                                                (u, e) => ((u[e] = Zu.LO.box(A[e], {})), u),
+                                                                (u, e) => ((u[e] = Zu.observable.box(A[e], {})), u),
                                                                 {},
                                                             );
                                                             return (
                                                                 'real' === u &&
                                                                     D.subscribe(
-                                                                        (0, Zu.aD)((u) => {
+                                                                        (0, Zu.action)((u) => {
                                                                             e.forEach((e) => {
                                                                                 F[e].set(u[e]);
                                                                             });
@@ -1335,13 +1335,16 @@
                                                             const F = e,
                                                                 E = Object.entries(F),
                                                                 r = E.reduce(
-                                                                    (u, [e, t]) => ((u[t] = Zu.LO.box(A[e], {})), u),
+                                                                    (u, [e, t]) => (
+                                                                        (u[t] = Zu.observable.box(A[e], {})),
+                                                                        u
+                                                                    ),
                                                                     {},
                                                                 );
                                                             return (
                                                                 'real' === u &&
                                                                     D.subscribe(
-                                                                        (0, Zu.aD)((u) => {
+                                                                        (0, Zu.action)((u) => {
                                                                             E.forEach(([e, t]) => {
                                                                                 r[t].set(u[e]);
                                                                             });
@@ -1404,7 +1407,7 @@
         var F = t[u];
         if (void 0 !== F) return F.exports;
         var E = (t[u] = { exports: {} });
-        return (e[u](E, E.exports, A), E.exports);
+        return (e[u].call(E.exports, E, E.exports, A), E.exports);
     }
     ((A.m = e),
         (u = []),
@@ -1450,7 +1453,6 @@
                 Object.defineProperty(u, Symbol.toStringTag, { value: 'Module' }),
                 Object.defineProperty(u, '__esModule', { value: !0 }));
         }),
-        (A.j = 672),
         (() => {
             var u = { 672: 0 };
             A.O.j = (e) => 0 === u[e];

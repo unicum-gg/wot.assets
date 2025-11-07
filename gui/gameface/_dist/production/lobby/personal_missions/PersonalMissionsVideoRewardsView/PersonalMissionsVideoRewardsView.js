@@ -1068,9 +1068,9 @@
                         return { mediaSize: n, mediaWidth: a, mediaHeight: i, remScreenWidth: e, remScreenHeight: t };
                     },
                     S = ['children', 'className'];
-                function T() {
+                function x() {
                     return (
-                        (T =
+                        (x =
                             Object.assign ||
                             function (u) {
                                 for (var e = 1; e < arguments.length; e++) {
@@ -1079,10 +1079,10 @@
                                 }
                                 return u;
                             }),
-                        T.apply(this, arguments)
+                        x.apply(this, arguments)
                     );
                 }
-                const x = {
+                const T = {
                         [v.ExtraSmall]: '',
                         [v.Small]: p().SMALL_WIDTH,
                         [v.Medium]: `${p().SMALL_WIDTH} ${p().MEDIUM_WIDTH}`,
@@ -1119,7 +1119,7 @@
                             i = a.mediaWidth,
                             o = a.mediaHeight,
                             s = a.mediaSize;
-                        return n().createElement('div', T({ className: g()(t, x[i], M[o], L[s]) }, r), e);
+                        return n().createElement('div', x({ className: g()(t, T[i], M[o], L[s]) }, r), e);
                     },
                     O = ['children'];
                 const y = (u) => {
@@ -1578,13 +1578,13 @@
                         S = (0, r.useCallback)(() => {
                             i || (d.current && (d.current.focus(), C(!0)));
                         }, [i]),
-                        T = (0, r.useCallback)(
+                        x = (0, r.useCallback)(
                             (u) => {
                                 B && null !== d.current && !d.current.contains(u.target) && C(!1);
                             },
                             [B],
                         ),
-                        x = (0, r.useCallback)(
+                        T = (0, r.useCallback)(
                             (u) => {
                                 i || (D && D(u));
                             },
@@ -1636,12 +1636,12 @@
                     return (
                         (0, r.useEffect)(
                             () => (
-                                document.addEventListener('mousedown', T),
+                                document.addEventListener('mousedown', x),
                                 () => {
-                                    document.removeEventListener('mousedown', T);
+                                    document.removeEventListener('mousedown', x);
                                 }
                             ),
-                            [T],
+                            [x],
                         ),
                         (0, r.useEffect)(() => {
                             C(t);
@@ -1656,7 +1656,7 @@
                                 onMouseUp: P,
                                 onMouseDown: O,
                                 onMouseLeave: y,
-                                onClick: x,
+                                onClick: T,
                             },
                             a !== ru.ghost &&
                                 n().createElement(
@@ -2006,6 +2006,7 @@
                         (u.SelectableBonus = 'selectableBonus'),
                         (u.StyleProgressToken = 'styleProgressToken'),
                         (u.TmanToken = 'tmanToken'),
+                        (u.PortalEventDiscount25 = 'portalEventDiscountToken'),
                         (u.NaturalCover = 'naturalCover'),
                         (u.BpCoin = 'bpcoin'),
                         (u.BattlaPassFinalAchievement = 'dossier_achievement'),
@@ -2033,12 +2034,9 @@
                         (u.GoldenTicket = 'birthday2025_golden_ticket'),
                         (u.PostStamp = 'giftsystem_4_stamp'),
                         (u.Quests = 'quests'),
-                        (u.WtStamp = 'stamp'),
-                        (u.WtHunter = 'wt_hunter'),
-                        (u.WtHunterCollection = 'hunter_collection'),
-                        (u.WtTicket = 'wtevent_ticket'),
-                        (u.WtMainPrizeDiscount = 'main_prize_discount'),
-                        (u.WtTicket25 = 'wtevent_ticket25'));
+                        (u.BlankPersonalMissions_1 = 'freeTokens_0'),
+                        (u.BlankPersonalMissions_2 = 'freeTokens_2'),
+                        (u.SACoin = 'sacoin'));
                 })(gu || (gu = {})),
                     (function (u) {
                         ((u.Gold = 'gold'),
@@ -2132,15 +2130,17 @@
                             (u.PROGRESSION_STYLE_UPGRADED_3 = 'progressionStyleUpgraded_3'),
                             (u.PROGRESSION_STYLE_UPGRADED_4 = 'progressionStyleUpgraded_4'));
                     })(wu || (wu = {})));
-                const Su = ({ format: u, value: e }) => {
-                        const t = ((u, e = 'integral') => {
-                            let t;
-                            t = 'gold' === e ? X.B3.GOLD : X.B3.INTEGRAL;
-                            return void 0 === u ? '' : X.Z5.getNumberFormat(u, t);
-                        })(e, u);
-                        return t ? n().createElement('span', null, t) : null;
-                    },
-                    Tu = [
+                class Su extends n().PureComponent {
+                    render() {
+                        let u;
+                        if ('gold' === this.props.format) u = X.B3.GOLD;
+                        else u = X.B3.INTEGRAL;
+                        const e = X.Z5.getNumberFormat(this.props.value, u);
+                        return void 0 !== this.props.value && void 0 !== e ? e : null;
+                    }
+                }
+                Su.defaultProps = { format: 'integral' };
+                const xu = [
                         gu.Items,
                         gu.Equipment,
                         gu.Xp,
@@ -2178,13 +2178,11 @@
                         gu.SelectableBonus,
                         gu.GoldenTicket,
                         gu.PostStamp,
-                        gu.WtStamp,
-                        gu.WtTicket,
-                        gu.WtMainPrizeDiscount,
-                        gu.WtHunter,
-                        gu.WtHunterCollection,
+                        gu.BlankPersonalMissions_1,
+                        gu.BlankPersonalMissions_2,
+                        gu.SACoin,
                     ],
-                    xu = [gu.Gold, gu.Credits, gu.Crystal, gu.FreeXp],
+                    Tu = [gu.Gold, gu.Credits, gu.Crystal, gu.FreeXp],
                     Ru = [gu.BattlePassPoints],
                     Mu = [gu.PremiumPlus, gu.Premium],
                     Lu = ['engravings', 'backgrounds'],
@@ -2308,6 +2306,8 @@
                                 return `R.images.gui.maps.icons.quests.bonuses.${e}.style_3d`;
                             case 'collectionItem':
                                 return `R.images.gui.maps.icons.collectionItems.${s}.${a}`;
+                            case 'portal':
+                                return `R.images.gui.maps.icons.rewards.${e}.${i}`;
                             default:
                                 return `R.images.gui.maps.icons.quests.bonuses.${e}.${t}`;
                         }
@@ -2635,8 +2635,8 @@
                                       void 0
                                     : f,
                             S = u.alignItems,
-                            T = void 0 === S ? (C ? 'flex-start' : h && 'center') || (p && 'flex-end') || void 0 : S,
-                            x = u.alignSelf,
+                            x = void 0 === S ? (C ? 'flex-start' : h && 'center') || (p && 'flex-end') || void 0 : S,
+                            T = u.alignSelf,
                             R = u.wrap,
                             M = u.flexWrap,
                             L = void 0 === M ? (R ? 'wrap' : void 0) : M,
@@ -2672,16 +2672,16 @@
                                         width: void 0 !== t && 'number' == typeof t ? t + 'rem' : t,
                                         height: void 0 !== a && 'number' == typeof a ? a + 'rem' : a,
                                         flex: k,
-                                        alignSelf: x,
-                                        display: B || T ? 'flex' : void 0,
+                                        alignSelf: T,
+                                        display: B || x ? 'flex' : void 0,
                                         flexDirection: B,
                                         flexWrap: L,
                                         justifyContent: w,
-                                        alignItems: T,
+                                        alignItems: x,
                                     }),
                                     computedClassNames: e,
                                 };
-                            }, [t, a, s, l, _, F, N, k, x, B, L, w, T]),
+                            }, [t, a, s, l, _, F, N, k, T, B, L, w, x]),
                             G = U.computedStyle,
                             W = U.computedClassNames;
                         return n().createElement('div', qu({ className: g()(ju.base, ...W, e), style: G }, H), I);
@@ -2945,9 +2945,9 @@
                                         size: r,
                                         valueType:
                                             ((t = e.name),
-                                            Tu.includes(t)
+                                            xu.includes(t)
                                                 ? bu.MULTI
-                                                : xu.includes(t)
+                                                : Tu.includes(t)
                                                   ? bu.CURRENCY
                                                   : Ru.includes(t)
                                                     ? bu.NUMBER
@@ -3034,15 +3034,15 @@
                         );
                     }),
                     Se = ['I', 'IV', 'V', 'IX', 'X', 'XL', 'L', 'XC', 'C', 'CD', 'D', 'CM', 'M'],
-                    Te = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
-                const xe = ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE()),
+                    xe = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
+                const Te = ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE()),
                     Re = (u) =>
-                        xe
+                        Te
                             ? `${u}`
                             : (function (u) {
                                   let e = '';
-                                  for (let t = Te.length - 1; t >= 0; t--)
-                                      for (; u >= Te[t]; ) ((e += Se[t]), (u -= Te[t]));
+                                  for (let t = xe.length - 1; t >= 0; t--)
+                                      for (; u >= xe[t]; ) ((e += Se[t]), (u -= xe[t]));
                                   return e;
                               })(u),
                     Me = 'Header_base_4a',

@@ -104,8 +104,8 @@
                             O = void 0 === L ? (N ? 'wrap' : void 0) : L,
                             H = e.grow,
                             G = e.shrink,
-                            z = e.flex,
-                            U = void 0 === z ? (H || G ? `${H ? 1 : 0} ${G ? 1 : 0} auto` : void 0) : z,
+                            U = e.flex,
+                            z = void 0 === U ? (H || G ? `${H ? 1 : 0} ${G ? 1 : 0} auto` : void 0) : U,
                             W = e.style,
                             j = e.children,
                             Z = (function (e, t) {
@@ -133,7 +133,7 @@
                                     computedStyle: Object.assign({}, W, n, {
                                         width: void 0 !== o && 'number' == typeof o ? o + 'rem' : o,
                                         height: void 0 !== a && 'number' == typeof a ? a + 'rem' : a,
-                                        flex: U,
+                                        flex: z,
                                         alignSelf: M,
                                         display: w || k ? 'flex' : void 0,
                                         flexDirection: w,
@@ -143,7 +143,7 @@
                                     }),
                                     computedClassNames: t,
                                 };
-                            }, [o, a, s, E, b, y, W, U, M, w, O, T, k]),
+                            }, [o, a, s, E, b, y, W, z, M, w, O, T, k]),
                             $ = q.computedStyle,
                             X = q.computedClassNames;
                         return l().createElement('div', c({ className: n()(d.Z.base, ...X, t), style: $ }, Z), j);
@@ -315,14 +315,16 @@
                 var a = o(6179),
                     n = o.n(a),
                     i = o(4179);
-                const u = ({ format: e, value: t }) => {
-                    const o = ((e, t = 'integral') => {
-                        let o;
-                        o = 'gold' === t ? i.B3.GOLD : i.B3.INTEGRAL;
-                        return void 0 === e ? '' : i.Z5.getNumberFormat(e, o);
-                    })(t, e);
-                    return o ? n().createElement('span', null, o) : null;
-                };
+                class u extends n().PureComponent {
+                    render() {
+                        let e;
+                        if ('gold' === this.props.format) e = i.B3.GOLD;
+                        else e = i.B3.INTEGRAL;
+                        const t = i.Z5.getNumberFormat(this.props.value, e);
+                        return void 0 !== this.props.value && void 0 !== t ? t : null;
+                    }
+                }
+                u.defaultProps = { format: 'integral' };
             },
             280: (e, t, o) => {
                 'use strict';
@@ -1316,6 +1318,7 @@
                             (e.SelectableBonus = 'selectableBonus'),
                             (e.StyleProgressToken = 'styleProgressToken'),
                             (e.TmanToken = 'tmanToken'),
+                            (e.PortalEventDiscount25 = 'portalEventDiscountToken'),
                             (e.NaturalCover = 'naturalCover'),
                             (e.BpCoin = 'bpcoin'),
                             (e.BattlaPassFinalAchievement = 'dossier_achievement'),
@@ -1343,12 +1346,9 @@
                             (e.GoldenTicket = 'birthday2025_golden_ticket'),
                             (e.PostStamp = 'giftsystem_4_stamp'),
                             (e.Quests = 'quests'),
-                            (e.WtStamp = 'stamp'),
-                            (e.WtHunter = 'wt_hunter'),
-                            (e.WtHunterCollection = 'hunter_collection'),
-                            (e.WtTicket = 'wtevent_ticket'),
-                            (e.WtMainPrizeDiscount = 'main_prize_discount'),
-                            (e.WtTicket25 = 'wtevent_ticket25'));
+                            (e.BlankPersonalMissions_1 = 'freeTokens_0'),
+                            (e.BlankPersonalMissions_2 = 'freeTokens_2'),
+                            (e.SACoin = 'sacoin'));
                     })(a || (a = {})),
                     (function (e) {
                         ((e.Gold = 'gold'),
@@ -1488,11 +1488,9 @@
                         u.E4.SelectableBonus,
                         u.E4.GoldenTicket,
                         u.E4.PostStamp,
-                        u.E4.WtStamp,
-                        u.E4.WtTicket,
-                        u.E4.WtMainPrizeDiscount,
-                        u.E4.WtHunter,
-                        u.E4.WtHunterCollection,
+                        u.E4.BlankPersonalMissions_1,
+                        u.E4.BlankPersonalMissions_2,
+                        u.E4.SACoin,
                     ],
                     r = [u.E4.Gold, u.E4.Credits, u.E4.Crystal, u.E4.FreeXp],
                     l = [u.E4.BattlePassPoints],
@@ -1628,6 +1626,8 @@
                                 return `R.images.gui.maps.icons.quests.bonuses.${t}.style_3d`;
                             case 'collectionItem':
                                 return `R.images.gui.maps.icons.collectionItems.${l}.${i}`;
+                            case 'portal':
+                                return `R.images.gui.maps.icons.rewards.${t}.${s}`;
                             default:
                                 return `R.images.gui.maps.icons.quests.bonuses.${t}.${o}`;
                         }
@@ -2447,15 +2447,15 @@
                             }, [e, P.offset, P.pending, a, M]));
                         const H = (0, c.B)((t) => e.applyStepTo(t), R, [e]),
                             G = H[0],
-                            z = H[1];
+                            U = H[1];
                         (0, r.useEffect)(
                             () => (
-                                document.addEventListener('mouseup', z, !0),
-                                () => document.removeEventListener('mouseup', z, !0)
+                                document.addEventListener('mouseup', U, !0),
+                                () => document.removeEventListener('mouseup', U, !0)
                             ),
-                            [z],
+                            [U],
                         );
-                        const U = (e) => {
+                        const z = (e) => {
                             e.target.classList.contains(D) || (0, p.G)('highlight');
                         };
                         return l().createElement(
@@ -2469,7 +2469,7 @@
                                         ((0, p.G)('play'), G(_.Nm.Next));
                                 },
                                 ref: i,
-                                onMouseEnter: U,
+                                onMouseEnter: z,
                             }),
                             l().createElement(
                                 'div',
@@ -2497,7 +2497,7 @@
                                             }
                                     },
                                     ref: x,
-                                    onMouseEnter: U,
+                                    onMouseEnter: z,
                                 },
                                 l().createElement('div', { ref: S, className: t.thumb }),
                                 l().createElement('div', { className: u()(y, t.rail) }),
@@ -2509,9 +2509,9 @@
                                         0 !== e.button ||
                                         ((0, p.G)('play'), G(_.Nm.Prev));
                                 },
-                                onMouseUp: z,
+                                onMouseUp: U,
                                 ref: f,
-                                onMouseEnter: U,
+                                onMouseEnter: z,
                             }),
                         );
                     }),
@@ -11196,8 +11196,8 @@
                         x.Credits,
                         x.Items,
                     ],
-                    z = [S, T, P, k, M, N, L, O, H],
-                    U = 3e3,
+                    U = [S, T, P, k, M, N, L, O, H],
+                    z = 3e3,
                     W = 1e3,
                     j = 500,
                     Z = 200,
@@ -11331,7 +11331,7 @@
                             return o !== a
                                 ? o - a
                                 : e.name === y.E4.Items && t.name === y.E4.Items
-                                  ? z.indexOf(e.item) - z.indexOf(t.item)
+                                  ? U.indexOf(e.item) - U.indexOf(t.item)
                                   : 0;
                         });
                     },
@@ -11419,7 +11419,7 @@
                             O = L[0],
                             H = L[1],
                             G = (0, a.useState)(!1),
-                            z = G[0],
+                            U = G[0],
                             Y = G[1],
                             K = (0, a.useState)(!1),
                             Q = K[0],
@@ -11438,7 +11438,7 @@
                                 (ue.isRunning && ue.clear(), se.isRunning && se.clear());
                             }, [ue, se]);
                         (0, a.useEffect)(() => {
-                            o && x && r && !d ? de(ae.Init, U) : o && r && d && u === i && de(ae.Init, W);
+                            o && x && r && !d ? de(ae.Init, z) : o && r && d && u === i && de(ae.Init, W);
                         }, [o, r, x]);
                         const ce = (e) => {
                                 switch ((me(), e)) {
@@ -11520,7 +11520,7 @@
                                 te && re.base__changeStatus,
                                 M && re.base__animatingInit,
                                 O && re.base__animatingStart,
-                                z && re.base__animatingProgress,
+                                U && re.base__animatingProgress,
                                 o && !d && (Q || !r) && re.base__animatingComplete,
                             );
                         return n().createElement(
@@ -11661,8 +11661,8 @@
                                 [t, o],
                             ),
                             G = I * g,
-                            z = G - g,
-                            U = (0, a.useMemo)(() => H.slice(z, G), [H, z, G]),
+                            U = G - g,
+                            z = (0, a.useMemo)(() => H.slice(U, G), [H, U, G]),
                             W = Math.ceil(H.length / g),
                             j = (0, a.useCallback)(
                                 (e) => {
@@ -11678,10 +11678,10 @@
                                     w(!0),
                                     O(!0),
                                     M(Q.left),
-                                    T(U),
+                                    T(z),
                                     f(I + 1),
                                     (0, E.G)(R.sounds.play_streak_calendar_slide()));
-                            }, [U, I, L, W]),
+                            }, [z, I, L, W]),
                             q = (0, a.useCallback)(() => {
                                 !L &&
                                     I > 1 &&
@@ -11689,10 +11689,10 @@
                                     w(!0),
                                     O(!0),
                                     M(Q.right),
-                                    T(U),
+                                    T(z),
                                     f(I - 1),
                                     (0, E.G)(R.sounds.play_streak_calendar_slide()));
-                            }, [U, I, L]),
+                            }, [z, I, L]),
                             $ = (0, b.useTransition)(I, {
                                 initial: { opacity: 1, transform: 'translateX(0%)' },
                                 from: {
@@ -11746,7 +11746,7 @@
                                             'div',
                                             { className: ce },
                                             t === I
-                                                ? U.map((e) =>
+                                                ? z.map((e) =>
                                                       n().createElement(
                                                           'div',
                                                           { key: e.day, className: _e },
@@ -11885,8 +11885,8 @@
                     Oe = 'PeriodicRewards_headInner_41',
                     He = 'PeriodicRewards_body_bb',
                     Ge = 'PeriodicRewards_glow_2a',
-                    ze = 'PeriodicRewards_line_79',
-                    Ue = 'PeriodicRewards_lineInner_27',
+                    Ue = 'PeriodicRewards_line_79',
+                    ze = 'PeriodicRewards_lineInner_27',
                     We = 'PeriodicRewards_blur_27',
                     je = 'PeriodicRewards_blur__active_06',
                     Ze = 'PeriodicRewards_info_30',
@@ -11917,8 +11917,8 @@
                                 e && t && !u && n().createElement('div', { className: Ge }),
                                 n().createElement(
                                     'div',
-                                    { className: ze },
-                                    n().createElement('div', { className: Ue }),
+                                    { className: Ue },
+                                    n().createElement('div', { className: ze }),
                                 ),
                                 n().createElement('div', { className: C()(We, o && je) }),
                                 n().createElement(
@@ -12157,13 +12157,13 @@
                             },
                             [v, l],
                         ),
-                        z = (0, a.useCallback)(
+                        U = (0, a.useCallback)(
                             (e) => {
                                 (I(!1), S(!1), b && b(e));
                             },
                             [b],
                         ),
-                        U = (0, a.useCallback)(
+                        z = (0, a.useCallback)(
                             (e) => {
                                 (P(!0), D && D(e));
                             },
@@ -12193,10 +12193,10 @@
                                 className: j,
                                 onClick: L,
                                 onMouseEnter: G,
-                                onMouseLeave: z,
+                                onMouseLeave: U,
                                 onMouseDown: O,
                                 onMouseUp: H,
-                                onFocus: U,
+                                onFocus: z,
                                 onBlur: W,
                             },
                             B,
@@ -12317,9 +12317,9 @@
                         wrapper__center: 'PostProgressionList_wrapper__center_1d',
                         wrapper__right: 'PostProgressionList_wrapper__right_aa',
                     };
-                function zt() {
+                function Ut() {
                     return (
-                        (zt =
+                        (Ut =
                             Object.assign ||
                             function (e) {
                                 for (var t = 1; t < arguments.length; t++) {
@@ -12328,10 +12328,10 @@
                                 }
                                 return e;
                             }),
-                        zt.apply(this, arguments)
+                        Ut.apply(this, arguments)
                     );
                 }
-                const Ut = R.strings.play_streak.window.playStreakRewards.postProgression.bestRewards,
+                const zt = R.strings.play_streak.window.playStreakRewards.postProgression.bestRewards,
                     Wt = n().memo(({ vehicles: e, handleVehicleHangar: t, handleStylePreview: o }) => {
                         const i = (0, a.useState)(!1),
                             u = i[0],
@@ -12407,7 +12407,7 @@
                                 n().createElement(
                                     'div',
                                     { className: Gt.title },
-                                    n().createElement(ye.ZP, { text: Ut.head() }),
+                                    n().createElement(ye.ZP, { text: zt.head() }),
                                 ),
                                 n().createElement('div', { className: C()(Gt.divider, Gt.divider__revers) }),
                             ),
@@ -12422,8 +12422,8 @@
                                             'div',
                                             { key: a, className: Gt.horizontalItem },
                                             e.name === y.E4.StyleProgress
-                                                ? n().createElement(ht, zt({}, e, { handleStylePreview: o }))
-                                                : n().createElement(Ht, zt({}, e, { handleVehicleHangar: t })),
+                                                ? n().createElement(ht, Ut({}, e, { handleStylePreview: o }))
+                                                : n().createElement(Ht, Ut({}, e, { handleVehicleHangar: t })),
                                         ),
                                     ),
                                 ),
@@ -12691,16 +12691,16 @@
                             O = (0, w.K)(),
                             H = (e, t) => {
                                 O.run(() => {
-                                    z(e);
+                                    U(e);
                                 }, t);
                             },
                             G = (0, a.useCallback)(() => {
                                 (L.isRunning && L.clear(), O.isRunning && O.clear());
                             }, [L, O]);
                         (0, a.useEffect)(() => {
-                            !t || s || b <= 0 || H(o ? ae.Init : ae.Complete, o ? U : $);
+                            !t || s || b <= 0 || H(o ? ae.Init : ae.Complete, o ? z : $);
                         }, [t, b]);
-                        const z = (e) => {
+                        const U = (e) => {
                             switch ((G(), e)) {
                                 case ae.Init:
                                     return (h(!0), void H(ae.Start, j));
@@ -12943,7 +12943,7 @@
                                 handleStylePreview: o.stylePreview,
                                 vehicles: x,
                             },
-                            z = {
+                            U = {
                                 streakLength: D,
                                 isFirstAppearance: v,
                                 countDays: h,
@@ -12953,7 +12953,7 @@
                                 handleVehiclePreview: o.vehiclePreview,
                                 handleVehicleHangar: o.vehicleHangar,
                             },
-                            U = {
+                            z = {
                                 streakLength: D,
                                 redemptionDayCount: F,
                                 redemptionMaxDayCount: p,
@@ -12990,9 +12990,9 @@
                                 : n().createElement(
                                       'div',
                                       null,
-                                      n().createElement('div', { className: Xe }, n().createElement(Eo, z)),
+                                      n().createElement('div', { className: Xe }, n().createElement(Eo, U)),
                                       A && n().createElement('div', { className: Ye }, n().createElement(to, j)),
-                                      n().createElement('div', { className: Ke }, n().createElement(Ae, U)),
+                                      n().createElement('div', { className: Ke }, n().createElement(Ae, z)),
                                   ),
                             n().createElement(
                                 b.animated.div,

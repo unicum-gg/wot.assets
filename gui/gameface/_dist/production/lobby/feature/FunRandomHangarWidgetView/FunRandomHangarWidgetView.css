@@ -451,12 +451,6 @@ body {
 .App_base__completedResettable_78 .App_backgroundWrapper_0b {
     filter: saturate(0);
 }
-.App_background_75 {
-    transform: translate(-50%, 0);
-}
-.App_background__scaled_b4 {
-    transform: translate(-50%, 50%) scale(2);
-}
 .App_modifications_5f {
     display: flex;
     justify-content: center;

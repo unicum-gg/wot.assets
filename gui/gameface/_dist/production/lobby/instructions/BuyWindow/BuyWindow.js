@@ -1118,7 +1118,7 @@
                         );
                     }
                 }
-                let v, g, y;
+                let v, g, y, w;
                 ((b.defaultProps = { side: 'left', type: 'back', soundHover: 'highlight', soundClick: 'play' }),
                     (function (e) {
                         ((e.small = 'small'), (e.big = 'big'), (e.large = 'large'), (e.extraLarge = 'extraLarge'));
@@ -1134,18 +1134,19 @@
                     (function (e) {
                         ((e.Red = 'RedActionBG'), (e.Blue = 'BlueActionBG'));
                     })(y || (y = {})));
-                const w = ({ format: e, value: u }) => {
-                    const t = ((e, u = 'integral') => {
-                        let t;
-                        t = 'gold' === u ? a.B3.GOLD : a.B3.INTEGRAL;
-                        return void 0 === e ? '' : a.Z5.getNumberFormat(e, t);
-                    })(u, e);
-                    return t ? i().createElement('span', null, t) : null;
-                };
-                let f;
-                !(function (e) {
-                    ((e.backport = 'backport'), (e.normal = 'normal'), (e.absent = 'absent'));
-                })(f || (f = {}));
+                class f extends i().PureComponent {
+                    render() {
+                        let e;
+                        if ('gold' === this.props.format) e = a.B3.GOLD;
+                        else e = a.B3.INTEGRAL;
+                        const u = a.Z5.getNumberFormat(this.props.value, e);
+                        return void 0 !== this.props.value && void 0 !== u ? u : null;
+                    }
+                }
+                ((f.defaultProps = { format: 'integral' }),
+                    (function (e) {
+                        ((e.backport = 'backport'), (e.normal = 'normal'), (e.absent = 'absent'));
+                    })(w || (w = {})));
                 const k = {
                         currency: 'CurrencyItem_currency_b6',
                         currency__credits: 'CurrencyItem_currency__credits_eb',
@@ -1157,17 +1158,17 @@
                         const r = u === g.gold ? 'gold' : 'integral',
                             s = (0, n.useMemo)(() => {
                                 return (
-                                    (e = f.backport),
+                                    (e = w.backport),
                                     (t = { currency: u }),
                                     {
-                                        isEnabled: e !== f.absent,
+                                        isEnabled: e !== w.absent,
                                         args: t,
                                         contentId: R.views.dialogs.common.DialogTemplateGenericTooltip('resId'),
                                         decoratorId:
-                                            e === f.normal
+                                            e === w.normal
                                                 ? R.views.common.tooltip_window.tooltip_window.TooltipWindow('resId')
                                                 : void 0,
-                                        ignoreShowDelay: e === f.backport,
+                                        ignoreShowDelay: e === w.backport,
                                         ignoreMouseClick: !0,
                                     }
                                 );
@@ -1179,7 +1180,7 @@
                             i().createElement(
                                 'span',
                                 { className: F()(k.currency, k[`currency__${u}`]) },
-                                t ? i().createElement(w, { value: e, format: r }) : R.strings.common.common.dashes(),
+                                t ? i().createElement(f, { value: e, format: r }) : R.strings.common.common.dashes(),
                             ),
                         );
                     },
@@ -1575,7 +1576,7 @@
                                 'span',
                                 { className: _ },
                                 E,
-                                i().createElement(w, { value: s, format: n === g.gold ? 'gold' : 'integral' }),
+                                i().createElement(f, { value: s, format: n === g.gold ? 'gold' : 'integral' }),
                             ),
                             i().createElement('span', { className: l }),
                             e &&

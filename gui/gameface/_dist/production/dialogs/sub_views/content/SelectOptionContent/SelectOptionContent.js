@@ -32,9 +32,9 @@
                         addModelObserver: () => O,
                         addPreloadTexture: () => f,
                         children: () => i,
-                        displayStatus: () => B,
+                        displayStatus: () => C,
                         displayStatusIs: () => q,
-                        events: () => C,
+                        events: () => B,
                         extraSize: () => K,
                         forceTriggerMouseMove: () => V,
                         freezeTextureBeforeResize: () => M,
@@ -138,8 +138,8 @@
                 function d(u, e, t) {
                     return `url(${D(u, e, t)})`;
                 }
-                const B = { showing: 0, shown: 1, hiding: 2, hidden: 3 },
-                    C = {
+                const C = { showing: 0, shown: 1, hiding: 2, hidden: 3 },
+                    B = {
                         onTextureFrozen: o('self.onTextureFrozen'),
                         onTextureReady: o('self.onTextureReady'),
                         onDomBuilt: o('self.onDomBuilt'),
@@ -262,7 +262,7 @@
                 function j() {
                     return viewEnv.getShowingStatus();
                 }
-                const q = Object.keys(B).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === B[e]), u), {}),
+                const q = Object.keys(C).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === C[e]), u), {}),
                     K = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
@@ -273,7 +273,7 @@
                     },
                     z = Promise.all([
                         new Promise((u) => {
-                            window.isDomBuilt ? u() : C.onDomBuilt(u);
+                            window.isDomBuilt ? u() : B.onDomBuilt(u);
                         }),
                         engine.whenReady,
                     ]),
@@ -463,7 +463,7 @@
                 const __WEBPACK_DEFAULT_EXPORT__ = ViewModel;
             },
             364: (u, e, t) => {
-                t.d(e, { Sw: () => i.Z, B3: () => E, Z5: () => a, B0: () => s, ry: () => C });
+                t.d(e, { Sw: () => i.Z, B3: () => E, Z5: () => a, B0: () => s, ry: () => B });
                 class n {
                     constructor() {
                         ((this.entries = []),
@@ -544,8 +544,8 @@
                     }
                     o.done ? e(s) : Promise.resolve(s).then(n, r);
                 }
-                const B = (u) => ({ __Type: 'GFBoundingBox', x: u.x, y: u.y, width: u.width, height: u.height }),
-                    C = (function () {
+                const C = (u) => ({ __Type: 'GFBoundingBox', x: u.x, y: u.y, width: u.width, height: u.height }),
+                    B = (function () {
                         var u,
                             e =
                                 ((u = function* () {
@@ -626,7 +626,7 @@
                         RealFormatType: A,
                         TimeFormatType: F,
                         DateFormatType: l,
-                        makeGlobalBoundingBox: B,
+                        makeGlobalBoundingBox: C,
                         sendMoveEvent: (u) => m(s.MOVE, { isMouseEvent: !0, on: u }),
                         sendCloseEvent: g,
                         sendClosePopOverEvent: () => m(s.POP_OVER, { on: !1 }),
@@ -652,7 +652,7 @@
                                 decoratorID: n || R.invalid('resId'),
                                 targetID: r,
                                 direction: e,
-                                bbox: B(c),
+                                bbox: C(c),
                                 on: !0,
                                 args: i,
                             });
@@ -668,7 +668,7 @@
                             h(u, g);
                         },
                         handleViewEvent: m,
-                        onBindingsReady: C,
+                        onBindingsReady: B,
                         onLayoutReady: () =>
                             new Promise((u) => {
                                 requestAnimationFrame(() => {
@@ -797,8 +797,8 @@
                     _ = l.height,
                     D = Object.assign({ width: c, height: _ }, F(c, _, E)),
                     d = (0, n.createContext)(D),
-                    B = ['children'];
-                const C = (u) => {
+                    C = ['children'];
+                const B = (u) => {
                     let e = u.children,
                         t = (function (u, e) {
                             if (null == u) return {};
@@ -808,7 +808,7 @@
                                 i = Object.keys(u);
                             for (n = 0; n < i.length; n++) ((t = i[n]), e.indexOf(t) >= 0 || (r[t] = u[t]));
                             return r;
-                        })(u, B);
+                        })(u, C);
                     const r = (0, n.useContext)(d),
                         i = r.extraLarge,
                         a = r.large,
@@ -820,12 +820,12 @@
                         c = r.mediumWidth,
                         _ = r.smallWidth,
                         D = r.extraSmallWidth,
-                        C = r.extraLargeHeight,
+                        B = r.extraLargeHeight,
                         m = r.largeHeight,
                         g = r.mediumHeight,
                         h = r.smallHeight,
                         v = r.extraSmallHeight,
-                        w = { extraLarge: C, large: m, medium: g, small: h, extraSmall: v };
+                        w = { extraLarge: B, large: m, medium: g, small: h, extraSmall: v };
                     if (t.extraLarge || t.large || t.medium || t.small || t.extraSmall) {
                         if (t.extraLarge && i) return e;
                         if (t.large && a) return e;
@@ -841,7 +841,7 @@
                         if (
                             !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
                         ) {
-                            if (t.extraLargeHeight && C) return e;
+                            if (t.extraLargeHeight && B) return e;
                             if (t.largeHeight && m) return e;
                             if (t.mediumHeight && g) return e;
                             if (t.smallHeight && h) return e;
@@ -850,7 +850,7 @@
                     }
                     return null;
                 };
-                C.defaultProps = {
+                B.defaultProps = {
                     extraLarge: !1,
                     large: !1,
                     medium: !1,
@@ -867,7 +867,7 @@
                     smallHeight: !1,
                     extraSmallHeight: !1,
                 };
-                (0, n.memo)(C);
+                (0, n.memo)(B);
                 const m = (u) => {
                         const e = (0, n.useRef)(!1);
                         e.current || (u(), (e.current = !0));
@@ -1111,8 +1111,8 @@
                             _ = void 0 === c ? 0 : c,
                             D = u.isEnabled,
                             d = void 0 === D || D,
-                            B = u.targetId,
-                            C = void 0 === B ? 0 : B,
+                            C = u.targetId,
+                            B = void 0 === C ? 0 : C,
                             m = u.onShow,
                             g = u.onHide,
                             h = (function (u, e) {
@@ -1125,7 +1125,7 @@
                                 return r;
                             })(u, H);
                         const v = (0, n.useRef)({ timeoutId: 0, isVisible: !1, prevTarget: null, hideTimerId: null }),
-                            w = (0, n.useMemo)(() => C || p().resId, [C]),
+                            w = (0, n.useMemo)(() => B || p().resId, [B]),
                             b = (0, n.useCallback)(() => {
                                 (v.current.isVisible && v.current.timeoutId) ||
                                     (U(t, _, { isMouseEvent: !0, on: !0, arguments: W(r) }, w),
@@ -1324,15 +1324,17 @@
                     (function (u) {
                         ((u.Red = 'RedActionBG'), (u.Blue = 'BlueActionBG'));
                     })(nu || (nu = {})));
-                const ru = ({ format: u, value: e }) => {
-                        const t = ((u, e = 'integral') => {
-                            let t;
-                            t = 'gold' === e ? w.B3.GOLD : w.B3.INTEGRAL;
-                            return void 0 === u ? '' : w.Z5.getNumberFormat(u, t);
-                        })(e, u);
-                        return t ? r().createElement('span', null, t) : null;
-                    },
-                    iu = {
+                class ru extends r().PureComponent {
+                    render() {
+                        let u;
+                        if ('gold' === this.props.format) u = w.B3.GOLD;
+                        else u = w.B3.INTEGRAL;
+                        const e = w.Z5.getNumberFormat(this.props.value, u);
+                        return void 0 !== this.props.value && void 0 !== e ? e : null;
+                    }
+                }
+                ru.defaultProps = { format: 'integral' };
+                const iu = {
                         base: 'Currency_base_57',
                         icon: 'Currency_icon_c5',
                         base__small: 'Currency_base__small_af',
@@ -1452,8 +1454,8 @@
                         );
                     }),
                     du = 'DemountKitOption_base_80',
-                    Bu = 'DemountKitOption_storage_49',
-                    Cu = 'DemountKitOption_text_a2',
+                    Cu = 'DemountKitOption_storage_49',
+                    Bu = 'DemountKitOption_text_a2',
                     mu = 'DemountKitOption_text__disabled_53',
                     gu = 'DemountKitOption_icon_d9',
                     hu = ['text', 'storageCount', 'isDisabled'];
@@ -1484,7 +1486,7 @@
                                 for (n = 0; n < i.length; n++) ((t = i[n]), e.indexOf(t) >= 0 || (r[t] = u[t]));
                                 return r;
                             })(u, hu);
-                        const a = I()(Cu, n && mu);
+                        const a = I()(Bu, n && mu);
                         return r().createElement(
                             uu,
                             vu({ iconClassMix: gu, isDisabled: n }, i),
@@ -1493,7 +1495,7 @@
                                 { className: du },
                                 r().createElement(
                                     'div',
-                                    { className: Bu },
+                                    { className: Cu },
                                     r().createElement(Du, { value: t, isDisabled: n }),
                                 ),
                                 r().createElement('div', { className: a }, e),
