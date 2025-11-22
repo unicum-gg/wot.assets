@@ -256,6 +256,10 @@ body {
     overflow: hidden;
 }
 
+.mediaSmallHeight .SetupApp_base__padding_df {
+    padding-top: 78rem;
+}
+
 .SetupApp_close_da {
     position: absolute;
     top: 51rem;
@@ -299,6 +303,10 @@ body {
 .SetupApp_content__hidden_78 {
     opacity: 0;
     animation: SetupApp_hide-app_29 0.3s ease-in;
+}
+
+.SetupApp_content__padding_25 {
+    padding-top: 20rem;
 }
 
 .SetupApp_panel_42 {

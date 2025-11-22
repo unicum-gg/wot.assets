@@ -8,8 +8,8 @@
 }
 
 .Location_icon_7f {
-    width: 30rem;
-    height: 30rem;
+    width: 34rem;
+    height: 24rem;
     background: no-repeat center / contain;
 }
 
@@ -22,7 +22,7 @@
 }
 
 .Location_base__vehicle_a9 .Location_icon_7f {
-    background-image: url('R.images.gui.maps.icons.tanksetup.proposals.location.tank.png');
+    background-image: url('R.images.gui.maps.icons.tanksetup.proposals.location.tank');
 }
 
 .Location_count_45 {

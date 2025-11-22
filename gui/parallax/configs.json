@@ -125,6 +125,27 @@
     "chunkFileExt": ".dds"
   },
 
+  "7": {
+    "perspective": 3700,
+    "perspectiveOriginX": 50,
+    "perspectiveOriginY": 50,
+    "wrapperWidth": 400,
+    "wrapperHeight": 400,
+    "overallScale": 1,
+    "xTilt": 0,
+    "xTiltRange": 3,
+    "yTilt": 0,
+    "yTiltRange": 3,
+    "xSlide": 0.05,
+    "ySlide": 0.05,
+    "structurePath": "story_mode/gui/parallax/structureN9.json",
+    "chunkName": "parallaxN9-",
+    "chunksCount": 4,
+    "chunksDataDirPath": "story_mode/gui/parallax/",
+    "chunksAssetsPath": "img://story_mode/gui/maps/icons/parallax/",
+    "chunkFileExt": ".dds"
+  },
+
   "1002": {
     "perspective": 3700,
     "perspectiveOriginX": 50,
@@ -183,6 +204,48 @@
     "structurePath": "story_mode/gui/parallax/structureN8.json",
     "chunkName": "parallaxN8-",
     "chunksCount": 6,
+    "chunksDataDirPath": "story_mode/gui/parallax/",
+    "chunksAssetsPath": "img://story_mode/gui/maps/icons/parallax/",
+    "chunkFileExt": ".dds"
+  },
+
+  "1005": {
+    "perspective": 3700,
+    "perspectiveOriginX": 50,
+    "perspectiveOriginY": 50,
+    "wrapperWidth": 400,
+    "wrapperHeight": 400,
+    "overallScale": 1,
+    "xTilt": 0,
+    "xTiltRange": 3,
+    "yTilt": 0,
+    "yTiltRange": 3,
+    "xSlide": 0.05,
+    "ySlide": 0.05,
+    "structurePath": "story_mode/gui/parallax/structureN9.json",
+    "chunkName": "parallaxN9-",
+    "chunksCount": 4,
+    "chunksDataDirPath": "story_mode/gui/parallax/",
+    "chunksAssetsPath": "img://story_mode/gui/maps/icons/parallax/",
+    "chunkFileExt": ".dds"
+  },
+
+  "1006": {
+    "perspective": 3700,
+    "perspectiveOriginX": 50,
+    "perspectiveOriginY": 50,
+    "wrapperWidth": 400,
+    "wrapperHeight": 400,
+    "overallScale": 1,
+    "xTilt": 0,
+    "xTiltRange": 3,
+    "yTilt": 0,
+    "yTiltRange": 3,
+    "xSlide": 0.05,
+    "ySlide": 0.05,
+    "structurePath": "story_mode/gui/parallax/structureN10.json",
+    "chunkName": "parallaxN10-",
+    "chunksCount": 4,
     "chunksDataDirPath": "story_mode/gui/parallax/",
     "chunksAssetsPath": "img://story_mode/gui/maps/icons/parallax/",
     "chunkFileExt": ".dds"

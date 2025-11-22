@@ -25,11 +25,12 @@
     display: flex;
     width: 100%;
     height: 13rem;
+    visibility: hidden;
     position: relative;
 }
 
-.HorizontalBar_base__nonActive_82 {
-    visibility: hidden;
+.HorizontalBar_base__active_5e {
+    visibility: visible;
 }
 
 .HorizontalBar_base_49 .disable,
@@ -126,11 +127,12 @@
     flex-direction: column;
     width: 13rem;
     height: 100%;
+    visibility: hidden;
     position: relative;
 }
 
-.VerticalBar_base__nonActive_42 {
-    visibility: hidden;
+.VerticalBar_base__active_72 {
+    visibility: visible;
 }
 
 .VerticalBar_base_f3 .disable,
@@ -224,148 +226,6 @@
 
 .VerticalScroll_area_af {
     flex: 1;
-}
-
-.TextButton_base_b6 {
-    display: flex;
-    align-items: center;
-    padding: 0 3rem;
-    font-size: 12rem;
-    position: relative;
-    cursor: pointer;
-}
-
-.TextButton_base__right_39 {
-    flex-direction: row-reverse;
-}
-.TextButton_icon_17 {
-    width: 32rem;
-    height: 32rem;
-    background: no-repeat center / contain;
-    position: relative;
-}
-.TextButton_icon__back_43,
-.TextButton_icon__forward_59 {
-    margin: -1rem -5rem;
-    background-image: url('R.images.gui.maps.icons.components.text_button.back');
-    transform: translateY(1rem);
-}
-.TextButton_icon__forward_59 {
-    transform: rotate(180deg) translateY(1rem);
-}
-.TextButton_icon__close_53 {
-    margin: -1rem 0;
-    background-image: url('R.images.gui.maps.icons.components.text_button.close');
-}
-.TextButton_icon__info_33 {
-    margin: -1rem -5rem;
-    background-image: url('R.images.gui.maps.icons.components.text_button.info');
-}
-.TextButton_glow_a4 {
-    width: 100%;
-    height: 100%;
-    background: no-repeat center / contain;
-    opacity: 0;
-    position: absolute;
-    top: 0;
-    transition: opacity 0.16s;
-}
-.TextButton_icon__back_43 .TextButton_glow_a4,
-.TextButton_icon__forward_59 .TextButton_glow_a4 {
-    background-image: url('R.images.gui.maps.icons.components.text_button.back_hover');
-}
-.TextButton_icon__close_53 .TextButton_glow_a4 {
-    background-image: url('R.images.gui.maps.icons.components.text_button.close_hover');
-}
-.TextButton_icon__info_33 .TextButton_glow_a4 {
-    background-image: url('R.images.gui.maps.icons.components.text_button.info_hover');
-}
-.TextButton_base_b6:hover .TextButton_glow_a4 {
-    opacity: 1;
-}
-.TextButton_base_b6:active .TextButton_glow_a4 {
-    opacity: 0;
-}
-.TextButton_caption_82 {
-    position: relative;
-    transition:
-        color 0.16s,
-        text-shadow 0.16s;
-}
-.TextButton_caption__back_b9,
-.TextButton_caption__forward_4e,
-.TextButton_caption__close_36 {
-    color: #ffdd99;
-    text-shadow:
-        0 0 10rem rgba(255, 42, 0, 1),
-        0 0 10rem rgba(255, 42, 0, 0.4),
-        0 0 10rem rgba(255, 42, 0, 0.4),
-        0 0 2rem rgba(255, 42, 0, 0.4),
-        0 0 1rem rgba(255, 42, 0, 0.4),
-        0 0 2rem rgba(255, 42, 0, 0.4),
-        0 0 1rem rgba(255, 42, 0, 0.4);
-}
-.TextButton_base_b6:hover .TextButton_caption__back_b9,
-.TextButton_base_b6:hover .TextButton_caption__forward_4e,
-.TextButton_base_b6:hover .TextButton_caption__close_36 {
-    color: #fffa9f;
-}
-.TextButton_base_b6:active .TextButton_caption__back_b9,
-.TextButton_base_b6:active .TextButton_caption__forward_4e,
-.TextButton_base_b6:active .TextButton_caption__close_36 {
-    color: #ffdd99;
-}
-.TextButton_caption__info_23 {
-    padding: 0 5rem;
-    color: #ccffff;
-    text-shadow:
-        0 0 12rem rgba(31, 68, 255, 0.8),
-        0 0 8rem #00eaff;
-}
-.TextButton_base_b6:hover .TextButton_caption__info_23 {
-    color: #e3ffff;
-    text-shadow:
-        0 0 12rem rgba(31, 68, 255, 0.8),
-        0 0 12rem rgba(0, 234, 255, 1),
-        0 0 8rem #00eaff;
-}
-.TextButton_base_b6:active .TextButton_caption__info_23 {
-    color: #ccffff;
-    text-shadow:
-        0 0 12rem rgba(31, 68, 255, 0.6),
-        0 0 8rem #00eaff;
-}
-.TextButton_goto_e7 {
-    color: #7c7c6c;
-}
-.TextButton_base__left_ff .TextButton_goto_e7 {
-    margin-left: 8rem;
-}
-.TextButton_base__right_39 .TextButton_goto_e7 {
-    margin-right: 8rem;
-}
-.TextButton_shine_e2 {
-    width: 90rem;
-    height: 40rem;
-    background: url('R.images.gui.maps.icons.components.text_button.shine') no-repeat center / contain;
-    opacity: 0;
-    position: absolute;
-    top: -4rem;
-    transition: opacity 0.16s;
-    pointer-events: none;
-}
-.TextButton_base__left_ff .TextButton_shine_e2 {
-    left: -4rem;
-}
-.TextButton_base__right_39 .TextButton_shine_e2 {
-    right: -4rem;
-    transform: rotate(180deg);
-}
-.TextButton_base_b6:hover .TextButton_shine_e2 {
-    opacity: 1;
-}
-.TextButton_base_b6:active .TextButton_shine_e2 {
-    opacity: 0;
 }
 
 .FormatTextWithColorTags_blackReal_3c {
@@ -479,20 +339,6 @@
     overflow: hidden;
 }
 
-.App_infoButton_59,
-.App_closeButton_fa {
-    position: absolute;
-    top: 50rem;
-}
-
-.App_infoButton_59 {
-    left: 20rem;
-}
-
-.App_closeButton_fa {
-    right: 20rem;
-}
-
 .App_title_23 {
     color: #f2f2f7;
     font-size: 24rem;
@@ -500,7 +346,7 @@
     line-height: 1.2;
     display: flex;
     align-items: center;
-    margin-top: 40rem;
+    margin-top: calc(var(--external-padding-top) + 12rem);
     margin-bottom: 8rem;
 }
 
@@ -517,7 +363,7 @@
     font-size: 36rem;
     font-weight: 700;
     line-height: 1.1;
-    margin-top: 45rem;
+    margin-top: calc(var(--external-padding-top) + 15rem);
     margin-bottom: 16rem;
 }
 
@@ -526,7 +372,11 @@
     font-size: 56rem;
     font-weight: 700;
     line-height: 1.1;
-    margin-top: 65rem;
+    margin-top: calc(var(--external-padding-top) + 17rem);
+}
+
+.mediaExtraLarge .App_title_23 {
+    margin-top: calc(var(--external-padding-top) + 19rem);
 }
 
 .App_subTitle_1f {
@@ -591,7 +441,7 @@
     justify-content: space-between;
     flex: 1 1 0;
     width: 100%;
-    padding-bottom: 55rem;
+    padding-bottom: var(--external-padding-bottom);
 }
 
 .App_footer_f2 {
@@ -821,10 +671,8 @@
     position: relative;
 }
 .Currency_icon_c5 {
-    --icon-height: 16rem;
-    --icon-width: var(--icon-height);
-    width: var(--icon-width);
-    height: var(--icon-height);
+    width: 16rem;
+    height: 16rem;
     background-repeat: no-repeat;
     background-size: contain;
     position: relative;
@@ -843,7 +691,8 @@
     background-image: url('R.images.gui.maps.icons.library.CreditsIcon_1');
 }
 .Currency_icon__credits-large_ac {
-    --icon-height: 48rem;
+    width: 48rem;
+    height: 48rem;
     margin-left: -1rem;
     background-image: url('R.images.gui.maps.shop.rewards.c_48x48.money_silver');
 }
@@ -851,7 +700,8 @@
     transform: translateY(4rem);
 }
 .Currency_icon__credits-extraLarge_16 {
-    --icon-height: 80rem;
+    width: 80rem;
+    height: 80rem;
     margin-right: -2rem;
     background-image: url('R.images.gui.maps.icons.library.credits_icon_80x80');
 }
@@ -868,7 +718,8 @@
     transform: translateY(4rem);
 }
 .Currency_icon__gold-large_36 {
-    --icon-height: 48rem;
+    width: 48rem;
+    height: 48rem;
     margin-left: -1rem;
     background-image: url('R.images.gui.maps.shop.rewards.c_48x48.money_gold');
 }
@@ -876,7 +727,8 @@
     transform: translateY(4rem);
 }
 .Currency_icon__gold-extraLarge_a0 {
-    --icon-height: 80rem;
+    width: 80rem;
+    height: 80rem;
     background-image: url('R.images.gui.maps.icons.library.gold_icon_80x80');
 }
 .Currency_icon__crystal-small_27 {
@@ -886,20 +738,22 @@
     transform: translateY(2rem);
 }
 .Currency_icon__crystal-big_cd {
-    --icon-height: 22rem;
-    --icon-width: 23rem;
+    width: 23rem;
+    height: 22rem;
     background-image: url('R.images.gui.maps.icons.library.crystal_23x22');
 }
 .Currency_base__big_bc .Currency_icon__crystal-big_cd {
     transform: translateY(4rem);
 }
 .Currency_icon__crystal-large_d3 {
-    --icon-height: 48rem;
+    width: 48rem;
+    height: 48rem;
     margin-left: -1rem;
     background-image: url('R.images.gui.maps.shop.rewards.c_48x48.money_bonds');
 }
 .Currency_icon__crystal-extraLarge_09 {
-    --icon-height: 80rem;
+    width: 80rem;
+    height: 80rem;
     background-image: url('R.images.gui.maps.icons.library.crystal_80x80');
 }
 .Currency_base__extraLarge_4d .Currency_icon__crystal-extraLarge_09 {
@@ -912,8 +766,8 @@
     transform: translateY(1rem);
 }
 .Currency_icon__xp-big_97 {
-    --icon-height: 22rem;
-    --icon-width: 23rem;
+    width: 23rem;
+    height: 22rem;
     margin-left: -5rem;
     background-image: url('R.images.gui.maps.icons.library.xpIcon_23x22');
 }
@@ -921,12 +775,14 @@
     transform: translateY(2rem);
 }
 .Currency_icon__xp-large_6b {
-    --icon-height: 48rem;
+    width: 48rem;
+    height: 48rem;
     margin: 0 -5rem 0 -6rem;
     background-image: url('R.images.gui.maps.shop.rewards.c_48x48.exp');
 }
 .Currency_icon__xp-extraLarge_67 {
-    --icon-height: 80rem;
+    width: 80rem;
+    height: 80rem;
     margin: 0 -5rem;
     background-image: url('R.images.gui.maps.icons.library.xp_tank_icon_80x80');
 }
@@ -937,17 +793,20 @@
     transform: translateY(1rem);
 }
 .Currency_icon__freeXP-big_21 {
-    --icon-height: 24rem;
+    width: 24rem;
+    height: 24rem;
     margin-left: -5rem;
     background-image: url('R.images.gui.maps.icons.library.freeXPIconBig24x24');
 }
 .Currency_icon__freeXP-large_c8 {
-    --icon-height: 48rem;
+    width: 48rem;
+    height: 48rem;
     margin: 0 -5rem 0 -6rem;
     background-image: url('R.images.gui.maps.shop.rewards.c_48x48.freeExp');
 }
 .Currency_icon__freeXP-extraLarge_58 {
-    --icon-height: 80rem;
+    width: 80rem;
+    height: 80rem;
     margin: 0 -5rem;
     background-image: url('R.images.gui.maps.icons.library.free_xp_icon_80x80');
 }
@@ -961,17 +820,20 @@
     transform: translateY(1rem);
 }
 .Currency_icon__eliteXP-big_c0 {
-    --icon-height: 24rem;
+    width: 24rem;
+    height: 24rem;
     margin-left: -5rem;
     background-image: url('R.images.gui.maps.icons.library.EliteXpIconBig');
 }
 .Currency_icon__eliteXP-large_1b {
-    --icon-height: 48rem;
+    width: 48rem;
+    height: 48rem;
     margin: 0 -5rem 0 -6rem;
     background-image: url('R.images.gui.maps.icons.library.elite_exp_48x48');
 }
 .Currency_icon__eliteXP-extraLarge_9b {
-    --icon-height: 80rem;
+    width: 80rem;
+    height: 80rem;
     margin: 0 -5rem;
     background-image: url('R.images.gui.maps.icons.library.elite_exp_80x80');
 }
@@ -979,7 +841,8 @@
     transform: translateY(4rem);
 }
 .Currency_icon__equipCoin-small_32 {
-    --icon-height: 16rem;
+    width: 16rem;
+    height: 16rem;
     margin-right: -2rem;
     background-image: url('R.images.gui.maps.icons.library.equipCoin_1');
 }
@@ -987,19 +850,22 @@
     transform: translateX(-1rem) translateY(1rem);
 }
 .Currency_icon__equipCoin-big_79 {
-    --icon-height: 24rem;
+    width: 24rem;
+    height: 24rem;
     background-image: url('R.images.gui.maps.icons.library.equipCoinBig');
 }
 .Currency_base__big_bc .Currency_icon__equipCoin-big_79 {
     transform: translateX(-5rem) translateY(3rem);
 }
 .Currency_icon__equipCoin-large_2c {
-    --icon-height: 48rem;
+    width: 48rem;
+    height: 48rem;
     margin-right: 2rem;
     background-image: url('R.images.gui.maps.shop.rewards.c_48x48.equipCoin');
 }
 .Currency_icon__equipCoin-extraLarge_8a {
-    --icon-height: 80rem;
+    width: 80rem;
+    height: 80rem;
     margin-right: 8rem;
     background-image: url('R.images.gui.maps.icons.library.equipCoin_icon_80x80');
 }
@@ -1009,8 +875,7 @@
 .Currency_value_e1 {
     /* font-size inherit does not work here, so 1em means the size does not change */
     /* stylelint-disable-next-line */
-    --font-size: 1em;
-    font-size: var(--font-size);
+    font-size: 1em;
     position: relative;
     z-index: 2;
 }
@@ -1018,22 +883,22 @@
     padding-right: 2rem;
 }
 .Currency_base__big_bc .Currency_value_e1 {
-    --font-size: 24rem;
     padding-right: 5rem;
+    font-size: 24rem;
     font-weight: 700;
 }
 .Currency_base__big_bc .Currency_value_e1 + .Currency_icon_c5 {
     font-size: 24rem;
 }
 .Currency_base__large_65 .Currency_value_e1 {
-    --font-size: 36rem;
+    font-size: 36rem;
     font-weight: 700;
 }
 .Currency_base__large_65 .Currency_value_e1 + .Currency_icon_c5 {
     font-size: 36rem;
 }
 .Currency_base__extraLarge_4d .Currency_value_e1 {
-    --font-size: 56rem;
+    font-size: 56rem;
     font-weight: 700;
 }
 .Currency_value__freeXP_cb {

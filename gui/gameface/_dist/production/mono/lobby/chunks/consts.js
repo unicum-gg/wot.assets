@@ -1,0 +1,8 @@
+import { j as o } from './vendor.js';
+import { d3 as a, cY as t } from './lib.js';
+function i(i) {
+    return o.jsx(a, { theme: t, ...i });
+}
+const r = { from: { opacity: 0 }, to: { opacity: 1 }, delay: 300, config: { duration: 300 } },
+    s = { from: { opacity: 0 }, to: { opacity: 1 }, delay: 100, config: { duration: 300 } };
+export { s as I, i as P, r as a };

@@ -3093,7 +3093,7 @@
         9769: (e, t, n) => {
             'use strict';
             n.d(t, { A: () => r });
-            const r = /^(2(25|6|87)|7(23|45|54|61|95)|8(03|26|33|84)|130|197|301|376|490|553|975)$/.test(n.j)
+            const r = /^(2(25|6|87)|7(23|36|45|54|61|95)|8(03|26|33|84)|130|197|301|376|434|490|553|975)$/.test(n.j)
                 ? null
                 : [
                       0, 128, 256, 384, 592, 688, 768, 880, 1024, 1280, 1328, 1424, 1536, 1792, 1872, 1920, 1984, 2048,
@@ -3127,8 +3127,7 @@
         },
         1281: (e, t, n) => {
             'use strict';
-            n.d(t, { D4: () => S });
-            var r = n(9769);
+            if ((n.d(t, { D4: () => S }), !/^(434|736)$/.test(n.j))) var r = n(9769);
             const i = {
                 'BB2:108120': 1817,
                 'BP2:OO': 790,
@@ -3615,7 +3614,7 @@
                 'UW1:く': 13,
                 'UW4:私': 12,
             };
-            var o = n(6906);
+            if (!/^(434|736)$/.test(n.j)) var o = n(6906);
             function s(e, t) {
                 var n = ('undefined' != typeof Symbol && e[Symbol.iterator]) || e['@@iterator'];
                 if (n) return (n = n.call(e)).next.bind(n);
@@ -3867,7 +3866,7 @@
                         e.head.appendChild(n));
                 }
             }
-            var g = n(3759);
+            if (!/^(434|736)$/.test(n.j)) var g = n(3759);
             function y(e, t) {
                 var n = ('undefined' != typeof Symbol && e[Symbol.iterator]) || e['@@iterator'];
                 if (n) return (n = n.call(e)).next.bind(n);

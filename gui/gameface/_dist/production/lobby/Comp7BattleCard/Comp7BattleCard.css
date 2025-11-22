@@ -458,86 +458,6 @@
     position: absolute;
 }
 
-.Performance_base_fd {
-    margin-top: 12rem;
-    padding: 0 8rem;
-    pointer-events: auto;
-}
-
-.Performance_base__b2_73 {
-    margin-top: 3rem;
-}
-
-.mediaLarge .Performance_base__b2_73 {
-    margin-top: 10rem;
-}
-
-.Performance_text_2f {
-    display: flex;
-    justify-content: center;
-    max-height: 40rem;
-}
-
-.Performance_base__mediumRisk_ad .Performance_text_2f {
-    color: #ee7000;
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
-}
-
-.Performance_base__highRisk_ab .Performance_text_2f {
-    color: #ff2717;
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
-}
-
-.Performance_base__b2_73 .Performance_text_2f {
-    max-height: 20rem;
-}
-
-.Performance_icon_69 {
-    width: 16rem;
-    height: 16rem;
-    margin-top: 2rem;
-    background: no-repeat 50% / contain;
-}
-
-.Performance_base__mediumRisk_ad .Performance_icon_69 {
-    background-image: url('R.images.gui.maps.icons.library.alertIcon');
-}
-
-.Performance_base__highRisk_ab .Performance_icon_69 {
-    background-image: url('R.images.gui.maps.icons.library.CancelIcon_1');
-}
-
-.Performance_iconBig_d5 {
-    width: 24rem;
-    height: 24rem;
-    background: no-repeat left / contain;
-    position: absolute;
-    bottom: 6rem;
-    left: 6rem;
-}
-
-.Performance_iconBig__mediumRisk_59 {
-    background-image: url('R.images.gui.maps.icons.library.alertBigIcon');
-}
-
-.Performance_iconBig__highRisk_5a {
-    background-image: url('R.images.gui.maps.icons.library.CancelBigIcon');
-}
-
-.mediaMedium .Performance_iconBig_d5 {
-    bottom: 9rem;
-    left: 11rem;
-}
-
-.mediaLarge .Performance_iconBig_d5 {
-    bottom: 9rem;
-    left: 11rem;
-}
-
 .ExtendedText_base_71 {
     display: flex;
     line-height: 1.2;
@@ -720,6 +640,87 @@
     overflow-wrap: normal;
 }
 
+.Performance_base_fd {
+    margin-top: 12rem;
+    padding: 0 8rem;
+    pointer-events: auto;
+}
+
+.Performance_base__b2_73 {
+    margin-top: -2rem;
+}
+
+.mediaLarge .Performance_base__b2_73 {
+    margin-top: 3rem;
+}
+
+.Performance_text_2f {
+    display: flex;
+    justify-content: center;
+    max-height: 40rem;
+}
+
+.Performance_base__mediumRisk_ad .Performance_text_2f {
+    color: #ee7000;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+.Performance_base__highRisk_ab .Performance_text_2f {
+    color: #ff2717;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+.Performance_base__b2_73 .Performance_text_2f {
+    max-height: 20rem;
+    font-size: 12rem;
+}
+
+.Performance_icon_69 {
+    width: 16rem;
+    height: 16rem;
+    margin-top: 2rem;
+    background: no-repeat 50% / contain;
+}
+
+.Performance_base__mediumRisk_ad .Performance_icon_69 {
+    background-image: url('R.images.gui.maps.icons.library.alertIcon');
+}
+
+.Performance_base__highRisk_ab .Performance_icon_69 {
+    background-image: url('R.images.gui.maps.icons.library.CancelIcon_1');
+}
+
+.Performance_iconBig_d5 {
+    width: 24rem;
+    height: 24rem;
+    background: no-repeat left / contain;
+    position: absolute;
+    bottom: 6rem;
+    left: 6rem;
+}
+
+.Performance_iconBig__mediumRisk_59 {
+    background-image: url('R.images.gui.maps.icons.library.alertBigIcon');
+}
+
+.Performance_iconBig__highRisk_5a {
+    background-image: url('R.images.gui.maps.icons.library.CancelBigIcon');
+}
+
+.mediaMedium .Performance_iconBig_d5 {
+    bottom: 9rem;
+    left: 11rem;
+}
+
+.mediaLarge .Performance_iconBig_d5 {
+    bottom: 9rem;
+    left: 11rem;
+}
+
 .TimeLeft_base_cf {
     color: #e9e2bf;
     font-size: 14rem;
@@ -813,7 +814,7 @@
     display: flex;
     align-items: center;
     position: absolute;
-    top: -8rem;
+    top: -5rem;
 }
 
 .Reward_vehicleType_fa {
@@ -2012,11 +2013,11 @@
 /* stylelint-disable-line */
 .ProgressBar_base_45 {
     width: 100%;
-    height: 12rem;
+    height: var(--progress-bg-height);
     position: relative;
 }
 .ProgressBar_base__small_df {
-    height: 2rem;
+    height: var(--progress-bg-height-small);
 }
 .ProgressBar_background_51 {
     width: 100%;
@@ -2025,13 +2026,13 @@
     background-image: var(--progress-base);
     background-repeat: repeat;
     background-position: 0 50%;
-    background-size: 3rem 10rem;
+    background-size: var(--progress-pattern-size);
     position: absolute;
     top: 0;
     left: 0;
 }
 .ProgressBar_background__small_46 {
-    height: 2rem;
+    height: var(--progress-bg-height-small);
 }
 .ProgressBar_lineWrapper_6a {
     display: flex;
@@ -2039,11 +2040,11 @@
 }
 
 .ProgressBarBlink_base_24 {
-    width: 60rem;
-    height: 100rem;
+    width: var(--progress-glow-width);
+    height: var(--progress-glow-height);
     background-image: var(--progress-glow);
     background-size: contain;
-    mix-blend-mode: lighten;
+    mix-blend-mode: var(--progress-glow-mixBlendMode);
     position: absolute;
     top: 50%;
     right: 0;
@@ -2052,33 +2053,9 @@
 }
 
 .ProgressBarBlink_base__small_0f {
-    width: 44rem;
-    height: 43rem;
+    width: var(--progress-glow-small-width);
+    height: var(--progress-glow-small-height);
     background-image: var(--progress-glow-small);
-}
-
-/*
-    Gameface can't calculate gradient biggest than 8128px
-    in JS 8000 reserved like anchor for start optimization
-*/
-/* stylelint-disable-line */
-.ProgressBarDeltaSimple_base_6c {
-    width: 0;
-    height: 100%;
-    position: absolute;
-    top: 0;
-}
-.ProgressBarDeltaSimple_delta_99 {
-    width: 0;
-    max-width: 8001px;
-    height: 100%;
-    box-shadow: var(--progress-delta-shadow);
-    background-color: var(--progress-delta-color);
-    position: absolute;
-    bottom: 0;
-    transform-origin: right center;
-    transition-timing-function: cubic-bezier(1, 0, 0.92, 1), cubic-bezier(0.21, 0.61, 0.35, 1);
-    transition-property: width, transform;
 }
 
 /*
@@ -2090,6 +2067,7 @@
     max-width: 8001px;
     height: 100%;
     background-color: var(--progress-line-base);
+    filter: var(--progress-line-filter);
     position: relative;
     transition-timing-function: cubic-bezier(1, 0, 0.92, 1);
     transition-property: width;
@@ -2108,12 +2086,12 @@
     background-image: var(--progress-pattern-base);
     background-repeat: repeat;
     background-position: 0 50%;
-    background-size: 3rem 10rem;
+    background-size: var(--progress-pattern-size);
     position: absolute;
-    top: 1rem;
-    right: 1rem;
-    bottom: 1rem;
-    left: 1rem;
+    top: var(--progress-pattern-border-size);
+    right: var(--progress-pattern-border-size);
+    bottom: var(--progress-pattern-border-size);
+    left: var(--progress-pattern-border-size);
 }
 .ProgressLineImpose_base__small_55 .ProgressLineImpose_pattern_1c {
     top: 0;
@@ -2128,12 +2106,12 @@
 }
 .ProgressLineImpose_gradient_35 {
     max-width: 8001px;
-    background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.75));
-    mix-blend-mode: overlay;
+    background-image: var(--progress-pattern-gradient);
+    mix-blend-mode: var(--progress-pattern-gradient-mixBlendMode);
     position: absolute;
-    top: 1rem;
+    top: var(--progress-pattern-border-size);
     right: 0;
-    bottom: 1rem;
+    bottom: var(--progress-pattern-border-size);
     left: 0;
 }
 .ProgressLineImpose_base__small_55 .ProgressLineImpose_gradient_35 {
@@ -2144,15 +2122,15 @@
     display: none;
 }
 .ProgressLineImpose_base__finished_d4 .ProgressLineImpose_gradient_35 {
-    background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.75), rgba(0, 0, 0, 0.5));
+    background-image: var(--progress-pattern-gradient-finished);
 }
 .ProgressLineImpose_glow_a5 {
-    width: 60rem;
+    width: var(--progress-glow-width);
     max-width: 8001px;
-    height: 100rem;
+    height: var(--progress-glow-height);
     background-image: var(--progress-glow);
     background-size: contain;
-    mix-blend-mode: lighten;
+    mix-blend-mode: var(--progress-glow-mixBlendMode);
     position: absolute;
     top: 50%;
     left: 100%;
@@ -2160,15 +2138,15 @@
     pointer-events: none;
 }
 .ProgressLineImpose_glow__left_d8 {
-    left: 1rem;
+    left: var(--progress-pattern-border-size);
 }
 .ProgressLineImpose_base__disabled_cc .ProgressLineImpose_glow_a5,
 .ProgressLineImpose_base__finished_d4 .ProgressLineImpose_glow_a5 {
     display: none;
 }
 .ProgressLineImpose_base__small_55 .ProgressLineImpose_glow_a5 {
-    width: 44rem;
-    height: 43rem;
+    width: var(--progress-glow-small-width);
+    height: var(--progress-glow-small-height);
     background-image: var(--progress-glow-small);
 }
 
@@ -2204,7 +2182,30 @@
     transition-timing-function: cubic-bezier(1, 0, 0.75, 0.75);
 }
 
-/* should be percentage of screen width */
+/*
+    Gameface can't calculate gradient biggest than 8128px
+    in JS 8000 reserved like anchor for start optimization
+*/
+/* stylelint-disable-line */
+.ProgressBarDeltaSimple_base_6c {
+    width: 0;
+    height: 100%;
+    position: absolute;
+    top: 0;
+}
+.ProgressBarDeltaSimple_delta_99 {
+    width: 0;
+    max-width: 8001px;
+    height: 100%;
+    box-shadow: var(--progress-delta-shadow);
+    background-color: var(--progress-delta-color);
+    position: absolute;
+    bottom: 0;
+    transform-origin: right center;
+    transition-timing-function: cubic-bezier(1, 0, 0.92, 1), cubic-bezier(0.21, 0.61, 0.35, 1);
+    transition-property: width, transform;
+}
+
 .Progress_base_ef {
     width: 86rem;
 }
@@ -2349,7 +2350,6 @@
     color: #8c8c7e;
 }
 
-/* should be percentage of screen width */
 .QualificationCounter_base_0f {
     display: flex;
     flex-direction: row;
@@ -2389,24 +2389,12 @@
     transform: translateY(-1rem);
 }
 
-/* should be percentage of screen width */
 .Warning_base_28 {
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 12rem;
     position: relative;
-}
-.Warning_lighting_17 {
-    width: 111rem;
-    height: 58rem;
-    background: url('R.images.comp7.gui.maps.icons.icons.lighting') no-repeat center / cover;
-    opacity: 0.6;
-    position: absolute;
-    top: -12rem;
-    right: 50%;
-    transform: translateX(55rem);
-    pointer-events: none;
 }
 .Warning_value_38 {
     color: #ffdd99;
@@ -2415,7 +2403,7 @@
         0 0 8rem #ff2a00,
         0 0 15rem #e52;
 }
-.Warning_base__text_7e .Warning_value_38 {
+.Warning_base__warn_8b .Warning_value_38 {
     color: #ff2717;
     text-shadow: 0 0 14rem #f00;
 }
@@ -2425,6 +2413,20 @@
     margin: 0 -10rem -2rem -5rem;
     background: url('R.images.comp7.gui.maps.icons.icons.timer') no-repeat center / cover;
     position: relative;
+}
+.Warning_lighting_17 {
+    width: 111rem;
+    height: 58rem;
+    background: url('R.images.comp7.gui.maps.icons.icons.lighting') no-repeat center / cover;
+    opacity: 0;
+    position: absolute;
+    top: -12rem;
+    right: 50%;
+    transform: translateX(55rem);
+    pointer-events: none;
+}
+.Warning_base__warn_8b .Warning_lighting_17 {
+    opacity: 0.6;
 }
 
 .Progression_base_88 {
@@ -2438,6 +2440,7 @@
 
 .Progression_warning_21 {
     margin-top: -5rem;
+    pointer-events: auto;
 }
 
 .Progression_battlesCounter__b0_e6,

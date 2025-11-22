@@ -27,7 +27,7 @@
                     return this.payload || [];
                 }
             }
-            class c extends l {
+            class c extends (877 == n.j ? l : null) {
                 constructor(e) {
                     (super(),
                         (this.done = !0),
@@ -67,7 +67,7 @@
                             (this.v0 = null)));
                 }
             }
-            class h extends c {
+            class h extends (877 == n.j ? c : null) {
                 constructor(e) {
                     (super(0),
                         (this._string = null),
@@ -98,7 +98,7 @@
                 }
             }
             const d = { dependencies: null };
-            class f extends l {
+            class f extends (877 == n.j ? l : null) {
                 constructor(e) {
                     (super(), (this.source = e), this.setValue(e));
                 }
@@ -134,7 +134,7 @@
                     t && (0, r.S6)(t, (e) => this.add(e));
                 }
             }
-            class p extends f {
+            class p extends (877 == n.j ? f : null) {
                 constructor(e) {
                     super(e);
                 }
@@ -347,7 +347,7 @@
                     }
                     return i;
                 },
-                g = ['config', 'onProps', 'onStart', 'onChange', 'onPause', 'onResume', 'onRest'],
+                g = 877 == n.j ? ['config', 'onProps', 'onStart', 'onChange', 'onPause', 'onResume', 'onRest'] : null,
                 b = {
                     config: 1,
                     from: 1,
@@ -454,8 +454,8 @@
                         n && (e.frequency = void 0));
                 } else e.duration = void 0;
             }
-            const T = [];
-            class P {
+            const T = 877 == n.j ? [] : null;
+            class j {
                 constructor() {
                     ((this.changed = !1),
                         (this.values = T),
@@ -467,7 +467,7 @@
                         (this.immediate = !1));
                 }
             }
-            function j(e, { key: t, props: n, defaultProps: i, state: o, actions: s }) {
+            function P(e, { key: t, props: n, defaultProps: i, state: o, actions: s }) {
                 return new Promise((a, u) => {
                     var l;
                     let f,
@@ -653,12 +653,12 @@
                 G = (e) => (4 & e[q]) > 0,
                 z = (e, t) => (t ? (e[q] |= 3) : (e[q] &= -3)),
                 $ = (e, t) => (t ? (e[q] |= 4) : (e[q] &= -5));
-            class K extends M {
+            class K extends (877 == n.j ? M : null) {
                 constructor(e, t) {
                     if (
                         (super(),
                         (this.key = void 0),
-                        (this.animation = new P()),
+                        (this.animation = new j()),
                         (this.queue = void 0),
                         (this.defaultProps = {}),
                         (this._state = {
@@ -867,7 +867,7 @@
                             'Cannot animate a `SpringValue` object that is frozen. Did you forget to pass your component to `animated(...)` before animating its props?',
                         );
                     const a = this._state;
-                    return j(++this._lastCallId, {
+                    return P(++this._lastCallId, {
                         key: i,
                         props: n,
                         defaultProps: o,
@@ -924,7 +924,7 @@
                     const W = O(t.to),
                         S = l.config,
                         T = S.decay,
-                        P = S.velocity;
+                        j = S.velocity;
                     ((i || s) && (S.velocity = 0),
                         t.config &&
                             !W &&
@@ -940,8 +940,8 @@
                                     (e.tension = Math.pow((2 * Math.PI) / o, 2) * i),
                                     (e.friction = (4 * Math.PI * s * i) / o));
                             })(S, h(t.config, a), t.config !== u.config ? h(u.config, a) : void 0));
-                    let j = (0, o.ys)(this);
-                    if (!j || r.is.und(_)) return n(E(this, !0));
+                    let P = (0, o.ys)(this);
+                    if (!P || r.is.und(_)) return n(E(this, !0));
                     const x = r.is.und(t.reset) ? s && !t.default : !r.is.und(b) && d(t.reset, a),
                         V = x ? b : this.get(),
                         I = m(_),
@@ -949,28 +949,28 @@
                         D = !W && (!N || d(u.immediate || t.immediate, a));
                     if (U) {
                         const e = (0, o.sb)(_);
-                        if (e !== j.constructor) {
+                        if (e !== P.constructor) {
                             if (!D)
                                 throw Error(
-                                    `Cannot animate between ${j.constructor.name} and ${e.name}, as the "to" prop suggests`,
+                                    `Cannot animate between ${P.constructor.name} and ${e.name}, as the "to" prop suggests`,
                                 );
-                            j = this._set(I);
+                            P = this._set(I);
                         }
                     }
-                    const L = j.constructor;
+                    const L = P.constructor;
                     let M = (0, r.j$)(_),
                         q = !1;
                     if (!M) {
                         const e = x || (!Q(this) && w);
                         ((U || e) && ((q = (0, r.Xy)(m(V), I)), (M = !q)),
-                            (((0, r.Xy)(l.immediate, D) || D) && (0, r.Xy)(S.decay, T) && (0, r.Xy)(S.velocity, P)) ||
+                            (((0, r.Xy)(l.immediate, D) || D) && (0, r.Xy)(S.decay, T) && (0, r.Xy)(S.velocity, j)) ||
                                 (M = !0));
                     }
                     if (
                         (q && F(this) && (l.changed && !x ? (M = !0) : M || this._stop(f)),
                         !W &&
                             ((M || (0, r.j$)(f)) &&
-                                ((l.values = j.getPayload()),
+                                ((l.values = P.getPayload()),
                                 (l.toValues = (0, r.j$)(_) ? null : L == o.eC ? [1] : (0, r.qo)(I))),
                             l.immediate != D && ((l.immediate = D), D || x || this._set(f)),
                             M))
@@ -1099,7 +1099,7 @@
             function Z(e, t) {
                 (0, r.rU)(e, (e, n) => null != e && t.add(n));
             }
-            const ee = ['onStart', 'onRest', 'onChange', 'onPause', 'onResume'];
+            const ee = 877 == n.j ? ['onStart', 'onRest', 'onChange', 'onPause', 'onResume'] : null;
             function te(e, t, n) {
                 e.animation[n] = t[n] !== p(t, n) ? f(t[n], e.key) : void 0;
             }
@@ -1108,7 +1108,7 @@
                 (null == (r = (i = e.animation)[t]) || r.call(i, ...n),
                     null == (o = (s = e.defaultProps)[t]) || o.call(s, ...n));
             }
-            const re = ['onStart', 'onChange', 'onRest'];
+            const re = 877 == n.j ? ['onStart', 'onChange', 'onRest'] : null;
             let ie = 1;
             class oe {
                 constructor(e, t) {
@@ -1264,7 +1264,7 @@
                             v = !0 === t.cancel || !0 === p(t, 'cancel');
                         ((h || (v && d.asyncId)) &&
                             f.push(
-                                j(++e._lastAsyncId, {
+                                P(++e._lastAsyncId, {
                                     props: t,
                                     state: d,
                                     actions: {
@@ -1574,14 +1574,14 @@
                 k0: () => be,
                 O9: () => z,
                 mD: () => he,
-                qS: () => je,
+                qS: () => Pe,
                 dE: () => U,
                 ZR: () => Ve,
                 LW: () => Ce,
                 S6: () => S,
                 rU: () => A,
-                yl: () => P,
-                bl: () => j,
+                yl: () => j,
+                bl: () => P,
                 fT: () => M,
                 Ll: () => ge,
                 je: () => _e,
@@ -1739,13 +1739,13 @@
                 else for (const r in e) e.hasOwnProperty(r) && t.call(n, e[r], r);
             }
             const T = (e) => (W.und(e) ? [] : W.arr(e) ? e : [e]);
-            function P(e, t) {
+            function j(e, t) {
                 if (e.size) {
                     const n = Array.from(e);
                     (e.clear(), S(n, t));
                 }
             }
-            const j = (e, ...t) => P(e, (e) => e(...t));
+            const P = (e, ...t) => j(e, (e) => e(...t));
             let x,
                 k,
                 E = null,
@@ -2144,8 +2144,8 @@
                 Se = new RegExp(`(${We.source})(%|[a-z]+)`, 'i');
             let Ae;
             const Te = /rgba\(([0-9\.-]+), ([0-9\.-]+), ([0-9\.-]+), ([0-9\.-]+)\)/gi,
-                Pe = (e, t, n, r, i) => `rgba(${Math.round(t)}, ${Math.round(n)}, ${Math.round(r)}, ${i})`,
-                je = (e) => {
+                je = (e, t, n, r, i) => `rgba(${Math.round(t)}, ${Math.round(n)}, ${Math.round(r)}, ${i})`,
+                Pe = (e) => {
                     Ae || (Ae = E ? new RegExp(`(${Object.keys(E).join('|')})(?!\\w)`, 'g') : /^\b$/);
                     const t = e.output.map((e) => _e(e).replace(Be, ce).replace(Ae, ce)),
                         n = t.map((e) => e.match(We).map(Number)),
@@ -2162,7 +2162,7 @@
                         const i =
                             !Se.test(t[0]) && (null == (n = t.find((e) => Se.test(e))) ? void 0 : n.replace(We, ''));
                         let o = 0;
-                        return t[0].replace(We, () => `${r[o++](e)}${i || ''}`).replace(Te, Pe);
+                        return t[0].replace(We, () => `${r[o++](e)}${i || ''}`).replace(Te, je);
                     };
                 },
                 xe = 'react-spring: ',
@@ -4451,8 +4451,8 @@
         174: (e, t, n) => {
             'use strict';
             n.d(t, {
-                Ei: () => jn,
-                Fl: () => Pe,
+                Ei: () => Pn,
+                Fl: () => je,
                 Gf: () => Qt,
                 LG: () => kt,
                 LJ: () => In,
@@ -4464,7 +4464,7 @@
                 SW: () => He,
                 U5: () => Vt,
                 XP: () => rn,
-                aD: () => Pt,
+                aD: () => jt,
                 dw: () => qt,
                 eJ: () => en,
                 jQ: () => Mt,
@@ -4575,10 +4575,10 @@
                             return Object.getOwnPropertyNames(e).concat(Object.getOwnPropertySymbols(e));
                         }
                       : Object.getOwnPropertyNames;
-            function P(e) {
+            function j(e) {
                 return null === e ? null : 'object' == typeof e ? '' + e : e;
             }
-            function j(e, t) {
+            function P(e, t) {
                 return l.hasOwnProperty.call(e, t);
             }
             var x =
@@ -4670,7 +4670,7 @@
                 }, e);
             }
             function M(e, t, n) {
-                (j(e, D) || O(e, D, C({}, e[D])),
+                (P(e, D) || O(e, D, C({}, e[D])),
                     (function (e) {
                         return e.annotationType_ === H;
                     })(n) || (e[D][t] = n));
@@ -4752,7 +4752,7 @@
                               ? e
                               : w(e)
                                 ? Ht(e)
-                                : jt(n, e);
+                                : Pt(n, e);
             }
             function K(e) {
                 return e;
@@ -4866,7 +4866,7 @@
             }
             function de(e, t, n, r) {
                 var i, o, s, a;
-                if (n.get) return Pe.make_(e, t, n, r);
+                if (n.get) return je.make_(e, t, n, r);
                 if (n.set) {
                     var l = Re(t.toString(), n.set);
                     return r === e.target_
@@ -4879,7 +4879,7 @@
                 if (r !== e.target_ && 'function' == typeof n.value)
                     return w(n.value)
                         ? ((null == (a = this.options_) ? void 0 : a.autoBind) ? Ht.bound : Ht).make_(e, t, n, r)
-                        : ((null == (s = this.options_) ? void 0 : s.autoBind) ? jt.bound : jt).make_(e, t, n, r);
+                        : ((null == (s = this.options_) ? void 0 : s.autoBind) ? Pt.bound : Pt).make_(e, t, n, r);
                 var c,
                     h = !1 === (null == (i = this.options_) ? void 0 : i.deep) ? Be.ref : Be;
                 'function' == typeof n.value &&
@@ -4889,7 +4889,7 @@
             }
             function fe(e, t, n, r) {
                 var i, o, s;
-                if (n.get) return Pe.extend_(e, t, n, r);
+                if (n.get) return je.extend_(e, t, n, r);
                 if (n.set)
                     return e.defineProperty_(
                         t,
@@ -4910,7 +4910,7 @@
                 ge = ae('observable.ref', { enhancer: K }),
                 be = ae('observable.shallow', {
                     enhancer: function (e, t, n) {
-                        return null == e || $n(e) || jn(e) || In(e) || Ln(e)
+                        return null == e || $n(e) || Pn(e) || In(e) || Ln(e)
                             ? e
                             : Array.isArray(e)
                               ? Be.array(e, { name: n, deep: !1 })
@@ -5000,14 +5000,14 @@
                 Se = 'computed',
                 Ae = ie(Se),
                 Te = ie('computed.struct', { equals: z.structural }),
-                Pe = function (e, t) {
+                je = function (e, t) {
                     if (b(t)) return M(e, t, Ae);
                     if (m(e)) return L(ie(Se, e));
                     var n = m(t) ? t : {};
                     return ((n.get = e), n.name || (n.name = e.name || ''), new Fe(n));
                 };
-            (Object.assign(Pe, Ae), (Pe.struct = L(Te)));
-            var je,
+            (Object.assign(je, Ae), (je.struct = L(Te)));
+            var Pe,
                 xe = 0,
                 ke = 1,
                 Ee = null != (Ue = null == (We = a(function () {}, 'name')) ? void 0 : We.configurable) && Ue,
@@ -5078,7 +5078,7 @@
             function De(e) {
                 ut.allowStateChanges = e;
             }
-            je = Symbol.toPrimitive;
+            Pe = Symbol.toPrimitive;
             var Le,
                 Me = (function (e) {
                     function t(t, n, r, i, o) {
@@ -5161,9 +5161,9 @@
                             return this.name_ + '[' + this.value_ + ']';
                         }),
                         (n.valueOf = function () {
-                            return P(this.get());
+                            return j(this.get());
                         }),
-                        (n[je] = function () {
+                        (n[Pe] = function () {
                             return this.valueOf();
                         }),
                         t
@@ -5323,7 +5323,7 @@
                             return this.name_ + '[' + this.derivation.toString() + ']';
                         }),
                         (t.valueOf = function () {
-                            return P(this.get());
+                            return j(this.get());
                         }),
                         (t[Le] = function () {
                             return this.valueOf();
@@ -5688,9 +5688,9 @@
                               : void 0;
                 };
             }
-            var Pt = Tt(!1);
-            Object.assign(Pt, Wt);
-            var jt = Tt(!0);
+            var jt = Tt(!1);
+            Object.assign(jt, Wt);
+            var Pt = Tt(!0);
             function xt(e) {
                 return Ve(e.name, !1, e, this, void 0);
             }
@@ -5732,7 +5732,7 @@
                 }
                 return (i.schedule_(), i.getDisposer_());
             }
-            (Object.assign(jt, St), (Pt.bound = L(Bt)), (jt.bound = L(At)));
+            (Object.assign(Pt, St), (jt.bound = L(Bt)), (Pt.bound = L(At)));
             var Ct = function (e) {
                 return e();
             };
@@ -5753,7 +5753,7 @@
                     s,
                     a,
                     u = null != (r = n.name) ? r : 'Reaction',
-                    l = Pt(
+                    l = jt(
                         u,
                         n.onError
                             ? ((i = n.onError),
@@ -5897,7 +5897,7 @@
                                 t = this,
                                 i = arguments,
                                 o = ++Gt,
-                                s = Pt(r + ' - runid: ' + o + ' - init', n).apply(t, i),
+                                s = jt(r + ' - runid: ' + o + ' - init', n).apply(t, i),
                                 a = void 0,
                                 u = new Promise(function (t, n) {
                                     var i = 0;
@@ -5905,7 +5905,7 @@
                                         var t;
                                         a = void 0;
                                         try {
-                                            t = Pt(r + ' - runid: ' + o + ' - yield ' + i++, s.next).call(s, e);
+                                            t = jt(r + ' - runid: ' + o + ' - yield ' + i++, s.next).call(s, e);
                                         } catch (e) {
                                             return n(e);
                                         }
@@ -5915,7 +5915,7 @@
                                         var t;
                                         a = void 0;
                                         try {
-                                            t = Pt(r + ' - runid: ' + o + ' - yield ' + i++, s.throw).call(s, e);
+                                            t = jt(r + ' - runid: ' + o + ' - yield ' + i++, s.throw).call(s, e);
                                         } catch (e) {
                                             return n(e);
                                         }
@@ -5929,7 +5929,7 @@
                                     ((e = n), u(void 0));
                                 });
                             return (
-                                (u.cancel = Pt(r + ' - runid: ' + o + ' - cancel', function () {
+                                (u.cancel = jt(r + ' - runid: ' + o + ' - cancel', function () {
                                     try {
                                         a && Xt(a);
                                         var t = s.return(void 0),
@@ -5976,7 +5976,7 @@
                     ? e[q].keys_()
                     : In(e) || Ln(e)
                       ? Array.from(e.keys())
-                      : jn(e)
+                      : Pn(e)
                         ? e.map(function (e, t) {
                               return t;
                           })
@@ -6093,7 +6093,7 @@
                     (0,
                         null != t ||
                             (t = (function (e) {
-                                return (j(e, D) || O(e, D, C({}, e[D])), e[D]);
+                                return (P(e, D) || O(e, D, C({}, e[D])), e[D]);
                             })(e)),
                         T(t).forEach(function (e) {
                             return r.make_(e, t[e]);
@@ -6113,7 +6113,7 @@
                             : 'length' === t
                               ? n.getArrayLength_()
                               : 'string' != typeof t || isNaN(t)
-                                ? j(On, t)
+                                ? P(On, t)
                                     ? On[t]
                                     : e[t]
                                 : n.get_(parseInt(t));
@@ -6435,9 +6435,9 @@
                 Un('reduceRight', Sn));
             var An,
                 Tn,
-                Pn = W('ObservableArrayAdministration', mn);
-            function jn(e) {
-                return y(e) && Pn(e[q]);
+                jn = W('ObservableArrayAdministration', mn);
+            function Pn(e) {
+                return y(e) && jn(e[q]);
             }
             var xn = {},
                 kn = 'add',
@@ -6974,12 +6974,12 @@
                             return !0;
                         }),
                         (t.get_ = function (e) {
-                            return (ut.trackingDerivation && !j(this.target_, e) && this.has_(e), this.target_[e]);
+                            return (ut.trackingDerivation && !P(this.target_, e) && this.has_(e), this.target_[e]);
                         }),
                         (t.set_ = function (e, t, n) {
                             return (
                                 void 0 === n && (n = !1),
-                                j(this.target_, e)
+                                P(this.target_, e)
                                     ? this.values_.has(e)
                                         ? this.setObservablePropValue_(e, t)
                                         : n
@@ -7124,7 +7124,7 @@
                             return !0;
                         }),
                         (t.delete_ = function (e, t) {
-                            if ((void 0 === t && (t = !1), !j(this.target_, e))) return !0;
+                            if ((void 0 === t && (t = !1), !P(this.target_, e))) return !0;
                             if (cn(this) && !dn(this, { object: this.proxy_ || this.target_, name: e, type: qn }))
                                 return null;
                             try {
@@ -7198,7 +7198,7 @@
                 })();
             function Fn(e, t) {
                 var n;
-                if (j(e, q)) return e;
+                if (P(e, q)) return e;
                 var r = null != (n = null == t ? void 0 : t.name) ? n : 'ObservableObject',
                     i = new Qn(
                         e,
@@ -7264,7 +7264,7 @@
                         return Array.prototype.concat.apply(
                             this.slice(),
                             t.map(function (e) {
-                                return jn(e) ? e.slice() : e;
+                                return Pn(e) ? e.slice() : e;
                             }),
                         );
                     }),
@@ -7326,7 +7326,7 @@
             }
             function ir(e, t) {
                 if ('object' == typeof e && null !== e) {
-                    if (jn(e)) return (void 0 !== t && r(23), e[q].atom_);
+                    if (Pn(e)) return (void 0 !== t && r(23), e[q].atom_);
                     if (Ln(e)) return e[q];
                     if (In(e)) {
                         if (void 0 === t) return e.keysAtom_;
@@ -7420,12 +7420,12 @@
                     var h,
                         d = Object.keys(e);
                     if (((c = d.length), Object.keys(t).length !== c)) return !1;
-                    for (; c--; ) if (!j(t, (h = d[c])) || !lr(e[h], t[h], n - 1, r, i)) return !1;
+                    for (; c--; ) if (!P(t, (h = d[c])) || !lr(e[h], t[h], n - 1, r, i)) return !1;
                 }
                 return (r.pop(), i.pop(), !0);
             }
             function cr(e) {
-                return jn(e) ? e.slice() : B(e) || In(e) || S(e) || Ln(e) ? Array.from(e.entries()) : e;
+                return Pn(e) ? e.slice() : B(e) || In(e) || S(e) || Ln(e) ? Array.from(e.entries()) : e;
             }
             function hr(e) {
                 return ((e[Symbol.iterator] = dr), e);

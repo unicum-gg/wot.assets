@@ -1,12 +1,224 @@
+.MenuItem_base_2b {
+    display: flex;
+    flex-direction: column;
+    font-family: PFDINMax;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    position: relative;
+    pointer-events: auto;
+}
+
+.MenuItem_base_2b[lang='ja'],
+.MenuItem_base_2b[lang='ko'],
+.MenuItem_base_2b[lang='vi'],
+.MenuItem_base_2b[lang='zh_tw'],
+.MenuItem_base_2b[lang='zh_sg'],
+.MenuItem_base_2b[lang='zh_cn'],
+.MenuItem_base_2b[lang='th'] {
+    font-family: Warhelios;
+    letter-spacing: 0;
+}
+
+.MenuItem_base_2b + .MenuItem_base_2b {
+    margin-top: 10rem;
+}
+
+.mediaMedium .MenuItem_base_2b + .MenuItem_base_2b {
+    margin-top: 11rem;
+}
+
+.mediaLarge .MenuItem_base_2b + .MenuItem_base_2b {
+    margin-top: 12rem;
+}
+
+.mediaExtraLarge .MenuItem_base_2b + .MenuItem_base_2b {
+    margin-top: 13rem;
+}
+
+.mediaLarge .MenuItem_base__modeSelectorName_36 + .MenuItem_base_2b {
+    margin-top: 15rem;
+}
+
+.MenuItem_base__enabledState_9c {
+    cursor: pointer;
+}
+
+.MenuItem_modeSelector_b8 {
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s;
+}
+
+.MenuItem_base__enabledState_9c:hover .MenuItem_modeSelector_b8 {
+    transform: translateX(6rem);
+}
+
+.MenuItem_modeIcon_a5 {
+    width: 64rem;
+    height: 64rem;
+    background: no-repeat 50% / contain;
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translateY(-50%);
+}
+
+.MenuItem_label_d9 {
+    color: rgba(238, 237, 233, 0.9);
+    font-size: 26rem;
+    font-weight: 500;
+    line-height: 1;
+    text-shadow:
+        0 0 15rem rgba(23, 23, 23, 0.2),
+        0 0 7rem rgba(23, 23, 23, 0.2),
+        0 2rem rgba(0, 0, 0, 0.2);
+    letter-spacing: 0.02em;
+    opacity: 0.9;
+    transition:
+        opacity 0.2s,
+        transform 0.2s,
+        text-shadow 0.2s,
+        color 0.2s;
+}
+
+.mediaMedium .MenuItem_label_d9 {
+    font-size: 28rem;
+}
+
+.mediaLarge .MenuItem_label_d9 {
+    font-size: 34rem;
+}
+
+.MenuItem_base__disabledState_1a .MenuItem_label_d9 {
+    opacity: 0.5;
+}
+
+.MenuItem_base__enabledState_9c:hover .MenuItem_label_d9 {
+    color: #fcf6eb;
+    text-shadow:
+        0 0 16rem rgba(255, 154, 82, 0.5),
+        0 0 8rem rgba(255, 196, 108, 0.24),
+        0 0 4rem rgba(252, 246, 235, 0.17);
+}
+
+.MenuItem_titleWrapper_77 {
+    display: flex;
+    align-items: center;
+    color: rgba(238, 237, 233, 0.9);
+    transition:
+        opacity 0.2s,
+        transform 0.2s,
+        text-shadow 0.2s,
+        color 0.2s;
+}
+
+.MenuItem_base__disabledState_1a .MenuItem_titleWrapper_77 {
+    opacity: 0.5;
+}
+
+.MenuItem_base__enabledState_9c:hover .MenuItem_titleWrapper_77 {
+    color: #fcf6eb;
+    text-shadow:
+        0 0 16rem rgba(255, 154, 82, 0.5),
+        0 0 8rem rgba(255, 196, 108, 0.24),
+        0 0 4rem rgba(252, 246, 235, 0.17);
+    transform: translateX(6rem);
+}
+
+.MenuItem_title_17 {
+    font-size: 20rem;
+    font-weight: 500;
+    line-height: 1;
+    text-shadow:
+        0 0 15rem rgba(23, 23, 23, 0.2),
+        0 0 7rem rgba(23, 23, 23, 0.2),
+        0 2rem rgba(0, 0, 0, 0.2);
+    letter-spacing: 0.02em;
+    opacity: 0.9;
+}
+
+.mediaMedium .MenuItem_title_17 {
+    font-size: 22rem;
+}
+
+.mediaLarge .MenuItem_title_17 {
+    font-size: 26rem;
+}
+
+.mediaExtraLarge .MenuItem_title_17 {
+    font-size: 28rem;
+}
+
+.MenuItem_arrow_17 {
+    width: 7rem;
+    height: 18rem;
+    opacity: 0.9;
+    position: absolute;
+    top: 4rem;
+    left: -16rem;
+}
+
+.mediaLarge .MenuItem_arrow_17 {
+    width: 10rem;
+    height: 22rem;
+    top: 6rem;
+    left: -19rem;
+}
+
+.MenuItem_arrow__verticalCenter_21 {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.mediaLarge .MenuItem_arrow__verticalCenter_21 {
+    top: 50%;
+}
+
+.mediaExtraLarge .MenuItem_arrow__verticalCenter_21 {
+    top: 50%;
+}
+
+.MenuItem_modeName_05 {
+    margin-top: 2rem;
+    color: #ffe9cc;
+    font-size: 16rem;
+    font-weight: 500;
+    line-height: 1;
+    text-shadow:
+        0 0 40px rgba(255, 76, 60, 0.6),
+        0 0 24rem rgba(255, 233, 187, 0.3),
+        0 0 8rem rgba(255, 251, 239, 0.2);
+    letter-spacing: 0.02em;
+}
+
+.mediaMedium .MenuItem_modeName_05 {
+    margin-top: 1rem;
+}
+
+.mediaLarge .MenuItem_modeName_05 {
+    margin-top: 2rem;
+    font-size: 19rem;
+}
+
+.mediaExtraLarge .MenuItem_modeName_05 {
+    margin-top: -1rem;
+    font-size: 22rem;
+}
+
+.MenuItem_base__disabledState_1a .MenuItem_modeName_05 {
+    opacity: 0.3;
+}
+
 .HorizontalBar_base_49 {
     display: flex;
     width: 100%;
     height: 13rem;
+    visibility: hidden;
     position: relative;
 }
 
-.HorizontalBar_base__nonActive_82 {
-    visibility: hidden;
+.HorizontalBar_base__active_5e {
+    visibility: visible;
 }
 
 .HorizontalBar_base_49 .disable,
@@ -103,11 +315,12 @@
     flex-direction: column;
     width: 13rem;
     height: 100%;
+    visibility: hidden;
     position: relative;
 }
 
-.VerticalBar_base__nonActive_42 {
-    visibility: hidden;
+.VerticalBar_base__active_72 {
+    visibility: visible;
 }
 
 .VerticalBar_base_f3 .disable,
@@ -343,212 +556,6 @@
 }
 .TextButton_base_b6:active .TextButton_shine_e2 {
     opacity: 0;
-}
-
-.MapListEmpty_base_f0 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    align-self: center;
-    width: 990rem;
-    height: 100%;
-}
-.MapListEmpty_block_21 {
-    width: 100%;
-    height: 47rem;
-    position: relative;
-}
-.MapListEmpty_title_a3 {
-    position: absolute;
-    top: auto;
-    bottom: auto;
-    left: 50%;
-    transform: translate(-50%);
-    color: #e9e2bf;
-    font-size: 18rem;
-    font-weight: 700;
-    line-height: 1.1;
-    top: -1rem;
-}
-.MapListEmpty_description_59 {
-    position: absolute;
-    top: auto;
-    bottom: auto;
-    left: 50%;
-    transform: translate(-50%);
-    color: #8c8c7e;
-    font-size: 16rem;
-    font-weight: 400;
-    line-height: 1.25;
-    bottom: -3rem;
-}
-
-.MapCard_base_6c {
-    width: 225rem;
-    height: 225rem;
-    margin: 0 30rem 30rem 0;
-    border: 1rem solid rgba(242, 242, 247, 0.2);
-    box-shadow: inset 0 0 1rem #000000;
-    isolation: isolate;
-    position: relative;
-    transition: border 0.16s ease-in-out;
-    cursor: pointer;
-    pointer-events: auto;
-}
-
-.MapCard_base__extraSmall_dd,
-.MapCard_base__small_47,
-.MapCard_base__medium_80 {
-    margin: 0 20rem 20rem 0;
-}
-
-.MapCard_base__disabled_e9 {
-    cursor: default;
-}
-
-.MapCard_base__completed_d8 {
-    border: 1rem solid rgba(122, 179, 0, 0.8);
-}
-
-.MapCard_base__hover_80 {
-    border: 1rem solid rgba(242, 242, 247, 0.35);
-}
-.MapCard_background_2b {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: no-repeat 50% / contain;
-}
-.MapCard_contextShadow_c4 {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 25%);
-}
-.MapCard_checkmark_c6 {
-    position: absolute;
-    top: auto;
-    bottom: auto;
-    left: 50%;
-    transform: translate(-50%);
-    width: 64rem;
-    height: 28rem;
-    background: url('R.images.gui.maps.icons.mapsTraining.checkmark') repeat 50% / contain;
-    bottom: -14rem;
-    pointer-events: none;
-}
-.MapCard_completed_d8 {
-    color: #80d43a;
-    font-size: 14rem;
-    font-weight: 700;
-    line-height: 1.15;
-    position: absolute;
-    top: auto;
-    bottom: auto;
-    left: 50%;
-    transform: translate(-50%);
-    text-shadow: 0 0 2rem #000000;
-    bottom: 13rem;
-    pointer-events: none;
-}
-.MapCard_title_08 {
-    color: #e9e2bf;
-    font-size: 18rem;
-    font-weight: 700;
-    line-height: 1.1;
-    position: absolute;
-    top: auto;
-    bottom: auto;
-    left: 50%;
-    transform: translate(-50%);
-    text-shadow: 0 0 2rem #000000;
-    top: 11rem;
-    pointer-events: none;
-}
-.MapCard_title__disabled_a8 {
-    color: #8c8c7e;
-}
-.MapCard_overlayImage_e9 {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: url('R.images.gui.maps.icons.mapsTraining.disabled') repeat 0 / auto;
-}
-.MapCard_overlaySaturation_27 {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-color: #000000;
-    mix-blend-mode: saturation;
-}
-.MapCard_overlayHover_42 {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-color: rgba(255, 255, 255, 0.1);
-    opacity: 0;
-    mix-blend-mode: screen;
-    transition: opacity 0.16s ease-in-out;
-}
-.MapCard_base__hover_80 .MapCard_overlayHover_42 {
-    opacity: 1;
-}
-
-.MapGroup_base_74 {
-    margin-top: 11rem;
-    position: relative;
-}
-.MapGroup_titleBlock_33 {
-    color: #e9e2bf;
-    font-size: 22rem;
-    font-weight: 700;
-    line-height: 1.2;
-    display: flex;
-    margin-left: 6rem;
-}
-.MapGroup_titleBlock__extraSmall_c2,
-.MapGroup_titleBlock__small_59,
-.MapGroup_titleBlock__medium_35 {
-    margin-left: 4rem;
-}
-.MapGroup_title_c9 {
-    font-weight: 400;
-}
-.MapGroup_count_d8 {
-    margin-left: 5rem;
-}
-.MapGroup_status_ac {
-    display: flex;
-    margin-top: 4rem;
-}
-.MapGroup_statusTitle_fe {
-    color: #8c8c7e;
-    font-size: 16rem;
-    font-weight: 400;
-    line-height: 1.25;
-    margin: 0 0 1rem 6rem;
-}
-.MapGroup_icon_1e {
-    width: 9rem;
-    height: 12rem;
-    margin: 5rem 0 0 6rem;
-    background: url('R.images.gui.maps.icons.mapsTraining.lockGrey') no-repeat 50% / contain;
-}
-.MapGroup_icon__extraSmall_84,
-.MapGroup_icon__small_ca,
-.MapGroup_icon__medium_52 {
-    margin-left: 4rem;
 }
 
 .InputControl_base_e4 {
@@ -810,6 +817,212 @@
     transform: translateY(100%);
 }
 
+.MapCard_base_6c {
+    width: 225rem;
+    height: 225rem;
+    margin: 0 30rem 30rem 0;
+    border: 1rem solid rgba(242, 242, 247, 0.2);
+    box-shadow: inset 0 0 1rem #000000;
+    isolation: isolate;
+    position: relative;
+    transition: border 0.16s ease-in-out;
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+.MapCard_base__extraSmall_dd,
+.MapCard_base__small_47,
+.MapCard_base__medium_80 {
+    margin: 0 20rem 20rem 0;
+}
+
+.MapCard_base__disabled_e9 {
+    cursor: default;
+}
+
+.MapCard_base__completed_d8 {
+    border: 1rem solid rgba(122, 179, 0, 0.8);
+}
+
+.MapCard_base__hover_80 {
+    border: 1rem solid rgba(242, 242, 247, 0.35);
+}
+.MapCard_background_2b {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: no-repeat 50% / contain;
+}
+.MapCard_contextShadow_c4 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 25%);
+}
+.MapCard_checkmark_c6 {
+    position: absolute;
+    top: auto;
+    bottom: auto;
+    left: 50%;
+    transform: translate(-50%);
+    width: 64rem;
+    height: 28rem;
+    background: url('R.images.gui.maps.icons.mapsTraining.checkmark') repeat 50% / contain;
+    bottom: -14rem;
+    pointer-events: none;
+}
+.MapCard_completed_d8 {
+    color: #80d43a;
+    font-size: 14rem;
+    font-weight: 700;
+    line-height: 1.15;
+    position: absolute;
+    top: auto;
+    bottom: auto;
+    left: 50%;
+    transform: translate(-50%);
+    text-shadow: 0 0 2rem #000000;
+    bottom: 13rem;
+    pointer-events: none;
+}
+.MapCard_title_08 {
+    color: #e9e2bf;
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
+    position: absolute;
+    top: auto;
+    bottom: auto;
+    left: 50%;
+    transform: translate(-50%);
+    text-shadow: 0 0 2rem #000000;
+    top: 11rem;
+    pointer-events: none;
+}
+.MapCard_title__disabled_a8 {
+    color: #8c8c7e;
+}
+.MapCard_overlayImage_e9 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: url('R.images.gui.maps.icons.mapsTraining.disabled') repeat 0 / auto;
+}
+.MapCard_overlaySaturation_27 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #000000;
+    mix-blend-mode: saturation;
+}
+.MapCard_overlayHover_42 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.1);
+    opacity: 0;
+    mix-blend-mode: screen;
+    transition: opacity 0.16s ease-in-out;
+}
+.MapCard_base__hover_80 .MapCard_overlayHover_42 {
+    opacity: 1;
+}
+
+.MapGroup_base_74 {
+    margin-top: 11rem;
+    position: relative;
+}
+.MapGroup_titleBlock_33 {
+    color: #e9e2bf;
+    font-size: 22rem;
+    font-weight: 700;
+    line-height: 1.2;
+    display: flex;
+    margin-left: 6rem;
+}
+.MapGroup_titleBlock__extraSmall_c2,
+.MapGroup_titleBlock__small_59,
+.MapGroup_titleBlock__medium_35 {
+    margin-left: 4rem;
+}
+.MapGroup_title_c9 {
+    font-weight: 400;
+}
+.MapGroup_count_d8 {
+    margin-left: 5rem;
+}
+.MapGroup_status_ac {
+    display: flex;
+    margin-top: 4rem;
+}
+.MapGroup_statusTitle_fe {
+    color: #8c8c7e;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+    margin: 0 0 1rem 6rem;
+}
+.MapGroup_icon_1e {
+    width: 9rem;
+    height: 12rem;
+    margin: 5rem 0 0 6rem;
+    background: url('R.images.gui.maps.icons.mapsTraining.lockGrey') no-repeat 50% / contain;
+}
+.MapGroup_icon__extraSmall_84,
+.MapGroup_icon__small_ca,
+.MapGroup_icon__medium_52 {
+    margin-left: 4rem;
+}
+
+.MapListEmpty_base_f0 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    width: 990rem;
+    height: 100%;
+}
+.MapListEmpty_block_21 {
+    width: 100%;
+    height: 47rem;
+    position: relative;
+}
+.MapListEmpty_title_a3 {
+    position: absolute;
+    top: auto;
+    bottom: auto;
+    left: 50%;
+    transform: translate(-50%);
+    color: #e9e2bf;
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
+    top: -1rem;
+}
+.MapListEmpty_description_59 {
+    position: absolute;
+    top: auto;
+    bottom: auto;
+    left: 50%;
+    transform: translate(-50%);
+    color: #8c8c7e;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+    bottom: -3rem;
+}
+
 .ToggleButton_base_4d {
     display: flex;
     justify-content: center;
@@ -960,22 +1173,14 @@
     height: 100%;
     background: url('R.images.gui.maps.icons.mapsTraining.bg') no-repeat 50% / cover;
 }
-.MapSelect_close_03 {
+.MapSelect_info_c7 {
     position: absolute;
     top: 55rem;
     right: 28rem;
     z-index: 1;
 }
-.MapSelect_close__extraSmall_26 {
-    right: 8rem;
-}
-.MapSelect_info_c7 {
-    position: absolute;
-    top: 55rem;
-    left: 35rem;
-}
 .MapSelect_info__extraSmall_a1 {
-    left: 15rem;
+    right: 8rem;
 }
 .MapSelect_scrollArea_20 {
     flex: 1;
@@ -1011,7 +1216,7 @@
 .MapSelect_topBlock__small_92,
 .MapSelect_topBlock__medium_0a {
     width: 960rem;
-    height: 189rem;
+    height: 219rem;
 }
 .MapSelect_title_54 {
     color: #f2f2f7;
@@ -1023,7 +1228,7 @@
 .MapSelect_title__extraSmall_36,
 .MapSelect_title__small_0f,
 .MapSelect_title__medium_2e {
-    margin: 95rem 0 0 0;
+    margin: 125rem 0 0 0;
 }
 .MapSelect_subtitle_33 {
     color: #8c8c7e;
@@ -1100,6 +1305,22 @@
 .MapSelect_scrollSensitiveArea_9b {
     width: 100%;
     height: 100%;
+}
+.MapSelect_menuItems_4d {
+    position: absolute;
+    top: 70rem;
+    left: 30rem;
+}
+.MapSelect_menuItems__medium_44 {
+    top: 78rem;
+}
+.MapSelect_menuItems__large_e7 {
+    top: 86rem;
+    left: 48rem;
+}
+.MapSelect_menuItems__extraLarge_0e {
+    top: 128rem;
+    left: 48rem;
 }
 
 .SceneWrapper_base_85 {
@@ -1416,6 +1637,165 @@
     background-image: url('R.images.gui.maps.icons.mapsTraining.minimap.bg_small');
 }
 
+.FormatText_base_d0 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.TextKey_base_ea {
+    display: flex;
+}
+
+.TextKey_content_6a {
+    display: flex;
+    padding-left: 13rem;
+    color: #cbac77;
+    isolation: isolate;
+    position: relative;
+}
+
+.TextKey_base__highlight_9f .TextKey_content_6a {
+    color: #ffdd99;
+    text-shadow:
+        0 0 4rem rgba(255, 127, 0, 0.25),
+        0 0 8rem #ff2a00,
+        0 0 14rem #e52,
+        0 0 8rem rgba(0, 0, 0, 0.8);
+}
+
+.TextKey_bullet_0f {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    background-color: #cbac77;
+    position: absolute;
+    top: 8rem;
+    left: 0;
+}
+
+.TextKey_base__small_f5 .TextKey_bullet_0f,
+.TextKey_base__extraSmall_dd .TextKey_bullet_0f {
+    top: 5rem;
+}
+
+.TextKey_base__highlight_9f .TextKey_bullet_0f {
+    box-shadow:
+        0 0 4rem rgba(255, 127, 0, 0.25),
+        0 0 8rem #ff2a00,
+        0 0 14rem #e52,
+        0 0 8rem rgba(0, 0, 0, 0.8);
+    background-color: #ffdd99;
+}
+
+.Info_base_6b {
+    display: flex;
+    align-items: center;
+    align-self: flex-start;
+    pointer-events: auto;
+}
+
+.Info_icon_b6 {
+    width: 14rem;
+    height: 14rem;
+    background: url('R.images.gui.maps.icons.mapsTraining.info') no-repeat 50% / contain;
+}
+
+.Info_text_85 {
+    color: #e9e2bf;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    margin-left: 4rem;
+}
+
+.ScenarioInfo_base_ab {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.ScenarioInfo_shadow_e9 {
+    position: absolute;
+    top: -43rem;
+    right: -43rem;
+    bottom: -43rem;
+    left: -43rem;
+    border-radius: 121rem;
+    background: #100f0f;
+    filter: blur(40px);
+    opacity: 0.6;
+    left: -121rem;
+    z-index: -1;
+}
+
+.ScenarioInfo_baseTitle_fc {
+    color: #8c8c7e;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+.ScenarioInfo_title_13 {
+    color: #e9e2bf;
+    font-size: 56rem;
+    font-weight: 700;
+    line-height: 1.1;
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+    white-space: nowrap;
+}
+
+.ScenarioInfo_base__small_ef .ScenarioInfo_title_13,
+.ScenarioInfo_base__extraSmall_84 .ScenarioInfo_title_13 {
+    margin-top: 0;
+    font-size: 28rem;
+}
+
+.ScenarioInfo_tacticTitle_93 {
+    color: #e9e2bf;
+    font-size: 22rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-top: 30rem;
+    pointer-events: auto;
+}
+
+.ScenarioInfo_base__small_ef .ScenarioInfo_tacticTitle_93,
+.ScenarioInfo_base__extraSmall_84 .ScenarioInfo_tacticTitle_93 {
+    margin-top: 6rem;
+    font-size: 16rem;
+}
+
+.ScenarioInfo_tacticDescr_a7 {
+    color: #8c8c7e;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+    margin: 4rem 0 20rem;
+    line-height: 1.38;
+    pointer-events: auto;
+}
+
+.ScenarioInfo_base__small_ef .ScenarioInfo_tacticDescr_a7,
+.ScenarioInfo_base__extraSmall_84 .ScenarioInfo_tacticDescr_a7 {
+    color: #8c8c7e;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    margin: 2rem 0 13rem;
+}
+
+.ScenarioInfo_paragraph_b5 {
+    width: 100%;
+    height: 10rem;
+}
+
+.ScenarioInfo_base__small_ef .ScenarioInfo_paragraph_b5,
+.ScenarioInfo_base__extraSmall_84 .ScenarioInfo_paragraph_b5 {
+    height: 7rem;
+}
+
 .Reward_base_ea {
     display: flex;
     flex-direction: column;
@@ -1653,6 +2033,60 @@
     margin: 15rem 0;
 }
 
+.ScenarioRewards_base_d9 {
+    display: flex;
+}
+
+.ScenarioRewards_rewards_14 {
+    padding-top: 9rem;
+    position: relative;
+}
+
+.ScenarioRewards_base__small_a7 .ScenarioRewards_rewards_14,
+.ScenarioRewards_base__extraSmall_8e .ScenarioRewards_rewards_14 {
+    padding-top: 11rem;
+}
+
+.ScenarioRewards_title_cf {
+    color: #c9c9b6;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    margin-bottom: 11rem;
+    text-align: center;
+}
+
+.ScenarioRewards_base__small_a7 .ScenarioRewards_title_cf,
+.ScenarioRewards_base__extraSmall_8e .ScenarioRewards_title_cf {
+    margin-bottom: 21rem;
+}
+
+.ScenarioRewards_shine_c1 {
+    width: 290rem;
+    height: 157rem;
+    background: url('R.images.gui.maps.icons.mapsTraining.rewards_bg') no-repeat 50% / contain;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.ScenarioRewards_base__small_a7 .ScenarioRewards_shine_c1,
+.ScenarioRewards_base__extraSmall_8e .ScenarioRewards_shine_c1 {
+    width: 173rem;
+    height: 155rem;
+    background-image: url('R.images.gui.maps.icons.mapsTraining.rewards_bg_small');
+}
+
+.ScenarioRewards_rewardClassMix_c7 {
+    margin: 0 5rem;
+}
+
+.ScenarioRewards_base__small_a7 .ScenarioRewards_rewardClassMix_c7,
+.ScenarioRewards_base__extraSmall_8e .ScenarioRewards_rewardClassMix_c7 {
+    margin: 0 3rem;
+}
+
 .ScenarioCard_base_a0 {
     margin-right: 20rem;
     position: relative;
@@ -1864,219 +2298,6 @@
     position: relative;
 }
 
-.FormatText_base_d0 {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.TextKey_base_ea {
-    display: flex;
-}
-
-.TextKey_content_6a {
-    display: flex;
-    padding-left: 13rem;
-    color: #cbac77;
-    isolation: isolate;
-    position: relative;
-}
-
-.TextKey_base__highlight_9f .TextKey_content_6a {
-    color: #ffdd99;
-    text-shadow:
-        0 0 4rem rgba(255, 127, 0, 0.25),
-        0 0 8rem #ff2a00,
-        0 0 14rem #e52,
-        0 0 8rem rgba(0, 0, 0, 0.8);
-}
-
-.TextKey_bullet_0f {
-    width: 10rem;
-    height: 10rem;
-    border-radius: 50%;
-    background-color: #cbac77;
-    position: absolute;
-    top: 8rem;
-    left: 0;
-}
-
-.TextKey_base__small_f5 .TextKey_bullet_0f,
-.TextKey_base__extraSmall_dd .TextKey_bullet_0f {
-    top: 5rem;
-}
-
-.TextKey_base__highlight_9f .TextKey_bullet_0f {
-    box-shadow:
-        0 0 4rem rgba(255, 127, 0, 0.25),
-        0 0 8rem #ff2a00,
-        0 0 14rem #e52,
-        0 0 8rem rgba(0, 0, 0, 0.8);
-    background-color: #ffdd99;
-}
-
-.Info_base_6b {
-    display: flex;
-    align-items: center;
-    align-self: flex-start;
-    pointer-events: auto;
-}
-
-.Info_icon_b6 {
-    width: 14rem;
-    height: 14rem;
-    background: url('R.images.gui.maps.icons.mapsTraining.info') no-repeat 50% / contain;
-}
-
-.Info_text_85 {
-    color: #e9e2bf;
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
-    margin-left: 4rem;
-}
-
-.ScenarioInfo_base_ab {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-}
-
-.ScenarioInfo_shadow_e9 {
-    position: absolute;
-    top: -43rem;
-    right: -43rem;
-    bottom: -43rem;
-    left: -43rem;
-    border-radius: 121rem;
-    background: #100f0f;
-    filter: blur(40px);
-    opacity: 0.6;
-    left: -121rem;
-    z-index: -1;
-}
-
-.ScenarioInfo_baseTitle_fc {
-    color: #8c8c7e;
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
-}
-
-.ScenarioInfo_title_13 {
-    color: #e9e2bf;
-    font-size: 56rem;
-    font-weight: 700;
-    line-height: 1.1;
-    display: flex;
-    align-items: center;
-    margin-top: 2rem;
-    white-space: nowrap;
-}
-
-.ScenarioInfo_base__small_ef .ScenarioInfo_title_13,
-.ScenarioInfo_base__extraSmall_84 .ScenarioInfo_title_13 {
-    margin-top: 0;
-    font-size: 28rem;
-}
-
-.ScenarioInfo_tacticTitle_93 {
-    color: #e9e2bf;
-    font-size: 22rem;
-    font-weight: 700;
-    line-height: 1.2;
-    margin-top: 30rem;
-    pointer-events: auto;
-}
-
-.ScenarioInfo_base__small_ef .ScenarioInfo_tacticTitle_93,
-.ScenarioInfo_base__extraSmall_84 .ScenarioInfo_tacticTitle_93 {
-    margin-top: 6rem;
-    font-size: 16rem;
-}
-
-.ScenarioInfo_tacticDescr_a7 {
-    color: #8c8c7e;
-    font-size: 16rem;
-    font-weight: 400;
-    line-height: 1.25;
-    margin: 4rem 0 20rem;
-    line-height: 1.38;
-    pointer-events: auto;
-}
-
-.ScenarioInfo_base__small_ef .ScenarioInfo_tacticDescr_a7,
-.ScenarioInfo_base__extraSmall_84 .ScenarioInfo_tacticDescr_a7 {
-    color: #8c8c7e;
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
-    margin: 2rem 0 13rem;
-}
-
-.ScenarioInfo_paragraph_b5 {
-    width: 100%;
-    height: 10rem;
-}
-
-.ScenarioInfo_base__small_ef .ScenarioInfo_paragraph_b5,
-.ScenarioInfo_base__extraSmall_84 .ScenarioInfo_paragraph_b5 {
-    height: 7rem;
-}
-
-.ScenarioRewards_base_d9 {
-    display: flex;
-}
-
-.ScenarioRewards_rewards_14 {
-    padding-top: 9rem;
-    position: relative;
-}
-
-.ScenarioRewards_base__small_a7 .ScenarioRewards_rewards_14,
-.ScenarioRewards_base__extraSmall_8e .ScenarioRewards_rewards_14 {
-    padding-top: 11rem;
-}
-
-.ScenarioRewards_title_cf {
-    color: #c9c9b6;
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
-    margin-bottom: 11rem;
-    text-align: center;
-}
-
-.ScenarioRewards_base__small_a7 .ScenarioRewards_title_cf,
-.ScenarioRewards_base__extraSmall_8e .ScenarioRewards_title_cf {
-    margin-bottom: 21rem;
-}
-
-.ScenarioRewards_shine_c1 {
-    width: 290rem;
-    height: 157rem;
-    background: url('R.images.gui.maps.icons.mapsTraining.rewards_bg') no-repeat 50% / contain;
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.ScenarioRewards_base__small_a7 .ScenarioRewards_shine_c1,
-.ScenarioRewards_base__extraSmall_8e .ScenarioRewards_shine_c1 {
-    width: 173rem;
-    height: 155rem;
-    background-image: url('R.images.gui.maps.icons.mapsTraining.rewards_bg_small');
-}
-
-.ScenarioRewards_rewardClassMix_c7 {
-    margin: 0 5rem;
-}
-
-.ScenarioRewards_base__small_a7 .ScenarioRewards_rewardClassMix_c7,
-.ScenarioRewards_base__extraSmall_8e .ScenarioRewards_rewardClassMix_c7 {
-    margin: 0 3rem;
-}
-
 .VehicleMarker_base_a8 {
     display: flex;
     flex-direction: column;
@@ -2159,34 +2380,11 @@
     position: relative;
 }
 
-.MapOptions_back_6b {
-    position: absolute;
-    top: 56rem;
-    left: 30rem;
-    z-index: 1;
-}
-
-.MapOptions_base__small_7e .MapOptions_back_6b,
-.MapOptions_base__extraSmall_9c .MapOptions_back_6b {
-    left: 10rem;
-}
-
-.MapOptions_backShadow_35 {
-    border-radius: 20rem;
-    background: #000000;
-    filter: blur(50px);
-    opacity: 0.6;
-    position: absolute;
-    top: -150rem;
-    right: -90rem;
-    bottom: -70rem;
-    left: -100rem;
-}
-
 .MapOptions_leftPanel_d2 {
     display: flex;
-    align-items: center;
-    width: 600rem;
+    flex-direction: column;
+    justify-content: center;
+    width: 601rem;
     padding: 86rem 80rem 0 40rem;
     isolation: isolate;
     position: absolute;
@@ -2274,6 +2472,25 @@
 .MapOptions_base__small_7e .MapOptions_bottomPanelTitle_eb,
 .MapOptions_base__extraSmall_9c .MapOptions_bottomPanelTitle_eb {
     padding-top: 71rem;
+}
+
+.MapOptions_menuItems_42 {
+    position: absolute;
+    top: 48rem;
+    left: 30rem;
+}
+
+.MapOptions_base__medium_59 .MapOptions_menuItems_42 {
+    top: 74rem;
+}
+
+.MapOptions_base__large_d0 .MapOptions_menuItems_42 {
+    top: 86rem;
+    left: 48rem;
+}
+
+.MapOptions_base__extraLarge_ba .MapOptions_menuItems_42 {
+    top: 270rem;
 }
 
 .MapsTrainingPageApp_base_0d {

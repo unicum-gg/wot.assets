@@ -511,6 +511,11 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     background-image: url('R.images.gui.maps.icons.buttons.toggle_indicator_active');
 }
 
+.ToggleButton_button_4f {
+    margin: 2rem;
+    padding: 0 17rem;
+}
+
 .CommanderControls_left_98 {
     display: flex;
     flex-direction: row;
@@ -826,11 +831,12 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     display: flex;
     width: 100%;
     height: 13rem;
+    visibility: hidden;
     position: relative;
 }
 
-.HorizontalBar_base__nonActive_82 {
-    visibility: hidden;
+.HorizontalBar_base__active_5e {
+    visibility: visible;
 }
 
 .HorizontalBar_base_49 .disable,
@@ -927,11 +933,12 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     flex-direction: column;
     width: 13rem;
     height: 100%;
+    visibility: hidden;
     position: relative;
 }
 
-.VerticalBar_base__nonActive_42 {
-    visibility: hidden;
+.VerticalBar_base__active_72 {
+    visibility: visible;
 }
 
 .VerticalBar_base_f3 .disable,
@@ -1878,146 +1885,4 @@ so we just add specificity to css classes here
 
 .App_slots_c4 {
     flex: 1;
-}
-
-.RankEmblem_base_2d {
-    width: var(--imageSize);
-    height: var(--imageSize);
-    background: no-repeat center / cover;
-}
-
-.Comp7Content_base_54 {
-    display: flex;
-    flex-direction: column;
-}
-
-.Comp7Content_scoreContainer_96 {
-    color: rgba(255, 255, 255, 0.6);
-    font-size: 12rem;
-    font-weight: 400;
-    line-height: 1.3;
-    display: flex;
-}
-
-.Comp7Content_score_38 {
-    display: flex;
-    align-items: center;
-    padding-right: 10rem;
-}
-
-.Comp7Content_rankInfo_a3 {
-    display: flex;
-    align-items: center;
-    padding-right: 8rem;
-}
-
-.Comp7Content_icon_2d {
-    margin: 2rem 4rem 0 -4rem;
-}
-
-.Comp7Content_separator_5a {
-    width: 2rem;
-    height: 14rem;
-    background-image: linear-gradient(
-        0deg,
-        rgba(255, 255, 255, 0) 0%,
-        rgba(255, 255, 255, 0.4) 50%,
-        rgba(255, 255, 255, 0) 100%
-    );
-}
-
-.Comp7Content_scoreValue_4f {
-    padding: 4rem 8rem;
-}
-
-.Comp7Content_playerName_a7 {
-    margin-left: -5rem;
-}
-
-.Comp7Footer_base_72 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0 10rem 16rem 20rem;
-}
-.Comp7Footer_container_e2 {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    width: 100%;
-    margin: 13rem 0 -4rem -10rem;
-}
-.Comp7Footer_topPlayer_c5 {
-    color: #8c8c7e;
-    font-size: 12rem;
-    font-weight: 400;
-    line-height: 1.3;
-    display: flex;
-    flex-direction: column;
-}
-.Comp7Footer_row_20 {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-.Comp7Footer_rankName_a8 {
-    color: rgba(206, 206, 206, 1);
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
-    margin-left: 4rem;
-    margin-top: -2rem;
-}
-.Comp7Footer_separator_cc {
-    width: 1rem;
-    height: 100%;
-    margin: 0 14rem;
-    background-color: rgba(255, 255, 255, 0.2);
-}
-.Comp7Footer_ranksLimit_fa {
-    flex: 1 1;
-    margin-right: 14rem;
-}
-.Comp7Footer_inviteButton_7c {
-    min-width: 80rem;
-}
-.Comp7Footer_message_1f {
-    margin: 14rem 0 12rem;
-    color: #595950;
-    font-size: 14rem;
-    text-align: center;
-}
-.Comp7Footer_message__alert_ef {
-    color: #ff2717;
-}
-.Comp7Footer_disabledButton_c8 {
-    opacity: 0;
-    pointer-events: none;
-}
-
-.RanksLimit_base_17 {
-    color: #8c8c7e;
-    font-size: 12rem;
-    font-weight: 400;
-    line-height: 1.3;
-    display: flex;
-    flex-direction: column;
-}
-
-.RanksLimit_row_20 {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-.RanksLimit_infoIcon_fd {
-    width: 10rem;
-    height: 10rem;
-    margin-left: 4rem;
-    background: url('R.images.gui.maps.icons.library.info_14x15') no-repeat center / cover;
-    opacity: 0.4;
-}
-
-.RanksLimit_rankTooltip_f6 + .RanksLimit_rankTooltip_f6 {
-    margin-left: 2rem;
 }

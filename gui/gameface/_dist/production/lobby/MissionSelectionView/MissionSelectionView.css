@@ -1,143 +1,212 @@
-.TextButton_base_b6 {
+.MenuItem_base_2b {
     display: flex;
-    align-items: center;
-    padding: 0 3rem;
-    font-size: 12rem;
+    flex-direction: column;
+    font-family: PFDINMax;
+    font-weight: 400;
+    letter-spacing: 0.02em;
     position: relative;
+    pointer-events: auto;
+}
+
+.MenuItem_base_2b[lang='ja'],
+.MenuItem_base_2b[lang='ko'],
+.MenuItem_base_2b[lang='vi'],
+.MenuItem_base_2b[lang='zh_tw'],
+.MenuItem_base_2b[lang='zh_sg'],
+.MenuItem_base_2b[lang='zh_cn'],
+.MenuItem_base_2b[lang='th'] {
+    font-family: Warhelios;
+    letter-spacing: 0;
+}
+
+.MenuItem_base_2b + .MenuItem_base_2b {
+    margin-top: 10rem;
+}
+
+.mediaMedium .MenuItem_base_2b + .MenuItem_base_2b {
+    margin-top: 11rem;
+}
+
+.mediaLarge .MenuItem_base_2b + .MenuItem_base_2b {
+    margin-top: 12rem;
+}
+
+.mediaExtraLarge .MenuItem_base_2b + .MenuItem_base_2b {
+    margin-top: 13rem;
+}
+
+.mediaLarge .MenuItem_base__modeSelectorName_36 + .MenuItem_base_2b {
+    margin-top: 15rem;
+}
+
+.MenuItem_base__enabledState_9c {
     cursor: pointer;
 }
 
-.TextButton_base__right_39 {
-    flex-direction: row-reverse;
+.MenuItem_modeSelector_b8 {
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s;
 }
-.TextButton_icon_17 {
-    width: 32rem;
-    height: 32rem;
-    background: no-repeat center / contain;
-    position: relative;
+
+.MenuItem_base__enabledState_9c:hover .MenuItem_modeSelector_b8 {
+    transform: translateX(6rem);
 }
-.TextButton_icon__back_43,
-.TextButton_icon__forward_59 {
-    margin: -1rem -5rem;
-    background-image: url('R.images.gui.maps.icons.components.text_button.back');
-    transform: translateY(1rem);
-}
-.TextButton_icon__forward_59 {
-    transform: rotate(180deg) translateY(1rem);
-}
-.TextButton_icon__close_53 {
-    margin: -1rem 0;
-    background-image: url('R.images.gui.maps.icons.components.text_button.close');
-}
-.TextButton_icon__info_33 {
-    margin: -1rem -5rem;
-    background-image: url('R.images.gui.maps.icons.components.text_button.info');
-}
-.TextButton_glow_a4 {
-    width: 100%;
-    height: 100%;
-    background: no-repeat center / contain;
-    opacity: 0;
+
+.MenuItem_modeIcon_a5 {
+    width: 64rem;
+    height: 64rem;
+    background: no-repeat 50% / contain;
     position: absolute;
-    top: 0;
-    transition: opacity 0.16s;
+    top: 50%;
+    left: 100%;
+    transform: translateY(-50%);
 }
-.TextButton_icon__back_43 .TextButton_glow_a4,
-.TextButton_icon__forward_59 .TextButton_glow_a4 {
-    background-image: url('R.images.gui.maps.icons.components.text_button.back_hover');
-}
-.TextButton_icon__close_53 .TextButton_glow_a4 {
-    background-image: url('R.images.gui.maps.icons.components.text_button.close_hover');
-}
-.TextButton_icon__info_33 .TextButton_glow_a4 {
-    background-image: url('R.images.gui.maps.icons.components.text_button.info_hover');
-}
-.TextButton_base_b6:hover .TextButton_glow_a4 {
-    opacity: 1;
-}
-.TextButton_base_b6:active .TextButton_glow_a4 {
-    opacity: 0;
-}
-.TextButton_caption_82 {
-    position: relative;
+
+.MenuItem_label_d9 {
+    color: rgba(238, 237, 233, 0.9);
+    font-size: 26rem;
+    font-weight: 500;
+    line-height: 1;
+    text-shadow:
+        0 0 15rem rgba(23, 23, 23, 0.2),
+        0 0 7rem rgba(23, 23, 23, 0.2),
+        0 2rem rgba(0, 0, 0, 0.2);
+    letter-spacing: 0.02em;
+    opacity: 0.9;
     transition:
-        color 0.16s,
-        text-shadow 0.16s;
+        opacity 0.2s,
+        transform 0.2s,
+        text-shadow 0.2s,
+        color 0.2s;
 }
-.TextButton_caption__back_b9,
-.TextButton_caption__forward_4e,
-.TextButton_caption__close_36 {
-    color: #ffdd99;
+
+.mediaMedium .MenuItem_label_d9 {
+    font-size: 28rem;
+}
+
+.mediaLarge .MenuItem_label_d9 {
+    font-size: 34rem;
+}
+
+.MenuItem_base__disabledState_1a .MenuItem_label_d9 {
+    opacity: 0.5;
+}
+
+.MenuItem_base__enabledState_9c:hover .MenuItem_label_d9 {
+    color: #fcf6eb;
     text-shadow:
-        0 0 10rem rgba(255, 42, 0, 1),
-        0 0 10rem rgba(255, 42, 0, 0.4),
-        0 0 10rem rgba(255, 42, 0, 0.4),
-        0 0 2rem rgba(255, 42, 0, 0.4),
-        0 0 1rem rgba(255, 42, 0, 0.4),
-        0 0 2rem rgba(255, 42, 0, 0.4),
-        0 0 1rem rgba(255, 42, 0, 0.4);
+        0 0 16rem rgba(255, 154, 82, 0.5),
+        0 0 8rem rgba(255, 196, 108, 0.24),
+        0 0 4rem rgba(252, 246, 235, 0.17);
 }
-.TextButton_base_b6:hover .TextButton_caption__back_b9,
-.TextButton_base_b6:hover .TextButton_caption__forward_4e,
-.TextButton_base_b6:hover .TextButton_caption__close_36 {
-    color: #fffa9f;
+
+.MenuItem_titleWrapper_77 {
+    display: flex;
+    align-items: center;
+    color: rgba(238, 237, 233, 0.9);
+    transition:
+        opacity 0.2s,
+        transform 0.2s,
+        text-shadow 0.2s,
+        color 0.2s;
 }
-.TextButton_base_b6:active .TextButton_caption__back_b9,
-.TextButton_base_b6:active .TextButton_caption__forward_4e,
-.TextButton_base_b6:active .TextButton_caption__close_36 {
-    color: #ffdd99;
+
+.MenuItem_base__disabledState_1a .MenuItem_titleWrapper_77 {
+    opacity: 0.5;
 }
-.TextButton_caption__info_23 {
-    padding: 0 5rem;
-    color: #ccffff;
+
+.MenuItem_base__enabledState_9c:hover .MenuItem_titleWrapper_77 {
+    color: #fcf6eb;
     text-shadow:
-        0 0 12rem rgba(31, 68, 255, 0.8),
-        0 0 8rem #00eaff;
+        0 0 16rem rgba(255, 154, 82, 0.5),
+        0 0 8rem rgba(255, 196, 108, 0.24),
+        0 0 4rem rgba(252, 246, 235, 0.17);
+    transform: translateX(6rem);
 }
-.TextButton_base_b6:hover .TextButton_caption__info_23 {
-    color: #e3ffff;
+
+.MenuItem_title_17 {
+    font-size: 20rem;
+    font-weight: 500;
+    line-height: 1;
     text-shadow:
-        0 0 12rem rgba(31, 68, 255, 0.8),
-        0 0 12rem rgba(0, 234, 255, 1),
-        0 0 8rem #00eaff;
+        0 0 15rem rgba(23, 23, 23, 0.2),
+        0 0 7rem rgba(23, 23, 23, 0.2),
+        0 2rem rgba(0, 0, 0, 0.2);
+    letter-spacing: 0.02em;
+    opacity: 0.9;
 }
-.TextButton_base_b6:active .TextButton_caption__info_23 {
-    color: #ccffff;
-    text-shadow:
-        0 0 12rem rgba(31, 68, 255, 0.6),
-        0 0 8rem #00eaff;
+
+.mediaMedium .MenuItem_title_17 {
+    font-size: 22rem;
 }
-.TextButton_goto_e7 {
-    color: #7c7c6c;
+
+.mediaLarge .MenuItem_title_17 {
+    font-size: 26rem;
 }
-.TextButton_base__left_ff .TextButton_goto_e7 {
-    margin-left: 8rem;
+
+.mediaExtraLarge .MenuItem_title_17 {
+    font-size: 28rem;
 }
-.TextButton_base__right_39 .TextButton_goto_e7 {
-    margin-right: 8rem;
-}
-.TextButton_shine_e2 {
-    width: 90rem;
-    height: 40rem;
-    background: url('R.images.gui.maps.icons.components.text_button.shine') no-repeat center / contain;
-    opacity: 0;
+
+.MenuItem_arrow_17 {
+    width: 7rem;
+    height: 18rem;
+    opacity: 0.9;
     position: absolute;
-    top: -4rem;
-    transition: opacity 0.16s;
-    pointer-events: none;
+    top: 4rem;
+    left: -16rem;
 }
-.TextButton_base__left_ff .TextButton_shine_e2 {
-    left: -4rem;
+
+.mediaLarge .MenuItem_arrow_17 {
+    width: 10rem;
+    height: 22rem;
+    top: 6rem;
+    left: -19rem;
 }
-.TextButton_base__right_39 .TextButton_shine_e2 {
-    right: -4rem;
-    transform: rotate(180deg);
+
+.MenuItem_arrow__verticalCenter_21 {
+    top: 50%;
+    transform: translateY(-50%);
 }
-.TextButton_base_b6:hover .TextButton_shine_e2 {
-    opacity: 1;
+
+.mediaLarge .MenuItem_arrow__verticalCenter_21 {
+    top: 50%;
 }
-.TextButton_base_b6:active .TextButton_shine_e2 {
-    opacity: 0;
+
+.mediaExtraLarge .MenuItem_arrow__verticalCenter_21 {
+    top: 50%;
+}
+
+.MenuItem_modeName_05 {
+    margin-top: 2rem;
+    color: #ffe9cc;
+    font-size: 16rem;
+    font-weight: 500;
+    line-height: 1;
+    text-shadow:
+        0 0 40px rgba(255, 76, 60, 0.6),
+        0 0 24rem rgba(255, 233, 187, 0.3),
+        0 0 8rem rgba(255, 251, 239, 0.2);
+    letter-spacing: 0.02em;
+}
+
+.mediaMedium .MenuItem_modeName_05 {
+    margin-top: 1rem;
+}
+
+.mediaLarge .MenuItem_modeName_05 {
+    margin-top: 2rem;
+    font-size: 19rem;
+}
+
+.mediaExtraLarge .MenuItem_modeName_05 {
+    margin-top: -1rem;
+    font-size: 22rem;
+}
+
+.MenuItem_base__disabledState_1a .MenuItem_modeName_05 {
+    opacity: 0.3;
 }
 
 .Background_base_94 {
@@ -430,6 +499,10 @@
 .LockOverlay_locker_8c {
     margin-bottom: 18rem;
     position: relative;
+}
+
+.LockOverlay_locker__withTabs_02 {
+    margin-top: 78rem;
 }
 
 .LockOverlay_ribbon_80 {
@@ -1194,10 +1267,6 @@
     pointer-events: none;
 }
 
-.mediaMedium .DifficultyButton_base_d7 {
-    margin: 0 9rem;
-}
-
 .DifficultyButton_backSelected_4c,
 .DifficultyButton_backLocked_70,
 .DifficultyButton_backHover_63,
@@ -1312,7 +1381,7 @@
     position: absolute;
     left: 50%;
     transform: translate(-50%);
-    color: #a29b70;
+    color: #e9e2bf;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
@@ -1327,7 +1396,11 @@
 }
 
 .DifficultyButton_base_d7:hover .DifficultyButton_displayName_81 {
-    color: #e9e2bf;
+    color: #f2f2f7;
+}
+
+.DifficultyButton_base_d7.DifficultyButton_base__selected_10:hover .DifficultyButton_displayName_81 {
+    color: #feab34;
 }
 
 .mediaMedium .DifficultyButton_displayName_81 {
@@ -1556,11 +1629,13 @@
 }
 
 .MissionButton_base__locked_bf .MissionButton_icon_96 {
+    margin-top: 20rem;
     background-image: url('R.images.story_mode.gui.maps.icons.missionSelection.button.lock');
     filter: brightness(0.6);
 }
 
 .mediaExtraLarge .MissionButton_base__locked_bf .MissionButton_icon_96 {
+    margin-top: 25rem;
     background-image: url('R.images.story_mode.gui.maps.icons.missionSelection.button.extraLarge.lock');
 }
 
@@ -1785,15 +1860,23 @@
 
 .TabItem_tab_ad {
     color: #a29b70;
-    font-size: 18rem;
+    font-size: 16rem;
     font-weight: 400;
     line-height: 1.25;
+    font-size: 15rem;
     text-shadow:
         0 1rem 1rem rgba(0, 0, 0, 0.75),
         0 0 3rem rgba(0, 0, 0, 0.5),
         0 0 6rem rgba(0, 0, 0, 0.75);
     position: relative;
     transition: opacity 0.16s ease-in-out;
+}
+
+.mediaMedium .TabItem_tab_ad {
+    color: #a29b70;
+    font-size: 18rem;
+    font-weight: 400;
+    line-height: 1.25;
 }
 
 .TabItem_tab__hoverDecor_4c {
@@ -1825,15 +1908,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 1362rem;
+    width: 1090rem;
     height: 33rem;
-    background: linear-gradient(
-        90deg,
-        transparent 0%,
-        rgba(0, 0, 0, 0.9) 25%,
-        rgba(0, 0, 0, 0.9) 75%,
-        transparent 100%
-    );
+    background:
+        linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.35) 50%, transparent 100%),
+        linear-gradient(90deg, transparent 15%, rgba(0, 0, 0, 0.5) 38%, rgba(0, 0, 0, 0.5) 62%, transparent 85%);
     position: relative;
 }
 
@@ -1841,10 +1920,15 @@
     position: absolute;
     left: 50%;
     transform: translate(-50%);
-    width: 1024rem;
+    width: 592rem;
     height: 1rem;
-    background: linear-gradient(90deg, transparent 0%, rgba(242, 242, 247, 0.15) 50%, transparent 100%);
-    top: 32rem;
+    background: linear-gradient(90deg, transparent 0%, rgba(145, 132, 124, 0.28) 50%, transparent 100%);
+    top: 0;
+}
+
+.Tabs_line__second_47 {
+    top: auto;
+    bottom: 0;
 }
 
 .MissionSelectionViewApp_base_fd {
@@ -1881,24 +1965,45 @@
         radial-gradient(
             40% 50% at 50% -5%,
             rgba(0, 0, 0, 1) 0%,
-            rgba(0, 0, 0, 0.7) 60%,
-            rgba(0, 0, 0, 0.4) 80%,
+            rgba(0, 0, 0, 0.35) 60%,
+            rgba(0, 0, 0, 0.2) 80%,
             rgba(0, 0, 0, 0) 100%
         ),
         linear-gradient(
             180deg,
-            rgba(0, 0, 0, 0.7) 0%,
-            rgba(0, 0, 0, 0.4) 46.8%,
-            rgba(0, 0, 0, 0.2) 74.96%,
-            rgba(0, 0, 0, 0) 97.21%
+            rgba(0, 0, 0, 0.35) 0%,
+            rgba(0, 0, 0, 0.2) 47%,
+            rgba(0, 0, 0, 0.1) 75%,
+            rgba(0, 0, 0, 0) 97%
         );
     position: absolute;
+}
+
+.MissionSelectionViewApp_shadowMissions_ca {
+    width: 717rem;
+    height: 231rem;
+    background: url('R.images.story_mode.gui.maps.icons.missionSelection.top_shadow') no-repeat 50% / contain;
+    position: absolute;
+    top: calc(44rem + var(--external-padding-top));
+    left: auto;
+}
+
+.mediaMedium .MissionSelectionViewApp_shadowMissions_ca {
+    top: calc(55rem + var(--external-padding-top));
+}
+
+.mediaLarge .MissionSelectionViewApp_shadowMissions_ca {
+    top: calc(77rem + var(--external-padding-top));
+}
+
+.mediaExtraLarge .MissionSelectionViewApp_shadowMissions_ca {
+    top: calc(93rem + var(--external-padding-top));
 }
 
 .MissionSelectionViewApp_shadowLeft_62 {
     width: 460rem;
     height: 100vh;
-    background: url('R.images.story_mode.gui.maps.icons.missionSelection.task.background') no-repeat 50% / 100%;
+    background: url('R.images.story_mode.gui.maps.icons.missionSelection.task.background') no-repeat 50% / 100% 100%;
     position: absolute;
     top: 0;
     left: 0;
@@ -1917,64 +2022,90 @@
 }
 
 .MissionSelectionViewApp_shadowBottom_9c {
-    width: 100vw;
-    height: 107rem;
-    background: radial-gradient(
-        50% 50% at 50% 100%,
-        rgba(0, 0, 0, 0.65) 0%,
-        rgba(0, 0, 0, 0.5) 36.38%,
-        rgba(0, 0, 0, 0.3) 64.51%,
-        rgba(0, 0, 0, 0.15) 83.26%,
-        rgba(0, 0, 0, 0) 100%
-    );
+    width: 1800rem;
+    height: 131rem;
+    background: url('R.images.story_mode.gui.maps.icons.missionSelection.bottom_shadow') no-repeat 50% / contain;
     position: absolute;
     bottom: 0;
-    left: 0;
-}
-
-.MissionSelectionViewApp_close_5b {
-    display: flex;
-    height: 32rem;
-    position: absolute;
-    top: 29rem;
-    right: 0;
-    z-index: 2;
-}
-
-.mediaMedium .MissionSelectionViewApp_close_5b {
-    right: 29rem;
+    left: auto;
 }
 
 .MissionSelectionViewApp_about_27 {
     display: flex;
     height: 32rem;
     position: absolute;
-    top: 29rem;
-    left: -3rem;
+    top: calc(14rem + var(--external-padding-top));
+    right: 24rem;
     z-index: 2;
 }
 
 .mediaMedium .MissionSelectionViewApp_about_27 {
-    left: 17rem;
+    top: calc(25rem + var(--external-padding-top));
+}
+
+.mediaLarge .MissionSelectionViewApp_about_27 {
+    top: calc(47rem + var(--external-padding-top));
+    right: 40rem;
+}
+
+.mediaExtraLarge .MissionSelectionViewApp_about_27 {
+    top: calc(63rem + var(--external-padding-top));
 }
 
 .MissionSelectionViewApp_tabs_1b {
+    padding-top: calc(11rem + var(--external-padding-top));
     z-index: 2;
 }
 
+.mediaMedium .MissionSelectionViewApp_tabs_1b {
+    padding-top: calc(22rem + var(--external-padding-top));
+}
+
+.mediaLarge .MissionSelectionViewApp_tabs_1b {
+    padding-top: calc(44rem + var(--external-padding-top));
+}
+
+.mediaExtraLarge .MissionSelectionViewApp_tabs_1b {
+    padding-top: calc(60rem + var(--external-padding-top));
+}
+
 .MissionSelectionViewApp_missionSelector_47 {
-    margin-top: 25rem;
+    padding-top: 17rem;
 }
 
 .mediaExtraLarge .MissionSelectionViewApp_missionSelector_47 {
-    margin-top: 34rem;
+    padding-top: 22rem;
+}
+
+.MissionSelectionViewApp_missionSelector__withoutTabs_53 {
+    padding-top: calc(17rem + var(--external-padding-top));
+}
+
+.mediaMedium .MissionSelectionViewApp_missionSelector__withoutTabs_53 {
+    padding-top: calc(31rem + var(--external-padding-top));
+}
+
+.mediaLarge .MissionSelectionViewApp_missionSelector__withoutTabs_53 {
+    padding-top: calc(37rem + var(--external-padding-top));
+}
+
+.mediaExtraLarge .MissionSelectionViewApp_missionSelector__withoutTabs_53 {
+    padding-top: calc(42rem + var(--external-padding-top));
 }
 
 .MissionSelectionViewApp_specialVehicle_40 {
     position: absolute;
     left: 50%;
     transform: translate(-50%);
-    bottom: 33rem;
+    bottom: calc(37rem + var(--external-padding-bottom));
+}
+
+.mediaMedium .MissionSelectionViewApp_specialVehicle_40 {
+    bottom: calc(18rem + var(--external-padding-bottom));
+}
+
+.mediaExtraLarge .MissionSelectionViewApp_specialVehicle_40 {
+    bottom: calc(12rem + var(--external-padding-bottom));
 }
 
 .MissionSelectionViewApp_leftSparkles_e6 {
@@ -2055,6 +2186,25 @@
     bottom: 0;
     left: 0;
     background: url('R.images.story_mode.gui.maps.icons.common.lore.vignette') no-repeat 50% / 100% 100%;
+}
+
+.MissionSelectionViewApp_menuItems_15 {
+    position: absolute;
+    top: calc(70rem + var(--external-padding-top));
+    left: 30rem;
+}
+
+.mediaMedium .MissionSelectionViewApp_menuItems_15 {
+    top: calc(78rem + var(--external-padding-top));
+}
+
+.mediaLarge .MissionSelectionViewApp_menuItems_15 {
+    top: calc(86rem + var(--external-padding-top));
+    left: 48rem;
+}
+
+.mediaExtraLarge .MissionSelectionViewApp_menuItems_15 {
+    top: calc(128rem + var(--external-padding-top));
 }
 
 .MissionSelectionViewApp_triggerHint_55 {

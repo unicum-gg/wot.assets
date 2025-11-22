@@ -1,0 +1,80 @@
+import { j as e } from '../../../../chunks/vendor.js';
+import {
+    i as s,
+    n as o,
+    y as t,
+    aN as r,
+    aj as a,
+    ak as i,
+    aO as n,
+    r as d,
+    ad as l,
+    ac as c,
+    ay as u,
+    ax as p,
+} from '../../../../chunks/lib.js';
+import { E as m, D as _ } from '../../../../chunks/extended_tooltip_decorator.js';
+const [x, I] = s()(
+    ({ observableModel: e }) => ({
+        ...e.primitives(['countdown', 'id', 'description']),
+        bonuses: e.arrayClone('bonuses'),
+    }),
+    o,
+);
+function b({ bonuses: s, questId: o, size: d, resId: l, ...c }) {
+    const u = t(s, (e) => ({
+            size: d,
+            name: e.name,
+            image: i(e, d),
+            value: e.value,
+            valueType: a(e.name),
+            special: 'overlayType' in e ? e.overlayType : void 0,
+            tooltipArgs: {
+                ...r(
+                    { tooltipId: `${o}:${e.tooltipId}` },
+                    Number(e.tooltipContentId) ||
+                        R.views.common.tooltip_window.backport_tooltip_content.BackportTooltipContent('resId'),
+                ),
+                resId: l,
+            },
+        })),
+        p = {
+            contentId: R.views.lobby.tooltips.AdditionalRewardsTooltip('resId'),
+            args: { showFromIndex: c.count, questId: o },
+            resId: l,
+        };
+    return e.jsx(n, { ...c, data: u, boxRewardTooltip: p, size: d });
+}
+const g = 'ProgressionQuest_rewardsText_f9c93221',
+    v = 'ProgressionQuest_divider_c563a46d',
+    y = 'ProgressionQuest_rewardItem_48a2c60b',
+    w = 'ProgressionQuest_rewards_a5087287',
+    j = d.resolve('strings'),
+    h = d.resolve('aliases'),
+    T = () => {
+        const { model: s } = I(),
+            o = s.bonuses.get(),
+            t = s.countdown.get();
+        return e.jsxs(m, {
+            header: j.readOrEmpty('battle_royale_extention.tooltip.quest.header'),
+            description: l(s.description.get()),
+            timerText: 'user_missions.tooltip.daily_quests.expires',
+            timerTimeLeft: t,
+            children: [
+                e.jsx(_, { className: v }),
+                e.jsx('div', {
+                    className: g,
+                    children: j.pluralOrEmpty('battle_royale_extention.tooltip.daily_quests.reward', o.length),
+                }),
+                e.jsx(b, {
+                    bonuses: o,
+                    questId: s.id.get(),
+                    resId: h.read((e) => e.user_missions.hangarWidget.Quests('resId')),
+                    size: c.Small,
+                    rewardItemClassMix: y,
+                    classMix: w,
+                }),
+            ],
+        });
+    };
+u(e.jsx(p, { children: e.jsx(x, { children: e.jsx(T, {}) }) }));

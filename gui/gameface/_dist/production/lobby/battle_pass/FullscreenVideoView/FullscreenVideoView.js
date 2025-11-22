@@ -131,10 +131,18 @@
                 n.d(t, { E: () => r });
             },
             3138: (e, t, n) => {
-                n.d(t, { O: () => i });
+                n.d(t, { O: () => a });
                 var r = n(5959),
-                    o = n(514);
-                const i = { view: n(7641), client: r, sound: o.ZP };
+                    o = n(7698),
+                    i = n(514);
+                const a = { view: n(7641), client: r, sound: i.ZP, intl: o.N };
+            },
+            7698: (e, t, n) => {
+                n.d(t, { N: () => r });
+                const r = {
+                    toUpperCase: (e) => window.systemLocale.toUpperCase(e),
+                    toLowerCase: (e) => window.systemLocale.toLowerCase(e),
+                };
             },
             514: (e, t, n) => {
                 n.d(t, { ZP: () => a });
@@ -184,28 +192,31 @@
                         arabic2roman: () => R,
                         children: () => o,
                         displayStatus: () => i.W,
-                        displayStatusIs: () => C,
+                        displayStatusIs: () => L,
+                        enableFullScreenModeSupported: () => M,
                         events: () => a.U,
-                        extraSize: () => L,
+                        extraSize: () => S,
                         forceTriggerMouseMove: () => T,
                         freezeTextureBeforeResize: () => m,
                         getBrowserTexturePath: () => u,
                         getDisplayStatus: () => k,
+                        getExternalPaddingsRem: () => C,
                         getFontNames: () => P,
                         getScale: () => E,
                         getSize: () => v,
                         getViewGlobalPosition: () => h,
+                        initExternalPaddings: () => A,
                         isEventHandled: () => O,
-                        isFocused: () => g,
+                        isFocused: () => b,
                         pxToRem: () => w,
                         remToPx: () => p,
                         resize: () => f,
                         sendEvent: () => s.qP,
-                        setAnimateWindow: () => b,
+                        setAnimateWindow: () => g,
                         setEventHandled: () => y,
                         setInputPaddingsRem: () => l,
                         setSidePaddingsRem: () => _,
-                        whenTutorialReady: () => S,
+                        whenTutorialReady: () => x,
                     }));
                 var r = n(9690),
                     o = n(3722),
@@ -249,10 +260,10 @@
                 function p(e) {
                     return viewEnv.remToPx(e);
                 }
-                function b(e, t) {
+                function g(e, t) {
                     viewEnv.setAnimateWindow(e, t);
                 }
-                function g() {
+                function b() {
                     return viewEnv.isFocused();
                 }
                 function y() {
@@ -271,12 +282,15 @@
                         let e = [];
                         return () => (0 === e.length && (e = Object.keys(viewEnv.getFontsConfig())), e);
                     })(),
-                    R = r.cg,
-                    C = Object.keys(i.W).reduce(
+                    R = r.cg;
+                function C() {
+                    return viewEnv.getExternalPaddingsRem();
+                }
+                const L = Object.keys(i.W).reduce(
                         (e, t) => ((e[t] = () => viewEnv.getShowingStatus() === i.W[t]), e),
                         {},
                     ),
-                    L = {
+                    S = {
                         set: (e, t) => {
                             viewEnv.setExtraSizeRem(e, t);
                         },
@@ -284,12 +298,29 @@
                             viewEnv.getExtraSizeRem(e, t);
                         },
                     },
-                    S = Promise.all([
+                    x = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : a.U.onDomBuilt(e);
                         }),
                         engine.whenReady,
                     ]);
+                function M() {
+                    viewEnv.setFullscreenModeSupported(!0);
+                }
+                function A(e) {
+                    function t() {
+                        const t = viewEnv.getExternalPaddingsRem(),
+                            n = t.top,
+                            r = t.right,
+                            o = t.bottom,
+                            i = t.left;
+                        (e.style.setProperty('--external-padding-top', `${n}rem`),
+                            e.style.setProperty('--external-padding-right', `${r}rem`),
+                            e.style.setProperty('--external-padding-bottom', `${o}rem`),
+                            e.style.setProperty('--external-padding-left', `${i}rem`));
+                    }
+                    (t(), engine.on('self.onPaddingsUpdated', () => t()));
+                }
             },
             8566: (e, t, n) => {
                 n.d(t, { qP: () => l });
@@ -647,14 +678,14 @@
                         var r;
                     },
                     p = () => w(s.CLOSE),
-                    b = (e, t) => {
+                    g = (e, t) => {
                         e.keyCode === _.n.ESCAPE && t();
                     };
-                var g = n(7572);
+                var b = n(7572);
                 const y = o.instance,
                     O = {
                         DataTracker: i.Z,
-                        ViewModel: g.Z,
+                        ViewModel: b.Z,
                         ViewEventType: s,
                         NumberFormatType: c,
                         RealFormatType: l,
@@ -692,14 +723,14 @@
                             });
                         },
                         addEscapeListener: (e) => {
-                            const t = (t) => b(t, e);
+                            const t = (t) => g(t, e);
                             return (
                                 window.addEventListener('keydown', t),
                                 () => window.removeEventListener('keydown', t)
                             );
                         },
                         closeOnEsc: (e) => {
-                            b(e, p);
+                            g(e, p);
                         },
                         handleViewEvent: w,
                         onBindingsReady: E,
@@ -809,15 +840,15 @@
                                 for (r = 0; r < i.length; r++) ((n = i[r]), t.indexOf(n) >= 0 || (o[n] = e[n]));
                                 return o;
                             })(e, d);
-                        const b = t,
-                            g = (0, r.useRef)(null);
+                        const g = t,
+                            b = (0, r.useRef)(null);
                         var y;
                         return (
                             (y = () =>
                                 s.O.view.events.onDisplayChanged((e, t) => {
                                     var n, r;
-                                    (t === c.W.hidden && (null == (n = g.current) || n.pause()),
-                                        t === c.W.shown && (null == (r = g.current) || r.play()));
+                                    (t === c.W.hidden && (null == (n = b.current) || n.pause()),
+                                        t === c.W.shown && (null == (r = b.current) || r.play()));
                                 })),
                             (0, r.useEffect)(y, []),
                             (0, r.useEffect)(
@@ -836,8 +867,8 @@
                                             }
                                         );
                                     })(() => {
-                                        const e = g.current;
-                                        if (!b || !e || !m)
+                                        const e = b.current;
+                                        if (!g || !e || !m)
                                             return void (null != e && e.cohFastSeek && (e.cohFastSeek = !1));
                                         const t = e.cohGetKeyframeTimestamps();
                                         t.length > 0
@@ -847,10 +878,10 @@
                                               }))
                                             : console.warn("Can't prebuffered keyframes, keyframes was not found");
                                     }),
-                                [m, b],
+                                [m, g],
                             ),
                             (0, r.useEffect)(() => {
-                                if (b && g.current) {
+                                if (g && b.current) {
                                     const e = { changeTimeHandlers: [], changeKeyframeHandlers: [], changeTimeLoop: l },
                                         t = () => {
                                             let t = 0;
@@ -865,8 +896,8 @@
                                                         },
                                                     ];
                                                 })(() => {
-                                                    if (g.current) {
-                                                        const n = g.current,
+                                                    if (b.current) {
+                                                        const n = b.current,
                                                             r = n.currentTime,
                                                             o = n.duration;
                                                         if (
@@ -875,10 +906,10 @@
                                                                     e({ currentTime: r, duration: o }),
                                                                 ),
                                                                 (t = r)),
-                                                            g.current.paused || !b || !m)
+                                                            b.current.paused || !g || !m)
                                                         )
                                                             return;
-                                                        const i = g.current.cohGetKeyframeTimestamps();
+                                                        const i = b.current.cohGetKeyframeTimestamps();
                                                         i.forEach((t, n) => {
                                                             r > i[n] - 0.02 &&
                                                                 r < i[n] &&
@@ -923,27 +954,27 @@
                                         ),
                                         o = () => {
                                             var e;
-                                            return null == (e = g.current) ? void 0 : e.currentTime;
+                                            return null == (e = b.current) ? void 0 : e.currentTime;
                                         },
                                         i = () => {
                                             var e;
-                                            return null == (e = g.current) ? void 0 : e.duration;
+                                            return null == (e = b.current) ? void 0 : e.duration;
                                         },
                                         a = (e) => {
                                             var t, n, r;
-                                            g.current &&
-                                                (g.current.currentTime =
+                                            b.current &&
+                                                (b.current.currentTime =
                                                     ((t = 0),
-                                                    (n = g.current.duration),
+                                                    (n = b.current.duration),
                                                     (r = e) < t ? t : r > n ? n : r));
                                         },
                                         s = () => {
                                             var e;
-                                            return null == (e = g.current) ? void 0 : e.play();
+                                            return null == (e = b.current) ? void 0 : e.play();
                                         },
                                         c = () => {
                                             var e;
-                                            return null == (e = g.current) ? void 0 : e.pause();
+                                            return null == (e = b.current) ? void 0 : e.pause();
                                         },
                                         u = () => {
                                             (c(), a(0));
@@ -951,7 +982,7 @@
                                         d = () => {
                                             var e, t;
                                             return null !=
-                                                (e = null == (t = g.current) ? void 0 : t.cohGetKeyframeTimestamps())
+                                                (e = null == (t = b.current) ? void 0 : t.cohGetKeyframeTimestamps())
                                                 ? e
                                                 : [];
                                         },
@@ -969,10 +1000,10 @@
                                         h = (e, t) => {
                                             var n;
                                             return (
-                                                null == (n = g.current) || n.addEventListener(e, t),
+                                                null == (n = b.current) || n.addEventListener(e, t),
                                                 () => {
                                                     var n;
-                                                    return null == (n = g.current)
+                                                    return null == (n = b.current)
                                                         ? void 0
                                                         : n.removeEventListener(e, t);
                                                 }
@@ -981,17 +1012,17 @@
                                         w = (e, t) => {
                                             var n;
                                             return (
-                                                null == (n = g.current) || n.removeEventListener(e, t),
+                                                null == (n = b.current) || n.removeEventListener(e, t),
                                                 () => {
                                                     var n;
-                                                    return null == (n = g.current)
+                                                    return null == (n = b.current)
                                                         ? void 0
                                                         : n.removeEventListener(e, t);
                                                 }
                                             );
                                         };
                                     return (
-                                        (b.current = {
+                                        (g.current = {
                                             on: h,
                                             off: w,
                                             play: s,
@@ -1004,28 +1035,28 @@
                                             goToAndPlay: _,
                                             goToAndStop: v,
                                             setCurrentTime: a,
-                                            domRef: g.current,
+                                            domRef: b.current,
                                             onChangeTime: n,
                                             onKeyframes: r,
                                         }),
                                         () => {
-                                            (f(), (b.current = null));
+                                            (f(), (g.current = null));
                                         }
                                     );
                                 }
-                            }, [E, b, m]),
+                            }, [E, g, m]),
                             (0, r.useEffect)(() => {
-                                g.current && u && g.current.play();
+                                b.current && u && b.current.play();
                             }, [u, h]),
                             (0, r.useEffect)(() => {
-                                if (g.current)
+                                if (b.current)
                                     return () => {
-                                        g.current && g.current.pause();
+                                        b.current && b.current.pause();
                                     };
                             }, []),
                             o().createElement(
                                 'video',
-                                _({ src: n, className: i, style: v, loop: h, ref: g, onClick: w }, p),
+                                _({ src: n, className: i, style: v, loop: h, ref: b, onClick: w }, p),
                             )
                         );
                     }),
@@ -1077,8 +1108,8 @@
                         console.error('[lib/sounds.js] playSound(', e, '): ', t);
                     });
                 }
-                var b = n(3403),
-                    g = n(9174);
+                var g = n(3403),
+                    b = n(9174);
                 function y(e, t) {
                     var n = ('undefined' != typeof Symbol && e[Symbol.iterator]) || e['@@iterator'];
                     if (n) return (n = n.call(e)).next.bind(n);
@@ -1189,13 +1220,25 @@
                                                 readByPath: l,
                                                 externalModel: c,
                                                 observableModel: {
-                                                    array: (e, t) => {
-                                                        const r = null != t ? t : l(e),
-                                                            o = g.LO.box(r, { equals: u });
+                                                    dict: (e) => {
+                                                        const t = l(e),
+                                                            r = b.LO.box(t, { equals: u });
                                                         return (
                                                             'real' === n &&
                                                                 c.subscribe(
-                                                                    (0, g.aD)((e) => o.set(e)),
+                                                                    (0, b.aD)((e) => r.set(e)),
+                                                                    e,
+                                                                ),
+                                                            r
+                                                        );
+                                                    },
+                                                    array: (e, t) => {
+                                                        const r = null != t ? t : l(e),
+                                                            o = b.LO.box(r, { equals: u });
+                                                        return (
+                                                            'real' === n &&
+                                                                c.subscribe(
+                                                                    (0, b.aD)((e) => o.set(e)),
                                                                     e,
                                                                 ),
                                                             o
@@ -1203,11 +1246,11 @@
                                                     },
                                                     object: (e, t) => {
                                                         const r = null != t ? t : l(e),
-                                                            o = g.LO.box(r, { equals: u });
+                                                            o = b.LO.box(r, { equals: u });
                                                         return (
                                                             'real' === n &&
                                                                 c.subscribe(
-                                                                    (0, g.aD)((e) => o.set(e)),
+                                                                    (0, b.aD)((e) => o.set(e)),
                                                                     e,
                                                                 ),
                                                             o
@@ -1217,13 +1260,13 @@
                                                         const r = l(t);
                                                         if (Array.isArray(e)) {
                                                             const o = e.reduce(
-                                                                (e, t) => ((e[t] = g.LO.box(r[t], {})), e),
+                                                                (e, t) => ((e[t] = b.LO.box(r[t], {})), e),
                                                                 {},
                                                             );
                                                             return (
                                                                 'real' === n &&
                                                                     c.subscribe(
-                                                                        (0, g.aD)((t) => {
+                                                                        (0, b.aD)((t) => {
                                                                             e.forEach((e) => {
                                                                                 o[e].set(t[e]);
                                                                             });
@@ -1237,13 +1280,13 @@
                                                             const o = e,
                                                                 i = Object.entries(o),
                                                                 a = i.reduce(
-                                                                    (e, [t, n]) => ((e[n] = g.LO.box(r[t], {})), e),
+                                                                    (e, [t, n]) => ((e[n] = b.LO.box(r[t], {})), e),
                                                                     {},
                                                                 );
                                                             return (
                                                                 'real' === n &&
                                                                     c.subscribe(
-                                                                        (0, g.aD)((e) => {
+                                                                        (0, b.aD)((e) => {
                                                                             i.forEach(([t, n]) => {
                                                                                 a[n].set(e[t]);
                                                                             });
@@ -1301,16 +1344,16 @@
                     C = k[1],
                     L = 'FullscreenVideo_base_6b',
                     S = 'FullscreenVideo_video_ae',
-                    M = { widescreen: 1.6, hd: 16 / 9 };
-                var x;
+                    x = { widescreen: 1.6, hd: 16 / 9 };
+                var M;
                 !(function (e) {
                     ((e.Contain = 'contain'), (e.Cover = 'cover'));
-                })(x || (x = {}));
+                })(M || (M = {}));
                 const A = (e, t, n, r) => {
                         const o = ((e) =>
                                 'media_ch4' === e
-                                    ? { videoAspectRatio: M.hd, fill: x.Contain }
-                                    : { videoAspectRatio: M.widescreen, fill: x.Cover })(r.split('.').slice(-1)[0]),
+                                    ? { videoAspectRatio: x.hd, fill: M.Contain }
+                                    : { videoAspectRatio: x.widescreen, fill: M.Cover })(r.split('.').slice(-1)[0]),
                             i = o.videoAspectRatio,
                             a = o.fill,
                             s = viewEnv.pxToRem(e) * n,
@@ -1318,11 +1361,11 @@
                             l = s / i,
                             u = c * i,
                             d = c > l;
-                        return a === x.Contain
+                        return a === M.Contain
                             ? { width: `${d ? s : u}rem`, height: `${d ? l : c}rem` }
                             : { width: `${d ? u : s}rem`, height: `${d ? c : l}rem` };
                     },
-                    N = (0, b.Pi)(() => {
+                    N = (0, g.Pi)(() => {
                         const e = C(),
                             t = e.model,
                             n = e.controls,
@@ -1353,7 +1396,7 @@
                                 );
                             })(),
                             m = (0, r.useRef)(null),
-                            b = ((e, t) => {
+                            g = ((e, t) => {
                                 let n = e;
                                 const r = t.split('.');
                                 for (let e = 0; e < r.length; e++) {
@@ -1362,7 +1405,7 @@
                                 }
                                 return '';
                             })(R.videos, a);
-                        var g;
+                        var b;
                         return (
                             (0, r.useEffect)(() => {
                                 const e = m.current;
@@ -1388,14 +1431,14 @@
                                     e && (t ? e.pause() : e.play());
                                 });
                             }, [m]),
-                            (g = n.close),
-                            E(h.n.ESCAPE, g),
+                            (b = n.close),
+                            E(h.n.ESCAPE, b),
                             o().createElement(
                                 'div',
                                 { className: L },
                                 o().createElement(f, {
                                     className: S,
-                                    src: b,
+                                    src: g,
                                     onEnded: n.close,
                                     ref: m,
                                     style: A(d, _, v, a),

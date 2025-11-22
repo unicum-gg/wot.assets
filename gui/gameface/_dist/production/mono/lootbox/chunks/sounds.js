@@ -1,0 +1,21 @@
+const _ = {
+    entryHover: 'gui_lb_icon_hover',
+    boxMouseEnter: 'gui_lb_highlight_on',
+    boxMouseLeave: 'gui_lb_highlight_off',
+    boxAppear: 'gui_lb_appear',
+    purchaseHover: 'gui_lb_buy_more',
+    purchaseClick: 'gui_lb_ingame_shop_box_buy',
+    rareAnimation: 'gui_lb_rare_reward_fx',
+    epicAnimation: 'gui_lb_epic_reward_fx',
+    rewardAppear: 'gui_lb_reward_item_default',
+    multiRewardAppear: 'gui_random_reward_appear',
+    compensationAppear: 'gui_reward_screen_compensation',
+    open: 'gui_lb_video_default_open',
+    openRare: 'gui_lb_video_default_rare_open',
+    switch: 'gui_lb_type_switch',
+    statsOpen: 'gui_lb_stats_open',
+    statsClose: 'gui_lb_stats_close',
+    infoPageTabHover: 'gui_lb_infopage_box_highlight',
+    infoPageTabClick: 'gui_lb_infopage_box_click',
+};
+export { _ as S };

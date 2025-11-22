@@ -39,10 +39,10 @@
                         f = e.className,
                         m = e.autoplay,
                         g = void 0 !== m && m,
-                        h = e.style,
-                        p = e.loop,
-                        y = void 0 !== p && p,
-                        E = e.isPrebufferKeyframes,
+                        p = e.style,
+                        y = e.loop,
+                        E = void 0 !== y && y,
+                        h = e.isPrebufferKeyframes,
                         w = e.keyframesNameConfig,
                         b = e.onClick,
                         T = (function (e, n) {
@@ -68,7 +68,7 @@
                             () =>
                                 (0, o.v)(() => {
                                     const e = x.current;
-                                    if (!P || !e || !E)
+                                    if (!P || !e || !h)
                                         return void (null != e && e.cohFastSeek && (e.cohFastSeek = !1));
                                     const n = e.cohGetKeyframeTimestamps();
                                     n.length > 0
@@ -78,7 +78,7 @@
                                           }))
                                         : console.warn("Can't prebuffered keyframes, keyframes was not found");
                                 }),
-                            [E, P],
+                            [h, P],
                         ),
                         (0, u.useEffect)(() => {
                             if (P && x.current) {
@@ -106,7 +106,7 @@
                                                                 e({ currentTime: r, duration: o }),
                                                             ),
                                                             (n = r)),
-                                                        x.current.paused || !P || !E)
+                                                        x.current.paused || !P || !h)
                                                     )
                                                         return;
                                                     const i = x.current.cohGetKeyframeTimestamps();
@@ -189,7 +189,7 @@
                                             (e.changeKeyframeHandlers = []),
                                             null == e.changeTimeLoop || e.changeTimeLoop());
                                     },
-                                    h = (e, n) => {
+                                    p = (e, n) => {
                                         var t;
                                         return (
                                             null == (t = x.current) || t.addEventListener(e, n),
@@ -199,7 +199,7 @@
                                             }
                                         );
                                     },
-                                    p = (e, n) => {
+                                    y = (e, n) => {
                                         var t;
                                         return (
                                             null == (t = x.current) || t.removeEventListener(e, n),
@@ -211,8 +211,8 @@
                                     };
                                 return (
                                     (P.current = {
-                                        on: h,
-                                        off: p,
+                                        on: p,
+                                        off: y,
                                         play: c,
                                         pause: l,
                                         stop: d,
@@ -232,10 +232,10 @@
                                     }
                                 );
                             }
-                        }, [w, P, E]),
+                        }, [w, P, h]),
                         (0, u.useEffect)(() => {
                             x.current && g && x.current.play();
-                        }, [g, y]),
+                        }, [g, E]),
                         (0, u.useEffect)(() => {
                             if (x.current)
                                 return () => {
@@ -244,7 +244,7 @@
                         }, []),
                         c().createElement(
                             'video',
-                            v({ src: t, className: f, style: h, loop: y, ref: x, onClick: b }, T),
+                            v({ src: t, className: f, style: p, loop: E, ref: x, onClick: b }, T),
                         )
                     );
                 });
@@ -401,10 +401,18 @@
                 t.d(n, { E: () => r });
             },
             3138: (e, n, t) => {
-                t.d(n, { O: () => i });
+                t.d(n, { O: () => a });
                 var r = t(5959),
-                    o = t(514);
-                const i = { view: t(7641), client: r, sound: o.ZP };
+                    o = t(7698),
+                    i = t(514);
+                const a = { view: t(7641), client: r, sound: i.ZP, intl: o.N };
+            },
+            7698: (e, n, t) => {
+                t.d(n, { N: () => r });
+                const r = {
+                    toUpperCase: (e) => window.systemLocale.toUpperCase(e),
+                    toLowerCase: (e) => window.systemLocale.toLowerCase(e),
+                };
             },
             514: (e, n, t) => {
                 t.d(n, { ZP: () => a });
@@ -454,28 +462,31 @@
                         arabic2roman: () => C,
                         children: () => o,
                         displayStatus: () => i.W,
-                        displayStatusIs: () => O,
+                        displayStatusIs: () => L,
+                        enableFullScreenModeSupported: () => F,
                         events: () => a.U,
                         extraSize: () => z,
                         forceTriggerMouseMove: () => x,
-                        freezeTextureBeforeResize: () => h,
+                        freezeTextureBeforeResize: () => p,
                         getBrowserTexturePath: () => l,
                         getDisplayStatus: () => R,
+                        getExternalPaddingsRem: () => O,
                         getFontNames: () => S,
-                        getScale: () => p,
+                        getScale: () => y,
                         getSize: () => f,
                         getViewGlobalPosition: () => g,
+                        initExternalPaddings: () => H,
                         isEventHandled: () => P,
                         isFocused: () => b,
-                        pxToRem: () => y,
-                        remToPx: () => E,
+                        pxToRem: () => E,
+                        remToPx: () => h,
                         resize: () => m,
                         sendEvent: () => s.qP,
                         setAnimateWindow: () => w,
                         setEventHandled: () => T,
                         setInputPaddingsRem: () => c,
                         setSidePaddingsRem: () => v,
-                        whenTutorialReady: () => L,
+                        whenTutorialReady: () => k,
                     }));
                 var r = t(9690),
                     o = t(3722),
@@ -505,18 +516,18 @@
                 }
                 function g(e = 'rem') {
                     const n = viewEnv.getViewGlobalPositionRem();
-                    return 'rem' === e ? n : { x: E(n.x), y: E(n.y) };
-                }
-                function h() {
-                    viewEnv.freezeTextureBeforeResize();
+                    return 'rem' === e ? n : { x: h(n.x), y: h(n.y) };
                 }
                 function p() {
+                    viewEnv.freezeTextureBeforeResize();
+                }
+                function y() {
                     return viewEnv.getScale();
                 }
-                function y(e) {
+                function E(e) {
                     return viewEnv.pxToRem(e);
                 }
-                function E(e) {
+                function h(e) {
                     return viewEnv.remToPx(e);
                 }
                 function w(e, n) {
@@ -541,8 +552,11 @@
                         let e = [];
                         return () => (0 === e.length && (e = Object.keys(viewEnv.getFontsConfig())), e);
                     })(),
-                    C = r.cg,
-                    O = Object.keys(i.W).reduce(
+                    C = r.cg;
+                function O() {
+                    return viewEnv.getExternalPaddingsRem();
+                }
+                const L = Object.keys(i.W).reduce(
                         (e, n) => ((e[n] = () => viewEnv.getShowingStatus() === i.W[n]), e),
                         {},
                     ),
@@ -554,12 +568,29 @@
                             viewEnv.getExtraSizeRem(e, n);
                         },
                     },
-                    L = Promise.all([
+                    k = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : a.U.onDomBuilt(e);
                         }),
                         engine.whenReady,
                     ]);
+                function F() {
+                    viewEnv.setFullscreenModeSupported(!0);
+                }
+                function H(e) {
+                    function n() {
+                        const n = viewEnv.getExternalPaddingsRem(),
+                            t = n.top,
+                            r = n.right,
+                            o = n.bottom,
+                            i = n.left;
+                        (e.style.setProperty('--external-padding-top', `${t}rem`),
+                            e.style.setProperty('--external-padding-right', `${r}rem`),
+                            e.style.setProperty('--external-padding-bottom', `${o}rem`),
+                            e.style.setProperty('--external-padding-left', `${i}rem`));
+                    }
+                    (n(), engine.on('self.onPaddingsUpdated', () => n()));
+                }
             },
             8566: (e, n, t) => {
                 t.d(n, { qP: () => c });

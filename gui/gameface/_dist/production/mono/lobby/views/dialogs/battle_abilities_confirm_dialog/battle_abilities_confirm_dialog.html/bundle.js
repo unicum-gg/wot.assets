@@ -1,0 +1,258 @@
+import { I as e, j as s, Q as a } from '../../../../chunks/vendor.js';
+import {
+    i,
+    o as l,
+    a4 as c,
+    cr as o,
+    ae as t,
+    cm as n,
+    ar as r,
+    bX as d,
+    bs as m,
+    bt as _,
+    R as p,
+    S as b,
+    A as h,
+    cw as f,
+    ap as u,
+    bF as x,
+    cx as g,
+    cq as y,
+    ch as j,
+    bO as N,
+} from '../../../../chunks/lib.js';
+const [v, C] = i()(
+        ({ observableModel: e }) => ({
+            ...e.primitives([
+                'price',
+                'bonus',
+                'isBuy',
+                'isMultipleAbilities',
+                'isTypeSelected',
+                'isEnoughMoney',
+                'selectedSkillName',
+                'vehicleType',
+            ]),
+            icons: e.array('icons'),
+            names: e.array('names'),
+        }),
+        ({ externalModel: e }) => ({
+            toggleCheckbox: e.createCallbackNoArgs('onCheckBoxClick'),
+            submit: e.createCallbackNoArgs('onSubmitClick'),
+            cancel: e.createCallbackNoArgs('onCancelClick'),
+            close: e.createCallbackNoArgs('onCloseClick'),
+        }),
+    ),
+    k = 'Buttons_5fa91684',
+    A = 'Buttons_closeButton_186f67f0',
+    T = l.resolve('strings'),
+    M = e(function () {
+        const { controls: e, model: a } = C(),
+            i = !a.isEnoughMoney.get(),
+            l = c({ body: T.readOrEmpty('fl_tooltips.battleAbilities.button.notEnough') }),
+            m = () => !i && e.submit();
+        return (
+            o(t.ENTER, m, !0),
+            n(e.close),
+            s.jsxs('div', {
+                className: k,
+                children: [
+                    s.jsx(r, {
+                        ...(i && l),
+                        theme: d.primary,
+                        onClick: m,
+                        disabled: i,
+                        children: T.read('fl_dialogs.confirm.btn.' + (a.isBuy.get() ? 'buyAndMount' : 'install')),
+                    }),
+                    s.jsx(r, {
+                        theme: d.secondary,
+                        onClick: e.cancel,
+                        classNames: { base: A },
+                        children: T.read('dialogs.dialogTemplates.cancel'),
+                    }),
+                ],
+            })
+        );
+    }),
+    E = 'Checkbox_f97c63a7',
+    B = 'Checkbox_label_da2dcae0',
+    I = 'Checkbox_vehicleIcon_a13f4af0',
+    S = 'Checkbox_vehicleIcon__checked_22656aaa',
+    $ = l.resolve('strings'),
+    F = ({ vehicleType: e, isTypeSelected: i, onCheckBoxBtnClick: l }) => {
+        const o = c({ body: $.read(`fl_tooltips.battleAbilities.checkbox.${e}`) });
+        return s.jsx('div', {
+            className: E,
+            ...o,
+            children: s.jsx(m, {
+                checked: i,
+                onCheckedChange: l,
+                size: _.small,
+                children: s.jsx(p, {
+                    path: 'fl_battle_abilities_setup.dealPanel.applyToType',
+                    params: {
+                        icon: s.jsx(b, { path: `vehicleTypes.c_24x24.${e}`, className: a(I, i && S) }),
+                        type: $.readOrEmpty(`menu.classes.short.${e}`),
+                    },
+                    className: B,
+                }),
+            }),
+        });
+    },
+    O = 'Content_4f01e2b5',
+    q = 'Content_base__singleAbility_9ff38f7a',
+    w = 'Content_names_24f05b3a',
+    W = l.resolve('strings'),
+    z = e(function () {
+        const { model: e, controls: i } = C();
+        return s.jsxs('div', {
+            className: a(O, !e.isMultipleAbilities.get() && q),
+            children: [
+                e.isMultipleAbilities.get() &&
+                    s.jsx('div', {
+                        className: w,
+                        children: h(e.names.get(), (e) =>
+                            f(W.readOrEmpty('fl_dialogs.confirm.quotedName'), { name: e }),
+                        ).join(', '),
+                    }),
+                s.jsx(F, {
+                    vehicleType: u(e.vehicleType.get()),
+                    isTypeSelected: e.isTypeSelected.get(),
+                    onCheckBoxBtnClick: i.toggleCheckbox,
+                }),
+            ],
+        });
+    }),
+    G = 'FooterMoney_1ea76c0a',
+    P = 'FooterMoney_label_8b351dd7',
+    Q = 'FooterMoney_priceWrapper_570d739a',
+    X = 'FooterMoney_price_5c2438b2',
+    D = 'FooterMoney_price__notEnough_1126d1b4',
+    H = 'FooterMoney_iconWrapper_f7f8aac7',
+    J = 'FooterMoney_icon_e7df9413',
+    K = 'FooterMoney_iconGlow_fa0721d4',
+    L = ({ price: e, isEnoughMoney: i }) =>
+        s.jsx('div', {
+            className: G,
+            children: s.jsx(p, {
+                className: P,
+                path: 'fl_dialogs.confirm.price',
+                params: {
+                    price: s.jsxs('div', {
+                        className: Q,
+                        children: [
+                            s.jsx('div', { className: a(X, !i && D), children: e }),
+                            s.jsxs('div', {
+                                className: H,
+                                children: [s.jsx('div', { className: K }), s.jsx('div', { className: J })],
+                            }),
+                        ],
+                    }),
+                },
+            }),
+        }),
+    U = 'Info_label_f2371de3',
+    V = l.resolve('strings'),
+    Y = ({ bonus: e }) =>
+        s.jsx(x, {
+            text: V.readOrEmpty('fl_dialogs.confirm.modificationBonus'),
+            binding: { bonus: String(e) },
+            classMix: U,
+            justifyContent: g.Center,
+        }),
+    Z = e(function ({ className: e }) {
+        const { model: a } = C();
+        return s.jsx('div', {
+            className: e,
+            children: a.isBuy.get()
+                ? s.jsx(L, { price: a.price.get(), isEnoughMoney: a.isEnoughMoney.get() })
+                : s.jsx(Y, { bonus: a.bonus.get() }),
+        });
+    }),
+    ee = 'Icons_c833489',
+    se = 'Icons_glow_d6bff6ed',
+    ae = 'Icons_icon_6f345bd5',
+    ie = e(function ({ className: e }) {
+        const { model: i } = C();
+        return s.jsxs('div', {
+            className: a(ee, e),
+            children: [
+                s.jsx('div', { className: se }),
+                h(i.icons.get(), (e, a) =>
+                    s.jsx(
+                        'div',
+                        {
+                            className: ae,
+                            style: {
+                                backgroundImage: `url(${R.images.frontline.gui.maps.icons.loadout.battleAbilities.c_180x135.$dyn(e)})`,
+                            },
+                        },
+                        a,
+                    ),
+                ),
+            ],
+        });
+    }),
+    le = 'Title_556c79c2',
+    ce = 'Title_61890975',
+    oe = 'Title_iconContainer_a9bcfaca',
+    te = 'Title_vehicleIcon_3c17128e',
+    ne = l.resolve('strings');
+function re(e, s, a) {
+    const i = a ? 'buy' : 'install',
+        l = e ? '.forAllOfType' : '',
+        c = s || e ? 'items' : 'item';
+    return ne.readOrEmpty(`fl_dialogs.confirm.title.${i + l}.${c}`);
+}
+const de = e(function ({ className: e }) {
+        const { model: i } = C(),
+            l = u(i.vehicleType.get()),
+            c = i.isMultipleAbilities.get();
+        return s.jsx('div', {
+            className: a(le, e),
+            children: s.jsx(x, {
+                text: re(i.isTypeSelected.get(), c, i.isBuy.get()),
+                binding: {
+                    vehicleType: ne.read(`fl_dialogs.confirm.vehicleType.${l}`),
+                    abilityName: f(ne.readOrEmpty('fl_dialogs.confirm.quotedName'), {
+                        name: i.selectedSkillName.get(),
+                    }),
+                    type: ne.read(`fl_dialogs.confirm.${c ? 'items' : 'item'}.battleAbility`),
+                    vehicleIcon: s.jsx('div', {
+                        className: oe,
+                        children: s.jsx(b, { path: `vehicleTypes.c_64x64.${l}`, className: te }),
+                    }),
+                },
+                justifyContent: g.Center,
+                classMix: ce,
+            }),
+        });
+    }),
+    me = 'App_b2d024fd',
+    _e = 'App_closeButton_f5179698',
+    pe = 'App_container_22c6647f',
+    be = 'App_icon_55418d40',
+    he = 'App_title_63864cbe',
+    fe = 'App_footer_b06d8a52',
+    ue = 'App_separator_5f0d1a91';
+function xe() {
+    const { controls: e } = C();
+    return s.jsxs('div', {
+        className: me,
+        children: [
+            s.jsx(y, { onClose: e.close, className: _e }),
+            s.jsxs('div', {
+                className: pe,
+                children: [
+                    s.jsx(ie, { className: be }),
+                    s.jsx(de, { className: he }),
+                    s.jsx(z, {}),
+                    s.jsx('div', { className: ue }),
+                    s.jsx(Z, { className: fe }),
+                    s.jsx(M, {}),
+                ],
+            }),
+        ],
+    });
+}
+j(s.jsx(N, { children: s.jsx(v, { children: s.jsx(xe, {}) }) }));

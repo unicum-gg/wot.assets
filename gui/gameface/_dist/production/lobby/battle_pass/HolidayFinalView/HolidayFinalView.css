@@ -1183,7 +1183,7 @@
 .App_background_74 {
     width: 1766rem;
     height: 922rem;
-    background: url('R.images.gui.maps.icons.battlePass.holiday_final_screen.bg_tank') no-repeat center center / cover;
+    background: url('R.images.gui.maps.icons.battlePass.holiday_final_screen.bg_reward') no-repeat center center / cover;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -1229,9 +1229,8 @@
 }
 
 .App_header_70 {
-    margin-top: 40rem;
     position: absolute;
-    top: 0;
+    top: 60rem;
     right: 0;
     left: 0;
     z-index: 1;
@@ -1239,7 +1238,11 @@
 }
 
 .mediaLarge .App_header_70 {
-    margin-top: 52rem;
+    top: 80rem;
+}
+
+.mediaExtraLarge .App_header_70 {
+    top: 90rem;
 }
 
 .App_base__rewardsState_39 .App_header_70 {
@@ -1250,15 +1253,17 @@
 .App_awards_34 {
     position: absolute;
     top: -2rem;
-    right: 7rem;
+    right: 25rem;
 }
 
-.mediaMedium .App_awards_34 {
-    right: 16rem;
+.mediaMediumWidth .App_awards_34 {
+    top: 8rem;
+    right: 30rem;
 }
 
-.mediaLarge .App_awards_34 {
-    top: -15rem;
+.mediaLargeWidth .App_awards_34 {
+    top: 5rem;
+    right: 40rem;
 }
 
 .App_footer_2f {
@@ -1268,15 +1273,15 @@
 .App_base__buyState_ad .App_footer_2f {
     display: flex;
     position: absolute;
-    bottom: 0;
+    bottom: 40rem;
     left: 50%;
     z-index: 1;
     transform: translateX(-50%);
     cursor: default;
 }
 
-.mediaMedium .App_base__buyState_ad .App_footer_2f {
-    padding-top: 10rem;
+.mediaExtraLarge .App_base__buyState_ad .App_footer_2f {
+    bottom: 60rem;
 }
 
 .CButton_base_40 {
@@ -1507,7 +1512,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     flex-direction: column;
     align-items: center;
     width: 300rem;
-    height: 130rem;
+    height: 150rem;
     position: absolute;
     bottom: 0;
     left: 50%;
@@ -1515,20 +1520,20 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .mediaSmall .Final_controls_3e {
-    height: 132rem;
+    height: 152rem;
 }
 
 .mediaMedium .Final_controls_3e {
     width: 310rem;
-    height: 145rem;
-}
-
-.mediaLarge .Final_controls_3e {
     height: 165rem;
 }
 
+.mediaLarge .Final_controls_3e {
+    height: 185rem;
+}
+
 .mediaExtraLarge .Final_controls_3e {
-    height: 205rem;
+    height: 225rem;
 }
 
 .Final_label_e0 {
@@ -1587,6 +1592,35 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 
 .Final_base__finalState_92 .Final_button_f4 {
     padding: 0 20rem;
+}
+
+.FinalStateLabel_icon_60 {
+    width: 24rem;
+    height: 24rem;
+    background: url('R.images.gui.maps.icons.battlePass.holiday_final_screen.check') no-repeat center / cover;
+    transform: translateY(2rem);
+}
+
+.FinalStateLabel_greenLight_ce {
+    width: 244rem;
+    height: 40rem;
+    background: url('R.images.gui.maps.icons.battlePass.holiday_final_screen.green_light') no-repeat center / cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+}
+
+.FinalStateLabel_text_7f {
+    color: #80d43a;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+
+.mediaMedium .FinalStateLabel_text_7f {
+    font-size: 20rem;
 }
 
 .IconButton_base_d0 {
@@ -1950,6 +1984,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     width: 100%;
     height: 100%;
     position: relative;
+    z-index: 0;
 }
 
 .Purchase_content_1a {
@@ -1960,7 +1995,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     width: 888rem;
     height: 222rem;
     position: absolute;
-    bottom: 57rem;
+    bottom: 110rem;
     left: 50%;
     transform: translate(-50%, 0);
 }
@@ -1968,17 +2003,17 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .mediaMedium .Purchase_content_1a {
     width: 904rem;
     height: 271rem;
-    bottom: 73rem;
+    bottom: 120rem;
 }
 
 .mediaLarge .Purchase_content_1a {
     width: 1200rem;
     height: 250rem;
-    bottom: 100rem;
+    bottom: 150rem;
 }
 
 .mediaExtraLarge .Purchase_content_1a {
-    bottom: 120rem;
+    bottom: 180rem;
 }
 
 .Purchase_preview_30 {
@@ -1988,17 +2023,18 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     width: 100rem;
     height: 100rem;
     position: absolute;
-    bottom: 189rem;
+    bottom: 230rem;
     left: 50%;
+    z-index: 1;
     transform: translate(-50%, -50%);
 }
 
 .mediaMedium .Purchase_preview_30 {
-    bottom: 254rem;
+    bottom: 305rem;
 }
 
 .mediaLarge .Purchase_preview_30 {
-    bottom: 302rem;
+    bottom: 350rem;
 }
 
 .mediaExtraLarge .Purchase_preview_30 {
@@ -2111,148 +2147,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 
 .mediaExtraLarge .Purchase_rewardButton_fe {
     margin-top: 30rem;
-}
-
-.TextButton_base_b6 {
-    display: flex;
-    align-items: center;
-    padding: 0 3rem;
-    font-size: 12rem;
-    position: relative;
-    cursor: pointer;
-}
-
-.TextButton_base__right_39 {
-    flex-direction: row-reverse;
-}
-.TextButton_icon_17 {
-    width: 32rem;
-    height: 32rem;
-    background: no-repeat center / contain;
-    position: relative;
-}
-.TextButton_icon__back_43,
-.TextButton_icon__forward_59 {
-    margin: -1rem -5rem;
-    background-image: url('R.images.gui.maps.icons.components.text_button.back');
-    transform: translateY(1rem);
-}
-.TextButton_icon__forward_59 {
-    transform: rotate(180deg) translateY(1rem);
-}
-.TextButton_icon__close_53 {
-    margin: -1rem 0;
-    background-image: url('R.images.gui.maps.icons.components.text_button.close');
-}
-.TextButton_icon__info_33 {
-    margin: -1rem -5rem;
-    background-image: url('R.images.gui.maps.icons.components.text_button.info');
-}
-.TextButton_glow_a4 {
-    width: 100%;
-    height: 100%;
-    background: no-repeat center / contain;
-    opacity: 0;
-    position: absolute;
-    top: 0;
-    transition: opacity 0.16s;
-}
-.TextButton_icon__back_43 .TextButton_glow_a4,
-.TextButton_icon__forward_59 .TextButton_glow_a4 {
-    background-image: url('R.images.gui.maps.icons.components.text_button.back_hover');
-}
-.TextButton_icon__close_53 .TextButton_glow_a4 {
-    background-image: url('R.images.gui.maps.icons.components.text_button.close_hover');
-}
-.TextButton_icon__info_33 .TextButton_glow_a4 {
-    background-image: url('R.images.gui.maps.icons.components.text_button.info_hover');
-}
-.TextButton_base_b6:hover .TextButton_glow_a4 {
-    opacity: 1;
-}
-.TextButton_base_b6:active .TextButton_glow_a4 {
-    opacity: 0;
-}
-.TextButton_caption_82 {
-    position: relative;
-    transition:
-        color 0.16s,
-        text-shadow 0.16s;
-}
-.TextButton_caption__back_b9,
-.TextButton_caption__forward_4e,
-.TextButton_caption__close_36 {
-    color: #ffdd99;
-    text-shadow:
-        0 0 10rem rgba(255, 42, 0, 1),
-        0 0 10rem rgba(255, 42, 0, 0.4),
-        0 0 10rem rgba(255, 42, 0, 0.4),
-        0 0 2rem rgba(255, 42, 0, 0.4),
-        0 0 1rem rgba(255, 42, 0, 0.4),
-        0 0 2rem rgba(255, 42, 0, 0.4),
-        0 0 1rem rgba(255, 42, 0, 0.4);
-}
-.TextButton_base_b6:hover .TextButton_caption__back_b9,
-.TextButton_base_b6:hover .TextButton_caption__forward_4e,
-.TextButton_base_b6:hover .TextButton_caption__close_36 {
-    color: #fffa9f;
-}
-.TextButton_base_b6:active .TextButton_caption__back_b9,
-.TextButton_base_b6:active .TextButton_caption__forward_4e,
-.TextButton_base_b6:active .TextButton_caption__close_36 {
-    color: #ffdd99;
-}
-.TextButton_caption__info_23 {
-    padding: 0 5rem;
-    color: #ccffff;
-    text-shadow:
-        0 0 12rem rgba(31, 68, 255, 0.8),
-        0 0 8rem #00eaff;
-}
-.TextButton_base_b6:hover .TextButton_caption__info_23 {
-    color: #e3ffff;
-    text-shadow:
-        0 0 12rem rgba(31, 68, 255, 0.8),
-        0 0 12rem rgba(0, 234, 255, 1),
-        0 0 8rem #00eaff;
-}
-.TextButton_base_b6:active .TextButton_caption__info_23 {
-    color: #ccffff;
-    text-shadow:
-        0 0 12rem rgba(31, 68, 255, 0.6),
-        0 0 8rem #00eaff;
-}
-.TextButton_goto_e7 {
-    color: #7c7c6c;
-}
-.TextButton_base__left_ff .TextButton_goto_e7 {
-    margin-left: 8rem;
-}
-.TextButton_base__right_39 .TextButton_goto_e7 {
-    margin-right: 8rem;
-}
-.TextButton_shine_e2 {
-    width: 90rem;
-    height: 40rem;
-    background: url('R.images.gui.maps.icons.components.text_button.shine') no-repeat center / contain;
-    opacity: 0;
-    position: absolute;
-    top: -4rem;
-    transition: opacity 0.16s;
-    pointer-events: none;
-}
-.TextButton_base__left_ff .TextButton_shine_e2 {
-    left: -4rem;
-}
-.TextButton_base__right_39 .TextButton_shine_e2 {
-    right: -4rem;
-    transform: rotate(180deg);
-}
-.TextButton_base_b6:hover .TextButton_shine_e2 {
-    opacity: 1;
-}
-.TextButton_base_b6:active .TextButton_shine_e2 {
-    opacity: 0;
 }
 
 .ChapterBackground_base_fa {
@@ -2392,11 +2286,12 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     display: flex;
     width: 100%;
     height: 13rem;
+    visibility: hidden;
     position: relative;
 }
 
-.HorizontalBar_base__nonActive_82 {
-    visibility: hidden;
+.HorizontalBar_base__active_5e {
+    visibility: visible;
 }
 
 .HorizontalBar_base_49 .disable,
@@ -2493,11 +2388,12 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     flex-direction: column;
     width: 13rem;
     height: 100%;
+    visibility: hidden;
     position: relative;
 }
 
-.VerticalBar_base__nonActive_42 {
-    visibility: hidden;
+.VerticalBar_base__active_72 {
+    visibility: visible;
 }
 
 .VerticalBar_base_f3 .disable,
@@ -2767,7 +2663,8 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     right: 0;
     bottom: 0;
     left: 0;
-    z-index: -1;
+    z-index: 0;
+    pointer-events: none;
 }
 
 .RewardsViewContent_shadow_2a {
@@ -2778,13 +2675,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     position: absolute;
     top: 0;
     left: 0;
-}
-
-.RewardsViewContent_back_96 {
-    position: absolute;
-    top: 75rem;
-    left: 35rem;
-    z-index: 1;
 }
 
 .Rewards_full_ea {
@@ -2954,10 +2844,18 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     background: url('R.images.gui.maps.icons.battlePass.holiday_final_screen.light_done') no-repeat center / contain;
     mix-blend-mode: additive;
     position: absolute;
-    bottom: 10rem;
+    bottom: 30rem;
     left: 50%;
     transform: translate(-50%, 50%);
     pointer-events: none;
+}
+
+.mediaMedium .Footer_light_1b {
+    bottom: 40rem;
+}
+
+.mediaLarge .Footer_light_1b {
+    bottom: 55rem;
 }
 
 .Footer_buttonWrapper_e5 {
@@ -3059,49 +2957,4 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .mediaExtraLarge .Header_description_d3 {
     margin-top: 13rem;
     font-size: 100rem;
-}
-
-.Header_icon_3b {
-    width: 24rem;
-    height: 24rem;
-    background: url('R.images.gui.maps.icons.battlePass.holiday_final_screen.check') no-repeat center / cover;
-    transform: translateY(2rem);
-}
-
-.Header_text_bf {
-    color: #80d43a;
-    font-size: 16rem;
-    font-weight: 400;
-    line-height: 1.25;
-}
-
-.mediaMedium .Header_text_bf {
-    font-size: 20rem;
-}
-
-.Header_label_d8 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 300rem;
-    height: 20rem;
-    margin-top: 10rem;
-    position: relative;
-    transform: translateX(-6rem);
-}
-
-.mediaMedium .Header_label_d8 {
-    width: 350rem;
-    margin-top: 16rem;
-}
-
-.Header_greenLight_5a {
-    width: 244rem;
-    height: 40rem;
-    background: url('R.images.gui.maps.icons.battlePass.holiday_final_screen.green_light') no-repeat center / cover;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    z-index: -1;
-    transform: translate(-50%, -50%);
 }

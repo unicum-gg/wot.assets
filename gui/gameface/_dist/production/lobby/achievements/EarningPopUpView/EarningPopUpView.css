@@ -215,8 +215,7 @@
     justify-content: center;
     align-items: center;
     padding-bottom: 1rem;
-    background: url('R.images.gui.maps.icons.advanced_achievements.stage.achievement.stage_s36x36') no-repeat center /
-        contain;
+    background: url('R.images.gui.maps.icons.advanced_achievements.stage.stage_s36x36') no-repeat center / contain;
     color: #fd9;
     font-weight: 700;
     position: absolute;
@@ -235,7 +234,7 @@
 .AdvancedAchievement_base__s180x180_10 .AdvancedAchievement_stage_fa {
     width: 48rem;
     height: 48rem;
-    background-image: url('R.images.gui.maps.icons.advanced_achievements.stage.achievement.stage_s48x48');
+    background-image: url('R.images.gui.maps.icons.advanced_achievements.stage.stage_s48x48');
     font-size: 17rem;
     top: 57%;
 }
@@ -247,7 +246,7 @@
 .AdvancedAchievement_base__s280x280_ac .AdvancedAchievement_stage_fa {
     width: 64rem;
     height: 64rem;
-    background-image: url('R.images.gui.maps.icons.advanced_achievements.stage.achievement.stage_s64x64');
+    background-image: url('R.images.gui.maps.icons.advanced_achievements.stage.stage_s64x64');
     font-size: 22rem;
     top: 66%;
 }
@@ -256,7 +255,7 @@
     width: 96rem;
     height: 96rem;
     padding-bottom: 5rem;
-    background-image: url('R.images.gui.maps.icons.advanced_achievements.stage.achievement.stage_s96x96');
+    background-image: url('R.images.gui.maps.icons.advanced_achievements.stage.stage_s96x96');
     font-size: 34rem;
     top: 64%;
 }
@@ -277,7 +276,7 @@
 .AdvancedAchievement_base__s420x420_8a .AdvancedAchievement_stage_fa {
     width: 128rem;
     height: 128rem;
-    background-image: url('R.images.gui.maps.icons.advanced_achievements.stage.achievement.stage_s128x128');
+    background-image: url('R.images.gui.maps.icons.advanced_achievements.stage.stage_s128x128');
     font-size: 40rem;
     top: 61%;
 }

@@ -1,0 +1,20 @@
+import { R as r } from './enums.js';
+import { cf as t } from './lib.js';
+const s = {
+        [r.First]: 'first',
+        [r.Second]: 'second',
+        [r.Third]: 'third',
+        [r.Fourth]: 'fourth',
+        [r.Fifth]: 'fifth',
+        [r.Sixth]: 'sixth',
+    },
+    e = (r, t) => `${r.$dyn(s[t])}`,
+    p = (r, t = { upperCase: !1 }) => {
+        const s = t.upperCase ? R.strings.comp7_ext.rankUpper : R.strings.comp7_ext.rank;
+        return e(s, r);
+    },
+    n = (r, s = { upperCase: !1 }) => {
+        const e = s.upperCase ? R.strings.comp7_ext.rankUpper.text() : R.strings.comp7_ext.rank.text();
+        return t(e, { rank: p(r, s) });
+    };
+export { s as R, e as a, n as b, p as g };

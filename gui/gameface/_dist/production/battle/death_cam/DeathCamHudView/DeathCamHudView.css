@@ -157,6 +157,7 @@
 }
 
 .HintButton_base_19 {
+    margin-right: 5rem;
     position: relative;
 }
 
@@ -192,14 +193,14 @@
 .HintButton_btnInner_e4 {
     display: flex;
     flex-direction: row;
-    height: 14rem;
+    height: 12rem;
     margin: 2rem;
-    padding-left: 4rem;
-    padding-right: 4rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
     border-radius: 2rem;
     background: #ff981f;
     color: #000;
-    font-size: 14rem;
+    font-size: 11rem;
     font-weight: 700;
     line-height: 13rem;
 }
@@ -211,40 +212,6 @@
 .FormatText_base_d0 {
     display: flex;
     flex-wrap: wrap;
-}
-
-body {
-    line-height: normal;
-}
-
-.MarkerView_base_1b {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin: 1rem;
-    color: #fff;
-    font-size: 12rem;
-    font-weight: 400;
-    text-shadow:
-        0 0 4rem rgba(0, 0, 0, 0.5),
-        0 0 4rem rgba(0, 0, 0, 0.5);
-    visibility: visible;
-    position: relative;
-    top: 0;
-    left: 0;
-}
-
-.MarkerView_base__hidden_c2 {
-    visibility: hidden;
-}
-
-.MarkerView_leaderContainer_41 {
-    position: absolute;
-}
-
-.Leader_base_ea {
-    overflow-x: hidden;
-    position: absolute;
 }
 
 .Section_base_d7 {
@@ -335,9 +302,13 @@ body {
 }
 
 .DataLine_value_b2 {
+    display: flex;
+    flex-direction: row;
+    min-width: 34rem;
     margin-right: 12rem;
     font-weight: 700;
     text-align: right;
+    white-space: nowrap;
     overflow-x: scroll;
 }
 
@@ -490,4 +461,38 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+}
+
+.Leader_base_ea {
+    overflow-x: hidden;
+    position: absolute;
+}
+
+body {
+    line-height: normal;
+}
+
+.MarkerView_base_1b {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 1rem;
+    color: #fff;
+    font-size: 12rem;
+    font-weight: 400;
+    text-shadow:
+        0 0 4rem rgba(0, 0, 0, 0.5),
+        0 0 4rem rgba(0, 0, 0, 0.5);
+    visibility: visible;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+.MarkerView_base__hidden_c2 {
+    visibility: hidden;
+}
+
+.MarkerView_leaderContainer_41 {
+    position: absolute;
 }

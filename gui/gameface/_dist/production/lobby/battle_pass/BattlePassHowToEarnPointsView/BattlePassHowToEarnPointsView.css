@@ -331,18 +331,15 @@
     width: 250rem;
 }
 
-.Table_cell__wide_52,
-.Table_cell__wideHead_0b {
+.Table_cell__wide_52 {
     width: 250rem;
 }
 
-.Table_cell__wide_52[lang='fi'],
-.Table_cell__wideHead_0b[lang='fi'] {
+.Table_cell__wide_52[lang='fi'] {
     width: 285rem;
 }
 
-.Table_cell__wide_52[lang='no'],
-.Table_cell__wideHead_0b[lang='no'] {
+.Table_cell__wide_52[lang='no'] {
     width: 250rem;
 }
 
@@ -673,6 +670,12 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     padding-left: 15rem;
     background-image: url('R.images.gui.maps.icons.levels.tank_level_10');
     background-size: 15rem 16rem;
+}
+
+.VehicleInfo_base__level11_96 {
+    padding-left: 17rem;
+    background-image: url('R.images.gui.maps.icons.levels.tank_level_11');
+    background-size: 17rem 16rem;
 }
 
 .VehicleInfo_vehicleType_e2 {

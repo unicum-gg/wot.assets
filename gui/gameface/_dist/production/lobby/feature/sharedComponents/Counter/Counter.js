@@ -131,10 +131,18 @@
                 n.d(t, { E: () => i });
             },
             3138: (e, t, n) => {
-                n.d(t, { O: () => r });
+                n.d(t, { O: () => a });
                 var i = n(5959),
-                    o = n(514);
-                const r = { view: n(7641), client: i, sound: o.ZP };
+                    o = n(7698),
+                    r = n(514);
+                const a = { view: n(7641), client: i, sound: r.ZP, intl: o.N };
+            },
+            7698: (e, t, n) => {
+                n.d(t, { N: () => i });
+                const i = {
+                    toUpperCase: (e) => window.systemLocale.toUpperCase(e),
+                    toLowerCase: (e) => window.systemLocale.toLowerCase(e),
+                };
             },
             514: (e, t, n) => {
                 n.d(t, { ZP: () => a });
@@ -184,28 +192,31 @@
                         arabic2roman: () => R,
                         children: () => o,
                         displayStatus: () => r.W,
-                        displayStatusIs: () => C,
+                        displayStatusIs: () => L,
+                        enableFullScreenModeSupported: () => x,
                         events: () => a.U,
-                        extraSize: () => L,
+                        extraSize: () => S,
                         forceTriggerMouseMove: () => T,
                         freezeTextureBeforeResize: () => h,
                         getBrowserTexturePath: () => c,
                         getDisplayStatus: () => P,
+                        getExternalPaddingsRem: () => C,
                         getFontNames: () => k,
                         getScale: () => p,
                         getSize: () => v,
-                        getViewGlobalPosition: () => w,
+                        getViewGlobalPosition: () => E,
+                        initExternalPaddings: () => A,
                         isEventHandled: () => y,
                         isFocused: () => f,
                         pxToRem: () => b,
                         remToPx: () => m,
-                        resize: () => E,
+                        resize: () => w,
                         sendEvent: () => s.qP,
                         setAnimateWindow: () => g,
                         setEventHandled: () => O,
                         setInputPaddingsRem: () => d,
                         setSidePaddingsRem: () => u,
-                        whenTutorialReady: () => S,
+                        whenTutorialReady: () => M,
                     }));
                 var i = n(9690),
                     o = n(3722),
@@ -230,10 +241,10 @@
                 function v(e = 'px') {
                     return 'rem' === e ? viewEnv.getViewSizeRem() : viewEnv.getViewSizePx();
                 }
-                function E(e, t, n = 'px') {
+                function w(e, t, n = 'px') {
                     return 'rem' === n ? viewEnv.resizeViewRem(e, t) : viewEnv.resizeViewPx(e, t);
                 }
-                function w(e = 'rem') {
+                function E(e = 'rem') {
                     const t = viewEnv.getViewGlobalPositionRem();
                     return 'rem' === e ? t : { x: m(t.x), y: m(t.y) };
                 }
@@ -271,12 +282,15 @@
                         let e = [];
                         return () => (0 === e.length && (e = Object.keys(viewEnv.getFontsConfig())), e);
                     })(),
-                    R = i.cg,
-                    C = Object.keys(r.W).reduce(
+                    R = i.cg;
+                function C() {
+                    return viewEnv.getExternalPaddingsRem();
+                }
+                const L = Object.keys(r.W).reduce(
                         (e, t) => ((e[t] = () => viewEnv.getShowingStatus() === r.W[t]), e),
                         {},
                     ),
-                    L = {
+                    S = {
                         set: (e, t) => {
                             viewEnv.setExtraSizeRem(e, t);
                         },
@@ -284,12 +298,29 @@
                             viewEnv.getExtraSizeRem(e, t);
                         },
                     },
-                    S = Promise.all([
+                    M = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : a.U.onDomBuilt(e);
                         }),
                         engine.whenReady,
                     ]);
+                function x() {
+                    viewEnv.setFullscreenModeSupported(!0);
+                }
+                function A(e) {
+                    function t() {
+                        const t = viewEnv.getExternalPaddingsRem(),
+                            n = t.top,
+                            i = t.right,
+                            o = t.bottom,
+                            r = t.left;
+                        (e.style.setProperty('--external-padding-top', `${n}rem`),
+                            e.style.setProperty('--external-padding-right', `${i}rem`),
+                            e.style.setProperty('--external-padding-bottom', `${o}rem`),
+                            e.style.setProperty('--external-padding-left', `${r}rem`));
+                    }
+                    (t(), engine.on('self.onPaddingsUpdated', () => t()));
+                }
             },
             8566: (e, t, n) => {
                 n.d(t, { qP: () => r });
@@ -505,7 +536,7 @@
                 const __WEBPACK_DEFAULT_EXPORT__ = ViewModel;
             },
             9916: (e, t, n) => {
-                n.d(t, { B3: () => d, Z5: () => a.Z5, ry: () => b });
+                n.d(t, { ry: () => b });
                 class i {
                     constructor() {
                         ((this.entries = []),
@@ -562,8 +593,8 @@
                     l = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1 }),
                     u = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1, YEAR_MONTH: 2 });
                 var v = n(5521),
-                    E = n(3138);
-                const w = ['args'];
+                    w = n(3138);
+                const E = ['args'];
                 function h(e, t, n, i, o, r, a) {
                     try {
                         var s = e[r](a),
@@ -615,7 +646,7 @@
                                         r = Object.keys(e);
                                     for (i = 0; i < r.length; i++) ((n = r[i]), t.indexOf(n) >= 0 || (o[n] = e[n]));
                                     return o;
-                                })(t, w);
+                                })(t, E);
                             void 0 !== o
                                 ? viewEnv.handleViewEvent(
                                       Object.assign({ __Type: n, type: e }, r, {
@@ -663,17 +694,17 @@
                             m(s.CONTEXT_MENU, { isMouseEvent: !0, contentID: e, on: !0, decoratorID: n, args: t });
                         },
                         sendShowPopOverEvent: (e, t, n, i, o = R.invalid('resId'), r) => {
-                            const a = E.O.view.getViewGlobalPosition(),
+                            const a = w.O.view.getViewGlobalPosition(),
                                 _ = n.getBoundingClientRect(),
                                 d = _.x,
                                 c = _.y,
                                 l = _.width,
                                 u = _.height,
                                 v = {
-                                    x: E.O.view.pxToRem(d) + a.x,
-                                    y: E.O.view.pxToRem(c) + a.y,
-                                    width: E.O.view.pxToRem(l),
-                                    height: E.O.view.pxToRem(u),
+                                    x: w.O.view.pxToRem(d) + a.x,
+                                    y: w.O.view.pxToRem(c) + a.y,
+                                    width: w.O.view.pxToRem(l),
+                                    height: w.O.view.pxToRem(u),
                                 };
                             m(s.POP_OVER, {
                                 isMouseEvent: !0,
@@ -749,19 +780,7 @@
                     };
             },
             2873: (e, t, n) => {
-                n(6483);
-                var i = n(7363),
-                    o = n.n(i),
-                    r = n(9916);
-                class a extends o().PureComponent {
-                    render() {
-                        let e;
-                        e = 'gold' === this.props.format ? r.B3.GOLD : r.B3.INTEGRAL;
-                        const t = r.Z5.getNumberFormat(this.props.value, e);
-                        return void 0 !== this.props.value && void 0 !== t ? t : null;
-                    }
-                }
-                ((a.defaultProps = { format: 'integral' }), R.views.common.tooltip_window.simple_tooltip_content);
+                (n(6483), n(9916), n(7363), R.views.common.tooltip_window.simple_tooltip_content);
             },
             7363: (e) => {
                 e.exports = React;

@@ -1,7 +1,7 @@
 <usa-tree.xml>
   <settings>	normal	</settings>
   <grid>	grid_1	  <rows>	11	</rows>
-    <columns>	10	</columns>
+    <columns>	11	</columns>
   </grid>
   <nodes>
     <A01_T1_Cunningham>
@@ -22,6 +22,7 @@
       <row>	6	</row>
       <column>	3	</column>
       <lines>
+        <A57_M8A1></A57_M8A1>
         <A129_T6_medium></A129_T6_medium>
         <A22_M5_Stuart></A22_M5_Stuart>
       </lines>
@@ -38,9 +39,6 @@
       <row>	6	</row>
       <column>	4	</column>
       <lines>
-        <A57_M8A1>
-          <line>	vertical	</line>
-        </A57_M8A1>
         <A09_T1_hvy></A09_T1_hvy>
         <A05_M4_Sherman></A05_M4_Sherman>
       </lines>
@@ -315,6 +313,9 @@
     <A69_T110E5>
       <row>	6	</row>
       <column>	10	</column>
+      <lines>
+        <A182_T803></A182_T803>
+      </lines>
     </A69_T110E5>
     <A143_M_V_Y>
       <row>	8	</row>
@@ -327,10 +328,21 @@
     <A120_M48A5>
       <row>	10	</row>
       <column>	10	</column>
+      <lines>
+        <A183_XM69_Hacker></A183_XM69_Hacker>
+      </lines>
     </A120_M48A5>
     <A116_XM551>
       <row>	11	</row>
       <column>	10	</column>
     </A116_XM551>
+    <A183_XM69_Hacker>
+      <row>	10	</row>
+      <column>	11	</column>
+    </A183_XM69_Hacker>
+    <A182_T803>
+      <row>	6	</row>
+      <column>	11	</column>
+    </A182_T803>
   </nodes>
 </usa-tree.xml>
