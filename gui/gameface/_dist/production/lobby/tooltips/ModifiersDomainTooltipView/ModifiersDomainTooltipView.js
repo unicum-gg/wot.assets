@@ -42,14 +42,14 @@
                         getDisplayStatus: () => H,
                         getScale: () => P,
                         getSize: () => T,
-                        getViewGlobalPosition: () => R,
+                        getViewGlobalPosition: () => S,
                         isEventHandled: () => x,
-                        isFocused: () => M,
+                        isFocused: () => I,
                         pxToRem: () => N,
                         remToPx: () => y,
-                        resize: () => S,
+                        resize: () => R,
                         sendEvent: () => h,
-                        setAnimateWindow: () => I,
+                        setAnimateWindow: () => M,
                         setEventHandled: () => L,
                         setInputPaddingsRem: () => v,
                         setSidePaddingsRem: () => O,
@@ -221,10 +221,10 @@
                 function T(u = 'px') {
                     return 'rem' === u ? viewEnv.getViewSizeRem() : viewEnv.getViewSizePx();
                 }
-                function S(u, e, t = 'px') {
+                function R(u, e, t = 'px') {
                     return 'rem' === t ? viewEnv.resizeViewRem(u, e) : viewEnv.resizeViewPx(u, e);
                 }
-                function R(u = 'rem') {
+                function S(u = 'rem') {
                     const e = viewEnv.getViewGlobalPositionRem();
                     return 'rem' === u ? e : { x: y(e.x), y: y(e.y) };
                 }
@@ -240,10 +240,10 @@
                 function y(u) {
                     return viewEnv.remToPx(u);
                 }
-                function I(u, e) {
+                function M(u, e) {
                     viewEnv.setAnimateWindow(u, e);
                 }
-                function M() {
+                function I() {
                     return viewEnv.isFocused();
                 }
                 function L() {
@@ -694,7 +694,7 @@
                     };
                 window.ViewEnvHelper = O;
             },
-            319: (u, e, t) => {
+            208: (u, e, t) => {
                 var r = t(179),
                     i = t.n(r);
                 const a = (u, e, t) =>
@@ -1022,7 +1022,7 @@
                     (N.DATE_YEAR = 'date-year'));
                 var y = t(596);
                 Date.now();
-                const I = (u = 1) => {
+                const M = (u = 1) => {
                         const e = new Error().stack;
                         let t,
                             r = R.invalid('resId');
@@ -1036,7 +1036,7 @@
                             { caller: t, stack: e, resId: r }
                         );
                     },
-                    M = (u, e) => u.split('.').reduce((u, e) => u && u[e], e),
+                    I = (u, e) => u.split('.').reduce((u, e) => u && u[e], e),
                     L = (u) => u && 'ArrayItem' === u.__proto__.constructor.name,
                     x = (u, e) => (u.length > 0 ? `${u}.${e}` : e),
                     k = y.Sw.instance;
@@ -1047,7 +1047,7 @@
                 const U = (u = 'model', e = H.Deep) => {
                     const t = (0, r.useState)(0),
                         i = (t[0], t[1]),
-                        a = (0, r.useMemo)(() => I(), []),
+                        a = (0, r.useMemo)(() => M(), []),
                         n = a.caller,
                         o = a.resId,
                         E = (0, r.useMemo)(
@@ -1056,14 +1056,14 @@
                         ),
                         s = (0, r.useState)(() =>
                             ((u) => {
-                                const e = M(u, window);
+                                const e = I(u, window);
                                 for (const u in e) 'function' == typeof e[u] && (e[u] = e[u].bind(e));
                                 return L(e) ? e.value : e;
                             })(
                                 ((u) =>
                                     ((u, e) =>
                                         u.split('.').reduce((u, e) => {
-                                            const t = M(`${u}.${e}`, window);
+                                            const t = I(`${u}.${e}`, window);
                                             return L(t) ? ((u, e) => `${u}.${e}.value`)(u, e) : `${u}.${e}`;
                                         }))(u))(E),
                             ),
@@ -1089,7 +1089,7 @@
                                     },
                                     r = ((u) => {
                                         const e = ((u) => {
-                                                const e = I(),
+                                                const e = M(),
                                                     t = e.caller,
                                                     r = e.resId,
                                                     i =
@@ -1104,7 +1104,7 @@
                                             const u = [r[0]];
                                             return (
                                                 r.reduce((e, r) => {
-                                                    const i = M(x(t, `${e}.${r}`), window);
+                                                    const i = I(x(t, `${e}.${r}`), window);
                                                     return L(i)
                                                         ? (u.push(i.id), `${e}.${r}.value`)
                                                         : (u.push(r), `${e}.${r}`);
@@ -1301,7 +1301,7 @@
                             : b(R.strings.modifier_formatter.modifier.format.logic.off())),
                     ($.time = (u, e, t) => {
                         const r = u >= 0 ? t : '-',
-                            i = ((u, e = !0) =>
+                            i = ((u, e = !0, t = !1) =>
                                 u.days > 7 && e
                                     ? S(R.strings.common.duration.days(), { days: u.days })
                                     : u.days >= 1
@@ -1311,7 +1311,7 @@
                                       : u.hours >= 1
                                         ? 0 === u.minutes
                                             ? S(R.strings.common.duration.hours(), { hours: u.hours })
-                                            : `${S(R.strings.common.duration.hours(), { hours: u.hours })} ${S(R.strings.common.duration.minutes(), { minutes: u.minutes })}`
+                                            : `${S(R.strings.common.duration.hours(), { hours: u.hours })} ${S(t ? R.strings.common.duration.shortMinutes() : R.strings.common.duration.minutes(), { minutes: u.minutes })}`
                                         : S(R.strings.common.duration.minutes(), { minutes: u.minutes || 1 }))(
                                 (function (u = 0) {
                                     let e = u;
@@ -1757,6 +1757,6 @@
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             (t.forEach(e.bind(null, 0)), (t.push = e.bind(null, t.push.bind(t))));
         })());
-    var __webpack_exports__ = __webpack_require__.O(void 0, [503], () => __webpack_require__(319));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [503], () => __webpack_require__(208));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

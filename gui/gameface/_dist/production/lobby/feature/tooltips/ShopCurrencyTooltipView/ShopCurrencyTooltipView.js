@@ -1137,7 +1137,6 @@
                             'div',
                             { className: 'App_base_eb' },
                             $().createElement('div', { className: 'App_bg_9f' }),
-                            $().createElement('div', { className: 'App_metal_57' }),
                             $().createElement(
                                 'div',
                                 { className: 'App_header_7d' },
@@ -1236,6 +1235,7 @@
                 Object.defineProperty(u, Symbol.toStringTag, { value: 'Module' }),
                 Object.defineProperty(u, '__esModule', { value: !0 }));
         }),
+        (F.j = 354),
         (() => {
             var u = { 354: 0 };
             F.O.j = (e) => 0 === u[e];

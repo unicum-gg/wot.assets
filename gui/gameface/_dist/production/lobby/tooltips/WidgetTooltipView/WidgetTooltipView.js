@@ -781,7 +781,7 @@
                     };
                 window.ViewEnvHelper = b;
             },
-            260: (u, e, t) => {
+            598: (u, e, t) => {
                 'use strict';
                 var r = t(179),
                     n = t.n(r),
@@ -1530,8 +1530,8 @@
                         SM: { mt: j.mt__SM, mr: j.mr__SM, mb: j.mb__SM, ml: j.ml__SM },
                         XS: { mt: j.mt__XS, mr: j.mr__XS, mb: j.mb__XS, ml: j.ml__XS },
                     },
-                    K = (Object.keys(z), ['mt', 'mr', 'mb', 'ml']),
-                    V = { mt: 'marginTop', mr: 'marginRight', mb: 'marginBottom', ml: 'marginLeft' },
+                    V = (Object.keys(z), ['mt', 'mr', 'mb', 'ml']),
+                    K = { mt: 'marginTop', mr: 'marginRight', mb: 'marginBottom', ml: 'marginLeft' },
                     $ = X((u) => {
                         let e = u.className,
                             t = u.width,
@@ -1587,14 +1587,14 @@
                         const U = (0, r.useMemo)(() => {
                                 const u = { mt: o, mr: s, mb: l, ml: _ },
                                     e = ((u) =>
-                                        K.reduce((e, t) => {
+                                        V.reduce((e, t) => {
                                             const r = u[t];
                                             return r && 'number' != typeof r ? e.concat(z[!0 === r ? 'MD' : r][t]) : e;
                                         }, []))(u),
                                     r = ((u) =>
-                                        K.reduce((e, t) => {
+                                        V.reduce((e, t) => {
                                             const r = u[t];
-                                            return ('number' == typeof r && (e[V[t]] = r + 'rem'), e);
+                                            return ('number' == typeof r && (e[K[t]] = r + 'rem'), e);
                                         }, {}))(u);
                                 return {
                                     computedStyle: Object.assign({}, k, r, {
@@ -1875,6 +1875,7 @@
                     (Tu.TankmenXpFactor = 'tankmenXPFactor'),
                     (Tu.FreeXpFactor = 'freeXPFactor'),
                     (Tu.BattleToken = 'battleToken'),
+                    (Tu.Entitlements = 'entitlements'),
                     (Tu.PremiumUniversal = 'premium_universal'),
                     (Tu.Gold = 'gold'),
                     (Tu.Credits = 'credits'),
@@ -1887,7 +1888,6 @@
                     (Tu.SelectableBonus = 'selectableBonus'),
                     (Tu.StyleProgressToken = 'styleProgressToken'),
                     (Tu.TmanToken = 'tmanToken'),
-                    (Tu.PortalEventDiscount25 = 'portalEventDiscountToken'),
                     (Tu.NaturalCover = 'naturalCover'),
                     (Tu.BpCoin = 'bpcoin'),
                     (Tu.BattlaPassFinalAchievement = 'dossier_achievement'),
@@ -1918,6 +1918,13 @@
                     (Tu.BlankPersonalMissions_1 = 'freeTokens_0'),
                     (Tu.BlankPersonalMissions_2 = 'freeTokens_2'),
                     (Tu.SACoin = 'sacoin'),
+                    (Tu.ArmoryCoin = 'armory_coin'),
+                    (Tu.PremiumPlusUniversal = 'premium_plus_universal'),
+                    (Tu.DogTagType = 'dogTagComponents'),
+                    (Tu.NyPetGoodies = 'nyPetGoodies'),
+                    (Tu.HiddenVehicle = 'hidden_vehicle'),
+                    (Tu.NyStaticDogTag = 'nyStaticDogTag'),
+                    (Tu.Ny26Toys = 'ny26Toys'),
                     (function (u) {
                         ((u.Gold = 'gold'),
                             (u.Credits = 'credits'),
@@ -2009,6 +2016,7 @@
                         return void 0 !== this.props.value && void 0 !== e ? e : null;
                     }
                 }
+                let Mu;
                 ((Pu.defaultProps = { format: 'integral' }),
                     Cu.Items,
                     Cu.Equipment,
@@ -2028,6 +2036,7 @@
                     Cu.TankmenXpFactor,
                     Cu.FreeXpFactor,
                     Cu.BattleToken,
+                    Cu.Entitlements,
                     Cu.PremiumUniversal,
                     Cu.NaturalCover,
                     Cu.BpCoin,
@@ -2042,6 +2051,9 @@
                     Cu.Comp7TokenWeeklyReward,
                     Cu.Comp7TokenCouponReward,
                     Cu.BattleBoosterGift,
+                    Cu.NewYearFillers,
+                    Cu.NewYearInvoice,
+                    Cu.LootBoxToken,
                     Cu.CosmicLootboxCommon,
                     Cu.CosmicLootboxSilver,
                     Cu.SelectableBonus,
@@ -2050,58 +2062,74 @@
                     Cu.BlankPersonalMissions_1,
                     Cu.BlankPersonalMissions_2,
                     Cu.SACoin,
+                    Cu.PremiumPlusUniversal,
+                    Cu.NyPetGoodies,
+                    Cu.HiddenVehicle,
                     Cu.Gold,
                     Cu.Credits,
                     Cu.Crystal,
                     Cu.FreeXp,
+                    Cu.NewYearToyFragments,
                     Cu.BattlePassPoints,
                     Cu.PremiumPlus,
-                    Cu.Premium);
-                const Mu = (u, e, t) => {
+                    Cu.Premium,
+                    (function (u) {
+                        ((u.s16 = '16'),
+                            (u.s32 = '32'),
+                            (u.s48 = '48'),
+                            (u.s66 = '66'),
+                            (u.s80 = '80'),
+                            (u.s116 = '116'),
+                            (u.s296 = '296'),
+                            (u.s360 = '360'),
+                            (u.s400 = '400'),
+                            (u.s600 = '600'));
+                    })(Mu || (Mu = {})));
+                const Lu = (u, e, t) => {
                     var r;
                     const n = u.$dyn(e);
                     return null != (r = null == n ? void 0 : n.$dyn(t)) ? r : null;
                 };
-                let Lu, Ou, yu, Nu;
-                var ku;
+                let Ou, yu, Nu, ku;
+                var Hu;
                 (!(function (u) {
                     ((u.SELECTABLE_VEHICLE_FOR_GIFT = 'selectableVehicleForGift'),
                         (u.SELECTABLE_VEHICLE_DISCOUNT = 'selectableVehicleDiscount'));
-                })(Lu || (Lu = {})),
+                })(Ou || (Ou = {})),
                     (function (u) {
                         ((u.Timer = 'timer'),
                             (u.Countdown = 'countdown'),
                             (u.Cooldown = 'cooldown'),
                             (u.None = 'none'));
-                    })(Ou || (Ou = {})),
+                    })(yu || (yu = {})),
                     (function (u) {
                         ((u.Description = 'description'),
                             (u.Short = 'short'),
                             (u.Long = 'long'),
                             (u.Extended = 'extended'));
-                    })(yu || (yu = {})),
-                    ((ku = Nu || (Nu = {})).SHORT_DATE = 'short-date'),
-                    (ku.SHORT_TIME = 'short-time'),
-                    (ku.SHORT_DATE_TIME = 'short-date-time'),
-                    (ku.FULL_DATE = 'full-date'),
-                    (ku.FULL_DATE_TIME = 'full-date-time'),
-                    (ku.MONTH = 'month'),
-                    (ku.MONTH_DATE = 'month-date'),
-                    (ku.DATE_MONTH = 'date-month'),
-                    (ku.MONTH_YEAR = 'month-year'),
-                    (ku.WEEK_DAY = 'week-day'),
-                    (ku.WEEK_DAY_TIME = 'week-day-time'),
-                    (ku.YEAR = 'year'),
-                    (ku.DATE_YEAR = 'date-year'));
+                    })(Nu || (Nu = {})),
+                    ((Hu = ku || (ku = {})).SHORT_DATE = 'short-date'),
+                    (Hu.SHORT_TIME = 'short-time'),
+                    (Hu.SHORT_DATE_TIME = 'short-date-time'),
+                    (Hu.FULL_DATE = 'full-date'),
+                    (Hu.FULL_DATE_TIME = 'full-date-time'),
+                    (Hu.MONTH = 'month'),
+                    (Hu.MONTH_DATE = 'month-date'),
+                    (Hu.DATE_MONTH = 'date-month'),
+                    (Hu.MONTH_YEAR = 'month-year'),
+                    (Hu.WEEK_DAY = 'week-day'),
+                    (Hu.WEEK_DAY_TIME = 'week-day-time'),
+                    (Hu.YEAR = 'year'),
+                    (Hu.DATE_YEAR = 'date-year'));
                 Date.now();
-                const Hu = () => {};
-                let Iu;
+                const Iu = () => {};
+                let Uu;
                 (Ru.Sw.instance,
                     (function (u) {
                         ((u.None = 'None'), (u.Shallow = 'Shallow'), (u.Deep = 'Deep'));
-                    })(Iu || (Iu = {})),
+                    })(Uu || (Uu = {})),
                     Ru.Sw.instance);
-                const Uu = (u = 0, e, t = 0, n = Hu) => {
+                const Gu = (u = 0, e, t = 0, n = Iu) => {
                         const a = (0, r.useState)(u),
                             E = a[0],
                             i = a[1];
@@ -2126,33 +2154,34 @@
                             E
                         );
                     },
-                    Gu = 'Countdown_description_8d',
-                    Wu = (u) => u.toString().padStart(2, '0'),
-                    Xu = R.images.gui.maps.icons.components.countdown,
-                    ju = (u, e) => {
-                        const t = 2 === e ? Xu.big : Xu;
+                    Wu = 'Countdown_description_8d',
+                    Xu = (u) => u.toString().padStart(2, '0'),
+                    ju = R.images.gui.maps.icons.components.countdown,
+                    Yu = (u, e) => {
+                        const t = 2 === e ? ju.big : ju;
                         switch (u) {
-                            case Ou.Timer:
+                            case yu.Timer:
                                 return t.clock();
-                            case Ou.Countdown:
+                            case yu.Countdown:
                                 return t.hourglass();
-                            case Ou.Cooldown:
+                            case yu.Cooldown:
                                 return t.lock();
                         }
                     },
-                    Yu = (0, r.memo)(
+                    qu = (0, r.memo)(
                         ({
                             duration: u,
-                            icon: e = Ou.Timer,
-                            style: t = yu.Description,
-                            onTimeReached: a,
-                            className: E = '',
-                            classNames: i = {},
-                            labelFormat: F = '',
+                            withShortMinutes: e = !1,
+                            icon: t = yu.Timer,
+                            style: a = Nu.Description,
+                            onTimeReached: E,
+                            className: i = '',
+                            classNames: F = {},
+                            labelFormat: s = '',
                         }) => {
-                            const s = t !== yu.Description ? 1 : void 0,
-                                D = Uu(u, s),
-                                l = (() => {
+                            const D = a !== Nu.Description ? 1 : void 0,
+                                l = Gu(u, D),
+                                B = (() => {
                                     const u = (0, r.useState)(o.O.view.getScale()),
                                         e = u[0],
                                         t = u[1];
@@ -2171,11 +2200,11 @@
                                         e
                                     );
                                 })();
-                            a && a[D] && a[D]();
-                            const B = ((u, e) => {
+                            E && E[l] && E[l]();
+                            const _ = ((u, e, t = !1) => {
                                 switch (e) {
-                                    case yu.Description:
-                                        return ((u, e = !0) =>
+                                    case Nu.Description:
+                                        return ((u, e = !0, t = !1) =>
                                             u.days > 7 && e
                                                 ? Q(R.strings.common.duration.days(), { days: u.days })
                                                 : u.days >= 1
@@ -2185,16 +2214,16 @@
                                                   : u.hours >= 1
                                                     ? 0 === u.minutes
                                                         ? Q(R.strings.common.duration.hours(), { hours: u.hours })
-                                                        : `${Q(R.strings.common.duration.hours(), { hours: u.hours })} ${Q(R.strings.common.duration.minutes(), { minutes: u.minutes })}`
+                                                        : `${Q(R.strings.common.duration.hours(), { hours: u.hours })} ${Q(t ? R.strings.common.duration.shortMinutes() : R.strings.common.duration.minutes(), { minutes: u.minutes })}`
                                                     : Q(R.strings.common.duration.minutes(), {
                                                           minutes: u.minutes || 1,
-                                                      }))(u);
-                                    case yu.Short:
-                                        return `${Wu(u.minutes)}:${Wu(u.seconds)}`;
-                                    case yu.Long:
-                                        return `${Wu(u.hours)}:${Wu(u.minutes)}:${Wu(u.seconds)}`;
-                                    case yu.Extended:
-                                        return `${Q(R.strings.common.duration.days(), { days: u.days })} | ${Wu(u.hours)}:${Wu(u.minutes)}:${Wu(u.seconds)}`;
+                                                      }))(u, !0, t);
+                                    case Nu.Short:
+                                        return `${Xu(u.minutes)}:${Xu(u.seconds)}`;
+                                    case Nu.Long:
+                                        return `${Xu(u.hours)}:${Xu(u.minutes)}:${Xu(u.seconds)}`;
+                                    case Nu.Extended:
+                                        return `${Q(R.strings.common.duration.days(), { days: u.days })} | ${Xu(u.hours)}:${Xu(u.minutes)}:${Xu(u.seconds)}`;
                                 }
                             })(
                                 (function (u = 0) {
@@ -2205,29 +2234,30 @@
                                     e -= 3600 * r;
                                     const n = Math.trunc(e / 60);
                                     return ((e -= 60 * n), { days: t, hours: r, minutes: n, seconds: e });
-                                })(D),
-                                t,
+                                })(l),
+                                a,
+                                e,
                             );
                             return n().createElement(
                                 'div',
-                                { className: A()('Countdown_base_fe', E) },
-                                e !== Ou.None &&
+                                { className: A()('Countdown_base_fe', i) },
+                                t !== yu.None &&
                                     n().createElement('div', {
-                                        className: A()('Countdown_icon_8b', i.icon),
-                                        style: { backgroundImage: `url('${ju(e, l)}')` },
+                                        className: A()('Countdown_icon_8b', F.icon),
+                                        style: { backgroundImage: `url('${Yu(t, B)}')` },
                                     }),
-                                F
+                                s
                                     ? n().createElement(
                                           'div',
-                                          { className: A()(Gu, i.text) },
-                                          n().createElement(nu, { text: F, binding: { timerText: B } }),
+                                          { className: A()(Wu, F.text) },
+                                          n().createElement(nu, { text: s, binding: { timerText: _ } }),
                                       )
-                                    : n().createElement('div', { className: A()(Gu, i.text) }, B),
+                                    : n().createElement('div', { className: A()(Wu, F.text) }, _),
                             );
                         },
                     ),
-                    qu = 'App_divider_8c',
-                    zu = R.strings.winback.widget.tooltip,
+                    zu = 'App_divider_8c',
+                    Vu = R.strings.winback.widget.tooltip,
                     Ku = (0, B.Pi)(() => {
                         const u = g().model.root.get(),
                             e = u.state,
@@ -2250,11 +2280,11 @@
                                           { className: 'App_disableWrapper_6a' },
                                           n().createElement(cu, {
                                               className: 'App_disableTitle_c4',
-                                              text: Mu(zu.disable, a, 'title'),
+                                              text: Lu(Vu.disable, a, 'title'),
                                           }),
                                           n().createElement(cu, {
                                               className: 'App_disableSubtitle_64',
-                                              text: Mu(zu.disable, a, 'subtitle'),
+                                              text: Lu(Vu.disable, a, 'subtitle'),
                                           }),
                                       )
                                     : n().createElement(
@@ -2265,37 +2295,37 @@
                                               { className: 'App_header_5c', style: { backgroundImage: F } },
                                               n().createElement(cu, {
                                                   className: 'App_title_e3',
-                                                  text: Mu(zu.title, a, e),
+                                                  text: Lu(Vu.title, a, e),
                                               }),
                                               n().createElement(
                                                   'div',
                                                   { className: 'App_subtitleWrapper_83' },
                                                   n().createElement(cu, {
                                                       className: 'App_titleDescription_c6',
-                                                      text: Mu(zu.title.description, a, e),
+                                                      text: Lu(Vu.title.description, a, e),
                                                   }),
                                               ),
                                           ),
-                                          n().createElement('div', { className: qu }),
+                                          n().createElement('div', { className: zu }),
                                           n().createElement(cu, {
                                               className: A()(
                                                   'App_description_81',
                                                   o && 'App_description__inProgress_39',
                                               ),
-                                              text: Mu(zu.description, a, e),
+                                              text: Lu(Vu.description, a, e),
                                           }),
                                           i &&
                                               n().createElement(
                                                   n().Fragment,
                                                   null,
-                                                  n().createElement('div', { className: qu }),
+                                                  n().createElement('div', { className: zu }),
                                                   n().createElement(
                                                       'div',
                                                       { className: A()('App_complete_23') },
                                                       n().createElement('div', { className: 'App_iconDone_51' }),
                                                       n().createElement(cu, {
                                                           className: 'App_completeText_dc',
-                                                          text: Mu(zu.progression, a, 'complete'),
+                                                          text: Lu(Vu.progression, a, 'complete'),
                                                       }),
                                                   ),
                                               ),
@@ -2304,18 +2334,18 @@
                                               n().createElement(
                                                   n().Fragment,
                                                   null,
-                                                  n().createElement('div', { className: qu }),
+                                                  n().createElement('div', { className: zu }),
                                                   n().createElement(
                                                       'div',
                                                       { className: 'App_timerBlock_26' },
                                                       n().createElement(cu, {
                                                           className: 'App_timerText_f8',
-                                                          text: Mu(zu, a, 'timer'),
+                                                          text: Lu(Vu, a, 'timer'),
                                                       }),
                                                       n().createElement(
                                                           'div',
                                                           { className: 'App_time_ea' },
-                                                          n().createElement(Yu, { duration: t, style: yu.Long }),
+                                                          n().createElement(qu, { duration: t, style: Nu.Long }),
                                                       ),
                                                   ),
                                               ),
@@ -2407,6 +2437,6 @@
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             (t.forEach(e.bind(null, 0)), (t.push = e.bind(null, t.push.bind(t))));
         })());
-    var __webpack_exports__ = __webpack_require__.O(void 0, [503], () => __webpack_require__(260));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [503], () => __webpack_require__(598));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

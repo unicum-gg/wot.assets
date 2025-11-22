@@ -66,13 +66,13 @@
                             c = u.largeWidth,
                             v = u.mediumWidth,
                             w = u.smallWidth,
-                            f = u.extraSmallWidth,
-                            x = u.extraLargeHeight,
+                            x = u.extraSmallWidth,
+                            f = u.extraLargeHeight,
                             E = u.largeHeight,
                             S = u.mediumHeight,
                             p = u.smallHeight,
                             L = u.extraSmallHeight,
-                            H = { extraLarge: x, large: E, medium: S, small: p, extraSmall: L };
+                            H = { extraLarge: f, large: E, medium: S, small: p, extraSmall: L };
                         if (r.extraLarge || r.large || r.medium || r.small || r.extraSmall) {
                             if (r.extraLarge && o) return t;
                             if (r.large && d) return t;
@@ -84,7 +84,7 @@
                             if (r.largeWidth && c) return (0, n.H)(t, r, H);
                             if (r.mediumWidth && v) return (0, n.H)(t, r, H);
                             if (r.smallWidth && w) return (0, n.H)(t, r, H);
-                            if (r.extraSmallWidth && f) return (0, n.H)(t, r, H);
+                            if (r.extraSmallWidth && x) return (0, n.H)(t, r, H);
                             if (
                                 !(
                                     r.extraLargeWidth ||
@@ -94,7 +94,7 @@
                                     r.extraSmallWidth
                                 )
                             ) {
-                                if (r.extraLargeHeight && x) return t;
+                                if (r.extraLargeHeight && f) return t;
                                 if (r.largeHeight && E) return t;
                                 if (r.mediumHeight && S) return t;
                                 if (r.smallHeight && p) return t;
@@ -388,8 +388,8 @@
                         getViewGlobalPosition: () => c,
                         isEventHandled: () => L,
                         isFocused: () => S,
-                        pxToRem: () => f,
-                        remToPx: () => x,
+                        pxToRem: () => x,
+                        remToPx: () => f,
                         resize: () => h,
                         sendEvent: () => l.qP,
                         setAnimateWindow: () => E,
@@ -425,7 +425,7 @@
                 }
                 function c(e = 'rem') {
                     const t = viewEnv.getViewGlobalPositionRem();
-                    return 'rem' === e ? t : { x: x(t.x), y: x(t.y) };
+                    return 'rem' === e ? t : { x: f(t.x), y: f(t.y) };
                 }
                 function v() {
                     viewEnv.freezeTextureBeforeResize();
@@ -433,10 +433,10 @@
                 function w() {
                     return viewEnv.getScale();
                 }
-                function f(e) {
+                function x(e) {
                     return viewEnv.pxToRem(e);
                 }
-                function x(e) {
+                function f(e) {
                     return viewEnv.remToPx(e);
                 }
                 function E(e, t) {
@@ -656,10 +656,10 @@
                             for (i = 0; i < a.length; i++) ((r = a[i]), t.indexOf(r) >= 0 || (n[r] = e[r]));
                             return n;
                         })(e, u);
-                    const f = (0, a.useRef)(null),
-                        x = (0, n.GS)(),
-                        E = x.remScreenWidth,
-                        S = x.remScreenHeight,
+                    const x = (0, a.useRef)(null),
+                        f = (0, n.GS)(),
+                        E = f.remScreenWidth,
+                        S = f.remScreenHeight,
                         p = (0, a.useMemo)(() => {
                             const e = ((e, t, r, i) => {
                                 const n = e / t;
@@ -671,7 +671,7 @@
                         }, [S, E, v, c]);
                     return (
                         (0, a.useEffect)(() => {
-                            if (g && f.current) {
+                            if (g && x.current) {
                                 const e = () => {
                                         let e = 0;
                                         const r = (function (r) {
@@ -679,8 +679,8 @@
                                                 return [
                                                     function r() {
                                                         ((() => {
-                                                            if (f.current) {
-                                                                const r = f.current,
+                                                            if (x.current) {
+                                                                const r = x.current,
                                                                     i = r.currentTime,
                                                                     n = r.duration;
                                                                 e !== i &&
@@ -715,11 +715,11 @@
                                         }
                                     ),
                                     n = (e) => {
-                                        f.current && (f.current.currentTime = (0, i.u)(0, f.current.duration, e));
+                                        x.current && (x.current.currentTime = (0, i.u)(0, x.current.duration, e));
                                     },
                                     a = () => {
                                         var e;
-                                        return null == (e = f.current) ? void 0 : e.pause();
+                                        return null == (e = x.current) ? void 0 : e.pause();
                                     },
                                     l = () => {
                                         (a(), n(0));
@@ -732,10 +732,10 @@
                                         on: (e, t) => {
                                             var r;
                                             return (
-                                                null == (r = f.current) || r.addEventListener(e, t),
+                                                null == (r = x.current) || r.addEventListener(e, t),
                                                 () => {
                                                     var r;
-                                                    return null == (r = f.current)
+                                                    return null == (r = x.current)
                                                         ? void 0
                                                         : r.removeEventListener(e, t);
                                                 }
@@ -744,10 +744,10 @@
                                         off: (e, t) => {
                                             var r;
                                             return (
-                                                null == (r = f.current) || r.removeEventListener(e, t),
+                                                null == (r = x.current) || r.removeEventListener(e, t),
                                                 () => {
                                                     var r;
-                                                    return null == (r = f.current)
+                                                    return null == (r = x.current)
                                                         ? void 0
                                                         : r.removeEventListener(e, t);
                                                 }
@@ -755,21 +755,21 @@
                                         },
                                         play: () => {
                                             var e;
-                                            return null == (e = f.current) ? void 0 : e.play();
+                                            return null == (e = x.current) ? void 0 : e.play();
                                         },
                                         pause: a,
                                         stop: l,
                                         cleanup: u,
                                         getCurrentTime: () => {
                                             var e;
-                                            return null == (e = f.current) ? void 0 : e.currentTime;
+                                            return null == (e = x.current) ? void 0 : e.currentTime;
                                         },
                                         getDuration: () => {
                                             var e;
-                                            return null == (e = f.current) ? void 0 : e.duration;
+                                            return null == (e = x.current) ? void 0 : e.duration;
                                         },
                                         setCurrentTime: n,
-                                        domRef: f.current,
+                                        domRef: x.current,
                                         onChangeTime: r,
                                     }),
                                     () => {
@@ -779,17 +779,17 @@
                             }
                         }, [g]),
                         (0, a.useEffect)(() => {
-                            if (f.current)
+                            if (x.current)
                                 return (
-                                    d && f.current.play(),
+                                    d && x.current.play(),
                                     () => {
-                                        f.current && f.current.pause();
+                                        x.current && x.current.pause();
                                     }
                                 );
                         }, []),
                         l().createElement(
                             'video',
-                            o({ src: t, className: r, loop: m, ref: f, onClick: h, style: p }, w, {
+                            o({ src: t, className: r, loop: m, ref: x, onClick: h, style: p }, w, {
                                 onError: w.onError,
                             }),
                         )
@@ -802,7 +802,7 @@
         var n = r[e];
         if (void 0 !== n) return n.exports;
         var a = (r[e] = { exports: {} });
-        return (t[e](a, a.exports, i), a.exports);
+        return (t[e].call(a.exports, a, a.exports, i), a.exports);
     }
     ((i.m = t),
         (e = []),
@@ -848,7 +848,6 @@
                 Object.defineProperty(e, Symbol.toStringTag, { value: 'Module' }),
                 Object.defineProperty(e, '__esModule', { value: !0 }));
         }),
-        (i.j = 897),
         (() => {
             var e = { 897: 0 };
             i.O.j = (t) => 0 === e[t];

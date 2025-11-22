@@ -388,17 +388,6 @@
                             (e.SYMBOL_LOCK = 'SymbolLock'));
                     })(o || (o = {})));
             },
-            1641: (e, t, n) => {
-                let r;
-                (n.d(t, { t: () => r }),
-                    (function (e) {
-                        ((e[(e.LEFT = 0)] = 'LEFT'),
-                            (e[(e.WHEEL = 1)] = 'WHEEL'),
-                            (e[(e.RIGHT = 2)] = 'RIGHT'),
-                            (e[(e.FOURTH = 3)] = 'FOURTH'),
-                            (e[(e.FIFTH = 4)] = 'FIFTH'));
-                    })(r || (r = {})));
-            },
             1358: (e, t, n) => {
                 n.d(t, { Z: () => _ });
                 var r = n(3138);
@@ -740,11 +729,18 @@
                     };
                 window.ViewEnvHelper = P;
             },
-            9377: (e, t, n) => {
+            2648: (e, t, n) => {
                 var r = n(6483),
-                    o = n.n(r),
-                    _ = n(1641),
-                    i = n(6179),
+                    o = n.n(r);
+                let _;
+                !(function (e) {
+                    ((e[(e.LEFT = 0)] = 'LEFT'),
+                        (e[(e.WHEEL = 1)] = 'WHEEL'),
+                        (e[(e.RIGHT = 2)] = 'RIGHT'),
+                        (e[(e.FOURTH = 3)] = 'FOURTH'),
+                        (e[(e.FIFTH = 4)] = 'FIFTH'));
+                })(_ || (_ = {}));
+                var i = n(6179),
                     a = n.n(i);
                 const c = {
                     base: 'DecorationSlot_base_f3',
@@ -911,7 +907,7 @@
                             L = S[1],
                             M = C <= 0,
                             D = {
-                                backgroundImage: `url(R.images.new_year.gui.maps.icons.newYear.toys.c_2025.${k}.${y})`,
+                                backgroundImage: `url(R.images.new_year.gui.maps.icons.newYear.toys.c_2026.${k}.${y})`,
                             },
                             R = o()(c.base, M && !g && c.base__locked, v && c.base__defaultCursor),
                             N = o()(c.border, u && c.border__multi, T && c.border__hover),
@@ -922,7 +918,7 @@
                             {
                                 className: R,
                                 onMouseDown: (e) => {
-                                    e.button === _.t.LEFT && (P.current = !0);
+                                    e.button === _.LEFT && (P.current = !0);
                                 },
                                 onMouseUp: (e) => {
                                     if (P.current) {
@@ -979,7 +975,7 @@
         var t = __webpack_module_cache__[e];
         if (void 0 !== t) return t.exports;
         var n = (__webpack_module_cache__[e] = { exports: {} });
-        return (__webpack_modules__[e](n, n.exports, __webpack_require__), n.exports);
+        return (__webpack_modules__[e].call(n.exports, n, n.exports, __webpack_require__), n.exports);
     }
     ((__webpack_require__.m = __webpack_modules__),
         (deferred = []),
@@ -1049,6 +1045,6 @@
                 n = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             (n.forEach(t.bind(null, 0)), (n.push = t.bind(null, n.push.bind(n))));
         })());
-    var __webpack_exports__ = __webpack_require__.O(void 0, [4503], () => __webpack_require__(9377));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [4503], () => __webpack_require__(2648));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

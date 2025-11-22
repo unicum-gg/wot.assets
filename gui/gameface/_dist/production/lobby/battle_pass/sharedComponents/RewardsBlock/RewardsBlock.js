@@ -81,8 +81,8 @@
                         l = a.extraSmall,
                         D = a.extraLargeWidth,
                         B = a.largeWidth,
-                        C = a.mediumWidth,
-                        d = a.smallWidth,
+                        d = a.mediumWidth,
+                        C = a.smallWidth,
                         c = a.extraSmallWidth,
                         _ = a.extraLargeHeight,
                         m = a.largeHeight,
@@ -99,8 +99,8 @@
                     } else {
                         if (t.extraLargeWidth && D) return (0, r.H)(e, t, v);
                         if (t.largeWidth && B) return (0, r.H)(e, t, v);
-                        if (t.mediumWidth && C) return (0, r.H)(e, t, v);
-                        if (t.smallWidth && d) return (0, r.H)(e, t, v);
+                        if (t.mediumWidth && d) return (0, r.H)(e, t, v);
+                        if (t.smallWidth && C) return (0, r.H)(e, t, v);
                         if (t.extraSmallWidth && c) return (0, r.H)(e, t, v);
                         if (
                             !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
@@ -254,6 +254,7 @@
                             (u.TankmenXpFactor = 'tankmenXPFactor'),
                             (u.FreeXpFactor = 'freeXPFactor'),
                             (u.BattleToken = 'battleToken'),
+                            (u.Entitlements = 'entitlements'),
                             (u.PremiumUniversal = 'premium_universal'),
                             (u.Gold = 'gold'),
                             (u.Credits = 'credits'),
@@ -266,7 +267,6 @@
                             (u.SelectableBonus = 'selectableBonus'),
                             (u.StyleProgressToken = 'styleProgressToken'),
                             (u.TmanToken = 'tmanToken'),
-                            (u.PortalEventDiscount25 = 'portalEventDiscountToken'),
                             (u.NaturalCover = 'naturalCover'),
                             (u.BpCoin = 'bpcoin'),
                             (u.BattlaPassFinalAchievement = 'dossier_achievement'),
@@ -296,7 +296,14 @@
                             (u.Quests = 'quests'),
                             (u.BlankPersonalMissions_1 = 'freeTokens_0'),
                             (u.BlankPersonalMissions_2 = 'freeTokens_2'),
-                            (u.SACoin = 'sacoin'));
+                            (u.SACoin = 'sacoin'),
+                            (u.ArmoryCoin = 'armory_coin'),
+                            (u.PremiumPlusUniversal = 'premium_plus_universal'),
+                            (u.DogTagType = 'dogTagComponents'),
+                            (u.NyPetGoodies = 'nyPetGoodies'),
+                            (u.HiddenVehicle = 'hidden_vehicle'),
+                            (u.NyStaticDogTag = 'nyStaticDogTag'),
+                            (u.Ny26Toys = 'ny26Toys'));
                     })(i || (i = {})),
                     (function (u) {
                         ((u.Gold = 'gold'),
@@ -412,6 +419,7 @@
                     i.E4.TankmenXpFactor,
                     i.E4.FreeXpFactor,
                     i.E4.BattleToken,
+                    i.E4.Entitlements,
                     i.E4.PremiumUniversal,
                     i.E4.NaturalCover,
                     i.E4.BpCoin,
@@ -426,6 +434,9 @@
                     i.E4.Comp7TokenWeeklyReward,
                     i.E4.Comp7TokenCouponReward,
                     i.E4.BattleBoosterGift,
+                    i.E4.NewYearFillers,
+                    i.E4.NewYearInvoice,
+                    i.E4.LootBoxToken,
                     i.E4.CosmicLootboxCommon,
                     i.E4.CosmicLootboxSilver,
                     i.E4.SelectableBonus,
@@ -434,13 +445,30 @@
                     i.E4.BlankPersonalMissions_1,
                     i.E4.BlankPersonalMissions_2,
                     i.E4.SACoin,
+                    i.E4.PremiumPlusUniversal,
+                    i.E4.NyPetGoodies,
+                    i.E4.HiddenVehicle,
                     i.E4.Gold,
                     i.E4.Credits,
                     i.E4.Crystal,
                     i.E4.FreeXp,
+                    i.E4.NewYearToyFragments,
                     i.E4.BattlePassPoints,
                     i.E4.PremiumPlus,
                     i.E4.Premium);
+                let r;
+                !(function (u) {
+                    ((u.s16 = '16'),
+                        (u.s32 = '32'),
+                        (u.s48 = '48'),
+                        (u.s66 = '66'),
+                        (u.s80 = '80'),
+                        (u.s116 = '116'),
+                        (u.s296 = '296'),
+                        (u.s360 = '360'),
+                        (u.s400 = '400'),
+                        (u.s600 = '600'));
+                })(r || (r = {}));
             },
             7078: (u, e, t) => {
                 (t(6179), t(2056));
@@ -613,10 +641,10 @@
                         events: () => E.U,
                         extraSize: () => S,
                         forceTriggerMouseMove: () => v,
-                        freezeTextureBeforeResize: () => C,
+                        freezeTextureBeforeResize: () => d,
                         getBrowserTexturePath: () => F,
                         getDisplayStatus: () => p,
-                        getScale: () => d,
+                        getScale: () => C,
                         getSize: () => l,
                         getViewGlobalPosition: () => B,
                         isEventHandled: () => w,
@@ -660,10 +688,10 @@
                     const e = viewEnv.getViewGlobalPositionRem();
                     return 'rem' === u ? e : { x: _(e.x), y: _(e.y) };
                 }
-                function C() {
+                function d() {
                     viewEnv.freezeTextureBeforeResize();
                 }
-                function d() {
+                function C() {
                     return viewEnv.getScale();
                 }
                 function c(u) {
@@ -1075,8 +1103,8 @@
                     l = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1, YEAR_MONTH: 2 });
                 var D = t(5521),
                     B = t(3138);
-                const C = ['args'];
-                function d(u, e, t, i, r, E, n) {
+                const d = ['args'];
+                function C(u, e, t, i, r, E, n) {
                     try {
                         var a = u[E](n),
                             A = a.value;
@@ -1103,10 +1131,10 @@
                                     return new Promise(function (i, r) {
                                         var E = u.apply(e, t);
                                         function n(u) {
-                                            d(E, i, r, n, a, 'next', u);
+                                            C(E, i, r, n, a, 'next', u);
                                         }
                                         function a(u) {
-                                            d(E, i, r, n, a, 'throw', u);
+                                            C(E, i, r, n, a, 'throw', u);
                                         }
                                         n(void 0);
                                     });
@@ -1127,7 +1155,7 @@
                                         E = Object.keys(u);
                                     for (i = 0; i < E.length; i++) ((t = E[i]), e.indexOf(t) >= 0 || (r[t] = u[t]));
                                     return r;
-                                })(e, C);
+                                })(e, d);
                             void 0 !== r
                                 ? viewEnv.handleViewEvent(
                                       Object.assign({ __Type: t, type: u }, E, {

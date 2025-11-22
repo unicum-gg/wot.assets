@@ -19,12 +19,11 @@
     mix-blend-mode: additive;
     position: absolute;
     z-index: 1;
-    transform: rotate(-90deg);
     pointer-events: none;
 }
 .LootBox_base__large_ed .LootBox_shine_73 {
-    width: 275rem;
-    height: 275rem;
+    width: 250rem;
+    height: 250rem;
 }
 .LootBox_shine__big_b8 {
     background-image: url('swf://gui/flash/animations/newYear/blue_shine.swf');
@@ -35,7 +34,6 @@
     position: relative;
     z-index: 2;
     cursor: pointer;
-    pointer-events: auto;
 }
 .LootBox_base__large_ed .LootBox_wrapper_0c {
     width: 222rem;

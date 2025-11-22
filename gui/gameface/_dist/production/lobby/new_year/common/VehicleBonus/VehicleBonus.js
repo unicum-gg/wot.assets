@@ -30,7 +30,7 @@
         var D = A[u];
         if (void 0 !== D) return D.exports;
         var B = (A[u] = { exports: {} });
-        return (F[u](B, B.exports, E), B.exports);
+        return (F[u].call(B.exports, B, B.exports, E), B.exports);
     }
     ((E.m = F),
         (u = []),
@@ -53,10 +53,6 @@
             B = B || 0;
             for (var o = u.length; o > 0 && u[o - 1][2] > B; o--) u[o] = u[o - 1];
             u[o] = [A, D, B];
-        }),
-        (E.n = (u) => {
-            var F = u && u.__esModule ? () => u.default : () => u;
-            return (E.d(F, { a: F }), F);
         }),
         (E.d = (u, F) => {
             for (var A in F) E.o(F, A) && !E.o(u, A) && Object.defineProperty(u, A, { enumerable: !0, get: F[A] });

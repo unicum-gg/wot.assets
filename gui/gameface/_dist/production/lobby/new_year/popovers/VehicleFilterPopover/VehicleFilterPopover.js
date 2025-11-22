@@ -1203,7 +1203,7 @@
                         extraSmall: { weight: 0, width: 1024, height: 768 },
                     };
                 var M;
-                function L(u, e, t) {
+                function T(u, e, t) {
                     const r = (function (u, e) {
                             switch (!0) {
                                 case u >= e.extraLarge.width:
@@ -1268,10 +1268,10 @@
                         (u.smallHeight = 'smallHeight'),
                         (u.extraSmallHeight = 'extraSmallHeight'));
                 })(M || (M = {}));
-                const T = C.O.client.getSize('rem'),
-                    O = T.width,
-                    P = T.height,
-                    k = Object.assign({ width: O, height: P }, L(O, P, y)),
+                const L = C.O.client.getSize('rem'),
+                    O = L.width,
+                    P = L.height,
+                    k = Object.assign({ width: O, height: P }, T(O, P, y)),
                     N = (0, r.createContext)(k),
                     H = ['children'],
                     I = (u) => {
@@ -1359,7 +1359,7 @@
                         i = (0, r.useCallback)((u, e) => {
                             const t = C.O.view.pxToRem(u),
                                 r = C.O.view.pxToRem(e);
-                            E(Object.assign({ width: t, height: r }, L(t, r, y)));
+                            E(Object.assign({ width: t, height: r }, T(t, r, y)));
                         }, []);
                     (((u) => {
                         const e = (0, r.useRef)(!1);
@@ -1604,8 +1604,8 @@
                             S = void 0 === x ? (g ? 'flex-start' : h && 'center') || (p && 'flex-end') || void 0 : x,
                             y = u.alignSelf,
                             M = u.wrap,
-                            L = u.flexWrap,
-                            T = void 0 === L ? (M ? 'wrap' : void 0) : L,
+                            T = u.flexWrap,
+                            L = void 0 === T ? (M ? 'wrap' : void 0) : T,
                             O = u.grow,
                             R = u.shrink,
                             P = u.flex,
@@ -1641,13 +1641,13 @@
                                         alignSelf: y,
                                         display: m || S ? 'flex' : void 0,
                                         flexDirection: m,
-                                        flexWrap: T,
+                                        flexWrap: L,
                                         justifyContent: f,
                                         alignItems: S,
                                     }),
                                     computedClassNames: e,
                                 };
-                            }, [t, a, A, l, s, B, N, k, y, m, T, f, S]),
+                            }, [t, a, A, l, s, B, N, k, y, m, L, f, S]),
                             G = W.computedStyle,
                             U = W.computedClassNames;
                         return n().createElement('div', Z({ className: o()(q.base, ...U, e), style: G }, I), H);
@@ -1909,12 +1909,12 @@
                         }
                     }, [e, u, t]);
                 }
-                var wu = t(3403);
+                var wu = t(3282);
                 function fu() {
                     return !1;
                 }
                 console.log;
-                var xu = t(9174);
+                var xu = t(3915);
                 function Su(u, e) {
                     (null == e || e > u.length) && (e = u.length);
                     for (var t = 0, r = new Array(e); t < e; t++) r[t] = u[t];
@@ -1924,8 +1924,8 @@
                 function Mu(u, e) {
                     return Array.isArray(u) ? u.map(e) : u.map((u, t, r) => e(null == u ? void 0 : u.value, t, r));
                 }
-                var Lu = t(3946);
-                const Tu = ((u, e) => {
+                var Tu = t(6517);
+                const Lu = ((u, e) => {
                         const t = (0, r.createContext)({});
                         return [
                             function ({ mode: u = 'real', options: a, children: E, mocks: i }) {
@@ -2055,10 +2055,10 @@
                                                 };
                                                 return {
                                                     computes: {
-                                                        getTypes: (0, Lu.Om)(() =>
+                                                        getTypes: (0, Tu.computedFn)(() =>
                                                             Mu(e.types.get(), (u) => Object.assign({}, u)),
                                                         ),
-                                                        getNations: (0, Lu.Om)(() =>
+                                                        getNations: (0, Tu.computedFn)(() =>
                                                             Mu(e.nations.get(), (u) => Object.assign({}, u)),
                                                         ),
                                                     },
@@ -2070,11 +2070,11 @@
                                                 observableModel: {
                                                     array: (e, t) => {
                                                         const r = null != t ? t : i(e),
-                                                            n = xu.LO.box(r, { equals: fu });
+                                                            n = xu.observable.box(r, { equals: fu });
                                                         return (
                                                             'real' === u &&
                                                                 E.subscribe(
-                                                                    (0, xu.aD)((u) => n.set(u)),
+                                                                    (0, xu.action)((u) => n.set(u)),
                                                                     e,
                                                                 ),
                                                             n
@@ -2082,11 +2082,11 @@
                                                     },
                                                     object: (e, t) => {
                                                         const r = null != t ? t : i(e),
-                                                            n = xu.LO.box(r, { equals: fu });
+                                                            n = xu.observable.box(r, { equals: fu });
                                                         return (
                                                             'real' === u &&
                                                                 E.subscribe(
-                                                                    (0, xu.aD)((u) => n.set(u)),
+                                                                    (0, xu.action)((u) => n.set(u)),
                                                                     e,
                                                                 ),
                                                             n
@@ -2096,13 +2096,13 @@
                                                         const r = i(t);
                                                         if (Array.isArray(e)) {
                                                             const n = e.reduce(
-                                                                (u, e) => ((u[e] = xu.LO.box(r[e], {})), u),
+                                                                (u, e) => ((u[e] = xu.observable.box(r[e], {})), u),
                                                                 {},
                                                             );
                                                             return (
                                                                 'real' === u &&
                                                                     E.subscribe(
-                                                                        (0, xu.aD)((u) => {
+                                                                        (0, xu.action)((u) => {
                                                                             e.forEach((e) => {
                                                                                 n[e].set(u[e]);
                                                                             });
@@ -2116,13 +2116,16 @@
                                                             const n = e,
                                                                 a = Object.entries(n),
                                                                 i = a.reduce(
-                                                                    (u, [e, t]) => ((u[t] = xu.LO.box(r[e], {})), u),
+                                                                    (u, [e, t]) => (
+                                                                        (u[t] = xu.observable.box(r[e], {})),
+                                                                        u
+                                                                    ),
                                                                     {},
                                                                 );
                                                             return (
                                                                 'real' === u &&
                                                                     E.subscribe(
-                                                                        (0, xu.aD)((u) => {
+                                                                        (0, xu.action)((u) => {
                                                                             a.forEach(([e, t]) => {
                                                                                 i[t].set(u[e]);
                                                                             });
@@ -2173,8 +2176,8 @@
                         toggleType: u.createCallback((u) => ({ name: u }), 'onToggleFilter'),
                         toggleNation: u.createCallback((u) => ({ nation: u }), 'onToggleFilter'),
                     })),
-                    Ou = Tu[0],
-                    Ru = Tu[1];
+                    Ou = Lu[0],
+                    Ru = Lu[1];
                 let Pu, ku;
                 (!(function (u) {
                     ((u.main = 'main'),
@@ -2319,7 +2322,7 @@
                     Xu = R.strings.ny.selectVehicles.filterPopover,
                     Vu = (u) => R.images.gui.maps.icons.vehicleTypes.$dyn(ru(u)),
                     Ku = (u) => R.images.gui.maps.icons.filters.nations.$dyn(ru(u)),
-                    zu = (0, wu.Pi)(() => {
+                    zu = (0, wu.observer)(() => {
                         const u = Ru(),
                             e = u.model,
                             t = u.controls,
@@ -2382,7 +2385,7 @@
         var e = __webpack_module_cache__[u];
         if (void 0 !== e) return e.exports;
         var t = (__webpack_module_cache__[u] = { exports: {} });
-        return (__webpack_modules__[u](t, t.exports, __webpack_require__), t.exports);
+        return (__webpack_modules__[u].call(t.exports, t, t.exports, __webpack_require__), t.exports);
     }
     ((__webpack_require__.m = __webpack_modules__),
         (deferred = []),

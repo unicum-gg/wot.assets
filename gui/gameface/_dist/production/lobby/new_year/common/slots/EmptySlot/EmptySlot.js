@@ -168,14 +168,14 @@
                         isEventHandled: () => f,
                         isFocused: () => g,
                         pxToRem: () => p,
-                        remToPx: () => b,
+                        remToPx: () => m,
                         resize: () => v,
                         sendEvent: () => a.qP,
-                        setAnimateWindow: () => m,
+                        setAnimateWindow: () => b,
                         setEventHandled: () => O,
                         setInputPaddingsRem: () => _,
                         setSidePaddingsRem: () => l,
-                        whenTutorialReady: () => k,
+                        whenTutorialReady: () => R,
                     }));
                 var i = n(3722),
                     r = n(6112),
@@ -204,7 +204,7 @@
                 }
                 function E(e = 'rem') {
                     const t = viewEnv.getViewGlobalPositionRem();
-                    return 'rem' === e ? t : { x: b(t.x), y: b(t.y) };
+                    return 'rem' === e ? t : { x: m(t.x), y: m(t.y) };
                 }
                 function w() {
                     viewEnv.freezeTextureBeforeResize();
@@ -215,10 +215,10 @@
                 function p(e) {
                     return viewEnv.pxToRem(e);
                 }
-                function b(e) {
+                function m(e) {
                     return viewEnv.remToPx(e);
                 }
-                function m(e, t) {
+                function b(e, t) {
                     viewEnv.setAnimateWindow(e, t);
                 }
                 function g() {
@@ -248,7 +248,7 @@
                             viewEnv.getExtraSizeRem(e, t);
                         },
                     },
-                    k = Promise.all([
+                    R = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : o.U.onDomBuilt(e);
                         }),
@@ -490,7 +490,7 @@
                 const __WEBPACK_DEFAULT_EXPORT__ = ViewModel;
             },
             4179: (e, t, n) => {
-                n.d(t, { ry: () => m });
+                n.d(t, { ry: () => b });
                 class i {
                     constructor() {
                         ((this.entries = []),
@@ -570,8 +570,8 @@
                     }
                     s.done ? t(_) : Promise.resolve(_).then(i, r);
                 }
-                const b = (e) => ({ __Type: 'GFBoundingBox', x: e.x, y: e.y, width: e.width, height: e.height }),
-                    m = (function () {
+                const m = (e) => ({ __Type: 'GFBoundingBox', x: e.x, y: e.y, width: e.width, height: e.height }),
+                    b = (function () {
                         var e,
                             t =
                                 ((e = function* () {
@@ -652,7 +652,7 @@
                         RealFormatType: l,
                         TimeFormatType: u,
                         DateFormatType: v,
-                        makeGlobalBoundingBox: b,
+                        makeGlobalBoundingBox: m,
                         sendMoveEvent: (e) => g(_.MOVE, { isMouseEvent: !0, on: e }),
                         sendCloseEvent: O,
                         sendClosePopOverEvent: () => g(_.POP_OVER, { on: !1 }),
@@ -678,7 +678,7 @@
                                 decoratorID: i || R.invalid('resId'),
                                 targetID: r,
                                 direction: t,
-                                bbox: b(v),
+                                bbox: m(v),
                                 on: !0,
                                 args: o,
                             });
@@ -694,7 +694,7 @@
                             f(e, O);
                         },
                         handleViewEvent: g,
-                        onBindingsReady: m,
+                        onBindingsReady: b,
                         onLayoutReady: () =>
                             new Promise((e) => {
                                 requestAnimationFrame(() => {
@@ -759,7 +759,7 @@
         var t = __webpack_module_cache__[e];
         if (void 0 !== t) return t.exports;
         var n = (__webpack_module_cache__[e] = { exports: {} });
-        return (__webpack_modules__[e](n, n.exports, __webpack_require__), n.exports);
+        return (__webpack_modules__[e].call(n.exports, n, n.exports, __webpack_require__), n.exports);
     }
     ((__webpack_require__.m = __webpack_modules__),
         (deferred = []),
@@ -783,10 +783,6 @@
             i = i || 0;
             for (var _ = deferred.length; _ > 0 && deferred[_ - 1][2] > i; _--) deferred[_] = deferred[_ - 1];
             deferred[_] = [t, n, i];
-        }),
-        (__webpack_require__.n = (e) => {
-            var t = e && e.__esModule ? () => e.default : () => e;
-            return (__webpack_require__.d(t, { a: t }), t);
         }),
         (__webpack_require__.d = (e, t) => {
             for (var n in t)

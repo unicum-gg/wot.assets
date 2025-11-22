@@ -108,7 +108,7 @@
                             U = void 0 === I ? (W || j ? `${W ? 1 : 0} ${j ? 1 : 0} auto` : void 0) : I,
                             G = u.style,
                             Z = u.children,
-                            X = (function (u, e) {
+                            Q = (function (u, e) {
                                 if (null == u) return {};
                                 var t,
                                     r,
@@ -117,7 +117,7 @@
                                 for (r = 0; r < a.length; r++) ((t = a[r]), e.indexOf(t) >= 0 || (E[t] = u[t]));
                                 return E;
                             })(u, s);
-                        const Q = (0, i.useMemo)(() => {
+                        const X = (0, i.useMemo)(() => {
                                 const u = { mt: n, mr: c, mb: d, ml: g },
                                     e = ((u) =>
                                         B.reduce((e, t) => {
@@ -144,9 +144,9 @@
                                     computedClassNames: e,
                                 };
                             }, [t, r, n, c, d, g, G, U, P, x, H, y, R]),
-                            K = Q.computedStyle,
-                            q = Q.computedClassNames;
-                        return F().createElement('div', o({ className: E()(D.Z.base, ...q, e), style: K }, X), Z);
+                            K = X.computedStyle,
+                            q = X.computedClassNames;
+                        return F().createElement('div', o({ className: E()(D.Z.base, ...q, e), style: K }, Q), Z);
                     });
             },
             280: (u, e, t) => {
@@ -1178,7 +1178,7 @@
                 'use strict';
                 t.d(e, { D9: () => E });
                 var r = t(2790);
-                (t(3469), t(2133), t(579), t(5360), t(9056));
+                (t(3469), t(2133), t(1618), t(579), t(5360), t(9056));
                 const E = r.Z;
             },
             6536: (u, e, t) => {
@@ -1311,6 +1311,10 @@
                         e.current
                     );
                 };
+            },
+            1618: (u, e, t) => {
+                'use strict';
+                t(6179);
             },
             579: (u, e, t) => {
                 'use strict';
@@ -2027,8 +2031,8 @@
                     current: U,
                     total: G,
                     bubbleCounter: Z,
-                    title: X,
-                    description: Q,
+                    title: Q,
+                    description: X,
                     onClick: K,
                 }) => {
                     var q;
@@ -2103,7 +2107,7 @@
                                 A().createElement(
                                     'div',
                                     { className: L },
-                                    A().createElement(P.ZP, { text: X }),
+                                    A().createElement(P.ZP, { text: Q }),
                                     e &&
                                         A().createElement(P.ZP, {
                                             text: R.strings.quests.dailyQuests.tab.progress(),
@@ -2127,7 +2131,7 @@
                                             text: R.strings.quests.dailyQuests.tab.bull(),
                                             className: y,
                                         }),
-                                    A().createElement(P.ZP, { text: Q }),
+                                    A().createElement(P.ZP, { text: X }),
                                 ),
                             ),
                         ),
@@ -2151,7 +2155,8 @@
                     (function (u) {
                         ((u[(u.DailyQuests = 0)] = 'DailyQuests'),
                             (u[(u.PremiumQuests = 1)] = 'PremiumQuests'),
-                            (u[(u.PlayStreak = 2)] = 'PlayStreak'));
+                            (u[(u.PlayStreak = 2)] = 'PlayStreak'),
+                            (u[(u.NYQuests = 3)] = 'NYQuests'));
                     })(r || (r = {})));
             },
             3099: (u, e, t) => {

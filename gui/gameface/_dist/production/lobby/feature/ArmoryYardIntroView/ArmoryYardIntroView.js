@@ -2265,6 +2265,7 @@
                         );
                     }),
                     Qu = (0, $.observer)(() => {
+                        viewEnv.clearInternalCacheAfterFinalize();
                         const u = J(),
                             e = u.model,
                             t = u.controls;
@@ -2362,6 +2363,7 @@
                 Object.defineProperty(u, Symbol.toStringTag, { value: 'Module' }),
                 Object.defineProperty(u, '__esModule', { value: !0 }));
         }),
+        (__webpack_require__.j = 355),
         (() => {
             var u = { 355: 0 };
             __webpack_require__.O.j = (e) => 0 === u[e];

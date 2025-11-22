@@ -29,7 +29,7 @@
                 }
                 (n.r(a),
                     n.d(a, {
-                        addModelObserver: () => S,
+                        addModelObserver: () => M,
                         addPreloadTexture: () => k,
                         children: () => o,
                         displayStatus: () => p,
@@ -38,7 +38,7 @@
                         extraSize: () => z,
                         forceTriggerMouseMove: () => q,
                         freezeTextureBeforeResize: () => C,
-                        getBrowserTexturePath: () => M,
+                        getBrowserTexturePath: () => S,
                         getDisplayStatus: () => G,
                         getScale: () => F,
                         getSize: () => N,
@@ -213,10 +213,10 @@
                 function R(e) {
                     viewEnv.setHitAreaPaddingsRem(e, e, e, e, 15);
                 }
-                function M(e, t, n, i = 1) {
+                function S(e, t, n, i = 1) {
                     return viewEnv.getWebBrowserTexturePath(e, t, n, i);
                 }
-                function S(e, t, n) {
+                function M(e, t, n) {
                     return viewEnv.addDataChangedCallback(e, t, n);
                 }
                 function A(e) {
@@ -822,12 +822,24 @@
                             (e.RankedSkill = 'ranked_skill'),
                             (e.Triumph = 'triumph'),
                             (e.Medal = 'triumph_medal'),
-                            (e.Base = 'base'));
+                            (e.Base = 'base'),
+                            (e.Static = 'static'));
                     })(g || (g = {})),
                     (function (e) {
-                        ((e.Dedication = 'dedication'), (e.Triumph = 'triumph'), (e.Season = 'season'));
+                        ((e.Dedication = 'dedication'),
+                            (e.Triumph = 'triumph'),
+                            (e.Season = 'season'),
+                            (e.Static = 'static'));
                     })(b || (b = {})));
-                (b.Dedication, g.Dedication, b.Triumph, g.Triumph, b.Season, g.Skill, g.RankedSkill);
+                (b.Dedication,
+                    g.Dedication,
+                    b.Triumph,
+                    g.Triumph,
+                    b.Season,
+                    g.Skill,
+                    g.RankedSkill,
+                    b.Static,
+                    g.Static);
                 let f;
                 !(function (e) {
                     ((e.NUMBER = 'NUMBER'), (e.PERCENTAGE = 'PERCENTAGE'));
@@ -844,8 +856,8 @@
                     y = 'commonTooltipStyles_title_de',
                     P = 'commonTooltipStyles_listHeader_5f',
                     k = 'commonTooltipStyles_headerLevel_bb',
-                    M = 'commonTooltipStyles_headerValue_c0',
-                    S = 'commonTooltipStyles_separator_6a',
+                    S = 'commonTooltipStyles_headerValue_c0',
+                    M = 'commonTooltipStyles_separator_6a',
                     A = 'commonTooltipStyles_list_84',
                     N = 'commonTooltipStyles_levelRow_50',
                     L = 'commonTooltipStyles_current_83',
@@ -868,9 +880,9 @@
                                 'div',
                                 { className: P },
                                 r().createElement('div', { className: k }, x),
-                                r().createElement('div', { className: M }, U),
+                                r().createElement('div', { className: S }, U),
                             ),
-                            r().createElement('div', { className: S }),
+                            r().createElement('div', { className: M }),
                             r().createElement(
                                 'div',
                                 { className: A },

@@ -19,16 +19,16 @@
                 (A.r(t),
                     A.d(t, {
                         addModelObserver: () => S,
-                        addPreloadTexture: () => w,
+                        addPreloadTexture: () => P,
                         children: () => D,
                         displayStatus: () => p,
-                        displayStatusIs: () => V,
-                        events: () => v,
+                        displayStatusIs: () => Q,
+                        events: () => g,
                         extraSize: () => $,
                         forceTriggerMouseMove: () => Y,
                         freezeTextureBeforeResize: () => M,
                         getBrowserTexturePath: () => x,
-                        getDisplayStatus: () => Q,
+                        getDisplayStatus: () => V,
                         getScale: () => U,
                         getSize: () => O,
                         getViewGlobalPosition: () => N,
@@ -40,7 +40,7 @@
                         sendEvent: () => T,
                         setAnimateWindow: () => L,
                         setEventHandled: () => q,
-                        setInputPaddingsRem: () => P,
+                        setInputPaddingsRem: () => w,
                         setSidePaddingsRem: () => k,
                         whenTutorialReady: () => H,
                     }));
@@ -141,7 +141,7 @@
                     return `url(${d(u, e, A)})`;
                 }
                 const p = { showing: 0, shown: 1, hiding: 2, hidden: 3 },
-                    v = {
+                    g = {
                         onTextureFrozen: r('self.onTextureFrozen'),
                         onTextureReady: r('self.onTextureReady'),
                         onDomBuilt: r('self.onDomBuilt'),
@@ -157,7 +157,7 @@
                             onRequestPosition: r('children.requestPosition'),
                         },
                     },
-                    g = ['args'];
+                    v = ['args'];
                 const _ = 2,
                     f = 16,
                     b = 32,
@@ -174,7 +174,7 @@
                                         D = Object.keys(u);
                                     for (F = 0; F < D.length; F++) ((A = D[F]), e.indexOf(A) >= 0 || (E[A] = u[A]));
                                     return E;
-                                })(e, g);
+                                })(e, v);
                             return void 0 !== E
                                 ? viewEnv.handleViewEvent(
                                       Object.assign({ __Type: A, type: u }, D, {
@@ -209,10 +209,10 @@
                             y(f, { isMouseEvent: !0, on: u });
                         },
                     };
-                function w(u) {
+                function P(u) {
                     viewEnv.addPreloadTexture(u);
                 }
-                function P(u) {
+                function w(u) {
                     viewEnv.setHitAreaPaddingsRem(u, u, u, u, 15);
                 }
                 function x(u, e, A, F = 1) {
@@ -261,10 +261,10 @@
                 function Y() {
                     viewEnv.forceTriggerMouseMove();
                 }
-                function Q() {
+                function V() {
                     return viewEnv.getShowingStatus();
                 }
-                const V = Object.keys(p).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === p[e]), u), {}),
+                const Q = Object.keys(p).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === p[e]), u), {}),
                     $ = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
@@ -275,7 +275,7 @@
                     },
                     H = Promise.all([
                         new Promise((u) => {
-                            window.isDomBuilt ? u() : v.onDomBuilt(u);
+                            window.isDomBuilt ? u() : g.onDomBuilt(u);
                         }),
                         engine.whenReady,
                     ]),
@@ -454,7 +454,7 @@
                                       ),
                                   ),
                               );
-                let lu, cu, du, mu, pu, vu, gu, _u;
+                let lu, cu, du, mu, pu, gu, vu, _u;
                 (!(function (u) {
                     ((u.Items = 'items'),
                         (u.Equipment = 'equipment'),
@@ -475,6 +475,7 @@
                         (u.TankmenXpFactor = 'tankmenXPFactor'),
                         (u.FreeXpFactor = 'freeXPFactor'),
                         (u.BattleToken = 'battleToken'),
+                        (u.Entitlements = 'entitlements'),
                         (u.PremiumUniversal = 'premium_universal'),
                         (u.Gold = 'gold'),
                         (u.Credits = 'credits'),
@@ -487,7 +488,6 @@
                         (u.SelectableBonus = 'selectableBonus'),
                         (u.StyleProgressToken = 'styleProgressToken'),
                         (u.TmanToken = 'tmanToken'),
-                        (u.PortalEventDiscount25 = 'portalEventDiscountToken'),
                         (u.NaturalCover = 'naturalCover'),
                         (u.BpCoin = 'bpcoin'),
                         (u.BattlaPassFinalAchievement = 'dossier_achievement'),
@@ -517,7 +517,14 @@
                         (u.Quests = 'quests'),
                         (u.BlankPersonalMissions_1 = 'freeTokens_0'),
                         (u.BlankPersonalMissions_2 = 'freeTokens_2'),
-                        (u.SACoin = 'sacoin'));
+                        (u.SACoin = 'sacoin'),
+                        (u.ArmoryCoin = 'armory_coin'),
+                        (u.PremiumPlusUniversal = 'premium_plus_universal'),
+                        (u.DogTagType = 'dogTagComponents'),
+                        (u.NyPetGoodies = 'nyPetGoodies'),
+                        (u.HiddenVehicle = 'hidden_vehicle'),
+                        (u.NyStaticDogTag = 'nyStaticDogTag'),
+                        (u.Ny26Toys = 'ny26Toys'));
                 })(lu || (lu = {})),
                     (function (u) {
                         ((u.Gold = 'gold'),
@@ -595,7 +602,7 @@
                     })(pu || (pu = {})),
                     (function (u) {
                         u.BATTLE_BOOSTER = 'battleBooster';
-                    })(vu || (vu = {})),
+                    })(gu || (gu = {})),
                     (function (u) {
                         ((u.BATTLE_BOOSTER = 'battleBooster'),
                             (u.BATTLE_BOOSTER_REPLACE = 'battleBoosterReplace'),
@@ -610,7 +617,7 @@
                             (u.PROGRESSION_STYLE_UPGRADED_2 = 'progressionStyleUpgraded_2'),
                             (u.PROGRESSION_STYLE_UPGRADED_3 = 'progressionStyleUpgraded_3'),
                             (u.PROGRESSION_STYLE_UPGRADED_4 = 'progressionStyleUpgraded_4'));
-                    })(gu || (gu = {})),
+                    })(vu || (vu = {})),
                     (function (u) {
                         ((u[(u.Inactive = 0)] = 'Inactive'),
                             (u[(u.Active = 1)] = 'Active'),
@@ -634,12 +641,12 @@
                         Array.isArray(u) ||
                         (A = (function (u, e) {
                             if (!u) return;
-                            if ('string' == typeof u) return wu(u, e);
+                            if ('string' == typeof u) return Pu(u, e);
                             var A = Object.prototype.toString.call(u).slice(8, -1);
                             'Object' === A && u.constructor && (A = u.constructor.name);
                             if ('Map' === A || 'Set' === A) return Array.from(u);
                             if ('Arguments' === A || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(A))
-                                return wu(u, e);
+                                return Pu(u, e);
                         })(u)) ||
                         (e && u && 'number' == typeof u.length)
                     ) {
@@ -653,12 +660,12 @@
                         'Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.',
                     );
                 }
-                function wu(u, e) {
+                function Pu(u, e) {
                     (null == e || e > u.length) && (e = u.length);
                     for (var A = 0, F = new Array(e); A < e; A++) F[A] = u[A];
                     return F;
                 }
-                const Pu = (u) => (0 === u ? window : window.subViews.get(u));
+                const wu = (u) => (0 === u ? window : window.subViews.get(u));
                 var xu = A(946);
                 const Su = ((u, e) => {
                         const A = (0, W.createContext)({});
@@ -670,7 +677,7 @@
                                         const t = (function ({
                                                 initializer: u = !0,
                                                 rootId: e = 0,
-                                                getRoot: A = Pu,
+                                                getRoot: A = wu,
                                                 context: F = 'model',
                                             } = {}) {
                                                 const E = new Map();

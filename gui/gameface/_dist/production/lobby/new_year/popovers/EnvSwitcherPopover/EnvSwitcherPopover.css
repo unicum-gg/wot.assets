@@ -1,0 +1,788 @@
+.Box_mt__XS_0c {
+    margin-top: 4rem;
+}
+.Box_mt__SM_eb {
+    margin-top: 8rem;
+}
+.Box_mt__SMp_cf {
+    margin-top: 10rem;
+}
+.Box_mt__MD_25 {
+    margin-top: 16rem;
+}
+.Box_mt__MDp_49 {
+    margin-top: 20rem;
+}
+.Box_mt__LG_e8 {
+    margin-top: 32rem;
+}
+.Box_mt__XL_83 {
+    margin-top: 64rem;
+}
+
+.Box_mr__XS_7c {
+    margin-right: 4rem;
+}
+
+.Box_mr__SM_08 {
+    margin-right: 8rem;
+}
+
+.Box_mr__SMp_06 {
+    margin-right: 10rem;
+}
+
+.Box_mr__MD_4a {
+    margin-right: 16rem;
+}
+
+.Box_mr__MDp_b6 {
+    margin-right: 20rem;
+}
+
+.Box_mr__LG_d0 {
+    margin-right: 32rem;
+}
+
+.Box_mr__XL_db {
+    margin-right: 64rem;
+}
+
+.Box_mb__XS_bb {
+    margin-bottom: 4rem;
+}
+
+.Box_mb__SM_83 {
+    margin-bottom: 8rem;
+}
+
+.Box_mb__SMp_04 {
+    margin-bottom: 10rem;
+}
+
+.Box_mb__MD_ed {
+    margin-bottom: 16rem;
+}
+
+.Box_mb__MDp_65 {
+    margin-bottom: 20rem;
+}
+
+.Box_mb__LG_c8 {
+    margin-bottom: 32rem;
+}
+
+.Box_mb__XL_f8 {
+    margin-bottom: 64rem;
+}
+
+.Box_ml__XS_8a {
+    margin-left: 4rem;
+}
+
+.Box_ml__SM_e6 {
+    margin-left: 8rem;
+}
+
+.Box_ml__SMp_fb {
+    margin-left: 10rem;
+}
+
+.Box_ml__MD_2b {
+    margin-left: 16rem;
+}
+
+.Box_ml__MDp_c7 {
+    margin-left: 20rem;
+}
+
+.Box_ml__LG_39 {
+    margin-left: 32rem;
+}
+
+.Box_ml__XL_4a {
+    margin-left: 64rem;
+}
+
+.FormatText_base_d0 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* eslint-disable-next-line expectedscss*/
+.Text_paragraph-P10_2c {
+    font-size: 10rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.Text_paragraph-P12_22 {
+    font-size: 12rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+.Text_paragraph-P14_a7 {
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+.Text_paragraph-P16_90 {
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+.Text_paragraph-P18_50 {
+    font-size: 18rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+.Text_paragraph-P24_33 {
+    font-size: 24rem;
+    font-weight: 400;
+    line-height: 32rem;
+}
+.Text_heading-H14_8b {
+    font-size: 14rem;
+    font-weight: 700;
+    line-height: 1.15;
+}
+.Text_heading-H15_9e {
+    font-size: 15rem;
+    font-weight: 700;
+    line-height: 1.15;
+}
+.Text_heading-H18_b7 {
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H20R_f6 {
+    font-size: 20rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.Text_heading-H22_27 {
+    font-size: 22rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.Text_heading-H24R_be {
+    font-size: 24rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.Text_heading-H24_0c {
+    font-size: 24rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.Text_heading-H28_78 {
+    font-size: 28rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H36_32 {
+    font-size: 36rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H56_c3 {
+    font-size: 56rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H73_8f {
+    font-size: 73rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H144_a9 {
+    font-size: 144rem;
+    font-weight: 700;
+    line-height: 1;
+}
+.Text_BLACK_REAL_30 {
+    color: #000000;
+}
+.Text_WHITE_REAL_bc {
+    color: #ffffff;
+}
+.Text_WHITE_62 {
+    color: #f2f2f7;
+}
+.Text_WHITE_ORANGE_54 {
+    color: #fefeec;
+}
+.Text_WHITE_SPANISH_df {
+    color: #e9e2bf;
+}
+.Text_PAR_15 {
+    color: #8c8c7e;
+}
+.Text_PAR_SECONDARY_5d {
+    color: #595950;
+}
+.Text_PAR_TERTIARY_c9 {
+    color: #37362e;
+}
+.Text_INFO_RED_30 {
+    color: #ff0000;
+}
+.Text_RED_66 {
+    color: #ff2717;
+}
+.Text_RED_DARK_d8 {
+    color: #b70000;
+}
+.Text_YELLOW_ed {
+    color: #feab34;
+}
+.Text_ORANGE_be {
+    color: #ee7000;
+}
+.Text_CREAM_57 {
+    color: #ffdd99;
+}
+.Text_BROWN_18 {
+    color: #cbac77;
+}
+.Text_GREEN_BRIGHT_3f {
+    color: #80d43a;
+}
+.Text_GREEN_e3 {
+    color: #7ab300;
+}
+.Text_GREEN_DARK_f1 {
+    color: #497212;
+}
+.Text_BLUE_BOOSTER_21 {
+    color: #ccffff;
+}
+.Text_BLUE_TEAMKILLER_ab {
+    color: #09e2ff;
+}
+.Text_CRED_f7 {
+    color: #ced9d9;
+}
+.Text_GOLD_28 {
+    color: #ffc363;
+}
+.Text_BOND_be {
+    color: #c9c9b6;
+}
+.Text_PROM_65 {
+    color: #a29b70;
+}
+
+.PopoverDecorator_base_ed {
+    display: flex;
+    position: absolute;
+}
+
+.PopoverDecorator_decorator_d3 {
+    padding: 58rem;
+    border-image-source: url('R.images.gui.maps.icons.popovers.popover_bg');
+    border-image-slice: 90 fill;
+    border-image-width: 90rem;
+    overflow: hidden;
+    position: relative;
+    z-index: 0;
+}
+
+.PopoverDecorator_arrow_8a {
+    background: no-repeat 0 0 / contain;
+    position: absolute;
+}
+
+.PopoverDecorator_arrow__bottom_c3,
+.PopoverDecorator_arrow__top_6e {
+    width: 301rem;
+    height: 90rem;
+    margin: 0 58rem;
+    background-image: url('R.images.gui.maps.icons.popovers.popover_arrow_top');
+    left: 50%;
+}
+
+.PopoverDecorator_arrow__left_7a,
+.PopoverDecorator_arrow__right_b6 {
+    width: 84rem;
+    height: 181rem;
+    margin: 58rem 0;
+    background-image: url('R.images.gui.maps.icons.popovers.popover_arrow_left');
+    top: 50%;
+}
+
+.PopoverDecorator_arrow__left_7a {
+    right: 10rem;
+    transform: scaleX(-1) translateY(-90rem);
+}
+
+.PopoverDecorator_arrow__right_b6 {
+    left: 10rem;
+    transform: translateY(-90rem);
+}
+
+.PopoverDecorator_arrow__top_6e {
+    bottom: 8rem;
+    transform: scaleY(-1) translateX(-150rem);
+}
+
+.PopoverDecorator_arrow__bottom_c3 {
+    top: 8rem;
+    transform: translateX(-150rem);
+}
+
+.PopoverDecorator_closeBtn_32 {
+    width: 18rem;
+    height: 18rem;
+    background: url('R.images.gui.maps.icons.popovers.close_button_slim_up') no-repeat 0 0 / contain;
+    position: absolute;
+    top: 6rem;
+    right: 6rem;
+    z-index: 3;
+    cursor: pointer;
+}
+
+.PopoverDecorator_closeBtn_32:hover {
+    filter: brightness(160%);
+}
+
+.PopoverDecorator_closeBtn_32:active {
+    background-image: url('R.images.gui.maps.icons.popovers.close_button_slim_press');
+    filter: brightness(100%);
+}
+
+.PopoverDecorator_content_f0 {
+    position: relative;
+    z-index: 2;
+}
+
+.PopoverCloseButton_base_7a {
+    width: 18rem;
+    height: 18rem;
+    background: url('R.images.new_year.gui.maps.icons.newYear.popovers.close.default') no-repeat center / cover;
+    cursor: pointer;
+}
+
+.PopoverCloseButton_container_ef {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.PopoverCloseButton_hover_f3 {
+    width: 100%;
+    height: 100%;
+    background: url('R.images.new_year.gui.maps.icons.newYear.popovers.close.hover') no-repeat center / cover;
+    opacity: 0;
+    position: absolute;
+    transition: opacity 300ms;
+}
+
+.PopoverCloseButton_hover__visible_27 {
+    opacity: 1;
+}
+
+.PopoverCloseButton_pressed_7c {
+    width: 100%;
+    height: 100%;
+    background: url('R.images.new_year.gui.maps.icons.newYear.popovers.close.pressed') no-repeat center / cover;
+    opacity: 0;
+    position: absolute;
+    transition: opacity 300ms;
+}
+
+.PopoverCloseButton_pressed__visible_18 {
+    opacity: 1;
+}
+
+.TooltipAndPopoverStyleWrapper_base_f8 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 10rem;
+    margin-right: 10rem;
+    margin-bottom: 10rem;
+    border: 1rem solid #95694e;
+    border-radius: 4rem;
+    box-shadow:
+        4rem 4rem 6rem rgba(255, 255, 255, 0.06) inset,
+        -4rem -4rem 6rem rgba(255, 255, 255, 0.06) inset;
+    background: linear-gradient(180deg, rgba(60, 84, 124, 0.85) 0%, rgba(23, 28, 35, 0.85) 100%);
+    filter: drop-shadow(-1rem 1rem 2rem rgba(0, 0, 0, 0.3)) drop-shadow(-2rem 3rem 4rem rgba(0, 0, 0, 0.5));
+    position: relative;
+}
+.TooltipAndPopoverStyleWrapper_base_f8::before {
+    border: 1rem solid rgba(39, 30, 24, 0.6);
+    border-radius: 3rem;
+    content: '';
+    position: absolute;
+    top: 0rem;
+    right: 0rem;
+    bottom: 0rem;
+    left: 0rem;
+    z-index: 1;
+}
+.TooltipAndPopoverStyleWrapper_base_f8::after {
+    border: 1rem solid rgba(255, 255, 255, 0.1);
+    border-radius: 2rem;
+    content: '';
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+    left: 1rem;
+    z-index: 1;
+}
+.TooltipAndPopoverStyleWrapper_pattern_f6 {
+    width: 100%;
+    height: 100%;
+    background-image: url('R.images.new_year.gui.maps.icons.newYear.tooltips.pattern');
+    position: absolute;
+}
+.TooltipAndPopoverStyleWrapper_snowIconContainer_33 {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.TooltipAndPopoverStyleWrapper_snowIcon_d7 {
+    width: 236rem;
+    height: 60rem;
+    background: url('R.images.new_year.gui.maps.icons.newYear.tooltips.snow') no-repeat center / cover;
+}
+.TooltipAndPopoverStyleWrapper_content_8a {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    z-index: 2;
+}
+
+.NyPopoverDecorator_base_b0 {
+    display: flex;
+    padding-left: var(--offset-left);
+    padding-top: var(--offset-top);
+    padding-right: var(--offset-right);
+    padding-bottom: var(
+        --offset-bottom
+    ); /* stylelint-disable-line declaration-block-no-redundant-longhand-properties */
+    opacity: 0;
+    position: absolute;
+    animation: NyPopoverDecorator_fadeIn_6b 150ms 200ms forwards;
+}
+.NyPopoverDecorator_container_f3 {
+    position: relative;
+}
+.NyPopoverDecorator_arrow_72 {
+    background: no-repeat center / contain;
+    position: absolute;
+    z-index: -1;
+}
+.NyPopoverDecorator_arrow__bottom_10,
+.NyPopoverDecorator_arrow__top_09 {
+    width: 79rem;
+    height: 35rem;
+    margin-top: 0;
+    margin-bottom: 0;
+    background-image: url('R.images.new_year.gui.maps.icons.newYear.popovers.arrows.arrow_top');
+    left: 50%;
+}
+.NyPopoverDecorator_arrow__left_ea,
+.NyPopoverDecorator_arrow__right_10 {
+    width: 35rem;
+    height: 79rem;
+    margin-left: 0;
+    margin-right: 0;
+    background-image: url('R.images.new_year.gui.maps.icons.newYear.popovers.arrows.arrow_left');
+    top: 50%;
+}
+.NyPopoverDecorator_arrow__left_ea {
+    right: 10rem;
+    transform: scaleX(-1) translateY(-45rem);
+}
+.NyPopoverDecorator_arrow__right_10 {
+    left: -22rem;
+    transform: translateY(-45rem);
+}
+.NyPopoverDecorator_arrow__top_09 {
+    bottom: -26rem;
+    transform: translateX(-50%);
+}
+.NyPopoverDecorator_arrow__bottom_10 {
+    top: 0rem;
+    transform: scaleY(-1) translateX(-50%);
+}
+.NyPopoverDecorator_closeBtn_88 {
+    position: absolute;
+    top: 4rem;
+    right: 4rem;
+}
+.NyPopoverDecorator_content_35 {
+    position: relative;
+    z-index: 2;
+}
+@keyframes NyPopoverDecorator_fadeIn_6b {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.EnvironmentSwitcher_base_8c {
+    width: 180rem;
+    height: 180rem;
+    background: url('R.images.new_year.gui.maps.icons.newYear.environmentSwitcher.mainBackground') no-repeat center /
+        contain;
+    position: relative;
+}
+
+.EnvironmentSwitcher_activeBackground_8f {
+    width: 142rem;
+    height: 89rem;
+    background: no-repeat center / contain;
+    opacity: 0;
+    position: absolute;
+    top: 20rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.EnvironmentSwitcher_activeBackground__day_2f {
+    background-image: url('R.images.new_year.gui.maps.icons.newYear.environmentSwitcher.arrowSpace.activeBackground.day');
+}
+
+.EnvironmentSwitcher_activeBackground__night_55 {
+    background-image: url('R.images.new_year.gui.maps.icons.newYear.environmentSwitcher.arrowSpace.activeBackground.night');
+}
+
+.EnvironmentSwitcher_activeBackground__auto_4a {
+    background-image: url('R.images.new_year.gui.maps.icons.newYear.environmentSwitcher.arrowSpace.activeBackground.auto');
+}
+
+.EnvironmentSwitcher_activeBackground__visible_17 {
+    opacity: 1;
+    position: relative;
+    transition: opacity 700ms;
+}
+
+.EnvironmentSwitcher_environmentIcon_a4 {
+    width: 24rem;
+    height: 24rem;
+    background: no-repeat center / contain;
+    opacity: 0;
+    position: absolute;
+    top: 23rem;
+}
+
+.EnvironmentSwitcher_environmentIcon__visible_d8 {
+    opacity: 1;
+    transition: opacity 700ms;
+}
+
+.EnvironmentSwitcher_environmentIcon__Day_02 {
+    background-image: url('R.images.new_year.gui.maps.icons.newYear.environmentSwitcher.arrowSpace.icons.day');
+    left: 0rem;
+}
+
+.EnvironmentSwitcher_environmentIcon__Night_4d {
+    background-image: url('R.images.new_year.gui.maps.icons.newYear.environmentSwitcher.arrowSpace.icons.night');
+    right: 0rem;
+}
+
+.EnvironmentSwitcher_environmentCircle_f3 {
+    width: 146rem;
+    height: 146rem;
+    background: no-repeat center / contain;
+    opacity: 0;
+    position: absolute;
+    top: 20rem;
+}
+
+.EnvironmentSwitcher_environmentCircle__visible_24 {
+    opacity: 1;
+    transition: opacity 700ms;
+}
+
+.EnvironmentSwitcher_environmentCircle__Day_2d {
+    background-image: url('R.images.new_year.gui.maps.icons.newYear.environmentSwitcher.arrowSpace.activeBorder.day');
+    left: 18rem;
+}
+
+.EnvironmentSwitcher_environmentCircle__Night_40 {
+    background-image: url('R.images.new_year.gui.maps.icons.newYear.environmentSwitcher.arrowSpace.activeBorder.night');
+    right: 18rem;
+}
+
+.EnvironmentSwitcher_activeBackgroundMask_1d {
+    width: 146rem;
+    height: 146rem;
+    background: url('R.images.new_year.gui.maps.icons.newYear.environmentSwitcher.arrowSpace.mask') no-repeat center /
+        contain;
+    position: absolute;
+    top: 20rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.EnvironmentSwitcher_title_3a {
+    color: #e9e2bf;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+    position: absolute;
+    top: -4rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.EnvironmentSwitcher_arrow_33 {
+    width: 24rem;
+    height: 180rem;
+    background: url('R.images.new_year.gui.maps.icons.newYear.environmentSwitcher.arrowSpace.arrow') no-repeat center /
+        contain;
+    position: absolute;
+    top: 1rem;
+    left: 78rem;
+    transition: transform 0.7s;
+}
+
+.EnvironmentSwitcher_buttons_24 {
+    width: 84rem;
+    height: 174rem;
+    position: absolute;
+    top: 5rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.EnvironmentSwitcher_button_eb {
+    width: 84rem;
+    height: 174rem;
+    background: url('R.images.new_year.gui.maps.icons.newYear.environmentSwitcher.switchButton.background.default')
+        no-repeat center / contain;
+    position: absolute;
+    pointer-events: none;
+}
+
+.EnvironmentSwitcher_button__Day_83 {
+    transform: rotateZ(50deg);
+}
+
+.EnvironmentSwitcher_button__Night_18 {
+    transform: rotateZ(-50deg);
+}
+
+.EnvironmentSwitcher_buttonHover_4f {
+    width: 84rem;
+    height: 174rem;
+    background: url('R.images.new_year.gui.maps.icons.newYear.environmentSwitcher.switchButton.background.hover')
+        no-repeat center / contain;
+    opacity: 0;
+    position: absolute;
+    transition: opacity 0.2s;
+}
+
+.EnvironmentSwitcher_buttonHover__visible_8a {
+    opacity: 1;
+}
+
+.EnvironmentSwitcher_buttonActive_b4 {
+    width: 84rem;
+    height: 174rem;
+    background: url('R.images.new_year.gui.maps.icons.newYear.environmentSwitcher.switchButton.background.selected')
+        no-repeat center / contain;
+    opacity: 0;
+    position: absolute;
+    transition: opacity 0.15s;
+}
+
+.EnvironmentSwitcher_buttonActive__visible_c0 {
+    opacity: 1;
+}
+
+.EnvironmentSwitcher_activeZoneContainer_81 {
+    width: 17rem;
+    height: 62rem;
+    position: absolute;
+    bottom: 5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    transform-style: preserve-3d;
+    perspective: 53rem;
+}
+
+.EnvironmentSwitcher_activeZone_54 {
+    width: 17rem;
+    height: 52rem;
+    transform: rotateX(45deg);
+    transform-origin: top center;
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+.EnvironmentSwitcher_activeZone__selcted_f7 {
+    cursor: default;
+}
+
+.EnvironmentSwitcher_icon_6b {
+    width: 40rem;
+    height: 40rem;
+    background: url('R.images.new_year.gui.maps.icons.newYear.environmentSwitcher.switchButton.icon.auto') no-repeat
+        center / contain;
+    position: absolute;
+    bottom: 12rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.EnvironmentSwitcher_icon__Day_a5 {
+    background-image: url('R.images.new_year.gui.maps.icons.newYear.environmentSwitcher.switchButton.icon.day');
+}
+
+.EnvironmentSwitcher_icon__Night_dd {
+    background-image: url('R.images.new_year.gui.maps.icons.newYear.environmentSwitcher.switchButton.icon.night');
+}
+
+.App_base_a5 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 240rem;
+}
+
+.App_header_c9 {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 68rem;
+    border-bottom: 1rem solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.App_title_ad {
+    color: #ffdd99;
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-left: 22rem;
+    margin-top: -2rem;
+}
+
+.App_body_80 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 240rem;
+    border-top: 1rem solid rgba(0, 0, 0, 0.1);
+    background: url('R.images.new_year.gui.maps.icons.newYear.popovers.mask') no-repeat center / cover;
+}
+
+.App_popoverArrowClassname_13 {
+    left: 43rem;
+}

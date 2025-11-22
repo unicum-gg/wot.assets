@@ -81,6 +81,110 @@
     z-index: 2;
 }
 
+.PopoverCloseButton_base_7a {
+    width: 18rem;
+    height: 18rem;
+    background: url('R.images.new_year.gui.maps.icons.newYear.popovers.close.default') no-repeat center / cover;
+    cursor: pointer;
+}
+
+.PopoverCloseButton_container_ef {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.PopoverCloseButton_hover_f3 {
+    width: 100%;
+    height: 100%;
+    background: url('R.images.new_year.gui.maps.icons.newYear.popovers.close.hover') no-repeat center / cover;
+    opacity: 0;
+    position: absolute;
+    transition: opacity 300ms;
+}
+
+.PopoverCloseButton_hover__visible_27 {
+    opacity: 1;
+}
+
+.PopoverCloseButton_pressed_7c {
+    width: 100%;
+    height: 100%;
+    background: url('R.images.new_year.gui.maps.icons.newYear.popovers.close.pressed') no-repeat center / cover;
+    opacity: 0;
+    position: absolute;
+    transition: opacity 300ms;
+}
+
+.PopoverCloseButton_pressed__visible_18 {
+    opacity: 1;
+}
+
+.TooltipAndPopoverStyleWrapper_base_f8 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 10rem;
+    margin-right: 10rem;
+    margin-bottom: 10rem;
+    border: 1rem solid #95694e;
+    border-radius: 4rem;
+    box-shadow:
+        4rem 4rem 6rem rgba(255, 255, 255, 0.06) inset,
+        -4rem -4rem 6rem rgba(255, 255, 255, 0.06) inset;
+    background: linear-gradient(180deg, rgba(60, 84, 124, 0.85) 0%, rgba(23, 28, 35, 0.85) 100%);
+    filter: drop-shadow(-1rem 1rem 2rem rgba(0, 0, 0, 0.3)) drop-shadow(-2rem 3rem 4rem rgba(0, 0, 0, 0.5));
+    position: relative;
+}
+.TooltipAndPopoverStyleWrapper_base_f8::before {
+    border: 1rem solid rgba(39, 30, 24, 0.6);
+    border-radius: 3rem;
+    content: '';
+    position: absolute;
+    top: 0rem;
+    right: 0rem;
+    bottom: 0rem;
+    left: 0rem;
+    z-index: 1;
+}
+.TooltipAndPopoverStyleWrapper_base_f8::after {
+    border: 1rem solid rgba(255, 255, 255, 0.1);
+    border-radius: 2rem;
+    content: '';
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+    left: 1rem;
+    z-index: 1;
+}
+.TooltipAndPopoverStyleWrapper_pattern_f6 {
+    width: 100%;
+    height: 100%;
+    background-image: url('R.images.new_year.gui.maps.icons.newYear.tooltips.pattern');
+    position: absolute;
+}
+.TooltipAndPopoverStyleWrapper_snowIconContainer_33 {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.TooltipAndPopoverStyleWrapper_snowIcon_d7 {
+    width: 236rem;
+    height: 60rem;
+    background: url('R.images.new_year.gui.maps.icons.newYear.tooltips.snow') no-repeat center / cover;
+}
+.TooltipAndPopoverStyleWrapper_content_8a {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    z-index: 2;
+}
+
 .NyPopoverDecorator_base_b0 {
     display: flex;
     padding-left: var(--offset-left);
@@ -89,100 +193,69 @@
     padding-bottom: var(
         --offset-bottom
     ); /* stylelint-disable-line declaration-block-no-redundant-longhand-properties */
+    opacity: 0;
     position: absolute;
+    animation: NyPopoverDecorator_fadeIn_6b 150ms 200ms forwards;
 }
-
+.NyPopoverDecorator_container_f3 {
+    position: relative;
+}
 .NyPopoverDecorator_arrow_72 {
     background: no-repeat center / contain;
     position: absolute;
+    z-index: -1;
 }
-
 .NyPopoverDecorator_arrow__bottom_10,
 .NyPopoverDecorator_arrow__top_09 {
-    width: 114rem;
+    width: 79rem;
     height: 35rem;
-    margin-left: var(--offset-left);
     margin-top: 0;
-    margin-right: var(--offset-right);
-    margin-bottom: 0; /* stylelint-disable-line declaration-block-no-redundant-longhand-properties */
-    background-image: url('R.images.new_year.gui.maps.icons.newYear.popovers.arrow_top');
+    margin-bottom: 0;
+    background-image: url('R.images.new_year.gui.maps.icons.newYear.popovers.arrows.arrow_top');
     left: 50%;
 }
-
 .NyPopoverDecorator_arrow__left_ea,
 .NyPopoverDecorator_arrow__right_10 {
     width: 35rem;
-    height: 114rem;
+    height: 79rem;
     margin-left: 0;
-    margin-top: var(--offset-top);
     margin-right: 0;
-    margin-bottom: var(--offset-bottom); /* stylelint-disable-line declaration-block-no-redundant-longhand-properties */
-    background-image: url('R.images.new_year.gui.maps.icons.newYear.popovers.arrow_left');
+    background-image: url('R.images.new_year.gui.maps.icons.newYear.popovers.arrows.arrow_left');
     top: 50%;
 }
-
 .NyPopoverDecorator_arrow__left_ea {
     right: 10rem;
-    transform: scaleX(-1) translateY(-90rem);
+    transform: scaleX(-1) translateY(-45rem);
 }
-
 .NyPopoverDecorator_arrow__right_10 {
-    left: 10rem;
-    transform: translateY(-90rem);
+    left: -22rem;
+    transform: translateY(-45rem);
 }
-
 .NyPopoverDecorator_arrow__top_09 {
-    bottom: 47rem;
+    bottom: -26rem;
+    transform: translateX(-50%);
+}
+.NyPopoverDecorator_arrow__bottom_10 {
+    top: 0rem;
     transform: scaleY(-1) translateX(-50%);
 }
-
-.NyPopoverDecorator_arrow__bottom_10 {
-    top: 47rem;
-    transform: translateX(-50%);
-}
-
 .NyPopoverDecorator_closeBtn_88 {
-    width: 30rem;
-    height: 44rem;
-    background: url('R.images.new_year.gui.maps.icons.newYear.popovers.close') no-repeat center / cover;
-    text-shadow:
-        0 0 10rem rgb(57, 117, 204),
-        0 0 10rem rgba(57, 117, 204, 0.4),
-        0 0 10rem rgba(57, 117, 204, 0.4),
-        0 0 2rem rgba(57, 117, 204, 0.4),
-        0 0 1rem rgba(57, 117, 204, 0.4),
-        0 0 2rem rgba(57, 117, 204, 0.4),
-        0 0 1rem rgba(57, 117, 204, 0.4);
     position: absolute;
-    top: 0;
-    right: 7rem;
-    cursor: pointer;
+    top: 4rem;
+    right: 4rem;
 }
-
-.NyPopoverDecorator_closeBtn_88:hover {
-    background-image: url('R.images.new_year.gui.maps.icons.newYear.popovers.close_hover');
-    text-shadow: 0 0 15rem rgba(57, 117, 204, 1);
-}
-
-.NyPopoverDecorator_borderBottomGradient_f6 {
-    width: 45%;
-    height: 1rem;
-    background: linear-gradient(
-        270deg,
-        transparent 0%,
-        rgba(47, 230, 255, 0.5) 22.4%,
-        #2fe6ff 51.56%,
-        rgba(47, 230, 255, 0.5) 77.6%,
-        transparent 100%
-    );
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
 .NyPopoverDecorator_content_35 {
     position: relative;
+    z-index: 2;
+}
+@keyframes NyPopoverDecorator_fadeIn_6b {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
 
 .PopoverContent_base_e1 {

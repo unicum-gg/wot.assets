@@ -221,148 +221,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     opacity: 0.6;
 }
 
-.TextButton_base_b6 {
-    display: flex;
-    align-items: center;
-    padding: 0 3rem;
-    font-size: 12rem;
-    position: relative;
-    cursor: pointer;
-}
-
-.TextButton_base__right_39 {
-    flex-direction: row-reverse;
-}
-.TextButton_icon_17 {
-    width: 32rem;
-    height: 32rem;
-    background: no-repeat center / contain;
-    position: relative;
-}
-.TextButton_icon__back_43,
-.TextButton_icon__forward_59 {
-    margin: -1rem -5rem;
-    background-image: url('R.images.gui.maps.icons.components.text_button.back');
-    transform: translateY(1rem);
-}
-.TextButton_icon__forward_59 {
-    transform: rotate(180deg) translateY(1rem);
-}
-.TextButton_icon__close_53 {
-    margin: -1rem 0;
-    background-image: url('R.images.gui.maps.icons.components.text_button.close');
-}
-.TextButton_icon__info_33 {
-    margin: -1rem -5rem;
-    background-image: url('R.images.gui.maps.icons.components.text_button.info');
-}
-.TextButton_glow_a4 {
-    width: 100%;
-    height: 100%;
-    background: no-repeat center / contain;
-    opacity: 0;
-    position: absolute;
-    top: 0;
-    transition: opacity 0.16s;
-}
-.TextButton_icon__back_43 .TextButton_glow_a4,
-.TextButton_icon__forward_59 .TextButton_glow_a4 {
-    background-image: url('R.images.gui.maps.icons.components.text_button.back_hover');
-}
-.TextButton_icon__close_53 .TextButton_glow_a4 {
-    background-image: url('R.images.gui.maps.icons.components.text_button.close_hover');
-}
-.TextButton_icon__info_33 .TextButton_glow_a4 {
-    background-image: url('R.images.gui.maps.icons.components.text_button.info_hover');
-}
-.TextButton_base_b6:hover .TextButton_glow_a4 {
-    opacity: 1;
-}
-.TextButton_base_b6:active .TextButton_glow_a4 {
-    opacity: 0;
-}
-.TextButton_caption_82 {
-    position: relative;
-    transition:
-        color 0.16s,
-        text-shadow 0.16s;
-}
-.TextButton_caption__back_b9,
-.TextButton_caption__forward_4e,
-.TextButton_caption__close_36 {
-    color: #ffdd99;
-    text-shadow:
-        0 0 10rem rgba(255, 42, 0, 1),
-        0 0 10rem rgba(255, 42, 0, 0.4),
-        0 0 10rem rgba(255, 42, 0, 0.4),
-        0 0 2rem rgba(255, 42, 0, 0.4),
-        0 0 1rem rgba(255, 42, 0, 0.4),
-        0 0 2rem rgba(255, 42, 0, 0.4),
-        0 0 1rem rgba(255, 42, 0, 0.4);
-}
-.TextButton_base_b6:hover .TextButton_caption__back_b9,
-.TextButton_base_b6:hover .TextButton_caption__forward_4e,
-.TextButton_base_b6:hover .TextButton_caption__close_36 {
-    color: #fffa9f;
-}
-.TextButton_base_b6:active .TextButton_caption__back_b9,
-.TextButton_base_b6:active .TextButton_caption__forward_4e,
-.TextButton_base_b6:active .TextButton_caption__close_36 {
-    color: #ffdd99;
-}
-.TextButton_caption__info_23 {
-    padding: 0 5rem;
-    color: #ccffff;
-    text-shadow:
-        0 0 12rem rgba(31, 68, 255, 0.8),
-        0 0 8rem #00eaff;
-}
-.TextButton_base_b6:hover .TextButton_caption__info_23 {
-    color: #e3ffff;
-    text-shadow:
-        0 0 12rem rgba(31, 68, 255, 0.8),
-        0 0 12rem rgba(0, 234, 255, 1),
-        0 0 8rem #00eaff;
-}
-.TextButton_base_b6:active .TextButton_caption__info_23 {
-    color: #ccffff;
-    text-shadow:
-        0 0 12rem rgba(31, 68, 255, 0.6),
-        0 0 8rem #00eaff;
-}
-.TextButton_goto_e7 {
-    color: #7c7c6c;
-}
-.TextButton_base__left_ff .TextButton_goto_e7 {
-    margin-left: 8rem;
-}
-.TextButton_base__right_39 .TextButton_goto_e7 {
-    margin-right: 8rem;
-}
-.TextButton_shine_e2 {
-    width: 90rem;
-    height: 40rem;
-    background: url('R.images.gui.maps.icons.components.text_button.shine') no-repeat center / contain;
-    opacity: 0;
-    position: absolute;
-    top: -4rem;
-    transition: opacity 0.16s;
-    pointer-events: none;
-}
-.TextButton_base__left_ff .TextButton_shine_e2 {
-    left: -4rem;
-}
-.TextButton_base__right_39 .TextButton_shine_e2 {
-    right: -4rem;
-    transform: rotate(180deg);
-}
-.TextButton_base_b6:hover .TextButton_shine_e2 {
-    opacity: 1;
-}
-.TextButton_base_b6:active .TextButton_shine_e2 {
-    opacity: 0;
-}
-
 .Box_mt__XS_0c {
     margin-top: 4rem;
 }
@@ -638,6 +496,571 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     color: #a29b70;
 }
 
+.TextButton_base_b6 {
+    display: flex;
+    align-items: center;
+    padding: 0 3rem;
+    font-size: 12rem;
+    position: relative;
+    cursor: pointer;
+}
+
+.TextButton_base__right_39 {
+    flex-direction: row-reverse;
+}
+.TextButton_icon_17 {
+    width: 32rem;
+    height: 32rem;
+    background: no-repeat center / contain;
+    position: relative;
+}
+.TextButton_icon__back_43,
+.TextButton_icon__forward_59 {
+    margin: -1rem -5rem;
+    background-image: url('R.images.gui.maps.icons.components.text_button.back');
+    transform: translateY(1rem);
+}
+.TextButton_icon__forward_59 {
+    transform: rotate(180deg) translateY(1rem);
+}
+.TextButton_icon__close_53 {
+    margin: -1rem 0;
+    background-image: url('R.images.gui.maps.icons.components.text_button.close');
+}
+.TextButton_icon__info_33 {
+    margin: -1rem -5rem;
+    background-image: url('R.images.gui.maps.icons.components.text_button.info');
+}
+.TextButton_glow_a4 {
+    width: 100%;
+    height: 100%;
+    background: no-repeat center / contain;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    transition: opacity 0.16s;
+}
+.TextButton_icon__back_43 .TextButton_glow_a4,
+.TextButton_icon__forward_59 .TextButton_glow_a4 {
+    background-image: url('R.images.gui.maps.icons.components.text_button.back_hover');
+}
+.TextButton_icon__close_53 .TextButton_glow_a4 {
+    background-image: url('R.images.gui.maps.icons.components.text_button.close_hover');
+}
+.TextButton_icon__info_33 .TextButton_glow_a4 {
+    background-image: url('R.images.gui.maps.icons.components.text_button.info_hover');
+}
+.TextButton_base_b6:hover .TextButton_glow_a4 {
+    opacity: 1;
+}
+.TextButton_base_b6:active .TextButton_glow_a4 {
+    opacity: 0;
+}
+.TextButton_caption_82 {
+    position: relative;
+    transition:
+        color 0.16s,
+        text-shadow 0.16s;
+}
+.TextButton_caption__back_b9,
+.TextButton_caption__forward_4e,
+.TextButton_caption__close_36 {
+    color: #ffdd99;
+    text-shadow:
+        0 0 10rem rgba(255, 42, 0, 1),
+        0 0 10rem rgba(255, 42, 0, 0.4),
+        0 0 10rem rgba(255, 42, 0, 0.4),
+        0 0 2rem rgba(255, 42, 0, 0.4),
+        0 0 1rem rgba(255, 42, 0, 0.4),
+        0 0 2rem rgba(255, 42, 0, 0.4),
+        0 0 1rem rgba(255, 42, 0, 0.4);
+}
+.TextButton_base_b6:hover .TextButton_caption__back_b9,
+.TextButton_base_b6:hover .TextButton_caption__forward_4e,
+.TextButton_base_b6:hover .TextButton_caption__close_36 {
+    color: #fffa9f;
+}
+.TextButton_base_b6:active .TextButton_caption__back_b9,
+.TextButton_base_b6:active .TextButton_caption__forward_4e,
+.TextButton_base_b6:active .TextButton_caption__close_36 {
+    color: #ffdd99;
+}
+.TextButton_caption__info_23 {
+    padding: 0 5rem;
+    color: #ccffff;
+    text-shadow:
+        0 0 12rem rgba(31, 68, 255, 0.8),
+        0 0 8rem #00eaff;
+}
+.TextButton_base_b6:hover .TextButton_caption__info_23 {
+    color: #e3ffff;
+    text-shadow:
+        0 0 12rem rgba(31, 68, 255, 0.8),
+        0 0 12rem rgba(0, 234, 255, 1),
+        0 0 8rem #00eaff;
+}
+.TextButton_base_b6:active .TextButton_caption__info_23 {
+    color: #ccffff;
+    text-shadow:
+        0 0 12rem rgba(31, 68, 255, 0.6),
+        0 0 8rem #00eaff;
+}
+.TextButton_goto_e7 {
+    color: #7c7c6c;
+}
+.TextButton_base__left_ff .TextButton_goto_e7 {
+    margin-left: 8rem;
+}
+.TextButton_base__right_39 .TextButton_goto_e7 {
+    margin-right: 8rem;
+}
+.TextButton_shine_e2 {
+    width: 90rem;
+    height: 40rem;
+    background: url('R.images.gui.maps.icons.components.text_button.shine') no-repeat center / contain;
+    opacity: 0;
+    position: absolute;
+    top: -4rem;
+    transition: opacity 0.16s;
+    pointer-events: none;
+}
+.TextButton_base__left_ff .TextButton_shine_e2 {
+    left: -4rem;
+}
+.TextButton_base__right_39 .TextButton_shine_e2 {
+    right: -4rem;
+    transform: rotate(180deg);
+}
+.TextButton_base_b6:hover .TextButton_shine_e2 {
+    opacity: 1;
+}
+.TextButton_base_b6:active .TextButton_shine_e2 {
+    opacity: 0;
+}
+
+@keyframes AtmosphereRewardScreen_bump_d4 {
+    0% {
+        filter: brightness(1);
+        opacity: 0;
+        transform: scale(1.5);
+    }
+
+    60% {
+        filter: brightness(1.1);
+        opacity: 1;
+    }
+
+    80% {
+        filter: brightness(1.3);
+        transform: scale(0.95);
+    }
+
+    100% {
+        filter: brightness(1);
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes AtmosphereRewardScreen_slideBack_da {
+    0% {
+        opacity: 0;
+        transform: scale(1.5) translateY(10%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+@keyframes AtmosphereRewardScreen_slideUp_76 {
+    0% {
+        opacity: 0;
+        transform: scale(1.5) translateY(-100%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+@keyframes AtmosphereRewardScreen_showSubTitle_80 {
+    0% {
+        opacity: 0;
+        transform: scale(0.9) translateY(50%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+@keyframes AtmosphereRewardScreen_fadeIn_c2 {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes AtmosphereRewardScreen_fadeInSunRays_41 {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0.5;
+    }
+}
+
+@keyframes AtmosphereRewardScreen_slideLeft_d2 {
+    0% {
+        opacity: 0;
+        transform: scale(1.3) translateX(-30%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1) translateX(0);
+    }
+}
+
+@keyframes AtmosphereRewardScreen_slideRight_55 {
+    0% {
+        opacity: 0;
+        transform: scale(1.3) translateX(30%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1) translateX(0);
+    }
+}
+
+@keyframes AtmosphereRewardScreen_rotation_26 {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.AtmosphereRewardScreen_base_16 {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.AtmosphereRewardScreen_close_6e {
+    padding: 30rem;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 9;
+    animation: AtmosphereRewardScreen_fadeIn_c2 300ms ease-in-out 200ms forwards;
+}
+
+.AtmosphereRewardScreen_header_f8 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 94rem;
+    margin-top: 40rem;
+    position: relative;
+    z-index: 2;
+}
+
+.mediaMedium .AtmosphereRewardScreen_header_f8 {
+    height: 117rem;
+    margin-top: 40rem;
+}
+
+.mediaLarge .AtmosphereRewardScreen_header_f8 {
+    margin-top: 88rem;
+}
+
+.mediaExtraLarge .AtmosphereRewardScreen_header_f8 {
+    height: 125rem;
+    margin-top: 104rem;
+}
+
+.AtmosphereRewardScreen_title_a7 {
+    color: #fefeec;
+    font-size: 36rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 5rem;
+    animation: AtmosphereRewardScreen_slideUp_76 500ms ease-in-out forwards;
+}
+
+.mediaMedium .AtmosphereRewardScreen_title_a7 {
+    color: #fefeec;
+    font-size: 56rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 10rem;
+}
+
+.AtmosphereRewardScreen_subtitle_63 {
+    color: #fefeec;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+    opacity: 0;
+    animation: AtmosphereRewardScreen_showSubTitle_80 400ms ease-out 580ms forwards;
+}
+
+.mediaMedium .AtmosphereRewardScreen_subtitle_63 {
+    color: #fefeec;
+    font-size: 20rem;
+    font-weight: 400;
+    line-height: 1.2;
+    height: 29rem;
+}
+
+.AtmosphereRewardScreen_tapeContent_ba {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 1;
+    animation: AtmosphereRewardScreen_slideBack_da 500ms ease-in-out forwards;
+}
+
+.AtmosphereRewardScreen_ribbon_20 {
+    width: 1266rem;
+    height: 253rem;
+    background: url('R.images.new_year.gui.maps.icons.newYear.atmosphereLevelUpView.ribbon') no-repeat center / contain;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: -2;
+    transform: translate(-50%, -50%);
+}
+
+.mediaMedium .AtmosphereRewardScreen_ribbon_20 {
+    width: 1540rem;
+    height: 308rem;
+    margin-top: 5rem;
+    background-image: url('R.images.new_year.gui.maps.icons.newYear.atmosphereLevelUpView.ribbonMedium');
+}
+
+.mediaLarge .AtmosphereRewardScreen_ribbon_20 {
+    width: 1800rem;
+    height: 360rem;
+    margin-top: 8rem;
+    background-image: url('R.images.new_year.gui.maps.icons.newYear.atmosphereLevelUpView.ribbonLarge');
+}
+
+.mediaExtraLarge .AtmosphereRewardScreen_ribbon_20 {
+    margin-top: 86rem;
+}
+
+.AtmosphereRewardScreen_sunShineCanvas_0d {
+    width: 800rem;
+    height: 800rem;
+    margin-left: -400rem;
+    margin-top: -480rem;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: -3;
+    animation: AtmosphereRewardScreen_fadeIn_c2 100ms ease 600ms forwards;
+}
+
+.mediaMedium .AtmosphereRewardScreen_sunShineCanvas_0d {
+    width: 1080rem;
+    height: 1080rem;
+    margin-left: -540rem;
+    margin-top: -620rem;
+}
+
+.AtmosphereRewardScreen_sunRays_eb {
+    width: 900rem;
+    height: 900rem;
+    margin-left: -450rem;
+    margin-top: -550rem;
+    background: url('R.images.new_year.gui.maps.icons.newYear.level_up.sun_rays') no-repeat center / contain;
+    opacity: 0;
+    mix-blend-mode: screen;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: -3;
+    animation:
+        AtmosphereRewardScreen_rotation_26 120s linear infinite,
+        AtmosphereRewardScreen_fadeInSunRays_41 100ms ease 600ms forwards;
+}
+
+.mediaMedium .AtmosphereRewardScreen_sunRays_eb {
+    width: 1300rem;
+    height: 1300rem;
+    margin-left: -650rem;
+    margin-top: -750rem;
+}
+
+.AtmosphereRewardScreen_hugeRewards_9b {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: -37rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.mediaMedium .AtmosphereRewardScreen_hugeRewards_9b {
+    margin-top: -60rem;
+}
+
+.mediaLarge .AtmosphereRewardScreen_hugeRewards_9b {
+    margin-top: -70rem;
+}
+
+.mediaExtraLarge .AtmosphereRewardScreen_hugeRewards_9b {
+    margin-top: -32rem;
+}
+
+.AtmosphereRewardScreen_hugeRewards_9b > div {
+    margin-left: 20rem;
+    margin-right: 20rem;
+}
+
+.AtmosphereRewardScreen_rewards_b1 {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    position: absolute;
+    bottom: 158rem;
+}
+
+.AtmosphereRewardScreen_rewards__up_cb {
+    bottom: 222rem;
+}
+
+.mediaMedium .AtmosphereRewardScreen_rewards_b1 {
+    bottom: 172rem;
+}
+
+.mediaMedium .AtmosphereRewardScreen_rewards__up_cb {
+    bottom: 228rem;
+}
+
+.mediaLarge .AtmosphereRewardScreen_rewards_b1 {
+    bottom: 248rem;
+}
+
+.mediaLarge .AtmosphereRewardScreen_rewards__up_cb {
+    bottom: 296rem;
+}
+
+.mediaExtraLarge .AtmosphereRewardScreen_rewards_b1 {
+    bottom: 306rem;
+}
+
+.mediaExtraLarge .AtmosphereRewardScreen_rewards__up_cb {
+    bottom: 354rem;
+}
+
+.AtmosphereRewardScreen_confirm_43 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    opacity: 0;
+    position: absolute;
+    bottom: 50rem;
+    left: 0;
+    transition: opacity 500ms ease-in-out;
+    pointer-events: none;
+}
+
+.mediaLarge .AtmosphereRewardScreen_confirm_43 {
+    bottom: 73rem;
+}
+
+.mediaExtraLarge .AtmosphereRewardScreen_confirm_43 {
+    bottom: 100rem;
+}
+
+.AtmosphereRewardScreen_confirm__visible_ea {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.AtmosphereRewardScreen_banner_38 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.AtmosphereRewardScreen_bannerTitle_33 {
+    color: #e9e2bf;
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 8rem;
+}
+
+.mediaMedium .AtmosphereRewardScreen_bannerTitle_33 {
+    color: #e9e2bf;
+    font-size: 24rem;
+    font-weight: 700;
+    line-height: 1.2;
+    line-height: 100%;
+    white-space: nowrap;
+}
+
+.AtmosphereRewardScreen_bannerText_10 {
+    color: #ffdd99;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    width: 688rem;
+    text-align: center;
+}
+
+.mediaMedium .AtmosphereRewardScreen_bannerText_10 {
+    width: 788rem;
+    color: #ffdd99;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+
+.AtmosphereRewardScreen_buttons_e5 {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20rem;
+}
+
+.AtmosphereRewardScreen_confirmButton_de {
+    width: 160rem;
+}
+
+.AtmosphereRewardScreen_confirmButton_de + .AtmosphereRewardScreen_confirmButton_de {
+    margin-left: 23rem;
+}
+
 .Reward_base_ea {
     display: flex;
     flex-direction: column;
@@ -825,20 +1248,20 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     right: -14rem;
 }
 
-.AnimationRewards_base_c3 {
+.AnimationRewards_base_f0 {
     display: flex;
 }
 
-.AnimationRewards_reward_5a {
+.AnimationRewards_reward_68 {
     opacity: 0;
-    animation: AnimationRewards_blink_30 500ms ease-in-out forwards;
+    animation: AnimationRewards_blink_4e 500ms ease-in-out forwards;
 }
 
-.AnimationRewards_reward_5a + .AnimationRewards_reward_5a {
+.AnimationRewards_reward_68 + .AnimationRewards_reward_68 {
     margin-left: 30rem;
 }
 
-@keyframes AnimationRewards_blink_30 {
+@keyframes AnimationRewards_blink_4e {
     0% {
         filter: brightness(2.5);
         opacity: 0;
@@ -852,507 +1275,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
         filter: brightness(1);
         opacity: 1;
     }
-}
-
-@keyframes AtmosphereRewardScreen_bump_83 {
-    0% {
-        filter: brightness(1);
-        opacity: 0;
-        transform: scale(1.5);
-    }
-
-    60% {
-        filter: brightness(1.1);
-        opacity: 1;
-    }
-
-    80% {
-        filter: brightness(1.3);
-        transform: scale(0.95);
-    }
-
-    100% {
-        filter: brightness(1);
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-@keyframes AtmosphereRewardScreen_slideBack_d2 {
-    0% {
-        opacity: 0;
-        transform: scale(1.5) translateY(10%);
-    }
-
-    100% {
-        opacity: 1;
-        transform: scale(1) translateY(0);
-    }
-}
-
-@keyframes AtmosphereRewardScreen_slideUp_f8 {
-    0% {
-        opacity: 0;
-        transform: scale(1.5) translateY(-100%);
-    }
-
-    100% {
-        opacity: 1;
-        transform: scale(1) translateY(0);
-    }
-}
-
-@keyframes AtmosphereRewardScreen_showSubTitle_d6 {
-    0% {
-        opacity: 0;
-        transform: scale(0.9) translateY(50%);
-    }
-
-    100% {
-        opacity: 1;
-        transform: scale(1) translateY(0);
-    }
-}
-
-@keyframes AtmosphereRewardScreen_fadeIn_64 {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
-
-@keyframes AtmosphereRewardScreen_fadeInSunRays_07 {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 0.5;
-    }
-}
-
-@keyframes AtmosphereRewardScreen_slideLeft_3c {
-    0% {
-        opacity: 0;
-        transform: scale(1.3) translateX(-30%);
-    }
-
-    100% {
-        opacity: 1;
-        transform: scale(1) translateX(0);
-    }
-}
-
-@keyframes AtmosphereRewardScreen_slideRight_09 {
-    0% {
-        opacity: 0;
-        transform: scale(1.3) translateX(30%);
-    }
-
-    100% {
-        opacity: 1;
-        transform: scale(1) translateX(0);
-    }
-}
-
-@keyframes AtmosphereRewardScreen_rotation_e5 {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
-.AtmosphereRewardScreen_base_63 {
-    width: 100%;
-    height: 100%;
-    position: relative;
-}
-
-.AtmosphereRewardScreen_close_e6 {
-    padding: 30rem;
-    opacity: 0;
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 9;
-    animation: AtmosphereRewardScreen_fadeIn_64 300ms ease-in-out 200ms forwards;
-}
-
-.AtmosphereRewardScreen_header_fc {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    height: 94rem;
-    margin-top: 40rem;
-    position: relative;
-    z-index: 2;
-}
-
-.mediaMedium .AtmosphereRewardScreen_header_fc {
-    height: 117rem;
-    margin-top: 40rem;
-}
-
-.mediaLarge .AtmosphereRewardScreen_header_fc {
-    margin-top: 88rem;
-}
-
-.mediaExtraLarge .AtmosphereRewardScreen_header_fc {
-    height: 125rem;
-    margin-top: 104rem;
-}
-
-.AtmosphereRewardScreen_title_67 {
-    color: #ffffff;
-    font-size: 56rem;
-    font-weight: 700;
-    line-height: 1.1;
-    line-height: 56rem;
-    animation: AtmosphereRewardScreen_slideUp_f8 500ms ease-in-out forwards;
-}
-
-.mediaMedium .AtmosphereRewardScreen_title_67 {
-    color: #ffffff;
-    font-size: 73rem;
-    font-weight: 700;
-    line-height: 1.1;
-    height: 80rem;
-    line-height: 73rem;
-}
-
-.AtmosphereRewardScreen_subtitle_62 {
-    color: #ffffff;
-    font-size: 20rem;
-    font-weight: 400;
-    line-height: 1.2;
-    line-height: 20rem;
-    opacity: 0;
-    animation: AtmosphereRewardScreen_showSubTitle_d6 400ms ease-out 580ms forwards;
-}
-
-.mediaMedium .AtmosphereRewardScreen_subtitle_62 {
-    color: #ffffff;
-    font-size: 24rem;
-    font-weight: 400;
-    line-height: 1.2;
-    height: 29rem;
-    line-height: 24rem;
-}
-
-.AtmosphereRewardScreen_tapeContent_e1 {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    z-index: 1;
-    animation: AtmosphereRewardScreen_slideBack_d2 500ms ease-in-out forwards;
-}
-
-.AtmosphereRewardScreen_ribbon_4e {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 1366rem;
-    height: 356rem;
-    margin-top: 46rem;
-    background: url('R.images.new_year.gui.maps.icons.newYear.style_reward.ribbon') no-repeat center / contain;
-    z-index: -2;
-}
-
-.mediaMedium .AtmosphereRewardScreen_ribbon_4e {
-    width: 1600rem;
-    height: 417rem;
-    margin-top: 48rem;
-    background-image: url('R.images.new_year.gui.maps.icons.newYear.style_reward.ribbon_medium');
-}
-
-.mediaLarge .AtmosphereRewardScreen_ribbon_4e {
-    width: 1920rem;
-    height: 500rem;
-    margin-top: 46rem;
-    background-image: url('R.images.new_year.gui.maps.icons.newYear.style_reward.ribbon_large');
-}
-
-.mediaExtraLarge .AtmosphereRewardScreen_ribbon_4e {
-    margin-top: 86rem;
-}
-
-.AtmosphereRewardScreen_ribbon__gold_9e {
-    background-image: url('R.images.new_year.gui.maps.icons.newYear.style_reward.ribbon_gold');
-}
-
-.mediaMedium .AtmosphereRewardScreen_ribbon__gold_9e {
-    background-image: url('R.images.new_year.gui.maps.icons.newYear.style_reward.ribbon_gold_medium');
-}
-
-.mediaLarge .AtmosphereRewardScreen_ribbon__gold_9e {
-    background-image: url('R.images.new_year.gui.maps.icons.newYear.style_reward.ribbon_gold_large');
-}
-
-.AtmosphereRewardScreen_sunShineCanvas_cf {
-    width: 800rem;
-    height: 800rem;
-    margin-left: -400rem;
-    margin-top: -480rem;
-    opacity: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    z-index: -3;
-    animation: AtmosphereRewardScreen_fadeIn_64 100ms ease 600ms forwards;
-}
-
-.mediaMedium .AtmosphereRewardScreen_sunShineCanvas_cf {
-    width: 1080rem;
-    height: 1080rem;
-    margin-left: -540rem;
-    margin-top: -620rem;
-}
-
-.AtmosphereRewardScreen_sunRays_b1 {
-    width: 900rem;
-    height: 900rem;
-    margin-left: -450rem;
-    margin-top: -550rem;
-    background: url('R.images.new_year.gui.maps.icons.newYear.level_up.sun_rays') no-repeat center / contain;
-    opacity: 0;
-    mix-blend-mode: screen;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    z-index: -1;
-    animation:
-        AtmosphereRewardScreen_rotation_e5 120s linear infinite,
-        AtmosphereRewardScreen_fadeInSunRays_07 100ms ease 600ms forwards;
-}
-
-.mediaMedium .AtmosphereRewardScreen_sunRays_b1 {
-    width: 1300rem;
-    height: 1300rem;
-    margin-left: -650rem;
-    margin-top: -750rem;
-}
-
-.AtmosphereRewardScreen_hugeRewards_b3 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    margin-top: -37rem;
-}
-
-.mediaMedium .AtmosphereRewardScreen_hugeRewards_b3 {
-    margin-top: -60rem;
-}
-
-.mediaLarge .AtmosphereRewardScreen_hugeRewards_b3 {
-    margin-top: -70rem;
-}
-
-.mediaExtraLarge .AtmosphereRewardScreen_hugeRewards_b3 {
-    margin-top: -32rem;
-}
-
-.AtmosphereRewardScreen_hugeRewards_b3 > div {
-    margin-left: 20rem;
-    margin-right: 20rem;
-}
-
-.AtmosphereRewardScreen_restRewardsTitle_2d {
-    color: #e9e2bf;
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
-    margin-top: 40rem;
-    text-align: center;
-    opacity: 0;
-    animation: AtmosphereRewardScreen_fadeIn_64 200ms ease forwards;
-}
-
-.mediaMedium .AtmosphereRewardScreen_restRewardsTitle_2d {
-    margin-top: 25rem;
-}
-
-.AtmosphereRewardScreen_rewards_6e {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    position: absolute;
-    bottom: 158rem;
-}
-
-.AtmosphereRewardScreen_rewards__up_37 {
-    bottom: 222rem;
-}
-
-.mediaMedium .AtmosphereRewardScreen_rewards_6e {
-    bottom: 172rem;
-}
-
-.mediaMedium .AtmosphereRewardScreen_rewards__up_37 {
-    bottom: 228rem;
-}
-
-.mediaLarge .AtmosphereRewardScreen_rewards_6e {
-    bottom: 248rem;
-}
-
-.mediaLarge .AtmosphereRewardScreen_rewards__up_37 {
-    bottom: 296rem;
-}
-
-.mediaExtraLarge .AtmosphereRewardScreen_rewards_6e {
-    bottom: 306rem;
-}
-
-.mediaExtraLarge .AtmosphereRewardScreen_rewards__up_37 {
-    bottom: 354rem;
-}
-
-.AtmosphereRewardScreen_confirm_7a {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    opacity: 0;
-    position: absolute;
-    bottom: 40rem;
-    left: 0;
-    transition: opacity 500ms ease-in-out;
-    pointer-events: none;
-}
-
-.mediaMedium .AtmosphereRewardScreen_confirm_7a {
-    bottom: 40rem;
-}
-
-.mediaLarge .AtmosphereRewardScreen_confirm_7a {
-    bottom: 56rem;
-}
-
-.mediaExtraLarge .AtmosphereRewardScreen_confirm_7a {
-    bottom: 100rem;
-}
-
-.AtmosphereRewardScreen_confirm__visible_97 {
-    opacity: 1;
-    pointer-events: auto;
-}
-
-.AtmosphereRewardScreen_banner_69 {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 677rem;
-    height: 115rem;
-}
-
-.mediaLarge .AtmosphereRewardScreen_banner_69 {
-    width: 776rem;
-    height: 150rem;
-}
-
-.AtmosphereRewardScreen_bannerImage_fe {
-    width: 160rem;
-    height: 114rem;
-    background: url('R.images.new_year.gui.maps.icons.newYear.level_up.prize_small') no-repeat left / contain;
-}
-
-.mediaLarge .AtmosphereRewardScreen_bannerImage_fe {
-    width: 210rem;
-    height: 150rem;
-    background-image: url('R.images.new_year.gui.maps.icons.newYear.level_up.prize_large');
-}
-
-.AtmosphereRewardScreen_maxLevel_c4 {
-    background: url('R.images.new_year.gui.maps.icons.newYear.level_up.prize_max_level_small') no-repeat left / contain;
-}
-
-.mediaLarge .AtmosphereRewardScreen_maxLevel_c4 {
-    background-image: url('R.images.new_year.gui.maps.icons.newYear.level_up.prize_max_level_large');
-}
-
-.AtmosphereRewardScreen_bannerDescription_80 {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-start;
-    width: 509rem;
-}
-
-.mediaLarge .AtmosphereRewardScreen_bannerDescription_80 {
-    width: 558rem;
-}
-
-.AtmosphereRewardScreen_bannerTitle_aa {
-    color: #f2f2f7;
-    font-size: 24rem;
-    font-weight: 400;
-    line-height: 1.2;
-    margin-bottom: 8rem;
-    font-weight: 700;
-    line-height: 100%;
-    white-space: nowrap;
-}
-
-.mediaLarge .AtmosphereRewardScreen_bannerTitle_aa {
-    color: #f2f2f7;
-    font-size: 36rem;
-    font-weight: 700;
-    line-height: 1.1;
-}
-
-.AtmosphereRewardScreen_bannerText_b4 {
-    color: #e9e2bf;
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
-}
-
-.mediaLarge .AtmosphereRewardScreen_bannerText_b4 {
-    color: #e9e2bf;
-    font-size: 16rem;
-    font-weight: 400;
-    line-height: 1.25;
-}
-
-.AtmosphereRewardScreen_buttons_10 {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    margin-top: 11rem;
-}
-
-.mediaLarge .AtmosphereRewardScreen_buttons_10 {
-    margin-top: 10rem;
-}
-
-.AtmosphereRewardScreen_confirmButton_7a {
-    width: 160rem;
-}
-
-.AtmosphereRewardScreen_confirmButton_7a + .AtmosphereRewardScreen_confirmButton_7a {
-    margin-left: 23rem;
 }
 
 .PopoverDecorator_base_ed {
@@ -1438,7 +1360,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     z-index: 2;
 }
 
-.DiscountReward_base_34 {
+.DiscountReward_base_98 {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1446,31 +1368,31 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     position: relative;
 }
 
-.DiscountReward_base__main_75 {
+.DiscountReward_base__main_17 {
     height: 270rem;
 }
 
-.mediaMedium .DiscountReward_base_34 {
+.mediaMedium .DiscountReward_base_98 {
     height: 270rem;
 }
 
-.mediaMedium .DiscountReward_base__main_75 {
+.mediaMedium .DiscountReward_base__main_17 {
     height: 356rem;
 }
 
-.mediaExtraLarge .DiscountReward_base_34 {
+.mediaExtraLarge .DiscountReward_base_98 {
     height: 356rem;
 }
 
-.mediaExtraLarge .DiscountReward_base__main_75 {
+.mediaExtraLarge .DiscountReward_base__main_17 {
     height: 494rem;
 }
 
-.DiscountReward_base__applied_01 {
+.DiscountReward_base__applied_6d {
     pointer-events: none;
 }
 
-.DiscountReward_vehicleLevel_d7 {
+.DiscountReward_vehicleLevel_77 {
     color: #ffffff;
     font-size: 18rem;
     font-weight: 400;
@@ -1483,41 +1405,41 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     left: 60rem;
 }
 
-.mediaMedium .DiscountReward_vehicleLevel_d7 {
+.mediaMedium .DiscountReward_vehicleLevel_77 {
     top: 30rem;
     left: 80rem;
 }
 
-.mediaLarge .DiscountReward_vehicleLevel_d7 {
+.mediaLarge .DiscountReward_vehicleLevel_77 {
     top: 30rem;
     left: 75rem;
 }
 
-.mediaExtraLarge .DiscountReward_vehicleLevel_d7 {
+.mediaExtraLarge .DiscountReward_vehicleLevel_77 {
     font-size: 36rem;
     top: 35rem;
     left: 110rem;
 }
 
-.DiscountReward_vehicleLevel__main_81 {
+.DiscountReward_vehicleLevel__main_ca {
     font-size: 24rem;
     top: 32rem;
     left: 77rem;
 }
 
-.mediaMedium .DiscountReward_vehicleLevel__main_81 {
+.mediaMedium .DiscountReward_vehicleLevel__main_ca {
     font-size: 36rem;
     top: 32rem;
     left: 100rem;
 }
 
-.mediaExtraLarge .DiscountReward_vehicleLevel__main_81 {
+.mediaExtraLarge .DiscountReward_vehicleLevel__main_ca {
     font-size: 48rem;
     top: 58rem;
     left: 160rem;
 }
 
-.DiscountReward_discount_e8 {
+.DiscountReward_discount_95 {
     color: #fd9;
     font-size: 22rem;
     font-weight: 700;
@@ -1532,7 +1454,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     z-index: 1;
 }
 
-.mediaMedium .DiscountReward_discount_e8 {
+.mediaMedium .DiscountReward_discount_95 {
     color: #fd9;
     font-size: 28rem;
     font-weight: 700;
@@ -1541,7 +1463,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     bottom: 103rem;
 }
 
-.mediaExtraLarge .DiscountReward_discount_e8 {
+.mediaExtraLarge .DiscountReward_discount_95 {
     color: #fd9;
     font-size: 36rem;
     font-weight: 700;
@@ -1550,7 +1472,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     bottom: 130rem;
 }
 
-.DiscountReward_discount__main_e8 {
+.DiscountReward_discount__main_da {
     color: #fd9;
     font-size: 28rem;
     font-weight: 700;
@@ -1559,7 +1481,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     bottom: 80rem;
 }
 
-.mediaMedium .DiscountReward_discount__main_e8 {
+.mediaMedium .DiscountReward_discount__main_da {
     color: #fd9;
     font-size: 36rem;
     font-weight: 700;
@@ -1568,7 +1490,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     bottom: 102rem;
 }
 
-.mediaExtraLarge .DiscountReward_discount__main_e8 {
+.mediaExtraLarge .DiscountReward_discount__main_da {
     color: #fd9;
     font-size: 56rem;
     font-weight: 700;
@@ -1577,26 +1499,26 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     bottom: 150rem;
 }
 
-.DiscountReward_applyButton_c3 {
+.DiscountReward_applyButton_8f {
     width: 120rem;
     height: 20rem;
     position: absolute;
     bottom: -10rem;
 }
 
-.mediaMedium .DiscountReward_applyButton__main_dd {
+.mediaMedium .DiscountReward_applyButton__main_90 {
     bottom: -5rem;
 }
 
-.mediaExtraLarge .DiscountReward_applyButton__main_dd {
+.mediaExtraLarge .DiscountReward_applyButton__main_90 {
     bottom: -15rem;
 }
 
-.DiscountReward_base__applied_01 .DiscountReward_applyButton_c3 {
+.DiscountReward_base__applied_6d .DiscountReward_applyButton_8f {
     visibility: hidden;
 }
 
-.DiscountReward_applied_17 {
+.DiscountReward_applied_01 {
     width: 60rem;
     height: 40rem;
     background: url('R.images.new_year.gui.maps.icons.newYear.level_up.discount_applied') no-repeat center / contain;
@@ -1605,21 +1527,21 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     bottom: -14rem;
 }
 
-.mediaMedium .DiscountReward_applied_17 {
+.mediaMedium .DiscountReward_applied_01 {
     bottom: -22rem;
 }
 
-.mediaExtraLarge .DiscountReward_applied_17 {
+.mediaExtraLarge .DiscountReward_applied_01 {
     width: 108rem;
     height: 48rem;
     background-image: url('R.images.new_year.gui.maps.icons.newYear.level_up.discount_applied_large');
 }
 
-.DiscountReward_base__applied_01 .DiscountReward_applied_17 {
+.DiscountReward_base__applied_6d .DiscountReward_applied_01 {
     visibility: visible;
 }
 
-.VehicleInfo_base_e1 {
+.VehicleInfo_base_1c {
     color: #e9e2bf;
     font-size: 24rem;
     font-weight: 700;
@@ -1628,19 +1550,19 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     margin-bottom: -40rem;
 }
 
-.VehicleInfo_type_53 {
+.VehicleInfo_type_57 {
     margin: 0 -10rem;
     position: relative;
     top: -20rem;
 }
 
-.VehicleInfo_ico_17 {
+.VehicleInfo_ico_66 {
     width: 83rem;
     height: 74rem;
     background: no-repeat center / contain;
 }
 
-.VehicleInfo_nation_79 {
+.VehicleInfo_nation_fa {
     width: 26rem;
     height: 16rem;
     margin: 0 10rem;
@@ -1649,7 +1571,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     top: 8rem;
 }
 
-@keyframes HugeReward_bump_b4 {
+@keyframes HugeReward_bump_fd {
     0% {
         filter: brightness(1);
         opacity: 0;
@@ -1673,7 +1595,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     }
 }
 
-@keyframes HugeReward_slideBack_21 {
+@keyframes HugeReward_slideBack_c0 {
     0% {
         opacity: 0;
         transform: scale(1.5) translateY(10%);
@@ -1685,7 +1607,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     }
 }
 
-@keyframes HugeReward_slideUp_00 {
+@keyframes HugeReward_slideUp_b9 {
     0% {
         opacity: 0;
         transform: scale(1.5) translateY(-100%);
@@ -1697,7 +1619,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     }
 }
 
-@keyframes HugeReward_showSubTitle_f3 {
+@keyframes HugeReward_showSubTitle_fa {
     0% {
         opacity: 0;
         transform: scale(0.9) translateY(50%);
@@ -1709,7 +1631,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     }
 }
 
-@keyframes HugeReward_fadeIn_ff {
+@keyframes HugeReward_fadeIn_02 {
     0% {
         opacity: 0;
     }
@@ -1719,7 +1641,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     }
 }
 
-@keyframes HugeReward_fadeInSunRays_31 {
+@keyframes HugeReward_fadeInSunRays_39 {
     0% {
         opacity: 0;
     }
@@ -1729,7 +1651,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     }
 }
 
-@keyframes HugeReward_slideLeft_17 {
+@keyframes HugeReward_slideLeft_1d {
     0% {
         opacity: 0;
         transform: scale(1.3) translateX(-30%);
@@ -1741,7 +1663,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     }
 }
 
-@keyframes HugeReward_slideRight_c0 {
+@keyframes HugeReward_slideRight_64 {
     0% {
         opacity: 0;
         transform: scale(1.3) translateX(30%);
@@ -1753,7 +1675,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     }
 }
 
-@keyframes HugeReward_rotation_7a {
+@keyframes HugeReward_rotation_10 {
     0% {
         transform: rotate(0deg);
     }
@@ -1763,61 +1685,72 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     }
 }
 
-.HugeReward_base_f5 {
+.HugeReward_base_1d {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    opacity: 0;
     position: relative;
-    animation: HugeReward_bump_b4 200ms ease 1000ms forwards;
 }
 
-.HugeReward_base__main_39 {
-    animation: HugeReward_bump_b4 200ms ease forwards;
+.HugeReward_reward_33 {
+    opacity: 0;
+    animation: HugeReward_blink_27 500ms ease-in-out forwards;
 }
 
-.HugeReward_base__left_db {
-    animation: HugeReward_slideLeft_17 200ms ease forwards;
+.HugeReward_reward_33 + .HugeReward_reward_33 {
+    margin-left: 30rem;
 }
 
-.HugeReward_base__right_33 {
-    animation: HugeReward_slideRight_c0 200ms ease forwards;
+@keyframes HugeReward_blink_27 {
+    0% {
+        filter: brightness(2.5);
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        filter: brightness(1);
+        opacity: 1;
+    }
 }
 
-.HugeReward_hugeRewardImage_c2 {
+.HugeReward_hugeRewardImage_78 {
     width: 232rem;
     height: 174rem;
     background: no-repeat center / contain;
     position: relative;
 }
 
-.mediaMedium .HugeReward_hugeRewardImage_c2 {
+.mediaMedium .HugeReward_hugeRewardImage_78 {
     width: 296rem;
     height: 222rem;
 }
 
-.mediaExtraLarge .HugeReward_hugeRewardImage_c2 {
+.mediaExtraLarge .HugeReward_hugeRewardImage_78 {
     width: 400rem;
     height: 300rem;
 }
 
-.HugeReward_base__main_39 .HugeReward_hugeRewardImage_c2 {
+.HugeReward_base__main_56 .HugeReward_hugeRewardImage_78 {
     width: 296rem;
     height: 222rem;
 }
 
-.mediaMedium .HugeReward_base__main_39 .HugeReward_hugeRewardImage_c2 {
+.mediaMedium .HugeReward_base__main_56 .HugeReward_hugeRewardImage_78 {
     width: 400rem;
     height: 300rem;
 }
 
-.mediaExtraLarge .HugeReward_base__main_39 .HugeReward_hugeRewardImage_c2 {
+.mediaExtraLarge .HugeReward_base__main_56 .HugeReward_hugeRewardImage_78 {
     width: 600rem;
     height: 450rem;
 }
 
-.HugeReward_hugeRewardText_54 {
+.HugeReward_hugeRewardText_07 {
     color: #e9e2bf;
     font-size: 18rem;
     font-weight: 700;
@@ -1828,17 +1761,17 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     height: 64rem;
     margin-top: -20rem;
     opacity: 0;
-    animation: HugeReward_fadeIn_ff 200ms ease 1200ms forwards;
+    animation: HugeReward_fadeIn_02 200ms ease 1200ms forwards;
 }
 
-.mediaMedium .HugeReward_hugeRewardText_54 {
+.mediaMedium .HugeReward_hugeRewardText_07 {
     color: #e9e2bf;
     font-size: 24rem;
     font-weight: 700;
     line-height: 1.2;
 }
 
-.HugeReward_base__main_39 .HugeReward_hugeRewardText_54 {
+.HugeReward_base__main_56 .HugeReward_hugeRewardText_07 {
     color: #e9e2bf;
     font-size: 18rem;
     font-weight: 700;
@@ -1846,21 +1779,21 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     animation-delay: 700ms;
 }
 
-.mediaMedium .HugeReward_base__main_39 .HugeReward_hugeRewardText_54 {
+.mediaMedium .HugeReward_base__main_56 .HugeReward_hugeRewardText_07 {
     color: #e9e2bf;
     font-size: 22rem;
     font-weight: 700;
     line-height: 1.2;
 }
 
-.mediaLarge .HugeReward_base__main_39 .HugeReward_hugeRewardText_54 {
+.mediaLarge .HugeReward_base__main_56 .HugeReward_hugeRewardText_07 {
     color: #e9e2bf;
     font-size: 24rem;
     font-weight: 700;
     line-height: 1.2;
 }
 
-.HugeReward_hugeRewardCount_84 {
+.HugeReward_hugeRewardCount_07 {
     color: #e9e2bf;
     font-size: 22rem;
     font-weight: 700;
@@ -1869,22 +1802,22 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     position: absolute;
     right: 10rem;
     bottom: 10rem;
-    animation: HugeReward_fadeIn_ff 200ms ease 1200ms forwards;
+    animation: HugeReward_fadeIn_02 200ms ease 1200ms forwards;
 }
 
-.mediaMedium .HugeReward_hugeRewardCount_84 {
+.mediaMedium .HugeReward_hugeRewardCount_07 {
     color: #e9e2bf;
     font-size: 28rem;
     font-weight: 700;
     line-height: 1.1;
 }
 
-.mediaExtraLarge .HugeReward_hugeRewardCount_84 {
+.mediaExtraLarge .HugeReward_hugeRewardCount_07 {
     right: 20rem;
     bottom: 20rem;
 }
 
-.HugeReward_base__main_39 .HugeReward_hugeRewardCount_84 {
+.HugeReward_base__main_56 .HugeReward_hugeRewardCount_07 {
     color: #e9e2bf;
     font-size: 28rem;
     font-weight: 700;
@@ -1894,7 +1827,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     animation-delay: 660ms;
 }
 
-.mediaMedium .HugeReward_base__main_39 .HugeReward_hugeRewardCount_84 {
+.mediaMedium .HugeReward_base__main_56 .HugeReward_hugeRewardCount_07 {
     color: #e9e2bf;
     font-size: 36rem;
     font-weight: 700;
@@ -1918,7 +1851,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .App_header_84 {
-    color: #e9e2bf;
+    color: #ffdd99;
     font-size: 18rem;
     font-weight: 700;
     line-height: 1.1;
@@ -1926,7 +1859,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .App_paragraph_2a {
-    color: #8c8c7e;
+    color: #c9c9b6;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;

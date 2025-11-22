@@ -1177,7 +1177,7 @@
         var E = A[u];
         if (void 0 !== E) return E.exports;
         var D = (A[u] = { exports: {} });
-        return (e[u](D, D.exports, F), D.exports);
+        return (e[u].call(D.exports, D, D.exports, F), D.exports);
     }
     ((F.m = e),
         (u = []),

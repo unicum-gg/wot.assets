@@ -989,7 +989,7 @@
                 !(function (e) {
                     ((e.BeforeProgression = 'beforeProgression'),
                         (e.Active = 'active'),
-                        (e.PostProgression = 'postProgression'),
+                        (e.PurchaseStage = 'purchaseStage'),
                         (e.Completed = 'completed'),
                         (e.Disabled = 'disabled'));
                 })(w || (w = {}));
@@ -1316,9 +1316,9 @@
                         var S;
                     },
                     L = ['children', 'body', 'header', 'note', 'alert', 'args'];
-                function D() {
+                function F() {
                     return (
-                        (D =
+                        (F =
                             Object.assign ||
                             function (e) {
                                 for (var t = 1; t < arguments.length; t++) {
@@ -1327,11 +1327,11 @@
                                 }
                                 return e;
                             }),
-                        D.apply(this, arguments)
+                        F.apply(this, arguments)
                     );
                 }
-                const F = R.views.common.tooltip_window.simple_tooltip_content,
-                    N = (e) => {
+                const D = R.views.common.tooltip_window.simple_tooltip_content,
+                    I = (e) => {
                         let t = e.children,
                             n = e.body,
                             i = e.header,
@@ -1354,11 +1354,11 @@
                         }, [s, n, i, a, c]);
                         return o().createElement(
                             S,
-                            D(
+                            F(
                                 {
                                     contentId:
                                         ((u = null == c ? void 0 : c.hasHtmlContent),
-                                        u ? F.SimpleTooltipHtmlContent('resId') : F.SimpleTooltipContent('resId')),
+                                        u ? D.SimpleTooltipHtmlContent('resId') : D.SimpleTooltipContent('resId')),
                                     decoratorId: R.views.common.tooltip_window.tooltip_window.TooltipWindow('resId'),
                                     args: d,
                                 },
@@ -1368,21 +1368,21 @@
                         );
                         var u;
                     };
-                function x(e) {
+                function N(e) {
                     engine.call('PlaySound', e);
                 }
-                const I = {
+                const x = {
                         playHighlight() {
-                            x('highlight');
+                            N('highlight');
                         },
                         playClick() {
-                            x('play');
+                            N('play');
                         },
                         playYes() {
-                            x('yes1');
+                            N('yes1');
                         },
                     },
-                    U = [w.Disabled, w.BeforeProgression, w.PostProgression],
+                    U = [w.Disabled, w.BeforeProgression, w.PurchaseStage],
                     V = {
                         width: 108,
                         height: 108,
@@ -1416,15 +1416,15 @@
                                           },
                                           t,
                                       )
-                                    : e === w.PostProgression
+                                    : e === w.PurchaseStage
                                       ? o().createElement(
-                                            N,
-                                            { header: B.postProgression.header(), body: B.postProgression.body() },
+                                            I,
+                                            { header: B.purchaseStage.header(), body: B.purchaseStage.body() },
                                             t,
                                         )
                                       : e === w.Disabled
                                         ? o().createElement(
-                                              N,
+                                              I,
                                               { header: B.disabled.header(), body: B.disabled.body() },
                                               t,
                                           )
@@ -1442,10 +1442,10 @@
                                 o().createElement('div', {
                                     className: E()('Flag_hitArea_28'),
                                     onClick: () => {
-                                        v || (I.playClick(), i());
+                                        v || (x.playClick(), i());
                                     },
                                     onMouseEnter: () => {
-                                        v || (I.playHighlight(), c(!0), (_.current = 0), u('play'));
+                                        v || (x.playHighlight(), c(!0), (_.current = 0), u('play'));
                                     },
                                     onMouseLeave: () => {
                                         v || c(!1);
@@ -1497,6 +1497,7 @@
                         );
                     },
                     W = (0, s.observer)(() => {
+                        viewEnv.clearInternalCacheAfterFinalize();
                         const e = h(),
                             t = e.model,
                             n = e.controls,
@@ -1602,6 +1603,7 @@
                 Object.defineProperty(e, Symbol.toStringTag, { value: 'Module' }),
                 Object.defineProperty(e, '__esModule', { value: !0 }));
         }),
+        (__webpack_require__.j = 865),
         (() => {
             var e = { 865: 0 };
             __webpack_require__.O.j = (t) => 0 === e[t];

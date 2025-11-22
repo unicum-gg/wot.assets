@@ -1239,7 +1239,7 @@
         var E = F[u];
         if (void 0 !== E) return E.exports;
         var t = (F[u] = { exports: {} });
-        return (e[u](t, t.exports, A), t.exports);
+        return (e[u].call(t.exports, t, t.exports, A), t.exports);
     }
     ((A.m = e),
         (u = []),

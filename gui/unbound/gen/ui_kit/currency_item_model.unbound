@@ -6,6 +6,7 @@
     (scope
         (var value:str = '--')
         (var currency:str = '')
+        (var isEnough:bool = true)
         (var specialTooltip:str = '')
     )
 )

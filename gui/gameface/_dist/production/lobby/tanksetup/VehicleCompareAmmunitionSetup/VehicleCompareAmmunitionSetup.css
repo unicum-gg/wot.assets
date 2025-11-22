@@ -3009,6 +3009,9 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     flex-direction: column;
     width: 100%;
     max-height: 198rem;
+    border: 1rem solid #464538;
+    border-radius: 2rem;
+    background-color: #090906;
     position: relative;
 }
 
@@ -3048,9 +3051,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .PureDropDown_list_28 {
     display: flex;
     width: 100%;
-    border: 1rem solid #464538;
-    border-radius: 2rem;
-    background-color: #090906;
     position: absolute;
     left: 0;
     transition: opacity 0.25s;
@@ -3719,13 +3719,13 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .Counter_base__big_19 {
-    min-width: 21rem;
-    height: 21rem;
+    min-width: 20rem;
+    height: 20rem;
 }
 
 .Counter_base__small_3b {
-    min-width: 13rem;
-    height: 13rem;
+    min-width: 9rem;
+    height: 9rem;
 }
 
 .Counter_base__empty_98 {
@@ -3742,11 +3742,11 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 .Counter_bg_74 {
     border: 1rem solid #fe4e0f;
-    border-radius: 7rem;
+    border-radius: 10rem;
     box-shadow:
         0 0 0 1rem rgba(0, 0, 0, 0.3),
-        0 0 6rem rgba(254, 103, 0, 0.2),
-        0 0 12rem 4rem rgba(249, 0, 0, 0.3);
+        0 0 9rem rgba(254, 103, 0, 0.2),
+        0 0 12rem 7rem rgba(249, 0, 0, 0.3);
     background-image: url('R.images.gui.maps.icons.components.counter.pattern');
     position: absolute;
     top: 0;
@@ -3763,26 +3763,26 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 .Counter_value_3e {
     display: flex;
-    padding: 0 4rem;
-    color: #fefeec;
+    padding: 0 5rem;
+    color: #f2f2f7;
     font-size: 11rem;
     line-height: 13rem;
     white-space: nowrap;
 }
 .Counter_base__big_19 .Counter_value_3e {
     padding: 0 7rem;
-    font-size: 14rem;
-    line-height: 20rem;
+    font-size: 16rem;
+    line-height: 17rem;
 }
 .Counter_base__small_3b .Counter_value_3e {
     font-size: 9rem;
-    line-height: 12rem;
+    line-height: 8rem;
 }
 .Counter_value__text_d6 {
-    padding: 0 7rem;
+    padding: 0 5rem;
 }
 .Counter_base__big_19 .Counter_value__text_d6 {
-    padding: 0 10rem;
+    padding: 0 7rem;
 }
 .Counter_base__small_3b .Counter_value__text_d6 {
     padding: 0 5rem;
@@ -4532,34 +4532,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     position: relative;
 }
 
-.WeaponOccupancy_base_19 {
-    display: flex;
-    color: #7ab300;
-    font-weight: 700;
-}
-
-.WeaponOccupancy_base__incomplete_e0 {
-    color: #ff2717;
-}
-
-.WeaponOccupancy_tip_18 {
-    margin-right: 5rem;
-}
-
-.WeaponOccupancy_occupancy_6e {
-    color: #80d43a;
-    font-size: 24rem;
-}
-
-.WeaponOccupancy_occupancy__incomplete_e1 {
-    color: #ff2717;
-}
-
-.WeaponOccupancy_occupancy__large_37,
-.WeaponOccupancy_occupancy__huge_a5 {
-    font-size: 28rem;
-}
-
 .SectionsSwapTransition_base__tiny_fe {
     width: 100%;
 }
@@ -4691,6 +4663,165 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     100% {
         transform: translateY(60rem);
     }
+}
+
+.Specification_base_e9 {
+    display: flex;
+    flex: 1;
+    padding-bottom: 7rem;
+    color: #8c8c7e;
+}
+
+.Specification_base__medium_2f,
+.Specification_base__large_47,
+.Specification_base__huge_0b {
+    padding-bottom: 9rem;
+}
+
+.Specification_units_7e {
+    padding-left: 3rem;
+    color: #595950;
+}
+
+.Specification_separator_46 {
+    flex: 1;
+    margin: 0 5rem 1rem;
+    border-bottom: 1rem solid rgba(255, 255, 255, 0.05);
+}
+
+.Specification_separator__tiny_11 {
+    flex: 0;
+    margin: 0 2rem;
+}
+
+.Specification_value_bf {
+    display: flex;
+    color: #e9e2bf;
+}
+
+.TotalRow_base__tiny_c9 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    position: relative;
+    top: -21rem;
+}
+
+.TotalRow_row_f2 {
+    display: flex;
+    flex: 1;
+    padding-bottom: 7rem;
+    color: #8c8c7e;
+}
+
+.TotalRow_row__medium_fd,
+.TotalRow_row__large_44,
+.TotalRow_row__huge_e2 {
+    padding-bottom: 9rem;
+}
+
+.TotalRow_row_f2 {
+    height: 21rem;
+}
+
+.TotalRow_row__medium_fd,
+.TotalRow_row__large_44,
+.TotalRow_row__huge_e2 {
+    height: 23rem;
+}
+
+.TotalRow_rowItem_ff {
+    display: flex;
+}
+
+.TotalRow_separator_a2 {
+    flex: 1;
+    margin: 0 5rem 1rem;
+    border-bottom: 1rem solid rgba(255, 255, 255, 0.05);
+}
+
+.TotalRow_separator__tiny_7a {
+    flex: 0;
+    margin: 0 2rem;
+}
+
+.TotalRow_total_f7 {
+    color: #e9e2bf;
+}
+
+.TotalRow_total__tiny_bf {
+    color: #8c8c7e;
+}
+
+.TotalRow_colored_33 {
+    color: #8c8c7e;
+}
+
+.TotalRow_overall_09 {
+    display: flex;
+    color: #8c8c7e;
+}
+
+.TotalRow_value_b8 {
+    display: flex;
+    color: #e9e2bf;
+}
+
+.TotalRow_lowResolutionValue_a2 {
+    display: none;
+}
+
+.TotalRow_lowResolutionValue__tiny_e6 {
+    display: flex;
+    color: #e9e2bf;
+}
+
+.TotalRow_hiResolutionValue_fa {
+    display: flex;
+    color: #e9e2bf;
+}
+
+.TotalRow_hiResolutionValue__tiny_94 {
+    display: none;
+}
+
+.TotalRow_price_4a {
+    display: flex;
+}
+
+.TotalRow_price__final_d4 {
+    margin-left: 12rem;
+}
+
+.TotalRow_indent_0e {
+    margin-left: 5rem;
+}
+
+.TotalRow_divider_94 {
+    margin: 0 5rem;
+}
+
+.Specifications_base_1e {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 140rem;
+}
+
+.Specifications_base__tiny_63 {
+    flex-direction: row;
+    height: auto;
+}
+
+.Specifications_base__medium_09,
+.Specifications_base__large_27 {
+    height: 155rem;
+}
+
+.Specifications_overall_da {
+    display: flex;
+    flex-direction: column;
 }
 
 /*
@@ -4932,22 +5063,16 @@ in JS 8000 reserved like anchor for start optimization
     height: 80rem;
     background-size: 108rem 81rem;
 }
-.Shell_base__tiny_a9.Shell_base__withLimit_4d .Shell_icon_55 {
-    margin-left: -30rem;
-}
 .Shell_base__large_aa .Shell_icon_55,
 .Shell_base__huge_a8 .Shell_icon_55 {
     width: 322rem;
     height: 242rem;
 }
 .Shell_count_ed {
+    width: 115rem;
     color: #f2f2f7;
     font-size: 56rem;
     font-weight: 700;
-    line-height: 1.1;
-    display: flex;
-    justify-content: flex-end;
-    width: 200rem;
     text-align: center;
     overflow: hidden;
     position: absolute;
@@ -4955,56 +5080,20 @@ in JS 8000 reserved like anchor for start optimization
     bottom: 10rem;
 }
 .Shell_base__tiny_a9 .Shell_count_ed {
-    color: #f2f2f7;
+    width: auto;
     font-size: 36rem;
-    font-weight: 700;
-    line-height: 1.1;
-    width: 114rem;
     right: 5rem;
-    bottom: 0rem;
-}
-.Shell_base__tiny_a9.Shell_base__withLimit_4d .Shell_count_ed {
-    right: -30rem;
+    bottom: 5rem;
 }
 .Shell_base__large_aa .Shell_count_ed,
 .Shell_base__huge_a8 .Shell_count_ed {
-    color: #f2f2f7;
+    width: 145rem;
     font-size: 73rem;
-    font-weight: 700;
-    line-height: 1.1;
-    width: 236rem;
     right: 0;
-    bottom: 0rem;
-}
-.Shell_base__medium_5e .Shell_count_ed {
-    bottom: 0rem;
+    bottom: 20rem;
 }
 .Shell_count__zero_45 {
     opacity: 0.2;
-}
-.Shell_count__withLimit_f9 {
-    right: -46rem;
-}
-.Shell_maxCountText_e0 {
-    color: #f2f2f7;
-    font-size: 36rem;
-    font-weight: 700;
-    line-height: 1.1;
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    margin-bottom: 4rem;
-    opacity: 0.2;
-}
-.Shell_base__tiny_a9 .Shell_maxCountText_e0 {
-    color: #f2f2f7;
-    font-size: 15rem;
-    font-weight: 700;
-    line-height: 1.15;
-    margin-bottom: 0rem;
-}
-.Shell_maxCountText__zero_00 {
-    opacity: 0.8;
 }
 .Shell_name_29 {
     color: #8c8c7e;
@@ -5018,13 +5107,10 @@ in JS 8000 reserved like anchor for start optimization
     margin-top: -20rem;
 }
 .Shell_base__tiny_a9 .Shell_name_29 {
-    color: #f2f2f7;
-    font-size: 15rem;
-    font-weight: 700;
-    line-height: 1.15;
     justify-content: flex-start;
     width: 300rem;
     color: #c9c9b6;
+    font-size: 15rem;
     position: absolute;
     top: 7rem;
     left: 110rem;
@@ -5063,165 +5149,6 @@ in JS 8000 reserved like anchor for start optimization
     left: 110rem;
 }
 
-.Specification_base_e9 {
-    display: flex;
-    flex: 1;
-    padding-bottom: 7rem;
-    color: #8c8c7e;
-}
-
-.Specification_base__medium_2f,
-.Specification_base__large_47,
-.Specification_base__huge_0b {
-    padding-bottom: 9rem;
-}
-
-.Specification_units_7e {
-    padding-left: 3rem;
-    color: #595950;
-}
-
-.Specification_separator_46 {
-    flex: 1;
-    margin: 0 5rem 1rem;
-    border-bottom: 1rem solid rgba(255, 255, 255, 0.05);
-}
-
-.Specification_separator__tiny_11 {
-    flex: 0;
-    margin: 0 2rem;
-}
-
-.Specification_value_bf {
-    display: flex;
-    color: #e9e2bf;
-}
-
-.TotalRow_base__tiny_c9 {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    position: relative;
-    top: -21rem;
-}
-
-.TotalRow_row_f2 {
-    display: flex;
-    flex: 1;
-    padding-bottom: 7rem;
-    color: #8c8c7e;
-}
-
-.TotalRow_row__medium_fd,
-.TotalRow_row__large_44,
-.TotalRow_row__huge_e2 {
-    padding-bottom: 9rem;
-}
-
-.TotalRow_row_f2 {
-    height: 21rem;
-}
-
-.TotalRow_row__medium_fd,
-.TotalRow_row__large_44,
-.TotalRow_row__huge_e2 {
-    height: 23rem;
-}
-
-.TotalRow_rowItem_ff {
-    display: flex;
-}
-
-.TotalRow_separator_a2 {
-    flex: 1;
-    margin: 0 5rem 1rem;
-    border-bottom: 1rem solid rgba(255, 255, 255, 0.05);
-}
-
-.TotalRow_separator__tiny_7a {
-    flex: 0;
-    margin: 0 2rem;
-}
-
-.TotalRow_total_f7 {
-    color: #e9e2bf;
-}
-
-.TotalRow_total__tiny_bf {
-    color: #8c8c7e;
-}
-
-.TotalRow_colored_33 {
-    color: #8c8c7e;
-}
-
-.TotalRow_overall_09 {
-    display: flex;
-    color: #8c8c7e;
-}
-
-.TotalRow_value_b8 {
-    display: flex;
-    color: #e9e2bf;
-}
-
-.TotalRow_lowResolutionValue_a2 {
-    display: none;
-}
-
-.TotalRow_lowResolutionValue__tiny_e6 {
-    display: flex;
-    color: #e9e2bf;
-}
-
-.TotalRow_hiResolutionValue_fa {
-    display: flex;
-    color: #e9e2bf;
-}
-
-.TotalRow_hiResolutionValue__tiny_94 {
-    display: none;
-}
-
-.TotalRow_price_4a {
-    display: flex;
-}
-
-.TotalRow_price__final_d4 {
-    margin-left: 12rem;
-}
-
-.TotalRow_indent_0e {
-    margin-left: 5rem;
-}
-
-.TotalRow_divider_94 {
-    margin: 0 5rem;
-}
-
-.Specifications_base_1e {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 100%;
-    height: 140rem;
-}
-
-.Specifications_base__tiny_63 {
-    flex-direction: row;
-    height: auto;
-}
-
-.Specifications_base__medium_09,
-.Specifications_base__large_27 {
-    height: 155rem;
-}
-
-.Specifications_overall_da {
-    display: flex;
-    flex-direction: column;
-}
-
 .Swap_base_91 {
     width: 46rem;
     height: 46rem;
@@ -5249,10 +5176,6 @@ in JS 8000 reserved like anchor for start optimization
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-}
-
-.Sections_base__smallLimit_78 {
-    margin-left: 50rem;
 }
 .Sections_shell_a2 {
     display: flex;
@@ -5291,6 +5214,34 @@ in JS 8000 reserved like anchor for start optimization
 .Sections_base__large_d0 .Sections_swap_be,
 .Sections_base__huge_b0 .Sections_swap_be {
     margin-top: -275rem;
+}
+
+.WeaponOccupancy_base_19 {
+    display: flex;
+    color: #7ab300;
+    font-weight: 700;
+}
+
+.WeaponOccupancy_base__incomplete_e0 {
+    color: #ff2717;
+}
+
+.WeaponOccupancy_tip_18 {
+    margin-right: 5rem;
+}
+
+.WeaponOccupancy_occupancy_6e {
+    color: #80d43a;
+    font-size: 24rem;
+}
+
+.WeaponOccupancy_occupancy__incomplete_e1 {
+    color: #ff2717;
+}
+
+.WeaponOccupancy_occupancy__large_37,
+.WeaponOccupancy_occupancy__huge_a5 {
+    font-size: 28rem;
 }
 
 .TankName_base_56 {

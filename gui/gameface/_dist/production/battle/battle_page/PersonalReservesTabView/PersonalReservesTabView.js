@@ -703,7 +703,7 @@
                     };
                 window.ViewEnvHelper = h;
             },
-            439: (u, e, t) => {
+            844: (u, e, t) => {
                 var r = t(179),
                     n = t.n(r),
                     a = t(493),
@@ -1166,10 +1166,10 @@
                     uu = 'Countdown_icon_8b',
                     eu = 'Countdown_description_8d',
                     tu = (u) => u.toString().padStart(2, '0'),
-                    ru = (u, e) => {
+                    ru = (u, e, t = !1) => {
                         switch (e) {
                             case Q.Description:
-                                return ((u, e = !0) =>
+                                return ((u, e = !0, t = !1) =>
                                     u.days > 7 && e
                                         ? A(R.strings.common.duration.days(), { days: u.days })
                                         : u.days >= 1
@@ -1179,8 +1179,12 @@
                                           : u.hours >= 1
                                             ? 0 === u.minutes
                                                 ? A(R.strings.common.duration.hours(), { hours: u.hours })
-                                                : `${A(R.strings.common.duration.hours(), { hours: u.hours })} ${A(R.strings.common.duration.minutes(), { minutes: u.minutes })}`
-                                            : A(R.strings.common.duration.minutes(), { minutes: u.minutes || 1 }))(u);
+                                                : `${A(R.strings.common.duration.hours(), { hours: u.hours })} ${A(t ? R.strings.common.duration.shortMinutes() : R.strings.common.duration.minutes(), { minutes: u.minutes })}`
+                                            : A(R.strings.common.duration.minutes(), { minutes: u.minutes || 1 }))(
+                                    u,
+                                    !0,
+                                    t,
+                                );
                             case Q.Short:
                                 return `${tu(u.minutes)}:${tu(u.seconds)}`;
                             case Q.Long:
@@ -1204,16 +1208,17 @@
                     iu = (0, r.memo)(
                         ({
                             duration: u,
-                            icon: e = Z.Timer,
-                            style: t = Q.Description,
-                            onTimeReached: a,
-                            className: i = '',
-                            classNames: s = {},
-                            labelFormat: E = '',
+                            withShortMinutes: e = !1,
+                            icon: t = Z.Timer,
+                            style: a = Q.Description,
+                            onTimeReached: i,
+                            className: s = '',
+                            classNames: E = {},
+                            labelFormat: A = '',
                         }) => {
-                            const A = t !== Q.Description ? 1 : void 0,
-                                F = U(u, A),
-                                c = (() => {
+                            const F = a !== Q.Description ? 1 : void 0,
+                                c = U(u, F),
+                                l = (() => {
                                     const u = (0, r.useState)(y.O.view.getScale()),
                                         e = u[0],
                                         t = u[1];
@@ -1232,23 +1237,23 @@
                                         e
                                     );
                                 })();
-                            a && a[F] && a[F]();
-                            const l = ru(h(F), t);
+                            i && i[c] && i[c]();
+                            const D = ru(h(c), a, e);
                             return n().createElement(
                                 'div',
-                                { className: o()(J, i) },
-                                e !== Z.None &&
+                                { className: o()(J, s) },
+                                t !== Z.None &&
                                     n().createElement('div', {
-                                        className: o()(uu, s.icon),
-                                        style: { backgroundImage: `url('${au(e, c)}')` },
+                                        className: o()(uu, E.icon),
+                                        style: { backgroundImage: `url('${au(t, l)}')` },
                                     }),
-                                E
+                                A
                                     ? n().createElement(
                                           'div',
-                                          { className: o()(eu, s.text) },
-                                          n().createElement(d, { text: E, binding: { timerText: l } }),
+                                          { className: o()(eu, E.text) },
+                                          n().createElement(d, { text: A, binding: { timerText: D } }),
                                       )
-                                    : n().createElement('div', { className: o()(eu, s.text) }, l),
+                                    : n().createElement('div', { className: o()(eu, E.text) }, D),
                             );
                         },
                     );
@@ -2227,6 +2232,6 @@
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             (t.forEach(e.bind(null, 0)), (t.push = e.bind(null, t.push.bind(t))));
         })());
-    var __webpack_exports__ = __webpack_require__.O(void 0, [532], () => __webpack_require__(439));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [532], () => __webpack_require__(844));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

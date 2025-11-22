@@ -1921,7 +1921,6 @@
                             'div',
                             { className: 'App_base_e7' },
                             F().createElement('div', { className: 'App_bg_b8' }),
-                            F().createElement('div', { className: 'App_metal_5c' }),
                             F().createElement(Fu, { className: 'App_header_d6', text: du.header() }),
                             F().createElement(Fu, { className: 'App_body_8b', text: du.body() }),
                             F().createElement('div', { className: 'App_separator_4d' }),
@@ -2008,6 +2007,7 @@
                 Object.defineProperty(u, Symbol.toStringTag, { value: 'Module' }),
                 Object.defineProperty(u, '__esModule', { value: !0 }));
         }),
+        (__webpack_require__.j = 509),
         (() => {
             var u = { 509: 0 };
             __webpack_require__.O.j = (e) => 0 === u[e];

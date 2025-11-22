@@ -14,14 +14,14 @@
                         graphicsQuality: () => f,
                     }));
                 var n = {};
-                (F.r(n), F.d(n, { getBgUrl: () => p, getTextureUrl: () => g }));
+                (F.r(n), F.d(n, { getBgUrl: () => b, getTextureUrl: () => g }));
                 var t = {};
                 (F.r(t),
                     F.d(t, {
-                        addModelObserver: () => O,
+                        addModelObserver: () => S,
                         addPreloadTexture: () => _,
                         children: () => n,
-                        displayStatus: () => b,
+                        displayStatus: () => p,
                         displayStatusIs: () => Q,
                         events: () => w,
                         extraSize: () => U,
@@ -35,13 +35,13 @@
                         isEventHandled: () => H,
                         isFocused: () => G,
                         pxToRem: () => V,
-                        remToPx: () => L,
+                        remToPx: () => I,
                         resize: () => z,
                         sendEvent: () => x,
-                        setAnimateWindow: () => I,
+                        setAnimateWindow: () => L,
                         setEventHandled: () => $,
                         setInputPaddingsRem: () => T,
-                        setSidePaddingsRem: () => S,
+                        setSidePaddingsRem: () => O,
                         whenTutorialReady: () => Z,
                     }));
                 var D = F(6179),
@@ -141,10 +141,10 @@
                 function g(u, e, F = 1) {
                     return viewEnv.getChildTexturePath(u, e.width, e.height, F);
                 }
-                function p(u, e, F) {
+                function b(u, e, F) {
                     return `url(${g(u, e, F)})`;
                 }
-                const b = { showing: 0, shown: 1, hiding: 2, hidden: 3 },
+                const p = { showing: 0, shown: 1, hiding: 2, hidden: 3 },
                     w = {
                         onTextureFrozen: a('self.onTextureFrozen'),
                         onTextureReady: a('self.onTextureReady'),
@@ -218,10 +218,10 @@
                 function P(u, e, F, A = 1) {
                     return viewEnv.getWebBrowserTexturePath(u, e, F, A);
                 }
-                function O(u, e, F) {
+                function S(u, e, F) {
                     return viewEnv.addDataChangedCallback(u, e, F);
                 }
-                function S(u) {
+                function O(u) {
                     viewEnv.setHitAreaPaddingsRem(u.top, u.right, u.bottom, u.left, 15);
                 }
                 function M(u = 'px') {
@@ -232,7 +232,7 @@
                 }
                 function j(u = 'rem') {
                     const e = viewEnv.getViewGlobalPositionRem();
-                    return 'rem' === u ? e : { x: L(e.x), y: L(e.y) };
+                    return 'rem' === u ? e : { x: I(e.x), y: I(e.y) };
                 }
                 function k() {
                     viewEnv.freezeTextureBeforeResize();
@@ -243,10 +243,10 @@
                 function V(u) {
                     return viewEnv.pxToRem(u);
                 }
-                function L(u) {
+                function I(u) {
                     return viewEnv.remToPx(u);
                 }
-                function I(u, e) {
+                function L(u, e) {
                     viewEnv.setAnimateWindow(u, e);
                 }
                 function G() {
@@ -264,7 +264,7 @@
                 function W() {
                     return viewEnv.getShowingStatus();
                 }
-                const Q = Object.keys(b).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === b[e]), u), {}),
+                const Q = Object.keys(p).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === p[e]), u), {}),
                     U = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
@@ -396,12 +396,12 @@
                                 .source,
                         'gum',
                     ));
-                var Au = F(3403);
+                var Au = F(3282);
                 function Eu() {
                     return !1;
                 }
                 console.log;
-                var nu = F(9174);
+                var nu = F(3915);
                 function tu(u, e) {
                     (null == e || e > u.length) && (e = u.length);
                     for (var F = 0, A = new Array(e); F < e; F++) A[F] = u[F];
@@ -541,11 +541,11 @@
                                                 observableModel: {
                                                     array: (e, F) => {
                                                         const A = null != F ? F : B(e),
-                                                            E = nu.LO.box(A, { equals: Eu });
+                                                            E = nu.observable.box(A, { equals: Eu });
                                                         return (
                                                             'real' === u &&
                                                                 D.subscribe(
-                                                                    (0, nu.aD)((u) => E.set(u)),
+                                                                    (0, nu.action)((u) => E.set(u)),
                                                                     e,
                                                                 ),
                                                             E
@@ -553,11 +553,11 @@
                                                     },
                                                     object: (e, F) => {
                                                         const A = null != F ? F : B(e),
-                                                            E = nu.LO.box(A, { equals: Eu });
+                                                            E = nu.observable.box(A, { equals: Eu });
                                                         return (
                                                             'real' === u &&
                                                                 D.subscribe(
-                                                                    (0, nu.aD)((u) => E.set(u)),
+                                                                    (0, nu.action)((u) => E.set(u)),
                                                                     e,
                                                                 ),
                                                             E
@@ -567,13 +567,13 @@
                                                         const A = B(F);
                                                         if (Array.isArray(e)) {
                                                             const E = e.reduce(
-                                                                (u, e) => ((u[e] = nu.LO.box(A[e], {})), u),
+                                                                (u, e) => ((u[e] = nu.observable.box(A[e], {})), u),
                                                                 {},
                                                             );
                                                             return (
                                                                 'real' === u &&
                                                                     D.subscribe(
-                                                                        (0, nu.aD)((u) => {
+                                                                        (0, nu.action)((u) => {
                                                                             e.forEach((e) => {
                                                                                 E[e].set(u[e]);
                                                                             });
@@ -587,13 +587,16 @@
                                                             const E = e,
                                                                 n = Object.entries(E),
                                                                 t = n.reduce(
-                                                                    (u, [e, F]) => ((u[F] = nu.LO.box(A[e], {})), u),
+                                                                    (u, [e, F]) => (
+                                                                        (u[F] = nu.observable.box(A[e], {})),
+                                                                        u
+                                                                    ),
                                                                     {},
                                                                 );
                                                             return (
                                                                 'real' === u &&
                                                                     D.subscribe(
-                                                                        (0, nu.aD)((u) => {
+                                                                        (0, nu.action)((u) => {
                                                                             n.forEach(([e, F]) => {
                                                                                 t[F].set(u[e]);
                                                                             });
@@ -679,7 +682,7 @@
                             ),
                         ),
                     au = R.strings.ny,
-                    su = (0, Au.Pi)(() => {
+                    su = (0, Au.observer)(() => {
                         const u = eu(ou().model.toys.get(), (u) => u),
                             e = u.slice(0, 8),
                             F = 8 < u.length ? u.length - 8 : 0;
@@ -728,7 +731,7 @@
         var E = F[u];
         if (void 0 !== E) return E.exports;
         var n = (F[u] = { exports: {} });
-        return (e[u](n, n.exports, A), n.exports);
+        return (e[u].call(n.exports, n, n.exports, A), n.exports);
     }
     ((A.m = e),
         (u = []),

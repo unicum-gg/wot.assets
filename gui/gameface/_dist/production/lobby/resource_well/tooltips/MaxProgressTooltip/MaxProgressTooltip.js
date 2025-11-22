@@ -175,7 +175,7 @@
                         setEventHandled: () => v,
                         setInputPaddingsRem: () => r,
                         setSidePaddingsRem: () => i,
-                        whenTutorialReady: () => f,
+                        whenTutorialReady: () => T,
                     }));
                 var A = E(3722),
                     F = E(6112),
@@ -248,7 +248,7 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    f = Promise.all([
+                    T = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : t.U.onDomBuilt(u);
                         }),
@@ -937,17 +937,17 @@
                             { caller: E, stack: e, resId: A }
                         );
                     },
-                    f = (u, e) => u.split('.').reduce((u, e) => u && u[e], e),
-                    T = (u) => {
+                    T = (u, e) => u.split('.').reduce((u, e) => u && u[e], e),
+                    f = (u) => {
                         const e = (0, A.useRef)(!1);
                         e.current || (u(), (e.current = !0));
                     },
                     O = (u) => u && 'ArrayItem' === u.__proto__.constructor.name,
-                    S = (u, e) => (u.length > 0 ? `${u}.${e}` : e),
-                    y = (u) =>
+                    y = (u, e) => (u.length > 0 ? `${u}.${e}` : e),
+                    S = (u) =>
                         ((u, e) =>
                             u.split('.').reduce((u, E) => {
-                                const A = f(`${u}.${E}`, window);
+                                const A = T(`${u}.${E}`, window);
                                 return O(A) ? e(u, E, A) : `${u}.${E}`;
                             }))(u, (u, e) => `${u}.${e}.value`),
                     k = (u) => {
@@ -956,7 +956,7 @@
                                     E = e.caller,
                                     A = e.resId,
                                     F = window.__feature && window.__feature !== E && E ? `subViews.${E}` : '';
-                                return { modelPrefix: F, modelPath: S(F, u || ''), resId: A };
+                                return { modelPrefix: F, modelPath: y(F, u || ''), resId: A };
                             })(),
                             E = e.modelPrefix,
                             A = u.split('.');
@@ -964,7 +964,7 @@
                             const u = [A[0]];
                             return (
                                 A.reduce((e, A) => {
-                                    const F = f(S(E, `${e}.${A}`), window);
+                                    const F = T(y(E, `${e}.${A}`), window);
                                     return O(F) ? (u.push(F.id), `${e}.${A}.value`) : (u.push(A), `${e}.${A}`);
                                 }),
                                 u.reduce((u, e) => u + '.' + e)
@@ -989,16 +989,16 @@
                         ),
                         o = (0, A.useState)(() =>
                             ((u) => {
-                                const e = f(u, window);
+                                const e = T(u, window);
                                 for (const u in e) 'function' == typeof e[u] && (e[u] = e[u].bind(e));
                                 return O(e) ? e.value : e;
-                            })(y(r)),
+                            })(S(r)),
                         ),
                         B = o[0],
                         i = o[1],
                         s = (0, A.useRef)(-1);
                     return (
-                        T(() => {
+                        f(() => {
                             if (
                                 ('boolean' == typeof e &&
                                     ((e = e ? M.Deep : M.None),
@@ -1026,7 +1026,7 @@
                         B
                     );
                 };
-                let L, U, I, G, V, q, W;
+                let U, L, I, G, V, q, W;
                 (!(function (u) {
                     ((u.Items = 'items'),
                         (u.Equipment = 'equipment'),
@@ -1047,6 +1047,7 @@
                         (u.TankmenXpFactor = 'tankmenXPFactor'),
                         (u.FreeXpFactor = 'freeXPFactor'),
                         (u.BattleToken = 'battleToken'),
+                        (u.Entitlements = 'entitlements'),
                         (u.PremiumUniversal = 'premium_universal'),
                         (u.Gold = 'gold'),
                         (u.Credits = 'credits'),
@@ -1059,7 +1060,6 @@
                         (u.SelectableBonus = 'selectableBonus'),
                         (u.StyleProgressToken = 'styleProgressToken'),
                         (u.TmanToken = 'tmanToken'),
-                        (u.PortalEventDiscount25 = 'portalEventDiscountToken'),
                         (u.NaturalCover = 'naturalCover'),
                         (u.BpCoin = 'bpcoin'),
                         (u.BattlaPassFinalAchievement = 'dossier_achievement'),
@@ -1089,8 +1089,15 @@
                         (u.Quests = 'quests'),
                         (u.BlankPersonalMissions_1 = 'freeTokens_0'),
                         (u.BlankPersonalMissions_2 = 'freeTokens_2'),
-                        (u.SACoin = 'sacoin'));
-                })(L || (L = {})),
+                        (u.SACoin = 'sacoin'),
+                        (u.ArmoryCoin = 'armory_coin'),
+                        (u.PremiumPlusUniversal = 'premium_plus_universal'),
+                        (u.DogTagType = 'dogTagComponents'),
+                        (u.NyPetGoodies = 'nyPetGoodies'),
+                        (u.HiddenVehicle = 'hidden_vehicle'),
+                        (u.NyStaticDogTag = 'nyStaticDogTag'),
+                        (u.Ny26Toys = 'ny26Toys'));
+                })(U || (U = {})),
                     (function (u) {
                         ((u.Gold = 'gold'),
                             (u.Credits = 'credits'),
@@ -1129,7 +1136,7 @@
                             (u.BattlePassPoints = 'battlePassPoints'),
                             (u.BattleBadge = 'dossier_badge'),
                             (u.BattleAchievement = 'dossier_achievement'));
-                    })(U || (U = {})),
+                    })(L || (L = {})),
                     (function (u) {
                         ((u.Big = 'big'),
                             (u.Small = 'small'),

@@ -763,7 +763,7 @@
                     };
                 window.ViewEnvHelper = b;
             },
-            2924: (u, e, t) => {
+            4324: (u, e, t) => {
                 'use strict';
                 var a = t(6179),
                     n = t.n(a);
@@ -1762,8 +1762,28 @@
                                       n = u.replace(/&nbsp;/g, ' ');
                                   return (_u(n, /( )/, e).forEach((u) => (t = t.concat(_u(u, a, Du.left)))), t);
                               })(u, e);
-                    };
-                let vu;
+                    },
+                    vu = 'FormatText_base_d0',
+                    wu = ({ binding: u, text: e = '', classMix: t, alignment: r = Du.left }) =>
+                        null === e
+                            ? (console.error("FormatText was supplied with 'null'"), null)
+                            : n().createElement(
+                                  a.Fragment,
+                                  null,
+                                  e.split('\n').map((e, i) =>
+                                      n().createElement(
+                                          'div',
+                                          { className: h()(vu, t), key: `${e}-${i}` },
+                                          ((u, e, t) =>
+                                              u
+                                                  .split(/%\((.*?)\)(?:[sd])?/g)
+                                                  .map((u) => (t && u in t ? t[u] : gu(u, e))))(e, r, u).map((u, e) =>
+                                              n().createElement(a.Fragment, { key: `${e}-${u}` }, u),
+                                          ),
+                                      ),
+                                  ),
+                              );
+                let bu;
                 !(function (u) {
                     ((u.SHORT_DATE = 'short-date'),
                         (u.SHORT_TIME = 'short-time'),
@@ -1778,14 +1798,14 @@
                         (u.WEEK_DAY_TIME = 'week-day-time'),
                         (u.YEAR = 'year'),
                         (u.DATE_YEAR = 'date-year'));
-                })(vu || (vu = {}));
-                var wu = t(4179);
-                const bu = 60,
-                    pu = 3600,
-                    fu = 86400;
+                })(bu || (bu = {}));
+                var pu = t(4179);
+                const fu = 60,
+                    xu = 3600,
+                    Lu = 86400;
                 Date.now();
-                const xu = () => {},
-                    Lu = (u = 0, e, t = 0, n = xu) => {
+                const Mu = () => {},
+                    Su = (u = 0, e, t = 0, n = Mu) => {
                         const r = (0, a.useState)(u),
                             i = r[0],
                             E = r[1];
@@ -1799,7 +1819,7 @@
                                                 const e = u - Math.floor((Date.now() - a) / 1e3);
                                                 null !== t && e <= t ? (E(t), n && n(), clearInterval(r)) : E(e);
                                             },
-                                            1e3 * (e || (u > 120 ? bu : 1)),
+                                            1e3 * (e || (u > 120 ? fu : 1)),
                                         );
                                     return () => {
                                         clearInterval(r);
@@ -1810,41 +1830,21 @@
                             i
                         );
                     };
-                wu.Sw.instance;
-                let Mu;
+                pu.Sw.instance;
+                let yu;
                 !(function (u) {
                     ((u.None = 'None'), (u.Shallow = 'Shallow'), (u.Deep = 'Deep'));
-                })(Mu || (Mu = {}));
-                wu.Sw.instance;
-                const Su = Lu,
-                    yu = 'Countdown_base_fe',
-                    Tu = 'Countdown_icon_8b',
-                    Ou = 'Countdown_description_8d',
-                    Ru = 'FormatText_base_d0',
-                    Hu = ({ binding: u, text: e = '', classMix: t, alignment: r = Du.left }) =>
-                        null === e
-                            ? (console.error("FormatText was supplied with 'null'"), null)
-                            : n().createElement(
-                                  a.Fragment,
-                                  null,
-                                  e.split('\n').map((e, i) =>
-                                      n().createElement(
-                                          'div',
-                                          { className: h()(Ru, t), key: `${e}-${i}` },
-                                          ((u, e, t) =>
-                                              u
-                                                  .split(/%\((.*?)\)(?:[sd])?/g)
-                                                  .map((u) => (t && u in t ? t[u] : gu(u, e))))(e, r, u).map((u, e) =>
-                                              n().createElement(a.Fragment, { key: `${e}-${u}` }, u),
-                                          ),
-                                      ),
-                                  ),
-                              ),
+                })(yu || (yu = {}));
+                pu.Sw.instance;
+                const Tu = Su,
+                    Ou = 'Countdown_base_fe',
+                    Ru = 'Countdown_icon_8b',
+                    Hu = 'Countdown_description_8d',
                     ku = (u) => u.toString().padStart(2, '0'),
-                    Nu = (u, e) => {
+                    Nu = (u, e, t = !1) => {
                         switch (e) {
                             case lu.Description:
-                                return ((u, e = !0) =>
+                                return ((u, e = !0, t = !1) =>
                                     u.days > 7 && e
                                         ? cu(R.strings.common.duration.days(), { days: u.days })
                                         : u.days >= 1
@@ -1854,8 +1854,12 @@
                                           : u.hours >= 1
                                             ? 0 === u.minutes
                                                 ? cu(R.strings.common.duration.hours(), { hours: u.hours })
-                                                : `${cu(R.strings.common.duration.hours(), { hours: u.hours })} ${cu(R.strings.common.duration.minutes(), { minutes: u.minutes })}`
-                                            : cu(R.strings.common.duration.minutes(), { minutes: u.minutes || 1 }))(u);
+                                                : `${cu(R.strings.common.duration.hours(), { hours: u.hours })} ${cu(t ? R.strings.common.duration.shortMinutes() : R.strings.common.duration.minutes(), { minutes: u.minutes })}`
+                                            : cu(R.strings.common.duration.minutes(), { minutes: u.minutes || 1 }))(
+                                    u,
+                                    !0,
+                                    t,
+                                );
                             case lu.Short:
                                 return `${ku(u.minutes)}:${ku(u.seconds)}`;
                             case lu.Long:
@@ -1879,16 +1883,17 @@
                     Wu = (0, a.memo)(
                         ({
                             duration: u,
-                            icon: e = Fu.Timer,
-                            style: t = lu.Description,
-                            onTimeReached: r,
-                            className: E = '',
-                            classNames: A = {},
-                            labelFormat: s = '',
+                            withShortMinutes: e = !1,
+                            icon: t = Fu.Timer,
+                            style: r = lu.Description,
+                            onTimeReached: E,
+                            className: A = '',
+                            classNames: s = {},
+                            labelFormat: o = '',
                         }) => {
-                            const o = t !== lu.Description ? 1 : void 0,
-                                F = Su(u, o),
-                                l = (() => {
+                            const F = r !== lu.Description ? 1 : void 0,
+                                l = Tu(u, F),
+                                D = (() => {
                                     const u = (0, a.useState)(i.O.view.getScale()),
                                         e = u[0],
                                         t = u[1];
@@ -1907,34 +1912,35 @@
                                         e
                                     );
                                 })();
-                            r && r[F] && r[F]();
-                            const D = Nu(
+                            E && E[l] && E[l]();
+                            const c = Nu(
                                 (function (u = 0) {
                                     let e = u;
-                                    const t = Math.trunc(e / fu);
-                                    e -= t * fu;
-                                    const a = Math.trunc(e / pu);
-                                    e -= a * pu;
-                                    const n = Math.trunc(e / bu);
-                                    return ((e -= n * bu), { days: t, hours: a, minutes: n, seconds: e });
-                                })(F),
-                                t,
+                                    const t = Math.trunc(e / Lu);
+                                    e -= t * Lu;
+                                    const a = Math.trunc(e / xu);
+                                    e -= a * xu;
+                                    const n = Math.trunc(e / fu);
+                                    return ((e -= n * fu), { days: t, hours: a, minutes: n, seconds: e });
+                                })(l),
+                                r,
+                                e,
                             );
                             return n().createElement(
                                 'div',
-                                { className: h()(yu, E) },
-                                e !== Fu.None &&
+                                { className: h()(Ou, A) },
+                                t !== Fu.None &&
                                     n().createElement('div', {
-                                        className: h()(Tu, A.icon),
-                                        style: { backgroundImage: `url('${Iu(e, l)}')` },
+                                        className: h()(Ru, s.icon),
+                                        style: { backgroundImage: `url('${Iu(t, D)}')` },
                                     }),
-                                s
+                                o
                                     ? n().createElement(
                                           'div',
-                                          { className: h()(Ou, A.text) },
-                                          n().createElement(Hu, { text: s, binding: { timerText: D } }),
+                                          { className: h()(Hu, s.text) },
+                                          n().createElement(wu, { text: o, binding: { timerText: c } }),
                                       )
-                                    : n().createElement('div', { className: h()(Ou, A.text) }, D),
+                                    : n().createElement('div', { className: h()(Hu, s.text) }, c),
                             );
                         },
                     ),
@@ -1970,23 +1976,23 @@
                         n().createElement(
                             'div',
                             { className: Vu },
-                            n().createElement(Hu, { text: u, classMix: ju }),
-                            n().createElement(Hu, { text: e, classMix: zu }),
+                            n().createElement(wu, { text: u, classMix: ju }),
+                            n().createElement(wu, { text: e, classMix: zu }),
                             n().createElement(
                                 'div',
                                 { className: Ku },
                                 n().createElement(
                                     'div',
                                     { className: Zu },
-                                    n().createElement(Hu, { text: $u(a), classMix: qu }),
+                                    n().createElement(wu, { text: $u(a), classMix: qu }),
                                     n().createElement('div', { className: Qu, style: r }),
-                                    n().createElement(Hu, { text: t, classMix: Yu }),
+                                    n().createElement(wu, { text: t, classMix: Yu }),
                                 ),
                                 n().createElement('div', { className: Ju }),
                                 n().createElement(
                                     'div',
                                     { className: ue },
-                                    n().createElement(Hu, {
+                                    n().createElement(wu, {
                                         text: te.battlePassVehicleAwardView.content.pointsSeparator(),
                                         binding: { currentPoints: i, maxPoints: i },
                                         classMix: Xu,
@@ -2042,7 +2048,7 @@
                                         u,
                                         n().createElement('div', { className: le }),
                                     ),
-                                    n().createElement(Hu, { text: Ce.content.subTitle(), classMix: De }),
+                                    n().createElement(wu, { text: Ce.content.subTitle(), classMix: De }),
                                 ),
                             ),
                         ),
@@ -2108,7 +2114,7 @@
                                 n().createElement(
                                     'div',
                                     { className: he },
-                                    n().createElement(Hu, {
+                                    n().createElement(wu, {
                                         text: fe.content.timer(),
                                         classMix: ve,
                                         binding: {
@@ -2121,7 +2127,7 @@
                                     n().createElement(
                                         ou,
                                         { type: Eu.primary, mixClass: ge, size: o ? Au.medium : Au.small, onClick: s },
-                                        n().createElement(Hu, { text: fe.button() }),
+                                        n().createElement(wu, { text: fe.button() }),
                                     ),
                                 ),
                             );
@@ -2269,6 +2275,6 @@
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             (t.forEach(e.bind(null, 0)), (t.push = e.bind(null, t.push.bind(t))));
         })());
-    var __webpack_exports__ = __webpack_require__.O(void 0, [1519], () => __webpack_require__(2924));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [1519], () => __webpack_require__(4324));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

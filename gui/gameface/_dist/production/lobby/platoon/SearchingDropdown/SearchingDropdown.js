@@ -2,7 +2,7 @@
     'use strict';
     var __webpack_modules__ = {
             67: (e, t, n) => {
-                n.d(t, { O: () => q });
+                n.d(t, { O: () => G });
                 var o = {};
                 (n.r(o), n.d(o, { mouse: () => u, onResize: () => l }));
                 var r = {};
@@ -53,7 +53,7 @@
                         setEventHandled: () => H,
                         setInputPaddingsRem: () => M,
                         setSidePaddingsRem: () => N,
-                        whenTutorialReady: () => G,
+                        whenTutorialReady: () => q,
                     }));
                 const l = s('clientResized'),
                     d = { down: s('mousedown'), up: s('mouseup'), move: s('mousemove') };
@@ -271,13 +271,13 @@
                             viewEnv.getExtraSizeRem(e, t);
                         },
                     },
-                    G = Promise.all([
+                    q = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : h.onDomBuilt(e);
                         }),
                         engine.whenReady,
                     ]),
-                    q = { view: i, client: r };
+                    G = { view: i, client: r };
             },
             521: (e, t, n) => {
                 let o, r;
@@ -1277,7 +1277,7 @@
                         base__highlightActive: 'CButton_base__highlightActive_b2',
                         content: 'CButton_content_cc',
                     };
-                let K, G;
+                let K, q;
                 (!(function (e) {
                     ((e.main = 'main'),
                         (e.primary = 'primary'),
@@ -1288,8 +1288,8 @@
                 })(K || (K = {})),
                     (function (e) {
                         ((e.extraSmall = 'extraSmall'), (e.small = 'small'), (e.medium = 'medium'));
-                    })(G || (G = {})));
-                const q = ({
+                    })(q || (q = {})));
+                const G = ({
                     children: e,
                     size: t,
                     isFocused: n,
@@ -1420,8 +1420,8 @@
                         )
                     );
                 };
-                q.defaultProps = { type: K.primary, isFocused: !1, soundHover: 'highlight', soundClick: 'play' };
-                const $ = (0, s.memo)(q);
+                G.defaultProps = { type: K.primary, isFocused: !1, soundHover: 'highlight', soundClick: 'play' };
+                const $ = (0, s.memo)(G);
                 function Y() {
                     return (
                         (Y =
@@ -1455,7 +1455,7 @@
                                     { className: i },
                                     c().createElement(
                                         $,
-                                        Y({ type: K.primary, size: G.small, onClick: l, disabled: !t }, r),
+                                        Y({ type: K.primary, size: q.small, onClick: l, disabled: !t }, r),
                                         o || e,
                                     ),
                                 ),
@@ -1702,7 +1702,7 @@
                         n = e.className,
                         o = e.children,
                         a = e.size,
-                        i = void 0 === a ? G.small : a,
+                        i = void 0 === a ? q.small : a,
                         s = (function (e, t) {
                             if (null == e) return {};
                             var n,
@@ -1756,7 +1756,7 @@
                             r = (0, s.useCallback)(() => {
                                 (o.onClick(), E(R.sounds.gui_platoon_2_cancel_search()));
                             }, [o]),
-                            a = (0, s.useMemo)(() => ({ type: K.secondary, size: G.small }), []);
+                            a = (0, s.useMemo)(() => ({ type: K.secondary, size: q.small }), []);
                         return c().createElement(
                             'div',
                             { className: Ne },
@@ -1900,6 +1900,7 @@
                 Object.defineProperty(e, Symbol.toStringTag, { value: 'Module' }),
                 Object.defineProperty(e, '__esModule', { value: !0 }));
         }),
+        (__webpack_require__.j = 884),
         (() => {
             var e = { 884: 0 };
             __webpack_require__.O.j = (t) => 0 === e[t];

@@ -477,13 +477,13 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .Counter_base__big_19 {
-    min-width: 21rem;
-    height: 21rem;
+    min-width: 20rem;
+    height: 20rem;
 }
 
 .Counter_base__small_3b {
-    min-width: 13rem;
-    height: 13rem;
+    min-width: 9rem;
+    height: 9rem;
 }
 
 .Counter_base__empty_98 {
@@ -500,11 +500,11 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 .Counter_bg_74 {
     border: 1rem solid #fe4e0f;
-    border-radius: 7rem;
+    border-radius: 10rem;
     box-shadow:
         0 0 0 1rem rgba(0, 0, 0, 0.3),
-        0 0 6rem rgba(254, 103, 0, 0.2),
-        0 0 12rem 4rem rgba(249, 0, 0, 0.3);
+        0 0 9rem rgba(254, 103, 0, 0.2),
+        0 0 12rem 7rem rgba(249, 0, 0, 0.3);
     background-image: url('R.images.gui.maps.icons.components.counter.pattern');
     position: absolute;
     top: 0;
@@ -521,26 +521,26 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 .Counter_value_3e {
     display: flex;
-    padding: 0 4rem;
-    color: #fefeec;
+    padding: 0 5rem;
+    color: #f2f2f7;
     font-size: 11rem;
     line-height: 13rem;
     white-space: nowrap;
 }
 .Counter_base__big_19 .Counter_value_3e {
     padding: 0 7rem;
-    font-size: 14rem;
-    line-height: 20rem;
+    font-size: 16rem;
+    line-height: 17rem;
 }
 .Counter_base__small_3b .Counter_value_3e {
     font-size: 9rem;
-    line-height: 12rem;
+    line-height: 8rem;
 }
 .Counter_value__text_d6 {
-    padding: 0 7rem;
+    padding: 0 5rem;
 }
 .Counter_base__big_19 .Counter_value__text_d6 {
-    padding: 0 10rem;
+    padding: 0 7rem;
 }
 .Counter_base__small_3b .Counter_value__text_d6 {
     padding: 0 5rem;
@@ -3574,30 +3574,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     in JS 8000 reserved like anchor for start optimization
 */
 /* stylelint-disable-line */
-.ProgressBarDeltaSimple_base_6c {
-    width: 0;
-    height: 100%;
-    position: absolute;
-    top: 0;
-}
-.ProgressBarDeltaSimple_delta_99 {
-    width: 0;
-    max-width: 8001px;
-    height: 100%;
-    box-shadow: var(--progress-delta-shadow);
-    background-color: var(--progress-delta-color);
-    position: absolute;
-    bottom: 0;
-    transform-origin: right center;
-    transition-timing-function: cubic-bezier(1, 0, 0.92, 1), cubic-bezier(0.21, 0.61, 0.35, 1);
-    transition-property: width, transform;
-}
-
-/*
-    Gameface can't calculate gradient biggest than 8128px
-    in JS 8000 reserved like anchor for start optimization
-*/
-/* stylelint-disable-line */
 .ProgressBarDeltaGrow_base_7e {
     width: 0;
     height: 100%;
@@ -3623,6 +3599,30 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 .ProgressBarDeltaGrow_base__withoutBounce_b5 .ProgressBarDeltaGrow_glow_68 {
     transition-timing-function: cubic-bezier(1, 0, 0.75, 0.75);
+}
+
+/*
+    Gameface can't calculate gradient biggest than 8128px
+    in JS 8000 reserved like anchor for start optimization
+*/
+/* stylelint-disable-line */
+.ProgressBarDeltaSimple_base_6c {
+    width: 0;
+    height: 100%;
+    position: absolute;
+    top: 0;
+}
+.ProgressBarDeltaSimple_delta_99 {
+    width: 0;
+    max-width: 8001px;
+    height: 100%;
+    box-shadow: var(--progress-delta-shadow);
+    background-color: var(--progress-delta-color);
+    position: absolute;
+    bottom: 0;
+    transform-origin: right center;
+    transition-timing-function: cubic-bezier(1, 0, 0.92, 1), cubic-bezier(0.21, 0.61, 0.35, 1);
+    transition-property: width, transform;
 }
 
 .FormatTextWithColorTags_blackReal_3c {
@@ -4127,6 +4127,345 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     background-image: url('R.images.comp7.gui.maps.icons.comp7.ranks.c_150.qualification');
 }
 
+.Countdown_base_fe {
+    display: flex;
+    align-items: center;
+}
+
+.Countdown_icon_8b {
+    width: 32rem;
+    height: 32rem;
+    background: no-repeat center / contain;
+}
+
+.Countdown_description_8d {
+    color: #ffdd99;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+.Progression_base_4f {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 0 20rem;
+}
+.Progression_title_d7 {
+    color: #8c8c7e;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+    text-align: center;
+    transition: opacity 0.1s cubic-bezier(0.07, 0.82, 0.16, 1);
+}
+.Progression_base__resettable_e1 .Progression_title_d7 {
+    color: #8c8c7e;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+.Progression_base__disabled_bf .Progression_title_d7 {
+    opacity: 0;
+}
+.Progression_contentWrapper_24 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: relative;
+}
+.Progression_progress_4f {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 8rem 0 10rem;
+    padding: 0 20rem;
+    position: absolute;
+    transition: opacity 0.1s cubic-bezier(0.07, 0.82, 0.16, 1);
+}
+.Progression_base__resettable_e1 .Progression_progress_4f,
+.Progression_base__disabled_bf .Progression_progress_4f {
+    opacity: 0;
+}
+.Progression_progressValue_1a {
+    color: #8c8c7e;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+    margin-bottom: 10rem;
+    text-align: center;
+}
+.Progression_countdown_5b {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.1s cubic-bezier(0.07, 0.82, 0.16, 1);
+}
+.Progression_base__resettable_e1 .Progression_countdown_5b {
+    opacity: 1;
+}
+
+.FunRandomCard_widgetOverlay_f2 {
+    pointer-events: auto;
+}
+
+.FunRandomCard_subtitle_d0 {
+    pointer-events: auto;
+}
+
+.FunRandomCard_belowStatus_03 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 30rem;
+    position: relative;
+    pointer-events: auto;
+}
+
+.mediaMedium .FunRandomCard_belowStatus_03 {
+    margin-top: 80rem;
+}
+
+.mediaLarge .FunRandomCard_belowStatus_03 {
+    margin-top: 110rem;
+}
+
+.PopoverDecorator_base_ed {
+    display: flex;
+    position: absolute;
+}
+
+.PopoverDecorator_decorator_d3 {
+    padding: 58rem;
+    border-image-source: url('R.images.gui.maps.icons.popovers.popover_bg');
+    border-image-slice: 90 fill;
+    border-image-width: 90rem;
+    overflow: hidden;
+    position: relative;
+    z-index: 0;
+}
+
+.PopoverDecorator_arrow_8a {
+    background: no-repeat 0 0 / contain;
+    position: absolute;
+}
+
+.PopoverDecorator_arrow__bottom_c3,
+.PopoverDecorator_arrow__top_6e {
+    width: 301rem;
+    height: 90rem;
+    margin: 0 58rem;
+    background-image: url('R.images.gui.maps.icons.popovers.popover_arrow_top');
+    left: 50%;
+}
+
+.PopoverDecorator_arrow__left_7a,
+.PopoverDecorator_arrow__right_b6 {
+    width: 84rem;
+    height: 181rem;
+    margin: 58rem 0;
+    background-image: url('R.images.gui.maps.icons.popovers.popover_arrow_left');
+    top: 50%;
+}
+
+.PopoverDecorator_arrow__left_7a {
+    right: 10rem;
+    transform: scaleX(-1) translateY(-90rem);
+}
+
+.PopoverDecorator_arrow__right_b6 {
+    left: 10rem;
+    transform: translateY(-90rem);
+}
+
+.PopoverDecorator_arrow__top_6e {
+    bottom: 8rem;
+    transform: scaleY(-1) translateX(-150rem);
+}
+
+.PopoverDecorator_arrow__bottom_c3 {
+    top: 8rem;
+    transform: translateX(-150rem);
+}
+
+.PopoverDecorator_closeBtn_32 {
+    width: 18rem;
+    height: 18rem;
+    background: url('R.images.gui.maps.icons.popovers.close_button_slim_up') no-repeat 0 0 / contain;
+    position: absolute;
+    top: 6rem;
+    right: 6rem;
+    z-index: 3;
+    cursor: pointer;
+}
+
+.PopoverDecorator_closeBtn_32:hover {
+    filter: brightness(160%);
+}
+
+.PopoverDecorator_closeBtn_32:active {
+    background-image: url('R.images.gui.maps.icons.popovers.close_button_slim_press');
+    filter: brightness(100%);
+}
+
+.PopoverDecorator_content_f0 {
+    position: relative;
+    z-index: 2;
+}
+
+.ToggleButton_base_d9 {
+    border-radius: 2rem;
+    position: relative;
+}
+
+.ToggleButton_content_ee {
+    font-weight: 300;
+    position: relative;
+}
+
+.ToggleButton_overlay_d9 {
+    border-radius: 2rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.ToggleButton_base__active_6e .ToggleButton_overlay_d9 {
+    border: 1rem solid rgba(255, 195, 99, 0.75);
+    box-shadow:
+        0 0 0 1rem rgba(0, 0, 0, 0.6),
+        0 0 7px rgba(238, 112, 0, 0.5);
+    background: linear-gradient(
+        180deg,
+        rgba(255, 42, 0, 0.1) 0%,
+        rgba(255, 42, 0, 0) 0.01%,
+        rgba(255, 127, 0, 0.1) 100%
+    );
+}
+
+.ToggleButton_indicator_c5 {
+    width: 40rem;
+    height: 29rem;
+    background: url('R.images.gui.maps.icons.buttons.toggle_indicator') no-repeat center / contain;
+    position: absolute;
+    bottom: -14rem;
+    left: 50%;
+    z-index: 2;
+    transform: translate(-50%, 0);
+    pointer-events: none;
+}
+
+.ToggleButton_base__active_6e .ToggleButton_indicator_c5 {
+    background-image: url('R.images.gui.maps.icons.buttons.toggle_indicator_active');
+}
+
+.Settings_base_fe {
+    width: 32rem;
+    height: 32rem;
+    opacity: 0;
+    position: absolute;
+    top: 8rem;
+    left: 24rem;
+    transform: translate(-50%, -2rem);
+    transition:
+        transform 0.3s 0.3s easeOut 0,
+        opacity 0.3s easeOut 0;
+    pointer-events: none;
+}
+
+.Settings_base__extraSmall_6e,
+.Settings_base__small_5a,
+.Settings_base__medium_a8 {
+    width: 24rem;
+    top: 5rem;
+    left: 17rem;
+}
+
+.Settings_base__bigButton_d2 {
+    width: 160rem;
+    margin-top: 22rem;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 2rem);
+}
+
+.Settings_base__bigButton__medium_7f {
+    margin-top: 19rem;
+}
+
+.Settings_base__bigButton__extraSmall_8f,
+.Settings_base__bigButton__small_76 {
+    width: 134rem;
+    margin-top: 18rem;
+}
+
+.Settings_base__anim_b2 {
+    opacity: 1;
+    transform: translate(-50%, 0rem);
+    transition-delay: 0.15s;
+    pointer-events: auto;
+}
+
+.Settings_settingsLabel_0e {
+    color: #fefeec;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    display: flex;
+    align-items: center;
+}
+
+.Settings_toggle_92 {
+    min-height: 32rem;
+    padding: 0 20rem;
+}
+
+.Settings_toggle__extraSmall_ff,
+.Settings_toggle__small_df,
+.Settings_toggle__medium_a6 {
+    min-height: 24rem;
+}
+
+.Settings_toggle__shortBtn_b5 {
+    padding: 0;
+}
+
+.Settings_icon_90 {
+    width: 17rem;
+    height: 15rem;
+    margin: 2rem 5rem 0 0;
+    background: url('R.images.gui.maps.icons.mode_selector.common.icon_settings') no-repeat 50% / contain;
+}
+
+.Settings_icon__shortBtn_34 {
+    margin: 0;
+}
+
+.Settings_bubble_6e {
+    width: 10rem;
+    height: 10rem;
+    border: 1rem solid #fe4e0f;
+    border-radius: 50%;
+    box-shadow:
+        0 0 0 1rem rgba(0, 0, 0, 0.3),
+        0 0 6rem rgba(254, 103, 0, 0.2),
+        0 0 12rem 4rem rgba(249, 0, 0, 0.3);
+    background-image: url('R.images.gui.maps.icons.components.counter.pattern');
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    transform: translate(50%, -50%);
+    pointer-events: none;
+}
+
 .Progression_base_5f {
     width: 100%;
     margin-top: 80rem;
@@ -4446,673 +4785,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
-}
-
-.Countdown_base_fe {
-    display: flex;
-    align-items: center;
-}
-
-.Countdown_icon_8b {
-    width: 32rem;
-    height: 32rem;
-    background: no-repeat center / contain;
-}
-
-.Countdown_description_8d {
-    color: #ffdd99;
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
-}
-
-.Progression_base_4f {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    padding: 0 20rem;
-}
-.Progression_title_d7 {
-    color: #8c8c7e;
-    font-size: 16rem;
-    font-weight: 400;
-    line-height: 1.25;
-    text-align: center;
-    transition: opacity 0.1s cubic-bezier(0.07, 0.82, 0.16, 1);
-}
-.Progression_base__resettable_e1 .Progression_title_d7 {
-    color: #8c8c7e;
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
-}
-.Progression_base__disabled_bf .Progression_title_d7 {
-    opacity: 0;
-}
-.Progression_contentWrapper_24 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    position: relative;
-}
-.Progression_progress_4f {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    margin: 8rem 0 10rem;
-    padding: 0 20rem;
-    position: absolute;
-    transition: opacity 0.1s cubic-bezier(0.07, 0.82, 0.16, 1);
-}
-.Progression_base__resettable_e1 .Progression_progress_4f,
-.Progression_base__disabled_bf .Progression_progress_4f {
-    opacity: 0;
-}
-.Progression_progressValue_1a {
-    color: #8c8c7e;
-    font-size: 16rem;
-    font-weight: 400;
-    line-height: 1.25;
-    margin-bottom: 10rem;
-    text-align: center;
-}
-.Progression_countdown_5b {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    opacity: 0;
-    transition: opacity 0.1s cubic-bezier(0.07, 0.82, 0.16, 1);
-}
-.Progression_base__resettable_e1 .Progression_countdown_5b {
-    opacity: 1;
-}
-
-.FunRandomCard_widgetOverlay_f2 {
-    pointer-events: auto;
-}
-
-.FunRandomCard_subtitle_d0 {
-    pointer-events: auto;
-}
-
-.FunRandomCard_belowStatus_03 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-top: 30rem;
-    position: relative;
-    pointer-events: auto;
-}
-
-.mediaMedium .FunRandomCard_belowStatus_03 {
-    margin-top: 80rem;
-}
-
-.mediaLarge .FunRandomCard_belowStatus_03 {
-    margin-top: 110rem;
-}
-
-.PerformanceWarning_base_5e {
-    position: absolute;
-}
-
-.PerformanceWarning_base__b1_cb {
-    position: absolute;
-    top: auto;
-    left: 50%;
-    transform: translate(-50%);
-    top: 55%;
-}
-
-.mediaLarge .PerformanceWarning_base__b1_cb {
-    top: 50%;
-}
-
-.PerformanceWarning_base__b2_54,
-.PerformanceWarning_base__b3_84,
-.PerformanceWarning_base__b4_f6 {
-    top: 5rem;
-    right: 5rem;
-}
-
-.PerformanceWarning_titleWrapper_52 {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding-bottom: 8rem;
-}
-
-.PerformanceWarning_iconWrapper_75 {
-    padding-top: 4rem;
-}
-
-.PerformanceWarning_icon_d5 {
-    width: 16rem;
-    height: 16rem;
-    background: no-repeat center / cover;
-}
-
-.PerformanceWarning_title_be {
-    padding-left: 5rem;
-}
-
-.PerformanceWarning_title__low_a8 {
-    color: #ff2717;
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
-}
-
-.PerformanceWarning_title__reduced_16 {
-    color: #ee7000;
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
-}
-
-.Box_mt__XS_0c {
-    margin-top: 4rem;
-}
-.Box_mt__SM_eb {
-    margin-top: 8rem;
-}
-.Box_mt__SMp_cf {
-    margin-top: 10rem;
-}
-.Box_mt__MD_25 {
-    margin-top: 16rem;
-}
-.Box_mt__MDp_49 {
-    margin-top: 20rem;
-}
-.Box_mt__LG_e8 {
-    margin-top: 32rem;
-}
-.Box_mt__XL_83 {
-    margin-top: 64rem;
-}
-
-.Box_mr__XS_7c {
-    margin-right: 4rem;
-}
-
-.Box_mr__SM_08 {
-    margin-right: 8rem;
-}
-
-.Box_mr__SMp_06 {
-    margin-right: 10rem;
-}
-
-.Box_mr__MD_4a {
-    margin-right: 16rem;
-}
-
-.Box_mr__MDp_b6 {
-    margin-right: 20rem;
-}
-
-.Box_mr__LG_d0 {
-    margin-right: 32rem;
-}
-
-.Box_mr__XL_db {
-    margin-right: 64rem;
-}
-
-.Box_mb__XS_bb {
-    margin-bottom: 4rem;
-}
-
-.Box_mb__SM_83 {
-    margin-bottom: 8rem;
-}
-
-.Box_mb__SMp_04 {
-    margin-bottom: 10rem;
-}
-
-.Box_mb__MD_ed {
-    margin-bottom: 16rem;
-}
-
-.Box_mb__MDp_65 {
-    margin-bottom: 20rem;
-}
-
-.Box_mb__LG_c8 {
-    margin-bottom: 32rem;
-}
-
-.Box_mb__XL_f8 {
-    margin-bottom: 64rem;
-}
-
-.Box_ml__XS_8a {
-    margin-left: 4rem;
-}
-
-.Box_ml__SM_e6 {
-    margin-left: 8rem;
-}
-
-.Box_ml__SMp_fb {
-    margin-left: 10rem;
-}
-
-.Box_ml__MD_2b {
-    margin-left: 16rem;
-}
-
-.Box_ml__MDp_c7 {
-    margin-left: 20rem;
-}
-
-.Box_ml__LG_39 {
-    margin-left: 32rem;
-}
-
-.Box_ml__XL_4a {
-    margin-left: 64rem;
-}
-
-/* eslint-disable-next-line expectedscss*/
-.Text_paragraph-P10_2c {
-    font-size: 10rem;
-    font-weight: 400;
-    line-height: 1.2;
-}
-.Text_paragraph-P12_22 {
-    font-size: 12rem;
-    font-weight: 400;
-    line-height: 1.3;
-}
-.Text_paragraph-P14_a7 {
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
-}
-.Text_paragraph-P16_90 {
-    font-size: 16rem;
-    font-weight: 400;
-    line-height: 1.25;
-}
-.Text_paragraph-P18_50 {
-    font-size: 18rem;
-    font-weight: 400;
-    line-height: 1.25;
-}
-.Text_paragraph-P24_33 {
-    font-size: 24rem;
-    font-weight: 400;
-    line-height: 32rem;
-}
-.Text_heading-H14_8b {
-    font-size: 14rem;
-    font-weight: 700;
-    line-height: 1.15;
-}
-.Text_heading-H15_9e {
-    font-size: 15rem;
-    font-weight: 700;
-    line-height: 1.15;
-}
-.Text_heading-H18_b7 {
-    font-size: 18rem;
-    font-weight: 700;
-    line-height: 1.1;
-}
-.Text_heading-H20R_f6 {
-    font-size: 20rem;
-    font-weight: 400;
-    line-height: 1.2;
-}
-.Text_heading-H22_27 {
-    font-size: 22rem;
-    font-weight: 700;
-    line-height: 1.2;
-}
-.Text_heading-H24R_be {
-    font-size: 24rem;
-    font-weight: 400;
-    line-height: 1.2;
-}
-.Text_heading-H24_0c {
-    font-size: 24rem;
-    font-weight: 700;
-    line-height: 1.2;
-}
-.Text_heading-H28_78 {
-    font-size: 28rem;
-    font-weight: 700;
-    line-height: 1.1;
-}
-.Text_heading-H36_32 {
-    font-size: 36rem;
-    font-weight: 700;
-    line-height: 1.1;
-}
-.Text_heading-H56_c3 {
-    font-size: 56rem;
-    font-weight: 700;
-    line-height: 1.1;
-}
-.Text_heading-H73_8f {
-    font-size: 73rem;
-    font-weight: 700;
-    line-height: 1.1;
-}
-.Text_heading-H144_a9 {
-    font-size: 144rem;
-    font-weight: 700;
-    line-height: 1;
-}
-.Text_BLACK_REAL_30 {
-    color: #000000;
-}
-.Text_WHITE_REAL_bc {
-    color: #ffffff;
-}
-.Text_WHITE_62 {
-    color: #f2f2f7;
-}
-.Text_WHITE_ORANGE_54 {
-    color: #fefeec;
-}
-.Text_WHITE_SPANISH_df {
-    color: #e9e2bf;
-}
-.Text_PAR_15 {
-    color: #8c8c7e;
-}
-.Text_PAR_SECONDARY_5d {
-    color: #595950;
-}
-.Text_PAR_TERTIARY_c9 {
-    color: #37362e;
-}
-.Text_INFO_RED_30 {
-    color: #ff0000;
-}
-.Text_RED_66 {
-    color: #ff2717;
-}
-.Text_RED_DARK_d8 {
-    color: #b70000;
-}
-.Text_YELLOW_ed {
-    color: #feab34;
-}
-.Text_ORANGE_be {
-    color: #ee7000;
-}
-.Text_CREAM_57 {
-    color: #ffdd99;
-}
-.Text_BROWN_18 {
-    color: #cbac77;
-}
-.Text_GREEN_BRIGHT_3f {
-    color: #80d43a;
-}
-.Text_GREEN_e3 {
-    color: #7ab300;
-}
-.Text_GREEN_DARK_f1 {
-    color: #497212;
-}
-.Text_BLUE_BOOSTER_21 {
-    color: #ccffff;
-}
-.Text_BLUE_TEAMKILLER_ab {
-    color: #09e2ff;
-}
-.Text_CRED_f7 {
-    color: #ced9d9;
-}
-.Text_GOLD_28 {
-    color: #ffc363;
-}
-.Text_BOND_be {
-    color: #c9c9b6;
-}
-.Text_PROM_65 {
-    color: #a29b70;
-}
-
-.PopoverDecorator_base_ed {
-    display: flex;
-    position: absolute;
-}
-
-.PopoverDecorator_decorator_d3 {
-    padding: 58rem;
-    border-image-source: url('R.images.gui.maps.icons.popovers.popover_bg');
-    border-image-slice: 90 fill;
-    border-image-width: 90rem;
-    overflow: hidden;
-    position: relative;
-    z-index: 0;
-}
-
-.PopoverDecorator_arrow_8a {
-    background: no-repeat 0 0 / contain;
-    position: absolute;
-}
-
-.PopoverDecorator_arrow__bottom_c3,
-.PopoverDecorator_arrow__top_6e {
-    width: 301rem;
-    height: 90rem;
-    margin: 0 58rem;
-    background-image: url('R.images.gui.maps.icons.popovers.popover_arrow_top');
-    left: 50%;
-}
-
-.PopoverDecorator_arrow__left_7a,
-.PopoverDecorator_arrow__right_b6 {
-    width: 84rem;
-    height: 181rem;
-    margin: 58rem 0;
-    background-image: url('R.images.gui.maps.icons.popovers.popover_arrow_left');
-    top: 50%;
-}
-
-.PopoverDecorator_arrow__left_7a {
-    right: 10rem;
-    transform: scaleX(-1) translateY(-90rem);
-}
-
-.PopoverDecorator_arrow__right_b6 {
-    left: 10rem;
-    transform: translateY(-90rem);
-}
-
-.PopoverDecorator_arrow__top_6e {
-    bottom: 8rem;
-    transform: scaleY(-1) translateX(-150rem);
-}
-
-.PopoverDecorator_arrow__bottom_c3 {
-    top: 8rem;
-    transform: translateX(-150rem);
-}
-
-.PopoverDecorator_closeBtn_32 {
-    width: 18rem;
-    height: 18rem;
-    background: url('R.images.gui.maps.icons.popovers.close_button_slim_up') no-repeat 0 0 / contain;
-    position: absolute;
-    top: 6rem;
-    right: 6rem;
-    z-index: 3;
-    cursor: pointer;
-}
-
-.PopoverDecorator_closeBtn_32:hover {
-    filter: brightness(160%);
-}
-
-.PopoverDecorator_closeBtn_32:active {
-    background-image: url('R.images.gui.maps.icons.popovers.close_button_slim_press');
-    filter: brightness(100%);
-}
-
-.PopoverDecorator_content_f0 {
-    position: relative;
-    z-index: 2;
-}
-
-.ToggleButton_base_d9 {
-    border-radius: 2rem;
-    position: relative;
-}
-
-.ToggleButton_content_ee {
-    font-weight: 300;
-    position: relative;
-}
-
-.ToggleButton_overlay_d9 {
-    border-radius: 2rem;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 1;
-    pointer-events: none;
-}
-
-.ToggleButton_base__active_6e .ToggleButton_overlay_d9 {
-    border: 1rem solid rgba(255, 195, 99, 0.75);
-    box-shadow:
-        0 0 0 1rem rgba(0, 0, 0, 0.6),
-        0 0 7px rgba(238, 112, 0, 0.5);
-    background: linear-gradient(
-        180deg,
-        rgba(255, 42, 0, 0.1) 0%,
-        rgba(255, 42, 0, 0) 0.01%,
-        rgba(255, 127, 0, 0.1) 100%
-    );
-}
-
-.ToggleButton_indicator_c5 {
-    width: 40rem;
-    height: 29rem;
-    background: url('R.images.gui.maps.icons.buttons.toggle_indicator') no-repeat center / contain;
-    position: absolute;
-    bottom: -14rem;
-    left: 50%;
-    z-index: 2;
-    transform: translate(-50%, 0);
-    pointer-events: none;
-}
-
-.ToggleButton_base__active_6e .ToggleButton_indicator_c5 {
-    background-image: url('R.images.gui.maps.icons.buttons.toggle_indicator_active');
-}
-
-.Settings_base_fe {
-    width: 32rem;
-    height: 32rem;
-    opacity: 0;
-    position: absolute;
-    top: 8rem;
-    left: 24rem;
-    transform: translate(-50%, -2rem);
-    transition:
-        transform 0.3s 0.3s easeOut 0,
-        opacity 0.3s easeOut 0;
-    pointer-events: none;
-}
-
-.Settings_base__extraSmall_6e,
-.Settings_base__small_5a,
-.Settings_base__medium_a8 {
-    width: 24rem;
-    top: 5rem;
-    left: 17rem;
-}
-
-.Settings_base__bigButton_d2 {
-    width: 160rem;
-    margin-top: 22rem;
-    position: relative;
-    left: 50%;
-    transform: translate(-50%, 2rem);
-}
-
-.Settings_base__bigButton__medium_7f {
-    margin-top: 19rem;
-}
-
-.Settings_base__bigButton__extraSmall_8f,
-.Settings_base__bigButton__small_76 {
-    width: 134rem;
-    margin-top: 18rem;
-}
-
-.Settings_base__anim_b2 {
-    opacity: 1;
-    transform: translate(-50%, 0rem);
-    transition-delay: 0.15s;
-    pointer-events: auto;
-}
-
-.Settings_settingsLabel_0e {
-    color: #fefeec;
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
-    display: flex;
-    align-items: center;
-}
-
-.Settings_toggle_92 {
-    min-height: 32rem;
-    padding: 0 20rem;
-}
-
-.Settings_toggle__extraSmall_ff,
-.Settings_toggle__small_df,
-.Settings_toggle__medium_a6 {
-    min-height: 24rem;
-}
-
-.Settings_toggle__shortBtn_b5 {
-    padding: 0;
-}
-
-.Settings_icon_90 {
-    width: 17rem;
-    height: 15rem;
-    margin: 2rem 5rem 0 0;
-    background: url('R.images.gui.maps.icons.mode_selector.common.icon_settings') no-repeat 50% / contain;
-}
-
-.Settings_icon__shortBtn_34 {
-    margin: 0;
-}
-
-.Settings_bubble_6e {
-    width: 10rem;
-    height: 10rem;
-    border: 1rem solid #fe4e0f;
-    border-radius: 50%;
-    box-shadow:
-        0 0 0 1rem rgba(0, 0, 0, 0.3),
-        0 0 6rem rgba(254, 103, 0, 0.2),
-        0 0 12rem 4rem rgba(249, 0, 0, 0.3);
-    background-image: url('R.images.gui.maps.icons.components.counter.pattern');
-    position: absolute;
-    top: 2rem;
-    right: 2rem;
-    transform: translate(50%, -50%);
-    pointer-events: none;
 }
 
 .Column_base_41 {

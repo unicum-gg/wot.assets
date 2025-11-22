@@ -273,19 +273,6 @@
     color: #a29b70;
 }
 
-.TooltipDecorator_base_c9 {
-    display: flex;
-    position: absolute;
-}
-
-.TooltipDecorator_base__theme-default_6d .TooltipDecorator_decorator_3d {
-    padding: 4rem 6rem 8rem;
-    border-image-source: url('R.images.gui.maps.icons.tooltip.tooltip_background');
-    border-image-slice: 24 fill;
-    border-image-width: 24rem;
-    position: relative;
-}
-
 .FormatTextWithColorTags_blackReal_3c {
     color: #000000;
 }
@@ -396,11 +383,11 @@
 }
 
 .NyCurrency_icon__left_79 {
-    margin-right: 10rem;
+    margin-right: 6rem;
 }
 
 .NyCurrency_icon__right_6f {
-    margin-left: 10rem;
+    margin-left: 6rem;
 }
 
 .NyCurrency_icon__medium_63 {
@@ -408,44 +395,11 @@
     height: 24rem;
 }
 
-.NyCurrency_icon__c_48x48_74 {
-    width: 48rem;
-    height: 48rem;
-}
-
-.NyCurrency_icon__c_64x64_60 {
-    width: 64rem;
-    height: 64rem;
-}
-
 .NyCurrency_value_e4 {
     color: #8c8c7e;
-    font-size: 12rem;
+    font-size: 16rem;
     font-weight: 400;
-    line-height: 1.3;
-    font-weight: 700;
-    line-height: 14rem;
-}
-
-.NyCurrency_value__medium_61 {
-    color: #8c8c7e;
-    font-size: 15rem;
-    font-weight: 700;
-    line-height: 1.15;
-}
-
-.NyCurrency_value__c_48x48_5c {
-    color: #8c8c7e;
-    font-size: 22rem;
-    font-weight: 700;
-    line-height: 1.2;
-}
-
-.NyCurrency_value__c_64x64_71 {
-    color: #8c8c7e;
-    font-size: 28rem;
-    font-weight: 700;
-    line-height: 1.1;
+    line-height: 1.25;
 }
 
 .NyCurrency_value__ny25_mandarin_81,
@@ -476,22 +430,16 @@
     transform: translateY(-3rem);
 }
 
-.NyCurrency_value__notAvailable__c_48x48_3c,
-.NyCurrency_value__notAvailable__c_64x64_b3 {
-    transform: translateY(-5rem);
-}
-
 .App_base_02 {
     display: flex;
     flex-direction: column;
     width: 370rem;
     height: 180rem;
     padding: 17rem;
-    background: linear-gradient(153.54deg, #002c64 0%, #000 100%);
 }
 
 .App_title_a8 {
-    color: #f2f2f7;
+    color: #ffdd99;
     font-size: 15rem;
     font-weight: 700;
     line-height: 1.15;
@@ -499,7 +447,7 @@
 }
 
 .App_text_4f {
-    color: #8c8c7e;
+    color: #c9c9b6;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
@@ -527,12 +475,6 @@
     position: relative;
 }
 
-.App_divider_1d {
-    width: 100%;
-    height: 1rem;
-    background: url('R.images.new_year.gui.maps.icons.newYear.tooltips.navigation.divider') no-repeat center / cover;
-}
-
 .App_priceContainer_09 {
     display: flex;
     justify-content: center;
@@ -548,4 +490,82 @@
 
 .App_currency_ee {
     margin-right: 8rem;
+}
+
+.TooltipDecorator_base_c9 {
+    display: flex;
+    position: absolute;
+}
+
+.TooltipDecorator_base__theme-default_6d .TooltipDecorator_decorator_3d {
+    padding: 4rem 6rem 8rem;
+    border-image-source: url('R.images.gui.maps.icons.tooltip.tooltip_background');
+    border-image-slice: 24 fill;
+    border-image-width: 24rem;
+    position: relative;
+}
+
+.TooltipAndPopoverStyleWrapper_base_f8 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 10rem;
+    margin-right: 10rem;
+    margin-bottom: 10rem;
+    border: 1rem solid #95694e;
+    border-radius: 4rem;
+    box-shadow:
+        4rem 4rem 6rem rgba(255, 255, 255, 0.06) inset,
+        -4rem -4rem 6rem rgba(255, 255, 255, 0.06) inset;
+    background: linear-gradient(180deg, rgba(60, 84, 124, 0.85) 0%, rgba(23, 28, 35, 0.85) 100%);
+    filter: drop-shadow(-1rem 1rem 2rem rgba(0, 0, 0, 0.3)) drop-shadow(-2rem 3rem 4rem rgba(0, 0, 0, 0.5));
+    position: relative;
+}
+.TooltipAndPopoverStyleWrapper_base_f8::before {
+    border: 1rem solid rgba(39, 30, 24, 0.6);
+    border-radius: 3rem;
+    content: '';
+    position: absolute;
+    top: 0rem;
+    right: 0rem;
+    bottom: 0rem;
+    left: 0rem;
+    z-index: 1;
+}
+.TooltipAndPopoverStyleWrapper_base_f8::after {
+    border: 1rem solid rgba(255, 255, 255, 0.1);
+    border-radius: 2rem;
+    content: '';
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+    left: 1rem;
+    z-index: 1;
+}
+.TooltipAndPopoverStyleWrapper_pattern_f6 {
+    width: 100%;
+    height: 100%;
+    background-image: url('R.images.new_year.gui.maps.icons.newYear.tooltips.pattern');
+    position: absolute;
+}
+.TooltipAndPopoverStyleWrapper_snowIconContainer_33 {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.TooltipAndPopoverStyleWrapper_snowIcon_d7 {
+    width: 236rem;
+    height: 60rem;
+    background: url('R.images.new_year.gui.maps.icons.newYear.tooltips.snow') no-repeat center / cover;
+}
+.TooltipAndPopoverStyleWrapper_content_8a {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    z-index: 2;
 }

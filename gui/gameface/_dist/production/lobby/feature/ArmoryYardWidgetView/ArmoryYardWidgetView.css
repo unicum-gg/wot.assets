@@ -351,7 +351,7 @@ body {
     margin-bottom: 6rem;
 }
 
-.StateBlock_base__postProgression_ca {
+.StateBlock_base__purchaseStage_46 {
     margin-bottom: 8rem;
     text-shadow:
         0 0 15rem #e52,
@@ -359,7 +359,7 @@ body {
         0 0 4rem rgba(255, 127, 0, 0.25);
 }
 
-.StateBlock_base__postProgression__thinSmall_76 {
+.StateBlock_base__purchaseStage__thinSmall_89 {
     color: #ffdd99;
     font-size: 12rem;
     font-weight: 400;
@@ -367,8 +367,8 @@ body {
     margin-bottom: 8rem;
 }
 
-.StateBlock_base__postProgression__wideSmall_88,
-.StateBlock_base__postProgression__big_cd {
+.StateBlock_base__purchaseStage__wideSmall_77,
+.StateBlock_base__purchaseStage__big_8c {
     color: #ffdd99;
     font-size: 14rem;
     font-weight: 400;
@@ -400,15 +400,15 @@ body {
 }
 
 .StateBlock_icon_2c {
-    width: 32rem;
-    height: 32rem;
+    width: 38rem;
+    height: 38rem;
     margin-left: -10rem;
     background: no-repeat center / contain;
 }
 
 .StateBlock_icon__clock_b5 {
     margin-right: -2rem;
-    background-image: url('R.images.armory_yard.gui.maps.icons.widget.small.clock_glow');
+    background-image: url('R.images.gui.maps.icons.library.ClockIcon_1');
     transform: translateY(3rem);
 }
 
@@ -426,8 +426,8 @@ body {
     transform: translateY(2rem);
 }
 
-.StateBlock_icon__clock__postProgression__wideSmall_77,
-.StateBlock_icon__clock__postProgression__big_74 {
+.StateBlock_icon__clock__purchaseStage__wideSmall_c4,
+.StateBlock_icon__clock__purchaseStage__big_e4 {
     transform: translateY(1rem);
 }
 
@@ -543,19 +543,20 @@ body {
     bottom: 0;
     left: 0;
     border-radius: 2rem;
-    background: url('R.images.armory_yard.gui.maps.icons.widget.big.passive_160') no-repeat center / cover;
+    background: url('R.images.armory_yard.gui.maps.icons.widget.big.active_bg_160') no-repeat center / cover;
+    filter: saturate(0);
 }
 
 .WidgetBeforeProgression_intro_bg__thinSmall_fd {
-    background-image: url('R.images.armory_yard.gui.maps.icons.widget.big.passive_220');
+    background-image: url('R.images.armory_yard.gui.maps.icons.widget.big.active_bg_220');
 }
 
 .WidgetBeforeProgression_intro_bg__wideSmall_30 {
-    background-image: url('R.images.armory_yard.gui.maps.icons.widget.big.passive_300');
+    background-image: url('R.images.armory_yard.gui.maps.icons.widget.big.active_bg_300');
 }
 
 .WidgetBeforeProgression_intro_bg__big_c7 {
-    background-image: url('R.images.armory_yard.gui.maps.icons.widget.big.passive_300_150');
+    background-image: url('R.images.armory_yard.gui.maps.icons.widget.big.active_bg_300_150');
 }
 
 .WidgetBeforeProgression_hover_intro_7a {
@@ -790,20 +791,23 @@ body {
 
 .App_title__active_5f,
 .App_title__completed_bb,
-.App_title__postProgression_cb {
+.App_title__questRerollState_e8,
+.App_title__purchaseStage_6d {
     color: #fbf6ee;
     transition: color 450ms;
 }
 
 .App_title__active__hover_5d,
 .App_title__completed__hover_e0,
-.App_title__postProgression__hover_74 {
+.App_title__questRerollState__hover_14,
+.App_title__purchaseStage__hover_2e {
     color: #ffffff;
 }
 
 .App_title__active__thinSmall_26,
 .App_title__completed__thinSmall_9a,
-.App_title__postProgression__thinSmall_2f {
+.App_title__questRerollState__thinSmall_ec,
+.App_title__purchaseStage__thinSmall_77 {
     color: #fbf6ee;
     font-size: 18rem;
     font-weight: 700;
@@ -812,13 +816,15 @@ body {
 
 .App_title__active__thinSmall__hover_a3,
 .App_title__completed__thinSmall__hover_bb,
-.App_title__postProgression__thinSmall__hover_fa {
+.App_title__questRerollState__thinSmall__hover_b2,
+.App_title__purchaseStage__thinSmall__hover_9b {
     color: #ffffff;
 }
 
 .App_title__active__wideSmall_ee,
 .App_title__completed__wideSmall_dc,
-.App_title__postProgression__wideSmall_0e {
+.App_title__questRerollState__wideSmall_1c,
+.App_title__purchaseStage__wideSmall_f2 {
     color: #fbf6ee;
     font-size: 22rem;
     font-weight: 700;
@@ -827,13 +833,15 @@ body {
 
 .App_title__active__wideSmall__hover_d5,
 .App_title__completed__wideSmall__hover_b3,
-.App_title__postProgression__wideSmall__hover_b2 {
+.App_title__questRerollState__wideSmall__hover_29,
+.App_title__purchaseStage__wideSmall__hover_10 {
     color: #ffffff;
 }
 
 .App_title__active__big_c9,
 .App_title__completed__big_1a,
-.App_title__postProgression__big_2b {
+.App_title__questRerollState__big_91,
+.App_title__purchaseStage__big_1f {
     color: #fbf6ee;
     font-size: 24rem;
     font-weight: 700;
@@ -842,7 +850,8 @@ body {
 
 .App_title__active__big__hover_9d,
 .App_title__completed__big__hover_45,
-.App_title__postProgression__big__hover_b6 {
+.App_title__questRerollState__big__hover_e9,
+.App_title__purchaseStage__big__hover_10 {
     color: #ffffff;
 }
 
@@ -900,7 +909,8 @@ body {
 
 .App_underTitle__active_2c,
 .App_underTitle__completed_f4,
-.App_underTitle__postProgression_4e {
+.App_underTitle__questRerollState_e4,
+.App_underTitle__purchaseStage_bc {
     color: #ffdd99;
     text-shadow:
         0 0 15rem #e52,
@@ -910,7 +920,8 @@ body {
 
 .App_underTitle__active__thinSmall_f8,
 .App_underTitle__completed__thinSmall_c9,
-.App_underTitle__postProgression__thinSmall_7c {
+.App_underTitle__questRerollState__thinSmall_7d,
+.App_underTitle__purchaseStage__thinSmall_1a {
     color: #ffdd99;
     font-size: 14rem;
     font-weight: 400;
@@ -920,7 +931,8 @@ body {
 
 .App_underTitle__active__wideSmall_12,
 .App_underTitle__completed__wideSmall_62,
-.App_underTitle__postProgression__wideSmall_19 {
+.App_underTitle__questRerollState__wideSmall_56,
+.App_underTitle__purchaseStage__wideSmall_57 {
     color: #ffdd99;
     font-size: 16rem;
     font-weight: 400;
@@ -930,7 +942,8 @@ body {
 
 .App_underTitle__active__big_e0,
 .App_underTitle__completed__big_a7,
-.App_underTitle__postProgression__big_dd {
+.App_underTitle__questRerollState__big_a7,
+.App_underTitle__purchaseStage__big_64 {
     color: #ffdd99;
     font-size: 16rem;
     font-weight: 400;
@@ -962,4 +975,29 @@ body {
 
 .App_stroke__big_5f {
     background-image: url('R.images.armory_yard.gui.maps.icons.widget.big.border_300_150');
+}
+
+.App_shine_94 {
+    width: 1500rem;
+    height: 1500rem;
+    border-radius: 50%;
+    background: radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0.3) 100%);
+    position: absolute;
+    bottom: -750rem;
+    left: -750rem;
+    z-index: 1;
+    transform: scale(0);
+    animation: App_completePointer_92 5s cubic-bezier(1, 0.11, 0.54, 1.4) infinite;
+}
+
+@keyframes App_completePointer_92 {
+    75% {
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
 }

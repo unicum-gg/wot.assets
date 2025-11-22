@@ -91,12 +91,14 @@
     align-items: flex-start;
     align-self: center;
     position: absolute;
-    top: 58rem;
+    bottom: -7rem;
 }
 
 .RotationVehicle_labelContent_27 {
     display: flex;
     justify-content: center;
+    margin-top: 2rem;
+    position: relative;
 }
 
 .RotationVehicle_lockIcon_78 {
@@ -109,8 +111,8 @@
 .RotationVehicle_checkIcon_9e {
     width: 20rem;
     height: 22rem;
-    margin-top: 2rem;
-    background: url('R.images.gui_lootboxes.gui.maps.rotation.check') no-repeat center / cover;
+    margin-bottom: -7rem;
+    background: url('R.images.gui_lootboxes.gui.maps.rotation.check') no-repeat bottom / contain;
 }
 
 .RotationVehicle_preview_ec {

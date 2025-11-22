@@ -384,11 +384,15 @@
 }
 
 .Header_headerImage__accountCustomizations_24 {
-    background-image: url('R.images.gui_lootboxes.gui.maps.storage.rewards.customisation');
+    background-image: url('R.images.gui_lootboxes.gui.maps.storage.rewards.accountCustomizations');
 }
 
 .Header_headerImage__featureItems_30 {
     background-image: url('R.images.gui_lootboxes.gui.maps.storage.rewards.eventThings');
+}
+
+.Header_headerImage__lootboxes_a4 {
+    background-image: url('R.images.gui_lootboxes.gui.maps.storage.rewards.lootboxes');
 }
 
 .Header_headerDescriptionWrapper_e2 {

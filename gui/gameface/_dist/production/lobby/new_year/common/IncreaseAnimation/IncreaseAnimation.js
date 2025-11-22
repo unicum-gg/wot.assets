@@ -1,79 +1,71 @@
 (() => {
     'use strict';
-    var e,
-        r = {
-            7727: (e, r, o) => {},
-            9904: (e, r, o) => {
-                (o(6483), o(7727), o(6179), o(1187));
-            },
-            1187: (e, r, o) => {
-                R.views.common.tooltip_window.tooltip_window.TooltipWindow('resId');
+    var r,
+        e = {
+            6512: (r, e, t) => {
+                (t(6483), t(6179));
             },
         },
-        o = {};
-    function t(e) {
-        var n = o[e];
+        t = {};
+    function o(r) {
+        var n = t[r];
         if (void 0 !== n) return n.exports;
-        var i = (o[e] = { exports: {} });
-        return (r[e](i, i.exports, t), i.exports);
+        var i = (t[r] = { exports: {} });
+        return (e[r].call(i.exports, i, i.exports, o), i.exports);
     }
-    ((t.m = r),
-        (e = []),
-        (t.O = (r, o, n, i) => {
-            if (!o) {
+    ((o.m = e),
+        (r = []),
+        (o.O = (e, t, n, i) => {
+            if (!t) {
                 var a = 1 / 0;
-                for (u = 0; u < e.length; u++) {
-                    for (var [o, n, i] = e[u], f = !0, l = 0; l < o.length; l++)
-                        (!1 & i || a >= i) && Object.keys(t.O).every((e) => t.O[e](o[l]))
-                            ? o.splice(l--, 1)
+                for (s = 0; s < r.length; s++) {
+                    for (var [t, n, i] = r[s], f = !0, l = 0; l < t.length; l++)
+                        (!1 & i || a >= i) && Object.keys(o.O).every((r) => o.O[r](t[l]))
+                            ? t.splice(l--, 1)
                             : ((f = !1), i < a && (a = i));
                     if (f) {
-                        e.splice(u--, 1);
-                        var s = n();
-                        void 0 !== s && (r = s);
+                        r.splice(s--, 1);
+                        var c = n();
+                        void 0 !== c && (e = c);
                     }
                 }
-                return r;
+                return e;
             }
             i = i || 0;
-            for (var u = e.length; u > 0 && e[u - 1][2] > i; u--) e[u] = e[u - 1];
-            e[u] = [o, n, i];
+            for (var s = r.length; s > 0 && r[s - 1][2] > i; s--) r[s] = r[s - 1];
+            r[s] = [t, n, i];
         }),
-        (t.n = (e) => {
-            var r = e && e.__esModule ? () => e.default : () => e;
-            return (t.d(r, { a: r }), r);
+        (o.d = (r, e) => {
+            for (var t in e) o.o(e, t) && !o.o(r, t) && Object.defineProperty(r, t, { enumerable: !0, get: e[t] });
         }),
-        (t.d = (e, r) => {
-            for (var o in r) t.o(r, o) && !t.o(e, o) && Object.defineProperty(e, o, { enumerable: !0, get: r[o] });
-        }),
-        (t.g = (function () {
+        (o.g = (function () {
             if ('object' == typeof globalThis) return globalThis;
             try {
                 return this || new Function('return this')();
-            } catch (e) {
+            } catch (r) {
                 if ('object' == typeof window) return window;
             }
         })()),
-        (t.o = (e, r) => Object.prototype.hasOwnProperty.call(e, r)),
-        (t.j = 7044),
+        (o.o = (r, e) => Object.prototype.hasOwnProperty.call(r, e)),
+        (o.j = 7044),
         (() => {
-            var e = { 7044: 0 };
-            t.O.j = (r) => 0 === e[r];
-            var r = (r, o) => {
+            var r = { 7044: 0 };
+            o.O.j = (e) => 0 === r[e];
+            var e = (e, t) => {
                     var n,
                         i,
-                        [a, f, l] = o,
-                        s = 0;
-                    if (a.some((r) => 0 !== e[r])) {
-                        for (n in f) t.o(f, n) && (t.m[n] = f[n]);
-                        if (l) var u = l(t);
+                        [a, f, l] = t,
+                        c = 0;
+                    if (a.some((e) => 0 !== r[e])) {
+                        for (n in f) o.o(f, n) && (o.m[n] = f[n]);
+                        if (l) var s = l(o);
                     }
-                    for (r && r(o); s < a.length; s++) ((i = a[s]), t.o(e, i) && e[i] && e[i][0](), (e[i] = 0));
-                    return t.O(u);
+                    for (e && e(t); c < a.length; c++) ((i = a[c]), o.o(r, i) && r[i] && r[i][0](), (r[i] = 0));
+                    return o.O(s);
                 },
-                o = (self.webpackChunkgameface = self.webpackChunkgameface || []);
-            (o.forEach(r.bind(null, 0)), (o.push = r.bind(null, o.push.bind(o))));
+                t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
+            (t.forEach(e.bind(null, 0)), (t.push = e.bind(null, t.push.bind(t))));
         })());
-    var n = t.O(void 0, [4503], () => t(9904));
-    n = t.O(n);
+    var n = o.O(void 0, [4503], () => o(6512));
+    n = o.O(n);
 })();

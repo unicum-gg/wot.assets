@@ -1,19 +1,47 @@
-.Content_base_78 {
+.TooltipDecorator_base_c9 {
     display: flex;
-    flex-direction: column;
+    position: absolute;
+}
+
+.TooltipDecorator_base__theme-default_6d .TooltipDecorator_decorator_3d {
+    padding: 4rem 6rem 8rem;
+    border-image-source: url('R.images.gui.maps.icons.tooltip.tooltip_background');
+    border-image-slice: 24 fill;
+    border-image-width: 24rem;
+    position: relative;
+}
+
+.Description_base_67 {
+    width: 100%;
+    padding: 20rem 25rem 22rem;
+    color: rgba(140, 140, 126, 1);
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 20rem;
+    text-align: left;
+}
+
+.FormatText_base_d0 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.Countdown_base_fe {
+    display: flex;
     align-items: center;
-    width: 380rem;
-    border: 1rem solid #f2f2e61a;
-    border-radius: 2rem;
-    background:
-        linear-gradient(
-            180deg,
-            rgba(51, 51, 41, 0.3) 0%,
-            rgba(51, 51, 41, 0) 16%,
-            rgba(51, 51, 41, 0) 88%,
-            rgba(51, 51, 41, 0.1) 100%
-        ),
-        linear-gradient(0deg, #030200, #030200);
+}
+
+.Countdown_icon_8b {
+    width: 32rem;
+    height: 32rem;
+    background: no-repeat center / contain;
+}
+
+.Countdown_description_8d {
+    color: #ffdd99;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
 }
 
 .Separator_base_81 {
@@ -88,48 +116,20 @@
     background-image: url('R.images.gui.maps.icons.universalFlag.flag');
 }
 
-.Countdown_base_fe {
+.Content_base_78 {
     display: flex;
+    flex-direction: column;
     align-items: center;
-}
-
-.Countdown_icon_8b {
-    width: 32rem;
-    height: 32rem;
-    background: no-repeat center / contain;
-}
-
-.Countdown_description_8d {
-    color: #ffdd99;
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
-}
-
-.FormatText_base_d0 {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.Description_base_67 {
-    width: 100%;
-    padding: 20rem 25rem 22rem;
-    color: rgba(140, 140, 126, 1);
-    font-size: 16rem;
-    font-weight: 400;
-    line-height: 20rem;
-    text-align: left;
-}
-
-.TooltipDecorator_base_c9 {
-    display: flex;
-    position: absolute;
-}
-
-.TooltipDecorator_base__theme-default_6d .TooltipDecorator_decorator_3d {
-    padding: 4rem 6rem 8rem;
-    border-image-source: url('R.images.gui.maps.icons.tooltip.tooltip_background');
-    border-image-slice: 24 fill;
-    border-image-width: 24rem;
-    position: relative;
+    width: 380rem;
+    border: 1rem solid #f2f2e61a;
+    border-radius: 2rem;
+    background:
+        linear-gradient(
+            180deg,
+            rgba(51, 51, 41, 0.3) 0%,
+            rgba(51, 51, 41, 0) 16%,
+            rgba(51, 51, 41, 0) 88%,
+            rgba(51, 51, 41, 0.1) 100%
+        ),
+        linear-gradient(0deg, #030200, #030200);
 }

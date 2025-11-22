@@ -416,7 +416,7 @@
         var i = t[e];
         if (void 0 !== i) return i.exports;
         var o = (t[e] = { exports: {} });
-        return (n[e](o, o.exports, r), o.exports);
+        return (n[e].call(o.exports, o, o.exports, r), o.exports);
     }
     ((r.m = n),
         (e = []),

@@ -39,6 +39,7 @@
                             (u.TankmenXpFactor = 'tankmenXPFactor'),
                             (u.FreeXpFactor = 'freeXPFactor'),
                             (u.BattleToken = 'battleToken'),
+                            (u.Entitlements = 'entitlements'),
                             (u.PremiumUniversal = 'premium_universal'),
                             (u.Gold = 'gold'),
                             (u.Credits = 'credits'),
@@ -51,7 +52,6 @@
                             (u.SelectableBonus = 'selectableBonus'),
                             (u.StyleProgressToken = 'styleProgressToken'),
                             (u.TmanToken = 'tmanToken'),
-                            (u.PortalEventDiscount25 = 'portalEventDiscountToken'),
                             (u.NaturalCover = 'naturalCover'),
                             (u.BpCoin = 'bpcoin'),
                             (u.BattlaPassFinalAchievement = 'dossier_achievement'),
@@ -81,7 +81,14 @@
                             (u.Quests = 'quests'),
                             (u.BlankPersonalMissions_1 = 'freeTokens_0'),
                             (u.BlankPersonalMissions_2 = 'freeTokens_2'),
-                            (u.SACoin = 'sacoin'));
+                            (u.SACoin = 'sacoin'),
+                            (u.ArmoryCoin = 'armory_coin'),
+                            (u.PremiumPlusUniversal = 'premium_plus_universal'),
+                            (u.DogTagType = 'dogTagComponents'),
+                            (u.NyPetGoodies = 'nyPetGoodies'),
+                            (u.HiddenVehicle = 'hidden_vehicle'),
+                            (u.NyStaticDogTag = 'nyStaticDogTag'),
+                            (u.Ny26Toys = 'ny26Toys'));
                     })(E || (E = {})),
                     (function (u) {
                         ((u.Gold = 'gold'),
@@ -197,6 +204,7 @@
                     E.E4.TankmenXpFactor,
                     E.E4.FreeXpFactor,
                     E.E4.BattleToken,
+                    E.E4.Entitlements,
                     E.E4.PremiumUniversal,
                     E.E4.NaturalCover,
                     E.E4.BpCoin,
@@ -211,6 +219,9 @@
                     E.E4.Comp7TokenWeeklyReward,
                     E.E4.Comp7TokenCouponReward,
                     E.E4.BattleBoosterGift,
+                    E.E4.NewYearFillers,
+                    E.E4.NewYearInvoice,
+                    E.E4.LootBoxToken,
                     E.E4.CosmicLootboxCommon,
                     E.E4.CosmicLootboxSilver,
                     E.E4.SelectableBonus,
@@ -219,13 +230,30 @@
                     E.E4.BlankPersonalMissions_1,
                     E.E4.BlankPersonalMissions_2,
                     E.E4.SACoin,
+                    E.E4.PremiumPlusUniversal,
+                    E.E4.NyPetGoodies,
+                    E.E4.HiddenVehicle,
                     E.E4.Gold,
                     E.E4.Credits,
                     E.E4.Crystal,
                     E.E4.FreeXp,
+                    E.E4.NewYearToyFragments,
                     E.E4.BattlePassPoints,
                     E.E4.PremiumPlus,
                     E.E4.Premium);
+                let A;
+                !(function (u) {
+                    ((u.s16 = '16'),
+                        (u.s32 = '32'),
+                        (u.s48 = '48'),
+                        (u.s66 = '66'),
+                        (u.s80 = '80'),
+                        (u.s116 = '116'),
+                        (u.s296 = '296'),
+                        (u.s360 = '360'),
+                        (u.s400 = '400'),
+                        (u.s600 = '600'));
+                })(A || (A = {}));
             },
             527: (u, e, t) => {
                 (t.r(e), t.d(e, { mouse: () => o, onResize: () => F }));
@@ -383,15 +411,15 @@
                         displayStatus: () => A.W,
                         displayStatusIs: () => T,
                         events: () => F.U,
-                        extraSize: () => b,
-                        forceTriggerMouseMove: () => h,
+                        extraSize: () => g,
+                        forceTriggerMouseMove: () => w,
                         freezeTextureBeforeResize: () => _,
                         getBrowserTexturePath: () => r,
                         getDisplayStatus: () => P,
                         getScale: () => l,
-                        getSize: () => a,
+                        getSize: () => D,
                         getViewGlobalPosition: () => C,
-                        isEventHandled: () => w,
+                        isEventHandled: () => h,
                         isFocused: () => p,
                         pxToRem: () => c,
                         remToPx: () => d,
@@ -400,8 +428,8 @@
                         setAnimateWindow: () => m,
                         setEventHandled: () => v,
                         setInputPaddingsRem: () => i,
-                        setSidePaddingsRem: () => D,
-                        whenTutorialReady: () => g,
+                        setSidePaddingsRem: () => a,
+                        whenTutorialReady: () => b,
                     }));
                 var E = t(3722),
                     A = t(6112),
@@ -419,10 +447,10 @@
                 function s(u, e, t) {
                     return viewEnv.addDataChangedCallback(u, e, t);
                 }
-                function D(u) {
+                function a(u) {
                     viewEnv.setHitAreaPaddingsRem(u.top, u.right, u.bottom, u.left, 15);
                 }
-                function a(u = 'px') {
+                function D(u = 'px') {
                     return 'rem' === u ? viewEnv.getViewSizeRem() : viewEnv.getViewSizePx();
                 }
                 function B(u, e, t = 'px') {
@@ -453,10 +481,10 @@
                 function v() {
                     return viewEnv.setEventHandled();
                 }
-                function w() {
+                function h() {
                     return viewEnv.isEventHandled();
                 }
-                function h() {
+                function w() {
                     viewEnv.forceTriggerMouseMove();
                 }
                 function P() {
@@ -466,7 +494,7 @@
                         (u, e) => ((u[e] = () => viewEnv.getShowingStatus() === A.W[e]), u),
                         {},
                     ),
-                    b = {
+                    g = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -474,7 +502,7 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    g = Promise.all([
+                    b = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : F.U.onDomBuilt(u);
                         }),
@@ -809,8 +837,8 @@
                 })(i || (i = {}));
                 const r = Object.freeze({ INTEGRAL: 0, GOLD: 1 }),
                     s = Object.freeze({ FRACTIONAL: 0, WO_ZERO_DIGITS: 1 }),
-                    D = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1 }),
-                    a = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1, YEAR_MONTH: 2 });
+                    a = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1 }),
+                    D = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1, YEAR_MONTH: 2 });
                 var B = t(5521),
                     C = t(3138);
                 const _ = ['args'];
@@ -895,16 +923,16 @@
                     v = (u, e) => {
                         u.keyCode === B.n.ESCAPE && e();
                     };
-                var w = t(7572);
-                const h = A.instance,
+                var h = t(7572);
+                const w = A.instance,
                     P = {
                         DataTracker: F.Z,
-                        ViewModel: w.Z,
+                        ViewModel: h.Z,
                         ViewEventType: i,
                         NumberFormatType: r,
                         RealFormatType: s,
-                        TimeFormatType: D,
-                        DateFormatType: a,
+                        TimeFormatType: a,
+                        DateFormatType: D,
                         makeGlobalBoundingBox: c,
                         sendMoveEvent: (u) => m(i.MOVE, { isMouseEvent: !0, on: u }),
                         sendCloseEvent: p,
@@ -917,13 +945,13 @@
                                 o = t.getBoundingClientRect(),
                                 r = o.x,
                                 s = o.y,
-                                D = o.width,
-                                a = o.height,
+                                a = o.width,
+                                D = o.height,
                                 B = {
                                     x: C.O.view.pxToRem(r) + n.x,
                                     y: C.O.view.pxToRem(s) + n.y,
-                                    width: C.O.view.pxToRem(D),
-                                    height: C.O.view.pxToRem(a),
+                                    width: C.O.view.pxToRem(a),
+                                    height: C.O.view.pxToRem(D),
                                 };
                             m(i.POP_OVER, {
                                 isMouseEvent: !0,
@@ -976,7 +1004,7 @@
                                 }
                             return t;
                         },
-                        ClickOutsideManager: h,
+                        ClickOutsideManager: w,
                         SystemLocale: n,
                         UserLocale: o,
                     };

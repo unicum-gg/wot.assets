@@ -29,17 +29,17 @@
                 }
                 (t.r(n),
                     t.d(n, {
-                        addModelObserver: () => O,
+                        addModelObserver: () => y,
                         addPreloadTexture: () => b,
                         children: () => F,
                         displayStatus: () => c,
-                        displayStatusIs: () => V,
+                        displayStatusIs: () => Y,
                         events: () => d,
                         extraSize: () => z,
                         forceTriggerMouseMove: () => q,
                         freezeTextureBeforeResize: () => x,
                         getBrowserTexturePath: () => P,
-                        getDisplayStatus: () => Y,
+                        getDisplayStatus: () => V,
                         getScale: () => M,
                         getSize: () => R,
                         getViewGlobalPosition: () => k,
@@ -52,7 +52,7 @@
                         setAnimateWindow: () => U,
                         setEventHandled: () => G,
                         setInputPaddingsRem: () => f,
-                        setSidePaddingsRem: () => y,
+                        setSidePaddingsRem: () => O,
                         whenTutorialReady: () => H,
                     }));
                 const o = D('clientResized'),
@@ -216,10 +216,10 @@
                 function P(u, e, t, E = 1) {
                     return viewEnv.getWebBrowserTexturePath(u, e, t, E);
                 }
-                function O(u, e, t) {
+                function y(u, e, t) {
                     return viewEnv.addDataChangedCallback(u, e, t);
                 }
-                function y(u) {
+                function O(u) {
                     viewEnv.setHitAreaPaddingsRem(u.top, u.right, u.bottom, u.left, 15);
                 }
                 function R(u = 'px') {
@@ -259,10 +259,10 @@
                 function q() {
                     viewEnv.forceTriggerMouseMove();
                 }
-                function Y() {
+                function V() {
                     return viewEnv.getShowingStatus();
                 }
-                const V = Object.keys(c).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === c[e]), u), {}),
+                const Y = Object.keys(c).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === c[e]), u), {}),
                     z = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
@@ -703,7 +703,7 @@
                     };
                 window.ViewEnvHelper = h;
             },
-            348: (u, e, t) => {
+            963: (u, e, t) => {
                 var E = t(179),
                     A = t.n(E),
                     F = t(493),
@@ -887,8 +887,8 @@
                 };
                 _.Sw.instance;
                 var P = t(483),
-                    O = t.n(P);
-                function y() {
+                    y = t.n(P);
+                function O() {
                     const u = (0, E.useRef)(0);
                     var e;
                     return (
@@ -951,7 +951,7 @@
                                 for (E = 0; E < F.length; E++) ((t = F[E]), e.indexOf(t) >= 0 || (A[t] = u[t]));
                                 return A;
                             })(u, k);
-                        const o = y(),
+                        const o = O(),
                             a = A().useRef(null);
                         var i;
                         return (
@@ -975,7 +975,7 @@
                             A().createElement(
                                 'div',
                                 x({}, r, {
-                                    className: O()(S.base, S[`base__theme-${D}`], F),
+                                    className: y()(S.base, S[`base__theme-${D}`], F),
                                     ref: function (u) {
                                         ((a.current = u), 'function' == typeof e ? e(u) : e && (e.current = u));
                                     },
@@ -994,7 +994,7 @@
                                   e.split('\n').map((e, n) =>
                                       A().createElement(
                                           'div',
-                                          { className: O()(N, t), key: `${e}-${n}` },
+                                          { className: y()(N, t), key: `${e}-${n}` },
                                           ((u, e, t) =>
                                               u
                                                   .split(/%\((.*?)\)(?:[sd])?/g)
@@ -1063,7 +1063,7 @@
                         }
                         return A().createElement(L, { text: r, classMix: t, binding: n });
                     });
-                let Y, V, z, H, K, $, j;
+                let V, Y, z, H, K, $, j;
                 (!(function (u) {
                     ((u.Items = 'items'),
                         (u.Equipment = 'equipment'),
@@ -1084,6 +1084,7 @@
                         (u.TankmenXpFactor = 'tankmenXPFactor'),
                         (u.FreeXpFactor = 'freeXPFactor'),
                         (u.BattleToken = 'battleToken'),
+                        (u.Entitlements = 'entitlements'),
                         (u.PremiumUniversal = 'premium_universal'),
                         (u.Gold = 'gold'),
                         (u.Credits = 'credits'),
@@ -1096,7 +1097,6 @@
                         (u.SelectableBonus = 'selectableBonus'),
                         (u.StyleProgressToken = 'styleProgressToken'),
                         (u.TmanToken = 'tmanToken'),
-                        (u.PortalEventDiscount25 = 'portalEventDiscountToken'),
                         (u.NaturalCover = 'naturalCover'),
                         (u.BpCoin = 'bpcoin'),
                         (u.BattlaPassFinalAchievement = 'dossier_achievement'),
@@ -1126,8 +1126,15 @@
                         (u.Quests = 'quests'),
                         (u.BlankPersonalMissions_1 = 'freeTokens_0'),
                         (u.BlankPersonalMissions_2 = 'freeTokens_2'),
-                        (u.SACoin = 'sacoin'));
-                })(Y || (Y = {})),
+                        (u.SACoin = 'sacoin'),
+                        (u.ArmoryCoin = 'armory_coin'),
+                        (u.PremiumPlusUniversal = 'premium_plus_universal'),
+                        (u.DogTagType = 'dogTagComponents'),
+                        (u.NyPetGoodies = 'nyPetGoodies'),
+                        (u.HiddenVehicle = 'hidden_vehicle'),
+                        (u.NyStaticDogTag = 'nyStaticDogTag'),
+                        (u.Ny26Toys = 'ny26Toys'));
+                })(V || (V = {})),
                     (function (u) {
                         ((u.Gold = 'gold'),
                             (u.Credits = 'credits'),
@@ -1166,7 +1173,7 @@
                             (u.BattlePassPoints = 'battlePassPoints'),
                             (u.BattleBadge = 'dossier_badge'),
                             (u.BattleAchievement = 'dossier_achievement'));
-                    })(V || (V = {})),
+                    })(Y || (Y = {})),
                     (function (u) {
                         ((u.Big = 'big'),
                             (u.Small = 'small'),
@@ -1392,6 +1399,6 @@
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             (t.forEach(e.bind(null, 0)), (t.push = e.bind(null, t.push.bind(t))));
         })());
-    var __webpack_exports__ = __webpack_require__.O(void 0, [127], () => __webpack_require__(348));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [127], () => __webpack_require__(963));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

@@ -5,6 +5,7 @@
 (def macro LootDefRendererModel()
     (scope
         (var labelStr:str = '')
+        (var bonusName:str = '')
         (var icon:str = '')
         (var tooltipId:number = 0)
         (var rendererType:str = '')

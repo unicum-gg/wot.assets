@@ -143,7 +143,7 @@
 .App_base_3d {
     width: 100%;
     height: 100%;
-    background: rgba(27, 27, 29, 0.95);
+    background: rgba(27, 27, 29, 1);
     opacity: 0;
     overflow-y: hidden;
     animation: App_fadeIn_27 0.3s ease-in 0s forwards;
@@ -192,14 +192,7 @@
     margin-bottom: 8rem;
 }
 
-.mediaSmall .ProbabilitiesHeader_probabilityHeaderText_cb {
-    color: #e9e2bf;
-    font-size: 22rem;
-    font-weight: 700;
-    line-height: 1.2;
-}
-
-.mediaLarge .ProbabilitiesHeader_probabilityHeaderText_cb {
+.mediaMedium .ProbabilitiesHeader_probabilityHeaderText_cb {
     color: #e9e2bf;
     font-size: 24rem;
     font-weight: 700;
@@ -211,7 +204,7 @@
     font-size: 28rem;
     font-weight: 700;
     line-height: 1.1;
-    margin-bottom: 8rem;
+    text-transform: uppercase;
 }
 
 .mediaSmall .ProbabilitiesHeader_probabilityBoxName_81 {
@@ -226,23 +219,6 @@
     font-size: 56rem;
     font-weight: 700;
     line-height: 1.1;
-}
-
-.ProbabilitiesHeader_probabilityBoxDescription_2b {
-    color: #8c8c7e;
-    font-size: 12rem;
-    font-weight: 400;
-    line-height: 1.3;
-    width: 640rem;
-    text-align: center;
-}
-
-.mediaMedium .ProbabilitiesHeader_probabilityBoxDescription_2b {
-    color: #8c8c7e;
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
-    width: 800rem;
 }
 
 .ProbabilitiesHeader_probabilityBoxTier_97 {
@@ -313,6 +289,41 @@
     font-size: 16rem;
     font-weight: 400;
     line-height: 1.25;
+}
+
+.ProbabilitiesHeader_probabilityBoxDescription_2b {
+    color: #8c8c7e;
+    font-size: 12rem;
+    font-weight: 400;
+    line-height: 1.3;
+    width: 640rem;
+    padding-top: 4rem;
+    text-align: center;
+}
+
+.mediaMedium .ProbabilitiesHeader_probabilityBoxDescription_2b {
+    color: #8c8c7e;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    width: 800rem;
+}
+
+.ProbabilitiesHeader_iconContainer_10 {
+    display: flex;
+    width: 40rem;
+    position: relative;
+}
+
+.ProbabilitiesHeader_percentageIcon_92 {
+    width: 66rem;
+    height: 42rem;
+    background: url('R.images.gui_lootboxes.gui.maps.bonusProbabilities.probabilities_percentage_100') no-repeat
+        center / cover;
+    position: absolute;
+    top: 49%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .HorizontalBar_base_49 {
@@ -775,7 +786,7 @@
     position: relative;
 }
 
-.VehicleReward_base__inInventory_7e {
+.VehicleReward_base__received_0a {
     opacity: 0.3;
 }
 
@@ -827,7 +838,7 @@
     align-items: flex-start;
     align-self: center;
     position: absolute;
-    top: 67rem;
+    bottom: -7rem;
 }
 
 .VehicleReward_rentIcon_f2 {
@@ -1044,6 +1055,98 @@
     padding-bottom: 82rem;
 }
 
+.FormatTextWithColorTags_blackReal_3c {
+    color: #000000;
+}
+
+.FormatTextWithColorTags_whiteReal_8a {
+    color: #ffffff;
+}
+
+.FormatTextWithColorTags_white_16 {
+    color: #f2f2f7;
+}
+
+.FormatTextWithColorTags_whiteOrange_18 {
+    color: #fefeec;
+}
+
+.FormatTextWithColorTags_whiteSpanish_10 {
+    color: #e9e2bf;
+}
+
+.FormatTextWithColorTags_par_ca {
+    color: #8c8c7e;
+}
+
+.FormatTextWithColorTags_parSecondary_8d {
+    color: #595950;
+}
+
+.FormatTextWithColorTags_parTertiary_a3 {
+    color: #37362e;
+}
+
+.FormatTextWithColorTags_red_60 {
+    color: #ff2717;
+}
+
+.FormatTextWithColorTags_redDark_03 {
+    color: #b70000;
+}
+
+.FormatTextWithColorTags_yellow_ad {
+    color: #feab34;
+}
+
+.FormatTextWithColorTags_orange_e4 {
+    color: #ee7000;
+}
+
+.FormatTextWithColorTags_cream_cd {
+    color: #ffdd99;
+}
+
+.FormatTextWithColorTags_brown_c8 {
+    color: #cbac77;
+}
+
+.FormatTextWithColorTags_greenBright_f0 {
+    color: #80d43a;
+}
+
+.FormatTextWithColorTags_green_c5 {
+    color: #7ab300;
+}
+
+.FormatTextWithColorTags_greenDark_af {
+    color: #497212;
+}
+
+.FormatTextWithColorTags_blueBooster_ac {
+    color: #ccffff;
+}
+
+.FormatTextWithColorTags_blueTeamkiller_6f {
+    color: #09e2ff;
+}
+
+.FormatTextWithColorTags_cred_4e {
+    color: #ced9d9;
+}
+
+.FormatTextWithColorTags_gold_90 {
+    color: #ffc363;
+}
+
+.FormatTextWithColorTags_bond_71 {
+    color: #c9c9b6;
+}
+
+.FormatTextWithColorTags_prom_dd {
+    color: #a29b70;
+}
+
 .AnimatedSlots_base_2d {
     display: flex;
     width: 873rem;
@@ -1116,34 +1219,6 @@
     transform: translateX(-50%) rotateX(180deg);
 }
 
-.LootLists_base_d4 {
-    width: 873rem;
-    position: relative;
-}
-
-.mediaSmall .LootLists_base_d4 {
-    width: 1166rem;
-}
-
-.mediaMedium .LootLists_base_d4 {
-    width: 1381rem;
-}
-
-.mediaLarge .LootLists_base_d4 {
-    width: 1601rem;
-}
-
-.LootLists_lootList_d6 {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    padding: 6rem 24rem 0;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
 .Compensation_base_8c {
     width: 80rem;
     height: 80rem;
@@ -1169,7 +1244,7 @@
 
 .Compensation_value_72 {
     position: absolute;
-    bottom: 4rem;
+    bottom: -7rem;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -1270,12 +1345,14 @@
     align-items: flex-start;
     align-self: center;
     position: absolute;
-    top: 58rem;
+    bottom: -7rem;
 }
 
 .RotationVehicle_labelContent_27 {
     display: flex;
     justify-content: center;
+    margin-top: 2rem;
+    position: relative;
 }
 
 .RotationVehicle_lockIcon_78 {
@@ -1288,8 +1365,8 @@
 .RotationVehicle_checkIcon_9e {
     width: 20rem;
     height: 22rem;
-    margin-top: 2rem;
-    background: url('R.images.gui_lootboxes.gui.maps.rotation.check') no-repeat center / cover;
+    margin-bottom: -7rem;
+    background: url('R.images.gui_lootboxes.gui.maps.rotation.check') no-repeat bottom / contain;
 }
 
 .RotationVehicle_preview_ec {
@@ -1428,6 +1505,42 @@
     line-height: 1.1;
     text-shadow: 0 0 14rem #f00;
     z-index: 1;
+}
+
+.LootLists_base_d4 {
+    width: 873rem;
+    position: relative;
+}
+
+.mediaSmall .LootLists_base_d4 {
+    width: 1166rem;
+}
+
+.mediaMedium .LootLists_base_d4 {
+    width: 1381rem;
+}
+
+.mediaLarge .LootLists_base_d4 {
+    width: 1601rem;
+}
+
+.LootLists_lootList_d6 {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 6rem 24rem 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.LootLists_hintBody_ad {
+    width: 100rem;
+    height: 90rem;
+    position: absolute;
+    top: 3rem;
+    left: 12rem;
 }
 
 .StagesButtons_base_d9 {
@@ -1614,4 +1727,12 @@
     width: 100%;
     height: 94rem;
     margin-top: 10rem;
+}
+
+.ProbabilitiesWithRotation_guaranteedFrequencies_e5 {
+    color: #8c8c7e;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    margin-top: 5rem;
 }

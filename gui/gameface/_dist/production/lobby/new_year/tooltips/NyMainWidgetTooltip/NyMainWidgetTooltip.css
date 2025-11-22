@@ -11,23 +11,69 @@
     position: relative;
 }
 
-.NyTooltipDecorator_base_b4 {
+.TooltipAndPopoverStyleWrapper_base_f8 {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: 10rem;
-}
-
-.NyTooltipDecorator_content_39 {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    border: 1rem solid #154061;
-    border-radius: 2rem;
+    margin-left: 10rem;
+    margin-right: 10rem;
+    margin-bottom: 10rem;
+    border: 1rem solid #95694e;
+    border-radius: 4rem;
     box-shadow:
-        0 0 20rem 0 rgba(0, 0, 0, 0.5),
-        0 2rem 6rem 2rem #0000007a;
-    background: linear-gradient(153.54deg, #002c64 0%, #000 100%);
+        4rem 4rem 6rem rgba(255, 255, 255, 0.06) inset,
+        -4rem -4rem 6rem rgba(255, 255, 255, 0.06) inset;
+    background: linear-gradient(180deg, rgba(60, 84, 124, 0.85) 0%, rgba(23, 28, 35, 0.85) 100%);
+    filter: drop-shadow(-1rem 1rem 2rem rgba(0, 0, 0, 0.3)) drop-shadow(-2rem 3rem 4rem rgba(0, 0, 0, 0.5));
+    position: relative;
+}
+.TooltipAndPopoverStyleWrapper_base_f8::before {
+    border: 1rem solid rgba(39, 30, 24, 0.6);
+    border-radius: 3rem;
+    content: '';
+    position: absolute;
+    top: 0rem;
+    right: 0rem;
+    bottom: 0rem;
+    left: 0rem;
+    z-index: 1;
+}
+.TooltipAndPopoverStyleWrapper_base_f8::after {
+    border: 1rem solid rgba(255, 255, 255, 0.1);
+    border-radius: 2rem;
+    content: '';
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+    left: 1rem;
+    z-index: 1;
+}
+.TooltipAndPopoverStyleWrapper_pattern_f6 {
+    width: 100%;
+    height: 100%;
+    background-image: url('R.images.new_year.gui.maps.icons.newYear.tooltips.pattern');
+    position: absolute;
+}
+.TooltipAndPopoverStyleWrapper_snowIconContainer_33 {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.TooltipAndPopoverStyleWrapper_snowIcon_d7 {
+    width: 236rem;
+    height: 60rem;
+    background: url('R.images.new_year.gui.maps.icons.newYear.tooltips.snow') no-repeat center / cover;
+}
+.TooltipAndPopoverStyleWrapper_content_8a {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    z-index: 2;
 }
 
 .Box_mt__XS_0c {
@@ -305,313 +351,213 @@
     color: #a29b70;
 }
 
-/*
-    Gameface can't calculate gradient biggest than 8128px
-    in JS 8000 reserved like anchor for start optimization
-*/
-/* stylelint-disable-line */
-.ProgressBar_base_45 {
-    width: 100%;
-    height: 12rem;
-    position: relative;
-}
-.ProgressBar_base__medium_62 {
-    height: 6rem;
-}
-.ProgressBar_base__small_df {
-    height: 2rem;
-}
-.ProgressBar_background_51 {
-    width: 100%;
-    max-width: 8001px;
-    height: 100%;
-    background-image: var(--progress-base);
-    background-repeat: repeat;
-    background-position: 0 50%;
-    background-size: 3rem 10rem;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-.ProgressBar_background__medium_6e {
-    height: 6rem;
-}
-.ProgressBar_background__small_46 {
-    height: 2rem;
-}
-.ProgressBar_lineWrapper_6a {
-    display: flex;
-    flex: 1;
+.BonusTooltip_base_0e {
+    width: 400rem;
+    padding: 24rem;
 }
 
-.ProgressBarBlink_base_24 {
-    width: 60rem;
-    height: 100rem;
-    background-image: var(--progress-glow);
-    background-size: contain;
-    mix-blend-mode: lighten;
-    position: absolute;
-    top: 50%;
-    right: 0;
-    transform: translate(50%, -50%);
-    pointer-events: none;
-}
-
-.ProgressBarBlink_base__medium_ec {
-    width: 42rem;
-    height: 70rem;
-}
-
-.ProgressBarBlink_base__small_0f {
-    width: 44rem;
-    height: 43rem;
-    background-image: var(--progress-glow-small);
-}
-
-/*
-    Gameface can't calculate gradient biggest than 8128px
-    in JS 8000 reserved like anchor for start optimization
-*/
-/* stylelint-disable-line */
-.ProgressLineImpose_base_80 {
-    max-width: 8001px;
-    height: 100%;
-    background-color: var(--progress-line-base);
-    position: relative;
-    transition-timing-function: cubic-bezier(1, 0, 0.92, 1);
-    transition-property: width;
-}
-.ProgressLineImpose_base__disabled_cc {
-    background-color: var(--progress-line-disabled);
-}
-.ProgressLineImpose_base__finished_d4 {
-    background-color: var(--progress-line-finished);
-}
-.ProgressLineImpose_base__withoutBounce_56 {
-    transition-timing-function: cubic-bezier(1, 0, 0.75, 0.75);
-}
-.ProgressLineImpose_pattern_1c {
-    max-width: 8001px;
-    background-image: var(--progress-pattern-base);
-    background-repeat: repeat;
-    background-position: 0 50%;
-    background-size: 3rem 10rem;
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    bottom: 1rem;
-    left: 1rem;
-}
-.ProgressLineImpose_base__small_55 .ProgressLineImpose_pattern_1c {
-    top: 0;
-    bottom: 0;
-}
-.ProgressLineImpose_base__disabled_cc .ProgressLineImpose_pattern_1c {
-    background-image: var(--progress-pattern-disabled);
-    left: 0;
-}
-.ProgressLineImpose_base__finished_d4 .ProgressLineImpose_pattern_1c {
-    background-image: var(--progress-pattern-finished);
-}
-.ProgressLineImpose_gradient_35 {
-    max-width: 8001px;
-    background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.75));
-    mix-blend-mode: overlay;
-    position: absolute;
-    top: 1rem;
-    right: 0;
-    bottom: 1rem;
-    left: 0;
-}
-.ProgressLineImpose_base__small_55 .ProgressLineImpose_gradient_35 {
-    top: 0;
-    bottom: 0;
-}
-.ProgressLineImpose_base__disabled_cc .ProgressLineImpose_gradient_35 {
-    display: none;
-}
-.ProgressLineImpose_base__finished_d4 .ProgressLineImpose_gradient_35 {
-    background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.75), rgba(0, 0, 0, 0.5));
-}
-.ProgressLineImpose_glow_a5 {
-    width: 60rem;
-    max-width: 8001px;
-    height: 100rem;
-    background-image: var(--progress-glow);
-    background-size: contain;
-    mix-blend-mode: lighten;
-    position: absolute;
-    top: 50%;
-    left: 100%;
-    transform: translate(-50%, -50%);
-    pointer-events: none;
-}
-.ProgressLineImpose_glow__left_d8 {
-    left: 1rem;
-}
-.ProgressLineImpose_base__disabled_cc .ProgressLineImpose_glow_a5,
-.ProgressLineImpose_base__finished_d4 .ProgressLineImpose_glow_a5 {
-    display: none;
-}
-.ProgressLineImpose_base__small_55 .ProgressLineImpose_glow_a5 {
-    width: 44rem;
-    height: 43rem;
-    background-image: var(--progress-glow-small);
-}
-
-/*
-    Gameface can't calculate gradient biggest than 8128px
-    in JS 8000 reserved like anchor for start optimization
-*/
-/* stylelint-disable-line */
-.ProgressBarDeltaGrow_base_7e {
-    width: 0;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    transition-timing-function: cubic-bezier(1, 0, 0.92, 1);
-    transition-property: width;
-}
-.ProgressBarDeltaGrow_base__withoutBounce_b5 {
-    transition-timing-function: cubic-bezier(1, 0, 0.75, 0.75);
-}
-.ProgressBarDeltaGrow_glow_68 {
-    width: 0;
-    max-width: 8001px;
-    height: 100%;
-    box-shadow: var(--progress-delta-shadow);
-    background-color: var(--progress-delta-color);
-    position: absolute;
-    bottom: 0;
-    transform-origin: right center;
-    transition-timing-function: cubic-bezier(1, 0, 0.92, 1);
-    transition-property: width;
-}
-.ProgressBarDeltaGrow_base__withoutBounce_b5 .ProgressBarDeltaGrow_glow_68 {
-    transition-timing-function: cubic-bezier(1, 0, 0.75, 0.75);
-}
-
-/*
-    Gameface can't calculate gradient biggest than 8128px
-    in JS 8000 reserved like anchor for start optimization
-*/
-/* stylelint-disable-line */
-.ProgressBarDeltaSimple_base_6c {
-    width: 0;
-    height: 100%;
-    position: absolute;
-    top: 0;
-}
-.ProgressBarDeltaSimple_delta_99 {
-    width: 0;
-    max-width: 8001px;
-    height: 100%;
-    box-shadow: var(--progress-delta-shadow);
-    background-color: var(--progress-delta-color);
-    position: absolute;
-    bottom: 0;
-    transform-origin: right center;
-    transition-timing-function: cubic-bezier(1, 0, 0.92, 1), cubic-bezier(0.21, 0.61, 0.35, 1);
-    transition-property: width, transform;
-}
-
-.ProgressValues_base_74 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.ProgressValues_level_60 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    margin-bottom: 16rem;
-}
-
-.ProgressValues_levelNumber_0d {
-    color: #b7eeff;
-    font-size: 73rem;
-    font-weight: 700;
-    line-height: 1.1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.ProgressValues_levelText_1a {
-    color: #f2f2f7;
+.BonusTooltip_title_35 {
+    color: #ffdd99;
     font-size: 18rem;
     font-weight: 700;
     line-height: 1.1;
+    margin-bottom: 8rem;
 }
 
-.ProgressValues_text_5a {
-    color: #8c8c7e;
+.BonusTooltip_text_6f {
+    color: #c9c9b6;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
 }
 
-.ProgressValues_maxLevelText_c7 {
-    color: #f2f2f7;
-    font-size: 14rem;
+.BonusTooltip_separator_88 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 10rem 0rem;
+}
+
+.BonusTooltip_separatorLine_44 {
+    width: 352rem;
+    height: 1rem;
+}
+
+.BonusTooltip_separatorLine__white_8f {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.BonusTooltip_separatorLine__black_07 {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.Description_base_b1 {
+    display: flex;
+    flex-direction: column;
+    border-top: 1rem solid rgba(0, 0, 0, 0.1);
+}
+
+.Description_title_21 {
+    color: #cbac77;
+    font-size: 15rem;
     font-weight: 700;
     line-height: 1.15;
+    margin-bottom: 2rem;
+    padding-top: 14rem;
 }
 
-.ProgressValues_countCurrent_46 {
-    color: #afe3f9;
+.Description_title__complete_5a {
+    padding-bottom: 14rem;
+    border-bottom: 1rem solid rgba(242, 242, 247, 0.1);
+}
+
+.Description_subTitle_d5 {
+    color: #c9c9b6;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
 }
 
-.ProgressValues_progress_df {
+.Description_divider_72 {
+    width: 100%;
+    height: 2rem;
+    margin-top: 11rem;
+    border-bottom: 1rem solid #000;
+    background-color: #fff;
+    opacity: 0.1;
+}
+
+.LevelProgress_base_63 {
     display: flex;
-    align-items: center;
-    margin-bottom: 15rem;
-}
-
-.ProgressValues_progressCurrent_3f,
-.ProgressValues_progressNext_30 {
-    margin-top: -2rem;
-}
-
-.ProgressValues_progressCurrent_3f {
-    color: #f2f2f7;
-    font-size: 24rem;
-    font-weight: 400;
-    line-height: 32rem;
-    text-shadow: 0 0 20rem #ffffff80;
-}
-
-.ProgressValues_progressNext_30 {
-    color: #8c8c7e;
-    font-size: 24rem;
-    font-weight: 400;
-    line-height: 32rem;
-    text-shadow: 0 0 20rem #bffffb40;
-}
-
-.ProgressValues_progressBar_e0 {
-    width: 240rem;
-    margin: 0 15rem;
+    flex-direction: column;
+    width: 100%;
+    background: radial-gradient(114.29% 114.29% at 50% 50%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.1) 100%);
     position: relative;
 }
 
-.Countdown_base_fe {
+.LevelProgress_levelWrapper_9c {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 6rem;
+}
+
+.LevelProgress_level_a1 {
+    color:;
+    font-size: 73rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-top: 9rem;
+}
+
+.LevelProgress_level__gold_7d {
+    color: #fff;
+}
+
+.LevelProgress_level__copied_a9 {
+    color: #ffc693;
+    position: absolute;
+    mask-image: linear-gradient(transparent 60%, #fff);
+}
+
+.LevelProgress_progressionWrapper_b9 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.LevelProgress_progression_54 {
+    width: 230rem;
+    height: 7rem;
+    margin: 0 12rem;
+    border-radius: 20rem;
+    box-shadow:
+        -2rem 4rem 6rem 0rem #00000026 inset,
+        0rem 0rem 4rem 1rem #ffffff14;
+}
+
+.LevelProgress_progressionLine_74 {
+    width: 100%;
+    height: 3rem;
+    margin: 2rem;
+    border-radius: 3rem;
+    box-shadow:
+        0rem 0rem 2rem 0rem #fe9d5833,
+        0rem 0rem 5rem 0rem #fe9d58fa,
+        0rem 0rem 10rem 0rem #fe9d58d9,
+        0rem 0rem 2rem 0rem #ffffff80;
+    background: #ffc693;
+    overflow: hidden;
+    position: relative;
+}
+
+.LevelProgress_progressionArrow_1b {
+    width: 28rem;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #fff 100%);
+    position: absolute;
+    right: 0rem;
+}
+
+.LevelProgress_currentLevel_2d {
+    margin-right: -2rem;
+    color: #fefeec;
+    font-size: 20rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+.LevelProgress_currentLevel__complete_74 {
+    color: #8c8c7e;
+    font-size: 20rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+.LevelProgress_nextLevel_3c {
+    color: #e9e2bf;
+    font-size: 20rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+.LevelProgress_nextLevel__complete_e1 {
+    color: #ffdd99;
+    font-size: 20rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+.LevelProgress_points_3e {
+    color: #c9c9b6;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    display: flex;
+    justify-content: center;
+    padding: 8rem 0 16rem;
+}
+
+.LevelProgress_currentPoints_73 {
+    color: #fefeec;
+    font-size: 14rem;
+    font-weight: 700;
+    line-height: 1.15;
+    margin-top: 1rem;
+}
+
+.Countdown_base_2a {
     display: flex;
     align-items: center;
 }
 
-.Countdown_icon_8b {
+.Countdown_icon_ff {
     width: 32rem;
     height: 32rem;
     background: no-repeat center / contain;
 }
 
-.Countdown_description_8d {
+.Countdown_description_32 {
     color: #ffdd99;
     font-size: 14rem;
     font-weight: 400;
@@ -626,12 +572,11 @@
 }
 
 .TimeLeft_background_e6 {
-    width: 296rem;
-    height: 162rem;
-    background: url('R.images.new_year.gui.maps.icons.newYear.tooltips.decorations.sparks_blue') no-repeat center /
-        cover;
+    width: 394rem;
+    height: 98rem;
+    background: url('R.images.new_year.gui.maps.icons.newYear.mainWidgetView.tooltips.shine') no-repeat center / cover;
     position: absolute;
-    top: 20rem;
+    top: 43rem;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -642,32 +587,41 @@
     z-index: 1;
 }
 
-.TimeLeft_countdown__timer_74 {
-    width: 37rem;
-    height: 37rem;
-    background: url('R.images.gui.maps.icons.mapbox.entryPoint.time_icon') no-repeat center / contain;
+.TimeLeft_countdownIcon_8f {
+    height: 32rem;
+    margin-left: -13rem;
+    background: url('R.images.new_year.gui.maps.icons.newYear.mainWidgetView.tooltips.time') no-repeat center / contain;
 }
 
-.TimeLeft_countdown__text_38 {
-    color: #afe3f9;
+.TimeLeft_countdownIcon__visible_d4 {
+    width: 32rem;
+    height: 32rem;
+}
+
+.TimeLeft_countdownText_d4 {
+    color: #e9e2bf;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
+}
+
+.TimeLeft_countdownText__light_ed {
+    color: #ffdd99;
     text-shadow:
-        0 0 15rem #22e2ee,
-        0 0 8rem #06f,
-        0 0 4rem #00e0ff40;
+        0 0 4rem rgba(255, 127, 0, 0.25),
+        0 0 8rem #ff2a00,
+        0 0 15rem #e52;
 }
 
 .TimeLeft_timerValue_b5 {
-    color: #afe3f9;
+    color: #ffdd99;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
 }
 
 .TimeLeft_description_f0 {
-    color: #cbac77;
+    color: #c9c9b6;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
@@ -675,92 +629,417 @@
     z-index: 1;
 }
 
-.CommonTooltip_listBlockMargin_34 {
-    margin-top: 0;
+.Bubble_base_f0 {
+    width: 10rem;
+    height: 10rem;
+    border: 1rem solid #bbe9ff4d;
+    border-radius: 50%;
+    box-shadow:
+        0 0 10rem 4rem #006fff40,
+        0 2rem 7rem 1rem #00000080,
+        0 4rem 4rem 0 #ffffff4d inset;
+    background: #0a8cd7;
 }
 
-.CommonTooltip_base_84 {
+.Bubble_base__withValue_be {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: auto;
+    padding: 0 7rem;
+    border-radius: 20rem;
+    overflow: hidden;
+}
+
+.Bubble_text_59 {
+    color: #ffffff;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    margin-left: 1rem;
+}
+
+.LevelTooltip_base_59 {
+    display: flex;
+    flex-direction: column;
     width: 400rem;
-    padding: 24rem;
-    background: linear-gradient(153.54deg, #002c64 0%, #000 100%);
-    position: relative;
 }
 
-.CommonTooltip_title_ff {
-    color: #f2f2f7;
+.LevelTooltip_header_8b {
+    display: flex;
+    border-bottom: 1rem solid rgba(242, 242, 247, 0.1);
+}
+
+.LevelTooltip_headerBg_e6 {
+    width: 100%;
+    height: 66rem;
+    background: #f2f2f7;
+    opacity: 0.05;
+    position: absolute;
+}
+
+.LevelTooltip_headerTitle_93 {
+    color: #ffdd99;
     font-size: 18rem;
     font-weight: 700;
     line-height: 1.1;
-    margin-bottom: 24rem;
+    padding: 22rem;
 }
 
-.CommonTooltip_subtitle_53 {
-    color: #f2f2f7;
+.LevelTooltip_level_df {
+    border-top: 1rem solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1rem solid rgba(255, 255, 255, 0.1);
+}
+
+.LevelTooltip_rewardsWrapper_f5 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 48rem;
+    padding: 0rem 21rem;
+    border-top: 1rem solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1rem solid rgba(255, 255, 255, 0.1);
+    background: url('R.images.new_year.gui.maps.icons.newYear.mainWidgetView.tooltips.rewardsCountBg') no-repeat
+        center / cover;
+}
+
+.LevelTooltip_rewardsText_4e {
+    color: #e9e2bf;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    margin-top: -4rem;
+}
+
+.LevelTooltip_description_0e {
+    padding: 0 24rem 15rem;
+}
+
+.LevelTooltip_title_4d {
+    color: #ffdd99;
     font-size: 15rem;
     font-weight: 700;
     line-height: 1.15;
-    margin-top: 16rem;
+    padding-top: 17rem;
 }
 
-.CommonTooltip_list_a4 {
+.LevelTooltip_subTitle_33 {
+    color: #cbac77;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    padding-top: 4rem;
+}
+
+.LevelTooltip_subTitle__withBorder_64 {
+    padding-bottom: 14rem;
+    border-bottom: 1rem solid rgba(242, 242, 247, 0.1);
+}
+
+.LevelTooltip_timeLeft_86 {
+    padding: 6rem 24rem 15rem;
+    border-top: 1rem solid rgba(242, 242, 247, 0.1);
+}
+
+.BonusCounter_base_db {
+    display: flex;
+    align-items: center;
+}
+
+.BonusCounter_bonusIcon_78 {
+    background: url('R.images.new_year.gui.maps.icons.newYear.common.bonusIcon') no-repeat center / cover;
+}
+
+.BonusCounter_base__small_24 .BonusCounter_bonusIcon_78 {
+    width: 34rem;
+    height: 16rem;
+}
+
+.BonusCounter_base__medium_e1 .BonusCounter_bonusIcon_78 {
+    width: 51rem;
+    height: 24rem;
+}
+
+.BonusCounter_bonusBlock_e4 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 0rem 1rem 1rem rgba(0, 0, 0, 1);
+}
+
+.BonusCounter_bonusBlock__row_c4 {
+    flex-direction: row;
+    margin-left: 5rem;
+    text-shadow: none;
+}
+
+.BonusCounter_bonusWrapper_c2 {
+    margin-right: 0rem;
     position: relative;
-    z-index: 1;
 }
 
-.CommonTooltip_item_e2 {
+.BonusCounter_base__small_24 .BonusCounter_bonusWrapper_c2 {
+    color: #c9c9b6;
+    font-size: 24rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.BonusCounter_base__medium_e1 .BonusCounter_bonusWrapper_c2 {
+    color: #c9c9b6;
+    font-size: 36rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.BonusCounter_bonusBlock__row_c4 .BonusCounter_bonusWrapper_c2 {
+    margin-right: 4rem;
+}
+
+.BonusCounter_bonusText_a9 {
+    margin-top: -6rem;
+}
+
+.BonusCounter_bonusText__gold_54 {
+    color: #fd9;
+}
+
+.BonusCounter_bonusText__copied_90 {
+    color: #ddab61;
+    position: absolute;
+    mask-image: linear-gradient(transparent, #fff);
+}
+
+.BonusCounter_maxBonusText_70 {
+    color: #c9c9b6;
+    font-size: 14rem;
+    font-weight: 700;
+    line-height: 1.15;
+    margin-top: -4rem;
+}
+
+.BonusCounter_bonusBlock__row_c4 .BonusCounter_maxBonusText_70 {
+    margin-top: 0rem;
+}
+
+.MainTooltip_base_23 {
+    width: 394rem;
+}
+
+.MainTooltip_header_30 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 21rem;
+}
+
+.MainTooltip_headerText_d0 {
+    color: #ffdd99;
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.MainTooltip_stats_ef {
+    width: 100%;
+    margin-bottom: 20rem;
+    padding: 18rem 21rem;
+    border: 1rem solid rgba(255, 255, 255, 0.1);
+    background: radial-gradient(114.29% 114.29% at 50% 50%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.1) 100%);
+}
+
+.MainTooltip_mailValue_c0 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90rem;
+    height: 28rem;
+    border: 1rem solid rgba(255, 255, 255, 0.1);
+    border-radius: 4rem;
+    background: radial-gradient(50% 64.71% at 50% 50%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.12) 100%);
+}
+
+.MainTooltip_petMail_72 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.MainTooltip_mailDescription_0a {
+    display: flex;
+    align-items: center;
+}
+
+.MainTooltip_mailIcon_57 {
+    width: 32rem;
+    height: 32rem;
+    margin-right: 5rem;
+    background: url('R.images.new_year.gui.maps.icons.newYear.mainWidgetView.tooltips.mailIcon') no-repeat center /
+        cover;
+}
+
+.MainTooltip_itemPosition_74 {
+    margin-bottom: 12rem;
+}
+
+.MainTooltip_mailText_72 {
+    color: #cbac77;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+
+.MainTooltip_mailValueText_49 {
+    color: #ffdd99;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+.MainTooltip_descriptionBlock_2d {
+    padding: 0rem 24rem 24rem;
+}
+
+.MainTooltip_descriptionTitle_c2 {
+    color: #cbac77;
+    font-size: 15rem;
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 4rem;
+}
+
+.MainTooltip_descriptionText_ef {
+    color: #c9c9b6;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+.MainTooltip_descriptionSeparator_4f {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 10rem 0rem;
+}
+
+.MainTooltip_separatorLine_5d {
+    width: 352rem;
+    height: 1rem;
+}
+
+.MainTooltip_separatorLine__white_1b {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.MainTooltip_separatorLine__black_86 {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.StatItem_base_01 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 30rem;
+    position: relative;
+}
+
+.StatItem_statValue_10,
+.StatItem_stageValue_c4 {
+    display: flex;
+    align-items: center;
+}
+
+.StatItem_statIcon_82 {
+    width: 24rem;
+    height: 24rem;
+    margin-right: 3rem;
+    background: no-repeat center / cover;
+}
+
+.StatItem_bonusValue_36 {
+    color: #80d43a;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+    margin-right: 5rem;
+}
+
+.StatItem_maxBonus_c9 {
     color: #8c8c7e;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
-    margin-bottom: 9rem;
-    padding-left: 20rem;
-    position: relative;
-    margin-top: 8rem;
-    margin-bottom: 0;
-    padding-left: 15rem;
 }
 
-.CommonTooltip_point_92 {
-    width: 4rem;
-    height: 4rem;
-    border-radius: 50%;
-    background: #8c8c7e;
+.StatItem_stageText_e6 {
+    color: #8c8c7e;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    margin-right: 12rem;
+}
+
+.StatItem_stageTextBinding_36 {
+    color: #ffdd99;
+}
+
+.StatItem_mailNeedText_fb {
+    color: #8c8c7e;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+.StatItem_mailNeedTextBinding_d7 {
+    color: #e9e2bf;
+}
+
+.StatItem_stageTime_1c {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90rem;
+    height: 28rem;
+    border: 1rem solid rgba(255, 255, 255, 0.1);
+    border-radius: 4rem;
+    background: radial-gradient(50% 64.71% at 50% 50%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.12) 100%);
+}
+
+.StatItem_stageTimeText_a5 {
+    color: #e9e2bf;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+.StatItem_itemSeparator_37 {
+    width: 262rem;
+    height: 1rem;
+    background: url('R.images.new_year.gui.maps.icons.newYear.mainWidgetView.tooltips.separator') no-repeat center /
+        cover;
     position: absolute;
-    top: 9rem;
+    bottom: 0;
     left: 0;
 }
 
-.CommonTooltip_progress_16 {
-    margin-bottom: 8rem;
-}
-
 .SmallTooltip_base_f6 {
-    width: 320rem;
-    padding: 17rem;
-    position: relative;
-}
-
-.SmallTooltip_base__active_5f {
-    background: linear-gradient(153.54deg, #002c64 0%, #000 100%);
+    width: 400rem;
+    padding: 24rem;
 }
 
 .SmallTooltip_title_3c {
-    color: #f2f2f7;
-    font-size: 15rem;
+    color: #ffdd99;
+    font-size: 18rem;
     font-weight: 700;
-    line-height: 1.15;
+    line-height: 1.1;
     margin-bottom: 8rem;
 }
 
-.SmallTooltip_title__paused_08 {
-    color: #e9e2bf;
-    font-size: 15rem;
-    font-weight: 700;
-    line-height: 1.15;
-}
-
 .SmallTooltip_subTitle_08 {
-    color: #8c8c7e;
+    color: #c9c9b6;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;

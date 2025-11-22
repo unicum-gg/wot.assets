@@ -1,0 +1,835 @@
+.Reward_base_ea {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.Reward_base__s48x48_46,
+.Reward_base__small_c0 {
+    width: 48rem;
+    height: 48rem;
+}
+
+.Reward_base__s80x80_ce,
+.Reward_base__big_e5 {
+    width: 80rem;
+    height: 80rem;
+}
+
+.Reward_base__s128x100_c3 {
+    width: 128rem;
+    height: 100rem;
+}
+
+.Reward_base__s180x135_7c {
+    width: 180rem;
+    height: 135rem;
+}
+
+.Reward_base__s232x174_67 {
+    width: 232rem;
+    height: 174rem;
+}
+
+.Reward_base__s296x222_78 {
+    width: 296rem;
+    height: 222rem;
+}
+
+.Reward_base__s400x300_07 {
+    width: 400rem;
+    height: 300rem;
+}
+
+.Reward_base__s600x450_f8 {
+    width: 600rem;
+    height: 450rem;
+}
+
+.Reward_tooltipWrapper_b5 {
+    height: 100%;
+}
+
+.Reward_icon_df {
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    position: relative;
+    z-index: 1;
+}
+
+.Reward_overlay_68 {
+    background: no-repeat center / 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+.Reward_base__s48x48_46 .Reward_overlay_68,
+.Reward_base__small_c0 .Reward_overlay_68 {
+    width: 96rem;
+    height: 96rem;
+    background-size: 100%;
+    overflow: visible;
+}
+
+.Reward_base__s80x80_ce .Reward_overlay_68,
+.Reward_base__big_e5 .Reward_overlay_68 {
+    width: 128rem;
+    height: 128rem;
+}
+
+.Reward_base__s180x135_7c .Reward_overlay_68 {
+    width: 266rem;
+    height: 241rem;
+}
+
+.Reward_base__s232x174_67 .Reward_overlay_68 {
+    width: 344rem;
+    height: 312rem;
+}
+
+.Reward_base__s296x222_78 .Reward_overlay_68 {
+    width: 450rem;
+    height: 408rem;
+}
+
+.Reward_base__s400x300_07 .Reward_overlay_68 {
+    width: 618rem;
+    height: 590rem;
+}
+
+.Reward_base__s600x450_f8 .Reward_overlay_68 {
+    width: 670rem;
+    height: 575rem;
+}
+
+.Reward_highlight_36 {
+    width: 100%;
+    height: 100%;
+    background: no-repeat center / contain;
+    position: absolute;
+    z-index: 0;
+}
+
+.Reward_image_89 {
+    position: relative;
+}
+
+.Reward_info_72 {
+    margin-top: -13rem;
+    color: #e9e2bf;
+    font-size: 14rem;
+    line-height: 18rem;
+    text-align: center;
+    z-index: 1;
+}
+
+.Reward_base__s48x48_46 .Reward_info_72,
+.Reward_base__small_c0 .Reward_info_72 {
+    margin: -10rem -10rem 0;
+}
+
+.Reward_info__multi_63 {
+    margin-right: 2rem;
+    text-align: right;
+}
+
+.Reward_base__s48x48_46 .Reward_info__multi_63,
+.Reward_base__small_c0 .Reward_info__multi_63 {
+    margin-right: 0;
+}
+
+.Reward_info__credits_ef {
+    color: #e9e2bf;
+}
+
+.Reward_info__gold_36 {
+    color: #ffc363;
+}
+
+.Reward_info__crystal_36 {
+    color: #c9c9b6;
+}
+
+.Reward_info__premiumTank_d3 {
+    color: #ffdd99;
+}
+
+.Reward_timer_d3 {
+    background: no-repeat center / contain;
+    position: absolute;
+    z-index: 1;
+}
+
+.Reward_base__s48x48_46 .Reward_timer_d3,
+.Reward_base__small_c0 .Reward_timer_d3 {
+    width: 23rem;
+    height: 23rem;
+    background-image: url('R.images.gui.maps.icons.quests.bonuses.small.timer');
+    top: -6rem;
+    right: -6rem;
+}
+
+.Reward_base__s80x80_ce .Reward_timer_d3,
+.Reward_base__big_e5 .Reward_timer_d3 {
+    width: 48rem;
+    height: 48rem;
+    background-image: url('R.images.gui.maps.icons.quests.bonuses.big.timer');
+    top: -14rem;
+    right: -14rem;
+}
+
+.Box_mt__XS_0c {
+    margin-top: 4rem;
+}
+.Box_mt__SM_eb {
+    margin-top: 8rem;
+}
+.Box_mt__SMp_cf {
+    margin-top: 10rem;
+}
+.Box_mt__MD_25 {
+    margin-top: 16rem;
+}
+.Box_mt__MDp_49 {
+    margin-top: 20rem;
+}
+.Box_mt__LG_e8 {
+    margin-top: 32rem;
+}
+.Box_mt__XL_83 {
+    margin-top: 64rem;
+}
+
+.Box_mr__XS_7c {
+    margin-right: 4rem;
+}
+
+.Box_mr__SM_08 {
+    margin-right: 8rem;
+}
+
+.Box_mr__SMp_06 {
+    margin-right: 10rem;
+}
+
+.Box_mr__MD_4a {
+    margin-right: 16rem;
+}
+
+.Box_mr__MDp_b6 {
+    margin-right: 20rem;
+}
+
+.Box_mr__LG_d0 {
+    margin-right: 32rem;
+}
+
+.Box_mr__XL_db {
+    margin-right: 64rem;
+}
+
+.Box_mb__XS_bb {
+    margin-bottom: 4rem;
+}
+
+.Box_mb__SM_83 {
+    margin-bottom: 8rem;
+}
+
+.Box_mb__SMp_04 {
+    margin-bottom: 10rem;
+}
+
+.Box_mb__MD_ed {
+    margin-bottom: 16rem;
+}
+
+.Box_mb__MDp_65 {
+    margin-bottom: 20rem;
+}
+
+.Box_mb__LG_c8 {
+    margin-bottom: 32rem;
+}
+
+.Box_mb__XL_f8 {
+    margin-bottom: 64rem;
+}
+
+.Box_ml__XS_8a {
+    margin-left: 4rem;
+}
+
+.Box_ml__SM_e6 {
+    margin-left: 8rem;
+}
+
+.Box_ml__SMp_fb {
+    margin-left: 10rem;
+}
+
+.Box_ml__MD_2b {
+    margin-left: 16rem;
+}
+
+.Box_ml__MDp_c7 {
+    margin-left: 20rem;
+}
+
+.Box_ml__LG_39 {
+    margin-left: 32rem;
+}
+
+.Box_ml__XL_4a {
+    margin-left: 64rem;
+}
+
+.FormatText_base_d0 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* eslint-disable-next-line expectedscss*/
+.Text_paragraph-P10_2c {
+    font-size: 10rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.Text_paragraph-P12_22 {
+    font-size: 12rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+.Text_paragraph-P14_a7 {
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+.Text_paragraph-P16_90 {
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+.Text_paragraph-P18_50 {
+    font-size: 18rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+.Text_paragraph-P24_33 {
+    font-size: 24rem;
+    font-weight: 400;
+    line-height: 32rem;
+}
+.Text_heading-H14_8b {
+    font-size: 14rem;
+    font-weight: 700;
+    line-height: 1.15;
+}
+.Text_heading-H15_9e {
+    font-size: 15rem;
+    font-weight: 700;
+    line-height: 1.15;
+}
+.Text_heading-H18_b7 {
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H20R_f6 {
+    font-size: 20rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.Text_heading-H22_27 {
+    font-size: 22rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.Text_heading-H24R_be {
+    font-size: 24rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.Text_heading-H24_0c {
+    font-size: 24rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.Text_heading-H28_78 {
+    font-size: 28rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H36_32 {
+    font-size: 36rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H56_c3 {
+    font-size: 56rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H73_8f {
+    font-size: 73rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H144_a9 {
+    font-size: 144rem;
+    font-weight: 700;
+    line-height: 1;
+}
+.Text_BLACK_REAL_30 {
+    color: #000000;
+}
+.Text_WHITE_REAL_bc {
+    color: #ffffff;
+}
+.Text_WHITE_62 {
+    color: #f2f2f7;
+}
+.Text_WHITE_ORANGE_54 {
+    color: #fefeec;
+}
+.Text_WHITE_SPANISH_df {
+    color: #e9e2bf;
+}
+.Text_PAR_15 {
+    color: #8c8c7e;
+}
+.Text_PAR_SECONDARY_5d {
+    color: #595950;
+}
+.Text_PAR_TERTIARY_c9 {
+    color: #37362e;
+}
+.Text_INFO_RED_30 {
+    color: #ff0000;
+}
+.Text_RED_66 {
+    color: #ff2717;
+}
+.Text_RED_DARK_d8 {
+    color: #b70000;
+}
+.Text_YELLOW_ed {
+    color: #feab34;
+}
+.Text_ORANGE_be {
+    color: #ee7000;
+}
+.Text_CREAM_57 {
+    color: #ffdd99;
+}
+.Text_BROWN_18 {
+    color: #cbac77;
+}
+.Text_GREEN_BRIGHT_3f {
+    color: #80d43a;
+}
+.Text_GREEN_e3 {
+    color: #7ab300;
+}
+.Text_GREEN_DARK_f1 {
+    color: #497212;
+}
+.Text_BLUE_BOOSTER_21 {
+    color: #ccffff;
+}
+.Text_BLUE_TEAMKILLER_ab {
+    color: #09e2ff;
+}
+.Text_CRED_f7 {
+    color: #ced9d9;
+}
+.Text_GOLD_28 {
+    color: #ffc363;
+}
+.Text_BOND_be {
+    color: #c9c9b6;
+}
+.Text_PROM_65 {
+    color: #a29b70;
+}
+
+.CloseButton_base_7e {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 46rem;
+    height: 54rem;
+    background: url('R.images.new_year.gui.maps.icons.newYear.robotTvRewardsView.close.default') no-repeat
+        center/contain;
+    position: relative;
+    cursor: pointer;
+}
+
+.CloseButton_buttonHover_a6 {
+    width: 100%;
+    height: 100%;
+    background: url('R.images.new_year.gui.maps.icons.newYear.robotTvRewardsView.close.hover') no-repeat center/contain;
+    opacity: 0;
+    position: absolute;
+    transition: opacity 150ms;
+}
+
+.CloseButton_buttonHover__visible_ee {
+    opacity: 1;
+}
+
+.CloseButton_buttonPressed_8d {
+    width: 100%;
+    height: 100%;
+    background: url('R.images.new_year.gui.maps.icons.newYear.robotTvRewardsView.close.pressed') no-repeat
+        center/contain;
+    opacity: 0;
+    position: absolute;
+    transition: opacity 150ms;
+}
+
+.CloseButton_buttonPressed__visible_f9 {
+    opacity: 1;
+}
+
+.Stars_base_33 {
+    width: 437rem;
+    height: 77rem;
+    background: no-repeat center / contain;
+}
+
+.SubmitButton_base_46 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 162rem;
+    height: 54rem;
+    background: url('R.images.new_year.gui.maps.icons.newYear.robotTvRewardsView.submit.default') no-repeat
+        center/contain;
+    position: relative;
+    cursor: pointer;
+}
+
+.SubmitButton_buttonHover_ba {
+    width: 100%;
+    height: 100%;
+    background: url('R.images.new_year.gui.maps.icons.newYear.robotTvRewardsView.submit.hover') no-repeat center/contain;
+    opacity: 0;
+    position: absolute;
+    transition: opacity 150ms;
+}
+
+.SubmitButton_buttonHover__visible_71 {
+    opacity: 1;
+}
+
+.SubmitButton_buttonPressed_ab {
+    width: 100%;
+    height: 100%;
+    background: url('R.images.new_year.gui.maps.icons.newYear.robotTvRewardsView.submit.pressed') no-repeat
+        center/contain;
+    opacity: 0;
+    position: absolute;
+    transition: opacity 150ms;
+}
+
+.SubmitButton_buttonPressed__visible_81 {
+    opacity: 1;
+}
+
+.SubmitButton_text_a8 {
+    color: #fefeec;
+    font-size: 15rem;
+    font-weight: 700;
+    line-height: 1.15;
+    margin-top: -7rem;
+    text-shadow: 0 -1rem 2rem rgba(0, 0, 0, 0.7);
+    z-index: 1;
+}
+
+.App_base_39 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background: rgba(13, 13, 12, 0.6);
+    opacity: 1;
+}
+
+.App_base__close_e6 {
+    animation: App_fadeOut_9a 300ms forwards;
+}
+
+.App_container_25 {
+    display: flex;
+    width: 658rem;
+    height: 488rem;
+    position: relative;
+}
+
+.App_firstLayer_0a {
+    width: 772rem;
+    height: 735rem;
+    background: url('R.images.new_year.gui.maps.icons.newYear.robotTvRewardsView.background.background_1_layer')
+        no-repeat center / contain;
+    opacity: 0;
+    position: absolute;
+    top: -16rem;
+    left: -57rem;
+    animation: App_blinkDuplicate_a9 3000ms 500ms linear infinite;
+}
+
+.App_secondLayer_61 {
+    width: 772rem;
+    height: 735rem;
+    background: url('R.images.new_year.gui.maps.icons.newYear.robotTvRewardsView.background.background_2_layer')
+        no-repeat center / contain;
+    opacity: 0;
+    position: absolute;
+    top: -16rem;
+    left: -57rem;
+    animation: App_fadeIn_28 500ms 500ms forwards;
+}
+
+.App_thirdLayer_78 {
+    width: 100%;
+    height: 100%;
+    background: url('R.images.new_year.gui.maps.icons.newYear.robotTvRewardsView.background.background_3_layer')
+        no-repeat center / contain;
+    opacity: 0;
+    position: absolute;
+    /* stylelint-disable-next-line number-max-precision */
+    transform: scaleX(0) scaleY(0.005);
+    animation: App_fadeInWithScale_e1 500ms 800ms forwards;
+}
+
+.App_fourthLayer_b2 {
+    width: 666rem;
+    height: 496rem;
+    background: url('R.images.new_year.gui.maps.icons.newYear.robotTvRewardsView.background.background_4_layer')
+        no-repeat center / contain;
+    opacity: 0;
+    position: absolute;
+    top: -4rem;
+    left: -4rem;
+    animation: App_fadeIn_28 500ms 500ms forwards;
+}
+
+.App_fifthLayer_be {
+    width: 100%;
+    height: 100%;
+    background: url('R.images.new_year.gui.maps.icons.newYear.robotTvRewardsView.background.background_5_layer')
+        no-repeat center / contain;
+    opacity: 0;
+    position: absolute;
+    animation: App_fadeIn_28 150ms 1300ms forwards;
+    pointer-events: none;
+}
+
+.App_fifthLayerDuplicate_c5 {
+    width: 100%;
+    height: 100%;
+    background: url('R.images.new_year.gui.maps.icons.newYear.robotTvRewardsView.background.background_5_layer_2')
+        no-repeat center / contain;
+    opacity: 0;
+    position: absolute;
+    animation: App_blinkDuplicate_a9 500ms 1550ms infinite;
+    pointer-events: none;
+}
+
+.App_content_2d {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.App_header_19 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 38rem;
+    opacity: 0;
+    position: absolute;
+    transform: translateY(-50rem);
+    animation: App_fadeInWithDown_6b 300ms 1400ms forwards;
+}
+
+.App_stars_16 {
+    position: absolute;
+    top: -20rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.App_headerImage_1d {
+    width: 370rem;
+    height: 35rem;
+    background: url('R.images.new_year.gui.maps.icons.newYear.robotTvRewardsView.title') no-repeat center / contain;
+}
+
+.App_text_b4 {
+    color: #fefeec;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+    margin-top: 10rem;
+}
+
+.App_tokensUsed_2d {
+    color: #ffdd99;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+
+.App_close_b2 {
+    position: absolute;
+    top: 0rem;
+    right: 30rem;
+}
+
+.App_rewards_4b {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 560rem;
+    height: 190rem;
+    opacity: 0;
+    position: absolute;
+    top: 170rem;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: App_fadeIn_28 300ms 1600ms forwards;
+}
+
+.App_reward_49 + .App_reward_49 {
+    margin-left: 30rem;
+}
+
+.App_reward_49 + .App_reward__withOutMargin_e8 {
+    margin-left: 0rem;
+}
+
+.App_footer_53 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    opacity: 0;
+    position: absolute;
+    bottom: 25rem;
+    transform: translateY(50rem);
+    animation: App_fadeInWithUp_e8 300ms 1400ms forwards;
+}
+
+@keyframes App_fadeIn_28 {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes App_fadeOut_9a {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes App_fadeInWithDown_6b {
+    0% {
+        opacity: 0;
+        transform: translateY(-50rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0rem);
+    }
+}
+
+@keyframes App_fadeInWithUp_e8 {
+    0% {
+        opacity: 0;
+        transform: translateY(50rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0rem);
+    }
+}
+
+@keyframes App_fadeOut_9a {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes App_fadeInWithScale_e1 {
+    0% {
+        opacity: 0;
+        /* stylelint-disable-next-line number-max-precision */
+        transform: scaleX(0) scaleY(0.005);
+    }
+
+    30% {
+        opacity: 0.5;
+        /* stylelint-disable-next-line number-max-precision */
+        transform: scaleX(1) scaleY(0.005);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scaleX(1) scaleY(1);
+    }
+}
+
+@keyframes App_blink_6e {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes App_blinkDuplicate_a9 {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}

@@ -1140,7 +1140,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 /* 400*/ /* 560*/ /* 700*/
 .App_base_bd {
     height: 100%;
-    background: #000 url('R.images.armory_yard.gui.maps.icons.bg__gp4') no-repeat center / cover;
+    background: #000 url('R.images.armory_yard.gui.maps.icons.bg') no-repeat center / cover;
     position: relative;
 }
 .App_back_9e {

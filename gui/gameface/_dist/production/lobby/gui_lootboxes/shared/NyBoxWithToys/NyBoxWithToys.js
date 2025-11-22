@@ -155,9 +155,9 @@
                         addPreloadTexture: () => s,
                         children: () => i,
                         displayStatus: () => r.W,
-                        displayStatusIs: () => M,
+                        displayStatusIs: () => y,
                         events: () => o.U,
-                        extraSize: () => y,
+                        extraSize: () => M,
                         forceTriggerMouseMove: () => P,
                         freezeTextureBeforeResize: () => w,
                         getBrowserTexturePath: () => d,
@@ -167,8 +167,8 @@
                         getViewGlobalPosition: () => E,
                         isEventHandled: () => f,
                         isFocused: () => O,
-                        pxToRem: () => b,
-                        remToPx: () => p,
+                        pxToRem: () => p,
+                        remToPx: () => b,
                         resize: () => v,
                         sendEvent: () => a.qP,
                         setAnimateWindow: () => m,
@@ -204,7 +204,7 @@
                 }
                 function E(e = 'rem') {
                     const t = viewEnv.getViewGlobalPositionRem();
-                    return 'rem' === e ? t : { x: p(t.x), y: p(t.y) };
+                    return 'rem' === e ? t : { x: b(t.x), y: b(t.y) };
                 }
                 function w() {
                     viewEnv.freezeTextureBeforeResize();
@@ -212,10 +212,10 @@
                 function h() {
                     return viewEnv.getScale();
                 }
-                function b(e) {
+                function p(e) {
                     return viewEnv.pxToRem(e);
                 }
-                function p(e) {
+                function b(e) {
                     return viewEnv.remToPx(e);
                 }
                 function m(e, t) {
@@ -236,11 +236,11 @@
                 function T() {
                     return viewEnv.getShowingStatus();
                 }
-                const M = Object.keys(r.W).reduce(
+                const y = Object.keys(r.W).reduce(
                         (e, t) => ((e[t] = () => viewEnv.getShowingStatus() === r.W[t]), e),
                         {},
                     ),
-                    y = {
+                    M = {
                         set: (e, t) => {
                             viewEnv.setExtraSizeRem(e, t);
                         },
@@ -561,7 +561,7 @@
                 var E = n(5521),
                     w = n(3138);
                 const h = ['args'];
-                function b(e, t, n, i, r, o, a) {
+                function p(e, t, n, i, r, o, a) {
                     try {
                         var s = e[o](a),
                             _ = s.value;
@@ -570,7 +570,7 @@
                     }
                     s.done ? t(_) : Promise.resolve(_).then(i, r);
                 }
-                const p = (e) => ({ __Type: 'GFBoundingBox', x: e.x, y: e.y, width: e.width, height: e.height }),
+                const b = (e) => ({ __Type: 'GFBoundingBox', x: e.x, y: e.y, width: e.width, height: e.height }),
                     m = (function () {
                         var e,
                             t =
@@ -588,10 +588,10 @@
                                     return new Promise(function (i, r) {
                                         var o = e.apply(t, n);
                                         function a(e) {
-                                            b(o, i, r, a, s, 'next', e);
+                                            p(o, i, r, a, s, 'next', e);
                                         }
                                         function s(e) {
-                                            b(o, i, r, a, s, 'throw', e);
+                                            p(o, i, r, a, s, 'throw', e);
                                         }
                                         a(void 0);
                                     });
@@ -644,7 +644,7 @@
                     };
                 var P = n(7572);
                 const T = r.instance,
-                    M = {
+                    y = {
                         DataTracker: o.Z,
                         ViewModel: P.Z,
                         ViewEventType: _,
@@ -652,7 +652,7 @@
                         RealFormatType: l,
                         TimeFormatType: u,
                         DateFormatType: v,
-                        makeGlobalBoundingBox: p,
+                        makeGlobalBoundingBox: b,
                         sendMoveEvent: (e) => O(_.MOVE, { isMouseEvent: !0, on: e }),
                         sendCloseEvent: g,
                         sendClosePopOverEvent: () => O(_.POP_OVER, { on: !1 }),
@@ -678,7 +678,7 @@
                                 decoratorID: i || R.invalid('resId'),
                                 targetID: r,
                                 direction: t,
-                                bbox: p(v),
+                                bbox: b(v),
                                 on: !0,
                                 args: o,
                             });
@@ -727,7 +727,7 @@
                         SystemLocale: a,
                         UserLocale: s,
                     };
-                window.ViewEnvHelper = M;
+                window.ViewEnvHelper = y;
             },
             3422: (e, t, n) => {
                 (n(6483),
@@ -743,7 +743,7 @@
         var t = __webpack_module_cache__[e];
         if (void 0 !== t) return t.exports;
         var n = (__webpack_module_cache__[e] = { exports: {} });
-        return (__webpack_modules__[e](n, n.exports, __webpack_require__), n.exports);
+        return (__webpack_modules__[e].call(n.exports, n, n.exports, __webpack_require__), n.exports);
     }
     ((__webpack_require__.m = __webpack_modules__),
         (deferred = []),
@@ -768,10 +768,6 @@
             for (var _ = deferred.length; _ > 0 && deferred[_ - 1][2] > i; _--) deferred[_] = deferred[_ - 1];
             deferred[_] = [t, n, i];
         }),
-        (__webpack_require__.n = (e) => {
-            var t = e && e.__esModule ? () => e.default : () => e;
-            return (__webpack_require__.d(t, { a: t }), t);
-        }),
         (__webpack_require__.d = (e, t) => {
             for (var n in t)
                 __webpack_require__.o(t, n) &&
@@ -793,7 +789,6 @@
                 Object.defineProperty(e, Symbol.toStringTag, { value: 'Module' }),
                 Object.defineProperty(e, '__esModule', { value: !0 }));
         }),
-        (__webpack_require__.j = 784),
         (() => {
             var e = { 784: 0 };
             __webpack_require__.O.j = (t) => 0 === e[t];

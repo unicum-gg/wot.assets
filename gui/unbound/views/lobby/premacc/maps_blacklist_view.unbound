@@ -65,7 +65,11 @@
         (event "$evReadyChanged")
     )
 
-    (element PremDashboarBg)
+    (element BackgroundElement
+        (scope
+            (bgSource="R.images.gui.maps.icons.premacc.backgrounds.dashboard()")
+        )
+    )
 
     (image
         (name = 'headerBg')

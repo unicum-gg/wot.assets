@@ -553,7 +553,7 @@
 .ToySlot_shadow_e0 {
     width: 46rem;
     height: 46rem;
-    box-shadow: 0 0 12px 0 rgba(9, 20, 33, 0.05) inset;
+    box-shadow: 0 0 12rem 0 rgba(9, 20, 33, 0.05) inset;
     position: absolute;
     top: 1rem;
     left: 1rem;
@@ -562,14 +562,17 @@
 .ToySlot_slot_8b {
     width: 48rem;
     height: 48rem;
-    background: url('R.images.new_year.gui.maps.icons.newYear.slots.slot_back_small') no-repeat center / contain;
+    border-radius: 6rem;
+    box-shadow:
+        0rem 0rem 4rem 0rem rgba(255, 255, 255, 0.15),
+        -2rem 4rem 6rem 1rem rgba(0, 0, 0, 0.15) inset;
+    background: radial-gradient(50% 50% at 50% 50%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.06) 100%);
     position: relative;
     cursor: pointer;
 }
 .mediaMedium .ToySlot_slot_8b {
     width: 64rem;
     height: 64rem;
-    background-image: url('R.images.new_year.gui.maps.icons.newYear.slots.slot_back');
 }
 .ToySlot_slot_8b:hover,
 .ToySlot_slot_8b:active {
@@ -593,24 +596,14 @@
     opacity: 0.6;
 }
 .ToySlot_notice_fc {
-    width: 33rem;
-    height: 33rem;
-    background: url('R.images.new_year.gui.maps.icons.newYear.slots.indicator_small') no-repeat center / contain;
-    opacity: 0.8;
+    width: 10rem;
+    height: 10rem;
+    border: 1rem solid #bbe9ff4d;
+    border-radius: 50%;
+    background: #0a8cd7;
     position: absolute;
-    top: -8rem;
-    right: -8rem;
-    z-index: 1;
-    pointer-events: none;
-}
-.ToySlot_slot__transitionEnabled_2c .ToySlot_notice_fc {
-    transition: opacity 0.2s ease-in;
-}
-.ToySlot_slot_8b:hover .ToySlot_notice_fc {
-    opacity: 1;
-}
-.ToySlot_slot_8b:active .ToySlot_notice_fc {
-    opacity: 0.6;
+    top: -4rem;
+    right: -4rem;
 }
 .ToySlot_plus_11 {
     width: 15rem;
@@ -655,10 +648,7 @@
     width: 100%;
     height: 100%;
     opacity: 0;
-    mix-blend-mode: screen;
     position: absolute;
-    top: 0;
-    left: 0;
     transition: opacity 0.2s ease-in;
     pointer-events: none;
 }
@@ -672,10 +662,7 @@
     width: 100%;
     height: 100%;
     opacity: 0;
-    mix-blend-mode: screen;
     position: absolute;
-    top: 0;
-    left: 0;
     transition: opacity 0.2s ease-in;
     pointer-events: none;
 }
@@ -687,36 +674,28 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 48rem;
-    height: 48rem;
-    border-radius: 5rem;
-    background: linear-gradient(
-        180deg,
-        rgba(6, 173, 236, 0.16) 0%,
-        rgba(6, 173, 236, 0.48) 40%,
-        rgba(10, 142, 221, 0.8) 50%,
-        rgba(6, 173, 236, 0.48) 60%,
-        rgba(6, 173, 236, 0.16) 100%
-    );
+    width: 50rem;
+    height: 50rem;
+    background: url('R.images.new_year.gui.maps.icons.newYear.mainView.toys.toyHover_small') no-repeat center / cover;
 }
 .mediaMedium .ToySlot_particles_5e {
-    width: 64rem;
-    height: 64rem;
+    width: 68rem;
+    height: 68rem;
+    background-image: url('R.images.new_year.gui.maps.icons.newYear.mainView.toys.toyHover');
 }
 .ToySlot_selectedParticles_6f {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 48rem;
-    height: 48rem;
-    background: url('R.images.new_year.gui.maps.icons.newYear.slots.selected_slot_back_small') no-repeat center /
-        contain;
+    width: 50rem;
+    height: 50rem;
+    background: url('R.images.new_year.gui.maps.icons.newYear.mainView.toys.toySelect_small') no-repeat center / contain;
 }
 .mediaMedium .ToySlot_selectedParticles_6f {
-    width: 64rem;
-    height: 64rem;
-    background-image: url('R.images.new_year.gui.maps.icons.newYear.slots.selected_slot_back');
+    width: 68rem;
+    height: 68rem;
+    background-image: url('R.images.new_year.gui.maps.icons.newYear.mainView.toys.toySelect');
 }
 .ToySlot_animation_32 {
     position: absolute;
@@ -725,4 +704,336 @@
     transform: translate(-50%, -50%);
     z-index: -1;
     pointer-events: none;
+}
+.ToySlot_selectArrow_f9 {
+    width: 90rem;
+    height: 122rem;
+    background: url('R.images.new_year.gui.maps.icons.newYear.mainView.toys.zoneIndicator_small') no-repeat center /
+        contain;
+    opacity: 0;
+    position: absolute;
+    top: -51rem;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: opacity 0.3s;
+    pointer-events: none;
+}
+.mediaMedium .ToySlot_selectArrow_f9 {
+    width: 106rem;
+    height: 121rem;
+    background-image: url('R.images.new_year.gui.maps.icons.newYear.mainView.toys.zoneIndicator_large');
+}
+.ToySlot_selectArrow__visible_02 {
+    opacity: 1;
+}
+.ToySlot_bubble_38 {
+    position: absolute;
+    top: -4rem;
+    right: -4rem;
+}
+
+.Box_mt__XS_0c {
+    margin-top: 4rem;
+}
+.Box_mt__SM_eb {
+    margin-top: 8rem;
+}
+.Box_mt__SMp_cf {
+    margin-top: 10rem;
+}
+.Box_mt__MD_25 {
+    margin-top: 16rem;
+}
+.Box_mt__MDp_49 {
+    margin-top: 20rem;
+}
+.Box_mt__LG_e8 {
+    margin-top: 32rem;
+}
+.Box_mt__XL_83 {
+    margin-top: 64rem;
+}
+
+.Box_mr__XS_7c {
+    margin-right: 4rem;
+}
+
+.Box_mr__SM_08 {
+    margin-right: 8rem;
+}
+
+.Box_mr__SMp_06 {
+    margin-right: 10rem;
+}
+
+.Box_mr__MD_4a {
+    margin-right: 16rem;
+}
+
+.Box_mr__MDp_b6 {
+    margin-right: 20rem;
+}
+
+.Box_mr__LG_d0 {
+    margin-right: 32rem;
+}
+
+.Box_mr__XL_db {
+    margin-right: 64rem;
+}
+
+.Box_mb__XS_bb {
+    margin-bottom: 4rem;
+}
+
+.Box_mb__SM_83 {
+    margin-bottom: 8rem;
+}
+
+.Box_mb__SMp_04 {
+    margin-bottom: 10rem;
+}
+
+.Box_mb__MD_ed {
+    margin-bottom: 16rem;
+}
+
+.Box_mb__MDp_65 {
+    margin-bottom: 20rem;
+}
+
+.Box_mb__LG_c8 {
+    margin-bottom: 32rem;
+}
+
+.Box_mb__XL_f8 {
+    margin-bottom: 64rem;
+}
+
+.Box_ml__XS_8a {
+    margin-left: 4rem;
+}
+
+.Box_ml__SM_e6 {
+    margin-left: 8rem;
+}
+
+.Box_ml__SMp_fb {
+    margin-left: 10rem;
+}
+
+.Box_ml__MD_2b {
+    margin-left: 16rem;
+}
+
+.Box_ml__MDp_c7 {
+    margin-left: 20rem;
+}
+
+.Box_ml__LG_39 {
+    margin-left: 32rem;
+}
+
+.Box_ml__XL_4a {
+    margin-left: 64rem;
+}
+
+.FormatText_base_d0 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* eslint-disable-next-line expectedscss*/
+.Text_paragraph-P10_2c {
+    font-size: 10rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.Text_paragraph-P12_22 {
+    font-size: 12rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+.Text_paragraph-P14_a7 {
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+.Text_paragraph-P16_90 {
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+.Text_paragraph-P18_50 {
+    font-size: 18rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+.Text_paragraph-P24_33 {
+    font-size: 24rem;
+    font-weight: 400;
+    line-height: 32rem;
+}
+.Text_heading-H14_8b {
+    font-size: 14rem;
+    font-weight: 700;
+    line-height: 1.15;
+}
+.Text_heading-H15_9e {
+    font-size: 15rem;
+    font-weight: 700;
+    line-height: 1.15;
+}
+.Text_heading-H18_b7 {
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H20R_f6 {
+    font-size: 20rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.Text_heading-H22_27 {
+    font-size: 22rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.Text_heading-H24R_be {
+    font-size: 24rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.Text_heading-H24_0c {
+    font-size: 24rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.Text_heading-H28_78 {
+    font-size: 28rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H36_32 {
+    font-size: 36rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H56_c3 {
+    font-size: 56rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H73_8f {
+    font-size: 73rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H144_a9 {
+    font-size: 144rem;
+    font-weight: 700;
+    line-height: 1;
+}
+.Text_BLACK_REAL_30 {
+    color: #000000;
+}
+.Text_WHITE_REAL_bc {
+    color: #ffffff;
+}
+.Text_WHITE_62 {
+    color: #f2f2f7;
+}
+.Text_WHITE_ORANGE_54 {
+    color: #fefeec;
+}
+.Text_WHITE_SPANISH_df {
+    color: #e9e2bf;
+}
+.Text_PAR_15 {
+    color: #8c8c7e;
+}
+.Text_PAR_SECONDARY_5d {
+    color: #595950;
+}
+.Text_PAR_TERTIARY_c9 {
+    color: #37362e;
+}
+.Text_INFO_RED_30 {
+    color: #ff0000;
+}
+.Text_RED_66 {
+    color: #ff2717;
+}
+.Text_RED_DARK_d8 {
+    color: #b70000;
+}
+.Text_YELLOW_ed {
+    color: #feab34;
+}
+.Text_ORANGE_be {
+    color: #ee7000;
+}
+.Text_CREAM_57 {
+    color: #ffdd99;
+}
+.Text_BROWN_18 {
+    color: #cbac77;
+}
+.Text_GREEN_BRIGHT_3f {
+    color: #80d43a;
+}
+.Text_GREEN_e3 {
+    color: #7ab300;
+}
+.Text_GREEN_DARK_f1 {
+    color: #497212;
+}
+.Text_BLUE_BOOSTER_21 {
+    color: #ccffff;
+}
+.Text_BLUE_TEAMKILLER_ab {
+    color: #09e2ff;
+}
+.Text_CRED_f7 {
+    color: #ced9d9;
+}
+.Text_GOLD_28 {
+    color: #ffc363;
+}
+.Text_BOND_be {
+    color: #c9c9b6;
+}
+.Text_PROM_65 {
+    color: #a29b70;
+}
+
+.Bubble_base_f0 {
+    width: 10rem;
+    height: 10rem;
+    border: 1rem solid #bbe9ff4d;
+    border-radius: 50%;
+    box-shadow:
+        0 0 10rem 4rem #006fff40,
+        0 2rem 7rem 1rem #00000080,
+        0 4rem 4rem 0 #ffffff4d inset;
+    background: #0a8cd7;
+}
+
+.Bubble_base__withValue_be {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: auto;
+    padding: 0 7rem;
+    border-radius: 20rem;
+    overflow: hidden;
+}
+
+.Bubble_text_59 {
+    color: #ffffff;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    margin-left: 1rem;
 }

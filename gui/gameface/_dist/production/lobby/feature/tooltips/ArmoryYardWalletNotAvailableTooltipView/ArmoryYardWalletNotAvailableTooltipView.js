@@ -1135,7 +1135,6 @@
                             'div',
                             { className: 'App_base_8a' },
                             K().createElement('div', { className: 'App_bg_a6' }),
-                            K().createElement('div', { className: 'App_metal_33' }),
                             K().createElement('div', { className: 'App_warningIcon_93' }),
                             K().createElement($u, {
                                 className: 'App_body_b0',
@@ -1451,6 +1450,7 @@
                 Object.defineProperty(u, Symbol.toStringTag, { value: 'Module' }),
                 Object.defineProperty(u, '__esModule', { value: !0 }));
         }),
+        (A.j = 770),
         (() => {
             var u = { 770: 0 };
             A.O.j = (e) => 0 === u[e];

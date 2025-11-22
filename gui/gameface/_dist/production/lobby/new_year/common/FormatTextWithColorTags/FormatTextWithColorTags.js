@@ -132,7 +132,7 @@
         var D = A[u];
         if (void 0 !== D) return D.exports;
         var B = (A[u] = { exports: {} });
-        return (F[u](B, B.exports, E), B.exports);
+        return (F[u].call(B.exports, B, B.exports, E), B.exports);
     }
     ((E.m = F),
         (u = []),

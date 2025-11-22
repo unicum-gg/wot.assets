@@ -303,7 +303,7 @@
                     ]),
                     G = { view: n, client: F };
             },
-            255: (u, e, t) => {
+            298: (u, e, t) => {
                 t.d(e, { au: () => i });
                 var A = t(179);
                 var F = t(374);
@@ -917,7 +917,7 @@
                     w = 'RerollTooltipContent_available_cc',
                     h = 'RerollTooltipContent_available_icon_7d',
                     p = 'RerollTooltipContent_available_timeLeft_bc';
-                var b = t(255);
+                var b = t(298);
                 const f = ({ model: u, showTimer: e }) => {
                     const t = u.rerollInterval,
                         E = u.timeLeft,
@@ -1005,7 +1005,7 @@
                 ((window.onload = () => document.body.appendChild(O)), n().render(F().createElement(g, null), O));
             },
             411: (u, e, t) => {
-                (t(374), t(255), t(179), t(963));
+                (t(374), t(298), t(179), t(963));
             },
             963: (u, e, t) => {
                 t(179);

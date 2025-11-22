@@ -1,0 +1,139 @@
+.PopoverDecorator_base_ed {
+    display: flex;
+    position: absolute;
+}
+
+.PopoverDecorator_decorator_d3 {
+    padding: 58rem;
+    border-image-source: url('R.images.gui.maps.icons.popovers.popover_bg');
+    border-image-slice: 90 fill;
+    border-image-width: 90rem;
+    overflow: hidden;
+    position: relative;
+    z-index: 0;
+}
+
+.PopoverDecorator_arrow_8a {
+    background: no-repeat 0 0 / contain;
+    position: absolute;
+}
+
+.PopoverDecorator_arrow__bottom_c3,
+.PopoverDecorator_arrow__top_6e {
+    width: 301rem;
+    height: 90rem;
+    margin: 0 58rem;
+    background-image: url('R.images.gui.maps.icons.popovers.popover_arrow_top');
+    left: 50%;
+}
+
+.PopoverDecorator_arrow__left_7a,
+.PopoverDecorator_arrow__right_b6 {
+    width: 84rem;
+    height: 181rem;
+    margin: 58rem 0;
+    background-image: url('R.images.gui.maps.icons.popovers.popover_arrow_left');
+    top: 50%;
+}
+
+.PopoverDecorator_arrow__left_7a {
+    right: 10rem;
+    transform: scaleX(-1) translateY(-90rem);
+}
+
+.PopoverDecorator_arrow__right_b6 {
+    left: 10rem;
+    transform: translateY(-90rem);
+}
+
+.PopoverDecorator_arrow__top_6e {
+    bottom: 8rem;
+    transform: scaleY(-1) translateX(-150rem);
+}
+
+.PopoverDecorator_arrow__bottom_c3 {
+    top: 8rem;
+    transform: translateX(-150rem);
+}
+
+.PopoverDecorator_closeBtn_32 {
+    width: 18rem;
+    height: 18rem;
+    background: url('R.images.gui.maps.icons.popovers.close_button_slim_up') no-repeat 0 0 / contain;
+    position: absolute;
+    top: 6rem;
+    right: 6rem;
+    z-index: 3;
+    cursor: pointer;
+}
+
+.PopoverDecorator_closeBtn_32:hover {
+    filter: brightness(160%);
+}
+
+.PopoverDecorator_closeBtn_32:active {
+    background-image: url('R.images.gui.maps.icons.popovers.close_button_slim_press');
+    filter: brightness(100%);
+}
+
+.PopoverDecorator_content_f0 {
+    position: relative;
+    z-index: 2;
+}
+
+.EnvironmentSwitcherButton_base_cf {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background: url('R.images.new_year.gui.maps.icons.newYear.environmentSwitcherButton.mainBackground') no-repeat
+        center/contain;
+}
+
+.EnvironmentSwitcherButton_button_cc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 58rem;
+    height: 22rem;
+    background: url('R.images.new_year.gui.maps.icons.newYear.environmentSwitcherButton.background.default') no-repeat
+        center/contain;
+    position: relative;
+    cursor: pointer;
+}
+
+.EnvironmentSwitcherButton_buttonHover_4f {
+    width: 100%;
+    height: 100%;
+    background: url('R.images.new_year.gui.maps.icons.newYear.environmentSwitcherButton.background.hover') no-repeat
+        center/contain;
+    opacity: 0;
+    position: absolute;
+    transition: opacity 150ms;
+}
+
+.EnvironmentSwitcherButton_buttonHover__visible_e1 {
+    opacity: 1;
+}
+
+.EnvironmentSwitcherButton_buttonPressed_22 {
+    width: 100%;
+    height: 100%;
+    background: url('R.images.new_year.gui.maps.icons.newYear.environmentSwitcherButton.background.pressed') no-repeat
+        center/contain;
+    opacity: 0;
+    position: absolute;
+    transition: opacity 150ms;
+}
+
+.EnvironmentSwitcherButton_buttonPressed__visible_44 {
+    opacity: 1;
+}
+
+.EnvironmentSwitcherButton_icon_a3 {
+    width: 30rem;
+    height: 20rem;
+    background: url('R.images.new_year.gui.maps.icons.newYear.environmentSwitcherButton.icon') no-repeat center/contain;
+    z-index: 1;
+}

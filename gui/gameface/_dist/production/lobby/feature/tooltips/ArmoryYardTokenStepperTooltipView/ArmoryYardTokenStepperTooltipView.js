@@ -72,13 +72,13 @@
                         getSize: () => L,
                         getViewGlobalPosition: () => y,
                         isEventHandled: () => j,
-                        isFocused: () => N,
+                        isFocused: () => G,
                         pxToRem: () => O,
                         remToPx: () => P,
                         resize: () => M,
                         sendEvent: () => f,
                         setAnimateWindow: () => W,
-                        setEventHandled: () => G,
+                        setEventHandled: () => N,
                         setInputPaddingsRem: () => v,
                         setSidePaddingsRem: () => w,
                         whenTutorialReady: () => V,
@@ -284,10 +284,10 @@
                 function W(u, e) {
                     viewEnv.setAnimateWindow(u, e);
                 }
-                function N() {
+                function G() {
                     return viewEnv.isFocused();
                 }
-                function G() {
+                function N() {
                     return viewEnv.setEventHandled();
                 }
                 function j() {
@@ -866,7 +866,7 @@
                                 for (A = 0; A < E.length; A++) ((t = E[A]), e.indexOf(t) >= 0 || (F[t] = u[t]));
                                 return F;
                             })(u, fu);
-                        const N = (0, $.useMemo)(() => {
+                        const G = (0, $.useMemo)(() => {
                                 const u = { mt: r, mr: n, mb: i, ml: l },
                                     e = ((u) =>
                                         bu.reduce((e, t) => {
@@ -893,9 +893,9 @@
                                     computedClassNames: e,
                                 };
                             }, [t, A, r, n, i, l, O, H, S, d, M, p, b]),
-                            G = N.computedStyle,
-                            j = N.computedClassNames;
-                        return K().createElement('div', pu({ className: a()(xu.base, ...j, e), style: G }, W), P);
+                            N = G.computedStyle,
+                            j = G.computedClassNames;
+                        return K().createElement('div', pu({ className: a()(xu.base, ...j, e), style: N }, W), P);
                     });
                 let Lu;
                 !(function (u) {
@@ -978,7 +978,7 @@
                               );
                 var Pu = t(3532),
                     Wu = t.n(Pu);
-                const Nu = {
+                const Gu = {
                         'paragraph-P10': 'Text_paragraph-P10_2c',
                         'paragraph-P12': 'Text_paragraph-P12_22',
                         'paragraph-P14': 'Text_paragraph-P14_a7',
@@ -1022,7 +1022,7 @@
                         BOND: 'Text_BOND_be',
                         PROM: 'Text_PROM_65',
                     },
-                    Gu = ['text', 'variant', 'className', 'color', 'm', 'mt', 'mr', 'mb', 'ml', 'style', 'format'];
+                    Nu = ['text', 'variant', 'className', 'color', 'm', 'mt', 'mr', 'mb', 'ml', 'style', 'format'];
                 function ju() {
                     return (
                         (ju =
@@ -1077,7 +1077,7 @@
                         (u) =>
                             u
                                 ? ((u) => Xu.includes(u))(u)
-                                    ? { colorClassName: Nu[u] }
+                                    ? { colorClassName: Gu[u] }
                                     : { colorStyle: { color: u } }
                                 : {}),
                     $u = hu((u) => {
@@ -1104,7 +1104,7 @@
                                     E = Object.keys(u);
                                 for (A = 0; A < E.length; A++) ((t = E[A]), e.indexOf(t) >= 0 || (F[t] = u[t]));
                                 return F;
-                            })(u, Gu);
+                            })(u, Nu);
                         const c = (0, $.useMemo)(() => {
                                 const u = Uu(F),
                                     e = u.colorClassName,
@@ -1118,7 +1118,7 @@
                             wu,
                             ju(
                                 {
-                                    className: a()(Nu.base, t && Nu[t], _, A),
+                                    className: a()(Gu.base, t && Gu[t], _, A),
                                     style: g,
                                     mt: !0 === D ? Vu[t || 'paragraph-P16'].mt : D,
                                     mr: !0 === B ? Vu[t || 'paragraph-P16'].mr : B,
@@ -1137,7 +1137,6 @@
                             'div',
                             { className: 'App_base_b0' },
                             K().createElement('div', { className: 'App_bg_61' }),
-                            K().createElement('div', { className: 'App_metal_95' }),
                             K().createElement($u, { className: a()(Ku, 'App_text__button_5b'), text: Yu.press() }),
                             K().createElement('div', { className: 'App_button_04' }),
                             K().createElement($u, { className: Ku, text: Yu.main() }),
@@ -1453,6 +1452,7 @@
                 Object.defineProperty(u, Symbol.toStringTag, { value: 'Module' }),
                 Object.defineProperty(u, '__esModule', { value: !0 }));
         }),
+        (A.j = 672),
         (() => {
             var u = { 672: 0 };
             A.O.j = (e) => 0 === u[e];

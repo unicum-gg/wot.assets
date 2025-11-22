@@ -3547,11 +3547,7 @@
                                 { className: p()(gn, a && Cn), ref: i },
                                 s().createElement(be, { onClick: l }),
                                 s().createElement(xu, { className: Bn }),
-                                s().createElement(
-                                    'div',
-                                    { className: fn },
-                                    s().createElement(Fn, { scrollApi: n, className: pn }),
-                                ),
+                                s().createElement(Fn, { scrollApi: n, className: p()(pn, fn) }),
                                 s().createElement(Bu, { className: vn }),
                             ),
                         );

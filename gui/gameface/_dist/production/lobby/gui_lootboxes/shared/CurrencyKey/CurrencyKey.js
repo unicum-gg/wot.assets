@@ -157,7 +157,7 @@
                         displayStatus: () => i.W,
                         displayStatusIs: () => R,
                         events: () => r.U,
-                        extraSize: () => k,
+                        extraSize: () => y,
                         forceTriggerMouseMove: () => O,
                         freezeTextureBeforeResize: () => p,
                         getBrowserTexturePath: () => l,
@@ -167,15 +167,15 @@
                         getViewGlobalPosition: () => m,
                         isEventHandled: () => g,
                         isFocused: () => T,
-                        pxToRem: () => w,
-                        remToPx: () => h,
+                        pxToRem: () => h,
+                        remToPx: () => w,
                         resize: () => E,
                         sendEvent: () => s.qP,
                         setAnimateWindow: () => P,
                         setEventHandled: () => b,
                         setInputPaddingsRem: () => _,
                         setSidePaddingsRem: () => d,
-                        whenTutorialReady: () => f,
+                        whenTutorialReady: () => k,
                     }));
                 var o = n(3722),
                     i = n(6112),
@@ -204,7 +204,7 @@
                 }
                 function m(e = 'rem') {
                     const t = viewEnv.getViewGlobalPositionRem();
-                    return 'rem' === e ? t : { x: h(t.x), y: h(t.y) };
+                    return 'rem' === e ? t : { x: w(t.x), y: w(t.y) };
                 }
                 function p() {
                     viewEnv.freezeTextureBeforeResize();
@@ -212,10 +212,10 @@
                 function v() {
                     return viewEnv.getScale();
                 }
-                function w(e) {
+                function h(e) {
                     return viewEnv.pxToRem(e);
                 }
-                function h(e) {
+                function w(e) {
                     return viewEnv.remToPx(e);
                 }
                 function P(e, t) {
@@ -240,7 +240,7 @@
                         (e, t) => ((e[t] = () => viewEnv.getShowingStatus() === i.W[t]), e),
                         {},
                     ),
-                    k = {
+                    y = {
                         set: (e, t) => {
                             viewEnv.setExtraSizeRem(e, t);
                         },
@@ -248,7 +248,7 @@
                             viewEnv.getExtraSizeRem(e, t);
                         },
                     },
-                    f = Promise.all([
+                    k = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : r.U.onDomBuilt(e);
                         }),
@@ -561,7 +561,7 @@
                 var m = n(5521),
                     p = n(3138);
                 const v = ['args'];
-                function w(e, t, n, o, i, r, s) {
+                function h(e, t, n, o, i, r, s) {
                     try {
                         var a = e[r](s),
                             _ = a.value;
@@ -570,7 +570,7 @@
                     }
                     a.done ? t(_) : Promise.resolve(_).then(o, i);
                 }
-                const h = (e) => ({ __Type: 'GFBoundingBox', x: e.x, y: e.y, width: e.width, height: e.height }),
+                const w = (e) => ({ __Type: 'GFBoundingBox', x: e.x, y: e.y, width: e.width, height: e.height }),
                     P = (function () {
                         var e,
                             t =
@@ -588,10 +588,10 @@
                                     return new Promise(function (o, i) {
                                         var r = e.apply(t, n);
                                         function s(e) {
-                                            w(r, o, i, s, a, 'next', e);
+                                            h(r, o, i, s, a, 'next', e);
                                         }
                                         function a(e) {
-                                            w(r, o, i, s, a, 'throw', e);
+                                            h(r, o, i, s, a, 'throw', e);
                                         }
                                         s(void 0);
                                     });
@@ -644,7 +644,7 @@
                     };
                 var O = n(7572);
                 const S = i.instance,
-                    k = {
+                    y = {
                         DataTracker: r.Z,
                         ViewModel: O.Z,
                         ViewEventType: _,
@@ -652,7 +652,7 @@
                         RealFormatType: d,
                         TimeFormatType: u,
                         DateFormatType: E,
-                        makeGlobalBoundingBox: h,
+                        makeGlobalBoundingBox: w,
                         sendMoveEvent: (e) => T(_.MOVE, { isMouseEvent: !0, on: e }),
                         sendCloseEvent: b,
                         sendClosePopOverEvent: () => T(_.POP_OVER, { on: !1 }),
@@ -678,7 +678,7 @@
                                 decoratorID: o || R.invalid('resId'),
                                 targetID: i,
                                 direction: t,
-                                bbox: h(E),
+                                bbox: w(E),
                                 on: !0,
                                 args: r,
                             });
@@ -727,7 +727,7 @@
                         SystemLocale: s,
                         UserLocale: a,
                     };
-                window.ViewEnvHelper = k;
+                window.ViewEnvHelper = y;
             },
             6620: (e, t, n) => {
                 var o = n(6179),
@@ -754,6 +754,7 @@
                         (e.TankmenXpFactor = 'tankmenXPFactor'),
                         (e.FreeXpFactor = 'freeXPFactor'),
                         (e.BattleToken = 'battleToken'),
+                        (e.Entitlements = 'entitlements'),
                         (e.PremiumUniversal = 'premium_universal'),
                         (e.Gold = 'gold'),
                         (e.Credits = 'credits'),
@@ -766,7 +767,6 @@
                         (e.SelectableBonus = 'selectableBonus'),
                         (e.StyleProgressToken = 'styleProgressToken'),
                         (e.TmanToken = 'tmanToken'),
-                        (e.PortalEventDiscount25 = 'portalEventDiscountToken'),
                         (e.NaturalCover = 'naturalCover'),
                         (e.BpCoin = 'bpcoin'),
                         (e.BattlaPassFinalAchievement = 'dossier_achievement'),
@@ -796,7 +796,14 @@
                         (e.Quests = 'quests'),
                         (e.BlankPersonalMissions_1 = 'freeTokens_0'),
                         (e.BlankPersonalMissions_2 = 'freeTokens_2'),
-                        (e.SACoin = 'sacoin'));
+                        (e.SACoin = 'sacoin'),
+                        (e.ArmoryCoin = 'armory_coin'),
+                        (e.PremiumPlusUniversal = 'premium_plus_universal'),
+                        (e.DogTagType = 'dogTagComponents'),
+                        (e.NyPetGoodies = 'nyPetGoodies'),
+                        (e.HiddenVehicle = 'hidden_vehicle'),
+                        (e.NyStaticDogTag = 'nyStaticDogTag'),
+                        (e.Ny26Toys = 'ny26Toys'));
                 })(r || (r = {})),
                     (function (e) {
                         ((e.Gold = 'gold'),
@@ -881,7 +888,7 @@
                     (u.PROGRESSION_STYLE_UPGRADED_3 = 'progressionStyleUpgraded_3'),
                     (u.PROGRESSION_STYLE_UPGRADED_4 = 'progressionStyleUpgraded_4'));
                 var v = n(4179);
-                class w extends i().PureComponent {
+                class h extends i().PureComponent {
                     render() {
                         let e;
                         e = 'gold' === this.props.format ? v.B3.GOLD : v.B3.INTEGRAL;
@@ -889,9 +896,9 @@
                         return void 0 !== this.props.value && void 0 !== t ? t : null;
                     }
                 }
-                let h, P, T, b, g, O, S, R;
-                var k, f, y;
-                ((w.defaultProps = { format: 'integral' }),
+                let w, P, T, b, g, O, S, R, y;
+                var k, f, M;
+                ((h.defaultProps = { format: 'integral' }),
                     r.Items,
                     r.Equipment,
                     r.Xp,
@@ -910,6 +917,7 @@
                     r.TankmenXpFactor,
                     r.FreeXpFactor,
                     r.BattleToken,
+                    r.Entitlements,
                     r.PremiumUniversal,
                     r.NaturalCover,
                     r.BpCoin,
@@ -924,6 +932,9 @@
                     r.Comp7TokenWeeklyReward,
                     r.Comp7TokenCouponReward,
                     r.BattleBoosterGift,
+                    r.NewYearFillers,
+                    r.NewYearInvoice,
+                    r.LootBoxToken,
                     r.CosmicLootboxCommon,
                     r.CosmicLootboxSilver,
                     r.SelectableBonus,
@@ -932,28 +943,44 @@
                     r.BlankPersonalMissions_1,
                     r.BlankPersonalMissions_2,
                     r.SACoin,
+                    r.PremiumPlusUniversal,
+                    r.NyPetGoodies,
+                    r.HiddenVehicle,
                     r.Gold,
                     r.Credits,
                     r.Crystal,
                     r.FreeXp,
+                    r.NewYearToyFragments,
                     r.BattlePassPoints,
                     r.PremiumPlus,
                     r.Premium,
-                    ((y = h || (h = {})).Active = 'active'),
-                    (y.Paused = 'paused'),
-                    (y.Completed = 'completed'),
-                    (y.NotStarted = 'notStarted'),
-                    (y.Disabled = 'disabled'),
+                    (function (e) {
+                        ((e.s16 = '16'),
+                            (e.s32 = '32'),
+                            (e.s48 = '48'),
+                            (e.s66 = '66'),
+                            (e.s80 = '80'),
+                            (e.s116 = '116'),
+                            (e.s296 = '296'),
+                            (e.s360 = '360'),
+                            (e.s400 = '400'),
+                            (e.s600 = '600'));
+                    })(w || (w = {})),
+                    ((M = P || (P = {})).Active = 'active'),
+                    (M.Paused = 'paused'),
+                    (M.Completed = 'completed'),
+                    (M.NotStarted = 'notStarted'),
+                    (M.Disabled = 'disabled'),
                     (function (e) {
                         ((e.Default = 'default'), (e.Marathon = 'marathon'), (e.Resource = 'resource'));
-                    })(P || (P = {})),
-                    (function (e) {
-                        ((e.Micro = 'micro'), (e.Small = 'small'), (e.Medium = 'medium'));
                     })(T || (T = {})),
                     (function (e) {
-                        ((e.ACTIVE = 'active'), (e.COMPLETED = 'completed'), (e.NOT_CHOSEN = 'notChosen'));
+                        ((e.Micro = 'micro'), (e.Small = 'small'), (e.Medium = 'medium'));
                     })(b || (b = {})),
-                    ((f = g || (g = {})).AwaitSeason = 'awaitSeason'),
+                    (function (e) {
+                        ((e.ACTIVE = 'active'), (e.COMPLETED = 'completed'), (e.NOT_CHOSEN = 'notChosen'));
+                    })(g || (g = {})),
+                    ((f = O || (O = {})).AwaitSeason = 'awaitSeason'),
                     (f.Bought = 'bought'),
                     (f.Free = 'free'),
                     (f.Completed = 'completed'),
@@ -966,15 +993,15 @@
                             (e.ShowLevel = 'show'),
                             (e.HideLevel = 'hide'),
                             (e.HideLevelWithDelay = 'hideWithDelay'));
-                    })(O || (O = {})),
-                    ((k = S || (S = {})).style = 'style'),
+                    })(S || (S = {})),
+                    ((k = R || (R = {})).style = 'style'),
                     (k.tankman = 'tankman'),
                     (k.vehicle = 'vehicle'),
                     (function (e) {
                         ((e.Default = 'default'), (e.Marathon = 'marathon'), (e.Resource = 'resource'));
-                    })(R || (R = {})),
-                    S.style,
-                    S.tankman);
+                    })(y || (y = {})),
+                    R.style,
+                    R.tankman);
             },
         },
         __webpack_module_cache__ = {},
@@ -983,7 +1010,7 @@
         var t = __webpack_module_cache__[e];
         if (void 0 !== t) return t.exports;
         var n = (__webpack_module_cache__[e] = { exports: {} });
-        return (__webpack_modules__[e](n, n.exports, __webpack_require__), n.exports);
+        return (__webpack_modules__[e].call(n.exports, n, n.exports, __webpack_require__), n.exports);
     }
     ((__webpack_require__.m = __webpack_modules__),
         (deferred = []),
@@ -1033,7 +1060,6 @@
                 Object.defineProperty(e, Symbol.toStringTag, { value: 'Module' }),
                 Object.defineProperty(e, '__esModule', { value: !0 }));
         }),
-        (__webpack_require__.j = 251),
         (() => {
             var e = { 251: 0 };
             __webpack_require__.O.j = (t) => 0 === e[t];

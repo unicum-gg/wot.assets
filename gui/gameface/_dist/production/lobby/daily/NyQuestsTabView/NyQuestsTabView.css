@@ -1,0 +1,669 @@
+.Box_mt__XS_0c {
+    margin-top: 4rem;
+}
+.Box_mt__SM_eb {
+    margin-top: 8rem;
+}
+.Box_mt__SMp_cf {
+    margin-top: 10rem;
+}
+.Box_mt__MD_25 {
+    margin-top: 16rem;
+}
+.Box_mt__MDp_49 {
+    margin-top: 20rem;
+}
+.Box_mt__LG_e8 {
+    margin-top: 32rem;
+}
+.Box_mt__XL_83 {
+    margin-top: 64rem;
+}
+
+.Box_mr__XS_7c {
+    margin-right: 4rem;
+}
+
+.Box_mr__SM_08 {
+    margin-right: 8rem;
+}
+
+.Box_mr__SMp_06 {
+    margin-right: 10rem;
+}
+
+.Box_mr__MD_4a {
+    margin-right: 16rem;
+}
+
+.Box_mr__MDp_b6 {
+    margin-right: 20rem;
+}
+
+.Box_mr__LG_d0 {
+    margin-right: 32rem;
+}
+
+.Box_mr__XL_db {
+    margin-right: 64rem;
+}
+
+.Box_mb__XS_bb {
+    margin-bottom: 4rem;
+}
+
+.Box_mb__SM_83 {
+    margin-bottom: 8rem;
+}
+
+.Box_mb__SMp_04 {
+    margin-bottom: 10rem;
+}
+
+.Box_mb__MD_ed {
+    margin-bottom: 16rem;
+}
+
+.Box_mb__MDp_65 {
+    margin-bottom: 20rem;
+}
+
+.Box_mb__LG_c8 {
+    margin-bottom: 32rem;
+}
+
+.Box_mb__XL_f8 {
+    margin-bottom: 64rem;
+}
+
+.Box_ml__XS_8a {
+    margin-left: 4rem;
+}
+
+.Box_ml__SM_e6 {
+    margin-left: 8rem;
+}
+
+.Box_ml__SMp_fb {
+    margin-left: 10rem;
+}
+
+.Box_ml__MD_2b {
+    margin-left: 16rem;
+}
+
+.Box_ml__MDp_c7 {
+    margin-left: 20rem;
+}
+
+.Box_ml__LG_39 {
+    margin-left: 32rem;
+}
+
+.Box_ml__XL_4a {
+    margin-left: 64rem;
+}
+
+.FormatText_base_d0 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* eslint-disable-next-line expectedscss*/
+.Text_paragraph-P10_2c {
+    font-size: 10rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.Text_paragraph-P12_22 {
+    font-size: 12rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+.Text_paragraph-P14_a7 {
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+.Text_paragraph-P16_90 {
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+.Text_paragraph-P18_50 {
+    font-size: 18rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+.Text_paragraph-P24_33 {
+    font-size: 24rem;
+    font-weight: 400;
+    line-height: 32rem;
+}
+.Text_heading-H14_8b {
+    font-size: 14rem;
+    font-weight: 700;
+    line-height: 1.15;
+}
+.Text_heading-H15_9e {
+    font-size: 15rem;
+    font-weight: 700;
+    line-height: 1.15;
+}
+.Text_heading-H18_b7 {
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H20R_f6 {
+    font-size: 20rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.Text_heading-H22_27 {
+    font-size: 22rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.Text_heading-H24R_be {
+    font-size: 24rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.Text_heading-H24_0c {
+    font-size: 24rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.Text_heading-H28_78 {
+    font-size: 28rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H36_32 {
+    font-size: 36rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H56_c3 {
+    font-size: 56rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H73_8f {
+    font-size: 73rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H144_a9 {
+    font-size: 144rem;
+    font-weight: 700;
+    line-height: 1;
+}
+.Text_BLACK_REAL_30 {
+    color: #000000;
+}
+.Text_WHITE_REAL_bc {
+    color: #ffffff;
+}
+.Text_WHITE_62 {
+    color: #f2f2f7;
+}
+.Text_WHITE_ORANGE_54 {
+    color: #fefeec;
+}
+.Text_WHITE_SPANISH_df {
+    color: #e9e2bf;
+}
+.Text_PAR_15 {
+    color: #8c8c7e;
+}
+.Text_PAR_SECONDARY_5d {
+    color: #595950;
+}
+.Text_PAR_TERTIARY_c9 {
+    color: #37362e;
+}
+.Text_INFO_RED_30 {
+    color: #ff0000;
+}
+.Text_RED_66 {
+    color: #ff2717;
+}
+.Text_RED_DARK_d8 {
+    color: #b70000;
+}
+.Text_YELLOW_ed {
+    color: #feab34;
+}
+.Text_ORANGE_be {
+    color: #ee7000;
+}
+.Text_CREAM_57 {
+    color: #ffdd99;
+}
+.Text_BROWN_18 {
+    color: #cbac77;
+}
+.Text_GREEN_BRIGHT_3f {
+    color: #80d43a;
+}
+.Text_GREEN_e3 {
+    color: #7ab300;
+}
+.Text_GREEN_DARK_f1 {
+    color: #497212;
+}
+.Text_BLUE_BOOSTER_21 {
+    color: #ccffff;
+}
+.Text_BLUE_TEAMKILLER_ab {
+    color: #09e2ff;
+}
+.Text_CRED_f7 {
+    color: #ced9d9;
+}
+.Text_GOLD_28 {
+    color: #ffc363;
+}
+.Text_BOND_be {
+    color: #c9c9b6;
+}
+.Text_PROM_65 {
+    color: #a29b70;
+}
+
+@keyframes NYQuestsTab_flare_28 {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    20% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+@keyframes NYQuestsTab_scale_38 {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    30% {
+        transform: translate(-50%, -50%) scale(1.5);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+@keyframes NYQuestsTab_hide_56 {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    30% {
+        transform: translate(-50%, -50%) scale(2);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(2.7);
+    }
+}
+
+@keyframes NYQuestsTab_scaleCircle_0f {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(5);
+    }
+}
+
+.NYQuestsTab_base_d4 {
+    width: 340rem;
+    height: 90rem;
+    margin-bottom: 8rem;
+    position: relative;
+    cursor: pointer;
+}
+
+.NYQuestsTab_base__selected_40 {
+    cursor: default;
+}
+
+.mediaLarge .NYQuestsTab_base_d4 {
+    width: 480rem;
+    height: 100rem;
+}
+
+.NYQuestsTab_bg_74,
+.NYQuestsTab_hoverBg_47,
+.NYQuestsTab_selectedBg_78,
+.NYQuestsTab_disabledBg_84,
+.NYQuestsTab_nyDecorator_4c,
+.NYQuestsTab_flare_28 {
+    width: 341rem;
+    height: 90rem;
+    background: no-repeat center / cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.mediaLarge .NYQuestsTab_bg_74,
+.mediaLarge .NYQuestsTab_hoverBg_47,
+.mediaLarge .NYQuestsTab_selectedBg_78,
+.mediaLarge .NYQuestsTab_disabledBg_84,
+.mediaLarge .NYQuestsTab_nyDecorator_4c,
+.mediaLarge .NYQuestsTab_flare_28 {
+    width: 482rem;
+    height: 100rem;
+}
+
+.NYQuestsTab_flareWrapper_ce {
+    width: 341rem;
+    height: 90rem;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.mediaLarge .NYQuestsTab_flareWrapper_ce {
+    width: 482rem;
+    height: 100rem;
+}
+
+.NYQuestsTab_bg_74 {
+    background-image: url('R.images.gui.maps.icons.playStreak.window.tab.default');
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+
+.mediaLarge .NYQuestsTab_bg_74 {
+    background-image: url('R.images.gui.maps.icons.playStreak.window.tab.default_big');
+}
+
+.NYQuestsTab_base__hover_a6 .NYQuestsTab_bg_74,
+.NYQuestsTab_base__selected_40 .NYQuestsTab_bg_74 {
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.NYQuestsTab_base__animatingProgress_2c .NYQuestsTab_bg_74 {
+    opacity: 0;
+}
+
+.NYQuestsTab_base__completed_25 .NYQuestsTab_bg_74,
+.NYQuestsTab_base__animatingComplete_71 .NYQuestsTab_bg_74 {
+    background-image: url('R.images.gui.maps.icons.playStreak.window.tab.completed_default');
+}
+
+.mediaLarge .NYQuestsTab_base__completed_25 .NYQuestsTab_bg_74,
+.mediaLarge .NYQuestsTab_base__animatingComplete_71 .NYQuestsTab_bg_74 {
+    background-image: url('R.images.gui.maps.icons.playStreak.window.tab.completed_default_big');
+}
+
+.NYQuestsTab_base__paused_0b .NYQuestsTab_bg_74 {
+    background-image: url('R.images.gui.maps.icons.playStreak.window.tab.default');
+}
+
+.mediaLarge .NYQuestsTab_base__paused_0b .NYQuestsTab_bg_74 {
+    background-image: url('R.images.gui.maps.icons.playStreak.window.tab.default_big');
+}
+
+.NYQuestsTab_nyDecorator_4c {
+    background-image: url('R.images.gui.maps.icons.daily.newYear.tabBg');
+}
+
+.NYQuestsTab_hoverBg_47 {
+    background-image: url('R.images.gui.maps.icons.playStreak.window.tab.hover');
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.mediaLarge .NYQuestsTab_hoverBg_47 {
+    background-image: url('R.images.gui.maps.icons.playStreak.window.tab.hover_big');
+}
+
+.NYQuestsTab_base__hover_a6 .NYQuestsTab_hoverBg_47 {
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+
+.NYQuestsTab_base__animatingProgress_2c .NYQuestsTab_hoverBg_47 {
+    opacity: 0;
+}
+
+.NYQuestsTab_base__completed_25 .NYQuestsTab_hoverBg_47 {
+    background-image: url('R.images.gui.maps.icons.playStreak.window.tab.completed_hover');
+}
+
+.mediaLarge .NYQuestsTab_base__completed_25 .NYQuestsTab_hoverBg_47 {
+    background-image: url('R.images.gui.maps.icons.playStreak.window.tab.completed_hover_big');
+}
+
+.NYQuestsTab_base__paused_0b .NYQuestsTab_hoverBg_47 {
+    background-image: url('R.images.gui.maps.icons.playStreak.window.tab.hover');
+}
+
+.mediaLarge .NYQuestsTab_base__paused_0b .NYQuestsTab_hoverBg_47 {
+    background-image: url('R.images.gui.maps.icons.playStreak.window.tab.hover_big');
+}
+
+.NYQuestsTab_selectedBg_78 {
+    width: 373rem;
+    height: 122rem;
+    background-image: url('R.images.gui.maps.icons.playStreak.window.tab.selected');
+    opacity: 0;
+    top: -13rem;
+    left: -15rem;
+    transition: opacity 0.5s;
+}
+
+.mediaLarge .NYQuestsTab_selectedBg_78 {
+    width: 512rem;
+    height: 132rem;
+    background-image: url('R.images.gui.maps.icons.playStreak.window.tab.selected_big');
+}
+
+.NYQuestsTab_base__selected_40 .NYQuestsTab_selectedBg_78 {
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+
+.NYQuestsTab_base__animatingProgress_2c .NYQuestsTab_selectedBg_78 {
+    opacity: 0;
+}
+
+.NYQuestsTab_base__completed_25 .NYQuestsTab_selectedBg_78 {
+    width: 381rem;
+    height: 130rem;
+    background-image: url('R.images.gui.maps.icons.playStreak.window.tab.completed_selected');
+    top: -15rem;
+    left: -20rem;
+}
+
+.mediaLarge .NYQuestsTab_base__completed_25 .NYQuestsTab_selectedBg_78 {
+    width: 521rem;
+    height: 140rem;
+    background-image: url('R.images.gui.maps.icons.playStreak.window.tab.completed_selected_big');
+}
+
+.NYQuestsTab_base__paused_0b .NYQuestsTab_selectedBg_78 {
+    width: 373rem;
+    height: 122rem;
+    background-image: url('R.images.gui.maps.icons.playStreak.window.tab.selected');
+    top: -12rem;
+    left: -16rem;
+}
+
+.mediaLarge .NYQuestsTab_base__paused_0b .NYQuestsTab_selectedBg_78 {
+    width: 513rem;
+    height: 132rem;
+    background-image: url('R.images.gui.maps.icons.playStreak.window.tab.selected_big');
+}
+
+.NYQuestsTab_disabledBg_84 {
+    background-image: url('R.images.gui.maps.icons.playStreak.window.tab.disabled');
+}
+
+.mediaLarge .NYQuestsTab_disabledBg_84 {
+    background-image: url('R.images.gui.maps.icons.playStreak.window.tab.disabled_big');
+}
+
+.NYQuestsTab_base__animatingProgress_2c .NYQuestsTab_disabledBg_84 {
+    opacity: 0;
+}
+
+.NYQuestsTab_disabledBg__event_fa {
+    background-image: url('R.images.gui.maps.icons.playStreak.window.tab.disabled_event');
+}
+
+.mediaLarge .NYQuestsTab_disabledBg__event_fa {
+    background-image: url('R.images.gui.maps.icons.playStreak.window.tab.disabled_event_big');
+}
+
+.NYQuestsTab_flare_28 {
+    background-image: url('R.images.gui.maps.icons.daily.playStreak.flare');
+    opacity: 1;
+    mix-blend-mode: overlay;
+    transform: translateX(-100%);
+    animation: NYQuestsTab_flare_28 5s linear 2s infinite;
+}
+
+.NYQuestsTab_base__animatingInit_b1 .NYQuestsTab_flare_28,
+.NYQuestsTab_base__animatingStart_33 .NYQuestsTab_flare_28,
+.NYQuestsTab_base__animatingProgress_2c .NYQuestsTab_flare_28,
+.NYQuestsTab_base__animatingComplete_71 .NYQuestsTab_flare_28 {
+    animation: unset;
+}
+
+.NYQuestsTab_base__animatingProgress_2c .NYQuestsTab_flare_28 {
+    opacity: 0;
+}
+
+.NYQuestsTab_base__completed_25 .NYQuestsTab_flare_28 {
+    animation: NYQuestsTab_flare_28 4s linear 0.5s 1;
+}
+
+.NYQuestsTab_contentWrapper_c1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.NYQuestsTab_base__animatingInit_b1 .NYQuestsTab_contentWrapper_c1 {
+    overflow: visible;
+}
+
+.NYQuestsTab_iconWrapper_6a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90rem;
+    height: 100%;
+    transition: opacity 0.5s;
+}
+
+.NYQuestsTab_base__disabled_18 .NYQuestsTab_iconWrapper_6a {
+    opacity: 0.5;
+}
+
+.NYQuestsTab_base__disabled_18.NYQuestsTab_base__selected_40 .NYQuestsTab_iconWrapper_6a,
+.NYQuestsTab_base__disabled_18.NYQuestsTab_base__selected_40.NYQuestsTab_base__completed_25
+    .NYQuestsTab_iconWrapper_6a {
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+
+.NYQuestsTab_base__disabled_18.NYQuestsTab_base__changeStatus_a7.NYQuestsTab_base__animatingProgress_2c
+    .NYQuestsTab_iconWrapper_6a {
+    opacity: 0;
+}
+
+.mediaLarge .NYQuestsTab_iconWrapper_6a {
+    width: 116rem;
+}
+
+.NYQuestsTab_icon_20 {
+    width: 32rem;
+    height: 32rem;
+    background: url('R.images.gui.maps.icons.daily.newYear.tabIconSmall') no-repeat center / cover;
+}
+
+.mediaLarge .NYQuestsTab_icon_20 {
+    width: 48rem;
+    height: 48rem;
+    background-image: url('R.images.gui.maps.icons.daily.newYear.tabIcon');
+}
+
+.NYQuestsTab_separator_bd {
+    width: 3rem;
+    height: 60rem;
+    background: url('R.images.gui.maps.icons.playStreak.window.tab.separator') no-repeat center / cover;
+}
+
+.NYQuestsTab_base__animatingProgress_2c .NYQuestsTab_separator_bd {
+    opacity: 0;
+}
+
+.mediaLarge .NYQuestsTab_separator_bd {
+    height: 80rem;
+}
+
+.NYQuestsTab_rightBlockWrapper_b7 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 250rem;
+    height: 100%;
+    padding: 13rem 14rem 13rem 18rem;
+}
+
+.NYQuestsTab_base__animatingProgress_2c .NYQuestsTab_rightBlockWrapper_b7 {
+    opacity: 0;
+}
+
+.mediaLarge .NYQuestsTab_rightBlockWrapper_b7 {
+    width: 364rem;
+    padding-left: 28rem;
+}
+
+.NYQuestsTab_description_96 {
+    color: #ffffff;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    display: flex;
+    line-height: 18rem;
+    opacity: 0.4;
+}
+
+.mediaLarge .NYQuestsTab_description_96 {
+    font-size: 16rem;
+}
+
+.NYQuestsTab_base__selected_40 .NYQuestsTab_description_96,
+.NYQuestsTab_base__completed_25 .NYQuestsTab_description_96,
+.NYQuestsTab_base__disabled_18.NYQuestsTab_base__selected_40 .NYQuestsTab_description_96 {
+    opacity: 0.6;
+    transition: opacity 0.5s;
+}

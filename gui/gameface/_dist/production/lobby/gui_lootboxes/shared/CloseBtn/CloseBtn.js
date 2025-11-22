@@ -163,7 +163,7 @@
                         getBrowserTexturePath: () => c,
                         getDisplayStatus: () => M,
                         getScale: () => w,
-                        getSize: () => l,
+                        getSize: () => u,
                         getViewGlobalPosition: () => h,
                         isEventHandled: () => O,
                         isFocused: () => f,
@@ -174,7 +174,7 @@
                         setAnimateWindow: () => m,
                         setEventHandled: () => g,
                         setInputPaddingsRem: () => _,
-                        setSidePaddingsRem: () => u,
+                        setSidePaddingsRem: () => l,
                         whenTutorialReady: () => y,
                     }));
                 var o = n(3722),
@@ -193,10 +193,10 @@
                 function d(e, t, n) {
                     return viewEnv.addDataChangedCallback(e, t, n);
                 }
-                function u(e) {
+                function l(e) {
                     viewEnv.setHitAreaPaddingsRem(e.top, e.right, e.bottom, e.left, 15);
                 }
-                function l(e = 'px') {
+                function u(e = 'px') {
                     return 'rem' === e ? viewEnv.getViewSizeRem() : viewEnv.getViewSizePx();
                 }
                 function v(e, t, n = 'px') {
@@ -555,8 +555,8 @@
                     (c[(c.CLOSE = 32)] = 'CLOSE'),
                     (c[(c.MINIMIZE = 64)] = 'MINIMIZE'));
                 const d = Object.freeze({ INTEGRAL: 0, GOLD: 1 }),
-                    u = Object.freeze({ FRACTIONAL: 0, WO_ZERO_DIGITS: 1 }),
-                    l = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1 }),
+                    l = Object.freeze({ FRACTIONAL: 0, WO_ZERO_DIGITS: 1 }),
+                    u = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1 }),
                     v = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1, YEAR_MONTH: 2 });
                 var h = n(5521),
                     E = n(3138);
@@ -649,8 +649,8 @@
                         ViewModel: T.Z,
                         ViewEventType: _,
                         NumberFormatType: d,
-                        RealFormatType: u,
-                        TimeFormatType: l,
+                        RealFormatType: l,
+                        TimeFormatType: u,
                         DateFormatType: v,
                         makeGlobalBoundingBox: b,
                         sendMoveEvent: (e) => f(_.MOVE, { isMouseEvent: !0, on: e }),
@@ -664,13 +664,13 @@
                                 s = n.getBoundingClientRect(),
                                 c = s.x,
                                 d = s.y,
-                                u = s.width,
-                                l = s.height,
+                                l = s.width,
+                                u = s.height,
                                 v = {
                                     x: E.O.view.pxToRem(c) + a.x,
                                     y: E.O.view.pxToRem(d) + a.y,
-                                    width: E.O.view.pxToRem(u),
-                                    height: E.O.view.pxToRem(l),
+                                    width: E.O.view.pxToRem(l),
+                                    height: E.O.view.pxToRem(u),
                                 };
                             f(_.POP_OVER, {
                                 isMouseEvent: !0,
@@ -783,7 +783,7 @@
                         d.apply(this, arguments)
                     );
                 }
-                class u extends i().PureComponent {
+                class l extends i().PureComponent {
                     constructor(...e) {
                         (super(...e),
                             (this.state = { hover: !1, click: !1 }),
@@ -813,8 +813,8 @@
                             o = e.goto,
                             r = e.side,
                             s = e.type,
-                            u = e.classNames,
-                            l = e.onMouseEnter,
+                            l = e.classNames,
+                            u = e.onMouseEnter,
                             v = e.onMouseLeave,
                             h = e.onMouseDown,
                             E = e.onMouseUp,
@@ -830,17 +830,17 @@
                                     for (o = 0; o < r.length; o++) ((n = r[o]), t.indexOf(n) >= 0 || (i[n] = e[n]));
                                     return i;
                                 })(e, c)),
-                            p = a()(_.base, _[`base__${s}`], _[`base__${r}`], null == u ? void 0 : u.base),
-                            b = a()(_.icon, _[`icon__${s}`], _[`icon__${r}`], null == u ? void 0 : u.icon),
-                            m = a()(_.glow, null == u ? void 0 : u.glow),
-                            f = a()(_.caption, _[`caption__${s}`], null == u ? void 0 : u.caption),
-                            g = a()(_.goto, null == u ? void 0 : u.goto);
+                            p = a()(_.base, _[`base__${s}`], _[`base__${r}`], null == l ? void 0 : l.base),
+                            b = a()(_.icon, _[`icon__${s}`], _[`icon__${r}`], null == l ? void 0 : l.icon),
+                            m = a()(_.glow, null == l ? void 0 : l.glow),
+                            f = a()(_.caption, _[`caption__${s}`], null == l ? void 0 : l.caption),
+                            g = a()(_.goto, null == l ? void 0 : l.goto);
                         return i().createElement(
                             'div',
                             d(
                                 {
                                     className: p,
-                                    onMouseEnter: this._onMouseEnter(l),
+                                    onMouseEnter: this._onMouseEnter(u),
                                     onMouseLeave: this._onMouseLeave(v),
                                     onMouseDown: this._onMouseDown(h),
                                     onMouseUp: this._onMouseUp(E),
@@ -857,7 +857,7 @@
                         );
                     }
                 }
-                ((u.defaultProps = { side: 'left', type: 'back', soundHover: 'highlight', soundClick: 'play' }),
+                ((l.defaultProps = { side: 'left', type: 'back', soundHover: 'highlight', soundClick: 'play' }),
                     n(3138),
                     n(5521));
             },
@@ -868,7 +868,7 @@
         var t = __webpack_module_cache__[e];
         if (void 0 !== t) return t.exports;
         var n = (__webpack_module_cache__[e] = { exports: {} });
-        return (__webpack_modules__[e](n, n.exports, __webpack_require__), n.exports);
+        return (__webpack_modules__[e].call(n.exports, n, n.exports, __webpack_require__), n.exports);
     }
     ((__webpack_require__.m = __webpack_modules__),
         (deferred = []),
@@ -918,7 +918,6 @@
                 Object.defineProperty(e, Symbol.toStringTag, { value: 'Module' }),
                 Object.defineProperty(e, '__esModule', { value: !0 }));
         }),
-        (__webpack_require__.j = 911),
         (() => {
             var e = { 911: 0 };
             __webpack_require__.O.j = (t) => 0 === e[t];
