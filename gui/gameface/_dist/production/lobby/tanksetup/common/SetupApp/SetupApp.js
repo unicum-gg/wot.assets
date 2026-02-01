@@ -170,9 +170,6 @@
                             (e.extraSmallHeight = 'extraSmallHeight'));
                     })(n || (n = {})));
             },
-            8089: (e, t, i) => {
-                (i(6483), i(3138), i(7363), i(7476));
-            },
             527: (e, t, i) => {
                 (i.r(t),
                     i.d(t, { mouse: () => c, off: () => l, on: () => s, onResize: () => a, onScaleUpdated: () => o }));
@@ -978,10 +975,10 @@
                         (e.Huge = 'huge'));
                 })(n || (n = {}));
             },
-            9152: (e, t, i) => {
-                (i(6483), i(8089), i(4598), i(3815), i(8526), i(5521), i(7727), i(7363), i(1922));
+            2189: (e, t, i) => {
+                (i(6483), i(3138), i(7363));
+                (i(4598), i(3815), i(8526), i(5521), i(7727), i(1922));
             },
-            7476: () => {},
             1960: () => {},
             7363: (e) => {
                 e.exports = React;
@@ -1063,6 +1060,6 @@
                 i = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             (i.forEach(t.bind(null, 0)), (i.push = t.bind(null, i.push.bind(i))));
         })());
-    var __webpack_exports__ = __webpack_require__.O(void 0, [727], () => __webpack_require__(9152));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [727], () => __webpack_require__(2189));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

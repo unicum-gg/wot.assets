@@ -1078,10 +1078,7 @@
                             (e.EquipCoin = 'equipCoin'),
                             (e.LootBox = 'lootBox'),
                             (e.BrCoin = 'brcoin'),
-                            (e.Attachment = 'attachment'),
-                            (e.Stamp = 'stamp'),
-                            (e.WtEventLootbox = 'wtevent_lootBox'),
-                            (e.WtEventTicket = 'wtevent_ticket'));
+                            (e.Attachment = 'attachment'));
                     })(a || (a = {})),
                     (function (e) {
                         ((e.Gold = 'gold'),
@@ -1232,9 +1229,6 @@
                     a.E4.BattleBoosterGift,
                     a.E4.OptionalDevice,
                     a.E4.Attachment,
-                    a.E4.Stamp,
-                    a.E4.WtEventLootbox,
-                    a.E4.WtEventTicket,
                     a.E4.Gold,
                     a.E4.Credits,
                     a.E4.Crystal,
@@ -3002,32 +2996,31 @@
                     m = t(5521),
                     A = t(3403),
                     F = t(8030),
-                    D = t(5831),
-                    h = t(6444);
-                const C = 'App_base_26',
-                    B = 'App_additionalBackground_c6',
-                    g = 'App_infoButtons_78',
-                    p = 'App_header_41';
-                var b = t(6483),
-                    v = t.n(b),
-                    w = t(5415),
-                    f = t(9766),
-                    S = t(2828),
-                    x = t(6373),
-                    P = t(3815),
-                    y = t(7727),
-                    L = t(9485),
-                    k = t(7994),
-                    T = t(2893),
-                    M = t(8546),
-                    O = t(8596);
-                const N = 'Shield_base_ec',
-                    I = 'Shield_flag_a2',
-                    H = 'Shield_flag__isChapterChosen_81',
-                    $ = 'Shield_flag__medium_78',
-                    G = 'Shield_emblem_59',
-                    z = 'Shield_chapterLogoIcon_4b',
-                    U = (0, A.Pi)(({ size: e, chapterID: u = 0 }) => {
+                    D = t(6444);
+                const h = 'App_base_26',
+                    C = 'App_additionalBackground_c6',
+                    B = 'App_infoButtons_78',
+                    g = 'App_header_41';
+                var p = t(6483),
+                    b = t.n(p),
+                    v = t(5415),
+                    w = t(9766),
+                    f = t(2828),
+                    S = t(6373),
+                    x = t(3815),
+                    P = t(7727),
+                    y = t(9485),
+                    L = t(7994),
+                    k = t(2893),
+                    T = t(8546),
+                    M = t(8596);
+                const O = 'Shield_base_ec',
+                    N = 'Shield_flag_a2',
+                    I = 'Shield_flag__isChapterChosen_81',
+                    H = 'Shield_flag__medium_78',
+                    $ = 'Shield_emblem_59',
+                    G = 'Shield_chapterLogoIcon_4b',
+                    z = (0, A.Pi)(({ size: e, chapterID: u = 0 }) => {
                         const t = E().model,
                             a = t.root.get().seasonNum,
                             o = t.computes.getChapterById(u);
@@ -3039,21 +3032,21 @@
                             _ = c.currentLevel,
                             d = c.levelProgression,
                             m = { level: _, to: d, from: d },
-                            A = l === r.l.Completed ? M.Bq.Completed : i ? M.Bq.Bought : M.Bq.Free,
+                            A = l === r.l.Completed ? T.Bq.Completed : i ? T.Bq.Bought : T.Bq.Free,
                             F = l === r.l.Active,
-                            D = (0, T.UP)(m) || l !== r.l.NotStarted,
-                            h = D && A !== M.Bq.Completed;
+                            D = (0, k.UP)(m) || l !== r.l.NotStarted,
+                            h = D && A !== T.Bq.Completed;
                         return n().createElement(
                             'div',
-                            { className: N },
+                            { className: O },
                             n().createElement('div', {
-                                className: v()(I, e === M.$u.Medium && $, h && H),
-                                style: (0, L.fW)(u, e),
+                                className: b()(N, e === T.$u.Medium && H, h && I),
+                                style: (0, y.fW)(u, e),
                             }),
                             n().createElement(
                                 'div',
-                                { className: G },
-                                n().createElement(O.G4, {
+                                { className: $ },
+                                n().createElement(M.G4, {
                                     progression: m,
                                     size: e,
                                     chapterID: u,
@@ -3067,11 +3060,11 @@
                                     showProgressBar: F,
                                     isExtra: s,
                                 }),
-                                h && n().createElement('div', { className: z, style: (0, L.cs)(u, i, e) }),
+                                h && n().createElement('div', { className: G, style: (0, y.cs)(u, i, e) }),
                             ),
                         );
                     }),
-                    W = {
+                    U = {
                         base: 'Chapter_base_f0',
                         base__qHDSize: 'Chapter_base__qHDSize_da',
                         bg: 'Chapter_bg_2e',
@@ -3109,6 +3102,7 @@
                         slideUp: 'Chapter_slideUp_71',
                         scale: 'Chapter_scale_96',
                     };
+                var W = t(5831);
                 function j() {
                     return (
                         (j =
@@ -3130,101 +3124,101 @@
                             o = u.controls,
                             i = t.computes.getChapterById(e);
                         if (!i) return null;
-                        const l = (0, h.tv)(),
+                        const l = (0, D.tv)(),
                             c = i.chapterState,
                             _ = i.styleName,
                             d = i.isVehicleInHangar,
                             m = i.vehicleInfo,
                             A = i.finalRewardType,
                             F = i.tankmanNames,
-                            C = i.isExtra,
-                            B = (0, w.GS)(),
-                            g = B.mediaSize,
-                            p = B.remScreenWidth,
-                            b = B.remScreenHeight,
-                            O = (0, a.useCallback)(
+                            h = i.isExtra,
+                            C = (0, v.GS)(),
+                            B = C.mediaSize,
+                            g = C.remScreenWidth,
+                            p = C.remScreenHeight,
+                            M = (0, a.useCallback)(
                                 (u) => {
                                     (o.openPreview(e), u.stopPropagation());
                                 },
                                 [e, o],
                             ),
-                            N = (0, P.z)(() => {
-                                (0, y.G)(T.r_.BP_HIGHLIGHT);
+                            O = (0, x.z)(() => {
+                                (0, P.G)(k.r_.BP_HIGHLIGHT);
                             }),
-                            I = g <= w.cJ.Medium ? M.$u.Small : M.$u.Medium,
-                            R = p >= 2560 && b >= 1440,
-                            H = c === r.l.Completed,
-                            $ = c === r.l.Active,
-                            G = q.chapter.fullNameUppercased.$num(e);
+                            N = B <= v.cJ.Medium ? T.$u.Small : T.$u.Medium,
+                            I = g >= 2560 && p >= 1440,
+                            R = c === r.l.Completed,
+                            H = c === r.l.Active,
+                            $ = q.chapter.fullNameUppercased.$num(e);
                         return n().createElement(
                             'div',
                             {
-                                className: v()(W.base, W[`base__${c}`], R && W.base__qHDSize),
-                                onMouseEnter: N,
+                                className: b()(U.base, U[`base__${c}`], I && U.base__qHDSize),
+                                onMouseEnter: O,
                                 onClick: () => {
-                                    (y.$.playClick(), l.push(D._.battlePass.progression, { chapterID: e }));
+                                    (P.$.playClick(), l.push(W._.battlePass.progression, { chapterID: e }));
                                 },
-                                style: { width: viewEnv.remToPx(De[g]) },
+                                style: { width: viewEnv.remToPx(De[B]) },
                             },
                             n().createElement(
                                 'div',
-                                { className: W.bg, style: (0, L.TZ)(e) },
-                                n().createElement('div', { className: W.vehicleImg, style: (0, L.OH)(e) }),
-                                n().createElement('div', { className: W.bgHover }),
-                                $ && n().createElement('div', { className: W.frame }),
+                                { className: U.bg, style: (0, y.TZ)(e) },
+                                n().createElement('div', { className: U.vehicleImg, style: (0, y.OH)(e) }),
+                                n().createElement('div', { className: U.bgHover }),
+                                H && n().createElement('div', { className: U.frame }),
                             ),
                             n().createElement(
                                 'div',
-                                { className: v()(W.content, C && W.content__extraChapterContent) },
+                                { className: b()(U.content, h && U.content__extraChapterContent) },
                                 n().createElement(
                                     'div',
-                                    { className: W.shieldWrapper },
-                                    $ && n().createElement('div', { className: W.shieldShine }),
+                                    { className: U.shieldWrapper },
+                                    H && n().createElement('div', { className: U.shieldShine }),
                                     n().createElement(
                                         'div',
-                                        { className: W.shield },
-                                        n().createElement(U, { size: I, chapterID: e }),
+                                        { className: U.shield },
+                                        n().createElement(z, { size: N, chapterID: e }),
                                     ),
                                 ),
-                                H && n().createElement('div', { className: W.completedIcon }),
-                                n().createElement('div', { className: W.title }, G),
+                                R && n().createElement('div', { className: U.completedIcon }),
+                                n().createElement('div', { className: U.title }, $),
                                 n().createElement(
                                     'div',
-                                    { className: W.vehicleStyle },
+                                    { className: U.vehicleStyle },
                                     A !== r.E.Tankman &&
                                         n().createElement(
                                             'div',
-                                            { className: W.preview },
+                                            { className: U.preview },
                                             n().createElement(
                                                 'div',
-                                                { className: W.previewWrapper },
-                                                n().createElement(S.h, {
+                                                { className: U.previewWrapper },
+                                                n().createElement(f.h, {
                                                     type: 'preview',
-                                                    onClick: O,
-                                                    size: g < w.cJ.Medium ? 'small' : 'normal',
+                                                    onClick: M,
+                                                    size: B < v.cJ.Medium ? 'small' : 'normal',
                                                 }),
                                             ),
                                         ),
                                     n().createElement(
                                         'div',
-                                        { className: W.styleTitle },
+                                        { className: U.styleTitle },
                                         ((e, u) => {
                                             switch (e) {
                                                 case r.E.Style:
-                                                    return n().createElement(f.z, {
+                                                    return n().createElement(w.z, {
                                                         text: q.chapterChoice.stylePreview.name(),
                                                         binding: { styleName: u },
                                                     });
                                                 case r.E.Tankman:
                                                     return n().createElement(
                                                         'div',
-                                                        { className: W.crewTitle },
-                                                        n().createElement(f.z, {
+                                                        { className: U.crewTitle },
+                                                        n().createElement(w.z, {
                                                             text: q.chapterChoice.crewMember.reward(),
                                                         }),
                                                     );
                                                 case r.E.Vehicle:
-                                                    return n().createElement(f.z, {
+                                                    return n().createElement(w.z, {
                                                         text: q.chapterChoice.premiumVehicle.reward(),
                                                     });
                                                 default:
@@ -3234,33 +3228,33 @@
                                     ),
                                     n().createElement(
                                         'div',
-                                        { className: W.vehicleTitle },
+                                        { className: U.vehicleTitle },
                                         ((e, u, t, a) => {
                                             const o = a
-                                                ? { level: W.extraLevel, name: W.extraName }
-                                                : { level: W.level, name: W.name };
+                                                ? { level: U.extraLevel, name: U.extraName }
+                                                : { level: U.level, name: U.name };
                                             switch (e) {
                                                 case r.E.Style:
-                                                    return n().createElement(f.z, {
+                                                    return n().createElement(w.z, {
                                                         text: q.chapterChoice.stylePreview.forLabel(),
                                                         binding: {
                                                             vehicleName: n().createElement(
-                                                                k.U4,
+                                                                L.U4,
                                                                 j({}, t, { classNames: o }),
                                                             ),
                                                         },
                                                     });
                                                 case r.E.Tankman:
-                                                    return n().createElement(f.z, {
-                                                        classMix: W.crewSubtitle,
+                                                    return n().createElement(w.z, {
+                                                        classMix: U.crewSubtitle,
                                                         text: s.v_(u, q.common.comma()),
                                                     });
                                                 case r.E.Vehicle:
-                                                    return n().createElement(f.z, {
+                                                    return n().createElement(w.z, {
                                                         text: q.chapterChoice.stylePreview.extraLabel(),
                                                         binding: {
                                                             vehicleName: n().createElement(
-                                                                k.U4,
+                                                                L.U4,
                                                                 j({}, t, { classNames: o }),
                                                             ),
                                                         },
@@ -3268,13 +3262,13 @@
                                                 default:
                                                     return '';
                                             }
-                                        })(A, F, m, C),
+                                        })(A, F, m, h),
                                         A === r.E.Style &&
                                             d &&
                                             n().createElement(
-                                                x.i,
+                                                S.i,
                                                 { body: q.chapterChoice.vehicleInHangar.tooltip.text() },
-                                                n().createElement('div', { className: W.vehicleInHangar }),
+                                                n().createElement('div', { className: U.vehicleInHangar }),
                                             ),
                                     ),
                                 ),
@@ -3292,13 +3286,13 @@
                         verticalChapterLine__completed: 'ChapterPostProgressionLine_verticalChapterLine__completed_7c',
                     },
                     Y = ({ chapterState: e, isButtonHovered: u }) => {
-                        const t = (0, w.GS)().mediaSize,
-                            a = viewEnv.remToPx(t <= w.cJ.Small ? 47 : 57),
+                        const t = (0, v.GS)().mediaSize,
+                            a = viewEnv.remToPx(t <= v.cJ.Small ? 47 : 57),
                             o = e === r.l.Completed ? a + 1 : a,
                             i = viewEnv.remToPx(4);
                         return n().createElement(
                             'div',
-                            { className: v()(Z.base, u && Z.base__hovered) },
+                            { className: b()(Z.base, u && Z.base__hovered) },
                             e === r.l.Completed && n().createElement('div', { className: Z.circleShine }),
                             n().createElement(
                                 'svg',
@@ -3312,14 +3306,14 @@
                                     cx: i,
                                     cy: i,
                                     r: viewEnv.remToPx(3),
-                                    className: v()(Z.circle, Z[`circle__${e}`]),
+                                    className: b()(Z.circle, Z[`circle__${e}`]),
                                 }),
                                 n().createElement('line', {
                                     x1: i,
                                     x2: i,
                                     y1: viewEnv.remToPx(7),
                                     y2: o,
-                                    className: v()(Z.verticalChapterLine, Z[`verticalChapterLine__${e}`]),
+                                    className: b()(Z.verticalChapterLine, Z[`verticalChapterLine__${e}`]),
                                 }),
                             ),
                         );
@@ -3333,10 +3327,10 @@
                     },
                     Q = (0, A.Pi)(({ activateLine: e }) => {
                         const u = E().model.computes.chaptersLineInfo(),
-                            t = (0, w.GS)().mediaSize;
+                            t = (0, v.GS)().mediaSize;
                         return n().createElement(
                             'div',
-                            { className: v()(K.base, e && K.base__active) },
+                            { className: b()(K.base, e && K.base__active) },
                             n().createElement(
                                 'svg',
                                 { width: '100%', height: '100%', viewBox: '0 0 100% 100%' },
@@ -3347,7 +3341,7 @@
                                         y1: '0',
                                         y2: '0',
                                         key: `${e}_${a}`,
-                                        className: v()(K.horizontalChapterLine, K[`horizontalChapterLine__${u}`]),
+                                        className: b()(K.horizontalChapterLine, K[`horizontalChapterLine__${u}`]),
                                     }),
                                 ),
                             ),
@@ -3370,15 +3364,15 @@
                     te = R.strings.battle_pass.chapterChoice.postProgression,
                     ae = (0, A.Pi)(({ setIsButtonHovered: e, isButtonHovered: u }) => {
                         const t = E().model,
-                            a = (0, h.tv)(),
-                            r = (0, w.GS)().mediaSize,
+                            a = (0, D.tv)(),
+                            r = (0, v.GS)().mediaSize,
                             o = t.computes.regularChapters(),
                             i = t.computes.regularChaptersCompleteCount(),
                             s = i === o.length;
                         return n().createElement(
                             'div',
                             {
-                                className: v()(J.base, u && J.base__hovered),
+                                className: b()(J.base, u && J.base__hovered),
                                 style: { width: (ee(r) + ue) * (o.length - 1) },
                             },
                             n().createElement(Q, { activateLine: u }),
@@ -3396,7 +3390,7 @@
                                             e(!1);
                                         },
                                         onClick: () => {
-                                            (a.push(D._.battlePass.postProgression), X.hY.sound('play'));
+                                            (a.push(W._.battlePass.postProgression), X.hY.sound('play'));
                                         },
                                     },
                                     n().createElement('div', { className: J.buttonText }, te.button.text()),
@@ -3412,7 +3406,7 @@
                                     n().createElement(
                                         'div',
                                         { className: J.postProgressionText },
-                                        n().createElement(f.z, {
+                                        n().createElement(w.z, {
                                             classMix: J.text,
                                             text: te.text(),
                                             binding: {
@@ -3435,16 +3429,16 @@
                     se = 'Separator_line__bottom_a0',
                     le = 'Separator_plus_41',
                     ce = () => {
-                        const e = (0, w.GS)(),
+                        const e = (0, v.GS)(),
                             u = e.remScreenWidth,
                             t = e.remScreenHeight,
                             a = u >= 2560 && t >= 1440;
                         return n().createElement(
                             'div',
-                            { className: v()(ne, a && re) },
-                            n().createElement('div', { className: v()(oe, ie) }),
+                            { className: b()(ne, a && re) },
+                            n().createElement('div', { className: b()(oe, ie) }),
                             n().createElement('div', { className: le }),
-                            n().createElement('div', { className: v()(oe, se) }),
+                            n().createElement('div', { className: b()(oe, se) }),
                         );
                     },
                     Ee = 'Chapters_base_81',
@@ -3454,11 +3448,11 @@
                     Ae = 'Chapters_regularChapters_e9',
                     Fe = 'Chapters_chapterWrapper_51',
                     De = {
-                        [w.cJ.ExtraSmall]: 242,
-                        [w.cJ.Small]: 242,
-                        [w.cJ.Medium]: 376,
-                        [w.cJ.Large]: 452,
-                        [w.cJ.ExtraLarge]: 608,
+                        [v.cJ.ExtraSmall]: 242,
+                        [v.cJ.Small]: 242,
+                        [v.cJ.Medium]: 376,
+                        [v.cJ.Large]: 452,
+                        [v.cJ.ExtraLarge]: 608,
                     },
                     he = (0, A.Pi)(() => {
                         const e = E().model,
@@ -3470,7 +3464,7 @@
                             l = o[1];
                         return n().createElement(
                             'div',
-                            { className: v()(Ee, u ? de : _e) },
+                            { className: b()(Ee, u ? de : _e) },
                             n().createElement(
                                 'div',
                                 { className: me },
@@ -3507,13 +3501,13 @@
                         const u = E().model,
                             t = u.root.get().freePoints,
                             a = !u.computes.isCompleted() && t > 0,
-                            r = (0, w.GS)(),
+                            r = (0, v.GS)(),
                             o = r.remScreenWidth,
                             i = r.remScreenHeight,
                             s = o >= 2560 && i >= 1440;
                         return n().createElement(
                             'div',
-                            { className: v()(Ce, s && ge) },
+                            { className: b()(Ce, s && ge) },
                             n().createElement('div', { className: Be }, e),
                             n().createElement(
                                 'div',
@@ -3524,7 +3518,7 @@
                                         { className: be },
                                         Se.description(),
                                         n().createElement(
-                                            x.i,
+                                            S.i,
                                             { header: Se.tooltip.title(), body: Se.tooltip.description() },
                                             n().createElement(
                                                 'div',
@@ -3542,48 +3536,48 @@
                     const e = E(),
                         u = e.model,
                         t = e.controls,
-                        r = t.openAbout,
-                        o = t.openPointsInfo,
-                        i = t.onViewLoaded,
-                        s = u.root.get().isSeasonWithAdditionalBackground,
-                        l = u.computes.hasExtra(),
-                        c = u.computes.hasActive(),
-                        A = u.computes.isCompleted(),
-                        b = l && s,
+                        r = (0, D.tv)(),
+                        o = t.openAbout,
+                        i = t.openPointsInfo,
+                        s = t.onViewLoaded,
+                        l = u.root.get().isSeasonWithAdditionalBackground,
+                        c = u.computes.hasExtra(),
+                        A = u.computes.hasActive(),
+                        p = u.computes.isCompleted(),
+                        b = c && l,
                         v = (0, a.useState)(!1),
                         w = v[0],
-                        f = v[1],
-                        S = (0, h.tv)();
+                        f = v[1];
                     return (
                         F.N.useHandleKeydown(m.n.ESCAPE, () => {
-                            S.push(D._.root, void 0);
+                            r.goBack();
                         }),
                         (0, a.useEffect)(
                             () =>
                                 (0, d.v)(() => {
-                                    w || (i(), f(!0));
+                                    w || (s(), f(!0));
                                 }),
-                            [w, i],
+                            [w, s],
                         ),
                         n().createElement(
                             'div',
-                            { className: C },
-                            b && n().createElement('div', { className: B }),
+                            { className: h },
+                            b && n().createElement('div', { className: C }),
                             n().createElement(
                                 'div',
-                                { className: g },
-                                n().createElement(_.A, { caption: Pe.intro.aboutButton(), type: 'info', onClick: r }),
+                                { className: B },
+                                n().createElement(_.A, { caption: Pe.intro.aboutButton(), type: 'info', onClick: o }),
                                 n().createElement(_.A, {
                                     caption: Pe.howToEarnPoints.title(),
                                     type: 'info',
-                                    onClick: o,
+                                    onClick: i,
                                 }),
                             ),
                             n().createElement(
                                 'div',
-                                { className: p },
+                                { className: g },
                                 n().createElement(xe, {
-                                    title: c || A ? Pe.chapterChoice.activeTitle() : Pe.chapterChoice.title(),
+                                    title: A || p ? Pe.chapterChoice.activeTitle() : Pe.chapterChoice.title(),
                                 }),
                             ),
                             n().createElement(he, null),

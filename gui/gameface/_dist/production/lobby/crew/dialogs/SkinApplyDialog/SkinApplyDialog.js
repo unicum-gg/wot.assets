@@ -2437,17 +2437,18 @@
                                                   return u;
                                               })(t),
                                           )
-                                        : n.push({ blockType: r, colorTag: u, childList: [t] });
+                                        : n.push({ blockType: r, colorTag: u, childList: [t.replace(/\ufeff+/g, '')] });
                                 },
                             ),
                             n
                         );
                     },
                     hu = (e, u, t = '', n) => {
-                        const r = [];
+                        const r = [],
+                            a = e.replace(/(.)(、|。|ー)/g, '$1\ufeff$2');
                         return (
                             Au(
-                                e,
+                                a,
                                 /(?:%\(|{)(.*?)[)}][sd]?/g,
                                 (e) => {
                                     r.push(...Du(e, t, n));

@@ -252,10 +252,10 @@
                         arabic2roman: () => x,
                         children: () => a,
                         displayStatus: () => r.W,
-                        displayStatusIs: () => T,
+                        displayStatusIs: () => y,
                         enableFullScreenModeSupported: () => O,
                         events: () => i.U,
-                        extraSize: () => y,
+                        extraSize: () => T,
                         forceTriggerMouseMove: () => b,
                         freezeTextureBeforeResize: () => _,
                         getBrowserTexturePath: () => E,
@@ -346,11 +346,11 @@
                 function L() {
                     return viewEnv.getExternalPaddingsRem();
                 }
-                const T = Object.keys(r.W).reduce(
+                const y = Object.keys(r.W).reduce(
                         (u, e) => ((u[e] = () => viewEnv.getShowingStatus() === r.W[e]), u),
                         {},
                     ),
-                    y = {
+                    T = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -1248,7 +1248,7 @@
                         return a().createElement('div', p({ className: d()(t, b[i], w[l], f[o]) }, n), e);
                     },
                     L = ['children'];
-                const T = (u) => {
+                const y = (u) => {
                     let e = u.children,
                         t = (function (u, e) {
                             if (null == u) return {};
@@ -1261,8 +1261,8 @@
                         })(u, L);
                     return a().createElement(c, null, a().createElement(x, t, e));
                 };
-                var y = t(1533),
-                    S = t.n(y);
+                var T = t(1533),
+                    S = t.n(T);
                 function O(u) {
                     engine.call('PlaySound', u).catch((e) => {
                         console.error('[lib/sounds.js] playSound(', u, '): ', e);
@@ -2048,45 +2048,39 @@
                 const fu = 'Table_base_61',
                     xu = 'Table_row_d4',
                     Lu = 'Table_row__head_19',
-                    Tu = 'Table_row__content_6b',
-                    yu = 'Table_cell_8e',
+                    yu = 'Table_row__content_6b',
+                    Tu = 'Table_cell_8e',
                     Su = 'Table_cell__text_8c',
                     Ou = 'Table_cell__wide_52',
-                    Mu = 'Table_cell__wideHead_0b',
-                    ku = 'Table_cell__inFirstRow_49',
-                    Pu = 'Table_points_dc',
+                    Mu = 'Table_cell__inFirstRow_49',
+                    ku = 'Table_points_dc',
                     Ru = [wu.COMP7, wu.COMP7_LIGHT],
-                    Iu = ({ tableRows: u, arenaBonusType: e }) => {
+                    Pu = ({ tableRows: u, arenaBonusType: e }) => {
                         const t = Fu.U2(u, 1),
                             n = u.length > 1 ? (null == t ? void 0 : t.cell) : null;
                         return a().createElement(
                             'div',
                             { className: fu },
                             Fu.UI(u, (u, t) => {
-                                const r = d()(xu, 0 === t && Lu, 0 !== t && Tu),
-                                    i = n && 0 !== t && Ru.includes(e);
+                                const r = d()(xu, 0 === t && Lu, 0 !== t && yu);
                                 return a().createElement(
                                     'div',
                                     { key: t, className: r },
-                                    Fu.UI(u.cell, ({ text: u, points: r }, l) => {
-                                        const o = d()(
-                                            yu,
-                                            n && n[l].value.text && Su,
-                                            i && n && n[l].value.text && Ou,
-                                            0 === t && ku,
-                                            0 === t && 0 === l && e === wu.COMP7 && Mu,
-                                        );
+                                    Fu.UI(u.cell, ({ text: u, points: r }, i) => {
+                                        const l = null == n ? void 0 : n[i].value.text,
+                                            o = 0 === i && Ru.includes(e),
+                                            s = d()(Tu, l && Su, o && Ou, 0 === t && Mu);
                                         return a().createElement(
                                             'div',
-                                            { className: o, lang: R.strings.settings.LANGUAGE_CODE(), key: l },
-                                            r ? a().createElement('div', { className: Pu }, r) : u,
+                                            { className: s, lang: R.strings.settings.LANGUAGE_CODE(), key: i },
+                                            r ? a().createElement('div', { className: ku }, r) : u,
                                         );
                                     }),
                                 );
                             }),
                         );
                     },
-                    Nu = {
+                    Iu = {
                         base: 'CButton_base_40',
                         base__main: 'CButton_base__main_42',
                         base__primary: 'CButton_base__primary_7f',
@@ -2109,7 +2103,7 @@
                         base__highlightActive: 'CButton_base__highlightActive_b2',
                         content: 'CButton_content_cc',
                     };
-                let Hu, Wu;
+                let Nu, Hu;
                 (!(function (u) {
                     ((u.main = 'main'),
                         (u.primary = 'primary'),
@@ -2117,14 +2111,14 @@
                         (u.primaryRed = 'primaryRed'),
                         (u.secondary = 'secondary'),
                         (u.ghost = 'ghost'));
-                })(Hu || (Hu = {})),
+                })(Nu || (Nu = {})),
                     (function (u) {
                         ((u.extraSmall = 'extraSmall'),
                             (u.small = 'small'),
                             (u.medium = 'medium'),
                             (u.large = 'large'));
-                    })(Wu || (Wu = {})));
-                const Uu = ({
+                    })(Hu || (Hu = {})));
+                const Wu = ({
                     children: u,
                     size: e,
                     disabled: t,
@@ -2136,7 +2130,7 @@
                     onMouseLeave: E,
                     onClick: A,
                     isFocused: F = !1,
-                    type: c = Hu.primary,
+                    type: c = Nu.primary,
                     soundHover: D = 'highlight',
                     soundClick: _ = 'play',
                 }) => {
@@ -2167,12 +2161,12 @@
                             {
                                 ref: B,
                                 className: d()(
-                                    Nu.base,
-                                    Nu[`base__${c}`],
-                                    t && Nu.base__disabled,
-                                    e && Nu[`base__${e}`],
-                                    m && Nu.base__focus,
-                                    v && Nu.base__highlightActive,
+                                    Iu.base,
+                                    Iu[`base__${c}`],
+                                    t && Iu.base__disabled,
+                                    e && Iu[`base__${e}`],
+                                    m && Iu.base__focus,
+                                    v && Iu.base__highlightActive,
                                     r,
                                 ),
                                 onMouseEnter: function (u) {
@@ -2198,37 +2192,37 @@
                                     t || (A && A(u));
                                 },
                             },
-                            c !== Hu.ghost &&
+                            c !== Nu.ghost &&
                                 a().createElement(
                                     a().Fragment,
                                     null,
-                                    a().createElement('div', { className: Nu.back }),
-                                    a().createElement('span', { className: Nu.texture }),
+                                    a().createElement('div', { className: Iu.back }),
+                                    a().createElement('span', { className: Iu.texture }),
                                 ),
                             a().createElement(
                                 'span',
-                                { className: d()(Nu.state, Nu.state__default) },
-                                a().createElement('span', { className: Nu.stateDisabled }),
-                                a().createElement('span', { className: Nu.stateHighlightHover }),
-                                a().createElement('span', { className: Nu.stateHighlightActive }),
+                                { className: d()(Iu.state, Iu.state__default) },
+                                a().createElement('span', { className: Iu.stateDisabled }),
+                                a().createElement('span', { className: Iu.stateHighlightHover }),
+                                a().createElement('span', { className: Iu.stateHighlightActive }),
                             ),
                             a().createElement(
                                 'span',
-                                { className: Nu.content, lang: R.strings.settings.LANGUAGE_CODE() },
+                                { className: Iu.content, lang: R.strings.settings.LANGUAGE_CODE() },
                                 u,
                             ),
                         )
                     );
                 };
-                var Gu = t(9243);
-                const Vu = 'Card_base_cd',
-                    $u = 'Card_base__small_ec',
-                    ju = 'Card_text_d5',
-                    zu = 'Card_image_1e',
-                    qu = 'Card_vehicleBonusListContainer_71',
-                    Ku = 'Card_backgroundImage_43',
-                    Yu = 'Card_cardTitle_e7';
-                let Xu;
+                var Uu = t(9243);
+                const Gu = 'Card_base_cd',
+                    Vu = 'Card_base__small_ec',
+                    $u = 'Card_text_d5',
+                    ju = 'Card_image_1e',
+                    zu = 'Card_vehicleBonusListContainer_71',
+                    qu = 'Card_backgroundImage_43',
+                    Ku = 'Card_cardTitle_e7';
+                let Yu;
                 !(function (u) {
                     ((u[(u.TECH = 0)] = 'TECH'),
                         (u[(u.LIMIT = 1)] = 'LIMIT'),
@@ -2237,65 +2231,65 @@
                         (u[(u.EPIC_BATTLE_POINTS = 4)] = 'EPIC_BATTLE_POINTS'),
                         (u[(u.COMP7 = 5)] = 'COMP7'),
                         (u[(u.COMP7_LIGHT = 6)] = 'COMP7_LIGHT'));
-                })(Xu || (Xu = {}));
-                const Zu = R.strings.battle_pass.howToEarnPoints.card,
-                    Qu = R.images.gui.maps.icons.battlePass,
-                    Ju = {
-                        [Xu.TECH]: { title: Zu.specialVehicle.title(), text: Zu.specialVehicle.text() },
-                        [Xu.LIMIT]: {
-                            title: Zu.limitPoints.title(),
-                            text: Zu.limitPoints.text(),
-                            image: { small: Qu.tooltips.points_reward(), large: Qu.tooltips.points_136() },
+                })(Yu || (Yu = {}));
+                const Xu = R.strings.battle_pass.howToEarnPoints.card,
+                    Zu = R.images.gui.maps.icons.battlePass,
+                    Qu = {
+                        [Yu.TECH]: { title: Xu.specialVehicle.title(), text: Xu.specialVehicle.text() },
+                        [Yu.LIMIT]: {
+                            title: Xu.limitPoints.title(),
+                            text: Xu.limitPoints.text(),
+                            image: { small: Zu.tooltips.points_reward(), large: Zu.tooltips.points_136() },
                             backgroundImage: {
-                                small: Qu.how_to_earn_points.godrays_157x157(),
-                                large: Qu.how_to_earn_points.godrays_210x210(),
+                                small: Zu.how_to_earn_points.godrays_157x157(),
+                                large: Zu.how_to_earn_points.godrays_210x210(),
                             },
                         },
-                        [Xu.DAILY]: {
-                            title: Zu.daily.title(),
-                            text: Zu.daily.text(),
-                            linkText: Zu.daily.linkText(),
+                        [Yu.DAILY]: {
+                            title: Xu.daily.title(),
+                            text: Xu.daily.text(),
+                            linkText: Xu.daily.linkText(),
                             image: {
-                                small: Qu.how_to_earn_points.quest_80x80(),
-                                large: Qu.how_to_earn_points.quest_136x136(),
+                                small: Zu.how_to_earn_points.quest_80x80(),
+                                large: Zu.how_to_earn_points.quest_136x136(),
                             },
                         },
-                        [Xu.BATTLE]: {
-                            title: Zu.battle.title(),
-                            text: Zu.battle.text(),
-                            linkText: Zu.battle.linkText(),
+                        [Yu.BATTLE]: {
+                            title: Xu.battle.title(),
+                            text: Xu.battle.text(),
+                            linkText: Xu.battle.linkText(),
                             image: {
-                                small: Qu.how_to_earn_points.quest_80x80(),
-                                large: Qu.how_to_earn_points.quest_136x136(),
+                                small: Zu.how_to_earn_points.quest_80x80(),
+                                large: Zu.how_to_earn_points.quest_136x136(),
                             },
                         },
-                        [Xu.EPIC_BATTLE_POINTS]: {
-                            title: Zu.epicBattlePoints.title(),
-                            text: Zu.epicBattlePoints.text(),
-                            image: { small: Qu.tooltips.points_reward(), large: Qu.tooltips.points_136() },
+                        [Yu.EPIC_BATTLE_POINTS]: {
+                            title: Xu.epicBattlePoints.title(),
+                            text: Xu.epicBattlePoints.text(),
+                            image: { small: Zu.tooltips.points_reward(), large: Zu.tooltips.points_136() },
                             backgroundImage: {
-                                small: Qu.how_to_earn_points.godrays_157x157(),
-                                large: Qu.how_to_earn_points.godrays_210x210(),
+                                small: Zu.how_to_earn_points.godrays_157x157(),
+                                large: Zu.how_to_earn_points.godrays_210x210(),
                             },
                         },
-                        [Xu.COMP7]: {
-                            title: Zu.comp7.title(),
-                            text: Zu.comp7.text(),
+                        [Yu.COMP7]: {
+                            title: Xu.comp7.title(),
+                            text: Xu.comp7.text(),
                             image: {
-                                small: Qu.how_to_earn_points.quest_80x80(),
-                                large: Qu.how_to_earn_points.quest_136x136(),
+                                small: Zu.how_to_earn_points.quest_80x80(),
+                                large: Zu.how_to_earn_points.quest_136x136(),
                             },
                         },
-                        [Xu.COMP7_LIGHT]: {
-                            title: Zu.comp7Light.title(),
-                            text: Zu.comp7Light.text(),
+                        [Yu.COMP7_LIGHT]: {
+                            title: Xu.comp7Light.title(),
+                            text: Xu.comp7Light.text(),
                             image: {
-                                small: Qu.how_to_earn_points.quest_80x80(),
-                                large: Qu.how_to_earn_points.quest_136x136(),
+                                small: Zu.how_to_earn_points.quest_80x80(),
+                                large: Zu.how_to_earn_points.quest_136x136(),
                             },
                         },
                     },
-                    ue = (0, cu.Pi)(({ cardIndex: u, slideIndex: e, isSmall: t = !1 }) => {
+                    Ju = (0, cu.Pi)(({ cardIndex: u, slideIndex: e, isSmall: t = !1 }) => {
                         const n = vu(),
                             r = n.model,
                             i = n.controls,
@@ -2305,7 +2299,7 @@
                             E = o.viewId,
                             A = o.vehiclesList,
                             F = l >= C.Medium,
-                            c = Ju[s],
+                            c = Qu[s],
                             D = c.text,
                             _ = c.image,
                             B = c.backgroundImage,
@@ -2318,42 +2312,42 @@
                             };
                         return a().createElement(
                             'div',
-                            { className: d()(Vu, t && $u) },
-                            a().createElement('div', { className: Yu }, Ju[s].title),
+                            { className: d()(Gu, t && Vu) },
+                            a().createElement('div', { className: Ku }, Qu[s].title),
                             _ &&
                                 a().createElement(
                                     'div',
-                                    { className: zu, style: g },
-                                    B && a().createElement('div', { className: Ku, style: v }),
+                                    { className: ju, style: g },
+                                    B && a().createElement('div', { className: qu, style: v }),
                                 ),
                             A.length > 0 &&
                                 a().createElement(
                                     'div',
-                                    { className: qu },
-                                    a().createElement(Gu.Y, { vehiclesList: A }),
+                                    { className: zu },
+                                    a().createElement(Uu.Y, { vehiclesList: A }),
                                 ),
-                            a().createElement('div', { className: ju }, D),
+                            a().createElement('div', { className: $u }, D),
                             m &&
                                 E &&
                                 a().createElement(
-                                    Uu,
+                                    Wu,
                                     { onClick: () => E && i.openLink(E), size: 'medium', type: 'ghost' },
                                     m,
                                 ),
                         );
                     }),
-                    ee = R.images.gui.maps.icons,
-                    te = ee.battleTypes.c_64x64,
-                    ne = ee.battleTypes.c_136x136,
-                    ae = {
-                        [wu.REGULAR]: { small: te.random(), large: ne.random() },
-                        [wu.RANKED]: { small: te.ranked(), large: ne.ranked() },
-                        [wu.BATTLE_ROYALE_SOLO]: { small: te.steelhunt(), large: ne.battle_royale() },
-                        [wu.EPIC_BATTLE]: { small: te.frontline(), large: ne.epicbattle() },
-                        [wu.COMP7]: { small: te.comp7(), large: ne.comp7() },
-                        [wu.COMP7_LIGHT]: { small: te.comp7Light(), large: ne.comp7Light() },
+                    ue = R.images.gui.maps.icons,
+                    ee = ue.battleTypes.c_64x64,
+                    te = ue.battleTypes.c_136x136,
+                    ne = {
+                        [wu.REGULAR]: { small: ee.random(), large: te.random() },
+                        [wu.RANKED]: { small: ee.ranked(), large: te.ranked() },
+                        [wu.BATTLE_ROYALE_SOLO]: { small: ee.steelhunt(), large: te.battle_royale() },
+                        [wu.EPIC_BATTLE]: { small: ee.frontline(), large: te.epicbattle() },
+                        [wu.COMP7]: { small: ee.comp7(), large: te.comp7() },
+                        [wu.COMP7_LIGHT]: { small: ee.comp7Light(), large: te.comp7Light() },
                     },
-                    re = {
+                    ae = {
                         [wu.REGULAR]: { levelRange: [4, 11] },
                         [wu.RANKED]: { levelRange: [10] },
                         [wu.BATTLE_ROYALE_SOLO]: { levelRange: [0] },
@@ -2361,23 +2355,23 @@
                         [wu.COMP7]: { levelRange: [10] },
                         [wu.COMP7_LIGHT]: { levelRange: [8] },
                     },
-                    ie = 'Slide_base_b8',
-                    le = 'Slide_container_2d',
-                    oe = 'Slide_tableBackground_24',
-                    se = 'Slide_tableContainer_90',
-                    Ee = 'Slide_titleContainer_8a',
-                    Ae = 'Slide_titleImage_f0',
-                    Fe = 'Slide_title_31',
-                    ce = 'Slide_description_42',
-                    De = 'Slide_cards_36',
-                    de = 'Slide_cardsWrapper_5d',
-                    _e = (u, e) => {
-                        const t = ae[e],
+                    re = 'Slide_base_b8',
+                    ie = 'Slide_container_2d',
+                    le = 'Slide_tableBackground_24',
+                    oe = 'Slide_tableContainer_90',
+                    se = 'Slide_titleContainer_8a',
+                    Ee = 'Slide_titleImage_f0',
+                    Ae = 'Slide_title_31',
+                    Fe = 'Slide_description_42',
+                    ce = 'Slide_cards_36',
+                    De = 'Slide_cardsWrapper_5d',
+                    de = (u, e) => {
+                        const t = ne[e],
                             n = t.small,
                             a = t.large;
                         return { backgroundImage: `url(${u ? a : n})` };
                     },
-                    Be = (0, cu.Pi)(({ index: u }) => {
+                    _e = (0, cu.Pi)(({ index: u }) => {
                         var e;
                         const t = vu().model.computes.getSlide(u),
                             n = t.title,
@@ -2386,7 +2380,7 @@
                             l = t.cards,
                             o = t.arenaBonusType,
                             s = h().mediaSize >= C.Medium,
-                            E = (null == (e = re[o]) ? void 0 : e.levelRange) || [],
+                            E = (null == (e = ae[o]) ? void 0 : e.levelRange) || [],
                             A = (0, bu.uF)(
                                 r,
                                 2 === E.length
@@ -2395,31 +2389,31 @@
                             );
                         return a().createElement(
                             'div',
-                            { className: ie },
+                            { className: re },
                             a().createElement(
                                 'div',
-                                { className: le },
-                                a().createElement('div', { className: oe }),
+                                { className: ie },
+                                a().createElement('div', { className: le }),
                                 a().createElement(
                                     'div',
-                                    { className: se },
-                                    a().createElement('div', { className: Ae, style: _e(s, o) }),
+                                    { className: oe },
+                                    a().createElement('div', { className: Ee, style: de(s, o) }),
                                     a().createElement(
                                         'div',
-                                        { className: Ee },
-                                        a().createElement('div', { className: Fe }, n),
-                                        a().createElement('div', { className: ce }, A),
+                                        { className: se },
+                                        a().createElement('div', { className: Ae }, n),
+                                        a().createElement('div', { className: Fe }, A),
                                     ),
-                                    a().createElement(Iu, { tableRows: i, arenaBonusType: o }),
+                                    a().createElement(Pu, { tableRows: i, arenaBonusType: o }),
                                 ),
                                 a().createElement(
                                     'div',
-                                    { className: De },
+                                    { className: ce },
                                     a().createElement(
                                         'div',
-                                        { className: de },
+                                        { className: De },
                                         Fu.UI(l, (e, t) =>
-                                            a().createElement(ue, {
+                                            a().createElement(Ju, {
                                                 cardIndex: t,
                                                 slideIndex: u,
                                                 key: `card-${t}`,
@@ -2431,50 +2425,50 @@
                             ),
                         );
                     }),
-                    Ce = 'App_base_1c',
-                    me = 'App_animationMain_2b',
-                    ge = 'App_mainBg_a3',
-                    he = 'App_dimBg_f6',
-                    ve = 'App_close_6f',
-                    pe = 'App_titleContainer_46',
-                    be = 'App_title_d4',
-                    we = 'App_description_af',
-                    fe = 'App_pagination_1a',
-                    xe = 'App_animationBg_04',
-                    Le = R.strings.battle_pass.howToEarnPoints,
-                    Te = (0, cu.Pi)(() => {
+                    Be = 'App_base_1c',
+                    Ce = 'App_animationMain_2b',
+                    me = 'App_mainBg_a3',
+                    ge = 'App_dimBg_f6',
+                    he = 'App_close_6f',
+                    ve = 'App_titleContainer_46',
+                    pe = 'App_title_d4',
+                    be = 'App_description_af',
+                    we = 'App_pagination_1a',
+                    fe = 'App_animationBg_04',
+                    xe = R.strings.battle_pass.howToEarnPoints,
+                    Le = (0, cu.Pi)(() => {
                         const u = vu().model;
                         return (
                             Au(),
                             a().createElement(
                                 'div',
-                                { className: Ce },
-                                a().createElement('div', { className: xe }),
+                                { className: Be },
+                                a().createElement('div', { className: fe }),
                                 a().createElement(
                                     'div',
-                                    { className: me },
+                                    { className: Ce },
                                     a().createElement(
                                         'div',
-                                        { className: ge },
-                                        a().createElement('div', { className: he }),
+                                        { className: me },
+                                        a().createElement('div', { className: ge }),
                                     ),
                                     a().createElement(
                                         'div',
-                                        { className: pe },
-                                        a().createElement('div', { className: be }, Le.title()),
-                                        a().createElement('div', { className: we }, Le.description()),
+                                        { className: ve },
+                                        a().createElement('div', { className: pe }, xe.title()),
+                                        a().createElement('div', { className: be }, xe.description()),
                                     ),
                                     u.computes.getItems().length > 0 &&
                                         a().createElement(
                                             nu,
-                                            { hasArrow: !0, selectedIndex: 0, className: fe },
+                                            { hasArrow: !0, selectedIndex: 0, className: we },
                                             Fu.UI(u.gameModes.get(), (u, e) => ({
-                                                render: () => a().createElement(Be, { key: e, index: e }),
+                                                render: () => a().createElement(_e, { key: e, index: e }),
                                             })),
                                         ),
                                     a().createElement(
                                         'div',
-                                        { className: ve },
+                                        { className: he },
                                         a().createElement(lu, {
                                             caption: R.strings.menu.viewHeader.closeBtn.label(),
                                             type: 'close',
@@ -2488,7 +2482,7 @@
                     });
                 engine.whenReady.then(() => {
                     S().render(
-                        a().createElement(hu, null, a().createElement(T, null, a().createElement(Te, null))),
+                        a().createElement(hu, null, a().createElement(y, null, a().createElement(Le, null))),
                         document.getElementById('root'),
                     );
                 });

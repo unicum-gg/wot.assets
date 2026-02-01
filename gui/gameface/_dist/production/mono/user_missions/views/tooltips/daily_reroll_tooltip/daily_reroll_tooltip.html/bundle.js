@@ -1,4 +1,4 @@
-import { q as s, j as r } from '../../../../chunks/vendor.js';
+import { p as s, j as r } from '../../../../chunks/vendor.js';
 import { i as e, n as i, b as o, f as t, e as m, d as a, r as n } from '../../../../chunks/lib.js';
 import { g as l } from '../../../../chunks/utils.js';
 import { E as d } from '../../../../chunks/extended_tooltip_decorator.js';

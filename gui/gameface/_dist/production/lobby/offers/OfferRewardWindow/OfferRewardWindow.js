@@ -42,18 +42,18 @@
                         events: () => O,
                         extraSize: () => au,
                         forceTriggerMouseMove: () => eu,
-                        freezeTextureBeforeResize: () => W,
+                        freezeTextureBeforeResize: () => $,
                         getBrowserTexturePath: () => Y,
                         getDisplayStatus: () => tu,
                         getExternalPaddingsRem: () => ru,
                         getFontNames: () => nu,
-                        getScale: () => $,
+                        getScale: () => X,
                         getSize: () => z,
                         getViewGlobalPosition: () => V,
                         initExternalPaddings: () => lu,
                         isEventHandled: () => uu,
                         isFocused: () => Z,
-                        pxToRem: () => X,
+                        pxToRem: () => W,
                         remToPx: () => K,
                         resize: () => q,
                         sendEvent: () => L,
@@ -268,13 +268,13 @@
                     const e = viewEnv.getViewGlobalPositionRem();
                     return 'rem' === u ? e : { x: K(e.x), y: K(e.y) };
                 }
-                function W() {
+                function $() {
                     viewEnv.freezeTextureBeforeResize();
                 }
-                function $() {
+                function X() {
                     return viewEnv.getScale();
                 }
-                function X(u) {
+                function W(u) {
                     return viewEnv.pxToRem(u);
                 }
                 function K(u) {
@@ -1399,14 +1399,14 @@
                         V.apply(this, arguments)
                     );
                 }
-                const W = ({ children: u, tooltipArgs: e, className: t }) => {
+                const $ = ({ children: u, tooltipArgs: e, className: t }) => {
                     if (!e) return u;
                     const n = o().createElement('div', { className: t }, u);
                     if (e.header || e.body) return o().createElement(O, e, n);
                     const r = e.contentId;
                     return r ? o().createElement(h, V({}, e, { contentId: r }), n) : o().createElement(q, e, n);
                 };
-                let $, X, K, Q, Z, J, uu, eu;
+                let X, W, K, Q, Z, J, uu, eu;
                 (!(function (u) {
                     ((u.Items = 'items'),
                         (u.Equipment = 'equipment'),
@@ -1459,11 +1459,8 @@
                         (u.EquipCoin = 'equipCoin'),
                         (u.LootBox = 'lootBox'),
                         (u.BrCoin = 'brcoin'),
-                        (u.Attachment = 'attachment'),
-                        (u.Stamp = 'stamp'),
-                        (u.WtEventLootbox = 'wtevent_lootBox'),
-                        (u.WtEventTicket = 'wtevent_ticket'));
-                })($ || ($ = {})),
+                        (u.Attachment = 'attachment'));
+                })(X || (X = {})),
                     (function (u) {
                         ((u.Gold = 'gold'),
                             (u.Credits = 'credits'),
@@ -1503,7 +1500,7 @@
                             (u.BattleBadge = 'dossier_badge'),
                             (u.BattleAchievement = 'dossier_achievement'),
                             (u.EquipCoin = 'equipCoin'));
-                    })(X || (X = {})),
+                    })(W || (W = {})),
                     (function (u) {
                         ((u.Big = 'big'),
                             (u.Small = 'small'),
@@ -1571,7 +1568,7 @@
                     (function (u) {
                         ((u[(u.Engraving = 0)] = 'Engraving'), (u[(u.Background = 1)] = 'Background'));
                     })(eu || (eu = {})));
-                const tu = [$.Attachment];
+                const tu = [X.Attachment];
                 const nu = ({ value: u, format: e = 'integral' }) => {
                         const t = (function (u) {
                                 return 'gold' === u ? l.B3.GOLD : l.B3.INTEGRAL;
@@ -1580,50 +1577,47 @@
                         return void 0 !== u && void 0 !== n ? n : null;
                     },
                     ou = [
-                        $.Items,
-                        $.Equipment,
-                        $.Xp,
-                        $.XpFactor,
-                        $.Blueprints,
-                        $.BlueprintsAny,
-                        $.Goodies,
-                        $.Berths,
-                        $.Slots,
-                        $.Tokens,
-                        $.CrewSkins,
-                        $.CrewBooks,
-                        $.Customizations,
-                        $.CreditsFactor,
-                        $.TankmenXp,
-                        $.TankmenXpFactor,
-                        $.FreeXpFactor,
-                        $.BattleToken,
-                        $.LootBox,
-                        $.PremiumUniversal,
-                        $.NaturalCover,
-                        $.BpCoin,
-                        $.BattlePassSelectToken,
-                        $.BattlaPassFinalAchievement,
-                        $.BattleBadge,
-                        $.BattlePassTicket,
-                        $.BonusX5,
-                        $.CrewBonusX3,
-                        $.EpicSelectToken,
-                        $.Comp7TokenWeeklyReward,
-                        $.DeluxeGift,
-                        $.ModernizedDevicesT1Gift,
-                        $.ModernizedDevicesT2Gift,
-                        $.ModernizedDevicesT3Gift,
-                        $.BattleBoosterGift,
-                        $.OptionalDevice,
-                        $.Attachment,
-                        $.Stamp,
-                        $.WtEventLootbox,
-                        $.WtEventTicket,
+                        X.Items,
+                        X.Equipment,
+                        X.Xp,
+                        X.XpFactor,
+                        X.Blueprints,
+                        X.BlueprintsAny,
+                        X.Goodies,
+                        X.Berths,
+                        X.Slots,
+                        X.Tokens,
+                        X.CrewSkins,
+                        X.CrewBooks,
+                        X.Customizations,
+                        X.CreditsFactor,
+                        X.TankmenXp,
+                        X.TankmenXpFactor,
+                        X.FreeXpFactor,
+                        X.BattleToken,
+                        X.LootBox,
+                        X.PremiumUniversal,
+                        X.NaturalCover,
+                        X.BpCoin,
+                        X.BattlePassSelectToken,
+                        X.BattlaPassFinalAchievement,
+                        X.BattleBadge,
+                        X.BattlePassTicket,
+                        X.BonusX5,
+                        X.CrewBonusX3,
+                        X.EpicSelectToken,
+                        X.Comp7TokenWeeklyReward,
+                        X.DeluxeGift,
+                        X.ModernizedDevicesT1Gift,
+                        X.ModernizedDevicesT2Gift,
+                        X.ModernizedDevicesT3Gift,
+                        X.BattleBoosterGift,
+                        X.OptionalDevice,
+                        X.Attachment,
                     ],
-                    ru = [$.Gold, $.Credits, $.Crystal, $.FreeXp],
-                    iu = [$.BattlePassPoints, $.EquipCoin],
-                    au = [$.PremiumPlus, $.Premium],
+                    ru = [X.Gold, X.Credits, X.Crystal, X.FreeXp],
+                    iu = [X.BattlePassPoints, X.EquipCoin],
+                    au = [X.PremiumPlus, X.Premium],
                     su = [K.Small, K.Big],
                     Eu = {
                         base: 'Reward_base_ea',
@@ -1742,7 +1736,7 @@
                                 style: E,
                             },
                             o().createElement(
-                                W,
+                                $,
                                 { tooltipArgs: A, className: Eu.tooltipWrapper },
                                 o().createElement(
                                     o().Fragment,
@@ -1788,7 +1782,7 @@
                             ),
                             t &&
                                 o().createElement(
-                                    W,
+                                    $,
                                     { tooltipArgs: c },
                                     o().createElement('div', {
                                         className: k()(Eu.timer, null == _ ? void 0 : _.periodicIcon),

@@ -232,7 +232,7 @@
                         getScale: () => F,
                         getSize: () => E,
                         getViewGlobalPosition: () => g,
-                        initExternalPaddings: () => k,
+                        initExternalPaddings: () => P,
                         isEventHandled: () => v,
                         isFocused: () => C,
                         pxToRem: () => D,
@@ -334,7 +334,7 @@
                 function O() {
                     viewEnv.setFullscreenModeSupported(!0);
                 }
-                function k(e) {
+                function P(e) {
                     function u() {
                         const u = viewEnv.getExternalPaddingsRem(),
                             t = u.top,
@@ -1147,7 +1147,7 @@
                 };
                 var T = t(1533),
                     O = t.n(T);
-                const k = {
+                const P = {
                         base: 'TextButton_base_b6',
                         base__right: 'TextButton_base__right_39',
                         icon: 'TextButton_icon_17',
@@ -1165,7 +1165,7 @@
                         base__left: 'TextButton_base__left_ff',
                         shine: 'TextButton_shine_e2',
                     },
-                    P = [
+                    k = [
                         'caption',
                         'onClick',
                         'goto',
@@ -1218,7 +1218,7 @@
                                 r = Object.keys(e);
                             for (a = 0; a < r.length; a++) ((t = r[a]), u.indexOf(t) >= 0 || (n[t] = e[t]));
                             return n;
-                        })(e, P);
+                        })(e, k);
                     const p = (0, a.useCallback)(
                             (e) => {
                                 (null == o || o(e), s.O.sound.play.sound(D));
@@ -1247,7 +1247,7 @@
                         'div',
                         L(
                             {
-                                className: g()(k.base, k[`base__${A}`], k[`base__${E}`], null == i ? void 0 : i.base),
+                                className: g()(P.base, P[`base__${A}`], P[`base__${E}`], null == i ? void 0 : i.base),
                                 onMouseEnter: p,
                                 onMouseLeave: v,
                                 onMouseDown: b,
@@ -1256,18 +1256,18 @@
                             },
                             C,
                         ),
-                        'info' !== A && n().createElement('div', { className: k.shine }),
+                        'info' !== A && n().createElement('div', { className: P.shine }),
                         n().createElement(
                             'div',
-                            { className: g()(k.icon, k[`icon__${A}`], k[`icon__${E}`], null == i ? void 0 : i.icon) },
-                            n().createElement('div', { className: g()(k.glow, null == i ? void 0 : i.glow) }),
+                            { className: g()(P.icon, P[`icon__${A}`], P[`icon__${E}`], null == i ? void 0 : i.icon) },
+                            n().createElement('div', { className: g()(P.glow, null == i ? void 0 : i.glow) }),
                         ),
                         n().createElement(
                             'div',
-                            { className: g()(k.caption, k[`caption__${A}`], null == i ? void 0 : i.caption) },
+                            { className: g()(P.caption, P[`caption__${A}`], null == i ? void 0 : i.caption) },
                             u,
                         ),
-                        r && n().createElement('div', { className: g()(k.goto, null == i ? void 0 : i.goto) }, r),
+                        r && n().createElement('div', { className: g()(P.goto, null == i ? void 0 : i.goto) }, r),
                     );
                 };
                 var M = t(5521),
@@ -1358,10 +1358,7 @@
                         (e.EquipCoin = 'equipCoin'),
                         (e.LootBox = 'lootBox'),
                         (e.BrCoin = 'brcoin'),
-                        (e.Attachment = 'attachment'),
-                        (e.Stamp = 'stamp'),
-                        (e.WtEventLootbox = 'wtevent_lootBox'),
-                        (e.WtEventTicket = 'wtevent_ticket'));
+                        (e.Attachment = 'attachment'));
                 })(z || (z = {})),
                     (function (e) {
                         ((e.Gold = 'gold'),
@@ -1509,9 +1506,6 @@
                         z.BattleBoosterGift,
                         z.OptionalDevice,
                         z.Attachment,
-                        z.Stamp,
-                        z.WtEventLootbox,
-                        z.WtEventTicket,
                     ],
                     ee = [z.Gold, z.Credits, z.Crystal, z.FreeXp],
                     ue = [z.BattlePassPoints, z.EquipCoin],
@@ -2149,7 +2143,7 @@
                 };
                 t(1281);
                 let Oe;
-                function ke(e, u) {
+                function Pe(e, u) {
                     return e.replace(/(\{|%\()\w+(\}|\)s)/g, (e) => {
                         const t = 0 === e.indexOf('%') ? 2 : 1;
                         return String(u[e.slice(t, -t)]);
@@ -2158,7 +2152,7 @@
                 !(function (e) {
                     ((e[(e.left = 0)] = 'left'), (e[(e.right = 1)] = 'right'));
                 })(Oe || (Oe = {}));
-                const Pe = (e) => e.replace(/&nbsp;/g, ' '),
+                const ke = (e) => e.replace(/&nbsp;/g, ' '),
                     Le =
                         ((() => {
                             const e = new RegExp(
@@ -2210,7 +2204,7 @@
                                       n().createElement(
                                           Re,
                                           { type: ye.secondary, size: Te.medium, onClick: a.openNextReward },
-                                          ke(Me.moreRewards(), { value: s }),
+                                          Pe(Me.moreRewards(), { value: s }),
                                       ),
                                   )
                                 : i &&
@@ -2901,9 +2895,9 @@
                 }
                 function Tu(e, u, t, a = !1) {
                     return e !== uu.Staged || !u || a
-                        ? Pe(t)
-                        : Pe(
-                              ke(R.strings.advanced_achievements.steppedAchievementTitle(), {
+                        ? ke(t)
+                        : ke(
+                              Pe(R.strings.advanced_achievements.steppedAchievementTitle(), {
                                   achievementName: t,
                                   stage: u,
                               }),
@@ -2911,8 +2905,8 @@
                 }
                 const Ru = 'AchievementWidget_base_69',
                     Ou = 'AchievementWidget_achievement_76',
-                    ku = 'AchievementWidget_iconCheck_06',
-                    Pu = (0, H.Pi)(({ index: e, className: u }) => {
+                    Pu = 'AchievementWidget_iconCheck_06',
+                    ku = (0, H.Pi)(({ index: e, className: u }) => {
                         const t = be(),
                             r = t.model,
                             s = t.controls,
@@ -2964,7 +2958,7 @@
                                 iconSizeMap: h,
                                 classNames: { base: Ou },
                             }),
-                            n().createElement('div', { className: ku }),
+                            n().createElement('div', { className: Pu }),
                             n().createElement(Qe, { key: p, content: Tu(E, A, yu(d)) }),
                         );
                     }),
@@ -3840,7 +3834,7 @@
                             'div',
                             { className: g()(vt, u) },
                             r() === Ce.DogTag
-                                ? ke(R.strings.achievements_page.rewardView.reward.dogTag(), {
+                                ? Pe(R.strings.achievements_page.rewardView.reward.dogTag(), {
                                       value: ((l = i), bt.$num(l)).title(),
                                   })
                                 : o,
@@ -3901,7 +3895,7 @@
                                                 onMouseEnter: () => G(R.sounds.ach_hover()),
                                                 onClick: () => G(R.sounds.ach_sign()),
                                             },
-                                            n().createElement(Pu, { index: e }),
+                                            n().createElement(ku, { index: e }),
                                         ),
                                     ),
                                     s()
@@ -3923,8 +3917,8 @@
                     Tt = 'Content_header_55',
                     Rt = 'Content_title_ae',
                     Ot = 'Content_rewards_4f',
-                    kt = R.strings.achievements_page.rewardView,
-                    Pt = { to: { opacity: 1, transform: 'translateY(0)' }, delay: 1e3, config: Object.assign({}, we) },
+                    Pt = R.strings.achievements_page.rewardView,
+                    kt = { to: { opacity: 1, transform: 'translateY(0)' }, delay: 1e3, config: Object.assign({}, we) },
                     Lt = (0, H.Pi)(({ className: e }) => {
                         const u = be(),
                             t = u.model,
@@ -3944,7 +3938,7 @@
                             E = d[1];
                         return (
                             (0, a.useEffect)(() => {
-                                i === Be.RewardsShown && (c.start(Pt), E.start(Pt));
+                                i === Be.RewardsShown && (c.start(kt), E.start(kt));
                             }, [c, E, i]),
                             n().createElement(
                                 'div',
@@ -3955,7 +3949,7 @@
                                     n().createElement(
                                         'div',
                                         { className: Rt },
-                                        s() ? kt.title.single() : kt.title.multi(),
+                                        s() ? Pt.title.single() : Pt.title.multi(),
                                     ),
                                 ),
                                 n().createElement(St, { className: Ot }),

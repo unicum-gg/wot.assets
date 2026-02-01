@@ -717,11 +717,6 @@ body {
     }
 }
 
-.FormatText_base_d0 {
-    display: flex;
-    flex-wrap: wrap;
-}
-
 .TopLabel_base_7f {
     display: flex;
     justify-content: center;
@@ -803,23 +798,6 @@ body {
     position: absolute;
     top: -6rem;
     right: 7rem;
-}
-.Section_configLabel_c9 {
-    width: 100%;
-    text-align: center;
-    opacity: 0.6;
-    position: absolute;
-    bottom: -18rem;
-}
-.Section_configText_eb {
-    color: #f2f2f7;
-    font-size: 11rem;
-}
-.Section_configVehicleIcon_20 {
-    width: 9rem;
-    height: 12rem;
-    margin: 0 -2rem;
-    background: no-repeat center / cover;
 }
 
 .SlotDivider_base_60 {

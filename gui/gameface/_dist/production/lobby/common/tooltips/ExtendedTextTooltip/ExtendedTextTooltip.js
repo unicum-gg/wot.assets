@@ -207,13 +207,13 @@
                         getViewGlobalPosition: () => D,
                         initExternalPaddings: () => P,
                         isEventHandled: () => m,
-                        isFocused: () => v,
+                        isFocused: () => f,
                         pxToRem: () => _,
                         remToPx: () => p,
                         resize: () => d,
                         sendEvent: () => s.qP,
                         setAnimateWindow: () => h,
-                        setEventHandled: () => f,
+                        setEventHandled: () => v,
                         setInputPaddingsRem: () => E,
                         setSidePaddingsRem: () => A,
                         whenTutorialReady: () => x,
@@ -263,10 +263,10 @@
                 function h(u, e) {
                     viewEnv.setAnimateWindow(u, e);
                 }
-                function v() {
+                function f() {
                     return viewEnv.isFocused();
                 }
-                function f() {
+                function v() {
                     return viewEnv.setEventHandled();
                 }
                 function m() {
@@ -681,11 +681,11 @@
                     h = (u, e) => {
                         u.keyCode === A.n.ESCAPE && e();
                     };
-                var v = t(7572);
-                const f = r.instance,
+                var f = t(7572);
+                const v = r.instance,
                     m = {
                         DataTracker: o.Z,
-                        ViewModel: v.Z,
+                        ViewModel: f.Z,
                         ViewEventType: s,
                         NumberFormatType: a,
                         RealFormatType: E,
@@ -762,7 +762,7 @@
                                 }
                             return t;
                         },
-                        ClickOutsideManager: f,
+                        ClickOutsideManager: v,
                         SystemLocale: i.Z5,
                         UserLocale: i.cy,
                     };
@@ -804,7 +804,7 @@
                                     (window.cancelAnimationFrame(u.current),
                                         (u.current = window.requestAnimationFrame(() => {
                                             u.current = window.requestAnimationFrame(() => {
-                                                (e(), (u.current = 0));
+                                                ((u.current = 0), e());
                                             });
                                         })));
                                 },
@@ -955,8 +955,8 @@
                             D = u.isEnabled,
                             B = void 0 === D || D,
                             h = u.targetId,
-                            v = void 0 === h ? 0 : h,
-                            f = u.onShow,
+                            f = void 0 === h ? 0 : h,
+                            v = u.onShow,
                             m = u.onHide,
                             g = (function (u, e) {
                                 if (null == u) return {};
@@ -970,7 +970,7 @@
                         const b = (0, i.useRef)({ timeoutId: 0, isVisible: !1, prevTarget: null, hideTimerId: null }),
                             w = (0, i.useMemo)(
                                 () =>
-                                    v ||
+                                    f ||
                                     ((u = 1) => {
                                         const e = new Error().stack;
                                         let t,
@@ -990,14 +990,14 @@
                                             { callerUrl: r, caller: t, stack: e, resId: n }
                                         );
                                     })().resId,
-                                [v],
+                                [f],
                             ),
                             y = (0, i.useCallback)(() => {
                                 (b.current.isVisible && b.current.timeoutId) ||
                                     (p(t, d, { isMouseEvent: !0, on: !0, arguments: _(n) }, w),
-                                    f && f(),
+                                    v && v(),
                                     (b.current.isVisible = !0));
-                            }, [t, d, n, w, f]),
+                            }, [t, d, n, w, v]),
                             k = (0, i.useCallback)(() => {
                                 if (b.current.isVisible || b.current.timeoutId) {
                                     const u = b.current.timeoutId;
@@ -1068,10 +1068,10 @@
                             : e;
                         var O;
                     },
-                    v = ['children'];
-                function f() {
+                    f = ['children'];
+                function v() {
                     return (
-                        (f =
+                        (v =
                             Object.assign ||
                             function (u) {
                                 for (var e = 1; e < arguments.length; e++) {
@@ -1080,7 +1080,7 @@
                                 }
                                 return u;
                             }),
-                        f.apply(this, arguments)
+                        v.apply(this, arguments)
                     );
                 }
                 const m = (u) => {
@@ -1093,10 +1093,10 @@
                                     o = Object.keys(u);
                                 for (n = 0; n < o.length; n++) ((t = o[n]), e.indexOf(t) >= 0 || (r[t] = u[t]));
                                 return r;
-                            })(u, v);
+                            })(u, f);
                         return s().createElement(
                             h,
-                            f(
+                            v(
                                 {
                                     contentId:
                                         R.views.common.tooltip_window.backport_tooltip_content.BackportTooltipContent(
@@ -1314,7 +1314,7 @@
                             n
                         );
                     },
-                    Z = (u) => {
+                    $ = (u) => {
                         const e = [];
                         return (
                             u.forEach((u, t) => {
@@ -1336,7 +1336,7 @@
                             e
                         );
                     },
-                    $ = (u, e, t, n) => {
+                    Z = (u, e, t, n) => {
                         let r = e.exec(u),
                             o = 0;
                         for (; r; ) (o !== r.index && t(u.slice(o, r.index)), n(r), (o = e.lastIndex), (r = e.exec(u)));
@@ -1346,7 +1346,7 @@
                     Q = (u) => {
                         const e = [];
                         return (
-                            $(
+                            Z(
                                 u,
                                 /\S\s+/g,
                                 (u) => {
@@ -1366,7 +1366,7 @@
                         ? (u) => {
                               const e = [];
                               return (
-                                  $(
+                                  Z(
                                       u,
                                       /[^a-zA-Z0-9]+/g,
                                       (u) => {
@@ -1394,7 +1394,7 @@
                     uu = (u, e = '', t) => {
                         const n = [];
                         return (
-                            $(
+                            Z(
                                 u,
                                 /(\n+|[\xa0\ufeff]+)/g,
                                 (u) => {
@@ -1422,17 +1422,18 @@
                                                   return e;
                                               })(t),
                                           )
-                                        : n.push({ blockType: r, colorTag: e, childList: [t] });
+                                        : n.push({ blockType: r, colorTag: e, childList: [t.replace(/\ufeff+/g, '')] });
                                 },
                             ),
                             n
                         );
                     },
                     eu = (u, e, t = '', n) => {
-                        const r = [];
+                        const r = [],
+                            o = u.replace(/(.)(、|。|ー)/g, '$1\ufeff$2');
                         return (
-                            $(
-                                u,
+                            Z(
+                                o,
                                 /(?:%\(|{)(.*?)[)}][sd]?/g,
                                 (u) => {
                                     r.push(...uu(u, t, n));
@@ -1477,7 +1478,7 @@
                             ((u, e, t) => {
                                 const n = [];
                                 return (
-                                    $(
+                                    Z(
                                         u,
                                         /(?:%\(|{)(\w*)(?:_[Oo]pen|_Start)(?:\)s|})([\s\S]*?)(?:%\(|{)\w*(?:_[Cc]lose|_End)(?:\)s|})(\s*)/g,
                                         (u) => {
@@ -1491,7 +1492,7 @@
                                 );
                             })(P(u).replace(/&zwnbsp;/g, '\ufeff'), e, t),
                         );
-                        return Z(n);
+                        return $(n);
                     },
                     ru = (u, e) => !u || u.offsetTop + u.offsetHeight > e,
                     ou = (u, e) => u.offsetLeft + u.offsetWidth - e,
@@ -1605,7 +1606,7 @@
                                             targetId: c,
                                         };
                                 }, [n, o, c, u, E, C.isTruncated]),
-                                v = (0, i.useCallback)(
+                                f = (0, i.useCallback)(
                                     (u) => {
                                         ((D.current.width = u.contentRect.width),
                                             (D.current.height = u.contentRect.height));
@@ -1616,7 +1617,7 @@
                                     },
                                     [t, l, p],
                                 ),
-                                f = (0, i.useMemo)(() => ({ justifyContent: F, alignContent: A }), [A, F]);
+                                v = (0, i.useMemo)(() => ({ justifyContent: F, alignContent: A }), [A, F]);
                             return (
                                 ((u, e, t = !0) => {
                                     const n = (0, i.useCallback)(
@@ -1636,7 +1637,7 @@
                                             }
                                         );
                                     }, [n, t, u]);
-                                })(d, v, a),
+                                })(d, f, a),
                                 s().createElement(
                                     'div',
                                     {
@@ -1646,7 +1647,7 @@
                                             x.base__zeroPadding,
                                             a && x.base__isTruncationAvailable,
                                         ),
-                                        style: f,
+                                        style: v,
                                     },
                                     s().createElement('div', { className: x.unTruncated, ref: d }, p),
                                     s().createElement(
@@ -1666,7 +1667,7 @@
                                                     x.truncated,
                                                     !C.isTruncateFinished && a && x.truncated__hide,
                                                 ),
-                                                style: f,
+                                                style: v,
                                             },
                                             C.isTruncateFinished && a ? C.elementList : p,
                                         ),
@@ -1920,21 +1921,17 @@
                     _u = Cu[0],
                     pu = Cu[1],
                     hu = 'ExtendedTextTooltipApp_base_37',
-                    vu = (0, D.Pi)(function () {
+                    fu = (0, D.Pi)(function () {
                         const u = pu().model;
                         return s().createElement(
                             'div',
                             { className: hu },
-                            s().createElement(Eu, {
-                                text: u.text.get(),
-                                binding: u.computes.binding(),
-                                isTruncationAvailable: !0,
-                            }),
+                            s().createElement(Eu, { text: u.text.get(), binding: u.computes.binding() }),
                         );
                     });
                 engine.whenReady.then(() => {
                     d().render(
-                        s().createElement(A, null, s().createElement(_u, null, s().createElement(vu, null))),
+                        s().createElement(A, null, s().createElement(_u, null, s().createElement(fu, null))),
                         document.getElementById('root'),
                     );
                 });

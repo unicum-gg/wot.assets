@@ -1,5 +1,5 @@
-import { r as a, j as e, e as s, p as r, g as l, y as c } from '../../../../chunks/vendor.js';
-import { r as o, N as t, i as m, n as i, aD as n, aC as p } from '../../../../chunks/lib.js';
+import { r as a, j as e, e as s, n as r, g as l, x as c } from '../../../../chunks/vendor.js';
+import { r as o, P as t, i as m, n as i, aE as n, aD as p } from '../../../../chunks/lib.js';
 const d = 'ArmorLayer_8511e0db',
     _ = 'ArmorLayer_layer_5ad9db4',
     v = 'ArmorLayer_armor_d9ec88fc',
@@ -48,18 +48,18 @@ const d = 'ArmorLayer_8511e0db',
     L = 'App_image__angle_a810893a',
     O = 'App_image__effective_64e0c709',
     $ = 'App_info_5ca42508',
-    C = 'App_value_957eb145',
-    k = 'App_value__angle_13feac86',
+    k = 'App_value_957eb145',
+    C = 'App_value__angle_13feac86',
     w = 'App_calculations_c68ace7d',
     R = 'App_majorValue_49d964de',
     B = 'App_divider_9b66e1ca',
     D = 'App_dividerImage_94ed318e',
     I = 'App_layers_ee23ccfe',
     M = 'App_layer_ec0b9703',
-    V = 'App_separator_44573a34',
-    q = 'App_line_9b60d064',
-    z = o.resolve('strings'),
-    F = c(function () {
+    P = 'App_separator_44573a34',
+    V = 'App_line_9b60d064',
+    q = o.resolve('strings'),
+    z = c(function () {
         const { model: l } = N(),
             c = a.useRef(null);
         ((e, s) => {
@@ -105,21 +105,21 @@ const d = 'ArmorLayer_8511e0db',
                                       className: $,
                                       children: [
                                           e.jsx(t, {
-                                              className: C,
-                                              text: z.readOrEmpty('armor_inspector.tooltip.armor.value'),
+                                              className: k,
+                                              text: q.readOrEmpty('armor_inspector.tooltip.armor.value'),
                                               params: { value: e.jsx('span', { className: R, children: p }) },
                                           }),
                                           e.jsxs('div', {
                                               className: I,
                                               children: [
-                                                  e.jsx('div', { className: V }),
+                                                  e.jsx('div', { className: P }),
                                                   o.map((a, s) =>
                                                       e.jsxs(
                                                           'div',
                                                           {
                                                               className: M,
                                                               children: [
-                                                                  e.jsx('div', { className: q }),
+                                                                  e.jsx('div', { className: V }),
                                                                   e.jsx(x, { ...a }),
                                                               ],
                                                           },
@@ -132,7 +132,7 @@ const d = 'ArmorLayer_8511e0db',
                                   })
                                 : e.jsx('div', {
                                       className: $,
-                                      children: e.jsx(x, { ...u, classNames: { base: C, value: R } }),
+                                      children: e.jsx(x, { ...u, classNames: { base: k, value: R } }),
                                   }),
                         ],
                     }),
@@ -145,13 +145,13 @@ const d = 'ArmorLayer_8511e0db',
                                 className: $,
                                 children: [
                                     e.jsx(t, {
-                                        className: s(C, k),
-                                        text: z.readOrEmpty('armor_inspector.tooltip.angle.value'),
+                                        className: s(k, C),
+                                        text: q.readOrEmpty('armor_inspector.tooltip.angle.value'),
                                         params: { value: e.jsx('span', { className: R, children: i }) },
                                     }),
                                     e.jsx(t, {
                                         className: w,
-                                        text: z.readOrEmpty('armor_inspector.tooltip.armor.value'),
+                                        text: q.readOrEmpty('armor_inspector.tooltip.armor.value'),
                                         params: { value: `+${_}` },
                                     }),
                                 ],
@@ -167,13 +167,13 @@ const d = 'ArmorLayer_8511e0db',
                                 className: $,
                                 children: [
                                     e.jsx(t, {
-                                        className: C,
-                                        text: z.readOrEmpty('armor_inspector.tooltip.armor.value'),
+                                        className: k,
+                                        text: q.readOrEmpty('armor_inspector.tooltip.armor.value'),
                                         params: { value: e.jsx('span', { className: R, children: d }) },
                                     }),
                                     e.jsx(t, {
                                         className: w,
-                                        text: z.readOrEmpty('armor_inspector.tooltip.armor.value'),
+                                        text: q.readOrEmpty('armor_inspector.tooltip.armor.value'),
                                         params: { value: `(${p} + ${_})` },
                                     }),
                                 ],
@@ -184,4 +184,4 @@ const d = 'ArmorLayer_8511e0db',
             }),
         });
     });
-p(e.jsx(j, { children: e.jsx(F, {}) }));
+p(e.jsx(j, { children: e.jsx(z, {}) }));

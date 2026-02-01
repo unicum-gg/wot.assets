@@ -1240,10 +1240,7 @@
                         (e.EquipCoin = 'equipCoin'),
                         (e.LootBox = 'lootBox'),
                         (e.BrCoin = 'brcoin'),
-                        (e.Attachment = 'attachment'),
-                        (e.Stamp = 'stamp'),
-                        (e.WtEventLootbox = 'wtevent_lootBox'),
-                        (e.WtEventTicket = 'wtevent_ticket'));
+                        (e.Attachment = 'attachment'));
                 })($ || ($ = {})),
                     (function (e) {
                         ((e.Gold = 'gold'),
@@ -1391,9 +1388,6 @@
                         $.BattleBoosterGift,
                         $.OptionalDevice,
                         $.Attachment,
-                        $.Stamp,
-                        $.WtEventLootbox,
-                        $.WtEventTicket,
                     ],
                     Z = [$.Gold, $.Credits, $.Crystal, $.FreeXp],
                     J = [$.BattlePassPoints, $.EquipCoin],

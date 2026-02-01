@@ -641,7 +641,8 @@
                         getContainerSize: (e) => e.offsetWidth,
                         getWrapperSize: (e) => e.offsetWidth,
                         setScrollPosition: (e, t) => {
-                            e.style.transform = `translateX(-${t.value.scrollPosition}px)`;
+                            var u;
+                            e.style.transform = `translateX(-${0 | (null != (u = t.value.scrollPosition) ? u : 0)}px)`;
                         },
                         getDirection: (e) => (e.deltaY > 1 ? r.Nm.Next : r.Nm.Prev),
                         forceTriggerMouseMove: n.O.view.forceTriggerMouseMove,
@@ -2310,12 +2311,14 @@
                 var n = u(7363);
                 function r(e, t, u = []) {
                     const r = (0, n.useRef)(0),
-                        a = (0, n.useCallback)(() => window.clearInterval(r.current), u || []);
+                        a = (0, n.useCallback)(() => {
+                            (window.clearInterval(r.current), (r.current = 0));
+                        }, u || []);
                     (0, n.useEffect)(() => a, [a]);
                     const i = (null != u ? u : []).concat([t]);
                     return [
                         (0, n.useCallback)((u) => {
-                            ((r.current = window.setInterval(() => e(u, !0), t)), e(u, !1));
+                            (0 !== r.current && a(), (r.current = window.setInterval(() => e(u, !0), t)), e(u, !1));
                         }, i),
                         a,
                     ];
@@ -3139,17 +3142,18 @@
                                                   return t;
                                               })(u),
                                           )
-                                        : n.push({ blockType: r, colorTag: t, childList: [u] });
+                                        : n.push({ blockType: r, colorTag: t, childList: [u.replace(/\ufeff+/g, '')] });
                                 },
                             ),
                             n
                         );
                     },
                     d = (e, t, u = '', n) => {
-                        const r = [];
+                        const r = [],
+                            s = e.replace(/(.)(、|。|ー)/g, '$1\ufeff$2');
                         return (
                             (0, a.Z)(
-                                e,
+                                s,
                                 /(?:%\(|{)(.*?)[)}][sd]?/g,
                                 (e) => {
                                     r.push(...l(e, u, n));

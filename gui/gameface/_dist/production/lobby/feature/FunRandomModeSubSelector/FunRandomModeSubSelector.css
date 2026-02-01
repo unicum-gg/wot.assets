@@ -198,227 +198,6 @@
     transition-property: width, transform;
 }
 
-.Reward_base_ea {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-}
-
-.Reward_base__s48x48_46,
-.Reward_base__small_c0 {
-    width: 48rem;
-    height: 48rem;
-}
-
-.Reward_base__s80x80_ce,
-.Reward_base__big_e5 {
-    width: 80rem;
-    height: 80rem;
-}
-
-.Reward_base__s128x100_c3 {
-    width: 128rem;
-    height: 100rem;
-}
-
-.Reward_base__s180x135_7c {
-    width: 180rem;
-    height: 135rem;
-}
-
-.Reward_base__s232x174_67 {
-    width: 232rem;
-    height: 174rem;
-}
-
-.Reward_base__s296x222_78 {
-    width: 296rem;
-    height: 222rem;
-}
-
-.Reward_base__s400x300_07 {
-    width: 400rem;
-    height: 300rem;
-}
-
-.Reward_base__s600x450_f8 {
-    width: 600rem;
-    height: 450rem;
-}
-
-.Reward_tooltipWrapper_b5 {
-    height: 100%;
-}
-
-.Reward_icon_df {
-    width: 100%;
-    height: 100%;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: contain;
-    position: relative;
-    z-index: 1;
-}
-
-.Reward_overlay_68 {
-    background: no-repeat center / 100%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    z-index: 2;
-    transform: translate(-50%, -50%);
-    pointer-events: none;
-}
-
-.Reward_base__s48x48_46 .Reward_overlay_68,
-.Reward_base__small_c0 .Reward_overlay_68 {
-    width: 96rem;
-    height: 96rem;
-    background-size: 100%;
-    overflow: visible;
-}
-
-.Reward_base__s80x80_ce .Reward_overlay_68,
-.Reward_base__big_e5 .Reward_overlay_68 {
-    width: 128rem;
-    height: 128rem;
-}
-
-.Reward_base__s180x135_7c .Reward_overlay_68 {
-    width: 266rem;
-    height: 241rem;
-}
-
-.Reward_base__s232x174_67 .Reward_overlay_68 {
-    width: 344rem;
-    height: 312rem;
-}
-
-.Reward_base__s296x222_78 .Reward_overlay_68 {
-    width: 450rem;
-    height: 408rem;
-}
-
-.Reward_base__s400x300_07 .Reward_overlay_68 {
-    width: 618rem;
-    height: 590rem;
-}
-
-.Reward_base__s600x450_f8 .Reward_overlay_68 {
-    width: 670rem;
-    height: 575rem;
-}
-
-.Reward_base__normalize_a6 .Reward_overlay_68 {
-    width: 100%;
-    height: 100%;
-}
-
-.Reward_highlight_36 {
-    width: 100%;
-    height: 100%;
-    background: no-repeat center / contain;
-    position: absolute;
-    z-index: 0;
-}
-
-.Reward_image_89 {
-    position: relative;
-}
-
-.Reward_info_72 {
-    color: #e9e2bf;
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
-    margin-top: -13rem;
-    text-align: center;
-    position: relative;
-    z-index: 1;
-}
-
-.Reward_base__s48x48_46 .Reward_info_72,
-.Reward_base__small_c0 .Reward_info_72 {
-    margin: -10rem -10rem 0;
-}
-
-.Reward_info__multi_63 {
-    margin-right: 2rem;
-    text-align: right;
-}
-
-.Reward_base__s48x48_46 .Reward_info__multi_63,
-.Reward_base__small_c0 .Reward_info__multi_63 {
-    margin-right: 0;
-}
-
-.Reward_info__credits_ef {
-    color: #ced9d9;
-}
-
-.Reward_info__gold_36 {
-    color: #ffc363;
-}
-
-.Reward_info__bptaler_82,
-.Reward_info__crystal_36 {
-    color: #c9c9b6;
-}
-
-.Reward_info__premiumTank_d3 {
-    color: #ffdd99;
-}
-
-.Reward_title_36 {
-    color: #e9e2bf;
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
-    max-width: 80rem;
-    margin: -13rem -16rem 0;
-    text-align: center;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-    position: relative;
-    z-index: 1;
-}
-
-.mediaMedium .Reward_title_36 {
-    max-width: 100rem;
-    margin-left: -10rem;
-    margin-right: -10rem;
-}
-
-.Reward_base__s48x48_46 .Reward_title_36,
-.Reward_base__small_c0 .Reward_title_36 {
-    margin: -10rem -10rem 0;
-}
-
-.Reward_timer_d3 {
-    background: no-repeat center / contain;
-    position: absolute;
-    z-index: 1;
-}
-
-.Reward_base__s48x48_46 .Reward_timer_d3,
-.Reward_base__small_c0 .Reward_timer_d3 {
-    width: 23rem;
-    height: 23rem;
-    background-image: url('R.images.gui.maps.icons.quests.bonuses.small.timer');
-    top: -6rem;
-    right: -6rem;
-}
-
-.Reward_base__s80x80_ce .Reward_timer_d3,
-.Reward_base__big_e5 .Reward_timer_d3 {
-    width: 48rem;
-    height: 48rem;
-    background-image: url('R.images.gui.maps.icons.quests.bonuses.big.timer');
-    top: -14rem;
-    right: -14rem;
-}
-
 .FormatText_base_d0 {
     display: flex;
     flex-wrap: wrap;
@@ -538,17 +317,6 @@
 .ActiveState_tooltipArea__multiple_81 {
     width: 424rem;
 }
-.ActiveState_condition_f2 {
-    display: flex;
-    align-items: flex-end;
-    width: 100%;
-    margin: 0 0 5rem 52rem;
-}
-.ActiveState_description_28 {
-    display: flex;
-    flex-direction: column;
-    width: 422rem;
-}
 .ActiveState_title_5e {
     color: #c9c9b6;
     font-size: 16rem;
@@ -560,6 +328,8 @@
     font-size: 16rem;
     font-weight: 400;
     line-height: 1.25;
+    width: 538rem;
+    margin: 0 0 5rem 52rem;
 }
 .ActiveState_rewards_eb {
     display: flex;
@@ -1157,7 +927,7 @@
     background-image: url('R.images.gui.maps.icons.mode_selector.common.image_calendar_24x24');
 }
 
-@keyframes ModifierDomainIcon_iconHover_69 {
+@keyframes modifier_domain_icon_iconHover_de {
     from {
         filter: brightness(1) contrast(1);
     }
@@ -1167,7 +937,7 @@
     }
 }
 
-@keyframes ModifierDomainIcon_iconOut_c6 {
+@keyframes modifier_domain_icon_iconOut_02 {
     from {
         filter: brightness(1.5) contrast(0.75);
     }
@@ -1177,20 +947,20 @@
     }
 }
 
-.ModifierDomainIcon_base_74 {
+.modifier_domain_icon_base_ad {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.ModifierDomainIcon_base_74:hover {
+.modifier_domain_icon_base_ad:hover {
     background: url('R.images.battle_modifiers.gui.maps.icons.feature.domains.c_64x64.hoverBg') no-repeat center /
         contain;
 }
 
-.ModifierDomainIcon_image_62 {
-    animation-name: ModifierDomainIcon_iconOut_c6;
+.modifier_domain_icon_image_3e {
+    animation-name: modifier_domain_icon_iconOut_02;
     animation-duration: 0.3s;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.07, 0.82, 0.16, 1);
@@ -1203,16 +973,16 @@
     background: no-repeat center / contain;
 }
 
-.ModifierDomainIcon_image__big_3c {
+.modifier_domain_icon_image__big_2f {
     --icon-height: 64rem;
 }
 
-.ModifierDomainIcon_image__large_f1 {
+.modifier_domain_icon_image__large_8e {
     --icon-height: 80rem;
 }
 
-.ModifierDomainIcon_image_62:hover {
-    animation-name: ModifierDomainIcon_iconHover_69;
+.modifier_domain_icon_image_3e:hover {
+    animation-name: modifier_domain_icon_iconHover_de;
     animation-duration: 0.3s;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.07, 0.82, 0.16, 1);
@@ -1246,7 +1016,8 @@
     width: 32rem;
     height: 32rem;
     margin: 0 -4rem -8rem -12rem;
-    background: url('R.images.fun_random.gui.maps.icons.feature.entry_point.time_icon') no-repeat center / contain;
+    background: url('R.images.fun_random.gui.maps.icons.feature.progression.sub_modes_selector.time_icon') no-repeat
+        center / contain;
 }
 
 .SubModeCard_base_c0 {
@@ -1346,6 +1117,13 @@
     opacity: 0.7;
 }
 
+.SubModeCard_modifier_34 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 46rem;
+}
+
 .SubModeCard_timeLeft_60 {
     position: absolute;
     top: auto;
@@ -1375,86 +1153,6 @@
     pointer-events: none;
     border-radius: 2rem;
     background: url('R.images.gui.maps.icons.mode_selector.common.disabled') repeat 50% / auto;
-}
-
-.Performance_base_fd {
-    margin-top: 12rem;
-    padding: 0 8rem;
-    pointer-events: auto;
-}
-
-.Performance_base__b2_73 {
-    margin-top: 3rem;
-}
-
-.mediaLarge .Performance_base__b2_73 {
-    margin-top: 10rem;
-}
-
-.Performance_text_2f {
-    display: flex;
-    justify-content: center;
-    max-height: 40rem;
-}
-
-.Performance_base__mediumRisk_ad .Performance_text_2f {
-    color: #ee7000;
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
-}
-
-.Performance_base__highRisk_ab .Performance_text_2f {
-    color: #ff2717;
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
-}
-
-.Performance_base__b2_73 .Performance_text_2f {
-    max-height: 20rem;
-}
-
-.Performance_icon_69 {
-    width: 16rem;
-    height: 16rem;
-    margin-top: 2rem;
-    background: no-repeat 50% / contain;
-}
-
-.Performance_base__mediumRisk_ad .Performance_icon_69 {
-    background-image: url('R.images.gui.maps.icons.library.alertIcon');
-}
-
-.Performance_base__highRisk_ab .Performance_icon_69 {
-    background-image: url('R.images.gui.maps.icons.library.CancelIcon_1');
-}
-
-.Performance_iconBig_d5 {
-    width: 24rem;
-    height: 24rem;
-    background: no-repeat left / contain;
-    position: absolute;
-    bottom: 6rem;
-    left: 6rem;
-}
-
-.Performance_iconBig__mediumRisk_59 {
-    background-image: url('R.images.gui.maps.icons.library.alertBigIcon');
-}
-
-.Performance_iconBig__highRisk_5a {
-    background-image: url('R.images.gui.maps.icons.library.CancelBigIcon');
-}
-
-.mediaMedium .Performance_iconBig_d5 {
-    bottom: 9rem;
-    left: 11rem;
-}
-
-.mediaLarge .Performance_iconBig_d5 {
-    bottom: 9rem;
-    left: 11rem;
 }
 
 .ExtendedText_base_71 {
@@ -1639,6 +1337,87 @@
     overflow-wrap: normal;
 }
 
+.Performance_base_fd {
+    margin-top: 12rem;
+    padding: 0 8rem;
+    pointer-events: auto;
+}
+
+.Performance_base__b2_73 {
+    margin-top: -2rem;
+}
+
+.mediaLarge .Performance_base__b2_73 {
+    margin-top: 3rem;
+}
+
+.Performance_text_2f {
+    display: flex;
+    justify-content: center;
+    max-height: 40rem;
+}
+
+.Performance_base__mediumRisk_ad .Performance_text_2f {
+    color: #ee7000;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+.Performance_base__highRisk_ab .Performance_text_2f {
+    color: #ff2717;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+.Performance_base__b2_73 .Performance_text_2f {
+    max-height: 20rem;
+    font-size: 12rem;
+}
+
+.Performance_icon_69 {
+    width: 16rem;
+    height: 16rem;
+    margin-top: 2rem;
+    background: no-repeat 50% / contain;
+}
+
+.Performance_base__mediumRisk_ad .Performance_icon_69 {
+    background-image: url('R.images.gui.maps.icons.library.alertIcon');
+}
+
+.Performance_base__highRisk_ab .Performance_icon_69 {
+    background-image: url('R.images.gui.maps.icons.library.CancelIcon_1');
+}
+
+.Performance_iconBig_d5 {
+    width: 24rem;
+    height: 24rem;
+    background: no-repeat left / contain;
+    position: absolute;
+    bottom: 6rem;
+    left: 6rem;
+}
+
+.Performance_iconBig__mediumRisk_59 {
+    background-image: url('R.images.gui.maps.icons.library.alertBigIcon');
+}
+
+.Performance_iconBig__highRisk_5a {
+    background-image: url('R.images.gui.maps.icons.library.CancelBigIcon');
+}
+
+.mediaMedium .Performance_iconBig_d5 {
+    bottom: 9rem;
+    left: 11rem;
+}
+
+.mediaLarge .Performance_iconBig_d5 {
+    bottom: 9rem;
+    left: 11rem;
+}
+
 .App_base_9d {
     display: flex;
     flex-direction: column;
@@ -1774,24 +1553,6 @@
 
 .mediaLarge .App_progression_c2 {
     bottom: calc(var(--external-padding-bottom) - 20rem);
-}
-
-.App_menuItems_e0 {
-    position: absolute;
-    top: 184rem;
-    left: 23rem;
-}
-
-.mediaMedium .App_menuItems_e0 {
-    top: 224rem;
-}
-
-.mediaLarge .App_menuItems_e0 {
-    top: 244rem;
-}
-
-.mediaExtraLarge .App_menuItems_e0 {
-    top: 264rem;
 }
 
 @keyframes App_show_c0 {

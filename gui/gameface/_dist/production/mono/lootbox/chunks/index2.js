@@ -1,11 +1,11 @@
-import { m as e, j as s, e as o, n as t, r as a } from './vendor.js';
-import { H as n, S as c, A as r, M as i } from './use_cover_size.js';
-import { d as l, B as u, R as m, S as d, a as x } from './resource_layer.js';
-import { i as p, O as g, $ as b, k as j, n as B, d as v, T as w } from './lib.js';
-import { a as _, g as N, C as f } from './resources.js';
-import { g as h } from './getConfig.js';
-import { S as C } from './sounds.js';
-import { B as y } from './big_button.js';
+import { k as e, j as s, e as o, m as t, r as a } from './vendor.js';
+import { S as n, A as r, M as c } from './use_cover_size.js';
+import { d as i, P as l, R as u, S as m, B as d, a as x } from './statistics2.js';
+import { i as p, P as g, k as b, n as j, a0 as B, d as w, T as h } from './lib.js';
+import { a as f, g as C, C as N } from './resources.js';
+import { g as v } from './getConfig.js';
+import { S as y } from './sounds.js';
+import { B as _ } from './big_button.js';
 import './title.js';
 import './utils.js';
 import './title2.js';
@@ -32,29 +32,29 @@ const k = {
             eventName: 'eventName.upperCase',
         },
         sounds: {
-            purchaseClick: C.purchaseClick,
-            purchaseHover: C.purchaseHover,
-            entryHover: C.entryHover,
-            switch: C.switch,
+            purchaseClick: y.purchaseClick,
+            purchaseHover: y.purchaseHover,
+            entryHover: y.entryHover,
+            switch: y.switch,
         },
     },
     I = { dynamicTexts: { boxName: 'common.boxCategory.upperCase', tabText: 'hasBoxesView.guaranteedTitle.tabText' } },
-    [A, H] = p()(
+    [S, A] = p()(
         ({ observableModel: s }) => {
             const o = {
                     ...s.primitives(['eventName', 'useStats', 'isShopVisible']),
                     boxesInfo: s.arrayClone('boxesInfo'),
                 },
-                t = e(() => _(k, o.eventName.get())),
-                a = e(() => N(I, o.eventName.get())),
-                n = e(() => h(o.eventName.get(), f.HasBoxesView)),
-                c = g.isHigh(),
-                r = e(() => {
+                t = e(() => f(k, o.eventName.get())),
+                a = e(() => C(I, o.eventName.get())),
+                n = e(() => v(o.eventName.get(), N.HasBoxesView)),
+                r = g.isHigh(),
+                c = e(() => {
                     const { images: e, videos: s } = t(),
-                        o = c ? s.background : '';
-                    return l(e.background, o);
+                        o = r ? s.background : '';
+                    return i(e.background, o);
                 });
-            return { ...o, computes: { resources: t, dynamicResources: a, backgroundData: r, settings: n } };
+            return { ...o, computes: { resources: t, dynamicResources: a, backgroundData: c, settings: n } };
         },
         ({ externalModel: e }) => ({
             openInfoPage: e.createCallbackNoArgs('onInfoOpen'),
@@ -62,73 +62,46 @@ const k = {
             buyBoxes: e.createCallbackNoArgs('onBuyBoxes'),
         }),
     ),
-    V = { base: 'NoBoxesAsset_c59c6303' };
-function T({ images: e, classNames: t = '' }) {
-    return s.jsx('div', { className: o(V.base, t), style: { backgroundImage: `url(${e.noBoxes})` } });
+    H = 'Asset_ebe8cb3e';
+const V = 'Content_5b2426e4';
+const T = 'Shadow_6b416642';
+const G = { base: 'Body_4f642c84' };
+function P({ children: e, className: t }) {
+    return s.jsx('div', { className: o(G.base, t), children: e });
 }
-const G = 'Content_6bc5ecbd',
-    S = 'Content_header_4cb94446',
-    O = 'Content_wrapper_85b923bd',
-    R = 'Content_shadow_1fb6909c',
-    M = 'Content_5b2426e4',
-    D = 'Content_noBoxes_c686aa08',
-    E = 'Content_tabs_73a43acc',
-    P = 'Content_subTitle_711c70aa';
-const $ = t(function () {
-        const { model: e, controls: o } = H(),
-            t = e.boxesInfo.get(),
-            { boxCategory: a } = b(t, 0),
-            i = e.eventName.get(),
-            l = e.isShopVisible.get(),
-            { images: m, texts: d, sounds: x } = e.computes.resources(),
-            { dynamicTexts: p } = e.computes.dynamicResources(),
-            { tabsGuaranteedCount: g } = e.computes.settings(),
-            v = t.length > 1,
-            w = v ? d.eventName : p.boxName.dynOpt(a);
-        return s.jsxs('div', {
-            className: G,
+((P.Shadow = function ({ classNames: e = '' }) {
+    return s.jsx('div', { className: o(T, e) });
+}),
+    (P.Asset = function ({ image: e, classNames: t = '' }) {
+        return s.jsx('div', { className: o(H, t), style: { backgroundImage: `url(${e})` } });
+    }),
+    (P.Content = function ({ children: e, classNames: t = '' }) {
+        return s.jsx('div', { className: o(V, t), children: e });
+    }));
+const O = 'Content_da09528a',
+    R = 'Content_asset_c686aa08',
+    M = 'Content_subTitle_711c70aa',
+    D = 'Content_shadow_d31ad2ce';
+const E = t(function () {
+        const { model: e, controls: o } = A(),
+            t = e.isShopVisible.get(),
+            { images: a, texts: c, sounds: i } = e.computes.resources();
+        return s.jsxs(P, {
+            className: O,
             children: [
-                s.jsx(n, { title: w, className: S }),
-                s.jsxs('div', {
-                    className: O,
+                s.jsx(P.Shadow, { classNames: D }),
+                s.jsxs(P.Content, {
                     children: [
-                        s.jsx('div', { className: R }),
-                        s.jsxs('div', {
-                            className: M,
-                            children: [
-                                m.noBoxes && s.jsx(T, { images: m, classNames: D }),
-                                s.jsx(c, {
-                                    text: s.jsx(j, { text: d.description }),
-                                    alignType: r.Center,
-                                    className: P,
-                                }),
-                                l &&
-                                    s.jsx('div', {
-                                        children: s.jsx(y, {
-                                            text: d.buyBoxesButtonText,
-                                            onClick: () => {
-                                                (B.sound(x.purchaseClick), o.buyBoxes());
-                                            },
-                                            soundHover: x.purchaseHover,
-                                        }),
-                                    }),
-                            ],
-                        }),
-                        v &&
+                        a.noBoxes && s.jsx(P.Asset, { image: a.noBoxes, classNames: R }),
+                        s.jsx(n, { text: s.jsx(b, { text: c.description }), alignType: r.Center, className: M }),
+                        t &&
                             s.jsx('div', {
-                                className: E,
-                                children: s.jsx(u, {
-                                    tabs: t,
-                                    texts: p.tabText,
-                                    sounds: { switch: x.switch, entryHover: x.entryHover },
-                                    icons: {
-                                        slotGlow: m.slotGlow,
-                                        numberGlow: m.guaranteedGlowIcon,
-                                        glowIcon: m.glowIcon,
-                                        guaranteedIco: m.guaranteedIco,
+                                children: s.jsx(_, {
+                                    text: c.buyBoxesButtonText,
+                                    onClick: () => {
+                                        (j.sound(i.purchaseClick), o.buyBoxes());
                                     },
-                                    tabsGuaranteedCount: g,
-                                    eventName: i,
+                                    soundHover: i.purchaseHover,
                                 }),
                             }),
                     ],
@@ -136,47 +109,65 @@ const $ = t(function () {
             ],
         });
     }),
-    z = 'App_6780b142',
+    z = 'App_43bfa38',
     X = 'App_layer_bb0bfe54',
-    q = 'App_infoButtons_64e9db92',
-    F = 'App_statsButton_403e9f7b',
-    J = 'App_closeButton_96e37994',
-    K = 'App_popover_e06fed7f',
-    L = { context: 'model.noBoxes.statistics' };
-const Q = t(function () {
+    $ = 'App_statsButton_403e9f7b',
+    q = 'App_popover_e06fed7f',
+    F = { context: 'model.noBoxes.statistics' };
+const J = t(function () {
         const [e, o] = a.useState(!1),
-            { model: t, controls: n } = H(),
-            { texts: c, images: r } = t.computes.resources(),
-            i = t.useStats.get(),
-            l = t.computes.backgroundData();
+            { model: t, controls: n } = A(),
+            { texts: r, images: c, sounds: i } = t.computes.resources(),
+            p = t.boxesInfo.get(),
+            g = t.useStats.get(),
+            { dynamicTexts: b } = t.computes.dynamicResources(),
+            j = t.eventName.get(),
+            { tabsGuaranteedCount: f } = t.computes.settings(),
+            C = t.computes.backgroundData(),
+            { boxCategory: N } = B(p, 0),
+            v = p.length > 1,
+            y = v ? r.eventName : b.boxName.dynOpt(N);
         return (
-            v(n.close),
-            s.jsxs('div', {
+            w(n.close),
+            s.jsxs(l, {
                 className: z,
                 children: [
-                    s.jsx(m, { className: X, layer: l, loop: !0, autoplay: !0 }),
-                    s.jsxs('div', {
-                        className: q,
+                    s.jsx(u, { className: X, layer: C, loop: !0, autoplay: !0 }),
+                    s.jsxs(l.PanelControls, {
                         children: [
-                            i &&
-                                s.jsx(d, {
+                            g &&
+                                s.jsx(m, {
                                     onClick: () => o(!0),
-                                    className: F,
-                                    label: c.statsButton,
-                                    icon: r.statsIcon,
+                                    className: $,
+                                    label: r.statsButton,
+                                    icon: c.statsIcon,
                                 }),
-                            s.jsx(w, { caption: c.infoButton, type: 'info', side: 'left', onClick: n.openInfoPage }),
+                            s.jsx(h, { caption: r.infoButton, type: 'info', side: 'left', onClick: n.openInfoPage }),
                         ],
                     }),
-                    s.jsx('div', {
-                        className: J,
-                        children: s.jsx(w, { caption: c.closeButton, type: 'close', side: 'right', onClick: n.close }),
-                    }),
-                    s.jsx($, {}),
-                    e && s.jsx(x, { options: L, onHidden: () => o(!1), isStatsEnabled: i, className: K }),
+                    s.jsx(l.Close, { text: r.closeButton, onClick: n.close }),
+                    s.jsx(l.Heading, { text: y }),
+                    s.jsx(l.Body, { children: s.jsx(E, {}) }),
+                    v &&
+                        s.jsx(l.Switcher, {
+                            children: s.jsx(d, {
+                                tabs: p,
+                                texts: b.tabText,
+                                sounds: { switch: i.switch, entryHover: i.entryHover },
+                                icons: {
+                                    slotGlow: c.slotGlow,
+                                    numberGlow: c.guaranteedGlowIcon,
+                                    glowIcon: c.glowIcon,
+                                    guaranteedIco: c.guaranteedIco,
+                                },
+                                tabsGuaranteedCount: f,
+                                eventName: j,
+                            }),
+                        }),
+                    e && s.jsx(x, { options: F, onHidden: () => o(!1), isStatsEnabled: g, className: q }),
                 ],
             })
         );
     }),
-    U = () => s.jsx(A, { options: i.NO_BOXES, children: s.jsx(Q, {}) });
-export { U as default };
+    K = () => s.jsx(S, { options: c.NO_BOXES, children: s.jsx(J, {}) });
+export { K as default };

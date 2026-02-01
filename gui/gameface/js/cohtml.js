@@ -1,4 +1,4 @@
-///<reference path="./cohtml.d.ts"/>
+///<reference path="../src/lib/cohtml.d.ts"/>
 
 /*jslint browser: true, nomen: true, plusplus: true */
 

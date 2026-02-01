@@ -1,0 +1,84 @@
+import { m as e, j as s } from '../../../chunks/vendor.js';
+import {
+    i as c,
+    u as a,
+    s as i,
+    b as l,
+    C as r,
+    F as o,
+    B as n,
+    t,
+    p as m,
+    r as p,
+    U as d,
+} from '../../../chunks/lib.js';
+import { V as h } from '../../../chunks/vehicle_count.js';
+import { V as j } from '../../../chunks/vignette.js';
+import { a as u } from '../../../chunks/sounds.js';
+/* empty css                     */ const [v, x] = c()(
+        ({ observableModel: e }) => ({ root: e.object(), vehicleCounter: e.object('vehicleCounter') }),
+        ({ externalModel: e }) => ({
+            confirm: e.createCallbackNoArgs('confirm'),
+            cancel: e.createCallbackNoArgs('cancel'),
+            close: e.createCallbackNoArgs('close'),
+        }),
+    ),
+    _ = 'App_3a3d3624',
+    N = 'App_vehiclesCount_23229913',
+    b = 'App_close_90a88f64',
+    f = 'App_imageWrapper_66a77c8b',
+    g = 'App_image_9e0e59ff',
+    C = 'App_title_7d76a07e',
+    A = 'App_divider_8739c0e7',
+    k = 'App_description_5ecc261e',
+    z = 'App_buttonsWrapper_be4c8fff',
+    y = 'App_button_2b774100',
+    M = R.strings.resource_well.confirm.NoSerialVehicles,
+    V = e(function () {
+        const { model: e, controls: c } = x(),
+            { vehicleName: p } = e.root.get(),
+            d = a({ size: i.small }, { large: { size: i.medium } });
+        return (
+            l(c.cancel),
+            s.jsxs('div', {
+                className: _,
+                children: [
+                    s.jsx(j, {}),
+                    s.jsx('div', { className: N, children: s.jsx(h, { vehicleCounter: e.vehicleCounter.get() }) }),
+                    s.jsx('div', { className: b, children: s.jsx(r, { onClose: c.close }) }),
+                    s.jsx('div', { className: f, children: s.jsx('div', { className: g }) }),
+                    s.jsx('div', {
+                        className: C,
+                        children: s.jsx(o, { text: M.title(), params: { vehicleName: p }, upgradeLegacy: !0 }),
+                    }),
+                    s.jsx('div', {
+                        className: k,
+                        children: s.jsx(o, { text: M.description(), params: { vehicleName: p }, upgradeLegacy: !0 }),
+                    }),
+                    s.jsx('div', { className: A }),
+                    s.jsxs('div', {
+                        className: z,
+                        children: [
+                            s.jsx(n, {
+                                className: y,
+                                theme: t.primary,
+                                onClick: c.confirm,
+                                onMouseEnter: () => m.sound(u),
+                                size: d.size,
+                                children: M.buttonConfirm.title(),
+                            }),
+                            s.jsx(n, {
+                                className: y,
+                                theme: t.secondary,
+                                onClick: c.cancel,
+                                onMouseEnter: () => m.sound(u),
+                                size: d.size,
+                                children: M.buttonCancel.title(),
+                            }),
+                        ],
+                    }),
+                ],
+            })
+        );
+    });
+p(s.jsx(d, { children: s.jsx(v, { children: s.jsx(V, {}) }) }));

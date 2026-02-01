@@ -2569,7 +2569,10 @@
                 !(function (u) {
                     ((u[(u.LOBBY = 0)] = 'LOBBY'), (u[(u.BATTLE = 1)] = 'BATTLE'));
                 })(Le || (Le = {}));
-                const Re = ({
+                function Re(u, e, t, r) {
+                    return !!u && (e ? r : t);
+                }
+                const Te = ({
                         behaviour: u,
                         category: e,
                         className: t,
@@ -2591,7 +2594,8 @@
                                 .fill(0)
                                 .map((r, D) => {
                                     const _ = A ? pu[D] : hu[e],
-                                        d = i.slice(2 * D, 2 * (D + 1));
+                                        d = i.slice(2 * D, 2 * (D + 1)),
+                                        C = d.some((u) => (null == u ? void 0 : u.inactivationTime) > 0);
                                     return n().createElement(
                                         'div',
                                         { id: `block-${e}`, key: `${e}-${D}`, className: t },
@@ -2605,19 +2609,19 @@
                                                 n().createElement('div', { className: xe }, _),
                                             ),
                                             d.map((t, r) => {
-                                                const A = Math.max(
+                                                const F = Math.max(
                                                     0,
                                                     Math.floor((1e3 * t.inactivationTime - Date.now()) / 1e3),
                                                 );
-                                                let F = !1;
+                                                let D = !1;
                                                 e === V.Clan
-                                                    ? (F = A <= 0 && E)
+                                                    ? (D = F <= 0 && C)
                                                     : u === Le.BATTLE
-                                                      ? t.state !== mu.Active && (F = 0 === t.inDepot || E)
+                                                      ? t.state !== mu.Active && (D = 0 === t.inDepot || E)
                                                       : t.isPremium ||
                                                         t.state === mu.Active ||
-                                                        (F = 0 === t.inDepot || (E && t.inactivationTime <= 0));
-                                                const D =
+                                                        (D = 0 === t.inDepot || (E && t.inactivationTime <= 0));
+                                                const _ =
                                                     u !== Le.BATTLE &&
                                                     t.isPremium &&
                                                     t.state !== mu.Active &&
@@ -2629,15 +2633,15 @@
                                                         behaviour: u,
                                                         item: t,
                                                         category: e,
-                                                        activeSecondsLeft: A,
-                                                        hasActiveGroupItems: i.length > 1 && E,
+                                                        activeSecondsLeft: F,
+                                                        hasActiveGroupItems: Re(i.length > 1, A, E, C),
                                                     },
                                                     n().createElement(_e, {
                                                         reserve: t,
                                                         playerGold: a,
-                                                        activeSecondsLeft: A,
-                                                        isDisabled: F,
-                                                        isPurchasable: D,
+                                                        activeSecondsLeft: F,
+                                                        isDisabled: D,
+                                                        isPurchasable: _,
                                                         cardSize: c ? De.DOUBLE : De.SINGLE,
                                                         onActivate: s,
                                                         onExpire: l,
@@ -2650,13 +2654,13 @@
                                 }),
                         );
                     },
-                    Te = (0, X.Pi)(({ category: u, className: e }) => {
+                    Se = (0, X.Pi)(({ category: u, className: e }) => {
                         const t = nu(),
                             r = t.model,
                             a = t.controls,
                             i = r.computes.getReserveCategoryItems(u),
                             s = a.onBoosterActivate;
-                        return n().createElement(Re, {
+                        return n().createElement(Te, {
                             behaviour: Le.BATTLE,
                             category: u,
                             className: e,
@@ -2664,16 +2668,16 @@
                             items: i,
                         });
                     });
-                let Se;
+                let Oe;
                 !(function (u) {
                     ((u[(u.Stats = 0)] = 'Stats'), (u[(u.Reserves = 1)] = 'Reserves'));
-                })(Se || (Se = {}));
-                const Oe = (0, X.Pi)(() => {
+                })(Oe || (Oe = {}));
+                const Pe = (0, X.Pi)(() => {
                     const u = nu().model,
                         e = u.tabSelection.get(),
                         t = u.computes.getReserveCategoryNames(),
                         r =
-                            e === Se.Reserves
+                            e === Oe.Reserves
                                 ? R.strings.personal_reserves.battleView.title()
                                 : R.strings.ingame_gui.statistics.tab.line_up.title();
                     return n().createElement(
@@ -2694,7 +2698,7 @@
                                 { className: cu },
                                 t.map((u) => {
                                     const e = u === V.Clan;
-                                    return n().createElement(Te, { key: u, category: u, className: _()(du, e && Cu) });
+                                    return n().createElement(Se, { key: u, category: u, className: _()(du, e && Cu) });
                                 }),
                             ),
                         ),
@@ -2713,7 +2717,7 @@
                 });
                 engine.whenReady.then(() => {
                     S().render(
-                        n().createElement(ru, null, n().createElement(L, null, n().createElement(Oe, null))),
+                        n().createElement(ru, null, n().createElement(L, null, n().createElement(Pe, null))),
                         document.getElementById('root'),
                     );
                 });

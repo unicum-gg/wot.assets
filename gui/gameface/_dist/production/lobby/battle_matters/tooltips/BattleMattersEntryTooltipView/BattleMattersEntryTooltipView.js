@@ -764,7 +764,7 @@
                                     (window.cancelAnimationFrame(u.current),
                                         (u.current = window.requestAnimationFrame(() => {
                                             u.current = window.requestAnimationFrame(() => {
-                                                (e(), (u.current = 0));
+                                                ((u.current = 0), e());
                                             });
                                         })));
                                 },
@@ -1162,10 +1162,7 @@
                         (u.EquipCoin = 'equipCoin'),
                         (u.LootBox = 'lootBox'),
                         (u.BrCoin = 'brcoin'),
-                        (u.Attachment = 'attachment'),
-                        (u.Stamp = 'stamp'),
-                        (u.WtEventLootbox = 'wtevent_lootBox'),
-                        (u.WtEventTicket = 'wtevent_ticket'));
+                        (u.Attachment = 'attachment'));
                 })(Q || (Q = {})),
                     (function (u) {
                         ((u.Gold = 'gold'),
@@ -1313,9 +1310,6 @@
                         Q.BattleBoosterGift,
                         Q.OptionalDevice,
                         Q.Attachment,
-                        Q.Stamp,
-                        Q.WtEventLootbox,
-                        Q.WtEventTicket,
                     ],
                     su = [Q.Gold, Q.Credits, Q.Crystal, Q.FreeXp],
                     iu = [Q.BattlePassPoints, Q.EquipCoin],

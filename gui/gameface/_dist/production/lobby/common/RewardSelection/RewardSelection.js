@@ -1490,10 +1490,7 @@
                         (e.EquipCoin = 'equipCoin'),
                         (e.LootBox = 'lootBox'),
                         (e.BrCoin = 'brcoin'),
-                        (e.Attachment = 'attachment'),
-                        (e.Stamp = 'stamp'),
-                        (e.WtEventLootbox = 'wtevent_lootBox'),
-                        (e.WtEventTicket = 'wtevent_ticket'));
+                        (e.Attachment = 'attachment'));
                 })(q || (q = {})),
                     (function (e) {
                         ((e.Gold = 'gold'),
@@ -1994,12 +1991,14 @@
                 }
                 function we(e, u, t = []) {
                     const r = (0, a.useRef)(0),
-                        n = (0, a.useCallback)(() => window.clearInterval(r.current), t || []);
+                        n = (0, a.useCallback)(() => {
+                            (window.clearInterval(r.current), (r.current = 0));
+                        }, t || []);
                     (0, a.useEffect)(() => n, [n]);
                     const i = (null != t ? t : []).concat([u]);
                     return [
                         (0, a.useCallback)((t) => {
-                            ((r.current = window.setInterval(() => e(t, !0), u)), e(t, !1));
+                            (0 !== r.current && n(), (r.current = window.setInterval(() => e(t, !0), u)), e(t, !1));
                         }, i),
                         n,
                     ];
@@ -2287,7 +2286,8 @@
                         getContainerSize: (e) => e.offsetWidth,
                         getWrapperSize: (e) => e.offsetWidth,
                         setScrollPosition: (e, u) => {
-                            e.style.transform = `translateX(-${u.value.scrollPosition}px)`;
+                            var t;
+                            e.style.transform = `translateX(-${0 | (null != (t = u.value.scrollPosition) ? t : 0)}px)`;
                         },
                         getDirection: (e) => (e.deltaY > 1 ? Le.Next : Le.Prev),
                         forceTriggerMouseMove: o.O.view.forceTriggerMouseMove,

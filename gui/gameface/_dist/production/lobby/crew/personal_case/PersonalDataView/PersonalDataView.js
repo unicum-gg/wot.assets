@@ -878,7 +878,8 @@
                         getContainerSize: (e) => e.offsetWidth,
                         getWrapperSize: (e) => e.offsetWidth,
                         setScrollPosition: (e, t) => {
-                            e.style.transform = `translateX(-${t.value.scrollPosition}px)`;
+                            var u;
+                            e.style.transform = `translateX(-${0 | (null != (u = t.value.scrollPosition) ? u : 0)}px)`;
                         },
                         getDirection: (e) => (e.deltaY > 1 ? r.Nm.Next : r.Nm.Prev),
                         forceTriggerMouseMove: n.O.view.forceTriggerMouseMove,
@@ -2482,12 +2483,14 @@
                 var n = u(7363);
                 function r(e, t, u = []) {
                     const r = (0, n.useRef)(0),
-                        a = (0, n.useCallback)(() => window.clearInterval(r.current), u || []);
+                        a = (0, n.useCallback)(() => {
+                            (window.clearInterval(r.current), (r.current = 0));
+                        }, u || []);
                     (0, n.useEffect)(() => a, [a]);
                     const o = (null != u ? u : []).concat([t]);
                     return [
                         (0, n.useCallback)((u) => {
-                            ((r.current = window.setInterval(() => e(u, !0), t)), e(u, !1));
+                            (0 !== r.current && a(), (r.current = window.setInterval(() => e(u, !0), t)), e(u, !1));
                         }, o),
                         a,
                     ];
@@ -2509,7 +2512,7 @@
                                     (window.cancelAnimationFrame(e.current),
                                         (e.current = window.requestAnimationFrame(() => {
                                             e.current = window.requestAnimationFrame(() => {
-                                                (t(), (e.current = 0));
+                                                ((e.current = 0), t());
                                             });
                                         })));
                                 },

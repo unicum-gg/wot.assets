@@ -112,7 +112,10 @@ const o = {
                     body: R.strings.tooltips.quests.bonuses.token.crew_bonus_x3.body(),
                 };
             default:
-                return { header: e(R.strings, `${d}.${t}.header`), body: e(R.strings, `${d}.${t}.body`) };
+                return {
+                    header: e(R.strings, `tooltips.awardItem.${t}.header`),
+                    body: e(R.strings, `tooltips.awardItem.${t}.body`),
+                };
         }
     };
 export { r as L, s as T, m as a, a as b, l as c, u as g, i };

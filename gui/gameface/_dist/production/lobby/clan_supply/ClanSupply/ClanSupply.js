@@ -55,7 +55,7 @@
                         displayStatus: () => S.W,
                         displayStatusIs: () => ae,
                         enableFullScreenModeSupported: () => se,
-                        events: () => T,
+                        events: () => M,
                         extraSize: () => re,
                         forceTriggerMouseMove: () => K,
                         freezeTextureBeforeResize: () => W,
@@ -184,7 +184,7 @@
                     return `url(${v(e, u, t)})`;
                 }
                 var S = t(112);
-                const T = {
+                const M = {
                         onTextureFrozen: o('self.onTextureFrozen'),
                         onTextureReady: o('self.onTextureReady'),
                         onDomBuilt: o('self.onDomBuilt'),
@@ -200,7 +200,7 @@
                             onRequestPosition: o('children.requestPosition'),
                         },
                     },
-                    M = ['args'];
+                    T = ['args'];
                 const R = 2,
                     y = 16,
                     P = 32,
@@ -217,7 +217,7 @@
                                         n = Object.keys(e);
                                     for (a = 0; a < n.length; a++) ((t = n[a]), u.indexOf(t) >= 0 || (r[t] = e[t]));
                                     return r;
-                                })(u, M);
+                                })(u, T);
                             return void 0 !== r
                                 ? viewEnv.handleViewEvent(
                                       Object.assign({ __Type: t, type: e }, n, {
@@ -329,7 +329,7 @@
                     },
                     ne = Promise.all([
                         new Promise((e) => {
-                            window.isDomBuilt ? e() : T.onDomBuilt(e);
+                            window.isDomBuilt ? e() : M.onDomBuilt(e);
                         }),
                         engine.whenReady,
                     ]);
@@ -1088,8 +1088,8 @@
                             i = n.mediaSize;
                         return r().createElement('div', b({ className: _()(t, f[s], v[o], w[i]) }, a), u);
                     },
-                    T = ['children'];
-                const M = (e) => {
+                    M = ['children'];
+                const T = (e) => {
                     let u = e.children,
                         t = (function (e, u) {
                             if (null == e) return {};
@@ -1099,7 +1099,7 @@
                                 n = Object.keys(e);
                             for (a = 0; a < n.length; a++) ((t = n[a]), u.indexOf(t) >= 0 || (r[t] = e[t]));
                             return r;
-                        })(e, T);
+                        })(e, M);
                     return r().createElement(C, null, r().createElement(S, t, u));
                 };
                 var y = t(533),
@@ -1864,9 +1864,9 @@
                     'keyframesNameConfig',
                     'onClick',
                 ];
-                function Te() {
+                function Me() {
                     return (
-                        (Te =
+                        (Me =
                             Object.assign ||
                             function (e) {
                                 for (var u = 1; u < arguments.length; u++) {
@@ -1875,10 +1875,10 @@
                                 }
                                 return e;
                             }),
-                        Te.apply(this, arguments)
+                        Me.apply(this, arguments)
                     );
                 }
-                const Me = (0, a.forwardRef)(function (e, u) {
+                const Te = (0, a.forwardRef)(function (e, u) {
                         let t = e.src,
                             n = e.className,
                             o = e.autoplay,
@@ -2096,11 +2096,11 @@
                             }, []),
                             r().createElement(
                                 'video',
-                                Te({ src: t, className: n, style: l, loop: E, ref: g, onClick: m }, _),
+                                Me({ src: t, className: n, style: l, loop: E, ref: g, onClick: m }, _),
                             )
                         );
                     }),
-                    Re = (0, a.memo)(Me),
+                    Re = (0, a.memo)(Te),
                     ye = 'VideoBack_base_e2',
                     Pe = 'VideoBack_video_ac',
                     Le = (e, u) => {
@@ -2448,8 +2448,8 @@
                             r().createElement('div', { className: _()(vu, null == t ? void 0 : t.gear) }),
                             r().createElement('div', { className: _()(wu, null == t ? void 0 : t.logo) }),
                         ),
-                    Tu = 'LoadingScreen_caption_88',
-                    Mu = () => {
+                    Mu = 'LoadingScreen_caption_88',
+                    Tu = () => {
                         const e = (0, a.useState)(s.O.view.getScale()),
                             u = e[0],
                             t = e[1];
@@ -3414,7 +3414,7 @@
                             o = ((e) => ({ width: Ru[e].width, height: Ru[e].height }))(n),
                             i = s.O.view.remToPx(o.width),
                             l = s.O.view.remToPx(o.height),
-                            c = Mu();
+                            c = Tu();
                         return r().createElement(
                             'div',
                             { className: $u },
@@ -3565,10 +3565,10 @@
                             })(e, Xu);
                         const w = (0, a.useState)(!1),
                             S = w[0],
-                            T = w[1],
-                            M = (0, a.useState)(!1),
-                            y = M[0],
-                            P = M[1],
+                            M = w[1],
+                            T = (0, a.useState)(!1),
+                            y = T[0],
+                            P = T[1],
                             L = (0, a.useRef)(null),
                             x = () => !1 === i,
                             N = (e) => x() && ((e) => e.button === Yu.LEFT)(e),
@@ -3576,10 +3576,10 @@
                                 null == F || F(e);
                             }),
                             k = Zu(N, (e) => {
-                                (T(!0), null == B || B(e), m && lu(m));
+                                (M(!0), null == B || B(e), m && lu(m));
                             }),
                             I = Zu(N, (e) => {
-                                (T(!1), null == h || h(e));
+                                (M(!1), null == h || h(e));
                             }),
                             H = Zu(x, (e) => {
                                 (P(!0), null == D || D(e), d && lu(d));
@@ -3606,7 +3606,7 @@
                                     onClick: O,
                                     onMouseEnter: H,
                                     onMouseLeave: (e) => {
-                                        (P(!1), T(!1), null == p || p(e));
+                                        (P(!1), M(!1), null == p || p(e));
                                     },
                                     onMouseDown: k,
                                     onMouseUp: I,
@@ -3736,10 +3736,7 @@
                         (e.EquipCoin = 'equipCoin'),
                         (e.LootBox = 'lootBox'),
                         (e.BrCoin = 'brcoin'),
-                        (e.Attachment = 'attachment'),
-                        (e.Stamp = 'stamp'),
-                        (e.WtEventLootbox = 'wtevent_lootBox'),
-                        (e.WtEventTicket = 'wtevent_ticket'));
+                        (e.Attachment = 'attachment'));
                 })(ct || (ct = {})),
                     (function (e) {
                         ((e.Gold = 'gold'),
@@ -3887,9 +3884,6 @@
                         ct.BattleBoosterGift,
                         ct.OptionalDevice,
                         ct.Attachment,
-                        ct.Stamp,
-                        ct.WtEventLootbox,
-                        ct.WtEventTicket,
                     ],
                     pt = [ct.Gold, ct.Credits, ct.Crystal, ct.FreeXp],
                     Bt = [ct.BattlePassPoints, ct.EquipCoin],
@@ -3995,9 +3989,9 @@
                     },
                     wt = [dt.Small, dt.Big],
                     St = ['children'];
-                function Tt() {
+                function Mt() {
                     return (
-                        (Tt =
+                        (Mt =
                             Object.assign ||
                             function (e) {
                                 for (var u = 1; u < arguments.length; u++) {
@@ -4006,10 +4000,10 @@
                                 }
                                 return e;
                             }),
-                        Tt.apply(this, arguments)
+                        Mt.apply(this, arguments)
                     );
                 }
-                const Mt = (e) => {
+                const Tt = (e) => {
                     let u = e.children,
                         t = (function (e, u) {
                             if (null == e) return {};
@@ -4022,7 +4016,7 @@
                         })(e, St);
                     return r().createElement(
                         z,
-                        Tt(
+                        Mt(
                             {
                                 contentId:
                                     R.views.common.tooltip_window.backport_tooltip_content.BackportTooltipContent(
@@ -4054,7 +4048,7 @@
                         const a = r().createElement('div', { className: t }, e);
                         if (u.header || u.body) return r().createElement(Y, u, a);
                         const n = u.contentId;
-                        return n ? r().createElement(z, Rt({}, u, { contentId: n }), a) : r().createElement(Mt, u, a);
+                        return n ? r().createElement(z, Rt({}, u, { contentId: n }), a) : r().createElement(Tt, u, a);
                     },
                     Pt = {
                         base: 'Reward_base_ea',
@@ -4414,7 +4408,7 @@
                             c = a.deficiencyAmount,
                             E = a.isBuyLoading,
                             d = u.rewards.get(),
-                            C = Mu(),
+                            C = Tu(),
                             m = yu[n].svgPath,
                             _ = o === it.PURCHASED,
                             A = () => t.openStage(n);
@@ -4515,7 +4509,7 @@
                     Ca = {
                         [be.PENDING]: () =>
                             r().createElement(Su, {
-                                classNames: { caption: Tu },
+                                classNames: { caption: Mu },
                                 message: R.strings.clan_supply.questsPage.loading(),
                             }),
                         [be.ERROR]: hu,
@@ -4598,8 +4592,8 @@
                     va = 'ErrorScreen_header_68',
                     wa = 'ErrorScreen_icon_86',
                     Sa = 'ErrorScreen_heading_0b',
-                    Ta = 'ErrorScreen_description_04',
-                    Ma = 'ErrorScreen_button_72',
+                    Ma = 'ErrorScreen_description_04',
+                    Ta = 'ErrorScreen_button_72',
                     Ra = R.strings.clan_supply.questsPage.errorScreen,
                     ya = (0, L.Pi)(() => {
                         const e = ba().controls;
@@ -4612,10 +4606,10 @@
                                 r().createElement('div', { className: wa }),
                                 r().createElement('div', { className: Sa }, Ra.heading()),
                             ),
-                            r().createElement('div', { className: Ta }, Ra.description()),
+                            r().createElement('div', { className: Ma }, Ra.description()),
                             r().createElement(
                                 Cu,
-                                { mixClass: Ma, type: 'secondary', onClick: e.refresh },
+                                { mixClass: Ta, type: 'secondary', onClick: e.refresh },
                                 Ra.button.refresh(),
                             ),
                         );
@@ -4957,7 +4951,7 @@
                             );
                         },
                     ),
-                    Tr = (0, a.memo)(
+                    Mr = (0, a.memo)(
                         ({
                             to: e,
                             size: u,
@@ -5010,7 +5004,7 @@
                             );
                         },
                     ),
-                    Mr = 'ProgressBarDeltaSimple_base_6c',
+                    Tr = 'ProgressBarDeltaSimple_base_6c',
                     Rr = 'ProgressBarDeltaSimple_delta_99',
                     yr = (0, a.memo)(
                         ({
@@ -5076,7 +5070,7 @@
                                 ? null
                                 : r().createElement(
                                       'div',
-                                      { className: Mr, style: p },
+                                      { className: Tr, style: p },
                                       r().createElement(
                                           'div',
                                           { style: A ? F : D, className: Rr },
@@ -5167,7 +5161,7 @@
                             case dr.Simple:
                                 return r().createElement(Pr, xr({}, n, { onEndAnimation: l, isComplete: o }));
                             case dr.Growing:
-                                return r().createElement(Tr, xr({}, n, { onEndAnimation: l, isComplete: o }));
+                                return r().createElement(Mr, xr({}, n, { onEndAnimation: l, isComplete: o }));
                             default:
                                 return null;
                         }
@@ -5662,8 +5656,8 @@
                 })(wn || (wn = {}));
                 N.Sw.instance;
                 const Sn = vn,
-                    Tn = 'Countdown_base_0c',
-                    Mn = 'Countdown_iconContainer_eb',
+                    Mn = 'Countdown_base_0c',
+                    Tn = 'Countdown_iconContainer_eb',
                     Rn = 'Countdown_icon_80',
                     yn = 'Countdown_countdown_63',
                     Pn = 'Countdown_base__expired_92',
@@ -5696,8 +5690,8 @@
                                   );
                         return r().createElement(
                             'div',
-                            { className: _()(Tn, a && Pn) },
-                            r().createElement('div', { className: Mn }, r().createElement('div', { className: Rn })),
+                            { className: _()(Mn, a && Pn) },
+                            r().createElement('div', { className: Tn }, r().createElement('div', { className: Rn })),
                             r().createElement('div', { className: yn }, s),
                         );
                     }),
@@ -6140,7 +6134,7 @@
                     });
                 engine.whenReady.then(() => {
                     P().render(
-                        r().createElement(re, null, r().createElement(M, null, r().createElement(os, null))),
+                        r().createElement(re, null, r().createElement(T, null, r().createElement(os, null))),
                         document.getElementById('root'),
                     );
                 });

@@ -2920,14 +2920,21 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     background-position-y: -15rem;
 }
 
-.ExperienceStepper_btnIncrement_fe:active {
-    background-position-y: -30rem;
-}
-
 .ExperienceStepper_btnIncrement__disabled_b8,
 .ExperienceStepper_btnIncrement__disabled_b8:hover {
     background-position-y: -45rem;
     cursor: default;
+}
+
+.ExperienceStepper_btnIncrement__active_bf,
+.ExperienceStepper_btnIncrement__active_bf:hover {
+    background-position-y: -30rem;
+}
+
+.ExperienceStepper_btnIncrement__notHovered_61,
+.ExperienceStepper_btnIncrement__notHovered_61:hover {
+    background-position-x: 0;
+    background-position-y: 0;
 }
 
 .ExperienceStepper_btnDecrement_fb {
@@ -2939,14 +2946,21 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     background-position-y: -15rem;
 }
 
-.ExperienceStepper_btnDecrement_fb:active {
-    background-position-y: -30rem;
-}
-
 .ExperienceStepper_btnDecrement__disabled_3e,
 .ExperienceStepper_btnDecrement__disabled_3e:hover {
     background-position-y: -45rem;
     cursor: default;
+}
+
+.ExperienceStepper_btnDecrement__active_c4,
+.ExperienceStepper_btnDecrement__active_c4:hover {
+    background-position-y: -30rem;
+}
+
+.ExperienceStepper_btnDecrement__notHovered_83,
+.ExperienceStepper_btnDecrement__notHovered_83:hover {
+    background-position-x: 100%;
+    background-position-y: 0;
 }
 
 .FreeXpCard_discount_48 {

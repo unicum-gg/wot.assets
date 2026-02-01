@@ -1,5 +1,5 @@
-import { j as e, e as s, x as t } from '../../../../chunks/vendor.js';
-import { F as a, m as i, i as r, c, n as l, q as o, I as n, ax as d, a as m } from '../../../../chunks/lib.js';
+import { j as e, e as s, F as t } from '../../../../chunks/vendor.js';
+import { F as a, t as i, i as r, c, v as l, y as o, I as n, aM as d, a as m } from '../../../../chunks/lib.js';
 /* empty css                       */ const h = 'Content_6fb69530';
 function u({ className: t }) {
     return e.jsx('div', {
@@ -9,13 +9,13 @@ function u({ className: t }) {
 }
 const p = 'criticalDevices',
     f = 'destroyedDevices',
-    x = 'destroyedTankmen';
-function j(e) {
+    j = 'destroyedTankmen';
+function x(e) {
     return i(e, (e) => ({ damageGroup: e.damageGroup, value: e.value }));
 }
-const [_, v] = r()(({ observableModel: e, cleanup: s }) => {
+const [v, _] = r()(({ observableModel: e, cleanup: s }) => {
         e.transform;
-        const t = { details: e.transform(j, 'details') },
+        const t = { details: e.transform(x, 'details') },
             a = c.shallow(() => {
                 const e = t.details.get();
                 return l(
@@ -28,12 +28,12 @@ const [_, v] = r()(({ observableModel: e, cleanup: s }) => {
                             case f:
                                 e[f].push(s);
                                 break;
-                            case x:
-                                e[x].push(s);
+                            case j:
+                                e[j].push(s);
                         }
                         return e;
                     },
-                    { [p]: [], [f]: [], [x]: [] },
+                    { [p]: [], [f]: [], [j]: [] },
                 );
             });
         return { ...t, computes: { groupedDetails: a } };
@@ -74,7 +74,7 @@ function F({ titlePath: s, list: t, iconSuffix: r, localizationTemplate: c }) {
     });
 }
 const T = t(function ({ className: t }) {
-        const { model: a } = v(),
+        const { model: a } = _(),
             i = a.computes.groupedDetails();
         return e.jsxs('div', {
             className: s(b, t),
@@ -127,7 +127,7 @@ const A = 'App_48b0ea08',
     H = 'App_content_962209c7',
     $ = 'App_footer_80741629',
     C = t(function () {
-        const { model: s } = v(),
+        const { model: s } = _(),
             t = s.details.get();
         return e.jsxs('div', {
             className: A,
@@ -145,7 +145,7 @@ const A = 'App_48b0ea08',
             ],
         });
     });
-function W() {
-    return e.jsx(_, { children: e.jsx(d, { children: e.jsx(d.Decorator, { children: e.jsx(C, {}) }) }) });
+function M() {
+    return e.jsx(v, { children: e.jsx(d, { children: e.jsx(d.Decorator, { children: e.jsx(C, {}) }) }) });
 }
-m(e.jsx(W, {}));
+m(e.jsx(M, {}));

@@ -922,10 +922,7 @@
                         (u.EquipCoin = 'equipCoin'),
                         (u.LootBox = 'lootBox'),
                         (u.BrCoin = 'brcoin'),
-                        (u.Attachment = 'attachment'),
-                        (u.Stamp = 'stamp'),
-                        (u.WtEventLootbox = 'wtevent_lootBox'),
-                        (u.WtEventTicket = 'wtevent_ticket'));
+                        (u.Attachment = 'attachment'));
                 })(v || (v = {})),
                     (function (u) {
                         ((u.Gold = 'gold'),
@@ -1374,13 +1371,10 @@
                         v.BattleBoosterGift,
                         v.OptionalDevice,
                         v.Attachment,
-                        v.Stamp,
-                        v.WtEventLootbox,
-                        v.WtEventTicket,
                     ],
                     j = [v.Gold, v.Credits, v.Crystal, v.FreeXp],
-                    W = [v.BattlePassPoints, v.EquipCoin],
-                    X = [v.PremiumPlus, v.Premium],
+                    X = [v.BattlePassPoints, v.EquipCoin],
+                    W = [v.PremiumPlus, v.Premium],
                     K = ['engravings', 'backgrounds'],
                     Q = ['engraving', 'background'],
                     Z = (u, e = b.Small) => {
@@ -1667,7 +1661,7 @@
                                     (window.cancelAnimationFrame(u.current),
                                         (u.current = window.requestAnimationFrame(() => {
                                             u.current = window.requestAnimationFrame(() => {
-                                                (e(), (u.current = 0));
+                                                ((u.current = 0), e());
                                             });
                                         })));
                                 },
@@ -2040,9 +2034,9 @@
                                             ? w.MULTI
                                             : j.includes(e)
                                               ? w.CURRENCY
-                                              : W.includes(e)
+                                              : X.includes(e)
                                                 ? w.NUMBER
-                                                : X.includes(e)
+                                                : W.includes(e)
                                                   ? w.PREMIUM_PLUS
                                                   : w.STRING),
                                     vehicleLvl: 'vehicleLvl' in u ? u.vehicleLvl : void 0,

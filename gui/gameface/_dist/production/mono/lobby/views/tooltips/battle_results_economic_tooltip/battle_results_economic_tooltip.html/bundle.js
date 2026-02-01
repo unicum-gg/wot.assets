@@ -1,166 +1,159 @@
-import { j as s, f as e, R as i, n as a, p as t } from '../../../../chunks/vendor.js';
-import { F as l, a as d, a3 as c, m as r, al as o, z as n } from '../../../../chunks/lib.js';
-import { d as m } from '../../../../chunks/TooltipDecorator2.js';
-/* empty css                                 */ import { i as u, P as j, s as _ } from '../../../../chunks/profit.js';
-const x = 'Listitem_819fcb20',
-    b = 'Listitem_title_d8db9103',
-    h = 'Listitem_description_7951e7eb',
-    v = 'Listitem_base__total_ec7b4e6a',
-    p = 'Listitem_dotted_b30a04ff',
-    N = 'Listitem_dotted__inline_b0618b32',
-    f = 'Listitem_count_a258bf96',
-    y = 'Listitem_profit_46ea4ebe',
-    g = 'Listitem_text_a1f562d3',
-    T = ({ label: a, firstValue: t, secondValue: d, useSecondValues: c, totalValue: r }) =>
-        s.jsxs('div', {
-            className: e(x, r && v),
+import { x as s, j as e, z as a, y as i } from '../../../../chunks/vendor.js';
+import { a as t, c as d, m as l, a5 as c, w as r, a3 as n, cY as o } from '../../../../chunks/lib.js';
+import { P as m, s as _ } from '../../../../chunks/profit.js';
+const j = 2,
+    x = 3,
+    [u, v] = t()(({ observableModel: e, readByPath: a }) => {
+        const i = { root: e.object(), results: [a('earned'), a('expenses'), a('total'), a('additional')] },
+            t = s(() => l(i.results, (s, e) => ({ ...s, isTotal: e === j, isAdditional: e === x })), { equals: d });
+        return { ...i, computes: { getResultsList: t } };
+    }, c),
+    h = 'ListItem_9ed21754',
+    b = 'ListItem_title_ffdc3010',
+    N = 'ListItem_description_d694fdcd',
+    p = 'ListItem_base__total_ea38608d',
+    f = 'ListItem_dotted_dc00eddb',
+    g = 'ListItem_dotted__inline_c714df3',
+    y = 'ListItem_count_16457bf9',
+    L = 'ListItem_profit_c0826df5',
+    k = 'ListItem_text_8419d244',
+    I = ({ label: s, firstValue: i, secondValue: t, useSecondValues: d, totalValue: l }) =>
+        e.jsxs('div', {
+            className: a(h, l && p),
             children: [
-                s.jsxs('div', {
+                e.jsxs('div', {
                     className: b,
                     children: [
-                        s.jsx('div', {
-                            className: h,
-                            children: s.jsx('div', {
-                                className: g,
-                                children: s.jsx(l, {
-                                    text: `${a}%(line)`,
-                                    binding: { line: s.jsx('div', { className: e(p, N) }) },
+                        e.jsx('div', {
+                            className: N,
+                            children: e.jsx('div', {
+                                className: k,
+                                children: e.jsx(r, {
+                                    text: `${s}%(line)`,
+                                    binding: { line: e.jsx('div', { className: a(f, g) }) },
                                 }),
                             }),
                         }),
-                        s.jsx('div', { className: p }),
+                        e.jsx('div', { className: f }),
                     ],
                 }),
-                s.jsx('div', {
-                    className: f,
-                    children: t.isShown
-                        ? s.jsxs(i.Fragment, {
+                e.jsx('div', {
+                    className: y,
+                    children: i.isShown
+                        ? e.jsxs(e.Fragment, {
                               children: [
-                                  s.jsx('div', { className: p }),
-                                  s.jsx('div', {
-                                      className: y,
-                                      children:
-                                          t.currencyType &&
-                                          u(t.currencyType) &&
-                                          s.jsx(j, {
-                                              type: t.currencyType,
-                                              value: t.value,
-                                              size: _.small,
-                                              modifiers: t.modifiers,
-                                          }),
+                                  e.jsx('div', { className: f }),
+                                  e.jsx('div', {
+                                      className: L,
+                                      children: e.jsx(m, {
+                                          type: i.currencyType,
+                                          value: i.value,
+                                          size: _.small,
+                                          modifiers: i.modifiers,
+                                      }),
                                   }),
                               ],
                           })
-                        : s.jsx('div', { className: p }),
+                        : e.jsx('div', { className: f }),
                 }),
-                c &&
-                    s.jsx('div', {
-                        className: f,
+                d &&
+                    e.jsx('div', {
+                        className: y,
                         children:
-                            d.isShown &&
-                            s.jsxs(i.Fragment, {
+                            t.isShown &&
+                            e.jsxs(e.Fragment, {
                                 children: [
-                                    s.jsx('div', { className: p }),
-                                    s.jsx('div', {
-                                        className: y,
-                                        children:
-                                            d.currencyType &&
-                                            u(d.currencyType) &&
-                                            s.jsx(j, {
-                                                type: d.currencyType,
-                                                value: d.value,
-                                                size: _.small,
-                                                modifiers: d.modifiers,
-                                            }),
+                                    e.jsx('div', { className: f }),
+                                    e.jsx('div', {
+                                        className: L,
+                                        children: e.jsx(m, {
+                                            type: t.currencyType,
+                                            value: t.value,
+                                            size: _.small,
+                                            modifiers: t.modifiers,
+                                        }),
                                     }),
                                 ],
                             }),
                     }),
             ],
         }),
-    k = 2,
-    L = 3,
-    [V, F] = d()(({ observableModel: s, readByPath: e }) => {
-        const i = { root: s.object(), results: [e('earned'), e('expenses'), e('total'), e('additional')] },
-            t = a(() => r(i.results, (s, e) => ({ ...s, isTotal: e === k, isAdditional: e === L })), { equals: c });
-        return { ...i, computes: { getResultsList: t } };
-    }, o),
-    A = {
+    V = {
         base: 'Content_bd627888',
         title: 'Content_title_9e9cd55a',
         block: 'Content_block_604708c6',
         block__additional: 'Content_block__additional_315b276a',
     },
-    S = t(() => {
-        const { model: i } = F();
-        return s.jsx('div', {
-            className: A.base,
-            children: r(
-                i.computes.getResultsList(),
-                (i, a) =>
-                    i.records.length > 0 &&
-                    s.jsxs(
+    T = i(() => {
+        const { model: s } = v();
+        return e.jsx('div', {
+            className: V.base,
+            children: l(
+                s.computes.getResultsList(),
+                (s, i) =>
+                    s.records.length > 0 &&
+                    e.jsxs(
                         'div',
                         {
-                            className: e(A.block, i.isAdditional && A.block__additional),
+                            className: a(V.block, s.isAdditional && V.block__additional),
                             children: [
-                                i.title && !i.isTotal && s.jsx('div', { className: A.title, children: i.title }),
-                                s.jsx('div', {
-                                    className: A.list,
-                                    children: r(i.records, (e, a) =>
-                                        s.jsx(
-                                            T,
-                                            { ...e, useSecondValues: i.useSecondValues, totalValue: i.isTotal },
-                                            a,
+                                s.title && !s.isTotal && e.jsx('div', { className: V.title, children: s.title }),
+                                e.jsx('div', {
+                                    className: V.list,
+                                    children: l(s.records, (a, i) =>
+                                        e.jsx(
+                                            I,
+                                            { ...a, useSecondValues: s.useSecondValues, totalValue: s.isTotal },
+                                            i,
                                         ),
                                     ),
                                 }),
                             ],
                         },
-                        a,
+                        i,
                     ),
             ),
         });
     }),
-    C = 'Footer_1b733abe',
-    $ = 'Footer_icon_abda8adb',
-    w = 'Footer_description_398ba227',
-    z = t(() => {
-        const { model: e } = F(),
-            { premiumAdvertising: i } = e.root.get();
-        return s.jsxs('div', {
-            className: C,
-            children: [s.jsx('div', { className: $ }), s.jsx('div', { className: w, children: i })],
+    A = 'Footer_1b733abe',
+    F = 'Footer_icon_cb4ec2ad',
+    S = 'Footer_description_398ba227',
+    C = i(() => {
+        const { model: s } = v(),
+            { premiumAdvertising: a } = s.root.get();
+        return e.jsxs('div', {
+            className: A,
+            children: [e.jsx('div', { className: F }), e.jsx('div', { className: S, children: a })],
         });
     }),
-    H = 'Header_36d24a5c',
-    q = 'Header_icon_442a1490',
-    B = 'Header_description_d221db51',
-    D = t(() => {
-        const { model: e } = F(),
-            { currencyType: i } = e.root.get();
-        return s.jsxs('div', {
-            className: H,
+    $ = 'Header_36d24a5c',
+    w = 'Header_icon_442a1490',
+    z = 'Header_description_d221db51',
+    H = i(() => {
+        const { model: s } = v(),
+            { currencyType: a } = s.root.get();
+        return e.jsxs('div', {
+            className: $,
             children: [
-                s.jsx('div', {
-                    className: q,
-                    style: { backgroundImage: `url(${R.images.white_tiger.gui.maps.icons.feature.profit.$dyn(i)})` },
+                e.jsx('div', {
+                    className: w,
+                    style: { backgroundImage: `url(${R.images.fun_random.gui.maps.icons.feature.profit.$dyn(a)})` },
                 }),
-                s.jsx('div', { className: B, children: R.strings.quests.bonusName.$dyn(i) }),
+                e.jsx('div', { className: z, children: R.strings.quests.bonusName.$dyn(a) }),
             ],
         });
     }),
-    P = { base: 'BattleResultsEconomicTooltipApp_139506b8' },
-    E = t(() => {
-        const { model: e } = F(),
-            { premiumAdvertising: i } = e.root.get();
-        return s.jsxs('div', {
-            className: P.base,
+    q = { base: 'App_78b07e4b' },
+    P = i(() => {
+        const { model: s } = v(),
+            { premiumAdvertising: a } = s.root.get();
+        return e.jsxs('div', {
+            className: q.base,
             children: [
-                s.jsx('div', { className: P.header, children: s.jsx(D, {}) }),
-                s.jsx('div', { className: P.header, children: s.jsx(S, {}) }),
-                i && s.jsx('div', { className: P.footer, children: s.jsx(z, {}) }),
+                e.jsx('div', { className: q.header, children: e.jsx(H, {}) }),
+                e.jsx('div', { className: q.header, children: e.jsx(T, {}) }),
+                a && e.jsx('div', { className: q.footer, children: e.jsx(C, {}) }),
             ],
         });
     });
-n(s.jsx(V, { children: s.jsx(m, { children: s.jsx(E, {}) }) }));
+n(e.jsx(u, { children: e.jsx(o, { children: e.jsx(P, {}) }) }));

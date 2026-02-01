@@ -1,26 +1,38 @@
-import { y as s, j as i, x as t } from '../../../../chunks/vendor.js';
-import { i as n, n as o, F as e, r as a } from '../../../../chunks/lib.js';
-import { t as r, T as c } from '../../../../chunks/tooltips.module.js';
-/* empty css                        */ const [d, l] = n()(({ observableModel: s }) => ({ root: s.object() }), o),
-    p = s(() => {
+import { I as s, j as t, J as i } from '../../../../chunks/vendor.js';
+import { i as o, n, cf as e, cP as a } from '../../../../chunks/lib.js';
+import { T as r } from '../../../../chunks/tooltip_decorator.js';
+import { R as c } from '../../../../chunks/consts.js';
+import { t as p } from '../../../../chunks/tooltips.module.js';
+/* empty css                        */ const [d, l] = o('RankInactivityTooltipModel')(
+        ({ observableModel: s }) => ({ root: s.object() }),
+        n,
+    ),
+    m = 'App_f0b59ee5',
+    _ = 'App_daysLeft_bc8ac04b',
+    j = 'App_timer_c376641d',
+    b = 'App_timer__active_d318a2be',
+    v = s(() => {
         const { model: s } = l(),
-            { rankInactivityCount: n } = s.root.get();
-        return i.jsxs('div', {
-            className: r.base,
+            { rankInactivityCount: o, rankInactivityPointsCount: n } = s.root.get();
+        return t.jsxs('div', {
+            className: i(p.base, m),
             children: [
-                i.jsx('div', { className: r.heading, children: R.strings.comp7_ext.rankInactivityTooltip.heading() }),
-                i.jsx('div', {
-                    className: t(r.description, r.description__topIndent),
-                    children: R.strings.comp7_ext.rankInactivityTooltip.description(),
+                t.jsx('div', { className: i(j, o <= c && b) }),
+                t.jsx('div', {
+                    className: p.heading,
+                    children: R.strings.comp7_ext.progressionTableTooltip.rankInactivity.header.active(),
                 }),
-                i.jsx('div', {
-                    className: t(r.description, r.description__topIndent),
-                    children: i.jsx(e, {
-                        text: R.strings.comp7_ext.rankInactivityTooltip.timeLeft(),
-                        binding: { count: i.jsx('span', { className: r.highlight, children: n }) },
-                    }),
+                t.jsx(e, {
+                    text: R.strings.comp7_ext.progressionTableTooltip.rankInactivity.description.active(n),
+                    binding: { count: n },
+                    classMix: i(p.description, p.description__topIndent),
+                }),
+                t.jsx(e, {
+                    text: R.strings.comp7_ext.progressionTableTooltip.rankInactivity.daysLeft(),
+                    binding: { rankInactivityCount: o },
+                    classMix: i(p.description, p.description__topIndent, _),
                 }),
             ],
         });
     });
-a(i.jsx(d, { children: i.jsx(c, { children: i.jsx(p, {}) }) }));
+a(t.jsx(d, { children: t.jsx(r, { children: t.jsx(v, {}) }) }));

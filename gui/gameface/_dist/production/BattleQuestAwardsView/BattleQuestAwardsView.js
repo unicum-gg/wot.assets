@@ -58,12 +58,12 @@
                         events: () => x,
                         extraSize: () => tu,
                         forceTriggerMouseMove: () => Q,
-                        freezeTextureBeforeResize: () => W,
+                        freezeTextureBeforeResize: () => $,
                         getBrowserTexturePath: () => k,
                         getDisplayStatus: () => K,
                         getExternalPaddingsRem: () => uu,
                         getFontNames: () => Z,
-                        getScale: () => $,
+                        getScale: () => W,
                         getSize: () => U,
                         getViewGlobalPosition: () => H,
                         initExternalPaddings: () => au,
@@ -275,10 +275,10 @@
                     const e = viewEnv.getViewGlobalPositionRem();
                     return 'rem' === u ? e : { x: j(e.x), y: j(e.y) };
                 }
-                function W() {
+                function $() {
                     viewEnv.freezeTextureBeforeResize();
                 }
-                function $() {
+                function W() {
                     return viewEnv.getScale();
                 }
                 function z(u) {
@@ -1342,14 +1342,14 @@
                         a && n().createElement('div', { className: _()(I.goto, null == s ? void 0 : s.goto) }, a),
                     );
                 };
-                var W = t(521),
-                    $ = t(916);
+                var $ = t(521),
+                    W = t(916);
                 const z = (u) => {
                     console.error(u.type + ': useKeydownListener hook :: Callback is not defined');
                 };
-                function j(u = W.n.NONE, e = z, t = !1, n = !1) {
+                function j(u = $.n.NONE, e = z, t = !1, n = !1) {
                     (0, r.useEffect)(() => {
-                        if (u !== W.n.NONE)
+                        if (u !== $.n.NONE)
                             return (
                                 window.addEventListener('keydown', r, t),
                                 () => {
@@ -1480,7 +1480,6 @@
                                                                     );
                                                                 })(n.keys());
                                                             !(u = t()).done;
-
                                                         )
                                                             a(u.value, e);
                                                     },
@@ -1665,7 +1664,7 @@
                             Object.assign(
                                 {
                                     __Type: 'GFViewEventProxy',
-                                    type: $.B0.TOOLTIP,
+                                    type: W.B0.TOOLTIP,
                                     contentID: u,
                                     decoratorID: e,
                                     targetID: r,
@@ -1974,10 +1973,7 @@
                         (u.EquipCoin = 'equipCoin'),
                         (u.LootBox = 'lootBox'),
                         (u.BrCoin = 'brcoin'),
-                        (u.Attachment = 'attachment'),
-                        (u.Stamp = 'stamp'),
-                        (u.WtEventLootbox = 'wtevent_lootBox'),
-                        (u.WtEventTicket = 'wtevent_ticket'));
+                        (u.Attachment = 'attachment'));
                 })(Fu || (Fu = {})),
                     (function (u) {
                         ((u.Gold = 'gold'),
@@ -2089,9 +2085,9 @@
                 const hu = [Fu.Attachment],
                     pu = ({ value: u, format: e = 'integral' }) => {
                         const t = (function (u) {
-                                return 'gold' === u ? $.B3.GOLD : $.B3.INTEGRAL;
+                                return 'gold' === u ? W.B3.GOLD : W.B3.INTEGRAL;
                             })(e),
-                            r = $.Z5.getNumberFormat(u, t);
+                            r = W.Z5.getNumberFormat(u, t);
                         return void 0 !== u && void 0 !== r ? r : null;
                     },
                     vu = [
@@ -2132,9 +2128,6 @@
                         Fu.BattleBoosterGift,
                         Fu.OptionalDevice,
                         Fu.Attachment,
-                        Fu.Stamp,
-                        Fu.WtEventLootbox,
-                        Fu.WtEventTicket,
                     ],
                     bu = [Fu.Gold, Fu.Credits, Fu.Crystal, Fu.FreeXp],
                     wu = [Fu.BattlePassPoints, Fu.EquipCoin],
@@ -2577,22 +2570,22 @@
                             ),
                         );
                     }),
-                    Wu = {
+                    $u = {
                         base: 'BattleIcon_base_cd',
                         block: 'BattleIcon_block_0d',
                         icon: 'BattleIcon_icon_f7',
                         base__completed: 'BattleIcon_base__completed_6e',
                         base__inProgress: 'BattleIcon_base__inProgress_32',
                     },
-                    $u = (0, q.Pi)(() => {
+                    Wu = (0, q.Pi)(() => {
                         const u = J().model.root.get().battleStatus;
                         return n().createElement(
                             'div',
-                            { className: _()(Wu.base, Wu[`base__${u}`]) },
+                            { className: _()($u.base, $u[`base__${u}`]) },
                             n().createElement(
                                 'div',
-                                { className: Wu.block },
-                                n().createElement('div', { className: Wu.icon }),
+                                { className: $u.block },
+                                n().createElement('div', { className: $u.icon }),
                             ),
                         );
                     });
@@ -2704,7 +2697,7 @@
                                 L('pr_reward_screen');
                             }, []),
                             (e = u.close),
-                            j(W.n.ESCAPE, e),
+                            j($.n.ESCAPE, e),
                             n().createElement(
                                 'div',
                                 { className: 'App_base_4e' },
@@ -2725,7 +2718,7 @@
                                     n().createElement(
                                         'div',
                                         { className: 'App_battleIcon_e2' },
-                                        n().createElement($u, null),
+                                        n().createElement(Wu, null),
                                     ),
                                     n().createElement(
                                         'div',

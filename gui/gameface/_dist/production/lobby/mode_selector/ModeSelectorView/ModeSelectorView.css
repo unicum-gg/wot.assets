@@ -1791,86 +1791,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     position: absolute;
 }
 
-.Performance_base_fd {
-    margin-top: 12rem;
-    padding: 0 8rem;
-    pointer-events: auto;
-}
-
-.Performance_base__b2_73 {
-    margin-top: 3rem;
-}
-
-.mediaLarge .Performance_base__b2_73 {
-    margin-top: 10rem;
-}
-
-.Performance_text_2f {
-    display: flex;
-    justify-content: center;
-    max-height: 40rem;
-}
-
-.Performance_base__mediumRisk_ad .Performance_text_2f {
-    color: #ee7000;
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
-}
-
-.Performance_base__highRisk_ab .Performance_text_2f {
-    color: #ff2717;
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
-}
-
-.Performance_base__b2_73 .Performance_text_2f {
-    max-height: 20rem;
-}
-
-.Performance_icon_69 {
-    width: 16rem;
-    height: 16rem;
-    margin-top: 2rem;
-    background: no-repeat 50% / contain;
-}
-
-.Performance_base__mediumRisk_ad .Performance_icon_69 {
-    background-image: url('R.images.gui.maps.icons.library.alertIcon');
-}
-
-.Performance_base__highRisk_ab .Performance_icon_69 {
-    background-image: url('R.images.gui.maps.icons.library.CancelIcon_1');
-}
-
-.Performance_iconBig_d5 {
-    width: 24rem;
-    height: 24rem;
-    background: no-repeat left / contain;
-    position: absolute;
-    bottom: 6rem;
-    left: 6rem;
-}
-
-.Performance_iconBig__mediumRisk_59 {
-    background-image: url('R.images.gui.maps.icons.library.alertBigIcon');
-}
-
-.Performance_iconBig__highRisk_5a {
-    background-image: url('R.images.gui.maps.icons.library.CancelBigIcon');
-}
-
-.mediaMedium .Performance_iconBig_d5 {
-    bottom: 9rem;
-    left: 11rem;
-}
-
-.mediaLarge .Performance_iconBig_d5 {
-    bottom: 9rem;
-    left: 11rem;
-}
-
 .ExtendedText_base_71 {
     display: flex;
     line-height: 1.2;
@@ -2053,6 +1973,87 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     overflow-wrap: normal;
 }
 
+.Performance_base_fd {
+    margin-top: 12rem;
+    padding: 0 8rem;
+    pointer-events: auto;
+}
+
+.Performance_base__b2_73 {
+    margin-top: -2rem;
+}
+
+.mediaLarge .Performance_base__b2_73 {
+    margin-top: 3rem;
+}
+
+.Performance_text_2f {
+    display: flex;
+    justify-content: center;
+    max-height: 40rem;
+}
+
+.Performance_base__mediumRisk_ad .Performance_text_2f {
+    color: #ee7000;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+.Performance_base__highRisk_ab .Performance_text_2f {
+    color: #ff2717;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+.Performance_base__b2_73 .Performance_text_2f {
+    max-height: 20rem;
+    font-size: 12rem;
+}
+
+.Performance_icon_69 {
+    width: 16rem;
+    height: 16rem;
+    margin-top: 2rem;
+    background: no-repeat 50% / contain;
+}
+
+.Performance_base__mediumRisk_ad .Performance_icon_69 {
+    background-image: url('R.images.gui.maps.icons.library.alertIcon');
+}
+
+.Performance_base__highRisk_ab .Performance_icon_69 {
+    background-image: url('R.images.gui.maps.icons.library.CancelIcon_1');
+}
+
+.Performance_iconBig_d5 {
+    width: 24rem;
+    height: 24rem;
+    background: no-repeat left / contain;
+    position: absolute;
+    bottom: 6rem;
+    left: 6rem;
+}
+
+.Performance_iconBig__mediumRisk_59 {
+    background-image: url('R.images.gui.maps.icons.library.alertBigIcon');
+}
+
+.Performance_iconBig__highRisk_5a {
+    background-image: url('R.images.gui.maps.icons.library.CancelBigIcon');
+}
+
+.mediaMedium .Performance_iconBig_d5 {
+    bottom: 9rem;
+    left: 11rem;
+}
+
+.mediaLarge .Performance_iconBig_d5 {
+    bottom: 9rem;
+    left: 11rem;
+}
+
 .TimeLeft_base_cf {
     color: #e9e2bf;
     font-size: 14rem;
@@ -2146,7 +2147,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     display: flex;
     align-items: center;
     position: absolute;
-    top: -8rem;
+    top: -5rem;
 }
 
 .Reward_vehicleType_fa {

@@ -2,7 +2,7 @@
     'use strict';
     var u,
         e = {
-            9480: (u, e, A) => {
+            480: (u, e, A) => {
                 function F(u, e) {
                     var A;
                     if (!(e >= u.length)) return Array.isArray(u) ? u[e] : null == (A = u[e]) ? void 0 : A.value;
@@ -12,7 +12,7 @@
                 }
                 A.d(e, { U2: () => F, UI: () => E });
             },
-            7676: (u, e, A) => {
+            676: (u, e, A) => {
                 var F = {};
                 (A.r(F),
                     A.d(F, { mouse: () => T, off: () => x, on: () => h, onResize: () => w, onScaleUpdated: () => y }));
@@ -62,13 +62,13 @@
                         setSidePaddingsRem: () => Y,
                         whenTutorialReady: () => mu,
                     }));
-                var t = A(7363),
+                var t = A(363),
                     n = A.n(t),
-                    C = A(1533),
+                    C = A(533),
                     r = A.n(C),
-                    o = A(6483),
+                    o = A(483),
                     a = A.n(o),
-                    i = A(1281);
+                    i = A(281);
                 let s;
                 !(function (u) {
                     ((u[(u.left = 0)] = 'left'), (u[(u.right = 1)] = 'right'));
@@ -482,7 +482,7 @@
                                             (window.cancelAnimationFrame(u.current),
                                                 (u.current = window.requestAnimationFrame(() => {
                                                     u.current = window.requestAnimationFrame(() => {
-                                                        (e(), (u.current = 0));
+                                                        ((u.current = 0), e());
                                                     });
                                                 })));
                                         },
@@ -529,22 +529,22 @@
                         )
                     );
                 });
-                var hu = A(3403),
-                    xu = A(5210);
+                var hu = A(403),
+                    xu = A(210);
                 function _u() {}
                 function Tu() {
                     return !1;
                 }
                 console.log;
-                var Pu = A(9174);
+                var Pu = A(174);
                 function Ru(u, e) {
                     (null == e || e > u.length) && (e = u.length);
                     for (var A = 0, F = new Array(e); A < e; A++) F[A] = u[A];
                     return F;
                 }
                 const Ou = (u) => (0 === u ? window : window.subViews.get(u));
-                var Su = A(9480),
-                    Mu = A(3946);
+                var Su = A(480),
+                    Mu = A(946);
                 const zu = ((u, e) => {
                         const A = (0, t.createContext)({});
                         return [
@@ -649,7 +649,6 @@
                                                                     );
                                                                 })(E.keys());
                                                             !(u = A()).done;
-
                                                         )
                                                             D(u.value, e);
                                                     },
@@ -831,12 +830,12 @@
                     );
                 });
             },
-            5801: (u, e, A) => {
+            801: (u, e, A) => {
                 A.d(e, { s: () => C });
-                var F = A(6483),
+                var F = A(483),
                     E = A.n(F),
-                    D = A(9480),
-                    B = A(7363),
+                    D = A(480),
+                    B = A(363),
                     t = A.n(B);
                 const n = 'Column_separator_99',
                     C = ({ battleType: u, mode: e, isNotFirstColumn: A }) =>
@@ -872,12 +871,12 @@
                             }),
                         );
             },
-            5210: (u, e, A) => {
+            210: (u, e, A) => {
                 A.d(e, { i: () => t });
-                var F = A(9480),
-                    E = A(7363),
+                var F = A(480),
+                    E = A(363),
                     D = A.n(E),
-                    B = A(5801);
+                    B = A(801);
                 const t = ({ battleModes: u, battleType: e }) =>
                     D().createElement(
                         'div',
@@ -898,10 +897,10 @@
                         ),
                     );
             },
-            7363: (u) => {
+            363: (u) => {
                 u.exports = React;
             },
-            1533: (u) => {
+            533: (u) => {
                 u.exports = ReactDOM;
             },
         },
@@ -979,6 +978,6 @@
                 A = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             (A.forEach(e.bind(null, 0)), (A.push = e.bind(null, A.push.bind(A))));
         })());
-    var E = F.O(void 0, ['lib/battle_royale.vendors'], () => F(7676));
+    var E = F.O(void 0, ['lib/battle_royale.vendors'], () => F(676));
     E = F.O(E);
 })();

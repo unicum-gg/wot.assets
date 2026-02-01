@@ -1556,7 +1556,7 @@
                                     (window.cancelAnimationFrame(e.current),
                                         (e.current = window.requestAnimationFrame(() => {
                                             e.current = window.requestAnimationFrame(() => {
-                                                (t(), (e.current = 0));
+                                                ((e.current = 0), t());
                                             });
                                         })));
                                 },
@@ -4369,12 +4369,14 @@
                 }
                 function qn(e, t, n = []) {
                     const a = (0, u.useRef)(0),
-                        r = (0, u.useCallback)(() => window.clearInterval(a.current), n || []);
+                        r = (0, u.useCallback)(() => {
+                            (window.clearInterval(a.current), (a.current = 0));
+                        }, n || []);
                     (0, u.useEffect)(() => r, [r]);
                     const s = (null != n ? n : []).concat([t]);
                     return [
                         (0, u.useCallback)((n) => {
-                            ((a.current = window.setInterval(() => e(n, !0), t)), e(n, !1));
+                            (0 !== a.current && r(), (a.current = window.setInterval(() => e(n, !0), t)), e(n, !1));
                         }, s),
                         r,
                     ];
@@ -4621,7 +4623,8 @@
                         getContainerSize: (e) => e.offsetWidth,
                         getWrapperSize: (e) => e.offsetWidth,
                         setScrollPosition: (e, t) => {
-                            e.style.transform = `translateX(-${t.value.scrollPosition}px)`;
+                            var n;
+                            e.style.transform = `translateX(-${0 | (null != (n = t.value.scrollPosition) ? n : 0)}px)`;
                         },
                         getDirection: (e) => (e.deltaY > 1 ? ea.Next : ea.Prev),
                         forceTriggerMouseMove: i.O.view.forceTriggerMouseMove,
@@ -6306,17 +6309,18 @@
                                                   return t;
                                               })(n),
                                           )
-                                        : a.push({ blockType: r, colorTag: t, childList: [n] });
+                                        : a.push({ blockType: r, colorTag: t, childList: [n.replace(/\ufeff+/g, '')] });
                                 },
                             ),
                             a
                         );
                     },
                     Z = (e, t, n = '', a) => {
-                        const r = [];
+                        const r = [],
+                            u = e.replace(/(.)(、|。|ー)/g, '$1\ufeff$2');
                         return (
                             j(
-                                e,
+                                u,
                                 /(?:%\(|{)(.*?)[)}][sd]?/g,
                                 (e) => {
                                     r.push(...V(e, n, a));

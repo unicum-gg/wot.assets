@@ -8,70 +8,70 @@ var e = Object.defineProperty,
 import {
     j as a,
     e as s,
-    y as r,
+    x as r,
     r as n,
     R as o,
     o as i,
     f as c,
-    B as l,
+    A as l,
     h as d,
-    C as _,
-    m,
-    n as u,
-    D as h,
-    E as b,
-    F as f,
+    B as _,
+    l as m,
+    m as u,
+    C as h,
+    D as b,
+    E as f,
 } from './vendor.js';
 import {
     i as p,
     n as g,
     m as v,
     c as y,
-    a0 as x,
-    aQ as N,
-    aR as j,
+    a2 as x,
+    aR as N,
+    aS as j,
     r as w,
-    N as k,
-    k as P,
-    ao as E,
+    P as k,
+    o as P,
+    ap as E,
     d as B,
-    aS as $,
+    aT as $,
     I as D,
-    aT as T,
-    a3 as I,
-    aU as M,
-    aV as S,
+    aU as T,
+    a5 as I,
+    aV as M,
     aW as A,
     aX as C,
-    aY as F,
-    aZ as z,
-    a_ as L,
-    a$ as O,
-    b0 as H,
-    ah as G,
-    aP as V,
-    b1 as W,
-    a1 as q,
-    ae as U,
-    b2 as Q,
+    aY as S,
+    aZ as F,
+    a_ as z,
+    a$ as L,
+    b0 as O,
+    b1 as H,
+    ai as G,
+    aQ as V,
+    b2 as W,
+    a3 as q,
+    af as Q,
+    b3 as U,
     C as X,
-    am as Z,
-    a4 as Y,
-    ap as K,
-    b3 as J,
-    aa as ee,
-    b4 as te,
-    b5 as ae,
-    b6 as se,
-    b7 as re,
-    af as ne,
+    an as Z,
+    a6 as Y,
+    aq as J,
+    b4 as K,
+    ab as ee,
+    b5 as te,
+    b6 as ae,
+    b7 as se,
+    b8 as re,
+    ag as ne,
     F as oe,
-    b8 as ie,
-    K as ce,
-    aM as le,
+    b9 as ie,
+    N as ce,
+    aN as le,
     B as de,
-    O as _e,
-    b9 as me,
+    Q as _e,
+    ba as me,
 } from './lib.js';
 import { T as ue, S as he } from './node_model.js';
 const [be, fe] = p()(({ observableModel: e }) => ({ tree: e.object('tree'), ...e.primitives(['locationId']) }), g);
@@ -119,16 +119,16 @@ const [ge, ve] = p()(
         },
         ({ externalModel: e }) => ({ openSelectedPreview: e.createCallback((e) => ({ level: e }), 'onPreview') }),
     ),
-    ye = new j(window),
+    ye = new N(window),
     xe = (e, t) => {
         const { name: a } = e,
-            s = N(e, t);
+            s = j(e, t);
         if (!ye.has(s))
             switch (a) {
                 case 'attachment':
-                    return N({ name: a, icon: 'attachment' }, t);
+                    return j({ name: a, icon: 'attachment' }, t);
                 case 'customizations':
-                    return N({ name: a, icon: 'style' }, t);
+                    return j({ name: a, icon: 'style' }, t);
             }
         return s;
     };
@@ -263,13 +263,13 @@ const je = {
     Te = 'right',
     Ie = 'none';
 function Me({ elements: e }) {
-    const { api: t } = S(),
+    const { api: t } = A(),
         { animationScroll: r, applyScroll: i } = t,
-        c = A(t, O.horizontal),
+        c = C(t, O.horizontal),
         [l, d] = n.useState();
     n.useEffect(
         () =>
-            C(() => {
+            S(() => {
                 'idle' === c.type && r.scrollPosition.idle && i(r.scrollPosition.get());
             }),
         [r.scrollPosition, c, i],
@@ -284,7 +284,7 @@ function Me({ elements: e }) {
     return (
         o.useLayoutEffect(() => {
             function e() {
-                C(() => {
+                S(() => {
                     _();
                 });
             }
@@ -319,13 +319,13 @@ function Me({ elements: e }) {
         })
     );
 }
-const Se = r(function () {
+const Ae = r(function () {
     const { model: e } = ve(),
         t = e.rewards.get();
     return a.jsx(M, { children: a.jsx(Me, { elements: t.map((e) => a.jsx(Pe, { ...e }, e.level)) }) });
 });
-var Ae = ((e) => ((e.Available = 'available'), (e.Completed = 'completed'), (e.Disabled = 'disabled'), e))(Ae || {});
-const Ce = {
+var Ce = ((e) => ((e.Available = 'available'), (e.Completed = 'completed'), (e.Disabled = 'disabled'), e))(Ce || {});
+const Se = {
         root: 'Vanity_root_267393fa',
         base: 'Vanity_289eaebe',
         background: 'Vanity_background_b38f23a6',
@@ -341,14 +341,14 @@ const Ce = {
             t = w.resolve('strings'),
             r = e.rewards.get().length > 0 && e.computes.allResearched(),
             n = e.prestigeEmblem.get(),
-            o = e.prestigeState.get() ? e.prestigeState.get() : Ae.Disabled,
+            o = e.prestigeState.get() ? e.prestigeState.get() : Ce.Disabled,
             i = r
                 ? t.readOrEmpty('veh_skill_tree.vanity.completed.subtitle')
                 : t.readOrEmpty(`veh_skill_tree.vanity.${o}.subtitle`),
             c = P({ body: t.readOrEmpty(`veh_skill_tree.vanity.${o}.tooltip`) }),
             l = B({ size: H.sizes.sm }, { medium: { size: H.sizes.md } });
         return a.jsxs('div', {
-            className: s(Ce.base, Ce[`base__${o}`], r && Ce.base__completed),
+            className: s(Se.base, Se[`base__${o}`], r && Se.base__completed),
             children: [
                 r &&
                     a.jsx(D, {
@@ -358,21 +358,21 @@ const Ce = {
                         adaptive: {
                             medium: { width: 530, height: 140, path: 'skillTree.prestige.vanity_bg.big.vanity_bg' },
                         },
-                        className: Ce.background,
+                        className: Se.background,
                     }),
                 a.jsxs('div', {
-                    className: Ce.description,
+                    className: Se.description,
                     children: [
-                        a.jsx('div', { className: Ce.title, children: t.readOrEmpty('veh_skill_tree.vanity.title') }),
-                        a.jsx('div', { className: Ce.subtitle, children: i }),
+                        a.jsx('div', { className: Se.title, children: t.readOrEmpty('veh_skill_tree.vanity.title') }),
+                        a.jsx('div', { className: Se.subtitle, children: i }),
                     ],
                 }),
                 a.jsx('div', {
-                    className: Ce.emblem,
+                    className: Se.emblem,
                     ...c,
                     children:
-                        o === Ae.Disabled
-                            ? a.jsx('div', { className: Ce.disabledEmblem })
+                        o === Ce.Disabled
+                            ? a.jsx('div', { className: Se.disabledEmblem })
                             : a.jsx(H, {
                                   level: n.level,
                                   grade: n.grade ?? 1,
@@ -390,6 +390,7 @@ var ze = ((e) => (
     (e.IN_FORMATION = 'inFormation'),
     (e.NEEDS_REPAIR = 'needsRepair'),
     (e.AVAILABLE = 'researchAvailable'),
+    (e.EMERGENCY_MODE_ENABLED = 'emergencyModeEnabled'),
     e
 ))(ze || {});
 const Le = ['right', 'left'],
@@ -434,7 +435,7 @@ function We(e, t) {
 function qe(e, t, a = []) {
     return a.reduce((a, s) => (e.some((e) => e.targetNodeId === s.id) && a.push([t, s.id]), a), []);
 }
-function Ue(e, t) {
+function Qe(e, t) {
     return e
         .filter((e) => t.includes(e.id))
         .sort((e, t) => e.x - t.x)
@@ -449,7 +450,7 @@ function Ue(e, t) {
             );
         }, {});
 }
-function Qe(e) {
+function Ue(e) {
     return e.reduce((e, t, a) => ({ ...e, [t]: a }), {});
 }
 function Xe(e, t) {
@@ -601,8 +602,8 @@ class Ye {
         return a > 0 && a < r - 1 ? t[n] === e[n] : a === r - 1 ? e[n] >= t[n] : t[n] >= e[n];
     }
 }
-const Ke = [ze.IN_BATTLE, ze.IN_FORMATION, ze.NEEDS_REPAIR],
-    [Je, et] = p()(
+const Je = [ze.IN_BATTLE, ze.IN_FORMATION, ze.NEEDS_REPAIR],
+    [Ke, et] = p()(
         ({ observableModel: e, cleanup: t }) => {
             const a = {
                     ...e.primitives(['rootNodeId', 'rootNodeUiId', 'lockedTree', 'researchAvailability']),
@@ -669,10 +670,10 @@ const Ke = [ze.IN_BATTLE, ze.IN_FORMATION, ze.NEEDS_REPAIR],
                         r = s.currentNodes.get(),
                         n = a.finalPerk.get().id;
                     return e.includes(n)
-                        ? { finalPerkId: n, animationQueue: Xe(Ue(r, e), t) }
-                        : { finalPerkId: n, animationQueue: Xe(Qe(e), t) };
+                        ? { finalPerkId: n, animationQueue: Xe(Qe(r, e), t) }
+                        : { finalPerkId: n, animationQueue: Xe(Ue(e), t) };
                 }),
-                b = y.primitive(() => Ke.includes(a.researchAvailability.get()));
+                b = y.primitive(() => Je.includes(a.researchAvailability.get()));
             return {
                 ...a,
                 computes: {
@@ -708,11 +709,11 @@ const Ke = [ze.IN_BATTLE, ze.IN_FORMATION, ze.NEEDS_REPAIR],
         extraLarge: { width: 1733, height: 960, cell: 12 },
     },
     ot = {
-        [U.extraSmall]: { cell: nt.small.cell, container: nt.small },
-        [U.small]: { cell: nt.small.cell, container: nt.small },
-        [U.medium]: { cell: nt.medium.cell, container: nt.medium },
-        [U.large]: { cell: nt.large.cell, container: nt.large },
-        [U.extraLarge]: { cell: nt.extraLarge.cell, container: nt.extraLarge },
+        [Q.extraSmall]: { cell: nt.small.cell, container: nt.small },
+        [Q.small]: { cell: nt.small.cell, container: nt.small },
+        [Q.medium]: { cell: nt.medium.cell, container: nt.medium },
+        [Q.large]: { cell: nt.large.cell, container: nt.large },
+        [Q.extraLarge]: { cell: nt.extraLarge.cell, container: nt.extraLarge },
     },
     it = {
         root: 'ResearchedAnimation_root_6660d527',
@@ -777,7 +778,7 @@ const dt = r(function ({ type: e, runAnimation: t, id: r }) {
                         }
                     );
             }, [t, h, e, b]),
-            t ? a.jsx(Q, { src: d.current.src, className: s(it.video, it[`video__${e}`]), ref: l }) : null
+            t ? a.jsx(U, { src: d.current.src, className: s(it.video, it[`video__${e}`]), ref: l }) : null
         );
     }),
     _t = {
@@ -850,7 +851,7 @@ const pt = {
     base: 'Price_e2a305d1',
     base__researched: 'Price_base__researched_16917da8',
     base__animateResearched: 'Price_base__animateResearched_a0a6912a',
-    value: 'Price_value_3da74dd7',
+    value: 'Price_value_9290e627',
     base__default: 'Price_base__default_29f8d762',
     icon: 'Price_icon_aed4fc8a',
 };
@@ -944,15 +945,15 @@ const Bt = 'Points_ebbc956c',
     Tt = 'Points_arrow__right_fa74c47',
     It = 'Points_arrow__bottom_1b669f6e',
     Mt = 'Points_arrow__left_1453abe0',
-    St = 'Points_outsideGlow_8ec52358',
-    At = 'Points_insideGlow_ec6f3f05',
-    Ct = 'Wrapper_3f1ea42a',
+    At = 'Points_outsideGlow_8ec52358',
+    Ct = 'Points_insideGlow_ec6f3f05',
+    St = 'Wrapper_3f1ea42a',
     Ft = u(({ style: e }) =>
         a.jsxs(u.div, {
             className: Bt,
             style: e,
             children: [
-                a.jsx('div', { className: St }),
+                a.jsx('div', { className: At }),
                 a.jsxs('div', {
                     className: $t,
                     children: [
@@ -962,7 +963,7 @@ const Bt = 'Points_ebbc956c',
                         a.jsx('div', { className: s(Dt, Mt) }),
                     ],
                 }),
-                a.jsx('div', { className: At }),
+                a.jsx('div', { className: Ct }),
             ],
         }),
     ),
@@ -982,7 +983,7 @@ const Bt = 'Points_ebbc956c',
 function Lt({ children: e, showHint: t, type: s }) {
     const r = h(t, { from: { opacity: 0 }, enter: { opacity: 1 }, leave: { opacity: 0 }, config: { duration: 0 } });
     return a.jsxs('div', {
-        className: Ct,
+        className: St,
         children: [
             r(
                 (e, t) =>
@@ -1074,8 +1075,8 @@ const Ot = {
                 onClick: function () {
                     (r.onClick(), e.onClick());
                 },
-                onMouseEnter: function () {
-                    (r.onMouseEnter(), e.onMouseEnter());
+                onMouseEnter: function (t) {
+                    (r.onMouseEnter(t), e.onMouseEnter());
                 },
                 ref: n,
                 style: { '--x': `${e.x}rem`, '--y': `${e.y}rem`, '--transitionDelay': `${e.transitionDelay}ms` },
@@ -1151,7 +1152,7 @@ function qt(e, t) {
     const a = e - t;
     return 1 === a ? Wt.singe : a * Wt.chain;
 }
-const Ut = {
+const Qt = {
         root: 'FinalPerkDecoration_root_260dff85',
         base: 'FinalPerkDecoration_543199b0',
         container: 'FinalPerkDecoration_container_9f71bdf0',
@@ -1171,14 +1172,14 @@ const Ut = {
         draftTexture: 'FinalPerkDecoration_draftTexture_a070f384',
         pulseBorder: 'FinalPerkDecoration_pulseBorder_260dff85',
     },
-    Qt = w.resolve('images'),
+    Ut = w.resolve('images'),
     Xt = w.resolve('strings'),
     Zt = r(function ({ children: e, showFinalDecoration: t, status: r, transitionDelay: n, classNames: i }) {
         const { model: c } = et(),
             { researched: l, total: d } = c.computes.perksInfo(),
             _ = (function ({ researched: e, total: t }) {
-                const a = K(),
-                    s = J(e) ?? 0,
+                const a = J(),
+                    s = K(e) ?? 0,
                     [{ number: r }] = m(
                         () => ({
                             number: e,
@@ -1193,27 +1194,27 @@ const Ut = {
             { researched: h } = c.finalPerk.get();
         return t
             ? a.jsxs('div', {
-                  className: s(Ut.base, Ut[`base__${r}`]),
+                  className: s(Qt.base, Qt[`base__${r}`]),
                   style: { '--transitionDelay': `${n}ms` },
                   children: [
                       e,
                       a.jsxs('div', {
-                          className: Ut.container,
+                          className: Qt.container,
                           children: [
-                              a.jsx('div', { className: Ut.border }),
+                              a.jsx('div', { className: Qt.border }),
                               a.jsx('div', {
-                                  className: Ut.starContainer,
-                                  children: a.jsx('div', { className: Ut.star }),
+                                  className: Qt.starContainer,
+                                  children: a.jsx('div', { className: Qt.star }),
                               }),
-                              a.jsx('div', { className: s(Ut.glow, null == i ? void 0 : i.glow) }),
+                              a.jsx('div', { className: s(Qt.glow, null == i ? void 0 : i.glow) }),
                           ],
                       }),
                       a.jsxs('div', {
-                          className: s(Ut.counterContainer, l === d && Ut.counterContainer__hide),
+                          className: s(Qt.counterContainer, l === d && Qt.counterContainer__hide),
                           children: [
-                              a.jsx('div', { className: Ut.counterIcon }),
+                              a.jsx('div', { className: Qt.counterIcon }),
                               a.jsxs('div', {
-                                  className: Ut.values,
+                                  className: Qt.values,
                                   children: [
                                       a.jsx(u.div, { children: _.to((e) => e.toFixed(0)) }),
                                       Xt.readOrEmpty('common.common.slash'),
@@ -1223,9 +1224,9 @@ const Ut = {
                           ],
                       }),
                       a.jsx('div', {
-                          className: Ut.draftTexture,
+                          className: Qt.draftTexture,
                           style: {
-                              backgroundImage: `url(${Qt.readOrEmpty('skillTree.tree.' + (h ? 'draftTextureResearched' : 'draftTexture'))})`,
+                              backgroundImage: `url(${Ut.readOrEmpty('skillTree.tree.' + (h ? 'draftTextureResearched' : 'draftTexture'))})`,
                           },
                       }),
                   ],
@@ -1253,7 +1254,7 @@ const Ut = {
         texture: 'Major_texture_5f54f0c9',
         glow: 'Major_glow_22ebe17b',
     },
-    Kt = o.forwardRef(function (e, t) {
+    Jt = o.forwardRef(function (e, t) {
         const r = Y({ contentId: R.views.mono.vehicle_hub.tooltips.perk_tooltip('resId'), args: { nodeID: e.id } });
         return a.jsx('div', {
             ...r,
@@ -1261,8 +1262,8 @@ const Ut = {
             onClick: function () {
                 (r.onClick(), e.onClick());
             },
-            onMouseEnter: function () {
-                (r.onMouseEnter(), e.onMouseEnter());
+            onMouseEnter: function (t) {
+                (r.onMouseEnter(t), e.onMouseEnter());
             },
             ref: t,
             style: { '--x': `${e.x}rem`, '--y': `${e.y}rem`, '--transitionDelay': `${e.transitionDelay}ms` },
@@ -1309,7 +1310,7 @@ const Ut = {
             }),
         });
     });
-function Jt(e, t, a, s) {
+function Kt(e, t, a, s) {
     return e
         ? { enableHover: !0, showHint: !1, state: 'lockedTree' }
         : t
@@ -1371,10 +1372,10 @@ const ea = { ...he, AnimateResearched: 'animateResearched' },
         switch (e.type) {
             case ue.Common:
             case ue.Special:
-                return a.jsx(Ht, { ...m, ...Jt(r, n, m.isHintRequired, m.root), showGear: e.type === ue.Special });
+                return a.jsx(Ht, { ...m, ...Kt(r, n, m.isHintRequired, m.root), showGear: e.type === ue.Special });
             case ue.Final:
             case ue.Major:
-                return a.jsx(Kt, { ...m, showFinalDecoration: e.type === ue.Final, lockedTree: r });
+                return a.jsx(Jt, { ...m, showFinalDecoration: e.type === ue.Final, lockedTree: r });
             case ue.Ghost:
                 return a.jsx(Vt, { status: m.status, x: m.x, y: m.y, ref: m.ref });
             default:
@@ -1401,7 +1402,7 @@ function ra(e, t, a, s = 'perk') {
         i = o.useRef(a),
         c = te(),
         { model: l } = et(),
-        d = K();
+        d = J();
     return (
         o.useLayoutEffect(() => {
             const r = new ae();
@@ -1571,7 +1572,7 @@ const ha = 'Container_2a42bba9',
             o.useLayoutEffect(() => {
                 const e = new ae(),
                     a = () => {
-                        C(() => {
+                        S(() => {
                             i();
                         });
                     };
@@ -1618,7 +1619,7 @@ const ha = 'Container_2a42bba9',
     }),
     [ga, va] = p()(
         ({ observableModel: e }) => {
-            const t = { nodes: e.array('nodes'), ...e.primitives(['researchAvailability']) },
+            const t = { nodes: e.arrayClone('nodes'), ...e.primitives(['researchAvailability']) },
                 a = y.shallow(() => q(t.nodes.get(), (e) => e.status === he.Selected)),
                 s = y.shallow(() => G(a(), (e, t) => e + t.price, 0)),
                 r = y.shallow(() => {
@@ -1686,9 +1687,9 @@ const ja = r(function () {
     Ta = 'Footer_base__enough_4308958a',
     Ia = 'Footer_button_7e68acf0',
     Ma = 'Footer_buttonText_881ef4c9',
-    Sa = w.resolve('intl'),
-    Aa = w.resolve('strings'),
-    Ca = r(function () {
+    Aa = w.resolve('intl'),
+    Ca = w.resolve('strings'),
+    Sa = r(function () {
         const { model: e, controls: t } = va(),
             r = e.researchAvailability.get(),
             n = e.computes.selectedPerks(),
@@ -1700,7 +1701,10 @@ const ja = r(function () {
                 { medium: { buttonSize: ce.medium, iconSize: ie.medium } },
             ),
             { tooltip: d, description: _ } = e.computes.textParams(),
-            m = P({ body: Aa.readOrEmpty(`veh_skill_tree.research.${d}`, 'silent') });
+            m = P({
+                body: Ca.readOr(`veh_skill_tree.research.${d}.body`, () => Ca.read(`veh_skill_tree.research.${d}`)),
+                header: Ca.read(`veh_skill_tree.research.${d}.header`),
+            });
         return a.jsxs('div', {
             className: s(wa, i && Ta),
             children: [
@@ -1722,7 +1726,7 @@ const ja = r(function () {
                                               className: Da,
                                               children: a.jsx('div', {
                                                   className: Ra,
-                                                  children: Sa.formatNumber('integral', o),
+                                                  children: Aa.formatNumber('integral', o),
                                               }),
                                           }),
                                           a.jsx(ja, {}),
@@ -1737,12 +1741,12 @@ const ja = r(function () {
                                       classNames: { base: Ia },
                                       children: a.jsx('div', {
                                           className: Ma,
-                                          children: Aa.readOrEmpty('veh_skill_tree.research.button.label'),
+                                          children: Ca.readOrEmpty('veh_skill_tree.research.button.label'),
                                       }),
                                   }),
                               ],
                           })
-                        : a.jsx('div', { className: $a, children: Aa.readOrEmpty(`veh_skill_tree.research.${_}`) }),
+                        : a.jsx('div', { className: $a, children: Ca.readOrEmpty(`veh_skill_tree.research.${_}`) }),
                 }),
             ],
         });
@@ -1784,8 +1788,8 @@ const ja = r(function () {
             onClick: function () {
                 (_.onClick(), e.onClick());
             },
-            onMouseEnter: function () {
-                (_.onMouseEnter(), c.play('mouse-enter', { target: 'EntryPoint' }));
+            onMouseEnter: function (e) {
+                (_.onMouseEnter(e), c.play('mouse-enter', { target: 'EntryPoint' }));
             },
             children: a.jsxs('div', {
                 className: za,
@@ -1802,4 +1806,4 @@ const ja = r(function () {
             }),
         });
     });
-export { Ne as A, rt as E, ga as F, be as M, Se as P, pa as T, Fe as V, Je as a, Va as b, Ca as c, ge as d, fe as u };
+export { Ne as A, rt as E, ga as F, be as M, Ae as P, pa as T, Fe as V, Ke as a, Va as b, Sa as c, ge as d, fe as u };

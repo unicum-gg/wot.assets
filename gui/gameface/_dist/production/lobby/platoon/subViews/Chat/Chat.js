@@ -996,12 +996,14 @@
                 }
                 function g(e, t, u = []) {
                     const n = (0, i.useRef)(0),
-                        r = (0, i.useCallback)(() => window.clearInterval(n.current), u || []);
+                        r = (0, i.useCallback)(() => {
+                            (window.clearInterval(n.current), (n.current = 0));
+                        }, u || []);
                     (0, i.useEffect)(() => r, [r]);
                     const o = (null != u ? u : []).concat([t]);
                     return [
                         (0, i.useCallback)((u) => {
-                            ((n.current = window.setInterval(() => e(u, !0), t)), e(u, !1));
+                            (0 !== n.current && r(), (n.current = window.setInterval(() => e(u, !0), t)), e(u, !1));
                         }, o),
                         r,
                     ];
@@ -1283,7 +1285,8 @@
                         getContainerSize: (e) => e.offsetWidth,
                         getWrapperSize: (e) => e.offsetWidth,
                         setScrollPosition: (e, t) => {
-                            e.style.transform = `translateX(-${t.value.scrollPosition}px)`;
+                            var u;
+                            e.style.transform = `translateX(-${0 | (null != (u = t.value.scrollPosition) ? u : 0)}px)`;
                         },
                         getDirection: (e) => (e.deltaY > 1 ? B.Next : B.Prev),
                         forceTriggerMouseMove: f.O.view.forceTriggerMouseMove,

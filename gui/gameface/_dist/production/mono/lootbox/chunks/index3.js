@@ -1,15 +1,15 @@
-import { o as e, m as a, f as t, r as s, n as i, j as r, e as o, q as n, h as c, i as l } from './vendor.js';
+import { o as e, k as a, f as t, r as s, m as i, j as r, e as o, p as n, h as c, i as l } from './vendor.js';
 import { b as d, H as m, M as u } from './use_cover_size.js';
 import {
     h as p,
     c as g,
     a as h,
-    b as x,
-    d as w,
+    b as w,
+    d as x,
     u as b,
     I as _,
-    R as f,
-    e as y,
+    R as y,
+    e as f,
     s as v,
     O as j,
     C as N,
@@ -22,49 +22,50 @@ import {
     B as z,
     j as B,
 } from './reward.js';
-import { a as H, g as V, C as P, B as O, d as E } from './resources.js';
-import { g as L } from './getConfig.js';
-import { a as G, f as W, i as $ } from './utils.js';
+import { a as H, g as P, C as V, B as O, d as G } from './resources.js';
+import { g as E } from './getConfig.js';
+import { a as L, g as W, r as $ } from './getRewardImage.js';
+import { a as D, f as F, h as q, b as M, i as X } from './utils.js';
 import {
-    i as D,
-    c as F,
-    o as q,
-    m as Z,
-    u as M,
-    X,
-    a0 as U,
-    _ as Y,
-    I as J,
-    a5 as K,
-    k as Q,
-    n as ee,
-    j as ae,
-    F as te,
-    R as se,
-    O as ie,
-    Z as re,
-    d as oe,
+    i as Y,
+    c as U,
+    q as J,
+    m as K,
+    u as Q,
+    Y as Z,
+    a1 as ee,
+    $ as ae,
+    I as te,
+    a3 as se,
+    k as ie,
+    ac as re,
+    n as oe,
+    j as ne,
+    F as ce,
+    R as le,
+    P as de,
+    _ as me,
+    d as ue,
 } from './lib.js';
-import { a as ne, g as ce, r as le } from './getRewardImage.js';
-import { S as de } from './sounds.js';
-import { G as me } from './guaranteed.js';
-import { T as ue } from './tank_name.js';
-import { L as pe } from './loupe_button.js';
+import { S as pe } from './sounds.js';
+import { G as ge } from './guaranteed.js';
+import { T as he } from './tank_name.js';
+import { L as we } from './loupe_button.js';
 import './title.js';
 import './quantity_title.js';
 import './vehicle_info.js';
 import './title2.js';
-const ge = {
-        rewardAppear: de.rewardAppear,
-        compensationAppear: de.compensationAppear,
-        rareAnimation: de.rareAnimation,
-        epicAnimation: de.epicAnimation,
-        open: de.open,
-        openRare: de.openRare,
-        purchaseHover: de.purchaseHover,
-        purchaseClick: de.purchaseClick,
+const xe = {
+        rewardAppear: pe.rewardAppear,
+        compensationAppear: pe.compensationAppear,
+        rareAnimation: pe.rareAnimation,
+        epicAnimation: pe.epicAnimation,
+        open: pe.open,
+        openRare: pe.openRare,
+        purchaseHover: pe.purchaseHover,
+        purchaseClick: pe.purchaseClick,
     },
-    he = {
+    be = {
         images: {
             iconEmpty: 'entry_point.lootboxEmpty',
             previewIcon: 'awardViews.previewIcon',
@@ -77,6 +78,8 @@ const ge = {
         videos: {
             compensationGlow: 'awardViews.compensationGlow',
             rareGlow: 'awardViews.rareGlow',
+            commonGlow: 'awardViews.commonGlow',
+            compensationParticles: 'awardViews.compensationParticles',
             rare: 'awardViews.raritySimpleAnimations.rare',
             epic: 'awardViews.raritySimpleAnimations.epic',
         },
@@ -101,14 +104,14 @@ const ge = {
             rareOverlayStyleTitle: 'rareRewardOverlay.rewardDescription.style.text',
             rareOverlayStyleDescription: 'rareRewardOverlay.rewardDescription.style.description.text',
         },
-        sounds: ge,
+        sounds: xe,
     },
-    xe = {
+    _e = {
         dynamicVideos: { boxesOpening: 'awardViews.openingBoxVideo' },
         dynamicTexts: { rewardsPremiumDay: 'common.rewards.premiumDay', boxCategory: 'common.boxCategory.lowerCase' },
         dynamicImages: { boxesOpening: 'awardViews.openingBox' },
     },
-    [we, be] = D()(
+    [ye, fe] = Y()(
         ({ observableModel: t }) => {
             const s = {
                     root: t.object(),
@@ -117,10 +120,10 @@ const ge = {
                     extraBonuses: t.arrayClone('extraBonuses.items'),
                     activeRareReward: e.box(null),
                 },
-                i = a(() => H(he, s.root.get().eventName), { equals: F }),
-                r = a(() => V(xe, s.root.get().eventName), { equals: F }),
-                o = a(() => L(s.root.get().eventName, P.Rewards), { equals: F }),
-                n = a(() => q(s.bonuses.get(), (e) => G(e)), { equals: F }),
+                i = a(() => H(be, s.root.get().eventName), { equals: U }),
+                r = a(() => P(_e, s.root.get().eventName), { equals: U }),
+                o = a(() => E(s.root.get().eventName, V.Rewards), { equals: U }),
+                n = a(() => J(s.bonuses.get(), (e) => D(e)), { equals: U }),
                 c = a(() => {
                     const { boxCategory: e } = s.root.get(),
                         a = `${e}_${O.Common}`,
@@ -130,8 +133,8 @@ const ge = {
                         c = r().dynamicImages.boxesOpening.dynOpt(a, O.Common),
                         l = r().dynamicImages.boxesOpening.dynOpt(t, O.Rare),
                         m = i().sounds,
-                        u = E(ne(R.sounds, `${ge.open}_${s.root.get().eventName}_${e}`), m.open, ge.open),
-                        p = E(ne(R.sounds, `${ge.openRare}_${s.root.get().eventName}_${e}`), m.openRare, ge.openRare);
+                        u = G(L(R.sounds, `${xe.open}_${s.root.get().eventName}_${e}`), m.open, xe.open),
+                        p = G(L(R.sounds, `${xe.openRare}_${s.root.get().eventName}_${e}`), m.openRare, xe.openRare);
                     return { [d.common]: { video: o, image: c, sound: u }, [d.rare]: { video: n, image: l, sound: p } };
                 });
             return {
@@ -151,109 +154,109 @@ const ge = {
             clearActiveRareReward: t(() => a.activeRareReward.set(null)),
         }),
     ),
-    _e = s.createContext(null),
-    fe = 'REWARD_IN',
-    ye = 'REWARD_OUT',
-    ve = 'OVERLAY_REWARD',
-    je = 'RARE_REWARD',
-    Ne = 'TWITCH',
-    Re = 'COMPENSATION',
-    Se = 'FINISH',
-    Ce = {
-        [ve]: { duration: 0, pauseNextSteps: !0 },
-        [je]: { duration: 0, pauseNextSteps: !0 },
-        [fe]: { duration: 200 },
-        [ye]: { duration: 400 },
-        [Ne]: { duration: 840 },
-        [Re]: { duration: 1e3, delay: 50 },
-        [Se]: { name: Se, duration: 0, delay: 500 },
+    ve = s.createContext(null),
+    je = 'REWARD_IN',
+    Ne = 'REWARD_OUT',
+    Re = 'OVERLAY_REWARD',
+    Se = 'RARE_REWARD',
+    Ce = 'TWITCH',
+    Ie = 'COMPENSATION',
+    Ae = 'FINISH',
+    Te = {
+        [Re]: { duration: 0, pauseNextSteps: !0 },
+        [Se]: { duration: 0, pauseNextSteps: !0 },
+        [je]: { duration: 200 },
+        [Ne]: { duration: 400 },
+        [Ce]: { duration: 2e3 },
+        [Ie]: { duration: 1e3, delay: 50 },
+        [Ae]: { name: Ae, duration: 0, delay: 500 },
     },
-    Ie = (e, a) => ({ ...Ce[e], name: `animation_${a}_${e}` }),
-    Ae = (e, a) => {
+    ke = (e, a) => ({ ...Te[e], name: `animation_${a}_${e}` }),
+    ze = (e, a) => {
         const t = [];
         return (
-            Z(e, (e, s) => {
-                const i = G(e),
+            K(e, (e, s) => {
+                const i = D(e),
                     r = p(a, e.specialAwardName);
                 if (i) {
-                    if (r) return (t.push(Ie(ve, s)), void t.push(Ie(ye, s)));
-                    t.push(Ie(je, s));
+                    if (r) return (t.push(ke(Re, s)), void t.push(ke(Ne, s)));
+                    t.push(ke(Se, s));
                 }
-                (t.push(Ie(fe, s)), t.push(Ie(ye, s)), e.isCompensation && (t.push(Ie(Ne, s)), t.push(Ie(Re, s))));
+                (t.push(ke(je, s)), t.push(ke(Ne, s)), e.isCompensation && (t.push(ke(Ce, s)), t.push(ke(Ie, s))));
             }),
-            t.push(Ce.FINISH),
+            t.push(Te.FINISH),
             t
         );
     },
-    Te = i(function ({ children: e }) {
-        const { model: a } = be(),
+    Be = i(function ({ children: e }) {
+        const { model: a } = fe(),
             t = a.eventName.get(),
-            s = g({ steps: Ae(a.bonuses.get(), t), autoStart: !1 })();
-        return r.jsx(_e.Provider, { value: s, children: e });
+            s = g({ steps: ze(a.bonuses.get(), t), autoStart: !1 })();
+        return r.jsx(ve.Provider, { value: s, children: e });
     }),
-    ke = 'ExtraReward_d82b07a8';
-const ze = 'ExtraRewards_a358aca3',
-    Be = 'ExtraRewards_extraRewardsWrapper_671c8474',
-    He = 'ExtraRewards_text_d9072280';
-function Ve({ children: e, text: a, className: t }) {
+    He = 'ExtraReward_d82b07a8';
+const Pe = 'ExtraRewards_a358aca3',
+    Ve = 'ExtraRewards_extraRewardsWrapper_671c8474',
+    Oe = 'ExtraRewards_text_d9072280';
+function Ge({ children: e, text: a, className: t }) {
     return r.jsxs('div', {
-        className: o(ze, t),
-        children: [r.jsx('div', { className: He, children: a }), r.jsx('div', { className: Be, children: e })],
+        className: o(Pe, t),
+        children: [r.jsx('div', { className: Oe, children: a }), r.jsx('div', { className: Ve, children: e })],
     });
 }
-((Ve.Reward = function ({ image: e, className: a }) {
-    return r.jsx('div', { className: o(ke, a), style: { backgroundImage: `url(${e})` } });
+((Ge.Reward = function ({ image: e, className: a }) {
+    return r.jsx('div', { className: o(He, a), style: { backgroundImage: `url(${e})` } });
 }),
-    (Ve.Tooltip = function ({ children: e, contentId: a, tooltipId: t, className: s }) {
-        const i = M({ contentId: a, args: { tooltipId: t } });
+    (Ge.Tooltip = function ({ children: e, contentId: a, tooltipId: t, className: s }) {
+        const i = Q({ contentId: a, args: { tooltipId: t } });
         return r.jsx('div', { ...i, className: s, children: e });
     }));
-const Pe = 'AdditionRewards_6fbe30c4',
-    Oe = 'AdditionRewards_extraRewards_d23daaa9',
-    Ee = { opacity: 0, filter: 'brightness(2)' },
-    Le = { opacity: 1, filter: 'brightness(1)' },
-    Ge = {
-        to: [{ opacity: 1, filter: 'brightness(2)' }, Le],
-        config: { duration: 600, easing: U.easeInOutCubic },
+const Ee = 'AdditionRewards_6fbe30c4',
+    Le = 'AdditionRewards_extraRewards_d23daaa9',
+    We = { opacity: 0, filter: 'brightness(2)' },
+    $e = { opacity: 1, filter: 'brightness(1)' },
+    De = {
+        to: [{ opacity: 1, filter: 'brightness(2)' }, $e],
+        config: { duration: 600, easing: ee.easeInOutCubic },
         onRest: () => {
-            x.send({ type: w.toPage });
+            w.send({ type: x.toPage });
         },
     },
-    We = i(function ({ className: e }) {
-        const { model: a } = be(),
+    Fe = i(function ({ className: e }) {
+        const { model: a } = fe(),
             {
                 breakpoint: { weight: t },
-            } = X(),
-            i = n(x, (e) => e.value),
+            } = Z(),
+            i = n(w, (e) => e.value),
             { texts: d } = a.computes.resources(),
             m = a.extraBonuses.get(),
-            [u, p] = c(() => ({ from: Ee }));
+            [u, p] = c(() => ({ from: We }));
         return (
             s.useEffect(() => {
                 switch (i) {
                     case h.skip:
-                        p.set(Le);
+                        p.set($e);
                         break;
                     case h.preparation:
-                        p.set(Ee);
+                        p.set(We);
                         break;
                     case h.extra:
-                        p.start(Ge);
+                        p.start(De);
                 }
             }, [i, p]),
             r.jsx(l.div, {
                 style: u,
-                className: o(Pe, e),
-                children: r.jsx(Ve, {
+                className: o(Ee, e),
+                children: r.jsx(Ge, {
                     text: d.extraRewardText,
-                    className: Oe,
-                    children: Z(m, (e, a) =>
+                    className: Le,
+                    children: K(m, (e, a) =>
                         r.jsx(
-                            Ve.Tooltip,
+                            Ge.Tooltip,
                             {
                                 contentId: Number(e.tooltipContentId),
                                 tooltipId: e.tooltipId,
-                                children: r.jsx(Ve.Reward, { image: ce(e, t >= Y.medium.weight ? J.Big : J.Small) }),
+                                children: r.jsx(Ge.Reward, { image: W(e, t >= ae.medium.weight ? te.Big : te.Small) }),
                             },
                             a + e.name,
                         ),
@@ -262,11 +265,11 @@ const Pe = 'AdditionRewards_6fbe30c4',
             })
         );
     }),
-    $e = 'Rewards_deed6d51';
-function De({ children: e, className: a }) {
-    return r.jsx('div', { className: o($e, a), children: e });
+    qe = 'Rewards_deed6d51';
+function Me({ children: e, className: a }) {
+    return r.jsx('div', { className: o(qe, a), children: e });
 }
-const Fe = {
+const Xe = {
     root: 'Title_root_2e63cf3',
     base: 'Title_60f02b6b',
     label: 'Title_label_16164e06',
@@ -278,36 +281,36 @@ const Fe = {
     base__crystal: 'Title_base__crystal_2e63cf3',
     fadeIn: 'Title_fadeIn_2e63cf3',
 };
-const qe = 'Compensation_22c7fec0';
-function Ze({ children: e, size: a, className: t }) {
-    return r.jsx('div', { className: o(qe, t), style: { width: a.width, height: a.height }, children: e });
+const Ye = 'Compensation_22c7fec0';
+function Ue({ children: e, size: a, className: t }) {
+    return r.jsx('div', { className: o(Ye, t), style: { width: a.width, height: a.height }, children: e });
 }
-((Ze.Glow = function ({ src: e, size: a, className: t }) {
-    return r.jsx(K, { className: t, style: { width: a.width, height: a.height }, src: e, autoplay: !0, loop: !0 });
+((Ue.Glow = function ({ src: e, size: a, className: t }) {
+    return r.jsx(se, { className: t, style: { width: a.width, height: a.height }, src: e, autoplay: !0, loop: !0 });
 }),
-    (Ze.Title = function ({ reward: e, style: a, className: t = '' }) {
+    (Ue.Title = function ({ reward: e, style: a, className: t = '' }) {
         const { name: s, label: i, value: n } = e;
         return r.jsxs('div', {
-            className: o(Fe.base, Fe[`base__${s}`], t),
+            className: o(Xe.base, Xe[`base__${s}`], t),
             children: [
                 r.jsx('div', {
-                    className: Fe.label,
+                    className: Xe.label,
                     style: { fontSize: null == a ? void 0 : a.labelFontSize },
                     children: i,
                 }),
                 r.jsx('div', {
-                    className: Fe.description,
+                    className: Xe.description,
                     style: { fontSize: null == a ? void 0 : a.descriptionFontSize },
-                    children: r.jsx(Q, { text: W(n) }),
+                    children: r.jsx(ie, { text: F(n) }),
                 }),
             ],
         });
     }));
-const Me = 'PreviewButton_fdc3bedf';
-const Xe = 'RareGlow_c6e2840e',
-    Ue = 'RareGlow_video_c4cd6073';
-const Ye = 'Description_2b53c101';
-const Je = {
+const Je = 'PreviewButton_fdc3bedf';
+const Ke = 'RareGlow_c6e2840e',
+    Qe = 'RareGlow_video_c4cd6073';
+const Ze = 'Description_2b53c101';
+const ea = {
     root: 'Label_root_e3f8b3ce',
     base: 'Label_4ac1bd4d',
     base__credits: 'Label_base__credits_de46e2c4',
@@ -318,62 +321,61 @@ const Je = {
     base__crystal: 'Label_base__crystal_7048c917',
     fadeIn: 'Label_fadeIn_e3f8b3ce',
 };
-const Ke = {
+const aa = {
     root: 'Plural_root_e8c3c4d2',
     base: 'Plural_58fd981',
     base__premium_plus: 'Plural_base__premium_plus_c2532b49',
     fadeIn: 'Plural_fadeIn_e8c3c4d2',
 };
-const Qe = 'Title_60f02b6b';
-function ea({ children: e, className: a }) {
-    return r.jsx('div', { className: o(Qe, a), children: e });
+const ta = 'Title_60f02b6b';
+function sa({ children: e, className: a }) {
+    return r.jsx('div', { className: o(ta, a), children: e });
 }
-((ea.Description = function ({ children: e, style: a, className: t }) {
-    return r.jsx('div', { className: o(Ye, t), style: a, children: e });
+((sa.Description = function ({ children: e, style: a, className: t }) {
+    return r.jsx('div', { className: o(Ze, t), style: a, children: e });
 }),
-    (ea.Label = function ({ children: e, rewardType: a, style: t, className: s }) {
-        return r.jsx('div', { className: o(Je.base, Je[`base__${a}`], s), style: t, children: e });
+    (sa.Label = function ({ children: e, rewardType: a, style: t, className: s }) {
+        return r.jsx('div', { className: o(ea.base, ea[`base__${a}`], s), style: t, children: e });
     }),
-    (ea.Plural = function ({ text: e, rewardType: a, style: t, className: s }) {
-        return r.jsx('span', { className: o(Ke.base, Ke[`base__${a}`], s), style: t, children: e });
+    (sa.Plural = function ({ text: e, rewardType: a, style: t, className: s }) {
+        return r.jsx('span', { className: o(aa.base, aa[`base__${a}`], s), style: t, children: e });
     }));
-const aa = 'RewardCard_ecfc0889';
-function ta({ children: e, className: a, ...t }) {
-    return r.jsx('div', { className: o(aa, a), ...t, children: e });
+const ia = 'RewardCard_ecfc0889';
+function ra({ children: e, className: a, ...t }) {
+    return r.jsx('div', { className: o(ia, a), ...t, children: e });
 }
-((ta.PreviewButton = function ({ image: e, onClick: a, className: t }) {
-    return r.jsx('div', { className: o(Me, t), children: r.jsx(pe, { icon: { img: e }, onClick: a }) });
+((ra.PreviewButton = function ({ image: e, onClick: a, className: t }) {
+    return r.jsx('div', { className: o(Je, t), children: r.jsx(we, { icon: { img: e }, onClick: a }) });
 }),
-    (ta.RareGlow = function ({ src: e, className: a }) {
+    (ra.RareGlow = function ({ src: e, className: a }) {
         return r.jsx('div', {
-            className: o(Xe, a),
-            children: r.jsx(K, { className: Ue, src: e, autoplay: !0, loop: !0 }),
+            className: o(Ke, a),
+            children: r.jsx(se, { className: Qe, src: e, autoplay: !0, loop: !0 }),
         });
     }),
-    (ta.Title = ea),
-    (ta.Compensation = Ze));
-const sa = { opacity: 0, transform: 'scale(0.96)', filter: 'brightness(1.5)', immediate: !0 },
-    ia = { opacity: 1, transform: 'scale(1.06) rotateZ(0deg)', filter: 'brightness(1.5)', visibility: 'hidden' },
-    ra = { opacity: 1, transform: 'scale(1) rotateZ(0deg)', filter: 'brightness(1)', visibility: 'visible' },
-    oa = { opacity: 0, display: 'flex' },
-    na = { display: 'none' },
-    ca = { display: 'flex' },
-    la = () => ({
+    (ra.Title = sa),
+    (ra.Compensation = Ue));
+const oa = { opacity: 0, transform: 'scale(0.96)', filter: 'brightness(1.5)', immediate: !0 },
+    na = { opacity: 1, transform: 'scale(1.4)', filter: 'brightness(3)', visibility: 'hidden' },
+    ca = { opacity: 1, transform: 'scale(1)', filter: 'brightness(1)', visibility: 'visible' },
+    la = { opacity: 0, display: 'flex' },
+    da = { display: 'none' },
+    ma = { opacity: 0 },
+    ua = { display: 'flex' },
+    pa = () => ({
         to: { opacity: 1, transform: 'scale(1.02)', filter: 'brightness(1.5)' },
-        config: { duration: 200, easing: U.easeOutCubic },
+        config: { duration: 200, easing: ee.easeOutCubic },
     }),
-    da = (e = 400) => ({
+    ga = (e = 200) => ({ to: { opacity: 1 }, config: { duration: e, easing: ee.easeOutCubic } }),
+    ha = (e = 400) => ({
         to: { opacity: 1, transform: 'scale(1)', filter: 'brightness(1)' },
-        config: { duration: e, easing: U.easeInOutCubic },
+        config: { duration: e, easing: ee.easeInOutCubic },
     }),
-    ma = (e = 500) => ({
-        to: [
-            { opacity: 1, transform: 'scale(1.06) rotateZ(0deg)', filter: 'brightness(1.5)', visibility: 'visible' },
-            ra,
-        ],
-        config: { duration: e },
+    wa = (e = 500) => ({
+        to: [{ opacity: 1, transform: 'scale(1.4)', filter: 'brightness(3)', visibility: 'visible' }, ca],
+        config: { duration: e, easing: ee.easeOutCirc },
     }),
-    ua = {
+    xa = {
         extraLarge: {
             rewardWidth: '600rem',
             rewardHeight: '450rem',
@@ -382,9 +384,9 @@ const sa = { opacity: 0, transform: 'scale(0.96)', filter: 'brightness(1.5)', im
             countHeight: '36rem',
             nameHeight: '22rem',
             descriptionHeight: '20rem',
+            compensationGlowSize: '780rem',
+            imageSize: te.S600x450,
             glowSize: '780rem',
-            imageSize: J.S600x450,
-            rareGlowSize: '780rem',
             rareVideoSize: '512rem',
         },
         large: {
@@ -395,9 +397,9 @@ const sa = { opacity: 0, transform: 'scale(0.96)', filter: 'brightness(1.5)', im
             countHeight: '28rem',
             nameHeight: '18rem',
             descriptionHeight: '16rem',
+            compensationGlowSize: '520rem',
+            imageSize: te.S600x450,
             glowSize: '520rem',
-            imageSize: J.S600x450,
-            rareGlowSize: '520rem',
             rareVideoSize: '512rem',
         },
         medium: {
@@ -408,9 +410,9 @@ const sa = { opacity: 0, transform: 'scale(0.96)', filter: 'brightness(1.5)', im
             countHeight: '24rem',
             nameHeight: '18rem',
             descriptionHeight: '16rem',
+            compensationGlowSize: '386rem',
+            imageSize: te.S600x450,
             glowSize: '386rem',
-            imageSize: J.S600x450,
-            rareGlowSize: '386rem',
             rareVideoSize: '440rem',
         },
         small: {
@@ -421,9 +423,9 @@ const sa = { opacity: 0, transform: 'scale(0.96)', filter: 'brightness(1.5)', im
             countHeight: '22rem',
             nameHeight: '15rem',
             descriptionHeight: '14rem',
+            compensationGlowSize: '302rem',
+            imageSize: te.S600x450,
             glowSize: '302rem',
-            imageSize: J.S600x450,
-            rareGlowSize: '302rem',
             rareVideoSize: '384rem',
         },
         extraSmall: {
@@ -434,33 +436,33 @@ const sa = { opacity: 0, transform: 'scale(0.96)', filter: 'brightness(1.5)', im
             countHeight: '18rem',
             nameHeight: '15rem',
             descriptionHeight: '14rem',
+            compensationGlowSize: '238rem',
+            imageSize: te.S600x450,
             glowSize: '238rem',
-            imageSize: J.S600x450,
-            rareGlowSize: '238rem',
             rareVideoSize: '256rem',
         },
     },
-    pa = (e, a) => {
+    ba = (e, a) => {
         switch (!0) {
-            case e === Y.extraLarge.weight && a < 4:
-                return ua.extraLarge;
-            case (e === Y.extraLarge.weight && a > 3) ||
-                (e === Y.medium.weight && a < 4) ||
-                (e === Y.large.weight && a < 5):
-                return ua.large;
-            case (e === Y.large.weight && a > 4) ||
-                (e === Y.medium.weight && a < 6 && a > 3) ||
-                ((e === Y.small.weight || e === Y.extraSmall.weight) && a < 4):
-                return ua.medium;
-            case (e === Y.medium.weight && 6 === a) ||
-                (e === Y.small.weight && a < 6 && a > 3) ||
-                (e === Y.extraSmall.weight && 4 === a):
-                return ua.small;
+            case e === ae.extraLarge.weight && a < 4:
+                return xa.extraLarge;
+            case (e === ae.extraLarge.weight && a > 3) ||
+                (e === ae.medium.weight && a < 4) ||
+                (e === ae.large.weight && a < 5):
+                return xa.large;
+            case (e === ae.large.weight && a > 4) ||
+                (e === ae.medium.weight && a < 6 && a > 3) ||
+                ((e === ae.small.weight || e === ae.extraSmall.weight) && a < 4):
+                return xa.medium;
+            case (e === ae.medium.weight && 6 === a) ||
+                (e === ae.small.weight && a < 6 && a > 3) ||
+                (e === ae.extraSmall.weight && 4 === a):
+                return xa.small;
             default:
-                return ua.extraSmall;
+                return xa.extraSmall;
         }
     },
-    ga = (e, a) => {
+    _a = (e, a) => {
         switch (!0) {
             case (e >= 3 && 1 === a) || (e >= 4 && [1, e - 2].includes(a)):
                 return -40;
@@ -470,88 +472,97 @@ const sa = { opacity: 0, transform: 'scale(0.96)', filter: 'brightness(1.5)', im
                 return 0;
         }
     },
-    ha = 'Compensation_db29c4dc',
-    xa = 'Compensation_glow_73aacf41',
-    wa = 'Compensation_compensationIcon_c9f69818',
-    ba = i(function ({ reward: e, index: a, className: t }) {
-        const { model: i } = be(),
+    ya = 'Compensation_db29c4dc',
+    fa = 'Compensation_glow_db29c4dc',
+    va = 'Compensation_particles_6a26f8c1',
+    ja = 'Compensation_compensationIcon_c9f69818',
+    Na = i(function ({ reward: e, index: a, className: t }) {
+        const { model: i } = fe(),
             n = i.bonuses.get(),
             { images: d, videos: m, sounds: u } = i.computes.resources(),
             {
                 breakpoint: { weight: p },
-            } = X(),
-            [g, h] = c(() => oa),
-            [x, w] = c(() => ia),
-            [f, y] = c(() => na),
-            v = pa(p, n.length),
-            j = b(_e);
+            } = Z(),
+            g = s.useRef(null),
+            [h, w] = c(() => la),
+            [x, y] = c(() => na),
+            [f, v] = c(() => da),
+            j = ba(p, n.length),
+            N = b(ve);
         return (
             s.useEffect(() => {
                 const e = (e) => {
+                    var t;
                     switch (e.name) {
-                        case Ie(Ne, a).name:
-                            (h.start({
+                        case ke(Ce, a).name:
+                            (w.start({
                                 to: [
-                                    { opacity: 0.6, display: 'flex' },
-                                    { opacity: 0, display: 'flex' },
-                                    { opacity: 0, display: 'none' },
+                                    { opacity: 1, display: 'flex' },
+                                    { opacity: 0, display: 'none', config: { duration: 0 } },
                                 ],
-                                config: { duration: 1e3 },
+                                config: { duration: 2e3 },
                             }),
-                                ee.sound(u.compensationAppear));
+                                oe.sound(u.compensationAppear),
+                                null == (t = g.current) || t.play());
                             break;
-                        case Ie(Re, a).name:
-                            (y.start(ca), w.start(ma()));
+                        case ke(Ie, a).name:
+                            (v.start(ua), y.start(wa()));
                     }
                 };
                 return (
-                    j.events.on('change', e),
+                    N.events.on('change', e),
                     () => {
-                        j.events.off('change', e);
+                        N.events.off('change', e);
                     }
                 );
-            }, [u, j.events, a]),
+            }, [u, N.events, a]),
             s.useEffect(() => {
                 const e = () => {
-                    (y.start({ from: { display: 'flex' }, config: { duration: 0 } }), w.start(ma(0)));
+                    (v.start({ from: { display: 'flex' }, config: { duration: 0 } }), y.start(wa(0)));
                 };
                 return (
-                    j.events.on('skipAll', e),
+                    N.events.on('skipAll', e),
                     () => {
-                        j.events.off('skipAll', e);
+                        N.events.off('skipAll', e);
                     }
                 );
-            }, [j.events]),
-            r.jsxs(ta.Compensation, {
-                className: o(ha, t),
-                size: { width: v.rewardWidth, height: v.rewardHeight },
+            }, [N.events]),
+            r.jsxs(ra.Compensation, {
+                className: o(ya, t),
+                size: { width: j.rewardWidth, height: j.rewardHeight },
                 children: [
                     r.jsx(l.div, {
-                        style: { ...g },
-                        className: xa,
-                        children: r.jsx(ta.Compensation.Glow, {
+                        style: { ...h },
+                        className: fa,
+                        children: r.jsx(ra.Compensation.Glow, {
                             src: m.compensationGlow,
-                            size: { width: v.glowSize, height: v.glowSize },
+                            size: { width: j.compensationGlowSize, height: j.compensationGlowSize },
                         }),
+                    }),
+                    r.jsx(re, {
+                        ref: g,
+                        className: va,
+                        style: { width: j.compensationGlowSize, height: j.compensationGlowSize },
+                        src: m.compensationParticles,
                     }),
                     r.jsx(l.div, {
                         style: { ...x, visibility: x.visibility },
                         children: r.jsx(_, {
-                            icon: ce(e, J.S600x450, e.isCompensation),
-                            sizes: { height: v.rewardHeight, width: v.rewardWidth },
+                            icon: W(e, te.S600x450, e.isCompensation),
+                            sizes: { height: j.rewardHeight, width: j.rewardWidth },
                         }),
                     }),
                     r.jsxs(l.div, {
                         style: { ...f },
                         children: [
-                            r.jsx(ta.Compensation.Title, {
+                            r.jsx(ra.Compensation.Title, {
                                 reward: e.compensation,
-                                style: { descriptionFontSize: v.descriptionHeight, labelFontSize: v.nameHeight },
+                                style: { descriptionFontSize: j.descriptionHeight, labelFontSize: j.nameHeight },
                             }),
                             r.jsx(_, {
-                                className: wa,
+                                className: ja,
                                 icon: d.compensationIcon,
-                                sizes: { height: v.compensationIconHeight, width: v.compensationIconWidth },
+                                sizes: { height: j.compensationIconHeight, width: j.compensationIconWidth },
                             }),
                         ],
                     }),
@@ -559,26 +570,26 @@ const sa = { opacity: 0, transform: 'scale(0.96)', filter: 'brightness(1.5)', im
             })
         );
     }),
-    _a = 'Title_2e63cf3',
-    fa = 'Title_text_f2795d1c',
-    ya = i(function ({ reward: e, style: a }) {
-        const { model: t } = be(),
+    Ra = 'Title_2e63cf3',
+    Sa = 'Title_text_f2795d1c',
+    Ca = i(function ({ reward: e, style: a }) {
+        const { model: t } = fe(),
             { texts: s } = t.computes.resources(),
             { dynamicTexts: i } = t.computes.dynamicResources(),
             { name: o, value: n, label: c, description: l } = e,
-            d = ae.resolve('strings'),
+            d = ne.resolve('strings'),
             m = (() => {
                 switch (!0) {
                     case Boolean(n):
-                        return r.jsx(te, {
-                            className: fa,
+                        return r.jsx(ce, {
+                            className: Sa,
                             upgradeLegacy: !0,
                             split: !0,
-                            text: o === le.tmanToken ? s.uniqueTankmanText : c,
+                            text: o === $.tmanToken ? s.uniqueTankmanText : c,
                         });
-                    case o === le.attachment:
-                        return r.jsx(te, {
-                            className: fa,
+                    case o === $.attachment:
+                        return r.jsx(ce, {
+                            className: Sa,
                             upgradeLegacy: !0,
                             split: !0,
                             text: d.readOrEmpty('item_types.customization.attachment.rarity'),
@@ -587,26 +598,26 @@ const sa = { opacity: 0, transform: 'scale(0.96)', filter: 'brightness(1.5)', im
                             },
                         });
                     default:
-                        return r.jsx(te, { className: fa, upgradeLegacy: !0, split: !0, text: l });
+                        return r.jsx(ce, { className: Sa, upgradeLegacy: !0, split: !0, text: l });
                 }
             })(),
-            u = !0 === Boolean(n) ? (o === le.tmanToken ? c : W(n)) : c,
-            p = o === le.premiumPlus;
-        return r.jsxs(ta.Title, {
-            className: _a,
+            u = !0 === Boolean(n) ? (o === $.tmanToken ? c : F(n)) : c,
+            p = o === $.premiumPlus;
+        return r.jsxs(ra.Title, {
+            className: Ra,
             children: [
                 m &&
-                    r.jsx(ta.Title.Description, {
+                    r.jsx(ra.Title.Description, {
                         style: { fontSize: null == a ? void 0 : a.descriptionFontSize },
                         children: m,
                     }),
-                r.jsxs(ta.Title.Label, {
+                r.jsxs(ra.Title.Label, {
                     rewardType: e.name,
                     style: { fontSize: null == a ? void 0 : a.labelFontSize },
                     children: [
-                        r.jsx(te, { className: fa, text: u, upgradeLegacy: !0, split: !0 }),
+                        r.jsx(ce, { className: Sa, text: u, upgradeLegacy: !0, split: !0 }),
                         p &&
-                            r.jsx(ta.Title.Plural, {
+                            r.jsx(ra.Title.Plural, {
                                 rewardType: e.name,
                                 text: i.rewardsPremiumDay.plural('premiumDay', Number(n.split(' ').at(-1))),
                                 style: { fontSize: null == a ? void 0 : a.labelFontSize },
@@ -616,194 +627,188 @@ const sa = { opacity: 0, transform: 'scale(0.96)', filter: 'brightness(1.5)', im
             ],
         });
     }),
-    va = 'Card_previewWrapper_58bcc92f',
-    ja = 'Card_f4c22d1c',
-    Na = 'Card_previewButton_6ec3b3ed',
-    Ra = 'Card_previewButton__ready_affac095',
-    Sa = 'Card_rareVideo_f4c22d1c',
-    Ca = 'Card_rareGlow_abfa6312',
-    Ia = 'Card_compensation_60211107',
-    Aa = i(function ({ reward: e, index: a }) {
-        const { model: t, controls: i } = be(),
+    Ia = 'Card_previewWrapper_58bcc92f',
+    Aa = 'Card_f4c22d1c',
+    Ta = 'Card_previewButton_6ec3b3ed',
+    ka = 'Card_previewButton__ready_affac095',
+    za = 'Card_rareVideo_f4c22d1c',
+    Ba = 'Card_glow_951fb0ef',
+    Ha = 'Card_compensation_60211107',
+    Pa = i(function ({ reward: e, index: a }) {
+        const { model: t, controls: i } = fe(),
             d = t.bonuses.get().length,
             m = t.eventName.get(),
-            { images: u, videos: p, texts: g, sounds: w } = t.computes.resources(),
+            { images: u, videos: p, texts: g, sounds: x } = t.computes.resources(),
             [_, v] = s.useState(!1),
             {
                 breakpoint: { weight: j },
-            } = X(),
-            N = pa(j, d),
-            R = n(x, (e) => e.value),
-            [S, C] = c(() => sa),
-            [I, A] = c(() => sa),
-            T = e.name === se.Vehicles,
-            k = j === Y.extraSmall.weight && d > 4,
-            z = b(_e);
+            } = Z(),
+            N = ba(j, d),
+            R = n(w, (e) => e.value),
+            [S, C] = c(() => oa),
+            [I, A] = c(() => oa),
+            [T, k] = c(() => ma),
+            z = e.name === le.Vehicles,
+            B = j === ae.extraSmall.weight && d > 4,
+            H = b(ve);
         (s.useEffect(() => {
             const t = (t) => {
                 switch (t.name) {
-                    case Ie(ve, a).name:
+                    case ke(Re, a).name:
                         i.setActiveRareReward(e);
                         break;
-                    case Ie(je, a).name:
+                    case ke(Se, a).name:
                         v(!0);
                         break;
-                    case Ie(fe, a).name:
-                        (C.start(la()), A.start(la()), ee.sound(w.rewardAppear));
+                    case ke(je, a).name:
+                        (C.start(pa()), A.start(pa()), k.start(ga()), oe.sound(x.rewardAppear));
                         break;
-                    case Ie(ye, a).name:
-                        (C.start(da()), A.start(da()));
+                    case ke(Ne, a).name:
+                        (C.start(ha()), k.start(ga()), A.start(ha()));
                         break;
-                    case Ie(Ne, a).name:
+                    case ke(Ce, a).name:
                         C.start({
-                            to: [
-                                { opacity: 1, transform: 'scale(1) rotateZ(0.25deg)', filter: 'brightness(1.07)' },
-                                { opacity: 1, transform: 'scale(1.01) rotateZ(-0.5deg)', filter: 'brightness(1.14)' },
-                                { opacity: 1, transform: 'scale(1.02) rotateZ(0.75deg)', filter: 'brightness(1.21)' },
-                                { opacity: 1, transform: 'scale(1.03) rotateZ(-0.75deg)', filter: 'brightness(1.28)' },
-                                { opacity: 1, transform: 'scale(1.04) rotateZ(1deg)', filter: 'brightness(1.35)' },
-                                { opacity: 1, transform: 'scale(1.05) rotateZ(-1deg)', filter: 'brightness(1.42)' },
-                                { opacity: 1, transform: 'scale(1.06) rotateZ(0deg)', filter: 'brightness(1.5)' },
-                            ],
-                            config: { duration: 120 },
+                            to: { opacity: 1, transform: 'scale(1.15)', filter: 'brightness(3)' },
+                            config: { duration: 2500, easing: ee.linear },
                         });
                         break;
-                    case Ie(Re, a).name:
+                    case ke(Ie, a).name:
                         (C.start({
-                            to: { opacity: 0, transform: 'scale(1) rotateZ(0deg)', filter: 'brightness(1)' },
+                            to: { opacity: 0, transform: 'scale(1)', filter: 'brightness(1)' },
                             config: { duration: 0 },
                         }),
                             A.start({ from: { opacity: 0 }, config: { duration: 0 } }));
                 }
             };
             return (
-                z.events.on('change', t),
+                H.events.on('change', t),
                 () => {
-                    z.events.off('change', t);
+                    H.events.off('change', t);
                 }
             );
-        }, [w, z.events, i, a]),
+        }, [x, H.events, i, a]),
             s.useEffect(() => {
                 const e = () => {
-                    (C.start(da(0)), A.start(da(0)));
+                    (C.start(ha(0)), A.start(ha(0)), k.start(ga(0)));
                 };
                 return (
-                    z.events.on('skipAll', e),
+                    H.events.on('skipAll', e),
                     () => {
-                        z.events.off('skipAll', e);
+                        H.events.off('skipAll', e);
                     }
                 );
-            }, [z.events]));
-        const { tooltipId: B, tooltipContentId: H } = e,
-            V = M({
-                contentId: Number(H),
-                args: { tooltipId: B, boxCategory: e.icon, eventName: m },
+            }, [H.events]));
+        const { tooltipId: P, tooltipContentId: V, rarity: G } = e,
+            E = Q({
+                contentId: Number(V),
+                args: { tooltipId: P, boxCategory: e.icon, eventName: m },
                 disabled: R !== h.initial,
-            });
-        return r.jsxs(ta, {
-            ...V,
-            style: { marginTop: k ? 0 : `${ga(d, a)}rem` },
-            className: ja,
+            }),
+            L = q(G) ? p.rareGlow : M(G) ? p.commonGlow : '';
+        return r.jsxs(ra, {
+            ...E,
+            style: { marginTop: B ? 0 : `${_a(d, a)}rem` },
+            className: Aa,
             children: [
-                e.isCompensation && r.jsx(ba, { index: a, reward: e, className: Ia }),
-                G(e) &&
+                e.isCompensation && r.jsx(Na, { index: a, reward: e, className: Ha }),
+                Boolean(L) &&
                     r.jsx(l.div, {
-                        style: { opacity: S.opacity, width: N.rareGlowSize, height: N.rareGlowSize },
-                        className: Ca,
-                        children: r.jsx(ta.RareGlow, { src: p.rareGlow }),
+                        style: { opacity: T.opacity, width: N.glowSize, height: N.glowSize },
+                        className: Ba,
+                        children: r.jsx(ra.RareGlow, { src: L }),
                     }),
                 r.jsx(l.div, {
                     style: { ...S },
-                    children: r.jsx(f, { reward: e, sizes: N, countText: g.multiplier, currentAnimationState: R }),
+                    children: r.jsx(y, { reward: e, sizes: N, countText: g.multiplier, currentAnimationState: R }),
                 }),
                 r.jsx(l.div, {
                     style: { ...I },
-                    children: T
-                        ? r.jsx(ue, { reward: e, style: N })
-                        : r.jsx(ya, {
+                    children: z
+                        ? r.jsx(he, { reward: e, style: N })
+                        : r.jsx(Ca, {
                               reward: e,
                               style: { descriptionFontSize: N.descriptionHeight, labelFontSize: N.nameHeight },
                           }),
                 }),
-                $(e) &&
+                X(e) &&
                     !e.isCompensation &&
                     r.jsx(l.div, {
-                        className: va,
+                        className: Ia,
                         style: { ...I },
-                        children: r.jsx(ta.PreviewButton, {
+                        children: r.jsx(ra.PreviewButton, {
                             image: u.previewIcon,
                             onClick: () =>
                                 i.goPreview({ bonusType: e.name, bonusId: e.id ? e.id : '', styleID: e.styleID }),
-                            className: o(Na, R === h.initial && Ra),
+                            className: o(Ta, R === h.initial && ka),
                         }),
                     }),
-                G(e) &&
-                    r.jsx(y, {
-                        className: Sa,
+                D(e) &&
+                    r.jsx(f, {
+                        className: za,
                         style: { width: N.rareVideoSize, height: N.rareVideoSize },
-                        sound: e.rarity === O.Rare ? w.rareAnimation : w.epicAnimation,
+                        sound: e.rarity === O.Rare ? x.rareAnimation : x.epicAnimation,
                         src: p[e.rarity],
                         show: _,
-                        timer: { remainder: 0.4, next: z.resume },
+                        timer: { remainder: 0.4, next: H.resume },
                         onEnded: () => v(!1),
                     }),
             ],
         });
     }),
-    Ta = 'RewardList_7f0b73c7',
-    ka = 'RewardList_base__small_a45a17be',
-    za = (e) => e + 1,
-    Ba = i(function ({ className: e, resume: a }) {
-        const { model: t, controls: i } = be(),
+    Va = 'RewardList_7f0b73c7',
+    Oa = 'RewardList_base__small_a45a17be',
+    Ga = (e) => e + 1,
+    Ea = i(function ({ className: e, resume: a }) {
+        const { model: t, controls: i } = fe(),
             { sounds: c } = t.computes.resources(),
             {
                 breakpoint: { weight: l },
-            } = X(),
+            } = Z(),
             d = t.bonuses.get(),
             m = d.length,
             u = t.extraBonuses.get().length,
-            p = l === Y.extraSmall.weight && m > 4,
+            p = l === ae.extraSmall.weight && m > 4,
             [g, _] = s.useState(0),
-            f = n(x, (e) => e.value),
-            y = b(_e);
+            y = n(w, (e) => e.value),
+            f = b(ve);
         return (
             s.useEffect(() => {
                 const e = (e) => {
-                    if (e.name === Se) x.send({ type: u > 0 ? w.toExtra : w.toPage });
+                    if (e.name === Ae) w.send({ type: u > 0 ? x.toExtra : x.toPage });
                 };
                 return (
-                    y.events.on('change', e),
+                    f.events.on('change', e),
                     () => {
-                        y.events.off('change', e);
+                        f.events.off('change', e);
                     }
                 );
-            }, [y.events, i, u]),
+            }, [f.events, i, u]),
             s.useEffect(() => {
-                switch (v(f)) {
+                switch (v(y)) {
                     case h.skip:
-                        y.skipAll();
+                        f.skipAll();
                         break;
                     case h.preparation:
-                        (y.reset(), _(za));
+                        (f.reset(), _(Ga));
                         break;
                     case h.rewards:
-                        y.start();
+                        f.start();
                 }
-            }, [f]),
+            }, [y]),
             s.useEffect(() => {
-                a.active && (ee.sound(c.rewardAppear), a.reset());
+                a.active && (oe.sound(c.rewardAppear), a.reset());
             }, [c, a]),
             r.jsx(
-                De,
+                Me,
                 {
-                    className: o(Ta, p && ka, e),
-                    children: Z(d, (e, a) => r.jsx(Aa, { reward: e, index: a }, `reward_${e.name}_${a}`)),
+                    className: o(Va, p && Oa, e),
+                    children: K(d, (e, a) => r.jsx(Pa, { reward: e, index: a }, `reward_${e.name}_${a}`)),
                 },
                 g,
             )
         );
     }),
-    Ha = {
+    La = {
         base: 'Layout_1c0c8eb5',
         base__ready: 'Layout_base__ready_73e4204f',
         overlay: 'Layout_overlay_2156876',
@@ -812,70 +817,69 @@ const sa = { opacity: 0, transform: 'scale(0.96)', filter: 'brightness(1.5)', im
         rewardsPosition: 'Layout_rewardsPosition_1066384c',
         animations: 'Layout_animations_83d4bf75',
     },
-    Va = { opacity: 0 },
-    Pa = { opacity: 1 },
-    Oa = {
-        to: Pa,
-        config: { duration: 500, easing: U.easeOutCubic },
+    Wa = { opacity: 0 },
+    $a = { opacity: 1 },
+    Da = {
+        to: $a,
+        config: { duration: 500, easing: ee.easeOutCubic },
         onRest: () => {
-            x.send({ type: w.toInitial });
+            w.send({ type: x.toInitial });
         },
     },
-    Ea = i(function () {
-        const { model: e, controls: a } = be(),
+    Fa = i(function () {
+        const { model: e, controls: a } = fe(),
             {
                 boxCategory: t,
                 boxesCount: i,
                 boxesCountToGuaranteed: d,
                 isWindowAccessible: u,
-                isShopVisible: g,
+                isShopVisible: p,
             } = e.root.get(),
-            _ = e.isAnimationActive.get(),
-            { accentCount: f } = e.computes.settings(),
-            { texts: y, images: R, sounds: A } = e.computes.resources(),
-            { dynamicTexts: T } = e.computes.dynamicResources(),
-            k = e.extraBonuses.get().length,
-            z = e.activeRareReward.get(),
-            B = e.eventName.get(),
-            [H, V] = s.useState(!1),
+            g = e.isAnimationActive.get(),
+            { accentCount: _ } = e.computes.settings(),
+            { texts: y, images: f, sounds: R } = e.computes.resources(),
+            { dynamicTexts: A } = e.computes.dynamicResources(),
+            T = e.extraBonuses.get().length,
+            k = e.activeRareReward.get(),
+            z = e.eventName.get(),
+            [B, H] = s.useState(!1),
             {
                 breakpoint: { weight: P },
-            } = X(),
-            O = n(x, (e) => e.value),
-            [E, L] = c(() => ({ from: Va })),
-            G = { boxesToGuaranteed: d, accent: f },
-            W = { title: y.guaranteedTitle, nextBox: y.guaranteedNextBox },
-            $ = { glow: R.glowIcon, info: R.infoIcon, strongGlow: R.guaranteedGlowIcon };
+            } = Z(),
+            V = n(w, (e) => e.value),
+            [O, G] = c(() => ({ from: Wa })),
+            E = { boxesToGuaranteed: d, accent: _ },
+            L = { title: y.guaranteedTitle, nextBox: y.guaranteedNextBox },
+            W = { glow: f.glowIcon, info: f.infoIcon, strongGlow: f.guaranteedGlowIcon };
         s.useEffect(() => {
-            switch (v(O)) {
+            switch (v(V)) {
                 case j:
-                    L.set(Va);
+                    G.set(Wa);
                     break;
                 case h.skip:
-                    L.set(Pa);
+                    G.set($a);
                     break;
                 case h.page:
-                    L.start(Oa);
+                    G.start(Da);
             }
-        }, [O]);
-        const D = { active: H, reset: s.useCallback(() => V(!1), []) },
-            F = b(_e),
-            q = s.useCallback(() => {
-                (a.clearActiveRareReward(), V(!0), F.resume());
-            }, [F, a]);
+        }, [V]);
+        const $ = { active: B, reset: s.useCallback(() => H(!1), []) },
+            D = b(ve),
+            F = s.useCallback(() => {
+                (a.clearActiveRareReward(), H(!0), D.resume());
+            }, [D, a]);
         return r.jsxs(N, {
-            className: o(Ha.base, O === h.initial && Ha.base__ready),
+            className: o(La.base, V === h.initial && La.base__ready),
             children: [
-                Boolean(z) &&
-                    p(B, null == z ? void 0 : z.specialAwardName) &&
+                Boolean(k) &&
                     r.jsx(N.Overlay, {
-                        className: Ha.overlay,
+                        className: La.overlay,
                         children: r.jsx(S, {
-                            res: C(B, null == z ? void 0 : z.specialAwardName),
-                            rareBonus: z,
+                            res: C(z, null == k ? void 0 : k.specialAwardName),
+                            rareBonus: k,
                             texts: y,
                             controls: {
-                                onClose: q,
+                                onClose: F,
                                 onPlay: () => a.setIsVideoPlaying(!0),
                                 onEnded: () => a.setIsVideoPlaying(!1),
                             },
@@ -883,20 +887,20 @@ const sa = { opacity: 0, transform: 'scale(0.96)', filter: 'brightness(1.5)', im
                         }),
                     }),
                 r.jsx(l.div, {
-                    style: E,
-                    className: Ha.animations,
+                    style: O,
+                    className: La.animations,
                     children: r.jsxs(N.Header, {
                         children: [
                             r.jsx(m, {
                                 title: y.headerTitle,
                                 subTitle:
                                     t &&
-                                    r.jsx(Q, {
+                                    r.jsx(ie, {
                                         text: y.headerSubtitle,
-                                        binding: { name: T.boxCategory.dynOpt(t) },
-                                        classMix: Ha.subtitle,
+                                        binding: { name: A.boxCategory.dynOpt(t) },
+                                        classMix: La.subtitle,
                                     }),
-                                className: Ha.header,
+                                className: La.header,
                             }),
                             r.jsx(N.CloseButton, { text: y.closeButton, onClick: a.close }),
                         ],
@@ -904,38 +908,38 @@ const sa = { opacity: 0, transform: 'scale(0.96)', filter: 'brightness(1.5)', im
                 }),
                 r.jsxs(N.Body, {
                     children: [
-                        r.jsx(Ba, { resume: D, className: o(k > 0 && Ha.rewardsPosition) }),
-                        k > 0 && r.jsx(We, { className: Ha.extraRewards }),
+                        r.jsx(Ea, { resume: $, className: o(T > 0 && La.rewardsPosition) }),
+                        T > 0 && r.jsx(Fe, { className: La.extraRewards }),
                     ],
                 }),
                 r.jsx(l.div, {
-                    style: E,
-                    className: Ha.animations,
+                    style: O,
+                    className: La.animations,
                     children: r.jsxs(N.Footer, {
-                        className: Ha.footer,
+                        className: La.footer,
                         children: [
-                            d > 0 && r.jsx(me, { counts: G, texts: W, icons: $, eventName: B, category: t }),
-                            ie.isHigh() &&
+                            d > 0 && r.jsx(ge, { counts: E, texts: L, icons: W, eventName: z, category: t }),
+                            de.isHigh() &&
                                 r.jsx(N.Checkbox, {
-                                    isActive: _,
+                                    isActive: g,
                                     onClick: () => {
-                                        a.toggleAnimationState(_);
+                                        a.toggleAnimationState(g);
                                     },
                                     text: y.checkbox,
-                                    size: P >= Y.medium.weight ? re.extraLarge : re.large,
+                                    size: P >= ae.medium.weight ? me.extraLarge : me.large,
                                 }),
                             r.jsx(I, {
                                 texts: y,
-                                images: R,
+                                images: f,
                                 actions: {
                                     ...a,
                                     openNext: () => {
-                                        x.send({ type: w.toPreparation });
+                                        w.send({ type: x.toPreparation });
                                     },
                                 },
-                                sounds: A,
+                                sounds: R,
                                 boxesCount: i,
-                                isShopVisible: g,
+                                isShopVisible: p,
                             }),
                         ],
                     }),
@@ -943,11 +947,11 @@ const sa = { opacity: 0, transform: 'scale(0.96)', filter: 'brightness(1.5)', im
             ],
         });
     }),
-    La = 'App_loaderWrapper_a177675d',
-    Ga = 'App_0',
-    Wa = 'App_background_bb0bfe54',
-    $a = i(function () {
-        const { model: e, controls: a } = be(),
+    qa = 'App_loaderWrapper_a177675d',
+    Ma = 'App_0',
+    Xa = 'App_background_bb0bfe54',
+    Ya = i(function () {
+        const { model: e, controls: a } = fe(),
             { images: t, texts: i } = e.computes.resources(),
             { isWindowAccessible: o } = e.root.get(),
             c = e.isAnimationActive.get(),
@@ -955,46 +959,46 @@ const sa = { opacity: 0, transform: 'scale(0.96)', filter: 'brightness(1.5)', im
             u = e.computes.hasRareReward(),
             p = e.computes.multimediaResource(),
             g = e.isReopen.get(),
-            _ = n(x, (e) => e.value),
-            f = b(_e);
-        (oe(() => {
+            _ = n(w, (e) => e.value),
+            y = b(ve);
+        (ue(() => {
             _ === h.initial && a.close();
         }),
             s.useEffect(
                 () => (
-                    x.start(),
+                    w.start(),
                     () => {
-                        x.stop();
+                        w.stop();
                     }
                 ),
                 [],
             ),
             s.useEffect(() => {
-                x.send({ type: w.setAnimationActive, isAnimationActive: c });
+                w.send({ type: x.setAnimationActive, isAnimationActive: c });
             }, [c]),
             A(g, m, _));
-        const { loadingStyle: y, contentStyle: j } = T(_, a.openNext);
+        const { loadingStyle: f, contentStyle: j } = T(_, a.openNext);
         return r.jsxs(k, {
-            className: Ga,
-            ref: f.rootRef,
+            className: Ma,
+            ref: y.rootRef,
             children: [
                 r.jsx(z, {
                     activeType: u ? d.rare : d.common,
                     minimized: !o,
                     res: p,
-                    className: Wa,
+                    className: Xa,
                     onPlay: () => a.setIsVideoPlaying(!0),
                     onEnded: () => a.setIsVideoPlaying(!1),
                 }),
-                v(_) !== B && r.jsx(l.div, { style: j, children: r.jsx(k.Content, { children: r.jsx(Ea, {}) }) }),
+                v(_) !== B && r.jsx(l.div, { style: j, children: r.jsx(k.Content, { children: r.jsx(Fa, {}) }) }),
                 _ === h.waiting &&
                     r.jsx(l.div, {
-                        style: y,
-                        className: La,
+                        style: f,
+                        className: qa,
                         children: r.jsx(k.Waiting, { image: t.loader, text: i.loader }),
                     }),
             ],
         });
     }),
-    Da = () => r.jsx(we, { options: u.SINGLE_REWARD, children: r.jsx(Te, { children: r.jsx($a, {}) }) });
-export { Da as default };
+    Ua = () => r.jsx(ye, { options: u.SINGLE_REWARD, children: r.jsx(Be, { children: r.jsx(Ya, {}) }) });
+export { Ua as default };

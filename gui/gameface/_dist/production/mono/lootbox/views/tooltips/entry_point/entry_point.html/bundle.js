@@ -1,5 +1,5 @@
-import { o as e, n as s, j as t, e as o } from '../../../../chunks/vendor.js';
-import { i, z as r, E as n, G as a, H as c, k as l, r as d, A as m } from '../../../../chunks/lib.js';
+import { o as e, m as s, j as t, e as o } from '../../../../chunks/vendor.js';
+import { i, A as r, G as n, H as a, J as c, k as l, r as d, E as m } from '../../../../chunks/lib.js';
 import { a as x } from '../../../../chunks/resources.js';
 import '../../../../chunks/getRewardImage.js';
 const p = {
@@ -25,7 +25,7 @@ const h = 'Timer_ece32445',
     g = 'Timer_iconWrapper_e0ef602f',
     v = 'Timer_icon_a6577db7',
     b = 'Timer_value_4ddac53a';
-const f = s(function () {
+const N = s(function () {
         const { model: e } = _(),
             { eventExpireTime: s } = e.root.get(),
             { images: o, texts: i } = e.resources.get(),
@@ -49,7 +49,7 @@ const f = s(function () {
             ],
         });
     }),
-    N = {
+    f = {
         icon: 'BaseTooltip_icon_3288a8b1',
         title: 'BaseTooltip_title_f4f02165',
         description: 'BaseTooltip_description_f508a8da',
@@ -58,12 +58,12 @@ const y = s(function () {
         const { model: e } = _(),
             { images: s, texts: o } = e.resources.get();
         return t.jsxs('div', {
-            className: N.base,
+            className: f.base,
             children: [
-                t.jsx('div', { className: N.icon, style: { backgroundImage: `url(${s.lootboxTooltip})` } }),
-                t.jsx('div', { className: N.title, children: o.title }),
-                t.jsx(l, { classMix: N.description, text: o.description }),
-                t.jsx(f, {}),
+                t.jsx('div', { className: f.icon, style: { backgroundImage: `url(${s.lootboxTooltip})` } }),
+                t.jsx('div', { className: f.title, children: o.title }),
+                t.jsx(l, { classMix: f.description, text: o.description }),
+                t.jsx(N, {}),
             ],
         });
     }),
@@ -80,7 +80,7 @@ function E({ icon: e, hasShadow: s = !1, className: i }) {
 const k = 'ErrorTooltip_1a899ce5',
     I = 'ErrorTooltip_shadow_c014711a',
     $ = 'ErrorTooltip_alertIcon_8ff91e02',
-    P = 'ErrorTooltip_title_c3fe1b7c',
+    P = 'ErrorTooltip_title_27846c7',
     A = 'ErrorTooltip_text_49b56fd6',
     M = 'ErrorTooltip_description_791ec4ee';
 const B = s(function () {
@@ -102,9 +102,9 @@ const B = s(function () {
         });
     }),
     D = 'App_67d0cdee';
-const z = s(function () {
+const G = s(function () {
     const { model: e } = _(),
         { isEnabled: s } = e.root.get();
     return t.jsx('div', { className: D, children: s ? t.jsx(y, {}) : t.jsx(B, {}) });
 });
-d(t.jsx(u, { children: t.jsx(m, { children: t.jsx(z, {}) }) }));
+d(t.jsx(u, { children: t.jsx(m, { children: t.jsx(G, {}) }) }));

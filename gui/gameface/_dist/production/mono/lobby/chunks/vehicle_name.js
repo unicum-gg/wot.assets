@@ -1,5 +1,5 @@
-import { j as e, x as a } from './vendor.js';
-import { bl as l, ak as i, d6 as s, c$ as _, cK as c } from './lib.js';
+import { j as e, J as a } from './vendor.js';
+import { aG as l, a2 as i, df as s, dr as _, d2 as c } from './lib.js';
 const n = {
     base: 'VehicleRole_b05c9386',
     icon: 'VehicleRole_icon_a3da323b',
@@ -35,7 +35,7 @@ function r({ role: s, size: _ = '24x24', roleIconFolderPath: c, className: o, cl
                   className: a(n.icon, null == r ? void 0 : r.icon),
                   style: { backgroundImage: `url(${null == c ? void 0 : c.$dyn(h)})` },
               })
-            : e.jsx(i, { roleKey: h, size: `x${_}` }),
+            : e.jsx(i, { roleKey: h, size: `x${_}`, classNames: { base: null == r ? void 0 : r.base } }),
     });
 }
 const h = {
@@ -49,6 +49,7 @@ const h = {
     base__elite: 'VehicleName_base__elite_e43b4676',
     vehicleType: 'VehicleName_vehicleType_7b61c047',
     roleContainer: 'VehicleName_roleContainer_2b4839b4',
+    role: 'VehicleName_role_dbc66a72',
     fadeIn: 'VehicleName_fadeIn_e43b4676',
     fadeInThreeQuarters: 'VehicleName_fadeInThreeQuarters_e43b4676',
     fadeInHalf: 'VehicleName_fadeInHalf_e43b4676',

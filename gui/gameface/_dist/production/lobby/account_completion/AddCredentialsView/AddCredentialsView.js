@@ -211,8 +211,8 @@
                 const O = 2,
                     P = 16,
                     L = 32,
-                    k = 64,
-                    I = (u, e) => {
+                    I = 64,
+                    k = (u, e) => {
                         const t = 'GFViewEventProxy';
                         if (void 0 !== e) {
                             const r = e.args,
@@ -250,13 +250,13 @@
                     },
                     N = {
                         close(u) {
-                            I('popover' === u ? O : L);
+                            k('popover' === u ? O : L);
                         },
                         minimize() {
-                            I(k);
+                            k(I);
                         },
                         move(u) {
-                            I(P, { isMouseEvent: !0, on: u });
+                            k(P, { isMouseEvent: !0, on: u });
                         },
                     };
                 function U(u) {
@@ -1170,11 +1170,11 @@
                 };
                 var P = t(403),
                     L = t(521),
-                    k = t(916);
-                const I = (u) => {
+                    I = t(916);
+                const k = (u) => {
                     console.error(u.type + ': useKeydownListener hook :: Callback is not defined');
                 };
-                function N(u = L.n.NONE, e = I, t = !1, r = !1) {
+                function N(u = L.n.NONE, e = k, t = !1, r = !1) {
                     (0, n.useEffect)(() => {
                         if (u !== L.n.NONE)
                             return (
@@ -1489,7 +1489,7 @@
                             Object.assign(
                                 {
                                     __Type: 'GFViewEventProxy',
-                                    type: k.B0.TOOLTIP,
+                                    type: I.B0.TOOLTIP,
                                     contentID: u,
                                     decoratorID: e,
                                     targetID: n,
@@ -1846,13 +1846,13 @@
                                     },
                                     [M, p],
                                 ),
-                                k = (0, n.useCallback)(
+                                I = (0, n.useCallback)(
                                     (u) => {
                                         M && h && h(u);
                                     },
                                     [M, h],
                                 ),
-                                I = (0, n.useCallback)(
+                                k = (0, n.useCallback)(
                                     (u) => {
                                         M && b && b(u);
                                     },
@@ -1926,8 +1926,8 @@
                                     type: Tu[t],
                                     value: e,
                                     onChange: L,
-                                    onKeyUp: k,
-                                    onKeyDown: I,
+                                    onKeyUp: I,
+                                    onKeyDown: k,
                                     disabled: !M,
                                     onFocus: O,
                                     onBlur: P,
@@ -1976,7 +1976,7 @@
                         base__extraLarge: 'Input_base__extraLarge_ce',
                         helper: 'Input_helper_ef',
                     },
-                    ku = [
+                    Iu = [
                         'componentId',
                         'type',
                         'variant',
@@ -1999,9 +1999,9 @@
                         'controlClassMix',
                         'helperClassMix',
                     ];
-                function Iu() {
+                function ku() {
                     return (
-                        (Iu =
+                        (ku =
                             Object.assign ||
                             function (u) {
                                 for (var e = 1; e < arguments.length; e++) {
@@ -2010,7 +2010,7 @@
                                 }
                                 return u;
                             }),
-                        Iu.apply(this, arguments)
+                        ku.apply(this, arguments)
                     );
                 }
                 const Nu = {
@@ -2056,13 +2056,13 @@
                                     a = Object.keys(u);
                                 for (n = 0; n < a.length; n++) ((t = a[n]), e.indexOf(t) >= 0 || (r[t] = u[t]));
                                 return r;
-                            })(u, ku);
+                            })(u, Iu);
                         const M = (0, n.useState)(E),
                             O = M[0],
                             P = M[1],
                             L = (0, n.useState)(_),
-                            k = L[0],
-                            I = L[1],
+                            I = L[0],
+                            k = L[1],
                             N = (0, n.useMemo)(() => Object.assign({}, Nu, p), [p]),
                             U = (0, n.useRef)({ debounceTimeout: 0, isChangeHandled: !0, value: E, type: a }),
                             H = (0, n.useCallback)((u) => {
@@ -2105,14 +2105,14 @@
                                     (U.current.type = a));
                             }, [E, a]),
                             (0, n.useEffect)(() => {
-                                I(_);
+                                k(_);
                             }, [_, o]));
                         const V = (0, n.useCallback)((u) => b && b(u), [b]),
                             j = (0, n.useCallback)(
                                 (u) => {
-                                    (N.disableHighlightOnFocus && k && I(!1), h && h(u));
+                                    (N.disableHighlightOnFocus && I && k(!1), h && h(u));
                                 },
-                                [k, h, N.disableHighlightOnFocus],
+                                [I, h, N.disableHighlightOnFocus],
                             ),
                             q = (0, n.useCallback)((u) => w && w(u), [w]),
                             Y = (0, n.useCallback)((u) => f && f(u), [f]),
@@ -2129,7 +2129,7 @@
                             Z = d || xu[a],
                             Q = Boolean(O),
                             J = B ? bu : o,
-                            uu = Boolean(B) || k,
+                            uu = Boolean(B) || I,
                             eu = (0, n.useMemo)(
                                 () => ('boolean' == typeof N.withClear ? Q && N.withClear : Q && a === mu),
                                 [a, Q, N],
@@ -2143,7 +2143,7 @@
                                 { tooltipArgs: c },
                                 r().createElement(
                                     Mu,
-                                    Iu(
+                                    ku(
                                         {
                                             componentId: e ? `${e}-inputControl` : void 0,
                                             iconSource: K,
@@ -2727,10 +2727,7 @@
                         (u.EquipCoin = 'equipCoin'),
                         (u.LootBox = 'lootBox'),
                         (u.BrCoin = 'brcoin'),
-                        (u.Attachment = 'attachment'),
-                        (u.Stamp = 'stamp'),
-                        (u.WtEventLootbox = 'wtevent_lootBox'),
-                        (u.WtEventTicket = 'wtevent_ticket'));
+                        (u.Attachment = 'attachment'));
                 })(fe || (fe = {})),
                     (function (u) {
                         ((u.Gold = 'gold'),
@@ -2842,12 +2839,12 @@
                 const Pe = [fe.Attachment];
                 const Le = ({ value: u, format: e = 'integral' }) => {
                         const t = (function (u) {
-                                return 'gold' === u ? k.B3.GOLD : k.B3.INTEGRAL;
+                                return 'gold' === u ? I.B3.GOLD : I.B3.INTEGRAL;
                             })(e),
-                            n = k.Z5.getNumberFormat(u, t);
+                            n = I.Z5.getNumberFormat(u, t);
                         return void 0 !== u && void 0 !== n ? n : null;
                     },
-                    ke = [
+                    Ie = [
                         fe.Items,
                         fe.Equipment,
                         fe.Xp,
@@ -2885,11 +2882,8 @@
                         fe.BattleBoosterGift,
                         fe.OptionalDevice,
                         fe.Attachment,
-                        fe.Stamp,
-                        fe.WtEventLootbox,
-                        fe.WtEventTicket,
                     ],
-                    Ie = [fe.Gold, fe.Credits, fe.Crystal, fe.FreeXp],
+                    ke = [fe.Gold, fe.Credits, fe.Crystal, fe.FreeXp],
                     Ne = [fe.BattlePassPoints, fe.EquipCoin],
                     Ue = [fe.PremiumPlus, fe.Premium],
                     He = ['engravings', 'backgrounds'],
@@ -3025,9 +3019,9 @@
                                                     value: u.value,
                                                     valueType:
                                                         ((t = u.name),
-                                                        ke.includes(t)
+                                                        Ie.includes(t)
                                                             ? Re.MULTI
-                                                            : Ie.includes(t)
+                                                            : ke.includes(t)
                                                               ? Re.CURRENCY
                                                               : Ne.includes(t)
                                                                 ? Re.NUMBER

@@ -331,18 +331,15 @@
     width: 250rem;
 }
 
-.Table_cell__wide_52,
-.Table_cell__wideHead_0b {
+.Table_cell__wide_52 {
     width: 250rem;
 }
 
-.Table_cell__wide_52[lang='fi'],
-.Table_cell__wideHead_0b[lang='fi'] {
+.Table_cell__wide_52[lang='fi'] {
     width: 285rem;
 }
 
-.Table_cell__wide_52[lang='no'],
-.Table_cell__wideHead_0b[lang='no'] {
+.Table_cell__wide_52[lang='no'] {
     width: 250rem;
 }
 

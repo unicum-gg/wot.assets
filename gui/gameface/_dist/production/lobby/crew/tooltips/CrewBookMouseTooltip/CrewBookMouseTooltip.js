@@ -196,10 +196,10 @@
                         enableFullScreenModeSupported: () => L,
                         events: () => i.U,
                         extraSize: () => O,
-                        forceTriggerMouseMove: () => g,
+                        forceTriggerMouseMove: () => f,
                         freezeTextureBeforeResize: () => B,
                         getBrowserTexturePath: () => F,
-                        getDisplayStatus: () => f,
+                        getDisplayStatus: () => g,
                         getExternalPaddingsRem: () => k,
                         getFontNames: () => b,
                         getScale: () => _,
@@ -272,10 +272,10 @@
                 function w() {
                     return viewEnv.isEventHandled();
                 }
-                function g() {
+                function f() {
                     viewEnv.forceTriggerMouseMove();
                 }
-                function f() {
+                function g() {
                     return viewEnv.getShowingStatus();
                 }
                 const b = (() => {
@@ -804,7 +804,7 @@
                                     (window.cancelAnimationFrame(u.current),
                                         (u.current = window.requestAnimationFrame(() => {
                                             u.current = window.requestAnimationFrame(() => {
-                                                (e(), (u.current = 0));
+                                                ((u.current = 0), e());
                                             });
                                         })));
                                 },
@@ -957,7 +957,7 @@
                             v = void 0 === h ? 0 : h,
                             m = u.onShow,
                             w = u.onHide,
-                            g = (function (u, e) {
+                            f = (function (u, e) {
                                 if (null == u) return {};
                                 var t,
                                     n,
@@ -966,7 +966,7 @@
                                 for (n = 0; n < o.length; n++) ((t = o[n]), e.indexOf(t) >= 0 || (r[t] = u[t]));
                                 return r;
                             })(u, B);
-                        const f = (0, i.useRef)({ timeoutId: 0, isVisible: !1, prevTarget: null, hideTimerId: null }),
+                        const g = (0, i.useRef)({ timeoutId: 0, isVisible: !1, prevTarget: null, hideTimerId: null }),
                             b = (0, i.useMemo)(
                                 () =>
                                     v ||
@@ -992,30 +992,30 @@
                                 [v],
                             ),
                             y = (0, i.useCallback)(() => {
-                                (f.current.isVisible && f.current.timeoutId) ||
+                                (g.current.isVisible && g.current.timeoutId) ||
                                     (C(t, d, { isMouseEvent: !0, on: !0, arguments: _(n) }, b),
                                     m && m(),
-                                    (f.current.isVisible = !0));
+                                    (g.current.isVisible = !0));
                             }, [t, d, n, b, m]),
                             k = (0, i.useCallback)(() => {
-                                if (f.current.isVisible || f.current.timeoutId) {
-                                    const u = f.current.timeoutId;
-                                    (u > 0 && (clearTimeout(u), (f.current.timeoutId = 0)),
+                                if (g.current.isVisible || g.current.timeoutId) {
+                                    const u = g.current.timeoutId;
+                                    (u > 0 && (clearTimeout(u), (g.current.timeoutId = 0)),
                                         C(t, d, { on: !1 }, b),
-                                        f.current.isVisible && w && w(),
-                                        (f.current.isVisible = !1));
+                                        g.current.isVisible && w && w(),
+                                        (g.current.isVisible = !1));
                                 }
                             }, [t, d, b, w]),
                             T = (0, i.useCallback)((u) => {
-                                f.current.isVisible &&
-                                    ((f.current.prevTarget = document.elementFromPoint(u.clientX, u.clientY)),
-                                    (f.current.hideTimerId = window.setTimeout(() => {
+                                g.current.isVisible &&
+                                    ((g.current.prevTarget = document.elementFromPoint(u.clientX, u.clientY)),
+                                    (g.current.hideTimerId = window.setTimeout(() => {
                                         const e = document.elementFromPoint(u.clientX, u.clientY);
-                                        e && !e.isSameNode(f.current.prevTarget) && k();
+                                        e && !e.isSameNode(g.current.prevTarget) && k();
                                     }, 200)));
                             }, []);
                         ((0, i.useEffect)(() => {
-                            const u = f.current.hideTimerId;
+                            const u = g.current.hideTimerId;
                             return (
                                 document.addEventListener('wheel', T, { capture: !0 }),
                                 () => {
@@ -1046,8 +1046,8 @@
                                               (u) => {
                                                   (u.clientX === window.innerWidth &&
                                                       u.clientY === window.innerHeight) ||
-                                                      (clearTimeout(f.current.timeoutId),
-                                                      (f.current.timeoutId = window.setTimeout(y, F ? 100 : 400)),
+                                                      (clearTimeout(g.current.timeoutId),
+                                                      (g.current.timeoutId = window.setTimeout(y, F ? 100 : 400)),
                                                       r && r(u),
                                                       O && O(u));
                                               }),
@@ -1061,7 +1061,7 @@
                                               (!1 === c && k(), null == s || s(e), null == u || u(e));
                                           })(e.props.onMouseDown),
                                       },
-                                      g,
+                                      f,
                                   ),
                               )
                             : e;
@@ -1109,9 +1109,9 @@
                         );
                     },
                     w = ['children', 'body', 'header', 'note', 'alert', 'args'];
-                function g() {
+                function f() {
                     return (
-                        (g =
+                        (f =
                             Object.assign ||
                             function (u) {
                                 for (var e = 1; e < arguments.length; e++) {
@@ -1120,10 +1120,10 @@
                                 }
                                 return u;
                             }),
-                        g.apply(this, arguments)
+                        f.apply(this, arguments)
                     );
                 }
-                const f = R.views.common.tooltip_window.simple_tooltip_content,
+                const g = R.views.common.tooltip_window.simple_tooltip_content,
                     b = (u) => {
                         let e = u.children,
                             t = u.body,
@@ -1147,11 +1147,11 @@
                         }, [o, t, n, r, a]);
                         return s().createElement(
                             p,
-                            g(
+                            f(
                                 {
                                     contentId:
                                         ((A = null == a ? void 0 : a.hasHtmlContent),
-                                        A ? f.SimpleTooltipHtmlContent('resId') : f.SimpleTooltipContent('resId')),
+                                        A ? g.SimpleTooltipHtmlContent('resId') : g.SimpleTooltipContent('resId')),
                                     decoratorId: R.views.common.tooltip_window.tooltip_window.TooltipWindow('resId'),
                                     args: F,
                                 },
@@ -1421,17 +1421,18 @@
                                                   return e;
                                               })(t),
                                           )
-                                        : n.push({ blockType: r, colorTag: e, childList: [t] });
+                                        : n.push({ blockType: r, colorTag: e, childList: [t.replace(/\ufeff+/g, '')] });
                                 },
                             ),
                             n
                         );
                     },
                     uu = (u, e, t = '', n) => {
-                        const r = [];
+                        const r = [],
+                            o = u.replace(/(.)(、|。|ー)/g, '$1\ufeff$2');
                         return (
                             Z(
-                                u,
+                                o,
                                 /(?:%\(|{)(.*?)[)}][sd]?/g,
                                 (u) => {
                                     r.push(...J(u, t, n));

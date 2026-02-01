@@ -1,30 +1,30 @@
-import { j as e, f as t, z as s, o as a, e as l, w as o, I as i } from '../../../../chunks/vendor.js';
+import { j as e, f as t, y as s, o as a, e as l, v as o, H as i } from '../../../../chunks/vendor.js';
 import {
     r as n,
     B as r,
-    o as c,
-    Y as d,
-    b as u,
+    l as c,
+    X as d,
+    bv as u,
     i as m,
     c as p,
-    aS as h,
-    aR as y,
-    Z as g,
-    bf as b,
-    bo as v,
-    an as _,
+    b0 as y,
+    a$ as h,
+    Y as g,
+    bs as v,
+    bx as b,
+    ao as _,
     J as f,
-    F as x,
-    G as z,
-    cK as j,
-    cL as N,
+    E as x,
+    F as z,
+    d2 as j,
+    d3 as N,
 } from '../../../../chunks/lib.js';
 import {
     h as C,
     I as A,
     t as k,
-    i as S,
-    c as O,
+    i as O,
+    c as S,
     g as w,
     f as I,
     j as T,
@@ -36,8 +36,8 @@ const P = {
         buttonsBase: 'Buttons_buttonsBase_baa73d96',
         button: 'Buttons_button_1de2fcc1',
     },
-    L = n.resolve('strings'),
-    $ = function ({ onClick: s, className: a }) {
+    $ = n.resolve('strings'),
+    L = function ({ onClick: s, className: a }) {
         const l = c();
         return e.jsx('div', {
             onClick: function (e) {
@@ -78,7 +78,7 @@ function M({ buttons: t, onAction: s }) {
                     onClick: () => s(t.action),
                     soundTarget: t.soundTarget,
                     'data-test-id': t.title,
-                    children: L.readOrEmpty(t.title),
+                    children: $.readOrEmpty(t.title),
                 },
                 l,
             ),
@@ -112,10 +112,10 @@ const [F, V] = m()(
                 a = e.createCallback((e) => ({ action: e }), 'onAction');
             return {
                 import: l((e) => {
-                    s({ id: w(), initial: O(I(t.importParams().titles, 'playlists.defaultName'), e) });
+                    s({ id: w(), initial: S(I(t.importParams().titles, 'playlists.defaultName'), e) });
                 }),
                 doAction: (e) => {
-                    if (e === S.import)
+                    if (e === O.import)
                         console.error('Unsupported type to doAction, please use "import" function from DL');
                     else a(e);
                 },
@@ -124,28 +124,28 @@ const [F, V] = m()(
         },
     ),
     D = 'AlertOverlay_6a914e50',
-    R = 'AlertOverlay_close_c8fc8fba',
-    G = 'AlertOverlay_content_be3b87d6',
-    K = 'AlertOverlay_glow_2370fdef',
-    U = 'AlertOverlay_icon_ec1d1576',
-    W = 'AlertOverlay_divider_c054f0d9',
+    H = 'AlertOverlay_close_c8fc8fba',
+    R = 'AlertOverlay_content_be3b87d6',
+    U = 'AlertOverlay_glow_2370fdef',
+    W = 'AlertOverlay_icon_ec1d1576',
+    X = 'AlertOverlay_divider_c054f0d9',
     Y = 'AlertOverlay_title_f9ee7b93',
-    Z = { iconSize: 157, glowSize: [998, 639] },
-    q = { medium: { iconSize: 188, glowSize: [1200, 768] }, extraLarge: { iconSize: 256, glowSize: [1632, 1044] } },
-    H = function ({ titlePath: t, titleParams: s }) {
-        const a = u(Z, q);
+    q = { iconSize: 157, glowSize: [998, 639] },
+    G = { medium: { iconSize: 188, glowSize: [1200, 768] }, extraLarge: { iconSize: 256, glowSize: [1632, 1044] } },
+    K = function ({ titlePath: t, titleParams: s }) {
+        const a = u(q, G);
         return e.jsxs('div', {
-            className: G,
+            className: R,
             children: [
                 e.jsx(d, {
                     path: 'hangar.playlists.overlay_glow',
                     width: a.glowSize[0],
                     height: a.glowSize[1],
-                    className: K,
+                    className: U,
                 }),
-                e.jsx(d, { path: 'library.icon_alert_256x256', width: a.iconSize, height: a.iconSize, className: U }),
+                e.jsx(d, { path: 'library.icon_alert_256x256', width: a.iconSize, height: a.iconSize, className: W }),
                 e.jsx(g, { className: Y, path: t, params: s }),
-                e.jsx(d, { path: 'ui.noise', className: W, fit: 'contain' }),
+                e.jsx(d, { path: 'ui.noise', className: X, fit: 'contain' }),
             ],
         });
     };
@@ -155,40 +155,40 @@ function Q(e) {
     switch (e) {
         case k.delete:
             return [
-                { action: S.delete, title: t, soundTarget: 'vehicle:playlists:overlay:submit_button' },
-                { action: S.cancel, title: s, soundTarget: 'vehicle:playlists:overlay:cancel_button' },
+                { action: O.delete, title: t, soundTarget: 'vehicle:playlists:overlay:submit_button' },
+                { action: O.cancel, title: s, soundTarget: 'vehicle:playlists:overlay:cancel_button' },
             ];
         case k.save:
             return [
-                { action: S.save, title: t, soundTarget: 'vehicle:playlists:overlay:submit_button' },
-                { action: S.discard, title: s, soundTarget: 'vehicle:playlists:overlay:cancel_button' },
+                { action: O.save, title: t, soundTarget: 'vehicle:playlists:overlay:submit_button' },
+                { action: O.discard, title: s, soundTarget: 'vehicle:playlists:overlay:cancel_button' },
             ];
         default:
             return [
                 {
-                    action: S.submit,
+                    action: O.submit,
                     title: 'dialogs.common.submit',
                     soundTarget: 'vehicle:playlists:overlay:submit_button',
                 },
                 {
-                    action: S.cancel,
+                    action: O.cancel,
                     title: 'dialogs.common.cancel',
                     soundTarget: 'vehicle:playlists:overlay:cancel_button',
                 },
             ];
     }
 }
-const X = o(function () {
+const Z = o(function () {
         const t = V(),
             s = t.model.type.get(),
             a = { playlistTitle: s === k.delete ? t.model.playlistTitle() : '' };
         return (
-            h(y.ESCAPE, t.controls.close),
+            y(h.ESCAPE, t.controls.close),
             e.jsxs('div', {
                 className: D,
                 children: [
-                    e.jsx($, { onClick: t.controls.close, className: R }),
-                    e.jsx(H, { titlePath: `playlists.dialogs.${s}.title`, titleParams: a }),
+                    e.jsx(L, { onClick: t.controls.close, className: H }),
+                    e.jsx(K, { titlePath: `playlists.dialogs.${s}.title`, titleParams: a }),
                     e.jsx(M, {
                         buttons: Q(s),
                         onAction: function (e) {
@@ -207,28 +207,28 @@ const X = o(function () {
     },
     te = n.resolve('strings'),
     se = o(function (s) {
-        const a = u({ size: b.sizes.medium }, { medium: { size: b.sizes.large } });
-        return e.jsx(b.Provider, {
+        const a = u({ size: v.sizes.medium }, { medium: { size: v.sizes.large } });
+        return e.jsx(v.Provider, {
             value: s.state.code.get(),
             size: a.size,
-            state: s.state.valid.get() ? b.states.default : b.states.alert,
+            state: s.state.valid.get() ? v.states.default : v.states.alert,
             children: e.jsxs('div', {
                 className: t(ee.base, s.className),
                 children: [
-                    e.jsxs(b.Decoration, {
+                    e.jsxs(v.Decoration, {
                         className: ee.decoration,
                         children: [
-                            e.jsx(b.Field, {
+                            e.jsx(v.Field, {
                                 onChange: (e) => s.state.setCode(e.currentTarget.value),
                                 className: ee.field,
                                 classNames: { placeholder: ee.placeholder },
                                 'data-test-id': 'playlistCodeInput',
                                 children: te.readOrEmpty('playlists.dialogs.import.input.message'),
                             }),
-                            e.jsx(b.ClearButton, {}),
+                            e.jsx(v.ClearButton, {}),
                         ],
                     }),
-                    e.jsx(b.Message, {
+                    e.jsx(v.Message, {
                         visible: !s.state.valid.get(),
                         className: ee.message,
                         children: te.readOrEmpty('playlists.dialogs.import.input.alert'),
@@ -269,7 +269,7 @@ const ae = 'Import_40d148c8',
             );
         }
         return (
-            v(y.ENTER, l),
+            b(h.ENTER, l),
             e.jsxs('div', {
                 className: re,
                 children: [
@@ -288,7 +288,7 @@ const ae = 'Import_40d148c8',
                         autoAlignContent: !1,
                         theme: r.themes.secondary,
                         size: s.size,
-                        onClick: () => a.controls.doAction(S.cancel),
+                        onClick: () => a.controls.doAction(O.cancel),
                         soundTarget: 'vehicle:playlists:overlay:cancel_button',
                         'data-test-id': 'cancelImportPlaylist',
                         children: de.readOrEmpty('dialogs.common.cancel'),
@@ -312,11 +312,11 @@ const ae = 'Import_40d148c8',
                 };
             });
         return (
-            h(y.ESCAPE, t.controls.close),
+            y(h.ESCAPE, t.controls.close),
             e.jsxs('div', {
                 className: ae,
                 children: [
-                    e.jsx($, { onClick: t.controls.close, className: oe }),
+                    e.jsx(L, { onClick: t.controls.close, className: oe }),
                     e.jsxs('div', {
                         className: ie,
                         children: [
@@ -329,19 +329,19 @@ const ae = 'Import_40d148c8',
             })
         );
     }),
-    he = o(function () {
+    ye = o(function () {
         const t = V().model.type.get();
         switch (t) {
             case k.import:
                 return e.jsx(pe, {});
             case k.delete:
             case k.save:
-                return e.jsx(X, {});
+                return e.jsx(Z, {});
             default:
                 return (console.error(`The overlay type for ${t} is not supported`), null);
         }
     }),
-    ye = _(B);
-z(new f().addWithProps(x, { soundsOverrides: ye }).add(F).render(e.jsx(he, {})))
+    he = _(B);
+z(new f().addWithProps(x, { soundsOverrides: he }).add(F).render(e.jsx(ye, {})))
     .then(() => j(document.getElementById('root')))
     .then(() => N());

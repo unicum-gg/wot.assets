@@ -3765,6 +3765,9 @@ so we just add specificity to css classes here
 .mediaExtraLarge .SkillsTrainingViewApp_ttcWidget_f0 {
     top: 122rem;
 }
+.SkillsTrainingViewApp_widgetDecorator_80 {
+    height: 100%;
+}
 .SkillsTrainingViewApp_content_14 {
     display: flex;
     flex-direction: column;

@@ -2,7 +2,7 @@
     'use strict';
     var e,
         t = {
-            6169: (e, t, n) => {
+            169: (e, t, n) => {
                 var r = {};
                 (n.r(r),
                     n.d(r, { mouse: () => y, off: () => w, on: () => b, onResize: () => m, onScaleUpdated: () => p }));
@@ -52,11 +52,11 @@
                         setSidePaddingsRem: () => U,
                         whenTutorialReady: () => ue,
                     }));
-                var s = n(7363),
+                var s = n(363),
                     l = n.n(s),
-                    u = n(1533),
+                    u = n(533),
                     c = n.n(u),
-                    d = n(6483),
+                    d = n(483),
                     v = n.n(d);
                 function f(e) {
                     return (t) => (
@@ -388,7 +388,7 @@
                                                 (window.cancelAnimationFrame(e.current),
                                                     (e.current = window.requestAnimationFrame(() => {
                                                         e.current = window.requestAnimationFrame(() => {
-                                                            (t(), (e.current = 0));
+                                                            ((e.current = 0), t());
                                                         });
                                                     })));
                                             },
@@ -440,12 +440,12 @@
                         if ('string' == typeof n) return n;
                         throw new Error(`ReadString  ${t} is invalid `);
                     };
-                var we = n(3403);
+                var we = n(403);
                 function he() {
                     return !1;
                 }
                 console.log;
-                var ye = n(9174);
+                var ye = n(174);
                 function Ee(e, t) {
                     (null == t || t > e.length) && (t = e.length);
                     for (var n = 0, r = new Array(t); n < t; n++) r[n] = e[n];
@@ -556,7 +556,6 @@
                                                                     );
                                                                 })(o.keys());
                                                             !(e = n()).done;
-
                                                         )
                                                             i(e.value, t);
                                                     },
@@ -744,10 +743,10 @@
                     );
                 });
             },
-            7363: (e) => {
+            363: (e) => {
                 e.exports = React;
             },
-            1533: (e) => {
+            533: (e) => {
                 e.exports = ReactDOM;
             },
         },
@@ -821,6 +820,6 @@
                 n = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             (n.forEach(t.bind(null, 0)), (n.push = t.bind(null, n.push.bind(n))));
         })());
-    var o = r.O(void 0, ['lib/battle_royale.vendors'], () => r(6169));
+    var o = r.O(void 0, ['lib/battle_royale.vendors'], () => r(169));
     o = r.O(o);
 })();

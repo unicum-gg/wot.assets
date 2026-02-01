@@ -1,5 +1,5 @@
-import { m as e, n as t, j as n } from '../../../../chunks/vendor.js';
-import { i as s, c as i, z as o, k as r, r as a, A as l } from '../../../../chunks/lib.js';
+import { k as e, m as t, j as s } from '../../../../chunks/vendor.js';
+import { i, c as n, A as o, k as r, r as a, E as l } from '../../../../chunks/lib.js';
 import { a as c, g as u } from '../../../../chunks/resources.js';
 import '../../../../chunks/getRewardImage.js';
 const d = { dynamicTexts: { remainingCount: 'singleRewardView.tooltip.remainingCount' } },
@@ -15,11 +15,11 @@ const d = { dynamicTexts: { remainingCount: 'singleRewardView.tooltip.remainingC
             otherCount: 'singleRewardView.tooltip.count.other',
         },
     },
-    [p, g] = s()(({ observableModel: t }) => {
-        const n = { root: t.object() },
-            s = e(() => c(m, n.root.get().eventName), { equals: i }),
-            o = e(() => u(d, n.root.get().eventName), { equals: i });
-        return { ...n, computes: { resources: s, dynamicResources: o } };
+    [p, g] = i()(({ observableModel: t }) => {
+        const s = { root: t.object() },
+            i = e(() => c(m, s.root.get().eventName), { equals: n }),
+            o = e(() => u(d, s.root.get().eventName), { equals: n });
+        return { ...s, computes: { resources: i, dynamicResources: o } };
     }, o),
     b = 'App_ba71ae1b',
     w = 'App_title_e78d7565',
@@ -28,11 +28,11 @@ const d = { dynamicTexts: { remainingCount: 'singleRewardView.tooltip.remainingC
 const j = t(function () {
     const { model: e } = g(),
         { texts: t } = e.computes.resources(),
-        { dynamicTexts: s } = e.computes.dynamicResources(),
-        i = e.root.get().guaranteedFrequency,
+        { dynamicTexts: i } = e.computes.dynamicResources(),
+        n = e.root.get().guaranteedFrequency,
         o = (() => {
-            if (i > 10 && i < 14) return t.otherCount;
-            switch (i % 10) {
+            if (n > 10 && n < 14) return t.otherCount;
+            switch (n % 10) {
                 case 1:
                     return t.firstCount;
                 case 2:
@@ -43,24 +43,24 @@ const j = t(function () {
                     return t.otherCount;
             }
         })();
-    return n.jsxs('div', {
+    return s.jsxs('div', {
         className: b,
         children: [
-            n.jsx('div', { className: w, children: t.title }),
-            n.jsx(r, {
+            s.jsx('div', { className: w, children: t.title }),
+            s.jsx(r, {
                 text: t.subtitle,
                 classMix: x,
                 binding: {
-                    count: n.jsx(r, { text: o, binding: { count: i } }),
-                    remainingCount: n.jsx(r, {
-                        text: s.remainingCount.plural('remainingCount', e.root.get().guaranteedFrequency - 1),
-                        binding: { remainingCount: i - 1 },
+                    count: s.jsx(r, { text: o, binding: { count: n } }),
+                    remainingCount: s.jsx(r, {
+                        text: i.remainingCount.plural('remainingCount', e.root.get().guaranteedFrequency - 1),
+                        binding: { remainingCount: n - 1 },
                     }),
                 },
             }),
-            n.jsx('div', { className: h, children: t.label }),
-            n.jsx('div', { className: x, children: t.description }),
+            s.jsx('div', { className: h, children: t.label }),
+            s.jsx('div', { className: x, children: t.description }),
         ],
     });
 });
-a(n.jsx(p, { children: n.jsx(l, { children: n.jsx(j, {}) }) }));
+a(s.jsx(p, { children: s.jsx(l, { children: s.jsx(j, {}) }) }));

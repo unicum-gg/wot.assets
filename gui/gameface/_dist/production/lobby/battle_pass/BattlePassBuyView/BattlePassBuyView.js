@@ -621,10 +621,7 @@
                             (e.EquipCoin = 'equipCoin'),
                             (e.LootBox = 'lootBox'),
                             (e.BrCoin = 'brcoin'),
-                            (e.Attachment = 'attachment'),
-                            (e.Stamp = 'stamp'),
-                            (e.WtEventLootbox = 'wtevent_lootBox'),
-                            (e.WtEventTicket = 'wtevent_ticket'));
+                            (e.Attachment = 'attachment'));
                     })(r || (r = {})),
                     (function (e) {
                         ((e.Gold = 'gold'),
@@ -779,9 +776,6 @@
                         s.E4.BattleBoosterGift,
                         s.E4.OptionalDevice,
                         s.E4.Attachment,
-                        s.E4.Stamp,
-                        s.E4.WtEventLootbox,
-                        s.E4.WtEventTicket,
                     ],
                     o = [s.E4.Gold, s.E4.Credits, s.E4.Crystal, s.E4.FreeXp],
                     l = [s.E4.BattlePassPoints, s.E4.EquipCoin],
@@ -1297,7 +1291,8 @@
                         getContainerSize: (e) => e.offsetWidth,
                         getWrapperSize: (e) => e.offsetWidth,
                         setScrollPosition: (e, u) => {
-                            e.style.transform = `translateX(-${u.value.scrollPosition}px)`;
+                            var t;
+                            e.style.transform = `translateX(-${0 | (null != (t = u.value.scrollPosition) ? t : 0)}px)`;
                         },
                         getDirection: (e) => (e.deltaY > 1 ? n.Nm.Next : n.Nm.Prev),
                         forceTriggerMouseMove: r.O.view.forceTriggerMouseMove,
@@ -3028,12 +3023,14 @@
                 var r = t(7363);
                 function n(e, u, t = []) {
                     const n = (0, r.useRef)(0),
-                        a = (0, r.useCallback)(() => window.clearInterval(n.current), t || []);
+                        a = (0, r.useCallback)(() => {
+                            (window.clearInterval(n.current), (n.current = 0));
+                        }, t || []);
                     (0, r.useEffect)(() => a, [a]);
                     const s = (null != t ? t : []).concat([u]);
                     return [
                         (0, r.useCallback)((t) => {
-                            ((n.current = window.setInterval(() => e(t, !0), u)), e(t, !1));
+                            (0 !== n.current && a(), (n.current = window.setInterval(() => e(t, !0), u)), e(t, !1));
                         }, s),
                         a,
                     ];
@@ -5007,40 +5004,41 @@
                             l = a.remainingLevelsCount,
                             c = u.main.isShopOfferAvailable,
                             d = u.computes.isExtra(s.get()),
-                            E = u.computes.hasChapterLogoBg(s.get()),
-                            _ = (0, r.useState)(!1),
-                            m = _[0],
-                            A = _[1],
-                            F = c.get() && !d,
-                            D = i.get(),
-                            g = (0, r.useRef)(!1),
-                            C = (0, De.GS)().mediaSize,
-                            B = ((e) => ({
+                            E = u.computes.isHoliday(s.get()),
+                            _ = u.computes.hasChapterLogoBg(s.get()),
+                            m = (0, r.useState)(!1),
+                            A = m[0],
+                            F = m[1],
+                            D = c.get() && !(d || E),
+                            g = i.get(),
+                            C = (0, r.useRef)(!1),
+                            B = (0, De.GS)().mediaSize,
+                            h = ((e) => ({
                                 backgroundImage: `url(${(0, o.wD)(R.images.gui.maps.icons.battlePass.backgrounds.ip_purchase_confirmation, e)})`,
                             }))(s.get()),
-                            h = (0, P.tv)();
-                        (b.N.useHandleKeydown(w.n.ESCAPE, () => h.goBack()),
+                            f = (0, P.tv)();
+                        (b.N.useHandleKeydown(w.n.ESCAPE, () => f.goBack()),
                             (0, Cu.d)(t.buy),
                             (0, gu.gd)(w.n.SPACE, t.buy),
                             (0, r.useEffect)(() => {
-                                if (g.current)
+                                if (C.current)
                                     return (
-                                        A(!0),
+                                        F(!0),
                                         (0, Fe.F)(() => {
-                                            A(!1);
+                                            F(!1);
                                         }, 800)
                                     );
-                                g.current = !0;
-                            }, [D, g]));
-                        const f = C < De.cJ.Medium ? cu.large : cu.extraLarge;
+                                C.current = !0;
+                            }, [g, C]));
+                        const y = B < De.cJ.Medium ? cu.large : cu.extraLarge;
                         return n().createElement(
                             'div',
                             { className: it },
-                            n().createElement('div', { className: ot, style: B }),
+                            n().createElement('div', { className: ot, style: h }),
                             n().createElement(
                                 'div',
-                                { className: v()(lt, m && _t) },
-                                !E &&
+                                { className: v()(lt, A && _t) },
+                                !_ &&
                                     n().createElement('div', {
                                         className: ct,
                                         style: {
@@ -5062,7 +5060,7 @@
                                             { className: mt },
                                             n().createElement(
                                                 Fu,
-                                                { size: f, isChecked: D, onClick: t.togglePurchaseWithLevels },
+                                                { size: y, isChecked: g, onClick: t.togglePurchaseWithLevels },
                                                 n().createElement(Du.z, {
                                                     text: Ct.confirm.checkbox.stage(l.get()),
                                                     binding: { stagesNumber: l.get() },
@@ -5071,16 +5069,16 @@
                                             ),
                                         ),
                                     ),
-                                m &&
+                                A &&
                                     n().createElement(Ju, {
-                                        isCheckboxAnimationActive: m,
+                                        isCheckboxAnimationActive: A,
                                         className: At,
                                         isPrevious: !0,
                                     }),
-                                n().createElement(Ju, { isCheckboxAnimationActive: m, className: Ft }),
-                                n().createElement(Vu, { isPriceUpdateAnimation: m }),
+                                n().createElement(Ju, { isCheckboxAnimationActive: A, className: Ft }),
+                                n().createElement(Vu, { isPriceUpdateAnimation: A }),
                             ),
-                            F && n().createElement(st, { className: gt }),
+                            D && n().createElement(st, { className: gt }),
                         );
                     }),
                     pt = { context: 'model.rewards', rootId: R.aliases.battle_pass.BuyPass('resId') };
@@ -5155,7 +5153,7 @@
                     B = 'Content_mainContent_d4',
                     p = 'Content_base__noScroll_d3',
                     h = R.strings.battle_pass.battlePassBuyView.reward,
-                    v = () => {
+                    v = (0, s.Pi)(() => {
                         const e = (0, g.t)().model,
                             u = e.levels.get(),
                             t = u.fromLevel,
@@ -5201,7 +5199,7 @@
                                     }),
                             ),
                         );
-                    },
+                    }),
                     f = 'RewardsViewContent_base_42',
                     b = 'RewardsViewContent_content_64',
                     w = 'RewardsViewContent_background_37',

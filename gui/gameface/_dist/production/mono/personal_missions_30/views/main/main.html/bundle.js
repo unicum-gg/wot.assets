@@ -1,60 +1,60 @@
 import {
-    s as e,
-    t as s,
-    v as a,
+    q as e,
+    s,
+    t as a,
     o as t,
-    w as i,
+    v as i,
     e as n,
-    x as o,
+    w as o,
     r,
-    p as l,
-    y as c,
-    m as d,
+    n as l,
+    x as c,
+    l as d,
     j as _,
-    n as m,
+    m,
     f as u,
     R as p,
-    z as g,
-    q as f,
-    A as h,
+    y as g,
+    p as f,
+    z as b,
 } from '../../../chunks/vendor.js';
 import {
-    w as b,
-    c as I,
-    i as N,
+    w as h,
+    c as N,
+    i as I,
     f as v,
     k as x,
     x as E,
     e as y,
-    b as S,
+    a as S,
     r as O,
-    n as C,
+    p as C,
     I as w,
     B as j,
     y as A,
-    D as M,
-    F as D,
-    a as T,
-    h as L,
-    v as P,
-    z as k,
-    A as V,
-    S as B,
-    C as H,
-    L as $,
-    M as Q,
-    H as W,
-    E as U,
-    T as q,
-    G as F,
+    z as M,
+    D,
+    b as T,
+    h as P,
+    n as L,
+    A as k,
+    F as V,
+    C as B,
+    S as H,
+    E as $,
+    L as Q,
+    M as W,
+    H as U,
+    G as q,
+    T as F,
     J as Y,
     K as z,
-    l as G,
-    N as K,
+    N as G,
+    l as K,
     O as X,
     P as Z,
-    R as J,
-    Q as ee,
+    Q as J,
+    R as ee,
     W as se,
     X as ae,
     Y as te,
@@ -62,8 +62,8 @@ import {
     _ as ne,
     $ as oe,
     a0 as re,
-    u as le,
-    a1 as ce,
+    a1 as le,
+    u as ce,
     a2 as de,
     a3 as _e,
     a4 as me,
@@ -71,15 +71,15 @@ import {
     a6 as pe,
     a7 as ge,
     a8 as fe,
-    q as he,
     a9 as be,
-    aa as Ie,
-    V as Ne,
-    ab as ve,
+    v as he,
+    aa as Ne,
+    ab as Ie,
+    V as ve,
     ac as xe,
     ad as Ee,
-    m as ye,
-    ae as Se,
+    ae as ye,
+    m as Se,
     af as Oe,
     ag as Ce,
     ah as we,
@@ -88,7 +88,7 @@ import {
     d as Me,
     U as De,
 } from '../../../chunks/lib.js';
-import { P as Te, M as Le, O as Pe } from '../../../chunks/enums.js';
+import { P as Te, M as Pe, O as Le } from '../../../chunks/enums.js';
 import { s as Re, b as ke } from '../../../chunks/helpers.js';
 /* empty css                    */ const Ve = 'detailId';
 var Be = ((e) => ((e.ASSEMBLING = 'assembling'), (e.MISSIONS = 'missions'), (e.PROGRESSION = 'progression'), e))(
@@ -184,9 +184,9 @@ function ls(e, s) {
 const cs = 'missions',
     ds = 'assembling',
     _s = 'progression',
-    ms = { carouselButton: I('carouselButton'), bp_slide: I('bp_slide') },
-    us = { step: { ...b.step, factor: 9 }, animationConfig: { ...b.animationConfig, tension: 120 } },
-    [ps, gs] = N()(
+    ms = { carouselButton: N('carouselButton'), bp_slide: N('bp_slide') },
+    us = { step: { ...h.step, factor: 9 }, animationConfig: { ...h.animationConfig, tension: 120 } },
+    [ps, gs] = I()(
         (e) => {
             const s = {
                 ...e.observableModel.primitives([
@@ -305,7 +305,7 @@ const cs = 'missions',
         }),
     ),
     fs = r.createContext(null),
-    hs = l(function ({ children: e }) {
+    bs = l(function ({ children: e }) {
         const { model: s, controls: a } = gs(),
             t = c(ts, (e) => e.value),
             i = c(ts, (e) => e.context),
@@ -320,7 +320,7 @@ const cs = 'missions',
                             delay: 300,
                             config: { duration: 300, easing: y.easeInQuart },
                         }),
-                        h.start({ opacity: 0, config: { duration: 300, easing: y.easeInQuart } }),
+                        b.start({ opacity: 0, config: { duration: 300, easing: y.easeInQuart } }),
                         u.start({
                             opacity: 0,
                             transform: 'translateY(-20rem)',
@@ -339,9 +339,9 @@ const cs = 'missions',
                 from: { opacity: 0, transform: 'translateY(20rem)', pointerEvents: 'none' },
                 config: { duration: 300, easing: y.easeOutQuart },
             })),
-            [f, h] = d(() => ({ from: { opacity: 0 }, config: { duration: 300, easing: y.easeOutQuart } })),
-            [b, I] = d(() => ({ from: { opacity: 1, transform: 'translateY(0rem)' }, config: { duration: 200 } })),
-            [N, v] = d(() => ({
+            [f, b] = d(() => ({ from: { opacity: 0 }, config: { duration: 300, easing: y.easeOutQuart } })),
+            [h, N] = d(() => ({ from: { opacity: 1, transform: 'translateY(0rem)' }, config: { duration: 200 } })),
+            [I, v] = d(() => ({
                 from: { opacity: 1, transform: 'translateY(0rem)' },
                 config: { duration: 300, easing: y.easeOutQuart },
             })),
@@ -354,7 +354,7 @@ const cs = 'missions',
             S(() => {
                 (u.start({ opacity: 1, transform: 'translateY(0rem)', delay: 360 }),
                     g.start({ opacity: 1, transform: 'translateY(0rem)', pointerEvents: 'auto' }),
-                    h.start({ opacity: 1, config: { duration: 300, easing: y.easeInQuart } }));
+                    b.start({ opacity: 1, config: { duration: 300, easing: y.easeInQuart } }));
             }),
             r.useEffect(() => {
                 switch (t) {
@@ -367,12 +367,12 @@ const cs = 'missions',
                                     pointerEvents: 'none',
                                     config: { duration: 300, easing: y.easeInQuart },
                                 }),
-                                I.start({
+                                N.start({
                                     opacity: 0,
                                     transform: 'translateY(10rem)',
                                     config: { easing: y.easeInQuart },
                                 }),
-                                h.start({ opacity: 0, config: { duration: 300, easing: y.easeInQuart } }),
+                                b.start({ opacity: 0, config: { duration: 300, easing: y.easeInQuart } }),
                                 u.start({
                                     opacity: 0,
                                     transform: 'translateY(-20rem)',
@@ -397,12 +397,12 @@ const cs = 'missions',
                                         delay: 620,
                                         config: { duration: 300, easing: y.easeOutQuart },
                                     }),
-                                    I.start({
+                                    N.start({
                                         opacity: 1,
                                         transform: 'translateY(0rem)',
                                         config: { easing: y.easeOutCirc },
                                     }),
-                                    h.start({ opacity: 1, config: { duration: 300, easing: y.easeInQuart } }),
+                                    b.start({ opacity: 1, config: { duration: 300, easing: y.easeInQuart } }),
                                     g.start({
                                         opacity: 1,
                                         transform: 'translateY(0rem)',
@@ -429,7 +429,7 @@ const cs = 'missions',
                                     pointerEvents: 'none',
                                     config: { duration: 300, easing: y.easeInQuart },
                                 }),
-                                h.start({ opacity: 0, config: { duration: 300, easing: y.easeInQuart } }),
+                                b.start({ opacity: 0, config: { duration: 300, easing: y.easeInQuart } }),
                                 u.start({
                                     opacity: 0,
                                     transform: 'translateY(-20rem)',
@@ -461,7 +461,7 @@ const cs = 'missions',
                                         config: { duration: 500, easing: y.easeInOutCirc },
                                         delay: 200,
                                     }),
-                                    h.start({ opacity: 1, config: { duration: 300, easing: y.easeInQuart } }),
+                                    b.start({ opacity: 1, config: { duration: 300, easing: y.easeInQuart } }),
                                 ],
                                 () => ts.send({ type: 'TO_IDLE' }),
                             ));
@@ -571,7 +571,7 @@ const cs = 'missions',
                                         config: { duration: 500, easing: y.easeInOutCirc },
                                         delay: 200,
                                     }),
-                                    h.start({ opacity: 1, config: { duration: 300, easing: y.easeInQuart } }),
+                                    b.start({ opacity: 1, config: { duration: 300, easing: y.easeInQuart } }),
                                 ],
                                 () => {
                                     (ts.send({ type: 'TO_IDLE' }), a.updateAnimationState(He.IDLE));
@@ -579,7 +579,7 @@ const cs = 'missions',
                             ));
                         break;
                     case Je:
-                        I.start({
+                        N.start({
                             opacity: 0,
                             transform: 'translateY(10rem)',
                             config: { easing: y.easeInQuart, duration: 300 },
@@ -607,7 +607,7 @@ const cs = 'missions',
                                 onRest: () => ts.send({ type: 'TO_IDLE' }),
                             }));
                 }
-            }, [i.missionCategory, i.nextOperationId, i.detailId, i.action, t, a, v, I, O, l, w, g, h, u]),
+            }, [i.missionCategory, i.nextOperationId, i.detailId, i.action, t, a, v, N, O, l, w, g, b, u]),
             _.jsx(fs.Provider, {
                 value: {
                     completedStateStyle: f,
@@ -616,24 +616,24 @@ const cs = 'missions',
                     progressionStyle: p,
                     detailInfoStyle: C,
                     zoomOutStyle: x,
-                    statusStyle: b,
-                    menuStyle: N,
+                    statusStyle: h,
+                    menuStyle: I,
                 },
                 children: e,
             })
         );
     }),
-    bs = () => {
+    hs = () => {
         const e = r.useContext(fs);
         if (!e) throw new Error('useAnimation must be used within an AnimationProvider');
         return e;
     },
-    Is = 'ZoomOut_718336b5',
-    Ns = 'ZoomOut_line_227e84e1',
+    Ns = 'ZoomOut_718336b5',
+    Is = 'ZoomOut_line_227e84e1',
     vs = 'ZoomOut_icon_ea52efbd';
 function xs({ className: e }) {
     const s = O.resolve('sounds'),
-        { zoomOutStyle: a, animationInProgress: t } = bs(),
+        { zoomOutStyle: a, animationInProgress: t } = hs(),
         i = C(
             Te.CUSTOM_SIMPLE,
             r.useMemo(
@@ -647,23 +647,23 @@ function xs({ className: e }) {
         );
     return _.jsxs(m.div, {
         style: a,
-        className: u(Is, e),
+        className: u(Ns, e),
         children: [
-            _.jsx('div', { className: Ns }),
+            _.jsx('div', { className: Is }),
             _.jsx(w, {
                 path: 'personal_missions_30.common.zoom_out',
                 ...i,
                 onClick: function () {
                     t || (s.play('yes'), i.onClick(), ts.send({ type: 'HIDE_DETAIL_INFO', action: os }));
                 },
-                onMouseEnter: function () {
-                    t || (i.onMouseEnter(), s.play('highlight'));
+                onMouseEnter: function (e) {
+                    t || (i.onMouseEnter(e), s.play('highlight'));
                 },
                 width: 64,
                 height: 64,
                 className: vs,
             }),
-            _.jsx('div', { className: Ns }),
+            _.jsx('div', { className: Is }),
         ],
     });
 }
@@ -681,7 +681,7 @@ const Es = 'InfoBox_ea99595d',
             { model: a, controls: t } = gs(),
             i = a.activeDetailId.get(),
             n = a.computes.detailById(i),
-            { detailInfoStyle: o } = bs(),
+            { detailInfoStyle: o } = hs(),
             l = C(
                 Te.CUSTOM_SIMPLE,
                 r.useMemo(
@@ -694,6 +694,7 @@ const Es = 'InfoBox_ea99595d',
                     [s],
                 ),
             );
+        const c = s.readOrEmpty(`personal_missions_30.detail.descr.historical.${i}`).split('\n');
         return _.jsxs(m.div, {
             style: o,
             className: u(Es, e),
@@ -722,29 +723,26 @@ const Es = 'InfoBox_ea99595d',
                             }),
                     ],
                 }),
-                _.jsx('div', { className: ws, children: s.readOrEmpty(`personal_missions_30.detail.name.${i}`) }),
-                _.jsx(A, {
-                    children: _.jsx(M, {
+                _.jsx(A, { split: !0, text: s.readOrEmpty(`personal_missions_30.detail.name.${i}`), className: ws }),
+                _.jsx(M, {
+                    children: _.jsx(D, {
                         className: js,
                         areaClassName: As,
-                        children: _.jsx(D, {
-                            path: `personal_missions_30.detail.descr.historical.${i}`,
-                            className: Ms,
-                        }),
+                        children: c.map((e, s) => _.jsx(A, { split: !0, text: e, className: Ms }, s)),
                     }),
                 }),
             ],
         });
     }),
     Ts = 'Assembling_aad1dbe5',
-    Ls = 'Assembling_wrapper_455363c4',
-    Ps = 'Assembling_infoBox_ec2ebc27',
+    Ps = 'Assembling_wrapper_455363c4',
+    Ls = 'Assembling_infoBox_ec2ebc27',
     Rs = 'Assembling_base__disabled_ca5e9f6e',
     ks = 'Assembling_zoomOut_8760d796',
     Vs = l(function () {
         const { model: e, controls: s } = gs(),
             a = e.activeDetailId.get(),
-            { animationInProgress: t } = bs();
+            { animationInProgress: t } = hs();
         return (
             T(x.ESCAPE, function () {
                 t || (a ? ts.send({ type: 'HIDE_DETAIL_INFO', action: os }) : s.goBack());
@@ -754,8 +752,8 @@ const Es = 'InfoBox_ea99595d',
                 children:
                     a &&
                     _.jsxs('div', {
-                        className: Ls,
-                        children: [_.jsx(Ds, { className: Ps }), _.jsx(xs, { className: ks })],
+                        className: Ps,
+                        children: [_.jsx(Ds, { className: Ls }), _.jsx(xs, { className: ks })],
                     }),
             })
         );
@@ -783,7 +781,7 @@ const $s = 'assault',
     qs = 'universal',
     Fs = 'default',
     Ys = 'role',
-    zs = [Le.ASSAULT, Le.SNIPER, Le.SUPPORT],
+    zs = [Pe.ASSAULT, Pe.SNIPER, Pe.SUPPORT],
     Gs = zs.map((e) => {
         return {
             id: e,
@@ -798,7 +796,7 @@ const $s = 'assault',
 function Ks(e, s, a) {
     return e.find((e) => e[s] === a);
 }
-const [Xs, Zs] = N()(({ observableModel: e }) => {
+const [Xs, Zs] = I()(({ observableModel: e }) => {
         const s = { ...e.primitives(['missionsCategory']), allMissions: e.arrayClone('allMissions') },
             a = v.model((e) => {
                 const a = Ks(s.allMissions.get(), 'operationId', e);
@@ -814,7 +812,7 @@ const [Xs, Zs] = N()(({ observableModel: e }) => {
                 return n.missions;
             }),
             i = v.model((e, s) => {
-                const a = L(t(s), e);
+                const a = P(t(s), e);
                 if (!a) throw new Error(`mission with index ${e} was not found`);
                 return a;
             }),
@@ -824,7 +822,7 @@ const [Xs, Zs] = N()(({ observableModel: e }) => {
             ...s,
             computes: { missionsByCategory: t, missionByIndex: i, operationNameById: n, vehicleLevelsById: o },
         };
-    }, P),
+    }, L),
     Js = {
         base: 'VehicleItem_4773539d',
         base__role: 'VehicleItem_base__role_f4574026',
@@ -846,7 +844,7 @@ function ea({ item: e, type: s = Fs, className: a }) {
 const sa = {
         base: 'CategoryInfo_c4876b8',
         icon: 'CategoryInfo_icon_2d0fb57a',
-        title: 'CategoryInfo_title_36d4af70',
+        title: 'CategoryInfo_title_3745f90',
         separator: 'CategoryInfo_separator_621f70ab',
         descriptionBlock: 'CategoryInfo_descriptionBlock_18a18499',
         description: 'CategoryInfo_description_3c4aef16',
@@ -876,8 +874,7 @@ const sa = {
                 _.jsxs('div', {
                     className: sa.descriptionBlock,
                     children: [
-                        _.jsx(D, {
-                            split: !0,
+                        _.jsx(V, {
                             path: 'personal_missions_30.main.missions.category.description',
                             params: {
                                 category: s.readOrEmpty(`personal_missions_30.common.category.${i}`),
@@ -885,19 +882,19 @@ const sa = {
                                     className: sa.highlightedText,
                                     children: t.computes.operationNameById(n),
                                 }),
-                                minLevel: V(t.computes.vehicleLevelsById(n).minLevel),
-                                maxLevel: V(t.computes.vehicleLevelsById(n).maxLevel),
+                                minLevel: B(t.computes.vehicleLevelsById(n).minLevel),
+                                maxLevel: B(t.computes.vehicleLevelsById(n).maxLevel),
                             },
                             className: sa.description,
                         }),
-                        _.jsx(D, {
+                        _.jsx(V, {
                             path: `personal_missions_30.main.missions.category.vehicles.${i}`,
                             params: {
-                                HT: _.jsx(ea, { item: W }),
-                                MT: _.jsx(ea, { item: Q }),
-                                LT: _.jsx(ea, { item: $ }),
-                                TD: _.jsx(ea, { item: H }),
-                                SPG: _.jsx(ea, { item: B }),
+                                HT: _.jsx(ea, { item: U }),
+                                MT: _.jsx(ea, { item: W }),
+                                LT: _.jsx(ea, { item: Q }),
+                                TD: _.jsx(ea, { item: $ }),
+                                SPG: _.jsx(ea, { item: H }),
                                 breakthrough: _.jsx(ea, { item: Qs, type: Ys }),
                                 assault: _.jsx(ea, { item: $s, type: Ys }),
                                 universal: _.jsx(ea, { item: qs, type: Ys }),
@@ -913,11 +910,11 @@ const sa = {
     });
 function ta({ id: e, label: s }) {
     const a = O.resolve('views'),
-        t = U({
+        t = q({
             contentId: a.read((e) => e.mono.personal_missions_30.tooltips.missions_category_tooltip('resId')),
             args: { category: e },
         });
-    return _.jsx(q.Tab, { tabId: e, ...t, children: s });
+    return _.jsx(F.Tab, { tabId: e, ...t, children: s });
 }
 var ia = ((e) => (
     (e.ACTIVE = 'active'),
@@ -998,7 +995,7 @@ function pa({ cardType: e, missionStatus: s, currentMissionNumber: a, maxMission
                     children: (() => {
                         switch (e) {
                             case is.default:
-                                return _.jsx(D, {
+                                return _.jsx(V, {
                                     className: ua.counter,
                                     path: 'personal_missions_30.main.mission.counter',
                                     params: {
@@ -1016,7 +1013,7 @@ function pa({ cardType: e, missionStatus: s, currentMissionNumber: a, maxMission
                                         s === ia.ACTIVE &&
                                             _.jsx('div', {
                                                 className: ua.subtitle,
-                                                children: _.jsx(D, {
+                                                children: _.jsx(V, {
                                                     path: 'personal_missions_30.main.mission.subtitle',
                                                 }),
                                             }),
@@ -1031,205 +1028,219 @@ function pa({ cardType: e, missionStatus: s, currentMissionNumber: a, maxMission
         ],
     });
 }
-const ga = 'Progress_431da46b',
-    fa = 'Progress_separator_5e9f0d5b',
-    ha = 'Progress_line_6fc99c5a',
-    ba = 'Progress_icon_14b45aa1',
-    Ia = 'Progress_c2cbad16',
-    Na = 'Progress_container_24631f37',
-    va = 'Progress_done_23661691',
-    xa = 'Progress_vehicle_2ae25c73',
-    Ea = 'Progress_done__visible_c28cb7f7';
-function ya({ cardIndex: e, cardType: s, currentProgressValue: a, maxProgressValue: t, className: i }) {
+const ga = {
+    base: 'VehiclesProgress_d2b4bea6',
+    container: 'VehiclesProgress_container_3dc9329c',
+    done: 'VehiclesProgress_done_db1d3990',
+    vehicle: 'VehiclesProgress_vehicle_3344a8a1',
+    done__visible: 'VehiclesProgress_done__visible_b31330f7',
+};
+function fa({ currentProgress: e, maxProgress: s, className: a, ...t }) {
+    return _.jsx('div', {
+        ...t,
+        className: u(ga.base, a),
+        children: Y(s, (s) =>
+            _.jsxs(
+                'div',
+                {
+                    className: ga.container,
+                    children: [
+                        _.jsx(w, {
+                            className: ga.vehicle,
+                            path: 'personal_missions_30.common.card.vehicle',
+                            width: '64rem',
+                            height: '64rem',
+                        }),
+                        _.jsx(w, {
+                            className: u(ga.done, s < e && ga.done__visible),
+                            path: 'personal_missions_30.common.card.done',
+                            width: '64rem',
+                            height: '64rem',
+                        }),
+                    ],
+                },
+                s,
+            ),
+        ),
+    });
+}
+const ba = 'Progress_431da46b',
+    ha = 'Progress_separator_5e9f0d5b',
+    Na = 'Progress_line_6fc99c5a',
+    Ia = 'Progress_icon_14b45aa1',
+    va = 'Progress_bab84485';
+function xa({ cardIndex: e, cardType: s, currentProgressValue: a, maxProgressValue: t, className: i }) {
     const n = O.resolve('views'),
-        { breakpoint: o } = F(),
-        r = Re(o.weight, z.medium) && s === is.default,
-        l = U({
+        { breakpoint: o } = z(),
+        r = Re(o.weight, G.medium) && s === is.default,
+        l = q({
             contentId: n.read((e) => e.mono.personal_missions_30.tooltips.mission_progress_tooltip('resId')),
             args: { missionIndex: e },
         });
     return _.jsxs('div', {
-        className: u(ga, i),
+        className: u(ba, i),
         children: [
             !r &&
                 _.jsxs('div', {
-                    className: fa,
+                    className: ha,
                     children: [
-                        _.jsx('div', { className: ha }),
+                        _.jsx('div', { className: Na }),
                         _.jsx(w, {
-                            className: ba,
+                            className: Ia,
                             path: 'personal_missions_30.common.card.done_separator',
                             width: '16rem',
                             height: '17rem',
                         }),
-                        _.jsx('div', { className: ha }),
+                        _.jsx('div', { className: Na }),
                     ],
                 }),
-            _.jsx('div', {
-                className: Ia,
-                ...l,
-                children: Y(t, (e) =>
-                    _.jsxs(
-                        'div',
-                        {
-                            className: Na,
-                            children: [
-                                _.jsx(w, {
-                                    className: xa,
-                                    path: 'personal_missions_30.common.card.vehicle',
-                                    width: '64rem',
-                                    height: '64rem',
-                                }),
-                                _.jsx(w, {
-                                    className: u(va, e < a && Ea),
-                                    path: 'personal_missions_30.common.card.done',
-                                    width: '64rem',
-                                    height: '64rem',
-                                }),
-                            ],
-                        },
-                        e,
-                    ),
-                ),
-            }),
+            _.jsx(fa, { ...l, currentProgress: a, maxProgress: t, className: va }),
         ],
     });
 }
-const Sa = (e, s) => window.getComputedStyle(e, null).getPropertyValue(s),
-    Oa = (e, s, a) => {
+const Ea = (e, s) => window.getComputedStyle(e, null).getPropertyValue(s),
+    ya = (e, s, a) => {
         const t = a.getContext('2d'),
             i = Array.from(e).length;
         if (!t || 0 === i) return 0;
         t.font = ((e) => {
-            const s = Sa(e, 'font-weight'),
-                a = Sa(e, 'font-size'),
-                t = Sa(e, 'font-family');
-            return `${s} ${G(parseFloat(a))}px ${t}`;
+            const s = Ea(e, 'font-weight'),
+                a = Ea(e, 'font-size'),
+                t = Ea(e, 'font-family');
+            return `${s} ${K(parseFloat(a))}px ${t}`;
         })(s);
         const n = t.measureText(e),
             o = ((e) => {
-                const s = Sa(e, 'letter-spacing'),
+                const s = Ea(e, 'letter-spacing'),
                     [a] = s.match(/[a-z%]+$/);
-                return 'em' === a ? parseFloat(Sa(e, 'font-size')) * parseFloat(s) : parseFloat(s);
+                return 'em' === a ? parseFloat(Ea(e, 'font-size')) * parseFloat(s) : parseFloat(s);
             })(s);
-        return Math.ceil(n.width + (i - 1) * G(o));
+        return Math.ceil(n.width + (i - 1) * K(o));
     },
-    Ca = (e) => {
+    Sa = (e) => {
         if (e.start >= e.end - 1) return e.start;
         const s = Math.floor((e.start + e.end) / 2),
             a = e.words.slice(0, s).join(' '),
-            t = Math.ceil(Oa(a, e.element, e.canvas) / e.element.getBoundingClientRect().width);
-        return Ca(t <= 1 ? { ...e, start: s } : { ...e, end: s });
+            t = Math.ceil(ya(a, e.element, e.canvas) / e.element.getBoundingClientRect().width);
+        return Sa(t <= 1 ? { ...e, start: s } : { ...e, end: s });
     },
-    wa = 'MultilineOverflow_ec9f8e47',
-    ja = 'MultilineOverflow_base__truncated_f602d646',
-    Aa = 'MultilineOverflow_text_b39629e',
-    Ma = 'MultilineOverflow_truncatedContent_b0ee4004',
-    Da = 'MultilineOverflow_singleLine_c231496e',
-    Ta = 'MultilineOverflow_line_ffcfe2ce',
-    La = r.forwardRef(function ({ text: e, lines: s, className: a, onChange: t, simpleTooltipParams: i, ...n }, o) {
-        const l = C(
+    Oa = 'MultilineOverflow_ec9f8e47',
+    Ca = 'MultilineOverflow_base__truncated_f602d646',
+    wa = 'MultilineOverflow_text_b39629e',
+    ja = 'MultilineOverflow_truncatedContent_b0ee4004',
+    Aa = 'MultilineOverflow_singleLine_c231496e',
+    Ma = 'MultilineOverflow_line_ffcfe2ce',
+    Da = r.forwardRef(function (
+        { text: e, lines: s, className: a, onChange: t, split: i, simpleTooltipParams: n, ...o },
+        l,
+    ) {
+        const c = C(
                 Te.CUSTOM_SIMPLE,
                 r.useMemo(
                     () => ({
-                        ...i,
+                        ...n,
                         resId: O.resolve('views').read((e) =>
                             e.mono.personal_missions_30.tooltips.param_tooltip('resId'),
                         ),
                     }),
-                    [i],
+                    [n],
                 ),
             ),
-            c = r.useRef(null),
             d = r.useRef(null),
-            [m, p] = r.useState(!1),
-            [g, f] = r.useState([]),
-            [h, b] = r.useState(0),
-            I = K(),
-            N = r.useMemo(() => document.createElement('canvas'), []),
-            v = r.useCallback(() => (d.current ? d.current.getBoundingClientRect().height : 0), []),
-            x = r.useCallback(
+            m = r.useRef(null),
+            [p, g] = r.useState(!1),
+            [f, b] = r.useState([]),
+            [h, N] = r.useState(0),
+            I = X(),
+            v = r.useMemo(() => document.createElement('canvas'), []),
+            x = r.useCallback(() => (m.current ? m.current.getBoundingClientRect().height : 0), []),
+            E = r.useCallback(
                 (e) => {
-                    const s = v();
+                    const s = x();
                     return e && s ? Math.round(e.scrollHeight / s) : 0;
                 },
-                [v],
+                [x],
             );
-        const E = r.useCallback(() => {
-                if (x(c.current) <= s) return p(!1);
-                p(!0);
+        const y = r.useCallback(() => {
+                if (E(d.current) <= s) return g(!1);
+                g(!0);
                 const a = e.split(' '),
                     t = Array.from(new Array(s)).reduce((e, t, i) => {
-                        if (!c.current) return e;
+                        if (!d.current) return e;
                         const n = e.reduce((e, s) => e + s.length, 0),
                             o = a.slice(n);
                         if (i === s - 1) return (e.push(o), e);
-                        const r = Ca({ start: 0, end: o.length, words: o, element: c.current, canvas: N });
+                        const r = Sa({ start: 0, end: o.length, words: o, element: d.current, canvas: v });
                         return (e.push(o.slice(0, r)), e);
                     }, []);
-                f(t);
-            }, [N, x, s, e]),
-            y = r.useCallback(() => {
+                b(t);
+            }, [v, E, s, e]),
+            S = r.useCallback(() => {
                 I.run(() => {
-                    (b(v() * s), E());
+                    (N(x() * s), y());
                 });
-            }, [v, s, I, E]);
+            }, [x, s, I, y]);
         return (
-            r.useEffect(y, [y]),
-            X(y, [y]),
+            r.useEffect(S, [S]),
+            Z(S, [S]),
             r.useEffect(() => {
-                null == t || t(m);
-            }, [t, m]),
+                null == t || t(p);
+            }, [t, p]),
             _.jsxs('div', {
-                ...n,
-                ref: o,
-                className: u(wa, a, m && ja),
+                ...o,
+                ref: l,
+                className: u(Oa, a, p && Ca),
                 onMouseEnter: function (e) {
                     var s;
-                    (null == (s = n.onMouseEnter) || s.call(n, e), m && l.onMouseEnter());
+                    (null == (s = o.onMouseEnter) || s.call(o, e), p && c.onMouseEnter(e));
                 },
                 onClick: function (e) {
                     var s;
-                    (null == (s = n.onClick) || s.call(n, e), m && l.onClick());
+                    (null == (s = o.onClick) || s.call(o, e), p && c.onClick());
                 },
                 onMouseLeave: function (e) {
                     var s;
-                    (null == (s = n.onMouseLeave) || s.call(n, e), m && l.onMouseLeave());
+                    (null == (s = o.onMouseLeave) || s.call(o, e), p && c.onMouseLeave());
                 },
                 children: [
-                    _.jsx('div', { ref: c, className: Aa, style: { maxHeight: `${Z(h)}rem` }, children: e }),
                     _.jsx('div', {
-                        className: Ma,
-                        children: g.map((e, s) => _.jsx('div', { className: Ta, children: e.join(' ') }, s)),
+                        ref: d,
+                        className: wa,
+                        style: { maxHeight: `${J(h)}rem` },
+                        children: _.jsx(A, { text: e, split: i }),
                     }),
-                    _.jsx('div', { ref: d, className: Da, children: R.strings.common.common.dot() }),
+                    _.jsx('div', {
+                        className: ja,
+                        children: f.map((e, s) => _.jsx('div', { className: Ma, children: e.join(' ') }, s)),
+                    }),
+                    _.jsx('div', { ref: m, className: Aa, children: R.strings.common.common.dot() }),
                 ],
             })
         );
     }),
-    Pa = 64,
-    Ra = 90,
-    ka = 128,
-    Va = {
+    Ta = 64,
+    Pa = 90,
+    La = 128,
+    Ra = {
         [is.default]: {
-            [z.extraSmall]: { double: 2, doubleRequired: 1, single: 5 },
-            [z.small]: { double: 2, doubleRequired: 1, single: 5 },
-            [z.medium]: { double: 3, doubleRequired: 3, single: 8 },
-            [z.large]: { double: 3, doubleRequired: 3, single: 8 },
-            [z.extraLarge]: { double: 3, doubleRequired: 3, single: 9 },
+            [G.extraSmall]: { double: 2, doubleRequired: 1, single: 5 },
+            [G.small]: { double: 2, doubleRequired: 1, single: 5 },
+            [G.medium]: { double: 3, doubleRequired: 3, single: 8 },
+            [G.large]: { double: 3, doubleRequired: 3, single: 8 },
+            [G.extraLarge]: { double: 3, doubleRequired: 3, single: 9 },
         },
         [is.missions]: {
-            [z.extraSmall]: { double: 4, doubleRequired: 3, single: 8 },
-            [z.small]: { double: 4, doubleRequired: 3, single: 8 },
-            [z.medium]: { double: 5, doubleRequired: 4, single: 10 },
-            [z.large]: { double: 5, doubleRequired: 4, single: 10 },
-            [z.extraLarge]: { double: 5, doubleRequired: 4, single: 10 },
+            [G.extraSmall]: { double: 4, doubleRequired: 3, single: 8 },
+            [G.small]: { double: 4, doubleRequired: 3, single: 8 },
+            [G.medium]: { double: 5, doubleRequired: 4, single: 10 },
+            [G.large]: { double: 5, doubleRequired: 4, single: 10 },
+            [G.extraLarge]: { double: 5, doubleRequired: 4, single: 10 },
         },
     };
-function Ba(e, s, a) {
+function ka(e, s, a) {
     return s ? a.single : e ? a.doubleRequired : a.double;
 }
-const Ha = {
+const Va = {
     base: 'Quest_555c39f7',
     image: 'Quest_image_83f034ec',
     base__missions: 'Quest_base__missions_3236e985',
@@ -1237,33 +1248,33 @@ const Ha = {
     title: 'Quest_title_e8e4a50f',
     quest: 'Quest_a31e9bfc',
 };
-function $a({
+function Ba({
     cardType: e,
     quest: { questCondition: s, summary: a, questType: t },
     singleQuest: i,
     allQuestsRequired: n,
     className: o,
 }) {
-    const { breakpoint: l } = F(),
+    const { breakpoint: l } = z(),
         c = (function (e, s) {
-            return Va[e][s];
+            return Ra[e][s];
         })(e, l.name),
         d = e === is.missions,
         m = r.useMemo(() => ({ header: a, body: s }), [s, a]);
     return _.jsxs('div', {
-        className: u(Ha.base, Ha[`base__${e}`], o),
+        className: u(Va.base, Va[`base__${e}`], o),
         children: [
             _.jsx(w, {
-                className: Ha.image,
+                className: Va.image,
                 path: d
                     ? `personal_missions_30.quest_type.c_128x128.icon_battle_condition_${t}`
                     : `personal_missions_30.quest_type.c_64x64.icon_battle_condition_${t}`,
-                width: d ? ka : Pa,
-                height: d ? ka : Pa,
+                width: d ? La : Ta,
+                height: d ? La : Ta,
                 adaptive: {
                     medium: {
-                        width: d ? ka : Ra,
-                        height: d ? ka : Ra,
+                        width: d ? La : Pa,
+                        height: d ? La : Pa,
                         path: d
                             ? `personal_missions_30.quest_type.c_128x128.icon_battle_condition_${t}`
                             : `personal_missions_30.quest_type.c_90x90.icon_battle_condition_${t}`,
@@ -1271,36 +1282,36 @@ function $a({
                 },
             }),
             _.jsxs('div', {
-                className: Ha.wrapper,
+                className: Va.wrapper,
                 children: [
-                    _.jsx('div', { className: Ha.title, children: a }),
-                    _.jsx(La, { text: s, className: Ha.quest, simpleTooltipParams: m, lines: Ba(!n, i, c) }),
+                    _.jsx('div', { className: Va.title, children: a }),
+                    _.jsx(Da, { split: !0, text: s, className: Va.quest, simpleTooltipParams: m, lines: ka(!n, i, c) }),
                 ],
             }),
         ],
     });
 }
-const Qa = {
+const Ha = {
     base: 'QuestSeparator_43fba5a4',
     dots: 'QuestSeparator_dots_e1abf39e',
     arrow: 'QuestSeparator_arrow_9ef069fe',
     text: 'QuestSeparator_text_a5a5c2eb',
 };
-function Wa({ className: e }) {
+function $a({ className: e }) {
     return _.jsxs('div', {
-        className: u(Qa.base, e),
+        className: u(Ha.base, e),
         children: [
             _.jsx(w, { path: 'personal_missions_30.common.card.dots', width: '48rem', height: '4rem' }),
             _.jsx(w, { path: 'personal_missions_30.common.card.arrow', width: '16rem', height: '16rem' }),
-            _.jsx(D, { className: Qa.text, path: 'personal_missions_30.main.mission.mission.quest.separator' }),
+            _.jsx(V, { className: Ha.text, path: 'personal_missions_30.main.mission.mission.quest.separator' }),
             _.jsx(w, {
-                className: Qa.arrow,
+                className: Ha.arrow,
                 path: 'personal_missions_30.common.card.arrow',
                 width: '16rem',
                 height: '16rem',
             }),
             _.jsx(w, {
-                className: Qa.dots,
+                className: Ha.dots,
                 path: 'personal_missions_30.common.card.dots',
                 width: '48rem',
                 height: '4rem',
@@ -1308,28 +1319,28 @@ function Wa({ className: e }) {
         ],
     });
 }
-const Ua = {
+const Qa = {
     base: 'Quests_36d28d52',
     quest: 'Quests_quest_55d2c50',
     base__missions: 'Quests_base__missions_f09ce410',
     base__default: 'Quests_base__default_f09ce410',
     questSeparator: 'Quests_questSeparator_622bda04',
 };
-function qa({ cardType: e, mission: { allQuestsRequired: s, quests: a }, className: t }) {
+function Wa({ cardType: e, mission: { allQuestsRequired: s, quests: a }, className: t }) {
     return _.jsx('div', {
-        className: u(Ua.base, Ua[`base__${e}`], t),
+        className: u(Qa.base, Qa[`base__${e}`], t),
         children: a.map((t, i) =>
             _.jsxs(
                 p.Fragment,
                 {
                     children: [
-                        !s && i > 0 && _.jsx(Wa, { className: Ua.questSeparator }),
-                        _.jsx($a, {
+                        !s && i > 0 && _.jsx($a, { className: Qa.questSeparator }),
+                        _.jsx(Ba, {
                             quest: t,
                             cardType: e,
                             singleQuest: 1 === a.length,
                             allQuestsRequired: s,
-                            className: Ua.quest,
+                            className: Qa.quest,
                         }),
                     ],
                 },
@@ -1338,32 +1349,32 @@ function qa({ cardType: e, mission: { allQuestsRequired: s, quests: a }, classNa
         ),
     });
 }
-const Fa = { base: 'Rewards_1a8854f', reward: 'Rewards_reward_28325b8d', base__big: 'Rewards_base__big_405577a5' };
-function Ya({ rewards: e, imageSize: s = ee.Small, className: a }) {
+const Ua = { base: 'Rewards_1a8854f', reward: 'Rewards_reward_28325b8d', base__big: 'Rewards_base__big_405577a5' };
+function qa({ rewards: e, imageSize: s = se.Small, className: a }) {
     return _.jsx('div', {
-        className: u(Fa.base, Fa[`base__${s}`], a),
-        children: e.map((e, a) => _.jsx('div', { className: Fa.reward, children: _.jsx(J, { ...ke(e, s) }) }, a)),
+        className: u(Ua.base, Ua[`base__${s}`], a),
+        children: e.map((e, a) => _.jsx('div', { className: Ua.reward, children: _.jsx(ee, { ...ke(e, s) }) }, a)),
     });
 }
-const za = {
+const Fa = {
     base: 'Disabled_e625fb0e',
     text: 'Disabled_text_291ac5b3',
     base__missions: 'Disabled_base__missions_3cd47f61',
 };
-function Ga({ cardType: e = is.default }) {
+function Ya({ cardType: e = is.default }) {
     const s = O.resolve('strings');
     return _.jsxs('div', {
-        className: u(za.base, za[`base__${e}`]),
+        className: u(Fa.base, Fa[`base__${e}`]),
         children: [
             _.jsx(w, { path: 'personal_missions_30.common.card.alert', width: '48rem', height: '48rem' }),
             _.jsx('div', {
-                className: za.text,
+                className: Fa.text,
                 children: s.readOrEmpty('personal_missions_30.main.mission.text.alert'),
             }),
         ],
     });
 }
-const Ka = {
+const za = {
     card: 'MissionsCard_card_397fd5a8',
     base: 'MissionsCard_87d065e9',
     base__active: 'MissionsCard_base__active_612e59cb',
@@ -1384,21 +1395,21 @@ const Ka = {
     shadowLine: 'MissionsCard_shadowLine_32ae564b',
     missionNumber: 'MissionsCard_missionNumber_1408b413',
 };
-function Xa(e) {
-    return e === ia.COMPLETED ? se.done : e === ia.LOCKED ? se.locked : void 0;
+function Ga(e) {
+    return e === ia.COMPLETED ? ae.done : e === ia.LOCKED ? ae.locked : void 0;
 }
-const Za = r.memo(
+const Ka = r.memo(
         r.forwardRef(function ({ index: e, mission: s }, a) {
             const t = O.resolve('strings'),
                 i = s.missionStatus === ia.ACTIVE,
-                n = s.missionStatus === ia.ACTIVE ? ee.Big : ee.Small,
+                n = s.missionStatus === ia.ACTIVE ? se.Big : se.Small,
                 o = s.missionStatus === ia.LOCKED || s.missionStatus === ia.DISABLED,
                 l = C(
                     Te.CUSTOM_SIMPLE,
                     r.useMemo(
                         () => ({
                             body: t.readOrEmpty(
-                                `personal_missions_30.main.missions.card.tooltip.${s.missionStatus === ia.COMPLETED ? se.done : se.locked}`,
+                                `personal_missions_30.main.missions.card.tooltip.${s.missionStatus === ia.COMPLETED ? ae.done : ae.locked}`,
                             ),
                             resId: O.resolve('views').read((e) =>
                                 e.mono.personal_missions_30.tooltips.param_tooltip('resId'),
@@ -1408,50 +1419,50 @@ const Za = r.memo(
                     ),
                 );
             return _.jsxs('div', {
-                ref: ae([a]),
-                className: u(Ka.base, Ka[`base__${s.missionStatus}`]),
+                ref: te([a]),
+                className: u(za.base, za[`base__${s.missionStatus}`]),
                 children: [
-                    _.jsx(pa, { ...s, cardType: is.missions, className: u(i && Ka.missionNumber) }),
-                    _.jsx(te, {
+                    _.jsx(pa, { ...s, cardType: is.missions, className: u(i && za.missionNumber) }),
+                    _.jsx(ie, {
                         disableMouse: !0,
                         selected: i,
-                        status: Xa(s.missionStatus),
+                        status: Ga(s.missionStatus),
                         disabled: o,
-                        className: Ka.content,
-                        classNames: { wrapper: u(!o && Ka.cardWrapper), card: Ka.cardComponent },
+                        className: za.content,
+                        classNames: { wrapper: u(!o && za.cardWrapper), card: za.cardComponent },
                         children: _.jsx('div', {
-                            className: Ka.card,
+                            className: za.card,
                             children: (() => {
                                 switch (s.missionStatus) {
                                     case ia.ACTIVE:
                                     case ia.COMPLETED:
                                     case ia.LOCKED:
                                         return _.jsxs('div', {
-                                            className: Ka.innerContent,
+                                            className: za.innerContent,
                                             children: [
-                                                _.jsx(qa, { mission: s, className: Ka.quests, cardType: is.missions }),
+                                                _.jsx(Wa, { mission: s, className: za.quests, cardType: is.missions }),
                                                 _.jsxs('div', {
-                                                    className: Ka.footer,
+                                                    className: za.footer,
                                                     children: [
                                                         s.maxProgressValue > 1 &&
-                                                            _.jsx(ya, {
+                                                            _.jsx(xa, {
                                                                 ...s,
                                                                 cardIndex: e,
                                                                 cardType: is.missions,
-                                                                className: Ka.progress,
+                                                                className: za.progress,
                                                             }),
-                                                        _.jsx(Hs, { type: 'withoutAlpha', className: Ka.separator }),
-                                                        _.jsx(Ya, {
+                                                        _.jsx(Hs, { type: 'withoutAlpha', className: za.separator }),
+                                                        _.jsx(qa, {
                                                             rewards: s.rewards,
                                                             imageSize: n,
-                                                            className: Ka.rewards,
+                                                            className: za.rewards,
                                                         }),
                                                     ],
                                                 }),
                                             ],
                                         });
                                     case ia.DISABLED:
-                                        return _.jsx(Ga, { cardType: is.missions });
+                                        return _.jsx(Ya, { cardType: is.missions });
                                     default:
                                         console.error(`Unexpected mission status: ${s.missionStatus}`);
                                 }
@@ -1461,25 +1472,25 @@ const Za = r.memo(
                     s.missionStatus === ia.LOCKED &&
                         _.jsxs(_.Fragment, {
                             children: [
-                                _.jsx('div', { className: Ka.brightLine }),
-                                _.jsx('div', { className: Ka.shadowLine }),
+                                _.jsx('div', { className: za.brightLine }),
+                                _.jsx('div', { className: za.shadowLine }),
                                 _.jsx(w, {
                                     path: 'personal_missions_30.common.card.status_lock_icon',
-                                    className: Ka.lockedIcon,
+                                    className: za.lockedIcon,
                                 }),
                             ],
                         }),
-                    Xa(s.missionStatus) && _.jsx('div', { className: Ka.tooltipZone, ...l }),
+                    Ga(s.missionStatus) && _.jsx('div', { className: za.tooltipZone, ...l }),
                 ],
             });
         }),
     ),
-    Ja = 'DraggingOverlay_599243d';
-function et() {
-    const e = K();
-    return (ie(() => e.run(ne)), _.jsx('div', { className: Ja }));
+    Xa = 'DraggingOverlay_599243d';
+function Za() {
+    const e = X();
+    return (ne(() => e.run(oe)), _.jsx('div', { className: Xa }));
 }
-const st = {
+const Ja = {
         base: 'ScrollableCards_cede7903',
         content: 'ScrollableCards_content_8c53892b',
         scroll: 'ScrollableCards_scroll_dc0445ca',
@@ -1487,36 +1498,36 @@ const st = {
         button__left: 'ScrollableCards_button__left_3baf8988',
         button__right: 'ScrollableCards_button__right_619f434e',
     },
-    at = 'visible',
-    tt = l(function ({ currentAnimationState: e }) {
+    et = 'visible',
+    st = l(function ({ currentAnimationState: e }) {
         const { model: s } = gs(),
             { model: a } = Zs(),
-            { breakpoint: t } = F(),
-            i = Re(t.weight, z.medium) ? la : ca,
+            { breakpoint: t } = z(),
+            i = Re(t.weight, G.medium) ? la : ca,
             n = s.activeOperationId.get(),
             o = a.computes.missionsByCategory(n),
-            l = oe(o, (e) => e.missionStatus === ia.ACTIVE),
+            l = re(o, (e) => e.missionStatus === ia.ACTIVE),
             c = r.useRef([]),
             d = r.useRef(null),
             m = r.useRef(null),
-            { api: p } = re(),
-            f = K(),
-            h = le(),
-            b = ce(p, _e.horizontal, void 0, { gapBeforeStart: 5 }),
-            I = r.useCallback(
+            { api: p } = le(),
+            f = X(),
+            b = ce(),
+            h = de(p, me.horizontal, void 0, { gapBeforeStart: 5 }),
+            N = r.useCallback(
                 function (e) {
                     const s = p.getWrapperSize(),
                         a = p.animationScroll.scrollPosition.get(),
                         t = c.current[e];
                     if (!t || !s) return;
                     const i = t.offsetLeft - s / 2 + t.offsetWidth / 2;
-                    (0 === a && i < 0) || a === i || (h.play('bp_slide'), p.applyScroll(i));
+                    (0 === a && i < 0) || a === i || (b.play('bp_slide'), p.applyScroll(i));
                 },
-                [p, h],
+                [p, b],
             );
         (r.useEffect(() => {
-            void 0 !== l && e === as && f.run(() => I(l));
-        }, [l, I, f, e]),
+            void 0 !== l && e === as && f.run(() => N(l));
+        }, [l, N, f, e]),
             r.useEffect(() => {
                 if (void 0 === l) return;
                 const e = () => {
@@ -1530,10 +1541,10 @@ const st = {
                             s &&
                             a &&
                             (p.animationScroll.scrollPosition.get() > e.offsetLeft + e.offsetWidth
-                                ? (s.classList.add(at), a.classList.remove(at))
+                                ? (s.classList.add(et), a.classList.remove(et))
                                 : e.offsetLeft > p.animationScroll.scrollPosition.get() + t
-                                  ? (a.classList.add(at), s.classList.remove(at))
-                                  : (a.classList.remove(at), s.classList.remove(at)));
+                                  ? (a.classList.add(et), s.classList.remove(et))
+                                  : (a.classList.remove(et), s.classList.remove(et)));
                     });
                 };
                 return (
@@ -1547,7 +1558,7 @@ const st = {
                     }
                 );
             }, [l, p, f]));
-        const N = r.useCallback((e) => {
+        const I = r.useCallback((e) => {
                 c.current.push(e);
             }, []),
             v = C(
@@ -1565,19 +1576,19 @@ const st = {
                 ),
             );
         function x() {
-            (void 0 !== l && I(l), h.play('carouselButton'), v.onClick());
+            (void 0 !== l && N(l), b.play('carouselButton'), v.onClick());
         }
-        function E() {
-            (h.play('mouse-enter'), v.onMouseEnter());
+        function E(e) {
+            (b.play('mouse-enter'), v.onMouseEnter(e));
         }
         return _.jsxs('div', {
-            className: st.base,
+            className: Ja.base,
             children: [
-                _.jsx(de, {
-                    areaClassName: st.scroll,
+                _.jsx(_e, {
+                    areaClassName: Ja.scroll,
                     children: _.jsx('div', {
-                        className: st.content,
-                        children: o.map((e, s) => _.jsx(Za, { mission: e, index: s, ref: N }, e.currentMissionNumber)),
+                        className: Ja.content,
+                        children: o.map((e, s) => _.jsx(Ka, { mission: e, index: s, ref: I }, e.currentMissionNumber)),
                     }),
                 }),
                 void 0 !== l &&
@@ -1591,7 +1602,7 @@ const st = {
                                 arrowDirection: 'left',
                                 onClick: x,
                                 onMouseEnter: E,
-                                className: u(st.button, st.button__left, st.button__hidden),
+                                className: u(Ja.button, Ja.button__left, Ja.button__hidden),
                             }),
                             _.jsx(da, {
                                 silent: !0,
@@ -1601,32 +1612,32 @@ const st = {
                                 arrowDirection: 'right',
                                 onClick: x,
                                 onMouseEnter: E,
-                                className: u(st.button, st.button__right, st.button__hidden),
+                                className: u(Ja.button, Ja.button__right, Ja.button__hidden),
                             }),
                         ],
                     }),
-                g.createPortal('dragging' === b.type && _.jsx(et, {}), document.body),
+                g.createPortal('dragging' === h.type && _.jsx(Za, {}), document.body),
             ],
         });
     }),
-    it = 'Missions_aa7824d8',
-    nt = 'Missions_tabs_41232459',
-    ot = 'Missions_tabs__disabled_44072e35',
-    rt = 'Missions_category_a34a8a14',
-    lt = 'Missions_separator_cf7f866c',
-    ct = { opacity: 1, transform: 'translateY(0rem)' },
-    dt = { opacity: 0, transform: 'translateY(-20rem)' },
-    _t = l(function () {
+    at = 'Missions_aa7824d8',
+    tt = 'Missions_tabs_41232459',
+    it = 'Missions_tabs__disabled_44072e35',
+    nt = 'Missions_category_a34a8a14',
+    ot = 'Missions_separator_cf7f866c',
+    rt = { opacity: 1, transform: 'translateY(0rem)' },
+    lt = { opacity: 0, transform: 'translateY(-20rem)' },
+    ct = l(function () {
         const { controls: e } = gs(),
             { model: s } = Zs(),
-            { breakpoint: a } = F(),
-            t = Re(a.weight, z.large),
-            { animationInProgress: i } = bs(),
+            { breakpoint: a } = z(),
+            t = Re(a.weight, G.large),
+            { animationInProgress: i } = hs(),
             n = c(ts, (e) => e.value),
             [o, l] = d(() => ({ from: { opacity: 0 } })),
             [p, g] = d(() => ({ from: { opacity: 0 } })),
-            [f, h] = d(() => ({ from: { opacity: 0, transform: 'translateY(-20rem)' } })),
-            [b, I] = d(() => ({ from: { opacity: 0, transform: 'translateY(20rem)' } }));
+            [f, b] = d(() => ({ from: { opacity: 0, transform: 'translateY(-20rem)' } })),
+            [h, N] = d(() => ({ from: { opacity: 0, transform: 'translateY(20rem)' } }));
         return (
             S(() => {
                 l.start({
@@ -1635,8 +1646,8 @@ const st = {
                     onRest: () => {
                         ls(
                             [
-                                h.start({ ...ct, config: { duration: 300, easing: y.easeOutQuart } }),
-                                I.start({ ...ct, config: { duration: 300, easing: y.easeOutQuart } }),
+                                b.start({ ...rt, config: { duration: 300, easing: y.easeOutQuart } }),
+                                N.start({ ...rt, config: { duration: 300, easing: y.easeOutQuart } }),
                                 g.start({ opacity: 1, config: { duration: 400, easing: y.easeOutQuart } }),
                             ],
                             () => {
@@ -1661,12 +1672,12 @@ const st = {
             }, [e, n, l]),
             _.jsxs(m.div, {
                 style: o,
-                className: it,
+                className: at,
                 children: [
-                    _.jsx(q, {
+                    _.jsx(F, {
                         active: s.missionsCategory.get(),
-                        theme: ue.primary,
-                        size: t ? me.small : me.large,
+                        theme: pe.primary,
+                        size: t ? ue.small : ue.large,
                         onActiveChange: (s) => {
                             var a;
                             ((a = () => {
@@ -1675,23 +1686,23 @@ const st = {
                                 i ||
                                     (ts.send({ type: 'SWITCH_MISSIONS' }),
                                     e.updateAnimationState(He.ANIMATION_STARTED),
-                                    I.start({
+                                    N.start({
                                         opacity: 0,
                                         transform: 'translateY(20rem)',
                                         config: { duration: 400, easing: y.easeInQuart },
                                     }),
-                                    h.start({
-                                        ...dt,
+                                    b.start({
+                                        ...lt,
                                         config: { duration: 400, easing: y.easeInQuart },
                                         onRest: () => {
                                             (a(),
-                                                h.start({
-                                                    ...ct,
+                                                b.start({
+                                                    ...rt,
                                                     config: { duration: 500, easing: y.easeOutQuart },
                                                     delay: 300,
                                                 }),
-                                                I.start({
-                                                    ...ct,
+                                                N.start({
+                                                    ...rt,
                                                     config: { duration: 500, easing: y.easeOutQuart },
                                                     delay: 300,
                                                     onRest: () => ts.send({ type: 'TO_IDLE' }),
@@ -1700,24 +1711,24 @@ const st = {
                                     }),
                                     ls(
                                         [
-                                            I.start({
+                                            N.start({
                                                 opacity: 0,
                                                 transform: 'translateY(20rem)',
                                                 config: { duration: 400, easing: y.easeInQuart },
                                             }),
-                                            h.start({ ...dt, config: { duration: 400, easing: y.easeInQuart } }),
+                                            b.start({ ...lt, config: { duration: 400, easing: y.easeInQuart } }),
                                         ],
                                         () => {
                                             (a(),
                                                 ls(
                                                     [
-                                                        h.start({
-                                                            ...ct,
+                                                        b.start({
+                                                            ...rt,
                                                             config: { duration: 500, easing: y.easeOutQuart },
                                                             delay: 300,
                                                         }),
-                                                        I.start({
-                                                            ...ct,
+                                                        N.start({
+                                                            ...rt,
                                                             config: { duration: 500, easing: y.easeOutQuart },
                                                             delay: 300,
                                                         }),
@@ -1731,34 +1742,34 @@ const st = {
                         },
                         children: _.jsx(m.div, {
                             style: p,
-                            children: _.jsx(q.Switcher, {
-                                className: u(nt, i && ot),
+                            children: _.jsx(F.Switcher, {
+                                className: u(tt, i && it),
                                 children: Gs.map(({ id: e, label: s }) => _.jsx(ta, { id: e, label: s }, e)),
                             }),
                         }),
                     }),
                     _.jsxs(m.div, {
                         style: f,
-                        children: [_.jsx(aa, { className: rt }), _.jsx(Hs, { type: 'withoutAlpha', className: lt })],
+                        children: [_.jsx(aa, { className: nt }), _.jsx(Hs, { type: 'withoutAlpha', className: ot })],
                     }),
                     _.jsx(m.div, {
-                        style: b,
-                        children: _.jsx(pe, { settings: us, children: _.jsx(tt, { currentAnimationState: n }) }),
+                        style: h,
+                        children: _.jsx(ge, { settings: us, children: _.jsx(st, { currentAnimationState: n }) }),
                     }),
                 ],
             })
         );
     });
-var mt = ((e) => ((e.DAILY = 'daily'), (e.WEEKLY = 'weekly'), e))(mt || {}),
-    ut = ((e) => (
+var dt = ((e) => ((e.DAILY = 'daily'), (e.WEEKLY = 'weekly'), e))(dt || {}),
+    _t = ((e) => (
         (e.DONE = 'done'),
         (e.IN_PROGRESS = 'inProgress'),
         (e.NOT_RECEIVED = 'notReceived'),
         (e.DEFAULT = 'default'),
         e
-    ))(ut || {}),
-    pt = ((e) => ((e.MAIN = 'main'), (e.OPERATION = 'operation'), (e.CAMPAIGN = 'campaign'), e))(pt || {}),
-    gt = ((e) => (
+    ))(_t || {}),
+    mt = ((e) => ((e.MAIN = 'main'), (e.OPERATION = 'operation'), (e.CAMPAIGN = 'campaign'), e))(mt || {}),
+    ut = ((e) => (
         (e.CAMPAIGN_FINISHED = 'campaignFinished'),
         (e.NOT_ALL_COMPLETED = 'notAllCompleted'),
         (e.NOT_ALL_COMPLETED_WITH_HONOR = 'notAllCompletedWithHonor'),
@@ -1771,8 +1782,8 @@ var mt = ((e) => ((e.DAILY = 'daily'), (e.WEEKLY = 'weekly'), e))(mt || {}),
         (e.ACTIVE = 'active'),
         (e.AVAILABLE = 'available'),
         e
-    ))(gt || {});
-function ft(e) {
+    ))(ut || {});
+function pt(e) {
     return Y(e, (e) => ({
         id: `quest_${e}`,
         questType: 'damage',
@@ -1780,64 +1791,64 @@ function ft(e) {
         summary: 'Kill them all',
     }));
 }
-(pt.MAIN,
-    pt.OPERATION,
-    pt.CAMPAIGN,
-    ut.DONE,
-    ut.DONE,
-    ut.DONE,
-    ut.DONE,
-    ut.DONE,
-    ut.DONE,
-    ut.DONE,
-    ut.DONE,
-    ut.NOT_RECEIVED,
-    ut.NOT_RECEIVED,
-    ut.IN_PROGRESS,
-    ut.DEFAULT,
-    ut.DEFAULT,
-    ut.DEFAULT,
-    ut.DEFAULT);
-const ht = [
+(mt.MAIN,
+    mt.OPERATION,
+    mt.CAMPAIGN,
+    _t.DONE,
+    _t.DONE,
+    _t.DONE,
+    _t.DONE,
+    _t.DONE,
+    _t.DONE,
+    _t.DONE,
+    _t.DONE,
+    _t.NOT_RECEIVED,
+    _t.NOT_RECEIVED,
+    _t.IN_PROGRESS,
+    _t.DEFAULT,
+    _t.DEFAULT,
+    _t.DEFAULT,
+    _t.DEFAULT);
+const gt = [
     { name: 'style_3d' },
     { name: 'premium_universal' },
     { name: 'camouflage' },
     { name: 'credits', value: '250 000' },
 ];
-(ia.ACTIVE, Le.ASSAULT, ft(2), ia.ACTIVE, Le.SNIPER, ft(2), ia.ACTIVE, Le.SUPPORT, ft(2), mt.DAILY, mt.WEEKLY);
-(Pe.ACTIVE,
-    Pe.AVAILABLE,
-    Pe.UNAVAILABLE,
-    Pe.COMPLETED,
-    Pe.AVAILABLE,
-    Pe.COMPLETED_WITH_HONORS,
-    gt.AVAILABLE,
+(ia.ACTIVE, Pe.ASSAULT, pt(2), ia.ACTIVE, Pe.SNIPER, pt(2), ia.ACTIVE, Pe.SUPPORT, pt(2), dt.DAILY, dt.WEEKLY);
+(Le.ACTIVE,
+    Le.AVAILABLE,
+    Le.UNAVAILABLE,
+    Le.COMPLETED,
+    Le.AVAILABLE,
+    Le.COMPLETED_WITH_HONORS,
+    ut.AVAILABLE,
     Be.ASSEMBLING);
-const bt = (e) =>
-        e < Nt.completedMissions
+const ft = (e) =>
+        e < ht.completedMissions
             ? { status: ia.COMPLETED, currentProgressValue: 4 }
-            : e === Nt.completedMissions
+            : e === ht.completedMissions
               ? { status: ia.ACTIVE, currentProgressValue: 2 }
-              : e === Nt.completedMissions + 1
+              : e === ht.completedMissions + 1
                 ? { status: ia.DISABLED, currentProgressValue: 0 }
                 : { status: ia.LOCKED, currentProgressValue: 0 },
-    It = [
+    bt = [
         { name: 'style_3d' },
         { name: 'premium_universal' },
         { name: 'camouflage' },
         { name: 'credits', value: '250 000' },
     ],
-    Nt = { maximumMissions: 15, completedMissions: 3, maxProgressValue: 4 },
-    vt = Y(Nt.maximumMissions, (e) => ({
-        missionStatus: bt(e + 1).status,
+    ht = { maximumMissions: 15, completedMissions: 3, maxProgressValue: 4 },
+    Nt = Y(ht.maximumMissions, (e) => ({
+        missionStatus: ft(e + 1).status,
         currentMissionNumber: e + 1,
-        allQuestsRequired: ge(),
-        currentProgressValue: bt(e + 1).currentProgressValue,
-        maxProgressValue: Nt.maxProgressValue,
-        rewards: It,
-        quests: ft(fe(1, 2)),
+        allQuestsRequired: fe(),
+        currentProgressValue: ft(e + 1).currentProgressValue,
+        maxProgressValue: ht.maxProgressValue,
+        rewards: bt,
+        quests: pt(be(1, 2)),
     })),
-    xt = {
+    It = {
         getter: he({
             missionsModel: {
                 allMissions: [
@@ -1847,9 +1858,9 @@ const bt = (e) =>
                         minRequiredVehicle: 6,
                         maxRequiredVehicle: 10,
                         missionsCategorizations: [
-                            { missionsCategory: Le.ASSAULT, missions: vt },
-                            { missionsCategory: Le.SNIPER, missions: vt },
-                            { missionsCategory: Le.SUPPORT, missions: vt },
+                            { missionsCategory: Pe.ASSAULT, missions: Nt },
+                            { missionsCategory: Pe.SNIPER, missions: Nt },
+                            { missionsCategory: Pe.SUPPORT, missions: Nt },
                         ],
                     },
                     {
@@ -1858,9 +1869,9 @@ const bt = (e) =>
                         minRequiredVehicle: 6,
                         maxRequiredVehicle: 10,
                         missionsCategorizations: [
-                            { missionsCategory: Le.ASSAULT, missions: vt },
-                            { missionsCategory: Le.SNIPER, missions: vt },
-                            { missionsCategory: Le.SUPPORT, missions: vt },
+                            { missionsCategory: Pe.ASSAULT, missions: Nt },
+                            { missionsCategory: Pe.SNIPER, missions: Nt },
+                            { missionsCategory: Pe.SUPPORT, missions: Nt },
                         ],
                     },
                     {
@@ -1869,39 +1880,39 @@ const bt = (e) =>
                         minRequiredVehicle: 6,
                         maxRequiredVehicle: 10,
                         missionsCategorizations: [
-                            { missionsCategory: Le.ASSAULT, missions: vt },
-                            { missionsCategory: Le.SNIPER, missions: vt },
-                            { missionsCategory: Le.SUPPORT, missions: vt },
+                            { missionsCategory: Pe.ASSAULT, missions: Nt },
+                            { missionsCategory: Pe.SNIPER, missions: Nt },
+                            { missionsCategory: Pe.SUPPORT, missions: Nt },
                         ],
                     },
                 ],
-                missionsCategory: Le.ASSAULT,
+                missionsCategory: Pe.ASSAULT,
             },
         }),
-        controls: () => P,
+        controls: () => L,
     },
-    Et = { context: 'model.missionsModel' };
-function yt() {
-    return _.jsx(Xs, { options: Et, mocks: xt, mode: 'real', children: _.jsx(_t, {}) });
+    vt = { context: 'model.missionsModel' };
+function xt() {
+    return _.jsx(Xs, { options: vt, mocks: It, mode: 'real', children: _.jsx(ct, {}) });
 }
-const St = 'Background_af83c19a',
-    Ot = 'Background_6cd490f5',
-    Ct = 'Background_noise_c5b84c8b';
-function wt({ className: e }) {
+const Et = 'Background_af83c19a',
+    yt = 'Background_6cd490f5',
+    St = 'Background_noise_c5b84c8b';
+function Ot({ className: e }) {
     return _.jsxs('div', {
-        className: u(St, e),
-        children: [_.jsx('div', { className: Ot }), _.jsx('div', { className: Ct })],
+        className: u(Et, e),
+        children: [_.jsx('div', { className: yt }), _.jsx('div', { className: St })],
     });
 }
-const jt = { rewardWidth: 296, detailWidth: 380 },
-    At = { rewardWidth: 248, detailWidth: 260 },
-    Mt = 'done',
-    Dt = 'inProgress';
-const Tt = new Set([Pe.COMPLETED, Pe.COMPLETED_WITH_HONORS]),
-    Lt = 'ProgressBar_13ab2776',
-    Pt = 'ProgressBar_progressBar_f19231cf',
-    Rt = 'ProgressBar_progressBackground_129fd0d3',
-    kt = p.memo(function (e) {
+const Ct = { rewardWidth: 296, detailWidth: 380 },
+    wt = { rewardWidth: 248, detailWidth: 260 },
+    jt = 'done',
+    At = 'inProgress';
+const Mt = new Set([Le.COMPLETED, Le.COMPLETED_WITH_HONORS]),
+    Dt = 'ProgressBar_13ab2776',
+    Tt = 'ProgressBar_progressBar_f19231cf',
+    Pt = 'ProgressBar_progressBackground_129fd0d3',
+    Lt = p.memo(function (e) {
         const s = C(
             Te.PROGRESSION,
             r.useMemo(
@@ -1912,46 +1923,46 @@ const Tt = new Set([Pe.COMPLETED, Pe.COMPLETED_WITH_HONORS]),
             ),
         );
         return _.jsx('div', {
-            className: Lt,
+            className: Dt,
             ...s,
-            children: _.jsx(be, {
+            children: _.jsx(Ne, {
                 size: 'medium',
                 value: e.value,
                 maxValue: e.maxValue,
-                className: Pt,
-                classNames: { background: Rt },
+                className: Tt,
+                classNames: { background: Pt },
                 children: _.jsx(Ie, { initValue: e.prevValue, initMaxValue: e.maxValue }),
             }),
         });
     }),
-    Vt = 'Divider_657ed92',
-    Bt = 'Divider_separator_5e4040d8',
-    Ht = 'Divider_base__completed_76b1f722',
-    $t = 'Divider_point_cccdd49a';
-function Qt({ operationState: e, maxPoint: s, className: a }) {
-    const t = Tt.has(e);
+    Rt = 'Divider_657ed92',
+    kt = 'Divider_separator_5e4040d8',
+    Vt = 'Divider_base__completed_76b1f722',
+    Bt = 'Divider_point_cccdd49a';
+function Ht({ operationState: e, maxPoint: s, className: a }) {
+    const t = Mt.has(e);
     return _.jsxs('div', {
-        className: u(Vt, t && Ht, a),
-        children: [_.jsx('div', { className: Bt }), !t && _.jsx('div', { className: $t, children: s })],
+        className: u(Rt, t && Vt, a),
+        children: [_.jsx('div', { className: kt }), !t && _.jsx('div', { className: Bt, children: s })],
     });
 }
-const Wt = {
+const $t = {
     border: 'ContentWrapper_border_e0f7c2c',
     border__bottom: 'ContentWrapper_border__bottom_e728cfac',
     border__top: 'ContentWrapper_border__top_89652dc7',
 };
-function Ut({ children: e }) {
+function Qt({ children: e }) {
     return _.jsxs(_.Fragment, {
         children: [
-            _.jsx(Hs, { className: u(Wt.border, Wt.border__top) }),
+            _.jsx(Hs, { className: u($t.border, $t.border__top) }),
             e,
-            _.jsx(Hs, { className: u(Wt.border, Wt.border__bottom) }),
+            _.jsx(Hs, { className: u($t.border, $t.border__bottom) }),
         ],
     });
 }
-const qt = 'InProgress_status_a90e1754',
-    Ft = 'InProgress_point_12655571';
-function Yt({ earnedPoint: e, id: s, maxPoint: a }) {
+const Wt = 'InProgress_status_a90e1754',
+    Ut = 'InProgress_point_12655571';
+function qt({ earnedPoint: e, id: s, maxPoint: a }) {
     const t = O.resolve('strings'),
         i = C(
             Te.PM3_POINTS,
@@ -1962,17 +1973,17 @@ function Yt({ earnedPoint: e, id: s, maxPoint: a }) {
                 [],
             ),
         );
-    return _.jsx(Ut, {
-        children: _.jsx(D, {
+    return _.jsx(Qt, {
+        children: _.jsx(V, {
             ...i,
-            className: qt,
+            className: Wt,
             path: 'personal_missions_30.main.progression.detail.status.active',
             params: {
                 icon: _.jsx(w, {
                     path: 'personal_missions_30.points.c_24x24',
                     width: '24rem',
                     height: '24rem',
-                    className: Ft,
+                    className: Ut,
                 }),
                 detailName: t.readOrEmpty(`personal_missions_30.detail.name.${s}`),
                 earnedPoint: e,
@@ -1981,14 +1992,14 @@ function Yt({ earnedPoint: e, id: s, maxPoint: a }) {
         }),
     });
 }
-const zt = 'NotReceived_wrapper_4d14069c',
-    Gt = 'NotReceived_button_75c05936',
-    Kt = 'NotReceived_buttonContent_bee7d2fd',
-    Xt = 'NotReceived_glareAttention_c2d53c79',
-    Zt = l(function ({ firstElementByStatus: e, id: s, onClaim: a }) {
+const Ft = 'NotReceived_wrapper_4d14069c',
+    Yt = 'NotReceived_button_75c05936',
+    zt = 'NotReceived_buttonContent_bee7d2fd',
+    Gt = 'NotReceived_glareAttention_c2d53c79',
+    Kt = l(function ({ firstElementByStatus: e, id: s, onClaim: a }) {
         const { controls: t } = gs(),
             i = O.resolve('strings'),
-            { animationInProgress: n } = bs(),
+            { animationInProgress: n } = hs(),
             o = C(
                 Te.CUSTOM_SIMPLE,
                 r.useMemo(
@@ -2010,28 +2021,28 @@ const zt = 'NotReceived_wrapper_4d14069c',
                 delay: 3e3,
                 config: { duration: 1e3, easing: y.easeOutCirc },
             }));
-        return _.jsx(Ut, {
+        return _.jsx(Qt, {
             children: _.jsxs('div', {
-                className: zt,
+                className: Ft,
                 children: [
                     _.jsx(j, {
                         disabled: !e,
                         theme: 'primary',
                         size: 'small',
-                        className: Gt,
-                        classNames: { content: Kt },
+                        className: Yt,
+                        classNames: { content: zt },
                         ...o,
                         onClick: function () {
                             (o.onClick(), n || a(s));
                         },
                         children: i.readOrEmpty('personal_missions_30.main.progression.button'),
                     }),
-                    e && _.jsx(m.div, { style: l, className: Xt }),
+                    e && _.jsx(m.div, { style: l, className: Gt }),
                 ],
             }),
         });
     }),
-    Jt = {
+    Xt = {
         base: 'Detail_391b711d',
         content: 'Detail_content_f72ba27c',
         wrapper: 'Detail_wrapper_959320e3',
@@ -2059,7 +2070,7 @@ const zt = 'NotReceived_wrapper_4d14069c',
         divider__last: 'Detail_divider__last_4e63ed3b',
         video: 'Detail_video_82d3b729',
     },
-    ei = l(function ({ index: e, detail: s, detailsLength: a, className: t }) {
+    Zt = l(function ({ index: e, detail: s, detailsLength: a, className: t }) {
         const i = O.resolve('strings'),
             n = O.resolve('videos'),
             o = O.resolve('sounds'),
@@ -2067,12 +2078,12 @@ const zt = 'NotReceived_wrapper_4d14069c',
             p = l.computes.activeOperation(),
             g = l.currentState.get(),
             f = l.computes.requiredDetailsPoint(),
-            [h, b] = r.useState(s),
-            I = l.computes.firstDetailIndexByStatus(ut.NOT_RECEIVED) === e,
-            N = l.activeDetailId.get(),
-            v = h.status === ut.DONE,
-            x = N === h.id,
-            { animationInProgress: E } = bs(),
+            [b, h] = r.useState(s),
+            N = l.computes.firstDetailIndexByStatus(_t.NOT_RECEIVED) === e,
+            I = l.activeDetailId.get(),
+            v = b.status === _t.DONE,
+            x = I === b.id,
+            { animationInProgress: E } = hs(),
             y = C(
                 Te.CUSTOM_SIMPLE,
                 r.useMemo(
@@ -2092,7 +2103,7 @@ const zt = 'NotReceived_wrapper_4d14069c',
         function A(e, s) {
             (g === _s && (l.activeDetailId.set(s), ts.send({ type: 'TO_DETAIL_INFO', detailId: s, action: e })),
                 g === ds &&
-                    ('' === N
+                    ('' === I
                         ? (e === os && (l.activeDetailId.set(s), c.showDetailInfo(s)),
                           e === ns && ts.send({ type: 'HIDE_DETAIL_INFO', detailId: s, action: e }))
                         : ts.send({ type: 'HIDE_DETAIL_INFO', detailId: s, action: e })));
@@ -2101,90 +2112,90 @@ const zt = 'NotReceived_wrapper_4d14069c',
             (y.onClick(),
                 x ||
                     E ||
-                    (v && (o.play('yes1'), A(os, e)), I && (c.updateAnimationState(He.ANIMATION_STARTED), A(ns, e))));
+                    (v && (o.play('yes1'), A(os, e)), N && (c.updateAnimationState(He.ANIMATION_STARTED), A(ns, e))));
         }
         if (
             (r.useEffect(() => {
-                h.status !== s.status
+                b.status !== s.status
                     ? j.start({
                           opacity: 0,
                           onRest: () => {
-                              (b({ ...s }), j.start({ opacity: 1, delay: 150 }));
+                              (h({ ...s }), j.start({ opacity: 1, delay: 150 }));
                           },
                       })
-                    : h.earnedPoint !== s.earnedPoint && b({ ...s });
-            }, [j, s, h.status, h.earnedPoint]),
+                    : b.earnedPoint !== s.earnedPoint && h({ ...s });
+            }, [j, s, b.status, b.earnedPoint]),
             p && f)
         )
             return _.jsxs('div', {
                 'data-name': 'Detail',
                 className: u(
-                    Jt.base,
-                    Jt[`base__${h.status}`],
-                    Jt[`base__${p.operationState}`],
-                    x && v && Jt.base__selected,
-                    I && Jt.base__firstNotReceived,
+                    Xt.base,
+                    Xt[`base__${b.status}`],
+                    Xt[`base__${p.operationState}`],
+                    x && v && Xt.base__selected,
+                    N && Xt.base__firstNotReceived,
                     t,
                 ),
                 children: [
                     0 === e &&
-                        _.jsx(Qt, {
+                        _.jsx(Ht, {
                             maxPoint: 0,
                             operationState: p.operationState,
-                            className: u(Jt.divider, Jt.divider__first),
+                            className: u(Xt.divider, Xt.divider__first),
                         }),
-                    _.jsx('div', { className: Jt.background }),
-                    _.jsx('div', { className: Jt.glow }),
+                    _.jsx('div', { className: Xt.background }),
+                    _.jsx('div', { className: Xt.glow }),
                     _.jsx(m.div, {
                         style: S,
-                        className: Jt.wrapper,
+                        className: Xt.wrapper,
                         children:
-                            I &&
-                            _.jsx(Ne, {
+                            N &&
+                            _.jsx(ve, {
                                 src: n.readOrEmpty('personal_missions_30.main.detail_glow'),
-                                className: Jt.video,
+                                className: Xt.video,
                                 loop: !0,
                                 autoplay: !0,
                             }),
                     }),
                     _.jsxs('div', {
-                        className: Jt.content,
+                        className: Xt.content,
                         children: [
                             _.jsx('div', {
-                                className: Jt.detailName,
-                                children: i.readOrEmpty(`personal_missions_30.detail.name.${h.id}`),
+                                className: Xt.detailName,
+                                children: i.readOrEmpty(`personal_missions_30.detail.name.${b.id}`),
                             }),
                             _.jsx(w, {
-                                path: `personal_missions_30.vehicle_detail.c_400x150.${h.id}`,
-                                className: Jt.detail,
+                                path: `personal_missions_30.vehicle_detail.c_400x150.${b.id}`,
+                                className: Xt.detail,
                                 ...(!x && !v && y),
-                                onClick: () => M(h.id),
-                                onMouseEnter: function () {
-                                    (!x && !v && y.onMouseEnter(), ((v && !x) || I) && o.play('bp_improved_reward'));
+                                onClick: () => M(b.id),
+                                onMouseEnter: function (e) {
+                                    (!x && !v && y.onMouseEnter(e), ((v && !x) || N) && o.play('bp_improved_reward'));
                                 },
                             }),
-                            _.jsx(w, { path: 'personal_missions_30.main.progression.arrow', className: Jt.arrow }),
+                            _.jsx(w, { path: 'personal_missions_30.main.progression.arrow', className: Xt.arrow }),
                             _.jsx(w, {
                                 path: 'personal_missions_30.main.progression.preview_icon',
-                                className: Jt.preview,
+                                className: Xt.preview,
                             }),
                             _.jsx(m.div, {
                                 style: S,
-                                className: u(Jt.wrapper, h.status === ut.DONE && Jt.wrapper__disabled),
+                                className: u(Xt.wrapper, b.status === _t.DONE && Xt.wrapper__disabled),
                                 children: (() => {
-                                    switch (h.status) {
-                                        case ut.IN_PROGRESS:
-                                            return _.jsx(Yt, { ...h });
-                                        case ut.NOT_RECEIVED:
-                                            return _.jsx(Zt, { id: h.id, firstElementByStatus: I, onClaim: M });
+                                    switch (b.status) {
+                                        case _t.IN_PROGRESS:
+                                            return _.jsx(qt, { ...b });
+                                        case _t.NOT_RECEIVED:
+                                            return _.jsx(Kt, { id: b.id, firstElementByStatus: N, onClaim: M });
                                     }
                                 })(),
                             }),
-                            _.jsx(D, {
+                            _.jsx(V, {
                                 path: 'personal_missions_30.main.progression.detailNumber',
                                 className: u(
-                                    Jt.detailNumber,
-                                    h.status === ut.IN_PROGRESS && Jt.detailNumber__inProgress,
+                                    Xt.detailNumber,
+                                    b.status === _t.IN_PROGRESS && Xt.detailNumber__inProgress,
                                 ),
                                 params: {
                                     number: String(e + 1).padStart(
@@ -2195,17 +2206,17 @@ const zt = 'NotReceived_wrapper_4d14069c',
                             }),
                         ],
                     }),
-                    _.jsx(Qt, {
+                    _.jsx(Ht, {
                         maxPoint: f[e],
-                        className: u(Jt.divider, e === a - 1 && Jt.divider__last),
+                        className: u(Xt.divider, e === a - 1 && Xt.divider__last),
                         operationState: p.operationState,
                     }),
                 ],
             });
     }),
-    si = 'Progress_dc1d47d2',
-    ai = 'Progress_wrapper_95c599d8';
-function ti(e, s, a, t = []) {
+    Jt = 'Progress_dc1d47d2',
+    ei = 'Progress_wrapper_95c599d8';
+function si(e, s, a, t = []) {
     const i = t.findIndex((e) => e >= s),
         n = t[i];
     if (0 === s || -1 === i || void 0 === n) return s;
@@ -2213,7 +2224,7 @@ function ti(e, s, a, t = []) {
     if (!o) return 0;
     return i * e + ((s - (n - o.maxPoint)) / o.maxPoint) * e;
 }
-const ii = l(
+const ai = l(
         r.forwardRef(function ({ className: e }, s) {
             const { model: a } = gs(),
                 t = a.computes.activeOperation(),
@@ -2222,23 +2233,23 @@ const ii = l(
             const { operationId: n, details: o, maxValue: r, value: l, deltaFrom: c, operationState: d } = t,
                 m = o.length,
                 p = r / m,
-                g = ti(p, l, o, i),
-                f = ti(p, c, o, i);
+                g = si(p, l, o, i),
+                f = si(p, c, o, i);
             return _.jsxs('div', {
-                className: u(si, e),
+                className: u(Jt, e),
                 ref: s,
                 children: [
-                    !Tt.has(d) &&
+                    !Mt.has(d) &&
                         _.jsx('div', {
-                            className: ai,
-                            children: _.jsx(kt, { value: g, prevValue: f, maxValue: r }, n),
+                            className: ei,
+                            children: _.jsx(Lt, { value: g, prevValue: f, maxValue: r }, n),
                         }),
-                    o.map((e, s) => _.jsx(ei, { index: s, detail: e, detailsLength: m }, e.id)),
+                    o.map((e, s) => _.jsx(Zt, { index: s, detail: e, detailsLength: m }, e.id)),
                 ],
             });
         }),
     ),
-    ni = {
+    ti = {
         base: 'AdditionalReward_2db51724',
         title: 'AdditionalReward_title_9b676874',
         items: 'AdditionalReward_items_e9141083',
@@ -2250,9 +2261,9 @@ const ii = l(
         bold: 'AdditionalReward_bold_22e4e246',
         icon: 'AdditionalReward_icon_286945a9',
     };
-function oi({ reward: { completedTasks: e, items: s, rewardsType: a, tasksNumber: t }, index: i }) {
+function ii({ reward: { completedTasks: e, items: s, rewardsType: a, tasksNumber: t }, index: i }) {
     const n = O.resolve('strings'),
-        o = e === t ? Mt : Dt,
+        o = e === t ? jt : At,
         l = C(
             Te.CUSTOM_SIMPLE,
             r.useMemo(
@@ -2264,38 +2275,38 @@ function oi({ reward: { completedTasks: e, items: s, rewardsType: a, tasksNumber
             ),
         );
     return _.jsxs('div', {
-        className: u(ni.base, ni[`base__${o}`], 0 === i && ni.status__hidden),
+        className: u(ti.base, ti[`base__${o}`], 0 === i && ti.status__hidden),
         children: [
-            _.jsx(D, { ...l, className: ni.title, path: `personal_missions_30.main.progression.reward.title.${a}` }),
+            _.jsx(V, { ...l, className: ti.title, path: `personal_missions_30.main.progression.reward.title.${a}` }),
             _.jsx('div', {
-                className: ni.items,
+                className: ti.items,
                 children: s.map((e, s) =>
-                    _.jsx('div', { className: ni.reward, children: _.jsx(J, { ...ke(e, ee.Big) }) }, s),
+                    _.jsx('div', { className: ti.reward, children: _.jsx(ee, { ...ke(e, se.Big) }) }, s),
                 ),
             }),
             _.jsx('div', {
-                className: ni.status,
+                className: ti.status,
                 children: (() => {
                     switch (o) {
-                        case Dt:
+                        case At:
                             return (
-                                a !== pt.MAIN &&
-                                _.jsx(D, {
+                                a !== mt.MAIN &&
+                                _.jsx(V, {
                                     path: `personal_missions_30.main.progression.reward.status.inProgress.${a}`,
                                     params: {
-                                        completedTasks: _.jsx('div', { className: ni.bold, children: e }),
-                                        tasksNumber: _.jsx('div', { className: ni.bold, children: t }),
+                                        completedTasks: _.jsx('div', { className: ti.bold, children: e }),
+                                        tasksNumber: _.jsx('div', { className: ti.bold, children: t }),
                                     },
                                 })
                             );
-                        case Mt:
+                        case jt:
                             return _.jsxs(_.Fragment, {
                                 children: [
                                     _.jsx(w, {
                                         path: 'personal_missions_30.main.progression.arrow__small',
                                         height: '24rem',
                                         width: '24rem',
-                                        className: ni.icon,
+                                        className: ti.icon,
                                     }),
                                     _.jsx(_.Fragment, {
                                         children: n.readOrEmpty(
@@ -2312,21 +2323,21 @@ function oi({ reward: { completedTasks: e, items: s, rewardsType: a, tasksNumber
         ],
     });
 }
-const ri = 'MainReward_fc423f8a',
-    li = 'MainReward_vehicle_79e7db29',
-    ci = 'MainReward_vehicleInfo_567bd76c',
-    di = 'MainReward_vehicleName_2f6f9e18',
-    _i = 'MainReward_preview_ac8bfcb1',
-    mi = 'MainReward_button_10f377d',
-    ui = 'MainReward_buttonContent_e44cd18e',
-    pi = l(function ({ className: e }) {
+const ni = 'MainReward_fc423f8a',
+    oi = 'MainReward_vehicle_79e7db29',
+    ri = 'MainReward_vehicleInfo_567bd76c',
+    li = 'MainReward_vehicleName_2f6f9e18',
+    ci = 'MainReward_preview_ac8bfcb1',
+    di = 'MainReward_button_10f377d',
+    _i = 'MainReward_buttonContent_e44cd18e',
+    mi = l(function ({ className: e }) {
         const s = O.resolve('strings'),
             a = O.resolve('sounds'),
             { model: t, controls: i } = gs(),
             n = t.computes.activeOperation(),
             o = t.activeOperationId.get(),
             { isElite: r, vehicleLvl: l, vehicleType: c, vehicleShortName: d } = t.vehicle.get(),
-            { animationInProgress: m } = bs();
+            { animationInProgress: m } = hs();
         function p() {
             m ||
                 ((null == n ? void 0 : n.vehicleInHangar)
@@ -2334,16 +2345,16 @@ const ri = 'MainReward_fc423f8a',
                     : (a.play('yes'), i.showVehiclePreview()));
         }
         return _.jsxs('div', {
-            className: u(ri, e),
+            className: u(ni, e),
             'data-name': 'MainReward',
             children: [
-                _.jsx(w, { className: li, path: `personal_missions_30.operation_vehicle.c_296x222.vehicle_3_${o}` }),
+                _.jsx(w, { className: oi, path: `personal_missions_30.operation_vehicle.c_296x222.vehicle_3_${o}` }),
                 (null == n ? void 0 : n.vehicleInHangar)
                     ? _.jsx(j, {
                           theme: 'secondary',
                           size: 'small',
-                          className: mi,
-                          classNames: { content: ui },
+                          className: di,
+                          classNames: { content: _i },
                           onClick: p,
                           children: s.readOrEmpty('personal_missions_30.main.progression.reward.previewButton'),
                       })
@@ -2351,52 +2362,52 @@ const ri = 'MainReward_fc423f8a',
                           path: 'personal_missions_30.main.progression.preview_icon',
                           width: '100rem',
                           height: '100rem',
-                          className: _i,
+                          className: ci,
                           onClick: p,
                           onMouseEnter: function () {
                               m || a.play('highlight');
                           },
                       }),
-                _.jsxs(ve, {
-                    className: ci,
+                _.jsxs(xe, {
+                    className: ri,
                     children: [
-                        _.jsx(ve.Level, { className: di, value: l, numberType: 'roman' }),
-                        xe(c) && _.jsx(ve.Type, { type: c, premium: r }),
-                        _.jsx(ve.Name, { className: di, children: d }),
+                        _.jsx(xe.Level, { className: li, value: l, numberType: 'roman' }),
+                        Ee(c) && _.jsx(xe.Type, { type: c, premium: r }),
+                        _.jsx(xe.Name, { className: li, children: d }),
                     ],
                 }),
             ],
         });
     }),
-    gi = 'Rewards_855b83d9',
-    fi = 'Rewards_reward_17816b38',
-    hi = 'Rewards_divider_f047eb1d',
-    bi = 'Rewards_mainReward_feb5fd02',
-    Ii = l(
+    ui = 'Rewards_855b83d9',
+    pi = 'Rewards_reward_17816b38',
+    gi = 'Rewards_divider_f047eb1d',
+    fi = 'Rewards_mainReward_feb5fd02',
+    bi = l(
         r.forwardRef(function ({ className: e }, s) {
             const { model: a } = gs(),
                 t = a.computes.activeOperation();
             if (t)
                 return _.jsxs('div', {
                     ref: s,
-                    className: u(gi, e),
+                    className: u(ui, e),
                     children: [
-                        _.jsx('div', { className: fi, children: _.jsx(pi, { className: bi }) }),
+                        _.jsx('div', { className: pi, children: _.jsx(mi, { className: fi }) }),
                         t.rewards.map((e, s) =>
                             _.jsx(
                                 'div',
                                 {
                                     children: _.jsxs('div', {
-                                        className: fi,
+                                        className: pi,
                                         children: [
                                             s > 0 &&
                                                 _.jsx(w, {
                                                     path: 'personal_missions_30.main.progression.divider',
                                                     width: '3rem',
                                                     height: '110rem',
-                                                    className: hi,
+                                                    className: gi,
                                                 }),
-                                            _.jsx(oi, { index: s, reward: e }),
+                                            _.jsx(ii, { index: s, reward: e }),
                                         ],
                                     }),
                                 },
@@ -2407,7 +2418,7 @@ const ri = 'MainReward_fc423f8a',
                 });
         }),
     ),
-    Ni = {
+    hi = {
         base: 'Progression_cd193b8c',
         content: 'Progression_content_5aca907b',
         content__disabled: 'Progression_content__disabled_884002f1',
@@ -2427,28 +2438,28 @@ const ri = 'MainReward_fc423f8a',
         background: 'Progression_background_d1d356ae',
         bar: 'Progression_bar_e8c74acd',
     },
-    vi = l(function ({ className: e }) {
+    Ni = l(function ({ className: e }) {
         const s = r.useRef(null),
             a = r.useRef(null),
-            { api: t } = re(),
-            i = K(),
-            n = K(),
-            { animationInProgress: o } = bs(),
+            { api: t } = le(),
+            i = X(),
+            n = X(),
+            { animationInProgress: o } = hs(),
             l = c(ts, (e) => e.value),
-            d = Ee(l),
-            m = le(),
+            d = ye(l),
+            m = ce(),
             [p, f] = r.useState('hidden'),
-            h = ce(t, _e.horizontal, void 0, { gapBeforeStart: 5 }),
-            { model: b } = gs(),
-            I = b.computes.activeOperation(),
-            N = b.activeOperationId.get(),
-            v = b.computes.firstDetailIndexByStatus(ut.NOT_RECEIVED),
-            E = b.computes.firstDetailIndexByStatus(ut.IN_PROGRESS),
+            b = de(t, me.horizontal, void 0, { gapBeforeStart: 5 }),
+            { model: h } = gs(),
+            N = h.computes.activeOperation(),
+            I = h.activeOperationId.get(),
+            v = h.computes.firstDetailIndexByStatus(_t.NOT_RECEIVED),
+            E = h.computes.firstDetailIndexByStatus(_t.IN_PROGRESS),
             y = -1 === v ? E : v,
-            { breakpoint: S } = F(),
-            w = Re(S.weight, z.large) ? At : jt,
-            j = G(w.rewardWidth),
-            A = G(w.detailWidth),
+            { breakpoint: S } = z(),
+            w = Re(S.weight, G.large) ? wt : Ct,
+            j = K(w.rewardWidth),
+            A = K(w.detailWidth),
             M = C(
                 Te.CUSTOM_SIMPLE,
                 r.useMemo(
@@ -2464,12 +2475,12 @@ const ri = 'MainReward_fc423f8a',
                 ),
             );
         function D() {
-            void 0 !== y && (m.play('carouselButton'), M.onClick(), P(y));
-        }
-        function L() {
-            (m.play('mouse-enter'), M.onMouseEnter());
+            void 0 !== y && (m.play('carouselButton'), M.onClick(), L(y));
         }
         function P(e) {
+            (m.play('mouse-enter'), M.onMouseEnter(e));
+        }
+        function L(e) {
             i.run(() => {
                 const a = s.current,
                     [i, n] = t.getBounds(),
@@ -2482,18 +2493,18 @@ const ri = 'MainReward_fc423f8a',
         }
         function R(e) {
             if (o) return;
-            const s = b.computes.nextActiveDetail(e);
+            const s = h.computes.nextActiveDetail(e);
             s &&
                 s.index !== v &&
                 s.index !== E &&
-                (ts.send({ type: 'HIDE_DETAIL_INFO', detailId: s.detail.id, action: os }), P(s.index));
+                (ts.send({ type: 'HIDE_DETAIL_INFO', detailId: s.detail.id, action: os }), L(s.index));
         }
         return (
             T(x.ARROW_LEFT, () => R(x.ARROW_LEFT)),
             T(x.ARROW_RIGHT, () => R(x.ARROW_RIGHT)),
             r.useEffect(() => {
-                void 0 !== y && (l !== as || (d !== Qe && void 0 !== d) || P(y));
-            }, [N, l]),
+                void 0 !== y && (l !== as || (d !== Qe && void 0 !== d) || L(y));
+            }, [I, l]),
             r.useEffect(() => {
                 const e = () => {
                     const e = s.current,
@@ -2502,7 +2513,7 @@ const ri = 'MainReward_fc423f8a',
                         r = t.animationScroll.scrollPosition.get(),
                         l = t.getWrapperSize();
                     if (!e || !i || !l) return;
-                    if (I && !Tt.has(I.operationState)) {
+                    if (N && !Mt.has(N.operationState)) {
                         const s = o - e.offsetWidth + j;
                         if (r <= s) {
                             const a = Math.ceil(s - r);
@@ -2533,26 +2544,26 @@ const ri = 'MainReward_fc423f8a',
                             t.events.off('resizeHandled', e));
                     }
                 );
-            }, [I, t, A, y, E, v, j, n]),
+            }, [N, t, A, y, E, v, j, n]),
             _.jsxs('div', {
                 'data-name': 'Progression',
-                className: u(Ni.base, Ni[`base__${null == I ? void 0 : I.operationState}`], Ni[`base__${p}`], e),
+                className: u(hi.base, hi[`base__${null == N ? void 0 : N.operationState}`], hi[`base__${p}`], e),
                 children: [
-                    _.jsx('div', { className: u(Ni.shadow, Ni.shadow__left) }),
-                    _.jsx('div', { className: u(Ni.shadow, Ni.shadow__right) }),
+                    _.jsx('div', { className: u(hi.shadow, hi.shadow__left) }),
+                    _.jsx('div', { className: u(hi.shadow, hi.shadow__right) }),
                     _.jsxs('div', {
-                        className: Ni.wrapper,
+                        className: hi.wrapper,
                         children: [
-                            _.jsx(wt, { className: Ni.background }),
-                            _.jsx(de, {
-                                className: Ni.scroll,
-                                areaClassName: Ni.scrollArea,
-                                barClassNames: { base: Ni.bar },
+                            _.jsx(Ot, { className: hi.background }),
+                            _.jsx(_e, {
+                                className: hi.scroll,
+                                areaClassName: hi.scrollArea,
+                                barClassNames: { base: hi.bar },
                                 children: _.jsxs('div', {
-                                    className: u(Ni.content, o && Ni.content__disabled),
+                                    className: u(hi.content, o && hi.content__disabled),
                                     children: [
-                                        _.jsx(ii, { ref: a, className: Ni.progressbar }),
-                                        _.jsx(Ii, { ref: s, className: Ni.rewards }),
+                                        _.jsx(ai, { ref: a, className: hi.progressbar }),
+                                        _.jsx(bi, { ref: s, className: hi.rewards }),
                                     ],
                                 }),
                             }),
@@ -2564,8 +2575,8 @@ const ri = 'MainReward_fc423f8a',
                         arrowDirection: 'left',
                         ...M,
                         onClick: D,
-                        onMouseEnter: L,
-                        className: u(Ni.arrowButton, Ni.arrowButton__left, 'left' === p && Ni.arrowButton__visible),
+                        onMouseEnter: P,
+                        className: u(hi.arrowButton, hi.arrowButton__left, 'left' === p && hi.arrowButton__visible),
                     }),
                     _.jsx(da, {
                         silent: !0,
@@ -2573,36 +2584,36 @@ const ri = 'MainReward_fc423f8a',
                         arrowDirection: 'right',
                         ...M,
                         onClick: D,
-                        onMouseEnter: L,
-                        className: u(Ni.arrowButton, Ni.arrowButton__right, 'right' === p && Ni.arrowButton__visible),
+                        onMouseEnter: P,
+                        className: u(hi.arrowButton, hi.arrowButton__right, 'right' === p && hi.arrowButton__visible),
                     }),
-                    g.createPortal('dragging' === h.type && _.jsx(et, {}), document.body),
+                    g.createPortal('dragging' === b.type && _.jsx(Za, {}), document.body),
                 ],
             })
         );
     }),
-    xi = new Set([
-        gt.PRECEDING_OPERATION_NOT_COMPLETED,
-        gt.PAUSED,
-        gt.NEXT_OPERATION_AVAILABLE,
-        gt.COMPLETED,
-        gt.AVAILABLE,
+    Ii = new Set([
+        ut.PRECEDING_OPERATION_NOT_COMPLETED,
+        ut.PAUSED,
+        ut.NEXT_OPERATION_AVAILABLE,
+        ut.COMPLETED,
+        ut.AVAILABLE,
     ]),
-    Ei = new Set([gt.REQUIRES_VEHICLE, gt.PRECEDING_OPERATION_NOT_COMPLETED, gt.VEHICLE_IS_IN_BATTLE]),
-    yi = {
-        [gt.REQUIRES_VEHICLE]: 'lock_closed',
-        [gt.PRECEDING_OPERATION_NOT_COMPLETED]: 'lock_closed',
-        [gt.VEHICLE_IS_IN_BATTLE]: 'lock_closed',
-        [gt.PAUSED]: 'pause',
-        [gt.NEXT_OPERATION_AVAILABLE]: 'checkMark',
-        [gt.COMPLETED]: 'checkMark',
-        [gt.AVAILABLE]: null,
-        [gt.ACTIVE]: null,
-        [gt.CAMPAIGN_FINISHED]: null,
-        [gt.NOT_ALL_COMPLETED]: null,
-        [gt.NOT_ALL_COMPLETED_WITH_HONOR]: null,
+    vi = new Set([ut.REQUIRES_VEHICLE, ut.PRECEDING_OPERATION_NOT_COMPLETED, ut.VEHICLE_IS_IN_BATTLE]),
+    xi = {
+        [ut.REQUIRES_VEHICLE]: 'lock_closed',
+        [ut.PRECEDING_OPERATION_NOT_COMPLETED]: 'lock_closed',
+        [ut.VEHICLE_IS_IN_BATTLE]: 'lock_closed',
+        [ut.PAUSED]: 'pause',
+        [ut.NEXT_OPERATION_AVAILABLE]: 'checkMark',
+        [ut.COMPLETED]: 'checkMark',
+        [ut.AVAILABLE]: null,
+        [ut.ACTIVE]: null,
+        [ut.CAMPAIGN_FINISHED]: null,
+        [ut.NOT_ALL_COMPLETED]: null,
+        [ut.NOT_ALL_COMPLETED_WITH_HONOR]: null,
     },
-    Si = {
+    Ei = {
         base: 'OperationStatus_7bc3be55',
         base__hasGradient: 'OperationStatus_base__hasGradient_3d20021',
         icon: 'OperationStatus_icon_e0618634',
@@ -2610,8 +2621,8 @@ const ri = 'MainReward_fc423f8a',
         glareAttention: 'OperationStatus_glareAttention_18133b71',
         buttonContent: 'OperationStatus_buttonContent_664edec7',
     },
-    Oi = new Set([gt.COMPLETED, gt.PAUSED, gt.AVAILABLE]),
-    Ci = l(function ({ currentAnimationState: e, className: s }) {
+    yi = new Set([ut.COMPLETED, ut.PAUSED, ut.AVAILABLE]),
+    Si = l(function ({ currentAnimationState: e, className: s }) {
         const a = O.resolve('strings'),
             t = O.resolve('images'),
             { model: i } = gs(),
@@ -2623,69 +2634,69 @@ const ri = 'MainReward_fc423f8a',
                 operationIdToPerform: c,
             } = i.status.get(),
             p = i.computes.operationStateToPerform(c),
-            g = yi[l],
-            h = l === gt.COMPLETED ? 'secondary' : 'primary',
-            { statusStyle: b } = bs(),
-            [I, N] = d(() => ({
+            g = xi[l],
+            b = l === ut.COMPLETED ? 'secondary' : 'primary',
+            { statusStyle: h } = hs(),
+            [N, I] = d(() => ({
                 from: { transform: 'translate(10%, -220%) rotate(30deg)' },
                 to: { transform: 'translate(-60%, 30%) rotate(30deg)' },
                 loop: !0,
-                delay: l === gt.NEXT_OPERATION_AVAILABLE ? 15e3 : 3e3,
+                delay: l === ut.NEXT_OPERATION_AVAILABLE ? 15e3 : 3e3,
                 config: { duration: 1e3, easing: f.easeOutCirc },
             }));
         return _.jsxs(m.div, {
-            style: b,
-            className: u(Si.base, Ei.has(l) && Si.base__hasGradient, s),
+            style: h,
+            className: u(Ei.base, vi.has(l) && Ei.base__hasGradient, s),
             children: [
                 g &&
                     _.jsx('div', {
-                        className: Si.icon,
+                        className: Ei.icon,
                         style: {
                             backgroundImage: `url(${t.readOrEmpty(`personal_missions_30.main.menu.icons.solid.${g}`)})`,
                         },
                     }),
-                _.jsx(D, {
+                _.jsx(V, {
                     path: `personal_missions_30.main.operation.status.${l}`,
                     params: (() => {
                         switch (l) {
-                            case gt.REQUIRES_VEHICLE:
-                                return { requiredVehicleLevel: V(r) };
-                            case gt.PAUSED:
-                            case gt.COMPLETED:
-                            case gt.AVAILABLE:
+                            case ut.REQUIRES_VEHICLE:
+                                return { requiredVehicleLevel: B(r) };
+                            case ut.PAUSED:
+                            case ut.COMPLETED:
+                            case ut.AVAILABLE:
                                 return { currentOperationName: n };
-                            case gt.NEXT_OPERATION_AVAILABLE:
+                            case ut.NEXT_OPERATION_AVAILABLE:
                                 return { currentOperationName: n, nextOperationName: o };
                             default:
                                 return {};
                         }
                     })(),
                 }),
-                xi.has(l) &&
-                    p !== Pe.LOCKED &&
+                Ii.has(l) &&
+                    p !== Le.LOCKED &&
                     _.jsxs('div', {
-                        className: Si.button,
+                        className: Ei.button,
                         children: [
                             _.jsx(j, {
                                 onClick: function () {
                                     e === as &&
-                                        (Oi.has(l)
+                                        (yi.has(l)
                                             ? ts.send({ type: 'UPDATE_STATUS' })
                                             : ts.send({ type: 'SWITCH_OPERATION', operationId: c }));
                                 },
-                                theme: h,
+                                theme: b,
                                 size: 'small',
-                                classNames: { content: u(Si.buttonContent, Si[`buttonContent__${h}`]) },
+                                classNames: { content: u(Ei.buttonContent, Ei[`buttonContent__${b}`]) },
                                 children: a.readOrEmpty(`personal_missions_30.main.operation.button.${l}`),
                             }),
-                            (l === gt.AVAILABLE || l === gt.NEXT_OPERATION_AVAILABLE) &&
-                                _.jsx(m.div, { style: I, className: Si.glareAttention }),
+                            (l === ut.AVAILABLE || l === ut.NEXT_OPERATION_AVAILABLE) &&
+                                _.jsx(m.div, { style: N, className: Ei.glareAttention }),
                         ],
                     }),
             ],
         });
     }),
-    wi = {
+    Oi = {
         base: 'State_c71b06cc',
         icon: 'State_icon_2d3ccaa3',
         base__selected: 'State_base__selected_9f725de9',
@@ -2697,31 +2708,31 @@ const ri = 'MainReward_fc423f8a',
         base__available: 'State_base__available_9f725de9',
         base__textHidden: 'State_base__textHidden_9f725de9',
     },
-    ji = {
-        [Pe.COMPLETED_WITH_HONORS]: 'checkMark_double',
-        [Pe.COMPLETED]: 'checkMark',
-        [Pe.ACTIVE]: 'triangularFlag',
-        [Pe.UNAVAILABLE]: 'lock_closed',
-        [Pe.AVAILABLE]: 'lock_open',
-        [Pe.LOCKED]: 'lock_closed',
+    Ci = {
+        [Le.COMPLETED_WITH_HONORS]: 'checkMark_double',
+        [Le.COMPLETED]: 'checkMark',
+        [Le.ACTIVE]: 'triangularFlag',
+        [Le.UNAVAILABLE]: 'lock_closed',
+        [Le.AVAILABLE]: 'lock_open',
+        [Le.LOCKED]: 'lock_closed',
     };
-function Ai({ state: e, selected: s, className: a }) {
+function wi({ state: e, selected: s, className: a }) {
     const t = O.resolve('strings');
     return _.jsxs('div', {
-        className: u(wi.base, wi[`base__${e}`], s ? wi.base__selected : wi.base__textHidden, a),
+        className: u(Oi.base, Oi[`base__${e}`], s ? Oi.base__selected : Oi.base__textHidden, a),
         children: [
-            _.jsx(w, { path: `personal_missions_30.main.menu.icons.${ji[e]}`, className: wi.icon }),
+            _.jsx(w, { path: `personal_missions_30.main.menu.icons.${Ci[e]}`, className: Oi.icon }),
             _.jsx('div', {
-                className: wi.text,
+                className: Oi.text,
                 children: t.readOrEmpty(`personal_missions_30.main.menuItem.state.${e}`),
             }),
         ],
     });
 }
-const Mi = 'VehicleName_c038d9d8',
-    Di = 'VehicleName_name_13a273f',
-    Ti = 'VehicleName_playVideoButton_10de3bdb',
-    Li = l(function ({ operationName: e }) {
+const ji = 'VehicleName_c038d9d8',
+    Ai = 'VehicleName_name_13a273f',
+    Mi = 'VehicleName_playVideoButton_10de3bdb',
+    Di = l(function ({ operationName: e }) {
         const { controls: s } = gs(),
             a = O.resolve('strings'),
             t = O.resolve('sounds'),
@@ -2738,11 +2749,11 @@ const Mi = 'VehicleName_c038d9d8',
                 ),
             );
         return _.jsxs('div', {
-            className: Mi,
+            className: ji,
             children: [
-                _.jsx('div', { className: Di, children: e }),
+                _.jsx('div', { className: Ai, children: e }),
                 _.jsx(w, {
-                    className: Ti,
+                    className: Mi,
                     path: 'personal_missions_30.main.menu.icons.solid.video',
                     width: 32,
                     height: 32,
@@ -2750,28 +2761,28 @@ const Mi = 'VehicleName_c038d9d8',
                     onClick: function () {
                         (t.play('yes'), s.playIntroVideoClick(), i.onClick());
                     },
-                    onMouseEnter: function () {
-                        (i.onMouseEnter(), t.play('highlight'));
+                    onMouseEnter: function (e) {
+                        (i.onMouseEnter(e), t.play('highlight'));
                     },
                 }),
             ],
         });
     }),
-    Pi = {
+    Ti = {
         base: 'MenuItem_d36069b6',
         base__selected: 'MenuItem_base__selected_b91feb1b',
         wrapper: 'MenuItem_wrapper_d941deee',
-        vehicleImage: 'MenuItem_vehicleImage_455d92b7',
+        vehicleImage: 'MenuItem_vehicleImage_1697986e',
         base__unavailable: 'MenuItem_base__unavailable_28be5e00',
         base__locked: 'MenuItem_base__locked_28be5e00',
         infoBox: 'MenuItem_infoBox_effb61f3',
         vehicleName: 'MenuItem_vehicleName_a562c8af',
         state: 'MenuItem_state_b65b146b',
     };
-function Ri({ state: e, operationId: s, operationIcon: a, operationName: t, selected: i }) {
+function Pi({ state: e, operationId: s, operationIcon: a, operationName: t, selected: i }) {
     const n = O.resolve('strings'),
         o = O.resolve('sounds'),
-        l = ye(
+        l = Se(
             'operation',
             r.useMemo(() => [s], [s]),
         ),
@@ -2785,13 +2796,13 @@ function Ri({ state: e, operationId: s, operationIcon: a, operationName: t, sele
                 [n],
             ),
         ),
-        d = h(e, {
+        d = b(e, {
             initial: { opacity: 1 },
             from: { opacity: 0 },
             enter: {
                 opacity: 1,
                 onStart() {
-                    e === Pe.ACTIVE && o.play('gui_hangar_ammunition_panel_removed_dk');
+                    e === Le.ACTIVE && o.play('gui_hangar_ammunition_panel_removed_dk');
                 },
             },
             leave: { opacity: 0 },
@@ -2799,14 +2810,14 @@ function Ri({ state: e, operationId: s, operationIcon: a, operationName: t, sele
             exitBeforeEnter: !0,
         });
     return _.jsx('div', {
-        className: u(Pi.base, Pi[`base__${e}`], i && Pi.base__selected),
+        className: u(Ti.base, Ti[`base__${e}`], i && Ti.base__selected),
         children: _.jsxs('div', {
-            className: Pi.wrapper,
-            ...(e === Pe.LOCKED ? c : l),
+            className: Ti.wrapper,
+            ...(e === Le.LOCKED ? c : l),
             children: [
                 _.jsx(w, {
                     path: `personal_missions_30.operation_vehicle.c_150x100.${a}`,
-                    className: Pi.vehicleImage,
+                    className: Ti.vehicleImage,
                     onMouseEnter: function () {
                         i || o.play('highlight');
                     },
@@ -2815,13 +2826,13 @@ function Ri({ state: e, operationId: s, operationIcon: a, operationName: t, sele
                     },
                 }),
                 _.jsxs('div', {
-                    className: Pi.infoBox,
+                    className: Ti.infoBox,
                     children: [
-                        _.jsx('div', { className: Pi.vehicleName, children: _.jsx(Li, { operationName: t }) }),
+                        _.jsx('div', { className: Ti.vehicleName, children: _.jsx(Di, { operationName: t }) }),
                         d((e, s) =>
                             _.jsx(m.div, {
                                 style: e,
-                                children: _.jsx(Ai, { selected: i, state: s, className: Pi.state }),
+                                children: _.jsx(wi, { selected: i, state: s, className: Ti.state }),
                             }),
                         ),
                     ],
@@ -2830,25 +2841,25 @@ function Ri({ state: e, operationId: s, operationIcon: a, operationName: t, sele
         }),
     });
 }
-const ki = 'Menu_f1a51291',
-    Vi = 'Menu_list_bb43d3a9',
-    Bi = 'Menu_status_3546b8c6',
-    Hi = 'Menu_chevron_64fd0b8c',
-    $i = new Set([gt.ACTIVE, gt.NOT_ALL_COMPLETED_WITH_HONOR, gt.NOT_ALL_COMPLETED, gt.CAMPAIGN_FINISHED]),
-    Qi = l(function ({ className: e }) {
+const Li = 'Menu_f1a51291',
+    Ri = 'Menu_list_bb43d3a9',
+    ki = 'Menu_status_3546b8c6',
+    Vi = 'Menu_chevron_64fd0b8c',
+    Bi = new Set([ut.ACTIVE, ut.NOT_ALL_COMPLETED_WITH_HONOR, ut.NOT_ALL_COMPLETED, ut.CAMPAIGN_FINISHED]),
+    Hi = l(function ({ className: e }) {
         const { model: s } = gs(),
             a = s.menuItems.get(),
             { status: t } = s.status.get(),
             i = s.activeOperationId.get(),
             n = c(ts, (e) => e.value),
-            { menuStyle: o } = bs();
+            { menuStyle: o } = hs();
         return _.jsxs(m.div, {
             style: o,
-            className: u(ki, e),
+            className: u(Li, e),
             children: [
                 _.jsx('div', {
-                    className: Vi,
-                    children: Se(a, (e, s) =>
+                    className: Ri,
+                    children: Oe(a, (e, s) =>
                         _.jsxs(
                             r.Fragment,
                             {
@@ -2859,7 +2870,7 @@ const ki = 'Menu_f1a51291',
                                                 (s = e.state),
                                                 (a = e.operationId),
                                                 void (
-                                                    s !== Pe.LOCKED &&
+                                                    s !== Le.LOCKED &&
                                                     n === as &&
                                                     i !== a &&
                                                     ts.send({ type: 'SWITCH_OPERATION', operationId: a })
@@ -2867,14 +2878,14 @@ const ki = 'Menu_f1a51291',
                                             );
                                             var s, a;
                                         },
-                                        children: _.jsx(Ri, { ...e, selected: i === e.operationId }),
+                                        children: _.jsx(Pi, { ...e, selected: i === e.operationId }),
                                     }),
                                     s !== a.length - 1 &&
                                         _.jsx(w, {
                                             path: 'personal_missions_30.main.menu.icons.chevron_right',
                                             width: 10,
                                             height: 26,
-                                            className: Hi,
+                                            className: Vi,
                                         }),
                                 ],
                             },
@@ -2882,35 +2893,35 @@ const ki = 'Menu_f1a51291',
                         ),
                     ),
                 }),
-                !$i.has(t) && _.jsx(Ci, { currentAnimationState: n, className: Bi }),
+                !Bi.has(t) && _.jsx(Si, { currentAnimationState: n, className: ki }),
             ],
         });
     }),
-    Wi = 'Completed_f9b3442',
-    Ui = 'Completed_image_68376a7c',
-    qi = 'Completed_title_53a638e0',
-    Fi = 'Completed_description_dd74aea4',
-    Yi = 'Completed_button_2f65c2e1',
-    zi = 'Completed_operation_681298f',
-    Gi = 'Completed_glow_a9f265a3',
-    Ki = 'Completed_rays_8566affd',
-    Xi = l(function ({ className: e }) {
+    $i = 'Completed_f9b3442',
+    Qi = 'Completed_image_68376a7c',
+    Wi = 'Completed_title_53a638e0',
+    Ui = 'Completed_description_dd74aea4',
+    qi = 'Completed_button_2f65c2e1',
+    Fi = 'Completed_operation_681298f',
+    Yi = 'Completed_glow_a9f265a3',
+    zi = 'Completed_rays_8566affd',
+    Gi = l(function ({ className: e }) {
         const s = O.resolve('strings'),
             { model: a } = gs(),
             { currentOperationName: t, nextOperationName: i, operationIdToPerform: n, status: o } = a.status.get(),
             r = a.computes.operationStateToPerform(n),
             l = a.campaignName.get(),
-            { breakpoint: c } = F(),
-            d = Re(c.weight, z.large) ? Oe.small : Oe.medium,
-            { completedStateStyle: p, animationInProgress: g } = bs();
+            { breakpoint: c } = z(),
+            d = Re(c.weight, G.large) ? Ce.small : Ce.medium,
+            { completedStateStyle: p, animationInProgress: g } = hs();
         return _.jsxs(m.div, {
             style: p,
-            className: u(Wi, e),
+            className: u($i, e),
             children: [
-                _.jsx('div', { className: Gi }),
-                _.jsx('div', { className: Ki }),
+                _.jsx('div', { className: Yi }),
+                _.jsx('div', { className: zi }),
                 _.jsx(w, {
-                    className: Ui,
+                    className: Qi,
                     path: 'personal_missions_30.campaign_selector.done_160',
                     width: '160rem',
                     height: '160rem',
@@ -2918,20 +2929,20 @@ const ki = 'Menu_f1a51291',
                         large: { width: 220, height: 220, path: 'personal_missions_30.campaign_selector.done_220' },
                     },
                 }),
-                _.jsx('div', { className: qi, children: s.readOrEmpty('personal_missions_30.main.complete.title') }),
-                _.jsx(D, {
-                    className: Fi,
+                _.jsx('div', { className: Wi, children: s.readOrEmpty('personal_missions_30.main.complete.title') }),
+                _.jsx(V, {
+                    className: Ui,
                     path: `personal_missions_30.main.complete.description.${o}`,
                     params: {
-                        currentOperationName: _.jsx('span', { className: zi, children: t }),
-                        nextOperationName: _.jsx('span', { className: zi, children: i }),
-                        campaignName: _.jsx('span', { className: zi, children: l }),
+                        currentOperationName: _.jsx('span', { className: Fi, children: t }),
+                        nextOperationName: _.jsx('span', { className: Fi, children: i }),
+                        campaignName: _.jsx('span', { className: Fi, children: l }),
                     },
                 }),
-                o !== gt.CAMPAIGN_FINISHED &&
-                    r !== Pe.LOCKED &&
+                o !== ut.CAMPAIGN_FINISHED &&
+                    r !== Le.LOCKED &&
                     _.jsx(j, {
-                        className: Yi,
+                        className: qi,
                         theme: 'primary',
                         size: d,
                         onClick: function () {
@@ -2942,16 +2953,16 @@ const ki = 'Menu_f1a51291',
             ],
         });
     }),
-    Zi = 'Completed_cc94136f',
-    Ji = 'Completed_image_3b32a21f',
-    en = 'Completed_text_3d00c33a';
-function sn({ missionCategory: e }) {
+    Ki = 'Completed_cc94136f',
+    Xi = 'Completed_image_3b32a21f',
+    Zi = 'Completed_text_3d00c33a';
+function Ji({ missionCategory: e }) {
     const s = O.resolve('strings');
     return _.jsxs('div', {
-        className: Zi,
+        className: Ki,
         children: [
             _.jsx(w, {
-                className: Ji,
+                className: Xi,
                 path: 'personal_missions_30.common.card.done_small',
                 width: '80rem',
                 height: '80rem',
@@ -2962,11 +2973,11 @@ function sn({ missionCategory: e }) {
                 .split('\n')
                 .map((s) =>
                     _.jsx(
-                        Ce,
+                        A,
                         {
-                            className: en,
+                            className: Zi,
                             text: s,
-                            params: { missionType: _.jsx(D, { path: `personal_missions_30.common.category.${e}` }) },
+                            params: { missionType: _.jsx(V, { path: `personal_missions_30.common.category.${e}` }) },
                         },
                         s,
                     ),
@@ -2974,16 +2985,16 @@ function sn({ missionCategory: e }) {
         ],
     });
 }
-function an(e, s = 0) {
+function en(e, s = 0) {
     return 100 * (e + s) + 20 * e;
 }
-const tn = 'Title_1676083a',
-    nn = 'Title_text_3a1c405f',
-    on = 'Title_image_899d070e';
-function rn({ missionCategory: e }) {
+const sn = 'Title_1676083a',
+    an = 'Title_text_3a1c405f',
+    tn = 'Title_image_899d070e';
+function nn({ missionCategory: e }) {
     const s = O.resolve('strings');
     return _.jsxs('div', {
-        className: tn,
+        className: sn,
         children: [
             _.jsx(w, {
                 path: `personal_missions_30.category.c_32x32.${e}`,
@@ -2993,13 +3004,13 @@ function rn({ missionCategory: e }) {
                     medium: { width: 36, height: 36, path: `personal_missions_30.category.c_36x36.${e}` },
                     extraLarge: { width: 48, height: 48, path: `personal_missions_30.category.c_48x48.${e}` },
                 },
-                className: on,
+                className: tn,
             }),
-            _.jsx('div', { className: nn, children: s.readOrEmpty(`personal_missions_30.common.category.${e}`) }),
+            _.jsx('div', { className: an, children: s.readOrEmpty(`personal_missions_30.common.category.${e}`) }),
         ],
     });
 }
-const ln = {
+const on = {
     base: 'VehicleTypes_54108783',
     image: 'VehicleTypes_image_41f6ac8c',
     base__assault: 'VehicleTypes_base__assault_8f698c7c',
@@ -3007,41 +3018,41 @@ const ln = {
     base__sniper: 'VehicleTypes_base__sniper_8f698c7c',
     line: 'VehicleTypes_line_d3555d32',
 };
-function cn({ missionCategory: e, className: s }) {
+function rn({ missionCategory: e, className: s }) {
     return _.jsxs('div', {
-        className: u(ln.base, ln[`base__${e}`], s),
+        className: u(on.base, on[`base__${e}`], s),
         children: [
-            _.jsx('div', { className: ln.line }),
-            _.jsx(w, { path: `personal_missions_30.common.card.${e}_types`, className: ln.image }),
-            _.jsx('div', { className: ln.line }),
+            _.jsx('div', { className: on.line }),
+            _.jsx(w, { path: `personal_missions_30.common.card.${e}_types`, className: on.image }),
+            _.jsx('div', { className: on.line }),
         ],
     });
 }
-const dn = 'DefaultCard_2c35f6e',
-    _n = 'DefaultCard_content_ac73ae55',
-    mn = 'DefaultCard_cardWrapper_e41c5beb',
-    un = 'DefaultCard_card_43ca4f26',
-    pn = 'DefaultCard_header_7ac329f8',
-    gn = 'DefaultCard_vehicleTypes_c0edf390',
-    fn = 'DefaultCard_innerContent_9d3b73d1',
-    hn = 'DefaultCard_footer_93929a8f',
-    bn = 'DefaultCard_quests_2aaa2468',
-    In = 'DefaultCard_separator_fafec470',
-    Nn = 'DefaultCard_rewards_14dfa3b1',
-    vn = ['currentMissionNumber', 'currentProgressValue', 'missionStatus'],
-    xn = l(function ({ index: e, mission: s }) {
+const ln = 'DefaultCard_2c35f6e',
+    cn = 'DefaultCard_content_ac73ae55',
+    dn = 'DefaultCard_cardWrapper_e41c5beb',
+    _n = 'DefaultCard_card_43ca4f26',
+    mn = 'DefaultCard_header_7ac329f8',
+    un = 'DefaultCard_vehicleTypes_c0edf390',
+    pn = 'DefaultCard_innerContent_9d3b73d1',
+    gn = 'DefaultCard_footer_93929a8f',
+    fn = 'DefaultCard_quests_2aaa2468',
+    bn = 'DefaultCard_separator_fafec470',
+    hn = 'DefaultCard_rewards_14dfa3b1',
+    Nn = ['currentMissionNumber', 'currentProgressValue', 'missionStatus'],
+    In = l(function ({ index: e, mission: s }) {
         const a = O.resolve('views'),
             t = O.resolve('sounds'),
             { controls: i } = gs(),
             n = c(ts, (e) => e.value),
             [o, l] = r.useState(s),
-            u = U({
+            u = q({
                 contentId: a.read((e) => e.mono.personal_missions_30.tooltips.missions_category_tooltip('resId')),
                 args: { category: o.missionCategory },
             }),
             [p, g] = d(() => ({ from: { opacity: 0, transform: 'translateY(20rem)' } })),
-            h = r.useMemo(
-                () => vn.some((e) => o[e] !== s[e]),
+            b = r.useMemo(
+                () => Nn.some((e) => o[e] !== s[e]),
                 [
                     s.currentMissionNumber,
                     s.currentProgressValue,
@@ -3058,13 +3069,13 @@ const dn = 'DefaultCard_2c35f6e',
                         opacity: 1,
                         transform: 'translateY(0rem)',
                         config: { duration: 300, easing: f.easeOutQuart },
-                        delay: an(e),
+                        delay: en(e),
                     });
             }),
             r.useEffect(() => {
                 n === Qe || (s.missionStatus === ia.ACTIVE && o.missionStatus === ia.LOCKED)
                     ? l(s)
-                    : h &&
+                    : b &&
                       n === as &&
                       g.start({
                           opacity: 0,
@@ -3078,11 +3089,11 @@ const dn = 'DefaultCard_2c35f6e',
                                       opacity: 1,
                                       transform: 'translateY(0rem)',
                                       config: { duration: 300, easing: f.easeOutQuart },
-                                      delay: an(e, 3),
+                                      delay: en(e, 3),
                                   }));
                           },
                       });
-            }, [g, n, e, s, h, o.missionStatus]),
+            }, [g, n, e, s, b, o.missionStatus]),
             r.useEffect(() => {
                 switch (n) {
                     case $e:
@@ -3104,13 +3115,13 @@ const dn = 'DefaultCard_2c35f6e',
                                 opacity: 1,
                                 transform: 'translateY(0rem)',
                                 config: { duration: 300, easing: f.easeOutQuart },
-                                delay: an(e, 3),
+                                delay: en(e, 3),
                             }));
                 }
             }, [g, n, e]),
             _.jsxs(m.div, {
                 style: p,
-                className: dn,
+                className: ln,
                 onClick: function () {
                     n === as &&
                         (t.play('yes'),
@@ -3124,19 +3135,19 @@ const dn = 'DefaultCard_2c35f6e',
                         currentMissionNumber: o.currentMissionNumber,
                         maxMissions: o.maxMissions,
                     }),
-                    _.jsx(te, {
-                        className: _n,
-                        classNames: { wrapper: mn },
+                    _.jsx(ie, {
+                        className: cn,
+                        classNames: { wrapper: dn },
                         multiple: !0,
                         children: _.jsxs('div', {
-                            className: un,
+                            className: _n,
                             children: [
                                 _.jsxs('div', {
-                                    className: pn,
+                                    className: mn,
                                     ...u,
                                     children: [
-                                        _.jsx(rn, { missionCategory: o.missionCategory }),
-                                        _.jsx(cn, { missionCategory: o.missionCategory, className: gn }),
+                                        _.jsx(nn, { missionCategory: o.missionCategory }),
+                                        _.jsx(rn, { missionCategory: o.missionCategory, className: un }),
                                     ],
                                 }),
                                 (() => {
@@ -3144,29 +3155,29 @@ const dn = 'DefaultCard_2c35f6e',
                                         case ia.ACTIVE:
                                         case ia.LOCKED:
                                             return _.jsxs('div', {
-                                                className: fn,
+                                                className: pn,
                                                 children: [
-                                                    _.jsx(qa, { mission: o, className: bn, cardType: is.default }),
+                                                    _.jsx(Wa, { mission: o, className: fn, cardType: is.default }),
                                                     _.jsxs('div', {
-                                                        className: hn,
+                                                        className: gn,
                                                         children: [
                                                             o.maxProgressValue > 1 &&
-                                                                _.jsx(ya, {
+                                                                _.jsx(xa, {
                                                                     cardIndex: e,
                                                                     cardType: is.default,
                                                                     currentProgressValue: o.currentProgressValue,
                                                                     maxProgressValue: o.maxProgressValue,
                                                                 }),
-                                                            _.jsx(Hs, { type: 'withoutAlpha', className: In }),
-                                                            _.jsx(Ya, { rewards: o.rewards, className: Nn }),
+                                                            _.jsx(Hs, { type: 'withoutAlpha', className: bn }),
+                                                            _.jsx(qa, { rewards: o.rewards, className: hn }),
                                                         ],
                                                     }),
                                                 ],
                                             });
                                         case ia.DISABLED:
-                                            return _.jsx(Ga, {});
+                                            return _.jsx(Ya, {});
                                         case ia.COMPLETED:
-                                            return _.jsx(sn, { missionCategory: o.missionCategory });
+                                            return _.jsx(Ji, { missionCategory: o.missionCategory });
                                         default:
                                             console.error(`Unexpected previousMission status: ${o.missionStatus}`);
                                     }
@@ -3178,7 +3189,7 @@ const dn = 'DefaultCard_2c35f6e',
             })
         );
     }),
-    En = {
+    vn = {
         base: 'AdditionalCard_15bcf296',
         wrapper: 'AdditionalCard_wrapper_a2077e5e',
         title: 'AdditionalCard_title_4c575969',
@@ -3192,7 +3203,7 @@ const dn = 'DefaultCard_2c35f6e',
         currentValue: 'AdditionalCard_currentValue_9b3afc4c',
         text: 'AdditionalCard_text_4b72abae',
     },
-    yn = l(function ({
+    xn = l(function ({
         additionalMission: { currentPoints: e, maxPoints: s, type: a },
         operationState: t,
         progressHidden: i,
@@ -3201,12 +3212,12 @@ const dn = 'DefaultCard_2c35f6e',
         const o = O.resolve('strings'),
             { model: l, controls: d } = gs(),
             { status: m } = l.status.get(),
-            p = t === Pe.ACTIVE && m !== gt.PAUSED && !i,
+            p = t === Le.ACTIVE && m !== ut.PAUSED && !i,
             g = p && e === s,
-            [f, h] = r.useState({ currentPoints: e, maxPoints: s, completed: g, progressShown: p }),
-            { animationInProgress: b } = bs(),
-            I = c(ts, (e) => e.value),
-            N = C(
+            [f, b] = r.useState({ currentPoints: e, maxPoints: s, completed: g, progressShown: p }),
+            { animationInProgress: h } = hs(),
+            N = c(ts, (e) => e.value),
+            I = C(
                 Te.PM3_POINTS,
                 r.useMemo(
                     () => ({
@@ -3219,47 +3230,47 @@ const dn = 'DefaultCard_2c35f6e',
             );
         return (
             r.useEffect(() => {
-                (I !== ss && I !== Qe) || h({ currentPoints: e, maxPoints: s, completed: g, progressShown: p });
-            }, [I, g, e, s, p]),
+                (N !== ss && N !== Qe) || b({ currentPoints: e, maxPoints: s, completed: g, progressShown: p });
+            }, [N, g, e, s, p]),
             r.useEffect(() => {
                 (f.currentPoints === e && f.progressShown === p) ||
-                    I !== as ||
+                    N !== as ||
                     !p ||
                     ts.send({ type: 'HIDE_ADDITIONAL_MISSIONS' });
-            }, [I, e, p, f.currentPoints, f.progressShown]),
-            _.jsx(te, {
-                className: u(En.base, f.completed && En.base__completed, En[`base__${a}`]),
+            }, [N, e, p, f.currentPoints, f.progressShown]),
+            _.jsx(ie, {
+                className: u(vn.base, f.completed && vn.base__completed, vn[`base__${a}`]),
                 classNames: { wrapper: n },
                 onClick: function () {
                     d.openAdditionalMission();
                 },
-                status: f.completed ? se.done : void 0,
+                status: f.completed ? ae.done : void 0,
                 children: _.jsxs('div', {
-                    className: En.wrapper,
+                    className: vn.wrapper,
                     children: [
                         _.jsx('div', {
-                            className: En.title,
+                            className: vn.title,
                             children: o.readOrEmpty(`personal_missions_30.main.additionalMission.title.${a}`),
                         }),
-                        _.jsx(Hs, { type: 'withoutAlpha', className: En.separator }),
+                        _.jsx(Hs, { type: 'withoutAlpha', className: vn.separator }),
                         _.jsxs('div', {
-                            className: En.content,
+                            className: vn.content,
                             children: [
                                 _.jsxs('div', {
-                                    className: En.status,
-                                    ...N,
+                                    className: vn.status,
+                                    ...I,
                                     children: [
                                         _.jsx(w, {
                                             path: `personal_missions_30.main.additional_card.${a}`,
-                                            className: En.image,
+                                            className: vn.image,
                                         }),
                                         f.progressShown &&
-                                            _.jsx(D, {
-                                                className: En.progress,
+                                            _.jsx(V, {
+                                                className: vn.progress,
                                                 path: 'personal_missions_30.main.mission.counter',
                                                 params: {
                                                     currentValue: _.jsx('span', {
-                                                        className: En.currentValue,
+                                                        className: vn.currentValue,
                                                         children: f.currentPoints,
                                                     }),
                                                     maxValue: s,
@@ -3268,8 +3279,8 @@ const dn = 'DefaultCard_2c35f6e',
                                     ],
                                 }),
                                 _.jsx('div', {
-                                    children: _.jsx(D, {
-                                        className: En.text,
+                                    children: _.jsx(V, {
+                                        className: vn.text,
                                         path: `personal_missions_30.main.additionalMission.text.${f.completed ? 'completed' : a}`,
                                     }),
                                 }),
@@ -3280,33 +3291,33 @@ const dn = 'DefaultCard_2c35f6e',
             })
         );
     }),
-    Sn = 'Missions_74bb97b6',
-    On = 'Missions_additionalCardsWrapper_8e829c9b',
-    Cn = 'Missions_additionalCard_8b2b9913',
-    wn = l(function ({ className: e }) {
+    En = 'Missions_74bb97b6',
+    yn = 'Missions_additionalCardsWrapper_8e829c9b',
+    Sn = 'Missions_additionalCard_8b2b9913',
+    On = l(function ({ className: e }) {
         const { model: s } = gs(),
-            { additionalCardStyle: a } = bs(),
+            { additionalCardStyle: a } = hs(),
             t = s.computes.activeOperation();
         if (!t) return null;
         const i = t.additionalMissions.some((e) => e.isProgressHidden);
         return _.jsxs('div', {
-            className: u(Sn, e),
+            className: u(En, e),
             children: [
-                t.missions.map((e, s) => _.jsx(xn, { mission: e, index: s }, s)),
-                t.operationState !== Pe.COMPLETED &&
+                t.missions.map((e, s) => _.jsx(In, { mission: e, index: s }, s)),
+                t.operationState !== Le.COMPLETED &&
                     t.additionalMissions.some((e) => e.isEnabled) &&
                     _.jsx(m.div, {
                         style: a,
-                        className: On,
+                        className: yn,
                         children: t.additionalMissions.map((e) =>
                             e.isEnabled
                                 ? _.jsx(
-                                      yn,
+                                      xn,
                                       {
                                           additionalMission: e,
                                           operationState: t.operationState,
                                           progressHidden: i,
-                                          className: Cn,
+                                          className: Sn,
                                       },
                                       e.type,
                                   )
@@ -3316,25 +3327,25 @@ const dn = 'DefaultCard_2c35f6e',
             ],
         });
     }),
-    jn = 'Progression_c7c2323d',
-    An = 'Progression_missions_a14a8547',
-    Mn = 'Progression_completed_95b1e94b',
-    Dn = 'Progression_menu_ad782db3',
-    Tn = l(function () {
+    Cn = 'Progression_c7c2323d',
+    wn = 'Progression_missions_a14a8547',
+    jn = 'Progression_completed_95b1e94b',
+    An = 'Progression_menu_ad782db3',
+    Mn = l(function () {
         const { model: e } = gs(),
             s = e.computes.activeOperation(),
             a = e.activeOperationId.get();
         return _.jsxs('div', {
-            className: jn,
+            className: Cn,
             children: [
-                _.jsx(Qi, { className: Dn }),
-                (null == s ? void 0 : s.operationState) === Pe.COMPLETED_WITH_HONORS
-                    ? _.jsx(Xi, { className: Mn }, a)
-                    : _.jsx(wn, { className: An }),
+                _.jsx(Hi, { className: An }),
+                (null == s ? void 0 : s.operationState) === Le.COMPLETED_WITH_HONORS
+                    ? _.jsx(Gi, { className: jn }, a)
+                    : _.jsx(On, { className: wn }),
             ],
         });
     }),
-    Ln = {
+    Dn = {
         sceneWrapper: 'Main_sceneWrapper_84c5dae7',
         progressionShadow: 'Main_progressionShadow_ca6ff6b5',
         missionsShadow: 'Main_missionsShadow_eb81cd44',
@@ -3356,11 +3367,11 @@ const dn = 'DefaultCard_2c35f6e',
         raysAppearance: 'Main_raysAppearance_84c5dae7',
         rotate: 'Main_rotate_84c5dae7',
     },
-    Pn = l(function () {
+    Tn = l(function () {
         const { model: e, controls: s } = gs(),
             a = e.computes.activeOperation(),
             t = e.currentState.get(),
-            { progressionStyle: i, animationInProgress: n } = bs(),
+            { progressionStyle: i, animationInProgress: n } = hs(),
             o = t === ds || n;
         T(x.ESCAPE, function () {
             if (n) return;
@@ -3378,7 +3389,7 @@ const dn = 'DefaultCard_2c35f6e',
                 else {
                     const e = we(),
                         a = document.elementFromPoint(e.x, e.y);
-                    a && s.mouseOver3dScene({ isOver3dScene: a.classList.contains(Ln.sceneWrapper) });
+                    a && s.mouseOver3dScene({ isOver3dScene: a.classList.contains(Dn.sceneWrapper) });
                 }
             }, [t, n, s]),
             r.useEffect(
@@ -3394,24 +3405,24 @@ const dn = 'DefaultCard_2c35f6e',
                 je(!0);
             }),
             _.jsxs('div', {
-                className: u(Ln.base, Ln[`base__${t}`], Ln[`base__${null == a ? void 0 : a.operationState}`]),
+                className: u(Dn.base, Dn[`base__${t}`], Dn[`base__${null == a ? void 0 : a.operationState}`]),
                 'data-name': 'Dashboard',
                 children: [
-                    _.jsx(Ae, { className: Ln.sceneWrapper, moveSpace: c, onMouseOver3dScene: l, moveSpaceEnabled: o }),
-                    _.jsx('div', { className: Ln.completedWithHonorsShadow }),
-                    _.jsx('div', { className: Ln.vignette }),
-                    _.jsx('div', { className: Ln.progressionShadow }),
-                    _.jsx('div', { className: Ln.missionsShadow }),
+                    _.jsx(Ae, { className: Dn.sceneWrapper, moveSpace: c, onMouseOver3dScene: l, moveSpaceEnabled: o }),
+                    _.jsx('div', { className: Dn.completedWithHonorsShadow }),
+                    _.jsx('div', { className: Dn.vignette }),
+                    _.jsx('div', { className: Dn.progressionShadow }),
+                    _.jsx('div', { className: Dn.missionsShadow }),
                     _.jsxs('div', {
-                        className: u(Ln.wrapper, n && Ln.wrapper__disabled),
+                        className: u(Dn.wrapper, n && Dn.wrapper__disabled),
                         'data-test-id': `isDisabled-${String(n)}`,
                         children: [
                             (() => {
                                 switch (t) {
                                     case _s:
-                                        return _.jsx(Tn, {});
+                                        return _.jsx(Mn, {});
                                     case cs:
-                                        return _.jsx(yt, {});
+                                        return _.jsx(xt, {});
                                     case ds:
                                         return _.jsx(Vs, {});
                                     default:
@@ -3420,8 +3431,8 @@ const dn = 'DefaultCard_2c35f6e',
                             })(),
                             _.jsx(m.div, {
                                 style: i,
-                                className: Ln.progress,
-                                children: _.jsx(pe, { settings: us, children: _.jsx(vi, {}) }),
+                                className: Dn.progress,
+                                children: _.jsx(ge, { settings: us, children: _.jsx(Ni, {}) }),
                             }),
                         ],
                     }),
@@ -3429,6 +3440,6 @@ const dn = 'DefaultCard_2c35f6e',
             })
         );
     });
-Me(_.jsx(ps, { children: _.jsx(hs, { children: _.jsx(De, { soundsOverrides: ms, children: _.jsx(Pn, {}) }) }) }), {
+Me(_.jsx(ps, { children: _.jsx(bs, { children: _.jsx(De, { soundsOverrides: ms, children: _.jsx(Tn, {}) }) }) }), {
     fullScreen: !0,
 }).then(() => je(!1));

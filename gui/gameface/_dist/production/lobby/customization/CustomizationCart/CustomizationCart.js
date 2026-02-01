@@ -2314,12 +2314,14 @@
                     };
                 function Ze(e, u, t = []) {
                     const n = (0, a.useRef)(0),
-                        o = (0, a.useCallback)(() => window.clearInterval(n.current), t || []);
+                        o = (0, a.useCallback)(() => {
+                            (window.clearInterval(n.current), (n.current = 0));
+                        }, t || []);
                     (0, a.useEffect)(() => o, [o]);
                     const r = (null != t ? t : []).concat([u]);
                     return [
                         (0, a.useCallback)((t) => {
-                            ((n.current = window.setInterval(() => e(t, !0), u)), e(t, !1));
+                            (0 !== n.current && o(), (n.current = window.setInterval(() => e(t, !0), u)), e(t, !1));
                         }, r),
                         o,
                     ];
@@ -2336,7 +2338,8 @@
                         getContainerSize: (e) => e.offsetWidth,
                         getWrapperSize: (e) => e.offsetWidth,
                         setScrollPosition: (e, u) => {
-                            e.style.transform = `translateX(-${u.value.scrollPosition}px)`;
+                            var t;
+                            e.style.transform = `translateX(-${0 | (null != (t = u.value.scrollPosition) ? t : 0)}px)`;
                         },
                         getDirection: (e) => (e.deltaY > 1 ? p.Next : p.Prev),
                         forceTriggerMouseMove: r.O.view.forceTriggerMouseMove,

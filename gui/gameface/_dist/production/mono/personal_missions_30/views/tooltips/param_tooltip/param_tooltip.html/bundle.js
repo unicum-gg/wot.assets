@@ -1,10 +1,10 @@
-import { j as e, f as s, _ as t, p as o } from '../../../../chunks/vendor.js';
+import { j as e, f as s, _ as t, n as o } from '../../../../chunks/vendor.js';
 import {
     i as n,
     f as i,
-    v as l,
+    n as l,
     at as r,
-    ag as a,
+    y as a,
     r as c,
     F as p,
     I as d,
@@ -28,7 +28,7 @@ const j = 'Index_80365d11',
     f = 'Index_title_79c25340',
     v = 'Index_body_b1cb19fb',
     y =
-        ((g = (() => {
+        ((N = (() => {
             let e;
             const s = (s, o) => {
                 var n, i;
@@ -108,10 +108,10 @@ const j = 'Index_80365d11',
             return (e, t) => s(JSON.parse(e), t);
         })()),
         function () {
-            return b().model.computes.params(g);
+            return b().model.computes.params(N);
         });
-var g;
-const N = Object.freeze(
+var N;
+const g = Object.freeze(
         Object.defineProperty(
             {
                 __proto__: null,
@@ -202,6 +202,7 @@ const w = Object.freeze(
                                 e.jsx(d, { path: 'personal_missions_30.points.c_296x222', className: S }),
                                 e.jsx(x, { children: e.jsx(O, {}) }),
                                 e.jsx(p, {
+                                    split: !0,
                                     path: 'personal_missions_30.tooltip.personalMissionsPoints.footer',
                                     className: A,
                                 }),
@@ -291,7 +292,7 @@ function J({ type: t }) {
 }
 const U = Object.fromEntries(
     Object.entries(
-        Object.assign({ './custom_simple/index.tsx': N, './pm3_points/index.tsx': w, './progression/index.tsx': G }),
+        Object.assign({ './custom_simple/index.tsx': g, './pm3_points/index.tsx': w, './progression/index.tsx': G }),
     ).map(([e, s]) => [e.split('/').at(-2), { Component: s.default }]),
 );
 const $ = o(function () {

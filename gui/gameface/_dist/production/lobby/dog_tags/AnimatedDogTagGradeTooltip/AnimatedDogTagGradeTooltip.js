@@ -357,7 +357,7 @@
                                     (window.cancelAnimationFrame(u.current),
                                         (u.current = window.requestAnimationFrame(() => {
                                             u.current = window.requestAnimationFrame(() => {
-                                                (A(), (u.current = 0));
+                                                ((u.current = 0), A());
                                             });
                                         })));
                                 },

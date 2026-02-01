@@ -2487,17 +2487,18 @@
                                                   return t;
                                               })(u),
                                           )
-                                        : n.push({ blockType: a, colorTag: t, childList: [u] });
+                                        : n.push({ blockType: a, colorTag: t, childList: [u.replace(/\ufeff+/g, '')] });
                                 },
                             ),
                             n
                         );
                     },
                     St = (e, t, u = '', n) => {
-                        const a = [];
+                        const a = [],
+                            r = e.replace(/(.)(、|。|ー)/g, '$1\ufeff$2');
                         return (
                             Ct(
-                                e,
+                                r,
                                 /(?:%\(|{)(.*?)[)}][sd]?/g,
                                 (e) => {
                                     a.push(...xt(e, u, n));

@@ -1952,9 +1952,9 @@
                 throw new Error(
                     'number' == typeof e
                         ? '[MobX] minified error nr: ' +
-                          e +
-                          (n.length ? ' ' + n.map(String).join(',') : '') +
-                          '. Find the full error at: https://github.com/mobxjs/mobx/blob/main/packages/mobx/src/errors.ts'
+                              e +
+                              (n.length ? ' ' + n.map(String).join(',') : '') +
+                              '. Find the full error at: https://github.com/mobxjs/mobx/blob/main/packages/mobx/src/errors.ts'
                         : '[MobX] ' + e,
                 );
             }
@@ -4148,7 +4148,6 @@
                                             a = !1,
                                             s = V(t.data_.keys());
                                         !(n = s()).done;
-
                                     ) {
                                         var u = n.value;
                                         if (!i.has(u))
@@ -4174,7 +4173,6 @@
                                             for (
                                                 var b = t.data_.keys(), y = o.keys(), g = b.next(), O = y.next();
                                                 !g.done;
-
                                             ) {
                                                 if (g.value !== O.value) {
                                                     t.keysAtom_.reportChanged();

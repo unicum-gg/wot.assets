@@ -2,10 +2,10 @@
     'use strict';
     var e,
         r = {
-            5801: (e, r, o) => {
-                (o(6483), o(7363));
+            801: (e, r, o) => {
+                (o(483), o(363));
             },
-            7363: (e) => {
+            363: (e) => {
                 e.exports = React;
             },
         },
@@ -73,6 +73,6 @@
                 o = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             (o.forEach(r.bind(null, 0)), (o.push = r.bind(null, o.push.bind(o))));
         })());
-    var n = t.O(void 0, ['lib/battle_royale.vendors'], () => t(5801));
+    var n = t.O(void 0, ['lib/battle_royale.vendors'], () => t(801));
     n = t.O(n);
 })();

@@ -1,5 +1,5 @@
-import { y as e, j as s, _ as t } from '../../../../chunks/vendor.js';
-import { i as a, c as r, n, r as o, aE as i, I as p, aC as c } from '../../../../chunks/lib.js';
+import { x as e, j as s, _ as t } from '../../../../chunks/vendor.js';
+import { i as a, c as r, n, r as o, aF as i, I as p, aD as c } from '../../../../chunks/lib.js';
 const [l, d] = a()((e) => {
     const s = e.observableModel.primitives(['params', 'type']);
     return {
@@ -15,10 +15,10 @@ const m = 'App_19d66a47',
     u = 'App_title_4e57dc26',
     h = 'App_text_d550cf1f',
     j = 'App_statusInfo_f64a6532',
-    y = 'App_image_7518e11e',
-    v = 'App_description_4c81e48b',
-    f =
-        ((x = (() => {
+    v = 'App_image_7518e11e',
+    y = 'App_description_4c81e48b',
+    x =
+        ((f = (() => {
             let e;
             const s = (s, a) => {
                 var r, n;
@@ -68,13 +68,13 @@ const m = 'App_19d66a47',
             return (e, t) => s(JSON.parse(e), t);
         })()),
         function () {
-            return d().model.computes.params(x);
+            return d().model.computes.params(f);
         });
-var x;
+var f;
 const _ = o.resolve('strings'),
     b = 'veh_skill_tree.tooltips.vanityEntryPoint',
     k = e(function () {
-        const { isUnlocked: e } = f();
+        const { isUnlocked: e } = x();
         return s.jsx(i, {
             children: s.jsx(i.Decorator, {
                 children: s.jsxs('div', {
@@ -86,8 +86,8 @@ const _ = o.resolve('strings'),
                             s.jsxs('div', {
                                 className: j,
                                 children: [
-                                    s.jsx(p, { className: y, path: 'skillTree.tree.tooltips.statusInfo' }),
-                                    s.jsx('div', { className: v, children: _.readOrEmpty(`${b}.statusInfo`) }),
+                                    s.jsx(p, { className: v, path: 'skillTree.tree.tooltips.statusInfo' }),
+                                    s.jsx('div', { className: y, children: _.readOrEmpty(`${b}.statusInfo`) }),
                                 ],
                             }),
                     ],

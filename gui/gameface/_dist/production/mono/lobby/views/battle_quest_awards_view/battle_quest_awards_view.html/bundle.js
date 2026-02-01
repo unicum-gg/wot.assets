@@ -1,4 +1,4 @@
-import { j as e, x as s, y as a, z as r, r as t, A as i, B as n } from '../../../chunks/vendor.js';
+import { j as e, w as s, x as a, y as r, r as t, z as i, A as n } from '../../../chunks/vendor.js';
 import {
     u as l,
     p as o,
@@ -12,8 +12,8 @@ import {
     a as h,
     b as g,
     m as A,
-    R as f,
-    F as w,
+    R as w,
+    F as f,
     B as v,
     r as x,
     U as j,
@@ -56,14 +56,14 @@ import { u as L } from '../../../chunks/useParseRewards.js';
             ],
         });
     },
-    [B, M] = c()(
+    [M, S] = c()(
         ({ observableModel: e }) => ({ ...{ root: e.object(), rewards: e.array('rewards') } }),
         ({ externalModel: e }) => ({
             approve: e.createCallbackNoArgs('onApprove'),
             close: e.createCallbackNoArgs('onClose'),
         }),
     );
-var S = ((e) => ((e.InProgress = 'inProgress'), (e.Completed = 'completed'), e))(S || {});
+var B = ((e) => ((e.InProgress = 'inProgress'), (e.Completed = 'completed'), e))(B || {});
 const H = 'AnimatedBackground_f47e334b',
     P = 'AnimatedBackground_rays_e7a4dbbe',
     U = 'AnimatedBackground_sunShineCanvas_21aff824',
@@ -122,7 +122,7 @@ const H = 'AnimatedBackground_f47e334b',
     },
     W = a(function () {
         const { mediaSize: a } = g(),
-            { model: r } = M(),
+            { model: r } = S(),
             { parsedRewards: t } = L(
                 r.rewards.get(),
                 ((e) => (e >= d.Large ? b.S400x300 : e >= d.Small ? b.S296x222 : b.S232x174))(a),
@@ -131,7 +131,7 @@ const H = 'AnimatedBackground_f47e334b',
         return e.jsxs('div', {
             className: s(E.base, E[`base__${i}`]),
             children: [
-                i === S.Completed && e.jsx(D, { className: E.animatedBg }),
+                i === B.Completed && e.jsx(D, { className: E.animatedBg }),
                 e.jsx('div', { className: E.ribbon }),
                 A(t, (s, a) =>
                     e.jsxs(
@@ -139,7 +139,7 @@ const H = 'AnimatedBackground_f47e334b',
                         {
                             className: E.reward,
                             children: [
-                                e.jsx(f, { ...s, classNames: { info: E.value } }),
+                                e.jsx(w, { ...s, classNames: { info: E.value } }),
                                 e.jsx('span', { className: E.label, children: s.userName }),
                             ],
                         },
@@ -154,13 +154,13 @@ const H = 'AnimatedBackground_f47e334b',
     O = 'Header_title_818ec59a',
     q = R.strings.comp7_light.battleQuestAwards,
     G = a(function () {
-        const { model: s } = M(),
+        const { model: s } = S(),
             { battleStatus: a, level: r } = s.root.get();
         return e.jsxs('div', {
             className: $,
             children: [
                 e.jsx('span', { className: F, children: q.subTitle() }),
-                e.jsx(w, { text: `${q.title.$dyn(a)}`, classMix: O, binding: { level: r } }),
+                e.jsx(f, { text: `${q.title.$dyn(a)}`, classMix: O, binding: { level: r } }),
             ],
         });
     }),
@@ -170,7 +170,7 @@ const H = 'AnimatedBackground_f47e334b',
     X = 'App_button_5120fb02',
     Y = 'App_rewardList_6063ee6e',
     Z = a(function () {
-        const { controls: s } = M(),
+        const { controls: s } = S(),
             { mediaSize: a } = g(),
             c = a >= d.Large ? v.sizes.large : v.sizes.small,
             b = r({ from: { opacity: 0 }, to: { opacity: 1 }, leave: { opacity: 0 }, config: n.molasses });
@@ -203,4 +203,4 @@ const H = 'AnimatedBackground_f47e334b',
             })
         );
     });
-x(e.jsx(j, { children: e.jsx(B, { children: e.jsx(Z, {}) }) }));
+x(e.jsx(j, { children: e.jsx(M, { children: e.jsx(Z, {}) }) }));

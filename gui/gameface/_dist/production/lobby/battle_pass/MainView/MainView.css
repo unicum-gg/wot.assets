@@ -4820,7 +4820,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 .BattlePassProgressionsViewContent_base__extra_e2 {
     --widget-size: 418rem;
-    background-color: #0d131d;
+    background-color: #111820;
     background-position: 100% 50%;
     background-size: 1640rem 820rem;
 }
@@ -4841,7 +4841,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     background-size: 3800rem 1900rem;
 }
 .BattlePassProgressionsViewContent_base__extraChapter_17 {
-    background-color: #0a1316;
+    background-color: #111820;
 }
 .BattlePassProgressionsViewContent_header_76 {
     position: absolute;
@@ -8940,6 +8940,14 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     top: 0;
     left: 0;
 }
+.OptimizedProgressBar_backgroundWrapper_b6 {
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* it's obligatory to cut long background, which can have very long transform: translateX */
+    position: absolute;
+    top: 0;
+    left: 0;
+}
 .OptimizedProgressBar_background_ce {
     display: flex;
     align-items: center;
@@ -11414,7 +11422,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     align-items: center;
     width: 100%;
     height: 100%;
-    background: #070a0d;
+    background: #111820;
     overflow: hidden;
     position: relative;
 }
@@ -11426,7 +11434,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .App_background_74 {
     width: 1766rem;
     height: 922rem;
-    background: url('R.images.gui.maps.icons.battlePass.holiday_final_screen.bg_tank') no-repeat center center / cover;
+    background: url('R.images.gui.maps.icons.battlePass.holiday_final_screen.bg_reward') no-repeat center center / cover;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -11452,7 +11460,12 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .App_base__tankmenState_c9 .App_background_74 {
+    width: 100%;
+    height: 100%;
     background-image: url('R.images.gui.maps.icons.battlePass.holiday_final_screen.bg');
+    top: 0;
+    left: 0;
+    transform: none;
 }
 
 .App_base__rewardsState_39 .App_background_74 {
@@ -11472,9 +11485,8 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .App_header_70 {
-    margin-top: 40rem;
     position: absolute;
-    top: 0;
+    top: 60rem;
     right: 0;
     left: 0;
     z-index: 1;
@@ -11482,7 +11494,11 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .mediaLarge .App_header_70 {
-    margin-top: 52rem;
+    top: 80rem;
+}
+
+.mediaExtraLarge .App_header_70 {
+    top: 90rem;
 }
 
 .App_base__rewardsState_39 .App_header_70 {
@@ -11493,15 +11509,17 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .App_awards_34 {
     position: absolute;
     top: -2rem;
-    right: 7rem;
+    right: 25rem;
 }
 
-.mediaMedium .App_awards_34 {
-    right: 16rem;
+.mediaMediumWidth .App_awards_34 {
+    top: 8rem;
+    right: 30rem;
 }
 
-.mediaLarge .App_awards_34 {
-    top: -15rem;
+.mediaLargeWidth .App_awards_34 {
+    top: 5rem;
+    right: 40rem;
 }
 
 .App_footer_2f {
@@ -11511,15 +11529,15 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .App_base__buyState_ad .App_footer_2f {
     display: flex;
     position: absolute;
-    bottom: 0;
+    bottom: 40rem;
     left: 50%;
     z-index: 1;
     transform: translateX(-50%);
     cursor: default;
 }
 
-.mediaMedium .App_base__buyState_ad .App_footer_2f {
-    padding-top: 10rem;
+.mediaExtraLarge .App_base__buyState_ad .App_footer_2f {
+    bottom: 60rem;
 }
 
 .Final_base_62 {
@@ -11536,7 +11554,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     flex-direction: column;
     align-items: center;
     width: 300rem;
-    height: 130rem;
+    height: 150rem;
     position: absolute;
     bottom: 0;
     left: 50%;
@@ -11544,20 +11562,20 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .mediaSmall .Final_controls_3e {
-    height: 132rem;
+    height: 152rem;
 }
 
 .mediaMedium .Final_controls_3e {
     width: 310rem;
-    height: 145rem;
-}
-
-.mediaLarge .Final_controls_3e {
     height: 165rem;
 }
 
+.mediaLarge .Final_controls_3e {
+    height: 185rem;
+}
+
 .mediaExtraLarge .Final_controls_3e {
-    height: 205rem;
+    height: 225rem;
 }
 
 .Final_label_e0 {
@@ -11618,6 +11636,35 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     padding: 0 20rem;
 }
 
+.FinalStateLabel_icon_60 {
+    width: 24rem;
+    height: 24rem;
+    background: url('R.images.gui.maps.icons.battlePass.holiday_final_screen.check') no-repeat center / cover;
+    transform: translateY(2rem);
+}
+
+.FinalStateLabel_greenLight_ce {
+    width: 244rem;
+    height: 40rem;
+    background: url('R.images.gui.maps.icons.battlePass.holiday_final_screen.green_light') no-repeat center / cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+}
+
+.FinalStateLabel_text_7f {
+    color: #80d43a;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+
+.mediaMedium .FinalStateLabel_text_7f {
+    font-size: 20rem;
+}
+
 .Divider_divider_48 {
     width: 200rem;
     height: 2rem;
@@ -11674,6 +11721,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     width: 100%;
     height: 100%;
     position: relative;
+    z-index: 0;
 }
 
 .Purchase_content_1a {
@@ -11684,7 +11732,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     width: 888rem;
     height: 222rem;
     position: absolute;
-    bottom: 57rem;
+    bottom: 110rem;
     left: 50%;
     transform: translate(-50%, 0);
 }
@@ -11692,17 +11740,17 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .mediaMedium .Purchase_content_1a {
     width: 904rem;
     height: 271rem;
-    bottom: 73rem;
+    bottom: 120rem;
 }
 
 .mediaLarge .Purchase_content_1a {
     width: 1200rem;
     height: 250rem;
-    bottom: 100rem;
+    bottom: 150rem;
 }
 
 .mediaExtraLarge .Purchase_content_1a {
-    bottom: 120rem;
+    bottom: 180rem;
 }
 
 .Purchase_preview_30 {
@@ -11712,17 +11760,18 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     width: 100rem;
     height: 100rem;
     position: absolute;
-    bottom: 189rem;
+    bottom: 230rem;
     left: 50%;
+    z-index: 1;
     transform: translate(-50%, -50%);
 }
 
 .mediaMedium .Purchase_preview_30 {
-    bottom: 254rem;
+    bottom: 305rem;
 }
 
 .mediaLarge .Purchase_preview_30 {
-    bottom: 302rem;
+    bottom: 350rem;
 }
 
 .mediaExtraLarge .Purchase_preview_30 {
@@ -11789,14 +11838,13 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
-    width: 400rem;
+    width: 600rem;
     height: 36rem;
     margin-bottom: 9rem;
     text-align: center;
 }
 
 .mediaMedium .Purchase_description_b9 {
-    width: 450rem;
     margin-bottom: 20rem;
     font-size: 16rem;
 }
@@ -12004,10 +12052,18 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     background: url('R.images.gui.maps.icons.battlePass.holiday_final_screen.light_done') no-repeat center / contain;
     mix-blend-mode: additive;
     position: absolute;
-    bottom: 10rem;
+    bottom: 30rem;
     left: 50%;
     transform: translate(-50%, 50%);
     pointer-events: none;
+}
+
+.mediaMedium .Footer_light_1b {
+    bottom: 40rem;
+}
+
+.mediaLarge .Footer_light_1b {
+    bottom: 55rem;
 }
 
 .Footer_buttonWrapper_e5 {
@@ -12109,51 +12165,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .mediaExtraLarge .Header_description_d3 {
     margin-top: 13rem;
     font-size: 100rem;
-}
-
-.Header_icon_3b {
-    width: 24rem;
-    height: 24rem;
-    background: url('R.images.gui.maps.icons.battlePass.holiday_final_screen.check') no-repeat center / cover;
-    transform: translateY(2rem);
-}
-
-.Header_text_bf {
-    color: #80d43a;
-    font-size: 16rem;
-    font-weight: 400;
-    line-height: 1.25;
-}
-
-.mediaMedium .Header_text_bf {
-    font-size: 20rem;
-}
-
-.Header_label_d8 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 300rem;
-    height: 20rem;
-    margin-top: 10rem;
-    position: relative;
-    transform: translateX(-6rem);
-}
-
-.mediaMedium .Header_label_d8 {
-    width: 350rem;
-    margin-top: 16rem;
-}
-
-.Header_greenLight_5a {
-    width: 244rem;
-    height: 40rem;
-    background: url('R.images.gui.maps.icons.battlePass.holiday_final_screen.green_light') no-repeat center / cover;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    z-index: -1;
-    transform: translate(-50%, -50%);
 }
 
 .Card_base_5d {

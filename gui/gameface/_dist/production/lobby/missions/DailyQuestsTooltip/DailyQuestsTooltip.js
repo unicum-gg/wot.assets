@@ -721,13 +721,13 @@
                         getViewGlobalPosition: () => q,
                         initExternalPaddings: () => ae,
                         isEventHandled: () => Q,
-                        isFocused: () => Z,
+                        isFocused: () => X,
                         pxToRem: () => Y,
                         remToPx: () => H,
                         resize: () => z,
                         sendEvent: () => N,
-                        setAnimateWindow: () => W,
-                        setEventHandled: () => X,
+                        setAnimateWindow: () => Z,
+                        setEventHandled: () => W,
                         setInputPaddingsRem: () => x,
                         setSidePaddingsRem: () => G,
                         whenTutorialReady: () => se,
@@ -942,13 +942,13 @@
                 function H(e) {
                     return viewEnv.remToPx(e);
                 }
-                function W(e, u) {
+                function Z(e, u) {
                     viewEnv.setAnimateWindow(e, u);
                 }
-                function Z() {
+                function X() {
                     return viewEnv.isFocused();
                 }
-                function X() {
+                function W() {
                     return viewEnv.setEventHandled();
                 }
                 function Q() {
@@ -1432,7 +1432,7 @@
                                     (window.cancelAnimationFrame(e.current),
                                         (e.current = window.requestAnimationFrame(() => {
                                             e.current = window.requestAnimationFrame(() => {
-                                                (u(), (e.current = 0));
+                                                ((e.current = 0), u());
                                             });
                                         })));
                                 },
@@ -1587,10 +1587,7 @@
                         (e.EquipCoin = 'equipCoin'),
                         (e.LootBox = 'lootBox'),
                         (e.BrCoin = 'brcoin'),
-                        (e.Attachment = 'attachment'),
-                        (e.Stamp = 'stamp'),
-                        (e.WtEventLootbox = 'wtevent_lootBox'),
-                        (e.WtEventTicket = 'wtevent_ticket'));
+                        (e.Attachment = 'attachment'));
                 })(B || (B = {})),
                     (function (e) {
                         ((e.Gold = 'gold'),
@@ -2038,16 +2035,13 @@
                         B.BattleBoosterGift,
                         B.OptionalDevice,
                         B.Attachment,
-                        B.Stamp,
-                        B.WtEventLootbox,
-                        B.WtEventTicket,
                     ],
                     q = [B.Gold, B.Credits, B.Crystal, B.FreeXp],
                     V = [B.BattlePassPoints, B.EquipCoin],
                     j = [B.PremiumPlus, B.Premium],
                     Y = ['engravings', 'backgrounds'],
                     H = ['engraving', 'background'],
-                    W = (e, u = g.Small) => {
+                    Z = (e, u = g.Small) => {
                         const t = e.name,
                             n = e.type,
                             r = e.value,
@@ -2144,8 +2138,8 @@
                                 return `R.images.gui.maps.icons.quests.bonuses.${u}.${t}`;
                         }
                     },
-                    Z = [g.Small, g.Big],
-                    X = {
+                    X = [g.Small, g.Big],
+                    W = {
                         base: 'Reward_base_ea',
                         base__s48x48: 'Reward_base__s48x48_46',
                         base__small: 'Reward_base__small_c0',
@@ -2189,7 +2183,7 @@
                         periodicIconTooltipArgs: _,
                     }) => {
                         const F = ((e, u) => {
-                                if (void 0 === u || !Z.includes(e)) return null;
+                                if (void 0 === u || !X.includes(e)) return null;
                                 switch (u) {
                                     case v.BATTLE_BOOSTER:
                                     case v.BATTLE_BOOSTER_REPLACE:
@@ -2258,33 +2252,33 @@
                         return s().createElement(
                             'div',
                             {
-                                className: l()(X.base, X[`base__${n}`], f.includes(e) && X.base__normalize, c),
+                                className: l()(W.base, W[`base__${n}`], f.includes(e) && W.base__normalize, c),
                                 style: E,
                             },
                             s().createElement(
                                 G,
-                                { tooltipArgs: A, className: X.tooltipWrapper },
+                                { tooltipArgs: A, className: W.tooltipWrapper },
                                 s().createElement(
                                     s().Fragment,
                                     null,
                                     s().createElement(
                                         'div',
-                                        { className: l()(X.image, null == d ? void 0 : d.image) },
+                                        { className: l()(W.image, null == d ? void 0 : d.image) },
                                         F &&
                                             s().createElement('div', {
-                                                className: l()(X.highlight, null == d ? void 0 : d.highlight),
+                                                className: l()(W.highlight, null == d ? void 0 : d.highlight),
                                                 style: {
                                                     backgroundImage: `url(R.images.gui.maps.icons.quests.bonuses.${n}.${F}_highlight)`,
                                                 },
                                             }),
                                         u &&
                                             s().createElement('div', {
-                                                className: l()(X.icon, null == d ? void 0 : d.rewardIcon),
+                                                className: l()(W.icon, null == d ? void 0 : d.rewardIcon),
                                                 style: { backgroundImage: `url(${u})` },
                                             }),
                                         m &&
                                             s().createElement('div', {
-                                                className: l()(X.overlay, null == d ? void 0 : d.overlay),
+                                                className: l()(W.overlay, null == d ? void 0 : d.overlay),
                                                 style: {
                                                     backgroundImage: `url(R.images.gui.maps.icons.quests.bonuses.${n}.${m}_overlay)`,
                                                 },
@@ -2295,15 +2289,15 @@
                                             'div',
                                             {
                                                 className: l()(
-                                                    X.info,
-                                                    X[`info__${e}`],
-                                                    a === C.MULTI && X.info__multi,
+                                                    W.info,
+                                                    W[`info__${e}`],
+                                                    a === C.MULTI && W.info__multi,
                                                     null == d ? void 0 : d.info,
                                                 ),
                                             },
                                             D,
                                         ),
-                                    i && s().createElement('div', { className: X.title }, i),
+                                    i && s().createElement('div', { className: W.title }, i),
                                 ),
                             ),
                             t &&
@@ -2311,7 +2305,7 @@
                                     G,
                                     { tooltipArgs: _ },
                                     s().createElement('div', {
-                                        className: l()(X.timer, null == d ? void 0 : d.periodicIcon),
+                                        className: l()(W.timer, null == d ? void 0 : d.periodicIcon),
                                     }),
                                 ),
                         );
@@ -2424,7 +2418,7 @@
                                     t.map(({ value: e }) => {
                                         return {
                                             name: e.item || e.name,
-                                            image: W(e, g.Big),
+                                            image: Z(e, g.Big),
                                             special: e.overlayType,
                                             value: e.value,
                                             valueType:

@@ -1,20 +1,59 @@
-import { I as s } from './lib.js';
-const e = (s, e) => {
-        let a = s;
-        const t = e.split('.');
-        for (let o = 0; o < t.length; o++) {
-            if (!a) return '';
-            if (('string' != typeof a && (a = a.$dyn(t[o])), 'string' == typeof a)) return a;
+import { ao as s, ap as e, aq as t, j as a, ar as o, I as r } from './lib.js';
+import { d as n } from './vendor.js';
+class i extends s {
+    constructor(s, e) {
+        (super(), (this.root = s), (this.prefix = e));
+    }
+    readOr(s, a, o = 'silent') {
+        const r = e(this.prefix, s),
+            n = (function (s, e) {
+                const t = e.split('.');
+                if (window.R && window.R.sounds) {
+                    const e = t[t.length - 1];
+                    if (!e) return;
+                    const a = t.slice(0, -1).reduce((s, e) => {
+                        if ('object' == typeof (null == s ? void 0 : s[e])) return s[e];
+                    }, s);
+                    if (!a) return;
+                    return 'function' == typeof a[e] ? a[e]() : void 0;
+                }
+                throw new Error('R class with images field is not defined');
+            })(this.root, r);
+        return void 0 === n ? ('silent' !== o && t(`Resource not found: ${r}`, o), a()) : n;
+    }
+    readOrEmpty(s, e = 'warn') {
+        return this.readOr(s, () => '', e);
+    }
+}
+const c = 'lootbox_images',
+    u = 'lootbox_sounds';
+(a.register(c, n(() => new o(window.R.images)).singleton()),
+    a.register(u, n(() => new i(window.R.sounds)).singleton()));
+const m = a.resolve(c),
+    l = a.resolve('videos'),
+    g = a.resolve(u),
+    p = a.resolve('strings'),
+    d = (s, e) => {
+        switch (s) {
+            case R.images:
+                return m.readOrEmpty(e, 'silent');
+            case R.videos:
+                return l.readOrEmpty(e, 'silent');
+            case R.sounds:
+                return g.readOrEmpty(e, 'silent');
+            case R.strings:
+                return p.readOrEmpty(e, 'silent');
+            default:
+                return '';
         }
-        return '';
     },
-    a = (s, a) => {
-        const t = e(R.images, s);
-        return t || a;
+    $ = (s, e) => {
+        const t = d(R.images, s);
+        return t || e;
     },
-    t = (s, e, t) => a(`gui.maps.icons.quests.bonuses.${s}.${e}`, `R.images.gui.maps.icons.quests.bonuses.${s}.${t}`),
-    o = (s, e) => t(s, `lootBox_${e}`, 'lootBox_default'),
-    i = {
+    b = (s, e, t) => $(`gui.maps.icons.quests.bonuses.${s}.${e}`, `R.images.gui.maps.icons.quests.bonuses.${s}.${t}`),
+    h = (s, e) => b(s, `lootBox_${e}`, 'lootBox_default'),
+    k = {
         vehicles: 'vehicles',
         customizations: 'customizations',
         attachment: 'attachment',
@@ -52,91 +91,91 @@ const e = (s, e) => {
         lootBox: 'lootBox',
         collectionItem: 'collectionItem',
     },
-    n = (e) => {
-        switch (e) {
-            case s.S600x450:
+    w = (s) => {
+        switch (s) {
+            case r.S600x450:
                 return 'c_600x450';
-            case s.S180x135:
+            case r.S180x135:
                 return 'c_180x135';
             default:
-                return e;
+                return s;
         }
     },
-    r = (e, r = s.S180x135, c = !1) => {
-        const { name: u, icon: m, value: l } = c ? e.compensation : e,
-            { id: g, isRent: p } = e;
-        switch (u) {
-            case i.vehicles:
-                return p
-                    ? `R.images.gui.maps.icons.quests.bonuses.${r}.vehicles_rent`
-                    : m
-                      ? `R.images.gui.maps.shop.vehicles.${n(r)}.${m}`
-                      : `R.images.gui.maps.icons.quests.bonuses.${r}.vehicles`;
-            case i.customizations:
-                return t(r, `${m}_${g}`, m);
-            case i.attachment:
+    f = (s, e = r.S180x135, t = !1) => {
+        const { name: a, icon: o, value: n } = t ? s.compensation : s,
+            { id: i, isRent: c } = s;
+        switch (a) {
+            case k.vehicles:
+                return c
+                    ? `R.images.gui.maps.icons.quests.bonuses.${e}.vehicles_rent`
+                    : o
+                      ? `R.images.gui.maps.shop.vehicles.${w(e)}.${o}`
+                      : `R.images.gui.maps.icons.quests.bonuses.${e}.vehicles`;
+            case k.customizations:
+                return b(e, `${o}_${i}`, o);
+            case k.attachment:
                 return ((s, e, t) =>
-                    a(`gui.maps.vehicles.attachments.${s}.${e}`, `R.images.gui.maps.icons.quests.bonuses.${s}.${t}`))(
-                    r,
-                    m,
-                    u,
+                    $(`gui.maps.vehicles.attachments.${s}.${e}`, `R.images.gui.maps.icons.quests.bonuses.${s}.${t}`))(
+                    e,
+                    o,
+                    a,
                 );
-            case i.basic:
-            case i.plus:
-            case i.premium:
-            case i.premiumPlus:
-            case i.items:
-                return `R.images.gui.maps.icons.quests.bonuses.${r}.${m}`;
-            case i.blueprints:
-            case i.blueprintsAny:
-            case i.finalBlueprints:
-            case i.randomNationalBlueprint:
-                return `R.images.gui.maps.icons.blueprints.fragment.${r}.${m}`;
-            case i.tokens:
-            case i.styleProgress:
-                return `R.images.gui.maps.icons.quests.bonuses.${r}.${m}`;
-            case i.crewBooks:
-            case i.randomNationalBrochure:
-            case i.randomNationalGuide:
-            case i.randomNationalCrewBook:
-                return `R.images.gui.maps.icons.crewBooks.books.${r}.${m}`;
-            case i.crewSkins:
-            case i.goodies:
-            case i.groups:
-                return `R.images.gui.maps.icons.quests.bonuses.${r}.${m}`;
-            case i.dossierBadge:
-                return `R.images.gui.maps.icons.quests.bonuses.badges.${n(r)}.${m}`;
-            case i.dossierAchievement:
-                return `R.images.gui.maps.icons.achievement.${n(r)}.${m}`;
-            case i.xp:
-            case i.xpFactor:
-                return `R.images.gui.maps.icons.quests.bonuses.${r}.exp`;
-            case i.creditsFactor:
-                return `R.images.gui.maps.icons.quests.bonuses.${r}.credits`;
-            case i.crystal:
-                return `R.images.gui.maps.icons.quests.bonuses.${r}.crystal`;
-            case i.tankmenXPFactor:
-                return `R.images.gui.maps.icons.quests.bonuses.${r}.tankmenXP`;
-            case i.dailyXPFactor:
-            case i.freeXPFactor:
-                return `R.images.gui.maps.icons.quests.bonuses.${r}.freeXP`;
-            case i.tmanToken:
-            case i.battlePassSelectToken:
-                return t(r, `${m}_${l}`, m);
-            case i.premiumTank:
-                return `R.images.gui.maps.icons.quests.bonuses.${r}.vehicles`;
-            case i.styleProgressToken:
-                return `R.images.gui.maps.icons.quests.bonuses.${r}.style_3d`;
-            case i.lootBox:
-                return o(r, m);
-            case i.collectionItem:
-                return `R.images.gui.maps.icons.collectionItems.${n(r)}.${m}`;
+            case k.basic:
+            case k.plus:
+            case k.premium:
+            case k.premiumPlus:
+            case k.items:
+                return `R.images.gui.maps.icons.quests.bonuses.${e}.${o}`;
+            case k.blueprints:
+            case k.blueprintsAny:
+            case k.finalBlueprints:
+            case k.randomNationalBlueprint:
+                return `R.images.gui.maps.icons.blueprints.fragment.${e}.${o}`;
+            case k.tokens:
+            case k.styleProgress:
+                return `R.images.gui.maps.icons.quests.bonuses.${e}.${o}`;
+            case k.crewBooks:
+            case k.randomNationalBrochure:
+            case k.randomNationalGuide:
+            case k.randomNationalCrewBook:
+                return `R.images.gui.maps.icons.crewBooks.books.${e}.${o}`;
+            case k.crewSkins:
+            case k.goodies:
+            case k.groups:
+                return `R.images.gui.maps.icons.quests.bonuses.${e}.${o}`;
+            case k.dossierBadge:
+                return `R.images.gui.maps.icons.quests.bonuses.badges.${w(e)}.${o}`;
+            case k.dossierAchievement:
+                return `R.images.gui.maps.icons.achievement.${w(e)}.${o}`;
+            case k.xp:
+            case k.xpFactor:
+                return `R.images.gui.maps.icons.quests.bonuses.${e}.exp`;
+            case k.creditsFactor:
+                return `R.images.gui.maps.icons.quests.bonuses.${e}.credits`;
+            case k.crystal:
+                return `R.images.gui.maps.icons.quests.bonuses.${e}.crystal`;
+            case k.tankmenXPFactor:
+                return `R.images.gui.maps.icons.quests.bonuses.${e}.tankmenXP`;
+            case k.dailyXPFactor:
+            case k.freeXPFactor:
+                return `R.images.gui.maps.icons.quests.bonuses.${e}.freeXP`;
+            case k.tmanToken:
+            case k.battlePassSelectToken:
+                return b(e, `${o}_${n}`, o);
+            case k.premiumTank:
+                return `R.images.gui.maps.icons.quests.bonuses.${e}.vehicles`;
+            case k.styleProgressToken:
+                return `R.images.gui.maps.icons.quests.bonuses.${e}.style_3d`;
+            case k.lootBox:
+                return h(e, o);
+            case k.collectionItem:
+                return `R.images.gui.maps.icons.collectionItems.${w(e)}.${o}`;
             default:
-                return `R.images.gui.maps.icons.quests.bonuses.${r}.${m}`;
+                return `R.images.gui.maps.icons.quests.bonuses.${e}.${o}`;
         }
     },
-    c = (s, e, a) =>
-        e === i.attachment
-            ? `R.images.gui.maps.icons.customization.rarity.glowWithSign.${s}.${a}`
-            : `R.images.gui.maps.icons.quests.bonuses.${s}.${a}_overlay`;
-export { e as a, r as g, o as l, c as o, i as r };
+    y = (s, e, t) =>
+        e === k.attachment
+            ? `R.images.gui.maps.icons.customization.rarity.glowWithSign.${s}.${t}`
+            : `R.images.gui.maps.icons.quests.bonuses.${s}.${t}_overlay`;
+export { d as a, f as g, h as l, y as o, k as r };

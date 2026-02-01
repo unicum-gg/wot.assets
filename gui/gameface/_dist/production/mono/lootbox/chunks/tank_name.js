@@ -1,14 +1,14 @@
 import { j as e, e as a } from './vendor.js';
-import { X as s, ab as i, ac as l } from './lib.js';
+import { Y as s, ad as i, ae as l } from './lib.js';
 const t = { base: 'TankName_aa0700b7', type: 'TankName_type_652adbed' },
     r = (e, a, s) => ({
         backgroundImage: `url(${`R.images.gui.maps.icons.vehicleTypes.${s ? 'c_48x48' : 'c_24x24'}.${`${e.replace('-', '_')}${a ? '_elite' : ''}`}`})`,
     });
-function c({ reward: c, style: o, className: d = '', hasShortName: m }) {
+function d({ reward: d, style: o, className: c = '', hasShortName: m }) {
     const { breakpoint: n } = s(),
-        { label: v, level: p, type: h, isElite: b, vehicleShortName: y } = c;
+        { label: v, level: p, type: h, isElite: b, vehicleShortName: y } = d;
     return e.jsxs('div', {
-        className: a(t.base, d),
+        className: a(t.base, c),
         style: { fontSize: o.nameHeight },
         children: [
             void 0 !== p && e.jsx('div', { className: t.level, children: i(p) }),
@@ -17,4 +17,4 @@ function c({ reward: c, style: o, className: d = '', hasShortName: m }) {
         ],
     });
 }
-export { c as T };
+export { d as T };

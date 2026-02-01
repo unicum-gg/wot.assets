@@ -1,13 +1,14 @@
-import { j as s, x as e } from '../../../../chunks/vendor.js';
-import { r as i } from '../../../../chunks/lib.js';
-import { t as a, T as c } from '../../../../chunks/tooltips.module.js';
+import { j as s, J as e } from '../../../../chunks/vendor.js';
+import { cP as i } from '../../../../chunks/lib.js';
+import { T as c } from '../../../../chunks/tooltip_decorator.js';
+import { t as a } from '../../../../chunks/tooltips.module.js';
 /* empty css                        */ const r = 'App_4fcbfa35',
     d = 'App_crewIcon_f83bbe77',
-    l = 'App_title_95edd6ea',
-    n = 'App_perk_74555613',
-    o = 'App_slots_cb654453',
-    p = 'App_slotImage_9f9978b0',
-    t = () =>
+    o = 'App_title_95edd6ea',
+    l = 'App_perk_74555613',
+    t = 'App_slots_cb654453',
+    n = 'App_slotImage_9f9978b0',
+    p = () =>
         s.jsxs('div', {
             className: e(a.base, r),
             children: [
@@ -21,15 +22,15 @@ import { t as a, T as c } from '../../../../chunks/tooltips.module.js';
                     className: e(a.description, a.description__topIndent),
                     children: R.strings.comp7_ext.crewMembersTooltip.description(),
                 }),
-                s.jsx('div', { className: e(l), children: R.strings.comp7_ext.crewMembersTooltip.perks() }),
+                s.jsx('div', { className: e(o), children: R.strings.comp7_ext.crewMembersTooltip.perks() }),
                 s.jsxs('div', {
-                    className: o,
+                    className: t,
                     children: [
-                        s.jsx('div', { className: n, children: s.jsx('div', { className: p }) }),
-                        s.jsx('div', { className: n, children: s.jsx('div', { className: p }) }),
-                        s.jsx('div', { className: n, children: s.jsx('div', { className: p }) }),
+                        s.jsx('div', { className: l, children: s.jsx('div', { className: n }) }),
+                        s.jsx('div', { className: l, children: s.jsx('div', { className: n }) }),
+                        s.jsx('div', { className: l, children: s.jsx('div', { className: n }) }),
                     ],
                 }),
             ],
         });
-i(s.jsx(c, { children: s.jsx(t, {}) }));
+i(s.jsx(c, { children: s.jsx(p, {}) }));

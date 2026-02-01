@@ -10,7 +10,7 @@
 }
 .BattlePassProgressionsViewContent_base__extra_e2 {
     --widget-size: 418rem;
-    background-color: #0d131d;
+    background-color: #111820;
     background-position: 100% 50%;
     background-size: 1640rem 820rem;
 }
@@ -31,7 +31,7 @@
     background-size: 3800rem 1900rem;
 }
 .BattlePassProgressionsViewContent_base__extraChapter_17 {
-    background-color: #0a1316;
+    background-color: #111820;
 }
 .BattlePassProgressionsViewContent_header_76 {
     position: absolute;
@@ -4753,6 +4753,14 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 .OptimizedProgressBar_line_ef {
     position: relative;
+    top: 0;
+    left: 0;
+}
+.OptimizedProgressBar_backgroundWrapper_b6 {
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* it's obligatory to cut long background, which can have very long transform: translateX */
+    position: absolute;
     top: 0;
     left: 0;
 }

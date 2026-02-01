@@ -2350,17 +2350,18 @@
                                                   return u;
                                               })(t),
                                           )
-                                        : n.push({ blockType: a, colorTag: u, childList: [t] });
+                                        : n.push({ blockType: a, colorTag: u, childList: [t.replace(/\ufeff+/g, '')] });
                                 },
                             ),
                             n
                         );
                     },
                     _ = (e, u, t = '', n) => {
-                        const a = [];
+                        const a = [],
+                            s = e.replace(/(.)(、|。|ー)/g, '$1\ufeff$2');
                         return (
                             (0, r.Z)(
-                                e,
+                                s,
                                 /(?:%\(|{)(.*?)[)}][sd]?/g,
                                 (e) => {
                                     a.push(...c(e, t, n));
@@ -2978,8 +2979,8 @@
                         return u ? r().createElement('div', { className: D }, r().createElement(u, null)) : null;
                     }),
                     H = 'subViews.onChanged',
-                    W = '.html',
-                    $ = /^coui:\/\/gui\/.*/,
+                    $ = '.html',
+                    W = /^coui:\/\/gui\/.*/,
                     U = O(),
                     G = (e) => {
                         const u = document.createElement('script');
@@ -3014,10 +3015,10 @@
                                                 (t && t.setAttribute('id', 'bugSubView'),
                                                     i.current.setAttribute('id', 'root'));
                                                 const a = document.createElement('link');
-                                                ((a.href = e.replace(W, '.css')),
+                                                ((a.href = e.replace($, '.css')),
                                                     (a.rel = 'stylesheet'),
                                                     document.head.appendChild(a),
-                                                    $.test(e) &&
+                                                    W.test(e) &&
                                                         G(
                                                             e
                                                                 .split('/')
@@ -3026,7 +3027,7 @@
                                                                 .join('/')
                                                                 .replace('/production/', '/production/lib/'),
                                                         ),
-                                                    G(e.replace(W, '.js')),
+                                                    G(e.replace($, '.js')),
                                                     n.observe(i.current, { childList: !0 }));
                                             }
                                         }),
@@ -3747,7 +3748,7 @@
                     Pe = 'Countdown_base_fe',
                     Me = 'Countdown_icon_8b',
                     je = 'Countdown_description_8d';
-                let He, We;
+                let He, $e;
                 (!(function (e) {
                     ((e.Timer = 'timer'), (e.Countdown = 'countdown'), (e.Cooldown = 'cooldown'), (e.None = 'none'));
                 })(He || (He = {})),
@@ -3756,8 +3757,8 @@
                             (e.Short = 'short'),
                             (e.Long = 'long'),
                             (e.Extended = 'extended'));
-                    })(We || (We = {})));
-                const $e = (e) => e.toString().padStart(2, '0'),
+                    })($e || ($e = {})));
+                const We = (e) => e.toString().padStart(2, '0'),
                     Ue = R.images.gui.maps.icons.components.countdown,
                     Ge = (e, u) => {
                         const t = 2 === u ? Ue.big : Ue;
@@ -3774,26 +3775,26 @@
                         ({
                             duration: e,
                             icon: u = He.Timer,
-                            style: t = We.Description,
+                            style: t = $e.Description,
                             onTimeReached: n,
                             refreshRate: a,
                             className: i = '',
                             classNames: l = {},
                         }) => {
-                            const o = null != a ? a : t !== We.Description ? 1 : void 0,
+                            const o = null != a ? a : t !== $e.Description ? 1 : void 0,
                                 c = (0, C.au)(e, o),
                                 _ = Ie();
                             n && n[c] && n[c]();
                             const d = ((e, u) => {
                                 switch (u) {
-                                    case We.Description:
+                                    case $e.Description:
                                         return (0, Oe.wB)(e);
-                                    case We.Short:
-                                        return `${$e(e.minutes)}:${$e(e.seconds)}`;
-                                    case We.Long:
-                                        return `${$e(e.hours)}:${$e(e.minutes)}:${$e(e.seconds)}`;
-                                    case We.Extended:
-                                        return `${(0, Be.WU)(R.strings.common.duration.days(), { days: e.days })} | ${$e(e.hours)}:${$e(e.minutes)}:${$e(e.seconds)}`;
+                                    case $e.Short:
+                                        return `${We(e.minutes)}:${We(e.seconds)}`;
+                                    case $e.Long:
+                                        return `${We(e.hours)}:${We(e.minutes)}:${We(e.seconds)}`;
+                                    case $e.Extended:
+                                        return `${(0, Be.WU)(R.strings.common.duration.days(), { days: e.days })} | ${We(e.hours)}:${We(e.minutes)}:${We(e.seconds)}`;
                                 }
                             })((0, Oe.f8)(c), t);
                             return r().createElement(
@@ -4114,8 +4115,8 @@
                     },
                     ju = 33,
                     Hu = 0,
-                    Wu = !0,
-                    $u = 'play';
+                    $u = !0,
+                    Wu = 'play';
                 const Uu = [
                     'width',
                     'height',
@@ -4158,9 +4159,9 @@
                             d = e.lastFrameIndex,
                             E = void 0 === d ? i - 1 : d,
                             m = e.loop,
-                            A = void 0 === m ? Wu : m,
+                            A = void 0 === m ? $u : m,
                             F = e.state,
-                            D = void 0 === F ? $u : F,
+                            D = void 0 === F ? Wu : F,
                             g = e.onAnimationDone,
                             f = e.onAnimationComplete,
                             p = e.poster,
@@ -5095,7 +5096,7 @@
                         Ht.apply(this, arguments)
                     );
                 }
-                const Wt = ({
+                const $t = ({
                         data: e,
                         dataToCompare: u,
                         classes: t,
@@ -5228,7 +5229,7 @@
                             ),
                         );
                     },
-                    $t = 'SkillsWithRole_base_92',
+                    Wt = 'SkillsWithRole_base_92',
                     Ut = 'SkillsWithRole_role_66',
                     Gt = 'SkillsWithRole_role__glow_93',
                     Vt = ['role', 'size', 'withRoleGlow', 'className', 'isEfficiencyVisible'];
@@ -5265,9 +5266,9 @@
                         })(e, Vt);
                     return r().createElement(
                         'div',
-                        { className: $t },
+                        { className: Wt },
                         u && r().createElement(au, { role: u, className: s()(Ut, a && Gt) }),
-                        r().createElement(Wt, zt({ classes: { base: i }, isEfficiencyVisible: o, size: n }, c)),
+                        r().createElement($t, zt({ classes: { base: i }, isEfficiencyVisible: o, size: n }, c)),
                     );
                 };
                 let Zt;
@@ -5829,7 +5830,7 @@
                         );
                     }),
                     H = { [D.Reset.toString()]: I, [D.Retrain.toString()]: j },
-                    W = (e) =>
+                    $ = (e) =>
                         H[e.cardType]
                             ? a().createElement(H[e.cardType], e)
                             : a().createElement(
@@ -5841,7 +5842,7 @@
                                       binding: e.kwargs,
                                   }),
                               );
-                var $ = t(7405),
+                var W = t(7405),
                     U = t(2056),
                     G = t(5298);
                 const V = 'Price_base_3c',
@@ -5894,7 +5895,7 @@
                                 a().createElement(
                                     'div',
                                     null,
-                                    a().createElement($.F, X({}, e, { isInteractiveDiscount: !0 })),
+                                    a().createElement(W.F, X({}, e, { isInteractiveDiscount: !0 })),
                                 ),
                             ),
                         );
@@ -5983,7 +5984,7 @@
                             a().createElement('div', { className: J.hoverRays }),
                             a().createElement('div', { className: J.title }, o),
                             a().createElement('div', { className: J.icon, style: { backgroundImage: `url(${s})` } }),
-                            a().createElement(W, {
+                            a().createElement($, {
                                 description: c,
                                 cardType: _,
                                 cardState: A,

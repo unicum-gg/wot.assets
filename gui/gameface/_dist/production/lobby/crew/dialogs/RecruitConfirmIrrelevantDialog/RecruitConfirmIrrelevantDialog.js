@@ -2458,17 +2458,18 @@
                                                   return t;
                                               })(u),
                                           )
-                                        : n.push({ blockType: a, colorTag: t, childList: [u] });
+                                        : n.push({ blockType: a, colorTag: t, childList: [u.replace(/\ufeff+/g, '')] });
                                 },
                             ),
                             n
                         );
                     },
                     vt = (e, t, u = '', n) => {
-                        const a = [];
+                        const a = [],
+                            r = e.replace(/(.)(、|。|ー)/g, '$1\ufeff$2');
                         return (
                             ft(
-                                e,
+                                r,
                                 /(?:%\(|{)(.*?)[)}][sd]?/g,
                                 (e) => {
                                     a.push(...bt(e, u, n));

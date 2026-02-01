@@ -2248,7 +2248,6 @@
                                 );
                             })(W.childNodes);
                         !(U = B()).done;
-
                     )
                         if (3 === U.value.nodeType) return !0;
                     return !1;

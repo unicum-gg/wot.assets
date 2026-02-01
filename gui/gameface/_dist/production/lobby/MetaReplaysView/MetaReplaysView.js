@@ -1456,7 +1456,6 @@
                                                                     );
                                                                 })(r.keys());
                                                             !(e = t()).done;
-
                                                         )
                                                             n(e.value, u);
                                                     },
@@ -2414,7 +2413,6 @@
                                                         );
                                                     })(u(e).values());
                                                 !(a = r()).done;
-
                                             )
                                                 (0, a.value)(...t);
                                         };
@@ -2913,12 +2911,16 @@
                             }, [e, E.offset, E.pending, n, g]));
                         const b = (function (e, u, t = []) {
                                 const r = (0, a.useRef)(0),
-                                    n = (0, a.useCallback)(() => window.clearInterval(r.current), t || []);
+                                    n = (0, a.useCallback)(() => {
+                                        (window.clearInterval(r.current), (r.current = 0));
+                                    }, t || []);
                                 (0, a.useEffect)(() => n, [n]);
                                 const s = (null != t ? t : []).concat([u]);
                                 return [
                                     (0, a.useCallback)((t) => {
-                                        ((r.current = window.setInterval(() => e(t, !0), u)), e(t, !1));
+                                        (0 !== r.current && n(),
+                                            (r.current = window.setInterval(() => e(t, !0), u)),
+                                            e(t, !1));
                                     }, s),
                                     n,
                                 ];
@@ -4046,7 +4048,7 @@
                                                         (window.cancelAnimationFrame(e.current),
                                                             (e.current = window.requestAnimationFrame(() => {
                                                                 e.current = window.requestAnimationFrame(() => {
-                                                                    (u(), (e.current = 0));
+                                                                    ((e.current = 0), u());
                                                                 });
                                                             })));
                                                     },

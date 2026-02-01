@@ -1097,7 +1097,8 @@
                         getContainerSize: (e) => e.offsetWidth,
                         getWrapperSize: (e) => e.offsetWidth,
                         setScrollPosition: (e, t) => {
-                            e.style.transform = `translateX(-${t.value.scrollPosition}px)`;
+                            var n;
+                            e.style.transform = `translateX(-${0 | (null != (n = t.value.scrollPosition) ? n : 0)}px)`;
                         },
                         getDirection: (e) => (e.deltaY > 1 ? r.Nm.Next : r.Nm.Prev),
                         forceTriggerMouseMove: a.O.view.forceTriggerMouseMove,
@@ -2878,12 +2879,14 @@
                 var a = n(7363);
                 function r(e, t, n = []) {
                     const r = (0, a.useRef)(0),
-                        s = (0, a.useCallback)(() => window.clearInterval(r.current), n || []);
+                        s = (0, a.useCallback)(() => {
+                            (window.clearInterval(r.current), (r.current = 0));
+                        }, n || []);
                     (0, a.useEffect)(() => s, [s]);
                     const i = (null != n ? n : []).concat([t]);
                     return [
                         (0, a.useCallback)((n) => {
-                            ((r.current = window.setInterval(() => e(n, !0), t)), e(n, !1));
+                            (0 !== r.current && s(), (r.current = window.setInterval(() => e(n, !0), t)), e(n, !1));
                         }, i),
                         s,
                     ];
@@ -2960,7 +2963,7 @@
                                     (window.cancelAnimationFrame(e.current),
                                         (e.current = window.requestAnimationFrame(() => {
                                             e.current = window.requestAnimationFrame(() => {
-                                                (t(), (e.current = 0));
+                                                ((e.current = 0), t());
                                             });
                                         })));
                                 },
@@ -3947,17 +3950,18 @@
                                                   return t;
                                               })(n),
                                           )
-                                        : a.push({ blockType: r, colorTag: t, childList: [n] });
+                                        : a.push({ blockType: r, colorTag: t, childList: [n.replace(/\ufeff+/g, '')] });
                                 },
                             ),
                             a
                         );
                     },
                     d = (e, t, n = '', a) => {
-                        const r = [];
+                        const r = [],
+                            o = e.replace(/(.)(、|。|ー)/g, '$1\ufeff$2');
                         return (
                             (0, s.Z)(
-                                e,
+                                o,
                                 /(?:%\(|{)(.*?)[)}][sd]?/g,
                                 (e) => {
                                     r.push(...c(e, n, a));

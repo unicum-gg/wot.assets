@@ -1,17 +1,17 @@
-import { p as o, r as s, m as e, j as i, n as r } from '../../../chunks/vendor.js';
+import { n as o, r as s, l as e, j as i, m as r } from '../../../chunks/vendor.js';
 import {
     c as a,
-    i as _,
-    v as n,
+    i as n,
+    n as _,
     u as t,
     r as p,
     e as d,
     s as v,
-    b as c,
+    a as c,
     o as m,
-    a as l,
-    V as u,
-    k as y,
+    b as l,
+    k as u,
+    V as y,
     d as f,
     U as h,
 } from '../../../chunks/lib.js';
@@ -28,13 +28,13 @@ import {
         vid_pm_pause: a('vid_pm_pause'),
         vid_pm_resume: a('vid_pm_resume'),
     },
-    [b, g] = _()(({ observableModel: o }) => ({ ...o.primitives({ videoPath: 'videoPath' }) }), n),
+    [b, g] = n()(({ observableModel: o }) => ({ ...o.primitives({ videoPath: 'videoPath' }) }), _),
     x = { base: 'IntroScreen_187cc925', video: 'IntroScreen_video_16d069c3' },
     I = o(function () {
         const { model: o } = g(),
             a = o.videoPath.get(),
-            _ = s.useRef(null),
-            n = s.useRef(!1),
+            n = s.useRef(null),
+            _ = s.useRef(!1),
             f = t(),
             h = p.resolve('videos'),
             [j, b] = e(() => ({ from: { opacity: 0 }, config: { duration: 400, easing: d.easeInCubic } })),
@@ -44,8 +44,8 @@ import {
                 onRest: () => v.closeView(),
             }));
         function E() {
-            n.current ||
-                ((n.current = !0),
+            _.current ||
+                ((_.current = !0),
                 f.play('stopIntro'),
                 b.start({
                     to: { opacity: 0 },
@@ -59,9 +59,9 @@ import {
                     o ? f.play('vid_pm_pause') : f.play('vid_pm_resume');
                 }),
             ),
-            l(y.ESCAPE, E),
+            l(u.ESCAPE, E),
             c(() => {
-                const o = _.current;
+                const o = n.current;
                 o && (o.play(), b.start({ opacity: 1 }), f.play(a), f.play(`${a}_vo`));
             }),
             i.jsx(r.div, {
@@ -70,8 +70,8 @@ import {
                 children: i.jsx(r.div, {
                     className: x.wrapper,
                     style: j,
-                    children: i.jsx(u, {
-                        ref: _,
+                    children: i.jsx(y, {
+                        ref: n,
                         className: x.video,
                         src: h.readOrEmpty(`personal_missions_30.intro_screens.${a}`),
                         onEnded: E,

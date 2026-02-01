@@ -72,6 +72,15 @@
     flex: 1 1 auto;
     width: 100%;
 }
+.FormatText_db904f12 span {
+    flex-wrap: wrap;
+    white-space: normal;
+    overflow-wrap: anywhere;
+}
+
+.FormatText_nowrap_ff69eca3 {
+    white-space: nowrap;
+}
 
 .FormatText_colorLegacy__blackReal {
     color: #000;
@@ -239,7 +248,6 @@
     background-position: center;
     background-size: cover;
     content: '';
-    transition: opacity 0.1s ease-out;
 }
 .Button_base__theme-primary_8ba55469 .Button_background_98ebcfb8::after {
     background-image: url(R.images.gui.maps.icons.ui_kit.common.primary_background);
@@ -579,6 +587,15 @@ html[lang='th'] .Button_base__size-large_83da852e .Button_content__fontAligned_6
     width: 100%;
     overflow-x: hidden;
 }
+.HorizontalScroll_wrapper__left_adacfff {
+    mask-image: linear-gradient(to left, #000 97%, transparent);
+}
+.HorizontalScroll_wrapper__right_a6825027 {
+    mask-image: linear-gradient(to right, #000 97%, transparent);
+}
+.HorizontalScroll_wrapper__both_7917ea88 {
+    mask-image: linear-gradient(to right, transparent, #000 3%, #000 97%, transparent);
+}
 
 .HorizontalScroll_defaultScrollArea_a5c0f45 {
     width: 100%;
@@ -668,6 +685,15 @@ html[lang='th'] .Button_base__size-large_83da852e .Button_content__fontAligned_6
 .VerticalScroll_content_62cb6120 {
     height: 100%;
     overflow-y: hidden;
+}
+.VerticalScroll_content__top_b27098a4 {
+    mask-image: linear-gradient(to top, #000 97%, transparent);
+}
+.VerticalScroll_content__bottom_d6604290 {
+    mask-image: linear-gradient(to bottom, #000 97%, transparent);
+}
+.VerticalScroll_content__both_8d905712 {
+    mask-image: linear-gradient(to bottom, transparent, #000 3%, #000 97%, transparent);
 }
 
 .VerticalScroll_defaultScroll_c69fa70e {
@@ -1305,10 +1331,10 @@ html[lang='th'] .Button_base__size-large_83da852e .Button_content__fontAligned_6
     z-index: 0;
 }
 
-.Reward_image_1cbfa020 {
+.Reward_image_810ec3a2 {
     display: flex;
-    position: relative;
     align-self: center;
+    position: relative;
 }
 .Reward_image__s24x24_954b5cee {
     width: 24rem;
@@ -1353,7 +1379,7 @@ html[lang='th'] .Button_base__size-large_83da852e .Button_content__fontAligned_6
     height: 100%;
 }
 
-.Reward_info_81cb3342 {
+.Reward_info_26d38c48 {
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.2em;
@@ -1364,13 +1390,13 @@ html[lang='th'] .Button_base__size-large_83da852e .Button_content__fontAligned_6
     overflow-wrap: normal;
     z-index: 1;
 }
-.Reward_base__s24x24_954b5cee .Reward_info_81cb3342 {
+.Reward_base__s24x24_954b5cee .Reward_info_26d38c48 {
     margin-top: 0;
     white-space: nowrap;
 }
-.Reward_base__s48x48_21f091ec .Reward_info_81cb3342,
-.Reward_base__small_3eddf28d .Reward_info_81cb3342 {
-    margin: -10rem -10rem 0;
+.Reward_base__s48x48_21f091ec .Reward_info_26d38c48,
+.Reward_base__small_3eddf28d .Reward_info_26d38c48 {
+    margin: -8rem -10rem 0;
 }
 .Reward_info__multi_465d34bd {
     justify-content: flex-end;
@@ -1819,6 +1845,11 @@ html[lang='th'] .Button_base__size-large_83da852e .Button_content__fontAligned_6
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
+:root {
+    --hangar-highlight-shadow:
+        0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+}
+
 /* stylelint-disable selector-max-id */
 /* stylelint-disable selector-no-qualifying-type */
 #root,
@@ -1828,6 +1859,7 @@ body {
     height: 100%;
     margin: 0;
     padding: 0;
+    color: var(--color-general-primary);
     font-size: 14rem;
 }
 
@@ -1864,14 +1896,14 @@ html[lang='th'] input {
 } /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
-.AssemblingVideo_e9b4126e {
+.IntroScreen_187cc925 {
     width: 100%;
     height: 100%;
     background-color: #000;
     pointer-events: none;
 }
 
-.AssemblingVideo_video_64714e8e {
+.IntroScreen_video_16d069c3 {
     width: 100%;
     height: 100%;
 } /* stylelint-disable selector-no-qualifying-type */
@@ -2804,14 +2836,14 @@ html[lang='th'] input {
 } /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
-.IntroScreen_187cc925 {
+.AssemblingVideo_e9b4126e {
     width: 100%;
     height: 100%;
     background-color: #000;
     pointer-events: none;
 }
 
-.IntroScreen_video_16d069c3 {
+.AssemblingVideo_video_64714e8e {
     width: 100%;
     height: 100%;
 } /* stylelint-disable selector-no-qualifying-type */
@@ -2841,7 +2873,6 @@ html[lang='th'] input {
 }
 .ZoomOut_icon_ea52efbd:active {
     opacity: 0.8;
-    transition: none;
 } /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
@@ -3047,7 +3078,7 @@ html[lang='th'] input {
     opacity: 0.9;
 }
 
-.CategoryInfo_title_36d4af70 {
+.CategoryInfo_title_3745f90 {
     font-size: 56rem;
     font-weight: 700;
     line-height: 1.3em;
@@ -3056,29 +3087,29 @@ html[lang='th'] input {
     font-weight: 600;
     letter-spacing: -0.2rem;
 }
-.mediaLarge .CategoryInfo_title_36d4af70 {
+.mediaLarge .CategoryInfo_title_3745f90 {
     margin-top: 9rem;
     font-size: 80rem;
 }
-html[lang='ja'] .CategoryInfo_title_36d4af70,
-html[lang='ko'] .CategoryInfo_title_36d4af70,
-html[lang='zh_tw'] .CategoryInfo_title_36d4af70,
-html[lang='zh_sg'] .CategoryInfo_title_36d4af70,
-html[lang='zh_cn'] .CategoryInfo_title_36d4af70,
-html[lang='vi'] .CategoryInfo_title_36d4af70,
-html[lang='el'] .CategoryInfo_title_36d4af70,
-html[lang='th'] .CategoryInfo_title_36d4af70 {
+html[lang='ja'] .CategoryInfo_title_3745f90,
+html[lang='ko'] .CategoryInfo_title_3745f90,
+html[lang='zh_tw'] .CategoryInfo_title_3745f90,
+html[lang='zh_sg'] .CategoryInfo_title_3745f90,
+html[lang='zh_cn'] .CategoryInfo_title_3745f90,
+html[lang='vi'] .CategoryInfo_title_3745f90,
+html[lang='el'] .CategoryInfo_title_3745f90,
+html[lang='th'] .CategoryInfo_title_3745f90 {
     font-size: 46rem;
 }
-html[lang='ja'] .mediaMedium .CategoryInfo_title_36d4af70,
-html[lang='ko'] .mediaMedium .CategoryInfo_title_36d4af70,
-html[lang='zh_tw'] .mediaMedium .CategoryInfo_title_36d4af70,
-html[lang='zh_sg'] .mediaMedium .CategoryInfo_title_36d4af70,
-html[lang='zh_cn'] .mediaMedium .CategoryInfo_title_36d4af70,
-html[lang='vi'] .mediaMedium .CategoryInfo_title_36d4af70,
-html[lang='el'] .mediaMedium .CategoryInfo_title_36d4af70,
-html[lang='th'] .mediaMedium .CategoryInfo_title_36d4af70 {
-    font-size: 56;
+html[lang='ja'] .mediaMedium .CategoryInfo_title_3745f90,
+html[lang='ko'] .mediaMedium .CategoryInfo_title_3745f90,
+html[lang='zh_tw'] .mediaMedium .CategoryInfo_title_3745f90,
+html[lang='zh_sg'] .mediaMedium .CategoryInfo_title_3745f90,
+html[lang='zh_cn'] .mediaMedium .CategoryInfo_title_3745f90,
+html[lang='vi'] .mediaMedium .CategoryInfo_title_3745f90,
+html[lang='el'] .mediaMedium .CategoryInfo_title_3745f90,
+html[lang='th'] .mediaMedium .CategoryInfo_title_3745f90 {
+    font-size: 56rem;
 }
 
 .CategoryInfo_separator_621f70ab {
@@ -3360,6 +3391,37 @@ html[lang='de'] .mediaMedium .CategoryInfo_descriptionBlock_18a18499 {
 } /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
+.VehiclesProgress_d2b4bea6 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.VehiclesProgress_container_3dc9329c {
+    width: 39rem;
+    height: 14rem;
+    position: relative;
+}
+.VehiclesProgress_container_3dc9329c + .VehiclesProgress_container_3dc9329c {
+    margin-left: 2rem;
+}
+
+.VehiclesProgress_done_db1d3990,
+.VehiclesProgress_vehicle_3344a8a1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.VehiclesProgress_done_db1d3990 {
+    opacity: 0;
+}
+.VehiclesProgress_done__visible_b31330f7 {
+    opacity: 1;
+} /* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
 .Progress_431da46b {
     display: flex;
     flex-direction: column;
@@ -3386,10 +3448,7 @@ html[lang='de'] .mediaMedium .CategoryInfo_descriptionBlock_18a18499 {
     margin: 0 3rem;
 }
 
-.Progress_c2cbad16 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.Progress_bab84485 {
     margin-top: 4rem;
 }
 
@@ -4797,7 +4856,7 @@ html[lang='de'] .mediaMedium .CategoryInfo_descriptionBlock_18a18499 {
     display: flex;
 }
 
-.MenuItem_vehicleImage_455d92b7 {
+.MenuItem_vehicleImage_1697986e {
     width: 120rem;
     height: 80rem;
     background: no-repeat center/contain;
@@ -4810,27 +4869,24 @@ html[lang='de'] .mediaMedium .CategoryInfo_descriptionBlock_18a18499 {
         width 500ms,
         height 500ms;
 }
-.MenuItem_d36069b6:hover .MenuItem_vehicleImage_455d92b7 {
+.MenuItem_d36069b6:hover .MenuItem_vehicleImage_1697986e {
     opacity: 0.9;
 }
-.MenuItem_d36069b6:active .MenuItem_vehicleImage_455d92b7 {
+.MenuItem_d36069b6:active .MenuItem_vehicleImage_1697986e {
     opacity: 0.5;
-    transition:
-        opacity 200ms,
-        width 500ms,
-        height 500ms;
+    transition-duration: 200ms, 500ms, 500ms;
 }
-.MenuItem_base__unavailable_28be5e00 .MenuItem_vehicleImage_455d92b7,
-.MenuItem_base__locked_28be5e00 .MenuItem_vehicleImage_455d92b7,
-.MenuItem_base__locked_28be5e00:hover .MenuItem_vehicleImage_455d92b7 {
+.MenuItem_base__unavailable_28be5e00 .MenuItem_vehicleImage_1697986e,
+.MenuItem_base__locked_28be5e00 .MenuItem_vehicleImage_1697986e,
+.MenuItem_base__locked_28be5e00:hover .MenuItem_vehicleImage_1697986e {
     opacity: 0.6;
 }
-.MenuItem_base__selected_b91feb1b .MenuItem_vehicleImage_455d92b7 {
+.MenuItem_base__selected_b91feb1b .MenuItem_vehicleImage_1697986e {
     width: 150rem;
     height: 100rem;
 }
-.MenuItem_base__selected_b91feb1b .MenuItem_vehicleImage_455d92b7,
-.MenuItem_base__selected_b91feb1b:hover .MenuItem_vehicleImage_455d92b7 {
+.MenuItem_base__selected_b91feb1b .MenuItem_vehicleImage_1697986e,
+.MenuItem_base__selected_b91feb1b:hover .MenuItem_vehicleImage_1697986e {
     opacity: 1;
 }
 

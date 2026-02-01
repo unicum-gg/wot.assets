@@ -65,13 +65,13 @@
                         getFontNames: () => ee,
                         getScale: () => U,
                         getSize: () => j,
-                        getViewGlobalPosition: () => $,
+                        getViewGlobalPosition: () => V,
                         initExternalPaddings: () => ie,
                         isEventHandled: () => Z,
                         isFocused: () => Y,
                         pxToRem: () => z,
                         remToPx: () => q,
-                        resize: () => V,
+                        resize: () => $,
                         sendEvent: () => I,
                         setAnimateWindow: () => K,
                         setEventHandled: () => X,
@@ -270,10 +270,10 @@
                 function j(e = 'px') {
                     return 'rem' === e ? viewEnv.getViewSizeRem() : viewEnv.getViewSizePx();
                 }
-                function V(e, u, t = 'px') {
+                function $(e, u, t = 'px') {
                     return 'rem' === t ? viewEnv.resizeViewRem(e, u) : viewEnv.resizeViewPx(e, u);
                 }
-                function $(e = 'rem') {
+                function V(e = 'rem') {
                     const u = viewEnv.getViewGlobalPositionRem();
                     return 'rem' === e ? u : { x: q(u.x), y: q(u.y) };
                 }
@@ -1140,13 +1140,13 @@
                     },
                     W = (e) => e && 'ArrayItem' === e.__proto__.constructor.name,
                     j = (e, u) => (e.length > 0 ? `${e}.${u}` : u),
-                    V = (e) =>
+                    $ = (e) =>
                         ((e, u) =>
                             e.split('.').reduce((e, t) => {
                                 const n = P(`${e}.${t}`, window);
                                 return W(n) ? u(e, t, n) : `${e}.${t}`;
                             }))(e, (e, u) => `${e}.${u}.value`),
-                    $ = (e) => {
+                    V = (e) => {
                         const u = ((e) => {
                                 const u = N(),
                                     t = u.caller,
@@ -1192,7 +1192,7 @@
                                 const u = P(e, window);
                                 for (const e in u) 'function' == typeof u[e] && (u[e] = u[e].bind(u));
                                 return W(u) ? u.value : u;
-                            })(V(l)),
+                            })($(l)),
                         ),
                         d = c[0],
                         E = c[1],
@@ -1213,7 +1213,7 @@
                                             ? (e === d && r((e) => e + 1), E(e))
                                             : E(Object.assign([], e));
                                     },
-                                    n = $(e);
+                                    n = V(e);
                                 A.current = U.addCallback(n, t, s, u === z.Deep);
                             }
                         }),
@@ -2011,9 +2011,9 @@
                     He = 'DialogTemplateWrapper_base_f7',
                     We = 'DialogTemplateWrapper_base__hidden_5f',
                     je = 'DialogTemplateWrapper_subView_30';
-                function Ve() {
+                function $e() {
                     return (
-                        (Ve =
+                        ($e =
                             Object.assign ||
                             function (e) {
                                 for (var u = 1; u < arguments.length; u++) {
@@ -2022,10 +2022,10 @@
                                 }
                                 return e;
                             }),
-                        Ve.apply(this, arguments)
+                        $e.apply(this, arguments)
                     );
                 }
-                const $e = (0, n.memo)(({ Template: e }) => {
+                const Ve = (0, n.memo)(({ Template: e }) => {
                     const u = q('model', z.None),
                         t = u.onCloseClicked,
                         a = u.placeHolders,
@@ -2086,7 +2086,7 @@
                             { className: p, style: B },
                             r().createElement(
                                 e,
-                                Ve(
+                                $e(
                                     { onClose: m, buttons: r().createElement(Pe, null), displayFlags: l, isShown: !E },
                                     C,
                                 ),
@@ -2381,17 +2381,18 @@
                                                   return u;
                                               })(t),
                                           )
-                                        : n.push({ blockType: r, colorTag: u, childList: [t] });
+                                        : n.push({ blockType: r, colorTag: u, childList: [t.replace(/\ufeff+/g, '')] });
                                 },
                             ),
                             n
                         );
                     },
                     hu = (e, u, t = '', n) => {
-                        const r = [];
+                        const r = [],
+                            a = e.replace(/(.)(、|。|ー)/g, '$1\ufeff$2');
                         return (
                             Au(
-                                e,
+                                a,
                                 /(?:%\(|{)(.*?)[)}][sd]?/g,
                                 (e) => {
                                     r.push(...Du(e, t, n));
@@ -2938,7 +2939,7 @@
                     return n;
                 }
                 const ju = (e) => (0 === e ? window : window.subViews.get(e));
-                const Vu = () => (e, u) => {
+                const $u = () => (e, u) => {
                         const t = (0, n.createContext)({});
                         return [
                             function ({ mode: a = 'real', options: i, children: s, mocks: l }) {
@@ -3131,7 +3132,7 @@
                             () => (0, n.useContext)(t),
                         ];
                     },
-                    $u = Vu()(
+                    Vu = $u()(
                         ({ observableModel: e }) =>
                             Object.assign({}, e.primitives(['iconPositionLogic']), {
                                 icons: e.array('icons'),
@@ -3140,8 +3141,8 @@
                             }),
                         Ru,
                     ),
-                    Gu = $u[0],
-                    Uu = $u[1],
+                    Gu = Vu[0],
+                    Uu = Vu[1],
                     zu = {
                         base: 'IconSetApp_base_f4',
                         mainIcon: 'IconSetApp_mainIcon_71',
@@ -3240,13 +3241,13 @@
                         const u = (0, n.useMemo)(() => ({ rootId: e.resId }), [e.resId]);
                         return r().createElement(Gu, { options: u }, r().createElement(qu, null));
                     }),
-                    Yu = Vu()(
+                    Yu = $u()(
                         ({ observableModel: e }) => Object.assign({}, e.primitives(['title', 'text', 'infoText'])),
                         Ru,
                     ),
                     Xu = Yu[0],
                     Zu = Yu[1],
-                    Qu = Vu()(({ observableModel: e }) => Object.assign({}, e.primitives(['text'])), Ru),
+                    Qu = $u()(({ observableModel: e }) => Object.assign({}, e.primitives(['text'])), Ru),
                     Ju = Qu[0],
                     et = Qu[1],
                     ut = 'WarningTextApp_base_ba',
@@ -3318,7 +3319,7 @@
                         r().createElement(
                             Xu,
                             null,
-                            r().createElement(T, null, r().createElement($e, { Template: ct })),
+                            r().createElement(T, null, r().createElement(Ve, { Template: ct })),
                         ),
                         document.getElementById('root'),
                     );

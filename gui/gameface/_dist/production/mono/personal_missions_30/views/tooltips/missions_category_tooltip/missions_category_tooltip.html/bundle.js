@@ -1,17 +1,17 @@
-import { p as e, j as s, f as n } from '../../../../chunks/vendor.js';
+import { n as e, j as s, f as n } from '../../../../chunks/vendor.js';
 import {
     i as o,
-    v as t,
+    n as t,
     I as a,
     F as i,
-    z as r,
+    A as r,
     L as c,
     S as l,
     H as m,
     M as _,
-    C as p,
+    E as p,
     at as d,
-    A as h,
+    C as h,
     d as x,
 } from '../../../../chunks/lib.js';
 import { G as j } from '../../../../chunks/gradient_decorator.js';
@@ -42,6 +42,7 @@ import { M as u } from '../../../../chunks/enums.js';
                     children: [
                         s.jsx(i, { className: f, path: `personal_missions_30.common.category.${n}` }),
                         s.jsx(i, {
+                            split: !0,
                             className: T,
                             path: `personal_missions_30.tooltip.missionsCategory.description.${n}`,
                         }),
@@ -125,6 +126,7 @@ const L = 'assault',
             className: n(P.base, P[`base__${o}`]),
             children: [
                 s.jsx(i, {
+                    split: !0,
                     className: P.description,
                     path: `personal_missions_30.tooltip.missionsCategory.innerBlock.description.${o}`,
                 }),
@@ -168,12 +170,12 @@ const L = 'assault',
             ],
         });
     }),
-    F = 'MissionsCategoryTooltip_c7151f3b',
-    E = 'MissionsCategoryTooltip_footer_e1c7b92d',
+    E = 'MissionsCategoryTooltip_c7151f3b',
+    F = 'MissionsCategoryTooltip_footer_e1c7b92d',
     U = e(function () {
         const { model: e } = y();
         return s.jsx(d, {
-            className: F,
+            className: E,
             'data-name': 'MissionsCategoryTooltip',
             children: s.jsxs(d.Decorator, {
                 children: [
@@ -186,7 +188,7 @@ const L = 'assault',
                             minLevel: h(e.minLevel.get()),
                             maxLevel: h(e.maxLevel.get()),
                         },
-                        className: E,
+                        className: F,
                     }),
                 ],
             }),

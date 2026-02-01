@@ -1,5 +1,5 @@
-import { j as s, f as e, p as o } from '../../../../chunks/vendor.js';
-import { i, v as t, F as l, J as n, h as a, at as c, d as r } from '../../../../chunks/lib.js';
+import { j as s, f as e, n as o } from '../../../../chunks/vendor.js';
+import { i, n as t, F as l, J as n, h as a, at as c, d as r } from '../../../../chunks/lib.js';
 import { G as m } from '../../../../chunks/gradient_decorator.js';
 /* empty css                       */ const [d, _] = i()(
         ({ observableModel: s }) => ({
@@ -12,8 +12,8 @@ import { G as m } from '../../../../chunks/gradient_decorator.js';
     h = 'VehicleItem_vehicleIcon_be065974',
     j = 'VehicleItem_base__completed_e538d77c',
     x = 'VehicleItem_label_d360b547',
-    v = 'VehicleItem_line_45efcf11',
-    g = 'VehicleItem_line__vertical_b60df039',
+    g = 'VehicleItem_line_45efcf11',
+    v = 'VehicleItem_line__vertical_b60df039',
     b = ({ vehicleName: o, completed: i, last: t }) =>
         s.jsxs('div', {
             className: e(p, i && j),
@@ -23,8 +23,8 @@ import { G as m } from '../../../../chunks/gradient_decorator.js';
                     className: x,
                     children: o || s.jsx(l, { path: 'personal_missions_30.tooltip.missionProgress.unknownVehicle' }),
                 }),
-                s.jsx('div', { className: e(v, g) }),
-                !t && s.jsx('div', { className: v }),
+                s.jsx('div', { className: e(g, v) }),
+                !t && s.jsx('div', { className: g }),
             ],
         }),
     u = 'InnerBlock_a92b837',

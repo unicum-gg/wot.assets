@@ -234,10 +234,7 @@
                             (u.EquipCoin = 'equipCoin'),
                             (u.LootBox = 'lootBox'),
                             (u.BrCoin = 'brcoin'),
-                            (u.Attachment = 'attachment'),
-                            (u.Stamp = 'stamp'),
-                            (u.WtEventLootbox = 'wtevent_lootBox'),
-                            (u.WtEventTicket = 'wtevent_ticket'));
+                            (u.Attachment = 'attachment'));
                     })(i || (i = {})),
                     (function (u) {
                         ((u.Gold = 'gold'),
@@ -388,9 +385,6 @@
                     i.E4.BattleBoosterGift,
                     i.E4.OptionalDevice,
                     i.E4.Attachment,
-                    i.E4.Stamp,
-                    i.E4.WtEventLootbox,
-                    i.E4.WtEventTicket,
                     i.E4.Gold,
                     i.E4.Credits,
                     i.E4.Crystal,

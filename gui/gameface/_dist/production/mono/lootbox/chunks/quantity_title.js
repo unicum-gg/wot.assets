@@ -1,5 +1,5 @@
 import { j as s, e as a } from './vendor.js';
-import { ak as e, al as c, Z as n, n as t, F as i } from './lib.js';
+import { al as e, am as c, _ as n, n as t, F as i } from './lib.js';
 const o = 'AnimationCheckbox_9598d652',
     r = 'AnimationCheckbox_base__disabled_d45bad7',
     d = 'AnimationCheckbox_text_af0df6f3';
@@ -34,8 +34,8 @@ const h = 'PurchaseButton_cbbf2765',
     j = 'PurchaseButton_image_28c18c52',
     N = 'PurchaseButton_textBlock_4db46f09',
     f = 'PurchaseButton_text_6d4bbfc',
-    k = 'PurchaseButton_icon_4fb4c378';
-function g({ text: e, image: c, sounds: n, icon: i, onClick: o, className: r }) {
+    g = 'PurchaseButton_icon_4fb4c378';
+function k({ text: e, image: c, sounds: n, icon: i, onClick: o, className: r }) {
     return s.jsx('div', {
         className: a(h, r),
         onClick: () => {
@@ -52,7 +52,7 @@ function g({ text: e, image: c, sounds: n, icon: i, onClick: o, className: r }) 
                     className: N,
                     children: [
                         s.jsx('div', { className: f, children: e }),
-                        i && s.jsx('div', { className: k, style: { backgroundImage: `url(${i})` } }),
+                        i && s.jsx('div', { className: g, style: { backgroundImage: `url(${i})` } }),
                     ],
                 }),
             ],
@@ -74,4 +74,4 @@ function C({ text: e, boxesCount: c = 0, className: n }) {
                 : e,
     });
 }
-export { l as A, _ as L, g as P, C as Q };
+export { l as A, _ as L, k as P, C as Q };

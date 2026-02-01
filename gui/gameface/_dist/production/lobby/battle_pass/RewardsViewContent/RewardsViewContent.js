@@ -360,10 +360,7 @@
                             (u.EquipCoin = 'equipCoin'),
                             (u.LootBox = 'lootBox'),
                             (u.BrCoin = 'brcoin'),
-                            (u.Attachment = 'attachment'),
-                            (u.Stamp = 'stamp'),
-                            (u.WtEventLootbox = 'wtevent_lootBox'),
-                            (u.WtEventTicket = 'wtevent_ticket'));
+                            (u.Attachment = 'attachment'));
                     })(r || (r = {})),
                     (function (u) {
                         ((u.Gold = 'gold'),
@@ -518,9 +515,6 @@
                         o.E4.BattleBoosterGift,
                         o.E4.OptionalDevice,
                         o.E4.Attachment,
-                        o.E4.Stamp,
-                        o.E4.WtEventLootbox,
-                        o.E4.WtEventTicket,
                     ],
                     s = [o.E4.Gold, o.E4.Credits, o.E4.Crystal, o.E4.FreeXp],
                     l = [o.E4.BattlePassPoints, o.E4.EquipCoin],
@@ -1036,7 +1030,8 @@
                         getContainerSize: (u) => u.offsetWidth,
                         getWrapperSize: (u) => u.offsetWidth,
                         setScrollPosition: (u, e) => {
-                            u.style.transform = `translateX(-${e.value.scrollPosition}px)`;
+                            var t;
+                            u.style.transform = `translateX(-${0 | (null != (t = e.value.scrollPosition) ? t : 0)}px)`;
                         },
                         getDirection: (u) => (u.deltaY > 1 ? n.Nm.Next : n.Nm.Prev),
                         forceTriggerMouseMove: r.O.view.forceTriggerMouseMove,
@@ -2635,12 +2630,14 @@
                 var r = t(7363);
                 function n(u, e, t = []) {
                     const n = (0, r.useRef)(0),
-                        a = (0, r.useCallback)(() => window.clearInterval(n.current), t || []);
+                        a = (0, r.useCallback)(() => {
+                            (window.clearInterval(n.current), (n.current = 0));
+                        }, t || []);
                     (0, r.useEffect)(() => a, [a]);
                     const o = (null != t ? t : []).concat([e]);
                     return [
                         (0, r.useCallback)((t) => {
-                            ((n.current = window.setInterval(() => u(t, !0), e)), u(t, !1));
+                            (0 !== n.current && a(), (n.current = window.setInterval(() => u(t, !0), e)), u(t, !1));
                         }, o),
                         a,
                     ];
@@ -3205,7 +3202,7 @@
                     g = 'Content_mainContent_d4',
                     p = 'Content_base__noScroll_d3',
                     h = R.strings.battle_pass.battlePassBuyView.reward,
-                    f = () => {
+                    f = (0, o.Pi)(() => {
                         const u = (0, C.t)().model,
                             e = u.levels.get(),
                             t = e.fromLevel,
@@ -3251,7 +3248,7 @@
                                     }),
                             ),
                         );
-                    },
+                    }),
                     v = 'RewardsViewContent_base_42',
                     w = 'RewardsViewContent_content_64',
                     b = 'RewardsViewContent_background_37',

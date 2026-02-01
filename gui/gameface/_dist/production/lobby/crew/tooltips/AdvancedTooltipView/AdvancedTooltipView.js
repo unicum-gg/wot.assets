@@ -360,7 +360,7 @@
                                     (window.cancelAnimationFrame(e.current),
                                         (e.current = window.requestAnimationFrame(() => {
                                             e.current = window.requestAnimationFrame(() => {
-                                                (n(), (e.current = 0));
+                                                ((e.current = 0), n());
                                             });
                                         })));
                                 },

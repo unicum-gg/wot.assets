@@ -1274,10 +1274,7 @@
                             (e.EquipCoin = 'equipCoin'),
                             (e.LootBox = 'lootBox'),
                             (e.BrCoin = 'brcoin'),
-                            (e.Attachment = 'attachment'),
-                            (e.Stamp = 'stamp'),
-                            (e.WtEventLootbox = 'wtevent_lootBox'),
-                            (e.WtEventTicket = 'wtevent_ticket'));
+                            (e.Attachment = 'attachment'));
                     })(n || (n = {})),
                     (function (e) {
                         ((e.Gold = 'gold'),
@@ -1432,9 +1429,6 @@
                         s.E4.BattleBoosterGift,
                         s.E4.OptionalDevice,
                         s.E4.Attachment,
-                        s.E4.Stamp,
-                        s.E4.WtEventLootbox,
-                        s.E4.WtEventTicket,
                     ],
                     i = [s.E4.Gold, s.E4.Credits, s.E4.Crystal, s.E4.FreeXp],
                     l = [s.E4.BattlePassPoints, s.E4.EquipCoin],
@@ -1950,7 +1944,8 @@
                         getContainerSize: (e) => e.offsetWidth,
                         getWrapperSize: (e) => e.offsetWidth,
                         setScrollPosition: (e, u) => {
-                            e.style.transform = `translateX(-${u.value.scrollPosition}px)`;
+                            var t;
+                            e.style.transform = `translateX(-${0 | (null != (t = u.value.scrollPosition) ? t : 0)}px)`;
                         },
                         getDirection: (e) => (e.deltaY > 1 ? r.Nm.Next : r.Nm.Prev),
                         forceTriggerMouseMove: n.O.view.forceTriggerMouseMove,
@@ -3587,12 +3582,14 @@
                 var n = t(7363);
                 function r(e, u, t = []) {
                     const r = (0, n.useRef)(0),
-                        a = (0, n.useCallback)(() => window.clearInterval(r.current), t || []);
+                        a = (0, n.useCallback)(() => {
+                            (window.clearInterval(r.current), (r.current = 0));
+                        }, t || []);
                     (0, n.useEffect)(() => a, [a]);
                     const s = (null != t ? t : []).concat([u]);
                     return [
                         (0, n.useCallback)((t) => {
-                            ((r.current = window.setInterval(() => e(t, !0), u)), e(t, !1));
+                            (0 !== r.current && a(), (r.current = window.setInterval(() => e(t, !0), u)), e(t, !1));
                         }, s),
                         a,
                     ];
@@ -4240,14 +4237,14 @@
                     U = t(1975),
                     $ = t(156),
                     z = t(7736);
-                let W;
+                let H;
                 !(function (e) {
                     ((e.Passed = 'passed'),
                         (e.PossiblySelected = 'possiblySelected'),
                         (e.Selected = 'selected'),
                         (e.Available = 'available'));
-                })(W || (W = {}));
-                const H = (e, u) => (e / u) * 100 + '%',
+                })(H || (H = {}));
+                const W = (e, u) => (e / u) * 100 + '%',
                     Z = {
                         base: 'LevelProgressBar_base_8b',
                         base__small: 'LevelProgressBar_base__small_c2',
@@ -4272,12 +4269,12 @@
                                 }),
                                 r().createElement(
                                     'div',
-                                    { className: Z.glowWrapper, style: { left: H(s, n) } },
+                                    { className: Z.glowWrapper, style: { left: W(s, n) } },
                                     r().createElement('div', { className: w()(Z.glow, Z.glow__left) }),
                                 ),
                                 r().createElement(
                                     'div',
-                                    { className: Z.glowWrapper, style: { left: H(t, n) } },
+                                    { className: Z.glowWrapper, style: { left: W(t, n) } },
                                     r().createElement('div', { className: w()(Z.glow, Z.glow__right) }),
                                 ),
                             );
@@ -4312,13 +4309,13 @@
                                     l = ((e, u, t, n) => {
                                         switch (!0) {
                                             case e >= t && e < n:
-                                                return W.PossiblySelected;
+                                                return H.PossiblySelected;
                                             case e < u:
-                                                return W.Passed;
+                                                return H.Passed;
                                             case e >= u && e < t:
-                                                return W.Selected;
+                                                return H.Selected;
                                             default:
-                                                return W.Available;
+                                                return H.Available;
                                         }
                                     })(o, t, n, a),
                                     c = s - 1;
@@ -4661,7 +4658,7 @@
                 const Ue = 'Content_base_80',
                     $e = 'Content_mainContent_23',
                     ze = R.strings.battle_pass.battlePassBuyView.reward,
-                    We = ({ fromLevel: e, toLevel: u, rewards: t }) => {
+                    He = ({ fromLevel: e, toLevel: u, rewards: t }) => {
                         const n = ((e, u) =>
                                 e < u
                                     ? { description: ze.descriptionNowRewards(), completedSteps: `${e} – ${u}` }
@@ -4685,7 +4682,7 @@
                             ),
                         );
                     },
-                    He = 'RewardsViewContent_base_ac',
+                    We = 'RewardsViewContent_base_ac',
                     Ze = 'RewardsViewContent_background_ee',
                     je = 'RewardsViewContent_shadow_dc',
                     qe = (0, a.Pi)(() => {
@@ -4701,14 +4698,14 @@
                         };
                         return r().createElement(
                             'div',
-                            { className: He },
+                            { className: We },
                             r().createElement(
                                 'div',
                                 { className: Ze },
                                 r().createElement(Oe.N, { chapter: t.get(), isCurrent: !0, customBackgroundStyle: o }),
                             ),
                             r().createElement('div', { className: je }),
-                            r().createElement(We, {
+                            r().createElement(He, {
                                 rewards: e.computes.nowRewards(),
                                 toLevel: n.get(),
                                 fromLevel: a.get(),

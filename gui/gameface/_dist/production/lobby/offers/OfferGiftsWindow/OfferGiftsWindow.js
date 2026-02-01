@@ -1260,12 +1260,14 @@
                 }
                 function uu(u, e, t = []) {
                     const n = (0, i.useRef)(0),
-                        r = (0, i.useCallback)(() => window.clearInterval(n.current), t || []);
+                        r = (0, i.useCallback)(() => {
+                            (window.clearInterval(n.current), (n.current = 0));
+                        }, t || []);
                     (0, i.useEffect)(() => r, [r]);
                     const a = (null != t ? t : []).concat([e]);
                     return [
                         (0, i.useCallback)((t) => {
-                            ((n.current = window.setInterval(() => u(t, !0), e)), u(t, !1));
+                            (0 !== n.current && r(), (n.current = window.setInterval(() => u(t, !0), e)), u(t, !1));
                         }, a),
                         r,
                     ];
@@ -1553,7 +1555,8 @@
                         getContainerSize: (u) => u.offsetWidth,
                         getWrapperSize: (u) => u.offsetWidth,
                         setScrollPosition: (u, e) => {
-                            u.style.transform = `translateX(-${e.value.scrollPosition}px)`;
+                            var t;
+                            u.style.transform = `translateX(-${0 | (null != (t = e.value.scrollPosition) ? t : 0)}px)`;
                         },
                         getDirection: (u) => (u.deltaY > 1 ? iu.Next : iu.Prev),
                         forceTriggerMouseMove: a.O.view.forceTriggerMouseMove,
@@ -3270,10 +3273,13 @@
                     dn = () => {
                         const u = Y('model'),
                             e = u.background,
-                            t = u.onBack;
-                        var n;
-                        ((n = t), P(N.n.ESCAPE, n));
-                        const r = (0, i.useMemo)(
+                            t = u.onBack,
+                            n = (0, i.useCallback)(() => {
+                                t();
+                            }, [t]);
+                        var r;
+                        ((r = n), P(N.n.ESCAPE, r));
+                        const a = (0, i.useMemo)(
                             () => ({ backgroundImage: `url('${e || 'R.images.gui.maps.icons.storage.background'}')` }),
                             [e],
                         );
@@ -3282,7 +3288,7 @@
                             null,
                             o().createElement(
                                 'div',
-                                { className: Dn, style: r },
+                                { className: Dn, style: a },
                                 o().createElement(Fn, null),
                                 o().createElement(vt, null),
                             ),

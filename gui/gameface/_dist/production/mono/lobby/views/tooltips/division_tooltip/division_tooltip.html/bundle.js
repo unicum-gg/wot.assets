@@ -1,33 +1,34 @@
-import { y as s, j as i, x as o } from '../../../../chunks/vendor.js';
-import { i as e, n, c4 as r, F as a, b_ as t, r as d } from '../../../../chunks/lib.js';
-import { t as c, T as m } from '../../../../chunks/tooltips.module.js';
-import { g as l } from '../../../../chunks/get_division_name.js';
-import { g as j } from '../../../../chunks/get_rank_name.js';
+import { I as s, j as i, J as o } from '../../../../chunks/vendor.js';
+import { i as e, n, cm as r, cd as t, cf as a, cP as c } from '../../../../chunks/lib.js';
+import { T as d } from '../../../../chunks/tooltip_decorator.js';
+import { g as m } from '../../../../chunks/get_division_name.js';
+import { g as l } from '../../../../chunks/get_rank_name.js';
+import { t as j } from '../../../../chunks/tooltips.module.js';
 /* empty css                        */ import '../../../../chunks/enums.js';
-const [h, p] = e()(({ observableModel: s }) => ({ root: s.object() }), n),
+const [p, h] = e()(({ observableModel: s }) => ({ root: s.object() }), n),
     x = s(() => {
-        const { model: s } = p(),
-            { division: e, rank: n, from: d, to: m } = s.root.get();
+        const { model: s } = h(),
+            { division: e, rank: n, from: c, to: d } = s.root.get();
         return i.jsxs('div', {
-            className: c.base,
+            className: j.base,
             children: [
                 i.jsx('div', {
-                    className: c.heading,
-                    children: r(R.strings.comp7_ext.divisionTooltip.heading(), { divisionName: l(e) }),
+                    className: j.heading,
+                    children: r(R.strings.comp7_ext.divisionTooltip.heading(), { divisionName: m(e) }),
                 }),
                 i.jsx('div', {
-                    className: o(c.subHeading, c.subHeading__topIndent),
-                    children: i.jsx(a, { text: j(n) }),
+                    className: o(j.subHeading, j.subHeading__topIndent),
+                    children: i.jsx(t, { text: l(n) }),
                 }),
-                i.jsx('div', { className: c.divider }),
+                i.jsx('div', { className: j.divider }),
                 i.jsx('div', {
-                    className: c.description,
-                    children: i.jsx(t, {
+                    className: j.description,
+                    children: i.jsx(a, {
                         text: R.strings.comp7_ext.divisionTooltip.description(),
-                        binding: { fromScore: d, toScore: m },
+                        binding: { fromScore: c, toScore: d },
                     }),
                 }),
             ],
         });
     });
-d(i.jsx(h, { children: i.jsx(m, { children: i.jsx(x, {}) }) }));
+c(i.jsx(p, { children: i.jsx(d, { children: i.jsx(x, {}) }) }));

@@ -1,20 +1,20 @@
-import { m as e, j as s, e as a, n as t, r as c } from '../../../../chunks/vendor.js';
+import { k as e, j as s, e as a, m as t, r as c } from '../../../../chunks/vendor.js';
 import {
     i as n,
     c as r,
-    z as o,
-    J as i,
-    K as l,
+    A as o,
+    K as i,
+    L as l,
     j as m,
     m as d,
     F as u,
-    L as _,
+    M as _,
     I as p,
-    M as y,
-    N as h,
-    q as g,
+    N as y,
+    O as h,
+    t as g,
     r as b,
-    A as f,
+    E as f,
 } from '../../../../chunks/lib.js';
 import { T as x, L as v, g as j } from '../../../../chunks/statistics.js';
 import { a as w, g as N } from '../../../../chunks/resources.js';
@@ -45,7 +45,7 @@ const A = {
         const a = {
                 root: s.object(),
                 ...s.primitives(['bonusesCategory', 'eventName', 'compensatedCount']),
-                bonuses: s.array('bonuses.items'),
+                bonuses: s.arrayClone('bonuses.items'),
             },
             t = e(() => w(A, a.eventName.get()), { equals: r }),
             c = e(() => N(I, a.eventName.get()), { equals: r }),
@@ -64,7 +64,7 @@ const A = {
                 return s.name;
         }
     },
-    q = {
+    E = {
         root: 'AttachmentRarity_root_43c6f01c',
         base: 'AttachmentRarity_da893673',
         icoWrapper: 'AttachmentRarity_icoWrapper_f4b68af1',
@@ -78,32 +78,32 @@ const A = {
 function M({ rarity: e }) {
     const t = m.resolve('strings');
     return s.jsxs('div', {
-        className: a(q.base, q[`base__${e}`]),
+        className: a(E.base, E[`base__${e}`]),
         children: [
             s.jsx('div', {
-                className: q.icoWrapper,
+                className: E.icoWrapper,
                 children: s.jsx('div', {
-                    className: q.ico,
+                    className: E.ico,
                     style: {
                         backgroundImage: `url(${R.images.gui.maps.icons.customization.rarity.sign.s20x20.$dyn(e)})`,
                     },
                 }),
             }),
             s.jsx('div', {
-                className: q.text,
+                className: E.text,
                 children: t.readOrEmpty(`vehicle_customization.customization.rarity.${e}`),
             }),
         ],
     });
 }
-const z = 'List_3e9032c6',
+const q = 'List_3e9032c6',
     D = 'List_row_fefcbc15',
-    E = 'List_compensation_2b1d48d6',
+    z = 'List_compensation_2b1d48d6',
     V = 'List_compensation__big_90932e64',
     W = 'List_count_827893bb',
     B = 'List_name_d7c1cd7d',
-    F = 'List_vehicleType_7f88ba1e',
-    H = t(function () {
+    O = 'List_vehicleType_7f88ba1e',
+    F = t(function () {
         const { model: e } = T(),
             { texts: t } = e.computes.resources(),
             { dynamicTexts: c } = e.computes.dynamicResources(),
@@ -111,7 +111,7 @@ const z = 'List_3e9032c6',
             r = e.compensatedCount.get(),
             o = e.computes.bonuses();
         return s.jsxs('div', {
-            className: z,
+            className: q,
             children: [
                 d(o, (a, c) => {
                     const { vehicle: n, label: r, count: o } = a,
@@ -132,7 +132,7 @@ const z = 'List_3e9032c6',
                                 }),
                                 label: a.label,
                                 vehicle: i ? s.jsx(C, { reward: i, style: { nameHeight: '16rem' }, className: B }) : '',
-                                vehicleInfo: n ? s.jsx(k, { ...n, classNames: { base: B, type: F } }) : '',
+                                vehicleInfo: n ? s.jsx(k, { ...n, classNames: { base: B, type: O } }) : '',
                                 count:
                                     o > 1
                                         ? s.jsx(u, {
@@ -150,7 +150,7 @@ const z = 'List_3e9032c6',
                 }),
                 Boolean(r) &&
                     s.jsx(u, {
-                        className: a(E, o.length && V),
+                        className: a(z, o.length && V),
                         text: n === x.Vehicles ? t.vehicleCompensation : t.styleCompensation,
                         upgradeLegacy: !0,
                         params: {
@@ -165,11 +165,11 @@ const z = 'List_3e9032c6',
             ],
         });
     }),
-    J = 'Skills_b058d2b1',
+    H = 'Skills_b058d2b1',
     K = 'Skills_skill_8ccace3c';
-function O({ skills: e = [], className: t = '' }) {
+function G({ skills: e = [], className: t = '' }) {
     return s.jsx('div', {
-        className: a(J, t),
+        className: a(H, t),
         children: e.map((e, a) =>
             s.jsx(
                 'div',
@@ -182,7 +182,7 @@ function O({ skills: e = [], className: t = '' }) {
         ),
     });
 }
-const G = {
+const J = {
         root: 'Reward_root_21f091ec',
         base: 'Reward_6c767796',
         icon: 'Reward_icon_bb33f955',
@@ -200,16 +200,16 @@ const G = {
             { count: o, label: i, overlayType: l, name: m, icon: u, tankman: h, value: g } = e,
             b = { name: m, icon: u, value: g };
         return s.jsxs('div', {
-            className: a(G.base, t),
+            className: a(J.base, t),
             children: [
                 s.jsxs('div', {
-                    className: G.icon,
+                    className: J.icon,
                     style: { backgroundImage: `url(${L(b, p.Small)})` },
                     children: [
-                        o > 1 && s.jsx('div', { className: G.count, children: _(r.multiplier, { count: o }) }),
+                        o > 1 && s.jsx('div', { className: J.count, children: _(r.multiplier, { count: o }) }),
                         Boolean(l) &&
                             s.jsx('div', {
-                                className: a(G.overlay, G[`overlay__${p.Small}`]),
+                                className: a(J.overlay, J[`overlay__${p.Small}`]),
                                 style: {
                                     backgroundImage: `url(R.images.gui.maps.icons.quests.bonuses.${p.Small}.${l}_overlay)`,
                                 },
@@ -217,10 +217,10 @@ const G = {
                     ],
                 }),
                 s.jsxs('div', {
-                    className: G.description,
+                    className: J.description,
                     children: [
-                        s.jsx('div', { className: G.name, children: y(i) }),
-                        n === x.CrewMember && s.jsx(O, { skills: d(h.skills, (e) => e), className: G.skills }),
+                        s.jsx('div', { className: J.name, children: y(i) }),
+                        n === x.CrewMember && s.jsx(G, { skills: d(h.skills, (e) => e), className: J.skills }),
                     ],
                 }),
             ],
@@ -270,7 +270,7 @@ const G = {
     ae = t(function () {
         const { model: e } = T(),
             a = e.bonusesCategory.get();
-        return s.jsx('div', { className: se, children: v.includes(a) ? s.jsx(H, {}) : s.jsx(ee, {}) });
+        return s.jsx('div', { className: se, children: v.includes(a) ? s.jsx(F, {}) : s.jsx(ee, {}) });
     }),
     te = 'App_4978ff0e',
     ce = 'App_title_6b3cec5f',

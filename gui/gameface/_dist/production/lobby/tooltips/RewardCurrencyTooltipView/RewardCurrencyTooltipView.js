@@ -2,7 +2,7 @@
     'use strict';
     var e,
         t = {
-            8568: (e, t, n) => {
+            568: (e, t, n) => {
                 var r = {};
                 (n.r(r),
                     n.d(r, { mouse: () => h, off: () => w, on: () => b, onResize: () => g, onScaleUpdated: () => p }));
@@ -52,11 +52,11 @@
                         setSidePaddingsRem: () => U,
                         whenTutorialReady: () => le,
                     }));
-                var s = n(7363),
+                var s = n(363),
                     c = n.n(s),
-                    l = n(1533),
+                    l = n(533),
                     u = n.n(l),
-                    d = n(6483),
+                    d = n(483),
                     v = n.n(d);
                 function m(e) {
                     return (t) => (
@@ -388,7 +388,7 @@
                                             (window.cancelAnimationFrame(e.current),
                                                 (e.current = window.requestAnimationFrame(() => {
                                                     e.current = window.requestAnimationFrame(() => {
-                                                        (t(), (e.current = 0));
+                                                        ((e.current = 0), t());
                                                     });
                                                 })));
                                         },
@@ -435,19 +435,19 @@
                         )
                     );
                 });
-                var be = n(3403);
+                var be = n(403);
                 function we() {
                     return !1;
                 }
                 console.log;
-                var ye = n(9174);
+                var ye = n(174);
                 function he(e, t) {
                     (null == t || t > e.length) && (t = e.length);
                     for (var n = 0, r = new Array(t); n < t; n++) r[n] = e[n];
                     return r;
                 }
                 const Ee = (e) => (0 === e ? window : window.subViews.get(e));
-                var _e = n(3946);
+                var _e = n(946);
                 const xe = ['credits', 'xp', 'brcoin'],
                     Pe = ((e, t) => {
                         const n = (0, s.createContext)({});
@@ -553,7 +553,6 @@
                                                                     );
                                                                 })(o.keys());
                                                             !(e = n()).done;
-
                                                         )
                                                             i(e.value, t);
                                                     },
@@ -768,10 +767,10 @@
                     );
                 });
             },
-            7363: (e) => {
+            363: (e) => {
                 e.exports = React;
             },
-            1533: (e) => {
+            533: (e) => {
                 e.exports = ReactDOM;
             },
         },
@@ -845,6 +844,6 @@
                 n = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             (n.forEach(t.bind(null, 0)), (n.push = t.bind(null, n.push.bind(n))));
         })());
-    var o = r.O(void 0, ['lib/battle_royale.vendors'], () => r(8568));
+    var o = r.O(void 0, ['lib/battle_royale.vendors'], () => r(568));
     o = r.O(o);
 })();

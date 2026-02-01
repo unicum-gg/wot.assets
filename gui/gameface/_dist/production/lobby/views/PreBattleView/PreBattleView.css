@@ -1026,18 +1026,18 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     font-weight: 700;
     line-height: 1.1;
     position: absolute;
-    top: 25rem;
+    top: 100rem;
     left: 50%;
     transform: translateX(-50%);
 }
 
 .PreBattleViewApp_title__smallHeight_6b {
     font-size: 48rem;
-    top: 10rem;
+    top: 50rem;
 }
 
 .PreBattleViewApp_title__mediumHeight_ca {
-    top: 10rem;
+    top: 100rem;
 }
 
 .PreBattleViewApp_bg_08 {

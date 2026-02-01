@@ -804,7 +804,7 @@
                                     (window.cancelAnimationFrame(e.current),
                                         (e.current = window.requestAnimationFrame(() => {
                                             e.current = window.requestAnimationFrame(() => {
-                                                (u(), (e.current = 0));
+                                                ((e.current = 0), u());
                                             });
                                         })));
                                 },
@@ -1314,13 +1314,13 @@
                             ('function' == typeof t && t(), clearTimeout(n));
                         };
                     };
-                let W, $;
+                let $, W;
                 (!(function (e) {
                     ((e.Idle = 'Idle'), (e.Grow = 'Grow'), (e.Shrink = 'Shrink'), (e.End = 'End'));
-                })(W || (W = {})),
+                })($ || ($ = {})),
                     (function (e) {
                         ((e.Idle = 'Idle'), (e.In = 'In'), (e.End = 'End'));
-                    })($ || ($ = {})));
+                    })(W || (W = {})));
                 const G = 'ProgressBarDeltaGrow_base_7e',
                     q = 'ProgressBarDeltaGrow_base__withoutBounce_b5',
                     U = 'ProgressBarDeltaGrow_glow_68',
@@ -1340,13 +1340,13 @@
                             className: E,
                         }) => {
                             const d = s < n,
-                                _ = (0, i.useState)(W.Idle),
+                                _ = (0, i.useState)($.Idle),
                                 A = _[0],
                                 F = _[1],
-                                D = A === W.End,
-                                m = A === W.Idle,
-                                B = A === W.Grow,
-                                C = A === W.Shrink,
+                                D = A === $.End,
+                                m = A === $.Idle,
+                                B = A === $.Grow,
+                                C = A === $.Shrink,
                                 g = (0, i.useCallback)(
                                     (e) => {
                                         (F(e), c && c(e));
@@ -1363,11 +1363,11 @@
                             (0, i.useEffect)(() => {
                                 if (!t)
                                     return m
-                                        ? p(W.Grow, u)
+                                        ? p($.Grow, u)
                                         : B
-                                          ? p(W.Shrink, e)
+                                          ? p($.Shrink, e)
                                           : C
-                                            ? p(W.End, e)
+                                            ? p($.End, e)
                                             : void (D && l && l());
                             }, [p, t, D, B, m, C, l, u, e]);
                             const b = (0, i.useMemo)(() => Object.assign({ width: '100%' }, H(e), K(d)), [d, e]),
@@ -1408,7 +1408,7 @@
                                 A = d[1],
                                 F = (0, i.useCallback)(
                                     (e) => {
-                                        (e === W.Shrink && A(!0), c && c(e));
+                                        (e === $.Shrink && A(!0), c && c(e));
                                     },
                                     [c],
                                 ),
@@ -1457,12 +1457,12 @@
                             onChangeAnimationState: l,
                         }) => {
                             const c = o < n,
-                                E = (0, i.useState)($.Idle),
+                                E = (0, i.useState)(W.Idle),
                                 d = E[0],
                                 _ = E[1],
-                                A = d === $.In,
-                                F = d === $.End,
-                                D = d === $.Idle,
+                                A = d === W.In,
+                                F = d === W.End,
+                                D = d === W.Idle,
                                 m = (0, i.useCallback)(
                                     (e) => {
                                         (_(e), l && l(e));
@@ -1472,14 +1472,14 @@
                             ((0, i.useEffect)(() => {
                                 if (D && !t) {
                                     return z(() => {
-                                        m($.In);
+                                        m(W.In);
                                     }, u);
                                 }
                             }, [m, t, D, u]),
                                 (0, i.useEffect)(() => {
                                     if (A) {
                                         return z(() => {
-                                            (s && s(), m($.End));
+                                            (s && s(), m(W.End));
                                         }, e + u);
                                     }
                                 }, [m, A, s, u, e]));
@@ -2206,8 +2206,8 @@
                         prom: 'colors_prom_83',
                     },
                     ze = 'renderers_noBreakWrapper_10',
-                    We = 'renderers_lineBreak_b5',
-                    $e = 'renderers_newLine_bd',
+                    $e = 'renderers_lineBreak_b5',
+                    We = 'renderers_newLine_bd',
                     Ge = 'renderers_word_f3',
                     qe = (e) => ({ color: `#${e}` }),
                     Ue = ({ elementList: e, textBlock: u, key: t }) => {
@@ -2236,9 +2236,9 @@
                                 e.map((e) => a().createElement(a().Fragment, { key: t }, e)),
                             ),
                         [Re.LineBreak]: ({ key: e }) =>
-                            a().createElement('span', { key: e, 'data-block-type': Re.LineBreak, className: We }),
+                            a().createElement('span', { key: e, 'data-block-type': Re.LineBreak, className: $e }),
                         [Re.NewLine]: ({ elementList: e, key: u }) =>
-                            a().createElement('span', { key: u, 'data-block-type': Re.NewLine, className: $e }, e),
+                            a().createElement('span', { key: u, 'data-block-type': Re.NewLine, className: We }, e),
                         [Re.NoBreakWrapper]: ({ elementList: e, key: u }) =>
                             a().createElement(
                                 'span',
@@ -2369,17 +2369,18 @@
                                                   return u;
                                               })(t),
                                           )
-                                        : n.push({ blockType: r, colorTag: u, childList: [t] });
+                                        : n.push({ blockType: r, colorTag: u, childList: [t.replace(/\ufeff+/g, '')] });
                                 },
                             ),
                             n
                         );
                     },
                     uu = (e, u, t = '', n) => {
-                        const r = [];
+                        const r = [],
+                            o = e.replace(/(.)(、|。|ー)/g, '$1\ufeff$2');
                         return (
                             Ze(
-                                e,
+                                o,
                                 /(?:%\(|{)(.*?)[)}][sd]?/g,
                                 (e) => {
                                     r.push(...eu(e, t, n));

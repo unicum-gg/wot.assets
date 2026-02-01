@@ -1,4 +1,4 @@
-import { b as e, ap as t } from './lib.js';
+import { b as e, at as t } from './lib.js';
 import './vendor.js';
 const s = e.resolve('strings'),
     o = e.resolve('images'),

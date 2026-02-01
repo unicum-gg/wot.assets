@@ -2,7 +2,7 @@
   <presets>
     <preset>
       <name>	frontline	</name>
-      <basePreset>	random	</basePreset>
+      <basePreset>	default	</basePreset>
       <components>
         <component>
           <name>	alertMessage	</name>
@@ -28,10 +28,6 @@
           <name>	headerWidget	</name>
           <visible>	True	</visible>
           <type>	epicWdgt	</type>
-        </component>
-        <component>
-          <name>	comp7GrandTournamentBanner	</name>
-          <visible>	False	</visible>
         </component>
       </components>
     </preset>

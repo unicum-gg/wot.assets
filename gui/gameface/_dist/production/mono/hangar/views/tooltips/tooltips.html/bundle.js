@@ -1,39 +1,39 @@
-import { _ as e, w as s, j as a, f as t, r, R as n } from '../../../chunks/vendor.js';
+import { _ as e, v as s, j as a, f as t, r, R as n } from '../../../chunks/vendor.js';
 import {
     i,
     c as o,
     n as l,
-    Z as c,
-    I as p,
-    Y as d,
+    Y as c,
+    H as p,
+    X as d,
     r as u,
-    bL as m,
-    a2 as h,
-    a0 as f,
-    a1 as y,
-    cd as k,
-    cW as v,
-    z as b,
-    aL as _,
-    H as P,
-    cU as j,
+    ba as m,
+    a1 as h,
+    $ as f,
+    a0 as y,
+    cx as k,
+    d5 as v,
+    x as b,
+    aR as _,
+    G as j,
+    d6 as P,
     J as x,
-    G as g,
+    F as g,
 } from '../../../chunks/lib.js';
-import { B as w, P as N } from '../../../chunks/perk.js';
-import { T as A } from '../../../chunks/tankman_role.js';
-/* empty css                    */ const B = 'commander',
-    E = 'default',
-    T = 'active',
-    V = 'activeDisable',
-    L = 'disable',
-    C = 'low',
-    D = 'newFull',
-    S = 'newLow',
-    I = 'newDisableFull',
-    H = 'newDisableLow',
-    z = 'lock',
-    [O, $] = i()((e) => {
+import { B as w, j as N, e as A, S as B, k as E, i as T } from '../../../chunks/perk.js';
+import { T as V } from '../../../chunks/tankman_role.js';
+/* empty css                    */ const L = 'commander',
+    C = 'default',
+    D = 'active',
+    S = 'activeDisable',
+    I = 'disable',
+    H = 'low',
+    O = 'newFull',
+    z = 'newLow',
+    $ = 'newDisableFull',
+    M = 'newDisableLow',
+    U = 'lock',
+    [F, Z] = i()((e) => {
         const s = e.observableModel.primitives(['params', 'type']);
         return {
             type: s.type,
@@ -44,8 +44,8 @@ import { T as A } from '../../../chunks/tankman_role.js';
             },
         };
     }, l);
-const M =
-    ((U = (() => {
+const q =
+    ((R = (() => {
         const s = (e) =>
                 'number' == typeof e.id &&
                 'number' == typeof e.level &&
@@ -764,53 +764,53 @@ const M =
         return (e, s) => k(JSON.parse(e), s);
     })()),
     function () {
-        return $().model.computes.params(U);
+        return Z().model.computes.params(R);
     });
-var U;
-const Z = 'EfficiencyBonus_d696ae91',
-    q = 'EfficiencyBonus_title_cb6cd9b1',
-    F = 'EfficiencyBonus_icons_3214fcc7',
-    R = 'EfficiencyBonus_bonus_6551325b',
-    W = 'EfficiencyBonus_bonus__disabled_d820b959',
-    G = 'EfficiencyBonus_bonusIcons_ec77b4c9',
-    J = 'EfficiencyBonus_battleBoostersOverlay_798a4d63',
-    X = 'EfficiencyBonus_bonusPercentage_bb4d7cec';
-function Y(e) {
-    return e.type === B || 'brotherhood' === e.type ? `tankmen.skills.medium.${e.name}` : `artefact.${e.name}`;
+var R;
+const W = 'EfficiencyBonus_d696ae91',
+    X = 'EfficiencyBonus_title_cb6cd9b1',
+    G = 'EfficiencyBonus_icons_3214fcc7',
+    J = 'EfficiencyBonus_bonus_6551325b',
+    Y = 'EfficiencyBonus_bonus__disabled_d820b959',
+    K = 'EfficiencyBonus_bonusIcons_ec77b4c9',
+    Q = 'EfficiencyBonus_battleBoostersOverlay_798a4d63',
+    ee = 'EfficiencyBonus_bonusPercentage_bb4d7cec';
+function se(e) {
+    return e.type === L || 'brotherhood' === e.type ? `tankmen.skills.medium.${e.name}` : `artefact.${e.name}`;
 }
-const K = s(function ({ className: e }) {
-        const { vehicleBonusDetails: s } = M().tankman,
+const ae = s(function ({ className: e }) {
+        const { vehicleBonusDetails: s } = q().tankman,
             r = s.reduce((e, s) => e + s.bonus, 0);
         return a.jsxs('div', {
-            className: t(Z, e),
+            className: t(W, e),
             children: [
                 a.jsx('div', {
-                    className: q,
+                    className: X,
                     children: a.jsx(c, {
                         path: 'crew.crewInfoTooltip.efficiencyBonus.title',
                         params: { color: '#80D43A', value: p.formatReal('woZeroDigits', Math.round(100 * r) / 100) },
                     }),
                 }),
                 a.jsx('div', {
-                    className: F,
+                    className: G,
                     children: s.map((e, s) => {
                         const r = 0 === e.bonus;
-                        if (e.type !== B || !r)
+                        if (e.type !== L || !r)
                             return a.jsxs(
                                 'div',
                                 {
-                                    className: t(R, r && W),
+                                    className: t(J, r && Y),
                                     children: [
                                         a.jsxs('div', {
-                                            className: G,
+                                            className: K,
                                             children: [
-                                                a.jsx(d, { path: Y(e), width: '100%', height: '100%' }),
-                                                e.type === w && a.jsx('div', { className: J }),
+                                                a.jsx(d, { path: se(e), width: '100%', height: '100%' }),
+                                                e.type === w && a.jsx('div', { className: Q }),
                                             ],
                                         }),
                                         !r &&
                                             a.jsx('div', {
-                                                className: X,
+                                                className: ee,
                                                 children: a.jsx(c, {
                                                     upgradeLegacy: !0,
                                                     path: 'common.plusPercentValue',
@@ -831,57 +831,57 @@ const K = s(function ({ className: e }) {
             ],
         });
     }),
-    Q = 'Header_b0317c12',
-    ee = 'Header_role_2ccc4739',
-    se = 'Header_roleIcon_830cdda2',
-    ae = 'Header_roleName_c9393f08',
-    te = 'Header_name_f879f6e9',
-    re = 'Header_image_7903c260';
-function ne(e, s) {
+    te = 'Header_b0317c12',
+    re = 'Header_role_2ccc4739',
+    ne = 'Header_roleIcon_830cdda2',
+    ie = 'Header_roleName_c9393f08',
+    oe = 'Header_name_f879f6e9',
+    le = 'Header_image_7903c260';
+function ce(e, s) {
     return s ? `tankmen.icons.big.crewSkins.${m(e)}` : `tankmen.icons.big.${m(e)}`;
 }
-const ie = s(function ({ className: e }) {
-        const { role: s, fullName: r, crewSkinId: n, customizedSkin: i } = M().tankman,
+const pe = s(function ({ className: e }) {
+        const { role: s, fullName: r, crewSkinId: n, customizedSkin: i } = q().tankman,
             o = u.resolve('strings');
         return a.jsxs('div', {
-            className: t(Q, e),
+            className: t(te, e),
             children: [
                 a.jsxs('div', {
-                    className: ee,
+                    className: re,
                     children: [
-                        a.jsx(A, { role: s, className: se }),
-                        a.jsx('div', { className: ae, children: o.readOrEmpty(`item_types.tankman.roles.${s}`) }),
+                        a.jsx(V, { role: s, className: ne }),
+                        a.jsx('div', { className: ie, children: o.readOrEmpty(`item_types.tankman.roles.${s}`) }),
                     ],
                 }),
-                a.jsx('div', { className: te, children: r }),
-                a.jsx(d, { className: re, path: ne(n, i) }),
+                a.jsx('div', { className: oe, children: r }),
+                a.jsx(d, { className: le, path: ce(n, i) }),
             ],
         });
     }),
-    oe = {
+    de = {
         base: 'LowEfficiency_1efeab37',
         progressBarValue: 'LowEfficiency_progressBarValue_905540b4',
         percentage: 'LowEfficiency_percentage_db7e92dc',
         skillsEfficiency: 'LowEfficiency_skillsEfficiency_a34ad6cd',
         skillsEfficiencyDivider: 'LowEfficiency_skillsEfficiencyDivider_90d40a96',
     },
-    le = u.resolve('strings'),
-    ce = u.resolve('intl'),
-    pe = s(function ({ className: e }) {
-        const { currentVehicleSkillsEfficiency: s, skillsEfficiency: r } = M().tankman,
-            n = ce.formatNumber('integral', 100 * s);
+    ue = u.resolve('strings'),
+    me = u.resolve('intl'),
+    he = s(function ({ className: e }) {
+        const { currentVehicleSkillsEfficiency: s, skillsEfficiency: r } = q().tankman,
+            n = me.formatNumber('integral', s * N);
         return a.jsxs('div', {
-            className: t(oe.base, e),
+            className: t(de.base, e),
             children: [
                 a.jsx('div', {
-                    className: oe.description,
-                    children: le.readOrEmpty('crew.crewInfoTooltip.lowEfficiency.title'),
+                    className: de.description,
+                    children: ue.readOrEmpty('crew.crewInfoTooltip.lowEfficiency.title'),
                 }),
                 a.jsxs('div', {
-                    className: oe.progressBarValue,
+                    className: de.progressBarValue,
                     children: [
                         a.jsx('div', {
-                            className: oe.percentage,
+                            className: de.percentage,
                             children: a.jsx(c, {
                                 path: 'common.percentValue',
                                 params: { value: n },
@@ -892,23 +892,23 @@ const ie = s(function ({ className: e }) {
                             reverse: !0,
                             size: y.extraSmall,
                             type: f.tankXP,
-                            className: oe.skillsEfficiency,
+                            className: de.skillsEfficiency,
                             children: [
-                                a.jsx('div', { children: ce.formatNumber('integral', 1e5) }),
+                                a.jsx('div', { children: me.formatNumber('integral', 1e5) }),
                                 a.jsx('div', {
-                                    className: oe.skillsEfficiencyDivider,
-                                    children: le.readOrEmpty('common.common.slash'),
+                                    className: de.skillsEfficiencyDivider,
+                                    children: ue.readOrEmpty('common.common.slash'),
                                 }),
-                                a.jsx('div', { children: ce.formatNumber('integral', r.amount) }),
+                                a.jsx('div', { children: me.formatNumber('integral', r.amount) }),
                             ],
                         }),
                     ],
                 }),
-                a.jsx(k, { value: s, size: 'small', maxValue: 1 }),
+                a.jsx(k, { value: s, size: 'small', maxValue: A }),
             ],
         });
     }),
-    de = (e) =>
+    fe = (e) =>
         r.createElement(
             'svg',
             { width: 24, height: 24, viewBox: '0 0 24 24', fill: 'none', xmlns: 'http://www.w3.org/2000/svg', ...e },
@@ -919,7 +919,7 @@ const ie = s(function ({ className: e }) {
                 fill: '#ECCA9D',
             }),
         );
-const ue = {
+const ye = {
         base: 'PerkTile_c4fa07da',
         perkBorder: 'PerkTile_perkBorder_62732f00',
         base__default: 'PerkTile_base__default_d25f8651',
@@ -938,10 +938,10 @@ const ue = {
         perkIcon: 'PerkTile_perkIcon_e41d7d0a',
         currentProgress: 'PerkTile_currentProgress_dd2e40d8',
     },
-    me = [L, I, H, V],
-    he = [I, D],
-    fe = [T, V],
-    ye = s(function ({ index: e, withBonus: s, role: r, className: n }) {
+    ke = [I, $, M, S],
+    ve = [$, O],
+    be = [D, S],
+    _e = s(function ({ index: e, withBonus: s, role: r, className: n }) {
         var i;
         const {
                 perks: o,
@@ -951,11 +951,12 @@ const ue = {
                 currentVehicleSkillsEfficiency: m,
                 skillsEfficiency: h,
                 bonusPerks: f,
-            } = M().tankman,
+                vehicleBonusDetails: y,
+            } = q().tankman,
             {
-                perks: y,
-                newPerkCount: k,
-                actualProgress: b,
+                perks: k,
+                newPerkCount: b,
+                actualProgress: _,
             } = (function ({
                 withBonus: e,
                 role: s,
@@ -981,10 +982,10 @@ const ue = {
                 majorNewPerksCount: p,
                 majorPerkTrainingProgress: l,
             }),
-            _ = y && e >= y.length && e < y.length + k,
-            P = y[e] && !_,
-            j = e === y.length + k - 1,
-            x = (function ({
+            j = k && e >= k.length && e < k.length + b,
+            P = k[e] && !j,
+            x = e === k.length + b - 1,
+            g = (function ({
                 perk: e,
                 vehicleSkillsEfficiency: s,
                 skillsEfficiency: a,
@@ -992,76 +993,82 @@ const ue = {
                 newPerk: r,
                 lastAvailablePerk: n,
                 actualProgress: i,
+                instruction: o,
             }) {
-                const o = !t && -1 === s,
-                    l = !o && s < 1,
-                    c = a.level < 1;
-                return e || r
-                    ? e && e.state === v.learning && !l
-                        ? o
-                            ? V
-                            : T
-                        : r && o
-                          ? c
-                              ? H
-                              : I
-                          : o || (null == e ? void 0 : e.state) === v.irrelevant
-                            ? L
-                            : l || (void 0 !== i && n && i >= 0 && i < 100)
-                              ? r
-                                  ? S
+                const l = !t && s === B,
+                    c = !l && s < A,
+                    p = a.level < A;
+                return Boolean(o && e && o === e.name)
+                    ? l
+                        ? D
+                        : C
+                    : e || r
+                      ? e && e.state === v.learning && !c
+                          ? l
+                              ? S
+                              : D
+                          : r && l
+                            ? p
+                                ? M
+                                : $
+                            : l || (null == e ? void 0 : e.state) === v.irrelevant
+                              ? I
+                              : c || (void 0 !== i && n && i >= 0 && i < 100)
+                                ? r
+                                    ? z
+                                    : H
+                                : r
+                                  ? O
                                   : C
-                              : r
-                                ? D
-                                : E
-                    : z;
+                      : U;
             })({
-                perk: y[e],
+                perk: k[e],
                 vehicleSkillsEfficiency: m,
+                instruction: E(y),
                 skillsEfficiency: h,
                 insideNativeTank: u,
-                newPerk: _,
-                lastAvailablePerk: j,
-                actualProgress: b,
+                newPerk: j,
+                lastAvailablePerk: x,
+                actualProgress: _,
             });
         return a.jsxs('div', {
-            className: t(ue.base, s && ue.base__bonus, ue[`base__${x}`], n),
+            className: t(ye.base, s && ye.base__bonus, ye[`base__${g}`], n),
             children: [
-                a.jsx('div', { className: ue.perkBorder }),
-                he.includes(x) && a.jsx('div', { className: ue.newPerkBackground }),
+                a.jsx('div', { className: ye.perkBorder }),
+                ve.includes(g) && a.jsx('div', { className: ye.newPerkBackground }),
                 P
                     ? a.jsx(d, {
-                          className: ue.perkIcon,
-                          path: `tankmen.skills.big.${null == (i = y[e]) ? void 0 : i.name}`,
+                          className: ye.perkIcon,
+                          path: `tankmen.skills.big.${null == (i = k[e]) ? void 0 : i.name}`,
                       })
-                    : a.jsx('div', { className: ue.perkIcon }),
-                fe.includes(x) &&
+                    : a.jsx('div', { className: ye.perkIcon }),
+                be.includes(g) &&
                     a.jsx('div', {
-                        className: ue.currentProgress,
-                        children: a.jsx(c, { path: 'common.percentValue', params: { value: b }, upgradeLegacy: !0 }),
+                        className: ye.currentProgress,
+                        children: a.jsx(c, { path: 'common.percentValue', params: { value: _ }, upgradeLegacy: !0 }),
                     }),
-                me.includes(x) && a.jsx('div', { className: ue.disabledOverlay }),
+                ke.includes(g) && a.jsx('div', { className: ye.disabledOverlay }),
             ],
         });
     }),
-    ke = 'PerksProgression_27852bb8',
-    ve = 'PerksProgression_icon_ad282d1e',
-    be = 'PerksProgression_perkTile_b0b6668d',
-    _e = 'PerksProgression_perkLine_5da1ae7d',
-    Pe = 'PerksProgression_perkLine__bonus_523b1287';
-function je({ withBonus: e, role: s }) {
+    je = 'PerksProgression_27852bb8',
+    Pe = 'PerksProgression_icon_ad282d1e',
+    xe = 'PerksProgression_perkTile_b0b6668d',
+    ge = 'PerksProgression_perkLine_5da1ae7d',
+    we = 'PerksProgression_perkLine__bonus_523b1287';
+function Ne({ withBonus: e, role: s }) {
     const r = e ? 3 : 6;
     return a.jsxs('div', {
-        className: ke,
+        className: je,
         children: [
-            a.jsx(A, { role: s, className: ve }),
+            a.jsx(V, { role: s, className: Pe }),
             b(r, (r) =>
                 a.jsxs(
                     n.Fragment,
                     {
                         children: [
-                            r > 0 && a.jsx('div', { className: t(_e, e && Pe) }),
-                            a.jsx(ye, { className: be, index: r, withBonus: e, role: s }),
+                            r > 0 && a.jsx('div', { className: t(ge, e && we) }),
+                            a.jsx(_e, { className: xe, index: r, withBonus: e, role: s }),
                         ],
                     },
                     `${s}-${r}`,
@@ -1070,101 +1077,101 @@ function je({ withBonus: e, role: s }) {
         ],
     });
 }
-const xe = 'PerksBlock_f82e9f49',
-    ge = 'PerksBlock_perksBlockWrapper_c9f73338',
-    we = 'PerksBlock_perksBlockWrapper__bonus_e20f2761',
-    Ne = 'PerksBlock_perksBlockWrapper__compact_9d1d73ac',
-    Ae = 'PerksBlock_perksBlockHeader_64846481',
-    Be = 'PerksBlock_perkCounter_fd44504f',
-    Ee = 'PerksBlock_perksText_dec68431',
-    Te = 'PerksBlock_accelerateTraining_dc79b4c3',
-    Ve = 'PerksBlock_accelerateTrainingIcon_c34017ae';
-function Le(e) {
+const Ae = 'PerksBlock_f82e9f49',
+    Be = 'PerksBlock_perksBlockWrapper_c9f73338',
+    Ee = 'PerksBlock_perksBlockWrapper__bonus_e20f2761',
+    Te = 'PerksBlock_perksBlockWrapper__compact_9d1d73ac',
+    Ve = 'PerksBlock_perksBlockHeader_64846481',
+    Le = 'PerksBlock_perkCounter_fd44504f',
+    Ce = 'PerksBlock_perksText_dec68431',
+    De = 'PerksBlock_accelerateTraining_dc79b4c3',
+    Se = 'PerksBlock_accelerateTrainingIcon_c34017ae';
+function Ie(e) {
     return e && e.some((e) => e.state === v.learning);
 }
-const Ce = s(function ({ className: e }) {
+const He = s(function ({ className: e }) {
         var s;
-        const { role: r, perks: n, bonusPerks: i, quickTraining: o } = M().tankman,
+        const { role: r, perks: n, bonusPerks: i, quickTraining: o } = q().tankman,
             l = u.resolve('strings'),
             c = i.reduce((e, s) => e + s.skills.length, 0),
             p = i.length > 0,
-            d = !o && !p && !Le(n),
-            m = !o && p && !Le(null == (s = i[i.length - 1]) ? void 0 : s.skills);
+            d = !o && !p && !Ie(n),
+            m = !o && p && !Ie(null == (s = i[i.length - 1]) ? void 0 : s.skills);
         return a.jsxs('div', {
-            className: t(xe, e),
+            className: t(Ae, e),
             children: [
                 a.jsxs('div', {
-                    className: t(ge, d && Ne),
+                    className: t(Be, d && Te),
                     children: [
                         a.jsxs('div', {
-                            className: Ae,
+                            className: Ve,
                             children: [
-                                a.jsx(N, { className: Be, value: n.length, main: !0 }),
+                                a.jsx(T, { className: Le, value: n.length, main: !0 }),
                                 a.jsx('div', {
-                                    className: Ee,
+                                    className: Ce,
                                     children: l.readOrEmpty('crew.crewInfoTooltip.perksBlock.major'),
                                 }),
                             ],
                         }),
-                        a.jsx(je, { role: r }),
+                        a.jsx(Ne, { role: r }),
                     ],
                 }),
                 p &&
                     a.jsxs('div', {
-                        className: t(ge, we, m && Ne),
+                        className: t(Be, Ee, m && Te),
                         children: [
                             a.jsxs('div', {
-                                className: Ae,
+                                className: Ve,
                                 children: [
-                                    a.jsx(N, { className: Be, value: c, main: !1 }),
+                                    a.jsx(T, { className: Le, value: c, main: !1 }),
                                     a.jsx('div', {
-                                        className: Ee,
+                                        className: Ce,
                                         children: l.readOrEmpty('crew.crewInfoTooltip.perksBlock.bonus'),
                                     }),
                                 ],
                             }),
-                            i.map(({ role: e }, s) => a.jsx(je, { role: e, withBonus: !0 }, `${e}-${s}`)),
+                            i.map(({ role: e }, s) => a.jsx(Ne, { role: e, withBonus: !0 }, `${e}-${s}`)),
                         ],
                     }),
                 o &&
                     a.jsxs('div', {
-                        className: Te,
+                        className: De,
                         children: [
-                            a.jsx(de, { className: Ve }),
+                            a.jsx(fe, { className: Se }),
                             l.readOrEmpty('crew.crewInfoTooltip.accelerateTraining'),
                         ],
                     }),
             ],
         });
     }),
-    De = 'Specialization_b8ff1390',
-    Se = 'Specialization_specializationTitle_9a88dfae',
-    Ie = 'Specialization_specializationList_b4709f0f',
-    He = 'Specialization_specializationItem_51eceac3',
-    ze = 'Specialization_vehicleText_d256022e',
-    Oe = 'Specialization_premiumVehicleIcon_eddfdf68',
-    $e = s(function ({ className: e }) {
-        const { nativeVehicle: s } = M().tankman,
+    Oe = 'Specialization_b8ff1390',
+    ze = 'Specialization_specializationTitle_9a88dfae',
+    $e = 'Specialization_specializationList_b4709f0f',
+    Me = 'Specialization_specializationItem_51eceac3',
+    Ue = 'Specialization_vehicleText_d256022e',
+    Fe = 'Specialization_premiumVehicleIcon_eddfdf68',
+    Ze = s(function ({ className: e }) {
+        const { nativeVehicle: s } = q().tankman,
             r = u.resolve('strings');
         return a.jsxs('div', {
-            className: t(De, e),
+            className: t(Oe, e),
             children: [
-                a.jsx('div', { className: Se, children: r.readOrEmpty('crew.crewInfoTooltip.penalty.specialization') }),
+                a.jsx('div', { className: ze, children: r.readOrEmpty('crew.crewInfoTooltip.penalty.specialization') }),
                 a.jsxs('div', {
-                    className: Ie,
+                    className: $e,
                     children: [
                         a.jsxs(_, {
-                            className: He,
+                            className: Me,
                             children: [
-                                a.jsx(_.Level, { className: ze, value: s.tier }),
-                                P(s.type) && a.jsx(_.Type, { type: s.type, size: _.Type.sizes.x24x24 }),
-                                a.jsx(_.Name, { className: ze, children: s.shortName }),
+                                a.jsx(_.Level, { className: Ue, value: s.tier }),
+                                j(s.type) && a.jsx(_.Type, { type: s.type, size: _.Type.sizes.x24x24 }),
+                                a.jsx(_.Name, { className: Ue, children: s.shortName }),
                             ],
                         }),
                         a.jsxs('div', {
-                            className: He,
+                            className: Me,
                             children: [
-                                a.jsx('div', { className: Oe }),
+                                a.jsx('div', { className: Fe }),
                                 a.jsx(c, {
                                     path: `crew.crewInfoTooltip.specialization.vehicleType.${m(s.type)}`,
                                     params: {
@@ -1178,7 +1185,7 @@ const Ce = s(function ({ className: e }) {
             ],
         });
     }),
-    Me = (e) =>
+    qe = (e) =>
         r.createElement(
             'svg',
             {
@@ -1260,68 +1267,68 @@ const Ce = s(function ({ className: e }) {
                 ),
             ),
         ),
-    Ue = 'UntrainedPenalty_ac022fb6',
-    Ze = 'UntrainedPenalty_penaltyHeader_6a22cae9',
-    qe = 'UntrainedPenalty_untrainedIcon_90be7885',
-    Fe = 'UntrainedPenalty_title_b69187b5',
-    Re = 'UntrainedPenalty_description_69c628c';
-function We({ className: e }) {
+    Re = 'UntrainedPenalty_ac022fb6',
+    We = 'UntrainedPenalty_penaltyHeader_6a22cae9',
+    Xe = 'UntrainedPenalty_untrainedIcon_90be7885',
+    Ge = 'UntrainedPenalty_title_b69187b5',
+    Je = 'UntrainedPenalty_description_69c628c';
+function Ye({ className: e }) {
     const s = u.resolve('strings');
     return a.jsxs('div', {
-        className: t(Ue, e),
+        className: t(Re, e),
         children: [
             a.jsxs('div', {
-                className: Ze,
+                className: We,
                 children: [
-                    a.jsx(Me, { className: qe }),
-                    a.jsx('div', { className: Fe, children: s.readOrEmpty('crew.crewInfoTooltip.penalty.title') }),
+                    a.jsx(qe, { className: Xe }),
+                    a.jsx('div', { className: Ge, children: s.readOrEmpty('crew.crewInfoTooltip.penalty.title') }),
                 ],
             }),
-            a.jsx('div', { className: Re, children: s.readOrEmpty('crew.crewInfoTooltip.penalty.description') }),
+            a.jsx('div', { className: Je, children: s.readOrEmpty('crew.crewInfoTooltip.penalty.description') }),
         ],
     });
 }
-const Ge = 'Index_4a4da35',
-    Je = 'Index_decorator_a30857d',
-    Xe = 'Index_crewInfoBase_fd519c21',
-    Ye = 'Index_section_638478ff',
-    Ke = s(function () {
-        const { insideNativeTank: e, currentVehicleSkillsEfficiency: s } = M().tankman,
-            t = !e && -1 === s,
-            r = s < 1 && !t;
+const Ke = 'Index_4a4da35',
+    Qe = 'Index_decorator_a30857d',
+    es = 'Index_crewInfoBase_fd519c21',
+    ss = 'Index_section_638478ff',
+    as = s(function () {
+        const { insideNativeTank: e, currentVehicleSkillsEfficiency: s } = q().tankman,
+            t = !e && s === B,
+            r = s < A && !t;
         return a.jsx('div', {
-            className: Ge,
-            children: a.jsx(j.Decorator, {
-                className: Je,
+            className: Ke,
+            children: a.jsx(P.Decorator, {
+                className: Qe,
                 children: a.jsxs('div', {
-                    className: Xe,
+                    className: es,
                     children: [
-                        a.jsx(ie, { className: Ye }),
-                        t && a.jsx(We, {}),
-                        a.jsx($e, { className: Ye }),
-                        r && a.jsx(pe, { className: Ye }),
-                        a.jsx(Ce, { className: Ye }),
-                        a.jsx(K, {}),
+                        a.jsx(pe, { className: ss }),
+                        t && a.jsx(Ye, {}),
+                        a.jsx(Ze, { className: ss }),
+                        r && a.jsx(he, { className: ss }),
+                        a.jsx(He, { className: ss }),
+                        a.jsx(ae, {}),
                     ],
                 }),
             }),
         });
     }),
-    Qe = Object.freeze(
-        Object.defineProperty({ __proto__: null, default: Ke }, Symbol.toStringTag, { value: 'Module' }),
+    ts = Object.freeze(
+        Object.defineProperty({ __proto__: null, default: as }, Symbol.toStringTag, { value: 'Module' }),
     ),
-    es = Object.fromEntries(
-        Object.entries(Object.assign({ './crew_info/index.tsx': Qe })).map(([e, s]) => [
+    rs = Object.fromEntries(
+        Object.entries(Object.assign({ './crew_info/index.tsx': ts })).map(([e, s]) => [
             e.match(/\/([^/]+)\/index\.tsx/)[1],
             { Component: s.default },
         ]),
     );
-const ss = s(function () {
+const ns = s(function () {
     var e;
-    const { model: s } = $(),
+    const { model: s } = Z(),
         t = s.type.get(),
-        r = null == (e = es[t]) ? void 0 : e.Component;
-    if (r) return a.jsx(j, { children: a.jsx(r, {}) });
+        r = null == (e = rs[t]) ? void 0 : e.Component;
+    if (r) return a.jsx(P, { children: a.jsx(r, {}) });
     console.error(`Unknown tooltip type: ${t}`);
 });
-g(new x().add(O).render(a.jsx(ss, {})));
+g(new x().add(F).render(a.jsx(ns, {})));

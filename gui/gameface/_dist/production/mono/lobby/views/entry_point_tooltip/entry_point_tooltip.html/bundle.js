@@ -1,4 +1,4 @@
-import { y as e, j as t, x as s } from '../../../chunks/vendor.js';
+import { x as e, j as t, w as s } from '../../../chunks/vendor.js';
 import { i as a, F as r, T as o, r as i, d as n } from '../../../chunks/lib.js';
 import { g as p } from '../../../chunks/get_roman_levels.js';
 import { u as d } from '../../../chunks/use_server_time_polling.js';
@@ -65,7 +65,7 @@ const [_, c] = a()(
         title: 'App_title_65c2019a',
         paragraph: 'App_paragraph_849a18a2',
         mode: 'App_mode_e4b84612',
-        modeBtn: 'App_modeBtn_191edcde',
+        modeBtn: 'App_modeBtn_aeb48bc5',
         divider: 'App_divider_5cecff56',
         timerContainer: 'App_timerContainer_3955c4fa',
         fadeIn: 'App_fadeIn_0',
@@ -83,8 +83,8 @@ const [_, c] = a()(
         blink: 'App_blink_0',
         slideUpIn: 'App_slideUpIn_0',
     },
-    v = 'Tooltips_divider_ca103a1d',
-    A = {
+    b = 'Tooltips_divider_ca103a1d',
+    v = {
         [l.Disabled]: 'disabled',
         [l.JustStarted]: 'justStarted',
         [l.NotStarted]: 'notStarted',
@@ -92,12 +92,12 @@ const [_, c] = a()(
         [l.EndSoon]: 'endSoon',
         [l.End]: 'end',
     },
-    b = e(() => {
+    A = e(() => {
         const { model: e } = c(),
             a = e.season.state.get(),
             o = p(e.vehicleLevels.get(), R.strings.comp7_light.listSeparator());
         return t.jsxs('div', {
-            className: s(g.base, g[`base__${A[a]}`]),
+            className: s(g.base, g[`base__${v[a]}`]),
             children: [
                 t.jsx('div', { className: g.topContentBg }),
                 t.jsx('div', {
@@ -122,7 +122,7 @@ const [_, c] = a()(
                             },
                             classMix: g.mode,
                         }),
-                        t.jsx('div', { className: s(v, g.divider) }),
+                        t.jsx('div', { className: s(b, g.divider) }),
                         t.jsx('div', { className: g.timerContainer, children: t.jsx(m, {}) }),
                     ],
                 }),
@@ -134,7 +134,7 @@ i(
         children: t.jsx(n, {
             children: t.jsx('div', {
                 className: g.decorator,
-                children: t.jsx('div', { className: g.decoratorInner, children: t.jsx(b, {}) }),
+                children: t.jsx('div', { className: g.decoratorInner, children: t.jsx(A, {}) }),
             }),
         }),
     }),

@@ -5945,7 +5945,6 @@
                         for (
                             var _iterator = _createForOfIteratorHelperLoose(subscribers.keys()), _step;
                             !(_step = _iterator()).done;
-
                         ) {
                             const subscriberId = _step.value;
                             unsubscribe(subscriberId, rootId);

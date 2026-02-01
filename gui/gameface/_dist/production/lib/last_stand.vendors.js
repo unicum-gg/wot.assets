@@ -2229,12 +2229,12 @@
                     i
                         ? Boolean(
                               e &&
-                                  i.inputs &&
-                                  (function (t, e) {
-                                      if (t.length !== e.length) return !1;
-                                      for (let n = 0; n < t.length; n++) if (t[n] !== e[n]) return !1;
-                                      return !0;
-                                  })(e, i.inputs),
+                              i.inputs &&
+                              (function (t, e) {
+                                  if (t.length !== e.length) return !1;
+                                  for (let n = 0; n < t.length; n++) if (t[n] !== e[n]) return !1;
+                                  return !0;
+                              })(e, i.inputs),
                           ) || (i = { inputs: e, result: t() })
                         : (i = n),
                     (0, b.useEffect)(() => {
@@ -3819,7 +3819,6 @@
                                 );
                             })(t.childNodes);
                         !(e = n()).done;
-
                     )
                         if (3 === e.value.nodeType) return !0;
                     return !1;

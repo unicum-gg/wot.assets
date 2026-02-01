@@ -1907,17 +1907,18 @@
                                                   return e;
                                               })(t),
                                           )
-                                        : n.push({ blockType: r, colorTag: e, childList: [t] });
+                                        : n.push({ blockType: r, colorTag: e, childList: [t.replace(/\ufeff+/g, '')] });
                                 },
                             ),
                             n
                         );
                     },
                     Mu = (u, e, t = '', n) => {
-                        const r = [];
+                        const r = [],
+                            a = u.replace(/(.)(、|。|ー)/g, '$1\ufeff$2');
                         return (
                             yu(
-                                u,
+                                a,
                                 /(?:%\(|{)(.*?)[)}][sd]?/g,
                                 (u) => {
                                     r.push(...Ou(u, t, n));
@@ -2213,10 +2214,7 @@
                         (u.EquipCoin = 'equipCoin'),
                         (u.LootBox = 'lootBox'),
                         (u.BrCoin = 'brcoin'),
-                        (u.Attachment = 'attachment'),
-                        (u.Stamp = 'stamp'),
-                        (u.WtEventLootbox = 'wtevent_lootBox'),
-                        (u.WtEventTicket = 'wtevent_ticket'));
+                        (u.Attachment = 'attachment'));
                 })(ju || (ju = {})),
                     (function (u) {
                         ((u.Gold = 'gold'),
@@ -2371,9 +2369,6 @@
                         ju.BattleBoosterGift,
                         ju.OptionalDevice,
                         ju.Attachment,
-                        ju.Stamp,
-                        ju.WtEventLootbox,
-                        ju.WtEventTicket,
                     ],
                     te = [ju.Gold, ju.Credits, ju.Crystal, ju.FreeXp],
                     ne = [ju.BattlePassPoints, ju.EquipCoin],

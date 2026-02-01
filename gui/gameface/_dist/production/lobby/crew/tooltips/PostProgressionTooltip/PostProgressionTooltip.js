@@ -804,7 +804,7 @@
                                     (window.cancelAnimationFrame(u.current),
                                         (u.current = window.requestAnimationFrame(() => {
                                             u.current = window.requestAnimationFrame(() => {
-                                                (e(), (u.current = 0));
+                                                ((u.current = 0), e());
                                             });
                                         })));
                                 },
@@ -1443,11 +1443,11 @@
                     'tooltip__align-flex-end': 'ExtendedText_tooltip__align-flex-end_d2',
                 };
                 t(1281);
-                let G;
+                let $;
                 !(function (u) {
                     ((u[(u.left = 0)] = 'left'), (u[(u.right = 1)] = 'right'));
-                })(G || (G = {}));
-                const $ = (u) => u.replace(/&nbsp;/g, ' ');
+                })($ || ($ = {}));
+                const G = (u) => u.replace(/&nbsp;/g, ' ');
                 (() => {
                     const u = new RegExp(
                         [
@@ -1665,17 +1665,18 @@
                                                   return e;
                                               })(t),
                                           )
-                                        : n.push({ blockType: r, colorTag: e, childList: [t] });
+                                        : n.push({ blockType: r, colorTag: e, childList: [t.replace(/\ufeff+/g, '')] });
                                 },
                             ),
                             n
                         );
                     },
                     Eu = (u, e, t = '', n) => {
-                        const r = [];
+                        const r = [],
+                            o = u.replace(/(.)(、|。|ー)/g, '$1\ufeff$2');
                         return (
                             iu(
-                                u,
+                                o,
                                 /(?:%\(|{)(.*?)[)}][sd]?/g,
                                 (u) => {
                                     r.push(...cu(u, t, n));
@@ -1732,7 +1733,7 @@
                                     ),
                                     n
                                 );
-                            })($(u).replace(/&zwnbsp;/g, '\ufeff'), e, t),
+                            })(G(u).replace(/&zwnbsp;/g, '\ufeff'), e, t),
                         );
                         return ou(n);
                     },
@@ -2048,8 +2049,8 @@
                         ((u.Idle = 'Idle'), (u.In = 'In'), (u.End = 'End'));
                     })(Vu || (Vu = {})));
                 const Wu = 'ProgressBarDeltaGrow_base_7e',
-                    Gu = 'ProgressBarDeltaGrow_base__withoutBounce_b5',
-                    $u = 'ProgressBarDeltaGrow_glow_68',
+                    $u = 'ProgressBarDeltaGrow_base__withoutBounce_b5',
+                    Gu = 'ProgressBarDeltaGrow_glow_68',
                     Uu = (u) => (u ? { left: 0 } : { right: 0 }),
                     qu = (u, e) => (u ? { right: 100 - e + '%' } : { left: `${e}%` }),
                     Ku = (u) => ({ transitionDuration: `${u}ms` }),
@@ -2104,13 +2105,13 @@
                                     [n, d, s, u],
                                 );
                             if (_) return null;
-                            const w = r()(Wu, E, d && 0 === s && Gu);
+                            const w = r()(Wu, E, d && 0 === s && $u);
                             return a().createElement(
                                 'div',
                                 { style: B ? f : v, className: w },
                                 a().createElement(
                                     'div',
-                                    { style: p ? b : h, className: $u },
+                                    { style: p ? b : h, className: Gu },
                                     a().createElement(Nu, { size: o }),
                                 ),
                             );

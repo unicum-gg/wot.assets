@@ -2758,17 +2758,18 @@
                                                   return e;
                                               })(t),
                                           )
-                                        : n.push({ blockType: r, colorTag: e, childList: [t] });
+                                        : n.push({ blockType: r, colorTag: e, childList: [t.replace(/\ufeff+/g, '')] });
                                 },
                             ),
                             n
                         );
                     },
                     Ie = (u, e, t = '', n) => {
-                        const r = [];
+                        const r = [],
+                            a = u.replace(/(.)(、|。|ー)/g, '$1\ufeff$2');
                         return (
                             Se(
-                                u,
+                                a,
                                 /(?:%\(|{)(.*?)[)}][sd]?/g,
                                 (u) => {
                                     r.push(...Re(u, t, n));
@@ -3338,6 +3339,7 @@
                             text: u.isMassRetrain.get()
                                 ? R.strings.dialogs.retrain.title.massive()
                                 : R.strings.dialogs.retrain.title.single.simple(),
+                            justifyContent: Ce.Center,
                             binding: {
                                 vehicleName: r().createElement(
                                     Ze,

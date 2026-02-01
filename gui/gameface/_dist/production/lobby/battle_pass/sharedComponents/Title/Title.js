@@ -59,10 +59,7 @@
                             (u.EquipCoin = 'equipCoin'),
                             (u.LootBox = 'lootBox'),
                             (u.BrCoin = 'brcoin'),
-                            (u.Attachment = 'attachment'),
-                            (u.Stamp = 'stamp'),
-                            (u.WtEventLootbox = 'wtevent_lootBox'),
-                            (u.WtEventTicket = 'wtevent_ticket'));
+                            (u.Attachment = 'attachment'));
                     })(E || (E = {})),
                     (function (u) {
                         ((u.Gold = 'gold'),
@@ -213,9 +210,6 @@
                     E.E4.BattleBoosterGift,
                     E.E4.OptionalDevice,
                     E.E4.Attachment,
-                    E.E4.Stamp,
-                    E.E4.WtEventLootbox,
-                    E.E4.WtEventTicket,
                     E.E4.Gold,
                     E.E4.Credits,
                     E.E4.Crystal,
@@ -427,7 +421,7 @@
                         enableFullScreenModeSupported: () => y,
                         events: () => F.U,
                         extraSize: () => O,
-                        forceTriggerMouseMove: () => g,
+                        forceTriggerMouseMove: () => w,
                         freezeTextureBeforeResize: () => d,
                         getBrowserTexturePath: () => a,
                         getDisplayStatus: () => T,
@@ -437,7 +431,7 @@
                         getSize: () => B,
                         getViewGlobalPosition: () => l,
                         initExternalPaddings: () => k,
-                        isEventHandled: () => w,
+                        isEventHandled: () => g,
                         isFocused: () => v,
                         pxToRem: () => c,
                         remToPx: () => p,
@@ -500,10 +494,10 @@
                 function h() {
                     return viewEnv.setEventHandled();
                 }
-                function w() {
+                function g() {
                     return viewEnv.isEventHandled();
                 }
-                function g() {
+                function w() {
                     viewEnv.forceTriggerMouseMove();
                 }
                 function T() {
@@ -934,7 +928,7 @@
                     };
                 var v = t(7572);
                 const h = n.instance,
-                    w = {
+                    g = {
                         DataTracker: A.Z,
                         ViewModel: v.Z,
                         ViewEventType: i,
@@ -1017,7 +1011,7 @@
                         SystemLocale: F.Z5,
                         UserLocale: F.cy,
                     };
-                window.ViewEnvHelper = w;
+                window.ViewEnvHelper = g;
             },
             8613: (u, e, t) => {
                 t.d(e, { Ew: () => A, Z5: () => E, cy: () => n });

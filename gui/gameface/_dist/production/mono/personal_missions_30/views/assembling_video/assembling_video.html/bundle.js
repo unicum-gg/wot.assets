@@ -1,4 +1,4 @@
-import { p as s, r as _, m as e, j as o, n as i } from '../../../chunks/vendor.js';
+import { n as s, r as _, l as e, j as o, m as i } from '../../../chunks/vendor.js';
 import {
     e as a,
     c as r,
@@ -6,11 +6,11 @@ import {
     r as p,
     u as n,
     s as d,
-    a as m,
-    k as v,
-    b as c,
-    o as l,
-    V as u,
+    b as m,
+    a as v,
+    o as c,
+    V as l,
+    k as u,
     d as g,
     U as b,
 } from '../../../chunks/lib.js';
@@ -61,13 +61,13 @@ import {
                 k.start({ ...f, onRest: () => S.start({ to: { opacity: 0 } }) }));
         }
         return (
-            m(v.ESCAPE, V),
-            c(() => {
+            m(u.ESCAPE, V),
+            v(() => {
                 const s = b.current;
                 s && (h.play(`vid_pm_o${t.toString().padStart(2, '0')}_s${g.toString().padStart(2, '0')}`), s.play());
             }),
-            c(() =>
-                l((s) => {
+            v(() =>
+                c((s) => {
                     s ? h.play('vid_pm_pause') : h.play('vid_pm_resume');
                 }),
             ),
@@ -77,7 +77,7 @@ import {
                 children: o.jsx(i.div, {
                     className: A.wrapper,
                     style: N,
-                    children: o.jsx(u, {
+                    children: o.jsx(l, {
                         ref: b,
                         className: A.video,
                         src: s.readOrEmpty(

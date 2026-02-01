@@ -1,74 +1,75 @@
-import { j as a, x as s, R as i, y as e } from '../../../../chunks/vendor.js';
-import { m as t, i as n, n as l, F as m, r as o } from '../../../../chunks/lib.js';
-import { t as r, T as c } from '../../../../chunks/tooltips.module.js';
-import { R as d, a as b } from '../../../../chunks/rank_emblem.js';
+import { j as a, J as s, R as i, I as e } from '../../../../chunks/vendor.js';
+import { m as t, i as n, n as l, cd as o, cP as m } from '../../../../chunks/lib.js';
+import { T as r } from '../../../../chunks/tooltip_decorator.js';
+import { R as c, a as d } from '../../../../chunks/rank_emblem.js';
 import { b as p } from '../../../../chunks/get_rank_name.js';
-import { R as _ } from '../../../../chunks/enums.js';
+import { R as b } from '../../../../chunks/enums.js';
+import { t as _ } from '../../../../chunks/tooltips.module.js';
 /* empty css                        */ import '../../../../chunks/get_division_name.js';
-const x = 'RankCompatibilityTable_d1e1f461',
-    h = 'RankCompatibilityTable_row_1979ce',
-    k = 'RankCompatibilityTable_tableHeading_e798864c',
-    j = 'RankCompatibilityTable_heading_fc477f38',
+const h = 'RankCompatibilityTable_d1e1f461',
+    k = 'RankCompatibilityTable_row_1979ce',
+    j = 'RankCompatibilityTable_tableHeading_e798864c',
+    x = 'RankCompatibilityTable_heading_fc477f38',
     g = 'RankCompatibilityTable_teammates_e198b34',
     N = 'RankCompatibilityTable_teammates__heading_18846859',
     v = 'RankCompatibilityTable_rank_c960c039',
-    y = 'RankCompatibilityTable_emptySlot_7884dfc9',
-    u = 'RankCompatibilityTable_divider_e6a19cf8',
-    T = [_.First, _.Second, _.Third, _.Fourth, _.Fifth, _.Sixth],
-    C = ({ seasonName: e, rankRangeRestriction: n, className: l, classNames: m }) =>
+    u = 'RankCompatibilityTable_emptySlot_7884dfc9',
+    y = 'RankCompatibilityTable_divider_e6a19cf8',
+    T = [b.First, b.Second, b.Third, b.Fourth, b.Fifth, b.Sixth],
+    f = ({ seasonName: e, rankRangeRestriction: n, className: l, classNames: o }) =>
         a.jsxs('div', {
-            className: s(x, l),
+            className: s(h, l),
             children: [
                 a.jsxs('div', {
-                    className: s(h, k, null == m ? void 0 : m.tableHeading),
+                    className: s(k, j, null == o ? void 0 : o.tableHeading),
                     children: [
                         a.jsx('div', {
-                            className: j,
+                            className: x,
                             children: R.strings.comp7_ext.rankCompatibilityTable.playersRank(),
                         }),
                         a.jsx('div', {
                             className: s(g, N),
                             children: a.jsx('div', {
-                                className: j,
+                                className: x,
                                 children: R.strings.comp7_ext.rankCompatibilityTable.teammatesRank(),
                             }),
                         }),
                     ],
                 }),
-                T.map((l, m) =>
+                T.map((l, o) =>
                     a.jsxs(
                         i.Fragment,
                         {
                             children: [
                                 a.jsxs('div', {
-                                    className: h,
+                                    className: k,
                                     children: [
                                         a.jsxs('div', {
-                                            className: h,
+                                            className: k,
                                             children: [
-                                                a.jsx(d, { rank: l, size: b.x22, seasonName: e, className: v }),
+                                                a.jsx(c, { rank: l, size: d.x22, seasonName: e, className: v }),
                                                 p(l),
                                             ],
                                         }),
                                         a.jsx('div', {
-                                            className: s(h, g),
+                                            className: s(k, g),
                                             children: t(T.length, (s) =>
-                                                Math.abs(s - m) <= n
-                                                    ? a.jsx(d, { rank: T[s], size: b.x22, seasonName: e }, s)
-                                                    : a.jsx('div', { className: y }, s),
+                                                Math.abs(s - o) <= n
+                                                    ? a.jsx(c, { rank: T[s], size: d.x22, seasonName: e }, s)
+                                                    : a.jsx('div', { className: u }, s),
                                             ),
                                         }),
                                     ],
                                 }),
-                                m !== T.length - 1 && a.jsx('div', { className: s(r.divider, u) }),
+                                o !== T.length - 1 && a.jsx('div', { className: s(_.divider, y) }),
                             ],
                         },
-                        m,
+                        o,
                     ),
                 ),
             ],
         }),
-    [f, F] = n()(({ observableModel: a }) => ({ root: a.object() }), l),
+    [C, F] = n()(({ observableModel: a }) => ({ root: a.object() }), l),
     M = 'App_bce8e88b',
     S = 'App_description_e694643b',
     z = 'App_table_8784516a',
@@ -76,19 +77,19 @@ const x = 'RankCompatibilityTable_d1e1f461',
         const { model: i } = F(),
             { seasonName: e, squadSize: t, rankRangeRestriction: n } = i.root.get();
         return a.jsxs('div', {
-            className: s(M, r.base),
+            className: s(M, _.base),
             children: [
-                a.jsx(m, {
+                a.jsx(o, {
                     text: R.strings.comp7_ext.rankCompatibilityTooltip.heading(),
                     binding: { count: t },
-                    classMix: r.heading,
+                    classMix: _.heading,
                 }),
-                a.jsx(m, {
+                a.jsx(o, {
                     text: R.strings.comp7_ext.rankCompatibilityTooltip.description(),
-                    classMix: s(r.description, S),
+                    classMix: s(_.description, S),
                 }),
-                a.jsx(C, { seasonName: e, rankRangeRestriction: n, className: z }),
+                a.jsx(f, { seasonName: e, rankRangeRestriction: n, className: z }),
             ],
         });
     });
-o(a.jsx(f, { children: a.jsx(c, { children: a.jsx(A, {}) }) }));
+m(a.jsx(C, { children: a.jsx(r, { children: a.jsx(A, {}) }) }));

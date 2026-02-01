@@ -900,7 +900,7 @@
                                     (window.cancelAnimationFrame(u.current),
                                         (u.current = window.requestAnimationFrame(() => {
                                             u.current = window.requestAnimationFrame(() => {
-                                                (e(), (u.current = 0));
+                                                ((u.current = 0), e());
                                             });
                                         })));
                                 },
@@ -1228,58 +1228,59 @@
                     ae = 'Content_subtitleVehicles_fa',
                     ne = 'Content_footerSeparator_e7',
                     De = 'Content_footer_c8',
-                    ie = 'Header_base_1a',
-                    le = 'Header_icon_47',
-                    Be = 'Header_labels_ca',
-                    se = 'Header_title_26',
-                    Ce = 'Header_subtitle_d2',
-                    oe = R.strings.battle_pass.tooltips.points,
-                    ce = () =>
+                    ie = 'Content_footer__offset_3b',
+                    le = 'Header_base_1a',
+                    Be = 'Header_icon_47',
+                    se = 'Header_labels_ca',
+                    Ce = 'Header_title_26',
+                    oe = 'Header_subtitle_d2',
+                    ce = R.strings.battle_pass.tooltips.points,
+                    de = () =>
                         n().createElement(
                             'div',
-                            { className: ie },
-                            n().createElement('div', { className: le }),
+                            { className: le },
+                            n().createElement('div', { className: Be }),
                             n().createElement(
                                 'div',
-                                { className: Be },
-                                n().createElement('div', { className: se }, oe.title()),
+                                { className: se },
+                                n().createElement('div', { className: Ce }, ce.title()),
                                 n().createElement(
                                     'div',
-                                    { className: Ce },
-                                    n().createElement(ju.z, { text: oe.subtitle() }),
+                                    { className: oe },
+                                    n().createElement(ju.z, { text: ce.subtitle() }),
                                 ),
                             ),
                         );
-                var de = t(401);
-                const me = (0, a.memo)(
+                var me = t(401);
+                const ge = (0, a.memo)(
                     ({ columnWidth: u, header: e, labels: t, headerClassMix: A, labelClassMix: E }) =>
                         n().createElement(
                             'div',
                             { style: { width: `${u}rem` } },
-                            n().createElement('div', { className: pu()(de.Z.tableHeader, A) }, e),
+                            n().createElement('div', { className: pu()(me.Z.tableHeader, A) }, e),
                             t.map((u, e) =>
                                 n().createElement(
                                     'div',
-                                    { className: pu()(de.Z.label, de.Z.label__table, E), key: e },
+                                    { className: pu()(me.Z.label, me.Z.label__table, E), key: e },
                                     u,
                                 ),
                             ),
                         ),
                 );
-                var ge = t(4890);
-                const he = R.strings.battle_pass.tooltips,
-                    ve = ({ win: u, points: e, hasDraw: t = !0, battleType: A = '' }) => {
-                        const E = 'comp7' === A ? he.prestigePoints : he.pointsTable,
+                var he = t(4890);
+                const ve = R.strings.battle_pass.tooltips,
+                    fe = ({ win: u, points: e, hasDraw: t = !0, battleType: A = '' }) => {
+                        const E = 'comp7' === A ? ve.prestigePoints : ve.pointsTable,
                             F = ((u, e, t) => (u ? t.win() : e ? t.lose() : t.loseWithoutDraw()))(u, t, E);
                         return n().createElement(
                             'div',
-                            { className: de.Z.pointsColumn },
-                            n().createElement('div', { className: de.Z.tableHeader }, F),
+                            { className: me.Z.pointsColumn },
+                            n().createElement('div', { className: me.Z.tableHeader }, F),
                             e.items.map(({ value: e }, t) =>
                                 n().createElement(
                                     'div',
-                                    { className: de.Z.label, key: t },
-                                    n().createElement(ge.E, {
+                                    { className: me.Z.label, key: t },
+                                    n().createElement(he.E, {
                                         value: u ? e.pointsWin : e.pointsLose,
                                         isSpecial: e.isSpecial,
                                     }),
@@ -1287,7 +1288,7 @@
                             ),
                         );
                     },
-                    fe = ({
+                    pe = ({
                         rewardPoints: u,
                         topPlace: e = R.strings.battle_pass.tooltips.pointsTable.topPlace(),
                         hasDraw: t = !0,
@@ -1298,51 +1299,51 @@
                         return n().createElement(
                             n().Fragment,
                             null,
-                            n().createElement(me, { columnWidth: A, labels: F }),
-                            n().createElement(ve, { points: u, win: !0, battleType: E }),
-                            n().createElement(ve, { points: u, win: !1, hasDraw: t, battleType: E }),
+                            n().createElement(ge, { columnWidth: A, labels: F }),
+                            n().createElement(fe, { points: u, win: !0, battleType: E }),
+                            n().createElement(fe, { points: u, win: !1, hasDraw: t, battleType: E }),
                         );
                     };
-                var pe = t(9351);
-                const _e = 'Points_base_fa',
-                    xe = 'Points_separator_52',
-                    be = 'Points_points_9b',
-                    we = (0, Zu.Pi)(() => {
+                var _e = t(9351);
+                const xe = 'Points_base_fa',
+                    be = 'Points_separator_52',
+                    we = 'Points_points_9b',
+                    ye = (0, Zu.Pi)(() => {
                         const u = Ae().model.rewardPoints.get(),
                             e = Lu().mediaSize;
                         return n().createElement(
                             'div',
-                            { className: _e },
-                            n().createElement('div', { className: xe }),
+                            { className: xe },
+                            n().createElement('div', { className: be }),
                             n().createElement(
                                 'div',
-                                { className: be },
+                                { className: we },
                                 n().createElement(
-                                    pe.c,
+                                    _e.c,
                                     { showSeparator: !1, stretchBg: !0, separatorRows: u.items },
-                                    n().createElement(fe, {
+                                    n().createElement(pe, {
                                         tableColumnWidth: e < bu.Small ? 210 : 230,
                                         rewardPoints: u,
                                     }),
                                 ),
                             ),
-                            n().createElement('div', { className: xe }),
+                            n().createElement('div', { className: be }),
                         );
                     }),
-                    ye = R.strings.battle_pass.tooltips.points,
-                    Le = (0, Zu.Pi)(() => {
+                    Le = R.strings.battle_pass.tooltips.points,
+                    Se = (0, Zu.Pi)(() => {
                         const u = Ae().model.vehiclesList.get().items;
                         return n().createElement(
                             'div',
                             { className: Ee },
-                            n().createElement(ce, null),
-                            n().createElement('div', { className: re }, ye.rules()),
-                            n().createElement(we, null),
-                            u.length &&
+                            n().createElement(de, null),
+                            n().createElement('div', { className: re }, Le.rules()),
+                            n().createElement(ye, null),
+                            u.length > 0 &&
                                 n().createElement(
                                     n().Fragment,
                                     null,
-                                    n().createElement('div', { className: ae }, ye.specialVehicles()),
+                                    n().createElement('div', { className: ae }, Le.specialVehicles()),
                                     n().createElement(Xu.Y, { vehiclesList: u }),
                                     n().createElement(
                                         'div',
@@ -1350,13 +1351,17 @@
                                         n().createElement('div', { className: Fe }),
                                     ),
                                 ),
-                            n().createElement('div', { className: De }, n().createElement(ju.z, { text: ye.footer() })),
+                            n().createElement(
+                                'div',
+                                { className: pu()(De, !u.length && ie) },
+                                n().createElement(ju.z, { text: Le.footer() }),
+                            ),
                         );
                     }),
-                    Se = () => n().createElement(ku, null, n().createElement(Le, null));
+                    He = () => n().createElement(ku, null, n().createElement(Se, null));
                 engine.whenReady.then(() => {
                     Nu().render(
-                        n().createElement(Wu, null, n().createElement(te, null, n().createElement(Se, null))),
+                        n().createElement(Wu, null, n().createElement(te, null, n().createElement(He, null))),
                         document.getElementById('root'),
                     );
                 });

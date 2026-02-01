@@ -2868,7 +2868,7 @@
                                     (window.cancelAnimationFrame(e.current),
                                         (e.current = window.requestAnimationFrame(() => {
                                             e.current = window.requestAnimationFrame(() => {
-                                                (u(), (e.current = 0));
+                                                ((e.current = 0), u());
                                             });
                                         })));
                                 },
@@ -2904,7 +2904,7 @@
                     tt = 'MultilineOverflow_truncatedContent_da',
                     nt = 'MultilineOverflow_singleLine_bb',
                     at = 'MultilineOverflow_line_51',
-                    rt = ['text', 'lines', 'className', 'onChange'];
+                    rt = ['text', 'lines', 'className', 'classNames', 'onChange'];
                 function it() {
                     return (
                         (it =
@@ -2923,8 +2923,9 @@
                     let t = e.text,
                         r = e.lines,
                         i = e.className,
-                        o = e.onChange,
-                        s = (function (e, u) {
+                        o = e.classNames,
+                        s = e.onChange,
+                        l = (function (e, u) {
                             if (null == e) return {};
                             var t,
                                 n,
@@ -2933,68 +2934,74 @@
                             for (n = 0; n < r.length; n++) ((t = r[n]), u.indexOf(t) >= 0 || (a[t] = e[t]));
                             return a;
                         })(e, rt);
-                    const l = (0, n.useRef)(null),
-                        c = (0, n.useRef)(null),
-                        d = (0, n.useState)(!1),
-                        m = d[0],
-                        E = d[1],
-                        _ = (0, n.useState)([]),
-                        A = _[0],
-                        F = _[1],
-                        h = (0, n.useState)(0),
-                        D = h[0],
-                        C = h[1],
-                        v = Yu(),
-                        f = (0, n.useMemo)(() => document.createElement('canvas'), []),
-                        b = (0, n.useCallback)(() => (c.current ? c.current.getBoundingClientRect().height : 0), []),
-                        B = (0, n.useCallback)(
+                    const c = (0, n.useRef)(null),
+                        d = (0, n.useRef)(null),
+                        m = (0, n.useState)(!1),
+                        E = m[0],
+                        _ = m[1],
+                        A = (0, n.useState)([]),
+                        F = A[0],
+                        h = A[1],
+                        D = (0, n.useState)(0),
+                        C = D[0],
+                        v = D[1],
+                        f = Yu(),
+                        b = (0, n.useMemo)(() => document.createElement('canvas'), []),
+                        B = (0, n.useCallback)(() => (d.current ? d.current.getBoundingClientRect().height : 0), []),
+                        p = (0, n.useCallback)(
                             (e) => {
-                                const u = b();
+                                const u = B();
                                 return e && u ? Math.round(e.scrollHeight / u) : 0;
                             },
-                            [b],
+                            [B],
                         ),
-                        p = (0, n.useCallback)(() => {
-                            if (B(l.current) <= r) return E(!1);
-                            E(!0);
+                        w = (0, n.useCallback)(() => {
+                            if (p(c.current) <= r) return _(!1);
+                            _(!0);
                             const e = t.split(' '),
                                 u = Array.from(new Array(r)).reduce((u, t, n) => {
-                                    if (!l.current) return u;
+                                    if (!c.current) return u;
                                     const a = u.reduce((e, u) => e + u.length, 0),
                                         i = e.slice(a);
                                     if (n === r - 1) return (u.push(i), u);
-                                    const o = Qu({ start: 0, end: i.length, words: i, element: l.current, canvas: f });
+                                    const o = Qu({ start: 0, end: i.length, words: i, element: c.current, canvas: b });
                                     return (u.push(i.slice(0, o)), u);
                                 }, []);
-                            F(u);
-                        }, [f, B, r, t]),
-                        w = (0, n.useCallback)(() => {
-                            v.run(() => {
-                                (C(b() * r), p());
+                            h(u);
+                        }, [b, p, r, t]),
+                        y = (0, n.useCallback)(() => {
+                            f.run(() => {
+                                (v(B() * r), w());
                             });
-                        }, [b, r, v, p]);
-                    var y, x;
+                        }, [B, r, f, w]);
+                    var x, S;
                     return (
-                        (0, n.useEffect)(w, [w]),
-                        (y = w),
-                        (x = [w]),
+                        (0, n.useEffect)(y, [y]),
+                        (x = y),
+                        (S = [y]),
                         (0, n.useEffect)(
-                            () => (window.addEventListener('resize', y), () => window.removeEventListener('resize', y)),
-                            x,
+                            () => (window.addEventListener('resize', x), () => window.removeEventListener('resize', x)),
+                            S,
                         ),
                         (0, n.useEffect)(() => {
-                            null == o || o(m);
-                        }, [o, m]),
+                            null == s || s(E);
+                        }, [s, E]),
                         a().createElement(
                             'div',
-                            it({}, s, { ref: u, className: g()(Ju, i, m && et) }),
-                            a().createElement('div', { ref: l, className: ut, style: { maxHeight: `${D}rem` } }, t),
+                            it({}, l, { ref: u, className: g()(Ju, i, E && et) }),
+                            a().createElement('div', { ref: c, className: ut, style: { maxHeight: `${C}rem` } }, t),
                             a().createElement(
                                 'div',
                                 { className: tt },
-                                A.map((e, u) => a().createElement('div', { key: u, className: at }, e.join(' '))),
+                                F.map((e, u) =>
+                                    a().createElement(
+                                        'div',
+                                        { key: u, className: g()(at, null == o ? void 0 : o.line) },
+                                        e.join(' '),
+                                    ),
+                                ),
                             ),
-                            a().createElement('div', { ref: c, className: nt }, R.strings.common.common.dot()),
+                            a().createElement('div', { ref: d, className: nt }, R.strings.common.common.dot()),
                         )
                     );
                 });

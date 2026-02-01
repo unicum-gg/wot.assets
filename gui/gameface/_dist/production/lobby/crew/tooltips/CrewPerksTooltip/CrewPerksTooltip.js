@@ -806,7 +806,7 @@
                                     (window.cancelAnimationFrame(u.current),
                                         (u.current = window.requestAnimationFrame(() => {
                                             u.current = window.requestAnimationFrame(() => {
-                                                (e(), (u.current = 0));
+                                                ((u.current = 0), e());
                                             });
                                         })));
                                 },
@@ -1286,8 +1286,8 @@
                     const o = e.contentId;
                     return o ? r().createElement(I, H({}, e, { contentId: o }), n) : r().createElement(V, e, n);
                 };
-                var Y = t(8045);
-                const Z = {
+                var $ = t(8045);
+                const Y = {
                     base: 'ExtendedText_base_71',
                     base__zeroPadding: 'ExtendedText_base__zeroPadding_25',
                     base__isTruncationAvailable: 'ExtendedText_base__isTruncationAvailable_5b',
@@ -1303,10 +1303,10 @@
                     'tooltip__align-flex-end': 'ExtendedText_tooltip__align-flex-end_d2',
                 };
                 t(1281);
-                let $;
+                let Z;
                 !(function (u) {
                     ((u[(u.left = 0)] = 'left'), (u[(u.right = 1)] = 'right'));
-                })($ || ($ = {}));
+                })(Z || (Z = {}));
                 const X = (u) => u.replace(/&nbsp;/g, ' '),
                     Q =
                         ((() => {
@@ -1538,17 +1538,18 @@
                                                   return e;
                                               })(t),
                                           )
-                                        : n.push({ blockType: r, colorTag: e, childList: [t] });
+                                        : n.push({ blockType: r, colorTag: e, childList: [t.replace(/\ufeff+/g, '')] });
                                 },
                             ),
                             n
                         );
                     },
                     mu = (u, e, t = '', n) => {
-                        const r = [];
+                        const r = [],
+                            o = u.replace(/(.)(、|。|ー)/g, '$1\ufeff$2');
                         return (
                             du(
-                                u,
+                                o,
                                 /(?:%\(|{)(.*?)[)}][sd]?/g,
                                 (u) => {
                                     r.push(...Cu(u, t, n));
@@ -1744,7 +1745,7 @@
                                     );
                                     (0, n.useEffect)(() => {
                                         if (!u.current || !t) return;
-                                        const e = new Y.Z((u) => r(u));
+                                        const e = new $.Z((u) => r(u));
                                         return (
                                             e.observe(u.current),
                                             () => {
@@ -1757,30 +1758,30 @@
                                     'div',
                                     {
                                         className: s()(
-                                            Z.base,
+                                            Y.base,
                                             e,
-                                            Z.base__zeroPadding,
-                                            a && Z.base__isTruncationAvailable,
+                                            Y.base__zeroPadding,
+                                            a && Y.base__isTruncationAvailable,
                                         ),
                                         style: v,
                                     },
-                                    r().createElement('div', { className: Z.unTruncated, ref: d }, m),
+                                    r().createElement('div', { className: Y.unTruncated, ref: d }, m),
                                     r().createElement(
                                         K,
                                         {
                                             tooltipArgs: p,
                                             className: s()(
-                                                Z.tooltip,
-                                                Z[`tooltip__justify-${E}`],
-                                                Z[`tooltip__align-${A}`],
+                                                Y.tooltip,
+                                                Y[`tooltip__justify-${E}`],
+                                                Y[`tooltip__align-${A}`],
                                             ),
                                         },
                                         r().createElement(
                                             'div',
                                             {
                                                 className: s()(
-                                                    Z.truncated,
-                                                    !B.isTruncateFinished && a && Z.truncated__hide,
+                                                    Y.truncated,
+                                                    !B.isTruncateFinished && a && Y.truncated__hide,
                                                 ),
                                                 style: v,
                                             },
@@ -2111,9 +2112,9 @@
                             ),
                         ),
                     ),
-                    Yu = 'ExtraInfo_base_55',
-                    Zu = 'ExtraInfo_situationalBlock_f2',
-                    $u = 'ExtraInfo_asterisk_7b',
+                    $u = 'ExtraInfo_base_55',
+                    Yu = 'ExtraInfo_situationalBlock_f2',
+                    Zu = 'ExtraInfo_asterisk_7b',
                     Xu = 'ExtraInfo_situationalText_86',
                     Qu = 'ExtraInfo_zeroPerkBlock_01',
                     Ju = 'ExtraInfo_zeroPerkIcon_63',
@@ -2125,12 +2126,12 @@
                                   null,
                                   r().createElement(
                                       'div',
-                                      { className: Yu },
+                                      { className: $u },
                                       t &&
                                           r().createElement(
                                               'div',
-                                              { className: Zu },
-                                              r().createElement('div', { className: s()(h, $u) }),
+                                              { className: Yu },
+                                              r().createElement('div', { className: s()(h, Zu) }),
                                               r().createElement(
                                                   'div',
                                                   { className: Xu },

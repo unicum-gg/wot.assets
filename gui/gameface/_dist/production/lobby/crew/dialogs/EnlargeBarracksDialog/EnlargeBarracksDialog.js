@@ -1239,7 +1239,7 @@
                         }
                         return r;
                     },
-                    X = () => {
+                    $ = () => {
                         const e = [];
                         let u = !1;
                         const t = () => {
@@ -1253,9 +1253,9 @@
                             },
                         };
                     },
-                    $ = 'SubView_base_df',
+                    X = 'SubView_base_df',
                     G = 'subViews.onChanged',
-                    z = X(),
+                    z = $(),
                     q = (0, n.memo)(({ id: e, fallback: u, onLoadCallback: t, mixClass: i }) => {
                         const s = (0, n.useState)(''),
                             o = s[0],
@@ -1345,7 +1345,7 @@
                                 },
                                 [o],
                             ));
-                        const A = a()($, i);
+                        const A = a()(X, i);
                         if (o) {
                             let u;
                             return (
@@ -1372,7 +1372,7 @@
                     K = 'subViews.onChanged',
                     Z = '.html',
                     Y = /^coui:\/\/gui\/.*/,
-                    Q = X(),
+                    Q = $(),
                     J = (e) => {
                         const u = document.createElement('script');
                         ((u.src = e), (u.defer = !0), document.head.appendChild(u));
@@ -1449,7 +1449,7 @@
                                 console.error("subView: can't get View component name");
                             } else engine.on(K, p);
                         }, [p, h, e, l]),
-                        r().createElement('div', { className: a()($, t) }, m && i, r().createElement('div', { ref: s }))
+                        r().createElement('div', { className: a()(X, t) }, m && i, r().createElement('div', { ref: s }))
                     );
                 });
                 function ee(e) {
@@ -2741,14 +2741,14 @@
                         je.apply(this, arguments)
                     );
                 }
-                const Xe = ({ children: e, tooltipArgs: u, className: t }) => {
+                const $e = ({ children: e, tooltipArgs: u, className: t }) => {
                     if (!u) return e;
                     const n = r().createElement('div', { className: t }, e);
                     if (u.header || u.body) return r().createElement(de, u, n);
                     const i = u.contentId;
                     return i ? r().createElement(ae, je({}, u, { contentId: i }), n) : r().createElement(We, u, n);
                 };
-                var $e = t(8045);
+                var Xe = t(8045);
                 const Ge = {
                     base: 'ExtendedText_base_71',
                     base__zeroPadding: 'ExtendedText_base__zeroPadding_25',
@@ -2972,17 +2972,18 @@
                                                   return u;
                                               })(t),
                                           )
-                                        : n.push({ blockType: r, colorTag: u, childList: [t] });
+                                        : n.push({ blockType: r, colorTag: u, childList: [t.replace(/\ufeff+/g, '')] });
                                 },
                             ),
                             n
                         );
                     },
                     mu = (e, u, t = '', n) => {
-                        const r = [];
+                        const r = [],
+                            i = e.replace(/(.)(、|。|ー)/g, '$1\ufeff$2');
                         return (
                             au(
-                                e,
+                                i,
                                 /(?:%\(|{)(.*?)[)}][sd]?/g,
                                 (e) => {
                                     r.push(...du(e, t, n));
@@ -3178,7 +3179,7 @@
                                     );
                                     (0, n.useEffect)(() => {
                                         if (!e.current || !t) return;
-                                        const u = new $e.Z((e) => r(e));
+                                        const u = new Xe.Z((e) => r(e));
                                         return (
                                             u.observe(e.current),
                                             () => {
@@ -3200,7 +3201,7 @@
                                     },
                                     r().createElement('div', { className: Ge.unTruncated, ref: E }, g),
                                     r().createElement(
-                                        Xe,
+                                        $e,
                                         {
                                             tooltipArgs: D,
                                             className: a()(

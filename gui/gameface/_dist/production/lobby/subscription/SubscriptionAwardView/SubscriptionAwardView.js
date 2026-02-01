@@ -1707,10 +1707,7 @@
                         (u.EquipCoin = 'equipCoin'),
                         (u.LootBox = 'lootBox'),
                         (u.BrCoin = 'brcoin'),
-                        (u.Attachment = 'attachment'),
-                        (u.Stamp = 'stamp'),
-                        (u.WtEventLootbox = 'wtevent_lootBox'),
-                        (u.WtEventTicket = 'wtevent_ticket'));
+                        (u.Attachment = 'attachment'));
                 })(cu || (cu = {})),
                     (function (u) {
                         ((u.Gold = 'gold'),
@@ -1865,9 +1862,6 @@
                         cu.BattleBoosterGift,
                         cu.OptionalDevice,
                         cu.Attachment,
-                        cu.Stamp,
-                        cu.WtEventLootbox,
-                        cu.WtEventTicket,
                         cu.Gold,
                         cu.Credits,
                         cu.Crystal,

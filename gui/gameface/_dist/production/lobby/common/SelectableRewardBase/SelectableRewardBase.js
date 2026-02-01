@@ -1135,10 +1135,7 @@
                         (u.EquipCoin = 'equipCoin'),
                         (u.LootBox = 'lootBox'),
                         (u.BrCoin = 'brcoin'),
-                        (u.Attachment = 'attachment'),
-                        (u.Stamp = 'stamp'),
-                        (u.WtEventLootbox = 'wtevent_lootBox'),
-                        (u.WtEventTicket = 'wtevent_ticket'));
+                        (u.Attachment = 'attachment'));
                 })(w || (w = {})),
                     (function (u) {
                         ((u.Gold = 'gold'),
@@ -1287,19 +1284,21 @@
                         (0, F.useCallback)((...u) => (0, e.current)(...u), H)
                     );
                 }
-                function W(u, e, t = []) {
+                function U(u, e, t = []) {
                     const r = (0, F.useRef)(0),
-                        n = (0, F.useCallback)(() => window.clearInterval(r.current), t || []);
+                        n = (0, F.useCallback)(() => {
+                            (window.clearInterval(r.current), (r.current = 0));
+                        }, t || []);
                     (0, F.useEffect)(() => n, [n]);
                     const i = (null != t ? t : []).concat([e]);
                     return [
                         (0, F.useCallback)((t) => {
-                            ((r.current = window.setInterval(() => u(t, !0), e)), u(t, !1));
+                            (0 !== r.current && n(), (r.current = window.setInterval(() => u(t, !0), e)), u(t, !1));
                         }, i),
                         n,
                     ];
                 }
-                function U(u, e) {
+                function W(u, e) {
                     var t = ('undefined' != typeof Symbol && u[Symbol.iterator]) || u['@@iterator'];
                     if (t) return (t = t.call(u)).next.bind(t);
                     if (
@@ -1411,7 +1410,7 @@
                                             e(u).delete(t);
                                         },
                                         n = (u, ...t) => {
-                                            for (var r, n = U(e(u).values()); !(r = n()).done; ) (0, r.value)(...t);
+                                            for (var r, n = W(e(u).values()); !(r = n()).done; ) (0, r.value)(...t);
                                         };
                                     return (0, F.useMemo)(() => ({ on: t, off: r, trigger: n }), []);
                                 })(),
@@ -1576,7 +1575,8 @@
                         getContainerSize: (u) => u.offsetWidth,
                         getWrapperSize: (u) => u.offsetWidth,
                         setScrollPosition: (u, e) => {
-                            u.style.transform = `translateX(-${e.value.scrollPosition}px)`;
+                            var t;
+                            u.style.transform = `translateX(-${0 | (null != (t = e.value.scrollPosition) ? t : 0)}px)`;
                         },
                         getDirection: (u) => (u.deltaY > 1 ? V.Next : V.Prev),
                         forceTriggerMouseMove: D.O.view.forceTriggerMouseMove,
@@ -1716,7 +1716,7 @@
                                     (e(), t());
                                 };
                             }, [u, A.offset, A.pending, r, m]));
-                        const g = W((e) => u.applyStepTo(e), E, [u]),
+                        const g = U((e) => u.applyStepTo(e), E, [u]),
                             h = g[0],
                             f = g[1];
                         (0, F.useEffect)(
@@ -1978,7 +1978,7 @@
                                     (e(), t());
                                 };
                             }, [u, A.offset, A.pending, r, m]));
-                        const h = W((e) => u.applyStepTo(e), E, [u]),
+                        const h = U((e) => u.applyStepTo(e), E, [u]),
                             f = h[0],
                             p = h[1];
                         (0, F.useEffect)(

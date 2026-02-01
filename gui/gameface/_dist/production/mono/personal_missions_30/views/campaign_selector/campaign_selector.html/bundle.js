@@ -1,4 +1,4 @@
-import { r as e, p as a, m as t, j as o, f as i, n as s, q as n } from '../../../chunks/vendor.js';
+import { r as e, n as a, l as t, j as o, f as i, m as s, p as n } from '../../../chunks/vendor.js';
 import {
     c as r,
     i as c,
@@ -13,16 +13,16 @@ import {
     I as u,
     l as b,
     m as C,
-    n as S,
-    b as v,
+    p as S,
+    a as v,
     F as x,
     B as O,
     t as y,
-    a as I,
+    b as I,
     k as N,
-    p as w,
-    q as E,
-    v as j,
+    q as w,
+    v as E,
+    n as j,
     d as T,
     U as k,
 } from '../../../chunks/lib.js';
@@ -237,12 +237,12 @@ const M = { lightsOn: r('pm_lobby_lights_on') },
             })
         );
     }),
-    q = () => {
+    G = () => {
         const a = e.useContext(U);
         if (!a) throw new Error('useAnimation must be used within an AnimationProvider');
         return a;
     },
-    G = 'Particles_b7c425ba',
+    q = 'Particles_b7c425ba',
     z = 'Particles_video_dadccd98',
     Z = 'Particles_video__glow_27caffe2',
     J = 'Particles_video__sparks_390a3794',
@@ -258,7 +258,7 @@ const M = { lightsOn: r('pm_lobby_lights_on') },
             r = t.firstTimeEntrance.get() && s !== H.LOCKED;
         return n || r
             ? o.jsxs('div', {
-                  className: i(G, e),
+                  className: i(q, e),
                   children: [
                       n &&
                           o.jsxs(o.Fragment, {
@@ -310,7 +310,7 @@ const M = { lightsOn: r('pm_lobby_lights_on') },
     ie = a(function (e) {
         const { model: a } = B(),
             t = a.campaignSelectorViewState.get(),
-            { backgroundStyle: n } = q();
+            { backgroundStyle: n } = G();
         return o.jsxs('div', {
             className: i(oe.base, oe[`base__${t}`], e.className),
             children: [
@@ -426,7 +426,7 @@ function pe({ completed: e, operationId: a, iconShade: t, className: i }) {
     const n = e ? le : de,
         r = re[a],
         { top: c, left: l } = h((null == r ? void 0 : r.extraSmall) ?? se, r),
-        { boardItemStyle: d, getAnimationShade: p } = q(),
+        { boardItemStyle: d, getAnimationShade: p } = G(),
         _ = p(t);
     return o.jsxs(o.Fragment, {
         children: [
@@ -488,7 +488,7 @@ const _e = {
             [x, O] = e.useState(0),
             { model: y, controls: I } = B(),
             N = y.computes.isAttention(r, _, f),
-            { boardItemStyle: w, currentStep: E, getAnimationShade: j, openOperation: T } = q(),
+            { boardItemStyle: w, currentStep: E, getAnimationShade: j, openOperation: T } = G(),
             k = j(a),
             H = W[f],
             R = c === _,
@@ -533,8 +533,8 @@ const _e = {
                         onClick: function () {
                             V ? P.onClick() : (b.play('yes1'), M.onClick(), T(() => I.openOperation(_)));
                         },
-                        onMouseEnter: function () {
-                            (V ? P.onMouseEnter() : M.onMouseEnter(), V || b.play('gui_hangar_hover'));
+                        onMouseEnter: function (e) {
+                            (V ? P.onMouseEnter(e) : M.onMouseEnter(e), V || b.play('gui_hangar_hover'));
                         },
                     }),
                     o.jsx('div', { className: _e.glowHover }),
@@ -615,7 +615,7 @@ const Se = a(function ({ campaignIndex: a, campaign: { operations: t }, classNam
         const { model: r } = B(),
             c = r.campaignSelectorViewState.get(),
             l = r.computes.activeOperationId(),
-            { boardItemStyle: d, getAnimationShade: p } = q(),
+            { boardItemStyle: d, getAnimationShade: p } = G(),
             _ = (function (e) {
                 return e < 2 ? H.FIRST_TWO : H.THIRD;
             })(a),
@@ -637,7 +637,7 @@ const Se = a(function ({ campaignIndex: a, campaign: { operations: t }, classNam
                     void 0,
                 );
             })(t, _);
-        if ((console.log(h), f))
+        if (f)
             return o.jsx('div', {
                 className: i(be.base, be[`base__${g}`], be[`base__${l}`], n),
                 children: t.map((i, n) =>
@@ -702,7 +702,7 @@ const Se = a(function ({ campaignIndex: a, campaign: { operations: t }, classNam
             { model: a } = B(),
             t = a.campaigns.get(),
             n = a.campaignSelectorViewState.get(),
-            { bugsStyle: r } = q();
+            { bugsStyle: r } = G();
         return o.jsxs('div', {
             className: i(ve.base, ve[`base__${n}`]),
             children: [
@@ -815,7 +815,7 @@ const Fe = { content: 'Control_buttonContent_8e527c3' },
             w = (function (e, a) {
                 return e ? Ke.activate : a === H.THIRD ? Ke.switchCampaigns : Ke.switchCampaign;
             })(m, f),
-            { UIBlocked: E, startAnimation: j, openOperation: T } = q();
+            { UIBlocked: E, startAnimation: j, openOperation: T } = G();
         const k = S(
                 A.CUSTOM_SIMPLE,
                 e.useMemo(
@@ -900,7 +900,7 @@ const Fe = { content: 'Control_buttonContent_8e527c3' },
         base__third: 'Switcher_base__third_9ba1e4f',
         content__visible: 'Switcher_content__visible_fb2be705',
     };
-const qe = a(function ({ className: e }) {
+const Ge = a(function ({ className: e }) {
         const { model: a } = B(),
             t = a.campaignSelectorViewState.get(),
             s = a.firstTimeEntrance.get(),
@@ -922,7 +922,7 @@ const qe = a(function ({ className: e }) {
             }),
         });
     }),
-    Ge = {
+    qe = {
         base: 'Footer_d2687e3',
         base__firstTwo: 'Footer_base__firstTwo_4308958a',
         base__default: 'Footer_base__default_4308958a',
@@ -933,15 +933,15 @@ const qe = a(function ({ className: e }) {
     ze = a(function ({ className: e }) {
         const { model: a } = B(),
             t = a.campaignSelectorViewState.get(),
-            { footerStyle: n } = q();
+            { footerStyle: n } = G();
         return o.jsx(s.div, {
             style: n,
-            className: i(Ge.base, Ge[`base__${t}`], e),
+            className: i(qe.base, qe[`base__${t}`], e),
             children: (() => {
                 switch (t) {
                     case H.FIRST_TWO:
                     case H.THIRD:
-                        return o.jsx(qe, {});
+                        return o.jsx(Ge, {});
                     case H.COMPLETED_WITH_HONOR:
                         return o.jsx(we, {});
                     case H.LOCKED:
@@ -968,7 +968,7 @@ const qe = a(function ({ className: e }) {
         const e = g.resolve('videos'),
             { model: a, controls: t } = B(),
             n = a.campaignSelectorViewState.get(),
-            { contentStyle: r, UIBlocked: c } = q();
+            { contentStyle: r, UIBlocked: c } = G();
         return (
             I(N.ESCAPE, t.close),
             o.jsx('div', {

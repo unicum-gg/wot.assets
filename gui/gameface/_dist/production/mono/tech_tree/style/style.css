@@ -150,7 +150,6 @@
     background-position: center;
     background-size: cover;
     content: '';
-    transition: opacity 0.1s ease-out;
 }
 .Button_base__theme-primary_8ba55469 .Button_background_98ebcfb8::after {
     background-image: url(R.images.gui.maps.icons.ui_kit.common.primary_background);
@@ -323,6 +322,15 @@ html[lang='th'] .Button_base__size-large_83da852e .Button_content__fontAligned_6
 .FormatText_base__fullSize_a514958e {
     flex: 1 1 auto;
     width: 100%;
+}
+.FormatText_db904f12 span {
+    flex-wrap: wrap;
+    white-space: normal;
+    overflow-wrap: anywhere;
+}
+
+.FormatText_nowrap_ff69eca3 {
+    white-space: nowrap;
 }
 
 .FormatText_colorLegacy__blackReal {
@@ -634,16 +642,16 @@ html[lang='th'] .Button_base__size-large_83da852e .Button_content__fontAligned_6
     line-height: 18rem;
 }
 
-.Price_amountWrapper_2f9a18d1 {
-    position: relative;
+.Price_amountWrapper_b6b117e2 {
     display: flex;
     flex-direction: row;
     align-items: center;
     padding: 1rem 3rem;
     border-radius: 3rem;
     filter: drop-shadow(0rem 1rem 0rem rgba(0, 0, 0, 0.3));
+    position: relative;
 }
-.Price_base__amountHidden_29f8d762 .Price_amountWrapper_2f9a18d1 {
+.Price_base__amountHidden_29f8d762 .Price_amountWrapper_b6b117e2 {
     max-width: 0%;
     opacity: 0;
     visibility: hidden;
@@ -651,13 +659,13 @@ html[lang='th'] .Button_base__size-large_83da852e .Button_content__fontAligned_6
         opacity 0.4s ease,
         max-width 0.4s ease;
 }
-.Price_vehicle_29f8d762:hover .Price_base__amountHidden_29f8d762 .Price_amountWrapper_2f9a18d1 {
+.Price_vehicle_29f8d762:hover .Price_base__amountHidden_29f8d762 .Price_amountWrapper_b6b117e2 {
     display: flex;
     max-width: 120%;
     opacity: 1;
     visibility: visible;
 }
-.Price_base__credits_29f8d762 .Price_amountWrapper_2f9a18d1 {
+.Price_base__credits_29f8d762 .Price_amountWrapper_b6b117e2 {
     background: linear-gradient(
             -45deg,
             rgba(64, 67, 75, 0.7) 0%,
@@ -677,7 +685,7 @@ html[lang='th'] .Button_base__size-large_83da852e .Button_content__fontAligned_6
         0rem 1rem 0rem rgba(0, 0, 0, 0.3),
         0rem 1rem 15rem rgba(23, 23, 23, 0.4);
 }
-.Price_base__hasEnough_29f8d762.Price_base__credits_29f8d762 .Price_amountWrapper_2f9a18d1 {
+.Price_base__hasEnough_29f8d762.Price_base__credits_29f8d762 .Price_amountWrapper_b6b117e2 {
     background: linear-gradient(
         to right,
         rgba(54, 57, 64, 0.5),
@@ -688,7 +696,7 @@ html[lang='th'] .Button_base__size-large_83da852e .Button_content__fontAligned_6
     );
     color: var(--color-currency-credits);
 }
-.Price_base__gold_29f8d762 .Price_amountWrapper_2f9a18d1 {
+.Price_base__gold_29f8d762 .Price_amountWrapper_b6b117e2 {
     background: linear-gradient(
         to right,
         rgba(155, 108, 53, 0.5),
@@ -701,7 +709,7 @@ html[lang='th'] .Button_base__size-large_83da852e .Button_content__fontAligned_6
         0rem 1rem 0rem rgba(0, 0, 0, 0.3),
         0rem 1rem 15rem rgba(23, 23, 23, 0.4);
 }
-.Price_base__xp_29f8d762 .Price_amountWrapper_2f9a18d1 {
+.Price_base__xp_29f8d762 .Price_amountWrapper_b6b117e2 {
     background: linear-gradient(
             -45deg,
             rgba(89, 111, 128, 0.7) 0%,
@@ -721,11 +729,11 @@ html[lang='th'] .Button_base__size-large_83da852e .Button_content__fontAligned_6
         0rem 1rem 0rem rgba(0, 0, 0, 0.3),
         0rem 1rem 15rem rgba(23, 23, 23, 0.4);
 }
-.Price_base__hasEnough_29f8d762.Price_base__xp_29f8d762 .Price_amountWrapper_2f9a18d1 {
+.Price_base__hasEnough_29f8d762.Price_base__xp_29f8d762 .Price_amountWrapper_b6b117e2 {
     background: linear-gradient(98deg, rgba(71, 89, 102, 0.5) 2.5%, #475966 40%, #596f80 60%, #475966 80%, #475966 98%);
     color: rgba(var(--color-general-primary-rgb), 0.9);
 }
-.Price_base__combatXp_29f8d762 .Price_amountWrapper_2f9a18d1 {
+.Price_base__combatXp_29f8d762 .Price_amountWrapper_b6b117e2 {
     background-color: rgba(13, 14, 16, 0.5);
     color: rgba(var(--color-general-primary-rgb), 0.9);
     text-shadow:
@@ -734,10 +742,10 @@ html[lang='th'] .Button_base__size-large_83da852e .Button_content__fontAligned_6
 }
 
 /* Asian fonts stack vertically instead of horizontally when wrapper is not wide enough. Only combination of these 3 properties fixes it. */
-.Price_amount_8c520db0 {
+.Price_amount_24f18a58 {
     display: inline;
-    white-space: nowrap;
     text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .Price_discount_5f22dc90 {
@@ -787,16 +795,16 @@ html[lang='th'] .Button_base__size-large_83da852e .Button_content__fontAligned_6
     top: -10rem;
     left: 0rem;
 }
-.TopTierReleaseHighlight_fire__1_d14cf37e {
+.TopTierReleaseHighlight_fire__1_abb5023d {
     top: 60rem;
     left: 0;
-    animation: TopTierReleaseHighlight_fire_release_1_fff21f26 1.415s linear both;
+    animation: TopTierReleaseHighlight_fire_release_1_fff21f26 1.42s linear both;
     animation-delay: calc(var(--animationDelay) + 150ms);
 }
-.TopTierReleaseHighlight_fire__2_1c7532af {
+.TopTierReleaseHighlight_fire__2_107c868c {
     top: 60rem;
     left: 0;
-    animation: TopTierReleaseHighlight_fire_release_1_fff21f26 1.415s linear both;
+    animation: TopTierReleaseHighlight_fire_release_1_fff21f26 1.42s linear both;
     animation-delay: calc(var(--animationDelay) + 400ms);
 }
 
@@ -1721,7 +1729,6 @@ html[lang='th'] .Button_base__size-large_83da852e .Button_content__fontAligned_6
 .TierPaging_arrow_e55a1dbb::after {
     background: url(R.images.gui.maps.icons.tech_tree.scroll_right_hover) 0 0 / contain no-repeat;
     opacity: 0.5;
-    transition: opacity 0.2s ease-in;
 }
 .TierPaging_arrow_e55a1dbb:hover::after,
 .TierPaging_arrow_e55a1dbb:active::after {
@@ -2082,6 +2089,11 @@ html[lang='th'] .Button_base__size-large_83da852e .Button_content__fontAligned_6
 } /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
+:root {
+    --hangar-highlight-shadow:
+        0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+}
+
 /* stylelint-disable selector-max-id */
 /* stylelint-disable selector-no-qualifying-type */
 #root,
@@ -2091,6 +2103,7 @@ body {
     height: 100%;
     margin: 0;
     padding: 0;
+    color: var(--color-general-primary);
     font-size: 14rem;
 }
 

@@ -1,5 +1,5 @@
-import { j as e, x as s, y as a } from '../../../chunks/vendor.js';
-import { i as d, n as i, F as t, d as l, cq as p, cr as c, r } from '../../../chunks/lib.js';
+import { j as e, w as s, x as a } from '../../../chunks/vendor.js';
+import { i as d, n as i, F as t, d as l, e as p, f as c, r } from '../../../chunks/lib.js';
 /* empty css                     */ var n = ((e) => (
     (e.InProgress = 'inProgress'),
     (e.Completed = 'completed'),
@@ -14,8 +14,8 @@ const [o, _] = d()(({ observableModel: e }) => ({ root: e.object() }), i),
         { victoryPoints: 1, defeatPoints: 0, place: m.top.c_2() },
     ],
     x = 'Table_8cfe9af4',
-    h = 'Table_row_b2b5c28f',
-    f = 'Table_row__bg_e41f9eed',
+    f = 'Table_row_b2b5c28f',
+    h = 'Table_row__bg_e41f9eed',
     j = 'Table_3f81b41',
     v = 'Table_victory_ef69bf65',
     A = 'Table_defeat_996e2f97',
@@ -24,14 +24,14 @@ const [o, _] = d()(({ observableModel: e }) => ({ root: e.object() }), i),
     T = 'Table_place_7ea53afb',
     I = 'Table_reward_34902bd5',
     u = 'Table_point_e3b5c2ca',
-    y = 'Table_separator_b233bbf2',
+    w = 'Table_separator_b233bbf2',
     P = R.strings.comp7_light.leaderboardRewardTooltip,
-    w = () =>
+    y = () =>
         e.jsxs('div', {
             className: x,
             children: [
                 e.jsxs('div', {
-                    className: s(h, f),
+                    className: s(f, h),
                     children: [
                         e.jsx('div', { className: T }),
                         e.jsx(t, { text: P.column.c_1(), classMix: s(v, g) }),
@@ -43,11 +43,11 @@ const [o, _] = d()(({ observableModel: e }) => ({ root: e.object() }), i),
                     children: b.map(({ place: s, defeatPoints: a, victoryPoints: d }, i) =>
                         e.jsxs(e.Fragment, {
                             children: [
-                                0 !== i && e.jsx('div', { className: y }),
+                                0 !== i && e.jsx('div', { className: w }),
                                 e.jsxs(
                                     'div',
                                     {
-                                        className: h,
+                                        className: f,
                                         children: [
                                             e.jsx('div', { className: T, children: s }),
                                             e.jsxs('div', {
@@ -145,7 +145,7 @@ const [o, _] = d()(({ observableModel: e }) => ({ root: e.object() }), i),
                                 e.jsx(t, { text: `${k.description.$dyn(d)}`, classMix: E.text }),
                             ],
                         }),
-                        d !== n.Completed && e.jsx(w, {}),
+                        d !== n.Completed && e.jsx(y, {}),
                     ],
                 }),
             }),

@@ -1695,10 +1695,7 @@
                         (e.EquipCoin = 'equipCoin'),
                         (e.LootBox = 'lootBox'),
                         (e.BrCoin = 'brcoin'),
-                        (e.Attachment = 'attachment'),
-                        (e.Stamp = 'stamp'),
-                        (e.WtEventLootbox = 'wtevent_lootBox'),
-                        (e.WtEventTicket = 'wtevent_ticket'));
+                        (e.Attachment = 'attachment'));
                 })(Fe || (Fe = {})),
                     (function (e) {
                         ((e.Gold = 'gold'),
@@ -1846,9 +1843,6 @@
                         Fe.BattleBoosterGift,
                         Fe.OptionalDevice,
                         Fe.Attachment,
-                        Fe.Stamp,
-                        Fe.WtEventLootbox,
-                        Fe.WtEventTicket,
                     ],
                     Se = [Fe.Gold, Fe.Credits, Fe.Crystal, Fe.FreeXp],
                     xe = [Fe.BattlePassPoints, Fe.EquipCoin],
@@ -3270,12 +3264,14 @@
                 }
                 function Ke(e, t, u = []) {
                     const i = (0, a.useRef)(0),
-                        r = (0, a.useCallback)(() => window.clearInterval(i.current), u || []);
+                        r = (0, a.useCallback)(() => {
+                            (window.clearInterval(i.current), (i.current = 0));
+                        }, u || []);
                     (0, a.useEffect)(() => r, [r]);
                     const n = (null != u ? u : []).concat([t]);
                     return [
                         (0, a.useCallback)((u) => {
-                            ((i.current = window.setInterval(() => e(u, !0), t)), e(u, !1));
+                            (0 !== i.current && r(), (i.current = window.setInterval(() => e(u, !0), t)), e(u, !1));
                         }, n),
                         r,
                     ];
@@ -3563,7 +3559,8 @@
                         getContainerSize: (e) => e.offsetWidth,
                         getWrapperSize: (e) => e.offsetWidth,
                         setScrollPosition: (e, t) => {
-                            e.style.transform = `translateX(-${t.value.scrollPosition}px)`;
+                            var u;
+                            e.style.transform = `translateX(-${0 | (null != (u = t.value.scrollPosition) ? u : 0)}px)`;
                         },
                         getDirection: (e) => (e.deltaY > 1 ? ut.Next : ut.Prev),
                         forceTriggerMouseMove: l.O.view.forceTriggerMouseMove,

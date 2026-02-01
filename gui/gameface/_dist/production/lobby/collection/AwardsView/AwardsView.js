@@ -219,10 +219,10 @@
                         arabic2roman: () => b,
                         children: () => a,
                         displayStatus: () => r.W,
-                        displayStatusIs: () => T,
+                        displayStatusIs: () => R,
                         enableFullScreenModeSupported: () => y,
                         events: () => o.U,
-                        extraSize: () => R,
+                        extraSize: () => T,
                         forceTriggerMouseMove: () => B,
                         freezeTextureBeforeResize: () => A,
                         getBrowserTexturePath: () => h,
@@ -313,11 +313,11 @@
                 function x() {
                     return viewEnv.getExternalPaddingsRem();
                 }
-                const T = Object.keys(r.W).reduce(
+                const R = Object.keys(r.W).reduce(
                         (e, t) => ((e[t] = () => viewEnv.getShowingStatus() === r.W[t]), e),
                         {},
                     ),
-                    R = {
+                    T = {
                         set: (e, t) => {
                             viewEnv.setExtraSizeRem(e, t);
                         },
@@ -1364,10 +1364,7 @@
                         (e.EquipCoin = 'equipCoin'),
                         (e.LootBox = 'lootBox'),
                         (e.BrCoin = 'brcoin'),
-                        (e.Attachment = 'attachment'),
-                        (e.Stamp = 'stamp'),
-                        (e.WtEventLootbox = 'wtevent_lootBox'),
-                        (e.WtEventTicket = 'wtevent_ticket'));
+                        (e.Attachment = 'attachment'));
                 })(Y || (Y = {})),
                     (function (e) {
                         ((e.Gold = 'gold'),
@@ -1515,9 +1512,6 @@
                         Y.BattleBoosterGift,
                         Y.OptionalDevice,
                         Y.Attachment,
-                        Y.Stamp,
-                        Y.WtEventLootbox,
-                        Y.WtEventTicket,
                     ],
                     ie = [Y.Gold, Y.Credits, Y.Crystal, Y.FreeXp],
                     ae = [Y.BattlePassPoints, Y.EquipCoin],
@@ -1935,14 +1929,14 @@
                         'gum',
                     );
                 })();
-                let xe, Te;
+                let xe, Re;
                 (!(function (e) {
                     ((e.New = 'new'), (e.Received = 'received'), (e.Unreceived = 'unreceived'));
                 })(xe || (xe = {})),
                     (function (e) {
                         ((e.JustReceived = 'justReceived'), (e.Received = 'received'), (e.Unreceived = 'unreceived'));
-                    })(Te || (Te = {})));
-                const Re = (e, t) => {
+                    })(Re || (Re = {})));
+                const Te = (e, t) => {
                         let u = e;
                         const i = t.split('.');
                         for (let e = 0; e < i.length; e++) {
@@ -2961,7 +2955,7 @@
                                         e.hasNewItems
                                             ? {
                                                   id: e.collectionName,
-                                                  title: Re(
+                                                  title: Te(
                                                       R.strings,
                                                       `collection_${e.collectionName}.collection.season`,
                                                   ),
@@ -2969,7 +2963,7 @@
                                               }
                                             : {
                                                   id: e.collectionName,
-                                                  title: Re(
+                                                  title: Te(
                                                       R.strings,
                                                       `collection_${e.collectionName}.collection.season`,
                                                   ),
@@ -2991,10 +2985,10 @@
                                     () => {
                                         let e = !1;
                                         const u = (u) =>
-                                            u === Te.JustReceived
+                                            u === Re.JustReceived
                                                 ? e || !t.isReadyForProgressAnimation.get()
-                                                    ? Te.Unreceived
-                                                    : ((e = !0), Te.JustReceived)
+                                                    ? Re.Unreceived
+                                                    : ((e = !0), Re.JustReceived)
                                                 : u;
                                         return De(t.rewardsInfo.get(), ({ state: e, requiredItemsCount: t }) => ({
                                             state: u(e),
@@ -3359,9 +3353,9 @@
                                 a().createElement(
                                     'span',
                                     null,
-                                    Re(R.strings, `collection_${e}.collection.awardsView.header.name`),
+                                    Te(R.strings, `collection_${e}.collection.awardsView.header.name`),
                                 ),
-                                a().createElement('span', null, Re(R.strings, `collection_${e}.collection.season`)),
+                                a().createElement('span', null, Te(R.strings, `collection_${e}.collection.season`)),
                             ),
                             a().createElement('div', { className: Ve }, Ot.header.subtitle()),
                         );
@@ -4053,8 +4047,8 @@
                     St = 'MainRewards_ribbonWrapper_50',
                     bt = 'MainRewards_ribbon_19',
                     xt = 'MainRewards_raysWrapper_f7',
-                    Tt = 'MainRewards_rays_ea',
-                    Rt = 'MainRewards_sunShineCanvas_e9',
+                    Rt = 'MainRewards_rays_ea',
+                    Tt = 'MainRewards_sunShineCanvas_e9',
                     Lt = {
                         width: 400,
                         height: 400,
@@ -4070,7 +4064,7 @@
                         return a().createElement(
                             'div',
                             { className: vt },
-                            a().createElement('div', { className: xt }, a().createElement('div', { className: Tt })),
+                            a().createElement('div', { className: xt }, a().createElement('div', { className: Rt })),
                             1 === e &&
                                 a().createElement(it, {
                                     width: Lt.width,
@@ -4078,7 +4072,7 @@
                                     frameCount: Lt.frameCount,
                                     getImageSource: et(Lt),
                                     frameTime: 50,
-                                    className: Rt,
+                                    className: Tt,
                                 }),
                             a().createElement('div', { className: St }, a().createElement('div', { className: bt })),
                             a().createElement(Bt, null),

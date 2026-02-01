@@ -899,7 +899,6 @@
                                                                     );
                                                                 })(r.keys());
                                                             !(e = t()).done;
-
                                                         )
                                                             a(e.value, u);
                                                     },
@@ -1579,10 +1578,7 @@
                         (e.EquipCoin = 'equipCoin'),
                         (e.LootBox = 'lootBox'),
                         (e.BrCoin = 'brcoin'),
-                        (e.Attachment = 'attachment'),
-                        (e.Stamp = 'stamp'),
-                        (e.WtEventLootbox = 'wtevent_lootBox'),
-                        (e.WtEventTicket = 'wtevent_ticket'));
+                        (e.Attachment = 'attachment'));
                 })(Z || (Z = {})),
                     (function (e) {
                         ((e.Gold = 'gold'),
@@ -2082,12 +2078,14 @@
                 }
                 function Te(e, u, t = []) {
                     const n = (0, i.useRef)(0),
-                        r = (0, i.useCallback)(() => window.clearInterval(n.current), t || []);
+                        r = (0, i.useCallback)(() => {
+                            (window.clearInterval(n.current), (n.current = 0));
+                        }, t || []);
                     (0, i.useEffect)(() => r, [r]);
                     const a = (null != t ? t : []).concat([u]);
                     return [
                         (0, i.useCallback)((t) => {
-                            ((n.current = window.setInterval(() => e(t, !0), u)), e(t, !1));
+                            (0 !== n.current && r(), (n.current = window.setInterval(() => e(t, !0), u)), e(t, !1));
                         }, a),
                         r,
                     ];
@@ -2186,7 +2184,6 @@
                                                         );
                                                     })(u(e).values());
                                                 !(n = r()).done;
-
                                             )
                                                 (0, n.value)(...t);
                                         };
@@ -2397,7 +2394,8 @@
                         getContainerSize: (e) => e.offsetWidth,
                         getWrapperSize: (e) => e.offsetWidth,
                         setScrollPosition: (e, u) => {
-                            e.style.transform = `translateX(-${u.value.scrollPosition}px)`;
+                            var t;
+                            e.style.transform = `translateX(-${0 | (null != (t = u.value.scrollPosition) ? t : 0)}px)`;
                         },
                         getDirection: (e) => (e.deltaY > 1 ? Me.Next : Me.Prev),
                         forceTriggerMouseMove: l.O.view.forceTriggerMouseMove,

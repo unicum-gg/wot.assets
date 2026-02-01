@@ -1,30 +1,30 @@
-import { j as e, z as a, A as l, r as s, e as t, y as i } from '../../../../chunks/vendor.js';
+import { j as e, y as a, z as l, r as s, e as i, x as t } from '../../../../chunks/vendor.js';
 import {
     r,
     I as o,
-    aF as n,
-    aG as c,
-    aH as m,
-    aI as d,
-    aJ as h,
+    aG as n,
+    aH as c,
+    aI as m,
+    aJ as d,
+    aK as h,
     m as p,
-    aK as u,
-    aL as v,
-    aE as _,
-    F as g,
+    aL as u,
+    aM as g,
+    aF as v,
+    F as _,
     C as x,
-    aM as b,
-    N as f,
-    i as y,
-    ah as S,
-    ag as T,
-    a1 as j,
-    aD as N,
-    aN as V,
-    aC as k,
+    aN as b,
+    P as S,
+    i as f,
+    ai as y,
+    ah as T,
+    a3 as j,
+    aE as N,
+    aO as V,
+    aD as k,
 } from '../../../../chunks/lib.js';
 import { T as w, S as P } from '../../../../chunks/node_model.js';
-const F = {
+const D = {
     requirements: 'Final_requirements_7cc8f421',
     requirementsText: 'Final_requirementsText_7e524e05',
     elite: 'Final_elite_dbf2a98f',
@@ -33,22 +33,22 @@ const F = {
     eliteIcon: 'Final_eliteIcon_72d6fe66',
     eliteText: 'Final_eliteText_98557917',
 };
-function R({ vehicleType: a, researched: l }) {
+function F({ vehicleType: a, researched: l }) {
     const s = r.resolve('strings');
     return e.jsxs(e.Fragment, {
         children: [
             !l &&
                 e.jsxs('div', {
-                    className: F.requirements,
+                    className: D.requirements,
                     children: [
                         e.jsx(o, {
                             path: 'skillTree.tree.counter',
                             width: 24,
                             height: 24,
-                            className: F.requirementsIcon,
+                            className: D.requirementsIcon,
                         }),
                         e.jsx('div', {
-                            className: F.requirementsText,
+                            className: D.requirementsText,
                             children: e.jsx(n, {
                                 text: s.readOrEmpty('veh_skill_tree.tooltips.large.perksResearchRequired'),
                             }),
@@ -56,18 +56,18 @@ function R({ vehicleType: a, researched: l }) {
                     ],
                 }),
             e.jsxs('div', {
-                className: F.elite,
+                className: D.elite,
                 children: [
-                    e.jsx('div', { className: F.eliteGlow }),
-                    e.jsx('div', { className: F.eliteBg }),
+                    e.jsx('div', { className: D.eliteGlow }),
+                    e.jsx('div', { className: D.eliteBg }),
                     e.jsx(o, {
                         path: `vehicleTypes.large.${c(a)}_elite`,
                         width: '100%',
                         height: 74,
-                        className: F.eliteIcon,
+                        className: D.eliteIcon,
                     }),
                     e.jsx('div', {
-                        className: F.eliteText,
+                        className: D.eliteText,
                         children: s.readOrEmpty('veh_skill_tree.tooltips.large.eliteStatus'),
                     }),
                 ],
@@ -75,7 +75,7 @@ function R({ vehicleType: a, researched: l }) {
         ],
     });
 }
-const E = {
+const R = {
         table: 'Params_table_5f20ee37',
         row: 'Params_row_2c6a19ba',
         cell: 'Params_cell_f036daa0',
@@ -86,42 +86,42 @@ const E = {
         cellBaseValue: 'Params_cellBaseValue_bef0df54',
         delta: 'Params_delta_3c8ffbf3',
     },
-    C = r.resolve('intl'),
-    D = a(),
+    E = r.resolve('intl'),
+    C = a(),
     A = 'baseValue',
     $ = 'delta',
     I = 'icon',
     G = 'name',
     O = [
-        D.accessor(A, {
+        C.accessor(A, {
             cell: (a) => {
                 const l = a.getValue() > 0;
                 return e.jsx('div', {
-                    className: l ? E.cellBaseValue : '',
-                    children: l ? C.formatReal('woZeroDigits', a.getValue()) : '',
+                    className: l ? R.cellBaseValue : '',
+                    children: l ? E.formatReal('woZeroDigits', a.getValue()) : '',
                 });
             },
             meta: {
                 column: { behaviour: m.contentResponsive, minSize: '0rem', maxSize: '500rem' },
-                className: E.cell__baseValue,
+                className: R.cell__baseValue,
             },
         }),
-        D.accessor($, {
-            cell: (a) => e.jsx('div', { className: E.delta, children: a.getValue() }),
+        C.accessor($, {
+            cell: (a) => e.jsx('div', { className: R.delta, children: a.getValue() }),
             meta: {
                 column: { behaviour: m.contentResponsive, minSize: '0rem', maxSize: '500rem' },
-                className: E.cell__deltaValue,
+                className: R.cell__deltaValue,
             },
         }),
-        D.accessor(I, {
+        C.accessor(I, {
             cell: (a) => e.jsx(o, { width: 24, height: 24, path: a.getValue() }),
-            meta: { column: { behaviour: m.static, size: '38rem' }, className: E.cell__icon },
+            meta: { column: { behaviour: m.static, size: '38rem' }, className: R.cell__icon },
         }),
-        D.accessor(G, {
+        C.accessor(G, {
             cell: (a) => e.jsx(n, { text: a.getValue() }),
             meta: {
                 column: { behaviour: m.screenResponsive, size: '100%', minSize: '0rem', maxSize: '500rem' },
-                className: E.cell__name,
+                className: R.cell__name,
             },
         }),
     ],
@@ -149,7 +149,10 @@ const E = {
         vehicleBackwardMaxSpeed: 'speedLimits',
         gunTraverse: 'gunYawLimits',
         turretTraverse: 'turretYawLimits',
+        standardShellDamage: 'avgDamage',
+        specialShellDamage: 'avgDamage',
         allShellDamage: 'avgDamage',
+        basicShellDamage: 'avgDamage',
         gunElevation: 'pitchLimits',
         vehicleCircularVisionRadius: 'circularVisionRadius',
         gunStabilization: 'shotDispersionAngle',
@@ -160,8 +163,8 @@ const E = {
         vehicleStrength: 'val',
         turretTraverse: 'grads',
         gunTraverse: 'grads',
-        vehicleAllGroundRotationSpeed: 'grads',
-        vehicleTurretOrCuttingRotationSpeed: 'grads',
+        vehicleAllGroundRotationSpeed: 'gps',
+        vehicleTurretOrCuttingRotationSpeed: 'gps',
         vehicleEnginePower: 'p',
         vehicleCircularVisionRadius: 'm',
         shellVelocity: 'mps',
@@ -179,7 +182,10 @@ const E = {
         reloadTimeSingle: 's',
         HEShellDamage: 'val',
         nonHEShellDamage: 'val',
+        standardShellDamage: 'val',
+        specialShellDamage: 'val',
         allShellDamage: 'val',
+        basicShellDamage: 'val',
         vehicleGunShotDispersionWhileGunDamaged: 'm',
         vehicleGunShotFullDispersion: 'm',
         vehicleForwardMaxSpeed: 'mph',
@@ -193,8 +199,8 @@ const q = r.resolve('strings'),
     B = r.resolve('intl'),
     L = ({ valueType: e, value: a, valueKey: l }) => {
         const s = 'mul' === e ? 100 * (a - 1) : a,
-            t = s > 0 ? '+' : '',
-            i = B.formatReal('woZeroDigits', s);
+            i = s > 0 ? '+' : '',
+            t = B.formatReal('woZeroDigits', s);
         let r = '';
         var o;
         return (
@@ -204,7 +210,7 @@ const q = r.resolve('strings'),
                     : q.readOr(`veh_skill_tree.kpi.bonus.valueTypes.${((o = l), o in z ? z[o] : 'default')}`, () =>
                           q.readOrEmpty('veh_skill_tree.kpi.bonus.valueTypes.default'),
                       )),
-            `${t}${i}${r}`
+            `${i}${t}${r}`
         );
     };
 function H({ baseValue: e, name: a, hasManyParameters: l, index: s }) {
@@ -217,22 +223,22 @@ function H({ baseValue: e, name: a, hasManyParameters: l, index: s }) {
 function K() {
     const { table: a } = d();
     return e.jsx(h, {
-        className: E.table,
+        className: R.table,
         children: e.jsx(h.Body, {
             children: p(a.getRowModel().rows, (a, s) =>
                 e.jsx(
                     h.Row,
                     {
-                        className: E.row,
-                        children: p(a.getVisibleCells(), (a, t) =>
+                        className: R.row,
+                        children: p(a.getVisibleCells(), (a, i) =>
                             e.jsx(
                                 h.Cell,
                                 {
-                                    className: E.cell,
-                                    cell: { ...a, rowIndex: s, index: t, tablePart: u.body },
+                                    className: R.cell,
+                                    cell: { ...a, rowIndex: s, index: i, tablePart: u.body },
                                     children: l(a.column.columnDef.cell, a.getContext()),
                                 },
-                                t,
+                                i,
                             ),
                         ),
                     },
@@ -260,11 +266,11 @@ function Z({ parameters: a }) {
         );
     })(a);
     return e.jsx('div', {
-        children: e.jsx(v, { columns: O, data: l, getRowId: (e) => e.name, children: e.jsx(K, {}) }),
+        children: e.jsx(g, { columns: O, data: l, getRowId: (e) => e.name, children: e.jsx(K, {}) }),
     });
 }
-const W = 'Special_6996909',
-    Y = 'Special_gear_15a6ebf6',
+const W = 'Special_13e47e4a',
+    Y = 'Special_gear_22cb6518',
     J = 'Special_info_7622feac',
     X = 'Special_separator_2023f7f7';
 function Q() {
@@ -308,7 +314,7 @@ const U = {
             children: a,
             localizationName: l,
             iconName: s,
-            price: i,
+            price: t,
             nodeType: n,
             category: c,
             imagePath: m,
@@ -318,17 +324,17 @@ const U = {
         p,
     ) {
         const u = r.resolve('intl'),
-            v = r.resolve('strings'),
-            f = n === w.Final || n === w.Major,
-            y = n === w.Common;
+            g = r.resolve('strings'),
+            S = n === w.Final || n === w.Major,
+            f = n === w.Common;
         return e.jsx('div', {
             className: U.tooltip,
             ref: p,
-            children: e.jsx(_.Decorator, {
+            children: e.jsx(v.Decorator, {
                 children: e.jsxs('div', {
-                    className: t(U.base, U[`base__${n}`]),
+                    className: i(U.base, U[`base__${n}`]),
                     children: [
-                        f &&
+                        S &&
                             e.jsx(o, {
                                 path: 'skillTree.tree.tooltips.tooltipBG',
                                 width: 320,
@@ -338,7 +344,7 @@ const U = {
                         e.jsxs('div', {
                             className: U.headerContainer,
                             children: [
-                                y &&
+                                f &&
                                     e.jsx(o, {
                                         path: `skillTree.tree.perks.${n}.skills.large.${s}`,
                                         width: 40,
@@ -351,7 +357,7 @@ const U = {
                                         e.jsx('div', { className: U.title, children: ae(l) }),
                                         e.jsx('div', {
                                             className: U.subtitle,
-                                            children: v.readOrEmpty(`veh_skill_tree.tooltips.perk.category.${c}`),
+                                            children: g.readOrEmpty(`veh_skill_tree.tooltips.perk.category.${c}`),
                                         }),
                                     ],
                                 }),
@@ -361,7 +367,7 @@ const U = {
                         a,
                         !d &&
                             e.jsx(e.Fragment, {
-                                children: e.jsx(g, {
+                                children: e.jsx(_, {
                                     className: U.cost,
                                     path: 'veh_skill_tree.tooltips.common.cost',
                                     params: {
@@ -371,7 +377,7 @@ const U = {
                                             reverse: !0,
                                             children: e.jsx('div', {
                                                 className: U.value,
-                                                children: u.formatNumber('gold', i),
+                                                children: u.formatNumber('gold', t),
                                             }),
                                         }),
                                     },
@@ -382,32 +388,32 @@ const U = {
             }),
         });
     });
-function se({ text: a, tagColors: l, binding: s, className: t }) {
-    const [i, r] = (function (a, l, s) {
-        const t = /(?:%\(|{)(\w*?)(?:_?[Oo]pen|_?Start)(?:\)s|})([\s\S]*?)(?:%\(|{)\w*?(?:_?[Cc]lose|_?End)(?:\)s|})/g;
-        let i = t.exec(a),
+function se({ text: a, tagColors: l, binding: s, className: i }) {
+    const [t, r] = (function (a, l, s) {
+        const i = /(?:%\(|{)(\w*?)(?:_?[Oo]pen|_?Start)(?:\)s|})([\s\S]*?)(?:%\(|{)\w*?(?:_?[Cc]lose|_?End)(?:\)s|})/g;
+        let t = i.exec(a),
             r = a,
             o = 0;
         const n = {};
-        for (; i; ) {
-            const c = i[0],
-                m = i[1] ?? '',
-                d = i[2] ?? '',
+        for (; t; ) {
+            const c = t[0],
+                m = t[1] ?? '',
+                d = t[2] ?? '',
                 h = 'binding' + o++;
             ((r = r.replace(c, `{${h}}`)),
-                (n[h] = e.jsx(f, {
+                (n[h] = e.jsx(S, {
                     style: { color: l[m], alignItems: 'flex-start' },
                     upgradeLegacy: !0,
                     text: d,
                     params: s,
                 })),
-                (i = t.exec(a)));
+                (t = i.exec(a)));
         }
         return [r, n];
     })(a, l, s);
-    return e.jsx(n, { classMix: t, text: i, binding: r, isTruncationAvailable: !0 });
+    return e.jsx(n, { classMix: i, text: t, binding: r, isTruncationAvailable: !0 });
 }
-const te = (e, a, l, s) =>
+const ie = (e, a, l, s) =>
         e === w.Special
             ? 'roleSlot' === a
                 ? 'skillTree.tree.tooltips.specificAbility'
@@ -415,8 +421,8 @@ const te = (e, a, l, s) =>
             : 'mechanics' === l
               ? `skillTree.tree.tooltips.tankImage.${s}`
               : void 0,
-    ie = r.resolve('intl'),
-    [re, oe] = y()(
+    te = r.resolve('intl'),
+    [re, oe] = f()(
         ({ observableModel: e }) => ({
             ...{
                 ...e.primitives(['vehicleType', 'lockedVehicle']),
@@ -430,15 +436,16 @@ const te = (e, a, l, s) =>
                 }, 'kpis'),
                 descriptionValues: e.transform(
                     (e) =>
-                        S(
+                        y(
                             e,
                             (a, l, s) => {
                                 if (l) {
-                                    const { value: t, valueType: i, valueKey: r } = T(l.kpiValues, 0),
+                                    const { value: i, valueType: t, valueKey: r } = T(l.kpiValues, 0),
                                         o = e.length > 1 ? `${r}${s}` : r,
-                                        n = Math.abs('mul' === i ? 100 * (t - 1) : t);
-                                    return ((a[o] = ie.formatReal('woZeroDigits', n)), a);
+                                        n = Math.abs('mul' === t ? 100 * (i - 1) : i);
+                                    a[o] = te.formatReal('woZeroDigits', n);
                                 }
+                                return a;
                             },
                             {},
                         ),
@@ -453,19 +460,20 @@ const te = (e, a, l, s) =>
     me = [w.Common, w.Major, w.Final],
     de = r.resolve('strings'),
     he = { colorTag: '#ede6d9' },
-    pe = i(function () {
+    pe = t(function () {
         const { model: a } = oe(),
-            { localizationName: l, status: t, price: i, type: r, vehicleName: o } = a.node.get(),
+            { localizationName: l, status: i, price: t, type: r, vehicleName: o } = a.node.get(),
             n = a.vehicleType.get(),
             c = a.category.get(),
             { iconName: m } = a.node.get(),
             d = a.kpi.get(),
             h = a.descriptionValues.get(),
             p = s.useRef(null),
-            u = t === P.Researched,
-            v = !(r !== w.Special || (u && a.lockedVehicle.get())),
-            _ = me.includes(r) && 'mechanics' !== c,
-            g = s.useCallback(() => {
+            u = i === P.Researched,
+            g = !(r !== w.Special || (u && a.lockedVehicle.get())),
+            v = me.includes(r) && 'mechanics' !== c,
+            _ = de.read(`veh_skill_tree.tooltips.description.${l}`),
+            x = s.useCallback(() => {
                 const e = p.current;
                 if (!e) return;
                 const a = e.scrollWidth,
@@ -479,10 +487,10 @@ const te = (e, a, l, s) =>
                     bottom: parseInt(s.getPropertyValue('padding-bottom'), 10),
                 });
             }, [p]);
-        var x, b;
+        var b, S;
         if (
-            ((x = g),
-            (b = []),
+            ((b = x),
+            (S = []),
             s.useEffect(() => {
                 let e,
                     a = null;
@@ -491,7 +499,7 @@ const te = (e, a, l, s) =>
                         a = requestAnimationFrame(() => {
                             a = requestAnimationFrame(() => {
                                 a = requestAnimationFrame(() => {
-                                    ((a = null), (e = x()));
+                                    ((a = null), (e = b()));
                                 });
                             });
                         });
@@ -500,30 +508,25 @@ const te = (e, a, l, s) =>
                         ('function' == typeof e && e(), null !== a && cancelAnimationFrame(a));
                     }
                 );
-            }, [x, ...b]),
+            }, [b, ...S]),
             r !== w.Ghost)
         )
             return e.jsxs(le, {
                 localizationName: l,
                 iconName: m,
-                price: i,
+                price: t,
                 nodeType: r,
                 category: c,
-                imagePath: te(r, l, c, o),
+                imagePath: ie(r, l, c, o),
                 researched: u,
                 vehicleType: n,
                 ref: p,
                 children: [
-                    e.jsx(se, {
-                        className: ce,
-                        text: de.readOrEmpty(`veh_skill_tree.tooltips.description.${l}`),
-                        tagColors: he,
-                        binding: h,
-                    }),
-                    _ && e.jsx(Z, { parameters: d }),
-                    v && e.jsx(Q, {}),
+                    _ && e.jsx(se, { className: ce, text: _, tagColors: he, binding: h }),
+                    v && e.jsx(Z, { parameters: d }),
+                    g && e.jsx(Q, {}),
                     !u && e.jsx('div', { className: ne }),
-                    r === w.Final && e.jsx(R, { vehicleType: n, researched: u }),
+                    r === w.Final && e.jsx(F, { vehicleType: n, researched: u }),
                 ],
             });
     });

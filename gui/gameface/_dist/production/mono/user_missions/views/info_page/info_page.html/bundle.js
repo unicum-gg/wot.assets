@@ -1,4 +1,4 @@
-import { j as e, e as s, q as a } from '../../../chunks/vendor.js';
+import { j as e, e as s, p as a } from '../../../chunks/vendor.js';
 import {
     b as r,
     f as n,

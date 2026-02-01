@@ -200,9 +200,9 @@
                             onRequestPosition: s('children.requestPosition'),
                         },
                     },
-                    x = ['args'];
+                    y = ['args'];
                 const S = 2,
-                    y = 16,
+                    x = 16,
                     O = 32,
                     M = 64,
                     L = (u, e) => {
@@ -217,7 +217,7 @@
                                         r = Object.keys(u);
                                     for (n = 0; n < r.length; n++) ((t = r[n]), e.indexOf(t) >= 0 || (a[t] = u[t]));
                                     return a;
-                                })(e, x);
+                                })(e, y);
                             return void 0 !== a
                                 ? viewEnv.handleViewEvent(
                                       Object.assign({ __Type: t, type: u }, r, {
@@ -249,7 +249,7 @@
                             L(M);
                         },
                         move(u) {
-                            L(y, { isMouseEvent: !0, on: u });
+                            L(x, { isMouseEvent: !0, on: u });
                         },
                     };
                 function k(u) {
@@ -1076,7 +1076,7 @@
                             o = r.mediaSize;
                         return a().createElement('div', v({ className: D()(t, b[i], w[s], f[o]) }, n), e);
                     },
-                    x = ['children'];
+                    y = ['children'];
                 const S = (u) => {
                     let e = u.children,
                         t = (function (u, e) {
@@ -1087,11 +1087,11 @@
                                 r = Object.keys(u);
                             for (n = 0; n < r.length; n++) ((t = r[n]), e.indexOf(t) >= 0 || (a[t] = u[t]));
                             return a;
-                        })(u, x);
+                        })(u, y);
                     return a().createElement(F, null, a().createElement(T, t, e));
                 };
-                var y = t(533),
-                    O = t.n(y);
+                var x = t(533),
+                    O = t.n(x);
                 const M = {
                         base: 'TextButton_base_b6',
                         base__right: 'TextButton_base__right_39',
@@ -1371,10 +1371,7 @@
                         (u.EquipCoin = 'equipCoin'),
                         (u.LootBox = 'lootBox'),
                         (u.BrCoin = 'brcoin'),
-                        (u.Attachment = 'attachment'),
-                        (u.Stamp = 'stamp'),
-                        (u.WtEventLootbox = 'wtevent_lootBox'),
-                        (u.WtEventTicket = 'wtevent_ticket'));
+                        (u.Attachment = 'attachment'));
                 })(Y || (Y = {})),
                     (function (u) {
                         ((u.Gold = 'gold'),
@@ -1522,9 +1519,6 @@
                         Y.BattleBoosterGift,
                         Y.OptionalDevice,
                         Y.Attachment,
-                        Y.Stamp,
-                        Y.WtEventLootbox,
-                        Y.WtEventTicket,
                     ],
                     au = [Y.Gold, Y.Credits, Y.Crystal, Y.FreeXp],
                     ru = [Y.BattlePassPoints, Y.EquipCoin],
@@ -1782,7 +1776,7 @@
                 function Tu(u, e) {
                     return Array.isArray(u) ? u.map(e) : u.map((u, t, n) => e(null == u ? void 0 : u.value, t, n));
                 }
-                function xu(u, e) {
+                function yu(u, e) {
                     if (Array.isArray(u)) return u.filter(e);
                     const t = [];
                     for (let a = 0; a < u.length; a++) {
@@ -1812,7 +1806,7 @@
                         },
                     };
                 }
-                var yu = t(946);
+                var xu = t(946);
                 const Ou = (u, e) => ({
                         index: u.index,
                         name: u.name,
@@ -2023,32 +2017,32 @@
                                     intermediateBonusModels: u.array('intermediateRewards', []),
                                 },
                                 t = vu.LO.box(0),
-                                n = (0, yu.Om)(() => Tu(e.vehicles.get(), hu), { equals: pu }),
-                                a = (0, yu.Om)(() => Tu(e.regularBonusModels.get(), (u) => Ou(u, Cu.Regular)), {
+                                n = (0, xu.Om)(() => Tu(e.vehicles.get(), hu), { equals: pu }),
+                                a = (0, xu.Om)(() => Tu(e.regularBonusModels.get(), (u) => Ou(u, Cu.Regular)), {
                                     equals: pu,
                                 }),
-                                r = (0, yu.Om)(
+                                r = (0, xu.Om)(
                                     () => Tu(e.intermediateBonusModels.get(), (u) => Ou(u, Cu.Intermediate)),
                                     { equals: pu },
                                 ),
-                                i = (0, yu.Om)(
+                                i = (0, xu.Om)(
                                     () =>
                                         Boolean(n().length) ||
                                         Boolean(r().length) ||
                                         e.primitives.state.get() === mu.Token,
                                     { equals: pu },
                                 ),
-                                s = (0, yu.Om)(() => (i() ? r() : xu(a(), (u, e) => e < 5)), { equals: pu }),
-                                o = (0, yu.Om)(
+                                s = (0, xu.Om)(() => (i() ? r() : yu(a(), (u, e) => e < 5)), { equals: pu }),
+                                o = (0, xu.Om)(
                                     () => {
                                         const u = a();
-                                        return i() ? u : xu(u, (u, e) => e >= 5);
+                                        return i() ? u : yu(u, (u, e) => e >= 5);
                                     },
                                     { equals: pu },
                                 ),
-                                l = (0, yu.Om)(() => [...Su(o(), 10 * t.get(), 10 * (t.get() + 1) - 1)]),
-                                E = (0, yu.Om)(() => o().length > 10),
-                                c = (0, yu.Om)(() => {
+                                l = (0, xu.Om)(() => [...Su(o(), 10 * t.get(), 10 * (t.get() + 1) - 1)]),
+                                E = (0, xu.Om)(() => o().length > 10),
+                                c = (0, xu.Om)(() => {
                                     const u = o().length,
                                         e = t.get() + 1;
                                     return Math.max(u - 10 * e, 0);
@@ -2061,10 +2055,10 @@
                                     getVisibleAdditionalRewards: l,
                                     hasMoreRewards: E,
                                     moreRewardsCount: c,
-                                    isRibbonGold: (0, yu.Om)(() =>
+                                    isRibbonGold: (0, xu.Om)(() =>
                                         [mu.Final, mu.TokenVehicle].includes(e.primitives.state.get()),
                                     ),
-                                    isLightVisible: (0, yu.Om)(() => ![mu.Regular].includes(e.primitives.state.get())),
+                                    isLightVisible: (0, xu.Om)(() => ![mu.Regular].includes(e.primitives.state.get())),
                                 },
                             });
                         },
@@ -2638,7 +2632,7 @@
                             : e;
                         var T;
                     },
-                    xe = ['children'];
+                    ye = ['children'];
                 function Se() {
                     return (
                         (Se =
@@ -2653,7 +2647,7 @@
                         Se.apply(this, arguments)
                     );
                 }
-                const ye = (u) => {
+                const xe = (u) => {
                         let e = u.children,
                             t = (function (u, e) {
                                 if (null == u) return {};
@@ -2663,7 +2657,7 @@
                                     r = Object.keys(u);
                                 for (n = 0; n < r.length; n++) ((t = r[n]), e.indexOf(t) >= 0 || (a[t] = u[t]));
                                 return a;
-                            })(u, xe);
+                            })(u, ye);
                         return a().createElement(
                             Te,
                             Se(
@@ -2751,7 +2745,7 @@
                         const n = a().createElement('div', { className: t }, u);
                         if (e.header || e.body) return a().createElement(Pe, e, n);
                         const r = e.contentId;
-                        return r ? a().createElement(Te, ke({}, e, { contentId: r }), n) : a().createElement(ye, e, n);
+                        return r ? a().createElement(Te, ke({}, e, { contentId: r }), n) : a().createElement(xe, e, n);
                     },
                     Ie = {
                         base: 'Reward_base_ea',
@@ -2995,7 +2989,7 @@
                             F = Qu(r),
                             d = `R.images.gui.maps.icons.vehicleTypes.${e ? (180 === o ? `elite.${F}` : `big.${F}_elite`) : 180 === o ? F : `big.${F}`}`;
                         return a().createElement(
-                            ye,
+                            xe,
                             { args: { [_u]: String(l), [Du]: Cu.Vehicle } },
                             a().createElement(
                                 'div',

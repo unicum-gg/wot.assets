@@ -503,7 +503,7 @@
                     })(u || (u = {})));
             },
             8910: (e, t, a) => {
-                a.d(t, { ru: () => E.r, _e: () => v, uu: () => i.uu, MR: () => b });
+                a.d(t, { ru: () => g.r, _e: () => A, uu: () => i.uu, MR: () => h });
                 var u = a(6483),
                     n = a.n(u),
                     r = a(7515),
@@ -514,12 +514,13 @@
                     c = a(156);
                 const d = 'OptimizedProgressBar_base_1f',
                     _ = 'OptimizedProgressBar_wrapper_ab',
-                    m = 'OptimizedProgressBar_background_ce';
-                var E = a(7736);
-                const g = ['api', 'value', 'maxValue', 'theme', 'className'];
-                function p() {
+                    m = 'OptimizedProgressBar_backgroundWrapper_b6',
+                    E = 'OptimizedProgressBar_background_ce';
+                var g = a(7736);
+                const p = ['api', 'value', 'maxValue', 'theme', 'className'];
+                function b() {
                     return (
-                        (p =
+                        (b =
                             Object.assign ||
                             function (e) {
                                 for (var t = 1; t < arguments.length; t++) {
@@ -528,20 +529,20 @@
                                 }
                                 return e;
                             }),
-                        p.apply(this, arguments)
+                        b.apply(this, arguments)
                     );
                 }
-                const b = () => ({ update: () => {} }),
-                    h = (e, t) => ('number' == typeof t ? t : e.offsetLeft),
-                    v = (e) => {
+                const h = () => ({ update: () => {} }),
+                    v = (e, t) => ('number' == typeof t ? t : e.offsetLeft),
+                    A = (e) => {
                         let t = e.api,
                             a = e.value,
                             u = e.maxValue,
-                            E = void 0 === u ? 100 : u,
-                            b = e.theme,
-                            v = void 0 === b ? i.uH : b,
-                            A = e.className,
-                            f = (function (e, t) {
+                            g = void 0 === u ? 100 : u,
+                            h = e.theme,
+                            A = void 0 === h ? i.uH : h,
+                            f = e.className,
+                            C = (function (e, t) {
                                 if (null == e) return {};
                                 var a,
                                     u,
@@ -549,57 +550,60 @@
                                     r = Object.keys(e);
                                 for (u = 0; u < r.length; u++) ((a = r[u]), t.indexOf(a) >= 0 || (n[a] = e[a]));
                                 return n;
-                            })(e, g);
-                        const C = (0, s.useRef)(null),
-                            F = (0, s.useRef)(null),
+                            })(e, p);
+                        const F = (0, s.useRef)(null),
                             D = (0, s.useRef)(null),
-                            B = (0, r.u)(0, a, E) / E,
-                            w = (0, s.useCallback)(
+                            B = (0, s.useRef)(null),
+                            w = (0, r.u)(0, a, g) / g,
+                            y = (0, s.useCallback)(
                                 (e) => {
-                                    (D.current &&
-                                        C.current &&
-                                        (({ horizontalScrollPosition: e, leftOffset: t }, a, u) => {
-                                            const n = a.offsetWidth - u.offsetWidth,
-                                                s = e - h(a, t),
-                                                o = (0, r.u)(0, n, s);
-                                            u.style.left = `${o}px`;
-                                        })(e, C.current, D.current),
+                                    (B.current &&
                                         F.current &&
-                                            C.current &&
+                                        (({ horizontalScrollPosition: e, leftOffset: t }, a, u) => {
+                                            const n = (e - v(a, t)) | 0,
+                                                s = (0, r.u)(0, a.offsetWidth, n);
+                                            u.style.transform = `translateX(${s}px)`;
+                                        })(e, F.current, B.current),
+                                        D.current &&
+                                            F.current &&
                                             ((
                                                 { horizontalScrollPosition: e, leftOffset: t },
                                                 a,
                                                 { container: u, line: n },
                                             ) => {
                                                 const s = Math.max(0, Math.floor(u.offsetWidth * a) - 8e3),
-                                                    o = e - h(u, t),
+                                                    o = (e - v(u, t)) | 0,
                                                     i = (0, r.u)(0, s, o);
-                                                n.style.left = `${i}px`;
-                                            })(e, B, { line: F.current, container: C.current }));
+                                                n.style.transform = `translateX(${i}px)`;
+                                            })(e, w, { line: D.current, container: F.current }));
                                 },
-                                [B],
+                                [w],
                             ),
-                            y = (0, s.useMemo)(() => (0, c.VQ)(v), [v]);
+                            S = (0, s.useMemo)(() => (0, c.VQ)(A), [A]);
                         return (
-                            (t.current.update = w),
+                            (t.current.update = y),
                             o().createElement(
                                 'div',
-                                { className: n()(d, A), ref: C },
+                                { className: n()(d, f), ref: F },
                                 o().createElement(
                                     'div',
                                     { className: _ },
                                     o().createElement(
                                         'div',
-                                        { style: y, className: m, ref: D },
-                                        o().createElement(l.J, { size: f.size }),
+                                        { className: m },
+                                        o().createElement(
+                                            'div',
+                                            { style: S, className: E, ref: B },
+                                            o().createElement(l.J, { size: C.size }),
+                                        ),
                                     ),
                                     o().createElement(
                                         i.ko,
-                                        p({}, f, {
-                                            lineRef: F,
+                                        b({}, C, {
+                                            lineRef: D,
                                             value: a,
-                                            theme: v,
-                                            maxValue: E,
+                                            theme: A,
+                                            maxValue: g,
                                             withoutBackground: !0,
                                         }),
                                     ),
@@ -1425,10 +1429,7 @@
                             (e.EquipCoin = 'equipCoin'),
                             (e.LootBox = 'lootBox'),
                             (e.BrCoin = 'brcoin'),
-                            (e.Attachment = 'attachment'),
-                            (e.Stamp = 'stamp'),
-                            (e.WtEventLootbox = 'wtevent_lootBox'),
-                            (e.WtEventTicket = 'wtevent_ticket'));
+                            (e.Attachment = 'attachment'));
                     })(u || (u = {})),
                     (function (e) {
                         ((e.Gold = 'gold'),
@@ -1583,9 +1584,6 @@
                         s.E4.BattleBoosterGift,
                         s.E4.OptionalDevice,
                         s.E4.Attachment,
-                        s.E4.Stamp,
-                        s.E4.WtEventLootbox,
-                        s.E4.WtEventTicket,
                     ],
                     i = [s.E4.Gold, s.E4.Credits, s.E4.Crystal, s.E4.FreeXp],
                     l = [s.E4.BattlePassPoints, s.E4.EquipCoin],
@@ -2101,7 +2099,8 @@
                         getContainerSize: (e) => e.offsetWidth,
                         getWrapperSize: (e) => e.offsetWidth,
                         setScrollPosition: (e, t) => {
-                            e.style.transform = `translateX(-${t.value.scrollPosition}px)`;
+                            var a;
+                            e.style.transform = `translateX(-${0 | (null != (a = t.value.scrollPosition) ? a : 0)}px)`;
                         },
                         getDirection: (e) => (e.deltaY > 1 ? n.Nm.Next : n.Nm.Prev),
                         forceTriggerMouseMove: u.O.view.forceTriggerMouseMove,
@@ -3921,12 +3920,14 @@
                 var u = a(7363);
                 function n(e, t, a = []) {
                     const n = (0, u.useRef)(0),
-                        r = (0, u.useCallback)(() => window.clearInterval(n.current), a || []);
+                        r = (0, u.useCallback)(() => {
+                            (window.clearInterval(n.current), (n.current = 0));
+                        }, a || []);
                     (0, u.useEffect)(() => r, [r]);
                     const s = (null != a ? a : []).concat([t]);
                     return [
                         (0, u.useCallback)((a) => {
-                            ((n.current = window.setInterval(() => e(a, !0), t)), e(a, !1));
+                            (0 !== n.current && r(), (n.current = window.setInterval(() => e(a, !0), t)), e(a, !1));
                         }, s),
                         r,
                     ];
@@ -5309,40 +5310,41 @@
                         b = r.timeLeft,
                         v = r.chapterID,
                         A = o === m.EXTRA,
-                        f = p === d.Paused,
-                        C = E - g,
-                        F = s === _.ActivateChapter && C > 0,
-                        D = s !== _.ActivateChapter && l,
-                        B = t.computes.isMulticurrency() && s === _.Buy,
-                        y = ((e) => {
+                        f = o === m.HOLIDAY,
+                        C = p === d.Paused,
+                        F = E - g,
+                        D = s === _.ActivateChapter && F > 0,
+                        B = s !== _.ActivateChapter && l,
+                        y = t.computes.isMulticurrency() && s === _.Buy,
+                        P = ((e) => {
                             switch (e) {
                                 case _.Buy:
                                     return {
                                         buyBtnLabel: Bt.battlePassBuyBtn(),
                                         tooltip: wt.battlePass.descr(),
-                                        label: Bt.battlePassBuyDescr(),
+                                        label: f ? Bt.battlePassBuyHolidayDescr() : Bt.battlePassBuyDescr(),
                                         warning: Bt.seasonEndingDescr(),
                                         buttonType: pe.L$.main,
                                         lightColor: Pt.Red,
-                                        route: Ft._.battlePass.buyPass,
+                                        route: f ? Ft._.battlePass.buyPassConfirm : Ft._.battlePass.buyPass,
                                         params: {},
                                     };
                                 case _.BuyLevel:
                                     return {
                                         buyBtnLabel: Bt.episodeBuyBtn(),
-                                        tooltip: wt.episode.descr(),
+                                        tooltip: f ? wt.episode.holidayDescr() : wt.episode.descr(),
                                         label: Bt.episodeBuyDescr(),
                                         warning: Bt.seasonEndingDescr(),
                                         buttonType: pe.L$.main,
                                         lightColor: Pt.None,
                                         route: Ft._.battlePass.buyLevels,
-                                        params: { chapterID: v, reset: !0 },
+                                        params: { chapterID: v },
                                     };
                                 case _.ActivateChapter:
                                     return {
                                         buyBtnLabel: Bt.activateChapter(),
                                         tooltip: wt.activateChapter.descr(),
-                                        label: St(A, f),
+                                        label: St(A, C),
                                         warning: Bt.footer.freePointsDescr(),
                                         buttonType: pe.L$.primary,
                                         lightColor: Pt.Green,
@@ -5362,31 +5364,31 @@
                                     };
                             }
                         })(s),
-                        P = y.buyBtnLabel,
-                        k = y.tooltip,
-                        N = y.label,
-                        R = y.warning,
-                        T = y.buttonType,
-                        L = y.lightColor,
-                        x = y.route,
-                        I = y.params,
-                        M = F || D ? R : N,
-                        O = (0, h.u6)(b);
+                        k = P.buyBtnLabel,
+                        N = P.tooltip,
+                        R = P.label,
+                        T = P.warning,
+                        L = P.buttonType,
+                        x = P.lightColor,
+                        I = P.route,
+                        M = P.params,
+                        O = D || B ? T : R,
+                        $ = (0, h.u6)(b);
                     return n().createElement(
                         'div',
                         { className: Dt.base },
-                        n().createElement('div', { className: S()(Dt.light, Dt[`light__${L}`]) }),
+                        n().createElement('div', { className: S()(Dt.light, Dt[`light__${x}`]) }),
                         n().createElement(
                             'div',
                             { className: Dt.labelContainer },
-                            f && n().createElement('div', { className: Dt.status }, Bt.footer.status.paused()),
-                            n().createElement('div', { className: Dt.label }, M),
-                            D && n().createElement('div', { className: Dt.days }, O),
-                            F &&
+                            C && n().createElement('div', { className: Dt.status }, Bt.footer.status.paused()),
+                            n().createElement('div', { className: Dt.label }, O),
+                            B && n().createElement('div', { className: Dt.days }, $),
+                            D &&
                                 n().createElement(
                                     n().Fragment,
                                     null,
-                                    n().createElement('div', { className: Dt.points }, C),
+                                    n().createElement('div', { className: Dt.points }, F),
                                     n().createElement(
                                         'div',
                                         { className: Dt.info },
@@ -5403,27 +5405,27 @@
                         ),
                         n().createElement(
                             'div',
-                            { className: S()(Dt.buttonWrapper, B && Dt.buttonWrapper__multiCurrency) },
+                            { className: S()(Dt.buttonWrapper, y && Dt.buttonWrapper__multiCurrency) },
                             n().createElement(
                                 z.i,
-                                { body: k },
+                                { body: N },
                                 n().createElement(
                                     pe.u5,
                                     {
-                                        type: T,
+                                        type: L,
                                         size: pe.qE.medium,
                                         mixClass: Dt.button,
                                         onClick: () => {
                                             s === _.ActivateChapter
                                                 ? a.chapterActivate()
-                                                : x && u.push(x, { chapterID: I.chapterID || void 0, reset: I.reset });
+                                                : I && u.push(I, { chapterID: M.chapterID || void 0, reset: M.reset });
                                         },
                                     },
-                                    D && n().createElement('div', { className: Dt.blink }),
-                                    P,
+                                    B && n().createElement('div', { className: Dt.blink }),
+                                    k,
                                 ),
                             ),
-                            B &&
+                            y &&
                                 n().createElement(
                                     z.i,
                                     { body: Bt.footer.multicurrencyTooltip() },
@@ -5729,7 +5731,8 @@
                                                 'div',
                                                 { className: Xt },
                                                 n().createElement(Rt.A, {
-                                                    caption: M ? la.progression.aboutExtra() : la.progression.about(),
+                                                    caption:
+                                                        M || O ? la.progression.aboutExtra() : la.progression.about(),
                                                     type: Wt.Info,
                                                     onClick: t.openAbout,
                                                 }),

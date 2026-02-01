@@ -1962,7 +1962,7 @@
             },
             6493: (e, u, t) => {
                 'use strict';
-                t.d(u, { E: () => m, Z: () => C });
+                t.d(u, { E: () => m, Z: () => B });
                 var r = t(2932),
                     n = t(1226),
                     a = t(4598),
@@ -1996,29 +1996,33 @@
                 !(function (e) {
                     ((e[(e.LOBBY = 0)] = 'LOBBY'), (e[(e.BATTLE = 1)] = 'BATTLE'));
                 })(m || (m = {}));
-                const C = ({
+                function C(e, u, t, r) {
+                    return !!e && (u ? r : t);
+                }
+                const B = ({
                     behaviour: e,
                     category: u,
                     className: t,
-                    gold: C = 0,
-                    items: B,
-                    onActivate: g,
-                    onCardHover: v = a.ZT,
+                    gold: B = 0,
+                    items: g,
+                    onActivate: v,
+                    onCardHover: p = a.ZT,
                 }) => {
-                    const p = (0, i.useReducer)((e) => !e, !1)[1],
-                        h = B.some((e) => (null == e ? void 0 : e.inactivationTime) > 0),
-                        f = 1 === B.length,
-                        b = u === n.d.Clan,
-                        w = s[u],
-                        y = Math.ceil(B.length / 2);
+                    const h = (0, i.useReducer)((e) => !e, !1)[1],
+                        f = g.some((e) => (null == e ? void 0 : e.inactivationTime) > 0),
+                        b = 1 === g.length,
+                        w = u === n.d.Clan,
+                        y = s[u],
+                        x = Math.ceil(g.length / 2);
                     return o().createElement(
                         o().Fragment,
                         null,
-                        Array(y)
+                        Array(x)
                             .fill(0)
                             .map((a, i) => {
-                                const s = b ? c[i] : l[u],
-                                    y = B.slice(2 * i, 2 * (i + 1));
+                                const s = w ? c[i] : l[u],
+                                    x = g.slice(2 * i, 2 * (i + 1)),
+                                    T = x.some((e) => (null == e ? void 0 : e.inactivationTime) > 0);
                                 return o().createElement(
                                     'div',
                                     { id: `block-${u}`, key: `${u}-${i}`, className: t },
@@ -2028,22 +2032,22 @@
                                         o().createElement(
                                             'div',
                                             { className: F },
-                                            o().createElement('div', { className: _ }, w),
+                                            o().createElement('div', { className: _ }, y),
                                             o().createElement('div', { className: D }, s),
                                         ),
-                                        y.map((t, a) => {
+                                        x.map((t, a) => {
                                             const i = Math.max(
                                                 0,
                                                 Math.floor((1e3 * t.inactivationTime - Date.now()) / 1e3),
                                             );
                                             let s = !1;
                                             u === n.d.Clan
-                                                ? (s = i <= 0 && h)
+                                                ? (s = i <= 0 && T)
                                                 : e === m.BATTLE
-                                                  ? t.state !== r.mu.Active && (s = 0 === t.inDepot || h)
+                                                  ? t.state !== r.mu.Active && (s = 0 === t.inDepot || f)
                                                   : t.isPremium ||
                                                     t.state === r.mu.Active ||
-                                                    (s = 0 === t.inDepot || (h && t.inactivationTime <= 0));
+                                                    (s = 0 === t.inDepot || (f && t.inactivationTime <= 0));
                                             const l =
                                                 e !== m.BATTLE &&
                                                 t.isPremium &&
@@ -2057,18 +2061,18 @@
                                                     item: t,
                                                     category: u,
                                                     activeSecondsLeft: i,
-                                                    hasActiveGroupItems: B.length > 1 && h,
+                                                    hasActiveGroupItems: C(g.length > 1, w, f, T),
                                                 },
                                                 o().createElement(E.Z, {
                                                     reserve: t,
-                                                    playerGold: C,
+                                                    playerGold: B,
                                                     activeSecondsLeft: i,
                                                     isDisabled: s,
                                                     isPurchasable: l,
-                                                    cardSize: f ? E._.DOUBLE : E._.SINGLE,
-                                                    onActivate: g,
-                                                    onExpire: p,
-                                                    onCardHover: v,
+                                                    cardSize: b ? E._.DOUBLE : E._.SINGLE,
+                                                    onActivate: v,
+                                                    onExpire: h,
+                                                    onCardHover: p,
                                                 }),
                                             );
                                         }),
@@ -2449,12 +2453,14 @@
                 }
                 function G(e, u, t = []) {
                     const r = (0, a.useRef)(0),
-                        n = (0, a.useCallback)(() => window.clearInterval(r.current), t || []);
+                        n = (0, a.useCallback)(() => {
+                            (window.clearInterval(r.current), (r.current = 0));
+                        }, t || []);
                     (0, a.useEffect)(() => n, [n]);
                     const i = (null != t ? t : []).concat([u]);
                     return [
                         (0, a.useCallback)((t) => {
-                            ((r.current = window.setInterval(() => e(t, !0), u)), e(t, !1));
+                            (0 !== r.current && n(), (r.current = window.setInterval(() => e(t, !0), u)), e(t, !1));
                         }, i),
                         n,
                     ];
@@ -2737,7 +2743,8 @@
                         getContainerSize: (e) => e.offsetWidth,
                         getWrapperSize: (e) => e.offsetWidth,
                         setScrollPosition: (e, u) => {
-                            e.style.transform = `translateX(-${u.value.scrollPosition}px)`;
+                            var t;
+                            e.style.transform = `translateX(-${0 | (null != (t = u.value.scrollPosition) ? t : 0)}px)`;
                         },
                         getDirection: (e) => (e.deltaY > 1 ? q.Next : q.Prev),
                         forceTriggerMouseMove: s.O.view.forceTriggerMouseMove,

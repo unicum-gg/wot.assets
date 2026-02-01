@@ -2382,12 +2382,12 @@
                 if (o) {
                     Boolean(
                         e &&
-                            o.inputs &&
-                            (function (t, e) {
-                                if (t.length !== e.length) return !1;
-                                for (let n = 0; n < t.length; n++) if (t[n] !== e[n]) return !1;
-                                return !0;
-                            })(e, o.inputs),
+                        o.inputs &&
+                        (function (t, e) {
+                            if (t.length !== e.length) return !1;
+                            for (let n = 0; n < t.length; n++) if (t[n] !== e[n]) return !1;
+                            return !0;
+                        })(e, o.inputs),
                     ) || (o = { inputs: e, result: t() });
                 } else o = n;
                 return (
@@ -5003,9 +5003,9 @@
                 throw new Error(
                     'number' == typeof t
                         ? '[MobX] minified error nr: ' +
-                          t +
-                          (n.length ? ' ' + n.map(String).join(',') : '') +
-                          '. Find the full error at: https://github.com/mobxjs/mobx/blob/main/packages/mobx/src/errors.ts'
+                              t +
+                              (n.length ? ' ' + n.map(String).join(',') : '') +
+                              '. Find the full error at: https://github.com/mobxjs/mobx/blob/main/packages/mobx/src/errors.ts'
                         : '[MobX] ' + t,
                 );
             }
@@ -7199,7 +7199,6 @@
                                             a = !1,
                                             s = M(e.data_.keys());
                                         !(n = s()).done;
-
                                     ) {
                                         var u = n.value;
                                         if (!i.has(u))
@@ -7225,7 +7224,6 @@
                                             for (
                                                 var g = e.data_.keys(), m = o.keys(), _ = g.next(), w = m.next();
                                                 !_.done;
-
                                             ) {
                                                 if (_.value !== w.value) {
                                                     e.keysAtom_.reportChanged();

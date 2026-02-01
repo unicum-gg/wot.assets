@@ -1967,17 +1967,18 @@
                                                   return e;
                                               })(t),
                                           )
-                                        : n.push({ blockType: o, colorTag: e, childList: [t] });
+                                        : n.push({ blockType: o, colorTag: e, childList: [t.replace(/\ufeff+/g, '')] });
                                 },
                             ),
                             n
                         );
                     },
                     q = (u, e, t = '', n) => {
-                        const o = [];
+                        const o = [],
+                            r = u.replace(/(.)(、|。|ー)/g, '$1\ufeff$2');
                         return (
                             V(
-                                u,
+                                r,
                                 /(?:%\(|{)(.*?)[)}][sd]?/g,
                                 (u) => {
                                     o.push(...Z(u, t, n));

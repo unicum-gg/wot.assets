@@ -1,22 +1,22 @@
-import { j as e, x as s, y as a, r } from '../../../chunks/vendor.js';
+import { j as e, w as s, x as a, r } from '../../../chunks/vendor.js';
 import {
     M as t,
     B as i,
     i as n,
     F as o,
-    cq as l,
-    cr as d,
+    e as l,
+    f as d,
     p as _,
-    bv as c,
-    a4 as u,
-    cs as m,
-    ct as h,
-    ao as b,
+    h as c,
+    j as u,
+    k as m,
+    l as h,
+    o as b,
     b as g,
     u as p,
-    cu as f,
-    r as x,
-    U as w,
+    q as f,
+    r as w,
+    U as x,
 } from '../../../chunks/lib.js';
 import { u as v, S as j, a as A } from '../../../chunks/schedule_subheading.js';
 import { u as S } from '../../../chunks/use_server_time_polling.js';
@@ -180,7 +180,7 @@ const H = 'Slide_680b9fee',
             r.useEffect(
                 () =>
                     u(() =>
-                        m(() => {
+                        h(() => {
                             n && o(!1);
                         }, 500),
                     ),
@@ -189,8 +189,8 @@ const H = 'Slide_680b9fee',
         const _ = oe(l, () => i(t - 1)),
             g = oe(d, () => i(t + 1));
         return (
-            h(b.ARROW_LEFT, _),
-            h(b.ARROW_RIGHT, g),
+            m(b.ARROW_LEFT, _),
+            m(b.ARROW_RIGHT, g),
             e.jsxs('div', {
                 className: s(K, a),
                 style: { '--currentSlideIndex': t, '--transitionDuration': '500ms' },
@@ -250,8 +250,8 @@ const H = 'Slide_680b9fee',
         );
     });
 f('comp7_light/gui/maps/icons/backgrounds/intro_bg.dds');
-x(
-    e.jsx(w, {
+w(
+    e.jsx(x, {
         children: e.jsx(y, {
             children: e.jsx(A, { options: { context: 'model.scheduleInfo' }, children: e.jsx(he, {}) }),
         }),

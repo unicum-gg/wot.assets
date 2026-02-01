@@ -55,7 +55,7 @@
                         displayStatus: () => P.W,
                         displayStatusIs: () => re,
                         enableFullScreenModeSupported: () => oe,
-                        events: () => x,
+                        events: () => L,
                         extraSize: () => ae,
                         forceTriggerMouseMove: () => Z,
                         freezeTextureBeforeResize: () => V,
@@ -184,7 +184,7 @@
                     return `url(${S(e, t, n)})`;
                 }
                 var P = n(112);
-                const x = {
+                const L = {
                         onTextureFrozen: s('self.onTextureFrozen'),
                         onTextureReady: s('self.onTextureReady'),
                         onDomBuilt: s('self.onDomBuilt'),
@@ -200,7 +200,7 @@
                             onRequestPosition: s('children.requestPosition'),
                         },
                     },
-                    L = ['args'];
+                    x = ['args'];
                 const M = 2,
                     k = 16,
                     C = 32,
@@ -217,7 +217,7 @@
                                         i = Object.keys(e);
                                     for (r = 0; r < i.length; r++) ((n = i[r]), t.indexOf(n) >= 0 || (a[n] = e[n]));
                                     return a;
-                                })(t, L);
+                                })(t, x);
                             return void 0 !== a
                                 ? viewEnv.handleViewEvent(
                                       Object.assign({ __Type: n, type: e }, i, {
@@ -329,7 +329,7 @@
                     },
                     ie = Promise.all([
                         new Promise((e) => {
-                            window.isDomBuilt ? e() : x.onDomBuilt(e);
+                            window.isDomBuilt ? e() : L.onDomBuilt(e);
                         }),
                         engine.whenReady,
                     ]);
@@ -1066,7 +1066,7 @@
                         [v.Large]: `${p().SMALL} ${p().MEDIUM} ${p().LARGE}`,
                         [v.ExtraLarge]: `${p().SMALL} ${p().MEDIUM} ${p().LARGE} ${p().EXTRA_LARGE}`,
                     },
-                    x = (e) => {
+                    L = (e) => {
                         let t = e.children,
                             n = e.className,
                             r = (function (e, t) {
@@ -1084,7 +1084,7 @@
                             l = i.mediaSize;
                         return a().createElement('div', y({ className: E()(n, S[o], O[s], P[l]) }, r), t);
                     },
-                    L = ['children'];
+                    x = ['children'];
                 const M = (e) => {
                     let t = e.children,
                         n = (function (e, t) {
@@ -1095,8 +1095,8 @@
                                 i = Object.keys(e);
                             for (r = 0; r < i.length; r++) ((n = i[r]), t.indexOf(n) >= 0 || (a[n] = e[n]));
                             return a;
-                        })(e, L);
-                    return a().createElement(m, null, a().createElement(x, n, t));
+                        })(e, x);
+                    return a().createElement(m, null, a().createElement(L, n, t));
                 };
                 var k = n(533),
                     C = n.n(k);
@@ -1610,10 +1610,7 @@
                         (e.EquipCoin = 'equipCoin'),
                         (e.LootBox = 'lootBox'),
                         (e.BrCoin = 'brcoin'),
-                        (e.Attachment = 'attachment'),
-                        (e.Stamp = 'stamp'),
-                        (e.WtEventLootbox = 'wtevent_lootBox'),
-                        (e.WtEventTicket = 'wtevent_ticket'));
+                        (e.Attachment = 'attachment'));
                 })(we || (we = {})),
                     (function (e) {
                         ((e.Gold = 'gold'),
@@ -1722,13 +1719,13 @@
                     (function (e) {
                         ((e[(e.Engraving = 0)] = 'Engraving'), (e[(e.Background = 1)] = 'Background'));
                     })(Pe || (Pe = {})));
-                const xe = [we.Attachment];
-                var Le = n(916);
+                const Le = [we.Attachment];
+                var xe = n(916);
                 const Me = ({ value: e, format: t = 'integral' }) => {
                         const n = (function (e) {
-                                return 'gold' === e ? Le.B3.GOLD : Le.B3.INTEGRAL;
+                                return 'gold' === e ? xe.B3.GOLD : xe.B3.INTEGRAL;
                             })(t),
-                            r = Le.Z5.getNumberFormat(e, n);
+                            r = xe.Z5.getNumberFormat(e, n);
                         return void 0 !== e && void 0 !== r ? r : null;
                     },
                     ke = [
@@ -1769,9 +1766,6 @@
                         we.BattleBoosterGift,
                         we.OptionalDevice,
                         we.Attachment,
-                        we.Stamp,
-                        we.WtEventLootbox,
-                        we.WtEventTicket,
                     ],
                     Ce = [we.Gold, we.Credits, we.Crystal, we.FreeXp],
                     Ne = [we.BattlePassPoints, we.EquipCoin],
@@ -1938,7 +1932,7 @@
                             Object.assign(
                                 {
                                     __Type: 'GFViewEventProxy',
-                                    type: Le.B0.TOOLTIP,
+                                    type: xe.B0.TOOLTIP,
                                     contentID: e,
                                     decoratorID: t,
                                     targetID: r,
@@ -2052,14 +2046,14 @@
                                   Object.assign(
                                       {
                                           onMouseEnter:
-                                              ((x = t.props.onMouseEnter),
+                                              ((L = t.props.onMouseEnter),
                                               (e) => {
                                                   (e.clientX === window.innerWidth &&
                                                       e.clientY === window.innerHeight) ||
                                                       (clearTimeout(T.current.timeoutId),
                                                       (T.current.timeoutId = window.setTimeout(S, u ? 100 : 400)),
                                                       i && i(e),
-                                                      x && x(e));
+                                                      L && L(e));
                                               }),
                                           onMouseLeave: ((e) => (t) => {
                                               (O(), null == o || o(t), null == e || e(t));
@@ -2075,7 +2069,7 @@
                                   ),
                               )
                             : t;
-                        var x;
+                        var L;
                     },
                     je = ['children'];
                 function qe() {
@@ -2305,7 +2299,7 @@
                         return a().createElement(
                             'div',
                             {
-                                className: E()(et.base, et[`base__${r}`], xe.includes(e) && et.base__normalize, u),
+                                className: E()(et.base, et[`base__${r}`], Le.includes(e) && et.base__normalize, u),
                                 style: c,
                             },
                             a().createElement(
@@ -2560,7 +2554,7 @@
                     St = 'VehicleReward_image_85',
                     Ot = 'VehicleReward_name_0d',
                     Pt = 'VehicleReward_typeIcon_ae',
-                    xt = ({ tooltipArgs: e }) =>
+                    Lt = ({ tooltipArgs: e }) =>
                         a().createElement(
                             Je,
                             { tooltipArgs: e },
@@ -2577,7 +2571,7 @@
                                 ),
                             ),
                         ),
-                    Lt = 'EliteWithVehicleRewards_base_49',
+                    xt = 'EliteWithVehicleRewards_base_49',
                     Mt = 'EliteWithVehicleRewards_wrapper_65',
                     kt = 'EliteWithVehicleRewards_iconCompensation_9e',
                     Ct = 'EliteWithVehicleRewards_mainRewards_ee',
@@ -2711,7 +2705,7 @@
                         var s;
                         return a().createElement(
                             'div',
-                            { className: Lt },
+                            { className: xt },
                             a().createElement(
                                 'div',
                                 { className: Ct },
@@ -2741,7 +2735,7 @@
                                                 isCompensation: e.isCompensation,
                                             },
                                             c
-                                                ? a().createElement(xt, { tooltipArgs: l })
+                                                ? a().createElement(Lt, { tooltipArgs: l })
                                                 : a().createElement(
                                                       'div',
                                                       { className: Mt },

@@ -2660,12 +2660,12 @@
                         s
                             ? Boolean(
                                   t &&
-                                      s.inputs &&
-                                      (function (e, t) {
-                                          if (e.length !== t.length) return !1;
-                                          for (let n = 0; n < e.length; n++) if (e[n] !== t[n]) return !1;
-                                          return !0;
-                                      })(t, s.inputs),
+                                  s.inputs &&
+                                  (function (e, t) {
+                                      if (e.length !== t.length) return !1;
+                                      for (let n = 0; n < e.length; n++) if (e[n] !== t[n]) return !1;
+                                      return !0;
+                                  })(t, s.inputs),
                               ) || (s = { inputs: t, result: e() })
                             : (s = n),
                         i.useEffect(() => {
@@ -5641,7 +5641,6 @@
                                 );
                             })(e.childNodes);
                         !(t = n()).done;
-
                     )
                         if (3 === t.value.nodeType) return !0;
                     return !1;
@@ -5879,7 +5878,6 @@
                                                   return (n = e[Symbol.iterator]()).next.bind(n);
                                               })(t);
                                           !(n = r()).done;
-
                                       ) {
                                           var i = n.value,
                                               o = i.current;
@@ -6769,7 +6767,6 @@
                                         n(o));
                                 };
                                 e.length > 0;
-
                             )
                                 r();
                         };
@@ -7126,9 +7123,9 @@
                 throw new Error(
                     'number' == typeof e
                         ? '[MobX] minified error nr: ' +
-                          e +
-                          (n.length ? ' ' + n.map(String).join(',') : '') +
-                          '. Find the full error at: https://github.com/mobxjs/mobx/blob/main/packages/mobx/src/errors.ts'
+                              e +
+                              (n.length ? ' ' + n.map(String).join(',') : '') +
+                              '. Find the full error at: https://github.com/mobxjs/mobx/blob/main/packages/mobx/src/errors.ts'
                         : '[MobX] ' + e,
                 );
             }
@@ -9329,7 +9326,6 @@
                                             s = !1,
                                             a = _(t.pt.keys());
                                         !(n = a()).done;
-
                                     ) {
                                         var u = n.value;
                                         if (!i.has(u))
@@ -9355,7 +9351,6 @@
                                             for (
                                                 var m = t.pt.keys(), g = o.keys(), y = m.next(), B = g.next();
                                                 !y.done;
-
                                             ) {
                                                 if (y.value !== B.value) {
                                                     t.bt.reportChanged();

@@ -2699,7 +2699,6 @@
                                           for (
                                               I && (Q = this.resolveRaisedTransition(Q, { type: u.IA }, n));
                                               j.length;
-
                                           ) {
                                               var L = j.shift();
                                               Q = this.resolveRaisedTransition(Q, L._event, n);

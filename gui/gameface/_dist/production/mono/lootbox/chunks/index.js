@@ -1,34 +1,34 @@
-import { o as e, m as o, f as t, r as s, j as a, e as n, n as i, h as r, i as c } from './vendor.js';
-import { u as l, R as d, H as u, M as p } from './use_cover_size.js';
-import { Q as x, L as m, A as b, P as g } from './quantity_title.js';
-import { d as _, R as h, S as y, B as f, a as v } from './resource_layer.js';
-import { u as B, h as C } from '../views/main/main.html/bundle.js';
+import { r as e, j as o, e as t, o as s, k as a, f as n, m as i, h as r, i as c } from './vendor.js';
+import { u as l, R as d, M as u } from './use_cover_size.js';
+import { Q as p, L as m, A as x, P as b } from './quantity_title.js';
+import { R as g, d as _, P as h, S as f, B as y, a as v } from './statistics2.js';
 import {
-    i as w,
-    h as A,
-    O as j,
-    m as k,
+    n as B,
+    i as C,
+    h as w,
+    P as A,
+    m as j,
     g as N,
-    n as L,
-    y as I,
-    P as T,
-    z as O,
-    Q as V,
-    U as E,
-    V as S,
-    k as H,
-    C as M,
-    e as G,
+    z as k,
+    Q as O,
+    A as S,
+    U as I,
+    V,
+    W as E,
+    k as L,
+    C as T,
+    e as H,
     B as P,
-    W as $,
-    X as R,
-    d as q,
-    Y as z,
-    T as W,
-    Z as Y,
-    _ as D,
+    X as M,
+    Y as G,
+    d as $,
+    Z as R,
+    T as q,
+    _ as z,
+    $ as W,
 } from './lib.js';
-import { a as U, g as Q, C as X, D as Z, R as F } from './resources.js';
+import { a as Y, g as D, C as U, D as Q, R as X } from './resources.js';
+import { u as Z, h as F } from '../views/main/main.html/bundle.js';
 import { g as J } from './getConfig.js';
 import { S as K } from './sounds.js';
 import { G as ee } from './guaranteed.js';
@@ -38,12 +38,41 @@ import './title2.js';
 import './getRewardImage.js';
 import './scroll_with_lips.js';
 import './statistics.js';
-const oe = { from: { opacity: 0, transform: 'translateY(-15rem)' }, delay: 100, config: { duration: 250 } },
-    te = { from: { opacity: 0, transform: 'translateY(15rem)' }, delay: 100, config: { duration: 250 } },
-    se = { to: { opacity: 1, transform: 'translateY(0rem)' } },
-    ae = (e) => ({ to: { opacity: 0 }, config: { duration: 0 }, onRest: e }),
-    ne = { to: { opacity: 1 }, config: { duration: 250 } },
-    ie = {
+const oe = 'Hover_55af9f42',
+    te = 'Hover_hoverTrigger_82df64e5';
+const se = 'Vignette_96c6d4bc';
+const ae = { base: 'BoxLayout_5663f366' };
+function ne({ children: e, style: s, className: a }) {
+    return o.jsx('div', { className: t(ae.base, a), style: s, children: e });
+}
+((ne.Box = function ({ layer: t, onLoaded: s, sound: a, onVideoEnded: n, playVideo: i, onVideoPlay: r, className: c }) {
+    return (
+        e.useEffect(() => {
+            i && B.sound(a);
+        }, [a, i]),
+        o.jsx('div', {
+            className: c,
+            children: o.jsx(g, { layer: t, onLoaded: s, onVideoEnded: n, playVideo: i, onVideoPlay: r }),
+        })
+    );
+}),
+    (ne.Hover = function ({ className: e, settings: s, wrapperSize: a, onMouseEnter: n, onMouseLeave: i, onClick: r }) {
+        return o.jsx('div', {
+            className: t(oe, e),
+            style: a,
+            children: o.jsx('div', {
+                className: te,
+                style: { width: s.width, height: s.height, top: s.verticalOffset, left: s.horizontalOffset },
+                onMouseEnter: n,
+                onMouseLeave: i,
+                onClick: r,
+            }),
+        });
+    }),
+    (ne.Vignette = function ({ className: e, style: s }) {
+        return o.jsx('div', { className: t(se, e), style: s });
+    }));
+const ie = {
         images: {
             iconEmpty: 'entry_point.lootboxEmpty',
             glowIcon: 'awardViews.glow',
@@ -98,68 +127,68 @@ const oe = { from: { opacity: 0, transform: 'translateY(-15rem)' }, delay: 100, 
     },
     ce = 'common_sublayer',
     le = { idle: 'idle', background: 'background', box: 'box', hover: 'hover' },
-    [de, ue] = w()(
-        ({ observableModel: t }) => {
-            const s = {
-                    root: t.object(),
-                    openingOptions: t.arrayClone('openingOptions'),
-                    boxesInfo: t.arrayClone('boxesInfo'),
-                    isBoxHovered: e.box(!1),
-                    showAdditionalLayers: e.box(!1),
+    [de, ue] = C()(
+        ({ observableModel: e }) => {
+            const o = {
+                    root: e.object(),
+                    openingOptions: e.arrayClone('openingOptions'),
+                    boxesInfo: e.arrayClone('boxesInfo'),
+                    isBoxHovered: s.box(!1),
+                    showAdditionalLayers: s.box(!1),
                 },
-                a = o(() => A(s.boxesInfo.get(), (e) => e.boxCategory === s.root.get().selectedBoxOption)),
-                n = o(() => U(ie, s.root.get().eventName)),
-                i = o(() => Q(re, s.root.get().eventName)),
-                r = o(() => J(s.root.get().eventName, X.HasBoxesView)),
-                c = o(() => {
+                t = a(() => w(o.boxesInfo.get(), (e) => e.boxCategory === o.root.get().selectedBoxOption)),
+                n = a(() => Y(ie, o.root.get().eventName)),
+                i = a(() => D(re, o.root.get().eventName)),
+                r = a(() => J(o.root.get().eventName, U.HasBoxesView)),
+                c = a(() => {
                     const e = { [le.idle]: {}, [le.background]: {}, [le.box]: {}, [le.hover]: {} },
-                        { dynamicImages: o, dynamicVideos: t } = i(),
-                        a = j.isHigh();
+                        { dynamicImages: t, dynamicVideos: s } = i(),
+                        a = A.isHigh();
                     return (
-                        k(s.boxesInfo.get(), (s) => {
-                            const n = s.boxCategory;
-                            Object.values(le).forEach((s) => {
-                                const i = o[s].dynOpt(n),
-                                    r = t[s].dynOpt(n),
+                        j(o.boxesInfo.get(), (o) => {
+                            const n = o.boxCategory;
+                            Object.values(le).forEach((o) => {
+                                const i = t[o].dynOpt(n),
+                                    r = s[o].dynOpt(n),
                                     c = _(i, a ? r : '');
-                                c.src.includes(Z) || ((e, o) => e.includes(`${o}/default`))(c.src, s)
-                                    ? (e[s][ce] = c)
-                                    : (e[s][n] = c);
+                                c.src.includes(Q) || ((e, o) => e.includes(`${o}/default`))(c.src, o)
+                                    ? (e[o][ce] = c)
+                                    : (e[o][n] = c);
                             });
                         }),
                         e
                     );
                 }),
-                l = o((e) => c()[e]),
-                d = o((e) => Object.keys(l(e))),
-                u = o(() => N(s.openingOptions.get(), s.root.get().selectedOpeningOption) || 1);
+                l = a((e) => c()[e]),
+                d = a((e) => Object.keys(l(e))),
+                u = a(() => N(o.openingOptions.get(), o.root.get().selectedOpeningOption) || 1);
             return {
-                ...s,
+                ...o,
                 computes: {
                     resources: n,
                     dynamicResources: i,
                     viewConfig: r,
                     openBoxesCount: u,
-                    boxInfo: a,
+                    boxInfo: t,
                     sublayersNames: d,
                     extractSublayers: l,
                 },
             };
         },
         ({ externalModel: e, model: o }) => {
-            const s = e.createCallback((e) => ({ count: e }), 'onBoxesOpen'),
-                a = e.createCallback((e) => ({ isAnimationActive: e }), 'onAnimationStateChanged');
+            const t = e.createCallback((e) => ({ count: e }), 'onBoxesOpen'),
+                s = e.createCallback((e) => ({ isAnimationActive: e }), 'onAnimationStateChanged');
             return {
-                setIsBoxHovered: t((e) => o.isBoxHovered.set(e)),
-                setShowAdditionalLayers: t((e) => o.showAdditionalLayers.set(e)),
-                openBoxes: t(() => {
-                    s(o.computes.openBoxesCount());
+                setIsBoxHovered: n((e) => o.isBoxHovered.set(e)),
+                setShowAdditionalLayers: n((e) => o.showAdditionalLayers.set(e)),
+                openBoxes: n(() => {
+                    t(o.computes.openBoxesCount());
                 }),
-                setAnimationState: t((e) => {
-                    a(e);
+                setAnimationState: n((e) => {
+                    s(e);
                 }),
-                changeAnimationState: t(() => {
-                    a(!o.root.get().isAnimationActive);
+                changeAnimationState: n(() => {
+                    s(!o.root.get().isAnimationActive);
                 }),
                 openInfoPage: e.createCallbackNoArgs('onInfoOpen'),
                 close: e.createCallbackNoArgs('onClose'),
@@ -169,136 +198,112 @@ const oe = { from: { opacity: 0, transform: 'translateY(-15rem)' }, delay: 100, 
                 onBoxOptionChanged: e.createCallback((e) => ({ boxOption: e }), 'onBoxOptionChanged'),
             };
         },
-    );
-function pe({ layer: e, onLoaded: o, sound: t, onVideoEnded: n, playVideo: i, onVideoPlay: r }) {
-    return (
-        s.useEffect(() => {
-            i && L.sound(t);
-        }, [t, i]),
-        a.jsx(h, { layer: e, onLoaded: o, onVideoEnded: n, playVideo: i, onVideoPlay: r })
-    );
-}
-const xe = { base: 'HoverTrigger_b68c1b59', hoverTrigger: 'HoverTrigger_hoverTrigger_22d0f756' };
-function me({ className: e, settings: o, wrapperSize: t, onMouseEnter: s, onMouseLeave: i, onClick: r }) {
-    return a.jsx('div', {
-        className: n(xe.base, e),
-        style: t,
-        children: a.jsx('div', {
-            className: xe.hoverTrigger,
-            style: { width: o.width, height: o.height, top: o.verticalOffset, left: o.horizontalOffset },
-            onMouseEnter: s,
-            onMouseLeave: i,
-            onClick: r,
-        }),
-    });
-}
-const be = 'BoxLayout_5663f366',
-    ge = 'BoxLayout_layer_2b93ddd9',
-    _e = 'BoxLayout_layer__show_935c6fbf',
-    he = 'BoxLayout_glow_45e50070',
-    ye = 'BoxLayout_glow__show_47d081f',
-    fe = 'BoxLayout_idle_4cd3e814',
-    ve = 'BoxLayout_idle__show_fbcb8b95',
-    Be = 'BoxLayout_hoverTrigger_a86e7877',
-    Ce = 'BoxLayout_box_eb7acf12',
-    we = 'BoxLayout_box__show_935c6fbf',
-    Ae = 'BoxLayout_base__graphicsHigh_9c8a2c10',
-    je = 'BoxLayout_vignette_e4d8f8d1';
-const ke = i(function ({ onClick: e, className: o, onLoaded: t }) {
-        const { model: i, controls: r } = ue(),
-            { model: c } = B(),
-            { selectedBoxOption: u } = i.root.get(),
-            { hasIdle: p, vignette: x, hoverZone: m, backgroundColor: b } = i.computes.viewConfig(),
-            { sounds: g } = i.computes.resources(),
-            _ = i.showAdditionalLayers.get(),
-            y = i.isBoxHovered.get(),
-            f = c.subViewIDs.get(),
-            v = C(f),
-            w = j.isHigh(),
-            A = i.computes.sublayersNames(le.background),
-            k = i.computes.sublayersNames(le.box),
-            N = i.computes.sublayersNames(le.hover),
-            T = i.computes.sublayersNames(le.idle),
-            O = p && w,
-            V = l(F),
-            [E, S] = s.useState(!1),
-            H = ((e, o) => {
-                const [t, a] = s.useState(0),
-                    n = s.useCallback(() => {
+    ),
+    pe = 'CompositeScene_c16d0a29',
+    me = 'CompositeScene_vignette_c16d0a29',
+    xe = 'CompositeScene_box_ff78dbca',
+    be = 'CompositeScene_idle_abfdd117',
+    ge = 'CompositeScene_glow_15c55d55',
+    _e = 'CompositeScene_background_88262b79',
+    he = 'CompositeScene_background__show_5ad4ed30',
+    fe = 'CompositeScene_glow__show_6d031a33',
+    ye = 'CompositeScene_idle__show_314703c5',
+    ve = 'CompositeScene_hover_63da4085',
+    Be = 'CompositeScene_box__show_5ad4ed30',
+    Ce = 'CompositeScene_base__graphicsHigh_c16d0a29';
+const we = i(function ({ onClick: s, onLoaded: a }) {
+        const { model: n, controls: i } = ue(),
+            { model: r } = Z(),
+            { selectedBoxOption: c } = n.root.get(),
+            { hasIdle: u, vignette: p, hoverZone: m, backgroundColor: x } = n.computes.viewConfig(),
+            { sounds: b } = n.computes.resources(),
+            _ = n.showAdditionalLayers.get(),
+            h = n.isBoxHovered.get(),
+            f = r.subViewIDs.get(),
+            y = F(f),
+            v = A.isHigh(),
+            C = n.computes.sublayersNames(le.background),
+            w = n.computes.sublayersNames(le.box),
+            j = n.computes.sublayersNames(le.hover),
+            N = n.computes.sublayersNames(le.idle),
+            O = u && v,
+            S = l(X),
+            [I, V] = e.useState(!1),
+            E = ((o, t) => {
+                const [s, a] = e.useState(0),
+                    n = e.useCallback(() => {
                         a((e) => e + 1);
                     }, []);
                 return (
-                    s.useEffect(() => {
-                        t === e && o();
-                    }, [t, e]),
+                    e.useEffect(() => {
+                        s === o && t();
+                    }, [s, o]),
                     n
                 );
-            })(A.length + k.length + N.length + Number(O) * T.length, () => {
-                (S(!0), t());
+            })(C.length + w.length + j.length + Number(O) * N.length, () => {
+                (V(!0), a());
             }),
-            M = () => r.setShowAdditionalLayers(!0),
-            G = () => r.setShowAdditionalLayers(!1),
-            P = () => {
-                (L.sound(g.boxMouseLeave), r.setIsBoxHovered(!1));
+            L = () => i.setShowAdditionalLayers(!0),
+            T = () => i.setShowAdditionalLayers(!1),
+            H = () => {
+                (B.sound(b.boxMouseLeave), i.setIsBoxHovered(!1));
             },
-            $ = (e, o) => {
-                const t = i.computes.extractSublayers(e);
-                return { active: !Boolean(t[u]) || o === u, resource: t[o] };
+            P = (e, o) => {
+                const t = n.computes.extractSublayers(e);
+                return { active: o === (Boolean(t[c]) ? c : ce), resource: t[o] };
             };
         return (
-            s.useEffect(() => {
-                const e = i.computes.extractSublayers(le.box),
-                    o = e[u] || e[ce];
-                return I(() => {
-                    (null == o ? void 0 : o.type) === d.image && r.setShowAdditionalLayers(!0);
+            e.useEffect(() => {
+                const e = n.computes.extractSublayers(le.box),
+                    o = e[c] || e[ce];
+                return k(() => {
+                    (null == o ? void 0 : o.type) === d.image && i.setShowAdditionalLayers(!0);
                 });
-            }, [u]),
-            a.jsxs('div', {
-                className: n(be, w && Ae, o),
-                style: { backgroundColor: b },
+            }, [c]),
+            o.jsxs(ne, {
+                className: t(pe, v && Ce),
+                style: { backgroundColor: x },
                 children: [
-                    A.map((e) => {
-                        const { active: o, resource: t } = $(le.background, e);
-                        return a.jsx(
-                            h,
+                    C.map((e) => {
+                        const { active: s, resource: a } = P(le.background, e);
+                        return o.jsx(
+                            g,
                             {
-                                className: n(ge, o && _e),
-                                layer: t,
+                                className: t(_e, s && he),
+                                layer: a,
                                 loop: !0,
-                                onLoaded: H,
-                                playVideo: E && t.type === d.video && o,
+                                onLoaded: E,
+                                playVideo: I && (null == a ? void 0 : a.type) === d.video && s,
                             },
                             `${le.background}_${e}`,
                         );
                     }),
-                    k.map((e) => {
-                        const { active: o, resource: t } = $(le.box, e);
-                        return a.jsx(
-                            'div',
+                    w.map((e) => {
+                        const { active: s, resource: a } = P(le.box, e);
+                        return o.jsx(
+                            ne.Box,
                             {
-                                className: n(Ce, o && we),
-                                children: a.jsx(pe, {
-                                    layer: t,
-                                    sound: g.boxAppear,
-                                    onLoaded: H,
-                                    onVideoEnded: M,
-                                    playVideo: E && t.type === d.video && o,
-                                    onVideoPlay: G,
-                                }),
+                                className: t(xe, s && Be),
+                                layer: a,
+                                sound: b.boxAppear,
+                                onLoaded: E,
+                                onVideoEnded: L,
+                                playVideo: I && (null == a ? void 0 : a.type) === d.video && s,
+                                onVideoPlay: T,
                             },
                             `${le.box}_${e}`,
                         );
                     }),
-                    !v &&
-                        N.map((e) => {
-                            const { active: o, resource: t } = $(le.hover, e);
-                            return a.jsx(
-                                h,
+                    !y &&
+                        j.map((e) => {
+                            const { active: s, resource: a } = P(le.hover, e);
+                            return o.jsx(
+                                g,
                                 {
-                                    className: n(he, _ && o && y && ye),
-                                    layer: t,
-                                    onLoaded: H,
-                                    playVideo: E && t.type === d.video && o,
+                                    className: t(ge, _ && s && h && fe),
+                                    layer: a,
+                                    onLoaded: E,
+                                    playVideo: I && (null == a ? void 0 : a.type) === d.video && s,
                                     loop: !0,
                                     shouldCleanUp: !0,
                                 },
@@ -306,311 +311,325 @@ const ke = i(function ({ onClick: e, className: o, onLoaded: t }) {
                             );
                         }),
                     O &&
-                        !v &&
-                        T.map((e) => {
-                            const { active: o, resource: t } = $(le.idle, e);
-                            return a.jsx(
-                                h,
+                        !y &&
+                        N.map((e) => {
+                            const { active: s, resource: a } = P(le.idle, e);
+                            return o.jsx(
+                                g,
                                 {
-                                    className: n(fe, _ && o && ve),
-                                    playVideo: E && t.type === d.video && o,
-                                    layer: t,
-                                    onLoaded: H,
+                                    className: t(be, _ && s && ye),
+                                    playVideo: I && (null == a ? void 0 : a.type) === d.video && s,
+                                    layer: a,
+                                    onLoaded: E,
                                     loop: !0,
                                     shouldCleanUp: !0,
                                 },
                                 `${le.idle}_${e}`,
                             );
                         }),
-                    x.isEnabled && a.jsx('div', { className: je, style: { opacity: x.opacity } }),
+                    p.isEnabled && o.jsx(ne.Vignette, { className: me, style: { opacity: p.opacity } }),
                     _ &&
-                        a.jsx(me, {
-                            className: Be,
+                        o.jsx(ne.Hover, {
+                            className: ve,
                             settings: m,
-                            wrapperSize: V,
+                            wrapperSize: S,
                             onMouseEnter: () => {
-                                (L.sound(g.boxMouseEnter), r.setIsBoxHovered(!0));
+                                (B.sound(b.boxMouseEnter), i.setIsBoxHovered(!0));
                             },
-                            onMouseLeave: P,
+                            onMouseLeave: H,
                             onClick: () => {
-                                v || (P(), L.click(), e());
+                                y || (H(), B.click(), s());
                             },
                         }),
                 ],
             })
         );
     }),
-    Ne = 'Content_795c83a5',
-    Le = 'Content_guaranteedTitle_28baf221',
-    Ie = 'Content_buttons_fd2576b4',
-    Te = 'Content_button_b94fbe94',
-    Oe = 'Content_button__withCheckboxes_306de055',
-    Ve = 'Content_toggleButton_eb4e4480',
-    Ee = 'Content_toggleButton__normal_da09528a',
-    Se = 'Content_toggleButton__notFirst_31d87338',
-    He = 'Content_toggleButton__active_22d48900',
-    Me = i(({ openClick: e, className: o }) => {
-        const { model: t, controls: i } = ue(),
-            { model: r } = B(),
-            { texts: c, images: l, sounds: d } = t.computes.resources(),
-            { dynamicTexts: u } = t.computes.dynamicResources(),
-            { accentCount: p } = t.computes.viewConfig(),
-            { boxesCount: m, boxesCountToGuaranteed: b, boxCategory: g } = t.computes.boxInfo(),
-            _ = t.openingOptions.get(),
+    Ae = { from: { opacity: 0, transform: 'translateY(-15rem)' }, delay: 100, config: { duration: 250 } },
+    je = { from: { opacity: 0, transform: 'translateY(15rem)' }, delay: 100, config: { duration: 250 } },
+    Ne = { to: { opacity: 1, transform: 'translateY(0rem)' } },
+    ke = (e) => ({ to: { opacity: 0 }, config: { duration: 0 }, onRest: e }),
+    Oe = { to: { opacity: 1 }, config: { duration: 250 } },
+    Se = 'Buttons_82277d53';
+const Ie = 'OpenPanel_18940500';
+function Ve({ children: e, className: s }) {
+    return o.jsx('div', { className: t(Ie, s), children: e });
+}
+Ve.Buttons = function ({ children: e, className: s }) {
+    return o.jsx('div', { className: t(Se, s), children: e });
+};
+const Ee = 'BoxOpenPanel_1640485f',
+    Le = 'BoxOpenPanel_guaranteedTitle_a6536b4f',
+    Te = 'BoxOpenPanel_buttons_a6536b4f',
+    He = 'BoxOpenPanel_button_68661221',
+    Pe = 'BoxOpenPanel_button__withCheckboxes_72d0aea0',
+    Me = 'BoxOpenPanel_toggleButton_1d7e74c9',
+    Ge = 'BoxOpenPanel_toggleButton__normal_1640485f',
+    $e = 'BoxOpenPanel_toggleButton__notFirst_a175f8f',
+    Re = 'BoxOpenPanel_toggleButton__active_bc254eb1',
+    qe = i(({ openClick: s, className: a }) => {
+        const { model: n, controls: i } = ue(),
+            { model: r } = Z(),
+            { texts: c, images: l, sounds: d } = n.computes.resources(),
+            { dynamicTexts: u } = n.computes.dynamicResources(),
+            { accentCount: m } = n.computes.viewConfig(),
+            { boxesCount: x, boxesCountToGuaranteed: b, boxCategory: g } = n.computes.boxInfo(),
+            _ = n.openingOptions.get(),
             h = _.length > 1,
-            y = t.computes.openBoxesCount(),
-            { eventName: f } = t.root.get(),
+            f = n.computes.openBoxesCount(),
+            { eventName: y } = n.root.get(),
             v = r.subViewIDs.get(),
-            w = C(v),
-            A = { boxesToGuaranteed: b, accent: p },
-            j = { title: c.guaranteedTitle, nextBox: c.guaranteedNextBox },
+            C = F(v),
+            w = { boxesToGuaranteed: b, accent: m },
+            A = { title: c.guaranteedTitle, nextBox: c.guaranteedNextBox },
             N = { glow: l.glowIcon, info: l.infoIcon, strongGlow: l.guaranteedGlowIcon },
-            I = () => {
-                (L.sound(d.boxMouseLeave), i.setIsBoxHovered(!1));
+            k = () => {
+                (B.sound(d.boxMouseLeave), i.setIsBoxHovered(!1));
             },
-            O = T(
+            S = O(
                 () => {
-                    w || e();
+                    C || s();
                 },
-                [w, e],
+                [C, s],
                 1100,
             );
-        V($.SPACE, O);
+        I(M.SPACE, S);
         return (
-            s.useEffect(() => {
-                y > m && i.openingOptionChange(0);
-            }, [m, i, y, g]),
-            a.jsxs('div', {
-                className: n(Ne, o),
+            e.useEffect(() => {
+                f > x && i.openingOptionChange(0);
+            }, [x, i, f, g]),
+            o.jsxs(Ve, {
+                className: t(Ee, a),
                 children: [
-                    b > 0 && a.jsx(ee, { texts: j, icons: N, counts: A, category: g, className: Le, eventName: f }),
-                    a.jsxs('div', {
-                        className: Ie,
+                    b > 0 && o.jsx(ee, { texts: A, icons: N, counts: w, category: g, className: Le, eventName: y }),
+                    o.jsxs(Ve.Buttons, {
+                        className: Te,
                         children: [
                             h &&
-                                k(_, (e, o) =>
-                                    a.jsx(
-                                        E,
+                                j(_, (e, s) =>
+                                    o.jsx(
+                                        V,
                                         {
-                                            toggleType: S.Slot,
-                                            active: e === y,
-                                            disabled: e > m,
-                                            className: n(Ve, o > 0 && Se, e === y && He, e <= m && Ee),
+                                            toggleType: E.Slot,
+                                            active: e === f,
+                                            disabled: e > x,
+                                            className: t(Me, s > 0 && $e, e === f && Re, e <= x && Ge),
                                             onClick: () =>
                                                 ((e) => {
                                                     i.openingOptionChange(e);
-                                                })(o),
-                                            children: a.jsx(H, {
+                                                })(s),
+                                            children: o.jsx(L, {
                                                 text: u.numberOfBoxesToOpen.plural('count', e),
                                                 binding: { count: e },
                                             }),
                                         },
-                                        o + e,
+                                        s + e,
                                     ),
                                 ),
-                            a.jsx(M, {
+                            o.jsx(T, {
                                 size: P.medium,
-                                type: G.main,
+                                type: H.main,
                                 onClick: () => {
-                                    w || (I(), e());
+                                    C || (k(), s());
                                 },
                                 soundHover: d.boxMouseEnter,
-                                mixClass: n(Te, h && Oe),
+                                mixClass: t(He, h && Pe),
                                 onMouseEnter: () => i.setIsBoxHovered(!0),
-                                onMouseLeave: I,
+                                onMouseLeave: k,
                                 children: c.openButtonText,
                             }),
                         ],
                     }),
-                    a.jsx(x, { text: m ? c.quantityAvailableTitle : c.quantityNoBoxesTitle, boxesCount: m }),
+                    o.jsx(p, { text: x ? c.quantityAvailableTitle : c.quantityNoBoxesTitle, boxesCount: x }),
                 ],
             })
         );
     }),
-    Ge = {
+    ze = {
         root: 'App_root_0',
-        base: 'App_43d3732f',
-        boxLayout: 'App_boxLayout_22fa7f35',
+        base: 'App_f851716e',
+        boxLayout: 'App_boxLayout_d3aa6393',
         base__prepareAnimation: 'App_base__prepareAnimation_0',
         base__openViewAnimation: 'App_base__openViewAnimation_0',
         fadeIn: 'App_fadeIn_0',
-        infoButtons: 'App_infoButtons_85e6c981',
+        panelControls: 'App_panelControls_b1f58b8d',
         base__waitAnimation: 'App_base__waitAnimation_0',
         fadeOut: 'App_fadeOut_0',
         base__backAnimation: 'App_base__backAnimation_0',
         statsButton: 'App_statsButton_403e9f7b',
         info: 'App_info_9b3576c7',
-        closeButton: 'App_closeButton_db0ba81d',
-        header: 'App_header_e482d71',
+        close: 'App_close_b1f58b8d',
+        headerAnimation: 'App_headerAnimation_c3dc2c23',
         footer: 'App_footer_2fbd33f6',
         checkbox: 'App_checkbox_194935ee',
         purchaseButton: 'App_purchaseButton_59ab22a9',
         loader: 'App_loader_9754cd35',
         fadeInWait: 'App_fadeInWait_0',
-        tabs: 'App_tabs_56765e44',
+        tabs: 'App_tabs_7a430c78',
         popover: 'App_popover_e06fed7f',
         contentWrapper: 'App_contentWrapper_3bce0eb1',
         shiftTop: 'App_shiftTop_0',
         shiftBottom: 'App_shiftBottom_0',
     },
-    Pe = { context: 'model.hasBoxes.statistics' },
-    $e = 'initial',
-    Re = 'prepare',
-    qe = 'back',
-    ze = 'wait',
-    We = 'openView';
-const Ye = i(function () {
-        var e;
-        const { model: o, controls: t } = ue(),
-            { model: i } = B(),
+    We = { context: 'model.hasBoxes.statistics' },
+    Ye = 'initial',
+    De = 'prepare',
+    Ue = 'back',
+    Qe = 'wait',
+    Xe = 'openView';
+const Ze = i(function () {
+        var s;
+        const { model: a, controls: n } = ue(),
+            { model: i } = Z(),
             {
                 isAnimationActive: l,
                 isError: d,
-                eventName: p,
-                useStats: x,
-                selectedBoxOption: _,
-                isShopVisible: h,
-            } = o.root.get(),
+                eventName: u,
+                useStats: p,
+                selectedBoxOption: g,
+                isShopVisible: _,
+            } = a.root.get(),
             C = i.overlayClosed.get(),
             w = i.computes.awardViewOpened(),
-            { texts: A, images: k, sounds: N } = o.computes.resources(),
-            { dynamicTexts: I } = o.computes.dynamicResources(),
-            O = o.boxesInfo.get(),
-            { tabsGuaranteedCount: V } = o.computes.viewConfig(),
-            E = null == (e = o.computes.boxInfo()) ? void 0 : e.boxesCount,
-            [S, H] = s.useState(!1),
-            [M, G] = s.useState(!1),
-            [P, $] = s.useState($e),
+            { texts: j, images: N, sounds: k } = a.computes.resources(),
+            { dynamicTexts: S } = a.computes.dynamicResources(),
+            I = a.boxesInfo.get(),
+            { tabsGuaranteedCount: V } = a.computes.viewConfig(),
+            E = null == (s = a.computes.boxInfo()) ? void 0 : s.boxesCount,
+            [L, T] = e.useState(!1),
+            [H, P] = e.useState(!1),
+            [M, Y] = e.useState(Ye),
             {
-                breakpoint: { weight: U },
-            } = R(),
-            Q = T(() => t.openBoxes(), [t], 1100),
-            [X, Z] = r(() => oe),
-            [F, J] = r(() => te),
+                breakpoint: { weight: D },
+            } = G(),
+            U = O(() => n.openBoxes(), [n], 1100),
+            [Q, X] = r(() => Ae),
+            [F, J] = r(() => je),
             K = () => {
-                (o.isBoxHovered.get() && L.sound(N.boxMouseLeave), M || t.close());
+                (a.isBoxHovered.get() && B.sound(k.boxMouseLeave), H || n.close());
             };
-        q(K);
+        $(K);
         const ee = () => {
-                (G(!0), t.setShowAdditionalLayers(!1), Z.start(ae()), J.start(ae()), $(ze));
+                (P(!0), n.setShowAdditionalLayers(!1), X.start(ke()), J.start(ke()), Y(Qe));
             },
-            ie = () => {
-                (Z.start(ne), J.start(ne));
+            oe = () => {
+                (X.start(Oe), J.start(Oe));
             };
         return (
-            s.useEffect(() => {
-                P === ze && z(Q, 250);
-            }, [P, Q]),
-            s.useEffect(() => {
-                d && (G(!1), $(qe), ie(), t.resetError());
+            e.useEffect(() => {
+                M === Qe && R(U, 250);
+            }, [M, U]),
+            e.useEffect(() => {
+                d && (P(!1), Y(Ue), oe(), n.resetError());
             }, [d]),
-            s.useEffect(() => {
-                C && ($(qe), ie(), t.setShowAdditionalLayers(!0));
+            e.useEffect(() => {
+                C && (Y(Ue), oe(), n.setShowAdditionalLayers(!0));
             }, [C]),
-            s.useEffect(() => {
-                w && M && G(!1);
+            e.useEffect(() => {
+                w && H && P(!1);
             }, [w]),
-            s.useEffect(() => {
-                j.isLow() && t.setAnimationState(!1);
-            }, [t]),
-            s.useEffect(() => {
-                ($(Re), G(!1));
+            e.useEffect(() => {
+                A.isLow() && n.setAnimationState(!1);
+            }, [n]),
+            e.useEffect(() => {
+                (Y(De), P(!1));
             }, []),
-            a.jsxs('div', {
-                className: n(Ge.base, Ge[`base__${P}Animation`]),
+            o.jsxs(h, {
+                className: t(ze.base, ze[`base__${M}Animation`]),
                 children: [
-                    a.jsx(ke, {
-                        onClick: ee,
-                        onLoaded: () => {
-                            ($(We), Z.start(se), J.start(se));
-                        },
-                        className: Ge.boxLayout,
-                    }),
-                    a.jsxs('div', {
-                        className: Ge.infoButtons,
+                    o.jsxs(h.PanelControls, {
+                        className: ze.panelControls,
                         children: [
-                            x &&
-                                a.jsx(y, {
-                                    onClick: () => H(!0),
-                                    className: Ge.statsButton,
-                                    label: A.statsButton,
-                                    icon: k.statsIcon,
+                            p &&
+                                o.jsx(f, {
+                                    onClick: () => T(!0),
+                                    className: ze.statsButton,
+                                    label: j.statsButton,
+                                    icon: N.statsIcon,
                                 }),
-                            a.jsx(W, {
-                                caption: A.infoButton,
+                            o.jsx(q, {
+                                caption: j.infoButton,
                                 type: 'info',
                                 side: 'left',
                                 onClick: () => {
-                                    M || t.openInfoPage();
+                                    H || n.openInfoPage();
                                 },
-                                classNames: { base: Ge.info },
+                                classNames: { base: ze.info },
                             }),
                         ],
                     }),
-                    a.jsx('div', {
-                        className: Ge.closeButton,
-                        children: a.jsx(W, { caption: A.closeButton, type: 'close', side: 'right', onClick: K }),
+                    o.jsx(h.Close, { className: ze.close, text: j.closeButton, onClick: K }),
+                    o.jsx(c.div, {
+                        style: Q,
+                        className: ze.headerAnimation,
+                        children: o.jsx(h.Heading, { text: S.boxCategory.dynOpt(g) }),
                     }),
-                    a.jsx(c.div, {
-                        style: X,
-                        className: Ge.header,
-                        children: a.jsx(u, { title: I.boxCategory.dynOpt(_) }),
-                    }),
-                    a.jsxs('div', {
-                        className: Ge.footer,
+                    o.jsxs(h.Body, {
                         children: [
-                            a.jsx(c.div, { style: F, children: a.jsx(Me, { openClick: ee }) }),
-                            M && a.jsx(m, { className: Ge.loader, text: A.loader, img: k.loader }),
+                            o.jsx(we, {
+                                onClick: ee,
+                                onLoaded: () => {
+                                    (Y(Xe), X.start(Ne), J.start(Ne));
+                                },
+                                className: ze.boxLayout,
+                            }),
+                            o.jsxs('div', {
+                                className: ze.footer,
+                                children: [
+                                    o.jsx(c.div, { style: F, children: o.jsx(qe, { openClick: ee }) }),
+                                    H && o.jsx(m, { className: ze.loader, text: j.loader, img: N.loader }),
+                                ],
+                            }),
+                            A.isHigh() &&
+                                o.jsx(x, {
+                                    isActive: l,
+                                    onClick: n.changeAnimationState,
+                                    className: ze.checkbox,
+                                    text: j.animationCheckbox,
+                                    size: D >= W.medium.weight ? z.extraLarge : z.large,
+                                }),
+                            _ &&
+                                E &&
+                                E > 0 &&
+                                o.jsx(b, {
+                                    text: j.footerPurchaseButtonText,
+                                    image: N.iconEmpty,
+                                    sounds: k,
+                                    onClick: n.buyBoxes,
+                                    className: ze.purchaseButton,
+                                }),
                         ],
                     }),
-                    j.isHigh() &&
-                        a.jsx(b, {
-                            isActive: l,
-                            onClick: t.changeAnimationState,
-                            className: Ge.checkbox,
-                            text: A.animationCheckbox,
-                            size: U >= D.medium.weight ? Y.extraLarge : Y.large,
-                        }),
-                    h &&
-                        E &&
-                        E > 0 &&
-                        a.jsx(g, {
-                            text: A.footerPurchaseButtonText,
-                            image: k.iconEmpty,
-                            sounds: N,
-                            onClick: t.buyBoxes,
-                            className: Ge.purchaseButton,
-                        }),
-                    O.length > 1 &&
-                        a.jsx('div', {
-                            className: Ge.tabs,
-                            children: a.jsx(f, {
-                                tabs: O,
+                    I.length > 1 &&
+                        o.jsx(h.Switcher, {
+                            className: ze.tabs,
+                            children: o.jsx(y, {
+                                tabs: I,
                                 changeTab: (e) => {
-                                    M ||
-                                        (e !== _ &&
-                                            (t.onBoxOptionChanged(e),
-                                            Z.start(ae(() => Z.start(ne))),
-                                            J.start(ae(() => J.start(ne)))));
+                                    H ||
+                                        (e !== g &&
+                                            (n.onBoxOptionChanged(e),
+                                            X.start(ke(() => X.start(Oe))),
+                                            J.start(ke(() => J.start(Oe)))));
                                 },
-                                active: _,
-                                texts: I.tabText,
-                                sounds: { switch: N.switch, entryHover: N.entryHover },
+                                active: g,
+                                texts: S.tabText,
+                                sounds: { switch: k.switch, entryHover: k.entryHover },
                                 icons: {
-                                    slotGlow: k.slotGlow,
-                                    numberGlow: k.guaranteedGlowIcon,
-                                    glowIcon: k.glowIcon,
-                                    guaranteedIco: k.guaranteedIco,
+                                    slotGlow: N.slotGlow,
+                                    numberGlow: N.guaranteedGlowIcon,
+                                    glowIcon: N.glowIcon,
+                                    guaranteedIco: N.guaranteedIco,
                                 },
                                 tabsGuaranteedCount: V,
-                                startAnimation: P === We,
-                                eventName: p,
+                                startAnimation: M === Xe,
+                                eventName: u,
                             }),
                         }),
-                    S && a.jsx(v, { options: Pe, onHidden: () => H(!1), isStatsEnabled: x, className: Ge.popover }),
+                    L && o.jsx(v, { options: We, onHidden: () => T(!1), isStatsEnabled: p, className: ze.popover }),
                 ],
             })
         );
     }),
-    De = () => a.jsx(de, { options: p.HAS_BOXES, children: a.jsx(Ye, {}) });
-export { De as default };
+    Fe = () => o.jsx(de, { options: u.HAS_BOXES, children: o.jsx(Ze, {}) });
+export { Fe as default };

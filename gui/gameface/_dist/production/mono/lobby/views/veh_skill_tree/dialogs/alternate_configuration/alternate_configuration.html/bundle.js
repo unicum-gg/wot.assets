@@ -1,26 +1,26 @@
-import { j as e, e as s, p as a, r as t } from '../../../../../chunks/vendor.js';
+import { j as e, e as s, n as a, r as t } from '../../../../../chunks/vendor.js';
 import {
     r as o,
-    o as i,
-    N as l,
-    a5 as r,
-    q as c,
-    v as n,
-    u as d,
+    b as i,
+    _ as l,
+    ac as r,
+    D as c,
+    G as n,
+    d,
     s as m,
     B as p,
     t as v,
-    V as h,
-    a6 as _,
+    o as h,
+    ad as _,
     i as u,
     m as f,
-    e as g,
-    a as N,
-    k as j,
-    f as x,
-    a4 as y,
-    a7 as C,
-    b,
+    q as g,
+    h as j,
+    k as x,
+    w as N,
+    ab as y,
+    j as C,
+    l as b,
     U as k,
 } from '../../../../../chunks/lib.js';
 const E = {
@@ -71,7 +71,7 @@ const S = 'Footer_info_b48c491b',
     T = 'Footer_separator_3f705b18',
     A = 'Footer_button_197c4535',
     O = n('AlternateConfigurationFooter', 'Footer_fb231f23');
-function M({ onClose: s, ...a }) {
+function D({ onClose: s, ...a }) {
     const t = o.resolve('strings'),
         i = d({ size: m.small }, { medium: { size: m.medium } });
     return e.jsxs(O, {
@@ -89,38 +89,38 @@ function M({ onClose: s, ...a }) {
         ],
     });
 }
-const z = {
+const M = {
     vehicle: 'Header_vehicle_2fc02200',
     vehicleTier: 'Header_vehicleTier_135eaea3',
     vehicleName: 'Header_vehicleName_135eaea3',
     title: 'Header_title_1c6e5cde',
     description: 'Header_description_edbe210e',
 };
-function D({ level: s, type: a, name: t, premium: i }) {
+function w({ level: s, type: a, name: t, premium: i }) {
     const l = o.resolve('strings');
     return e.jsxs('div', {
-        className: z.base,
+        className: M.base,
         children: [
             e.jsxs(h, {
-                className: z.vehicle,
+                className: M.vehicle,
                 children: [
-                    e.jsx(h.Level, { className: z.vehicleTier, value: s }),
+                    e.jsx(h.Level, { className: M.vehicleTier, value: s }),
                     a && e.jsx(h.Type, { type: a, size: _.x64x64, premium: i }),
-                    e.jsx(h.Name, { children: e.jsx('div', { className: z.vehicleName, children: t }) }),
+                    e.jsx(h.Name, { children: e.jsx('div', { className: M.vehicleName, children: t }) }),
                 ],
             }),
             e.jsx('div', {
-                className: z.title,
+                className: M.title,
                 children: l.readOrEmpty('veh_skill_tree.dialog.altConfiguration.title'),
             }),
             e.jsx('div', {
-                className: z.description,
+                className: M.description,
                 children: l.readOrEmpty('veh_skill_tree.dialog.altConfiguration.description'),
             }),
         ],
     });
 }
-const [F, H] = u()(
+const [z, F] = u()(
         ({ observableModel: e }) => {
             const s = {
                     vehicleInfo: e.transform(
@@ -143,23 +143,23 @@ const [F, H] = u()(
             affirmate: e.createCallback((e) => ({ loadoutStates: JSON.stringify(e) }), 'onAffirmate'),
         }),
     ),
-    w = 'App_170f5fe6',
+    H = 'App_170f5fe6',
     L = 'App_cards_2833612d',
     $ = 'App_footer_d8aec517',
-    V = a(function () {
-        const { model: s, controls: a } = H();
-        (N(j.ESCAPE, a.close), N(j.ENTER, () => a.affirmate(c)));
+    q = a(function () {
+        const { model: s, controls: a } = F();
+        (j(x.ESCAPE, a.close), j(x.ENTER, () => a.affirmate(c)));
         const o = s.vehicleInfo.get(),
             i = s.loadouts.get(),
             l = s.nodeID.get(),
             r = s.computeds.loadoutStates(),
             [c, n] = t.useState(r);
-        x.log(y(o.type), `Incorrect vehicle type: ${o.type}`);
+        N.log(y(o.type), `Incorrect vehicle type: ${o.type}`);
         const d = y(o.type) ? o.type : void 0;
         return e.jsxs('div', {
-            className: w,
+            className: H,
             children: [
-                e.jsx(D, { ...o, type: d }),
+                e.jsx(w, { ...o, type: d }),
                 e.jsx('div', {
                     className: L,
                     children: i.map(({ type: s, iconName: a }, t) =>
@@ -178,9 +178,9 @@ const [F, H] = u()(
                         ),
                     ),
                 }),
-                e.jsx(M, { className: $, onClose: () => a.affirmate(c) }),
+                e.jsx(D, { className: $, onClose: () => a.affirmate(c) }),
             ],
         });
     }),
-    q = C({ click: { select: 'yes1', deselect: 'yes' } });
-b(e.jsx(k, { soundsOverrides: q, children: e.jsx(F, { children: e.jsx(V, {}) }) }));
+    B = C({ click: { select: 'yes1', deselect: 'yes' } });
+b(e.jsx(k, { soundsOverrides: B, children: e.jsx(z, { children: e.jsx(q, {}) }) }));

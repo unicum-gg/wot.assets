@@ -17,7 +17,7 @@
                         setRTPC: () => D,
                     }));
                 var r = {};
-                (t.r(r), t.d(r, { getBgUrl: () => S, getTextureUrl: () => T }));
+                (t.r(r), t.d(r, { getBgUrl: () => P, getTextureUrl: () => T }));
                 var i = {};
                 function o(u) {
                     return (e) => (
@@ -36,7 +36,7 @@
                         addPreloadTexture: () => U,
                         arabic2roman: () => au,
                         children: () => r,
-                        displayStatus: () => P,
+                        displayStatus: () => S,
                         displayStatusIs: () => iu,
                         enableFullScreenModeSupported: () => Eu,
                         events: () => y,
@@ -171,10 +171,10 @@
                 function T(u, e, t = 1) {
                     return viewEnv.getChildTexturePath(u, e.width, e.height, t);
                 }
-                function S(u, e, t) {
+                function P(u, e, t) {
                     return `url(${T(u, e, t)})`;
                 }
-                const P = { showing: 0, shown: 1, hiding: 2, hidden: 3 },
+                const S = { showing: 0, shown: 1, hiding: 2, hidden: 3 },
                     y = {
                         onTextureFrozen: o('self.onTextureFrozen'),
                         onTextureReady: o('self.onTextureReady'),
@@ -306,7 +306,7 @@
                 function ru() {
                     return viewEnv.getExternalPaddingsRem();
                 }
-                const iu = Object.keys(P).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === P[e]), u), {}),
+                const iu = Object.keys(S).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === S[e]), u), {}),
                     ou = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
@@ -1186,7 +1186,7 @@
                 };
                 t(281);
                 let T;
-                function S(u, e) {
+                function P(u, e) {
                     return u.replace(/\{\w+\}/g, (u) => String(e[u.slice(1, -1)]));
                 }
                 !(function (u) {
@@ -1205,7 +1205,7 @@
                         'gum',
                     );
                 })();
-                var P = t(916),
+                var S = t(916),
                     y = t(613);
                 (Date.now(), y.Ew.getRegionalDateTime, y.Ew.getFormattedDateTime);
                 const O = (u = 1) => {
@@ -1259,7 +1259,7 @@
                         return '';
                     };
                 const U = () => (window.injected || (window.injected = new Map()), window.injected);
-                const G = P.Sw.instance;
+                const G = S.Sw.instance;
                 let H;
                 !(function (u) {
                     ((u.None = 'None'), (u.Shallow = 'Shallow'), (u.Deep = 'Deep'));
@@ -1316,7 +1316,7 @@
                         c
                     );
                 };
-                P.Sw.instance;
+                S.Sw.instance;
                 var W = t(521);
                 const q = (u) => {
                     console.error(u.type + ': useKeydownListener hook :: Callback is not defined');
@@ -1340,7 +1340,7 @@
                 }
                 function z() {
                     !(function (u = W.n.ESCAPE) {
-                        Y(u, P.Sy, !0);
+                        Y(u, S.Sy, !0);
                     })(W.n.ESCAPE);
                 }
                 function V(u, e, t) {
@@ -1417,10 +1417,7 @@
                         (u.EquipCoin = 'equipCoin'),
                         (u.LootBox = 'lootBox'),
                         (u.BrCoin = 'brcoin'),
-                        (u.Attachment = 'attachment'),
-                        (u.Stamp = 'stamp'),
-                        (u.WtEventLootbox = 'wtevent_lootBox'),
-                        (u.WtEventTicket = 'wtevent_ticket'));
+                        (u.Attachment = 'attachment'));
                 })(j || (j = {})),
                     (function (u) {
                         ((u.Gold = 'gold'),
@@ -1532,9 +1529,9 @@
                 j.Attachment;
                 const tu = ({ value: u, format: e = 'integral' }) => {
                         const t = (function (u) {
-                                return 'gold' === u ? P.B3.GOLD : P.B3.INTEGRAL;
+                                return 'gold' === u ? S.B3.GOLD : S.B3.INTEGRAL;
                             })(e),
-                            n = P.Z5.getNumberFormat(u, t);
+                            n = S.Z5.getNumberFormat(u, t);
                         return void 0 !== u && void 0 !== n ? n : null;
                     },
                     nu = [
@@ -1575,9 +1572,6 @@
                         j.BattleBoosterGift,
                         j.OptionalDevice,
                         j.Attachment,
-                        j.Stamp,
-                        j.WtEventLootbox,
-                        j.WtEventTicket,
                     ],
                     au = [j.Gold, j.Credits, j.Crystal, j.FreeXp],
                     ru = [j.BattlePassPoints, j.EquipCoin],
@@ -1723,7 +1717,7 @@
                             Object.assign(
                                 {
                                     __Type: 'GFViewEventProxy',
-                                    type: P.B0.TOOLTIP,
+                                    type: S.B0.TOOLTIP,
                                     contentID: u,
                                     decoratorID: e,
                                     targetID: n,
@@ -2078,7 +2072,7 @@
                         const u = $('model'),
                             e = u.battlesNumber,
                             t = u.rewards.items.map(({ value: u }) => u),
-                            n = S(vu.subTitle(), { number: e }),
+                            n = P(vu.subTitle(), { number: e }),
                             r = e >= 50,
                             i = V(['base'], hu),
                             o = B()(hu.light, r && hu.light__gold),
@@ -2106,7 +2100,7 @@
                                         caption: R.strings.menu.viewHeader.closeBtn.label(),
                                         type: 'close',
                                         side: 'right',
-                                        onClick: P.Sy,
+                                        onClick: S.Sy,
                                     }),
                                 ),
                                 a().createElement(pu, { rewards: t }),
@@ -2115,7 +2109,7 @@
                                     { className: hu.footer },
                                     a().createElement(
                                         h,
-                                        { onClick: P.Sy, size: p.medium, type: g.primary, mixClass: hu.button },
+                                        { onClick: S.Sy, size: p.medium, type: g.primary, mixClass: hu.button },
                                         vu.button(),
                                     ),
                                 ),

@@ -17,7 +17,7 @@
                         setRTPC: () => m,
                     }));
                 var n = {};
-                (t.r(n), t.d(n, { getBgUrl: () => T, getTextureUrl: () => O }));
+                (t.r(n), t.d(n, { getBgUrl: () => O, getTextureUrl: () => T }));
                 var a = {};
                 function o(u) {
                     return (e) => (
@@ -42,20 +42,20 @@
                         events: () => S,
                         extraSize: () => tu,
                         forceTriggerMouseMove: () => Z,
-                        freezeTextureBeforeResize: () => W,
+                        freezeTextureBeforeResize: () => G,
                         getBrowserTexturePath: () => M,
                         getDisplayStatus: () => X,
                         getExternalPaddingsRem: () => uu,
                         getFontNames: () => Q,
-                        getScale: () => G,
-                        getSize: () => V,
+                        getScale: () => W,
+                        getSize: () => H,
                         getViewGlobalPosition: () => U,
                         initExternalPaddings: () => nu,
                         isEventHandled: () => Y,
                         isFocused: () => z,
                         pxToRem: () => j,
                         remToPx: () => $,
-                        resize: () => H,
+                        resize: () => V,
                         sendEvent: () => N,
                         setAnimateWindow: () => K,
                         setEventHandled: () => q,
@@ -162,11 +162,11 @@
                     v = { play: Object.assign({}, h, { sound: c }), setRTPC: m },
                     p = ['I', 'IV', 'V', 'IX', 'X', 'XL', 'L', 'XC', 'C', 'CD', 'D', 'CM', 'M'],
                     w = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
-                function O(u, e, t = 1) {
+                function T(u, e, t = 1) {
                     return viewEnv.getChildTexturePath(u, e.width, e.height, t);
                 }
-                function T(u, e, t) {
-                    return `url(${O(u, e, t)})`;
+                function O(u, e, t) {
+                    return `url(${T(u, e, t)})`;
                 }
                 ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());
                 const b = { showing: 0, shown: 1, hiding: 2, hidden: 3 },
@@ -249,20 +249,20 @@
                 function k(u) {
                     viewEnv.setHitAreaPaddingsRem(u.top, u.right, u.bottom, u.left, 15);
                 }
-                function V(u = 'px') {
+                function H(u = 'px') {
                     return 'rem' === u ? viewEnv.getViewSizeRem() : viewEnv.getViewSizePx();
                 }
-                function H(u, e, t = 'px') {
+                function V(u, e, t = 'px') {
                     return 'rem' === t ? viewEnv.resizeViewRem(u, e) : viewEnv.resizeViewPx(u, e);
                 }
                 function U(u = 'rem') {
                     const e = viewEnv.getViewGlobalPositionRem();
                     return 'rem' === u ? e : { x: $(e.x), y: $(e.y) };
                 }
-                function W() {
+                function G() {
                     viewEnv.freezeTextureBeforeResize();
                 }
-                function G() {
+                function W() {
                     return viewEnv.getScale();
                 }
                 function j(u) {
@@ -960,7 +960,7 @@
                                             (window.cancelAnimationFrame(u.current),
                                                 (u.current = window.requestAnimationFrame(() => {
                                                     u.current = window.requestAnimationFrame(() => {
-                                                        (e(), (u.current = 0));
+                                                        ((u.current = 0), e());
                                                     });
                                                 })));
                                         },
@@ -1028,9 +1028,9 @@
                     'gum',
                 );
                 var w = t(976),
-                    O = t(613);
-                (Date.now(), O.Ew.getRegionalDateTime, O.Ew.getFormattedDateTime);
-                const T = (u = 1) => {
+                    T = t(613);
+                (Date.now(), T.Ew.getRegionalDateTime, T.Ew.getFormattedDateTime);
+                const O = (u = 1) => {
                         const e = new Error().stack;
                         let t,
                             r = R.invalid('resId'),
@@ -1058,7 +1058,7 @@
                 const I = (u = 'model', e = N.Deep) => {
                     const t = (0, r.useState)(0),
                         i = (t[0], t[1]),
-                        n = (0, r.useMemo)(() => T(), []),
+                        n = (0, r.useMemo)(() => O(), []),
                         a = n.callerUrl,
                         o = n.caller,
                         s = n.resId,
@@ -1106,7 +1106,7 @@
                                     },
                                     r = ((u) => {
                                         const e = ((u) => {
-                                                const e = T(),
+                                                const e = O(),
                                                     t = e.caller,
                                                     r = e.resId,
                                                     i =
@@ -1195,7 +1195,14 @@
                             (u.EQUIPMENT_COOLDOWN = 'equipmentCooldown'),
                             (u.INVISIBILITY_FACTOR_AT_SHOT = 'invisibilityFactorAtShot'),
                             (u.VEHICLE_AOI_RADIUS = 'vehicleAoIRadius'),
-                            (u.DEVICE_DAMAGE_FIRST = 'deviceDamageFirst'));
+                            (u.DEVICE_DAMAGE_FIRST = 'deviceDamageFirst'),
+                            (u.AMMO_BAY_HEALTH = 'ammoBayHealth'),
+                            (u.ENGINE_HEALTH = 'engineHealth'),
+                            (u.FUEL_TANK_HEALTH = 'fuelTankHealth'),
+                            (u.TURRET_ROTATOR_HEALTH = 'turretRotatorHealth'),
+                            (u.SURVEYING_DEVICE_HEALTH = 'surveyingDeviceHealth'),
+                            (u.CHASSIS_HEALTH = 'chassisHealth'),
+                            (u.GUN_HEALTH = 'gunHealth'));
                     })(L || (L = {})),
                     (function (u) {
                         ((u.UNDEFINED = 'undefined'),
@@ -1222,21 +1229,21 @@
                     (function (u) {
                         ((u.UNDEFINED = 'undefined'), (u.POSITIVE = 'positive'), (u.NEGATIVE = 'negative'));
                     })(k || (k = {})));
-                class V {}
-                ((V.useType = {
+                class H {}
+                ((H.useType = {
                     oneOf:
                         (...u) =>
                         (e) =>
                             u.some((u) => e.useType === u),
                 }),
-                    (V.modificationType = {
+                    (H.modificationType = {
                         oneOf:
                             (...u) =>
                             (e) =>
                                 u.some((u) => e.modificationType === u),
                     }),
-                    (V.value = { isPositiveInteger: (u) => u.value >= 1 && Number.isInteger(u.value) }));
-                const H =
+                    (H.value = { isPositiveInteger: (u) => u.value >= 1 && Number.isInteger(u.value) }));
+                const V =
                     (...u) =>
                     (e) =>
                         0 !== u.length && u.every((u) => u(e));
@@ -1247,70 +1254,70 @@
                     (U.radiansPerSecondToDegreesPerSecond = (u) => u * (180 / Math.PI)),
                     (U.probabilityToPercent = (u) => 100 * u),
                     (U.default = (u) => u));
-                class W {}
-                ((W.percent = (u, e, t) => {
-                    const r = W.default(u, e, t);
+                class G {}
+                ((G.percent = (u, e, t) => {
+                    const r = G.default(u, e, t);
                     return p(v(R.strings.modifier_formatter.modifier.format.percentage(), { value: r }));
                 }),
-                    (W.multiplier = (u, e, t) => {
-                        const r = W.default(u, e, t);
+                    (G.multiplier = (u, e, t) => {
+                        const r = G.default(u, e, t);
                         return p(v(R.strings.modifier_formatter.modifier.format.multiplier(), { value: r }));
                     }),
-                    (W.hitpoints = (u, e, t) => {
-                        const r = W.default(u, e, t);
+                    (G.hitpoints = (u, e, t) => {
+                        const r = G.default(u, e, t);
                         return p(v(R.strings.modifier_formatter.modifier.format.hitpoints(), { value: r }));
                     }),
-                    (W.seconds = (u, e, t) => {
-                        const r = W.default(u, e, t);
+                    (G.seconds = (u, e, t) => {
+                        const r = G.default(u, e, t);
                         return p(v(R.strings.modifier_formatter.modifier.format.seconds(), { value: r }));
                     }),
-                    (W.minutes = (u, e, t) => {
-                        const r = W.default(u, e, t);
+                    (G.minutes = (u, e, t) => {
+                        const r = G.default(u, e, t);
                         return p(v(R.strings.modifier_formatter.modifier.format.minutes(), { value: r }));
                     }),
-                    (W.deviation = (u, e, t) => {
-                        const r = W.default(u, e, t);
+                    (G.deviation = (u, e, t) => {
+                        const r = G.default(u, e, t);
                         return p(v(R.strings.modifier_formatter.modifier.format.deviation(), { value: r }));
                     }),
-                    (W.millimeters = (u, e, t) => {
-                        const r = W.default(u, e, t);
+                    (G.millimeters = (u, e, t) => {
+                        const r = G.default(u, e, t);
                         return p(v(R.strings.modifier_formatter.modifier.format.millimeters(), { value: r }));
                     }),
-                    (W.degree = (u, e, t) => {
-                        const r = W.default(u, e, t);
+                    (G.degree = (u, e, t) => {
+                        const r = G.default(u, e, t);
                         return p(v(R.strings.modifier_formatter.modifier.format.degrees(), { value: r }));
                     }),
-                    (W.meters = (u, e, t) => {
-                        const r = W.default(u, e, t);
+                    (G.meters = (u, e, t) => {
+                        const r = G.default(u, e, t);
                         return p(v(R.strings.modifier_formatter.modifier.format.meters(), { value: r }));
                     }),
-                    (W.kmPerHour = (u, e, t) => {
-                        const r = W.default(u, e, t);
+                    (G.kmPerHour = (u, e, t) => {
+                        const r = G.default(u, e, t);
                         return p(v(R.strings.modifier_formatter.modifier.format.km_per_hour(), { value: r }));
                     }),
-                    (W.metersPerSecond = (u, e, t) => {
-                        const r = W.default(u, e, t);
+                    (G.metersPerSecond = (u, e, t) => {
+                        const r = G.default(u, e, t);
                         return p(v(R.strings.modifier_formatter.modifier.format.meters_per_second(), { value: r }));
                     }),
-                    (W.degreesPerSecond = (u, e, t) => {
-                        const r = W.default(u, e, t);
+                    (G.degreesPerSecond = (u, e, t) => {
+                        const r = G.default(u, e, t);
                         return p(v(R.strings.modifier_formatter.modifier.format.degrees_per_second(), { value: r }));
                     }),
-                    (W.meterPerSecondSquared = (u, e, t) => {
-                        const r = W.default(u, e, t);
+                    (G.meterPerSecondSquared = (u, e, t) => {
+                        const r = G.default(u, e, t);
                         return p(
                             v(R.strings.modifier_formatter.modifier.format.meter_per_second_squared(), { value: r }),
                         );
                     }),
-                    (W.horsepower = (u, e, t) => {
-                        const r = W.default(u, e, t);
+                    (G.horsepower = (u, e, t) => {
+                        const r = G.default(u, e, t);
                         return p(v(R.strings.modifier_formatter.modifier.format.horsepower(), { value: r }));
                     }),
-                    (W.logic = (u) =>
+                    (G.logic = (u) =>
                         u
                             ? R.strings.modifier_formatter.modifier.format.logic.on()
                             : p(R.strings.modifier_formatter.modifier.format.logic.off())),
-                    (W.time = (u, e, t) => {
+                    (G.time = (u, e, t) => {
                         const r = u >= 0 ? t : '-',
                             i = ((u, e = !0) =>
                                 u.days > 7 && e
@@ -1337,7 +1344,7 @@
                             );
                         return p(`${r}${i}`);
                     }),
-                    (W.default = (u, e, t) => {
+                    (G.default = (u, e, t) => {
                         const r = u >= 0 ? t : '',
                             i = ((u, e) => {
                                 const t = Math.pow(10, e);
@@ -1345,135 +1352,135 @@
                             })(u, e);
                         return `${r}${w.Z5.getRealFormat(i, w.Gr.WO_ZERO_DIGITS)}`;
                     }));
-                const G = {
+                const W = {
                     generalOverrides: [
                         {
-                            condition: V.useType.oneOf(x.MUL),
+                            condition: H.useType.oneOf(x.MUL),
                             valueConverter: U.multiplierToPercent,
                             numberOfDecimals: 0,
-                            formatter: W.percent,
+                            formatter: G.percent,
                         },
                         {
-                            condition: H(V.useType.oneOf(x.MUL), V.value.isPositiveInteger),
+                            condition: V(H.useType.oneOf(x.MUL), H.value.isPositiveInteger),
                             valueConverter: U.default,
                             numberOfDecimals: 0,
                             prefixForPositiveValue: '',
-                            formatter: W.multiplier,
+                            formatter: G.multiplier,
                         },
-                        { condition: V.useType.oneOf(x.VAL), prefixForPositiveValue: '' },
+                        { condition: H.useType.oneOf(x.VAL), prefixForPositiveValue: '' },
                     ],
                     defaultPrefixForPositiveValue: '+',
                     physTypes: {
-                        [M.UNDEFINED]: { overrides: [], defaultNumberOfDecimals: 2, defaultFormatter: W.default },
+                        [M.UNDEFINED]: { overrides: [], defaultNumberOfDecimals: 2, defaultFormatter: G.default },
                         [M.RADIANS]: {
                             overrides: [
-                                { condition: V.useType.oneOf(x.ADD, x.VAL), valueConverter: U.radiansToDegrees },
+                                { condition: H.useType.oneOf(x.ADD, x.VAL), valueConverter: U.radiansToDegrees },
                             ],
                             defaultNumberOfDecimals: 0,
-                            defaultFormatter: W.degree,
+                            defaultFormatter: G.degree,
                         },
-                        [M.DEGREES]: { overrides: [], defaultNumberOfDecimals: 0, defaultFormatter: W.degree },
-                        [M.HIT_POINTS]: { overrides: [], defaultNumberOfDecimals: 0, defaultFormatter: W.hitpoints },
+                        [M.DEGREES]: { overrides: [], defaultNumberOfDecimals: 0, defaultFormatter: G.degree },
+                        [M.HIT_POINTS]: { overrides: [], defaultNumberOfDecimals: 0, defaultFormatter: G.hitpoints },
                         [M.METERS_PER_SECOND]: {
                             overrides: [
                                 {
-                                    condition: H(
-                                        V.modificationType.oneOf(L.FW_MAX_SPEED, L.BK_MAX_SPEED),
-                                        V.useType.oneOf(x.VAL, x.ADD),
+                                    condition: V(
+                                        H.modificationType.oneOf(L.FW_MAX_SPEED, L.BK_MAX_SPEED),
+                                        H.useType.oneOf(x.VAL, x.ADD),
                                     ),
                                     valueConverter: U.metPerSecondToKmPerHour,
-                                    formatter: W.kmPerHour,
+                                    formatter: G.kmPerHour,
                                 },
                             ],
                             defaultNumberOfDecimals: 0,
-                            defaultFormatter: W.metersPerSecond,
+                            defaultFormatter: G.metersPerSecond,
                         },
                         [M.KILOMETERS_PER_HOUR]: {
                             overrides: [],
                             defaultNumberOfDecimals: 0,
-                            defaultFormatter: W.kmPerHour,
+                            defaultFormatter: G.kmPerHour,
                         },
-                        [M.MILLIMETERS]: { overrides: [], defaultNumberOfDecimals: 0, defaultFormatter: W.millimeters },
+                        [M.MILLIMETERS]: { overrides: [], defaultNumberOfDecimals: 0, defaultFormatter: G.millimeters },
                         [M.SECONDS]: {
                             overrides: [
                                 {
-                                    condition: H(
-                                        V.modificationType.oneOf(L.BATTLE_LENGTH),
-                                        V.useType.oneOf(x.VAL, x.ADD),
+                                    condition: V(
+                                        H.modificationType.oneOf(L.BATTLE_LENGTH),
+                                        H.useType.oneOf(x.VAL, x.ADD),
                                     ),
-                                    formatter: W.time,
+                                    formatter: G.time,
                                 },
                             ],
                             defaultNumberOfDecimals: 2,
-                            defaultFormatter: W.seconds,
+                            defaultFormatter: G.seconds,
                         },
-                        [M.MINUTES]: { overrides: [], defaultNumberOfDecimals: 0, defaultFormatter: W.minutes },
+                        [M.MINUTES]: { overrides: [], defaultNumberOfDecimals: 0, defaultFormatter: G.minutes },
                         [M.METERS]: {
                             overrides: [
                                 {
-                                    condition: H(
-                                        V.modificationType.oneOf(L.VISION_MIN_RADIUS),
-                                        V.useType.oneOf(x.VAL, x.ADD),
+                                    condition: V(
+                                        H.modificationType.oneOf(L.VISION_MIN_RADIUS),
+                                        H.useType.oneOf(x.VAL, x.ADD),
                                     ),
                                     numberOfDecimals: 0,
                                 },
                             ],
                             defaultNumberOfDecimals: 2,
-                            defaultFormatter: W.meters,
+                            defaultFormatter: G.meters,
                         },
                         [M.RADIANS_PER_SECOND]: {
                             overrides: [
                                 {
-                                    condition: V.useType.oneOf(x.VAL, x.ADD),
+                                    condition: H.useType.oneOf(x.VAL, x.ADD),
                                     valueConverter: U.radiansPerSecondToDegreesPerSecond,
-                                    formatter: W.degreesPerSecond,
+                                    formatter: G.degreesPerSecond,
                                 },
                             ],
                             defaultNumberOfDecimals: 0,
-                            defaultFormatter: W.degreesPerSecond,
+                            defaultFormatter: G.degreesPerSecond,
                         },
                         [M.DEGREES_PER_SECOND]: {
                             overrides: [],
                             defaultNumberOfDecimals: 0,
-                            defaultFormatter: W.degreesPerSecond,
+                            defaultFormatter: G.degreesPerSecond,
                         },
                         [M.METER_PER_SECOND_SQUARED]: {
                             overrides: [],
                             defaultNumberOfDecimals: 2,
-                            defaultFormatter: W.meterPerSecondSquared,
+                            defaultFormatter: G.meterPerSecondSquared,
                         },
                         [M.PROBABILITY]: {
                             overrides: [
                                 {
-                                    condition: V.useType.oneOf(x.VAL, x.ADD),
+                                    condition: H.useType.oneOf(x.VAL, x.ADD),
                                     valueConverter: U.probabilityToPercent,
-                                    formatter: W.percent,
+                                    formatter: G.percent,
                                 },
                             ],
                             defaultNumberOfDecimals: 0,
-                            defaultFormatter: W.percent,
+                            defaultFormatter: G.percent,
                         },
                         [M.DEVIATION]: {
                             overrides: [
                                 {
-                                    condition: V.useType.oneOf(x.VAL),
+                                    condition: H.useType.oneOf(x.VAL),
                                     valueConverter: U.probabilityToPercent,
                                     numberOfDecimals: 0,
                                     prefixForPositiveValue: '',
-                                    formatter: W.deviation,
+                                    formatter: G.deviation,
                                 },
                                 {
-                                    condition: V.useType.oneOf(x.ADD),
+                                    condition: H.useType.oneOf(x.ADD),
                                     valueConverter: U.probabilityToPercent,
                                     numberOfDecimals: 0,
-                                    formatter: W.percent,
+                                    formatter: G.percent,
                                 },
                             ],
                             defaultNumberOfDecimals: 2,
-                            defaultFormatter: W.default,
+                            defaultFormatter: G.default,
                         },
-                        [M.HORSEPOWER]: { overrides: [], defaultNumberOfDecimals: 0, defaultFormatter: W.horsepower },
-                        [M.LOGIC]: { overrides: [], defaultNumberOfDecimals: 0, defaultFormatter: W.logic },
+                        [M.HORSEPOWER]: { overrides: [], defaultNumberOfDecimals: 0, defaultFormatter: G.horsepower },
+                        [M.LOGIC]: { overrides: [], defaultNumberOfDecimals: 0, defaultFormatter: G.logic },
                     },
                 };
                 function j(u, e) {
@@ -1519,19 +1526,19 @@
                             return this.formatModifier(t);
                         }),
                             (this.formatModifier = (u) => {
-                                let e = G.physTypes[u.physicalType];
+                                let e = W.physTypes[u.physicalType];
                                 if (
                                     (void 0 === e &&
                                         (console.warn('Not found formatter for physicalType', u.physicalType),
-                                        (e = G.physTypes[M.UNDEFINED])),
+                                        (e = W.physTypes[M.UNDEFINED])),
                                     void 0 === e)
                                 )
                                     throw Error(`Not found formatter for physicalType=${u.physicalType.toString()}`);
                                 let t = e.defaultFormatter,
                                     r = U.default,
                                     i = e.defaultNumberOfDecimals,
-                                    n = G.defaultPrefixForPositiveValue;
-                                for (var a = 0, o = [G.generalOverrides, e.overrides]; a < o.length; a++)
+                                    n = W.defaultPrefixForPositiveValue;
+                                for (var a = 0, o = [W.generalOverrides, e.overrides]; a < o.length; a++)
                                     for (var s, E = j(o[a]); !(s = E()).done; ) {
                                         const e = s.value;
                                         var A, l;

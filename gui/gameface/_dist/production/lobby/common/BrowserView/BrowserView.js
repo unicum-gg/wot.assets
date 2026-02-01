@@ -195,7 +195,7 @@
                         displayStatusIs: () => x,
                         enableFullScreenModeSupported: () => R,
                         events: () => i.U,
-                        extraSize: () => P,
+                        extraSize: () => N,
                         forceTriggerMouseMove: () => C,
                         freezeTextureBeforeResize: () => f,
                         getBrowserTexturePath: () => u,
@@ -216,7 +216,7 @@
                         setEventHandled: () => y,
                         setInputPaddingsRem: () => l,
                         setSidePaddingsRem: () => _,
-                        whenTutorialReady: () => N,
+                        whenTutorialReady: () => P,
                     }));
                 var o = n(9690),
                     r = n(3722),
@@ -290,7 +290,7 @@
                         (e, t) => ((e[t] = () => viewEnv.getShowingStatus() === a.W[t]), e),
                         {},
                     ),
-                    P = {
+                    N = {
                         set: (e, t) => {
                             viewEnv.setExtraSizeRem(e, t);
                         },
@@ -298,7 +298,7 @@
                             viewEnv.getExtraSizeRem(e, t);
                         },
                     },
-                    N = Promise.all([
+                    P = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : i.U.onDomBuilt(e);
                         }),
@@ -1100,7 +1100,7 @@
                                     (window.cancelAnimationFrame(e.current),
                                         (e.current = window.requestAnimationFrame(() => {
                                             e.current = window.requestAnimationFrame(() => {
-                                                (t(), (e.current = 0));
+                                                ((e.current = 0), t());
                                             });
                                         })));
                                 },
@@ -1115,8 +1115,8 @@
                         )
                     );
                 }
-                const P = 'BrowserView_base_6b',
-                    N = 'BrowserView_texture_17';
+                const N = 'BrowserView_base_6b',
+                    P = 'BrowserView_texture_17';
                 function S(e) {
                     engine.call('PlaySound', e).catch((t) => {
                         console.error('[lib/sounds.js] playSound(', e, '): ', t);
@@ -1270,15 +1270,15 @@
                         ),
                     V = 'Spinner_base_87',
                     H = 'Spinner_caption_cf',
-                    G = 'Spinner_gear_c4',
-                    q = 'Spinner_logo_bf',
+                    q = 'Spinner_gear_c4',
+                    G = 'Spinner_logo_bf',
                     K = ({ message: e, className: t, classNames: n }) =>
                         r().createElement(
                             'div',
                             { className: T()(V, t) },
                             e && r().createElement('div', { className: T()(H, null == n ? void 0 : n.caption) }, e),
-                            r().createElement('div', { className: T()(G, null == n ? void 0 : n.gear) }),
-                            r().createElement('div', { className: T()(q, null == n ? void 0 : n.logo) }),
+                            r().createElement('div', { className: T()(q, null == n ? void 0 : n.gear) }),
+                            r().createElement('div', { className: T()(G, null == n ? void 0 : n.logo) }),
                         ),
                     Y = 'Waiting_base_c5',
                     $ = 'Waiting_blackOverlay_55',
@@ -1453,14 +1453,14 @@
                             E = le(e);
                         return r().createElement(
                             'div',
-                            { className: T()(P, n), onMouseEnter: i, onMouseLeave: s },
+                            { className: T()(N, n), onMouseEnter: i, onMouseLeave: s },
                             E &&
                                 r().createElement('div', {
                                     onWheel: c,
                                     onMouseMove: l,
                                     onMouseDown: u,
                                     onMouseUp: d,
-                                    className: T()(P, N, o),
+                                    className: T()(N, P, o),
                                     'data-browser-id': t,
                                     'data-browser-scroll-speed': b,
                                     style: { backgroundImage: `url(${E})` },
@@ -1556,7 +1556,7 @@
                         o = t[1];
                     return r().createElement(
                         'div',
-                        { ref: n, className: P },
+                        { ref: n, className: N },
                         r().createElement(
                             ue,
                             ge(
@@ -1607,15 +1607,15 @@
                             L = O.waitingMessage,
                             T = E.getState(),
                             x = l || T === w.Loaded;
-                        var P;
-                        ((P = () => {
+                        var N;
+                        ((N = () => {
                             s && h(C) && y.createWebView();
                         }),
-                            (0, o.useEffect)(P, []),
+                            (0, o.useEffect)(N, []),
                             (0, o.useEffect)(() => {
                                 p(C) && y.focus();
                             }, [C, y]));
-                        const N = (0, o.useMemo)(() => {
+                        const P = (0, o.useMemo)(() => {
                             const e = {
                                 onMouseEnter: d,
                                 onMouseLeave: _,
@@ -1651,7 +1651,7 @@
                         return e.isFullSize
                             ? r().createElement(
                                   fe,
-                                  be({}, N, {
+                                  be({}, P, {
                                       id: C,
                                       className: n,
                                       waitingClassName: a,
@@ -1665,7 +1665,7 @@
                               )
                             : r().createElement(
                                   ue,
-                                  be({}, N, R, {
+                                  be({}, P, R, {
                                       id: C,
                                       className: n,
                                       waitingClassName: a,
@@ -1840,7 +1840,7 @@
                     },
                     Te = 'Closable_base_e2',
                     xe = 'Closable_button_01',
-                    Pe = (0, k.Pi)(function ({ className: e, classNameButton: t, children: n }) {
+                    Ne = (0, k.Pi)(function ({ className: e, classNameButton: t, children: n }) {
                         const o = Oe(),
                             a = o.controls,
                             i = o.model;
@@ -1861,7 +1861,7 @@
                                 ),
                         );
                     }),
-                    Ne = ['children', 'className', 'classNameButton'];
+                    Pe = ['children', 'className', 'classNameButton'];
                 const Re = (e) => {
                     let t = e.children,
                         n = e.className,
@@ -1874,8 +1874,8 @@
                                 a = Object.keys(e);
                             for (o = 0; o < a.length; o++) ((n = a[o]), t.indexOf(n) >= 0 || (r[n] = e[n]));
                             return r;
-                        })(e, Ne);
-                    return r().createElement(ye, a, r().createElement(Pe, { className: n, classNameButton: o }, t));
+                        })(e, Pe);
+                    return r().createElement(ye, a, r().createElement(Ne, { className: n, classNameButton: o }, t));
                 };
                 var Se = n(5521);
                 n(9916);
@@ -1904,7 +1904,7 @@
                     Ie = v()(s, ({ externalModel: e }) => ({ close: e.createCallbackNoArgs('onClose') })),
                     Ue = Ie[0],
                     ze = Ie[1],
-                    je = 'R.images.gui.maps.icons.development.library.GameFacePattern',
+                    je = 'R.images.gui.maps.icons.common.gameface_pattern',
                     We = () => {
                         const e = ze().controls;
                         return (

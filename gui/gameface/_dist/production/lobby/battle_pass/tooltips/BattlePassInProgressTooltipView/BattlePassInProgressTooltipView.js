@@ -909,7 +909,7 @@
                                     (window.cancelAnimationFrame(u.current),
                                         (u.current = window.requestAnimationFrame(() => {
                                             u.current = window.requestAnimationFrame(() => {
-                                                (e(), (u.current = 0));
+                                                ((u.current = 0), e());
                                             });
                                         })));
                                 },
@@ -1288,17 +1288,17 @@
                     U = 'BattleRoyaleTable_pointsColumn_f0',
                     G = 'BattleRoyaleTable_header_7e',
                     $ = 'BattleRoyaleTable_label_e2',
-                    W = R.strings.battle_pass.tooltips.pointsTable,
-                    z = ({ rewardPoints: u }) => {
+                    z = R.strings.battle_pass.tooltips.pointsTable,
+                    W = ({ rewardPoints: u }) => {
                         const e = (0, n.useMemo)(
-                                () => u.soloMode.map(({ value: u }) => (0, k.WU)(W.places(), { place: u.place })),
+                                () => u.soloMode.map(({ value: u }) => (0, k.WU)(z.places(), { place: u.place })),
                                 [u],
                             ),
                             t = (0, n.useMemo)(() => u.soloMode.map(({ value: u }) => u.points), [u]),
                             a = (0, n.useMemo)(
                                 () =>
                                     u.squadMode.map(({ value: u }, e) => {
-                                        const t = e > 0 ? W.places() : W.place();
+                                        const t = e > 0 ? z.places() : z.place();
                                         return (0, k.WU)(t, { place: u.place });
                                     }),
                                 [u],
@@ -1309,7 +1309,7 @@
                             null,
                             r().createElement(I, {
                                 columnWidth: 140,
-                                header: W.solo(),
+                                header: z.solo(),
                                 headerClassMix: G,
                                 labels: e,
                                 labelClassMix: $,
@@ -1317,7 +1317,7 @@
                             r().createElement(L, { points: t, columnClassMix: U }),
                             r().createElement(I, {
                                 columnWidth: 140,
-                                header: W.squad(),
+                                header: z.squad(),
                                 headerClassMix: G,
                                 labels: a,
                                 labelClassMix: $,
@@ -1437,7 +1437,7 @@
                                 H.c,
                                 { mixClass: eu, separatorRows: a ? n.soloMode : t.items },
                                 a
-                                    ? r().createElement(z, { rewardPoints: n })
+                                    ? r().createElement(W, { rewardPoints: n })
                                     : r().createElement(Y, {
                                           rewardPoints: t,
                                           hasDraw: e !== V.FRONTLINE,
@@ -1566,8 +1566,8 @@
                     Uu = 'ProgressBarDeltaGrow_base__withoutBounce_b5',
                     Gu = 'ProgressBarDeltaGrow_glow_68',
                     $u = (u) => (u ? { left: 0 } : { right: 0 }),
-                    Wu = (u, e) => (u ? { right: 100 - e + '%' } : { left: `${e}%` }),
-                    zu = (u) => ({ transitionDuration: `${u}ms` }),
+                    zu = (u, e) => (u ? { right: 100 - e + '%' } : { left: `${e}%` }),
+                    Wu = (u) => ({ transitionDuration: `${u}ms` }),
                     qu = (0, n.memo)(
                         ({
                             transitionDuration: u,
@@ -1611,11 +1611,11 @@
                                             ? g(Iu.End, u)
                                             : void (_ && l && l());
                             }, [g, t, _, B, m, C, l, e, u]);
-                            const b = (0, n.useMemo)(() => Object.assign({ width: '100%' }, zu(u), $u(A)), [A, u]),
-                                v = (0, n.useMemo)(() => Object.assign({ width: '0%' }, zu(u), $u(A)), [A, u]),
-                                h = (0, n.useMemo)(() => Object.assign({ width: '0%' }, Wu(A, a), zu(u)), [a, A, u]),
+                            const b = (0, n.useMemo)(() => Object.assign({ width: '100%' }, Wu(u), $u(A)), [A, u]),
+                                v = (0, n.useMemo)(() => Object.assign({ width: '0%' }, Wu(u), $u(A)), [A, u]),
+                                h = (0, n.useMemo)(() => Object.assign({ width: '0%' }, zu(A, a), Wu(u)), [a, A, u]),
                                 w = (0, n.useMemo)(
-                                    () => Object.assign({ width: `${Math.abs(o - a)}%` }, Wu(A, a), zu(u)),
+                                    () => Object.assign({ width: `${Math.abs(o - a)}%` }, zu(A, a), Wu(u)),
                                     [a, A, o, u],
                                 );
                             if (_) return null;
@@ -2219,10 +2219,7 @@
                         (u.EquipCoin = 'equipCoin'),
                         (u.LootBox = 'lootBox'),
                         (u.BrCoin = 'brcoin'),
-                        (u.Attachment = 'attachment'),
-                        (u.Stamp = 'stamp'),
-                        (u.WtEventLootbox = 'wtevent_lootBox'),
-                        (u.WtEventTicket = 'wtevent_ticket'));
+                        (u.Attachment = 'attachment'));
                 })(ye || (ye = {})),
                     (function (u) {
                         ((u.Gold = 'gold'),
@@ -2377,21 +2374,18 @@
                         ye.BattleBoosterGift,
                         ye.OptionalDevice,
                         ye.Attachment,
-                        ye.Stamp,
-                        ye.WtEventLootbox,
-                        ye.WtEventTicket,
                     ],
                     $e = [ye.Gold, ye.Credits, ye.Crystal, ye.FreeXp],
-                    We = [ye.BattlePassPoints, ye.EquipCoin],
-                    ze = [ye.PremiumPlus, ye.Premium],
+                    ze = [ye.BattlePassPoints, ye.EquipCoin],
+                    We = [ye.PremiumPlus, ye.Premium],
                     qe = (u) =>
                         Ge.includes(u)
                             ? Ne.MULTI
                             : $e.includes(u)
                               ? Ne.CURRENCY
-                              : We.includes(u)
+                              : ze.includes(u)
                                 ? Ne.NUMBER
-                                : ze.includes(u)
+                                : We.includes(u)
                                   ? Ne.PREMIUM_PLUS
                                   : Ne.STRING,
                     je = ['engravings', 'backgrounds'],

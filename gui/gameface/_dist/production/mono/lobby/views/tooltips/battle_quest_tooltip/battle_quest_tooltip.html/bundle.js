@@ -1,46 +1,53 @@
-import { j as e, y as s } from '../../../../chunks/vendor.js';
+import { j as e, x as s } from '../../../../chunks/vendor.js';
 import {
     m as o,
-    c$ as t,
-    bT as i,
-    bU as r,
-    d0 as a,
-    d1 as n,
+    dm as t,
+    co as r,
+    cp as i,
+    dn as a,
+    dp as n,
     i as l,
-    A as d,
-    bO as c,
-    bN as p,
+    N as d,
+    cj as c,
+    ci as p,
     r as u,
 } from '../../../../chunks/lib.js';
-import { E as m, D as b } from '../../../../chunks/extended_tooltip_decorator.js';
-/* empty css                        */ const v = (e, s) =>
-    'overlayType' in e &&
-    (!('string' != typeof s || !Object.values(n).includes(s)) || (console.warn(`Invalid overlayType value: ${s}`), !1));
-function I({ bonuses: s, questId: n, size: l, resId: d, ...c }) {
-    const p = o(s, (e) => ({
-            size: l,
-            name: e.name,
-            image: r(e, l),
-            value: e.value,
-            valueType: i(e.name),
-            special: 'overlayType' in e && v(e, e.overlayType) ? e.overlayType : void 0,
-            tooltipArgs: {
-                ...t(
-                    { tooltipId: `${n}:${e.tooltipId}` },
-                    Number(e.tooltipContentId) ||
-                        R.views.common.tooltip_window.backport_tooltip_content.BackportTooltipContent('resId'),
-                ),
-                resId: d,
-            },
-        })),
-        u = {
+import { E as m, D as v } from '../../../../chunks/extended_tooltip_decorator.js';
+/* empty css                        */ function I({ bonuses: s, questId: l, size: d, resId: c, ...p }) {
+    const u = o(s, (e) => {
+            return {
+                size: d,
+                name: e.name,
+                image: i(e, d),
+                value: e.value,
+                valueType: r(e.name),
+                special:
+                    'overlayType' in e &&
+                    e.overlayType &&
+                    ((s = e.overlayType),
+                    ('string' == typeof s && Object.values(n).includes(s)) ||
+                        (console.warn(`Invalid overlayType value: ${s}`), 0))
+                        ? e.overlayType
+                        : void 0,
+                tooltipArgs: {
+                    ...t(
+                        { tooltipId: `${l}:${e.tooltipId}` },
+                        Number(e.tooltipContentId) ||
+                            R.views.common.tooltip_window.backport_tooltip_content.BackportTooltipContent('resId'),
+                    ),
+                    resId: c,
+                },
+            };
+            var s;
+        }),
+        m = {
             contentId: R.views.lobby.tooltips.AdditionalRewardsTooltip('resId'),
-            args: { showFromIndex: c.count, questId: n },
-            resId: d,
+            args: { showFromIndex: p.count, questId: l },
+            resId: c,
         };
-    return e.jsx(a, { ...c, data: p, boxRewardTooltip: u, size: l });
+    return e.jsx(a, { ...p, data: u, boxRewardTooltip: m, size: d });
 }
-const [T, y] = l()(({ observableModel: e }) => ({
+const [T, b] = l()(({ observableModel: e }) => ({
         ...e.primitives([
             'countdown',
             'missionType',
@@ -55,14 +62,14 @@ const [T, y] = l()(({ observableModel: e }) => ({
         ]),
         bonuses: e.arrayClone('bonuses'),
     })),
-    g = 'BattleQuestTooltip_rewardsText_54d69d4c',
-    w = 'BattleQuestTooltip_divider_31b2f465',
-    x = 'BattleQuestTooltip_rewardItem_462d39e4',
-    _ = 'BattleQuestTooltip_rewards_863df0c8',
-    h = d.resolve('aliases'),
+    x = 'BattleQuestTooltip_rewardsText_54d69d4c',
+    g = 'BattleQuestTooltip_divider_31b2f465',
+    w = 'BattleQuestTooltip_rewardItem_462d39e4',
+    y = 'BattleQuestTooltip_rewards_863df0c8',
+    _ = d.resolve('aliases'),
     j = R.strings.comp7_light.battleQuestTooltips,
-    f = s(function () {
-        const { model: s } = y(),
+    h = s(function () {
+        const { model: s } = b(),
             o = s.bonuses.get(),
             t = s.countdown.get();
         return e.jsxs(m, {
@@ -72,18 +79,18 @@ const [T, y] = l()(({ observableModel: e }) => ({
             timerText: j.expiresIn(),
             timerTimeLeft: t,
             children: [
-                e.jsx(b, { className: w }),
-                e.jsx('div', { className: g, children: j.rewards(o.length) }),
+                e.jsx(v, { className: g }),
+                e.jsx('div', { className: x, children: j.rewards(o.length) }),
                 e.jsx(I, {
                     bonuses: o,
                     questId: s.id.get(),
-                    resId: h.read((e) => e.comp7_light.shared.Quests('resId')),
+                    resId: _.read((e) => e.comp7_light.shared.Quests('resId')),
                     size: p.Small,
-                    rewardItemClassMix: x,
+                    rewardItemClassMix: w,
                     count: 3,
-                    classMix: _,
+                    classMix: y,
                 }),
             ],
         });
     });
-u(e.jsx(T, { children: e.jsx(f, {}) }));
+u(e.jsx(T, { children: e.jsx(h, {}) }));

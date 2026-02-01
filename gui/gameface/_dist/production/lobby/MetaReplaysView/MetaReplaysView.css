@@ -1398,7 +1398,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .PlayerNickname_igrIcon_34 {
-    background: url('R.images.gui.maps.icons.library.premium_igr_big.png') no-repeat center / contain;
+    background: url('R.images.gui.maps.icons.library.premium_igr_big') no-repeat center / contain;
 }
 
 .PlayerNickname_base__default_8d .PlayerNickname_igrIcon_34 {
@@ -1468,13 +1468,13 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .PlayerNickname_base__default_8d .PlayerNickname_anonymizedIcon_80 {
     width: 24rem;
     height: 24rem;
-    background-image: url('R.images.gui.maps.icons.library.eye.png');
+    background-image: url('R.images.gui.maps.icons.library.eye');
 }
 
 .PlayerNickname_base__x48_84 .PlayerNickname_anonymizedIcon_80 {
     width: 48rem;
     height: 48rem;
-    background-image: url('R.images.gui.maps.icons.library.eye_48x48.png');
+    background-image: url('R.images.gui.maps.icons.library.eye_48x48');
 }
 
 @keyframes BestReplayCard_fadeIn_3c {

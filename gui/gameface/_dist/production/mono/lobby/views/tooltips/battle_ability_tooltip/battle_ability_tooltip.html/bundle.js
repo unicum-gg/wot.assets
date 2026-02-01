@@ -1,0 +1,231 @@
+import { D as e, j as a } from '../../../../chunks/vendor.js';
+import { i as s, s as l, n as t, F as i, b_ as r, t as c, d1 as o, b as n } from '../../../../chunks/lib.js';
+import { D as d } from '../../../../chunks/divider.js';
+import { H as p } from '../../../../chunks/head_decorator.js';
+const [m, _] = s()(({ observableModel: e }) => {
+        const a = e.arrayClone('levelsInfo'),
+            s = e.arrayClone('characteristics'),
+            t = l.model(() =>
+                a.get().reduce(
+                    (e, a) => (
+                        a.params.forEach((a) => {
+                            var s;
+                            ((e.labels[a.id] = a.name),
+                                e.labelsData[a.id]
+                                    ? null == (s = e.labelsData[a.id]) || s.push(a)
+                                    : (e.labelsData[a.id] = [a]));
+                        }),
+                        e
+                    ),
+                    { labels: {}, labelsData: {} },
+                ),
+            );
+        return {
+            ...e.primitives(['category', 'name', 'imageName', 'isPurchased']),
+            characteristics: s,
+            levelsInfo: a,
+            levelsLabels: t,
+        };
+    }, t),
+    b = 'Characteristics_9735e744',
+    h = 'Characteristics_title_75be3f17',
+    v = 'Characteristics_characteristicsWrapper_11e726e7',
+    j = 'Characteristics_contentWrapper_7b508d7c',
+    x = 'Characteristics_value_b78ff8b5',
+    f = e(function () {
+        const { model: e } = _(),
+            s = e.characteristics.get();
+        return s.length
+            ? a.jsxs(a.Fragment, {
+                  children: [
+                      a.jsx(d, {}),
+                      a.jsxs('div', {
+                          className: j,
+                          children: [
+                              a.jsx(i, { className: h, path: 'fl_tooltips.battleAbilityTooltip.characteristicsTitle' }),
+                              a.jsx('div', {
+                                  className: v,
+                                  children: s.map((e, s) =>
+                                      a.jsx(
+                                          i,
+                                          {
+                                              path: 'fl_tooltips.battleAbilityTooltip.characteristicsList',
+                                              params: {
+                                                  label: e.name,
+                                                  valueClass: x,
+                                                  value: a.jsx(
+                                                      r,
+                                                      {
+                                                          text: e.valueTemplate,
+                                                          params: { value: e.value, sign: e.sign },
+                                                      },
+                                                      s,
+                                                  ),
+                                              },
+                                              className: b,
+                                          },
+                                          s,
+                                      ),
+                                  ),
+                              }),
+                          ],
+                      }),
+                  ],
+              })
+            : null;
+    }),
+    u = 'Header_9590974c',
+    g = 'Header_headerTextWrapper_b75997fd',
+    N = 'Header_name_4c46b58',
+    y = 'Header_categoryWrapper_f9c19163',
+    T = 'Header_icon_35d94e17',
+    A = 'Header_categoryIcon_d7b554e4',
+    I = 'Header_category_8594ee8',
+    H = 'Header_warningWrapper_998aa05c',
+    L = 'Header_warningIcon_e020543a',
+    B = e(function () {
+        const { model: e } = _(),
+            s = R.images.frontline.gui.maps.icons.loadout;
+        return a.jsx(p, {
+            children: a.jsxs('div', {
+                className: u,
+                children: [
+                    !e.isPurchased.get() &&
+                        a.jsxs('div', {
+                            className: H,
+                            children: [
+                                a.jsx('div', { className: L }),
+                                a.jsx(i, { path: 'fl_tooltips.battleAbilityTooltip.notPurchased' }),
+                            ],
+                        }),
+                    a.jsx('div', {
+                        style: { backgroundImage: `url(${s.battleAbilities.c_80x80.$dyn(e.imageName.get())})` },
+                        className: T,
+                    }),
+                    a.jsxs('div', {
+                        className: g,
+                        children: [
+                            a.jsx(r, { text: e.name.get(), className: N }),
+                            a.jsxs('div', {
+                                className: y,
+                                children: [
+                                    a.jsx('div', {
+                                        style: {
+                                            backgroundImage: `url(${s.categories.c_16x16.$dyn(e.category.get())})`,
+                                        },
+                                        className: A,
+                                    }),
+                                    a.jsx(i, {
+                                        className: I,
+                                        path: `fl_tooltips.battleAbilityTooltip.category.${e.category.get()}`,
+                                    }),
+                                ],
+                            }),
+                        ],
+                    }),
+                ],
+            }),
+        });
+    }),
+    C = 'LevelsInfo_label_d846a2d6',
+    D = 'LevelsInfo_headCell_2e36cfd9',
+    W = 'LevelsInfo_cell_4befb142',
+    k = 'LevelsInfo_row_e46e492b',
+    $ = 'LevelsInfo_bf577044',
+    w = 'LevelsInfo_arrow_d83c589a',
+    P = e(function () {
+        const { model: e } = _(),
+            s = e.levelsInfo.get(),
+            l = Object.entries(e.levelsLabels().labels);
+        return a.jsxs('div', {
+            className: $,
+            children: [
+                a.jsx('div', {
+                    className: k,
+                    children: s.map((e, l) => {
+                        const t = s.length - 1 !== l;
+                        return a.jsxs(
+                            'div',
+                            {
+                                className: D,
+                                children: [
+                                    a.jsx('div', { children: c(e.level) }),
+                                    ' ',
+                                    t && a.jsx('div', { className: w }),
+                                ],
+                            },
+                            l,
+                        );
+                    }),
+                }),
+                l.map(([s, l]) => {
+                    var t;
+                    return a.jsxs(
+                        'div',
+                        {
+                            className: k,
+                            children: [
+                                null == (t = e.levelsLabels().labelsData[s])
+                                    ? void 0
+                                    : t.map((e, s) =>
+                                          a.jsx(
+                                              r,
+                                              {
+                                                  text: e.valueTemplate,
+                                                  params: { value: e.value, sign: e.sign },
+                                                  className: W,
+                                              },
+                                              s,
+                                          ),
+                                      ),
+                                a.jsx('div', { className: C, children: l }),
+                            ],
+                        },
+                        s,
+                    );
+                }),
+            ],
+        });
+    }),
+    F = 'BattleAbilityTooltip_b3525077',
+    E = 'BattleAbilityTooltip_title_f3f1f3b2',
+    M = 'BattleAbilityTooltip_activationDepends_1375a1fa',
+    O = 'BattleAbilityTooltip_additionalInfo_fe550d87',
+    q = 'BattleAbilityTooltip_description_ae30df8d',
+    z = 'BattleAbilityTooltip_contentWrapper_dd6c2adb',
+    G = 'BattleAbilityTooltip_footerWrapper_ca778cb1',
+    J = 'BattleAbilityTooltip_altBtn_aa9e5a',
+    K = function () {
+        return a.jsx(o, {
+            children: a.jsx(o.Decorator, {
+                children: a.jsxs('div', {
+                    className: F,
+                    children: [
+                        a.jsx(B, {}),
+                        a.jsx(f, {}),
+                        a.jsx(d, {}),
+                        a.jsxs('div', {
+                            className: z,
+                            children: [
+                                a.jsx(i, { className: E, path: 'fl_tooltips.battleAbilityTooltip.levelsTitle' }),
+                                a.jsx(P, {}),
+                            ],
+                        }),
+                        a.jsx(d, {}),
+                        a.jsx(i, { className: M, path: 'fl_tooltips.battleAbilityTooltip.activation_depends' }),
+                        a.jsx(d, {}),
+                        a.jsx(i, { className: q, split: !0, path: 'fl_tooltips.battleAbilityTooltip.description' }),
+                        a.jsx(d, {}),
+                        a.jsxs('div', {
+                            className: G,
+                            children: [
+                                a.jsx('div', { className: J }),
+                                a.jsx(i, { className: O, path: 'fl_tooltips.battleAbilityTooltip.addInfo' }),
+                            ],
+                        }),
+                    ],
+                }),
+            }),
+        });
+    };
+n(a.jsx(m, { children: a.jsx(K, {}) }));

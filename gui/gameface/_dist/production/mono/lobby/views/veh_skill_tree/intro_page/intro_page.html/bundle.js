@@ -1,34 +1,34 @@
-import { j as s, p as e, r as a, q as i, e as c, n as l } from '../../../../chunks/vendor.js';
+import { j as s, n as e, r as a, s as i, e as c, m as l } from '../../../../chunks/vendor.js';
 import {
-    d as n,
+    c as n,
     i as o,
-    e as t,
-    g as d,
-    f as r,
-    a as p,
+    q as t,
+    v as d,
+    w as r,
+    h as p,
     k as m,
     B as _,
     t as b,
-    s as x,
-    b as h,
+    s as h,
+    l as x,
     U as j,
 } from '../../../../chunks/lib.js';
 const u = 'Description_9a429ac6',
-    f = 'Description_icon_61bd7cae',
-    v = 'Description_title_fd356bf',
+    v = 'Description_icon_61bd7cae',
+    f = 'Description_title_fd356bf',
     N = 'Description_9c2cbcb1',
     y = ({ icon: e, title: a, description: i }) =>
         s.jsxs('div', {
             className: u,
             children: [
-                s.jsx('div', { className: v, children: a }),
-                s.jsx('div', { className: f, style: { backgroundImage: `url(${e})` } }),
+                s.jsx('div', { className: f, children: a }),
+                s.jsx('div', { className: v, style: { backgroundImage: `url(${e})` } }),
                 s.jsx('div', { className: N, children: i && n(i) }),
             ],
         }),
-    [g, C] = o()(
+    [C, g] = o()(
         ({ observableModel: s }) => {
-            const e = { slides: s.array('slides'), ...s.primitives(['title', 'buttonLabel']) },
+            const e = { slides: s.arrayClone('slides'), ...s.primitives(['title', 'buttonLabel']) },
                 a = t.shallow((s) => {
                     const a = d(e.slides.get(), s);
                     return (r(void 0 !== a, `Could not find slide with index ${s}.`), a);
@@ -39,14 +39,14 @@ const u = 'Description_9a429ac6',
     ),
     A = 'App_508c0064',
     k = 'App_content_3c8fdc2c',
-    B = 'App_slidesWrapper_2389a8ac',
-    w = 'App_slide_24421c1a',
+    w = 'App_slidesWrapper_2389a8ac',
+    B = 'App_slide_24421c1a',
     D = 'App_counter_1ccae048',
     E = 'App_arrowButton_4108196b',
     S = 'App_arrowButton__left_1ff87043',
     $ = 'App_arrowButton__disabled_6db15a44',
     I = e(function () {
-        const { model: e, controls: n } = C(),
+        const { model: e, controls: n } = g(),
             [o, t] = a.useState(0),
             d = e.slides.get().length;
         (p(m.ESCAPE, n.onClose), p(m.ENTER, n.onClose));
@@ -72,10 +72,10 @@ const u = 'Description_9a429ac6',
                             },
                         }),
                         s.jsx('div', {
-                            className: B,
+                            className: w,
                             children: r((a, i) =>
                                 s.jsxs(l.div, {
-                                    className: w,
+                                    className: B,
                                     style: a,
                                     children: [
                                         s.jsx('div', { className: D, children: `${i + 1} / ${d}` }),
@@ -94,8 +94,8 @@ const u = 'Description_9a429ac6',
                         }),
                     ],
                 }),
-                s.jsx(_, { size: x.medium, theme: b.primary, onClick: n.onClose, children: e.buttonLabel.get() }),
+                s.jsx(_, { size: h.medium, theme: b.primary, onClick: n.onClose, children: e.buttonLabel.get() }),
             ],
         });
     });
-h(s.jsx(g, { children: s.jsx(j, { children: s.jsx(I, {}) }) }));
+x(s.jsx(C, { children: s.jsx(j, { children: s.jsx(I, {}) }) }));

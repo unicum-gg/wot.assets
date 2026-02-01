@@ -1,5 +1,5 @@
-import { r as e, o as t, m as o, f as r, j as s, n } from '../../../chunks/vendor.js';
-import { x as l, o as a, i as c, y as i, m as d, r as u, S as E } from '../../../chunks/lib.js';
+import { r as e, o as t, k as o, f as r, j as s, m as n } from '../../../chunks/vendor.js';
+import { y as l, q as a, i as c, z as i, m as d, r as u, S as E } from '../../../chunks/lib.js';
 var _ = ((e) => (
     (e[(e.NO_BOXES = 0)] = 'NO_BOXES'),
     (e[(e.HAS_BOXES = 1)] = 'HAS_BOXES'),
@@ -88,14 +88,14 @@ const m = [_.MULTIPLE_BOXES_REWARDS, _.SINGLE_BOX_REWARDS],
     j = e.lazy(() => y(() => import('../../../chunks/index2.js'), [], import.meta.url)),
     D = e.lazy(() => y(() => import('../../../chunks/index3.js'), [], import.meta.url)),
     I = e.lazy(() => y(() => import('../../../chunks/index4.js'), [], import.meta.url)),
-    x = { [_.NO_BOXES]: j, [_.HAS_BOXES]: A, [_.SINGLE_BOX_REWARDS]: D, [_.MULTIPLE_BOXES_REWARDS]: I };
-function b({ viewID: t }) {
-    const o = x[t];
+    b = { [_.NO_BOXES]: j, [_.HAS_BOXES]: A, [_.SINGLE_BOX_REWARDS]: D, [_.MULTIPLE_BOXES_REWARDS]: I };
+function w({ viewID: t }) {
+    const o = b[t];
     return o
         ? s.jsx(e.Suspense, { fallback: s.jsx('div', {}), children: s.jsx(o, {}) })
         : (console.error('Unreachable code: ViewResolver'), null);
 }
-const w = 'App_e0d56588',
+const x = 'App_e0d56588',
     B = 'App_overlay_cc29bca1';
 const X = n(function () {
     const { model: t, controls: o } = O(),
@@ -109,11 +109,11 @@ const X = n(function () {
         })(f(r), o.setOverlayState),
         e.useEffect(() => i(() => o.onResourcesLoadCompleted())),
         s.jsx('div', {
-            className: w,
+            className: x,
             children: d(r, (e) =>
                 S(e)
-                    ? s.jsx('div', { className: B, children: s.jsx(b, { viewID: e }) }, e)
-                    : s.jsx(b, { viewID: e }, e),
+                    ? s.jsx('div', { className: B, children: s.jsx(w, { viewID: e }) }, e)
+                    : s.jsx(w, { viewID: e }, e),
             ),
         })
     );

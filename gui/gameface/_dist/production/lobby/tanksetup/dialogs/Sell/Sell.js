@@ -1221,10 +1221,7 @@
                         (u.EquipCoin = 'equipCoin'),
                         (u.LootBox = 'lootBox'),
                         (u.BrCoin = 'brcoin'),
-                        (u.Attachment = 'attachment'),
-                        (u.Stamp = 'stamp'),
-                        (u.WtEventLootbox = 'wtevent_lootBox'),
-                        (u.WtEventTicket = 'wtevent_ticket'));
+                        (u.Attachment = 'attachment'));
                 })(v || (v = {})),
                     (function (u) {
                         ((u.Gold = 'gold'),
@@ -1379,9 +1376,6 @@
                         v.BattleBoosterGift,
                         v.OptionalDevice,
                         v.Attachment,
-                        v.Stamp,
-                        v.WtEventLootbox,
-                        v.WtEventTicket,
                         v.Gold,
                         v.Credits,
                         v.Crystal,
@@ -1391,7 +1385,7 @@
                         v.PremiumPlus,
                         v.Premium,
                         [y.Small, y.Big]),
-                    k = {
+                    I = {
                         base: 'Reward_base_ea',
                         base__s48x48: 'Reward_base__s48x48_46',
                         base__small: 'Reward_base__small_c0',
@@ -1419,7 +1413,7 @@
                         title: 'Reward_title_36',
                         timer: 'Reward_timer_d3',
                     },
-                    I = ({
+                    k = ({
                         name: u,
                         image: e,
                         isPeriodic: t = !1,
@@ -1504,33 +1498,33 @@
                         return r().createElement(
                             'div',
                             {
-                                className: o()(k.base, k[`base__${n}`], N.includes(u) && k.base__normalize, _),
+                                className: o()(I.base, I[`base__${n}`], N.includes(u) && I.base__normalize, _),
                                 style: l,
                             },
                             r().createElement(
                                 g,
-                                { tooltipArgs: A, className: k.tooltipWrapper },
+                                { tooltipArgs: A, className: I.tooltipWrapper },
                                 r().createElement(
                                     r().Fragment,
                                     null,
                                     r().createElement(
                                         'div',
-                                        { className: o()(k.image, null == E ? void 0 : E.image) },
+                                        { className: o()(I.image, null == E ? void 0 : E.image) },
                                         D &&
                                             r().createElement('div', {
-                                                className: o()(k.highlight, null == E ? void 0 : E.highlight),
+                                                className: o()(I.highlight, null == E ? void 0 : E.highlight),
                                                 style: {
                                                     backgroundImage: `url(R.images.gui.maps.icons.quests.bonuses.${n}.${D}_highlight)`,
                                                 },
                                             }),
                                         e &&
                                             r().createElement('div', {
-                                                className: o()(k.icon, null == E ? void 0 : E.rewardIcon),
+                                                className: o()(I.icon, null == E ? void 0 : E.rewardIcon),
                                                 style: { backgroundImage: `url(${e})` },
                                             }),
                                         F &&
                                             r().createElement('div', {
-                                                className: o()(k.overlay, null == E ? void 0 : E.overlay),
+                                                className: o()(I.overlay, null == E ? void 0 : E.overlay),
                                                 style: {
                                                     backgroundImage: `url(R.images.gui.maps.icons.quests.bonuses.${n}.${F}_overlay)`,
                                                 },
@@ -1541,15 +1535,15 @@
                                             'div',
                                             {
                                                 className: o()(
-                                                    k.info,
-                                                    k[`info__${u}`],
-                                                    s === f.MULTI && k.info__multi,
+                                                    I.info,
+                                                    I[`info__${u}`],
+                                                    s === f.MULTI && I.info__multi,
                                                     null == E ? void 0 : E.info,
                                                 ),
                                             },
                                             m,
                                         ),
-                                    c && r().createElement('div', { className: k.title }, c),
+                                    c && r().createElement('div', { className: I.title }, c),
                                 ),
                             ),
                             t &&
@@ -1557,7 +1551,7 @@
                                     g,
                                     { tooltipArgs: d },
                                     r().createElement('div', {
-                                        className: o()(k.timer, null == E ? void 0 : E.periodicIcon),
+                                        className: o()(I.timer, null == E ? void 0 : E.periodicIcon),
                                     }),
                                 ),
                         );
@@ -2439,7 +2433,7 @@
                         stock__interactive: 'Currency_stock__interactive_93',
                         stockBackground: 'Currency_stockBackground_82',
                     },
-                    ku = (0, n.memo)(
+                    Iu = (0, n.memo)(
                         ({
                             isDiscount: u,
                             isInteractiveDiscount: e,
@@ -2491,7 +2485,7 @@
                                     ),
                             ),
                     ),
-                    Iu = 'FormatText_base_d0',
+                    ku = 'FormatText_base_d0',
                     Mu = ({ binding: u, text: e = '', classMix: t, alignment: i = ru.left, formatWithBrackets: a }) => {
                         if (null === e) return (console.error("FormatText was supplied with 'null'"), null);
                         const s = a && u ? iu(e, u) : e;
@@ -2501,7 +2495,7 @@
                             s.split('\n').map((e, a) =>
                                 r().createElement(
                                     'div',
-                                    { className: o()(Iu, t), key: `${e}-${a}` },
+                                    { className: o()(ku, t), key: `${e}-${a}` },
                                     ((u, e, t) =>
                                         u.split(/%\((.*?)\)(?:[sd])?/g).map((u) => (t && u in t ? t[u] : Eu(u, e))))(
                                         e,
@@ -2550,7 +2544,7 @@
                                 r().createElement(
                                     'div',
                                     { className: o()(Wu, null == _ ? void 0 : _.currency) },
-                                    r().createElement(ku, { size: a, type: t, value: u, isEnough: e }),
+                                    r().createElement(Iu, { size: a, type: t, value: u, isEnough: e }),
                                 ),
                                 A &&
                                     r().createElement(Mu, {
@@ -3417,7 +3411,7 @@
                             q(H.n.ESCAPE, c),
                             r().createElement(du, {
                                 isShown: !0,
-                                icon: r().createElement(I, ge({}, i, { className: Ru })),
+                                icon: r().createElement(k, ge({}, i, { className: Ru })),
                                 onClose: e.close,
                                 topRight: r().createElement(Cu, { balance: n }),
                                 title: r().createElement(he, null),
