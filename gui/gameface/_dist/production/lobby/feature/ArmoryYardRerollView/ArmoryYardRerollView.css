@@ -564,6 +564,30 @@
     in JS 8000 reserved like anchor for start optimization
 */
 /* stylelint-disable-line */
+.ProgressBarDeltaSimple_base_6c {
+    width: 0;
+    height: 100%;
+    position: absolute;
+    top: 0;
+}
+.ProgressBarDeltaSimple_delta_99 {
+    width: 0;
+    max-width: 8001px;
+    height: 100%;
+    box-shadow: var(--progress-delta-shadow);
+    background-color: var(--progress-delta-color);
+    position: absolute;
+    bottom: 0;
+    transform-origin: right center;
+    transition-timing-function: cubic-bezier(1, 0, 0.92, 1), cubic-bezier(0.21, 0.61, 0.35, 1);
+    transition-property: width, transform;
+}
+
+/*
+    Gameface can't calculate gradient biggest than 8128px
+    in JS 8000 reserved like anchor for start optimization
+*/
+/* stylelint-disable-line */
 .ProgressBarDeltaGrow_base_7e {
     width: 0;
     height: 100%;
@@ -589,30 +613,6 @@
 }
 .ProgressBarDeltaGrow_base__withoutBounce_b5 .ProgressBarDeltaGrow_glow_68 {
     transition-timing-function: cubic-bezier(1, 0, 0.75, 0.75);
-}
-
-/*
-    Gameface can't calculate gradient biggest than 8128px
-    in JS 8000 reserved like anchor for start optimization
-*/
-/* stylelint-disable-line */
-.ProgressBarDeltaSimple_base_6c {
-    width: 0;
-    height: 100%;
-    position: absolute;
-    top: 0;
-}
-.ProgressBarDeltaSimple_delta_99 {
-    width: 0;
-    max-width: 8001px;
-    height: 100%;
-    box-shadow: var(--progress-delta-shadow);
-    background-color: var(--progress-delta-color);
-    position: absolute;
-    bottom: 0;
-    transform-origin: right center;
-    transition-timing-function: cubic-bezier(1, 0, 0.92, 1), cubic-bezier(0.21, 0.61, 0.35, 1);
-    transition-property: width, transform;
 }
 
 .StepIcon_base_7b {
@@ -3328,7 +3328,8 @@
 .mediaLarge .Quest_content_3c {
     margin: 20rem 24rem 15rem;
 }
-.Quest_questCard__notAvailable_99 .Quest_content_3c {
+.Quest_questCard__notAvailable_99 .Quest_content_3c,
+.Quest_questCard__disabled_57 .Quest_content_3c {
     opacity: 0.5;
 }
 .Quest_questCard__disableAllQuests_20 .Quest_content_3c,
@@ -3357,7 +3358,8 @@
     width: 175rem;
     position: relative;
 }
-.Quest_questCard__notAvailable_99 .Quest_rewards_a5 {
+.Quest_questCard__notAvailable_99 .Quest_rewards_a5,
+.Quest_questCard__disabled_57 .Quest_rewards_a5 {
     opacity: 0.5;
 }
 .mediaMedium .Quest_rewards_a5 {
@@ -4033,18 +4035,12 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     transition: text-shadow 450ms;
 }
 
-.mediaLarge .Timer_timerText_f4 {
-    color: #ffdd99;
-    font-size: 16rem;
-    font-weight: 400;
-    line-height: 1.25;
+.mediaMedium .Timer_timerText_f4 {
+    transform: translateY(2rem);
 }
 
 .mediaExtraLarge .Timer_timerText_f4 {
-    color: #ffdd99;
-    font-size: 18rem;
-    font-weight: 400;
-    line-height: 1.25;
+    transform: translateY(3rem);
 }
 
 .Timer_timerText__alert_90 {
@@ -4057,9 +4053,16 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .Timer_timer_db {
     width: 32rem;
     height: 32rem;
-    margin-left: -3rem;
+    margin-top: -4rem;
+    background: url('R.images.armory_yard.gui.maps.icons.buy.timer_icon') no-repeat center / contain;
+}
+
+.mediaLarge .Timer_timer_db {
     margin-top: -3rem;
-    background: url('R.images.armory_yard.gui.maps.icons.buy.timer_icon') center / auto no-repeat;
+}
+
+.mediaExtraLarge .Timer_timer_db {
+    margin-top: -2rem;
 }
 
 .Timer_timeAvailableWrapper_36 {

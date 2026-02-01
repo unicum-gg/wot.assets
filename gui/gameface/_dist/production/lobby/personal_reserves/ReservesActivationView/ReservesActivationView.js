@@ -61,7 +61,7 @@
                     const n = Math.trunc(e / a);
                     return ((e -= n * a), { days: t, hours: r, minutes: n, seconds: e });
                 }
-                const l = (u, e = !0, t = !1) =>
+                const l = (u, e = !0) =>
                     u.days > 7 && e
                         ? (0, r.WU)(R.strings.common.duration.days(), { days: u.days })
                         : u.days >= 1
@@ -71,7 +71,7 @@
                           : u.hours >= 1
                             ? 0 === u.minutes
                                 ? (0, r.WU)(R.strings.common.duration.hours(), { hours: u.hours })
-                                : `${(0, r.WU)(R.strings.common.duration.hours(), { hours: u.hours })} ${(0, r.WU)(t ? R.strings.common.duration.shortMinutes() : R.strings.common.duration.minutes(), { minutes: u.minutes })}`
+                                : `${(0, r.WU)(R.strings.common.duration.hours(), { hours: u.hours })} ${(0, r.WU)(R.strings.common.duration.minutes(), { minutes: u.minutes })}`
                             : (0, r.WU)(R.strings.common.duration.minutes(), { minutes: u.minutes || 1 });
             },
             67: (u, e, t) => {
@@ -381,7 +381,7 @@
                 t.d(e, { DA: () => n.D, au: () => a, tT: () => n.t });
                 t(790);
                 var r = t(469),
-                    n = (t(133), t(779), t(579), t(360));
+                    n = (t(133), t(579), t(360));
                 t(56);
                 const a = r.Z;
             },
@@ -498,10 +498,6 @@
                 r.Sw.instance;
             },
             790: (u, e, t) => {
-                'use strict';
-                t(179);
-            },
-            779: (u, e, t) => {
                 'use strict';
                 t(179);
             },
@@ -1602,15 +1598,15 @@
                             (u.Long = 'long'),
                             (u.Extended = 'extended'));
                     })(F || (F = {})));
-                var _ = t(280),
-                    D = t(649),
-                    m = t(44),
-                    C = t(344),
-                    B = t(67);
-                const g = 'Countdown_base_fe',
-                    v = 'Countdown_icon_8b',
-                    h = 'Countdown_description_8d',
-                    p = (u) => u.toString().padStart(2, '0'),
+                var _ = t(44),
+                    D = t(344),
+                    m = t(67);
+                var C = t(649);
+                const B = 'Countdown_base_fe',
+                    g = 'Countdown_icon_8b',
+                    v = 'Countdown_description_8d';
+                var h = t(280);
+                const p = (u) => u.toString().padStart(2, '0'),
                     f = R.images.gui.maps.icons.components.countdown,
                     b = (u, e) => {
                         const t = 2 === e ? f.big : f;
@@ -1626,24 +1622,23 @@
                     w = (0, i.memo)(
                         ({
                             duration: u,
-                            withShortMinutes: e = !1,
-                            icon: t = d.Timer,
-                            style: r = F.Description,
-                            onTimeReached: a,
-                            className: o = '',
-                            classNames: l = {},
-                            labelFormat: c = '',
+                            icon: e = d.Timer,
+                            style: t = F.Description,
+                            onTimeReached: r,
+                            className: a = '',
+                            classNames: o = {},
+                            labelFormat: l = '',
                         }) => {
-                            const E = r !== F.Description ? 1 : void 0,
-                                A = (0, C.au)(u, E),
-                                f = (() => {
-                                    const u = (0, i.useState)(B.O.view.getScale()),
+                            const c = t !== F.Description ? 1 : void 0,
+                                E = (0, D.au)(u, c),
+                                A = (() => {
+                                    const u = (0, i.useState)(m.O.view.getScale()),
                                         e = u[0],
                                         t = u[1];
                                     return (
                                         (0, i.useEffect)(() => {
                                             const u = () => {
-                                                t(B.O.view.getScale());
+                                                t(m.O.view.getScale());
                                             };
                                             return (
                                                 window.addEventListener('resize', u),
@@ -1655,34 +1650,34 @@
                                         e
                                     );
                                 })();
-                            a && a[A] && a[A]();
-                            const w = ((u, e, t = !1) => {
+                            r && r[E] && r[E]();
+                            const f = ((u, e) => {
                                 switch (e) {
                                     case F.Description:
-                                        return (0, m.wB)(u, !0, t);
+                                        return (0, _.wB)(u);
                                     case F.Short:
                                         return `${p(u.minutes)}:${p(u.seconds)}`;
                                     case F.Long:
                                         return `${p(u.hours)}:${p(u.minutes)}:${p(u.seconds)}`;
                                     case F.Extended:
-                                        return `${(0, D.WU)(R.strings.common.duration.days(), { days: u.days })} | ${p(u.hours)}:${p(u.minutes)}:${p(u.seconds)}`;
+                                        return `${(0, C.WU)(R.strings.common.duration.days(), { days: u.days })} | ${p(u.hours)}:${p(u.minutes)}:${p(u.seconds)}`;
                                 }
-                            })((0, m.f8)(A), r, e);
+                            })((0, _.f8)(E), t);
                             return s().createElement(
                                 'div',
-                                { className: n()(g, o) },
-                                t !== d.None &&
+                                { className: n()(B, a) },
+                                e !== d.None &&
                                     s().createElement('div', {
-                                        className: n()(v, l.icon),
-                                        style: { backgroundImage: `url('${b(t, f)}')` },
+                                        className: n()(g, o.icon),
+                                        style: { backgroundImage: `url('${b(e, A)}')` },
                                     }),
-                                c
+                                l
                                     ? s().createElement(
                                           'div',
-                                          { className: n()(h, l.text) },
-                                          s().createElement(_.z, { text: c, binding: { timerText: w } }),
+                                          { className: n()(v, o.text) },
+                                          s().createElement(h.z, { text: l, binding: { timerText: f } }),
                                       )
-                                    : s().createElement('div', { className: n()(h, l.text) }, w),
+                                    : s().createElement('div', { className: n()(v, o.text) }, f),
                             );
                         },
                     );
@@ -1905,9 +1900,9 @@
                             c = u.isPurchasable,
                             E = u.isClanLeader,
                             d = u.isDoubleSize,
-                            D = u.onActivate,
-                            B = u.onExpire,
-                            g = (function (u, e) {
+                            m = u.onActivate,
+                            C = u.onExpire,
+                            B = (function (u, e) {
                                 if (null == u) return {};
                                 var t,
                                     r,
@@ -1916,8 +1911,8 @@
                                 for (r = 0; r < a.length; r++) ((t = a[r]), e.indexOf(t) >= 0 || (n[t] = u[t]));
                                 return n;
                             })(u, V);
-                        const v = e.boosterID,
-                            h = e.reserveType,
+                        const g = e.boosterID,
+                            v = e.reserveType,
                             p = e.inDepot,
                             f = e.totalDuration,
                             b = void 0 === f ? 60 : f,
@@ -1928,23 +1923,23 @@
                             k = e.minBonus,
                             P = e.maxBonus,
                             N = e.state,
-                            O = (0, C.au)(o, 1),
+                            O = (0, D.au)(o, 1),
                             H = Math.ceil((O / b) * 100),
                             I = N === y.m.Active;
                         (0, i.useEffect)(() => {
-                            O <= 0 && B();
-                        }, [B, O]);
+                            O <= 0 && C();
+                        }, [C, O]);
                         const W = Math.floor((1e3 * M - Date.now()) / 1e3),
                             U = Boolean(!I && W && W > 0),
-                            z = W > m.s2 ? F.Extended : F.Long,
+                            z = W > _.s2 ? F.Extended : F.Long,
                             Y = I && b - o < 5;
                         (0, i.useEffect)(() => {
                             Y && (0, a.G)('personal_reserves_activation');
                         }, [Y]);
-                        const K = h === y.z.Clan,
+                        const K = v === y.z.Clan,
                             Z = n()($.base, {
                                 [$.base__clan]: K,
-                                [$.base__event]: h === y.z.Event,
+                                [$.base__event]: v === y.z.Event,
                                 [$.base__premium]: T,
                                 [$.base__doubleSize]: d,
                                 [$.base__disabled]: !I && l,
@@ -1956,9 +1951,9 @@
                                 I || l || (0, a.G)('personal_reserves_hover');
                             }, [I, l]),
                             J = (0, i.useCallback)(() => {
-                                I || l || D({ boosterId: v });
-                            }, [v, D, I, l]),
-                            uu = (0, m.f8)(O);
+                                I || l || m({ boosterId: g });
+                            }, [g, m, I, l]),
+                            uu = (0, _.f8)(O);
                         let eu = uu.hours ? `${X(uu.hours)}:` : '';
                         eu += `${X(uu.minutes)}:${X(uu.seconds)}`;
                         const tu = (function (u, e, t) {
@@ -2008,7 +2003,7 @@
                                 ),
                             s().createElement(
                                 'div',
-                                j({ className: $.overlay }, g),
+                                j({ className: $.overlay }, B),
                                 s().createElement('div', { className: $.overlayUpper }),
                                 s().createElement(
                                     'div',
@@ -2016,15 +2011,15 @@
                                     ((u, e, t) =>
                                         u === y.z.Clan
                                             ? e
-                                                ? s().createElement(_.z, {
+                                                ? s().createElement(h.z, {
                                                       text: q.clanLeader,
                                                       classMix: $.overlayText,
                                                   })
-                                                : s().createElement(_.z, {
+                                                : s().createElement(h.z, {
                                                       text: q.clanMember,
                                                       classMix: $.overlayText,
                                                   })
-                                            : s().createElement(_.z, {
+                                            : s().createElement(h.z, {
                                                   text: q.activateBonusPrompt,
                                                   binding: {
                                                       bonusDescription: s().createElement(
@@ -2034,7 +2029,7 @@
                                                       ),
                                                   },
                                                   classMix: $.overlayText,
-                                              }))(h, E, r),
+                                              }))(v, E, r),
                                 ),
                                 s().createElement(
                                     'div',
@@ -2042,7 +2037,7 @@
                                     s().createElement(
                                         A,
                                         { type: 'primary', size: 'medium', mixClass: $.overlayButton, onClick: J },
-                                        s().createElement(_.z, {
+                                        s().createElement(h.z, {
                                             text: K ? q.activateButtonLabelClan : q.activateButtonLabel,
                                         }),
                                     ),
@@ -2050,7 +2045,7 @@
                             ),
                             s().createElement(
                                 'div',
-                                j({ className: $.cardContent }, g),
+                                j({ className: $.cardContent }, B),
                                 !K &&
                                     s().createElement(
                                         'div',
@@ -2078,7 +2073,7 @@
                                 s().createElement(
                                     'div',
                                     { className: $.bonus },
-                                    ru && s().createElement(_.z, { text: q.bonus, binding: { bonus: nu } }),
+                                    ru && s().createElement(h.z, { text: q.bonus, binding: { bonus: nu } }),
                                 ),
                                 K && !I && s().createElement('div', { className: $.plusIcon }),
                             ),

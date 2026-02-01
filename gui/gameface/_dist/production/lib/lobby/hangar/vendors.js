@@ -2249,7 +2249,7 @@
             'use strict';
             n.d(t, { animated: () => x, useSpring: () => r.useSpring });
             var r = n(738),
-                i = n(493),
+                i = n(986),
                 o = n(810),
                 a = n(686);
             function u(e, t) {
@@ -8291,7 +8291,7 @@
                 qu = (Wu && Bu) || Wu;
             e.exports = qu.default || qu;
         },
-        493: (e, t, n) => {
+        986: (e, t, n) => {
             'use strict';
             (!(function e() {
                 if (
@@ -8663,7 +8663,7 @@
         },
         45: (e, t, n) => {
             'use strict';
-            n.d(t, { Z: () => S });
+            n.d(t, { Z: () => T });
             var r = (function () {
                     if ('undefined' != typeof Map) return Map;
                     function e(e, t) {
@@ -9015,7 +9015,8 @@
                     return (t = k.get(this))[e].apply(t, arguments);
                 };
             });
-            const S = void 0 !== o.ResizeObserver ? o.ResizeObserver : x;
+            var S = void 0 !== o.ResizeObserver ? o.ResizeObserver : x;
+            const T = 41 != n.j ? S : null;
         },
         483: (e, t) => {
             var n;
@@ -9052,7 +9053,7 @@
                 o = n.n(i);
             if (!i.useState) throw new Error('mobx-react-lite requires React with Hooks support');
             if (!r.rC) throw new Error('mobx-react-lite@3 requires mobx at least version 6 to be available');
-            var a = n(493);
+            var a = n(986);
             function u(e) {
                 e();
             }

@@ -322,7 +322,7 @@
                                 return a.cy.getTimeFormat('%d, %Y', u, !0);
                         }
                     },
-                    c = (u, e = !0, t = !1) =>
+                    c = (u, e = !0) =>
                         u.days > 7 && e
                             ? (0, r.WU)(R.strings.common.duration.days(), { days: u.days })
                             : u.days >= 1
@@ -332,7 +332,7 @@
                               : u.hours >= 1
                                 ? 0 === u.minutes
                                     ? (0, r.WU)(R.strings.common.duration.hours(), { hours: u.hours })
-                                    : `${(0, r.WU)(R.strings.common.duration.hours(), { hours: u.hours })} ${(0, r.WU)(t ? R.strings.common.duration.shortMinutes() : R.strings.common.duration.minutes(), { minutes: u.minutes })}`
+                                    : `${(0, r.WU)(R.strings.common.duration.hours(), { hours: u.hours })} ${(0, r.WU)(R.strings.common.duration.minutes(), { minutes: u.minutes })}`
                                 : (0, r.WU)(R.strings.common.duration.minutes(), { minutes: u.minutes || 1 });
             },
             67: (u, e, t) => {
@@ -642,7 +642,7 @@
                 t.d(e, { DA: () => i.D, au: () => a, tT: () => i.t });
                 t(790);
                 var r = t(469),
-                    i = (t(133), t(779), t(579), t(360));
+                    i = (t(133), t(579), t(360));
                 t(56);
                 const a = r.Z;
             },
@@ -842,10 +842,6 @@
                 r.Sw.instance;
             },
             790: (u, e, t) => {
-                'use strict';
-                t(179);
-            },
-            779: (u, e, t) => {
                 'use strict';
                 t(179);
             },
@@ -1734,17 +1730,16 @@
                     O = (0, a.memo)(
                         ({
                             duration: u,
-                            withShortMinutes: e = !1,
-                            icon: t = w.Timer,
-                            style: r = v.Description,
-                            onTimeReached: o,
-                            className: F = '',
-                            classNames: c = {},
-                            labelFormat: D = '',
+                            icon: e = w.Timer,
+                            style: t = v.Description,
+                            onTimeReached: r,
+                            className: o = '',
+                            classNames: F = {},
+                            labelFormat: c = '',
                         }) => {
-                            const _ = r !== v.Description ? 1 : void 0,
-                                m = (0, A.au)(u, _),
-                                B = (() => {
+                            const D = t !== v.Description ? 1 : void 0,
+                                _ = (0, A.au)(u, D),
+                                m = (() => {
                                     const u = (0, a.useState)(S.O.view.getScale()),
                                         e = u[0],
                                         t = u[1];
@@ -1763,11 +1758,11 @@
                                         e
                                     );
                                 })();
-                            o && o[m] && o[m]();
-                            const C = ((u, e, t = !1) => {
+                            r && r[_] && r[_]();
+                            const B = ((u, e) => {
                                 switch (e) {
                                     case v.Description:
-                                        return (0, l.wB)(u, !0, t);
+                                        return (0, l.wB)(u);
                                     case v.Short:
                                         return `${M(u.minutes)}:${M(u.seconds)}`;
                                     case v.Long:
@@ -1775,22 +1770,22 @@
                                     case v.Extended:
                                         return `${(0, s.WU)(R.strings.common.duration.days(), { days: u.days })} | ${M(u.hours)}:${M(u.minutes)}:${M(u.seconds)}`;
                                 }
-                            })((0, l.f8)(m), r, e);
+                            })((0, l.f8)(_), t);
                             return n().createElement(
                                 'div',
-                                { className: i()(x, F) },
-                                t !== w.None &&
+                                { className: i()(x, o) },
+                                e !== w.None &&
                                     n().createElement('div', {
-                                        className: i()(f, c.icon),
-                                        style: { backgroundImage: `url('${L(t, B)}')` },
+                                        className: i()(f, F.icon),
+                                        style: { backgroundImage: `url('${L(e, m)}')` },
                                     }),
-                                D
+                                c
                                     ? n().createElement(
                                           'div',
-                                          { className: i()(T, c.text) },
-                                          n().createElement(E, { text: D, binding: { timerText: C } }),
+                                          { className: i()(T, F.text) },
+                                          n().createElement(E, { text: c, binding: { timerText: B } }),
                                       )
-                                    : n().createElement('div', { className: i()(T, c.text) }, C),
+                                    : n().createElement('div', { className: i()(T, F.text) }, B),
                             );
                         },
                     ),

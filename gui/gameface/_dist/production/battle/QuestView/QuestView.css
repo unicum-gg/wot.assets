@@ -1,0 +1,769 @@
+.Box_mt__XS_0c {
+    margin-top: 4rem;
+}
+.Box_mt__SM_eb {
+    margin-top: 8rem;
+}
+.Box_mt__SMp_cf {
+    margin-top: 10rem;
+}
+.Box_mt__MD_25 {
+    margin-top: 16rem;
+}
+.Box_mt__MDp_49 {
+    margin-top: 20rem;
+}
+.Box_mt__LG_e8 {
+    margin-top: 32rem;
+}
+.Box_mt__XL_83 {
+    margin-top: 64rem;
+}
+
+.Box_mr__XS_7c {
+    margin-right: 4rem;
+}
+
+.Box_mr__SM_08 {
+    margin-right: 8rem;
+}
+
+.Box_mr__SMp_06 {
+    margin-right: 10rem;
+}
+
+.Box_mr__MD_4a {
+    margin-right: 16rem;
+}
+
+.Box_mr__MDp_b6 {
+    margin-right: 20rem;
+}
+
+.Box_mr__LG_d0 {
+    margin-right: 32rem;
+}
+
+.Box_mr__XL_db {
+    margin-right: 64rem;
+}
+
+.Box_mb__XS_bb {
+    margin-bottom: 4rem;
+}
+
+.Box_mb__SM_83 {
+    margin-bottom: 8rem;
+}
+
+.Box_mb__SMp_04 {
+    margin-bottom: 10rem;
+}
+
+.Box_mb__MD_ed {
+    margin-bottom: 16rem;
+}
+
+.Box_mb__MDp_65 {
+    margin-bottom: 20rem;
+}
+
+.Box_mb__LG_c8 {
+    margin-bottom: 32rem;
+}
+
+.Box_mb__XL_f8 {
+    margin-bottom: 64rem;
+}
+
+.Box_ml__XS_8a {
+    margin-left: 4rem;
+}
+
+.Box_ml__SM_e6 {
+    margin-left: 8rem;
+}
+
+.Box_ml__SMp_fb {
+    margin-left: 10rem;
+}
+
+.Box_ml__MD_2b {
+    margin-left: 16rem;
+}
+
+.Box_ml__MDp_c7 {
+    margin-left: 20rem;
+}
+
+.Box_ml__LG_39 {
+    margin-left: 32rem;
+}
+
+.Box_ml__XL_4a {
+    margin-left: 64rem;
+}
+
+.FormatText_base_d0 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* eslint-disable-next-line expectedscss*/
+.Text_paragraph-P10_2c {
+    font-size: 10rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.Text_paragraph-P12_22 {
+    font-size: 12rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+.Text_paragraph-P14_a7 {
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+.Text_paragraph-P16_90 {
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+.Text_paragraph-P18_50 {
+    font-size: 18rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+.Text_paragraph-P24_33 {
+    font-size: 24rem;
+    font-weight: 400;
+    line-height: 32rem;
+}
+.Text_heading-H14_8b {
+    font-size: 14rem;
+    font-weight: 700;
+    line-height: 1.15;
+}
+.Text_heading-H15_9e {
+    font-size: 15rem;
+    font-weight: 700;
+    line-height: 1.15;
+}
+.Text_heading-H18_b7 {
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H20R_f6 {
+    font-size: 20rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.Text_heading-H22_27 {
+    font-size: 22rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.Text_heading-H24R_be {
+    font-size: 24rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.Text_heading-H24_0c {
+    font-size: 24rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.Text_heading-H28_78 {
+    font-size: 28rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H36_32 {
+    font-size: 36rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H56_c3 {
+    font-size: 56rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H73_8f {
+    font-size: 73rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H144_a9 {
+    font-size: 144rem;
+    font-weight: 700;
+    line-height: 1;
+}
+.Text_BLACK_REAL_30 {
+    color: #000000;
+}
+.Text_WHITE_REAL_bc {
+    color: #ffffff;
+}
+.Text_WHITE_62 {
+    color: #f2f2f7;
+}
+.Text_WHITE_ORANGE_54 {
+    color: #fefeec;
+}
+.Text_WHITE_SPANISH_df {
+    color: #e9e2bf;
+}
+.Text_PAR_15 {
+    color: #8c8c7e;
+}
+.Text_PAR_SECONDARY_5d {
+    color: #595950;
+}
+.Text_PAR_TERTIARY_c9 {
+    color: #37362e;
+}
+.Text_INFO_RED_30 {
+    color: #ff0000;
+}
+.Text_RED_66 {
+    color: #ff2717;
+}
+.Text_RED_DARK_d8 {
+    color: #b70000;
+}
+.Text_YELLOW_ed {
+    color: #feab34;
+}
+.Text_ORANGE_be {
+    color: #ee7000;
+}
+.Text_CREAM_57 {
+    color: #ffdd99;
+}
+.Text_BROWN_18 {
+    color: #cbac77;
+}
+.Text_GREEN_BRIGHT_3f {
+    color: #80d43a;
+}
+.Text_GREEN_e3 {
+    color: #7ab300;
+}
+.Text_GREEN_DARK_f1 {
+    color: #497212;
+}
+.Text_BLUE_BOOSTER_21 {
+    color: #ccffff;
+}
+.Text_BLUE_TEAMKILLER_ab {
+    color: #09e2ff;
+}
+.Text_CRED_f7 {
+    color: #ced9d9;
+}
+.Text_GOLD_28 {
+    color: #ffc363;
+}
+.Text_BOND_be {
+    color: #c9c9b6;
+}
+.Text_PROM_65 {
+    color: #a29b70;
+}
+
+.App_base_7f {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    position: relative;
+    transform: translateX(0rem);
+    transition-timing-function: ease-out;
+    transition-duration: var(--hide-transition);
+    transition-property: opacity, transform;
+}
+
+.App_base__hidden_62 {
+    opacity: 0;
+    transform: translateX(100%);
+}
+
+.App_base__observer_e8 {
+    opacity: 0;
+    transform: translateX(100%);
+    transition: none;
+}
+
+.App_base__completed_9f {
+    opacity: 0;
+    transform: translateX(100%);
+    transition-delay: var(--completed-hide);
+    transition-timing-function: ease-in;
+}
+
+.App_base__animate_97 {
+    animation-name: App_blockedBlink_55;
+    animation-duration: var(--hide-transition);
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+}
+@keyframes App_blockedBlink_55 {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+.App_bg_81 {
+    width: 250rem;
+    height: 115rem;
+    background: url('R.images.frontline.gui.maps.battle.quest.back') no-repeat center / cover;
+    position: absolute;
+    top: 35rem;
+    z-index: -2;
+}
+.App_bg__blocked_10 {
+    background-image: url('R.images.frontline.gui.maps.battle.quest.back_disabled');
+    z-index: -1;
+}
+.App_headerWrapper_2a {
+    width: 100%;
+    height: 34rem;
+    padding-left: 51rem;
+    padding-top: 7rem;
+    position: absolute;
+    top: 35rem;
+    left: 0;
+}
+.App_headerBg_a7 {
+    width: 100%;
+    height: 34rem;
+    background: linear-gradient(
+        270deg,
+        rgba(163, 103, 43, 0) 0.81%,
+        rgba(235, 153, 71, 0.5) 52.37%,
+        rgba(163, 103, 43, 0) 98.35%
+    );
+    opacity: 0;
+    position: absolute;
+    top: 35rem;
+    left: 0;
+    z-index: -1;
+    transition-duration: var(--state-transition);
+    transition-property: opacity;
+}
+.App_base__firstShow_18 .App_headerBg_a7 {
+    opacity: 1;
+    animation-name: App_firstShowBlink_82;
+    animation-duration: var(--blink);
+    animation-timing-function: linear;
+    animation-delay: var(--hide-transition);
+}
+.App_headerBg__completed_5c {
+    background: linear-gradient(
+        270deg,
+        rgba(128, 212, 58, 0) 0.81%,
+        rgba(128, 212, 58, 0.5) 52.37%,
+        rgba(128, 212, 58, 0) 98.35%
+    );
+    opacity: 1;
+    transition-duration: 0ms;
+    animation-name: App_blink_e6;
+    animation-duration: var(--blink);
+    animation-timing-function: linear;
+}
+.App_headerGlair_57 {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    position: absolute;
+    transition-duration: var(--state-transition);
+    transition-property: opacity;
+}
+.App_base__firstShow_18 .App_headerGlair_57 {
+    opacity: 1;
+}
+.App_base__completed_9f .App_headerGlair_57 {
+    opacity: 1;
+    transition-duration: 0ms;
+}
+.App_glairUp_d8 {
+    width: 250rem;
+    height: 36rem;
+    background: url('R.images.frontline.gui.maps.battle.quest.glair_orange_up') no-repeat center / cover;
+    position: absolute;
+    top: -35rem;
+    left: 0;
+}
+.App_glairUp__startAnim_de {
+    animation-name: App_glairMoveToRight_49, App_blink_e6;
+    animation-duration: var(--glair-move), var(--blink);
+    animation-timing-function: linear;
+    animation-delay: var(--hide-transition), 0ms;
+}
+.App_base__completed_9f .App_glairUp_d8 {
+    background-image: url('R.images.frontline.gui.maps.battle.quest.glair_green_up');
+}
+.App_glairDown_40 {
+    width: 250rem;
+    height: 36rem;
+    background: url('R.images.frontline.gui.maps.battle.quest.glair_orange_down') no-repeat center / cover;
+    position: absolute;
+    top: 33rem;
+    left: 0;
+}
+.App_glairDown__startAnim_21 {
+    animation-name: App_glairMoveToLeft_56, App_blink_e6;
+    animation-duration: var(--glair-move), var(--blink);
+    animation-timing-function: linear;
+    animation-delay: var(--hide-transition), 0ms;
+}
+.App_base__completed_9f .App_glairDown_40 {
+    background-image: url('R.images.frontline.gui.maps.battle.quest.glair_green_down');
+}
+.App_header_4c {
+    color: #f2f2f7;
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
+    text-shadow: 0rem 0rem 3rem rgba(0, 0, 0, 0.25);
+}
+.App_header__animate_53 {
+    animation-name: App_textTransitionDefault_09;
+    animation-duration: var(--state-transition);
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+}
+.App_base__firstShow_18 .App_header_4c {
+    animation-name: App_textBlink_69;
+    animation-duration: var(--blink);
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+}
+.App_base__completed_9f .App_header_4c {
+    animation-name: App_textBlinkCompleted_0c;
+    animation-duration: var(--blink);
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+}
+.App_base__blocked_b8 .App_header_4c {
+    color: #e9e2bf;
+    text-shadow: 0rem 0rem 14rem rgba(255, 0, 0, 1);
+    animation-name: App_blockedTextBlink_27;
+    animation-duration: var(--completed-hide);
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+}
+.App_headerBlocked_32 {
+    width: 180rem;
+    height: 30rem;
+    background: url('R.images.frontline.gui.maps.battle.quest.lock_highlited') no-repeat center / cover;
+    opacity: 1;
+    position: absolute;
+    top: 22rem;
+    left: 42rem;
+    animation-name: App_blockedImageBlink_fc;
+    animation-duration: var(--completed-hide);
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+}
+@keyframes App_glairMoveToRight_49 {
+    0% {
+        transform: translateX(0rem);
+    }
+
+    100% {
+        transform: translateX(25em);
+    }
+}
+@keyframes App_glairMoveToLeft_56 {
+    0% {
+        transform: translateX(0rem);
+    }
+
+    100% {
+        transform: translateX(-25rem);
+    }
+}
+@keyframes App_blink_e6 {
+    0% {
+        filter: brightness(1.5);
+    }
+
+    100% {
+        filter: brightness(1);
+    }
+}
+@keyframes App_firstShowBlink_82 {
+    0% {
+        filter: brightness(1.5);
+    }
+
+    100% {
+        filter: brightness(1);
+    }
+}
+@keyframes App_textBlink_69 {
+    0% {
+        color: #fc6;
+        text-shadow:
+            0rem 4rem 4rem rgba(0, 0, 0, 0.25),
+            0rem 0rem 6rem rgba(255, 120, 30, 0.5);
+    }
+
+    100% {
+        color: #ffdd99;
+        text-shadow: 0rem 0rem 3rem rgba(255, 127, 0, 0.2);
+    }
+}
+@keyframes App_textBlinkCompleted_0c {
+    0% {
+        color: #7fe22c;
+        text-shadow: 0rem 0rem 4rem rgba(0, 0, 0, 0.55);
+    }
+
+    100% {
+        color: #80d43a;
+        text-shadow: 0rem 0rem 3rem rgba(0, 0, 0, 0.25);
+    }
+}
+@keyframes App_textTransitionDefault_09 {
+    0% {
+        color: #ffdd99;
+        text-shadow: 0rem 0rem 3rem rgba(255, 127, 0, 0.2);
+    }
+
+    100% {
+        color: #f2f2f7;
+        text-shadow: 0rem 0rem 3rem rgba(0, 0, 0, 0.25);
+    }
+}
+@keyframes App_blockedTextBlink_27 {
+    0% {
+        color: #e9e2bf;
+        text-shadow: 0rem 0rem 14rem rgba(255, 0, 0, 1);
+    }
+
+    20% {
+        color: #f2f2f7;
+        text-shadow: 0rem 0rem 0rem rgba(255, 0, 0, 0);
+    }
+
+    40% {
+        color: #e9e2bf;
+        text-shadow: 0rem 0rem 14rem rgba(255, 0, 0, 1);
+    }
+
+    60% {
+        color: #f2f2f7;
+        text-shadow: 0rem 0rem 0rem rgba(255, 0, 0, 0);
+    }
+
+    80% {
+        color: #e9e2bf;
+        text-shadow: 0rem 0rem 14rem rgba(255, 0, 0, 1);
+    }
+
+    100% {
+        color: #f2f2f7;
+        text-shadow: 0rem 0rem 0rem rgba(255, 0, 0, 0);
+    }
+}
+@keyframes App_blockedImageBlink_fc {
+    0% {
+        filter: saturate(1);
+    }
+
+    20% {
+        filter: saturate(0);
+    }
+
+    40% {
+        filter: saturate(1);
+    }
+
+    60% {
+        filter: saturate(0);
+    }
+
+    80% {
+        filter: saturate(1);
+    }
+
+    100% {
+        filter: saturate(0);
+    }
+}
+.App_content_fb {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding-left: 10rem;
+    position: relative;
+    transform: translateY(17rem);
+}
+.App_description_5e {
+    color: #fefeec;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 153rem;
+    text-shadow: 0rem 0rem 3rem rgba(0, 0, 0, 0.25);
+}
+.App_base__completed_9f .App_description_5e {
+    color: #80d43a;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    transition-duration: 0ms;
+    transition-property: all;
+}
+.App_progress_7d {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 4rem;
+}
+.App_progressNumbers_b2 {
+    color: #fefeec;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    margin-top: -8rem;
+    text-shadow:
+        0rem 0rem 8rem rgba(0, 0, 0, 0.6),
+        0rem 0rem 20rem rgba(0, 0, 0, 1);
+}
+.App_base__completed_9f .App_progressNumbers_b2 {
+    color: #80d43a;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    transition-duration: 0ms;
+    transition-property: all;
+}
+.App_progressValue_9b {
+    color: #e9e2bf;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    margin-right: 3rem;
+}
+.App_progressValue__colored_d1 {
+    color: #feab34;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+.App_base__completed_9f .App_progressValue_9b {
+    color: #80d43a;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    transition-duration: 0ms;
+    transition-property: all;
+}
+.App_progressGoal_5d {
+    margin-left: 1rem;
+}
+.App_blocked_f2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    position: absolute;
+    top: 100rem;
+    right: 42rem;
+}
+.App_blocked__withDirections_bf {
+    top: 94rem;
+}
+.App_blockedDescr_8a {
+    color: #ffdd99;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    text-shadow:
+        0rem 0rem 4rem rgba(255, 127, 0, 0.25),
+        0rem 0rem 8rem #ff2a00,
+        0rem 0rem 15rem #e52;
+}
+.App_blockedDescr__direction_72 {
+    color: #ffdd99;
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.App_button_d2 {
+    display: flex;
+    position: absolute;
+    right: 2rem;
+    bottom: 0;
+}
+.App_buttonPart_30 {
+    width: 6rem;
+    height: 25rem;
+}
+.App_buttonPart__left_53 {
+    background: url('R.images.frontline.gui.maps.battle.quest.button_left') no-repeat center / cover;
+}
+.App_buttonPart__right_b1 {
+    background: url('R.images.frontline.gui.maps.battle.quest.button_right') no-repeat center / cover;
+}
+.App_buttonContent_f7 {
+    display: flex;
+    align-items: center;
+    height: 25rem;
+    padding: 0rem 6rem;
+    background: url('R.images.frontline.gui.maps.battle.quest.button') no-repeat center / 100%;
+}
+.App_buttonText_82 {
+    color: #4f3a30;
+    font-size: 15rem;
+    font-weight: 700;
+    line-height: 1.15;
+    margin-top: -2rem;
+}
+
+.HexagonProgress_base_1b {
+    width: 78rem;
+    height: 68rem;
+    position: relative;
+}
+
+.HexagonProgress_shadow_9c {
+    display: flex;
+    width: 52rem;
+    height: 52rem;
+    background: url('R.images.frontline.gui.maps.battle.quest.shadow') no-repeat center / cover;
+    position: absolute;
+    top: 8rem;
+    left: 13rem;
+}
+
+.HexagonProgress_canvas_3d {
+    display: flex;
+    opacity: 1;
+    z-index: 1;
+}
+
+.HexagonProgress_icon_08 {
+    width: 80rem;
+    height: 80rem;
+    background: no-repeat center / cover;
+    position: absolute;
+    top: -5rem;
+    left: -1rem;
+}

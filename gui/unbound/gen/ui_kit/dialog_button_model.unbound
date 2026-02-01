@@ -16,12 +16,10 @@
         (var soundDown:str = '')
         (var tooltipHeader:str = '')
         (var tooltipBody:str = '')
-        (var isVisible:bool = true)
 
         (const BTN_SUBMIT:str = 'submit')
         (const BTN_CANCEL:str = 'cancel')
         (const BTN_RESEARCH:str = 'research')
         (const BTN_PURCHASE:str = 'purchase')
-        (const BTN_INSTALL:str = 'install')
     )
 )

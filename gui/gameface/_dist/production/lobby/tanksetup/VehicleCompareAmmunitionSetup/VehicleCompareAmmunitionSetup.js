@@ -2992,7 +2992,7 @@
                 'use strict';
                 n.d(t, { D9: () => s, DA: () => r.D, m2: () => u.m, tT: () => r.t });
                 var a = n(2790),
-                    r = (n(3469), n(2133), n(3779), n(579), n(5360)),
+                    r = (n(3469), n(2133), n(579), n(5360)),
                     u = n(9056);
                 const s = a.Z;
             },
@@ -3157,10 +3157,6 @@
                         t.current
                     );
                 };
-            },
-            3779: (e, t, n) => {
-                'use strict';
-                n(6179);
             },
             579: (e, t, n) => {
                 'use strict';
@@ -3874,7 +3870,7 @@
                         );
                     };
             },
-            7604: (e, t, n) => {
+            1434: (e, t, n) => {
                 'use strict';
                 var a = {};
                 (n.r(a),
@@ -12517,6 +12513,6 @@
                 n = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             (n.forEach(t.bind(null, 0)), (n.push = t.bind(null, n.push.bind(n))));
         })());
-    var __webpack_exports__ = __webpack_require__.O(void 0, [727], () => __webpack_require__(7604));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [727], () => __webpack_require__(1434));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

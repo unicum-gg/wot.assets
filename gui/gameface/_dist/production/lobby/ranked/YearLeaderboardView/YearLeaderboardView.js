@@ -111,7 +111,7 @@
                 var E = {};
                 (t.r(E),
                     t.d(E, {
-                        addModelObserver: () => b,
+                        addModelObserver: () => w,
                         addPreloadTexture: () => d,
                         children: () => n,
                         displayStatus: () => a,
@@ -134,7 +134,7 @@
                         setAnimateWindow: () => T,
                         setEventHandled: () => L,
                         setInputPaddingsRem: () => m,
-                        setSidePaddingsRem: () => w,
+                        setSidePaddingsRem: () => b,
                         whenTutorialReady: () => I,
                     }));
                 var A = t(596);
@@ -223,10 +223,10 @@
                 function v(u, e, t, n = 1) {
                     return viewEnv.getWebBrowserTexturePath(u, e, t, n);
                 }
-                function b(u, e, t) {
+                function w(u, e, t) {
                     return viewEnv.addDataChangedCallback(u, e, t);
                 }
-                function w(u) {
+                function b(u) {
                     viewEnv.setHitAreaPaddingsRem(u.top, u.right, u.bottom, u.left, 15);
                 }
                 function p(u = 'px') {
@@ -620,14 +620,14 @@
                         var n;
                     },
                     v = () => m(a.CLOSE),
-                    b = (u, e) => {
+                    w = (u, e) => {
                         u.keyCode === B.n.ESCAPE && e();
                     };
-                var w = t(572);
+                var b = t(572);
                 const p = E.instance,
                     h = {
                         DataTracker: A.Z,
-                        ViewModel: w.Z,
+                        ViewModel: b.Z,
                         ViewEventType: a,
                         NumberFormatType: r,
                         RealFormatType: D,
@@ -665,14 +665,14 @@
                             });
                         },
                         addEscapeListener: (u) => {
-                            const e = (e) => b(e, u);
+                            const e = (e) => w(e, u);
                             return (
                                 window.addEventListener('keydown', e),
                                 () => window.removeEventListener('keydown', e)
                             );
                         },
                         closeOnEsc: (u) => {
-                            b(u, v);
+                            w(u, v);
                         },
                         handleViewEvent: m,
                         onBindingsReady: d,
@@ -824,7 +824,7 @@
                 const v = (u) => {
                     console.error(u.type + ': useKeydownListener hook :: Callback is not defined');
                 };
-                function b(u = m.n.NONE, e = v, t = !1) {
+                function w(u = m.n.NONE, e = v, t = !1) {
                     (0, n.useEffect)(() => {
                         if (u !== m.n.NONE)
                             return (
@@ -841,9 +841,9 @@
                         }
                     }, [e, u, t]);
                 }
-                function w() {
+                function b() {
                     !(function (u = m.n.ESCAPE) {
-                        b(u, D.Sy, !0);
+                        w(u, D.Sy, !0);
                     })(m.n.ESCAPE);
                 }
                 const p = (u, e) => {
@@ -975,8 +975,8 @@
                         d = _[0],
                         m = _[1],
                         v = (0, n.useState)(!1),
-                        b = v[0],
-                        w = v[1],
+                        w = v[0],
+                        b = v[1],
                         p = (0, n.useState)(!1),
                         h = p[0],
                         f = p[1],
@@ -1009,19 +1009,19 @@
                         ),
                         L = (0, n.useCallback)(
                             (u) => {
-                                F || (B && B(u), w(!1));
+                                F || (B && B(u), b(!1));
                             },
                             [F, B],
                         ),
                         P = (0, n.useCallback)(
                             (u) => {
-                                F || (null !== r && g(r), s && s(u), t && y(), w(!0));
+                                F || (null !== r && g(r), s && s(u), t && y(), b(!0));
                             },
                             [F, r, s, y, t],
                         ),
                         N = (0, n.useCallback)(
                             (u) => {
-                                F || (C && C(u), w(!1));
+                                F || (C && C(u), b(!1));
                             },
                             [F, C],
                         ),
@@ -1032,7 +1032,7 @@
                                 [S.base__disabled]: F,
                                 [S[`base__${e}`]]: e,
                                 [S.base__focus]: d,
-                                [S.base__highlightActive]: b,
+                                [S.base__highlightActive]: w,
                                 [S.base__firstHover]: h,
                             },
                             o,
@@ -1275,8 +1275,8 @@
                             d = u.targetId,
                             m = void 0 === d ? 0 : d,
                             v = u.onShow,
-                            b = u.onHide,
-                            w = (function (u, e) {
+                            w = u.onHide,
+                            b = (function (u, e) {
                                 if (null == u) return {};
                                 var t,
                                     n,
@@ -1298,10 +1298,10 @@
                                     const u = p.current.timeoutId;
                                     (u > 0 && (clearTimeout(u), (p.current.timeoutId = 0)),
                                         K(t, c, { on: !1 }, h),
-                                        p.current.isVisible && b && b(),
+                                        p.current.isVisible && w && w(),
                                         (p.current.isVisible = !1));
                                 }
-                            }, [t, c, h, b]),
+                            }, [t, c, h, w]),
                             y = (0, n.useCallback)((u) => {
                                 p.current.isVisible &&
                                     ((p.current.prevTarget = document.elementFromPoint(u.clientX, u.clientY)),
@@ -1356,7 +1356,7 @@
                                               (!1 === B && f(), null == a || a(e), null == u || u(e));
                                           })(e.props.onMouseDown),
                                       },
-                                      w,
+                                      b,
                                   ),
                               )
                             : e;
@@ -1472,7 +1472,7 @@
                                 E().createElement('img', {
                                     id: 'swfImg',
                                     className: J,
-                                    src: 'swf://gui/flash/animations/battlePass/rays.swf?name=godRaysSwf',
+                                    src: 'swf://gui/flash/animations/rankedBattles/godRays.swf?name=godRaysSwf',
                                     alt: 'godRaysSwf',
                                     onLoad: s,
                                 }),
@@ -1509,8 +1509,8 @@
                     },
                     mu = 'YearLeaderboardViewContent_base_24',
                     vu = 'YearLeaderboardViewContent_glass_9a',
-                    bu = 'YearLeaderboardViewContent_closeBtn_40',
-                    wu = 'YearLeaderboardViewContent_header_4b',
+                    wu = 'YearLeaderboardViewContent_closeBtn_40',
+                    bu = 'YearLeaderboardViewContent_header_4b',
                     pu = 'YearLeaderboardViewContent_battleType_d1',
                     hu = 'YearLeaderboardViewContent_battleTypeIcon_27',
                     gu = 'YearLeaderboardViewContent_battleTypeLabel_ce',
@@ -1547,7 +1547,7 @@
                             E().createElement('div', { className: vu }),
                             E().createElement(
                                 'div',
-                                { className: bu },
+                                { className: wu },
                                 E().createElement(W, {
                                     caption: R.strings.menu.viewHeader.closeBtn.label(),
                                     type: 'close',
@@ -1557,7 +1557,7 @@
                             ),
                             E().createElement(
                                 'div',
-                                { className: wu },
+                                { className: bu },
                                 E().createElement(
                                     'div',
                                     { className: pu },
@@ -1597,7 +1597,7 @@
                             p(u, () => {
                                 F(!0);
                             }),
-                            w(),
+                            b(),
                             E().createElement('div', { className: Tu, style: e }, A && E().createElement(Mu, null))
                         );
                     },

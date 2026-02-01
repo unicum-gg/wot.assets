@@ -208,619 +208,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     opacity: 0.6;
 }
 
-.TextButton_base_b6 {
-    display: flex;
-    align-items: center;
-    padding: 0 3rem;
-    font-size: 12rem;
-    position: relative;
-    cursor: pointer;
-}
-
-.TextButton_base__right_39 {
-    flex-direction: row-reverse;
-}
-.TextButton_icon_17 {
-    width: 32rem;
-    height: 32rem;
-    background: no-repeat center / contain;
-    position: relative;
-}
-.TextButton_icon__back_43,
-.TextButton_icon__forward_59 {
-    margin: -1rem -5rem;
-    background-image: url('R.images.gui.maps.icons.components.text_button.back');
-    transform: translateY(1rem);
-}
-.TextButton_icon__forward_59 {
-    transform: rotate(180deg) translateY(1rem);
-}
-.TextButton_icon__close_53 {
-    margin: -1rem 0;
-    background-image: url('R.images.gui.maps.icons.components.text_button.close');
-}
-.TextButton_icon__info_33 {
-    margin: -1rem -5rem;
-    background-image: url('R.images.gui.maps.icons.components.text_button.info');
-}
-.TextButton_glow_a4 {
-    width: 100%;
-    height: 100%;
-    background: no-repeat center / contain;
-    opacity: 0;
-    position: absolute;
-    top: 0;
-    transition: opacity 0.16s;
-}
-.TextButton_icon__back_43 .TextButton_glow_a4,
-.TextButton_icon__forward_59 .TextButton_glow_a4 {
-    background-image: url('R.images.gui.maps.icons.components.text_button.back_hover');
-}
-.TextButton_icon__close_53 .TextButton_glow_a4 {
-    background-image: url('R.images.gui.maps.icons.components.text_button.close_hover');
-}
-.TextButton_icon__info_33 .TextButton_glow_a4 {
-    background-image: url('R.images.gui.maps.icons.components.text_button.info_hover');
-}
-.TextButton_base_b6:hover .TextButton_glow_a4 {
-    opacity: 1;
-}
-.TextButton_base_b6:active .TextButton_glow_a4 {
-    opacity: 0;
-}
-.TextButton_caption_82 {
-    position: relative;
-    transition:
-        color 0.16s,
-        text-shadow 0.16s;
-}
-.TextButton_caption__back_b9,
-.TextButton_caption__forward_4e,
-.TextButton_caption__close_36 {
-    color: #ffdd99;
-    text-shadow:
-        0 0 10rem rgba(255, 42, 0, 1),
-        0 0 10rem rgba(255, 42, 0, 0.4),
-        0 0 10rem rgba(255, 42, 0, 0.4),
-        0 0 2rem rgba(255, 42, 0, 0.4),
-        0 0 1rem rgba(255, 42, 0, 0.4),
-        0 0 2rem rgba(255, 42, 0, 0.4),
-        0 0 1rem rgba(255, 42, 0, 0.4);
-}
-.TextButton_base_b6:hover .TextButton_caption__back_b9,
-.TextButton_base_b6:hover .TextButton_caption__forward_4e,
-.TextButton_base_b6:hover .TextButton_caption__close_36 {
-    color: #fffa9f;
-}
-.TextButton_base_b6:active .TextButton_caption__back_b9,
-.TextButton_base_b6:active .TextButton_caption__forward_4e,
-.TextButton_base_b6:active .TextButton_caption__close_36 {
-    color: #ffdd99;
-}
-.TextButton_caption__info_23 {
-    padding: 0 5rem;
-    color: #ccffff;
-    text-shadow:
-        0 0 12rem rgba(31, 68, 255, 0.8),
-        0 0 8rem #00eaff;
-}
-.TextButton_base_b6:hover .TextButton_caption__info_23 {
-    color: #e3ffff;
-    text-shadow:
-        0 0 12rem rgba(31, 68, 255, 0.8),
-        0 0 12rem rgba(0, 234, 255, 1),
-        0 0 8rem #00eaff;
-}
-.TextButton_base_b6:active .TextButton_caption__info_23 {
-    color: #ccffff;
-    text-shadow:
-        0 0 12rem rgba(31, 68, 255, 0.6),
-        0 0 8rem #00eaff;
-}
-.TextButton_goto_e7 {
-    color: #7c7c6c;
-}
-.TextButton_base__left_ff .TextButton_goto_e7 {
-    margin-left: 8rem;
-}
-.TextButton_base__right_39 .TextButton_goto_e7 {
-    margin-right: 8rem;
-}
-.TextButton_shine_e2 {
-    width: 90rem;
-    height: 40rem;
-    background: url('R.images.gui.maps.icons.components.text_button.shine') no-repeat center / contain;
-    opacity: 0;
-    position: absolute;
-    top: -4rem;
-    transition: opacity 0.16s;
-    pointer-events: none;
-}
-.TextButton_base__left_ff .TextButton_shine_e2 {
-    left: -4rem;
-}
-.TextButton_base__right_39 .TextButton_shine_e2 {
-    right: -4rem;
-    transform: rotate(180deg);
-}
-.TextButton_base_b6:hover .TextButton_shine_e2 {
-    opacity: 1;
-}
-.TextButton_base_b6:active .TextButton_shine_e2 {
-    opacity: 0;
-}
-
-.PageTitle_base_ef {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.PageTitle_title_33 {
-    color: #f2f2f7;
-    font-size: 36rem;
-    font-weight: 700;
-    line-height: 1.1;
-}
-
-.mediaMedium .PageTitle_title_33 {
-    font-size: 56rem;
-}
-
-.PaginationRender_base_75 {
-    display: flex;
-    color: #8c8c7e;
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
-    justify-content: center;
-    border: 1rem solid rgba(233, 226, 191, 0.3);
-    border-radius: 2rem;
-    line-height: 1.1;
-    position: relative;
-    cursor: pointer;
-}
-
-.PaginationRender_base_75:hover {
-    border-color: rgba(233, 226, 191, 0.5);
-    color: #e9e2bf;
-}
-
-.PaginationRender_base__completed_69 {
-    border-color: rgba(128, 212, 58, 0.3);
-    color: #80d43a;
-}
-
-.PaginationRender_base__completed_69:hover {
-    border-color: rgba(128, 212, 58, 0.5);
-    color: #80d43a;
-}
-
-.PaginationRender_base__inaccessible_55 {
-    border-color: rgba(255, 39, 23, 0.3);
-    color: #ff2717;
-}
-
-.PaginationRender_base__inaccessible_55:hover {
-    border-color: rgba(255, 39, 23, 0.5);
-    color: #ff2717;
-}
-
-.PaginationRender_base__selected_e1 {
-    border-color: transparent;
-    color: #e9e2bf;
-}
-
-.PaginationRender_base__selected_e1:hover {
-    border-color: transparent;
-    color: #e9e2bf;
-}
-
-.PaginationRender_selectedImage_58 {
-    width: 48rem;
-    height: 38rem;
-    background: url('R.images.gui.maps.icons.components.pagination.item_select') no-repeat center / contain;
-    opacity: 0.7;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.PaginationList_base_94 {
-    display: flex;
-    flex-direction: row;
-}
-
-.PaginationList_item_58 {
-    width: 30rem;
-    height: 20rem;
-    margin-right: 10rem;
-}
-
-.PaginationList_item__last_ec {
-    margin-right: 0;
-}
-
-.WelcomeSlider_base_08 {
-    display: flex;
-    justify-content: space-between;
-    flex: 1;
-    width: 100%;
-}
-
-.WelcomeSlider_pagination_a8 > div {
-    margin-right: 20rem;
-}
-
-.WelcomeSlider_pagination_a8 > div:last-child {
-    margin-right: 0;
-}
-
-.WelcomeSlider_sliderArrow_b1 {
-    display: flex;
-    align-items: center;
-    height: 100%;
-}
-
-.WelcomeSlider_sliderArrowIcon_cc {
-    width: 74rem;
-    height: 142rem;
-    background: url('R.images.frontline.gui.maps.welcome_page.arrow') no-repeat center / cover;
-    opacity: 0.8;
-    cursor: pointer;
-}
-
-.WelcomeSlider_sliderArrowIcon_cc:hover {
-    opacity: 1;
-}
-
-.WelcomeSlider_sliderArrowIcon__right_c4 {
-    transform: rotate(180deg);
-}
-
-.WelcomeSlider_sliderArrowIcon__disabled_57 {
-    background: url('R.images.frontline.gui.maps.welcome_page.arrow_disabled') no-repeat center / cover;
-    opacity: 1;
-    pointer-events: none;
-}
-
-.WelcomeSlider_slider_23 {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    width: 488rem;
-    margin: 126rem 0 61rem;
-}
-
-.mediaMedium .WelcomeSlider_slider_23 {
-    width: 960rem;
-    margin: 78rem 0 86rem;
-}
-
-.mediaLarge .WelcomeSlider_slider_23 {
-    margin: 153rem 0 161rem;
-}
-
-.WelcomeSlider_sliderContent_4d {
-    display: flex;
-}
-
-.WelcomeSlider_slide_9c {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 232rem;
-}
-
-.WelcomeSlider_slide_9c + .WelcomeSlider_slide_9c {
-    margin-left: 24rem;
-}
-
-.WelcomeSlider_slide__fullWidth_55 {
-    width: 605rem;
-}
-
-.mediaMedium .WelcomeSlider_slide_9c {
-    width: 400rem;
-}
-
-.mediaMedium .WelcomeSlider_slide__fullWidth_55 {
-    width: 960rem;
-}
-
-.WelcomeViewApp_base_4a {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #000000;
-    background-image:
-        linear-gradient(to top, transparent, rgba(0, 0, 0, 0.45) 15%, rgba(0, 0, 0, 0.45) 30%, transparent 50%),
-        radial-gradient(transparent, rgba(0, 0, 0, 0.7)), url('R.images.frontline.gui.maps.bg.info');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    position: relative;
-}
-
-.WelcomeViewApp_page_4a {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 739rem;
-    height: 602rem;
-}
-
-.mediaMedium .WelcomeViewApp_page_4a {
-    width: 1208rem;
-    height: 708rem;
-}
-
-.mediaLarge .WelcomeViewApp_page_4a {
-    height: 880rem;
-}
-
-.mediaExtraLarge .WelcomeViewApp_page_4a {
-    height: 860rem;
-}
-
-.WelcomeViewApp_pageTitle_3e {
-    margin-top: -10rem;
-}
-
-.mediaMedium .WelcomeViewApp_pageTitle_3e {
-    margin-top: -14rem;
-}
-
-.mediaLarge .WelcomeViewApp_pageTitle_3e {
-    margin-top: -15rem;
-}
-
-.WelcomeViewApp_closeButton_d3 {
-    position: absolute;
-    top: 30rem;
-    right: 28rem;
-}
-
-.mediaLarge .WelcomeViewApp_closeButton_d3 {
-    right: 38rem;
-}
-
-.WelcomeViewApp_bottomBtnContainer_a9 {
-    display: flex;
-    justify-content: center;
-}
-
-.WelcomeViewApp_bottomCloseBtn_55 {
-    width: 158rem;
-}
-
-.ExtendedText_base_71 {
-    display: flex;
-    line-height: 1.2;
-    position: relative;
-}
-
-.ExtendedText_base__zeroPadding_25 {
-    padding: 0;
-}
-
-.ExtendedText_base__isTruncationAvailable_5b {
-    width: 100%;
-}
-
-.ExtendedText_truncated_97 {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    position: relative;
-}
-
-.ExtendedText_truncated__hide_31 {
-    opacity: 0;
-}
-
-.ExtendedText_unTruncated_b8 {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    position: relative;
-    width: 100%;
-    height: 100%;
-    justify-content: flex-start;
-    align-content: flex-start;
-    color: #ff2717;
-    opacity: 0;
-    position: absolute;
-    top: 0;
-    right: 0;
-    pointer-events: none;
-}
-
-.colors_blackReal_fc {
-    color: #000000;
-}
-
-.colors_whiteReal_31 {
-    color: #ffffff;
-}
-
-.colors_white_45 {
-    color: #f2f2f7;
-}
-
-.colors_whiteOrange_81 {
-    color: #fefeec;
-}
-
-.colors_whiteSpanish_c3 {
-    color: #e9e2bf;
-}
-
-.colors_par_5b {
-    color: #8c8c7e;
-}
-
-.colors_parSecondary_fd {
-    color: #595950;
-}
-
-.colors_parTertiary_97 {
-    color: #37362e;
-}
-
-.colors_red_79 {
-    color: #ff2717;
-}
-
-.colors_redDark_73 {
-    color: #b70000;
-}
-
-.colors_yellow_76 {
-    color: #feab34;
-}
-
-.colors_orange_cd {
-    color: #ee7000;
-}
-
-.colors_cream_0f {
-    color: #ffdd99;
-}
-
-.colors_brown_82 {
-    color: #cbac77;
-}
-
-.colors_greenBright_68 {
-    color: #80d43a;
-}
-
-.colors_green_fa {
-    color: #7ab300;
-}
-
-.colors_greenDark_a9 {
-    color: #497212;
-}
-
-.colors_blueBooster_26 {
-    color: #ccffff;
-}
-
-.colors_blueTeamkiller_86 {
-    color: #09e2ff;
-}
-
-.colors_cred_35 {
-    color: #ced9d9;
-}
-
-.colors_gold_c3 {
-    color: #ffc363;
-}
-
-.colors_bond_ce {
-    color: #c9c9b6;
-}
-
-.colors_prom_83 {
-    color: #a29b70;
-}
-
-.renderers_noBreakWrapper_10 {
-    display: flex;
-    flex-wrap: nowrap;
-}
-
-.renderers_lineBreak_b5 {
-    width: 100%;
-    height: 0;
-}
-
-.renderers_newLine_bd {
-    flex: 1;
-    width: 100%;
-}
-
-.BasicSlide_title_cf {
-    color: #fefeec;
-    font-size: 15rem;
-    font-weight: 700;
-    line-height: 1.15;
-    margin: 21rem 0 10rem;
-}
-
-.mediaMedium .BasicSlide_title_cf {
-    color: #fefeec;
-    font-size: 18rem;
-    font-weight: 700;
-    line-height: 1.1;
-    margin: 17rem 0 11rem;
-}
-
-.mediaLarge .BasicSlide_title_cf {
-    margin: 22rem 0 11rem;
-}
-
-.BasicSlide_description_e5 {
-    color: #8c8c7e;
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
-    text-align: center;
-}
-
-.mediaMedium .BasicSlide_description_e5 {
-    color: #8c8c7e;
-    font-size: 16rem;
-    font-weight: 400;
-    line-height: 1.25;
-}
-
-.BasicSlide_img_27 {
-    width: 232rem;
-    height: 174rem;
-    background: no-repeat center / cover;
-}
-
-.mediaMedium .BasicSlide_img_27 {
-    width: 400rem;
-    height: 300rem;
-}
-
-.BasicSlide_img__level_5b {
-    background-image: url('R.images.frontline.gui.maps.welcome_page.level_reserves_232_174');
-}
-
-.mediaMedium .BasicSlide_img__level_5b {
-    background-image: url('R.images.frontline.gui.maps.welcome_page.level_reserves_400_300');
-}
-
-.BasicSlide_img__general_b9 {
-    background-image: url('R.images.frontline.gui.maps.welcome_page.general_232_174');
-}
-
-.mediaMedium .BasicSlide_img__general_b9 {
-    background-image: url('R.images.frontline.gui.maps.welcome_page.general_400_300');
-}
-
-.BasicSlide_img__map_c3 {
-    width: 488rem;
-    height: 174rem;
-    background-image: url('R.images.frontline.gui.maps.welcome_page.map_488_174');
-}
-
-.mediaMedium .BasicSlide_img__map_c3 {
-    width: 960rem;
-    height: 300rem;
-    background-image: url('R.images.frontline.gui.maps.welcome_page.map_960_300');
-}
-
 .Box_mt__XS_0c {
     margin-top: 4rem;
 }
@@ -1096,7 +483,315 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     color: #a29b70;
 }
 
-.VehiclesSlide_title_a4 {
+.TextButton_base_b6 {
+    display: flex;
+    align-items: center;
+    padding: 0 3rem;
+    font-size: 12rem;
+    position: relative;
+    cursor: pointer;
+}
+
+.TextButton_base__right_39 {
+    flex-direction: row-reverse;
+}
+.TextButton_icon_17 {
+    width: 32rem;
+    height: 32rem;
+    background: no-repeat center / contain;
+    position: relative;
+}
+.TextButton_icon__back_43,
+.TextButton_icon__forward_59 {
+    margin: -1rem -5rem;
+    background-image: url('R.images.gui.maps.icons.components.text_button.back');
+    transform: translateY(1rem);
+}
+.TextButton_icon__forward_59 {
+    transform: rotate(180deg) translateY(1rem);
+}
+.TextButton_icon__close_53 {
+    margin: -1rem 0;
+    background-image: url('R.images.gui.maps.icons.components.text_button.close');
+}
+.TextButton_icon__info_33 {
+    margin: -1rem -5rem;
+    background-image: url('R.images.gui.maps.icons.components.text_button.info');
+}
+.TextButton_glow_a4 {
+    width: 100%;
+    height: 100%;
+    background: no-repeat center / contain;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    transition: opacity 0.16s;
+}
+.TextButton_icon__back_43 .TextButton_glow_a4,
+.TextButton_icon__forward_59 .TextButton_glow_a4 {
+    background-image: url('R.images.gui.maps.icons.components.text_button.back_hover');
+}
+.TextButton_icon__close_53 .TextButton_glow_a4 {
+    background-image: url('R.images.gui.maps.icons.components.text_button.close_hover');
+}
+.TextButton_icon__info_33 .TextButton_glow_a4 {
+    background-image: url('R.images.gui.maps.icons.components.text_button.info_hover');
+}
+.TextButton_base_b6:hover .TextButton_glow_a4 {
+    opacity: 1;
+}
+.TextButton_base_b6:active .TextButton_glow_a4 {
+    opacity: 0;
+}
+.TextButton_caption_82 {
+    position: relative;
+    transition:
+        color 0.16s,
+        text-shadow 0.16s;
+}
+.TextButton_caption__back_b9,
+.TextButton_caption__forward_4e,
+.TextButton_caption__close_36 {
+    color: #ffdd99;
+    text-shadow:
+        0 0 10rem rgba(255, 42, 0, 1),
+        0 0 10rem rgba(255, 42, 0, 0.4),
+        0 0 10rem rgba(255, 42, 0, 0.4),
+        0 0 2rem rgba(255, 42, 0, 0.4),
+        0 0 1rem rgba(255, 42, 0, 0.4),
+        0 0 2rem rgba(255, 42, 0, 0.4),
+        0 0 1rem rgba(255, 42, 0, 0.4);
+}
+.TextButton_base_b6:hover .TextButton_caption__back_b9,
+.TextButton_base_b6:hover .TextButton_caption__forward_4e,
+.TextButton_base_b6:hover .TextButton_caption__close_36 {
+    color: #fffa9f;
+}
+.TextButton_base_b6:active .TextButton_caption__back_b9,
+.TextButton_base_b6:active .TextButton_caption__forward_4e,
+.TextButton_base_b6:active .TextButton_caption__close_36 {
+    color: #ffdd99;
+}
+.TextButton_caption__info_23 {
+    padding: 0 5rem;
+    color: #ccffff;
+    text-shadow:
+        0 0 12rem rgba(31, 68, 255, 0.8),
+        0 0 8rem #00eaff;
+}
+.TextButton_base_b6:hover .TextButton_caption__info_23 {
+    color: #e3ffff;
+    text-shadow:
+        0 0 12rem rgba(31, 68, 255, 0.8),
+        0 0 12rem rgba(0, 234, 255, 1),
+        0 0 8rem #00eaff;
+}
+.TextButton_base_b6:active .TextButton_caption__info_23 {
+    color: #ccffff;
+    text-shadow:
+        0 0 12rem rgba(31, 68, 255, 0.6),
+        0 0 8rem #00eaff;
+}
+.TextButton_goto_e7 {
+    color: #7c7c6c;
+}
+.TextButton_base__left_ff .TextButton_goto_e7 {
+    margin-left: 8rem;
+}
+.TextButton_base__right_39 .TextButton_goto_e7 {
+    margin-right: 8rem;
+}
+.TextButton_shine_e2 {
+    width: 90rem;
+    height: 40rem;
+    background: url('R.images.gui.maps.icons.components.text_button.shine') no-repeat center / contain;
+    opacity: 0;
+    position: absolute;
+    top: -4rem;
+    transition: opacity 0.16s;
+    pointer-events: none;
+}
+.TextButton_base__left_ff .TextButton_shine_e2 {
+    left: -4rem;
+}
+.TextButton_base__right_39 .TextButton_shine_e2 {
+    right: -4rem;
+    transform: rotate(180deg);
+}
+.TextButton_base_b6:hover .TextButton_shine_e2 {
+    opacity: 1;
+}
+.TextButton_base_b6:active .TextButton_shine_e2 {
+    opacity: 0;
+}
+
+.PageTitle_base_ef {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.PageTitle_title_33 {
+    color: #f2f2f7;
+    font-size: 36rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.mediaMedium .PageTitle_title_33 {
+    font-size: 56rem;
+}
+
+.ExtendedText_base_71 {
+    display: flex;
+    line-height: 1.2;
+    position: relative;
+}
+
+.ExtendedText_base__zeroPadding_25 {
+    padding: 0;
+}
+
+.ExtendedText_base__isTruncationAvailable_5b {
+    width: 100%;
+}
+
+.ExtendedText_truncated_97 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.ExtendedText_truncated__hide_31 {
+    opacity: 0;
+}
+
+.ExtendedText_unTruncated_b8 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    justify-content: flex-start;
+    align-content: flex-start;
+    color: #ff2717;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    pointer-events: none;
+}
+
+.colors_blackReal_fc {
+    color: #000000;
+}
+
+.colors_whiteReal_31 {
+    color: #ffffff;
+}
+
+.colors_white_45 {
+    color: #f2f2f7;
+}
+
+.colors_whiteOrange_81 {
+    color: #fefeec;
+}
+
+.colors_whiteSpanish_c3 {
+    color: #e9e2bf;
+}
+
+.colors_par_5b {
+    color: #8c8c7e;
+}
+
+.colors_parSecondary_fd {
+    color: #595950;
+}
+
+.colors_parTertiary_97 {
+    color: #37362e;
+}
+
+.colors_red_79 {
+    color: #ff2717;
+}
+
+.colors_redDark_73 {
+    color: #b70000;
+}
+
+.colors_yellow_76 {
+    color: #feab34;
+}
+
+.colors_orange_cd {
+    color: #ee7000;
+}
+
+.colors_cream_0f {
+    color: #ffdd99;
+}
+
+.colors_brown_82 {
+    color: #cbac77;
+}
+
+.colors_greenBright_68 {
+    color: #80d43a;
+}
+
+.colors_green_fa {
+    color: #7ab300;
+}
+
+.colors_greenDark_a9 {
+    color: #497212;
+}
+
+.colors_blueBooster_26 {
+    color: #ccffff;
+}
+
+.colors_blueTeamkiller_86 {
+    color: #09e2ff;
+}
+
+.colors_cred_35 {
+    color: #ced9d9;
+}
+
+.colors_gold_c3 {
+    color: #ffc363;
+}
+
+.colors_bond_ce {
+    color: #c9c9b6;
+}
+
+.colors_prom_83 {
+    color: #a29b70;
+}
+
+.renderers_noBreakWrapper_10 {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.renderers_lineBreak_b5 {
+    width: 100%;
+    height: 0;
+}
+
+.renderers_newLine_bd {
+    flex: 1;
+    width: 100%;
+}
+
+.BasicSlide_title_cf {
     color: #fefeec;
     font-size: 15rem;
     font-weight: 700;
@@ -1104,7 +799,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     margin: 21rem 0 10rem;
 }
 
-.mediaMedium .VehiclesSlide_title_a4 {
+.mediaMedium .BasicSlide_title_cf {
     color: #fefeec;
     font-size: 18rem;
     font-weight: 700;
@@ -1112,11 +807,11 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     margin: 17rem 0 11rem;
 }
 
-.mediaLarge .VehiclesSlide_title_a4 {
+.mediaLarge .BasicSlide_title_cf {
     margin: 22rem 0 11rem;
 }
 
-.VehiclesSlide_description_65 {
+.BasicSlide_description_e5 {
     color: #8c8c7e;
     font-size: 14rem;
     font-weight: 400;
@@ -1124,96 +819,277 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     text-align: center;
 }
 
-.mediaMedium .VehiclesSlide_description_65 {
+.mediaMedium .BasicSlide_description_e5 {
     color: #8c8c7e;
     font-size: 16rem;
     font-weight: 400;
     line-height: 1.25;
 }
 
-.VehiclesSlide_img_c1 {
-    width: 232rem;
-    height: 174rem;
+.BasicSlide_img_27 {
+    width: 470rem;
+    height: 280rem;
     background: no-repeat center / cover;
 }
 
-.mediaMedium .VehiclesSlide_img_c1 {
-    width: 400rem;
-    height: 300rem;
+.mediaMedium .BasicSlide_img_27 {
+    width: 540rem;
+    height: 324rem;
 }
 
-.VehiclesSlide_img__level_e8 {
-    background-image: url('R.images.frontline.gui.maps.welcome_page.level_reserves_232_174');
-}
-
-.mediaMedium .VehiclesSlide_img__level_e8 {
-    background-image: url('R.images.frontline.gui.maps.welcome_page.level_reserves_400_300');
-}
-
-.VehiclesSlide_img__general_45 {
-    background-image: url('R.images.frontline.gui.maps.welcome_page.general_232_174');
-}
-
-.mediaMedium .VehiclesSlide_img__general_45 {
-    background-image: url('R.images.frontline.gui.maps.welcome_page.general_400_300');
-}
-
-.VehiclesSlide_img__map_ca {
-    width: 488rem;
-    height: 174rem;
-    background-image: url('R.images.frontline.gui.maps.welcome_page.map_488_174');
-}
-
-.mediaMedium .VehiclesSlide_img__map_ca {
-    width: 960rem;
-    height: 300rem;
-    background-image: url('R.images.frontline.gui.maps.welcome_page.map_960_300');
-}
-
-.VehiclesSlide_img_c1 {
-    width: 470rem;
-    height: 280rem;
-    margin: -53rem 0;
-    background: url('R.images.frontline.gui.maps.welcome_page.vehicles_470_280') no-repeat center / cover;
-    position: relative;
-}
-
-.mediaMedium .VehiclesSlide_img_c1 {
+.mediaLarge .BasicSlide_img_27 {
     width: 750rem;
-    height: 446rem;
-    margin-top: -75rem;
-    margin-bottom: -71rem;
-    background-image: url('R.images.frontline.gui.maps.welcome_page.vehicles_750_446');
+    height: 450rem;
 }
 
-.VehiclesSlide_level_91 {
-    width: 100rem;
-    height: 80rem;
-    background: no-repeat center / contain;
+.BasicSlide_img__supplies_19 {
+    background-image: url('R.images.frontline.gui.maps.welcome_page.supplies');
+}
+
+.BasicSlide_img__progression_72 {
+    background-image: url('R.images.frontline.gui.maps.welcome_page.progression');
+}
+
+.BasicSlide_img__zones_5a {
+    background-image: url('R.images.frontline.gui.maps.welcome_page.zones');
+}
+
+.PaginationRender_base_75 {
+    display: flex;
+    color: #8c8c7e;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    justify-content: center;
+    border: 1rem solid rgba(233, 226, 191, 0.3);
+    border-radius: 2rem;
+    line-height: 1.1;
+    position: relative;
+    cursor: pointer;
+}
+
+.PaginationRender_base_75:hover {
+    border-color: rgba(233, 226, 191, 0.5);
+    color: #e9e2bf;
+}
+
+.PaginationRender_base__completed_69 {
+    border-color: rgba(128, 212, 58, 0.3);
+    color: #80d43a;
+}
+
+.PaginationRender_base__completed_69:hover {
+    border-color: rgba(128, 212, 58, 0.5);
+    color: #80d43a;
+}
+
+.PaginationRender_base__inaccessible_55 {
+    border-color: rgba(255, 39, 23, 0.3);
+    color: #ff2717;
+}
+
+.PaginationRender_base__inaccessible_55:hover {
+    border-color: rgba(255, 39, 23, 0.5);
+    color: #ff2717;
+}
+
+.PaginationRender_base__selected_e1 {
+    border-color: transparent;
+    color: #e9e2bf;
+}
+
+.PaginationRender_base__selected_e1:hover {
+    border-color: transparent;
+    color: #e9e2bf;
+}
+
+.PaginationRender_selectedImage_58 {
+    width: 48rem;
+    height: 38rem;
+    background: url('R.images.gui.maps.icons.components.pagination.item_select') no-repeat center / contain;
+    opacity: 0.7;
     position: absolute;
-    top: 68rem;
+    top: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
 }
 
-.mediaMedium .VehiclesSlide_level_91 {
-    width: 132rem;
-    height: 106rem;
-    top: 109rem;
+.PaginationList_base_94 {
+    display: flex;
+    flex-direction: row;
 }
 
-.VehiclesSlide_level__left_6f {
-    left: 138rem;
+.PaginationList_item_58 {
+    width: 30rem;
+    height: 20rem;
+    margin-right: 10rem;
 }
 
-.mediaMedium .VehiclesSlide_level__left_6f {
-    left: 218rem;
+.PaginationList_item__last_ec {
+    margin-right: 0;
 }
 
-.VehiclesSlide_level__right_ec {
-    right: 146rem;
-    transform: translate(50%, -50%);
+.WelcomeSlider_base_08 {
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+    width: 100%;
 }
 
-.mediaMedium .VehiclesSlide_level__right_ec {
-    right: 236rem;
+.WelcomeSlider_pagination_a8 > div {
+    margin-right: 20rem;
+    transform: translateY(0rem);
+}
+
+.mediaMedium .WelcomeSlider_pagination_a8 > div {
+    transform: translateY(20rem);
+}
+
+.mediaLarge .WelcomeSlider_pagination_a8 > div {
+    transform: translateY(50rem);
+}
+
+.WelcomeSlider_pagination_a8 > div:last-child {
+    margin-right: 0;
+}
+
+.WelcomeSlider_sliderArrow_b1 {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.WelcomeSlider_sliderArrowIcon_cc {
+    width: 74rem;
+    height: 142rem;
+    background: url('R.images.frontline.gui.maps.welcome_page.arrow') no-repeat center / cover;
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.WelcomeSlider_sliderArrowIcon_cc:hover {
+    opacity: 1;
+}
+
+.WelcomeSlider_sliderArrowIcon__right_c4 {
+    transform: rotate(180deg);
+}
+
+.WelcomeSlider_sliderArrowIcon__disabled_57 {
+    background: url('R.images.frontline.gui.maps.welcome_page.arrow_disabled') no-repeat center / cover;
+    opacity: 1;
+    pointer-events: none;
+}
+
+.WelcomeSlider_slider_23 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 488rem;
+    margin: 30rem 0 61rem;
+}
+
+.mediaMedium .WelcomeSlider_slider_23 {
+    width: 960rem;
+    margin: 70rem 0 86rem;
+}
+
+.mediaLarge .WelcomeSlider_slider_23 {
+    margin: 80rem 0 161rem;
+}
+
+.WelcomeSlider_sliderContent_4d {
+    display: flex;
+}
+
+.WelcomeSlider_slide_9c {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 232rem;
+}
+
+.WelcomeSlider_slide_9c + .WelcomeSlider_slide_9c {
+    margin-left: 24rem;
+}
+
+.WelcomeSlider_slide__fullWidth_55 {
+    width: 605rem;
+}
+
+.mediaMedium .WelcomeSlider_slide_9c {
+    width: 400rem;
+}
+
+.mediaMedium .WelcomeSlider_slide__fullWidth_55 {
+    width: 960rem;
+}
+
+.WelcomeViewApp_base_4a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000000;
+    background-image:
+        linear-gradient(to top, transparent, rgba(0, 0, 0, 0.45) 15%, rgba(0, 0, 0, 0.45) 30%, transparent 50%),
+        radial-gradient(transparent, rgba(0, 0, 0, 0.7)), url('R.images.frontline.gui.maps.bg.info');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+.WelcomeViewApp_page_4a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 739rem;
+    height: 602rem;
+}
+
+.mediaMedium .WelcomeViewApp_page_4a {
+    width: 1208rem;
+    height: 708rem;
+}
+
+.mediaLarge .WelcomeViewApp_page_4a {
+    height: 880rem;
+}
+
+.mediaExtraLarge .WelcomeViewApp_page_4a {
+    height: 860rem;
+}
+
+.WelcomeViewApp_pageTitle_3e {
+    margin-top: -10rem;
+}
+
+.mediaMedium .WelcomeViewApp_pageTitle_3e {
+    margin-top: -14rem;
+}
+
+.mediaLarge .WelcomeViewApp_pageTitle_3e {
+    margin-top: -15rem;
+}
+
+.WelcomeViewApp_closeButton_d3 {
+    position: absolute;
+    top: 30rem;
+    right: 28rem;
+}
+
+.mediaLarge .WelcomeViewApp_closeButton_d3 {
+    right: 38rem;
+}
+
+.WelcomeViewApp_bottomBtnContainer_a9 {
+    display: flex;
+    justify-content: center;
+}
+
+.WelcomeViewApp_bottomCloseBtn_55 {
+    width: 158rem;
 }

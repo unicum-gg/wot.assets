@@ -44,7 +44,7 @@
                     const F = Math.trunc(e / t);
                     return ((e -= F * t), { days: A, hours: E, minutes: F, seconds: e });
                 }
-                const a = (u, e = !0, A = !1) =>
+                const a = (u, e = !0) =>
                     u.days > 7 && e
                         ? (0, E.WU)(R.strings.common.duration.days(), { days: u.days })
                         : u.days >= 1
@@ -54,7 +54,7 @@
                           : u.hours >= 1
                             ? 0 === u.minutes
                                 ? (0, E.WU)(R.strings.common.duration.hours(), { hours: u.hours })
-                                : `${(0, E.WU)(R.strings.common.duration.hours(), { hours: u.hours })} ${(0, E.WU)(A ? R.strings.common.duration.shortMinutes() : R.strings.common.duration.minutes(), { minutes: u.minutes })}`
+                                : `${(0, E.WU)(R.strings.common.duration.hours(), { hours: u.hours })} ${(0, E.WU)(R.strings.common.duration.minutes(), { minutes: u.minutes })}`
                             : (0, E.WU)(R.strings.common.duration.minutes(), { minutes: u.minutes || 1 });
             },
             67: (u, e, A) => {
@@ -339,7 +339,7 @@
                 A.d(e, { au: () => F });
                 A(790);
                 var E = A(469);
-                (A(133), A(779), A(579), A(360), A(56));
+                (A(133), A(579), A(360), A(56));
                 const F = E.Z;
             },
             536: (u, e, A) => {
@@ -393,9 +393,6 @@
                 E.Sw.instance;
             },
             790: (u, e, A) => {
-                A(179);
-            },
-            779: (u, e, A) => {
                 A(179);
             },
             579: (u, e, A) => {
@@ -1094,15 +1091,15 @@
                             (u.Long = 'long'),
                             (u.Extended = 'extended'));
                     })(B || (B = {})));
-                var C = A(280),
-                    _ = A(649),
-                    c = A(44),
-                    l = A(344),
-                    d = A(67);
-                const v = 'Countdown_base_fe',
-                    m = 'Countdown_icon_8b',
-                    g = 'Countdown_description_8d',
-                    h = (u) => u.toString().padStart(2, '0'),
+                var C = A(44),
+                    _ = A(344),
+                    c = A(67);
+                var l = A(649);
+                const d = 'Countdown_base_fe',
+                    v = 'Countdown_icon_8b',
+                    m = 'Countdown_description_8d';
+                var g = A(280);
+                const h = (u) => u.toString().padStart(2, '0'),
                     b = R.images.gui.maps.icons.components.countdown,
                     p = (u, e) => {
                         const A = 2 === e ? b.big : b;
@@ -1118,24 +1115,23 @@
                 (0, n.memo)(
                     ({
                         duration: u,
-                        withShortMinutes: e = !1,
-                        icon: A = s.Timer,
-                        style: E = B.Description,
-                        onTimeReached: t,
-                        className: r = '',
-                        classNames: a = {},
-                        labelFormat: o = '',
+                        icon: e = s.Timer,
+                        style: A = B.Description,
+                        onTimeReached: E,
+                        className: t = '',
+                        classNames: r = {},
+                        labelFormat: a = '',
                     }) => {
-                        const i = E !== B.Description ? 1 : void 0,
-                            b = (0, l.au)(u, i),
-                            w = (() => {
-                                const u = (0, n.useState)(d.O.view.getScale()),
+                        const o = A !== B.Description ? 1 : void 0,
+                            i = (0, _.au)(u, o),
+                            b = (() => {
+                                const u = (0, n.useState)(c.O.view.getScale()),
                                     e = u[0],
                                     A = u[1];
                                 return (
                                     (0, n.useEffect)(() => {
                                         const u = () => {
-                                            A(d.O.view.getScale());
+                                            A(c.O.view.getScale());
                                         };
                                         return (
                                             window.addEventListener('resize', u),
@@ -1147,34 +1143,34 @@
                                     e
                                 );
                             })();
-                        t && t[b] && t[b]();
-                        const y = ((u, e, A = !1) => {
+                        E && E[i] && E[i]();
+                        const w = ((u, e) => {
                             switch (e) {
                                 case B.Description:
-                                    return (0, c.wB)(u, !0, A);
+                                    return (0, C.wB)(u);
                                 case B.Short:
                                     return `${h(u.minutes)}:${h(u.seconds)}`;
                                 case B.Long:
                                     return `${h(u.hours)}:${h(u.minutes)}:${h(u.seconds)}`;
                                 case B.Extended:
-                                    return `${(0, _.WU)(R.strings.common.duration.days(), { days: u.days })} | ${h(u.hours)}:${h(u.minutes)}:${h(u.seconds)}`;
+                                    return `${(0, l.WU)(R.strings.common.duration.days(), { days: u.days })} | ${h(u.hours)}:${h(u.minutes)}:${h(u.seconds)}`;
                             }
-                        })((0, c.f8)(b), E, e);
+                        })((0, C.f8)(i), A);
                         return D().createElement(
                             'div',
-                            { className: F()(v, r) },
-                            A !== s.None &&
+                            { className: F()(d, t) },
+                            e !== s.None &&
                                 D().createElement('div', {
-                                    className: F()(m, a.icon),
-                                    style: { backgroundImage: `url('${p(A, w)}')` },
+                                    className: F()(v, r.icon),
+                                    style: { backgroundImage: `url('${p(e, b)}')` },
                                 }),
-                            o
+                            a
                                 ? D().createElement(
                                       'div',
-                                      { className: F()(g, a.text) },
-                                      D().createElement(C.z, { text: o, binding: { timerText: y } }),
+                                      { className: F()(m, r.text) },
+                                      D().createElement(g.z, { text: a, binding: { timerText: w } }),
                                   )
-                                : D().createElement('div', { className: F()(g, a.text) }, y),
+                                : D().createElement('div', { className: F()(m, r.text) }, w),
                         );
                     },
                 );

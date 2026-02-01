@@ -1945,7 +1945,9 @@
                                 A().createElement(hu, {
                                     className: Nu,
                                     text: Iu.compensationText(),
-                                    format: { binding: { count: A().createElement(hu, { className: ku, text: 1 }) } },
+                                    format: {
+                                        binding: { count: A().createElement(hu, { className: ku, text: String(1) }) },
+                                    },
                                 }),
                                 A().createElement('div', { className: Hu }),
                                 A().createElement(hu, { className: Wu, text: Iu.compensationValue() }),

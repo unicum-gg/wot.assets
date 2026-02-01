@@ -3221,23 +3221,21 @@
                             'div',
                             { className: w.base },
                             i().createElement(pu, { rewardsAmount: e, className: w.header }),
-                            u.computes
-                                .getSelectedRewards()
-                                .map((u, t) =>
+                            u.computes.getSelectedRewards().map((u, t) =>
+                                i().createElement(
+                                    i().Fragment,
+                                    null,
+                                    i().createElement('div', { className: w.divider }),
                                     i().createElement(
-                                        i().Fragment,
-                                        null,
-                                        i().createElement('div', { className: w.divider }),
-                                        i().createElement(
-                                            Oe,
-                                            Le({}, u, {
-                                                discount: ke(u),
-                                                key: t,
-                                                classNames: n()(w.reward, t === e - 1 && w.reward__lastInColumn),
-                                            }),
-                                        ),
+                                        Oe,
+                                        Le({}, u, {
+                                            discount: ke(u),
+                                            key: t,
+                                            classNames: n()(w.reward, t === e - 1 && w.reward__lastInColumn),
+                                        }),
                                     ),
                                 ),
+                            ),
                         );
                     });
                 engine.whenReady.then(() => {

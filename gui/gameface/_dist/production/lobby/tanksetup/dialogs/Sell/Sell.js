@@ -1132,7 +1132,6 @@
                         (u.TankmenXpFactor = 'tankmenXPFactor'),
                         (u.FreeXpFactor = 'freeXPFactor'),
                         (u.BattleToken = 'battleToken'),
-                        (u.Entitlements = 'entitlements'),
                         (u.PremiumUniversal = 'premium_universal'),
                         (u.Gold = 'gold'),
                         (u.Credits = 'credits'),
@@ -1172,16 +1171,9 @@
                         (u.GoldenTicket = 'birthday2025_golden_ticket'),
                         (u.PostStamp = 'giftsystem_4_stamp'),
                         (u.Quests = 'quests'),
-                        (u.BlankPersonalMissions_1 = 'freeTokens_0'),
-                        (u.BlankPersonalMissions_2 = 'freeTokens_2'),
-                        (u.SACoin = 'sacoin'),
                         (u.ArmoryCoin = 'armory_coin'),
                         (u.PremiumPlusUniversal = 'premium_plus_universal'),
-                        (u.DogTagType = 'dogTagComponents'),
-                        (u.NyPetGoodies = 'nyPetGoodies'),
-                        (u.HiddenVehicle = 'hidden_vehicle'),
-                        (u.NyStaticDogTag = 'nyStaticDogTag'),
-                        (u.Ny26Toys = 'ny26Toys'));
+                        (u.DogTagType = 'dogTagComponents'));
                 })(b || (b = {})),
                     (function (u) {
                         ((u.Gold = 'gold'),
@@ -1303,7 +1295,6 @@
                     b.TankmenXpFactor,
                     b.FreeXpFactor,
                     b.BattleToken,
-                    b.Entitlements,
                     b.PremiumUniversal,
                     b.NaturalCover,
                     b.BpCoin,
@@ -1318,25 +1309,16 @@
                     b.Comp7TokenWeeklyReward,
                     b.Comp7TokenCouponReward,
                     b.BattleBoosterGift,
-                    b.NewYearFillers,
-                    b.NewYearInvoice,
-                    b.LootBoxToken,
                     b.CosmicLootboxCommon,
                     b.CosmicLootboxSilver,
                     b.SelectableBonus,
                     b.GoldenTicket,
                     b.PostStamp,
-                    b.BlankPersonalMissions_1,
-                    b.BlankPersonalMissions_2,
-                    b.SACoin,
                     b.PremiumPlusUniversal,
-                    b.NyPetGoodies,
-                    b.HiddenVehicle,
                     b.Gold,
                     b.Credits,
                     b.Crystal,
                     b.FreeXp,
-                    b.NewYearToyFragments,
                     b.BattlePassPoints,
                     b.PremiumPlus,
                     b.Premium);
@@ -1506,8 +1488,8 @@
                                 ),
                         );
                     };
-                function k() {}
-                function M(u) {
+                function M() {}
+                function k(u) {
                     return u;
                 }
                 function I() {
@@ -1536,10 +1518,10 @@
                         }
                     }, [e, u, t]);
                 }
-                function V(u, e) {
+                function q(u, e) {
                     return Array.isArray(u) ? u.map(e) : u.map((u, t, n) => e(null == u ? void 0 : u.value, t, n));
                 }
-                var q = t(3403);
+                var V = t(3403);
                 function W(u) {
                     engine.call('PlaySound', u);
                 }
@@ -2057,7 +2039,7 @@
                             r().createElement(
                                 'div',
                                 { className: o()(Bu.currencyBlock, null == t ? void 0 : t.currencyBlock) },
-                                V(u, (u, e) =>
+                                q(u, (u, e) =>
                                     r().createElement(
                                         'div',
                                         {
@@ -2351,8 +2333,8 @@
                     xu = 'App_background_e6',
                     Ru = 'App_center_c2',
                     Ou = 'App_glow_34',
-                    ku = 'App_reward_98',
-                    Mu = {
+                    Mu = 'App_reward_98',
+                    ku = {
                         base: 'Currency_base_57',
                         icon: 'Currency_icon_c5',
                         base__small: 'Currency_base__small_af',
@@ -2407,11 +2389,11 @@
                         showPlus: c,
                         stockBackgroundName: l = pu.Red,
                     }) => {
-                        const _ = o()(Mu.value, Mu[`value__${n}`], !i && Mu.value__notEnough),
-                            E = o()(Mu.icon, Mu[`icon__${n}-${t}`]),
-                            A = o()(Mu.stock, a && Mu.stock__indent, e && Mu.stock__interactive),
+                        const _ = o()(ku.value, ku[`value__${n}`], !i && ku.value__notEnough),
+                            E = o()(ku.icon, ku[`icon__${n}-${t}`]),
+                            A = o()(ku.stock, a && ku.stock__indent, e && ku.stock__interactive),
                             F = c && s > 0 && '+',
-                            d = o()(Mu.base, Mu[`base__${t}`]);
+                            d = o()(ku.base, ku[`base__${t}`]);
                         return r().createElement(
                             'span',
                             { className: d },
@@ -2427,7 +2409,7 @@
                                     'span',
                                     { className: A },
                                     r().createElement('span', {
-                                        className: Mu.stockBackground,
+                                        className: ku.stockBackground,
                                         style: { backgroundImage: `url(R.images.gui.maps.icons.library.${l})` },
                                     }),
                                     Boolean(a) && a,
@@ -2457,14 +2439,14 @@
                                   ),
                               ),
                     Gu = 'Alert_alert_66',
-                    Vu = 'Alert_icon_ea',
-                    qu = 'Alert_alertText_14',
+                    qu = 'Alert_icon_ea',
+                    Vu = 'Alert_alertText_14',
                     Wu = ({ alertText: u, className: e }) =>
                         r().createElement(
                             'div',
                             { className: o()(Gu, e) },
-                            r().createElement('i', { className: Vu }),
-                            r().createElement('span', { className: qu }, u),
+                            r().createElement('i', { className: qu }),
+                            r().createElement('span', { className: Vu }, u),
                         ),
                     Xu = 'PriceBlock_base_7a',
                     ju = 'PriceBlock_priceContainer_d3',
@@ -2523,7 +2505,7 @@
                         priceContainer: 'Content_priceContainer_66',
                     },
                     Ju = R.strings.tank_setup.dialogs.sell.alertText.equipment,
-                    ue = (0, q.Pi)(() => {
+                    ue = (0, V.Pi)(() => {
                         const u = Tu().model,
                             e = u.equipment.cost.get(),
                             t = e.type,
@@ -2645,13 +2627,13 @@
                             },
                             [s, l, A, w, t],
                         ),
-                        k = (0, n.useCallback)(
+                        M = (0, n.useCallback)(
                             (u) => {
                                 s || (d && d(u), b(!1));
                             },
                             [s, d],
                         ),
-                        M = o()(
+                        k = o()(
                             ee.base,
                             ee[`base__${i}`],
                             {
@@ -2681,12 +2663,12 @@
                             'div',
                             {
                                 ref: m,
-                                className: M,
+                                className: k,
                                 onMouseEnter: N,
                                 onMouseMove: T,
                                 onMouseUp: x,
                                 onMouseDown: O,
-                                onMouseLeave: k,
+                                onMouseLeave: M,
                                 onClick: P,
                             },
                             i !== te.ghost &&
@@ -3259,7 +3241,7 @@
                     De = 'Footer_button_ab',
                     me = 'Footer_text_cc',
                     Ce = R.strings.tank_setup.dialogs.sell.button,
-                    pe = (0, q.Pi)(() => {
+                    pe = (0, V.Pi)(() => {
                         const u = Tu(),
                             e = u.model,
                             t = u.controls,
@@ -3311,7 +3293,7 @@
                     }),
                     Be = 'Header_base_d6',
                     he = 'Header_text_97',
-                    ge = (0, q.Pi)(() => {
+                    ge = (0, V.Pi)(() => {
                         const u = Tu().model,
                             e = r().createElement(Hu, {
                                 text: Ku(Qu(R.strings.artefacts, u.equipment.props.get().name), 'name'),
@@ -3340,21 +3322,21 @@
                         be.apply(this, arguments)
                     );
                 }
-                const ve = (0, q.Pi)(() => {
+                const ve = (0, V.Pi)(() => {
                         const u = Tu(),
                             e = u.controls,
                             t = u.model,
                             n = t.balance.get(),
                             i = t.computes.parseEquipmentProps(),
                             s = t.computes.isStandardEquipment(),
-                            a = V(t.displayFlags.get(), M);
+                            a = q(t.displayFlags.get(), k);
                         var c;
                         return (
                             (c = e.close),
                             G(U.n.ESCAPE, c),
                             r().createElement(Du, {
                                 isShown: !0,
-                                icon: r().createElement(O, be({}, i, { className: ku })),
+                                icon: r().createElement(O, be({}, i, { className: Mu })),
                                 onClose: e.close,
                                 topRight: r().createElement(hu, { balance: n }),
                                 title: r().createElement(ge, null),
@@ -3401,7 +3383,7 @@
                                     return ye;
                             }
                         },
-                        controls: () => ({ sell: k, close: k }),
+                        controls: () => ({ sell: M, close: M }),
                     };
                 engine.whenReady.then(() => {
                     s().render(

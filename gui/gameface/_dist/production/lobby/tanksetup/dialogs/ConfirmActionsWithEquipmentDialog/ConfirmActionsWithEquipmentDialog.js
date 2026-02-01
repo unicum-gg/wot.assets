@@ -1331,17 +1331,17 @@
                     q = 'Alert_alert_66',
                     X = 'Alert_icon_ea',
                     z = 'Alert_alertText_14',
-                    Y = ({ alertText: u, className: e }) =>
+                    j = ({ alertText: u, className: e }) =>
                         r().createElement(
                             'div',
                             { className: F()(q, e) },
                             r().createElement('i', { className: X }),
                             r().createElement('span', { className: z }, u),
                         );
-                let j, $, K;
+                let Y, $, K;
                 (!(function (u) {
                     ((u.small = 'small'), (u.big = 'big'), (u.large = 'large'), (u.extraLarge = 'extraLarge'));
-                })(j || (j = {})),
+                })(Y || (Y = {})),
                     (function (u) {
                         ((u.credits = 'credits'),
                             (u.gold = 'gold'),
@@ -1445,7 +1445,6 @@
                         (u.TankmenXpFactor = 'tankmenXPFactor'),
                         (u.FreeXpFactor = 'freeXPFactor'),
                         (u.BattleToken = 'battleToken'),
-                        (u.Entitlements = 'entitlements'),
                         (u.PremiumUniversal = 'premium_universal'),
                         (u.Gold = 'gold'),
                         (u.Credits = 'credits'),
@@ -1485,16 +1484,9 @@
                         (u.GoldenTicket = 'birthday2025_golden_ticket'),
                         (u.PostStamp = 'giftsystem_4_stamp'),
                         (u.Quests = 'quests'),
-                        (u.BlankPersonalMissions_1 = 'freeTokens_0'),
-                        (u.BlankPersonalMissions_2 = 'freeTokens_2'),
-                        (u.SACoin = 'sacoin'),
                         (u.ArmoryCoin = 'armory_coin'),
                         (u.PremiumPlusUniversal = 'premium_plus_universal'),
-                        (u.DogTagType = 'dogTagComponents'),
-                        (u.NyPetGoodies = 'nyPetGoodies'),
-                        (u.HiddenVehicle = 'hidden_vehicle'),
-                        (u.NyStaticDogTag = 'nyStaticDogTag'),
-                        (u.Ny26Toys = 'ny26Toys'));
+                        (u.DogTagType = 'dogTagComponents'));
                 })(eu || (eu = {})),
                     (function (u) {
                         ((u.Gold = 'gold'),
@@ -2004,13 +1996,13 @@
                                         classMix: null == l ? void 0 : l.additionalText,
                                     }),
                             ),
-                            _ && r().createElement(Y, { className: null == l ? void 0 : l.alert, alertText: o }),
+                            _ && r().createElement(j, { className: null == l ? void 0 : l.alert, alertText: o }),
                         ),
                     Nu = 'Content_base_a7',
                     Tu = 'Content_currency_4f',
                     xu = 'Content_column_9d',
-                    ku = 'Content_alert_0f',
-                    Ru = R.strings.tank_setup.dialogs.confirmActionsWithEquipmentDialog.content,
+                    Ru = 'Content_alert_0f',
+                    ku = R.strings.tank_setup.dialogs.confirmActionsWithEquipmentDialog.content,
                     Ou = (0, A.Pi)(() => {
                         const u = Cu().model,
                             e = u.computes.priceDevice(),
@@ -2018,19 +2010,19 @@
                             n = u.root.get(),
                             i = n.dialogType,
                             s = n.alertText,
-                            a = Ru.$dyn(i);
+                            a = ku.$dyn(i);
                         return r().createElement(
                             'div',
                             { className: Nu },
                             r().createElement(Pu, {
                                 price: e,
                                 type: t,
-                                size: j.small,
+                                size: Y.small,
                                 priceBlockText: a,
                                 alertText: s,
                                 showAlertMessage: !0,
                                 className: xu,
-                                classNames: { currency: Tu, alert: ku },
+                                classNames: { currency: Tu, alert: Ru },
                             }),
                         );
                     }),
@@ -2300,9 +2292,9 @@
                         );
                         var _;
                     };
-                function Yu() {
+                function ju() {
                     return (
-                        (Yu =
+                        (ju =
                             Object.assign ||
                             function (u) {
                                 for (var e = 1; e < arguments.length; e++) {
@@ -2311,10 +2303,10 @@
                                 }
                                 return u;
                             }),
-                        Yu.apply(this, arguments)
+                        ju.apply(this, arguments)
                     );
                 }
-                const ju = ({ children: u, tooltipArgs: e, className: t }) => {
+                const Yu = ({ children: u, tooltipArgs: e, className: t }) => {
                     if (!e) return u;
                     const n = r().createElement('div', { className: t }, u);
                     if (e.header || e.body) return r().createElement(zu, e, n);
@@ -2322,7 +2314,7 @@
                         s = e.args,
                         a = null == s ? void 0 : s.contentId;
                     return i || a
-                        ? r().createElement(Uu, Yu({}, e, { contentId: i || a }), n)
+                        ? r().createElement(Uu, ju({}, e, { contentId: i || a }), n)
                         : r().createElement(Wu, e, n);
                 };
                 (eu.Items,
@@ -2343,7 +2335,6 @@
                     eu.TankmenXpFactor,
                     eu.FreeXpFactor,
                     eu.BattleToken,
-                    eu.Entitlements,
                     eu.PremiumUniversal,
                     eu.NaturalCover,
                     eu.BpCoin,
@@ -2358,25 +2349,16 @@
                     eu.Comp7TokenWeeklyReward,
                     eu.Comp7TokenCouponReward,
                     eu.BattleBoosterGift,
-                    eu.NewYearFillers,
-                    eu.NewYearInvoice,
-                    eu.LootBoxToken,
                     eu.CosmicLootboxCommon,
                     eu.CosmicLootboxSilver,
                     eu.SelectableBonus,
                     eu.GoldenTicket,
                     eu.PostStamp,
-                    eu.BlankPersonalMissions_1,
-                    eu.BlankPersonalMissions_2,
-                    eu.SACoin,
                     eu.PremiumPlusUniversal,
-                    eu.NyPetGoodies,
-                    eu.HiddenVehicle,
                     eu.Gold,
                     eu.Credits,
                     eu.Crystal,
                     eu.FreeXp,
-                    eu.NewYearToyFragments,
                     eu.BattlePassPoints,
                     eu.PremiumPlus,
                     eu.Premium);
@@ -2493,7 +2475,7 @@
                             'div',
                             { className: F()(Ku.base, Ku[`base__${n}`], c), style: o },
                             r().createElement(
-                                ju,
+                                Yu,
                                 { tooltipArgs: _, className: Ku.tooltipWrapper },
                                 r().createElement(
                                     r().Fragment,
@@ -2538,7 +2520,7 @@
                             ),
                             t &&
                                 r().createElement(
-                                    ju,
+                                    Yu,
                                     { tooltipArgs: E },
                                     r().createElement('div', {
                                         className: F()(Ku.timer, null == l ? void 0 : l.periodicIcon),
@@ -2811,7 +2793,7 @@
                                 r().createElement(Pu, {
                                     price: u,
                                     type: o,
-                                    size: j.big,
+                                    size: Y.big,
                                     priceBlockText: c,
                                     className: _e.column,
                                     classNames: { currency: _e.currency },
@@ -3364,7 +3346,7 @@
                                     r().createElement(Pu, {
                                         price: Be(u, o),
                                         type: l,
-                                        size: j.big,
+                                        size: Y.big,
                                         classNames: { currency: me.currency, alert: me.alert },
                                     }),
                                 ),
@@ -3458,7 +3440,7 @@
                             content:
                                 a.DeconstructFromSlots !== o
                                     ? r().createElement(Ou, null)
-                                    : r().createElement(Y, { alertText: l }),
+                                    : r().createElement(j, { alertText: l }),
                             buttons: r().createElement(ge, null),
                             displayFlags: n,
                             classMix: Ne,

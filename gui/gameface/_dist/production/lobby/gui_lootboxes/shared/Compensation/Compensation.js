@@ -38,7 +38,6 @@
                             (e.TankmenXpFactor = 'tankmenXPFactor'),
                             (e.FreeXpFactor = 'freeXPFactor'),
                             (e.BattleToken = 'battleToken'),
-                            (e.Entitlements = 'entitlements'),
                             (e.PremiumUniversal = 'premium_universal'),
                             (e.Gold = 'gold'),
                             (e.Credits = 'credits'),
@@ -78,16 +77,9 @@
                             (e.GoldenTicket = 'birthday2025_golden_ticket'),
                             (e.PostStamp = 'giftsystem_4_stamp'),
                             (e.Quests = 'quests'),
-                            (e.BlankPersonalMissions_1 = 'freeTokens_0'),
-                            (e.BlankPersonalMissions_2 = 'freeTokens_2'),
-                            (e.SACoin = 'sacoin'),
                             (e.ArmoryCoin = 'armory_coin'),
                             (e.PremiumPlusUniversal = 'premium_plus_universal'),
-                            (e.DogTagType = 'dogTagComponents'),
-                            (e.NyPetGoodies = 'nyPetGoodies'),
-                            (e.HiddenVehicle = 'hidden_vehicle'),
-                            (e.NyStaticDogTag = 'nyStaticDogTag'),
-                            (e.Ny26Toys = 'ny26Toys'));
+                            (e.DogTagType = 'dogTagComponents'));
                     })(n || (n = {})),
                     (function (e) {
                         ((e.Gold = 'gold'),
@@ -204,7 +196,6 @@
                     n.E4.TankmenXpFactor,
                     n.E4.FreeXpFactor,
                     n.E4.BattleToken,
-                    n.E4.Entitlements,
                     n.E4.PremiumUniversal,
                     n.E4.NaturalCover,
                     n.E4.BpCoin,
@@ -219,25 +210,16 @@
                     n.E4.Comp7TokenWeeklyReward,
                     n.E4.Comp7TokenCouponReward,
                     n.E4.BattleBoosterGift,
-                    n.E4.NewYearFillers,
-                    n.E4.NewYearInvoice,
-                    n.E4.LootBoxToken,
                     n.E4.CosmicLootboxCommon,
                     n.E4.CosmicLootboxSilver,
                     n.E4.SelectableBonus,
                     n.E4.GoldenTicket,
                     n.E4.PostStamp,
-                    n.E4.BlankPersonalMissions_1,
-                    n.E4.BlankPersonalMissions_2,
-                    n.E4.SACoin,
                     n.E4.PremiumPlusUniversal,
-                    n.E4.NyPetGoodies,
-                    n.E4.HiddenVehicle,
                     n.E4.Gold,
                     n.E4.Credits,
                     n.E4.Crystal,
                     n.E4.FreeXp,
-                    n.E4.NewYearToyFragments,
                     n.E4.BattlePassPoints,
                     n.E4.PremiumPlus,
                     n.E4.Premium,
@@ -422,7 +404,7 @@
                         displayStatus: () => i.W,
                         displayStatusIs: () => R,
                         events: () => r.U,
-                        extraSize: () => k,
+                        extraSize: () => f,
                         forceTriggerMouseMove: () => S,
                         freezeTextureBeforeResize: () => m,
                         getBrowserTexturePath: () => l,
@@ -440,7 +422,7 @@
                         setEventHandled: () => T,
                         setInputPaddingsRem: () => _,
                         setSidePaddingsRem: () => d,
-                        whenTutorialReady: () => y,
+                        whenTutorialReady: () => k,
                     }));
                 var n = o(3722),
                     i = o(6112),
@@ -505,7 +487,7 @@
                         (e, t) => ((e[t] = () => viewEnv.getShowingStatus() === i.W[t]), e),
                         {},
                     ),
-                    k = {
+                    f = {
                         set: (e, t) => {
                             viewEnv.setExtraSizeRem(e, t);
                         },
@@ -513,7 +495,7 @@
                             viewEnv.getExtraSizeRem(e, t);
                         },
                     },
-                    y = Promise.all([
+                    k = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : r.U.onDomBuilt(e);
                         }),
@@ -909,7 +891,7 @@
                     };
                 var S = o(7572);
                 const O = i.instance,
-                    k = {
+                    f = {
                         DataTracker: r.Z,
                         ViewModel: S.Z,
                         ViewEventType: _,
@@ -992,7 +974,7 @@
                         SystemLocale: s,
                         UserLocale: a,
                     };
-                window.ViewEnvHelper = k;
+                window.ViewEnvHelper = f;
             },
             3458: (e, t, o) => {
                 let n, i;

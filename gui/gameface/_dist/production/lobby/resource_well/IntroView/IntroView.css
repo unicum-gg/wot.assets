@@ -351,38 +351,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     height: 70rem;
 }
 
-.VideoButton_base_d9 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 7rem 40rem 7rem 11rem;
-    border: 1rem solid rgba(255, 255, 255, 0.1);
-    border-radius: 1rem;
-    background: url('R.images.gui.maps.icons.resourceWell.intro.video_button_bg') repeat-y right center;
-    white-space: nowrap;
-    filter: brightness(1);
-    transition: filter 0.3s ease-out;
-    cursor: pointer;
-}
-
-.VideoButton_base_d9:hover {
-    filter: brightness(1.2);
-}
-
-.VideoButton_icon_a3 {
-    width: 52rem;
-    height: 52rem;
-    background: url('R.images.gui.maps.icons.resourceWell.intro.youtube_button') no-repeat center / contain;
-}
-
-.VideoButton_text_ef {
-    color: #e9e2bf;
-    font-size: 15rem;
-    font-weight: 700;
-    line-height: 1.15;
-    margin-left: 12rem;
-}
-
 @keyframes App_fadeOut_e8 {
     from {
         opacity: 1;
@@ -609,17 +577,4 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .App_formatText_e2 {
     display: flex;
     align-items: center;
-}
-.App_videoButton_68 {
-    position: absolute;
-    top: 59rem;
-    right: 31rem;
-}
-.mediaMedium .App_videoButton_68 {
-    top: 69rem;
-    right: 41rem;
-}
-.mediaExtraLarge .App_videoButton_68 {
-    top: 109rem;
-    right: 81rem;
 }

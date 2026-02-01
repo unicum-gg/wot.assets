@@ -103,9 +103,9 @@
                             I = e.flexWrap,
                             P = void 0 === I ? (M ? 'wrap' : void 0) : I,
                             H = e.grow,
-                            W = e.shrink,
-                            G = e.flex,
-                            U = void 0 === G ? (H || W ? `${H ? 1 : 0} ${W ? 1 : 0} auto` : void 0) : G,
+                            G = e.shrink,
+                            W = e.flex,
+                            U = void 0 === W ? (H || G ? `${H ? 1 : 0} ${G ? 1 : 0} auto` : void 0) : W,
                             V = e.style,
                             z = e.children,
                             j = (function (e, t) {
@@ -1557,9 +1557,9 @@
                 var o = {};
                 (u.r(o),
                     u.d(o, {
-                        Area: () => Gt,
+                        Area: () => Wt,
                         Bar: () => Pt,
-                        DefaultScroll: () => Wt,
+                        DefaultScroll: () => Gt,
                         Direction: () => St,
                         defaultSettings: () => yt,
                         useHorizontalScrollApi: () => Rt,
@@ -1864,8 +1864,8 @@
                         }
                     })(e, t, u),
                 );
-                var W = u(7613);
-                const G = {
+                var G = u(7613);
+                const W = {
                         base: 'BoxDescription_base_17',
                         headerHolder: 'BoxDescription_headerHolder_27',
                         headerName: 'BoxDescription_headerName_c9',
@@ -1889,46 +1889,46 @@
                         ({ userName: e, tier: t, count: u, descriptionKey: o, autoOpenTime: n, isInfinite: r }) =>
                             i().createElement(
                                 'div',
-                                { className: G.base },
+                                { className: W.base },
                                 V.userName.$dyn(e) &&
                                     i().createElement(
                                         'div',
-                                        { className: G.headerHolder },
-                                        i().createElement(W.ZP, {
+                                        { className: W.headerHolder },
+                                        i().createElement(G.ZP, {
                                             text: V.userName.$dyn(e) || '',
-                                            format: { classMix: G.headerName },
+                                            format: { classMix: W.headerName },
                                         }),
                                     ),
                                 i().createElement(
                                     'div',
-                                    { className: G.headerDescription },
-                                    i().createElement('div', { className: l()(G.boxIcon, G[`boxIcon__tier${t}`]) }),
+                                    { className: W.headerDescription },
+                                    i().createElement('div', { className: l()(W.boxIcon, W[`boxIcon__tier${t}`]) }),
                                     U.tier.$dyn(`tier_${t}`) &&
-                                        i().createElement(W.ZP, {
+                                        i().createElement(G.ZP, {
                                             text: U.tier.$dyn(`tier_${t}`) || '',
-                                            format: { classMix: G.infoBoxes },
+                                            format: { classMix: W.infoBoxes },
                                         }),
                                     u > 0 &&
                                         !r &&
                                         i().createElement(
                                             i().Fragment,
                                             null,
-                                            i().createElement('div', { className: G.headerDescriptionDivider }),
-                                            i().createElement(W.ZP, {
+                                            i().createElement('div', { className: W.headerDescriptionDivider }),
+                                            i().createElement(G.ZP, {
                                                 text: U.optional.count(),
-                                                format: { binding: { count: u }, classMix: G.infoBoxes },
+                                                format: { binding: { count: u }, classMix: W.infoBoxes },
                                             }),
                                         ),
                                 ),
                                 n > 0 &&
                                     i().createElement(
                                         'div',
-                                        { className: G.autoOpenContainer },
+                                        { className: W.autoOpenContainer },
                                         i().createElement('div', {
-                                            className: G.icon,
+                                            className: W.icon,
                                             style: { backgroundImage: `url('${z}')` },
                                         }),
-                                        i().createElement(W.ZP, {
+                                        i().createElement(G.ZP, {
                                             text: V.autoOpenView.dateOpen(),
                                             format: {
                                                 binding: {
@@ -1937,14 +1937,14 @@
                                                         format: P.FULL_DATE_TIME,
                                                     }),
                                                 },
-                                                classMix: G.autoOpenText,
+                                                classMix: W.autoOpenText,
                                             },
                                         }),
                                     ),
                                 V.desctiptions.$dyn(o) &&
-                                    i().createElement(W.ZP, {
+                                    i().createElement(G.ZP, {
                                         text: V.desctiptions.$dyn(o) || '',
-                                        format: { classMix: G.description },
+                                        format: { classMix: W.description },
                                     }),
                             ),
                     ),
@@ -2802,7 +2802,7 @@
                                                                   onClick: g,
                                                                   disabled: !s,
                                                               },
-                                                              i().createElement(W.ZP, { text: Se.optional.buyBox() }),
+                                                              i().createElement(G.ZP, { text: Se.optional.buyBox() }),
                                                           ))(p)
                                               : i().createElement(
                                                     'div',
@@ -2818,7 +2818,7 @@
                                                                 onClick: b,
                                                                 disabled: !s,
                                                             },
-                                                            i().createElement(W.ZP, { text: Se.optional.buyBox() }),
+                                                            i().createElement(G.ZP, { text: Se.optional.buyBox() }),
                                                         ),
                                                     !E &&
                                                         i().createElement(we, {
@@ -2972,16 +2972,16 @@
                             [r, i, s, o, n],
                         );
                     };
-                let We, Ge, Ue, Ve;
+                let Ge, We, Ue, Ve;
                 (!(function (e) {
                     e.Lootbox = 'lootbox';
-                })(We || (We = {})),
+                })(Ge || (Ge = {})),
                     (function (e) {
                         ((e.TooltipWatched = 'tooltip_watched'),
                             (e.Click = 'click'),
                             (e.VideoStarted = 'video_started'),
                             (e.Show = 'show'));
-                    })(Ge || (Ge = {})),
+                    })(We || (We = {})),
                     (function (e) {
                         ((e.Storage = 'storage'),
                             (e.Probability = 'probability'),
@@ -3032,60 +3032,60 @@
                                     [t],
                                 );
                             return (e) => u(e);
-                        })(We.Lootbox),
-                        u = He(We.Lootbox, {
-                            action: Ge.TooltipWatched,
+                        })(Ge.Lootbox),
+                        u = He(Ge.Lootbox, {
+                            action: We.TooltipWatched,
                             item: Ve.RewardToopltip,
                             parentScreen: Ue.Probability,
                             timeLimit: 1,
                             info: null == e ? void 0 : e.info,
                         }),
-                        o = He(We.Lootbox, {
-                            action: Ge.TooltipWatched,
+                        o = He(Ge.Lootbox, {
+                            action: We.TooltipWatched,
                             item: Ve.InfoIcon,
                             parentScreen: Ue.Storage,
                             timeLimit: 1,
                         }),
-                        n = He(We.Lootbox, {
-                            action: Ge.TooltipWatched,
+                        n = He(Ge.Lootbox, {
+                            action: We.TooltipWatched,
                             item: Ve.ProbabilityPercent,
                             parentScreen: Ue.Probability,
                             timeLimit: 1,
                         }),
-                        r = He(We.Lootbox, {
-                            action: Ge.TooltipWatched,
+                        r = He(Ge.Lootbox, {
+                            action: We.TooltipWatched,
                             item: Ve.ProbabilityPercentWithGarant,
                             parentScreen: Ue.Probability,
                             timeLimit: 1,
                         }),
-                        i = He(We.Lootbox, {
-                            action: Ge.TooltipWatched,
+                        i = He(Ge.Lootbox, {
+                            action: We.TooltipWatched,
                             item: Ve.RewardToopltip,
                             parentScreen: Ue.Probability,
                             timeLimit: 1,
                             info: null == e ? void 0 : e.info,
                         }),
-                        s = He(We.Lootbox, {
-                            action: Ge.TooltipWatched,
+                        s = He(Ge.Lootbox, {
+                            action: We.TooltipWatched,
                             item: Ve.MinorRewards,
                             parentScreen: Ue.Rewards,
                             timeLimit: 1,
                         }),
-                        l = He(We.Lootbox, {
-                            action: Ge.TooltipWatched,
+                        l = He(Ge.Lootbox, {
+                            action: We.TooltipWatched,
                             item: Ve.RewardToopltip,
                             parentScreen: null == e ? void 0 : e.parentScreen,
                             timeLimit: 1,
                             info: null == e ? void 0 : e.info,
                         }),
-                        c = He(We.Lootbox, {
-                            action: Ge.TooltipWatched,
+                        c = He(Ge.Lootbox, {
+                            action: We.TooltipWatched,
                             item: Ve.IconPossibleRewardGroup,
                             parentScreen: Ue.Storage,
                             timeLimit: 1,
                         }),
-                        d = He(We.Lootbox, {
-                            action: Ge.TooltipWatched,
+                        d = He(Ge.Lootbox, {
+                            action: We.TooltipWatched,
                             item: Ve.RewardRotationToopltip,
                             parentScreen: null == e ? void 0 : e.parentScreen,
                             timeLimit: 1,
@@ -3100,38 +3100,38 @@
                         minorRewardsToopltipWatched: s,
                         rewardSharedToopltipWatched: l,
                         iconPossibleRewardGroupToopltipWatched: c,
-                        carouselLootboxToopltipWatched: He(We.Lootbox, {
-                            action: Ge.TooltipWatched,
+                        carouselLootboxToopltipWatched: He(Ge.Lootbox, {
+                            action: We.TooltipWatched,
                             item: Ve.CarouselLootbox,
                             parentScreen: Ue.Storage,
                             timeLimit: 2,
                         }),
                         rewardToopltipWatchedWithRotation: d,
-                        statisticButtonToopltipWatched: He(We.Lootbox, {
-                            action: Ge.TooltipWatched,
+                        statisticButtonToopltipWatched: He(Ge.Lootbox, {
+                            action: We.TooltipWatched,
                             item: Ve.StatisticButton,
                             parentScreen: Ue.LootBoxesShortStats,
                             timeLimit: 1,
                         }),
-                        deadlineWidgetToopltipWatched: He(We.Lootbox, {
-                            action: Ge.TooltipWatched,
+                        deadlineWidgetToopltipWatched: He(Ge.Lootbox, {
+                            action: We.TooltipWatched,
                             item: Ve.DeadlineWidget,
                             parentScreen: null == e ? void 0 : e.parentScreen,
                             timeLimit: 1,
                         }),
                         probabilityPercentWithGarantClick: () => {
                             t({
-                                action: Ge.Click,
+                                action: We.Click,
                                 parentScreen: Ue.Probability,
                                 item: Ve.ProbabilityPercentWithGarant,
                             });
                         },
                         probabilityPercentClick: () => {
-                            t({ action: Ge.Click, parentScreen: Ue.Probability, item: Ve.ProbabilityPercent });
+                            t({ action: We.Click, parentScreen: Ue.Probability, item: Ve.ProbabilityPercent });
                         },
                         showLoseRewardsViewButton: (e, u) => {
                             t({
-                                action: Ge.Show,
+                                action: We.Show,
                                 parentScreen: Ue.LoseRewards,
                                 item: e,
                                 info: JSON.stringify({ lockpickCount: u }),
@@ -3139,7 +3139,7 @@
                         },
                         loseRewardsViewButtonClick: (e, u) => {
                             t({
-                                action: Ge.Click,
+                                action: We.Click,
                                 parentScreen: Ue.LoseRewards,
                                 item: e,
                                 info: JSON.stringify({ lockpickCount: u }),
@@ -3147,7 +3147,7 @@
                         },
                         showLoseRewardsViewCloseButton: (e) => {
                             t({
-                                action: Ge.Show,
+                                action: We.Show,
                                 parentScreen: Ue.LoseRewards,
                                 item: Ve.CloseButton,
                                 info: JSON.stringify({ lockpickCount: e }),
@@ -3155,7 +3155,7 @@
                         },
                         loseRewardsViewCloseButtonClick: (e) => {
                             t({
-                                action: Ge.Click,
+                                action: We.Click,
                                 parentScreen: Ue.LoseRewards,
                                 item: Ve.CloseButton,
                                 info: JSON.stringify({ lockpickCount: e }),
@@ -3163,7 +3163,7 @@
                         },
                         loseRewardsViewESCButtonClick: (e) => {
                             t({
-                                action: Ge.Click,
+                                action: We.Click,
                                 parentScreen: Ue.LoseRewards,
                                 item: Ve.ESCButton,
                                 info: JSON.stringify({ lockpickCount: e }),
@@ -3171,7 +3171,7 @@
                         },
                         showRewardsViewCloseButton: (e) => {
                             t({
-                                action: Ge.Show,
+                                action: We.Show,
                                 parentScreen: Ue.Rewards,
                                 item: Ve.CloseButton,
                                 info: JSON.stringify({ lootboxCount: e }),
@@ -3179,7 +3179,7 @@
                         },
                         rewardsViewCloseButtonClick: (e) => {
                             t({
-                                action: Ge.Click,
+                                action: We.Click,
                                 parentScreen: Ue.Rewards,
                                 item: Ve.CloseButton,
                                 info: JSON.stringify({ lootboxCount: e }),
@@ -3187,18 +3187,18 @@
                         },
                         rewardsViewESCButtonClick: (e) => {
                             t({
-                                action: Ge.Click,
+                                action: We.Click,
                                 parentScreen: Ue.Rewards,
                                 item: Ve.ESCButton,
                                 info: JSON.stringify({ lootboxCount: e }),
                             });
                         },
                         rewardsViewMinorRewardsShow: () => {
-                            t({ action: Ge.Show, parentScreen: Ue.Rewards, item: Ve.MinorRewards });
+                            t({ action: We.Show, parentScreen: Ue.Rewards, item: Ve.MinorRewards });
                         },
                         showRewardsViewButton: (e, u) => {
                             t({
-                                action: Ge.Show,
+                                action: We.Show,
                                 parentScreen: Ue.Rewards,
                                 item: e,
                                 info: JSON.stringify({ lootboxCount: u }),
@@ -3206,7 +3206,7 @@
                         },
                         rewardsViewButtonClick: (e, u) => {
                             t({
-                                action: Ge.Click,
+                                action: We.Click,
                                 parentScreen: Ue.Rewards,
                                 item: e,
                                 info: JSON.stringify({ lootboxCount: u }),
@@ -3214,7 +3214,7 @@
                         },
                         rewardsVideoCloseClick: (e, u, o, n) => {
                             t({
-                                action: Ge.Click,
+                                action: We.Click,
                                 parentScreen: Ue.RewardVideo,
                                 item: Ve.CloseButton,
                                 info: JSON.stringify({ duration: e, lootboxType: u, lootboxID: o, reward: n }),
@@ -3222,7 +3222,7 @@
                         },
                         rewardsVideoESCClick: (e, u, o, n) => {
                             t({
-                                action: Ge.Click,
+                                action: We.Click,
                                 parentScreen: Ue.RewardVideo,
                                 item: Ve.ESCButton,
                                 info: JSON.stringify({ duration: e, lootboxType: u, lootboxID: o, reward: n }),
@@ -3230,21 +3230,21 @@
                         },
                         rewardsVideoStarted: (e, u, o) => {
                             t({
-                                action: Ge.VideoStarted,
+                                action: We.VideoStarted,
                                 parentScreen: Ue.RewardVideo,
                                 item: Ve.RewardVideo,
                                 info: JSON.stringify({ lootboxID: u, lootboxType: e, reward: o }),
                             });
                         },
                         storageViewESCButtonClick: () => {
-                            t({ action: Ge.Click, parentScreen: Ue.Storage, item: Ve.ESCButton });
+                            t({ action: We.Click, parentScreen: Ue.Storage, item: Ve.ESCButton });
                         },
                         iconPossibleRewardGroupClick: () => {
-                            t({ action: Ge.Click, parentScreen: Ue.Storage, item: Ve.IconPossibleRewardGroup });
+                            t({ action: We.Click, parentScreen: Ue.Storage, item: Ve.IconPossibleRewardGroup });
                         },
                         lootBoxesShortStatsViewESCButtonClick: (e) => {
                             t({
-                                action: Ge.Click,
+                                action: We.Click,
                                 parentScreen: Ue.LootBoxesShortStats,
                                 item: Ve.StatisticESCButton,
                                 info: JSON.stringify({ tab: e }),
@@ -3252,7 +3252,7 @@
                         },
                         lootBoxesShortStatsOutsideClick: (e) => {
                             t({
-                                action: Ge.Click,
+                                action: We.Click,
                                 parentScreen: Ue.LootBoxesShortStats,
                                 item: Ve.statisticOutsideClick,
                                 info: JSON.stringify({ tab: e }),
@@ -3260,7 +3260,7 @@
                         },
                         lootBoxesShortStatsTabsClick: (e) => {
                             t({
-                                action: Ge.Click,
+                                action: We.Click,
                                 parentScreen: Ue.LootBoxesShortStats,
                                 item: Ve.LootBoxesShortStatsTabs,
                                 info: JSON.stringify({ tab: e }),
@@ -3268,7 +3268,7 @@
                         },
                         lootBoxesShortStatsGroupClick: (e) => {
                             t({
-                                action: Ge.Click,
+                                action: We.Click,
                                 parentScreen: Ue.LootBoxesShortStats,
                                 item: Ve.LootBoxesShortStatsGroup,
                                 info: JSON.stringify({ category: e }),
@@ -3276,7 +3276,7 @@
                         },
                         lootBoxesFullStatsSidebarClick: (e) => {
                             t({
-                                action: Ge.Click,
+                                action: We.Click,
                                 parentScreen: Ue.LootBoxesFullStats,
                                 item: Ve.LootBoxesFullStatsSidebar,
                                 info: JSON.stringify({ category: e }),
@@ -3284,7 +3284,7 @@
                         },
                         lootBoxesFullStatsSelectAllClick: (e) => {
                             t({
-                                action: Ge.Click,
+                                action: We.Click,
                                 parentScreen: Ue.LootBoxesFullStats,
                                 item: Ve.lootBoxesFullStatsSelectAll,
                                 info: JSON.stringify({ isButtonActive: e }),
@@ -3292,7 +3292,7 @@
                         },
                         lootBoxesFullStatsSelectLootboxClick: (e, u) => {
                             t({
-                                action: Ge.Click,
+                                action: We.Click,
                                 parentScreen: Ue.LootBoxesFullStats,
                                 item: Ve.lootBoxesFullStatsSelect,
                                 info: JSON.stringify({ lootboxID: e, isButtonActive: u }),
@@ -3300,14 +3300,14 @@
                         },
                         lootBoxesFullStatsRewardClick: (e) => {
                             t({
-                                action: Ge.Click,
+                                action: We.Click,
                                 parentScreen: Ue.LootBoxesFullStats,
                                 item: Ve.lootBoxesFullStatsReward,
                                 info: JSON.stringify({ rewardType: e }),
                             });
                         },
                         storageViewBackButtonClick: () => {
-                            t({ action: Ge.Click, parentScreen: Ue.Storage, item: Ve.BackButton });
+                            t({ action: We.Click, parentScreen: Ue.Storage, item: Ve.BackButton });
                         },
                     };
                 };
@@ -3763,7 +3763,7 @@
                                     i().createElement(
                                         'div',
                                         { className: _t.frameContent },
-                                        i().createElement(W.ZP, {
+                                        i().createElement(G.ZP, {
                                             text: At.optional.possibleRewardsTitle(),
                                             format: { classMix: _t.possibleRewardsHeader },
                                         }),
@@ -3792,7 +3792,7 @@
                                                             className: l()(_t.stage, _t[`stage__${u}`]),
                                                         }),
                                                 ),
-                                                i().createElement(W.ZP, {
+                                                i().createElement(G.ZP, {
                                                     text: null != (n = At.possibleRewards.$dyn(e)) ? n : '',
                                                     format: { classMix: _t.rewardName },
                                                 }),
@@ -3904,7 +3904,7 @@
                                     u && 'BuyButton_buyButtonIcon__hovered_61',
                                 ),
                             }),
-                            i().createElement(W.ZP, {
+                            i().createElement(G.ZP, {
                                 text: Ft.optional.buy(),
                                 format: {
                                     classMix: l()(
@@ -4436,7 +4436,7 @@
                         wrapper: 'HorizontalScroll_wrapper_1e',
                         defaultScrollArea: 'HorizontalScroll_defaultScrollArea_8d',
                     },
-                    Wt = ({
+                    Gt = ({
                         children: e,
                         api: t,
                         className: u,
@@ -4458,12 +4458,12 @@
                             i().createElement(
                                 'div',
                                 { className: l()(Ht.defaultScrollArea, n) },
-                                i().createElement(Gt, { className: s, api: _, classNames: r }, e),
+                                i().createElement(Wt, { className: s, api: _, classNames: r }, e),
                             ),
                             i().createElement(Pt, { getStepByRailClick: c, api: t, onDrag: d, classNames: m }),
                         );
                     },
-                    Gt = ({ api: e, className: t, classNames: u, children: o, style: n }) => (
+                    Wt = ({ api: e, className: t, classNames: u, children: o, style: n }) => (
                         (0, a.useEffect)(() => bt(e.recalculateContent)),
                         i().createElement(
                             'div',
@@ -4483,9 +4483,9 @@
                             ),
                         )
                     );
-                ((Gt.Bar = Pt),
-                    (Gt.Default = Wt),
-                    (Gt.SeniorityAwards = ({ api: e, className: t, classNames: u, children: o }) => (
+                ((Wt.Bar = Pt),
+                    (Wt.Default = Gt),
+                    (Wt.SeniorityAwards = ({ api: e, className: t, classNames: u, children: o }) => (
                         (0, a.useEffect)(() => bt(e.recalculateContent)),
                         i().createElement(
                             'div',
@@ -4924,7 +4924,7 @@
                                     i().createElement(
                                         'div',
                                         { className: 'LootboxCard_text_fc' },
-                                        i().createElement(W.ZP, {
+                                        i().createElement(G.ZP, {
                                             text: f,
                                             format: { classMix: 'LootboxCard_innerText_fc' },
                                         }),
@@ -5133,7 +5133,7 @@
                             i().createElement(
                                 'div',
                                 null,
-                                i().createElement(W.ZP, {
+                                i().createElement(G.ZP, {
                                     text: R.strings.gui_lootboxes.triggerHint.title(),
                                     format: { classMix: 'TriggerHint_text_59' },
                                 }),
@@ -5307,7 +5307,7 @@
                                 { className: fu },
                                 o
                                     ? i().createElement(gu, { text: xu.progressionStage(), binding: { stage: o } })
-                                    : i().createElement(W.ZP, {
+                                    : i().createElement(G.ZP, {
                                           text: xu.$dyn(n ? Ke : Xe),
                                           format: { binding: { level: Cu(u) } },
                                       }),
@@ -5336,7 +5336,7 @@
                                     { className: 'GuaranteedRewardNext_shineContainer_46' },
                                     i().createElement('div', { className: 'GuaranteedRewardNext_shine_02' }),
                                 ),
-                                i().createElement(W.ZP, {
+                                i().createElement(G.ZP, {
                                     text: Su.$dyn(t ? Ke : Xe),
                                     format: { binding: { level: Cu(e) } },
                                 }),
@@ -5439,7 +5439,7 @@
                                 i().createElement(
                                     'div',
                                     null,
-                                    i().createElement(W.ZP, {
+                                    i().createElement(G.ZP, {
                                         text: R.strings.gui_lootboxes.triggerHint.statistic(),
                                         format: { classMix: 'TriggerHint_text_a1' },
                                     }),
@@ -5478,8 +5478,8 @@
                                 i().createElement(
                                     'div',
                                     { className: E },
-                                    i().createElement(W.ZP, { text: c, className: 'NoBoxes_noBoxHeader_e2' }),
-                                    i().createElement(W.ZP, {
+                                    i().createElement(G.ZP, { text: c, className: 'NoBoxes_noBoxHeader_e2' }),
+                                    i().createElement(G.ZP, {
                                         text: (0, I.z4)(m),
                                         className: 'NoBoxes_noBoxSubText_2d',
                                     }),
@@ -5491,7 +5491,7 @@
                                                 ? i().createElement(
                                                       q,
                                                       { mixClass: Nu, size: X.medium, type: K.main, onClick: r },
-                                                      i().createElement(W.ZP, { text: Ou.footer.button.buy() }),
+                                                      i().createElement(G.ZP, { text: Ou.footer.button.buy() }),
                                                   )
                                                 : i().createElement(
                                                       q,
@@ -5501,7 +5501,7 @@
                                                           type: K.primary,
                                                           onClick: n,
                                                       },
-                                                      i().createElement(W.ZP, { text: Ou.openBoxScreen.backBtnMain() }),
+                                                      i().createElement(G.ZP, { text: Ou.openBoxScreen.backBtnMain() }),
                                                   ),
                                             u &&
                                                 i().createElement(
@@ -5514,7 +5514,7 @@
                                                         i().createElement('div', {
                                                             className: 'NoBoxes_noBoxBuyButtonIcon_f1',
                                                         }),
-                                                        i().createElement(W.ZP, {
+                                                        i().createElement(G.ZP, {
                                                             text: R.strings.gui_lootboxes.optional.statistic(),
                                                         }),
                                                     ),
@@ -5524,7 +5524,7 @@
                             );
                         },
                     );
-                let Pu, Hu, Wu;
+                let Pu, Hu, Gu;
                 (!(function (e) {
                     ((e.STORAGE_VIEWING = 'STORAGE_VIEWING'),
                         (e.REQUEST_TO_OPEN = 'REQUEST_TO_OPEN'),
@@ -5541,17 +5541,17 @@
                             (e[(e.TO_SHARDS = 3)] = 'TO_SHARDS'),
                             (e[(e.TO_REFERRAL = 4)] = 'TO_REFERRAL'),
                             (e[(e.TO_FIR = 5)] = 'TO_FIR'),
-                            (e[(e.TO_TEREM = 6)] = 'TO_TEREM'),
+                            (e[(e.TO_LIGHTS = 6)] = 'TO_LIGHTS'),
                             (e[(e.TO_INSTALLATIONS = 7)] = 'TO_INSTALLATIONS'),
                             (e[(e.TO_FAIR = 8)] = 'TO_FAIR'),
-                            (e[(e.TO_SNOW_SLIDE = 9)] = 'TO_SNOW_SLIDE'),
-                            (e[(e.TO_FIREWORKS = 10)] = 'TO_FIREWORKS'),
+                            (e[(e.TO_SKATING = 9)] = 'TO_SKATING'),
+                            (e[(e.TO_ATTRACTION = 10)] = 'TO_ATTRACTION'),
                             (e[(e.TO_PET = 11)] = 'TO_PET'));
                     })(Hu || (Hu = {})),
                     (function (e) {
                         ((e.DEFAULT = 'DEFAULT'), (e.UNIQUE = 'UNIQUE'));
-                    })(Wu || (Wu = {})));
-                const Gu = {
+                    })(Gu || (Gu = {})));
+                const Wu = {
                         StorageViewing: Pu.STORAGE_VIEWING,
                         RequestToOpen: Pu.REQUEST_TO_OPEN,
                         Opening: Pu.OPENING,
@@ -5874,8 +5874,8 @@
                             I = M[0],
                             P = M[1],
                             H = (0, a.useRef)(),
-                            W = (0, a.useRef)(),
-                            G = (0, a.useRef)(b),
+                            G = (0, a.useRef)(),
+                            W = (0, a.useRef)(b),
                             U = (0, a.useRef)({
                                 onBackgroundHideEnd: E,
                                 onBackgroundHideStart: m,
@@ -5893,12 +5893,12 @@
                                 onLootboxShowStart: p,
                                 onLootboxShowEnd: B,
                             }),
-                                (G.current = b));
+                                (W.current = b));
                         }, [E, m, _, A, p, B, b]);
                         const V = (0, a.useCallback)(() => {
                                 var e;
                                 g && S.current.shouldAnimateBackgroundExit
-                                    ? null == (e = W.current) || e.hideBackground()
+                                    ? null == (e = G.current) || e.hideBackground()
                                     : U.current.onBackgroundHideEnd();
                             }, [g]),
                             z = (0, a.useCallback)(() => {
@@ -5922,13 +5922,13 @@
                             }, [r]),
                             (0, a.useEffect)(() => {
                                 var e, t;
-                                G.current
+                                W.current
                                     ? null == (e = H.current) || e.hideNoLootboxState()
                                     : null == (t = H.current) || t.hideLootbox();
                             }, [o]),
                             (0, a.useEffect)(() => {
                                 var e;
-                                W.current = Zu('_BG', null == (e = x.current) ? void 0 : e.domRef, {
+                                G.current = Zu('_BG', null == (e = x.current) ? void 0 : e.domRef, {
                                     onBackgroundHideEnd: () => {
                                         (null == U.current.onBackgroundHideEnd || U.current.onBackgroundHideEnd(),
                                             O(!1));
@@ -5943,7 +5943,7 @@
                                     },
                                     onBackgroundShowEnd: () => {
                                         var e, t;
-                                        (G.current
+                                        (W.current
                                             ? null == (e = H.current) || e.showNoLootboxState()
                                             : null == (t = H.current) || t.showLootbox(),
                                             O(!1));
@@ -5955,7 +5955,7 @@
                                 D &&
                                     null != e &&
                                     e.hasUniqueBack &&
-                                    (null == (t = W.current) || t.showUniqueBackgroundVideoCoverFrame());
+                                    (null == (t = G.current) || t.showUniqueBackgroundVideoCoverFrame());
                             }, [D]),
                             (0, a.useEffect)(() => {
                                 var e, t;
@@ -5973,7 +5973,7 @@
                                         !g || !S.current.shouldAnimateBackgroundEnter)
                                     )
                                         return (
-                                            G.current
+                                            W.current
                                                 ? null == (u = H.current) || u.showNoLootboxState()
                                                 : null == (o = H.current) || o.showLootbox(),
                                             () => {
@@ -5982,12 +5982,12 @@
                                                     null == (e = H.current) || e.cancel());
                                             }
                                         );
-                                    null == (n = W.current) || n.showBackground();
+                                    null == (n = G.current) || n.showBackground();
                                 }
                             }, [I, T]),
                             (0, a.useEffect)(() => {
                                 var e, o, n;
-                                t !== Gu.LoseOpening
+                                t !== Wu.LoseOpening
                                     ? u !== zu
                                         ? null == (e = H.current) || e.openLootbox()
                                         : null == (o = H.current) || o.openLootboxWithGlow()
@@ -6186,14 +6186,14 @@
                             I = N[1],
                             P = (0, a.useState)(d),
                             H = P[0],
-                            W = P[1],
-                            G = (0, a.useState)(!1),
-                            U = G[0],
-                            V = G[1],
+                            G = P[1],
+                            W = (0, a.useState)(!1),
+                            U = W[0],
+                            V = W[1],
                             z = (0, a.useState)(Boolean(0 === (null == b ? void 0 : b.count))),
                             $ = z[0],
                             K = z[1],
-                            X = (0, a.useState)(Gu.Opening),
+                            X = (0, a.useState)(Wu.Opening),
                             Z = X[0],
                             q = X[1],
                             Y = (0, a.useState)(null),
@@ -6263,10 +6263,10 @@
                             He = (0, a.useCallback)(() => {
                                 (0, h.G)(Je);
                             }, []),
-                            We = (0, a.useCallback)(() => {
+                            Ge = (0, a.useCallback)(() => {
                                 (0, h.G)(Ye);
                             }, []),
-                            Ge = (0, a.useCallback)(() => {
+                            We = (0, a.useCallback)(() => {
                                 (Be(!1), De((null == b ? void 0 : b.hasUniqueBack) || !1), fe || xe(!0));
                             }, [fe, b]),
                             Ue = (0, a.useCallback)(
@@ -6295,13 +6295,13 @@
                                 [u, C, s, b, H],
                             ),
                             Ve = (0, a.useCallback)(() => {
-                                (W(!H),
+                                (G(!H),
                                     H ? Te(Object.assign({}, Se, { shouldAnimateBackgroundEnter: !1 })) : xe(!1),
                                     u.changeAnimationEnabledSetting({ enabled: !H, autoSwitch: !1 }));
                             }, [H, Se, u]),
                             je = (0, a.useCallback)(
                                 (e) => {
-                                    (u.onError(e), W(!1));
+                                    (u.onError(e), G(!1));
                                 },
                                 [u],
                             ),
@@ -6330,41 +6330,47 @@
                                 Re.current = O;
                             }, [O]),
                             (0, a.useEffect)(() => {
-                                he(c === Gu.StorageViewing && !pe);
+                                he(c === Wu.StorageViewing && !pe);
                             }, [c, pe]),
                             (0, a.useEffect)(() => {
                                 (null == b ? void 0 : b.boxID) !== (null == J ? void 0 : J.boxID) &&
-                                    c === Gu.StorageViewing &&
+                                    c === Wu.StorageViewing &&
                                     b &&
                                     (K(0 === (null == b ? void 0 : b.count)),
                                     Q(b),
                                     H || Be(!1),
                                     b.videoRes ||
-                                        (W(!1), u.changeAnimationEnabledSetting({ enabled: !1, autoSwitch: !0 })));
+                                        (G(!1), u.changeAnimationEnabledSetting({ enabled: !1, autoSwitch: !0 })));
                             }, [u, b, c, H, J]),
                             (0, a.useEffect)(() => {
-                                ((c !== Gu.Opening && c !== Gu.LoseOpening) || (q(c), re((e) => e + 1)),
-                                    (c !== Gu.RequestToOpen && c !== Gu.StorageViewing) || V(!1));
+                                ((c !== Wu.Opening && c !== Wu.LoseOpening) || (q(c), re((e) => e + 1)),
+                                    (c !== Wu.RequestToOpen && c !== Wu.StorageViewing) || V(!1));
                             }, [c]),
+                            (0, a.useEffect)(
+                                () =>
+                                    (c !== Wu.Opening && c !== Wu.LoseOpening) || H
+                                        ? c === Wu.Rewarding || c === Wu.UniqueRewarding
+                                            ? S(() => {
+                                                  H && de((e) => e + 1);
+                                              }, 350)
+                                            : void 0
+                                        : (V(!0),
+                                          S(() => {
+                                              u.openningFinished();
+                                          }, 350)),
+                                [u, c, H, b],
+                            ),
                             (0, a.useEffect)(() => {
-                                if ((c === Gu.Opening || c === Gu.LoseOpening) && !H)
-                                    return (
-                                        V(!0),
-                                        S(() => {
-                                            u.openningFinished();
-                                        }, 350)
-                                    );
-                                if (c === Gu.Rewarding || c === Gu.UniqueRewarding)
-                                    return S(() => {
-                                        H && de((e) => e + 1);
-                                    }, 350);
-                                if (c === Gu.StorageViewing) {
+                                if (
+                                    (null == b ? void 0 : b.boxID) === (null == J ? void 0 : J.boxID) &&
+                                    c === Wu.StorageViewing
+                                ) {
                                     const e = 0 === (null == b ? void 0 : b.count);
                                     ($ && !e && (K(!1), se((e) => e + 1)), e && (K(!0), Ee((e) => e + 1)));
                                 }
-                            }, [u, c, H, b]),
+                            }, [null == b ? void 0 : b.count]),
                             (0, a.useEffect)(() => {
-                                (c === Gu.Opening || c === Gu.LoseOpening) &&
+                                (c === Wu.Opening || c === Wu.LoseOpening) &&
                                     b &&
                                     H &&
                                     ((0, h.G)(tt[b.tier]), F === zu && (0, h.G)(tt[5]));
@@ -6407,8 +6413,8 @@
                                                             onBackgroundShowStart: Pe,
                                                             onBackgroundHideStart: He,
                                                             onLootboxOpenEnd: () => u.openningFinished(),
-                                                            onLootboxShowStart: We,
-                                                            onLootboxShowEnd: Ge,
+                                                            onLootboxShowStart: Ge,
+                                                            onLootboxShowEnd: We,
                                                             isLootboxChangeInitiated: te,
                                                             isLootboxOpenInitiated: ne,
                                                             isLootboxShowInitiated: ie,
@@ -6515,7 +6521,7 @@
                                                   count: null == b ? void 0 : b.count,
                                                   disabled: !(null != b && b.isOpenEnabled),
                                                   isOpenBoxDisabled:
-                                                      c !== Gu.StorageViewing || !(null != b && b.isOpenEnabled),
+                                                      c !== Wu.StorageViewing || !(null != b && b.isOpenEnabled),
                                                   allKeys: D,
                                                   currentLootboxKeysIDs: b.unlockKeyIDs,
                                                   isBuyAvailable: _,
@@ -6527,7 +6533,7 @@
                                               k &&
                                               i().createElement(
                                                   'div',
-                                                  { className: 'App_info_5d' },
+                                                  { className: l()('App_info_5d', !Ce && 'App_info__hide_ba') },
                                                   i().createElement(w, {
                                                       caption: k,
                                                       type: 'info',
@@ -6559,7 +6565,7 @@
                                                   {
                                                       className: l()(
                                                           'App_carousel_53',
-                                                          c !== Gu.StorageViewing && 'App_carousel__hide_17',
+                                                          c !== Wu.StorageViewing && 'App_carousel__hide_17',
                                                       ),
                                                   },
                                                   i().createElement(lu, {
@@ -6572,7 +6578,7 @@
                                               mixClass: 'App_animationControl_ba',
                                               isActiveAnimation: H,
                                               onClick: Ve,
-                                              disabled: c !== Gu.StorageViewing || pe,
+                                              disabled: c !== Wu.StorageViewing || pe,
                                           }),
                                           v &&
                                               i().createElement(
@@ -6729,7 +6735,7 @@
                                     },
                                 ],
                                 groupRewards: [],
-                                currentState: Gu.StorageViewing,
+                                currentState: Wu.StorageViewing,
                                 currentLootboxID: 230315,
                                 isAnimationEnabled: !0,
                                 isBuyAvailable: !0,
@@ -6798,6 +6804,7 @@
                             e,
                             !t && 'AnimationControls_base__disabledAnimadion_89',
                             l && 'AnimationControls_base__disabled_ec',
+                            !t && l && 'AnimationControls_base__disabledAnimadionButton_c5',
                         );
                         return i().createElement(
                             'div',
@@ -6906,82 +6913,72 @@
             },
             6620: (e, t, u) => {
                 'use strict';
-                u.d(t, { s: () => T });
+                u.d(t, { s: () => R });
                 var o = u(6179),
                     n = u.n(o);
                 let r, a, i, s, l, c, d;
-                var m, _, E, A;
-                (!(function (e) {
-                    ((e.Items = 'items'),
-                        (e.Equipment = 'equipment'),
-                        (e.Xp = 'xp'),
-                        (e.XpFactor = 'xpFactor'),
-                        (e.Blueprints = 'blueprints'),
-                        (e.BlueprintsAny = 'blueprintsAny'),
-                        (e.Goodies = 'goodies'),
-                        (e.Berths = 'berths'),
-                        (e.Slots = 'slots'),
-                        (e.Tokens = 'tokens'),
-                        (e.CrewSkins = 'crewSkins'),
-                        (e.CrewBooks = 'crewBooks'),
-                        (e.Customizations = 'customizations'),
-                        (e.CreditsFactor = 'creditsFactor'),
-                        (e.Currency = 'currency'),
-                        (e.TankmenXp = 'tankmenXP'),
-                        (e.TankmenXpFactor = 'tankmenXPFactor'),
-                        (e.FreeXpFactor = 'freeXPFactor'),
-                        (e.BattleToken = 'battleToken'),
-                        (e.Entitlements = 'entitlements'),
-                        (e.PremiumUniversal = 'premium_universal'),
-                        (e.Gold = 'gold'),
-                        (e.Credits = 'credits'),
-                        (e.Crystal = 'crystal'),
-                        (e.FreeXp = 'freeXP'),
-                        (e.Premium = 'premium'),
-                        (e.PremiumPlus = 'premium_plus'),
-                        (e.BattlePassPoints = 'battlePassPoints'),
-                        (e.BattlePassSelectToken = 'battlePassSelectToken'),
-                        (e.SelectableBonus = 'selectableBonus'),
-                        (e.StyleProgressToken = 'styleProgressToken'),
-                        (e.TmanToken = 'tmanToken'),
-                        (e.NaturalCover = 'naturalCover'),
-                        (e.BpCoin = 'bpcoin'),
-                        (e.BattlaPassFinalAchievement = 'dossier_achievement'),
-                        (e.BattleBadge = 'dossier_badge'),
-                        (e.NewYearAlbumsAccess = 'newYearAlbumsAccess'),
-                        (e.NewYearFillers = 'ny22Fillers'),
-                        (e.NewYearInvoice = 'newYearInvoice'),
-                        (e.NewYearToyFragments = 'ny22ToyFragments'),
-                        (e.NewYearSlot = 'newYearSlot'),
-                        (e.BonusX5 = 'battle_bonus_x5'),
-                        (e.CrewBonusX3 = 'crew_bonus_x3'),
-                        (e.Vehicles = 'vehicles'),
-                        (e.EpicSelectToken = 'epicSelectToken'),
-                        (e.CollectionItem = 'collectionItem'),
-                        (e.Comp7TokenWeeklyReward = 'comp7TokenWeeklyReward'),
-                        (e.Comp7TokenCouponReward = 'comp7TokenCouponReward'),
-                        (e.BattleBoosterGift = 'battleBooster_gift'),
-                        (e.CosmicLootboxSilver = 'lootBoxToken'),
-                        (e.CosmicLootboxCommon = 'cosmic_2024_2'),
-                        (e.Branch = 'branch'),
-                        (e.VehicleSelect = 'vehicleSelect'),
-                        (e.StyleProgress = 'styleProgress'),
-                        (e.ParagonsUnlocks = 'paragonsUnlocks'),
-                        (e.LootBoxToken = 'lootBoxToken'),
-                        (e.GoldenTicket = 'birthday2025_golden_ticket'),
-                        (e.PostStamp = 'giftsystem_4_stamp'),
-                        (e.Quests = 'quests'),
-                        (e.BlankPersonalMissions_1 = 'freeTokens_0'),
-                        (e.BlankPersonalMissions_2 = 'freeTokens_2'),
-                        (e.SACoin = 'sacoin'),
-                        (e.ArmoryCoin = 'armory_coin'),
-                        (e.PremiumPlusUniversal = 'premium_plus_universal'),
-                        (e.DogTagType = 'dogTagComponents'),
-                        (e.NyPetGoodies = 'nyPetGoodies'),
-                        (e.HiddenVehicle = 'hidden_vehicle'),
-                        (e.NyStaticDogTag = 'nyStaticDogTag'),
-                        (e.Ny26Toys = 'ny26Toys'));
-                })(r || (r = {})),
+                var m, _, E, A, p;
+                (((p = r || (r = {})).Items = 'items'),
+                    (p.Equipment = 'equipment'),
+                    (p.Xp = 'xp'),
+                    (p.XpFactor = 'xpFactor'),
+                    (p.Blueprints = 'blueprints'),
+                    (p.BlueprintsAny = 'blueprintsAny'),
+                    (p.Goodies = 'goodies'),
+                    (p.Berths = 'berths'),
+                    (p.Slots = 'slots'),
+                    (p.Tokens = 'tokens'),
+                    (p.CrewSkins = 'crewSkins'),
+                    (p.CrewBooks = 'crewBooks'),
+                    (p.Customizations = 'customizations'),
+                    (p.CreditsFactor = 'creditsFactor'),
+                    (p.Currency = 'currency'),
+                    (p.TankmenXp = 'tankmenXP'),
+                    (p.TankmenXpFactor = 'tankmenXPFactor'),
+                    (p.FreeXpFactor = 'freeXPFactor'),
+                    (p.BattleToken = 'battleToken'),
+                    (p.PremiumUniversal = 'premium_universal'),
+                    (p.Gold = 'gold'),
+                    (p.Credits = 'credits'),
+                    (p.Crystal = 'crystal'),
+                    (p.FreeXp = 'freeXP'),
+                    (p.Premium = 'premium'),
+                    (p.PremiumPlus = 'premium_plus'),
+                    (p.BattlePassPoints = 'battlePassPoints'),
+                    (p.BattlePassSelectToken = 'battlePassSelectToken'),
+                    (p.SelectableBonus = 'selectableBonus'),
+                    (p.StyleProgressToken = 'styleProgressToken'),
+                    (p.TmanToken = 'tmanToken'),
+                    (p.NaturalCover = 'naturalCover'),
+                    (p.BpCoin = 'bpcoin'),
+                    (p.BattlaPassFinalAchievement = 'dossier_achievement'),
+                    (p.BattleBadge = 'dossier_badge'),
+                    (p.NewYearAlbumsAccess = 'newYearAlbumsAccess'),
+                    (p.NewYearFillers = 'ny22Fillers'),
+                    (p.NewYearInvoice = 'newYearInvoice'),
+                    (p.NewYearToyFragments = 'ny22ToyFragments'),
+                    (p.NewYearSlot = 'newYearSlot'),
+                    (p.BonusX5 = 'battle_bonus_x5'),
+                    (p.CrewBonusX3 = 'crew_bonus_x3'),
+                    (p.Vehicles = 'vehicles'),
+                    (p.EpicSelectToken = 'epicSelectToken'),
+                    (p.CollectionItem = 'collectionItem'),
+                    (p.Comp7TokenWeeklyReward = 'comp7TokenWeeklyReward'),
+                    (p.Comp7TokenCouponReward = 'comp7TokenCouponReward'),
+                    (p.BattleBoosterGift = 'battleBooster_gift'),
+                    (p.CosmicLootboxSilver = 'lootBoxToken'),
+                    (p.CosmicLootboxCommon = 'cosmic_2024_2'),
+                    (p.Branch = 'branch'),
+                    (p.VehicleSelect = 'vehicleSelect'),
+                    (p.StyleProgress = 'styleProgress'),
+                    (p.ParagonsUnlocks = 'paragonsUnlocks'),
+                    (p.LootBoxToken = 'lootBoxToken'),
+                    (p.GoldenTicket = 'birthday2025_golden_ticket'),
+                    (p.PostStamp = 'giftsystem_4_stamp'),
+                    (p.Quests = 'quests'),
+                    (p.ArmoryCoin = 'armory_coin'),
+                    (p.PremiumPlusUniversal = 'premium_plus_universal'),
+                    (p.DogTagType = 'dogTagComponents'),
                     (function (e) {
                         ((e.Gold = 'gold'),
                             (e.Credits = 'credits'),
@@ -7064,18 +7061,18 @@
                     (m.PROGRESSION_STYLE_UPGRADED_2 = 'progressionStyleUpgraded_2'),
                     (m.PROGRESSION_STYLE_UPGRADED_3 = 'progressionStyleUpgraded_3'),
                     (m.PROGRESSION_STYLE_UPGRADED_4 = 'progressionStyleUpgraded_4'));
-                var p = u(4179);
-                class B extends n().PureComponent {
+                var B = u(4179);
+                class g extends n().PureComponent {
                     render() {
                         let e;
-                        e = 'gold' === this.props.format ? p.B3.GOLD : p.B3.INTEGRAL;
-                        const t = p.Z5.getNumberFormat(this.props.value, e);
+                        e = 'gold' === this.props.format ? B.B3.GOLD : B.B3.INTEGRAL;
+                        const t = B.Z5.getNumberFormat(this.props.value, e);
                         return void 0 !== this.props.value && void 0 !== t ? t : null;
                     }
                 }
-                let g, F, D, b, C, h, v, f, x;
-                var w, S, y;
-                ((B.defaultProps = { format: 'integral' }),
+                let F, D, b, C, h, v, f, x, w;
+                var S, y, T;
+                ((g.defaultProps = { format: 'integral' }),
                     r.Items,
                     r.Equipment,
                     r.Xp,
@@ -7094,7 +7091,6 @@
                     r.TankmenXpFactor,
                     r.FreeXpFactor,
                     r.BattleToken,
-                    r.Entitlements,
                     r.PremiumUniversal,
                     r.NaturalCover,
                     r.BpCoin,
@@ -7109,25 +7105,16 @@
                     r.Comp7TokenWeeklyReward,
                     r.Comp7TokenCouponReward,
                     r.BattleBoosterGift,
-                    r.NewYearFillers,
-                    r.NewYearInvoice,
-                    r.LootBoxToken,
                     r.CosmicLootboxCommon,
                     r.CosmicLootboxSilver,
                     r.SelectableBonus,
                     r.GoldenTicket,
                     r.PostStamp,
-                    r.BlankPersonalMissions_1,
-                    r.BlankPersonalMissions_2,
-                    r.SACoin,
                     r.PremiumPlusUniversal,
-                    r.NyPetGoodies,
-                    r.HiddenVehicle,
                     r.Gold,
                     r.Credits,
                     r.Crystal,
                     r.FreeXp,
-                    r.NewYearToyFragments,
                     r.BattlePassPoints,
                     r.PremiumPlus,
                     r.Premium,
@@ -7142,44 +7129,45 @@
                             (e.s360 = '360'),
                             (e.s400 = '400'),
                             (e.s600 = '600'));
-                    })(g || (g = {})),
-                    ((y = F || (F = {})).Active = 'active'),
-                    (y.Paused = 'paused'),
-                    (y.Completed = 'completed'),
-                    (y.NotStarted = 'notStarted'),
-                    (y.Disabled = 'disabled'),
+                    })(F || (F = {})),
+                    ((T = D || (D = {})).Active = 'active'),
+                    (T.Paused = 'paused'),
+                    (T.Completed = 'completed'),
+                    (T.NotStarted = 'notStarted'),
+                    (T.Disabled = 'disabled'),
                     (function (e) {
                         ((e.Default = 'default'), (e.Marathon = 'marathon'), (e.Resource = 'resource'));
-                    })(D || (D = {})),
-                    (function (e) {
-                        ((e.Micro = 'micro'), (e.Small = 'small'), (e.Medium = 'medium'));
                     })(b || (b = {})),
                     (function (e) {
-                        ((e.ACTIVE = 'active'), (e.COMPLETED = 'completed'), (e.NOT_CHOSEN = 'notChosen'));
+                        ((e.Micro = 'micro'), (e.Small = 'small'), (e.Medium = 'medium'));
                     })(C || (C = {})),
-                    ((S = h || (h = {})).AwaitSeason = 'awaitSeason'),
-                    (S.Bought = 'bought'),
-                    (S.Free = 'free'),
-                    (S.Completed = 'completed'),
-                    (S.CompletedRightNow = 'completedRightNow'),
-                    (S.SwitchedChapterRightNow = 'switchedChapterRightNow'),
-                    (S.NoVehiclesBase = 'noVehiclesBase'),
-                    (S.ChapterNotChosen = 'chapterNotChosen'),
+                    (function (e) {
+                        ((e.ACTIVE = 'active'), (e.COMPLETED = 'completed'), (e.NOT_CHOSEN = 'notChosen'));
+                    })(h || (h = {})),
+                    ((y = v || (v = {})).AwaitSeason = 'awaitSeason'),
+                    (y.Bought = 'bought'),
+                    (y.Free = 'free'),
+                    (y.Completed = 'completed'),
+                    (y.CompletedRightNow = 'completedRightNow'),
+                    (y.SwitchedChapterRightNow = 'switchedChapterRightNow'),
+                    (y.NoVehiclesBase = 'noVehiclesBase'),
+                    (y.ChapterNotChosen = 'chapterNotChosen'),
                     (function (e) {
                         ((e.None = ''),
                             (e.ShowLevel = 'show'),
                             (e.HideLevel = 'hide'),
                             (e.HideLevelWithDelay = 'hideWithDelay'));
-                    })(v || (v = {})),
-                    ((w = f || (f = {})).style = 'style'),
-                    (w.tankman = 'tankman'),
-                    (w.vehicle = 'vehicle'),
+                    })(f || (f = {})),
+                    ((S = x || (x = {})).style = 'style'),
+                    (S.tankman = 'tankman'),
+                    (S.vehicle = 'vehicle'),
+                    (S.mixed = 'mixed'),
                     (function (e) {
                         ((e.Default = 'default'), (e.Marathon = 'marathon'), (e.Resource = 'resource'));
-                    })(x || (x = {})),
-                    f.style,
-                    f.tankman);
-                const T = ({ icon: e, count: t }) =>
+                    })(w || (w = {})),
+                    x.style,
+                    x.tankman);
+                const R = ({ icon: e, count: t }) =>
                     n().createElement(
                         'div',
                         { className: 'CurrencyKey_base_53' },

@@ -1131,7 +1131,7 @@
                         );
                     };
             },
-            4592: (u, e, t) => {
+            5999: (u, e, t) => {
                 'use strict';
                 var r = t(6179),
                     a = t.n(r);
@@ -2050,33 +2050,28 @@
                     Iu = 3600,
                     ku = 86400;
                 Date.now();
-                const Wu = () => {},
-                    Gu = (u = 0, e, t = 0, a = Wu) => {
+                const Wu = function () {};
+                console.log;
+                const Gu = Wu,
+                    Uu = (u = 0, e, t = 0, a = Gu) => {
                         const n = (0, r.useState)(u),
                             i = n[0],
                             E = n[1];
                         return (
                             (0, r.useEffect)(() => {
-                                if (u > 0) {
-                                    E(u);
-                                    const r = Date.now(),
-                                        n = setInterval(
-                                            () => {
-                                                const e = u - Math.floor((Date.now() - r) / Nu);
-                                                null !== t && e <= t ? (E(t), a && a(), clearInterval(n)) : E(e);
-                                            },
-                                            (e || (u > 120 ? Hu : 1)) * Nu,
-                                        );
-                                    return () => {
-                                        clearInterval(n);
-                                    };
-                                }
-                                E(0);
-                            }, [u, e, t, a]),
+                                const r = setInterval(
+                                    () => {
+                                        E((u) => (null !== t && u > t ? u - 1 : (a && a(), clearInterval(r), 0)));
+                                    },
+                                    (e || (u > 120 ? Hu : 1)) * Nu,
+                                );
+                                return () => {
+                                    clearInterval(r);
+                                };
+                            }, [a, e, u, t]),
                             i
                         );
                     },
-                    Uu = (G.Sw.instance, Gu),
                     ju = R.strings.common.duration;
                 let $u;
                 !(function (u) {
@@ -2574,6 +2569,6 @@
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             (t.forEach(e.bind(null, 0)), (t.push = e.bind(null, t.push.bind(t))));
         })());
-    var __webpack_exports__ = __webpack_require__.O(void 0, [52], () => __webpack_require__(4592));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [52], () => __webpack_require__(5999));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

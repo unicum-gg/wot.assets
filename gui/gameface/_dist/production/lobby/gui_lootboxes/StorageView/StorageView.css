@@ -206,6 +206,9 @@ body {
 .AnimationControls_base__disabledAnimadion_89 .AnimationControls_icon_05 {
     background-image: url('R.images.gui_lootboxes.gui.maps.openBox.icon_show_video');
 }
+.AnimationControls_base__disabledAnimadionButton_c5 .AnimationControls_icon_05 {
+    background-image: url('R.images.gui_lootboxes.gui.maps.openBox.icon_show_video_disabled');
+}
 .AnimationControls_text_20 {
     font-size: 12rem;
     line-height: 14rem;
@@ -2756,6 +2759,10 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     top: 50rem;
     right: 16rem;
     z-index: 10;
+}
+.App_info__hide_ba {
+    opacity: 0;
+    pointer-events: none;
 }
 .mediaMedium .App_info_5d {
     top: 60rem;

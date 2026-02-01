@@ -29,20 +29,20 @@
                 }
                 (t.r(n),
                     t.d(n, {
-                        addModelObserver: () => y,
+                        addModelObserver: () => O,
                         addPreloadTexture: () => b,
                         children: () => F,
                         displayStatus: () => c,
-                        displayStatusIs: () => Y,
+                        displayStatusIs: () => V,
                         events: () => d,
                         extraSize: () => z,
                         forceTriggerMouseMove: () => q,
-                        freezeTextureBeforeResize: () => x,
+                        freezeTextureBeforeResize: () => k,
                         getBrowserTexturePath: () => P,
-                        getDisplayStatus: () => V,
+                        getDisplayStatus: () => Y,
                         getScale: () => M,
                         getSize: () => R,
-                        getViewGlobalPosition: () => k,
+                        getViewGlobalPosition: () => x,
                         isEventHandled: () => W,
                         isFocused: () => I,
                         pxToRem: () => N,
@@ -52,7 +52,7 @@
                         setAnimateWindow: () => U,
                         setEventHandled: () => G,
                         setInputPaddingsRem: () => f,
-                        setSidePaddingsRem: () => O,
+                        setSidePaddingsRem: () => y,
                         whenTutorialReady: () => H,
                     }));
                 const o = D('clientResized'),
@@ -216,10 +216,10 @@
                 function P(u, e, t, E = 1) {
                     return viewEnv.getWebBrowserTexturePath(u, e, t, E);
                 }
-                function y(u, e, t) {
+                function O(u, e, t) {
                     return viewEnv.addDataChangedCallback(u, e, t);
                 }
-                function O(u) {
+                function y(u) {
                     viewEnv.setHitAreaPaddingsRem(u.top, u.right, u.bottom, u.left, 15);
                 }
                 function R(u = 'px') {
@@ -228,11 +228,11 @@
                 function S(u, e, t = 'px') {
                     return 'rem' === t ? viewEnv.resizeViewRem(u, e) : viewEnv.resizeViewPx(u, e);
                 }
-                function k(u = 'rem') {
+                function x(u = 'rem') {
                     const e = viewEnv.getViewGlobalPositionRem();
                     return 'rem' === u ? e : { x: L(e.x), y: L(e.y) };
                 }
-                function x() {
+                function k() {
                     viewEnv.freezeTextureBeforeResize();
                 }
                 function M() {
@@ -259,10 +259,10 @@
                 function q() {
                     viewEnv.forceTriggerMouseMove();
                 }
-                function V() {
+                function Y() {
                     return viewEnv.getShowingStatus();
                 }
-                const Y = Object.keys(c).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === c[e]), u), {}),
+                const V = Object.keys(c).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === c[e]), u), {}),
                     z = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
@@ -703,7 +703,7 @@
                     };
                 window.ViewEnvHelper = h;
             },
-            963: (u, e, t) => {
+            348: (u, e, t) => {
                 var E = t(179),
                     A = t.n(E),
                     F = t(493),
@@ -887,8 +887,8 @@
                 };
                 _.Sw.instance;
                 var P = t(483),
-                    y = t.n(P);
-                function O() {
+                    O = t.n(P);
+                function y() {
                     const u = (0, E.useRef)(0);
                     var e;
                     return (
@@ -922,10 +922,10 @@
                         'base__theme-default': 'TooltipDecorator_base__theme-default_6d',
                         decorator: 'TooltipDecorator_decorator_3d',
                     },
-                    k = ['children', 'className', 'theme'];
-                function x() {
+                    x = ['children', 'className', 'theme'];
+                function k() {
                     return (
-                        (x =
+                        (k =
                             Object.assign ||
                             function (u) {
                                 for (var e = 1; e < arguments.length; e++) {
@@ -934,7 +934,7 @@
                                 }
                                 return u;
                             }),
-                        x.apply(this, arguments)
+                        k.apply(this, arguments)
                     );
                 }
                 const M = A().forwardRef(function (u, e) {
@@ -950,8 +950,8 @@
                                     F = Object.keys(u);
                                 for (E = 0; E < F.length; E++) ((t = F[E]), e.indexOf(t) >= 0 || (A[t] = u[t]));
                                 return A;
-                            })(u, k);
-                        const o = O(),
+                            })(u, x);
+                        const o = y(),
                             a = A().useRef(null);
                         var i;
                         return (
@@ -974,8 +974,8 @@
                             (0, E.useEffect)(i, []),
                             A().createElement(
                                 'div',
-                                x({}, r, {
-                                    className: y()(S.base, S[`base__theme-${D}`], F),
+                                k({}, r, {
+                                    className: O()(S.base, S[`base__theme-${D}`], F),
                                     ref: function (u) {
                                         ((a.current = u), 'function' == typeof e ? e(u) : e && (e.current = u));
                                     },
@@ -994,7 +994,7 @@
                                   e.split('\n').map((e, n) =>
                                       A().createElement(
                                           'div',
-                                          { className: y()(N, t), key: `${e}-${n}` },
+                                          { className: O()(N, t), key: `${e}-${n}` },
                                           ((u, e, t) =>
                                               u
                                                   .split(/%\((.*?)\)(?:[sd])?/g)
@@ -1063,7 +1063,7 @@
                         }
                         return A().createElement(L, { text: r, classMix: t, binding: n });
                     });
-                let V, Y, z, H, K, $, j;
+                let Y, V, z, H, K, $, j;
                 (!(function (u) {
                     ((u.Items = 'items'),
                         (u.Equipment = 'equipment'),
@@ -1084,7 +1084,6 @@
                         (u.TankmenXpFactor = 'tankmenXPFactor'),
                         (u.FreeXpFactor = 'freeXPFactor'),
                         (u.BattleToken = 'battleToken'),
-                        (u.Entitlements = 'entitlements'),
                         (u.PremiumUniversal = 'premium_universal'),
                         (u.Gold = 'gold'),
                         (u.Credits = 'credits'),
@@ -1124,17 +1123,10 @@
                         (u.GoldenTicket = 'birthday2025_golden_ticket'),
                         (u.PostStamp = 'giftsystem_4_stamp'),
                         (u.Quests = 'quests'),
-                        (u.BlankPersonalMissions_1 = 'freeTokens_0'),
-                        (u.BlankPersonalMissions_2 = 'freeTokens_2'),
-                        (u.SACoin = 'sacoin'),
                         (u.ArmoryCoin = 'armory_coin'),
                         (u.PremiumPlusUniversal = 'premium_plus_universal'),
-                        (u.DogTagType = 'dogTagComponents'),
-                        (u.NyPetGoodies = 'nyPetGoodies'),
-                        (u.HiddenVehicle = 'hidden_vehicle'),
-                        (u.NyStaticDogTag = 'nyStaticDogTag'),
-                        (u.Ny26Toys = 'ny26Toys'));
-                })(V || (V = {})),
+                        (u.DogTagType = 'dogTagComponents'));
+                })(Y || (Y = {})),
                     (function (u) {
                         ((u.Gold = 'gold'),
                             (u.Credits = 'credits'),
@@ -1173,7 +1165,7 @@
                             (u.BattlePassPoints = 'battlePassPoints'),
                             (u.BattleBadge = 'dossier_badge'),
                             (u.BattleAchievement = 'dossier_achievement'));
-                    })(Y || (Y = {})),
+                    })(V || (V = {})),
                     (function (u) {
                         ((u.Big = 'big'),
                             (u.Small = 'small'),
@@ -1399,6 +1391,6 @@
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             (t.forEach(e.bind(null, 0)), (t.push = e.bind(null, t.push.bind(t))));
         })());
-    var __webpack_exports__ = __webpack_require__.O(void 0, [127], () => __webpack_require__(963));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [127], () => __webpack_require__(348));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

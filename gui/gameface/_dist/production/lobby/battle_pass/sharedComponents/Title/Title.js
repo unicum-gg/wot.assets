@@ -39,7 +39,6 @@
                             (u.TankmenXpFactor = 'tankmenXPFactor'),
                             (u.FreeXpFactor = 'freeXPFactor'),
                             (u.BattleToken = 'battleToken'),
-                            (u.Entitlements = 'entitlements'),
                             (u.PremiumUniversal = 'premium_universal'),
                             (u.Gold = 'gold'),
                             (u.Credits = 'credits'),
@@ -79,16 +78,9 @@
                             (u.GoldenTicket = 'birthday2025_golden_ticket'),
                             (u.PostStamp = 'giftsystem_4_stamp'),
                             (u.Quests = 'quests'),
-                            (u.BlankPersonalMissions_1 = 'freeTokens_0'),
-                            (u.BlankPersonalMissions_2 = 'freeTokens_2'),
-                            (u.SACoin = 'sacoin'),
                             (u.ArmoryCoin = 'armory_coin'),
                             (u.PremiumPlusUniversal = 'premium_plus_universal'),
-                            (u.DogTagType = 'dogTagComponents'),
-                            (u.NyPetGoodies = 'nyPetGoodies'),
-                            (u.HiddenVehicle = 'hidden_vehicle'),
-                            (u.NyStaticDogTag = 'nyStaticDogTag'),
-                            (u.Ny26Toys = 'ny26Toys'));
+                            (u.DogTagType = 'dogTagComponents'));
                     })(E || (E = {})),
                     (function (u) {
                         ((u.Gold = 'gold'),
@@ -204,7 +196,6 @@
                     E.E4.TankmenXpFactor,
                     E.E4.FreeXpFactor,
                     E.E4.BattleToken,
-                    E.E4.Entitlements,
                     E.E4.PremiumUniversal,
                     E.E4.NaturalCover,
                     E.E4.BpCoin,
@@ -219,25 +210,16 @@
                     E.E4.Comp7TokenWeeklyReward,
                     E.E4.Comp7TokenCouponReward,
                     E.E4.BattleBoosterGift,
-                    E.E4.NewYearFillers,
-                    E.E4.NewYearInvoice,
-                    E.E4.LootBoxToken,
                     E.E4.CosmicLootboxCommon,
                     E.E4.CosmicLootboxSilver,
                     E.E4.SelectableBonus,
                     E.E4.GoldenTicket,
                     E.E4.PostStamp,
-                    E.E4.BlankPersonalMissions_1,
-                    E.E4.BlankPersonalMissions_2,
-                    E.E4.SACoin,
                     E.E4.PremiumPlusUniversal,
-                    E.E4.NyPetGoodies,
-                    E.E4.HiddenVehicle,
                     E.E4.Gold,
                     E.E4.Credits,
                     E.E4.Crystal,
                     E.E4.FreeXp,
-                    E.E4.NewYearToyFragments,
                     E.E4.BattlePassPoints,
                     E.E4.PremiumPlus,
                     E.E4.Premium);
@@ -411,15 +393,15 @@
                         displayStatus: () => A.W,
                         displayStatusIs: () => T,
                         events: () => F.U,
-                        extraSize: () => g,
-                        forceTriggerMouseMove: () => w,
+                        extraSize: () => b,
+                        forceTriggerMouseMove: () => h,
                         freezeTextureBeforeResize: () => _,
                         getBrowserTexturePath: () => r,
                         getDisplayStatus: () => P,
                         getScale: () => l,
-                        getSize: () => D,
+                        getSize: () => a,
                         getViewGlobalPosition: () => C,
-                        isEventHandled: () => h,
+                        isEventHandled: () => w,
                         isFocused: () => p,
                         pxToRem: () => c,
                         remToPx: () => d,
@@ -428,8 +410,8 @@
                         setAnimateWindow: () => m,
                         setEventHandled: () => v,
                         setInputPaddingsRem: () => i,
-                        setSidePaddingsRem: () => a,
-                        whenTutorialReady: () => b,
+                        setSidePaddingsRem: () => D,
+                        whenTutorialReady: () => g,
                     }));
                 var E = t(3722),
                     A = t(6112),
@@ -447,10 +429,10 @@
                 function s(u, e, t) {
                     return viewEnv.addDataChangedCallback(u, e, t);
                 }
-                function a(u) {
+                function D(u) {
                     viewEnv.setHitAreaPaddingsRem(u.top, u.right, u.bottom, u.left, 15);
                 }
-                function D(u = 'px') {
+                function a(u = 'px') {
                     return 'rem' === u ? viewEnv.getViewSizeRem() : viewEnv.getViewSizePx();
                 }
                 function B(u, e, t = 'px') {
@@ -481,10 +463,10 @@
                 function v() {
                     return viewEnv.setEventHandled();
                 }
-                function h() {
+                function w() {
                     return viewEnv.isEventHandled();
                 }
-                function w() {
+                function h() {
                     viewEnv.forceTriggerMouseMove();
                 }
                 function P() {
@@ -494,7 +476,7 @@
                         (u, e) => ((u[e] = () => viewEnv.getShowingStatus() === A.W[e]), u),
                         {},
                     ),
-                    g = {
+                    b = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -502,7 +484,7 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    b = Promise.all([
+                    g = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : F.U.onDomBuilt(u);
                         }),
@@ -837,8 +819,8 @@
                 })(i || (i = {}));
                 const r = Object.freeze({ INTEGRAL: 0, GOLD: 1 }),
                     s = Object.freeze({ FRACTIONAL: 0, WO_ZERO_DIGITS: 1 }),
-                    a = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1 }),
-                    D = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1, YEAR_MONTH: 2 });
+                    D = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1 }),
+                    a = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1, YEAR_MONTH: 2 });
                 var B = t(5521),
                     C = t(3138);
                 const _ = ['args'];
@@ -923,16 +905,16 @@
                     v = (u, e) => {
                         u.keyCode === B.n.ESCAPE && e();
                     };
-                var h = t(7572);
-                const w = A.instance,
+                var w = t(7572);
+                const h = A.instance,
                     P = {
                         DataTracker: F.Z,
-                        ViewModel: h.Z,
+                        ViewModel: w.Z,
                         ViewEventType: i,
                         NumberFormatType: r,
                         RealFormatType: s,
-                        TimeFormatType: a,
-                        DateFormatType: D,
+                        TimeFormatType: D,
+                        DateFormatType: a,
                         makeGlobalBoundingBox: c,
                         sendMoveEvent: (u) => m(i.MOVE, { isMouseEvent: !0, on: u }),
                         sendCloseEvent: p,
@@ -945,13 +927,13 @@
                                 o = t.getBoundingClientRect(),
                                 r = o.x,
                                 s = o.y,
-                                a = o.width,
-                                D = o.height,
+                                D = o.width,
+                                a = o.height,
                                 B = {
                                     x: C.O.view.pxToRem(r) + n.x,
                                     y: C.O.view.pxToRem(s) + n.y,
-                                    width: C.O.view.pxToRem(a),
-                                    height: C.O.view.pxToRem(D),
+                                    width: C.O.view.pxToRem(D),
+                                    height: C.O.view.pxToRem(a),
                                 };
                             m(i.POP_OVER, {
                                 isMouseEvent: !0,
@@ -1004,7 +986,7 @@
                                 }
                             return t;
                         },
-                        ClickOutsideManager: w,
+                        ClickOutsideManager: h,
                         SystemLocale: n,
                         UserLocale: o,
                     };
@@ -1013,7 +995,7 @@
             930: (u, e, t) => {
                 let E, A;
                 (!(function (u) {
-                    ((u.style = 'style'), (u.tankman = 'tankman'), (u.vehicle = 'vehicle'));
+                    ((u.style = 'style'), (u.tankman = 'tankman'), (u.vehicle = 'vehicle'), (u.mixed = 'mixed'));
                 })(E || (E = {})),
                     (function (u) {
                         ((u.Default = 'default'), (u.Marathon = 'marathon'), (u.Resource = 'resource'));

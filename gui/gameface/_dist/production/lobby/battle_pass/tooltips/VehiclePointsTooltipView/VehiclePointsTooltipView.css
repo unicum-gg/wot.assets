@@ -437,49 +437,6 @@
     margin-bottom: 10rem;
 }
 
-.EndSoon_base_b4 {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    margin-bottom: -3rem;
-    text-shadow:
-        0 0 4rem #ff7f0040,
-        0 0 8rem #ff2a00,
-        0 0 15rem #e52;
-    position: relative;
-}
-
-.EndSoon_timerLight_8d {
-    width: 280rem;
-    height: 280rem;
-    background: url('R.images.gui.maps.icons.battlePass.tooltips.timer_glow') no-repeat center / contain;
-    mix-blend-mode: lighten;
-    position: absolute;
-    top: 21rem;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.EndSoon_timerIcon_83 {
-    width: 37rem;
-    height: 37rem;
-    background: url('R.images.gui.maps.icons.library.marathon.time_icon_glow') center / cover no-repeat;
-}
-
-.EndSoon_timerLabel_41 {
-    color: #ffdd99;
-    font-size: 16rem;
-    font-weight: 400;
-    line-height: 1.25;
-    margin-right: 8rem;
-    text-shadow:
-        0 0 4rem #ff7f0040,
-        0 0 8rem #ff2a00,
-        0 0 15rem #e52;
-}
-
 .Footer_base_5c {
     line-height: normal;
 }

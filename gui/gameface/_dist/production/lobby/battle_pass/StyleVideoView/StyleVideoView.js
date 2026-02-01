@@ -766,7 +766,7 @@
                     engine.call('PlaySound', u);
                 }
                 var s = t(3403),
-                    B = t(2220);
+                    B = t(6123);
                 function C() {
                     return !1;
                 }
@@ -1046,7 +1046,7 @@
                     F().render(A().createElement(w, null, A().createElement(O, null)), document.getElementById('root'));
                 });
             },
-            2220: (u, e, t) => {
+            6123: (u, e, t) => {
                 t.d(e, { n: () => _ });
                 var n = t(6483),
                     A = t.n(n),

@@ -1,6 +1,9 @@
 (() => {
     'use strict';
     var __webpack_modules__ = {
+            280: (u, e, F) => {
+                (F(6179), F(6483), F(3649), F(5287));
+            },
             2056: (u, e, F) => {
                 (F(4179), F(6179));
             },
@@ -768,11 +771,11 @@
                     ((u.Intro = 'intro'), (u.Award = 'award'), (u.Progression = 'progression'));
                 })(A || (A = {}));
             },
-            6626: (u, e, F) => {
-                (F(6483), F(6179), F(3649));
-                (F(2056), F(9356));
+            3337: (u, e, F) => {
+                (F(6483), F(280), F(3649), F(2056), F(6179), F(9356));
                 R.views.lobby.resource_well.tooltips;
             },
+            5287: () => {},
         },
         __webpack_module_cache__ = {},
         deferred;
@@ -850,6 +853,6 @@
                 F = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             (F.forEach(e.bind(null, 0)), (F.push = e.bind(null, F.push.bind(F))));
         })());
-    var __webpack_exports__ = __webpack_require__.O(void 0, [52], () => __webpack_require__(6626));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [52], () => __webpack_require__(3337));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

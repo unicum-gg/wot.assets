@@ -764,7 +764,7 @@
                     };
                 window.ViewEnvHelper = f;
             },
-            8594: (u, e, t) => {
+            5489: (u, e, t) => {
                 'use strict';
                 var n = t(6179),
                     a = t.n(n);
@@ -2373,6 +2373,6 @@
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             (t.forEach(e.bind(null, 0)), (t.push = e.bind(null, t.push.bind(t))));
         })());
-    var __webpack_exports__ = __webpack_require__.O(void 0, [56], () => __webpack_require__(8594));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [56], () => __webpack_require__(5489));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

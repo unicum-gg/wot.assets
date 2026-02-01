@@ -724,7 +724,7 @@
                     };
                 window.ViewEnvHelper = p;
             },
-            893: (u, e, t) => {
+            446: (u, e, t) => {
                 'use strict';
                 var r = t(179),
                     a = t.n(r);
@@ -1221,9 +1221,9 @@
                             X('yes1');
                         },
                     },
-                    Q = 'BtnModules_base_75',
-                    J = 'BtnModules_glow_95',
-                    uu = 'BtnModules_label_ba',
+                    Q = 'BtnModules_base_9a',
+                    J = 'BtnModules_glow_2a',
+                    uu = 'BtnModules_label_3d',
                     eu = (0, r.memo)(({ onClickHandler: u, onMouseEnterHandler: e }) =>
                         a().createElement(
                             'div',
@@ -1232,9 +1232,9 @@
                             a().createElement('div', { className: uu }, R.strings.battle_royale.button.modules()),
                         ),
                     ),
-                    tu = 'Spec_base_a5',
-                    ru = 'Spec_label_d9',
-                    au = 'Spec_icon_58',
+                    tu = 'Spec_base_2d',
+                    ru = 'Spec_label_93',
+                    au = 'Spec_icon_f2',
                     iu = (0, r.memo)(({ modelPath: u }) => {
                         const e = Y(u),
                             t = (0, r.useMemo)(
@@ -1248,9 +1248,9 @@
                             a().createElement('div', { className: ru }, e && e.specName),
                         );
                     }),
-                    nu = 'SpecsBlock_base_46',
-                    Eu = 'SpecsBlock_title_d3',
-                    Au = 'SpecsBlock_specs_a1',
+                    nu = 'SpecsBlock_base_b2',
+                    Eu = 'SpecsBlock_title_21',
+                    Au = 'SpecsBlock_specs_a8',
                     Fu = (0, r.memo)(({ title: u, model: e, handleResize: t }) => {
                         const r = Y(e, q.Shallow);
                         return (
@@ -1448,6 +1448,6 @@
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             (t.forEach(e.bind(null, 0)), (t.push = e.bind(null, t.push.bind(t))));
         })());
-    var __webpack_exports__ = __webpack_require__.O(void 0, [695], () => __webpack_require__(893));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [695], () => __webpack_require__(446));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

@@ -192,7 +192,14 @@
     margin-bottom: 8rem;
 }
 
-.mediaMedium .ProbabilitiesHeader_probabilityHeaderText_cb {
+.mediaSmall .ProbabilitiesHeader_probabilityHeaderText_cb {
+    color: #e9e2bf;
+    font-size: 22rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.mediaLarge .ProbabilitiesHeader_probabilityHeaderText_cb {
     color: #e9e2bf;
     font-size: 24rem;
     font-weight: 700;
@@ -204,7 +211,7 @@
     font-size: 28rem;
     font-weight: 700;
     line-height: 1.1;
-    text-transform: uppercase;
+    margin-bottom: 8rem;
 }
 
 .mediaSmall .ProbabilitiesHeader_probabilityBoxName_81 {
@@ -219,6 +226,23 @@
     font-size: 56rem;
     font-weight: 700;
     line-height: 1.1;
+}
+
+.ProbabilitiesHeader_probabilityBoxDescription_2b {
+    color: #8c8c7e;
+    font-size: 12rem;
+    font-weight: 400;
+    line-height: 1.3;
+    width: 640rem;
+    text-align: center;
+}
+
+.mediaMedium .ProbabilitiesHeader_probabilityBoxDescription_2b {
+    color: #8c8c7e;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    width: 800rem;
 }
 
 .ProbabilitiesHeader_probabilityBoxTier_97 {
@@ -289,41 +313,6 @@
     font-size: 16rem;
     font-weight: 400;
     line-height: 1.25;
-}
-
-.ProbabilitiesHeader_probabilityBoxDescription_2b {
-    color: #8c8c7e;
-    font-size: 12rem;
-    font-weight: 400;
-    line-height: 1.3;
-    width: 640rem;
-    padding-top: 4rem;
-    text-align: center;
-}
-
-.mediaMedium .ProbabilitiesHeader_probabilityBoxDescription_2b {
-    color: #8c8c7e;
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
-    width: 800rem;
-}
-
-.ProbabilitiesHeader_iconContainer_10 {
-    display: flex;
-    width: 40rem;
-    position: relative;
-}
-
-.ProbabilitiesHeader_percentageIcon_92 {
-    width: 66rem;
-    height: 42rem;
-    background: url('R.images.gui_lootboxes.gui.maps.bonusProbabilities.probabilities_percentage_100') no-repeat
-        center / cover;
-    position: absolute;
-    top: 49%;
-    left: 50%;
-    transform: translate(-50%, -50%);
 }
 
 .HorizontalBar_base_49 {
@@ -786,7 +775,7 @@
     position: relative;
 }
 
-.VehicleReward_base__received_0a {
+.VehicleReward_base__inInventory_7e {
     opacity: 0.3;
 }
 
@@ -1533,14 +1522,6 @@
     position: absolute;
     top: 0;
     left: 0;
-}
-
-.LootLists_hintBody_ad {
-    width: 100rem;
-    height: 90rem;
-    position: absolute;
-    top: 3rem;
-    left: 12rem;
 }
 
 .StagesButtons_base_d9 {

@@ -616,7 +616,7 @@
                     });
                 }
                 var R = 1e3,
-                    M = {
+                    x = {
                         'click-rail': function (e, u) {
                             (e.event.bind(e.scrollbarY, 'mousedown', function (e) {
                                 return e.stopPropagation();
@@ -1025,7 +1025,7 @@
                             );
                         },
                     },
-                    x = function (e, r) {
+                    M = function (e, r) {
                         var i = this;
                         if (
                             (void 0 === r && (r = {}),
@@ -1162,7 +1162,7 @@
                                     }),
                                     (i.isAlive = !0),
                                     i.settings.handlers.forEach(function (e) {
-                                        return M[e](i, i.settings.overScrollWidth);
+                                        return x[e](i, i.settings.overScrollWidth);
                                     }),
                                     (i.boundHandleButtonEnter = i.handleMouseEnter.bind(i)),
                                     (i.boundHandleMouseLeave = i.handleMouseLeave.bind(i)),
@@ -1197,7 +1197,7 @@
                                     C(i, !1, i.settings.overScrollWidth, !1));
                             }));
                     };
-                ((x.prototype._getAnimationSettings = function (e, u, t, n) {
+                ((M.prototype._getAnimationSettings = function (e, u, t, n) {
                     var r = this,
                         i = 0;
                     return (
@@ -1218,17 +1218,17 @@
                         }
                     );
                 }),
-                    (x.prototype.playHoverSound = function () {
+                    (M.prototype.playHoverSound = function () {
                         window.engine && engine.call('PlaySound', 'highlight');
                     }),
-                    (x.prototype.playClickSound = function () {
+                    (M.prototype.playClickSound = function () {
                         window.engine && engine.call('PlaySound', 'play');
                     }),
-                    (x.prototype.handleMouseEnter = function () {
+                    (M.prototype.handleMouseEnter = function () {
                         this.playHoverSound();
                     }),
-                    (x.prototype.handleMouseLeave = function () {}),
-                    (x.prototype.update = function () {
+                    (M.prototype.handleMouseLeave = function () {}),
+                    (M.prototype.update = function () {
                         var e = this;
                         this.isAlive &&
                             ((this.negativeScrollAdjustment = this.isNegativeScroll
@@ -1253,28 +1253,28 @@
                                     t(e.scrollbarYRail, { display: '' }));
                             }));
                     }),
-                    (x.prototype.setScrollLeft = function (e, u, t) {
+                    (M.prototype.setScrollLeft = function (e, u, t) {
                         S(this._getAnimationSettings(e, 'right', u, t));
                     }),
-                    (x.prototype.setScrollLeftImmediately = function (e) {
+                    (M.prototype.setScrollLeftImmediately = function (e) {
                         ((this.element.scrollLeft = 0 | e), this.update());
                     }),
-                    (x.prototype.setScrollTop = function (e, u, t) {
+                    (M.prototype.setScrollTop = function (e, u, t) {
                         S(this._getAnimationSettings(e, 'bottom', u, t));
                     }),
-                    (x.prototype.setScrollTopImmediately = function (e) {
+                    (M.prototype.setScrollTopImmediately = function (e) {
                         ((this.element.scrollTop = 0 | e), this.update());
                     }),
-                    (x.prototype.onScroll = function (e) {
+                    (M.prototype.onScroll = function (e) {
                         this.isAlive && C(this, !1, this.settings.overScrollWidth, !0);
                     }),
-                    (x.prototype.onWheel = function (e) {
+                    (M.prototype.onWheel = function (e) {
                         this.isAlive &&
                             (C(this, !1, this.settings.overScrollWidth, !1),
                             b(this, 'left', this.element.scrollLeft - this.lastScrollLeft),
                             (this.lastScrollLeft = this.element.scrollLeft));
                     }),
-                    (x.prototype.destroy = function () {
+                    (M.prototype.destroy = function () {
                         this.isAlive &&
                             (this.scrollbarYButtonStart.removeEventListener('mousedown', this.boundPlayClickSound),
                             this.scrollbarYButtonEnd.removeEventListener('mousedown', this.boundPlayClickSound),
@@ -1304,7 +1304,7 @@
                             (this.scrollbarYRail = null),
                             (this.isAlive = !1));
                     }),
-                    (x.prototype.removePsClasses = function () {
+                    (M.prototype.removePsClasses = function () {
                         this.element.className = this.element.className
                             .split(' ')
                             .filter(function (e) {
@@ -1312,7 +1312,7 @@
                             })
                             .join(' ');
                     }),
-                    (e.exports = x));
+                    (e.exports = M));
             },
             926: (e) => {
                 e.exports = {
@@ -1367,15 +1367,15 @@
                         events: () => B,
                         extraSize: () => z,
                         forceTriggerMouseMove: () => I,
-                        freezeTextureBeforeResize: () => x,
+                        freezeTextureBeforeResize: () => M,
                         getBrowserTexturePath: () => S,
                         getDisplayStatus: () => U,
-                        getScale: () => k,
+                        getScale: () => H,
                         getSize: () => P,
-                        getViewGlobalPosition: () => M,
+                        getViewGlobalPosition: () => x,
                         isEventHandled: () => X,
                         isFocused: () => Y,
-                        pxToRem: () => H,
+                        pxToRem: () => k,
                         remToPx: () => O,
                         resize: () => R,
                         sendEvent: () => p,
@@ -1558,17 +1558,17 @@
                 function R(e, u, t = 'px') {
                     return 'rem' === t ? viewEnv.resizeViewRem(e, u) : viewEnv.resizeViewPx(e, u);
                 }
-                function M(e = 'rem') {
+                function x(e = 'rem') {
                     const u = viewEnv.getViewGlobalPositionRem();
                     return 'rem' === e ? u : { x: O(u.x), y: O(u.y) };
                 }
-                function x() {
+                function M() {
                     viewEnv.freezeTextureBeforeResize();
                 }
-                function k() {
+                function H() {
                     return viewEnv.getScale();
                 }
-                function H(e) {
+                function k(e) {
                     return viewEnv.pxToRem(e);
                 }
                 function O(e) {
@@ -2037,7 +2037,7 @@
                     };
                 window.ViewEnvHelper = f;
             },
-            88: (e, u, t) => {
+            84: (e, u, t) => {
                 'use strict';
                 var n = t(483),
                     r = t.n(n);
@@ -2364,7 +2364,7 @@
                     base__highlightActive: 'CButton_base__highlightActive_b2',
                     content: 'CButton_content_cc',
                 };
-                let P, M;
+                let P, x;
                 (!(function (e) {
                     ((e.main = 'main'),
                         (e.primary = 'primary'),
@@ -2375,8 +2375,8 @@
                 })(P || (P = {})),
                     (function (e) {
                         ((e.extraSmall = 'extraSmall'), (e.small = 'small'), (e.medium = 'medium'));
-                    })(M || (M = {})));
-                const x = ({
+                    })(x || (x = {})));
+                const M = ({
                     children: e,
                     size: u,
                     isFocused: t,
@@ -2411,25 +2411,25 @@
                             },
                             [g],
                         ),
-                        M = (0, a.useCallback)(
+                        x = (0, a.useCallback)(
                             (e) => {
                                 i || (m && m(e));
                             },
                             [i, m],
                         ),
-                        x = (0, a.useCallback)(
+                        M = (0, a.useCallback)(
                             (e) => {
                                 i || (null !== l && T(l), d && d(e), w(!0));
                             },
                             [i, l, d],
                         ),
-                        k = (0, a.useCallback)(
+                        H = (0, a.useCallback)(
                             (e) => {
                                 E && E(e);
                             },
                             [E],
                         ),
-                        H = (0, a.useCallback)(
+                        k = (0, a.useCallback)(
                             (e) => {
                                 i || (h && h(e), C(!1));
                             },
@@ -2478,12 +2478,12 @@
                             {
                                 ref: D,
                                 className: Y,
-                                onMouseEnter: x,
-                                onMouseMove: k,
-                                onMouseUp: H,
+                                onMouseEnter: M,
+                                onMouseMove: H,
+                                onMouseUp: k,
                                 onMouseDown: O,
                                 onMouseLeave: W,
-                                onClick: M,
+                                onClick: x,
                             },
                             n !== P.ghost &&
                                 s().createElement(
@@ -2507,9 +2507,9 @@
                         )
                     );
                 };
-                x.defaultProps = { type: P.primary, isFocused: !1, soundHover: 'highlight', soundClick: 'play' };
-                (0, a.memo)(x);
-                const k = (e) => {
+                M.defaultProps = { type: P.primary, isFocused: !1, soundHover: 'highlight', soundClick: 'play' };
+                (0, a.memo)(M);
+                const H = (e) => {
                         let u,
                             t = null;
                         return (
@@ -2523,7 +2523,7 @@
                             }
                         );
                     },
-                    H = (e) => {
+                    k = (e) => {
                         if (!e) return !1;
                         const u = e.getBoundingClientRect(),
                             t = u.width,
@@ -2531,7 +2531,7 @@
                         return 0 !== t && 0 !== n;
                     },
                     O = (e) => {
-                        const u = (0, a.useState)(H(e ? e.current : null)),
+                        const u = (0, a.useState)(k(e ? e.current : null)),
                             t = u[0],
                             n = u[1];
                         return (
@@ -2539,7 +2539,7 @@
                                 let u = 0;
                                 const t = () => {
                                     u = requestAnimationFrame(() => {
-                                        H(e ? e.current : null) ? n(!0) : t();
+                                        k(e ? e.current : null) ? n(!0) : t();
                                     });
                                 };
                                 return (
@@ -2593,11 +2593,11 @@
                                 c &&
                                 c({ x: w.scrollbarXActive, y: w.scrollbarYActive }, { x: w.reach.x, y: w.reach.y });
                         }, [c, w]),
-                        M = (0, a.useCallback)(() => w, [w]),
-                        x = (0, a.useCallback)(() => {
+                        x = (0, a.useCallback)(() => w, [w]),
+                        M = (0, a.useCallback)(() => {
                             w && w.update();
                         }, [w]),
-                        H = (0, a.useCallback)(
+                        k = (0, a.useCallback)(
                             (e, u, t) => {
                                 w && (w.setScrollLeft(e, u, t), v && v(e, w.contentWidth - w.containerWidth));
                             },
@@ -2648,7 +2648,7 @@
                         $ = (0, a.useCallback)(() => {
                             w &&
                                 (w.update(),
-                                (P.current = k(() => {
+                                (P.current = H(() => {
                                     R();
                                 })));
                         }, [w, R]),
@@ -2696,7 +2696,7 @@
                         ),
                         (0, a.useEffect)(
                             () =>
-                                k(() => {
+                                H(() => {
                                     w && R();
                                 }),
                             [R, w],
@@ -2709,13 +2709,13 @@
                         }, [o, q]),
                         (0, a.useEffect)(() => {
                             B &&
-                                ((B.setScrollLeft = H),
+                                ((B.setScrollLeft = k),
                                 (B.setScrollTop = z),
                                 (B.setScrollLeftImmediately = W),
                                 (B.setScrollTopImmediately = q),
-                                (B.updateScrollArea = x),
-                                (B.getScrollbar = M));
-                        }, [B, H, W, z, q, x, M]));
+                                (B.updateScrollArea = M),
+                                (B.getScrollbar = x));
+                        }, [B, k, W, z, q, M, x]));
                     const te = r()(N, { [X]: F, [G]: !C, [I]: m, [U]: D }, _);
                     return s().createElement('div', { className: te, ref: Z }, g);
                 });
@@ -2741,7 +2741,6 @@
                         (e.TankmenXpFactor = 'tankmenXPFactor'),
                         (e.FreeXpFactor = 'freeXPFactor'),
                         (e.BattleToken = 'battleToken'),
-                        (e.Entitlements = 'entitlements'),
                         (e.PremiumUniversal = 'premium_universal'),
                         (e.Gold = 'gold'),
                         (e.Credits = 'credits'),
@@ -2781,16 +2780,9 @@
                         (e.GoldenTicket = 'birthday2025_golden_ticket'),
                         (e.PostStamp = 'giftsystem_4_stamp'),
                         (e.Quests = 'quests'),
-                        (e.BlankPersonalMissions_1 = 'freeTokens_0'),
-                        (e.BlankPersonalMissions_2 = 'freeTokens_2'),
-                        (e.SACoin = 'sacoin'),
                         (e.ArmoryCoin = 'armory_coin'),
                         (e.PremiumPlusUniversal = 'premium_plus_universal'),
-                        (e.DogTagType = 'dogTagComponents'),
-                        (e.NyPetGoodies = 'nyPetGoodies'),
-                        (e.HiddenVehicle = 'hidden_vehicle'),
-                        (e.NyStaticDogTag = 'nyStaticDogTag'),
-                        (e.Ny26Toys = 'ny26Toys'));
+                        (e.DogTagType = 'dogTagComponents'));
                 })(z || (z = {})),
                     (function (e) {
                         ((e.Gold = 'gold'),
@@ -2981,6 +2973,6 @@
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             (t.forEach(u.bind(null, 0)), (t.push = u.bind(null, t.push.bind(t))));
         })());
-    var __webpack_exports__ = __webpack_require__.O(void 0, [127], () => __webpack_require__(88));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [127], () => __webpack_require__(84));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

@@ -27,7 +27,7 @@
                     return this.payload || [];
                 }
             }
-            class c extends (/^(444|486|659|982|995)$/.test(n.j) ? s : null) {
+            class c extends (/^(444|486|659|982)$/.test(n.j) ? s : null) {
                 constructor(e) {
                     (super(),
                         (this.done = !0),
@@ -67,7 +67,7 @@
                             (this.v0 = null)));
                 }
             }
-            class f extends (/^(444|486|659|982|995)$/.test(n.j) ? c : null) {
+            class f extends (/^(444|486|659|982)$/.test(n.j) ? c : null) {
                 constructor(e) {
                     (super(0),
                         (this._string = null),
@@ -98,7 +98,7 @@
                 }
             }
             const d = { dependencies: null };
-            class p extends (/^(444|486|659|982|995)$/.test(n.j) ? s : null) {
+            class p extends (/^(444|486|659|982)$/.test(n.j) ? s : null) {
                 constructor(e) {
                     (super(), (this.source = e), this.setValue(e));
                 }
@@ -134,7 +134,7 @@
                     t && (0, r.S6)(t, (e) => this.add(e));
                 }
             }
-            class h extends (/^(444|486|659|982|995)$/.test(n.j) ? p : null) {
+            class h extends (/^(444|486|659|982)$/.test(n.j) ? p : null) {
                 constructor(e) {
                     super(e);
                 }
@@ -347,7 +347,7 @@
                     }
                     return i;
                 },
-                y = /^(444|486|659|982|995)$/.test(n.j)
+                y = /^(444|486|659|982)$/.test(n.j)
                     ? ['config', 'onProps', 'onStart', 'onChange', 'onPause', 'onResume', 'onRest']
                     : null,
                 g = {
@@ -456,7 +456,7 @@
                         n && (e.frequency = void 0));
                 } else e.duration = void 0;
             }
-            const E = /^(444|486|659|982|995)$/.test(n.j) ? [] : null;
+            const E = /^(444|486|659|982)$/.test(n.j) ? [] : null;
             class C {
                 constructor() {
                     ((this.changed = !1),
@@ -655,7 +655,7 @@
                 $ = (e) => (4 & e[B]) > 0,
                 H = (e, t) => (t ? (e[B] |= 3) : (e[B] &= -3)),
                 K = (e, t) => (t ? (e[B] |= 4) : (e[B] &= -5));
-            class G extends (/^(444|486|659|982|995)$/.test(n.j) ? F : null) {
+            class G extends (/^(444|486|659|982)$/.test(n.j) ? F : null) {
                 constructor(e, t) {
                     if (
                         (super(),
@@ -1101,7 +1101,7 @@
             function Z(e, t) {
                 (0, r.rU)(e, (e, n) => null != e && t.add(n));
             }
-            const ee = /^(444|486|659|982|995)$/.test(n.j)
+            const ee = /^(444|486|659|982)$/.test(n.j)
                 ? ['onStart', 'onRest', 'onChange', 'onPause', 'onResume']
                 : null;
             function te(e, t, n) {
@@ -1112,7 +1112,7 @@
                 (null == (r = (i = e.animation)[t]) || r.call(i, ...n),
                     null == (o = (a = e.defaultProps)[t]) || o.call(a, ...n));
             }
-            const re = /^(444|486|659|982|995)$/.test(n.j) ? ['onStart', 'onChange', 'onRest'] : null;
+            const re = /^(444|486|659|982)$/.test(n.j) ? ['onStart', 'onChange', 'onRest'] : null;
             let ie = 1;
             class oe {
                 constructor(e, t) {

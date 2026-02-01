@@ -18,7 +18,7 @@
                 var a = {};
                 (t.r(a),
                     t.d(a, {
-                        addModelObserver: () => B,
+                        addModelObserver: () => G,
                         addPreloadTexture: () => k,
                         children: () => o,
                         displayStatus: () => O,
@@ -27,20 +27,20 @@
                         extraSize: () => te,
                         forceTriggerMouseMove: () => Z,
                         freezeTextureBeforeResize: () => Q,
-                        getBrowserTexturePath: () => G,
+                        getBrowserTexturePath: () => D,
                         getDisplayStatus: () => ee,
                         getScale: () => W,
-                        getSize: () => N,
+                        getSize: () => I,
                         getViewGlobalPosition: () => q,
                         isEventHandled: () => Y,
                         isFocused: () => K,
                         pxToRem: () => U,
                         remToPx: () => $,
-                        resize: () => I,
+                        resize: () => N,
                         sendEvent: () => L,
                         setAnimateWindow: () => J,
                         setEventHandled: () => X,
-                        setInputPaddingsRem: () => D,
+                        setInputPaddingsRem: () => B,
                         setSidePaddingsRem: () => H,
                         whenTutorialReady: () => re,
                     }));
@@ -180,8 +180,8 @@
                         },
                     },
                     j = ['args'];
-                const C = 2,
-                    V = 16,
+                const V = 2,
+                    C = 16,
                     F = 32,
                     M = 64,
                     A = (e, n) => {
@@ -222,34 +222,34 @@
                     },
                     L = {
                         close(e) {
-                            A('popover' === e ? C : F);
+                            A('popover' === e ? V : F);
                         },
                         minimize() {
                             A(M);
                         },
                         move(e) {
-                            A(V, { isMouseEvent: !0, on: e });
+                            A(C, { isMouseEvent: !0, on: e });
                         },
                     };
                 function k(e) {
                     viewEnv.addPreloadTexture(e);
                 }
-                function D(e) {
+                function B(e) {
                     viewEnv.setHitAreaPaddingsRem(e, e, e, e, 15);
                 }
-                function G(e, n, t, r = 1) {
+                function D(e, n, t, r = 1) {
                     return viewEnv.getWebBrowserTexturePath(e, n, t, r);
                 }
-                function B(e, n, t) {
+                function G(e, n, t) {
                     return viewEnv.addDataChangedCallback(e, n, t);
                 }
                 function H(e) {
                     viewEnv.setHitAreaPaddingsRem(e.top, e.right, e.bottom, e.left, 15);
                 }
-                function N(e = 'px') {
+                function I(e = 'px') {
                     return 'rem' === e ? viewEnv.getViewSizeRem() : viewEnv.getViewSizePx();
                 }
-                function I(e, n, t = 'px') {
+                function N(e, n, t = 'px') {
                     return 'rem' === t ? viewEnv.resizeViewRem(e, n) : viewEnv.resizeViewPx(e, n);
                 }
                 function q(e = 'rem') {
@@ -398,9 +398,10 @@
                             )
                         );
                     }),
-                    le = () => u().createElement(de, null, u().createElement(m, null)),
-                    ce = document.createElement('div');
-                ((window.onload = () => document.body.appendChild(ce)), l().render(u().createElement(le, null), ce));
+                    le = () => u().createElement(de, null, u().createElement(m, null));
+                engine.whenReady.then(() => {
+                    l().render(u().createElement(le, null), document.getElementById('root'));
+                });
             },
         },
         t = {};

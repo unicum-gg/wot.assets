@@ -477,13 +477,13 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .Counter_base__big_19 {
-    min-width: 20rem;
-    height: 20rem;
+    min-width: 21rem;
+    height: 21rem;
 }
 
 .Counter_base__small_3b {
-    min-width: 9rem;
-    height: 9rem;
+    min-width: 13rem;
+    height: 13rem;
 }
 
 .Counter_base__empty_98 {
@@ -500,11 +500,11 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 .Counter_bg_74 {
     border: 1rem solid #fe4e0f;
-    border-radius: 10rem;
+    border-radius: 7rem;
     box-shadow:
         0 0 0 1rem rgba(0, 0, 0, 0.3),
-        0 0 9rem rgba(254, 103, 0, 0.2),
-        0 0 12rem 7rem rgba(249, 0, 0, 0.3);
+        0 0 6rem rgba(254, 103, 0, 0.2),
+        0 0 12rem 4rem rgba(249, 0, 0, 0.3);
     background-image: url('R.images.gui.maps.icons.components.counter.pattern');
     position: absolute;
     top: 0;
@@ -521,26 +521,26 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 .Counter_value_3e {
     display: flex;
-    padding: 0 5rem;
-    color: #f2f2f7;
+    padding: 0 4rem;
+    color: #fefeec;
     font-size: 11rem;
     line-height: 13rem;
     white-space: nowrap;
 }
 .Counter_base__big_19 .Counter_value_3e {
     padding: 0 7rem;
-    font-size: 16rem;
-    line-height: 17rem;
+    font-size: 14rem;
+    line-height: 20rem;
 }
 .Counter_base__small_3b .Counter_value_3e {
     font-size: 9rem;
-    line-height: 8rem;
+    line-height: 12rem;
 }
 .Counter_value__text_d6 {
-    padding: 0 5rem;
+    padding: 0 7rem;
 }
 .Counter_base__big_19 .Counter_value__text_d6 {
-    padding: 0 7rem;
+    padding: 0 10rem;
 }
 .Counter_base__small_3b .Counter_value__text_d6 {
     padding: 0 5rem;
@@ -1850,6 +1850,104 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .RankedWidget_bonus__b6__extraSmall_b1,
 .RankedWidget_bonus__b6__small_08 {
     bottom: 7rem;
+}
+
+.StrongholdWidget_base_6e {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 0 20rem;
+    color: #fff;
+    filter: saturate(1);
+    opacity: 1;
+}
+
+.StrongholdWidget_base_6e > div {
+    width: 136rem;
+    height: 136rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.StrongholdWidget_base_6e.StrongholdWidget_inactive_a4 {
+    filter: saturate(0);
+    opacity: 0.8;
+}
+
+.StrongholdWidget_base__b1_0b {
+    margin-top: 146rem;
+}
+
+.StrongholdWidget_base__b2_0b {
+    margin-top: 10rem;
+}
+
+.StrongholdWidget_base__b3_49 {
+    margin-top: -10rem;
+}
+
+.StrongholdWidget_base__b4_f0 {
+    margin-top: 4rem;
+}
+
+.StrongholdWidget_base__b4_f0 > div {
+    width: 72rem;
+    height: 72rem;
+}
+
+.StrongholdWidget_mediumScreen_7b.StrongholdWidget_base__b1_0b {
+    margin-top: 107rem;
+}
+
+.StrongholdWidget_mediumScreen_7b.StrongholdWidget_base__b2_0b {
+    margin-top: 0;
+}
+
+.StrongholdWidget_mediumScreen_7b.StrongholdWidget_base__b3_49 {
+    margin-top: 14rem;
+}
+
+.StrongholdWidget_mediumScreen_7b.StrongholdWidget_base__b3_49 > div {
+    width: 72rem;
+    height: 72rem;
+}
+
+.StrongholdWidget_smallScreen_4b.StrongholdWidget_base__b1_0b {
+    margin-top: 107rem;
+}
+
+.StrongholdWidget_smallScreen_4b.StrongholdWidget_base__b1_0b > div {
+    width: 72rem;
+    height: 72rem;
+}
+
+.StrongholdWidget_smallScreen_4b.StrongholdWidget_base__b2_0b {
+    margin-top: 6rem;
+}
+
+.StrongholdWidget_smallScreen_4b.StrongholdWidget_base__b2_0b > div {
+    width: 72rem;
+    height: 72rem;
+}
+
+.StrongholdWidget_smallScreen_4b.StrongholdWidget_base__b3_49 {
+    margin-top: 0;
+}
+
+.StrongholdWidget_smallScreen_4b.StrongholdWidget_base__b3_49 > div {
+    width: 72rem;
+    height: 72rem;
+}
+
+.StrongholdWidget_smallScreen_4b.StrongholdWidget_base__b4_f0 {
+    margin-top: 0;
+}
+
+.StrongholdWidget_smallScreen_4b.StrongholdWidget_base__b4_f0 > div {
+    width: 64rem;
+    height: 64rem;
 }
 
 .CardWrapper_base_b7 {
@@ -3574,6 +3672,30 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     in JS 8000 reserved like anchor for start optimization
 */
 /* stylelint-disable-line */
+.ProgressBarDeltaSimple_base_6c {
+    width: 0;
+    height: 100%;
+    position: absolute;
+    top: 0;
+}
+.ProgressBarDeltaSimple_delta_99 {
+    width: 0;
+    max-width: 8001px;
+    height: 100%;
+    box-shadow: var(--progress-delta-shadow);
+    background-color: var(--progress-delta-color);
+    position: absolute;
+    bottom: 0;
+    transform-origin: right center;
+    transition-timing-function: cubic-bezier(1, 0, 0.92, 1), cubic-bezier(0.21, 0.61, 0.35, 1);
+    transition-property: width, transform;
+}
+
+/*
+    Gameface can't calculate gradient biggest than 8128px
+    in JS 8000 reserved like anchor for start optimization
+*/
+/* stylelint-disable-line */
 .ProgressBarDeltaGrow_base_7e {
     width: 0;
     height: 100%;
@@ -3599,30 +3721,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 .ProgressBarDeltaGrow_base__withoutBounce_b5 .ProgressBarDeltaGrow_glow_68 {
     transition-timing-function: cubic-bezier(1, 0, 0.75, 0.75);
-}
-
-/*
-    Gameface can't calculate gradient biggest than 8128px
-    in JS 8000 reserved like anchor for start optimization
-*/
-/* stylelint-disable-line */
-.ProgressBarDeltaSimple_base_6c {
-    width: 0;
-    height: 100%;
-    position: absolute;
-    top: 0;
-}
-.ProgressBarDeltaSimple_delta_99 {
-    width: 0;
-    max-width: 8001px;
-    height: 100%;
-    box-shadow: var(--progress-delta-shadow);
-    background-color: var(--progress-delta-color);
-    position: absolute;
-    bottom: 0;
-    transform-origin: right center;
-    transition-timing-function: cubic-bezier(1, 0, 0.92, 1), cubic-bezier(0.21, 0.61, 0.35, 1);
-    transition-property: width, transform;
 }
 
 .FormatTextWithColorTags_blackReal_3c {
@@ -4127,6 +4225,327 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     background-image: url('R.images.comp7.gui.maps.icons.comp7.ranks.c_150.qualification');
 }
 
+.Progression_base_5f {
+    width: 100%;
+    margin-top: 80rem;
+}
+.Progression_base__extraSmall_77,
+.Progression_base__small_a4 {
+    margin-top: 35rem;
+}
+.Progression_base__medium_8d {
+    margin-top: 65rem;
+}
+.Progression_base__extraLarge_28,
+.Progression_base__large_09 {
+    margin-top: 85rem;
+}
+.Progression_base_5f {
+    padding: 0 20rem;
+}
+
+.Progression_contentWrapper_ed {
+    display: flex;
+    justify-content: center;
+}
+
+.Progression_progress_85 {
+    color: #8c8c7e;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    margin: 8rem 0 10rem;
+    padding: 0 20rem;
+}
+
+.Progression_progressValue_c5 {
+    margin-bottom: 10rem;
+    text-align: center;
+}
+
+.Progression_currentAmount_e9 {
+    color: #e9e2bf;
+}
+
+.Progression_textCollection_7c {
+    color: #8c8c7e;
+    font-size: 12rem;
+    font-weight: 400;
+    line-height: 1.3;
+    margin-top: 6rem;
+    line-height: 12rem;
+}
+
+.Progression_textCollection__extraSmall_2e,
+.Progression_textCollection__small_e4 {
+    color: #8c8c7e;
+    font-size: 12rem;
+    font-weight: 400;
+    line-height: 1.3;
+    margin-top: 6rem;
+    line-height: 12rem;
+}
+
+.Progression_textCollection__medium_b8 {
+    color: #8c8c7e;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    margin-top: 6rem;
+    line-height: 12rem;
+}
+
+.Progression_textCollection__extraLarge_74,
+.Progression_textCollection__large_00 {
+    color: #8c8c7e;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+    margin-top: 6rem;
+    line-height: 14rem;
+}
+
+.Progression_textCollection_7c {
+    text-align: center;
+}
+
+.Suspended_base_26 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Suspended_base__b1_f0 {
+    margin-top: 20rem;
+}
+
+.Suspended_base__b1__extraSmall_74,
+.Suspended_base__b1__small_fe {
+    margin-top: 20rem;
+}
+
+.Suspended_base__b1__medium_ed {
+    margin-top: 10rem;
+}
+
+.Suspended_base__b1__extraLarge_2f,
+.Suspended_base__b1__large_73 {
+    margin-top: 0;
+}
+
+.Suspended_base__b2_40 {
+    margin-top: 158rem;
+    transform: translateX(5%);
+}
+
+.Suspended_base__b2__medium_18 {
+    margin-top: 80rem;
+    transform: translateX(16%);
+}
+
+.Suspended_base__b2__extraLarge_d5,
+.Suspended_base__b2__large_6f {
+    margin-top: 50rem;
+    transform: translateX(22%);
+}
+
+.Suspended_base__b3_a7 {
+    margin-top: 90rem;
+    transform: translateX(15%);
+}
+
+.Suspended_base__b3__medium_5a {
+    margin-top: 0;
+    transform: translateX(24%);
+}
+
+.Suspended_base__b3__extraLarge_ea,
+.Suspended_base__b3__large_22 {
+    margin-top: -16rem;
+    transform: translateX(38%);
+}
+
+.Suspended_textContainer_99 {
+    color: #e9e2bf;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+    margin-right: 10rem;
+    padding: 0 20rem;
+}
+
+.Suspended_textContainer__extraSmall_15,
+.Suspended_textContainer__small_00 {
+    color: #e9e2bf;
+    font-size: 12rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+.Suspended_textContainer__medium_62 {
+    margin-top: 110rem;
+}
+
+.Suspended_textContainer__extraLarge_40,
+.Suspended_textContainer__large_42 {
+    margin-top: 150rem;
+}
+
+.Suspended_textContainer__b2_00 {
+    margin-top: 0;
+}
+
+.Suspended_textContainer__b2__extraSmall_d6,
+.Suspended_textContainer__b2__small_d1 {
+    color: #e9e2bf;
+    font-size: 12rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+.Suspended_textContainer__b2__medium_11 {
+    color: #e9e2bf;
+    font-size: 12rem;
+    font-weight: 400;
+    line-height: 1.3;
+    margin-top: 120rem;
+}
+
+.Suspended_textContainer__b2__extraLarge_64,
+.Suspended_textContainer__b2__large_8f {
+    margin-top: 160rem;
+}
+
+.Suspended_locked_de {
+    display: flex;
+    width: 40rem;
+    height: 40rem;
+    background: url('R.images.cosmic_event.gui.maps.icons.mode_selector.icon_lock') no-repeat center / cover;
+}
+
+.Suspended_locked__extraSmall_8d,
+.Suspended_locked__small_ad {
+    width: 40rem;
+    height: 40rem;
+}
+
+.Suspended_locked__medium_0b {
+    width: 50rem;
+    height: 50rem;
+}
+
+.Suspended_locked__extraLarge_be,
+.Suspended_locked__large_19 {
+    width: 60rem;
+    height: 60rem;
+}
+
+.Suspended_lockBase_38 {
+    display: flex;
+    align-items: center;
+}
+
+.Suspended_lockBase__b1__extraSmall_17,
+.Suspended_lockBase__b1__small_88 {
+    margin-top: 50rem;
+}
+
+.Suspended_lockBase__b1__medium_9c {
+    margin-top: 80rem;
+}
+
+.Suspended_lockBase__b1__extraLarge_39,
+.Suspended_lockBase__b1__large_34 {
+    margin-top: 100rem;
+}
+
+.Suspended_lockBase__b2_78 {
+    margin-right: 10rem;
+}
+
+.Suspended_lockBase__b2__extraSmall_fd,
+.Suspended_lockBase__b2__small_7a {
+    margin-top: 0;
+    margin-right: 0;
+}
+
+.Suspended_lockBase__b2__medium_04 {
+    margin-top: 0;
+}
+
+.Suspended_lockBase__b2__extraLarge_32,
+.Suspended_lockBase__b2__large_2a {
+    margin-top: 30rem;
+}
+
+.Suspended_textContent_93 {
+    color: #e9e2bf;
+    font-size: 12rem;
+    font-weight: 400;
+    line-height: 1.3;
+    line-height: 12rem;
+    text-align: center;
+}
+
+.Suspended_textContent__extraSmall_77,
+.Suspended_textContent__small_49 {
+    color: #e9e2bf;
+    font-size: 12rem;
+    font-weight: 400;
+    line-height: 1.3;
+    line-height: 12rem;
+}
+
+.Suspended_textContent__medium_18 {
+    color: #e9e2bf;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    line-height: 14rem;
+}
+
+.Suspended_textContent__extraLarge_c2,
+.Suspended_textContent__large_0e {
+    color: #e9e2bf;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+    line-height: 14rem;
+}
+
+.Suspended_primeTimeValue_79 {
+    line-height: 14rem;
+    text-align: center;
+    transform: translateX(-80%);
+}
+
+.Suspended_primeTimeValue__extraSmall_d5,
+.Suspended_primeTimeValue__small_93 {
+    color: #ffdd99;
+    font-size: 10rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+.Suspended_primeTimeValue__medium_a8 {
+    color: #ffdd99;
+    font-size: 10rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+.Suspended_primeTimeValue__extraLarge_0f,
+.Suspended_primeTimeValue__large_81 {
+    color: #ffdd99;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
 .Countdown_base_fe {
     display: flex;
     align-items: center;
@@ -4466,325 +4885,8 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     pointer-events: none;
 }
 
-.Progression_base_5f {
-    width: 100%;
-    margin-top: 80rem;
-}
-.Progression_base__extraSmall_77,
-.Progression_base__small_a4 {
-    margin-top: 35rem;
-}
-.Progression_base__medium_8d {
-    margin-top: 65rem;
-}
-.Progression_base__extraLarge_28,
-.Progression_base__large_09 {
-    margin-top: 85rem;
-}
-.Progression_base_5f {
-    padding: 0 20rem;
-}
-
-.Progression_contentWrapper_ed {
-    display: flex;
-    justify-content: center;
-}
-
-.Progression_progress_85 {
-    color: #8c8c7e;
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 90%;
-    margin: 8rem 0 10rem;
-    padding: 0 20rem;
-}
-
-.Progression_progressValue_c5 {
-    margin-bottom: 10rem;
-    text-align: center;
-}
-
-.Progression_currentAmount_e9 {
-    color: #e9e2bf;
-}
-
-.Progression_textCollection_7c {
-    color: #8c8c7e;
-    font-size: 12rem;
-    font-weight: 400;
-    line-height: 1.3;
-    margin-top: 6rem;
-    line-height: 12rem;
-}
-
-.Progression_textCollection__extraSmall_2e,
-.Progression_textCollection__small_e4 {
-    color: #8c8c7e;
-    font-size: 12rem;
-    font-weight: 400;
-    line-height: 1.3;
-    margin-top: 6rem;
-    line-height: 12rem;
-}
-
-.Progression_textCollection__medium_b8 {
-    color: #8c8c7e;
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
-    margin-top: 6rem;
-    line-height: 12rem;
-}
-
-.Progression_textCollection__extraLarge_74,
-.Progression_textCollection__large_00 {
-    color: #8c8c7e;
-    font-size: 16rem;
-    font-weight: 400;
-    line-height: 1.25;
-    margin-top: 6rem;
-    line-height: 14rem;
-}
-
-.Progression_textCollection_7c {
-    text-align: center;
-}
-
-.Suspended_base_26 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.Suspended_base__b1_f0 {
-    margin-top: 20rem;
-}
-
-.Suspended_base__b1__extraSmall_74,
-.Suspended_base__b1__small_fe {
-    margin-top: 20rem;
-}
-
-.Suspended_base__b1__medium_ed {
-    margin-top: 10rem;
-}
-
-.Suspended_base__b1__extraLarge_2f,
-.Suspended_base__b1__large_73 {
-    margin-top: 0;
-}
-
-.Suspended_base__b2_40 {
-    margin-top: 158rem;
-    transform: translateX(5%);
-}
-
-.Suspended_base__b2__medium_18 {
-    margin-top: 80rem;
-    transform: translateX(16%);
-}
-
-.Suspended_base__b2__extraLarge_d5,
-.Suspended_base__b2__large_6f {
-    margin-top: 50rem;
-    transform: translateX(22%);
-}
-
-.Suspended_base__b3_a7 {
-    margin-top: 90rem;
-    transform: translateX(15%);
-}
-
-.Suspended_base__b3__medium_5a {
-    margin-top: 0;
-    transform: translateX(24%);
-}
-
-.Suspended_base__b3__extraLarge_ea,
-.Suspended_base__b3__large_22 {
-    margin-top: -16rem;
-    transform: translateX(38%);
-}
-
-.Suspended_textContainer_99 {
-    color: #e9e2bf;
-    font-size: 16rem;
-    font-weight: 400;
-    line-height: 1.25;
-    margin-right: 10rem;
-    padding: 0 20rem;
-}
-
-.Suspended_textContainer__extraSmall_15,
-.Suspended_textContainer__small_00 {
-    color: #e9e2bf;
-    font-size: 12rem;
-    font-weight: 400;
-    line-height: 1.3;
-}
-
-.Suspended_textContainer__medium_62 {
-    margin-top: 110rem;
-}
-
-.Suspended_textContainer__extraLarge_40,
-.Suspended_textContainer__large_42 {
-    margin-top: 150rem;
-}
-
-.Suspended_textContainer__b2_00 {
-    margin-top: 0;
-}
-
-.Suspended_textContainer__b2__extraSmall_d6,
-.Suspended_textContainer__b2__small_d1 {
-    color: #e9e2bf;
-    font-size: 12rem;
-    font-weight: 400;
-    line-height: 1.3;
-}
-
-.Suspended_textContainer__b2__medium_11 {
-    color: #e9e2bf;
-    font-size: 12rem;
-    font-weight: 400;
-    line-height: 1.3;
-    margin-top: 120rem;
-}
-
-.Suspended_textContainer__b2__extraLarge_64,
-.Suspended_textContainer__b2__large_8f {
-    margin-top: 160rem;
-}
-
-.Suspended_locked_de {
-    display: flex;
-    width: 40rem;
-    height: 40rem;
-    background: url('R.images.cosmic_event.gui.maps.icons.mode_selector.icon_lock') no-repeat center / cover;
-}
-
-.Suspended_locked__extraSmall_8d,
-.Suspended_locked__small_ad {
-    width: 40rem;
-    height: 40rem;
-}
-
-.Suspended_locked__medium_0b {
-    width: 50rem;
-    height: 50rem;
-}
-
-.Suspended_locked__extraLarge_be,
-.Suspended_locked__large_19 {
-    width: 60rem;
-    height: 60rem;
-}
-
-.Suspended_lockBase_38 {
-    display: flex;
-    align-items: center;
-}
-
-.Suspended_lockBase__b1__extraSmall_17,
-.Suspended_lockBase__b1__small_88 {
-    margin-top: 50rem;
-}
-
-.Suspended_lockBase__b1__medium_9c {
-    margin-top: 80rem;
-}
-
-.Suspended_lockBase__b1__extraLarge_39,
-.Suspended_lockBase__b1__large_34 {
-    margin-top: 100rem;
-}
-
-.Suspended_lockBase__b2_78 {
-    margin-right: 10rem;
-}
-
-.Suspended_lockBase__b2__extraSmall_fd,
-.Suspended_lockBase__b2__small_7a {
-    margin-top: 0;
-    margin-right: 0;
-}
-
-.Suspended_lockBase__b2__medium_04 {
-    margin-top: 0;
-}
-
-.Suspended_lockBase__b2__extraLarge_32,
-.Suspended_lockBase__b2__large_2a {
-    margin-top: 30rem;
-}
-
-.Suspended_textContent_93 {
-    color: #e9e2bf;
-    font-size: 12rem;
-    font-weight: 400;
-    line-height: 1.3;
-    line-height: 12rem;
-    text-align: center;
-}
-
-.Suspended_textContent__extraSmall_77,
-.Suspended_textContent__small_49 {
-    color: #e9e2bf;
-    font-size: 12rem;
-    font-weight: 400;
-    line-height: 1.3;
-    line-height: 12rem;
-}
-
-.Suspended_textContent__medium_18 {
-    color: #e9e2bf;
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
-    line-height: 14rem;
-}
-
-.Suspended_textContent__extraLarge_c2,
-.Suspended_textContent__large_0e {
-    color: #e9e2bf;
-    font-size: 16rem;
-    font-weight: 400;
-    line-height: 1.25;
-    line-height: 14rem;
-}
-
-.Suspended_primeTimeValue_79 {
-    line-height: 14rem;
-    text-align: center;
-    transform: translateX(-80%);
-}
-
-.Suspended_primeTimeValue__extraSmall_d5,
-.Suspended_primeTimeValue__small_93 {
-    color: #ffdd99;
-    font-size: 10rem;
-    font-weight: 400;
-    line-height: 1.2;
-}
-
-.Suspended_primeTimeValue__medium_a8 {
-    color: #ffdd99;
-    font-size: 10rem;
-    font-weight: 400;
-    line-height: 1.2;
-}
-
-.Suspended_primeTimeValue__extraLarge_0f,
-.Suspended_primeTimeValue__large_81 {
-    color: #ffdd99;
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
+.StrongholdCard_widgetOverlay_66 {
+    pointer-events: auto;
 }
 
 .Column_base_41 {

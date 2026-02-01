@@ -159,10 +159,10 @@
                         events: () => F.U,
                         extraSize: () => f,
                         forceTriggerMouseMove: () => b,
-                        freezeTextureBeforeResize: () => d,
+                        freezeTextureBeforeResize: () => C,
                         getBrowserTexturePath: () => a,
                         getDisplayStatus: () => p,
-                        getScale: () => C,
+                        getScale: () => d,
                         getSize: () => D,
                         getViewGlobalPosition: () => _,
                         isEventHandled: () => w,
@@ -206,10 +206,10 @@
                     const e = viewEnv.getViewGlobalPositionRem();
                     return 'rem' === u ? e : { x: l(e.x), y: l(e.y) };
                 }
-                function d() {
+                function C() {
                     viewEnv.freezeTextureBeforeResize();
                 }
-                function C() {
+                function d() {
                     return viewEnv.getScale();
                 }
                 function c(u) {
@@ -559,8 +559,8 @@
                     D = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1 }),
                     B = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1, YEAR_MONTH: 2 });
                 var _ = t(5521),
-                    d = t(3138);
-                const C = ['args'];
+                    C = t(3138);
+                const d = ['args'];
                 function c(u, e, t, n, A, F, E) {
                     try {
                         var i = u[F](E),
@@ -612,7 +612,7 @@
                                         F = Object.keys(u);
                                     for (n = 0; n < F.length; n++) ((t = F[n]), e.indexOf(t) >= 0 || (A[t] = u[t]));
                                     return A;
-                                })(e, C);
+                                })(e, d);
                             void 0 !== A
                                 ? viewEnv.handleViewEvent(
                                       Object.assign({ __Type: t, type: u }, F, {
@@ -660,17 +660,17 @@
                             h(r.CONTEXT_MENU, { isMouseEvent: !0, contentID: u, on: !0, decoratorID: t, args: e });
                         },
                         sendShowPopOverEvent: (u, e, t, n, A = R.invalid('resId'), F) => {
-                            const E = d.O.view.getViewGlobalPosition(),
+                            const E = C.O.view.getViewGlobalPosition(),
                                 i = t.getBoundingClientRect(),
                                 a = i.x,
                                 s = i.y,
                                 o = i.width,
                                 D = i.height,
                                 B = {
-                                    x: d.O.view.pxToRem(a) + E.x,
-                                    y: d.O.view.pxToRem(s) + E.y,
-                                    width: d.O.view.pxToRem(o),
-                                    height: d.O.view.pxToRem(D),
+                                    x: C.O.view.pxToRem(a) + E.x,
+                                    y: C.O.view.pxToRem(s) + E.y,
+                                    width: C.O.view.pxToRem(o),
+                                    height: C.O.view.pxToRem(D),
                                 };
                             h(r.POP_OVER, {
                                 isMouseEvent: !0,
@@ -729,7 +729,7 @@
                     };
                 window.ViewEnvHelper = g;
             },
-            5721: (u, e, t) => {
+            8269: (u, e, t) => {
                 var n = t(6179),
                     A = t.n(n),
                     F = t(493),
@@ -778,9 +778,9 @@
                     (B.YEAR = 'year'),
                     (B.DATE_YEAR = 'date-year'));
                 var _ = t(4179);
-                const d = 86400;
+                const C = 86400;
                 Date.now();
-                var C = t(3138);
+                var d = t(3138);
                 const c = (u = 1) => {
                         const e = new Error().stack;
                         let t,
@@ -928,7 +928,7 @@
                     P = (u) =>
                         u < 60
                             ? R.strings.fun_random.entryPoint.lessMinute()
-                            : ((u, e = !0, t = !1) =>
+                            : ((u, e = !0) =>
                                   u.days > 7 && e
                                       ? o(R.strings.common.duration.days(), { days: u.days })
                                       : u.days >= 1
@@ -938,12 +938,12 @@
                                         : u.hours >= 1
                                           ? 0 === u.minutes
                                               ? o(R.strings.common.duration.hours(), { hours: u.hours })
-                                              : `${o(R.strings.common.duration.hours(), { hours: u.hours })} ${o(t ? R.strings.common.duration.shortMinutes() : R.strings.common.duration.minutes(), { minutes: u.minutes })}`
+                                              : `${o(R.strings.common.duration.hours(), { hours: u.hours })} ${o(R.strings.common.duration.minutes(), { minutes: u.minutes })}`
                                           : o(R.strings.common.duration.minutes(), { minutes: u.minutes || 1 }))(
                                   (function (u = 0) {
                                       let e = u;
-                                      const t = Math.trunc(e / d);
-                                      e -= t * d;
+                                      const t = Math.trunc(e / C);
+                                      e -= t * C;
                                       const n = Math.trunc(e / 3600);
                                       e -= 3600 * n;
                                       const A = Math.trunc(e / 60);
@@ -974,7 +974,7 @@
                                     case p.Before:
                                         return [M(e), !1];
                                     case p.Active:
-                                        return t > d ? [k(n), !1] : [P(t), !0];
+                                        return t > C ? [k(n), !1] : [P(t), !0];
                                     case p.NotPrimeTime:
                                         return [P(t), !0];
                                     default:
@@ -1044,7 +1044,7 @@
                         '222*114': I.ThinSmall,
                         '162*114': I.ThinExtraSmall,
                     },
-                    W = (u, e) => u === p.Active && e <= d,
+                    W = (u, e) => u === p.Active && e <= C,
                     z = () => {
                         const u = b(),
                             e = u.startTime,
@@ -1054,7 +1054,7 @@
                             i = u.assetsPointer,
                             a = u.onActionClick,
                             s = (() => {
-                                const u = C.O.view.getSize('rem'),
+                                const u = d.O.view.getSize('rem'),
                                     e = (0, n.useState)({ height: u.height, width: u.width }),
                                     t = e[0],
                                     A = e[1];
@@ -1085,7 +1085,7 @@
                                     : { staticTexts: A, dynamicTexts: E };
                             })(null, { assetsPointer: i }),
                             _ = B.dynamicTexts,
-                            d = r()(U.base, D && U.base__disabled, U[`base__${o}`]),
+                            C = r()(U.base, D && U.base__disabled, U[`base__${o}`]),
                             c = ((u, e) => {
                                 var t;
                                 const n = T.$dyn('modes');
@@ -1098,7 +1098,7 @@
                         return A().createElement(
                             'div',
                             {
-                                className: d,
+                                className: C,
                                 onClick: () => {
                                     (g(R.sounds.yes()), a());
                                 },
@@ -1196,6 +1196,6 @@
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             (t.forEach(e.bind(null, 0)), (t.push = e.bind(null, t.push.bind(t))));
         })());
-    var __webpack_exports__ = __webpack_require__.O(void 0, [503], () => __webpack_require__(5721));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [503], () => __webpack_require__(8269));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

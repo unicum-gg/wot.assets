@@ -77,8 +77,8 @@
                             c = s.extraSmall,
                             m = s.extraLargeWidth,
                             h = s.largeWidth,
-                            E = s.mediumWidth,
-                            g = s.smallWidth,
+                            g = s.mediumWidth,
+                            E = s.smallWidth,
                             w = s.extraSmallWidth,
                             p = s.extraLargeHeight,
                             v = s.largeHeight,
@@ -95,8 +95,8 @@
                         } else {
                             if (i.extraLargeWidth && m) return (0, a.H)(t, i, T);
                             if (i.largeWidth && h) return (0, a.H)(t, i, T);
-                            if (i.mediumWidth && E) return (0, a.H)(t, i, T);
-                            if (i.smallWidth && g) return (0, a.H)(t, i, T);
+                            if (i.mediumWidth && g) return (0, a.H)(t, i, T);
+                            if (i.smallWidth && E) return (0, a.H)(t, i, T);
                             if (i.extraSmallWidth && w) return (0, a.H)(t, i, T);
                             if (
                                 !(
@@ -256,7 +256,6 @@
                             (e.TankmenXpFactor = 'tankmenXPFactor'),
                             (e.FreeXpFactor = 'freeXPFactor'),
                             (e.BattleToken = 'battleToken'),
-                            (e.Entitlements = 'entitlements'),
                             (e.PremiumUniversal = 'premium_universal'),
                             (e.Gold = 'gold'),
                             (e.Credits = 'credits'),
@@ -296,16 +295,9 @@
                             (e.GoldenTicket = 'birthday2025_golden_ticket'),
                             (e.PostStamp = 'giftsystem_4_stamp'),
                             (e.Quests = 'quests'),
-                            (e.BlankPersonalMissions_1 = 'freeTokens_0'),
-                            (e.BlankPersonalMissions_2 = 'freeTokens_2'),
-                            (e.SACoin = 'sacoin'),
                             (e.ArmoryCoin = 'armory_coin'),
                             (e.PremiumPlusUniversal = 'premium_plus_universal'),
-                            (e.DogTagType = 'dogTagComponents'),
-                            (e.NyPetGoodies = 'nyPetGoodies'),
-                            (e.HiddenVehicle = 'hidden_vehicle'),
-                            (e.NyStaticDogTag = 'nyStaticDogTag'),
-                            (e.Ny26Toys = 'ny26Toys'));
+                            (e.DogTagType = 'dogTagComponents'));
                     })(r || (r = {})),
                     (function (e) {
                         ((e.Gold = 'gold'),
@@ -422,7 +414,6 @@
                     r.E4.TankmenXpFactor,
                     r.E4.FreeXpFactor,
                     r.E4.BattleToken,
-                    r.E4.Entitlements,
                     r.E4.PremiumUniversal,
                     r.E4.NaturalCover,
                     r.E4.BpCoin,
@@ -437,25 +428,16 @@
                     r.E4.Comp7TokenWeeklyReward,
                     r.E4.Comp7TokenCouponReward,
                     r.E4.BattleBoosterGift,
-                    r.E4.NewYearFillers,
-                    r.E4.NewYearInvoice,
-                    r.E4.LootBoxToken,
                     r.E4.CosmicLootboxCommon,
                     r.E4.CosmicLootboxSilver,
                     r.E4.SelectableBonus,
                     r.E4.GoldenTicket,
                     r.E4.PostStamp,
-                    r.E4.BlankPersonalMissions_1,
-                    r.E4.BlankPersonalMissions_2,
-                    r.E4.SACoin,
                     r.E4.PremiumPlusUniversal,
-                    r.E4.NyPetGoodies,
-                    r.E4.HiddenVehicle,
                     r.E4.Gold,
                     r.E4.Credits,
                     r.E4.Crystal,
                     r.E4.FreeXp,
-                    r.E4.NewYearToyFragments,
                     r.E4.BattlePassPoints,
                     r.E4.PremiumPlus,
                     r.E4.Premium,
@@ -642,10 +624,10 @@
                         events: () => n.U,
                         extraSize: () => O,
                         forceTriggerMouseMove: () => T,
-                        freezeTextureBeforeResize: () => E,
+                        freezeTextureBeforeResize: () => g,
                         getBrowserTexturePath: () => d,
                         getDisplayStatus: () => f,
-                        getScale: () => g,
+                        getScale: () => E,
                         getSize: () => c,
                         getViewGlobalPosition: () => h,
                         isEventHandled: () => P,
@@ -689,10 +671,10 @@
                     const t = viewEnv.getViewGlobalPositionRem();
                     return 'rem' === e ? t : { x: p(t.x), y: p(t.y) };
                 }
-                function E() {
+                function g() {
                     viewEnv.freezeTextureBeforeResize();
                 }
-                function g() {
+                function E() {
                     return viewEnv.getScale();
                 }
                 function w(e) {
@@ -1076,8 +1058,8 @@
                     c = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1 }),
                     m = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1, YEAR_MONTH: 2 });
                 var h = i(5521),
-                    E = i(3138);
-                const g = ['args'];
+                    g = i(3138);
+                const E = ['args'];
                 function w(e, t, i, r, a, n, o) {
                     try {
                         var s = e[n](o),
@@ -1129,7 +1111,7 @@
                                         n = Object.keys(e);
                                     for (r = 0; r < n.length; r++) ((i = n[r]), t.indexOf(i) >= 0 || (a[i] = e[i]));
                                     return a;
-                                })(t, g);
+                                })(t, E);
                             void 0 !== a
                                 ? viewEnv.handleViewEvent(
                                       Object.assign({ __Type: i, type: e }, n, {
@@ -1177,17 +1159,17 @@
                             b(l.CONTEXT_MENU, { isMouseEvent: !0, contentID: e, on: !0, decoratorID: i, args: t });
                         },
                         sendShowPopOverEvent: (e, t, i, r, a = R.invalid('resId'), n) => {
-                            const o = E.O.view.getViewGlobalPosition(),
+                            const o = g.O.view.getViewGlobalPosition(),
                                 s = i.getBoundingClientRect(),
                                 d = s.x,
                                 _ = s.y,
                                 u = s.width,
                                 c = s.height,
                                 m = {
-                                    x: E.O.view.pxToRem(d) + o.x,
-                                    y: E.O.view.pxToRem(_) + o.y,
-                                    width: E.O.view.pxToRem(u),
-                                    height: E.O.view.pxToRem(c),
+                                    x: g.O.view.pxToRem(d) + o.x,
+                                    y: g.O.view.pxToRem(_) + o.y,
+                                    width: g.O.view.pxToRem(u),
+                                    height: g.O.view.pxToRem(c),
                                 };
                             b(l.POP_OVER, {
                                 isMouseEvent: !0,

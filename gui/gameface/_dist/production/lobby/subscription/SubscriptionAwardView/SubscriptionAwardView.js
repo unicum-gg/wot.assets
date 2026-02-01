@@ -1145,8 +1145,8 @@
                     for (var t = 0, r = new Array(e); t < e; t++) r[t] = u[t];
                     return r;
                 }
-                const $ = (u) => (0 === u ? window : window.subViews.get(u));
-                var V = t(946);
+                const V = (u) => (0 === u ? window : window.subViews.get(u));
+                var $ = t(946);
                 const Y = ((u, e) => {
                         const t = (0, r.createContext)({});
                         return [
@@ -1157,7 +1157,7 @@
                                         const s = (function ({
                                                 initializer: u = !0,
                                                 rootId: e = 0,
-                                                getRoot: t = $,
+                                                getRoot: t = V,
                                                 context: r = 'model',
                                             } = {}) {
                                                 const n = new Map();
@@ -1334,7 +1334,7 @@
                                     rewards: u.array('rewards', []),
                                     nextCharge: u.primitives({ nextCharge: 'nextCharge' }),
                                 },
-                                t = (0, V.Om)(
+                                t = (0, $.Om)(
                                     () => {
                                         return (
                                             (u = e.rewards.get()),
@@ -1684,7 +1684,6 @@
                         (u.TankmenXpFactor = 'tankmenXPFactor'),
                         (u.FreeXpFactor = 'freeXPFactor'),
                         (u.BattleToken = 'battleToken'),
-                        (u.Entitlements = 'entitlements'),
                         (u.PremiumUniversal = 'premium_universal'),
                         (u.Gold = 'gold'),
                         (u.Credits = 'credits'),
@@ -1724,16 +1723,9 @@
                         (u.GoldenTicket = 'birthday2025_golden_ticket'),
                         (u.PostStamp = 'giftsystem_4_stamp'),
                         (u.Quests = 'quests'),
-                        (u.BlankPersonalMissions_1 = 'freeTokens_0'),
-                        (u.BlankPersonalMissions_2 = 'freeTokens_2'),
-                        (u.SACoin = 'sacoin'),
                         (u.ArmoryCoin = 'armory_coin'),
                         (u.PremiumPlusUniversal = 'premium_plus_universal'),
-                        (u.DogTagType = 'dogTagComponents'),
-                        (u.NyPetGoodies = 'nyPetGoodies'),
-                        (u.HiddenVehicle = 'hidden_vehicle'),
-                        (u.NyStaticDogTag = 'nyStaticDogTag'),
-                        (u.Ny26Toys = 'ny26Toys'));
+                        (u.DogTagType = 'dogTagComponents'));
                 })(cu || (cu = {})),
                     (function (u) {
                         ((u.Gold = 'gold'),
@@ -1855,7 +1847,6 @@
                     cu.TankmenXpFactor,
                     cu.FreeXpFactor,
                     cu.BattleToken,
-                    cu.Entitlements,
                     cu.PremiumUniversal,
                     cu.NaturalCover,
                     cu.BpCoin,
@@ -1870,25 +1861,16 @@
                     cu.Comp7TokenWeeklyReward,
                     cu.Comp7TokenCouponReward,
                     cu.BattleBoosterGift,
-                    cu.NewYearFillers,
-                    cu.NewYearInvoice,
-                    cu.LootBoxToken,
                     cu.CosmicLootboxCommon,
                     cu.CosmicLootboxSilver,
                     cu.SelectableBonus,
                     cu.GoldenTicket,
                     cu.PostStamp,
-                    cu.BlankPersonalMissions_1,
-                    cu.BlankPersonalMissions_2,
-                    cu.SACoin,
                     cu.PremiumPlusUniversal,
-                    cu.NyPetGoodies,
-                    cu.HiddenVehicle,
                     cu.Gold,
                     cu.Credits,
                     cu.Crystal,
                     cu.FreeXp,
-                    cu.NewYearToyFragments,
                     cu.BattlePassPoints,
                     cu.PremiumPlus,
                     cu.Premium);
@@ -1907,14 +1889,14 @@
                 })(gu || (gu = {}));
                 const pu = ['engravings', 'backgrounds'],
                     hu = ['engraving', 'background'],
-                    wu = (u, e = Du.Small, t) => {
-                        const r = u.name,
-                            n = u.type,
-                            a = u.value,
-                            i = u.icon,
-                            s = u.item,
-                            o = u.dogTagType,
-                            E = ((u) => {
+                    wu = (u, e = Du.Small) => {
+                        const t = u.name,
+                            r = u.type,
+                            n = u.value,
+                            a = u.icon,
+                            i = u.item,
+                            s = u.dogTagType,
+                            o = ((u) => {
                                 switch (u) {
                                     case Du.S600x450:
                                         return 'c_600x450';
@@ -1932,20 +1914,20 @@
                                         return u;
                                 }
                             })(e);
-                        switch (r) {
+                        switch (t) {
                             case 'basic':
                             case 'plus':
-                                return `R.images.gui.maps.icons.quests.bonuses.${e}.${n}_${a}`;
+                                return `R.images.gui.maps.icons.quests.bonuses.${e}.${r}_${n}`;
                             case 'premium':
-                                return `R.images.gui.maps.icons.quests.bonuses.${e}.${r}_plus_${a}`;
+                                return `R.images.gui.maps.icons.quests.bonuses.${e}.${t}_plus_${n}`;
                             case 'premium_plus':
-                                return `R.images.gui.maps.icons.quests.bonuses.${e}.${r}_${a}`;
+                                return `R.images.gui.maps.icons.quests.bonuses.${e}.${t}_${n}`;
                             case 'items':
-                                return `R.images.gui.maps.icons.quests.bonuses.${e}.${s}`;
+                                return `R.images.gui.maps.icons.quests.bonuses.${e}.${i}`;
                             case 'blueprints':
                             case 'blueprintsAny':
                             case 'finalBlueprints':
-                                return `R.images.gui.maps.icons.blueprints.fragment.${e}.${i}`;
+                                return `R.images.gui.maps.icons.blueprints.fragment.${e}.${a}`;
                             case 'tokens':
                             case 'battleToken':
                                 return ((u, e) => {
@@ -1958,12 +1940,8 @@
                                             return `R.images.gui.maps.icons.quests.bonuses.${e}.${u.icon}`;
                                     }
                                 })(u, e);
-                            case 'entitlements':
-                                return 'big' === e
-                                    ? u.iconBig.replace('..', 'img://gui')
-                                    : u.iconSmall.replace('..', 'img://gui');
                             case 'crewBooks':
-                                return `R.images.gui.maps.icons.crewBooks.books.${e}.${i}`;
+                                return `R.images.gui.maps.icons.crewBooks.books.${e}.${a}`;
                             case 'dogTagComponents':
                                 return ((u, e, t) => {
                                     const r = pu[u];
@@ -1978,9 +1956,9 @@
                                         ),
                                         ''
                                     );
-                                })(o, e, i);
+                                })(s, e, a);
                             case 'dossier_badge':
-                                return `R.images.gui.maps.icons.quests.bonuses.badges.${E}.${i}`;
+                                return `R.images.gui.maps.icons.quests.bonuses.badges.${o}.${a}`;
                             case 'dossier_achievement':
                                 return `R.images.gui.maps.icons.achievement.${((u) => {
                                     switch (u) {
@@ -2003,7 +1981,7 @@
                                         default:
                                             return u;
                                     }
-                                })(e)}.${i}`;
+                                })(e)}.${a}`;
                             case 'xp':
                             case 'xpFactor':
                                 return `R.images.gui.maps.icons.quests.bonuses.${e}.exp`;
@@ -2023,15 +2001,13 @@
                             case 'styleProgress':
                             case 'crewSkins':
                             case 'goodies':
-                                return `R.images.gui.maps.icons.quests.bonuses.${e}.${i}`;
-                            case 'nyPetGoodies':
-                                return `R.images.new_year.gui.maps.icons.newYear.common.categoriesIcons.${e}.${i}`;
+                                return `R.images.gui.maps.icons.quests.bonuses.${e}.${a}`;
                             case 'premiumTank':
                                 return `R.images.gui.maps.icons.quests.bonuses.${e}.vehicles`;
                             case 'styleProgressToken':
                                 return `R.images.gui.maps.icons.quests.bonuses.${e}.style_3d`;
                             case 'collectionItem':
-                                return `R.images.gui.maps.icons.collectionItems.${E}.${i}`;
+                                return `R.images.gui.maps.icons.collectionItems.${o}.${a}`;
                             case 'premium_universal':
                                 return `R.images.gui.maps.icons.quests.bonuses.${e}.premium_plus_universal`;
                             case 'armory_coin':
@@ -2057,20 +2033,8 @@
                                             return gu.s600;
                                     }
                                 })(e)}`;
-                            case 'newYearAlbumsAccess':
-                                return `R.images.new_year.gui.maps.icons.newYear.rewards.${e}.albumsAccess`;
-                            case 'nyFillers':
-                                return `R.images.new_year.gui.maps.icons.newYear.rewards.${e}.fillers`;
-                            case 'nyToyFragments':
-                                return `R.images.new_year.gui.maps.icons.newYear.rewards.${e}.shards`;
-                            case 'newYearSlot':
-                                return `R.images.new_year.gui.maps.icons.newYear.rewards.${e}.slot`;
-                            case 'hidden_vehicle':
-                                return 'R.images.new_year.gui.maps.icons.newYear.common.rewards.vehicles.hidden_vehicle';
-                            case 'nyStaticDogTag':
-                                return `R.images.new_year.gui.maps.icons.newYear.common.rewards.dogtags.${e}.dogtag_${t}`;
                             default:
-                                return `R.images.gui.maps.icons.quests.bonuses.${e}.${r}`;
+                                return `R.images.gui.maps.icons.quests.bonuses.${e}.${t}`;
                         }
                     },
                     bu = (u, e, t) => {
@@ -2576,7 +2540,7 @@
                         Wu.apply(this, arguments)
                     );
                 }
-                class $u extends n().PureComponent {
+                class Vu extends n().PureComponent {
                     constructor(...u) {
                         (super(...u),
                             (this.state = { hover: !1, click: !1 }),
@@ -2650,15 +2614,15 @@
                         );
                     }
                 }
-                let Vu;
-                (($u.defaultProps = { side: 'left', type: 'back', soundHover: 'highlight', soundClick: 'play' }),
+                let $u;
+                ((Vu.defaultProps = { side: 'left', type: 'back', soundHover: 'highlight', soundClick: 'play' }),
                     (function (u) {
                         ((u[(u.Inactive = 0)] = 'Inactive'),
                             (u[(u.Active = 1)] = 'Active'),
                             (u[(u.Canceled = 2)] = 'Canceled'),
                             (u[(u.Error = 3)] = 'Error'),
                             (u[(u.Trial = 4)] = 'Trial'));
-                    })(Vu || (Vu = {})));
+                    })($u || ($u = {})));
                 var Yu = t(521);
                 const qu = (u) => {
                     console.error(u.type + ': useKeydownListener hook :: Callback is not defined');
@@ -2728,7 +2692,7 @@
                 }
                 const Zu = R.strings.subscription.awardView.close(),
                     Ju = {
-                        [Vu.Active]: {
+                        [$u.Active]: {
                             title: '',
                             mainTitle: R.strings.subscription.awardView.heading(),
                             titleDescription: R.strings.subscription.awardView.subHeading(),
@@ -2737,7 +2701,7 @@
                             affirmative: R.strings.subscription.awardView.button.affirmative(),
                             details: R.strings.subscription.awardView.button.details(),
                         },
-                        [Vu.Canceled]: {
+                        [$u.Canceled]: {
                             title: '',
                             mainTitle: R.strings.subscription.awardView.heading(),
                             titleDescription: R.strings.subscription.awardView.subHeading(),
@@ -2746,7 +2710,7 @@
                             affirmative: R.strings.subscription.awardView.button.affirmative(),
                             details: R.strings.subscription.awardView.button.details(),
                         },
-                        [Vu.Error]: {
+                        [$u.Error]: {
                             title: '',
                             mainTitle: R.strings.subscription.awardView.heading(),
                             titleDescription: R.strings.subscription.awardView.subHeading(),
@@ -2755,7 +2719,7 @@
                             affirmative: R.strings.subscription.awardView.button.affirmative(),
                             details: R.strings.subscription.awardView.button.details(),
                         },
-                        [Vu.Inactive]: {
+                        [$u.Inactive]: {
                             title: '',
                             mainTitle: R.strings.subscription.awardView.heading(),
                             titleDescription: R.strings.subscription.awardView.subHeading(),
@@ -2764,7 +2728,7 @@
                             affirmative: R.strings.subscription.awardView.button.affirmative(),
                             details: R.strings.subscription.awardView.button.details(),
                         },
-                        [Vu.Trial]: {
+                        [$u.Trial]: {
                             title: R.strings.subscription.awardView.title(),
                             mainTitle: R.strings.subscription.awardView.headingTrial(),
                             titleDescription: R.strings.subscription.awardView.nextCharge(),
@@ -2828,7 +2792,7 @@
                         return n().createElement(
                             'div',
                             { className: Ku.base },
-                            n().createElement($u, {
+                            n().createElement(Vu, {
                                 caption: Zu,
                                 onClick: ou.Sy,
                                 side: 'right',
@@ -2884,7 +2848,7 @@
                             ),
                             n().createElement(
                                 'div',
-                                { className: g()(Ku.footer, Ku[`footer__${Vu[s]}`]) },
+                                { className: g()(Ku.footer, Ku[`footer__${$u[s]}`]) },
                                 n().createElement(
                                     'div',
                                     {

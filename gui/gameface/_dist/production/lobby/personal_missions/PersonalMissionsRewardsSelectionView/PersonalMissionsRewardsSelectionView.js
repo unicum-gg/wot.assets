@@ -616,7 +616,7 @@
                     });
                 }
                 var R = 1e3,
-                    k = {
+                    M = {
                         'click-rail': function (e, t) {
                             (e.event.bind(e.scrollbarY, 'mousedown', function (e) {
                                 return e.stopPropagation();
@@ -1025,7 +1025,7 @@
                             );
                         },
                     },
-                    M = function (e, r) {
+                    k = function (e, r) {
                         var o = this;
                         if (
                             (void 0 === r && (r = {}),
@@ -1162,7 +1162,7 @@
                                     }),
                                     (o.isAlive = !0),
                                     o.settings.handlers.forEach(function (e) {
-                                        return k[e](o, o.settings.overScrollWidth);
+                                        return M[e](o, o.settings.overScrollWidth);
                                     }),
                                     (o.boundHandleButtonEnter = o.handleMouseEnter.bind(o)),
                                     (o.boundHandleMouseLeave = o.handleMouseLeave.bind(o)),
@@ -1197,7 +1197,7 @@
                                     D(o, !1, o.settings.overScrollWidth, !1));
                             }));
                     };
-                ((M.prototype._getAnimationSettings = function (e, t, u, n) {
+                ((k.prototype._getAnimationSettings = function (e, t, u, n) {
                     var r = this,
                         o = 0;
                     return (
@@ -1218,17 +1218,17 @@
                         }
                     );
                 }),
-                    (M.prototype.playHoverSound = function () {
+                    (k.prototype.playHoverSound = function () {
                         window.engine && engine.call('PlaySound', 'highlight');
                     }),
-                    (M.prototype.playClickSound = function () {
+                    (k.prototype.playClickSound = function () {
                         window.engine && engine.call('PlaySound', 'play');
                     }),
-                    (M.prototype.handleMouseEnter = function () {
+                    (k.prototype.handleMouseEnter = function () {
                         this.playHoverSound();
                     }),
-                    (M.prototype.handleMouseLeave = function () {}),
-                    (M.prototype.update = function () {
+                    (k.prototype.handleMouseLeave = function () {}),
+                    (k.prototype.update = function () {
                         var e = this;
                         this.isAlive &&
                             ((this.negativeScrollAdjustment = this.isNegativeScroll
@@ -1253,28 +1253,28 @@
                                     u(e.scrollbarYRail, { display: '' }));
                             }));
                     }),
-                    (M.prototype.setScrollLeft = function (e, t, u) {
+                    (k.prototype.setScrollLeft = function (e, t, u) {
                         y(this._getAnimationSettings(e, 'right', t, u));
                     }),
-                    (M.prototype.setScrollLeftImmediately = function (e) {
+                    (k.prototype.setScrollLeftImmediately = function (e) {
                         ((this.element.scrollLeft = 0 | e), this.update());
                     }),
-                    (M.prototype.setScrollTop = function (e, t, u) {
+                    (k.prototype.setScrollTop = function (e, t, u) {
                         y(this._getAnimationSettings(e, 'bottom', t, u));
                     }),
-                    (M.prototype.setScrollTopImmediately = function (e) {
+                    (k.prototype.setScrollTopImmediately = function (e) {
                         ((this.element.scrollTop = 0 | e), this.update());
                     }),
-                    (M.prototype.onScroll = function (e) {
+                    (k.prototype.onScroll = function (e) {
                         this.isAlive && D(this, !1, this.settings.overScrollWidth, !0);
                     }),
-                    (M.prototype.onWheel = function (e) {
+                    (k.prototype.onWheel = function (e) {
                         this.isAlive &&
                             (D(this, !1, this.settings.overScrollWidth, !1),
                             f(this, 'left', this.element.scrollLeft - this.lastScrollLeft),
                             (this.lastScrollLeft = this.element.scrollLeft));
                     }),
-                    (M.prototype.destroy = function () {
+                    (k.prototype.destroy = function () {
                         this.isAlive &&
                             (this.scrollbarYButtonStart.removeEventListener('mousedown', this.boundPlayClickSound),
                             this.scrollbarYButtonEnd.removeEventListener('mousedown', this.boundPlayClickSound),
@@ -1304,7 +1304,7 @@
                             (this.scrollbarYRail = null),
                             (this.isAlive = !1));
                     }),
-                    (M.prototype.removePsClasses = function () {
+                    (k.prototype.removePsClasses = function () {
                         this.element.className = this.element.className
                             .split(' ')
                             .filter(function (e) {
@@ -1312,7 +1312,7 @@
                             })
                             .join(' ');
                     }),
-                    (e.exports = M));
+                    (e.exports = k));
             },
             926: (e) => {
                 e.exports = {
@@ -2078,7 +2078,7 @@
                     };
                 window.ViewEnvHelper = B;
             },
-            225: (e, t, u) => {
+            680: (e, t, u) => {
                 'use strict';
                 var n = u(179),
                     r = u.n(n),
@@ -2321,8 +2321,8 @@
                         t.current || (e(), (t.current = !0));
                     },
                     x = (e) => e && 'ArrayItem' === e.__proto__.constructor.name,
-                    k = (e, t) => (e.length > 0 ? `${e}.${t}` : t),
-                    M = (e) =>
+                    M = (e, t) => (e.length > 0 ? `${e}.${t}` : t),
+                    k = (e) =>
                         ((e, t) =>
                             e.split('.').reduce((e, u) => {
                                 const n = L(`${e}.${u}`, window);
@@ -2334,7 +2334,7 @@
                                     u = t.caller,
                                     n = t.resId,
                                     r = window.__feature && window.__feature !== u && u ? `subViews.${u}` : '';
-                                return { modelPrefix: r, modelPath: k(r, e || ''), resId: n };
+                                return { modelPrefix: r, modelPath: M(r, e || ''), resId: n };
                             })(),
                             u = t.modelPrefix,
                             n = e.split('.');
@@ -2342,7 +2342,7 @@
                             const e = [n[0]];
                             return (
                                 n.reduce((t, n) => {
-                                    const r = L(k(u, `${t}.${n}`), window);
+                                    const r = L(M(u, `${t}.${n}`), window);
                                     return x(r) ? (e.push(r.id), `${t}.${n}.value`) : (e.push(n), `${t}.${n}`);
                                 }),
                                 e.reduce((e, t) => e + '.' + t)
@@ -2370,7 +2370,7 @@
                                     const t = L(e, window);
                                     for (const e in t) 'function' == typeof t[e] && (t[e] = t[e].bind(t));
                                     return x(t) ? t.value : t;
-                                })(M(l)),
+                                })(k(l)),
                             ),
                             c = s[0],
                             d = s[1],
@@ -2802,13 +2802,13 @@
                             },
                             [i, c, E],
                         ),
-                        k = (0, n.useCallback)(
+                        M = (0, n.useCallback)(
                             (e) => {
                                 m && m(e);
                             },
                             [m],
                         ),
-                        M = (0, n.useCallback)(
+                        k = (0, n.useCallback)(
                             (e) => {
                                 i || (A && A(e), C(!1));
                             },
@@ -2858,8 +2858,8 @@
                                 ref: g,
                                 className: H,
                                 onMouseEnter: x,
-                                onMouseMove: k,
-                                onMouseUp: M,
+                                onMouseMove: M,
+                                onMouseUp: k,
                                 onMouseDown: P,
                                 onMouseLeave: O,
                                 onClick: T,
@@ -3130,8 +3130,8 @@
                     Te = u.n(Le);
                 const xe = 'ScrollArea_base_47',
                     Re = 'ScrollArea_base__scrollIndent_1d',
-                    ke = 'ScrollArea_base__verticalScrollbarMargin_50',
-                    Me = 'ScrollArea_base__multiple_44',
+                    Me = 'ScrollArea_base__verticalScrollbarMargin_50',
+                    ke = 'ScrollArea_base__multiple_44',
                     Pe = 'ScrollArea_base__hidden_ec',
                     Oe = r().forwardRef((e, t) => {
                         const u = e.offsetLeft,
@@ -3161,12 +3161,12 @@
                             T = L[0],
                             x = L[1],
                             R = (0, n.useRef)(null),
-                            k = (0, n.useCallback)(() => {
+                            M = (0, n.useCallback)(() => {
                                 S &&
                                     c &&
                                     c({ x: S.scrollbarXActive, y: S.scrollbarYActive }, { x: S.reach.x, y: S.reach.y });
                             }, [c, S]),
-                            M = (0, n.useCallback)(() => S, [S]),
+                            k = (0, n.useCallback)(() => S, [S]),
                             P = (0, n.useCallback)(() => {
                                 S && S.update();
                             }, [S]),
@@ -3222,9 +3222,9 @@
                                 S &&
                                     (S.update(),
                                     (R.current = h(() => {
-                                        k();
+                                        M();
                                     })));
-                            }, [S, k]),
+                            }, [S, M]),
                             j = (0, n.useCallback)((e) => {
                                 0 === e.screenX &&
                                     0 === e.screenY &&
@@ -3272,9 +3272,9 @@
                             (0, n.useEffect)(
                                 () =>
                                     h(() => {
-                                        S && k();
+                                        S && M();
                                     }),
-                                [k, S],
+                                [M, S],
                             ),
                             (0, n.useEffect)(() => {
                                 o > 0 && H(o);
@@ -3289,9 +3289,9 @@
                                     (b.setScrollLeftImmediately = H),
                                     (b.setScrollTopImmediately = W),
                                     (b.updateScrollArea = P),
-                                    (b.getScrollbar = M));
-                            }, [b, O, H, N, W, P, M]));
-                        const V = l()(xe, { [Re]: _, [Pe]: !C, [ke]: F, [Me]: g }, v);
+                                    (b.getScrollbar = k));
+                            }, [b, O, H, N, W, P, k]));
+                        const V = l()(xe, { [Re]: _, [Pe]: !C, [Me]: F, [ke]: g }, v);
                         return r().createElement('div', { className: V, ref: G }, p);
                     }),
                     He = ['children'];
@@ -3412,7 +3412,6 @@
                         (e.TankmenXpFactor = 'tankmenXPFactor'),
                         (e.FreeXpFactor = 'freeXPFactor'),
                         (e.BattleToken = 'battleToken'),
-                        (e.Entitlements = 'entitlements'),
                         (e.PremiumUniversal = 'premium_universal'),
                         (e.Gold = 'gold'),
                         (e.Credits = 'credits'),
@@ -3452,16 +3451,9 @@
                         (e.GoldenTicket = 'birthday2025_golden_ticket'),
                         (e.PostStamp = 'giftsystem_4_stamp'),
                         (e.Quests = 'quests'),
-                        (e.BlankPersonalMissions_1 = 'freeTokens_0'),
-                        (e.BlankPersonalMissions_2 = 'freeTokens_2'),
-                        (e.SACoin = 'sacoin'),
                         (e.ArmoryCoin = 'armory_coin'),
                         (e.PremiumPlusUniversal = 'premium_plus_universal'),
-                        (e.DogTagType = 'dogTagComponents'),
-                        (e.NyPetGoodies = 'nyPetGoodies'),
-                        (e.HiddenVehicle = 'hidden_vehicle'),
-                        (e.NyStaticDogTag = 'nyStaticDogTag'),
-                        (e.Ny26Toys = 'ny26Toys'));
+                        (e.DogTagType = 'dogTagComponents'));
                 })($e || ($e = {})),
                     (function (e) {
                         ((e.Gold = 'gold'),
@@ -3706,8 +3698,8 @@
                     Tt = 'ContentGrid_scrollArea_98',
                     xt = 'ContentGrid_scrollAreaInner_32',
                     Rt = 'ContentGrid_reward_4b',
-                    kt = 'ContentGrid_lip_7e',
-                    Mt = 'ContentGrid_lip__top_2c',
+                    Mt = 'ContentGrid_lip_7e',
+                    kt = 'ContentGrid_lip__top_2c',
                     Pt = 'ContentGrid_lip__bottom_70';
                 function Ot() {
                     return (
@@ -3842,8 +3834,8 @@
                                             ),
                                         ),
                                 ),
-                                A && 'start' !== d && r().createElement('div', { className: l()(kt, Mt) }),
-                                A && 'end' !== d && r().createElement('div', { className: l()(kt, Pt) }),
+                                A && 'start' !== d && r().createElement('div', { className: l()(Mt, kt) }),
+                                A && 'end' !== d && r().createElement('div', { className: l()(Mt, Pt) }),
                             )
                         );
                     },
@@ -4312,8 +4304,8 @@
                     Tu = yu[1],
                     xu = 'App_base_ee',
                     Ru = 'App_content_eb',
-                    ku = 'App_background_93',
-                    Mu = 'App_shadow_8e',
+                    Mu = 'App_background_93',
+                    ku = 'App_shadow_8e',
                     Pu = 'App_close_ec',
                     Ou = R.strings.personal_missions_3.RewardsSelectionView,
                     Hu = (0, p.Pi)(() => {
@@ -4337,8 +4329,8 @@
                             r().createElement(
                                 'div',
                                 { className: xu },
-                                r().createElement('div', { className: ku }),
                                 r().createElement('div', { className: Mu }),
+                                r().createElement('div', { className: ku }),
                                 u &&
                                     r().createElement(
                                         'div',
@@ -4446,6 +4438,6 @@
                 u = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             (u.forEach(t.bind(null, 0)), (u.push = t.bind(null, u.push.bind(u))));
         })());
-    var __webpack_exports__ = __webpack_require__.O(void 0, [650], () => __webpack_require__(225));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [650], () => __webpack_require__(680));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

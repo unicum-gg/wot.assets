@@ -117,7 +117,7 @@
                                 for (r = 0; r < a.length; r++) ((t = a[r]), e.indexOf(t) >= 0 || (E[t] = u[t]));
                                 return E;
                             })(u, s);
-                        const Q = (0, i.useMemo)(() => {
+                        const K = (0, i.useMemo)(() => {
                                 const u = { mt: n, mr: c, mb: d, ml: g },
                                     e = ((u) =>
                                         B.reduce((e, t) => {
@@ -144,9 +144,9 @@
                                     computedClassNames: e,
                                 };
                             }, [t, r, n, c, d, g, G, U, P, x, H, M, R]),
-                            K = Q.computedStyle,
-                            q = Q.computedClassNames;
-                        return F().createElement('div', o({ className: E()(D.Z.base, ...q, e), style: K }, X), Z);
+                            Q = K.computedStyle,
+                            q = K.computedClassNames;
+                        return F().createElement('div', o({ className: E()(D.Z.base, ...q, e), style: Q }, X), Z);
                     });
             },
             280: (u, e, t) => {
@@ -1178,7 +1178,7 @@
                 'use strict';
                 t.d(e, { D9: () => E });
                 var r = t(2790);
-                (t(3469), t(2133), t(1618), t(579), t(5360), t(9056));
+                (t(3469), t(2133), t(579), t(5360), t(9056));
                 const E = r.Z;
             },
             6536: (u, e, t) => {
@@ -1311,10 +1311,6 @@
                         e.current
                     );
                 };
-            },
-            1618: (u, e, t) => {
-                'use strict';
-                t(6179);
             },
             579: (u, e, t) => {
                 'use strict';
@@ -2009,8 +2005,8 @@
                     total: G,
                     bubbleCounter: Z,
                     title: X,
-                    description: Q,
-                    onClick: K,
+                    description: K,
+                    onClick: Q,
                 }) => {
                     var q;
                     const Y = null != (q = (0, k.D9)(j)) ? q : j,
@@ -2046,8 +2042,8 @@
                             t || $(!1);
                         }, [t]),
                         Du = (0, a.useCallback)(() => {
-                            (O.$.playClick(), K(u), $(!1));
-                        }, [K, u]);
+                            (O.$.playClick(), Q(u), $(!1));
+                        }, [Q, u]);
                     return A().createElement(
                         'div',
                         {
@@ -2108,7 +2104,7 @@
                                             text: R.strings.quests.dailyQuests.tab.bull(),
                                             className: M,
                                         }),
-                                    A().createElement(P.ZP, { text: Q }),
+                                    A().createElement(P.ZP, { text: K }),
                                 ),
                             ),
                         ),
@@ -2132,8 +2128,7 @@
                     (function (u) {
                         ((u[(u.DailyQuests = 0)] = 'DailyQuests'),
                             (u[(u.PremiumQuests = 1)] = 'PremiumQuests'),
-                            (u[(u.PlayStreak = 2)] = 'PlayStreak'),
-                            (u[(u.NYQuests = 3)] = 'NYQuests'));
+                            (u[(u.PlayStreak = 2)] = 'PlayStreak'));
                     })(r || (r = {})));
             },
             3099: (u, e, t) => {

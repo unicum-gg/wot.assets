@@ -175,7 +175,7 @@
                         setEventHandled: () => v,
                         setInputPaddingsRem: () => r,
                         setSidePaddingsRem: () => i,
-                        whenTutorialReady: () => T,
+                        whenTutorialReady: () => f,
                     }));
                 var A = E(3722),
                     F = E(6112),
@@ -248,7 +248,7 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    T = Promise.all([
+                    f = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : t.U.onDomBuilt(u);
                         }),
@@ -937,8 +937,8 @@
                             { caller: E, stack: e, resId: A }
                         );
                     },
-                    T = (u, e) => u.split('.').reduce((u, e) => u && u[e], e),
-                    f = (u) => {
+                    f = (u, e) => u.split('.').reduce((u, e) => u && u[e], e),
+                    T = (u) => {
                         const e = (0, A.useRef)(!1);
                         e.current || (u(), (e.current = !0));
                     },
@@ -947,7 +947,7 @@
                     S = (u) =>
                         ((u, e) =>
                             u.split('.').reduce((u, E) => {
-                                const A = T(`${u}.${E}`, window);
+                                const A = f(`${u}.${E}`, window);
                                 return O(A) ? e(u, E, A) : `${u}.${E}`;
                             }))(u, (u, e) => `${u}.${e}.value`),
                     k = (u) => {
@@ -964,7 +964,7 @@
                             const u = [A[0]];
                             return (
                                 A.reduce((e, A) => {
-                                    const F = T(y(E, `${e}.${A}`), window);
+                                    const F = f(y(E, `${e}.${A}`), window);
                                     return O(F) ? (u.push(F.id), `${e}.${A}.value`) : (u.push(A), `${e}.${A}`);
                                 }),
                                 u.reduce((u, e) => u + '.' + e)
@@ -989,7 +989,7 @@
                         ),
                         o = (0, A.useState)(() =>
                             ((u) => {
-                                const e = T(u, window);
+                                const e = f(u, window);
                                 for (const u in e) 'function' == typeof e[u] && (e[u] = e[u].bind(e));
                                 return O(e) ? e.value : e;
                             })(S(r)),
@@ -998,7 +998,7 @@
                         i = o[1],
                         s = (0, A.useRef)(-1);
                     return (
-                        f(() => {
+                        T(() => {
                             if (
                                 ('boolean' == typeof e &&
                                     ((e = e ? M.Deep : M.None),
@@ -1047,7 +1047,6 @@
                         (u.TankmenXpFactor = 'tankmenXPFactor'),
                         (u.FreeXpFactor = 'freeXPFactor'),
                         (u.BattleToken = 'battleToken'),
-                        (u.Entitlements = 'entitlements'),
                         (u.PremiumUniversal = 'premium_universal'),
                         (u.Gold = 'gold'),
                         (u.Credits = 'credits'),
@@ -1087,16 +1086,9 @@
                         (u.GoldenTicket = 'birthday2025_golden_ticket'),
                         (u.PostStamp = 'giftsystem_4_stamp'),
                         (u.Quests = 'quests'),
-                        (u.BlankPersonalMissions_1 = 'freeTokens_0'),
-                        (u.BlankPersonalMissions_2 = 'freeTokens_2'),
-                        (u.SACoin = 'sacoin'),
                         (u.ArmoryCoin = 'armory_coin'),
                         (u.PremiumPlusUniversal = 'premium_plus_universal'),
-                        (u.DogTagType = 'dogTagComponents'),
-                        (u.NyPetGoodies = 'nyPetGoodies'),
-                        (u.HiddenVehicle = 'hidden_vehicle'),
-                        (u.NyStaticDogTag = 'nyStaticDogTag'),
-                        (u.Ny26Toys = 'ny26Toys'));
+                        (u.DogTagType = 'dogTagComponents'));
                 })(U || (U = {})),
                     (function (u) {
                         ((u.Gold = 'gold'),

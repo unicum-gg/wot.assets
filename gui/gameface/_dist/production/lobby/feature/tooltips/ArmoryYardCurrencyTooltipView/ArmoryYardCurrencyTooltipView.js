@@ -1963,7 +1963,8 @@
                             c = gu.$num(B.getMonth() + 1),
                             m = B.getFullYear(),
                             C = Du(E, Fu.SHORT_TIME, !0),
-                            d = l === m;
+                            d = l === m,
+                            g = 0 !== r && 0 !== E;
                         return n().createElement(
                             'div',
                             { className: du.base },
@@ -2038,28 +2039,29 @@
                                         },
                                     },
                                 }),
-                                n().createElement('div', { className: du.bottomSeparator }),
+                                g && n().createElement('div', { className: du.bottomSeparator }),
                             ),
-                            n().createElement(nu, {
-                                text: d ? hu.availabilityPeriodShort() : hu.availabilityPeriod(),
-                                className: du.availabilityPeriod,
-                                format: {
-                                    binding: {
-                                        availability: n().createElement(nu, {
-                                            className: du.availability,
-                                            text: hu.availability(),
-                                        }),
-                                        startDay: D,
-                                        startMonth: o,
-                                        startYear: l,
-                                        startTime: s,
-                                        endDay: _,
-                                        endMonth: c,
-                                        endYear: m,
-                                        endTime: C,
+                            g &&
+                                n().createElement(nu, {
+                                    text: d ? hu.availabilityPeriodShort() : hu.availabilityPeriod(),
+                                    className: du.availabilityPeriod,
+                                    format: {
+                                        binding: {
+                                            availability: n().createElement(nu, {
+                                                className: du.availability,
+                                                text: hu.availability(),
+                                            }),
+                                            startDay: D,
+                                            startMonth: o,
+                                            startYear: l,
+                                            startTime: s,
+                                            endDay: _,
+                                            endMonth: c,
+                                            endYear: m,
+                                            endTime: C,
+                                        },
                                     },
-                                },
-                            }),
+                                }),
                         );
                     });
                 engine.whenReady.then(() => {

@@ -1372,12 +1372,12 @@
                             F = u.$dyn(`common${A}`);
                         return E || F;
                     },
-                    be = (u, e) => {
+                    be = (u, e = _e.Medium) => {
                         const t = R.images.gui.maps.icons.battlePass.chapter_choice.commander,
                             A = Se(e);
                         return { backgroundImage: `url(${ve(t, u, A)})` };
                     },
-                    Le = (u, e) => {
+                    Le = (u, e = _e.Medium) => {
                         const t = R.images.gui.maps.icons.battlePass.chapter_choice.tank.default,
                             A = Se(e);
                         return { backgroundImage: `url(${ve(t, u, A)})` };

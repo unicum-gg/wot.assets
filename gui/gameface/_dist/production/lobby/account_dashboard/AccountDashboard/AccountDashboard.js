@@ -737,7 +737,7 @@
                     };
                 window.ViewEnvHelper = y;
             },
-            693: (e, u, t) => {
+            816: (e, u, t) => {
                 'use strict';
                 var a = t(179),
                     n = t.n(a);
@@ -3464,10 +3464,10 @@
                     pa = 'Countdown_icon_8b',
                     ba = 'Countdown_description_8d',
                     ha = (e) => e.toString().padStart(2, '0'),
-                    va = (e, u, t = !1) => {
+                    va = (e, u) => {
                         switch (u) {
                             case Ca.Description:
-                                return ((e, u = !0, t = !1) =>
+                                return ((e, u = !0) =>
                                     e.days > 7 && u
                                         ? z(R.strings.common.duration.days(), { days: e.days })
                                         : e.days >= 1
@@ -3477,12 +3477,8 @@
                                           : e.hours >= 1
                                             ? 0 === e.minutes
                                                 ? z(R.strings.common.duration.hours(), { hours: e.hours })
-                                                : `${z(R.strings.common.duration.hours(), { hours: e.hours })} ${z(t ? R.strings.common.duration.shortMinutes() : R.strings.common.duration.minutes(), { minutes: e.minutes })}`
-                                            : z(R.strings.common.duration.minutes(), { minutes: e.minutes || 1 }))(
-                                    e,
-                                    !0,
-                                    t,
-                                );
+                                                : `${z(R.strings.common.duration.hours(), { hours: e.hours })} ${z(R.strings.common.duration.minutes(), { minutes: e.minutes })}`
+                                            : z(R.strings.common.duration.minutes(), { minutes: e.minutes || 1 }))(e);
                             case Ca.Short:
                                 return `${ha(e.minutes)}:${ha(e.seconds)}`;
                             case Ca.Long:
@@ -3506,17 +3502,16 @@
                     ka = (0, a.memo)(
                         ({
                             duration: e,
-                            withShortMinutes: u = !1,
-                            icon: t = Ba.Timer,
-                            style: r = Ca.Description,
-                            onTimeReached: o,
-                            className: i = '',
-                            classNames: l = {},
-                            labelFormat: c = '',
+                            icon: u = Ba.Timer,
+                            style: t = Ca.Description,
+                            onTimeReached: r,
+                            className: o = '',
+                            classNames: i = {},
+                            labelFormat: l = '',
                         }) => {
-                            const d = r !== Ca.Description ? 1 : void 0,
-                                E = Fe(e, d),
-                                _ = (() => {
+                            const c = t !== Ca.Description ? 1 : void 0,
+                                d = Fe(e, c),
+                                E = (() => {
                                     const e = (0, a.useState)(s.O.view.getScale()),
                                         u = e[0],
                                         t = e[1];
@@ -3535,23 +3530,23 @@
                                         u
                                     );
                                 })();
-                            o && o[E] && o[E]();
-                            const m = va(ne(E), r, u);
+                            r && r[d] && r[d]();
+                            const _ = va(ne(d), t);
                             return n().createElement(
                                 'div',
-                                { className: g()(ga, i) },
-                                t !== Ba.None &&
+                                { className: g()(ga, o) },
+                                u !== Ba.None &&
                                     n().createElement('div', {
-                                        className: g()(pa, l.icon),
-                                        style: { backgroundImage: `url('${wa(t, _)}')` },
+                                        className: g()(pa, i.icon),
+                                        style: { backgroundImage: `url('${wa(u, E)}')` },
                                     }),
-                                c
+                                l
                                     ? n().createElement(
                                           'div',
-                                          { className: g()(ba, l.text) },
-                                          n().createElement(xe, { text: c, binding: { timerText: m } }),
+                                          { className: g()(ba, i.text) },
+                                          n().createElement(xe, { text: l, binding: { timerText: _ } }),
                                       )
-                                    : n().createElement('div', { className: g()(ba, l.text) }, m),
+                                    : n().createElement('div', { className: g()(ba, i.text) }, _),
                             );
                         },
                     );
@@ -4073,6 +4068,6 @@
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             (t.forEach(u.bind(null, 0)), (t.push = u.bind(null, t.push.bind(t))));
         })());
-    var __webpack_exports__ = __webpack_require__.O(void 0, [507], () => __webpack_require__(693));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [507], () => __webpack_require__(816));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

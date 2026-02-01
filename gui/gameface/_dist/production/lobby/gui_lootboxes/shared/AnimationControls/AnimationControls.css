@@ -53,6 +53,9 @@
 .AnimationControls_base__disabledAnimadion_89 .AnimationControls_icon_05 {
     background-image: url('R.images.gui_lootboxes.gui.maps.openBox.icon_show_video');
 }
+.AnimationControls_base__disabledAnimadionButton_c5 .AnimationControls_icon_05 {
+    background-image: url('R.images.gui_lootboxes.gui.maps.openBox.icon_show_video_disabled');
+}
 .AnimationControls_text_20 {
     font-size: 12rem;
     line-height: 14rem;
