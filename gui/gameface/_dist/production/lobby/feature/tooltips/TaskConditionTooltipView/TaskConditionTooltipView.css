@@ -313,16 +313,6 @@
     left: 0;
 }
 
-.App_metal_0a {
-    width: 320rem;
-    height: 88rem;
-    background: url('R.images.armory_yard.gui.maps.icons.tooltips.metal') no-repeat left / cover;
-    mix-blend-mode: screen;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
 .App_header_fb {
     color: #e9e2bf;
     font-size: 15rem;
@@ -341,7 +331,8 @@
     margin-bottom: 6rem;
 }
 
-.App_subtitle__level_1f {
+.App_subtitle__level_1f,
+.App_subtitle__nation_bd {
     margin-bottom: 4rem;
 }
 
@@ -356,7 +347,7 @@
     background: url('R.images.armory_yard.gui.maps.icons.quests.quest.flag') no-repeat center / cover;
 }
 
-.App_battleType_a4 {
+.App_itemList_ba {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -364,7 +355,7 @@
     margin-bottom: -2rem;
 }
 
-.App_battleType__vehicle_0d {
+.App_itemList__vehicle_09 {
     margin-bottom: 0rem;
 }
 
@@ -421,4 +412,11 @@
     margin-right: -4rem;
     background: no-repeat center / cover;
     opacity: 0.8;
+}
+
+.App_vehicleNationIcon_17 {
+    width: 25rem;
+    height: 17rem;
+    margin: 4rem 4rem 4rem 0;
+    background: no-repeat center / cover;
 }

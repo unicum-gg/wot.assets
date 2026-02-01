@@ -41,15 +41,20 @@
     align-content: center;
 }
 .AnimationControls_icon_05 {
-    width: 32rem;
-    height: 32rem;
-    background: url('R.images.gui_lootboxes.gui.maps.openBox.icon_hide_video') no-repeat center / 150%;
-    mix-blend-mode: screen;
+    width: 48rem;
+    height: 48rem;
+    background: url('R.images.gui_lootboxes.gui.maps.openBox.icon_hide_video') no-repeat center / 100%;
     position: relative;
-    top: 0;
+    top: 7rem;
+}
+.AnimationControls_base__disabled_ec .AnimationControls_icon_05 {
+    background-image: url('R.images.gui_lootboxes.gui.maps.openBox.icon_hide_video_disabled');
 }
 .AnimationControls_base__disabledAnimadion_89 .AnimationControls_icon_05 {
     background-image: url('R.images.gui_lootboxes.gui.maps.openBox.icon_show_video');
+}
+.AnimationControls_base__disabledAnimadionButton_c5 .AnimationControls_icon_05 {
+    background-image: url('R.images.gui_lootboxes.gui.maps.openBox.icon_show_video_disabled');
 }
 .AnimationControls_text_20 {
     font-size: 12rem;

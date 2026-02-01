@@ -1005,6 +1005,7 @@
                                         clearInterval(n);
                                     };
                                 }
+                                A(0);
                             }, [u, e, t, r]),
                             n
                         );
@@ -1756,7 +1757,7 @@
                             void 0 !== _ ? A().createElement(U, bu({}, _, { text: e })) : e,
                         );
                     });
-                var Pu = t(8515);
+                var Pu = t(3403);
                 function Nu() {}
                 function Hu() {
                     return !1;

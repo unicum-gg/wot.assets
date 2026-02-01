@@ -1429,6 +1429,10 @@
     margin-right: 20rem;
 }
 
+.AwardsWidget_base__small_19 .AwardsWidget_award_c6:last-child {
+    margin-right: 0;
+}
+
 .AwardsWidget_base__big_f7 .AwardsWidget_award_c6 {
     margin-right: 20rem;
 }
@@ -1437,17 +1441,7 @@
     margin-right: 30rem;
 }
 
-.AwardsWidget_base__small_19 .AwardsWidget_award__last_0d {
-    margin-right: 0;
-}
-
-@media (min-width: 1280px) and (max-width: 1366px) {
-    .AwardsWidget_base__small_19 .AwardsWidget_award__last_0d {
-        margin-right: 5rem;
-    }
-}
-
-.AwardsWidget_base__big_f7 .AwardsWidget_award__last_0d {
+.AwardsWidget_base__big_f7 .AwardsWidget_award_c6:last-child {
     margin-right: 0;
 }
 
@@ -1457,6 +1451,7 @@
     align-items: center;
     width: 100%;
     height: 100%;
+    background-color: #000;
     overflow: hidden;
     position: relative;
 }
@@ -1471,7 +1466,6 @@
 .App_background_6b {
     width: 100%;
     height: 117%;
-    background: url('R.images.gui.maps.icons.battlePass.backgrounds.common_chapter_select') no-repeat center / cover;
     overflow: hidden;
     position: absolute;
     bottom: 0;
@@ -1539,55 +1533,51 @@
     right: 0;
 }
 .App_chapterHolder_48 {
-    width: 242rem;
+    width: 1870rem;
     height: 744rem;
     position: relative;
 }
 .mediaMedium .App_chapterHolder_48 {
-    width: 376rem;
     height: 1156rem;
 }
 .mediaLarge .App_chapterHolder_48 {
-    width: 452rem;
     height: 1390rem;
 }
 .mediaExtraLarge .App_chapterHolder_48 {
-    width: 608rem;
     height: 1870rem;
 }
 .App_base__hasMarathon_7f .App_chapterHolder_48 {
-    width: 196rem;
     height: 603rem;
 }
 .mediaSmall .App_base__hasMarathon_7f .App_chapterHolder_48 {
-    width: 242rem;
     height: 744rem;
 }
 .mediaMedium .App_base__hasMarathon_7f .App_chapterHolder_48 {
-    width: 300rem;
     height: 923rem;
 }
 .mediaLarge .App_base__hasMarathon_7f .App_chapterHolder_48 {
-    width: 354rem;
     height: 1089rem;
 }
 .mediaExtraLarge .App_base__hasMarathon_7f .App_chapterHolder_48 {
-    width: 468rem;
     height: 1440rem;
 }
 .App_chapterLeft_91 {
-    background: url('R.images.gui.maps.icons.battlePass.chapter_choice.chapter.c_left') no-repeat right / 100%;
-    mask-image: linear-gradient(to right, transparent, #000 30%, #000 100%);
+    background: url('R.images.gui.maps.icons.battlePass.chapter_choice.chapter.left_edge') no-repeat right / contain;
+}
+.App_chapterLeft__active_31 {
+    background-image: url('R.images.gui.maps.icons.battlePass.chapter_choice.chapter.left_edge_active');
 }
 .App_base__hasMarathon_7f .App_chapterLeft_91 {
-    background-image: url('R.images.gui.maps.icons.battlePass.chapter_choice.marathon.c_left');
+    background-image: url('R.images.gui.maps.icons.battlePass.chapter_choice.marathon.left_edge');
 }
 .App_chapterRight_5c {
-    background: url('R.images.gui.maps.icons.battlePass.chapter_choice.chapter.c_right') no-repeat left / 100%;
-    mask-image: linear-gradient(to left, transparent, #000 30%, #000 100%);
+    background: url('R.images.gui.maps.icons.battlePass.chapter_choice.chapter.right_edge') no-repeat left / contain;
+}
+.App_chapterRight__active_bd {
+    background-image: url('R.images.gui.maps.icons.battlePass.chapter_choice.chapter.right_edge_active');
 }
 .App_base__hasMarathon_7f .App_chapterRight_5c {
-    background-image: url('R.images.gui.maps.icons.battlePass.chapter_choice.marathon.c_right');
+    background-image: url('R.images.gui.maps.icons.battlePass.chapter_choice.marathon.right_edge');
 }
 
 .CButton_base_40 {
@@ -2433,10 +2423,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     filter: grayscale(0.5);
 }
 
-.Chapter_base__completed_88 .Chapter_bg_2e {
-    filter: brightness(88%);
-}
-
 .Chapter_bgInner_83 {
     width: 100%;
     height: 100%;
@@ -2518,7 +2504,10 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     position: relative;
     top: 10rem;
     z-index: 1;
-    transition: filter 0.3s linear;
+    transform: translateY(0rem);
+    transition:
+        filter 0.3s linear,
+        transform 0.3s linear;
 }
 
 .mediaMedium .Chapter_commanderImg_90 {
@@ -2542,11 +2531,12 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .Chapter_base__completed_88 .Chapter_commanderImg_90 {
-    filter: brightness(70%);
+    filter: brightness(90%);
 }
 
 .Chapter_base_f0:hover .Chapter_commanderImg_90 {
     filter: brightness(100%);
+    transform: translateY(-10rem);
 }
 
 .Chapter_base__disabled_6d .Chapter_commanderImg_90 {
@@ -2724,6 +2714,22 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     left: -63rem;
 }
 
+.Chapter_frameLeft__yellow_27 {
+    background-image: url('R.images.gui.maps.icons.battlePass.chapter_choice.active_left_yellow');
+}
+
+.Chapter_frameLeft__red_08 {
+    background-image: url('R.images.gui.maps.icons.battlePass.chapter_choice.active_left_red');
+}
+
+.Chapter_frameLeft__blue_76 {
+    background-image: url('R.images.gui.maps.icons.battlePass.chapter_choice.active_left_blue');
+}
+
+.Chapter_frameLeft__green_52 {
+    background-image: url('R.images.gui.maps.icons.battlePass.chapter_choice.active_left_green');
+}
+
 .Chapter_frameRight_fa {
     background: url('R.images.gui.maps.icons.battlePass.chapter_choice.active_right') no-repeat center / contain;
     right: -37rem;
@@ -2747,14 +2753,32 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     right: -63rem;
 }
 
+.Chapter_frameRight__yellow_64 {
+    background-image: url('R.images.gui.maps.icons.battlePass.chapter_choice.active_right_yellow');
+}
+
+.Chapter_frameRight__red_1a {
+    background-image: url('R.images.gui.maps.icons.battlePass.chapter_choice.active_right_red');
+}
+
+.Chapter_frameRight__blue_ae {
+    background-image: url('R.images.gui.maps.icons.battlePass.chapter_choice.active_right_blue');
+}
+
+.Chapter_frameRight__green_d0 {
+    background-image: url('R.images.gui.maps.icons.battlePass.chapter_choice.active_right_green');
+}
+
 .Chapter_vehicleImg_b1 {
     filter: brightness(100%);
     position: absolute;
     bottom: -40rem;
     left: 50%;
     z-index: 3;
-    transform: translateX(-50%);
-    transition: filter 0.3s linear;
+    transform: translateX(-50%) scale(1);
+    transition:
+        filter 0.3s linear,
+        transform 0.3s linear;
 }
 
 .Chapter_base__small_32 .Chapter_vehicleImg_b1 {
@@ -2819,6 +2843,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 
 .Chapter_base_f0:hover .Chapter_vehicleImg_b1 {
     filter: brightness(100%);
+    transform: translateX(-50%) scale(1.05);
 }
 
 .Chapter_content_61 {
@@ -2828,7 +2853,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     width: 100%;
     min-height: 160rem;
     margin-top: 25rem;
-    margin-bottom: -80rem;
+    margin-bottom: -40rem;
     position: relative;
     z-index: 2;
 }
@@ -2844,7 +2869,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .Chapter_base__small_32 .Chapter_content_61 {
-    margin-bottom: -80rem;
+    margin-bottom: -40rem;
 }
 
 .mediaLarge .Chapter_base__small_32 .Chapter_content_61 {
@@ -3353,24 +3378,24 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     position: relative;
 }
 
-.VehicleIcon_vehicleIcon_90 .VehicleIcon_base__visible_60 {
+.VehicleIcon_vehicleIcon_90 .VehicleIcon_vehicleActiveIcon__visible_34 {
     opacity: 0;
 }
 
-.VehicleIcon_vehicleIcon_90 .VehicleIcon_base__visible__fadeInAnimated_4c {
+.VehicleIcon_vehicleIcon_90 .VehicleIcon_vehicleActiveIcon__fadeInAnimated_e9 {
     opacity: 1;
     animation-name: VehicleIcon_fadeOut_60;
-    animation-duration: 0.2s;
+    animation-duration: 0.5s;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.07, 0.82, 0.17, 1);
     animation-delay: 0s;
     animation-iteration-count: 1;
 }
 
-.VehicleIcon_vehicleIcon_90 .VehicleIcon_base__visible__fadeOutAnimated_22 {
+.VehicleIcon_vehicleIcon_90 .VehicleIcon_vehicleActiveIcon__fadeOutAnimated_49 {
     opacity: 0;
     animation-name: VehicleIcon_fadeIn_22;
-    animation-duration: 0.2s;
+    animation-duration: 0.5s;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.07, 0.82, 0.17, 1);
     animation-delay: 0s;
@@ -3384,24 +3409,24 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     left: 0;
 }
 
-.VehicleIcon_vehicleActiveIcon_e0 .VehicleIcon_base__visible_60 {
+.VehicleIcon_vehicleActiveIcon__visible_34 {
     opacity: 1;
 }
 
-.VehicleIcon_vehicleActiveIcon_e0 .VehicleIcon_base__visible__fadeInAnimated_4c {
+.VehicleIcon_vehicleActiveIcon__fadeInAnimated_e9 {
     opacity: 0;
     animation-name: VehicleIcon_fadeIn_22;
-    animation-duration: 0.2s;
+    animation-duration: 0.5s;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.07, 0.82, 0.17, 1);
     animation-delay: 0s;
     animation-iteration-count: 1;
 }
 
-.VehicleIcon_vehicleActiveIcon_e0 .VehicleIcon_base__visible__fadeOutAnimated_22 {
+.VehicleIcon_vehicleActiveIcon__fadeOutAnimated_49 {
     opacity: 1;
     animation-name: VehicleIcon_fadeOut_60;
-    animation-duration: 0.2s;
+    animation-duration: 0.5s;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.07, 0.82, 0.17, 1);
     animation-delay: 0s;
@@ -3836,17 +3861,10 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .Label_textMask_7f {
     width: 100%;
     height: 100%;
-    background-image: url('R.images.gui.maps.icons.battlePass.logo.font_texture');
     background-position: 50% 4rem;
     background-size: 100% 100%;
     mix-blend-mode: multiply;
     position: absolute;
-}
-.Label_textMask__gold_71 {
-    background-image: url('R.images.gui.maps.icons.battlePass.logo.font_texture_gold');
-}
-.Label_textMask__goldContrast_05 {
-    background-image: url('R.images.gui.maps.icons.battlePass.logo.font_texture_gold_contrast');
 }
 .Label_textMask__animated_38 {
     opacity: 0;

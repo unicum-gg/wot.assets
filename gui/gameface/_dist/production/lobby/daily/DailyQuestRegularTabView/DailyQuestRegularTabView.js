@@ -1889,7 +1889,7 @@
                     D = t(3946);
                 const s = (0, A.q)()(({ observableModel: u }) => {
                         const e = { root: u.object(), quests: u.array('quests', []) },
-                            t = (0, D.Om)(() => s() === o()),
+                            t = (0, D.Om)(() => Boolean(s() && s() === o())),
                             r = (0, D.Om)(() => i.find(A(), (u) => u.status !== a.N.Done)),
                             E = (0, D.Om)((u) =>
                                 u && u.postBattleCondition.items.length >= 1
@@ -1919,7 +1919,7 @@
                     }, n.ZT),
                     o = s[0],
                     l = s[1];
-                var B = t(8515),
+                var B = t(3403),
                     C = t(8975),
                     _ = t(9153);
                 const c = R.strings.quests.dailyQuests.tab,

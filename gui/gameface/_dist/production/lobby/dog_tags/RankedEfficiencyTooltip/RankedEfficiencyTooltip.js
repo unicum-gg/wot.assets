@@ -842,12 +842,24 @@
                             (u.RankedSkill = 'ranked_skill'),
                             (u.Triumph = 'triumph'),
                             (u.Medal = 'triumph_medal'),
-                            (u.Base = 'base'));
+                            (u.Base = 'base'),
+                            (u.Static = 'static'));
                     })(w || (w = {})),
                     (function (u) {
-                        ((u.Dedication = 'dedication'), (u.Triumph = 'triumph'), (u.Season = 'season'));
+                        ((u.Dedication = 'dedication'),
+                            (u.Triumph = 'triumph'),
+                            (u.Season = 'season'),
+                            (u.Static = 'static'));
                     })(m || (m = {})));
-                (m.Dedication, w.Dedication, m.Triumph, w.Triumph, m.Season, w.Skill, w.RankedSkill);
+                (m.Dedication,
+                    w.Dedication,
+                    m.Triumph,
+                    w.Triumph,
+                    m.Season,
+                    w.Skill,
+                    w.RankedSkill,
+                    m.Static,
+                    w.Static);
                 let h;
                 !(function (u) {
                     ((u.NUMBER = 'NUMBER'), (u.PERCENTAGE = 'PERCENTAGE'));

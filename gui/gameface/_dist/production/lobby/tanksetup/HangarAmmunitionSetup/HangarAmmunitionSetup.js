@@ -3884,7 +3884,7 @@
                         return '';
                     };
             },
-            4642: (e, t, n) => {
+            9131: (e, t, n) => {
                 'use strict';
                 var a = {};
                 (n.r(a),
@@ -11765,7 +11765,8 @@
                                 t || l().createElement('span', null, '—'),
                             ),
                             _ = (0, o.useMemo)(() => {
-                                if ('avgPiercingPower' === e) return R.strings.menu.tank_params.no_brackets.mm();
+                                if ('avgPiercingPower' === e || 'distanceFactorPiercingPower' === e)
+                                    return R.strings.menu.tank_params.no_brackets.mm();
                             }, [e]);
                         return l().createElement(
                             'div',
@@ -12000,7 +12001,10 @@
                 }) => {
                     const u = i === qa.cJ.Tiny,
                         _ = r.map(({ value: e }, t) =>
-                            e && ('avgPiercingPower' === e.paramName || (!u && e.value))
+                            e &&
+                            ('avgPiercingPower' === e.paramName ||
+                                'distanceFactorPiercingPower' === e.paramName ||
+                                (!u && e.value))
                                 ? l().createElement(
                                       o.Fragment,
                                       { key: t },
@@ -15440,6 +15444,6 @@
                 n = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             (n.forEach(t.bind(null, 0)), (n.push = t.bind(null, n.push.bind(n))));
         })());
-    var __webpack_exports__ = __webpack_require__.O(void 0, [727], () => __webpack_require__(4642));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [727], () => __webpack_require__(9131));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

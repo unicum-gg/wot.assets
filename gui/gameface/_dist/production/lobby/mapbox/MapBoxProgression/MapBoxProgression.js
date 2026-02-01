@@ -3219,7 +3219,10 @@
                         (e.LootBoxToken = 'lootBoxToken'),
                         (e.GoldenTicket = 'birthday2025_golden_ticket'),
                         (e.PostStamp = 'giftsystem_4_stamp'),
-                        (e.Quests = 'quests'));
+                        (e.Quests = 'quests'),
+                        (e.ArmoryCoin = 'armory_coin'),
+                        (e.PremiumPlusUniversal = 'premium_plus_universal'),
+                        (e.DogTagType = 'dogTagComponents'));
                 })(zu || (zu = {})),
                     (function (e) {
                         ((e.Gold = 'gold'),
@@ -3426,6 +3429,7 @@
                     zu.SelectableBonus,
                     zu.GoldenTicket,
                     zu.PostStamp,
+                    zu.PremiumPlusUniversal,
                     zu.Gold,
                     zu.Credits,
                     zu.Crystal,
@@ -3433,7 +3437,20 @@
                     zu.BattlePassPoints,
                     zu.PremiumPlus,
                     zu.Premium);
-                const tt = (e, u, t) => {
+                let tt;
+                !(function (e) {
+                    ((e.s16 = '16'),
+                        (e.s32 = '32'),
+                        (e.s48 = '48'),
+                        (e.s66 = '66'),
+                        (e.s80 = '80'),
+                        (e.s116 = '116'),
+                        (e.s296 = '296'),
+                        (e.s360 = '360'),
+                        (e.s400 = '400'),
+                        (e.s600 = '600'));
+                })(tt || (tt = {}));
+                const nt = (e, u, t) => {
                         const n = u && { contentId: u };
                         return Object.assign(
                             {
@@ -3446,7 +3463,7 @@
                             t,
                         );
                     },
-                    nt = {
+                    rt = {
                         base: 'Reward_base_ea',
                         base__s48x48: 'Reward_base__s48x48_46',
                         base__small: 'Reward_base__small_c0',
@@ -3471,7 +3488,7 @@
                         info__premiumTank: 'Reward_info__premiumTank_d3',
                         timer: 'Reward_timer_d3',
                     },
-                    rt = ({
+                    at = ({
                         name: e,
                         image: u,
                         isPeriodic: t = !1,
@@ -3544,31 +3561,31 @@
                             })(s, o);
                         return r().createElement(
                             'div',
-                            { className: x()(nt.base, nt[`base__${n}`], l), style: i },
+                            { className: x()(rt.base, rt[`base__${n}`], l), style: i },
                             r().createElement(
                                 et,
-                                { tooltipArgs: E, className: nt.tooltipWrapper },
+                                { tooltipArgs: E, className: rt.tooltipWrapper },
                                 r().createElement(
                                     r().Fragment,
                                     null,
                                     r().createElement(
                                         'div',
-                                        { className: x()(nt.image, null == c ? void 0 : c.image) },
+                                        { className: x()(rt.image, null == c ? void 0 : c.image) },
                                         m &&
                                             r().createElement('div', {
-                                                className: x()(nt.highlight, null == c ? void 0 : c.highlight),
+                                                className: x()(rt.highlight, null == c ? void 0 : c.highlight),
                                                 style: {
                                                     backgroundImage: `url(R.images.gui.maps.icons.quests.bonuses.${n}.${m}_highlight)`,
                                                 },
                                             }),
                                         u &&
                                             r().createElement('div', {
-                                                className: x()(nt.icon, null == c ? void 0 : c.rewardIcon),
+                                                className: x()(rt.icon, null == c ? void 0 : c.rewardIcon),
                                                 style: { backgroundImage: `url(${u})` },
                                             }),
                                         d &&
                                             r().createElement('div', {
-                                                className: x()(nt.overlay, null == c ? void 0 : c.overlay),
+                                                className: x()(rt.overlay, null == c ? void 0 : c.overlay),
                                                 style: {
                                                     backgroundImage: `url(R.images.gui.maps.icons.quests.bonuses.${n}.${d}_overlay)`,
                                                 },
@@ -3579,9 +3596,9 @@
                                             'div',
                                             {
                                                 className: x()(
-                                                    nt.info,
-                                                    nt[`info__${e}`],
-                                                    o === ju.MULTI && nt.info__multi,
+                                                    rt.info,
+                                                    rt[`info__${e}`],
+                                                    o === ju.MULTI && rt.info__multi,
                                                     null == c ? void 0 : c.info,
                                                 ),
                                             },
@@ -3594,12 +3611,12 @@
                                     et,
                                     { tooltipArgs: _ },
                                     r().createElement('div', {
-                                        className: x()(nt.timer, null == c ? void 0 : c.periodicIcon),
+                                        className: x()(rt.timer, null == c ? void 0 : c.periodicIcon),
                                     }),
                                 ),
                         );
                     };
-                let at;
+                let st;
                 !(function (e) {
                     ((e.Goodies = 'goodies'),
                         (e.CrewBooks = 'crewBooks'),
@@ -3609,18 +3626,18 @@
                         (e.Guide = 'guide'),
                         (e.Brochure = 'brochure'),
                         (e.Items = 'items'));
-                })(at || (at = {}));
-                const st = [
-                        at.Goodies,
-                        at.CrewBooks,
-                        at.Customizations,
-                        at.DossierAchievement,
-                        at.Guide,
-                        at.Brochure,
-                        at.Items,
+                })(st || (st = {}));
+                const ot = [
+                        st.Goodies,
+                        st.CrewBooks,
+                        st.Customizations,
+                        st.DossierAchievement,
+                        st.Guide,
+                        st.Brochure,
+                        st.Items,
                     ],
-                    ot = (e) => (st.includes(e) ? ju.MULTI : e === at.PremiumPlus ? ju.PREMIUM_PLUS : ju.STRING),
-                    it = {
+                    it = (e) => (ot.includes(e) ? ju.MULTI : e === st.PremiumPlus ? ju.PREMIUM_PLUS : ju.STRING),
+                    lt = {
                         base: 'RewardItem_base_b9',
                         shine: 'RewardItem_shine_c1',
                         base__button: 'RewardItem_base__button_b4',
@@ -3639,9 +3656,9 @@
                         staticShine: 'RewardItem_staticShine_2a',
                         animationItem__explosion: 'RewardItem_animationItem__explosion_8a',
                     };
-                function lt() {
+                function ct() {
                     return (
-                        (lt =
+                        (ct =
                             Object.assign ||
                             function (e) {
                                 for (var u = 1; u < arguments.length; u++) {
@@ -3650,17 +3667,17 @@
                                 }
                                 return e;
                             }),
-                        lt.apply(this, arguments)
+                        ct.apply(this, arguments)
                     );
                 }
-                let ct;
+                let Et;
                 !(function (e) {
                     ((e.Idle = 'Idle'), (e.Changing = 'Changing'), (e.End = 'End'));
-                })(ct || (ct = {}));
-                const Et = { margin: '5rem' },
-                    _t = r().memo(({ onTakeReward: e, reward: u, requiredNumBattles: t, isReached: a }) => {
+                })(Et || (Et = {}));
+                const _t = { margin: '5rem' },
+                    mt = r().memo(({ onTakeReward: e, reward: u, requiredNumBattles: t, isReached: a }) => {
                         const s = u.isOpenable && a,
-                            o = u.previousIcon && a ? ct.Changing : ct.Idle,
+                            o = u.previousIcon && a ? Et.Changing : Et.Idle,
                             i = (0, n.useState)(o),
                             l = i[0],
                             c = i[1],
@@ -3669,7 +3686,7 @@
                                 e(u.name, u.index, t);
                             }, [e, t, u.index, u.name]),
                             m = (0, n.useCallback)(() => {
-                                c(ct.End);
+                                c(Et.End);
                             }, []);
                         (0, n.useEffect)(() => {
                             const e = E.current;
@@ -3686,8 +3703,8 @@
                                     name: u.name,
                                     image: `R.images.gui.maps.icons.mapbox.rewardItems.small.${u.icon}`,
                                     value: u.value,
-                                    valueType: ot(u.name),
-                                    tooltipArgs: tt({ tooltipId: u.tooltipId }, Number(u.tooltipContentId)),
+                                    valueType: it(u.name),
+                                    tooltipArgs: nt({ tooltipId: u.tooltipId }, Number(u.tooltipContentId)),
                                 }),
                                 [u],
                             ),
@@ -3696,65 +3713,65 @@
                                     name: u.name,
                                     image: `R.images.gui.maps.icons.mapbox.rewardItems.small.${u.previousIcon}`,
                                     value: u.value,
-                                    valueType: ot(u.name),
-                                    tooltipArgs: tt({ tooltipId: u.tooltipId }, Number(u.tooltipContentId)),
+                                    valueType: it(u.name),
+                                    tooltipArgs: nt({ tooltipId: u.tooltipId }, Number(u.tooltipContentId)),
                                 }),
                                 [u],
                             ),
-                            F = x()(it.base, s && it.base__button, l === ct.Changing && it.base__animated);
+                            F = x()(lt.base, s && lt.base__button, l === Et.Changing && lt.base__animated);
                         return r().createElement(
                             'div',
                             { className: F },
-                            s && r().createElement('div', { className: it.shine }),
-                            u.isSelected && r().createElement('div', { className: it.passed }),
+                            s && r().createElement('div', { className: lt.shine }),
+                            u.isSelected && r().createElement('div', { className: lt.passed }),
                             s &&
                                 r().createElement(
                                     K,
-                                    { onClick: _, size: V.small, type: q.main, mixClass: it.button },
+                                    { onClick: _, size: V.small, type: q.main, mixClass: lt.button },
                                     R.strings.mapbox.progression.takeButton(),
                                 ),
                             r().createElement(
                                 'div',
-                                { className: it.rewardWrapper },
-                                l === ct.Changing &&
+                                { className: lt.rewardWrapper },
+                                l === Et.Changing &&
                                     r().createElement(
                                         r().Fragment,
                                         null,
                                         r().createElement('div', {
-                                            className: x()(it.animationItem, it.animationItem__godRays),
+                                            className: x()(lt.animationItem, lt.animationItem__godRays),
                                         }),
                                         r().createElement('div', {
-                                            className: x()(it.animationItem, it.animationItem__staticShine),
+                                            className: x()(lt.animationItem, lt.animationItem__staticShine),
                                             ref: E,
                                         }),
                                         r().createElement('div', {
-                                            className: x()(it.animationItem, it.animationItem__explosion),
+                                            className: x()(lt.animationItem, lt.animationItem__explosion),
                                         }),
                                         r().createElement(
                                             'div',
-                                            { className: it.rewardPrevious },
-                                            r().createElement(rt, lt({ size: Yu.Small }, A, { style: Et })),
+                                            { className: lt.rewardPrevious },
+                                            r().createElement(at, ct({ size: Yu.Small }, A, { style: _t })),
                                         ),
                                     ),
                                 r().createElement(
                                     'div',
-                                    { className: it.rewardCurrent },
+                                    { className: lt.rewardCurrent },
                                     r().createElement(
-                                        rt,
-                                        lt({ size: Yu.Small }, d, {
-                                            style: Et,
-                                            special: u.name === at.Items ? qu.BATTLE_BOOSTER : void 0,
+                                        at,
+                                        ct({ size: Yu.Small }, d, {
+                                            style: _t,
+                                            special: u.name === st.Items ? qu.BATTLE_BOOSTER : void 0,
                                         }),
                                     ),
                                 ),
                             ),
                         );
                     }),
-                    mt = { base: 'Rewards_base_ba', items: 'Rewards_items_e4' },
-                    dt = r().memo(
+                    dt = { base: 'Rewards_base_ba', items: 'Rewards_items_e4' },
+                    At = r().memo(
                         ({ onTakeReward: e, progressRewards: u, requiredNumBattles: t, isReached: n, isLast: a }) => {
-                            const s = W(['box', 'items'], mt),
-                                o = x()(mt.base, a && mt.base__last);
+                            const s = W(['box', 'items'], dt),
+                                o = x()(dt.base, a && dt.base__last);
                             return r().createElement(
                                 'div',
                                 { className: o },
@@ -3762,7 +3779,7 @@
                                     'div',
                                     { className: s.items },
                                     u.map(({ value: u }, a) =>
-                                        r().createElement(_t, {
+                                        r().createElement(mt, {
                                             key: a,
                                             reward: u,
                                             requiredNumBattles: t,
@@ -3774,7 +3791,7 @@
                             );
                         },
                     ),
-                    At = {
+                    Ft = {
                         base: 'Progression_base_66',
                         progressWrapper: 'Progression_progressWrapper_5e',
                         base__large: 'Progression_base__large_db',
@@ -3798,14 +3815,14 @@
                         timer: 'Progression_timer_49',
                         timerIcon: 'Progression_timerIcon_91',
                     },
-                    Ft = {
+                    Dt = {
                         freezed: !1,
                         withStack: !1,
                         type: lu.Growing,
                         delta: { duration: 500, delay: 1900 },
                         line: { duration: 500, delay: 1900 },
                     },
-                    Dt = ({
+                    Bt = ({
                         onTakeReward: e,
                         onAnimationEnd: u,
                         rewards: t,
@@ -3823,7 +3840,7 @@
                             A = i >= a && s < i,
                             F = (0, n.useMemo)(
                                 () => ({
-                                    current: r().createElement('span', { className: At.highlight }, s),
+                                    current: r().createElement('span', { className: Ft.highlight }, s),
                                     total: a,
                                 }),
                                 [s, a],
@@ -3832,8 +3849,8 @@
                                 () => ({
                                     leftTime: r().createElement(
                                         'div',
-                                        { className: At.timer },
-                                        r().createElement('div', { className: At.timerIcon }),
+                                        { className: Ft.timer },
+                                        r().createElement('div', { className: Ft.timerIcon }),
                                         l,
                                     ),
                                 }),
@@ -3846,39 +3863,39 @@
                         (0, n.useEffect)(() => {
                             s === i || o || setTimeout(() => Y(R.sounds.ev_mapbox_progressbar_start()), 1300);
                         }, [o, i, a, s]);
-                        const g = W(['base'], At),
-                            p = x()(g.base, d && At.base__finally, A && At.base__reset);
+                        const g = W(['base'], Ft),
+                            p = x()(g.base, d && Ft.base__finally, A && Ft.base__reset);
                         return r().createElement(
                             'div',
                             { className: p },
                             r().createElement(
                                 'div',
-                                { className: At.progressWrapper },
+                                { className: Ft.progressWrapper },
                                 r().createElement(
                                     'div',
-                                    { className: At.progressBgWrapper },
+                                    { className: Ft.progressBgWrapper },
                                     t.map(({ value: e }) => {
                                         const u = B(e.numBattles),
                                             t = x()(
-                                                At.bgSectionNumber,
-                                                e.numBattles <= m && At.bgSectionNumber__passed,
+                                                Ft.bgSectionNumber,
+                                                e.numBattles <= m && Ft.bgSectionNumber__passed,
                                             );
                                         return r().createElement(
                                             r().Fragment,
                                             { key: e.numBattles },
-                                            r().createElement('div', { className: At.bgSection, style: u }),
+                                            r().createElement('div', { className: Ft.bgSection, style: u }),
                                             r().createElement('div', { className: t, style: u }, e.numBattles),
                                         );
                                     }),
                                 ),
                                 r().createElement(
                                     'div',
-                                    { className: At.progressBarWrapper },
+                                    { className: Ft.progressBarWrapper },
                                     r().createElement(Gu, {
                                         value: s,
                                         maxValue: a,
                                         deltaFrom: i,
-                                        animationSettings: Ft,
+                                        animationSettings: Dt,
                                         onEndAnimation: C,
                                     }),
                                 ),
@@ -3886,8 +3903,8 @@
                                     const n = u.numBattles === a;
                                     return r().createElement(
                                         'div',
-                                        { className: At.rewardsGroup, key: t, style: B(u.numBattles) },
-                                        r().createElement(dt, {
+                                        { className: Ft.rewardsGroup, key: t, style: B(u.numBattles) },
+                                        r().createElement(At, {
                                             progressRewards: u.rewards,
                                             requiredNumBattles: u.numBattles,
                                             isReached: u.numBattles <= m,
@@ -3899,10 +3916,10 @@
                             ),
                             r().createElement(
                                 'div',
-                                { className: At.info },
+                                { className: Ft.info },
                                 r().createElement(
                                     'div',
-                                    { className: At.title },
+                                    { className: Ft.title },
                                     r().createElement(ke, {
                                         text: R.strings.mapbox.progression.info.title(),
                                         binding: F,
@@ -3910,13 +3927,13 @@
                                 ),
                                 r().createElement(
                                     'div',
-                                    { className: At.description },
+                                    { className: Ft.description },
                                     R.strings.mapbox.progression.info.description(),
                                 ),
                                 l &&
                                     r().createElement(
                                         'div',
-                                        { className: At.restart },
+                                        { className: Ft.restart },
                                         r().createElement(ke, {
                                             text: R.strings.mapbox.progression.info.restart(),
                                             binding: D,
@@ -3925,7 +3942,7 @@
                             ),
                         );
                     },
-                    Bt = {
+                    Ct = {
                         base: 'MapBoxProgression_base_c6',
                         info: 'MapBoxProgression_info_59',
                         show: 'MapBoxProgression_show_05',
@@ -3942,8 +3959,8 @@
                         appearBottom: 'MapBoxProgression_appearBottom_a3',
                         progression__enabled: 'MapBoxProgression_progression__enabled_f6',
                     },
-                    Ct = R.strings.mapbox.progression,
-                    gt = () => {
+                    gt = R.strings.mapbox.progression,
+                    pt = () => {
                         const e = y(),
                             u = e.startEvent,
                             t = e.endEvent,
@@ -3980,15 +3997,15 @@
                                 },
                                 [A],
                             ),
-                            P = W(['base'], Bt);
+                            P = W(['base'], Ct);
                         return r().createElement(
                             'div',
                             { className: P.base },
                             r().createElement(
                                 'div',
-                                { className: Bt.info },
+                                { className: Ct.info },
                                 r().createElement(ee, {
-                                    caption: Ct.infoButton(),
+                                    caption: gt.infoButton(),
                                     side: 'left',
                                     type: 'info',
                                     onClick: w,
@@ -3997,26 +4014,26 @@
                             !a &&
                                 r().createElement(
                                     K,
-                                    { onClick: v, size: V.small, type: q.ghost, mixClass: Bt.selectMode },
-                                    r().createElement('div', { className: Bt.icon }),
-                                    Ct.redirect(),
+                                    { onClick: v, size: V.small, type: q.ghost, mixClass: Ct.selectMode },
+                                    r().createElement('div', { className: Ct.icon }),
+                                    gt.redirect(),
                                 ),
                             r().createElement(
                                 'div',
-                                { className: Bt.content },
+                                { className: Ct.content },
                                 r().createElement(
                                     'div',
-                                    { className: Bt.header },
+                                    { className: Ct.header },
                                     r().createElement(su, { startEvent: u, endEvent: t }),
                                 ),
                                 r().createElement(tu, { maps: C, onClick: f, onMouseEnter: S }),
                                 r().createElement(
                                     'div',
                                     {
-                                        className: x()(Bt.progression, p && Bt.progression__enabled),
+                                        className: x()(Ct.progression, p && Ct.progression__enabled),
                                         onAnimationEnd: () => b(!0),
                                     },
-                                    r().createElement(Dt, {
+                                    r().createElement(Bt, {
                                         rewards: s,
                                         totalBattles: i,
                                         totalBattlesPlayed: l,
@@ -4030,14 +4047,14 @@
                             ),
                         );
                     },
-                    pt = () => {
+                    bt = () => {
                         const e = y(),
                             u = e.isError;
-                        return e.isDataSynced ? (u ? r().createElement($, null) : r().createElement(gt, null)) : null;
+                        return e.isDataSynced ? (u ? r().createElement($, null) : r().createElement(pt, null)) : null;
                     };
                 engine.whenReady.then(() => {
                     g().render(
-                        r().createElement(B, null, r().createElement(pt, null)),
+                        r().createElement(B, null, r().createElement(bt, null)),
                         document.getElementById('root'),
                     );
                 });

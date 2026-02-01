@@ -1,74 +1,66 @@
 (() => {
     'use strict';
-    var e,
-        r = {
-            2251: (e, r, t) => {
+    var r,
+        e = {
+            2251: (r, e, t) => {
                 (t(6179), t(6483));
             },
         },
         t = {};
-    function o(e) {
-        var n = t[e];
+    function o(r) {
+        var n = t[r];
         if (void 0 !== n) return n.exports;
-        var a = (t[e] = { exports: {} });
-        return (r[e](a, a.exports, o), a.exports);
+        var i = (t[r] = { exports: {} });
+        return (e[r].call(i.exports, i, i.exports, o), i.exports);
     }
-    ((o.m = r),
-        (e = []),
-        (o.O = (r, t, n, a) => {
+    ((o.m = e),
+        (r = []),
+        (o.O = (e, t, n, i) => {
             if (!t) {
-                var i = 1 / 0;
-                for (s = 0; s < e.length; s++) {
-                    for (var [t, n, a] = e[s], f = !0, u = 0; u < t.length; u++)
-                        (!1 & a || i >= a) && Object.keys(o.O).every((e) => o.O[e](t[u]))
-                            ? t.splice(u--, 1)
-                            : ((f = !1), a < i && (i = a));
+                var a = 1 / 0;
+                for (c = 0; c < r.length; c++) {
+                    for (var [t, n, i] = r[c], f = !0, l = 0; l < t.length; l++)
+                        (!1 & i || a >= i) && Object.keys(o.O).every((r) => o.O[r](t[l]))
+                            ? t.splice(l--, 1)
+                            : ((f = !1), i < a && (a = i));
                     if (f) {
-                        e.splice(s--, 1);
-                        var l = n();
-                        void 0 !== l && (r = l);
+                        r.splice(c--, 1);
+                        var s = n();
+                        void 0 !== s && (e = s);
                     }
                 }
-                return r;
+                return e;
             }
-            a = a || 0;
-            for (var s = e.length; s > 0 && e[s - 1][2] > a; s--) e[s] = e[s - 1];
-            e[s] = [t, n, a];
-        }),
-        (o.n = (e) => {
-            var r = e && e.__esModule ? () => e.default : () => e;
-            return (o.d(r, { a: r }), r);
-        }),
-        (o.d = (e, r) => {
-            for (var t in r) o.o(r, t) && !o.o(e, t) && Object.defineProperty(e, t, { enumerable: !0, get: r[t] });
+            i = i || 0;
+            for (var c = r.length; c > 0 && r[c - 1][2] > i; c--) r[c] = r[c - 1];
+            r[c] = [t, n, i];
         }),
         (o.g = (function () {
             if ('object' == typeof globalThis) return globalThis;
             try {
                 return this || new Function('return this')();
-            } catch (e) {
+            } catch (r) {
                 if ('object' == typeof window) return window;
             }
         })()),
-        (o.o = (e, r) => Object.prototype.hasOwnProperty.call(e, r)),
-        (o.j = 250),
+        (o.o = (r, e) => Object.prototype.hasOwnProperty.call(r, e)),
         (() => {
-            var e = { 250: 0 };
-            o.O.j = (r) => 0 === e[r];
-            var r = (r, t) => {
+            var r = { 250: 0 };
+            o.O.j = (e) => 0 === r[e];
+            var e = (e, t) => {
                     var n,
-                        a,
-                        [i, f, u] = t,
-                        l = 0;
-                    if (i.some((r) => 0 !== e[r])) {
+                        i,
+                        [a, f, l] = t,
+                        s = 0;
+                    if (a.some((e) => 0 !== r[e])) {
                         for (n in f) o.o(f, n) && (o.m[n] = f[n]);
-                        if (u) var s = u(o);
+                        if (l) var c = l(o);
                     }
-                    for (r && r(t); l < i.length; l++) ((a = i[l]), o.o(e, a) && e[a] && e[a][0](), (e[a] = 0));
-                    return o.O(s);
+                    for (e && e(t); s < a.length; s++) ((i = a[s]), o.o(r, i) && r[i] && r[i][0](), (r[i] = 0));
+                    return o.O(c);
                 },
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
-            (t.forEach(r.bind(null, 0)), (t.push = r.bind(null, t.push.bind(t))));
+            (t.forEach(e.bind(null, 0)), (t.push = e.bind(null, t.push.bind(t))));
         })());
     var n = o.O(void 0, [503], () => o(2251));
     n = o.O(n);

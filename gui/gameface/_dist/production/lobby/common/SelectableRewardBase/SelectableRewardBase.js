@@ -153,12 +153,12 @@
                         });
                     });
                 }
-                function b(e) {
+                function v(e) {
                     if ('function' == typeof window.CustomEvent) return new CustomEvent(e);
                     var u = document.createEvent('CustomEvent');
                     return (u.initCustomEvent(e, !1, !1, void 0), u);
                 }
-                var v = function (e, u, t, n, r, i) {
+                var b = function (e, u, t, n, r, i) {
                     var o;
                     if ((void 0 === n && (n = !0), void 0 === r && (r = !1), void 0 === i && (i = !1), 'top' === u))
                         o = ['contentHeight', 'containerHeight', 'scrollTop', 'y', 'up', 'down'];
@@ -182,15 +182,15 @@
                         E[a] > e[o] - e[l] - 1 && (e.reach[s] = 'end');
                         u &&
                             !r &&
-                            (E.dispatchEvent(b('ps-scroll-' + s)),
+                            (E.dispatchEvent(v('ps-scroll-' + s)),
                             u < 0
-                                ? E.dispatchEvent(b('ps-scroll-' + c))
-                                : u > 0 && E.dispatchEvent(b('ps-scroll-' + d)),
+                                ? E.dispatchEvent(v('ps-scroll-' + c))
+                                : u > 0 && E.dispatchEvent(v('ps-scroll-' + d)),
                             n &&
                                 (function (e, u) {
                                     (A(e, u), h(e, u));
                                 })(e, s));
-                        e.reach[s] && (u || i) && E.dispatchEvent(b('ps-' + s + '-reach-' + e.reach[s]));
+                        e.reach[s] && (u || i) && E.dispatchEvent(v('ps-' + s + '-reach-' + e.reach[s]));
                     })(e, t, o, n, r, i);
                 };
                 var C = function (e, u, n, r) {
@@ -295,13 +295,13 @@
                                 i.scrollTop + e.containerHeight >= e.contentHeight,
                             ),
                             e.scrollbarXActive
-                                ? (i.classList.add(c.active('x')), v(e, 'left', E - e.lastScrollLeft, !0, u))
+                                ? (i.classList.add(c.active('x')), b(e, 'left', E - e.lastScrollLeft, !0, u))
                                 : (i.classList.remove(c.active('x')),
                                   (e.scrollbarXWidth = 0),
                                   (e.scrollbarXLeft = 0),
                                   (i.scrollLeft = 0)),
                             e.scrollbarYActive
-                                ? (i.classList.add(c.active('y')), v(e, 'top', i.scrollTop - e.lastScrollTop, !0, u))
+                                ? (i.classList.add(c.active('y')), b(e, 'top', i.scrollTop - e.lastScrollTop, !0, u))
                                 : (i.classList.remove(c.active('y')),
                                   (e.scrollbarYHeight = 0),
                                   (e.scrollbarYTop = 0),
@@ -468,9 +468,9 @@
                                         a < i)
                                     ) {
                                         if (F) {
-                                            var b = m ? _ : 0,
-                                                v = m ? 0 : _;
-                                            window.scrollTo(b, v);
+                                            var v = m ? _ : 0,
+                                                b = m ? 0 : _;
+                                            window.scrollTo(v, b);
                                         } else u[E] = _;
                                         (r && r(_), requestAnimationFrame(e));
                                     } else t && t();
@@ -600,7 +600,7 @@
                     function _(t) {
                         ((F[s] = B(m + g * (t[i] - D))), A(e, d), C(e, !1, u), t.stopPropagation(), t.preventDefault());
                     }
-                    function b() {
+                    function v() {
                         (h(e, d), e[E].classList.remove(c.clicking), e.event.unbind(e.ownerDocument, 'mousemove', _));
                     }
                     e.event.bind(e[l], 'mousedown', function (u) {
@@ -609,7 +609,7 @@
                             (D = u[i]),
                             (g = (e[r] - e[n]) / (e[o] - e[a])),
                             e.event.bind(e.ownerDocument, 'mousemove', _),
-                            e.event.once(e.ownerDocument, 'mouseup', b),
+                            e.event.once(e.ownerDocument, 'mouseup', v),
                             e[E].classList.add(c.clicking),
                             u.stopPropagation(),
                             u.preventDefault());
@@ -1247,8 +1247,8 @@
                                     ((e.element.scrollTop = e.element.scrollHeight * e.scrollTopPercent),
                                     (e.element.scrollLeft = e.element.scrollWidth * e.scrollLeftPercent)),
                                     C(e, !1, e.settings.overScrollWidth, !1),
-                                    v(e, 'top', 0, !1, !1, !0),
-                                    v(e, 'left', 0, !1, !1, !0),
+                                    b(e, 'top', 0, !1, !1, !0),
+                                    b(e, 'left', 0, !1, !1, !0),
                                     t(e.scrollbarXRail, { display: '' }),
                                     t(e.scrollbarYRail, { display: '' }));
                             }));
@@ -1271,7 +1271,7 @@
                     (M.prototype.onWheel = function (e) {
                         this.isAlive &&
                             (C(this, !1, this.settings.overScrollWidth, !1),
-                            v(this, 'left', this.element.scrollLeft - this.lastScrollLeft),
+                            b(this, 'left', this.element.scrollLeft - this.lastScrollLeft),
                             (this.lastScrollLeft = this.element.scrollLeft));
                     }),
                     (M.prototype.destroy = function () {
@@ -1487,8 +1487,8 @@
                     },
                     g = ['args'];
                 const _ = 2,
-                    b = 16,
-                    v = 32,
+                    v = 16,
+                    b = 32,
                     C = 64,
                     f = (e, u) => {
                         const t = 'GFViewEventProxy';
@@ -1528,13 +1528,13 @@
                     },
                     p = {
                         close(e) {
-                            f('popover' === e ? _ : v);
+                            f('popover' === e ? _ : b);
                         },
                         minimize() {
                             f(C);
                         },
                         move(e) {
-                            f(b, { isMouseEvent: !0, on: e });
+                            f(v, { isMouseEvent: !0, on: e });
                         },
                     };
                 function w(e) {
@@ -1947,14 +1947,14 @@
                         var n;
                     },
                     _ = () => g(a.CLOSE),
-                    b = (e, u) => {
+                    v = (e, u) => {
                         e.keyCode === A.n.ESCAPE && u();
                     };
-                var v = t(572);
+                var b = t(572);
                 const C = r.instance,
                     f = {
                         DataTracker: i.Z,
-                        ViewModel: v.Z,
+                        ViewModel: b.Z,
                         ViewEventType: a,
                         NumberFormatType: s,
                         RealFormatType: c,
@@ -1992,14 +1992,14 @@
                             });
                         },
                         addEscapeListener: (e) => {
-                            const u = (u) => b(u, e);
+                            const u = (u) => v(u, e);
                             return (
                                 window.addEventListener('keydown', u),
                                 () => window.removeEventListener('keydown', u)
                             );
                         },
                         closeOnEsc: (e) => {
-                            b(e, _);
+                            v(e, _);
                         },
                         handleViewEvent: g,
                         onBindingsReady: B,
@@ -2179,9 +2179,9 @@
                 })(D || (D = {}));
                 const g = A.O.client.getSize('rem'),
                     _ = g.width,
-                    b = g.height,
-                    v = Object.assign({ width: _, height: b }, B(_, b, i)),
-                    C = (0, a.createContext)(v),
+                    v = g.height,
+                    b = Object.assign({ width: _, height: v }, B(_, v, i)),
+                    C = (0, a.createContext)(b),
                     f = ['children'];
                 const p = (e) => {
                     let u = e.children,
@@ -2210,7 +2210,7 @@
                         B = n.mediumHeight,
                         g = n.smallHeight,
                         _ = n.extraSmallHeight,
-                        b = { extraLarge: F, large: D, medium: B, small: g, extraSmall: _ };
+                        v = { extraLarge: F, large: D, medium: B, small: g, extraSmall: _ };
                     if (t.extraLarge || t.large || t.medium || t.small || t.extraSmall) {
                         if (t.extraLarge && r) return u;
                         if (t.large && i) return u;
@@ -2218,11 +2218,11 @@
                         if (t.small && l) return u;
                         if (t.extraSmall && s) return u;
                     } else {
-                        if (t.extraLargeWidth && c) return m(u, t, b);
-                        if (t.largeWidth && d) return m(u, t, b);
-                        if (t.mediumWidth && E) return m(u, t, b);
-                        if (t.smallWidth && A) return m(u, t, b);
-                        if (t.extraSmallWidth && h) return m(u, t, b);
+                        if (t.extraLargeWidth && c) return m(u, t, v);
+                        if (t.largeWidth && d) return m(u, t, v);
+                        if (t.mediumWidth && E) return m(u, t, v);
+                        if (t.smallWidth && A) return m(u, t, v);
+                        if (t.extraSmallWidth && h) return m(u, t, v);
                         if (
                             !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
                         ) {
@@ -2396,9 +2396,9 @@
                         B = (0, a.useState)(t),
                         g = B[0],
                         _ = B[1],
-                        b = (0, a.useState)(!1),
-                        v = b[0],
-                        C = b[1],
+                        v = (0, a.useState)(!1),
+                        b = v[0],
+                        C = v[1],
                         f = (0, a.useState)(!1),
                         p = f[0],
                         w = f[1],
@@ -2454,7 +2454,7 @@
                                 [y.base__disabled]: i,
                                 [y[`base__${u}`]]: u,
                                 [y.base__focus]: g,
-                                [y.base__highlightActive]: v,
+                                [y.base__highlightActive]: b,
                                 [y.base__firstHover]: p,
                             },
                             o,
@@ -2577,10 +2577,10 @@
                         B = e.scrollAreaContainer,
                         g = e.children,
                         _ = e.classMix,
-                        b = e.onScrollLeftHandled,
-                        v = (0, a.useState)(!1),
-                        C = v[0],
-                        f = v[1],
+                        v = e.onScrollLeftHandled,
+                        b = (0, a.useState)(!1),
+                        C = b[0],
+                        f = b[1],
                         p = (0, a.useState)(),
                         w = p[0],
                         L = p[1],
@@ -2599,15 +2599,15 @@
                         }, [w]),
                         k = (0, a.useCallback)(
                             (e, u, t) => {
-                                w && (w.setScrollLeft(e, u, t), b && b(e, w.contentWidth - w.containerWidth));
+                                w && (w.setScrollLeft(e, u, t), v && v(e, w.contentWidth - w.containerWidth));
                             },
-                            [w, b],
+                            [w, v],
                         ),
                         W = (0, a.useCallback)(
                             (e) => {
-                                w && (w.setScrollLeftImmediately(e), b && b(e, w.contentWidth - w.containerWidth));
+                                w && (w.setScrollLeftImmediately(e), v && v(e, w.contentWidth - w.containerWidth));
                             },
-                            [w, b],
+                            [w, v],
                         ),
                         z = (0, a.useCallback)(
                             (e, u, t) => {
@@ -2779,7 +2779,10 @@
                         (e.LootBoxToken = 'lootBoxToken'),
                         (e.GoldenTicket = 'birthday2025_golden_ticket'),
                         (e.PostStamp = 'giftsystem_4_stamp'),
-                        (e.Quests = 'quests'));
+                        (e.Quests = 'quests'),
+                        (e.ArmoryCoin = 'armory_coin'),
+                        (e.PremiumPlusUniversal = 'premium_plus_universal'),
+                        (e.DogTagType = 'dogTagComponents'));
                 })(z || (z = {})),
                     (function (e) {
                         ((e.Gold = 'gold'),
@@ -2879,7 +2882,7 @@
                 })($ || ($ = {}));
                 var J;
                 !(function (e) {
-                    ((e.None = ''), (e.Trophy = 'trophy'), (e.Deluxe = 'delux'));
+                    ((e.None = ''), (e.Trophy = 'trophy'), (e.Deluxe = 'delux'), (e.Modernized = 'modernized'));
                 })(J || (J = {}));
                 R.strings.selectable_reward.reward;
                 R.strings.selectable_reward.tabs;

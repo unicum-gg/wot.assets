@@ -1130,12 +1130,12 @@
                             void 0 !== s ? U().createElement(Ou, Iu({}, s, { text: e })) : e,
                         );
                     });
-                var Uu = t(3403);
+                var Uu = t(3282);
                 function Yu() {
                     return !1;
                 }
                 console.log;
-                var qu = t(9174);
+                var qu = t(3915);
                 function Qu(u, e) {
                     (null == e || e > u.length) && (e = u.length);
                     for (var t = 0, A = new Array(e); t < e; t++) A[t] = u[t];
@@ -1246,7 +1246,6 @@
                                                                     );
                                                                 })(E.keys());
                                                             !(u = t()).done;
-
                                                         )
                                                             F(u.value, e);
                                                     },
@@ -1275,11 +1274,11 @@
                                                 observableModel: {
                                                     array: (e, t) => {
                                                         const A = null != t ? t : a(e),
-                                                            E = qu.LO.box(A, { equals: Yu });
+                                                            E = qu.observable.box(A, { equals: Yu });
                                                         return (
                                                             'real' === u &&
                                                                 D.subscribe(
-                                                                    (0, qu.aD)((u) => E.set(u)),
+                                                                    (0, qu.action)((u) => E.set(u)),
                                                                     e,
                                                                 ),
                                                             E
@@ -1287,11 +1286,11 @@
                                                     },
                                                     object: (e, t) => {
                                                         const A = null != t ? t : a(e),
-                                                            E = qu.LO.box(A, { equals: Yu });
+                                                            E = qu.observable.box(A, { equals: Yu });
                                                         return (
                                                             'real' === u &&
                                                                 D.subscribe(
-                                                                    (0, qu.aD)((u) => E.set(u)),
+                                                                    (0, qu.action)((u) => E.set(u)),
                                                                     e,
                                                                 ),
                                                             E
@@ -1301,13 +1300,13 @@
                                                         const A = a(t);
                                                         if (Array.isArray(e)) {
                                                             const E = e.reduce(
-                                                                (u, e) => ((u[e] = qu.LO.box(A[e], {})), u),
+                                                                (u, e) => ((u[e] = qu.observable.box(A[e], {})), u),
                                                                 {},
                                                             );
                                                             return (
                                                                 'real' === u &&
                                                                     D.subscribe(
-                                                                        (0, qu.aD)((u) => {
+                                                                        (0, qu.action)((u) => {
                                                                             e.forEach((e) => {
                                                                                 E[e].set(u[e]);
                                                                             });
@@ -1321,13 +1320,16 @@
                                                             const E = e,
                                                                 F = Object.entries(E),
                                                                 r = F.reduce(
-                                                                    (u, [e, t]) => ((u[t] = qu.LO.box(A[e], {})), u),
+                                                                    (u, [e, t]) => (
+                                                                        (u[t] = qu.observable.box(A[e], {})),
+                                                                        u
+                                                                    ),
                                                                     {},
                                                                 );
                                                             return (
                                                                 'real' === u &&
                                                                     D.subscribe(
-                                                                        (0, qu.aD)((u) => {
+                                                                        (0, qu.action)((u) => {
                                                                             F.forEach(([e, t]) => {
                                                                                 r[t].set(u[e]);
                                                                             });
@@ -1421,7 +1423,7 @@
                         ),
                     ),
                     re = R.strings.lootboxes,
-                    De = (0, Uu.Pi)(() => {
+                    De = (0, Uu.observer)(() => {
                         const u = ee().model.root.get(),
                             e = u.descriptionKey,
                             t = u.count,
@@ -1454,7 +1456,7 @@
         var E = t[u];
         if (void 0 !== E) return E.exports;
         var F = (t[u] = { exports: {} });
-        return (e[u](F, F.exports, A), F.exports);
+        return (e[u].call(F.exports, F, F.exports, A), F.exports);
     }
     ((A.m = e),
         (u = []),
@@ -1500,7 +1502,6 @@
                 Object.defineProperty(u, Symbol.toStringTag, { value: 'Module' }),
                 Object.defineProperty(u, '__esModule', { value: !0 }));
         }),
-        (A.j = 962),
         (() => {
             var u = { 962: 0 };
             A.O.j = (e) => 0 === u[e];

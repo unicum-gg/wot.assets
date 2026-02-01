@@ -4458,22 +4458,21 @@
                         isTrainingAvailable: r,
                         name: o,
                         type: i,
-                        nation: c,
-                        tier: m,
-                        tags: d,
-                        vehicleCD: _,
-                        onClick: E,
-                        className: g,
+                        tier: c,
+                        tags: m,
+                        vehicleCD: d,
+                        onClick: _,
+                        className: E,
                     }) =>
                         s().createElement(
                             'div',
                             {
-                                className: l()(Tt, e ? Rt : Mt, !r && Pt, g),
+                                className: l()(Tt, e ? Rt : Mt, !r && Pt, E),
                                 onMouseEnter: () => {
                                     r && M.$.playHighlight();
                                 },
                                 onClick: () => {
-                                    r && E && (E(), M.$.playClick());
+                                    r && _ && (_(), M.$.playClick());
                                 },
                             },
                             e && s().createElement('div', { className: Wt }),
@@ -4484,16 +4483,15 @@
                                 vehicleName: o,
                                 vehicleShortName: o,
                                 vehicleType: i,
-                                vehicleNation: c,
-                                vehicleLvl: m,
-                                tags: d,
+                                vehicleLvl: c,
+                                tags: m,
                                 className: zt,
                                 classNames: { typeIcon: Ut, name: t ? $t : void 0 },
                                 type: Bt.whiteSpanish,
                             }),
                             s().createElement(
                                 Ft.t,
-                                { args: { tooltipId: 'inventoryVehicle', vehicleCD: _ } },
+                                { args: { tooltipId: 'inventoryVehicle', vehicleCD: d } },
                                 s().createElement('div', { className: Ht }),
                             ),
                             t &&
@@ -4977,6 +4975,7 @@
                                         'isCrewLocked',
                                         'nation',
                                         'isAcceleratedTraining',
+                                        'isExtended',
                                     ]),
                                     {
                                         slots: e.array('slots', []),
@@ -7022,33 +7021,41 @@
                         const e = p(),
                             t = e.model,
                             u = e.controls,
-                            n = t.isDisabled.get(),
-                            o = t.hasDog.get(),
-                            s = t.computes.getLayoutInfo();
-                        return a().createElement(
-                            'div',
-                            {
-                                className: me,
-                                onMouseEnter: () => {
-                                    (u.setIsWidgetHover(!0),
-                                        s.isCurrentLayoutHangar && !n && (0, r.G)(R.sounds.crew_hover()));
+                            o = t.isDisabled.get(),
+                            s = t.hasDog.get(),
+                            i = t.computes.getLayoutInfo(),
+                            l = t.isExtended.get();
+                        return (
+                            (0, n.useEffect)(() => {
+                                u.setIsWidgetHover(l);
+                            }, [l, u]),
+                            a().createElement(
+                                'div',
+                                {
+                                    className: me,
+                                    onMouseEnter: () => {
+                                        l ||
+                                            (u.setIsWidgetHover(!0),
+                                            i.isCurrentLayoutHangar && !o && (0, r.G)(R.sounds.crew_hover()));
+                                    },
+                                    onMouseLeave: () => {
+                                        l ||
+                                            (u.setIsWidgetHover(!1),
+                                            i.isCurrentLayoutHangar && !o && (0, r.G)(R.sounds.crew_unhover()));
+                                    },
                                 },
-                                onMouseLeave: () => {
-                                    (u.setIsWidgetHover(!1),
-                                        s.isCurrentLayoutHangar && !n && (0, r.G)(R.sounds.crew_unhover()));
-                                },
-                            },
-                            t.computes.isButtonBarVisible() &&
-                                a().createElement(
-                                    'div',
-                                    { className: de },
-                                    a().createElement(ce, {
-                                        isWidgetDisabled: n,
-                                        isCurrentLayoutHangar: s.isCurrentLayoutHangar,
-                                    }),
-                                ),
-                            a().createElement(en, { layoutInfo: s, isWidgetDisabled: n, className: _e }),
-                            o && a().createElement(Ie, { layoutInfo: s, isDisabled: n }),
+                                t.computes.isButtonBarVisible() &&
+                                    a().createElement(
+                                        'div',
+                                        { className: de },
+                                        a().createElement(ce, {
+                                            isWidgetDisabled: o,
+                                            isCurrentLayoutHangar: i.isCurrentLayoutHangar,
+                                        }),
+                                    ),
+                                a().createElement(en, { layoutInfo: i, isWidgetDisabled: o, className: _e }),
+                                s && a().createElement(Ie, { layoutInfo: i, isDisabled: o }),
+                            )
                         );
                     }),
                     un = (0, n.memo)(() =>

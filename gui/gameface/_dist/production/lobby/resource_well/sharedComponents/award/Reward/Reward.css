@@ -180,3 +180,11 @@
 .Reward_formatText_d5 {
     flex-wrap: nowrap;
 }
+
+.Reward_infoIco_ec {
+    width: 24rem;
+    height: 24rem;
+    margin-left: 5rem;
+    background: url('R.images.gui.maps.icons.resourceWell.icon_info') no-repeat center / contain;
+    transform: translateY(2rem);
+}

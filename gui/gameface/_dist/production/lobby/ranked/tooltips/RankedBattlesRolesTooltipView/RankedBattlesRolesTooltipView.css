@@ -3,31 +3,6 @@
     flex-wrap: wrap;
 }
 
-.RoleAction_base_25 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 140rem;
-}
-
-.RoleAction_image_34 {
-    width: 128rem;
-    height: 128rem;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-}
-
-.RoleAction_description_53 {
-    color: #f2f2f7;
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
-    width: 100%;
-    margin-top: -33rem;
-    text-align: center;
-}
-
 .Content_base_2d {
     display: flex;
     flex-direction: column;
@@ -148,6 +123,31 @@
     font-size: 14rem;
     line-height: 18rem;
     flex: 1;
+}
+
+.RoleAction_base_25 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 140rem;
+}
+
+.RoleAction_image_34 {
+    width: 128rem;
+    height: 128rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.RoleAction_description_53 {
+    color: #f2f2f7;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    width: 100%;
+    margin-top: -33rem;
+    text-align: center;
 }
 
 .TooltipDecorator_base_c9 {

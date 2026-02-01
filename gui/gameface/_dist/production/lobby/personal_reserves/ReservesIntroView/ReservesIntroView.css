@@ -563,21 +563,8 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     animation: App_fadeOut_f5 0.5s ease-in;
 }
 
-.App_buttonBar_aa {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 320rem;
-    height: 36rem;
-}
-
-.mediaLarge .App_buttonBar_aa {
-    width: 420rem;
-    height: 36rem;
-}
-
 .App_buttonMix_89 {
-    min-width: 150rem;
+    width: 150rem;
     height: 36rem;
 }
 
@@ -595,15 +582,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .App_image_3_13 {
-    background-image: url('R.images.gui.maps.icons.personal_reserves.intro.small.slide3');
-}
-
-.App_image_4_a6 {
     background-image: url('R.images.gui.maps.icons.personal_reserves.intro.small.slide4');
-}
-
-.App_image_5_37 {
-    background-image: url('R.images.gui.maps.icons.personal_reserves.intro.small.slide5');
 }
 
 .mediaMedium .App_image_1_a3 {
@@ -615,15 +594,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .mediaMedium .App_image_3_13 {
-    background-image: url('R.images.gui.maps.icons.personal_reserves.intro.big.slide3');
-}
-
-.mediaMedium .App_image_4_a6 {
     background-image: url('R.images.gui.maps.icons.personal_reserves.intro.big.slide4');
-}
-
-.mediaMedium .App_image_5_37 {
-    background-image: url('R.images.gui.maps.icons.personal_reserves.intro.big.slide5');
 }
 
 @keyframes App_fadeIn_30 {

@@ -1428,7 +1428,7 @@
                                               null,
                                               Z().createElement(re, {
                                                   className: pe.subTitle,
-                                                  text: String(he.$dyn(e).subtitle()),
+                                                  text: he.$dyn(e).subtitle(),
                                               }),
                                               Z().createElement(
                                                   'div',
@@ -1530,7 +1530,7 @@
                                               { className: pe.footerLabel },
                                               Z().createElement('div', { className: pe.footerLabelIcon }),
                                               Z().createElement(re, {
-                                                  text: String(he.$dyn(e).footer()),
+                                                  text: he.$dyn(e).footer(),
                                                   className: pe.footerLabelText,
                                               }),
                                           ),
@@ -1540,7 +1540,7 @@
                                                   { className: pe.footerBottomWrapper },
                                                   Z().createElement(re, {
                                                       className: pe.footerBottomText,
-                                                      text: String(he.$dyn(e).footerDescription()),
+                                                      text: he.$dyn(e).footerDescription(),
                                                   }),
                                               ),
                                       ),

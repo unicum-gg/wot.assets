@@ -383,7 +383,7 @@
                     ae = 'App_base_18',
                     se = 'App_title_7c',
                     ue = 'App_significantStats_67',
-                    de = R.strings.achievements_page.tooltips.wotprMainTooltip,
+                    de = R.strings.achievements_page.tooltips.mtprMainTooltip,
                     ce = () =>
                         u().createElement(
                             oe,

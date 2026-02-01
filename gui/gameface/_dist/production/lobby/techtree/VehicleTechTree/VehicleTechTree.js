@@ -4237,6 +4237,7 @@
                                                                 (Ce && Be && n === et) ||
                                                                 (Fe && ut === n)) &&
                                                                 (fe('researches_top_of_the_tree_stop'),
+                                                                fe('paragons_branch_successfully_reset'),
                                                                 Ce &&
                                                                     Be &&
                                                                     n === et &&

@@ -595,157 +595,6 @@ body {
     margin-left: 5rem;
 }
 
-.TextOverflow_base_3b {
-    flex: 0 1 auto;
-    width: auto;
-    line-height: 1.3;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-}
-
-.Content_base_0b {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    width: 675rem;
-    height: 39rem;
-    color: #f2f2f7;
-    position: relative;
-}
-
-.Content_base__platoon_e3 {
-    height: 23rem;
-    margin-top: 10rem;
-}
-
-.Content_name_f9 {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    width: 255rem;
-    margin-left: 20rem;
-    font-size: 16rem;
-    position: absolute;
-}
-
-.Content_base__rowBrPlayer_3b .Content_name_f9 {
-    color: #feab34;
-}
-
-.Content_userName_7c {
-    flex: 0 1 auto;
-}
-
-.Content_clanTag_e7 {
-    flex: 0 0 auto;
-    margin-left: 5rem;
-}
-
-.Content_anonymizer_7f {
-    display: flex;
-    width: 20rem;
-    height: 20rem;
-    margin-left: 5rem;
-    margin-top: 4rem;
-    background: url('R.images.gui.maps.icons.battleRoyale.battleResult.leaderboard.anon_br_postbattle') no-repeat
-        center / contain;
-    opacity: 0;
-    transition: opacity 0.1s;
-    pointer-events: auto;
-}
-
-.Content_base__hover_cf .Content_anonymizer_7f {
-    opacity: 1;
-}
-
-.Content_vehicle_3e {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: 283rem;
-    position: absolute;
-}
-
-.Content_vehicleTypeIcon_5c {
-    width: 24rem;
-    height: 24rem;
-    margin-top: 1rem;
-    margin-right: 4rem;
-    background: no-repeat center / contain;
-}
-
-.Content_vehicleName_18 {
-    color: rgba(255, 255, 255, 0.5);
-    font-size: 16rem;
-}
-
-.Content_level_cb {
-    justify-content: center;
-    width: 22rem;
-    margin-left: 490rem;
-    font-size: 16rem;
-    position: absolute;
-}
-
-.Content_damage_cb {
-    justify-content: center;
-    width: 35rem;
-    margin-left: 577rem;
-    font-size: 12rem;
-    position: absolute;
-}
-
-.Content_kills_6c {
-    justify-content: center;
-    width: 16rem;
-    margin-left: 642rem;
-    font-size: 12rem;
-    position: absolute;
-}
-
-.LeaderboardRow_base_19 {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 700rem;
-    border-bottom: 1rem solid rgba(255, 255, 255, 0.1);
-    color: #f2f2f7;
-    position: relative;
-}
-
-.LeaderboardRow_base__leader_6c {
-    border-top: 1rem solid rgba(255, 255, 255, 0.1);
-    background-image: radial-gradient(50% 16380% at 50% 50%, rgba(255, 255, 255, 0.1) 50%, transparent 100%);
-}
-
-.LeaderboardRow_place_61 {
-    width: 25rem;
-    font-size: 16rem;
-    text-align: center;
-    opacity: 0.6;
-}
-
-.LeaderboardRow_base__leader_6c .LeaderboardRow_place_61 {
-    height: 20rem;
-    background: url('R.images.gui.maps.icons.battleRoyale.battleResult.leaderboard.place_1') no-repeat center / contain;
-    color: transparent;
-    opacity: 1;
-}
-
-.LeaderboardRow_players_c7 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.LeaderboardRow_base__platoon_95 .LeaderboardRow_players_c7 {
-    padding-bottom: 10rem;
-}
-
 .ScrollArea_base_47 {
     width: 100%;
     min-width: 1rem;
@@ -922,6 +771,157 @@ body {
     bottom: -14rem;
 }
 
+.TextOverflow_base_3b {
+    flex: 0 1 auto;
+    width: auto;
+    line-height: 1.3;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.Content_base_d2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 675rem;
+    height: 39rem;
+    color: #f2f2f7;
+    position: relative;
+}
+
+.Content_base__platoon_fb {
+    height: 23rem;
+    margin-top: 10rem;
+}
+
+.Content_name_dc {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 255rem;
+    margin-left: 20rem;
+    font-size: 16rem;
+    position: absolute;
+}
+
+.Content_base__rowBrPlayer_72 .Content_name_dc {
+    color: #feab34;
+}
+
+.Content_userName_91 {
+    flex: 0 1 auto;
+}
+
+.Content_clanTag_3e {
+    flex: 0 0 auto;
+    margin-left: 5rem;
+}
+
+.Content_anonymizer_b2 {
+    display: flex;
+    width: 20rem;
+    height: 20rem;
+    margin-left: 5rem;
+    margin-top: 4rem;
+    background: url('R.images.gui.maps.icons.battleRoyale.battleResult.leaderboard.anon_br_postbattle') no-repeat
+        center / contain;
+    opacity: 0;
+    transition: opacity 0.1s;
+    pointer-events: auto;
+}
+
+.Content_base__hover_e0 .Content_anonymizer_b2 {
+    opacity: 1;
+}
+
+.Content_vehicle_d7 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 283rem;
+    position: absolute;
+}
+
+.Content_vehicleTypeIcon_12 {
+    width: 24rem;
+    height: 24rem;
+    margin-top: 1rem;
+    margin-right: 4rem;
+    background: no-repeat center / contain;
+}
+
+.Content_vehicleName_3a {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 16rem;
+}
+
+.Content_level_08 {
+    justify-content: center;
+    width: 22rem;
+    margin-left: 490rem;
+    font-size: 16rem;
+    position: absolute;
+}
+
+.Content_damage_07 {
+    justify-content: center;
+    width: 35rem;
+    margin-left: 577rem;
+    font-size: 12rem;
+    position: absolute;
+}
+
+.Content_kills_c0 {
+    justify-content: center;
+    width: 16rem;
+    margin-left: 642rem;
+    font-size: 12rem;
+    position: absolute;
+}
+
+.LeaderboardRow_base_19 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 700rem;
+    border-bottom: 1rem solid rgba(255, 255, 255, 0.1);
+    color: #f2f2f7;
+    position: relative;
+}
+
+.LeaderboardRow_base__leader_6c {
+    border-top: 1rem solid rgba(255, 255, 255, 0.1);
+    background-image: radial-gradient(50% 16380% at 50% 50%, rgba(255, 255, 255, 0.1) 50%, transparent 100%);
+}
+
+.LeaderboardRow_place_61 {
+    width: 25rem;
+    font-size: 16rem;
+    text-align: center;
+    opacity: 0.6;
+}
+
+.LeaderboardRow_base__leader_6c .LeaderboardRow_place_61 {
+    height: 20rem;
+    background: url('R.images.gui.maps.icons.battleRoyale.battleResult.leaderboard.place_1') no-repeat center / contain;
+    color: transparent;
+    opacity: 1;
+}
+
+.LeaderboardRow_players_c7 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.LeaderboardRow_base__platoon_95 .LeaderboardRow_players_c7 {
+    padding-bottom: 10rem;
+}
+
 .Leaderboard_base_49 {
     display: flex;
     flex-direction: column;
@@ -976,682 +976,101 @@ body {
     padding-top: 95rem;
 }
 
-.StatItem_base_b6 {
+.BattleQuestsWidget_base_2d {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.BattleQuestsWidget_content_32 {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    width: 110rem;
-    min-height: 53rem;
-    margin: 0 20rem;
+    align-items: flex-start;
+}
+
+.mediaMedium .BattleQuestsWidget_content_32 {
+    margin-left: 9rem;
+    margin-top: 15rem;
+}
+
+.BattleQuestsWidget_emblemContainer_10 {
     position: relative;
 }
 
-.mediaMediumHeight .StatItem_base_b6 {
-    width: 144rem;
-    min-height: 76rem;
-    margin: 0 10rem;
+.BattleQuestsWidget_emblem_15 {
+    width: 64rem;
+    height: 54rem;
+    background: url('R.images.gui.maps.icons.battleRoyale.battleResult.battle_quests.battle_quests_small') no-repeat
+        center / contain;
 }
 
-.StatItem_wreathImage_ee {
-    width: 60rem;
-    height: 53rem;
-    background: url('R.images.gui.maps.icons.battleRoyale.battleResult.stat_list.wreath') no-repeat center / contain;
-    opacity: 0.5;
+.mediaMedium .BattleQuestsWidget_emblem_15 {
+    width: 96rem;
+    height: 96rem;
+    margin-top: 2rem;
+    background: url('R.images.gui.maps.icons.battleRoyale.battleResult.battle_quests.battle_quests') no-repeat center /
+        contain;
+}
+
+.BattleQuestsWidget_glow_96 {
+    width: 100rem;
+    height: 100rem;
+    background: url('R.images.gui.maps.icons.battleRoyale.battleResult.battle_quests.light_small') no-repeat center /
+        contain;
     position: absolute;
-    top: 0;
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%);
+    z-index: -1;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
 }
 
-.mediaMediumHeight .StatItem_wreathImage_ee {
-    width: 88rem;
-    height: 76rem;
+.mediaMedium .BattleQuestsWidget_glow_96 {
+    width: 120rem;
+    height: 120rem;
+    background: url('R.images.gui.maps.icons.battleRoyale.battleResult.battle_quests.light') no-repeat center / contain;
 }
 
-.StatItem_statImage_97 {
-    width: 52rem;
-    height: 52rem;
-    background: no-repeat center / contain;
-    position: absolute;
-    top: 2rem;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.mediaMediumHeight .StatItem_statImage_97 {
-    width: 76rem;
-    height: 76rem;
-    top: 0;
-}
-
-.StatItem_statText_95 {
-    color: #f2f2f7;
-    font-size: 24rem;
-    font-weight: 700;
-    line-height: 1.2;
-    display: flex;
-    margin-top: 40rem;
-}
-
-.mediaMediumHeight .StatItem_statText_95 {
-    margin-top: 56rem;
-}
-
-.StatItem_divider_44 {
-    margin-left: 4rem;
-    opacity: 0.2;
-}
-
-.mediaMediumHeight .StatItem_divider_44 {
-    margin-left: 0;
-}
-
-.StatItem_maxValue_6d {
-    margin-left: 5rem;
-    opacity: 0.2;
-}
-
-.mediaMediumHeight .StatItem_maxValue_6d {
-    margin-left: 0;
-}
-
-.StatItem_titleText_7c {
-    color: #f2f2f7;
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    opacity: 0.6;
-}
-
-.mediaMediumHeight .StatItem_titleText_7c {
-    font-size: 16rem;
-}
-
-.StatsList_base_b3 {
-    display: flex;
-    z-index: 1;
-}
-
-.Title_base_e9 {
-    display: flex;
-    position: relative;
-}
-
-.Title_titleWrapper_70 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    position: relative;
-}
-
-.Title_base__win_b7 .Title_titleWrapper_70 {
-    margin-top: 76rem;
-}
-
-.mediaMediumHeight .Title_base__win_b7 .Title_titleWrapper_70 {
-    margin-top: 96rem;
-}
-
-.mediaLargeHeight .Title_base__win_b7 .Title_titleWrapper_70 {
-    margin-top: 166rem;
-}
-
-.Title_titleBg_b0 {
-    width: 100%;
-    max-width: 1920rem;
-    height: 381rem;
-    background: url('R.images.gui.maps.icons.battleRoyale.battleResult.battle_reward.title.winBgAdd') no-repeat center /
-        100% 100%;
-    opacity: 0;
-    mix-blend-mode: screen;
-    position: absolute;
-    top: -220rem;
-    left: 50%;
-    transform: translateX(-50%) scaleX(0.56);
-}
-
-.mediaMediumHeight .Title_titleBg_b0 {
-    top: -202rem;
-}
-
-.Title_titleBg__enterActive_14 {
-    opacity: 1;
-    transform: translateX(-50%) scaleX(1);
-    transition:
-        opacity 0.4s,
-        transform 0.4s;
-    transition-delay: 0.2s;
-    transition-timing-function: ease-out;
-}
-
-.Title_titleBg__enterDone_fe {
-    opacity: 1;
-    transform: translateX(-50%) scaleX(1);
-}
-
-.Title_place_ff {
-    color: #ffffff;
-    font-size: 120rem;
-    font-weight: 700;
-    line-height: 1;
-    text-align: center;
-    opacity: 0;
-    mask: linear-gradient(180deg, #e4e4e4 12.5%, rgba(227, 227, 227, 0.3) 72.5%, rgba(237, 237, 237, 0) 87%);
-    position: absolute;
-    top: -75rem;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.mediaMediumHeight .Title_place_ff {
-    font-size: 160rem;
-    top: -80rem;
-}
-
-.mediaLargeHeight .Title_place_ff {
-    font-size: 210rem;
-    top: -125rem;
-}
-
-.Title_base__winner_7f .Title_place_ff {
-    font-size: 100rem;
-    top: -65rem;
-}
-
-.mediaMediumHeight .Title_base__winner_7f .Title_place_ff {
-    font-size: 130rem;
-    top: -75rem;
-}
-
-.mediaLargeHeight .Title_base__winner_7f .Title_place_ff {
-    font-size: 160rem;
-    top: -100rem;
-}
-
-.Title_base__firstPlace_74 .Title_place_ff {
-    color: #fefeec;
-    mask: linear-gradient(180deg, #e9e2bf 14.5%, rgba(233, 226, 191, 0.3) 73%, rgba(233, 226, 191, 0) 86.5%);
-}
-
-.Title_wreathIcon_51 {
-    width: 245rem;
-    height: 224rem;
-    background: no-repeat center / cover;
-    opacity: 0;
-    position: absolute;
-    top: 12rem;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.mediaMediumHeight .Title_wreathIcon_51 {
-    top: 15rem;
-}
-
-.mediaLargeHeight .Title_wreathIcon_51 {
-    top: 65rem;
-}
-
-.Title_base__winner_7f .Title_wreathIcon_51 {
-    background-image: url('R.images.gui.maps.icons.battleRoyale.battleResult.battle_reward.title.wreathWinner');
-}
-
-.mediaMediumHeight .Title_base__winner_7f .Title_wreathIcon_51 {
-    width: 281rem;
-    height: 245rem;
-}
-
-.Title_base__firstPlace_74 .Title_wreathIcon_51 {
-    background-image: url('R.images.gui.maps.icons.battleRoyale.battleResult.battle_reward.title.wreathFirstPlace');
-}
-
-.mediaMediumHeight .Title_base__firstPlace_74 .Title_wreathIcon_51 {
-    width: 373rem;
-    height: 326rem;
-}
-
-.Title_titleText_bd {
-    color: #ffffff;
-    font-weight: 700;
-    opacity: 0;
-    mask: linear-gradient(
-        180deg,
-        rgba(255, 255, 255, 0.8) 18%,
-        rgba(255, 255, 255, 0.3) 65%,
-        rgba(255, 255, 255, 0) 90.5%
-    );
-    position: relative;
-    mask-repeat: repeat;
-}
-
-.Title_base__firstPlace_74 .Title_titleText_bd {
-    color: #fefeec;
-    mask: linear-gradient(
-        180deg,
-        rgba(249, 238, 217, 0.95) 16%,
-        rgba(234, 220, 194, 0.9) 41.5%,
-        rgba(255, 248, 210, 0) 85%
-    );
-}
-
-.Title_base__lose_a0 .Title_titleText_bd {
-    font-size: 48rem;
-}
-
-.mediaMediumHeight .Title_base__lose_a0 .Title_titleText_bd {
-    font-size: 73rem;
-}
-
-.mediaLargeHeight .Title_base__lose_a0 .Title_titleText_bd {
-    font-size: 96rem;
-}
-
-.Title_base__win_b7 .Title_titleText_bd {
-    font-size: 63rem;
-}
-
-.mediaMediumHeight .Title_base__win_b7 .Title_titleText_bd {
-    font-size: 80rem;
-}
-
-.Title_vehicle_7f {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    position: relative;
-}
-
-.Title_base__win_b7 .Title_vehicle_7f {
-    margin-top: -2rem;
-}
-
-.mediaMediumHeight .Title_base__win_b7 .Title_vehicle_7f {
-    margin-top: -3rem;
-}
-
-.mediaLargeHeight .Title_base__win_b7 .Title_vehicle_7f {
-    margin-top: -2rem;
-}
-
-.Title_vehicleTypeIcon_a4 {
-    width: 24rem;
-    height: 24rem;
-    margin: 2rem 5rem 0 0;
-    background: no-repeat center / contain;
-}
-
-.Title_vehicleName_1c {
+.BattleQuestsWidget_title_0b {
     color: #f2f2f7;
     font-size: 18rem;
     font-weight: 700;
     line-height: 1.1;
-    letter-spacing: 0.05em;
+    margin-top: -1rem;
+    margin-bottom: 9rem;
 }
 
-.TitleAnimations_wreathIcon_9e {
-    opacity: 0;
-    transition: opacity 0.6s;
-    transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);
-}
-
-.TitleAnimations_wreathIcon__enterDone_84 {
-    opacity: 1;
-}
-.TitleAnimations_titleBg_15 {
-    opacity: 1;
-    transform: translateX(-50%) scaleX(1);
-    transition:
-        opacity 0.4s,
-        transform 0.4s;
-    transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);
-}
-.TitleAnimations_titleBg__enterDone_87 {
-    opacity: 1;
-    transform: translateX(-50%) scaleX(1);
-}
-.TitleAnimations_place_35 {
-    opacity: 0.5;
-    transition: opacity 0.5s;
-    transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);
-}
-.TitleAnimations_place__enterDone_66 {
-    opacity: 0.5;
-}
-.TitleAnimations_title_76 {
-    opacity: 1;
-    transition: opacity 0.5s;
-    transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);
-}
-.TitleAnimations_vehicle_dc {
-    opacity: 1;
-    transition:
-        opacity 0.3s,
-        transform 0.3s;
-    transition-delay: 0s;
-    transition-timing-function: ease-out;
-}
-.TitleAnimations_baseEnterDone_0b {
-    opacity: 1;
-    transform: translateY(0);
-    pointer-events: auto;
-}
-
-.PremiumRewardItem_base_b1 {
+.mediaMedium .BattleQuestsWidget_title_0b {
     color: #f2f2f7;
-    font-size: 20rem;
+    font-size: 28rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 11rem;
+}
+
+.BattleQuestsWidget_questsComplete_d9 {
+    color: #e9e2bf;
+    font-size: 12rem;
     font-weight: 400;
-    line-height: 1.2;
-    display: flex;
-    align-items: center;
-    font-size: 16rem;
-    position: relative;
+    line-height: 1.3;
+    width: 200rem;
+    margin-bottom: 14rem;
 }
 
-.mediaMedium .PremiumRewardItem_base_b1 {
-    font-size: 20rem;
-}
-
-.PremiumRewardItem_image_37 {
-    width: 24rem;
-    height: 24rem;
-    background: no-repeat center / contain;
-}
-
-.PremiumRewardItem_base__crystal_ab .PremiumRewardItem_image_37,
-.PremiumRewardItem_base__xp_55 .PremiumRewardItem_image_37,
-.PremiumRewardItem_base__credits_33 .PremiumRewardItem_image_37,
-.PremiumRewardItem_base__brcoin_eb .PremiumRewardItem_image_37,
-.PremiumRewardItem_base__brProgressionToken_9a .PremiumRewardItem_image_37 {
-    margin: 2rem 2rem 0 0;
-}
-
-.mediaMedium .PremiumRewardItem_base__crystal_ab .PremiumRewardItem_image_37,
-.mediaMedium .PremiumRewardItem_base__xp_55 .PremiumRewardItem_image_37,
-.mediaMedium .PremiumRewardItem_base__credits_33 .PremiumRewardItem_image_37,
-.mediaMedium .PremiumRewardItem_base__brcoin_eb .PremiumRewardItem_image_37,
-.mediaMedium .PremiumRewardItem_base__brProgressionToken_9a .PremiumRewardItem_image_37 {
-    margin-right: 0;
-}
-
-.PremiumRewardItem_base__battlePassPoints_77 .PremiumRewardItem_image_37 {
-    width: 16rem;
-    height: 16rem;
-    margin: 4rem 7rem 0 4rem;
-}
-
-.mediaMedium .PremiumRewardItem_base__battlePassPoints_77 .PremiumRewardItem_image_37 {
-    margin-top: 2rem;
-}
-
-.PremiumRewards_base_9a {
-    display: flex;
-    width: 100%;
-    height: 100%;
-    position: relative;
-}
-.PremiumRewards_ribbonLine_ec {
-    display: flex;
-    width: 100%;
-    height: 2rem;
-    background-color: #fff;
-    opacity: 0.15;
-}
-.PremiumRewards_ribbonLine__left_6d {
-    background:
-        linear-gradient(270deg, rgba(255, 255, 255, 0.27) 0%, rgba(255, 255, 255, 0) 14.6%), rgba(255, 255, 255, 0.1);
-    opacity: 1;
-}
-.PremiumRewards_ribbonLine__right_7e {
-    background:
-        linear-gradient(270deg, rgba(255, 255, 255, 0.27) 0%, rgba(255, 255, 255, 0) 14.6%), rgba(255, 255, 255, 0.1);
-    opacity: 1;
-    transform: matrix(-1, 0, 0, 1, 0, 0);
-}
-.PremiumRewards_ribbonDot_1c {
-    width: 2rem;
-    height: 2rem;
-    box-shadow:
-        0 0 4px rgba(255, 204, 192, 0.81),
-        0 0 8px #fec0c0;
-    background: #ffa48f;
-    position: absolute;
-}
-.PremiumRewards_ribbonDot__left_fd {
-    right: -1rem;
-}
-.PremiumRewards_ribbonDot__right_c4 {
-    left: 1rem;
-}
-.PremiumRewards_premium_33 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    position: absolute;
-    bottom: 11rem;
-    left: 0;
-    transform: translateY(50%);
-}
-.mediaMediumHeight .PremiumRewards_premium_33 {
-    bottom: 16rem;
-}
-.PremiumRewards_premiumLine_0c {
-    display: flex;
-    width: 100%;
-    position: relative;
-}
-.PremiumRewards_premiumWrapper_1f {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0 10rem 24rem;
-}
-.mediaMediumHeight .PremiumRewards_premiumWrapper_1f {
-    margin-bottom: 32rem;
-}
-.PremiumRewards_premiumTitleWrapper_f2 {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    position: absolute;
-    bottom: 48rem;
-}
-.mediaMediumHeight .PremiumRewards_premiumTitleWrapper_f2 {
-    bottom: 64rem;
-}
-.PremiumRewards_premiumIcon_27 {
-    width: 16rem;
-    height: 16rem;
-    margin: 2rem 5rem 0;
-    background: url('R.images.gui.maps.icons.battleRoyale.battleResult.battle_reward.icon_prem') no-repeat center /
-        contain;
-}
-.PremiumRewards_premiumText_8f {
-    color: #ffdd99;
+.mediaMedium .BattleQuestsWidget_questsComplete_d9 {
+    color: #e9e2bf;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
+    width: 230rem;
+    margin-bottom: 16rem;
 }
-.mediaMediumHeight .PremiumRewards_premiumText_8f {
-    color: #ffdd99;
-    font-size: 16rem;
-    font-weight: 400;
-    line-height: 1.25;
-    margin-right: 5rem;
-}
-.PremiumRewards_battleRewardItemClassMix_0f {
-    color: #f2f2f7;
-    font-size: 16rem;
-    line-height: 1.2;
-}
-.mediaMediumHeight .PremiumRewards_battleRewardItemClassMix_0f {
-    font-size: 20rem;
-}
-.PremiumRewards_rewardsList_7b {
+
+.BattleQuestsWidget_questsCompleteContainer_d8 {
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-top: 16rem;
-}
-.mediaMediumHeight .PremiumRewards_rewardsList_7b {
-    margin-top: 28rem;
-}
-.PremiumRewards_rewardsItem_07 {
-    margin: 0 6rem;
-}
-
-.Ribbon_base_69 {
-    display: flex;
-    width: 100%;
-    height: 100%;
-    position: relative;
-}
-.Ribbon_shadow_a4 {
-    width: 100%;
-    height: 93rem;
-    position: absolute;
-    left: 0;
-}
-.Ribbon_shadow__top_c9 {
-    background: linear-gradient(rgba(52, 53, 56, 0) 0%, rgba(24, 24, 37, 0.5) 100%);
-    top: -93rem;
-}
-.Ribbon_shadow__bottom_a2 {
-    background: linear-gradient(rgba(24, 24, 37, 0.5) 0%, rgba(52, 53, 56, 0) 100%);
-    bottom: -93rem;
-}
-.Ribbon_topLine_26 {
-    display: flex;
-    width: 100%;
-    position: absolute;
-    top: 11rem;
-    left: 0;
-}
-.mediaMediumHeight .Ribbon_topLine_26 {
-    top: 16rem;
-}
-.Ribbon_bottomLine_04 {
-    display: flex;
-    width: 100%;
-    position: absolute;
-    bottom: 11rem;
-    left: 0;
-}
-.mediaMediumHeight .Ribbon_bottomLine_04 {
-    bottom: 16rem;
-}
-.Ribbon_ribbonLine_a5 {
-    display: flex;
-    width: 100%;
-    height: 2rem;
-    background-color: #fff;
-    opacity: 0.15;
-}
-.Ribbon_ribbonIcon_66 {
-    width: 100%;
-    height: 100%;
-    background: no-repeat center / 100%;
-    position: absolute;
-    top: 0;
-}
-.Ribbon_base__win_15 .Ribbon_ribbonIcon_66 {
-    background-image: url('R.images.gui.maps.icons.battleRoyale.battleResult.battle_reward.ribbon_red');
-}
-.Ribbon_base__prem_78 .Ribbon_ribbonIcon_66 {
-    background-image: url('R.images.gui.maps.icons.battleRoyale.battleResult.battle_reward.ribbon_red_prem');
-}
-.Ribbon_base__lose_9b .Ribbon_ribbonIcon_66 {
-    background-image: url('R.images.gui.maps.icons.battleRoyale.battleResult.battle_reward.ribbon_dark');
-}
-.Ribbon_base__lose_prem_ad .Ribbon_ribbonIcon_66 {
-    background-image: url('R.images.gui.maps.icons.battleRoyale.battleResult.battle_reward.ribbon_dark_prem');
-}
-
-.Reward_base_07 {
-    color: #f2f2f7;
-    font-size: 28rem;
-    font-weight: 700;
-    line-height: 1.1;
-    display: flex;
-    align-items: center;
-    position: relative;
-}
-
-.mediaMedium .Reward_base_07 {
-    color: #f2f2f7;
-    font-size: 56rem;
-    font-weight: 700;
-    line-height: 1.1;
-}
-
-.Reward_image_f5 {
-    width: 48rem;
-    height: 48rem;
-    background: no-repeat center / contain;
-}
-
-.Reward_base__crystal_30 .Reward_image_f5,
-.Reward_base__xp_c3 .Reward_image_f5,
-.Reward_base__credits_40 .Reward_image_f5,
-.Reward_base__brcoin_18 .Reward_image_f5,
-.Reward_base__brProgressionToken_38 .Reward_image_f5 {
-    margin-top: 5rem;
-    margin-right: 3rem;
-}
-
-.mediaMedium .Reward_base__crystal_30 .Reward_image_f5,
-.mediaMedium .Reward_base__xp_c3 .Reward_image_f5,
-.mediaMedium .Reward_base__credits_40 .Reward_image_f5,
-.mediaMedium .Reward_base__brcoin_18 .Reward_image_f5,
-.mediaMedium .Reward_base__brProgressionToken_38 .Reward_image_f5 {
-    margin-top: 8rem;
-}
-
-.Reward_base__brProgressionToken_38 .Reward_image_f5 {
-    margin-right: 8rem;
-}
-
-.Reward_base__battlePassPoints_68 .Reward_image_f5 {
-    width: 37rem;
-    height: 36rem;
-    margin-top: 8rem;
-    margin-right: 7rem;
-}
-
-.mediaMedium .Reward_base__battlePassPoints_68 .Reward_image_f5 {
-    margin-top: 11rem;
-}
-
-.BattleRewardList_base_68 {
-    display: flex;
-    align-items: center;
-}
-
-.BattleRewardList_title_a1 {
-    color: #f2f2f7;
-    font-size: 28rem;
-    font-weight: 700;
-    line-height: 1.1;
-    display: flex;
-    align-items: center;
-    position: relative;
-}
-
-.mediaMedium .BattleRewardList_title_a1 {
-    color: #f2f2f7;
-    font-size: 56rem;
-    font-weight: 700;
-    line-height: 1.1;
-}
-
-.FormatText_base_d0 {
-    display: flex;
-    flex-wrap: wrap;
+    margin-bottom: 4rem;
 }
 
 /*
@@ -1862,6 +1281,281 @@ body {
 }
 .ProgressBarDeltaGrow_base__withoutBounce_b5 .ProgressBarDeltaGrow_glow_68 {
     transition-timing-function: cubic-bezier(1, 0, 0.75, 0.75);
+}
+
+.Box_mt__XS_0c {
+    margin-top: 4rem;
+}
+.Box_mt__SM_eb {
+    margin-top: 8rem;
+}
+.Box_mt__SMp_cf {
+    margin-top: 10rem;
+}
+.Box_mt__MD_25 {
+    margin-top: 16rem;
+}
+.Box_mt__MDp_49 {
+    margin-top: 20rem;
+}
+.Box_mt__LG_e8 {
+    margin-top: 32rem;
+}
+.Box_mt__XL_83 {
+    margin-top: 64rem;
+}
+
+.Box_mr__XS_7c {
+    margin-right: 4rem;
+}
+
+.Box_mr__SM_08 {
+    margin-right: 8rem;
+}
+
+.Box_mr__SMp_06 {
+    margin-right: 10rem;
+}
+
+.Box_mr__MD_4a {
+    margin-right: 16rem;
+}
+
+.Box_mr__MDp_b6 {
+    margin-right: 20rem;
+}
+
+.Box_mr__LG_d0 {
+    margin-right: 32rem;
+}
+
+.Box_mr__XL_db {
+    margin-right: 64rem;
+}
+
+.Box_mb__XS_bb {
+    margin-bottom: 4rem;
+}
+
+.Box_mb__SM_83 {
+    margin-bottom: 8rem;
+}
+
+.Box_mb__SMp_04 {
+    margin-bottom: 10rem;
+}
+
+.Box_mb__MD_ed {
+    margin-bottom: 16rem;
+}
+
+.Box_mb__MDp_65 {
+    margin-bottom: 20rem;
+}
+
+.Box_mb__LG_c8 {
+    margin-bottom: 32rem;
+}
+
+.Box_mb__XL_f8 {
+    margin-bottom: 64rem;
+}
+
+.Box_ml__XS_8a {
+    margin-left: 4rem;
+}
+
+.Box_ml__SM_e6 {
+    margin-left: 8rem;
+}
+
+.Box_ml__SMp_fb {
+    margin-left: 10rem;
+}
+
+.Box_ml__MD_2b {
+    margin-left: 16rem;
+}
+
+.Box_ml__MDp_c7 {
+    margin-left: 20rem;
+}
+
+.Box_ml__LG_39 {
+    margin-left: 32rem;
+}
+
+.Box_ml__XL_4a {
+    margin-left: 64rem;
+}
+
+.FormatText_base_d0 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* eslint-disable-next-line expectedscss*/
+.Text_paragraph-P10_2c {
+    font-size: 10rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.Text_paragraph-P12_22 {
+    font-size: 12rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+.Text_paragraph-P14_a7 {
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+.Text_paragraph-P16_90 {
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+.Text_paragraph-P18_50 {
+    font-size: 18rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+.Text_paragraph-P24_33 {
+    font-size: 24rem;
+    font-weight: 400;
+    line-height: 32rem;
+}
+.Text_heading-H14_8b {
+    font-size: 14rem;
+    font-weight: 700;
+    line-height: 1.15;
+}
+.Text_heading-H15_9e {
+    font-size: 15rem;
+    font-weight: 700;
+    line-height: 1.15;
+}
+.Text_heading-H18_b7 {
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H20R_f6 {
+    font-size: 20rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.Text_heading-H22_27 {
+    font-size: 22rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.Text_heading-H24R_be {
+    font-size: 24rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.Text_heading-H24_0c {
+    font-size: 24rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.Text_heading-H28_78 {
+    font-size: 28rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H36_32 {
+    font-size: 36rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H56_c3 {
+    font-size: 56rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H73_8f {
+    font-size: 73rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H144_a9 {
+    font-size: 144rem;
+    font-weight: 700;
+    line-height: 1;
+}
+.Text_BLACK_REAL_30 {
+    color: #000000;
+}
+.Text_WHITE_REAL_bc {
+    color: #ffffff;
+}
+.Text_WHITE_62 {
+    color: #f2f2f7;
+}
+.Text_WHITE_ORANGE_54 {
+    color: #fefeec;
+}
+.Text_WHITE_SPANISH_df {
+    color: #e9e2bf;
+}
+.Text_PAR_15 {
+    color: #8c8c7e;
+}
+.Text_PAR_SECONDARY_5d {
+    color: #595950;
+}
+.Text_PAR_TERTIARY_c9 {
+    color: #37362e;
+}
+.Text_INFO_RED_30 {
+    color: #ff0000;
+}
+.Text_RED_66 {
+    color: #ff2717;
+}
+.Text_RED_DARK_d8 {
+    color: #b70000;
+}
+.Text_YELLOW_ed {
+    color: #feab34;
+}
+.Text_ORANGE_be {
+    color: #ee7000;
+}
+.Text_CREAM_57 {
+    color: #ffdd99;
+}
+.Text_BROWN_18 {
+    color: #cbac77;
+}
+.Text_GREEN_BRIGHT_3f {
+    color: #80d43a;
+}
+.Text_GREEN_e3 {
+    color: #7ab300;
+}
+.Text_GREEN_DARK_f1 {
+    color: #497212;
+}
+.Text_BLUE_BOOSTER_21 {
+    color: #ccffff;
+}
+.Text_BLUE_TEAMKILLER_ab {
+    color: #09e2ff;
+}
+.Text_CRED_f7 {
+    color: #ced9d9;
+}
+.Text_GOLD_28 {
+    color: #ffc363;
+}
+.Text_BOND_be {
+    color: #c9c9b6;
+}
+.Text_PROM_65 {
+    color: #a29b70;
 }
 
 @keyframes Emblem_hideLevel_f2 {
@@ -2292,17 +1986,10 @@ body {
 .Label_textMask_7f {
     width: 100%;
     height: 100%;
-    background-image: url('R.images.gui.maps.icons.battlePass.logo.font_texture');
     background-position: 50% 4rem;
     background-size: 100% 100%;
     mix-blend-mode: multiply;
     position: absolute;
-}
-.Label_textMask__gold_71 {
-    background-image: url('R.images.gui.maps.icons.battlePass.logo.font_texture_gold');
-}
-.Label_textMask__goldContrast_05 {
-    background-image: url('R.images.gui.maps.icons.battlePass.logo.font_texture_gold_contrast');
 }
 .Label_textMask__animated_38 {
     opacity: 0;
@@ -2865,7 +2552,7 @@ body {
 .BattlePassWidget_base_99 {
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
+    align-items: center;
 }
 
 .BattlePassWidget_content_f7 {
@@ -3013,6 +2700,679 @@ body {
 .BattlePassWidget_notUsedPoints_63 {
     margin-right: 2rem;
     color: #e9e2bf;
+}
+
+.Reward_base_07 {
+    color: #f2f2f7;
+    font-size: 28rem;
+    font-weight: 700;
+    line-height: 1.1;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.mediaMedium .Reward_base_07 {
+    color: #f2f2f7;
+    font-size: 56rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.Reward_image_f5 {
+    width: 48rem;
+    height: 48rem;
+    background: no-repeat center / contain;
+}
+
+.Reward_base__crystal_30 .Reward_image_f5,
+.Reward_base__xp_c3 .Reward_image_f5,
+.Reward_base__credits_40 .Reward_image_f5,
+.Reward_base__brcoin_18 .Reward_image_f5,
+.Reward_base__brProgressionToken_38 .Reward_image_f5 {
+    margin-top: 5rem;
+    margin-right: 3rem;
+}
+
+.mediaMedium .Reward_base__crystal_30 .Reward_image_f5,
+.mediaMedium .Reward_base__xp_c3 .Reward_image_f5,
+.mediaMedium .Reward_base__credits_40 .Reward_image_f5,
+.mediaMedium .Reward_base__brcoin_18 .Reward_image_f5,
+.mediaMedium .Reward_base__brProgressionToken_38 .Reward_image_f5 {
+    margin-top: 8rem;
+}
+
+.Reward_base__brProgressionToken_38 .Reward_image_f5 {
+    margin-right: 8rem;
+}
+
+.Reward_base__battlePassPoints_68 .Reward_image_f5 {
+    width: 37rem;
+    height: 36rem;
+    margin-top: 8rem;
+    margin-right: 7rem;
+}
+
+.mediaMedium .Reward_base__battlePassPoints_68 .Reward_image_f5 {
+    margin-top: 11rem;
+}
+
+.BattleRewardList_base_68 {
+    display: flex;
+    align-items: center;
+}
+
+.BattleRewardList_title_a1 {
+    color: #f2f2f7;
+    font-size: 28rem;
+    font-weight: 700;
+    line-height: 1.1;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.mediaMedium .BattleRewardList_title_a1 {
+    color: #f2f2f7;
+    font-size: 56rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.PremiumRewardItem_base_b1 {
+    color: #f2f2f7;
+    font-size: 20rem;
+    font-weight: 400;
+    line-height: 1.2;
+    display: flex;
+    align-items: center;
+    font-size: 16rem;
+    position: relative;
+}
+
+.mediaMedium .PremiumRewardItem_base_b1 {
+    font-size: 20rem;
+}
+
+.PremiumRewardItem_image_37 {
+    width: 24rem;
+    height: 24rem;
+    background: no-repeat center / contain;
+}
+
+.PremiumRewardItem_base__crystal_ab .PremiumRewardItem_image_37,
+.PremiumRewardItem_base__xp_55 .PremiumRewardItem_image_37,
+.PremiumRewardItem_base__credits_33 .PremiumRewardItem_image_37,
+.PremiumRewardItem_base__brcoin_eb .PremiumRewardItem_image_37,
+.PremiumRewardItem_base__brProgressionToken_9a .PremiumRewardItem_image_37 {
+    margin: 2rem 2rem 0 0;
+}
+
+.mediaMedium .PremiumRewardItem_base__crystal_ab .PremiumRewardItem_image_37,
+.mediaMedium .PremiumRewardItem_base__xp_55 .PremiumRewardItem_image_37,
+.mediaMedium .PremiumRewardItem_base__credits_33 .PremiumRewardItem_image_37,
+.mediaMedium .PremiumRewardItem_base__brcoin_eb .PremiumRewardItem_image_37,
+.mediaMedium .PremiumRewardItem_base__brProgressionToken_9a .PremiumRewardItem_image_37 {
+    margin-right: 0;
+}
+
+.PremiumRewardItem_base__battlePassPoints_77 .PremiumRewardItem_image_37 {
+    width: 16rem;
+    height: 16rem;
+    margin: 4rem 7rem 0 4rem;
+}
+
+.mediaMedium .PremiumRewardItem_base__battlePassPoints_77 .PremiumRewardItem_image_37 {
+    margin-top: 2rem;
+}
+
+.PremiumRewards_base_9a {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.PremiumRewards_ribbonLine_ec {
+    display: flex;
+    width: 100%;
+    height: 2rem;
+    background-color: #fff;
+    opacity: 0.15;
+}
+.PremiumRewards_ribbonLine__left_6d {
+    background:
+        linear-gradient(270deg, rgba(255, 255, 255, 0.27) 0%, rgba(255, 255, 255, 0) 14.6%), rgba(255, 255, 255, 0.1);
+    opacity: 1;
+}
+.PremiumRewards_ribbonLine__right_7e {
+    background:
+        linear-gradient(270deg, rgba(255, 255, 255, 0.27) 0%, rgba(255, 255, 255, 0) 14.6%), rgba(255, 255, 255, 0.1);
+    opacity: 1;
+    transform: matrix(-1, 0, 0, 1, 0, 0);
+}
+.PremiumRewards_ribbonDot_1c {
+    width: 2rem;
+    height: 2rem;
+    box-shadow:
+        0 0 4px rgba(255, 204, 192, 0.81),
+        0 0 8px #fec0c0;
+    background: #ffa48f;
+    position: absolute;
+}
+.PremiumRewards_ribbonDot__left_fd {
+    right: -1rem;
+}
+.PremiumRewards_ribbonDot__right_c4 {
+    left: 1rem;
+}
+.PremiumRewards_premium_33 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: absolute;
+    bottom: 11rem;
+    left: 0;
+    transform: translateY(50%);
+}
+.mediaMediumHeight .PremiumRewards_premium_33 {
+    bottom: 16rem;
+}
+.PremiumRewards_premiumLine_0c {
+    display: flex;
+    width: 100%;
+    position: relative;
+}
+.PremiumRewards_premiumWrapper_1f {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 10rem 24rem;
+}
+.mediaMediumHeight .PremiumRewards_premiumWrapper_1f {
+    margin-bottom: 32rem;
+}
+.PremiumRewards_premiumTitleWrapper_f2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: absolute;
+    bottom: 48rem;
+}
+.mediaMediumHeight .PremiumRewards_premiumTitleWrapper_f2 {
+    bottom: 64rem;
+}
+.PremiumRewards_premiumIcon_27 {
+    width: 16rem;
+    height: 16rem;
+    margin: 2rem 5rem 0;
+    background: url('R.images.gui.maps.icons.battleRoyale.battleResult.battle_reward.icon_prem') no-repeat center /
+        contain;
+}
+.PremiumRewards_premiumText_8f {
+    color: #ffdd99;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+.mediaMediumHeight .PremiumRewards_premiumText_8f {
+    color: #ffdd99;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+    margin-right: 5rem;
+}
+.PremiumRewards_battleRewardItemClassMix_0f {
+    color: #f2f2f7;
+    font-size: 16rem;
+    line-height: 1.2;
+}
+.mediaMediumHeight .PremiumRewards_battleRewardItemClassMix_0f {
+    font-size: 20rem;
+}
+.PremiumRewards_rewardsList_7b {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 16rem;
+}
+.mediaMediumHeight .PremiumRewards_rewardsList_7b {
+    margin-top: 28rem;
+}
+.PremiumRewards_rewardsItem_07 {
+    margin: 0 6rem;
+}
+
+.Ribbon_base_69 {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.Ribbon_shadow_a4 {
+    width: 100%;
+    height: 93rem;
+    position: absolute;
+    left: 0;
+}
+.Ribbon_shadow__top_c9 {
+    background: linear-gradient(rgba(52, 53, 56, 0) 0%, rgba(24, 24, 37, 0.5) 100%);
+    top: -93rem;
+}
+.Ribbon_shadow__bottom_a2 {
+    background: linear-gradient(rgba(24, 24, 37, 0.5) 0%, rgba(52, 53, 56, 0) 100%);
+    bottom: -93rem;
+}
+.Ribbon_topLine_26 {
+    display: flex;
+    width: 100%;
+    position: absolute;
+    top: 11rem;
+    left: 0;
+}
+.mediaMediumHeight .Ribbon_topLine_26 {
+    top: 16rem;
+}
+.Ribbon_bottomLine_04 {
+    display: flex;
+    width: 100%;
+    position: absolute;
+    bottom: 11rem;
+    left: 0;
+}
+.mediaMediumHeight .Ribbon_bottomLine_04 {
+    bottom: 16rem;
+}
+.Ribbon_ribbonLine_a5 {
+    display: flex;
+    width: 100%;
+    height: 2rem;
+    background-color: #fff;
+    opacity: 0.15;
+}
+.Ribbon_ribbonIcon_66 {
+    width: 100%;
+    height: 100%;
+    background: no-repeat center / 100%;
+    position: absolute;
+    top: 0;
+}
+.Ribbon_base__win_15 .Ribbon_ribbonIcon_66 {
+    background-image: url('R.images.gui.maps.icons.battleRoyale.battleResult.battle_reward.ribbon_red');
+}
+.Ribbon_base__prem_78 .Ribbon_ribbonIcon_66 {
+    background-image: url('R.images.gui.maps.icons.battleRoyale.battleResult.battle_reward.ribbon_red_prem');
+}
+.Ribbon_base__lose_9b .Ribbon_ribbonIcon_66 {
+    background-image: url('R.images.gui.maps.icons.battleRoyale.battleResult.battle_reward.ribbon_dark');
+}
+.Ribbon_base__lose_prem_ad .Ribbon_ribbonIcon_66 {
+    background-image: url('R.images.gui.maps.icons.battleRoyale.battleResult.battle_reward.ribbon_dark_prem');
+}
+
+.StatItem_base_b6 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 110rem;
+    min-height: 53rem;
+    margin: 0 20rem;
+    position: relative;
+}
+
+.mediaMediumHeight .StatItem_base_b6 {
+    width: 144rem;
+    min-height: 76rem;
+    margin: 0 10rem;
+}
+
+.StatItem_wreathImage_ee {
+    width: 60rem;
+    height: 53rem;
+    background: url('R.images.gui.maps.icons.battleRoyale.battleResult.stat_list.wreath') no-repeat center / contain;
+    opacity: 0.5;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.mediaMediumHeight .StatItem_wreathImage_ee {
+    width: 88rem;
+    height: 76rem;
+}
+
+.StatItem_statImage_97 {
+    width: 52rem;
+    height: 52rem;
+    background: no-repeat center / contain;
+    position: absolute;
+    top: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.mediaMediumHeight .StatItem_statImage_97 {
+    width: 76rem;
+    height: 76rem;
+    top: 0;
+}
+
+.StatItem_statText_95 {
+    color: #f2f2f7;
+    font-size: 24rem;
+    font-weight: 700;
+    line-height: 1.2;
+    display: flex;
+    margin-top: 40rem;
+}
+
+.mediaMediumHeight .StatItem_statText_95 {
+    margin-top: 56rem;
+}
+
+.StatItem_divider_44 {
+    margin-left: 4rem;
+    opacity: 0.2;
+}
+
+.mediaMediumHeight .StatItem_divider_44 {
+    margin-left: 0;
+}
+
+.StatItem_maxValue_6d {
+    margin-left: 5rem;
+    opacity: 0.2;
+}
+
+.mediaMediumHeight .StatItem_maxValue_6d {
+    margin-left: 0;
+}
+
+.StatItem_titleText_7c {
+    color: #f2f2f7;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    opacity: 0.6;
+}
+
+.mediaMediumHeight .StatItem_titleText_7c {
+    font-size: 16rem;
+}
+
+.StatsList_base_b3 {
+    display: flex;
+    z-index: 1;
+}
+
+.Title_base_e9 {
+    display: flex;
+    position: relative;
+}
+
+.Title_titleWrapper_70 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    position: relative;
+}
+
+.Title_base__win_b7 .Title_titleWrapper_70 {
+    margin-top: 76rem;
+}
+
+.mediaMediumHeight .Title_base__win_b7 .Title_titleWrapper_70 {
+    margin-top: 96rem;
+}
+
+.mediaLargeHeight .Title_base__win_b7 .Title_titleWrapper_70 {
+    margin-top: 166rem;
+}
+
+.Title_titleBg_b0 {
+    width: 100%;
+    max-width: 1920rem;
+    height: 381rem;
+    background: url('R.images.gui.maps.icons.battleRoyale.battleResult.battle_reward.title.winBgAdd') no-repeat center /
+        100% 100%;
+    opacity: 0;
+    mix-blend-mode: screen;
+    position: absolute;
+    top: -220rem;
+    left: 50%;
+    transform: translateX(-50%) scaleX(0.56);
+}
+
+.mediaMediumHeight .Title_titleBg_b0 {
+    top: -202rem;
+}
+
+.Title_titleBg__enterActive_14 {
+    opacity: 1;
+    transform: translateX(-50%) scaleX(1);
+    transition:
+        opacity 0.4s,
+        transform 0.4s;
+    transition-delay: 0.2s;
+    transition-timing-function: ease-out;
+}
+
+.Title_titleBg__enterDone_fe {
+    opacity: 1;
+    transform: translateX(-50%) scaleX(1);
+}
+
+.Title_place_ff {
+    color: #ffffff;
+    font-size: 120rem;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    opacity: 0;
+    mask: linear-gradient(180deg, #e4e4e4 12.5%, rgba(227, 227, 227, 0.3) 72.5%, rgba(237, 237, 237, 0) 87%);
+    position: absolute;
+    top: -75rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.mediaMediumHeight .Title_place_ff {
+    font-size: 160rem;
+    top: -80rem;
+}
+
+.mediaLargeHeight .Title_place_ff {
+    font-size: 210rem;
+    top: -125rem;
+}
+
+.Title_base__winner_7f .Title_place_ff {
+    font-size: 100rem;
+    top: -65rem;
+}
+
+.mediaMediumHeight .Title_base__winner_7f .Title_place_ff {
+    font-size: 130rem;
+    top: -75rem;
+}
+
+.mediaLargeHeight .Title_base__winner_7f .Title_place_ff {
+    font-size: 160rem;
+    top: -100rem;
+}
+
+.Title_base__firstPlace_74 .Title_place_ff {
+    color: #fefeec;
+    mask: linear-gradient(180deg, #e9e2bf 14.5%, rgba(233, 226, 191, 0.3) 73%, rgba(233, 226, 191, 0) 86.5%);
+}
+
+.Title_wreathIcon_51 {
+    width: 245rem;
+    height: 224rem;
+    background: no-repeat center / cover;
+    opacity: 0;
+    position: absolute;
+    top: 12rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.mediaMediumHeight .Title_wreathIcon_51 {
+    top: 15rem;
+}
+
+.mediaLargeHeight .Title_wreathIcon_51 {
+    top: 65rem;
+}
+
+.Title_base__winner_7f .Title_wreathIcon_51 {
+    background-image: url('R.images.gui.maps.icons.battleRoyale.battleResult.battle_reward.title.wreathWinner');
+}
+
+.mediaMediumHeight .Title_base__winner_7f .Title_wreathIcon_51 {
+    width: 281rem;
+    height: 245rem;
+}
+
+.Title_base__firstPlace_74 .Title_wreathIcon_51 {
+    background-image: url('R.images.gui.maps.icons.battleRoyale.battleResult.battle_reward.title.wreathFirstPlace');
+}
+
+.mediaMediumHeight .Title_base__firstPlace_74 .Title_wreathIcon_51 {
+    width: 373rem;
+    height: 326rem;
+}
+
+.Title_titleText_bd {
+    color: #ffffff;
+    font-weight: 700;
+    opacity: 0;
+    mask: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.8) 18%,
+        rgba(255, 255, 255, 0.3) 65%,
+        rgba(255, 255, 255, 0) 90.5%
+    );
+    position: relative;
+    mask-repeat: repeat;
+}
+
+.Title_base__firstPlace_74 .Title_titleText_bd {
+    color: #fefeec;
+    mask: linear-gradient(
+        180deg,
+        rgba(249, 238, 217, 0.95) 16%,
+        rgba(234, 220, 194, 0.9) 41.5%,
+        rgba(255, 248, 210, 0) 85%
+    );
+}
+
+.Title_base__lose_a0 .Title_titleText_bd {
+    font-size: 48rem;
+}
+
+.mediaMediumHeight .Title_base__lose_a0 .Title_titleText_bd {
+    font-size: 73rem;
+}
+
+.mediaLargeHeight .Title_base__lose_a0 .Title_titleText_bd {
+    font-size: 96rem;
+}
+
+.Title_base__win_b7 .Title_titleText_bd {
+    font-size: 63rem;
+}
+
+.mediaMediumHeight .Title_base__win_b7 .Title_titleText_bd {
+    font-size: 80rem;
+}
+
+.Title_vehicle_7f {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    position: relative;
+}
+
+.Title_base__win_b7 .Title_vehicle_7f {
+    margin-top: -2rem;
+}
+
+.mediaMediumHeight .Title_base__win_b7 .Title_vehicle_7f {
+    margin-top: -3rem;
+}
+
+.mediaLargeHeight .Title_base__win_b7 .Title_vehicle_7f {
+    margin-top: -2rem;
+}
+
+.Title_vehicleTypeIcon_a4 {
+    width: 24rem;
+    height: 24rem;
+    margin: 2rem 5rem 0 0;
+    background: no-repeat center / contain;
+}
+
+.Title_vehicleName_1c {
+    color: #f2f2f7;
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: 0.05em;
+}
+
+.TitleAnimations_wreathIcon_9e {
+    opacity: 0;
+    transition: opacity 0.6s;
+    transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);
+}
+
+.TitleAnimations_wreathIcon__enterDone_84 {
+    opacity: 1;
+}
+.TitleAnimations_titleBg_15 {
+    opacity: 1;
+    transform: translateX(-50%) scaleX(1);
+    transition:
+        opacity 0.4s,
+        transform 0.4s;
+    transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);
+}
+.TitleAnimations_titleBg__enterDone_87 {
+    opacity: 1;
+    transform: translateX(-50%) scaleX(1);
+}
+.TitleAnimations_place_35 {
+    opacity: 0.5;
+    transition: opacity 0.5s;
+    transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);
+}
+.TitleAnimations_place__enterDone_66 {
+    opacity: 0.5;
+}
+.TitleAnimations_title_76 {
+    opacity: 1;
+    transition: opacity 0.5s;
+    transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);
+}
+.TitleAnimations_vehicle_dc {
+    opacity: 1;
+    transition:
+        opacity 0.3s,
+        transform 0.3s;
+    transition-delay: 0s;
+    transition-timing-function: ease-out;
+}
+.TitleAnimations_baseEnterDone_0b {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
 }
 
 .Result_base_41 {
@@ -3215,101 +3575,4 @@ body {
     opacity: 1;
     transform: translateY(0);
     pointer-events: auto;
-}
-
-.BattleQuestsWidget_base_2d {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-}
-
-.BattleQuestsWidget_content_32 {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-.mediaMedium .BattleQuestsWidget_content_32 {
-    margin-left: 9rem;
-    margin-top: 15rem;
-}
-
-.BattleQuestsWidget_emblemContainer_10 {
-    position: relative;
-}
-
-.BattleQuestsWidget_emblem_15 {
-    width: 64rem;
-    height: 54rem;
-    background: url('R.images.gui.maps.icons.battleRoyale.battleResult.battle_quests.battle_quests_small') no-repeat
-        center / contain;
-}
-
-.mediaMedium .BattleQuestsWidget_emblem_15 {
-    width: 96rem;
-    height: 96rem;
-    margin-top: 2rem;
-    background: url('R.images.gui.maps.icons.battleRoyale.battleResult.battle_quests.battle_quests') no-repeat center /
-        contain;
-}
-
-.BattleQuestsWidget_glow_96 {
-    width: 100rem;
-    height: 100rem;
-    background: url('R.images.gui.maps.icons.battleRoyale.battleResult.battle_quests.light_small') no-repeat center /
-        contain;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    z-index: -1;
-    transform: translate(-50%, -50%);
-    pointer-events: none;
-}
-
-.mediaMedium .BattleQuestsWidget_glow_96 {
-    width: 120rem;
-    height: 120rem;
-    background: url('R.images.gui.maps.icons.battleRoyale.battleResult.battle_quests.light') no-repeat center / contain;
-}
-
-.BattleQuestsWidget_title_0b {
-    color: #f2f2f7;
-    font-size: 18rem;
-    font-weight: 700;
-    line-height: 1.1;
-    margin-top: -1rem;
-    margin-bottom: 9rem;
-}
-
-.mediaMedium .BattleQuestsWidget_title_0b {
-    color: #f2f2f7;
-    font-size: 28rem;
-    font-weight: 700;
-    line-height: 1.1;
-    margin-bottom: 11rem;
-}
-
-.BattleQuestsWidget_questsComplete_d9 {
-    color: #e9e2bf;
-    font-size: 12rem;
-    font-weight: 400;
-    line-height: 1.3;
-    width: 200rem;
-    margin-bottom: 14rem;
-}
-
-.mediaMedium .BattleQuestsWidget_questsComplete_d9 {
-    color: #e9e2bf;
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
-    width: 230rem;
-    margin-bottom: 16rem;
-}
-
-.BattleQuestsWidget_questsCompleteContainer_d8 {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-bottom: 4rem;
 }

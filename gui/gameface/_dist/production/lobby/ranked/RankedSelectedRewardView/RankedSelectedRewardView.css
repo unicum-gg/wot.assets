@@ -391,6 +391,62 @@ body {
     }
 }
 
+@keyframes AdditionalRewards_slideUp_83 {
+    0% {
+        opacity: 0;
+        transform: translateY(20rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes AdditionalRewards_lockStartAnimation_1e {
+    0% {
+        filter: blur(0);
+    }
+
+    100% {
+        filter: blur(4px);
+    }
+}
+
+@keyframes AdditionalRewards_lockEndAnimation_91 {
+    0% {
+        filter: blur(4px);
+        opacity: 1;
+        transform: translateX(-50%) scale(1);
+    }
+
+    100% {
+        filter: blur(24px);
+        opacity: 0;
+        transform: translateX(-50%) scale(1.7);
+    }
+}
+
+@keyframes AdditionalRewards_fadeIn_27 {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes AdditionalRewards_fadeOut_98 {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
 .AdditionalRewards_base_72 {
     display: flex;
     flex-direction: column;
@@ -405,7 +461,7 @@ body {
     animation-name: AdditionalRewards_slideUp_83;
     animation-duration: 0.8s;
     animation-fill-mode: forwards;
-    animation-timing-function: ease-in-out;
+    animation-timing-function: cubic-bezier(0.07, 0.82, 0.17, 1);
     animation-delay: 1.4s;
     animation-iteration-count: 1;
     justify-content: center;
@@ -423,7 +479,7 @@ body {
     animation-name: AdditionalRewards_slideUp_83;
     animation-duration: 0.8s;
     animation-fill-mode: forwards;
-    animation-timing-function: ease-in-out;
+    animation-timing-function: cubic-bezier(0.07, 0.82, 0.17, 1);
     animation-delay: 0.8s;
     animation-iteration-count: 1;
 }
@@ -729,6 +785,62 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     }
 }
 
+@keyframes Footer_slideUp_08 {
+    0% {
+        opacity: 0;
+        transform: translateY(20rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes Footer_lockStartAnimation_7f {
+    0% {
+        filter: blur(0);
+    }
+
+    100% {
+        filter: blur(4px);
+    }
+}
+
+@keyframes Footer_lockEndAnimation_f8 {
+    0% {
+        filter: blur(4px);
+        opacity: 1;
+        transform: translateX(-50%) scale(1);
+    }
+
+    100% {
+        filter: blur(24px);
+        opacity: 0;
+        transform: translateX(-50%) scale(1.7);
+    }
+}
+
+@keyframes Footer_fadeIn_98 {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes Footer_fadeOut_20 {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
 .Footer_base_01 {
     display: flex;
     flex-direction: column;
@@ -871,6 +983,62 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 
     to {
         transform: rotate(0deg);
+    }
+}
+
+@keyframes Glow_slideUp_da {
+    0% {
+        opacity: 0;
+        transform: translateY(20rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes Glow_lockStartAnimation_ce {
+    0% {
+        filter: blur(0);
+    }
+
+    100% {
+        filter: blur(4px);
+    }
+}
+
+@keyframes Glow_lockEndAnimation_f6 {
+    0% {
+        filter: blur(4px);
+        opacity: 1;
+        transform: translateX(-50%) scale(1);
+    }
+
+    100% {
+        filter: blur(24px);
+        opacity: 0;
+        transform: translateX(-50%) scale(1.7);
+    }
+}
+
+@keyframes Glow_fadeIn_dc {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes Glow_fadeOut_8b {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
     }
 }
 
@@ -1286,6 +1454,62 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     }
 }
 
+@keyframes MainRewards_slideUp_37 {
+    0% {
+        opacity: 0;
+        transform: translateY(20rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes MainRewards_lockStartAnimation_bc {
+    0% {
+        filter: blur(0);
+    }
+
+    100% {
+        filter: blur(4px);
+    }
+}
+
+@keyframes MainRewards_lockEndAnimation_99 {
+    0% {
+        filter: blur(4px);
+        opacity: 1;
+        transform: translateX(-50%) scale(1);
+    }
+
+    100% {
+        filter: blur(24px);
+        opacity: 0;
+        transform: translateX(-50%) scale(1.7);
+    }
+}
+
+@keyframes MainRewards_fadeIn_f9 {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes MainRewards_fadeOut_33 {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
 /* colors*/
 
 @keyframes MainRewards_fadeIn_f9 {
@@ -1456,6 +1680,62 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 
     to {
         transform: rotate(0deg);
+    }
+}
+
+@keyframes RewardsApp_slideUp_f8 {
+    0% {
+        opacity: 0;
+        transform: translateY(20rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes RewardsApp_lockStartAnimation_40 {
+    0% {
+        filter: blur(0);
+    }
+
+    100% {
+        filter: blur(4px);
+    }
+}
+
+@keyframes RewardsApp_lockEndAnimation_c3 {
+    0% {
+        filter: blur(4px);
+        opacity: 1;
+        transform: translateX(-50%) scale(1);
+    }
+
+    100% {
+        filter: blur(24px);
+        opacity: 0;
+        transform: translateX(-50%) scale(1.7);
+    }
+}
+
+@keyframes RewardsApp_fadeIn_4d {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes RewardsApp_fadeOut_28 {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
     }
 }
 

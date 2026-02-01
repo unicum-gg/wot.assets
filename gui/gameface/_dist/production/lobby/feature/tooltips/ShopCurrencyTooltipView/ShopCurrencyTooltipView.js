@@ -1137,7 +1137,6 @@
                             'div',
                             { className: 'App_base_eb' },
                             $().createElement('div', { className: 'App_bg_9f' }),
-                            $().createElement('div', { className: 'App_metal_57' }),
                             $().createElement(
                                 'div',
                                 { className: 'App_header_7d' },
@@ -1190,7 +1189,7 @@
         var E = A[u];
         if (void 0 !== E) return E.exports;
         var t = (A[u] = { exports: {} });
-        return (e[u](t, t.exports, F), t.exports);
+        return (e[u].call(t.exports, t, t.exports, F), t.exports);
     }
     ((F.m = e),
         (u = []),

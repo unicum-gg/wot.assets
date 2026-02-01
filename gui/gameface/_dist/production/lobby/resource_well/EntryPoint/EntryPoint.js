@@ -1795,7 +1795,7 @@
                                 {
                                     className: we.base,
                                     onClick: () => {
-                                        c !== b.Paused && c !== b.NotStarted && (p.playClick(), n.showProgression());
+                                        c !== b.Paused && (p.playClick(), n.showProgression());
                                     },
                                     onMouseEnter: p.playHighlight,
                                 },

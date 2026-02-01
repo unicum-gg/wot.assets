@@ -159,12 +159,12 @@
                         events: () => a.U,
                         extraSize: () => T,
                         forceTriggerMouseMove: () => O,
-                        freezeTextureBeforeResize: () => b,
+                        freezeTextureBeforeResize: () => h,
                         getBrowserTexturePath: () => c,
                         getDisplayStatus: () => M,
                         getScale: () => E,
                         getSize: () => d,
-                        getViewGlobalPosition: () => h,
+                        getViewGlobalPosition: () => b,
                         isEventHandled: () => y,
                         isFocused: () => f,
                         pxToRem: () => m,
@@ -202,11 +202,11 @@
                 function v(e, t, n = 'px') {
                     return 'rem' === n ? viewEnv.resizeViewRem(e, t) : viewEnv.resizeViewPx(e, t);
                 }
-                function h(e = 'rem') {
+                function b(e = 'rem') {
                     const t = viewEnv.getViewGlobalPositionRem();
                     return 'rem' === e ? t : { x: p(t.x), y: p(t.y) };
                 }
-                function b() {
+                function h() {
                     viewEnv.freezeTextureBeforeResize();
                 }
                 function E() {
@@ -558,8 +558,8 @@
                     u = Object.freeze({ FRACTIONAL: 0, WO_ZERO_DIGITS: 1 }),
                     d = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1 }),
                     v = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1, YEAR_MONTH: 2 });
-                var h = n(5521),
-                    b = n(3138);
+                var b = n(5521),
+                    h = n(3138);
                 const E = ['args'];
                 function m(e, t, n, o, r, a, i) {
                     try {
@@ -640,7 +640,7 @@
                     },
                     g = () => f(_.CLOSE),
                     y = (e, t) => {
-                        e.keyCode === h.n.ESCAPE && t();
+                        e.keyCode === b.n.ESCAPE && t();
                     };
                 var O = n(7572);
                 const M = r.instance,
@@ -660,17 +660,17 @@
                             f(_.CONTEXT_MENU, { isMouseEvent: !0, contentID: e, on: !0, decoratorID: n, args: t });
                         },
                         sendShowPopOverEvent: (e, t, n, o, r = R.invalid('resId'), a) => {
-                            const i = b.O.view.getViewGlobalPosition(),
+                            const i = h.O.view.getViewGlobalPosition(),
                                 s = n.getBoundingClientRect(),
                                 c = s.x,
                                 l = s.y,
                                 u = s.width,
                                 d = s.height,
                                 v = {
-                                    x: b.O.view.pxToRem(c) + i.x,
-                                    y: b.O.view.pxToRem(l) + i.y,
-                                    width: b.O.view.pxToRem(u),
-                                    height: b.O.view.pxToRem(d),
+                                    x: h.O.view.pxToRem(c) + i.x,
+                                    y: h.O.view.pxToRem(l) + i.y,
+                                    width: h.O.view.pxToRem(u),
+                                    height: h.O.view.pxToRem(d),
                                 };
                             f(_.POP_OVER, {
                                 isMouseEvent: !0,
@@ -818,8 +818,8 @@
                             s = e.classNames,
                             c = e.onMouseEnter,
                             v = e.onMouseLeave,
-                            h = e.onMouseDown,
-                            b = e.onMouseUp,
+                            b = e.onMouseDown,
+                            h = e.onMouseUp,
                             E =
                                 (e.soundClick,
                                 e.soundHover,
@@ -844,8 +844,8 @@
                                     className: m,
                                     onMouseEnter: this._onMouseEnter(c),
                                     onMouseLeave: this._onMouseLeave(v),
-                                    onMouseDown: this._onMouseDown(h),
-                                    onMouseUp: this._onMouseUp(b),
+                                    onMouseDown: this._onMouseDown(b),
+                                    onMouseUp: this._onMouseUp(h),
                                     onFocus: this.handleFocus,
                                     onBlur: this.handleBlur,
                                     onClick: n,
@@ -860,15 +860,15 @@
                     }
                 }
                 v.defaultProps = { side: 'left', type: 'back', soundHover: 'highlight', soundClick: 'play' };
-                var h = n(3138),
-                    b = n(5521),
+                var b = n(3138),
+                    h = n(5521),
                     E = n(4179);
                 const m = (e) => {
                     console.error(e.type + ': useKeydownListener hook :: Callback is not defined');
                 };
-                function p(e = b.n.NONE, t = m, n = !1) {
+                function p(e = h.n.NONE, t = m, n = !1) {
                     (0, o.useEffect)(() => {
-                        if (e !== b.n.NONE)
+                        if (e !== h.n.NONE)
                             return (
                                 window.addEventListener('keydown', o, n),
                                 () => {
@@ -877,8 +877,8 @@
                             );
                         function o(o) {
                             if (o.keyCode === e) {
-                                if (h.O.view.isEventHandled()) return;
-                                (h.O.view.setEventHandled(), t(o), n && o.stopPropagation());
+                                if (b.O.view.isEventHandled()) return;
+                                (b.O.view.setEventHandled(), t(o), n && o.stopPropagation());
                             }
                         }
                     }, [t, e, n]);
@@ -929,8 +929,8 @@
                     soundClick: u,
                     onMouseEnter: d,
                     onMouseMove: v,
-                    onMouseDown: h,
-                    onMouseUp: b,
+                    onMouseDown: b,
+                    onMouseUp: h,
                     onMouseLeave: E,
                     onClick: m,
                 }) => {
@@ -973,15 +973,15 @@
                         ),
                         F = (0, o.useCallback)(
                             (e) => {
-                                i || (b && b(e), T(!1));
+                                i || (h && h(e), T(!1));
                             },
-                            [i, b],
+                            [i, h],
                         ),
                         B = (0, o.useCallback)(
                             (e) => {
-                                i || (null !== u && c(u), h && h(e), n && S(), T(!0));
+                                i || (null !== u && c(u), b && b(e), n && S(), T(!0));
                             },
-                            [i, u, h, S, n],
+                            [i, u, b, S, n],
                         ),
                         U = (0, o.useCallback)(
                             (e) => {
@@ -1051,12 +1051,12 @@
                 };
                 y.defaultProps = { type: f.primary, isFocused: !1, soundHover: 'highlight', soundClick: 'play' };
                 const O = (0, o.memo)(y);
-                var M = n(3403);
+                var M = n(3282);
                 function k() {
                     return !1;
                 }
                 console.log;
-                var T = n(9174);
+                var T = n(3915);
                 function C(e, t) {
                     (null == t || t > e.length) && (t = e.length);
                     for (var n = 0, o = new Array(t); n < t; n++) o[n] = e[n];
@@ -1103,7 +1103,7 @@
                                                 return {
                                                     subscribe: (n, a) => {
                                                         const s = 'string' == typeof a ? `${o}.${a}` : o,
-                                                            _ = h.O.view.addModelObserver(s, t, !0);
+                                                            _ = b.O.view.addModelObserver(s, t, !0);
                                                         return (r.set(_, n), e && n(i(a)), _);
                                                     },
                                                     readByPath: i,
@@ -1167,7 +1167,6 @@
                                                                     );
                                                                 })(r.keys());
                                                             !(e = n()).done;
-
                                                         )
                                                             a(e.value, t);
                                                     },
@@ -1196,11 +1195,11 @@
                                                 observableModel: {
                                                     array: (t, n) => {
                                                         const o = null != n ? n : s(t),
-                                                            r = T.LO.box(o, { equals: k });
+                                                            r = T.observable.box(o, { equals: k });
                                                         return (
                                                             'real' === e &&
                                                                 i.subscribe(
-                                                                    (0, T.aD)((e) => r.set(e)),
+                                                                    (0, T.action)((e) => r.set(e)),
                                                                     t,
                                                                 ),
                                                             r
@@ -1208,11 +1207,11 @@
                                                     },
                                                     object: (t, n) => {
                                                         const o = null != n ? n : s(t),
-                                                            r = T.LO.box(o, { equals: k });
+                                                            r = T.observable.box(o, { equals: k });
                                                         return (
                                                             'real' === e &&
                                                                 i.subscribe(
-                                                                    (0, T.aD)((e) => r.set(e)),
+                                                                    (0, T.action)((e) => r.set(e)),
                                                                     t,
                                                                 ),
                                                             r
@@ -1222,13 +1221,13 @@
                                                         const o = s(n);
                                                         if (Array.isArray(t)) {
                                                             const r = t.reduce(
-                                                                (e, t) => ((e[t] = T.LO.box(o[t], {})), e),
+                                                                (e, t) => ((e[t] = T.observable.box(o[t], {})), e),
                                                                 {},
                                                             );
                                                             return (
                                                                 'real' === e &&
                                                                     i.subscribe(
-                                                                        (0, T.aD)((e) => {
+                                                                        (0, T.action)((e) => {
                                                                             t.forEach((t) => {
                                                                                 r[t].set(e[t]);
                                                                             });
@@ -1242,13 +1241,16 @@
                                                             const r = t,
                                                                 a = Object.entries(r),
                                                                 s = a.reduce(
-                                                                    (e, [t, n]) => ((e[n] = T.LO.box(o[t], {})), e),
+                                                                    (e, [t, n]) => (
+                                                                        (e[n] = T.observable.box(o[t], {})),
+                                                                        e
+                                                                    ),
                                                                     {},
                                                                 );
                                                             return (
                                                                 'real' === e &&
                                                                     i.subscribe(
-                                                                        (0, T.aD)((e) => {
+                                                                        (0, T.action)((e) => {
                                                                             a.forEach(([t, n]) => {
                                                                                 s[n].set(e[t]);
                                                                             });
@@ -1274,9 +1276,9 @@
                                     u = (0, o.useState)(e),
                                     d = u[0],
                                     v = u[1],
-                                    b = (0, o.useState)(() => c(e, a, s)),
-                                    E = b[0],
-                                    m = b[1];
+                                    h = (0, o.useState)(() => c(e, a, s)),
+                                    E = h[0],
+                                    m = h[1];
                                 return (
                                     (0, o.useEffect)(() => {
                                         l.current ? m(c(d, a, s)) : (l.current = !0);
@@ -1299,7 +1301,7 @@
                     S = A[0],
                     x = A[1],
                     N = 'Error_error_98',
-                    L = (0, M.Pi)(({ errorTitle: e, errorText: t }) => {
+                    L = (0, M.observer)(({ errorTitle: e, errorText: t }) => {
                         const n = x().controls,
                             o = _()(N, 'Error_error__title_c8'),
                             a = _()(N, 'Error_error__text_ed');
@@ -1328,7 +1330,7 @@
                         var e;
                         return (
                             (e = E.Sy),
-                            p(b.n.ESCAPE, e),
+                            p(h.n.ESCAPE, e),
                             r().createElement(
                                 'div',
                                 { className: 'App_base_57' },
@@ -1357,7 +1359,7 @@
         var t = __webpack_module_cache__[e];
         if (void 0 !== t) return t.exports;
         var n = (__webpack_module_cache__[e] = { exports: {} });
-        return (__webpack_modules__[e](n, n.exports, __webpack_require__), n.exports);
+        return (__webpack_modules__[e].call(n.exports, n, n.exports, __webpack_require__), n.exports);
     }
     ((__webpack_require__.m = __webpack_modules__),
         (deferred = []),
@@ -1407,7 +1409,6 @@
                 Object.defineProperty(e, Symbol.toStringTag, { value: 'Module' }),
                 Object.defineProperty(e, '__esModule', { value: !0 }));
         }),
-        (__webpack_require__.j = 403),
         (() => {
             var e = { 403: 0 };
             __webpack_require__.O.j = (t) => 0 === e[t];

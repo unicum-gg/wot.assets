@@ -3143,6 +3143,8 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .Progression_progressLineContainer_32 {
     width: 100%;
     height: 100%;
+}
+.Progression_progressAnimated_59 {
     transition: transform 0.5s cubic-bezier(0.34, -0.02, 0.33, 1.01);
 }
 .Progression_progressBarContainer_15 {
@@ -3928,6 +3930,9 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .mediaMedium .Progression_progressLineContainer_c4 {
     margin-top: 0;
 }
+.Progression_progressLineContainer__instantAnimation_60 {
+    transition: none;
+}
 .Progression_point_53 {
     color: #f2f2f7;
     font-size: 22rem;
@@ -4126,6 +4131,9 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     background-image: url('R.images.gui.maps.icons.paragons.seasons.tank_enable_big');
     top: 106rem;
     left: -78rem;
+}
+.UnifiedChapter_tankForeground__instantAnimation_fb {
+    transition: none;
 }
 .UnifiedChapter_base__hover_fb .UnifiedChapter_tankForeground_f0 {
     width: 254rem;
@@ -4395,6 +4403,10 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 
 .mediaExtraLarge .WidgetChapter_base__hover_da {
     top: 290rem;
+}
+
+.WidgetChapter_base__instantAnimation_73 {
+    transition: none;
 }
 .WidgetChapter_iconStage_24 {
     display: flex;

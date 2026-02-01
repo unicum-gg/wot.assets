@@ -1070,21 +1070,26 @@ body {
 }
 
 .Vehicle_nation_88 {
-    width: 26rem;
+    width: 25rem;
     height: 16rem;
-    margin: 0 10rem -2rem 0;
-    background: no-repeat center / contain;
+    margin: 0 10rem -5rem 0;
+    background: no-repeat center / cover;
+}
+
+.mediaMedium .Vehicle_nation_88 {
+    width: 30rem;
+    height: 20rem;
 }
 
 .Vehicle_type_14 {
     width: 32rem;
-    height: 32rem;
+    height: 48rem;
     margin: 0 6rem;
-    background: no-repeat center / contain;
+    background: no-repeat center / cover;
 }
 
 .mediaMedium .Vehicle_type_14 {
-    width: 48rem;
+    width: 38rem;
     height: 48rem;
 }
 
@@ -1102,11 +1107,19 @@ body {
 }
 
 .mediaSmall .Vehicles_container_d2 {
-    max-width: 87%;
+    max-width: 1188rem;
+}
+
+.mediaMedium .Vehicles_container_d2 {
+    max-width: 1376rem;
+}
+
+.mediaLarge .Vehicles_container_d2 {
+    max-width: 1651rem;
 }
 
 .mediaExtraLarge .Vehicles_container_d2 {
-    max-width: 91%;
+    max-width: 2329rem;
 }
 
 .Vehicles_scrollWrapper_b0 {
@@ -1133,10 +1146,6 @@ body {
     transform-origin: 50% 55%; /* fixed blur due to rotation*/
 }
 
-.Vehicles_scrollLeftButton_28 {
-    background-position-y: 30%;
-}
-
 .Vehicles_scrollTrack_bd {
     margin: 0;
 }
@@ -1146,7 +1155,7 @@ body {
 }
 
 .Vehicles_item__offset_ab + .Vehicles_item__offset_ab {
-    margin-left: -50rem;
+    margin-left: -40rem;
 }
 
 .mediaSmall .Vehicles_item__offset_ab + .Vehicles_item__offset_ab {
@@ -1154,15 +1163,15 @@ body {
 }
 
 .mediaMedium .Vehicles_item__offset_ab + .Vehicles_item__offset_ab {
-    margin-left: -54rem;
+    margin-left: -44rem;
 }
 
 .mediaLarge .Vehicles_item__offset_ab + .Vehicles_item__offset_ab {
-    margin-left: -78rem;
+    margin-left: -68rem;
 }
 
 .mediaExtraLarge .Vehicles_item__offset_ab + .Vehicles_item__offset_ab {
-    margin-left: -67rem;
+    margin-left: -57rem;
 }
 
 .Vehicles_item__big_85 {
@@ -1181,8 +1190,8 @@ body {
     opacity: 0;
     visibility: hidden;
     position: absolute;
-    top: 107%;
     right: 0;
+    bottom: -40rem;
     left: 0;
     transition:
         opacity 0.2s ease-out,
@@ -1576,6 +1585,276 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     font-size: 18rem;
 }
 
+.Box_mt__XS_0c {
+    margin-top: 4rem;
+}
+.Box_mt__SM_eb {
+    margin-top: 8rem;
+}
+.Box_mt__SMp_cf {
+    margin-top: 10rem;
+}
+.Box_mt__MD_25 {
+    margin-top: 16rem;
+}
+.Box_mt__MDp_49 {
+    margin-top: 20rem;
+}
+.Box_mt__LG_e8 {
+    margin-top: 32rem;
+}
+.Box_mt__XL_83 {
+    margin-top: 64rem;
+}
+
+.Box_mr__XS_7c {
+    margin-right: 4rem;
+}
+
+.Box_mr__SM_08 {
+    margin-right: 8rem;
+}
+
+.Box_mr__SMp_06 {
+    margin-right: 10rem;
+}
+
+.Box_mr__MD_4a {
+    margin-right: 16rem;
+}
+
+.Box_mr__MDp_b6 {
+    margin-right: 20rem;
+}
+
+.Box_mr__LG_d0 {
+    margin-right: 32rem;
+}
+
+.Box_mr__XL_db {
+    margin-right: 64rem;
+}
+
+.Box_mb__XS_bb {
+    margin-bottom: 4rem;
+}
+
+.Box_mb__SM_83 {
+    margin-bottom: 8rem;
+}
+
+.Box_mb__SMp_04 {
+    margin-bottom: 10rem;
+}
+
+.Box_mb__MD_ed {
+    margin-bottom: 16rem;
+}
+
+.Box_mb__MDp_65 {
+    margin-bottom: 20rem;
+}
+
+.Box_mb__LG_c8 {
+    margin-bottom: 32rem;
+}
+
+.Box_mb__XL_f8 {
+    margin-bottom: 64rem;
+}
+
+.Box_ml__XS_8a {
+    margin-left: 4rem;
+}
+
+.Box_ml__SM_e6 {
+    margin-left: 8rem;
+}
+
+.Box_ml__SMp_fb {
+    margin-left: 10rem;
+}
+
+.Box_ml__MD_2b {
+    margin-left: 16rem;
+}
+
+.Box_ml__MDp_c7 {
+    margin-left: 20rem;
+}
+
+.Box_ml__LG_39 {
+    margin-left: 32rem;
+}
+
+.Box_ml__XL_4a {
+    margin-left: 64rem;
+}
+
+/* eslint-disable-next-line expectedscss*/
+.Text_paragraph-P10_2c {
+    font-size: 10rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.Text_paragraph-P12_22 {
+    font-size: 12rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+.Text_paragraph-P14_a7 {
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+.Text_paragraph-P16_90 {
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+.Text_paragraph-P18_50 {
+    font-size: 18rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+.Text_paragraph-P24_33 {
+    font-size: 24rem;
+    font-weight: 400;
+    line-height: 32rem;
+}
+.Text_heading-H14_8b {
+    font-size: 14rem;
+    font-weight: 700;
+    line-height: 1.15;
+}
+.Text_heading-H15_9e {
+    font-size: 15rem;
+    font-weight: 700;
+    line-height: 1.15;
+}
+.Text_heading-H18_b7 {
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H20R_f6 {
+    font-size: 20rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.Text_heading-H22_27 {
+    font-size: 22rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.Text_heading-H24R_be {
+    font-size: 24rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.Text_heading-H24_0c {
+    font-size: 24rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.Text_heading-H28_78 {
+    font-size: 28rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H36_32 {
+    font-size: 36rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H56_c3 {
+    font-size: 56rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H73_8f {
+    font-size: 73rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H144_a9 {
+    font-size: 144rem;
+    font-weight: 700;
+    line-height: 1;
+}
+.Text_BLACK_REAL_30 {
+    color: #000000;
+}
+.Text_WHITE_REAL_bc {
+    color: #ffffff;
+}
+.Text_WHITE_62 {
+    color: #f2f2f7;
+}
+.Text_WHITE_ORANGE_54 {
+    color: #fefeec;
+}
+.Text_WHITE_SPANISH_df {
+    color: #e9e2bf;
+}
+.Text_PAR_15 {
+    color: #8c8c7e;
+}
+.Text_PAR_SECONDARY_5d {
+    color: #595950;
+}
+.Text_PAR_TERTIARY_c9 {
+    color: #37362e;
+}
+.Text_INFO_RED_30 {
+    color: #ff0000;
+}
+.Text_RED_66 {
+    color: #ff2717;
+}
+.Text_RED_DARK_d8 {
+    color: #b70000;
+}
+.Text_YELLOW_ed {
+    color: #feab34;
+}
+.Text_ORANGE_be {
+    color: #ee7000;
+}
+.Text_CREAM_57 {
+    color: #ffdd99;
+}
+.Text_BROWN_18 {
+    color: #cbac77;
+}
+.Text_GREEN_BRIGHT_3f {
+    color: #80d43a;
+}
+.Text_GREEN_e3 {
+    color: #7ab300;
+}
+.Text_GREEN_DARK_f1 {
+    color: #497212;
+}
+.Text_BLUE_BOOSTER_21 {
+    color: #ccffff;
+}
+.Text_BLUE_TEAMKILLER_ab {
+    color: #09e2ff;
+}
+.Text_CRED_f7 {
+    color: #ced9d9;
+}
+.Text_GOLD_28 {
+    color: #ffc363;
+}
+.Text_BOND_be {
+    color: #c9c9b6;
+}
+.Text_PROM_65 {
+    color: #a29b70;
+}
+
 .FormatGradientText_gradientBox_86 {
     position: relative;
 }
@@ -1597,7 +1876,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     padding: 0 25rem;
     position: relative;
 }
-
 .Header_titleBox_72 {
     display: flex;
     justify-content: center;
@@ -1605,106 +1883,80 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     margin-bottom: 10rem;
     position: relative;
 }
-
 .Header_light_f6 {
-    width: 950rem;
-    height: 190rem;
-    background-image: radial-gradient(50% 50% at 50% 50%, rgba(40, 40, 67, 0.5), transparent);
+    width: 1274rem;
+    height: 400rem;
+    background: url('R.images.gui.maps.icons.seniorityAwards.headerLight') no-repeat center / contain;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -25%);
+    transform: translate(-50%, -40%);
     pointer-events: none;
 }
-
-.mediaSmall .Header_light_f6 {
-    width: 1205rem;
-    height: 237rem;
-}
-
-.mediaMedium .Header_light_f6 {
-    width: 1165rem;
-    height: 225rem;
-}
-
-.mediaLarge .Header_light_f6 {
-    width: 1741rem;
-    height: 285rem;
-}
-
-.mediaExtraLarge .Header_light_f6 {
-    width: 2057rem;
-    height: 428rem;
-}
-
 .Header_line_25 {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    width: 250rem;
-    height: 1rem;
-    background-image: linear-gradient(90deg, transparent, #fd9);
+    width: 230rem;
+    height: 12rem;
+    background: url('R.images.gui.maps.icons.seniorityAwards.headerFrame') no-repeat center / contain;
+    z-index: 1;
 }
-
-.mediaSmall .Header_line_25 {
-    width: 300rem;
+.mediaMedium .Header_line_25 {
+    width: 342rem;
+    height: 16rem;
 }
-
-.mediaLarge .Header_line_25 {
-    width: 493rem;
-}
-
 .Header_line__inverted_ab {
-    transform: rotate(180deg);
+    background-image: url('R.images.gui.maps.icons.seniorityAwards.headerFrameReverted');
 }
-
-.Header_square_08 {
-    width: 8rem;
-    height: 8rem;
-    background-color: #fd9;
-    transform: rotate(45deg);
+.mediaMedium .Header_line__inverted_ab {
+    width: 342rem;
+    height: 16rem;
 }
-
 .Header_title_4c {
-    margin: 0 22rem;
+    color: #f2f2f7;
     font-size: 28rem;
     font-weight: 700;
-    line-height: 1.2;
-    letter-spacing: 1.5rem;
+    line-height: 1.1;
+    margin: 0 30rem;
+    line-height: 115%;
     position: relative;
 }
-
 .mediaLarge .Header_title_4c {
+    color: #f2f2f7;
     font-size: 36rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin: 0 39rem;
+    line-height: 115%;
 }
-
 .Header_gradientText_37 {
     color: #f4e58b;
 }
-
 .Header_gradientText__copied_d8 {
     color: #ddab61;
     position: absolute;
     mask-image: linear-gradient(transparent, #fff);
 }
-
 .Header_subTitleBox_01 {
     color: #f2f2f7;
-    font-size: 45rem;
+    font-size: 36rem;
     font-weight: 700;
     line-height: 1.1;
-    letter-spacing: 1.5rem;
     position: relative;
 }
-
+.mediaMedium .Header_subTitleBox_01 {
+    color: #f2f2f7;
+    font-size: 56rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
 .mediaLarge .Header_subTitleBox_01 {
+    color: #f2f2f7;
     font-size: 73rem;
+    font-weight: 700;
+    line-height: 1.1;
 }
-
-.mediaExtraLarge .Header_subTitleBox_01 {
-    font-size: 100rem;
-}
-
 .Header_subTitle_e7 {
     justify-content: center;
 }
@@ -1846,9 +2098,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     transition: opacity 0.3s;
     pointer-events: none;
 }
-.mediaLarge .App_shadow_03 {
-    display: none;
-}
 .App_base__ribbon_86 .App_shadow_03 {
     opacity: 0.4;
 }
@@ -1909,6 +2158,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 .App_goto_32 {
     color: #8c8c7e;
+    transform: translateX(-4rem);
 }
 .App_header_de {
     opacity: 0;

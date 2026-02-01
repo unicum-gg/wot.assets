@@ -66,20 +66,20 @@
                         extraSize: () => z,
                         forceTriggerMouseMove: () => X,
                         freezeTextureBeforeResize: () => y,
-                        getBrowserTexturePath: () => b,
+                        getBrowserTexturePath: () => v,
                         getDisplayStatus: () => k,
                         getScale: () => H,
                         getSize: () => T,
                         getViewGlobalPosition: () => M,
                         isEventHandled: () => j,
-                        isFocused: () => N,
+                        isFocused: () => G,
                         pxToRem: () => O,
                         remToPx: () => W,
                         resize: () => L,
                         sendEvent: () => p,
                         setAnimateWindow: () => P,
-                        setEventHandled: () => G,
-                        setInputPaddingsRem: () => v,
+                        setEventHandled: () => N,
+                        setInputPaddingsRem: () => b,
                         setSidePaddingsRem: () => S,
                         whenTutorialReady: () => V,
                     }));
@@ -247,10 +247,10 @@
                 function f(u) {
                     viewEnv.addPreloadTexture(u);
                 }
-                function v(u) {
+                function b(u) {
                     viewEnv.setHitAreaPaddingsRem(u, u, u, u, 15);
                 }
-                function b(u, e, t, A = 1) {
+                function v(u, e, t, A = 1) {
                     return viewEnv.getWebBrowserTexturePath(u, e, t, A);
                 }
                 function w(u, e, t) {
@@ -284,10 +284,10 @@
                 function P(u, e) {
                     viewEnv.setAnimateWindow(u, e);
                 }
-                function N() {
+                function G() {
                     return viewEnv.isFocused();
                 }
-                function G() {
+                function N() {
                     return viewEnv.setEventHandled();
                 }
                 function j() {
@@ -803,7 +803,7 @@
                     );
                 }
                 Object.keys(tu());
-                const vu = {
+                const bu = {
                         XL: { mt: xu.mt__XL, mr: xu.mr__XL, mb: xu.mb__XL, ml: xu.ml__XL },
                         LG: { mt: xu.mt__LG, mr: xu.mr__LG, mb: xu.mb__LG, ml: xu.ml__LG },
                         MDp: { mt: xu.mt__MDp, mr: xu.mr__MDp, mb: xu.mb__MDp, ml: xu.ml__MDp },
@@ -812,7 +812,7 @@
                         SM: { mt: xu.mt__SM, mr: xu.mr__SM, mb: xu.mb__SM, ml: xu.ml__SM },
                         XS: { mt: xu.mt__XS, mr: xu.mr__XS, mb: xu.mb__XS, ml: xu.ml__XS },
                     },
-                    bu = (Object.keys(vu), ['mt', 'mr', 'mb', 'ml']),
+                    vu = (Object.keys(bu), ['mt', 'mr', 'mb', 'ml']),
                     wu = { mt: 'marginTop', mr: 'marginRight', mb: 'marginBottom', ml: 'marginLeft' },
                     Su = hu((u) => {
                         let e = u.className,
@@ -845,8 +845,8 @@
                                       (x && 'space-around') ||
                                       void 0
                                     : p,
-                            v = u.alignItems,
-                            b = void 0 === v ? (c ? 'flex-start' : g && 'center') || (_ && 'flex-end') || void 0 : v,
+                            b = u.alignItems,
+                            v = void 0 === b ? (c ? 'flex-start' : g && 'center') || (_ && 'flex-end') || void 0 : b,
                             w = u.alignSelf,
                             S = u.wrap,
                             T = u.flexWrap,
@@ -866,15 +866,15 @@
                                 for (A = 0; A < E.length; A++) ((t = E[A]), e.indexOf(t) >= 0 || (F[t] = u[t]));
                                 return F;
                             })(u, pu);
-                        const N = (0, U.useMemo)(() => {
+                        const G = (0, U.useMemo)(() => {
                                 const u = { mt: r, mr: n, mb: i, ml: l },
                                     e = ((u) =>
-                                        bu.reduce((e, t) => {
+                                        vu.reduce((e, t) => {
                                             const A = u[t];
-                                            return A && 'number' != typeof A ? e.concat(vu[!0 === A ? 'MD' : A][t]) : e;
+                                            return A && 'number' != typeof A ? e.concat(bu[!0 === A ? 'MD' : A][t]) : e;
                                         }, []))(u),
                                     F = ((u) =>
-                                        bu.reduce((e, t) => {
+                                        vu.reduce((e, t) => {
                                             const A = u[t];
                                             return ('number' == typeof A && (e[wu[t]] = A + 'rem'), e);
                                         }, {}))(u);
@@ -884,18 +884,18 @@
                                         height: void 0 !== A && 'number' == typeof A ? A + 'rem' : A,
                                         flex: H,
                                         alignSelf: w,
-                                        display: d || b ? 'flex' : void 0,
+                                        display: d || v ? 'flex' : void 0,
                                         flexDirection: d,
                                         flexWrap: L,
                                         justifyContent: f,
-                                        alignItems: b,
+                                        alignItems: v,
                                     }),
                                     computedClassNames: e,
                                 };
-                            }, [t, A, r, n, i, l, O, H, w, d, L, f, b]),
-                            G = N.computedStyle,
-                            j = N.computedClassNames;
-                        return K().createElement('div', fu({ className: a()(xu.base, ...j, e), style: G }, P), W);
+                            }, [t, A, r, n, i, l, O, H, w, d, L, f, v]),
+                            N = G.computedStyle,
+                            j = G.computedClassNames;
+                        return K().createElement('div', fu({ className: a()(xu.base, ...j, e), style: N }, P), W);
                     });
                 let Tu;
                 !(function (u) {
@@ -978,7 +978,7 @@
                               );
                 var Wu = t(3532),
                     Pu = t.n(Wu);
-                const Nu = {
+                const Gu = {
                         'paragraph-P10': 'Text_paragraph-P10_2c',
                         'paragraph-P12': 'Text_paragraph-P12_22',
                         'paragraph-P14': 'Text_paragraph-P14_a7',
@@ -1022,7 +1022,7 @@
                         BOND: 'Text_BOND_be',
                         PROM: 'Text_PROM_65',
                     },
-                    Gu = ['text', 'variant', 'className', 'color', 'm', 'mt', 'mr', 'mb', 'ml', 'style', 'format'];
+                    Nu = ['text', 'variant', 'className', 'color', 'm', 'mt', 'mr', 'mb', 'ml', 'style', 'format'];
                 function ju() {
                     return (
                         (ju =
@@ -1077,7 +1077,7 @@
                         (u) =>
                             u
                                 ? ((u) => Xu.includes(u))(u)
-                                    ? { colorClassName: Nu[u] }
+                                    ? { colorClassName: Gu[u] }
                                     : { colorStyle: { color: u } }
                                 : {}),
                     Uu = hu((u) => {
@@ -1104,7 +1104,7 @@
                                     E = Object.keys(u);
                                 for (A = 0; A < E.length; A++) ((t = E[A]), e.indexOf(t) >= 0 || (F[t] = u[t]));
                                 return F;
-                            })(u, Gu);
+                            })(u, Nu);
                         const c = (0, U.useMemo)(() => {
                                 const u = $u(F),
                                     e = u.colorClassName,
@@ -1118,7 +1118,7 @@
                             Su,
                             ju(
                                 {
-                                    className: a()(Nu.base, t && Nu[t], _, A),
+                                    className: a()(Gu.base, t && Gu[t], _, A),
                                     style: g,
                                     mt: !0 === D ? Vu[t || 'paragraph-P16'].mt : D,
                                     mr: !0 === B ? Vu[t || 'paragraph-P16'].mr : B,
@@ -1130,7 +1130,7 @@
                             void 0 !== s ? K().createElement(Ou, ju({}, s, { text: e })) : e,
                         );
                     });
-                var Ku = t(3403);
+                var Ku = t(3282);
                 const Yu = {
                         blackReal: 'FormatTextWithColorTags_blackReal_3c',
                         whiteReal: 'FormatTextWithColorTags_whiteReal_8a',
@@ -1194,7 +1194,7 @@
                     return !1;
                 }
                 console.log;
-                var ee = t(9174);
+                var ee = t(3915);
                 function te(u, e) {
                     (null == e || e > u.length) && (e = u.length);
                     for (var t = 0, A = new Array(e); t < e; t++) A[t] = u[t];
@@ -1305,7 +1305,6 @@
                                                                     );
                                                                 })(F.keys());
                                                             !(u = t()).done;
-
                                                         )
                                                             E(u.value, e);
                                                     },
@@ -1331,11 +1330,11 @@
                                                 observableModel: {
                                                     array: (e, t) => {
                                                         const A = null != t ? t : a(e),
-                                                            F = ee.LO.box(A, { equals: ue });
+                                                            F = ee.observable.box(A, { equals: ue });
                                                         return (
                                                             'real' === u &&
                                                                 D.subscribe(
-                                                                    (0, ee.aD)((u) => F.set(u)),
+                                                                    (0, ee.action)((u) => F.set(u)),
                                                                     e,
                                                                 ),
                                                             F
@@ -1343,11 +1342,11 @@
                                                     },
                                                     object: (e, t) => {
                                                         const A = null != t ? t : a(e),
-                                                            F = ee.LO.box(A, { equals: ue });
+                                                            F = ee.observable.box(A, { equals: ue });
                                                         return (
                                                             'real' === u &&
                                                                 D.subscribe(
-                                                                    (0, ee.aD)((u) => F.set(u)),
+                                                                    (0, ee.action)((u) => F.set(u)),
                                                                     e,
                                                                 ),
                                                             F
@@ -1357,13 +1356,13 @@
                                                         const A = a(t);
                                                         if (Array.isArray(e)) {
                                                             const F = e.reduce(
-                                                                (u, e) => ((u[e] = ee.LO.box(A[e], {})), u),
+                                                                (u, e) => ((u[e] = ee.observable.box(A[e], {})), u),
                                                                 {},
                                                             );
                                                             return (
                                                                 'real' === u &&
                                                                     D.subscribe(
-                                                                        (0, ee.aD)((u) => {
+                                                                        (0, ee.action)((u) => {
                                                                             e.forEach((e) => {
                                                                                 F[e].set(u[e]);
                                                                             });
@@ -1377,13 +1376,16 @@
                                                             const F = e,
                                                                 E = Object.entries(F),
                                                                 r = E.reduce(
-                                                                    (u, [e, t]) => ((u[t] = ee.LO.box(A[e], {})), u),
+                                                                    (u, [e, t]) => (
+                                                                        (u[t] = ee.observable.box(A[e], {})),
+                                                                        u
+                                                                    ),
                                                                     {},
                                                                 );
                                                             return (
                                                                 'real' === u &&
                                                                     D.subscribe(
-                                                                        (0, ee.aD)((u) => {
+                                                                        (0, ee.action)((u) => {
                                                                             E.forEach(([e, t]) => {
                                                                                 r[t].set(u[e]);
                                                                             });
@@ -1433,7 +1435,7 @@
                     })(0, function () {}),
                     Ee = Fe[0],
                     re = Fe[1],
-                    De = (0, Ku.Pi)(() => {
+                    De = (0, Ku.observer)(() => {
                         const u = re().model.root.get(),
                             e = u.header,
                             t = u.body,
@@ -1442,7 +1444,6 @@
                             'div',
                             { className: 'App_base_13' },
                             K().createElement('div', { className: 'App_bg_50' }),
-                            K().createElement('div', { className: 'App_metal_37' }),
                             K().createElement(
                                 'div',
                                 { className: 'App_content_ea' },
@@ -1471,7 +1472,7 @@
         var F = t[u];
         if (void 0 !== F) return F.exports;
         var E = (t[u] = { exports: {} });
-        return (e[u](E, E.exports, A), E.exports);
+        return (e[u].call(E.exports, E, E.exports, A), E.exports);
     }
     ((A.m = e),
         (u = []),

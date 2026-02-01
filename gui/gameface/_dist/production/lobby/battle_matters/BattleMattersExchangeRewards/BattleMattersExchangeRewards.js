@@ -59,14 +59,14 @@
                         getScale: () => H,
                         getSize: () => S,
                         getViewGlobalPosition: () => O,
-                        isEventHandled: () => I,
+                        isEventHandled: () => U,
                         isFocused: () => W,
                         pxToRem: () => R,
                         remToPx: () => P,
                         resize: () => y,
                         sendEvent: () => b,
                         setAnimateWindow: () => N,
-                        setEventHandled: () => U,
+                        setEventHandled: () => I,
                         setInputPaddingsRem: () => x,
                         setSidePaddingsRem: () => M,
                         whenTutorialReady: () => K,
@@ -266,10 +266,10 @@
                 function W() {
                     return viewEnv.isFocused();
                 }
-                function U() {
+                function I() {
                     return viewEnv.setEventHandled();
                 }
-                function I() {
+                function U() {
                     return viewEnv.isEventHandled();
                 }
                 function G() {
@@ -1084,7 +1084,7 @@
                     base__highlightActive: 'CButton_base__highlightActive_b2',
                     content: 'CButton_content_cc',
                 };
-                let U, I;
+                let I, U;
                 (!(function (u) {
                     ((u.main = 'main'),
                         (u.primary = 'primary'),
@@ -1092,10 +1092,10 @@
                         (u.primaryRed = 'primaryRed'),
                         (u.secondary = 'secondary'),
                         (u.ghost = 'ghost'));
-                })(U || (U = {})),
+                })(I || (I = {})),
                     (function (u) {
                         ((u.extraSmall = 'extraSmall'), (u.small = 'small'), (u.medium = 'medium'));
-                    })(I || (I = {})));
+                    })(U || (U = {})));
                 const G = ({
                     children: u,
                     size: e,
@@ -1205,7 +1205,7 @@
                                 onMouseLeave: k,
                                 onClick: L,
                             },
-                            E !== U.ghost &&
+                            E !== I.ghost &&
                                 a().createElement(
                                     a().Fragment,
                                     null,
@@ -1227,7 +1227,7 @@
                         )
                     );
                 };
-                G.defaultProps = { type: U.primary, isFocused: !1, soundHover: 'highlight', soundClick: 'play' };
+                G.defaultProps = { type: I.primary, isFocused: !1, soundHover: 'highlight', soundClick: 'play' };
                 const $ = (0, r.memo)(G),
                     j = {
                         base: 'TextButton_base_b6',
@@ -1724,7 +1724,7 @@
                             () => (0, r.useContext)(t),
                         ];
                     })(
-                        ({ observableModel: u }) => u.primitives(['vehicleName', 'vehicleUserName']),
+                        ({ observableModel: u }) => u.object(),
                         ({ externalModel: u }) => ({
                             close: u.createCallbackNoArgs('onClose'),
                             confirm: u.createCallbackNoArgs('onConfirm'),
@@ -1753,96 +1753,85 @@
                     const u = mu(),
                         e = u.model,
                         t = u.controls,
-                        E = (0, r.useState)(Ou.Confirm),
-                        n = E[0],
-                        A = E[1],
-                        i = R.images.gui.maps.shop.vehicles.c_180x135.$dyn(e.vehicleName.get().replace(/-/g, '_'));
-                    return (
-                        X(q.n.ESCAPE, t.close),
+                        E = e.get(),
+                        n = E.level,
+                        A = E.vehicleName,
+                        i = E.vehicleUserName,
+                        F = (0, r.useState)(Ou.Confirm),
+                        o = F[0],
+                        D = F[1],
+                        s = R.images.gui.maps.shop.vehicles.c_180x135.$dyn(A.replace(/-/g, '_'));
+                    (X(q.n.ESCAPE, t.close),
                         X(q.n.TAB, (u) => {
                             const e = u.shiftKey ? -1 : 1;
-                            A(Math.abs(n + e) % 2);
+                            D(Math.abs(o + e) % 2);
                         }),
                         X(q.n.ENTER, (u) => {
                             if (!u.altKey)
-                                switch (n) {
+                                switch (o) {
                                     case Ou.Confirm:
                                         t.confirm();
                                         break;
                                     case Ou.Cancel:
                                         t.close();
                                 }
-                        }),
+                        }));
+                    const l = `url(R.images.gui.maps.icons.battleMatters.common.tokens.c_180x135.level_${n})`;
+                    return a().createElement(
+                        'div',
+                        { className: hu },
                         a().createElement(
                             'div',
-                            { className: hu },
+                            { className: gu },
+                            a().createElement(V, {
+                                caption: yu.closeBtn(),
+                                type: 'close',
+                                side: 'right',
+                                onClick: t.close,
+                            }),
+                        ),
+                        a().createElement(
+                            'div',
+                            { className: vu },
                             a().createElement(
                                 'div',
-                                { className: gu },
-                                a().createElement(V, {
-                                    caption: yu.closeBtn(),
-                                    type: 'close',
-                                    side: 'right',
-                                    onClick: t.close,
-                                }),
+                                { className: wu },
+                                a().createElement(Du, { text: yu.title(), binding: { vehicleName: i } }),
                             ),
                             a().createElement(
                                 'div',
-                                { className: vu },
+                                { className: pu },
+                                a().createElement('div', { className: bu, style: { backgroundImage: l } }),
+                                a().createElement('div', { className: fu }),
+                                a().createElement('div', { className: xu, style: { backgroundImage: `url(${s})` } }),
+                            ),
+                            a().createElement(
+                                'div',
+                                { className: Tu },
+                                a().createElement(Du, { text: yu.description(), binding: { vehicleName: i } }),
+                            ),
+                            a().createElement('div', { className: Lu }),
+                            a().createElement(
+                                'div',
+                                { className: Mu },
                                 a().createElement(
-                                    'div',
-                                    { className: wu },
-                                    a().createElement(Du, {
-                                        text: yu.title(),
-                                        binding: { vehicleName: e.vehicleUserName.get() },
-                                    }),
+                                    $,
+                                    { size: U.medium, mixClass: Su, onClick: t.confirm, isFocused: o === Ou.Confirm },
+                                    yu.confirm(),
                                 ),
                                 a().createElement(
-                                    'div',
-                                    { className: pu },
-                                    a().createElement('div', { className: bu }),
-                                    a().createElement('div', { className: fu }),
-                                    a().createElement('div', {
-                                        className: xu,
-                                        style: { backgroundImage: `url(${i})` },
-                                    }),
-                                ),
-                                a().createElement(
-                                    'div',
-                                    { className: Tu },
-                                    a().createElement(Du, {
-                                        text: yu.description(),
-                                        binding: { vehicleName: e.vehicleUserName.get() },
-                                    }),
-                                ),
-                                a().createElement('div', { className: Lu }),
-                                a().createElement(
-                                    'div',
-                                    { className: Mu },
-                                    a().createElement(
-                                        $,
-                                        {
-                                            size: I.medium,
-                                            mixClass: Su,
-                                            onClick: t.confirm,
-                                            isFocused: n === Ou.Confirm,
-                                        },
-                                        yu.confirm(),
-                                    ),
-                                    a().createElement(
-                                        $,
-                                        {
-                                            size: I.medium,
-                                            mixClass: Su,
-                                            onClick: t.close,
-                                            type: U.secondary,
-                                            isFocused: n === Ou.Cancel,
-                                        },
-                                        yu.cancel(),
-                                    ),
+                                    $,
+                                    {
+                                        size: U.medium,
+                                        mixClass: Su,
+                                        onClick: t.close,
+                                        type: I.secondary,
+                                        isFocused: o === Ou.Cancel,
+                                    },
+                                    yu.cancel(),
                                 ),
                             ),
-                        )
+                        ),
                     );
                 });
                 engine.whenReady.then(() => {

@@ -14,5 +14,6 @@
         (var isWindowAccessible:bool = true)
         (var isUIVisible:bool = false)
         (var isVignetteVisible:bool = true)
+        (var isAutoClose:bool = true)
     )
 )

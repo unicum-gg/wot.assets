@@ -19,7 +19,7 @@
                 (A.r(t),
                     A.d(t, {
                         addModelObserver: () => S,
-                        addPreloadTexture: () => T,
+                        addPreloadTexture: () => w,
                         children: () => D,
                         displayStatus: () => p,
                         displayStatusIs: () => V,
@@ -37,7 +37,7 @@
                         pxToRem: () => G,
                         remToPx: () => z,
                         resize: () => I,
-                        sendEvent: () => w,
+                        sendEvent: () => T,
                         setAnimateWindow: () => L,
                         setEventHandled: () => q,
                         setInputPaddingsRem: () => P,
@@ -198,7 +198,7 @@
                         return viewEnv.handleViewEvent({ __Type: A, type: u });
                         var F;
                     },
-                    w = {
+                    T = {
                         close(u) {
                             y('popover' === u ? _ : b);
                         },
@@ -209,7 +209,7 @@
                             y(f, { isMouseEvent: !0, on: u });
                         },
                     };
-                function T(u) {
+                function w(u) {
                     viewEnv.addPreloadTexture(u);
                 }
                 function P(u) {
@@ -513,7 +513,10 @@
                         (u.LootBoxToken = 'lootBoxToken'),
                         (u.GoldenTicket = 'birthday2025_golden_ticket'),
                         (u.PostStamp = 'giftsystem_4_stamp'),
-                        (u.Quests = 'quests'));
+                        (u.Quests = 'quests'),
+                        (u.ArmoryCoin = 'armory_coin'),
+                        (u.PremiumPlusUniversal = 'premium_plus_universal'),
+                        (u.DogTagType = 'dogTagComponents'));
                 })(lu || (lu = {})),
                     (function (u) {
                         ((u.Gold = 'gold'),
@@ -623,19 +626,19 @@
                 }
                 console.log;
                 var yu = A(174);
-                function wu(u, e) {
+                function Tu(u, e) {
                     var A = ('undefined' != typeof Symbol && u[Symbol.iterator]) || u['@@iterator'];
                     if (A) return (A = A.call(u)).next.bind(A);
                     if (
                         Array.isArray(u) ||
                         (A = (function (u, e) {
                             if (!u) return;
-                            if ('string' == typeof u) return Tu(u, e);
+                            if ('string' == typeof u) return wu(u, e);
                             var A = Object.prototype.toString.call(u).slice(8, -1);
                             'Object' === A && u.constructor && (A = u.constructor.name);
                             if ('Map' === A || 'Set' === A) return Array.from(u);
                             if ('Arguments' === A || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(A))
-                                return Tu(u, e);
+                                return wu(u, e);
                         })(u)) ||
                         (e && u && 'number' == typeof u.length)
                     ) {
@@ -649,7 +652,7 @@
                         'Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.',
                     );
                 }
-                function Tu(u, e) {
+                function wu(u, e) {
                     (null == e || e > u.length) && (e = u.length);
                     for (var A = 0, F = new Array(e); A < e; A++) F[A] = u[A];
                     return F;
@@ -713,7 +716,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var u, A = wu(E.keys()); !(u = A()).done; ) D(u.value, e);
+                                                        for (var u, A = Tu(E.keys()); !(u = A()).done; ) D(u.value, e);
                                                     },
                                                     unsubscribe: D,
                                                 };

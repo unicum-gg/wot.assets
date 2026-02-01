@@ -2917,7 +2917,7 @@
                         bottomButton: gu,
                     },
                     pu = (u, e) => {
-                        const t = e % u | 0;
+                        const t = (e % u) | 0;
                         return t > 0 ? (e - (t > 0.35 * u ? t - u : t)) | 0 : 0 | e;
                     };
                 var vu;

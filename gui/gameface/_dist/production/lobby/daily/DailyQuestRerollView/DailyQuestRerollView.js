@@ -1888,7 +1888,7 @@
                         }
                     }, [e, u, t]);
                 }
-                var Ru = t(8515);
+                var Ru = t(3403);
                 const yu = {
                         blackReal: 'FormatTextWithColorTags_blackReal_3c',
                         whiteReal: 'FormatTextWithColorTags_whiteReal_8a',

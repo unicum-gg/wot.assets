@@ -1004,7 +1004,7 @@
                         });
                     };
                 }
-                const T = (0, r.createContext)({});
+                const T = (0, r.createContext)({ isAnimationDisabled: !1 });
                 (0, r.memo)(
                     ({
                         children: e,
@@ -1045,8 +1045,9 @@
                                     if (g && g.current) {
                                         (D(!0), yield (0, l.Eu)());
                                         const e = viewEnv.getScale();
-                                        (O(g.current.offsetWidth / e),
-                                            k(g.current.querySelector(`.${L.slide__active}`).offsetWidth / e),
+                                        O(g.current.offsetWidth / e);
+                                        const t = g.current.querySelector(`.${L.slide__active}`);
+                                        (t && k(t.offsetWidth / e),
                                             setTimeout(() => {
                                                 D(!1);
                                             }, 100));
@@ -1059,8 +1060,10 @@
                         ((0, r.useEffect)(() => {
                             const t = [];
                             (E.map((i) => {
-                                const r = e.find((e) => e.key === i.key);
-                                r && t.push(r);
+                                if (a().isValidElement(i)) {
+                                    const r = e.find((e) => !!a().isValidElement(e) && e.key === i.key);
+                                    r && t.push(r);
+                                }
                             }),
                                 f(t));
                         }, [e]),

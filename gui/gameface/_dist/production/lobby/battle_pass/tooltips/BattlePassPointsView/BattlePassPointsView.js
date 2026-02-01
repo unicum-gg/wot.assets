@@ -88,15 +88,15 @@
                             L = u.flexEnd,
                             w = u.spaceBetween,
                             M = u.spaceAround,
-                            H = u.justifyContent,
-                            y =
-                                void 0 === H
+                            y = u.justifyContent,
+                            H =
+                                void 0 === y
                                     ? (b ? 'flex-start' : S && 'center') ||
                                       (L && 'flex-end') ||
                                       (w && 'space-between') ||
                                       (M && 'space-around') ||
                                       void 0
-                                    : H,
+                                    : y,
                             T = u.alignItems,
                             R = void 0 === T ? (b ? 'flex-start' : S && 'center') || (L && 'flex-end') || void 0 : T,
                             O = u.alignSelf,
@@ -108,8 +108,8 @@
                             j = u.flex,
                             Z = void 0 === j ? (N || G ? `${N ? 1 : 0} ${G ? 1 : 0} auto` : void 0) : j,
                             X = u.style,
-                            z = u.children,
-                            $ = (function (u, e) {
+                            $ = u.children,
+                            z = (function (u, e) {
                                 if (null == u) return {};
                                 var t,
                                     r,
@@ -139,15 +139,15 @@
                                         display: f || R ? 'flex' : void 0,
                                         flexDirection: f,
                                         flexWrap: W,
-                                        justifyContent: y,
+                                        justifyContent: H,
                                         alignItems: R,
                                     }),
                                     computedClassNames: e,
                                 };
-                            }, [t, r, F, c, _, g, X, Z, O, f, W, y, R]),
+                            }, [t, r, F, c, _, g, X, Z, O, f, W, H, R]),
                             V = k.computedStyle,
                             U = k.computedClassNames;
-                        return i().createElement('div', s({ className: E()(D.Z.base, ...U, e), style: V }, $), z);
+                        return i().createElement('div', s({ className: E()(D.Z.base, ...U, e), style: V }, z), $);
                     });
             },
             280: (u, e, t) => {
@@ -1140,7 +1140,7 @@
                                 const t = e.replace('-', '_'),
                                     r = u ? i.elite : i;
                                 if ((E = t) in r && '$num' !== E && '$dyn' !== E && 'function' == typeof r[t]) {
-                                    return { backgroundImage: `url(${r[t]()})` };
+                                    return { backgroundImage: `url(${r.$dyn(t)})` };
                                 }
                                 var E;
                             })(a, r),
@@ -1389,8 +1389,8 @@
                     L = t(3649),
                     w = t(3403),
                     M = t(9243);
-                function H() {}
-                function y() {
+                function y() {}
+                function H() {
                     return !1;
                 }
                 console.log;
@@ -1507,7 +1507,7 @@
                                                 observableModel: {
                                                     array: (u, e) => {
                                                         const r = null != e ? e : n(u),
-                                                            E = T.LO.box(r, { equals: y });
+                                                            E = T.LO.box(r, { equals: H });
                                                         return (
                                                             'real' === t &&
                                                                 F.subscribe(
@@ -1519,7 +1519,7 @@
                                                     },
                                                     object: (u, e) => {
                                                         const r = null != e ? e : n(u),
-                                                            E = T.LO.box(r, { equals: y });
+                                                            E = T.LO.box(r, { equals: H });
                                                         return (
                                                             'real' === t &&
                                                                 F.subscribe(
@@ -1609,14 +1609,14 @@
                     })(({ observableModel: u }) => {
                         const e = { rewardPoints: u.array('rewardPoints'), vehiclesList: u.array('vehiclesList') };
                         return Object.assign({}, e);
-                    }, H),
+                    }, y),
                     N = W[0],
                     G = W[1],
                     j = 'Content_base_a8',
                     Z = 'Content_separator_a9',
                     X = 'Content_subtitleRules_a7',
-                    z = 'Content_subtitleVehicles_fa',
-                    $ = 'Content_footerSeparator_e7',
+                    $ = 'Content_subtitleVehicles_fa',
+                    z = 'Content_footerSeparator_e7',
                     k = 'Content_footer_c8',
                     V = 'Header_base_1a',
                     U = 'Header_icon_47',
@@ -1728,9 +1728,9 @@
                             A().createElement(Q, null),
                             A().createElement('div', { className: X }, lu.rules()),
                             A().createElement(Du, null),
-                            A().createElement('div', { className: z }, lu.specialVehicles()),
+                            A().createElement('div', { className: $ }, lu.specialVehicles()),
                             A().createElement(M.Y, { vehiclesList: u }),
-                            A().createElement('div', { className: $ }, A().createElement('div', { className: Z })),
+                            A().createElement('div', { className: z }, A().createElement('div', { className: Z })),
                             A().createElement('div', { className: k }, A().createElement(S.z, { text: lu.footer() })),
                         );
                     }),

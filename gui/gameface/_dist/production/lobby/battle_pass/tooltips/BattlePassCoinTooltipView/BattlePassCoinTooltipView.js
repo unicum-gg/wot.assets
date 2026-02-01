@@ -26,17 +26,17 @@
                         events: () => P,
                         extraSize: () => Y,
                         forceTriggerMouseMove: () => J,
-                        freezeTextureBeforeResize: () => B,
+                        freezeTextureBeforeResize: () => G,
                         getBrowserTexturePath: () => A,
                         getDisplayStatus: () => K,
                         getScale: () => H,
                         getSize: () => k,
-                        getViewGlobalPosition: () => G,
+                        getViewGlobalPosition: () => D,
                         isEventHandled: () => $,
                         isFocused: () => W,
                         pxToRem: () => I,
                         remToPx: () => q,
-                        resize: () => D,
+                        resize: () => B,
                         sendEvent: () => V,
                         setAnimateWindow: () => Q,
                         setEventHandled: () => U,
@@ -231,14 +231,14 @@
                 function k(e = 'px') {
                     return 'rem' === e ? viewEnv.getViewSizeRem() : viewEnv.getViewSizePx();
                 }
-                function D(e, n, t = 'px') {
+                function B(e, n, t = 'px') {
                     return 'rem' === t ? viewEnv.resizeViewRem(e, n) : viewEnv.resizeViewPx(e, n);
                 }
-                function G(e = 'rem') {
+                function D(e = 'rem') {
                     const n = viewEnv.getViewGlobalPositionRem();
                     return 'rem' === e ? n : { x: q(n.x), y: q(n.y) };
                 }
-                function B() {
+                function G() {
                     viewEnv.freezeTextureBeforeResize();
                 }
                 function H() {
@@ -406,9 +406,10 @@
                             ),
                             u().createElement('div', { className: ve }, we),
                         ),
-                    he = () => u().createElement(oe, null, u().createElement(pe, null)),
-                    Ee = document.createElement('div');
-                ((window.onload = () => document.body.appendChild(Ee)), l().render(u().createElement(he, null), Ee));
+                    he = () => u().createElement(oe, null, u().createElement(pe, null));
+                engine.whenReady.then(() => {
+                    l().render(u().createElement(he, null), document.getElementById('root'));
+                });
             },
         },
         t = {};

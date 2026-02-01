@@ -616,7 +616,7 @@
                     });
                 }
                 var x = 1e3,
-                    k = {
+                    M = {
                         'click-rail': function (e, t) {
                             (e.event.bind(e.scrollbarY, 'mousedown', function (e) {
                                 return e.stopPropagation();
@@ -1025,7 +1025,7 @@
                             );
                         },
                     },
-                    M = function (e, r) {
+                    k = function (e, r) {
                         var o = this;
                         if (
                             (void 0 === r && (r = {}),
@@ -1162,7 +1162,7 @@
                                     }),
                                     (o.isAlive = !0),
                                     o.settings.handlers.forEach(function (e) {
-                                        return k[e](o, o.settings.overScrollWidth);
+                                        return M[e](o, o.settings.overScrollWidth);
                                     }),
                                     (o.boundHandleButtonEnter = o.handleMouseEnter.bind(o)),
                                     (o.boundHandleMouseLeave = o.handleMouseLeave.bind(o)),
@@ -1197,7 +1197,7 @@
                                     D(o, !1, o.settings.overScrollWidth, !1));
                             }));
                     };
-                ((M.prototype._getAnimationSettings = function (e, t, u, n) {
+                ((k.prototype._getAnimationSettings = function (e, t, u, n) {
                     var r = this,
                         o = 0;
                     return (
@@ -1218,17 +1218,17 @@
                         }
                     );
                 }),
-                    (M.prototype.playHoverSound = function () {
+                    (k.prototype.playHoverSound = function () {
                         window.engine && engine.call('PlaySound', 'highlight');
                     }),
-                    (M.prototype.playClickSound = function () {
+                    (k.prototype.playClickSound = function () {
                         window.engine && engine.call('PlaySound', 'play');
                     }),
-                    (M.prototype.handleMouseEnter = function () {
+                    (k.prototype.handleMouseEnter = function () {
                         this.playHoverSound();
                     }),
-                    (M.prototype.handleMouseLeave = function () {}),
-                    (M.prototype.update = function () {
+                    (k.prototype.handleMouseLeave = function () {}),
+                    (k.prototype.update = function () {
                         var e = this;
                         this.isAlive &&
                             ((this.negativeScrollAdjustment = this.isNegativeScroll
@@ -1253,28 +1253,28 @@
                                     u(e.scrollbarYRail, { display: '' }));
                             }));
                     }),
-                    (M.prototype.setScrollLeft = function (e, t, u) {
+                    (k.prototype.setScrollLeft = function (e, t, u) {
                         y(this._getAnimationSettings(e, 'right', t, u));
                     }),
-                    (M.prototype.setScrollLeftImmediately = function (e) {
+                    (k.prototype.setScrollLeftImmediately = function (e) {
                         ((this.element.scrollLeft = 0 | e), this.update());
                     }),
-                    (M.prototype.setScrollTop = function (e, t, u) {
+                    (k.prototype.setScrollTop = function (e, t, u) {
                         y(this._getAnimationSettings(e, 'bottom', t, u));
                     }),
-                    (M.prototype.setScrollTopImmediately = function (e) {
+                    (k.prototype.setScrollTopImmediately = function (e) {
                         ((this.element.scrollTop = 0 | e), this.update());
                     }),
-                    (M.prototype.onScroll = function (e) {
+                    (k.prototype.onScroll = function (e) {
                         this.isAlive && D(this, !1, this.settings.overScrollWidth, !0);
                     }),
-                    (M.prototype.onWheel = function (e) {
+                    (k.prototype.onWheel = function (e) {
                         this.isAlive &&
                             (D(this, !1, this.settings.overScrollWidth, !1),
                             f(this, 'left', this.element.scrollLeft - this.lastScrollLeft),
                             (this.lastScrollLeft = this.element.scrollLeft));
                     }),
-                    (M.prototype.destroy = function () {
+                    (k.prototype.destroy = function () {
                         this.isAlive &&
                             (this.scrollbarYButtonStart.removeEventListener('mousedown', this.boundPlayClickSound),
                             this.scrollbarYButtonEnd.removeEventListener('mousedown', this.boundPlayClickSound),
@@ -1304,7 +1304,7 @@
                             (this.scrollbarYRail = null),
                             (this.isAlive = !1));
                     }),
-                    (M.prototype.removePsClasses = function () {
+                    (k.prototype.removePsClasses = function () {
                         this.element.className = this.element.className
                             .split(' ')
                             .filter(function (e) {
@@ -1312,7 +1312,7 @@
                             })
                             .join(' ');
                     }),
-                    (e.exports = M));
+                    (e.exports = k));
             },
             926: (e) => {
                 e.exports = {
@@ -2248,30 +2248,7 @@
                     }, [t, e, u]);
                 }
                 var p = u(3403);
-                let v, f, D, C;
-                (!(function (e) {
-                    ((e.Micro = 'micro'), (e.Small = 'small'), (e.Medium = 'medium'));
-                })(v || (v = {})),
-                    (function (e) {
-                        ((e.ACTIVE = 'active'), (e.COMPLETED = 'completed'), (e.NOT_CHOSEN = 'notChosen'));
-                    })(f || (f = {})),
-                    (function (e) {
-                        ((e.AwaitSeason = 'awaitSeason'),
-                            (e.Bought = 'bought'),
-                            (e.Free = 'free'),
-                            (e.Completed = 'completed'),
-                            (e.CompletedRightNow = 'completedRightNow'),
-                            (e.SwitchedChapterRightNow = 'switchedChapterRightNow'),
-                            (e.NoVehiclesBase = 'noVehiclesBase'),
-                            (e.ChapterNotChosen = 'chapterNotChosen'));
-                    })(D || (D = {})),
-                    (function (e) {
-                        ((e.None = ''),
-                            (e.ShowLevel = 'show'),
-                            (e.HideLevel = 'hide'),
-                            (e.HideLevelWithDelay = 'hideWithDelay'));
-                    })(C || (C = {})));
-                const B = (e, t, u) =>
+                const v = (e, t, u) =>
                         t.extraLargeHeight || t.largeHeight || t.mediumHeight || t.smallHeight || t.extraSmallHeight
                             ? (t.extraLargeHeight && u.extraLarge) ||
                               (t.largeHeight && u.large) ||
@@ -2281,15 +2258,15 @@
                                 ? e
                                 : null
                             : e,
-                    w = {
+                    f = {
                         extraLarge: { weight: 4, width: 2560, height: 1440 },
                         large: { weight: 3, width: 1920, height: 1080 },
                         medium: { weight: 2, width: 1600, height: 900 },
                         small: { weight: 1, width: 1366, height: 768 },
                         extraSmall: { weight: 0, width: 1024, height: 768 },
                     };
-                var S;
-                function y(e, t, u) {
+                var D;
+                function C(e, t, u) {
                     const n = (function (e, t) {
                             switch (!0) {
                                 case e >= t.extraLarge.width:
@@ -2353,14 +2330,14 @@
                         (e.mediumHeight = 'mediumHeight'),
                         (e.smallHeight = 'smallHeight'),
                         (e.extraSmallHeight = 'extraSmallHeight'));
-                })(S || (S = {}));
-                const L = A.O.client.getSize('rem'),
-                    T = L.width,
-                    x = L.height,
-                    k = Object.assign({ width: T, height: x }, y(T, x, w)),
-                    M = (0, n.createContext)(k),
-                    P = ['children'];
-                const O = (e) => {
+                })(D || (D = {}));
+                const B = A.O.client.getSize('rem'),
+                    w = B.width,
+                    S = B.height,
+                    y = Object.assign({ width: w, height: S }, C(w, S, f)),
+                    L = (0, n.createContext)(y),
+                    T = ['children'];
+                const x = (e) => {
                     let t = e.children,
                         u = (function (e, t) {
                             if (null == e) return {};
@@ -2370,8 +2347,8 @@
                                 o = Object.keys(e);
                             for (n = 0; n < o.length; n++) ((u = o[n]), t.indexOf(u) >= 0 || (r[u] = e[u]));
                             return r;
-                        })(e, P);
-                    const r = (0, n.useContext)(M),
+                        })(e, T);
+                    const r = (0, n.useContext)(L),
                         o = r.extraLarge,
                         i = r.large,
                         a = r.medium,
@@ -2395,11 +2372,11 @@
                         if (u.small && l) return t;
                         if (u.extraSmall && s) return t;
                     } else {
-                        if (u.extraLargeWidth && c) return B(t, u, p);
-                        if (u.largeWidth && d) return B(t, u, p);
-                        if (u.mediumWidth && E) return B(t, u, p);
-                        if (u.smallWidth && m) return B(t, u, p);
-                        if (u.extraSmallWidth && h) return B(t, u, p);
+                        if (u.extraLargeWidth && c) return v(t, u, p);
+                        if (u.largeWidth && d) return v(t, u, p);
+                        if (u.mediumWidth && E) return v(t, u, p);
+                        if (u.smallWidth && m) return v(t, u, p);
+                        if (u.extraSmallWidth && h) return v(t, u, p);
                         if (
                             !(u.extraLargeWidth || u.largeWidth || u.mediumWidth || u.smallWidth || u.extraSmallWidth)
                         ) {
@@ -2412,7 +2389,7 @@
                     }
                     return null;
                 };
-                O.defaultProps = {
+                x.defaultProps = {
                     extraLarge: !1,
                     large: !1,
                     medium: !1,
@@ -2429,113 +2406,136 @@
                     smallHeight: !1,
                     extraSmallHeight: !1,
                 };
-                (0, n.memo)(O);
-                const H = (e) => {
+                (0, n.memo)(x);
+                const M = (e) => {
                         const t = (0, n.useRef)(!1);
                         t.current || (e(), (t.current = !0));
                     },
-                    N = (0, n.memo)(({ children: e }) => {
-                        const t = (0, n.useContext)(M),
+                    k = (0, n.memo)(({ children: e }) => {
+                        const t = (0, n.useContext)(L),
                             u = (0, n.useState)(t),
                             o = u[0],
                             i = u[1],
                             a = (0, n.useCallback)((e, t) => {
                                 const u = A.O.view.pxToRem(e),
                                     n = A.O.view.pxToRem(t);
-                                i(Object.assign({ width: u, height: n }, y(u, n, w)));
+                                i(Object.assign({ width: u, height: n }, C(u, n, f)));
                             }, []);
-                        (H(() => {
+                        (M(() => {
                             engine.on('clientResized', a);
                         }),
                             (0, n.useEffect)(() => () => engine.off('clientResized', a), [a]));
                         const l = (0, n.useMemo)(() => Object.assign({}, o), [o]);
-                        return r().createElement(M.Provider, { value: l }, e);
+                        return r().createElement(L.Provider, { value: l }, e);
                     });
-                let W, I, Y;
+                let P, O, H;
                 (!(function (e) {
-                    ((e[(e.ExtraSmall = w.extraSmall.width)] = 'ExtraSmall'),
-                        (e[(e.Small = w.small.width)] = 'Small'),
-                        (e[(e.Medium = w.medium.width)] = 'Medium'),
-                        (e[(e.Large = w.large.width)] = 'Large'),
-                        (e[(e.ExtraLarge = w.extraLarge.width)] = 'ExtraLarge'));
+                    ((e[(e.ExtraSmall = f.extraSmall.width)] = 'ExtraSmall'),
+                        (e[(e.Small = f.small.width)] = 'Small'),
+                        (e[(e.Medium = f.medium.width)] = 'Medium'),
+                        (e[(e.Large = f.large.width)] = 'Large'),
+                        (e[(e.ExtraLarge = f.extraLarge.width)] = 'ExtraLarge'));
+                })(P || (P = {})),
+                    (function (e) {
+                        ((e[(e.ExtraSmall = f.extraSmall.width)] = 'ExtraSmall'),
+                            (e[(e.Small = f.small.width)] = 'Small'),
+                            (e[(e.Medium = f.medium.width)] = 'Medium'),
+                            (e[(e.Large = f.large.width)] = 'Large'),
+                            (e[(e.ExtraLarge = f.extraLarge.width)] = 'ExtraLarge'));
+                    })(O || (O = {})),
+                    (function (e) {
+                        ((e[(e.ExtraSmall = f.extraSmall.height)] = 'ExtraSmall'),
+                            (e[(e.Small = f.small.height)] = 'Small'),
+                            (e[(e.Medium = f.medium.height)] = 'Medium'),
+                            (e[(e.Large = f.large.height)] = 'Large'),
+                            (e[(e.ExtraLarge = f.extraLarge.height)] = 'ExtraLarge'));
+                    })(H || (H = {})));
+                const N = () => {
+                    const e = (0, n.useContext)(L),
+                        t = e.width,
+                        u = e.height,
+                        r = ((e) => {
+                            switch (!0) {
+                                case e.extraLarge:
+                                    return P.ExtraLarge;
+                                case e.large:
+                                    return P.Large;
+                                case e.medium:
+                                    return P.Medium;
+                                case e.small:
+                                    return P.Small;
+                                case e.extraSmall:
+                                    return P.ExtraSmall;
+                                default:
+                                    return (console.error('Unreachable media context resolution'), P.ExtraSmall);
+                            }
+                        })(e),
+                        o = ((e) => {
+                            switch (!0) {
+                                case e.extraLargeWidth:
+                                    return O.ExtraLarge;
+                                case e.largeWidth:
+                                    return O.Large;
+                                case e.mediumWidth:
+                                    return O.Medium;
+                                case e.smallWidth:
+                                    return O.Small;
+                                case e.extraSmallWidth:
+                                    return O.ExtraSmall;
+                                default:
+                                    return (console.error('Unreachable media context resolution'), O.ExtraSmall);
+                            }
+                        })(e),
+                        i = ((e) => {
+                            switch (!0) {
+                                case e.extraLargeHeight:
+                                    return H.ExtraLarge;
+                                case e.largeHeight:
+                                    return H.Large;
+                                case e.mediumHeight:
+                                    return H.Medium;
+                                case e.smallHeight:
+                                    return H.Small;
+                                case e.extraSmallHeight:
+                                    return H.ExtraSmall;
+                                default:
+                                    return (console.error('Unreachable media context resolution'), H.ExtraSmall);
+                            }
+                        })(e);
+                    return { mediaSize: r, mediaWidth: o, mediaHeight: i, remScreenWidth: t, remScreenHeight: u };
+                };
+                let W, I, Y, X;
+                (!(function (e) {
+                    ((e.Micro = 'micro'), (e.Small = 'small'), (e.Medium = 'medium'));
                 })(W || (W = {})),
                     (function (e) {
-                        ((e[(e.ExtraSmall = w.extraSmall.width)] = 'ExtraSmall'),
-                            (e[(e.Small = w.small.width)] = 'Small'),
-                            (e[(e.Medium = w.medium.width)] = 'Medium'),
-                            (e[(e.Large = w.large.width)] = 'Large'),
-                            (e[(e.ExtraLarge = w.extraLarge.width)] = 'ExtraLarge'));
+                        ((e.ACTIVE = 'active'), (e.COMPLETED = 'completed'), (e.NOT_CHOSEN = 'notChosen'));
                     })(I || (I = {})),
                     (function (e) {
-                        ((e[(e.ExtraSmall = w.extraSmall.height)] = 'ExtraSmall'),
-                            (e[(e.Small = w.small.height)] = 'Small'),
-                            (e[(e.Medium = w.medium.height)] = 'Medium'),
-                            (e[(e.Large = w.large.height)] = 'Large'),
-                            (e[(e.ExtraLarge = w.extraLarge.height)] = 'ExtraLarge'));
-                    })(Y || (Y = {})));
-                const X = () => {
-                        const e = (0, n.useContext)(M),
-                            t = e.width,
-                            u = e.height,
-                            r = ((e) => {
-                                switch (!0) {
-                                    case e.extraLarge:
-                                        return W.ExtraLarge;
-                                    case e.large:
-                                        return W.Large;
-                                    case e.medium:
-                                        return W.Medium;
-                                    case e.small:
-                                        return W.Small;
-                                    case e.extraSmall:
-                                        return W.ExtraSmall;
-                                    default:
-                                        return (console.error('Unreachable media context resolution'), W.ExtraSmall);
-                                }
-                            })(e),
-                            o = ((e) => {
-                                switch (!0) {
-                                    case e.extraLargeWidth:
-                                        return I.ExtraLarge;
-                                    case e.largeWidth:
-                                        return I.Large;
-                                    case e.mediumWidth:
-                                        return I.Medium;
-                                    case e.smallWidth:
-                                        return I.Small;
-                                    case e.extraSmallWidth:
-                                        return I.ExtraSmall;
-                                    default:
-                                        return (console.error('Unreachable media context resolution'), I.ExtraSmall);
-                                }
-                            })(e),
-                            i = ((e) => {
-                                switch (!0) {
-                                    case e.extraLargeHeight:
-                                        return Y.ExtraLarge;
-                                    case e.largeHeight:
-                                        return Y.Large;
-                                    case e.mediumHeight:
-                                        return Y.Medium;
-                                    case e.smallHeight:
-                                        return Y.Small;
-                                    case e.extraSmallHeight:
-                                        return Y.ExtraSmall;
-                                    default:
-                                        return (console.error('Unreachable media context resolution'), Y.ExtraSmall);
-                                }
-                            })(e);
-                        return { mediaSize: r, mediaWidth: o, mediaHeight: i, remScreenWidth: t, remScreenHeight: u };
-                    },
-                    U = (e, t, u = '') => {
-                        const n = u.length > 0 ? `_${u}` : u,
-                            r = e.$dyn(`c_${t}${n}`),
-                            o = e.$dyn(`common${n}`);
-                        return r || o;
-                    };
+                        ((e.AwaitSeason = 'awaitSeason'),
+                            (e.Bought = 'bought'),
+                            (e.Free = 'free'),
+                            (e.Completed = 'completed'),
+                            (e.CompletedRightNow = 'completedRightNow'),
+                            (e.SwitchedChapterRightNow = 'switchedChapterRightNow'),
+                            (e.NoVehiclesBase = 'noVehiclesBase'),
+                            (e.ChapterNotChosen = 'chapterNotChosen'));
+                    })(Y || (Y = {})),
+                    (function (e) {
+                        ((e.None = ''),
+                            (e.ShowLevel = 'show'),
+                            (e.HideLevel = 'hide'),
+                            (e.HideLevelWithDelay = 'hideWithDelay'));
+                    })(X || (X = {})));
+                const U = (e, t, u = '') => {
+                    const n = u.length > 0 ? `_${u}` : u,
+                        r = e.$dyn(`c_${t}${n}`),
+                        o = e.$dyn(`common${n}`);
+                    return r || o;
+                };
                 var G = u(926),
-                    $ = u.n(G);
-                let z;
+                    z = u.n(G);
+                let $;
                 function j(e, t) {
                     return e.replace(/(\{|%\()\w+(\}|\)s)/g, (e) => {
                         const u = 0 === e.indexOf('%') ? 2 : 1;
@@ -2544,7 +2544,7 @@
                 }
                 !(function (e) {
                     ((e[(e.left = 0)] = 'left'), (e[(e.right = 1)] = 'right'));
-                })(z || (z = {}));
+                })($ || ($ = {}));
                 const q = (e) => e.replace(/&nbsp;/g, ' ');
                 (() => {
                     const e = new RegExp(
@@ -2650,7 +2650,7 @@
                             d = s[1],
                             E = (0, n.useRef)(-1);
                         return (
-                            H(() => {
+                            M(() => {
                                 if (
                                     ('boolean' == typeof t &&
                                         ((t = t ? ne.Deep : ne.None),
@@ -2694,25 +2694,25 @@
                     );
                 }
                 const ae = {
-                        [I.ExtraSmall]: '',
-                        [I.Small]: $().SMALL_WIDTH,
-                        [I.Medium]: `${$().SMALL_WIDTH} ${$().MEDIUM_WIDTH}`,
-                        [I.Large]: `${$().SMALL_WIDTH} ${$().MEDIUM_WIDTH} ${$().LARGE_WIDTH}`,
-                        [I.ExtraLarge]: `${$().SMALL_WIDTH} ${$().MEDIUM_WIDTH} ${$().LARGE_WIDTH} ${$().EXTRA_LARGE_WIDTH}`,
+                        [O.ExtraSmall]: '',
+                        [O.Small]: z().SMALL_WIDTH,
+                        [O.Medium]: `${z().SMALL_WIDTH} ${z().MEDIUM_WIDTH}`,
+                        [O.Large]: `${z().SMALL_WIDTH} ${z().MEDIUM_WIDTH} ${z().LARGE_WIDTH}`,
+                        [O.ExtraLarge]: `${z().SMALL_WIDTH} ${z().MEDIUM_WIDTH} ${z().LARGE_WIDTH} ${z().EXTRA_LARGE_WIDTH}`,
                     },
                     le = {
-                        [Y.ExtraSmall]: '',
-                        [Y.Small]: $().SMALL_HEIGHT,
-                        [Y.Medium]: `${$().SMALL_HEIGHT} ${$().MEDIUM_HEIGHT}`,
-                        [Y.Large]: `${$().SMALL_HEIGHT} ${$().MEDIUM_HEIGHT} ${$().LARGE_HEIGHT}`,
-                        [Y.ExtraLarge]: `${$().SMALL_HEIGHT} ${$().MEDIUM_HEIGHT} ${$().LARGE_HEIGHT} ${$().EXTRA_LARGE_HEIGHT}`,
+                        [H.ExtraSmall]: '',
+                        [H.Small]: z().SMALL_HEIGHT,
+                        [H.Medium]: `${z().SMALL_HEIGHT} ${z().MEDIUM_HEIGHT}`,
+                        [H.Large]: `${z().SMALL_HEIGHT} ${z().MEDIUM_HEIGHT} ${z().LARGE_HEIGHT}`,
+                        [H.ExtraLarge]: `${z().SMALL_HEIGHT} ${z().MEDIUM_HEIGHT} ${z().LARGE_HEIGHT} ${z().EXTRA_LARGE_HEIGHT}`,
                     },
                     se = {
-                        [W.ExtraSmall]: '',
-                        [W.Small]: $().SMALL,
-                        [W.Medium]: `${$().SMALL} ${$().MEDIUM}`,
-                        [W.Large]: `${$().SMALL} ${$().MEDIUM} ${$().LARGE}`,
-                        [W.ExtraLarge]: `${$().SMALL} ${$().MEDIUM} ${$().LARGE} ${$().EXTRA_LARGE}`,
+                        [P.ExtraSmall]: '',
+                        [P.Small]: z().SMALL,
+                        [P.Medium]: `${z().SMALL} ${z().MEDIUM}`,
+                        [P.Large]: `${z().SMALL} ${z().MEDIUM} ${z().LARGE}`,
+                        [P.ExtraLarge]: `${z().SMALL} ${z().MEDIUM} ${z().LARGE} ${z().EXTRA_LARGE}`,
                     },
                     ce = (e) => {
                         let t = e.children,
@@ -2726,7 +2726,7 @@
                                 for (n = 0; n < o.length; n++) ((u = o[n]), t.indexOf(u) >= 0 || (r[u] = e[u]));
                                 return r;
                             })(e, oe);
-                        const o = X(),
+                        const o = N(),
                             i = o.mediaWidth,
                             a = o.mediaHeight,
                             s = o.mediaSize;
@@ -2744,7 +2744,7 @@
                                 for (n = 0; n < o.length; n++) ((u = o[n]), t.indexOf(u) >= 0 || (r[u] = e[u]));
                                 return r;
                             })(e, de);
-                        return r().createElement(N, null, r().createElement(ce, u, t));
+                        return r().createElement(k, null, r().createElement(ce, u, t));
                     },
                     me = (0, n.createContext)('model'),
                     he = {
@@ -2829,13 +2829,13 @@
                             },
                             [i, c, E],
                         ),
-                        k = (0, n.useCallback)(
+                        M = (0, n.useCallback)(
                             (e) => {
                                 m && m(e);
                             },
                             [m],
                         ),
-                        M = (0, n.useCallback)(
+                        k = (0, n.useCallback)(
                             (e) => {
                                 i || (A && A(e), C(!1));
                             },
@@ -2885,8 +2885,8 @@
                                 ref: g,
                                 className: H,
                                 onMouseEnter: x,
-                                onMouseMove: k,
-                                onMouseUp: M,
+                                onMouseMove: M,
+                                onMouseUp: k,
                                 onMouseDown: P,
                                 onMouseLeave: O,
                                 onClick: T,
@@ -3079,7 +3079,7 @@
                     Te = 'Footer_cButton_f7',
                     Re = ({ rewardsSelectedCount: e, onOkClick: t, onCloseClick: u }) => {
                         const n = e > 0,
-                            o = X().mediaSize > W.Small ? _e.medium : _e.small;
+                            o = N().mediaSize > P.Small ? _e.medium : _e.small;
                         return r().createElement(
                             'div',
                             { className: De },
@@ -3130,7 +3130,7 @@
                             n = t.height;
                         return 0 !== u && 0 !== n;
                     },
-                    ke = (e) => {
+                    Me = (e) => {
                         const t = (0, n.useState)(xe(e ? e.current : null)),
                             u = t[0],
                             r = t[1];
@@ -3153,8 +3153,8 @@
                             u
                         );
                     };
-                var Me = u(8380),
-                    Pe = u.n(Me);
+                var ke = u(8380),
+                    Pe = u.n(ke);
                 const Oe = 'ScrollArea_base_47',
                     He = 'ScrollArea_base__scrollIndent_1d',
                     Ne = 'ScrollArea_base__verticalScrollbarMargin_50',
@@ -3188,12 +3188,12 @@
                             T = L[0],
                             R = L[1],
                             x = (0, n.useRef)(null),
-                            k = (0, n.useCallback)(() => {
+                            M = (0, n.useCallback)(() => {
                                 S &&
                                     c &&
                                     c({ x: S.scrollbarXActive, y: S.scrollbarYActive }, { x: S.reach.x, y: S.reach.y });
                             }, [c, S]),
-                            M = (0, n.useCallback)(() => S, [S]),
+                            k = (0, n.useCallback)(() => S, [S]),
                             P = (0, n.useCallback)(() => {
                                 S && S.update();
                             }, [S]),
@@ -3245,14 +3245,14 @@
                                 },
                                 [t],
                             ),
-                            $ = (0, n.useCallback)(() => {
+                            z = (0, n.useCallback)(() => {
                                 S &&
                                     (S.update(),
                                     (x.current = h(() => {
-                                        k();
+                                        M();
                                     })));
-                            }, [S, k]),
-                            z = (0, n.useCallback)((e) => {
+                            }, [S, M]),
+                            $ = (0, n.useCallback)((e) => {
                                 0 === e.screenX &&
                                     0 === e.screenY &&
                                     (e.stopImmediatePropagation(), e.preventDefault());
@@ -3260,16 +3260,16 @@
                         (0, n.useEffect)(() => {
                             if (S && T)
                                 return (
-                                    document.addEventListener('mousemove', z),
-                                    window.addEventListener('resize', $),
+                                    document.addEventListener('mousemove', $),
+                                    window.addEventListener('resize', z),
                                     T.addEventListener('ps-scroll-x', I),
                                     T.addEventListener('ps-scroll-y', Y),
                                     T.addEventListener('over-scroll-beginning', X),
                                     T.addEventListener('over-scroll-ending', U),
                                     B(!0),
                                     () => {
-                                        (window.removeEventListener('resize', $),
-                                            document.removeEventListener('mousemove', z),
+                                        (window.removeEventListener('resize', z),
+                                            document.removeEventListener('mousemove', $),
                                             T &&
                                                 (T.removeEventListener('ps-scroll-x', I),
                                                 T.removeEventListener('ps-scroll-y', Y),
@@ -3277,10 +3277,10 @@
                                                 T.removeEventListener('over-scroll-ending', U)));
                                     }
                                 );
-                        }, [z, I, X, U, $, T, S, Y]);
+                        }, [$, I, X, U, z, T, S, Y]);
                         const j = (0, n.useRef)(T || null);
                         j.current = T || null;
-                        const q = ke(j);
+                        const q = Me(j);
                         ((0, n.useEffect)(
                             () => (
                                 !S && T && q && y(new (Pe())(T, Object.assign({}, s))),
@@ -3299,9 +3299,9 @@
                             (0, n.useEffect)(
                                 () =>
                                     h(() => {
-                                        S && k();
+                                        S && M();
                                     }),
-                                [k, S],
+                                [M, S],
                             ),
                             (0, n.useEffect)(() => {
                                 o > 0 && H(o);
@@ -3316,8 +3316,8 @@
                                     (b.setScrollLeftImmediately = H),
                                     (b.setScrollTopImmediately = W),
                                     (b.updateScrollArea = P),
-                                    (b.getScrollbar = M));
-                            }, [b, O, H, N, W, P, M]));
+                                    (b.getScrollbar = k));
+                            }, [b, O, H, N, W, P, k]));
                         const V = l()(Oe, { [He]: _, [Ie]: !C, [Ne]: F, [We]: g }, v);
                         return r().createElement('div', { className: V, ref: G }, p);
                     }),
@@ -3362,10 +3362,10 @@
                             t,
                         );
                     },
-                    $e = ['children', 'body', 'header', 'note', 'alert', 'args'];
-                function ze() {
+                    ze = ['children', 'body', 'header', 'note', 'alert', 'args'];
+                function $e() {
                     return (
-                        (ze =
+                        ($e =
                             Object.assign ||
                             function (e) {
                                 for (var t = 1; t < arguments.length; t++) {
@@ -3374,7 +3374,7 @@
                                 }
                                 return e;
                             }),
-                        ze.apply(this, arguments)
+                        $e.apply(this, arguments)
                     );
                 }
                 const je = R.views.common.tooltip_window.simple_tooltip_content,
@@ -3393,7 +3393,7 @@
                                     o = Object.keys(e);
                                 for (n = 0; n < o.length; n++) ((u = o[n]), t.indexOf(u) >= 0 || (r[u] = e[u]));
                                 return r;
-                            })(e, $e);
+                            })(e, ze);
                         const c = (0, n.useMemo)(() => {
                             const e = Object.assign({}, l, { body: u, header: o, note: i, alert: a });
                             for (const t in e) void 0 === e[t] && delete e[t];
@@ -3401,7 +3401,7 @@
                         }, [a, u, o, i, l]);
                         return r().createElement(
                             fe,
-                            ze(
+                            $e(
                                 {
                                     contentId:
                                         ((d = null == l ? void 0 : l.hasHtmlContent),
@@ -3477,7 +3477,10 @@
                         (e.LootBoxToken = 'lootBoxToken'),
                         (e.GoldenTicket = 'birthday2025_golden_ticket'),
                         (e.PostStamp = 'giftsystem_4_stamp'),
-                        (e.Quests = 'quests'));
+                        (e.Quests = 'quests'),
+                        (e.ArmoryCoin = 'armory_coin'),
+                        (e.PremiumPlusUniversal = 'premium_plus_universal'),
+                        (e.DogTagType = 'dogTagComponents'));
                 })(Ze || (Ze = {})),
                     (function (e) {
                         ((e.Gold = 'gold'),
@@ -3616,10 +3619,10 @@
                 };
                 var Rt;
                 !(function (e) {
-                    ((e.None = ''), (e.Trophy = 'trophy'), (e.Deluxe = 'delux'));
+                    ((e.None = ''), (e.Trophy = 'trophy'), (e.Deluxe = 'delux'), (e.Modernized = 'modernized'));
                 })(Rt || (Rt = {}));
                 const xt = R.strings.selectable_reward.reward;
-                const kt = ({ type: e, count: t, state: u, storageCount: o, packSize: i, onAdd: a, onReduce: c }) => {
+                const Mt = ({ type: e, count: t, state: u, storageCount: o, packSize: i, onAdd: a, onReduce: c }) => {
                         const d = (0, n.useContext)(Au),
                             E = t > 0 && u !== Qe,
                             m = d === hu.Accepting && E,
@@ -3628,7 +3631,9 @@
                                     ? Rt.Trophy
                                     : e.startsWith(Rt.Deluxe)
                                       ? Rt.Deluxe
-                                      : Rt.None;
+                                      : e.startsWith(Rt.Modernized)
+                                        ? Rt.Modernized
+                                        : Rt.None;
                             })(e),
                             A = (0, n.useCallback)(() => {
                                 u === Ve ? (s('bp_click'), a(e)) : u === Ke && s('bp_click_limit');
@@ -3716,7 +3721,7 @@
                             r().createElement('div', { className: St }),
                         );
                     },
-                    Mt = 'ContentGrid_base_f7',
+                    kt = 'ContentGrid_base_f7',
                     Pt = 'ContentGrid_scrollArea_98',
                     Ot = 'ContentGrid_scrollAreaInner_32',
                     Ht = 'ContentGrid_reward_4b',
@@ -3832,7 +3837,7 @@
                             }, []),
                             r().createElement(
                                 'div',
-                                { className: Mt },
+                                { className: kt },
                                 r().createElement(
                                     Ye,
                                     {
@@ -3851,7 +3856,7 @@
                                                 r().createElement(
                                                     'div',
                                                     { key: t, className: Ht },
-                                                    r().createElement(kt, Yt({}, e, { key: t, onAdd: v, onReduce: f })),
+                                                    r().createElement(Mt, Yt({}, e, { key: t, onAdd: v, onReduce: f })),
                                                 ),
                                             ),
                                         ),
@@ -3861,8 +3866,8 @@
                             )
                         );
                     },
-                    $t = 'Category_base_23',
-                    zt = 'Category_base__viewReady_69',
+                    zt = 'Category_base_23',
+                    $t = 'Category_base__viewReady_69',
                     jt = 'Category_glow_a9',
                     qt = 'Category_base__selected_9e',
                     Vt = 'Category_title_54',
@@ -3875,10 +3880,10 @@
                     uu = R.strings.selectable_reward.tabs,
                     nu = ({ type: e, count: t, limit: u, isSelected: o, onClick: i }) => {
                         const a = (0, n.useContext)(Au),
-                            c = X().mediaSize,
+                            c = N().mediaSize,
                             d = t === u,
                             E = a === hu.Accepting && t > 0 && !o,
-                            m = c >= W.Medium ? et.Big : et.Small,
+                            m = c >= P.Medium ? et.Big : et.Small,
                             A = (0, n.useState)(!1),
                             _ = A[0],
                             F = A[1],
@@ -3898,7 +3903,7 @@
                                 }),
                             [],
                         );
-                        const D = l()($t, _ && zt, d && Zt, o && qt, E && Jt);
+                        const D = l()(zt, _ && $t, d && Zt, o && qt, E && Jt);
                         return r().createElement(
                             'div',
                             { className: D, onClick: v, onMouseEnter: f },
@@ -4083,8 +4088,8 @@
                         })(),
                         a = i.width,
                         s = i.height,
-                        c = s >= 1017 && s < w.large.height && a === w.large.width,
-                        d = l()(Bu, c && $().LARGE);
+                        c = s >= 1017 && s < f.large.height && a === f.large.width,
+                        d = l()(Bu, c && z().LARGE);
                     return r().createElement(
                         me.Provider,
                         { value: e },
@@ -4133,7 +4138,7 @@
                     return n;
                 }
                 const xu = (e) => (0 === e ? window : window.subViews.get(e));
-                const ku = ((e, t) => {
+                const Mu = ((e, t) => {
                         const u = (0, n.createContext)({});
                         return [
                             function ({ mode: o = 'real', options: i, children: a, mocks: l }) {
@@ -4319,8 +4324,8 @@
                             close: e.createCallbackNoArgs('selectableRewardModel.onCloseClick'),
                         }),
                     ),
-                    Mu = ku[0],
-                    Pu = ku[1],
+                    ku = Mu[0],
+                    Pu = Mu[1],
                     Ou = 'App_base_5a',
                     Hu = 'App_base__hide_88',
                     Nu = 'App_content_cc',
@@ -4389,7 +4394,7 @@
                     });
                 engine.whenReady.then(() => {
                     i().render(
-                        r().createElement(Mu, null, r().createElement(Uu, null)),
+                        r().createElement(ku, null, r().createElement(Uu, null)),
                         document.getElementById('root'),
                     );
                 });

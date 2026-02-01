@@ -1171,6 +1171,7 @@
                                         clearInterval(F);
                                     };
                                 }
+                                a(0);
                             }, [u, e, t, A]),
                             r
                         );

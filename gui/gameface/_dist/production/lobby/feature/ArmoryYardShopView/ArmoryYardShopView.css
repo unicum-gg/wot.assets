@@ -1506,20 +1506,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     transform: translateY(17rem);
 }
 
-.ShortenedText_base_fe {
-    display: flex;
-    flex-wrap: wrap;
-    max-width: 100%;
-    max-height: 18rem;
-    opacity: 0;
-    overflow: hidden;
-    transition: opacity ease 0.2s;
-}
-
-.ShortenedText_base__shown_af {
-    opacity: 1;
-}
-
 .FormatTextWithColorTags_blackReal_3c {
     color: #000000;
 }
@@ -1612,6 +1598,102 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     color: #a29b70;
 }
 
+.ShortenedText_base_fe {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 100%;
+    max-height: 18rem;
+    opacity: 0;
+    overflow: hidden;
+    transition: opacity ease 0.2s;
+}
+
+.ShortenedText_base__shown_af {
+    opacity: 1;
+}
+
+.Layout_base_81 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 996rem;
+    height: 100%;
+    position: relative;
+}
+
+.Layout_base__small_cb,
+.Layout_base__medium_df {
+    width: 1310rem;
+}
+
+.Layout_base__large_f6,
+.Layout_base__huge_d2 {
+    width: 1560rem;
+}
+.Layout_header_46 {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 10rem 0 20rem;
+}
+.Layout_base__compare_56 .Layout_header_46 {
+    flex-direction: column;
+    align-items: center;
+}
+.Layout_header__small_cb,
+.Layout_header__tiny_4b {
+    margin: 10rem 0 16rem;
+}
+.Layout_content_79 {
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+    width: 100%;
+}
+.Layout_base__compare_56 .Layout_content_79 {
+    justify-content: center;
+    margin-top: 7rem;
+    padding-top: 20rem;
+    padding-bottom: 10rem;
+}
+.Layout_main_df {
+    width: 596rem;
+    border-top: 1rem solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1rem solid rgba(255, 255, 255, 0.1);
+}
+.Layout_base__compare_56 .Layout_main_df {
+    width: 902rem;
+}
+.Layout_base__small_cb .Layout_main_df,
+.Layout_base__medium_df .Layout_main_df {
+    width: 902rem;
+}
+.Layout_base__large_f6 .Layout_main_df,
+.Layout_base__huge_d2 .Layout_main_df {
+    width: 1102rem;
+}
+.Layout_inner_3e {
+    margin: 0 -16rem;
+}
+.Layout_base__large_f6 .Layout_inner_3e,
+.Layout_base__huge_d2 .Layout_inner_3e {
+    margin: 0 -20rem;
+}
+.Layout_footer_f4 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 166rem;
+    padding-top: 12rem;
+}
+.Layout_base__small_cb .Layout_footer_f4,
+.Layout_base__medium_df .Layout_footer_f4,
+.Layout_base__large_f6 .Layout_footer_f4,
+.Layout_base__huge_d2 .Layout_footer_f4 {
+    padding-top: 20rem;
+}
+
 .Card_base_e2 {
     width: 260rem;
     height: 171rem;
@@ -1687,6 +1769,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .Card_title__name_b9 {
     display: flex;
     flex-wrap: wrap;
+    margin-bottom: 10rem;
 }
 .Card_vehicle_c3 {
     width: 180rem;
@@ -1733,7 +1816,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 .Card_product_fa {
     position: absolute;
-    top: 10rem;
+    top: 0;
     left: 50%;
     z-index: 3;
     transform: translateX(-50%);
@@ -1778,7 +1861,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     justify-content: flex-start;
     align-items: center;
     position: absolute;
-    bottom: 8rem;
+    bottom: 12rem;
     left: 16rem;
     z-index: 10;
 }
@@ -1884,6 +1967,19 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     flex: 1;
     line-height: 18rem;
 }
+.Card_availableCount_d3 {
+    color: #8c8c7e;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: absolute;
+    right: 14rem;
+    bottom: 12rem;
+    z-index: 10;
+}
 
 .Product_base_0a {
     display: flex;
@@ -1938,6 +2034,10 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .Product_base__c_232x174_97 .Product_overlay_1e {
     width: 344rem;
     height: 312rem;
+}
+
+.Product_overlay__battleBooster_3f {
+    transform: translate(-50%, -60%);
 }
 
 .Product_highlight_ed {
@@ -2023,9 +2123,14 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     font-weight: 400;
     line-height: 1.3;
     display: flex;
-    flex-wrap: wrap;
     width: 180rem;
-    position: absolute;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+}
+.CardBundle_title__hover_96 {
+    width: 280rem;
 }
 .mediaSmall .CardBundle_title_07 {
     color: #e9e2bf;
@@ -2315,7 +2420,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     align-items: center;
     width: 100%;
     height: 100%;
-    background: url('R.images.armory_yard.gui.maps.icons.shop.bg') no-repeat center / cover;
+    background: url('R.images.armory_yard.gui.maps.icons.bg') no-repeat center / cover;
     overflow: hidden;
     position: relative;
 }

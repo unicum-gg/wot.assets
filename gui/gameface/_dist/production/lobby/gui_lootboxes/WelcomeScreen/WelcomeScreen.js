@@ -1283,7 +1283,7 @@
                         }
                     }, [e, u, t]);
                 }
-                var K = t(3403),
+                var K = t(3282),
                     $ = t(9887),
                     z = t.n($);
                 const V = ['xl', 'lg', 'md', 'sm', 'xs'],
@@ -1445,11 +1445,11 @@
                             S = u.alignSelf,
                             L = u.wrap,
                             T = u.flexWrap,
-                            O = void 0 === T ? (L ? 'wrap' : void 0) : T,
-                            R = u.grow,
+                            R = void 0 === T ? (L ? 'wrap' : void 0) : T,
+                            O = u.grow,
                             y = u.shrink,
                             H = u.flex,
-                            P = void 0 === H ? (R || y ? `${R ? 1 : 0} ${y ? 1 : 0} auto` : void 0) : H,
+                            P = void 0 === H ? (O || y ? `${O ? 1 : 0} ${y ? 1 : 0} auto` : void 0) : H,
                             k = u.style,
                             N = u.children,
                             I = (function (u, e) {
@@ -1481,13 +1481,13 @@
                                         alignSelf: S,
                                         display: m || M ? 'flex' : void 0,
                                         flexDirection: m,
-                                        flexWrap: O,
+                                        flexWrap: R,
                                         justifyContent: f,
                                         alignItems: M,
                                     }),
                                     computedClassNames: e,
                                 };
-                            }, [t, n, A, o, D, _, k, P, S, m, O, f, M]),
+                            }, [t, n, A, o, D, _, k, P, S, m, R, f, M]),
                             G = W.computedStyle,
                             U = W.computedClassNames;
                         return a().createElement('div', eu({ className: d()(J.base, ...U, e), style: G }, I), N);
@@ -1925,13 +1925,13 @@
                     );
                 };
                 Tu.defaultProps = { type: Su.primary, isFocused: !1, soundHover: 'highlight', soundClick: 'play' };
-                const Ou = (0, r.memo)(Tu),
-                    Ru = ({ text: u, onClose: e }) =>
+                const Ru = (0, r.memo)(Tu),
+                    Ou = ({ text: u, onClose: e }) =>
                         a().createElement(
                             'div',
                             { className: 'Footer_base_e5' },
                             a().createElement(
-                                Ou,
+                                Ru,
                                 { type: Su.primary, size: Lu.medium, onClick: e, mixClass: 'Footer_button_76' },
                                 u,
                             ),
@@ -1955,7 +1955,7 @@
                     return !1;
                 }
                 console.log;
-                var Pu = t(9174);
+                var Pu = t(3915);
                 function ku(u, e) {
                     (null == e || e > u.length) && (e = u.length);
                     for (var t = 0, r = new Array(e); t < e; t++) r[t] = u[t];
@@ -2066,7 +2066,6 @@
                                                                     );
                                                                 })(a.keys());
                                                             !(u = t()).done;
-
                                                         )
                                                             n(u.value, e);
                                                     },
@@ -2095,11 +2094,11 @@
                                                 observableModel: {
                                                     array: (e, t) => {
                                                         const r = null != t ? t : A(e),
-                                                            a = Pu.LO.box(r, { equals: Hu });
+                                                            a = Pu.observable.box(r, { equals: Hu });
                                                         return (
                                                             'real' === u &&
                                                                 i.subscribe(
-                                                                    (0, Pu.aD)((u) => a.set(u)),
+                                                                    (0, Pu.action)((u) => a.set(u)),
                                                                     e,
                                                                 ),
                                                             a
@@ -2107,11 +2106,11 @@
                                                     },
                                                     object: (e, t) => {
                                                         const r = null != t ? t : A(e),
-                                                            a = Pu.LO.box(r, { equals: Hu });
+                                                            a = Pu.observable.box(r, { equals: Hu });
                                                         return (
                                                             'real' === u &&
                                                                 i.subscribe(
-                                                                    (0, Pu.aD)((u) => a.set(u)),
+                                                                    (0, Pu.action)((u) => a.set(u)),
                                                                     e,
                                                                 ),
                                                             a
@@ -2121,13 +2120,13 @@
                                                         const r = A(t);
                                                         if (Array.isArray(e)) {
                                                             const a = e.reduce(
-                                                                (u, e) => ((u[e] = Pu.LO.box(r[e], {})), u),
+                                                                (u, e) => ((u[e] = Pu.observable.box(r[e], {})), u),
                                                                 {},
                                                             );
                                                             return (
                                                                 'real' === u &&
                                                                     i.subscribe(
-                                                                        (0, Pu.aD)((u) => {
+                                                                        (0, Pu.action)((u) => {
                                                                             e.forEach((e) => {
                                                                                 a[e].set(u[e]);
                                                                             });
@@ -2141,13 +2140,16 @@
                                                             const a = e,
                                                                 n = Object.entries(a),
                                                                 E = n.reduce(
-                                                                    (u, [e, t]) => ((u[t] = Pu.LO.box(r[e], {})), u),
+                                                                    (u, [e, t]) => (
+                                                                        (u[t] = Pu.observable.box(r[e], {})),
+                                                                        u
+                                                                    ),
                                                                     {},
                                                                 );
                                                             return (
                                                                 'real' === u &&
                                                                     i.subscribe(
-                                                                        (0, Pu.aD)((u) => {
+                                                                        (0, Pu.action)((u) => {
                                                                             n.forEach(([e, t]) => {
                                                                                 E[t].set(u[e]);
                                                                             });
@@ -2221,7 +2223,7 @@
                             imageSmall: 'R.images.gui_lootboxes.gui.maps.welcomeScreen.bonus_small',
                         },
                     ],
-                    Xu = (0, K.Pi)(() => {
+                    Xu = (0, K.observer)(() => {
                         const u = Gu().controls,
                             e = (0, r.useCallback)(() => u.onClose(), [u]);
                         var t;
@@ -2247,7 +2249,7 @@
                                     secondText: Uu.header.titleSecond(),
                                 }),
                                 a().createElement(wu, { welcomeItems: ju }),
-                                a().createElement(Ru, { text: Uu.button.acceptButton(), onClose: e }),
+                                a().createElement(Ou, { text: Uu.button.acceptButton(), onClose: e }),
                             )
                         );
                     });
@@ -2265,7 +2267,7 @@
         var e = __webpack_module_cache__[u];
         if (void 0 !== e) return e.exports;
         var t = (__webpack_module_cache__[u] = { exports: {} });
-        return (__webpack_modules__[u](t, t.exports, __webpack_require__), t.exports);
+        return (__webpack_modules__[u].call(t.exports, t, t.exports, __webpack_require__), t.exports);
     }
     ((__webpack_require__.m = __webpack_modules__),
         (deferred = []),
@@ -2315,7 +2317,6 @@
                 Object.defineProperty(u, Symbol.toStringTag, { value: 'Module' }),
                 Object.defineProperty(u, '__esModule', { value: !0 }));
         }),
-        (__webpack_require__.j = 834),
         (() => {
             var u = { 834: 0 };
             __webpack_require__.O.j = (e) => 0 === u[e];

@@ -2543,12 +2543,14 @@
                     Me = 'slides',
                     Se = (0, Mu.Pi)(({ id: u, contentFolderName: e, qualificationBattlesCount: t }) => {
                         const a = xe.$dyn(e).$dyn(Me),
-                            n = we.$dyn(e).$dyn(Me);
+                            n = we.$dyn(e).$dyn(Me),
+                            i = n.$dyn('description').$plural(u, null != t ? t : 0),
+                            s = String(n.$dyn('title').$dyn(u));
                         return r().createElement(
                             'div',
                             { className: ge },
                             r().createElement(xu, {
-                                text: String(n.title.$dyn(u)),
+                                text: s,
                                 className: pe,
                                 variant: 'heading-H22',
                                 variant_lg: 'heading-H28',
@@ -2558,7 +2560,7 @@
                                 style: { backgroundImage: `url(${a.$dyn(u)})` },
                             }),
                             r().createElement(xu, {
-                                text: `${n.description.$plural(u, null != t ? t : 0)}`,
+                                text: i,
                                 variant: 'paragraph-P14',
                                 format: { binding: { count: t }, classMix: fe },
                                 className: be,
@@ -2710,13 +2712,13 @@
                 var ke = t(3946);
                 const Pe = Yu()(
                         ({ observableModel: u }) => {
-                            const e = Object.assign({}, u.primitives(['maxBattlesCount']), {
+                            const e = {
                                     root: u.object(),
                                     pages: u.array('pages'),
                                     newMaps: u.array('newMaps'),
                                     deprecatedMaps: u.array('depricatedMaps'),
                                     vehicles: u.array('vehicles'),
-                                }),
+                                },
                                 t = (0, ke.Om)(() => e.vehicles.get().length),
                                 a = (0, ke.Om)(() => e.deprecatedMaps.get().items.length),
                                 r = (0, ke.Om)(() => e.newMaps.get().items.length),

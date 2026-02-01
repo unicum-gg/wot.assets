@@ -3150,6 +3150,7 @@
                                         clearInterval(r);
                                     };
                                 }
+                                o(0);
                             }, [e, u, t, n]),
                             r
                         );

@@ -1742,7 +1742,6 @@
                                                         );
                                                     })(e);
                                                 !(o = r()).done;
-
                                             ) {
                                                 const e = o.value.contentRect,
                                                     i = e.width,

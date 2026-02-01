@@ -45,8 +45,8 @@
                         getViewGlobalPosition: () => T,
                         isEventHandled: () => I,
                         isFocused: () => U,
-                        pxToRem: () => R,
-                        remToPx: () => N,
+                        pxToRem: () => N,
+                        remToPx: () => R,
                         resize: () => M,
                         sendEvent: () => f,
                         setAnimateWindow: () => H,
@@ -230,7 +230,7 @@
                 }
                 function T(u = 'rem') {
                     const e = viewEnv.getViewGlobalPositionRem();
-                    return 'rem' === u ? e : { x: N(e.x), y: N(e.y) };
+                    return 'rem' === u ? e : { x: R(e.x), y: R(e.y) };
                 }
                 function L() {
                     viewEnv.freezeTextureBeforeResize();
@@ -238,10 +238,10 @@
                 function P() {
                     return viewEnv.getScale();
                 }
-                function R(u) {
+                function N(u) {
                     return viewEnv.pxToRem(u);
                 }
-                function N(u) {
+                function R(u) {
                     return viewEnv.remToPx(u);
                 }
                 function H(u, e) {
@@ -1401,7 +1401,7 @@
                         infoCards__extraSmall: 'Content_infoCards__extraSmall_22',
                     },
                     J = () => {
-                        const u = $('model', !1).onClose,
+                        const u = $('model', q.None).onClose,
                             e = (0, n.useCallback)(() => {
                                 (u(), s.O.view.setEventHandled());
                             }, [u]);

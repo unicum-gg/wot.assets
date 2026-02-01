@@ -1924,15 +1924,15 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     background-image: url('R.images.gui.maps.icons.account_dashboard.premium_account.premium_background_520');
 }
 
-.PremiumAccountBlock_base__wotPremiumActive_89 {
+.PremiumAccountBlock_base__plusPremiumActive_56 {
     background-image: url('R.images.gui.maps.icons.account_dashboard.premium_account.premium_background_glow_366');
 }
 
-.mediaMedium .PremiumAccountBlock_base__wotPremiumActive_89 {
+.mediaMedium .PremiumAccountBlock_base__plusPremiumActive_56 {
     background-image: url('R.images.gui.maps.icons.account_dashboard.premium_account.premium_background_glow_520');
 }
 
-.PremiumAccountBlock_base__onlyWgPremiumActive_0d {
+.PremiumAccountBlock_base__onlyPremiumActive_15 {
     justify-content: center;
 }
 
@@ -2007,14 +2007,14 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     line-height: 1.1;
 }
 
-.PremiumAccountBlock_base__wotPremiumActive_89 .PremiumAccountBlock_header_fd {
+.PremiumAccountBlock_base__plusPremiumActive_56 .PremiumAccountBlock_header_fd {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 8rem 0 0;
 }
 
-.PremiumAccountBlock_wotPremiumTimeLeft_7c {
+.PremiumAccountBlock_plusPremiumTimeLeft_d7 {
     color: #feab34;
     font-size: 18rem;
     font-weight: 700;
@@ -2025,7 +2025,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     margin-bottom: 0;
 }
 
-.mediaMedium .PremiumAccountBlock_wotPremiumTimeLeft_7c {
+.mediaMedium .PremiumAccountBlock_plusPremiumTimeLeft_d7 {
     color: #feab34;
     font-size: 24rem;
     font-weight: 700;
@@ -2033,7 +2033,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     margin-bottom: 5rem;
 }
 
-.PremiumAccountBlock_wgPremiumTimeLeft_f1 {
+.PremiumAccountBlock_basicPremiumTimeLeft_2d {
     color: #fefeec80;
     font-size: 14rem;
     font-weight: 400;
@@ -2045,12 +2045,12 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     margin-bottom: -8rem;
 }
 
-.mediaMedium .PremiumAccountBlock_wgPremiumTimeLeft_f1 {
+.mediaMedium .PremiumAccountBlock_basicPremiumTimeLeft_2d {
     margin-top: 8rem;
     margin-bottom: 0rem;
 }
 
-.PremiumAccountBlock_wotPremiumBenefits_be {
+.PremiumAccountBlock_plusPremiumBenefits_4e {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -2062,7 +2062,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     margin-bottom: 20rem;
 }
 
-.PremiumAccountBlock_wotPremiumBenefits_be > div {
+.PremiumAccountBlock_plusPremiumBenefits_4e > div {
     min-height: 36rem;
     padding-left: 46rem;
     background-repeat: no-repeat;
@@ -2186,7 +2186,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     margin-right: 80rem;
 }
 
-.PremiumAccountBlock_base__wotPremiumActive_89 .PremiumAccountBlock_standardAccount_ab {
+.PremiumAccountBlock_base__plusPremiumActive_56 .PremiumAccountBlock_standardAccount_ab {
     opacity: 0.5;
 }
 
@@ -2201,7 +2201,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     opacity: 0.5;
 }
 
-.PremiumAccountBlock_base__wotPremiumActive_89 .PremiumAccountBlock_premiumAccount_85 {
+.PremiumAccountBlock_base__plusPremiumActive_56 .PremiumAccountBlock_premiumAccount_85 {
     opacity: 1;
 }
 

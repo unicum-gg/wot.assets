@@ -418,6 +418,7 @@
                                         clearInterval(s);
                                     };
                                 }
+                                l(0);
                             }, [u, e, t, i]),
                             o
                         );

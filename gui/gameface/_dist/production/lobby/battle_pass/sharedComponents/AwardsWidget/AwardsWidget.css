@@ -1287,6 +1287,10 @@
     margin-right: 20rem;
 }
 
+.AwardsWidget_base__small_19 .AwardsWidget_award_c6:last-child {
+    margin-right: 0;
+}
+
 .AwardsWidget_base__big_f7 .AwardsWidget_award_c6 {
     margin-right: 20rem;
 }
@@ -1295,16 +1299,6 @@
     margin-right: 30rem;
 }
 
-.AwardsWidget_base__small_19 .AwardsWidget_award__last_0d {
-    margin-right: 0;
-}
-
-@media (min-width: 1280px) and (max-width: 1366px) {
-    .AwardsWidget_base__small_19 .AwardsWidget_award__last_0d {
-        margin-right: 5rem;
-    }
-}
-
-.AwardsWidget_base__big_f7 .AwardsWidget_award__last_0d {
+.AwardsWidget_base__big_f7 .AwardsWidget_award_c6:last-child {
     margin-right: 0;
 }

@@ -5209,6 +5209,7 @@
                                         clearInterval(r);
                                     };
                                 }
+                                o(0);
                             }, [e, t, u, n]),
                             r
                         );
@@ -6388,6 +6389,7 @@
                                         'isCrewLocked',
                                         'nation',
                                         'isAcceleratedTraining',
+                                        'isExtended',
                                     ]),
                                     {
                                         slots: e.array('slots', []),
@@ -8433,33 +8435,41 @@
                         const e = b(),
                             t = e.model,
                             u = e.controls,
-                            n = t.isDisabled.get(),
-                            s = t.hasDog.get(),
-                            o = t.computes.getLayoutInfo();
-                        return a().createElement(
-                            'div',
-                            {
-                                className: me,
-                                onMouseEnter: () => {
-                                    (u.setIsWidgetHover(!0),
-                                        o.isCurrentLayoutHangar && !n && (0, r.G)(R.sounds.crew_hover()));
+                            s = t.isDisabled.get(),
+                            o = t.hasDog.get(),
+                            i = t.computes.getLayoutInfo(),
+                            l = t.isExtended.get();
+                        return (
+                            (0, n.useEffect)(() => {
+                                u.setIsWidgetHover(l);
+                            }, [l, u]),
+                            a().createElement(
+                                'div',
+                                {
+                                    className: me,
+                                    onMouseEnter: () => {
+                                        l ||
+                                            (u.setIsWidgetHover(!0),
+                                            i.isCurrentLayoutHangar && !s && (0, r.G)(R.sounds.crew_hover()));
+                                    },
+                                    onMouseLeave: () => {
+                                        l ||
+                                            (u.setIsWidgetHover(!1),
+                                            i.isCurrentLayoutHangar && !s && (0, r.G)(R.sounds.crew_unhover()));
+                                    },
                                 },
-                                onMouseLeave: () => {
-                                    (u.setIsWidgetHover(!1),
-                                        o.isCurrentLayoutHangar && !n && (0, r.G)(R.sounds.crew_unhover()));
-                                },
-                            },
-                            t.computes.isButtonBarVisible() &&
-                                a().createElement(
-                                    'div',
-                                    { className: de },
-                                    a().createElement(ce, {
-                                        isWidgetDisabled: n,
-                                        isCurrentLayoutHangar: o.isCurrentLayoutHangar,
-                                    }),
-                                ),
-                            a().createElement(en, { layoutInfo: o, isWidgetDisabled: n, className: _e }),
-                            s && a().createElement(Ne, { layoutInfo: o, isDisabled: n }),
+                                t.computes.isButtonBarVisible() &&
+                                    a().createElement(
+                                        'div',
+                                        { className: de },
+                                        a().createElement(ce, {
+                                            isWidgetDisabled: s,
+                                            isCurrentLayoutHangar: i.isCurrentLayoutHangar,
+                                        }),
+                                    ),
+                                a().createElement(en, { layoutInfo: i, isWidgetDisabled: s, className: _e }),
+                                o && a().createElement(Ne, { layoutInfo: i, isDisabled: s }),
+                            )
                         );
                     }),
                     un = (0, n.memo)(() =>

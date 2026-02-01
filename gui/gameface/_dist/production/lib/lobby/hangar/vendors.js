@@ -2216,12 +2216,12 @@
                 if (o) {
                     Boolean(
                         t &&
-                            o.inputs &&
-                            (function (e, t) {
-                                if (e.length !== t.length) return !1;
-                                for (let n = 0; n < e.length; n++) if (e[n] !== t[n]) return !1;
-                                return !0;
-                            })(t, o.inputs),
+                        o.inputs &&
+                        (function (e, t) {
+                            if (e.length !== t.length) return !1;
+                            for (let n = 0; n < e.length; n++) if (e[n] !== t[n]) return !1;
+                            return !0;
+                        })(t, o.inputs),
                     ) || (o = { inputs: t, result: e() });
                 } else o = n;
                 return (
@@ -2249,7 +2249,7 @@
             'use strict';
             n.d(t, { animated: () => x, useSpring: () => r.useSpring });
             var r = n(738),
-                i = n(493),
+                i = n(986),
                 o = n(810),
                 a = n(686);
             function u(e, t) {
@@ -4433,7 +4433,6 @@
                                 (ur = ur || document.createElement('div')).innerHTML = '<svg>' + t + '</svg>',
                                     t = ur.firstChild;
                                 e.firstChild;
-
                             )
                                 e.removeChild(e.firstChild);
                             for (; t.firstChild; ) e.appendChild(t.firstChild);
@@ -5895,7 +5894,6 @@
                     for (
                         n = Yr((e = t.child), e.pendingProps, e.expirationTime), t.child = n, n.return = t;
                         null !== e.sibling;
-
                     )
                         ((e = e.sibling), ((n = n.sibling = Yr(e, e.pendingProps, e.expirationTime)).return = t));
                     n.sibling = null;
@@ -7103,7 +7101,6 @@
                                                         c !== i || (0 !== n && 3 !== c.nodeType) || (u = o + n),
                                                         3 === c.nodeType && (o += c.nodeValue.length),
                                                         null !== (d = c.firstChild);
-
                                                 )
                                                     ((f = c), (c = d));
                                                 for (;;) {
@@ -7128,7 +7125,6 @@
                         En = !1,
                         Ea = r;
                     null !== Ea;
-
                 ) {
                     i = !1;
                     var a = void 0;
@@ -8291,7 +8287,7 @@
                 qu = (Wu && Bu) || Wu;
             e.exports = qu.default || qu;
         },
-        493: (e, t, n) => {
+        986: (e, t, n) => {
             'use strict';
             (!(function e() {
                 if (
@@ -8663,7 +8659,7 @@
         },
         45: (e, t, n) => {
             'use strict';
-            n.d(t, { Z: () => S });
+            n.d(t, { Z: () => T });
             var r = (function () {
                     if ('undefined' != typeof Map) return Map;
                     function e(e, t) {
@@ -9015,7 +9011,8 @@
                     return (t = k.get(this))[e].apply(t, arguments);
                 };
             });
-            const S = void 0 !== o.ResizeObserver ? o.ResizeObserver : x;
+            var S = void 0 !== o.ResizeObserver ? o.ResizeObserver : x;
+            const T = 41 != n.j ? S : null;
         },
         483: (e, t) => {
             var n;
@@ -9052,7 +9049,7 @@
                 o = n.n(i);
             if (!i.useState) throw new Error('mobx-react-lite requires React with Hooks support');
             if (!r.rC) throw new Error('mobx-react-lite@3 requires mobx at least version 6 to be available');
-            var a = n(493);
+            var a = n(986);
             function u(e) {
                 e();
             }
@@ -9290,9 +9287,9 @@
                 throw new Error(
                     'number' == typeof e
                         ? '[MobX] minified error nr: ' +
-                          e +
-                          (n.length ? ' ' + n.map(String).join(',') : '') +
-                          '. Find the full error at: https://github.com/mobxjs/mobx/blob/main/packages/mobx/src/errors.ts'
+                              e +
+                              (n.length ? ' ' + n.map(String).join(',') : '') +
+                              '. Find the full error at: https://github.com/mobxjs/mobx/blob/main/packages/mobx/src/errors.ts'
                         : '[MobX] ' + e,
                 );
             }
@@ -11389,7 +11386,6 @@
                                             a = !1,
                                             u = L(t.data_.keys());
                                         !(n = u()).done;
-
                                     ) {
                                         var l = n.value;
                                         if (!i.has(l))
@@ -11415,7 +11411,6 @@
                                             for (
                                                 var y = t.data_.keys(), g = o.keys(), b = y.next(), w = g.next();
                                                 !b.done;
-
                                             ) {
                                                 if (b.value !== w.value) {
                                                     t.keysAtom_.reportChanged();

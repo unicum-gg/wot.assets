@@ -499,7 +499,55 @@
     display: flex;
     flex-direction: column;
     flex: 1;
-    margin-top: 15rem;
+    margin-top: 45rem;
+}
+
+.InfoCardCarouselRenderer_base_61 {
+    display: flex;
+}
+
+.InfoCardCarouselRenderer_borderedRow_de {
+    border-bottom: rgba(255, 255, 255, 0.1) solid 1rem;
+}
+
+.InfoCardCarouselRenderer_title_f2 {
+    color: #e9e2bf;
+    font-size: 28rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.InfoCardCarouselRenderer_titleIcon_70 {
+    width: 110rem;
+    height: 110rem;
+    margin-top: -60rem;
+    margin-bottom: -20rem;
+}
+
+.InfoCardCarouselRenderer_row_86 {
+    width: 80%;
+    height: 59rem;
+    padding-bottom: 14rem;
+}
+
+.InfoCardCarouselRenderer_headerRow_17 {
+    height: 20rem;
+    padding-bottom: 0;
+}
+
+.InfoCardCarouselRenderer_firstColumn_53 {
+    display: flex;
+    justify-content: center;
+    flex: 1;
+    text-align: center;
+}
+
+.InfoCardCarouselRenderer_content_42 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 640rem;
 }
 
 .Row_base_44 {
@@ -557,53 +605,6 @@
     100% {
         opacity: 1;
     }
-}
-
-.InfoCardCarouselRenderer_base_61 {
-    display: flex;
-}
-
-.InfoCardCarouselRenderer_borderedRow_de {
-    border-bottom: rgba(255, 255, 255, 0.1) solid 1rem;
-}
-
-.InfoCardCarouselRenderer_title_f2 {
-    color: #e9e2bf;
-    font-size: 28rem;
-    font-weight: 700;
-    line-height: 1.1;
-}
-
-.InfoCardCarouselRenderer_titleIcon_70 {
-    width: 110rem;
-    height: 110rem;
-    margin-top: -60rem;
-    margin-bottom: -20rem;
-}
-
-.InfoCardCarouselRenderer_row_86 {
-    width: 80%;
-    height: 70rem;
-    padding-bottom: 20rem;
-}
-
-.InfoCardCarouselRenderer_headerRow_17 {
-    padding-bottom: 0;
-}
-
-.InfoCardCarouselRenderer_firstColumn_53 {
-    display: flex;
-    justify-content: center;
-    flex: 1;
-    text-align: center;
-}
-
-.InfoCardCarouselRenderer_content_42 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 640rem;
 }
 
 .PaginationRender_base_75 {
@@ -848,6 +849,57 @@
 
 .HowToEarn_mod__random_d8 {
     background-image: url('R.images.gui.maps.icons.crystalsInfo.earn.icon_selector_random');
+}
+
+.HowToEarn_mod__comp7_55 {
+    background-image: url('R.images.gui.maps.icons.crystalsInfo.earn.comp7');
+}
+
+.HowToSpend_base_31 {
+    position: relative;
+}
+
+.HowToSpend_content_58 {
+    display: flex;
+    width: 100%;
+    height: 460rem;
+    margin-top: 70rem;
+}
+
+.HowToSpend_content__big_00 {
+    margin-top: 160rem;
+}
+
+.HowToSpend_description_19 {
+    width: 100%;
+    position: absolute;
+    top: 10rem;
+    left: 0;
+}
+
+.HowToSpend_description__big_53 {
+    top: 25rem;
+}
+
+.HowToSpend_card_cb {
+    flex: 1;
+    height: 100%;
+}
+
+.HowToSpend_cardOffset_a7 {
+    margin-bottom: 20rem;
+}
+
+.HowToSpend_cardHorizontalOffset_46 {
+    margin-bottom: 30rem;
+}
+
+.HowToSpend_container_cd {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    height: 100%;
+    margin-left: 30rem;
 }
 
 .CButton_base_40 {
@@ -1161,53 +1213,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     height: 6rem;
     border-top: none;
     border-right: none;
-}
-
-.HowToSpend_base_31 {
-    position: relative;
-}
-
-.HowToSpend_content_58 {
-    display: flex;
-    width: 100%;
-    height: 460rem;
-    margin-top: 70rem;
-}
-
-.HowToSpend_content__big_00 {
-    margin-top: 160rem;
-}
-
-.HowToSpend_description_19 {
-    width: 100%;
-    position: absolute;
-    top: 10rem;
-    left: 0;
-}
-
-.HowToSpend_description__big_53 {
-    top: 25rem;
-}
-
-.HowToSpend_card_cb {
-    flex: 1;
-    height: 100%;
-}
-
-.HowToSpend_cardOffset_a7 {
-    margin-bottom: 20rem;
-}
-
-.HowToSpend_cardHorizontalOffset_46 {
-    margin-bottom: 30rem;
-}
-
-.HowToSpend_container_cd {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    height: 100%;
-    margin-left: 30rem;
 }
 
 .Tabs_innerContent_e3 {

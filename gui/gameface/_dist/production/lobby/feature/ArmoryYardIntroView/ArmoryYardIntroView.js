@@ -1294,12 +1294,12 @@
                         }
                     }, [e, u, t]);
                 }
-                var $ = t(3403);
+                var $ = t(3282);
                 function z() {
                     return !1;
                 }
                 console.log;
-                var V = t(9174);
+                var V = t(3915);
                 function Y(u, e) {
                     (null == e || e > u.length) && (e = u.length);
                     for (var t = 0, a = new Array(e); t < e; t++) a[t] = u[t];
@@ -1410,7 +1410,6 @@
                                                                     );
                                                                 })(r.keys());
                                                             !(u = t()).done;
-
                                                         )
                                                             n(u.value, e);
                                                     },
@@ -1447,11 +1446,11 @@
                                                 observableModel: {
                                                     array: (e, t) => {
                                                         const a = null != t ? t : A(e),
-                                                            r = V.LO.box(a, { equals: z });
+                                                            r = V.observable.box(a, { equals: z });
                                                         return (
                                                             'real' === u &&
                                                                 i.subscribe(
-                                                                    (0, V.aD)((u) => r.set(u)),
+                                                                    (0, V.action)((u) => r.set(u)),
                                                                     e,
                                                                 ),
                                                             r
@@ -1459,11 +1458,11 @@
                                                     },
                                                     object: (e, t) => {
                                                         const a = null != t ? t : A(e),
-                                                            r = V.LO.box(a, { equals: z });
+                                                            r = V.observable.box(a, { equals: z });
                                                         return (
                                                             'real' === u &&
                                                                 i.subscribe(
-                                                                    (0, V.aD)((u) => r.set(u)),
+                                                                    (0, V.action)((u) => r.set(u)),
                                                                     e,
                                                                 ),
                                                             r
@@ -1473,13 +1472,13 @@
                                                         const a = A(t);
                                                         if (Array.isArray(e)) {
                                                             const r = e.reduce(
-                                                                (u, e) => ((u[e] = V.LO.box(a[e], {})), u),
+                                                                (u, e) => ((u[e] = V.observable.box(a[e], {})), u),
                                                                 {},
                                                             );
                                                             return (
                                                                 'real' === u &&
                                                                     i.subscribe(
-                                                                        (0, V.aD)((u) => {
+                                                                        (0, V.action)((u) => {
                                                                             e.forEach((e) => {
                                                                                 r[e].set(u[e]);
                                                                             });
@@ -1493,13 +1492,16 @@
                                                             const r = e,
                                                                 n = Object.entries(r),
                                                                 E = n.reduce(
-                                                                    (u, [e, t]) => ((u[t] = V.LO.box(a[e], {})), u),
+                                                                    (u, [e, t]) => (
+                                                                        (u[t] = V.observable.box(a[e], {})),
+                                                                        u
+                                                                    ),
                                                                     {},
                                                                 );
                                                             return (
                                                                 'real' === u &&
                                                                     i.subscribe(
-                                                                        (0, V.aD)((u) => {
+                                                                        (0, V.action)((u) => {
                                                                             n.forEach(([e, t]) => {
                                                                                 E[t].set(u[e]);
                                                                             });
@@ -1715,10 +1717,10 @@
                             S = u.wrap,
                             T = u.flexWrap,
                             y = void 0 === T ? (S ? 'wrap' : void 0) : T,
-                            O = u.grow,
-                            R = u.shrink,
+                            R = u.grow,
+                            O = u.shrink,
                             H = u.flex,
-                            k = void 0 === H ? (O || R ? `${O ? 1 : 0} ${R ? 1 : 0} auto` : void 0) : H,
+                            k = void 0 === H ? (R || O ? `${R ? 1 : 0} ${O ? 1 : 0} auto` : void 0) : H,
                             N = u.style,
                             P = u.children,
                             I = (function (u, e) {
@@ -1994,8 +1996,8 @@
                             void 0 !== C ? r().createElement(hu, xu({}, C, { text: e })) : e,
                         );
                     }),
-                    Ou = R.strings.armory_yard.introView,
-                    Ru = ({ onClick: u, className: e }) =>
+                    Ru = R.strings.armory_yard.introView,
+                    Ou = ({ onClick: u, className: e }) =>
                         r().createElement(
                             'div',
                             {
@@ -2008,7 +2010,7 @@
                                 },
                             },
                             r().createElement('div', { className: 'BackButton_icon_83' }),
-                            r().createElement(yu, { className: 'BackButton_label_ed', text: Ou.backButton() }),
+                            r().createElement(yu, { className: 'BackButton_label_ed', text: Ru.backButton() }),
                             r().createElement('div', { className: 'BackButton_lines_c6' }),
                         ),
                     Hu = 'Content_arrowToBottom_cd',
@@ -2261,7 +2263,8 @@
                             }),
                         );
                     }),
-                    Qu = (0, $.Pi)(() => {
+                    Qu = (0, $.observer)(() => {
+                        viewEnv.clearInternalCacheAfterFinalize();
                         const u = J(),
                             e = u.model,
                             t = u.controls;
@@ -2283,7 +2286,7 @@
                                 }),
                                 r().createElement(Iu, { className: 'App_content_fb' }),
                                 e.hasIntroVideoLink.get() &&
-                                    r().createElement(Ru, { className: 'App_backButton_b7', onClick: t.goBack }),
+                                    r().createElement(Ou, { className: 'App_backButton_b7', onClick: t.goBack }),
                                 r().createElement(U, {
                                     caption: R.strings.armory_yard.closeBtn.label(),
                                     type: 'close',
@@ -2309,7 +2312,7 @@
         var e = __webpack_module_cache__[u];
         if (void 0 !== e) return e.exports;
         var t = (__webpack_module_cache__[u] = { exports: {} });
-        return (__webpack_modules__[u](t, t.exports, __webpack_require__), t.exports);
+        return (__webpack_modules__[u].call(t.exports, t, t.exports, __webpack_require__), t.exports);
     }
     ((__webpack_require__.m = __webpack_modules__),
         (deferred = []),

@@ -19,7 +19,7 @@
                 (t.r(a),
                     t.d(a, {
                         addModelObserver: () => H,
-                        addPreloadTexture: () => D,
+                        addPreloadTexture: () => B,
                         children: () => o,
                         displayStatus: () => z,
                         displayStatusIs: () => te,
@@ -27,7 +27,7 @@
                         extraSize: () => re,
                         forceTriggerMouseMove: () => ee,
                         freezeTextureBeforeResize: () => W,
-                        getBrowserTexturePath: () => B,
+                        getBrowserTexturePath: () => G,
                         getDisplayStatus: () => ne,
                         getScale: () => U,
                         getSize: () => I,
@@ -40,7 +40,7 @@
                         sendEvent: () => A,
                         setAnimateWindow: () => K,
                         setEventHandled: () => Y,
-                        setInputPaddingsRem: () => G,
+                        setInputPaddingsRem: () => D,
                         setSidePaddingsRem: () => N,
                         whenTutorialReady: () => ie,
                     }));
@@ -233,13 +233,13 @@
                             k(F, { isMouseEvent: !0, on: e });
                         },
                     };
-                function D(e) {
+                function B(e) {
                     viewEnv.addPreloadTexture(e);
                 }
-                function G(e) {
+                function D(e) {
                     viewEnv.setHitAreaPaddingsRem(e, e, e, e, 15);
                 }
-                function B(e, n, t, r = 1) {
+                function G(e, n, t, r = 1) {
                     return viewEnv.getWebBrowserTexturePath(e, n, t, r);
                 }
                 function H(e, n, t) {
@@ -400,9 +400,10 @@
                             )
                         );
                     }),
-                    le = () => u().createElement(ce, null, u().createElement(g, null)),
-                    ve = document.createElement('div');
-                ((window.onload = () => document.body.appendChild(ve)), c().render(u().createElement(le, null), ve));
+                    le = () => u().createElement(ce, null, u().createElement(g, null));
+                engine.whenReady.then(() => {
+                    c().render(u().createElement(le, null), document.getElementById('root'));
+                });
             },
         },
         t = {};

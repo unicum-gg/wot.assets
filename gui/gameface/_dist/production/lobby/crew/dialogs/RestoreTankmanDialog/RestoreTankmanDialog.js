@@ -1243,6 +1243,7 @@
                                         clearInterval(r);
                                     };
                                 }
+                                o(0);
                             }, [u, e, t, a]),
                             i
                         );

@@ -1869,7 +1869,6 @@
                                 (or = or || document.createElement('div')).innerHTML = '<svg>' + t + '</svg>',
                                     t = or.firstChild;
                                 e.firstChild;
-
                             )
                                 e.removeChild(e.firstChild);
                             for (; t.firstChild; ) e.appendChild(t.firstChild);
@@ -3331,7 +3330,6 @@
                     for (
                         n = Gr((e = t.child), e.pendingProps, e.expirationTime), t.child = n, n.return = t;
                         null !== e.sibling;
-
                     )
                         ((e = e.sibling), ((n = n.sibling = Gr(e, e.pendingProps, e.expirationTime)).return = t));
                     n.sibling = null;
@@ -4539,7 +4537,6 @@
                                                         s !== l || (0 !== n && 3 !== s.nodeType) || (o = i + n),
                                                         3 === s.nodeType && (i += s.nodeValue.length),
                                                         null !== (d = s.firstChild);
-
                                                 )
                                                     ((f = s), (s = d));
                                                 for (;;) {
@@ -4564,7 +4561,6 @@
                         En = !1,
                         Sa = r;
                     null !== Sa;
-
                 ) {
                     l = !1;
                     var a = void 0;

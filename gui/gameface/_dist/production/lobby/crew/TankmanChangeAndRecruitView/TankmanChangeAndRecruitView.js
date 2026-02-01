@@ -5717,15 +5717,16 @@
                                 b = d.isCheckBoxSelected,
                                 p = d.isEnoughCredits,
                                 B = d.isEnoughGold,
-                                v = s.computes.getNations(),
-                                f = s.computes.getNames(),
-                                w = s.computes.getSurnames(),
-                                y = s.computes.getVehTypes(),
-                                x = s.computes.getSpecialties(),
-                                k = s.computes.getVehicleItems(),
-                                S = s.computes.getTankman(),
-                                L = E + h,
-                                T = ((e, u, t) =>
+                                v = d.canChangeRetraining,
+                                f = s.computes.getNations(),
+                                w = s.computes.getNames(),
+                                y = s.computes.getSurnames(),
+                                x = s.computes.getVehTypes(),
+                                k = s.computes.getSpecialties(),
+                                S = s.computes.getVehicleItems(),
+                                L = s.computes.getTankman(),
+                                T = E + h,
+                                M = ((e, u, t) =>
                                     (0, n.useMemo)(
                                         () =>
                                             (!e && u.icon === t.icon) ||
@@ -5733,22 +5734,22 @@
                                             de(t.vehicleID) ||
                                             de(t.specialty),
                                         [e, u, t],
-                                    ))(t, u, S),
-                                M =
-                                    ((R = S),
+                                    ))(t, u, L),
+                                R =
+                                    ((O = L),
                                     (0, n.useMemo)(
                                         () =>
-                                            de(R.nationID) ||
-                                            de(R.nameID) ||
-                                            de(R.surnameID) ||
-                                            de(R.specialty) ||
-                                            de(R.vehType) ||
-                                            de(R.vehicleID),
-                                        [R],
+                                            de(O.nationID) ||
+                                            de(O.nameID) ||
+                                            de(O.surnameID) ||
+                                            de(O.specialty) ||
+                                            de(O.vehType) ||
+                                            de(O.vehicleID),
+                                        [O],
                                     ));
-                            var R;
-                            const O = c && g,
-                                H = (0, n.useCallback)(
+                            var O;
+                            const H = c && g,
+                                N = (0, n.useCallback)(
                                     (e, u) => {
                                         a(e, u);
                                     },
@@ -5762,7 +5763,7 @@
                                     text: m ? Sr.recruitHeader() : Sr.changeHeader(),
                                 }),
                                 r().createElement(Iu, {
-                                    imageName: S.icon,
+                                    imageName: L.icon,
                                     withSwitch: !F,
                                     onChange: l.onTankmanPhotoChange,
                                     classNames: kr,
@@ -5774,37 +5775,37 @@
                                         r().createElement(Cn, {
                                             className: ar,
                                             header: Sr.nationText(),
-                                            items: v,
-                                            selected: S.nationID,
+                                            items: f,
+                                            selected: L.nationID,
                                             field: 'nationID',
                                             itemRenderer: yn,
                                             controlRenderer: wn,
-                                            onChange: H,
+                                            onChange: N,
                                             callback: (e) => l.onNationChange(e),
                                         }),
                                     r().createElement(Cn, {
                                         className: ar,
                                         header: Sr.nameText(),
-                                        items: f,
-                                        selected: S.nameID,
+                                        items: w,
+                                        selected: L.nameID,
                                         field: 'nameID',
                                         isDisabled: !_,
-                                        onChange: H,
+                                        onChange: N,
                                         callback: (e) => l.onNameChange(e),
                                     }),
                                     r().createElement(Cn, {
                                         header: Sr.surnameText(),
-                                        items: w,
-                                        selected: S.surnameID,
+                                        items: y,
+                                        selected: L.surnameID,
                                         field: 'surnameID',
                                         isDisabled: !_,
-                                        onChange: H,
+                                        onChange: N,
                                         callback: (e) => l.onSurnameChange(e),
                                     }),
                                 ),
                                 r().createElement(
                                     'div',
-                                    { className: C()(or, O && ir) },
+                                    { className: C()(or, H && ir) },
                                     r().createElement('div', { className: C()(lr, sr) }),
                                     r().createElement('div', { className: C()(lr, cr) }),
                                     r().createElement(su, { className: dr, text: Sr.specChange() }),
@@ -5814,24 +5815,24 @@
                                         r().createElement(Cn, {
                                             className: C()(_r, m && Er),
                                             header: Sr.techTypeText(),
-                                            items: y,
-                                            selected: S.vehType,
+                                            items: x,
+                                            selected: L.vehType,
                                             field: 'vehType',
                                             itemRenderer: ur,
                                             controlRenderer: er,
-                                            onChange: H,
+                                            onChange: N,
                                             callback: (e) => l.onVehTypeChange(e),
                                         }),
                                         r().createElement(Cn, {
-                                            key: k.length,
+                                            key: S.length,
                                             className: C()(_r, m && Er),
                                             header: Sr.techNameText(),
-                                            items: k,
-                                            selected: S.vehicleID,
+                                            items: S,
+                                            selected: L.vehicleID,
                                             field: 'vehicleID',
                                             itemRenderer: zn,
                                             controlRenderer: $n,
-                                            onChange: H,
+                                            onChange: N,
                                             callback: (e) => l.onVehChange(e),
                                         }),
                                         !m &&
@@ -5848,7 +5849,7 @@
                                                         {
                                                             mixClass: C()(wr, xr),
                                                             onClick: l.onRetrainingChange,
-                                                            disabled: !c,
+                                                            disabled: !v,
                                                         },
                                                         r().createElement(su, { text: Sr.chooseButton() }),
                                                     ),
@@ -5858,12 +5859,12 @@
                                         r().createElement(Cn, {
                                             className: C()(_r, m && Er),
                                             header: Sr.specialtyText(),
-                                            items: x,
-                                            selected: S.specialty,
+                                            items: k,
+                                            selected: L.specialty,
                                             field: 'specialty',
                                             itemRenderer: In,
                                             controlRenderer: Pn,
-                                            onChange: H,
+                                            onChange: N,
                                             callback: (e) => l.onSpecialtyChange(e),
                                         }),
                                     ),
@@ -5875,7 +5876,7 @@
                                     ),
                                     r().createElement(
                                         'div',
-                                        { className: C()(pr, O && Br) },
+                                        { className: C()(pr, H && Br) },
                                         r().createElement(vt, {
                                             text: Sr.setInTech(),
                                             type: 'main',
@@ -5891,7 +5892,7 @@
                                     r().createElement(Tu, {
                                         className: vr,
                                         label: Sr.price(),
-                                        goldValue: L,
+                                        goldValue: T,
                                         creditsValue: A,
                                         isEnoughCredits: p,
                                         isEnoughGold: B,
@@ -5905,7 +5906,7 @@
                                             mixClass: C()(wr, yr),
                                             type: Be.main,
                                             onClick: m ? l.onRecruit : o,
-                                            disabled: m ? M : T || !p,
+                                            disabled: m ? R : M || !p,
                                         },
                                         r().createElement(su, { text: m ? Sr.recruitButton() : Sr.changeButton() }),
                                     ),
